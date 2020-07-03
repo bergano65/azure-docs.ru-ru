@@ -7,12 +7,13 @@ ms.service: multiple
 ms.topic: conceptual
 ms.date: 03/03/2020
 ms.author: barbkess
-ms.openlocfilehash: be6d2fb590dfefb170b3f23378c507b4d6b2295d
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.custom: references_regions
+ms.openlocfilehash: b720d9dd824018d885ccc9860ee9fd8a90a46051
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82980054"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84194317"
 ---
 # <a name="business-continuity-and-disaster-recovery-bcdr-azure-paired-regions"></a>Непрерывность бизнес-процессов и аварийное восстановление в службах BizTalk: пары регионов Azure
 
@@ -67,14 +68,14 @@ ms.locfileid: "82980054"
 | Северная Америка |Центрально-северная часть США |Центрально-южная часть США |
 | Северная Америка |западная часть США 2 |центрально-западная часть США |
 | Норвегия | Восточная Норвегия; | Западная Норвегия |
-| ЮАР | Северная часть ЮАР; |Западная Южная Африка |
+| ЮАР | Северная часть ЮАР; |Западная часть ЮАР |
 | Швейцария | Северная Швейцария |Западная Швейцария |
 | Соединенное Королевство |западная часть Соединенного Королевства |южная часть Соединенного Королевства |
 | ОАЭ | Северная часть ОАЭ; | Центральная часть ОАЭ.
 | Министерства обороны США |восточный регион US DoD |центральный регион US DoD |
-| US Government |US Gov (Аризона) |US Gov (Техас) |
-| US Government |US Gov (Айова) |US Gov (Вирджиния) |
-| US Government |US Gov (Вирджиния) |US Gov (Техас) |
+| US (США) |US Gov (Аризона) |US Gov (Техас) |
+| US (США) |US Gov (Айова) |US Gov (Вирджиния) |
+| US (США) |US Gov (Вирджиния) |US Gov (Техас) |
 
 > [!Important]
 > - Западная Индия объединяется только в одном направлении. Дополнительный регион для региона "Западная Индия" — "Южная Индия", а дополнительный регион для региона "Южная Индия — "Центральная Индия".
