@@ -9,10 +9,10 @@ ms.date: 04/11/2018
 ms.author: sngun
 ms.subservice: tables
 ms.openlocfilehash: f56946702011968a0fcb31f6fbecbaacdc89ea42
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "60326009"
 ---
 # <a name="encrypt-table-data"></a>Шифрование данных таблиц
@@ -24,11 +24,11 @@ ms.locfileid: "60326009"
 
 Слияние в настоящее время не поддерживается. Так как подмножество свойств могло уже быть зашифровано с помощью другого ключа, простое слияние новых свойств и обновление метаданных приведет к потере данных. Для слияния требуется либо сначала прочитать данные существующей сущности в службе, либо использовать новый ключ для каждого свойства, однако оба способа не подходят из-за низкой эффективности.     
 
-Дополнительные сведения о шифровании данных таблицы см. в статье [Шифрование на стороне клиента для службы хранилища Microsoft Azure](../common/storage-client-side-encryption.md).  
+Сведения о шифровании данных таблицы см. в разделе [Шифрование на стороне клиента и Azure Key Vault для Служба хранилища Microsoft Azure](../common/storage-client-side-encryption.md).  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Шаблоны проектирования таблиц](table-storage-design-patterns.md)
+- [Шаблоны для разработки таблиц](table-storage-design-patterns.md)
 - [Моделирование отношений](table-storage-design-modeling.md)
 - [Моделирование отношений](table-storage-design-modeling.md)
 - [Разработка для изменения данных](table-storage-design-for-modification.md)

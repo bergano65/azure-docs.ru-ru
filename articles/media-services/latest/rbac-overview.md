@@ -13,10 +13,10 @@ ms.date: 05/23/2019
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: 93b2cd3a2565b14ea07d6db6b14dd146e4223528
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "66236923"
 ---
 # <a name="role-based-access-control-rbac-for-media-services-accounts"></a>Управление доступом на основе ролей (RBAC) для учетных записей служб мультимедиа
@@ -45,7 +45,7 @@ foreach (Microsoft.Azure.Management.Media.Models.Operation a in client.Operation
 - [Использование RBAC для управления доступом](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-rest)
 - [Операции поставщика ресурсов служб мультимедиа](https://docs.microsoft.com/azure/role-based-access-control/resource-provider-operations#microsoftmedia)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Разработка с помощью API-интерфейсов служб мультимедиа v3](media-services-apis-overview.md)
 - [Получение политики ключей содержимого с помощью служб мультимедиа .NET](get-content-key-policy-dotnet-howto.md)

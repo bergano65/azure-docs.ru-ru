@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 03/09/2017
 ms.author: cawa
 ms.openlocfilehash: fe3a8ab5b43c41b7e9f79f92de674515377fa9ec
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "60456856"
 ---
 # <a name="using-storage-explorer-with-azure-file-storage"></a>Использование обозревателя хранилищ с хранилищем файлов Azure
@@ -89,7 +89,7 @@ ms.locfileid: "60456856"
 
 1. Щелкните правой кнопкой мыши общую папку, которую необходимо удалить, и выберите в контекстном меню команду **Удалить**. Также можно нажать кнопку **Удалить**, чтобы удалить выбранную общую папку.
 
-    ![DELETE](media/vs-azure-tools-storage-explorer-files/image6.png)
+    ![Удалить](media/vs-azure-tools-storage-explorer-files/image6.png)
 
 1. Щелкните **Да** в диалоговом окне подтверждения.
     

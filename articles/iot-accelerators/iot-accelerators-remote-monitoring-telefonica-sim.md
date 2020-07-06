@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 05/15/2018
 ms.topic: conceptual
 ms.openlocfilehash: b07e21131d9560a49d99644525835ac5ee3bac9e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "61442245"
 ---
 # <a name="integrate-sim-data-in-the-remote-monitoring-solution"></a>Интеграция данных SIM-карты в решении для удаленного мониторинга
@@ -54,7 +54,7 @@ ms.locfileid: "61442245"
 
 Опубликованы следующие параметры подключения:
 
-* ICCID;
+* ICCID
 * IP-адрес
 * наличие сети;
 * состояние SIM-карты;
@@ -63,7 +63,7 @@ ms.locfileid: "61442245"
 
 ![Панель мониторинга](./media/iot-accelerators-remote-monitoring-telefonica-sim/dashboard.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда у вас есть представление об интеграции данных SIM-карты в решение удаленного мониторинга Интернета вещей Azure, для ускорителей решений можно выполнить следующие шаги, описанные в руководствах ниже:
 

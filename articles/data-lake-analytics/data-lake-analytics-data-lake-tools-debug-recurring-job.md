@@ -10,10 +10,10 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 05/20/2018
 ms.openlocfilehash: 5a2935d559a967151c5bdc01c4b0806fe52179b4
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "60629786"
 ---
 # <a name="troubleshoot-an-abnormal-recurring-job"></a>Устранение неполадок, связанных с неправильно повторяющимся заданием
@@ -33,7 +33,7 @@ ms.locfileid: "60629786"
 
 ### <a name="case-1-you-have-the-url-for-the-recurring-job"></a>Вариант 1. У вас есть URL-адрес повторяющегося задания
 
-С помощью **инструментов** > **Data Lake** > **представление заданий**можно вставить URL-адрес задания, чтобы открыть представление задания в Visual Studio. Выберите **Просмотреть связанные задания**, чтобы открыть представление связанных заданий.
+С помощью **инструментов**  >  **Data Lake**  >  **представление заданий**можно вставить URL-адрес задания, чтобы открыть представление задания в Visual Studio. Выберите **Просмотреть связанные задания**, чтобы открыть представление связанных заданий.
 
 ![Ссылка на просмотр связанных заданий в средствах Data Lake Analytics](./media/data-lake-analytics-data-lake-tools-debug-recurring-job/view-related-job.png)
  
@@ -66,7 +66,7 @@ ms.locfileid: "60629786"
 
 ![Схема процесса проверки различий между заданиями](./media/data-lake-analytics-data-lake-tools-debug-recurring-job/recurring-job-diff-debugging-flow.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неравномерного распределения данных](data-lake-analytics-data-lake-tools-data-skew-solutions.md)
 * [Отладка определяемого пользователем кода C# для заданий U-SQL, завершившихся сбоем](data-lake-analytics-debug-u-sql-jobs.md)

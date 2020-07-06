@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cdc7c9dba49bf37db1f039d43b0450c65884c74b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "60245502"
 ---
 # <a name="azure-ad-connect-sync-understanding-declarative-provisioning-expressions"></a>Служба синхронизации Azure AD Connect: общие сведения о выражениях декларативной подготовки
@@ -53,7 +53,7 @@ ms.locfileid: "60245502"
 
 Соединитель Active Directory предоставляет следующие параметры для входящих правил синхронизации.
 
-| Имя параметра | Добавление примечаний |
+| Имя параметра | Комментировать |
 | --- | --- |
 | Domain.Netbios |Формат NetBIOS импортируемого домена, например FABRIKAMSALES |
 | Domain.FQDN |Формат FQDN импортируемого домена, например sales.fabrikam.com |
@@ -94,8 +94,8 @@ ms.locfileid: "60245502"
 
 **Обзорные статьи**
 
-* [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
-* [Интеграция локальных удостоверений с Azure Active Directory.](whatis-hybrid-identity.md)
+* [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
 
 **Справочные разделы**
 

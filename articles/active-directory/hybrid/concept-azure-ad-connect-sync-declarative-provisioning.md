@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 543c1a6706f794b81c4f93fc6fff3a61ed3fb9e3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "60246330"
 ---
 # <a name="azure-ad-connect-sync-understanding-declarative-provisioning"></a>Служба синхронизации Azure AD Connect: общие сведения о декларативной подготовке
@@ -159,8 +159,8 @@ ms.locfileid: "60246330"
 
 **Обзорные статьи**
 
-* [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
-* [Интеграция локальных удостоверений с Azure Active Directory.](whatis-hybrid-identity.md)
+* [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
 
 **Справочные разделы**
 

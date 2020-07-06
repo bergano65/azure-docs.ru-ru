@@ -14,10 +14,10 @@ ms.author: blazem
 ms.reviewer: jroth
 manager: jroth
 ms.openlocfilehash: 81f1ac3280381ef08a1daf1fa4e041227a07aeaf
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "66003023"
 ---
 # <a name="all-topics-for-azure-sql-server-stretch-database-service"></a>Все статьи о службе SQL Server Stretch Database в Azure
@@ -31,7 +31,7 @@ ms.locfileid: "66003023"
 | 3 |[Общие сведения о Stretch Database](sql-server-stretch-database-overview.md) |В этой статье содержатся сведения о том, как служба Stretch Database позволяет прозрачно и безопасно переносить "холодные" данные в облако Microsoft Azure. |
 | 4 |[Запуск мастера включения растяжения для базы данных](sql-server-stretch-database-wizard.md) |Узнайте, как настроить базу данных для Stretch Database с помощью мастера включения растяжения базы данных. |
 
-## <a name="enable"></a>Включить
+## <a name="enable"></a>Включите параметр
 | &nbsp; | Заголовок | Описание |
 | ---:|:--- |:--- |
 | 5 |[Включение Stretch Database для базы данных](sql-server-stretch-database-enable-database.md) |Узнайте, как настроить базу данных для использования со Stretch Database. |

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 63715f668438519131eba5bfff7aa38fc73267d0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "61094657"
 ---
 # <a name="retry-logic-in-the-media-services-sdk-for-net"></a>Логика повторного выполнения операций в пакете SDK служб мультимедиа для .NET  
@@ -37,7 +37,7 @@ ms.locfileid: "61094657"
 ## <a name="exception-types"></a>Типы исключений
 В таблице ниже описаны исключения, которые пакет SDK служб мультимедиа для .NET обрабатывает или не обрабатывает для некоторых операций, которые могут вызывать временные сбои.  
 
-| Исключение | Веб-запрос | Память | query | Сохранение изменений |
+| Исключение | Веб-запрос | Память | Запрос | Сохранение изменений |
 | --- | --- | --- | --- | --- |
 | WebException<br/>Дополнительные сведения см. в разделе [Коды состояний WebException](media-services-retry-logic-in-dotnet-sdk.md#WebExceptionStatus). |Да |Да |Да |Да |
 | DataServiceClientException<br/> Дополнительные сведения см. в разделе [Коды состояний ошибок HTTP](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode). |Нет |Да |Да |Да |
@@ -52,7 +52,7 @@ ms.locfileid: "61094657"
 ### <a name="webexception-status-codes"></a><a name="WebExceptionStatus"></a> Коды состояний WebException
 В таблице ниже показано, для каких кодов ошибок WebException реализована логика повторного выполнения операций. Перечисление [WebExceptionStatus](https://msdn.microsoft.com/library/system.net.webexceptionstatus.aspx) определяет коды состояний.  
 
-| Состояние | Веб-запрос | Память | query | Сохранение изменений |
+| Состояние | Веб-запрос | Память | Запрос | Сохранение изменений |
 | --- | --- | --- | --- | --- |
 | ConnectFailure |Да |Да |Да |Да |
 | NameResolutionFailure |Да |Да |Да |Да |
@@ -70,7 +70,7 @@ ms.locfileid: "61094657"
 ### <a name="http-error-status-codes"></a><a name="HTTPStatusCode"></a> Коды состояний ошибок HTTP
 Когда операции выполнения запросов и сохранения изменений выдают исключение DataServiceClientException, DataServiceQueryException или DataServiceQueryException, код состояния ошибки HTTP возвращается в свойстве StatusCode.  В таблице ниже показано, для каких кодов ошибок реализована логика повторного выполнения операций.  
 
-| Состояние | Веб-запрос | Память | query | Сохранение изменений |
+| Состояние | Веб-запрос | Память | Запрос | Сохранение изменений |
 | --- | --- | --- | --- | --- |
 | 401 |Нет |Да |Нет |Нет |
 | 403 |Нет |Да<br/>Обработка повторных попыток с увеличением времени ожидания. |Нет |Нет |
@@ -86,6 +86,6 @@ ms.locfileid: "61094657"
 ## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

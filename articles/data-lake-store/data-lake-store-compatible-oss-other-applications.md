@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: twooley
 ms.openlocfilehash: 37bf26db5f7ae08734410d36a892aaeb2380bd9f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "60878891"
 ---
 # <a name="open-source-big-data-applications-that-work-with-azure-data-lake-storage-gen1"></a>Приложения больших данных с открытым исходным кодом, которые работают с Azure Data Lake Storage Gen1
@@ -23,7 +23,7 @@ ms.locfileid: "60878891"
 
 В этой статье приводится список приложений больших данных с открытым исходным кодом, которые работают с Azure Data Lake Storage 1-го поколения. Для приложений, перечисленных в таблице, поддерживаются только указанные версии. Подробнее о версиях приложений, доступных для работы с HDInsight, см. в разделе [Компоненты Hadoop, доступные в разных версиях HDInsight](../hdinsight/hdinsight-component-versioning.md).
 
-| Программное обеспечение с открытым исходным кодом | Distribution |
+| Программное обеспечение с открытым исходным кодом | Распределение |
 | --- | --- |
 | [Apache Sqoop](https://sqoop.apache.org/) |HDInsight 3.2, 3.4, 3.5 и 3.6 |
 | [MapReduce](https://hadoop.apache.org/docs/r1.0.4/mapred_tutorial.html) |HDInsight 3.2, 3.4, 3.5 и 3.6 |
@@ -38,6 +38,6 @@ ms.locfileid: "60878891"
 | [Apache Spark](https://spark.apache.org/) |HDInsight 3.4, 3.5 и 3.6 |
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 * [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)
 
