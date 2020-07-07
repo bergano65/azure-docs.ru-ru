@@ -2,7 +2,7 @@
 title: Примеры скриптов Azure PowerShell.
 description: Используйте примеры скриптов Azure PowerShell для создания и администрирования ресурсов Базы данных SQL Azure и Управляемого экземпляра SQL Azure.
 services: sql-database
-ms.service: sql-database
+ms.service: sql-db-mi
 ms.subservice: development
 ms.custom: sqldbrb=2
 ms.devlang: PowerShell
@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/25/2019
-ms.openlocfilehash: cb8abf563834e23472589cd65bfe4196131d0138
-ms.sourcegitcommit: a8928136b49362448e992a297db1072ee322b7fd
+ms.openlocfilehash: 77220fabc78dd10b4299219ef84c1f6eb32ba82e
+ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84718586"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85987329"
 ---
 # <a name="azure-powershell-samples-for-azure-sql-database-and-azure-sql-managed-instance"></a>Примеры сценариев Azure PowerShell для Базы данных SQL Azure и Управляемого экземпляра SQL Azure
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "84718586"
 
 В следующей таблице содержатся ссылки на примеры сценариев Azure PowerShell для Базы данных SQL Azure.
 
-| |  |
+|Ссылка|Описание|
 |---|---|
 |**Создание и настройка отдельных баз данных и эластичных пулов**||
 | [Создание отдельной базы данных и настройка правила брандмауэра на уровне сервера](scripts/create-and-configure-database-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Этот скрипт PowerShell создает отдельную базу данных и настраивает правило брандмауэра для IP-адресов на уровне сервера. |
@@ -64,7 +64,7 @@ ms.locfileid: "84718586"
 
 В следующей таблице содержатся ссылки на примеры сценариев Azure PowerShell для Управляемого экземпляра SQL Azure.
 
-| |  |
+|Ссылка|Описание|
 |---|---|
 |**Создание и настройка управляемых экземпляров**||
 | [Создание управляемого экземпляра и управление им](../managed-instance/scripts/create-configure-managed-instance-powershell.md) | Этот скрипт PowerShell создает и администрирует управляемый экземпляр с помощью Azure PowerShell. |

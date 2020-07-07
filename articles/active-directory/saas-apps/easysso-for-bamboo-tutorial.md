@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 05/28/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35c41d1605b96ad0a9d9765f8c405c1cabf9f0b7
-ms.sourcegitcommit: 5a8c8ac84c36859611158892422fc66395f808dc
+ms.openlocfilehash: 7e10daab315fd20fb1f82ada2e17cef28bb6045f
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84659039"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85608813"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-easysso-for-bamboo"></a>Руководство по интеграции единого входа Azure Active Directory с EasySSO for Bamboo
 
@@ -101,13 +101,13 @@ ms.locfileid: "84659039"
 
 1. В дополнение к описанному выше приложение EasySSO for Bamboo ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
     
-    | Имя |  |  Исходный атрибут|
-    | ---------------| --------------- | --------- |
-    | urn:oid:0.9.2342.19200300.100.1.1 | | user.userprincipalname |
-    | urn:oid:0.9.2342.19200300.100.1.3 | | user.mail |
-    | urn:oid:2.16.840.1.113730.3.1.241 | | user.displayname |
-    | urn:oid:2.5.4.4 | | user.surname |
-    | urn:oid:2.5.4.42 | | user.givenname |
+    | Имя | Исходный атрибут |
+    | ---------------| --------- |
+    | urn:oid:0.9.2342.19200300.100.1.1 | user.userprincipalname |
+    | urn:oid:0.9.2342.19200300.100.1.3 | user.mail |
+    | urn:oid:2.16.840.1.113730.3.1.241 | user.displayname |
+    | urn:oid:2.5.4.4 | user.surname |
+    | urn:oid:2.5.4.42 | user.givenname |
     
     Если у пользователей Azure AD настроен **sAMAccountName**, сопоставьте **urn:oid:0.9.2342.19200300.100.1.1** с атрибутом **sAMAccountName**.
     

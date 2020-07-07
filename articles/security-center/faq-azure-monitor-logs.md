@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 02/25/2020
 ms.author: memildin
 ms.openlocfilehash: 2fe306cf7d17f0789c5e134c3fcad3f8f07a0b80
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82612832"
 ---
 # <a name="faq-for-customers-already-using-azure-monitor-logs"></a>Вопросы и ответы для клиентов, уже использующих журналы Azure Monitor<a name="existingloganalyticscust"></a>
@@ -34,7 +34,7 @@ ms.locfileid: "82612832"
 ## <a name="does-security-center-install-solutions-on-my-existing-log-analytics-workspaces-what-are-the-billing-implications"></a>Устанавливает ли центр безопасности решения в моих существующих рабочих областях Log Analytics? Как это влияет на выставление счетов?
 Центр безопасности определяет, что виртуальная машина уже подключена к рабочей области, которую вы создали. Затем центр безопасности включает решения в этой рабочей области в соответствии с ценовой категорией. Решения применяются только к релевантным виртуальным машинам Azure с помощью функции [нацеливания решений](../operations-management-suite/operations-management-suite-solution-targeting.md). Поэтому счета выставляются без изменений.
 
-- **Уровень "Бесплатный"**  — центр безопасности устанавливает в рабочей области решение SecurityCenterFree. Плата за бесплатный уровень не взимается.
+- **Уровень "Бесплатный"**  — центр безопасности устанавливает в рабочей области решение SecurityCenterFree. На уровне "Бесплатный" плата не взимается.
 - **Уровень "Стандартный"** — центр безопасности устанавливает в рабочей области решение Security.
 
    ![Решения в рабочей области по умолчанию](./media/security-center-platform-migration-faq/solutions.png)

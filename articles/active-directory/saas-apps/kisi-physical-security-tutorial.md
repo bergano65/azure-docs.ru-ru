@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 06/08/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3ca4d30786953504218ef09c7c591ff2f46f524
-ms.sourcegitcommit: bc943dc048d9ab98caf4706b022eb5c6421ec459
+ms.openlocfilehash: 556fd1f9fe4ba5753d882fa81c6d5a89051bcd91
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2020
-ms.locfileid: "84765240"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85605038"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-kisi-physical-security"></a>Руководство по интеграции единого входа Azure Active Directory с Kisi Physical Security
 
@@ -91,7 +91,7 @@ ms.locfileid: "84765240"
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://identity.kms.kisi.io/organizations/sign_in?domain=<DOMAIN>`.
+    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://web.kisi.io/organizations/sign_in?domain=<DOMAIN>`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Kisi Physical Security](mailto:support@getkisi.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -102,11 +102,11 @@ ms.locfileid: "84765240"
 
 1. Помимо перечисленного выше, приложение Kisi Physical Security ожидает несколько дополнительных атрибутов в ответе SAML, которые представлены ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
     
-    | Имя |  |  Исходный атрибут|
-    | ---------------| --------------- | --------- |
-    | FirstName | | user.givenname |
-    | LastName | | user.surname |
-    | Email | | user.mail |
+    | Имя | Исходный атрибут|
+    | ---------------| --------- |
+    | FirstName | user.givenname |
+    | LastName | user.surname |
+    | Email | user.userprincipalname |
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 

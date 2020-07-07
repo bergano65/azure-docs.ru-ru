@@ -9,16 +9,16 @@ ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: b8cbee74a8f9639fc2c3838f38dabf2a62cf339e
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82614451"
 ---
 # <a name="data-locations-for-windows-virtual-desktop"></a>Расположения данных для виртуального рабочего стола Windows
 
 >[!IMPORTANT]
->Это содержимое относится к выпуску 2019, который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектов виртуальных рабочих столов Windows, представленных в обновлении пружины 2020, см. [эту статью](../data-locations.md).
+>Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../data-locations.md).
 
 Виртуальный рабочий стол Windows в настоящее время доступен для всех географических расположений. Изначально метаданные службы могут храниться только в географии США (США). Администраторы могут выбрать расположение для хранения пользовательских данных при создании виртуальных машин пула узлов и связанных служб, таких как файловые серверы. Дополнительные сведения о географических регионах Azure см. на [карте центров обработки данных Azure](https://azuredatacentermap.azurewebsites.net/).
 

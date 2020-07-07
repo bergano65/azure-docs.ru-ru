@@ -4,12 +4,12 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 2d170057a85a8e223fa9d1bc2bfc17e0c284afcd
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.openlocfilehash: dfcee93ffa5eea0b2aa0b9a93ff53ad7b61ea245
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80756037"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85611668"
 ---
 # <a name="tutorial-deploy-a-service-fabric-cluster-running-windows-into-an-azure-virtual-network"></a>Руководство по развертыванию кластера Service Fabric на платформе Windows в виртуальной сети Azure
 
@@ -73,8 +73,8 @@ ms.locfileid: "80756037"
 * с защитой сертификатом (можно настроить в параметрах шаблона);
 * включен [обратный прокси-сервер](service-fabric-reverseproxy.md);
 * включена [служба DNS](service-fabric-dnsservice.md);
-* [уровень устойчивости](service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster) Bronze (можно настроить в параметрах шаблона);
-* [уровень надежности](service-fabric-cluster-capacity.md#the-reliability-characteristics-of-the-cluster) Silver (можно настроить в параметрах шаблона);
+* [уровень устойчивости](service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster) Bronze (можно настроить в параметрах шаблона);
+* [уровень надежности](service-fabric-cluster-capacity.md#reliability-characteristics-of-the-cluster) Silver (можно настроить в параметрах шаблона);
 * конечная точка подключения клиента: 19000 (можно настроить в параметрах шаблона);
 * конечная точка HTTP-шлюза: 19080 (можно настроить в параметрах шаблона);
 
