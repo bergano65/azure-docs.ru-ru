@@ -14,10 +14,10 @@ ms.date: 07/04/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 8485f3474da18e052bc0eab6c053be084ef884a2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82192422"
 ---
 # <a name="operating-system-upgrade"></a>Обновление операционной системы
@@ -62,7 +62,7 @@ ms.locfileid: "82192422"
   |---------------|-------------------------|--------------------|--------------|--------------|
   |   SuSE        |  SLES 12 SP2            |   3.1.3 h           |  2.3.0.40    |   1.6.0.34   |
   |   SuSE        |  SLES 12 с пакетом обновления 3 (SP3)            |   3.1.3 h           |  2.3.0.44    |   1.6.0.36   |
-  |   SuSE        |  SLES 12 SP4            |   3.2.3 i           |  2.3.0.47    |   2.0.0.54   |
+  |   SuSE        |  SLES 12 с пакетом обновления 4 (SP4)            |   3.2.3 i           |  2.3.0.47    |   2.0.0.54   |
   |   SuSE        |  SLES 12 SP2            |   3.2.3 i           |  2.3.0.45    |   1.6.0.37   |
   |   SuSE        |  SLES 12 с пакетом обновления 3 (SP3)            |   3.2.3 i           |  2.3.0.45    |   1.6.0.37   |
   |   Red Hat     |  RHEL 7.2;               |   3.1.3 h           |  2.3.0.39    |   1.6.0.34   |
@@ -96,7 +96,7 @@ modinfo fnic
 
 *   Выполнить `multipath -ll` команду.
 *   Получите идентификатор LUN, размер которого равен приблизительно 50G, или используйте команду:`fdisk -l | grep mapper`
-*   Обновить `/etc/default/grub_installdevice` файл строкой `/dev/mapper/<LUN ID>`. Пример:/dev/Mapper/3600a09803830372f483f495242534a56
+*   Обновить `/etc/default/grub_installdevice` файл строкой `/dev/mapper/<LUN ID>` . Пример:/dev/Mapper/3600a09803830372f483f495242534a56
 >[!NOTE]
 >ИДЕНТИФИКАТОР LUN отличается от сервера к серверу.
 
@@ -119,7 +119,7 @@ blacklist edac_core
 
 
 ### <a name="kernel-parameters"></a>параметры ядра;
-   Убедитесь, что применен правильный параметр `transparent_hugepage`для `numa_balancing`, `processor.max_cstate`, `ignore_ce` и `intel_idle.max_cstate` .
+   Убедитесь, что применен правильный параметр `transparent_hugepage` для `numa_balancing` , `processor.max_cstate` , `ignore_ce` и `intel_idle.max_cstate` .
 
 * intel_idle. max_cstate = 1
 * процессор. max_cstate = 1

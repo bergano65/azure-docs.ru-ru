@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 11/27/2018
 ms.author: mayg
 ms.openlocfilehash: dfed398124ca20771e169f6f9e7d08d4d799ee1e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80478289"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-iis-based-web-application"></a>Настройка аварийного восстановления для многоуровневого веб-приложения на основе IIS
@@ -26,7 +26,7 @@ ms.locfileid: "80478289"
 
 В этой статье описывается защита веб-приложения на основе служб IIS с помощью [Azure Site Recovery](site-recovery-overview.md). В ней рассматриваются передовые методы репликации трехуровневого веб-приложения на основе IIS в Azure, выполнение отработки аварийного восстановления и выполнение отработки отказа приложения в Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать, необходимо знать, как выполнять следующие задачи:
 
@@ -69,7 +69,7 @@ Azure|Н/Д|Да
 
 Чтобы реплицировать все виртуальные машины веб-фермы IIS в Azure, следуйте рекомендациям статьи [Тестовая отработка отказа в Azure с помощью Site Recovery](site-recovery-test-failover-to-azure.md).
 
-Если используется статический IP-адрес, вы можете указать нужный IP-адрес для виртуальной машины. Чтобы задать IP-адрес, перейдите в раздел " **вычисленные и сетевые параметры** > "**целевого IP-** адреса.
+Если используется статический IP-адрес, вы можете указать нужный IP-адрес для виртуальной машины. Чтобы задать IP-адрес, перейдите в раздел " **вычисленные и сетевые параметры**"  >  **целевого IP-** адреса.
 
 ![Снимок экрана, на котором показано, как задать целевой IP-адрес в области вычислений и сети Site Recovery](./media/site-recovery-active-directory/dns-target-ip.png)
 
@@ -158,5 +158,5 @@ Azure|Н/Д|Да
 
 Дополнительные сведения см. в статье [Отработка отказа в Site Recovery](site-recovery-failover.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [репликации других приложений](site-recovery-workload.md) с помощью Site Recovery.

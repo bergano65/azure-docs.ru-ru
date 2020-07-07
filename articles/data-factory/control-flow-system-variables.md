@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/12/2018
 ms.openlocfilehash: 2690ded0ac45719cb1082c85ab535c91ad491172
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81417969"
 ---
 # <a name="system-variables-supported-by-azure-data-factory"></a>Системные переменные, поддерживаемые в фабрике данных Azure
@@ -52,5 +52,5 @@ ms.locfileid: "81417969"
 | --- | --- |
 | @trigger().outputs.windowStartTime |Начало временного интервала, на который запланирован вызов запуска конвейера. Если частота срабатывания триггера "переворачивающегося" окна — каждый час, это будет время в начале часа.|
 | @trigger().outputs.windowEndTime |Окончание временного интервала, на который запланирован вызов запуска конвейера. Если частота срабатывания триггера "переворачивающегося" окна — каждый час, это будет время в конце часа.|
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о том, как эти переменные используются в выражениях, см. в статье [Выражения и функции в фабрике данных Azure](control-flow-expression-language-functions.md).

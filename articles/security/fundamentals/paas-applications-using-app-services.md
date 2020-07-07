@@ -17,10 +17,10 @@ ms.workload: na
 ms.date: 07/18/2019
 ms.author: terrylan
 ms.openlocfilehash: 49b51a5f14f305afa915ec1d0fae42ca9ded6b1e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81461673"
 ---
 # <a name="best-practices-for-securing-paas-web-and-mobile-applications-using-azure-app-service"></a>Рекомендации по защите мобильных приложений и веб-приложений PaaS с помощью Службы приложений Azure
@@ -41,10 +41,10 @@ ms.locfileid: "81461673"
 ## <a name="restrict-incoming-source-ip-addresses"></a>Ограничение исходных IP-адресов входящего трафика
 В [среде службы приложений](../../app-service/environment/intro.md) есть возможность интеграции виртуальных сетей, которая помогает ограничить IP-адреса входящего трафика с помощью групп безопасности сети (NSG). Если вы не знакомы с виртуальными сетями Azure, вот краткое описание. Эта функция позволяет размещать множество ресурсов Azure в сети, недоступной из Интернета, а также самостоятельно управлять доступом к ним. Дополнительные сведения см. в статье [интеграция приложения с виртуальной сетью Azure](../../app-service/web-sites-integrate-with-vnet.md).
 
-Для службы приложений в Windows можно также динамически ограничить IP-адреса, настроив файл Web. config. Дополнительные сведения см. в разделе [Dynamic IP Security](/iis/configuration/system.webServer/security/dynamicIpSecurity/).
+Для службы приложений в Windows можно также динамически ограничить IP-адреса, настроив web.config. Дополнительные сведения см. в разделе [Dynamic IP Security](/iis/configuration/system.webServer/security/dynamicIpSecurity/).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье был представлен набор рекомендаций по безопасности службы приложений, предназначенных для защиты веб-приложений и мобильных приложений PaaS. Дополнительные сведения о безопасности развернутых служб PaaS см. в следующих статьях:
 
 - [Защита развернутых приложений PaaS](paas-deployments.md)
