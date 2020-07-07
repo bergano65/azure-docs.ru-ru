@@ -1,25 +1,14 @@
 ---
 title: Настройка учетной записи лаборатории с помощью Служб лабораторий Azure | Документация Майкрософт
 description: Узнайте, как настроить учетную запись лаборатории с помощью Служб лабораторий Azure, как добавить создателя лаборатории и указать образы Marketplace, которые будут использоваться лабораториями в учетной записи.
-services: devtest-lab, lab-services, virtual-machines
-documentationcenter: na
-author: spelluru
-manager: ''
-editor: ''
-ms.service: lab-services
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.custom: mvc
-ms.date: 05/15/2020
-ms.author: spelluru
-ms.openlocfilehash: d344b055659e8efcfa9836c942aacb384bbdec4c
-ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
+ms.date: 06/26/2020
+ms.openlocfilehash: fba4dbc5386407bd796606d86a5b7bdc7c10fd61
+ms.sourcegitcommit: 74ba70139781ed854d3ad898a9c65ef70c0ba99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84889447"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85445072"
 ---
 # <a name="tutorial-set-up-a-lab-account-with-azure-lab-services"></a>Руководство по Настройка учетной записи лаборатории с помощью Служб лабораторий Azure
 В Службах лабораторий Azure учетная запись лаборатории является центральной учетной записью, в которой управляются все лаборатории организации. В учетной записи лаборатории разрешите другим пользователям создавать лаборатории и задайте политики, которые применяются ко всем лаборатория под учетной записью лаборатории. Из этого учебника вы узнаете, как создать учетною запись лаборатории. 

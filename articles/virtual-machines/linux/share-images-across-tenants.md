@@ -10,10 +10,10 @@ ms.date: 05/04/2019
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.openlocfilehash: 62f136eb1c2684bfd307a05ccbb4836739da6f3a
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82789459"
 ---
 # <a name="share-gallery-vm-images-across-azure-tenants"></a>Совместное использование образов виртуальных машин коллекции в клиентах Azure
@@ -27,7 +27,7 @@ ms.locfileid: "82789459"
 
 ## <a name="create-a-vm-using-azure-cli"></a>Создание виртуальной машины с помощью Azure CLI
 
-Войдите в субъект-службу для клиента 1, используя appID, ключ приложения и идентификатор клиента 1. При необходимости можно `az account show --query "tenantId"` использовать для получения идентификаторов клиентов.
+Войдите в субъект-службу для клиента 1, используя appID, ключ приложения и идентификатор клиента 1. При необходимости можно использовать `az account show --query "tenantId"` для получения идентификаторов клиентов.
 
 ```azurecli-interactive
 az account clear

@@ -10,10 +10,10 @@ ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
 ms.openlocfilehash: e349aadfd629202b1c8cdb5c53a88e0a6c2e06de
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80159223"
 ---
 # <a name="connect-to-and-interact-with-an-iot-plug-and-play-preview-device"></a>Подключение к устройству IoT Plug and Play (предварительная версия) и взаимодействие с ним
@@ -91,7 +91,7 @@ select * from devices where HAS_CAPABILITYMODEL('id without version', version)
 1. На вкладке **Маршруты** выберите **Добавить**.
 1. Введите значение в поле **Имя** и выберите **Конечная точка**. Если вы еще не настроили конечную точку, выберите **Добавить конечную точку**.
 1. В раскрывающемся списке **Источник данных** выберите пункт **Digital Twin Change Events** (События изменения цифрового двойника).
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 В следующем коде JSON показан пример события изменения цифрового двойника:
 
@@ -138,6 +138,6 @@ select * from devices where HAS_CAPABILITYMODEL('id without version', version)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали о решениях службы, взаимодействующих с устройствами IoT Plug and Play, далее мы рекомендуем ознакомиться с [обнаружением моделей](concepts-model-discovery.md).

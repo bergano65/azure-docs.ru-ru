@@ -7,16 +7,16 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: ba75daa47ca1f77cd5828d13877238a64deeeb41
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80062463"
 ---
 # <a name="connect-an-existing-azure-app-service-to-azure-database-for-mysql-server"></a>Подключение существующей службы приложений Azure к базе данных Azure для сервера MySQL
 В этом разделе объясняется, как подключить имеющуюся службу приложений Azure к базе данных Azure для сервера MySQL.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 Войдите на [портал Azure](https://portal.azure.com). Создайте базу данных Azure для сервера MySQL. Дополнительные сведения см. в статье [Создание базы данных Azure для сервера MySQL с помощью портала Azure](quickstart-create-mysql-server-database-using-azure-portal.md) или [Создание сервера базы данных Azure для MySQL с помощью Azure CLI](quickstart-create-mysql-server-database-using-azure-cli.md).
 
 В настоящее время существует два решения предоставления доступа из службы приложений Azure к базе данных Azure для MySQL. Оба решения включают настройку правил брандмауэра уровня сервера.
@@ -66,5 +66,5 @@ DATABASES = {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о строках подключения см. в [соответствующей статье](howto-connection-string.md).

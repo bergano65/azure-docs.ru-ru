@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: peterpr
 ms.openlocfilehash: e2b0dbe8b7738a8c4c551eccca72897bbf1594b9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80157897"
 ---
 # <a name="manage-your-personal-application-preferences"></a>Управление личными настройками приложений
@@ -34,7 +34,7 @@ IoT Central поддерживается на нескольких языках.
 > [!NOTE]
 > Возможность выбора между светлой и темной темами будет недоступен, если администратор настроил пользовательскую тему для приложения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Научившись управлять профилем в Azure IoT Central, можно переходить к следующему шагу:
 

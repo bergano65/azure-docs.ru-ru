@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: kgremban
 ms.openlocfilehash: 8a4579e092bbc4fd58954f1ce1f1dad3a8ddbbba
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80133163"
 ---
 # <a name="use-iot-edge-on-windows-to-run-linux-containers"></a>Использование IoT Edge в Windows для запуска контейнеров Linux
@@ -26,7 +26,7 @@ ms.locfileid: "80133163"
 
 Сведения о том, что входит в последнюю версию IoT Edge, см. в разделе [Azure IOT Edge выпуски](https://github.com/Azure/azure-iotedge/releases).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом разделе можно посмотреть, поддерживает ли устройство Windows IoT Edge, а также подготовить его для подсистемы контейнеров перед установкой.
 
@@ -116,7 +116,7 @@ iotedge check
 iotedge list
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
 

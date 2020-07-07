@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 01/16/2020
 ms.author: Zhchia
 ms.openlocfilehash: 5aa33529a1957b6e7728b3a87bacf6bb91d987ae
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81378955"
 ---
 # <a name="tutorial-configure-oracle-cloud-infrastructure-console-for-automatic-user-provisioning"></a>Руководство. Настройка консоли облачной инфраструктуры Oracle для автоматической подготовки пользователей
@@ -35,17 +35,17 @@ ms.locfileid: "81378955"
 > * Предоставление групп и членств в группах в консоли облачной инфраструктуры Oracle
 > * [Единый вход](https://docs.microsoft.com/azure/active-directory/saas-apps/oracle-cloud-tutorial) в консоль инфраструктуры облака Oracle (рекомендуется)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-* [Клиент Azure AD;](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
-* Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
+* [Клиент Azure AD.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
+* Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
 * [Клиент](https://www.oracle.com/cloud/sign-in.html?intcmp=OcomFreeTier&source=:ow:o:p:nav:0916BCButton)управления облачной инфраструктурой Oracle.
 * Учетная запись пользователя в системе управления облачной инфраструктурой Oracle с разрешениями администратора.
 
-## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания подготовки
-1. Узнайте [, как работает служба подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
+## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания для подготовки
+1. Узнайте, [как работает служба подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
 2. Определите, кто будет находиться в [области подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
 3. Определите, какие данные должны [сопоставляться между консолью облачной инфраструктуры Azure AD и Oracle](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
 
@@ -79,22 +79,22 @@ ms.locfileid: "81378955"
 
 Добавьте консоль облачной инфраструктуры Oracle из коллекции приложений Azure AD, чтобы начать управление подготовкой в консоль облачной инфраструктуры Oracle. Если вы ранее настроили консоль инфраструктуры облака Oracle для единого входа, вы можете использовать то же приложение. Однако при первоначальном тестировании интеграции рекомендуется создать отдельное приложение. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app). 
 
-## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Шаг 4. Определение пользователей, которые будут находиться в области подготовки 
+## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Шаг 4. Определение пользователей для включения в область подготовки 
 
-Служба подготовки Azure AD позволяет определить, кто будет подготовлен в соответствии с назначением приложения, или на основе атрибутов пользователя или группы. Если вы решили указать, кто будет подготовлен для приложения на основе назначения, можно выполнить следующие [действия](../manage-apps/assign-user-or-group-access-portal.md) , чтобы назначить пользователей и группы для приложения. Если выбрать область, для которой будет выполняться подготовка на основе только атрибутов пользователя или группы, можно использовать фильтр области, как описано [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
+Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, на основе назначения приложению и (или) атрибутов пользователя или группы. Если вы решили указать, кто именно будет подготовлен к работе в приложении, на основе назначения, можно выполнить следующие [действия](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили указать, кто именно будет подготовлен, на основе одних только атрибутов пользователя или группы, можете использовать фильтр задания области, как описано [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
 
-* При назначении пользователей и групп для консоли облачной инфраструктуры Oracle необходимо выбрать роль, отличную от **доступа по умолчанию**. Пользователи с ролью доступа по умолчанию исключаются из подготовки и будут помечены как неэффективное в журналах подготовки. Если единственной ролью, доступной в приложении, является роль доступа по умолчанию, можно [обновить манифест приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps) , чтобы добавить дополнительные роли. 
+* При назначении пользователей и групп для консоли облачной инфраструктуры Oracle необходимо выбрать роль, отличную от **доступа по умолчанию**. Пользователи с ролью "Доступ по умолчанию" исключаются из подготовки и будут помечены в журналах подготовки как не назначенные явно. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps), чтобы добавить дополнительные роли. 
 
-* Запуск Small. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если для параметра область подготовки задано значение назначенные пользователи и группы, это можно контролировать, назначив приложению одного или двух пользователей или групп. Если для параметра scope задано значение все пользователи и группы, можно указать [Фильтр области на основе атрибутов](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
+* Начните с малого. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если в область подготовки включены назначенные пользователи и группы, проверьте этот механизм, назначив приложению одного или двух пользователей либо одну или две группы. Если в область включены все пользователи и группы, можно указать [фильтр области на основе атрибутов](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
 
 
 ## <a name="step-5-configure-automatic-user-provisioning-to-oracle-cloud-infrastructure-console"></a>Шаг 5. Настройка автоматической подготовки пользователей в консоли облачной инфраструктуры Oracle 
 
-В этом разделе описано, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и групп в TestApp на основе назначений пользователей и групп в Azure AD.
+В этом разделе описывается, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и (или) групп в TestApp на основе их назначений в Azure AD.
 
 ### <a name="to-configure-automatic-user-provisioning-for-oracle-cloud-infrastructure-console-in-azure-ad"></a>Чтобы настроить автоматическую подготовку учетных записей пользователей для консоли облачной инфраструктуры Oracle в Azure AD, сделайте следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **корпоративные приложения**, а затем выберите **все приложения**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -102,23 +102,23 @@ ms.locfileid: "81378955"
 
     ![Ссылка на консоль инфраструктуры облака Oracle в списке приложений](common/all-applications.png)
 
-3. Перейдите на вкладку **Подготовка** .
+3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "подготовка"](common/provisioning.png)
+    ![Вкладка "Подготовка"](common/provisioning.png)
 
-4. Установите для **режима подготовки** значение **автоматически**.
+4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "подготовка"](common/provisioning-automatic.png)
+    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите **URL-адрес клиента** в формате `https://<IdP ID>.identity.oraclecloud.com/admin/v1` . Например, `https://idcs-0bfd023ff2xx4a98a760fa2c31k92b1d.identity.oraclecloud.com/admin/v1`. Введите значение секретного токена, полученное ранее в **маркере секрета**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к консоли облачной инфраструктуры Oracle. В случае сбоя подключения убедитесь, что учетная запись консоли облачной инфраструктуры Oracle имеет разрешения администратора, и повторите попытку.
+5. В разделе **учетные данные администратора** введите **URL-адрес клиента** в формате `https://<IdP ID>.identity.oraclecloud.com/admin/v1` . Например, `https://idcs-0bfd023ff2xx4a98a760fa2c31k92b1d.identity.oraclecloud.com/admin/v1`. Введите значение секретного токена, полученное ранее на шаге **Секретный токен**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к консоли облачной инфраструктуры Oracle. В случае сбоя подключения убедитесь, что учетная запись консоли облачной инфраструктуры Oracle имеет разрешения администратора, и повторите попытку.
 
     ![Подготовка](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/provisioning.png)
 
-6. В поле **уведомление по электронной почте** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, и установите флажок **Отправить уведомление по электронной почте при возникновении сбоя** .
+6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Нажмите кнопку **Сохранить**.
+7. Щелкните **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с консолью облачной инфраструктуры Oracle**.
 
@@ -128,26 +128,26 @@ ms.locfileid: "81378955"
       |---|---|
       |displayName|Строка|
       |userName|Строка|
-      |active|Логическое значение|
+      |active|Логическое|
       |title|Строка|
       |emails[type eq "work"].value|Строка|
       |preferredLanguage|Строка|
       |name.givenName|Строка|
       |name.familyName|Строка|
-      |адреса [Type EQ "Рабочая"]. форматированный|Строка|
-      |адреса [Введите EQ "Рабочий"]. локальность|Строка|
-      |адреса [Type EQ "Рабочий"]. регион|Строка|
+      |addresses[type eq "work"].formatted|Строка|
+      |addresses[type eq "work"].locality|Строка|
+      |addresses[type eq "work"].region|Строка|
       |addresses[type eq "work"].postalCode|Строка|
-      |адреса [Type EQ "Рабочая"]. Country|Строка|
+      |addresses[type eq "work"].country|Строка|
       |addresses[type eq "work"].streetAddress|Строка|
-      |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: Емплойинумбер|Строка|
-      |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: Отдел|Строка|
-      |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: costCenter|Строка|
-      |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: деление|Строка|
-      |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: менеджер|Справочник|
-      |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: Организация|Строка|
-      |urn: IETF: params: scim: схемы: Oracle: идкс: Extension: пользователь: пользователь: Бипасснотификатион|Логическое значение|
-      |urn: IETF: params: scim: схемы: Oracle: идкс: Extension: пользователь: пользователь: Исфедератедусер|Логическое значение|
+      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Строка|
+      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
+      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|Строка|
+      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Строка|
+      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справочник|
+      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Строка|
+      |urn: IETF: params: scim: схемы: Oracle: идкс: Extension: пользователь: пользователь: Бипасснотификатион|Логическое|
+      |urn: IETF: params: scim: схемы: Oracle: идкс: Extension: пользователь: пользователь: Исфедератедусер|Логическое|
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с консолью облачной инфраструктуры Oracle**.
 
@@ -173,20 +173,20 @@ ms.locfileid: "81378955"
 
     ![Сохранение конфигурации подготовки](common/provisioning-configuration-save.png)
 
-Эта операция запускает начальный цикл синхронизации всех пользователей и групп, определенных в **области** в разделе **параметров** . Выполнение начального цикла занимает больше времени, чем последующие циклы, что происходит примерно каждые 40 минут, пока выполняется служба подготовки Azure AD. 
+После этого начнется цикл начальной синхронизации всех пользователей и групп, определенных в поле **Область** в разделе **Параметры**. Начальный цикл занимает больше времени, чем последующие циклы. Пока служба подготовки Azure AD запущена, они выполняются примерно каждые 40 минут. 
 
 ## <a name="step-6-monitor-your-deployment"></a>Шаг 6. Мониторинг развертывания
-После настройки подготовки используйте следующие ресурсы для мониторинга развертывания:
+После настройки подготовки используйте следующие ресурсы для мониторинга развертывания.
 
-* Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs) , чтобы определить, какие пользователи были подготовлены успешно или неудачно
-* Просмотрите [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-when-will-provisioning-finish-specific-user) , чтобы просмотреть состояние цикла подготовки и его завершения
-* Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о состояниях карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).
+* Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
+* Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
+* Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)

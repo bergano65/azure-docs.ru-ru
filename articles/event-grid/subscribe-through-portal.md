@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: spelluru
 ms.openlocfilehash: 599f48ed241010d8551bd110c7f778c9ef508eac
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81393176"
 ---
 # <a name="subscribe-to-events-through-portal"></a>Подписка на события через портал
@@ -28,7 +28,7 @@ ms.locfileid: "81393176"
 
 1. Выполните поиск по словосочетанию **подписки на Сетку событий** и выберите ее из доступных вариантов.
 
-   ![Система поиска](./media/subscribe-through-portal/search.png)
+   ![Поиск](./media/subscribe-through-portal/search.png)
 
 1. Выберите **+ Event Subscription** (+ Подписка на события).
 
@@ -64,7 +64,7 @@ ms.locfileid: "81393176"
 
 Портал предоставляет параметры для создания подписки на события, относящиеся к этому источнику.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о [доставке сообщений и повторных попытках в Сетке событий](delivery-and-retry.md).
 * Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).

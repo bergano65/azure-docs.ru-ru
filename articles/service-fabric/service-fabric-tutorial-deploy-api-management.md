@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: mvc
 ms.openlocfilehash: 7bd781a21a32ca29fe3f5dd2f4432dbf1e5ca411
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80292140"
 ---
 # <a name="integrate-api-management-with-service-fabric-in-azure"></a>Развертывание управления API с помощью Service Fabric в Azure
@@ -25,7 +25,7 @@ ms.locfileid: "80292140"
 > [!IMPORTANT]
 > Эта функция доступна в ценовой категории **Премиум** и **Разработка** управления API, так как необходима поддержка виртуальной сети.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы
 
@@ -134,7 +134,7 @@ az account set --subscription <guid>
 
 * Для параметра **displayName** можно указать любое имя API-интерфейса. Для этой статьи используйте имя Service Fabric App.
 * Параметр **name** содержит уникальное описательное имя для API-интерфейса, например service-fabric-app. Оно выводится на порталах разработчика и издателя.
-* Параметр **serviceUrl** определяет HTTP-службу, которая реализует API-интерфейс. Портал управления API направит запросы по этому адресу. Для серверных систем Service Fabric это значение URL-адреса не используется. Здесь вы можете использовать любое значение. Для этой статьи, например "http:\//сервицефабрик".
+* Параметр **serviceUrl** определяет HTTP-службу, которая реализует API-интерфейс. Портал управления API направит запросы по этому адресу. Для серверных систем Service Fabric это значение URL-адреса не используется. Здесь вы можете использовать любое значение. Для этой статьи, например "http: \/ /сервицефабрик".
 * Значение **path** добавляется к основному URL-адресу вашей службы управления API. Основной URL-адрес является общим для всех интерфейсов API, размещенных в экземпляре службы API Management. API Management отличает интерфейсы API по их суффиксу. Следовательно, суффикс должен быть уникальным для каждого API для заданного издателя.
 * Параметр **protocols** определяет, какие протоколы можно использовать для доступа к API. Для этой статьи укажите протоколы **http** и **https**.
 * Параметр **path** содержит суффикс для API-интерфейса. Для этой статьи используйте суффикс myapp.
@@ -190,7 +190,7 @@ az account set --subscription <guid>
 |---|---|
 |apimInstanceName|sf-apim|
 |apimPublisherEmail|myemail@contosos.com|
-|apimSku|Разработка|
+|apimSku|Разработчик|
 |serviceFabricCertificateName|sfclustertutorialgroup320171031144217|
 |certificatePassword|q6D7nN%6ck@6|
 |serviceFabricCertificateThumbprint|C4C1E541AD512B8065280292A8BA6079C3F26F10 |
@@ -289,7 +289,7 @@ ResourceGroupName="sfclustertutorialgroup"
 az group delete --name $ResourceGroupName
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании [управления API](/azure/api-management/import-and-publish).
 
@@ -303,7 +303,7 @@ az group delete --name $ResourceGroupName
 
 <!-- pics -->
 [sf-apim-topology-overview]: ./media/service-fabric-tutorial-deploy-api-management/sf-apim-topology-overview.png
-вице-фабрик-скриптс-Анд-темплатес/BLOB/Master/Templates/сервице-интегратион/Нетворк-апим. parameters. JSONn
+-Fabric-Scripts-and-Templates/BLOB/Master/Templates/Service-Integration/network-apim.parameters.jsonn
 
 <!-- pics -->
 [sf-apim-topology-overview]: ./media/service-fabric-tutorial-deploy-api-management/sf-apim-topology-overview.png

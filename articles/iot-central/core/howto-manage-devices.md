@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: peterpr
 ms.openlocfilehash: 8725a822c575ce80b9810d56bfd072241ded4c86
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80157948"
 ---
 # <a name="manage-devices-in-your-azure-iot-central-application"></a>Управление устройствами в приложении Azure IoT Central
@@ -124,7 +124,7 @@ ms.locfileid: "80157948"
 
 1. Выберите устройства, которые требуется экспортировать, а затем выберите действие **Экспорт** .
 
-    ![Экспортировать](./media/howto-manage-devices/export1a.png)
+    ![Экспорт](./media/howto-manage-devices/export1a.png)
 
 
 1. Начнется процесс экспорта. Состояние можно отвести с помощью панели операции устройства.
@@ -174,7 +174,7 @@ ms.locfileid: "80157948"
 1. Выберите **Сохранить**. Если вы сохранили записываемые свойства, эти значения отправляются на устройство. Когда устройство подтверждает изменение для записываемого свойства, возвращается состояние " **синхронизировано**". Если вы сохранили облачное свойство, значение обновляется.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как управлять устройствами в приложении Azure IoT Central, а значит вы готовы к следующему шагу.
 

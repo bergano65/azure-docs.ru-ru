@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 12/26/2019
 ms.author: philmea
 ms.openlocfilehash: 78406175090521af70381f61f4e33dfb6c35ac8c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80159155"
 ---
 # <a name="manage-models-in-the-repository"></a>Управление моделями в репозитории
@@ -32,7 +32,7 @@ ms.locfileid: "80159155"
 - Существует единый _общедоступный репозиторий_ , в котором хранятся модели возможностей устройств и интерфейсы для устройств в [каталоге устройств сертификации Azure для IOT](https://aka.ms/iotdevcat). В этом репозитории также хранятся [общие интерфейсы](./concepts-common-interfaces.md) , [дкмс и интерфейсы, опубликованные партнерами Майкрософт](./howto-onboard-portal.md). Чтобы узнать, как сертифицировать устройство и добавить его модель возможностей устройства в общедоступный репозиторий, ознакомьтесь с руководством [сертификация Plug and Play устройства IOT](./tutorial-certification-test.md).
 - Существует несколько _репозиториев компании_. Репозиторий компании автоматически создается для вашей организации при подключении [к порталу сертификации Azure для Интернета вещей](./howto-onboard-portal.md). Вы можете использовать репозиторий компании для хранения моделей возможностей устройств и интерфейсов во время разработки и тестирования.
 
-## <a name="azure-certified-for-iot-portal"></a>Сертификация Azure для портала IoT
+## <a name="azure-certified-for-iot-portal"></a>Портал Azure Certified for IoT
 
 На [портале сертификации Azure для IOT](https://preview.catalog.azureiotsolutions.com)можно выполнить следующие задачи.
 
@@ -60,6 +60,6 @@ Azure CLI предоставляет команды для управления 
 > [!NOTE]
 > В VS Code репозиторий общедоступной модели доступен только для чтения. Партнеры корпорации Майкрософт могут обновить общедоступный репозиторий на [портале сертификации Azure для IOT](https://preview.catalog.azureiotsolutions.com).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 На следующем шаге вы узнаете, как [Отправить устройство Plug and Play IOT для сертификации](tutorial-certification-test.md).

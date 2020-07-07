@@ -9,10 +9,10 @@ ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
 ms.openlocfilehash: f008627317588467d731ccc03aec7738f58e46e0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80159206"
 ---
 # <a name="generate-sas-token"></a>Создание маркера SAS
@@ -46,7 +46,7 @@ def calculate_sas_token(hostname, repo_id, key_name, key, expiry_in_second):
 
 ## <a name="c"></a>C\#
 
-В следующем фрагменте кода показано, как создать маркер SAS с помощью\#C:
+В следующем фрагменте кода показано, как создать маркер SAS с помощью C \# :
 
 ```csharp
 public static string generateSasToken(string hostName, string repoId, string key, string keyName, int expiryInSeconds = 3600)
@@ -82,6 +82,6 @@ POST https:///models/{modelId}?repositoryId={repositoryId}&api-version=2019-07-0
 
 Если вы выдаете клиенту маркер SAS, он не имеет первичного ключа ресурса и не может изменить хэш, чтобы получить его. Маркер SAS позволяет контролировать доступ клиента и срок его действия. При изменении первичного ключа в политике все созданные на его основе маркеры SAS становятся недействительными.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали о создании маркеров безопасности, которые будут использоваться для доступа к Plug and Play репозиториям модели предварительной версии Интернета вещей, предлагаемый следующий шаг — дополнительные сведения в разделе [центра Интернета вещей Plug and Play предварительной версии для разработчиков моделей](concepts-developer-guide.md).

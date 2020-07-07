@@ -5,10 +5,10 @@ ms.devlang: java
 ms.date: 08/01/2019
 ms.topic: conceptual
 ms.openlocfilehash: a5015a018f905b4353afd6bf25a48a2d942b3b97
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80153358"
 ---
 # <a name="create-and-deploy-arm-templates-by-using-the-intellij-idea"></a>Создание и развертывание шаблонов ARM с помощью IntelliJ идеи
@@ -78,7 +78,7 @@ ms.locfileid: "80153358"
 > [!NOTE]
 > Обратите внимание, что удаление развертывания никоим образом не повлияет на ресурсы, созданные при развертывании. Если соответствующая группа ресурсов или определенные ресурсы вам больше не нужны, удалите их.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Основная задача этой статьи — использовать IntelliJную идею для развертывания существующего шаблона из шаблонов быстрого запуска Azure. Кроме того, в нем содержатся сведения о просмотре и обновлении имеющегося развертывания в Azure. Шаблоны быстрого запуска Azure могут не обеспечить вас всем необходимым. Дополнительные сведения о разработке шаблонов см. в новой серии
 

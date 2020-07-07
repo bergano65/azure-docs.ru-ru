@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 10/04/2018
 ms.author: tomfitz
 ms.openlocfilehash: ce58fc69496f54c078b0a0a55a8a3c7cad82a051
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81391710"
 ---
 # <a name="quickstart-deploy-service-catalog-app-through-azure-portal"></a>Краткое руководство. Развертывание приложения каталога услуг с помощью портал Azure
@@ -28,11 +28,11 @@ ms.locfileid: "81391710"
 
    ![Поиск приложения в каталоге служб](./media/deploy-service-catalog-quickstart/select-service-catalog.png)
 
-1. Вы видите описание службы управляемого приложения. Щелкните **Создать**.
+1. Вы видите описание службы управляемого приложения. Нажмите кнопку **создания**.
 
    ![Выбор кнопки "Создать"](./media/deploy-service-catalog-quickstart/create-service-catalog.png)
 
-1. На портале показаны определения управляемого приложения, к которым у вас есть доступ. Из доступных определений выберите то, которое вы хотите развернуть. В этом кратком руководстве используйте определение **Управляемая учетная запись**, которое вы создали в предыдущем кратком руководстве. Щелкните **Создать**.
+1. На портале показаны определения управляемого приложения, к которым у вас есть доступ. Из доступных определений выберите то, которое вы хотите развернуть. В этом кратком руководстве используйте определение **Управляемая учетная запись**, которое вы создали в предыдущем кратком руководстве. Нажмите кнопку **создания**.
 
    ![Выбор определения для развертывания](./media/deploy-service-catalog-quickstart/select-definition.png)
 
@@ -60,7 +60,7 @@ ms.locfileid: "81391710"
 
    ![Просмотр ресурсов](./media/deploy-service-catalog-quickstart/view-resources.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы узнать, как создать файлы определений для управляемого приложения, см. статью [Создание и публикация определения управляемого приложения](publish-service-catalog-app.md).
 * Для Azure CLI см. статью [Развертывание управляемого приложения для каталога службы с помощью Azure CLI](./scripts/managed-application-cli-sample-create-application.md).

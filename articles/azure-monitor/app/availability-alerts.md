@@ -7,10 +7,10 @@ ms.author: lagayhar
 ms.date: 06/19/2019
 ms.reviewer: sdash
 ms.openlocfilehash: 5af6aec2267384c37f664522d075bf26c632e7e9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81382884"
 ---
 # <a name="availability-alerts"></a>Оповещения о доступности
@@ -69,9 +69,9 @@ ms.locfileid: "81382884"
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-Выделенная [статья по устранению неполадок](troubleshoot-availability.md).
+См. инструкции по [устранению неполадок](troubleshoot-availability.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Многошаговые веб-тесты](availability-multistep.md)
-* [Веб-тесты проверки связи URL](monitor-web-app-availability.md)
+* [Веб-тесты проверки связи по URL-адресу](monitor-web-app-availability.md)
