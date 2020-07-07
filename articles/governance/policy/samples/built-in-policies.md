@@ -1,21 +1,25 @@
 ---
 title: Список определений встроенных политик
 description: Список определений встроенных политик для Политики Azure. К категориям относятся теги, соответствие нормативным требованиям, Key Vault, Kubernetes, гостевая конфигурация и многое другое.
-ms.date: 06/10/2020
+ms.date: 06/23/2020
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 0ab717e4246112152b9a497c51d2a630bc48dfd1
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: 94f69754ab51728a18da10b45e05770f1271760b
+ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84709628"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85313515"
 ---
 # <a name="azure-policy-built-in-policy-definitions"></a>Определения встроенных политик в Политике Azure
 
 Эта страница представляет собой индекс определений встроенных политик в Политике Azure.
 
 Имя каждой из встроенных политик связано с определением политики на портале Azure. Чтобы просмотреть исходный репозиторий [GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy), перейдите по ссылке в столбце **Источник**. Встроенные инициативы группируются по свойству **category** (категория) в **метаданных**. Перейти к определенной **категории** можно с помощью меню в правой части страницы. Или нажмите <kbd>CTRL</kbd>-<kbd>F</kbd>, чтобы использовать функцию поиска в браузере.
+
+## <a name="api-for-fhir"></a>API для FHIR
+
+[!INCLUDE [azure-policy-samples-policies-api-for-fhir](../../../../includes/policy/samples/bycat/policies-api-for-fhir.md)]
 
 ## <a name="api-management"></a>Управление API
 
