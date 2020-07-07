@@ -3,12 +3,12 @@ title: Руководство по непрерывной записи виде�
 description: Из этого руководства мы узнаем, как с помощью службы Аналитики видеотрансляции Azure в Azure IoT Edge осуществлять непрерывную запись видео в облако и транслировать произвольные фрагменты этого видео в режиме потоковой передачи с помощью Служб мультимедиа Azure.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: 95182478b75d506526cce28c0d5e446d71140eac
-ms.sourcegitcommit: bc943dc048d9ab98caf4706b022eb5c6421ec459
+ms.openlocfilehash: 008927d607ef2a14e30e8e2090692ccd2bb1e7eb
+ms.sourcegitcommit: 374d1533ea2f2d9d3f8b6e6a8e65c6a5cd4aea47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2020
-ms.locfileid: "84765069"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85808018"
 ---
 # <a name="tutorial-continuous-video-recording-to-the-cloud-and-playback-from-the-cloud"></a>Руководство по Непрерывная запись видео в облако и его воспроизведение
 
@@ -162,7 +162,7 @@ ms.locfileid: "84765069"
 1. В Visual Studio Code перейдите к файлу src/cloud-to-device-console-app/operations.json.
 1. В узле **GraphTopologySet** внесите следующие изменения:
 
-    `"topologyUrl" : "https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/cvr-asset/topology.json" `
+    `"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/cvr-asset/topology.json" `
 1. Затем убедитесь, что в узлах **GraphInstanceSet** и **GraphTopologyDelete** значение **topologyName** соответствует значению свойства **name** в топологии вышеприведенного графа:
 
     `"topologyName" : "CVRToAMSAsset"`  

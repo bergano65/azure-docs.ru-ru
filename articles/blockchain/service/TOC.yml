@@ -62,6 +62,10 @@
       href: ethereum-logic-app.md
     - name: Мониторинг службы "Блокчейн Azure"
       href: monitor-azure-blockchain-service.md
+- name: Справочник
+  items:
+    - name: Azure CLI
+      href: /cli/azure/ext/blockchain/blockchain
 - name: Ресурсы
   items:
     - name: Комплект SDK для службы "Блокчейн Azure"

@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 12/19/2019
 ms.author: stefsch
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 25393007a3cc878737ea5927cb65bcf7ef945313
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 09c41c7480b262e6f1a912ad4b708e485d86bf56
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80057571"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833508"
 ---
 # <a name="custom-configuration-settings-for-app-service-environments"></a>Настраиваемые параметры конфигурации для сред службы приложений
 ## <a name="overview"></a>Обзор
@@ -24,23 +24,25 @@ ms.locfileid: "80057571"
 
 В следующем сокращенном фрагменте шаблона Resource Manager показан атрибут **clusterSettings** .
 
-    "resources": [
-    {
-       "apiVersion": "2015-08-01",
-       "type": "Microsoft.Web/hostingEnvironments",
-       "name": ...,
-       "location": ...,
-       "properties": {
-          "clusterSettings": [
-             {
-                 "name": "nameOfCustomSetting",
-                 "value": "valueOfCustomSetting"
-             }
-          ],
-          "workerPools": [ ...],
-          etc...
-       }
+```json
+"resources": [
+{
+    "apiVersion": "2015-08-01",
+    "type": "Microsoft.Web/hostingEnvironments",
+    "name": ...,
+    "location": ...,
+    "properties": {
+        "clusterSettings": [
+            {
+                "name": "nameOfCustomSetting",
+                "value": "valueOfCustomSetting"
+            }
+        ],
+        "workerPools": [ ...],
+        etc...
     }
+}
+```
 
 Атрибут **clusterSettings** можно включить в шаблон Resource Manager для обновления среды службы приложений.
 
@@ -61,13 +63,15 @@ ms.locfileid: "80057571"
 
 Среда службы приложений работает по принципу "черного ящика", т. е. в ней не отображаются внутренние компоненты или обмен данными в системе. Чтобы обеспечить более высокую пропускную способность, по умолчанию шифрование между внутренними компонентами отключено. Система защищена за счет того, что трафик полностью недоступен для отслеживания или доступа. Если у вас есть требования к соответствию, предусматривающие полное шифрование пути данных из точки в точку, его соблюдение можно обеспечить, используя clusterSetting.  
 
-        "clusterSettings": [
-            {
-                "name": "InternalEncryption",
-                "value": "1"
-            }
-        ],
- 
+```json
+"clusterSettings": [
+    {
+        "name": "InternalEncryption",
+        "value": "1"
+    }
+],
+```
+
 Включение InternalEncryption в качестве clusterSetting может повлиять на производительность системы. Когда вы внесете изменения, чтобы включить InternalEncryption, Среда службы приложений (ASE) будет пребывать в нестабильном состоянии, пока изменения не распространятся полностью. Полное распространение изменений может занять несколько часов в зависимости от количества экземпляров в ASE. Настоятельно рекомендуется не включать этот параметр в ASE, пока она используется. Если это необходимо сделать для активно используемых ASE, мы настоятельно рекомендуем перенаправлять трафик в резервную среду до завершения операции. 
 
 ## <a name="disable-tls-10-and-tls-11"></a>Отключение TLS 1.0 и TLS 1.1
@@ -76,29 +80,31 @@ ms.locfileid: "80057571"
 
 Чтобы запретить весь входящий трафик TLS 1.0 и TLS 1.1 для всех приложений в ASE, укажите следующую запись **clusterSettings**:
 
-        "clusterSettings": [
-            {
-                "name": "DisableTls1.0",
-                "value": "1"
-            }
-        ],
+```json
+"clusterSettings": [
+    {
+        "name": "DisableTls1.0",
+        "value": "1"
+    }
+],
+```
 
 В параметрах указана версия 1.0, но при настройке отключаются TLS 1.0 и TLS 1.1.
 
 ## <a name="change-tls-cipher-suite-order"></a>Порядок изменения комплекта шифров TLS
 Пользователи также спрашивают о том, можно ли изменить список шифров, согласованный их сервер, изменив атрибут **clusterSettings** , как показано ниже. Список доступных наборов шифров можно получить в этой [статье MSDN](https://msdn.microsoft.com/library/windows/desktop/aa374757\(v=vs.85\).aspx).
 
-        "clusterSettings": [
-            {
-                "name": "FrontEndSSLCipherSuiteOrder",
-                "value": "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384_P256,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256_P256,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P256,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA_P256,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA_P256"
-            }
-        ],
+```json
+"clusterSettings": [
+    {
+        "name": "FrontEndSSLCipherSuiteOrder",
+        "value": "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384_P256,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256_P256,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P256,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA_P256,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA_P256"
+    }
+],
+```
 
 > [!WARNING]
 > Если для набора шрифтов указаны недопустимые значения, шифров (которые не распознаются в SChannel), подключение к серверу по протоколу TLS может быть разорвано. В этом случае необходимо удалить запись *FrontEndSSLCipherSuiteOrder* из **clusterSettings** и отправить обновленный шаблон Resource Manager, чтобы восстановить параметры комплекта шифров по умолчанию.  Используйте эту возможность с осторожностью.
-> 
-> 
 
 ## <a name="get-started"></a>Начало работы
 На сайте шаблонов быстрого запуска Azure Resource Manager есть шаблон с базовым определением для [создания среды службы приложений](https://azure.microsoft.com/documentation/templates/201-web-app-ase-create/).

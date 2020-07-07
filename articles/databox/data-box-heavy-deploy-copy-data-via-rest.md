@@ -8,12 +8,12 @@ ms.subservice: heavy
 ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 9f3ba0a7e9f7cf72b0eade16679d980fe2207f98
-ms.sourcegitcommit: fe6c9a35e75da8a0ec8cea979f9dec81ce308c0e
+ms.openlocfilehash: a57dc6c57e10c82f9548490c4c2e98fd87f677af
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80297212"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85849425"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-blob-storage-via-rest-apis"></a>Руководство по Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API  
 
@@ -92,7 +92,7 @@ ms.locfileid: "80297212"
 
 1. Войдите на портал Azure.
 2. Перейдите к заказу Data Box, а затем к разделу **Общие > Сведения об устройстве**.
-3. В разделе **Учетные данные устройства** перейдите к **API доступа к устройству**. Щелкните элемент **Загрузить**. После этого будет скачан файл сертификата **\<имя_заказа>.cer**. **Сохраните** этот файл. Этот сертификат следует установить на компьютере клиента или узла, который будет использоваться для подключения к устройству.
+3. В разделе **Учетные данные устройства** перейдите к **API доступа к устройству**. Щелкните элемент **Загрузить**. После этого будет скачан файл сертификата **\<your order name>.cer**. **Сохраните** этот файл. Этот сертификат следует установить на компьютере клиента или узла, который будет использоваться для подключения к устройству.
 
     ![Скачивание сертификата с помощью портала Azure](media/data-box-deploy-copy-data-via-rest/download-cert-1.png)
  
@@ -197,16 +197,19 @@ ms.locfileid: "80297212"
 
 #### <a name="linux"></a>Linux
 
-    azcopy \
-        --source /mnt/myfolder \
-        --destination https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ \
-        --dest-key <key> \
-        --recursive
+```azcopy
+azcopy \
+    --source /mnt/myfolder \
+    --destination https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ \
+    --dest-key <key> \
+    --recursive
+```
 
 #### <a name="windows"></a>Windows
 
-    AzCopy /Source:C:\myfolder /Dest:https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ /DestKey:<key> /S
-
+```azcopy
+AzCopy /Source:C:\myfolder /Dest:https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ /DestKey:<key> /S
+```
 
 Вместо `<key>` укажите ключ учетной записи. Чтобы получить ключ учетной записи, перейдите к учетной записи хранения на портале Azure. Перейдите в раздел **Параметры > Ключи доступа**, выберите ключ и вставьте его в команду AzCopy.
 
@@ -221,16 +224,21 @@ ms.locfileid: "80297212"
 Если вы хотите скопировать только те ресурсы, которые существуют в папке источника и отсутствуют в целевой папке, укажите параметры `--exclude-older` и `--exclude-newer` (для Linux) или `/XO` и `/XN` (для Windows) в команде AzCopy. AzCopy передаст только обновленные данные, учитывая отметки времени файлов.
 
 #### <a name="linux"></a>Linux
-    azcopy \
-    --source /mnt/myfolder \
-    --destination https://data-box-heavy-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ \
-    --dest-key <key> \
-    --recursive \
-    --exclude-older
+
+```azcopy
+azcopy \
+--source /mnt/myfolder \
+--destination https://data-box-heavy-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ \
+--dest-key <key> \
+--recursive \
+--exclude-older
+```
 
 #### <a name="windows"></a>Windows
 
-    AzCopy /Source:C:\myfolder /Dest:https://data-box-heavy-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ /DestKey:<key> /S /XO
+```azcopy
+AzCopy /Source:C:\myfolder /Dest:https://data-box-heavy-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ /DestKey:<key> /S /XO
+```
 
 При возникновении ошибки во время копирования или подключения см. статью [Troubleshoot issues related to Azure Data Box Blob storage](data-box-troubleshoot-rest.md) (Устранение неполадок в хранилище BLOB-объектов службы Data Box).
 

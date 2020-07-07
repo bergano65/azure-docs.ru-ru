@@ -31,6 +31,8 @@
           href: data-box-gateway-use-cases.md
     - name: Практическое руководство
       items:
+        - name: Update
+          href: data-box-gateway-apply-updates.md
         - name: Управление
           items:
             - name: Общие папки
@@ -95,7 +97,7 @@
               href: azure-stack-edge-technical-specifications-power-cords-regional.md
     - name: Практическое руководство
       items:
-        - name: 'Разработка модуля C#'
+        - name: Разработка модуля C#
           href: azure-stack-edge-create-iot-edge-module.md
         - name: Управление
           items:
@@ -133,7 +135,7 @@
           href: data-box-gateway-release-notes.md
 - name: Ресурсы
   items:
-    - name: 'Примеры модуля Azure Stack Edge на C# (.NET)'
+    - name: Примеры модуля Azure Stack Edge на C# (.NET)
       href: 'https://azure.microsoft.com/resources/samples/data-box-edge-csharp-modules/'
     - name: Продукты Azure Stack Edge и Шлюз Data Box
       href: 'https://azure.microsoft.com/services/storage/databox/edge/'

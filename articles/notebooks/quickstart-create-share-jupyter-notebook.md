@@ -4,14 +4,16 @@ description: Быстрое создание и запуск записной к
 ms.topic: quickstart
 ms.date: 12/04/2018
 ms.custom: tracking-python
-ms.openlocfilehash: 01d1035f794287e679b6ebc84fa9498b184b4791
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: 809cb006e1ea40e31d079b40febee6a09714731f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84561095"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85832106"
 ---
 # <a name="quickstart-create-and-share-a-notebook-in-azure-notebooks-preview"></a>Краткое руководство. Создание и совместное использование записной книжки в предварительной версии службы "Записные книжки Azure"
+
+[!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
 В рамках работы с этим кратким руководством вы создадите и запустите в службе "Записные книжки Azure" записную книжку Jupyter, а затем предоставите общий доступ к ней другим пользователям. Jupyter позволяет без проблем сочетать в записной книжке текст Markdown, исполняемый код, постоянные данные, графику и визуализации на одном холсте, к которому можно предоставлять общий доступ. Записные книжки Azure — это бесплатная размещенная служба для разработки и запуска записных книжек Jupyter в облаке без их установки.
 
@@ -19,8 +21,6 @@ ms.locfileid: "84561095"
 Нет.
 
 ## <a name="create-a-new-project-and-notebook"></a>Создание проекта и записной книжки
-
-[!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
 1. Перейдите на сайт [Записные книжки Azure (https://notebooks.azure.com)](https://notebooks.azure.com) и выполните вход. Дополнительные сведения см. в [кратком руководстве по входу в Записные книжки Azure](quickstart-sign-in-azure-notebooks.md).
 

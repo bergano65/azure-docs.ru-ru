@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 04/04/2020
 ms.author: trbye
-ms.openlocfilehash: 2e75e177c1a5af13c1907b3a1abc9218096e8d45
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.openlocfilehash: 3af3134f715dc124b4aee3ac0a7bfbf11df6a462
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83800701"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85801875"
 ---
 # <a name="learn-the-basics-of-the-speech-cli"></a>Основные сведения об интерфейсе командной строки службы "Речь"
 
@@ -70,18 +70,22 @@ spx recognize --files C:\your_wav_file_dir\*.wav --output file C:\output_dir\spe
 
 Распознанная речь записывается в `speech_output.tsv` с помощью аргумента `--output file`. Ниже приведен пример файла структуры выходного файла.
 
-    audio.input.id    recognizer.session.started.sessionid    recognizer.recognized.result.text
-    sample_1    07baa2f8d9fd4fbcb9faea451ce05475    A sample wave file.
-    sample_2    8f9b378f6d0b42f99522f1173492f013    Sample text synthesized.
+```output
+audio.input.id    recognizer.session.started.sessionid    recognizer.recognized.result.text
+sample_1    07baa2f8d9fd4fbcb9faea451ce05475    A sample wave file.
+sample_2    8f9b378f6d0b42f99522f1173492f013    Sample text synthesized.
+```
 
 ## <a name="batch-text-to-speech-synthesis"></a>Пакетный синтез речи из текста
 
 Самый простой способ выполнить пакетный синтез речи из текста — создать новый файл `.tsv` (с разделителями-табуляторами) и использовать команду `--foreach` в интерфейсе командной строки службы "Речь". Обратите внимание на следующий файл `text_synthesis.tsv`:
 
-    audio.output    text
-    C:\batch_wav_output\wav_1.wav    Sample text to synthesize.
-    C:\batch_wav_output\wav_2.wav    Using the Speech CLI to run batch-synthesis.
-    C:\batch_wav_output\wav_3.wav    Some more text to test capabilities.
+```output
+audio.output    text
+C:\batch_wav_output\wav_1.wav    Sample text to synthesize.
+C:\batch_wav_output\wav_2.wav    Using the Speech CLI to run batch-synthesis.
+C:\batch_wav_output\wav_3.wav    Some more text to test capabilities.
+```
 
  Затем выполните команду, чтобы указать `text_synthesis.tsv`, выполните синтез для каждого поля `text` и запишите результат по соответствующему пути `audio.output` в виде файла `.wav`. 
 
@@ -97,10 +101,12 @@ spx synthesize --foreach in @C:\your\path\to\text_synthesis.tsv
 
 Однако заголовки столбцов вашего файла `.tsv` могут **не соответствовать** аргументам командной строки, как в следующем примере.
 
-    wav_path    str_text
-    C:\batch_wav_output\wav_1.wav    Sample text to synthesize.
-    C:\batch_wav_output\wav_2.wav    Using the Speech CLI to run batch-synthesis.
-    C:\batch_wav_output\wav_3.wav    Some more text to test capabilities.
+```output
+wav_path    str_text
+C:\batch_wav_output\wav_1.wav    Sample text to synthesize.
+C:\batch_wav_output\wav_2.wav    Using the Speech CLI to run batch-synthesis.
+C:\batch_wav_output\wav_3.wav    Some more text to test capabilities.
+```
 
 Эти имена полей можно переопределить надлежащим образом, используя следующий синтаксис в вызове `--foreach`. Это тот же вызов, что и выше.
 

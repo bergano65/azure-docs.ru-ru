@@ -3,14 +3,16 @@ title: Клонирование записной книжки Jupyter из GitHu
 description: Быстро клонируйте записную книжку Jupyter из репозитория GitHub и запускайте ее в своей учетной записи Записных книжек Azure.
 ms.topic: quickstart
 ms.date: 12/04/2018
-ms.openlocfilehash: d0f3a12ff04e115074c3821c5e29652484710bca
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 35352e74a8db071a2f85bd71857d47f3af1953e2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77064603"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833092"
 ---
 # <a name="quickstart-clone-a-notebook-in-azure-notebooks-preview"></a>Краткое руководство. Клонирование записной книжки в службе "Записные книжки Azure" (предварительная версия)
+
+[!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
 В этом кратком руководстве вы скопируете записную книжку Jupyter, хранящуюся в GitHub, в учетную запись Записных книжек Azure. 
 
@@ -22,8 +24,6 @@ ms.locfileid: "77064603"
 Нет.
 
 ## <a name="clone-azure-cognitive-services-notebooks"></a>Клонирование записных книжек Azure Cognitive Services
-
-[!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
 1. Перейдите в службу [Записные книжки Azure](https://notebooks.azure.com) и выполните вход. Дополнительные сведения см. в [кратком руководстве по входу в Записные книжки Azure](quickstart-sign-in-azure-notebooks.md).
 

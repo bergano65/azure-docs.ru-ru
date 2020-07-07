@@ -7,12 +7,12 @@ ms.date: 01/24/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 025b2b66ffd6d9f62de6bf6debf7d4067cd52ab4
-ms.sourcegitcommit: 635114a0f07a2de310b34720856dd074aaf4f9cd
+ms.openlocfilehash: 18afd9faf21e5de4831d54d0870b64e79d29cb0c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85261245"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833305"
 ---
 # <a name="quickstart-manage-blobs-with-javascript-v12-sdk-in-nodejs"></a>Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 12 в Node.js
 
@@ -71,9 +71,9 @@ ms.locfileid: "85261245"
         }
     }
     ```
-    
+
     Вы можете указать собственное имя в поле `author`, если хотите.
-   
+
 ### <a name="install-the-package"></a>Установка пакета
 
 Оставаясь в каталоге *blob-quickstart-v12*, установите клиентскую библиотеку хранилища BLOB-объектов Azure для пакета JavaScript с помощью команды `npm install`. Эта команда считывает файл *package.json* и устанавливает клиентскую библиотеку хранилища BLOB-объектов Azure версии 12 для пакета JavaScript и все библиотеки, от которых она зависит.
@@ -95,12 +95,12 @@ npm install
     ```javascript
     const { BlobServiceClient } = require('@azure/storage-blob');
     const uuidv1 = require('uuid/v1');
-    
+
     async function main() {
         console.log('Azure Blob storage v12 - JavaScript quickstart sample');
         // Quick start code goes here
     }
-    
+
     main().then(() => console.log('Done')).catch((ex) => console.log(ex.message));
     ```
 
@@ -309,7 +309,7 @@ Done
 Учебники, примеры, краткие руководства и другую документацию можно найти по следующим ссылкам:
 
 > [!div class="nextstepaction"]
-> [Документация по работе с Azure для JavaScript](/azure/javascript/).
+> [Документация по работе с Azure для JavaScript](/azure/developer/javascript/).
 
 * Дополнительные сведения см в документации по [клиентской библиотеке Хранилища Blob-объектов Azure для JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob).
 * Дополнительные примеры приложений для хранилища Blob-объектов Azure версии 12 для JavaScript собраны [здесь](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples).

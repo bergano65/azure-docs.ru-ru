@@ -11,6 +11,7 @@
         - name: Портал Azure
           href: alerts-activity-log-service-notifications-portal.md
         - name: Шаблон ARM
+          displayName: Resource Manager
           href: alerts-activity-log-service-notifications-arm.md
 - name: Основные понятия
   items:
