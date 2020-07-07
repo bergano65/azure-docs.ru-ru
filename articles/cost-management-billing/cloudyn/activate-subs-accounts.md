@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.reviewer: vitavor
 ms.custom: secdec18
 ROBOTS: NOINDEX
-ms.openlocfilehash: 62138163b3c3f94d60c55cf93d84db5dff446823
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 24ff2d2b5855c2624f12c2a1523611933a426ebe
+ms.sourcegitcommit: 374e47efb65f0ae510ad6c24a82e8abb5b57029e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79474668"
+ms.lasthandoff: 06/28/2020
+ms.locfileid: "85513854"
 ---
 # <a name="activate-azure-subscriptions-and-accounts-with-cloudyn"></a>Активация подписок и учетных записей Azure с помощью Cloudyn
 
@@ -65,7 +65,7 @@ ms.locfileid: "79474668"
     2. На портале Azure выберите **Azure Active Directory**.
     3. Чтобы получить идентификатор клиента, щелкните **Свойства** для клиента Azure AD.
     4. Скопируйте идентификатор каталога (GUID). Это и есть ваш идентификатор клиента.
-    Дополнительные сведения см. в разделе [Получение идентификатора клиента](../../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in).
+    Дополнительные сведения см. в разделе [Получение идентификатора клиента](../../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in).
 3. При необходимости выберите идентификатор тарифа. Если вы не знаете свой идентификатор тарифа, выполните следующие действия, чтобы найти его.
     1. В верхнем правом углу на портале Azure щелкните информацию о пользователе, а затем выберите **Показать мой счет**.
     2. В разделе **Учетная запись выставления счетов** щелкните **Подписки**.

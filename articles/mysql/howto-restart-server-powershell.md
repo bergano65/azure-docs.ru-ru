@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 4/28/2020
 ms.openlocfilehash: 935459a398c07d3b4f61c76dec75b083a2354720
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82609062"
 ---
 # <a name="restart-azure-database-for-mysql-server-using-powershell"></a>Перезапуск базы данных Azure для сервера MySQL с помощью PowerShell
@@ -21,7 +21,7 @@ ms.locfileid: "82609062"
 
 Количество времени, необходимое для выполнения перезапуска, зависит от процесса восстановления MySQL. Чтобы сократить время перезапуска, рекомендуется свести к минимальному объему действий, происходящих на сервере, до перезапуска.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -29,14 +29,14 @@ ms.locfileid: "82609062"
 - [Сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-powershell.md)
 
 > [!IMPORTANT]
-> Пока модуль PowerShell AZ. MySql находится на этапе предварительной версии, его необходимо установить отдельно от модуля AZ PowerShell с помощью следующей команды: `Install-Module -Name Az.MySql -AllowPrerelease`.
-> Как только модуль PowerShell AZ. MySql станет общедоступным, он становится частью будущих выпусков AZ PowerShell и доступен с помощью встроенных в Azure Cloud Shell.
+> Так как модуль PowerShell Az.MySql предоставляется в режиме предварительной версии, его нужно установить отдельно от модуля Az с помощью команды `Install-Module -Name Az.MySql -AllowPrerelease`.
+> Как только модуль PowerShell Az.MySql станет общедоступным, он будет включен в один из будущих выпусков Az PowerShell и встроен в Azure Cloud Shell.
 
 Если вы решили использовать PowerShell локально, подключитесь к учетной записи Azure с помощью командлета [Connect-азаккаунт](/powershell/module/az.accounts/Connect-AzAccount) .
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="restart-the-server"></a>Перезапустите сервер.
+## <a name="restart-the-server"></a>Перезагрузите сервер.
 
 Перезапустите сервер с помощью следующей команды:
 

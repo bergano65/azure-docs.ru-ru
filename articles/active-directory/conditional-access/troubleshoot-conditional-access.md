@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: calebb, martinco
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c9a2ab4b1ebc1c958be9dc4bd07a010f7fef8afc
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82610530"
 ---
 # <a name="troubleshooting-sign-in-problems-with-conditional-access"></a>Устранение неполадок при входе с условным доступом
@@ -41,7 +41,7 @@ ms.locfileid: "82610530"
 Чтобы узнать, какая политика условного доступа или политики применена, и зачем делать следующее.
 
 1. Войдите в **портал Azure** в качестве глобального администратора, администратора безопасности или глобального читателя.
-1. Перейдите к **Azure Active Directory** > **входов**.
+1. Перейдите к **Azure Active Directory**  >  **входов**.
 1. Найдите событие для входа для проверки. Добавьте или удалите фильтры и столбцы, чтобы отфильтровать ненужные сведения.
    1. Добавьте фильтры, чтобы ограничить область:
       1. **Идентификатор корреляции** , если у вас есть определенное событие для изучения.
@@ -80,5 +80,5 @@ ms.locfileid: "82610530"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Отчеты о действиях входа на портале Azure Active Directory](../reports-monitoring/concept-sign-ins.md)
-- [Устранение неполадок условного доступа с помощью средства What If](troubleshoot-conditional-access-what-if.md)
+- [Устранение неполадок с условным доступом с помощью средства What If](troubleshoot-conditional-access-what-if.md)
 - Рекомендации по [условному доступу в Azure Active Directory](best-practices.md)

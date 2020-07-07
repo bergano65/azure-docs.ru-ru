@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 05/15/2019
 ms.author: anzaman
 ms.openlocfilehash: b71890323f6aca92fb9f847252feed57d8db234f
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82594956"
 ---
 # <a name="azure-regions-in-which-video-indexer-exists"></a>Регионы Azure, в которых доступен Индексатор видео
@@ -23,7 +23,7 @@ API Индексатора видео содержат параметр **locati
 
 ## <a name="locations"></a>Расположения
 
-`location` Параметру должно быть присвоено имя кода региона Azure в качестве значения. При использовании индексатора видео в режиме предварительного просмотра следует поместиться `"trial"` в качестве значения. `trial`значение по умолчанию для `location` параметра. В противном случае для получения имени кода региона Azure, в котором развернута ваша учетная запись и к которому должен быть направлен ваш вызов, выполните следующую строку в [Azure CLI](/cli/azure):
+`location`Параметру должно быть присвоено имя кода региона Azure в качестве значения. При использовании индексатора видео в режиме предварительного просмотра следует поместиться в `"trial"` качестве значения. `trial`значение по умолчанию для `location` параметра. В противном случае для получения имени кода региона Azure, в котором развернута ваша учетная запись и к которому должен быть направлен ваш вызов, выполните следующую строку в [Azure CLI](/cli/azure):
 
 ```azurecli-interactive
 az account list-locations

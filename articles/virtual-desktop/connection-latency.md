@@ -9,10 +9,10 @@ ms.date: 10/30/2019
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 8a60779fb045aa612a6ba0988c4635752f973f60
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82607407"
 ---
 # <a name="determine-user-connection-latency-in-windows-virtual-desktop"></a>Определение задержки подключения пользователей в виртуальном рабочем столе Windows
@@ -21,7 +21,7 @@ ms.locfileid: "82607407"
  
 [Средство оценки возможностей виртуальных рабочих столов Windows](https://azure.microsoft.com/services/virtual-desktop/assessment/) помогает определить лучшее расположение для оптимизации задержки виртуальных машин. Мы рекомендуем использовать средство каждые два – три месяца, чтобы убедиться, что оптимальное расположение не изменилось, так как виртуальный рабочий стол Windows разворачивается в новые области. 
 
-## <a name="azure-traffic-manager"></a>Диспетчер трафика Azure
+## <a name="azure-traffic-manager"></a>Azure Traffic Manager
 
 Виртуальный рабочий стол Windows использует диспетчер трафика Azure, который проверяет расположение DNS-сервера пользователя, чтобы найти ближайший экземпляр службы виртуальных рабочих столов Windows. Перед выбором расположения для виртуальных машин мы рекомендуем администраторам проверить расположение DNS-сервера пользователя.
 

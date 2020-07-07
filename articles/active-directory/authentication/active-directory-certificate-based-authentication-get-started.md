@@ -13,10 +13,10 @@ ms.reviewer: annaba
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
 ms.openlocfilehash: 9c3ea7596e589431412489bea4ac9a23fa604540
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82610655"
 ---
 # <a name="get-started-with-certificate-based-authentication-in-azure-active-directory"></a>Приступая к работе с аутентификацией на основе сертификата в Azure Active Directory
@@ -33,7 +33,7 @@ ms.locfileid: "82610655"
 - Показано, как настроить и использовать аутентификацию на основе сертификата для пользователей клиентов в тарифных планах Office 365 корпоративный, бизнес, для образования и для US Gov организаций. В тарифных планах Office 365 China, US Government Defense и US Government Federal доступна предварительная версия этой функции.
 - Предполагается, что у вас уже настроены [инфраструктура открытых ключей (PKI)](https://go.microsoft.com/fwlink/?linkid=841737) и [AD FS](../hybrid/how-to-connect-fed-whatis.md).
 
-## <a name="requirements"></a>Требования
+## <a name="requirements"></a>Requirements (Требования)
 
 Для настройки аутентификации на основе сертификата должны выполняться следующие условия:
 
@@ -112,7 +112,7 @@ ms.locfileid: "82610655"
 
     Get-AzureADTrustedCertificateAuthority
 
-### <a name="add"></a>Добавить
+### <a name="add"></a>Add
 
 Чтобы создать доверенный центр сертификации, используйте командлет [New-AzureADTrustedCertificateAuthority](/powershell/module/azuread/new-azureadtrustedcertificateauthority?view=azureadps-2.0) и задайте правильное значение атрибута **crlDistributionPoint**.
 

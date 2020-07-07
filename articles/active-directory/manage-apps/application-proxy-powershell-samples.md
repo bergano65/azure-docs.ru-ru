@@ -12,12 +12,12 @@ ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e624be8103097a8356ae4167cb8f21cce819649
-ms.sourcegitcommit: bc943dc048d9ab98caf4706b022eb5c6421ec459
+ms.openlocfilehash: 57efd88b9d194442920496107d4c37ba2baf94d3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2020
-ms.locfileid: "84760187"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85554986"
 ---
 # <a name="azure-ad-powershell-examples-for-azure-ad-application-proxy"></a>Примеры Azure AD PowerShell для прокси приложения Azure AD
 
@@ -26,7 +26,7 @@ ms.locfileid: "84760187"
 
 Дополнительные сведения о командлетах, используемых в этих примерах, см. в разделах [Управление приложением прокси приложения](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management) и [Управление соединителем прокси приложения](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management).
 
-| | |
+| Ссылка | Описание |
 |---|---|
 |**Приложения прокси приложений**||
 | [Вывод основных сведений обо всех приложениях прокси приложения](scripts/powershell-get-all-app-proxy-apps-basic.md) | Выводит список основных сведений (AppId, DisplayName, ObjId) по всем приложениям прокси приложения в каталоге. |

@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 02/26/2020
-ms.openlocfilehash: 8acafa14afab507b704806056efac0f877a47684
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: ef19c8eb747432a2eea3880b094f77747890c0d9
+ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78190728"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85984017"
 ---
 # <a name="tutorial-use-rest-and-ai-to-generate-searchable-content-from-azure-blobs"></a>Руководство по использованию REST и искусственного интеллекта для создания доступного для поиска содержимого на основе данных больших двоичных объектов Azure
 
@@ -140,7 +140,7 @@ ms.locfileid: "78190728"
 1. Используйте запрос **POST** и следующий URL-адрес, заменив YOUR-SERVICE-NAME фактическим именем службы.
 
    ```http
-   https://[YOUR-SERVICE-NAME].search.windows.net/datasources?api-version=2019-05-06
+   https://[YOUR-SERVICE-NAME].search.windows.net/datasources?api-version=2020-06-30
    ```
 
 1. В **текст** запроса поместите следующее определение JSON, заменив в нем `connectionString` фактической строкой подключения к учетной записи хранения. 
@@ -161,7 +161,7 @@ ms.locfileid: "78190728"
     ```
 1. Отправьте запрос. Вы увидите код состояния 201, подтверждающий успешное выполнение. 
 
-Если вы получили ошибку 403 или 404, проверьте структуру запроса: `api-version=2019-05-06` должен находиться в конечной точке, `api-key` должен находиться в заголовке после `Content-Type`, и его значение должно быть действительным для службы поиска. Вы можете применить к документу JSON средство проверки JSON в Интернете, чтобы проверить синтаксис. 
+Если вы получили ошибку 403 или 404, проверьте структуру запроса: `api-version=2020-06-30` должен находиться в конечной точке, `api-key` должен находиться в заголовке после `Content-Type`, и его значение должно быть действительным для службы поиска. Вы можете применить к документу JSON средство проверки JSON в Интернете, чтобы проверить синтаксис. 
 
 ### <a name="step-2-create-a-skillset"></a>Шаг 2. Создание набора навыков
 
@@ -170,7 +170,7 @@ ms.locfileid: "78190728"
 1. Используйте запрос **PUT** и следующий URL-адрес, заменив YOUR-SERVICE-NAME фактическим именем службы.
 
     ```http
-    https://[YOUR-SERVICE-NAME].search.windows.net/skillsets/cog-search-demo-ss?api-version=2019-05-06
+    https://[YOUR-SERVICE-NAME].search.windows.net/skillsets/cog-search-demo-sd?api-version=2020-06-30
     ```
 
 1. В **текст** запроса скопируйте представленное ниже определение JSON. Набор навыков содержит перечисленные ниже встроенные навыки.
@@ -255,7 +255,7 @@ ms.locfileid: "78190728"
 1. Используйте запрос **POST** и следующий URL-адрес, заменив YOUR-SERVICE-NAME фактическим именем службы, чтобы присвоить индексу имя.
 
    ```http
-   https://[YOUR-SERVICE-NAME].search.windows.net/indexes/cog-search-demo-idx?api-version=2019-05-06
+   https://[YOUR-SERVICE-NAME].search.windows.net/indexes/cog-search-demo-idx?api-version=2020-06-30
    ```
 
 1. В **текст** запроса скопируйте представленное ниже определение JSON. Поле `content` содержит сам документ. Дополнительные поля `languageCode`, `keyPhrases` и `organizations` представляют новые сведения (поля и значения), которые создаются набором навыков.
@@ -339,7 +339,7 @@ ms.locfileid: "78190728"
 1. Используйте запрос **POST** и следующий URL-адрес, заменив YOUR-SERVICE-NAME фактическим именем службы, чтобы присвоить индексатору имя.
 
    ```http
-   https://[servicename].search.windows.net/indexers/cog-search-demo-idxr?api-version=2019-05-06
+   https://[servicename].search.windows.net/indexers/cog-search-demo-idxr?api-version=2020-06-30
    ```
 
 1. В **текст** запроса скопируйте представленное ниже определение JSON. Обратите внимание на элементы сопоставления полей. Они очень важны, так как определяют поток данных. 
@@ -432,7 +432,7 @@ ms.locfileid: "78190728"
 1. Используйте запрос **GET** и следующий URL-адрес, заменив YOUR-SERVICE-NAME фактическим именем службы, чтобы присвоить индексатору имя.
 
    ```http
-   https://[YOUR-SERVICE-NAME].search.windows.net/indexers/cog-search-demo-idxr/status?api-version=2019-05-06
+   https://[YOUR-SERVICE-NAME].search.windows.net/indexers/cog-search-demo-idxr/status?api-version=2020-06-30
    ```
 
 1. Проверьте ответ, чтобы узнать, работает ли индексатор, или просмотрите сведения об ошибках и предупреждениях.  
@@ -451,7 +451,7 @@ ms.locfileid: "78190728"
 1. Используйте запрос **GET** и указанный ниже URL-адрес, заменив в нем YOUR-SERVICE-NAME фактическим именем службы, чтобы найти вхождения термина или фразы. Этот запрос возвращает поле `content` и количество соответствующих документов.
 
    ```http
-   https://[YOUR-SERVICE-NAME].search.windows.net/indexes/cog-search-demo-idx?search=*&$count=true&$select=content?api-version=2019-05-06
+   https://[YOUR-SERVICE-NAME].search.windows.net/indexes/cog-search-demo-idx?search=*&$count=true&$select=content?api-version=2020-06-30
    ```
    
    Результаты этого запроса возвращают содержимое документа. Такой же результат вы получили бы при использовании индексатора больших двоичных объектов без конвейера Когнитивного поиска. Это поле доступно для поиска, но не подходит для использования аспектов, фильтров или автозаполнения.
@@ -461,7 +461,7 @@ ms.locfileid: "78190728"
 1. Второй запрос вернет несколько новых полей, созданных конвейером (persons, organizations, locations, languageCode). Для краткости мы не используем поле keyPhrases, но если вам нужны эти значения, добавьте его.
 
    ```http
-   https://mydemo.search.windows.net/indexes/cog-search-demo-idx/docs?search=*&$count=true&$select=metadata_storage_name,persons,organizations,locations,languageCode&api-version=2019-05-06
+   https://mydemo.search.windows.net/indexes/cog-search-demo-idx/docs?search=*&$count=true&$select=metadata_storage_name,persons,organizations,locations,languageCode&api-version=2020-06-30
    ```
    Поля в инструкции $select содержат новые сведения, созданные на основе функций обработки естественного языка Cognitive Services. Вполне ожидаемо, что в этих результатах есть некоторые неточности и различия между документами. Но в большинстве случаев аналитические модели возвращают точные результаты.
 
@@ -472,7 +472,7 @@ ms.locfileid: "78190728"
 1. Чтобы изучить возможности этих полей, добавьте параметр аспекта, который будет возвращать агрегированные соответствующие документы по расположению.
 
    ```http
-   https://[YOUR-SERVICE-NAME].search.windows.net/indexes/cog-search-demo-idx/docs?search=*&facet=locations&api-version=2019-05-06
+   https://[YOUR-SERVICE-NAME].search.windows.net/indexes/cog-search-demo-idx/docs?search=*&facet=locations&api-version=2020-06-30
    ``` 
 
    В нашем примере для каждого расположения получено два или три совпадения.
@@ -483,7 +483,7 @@ ms.locfileid: "78190728"
 1. В нашем последнем примере вы примените фильтр к коллекции организаций, которые вернет два совпадения по данным NASDAQ с учетом критериев фильтрации.
 
    ```http
-   cog-search-demo-idx/docs?search=*&$filter=organizations/any(organizations: organizations eq 'NASDAQ')&$select=metadata_storage_name,organizations&$count=true&api-version=2019-05-06
+   cog-search-demo-idx/docs?search=*&$filter=organizations/any(organizations: organizations eq 'NASDAQ')&$select=metadata_storage_name,organizations&$count=true&api-version=2020-06-30
    ```
 
 Эти запросы иллюстрируют несколько способов работы с синтаксисом и фильтрами по новым полям, созданными с помощью когнитивного поиска. Дополнительные примеры запросов см. в разделах с примерами [для REST API поиска документов](https://docs.microsoft.com/rest/api/searchservice/search-documents#bkmk_examples), [запросов с простым синтаксисом](search-query-simple-examples.md) и [запросов full Lucene](search-query-lucene-examples.md).
@@ -501,7 +501,7 @@ ms.locfileid: "78190728"
 Или используйте **DELETE** и укажите URL-адреса для каждого объекта. Следующая команда удаляет индексатор.
 
 ```http
-DELETE https://[YOUR-SERVICE-NAME].search.windows.net/indexers/cog-search-demo-idxr?api-version=2019-05-06
+DELETE https://[YOUR-SERVICE-NAME].search.windows.net/indexers/cog-search-demo-idxr?api-version=2020-06-30
 ```
 
 При успешном удалении возвращается код состояния 204.

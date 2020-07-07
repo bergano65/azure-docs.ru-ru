@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 9/27/2019
-ms.openlocfilehash: fd006e836432ce775be8cbbefea6d9219e8b13b3
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: 0330e72ad74726f97bfdfd78ef8d5f9b24a5d172
+ms.sourcegitcommit: 374e47efb65f0ae510ad6c24a82e8abb5b57029e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85253466"
+ms.lasthandoff: 06/28/2020
+ms.locfileid: "85513308"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Ветвления и создание цепочки действий в конвейере фабрики данных
 
@@ -54,7 +54,7 @@ ms.locfileid: "85253466"
 
 Список регионов Azure, в которых в настоящее время доступна Фабрика Данных, см. в статье [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных и вычислительные мощности могут находиться в других регионах. Это могут быть как хранилища Azure, так базы данных SQL Azure. В качестве средства вычислений может быть HDInsight, используемый Фабрикой Данных.
 
-Создайте приложение, как описано в разделе [Создание приложения Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application). Назначьте приложению роль **Участник**, следуя указаниям в той же статье. Вам потребуются несколько значений для последующих частей этого руководства, такие как **Application (client) ID** (Идентификатор приложения (клиента)) и **Directory (tenant) ID** (Идентификатор каталога (клиента)).
+Создайте приложение, как описано в разделе [Создание приложения Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal). Назначьте приложению роль **Участник**, следуя указаниям в той же статье. Вам потребуются несколько значений для последующих частей этого руководства, такие как **Application (client) ID** (Идентификатор приложения (клиента)) и **Directory (tenant) ID** (Идентификатор каталога (клиента)).
 
 ### <a name="create-a-blob-table"></a>Создание таблицы больших двоичных объектов
 

@@ -7,13 +7,13 @@ ms.reviewer: estfan, jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 04/29/2020
 ms.openlocfilehash: 41e511bce3599dd341ccf8192612e3f08111245a
-ms.sourcegitcommit: acc558d79d665c8d6a5f9e1689211da623ded90a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82598425"
 ---
-# <a name="manage-your-integration-service-environment-ise-in-azure-logic-apps"></a>Управление средой службы интеграции (ISE) в Azure Logic Apps
+# <a name="manage-your-integration-service-environment-ise-in-azure-logic-apps"></a>Управление средой службы интеграции в Azure Logic Apps
 
 В этой статье показано, как выполнять задачи управления для [среды службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md), например:
 
@@ -166,7 +166,7 @@ ms.locfileid: "82598425"
 
 ## <a name="restart-ise"></a>Перезапуск интегрированной среды сценариев
 
-При изменении параметров DNS-сервера или DNS-сервера необходимо перезапустить интегрированную среду сценариев, чтобы интегрированная среда сценариев могла получить эти изменения. Перезапуск интегрированной среды сценариев Premium не приводит к простою из-за избыточности и компонентов, которые перезапускаются во время повторного запуска. Однако в ИНТЕГРИРОВАНной среде разработки для разработчиков используется простой, поскольку избыточность не существует. Дополнительные сведения см. в статье [номера SKU интегрированной среды сценариев](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level).
+При изменении DNS-сервера или его параметров необходимо перезапустить среду службы интеграции, чтобы среда службы интеграции могла получить эти изменения. Перезапуск интегрированной среды сценариев Premium не приводит к простою из-за избыточности и компонентов, которые перезапускаются во время повторного запуска. Однако в ИНТЕГРИРОВАНной среде разработки для разработчиков используется простой, поскольку избыточность не существует. Дополнительные сведения см. в статье [номера SKU интегрированной среды сценариев](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level).
 
 1. В [портал Azure](https://portal.azure.com)перейдите к интегрированной среде сценариев.
 

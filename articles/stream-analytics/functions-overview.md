@@ -7,15 +7,15 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/07/2020
 ms.openlocfilehash: d167c603ada885a1a4917c66bab110e4ce38cab4
-ms.sourcegitcommit: acc558d79d665c8d6a5f9e1689211da623ded90a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82598374"
 ---
 # <a name="user-defined-functions-in-azure-stream-analytics"></a>Определяемые пользователем функции в Azure Stream Analytics
 
-Язык запросов, похожий на SQL, в Azure Stream Analytics упрощает реализацию логики аналитики в реальном времени для потоковой передачи данных. Stream Analytics предоставляет дополнительную гибкость через пользовательские функции, которые вызываются в запросе. Следующий пример кода представляет собой определяемую пользователем `sampleFunction` функцию, которая принимает один параметр, каждую входную запись, полученную заданием, и результат записывается в выходные данные в виде `sampleResult`.
+Язык запросов, похожий на SQL, в Azure Stream Analytics упрощает реализацию логики аналитики в реальном времени для потоковой передачи данных. Stream Analytics предоставляет дополнительную гибкость через пользовательские функции, которые вызываются в запросе. Следующий пример кода представляет собой определяемую пользователем функцию, `sampleFunction` которая принимает один параметр, каждую входную запись, полученную заданием, и результат записывается в выходные данные в виде `sampleResult` .
 
 ```sql
 SELECT 
@@ -41,7 +41,7 @@ Azure Stream Analytics поддерживает следующие четыре 
 
 Определяемые пользователем функции не имеют состояния, а возвращаемое значение может быть только скалярным значением. Вы не можете обращаться к внешним конечным точкам RESTFUL из этих определяемых пользователем функций, так как это, скорее всего, повлияет на производительность вашего задания. 
 
-Azure Stream Analytics не сохраняет запись о всех вызовах функций и возвращаемых результатах. Для обеспечения повторяемости. Например, повторное выполнение задания из более старой метки времени приводит к тому же результату. не используйте такие функции, как `Date.GetData()` или `Math.random()`, так как эти функции не возвращают одинаковый результат для каждого вызова.  
+Azure Stream Analytics не сохраняет запись о всех вызовах функций и возвращаемых результатах. Для обеспечения повторяемости. Например, повторное выполнение задания из более старой метки времени приводит к тому же результату. не используйте такие функции, как `Date.GetData()` или `Math.random()` , так как эти функции не возвращают одинаковый результат для каждого вызова.  
 
 ## <a name="resource-logs"></a>Журналы ресурсов
 
@@ -54,6 +54,6 @@ Azure Stream Analytics не сохраняет запись о всех вызо
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Определяемые пользователем функции JavaScript в Azure Stream Analytics](stream-analytics-javascript-user-defined-functions.md)
-* [Azure Stream Analytics определяемые пользователем статистические функции JavaScript](stream-analytics-javascript-user-defined-aggregates.md)
+* [Пользовательские статистические выражения JavaScript в Azure Stream Analytics](stream-analytics-javascript-user-defined-aggregates.md)
 * [Разработка .NET Standard определяемых пользователем функций для Azure Stream Analyticsных заданий](stream-analytics-edge-csharp-udf-methods.md)
-* [Интеграция Azure Stream Analytics с Машинное обучение Azure](machine-learning-udf.md)
+* [Интеграция Azure Stream Analytics со службой "Машинное обучение Azure"](machine-learning-udf.md)
