@@ -9,12 +9,12 @@ author: VasiyaKrishnan
 ms.author: vakrishn
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 02850b8780e70d402cff2b8fd301c2f79cd6c55e
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.openlocfilehash: f38a973611cb1ab18eead4ec51e6be91ada2cc40
+ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84235067"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85318647"
 ---
 # <a name="deploy-ml-model-on-azure-sql-edge-using-onnx"></a>Развертывание модели ML в SQL Azure для пограничных вычислений с помощью ONNX 
 
@@ -32,7 +32,7 @@ ms.locfileid: "84235067"
    |_Поле_|_Значение_|
    |-------|-------|
    |Тип соединений| Microsoft SQL Server|
-   |Обслуживание|Общедоступный IP-адрес, упомянутый в виртуальной машине, созданной для этой демо-версии|
+   |Сервер|Общедоступный IP-адрес, упомянутый в виртуальной машине, созданной для этой демо-версии|
    |Имя пользователя|sa|
    |Пароль|Надежный пароль, который использовался при создании экземпляра SQL Azure для пограничных вычислений.|
    |База данных|По умолчанию|

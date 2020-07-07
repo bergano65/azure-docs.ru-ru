@@ -60,6 +60,8 @@
           href: luis-nodejs-tutorial-bf-v4.md
 - name: Основные понятия
   items:
+    - name: Искусственный интеллект
+      href: artificial-intelligence.md
     - name: Жизненный цикл разработки
       href: luis-concept-app-iteration.md
     - name: Планирование приложения

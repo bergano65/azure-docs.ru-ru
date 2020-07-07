@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/08/2019
 ms.author: jeedes
-ms.openlocfilehash: 7ed2f4fa72617aa20ef085d64759119db650b288
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5097292ba722567e16c4573d46a70edb326c3ab5
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67094168"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85800740"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-powerschool-performance-matters"></a>Руководство по Интеграция Azure Active Directory с Powerschool Performance Matters
 
@@ -107,11 +107,10 @@ ms.locfileid: "67094168"
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
     
-    | |
-    |-|
-    | `https://ola.performancematters.com/ola/?clientcode=<Client Code>`|
-    | `https://unify.performancematters.com/?idp=<IDP>`|
-    | |
+    ```https
+        https://ola.performancematters.com/ola/?clientcode=<Client Code>
+        https://unify.performancematters.com/?idp=<IDP>
+    ```
 
     > [!NOTE]
     > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Обратитесь к [группе поддержки клиентов Powerschool Performance Matters](mailto:pmsupport@powerschoo.com) для получения этого значения. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

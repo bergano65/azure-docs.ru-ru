@@ -10,12 +10,12 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/19/2018
-ms.openlocfilehash: 0ecce4db01217bc182687818af365dff334e7d10
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: 3cd7d880efaa5c69301c25c69d55f4b21dd97242
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84705905"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85321844"
 ---
 # <a name="use-the-sample-datasets-in-azure-machine-learning-studio-classic"></a>Используйте примеры наборов данных в Студии машинного обучения Azure (классической)
 
@@ -303,7 +303,7 @@ Yeh, I-Cheng, Yang, King-Jang и Ting, Tao-Ming, Knowledge discovery on RFM mode
 <p></p>
 <b>Связанное исследование</b>. Sterling D. и Buntine W. (нет данных). UCI репозитория машинного обучения <a href="https://archive.ics.uci.edu/ml">https://archive.ics.uci.edu/ml</a>. Ирвин, Калифорния: Калифорнийский Университет, школа информационных и компьютерных наук
 <p></p>
-Руководство по сортам стали см. здесь: <a href="https://otk-sitecore-prod-v2-cdn.azureedge.net/-/media/from-sharepoint/documents/product/outokumpu-steel-grades-properties-global-standards.pdf">https://otk-sitecore-prod-v2-cdn.azureedge.net/-/media/from-sharepoint/documents/product/outokumpu-steel-grades-properties-global-standards.pdf</a>
+Руководство по сортам стали см. здесь: <a href="https://www.steamforum.com/pictures/Outokumpu-steel-grades-properties-global-standards.pdf">https://www.steamforum.com/pictures/Outokumpu-steel-grades-properties-global-standards.pdf</a>
   </td>
 </tr>
 

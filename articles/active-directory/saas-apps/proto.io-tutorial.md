@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 06/12/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b499c8311e3b8acb1a239acc196ae158692b8716
-ms.sourcegitcommit: bc943dc048d9ab98caf4706b022eb5c6421ec459
+ms.openlocfilehash: db770e513599aa5da43ffa25463994d887536494
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2020
-ms.locfileid: "84765306"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85800158"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-protoio"></a>Руководство по интеграции единого входа Azure Active Directory с Proto.io
 
@@ -101,11 +101,11 @@ ms.locfileid: "84765306"
 
 1. Кроме того, приложение Proto.io ожидает несколько дополнительных атрибутов в ответе SAML. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
     
-    | Имя |  |  Исходный атрибут|
-    | ---------------| --------------- | --------- |
-    | email | | user.mail |
-    | fname | | user.givenname |
-    | lname | | user.surname |
+    | Имя | Исходный атрибут|
+    | --------------- | --------- |
+    | email | user.mail |
+    | fname | user.givenname |
+    | lname | user.surname |
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 

@@ -8,16 +8,16 @@ ms.subservice: cosmosdb-table
 ms.topic: tutorial
 ms.date: 06/05/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 14a6d2b448bb943356ae1738c3d53d9c6fee1a98
-ms.sourcegitcommit: f57fa5f3ce40647eda93f8be4b0ab0726d479bca
+ms.openlocfilehash: bab0487b09d7088e75ce762c9e4f0338cea507eb
+ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2020
-ms.locfileid: "84484672"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85391899"
 ---
 # <a name="tutorial-query-azure-cosmos-db-by-using-the-table-api"></a>Руководство по Выполнение запросов в Azure Cosmos DB с использованием API таблиц
 
-[API таблицы](table-introduction.md) в службе Azure Cosmos DB поддерживает OData и запросы [LINQ](https://docs.microsoft.com/rest/api/storageservices/fileservices/writing-linq-queries-against-the-table-service) к данным "ключ — значение" (таблицы).  
+[API таблицы](table-introduction.md) в службе Azure Cosmos DB поддерживает OData и запросы [LINQ](/rest/api/storageservices/fileservices/writing-linq-queries-against-the-table-service) к данным "ключ — значение" (таблицы).  
 
 В этой статье рассматриваются следующие задачи:
 
@@ -32,7 +32,7 @@ ms.locfileid: "84484672"
 | Смит | Ben | Ben@contoso.com| 425-555-0102 |
 | Смит | Jeff | Jeff@contoso.com| 425-555-0104 |
 
-Прочитайте раздел [База данных Azure Cosmos DB. Запрос табличных данных с помощью API таблицы](https://docs.microsoft.com/rest/api/storageservices/fileservices/querying-tables-and-entities), чтобы получить подробные сведения о том, как отправить запрос с помощью API таблиц.
+Прочитайте раздел [База данных Azure Cosmos DB. Запрос табличных данных с помощью API таблицы](/rest/api/storageservices/fileservices/querying-tables-and-entities), чтобы получить подробные сведения о том, как отправить запрос с помощью API таблиц.
 
 Дополнительные сведения о расширенных возможностях, предлагаемых базой данных Azure Cosmos DB, см. в статьях [Знакомство со службой Azure Cosmos DB. API таблицы](table-introduction.md) и [Разработка с помощью API таблицы базы данных Azure Cosmos DB на языке .NET](tutorial-develop-table-dotnet.md).
 
@@ -65,7 +65,7 @@ https://<mytableendpoint>/People(PartitionKey='Harp',RowKey='Walter')
 * Используйте логические операторы, определенные спецификацией протокола OData, чтобы сравнить свойство со значением. Обратите внимание, что нельзя сравнивать свойство с динамическим значением. Одна часть выражения должна быть константой.
 * Имя свойства, оператор и значение константы должны быть разделены пробелами, закодированными в формате URL-адреса. Пробелы кодируются в формате URL-адреса как `%20`.
 * Во всех частях строки фильтра учитывается регистр.
-* Для получения допустимых результатов фильтра значения константы и свойства должны иметь одинаковый тип данных. Дополнительные сведения о поддерживаемых типах свойств см. в статье [Общие сведения о модели данных службы таблиц](https://docs.microsoft.com/rest/api/storageservices/understanding-the-table-service-data-model).
+* Для получения допустимых результатов фильтра значения константы и свойства должны иметь одинаковый тип данных. Дополнительные сведения о поддерживаемых типах свойств см. в статье [Общие сведения о модели данных службы таблиц](/rest/api/storageservices/understanding-the-table-service-data-model).
 
 Вот пример запроса, который показывает, как выполнить фильтрацию по свойствам PartitionKey и свойству Email с помощью `$filter` OData.
 
@@ -75,7 +75,7 @@ https://<mytableendpoint>/People(PartitionKey='Harp',RowKey='Walter')
 https://<mytableapi-endpoint>/People()?$filter=PartitionKey%20eq%20'Smith'%20and%20Email%20eq%20'Ben@contoso.com'
 ```
 
-Дополнительные сведения о том, как строить выражения фильтра для разных типов данных, см. в статье [Запрос таблиц и сущностей](https://docs.microsoft.com/rest/api/storageservices/querying-tables-and-entities).
+Дополнительные сведения о том, как строить выражения фильтра для разных типов данных, см. в статье [Запрос таблиц и сущностей](/rest/api/storageservices/querying-tables-and-entities).
 
 **Результаты**
 

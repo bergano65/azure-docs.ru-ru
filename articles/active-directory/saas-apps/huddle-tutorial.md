@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1faf1c1fcdefb0c93d36c195f0cf44626a555f44
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 46a421ca9ab8efc69775966504fa393be9efba04
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73158985"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85799927"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-huddle"></a>Руководство. Интеграция Azure Active Directory с Huddle
 
@@ -111,20 +111,18 @@ ms.locfileid: "73158985"
 
     а. В текстовом поле **Идентификатор** введите URL-адрес:
 
-    | | |
-    |--|--|
-    | `https://login.huddle.net`|
-    | `https://login.huddle.com`|
-    | |
+    ```http
+    https://login.huddle.net
+    https://login.huddle.com
+    ```
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес:
 
-    | | |
-    |--|--|
-    | `https://login.huddle.net/saml/browser-sso`|
-    | `https://login.huddle.com/saml/browser-sso`|
-    | `https://login.huddle.com/saml/idp-initiated-sso`|
-    | |
+    ```http
+    https://login.huddle.net/saml/browser-sso
+    https://login.huddle.com/saml/browser-sso
+    https://login.huddle.com/saml/idp-initiated-sso
+    ```
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -132,128 +130,127 @@ ms.locfileid: "73158985"
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
 
-    | | |
-    |--|--|
-    | `https://<customsubdomain>.huddle.com`|
-    | `https://us.huddle.com`|
-    | |
+    ```http
+    https://<customsubdomain>.huddle.com
+    https://us.huddle.com
+        ```
 
     > [!NOTE]
-    > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Для получения данного значения обратитесь в [службу поддержки клиентов Huddle](https://huddle.zendesk.com).
+    > The Sign-on URL value is not real. Update this value with the actual Sign-On URL. Contact [Huddle Client support team](https://huddle.zendesk.com) to get this value.
 
-6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
+6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
-    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
+    ![The Certificate download link](common/certificatebase64.png)
 
-7. Требуемый URL-адрес можно скопировать из раздела **Настройка Huddle**.
+7. On the **Set up Huddle** section, copy the appropriate URL(s) as per your requirement.
 
-    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+    ![Copy configuration URLs](common/copy-configuration-urls.png)
 
-    а. URL-адрес входа.
+    a. Login URL
 
-    b. Идентификатор Azure AD.
+    b. Azure Ad Identifier
 
-    c. URL-адрес выхода.
+    c. Logout URL
 
-### <a name="configure-huddle-single-sign-on"></a>Настройка единого входа в Huddle
+### Configure Huddle Single Sign-On
 
-Чтобы настроить единый вход на стороне **Huddle**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Huddle](https://huddle.zendesk.com/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+To configure single sign-on on **Huddle** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from Azure portal to [Huddle support team](https://huddle.zendesk.com/). They set this setting to have the SAML SSO connection set properly on both sides.
 
 > [!NOTE]
-> Единый вход должна включить служба поддержки Huddle. Сразу же после завершения настройки вы получите уведомление.
+> Single sign-on needs to be enabled by the Huddle support team. You get a notification when the configuration has been completed.
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+### Create an Azure AD test user
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+The objective of this section is to create a test user in the Azure portal called Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. In the Azure portal, in the left pane, select **Azure Active Directory**, select **Users**, and then select **All users**.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
+    ![The "Users and groups" and "All users" links](common/users.png)
 
-2. В верхней части экрана выберите **Новый пользователь**.
+2. Select **New user** at the top of the screen.
 
-    ![Кнопка "Новый пользователь"](common/new-user.png)
+    ![New user Button](common/new-user.png)
 
-3. В разделе свойств пользователя сделайте следующее:
+3. In the User properties, perform the following steps.
 
-    ![Диалоговое окно "Пользователь"](common/user-properties.png)
+    ![The User dialog box](common/user-properties.png)
 
-    а. В поле **Имя** введите **BrittaSimon**.
+    a. In the **Name** field enter **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
-    Например BrittaSimon@contoso.com.
+    b. In the **User name** field type **brittasimon\@yourcompanydomain.extension**  
+    For example, BrittaSimon@contoso.com
 
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Select **Show password** check box, and then write down the value that's displayed in the Password box.
 
-    d. Нажмите кнопку **Создать**.
+    d. Click **Create**.
 
-### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+### Assign the Azure AD test user
 
-В этом разделе описано, как предоставить пользователю Britta Simon доступ к Huddle, чтобы он мог использовать единый вход Azure.
+In this section, you enable Britta Simon to use Azure single sign-on by granting access to Huddle.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Huddle**.
+1. In the Azure portal, select **Enterprise Applications**, select **All applications**, then select **Huddle**.
 
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+    ![Enterprise applications blade](common/enterprise-applications.png)
 
-2. В списке приложений выберите **Huddle**.
+2. In the applications list, select **Huddle**.
 
-    ![Ссылка на Huddle в списке приложений](common/all-applications.png)
+    ![The Huddle link in the Applications list](common/all-applications.png)
 
-3. В меню слева выберите **Пользователи и группы**.
+3. In the menu on the left, select **Users and groups**.
 
-    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+    ![The "Users and groups" link](common/users-groups-blade.png)
 
-4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Click the **Add user** button, then select **Users and groups** in the **Add Assignment** dialog.
 
-    ![Область "Добавление назначения"](common/add-assign-user.png)
+    ![The Add Assignment pane](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+5. In the **Users and groups** dialog select **Britta Simon** in the Users list, then click the **Select** button at the bottom of the screen.
 
-6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+6. If you are expecting any role value in the SAML assertion then in the **Select Role** dialog select the appropriate role for the user from the list, then click the **Select** button at the bottom of the screen.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+7. In the **Add Assignment** dialog click the **Assign** button.
 
-### <a name="create-huddle-test-user"></a>Создание тестового пользователя в Huddle
+### Create Huddle test user
 
-Чтобы пользователи Azure AD могли выполнить вход в Huddle, они должны быть подготовлены для Huddle. В случае с Huddle подготовка выполняется вручную.
+To enable Azure AD users to log in to Huddle, they must be provisioned into Huddle. In the case of Huddle, provisioning is a manual task.
 
-**Чтобы настроить подготовку учетных записей пользователей, выполните следующие действия.**
+**To configure user provisioning, perform the following steps:**
 
-1. Выполните вход на веб-сайт компании **Huddle** в качестве администратора.
+1. Log in to your **Huddle** company site as administrator.
 
-2. Нажмите **Рабочая область**.
+2. Click **Workspace**.
 
-3. Щелкните **People \> Invite People** (Пользователи > Пригласить пользователей).
+3. Click **People \> Invite People**.
 
-    ![Пользователи](./media/huddle-tutorial/ic787838.png "Люди")
+    ![People](./media/huddle-tutorial/ic787838.png "People")
 
-4. В разделе **Создание нового приглашения** выполните следующие действия.
+4. In the **Create a new invitation** section, perform the following steps:
   
-    ![Новое приглашение](./media/huddle-tutorial/ic787839.png "Новое приглашение")
+    ![New Invitation](./media/huddle-tutorial/ic787839.png "New Invitation")
   
-    а. В списке **Choose a team to invite people to join** (Выберите группу, в которую следует пригласить пользователей) выберите **группу**.
+    a. In the **Choose a team to invite people to join** list, select **team**.
 
-    b. Введите **адрес электронной почты** действительной учетной записи Azure AD, которую вы хотите подготовить, в текстовом поле **Enter email address for people you'd like to invite** (Введите адреса электронной почты пользователей, которых вы хотите пригласить).
+    b. Type the **Email Address** of a valid Azure AD account you want to provision in to **Enter email address for people you'd like to invite** textbox.
 
-    c. Нажмите кнопку **Пригласить**.
+    c. Click **Invite**.
 
     > [!NOTE]
-    > Владелец учетной записи Azure AD получит по электронной почте сообщение со ссылкой для активации учетной записи.
+    > The Azure AD account holder will receive an email including a link to confirm the account before it becomes active.
 
 > [!NOTE]
-> Вы можете использовать любые другие средства создания учетной записи пользователя Huddle или API, предоставляемые Huddle, для подготовки учетных записей пользователя Azure AD.
+> You can use any other Huddle user account creation tools or APIs provided by Huddle to provision Azure AD user accounts.
 
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### Test single sign-on
 
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+In this section, you test your Azure AD single sign-on configuration using the Access Panel.
 
-Щелкнув плитку Huddle на Панели доступа, вы автоматически войдете в приложение Huddle, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+When you click the Huddle tile in the Access Panel, you should be automatically signed in to the Huddle for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## Additional Resources
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [What is application access and single sign-on with Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [What is Conditional Access in Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

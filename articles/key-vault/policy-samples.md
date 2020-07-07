@@ -1,18 +1,18 @@
 ---
 title: Определения встроенных политик для Key Vault
 description: Здесь приведены встроенные определения политик в Политике Azure для Key Vault. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 06/10/2020
+ms.date: 06/23/2020
 ms.topic: sample
 author: msmbaldwin
 ms.author: mbaldwin
 ms.service: key-vault
 ms.custom: subject-policy-samples
-ms.openlocfilehash: 1ee441651e230132b2602f948ba49c5d81b8d402
-ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
+ms.openlocfilehash: 89b1523a9724901c238cdf59e01ad52bff6b021d
+ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84885214"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85317851"
 ---
 # <a name="azure-policy-built-in-definitions-for-key-vault"></a>Встроенные определения в Политике Azure для Key Vault
 

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/26/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0141b8e3e0953a1b436b9e3b1da72249dae19eb1
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7a791fb2e40e46c1081dbb50a85af780d45f528e
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "70163380"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85799536"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-domo"></a>Руководство по интеграции единого входа Azure Active Directory с Domo
 
@@ -87,20 +87,19 @@ ms.locfileid: "70163380"
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
 
-    | |
-    |--|
-    | `https://<companyname>.domo.com` |
-    | `https://<companyname>.beta.domo.com` |
-    | `https://<companyname>.demo.domo.com` |
-    | `https://<companyname>.dev.domo.com` |
-    | `https://<companyname>.fastage1.domo.com` |
-    | `https://<companyname>.frdev.domo.com` |
-    | `https://<companyname>.gastage.domo.com` |
-    | `https://<companyname>.load.domo.com` |
-    | `https://<companyname>.local.domo.com` |
-    | `https://<companyname>.qa.domo.com` |
-    | `https://<companyname>.stage.domo.com` |
-    | | |
+    ```http
+    https://<companyname>.domo.com
+    https://<companyname>.beta.domo.com
+    https://<companyname>.demo.domo.com
+    https://<companyname>.dev.domo.com
+    https://<companyname>.fastage1.domo.com
+    https://<companyname>.frdev.domo.com
+    https://<companyname>.gastage.domo.com
+    https://<companyname>.load.domo.com
+    https://<companyname>.local.domo.com
+    https://<companyname>.qa.domo.com
+    https://<companyname>.stage.domo.com
+    ```
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Domo](mailto:support@domo.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
