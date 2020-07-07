@@ -16,7 +16,7 @@ metadata:
   ms.date: 05/06/2020
   ms.openlocfilehash: f3016c224e1c4177766e611c3b0f15ab464936e5
   ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
-  ms.translationtype: HT
+  ms.translationtype: 
   ms.contentlocale: ru-RU
   ms.lasthandoff: 06/12/2020
   ms.locfileid: "84737229"
@@ -308,7 +308,7 @@ conceptualContent:
       text: NZ CC (Новая Зеландия)
     - url: https://docs.microsoft.com/microsoft-365/compliance/offering-pasf-uk
       itemType: concept
-      text: PASF (Великобритания)
+      text: PASF (Соединенное Королевство)
     - url: https://docs.microsoft.com/microsoft-365/compliance/offering-pdpa-argentina
       itemType: concept
       text: PDPA (Аргентина)
