@@ -6,10 +6,10 @@ services: container-service
 ms.topic: conceptual
 ms.date: 04/09/2019
 ms.openlocfilehash: e3edbcf9603657ce0c747b01b3c59c2923bc0181
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82208029"
 ---
 # <a name="quotas-virtual-machine-size-restrictions-and-region-availability-in-azure-kubernetes-service-aks"></a>Квоты, ограничения размера виртуальной машины и доступность региона в службе Kubernetes Azure (AKS)
@@ -47,7 +47,7 @@ ms.locfileid: "82208029"
 
 Последнюю версию списка, в котором можно развернуть и запустить кластеры, см. в статье о [доступности AKS Region][region-availability].
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете повысить лимит нескольких ограничений и квот. Если ресурс поддерживает увеличение, запросите увеличение через запрос на [поддержку Azure][azure-support] (для **типа проблемы**выберите **Квота**).
 

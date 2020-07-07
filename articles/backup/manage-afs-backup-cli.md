@@ -4,10 +4,10 @@ description: Узнайте, как использовать Azure CLI для у
 ms.topic: conceptual
 ms.date: 01/15/2020
 ms.openlocfilehash: 06e1f29874085c3943a5207f36eff313dc670e88
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82184118"
 ---
 # <a name="manage-azure-file-share-backups-with-the-azure-cli"></a>Управление резервными копиями файловых ресурсов Azure с помощью Azure CLI
@@ -238,6 +238,6 @@ az backup container unregister --vault-name azurefilesvault --resource-group azu
 az backup container unregister --vault-name azurefilesvault --resource-group azurefiles --container-name afsaccount --backup-management-type azurestorage --out table
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Устранение неполадок резервного копирования файловых ресурсов Azure](troubleshoot-azure-files.md).

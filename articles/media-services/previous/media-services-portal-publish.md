@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: abdb926825abcac4485cb11b71bdc82597391727
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82176827"
 ---
 # <a name="publish-content-in-the-azure-portal"></a>Публикация содержимого на портале Azure  
@@ -70,7 +70,7 @@ ms.locfileid: "82176827"
 
 ### <a name="to-use-the-portal-to-publish-an-asset"></a>Публикация ресурса с помощью портала
 1. Выберите учетную запись служб мультимедиа Azure на [портале Azure](https://portal.azure.com/).
-2. Выберите **Параметры** > **ресурсы**. Выберите ресурс, который требуется опубликовать.
+2. Выберите **Параметры**  >  **ресурсы**. Выберите ресурс, который требуется опубликовать.
 3. Нажмите кнопку **Опубликовать**.
 4. Выберите тип указателя.
 5. Выберите **Добавить**.

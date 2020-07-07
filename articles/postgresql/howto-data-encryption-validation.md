@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 04/28/2020
 ms.openlocfilehash: 4672a92ceba5dc52c717f76a705d0fa508ab41fd
-ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82515473"
 ---
 # <a name="validating-data-encryption-for-azure-database-for-postgresql"></a>Проверка шифрования данных для базы данных Azure для PostgreSQL
@@ -23,7 +23,7 @@ ms.locfileid: "82515473"
 
 1. Если вы хотите убедиться, что ключ клиента используется для шифрования, выполните следующие действия.
 
-    * В портал Azure перейдите к**разделу** **Azure Key Vault** -> ключи.
+    * В портал Azure перейдите к **Azure Key Vault**  ->  **разделу Azure Key Vault ключи** .
     * Выберите ключ, используемый для шифрования сервера.
     * Установите для ключа состояние **Enabled** значение **нет**.
   
@@ -53,6 +53,6 @@ ms.locfileid: "82515473"
 
 [Отчеты аудита](https://servicetrust.microsoft.com) также могут быть проверены на соответствие стандартам защиты данных и нормативным требованиям.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о шифровании данных см. в статье [Шифрование данных единого сервера в базе данных Azure для PostgreSQL с помощью ключа, управляемого клиентом](concepts-data-encryption-postgresql.md).

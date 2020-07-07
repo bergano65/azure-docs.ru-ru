@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
 ms.openlocfilehash: c289892246cfce3ffac3f668577073a2af92511f
-ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82509556"
 ---
 # <a name="use-apache-hive-as-an-extract-transform-and-load-etl-tool"></a>Использование Apache Hive как средства для извлечения, преобразования и загрузки
@@ -87,7 +87,7 @@ Hadoop обычно используется в процессах ETL, кото
 
 Если в процессе извлечения, преобразования и загрузки вам нужно выполнять несколько операций с данными, уделите внимание координации этих действий. Если операции управляются внешней программой, а не рабочим процессом, определите, могут ли некоторые операции выполняться параллельно. И для обнаружения завершения каждого задания. Зачастую проще применить механизм управления рабочим процессом, например Oozie в среде Hadoop, чем самостоятельно распределять последовательность операций внешними скриптами или программами.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [ETL в масштабе](apache-hadoop-etl-at-scale.md)
 * [`Operationalize a data pipeline`](../hdinsight-operationalize-data-pipeline.md)

@@ -9,10 +9,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 04/15/2020
 ms.openlocfilehash: 8a1de4ceb42ac86d8f945ec973eaa52d6ddec736
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82208471"
 ---
 # <a name="download-notebookspreview-data"></a>Скачивание данных записных книжек (Предварительная версия)
@@ -25,9 +25,9 @@ ms.locfileid: "82208471"
     ![Перейдите на вкладку записные книжки.](./media/download-notebooks/notebooks-list.png)
 
 1. Выберите записную книжку, которую требуется скачать. Он будет открыт в Jupyter.
-    ![Выберите записную](./media/download-notebooks/select-notebook.png) книжку скачивание нескольких записных книжек не поддерживается.
+    ![Выберите записную книжку ](./media/download-notebooks/select-notebook.png) скачивание нескольких записных книжек не поддерживается.
 
-1. Перейдите в раздел **файлы** -> **скачать как**и выберите параметр формат.
+1. Перейдите в раздел **файлы**  ->  **скачать как**и выберите параметр формат.
     ![Параметры скачивания записной книжки](./media/download-notebooks/download-options.PNG)
 
 1. После выбора параметра файл записной книжки начнет загружаться. Игнорируйте ошибки 500 или 502, которые отображаются, они не будут влиять на загрузку.

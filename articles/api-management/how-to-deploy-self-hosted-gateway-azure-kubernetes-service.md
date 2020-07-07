@@ -11,17 +11,17 @@ ms.topic: article
 ms.date: 04/26/2020
 ms.author: apimpm
 ms.openlocfilehash: abf7e6d7032e7e5dc35b2f4397a5630d45d762de
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82205122"
 ---
 # <a name="deploy-to-azure-kubernetes-service"></a>Развертывание в Службе Azure Kubernetes
 
 В этой статье описаны действия по развертыванию компонента самостоятельно размещенного шлюза службы управления API Azure в [службе Azure Kubernetes](https://azure.microsoft.com/services/kubernetes-service/). Сведения о развертывании самостоятельно размещенного шлюза в кластере Kubernetes см. в этом[документе](how-to-deploy-self-hosted-gateway-kubernetes.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md)
 - [Создание кластера Azure Kubernetes](../aks/kubernetes-walkthrough-portal.md)
@@ -36,7 +36,7 @@ ms.locfileid: "82205122"
 5. Убедитесь, что в разделе **сценарии развертывания**выбрано **Kubernetes** .
 6. Выберите **<шлюз-name>. yml** ссылка на файл рядом с **развернутой** , чтобы скачать файл.
 7. При необходимости измените сопоставления портов и имени контейнера в файле yml.
-8. В зависимости от сценария может потребоваться изменить [тип службы](https://docs.microsoft.com/azure/aks/concepts-network#services). Значение по умолчанию — `NodePort`.
+8. В зависимости от сценария может потребоваться изменить [тип службы](https://docs.microsoft.com/azure/aks/concepts-network#services). Значение по умолчанию — `NodePort`.
 9. Щелкните значок **копирования** , расположенный в правой части текстового поля **развернуть** , чтобы сохранить `kubectl` команду в буфер обмена.
 10. Вставьте команду в окно терминала (или команду). Обратите внимание, что команда ждет, что загруженный файл окружения будет находиться в текущем каталоге.
 ```console
@@ -60,7 +60,7 @@ contosogateway   NodePort    10.110.230.87   <none>        80:32504/TCP,443:3004
 > [!TIP]
 > Используйте <code>kubectl logs <gateway-pod-name></code> команду для просмотра моментального снимка журнала автономного шлюза.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о самостоятельно размещенном шлюзе см. в статье [Обзор самостоятельного размещения шлюза в службе управления API Azure](self-hosted-gateway-overview.md) .
 * Дополнительные сведения о [службе Kubernetes Azure](https://docs.microsoft.com/azure/aks/intro-kubernetes)

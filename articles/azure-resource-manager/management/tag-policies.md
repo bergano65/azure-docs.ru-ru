@@ -4,10 +4,10 @@ description: Описание политик Azure, которые можно н
 ms.topic: conceptual
 ms.date: 03/20/2020
 ms.openlocfilehash: e3eeb28ea23b18c3492f68d2fac294fc014420c5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82147870"
 ---
 # <a name="assign-policies-for-tag-compliance"></a>Назначение политик для соответствия тегов
@@ -18,7 +18,7 @@ ms.locfileid: "82147870"
 
 [!INCLUDE [Tag policies](../../../includes/policy/samples/bycat/policies-tags.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о маркировке ресурсов тегами см. в статье [Использование тегов для организации ресурсов в Azure](tag-resources.md).
 * Не все типы ресурсов поддерживают теги. Сведения о возможности применения тегов к типу ресурса см. в статье о [поддержке тегов ресурсами Azure](tag-support.md).

@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 11/01/2019
 ms.author: apimpm
 ms.openlocfilehash: c0cabab6f867df918c4ac86d035918c483e12da9
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82203174"
 ---
 # <a name="feature-based-comparison-of-the-azure-api-management-tiers"></a>Сравнение возможностей категорий управления API Azure
@@ -26,7 +26,7 @@ ms.locfileid: "82203174"
 > [!IMPORTANT]
 > Обратите внимание, что уровень разработчика предназначен для непроизводственных вариантов использования и оценок. Он не предлагает соглашение об уровне обслуживания.
 
-| Компонент                                                                                      | Потребление | Разработка | Basic | Standard | Premium |
+| Функция                                                                                      | Потребление | Разработчик | Basic | Standard | Premium |
 | -------------------------------------------------------------------------------------------- | ----------- | --------- | ----- | -------- | ------- |
 | Интеграция Azure AD<sup>1</sup>                                                             | Нет          | Да       | Нет    | Да      | Да     |
 | Поддержка виртуальной сети                                                               | Нет          | Да       | Нет    | Нет       | Да     |
@@ -38,8 +38,8 @@ ms.locfileid: "82203174"
 | Локально [размещенный шлюз](self-hosted-gateway-overview.md)<sup>3</sup>                           | Нет          | Да       | Нет    | Нет       | Да     |
 | [Параметры протокола TLS](api-management-howto-manage-protocols-ciphers.md)                             | Да         | Да       | Да   | Да      | Да     |
 | [Внешний кэш](https://aka.ms/apimbyoc)                                                    | Да         | Да       | Да   | Да      | Да     |
-| [Проверка подлинности сертификата клиента](api-management-howto-mutual-certificates-for-clients.md) | Да         | Да       | Да   | Да      | Да     |
-| [Резервное копирование и восстановление](api-management-howto-disaster-recovery-backup-restore.md)               | Нет          | Да       | Да   | Да      | Да     |
+| [Аутентификация на основе сертификата клиента](api-management-howto-mutual-certificates-for-clients.md) | Да         | Да       | Да   | Да      | Да     |
+| [Архивация и восстановление](api-management-howto-disaster-recovery-backup-restore.md)               | Нет          | Да       | Да   | Да      | Да     |
 | [Управление через Git](api-management-configuration-repository-git.md)                        | Нет          | Да       | Да   | Да      | Да     |
 | API прямого управления                                                                        | Нет          | Да       | Да   | Да      | Да     |
 | Журналы и метрики Azure Monitor                                                               | Нет          | Да       | Да   | Да      | Да     |

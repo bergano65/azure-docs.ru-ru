@@ -4,10 +4,10 @@ description: Узнайте как создавать приложение Java 
 ms.topic: conceptual
 ms.date: 06/18/2018
 ms.openlocfilehash: 4d09666bad7b4e03b8598191d99a9db717c277d4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82193570"
 ---
 # <a name="create-your-first-java-service-fabric-reliable-actors-application-on-linux"></a>Создание первого приложения Java Reliable Actors для Linux в Service Fabric
@@ -293,7 +293,7 @@ public static void main(String[] args) throws Exception {
   ```
 
 ### <a name="others"></a>Прочее
-#### <a name="transport"></a>Транспортировка
+#### <a name="transport"></a>Транспорт
 
 Поддержка транспортного уровня для приложения Java в Service Fabric. Вам не нужно явно добавлять эту зависимость в приложения Reliable Actors или Reliable Services, если ваша программа не находится на транспортном уровне.
 

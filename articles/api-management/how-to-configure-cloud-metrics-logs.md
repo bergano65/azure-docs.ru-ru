@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 04/30/2020
 ms.author: apimpm
 ms.openlocfilehash: d0fbdcb877e91a703306f15fdc7507fd19d534f4
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82205135"
 ---
 # <a name="configure-cloud-metrics-and-logs-for-azure-api-management-self-hosted-gateway"></a>Настройка метрик и журналов облака для самостоятельно размещенного шлюза управления API Azure
@@ -32,7 +32,7 @@ ms.locfileid: "82205135"
 
 | Поле  | По умолчанию | Описание |
 | ------------- | ------------- | ------------- |
-| данные телеметрии. Cloud  | `true` | Включает ведение журнала с помощью Azure Monitor. Значение может быть `true`равно `false`,. |
+| данные телеметрии. Cloud  | `true` | Включает ведение журнала с помощью Azure Monitor. Значение может быть равно `true` , `false` . |
 
 
 Ниже приведен пример конфигурации.
@@ -62,7 +62,7 @@ ms.locfileid: "82205135"
 Если шлюз развернут в [службе Azure Kubernetes](https://azure.microsoft.com/services/kubernetes-service/), можно включить [Azure Monitor для контейнеров](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview) , чтобы получать журналы из контейнеров и просматривать их в log Analytics. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о самостоятельно размещенном шлюзе см. в статье [Обзор самостоятельного размещения шлюза в службе управления API Azure](self-hosted-gateway-overview.md) .
 * Сведения о [настройке и сохранении журналов в локальной](how-to-configure-local-metrics-logs.md) среде

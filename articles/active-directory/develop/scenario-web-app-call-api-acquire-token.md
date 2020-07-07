@@ -12,10 +12,10 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 40e788099a159e1f60c0af02deccd7e3bef82744
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82181738"
 ---
 # <a name="a-web-app-that-calls-web-apis-acquire-a-token-for-the-app"></a>Веб-приложение, вызывающее веб-API: получение маркера для приложения
@@ -45,9 +45,9 @@ public class HomeController : Controller
 }
 ```
 
-Эта `ITokenAcquisition` служба внедряется функцией ASP.NET с помощью внедрения зависимостей.
+Эта `ITokenAcquisition` Служба внедряется функцией ASP.NET с помощью внедрения зависимостей.
 
-Ниже приведен упрощенный код для действия `HomeController`, которое получает маркер для вызова Microsoft Graph:
+Ниже приведен упрощенный код для действия `HomeController` , которое получает маркер для вызова Microsoft Graph:
 
 ```csharp
 public async Task<IActionResult> Profile()
@@ -76,15 +76,15 @@ public async Task<IActionResult> Profile()
 
 Код для ASP.NET похож на код, показанный для ASP.NET Core:
 
-- Действие контроллера, защищенное атрибутом [авторизовать], извлекает идентификатор клиента и идентификатор пользователя для `ClaimsPrincipal` члена контроллера. (ASP.NET использует `HttpContext.User`.)
-- После этого он создает объект MSAL.NET `IConfidentialClientApplication` .
+- Действие контроллера, защищенное атрибутом [авторизовать], извлекает идентификатор клиента и идентификатор пользователя для `ClaimsPrincipal` члена контроллера. (ASP.NET использует `HttpContext.User` .)
+- После этого он создает `IConfidentialClientApplication` объект MSAL.NET.
 - Наконец, он вызывает `AcquireTokenSilent` метод конфиденциального клиентского приложения.
 
 # <a name="java"></a>[Java](#tab/java)
 
 В примере Java код, вызывающий API, находится в методе Жетусерсфромграф в [ауспажеконтроллер. Java # L62](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthPageController.java#L62).
 
-Метод пытается вызвать `getAuthResultBySilentFlow`. Если пользователь должен согласиться с дополнительными областями, код обрабатывает `MsalInteractionRequiredException` объект для вызова пользователю.
+Метод пытается вызвать `getAuthResultBySilentFlow` . Если пользователь должен согласиться с дополнительными областями, код обрабатывает `MsalInteractionRequiredException` объект для вызова пользователю.
 
 ```java
 @RequestMapping("/msal4jsample/graph/me")
@@ -163,7 +163,7 @@ def graphcall():
 
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Вызов веб-API](scenario-web-app-call-api-call-api.md)

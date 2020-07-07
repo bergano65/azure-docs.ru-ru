@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
 ms.openlocfilehash: 219681351159de6ac6bb48ff979cc68aa4ee18d3
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82233488"
 ---
 # <a name="azure-api-management-faqs"></a>Часто задаваемые вопросы о службе управления API Azure
@@ -49,7 +49,7 @@ ms.locfileid: "82233488"
 Это значит, что мы активно изучаем отзывы пользователей о работе функции. Функция в предварительной версии фактически завершена, но, возможно, мы внесем важные изменения в ответ на отзывы клиентов. Мы рекомендуем не закладывать в основу рабочей среды функции в предварительной версии.
 
 ### <a name="how-can-i-secure-the-connection-between-the-api-management-gateway-and-my-back-end-services"></a>Как защитить подключение шлюза управления API к внутренним службам?
-Существует несколько способов защитить такое подключение. Можно выполнить следующие действия.
+Существует несколько способов защитить такое подключение. Вы можете:
 
 * Использование обычной проверки подлинности HTTP. Дополнительные сведения см. в статье об [импорте и публикации первого API](import-and-publish.md).
 * Используйте взаимную проверку подлинности TLS, как описано в статье [Защита серверных служб с помощью проверки подлинности на основе сертификата клиента в службе управления API Azure](api-management-howto-mutual-certificates.md).
@@ -57,7 +57,7 @@ ms.locfileid: "82233488"
 * подключить экземпляр службы управления API к виртуальной сети Azure.
 
 ### <a name="how-do-i-copy-my-api-management-service-instance-to-a-new-instance"></a>Как скопировать экземпляр службы управления API в новый экземпляр?
-Существует несколько способов сделать это. Можно выполнить следующие действия.
+Существует несколько способов сделать это. Вы можете:
 
 * использовать функцию архивации и восстановления в службе управления API. Дополнительные сведения см. в статье [Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management](api-management-howto-disaster-recovery-backup-restore.md).
 * создать функцию архивации и восстановления с помощью [REST API управления API](/rest/api/apimanagement/). Используйте REST API, чтобы сохранить и восстановить сущности из необходимого экземпляра службы.
@@ -88,7 +88,7 @@ ms.locfileid: "82233488"
 Если в редакторе политик нужная политика отображается серым цветом или недоступна, убедитесь в правильности области ее действия. Каждый оператор предназначен для использования в конкретной области и разделе политики. Разделы политики и области ее действия см. в подразделе об использовании в разделе [API Management policies](/azure/api-management/api-management-policies) (Политики управления API).
 
 ### <a name="how-do-i-set-up-multiple-environments-in-a-single-api"></a>Как настроить несколько сред в одном API?
-Чтобы настроить несколько сред, например тестовую и рабочую, в одном API, используйте один из двух способов. Можно выполнить следующие действия.
+Чтобы настроить несколько сред, например тестовую и рабочую, в одном API, используйте один из двух способов. Вы можете:
 
 * разместить различные API в одном клиенте;
 * разместить один и тот же API в разных клиентах.
@@ -109,7 +109,7 @@ ms.locfileid: "82233488"
 Да. Это можно сделать с помощью PowerShell или отправить сертификат непосредственно в API. После этого будет отключена проверка цепочки сертификатов, и вы сможете использовать самозаверяющий или подписанный в частном порядке сертификат при обмене данными между управлением API и службами серверной части.
 
 #### <a name="powershell-method"></a>Метод PowerShell ####
-[`New-AzApiManagementBackend`](https://docs.microsoft.com/powershell/module/az.apimanagement/new-azapimanagementbackend) Используйте командлеты PowerShell (для новой серверной [`Set-AzApiManagementBackend`](https://docs.microsoft.com/powershell/module/az.apimanagement/set-azapimanagementbackend) части) или (для существующих серверных интерфейсов) `-SkipCertificateChainValidation` и задайте `True`для параметра значение.
+Используйте [`New-AzApiManagementBackend`](https://docs.microsoft.com/powershell/module/az.apimanagement/new-azapimanagementbackend) командлеты PowerShell (для новой серверной части) или [`Set-AzApiManagementBackend`](https://docs.microsoft.com/powershell/module/az.apimanagement/set-azapimanagementbackend) (для существующих серверных интерфейсов) и задайте `-SkipCertificateChainValidation` для параметра значение `True` .
 
 ```powershell
 $context = New-AzApiManagementContext -resourcegroup 'ContosoResourceGroup' -servicename 'ContosoAPIMService'

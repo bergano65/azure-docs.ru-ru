@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 04/24/2020
 ms.author: b-juche
 ms.openlocfilehash: fcede16619e8488796adc6f4c60af30643c1aadf
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82160159"
 ---
 # <a name="benefits-of-using-azure-netapp-files-for-electronic-design-automation"></a>Преимущества использования Azure NetApp Files для автоматизации работы с электронными макетами
@@ -83,6 +83,6 @@ ms.locfileid: "82160159"
 
 В заключение вы можете связать Azure Compute с Azure NetApp Files для проектирования EDA, чтобы получить масштабируемую пропускную способность. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Архитектура решений, использующих Azure NetApp Files](azure-netapp-files-solution-architectures.md)

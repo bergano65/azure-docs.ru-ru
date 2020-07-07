@@ -11,10 +11,10 @@ author: iainfoulds
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5ede7ddb81bae69d92983e787e779ee9d410bd87
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82144067"
 ---
 # <a name="azure-active-directory-certificate-based-authentication-on-ios"></a>Аутентификация на основе сертификата в Azure Active Directory на устройстве iOS
@@ -33,7 +33,7 @@ ms.locfileid: "82144067"
 | Приложения | Поддержка |
 | --- | --- |
 | Приложение Azure Information Protection |![Установите флажок, обозначающий поддержку для этого приложения][1] |
-| Корпоративный портал Intune |![Установите флажок, обозначающий поддержку для этого приложения][1] |
+| Intune Портал компании |![Установите флажок, обозначающий поддержку для этого приложения][1] |
 | Microsoft Teams |![Установите флажок, обозначающий поддержку для этого приложения][1] |
 | Office (мобильный) |![Установите флажок, обозначающий поддержку для этого приложения][1] |
 | OneNote |![Установите флажок, обозначающий поддержку для этого приложения][1] |
@@ -73,7 +73,7 @@ ms.locfileid: "82144067"
 
 ## <a name="use-modern-authentication-with-office-apps"></a>Использование современной проверки подлинности в приложениях Office
 
-Некоторые приложения Office с включенной современной проверкой подлинности отправляют `prompt=login` в Azure AD в своем запросе. По умолчанию Azure AD преобразует `prompt=login` запрос в ADFS как `wauth=usernamepassworduri` (запрашивает ADFS для проверки подлинности U/P) и `wfresh=0` (запрашивает ADFS игнорировать состояние единого входа и выполняет новую проверку подлинности). Если вы хотите включить проверку подлинности на основе сертификатов для этих приложений, измените поведение Azure AD по умолчанию.
+Некоторые приложения Office с включенной современной проверкой подлинности отправляют в `prompt=login` Azure AD в своем запросе. По умолчанию Azure AD преобразует запрос в `prompt=login` ADFS как `wauth=usernamepassworduri` (запрашивает ADFS для проверки подлинности U/P) и `wfresh=0` (запрашивает ADFS игнорировать состояние единого входа и выполняет новую проверку подлинности). Если вы хотите включить проверку подлинности на основе сертификатов для этих приложений, измените поведение Azure AD по умолчанию.
 
 Чтобы обновить поведение по умолчанию, задайте для параметра "*промптлогинбехавиор*" в параметрах федеративного домена значение " *отключено*". Для выполнения этой задачи можно использовать командлет [MSOLDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings?view=azureadps-1.0) , как показано в следующем примере:
 
@@ -85,7 +85,7 @@ Set-MSOLDomainFederationSettings -domainname <domain> -PromptLoginBehavior Disab
 
 В iOS версии 9 и выше поддерживается собственный почтовый клиент iOS. Чтобы определить, поддерживается ли эта функция для всех других приложений Exchange ActiveSync, обратитесь к разработчику приложения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Инструкции по настройке проверки подлинности на основе сертификатов в среде см. в статье [Приступая к работе с проверкой подлинности на основе сертификатов](active-directory-certificate-based-authentication-get-started.md) .
 

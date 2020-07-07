@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.reviewer: sdash
 ms.openlocfilehash: cf251d63645efc70ee93e84827db47ae3055ae33
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82161521"
 ---
 # <a name="automate-custom-reports-with-azure-application-insights-data"></a>Автоматизация настраиваемых отчетов с использованием данных Azure Application Insights
@@ -91,7 +91,7 @@ availabilityResults
 
    ![Снимок экрана "Параметры функции"](./media/automate-custom-reports/scheduled-digest.png)
 
-6. Выберите > **конфигурацию**компонентов **приложение-функция** > **платформы**.
+6. Выберите конфигурацию компонентов **приложение-функция**  >  **платформы**  >  **Configuration**.
 
     ![Снимок экрана "Параметры приложения-функции Azure"](./media/automate-custom-reports/config.png)
 
@@ -136,7 +136,7 @@ availabilityResults
 
      ![Снимок экрана "API-ключ"](./media/automate-custom-reports/sendgrid-manage.png)
 
-3. Это действие запустит сайт SendGrid. Выберите **Параметры** > **ключи API**.
+3. Это действие запустит сайт SendGrid. Выберите **Параметры**  >  **ключи API**.
 
      ![Снимок экрана "Создание и просмотр приложения Ключ API"](./media/automate-custom-reports/function-app-15.png)
 

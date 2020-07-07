@@ -8,10 +8,10 @@ ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
 ms.openlocfilehash: 06c344130156ae5f72f6e65baa519c11adff2bae
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82186447"
 ---
 # <a name="collect-custom-metrics-for-a-linux-vm-with-the-influxdata-telegraf-agent"></a>Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf InfluxData
@@ -52,7 +52,7 @@ Azure Monitor позволяет собирать пользовательски
 
     ![Обзор агента Telegraph. Размер виртуальной машины](./media/collect-custom-metrics-linux-telegraf/vm-size.png)
 
-1. На странице **Параметры** в**группе** >  **Сетевая** > безопасность**выберите общедоступные входящие порты**, выберите **http** и **SSH (22)**. Сохраните остальные значения по умолчанию и нажмите кнопку **ОК**. 
+1. На странице **Параметры** в группе **Сетевая**  >  **Безопасность**  >  **выберите общедоступные входящие порты**, выберите **http** и **SSH (22)**. Сохраните остальные значения по умолчанию и нажмите кнопку **ОК**. 
 
 1. На странице сводной информации выберите **Создать**, чтобы начать развертывание виртуальной машины. 
 

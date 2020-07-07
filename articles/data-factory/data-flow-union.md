@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 04/27/2020
 ms.openlocfilehash: 1874e3536a3dda123c7fff9726c02e5d92d88804
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82204344"
 ---
 # <a name="azure-data-factory-mapping-data-flow-union-transformation"></a>Преобразование объединения потока данных в фабрике данных Azure
@@ -27,7 +27,7 @@ ms.locfileid: "82204344"
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4vngz]
 
-![Union transformation](media/data-flow/union.png "Union") (Преобразование "Объединение множеств")
+![Union transformation](media/data-flow/union.png "Объединение") (Преобразование "Объединение множеств")
 
 В этом случае можно объединить разнородные метаданные из нескольких источников (в этом примере три разных исходных файла) и объединить их в один поток:
 
@@ -49,6 +49,6 @@ ms.locfileid: "82204344"
 
 ![Выходные данные объединения](media/data-flow/unionoutput.png "Выходные данные объединения")
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите аналогичные преобразования, включая [соединение](data-flow-join.md) и [существование](data-flow-exists.md).

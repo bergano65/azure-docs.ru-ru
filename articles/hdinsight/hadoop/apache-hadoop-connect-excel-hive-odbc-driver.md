@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 04/22/2020
 ms.openlocfilehash: 388f59f5090be43469acfde5197a658942e817f7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82182452"
 ---
 # <a name="connect-excel-to-apache-hadoop-in-azure-hdinsight-with-the-microsoft-hive-odbc-driver"></a>Подключение Excel к Apache Hadoop с помощью драйвера Microsoft Hive ODBC в Azure HDInsight
@@ -52,7 +52,7 @@ ms.locfileid: "82182452"
    | --- | --- |
    |  Имя базы данных-источника |Присвойте имя источнику данных |
    |  Узлы |Введите `HDInsightClusterName.azurehdinsight.net`. Например, `myHDICluster.azurehdinsight.net`. Примечание. `HDInsightClusterName-int.azurehdinsight.net` поддерживается до тех пор, пока клиентская виртуальная машина будет соединена с той же виртуальной сетью. |
-   |  Порт |Используйте **443**. (Этот порт был изменен с 563 на 443.) |
+   |  Port |Используйте **443**. (Этот порт был изменен с 563 на 443.) |
    |  База данных |Используйте **значение по умолчанию**. |
    |  Механизм |Выберите **Windows Azure HDInsight Service**. |
    |  Имя пользователя |Введите имя пользователя HTTP кластера HDInsight. Имя пользователя по умолчанию — **admin**. |
@@ -60,7 +60,7 @@ ms.locfileid: "82182452"
 
 1. Необязательно: выберите **Дополнительные параметры...**  
 
-   | Параметр | Описание |
+   | Параметр | Описание: |
    | --- | --- |
    |  Использовать исходный запрос |При выборе этого параметра драйвер ODBC НЕ пытается преобразовать TSQL в HiveQL. Его следует использовать только в том случае, если у вас 100%, что вы отправляете чистые инструкции HiveQL. При подключении к серверу SQL Server или базе данных Azure SQL необходимо снять этот флажок. |
    |  Строки, загружаемые для каждого блока |При получении большого объема записей включение этого параметра может обеспечить оптимальную производительность. |

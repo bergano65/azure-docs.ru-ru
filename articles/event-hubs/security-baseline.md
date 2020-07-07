@@ -8,25 +8,25 @@ ms.date: 03/25/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
 ms.openlocfilehash: c60c1d33954b5e12038fd66787225f4d0aeba62d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82184713"
 ---
 # <a name="azure-security-baseline-for-event-hubs"></a>Базовый уровень безопасности Azure для концентраторов событий
 
 Базовый план безопасности Azure для концентраторов событий содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовая информация для этой службы взята из [теста безопасности Azure версии 1,0](https://docs.microsoft.com/azure/security/benchmarks/overview), который содержит рекомендации по защите облачных решений в Azure с помощью наших рекомендаций.
+Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](https://docs.microsoft.com/azure/security/benchmarks/overview), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
-Дополнительные сведения см. в статье [Общие сведения о базовых показателях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
 
 ## <a name="network-security"></a>Безопасность сети
 
-*Дополнительные сведения см. в разделе Security [Control: Network Security](https://docs.microsoft.com/azure/security/benchmarks/security-control-network-security).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](https://docs.microsoft.com/azure/security/benchmarks/security-control-network-security).*
 
-### <a name="11-protect-resources-using-network-security-groups-or-azure-firewall-on-your-virtual-network"></a>1,1: Защитите ресурсы с помощью групп безопасности сети или брандмауэра Azure в виртуальной сети.
+### <a name="11-protect-resources-using-network-security-groups-or-azure-firewall-on-your-virtual-network"></a>1.1. Защита ресурсов в виртуальной сети с помощью групп безопасности сети или Брандмауэра Azure
 
 **Руководство**. Интеграция концентраторов событий с конечными точками службы виртуальной сети обеспечивает безопасный доступ к возможностям обмена сообщениями из рабочих нагрузок, таких как виртуальные машины, привязанные к виртуальным сетям, с помощью пути сетевого трафика, защищенного на обоих концах.
 
@@ -38,65 +38,65 @@ ms.locfileid: "82184713"
 
 Как использовать конечные точки службы виртуальной сети с концентраторами событий Azure:https://docs.microsoft.com/azure/event-hubs/event-hubs-service-endpoints
 
-Дополнительные сведения см. в статье интеграция концентраторов событий Azure с помощью частной https://docs.microsoft.com/azure/event-hubs/private-link-serviceссылки Azure:.
+Дополнительные сведения см. в статье интеграция концентраторов событий Azure с помощью частной ссылки Azure: https://docs.microsoft.com/azure/event-hubs/private-link-service .
 
 Включение интеграции и брандмауэров виртуальных сетей в пространстве имен концентраторов событий:https://docs.microsoft.com/azure/event-hubs/event-hubs-tutorial-virtual-networks-firewalls
 
 Настройка правил брандмауэра IP-адресов для пространств имен концентраторов событий Azure:https://docs.microsoft.com/azure/event-hubs/event-hubs-ip-filtering
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="12-monitor-and-log-the-configuration-and-traffic-of-vnets-subnets-and-nics"></a>1,2. Мониторинг и запись конфигурации и трафика виртуальных сетей, подсетей и сетевых карт
+### <a name="12-monitor-and-log-the-configuration-and-traffic-of-vnets-subnets-and-nics"></a>1.2. Мониторинг и запись конфигурации и трафика виртуальных сетей, подсетей и сетевых карт
 
 **Руководство**. Используйте центр безопасности Azure и следуйте рекомендациям по защите сети, чтобы помочь защитить ресурсы концентраторов событий в Azure. При использовании виртуальных машин Azure для доступа к концентраторам событий включите журналы потоков группы безопасности сети (NSG) и отправьте журналы в учетную запись хранения для аудита трафика.
 
-Как включить журналы потоков NSG:https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
+Включение журналов потоков NSG: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
 
 Общие сведения о безопасности сети, предоставляемой центром безопасности Azure:https://docs.microsoft.com/azure/security-center/security-center-network-recommendations
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="13-protect-critical-web-applications"></a>1,3: защита критически важных веб-приложений
+### <a name="13-protect-critical-web-applications"></a>1.3. Защита критических веб-приложений
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
+**Руководство**. Неприменимо; эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1,4: запретите обмен данными с известными вредоносными IP-адресами
+### <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1.4. Запрет взаимодействия с известными опасными IP-адресами
 
-**Рекомендации**. Включите стандарт защиты от атак DDoS в виртуальных сетях, связанных с концентраторами событий, чтобы защититься от атак типа "отказ в обслуживании" (от атак DDoS). Используйте интегрированную аналитику угроз центра безопасности Azure, чтобы запретить обмен данными с известными вредоносными или неиспользуемыми IP-адресами Интернета.
+**Рекомендации**. Включите стандарт защиты от атак DDoS в виртуальных сетях, связанных с концентраторами событий, чтобы защититься от атак типа "отказ в обслуживании" (от атак DDoS). Используйте интегрированную аналитику угроз Центра безопасности Azure, чтобы запретить обмен данными с известными вредоносными или неиспользуемыми IP-адресами Интернета.
 
 Настройка защиты от атак DDoS:[https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection](/azure/virtual-network/manage-ddos-protection)
 
 Дополнительные сведения о центре безопасности Azure, интегрированной с системой аналитики угроз:https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="15-record-network-packets-and-flow-logs"></a>1,5: запись сетевых пакетов и журналов потоков
+### <a name="15-record-network-packets-and-flow-logs"></a>1.5. Запись сетевых пакетов и журналов потоков
 
-**Руководство**. при использовании виртуальных машин Azure для доступа к концентраторам событий включите журналы потоков для группы безопасности сети (NSG) и отправьте журналы в учетную запись хранения для аудита трафика. Вы также можете отправить журналы потоков NSG в рабочую область Log Analytics и использовать Аналитика трафика для получения ценных сведений о потоке трафика в облаке Azure. Некоторые преимущества Аналитика трафика — это возможность визуализировать сетевые активности и определять горячие участки, выявлять угрозы безопасности, анализировать шаблоны потоков трафика и выявлять несетевые настройки.
+**Руководство**. при использовании виртуальных машин Azure для доступа к концентраторам событий включите журналы потоков для группы безопасности сети (NSG) и отправьте журналы в учетную запись хранения для аудита трафика. Вы также можете отправить журналы потоков для группы безопасности сети в рабочую область Log Analytics и использовать аналитику трафика для получения ценных сведений о потоке трафика в облаке Azure. Некоторые преимущества Аналитики трафика — это возможность визуализировать сетевые активности и определять горячие участки, выявлять угрозы безопасности, анализировать шаблоны потоков трафика и выявлять некорректные сетевые настройки.
 
 Если требуется для изучения аномальных действий, включите запись пакетов наблюдателя за сетями.
 
-Как включить журналы потоков NSG:https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
+Включение журналов потоков NSG: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
 
-Как включить и использовать Аналитика трафика:https://docs.microsoft.com/azure/network-watcher/traffic-analytics
+Включение и использование Аналитики трафика: https://docs.microsoft.com/azure/network-watcher/traffic-analytics
 
 Как включить наблюдатель за сетями:https://docs.microsoft.com/azure/network-watcher/network-watcher-create
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1,6: развертывание систем обнаружения вторжений на основе сети и предотвращения вторжений (ИДЕНТИФИКАТОРы и IP-адреса)
+### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1.6. Развертывание сетевых систем обнаружения и предотвращения вторжений (IDS/IPS)
 
 **Руководство**. при использовании виртуальных машин Azure для доступа к концентраторам событий выберите предложение из Azure Marketplace, которое поддерживает функции идентификаторов и IP-адресов с возможностями проверки полезной нагрузки. Если в вашей организации не требуется обнаружение вторжений и/или предотвращение на основе проверки полезной нагрузки, вы можете использовать встроенную функцию брандмауэра концентраторов событий Azure. Вы можете ограничить доступ к пространству имен концентраторов событий для ограниченного диапазона IP-адресов или определенного IP-адреса с помощью правил брандмауэра.
 
@@ -110,81 +110,81 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 **Мониторинг центра безопасности Azure**: пока недоступен
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="17-manage-traffic-to-web-applications"></a>1,7. Управление трафиком к веб-приложениям
+### <a name="17-manage-traffic-to-web-applications"></a>1.7. Управление трафиком к веб-приложениям
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
+**Рекомендации**. Неприменимо. Эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1,8: сократите сложность и издержки администрирования правил безопасности сети
+### <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1.8. Уменьшение сложности и дополнительных затрат на администрирование в правилах безопасности сети
 
 **Рекомендации**: неприменимо. Эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1,9: поддержание стандартных конфигураций безопасности для сетевых устройств
+### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1.9. Поддержание стандартных конфигураций безопасности для сетевых устройств
 
 **Руководство**. Определение и реализация стандартных конфигураций безопасности для сетевых ресурсов, связанных с пространствами имен концентраторов событий Azure, с помощью политики Azure. Используйте псевдонимы политик Azure в пространствах имен Microsoft. EventHub и Microsoft. Network для создания настраиваемых политик для аудита или принудительного применения конфигурации сети для пространств имен концентраторов событий. Вы также можете использовать встроенные определения политик, связанные с концентраторами событий Azure, например:
 
 - В концентраторе событий должна использоваться конечная точка службы виртуальной сети.
 
-Как настроить политику Azure и управлять ей:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 Встроенная политика Azure для пространства имен концентраторов событий:https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#event-hub
 
 
 
-Примеры политики Azure для работы в сети:https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#network
+Примеры Политики Azure для работы с сетью: https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#network
 
 
 
-Создание Azure Blueprint.https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal
+Создание схемы Azure: https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="110-document-traffic-configuration-rules"></a>1,10: правила конфигурации трафика документов
+### <a name="110-document-traffic-configuration-rules"></a>1.10. Документация по правилам конфигурации трафика
 
 **Руководство**. Использование тегов для виртуальных сетей и других ресурсов, относящихся к сетевой безопасности и потокам трафика, связанным с концентраторами событий.
 
-Создание и использование тегов:https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**. Customer
 
-### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1,11. использование автоматизированных средств для мониторинга конфигураций сетевых ресурсов и обнаружения изменений
+### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11. Использование автоматизированных средств для мониторинга конфигураций сетевых ресурсов и обнаружения изменений
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых ресурсов, связанных с концентраторами событий Azure. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
 
-Просмотр и получение событий журнала действий Azure:https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view
+Просмотр и извлечение событий журнала действий Azure: https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view
 
-Создание оповещений в Azure Monitor:https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
+Создание оповещений в службе Azure Monitor: https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
-*Дополнительные сведения см. в разделе [Security Control: logging and Monitoring](https://docs.microsoft.com/azure/security/benchmarks/security-control-logging-monitoring).*
+*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](https://docs.microsoft.com/azure/security/benchmarks/security-control-logging-monitoring).*
 
-### <a name="21-use-approved-time-synchronization-sources"></a>2,1: используйте источники синхронизации утвержденного времени
+### <a name="21-use-approved-time-synchronization-sources"></a>2.1. Использование утвержденных источников синхронизации времени
 
 **Руководство**: неприменимо; Корпорация Майкрософт поддерживает источник времени, используемый для ресурсов Azure, таких как концентраторы событий Azure, для меток времени в журналах.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: Майкрософт
+**Ответственность**: Microsoft
 
-### <a name="22-configure-central-security-log-management"></a>2,2: Настройка централизованного управления журналом безопасности
+### <a name="22-configure-central-security-log-management"></a>2.2. Настройка централизованного управления журналами безопасности
 
 **Руководство**. в рамках Azure Monitor Настройте журналы, связанные с концентраторами событий в журнале действий и в параметрах диагностики концентратора событий, чтобы отправлять журналы в рабочую область log Analytics для запроса или в учетную запись хранения для долгосрочного архивного хранения.
 
@@ -192,11 +192,11 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Общие сведения о журнале действий Azure:https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="23-enable-audit-logging-for-azure-resources"></a>2,3: Включите ведение журнала аудита для ресурсов Azure.
+### <a name="23-enable-audit-logging-for-azure-resources"></a>2.3. Включение журналов аудита для ресурсов Azure
 
 **Руководство**. Включение параметров диагностики для пространства имен концентраторов событий Azure. Существует три категории параметров диагностики для концентраторов событий Azure: журналы архивации, Операционные журналы и журналы автомасштабирования. Включите Операционные журналы для сбора сведений о том, что происходит во время операций концентраторов событий, в частности, тип операции, включая создание концентратора событий, используемые ресурсы и состояние операции.
 
@@ -206,44 +206,44 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Как включить параметры диагностики для журнала действий Azure:https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="24-collect-security-logs-from-operating-systems"></a>2,4: получение журналов безопасности из операционных систем
+### <a name="24-collect-security-logs-from-operating-systems"></a>2.4. Сбор журналов безопасности из операционных систем
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для вычислений с ресурсами.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="25-configure-security-log-storage-retention"></a>2,5: Настройка хранения журнала безопасности
+### <a name="25-configure-security-log-storage-retention"></a>2.5. Настройка хранения журнала безопасности
 
 **Руководство**. в рамках Azure Monitor задайте срок хранения log Analytics рабочей области согласно нормативным требованиям Организации, чтобы записывать и просматривать инциденты, связанные с концентратором событий.
 
 Как задать параметры хранения журнала для рабочих областей Log Analytics:https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="26-monitor-and-review-logs"></a>2,6: мониторинг и просмотр журналов
+### <a name="26-monitor-and-review-logs"></a>2.6. Мониторинг и просмотр журналов
 
-**Руководство**. анализ и мониторинг журналов для аномального поведения и регулярная проверка результатов, относящихся к концентраторам событий. Используйте Log Analytics Azure Monitor для просмотра журналов и выполнения запросов к данным журнала. Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
+**Руководство**. анализ и мониторинг журналов для аномального поведения и регулярная проверка результатов, относящихся к концентраторам событий. Используйте аналитику журналов Azure Monitor для просмотра журналов и выполнения запросов к данным журнала. Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
  
 
 Дополнительные сведения о рабочей области Log Analytics:https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal
 
-Как выполнять пользовательские запросы в Azure Monitor:https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries
+Выполнение пользовательских запросов в Azure Monitor: https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries
 
-Как подключить метку Azure:https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="27-enable-alerts-for-anomalous-activity"></a>2,7: Включение оповещений для аномальных действий
+### <a name="27-enable-alerts-for-anomalous-activity"></a>2.7. Включение оповещений об аномальных действиях
 
 **Руководство**. в рамках Azure Monitor Настройте журналы, связанные с концентраторами событий Azure в журнале действий, и параметры диагностики концентраторов событий, чтобы отправлять журналы в рабочую область log Analytics для запроса или в учетную запись хранения для долгосрочного архивного хранения. Используйте рабочую область Log Analytics для создания оповещений о аномальных действиях, обнаруженных в журналах и событиях безопасности.
 
@@ -255,41 +255,41 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Как создавать оповещения о Log Analytics данных журнала рабочей области:https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response
 
-Как подключить метку Azure:https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
 **Мониторинг центра безопасности Azure**: пока недоступен
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="28-centralize-anti-malware-logging"></a>2,8: централизованное ведение журнала защиты от вредоносных программ
+### <a name="28-centralize-anti-malware-logging"></a>2.8. Централизованное ведение журнала защиты от вредоносных программ
 
 **Руководство**: неприменимо; Концентратор событий не обрабатывает журналы защиты от вредоносных программ.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="29-enable-dns-query-logging"></a>2,9: Включение ведения журнала запросов DNS
+### <a name="29-enable-dns-query-logging"></a>2.9. Включение ведения журнала запросов DNS
 
 **Руководство**: неприменимо; Концентраторы событий не обрабатывают и не создают журналы, связанные с DNS.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**. Неприменимо
 
-### <a name="210-enable-command-line-audit-logging"></a>2,10: Включение ведения журнала аудита в командной строке
+### <a name="210-enable-command-line-audit-logging"></a>2.10. Включение ведения журнала аудита для командной строки
 
-**Руководство**: неприменимо; Это руководство предназначено для вычислений с ресурсами.
+**Руководство**. Неприменимо. Эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
 ## <a name="identity-and-access-control"></a>Идентификатор и управление доступом
 
-*Дополнительные сведения см. в разделе [Управление безопасностью: идентификация и управление доступом](https://docs.microsoft.com/azure/security/benchmarks/security-control-identity-access-control).*
+*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](https://docs.microsoft.com/azure/security/benchmarks/security-control-identity-access-control).*
 
-### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3,1: ведение инвентаризации учетных записей администраторов
+### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1. Инвентаризация учетных записей администраторов
 
 **Руководство**. Azure Active Directory (AD) содержит встроенные роли, которые должны быть явно назначены и доступны для запросов. Используйте модуль Azure AD PowerShell для выполнения нерегламентированных запросов для обнаружения учетных записей, входящих в группы администраторов. 
 
@@ -297,11 +297,11 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Как получить членов роли каталога в Azure AD с помощью PowerShell:https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="32-change-default-passwords-where-applicable"></a>3,2: Измените пароли по умолчанию, если это применимо
+### <a name="32-change-default-passwords-where-applicable"></a>3.2. Изменение паролей по умолчанию, где применимо
 
 **Руководство**. Управление доступом к плоскости управления к концентраторам событий осуществляется с помощью Azure Active Directory (AD). В Azure AD нет концепции паролей по умолчанию.
 
@@ -309,15 +309,15 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Общие сведения о подписанных URL для концентраторов событий:https://docs.microsoft.com/azure/event-hubs/authenticate-shared-access-signature
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="33-use-dedicated-administrative-accounts"></a>3,3: используйте выделенные учетные записи администратора
+### <a name="33-use-dedicated-administrative-accounts"></a>3.3. Применение выделенных административных учетных записей
 
-**Руководство**. Создание стандартных рабочих процедур, связанных с использованием выделенных административных учетных записей. Используйте управление удостоверениями и доступом центра безопасности Azure для мониторинга количества административных учетных записей.
+**Руководство**. Создайте стандартные операционные процедуры для использования выделенных административных учетных записей. Используйте учетную запись Центра безопасности Azure и управление доступом для мониторинга количества административных учетных записей.
 
-Кроме того, чтобы помочь вам отследить выделенные административные учетные записи, вы можете использовать рекомендации из центра безопасности Azure или встроенных политик Azure, например:
+Кроме того, чтобы отслеживать выделенные административные учетные записи, вы можете использовать рекомендации из Центра безопасности Azure или встроенные политики Azure, например следующие:
 
 - Подписке должно быть назначено несколько владельцев.
 
@@ -329,73 +329,73 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Как использовать политику Azure:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3,4. Использование единого входа (SSO) с Azure Active Directory
+### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3.4. Использование единого входа с Azure Active Directory
 
-**Руководство**. Microsoft Azure обеспечивает интегрированное управление доступом для ресурсов и приложений на основе Azure Active Directory (AD). Ключевым преимуществом использования Azure AD с концентраторами событий Azure является то, что вам больше не нужно хранить учетные данные в коде. Вместо этого можно запросить маркер доступа OAuth 2,0 на платформе Microsoft Identity. Имя ресурса для запроса маркера — HTTPS:\//eventhubs.Azure.NET/. Azure AD выполняет проверку подлинности субъекта безопасности (пользователя, группы или субъекта-службы), на котором выполняется приложение. Если проверка подлинности прошла, Azure AD возвращает маркер доступа к приложению, а приложение может использовать маркер доступа для авторизации запросов к ресурсам концентраторов событий Azure.
+**Руководство**. Microsoft Azure обеспечивает интегрированное управление доступом для ресурсов и приложений на основе Azure Active Directory (AD). Ключевым преимуществом использования Azure AD с концентраторами событий Azure является то, что вам больше не нужно хранить учетные данные в коде. Вместо этого можно запросить маркер доступа OAuth 2,0 на платформе Microsoft Identity. Имя ресурса для запроса маркера — HTTPS: \/ /eventhubs.Azure.NET/. Azure AD выполняет проверку подлинности субъекта безопасности (пользователя, группы или субъекта-службы), на котором выполняется приложение. Если проверка подлинности прошла, Azure AD возвращает маркер доступа к приложению, а приложение может использовать маркер доступа для авторизации запросов к ресурсам концентраторов событий Azure.
 
 Как проверить подлинность приложения с помощью Azure AD для доступа к ресурсам концентраторов событий:https://docs.microsoft.com/azure/event-hubs/authenticate-application
 
 Общие сведения об использовании единого входа в Azure AD:https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3,5: используйте многофакторную проверку подлинности для всех Azure Active Directoryного доступа
+### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3.5. Использование многофакторной проверки подлинности для любого доступа на основе Azure Active Directory
 
 **Рекомендации**. Включите Azure Active Directory многофакторную идентификацию (MFA) и следуйте рекомендациям по управлению удостоверениями и доступом в центре безопасности Azure, чтобы помочь защитить ресурсы, включенные в концентратор событий.
 
-Как включить MFA в Azure:https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
+Включение MFA в Azure: https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
 
-Мониторинг удостоверений и доступа в центре безопасности Azure:https://docs.microsoft.com/azure/security-center/security-center-identity-access
+Мониторинг идентификации и доступа в Центре безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3,6: используйте выделенные компьютеры (рабочие станции с привилегированным доступом) для всех административных задач
+### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3.6. Использование выделенных компьютеров (рабочих станций с привилегированным доступом) для всех административных задач
 
 **Руководство**. Использование рабочих станций привилегированного доступа (привилегированным доступом) с настроенной многофакторной проверкой подлинности (MFA) для входа и настройки ресурсов, поддерживающих концентраторы событий.
 
-Дополнительные сведения о рабочих станциях с привилегированным доступом:https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations
+Сведения о рабочих станциях с привилегированным доступом: https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations
 
-Как включить MFA в Azure:https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
+Включение MFA в Azure: https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3,7: регистрация и оповещение о подозрительных действиях из учетных записей администраторов
+### <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3.7. Ведение журнала и создание оповещений по подозрительным действиям учетных записей администраторов
 
-**Руководство**. Использование Azure Active Directory (AD) Управление привилегированными пользователями (PIM) для создания журналов и оповещений при возникновении подозрительных или ненадежных действий в среде. Используйте обнаружение рисков Azure AD для просмотра предупреждений и отчетов о поведении опасного пользователя. Для дополнительного ведения журнала Отправьте оповещения об обнаружении рисков центра безопасности Azure в Azure Monitor и настройте пользовательские оповещения и уведомления с помощью групп действий.
+**Руководство**. Используйте Privileged Identity Management (PIM) в Azure Active Directory (AD) для создания журналов и оповещений при возникновении подозрительных или небезопасных действий в среде. Используйте обнаружение рисков Azure AD для просмотра предупреждений и отчетов о поведении опасного пользователя. Для дополнительного ведения журнала Отправьте оповещения об обнаружении рисков центра безопасности Azure в Azure Monitor и настройте пользовательские оповещения и уведомления с помощью групп действий.
 
-Развертывание управление привилегированными пользователями (PIM):https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-deployment-plan
+Развертывание Azure AD Privileged Identity Management (PIM): https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-deployment-plan
 
-Общие сведения об обнаружении рисков Azure AD:https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events
+Общие сведения об обнаружении рисков Azure AD: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events
 
 Настройка групп действий для пользовательского оповещения и уведомления:https://docs.microsoft.com/azure/azure-monitor/platform/action-groups
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3,8: управление ресурсами Azure из только утвержденных расположений
+### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3.8. Управление ресурсами Azure только из утвержденных расположений
 
-**Руководство**. Используйте условный доступ с именованными расположениями, чтобы разрешить доступ только из конкретных логических групп диапазонов IP-адресов или стран и регионов.
+**Руководство**. Используйте именованные расположения с условным доступом, чтобы разрешить доступ только из конкретных логических групп диапазонов IP-адресов или стран и регионов.
 
 
 
-Как настроить именованные расположения в Azure:https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations
+Настройка именованных расположений в Azure: https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="39-use-azure-active-directory"></a>3,9: используйте Azure Active Directory
+### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
 
 **Руководство**. Использование Azure Active Directory (AD) в качестве централизованной системы проверки подлинности и авторизации для ресурсов Azure, таких как концентраторы событий. Это позволяет управлять доступом на основе ролей (RBAC) с учетом административных ресурсов.
 
@@ -403,87 +403,87 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Сведения о том, как концентраторы событий Azure интегрируются с Azure Active Directory (AAD), см. в разделе Авторизация доступа к ресурсам концентраторов событий с помощью Azure Active Directory.https://docs.microsoft.com/azure/event-hubs/authorize-access-azure-active-directory
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="310-regularly-review-and-reconcile-user-access"></a>3,10: регулярно просматривайте и выверяйте доступ пользователей
+### <a name="310-regularly-review-and-reconcile-user-access"></a>3.10. Регулярная проверка и согласование доступа пользователей
 
-**Руководство**. Azure Active Directory (AD) предоставляет журналы для упрощения обнаружения устаревших учетных записей. Кроме того, используйте проверку доступа удостоверений Azure, чтобы эффективно управлять членством в группах, доступом к корпоративным приложениям и назначениями ролей. Доступ пользователей можно проверить регулярно, чтобы убедиться, что доступ к ним имеют только нужные пользователи.
+**Руководство**. Azure Active Directory (AD) предоставляет журналы для упрощения обнаружения устаревших учетных записей. Кроме того, используйте проверку доступа удостоверений Azure, чтобы эффективно управлять членством в группах, доступом к корпоративным приложениям и назначениями ролей. Доступ пользователей можно проверять на регулярной основе, чтобы только у авторизованных пользователей был постоянный доступ.
 
 В дополнительных случаях регулярно поворачивайте подписанные URL концентратора событий.
 
 Общие сведения об отчетах Azure AD:https://docs.microsoft.com/azure/active-directory/reports-monitoring/
 
-Использование проверок доступа для идентификации Azure:https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview
+Использование проверок доступа для идентификации Azure: https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview
 
 Общие сведения о подписанных URL для концентраторов событий:https://docs.microsoft.com/azure/event-hubs/authenticate-shared-access-signature
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="311-monitor-attempts-to-access-deactivated-accounts"></a>3,11: монитор пытается получить доступ к отключенным учетным записям
+### <a name="311-monitor-attempts-to-access-deactivated-accounts"></a>3.11. Отслеживание попыток доступа к отключенным учетным записям
 
 **Руководство**. у вас есть доступ к источникам журналов событий входа Azure Active Directory (AD), аудита и риску, которые позволяют интегрироваться с любым средством SIEM/Monitoring.
 
 Этот процесс можно упростить, создав параметры диагностики для учетных записей пользователей Azure AD и отправив журналы аудита и журналы входа в рабочую область Log Analytics. Вы можете настроить нужные оповещения журнала в Log Analytics.
 
-Как интегрировать журналы действий Azure в Azure Monitor:https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics
+Интеграция журналов действий Azure в Azure Monitor: https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics
 
 Авторизуйте доступ к ресурсам концентраторов событий с помощью Azure Active Directory:https://docs.microsoft.com/azure/event-hubs/authorize-access-azure-active-directory
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="312-alert-on-account-login-behavior-deviation"></a>3,12: предупреждение об отклонении режима входа учетной записи
+### <a name="312-alert-on-account-login-behavior-deviation"></a>3.12. Предупреждение при подозрительном входе в учетную запись
 
 **Руководство**. Использование функций защиты идентификации и обнаружения рисков Azure Active Directory для настройки автоматических ответов на обнаруженные подозрительные действия, связанные с ресурсами, которые включены в концентраторы событий. Вы должны включить автоматические ответы через метку Azure, чтобы реализовать ответы на безопасность вашей организации.
 
-Как просмотреть рискованные входы в Azure AD:https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins
+Просмотр рискованных входов в Azure AD: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins
 
 Настройка и включение политик риска для защиты идентификации.https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
 
-Как подключить метку Azure:https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+Подключение Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3,13: предоставьте корпорации Майкрософт доступ к соответствующим пользовательским данным во время сценариев поддержки
+### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3.13. Предоставление корпорации Майкрософт доступа к соответствующим данным клиентов в рамках сценариев поддержки
 
 **Руководство**: Сейчас недоступно; Защищенное хранилище еще не поддерживается для концентраторов событий.
 
 Список поддерживаемых защищенное хранилище служб:https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
-**Ответственность**: сейчас недоступна
+**Ответственность**. Сейчас это недоступно.
 
 ## <a name="data-protection"></a>Защита данных
 
-*Дополнительные сведения см. в разделе [Security Control: Data Protection](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-protection).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-protection).*
 
-### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4,1: поддержание инвентаризации конфиденциальной информации
+### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4.1. Инвентаризация конфиденциальных данных
 
 **Руководство**. Используйте теги в ресурсах, связанных с концентраторами событий, для помощи в отслеживании ресурсов Azure, в которых хранятся или обрабатываются конфиденциальные данные.
 
-Создание и использование тегов:https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**. Customer
 
-### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4,2: Изолируйте системы, хранящие или обрабатывающие конфиденциальные данные
+### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
 
-**Руководство**. Реализация отдельных подписок и групп управления для разработки, тестирования и производства. Пространства имен концентраторов событий должны быть разделены виртуальной сетью с включенными конечными точками службы и соответствующим образом размечаться тегами.
+**Руководство**. Реализуйте отдельные подписки и группы управления для разработки, тестирования и производства. Пространства имен концентраторов событий должны быть разделены виртуальной сетью с включенными конечными точками службы и соответствующим образом размечаться тегами.
 
 Вы также можете защитить пространство имен концентраторов событий Azure с помощью брандмауэров. Концентраторы событий Azure поддерживают управление доступом на основе IP-адресов для поддержки входящих брандмауэров. Правила брандмауэра можно задать с помощью портал Azure, Azure Resource Manager шаблонов или с помощью Azure CLI или Azure PowerShell.
 
-Как создать дополнительные подписки Azure:https://docs.microsoft.com/azure/billing/billing-create-subscription
+Создание дополнительных подписок Azure: https://docs.microsoft.com/azure/billing/billing-create-subscription
 
-Создание Группы управления:https://docs.microsoft.com/azure/governance/management-groups/create
+Создание групп управления: https://docs.microsoft.com/azure/governance/management-groups/create
 
 Настройте правила брандмауэра IP-адресов для пространств имен концентраторов событий Azure:https://docs.microsoft.com/azure/event-hubs/event-hubs-ip-filtering
 
@@ -491,11 +491,11 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Создание виртуальной сети.https://docs.microsoft.com/azure/virtual-network/quick-create-portal
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4,3: Отслеживайте и блокируйте несанкционированную пересылку конфиденциальной информации
+### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4.3. Мониторинг и блокирование несанкционированной передачи конфиденциальной информации
 
 **Рекомендации**. при использовании виртуальных машин для доступа к концентраторам событий используйте виртуальные сети, конечные точки служб, брандмауэр концентраторов событий, группы безопасности сети и теги службы, чтобы снизить вероятность утечка данных.
 
@@ -509,173 +509,173 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Общие сведения о группах безопасности сети и тегах служб:https://docs.microsoft.com/azure/virtual-network/security-overview
 
-Общие сведения о защите данных клиентов в Azure:https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
+Общие сведения о защите данных клиентов в Azure: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4,4: шифрование всех конфиденциальных данных во время передачи
+### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4.4. Шифрование любой конфиденциальной информации при передаче
 
 **Руководство**. концентраторы событий Azure по умолчанию принудительно применяют зашифрованные соединения по протоколу TLS. В настоящее время поддерживаются версии TLS 1,0, 1,1 и 1,2. Однако протоколы TLS 1,0 и 1,1 — это путь к устаревшей отрасли, поэтому по возможности используйте TLS 1,2.
 
 Сведения о возможностях безопасности концентраторов событий см. в разделе Сетевая безопасность.https://docs.microsoft.com/azure/event-hubs/network-security
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: Майкрософт
+**Ответственность**. Microsoft
 
-### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4,5: использование активного средства обнаружения для распознавания конфиденциальных данных
+### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4.5. Использование средства активного обнаружения для распознавания конфиденциальных данных
 
-**Руководство**. функции для идентификации, классификации и предотвращения потерь данных пока недоступны для концентраторов событий Azure. Реализуйте сторонние решения, если это необходимо для обеспечения соответствия требованиям.
+**Руководство**. функции для идентификации, классификации и предотвращения потерь данных пока недоступны для концентраторов событий Azure. Установите сторонние решения, если это необходимо для обеспечения соответствия требованиям.
 
-Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и имеет большую длину для защиты от потери данных и доступности клиентов. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
+Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и предпринимает все возможные усилия для защиты клиентов от потери данных и раскрытия информации. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
 
-Общие сведения о защите данных клиентов в Azure:https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
+Общие сведения о защите данных клиентов в Azure: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Сейчас это недоступно
 
-**Ответственность**: Общая
+**Ответственность**: Совмещаемая блокировка
 
-### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4,6. Использование Azure RBAC для управления доступом к ресурсам
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
 **Руководство**. концентраторы событий Azure поддерживают использование Azure Active Directory (AD) для авторизации запросов к ресурсам концентраторов событий. С помощью Azure AD можно использовать управление доступом на основе ролей (RBAC) для предоставления разрешений субъекту безопасности, который может быть пользователем или субъектом-службой приложения.
 
 Сведения об Azure AD RBAC и доступных ролях для концентраторов событий Azure:https://docs.microsoft.com/azure/event-hubs/authorize-access-azure-active-directory
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4,7. Использование защиты от потери данных на основе узла для обеспечения контроля доступа
+### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7. Использование защиты от потери данных на основе узла для обеспечения контроля доступа
 
-**Руководство**: неприменимо; Это руководство предназначено для вычислений с ресурсами.
+**Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислительных ресурсов.
 
 Корпорация Майкрософт управляет базовой инфраструктурой для концентраторов событий и реализует четкие элементы управления для предотвращения потери или раскрытия данных клиента.
 
-Общие сведения о защите данных клиентов в Azure:https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
+Общие сведения о защите данных клиентов в Azure: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**. Неприменимо
 
-### <a name="48-encrypt-sensitive-information-at-rest"></a>4,8: шифрование конфиденциальной информации при хранении
+### <a name="48-encrypt-sensitive-information-at-rest"></a>4.8. Шифрование конфиденциальной информации при хранении
 
 **Руководство**. концентраторы событий Azure поддерживают возможность шифрования неактивных данных с помощью ключей, управляемых корпорацией Майкрософт, или управляемых клиентом ключей. Эта функция позволяет создавать, поворачивать, отключать и отменять доступ к управляемым клиентом ключам, которые используются для шифрования неактивных данных концентраторов событий Azure.
 
 Как настроить ключи, управляемые клиентом, для шифрования концентраторов событий Azure:https://docs.microsoft.com/azure/event-hubs/configure-customer-managed-key
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4,9: журналы и оповещения об изменениях критических ресурсов Azure
+### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4.9. Включение в журнал и создание оповещений по изменениям критических ресурсов Azure
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в рабочих экземплярах концентраторов событий Azure и других критических или связанных ресурсах.
 
-Создание оповещений для событий журнала действий Azure:https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
+Создание оповещений для событий журнала действий Azure: https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
 ## <a name="vulnerability-management"></a>Управление уязвимостями
 
-*Дополнительные сведения см. в разделе [Security Control: управлением уязвимостей](https://docs.microsoft.com/azure/security/benchmarks/security-control-vulnerability-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](https://docs.microsoft.com/azure/security/benchmarks/security-control-vulnerability-management).*
 
-### <a name="51-run-automated-vulnerability-scanning-tools"></a>5,1: Запуск автоматизированных средств проверки уязвимостей
+### <a name="51-run-automated-vulnerability-scanning-tools"></a>5.1. Выполнение автоматизированных средства анализа уязвимостей
 
 **Руководство**: неприменимо; Корпорация Майкрософт выполняет Управление уязвимостью в базовых системах, поддерживающих концентраторы событий.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: Майкрософт
+**Ответственность**: Microsoft
 
-### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5,2: Развертывание автоматизированного решения для управления исправлениями операционной системы
+### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5.2. Развертывание автоматизированного решения для управления исправлениями операционной системы
 
 **Руководство**: неприменимо; Корпорация Майкрософт выполняет управление исправлениями в базовых системах, поддерживающих концентраторы событий.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: Майкрософт
+**Ответственность**: Microsoft
 
-### <a name="53-deploy-automated-third-party-software-patch-management-solution"></a>5,3: Развертывание автоматизированного решения по управлению исправлениями сторонних производителей
+### <a name="53-deploy-automated-third-party-software-patch-management-solution"></a>5.3. Развертывание автоматизированного решения для управления исправлениями ПО сторонних производителей
 
 **Руководство**: неприменимо; тест производительности предназначен для ресурсов вычислений.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: Майкрософт
+**Ответственность**: Microsoft
 
-### <a name="54-compare-back-to-back-vulnerability-scans"></a>5,4: сравнение проверок уязвимостей "назад-назад"
-
-**Руководство**: неприменимо; Корпорация Майкрософт выполняет Управление уязвимостью в базовых системах, поддерживающих концентраторы событий.
-
-**Мониторинг центра безопасности Azure**: неприменимо
-
-**Ответственность**: Майкрософт
-
-### <a name="55-use-a-risk-rating-process-to-prioritize-the-remediation-of-discovered-vulnerabilities"></a>5,5. Использование процесса оценки рисков для определения приоритета устранения обнаруженных уязвимостей
+### <a name="54-compare-back-to-back-vulnerability-scans"></a>5.4. Сравнение проверок смежных уязвимостей
 
 **Руководство**: неприменимо; Корпорация Майкрософт выполняет Управление уязвимостью в базовых системах, поддерживающих концентраторы событий.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: Майкрософт
+**Ответственность**: Microsoft
+
+### <a name="55-use-a-risk-rating-process-to-prioritize-the-remediation-of-discovered-vulnerabilities"></a>5.5. Использование процесса оценки рисков для определения приоритета в устранении обнаруженных уязвимостей
+
+**Руководство**: неприменимо; Корпорация Майкрософт выполняет Управление уязвимостью в базовых системах, поддерживающих концентраторы событий.
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**: Microsoft
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
-*Дополнительные сведения см. в разделе [Security Control: Inventory and Asset Management](https://docs.microsoft.com/azure/security/benchmarks/security-control-inventory-asset-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](https://docs.microsoft.com/azure/security/benchmarks/security-control-inventory-asset-management).*
 
-### <a name="61-use-azure-asset-discovery"></a>6,1. Использование обнаружения ресурсов Azure
+### <a name="61-use-azure-asset-discovery"></a>6.1. Использование обнаружения ресурсов Azure
 
 **Руководство**. Использование графа ресурсов Azure для запроса и обнаружения всех ресурсов (включая пространства имен концентраторов событий Azure) в ваших подписках. Убедитесь, что у вас есть соответствующие разрешения (на чтение) в клиенте и вы можете перечислить все подписки Azure, а также ресурсы в ваших подписках.
 
-Как создавать запросы с помощью графа ресурсов Azure:https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+Создание запросов с помощью Azure Resource Graph: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
-Как просмотреть подписки Azure:https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
+Просмотр подписок Azure: https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
 
-Общие сведения об Azure RBAC:https://docs.microsoft.com/azure/role-based-access-control/overview
+Общие сведения об Azure RBAC: https://docs.microsoft.com/azure/role-based-access-control/overview
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="62-maintain-asset-metadata"></a>6,2: сохранение метаданных активов
+### <a name="62-maintain-asset-metadata"></a>6.2. Ведение метаданных активов
 
-**Руководство**. применение тегов к ресурсам Azure с помощью метаданных для логической организации их в таксономию.
+**Руководство**. Применяйте к ресурсам Azure теги, чтобы логически классифицировать их на основе метаданных.
 
-Создание и использование тегов:https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="63-delete-unauthorized-azure-resources"></a>6,3: удалите неавторизованные ресурсы Azure
+### <a name="63-delete-unauthorized-azure-resources"></a>6.3. Удаление неавторизованных ресурсов Azure
 
-**Руководство**. Использование тегов, групп управления и отдельных подписок (при необходимости) для Организации и мониторинга пространств имен и связанных ресурсов концентраторов событий Azure. Регулярно выверка инвентаризации и своевременное удаление неавторизованных ресурсов из подписки.
+**Руководство**. Использование тегов, групп управления и отдельных подписок (при необходимости) для Организации и мониторинга пространств имен и связанных ресурсов концентраторов событий Azure. Регулярно сверяйте ресурсы, чтобы своевременно удалять неавторизованные ресурсы из подписки.
 
-Как создать дополнительные подписки Azure:https://docs.microsoft.com/azure/billing/billing-create-subscription
+Создание дополнительных подписок Azure: https://docs.microsoft.com/azure/billing/billing-create-subscription
 
-Создание Группы управления:https://docs.microsoft.com/azure/governance/management-groups/create
+Создание групп управления: https://docs.microsoft.com/azure/governance/management-groups/create
 
-Создание и использование тегов:https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="64-maintain-an-inventory-of-approved-azure-resources-and-software-titles"></a>6,4: ведение инвентаризации утвержденных ресурсов Azure и наименований программного обеспечения
+### <a name="64-maintain-an-inventory-of-approved-azure-resources-and-software-titles"></a>6.4. Ведение каталога утвержденных ресурсов Azure и наименований программного обеспечения
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для вычислений с ресурсами и Azure в целом.
+**Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислений с ресурсами, а также для Azure в целом.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: отслеживание неутвержденных ресурсов Azure
+### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5. Отслеживание неутвержденных ресурсов Azure
 
-**Руководство**. Использование политики Azure для ограничения типа ресурсов, которые могут быть созданы в подписках клиентов, с помощью следующих встроенных определений политик:
+**Руководство**. Используйте Политику Azure, чтобы ограничить тип ресурсов, которые могут быть созданы в подписках клиентов, используя следующие встроенные определения политик.
 
 - Недопустимые типы ресурсов
 
@@ -683,93 +683,93 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Кроме того, используйте граф ресурсов Azure для запроса или обнаружения ресурсов в подписках.
 
-Как настроить политику Azure и управлять ей:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-Как создавать запросы с помощью Azure Graph:https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+Создание запросов с помощью Azure Graph: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6,6: отслеживание неутвержденных программных приложений в рамках ресурсов вычислений
+### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6.6. Отслеживание неутвержденных программных приложений в рамках ресурсов вычислений
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для вычислений с ресурсами.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6,7: удаление неутвержденных ресурсов Azure и программных приложений
+### <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6.7: Удаление неутвержденных ресурсов Azure и программных приложений
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для вычислений с ресурсами и Azure в целом.
+**Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислений с ресурсами, а также для Azure в целом.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="68-use-only-approved-applications"></a>6,8: Используйте только утвержденные приложения
+### <a name="68-use-only-approved-applications"></a>6.8: Использование только утвержденных приложений
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для вычислений с ресурсами.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="69-use-only-approved-azure-services"></a>6,9: Используйте только утвержденные службы Azure
+### <a name="69-use-only-approved-azure-services"></a>6.9: Использование только утвержденных служб Azure
 
-**Руководство**. Использование политики Azure для ограничения типа ресурсов, которые могут быть созданы в подписках клиентов, с помощью следующих встроенных определений политик:
+**Руководство**. Используйте Политику Azure, чтобы ограничить тип ресурсов, которые могут быть созданы в подписках клиентов, используя следующие встроенные определения политик.
 
 - Недопустимые типы ресурсов
 
 - Допустимые типы ресурсов
 
-Как настроить политику Azure и управлять ей:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-Как отказаться от определенного типа ресурса с помощью политики Azure:https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types
+Отказ от определенного типа ресурса с помощью Политики Azure: https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="610-implement-approved-application-list"></a>6,10: реализация списка утвержденных приложений
+### <a name="610-implement-approved-application-list"></a>6.10. Реализация списка утвержденных приложений
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для вычислений с ресурсами.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="611-divlimit-users-ability-to-interact-with-azure-resource-manager-via-scriptsdiv"></a>6,11: <div>Ограничение возможности пользователей взаимодействовать с Azure Resource Manager с помощью сценариев</div>
+### <a name="611-divlimit-users-ability-to-interact-with-azure-resource-manager-via-scriptsdiv"></a>6.11. <div>Ограничение возможности пользователей взаимодействовать с Azure Resource Manager с помощью сценариев</div>
 
-**Руководство**. Настройка условного доступа Azure для ограничения возможности пользователей взаимодействовать с Azure Resource Manager путем настройки "блокировать доступ" для приложения "Управление Microsoft Azure".
+**Руководство**. Настройте условный доступ Azure, чтобы ограничить возможность пользователей взаимодействовать с Azure Resource Manager путем настройки "Блокировать доступ" для приложения "Управление Microsoft Azure".
 
-Как настроить условный доступ для блокировки доступа к Azure Resource Manager:https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management
+Настройка условного доступа для блокировки доступа к Azure Resource Manager: https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="612-limit-users-ability-to-execute-scripts-within-compute-resources"></a>6,12: ограничьте возможность пользователей выполнять сценарии в ресурсах вычислений
+### <a name="612-limit-users-ability-to-execute-scripts-within-compute-resources"></a>6.12. Ограничение возможности пользователей выполнять сценарии в ресурсах вычислений
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для вычислений с ресурсами.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**. Неприменимо
 
-### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6,13: физическое или логическое разделение приложений с высоким риском
+### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6.13. Физическое или логическое разделение приложений с высоким риском
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
+**Руководство**. Неприменимо; эта рекомендация предназначена для веб-приложений, работающих в службе приложений Azure или в ресурсах вычислений.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
 ## <a name="secure-configuration"></a>Настройка безопасности
 
-*Дополнительные сведения см. в разделе [Security Control: Secure Configuration](https://docs.microsoft.com/azure/security/benchmarks/security-control-secure-configuration).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](https://docs.microsoft.com/azure/security/benchmarks/security-control-secure-configuration).*
 
-### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7,1: Установите безопасные конфигурации для всех ресурсов Azure.
+### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7.1. Установка безопасных конфигураций для всех ресурсов Azure
 
 **Руководство**. Определение и реализация стандартных конфигураций безопасности для развертываний концентраторов событий Azure. Используйте псевдонимы политик Azure в пространстве имен Microsoft. EventHub, чтобы создать настраиваемые политики для аудита или принудительного применения конфигураций. Вы также можете использовать встроенные определения политик для концентраторов событий Azure, например:
 
@@ -779,23 +779,23 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Встроенная политика Azure для пространства имен концентраторов событий:https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#event-hub
 
-Просмотр доступных псевдонимов политик Azure:https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
+Просмотр доступных псевдонимов политик Azure: https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 
-Как настроить политику Azure и управлять ей:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="72-establish-secure-operating-system-configurations"></a>7,2: Установка безопасных конфигураций операционной системы
+### <a name="72-establish-secure-operating-system-configurations"></a>7.2. Сохранение безопасных конфигураций для операционных систем
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для вычислений с ресурсами.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="73-maintain-secure-azure-resource-configurations"></a>7,3: поддержание защищенных конфигураций ресурсов Azure
+### <a name="73-maintain-secure-azure-resource-configurations"></a>7.3: Сохранение безопасных конфигураций для ресурсов Azure
 
 **Руководство**. Использование политики Azure [Deny] и [развертывание если не существует] для обеспечения безопасности параметров в ресурсах, поддерживающих концентраторы событий. 
 
@@ -804,75 +804,75 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
  
 Дополнительные сведения о влиянии политики Azure см. ниже.https://docs.microsoft.com/azure/governance/policy/concepts/effects
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="74-maintain-secure-operating-system-configurations"></a>7,4: поддержание защищенных конфигураций операционных систем
+### <a name="74-maintain-secure-operating-system-configurations"></a>7.4. Сохранение безопасных конфигураций для операционных систем
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для вычислений с ресурсами.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="75-securely-store-configuration-of-azure-resources"></a>7,5: безопасное хранение конфигурации ресурсов Azure
+### <a name="75-securely-store-configuration-of-azure-resources"></a>7.5: Безопасное хранение конфигурации ресурсов Azure
 
 **Руководство**. Если вы используете пользовательские определения политики Azure для концентраторов событий или связанных ресурсов, используйте Azure Repos для безопасного хранения кода и управления им.
 
-Как сохранить код в Azure DevOps:https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops
+Хранение кода в Azure DevOps: https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops
 
-Документация по Azure Repos:https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
+Документация по Azure Repos: https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="76-securely-store-custom-operating-system-images"></a>7,6: безопасное хранение пользовательских образов операционной системы
+### <a name="76-securely-store-custom-operating-system-images"></a>7.6. Безопасное хранение пользовательских образов операционной системы
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для вычислений с ресурсами.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="77-deploy-system-configuration-management-tools"></a>7,7: развертывание средств управления конфигурацией системы
+### <a name="77-deploy-system-configuration-management-tools"></a>7.7: Развертывание инструментов управления конфигурацией системы
 
 **Руководство**. Использование псевдонимов политик Azure в пространстве имен Microsoft. EventHub для создания настраиваемых политик для оповещения, аудита и принудительного применения конфигураций системы. Кроме того, разрабатывайте процесс и конвейер для управления исключениями политик.
 
-Как настроить политику Azure и управлять ей:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="78-deploy-system-configuration-management-tools-for-operating-systems"></a>7,8: развертывание средств управления конфигурацией системы для операционных систем
+### <a name="78-deploy-system-configuration-management-tools-for-operating-systems"></a>7.8. Развертывание средств управления конфигурацией системы для операционных систем
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для вычислений с ресурсами.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="79-implement-automated-configuration-monitoring-for-azure-services"></a>7,9. Реализация автоматического мониторинга конфигурации для служб Azure
+### <a name="79-implement-automated-configuration-monitoring-for-azure-services"></a>7.9: Реализация автоматизированного мониторинга конфигурации для служб Azure
 
 **Руководство**. Использование псевдонимов политик Azure в пространстве имен Microsoft. EventHub для создания настраиваемых политик для оповещения, аудита и принудительного применения конфигураций системы. Используйте политику Azure [аудит], [запретить] и [развернуть, если не существует] для автоматического применения конфигураций для развертываний концентраторов событий Azure и связанных ресурсов.
 
-Как настроить политику Azure и управлять ей:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7,10. Реализация автоматического мониторинга конфигурации для операционных систем
+### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7.10. Реализация автоматизированного мониторинга конфигурации для операционных систем
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для вычислений с ресурсами.
+**Руководство**. Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="711-manage-azure-secrets-securely"></a>7,11: безопасное управление секретами Azure
+### <a name="711-manage-azure-secrets-securely"></a>7.11: Безопасное управление секретами Azure
 
 **Руководство**. для виртуальных машин Azure или веб-приложений, работающих в службе приложений Azure, которые используют для доступа к концентраторам событий, используйте управляемое удостоверение службы в сочетании с Azure Key Vault, чтобы упростить и защитить Управление подписанными URL-сертификатами для развертываний концентраторов событий Azure. Убедитесь, что включено Key Vault обратимое удаление.
 
@@ -880,91 +880,91 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Настройка ключей, управляемых клиентом, для концентраторов событий:https://docs.microsoft.com/azure/event-hubs/configure-customer-managed-key 
 
-Как интегрироваться с управляемыми удостоверениями Azure:https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
+Интеграция с управляемыми удостоверениями Azure: https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
 
-Создание Key Vault.https://docs.microsoft.com/azure/key-vault/quick-create-portal
+Создание Key Vault: https://docs.microsoft.com/azure/key-vault/quick-create-portal
 
-Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения:https://docs.microsoft.com/azure/key-vault/managed-identity
+Проверка подлинности в Key Vault с помощью управляемого удостоверения: https://docs.microsoft.com/azure/key-vault/managed-identity
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="712-manage-identities-securely-and-automatically"></a>7,12: безопасно управляйте удостоверениями и автоматически
+### <a name="712-manage-identities-securely-and-automatically"></a>7.12. Безопасное и автоматическое управление удостоверениями
 
 **Руководство**. для виртуальных машин Azure или веб-приложений, работающих в службе приложений Azure, используемых для доступа к концентраторам событий, используйте управляемое удостоверение службы в сочетании с Azure Key Vault, чтобы упростить и защитить концентраторы событий Azure. Убедитесь, что включено Key Vault обратимое удаление.
 
-Используйте управляемые удостоверения для предоставления служб Azure с автоматически управляемым удостоверением в Azure Active Directory (AD). Управляемые удостоверения позволяют проходить проверку подлинности в любой службе, поддерживающей проверку подлинности Azure AD, включая Azure Key Vault без каких бы то ни было учетных данных в коде.
+Функция управляемых удостоверений предоставляет службам Azure автоматически управляемые удостоверения в Azure Active Directory (AD). Управляемые удостоверения позволяют проходить проверку подлинности в любой службе, поддерживающей проверку подлинности Azure AD, включая Azure Key Vault без каких бы то ни было учетных данных в коде.
 
 Проверка подлинности управляемого удостоверения с Azure Active Directory для доступа к ресурсам концентраторов событий:https://docs.microsoft.com/azure/event-hubs/authenticate-managed-identity?tabs=latest 
 
 Настройка ключей, управляемых клиентом, для концентраторов событий:https://docs.microsoft.com/azure/event-hubs/configure-customer-managed-key 
 
-Как настроить управляемые удостоверения:https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm
+Настройка управляемых удостоверений: https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm
 
-Как интегрироваться с управляемыми удостоверениями Azure:https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
+Интеграция с управляемыми удостоверениями Azure: https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
 
 **Мониторинг центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="713-eliminate-unintended-credential-exposure"></a>7,13: устранение непреднамеренной раскрытия учетных данных
+### <a name="713-eliminate-unintended-credential-exposure"></a>7.13. Устранение непреднамеренного раскрытия учетных данных
 
-**Руководство**. Реализация средства проверки учетных данных для указания учетных данных в коде. Средство проверки учетных данных также рекомендует перемещать обнаруженные учетные данные в более безопасные расположения, такие как Azure Key Vault.
+**Руководство**. Реализуйте сканер учетных данных для обнаружения учетных данных в коде. Сканер учетных данных также рекомендует перемещать обнаруженные учетные данные в более безопасные расположения, такие как Azure Key Vault.
 
-Настройка средства проверки учетных данных:https://secdevtools.azurewebsites.net/helpcredscan.html
+Настройка сканера учетных данных: https://secdevtools.azurewebsites.net/helpcredscan.html
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
-*Дополнительные сведения см. в разделе [Security Control: защита от вредоносных программ](https://docs.microsoft.com/azure/security/benchmarks/security-control-malware-defense).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](https://docs.microsoft.com/azure/security/benchmarks/security-control-malware-defense).*
 
-### <a name="81-use-centrally-managed-anti-malware-software"></a>8,1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
+### <a name="81-use-centrally-managed-anti-malware-software"></a>8.1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для вычислений с ресурсами.
+**Руководство**: Неприменимо; эта рекомендация предназначена для вычислительных ресурсов.
 
 Защита от вредоносных программ Майкрософт включена на базовом узле, поддерживающем службы Azure (например, служба приложений Azure), но не выполняется в содержимом клиента.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
-### <a name="82-pre-scan-files-to-be-uploaded-to-non-compute-azure-resources"></a>8,2: Предварительная проверка файлов для отправки в ресурсы Azure, не являющиеся средами вычислений
+### <a name="82-pre-scan-files-to-be-uploaded-to-non-compute-azure-resources"></a>8.2. Предварительная проверка файлов для отправки в ресурсы Azure, не являющиеся вычислительными
 
 **Руководство**. предварительное сканирование содержимого, отправляемого в Нерасчетные ресурсы Azure, такие как концентраторы событий Azure, служба приложений, Data Lake Storage, хранилище BLOB-объектов, база данных Azure для PostgreSQL и т. д. Корпорация Майкрософт не может получить доступ к данным в этих экземплярах.
 
 Защита от вредоносных программ Майкрософт включена на базовом узле, поддерживающем службы Azure (например, кэш Azure для Redis), но не выполняется в содержимом клиента.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="83-ensure-anti-malware-software-and-signatures-are-updated"></a>8,3: Убедитесь, что программное обеспечение и подписи для защиты от вредоносных программ обновлены
+### <a name="83-ensure-anti-malware-software-and-signatures-are-updated"></a>8.3. Своевременное обновление программного обеспечения для защиты от вредоносных программ и подписей
 
-**Руководство**: неприменимо; Эта рекомендация предназначена для вычислений с ресурсами.
+**Рекомендации**. Неприменимо. Эта рекомендация предназначена для вычислительных ресурсов.
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: неприменимо
+**Ответственность**: Неприменимо
 
 ## <a name="data-recovery"></a>Восстановление данных
 
-*Дополнительные сведения см. в разделе [Security Control: Data Recovery](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-recovery).*
+*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-recovery).*
 
-### <a name="91-ensure-regular-automated-back-ups"></a>9,1: Обеспечьте регулярную автоматическую архивацию
+### <a name="91-ensure-regular-automated-back-ups"></a>9.1. Обеспечение регулярного автоматического резервного копирования
 
-**Руководство**. Настройка географического аварийного восстановления для концентраторов событий Azure. При простое целых регионов Azure или центров обработки данных (если не используются зоны доступности) крайне важно, чтобы обработка данных продолжала работать в другом регионе или центре обработки данных. Таким образом, географическое аварийное восстановление и Георепликация являются важными функциями для любого предприятия. Центры событий Azure поддерживают географическое аварийное восстановления и георепликацию на уровне пространства имен. 
+**Руководство**. Настройка географического аварийного восстановления для концентраторов событий Azure. При простое целых регионов Azure или центров обработки данных (если не используются зоны доступности) крайне важно, чтобы обработка данных продолжала работать в другом регионе или центре обработки данных. Таким образом географическое аварийное восстановление и георепликация являются важными функциями для любого предприятия. Центры событий Azure поддерживают географическое аварийное восстановления и георепликацию на уровне пространства имен. 
 
 Общие сведения о географического аварийном восстановлении для концентраторов событий Azure:https://docs.microsoft.com/azure/event-hubs/event-hubs-geo-dr#availability-zones
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9,2: выполните полное резервное копирование системы и резервное копирование ключей, управляемых клиентом.
+### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9.2. Выполнение полного резервного копирования системы и любых ключей, управляемых клиентом
 
 **Руководство**. концентраторы событий Azure обеспечивают шифрование неактивных данных с помощью Azure шифрование службы хранилища (Azure SSE). Концентраторы событий используют хранилище Azure для хранения данных. по умолчанию все данные, хранящиеся в службе хранилища Azure, шифруются с помощью ключей, управляемых корпорацией Майкрософт. Если для хранения ключей, управляемых клиентом, используется Azure Key Vault, обязательно выполните регулярное автоматическое резервное копирование ключей.
 
@@ -974,11 +974,11 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Резервное копирование Key Vault секретов:https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultsecret
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="93-validate-all-backups-including-customer-managed-keys"></a>9,3: Проверьте все резервные копии, включая управляемые клиентом ключи.
+### <a name="93-validate-all-backups-including-customer-managed-keys"></a>9.3. Проверка всех резервных копий, включая управляемые клиентом ключи
 
 **Руководство**. Тестирование восстановления резервных копий ключей, управляемых клиентом.
 
@@ -986,11 +986,11 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Как восстановить ключи хранилища ключей в Azure:https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**. Customer
 
-### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9,4: Обеспечьте защиту резервных копий и управляемых клиентом ключей
+### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9.4. Обеспечение защиты резервных копий и управляемых клиентом ключей
 
 **Руководство**. Включение обратимого удаления в Key Vault для защиты ключей от случайного или вредоносного удаления. Для концентраторов событий Azure необходимо, чтобы ключи, управляемые клиентом, имели обратимое удаление и не были очищены.
 
@@ -1002,90 +1002,90 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Обратимое удаление для больших двоичных объектов службы хранилища Azure:https://docs.microsoft.com//azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
 ## <a name="incident-response"></a>реагирование на инциденты.
 
-*Дополнительные сведения см. в разделе [контроль безопасности: реагирование на инциденты](https://docs.microsoft.com/azure/security/benchmarks/security-control-incident-response).*
+*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](https://docs.microsoft.com/azure/security/benchmarks/security-control-incident-response).*
 
-### <a name="101-create-an-incident-response-guide"></a>10,1: создайте руководство по реагированию на инциденты
+### <a name="101-create-an-incident-response-guide"></a>10.1. Создание руководства по реагированию на инциденты
 
 **Руководство**. Убедитесь, что существуют планы реагирования на инциденты, определяющие роли персонала, а также этапы обработки инцидентов и управления ими.
 
-Как настроить автоматизацию рабочих процессов в центре безопасности Azure:https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide
+Настройка автоматизации рабочих процессов в Центре безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide
 
 
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10,2: создание оценки инцидента и процедуры определения приоритетов
+### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2. Создание процедуры оценки инцидента и определения приоритетов
 
-**Руководство**. Центр безопасности назначает серьезность предупреждениям, чтобы помочь вам определить порядок, в котором вы задаете каждое оповещение, чтобы при компрометации ресурса вы могли сразу перейти к нему. Серьезность основывается на том, насколько надежным является центр безопасности в поиске или аналитике, используемой для выдаче оповещения, а также об уровне достоверности, который был вредоносной задачей, вызвавшей оповещение.
+**Руководство**. Центр безопасности назначает серьезность предупреждениям, чтобы помочь вам определить порядок, в котором вы задаете каждое оповещение, чтобы при компрометации ресурса вы могли сразу перейти к нему. Серьезность основывается на том, насколько уверен Центр безопасности в исследовании или аналитике, используемой для оповещения, а также на уровне достоверности злонамеренности события, приведшего к оповещению.
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
 ### <a name="103-test-security-response-procedures"></a>10,3: тестирование процедур реагирования на безопасность
 
-**Руководство**. проведение упражнений по тестированию возможностей реагирования на инциденты систем на регулярной ритмичности. Выявление слабых точек и пробелов и пересмотр плана по мере необходимости.
+**Руководство**. проведение упражнений по тестированию возможностей реагирования на инциденты систем на регулярной ритмичности. Выявите слабые точки и пробелов и пересмотрите план по мере необходимости.
 
-Обратитесь к публикации NIST: руководство по тестированию, обучению и упражнениям для ИТ-планов и возможностей.https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf
+См. публикацию NIST: Руководство по тестированию, обучению и выполнению программ для ИТ-планов и возможностей: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**. Customer
 
-### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10,4: укажите контактные данные инцидента безопасности и настройте уведомления о событиях для инцидентов безопасности.
+### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10.4. Предоставление контактных сведений и настройка уведомлений по инцидентам безопасности
 
-**Руководство**. контактные данные инцидентов безопасности будут использоваться корпорацией Майкрософт для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаруживает, что доступ к данным клиента был получен незаконные или неавторизованной стороной.  Проверьте инциденты после факта, чтобы убедиться, что проблемы устранены. 
+**Рекомендации**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим пользовательским данным был получен незаконный или несанкционированный доступ.  Проверьте инциденты после факта обращения, чтобы убедиться, что проблемы устранены. 
 
-Как задать контакт безопасности центра безопасности Azure:https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details
+Задание контакта безопасности Центра безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
-### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10,5: Включение оповещений системы безопасности в систему реагирования на инциденты
+### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10.5. Включение оповещений системы безопасности в систему реагирования на инциденты
 
-**Руководство**. Экспорт оповещений и рекомендаций центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных центра безопасности Azure для потоковой передачи метки предупреждений.
+**Рекомендации**. Экспортируйте оповещения и рекомендации центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных центра безопасности Azure для потоковой передачи метки предупреждений.
 
-Как настроить непрерывный экспорт:https://docs.microsoft.com/azure/security-center/continuous-export
+Настройка непрерывного экспорта данных: https://docs.microsoft.com/azure/security-center/continuous-export
 
-Как выполнить потоковую передачу предупреждений в Azure Sentinel:https://docs.microsoft.com/azure/sentinel/connect-azure-security-center
+Выполнение потоковой передачи предупреждений в Azure Sentinel: https://docs.microsoft.com/azure/sentinel/connect-azure-security-center
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**. Customer
 
-### <a name="106-automate-the-response-to-security-alerts"></a>10,6: Автоматизируйте ответ на оповещения системы безопасности
+### <a name="106-automate-the-response-to-security-alerts"></a>10.6. Автоматизация реагирования на оповещения системы безопасности
 
-**Руководство**. Использование функции автоматизации рабочих процессов в центре безопасности Azure для автоматического запуска ответов с помощью "Logic Apps" в оповещениях и рекомендациях системы безопасности.
+**Рекомендации**. Используйте функцию автоматизации рабочих процессов в центре безопасности Azure для автоматического запуска ответов с помощью "Logic Apps" в оповещениях и рекомендациях системы безопасности.
 
-Как настроить автоматизацию рабочего процесса и Logic Apps:https://docs.microsoft.com/azure/security-center/workflow-automation
+Настройка автоматизации рабочего процесса и Logic Apps: https://docs.microsoft.com/azure/security-center/workflow-automation
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
-**Ответственность**: клиент
+**Ответственность**. Customer
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
-*Дополнительные сведения см. в разделе [контроль безопасности: тесты на проникновение и примеры для красных команд](https://docs.microsoft.com/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
+*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](https://docs.microsoft.com/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
 
-### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings-within-60-days"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических обновлений безопасности в течение 60 дней.
+### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings-within-60-days"></a>11.1. Регулярное тестирование на проникновение ресурсов Azure и отслеживание исправлений всех критических точек безопасности в течение 60 дней
 
-**Рекомендации**. Следуйте правилам взаимодействия Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт: https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1.
+**Рекомендации**. Следуйте правилам взаимодействия Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт: https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1 .
 Дополнительные сведения о стратегии корпорации Майкрософт и ее выполнении, а также о тестировании на основе уязвимости для управляемой облачной инфраструктуры, служб и приложений Майкрософт см. здесь:https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**: клиент
+**Ответственность**: Customer
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей о [производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
-- Дополнительные сведения о [базовых показателях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)
+- См. [Тесты производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview).
+- Узнайте больше о [Базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).

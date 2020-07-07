@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 04/20/2020
 ms.openlocfilehash: 87350bae282d9d0dccef9cb2121000f7a0473762
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82195491"
 ---
 # <a name="query-apache-hive-through-the-jdbc-driver-in-hdinsight"></a>Отправка запросов в Apache Hive с помощью драйвера JDBC в HDInsight
@@ -49,7 +49,7 @@ ms.locfileid: "82195491"
 
 **Порт 443** можно использовать только для подключения к кластеру из некоторых мест за пределами виртуальной сети Azure. HDInsight — это управляемая служба, которая означает, что все подключения к кластеру управляются через безопасный шлюз. Вы не можете подключиться к HiveServer 2 напрямую через порты 10001 или 10000. Эти порты не видны снаружи.
 
-## <a name="authentication"></a>Аутентификация
+## <a name="authentication"></a>Проверка подлинности
 
 При установке подключения используйте имя администратора кластера HDInsight и пароль для проверки подлинности. Из клиентов JDBC, таких как SQuirreL SQL, введите имя администратора и пароль в параметрах клиента.
 
@@ -129,7 +129,7 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
 ## <a name="connect-from-an-example-java-application"></a>Подключение из примера приложения Java
 
-Пример использования клиента Java для запроса Hive в HDInsight можно найти по адресу [https://github.com/Azure-Samples/hdinsight-java-hive-jdbc](https://github.com/Azure-Samples/hdinsight-java-hive-jdbc). Следуйте инструкциям в репозитории, чтобы построить и запустить образец.
+Пример использования клиента Java для запроса Hive в HDInsight можно найти по адресу [https://github.com/Azure-Samples/hdinsight-java-hive-jdbc](https://github.com/Azure-Samples/hdinsight-java-hive-jdbc) . Следуйте инструкциям в репозитории, чтобы построить и запустить образец.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
@@ -147,7 +147,7 @@ at java.util.concurrent.FutureTask.get(FutureTask.java:206)
 
 **Решение**. чтобы устранить эту ошибку, выполните следующие действия.
 
-1. Выйдите из SQuirreL, а затем перейдите в каталог, где SQuirreL установлен в системе, возможно `C:\Program Files\squirrel-sql-4.0.0\lib`,. В каталоге SquirreL в каталоге `lib` замените существующий файл commons-codec.ja файлом, скачанным из кластера HDInsight.
+1. Выйдите из SQuirreL, а затем перейдите в каталог, где SQuirreL установлен в системе, возможно, `C:\Program Files\squirrel-sql-4.0.0\lib` . В каталоге SquirreL в каталоге `lib` замените существующий файл commons-codec.ja файлом, скачанным из кластера HDInsight.
 
 1. Перезапустите SQuirreL. При последующих подключениях к Hive в HDInsight ошибка больше не должна возникать.
 

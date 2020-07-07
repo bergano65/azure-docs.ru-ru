@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
 ms.openlocfilehash: 726cf362e62f0ef914dfaea090a08c224bd5d8d6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82192507"
 ---
 # <a name="access-apache-hadoop-yarn-application-logs-on-linux-based-hdinsight"></a>Доступ к журналам приложений Apache Hadoop YARN в HDInsight под управлением Linux
@@ -54,11 +54,11 @@ YARN Timeline Server содержит следующие типы данных:
 
 ## <a name="yarn-logs-in-an-esp-cluster"></a>Yarn журналов в кластере ESP
 
-К пользовательской `mapred-site` в Ambari необходимо добавить две конфигурации.
+К пользовательской в Ambari необходимо добавить две конфигурации `mapred-site` .
 
 1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — это имя вашего кластера.
 
-1. В пользовательском интерфейсе Ambari перейдите к **MapReduce2** > **configs** > **Advanced** > **Custom mapred-site**.
+1. В пользовательском интерфейсе Ambari перейдите к **MapReduce2**  >  **configs**  >  **Advanced**  >  **Custom mapred-site**.
 
 1. Добавьте *один* из следующих наборов свойств:
 
@@ -79,7 +79,7 @@ YARN Timeline Server содержит следующие типы данных:
 
 ## <a name="yarn-cli-tools"></a>Средства CLI для YARN
 
-1. Используйте [команду SSH](./hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру. Измените приведенную ниже команду, заменив ИМЯ_КЛАСТЕРА именем кластера, а затем введите следующую команду:
+1. С помощью команды [ssh command](./hdinsight-hadoop-linux-use-ssh-unix.md) подключитесь к кластеру. Измените приведенную ниже команду, заменив CLUSTERNAME именем своего кластера, а затем введите команду:
 
     ```cmd
     ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net
@@ -117,7 +117,7 @@ YARN Timeline Server содержит следующие типы данных:
 
 ### <a name="other-sample-commands"></a>Другие примеры команд
 
-1. Скачайте журналы контейнеров Yarn для всех главных приложений с помощью приведенной ниже команды. На этом шаге будет создан файл журнала с `amlogs.txt` именем в текстовом формате.
+1. Скачайте журналы контейнеров Yarn для всех главных приложений с помощью приведенной ниже команды. На этом шаге будет создан файл журнала с именем `amlogs.txt` в текстовом формате.
 
     ```bash
     yarn logs -applicationId <application_id> -am ALL > amlogs.txt
@@ -147,9 +147,9 @@ YARN Timeline Server содержит следующие типы данных:
     yarn logs -applicationId <application_id> -containerId <container_id> > containerlogs.txt
     ```
 
-## <a name="yarn-resourcemanager-ui"></a>Пользовательский `ResourceManager` интерфейс YARN
+## <a name="yarn-resourcemanager-ui"></a>`ResourceManager`Пользовательский интерфейс YARN
 
-Пользовательский интерфейс `ResourceManager` YARN работает в кластере головного узла. Доступ к нему осуществляется через веб-интерфейс Ambari. Чтобы просмотреть журналы YARN, выполните следующие действия:
+`ResourceManager`Пользовательский интерфейс YARN работает в кластере головного узла. Доступ к нему осуществляется через веб-интерфейс Ambari. Чтобы просмотреть журналы YARN, выполните следующие действия:
 
 1. В браузере перейдите по адресу `https://CLUSTERNAME.azurehdinsight.net`. Параметр CLUSTERNAME нужно заменить именем кластера HDInsight.
 
@@ -157,7 +157,7 @@ YARN Timeline Server содержит следующие типы данных:
 
     ![Выбрана служба Apache Ambari Yarn](./media/hdinsight-hadoop-access-yarn-app-logs-linux/yarn-service-selected.png)
 
-3. В раскрывающемся списке **быстрые ссылки** выберите один из головных узлов кластера, а затем **`ResourceManager Log`** выберите.
+3. В раскрывающемся списке **быстрые ссылки** выберите один из головных узлов кластера, а затем выберите **`ResourceManager Log`** .
 
     ![Быстрые ссылки Apache Ambari Yarn](./media/hdinsight-hadoop-access-yarn-app-logs-linux/hdi-yarn-quick-links.png)
 

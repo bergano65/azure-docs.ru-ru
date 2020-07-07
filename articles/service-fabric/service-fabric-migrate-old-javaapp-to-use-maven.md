@@ -6,16 +6,16 @@ ms.topic: conceptual
 ms.date: 08/23/2017
 ms.author: rapatchi
 ms.openlocfilehash: 0e8154039dde3de571e7960b244ab1d43cc764c7
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82204293"
 ---
 # <a name="update-your-previous-java-service-fabric-application-to-fetch-java-libraries-from-maven"></a>Обновление старого приложения Java в Service Fabric для получения библиотек Java из Maven
 Service Fabric двоичные файлы Java были перемещены из пакета SDK для Java Service Fabric в размещение Maven. **Mavencentral** можно использовать для получения последних зависимостей Java Service Fabric. Это средство поможет вам обновить существующие приложения Java, созданные для Service Fabric пакета SDK для Java, используя шаблон Yeoman или Eclipse, совместимый с сборкой на основе Maven.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Сначала удалите существующий пакет SDK для Java.
 
@@ -85,7 +85,7 @@ Service Fabric двоичные файлы Java были перемещены и
 
 ### <a name="others"></a>Прочее
 
-#### <a name="transport"></a>Транспортировка
+#### <a name="transport"></a>Транспорт
 
 Поддержка транспортного уровня для приложения Java в Service Fabric. Вам не нужно явно добавлять эту зависимость в приложения Reliable Actors или Reliable Services, если ваша программа не находится на транспортном уровне.
 
@@ -482,7 +482,7 @@ task copyDeps<< {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание первого Java-приложения Service Fabric в Linux](service-fabric-create-your-first-linux-application-with-java.md)
 * [Подключаемый модуль Service Fabric для разработки приложений Eclipse на Java](service-fabric-get-started-eclipse.md)
