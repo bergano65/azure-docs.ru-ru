@@ -7,10 +7,10 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: de056f61337311642589ba937c6d9842d8354d36
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79530144"
 ---
 # <a name="advanced-threat-protection-for-azure-database-for-mariadb"></a>Расширенная защита от угроз для базы данных Azure для MariaDB
@@ -26,7 +26,7 @@ ms.locfileid: "79530144"
 > Компонент "Расширенная защита от угроз" **недоступен** в следующих регионах облака правительства и национального облака Azure: US Gov (Техас), US Gov (Аризона), US Gov (Айова), US Gov (Вирджиния), восточный регион US DoD, центральный регион US DoD, Центральная Германия, Северная Германия, Восточный Китай, Восточный Китай 2. Сведения об общей доступности продукта по регионам см. на [этой странице](https://azure.microsoft.com/global-infrastructure/services/).
 
 ## <a name="set-up-threat-detection"></a>Настройка обнаружения угроз
-1. Запустите портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
+1. Запустите портал Azure по адресу [https://portal.azure.com](https://portal.azure.com) .
 2. Перейдите на страницу конфигурации сервера базы данных Azure для MariaDB, который требуется защитить. В параметрах безопасности выберите **Расширенная защита от угроз (предварительная версия)**.
 3. На странице настройки **Расширенная защита от угроз (предварительная версия)** сделайте следующее:
 
@@ -60,7 +60,7 @@ ms.locfileid: "79530144"
    ![Оповещение об обнаружении угроз](./media/howto-database-threat-protection-portal/threat-detection-alert-asc.png)
    
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
+* Узнайте больше о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
 * Дополнительные сведения о ценах см. на [странице цен на базу данных Azure для MariaDB](https://azure.microsoft.com/pricing/details/mariadb/) .  

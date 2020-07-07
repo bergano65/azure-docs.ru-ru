@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 03/19/2018
 ms.author: vturecek
 ms.openlocfilehash: 9f5f9e00c374b16026f22d4efdee51ec94d2902a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79502284"
 ---
 # <a name="implement-service-level-features-in-your-actor-service"></a>Реализация функций уровня службы в службе субъектов
@@ -172,7 +172,7 @@ public class Program
 2. Обновите клиенты субъекта после завершения предыдущего обновления.
    Это гарантирует, что прокси-сервер субъекта будет использовать стек удаленного взаимодействия версии 2_1.
 
-3. Этот шаг является необязательным. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
+3. Это необязательный шаг. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
 
     ```csharp
     [assembly:FabricTransportActorRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2_1,RemotingClientVersion = RemotingClientVersion.V2_1)]
@@ -205,13 +205,13 @@ public class Program
 2. Обновите клиенты субъекта после завершения предыдущего обновления.
    Это гарантирует, что прокси-сервер субъекта будет использовать стек удаленного взаимодействия версии 2.
 
-3. Этот шаг является необязательным. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
+3. Это необязательный шаг. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
 
     ```csharp
     [assembly:FabricTransportActorRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2,RemotingClientVersion = RemotingClientVersion.V2)]
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление состоянием субъекта](service-fabric-reliable-actors-state-management.md)
 * [Жизненный цикл субъекта и сборка мусора](service-fabric-reliable-actors-lifecycle.md)

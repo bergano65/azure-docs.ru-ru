@@ -7,10 +7,10 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: 4c7eb5e4f22cb432a9d17e6eafa653e62e1f9129
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79529906"
 ---
 # <a name="choose-the-right-mariadb-server-option-in-azure"></a>Выбор правильного сервера MariaDB в Azure
@@ -99,7 +99,7 @@ ms.locfileid: "79529906"
 
   Поскольку нет необходимости изменять уровни представления, приложения и данных, вы экономите время и бюджеты при изменении архитектуры существующего решения. Вместо этого вы можете сосредоточиться на переносе всех ваших решений в Azure и устранении некоторых оптимизаций производительности, которые могут потребоваться для платформы Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. [цены на службу "база данных Azure для MariaDB](https://azure.microsoft.com/pricing/details/MariaDB/)".
 * Начните с [создания первого сервера](https://docs.microsoft.com/azure/MariaDB/quickstart-create-MariaDB-server-database-using-azure-portal).
