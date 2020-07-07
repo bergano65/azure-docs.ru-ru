@@ -9,10 +9,10 @@ ms.workload: infrastructure-services
 ms.date: 12/15/2017
 ms.author: cynthn
 ms.openlocfilehash: 51e4862fe55428f112841ef7176cdb916653de0b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82083280"
 ---
 # <a name="use-windows-client-in-azure-for-devtest-scenarios"></a>Использование клиента Windows в Azure для сценариев разработки и тестирования
@@ -21,8 +21,8 @@ ms.locfileid: "82083280"
 ![Сведения об образах на портале Azure](./media/client-images/windows-client-msdn-images.png) 
 
 > [!NOTE]
-> Дополнительные сведения об образе Windows 10 Pro и Windows 10 Pro N в коллекции Azure см. в статье [развертывание Windows 10 в Azure с использованием многоклиентской службы siteing Rights](windows-desktop-multitenant-hosting-deployment.md)
->![Pro с помощью портал Azure](./media/client-images/windows-client-pro-images.png) 
+> Дополнительные сведения об образе Windows 10 Pro и Windows 10 Pro N в коллекции Azure см. в статье [развертывание Windows 10 в Azure с использованием многоклиентской службы siteing Rights](windows-desktop-multitenant-hosting-deployment.md) 
+> ![ Pro с помощью портал Azure](./media/client-images/windows-client-pro-images.png) 
 >
 
 ## <a name="subscription-eligibility"></a>Доступность в зависимости от подписки
@@ -42,7 +42,7 @@ ms.locfileid: "82083280"
 | [Visual Studio Premium с подпиской MSDN (преимущество)](https://azure.microsoft.com/offers/ms-azr-0061p/) |0061P |быть под управлением ОС Windows 10; |
 | [Подписчики Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p/) |0063P |быть под управлением ОС Windows 10; |
 | [Подписчики Visual Studio Enterprise (BizSpark)](https://azure.microsoft.com/offers/ms-azr-0064p/) |0064P |быть под управлением ОС Windows 10; |
-| [Enterprise — разработка и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/) |0148P |быть под управлением ОС Windows 10; |
+| [Enterprise — разработка и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/) |0148P |быть под управлением ОС Windows 10; |
 
 ## <a name="check-your-azure-subscription"></a>Проверка подписки Azure
 Если вы не знаете идентификатор своего предложения, его можно найти на портале Azure одним из двух способов:  
@@ -57,6 +57,6 @@ ms.locfileid: "82083280"
 
 ![Сведения об идентификаторе предложения на портале учетных записей Azure](./media/client-images/offer-id-azure-account-portal.png) 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь вы можете развернуть виртуальные машины с помощью [PowerShell](quick-create-powershell.md), [шаблонов Resource Manager](ps-template.md) или [Visual Studio](../../vs-azure-tools-resource-groups-deployment-projects-create-deploy.md).
 

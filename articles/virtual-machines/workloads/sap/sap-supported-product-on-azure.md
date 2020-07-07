@@ -17,13 +17,13 @@ ms.date: 04/21/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 8b2f4e7a16c967b26b545d1405f973bf8b8afaae
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82086136"
 ---
-# <a name="what-sap-software-is-supported-for-azure-deployments"></a>Какое программное обеспечение SAP поддерживается для развертываний Azure
+# <a name="what-sap-software-is-supported-for-azure-deployments"></a>Программное обеспечение SAP, поддерживаемое для развертываний Azure
 В этой статье описывается, как можно узнать, какое программное обеспечение SAP поддерживается для развертываний Azure, а также какие выпуски операционной системы или выпуски СУБД.
 
 Оценка того, поддерживается ли ваше текущее программное обеспечение SAP и какие выпуски ОС и СУБД поддерживаются программным обеспечением SAP в Azure, вам потребуется доступ к следующим:
@@ -144,6 +144,6 @@ ms.locfileid: "82086136"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь со следующими шагами [планирования и внедрения SAP NetWeaver на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide) .
 

@@ -6,10 +6,10 @@ author: tugup
 ms.author: tugup
 ms.date: 3/12/2020
 ms.openlocfilehash: 07a1b836ca7ea79244e303f54654dfcaa6e5fcb9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82137592"
 ---
 # <a name="liveness-probe"></a>Проверка актуальности
@@ -40,15 +40,15 @@ ms.locfileid: "82137592"
 
 * `OK`: Зонд проходит проверку на значение, заданное в **сукцесссрешолд**.
 
-* `Error`: Зонд **failureCount** ==  **фаилуресрешолд**перед перезапуском контейнера.
+* `Error`: Зонд **failureCount**  ==   **фаилуресрешолд**перед перезапуском контейнера.
 
 * `Warning`: 
-    * Происходит сбой пробы и **failureCount** < **фаилуресрешолд**. Этот отчет о работоспособности остается до тех пор, пока **failureCount** не достигнет значения, установленного в **фаилуресрешолд** или **сукцесссрешолд**.
+    * Происходит сбой пробы и **failureCount**  <  **фаилуресрешолд**. Этот отчет о работоспособности остается до тех пор, пока **failureCount** не достигнет значения, установленного в **фаилуресрешолд** или **сукцесссрешолд**.
     * При успешном выполнении после сбоя предупреждение остается, но при этом обновляются последовательные успехи.
 
 ## <a name="specifying-a-liveness-probe"></a>Указание проверки на актуальность
 
-Можно указать зонд в файле ApplicationManifest. XML в разделе **ServiceManifestImport**.
+Зонд можно указать в файле ApplicationManifest.xml в разделе **ServiceManifestImport**.
 
 Проба может быть для любого из следующих элементов:
 
@@ -139,7 +139,7 @@ ms.locfileid: "82137592"
   </ServiceManifestImport>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в следующей статье:
 * [Service Fabric и контейнеры][containers-introduction-link]
 

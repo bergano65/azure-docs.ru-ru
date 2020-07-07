@@ -15,10 +15,10 @@ ms.author: sagonzal
 ms.reviewer: nacanuma, twhitney
 ms.custom: aaddev
 ms.openlocfilehash: 7729a30acb1b191378960887164bb4b32e225c36
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82128007"
 ---
 # <a name="adal-to-msal-migration-guide-for-java"></a>Инструкции по миграции ADAL в MSAL для Java
@@ -43,13 +43,13 @@ MSAL для Java — это библиотека проверки подлинн
 
 ADAL4J получает маркеры для ресурсов, тогда как MSAL для Java получает маркеры для областей. Для нескольких MSAL для классов Java требуется параметр областей. Этот параметр представляет собой список строк, объявляющих требуемые разрешения и ресурсы. См. раздел [области Microsoft Graph](https://docs.microsoft.com/graph/permissions-reference) для просмотра примеров областей.
 
-Вы можете добавить суффикс `/.default` области к ресурсу, чтобы упростить перенос приложений из конечной точки версии 1.0 (ADAL) в конечную точку платформы Microsoft Identity (MSAL). Например, для значения `https://graph.microsoft.com`ресурса в качестве эквивалентного значения области является. `https://graph.microsoft.com/.default`  Если ресурс отсутствует в форме URL-адреса, но идентификатор ресурса формы `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX`, можно по-прежнему использовать значение области в качестве. `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX/.default`
+Вы можете добавить `/.default` суффикс области к ресурсу, чтобы упростить перенос приложений из конечной точки версии 1.0 (ADAL) в конечную точку платформы Microsoft Identity (MSAL). Например, для значения ресурса `https://graph.microsoft.com` в качестве эквивалентного значения области является `https://graph.microsoft.com/.default` .  Если ресурс отсутствует в форме URL-адреса, но идентификатор ресурса формы `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX` , можно по-прежнему использовать значение области в качестве `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX/.default` .
 
 Дополнительные сведения о различных типах областей см. в статьях [разрешения и согласие на платформе Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent) , а также [области для веб-API, принимающего статьи о токенах версии 1.0](https://docs.microsoft.com/azure/active-directory/develop/msal-v1-app-scopes) .
 
 ## <a name="core-classes"></a>Основные классы
 
-В ADAL4J `AuthenticationContext` класс представляет подключение к службе маркеров безопасности (STS) или серверу авторизации через центр сертификации. Однако MSAL для Java разрабатывается на основе клиентских приложений. Он предоставляет два отдельных класса: `PublicClientApplication` и `ConfidentialClientApplication` для представления клиентских приложений.  Последнее, `ConfidentialClientApplication`, представляет приложение, предназначенное для безопасного сохранения секрета, такого как идентификатор приложения для управляющего приложения.
+В ADAL4J `AuthenticationContext` класс представляет подключение к службе маркеров безопасности (STS) или серверу авторизации через центр сертификации. Однако MSAL для Java разрабатывается на основе клиентских приложений. Он предоставляет два отдельных класса: `PublicClientApplication` и `ConfidentialClientApplication` для представления клиентских приложений.  Последнее, `ConfidentialClientApplication` , представляет приложение, предназначенное для безопасного сохранения секрета, такого как идентификатор приложения для управляющего приложения.
 
 В следующей таблице показано, как функции ADAL4J сопоставляются с новым MSAL для функций Java:
 
@@ -80,7 +80,7 @@ MSAL для Java добавляет [кэш маркеров](msal-acquire-cache
 
 В версии 1.0 при использовании `https://login.microsoftonline.com/common` центра пользователи могут входить в систему с помощью любой учетной записи Azure Active Directory (AAD) (для любой организации).
 
-При использовании `https://login.microsoftonline.com/common` центра в версии 2.0 пользователи могут входить в систему с любой организацией AAD или даже с помощью личной учетной записи Майкрософт (MSA). В MSAL для Java, если вы хотите ограничить вход на любую учетную запись AAD, необходимо использовать `https://login.microsoftonline.com/organizations` центр сертификации (то же поведение, что и в случае с ADAL4J). Чтобы указать центр сертификации, задайте `authority` параметр в методе [публикклиентаппликатион. Builder](https://javadoc.io/doc/com.microsoft.azure/msal4j/1.0.0/com/microsoft/aad/msal4j/PublicClientApplication.Builder.html) при создании `PublicClientApplication` класса.
+При использовании `https://login.microsoftonline.com/common` центра в версии 2.0 пользователи могут входить в систему с любой организацией AAD или даже с помощью личной учетной записи Майкрософт (MSA). В MSAL для Java, если вы хотите ограничить вход на любую учетную запись AAD, необходимо использовать `https://login.microsoftonline.com/organizations` центр сертификации (то же поведение, что и в случае с ADAL4J). Чтобы указать центр сертификации, задайте `authority` параметр в методе [Публикклиентаппликатион. Builder](https://javadoc.io/doc/com.microsoft.azure/msal4j/1.0.0/com/microsoft/aad/msal4j/PublicClientApplication.Builder.html) при создании `PublicClientApplication` класса.
 
 ## <a name="v10-and-v20-tokens"></a>Маркеры версии 1.0 и версии 2.0
 

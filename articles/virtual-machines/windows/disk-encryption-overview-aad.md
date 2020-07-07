@@ -9,10 +9,10 @@ ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
 ms.openlocfilehash: 025d02ccdf38e72682cf67cc07a8b2edd549e599
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82081580"
 ---
 # <a name="azure-disk-encryption-with-azure-ad-previous-release"></a>Шифрование дисков Azure с помощью Azure AD (предыдущий выпуск)
@@ -47,13 +47,13 @@ ms.locfileid: "82081580"
 
 ## <a name="encryption-key-storage-requirements"></a>Требования к хранилищу ключей шифрования  
 
-Для шифрования дисков Azure требуется Azure Key Vault, чтобы управлять ключами и секретами шифрования дисков и управлять ими. Ваше хранилище ключей и виртуальные машины должны находиться в одном регионе Azure и подписке.
+Службе шифрования дисков Azure необходимо Azure Key Vault, чтобы управлять секретами и ключами шифрования дисков и контролировать их. Хранилище ключей и виртуальные машины должны находиться в одном регионе и подписке Azure.
 
 Дополнительные сведения см. [в статье Создание и Настройка хранилища ключей для шифрования дисков Azure с помощью Azure AD (предыдущий выпуск)](disk-encryption-key-vault-aad.md).
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание и Настройка хранилища ключей для шифрования дисков Azure с помощью Azure AD (предыдущий выпуск)](disk-encryption-key-vault-aad.md)
 - [Включение шифрования дисков Azure с помощью Azure AD на виртуальных машинах Windows (предыдущий выпуск)](disk-encryption-windows-aad.md)
-- [Сценарий CLI для предварительных требований к шифрованию дисков Azure](https://github.com/ejarvi/ade-cli-getting-started)
-- [Сценарий PowerShell для предварительных требований к шифрованию дисков Azure](https://github.com/Azure/azure-powershell/tree/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts)
+- [Скрипт CLI для подготовки необходимых компонентов для службы "Шифрование дисков Azure"](https://github.com/ejarvi/ade-cli-getting-started)
+- [Скрипт PowerShell для подготовки необходимых компонентов для службы "Шифрование дисков Azure"](https://github.com/Azure/azure-powershell/tree/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts)

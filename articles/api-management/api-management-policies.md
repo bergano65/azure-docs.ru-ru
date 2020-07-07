@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
 ms.openlocfilehash: f4a29c7cb7e35e69eb9410dd7ddc9f07757e3565
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82128717"
 ---
 # <a name="api-management-policies"></a>Политики управления API
@@ -52,7 +52,7 @@ ms.locfileid: "82128717"
     -   [Установка кода состояния](api-management-advanced-policies.md#SetStatus) — меняет код состояния HTTP на указанное значение.  
     -   [Трассировка](api-management-advanced-policies.md#Trace) . Добавляет пользовательские трассировки в выходные данные [инспектора API](https://azure.microsoft.com/documentation/articles/api-management-howto-api-inspector/) , Application Insights телеметрии и журналы ресурсов.  
     -   [Ожидание](api-management-advanced-policies.md#Wait) — ожидание вложенных [запросов на отправку](api-management-advanced-policies.md#SendRequest), [Получение значения из кэша](api-management-caching-policies.md#GetFromCacheByKey)или политики [потока управления](api-management-advanced-policies.md#choose) для завершения перед продолжением.  
--   [Политики проверки подлинности](api-management-authentication-policies.md#AuthenticationPolicies)  
+-   [Политики аутентификации](api-management-authentication-policies.md#AuthenticationPolicies)  
     -   [Обычная проверка подлинности](api-management-authentication-policies.md#Basic) – обычная проверка подлинности внутренней службы.  
     -   [Аутентификация с помощью сертификата клиента](api-management-authentication-policies.md#ClientCertificate) – аутентификация внутренней службы с помощью сертификатов клиентов.  
     -   [Аутентификация с помощью управляемого удостоверения](api-management-authentication-policies.md#ManagedIdentity) — аутентификация в серверной службе с помощью [управляемого удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).  
@@ -80,7 +80,7 @@ ms.locfileid: "82128717"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о работе с политиками см. в следующих статьях:
 
 + [Политики в управлении API](api-management-howto-policies.md)

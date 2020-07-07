@@ -9,10 +9,10 @@ ms.date: 03/10/2020
 ms.author: cynthn
 ms.reviewer: zivr
 ms.openlocfilehash: 53a9cd33f7bd2223be1c9f199b7a6d10d876c322
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82082940"
 ---
 # <a name="deploy-vms-to-dedicated-hosts-using-the-portal"></a>Развертывание виртуальных машин на выделенных узлах с помощью портала
@@ -56,10 +56,10 @@ ms.locfileid: "82082940"
 1. После добавления виртуальной машины на узел выберите **Обзор** в меню слева.
 1. В верхней части страницы выберите **запустить** , чтобы ПЕРЕзапустить виртуальную машину.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения см. в разделе Общие сведения о [выделенных узлах](dedicated-hosts.md) . 
+- Дополнительные сведения см. в [обзоре выделенных узлов](dedicated-hosts.md). 
 
-- [Здесь](https://github.com/Azure/azure-quickstart-templates/blob/master/201-vm-dedicated-hosts/README.md)приведен пример шаблона, который использует зоны и домены сбоя для максимальной устойчивости в регионе.
+- [Здесь](https://github.com/Azure/azure-quickstart-templates/blob/master/201-vm-dedicated-hosts/README.md) можно найти пример шаблона, в котором используются как зоны, так и домены сбоя для обеспечения максимальной устойчивости в регионе.
 
 - Кроме того, выделенный узел можно развернуть с помощью [Azure PowerShell](dedicated-hosts-powershell.md).

@@ -7,10 +7,10 @@ ms.service: mariadb
 ms.topic: troubleshooting
 ms.date: 3/18/2020
 ms.openlocfilehash: 521853fd361007159d7e497eb7e7c1f3d200731c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82101456"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-mariadb"></a>Устранение проблем с подключением к Базе данных Azure для MariaDB
@@ -47,7 +47,7 @@ ms.locfileid: "82101456"
 
 * Конфигурация брандмауэра: сервер Базы данных Azure для MariaDB или клиентский брандмауэр блокирует подключения.
 * Перенастройка сети на стороне клиента: был добавлен новый IP-адрес или прокси-сервер.
-* Ошибка пользователя. Например, могут быть заданы недопустимые параметры подключения, такие как имя сервера в строке подключения или пропущенный * \@суффикс ServerName* в имени пользователя.
+* Ошибка пользователя. Например, могут быть заданы недопустимые параметры подключения, такие как имя сервера в строке подключения или пропущенный суффикс * \@ ServerName* в имени пользователя.
 
 ### <a name="steps-to-resolve-persistent-connectivity-issues"></a>Порядок устранения постоянных проблем подключения
 
@@ -56,6 +56,6 @@ ms.locfileid: "82101456"
 3. Проверьте строку подключения и другие параметры подключения. Ознакомьтесь со статьей [How to connect applications to Azure Database for MariaDB](howto-connection-string.md) (Как подключить приложения к Базе данных Azure для MariaDB).
 4. Проверьте работоспособность службы на панели мониторинга. Если вы считаете, что у вас есть региональный сбой, ознакомьтесь [с обзором непрерывности бизнес-процессов с помощью базы данных Azure для MariaDB](concepts-business-continuity.md) , чтобы выполнить действия по восстановлению в новом регионе.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обработка временных ошибок подключения к Базе данных Azure для MariaDB](concepts-connectivity.md)
