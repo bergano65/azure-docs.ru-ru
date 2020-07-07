@@ -15,17 +15,17 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 02/14/2019
 ms.openlocfilehash: 8a4b05c0ee76aca07fd740a16a76a634727504e9
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "71213025"
 ---
 # <a name="azure-notification-hubs-sdks"></a>Пакеты SDK Центров уведомлений Azure
 
 Корпорация Майкрософт и сторонние разработчики публикуют пакеты SDK Центров уведомлений Azure. В репозитории Майкрософт для Android, iOS и .NET также входят примеры приложений для каждой целевой платформы.
 
-| SDK            | Издатель      |
+| SDK            | Publisher      |
 | -------------- | -------------- |
 | [Сервер .NET](https://github.com/Azure/azure-notificationhubs-dotnet) | Майкрософт |
 | [Android](https://github.com/Azure/azure-notificationhubs-android)  |Майкрософт |

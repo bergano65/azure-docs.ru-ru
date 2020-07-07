@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 07/24/2018
 ms.author: damaerte
 ms.openlocfilehash: b06deadae15a8176a49bed88a53884df2b71e473
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82189468"
 ---
 # <a name="troubleshooting--limitations-of-azure-cloud-shell"></a>Устранение неполадок и ограничения в Azure Cloud Shell
@@ -31,7 +31,7 @@ ms.locfileid: "82189468"
 
 ### <a name="error-running-azuread-cmdlets-in-powershell"></a>Ошибка при выполнении командлетов AzureAD в PowerShell
 
-- **Сведения**: при запуске командлетов AzureAD, `Get-AzureADUser` например в Cloud Shell, может появиться сообщение об ошибке: `You must call the Connect-AzureAD cmdlet before calling any other cmdlets`. 
+- **Сведения**: при запуске командлетов AzureAD `Get-AzureADUser` , например в Cloud Shell, может появиться сообщение об ошибке: `You must call the Connect-AzureAD cmdlet before calling any other cmdlets` . 
 - **Решение**. выполните `Connect-AzureAD` командлет. Ранее Cloud Shell автоматически выполнял этот командлет во время запуска PowerShell. Чтобы ускорить время начала, командлет больше не будет выполняться автоматически. Вы можете восстановить предыдущее поведение, добавив `Connect-AzureAD` в файл $Profile в PowerShell.
 
 ### <a name="early-timeouts-in-firefox"></a>Преждевременное истечение времени ожидания в FireFox
@@ -41,8 +41,8 @@ ms.locfileid: "82189468"
 
 ### <a name="disabling-cloud-shell-in-a-locked-down-network-environment"></a>Отключение Cloud Shell в заблокированной среде сети
 
-- **Сведения**. Администраторам может потребоваться отключить доступ к Cloud Shell для своих пользователей. Cloud Shell использует доступ к `ux.console.azure.com` домену, который может быть запрещен, и останавливает любой доступ к Cloud Shell EntryPoint, включая portal.azure.com, Shell.Azure.com, расширение учетной записи Azure Visual Studio Code и docs.Microsoft.com. В облаке для государственных организаций США точка входа `ux.console.azure.us`имеет значение; нет соответствующего shell.azure.us.
-- **Решение**. Ограничьте доступ к `ux.console.azure.com` среде `ux.console.azure.us` или через параметры сети. Значок Cloud Shell по-прежнему будет существовать в портал Azure, но не будет успешно подключаться к службе.
+- **Сведения**. Администраторам может потребоваться отключить доступ к Cloud Shell для своих пользователей. Cloud Shell использует доступ к `ux.console.azure.com` домену, который может быть запрещен, и останавливает любой доступ к Cloud Shell EntryPoint, включая Portal.Azure.com, Shell.Azure.com, расширение учетной записи azure Visual Studio Code и docs.Microsoft.com. В облаке для государственных организаций США точка входа имеет значение `ux.console.azure.us` ; нет соответствующего Shell.Azure.US.
+- **Решение**. Ограничьте доступ к `ux.console.azure.com` `ux.console.azure.us` среде или через параметры сети. Значок Cloud Shell по-прежнему будет существовать в портал Azure, но не будет успешно подключаться к службе.
 
 ### <a name="storage-dialog---error-403-requestdisallowedbypolicy"></a>Диалоговое окно службы хранилища. Ошибка: 403 RequestDisallowedByPolicy
 
@@ -188,7 +188,7 @@ PowerShell.
   ((Invoke-WebRequest -Uri https://management.azure.com/providers/Microsoft.Portal/usersettings/cloudconsole?api-version=2017-12-01-preview -Headers @{Authorization = "Bearer $token"}).Content | ConvertFrom-Json).properties | Format-List
 ```
 
-### <a name="delete"></a>DELETE
+### <a name="delete"></a>Удалить
 Чтобы **удалить** пользовательские настройки, сохраненные Cloud Shell, такие как предпочитаемая оболочка, размер и тип шрифта, выполните следующие команды. При следующем запуске Cloud Shell вам будет предложено еще раз выставить файловый ресурс. 
 
 >[!Note]

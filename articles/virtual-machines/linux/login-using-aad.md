@@ -8,10 +8,10 @@ ms.workload: infrastructure
 ms.date: 08/29/2019
 ms.author: iainfou
 ms.openlocfilehash: 2731693667d2129a72da72455c6bbdd74c277697
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80366488"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Предварительный просмотр. Войдите на виртуальную машину Linux в Azure, используя проверку подлинности Azure Active Directory
@@ -69,10 +69,10 @@ ms.locfileid: "80366488"
 
 * https:\//login.microsoftonline.com
 * https:\//login.windows.net
-* HTTPS:\//Device.Login.microsoftonline.com
-* HTTPS:\//PAS.Windows.NET
+* HTTPS: \/ /Device.Login.microsoftonline.com
+* HTTPS: \/ /PAS.Windows.NET
 * https:\//management.azure.com
-* HTTPS:\//Packages.Microsoft.com
+* HTTPS: \/ /Packages.Microsoft.com
 
 > [!NOTE]
 > Сейчас нельзя настроить группы безопасности сети Azure для виртуальных машин, включенных с помощью аутентификации Azure AD.
@@ -154,7 +154,7 @@ az vm show --resource-group myResourceGroup --name myVM -d --query publicIps -o 
 ssh -l azureuser@contoso.onmicrosoft.com 10.11.123.456
 ```
 
-Вам будет предложено войти в Azure AD с помощью однократного использования кода в [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin). Скопируйте и вставьте однократное использование кода на страницу входа в устройство.
+Вам будет предложено войти в Azure AD с помощью однократного использования кода в [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin) . Скопируйте и вставьте однократное использование кода на страницу входа в устройство.
 
 При появлении запроса введите учетные данные для входа в Azure AD на странице входа. 
 
@@ -200,7 +200,7 @@ Access denied
 
 Если вы успешно прошли аутентификацию в веб-браузере, может сразу же поступить повторный запрос на вход со свежим кодом. Эта ошибка обычно вызывается несоответствием между именем входа, указанным в командной строке SSH, и учетной записью, с которой вы вошли в Azure AD. Для решения этой проблемы сделайте следующее:
 
-- Проверьте, правильно ли указано имя входа в командной строке SSH. Опечатка в имени входа может вызвать несоответствие между именем входа, указанным в командной строке SSH, и учетной записью, с которой вы вошли в Azure AD. Например, вы ввели *азуресуер\@contoso.onmicrosoft.com* вместо *azureuser\@contoso.onmicrosoft.com*.
+- Проверьте, правильно ли указано имя входа в командной строке SSH. Опечатка в имени входа может вызвать несоответствие между именем входа, указанным в командной строке SSH, и учетной записью, с которой вы вошли в Azure AD. Например, вы ввели *азуресуер \@ contoso.onmicrosoft.com* вместо *azureuser \@ contoso.onmicrosoft.com*.
 - Если у вас есть несколько учетных записей пользователя, убедитесь, что при входе в Azure AD в окне браузера не была указана другая учетная запись.
 - В операционной системе Linux учитывается регистр. Различие между "Azureuser@contoso.onmicrosoft.com" и "azureuser@contoso.onmicrosoft.com" может вызвать несоответствие. Убедитесь в том, что имя участника-пользователя указано в командной строке SSH в правильном регистре.
 
@@ -212,6 +212,6 @@ Access denied
 
 Поделиться своими отзывами об этой предварительной версии функции или сообщите о проблемах на [форуме отзывов и предложений по Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md).

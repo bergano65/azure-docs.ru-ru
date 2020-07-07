@@ -9,19 +9,19 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.openlocfilehash: b1c5d9b5cd2b6b9bfecf8a0af79699061003eec1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80335685"
 ---
 # <a name="change-the-style-of-the-map"></a>Изменение стиля карты
 
-Карта поддерживает несколько различных [параметров стиля](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.styleoptions) , которые можно задать при инициализации карты или позже с помощью функции Maps `setStyle` . В этой статье показано, как использовать эти параметры стиля для настройки внешнего вида карт. Научитесь задавать стиль при загрузке схемы и научиться устанавливать новый стиль карт с помощью элемента управления "Выбор стиля".
+Карта поддерживает несколько различных [параметров стиля](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.styleoptions) , которые можно задать при инициализации карты или позже с помощью `setStyle` функции Maps. В этой статье показано, как использовать эти параметры стиля для настройки внешнего вида карт. Научитесь задавать стиль при загрузке схемы и научиться устанавливать новый стиль карт с помощью элемента управления "Выбор стиля".
 
 ## <a name="set-the-style-options"></a>Задание параметров стиля 
 
-Параметры стиля можно передать в сопоставление при инициализации или обновлении позже с помощью функции Maps `setStyle` .
+Параметры стиля можно передать в сопоставление при инициализации или обновлении позже с помощью `setStyle` функции Maps.
 
 ```javascript
 //Set the style options when creating the map.
@@ -44,7 +44,7 @@ map.setStyle({
 <br/>
 
 <iframe height="700" style="width: 100%;" scrolling="no" title="Параметры стиля карт" src="https://codepen.io/azuremaps/embed/eYNMjPb?height=700&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/eYNMjPb'>Параметры стиля отображения</a> перьев по Azure Maps<a href='https://codepen.io/azuremaps'>@azuremaps</a>() в <a href='https://codepen.io'>CodePen</a>.
+См. раздел <a href='https://codepen.io/azuremaps/pen/eYNMjPb'>Параметры стиля отображения</a> перьев по Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="choose-a-base-map-style"></a>Выбор базового стиля схемы
@@ -54,7 +54,7 @@ map.setStyle({
 ### <a name="set-base-map-style-on-map-load"></a>Задать стиль базовой схемы для загрузки карт
 
 
-Стиль Map можно указать при инициализации схемы, задав `style` параметр. В следующем коде `style` параметру Map присваивается значение `grayscale_dark` on Initialization.
+Стиль Map можно указать при инициализации схемы, задав `style` параметр. В следующем коде `style` параметру Map присваивается значение `grayscale_dark` On Initialization.
 
 ```javascript
 var map = new atlas.Map('map', {
@@ -77,7 +77,7 @@ var map = new atlas.Map('map', {
 map.setStyle({ style: 'satellite' });
 ```
 
-В следующем коде после загрузки экземпляра Map стиль схемы обновляется с `road` на `satellite` с помощью функции [SetStyle](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-maps-typescript-latest#setstyle-styleoptions-) .
+В следующем коде после загрузки экземпляра Map стиль схемы обновляется с `road` на с `satellite` помощью функции [SetStyle](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-maps-typescript-latest#setstyle-styleoptions-) .
 
 <br/>
 
@@ -86,7 +86,7 @@ map.setStyle({ style: 'satellite' });
 
 ### <a name="add-the-style-picker"></a>Добавление средства выбора стиля
 
-Элемент управления Выбор стиля позволяет легко использовать кнопку с раскрывающейся панелью, которая может использоваться конечным пользователем для изменения стиля отображения. Средство выбора стиля имеет два разных варианта макета. По умолчанию средство выбора стиля использует `icons` макет и отображает все стили карт в виде горизонтальной строки значков. 
+Элемент управления Выбор стиля позволяет легко использовать кнопку с раскрывающейся панелью, которая может использоваться конечным пользователем для изменения стиля отображения. Средство выбора стиля имеет два разных варианта макета. По умолчанию средство выбора стиля использует `icons` Макет и отображает все стили карт в виде горизонтальной строки значков. 
 
 <center>
 
@@ -119,14 +119,14 @@ map.controls.add(new atlas.control.StyleControl({
 </iframe>
 
 > [!TIP]
-> По умолчанию при использовании ценовой категории S0 Azure Maps элемент управления Выбор стиля перечисляет все доступные стили. Если требуется сократить число стилей в этом списке, передайте массив стилей, которые должны отображаться в списке, в `mapStyle` параметр выбора стиля. Если вы используете S1 и хотите отобразить все доступные стили, задайте для `mapStyles` `"all"`параметра Выбор стиля значение.
+> По умолчанию при использовании ценовой категории S0 Azure Maps элемент управления Выбор стиля перечисляет все доступные стили. Если требуется сократить число стилей в этом списке, передайте массив стилей, которые должны отображаться в списке, в `mapStyle` параметр выбора стиля. Если вы используете S1 и хотите отобразить все доступные стили, задайте `mapStyles` для параметра Выбор стиля значение `"all"` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, используемых в этой статье.
 
 > [!div class="nextstepaction"]
-> [Таблица](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map)
+> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map)
 
 > [!div class="nextstepaction"]
 > [стилеоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.styleoptions)

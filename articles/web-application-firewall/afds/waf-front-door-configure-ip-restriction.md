@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 03/26/2020
 ms.author: tyao
 ms.openlocfilehash: 077f127648688b25d45b433fa2bc94ee011b3f2d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80336070"
 ---
 # <a name="configure-an-ip-restriction-rule-with-a-web-application-firewall-for-azure-front-door"></a>Настройка правила ограничения IP-адресов с помощью брандмауэра веб-приложения для передней дверцы Azure
@@ -24,14 +24,14 @@ ms.locfileid: "80336070"
 
 ## <a name="configure-a-waf-policy-with-the-azure-portal"></a>Настройка политики WAF с помощью портал Azure
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Создайте профиль передней дверцы Azure, следуя инструкциям, описанным в разделе [Краткое руководство. Создание передней дверцы для глобального веб-приложения высокой доступности](../../frontdoor/quickstart-create-front-door.md).
 
 ### <a name="create-a-waf-policy"></a>Создание политики WAF
 
 1. На портал Azure выберите **создать ресурс**, введите **брандмауэр веб-приложения** в поле поиска, а затем выберите **БРАНДМАУЭР веб-приложения (WAF)**.
-2. Щелкните **Создать**.
+2. Нажмите кнопку **создания**.
 3. На странице **Создание политики WAF** используйте следующие значения для заполнения вкладки " **основные** ":
    
    |Параметр  |Значение  |
@@ -40,7 +40,7 @@ ms.locfileid: "80336070"
    |Подписка     |Выберите свою подписку.|
    |Группа ресурсов     |Выберите группу ресурсов, в которой находится Передняя дверца.|
    |Имя политики     |Введите имя политики|
-   |Состояние политики     |Активировано|
+   |Состояние политики     |Включено|
 
    Нажмите кнопку **Далее: параметры политики.**
 
@@ -53,16 +53,16 @@ ms.locfileid: "80336070"
    |Параметр  |Значение  |
    |---------|---------|
    |Имя настраиваемого правила     |фдвафкуструле|
-   |Состояние     |Активировано|
-   |Тип правила     |Сопоставление|
-   |Priority    |100|
+   |Состояние     |Включено|
+   |Тип правила     |Соответствие|
+   |Приоритет    |100|
    |Тип соответствия     |IP-адрес|
    |Сопоставить переменную|ремотеаддр|
    |Операция|Не содержит|
    |IP-адрес или диапазон|10.10.10.0/24|
-   |То|Запретить трафик|
+   |Следующее действие|Запретить трафик|
 
-   :::image type="content" source="../media/waf-front-door-configure-ip-restriction/custom-rule.png" alt-text="Настраиваемое правило":::
+   :::image type="content" source="../media/waf-front-door-configure-ip-restriction/custom-rule.png" alt-text="Пользовательское правило":::
 
    Выберите **Добавить**.
 6. Выберите **Далее: Ассоциация**.
@@ -83,12 +83,12 @@ ms.locfileid: "80336070"
 
 ## <a name="configure-a-waf-policy-with-the-azure-cli"></a>Настройка политики WAF с помощью Azure CLI
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к настройке политики ограничения IP-адресов, настройте среду CLI и создайте профиль передней дверцы Azure.
 
 #### <a name="set-up-the-azure-cli-environment"></a>Настройка среды Azure CLI
-1. Установите [Azure CLI](/cli/azure/install-azure-cli)или используйте Azure Cloud Shell. Azure Cloud Shell — это бесплатная оболочка Bash, которую можно запускать непосредственно на портале Azure. Она включает предварительно установленный интерфейс Azure CLI и настроена для использования с вашей учетной записью. Нажмите кнопку **попробовать** в следующих командах интерфейса командной строки, а затем войдите в свою учетную запись Azure в открывшемся сеансе Cloud Shell. После запуска сеанса введите `az extension add --name front-door` , чтобы добавить расширение для передней дверцы Azure.
- 2. Если вы используете интерфейс командной строки локально в bash, войдите в Azure с помощью `az login`.
+1. Установите [Azure CLI](/cli/azure/install-azure-cli)или используйте Azure Cloud Shell. Azure Cloud Shell — это бесплатная оболочка Bash, которую можно запускать непосредственно на портале Azure. Она включает предварительно установленный интерфейс Azure CLI и настроена для использования с вашей учетной записью. Нажмите кнопку **попробовать** в следующих командах интерфейса командной строки, а затем войдите в свою учетную запись Azure в открывшемся сеансе Cloud Shell. После запуска сеанса введите, `az extension add --name front-door` чтобы добавить расширение для передней дверцы Azure.
+ 2. Если вы используете интерфейс командной строки локально в bash, войдите в Azure с помощью `az login` .
 
 #### <a name="create-an-azure-front-door-profile"></a>Создание профиля передней дверцы Azure
 Создайте профиль передней дверцы Azure, следуя инструкциям, описанным в разделе [Краткое руководство. Создание передней дверцы для глобального веб-приложения высокой доступности](../../frontdoor/quickstart-create-front-door.md).
@@ -162,7 +162,7 @@ az network front-door waf-policy rule match-condition add \
 
 ## <a name="configure-a-waf-policy-with-azure-powershell"></a>Настройка политики WAF с Azure PowerShell
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к настройке политики ограничения IP-адресов, настройте среду PowerShell и создайте профиль передней дверцы Azure.
 
 #### <a name="set-up-your-powershell-environment"></a>Настройка среды PowerShell
@@ -212,7 +212,7 @@ $IPAllowRule = New-AzFrontDoorWafCustomRuleObject `
 ```
 
 ### <a name="configure-a-waf-policy"></a>Настройка политики WAF
-Найдите имя группы ресурсов, содержащей профиль передней дверцы Azure, с помощью `Get-AzResourceGroup`. Затем настройте политику WAF с использованием правила IP-адресов с помощью [New-азфронтдурвафполици](/powershell/module/az.frontdoor/new-azfrontdoorwafpolicy).
+Найдите имя группы ресурсов, содержащей профиль передней дверцы Azure, с помощью `Get-AzResourceGroup` . Затем настройте политику WAF с использованием правила IP-адресов с помощью [New-азфронтдурвафполици](/powershell/module/az.frontdoor/new-azfrontdoorwafpolicy).
 
 ```azurepowershell
   $IPAllowPolicyExamplePS = New-AzFrontDoorWafPolicy `
@@ -243,6 +243,6 @@ $IPAllowRule = New-AzFrontDoorWafCustomRuleObject `
 Чтобы просмотреть шаблон, который создает политику "Передняя дверца Azure" и политику WAF с настраиваемыми правилами ограничения IP-адресов, перейдите на сайт [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-waf-clientip).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [создать профиль передней дверцы Azure](../../frontdoor/quickstart-create-front-door.md).

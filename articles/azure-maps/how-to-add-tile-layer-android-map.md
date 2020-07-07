@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: f98598bd1307bb1b46ff23814780c5f809b9ac90
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80335563"
 ---
 # <a name="add-a-tile-layer-to-a-map-using-the-azure-maps-android-sdk"></a>Добавление мозаичного слоя в карту с помощью Azure Maps пакет SDK для Android
@@ -37,7 +37,7 @@ URL-адрес фрагмента, передаваемый в слой фраг
 * `{bbox-epsg-3857}` — строка ограничивающего прямоугольника в формате `{west},{south},{east},{north}` в системе пространственных ссылок 3857 EPSG.
 * `{subdomain}`— Заполнитель для значений поддомена, если указано значение поддомена.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы завершить процесс, описанный в этой статье, необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) , чтобы загрузить карту.
 
@@ -48,7 +48,7 @@ URL-адрес фрагмента, передаваемый в слой фраг
 
 Вы можете добавить мозаичный слой на карту, выполнив следующие действия.
 
-1. Измените **разметку res > > activity_main. XML** , чтобы она выглядела так:
+1. Измените **разметку res > > activity_main.xml** так, чтобы она выглядела так:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -86,7 +86,7 @@ URL-адрес фрагмента, передаваемый в слой фраг
     
     Приведенный выше фрагмент кода сначала получает экземпляр элемента управления Map Azure Maps с помощью метода обратного вызова **Onreading ()** . Затем он создает `TileLayer` объект и передает отформатированный URL-адрес элемента **XYZ** в `tileUrl` параметр. Непрозрачность слоя имеет значение `0.8` , а поскольку плитки из используемой службы мозаики — 256 пикселей, эти сведения передаются в `tileSize` параметр. Затем мозаичный слой передается в Диспетчер слоев Maps.
 
-    После добавления приведенного выше фрагмента кода `MainActivity.java` он должен выглядеть следующим образом:
+    После добавления приведенного выше фрагмента кода он `MainActivity.java` должен выглядеть следующим образом:
     
     ```Java
     package com.example.myapplication;
@@ -174,9 +174,9 @@ URL-адрес фрагмента, передаваемый в слой фраг
 
 ![Линия с картой Android](./media/how-to-add-tile-layer-android-map/xyz-tile-layer-android.png)</center>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о способах установки стилей карт см. в следующей статье.
 
 > [!div class="nextstepaction"]
-> [Изменение стилей карты в картах Android](https://docs.microsoft.com/azure/azure-maps/set-android-map-styles)
+> [Изменение стилей карт Android](https://docs.microsoft.com/azure/azure-maps/set-android-map-styles)
