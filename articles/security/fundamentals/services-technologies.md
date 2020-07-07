@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 1/29/2019
 ms.author: terrylan
 ms.openlocfilehash: 83548063a796401792bd19e7ec27be36a0efa4e4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80549206"
 ---
 # <a name="security-services-and-technologies-available-on-azure"></a>Службы и технологии безопасности, доступные в Azure
@@ -34,7 +34,7 @@ ms.locfileid: "80549206"
 |Служба|Описание|
 |--------|--------|
 |[Центр&nbsp;безопасности&nbsp;Azure](/azure/security-center/security-center-intro)| Облачное решение защиты рабочих нагрузок обеспечивает управление безопасностью и расширенную защиту от угроз для гибридных облачных рабочих нагрузок.|
-|[Хранилище ключей Azure](/azure/key-vault/key-vault-overview)| Защищенное хранилище секретов для паролей, строк подключения и другой информации, необходимой для работы приложения. |
+|[Azure Key Vault](/azure/key-vault/key-vault-overview);| Защищенное хранилище секретов для паролей, строк подключения и другой информации, необходимой для работы приложения. |
 |[Журналы Azure Monitor](/azure/log-analytics/log-analytics-overview)|Служба мониторинга собирает телеметрию и другие данные, а также предоставляет язык запросов и модуль аналитики для доставки оперативных аналитических сведений для приложений и ресурсов. Решение можно использовать отдельно или совместно с другими службами, например центром обеспечения безопасности. |
 |[Лаборатории для разработки и тестирования Azure](/azure/lab-services/devtest-lab-overview)|Это служба, помогающая разработчикам и тест-инженерам быстро создавать среды в Azure при минимальных потерях и контроле издержек.  |
 
@@ -69,26 +69,26 @@ ms.locfileid: "80549206"
 |------|--------|
 | [Управление доступом&nbsp;на основе&nbsp;ролей&nbsp;Azure](/azure/active-directory/role-based-access-control-configure)|Функция контроля доступа, которая позволяет предоставлять пользователям доступ только к ресурсам, доступ к которым основан на их ролях в рамках организации.  |
 | [Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis)|Облачный репозиторий аутентификации, который поддерживает несколько клиентов, облачный каталог и несколько служб управления удостоверениями в рамках Azure.  |
-| [Azure Active Directory B2C](/azure/active-directory-b2c/active-directory-b2c-overview)|Это служба управления идентификацией, которая позволяет администрировать процессы входа и регистрации пользователей, а также управлять их профилями при использовании приложений на основе Azure.   |
+| [Azure Active Directory B2C](/azure/active-directory-b2c/active-directory-b2c-overview)|Это служба управления идентификацией, которая позволяет администрировать процессы входа и регистрации пользователей, а также управлять их профилями при использовании приложений на основе Azure.   |
 | [Доменные службы Azure Active Directory](/azure/active-directory-domain-services/overview)| Облачная и управляемая версия доменных служб Active Directory. |
 | [Многофакторная идентификация Azure](/azure/active-directory/authentication/multi-factor-authentication)| Подготовка безопасности, которая использует несколько различных форм аутентификации и проверки перед предоставлением защищенной информации. |
 
 ## <a name="backup-and-disaster-recovery"></a>Резервное копирование и аварийное восстановление
 |Служба|Описание|
 |------|--------|
-| [Azure&nbsp;Backup](/azure/backup/backup-introduction-to-azure-backup)| Служба Azure, используемая для резервного копирования и восстановления данных в облаке Azure. |
-| [Восстановление&nbsp;сайтов&nbsp;Azure](/azure/site-recovery/site-recovery-overview)|Онлайн-служба, которая реплицирует рабочие нагрузки, выполняемые на физических и виртуальных машинах, с основного сайта в дополнительное расположение, чтобы включить восстановление служб после сбоя. |
+| [Служба &nbsp; архивации Azure](/azure/backup/backup-introduction-to-azure-backup)| Служба Azure, используемая для резервного копирования и восстановления данных в облаке Azure. |
+| [&nbsp;Восстановление сайтов &nbsp; Azure](/azure/site-recovery/site-recovery-overview)|Онлайн-служба, которая реплицирует рабочие нагрузки, выполняемые на физических и виртуальных машинах, с основного сайта в дополнительное расположение, чтобы включить восстановление служб после сбоя. |
 
 ## <a name="networking"></a>Сеть
 |Служба|Описание|
 |------|--------|
-| [Группы&nbsp;безопасности&nbsp;сети](/azure/virtual-network/virtual-networks-nsg)| Функция управления доступом на основе сети, использующая 5 кортежей для разрешения и запрета.  |
+| [&nbsp;Группы безопасности &nbsp; сети](/azure/virtual-network/virtual-networks-nsg)| Функция управления доступом на основе сети, использующая 5 кортежей для разрешения и запрета.  |
 | [VPN-шлюз Azure](/azure/vpn-gateway/vpn-gateway-about-vpngateways)| Сетевое устройство, используемое в качестве конечной точки VPN для обеспечения доступа между локальными сетями к виртуальным сетям Azure.  |
 | [Шлюз приложений Azure](/azure/application-gateway/application-gateway-introduction)|Расширенный балансировщик нагрузки веб-приложения, который может выполнять маршрутизацию на основе URL-адреса и выполнять SSL-разгрузку. |
 |[Брандмауэр веб-приложения](/azure/frontdoor/waf-overview) (WAF)|Компонент шлюза приложений для централизованной защиты веб-приложений от распространенных эксплойтов и уязвимостей.|
 | [Azure Load Balancer](/azure/load-balancer/load-balancer-overview)|Подсистема балансировки нагрузки сети приложения TCP/UDP. |
 | [Azure ExpressRoute](/azure/expressroute/expressroute-introduction)| Выделенная ссылка WAN между локальными сетями и виртуальными сетями Azure. |
-| [Диспетчер трафика Azure](/azure/traffic-manager/traffic-manager-overview)| Балансировщик нагрузки глобальной DNS.|
+| [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview)| Балансировщик нагрузки глобальной DNS.|
 | [Прокси приложения Azure](/azure/active-directory/active-directory-application-proxy-get-started)| Внешний интерфейс аутентификации, используемый для защиты удаленного доступа к веб-приложениям, размещенным локально. |
 |[Брандмауэр Azure](/azure/firewall/overview)|Управляемая облачная служба сетевой безопасности, которая защищает ресурсы виртуальной сети Azure.|
 |[Защита от атак DDoS в Azure](/azure/virtual-network/ddos-protection-overview)|Эта служба обеспечивает защиту от атак DDoS, если соблюдаются рекомендации по проектированию приложений.|

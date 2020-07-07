@@ -1,20 +1,20 @@
 ---
-title: Файл CreateUiDefinition. JSON для области портала
+title: CreateUiDefinition.jsна панели "файл" для портала
 description: Описывает создание определений пользовательского интерфейса для портал Azure. Используется при определении управляемых приложений Azure.
 author: tfitzmac
 ms.topic: conceptual
 ms.date: 08/06/2019
 ms.author: tomfitz
 ms.openlocfilehash: 2956c76f5bec353639b39228b982db21b6932deb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80294889"
 ---
 # <a name="createuidefinitionjson-for-azure-managed-applications-create-experience"></a>Использование файла CreateUiDefinition.json для создания управляемого приложения Azure
 
-В этом документе представлены основные понятия файла **createUiDefinition. JSON** , который портал Azure использует для определения пользовательского интерфейса при создании управляемого приложения.
+В этом документе представлены основные понятия **createUiDefinition.js** файла, который портал Azure использует для определения пользовательского интерфейса при создании управляемого приложения.
 
 Шаблон выглядит следующим образом:
 
@@ -35,10 +35,10 @@ ms.locfileid: "80294889"
 CreateUiDefinition всегда содержит три свойства: 
 
 * handler;
-* Версия
+* version
 * параметры
 
-Обработчик всегда должен иметь `Microsoft.Azure.CreateUIDef`значение, а последняя поддерживаемая версия — `0.1.2-preview`.
+Обработчик всегда должен иметь значение `Microsoft.Azure.CreateUIDef` , а последняя поддерживаемая версия — `0.1.2-preview` .
 
 Схема свойства parameters зависит от сочетания определенных значений handler и version. Для управляемых приложений поддерживаются свойства `basics`, `steps` и `outputs`. Свойства basics и steps содержат [элементы](create-uidefinition-elements.md), например текстовые поля и раскрывающиеся списки, которые отображаются на портале Azure. Свойство output используется для сопоставления значений определенных элементов с параметрами шаблона развертывания Azure Resource Manager.
 
@@ -89,11 +89,11 @@ CreateUiDefinition всегда содержит три свойства:
 
 CreateUiDefinition предоставляет [функции](create-uidefinition-functions.md) для работы с входными и выходными элементами элементов, а также такими функциями, как условия. Эти функции похожи как в синтаксисе, так и в функциональности для Azure Resource Manager функций шаблонов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Файл createUiDefinition.json имеет простую схему. Его реальные возможности основаны на поддерживаемых элементах и функциях. Эти элементы более подробно описаны здесь:
 
-- [Элементы](create-uidefinition-elements.md)
+- [Elements (XElement Dynamic Property)](create-uidefinition-elements.md) (Elements (Динамическое свойство XElement))
 - [Функции](create-uidefinition-functions.md)
 
 Текущая схема JSON для createUiDefinition доступна здесь: `https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json`.

@@ -9,13 +9,13 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.openlocfilehash: 6becb504671c1fa380207fda9d7d553fca8ceddf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80335250"
 ---
-# <a name="use-the-azure-maps-map-control"></a>Использование элемента управления картой Azure Maps
+# <a name="use-the-azure-maps-map-control"></a>Использование элемента управления картой в Azure Maps
 
 Библиотека JavaScript на стороне клиента Map Control позволяет отображать карты и встроенные функции Azure Maps в веб-приложение или мобильном приложении.
 
@@ -27,7 +27,7 @@ ms.locfileid: "80335250"
 
 2. Загрузите в веб-пакет SDK Azure Maps. Можно выбрать один из двух параметров.
 
-    * Используйте глобально размещенную версию CDN Azure Maps веб-пакета SDK, добавив ссылки на JavaScript и таблицу стилей `<head>` в элементе HTML-файла:
+    * Используйте глобально размещенную версию CDN Azure Maps веб-пакета SDK, добавив ссылки на JavaScript и таблицу стилей в `<head>` ЭЛЕМЕНТЕ HTML-файла:
 
         ```HTML
         <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css">
@@ -75,7 +75,7 @@ ms.locfileid: "80335250"
     </body>
    ```
 
-5. Чтобы инициализировать элемент управления картой, определите новый тег скрипта в тексте HTML. Передайте объект `id` Map `<div>` или `HTMLElement` (например, `document.getElementById('myMap')`) в качестве первого параметра при создании экземпляра `Map` класса. Используйте собственный ключ учетной записи Azure Maps или учетные данные Azure Active Directory (AAD), чтобы выполнить проверку подлинности сопоставления с помощью [параметров проверки подлинности](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.authenticationoptions). 
+5. Чтобы инициализировать элемент управления картой, определите новый тег скрипта в тексте HTML. Передайте объект `id` Map `<div>` или `HTMLElement` (например, `document.getElementById('myMap')` ) в качестве первого параметра при создании экземпляра `Map` класса. Используйте собственный ключ учетной записи Azure Maps или учетные данные Azure Active Directory (AAD), чтобы выполнить проверку подлинности сопоставления с помощью [параметров проверки подлинности](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.authenticationoptions). 
 
    Если вам нужно создать учетную запись или найти свой ключ, следуйте инструкциям в разделе [Создание учетной записи](quick-demo-map-app.md#create-an-account-with-azure-maps) и [Получение первичного ключа](quick-demo-map-app.md#get-the-primary-key-for-your-account) . 
 
@@ -207,7 +207,7 @@ map = new atlas.Map('myMap', {
 ```
 
 > [!Note]
-> С помощью веб-пакета SDK можно загрузить несколько экземпляров карт на одной странице с разными языками и региональными параметрами. Кроме того, эти параметры можно обновить после загрузки сопоставлений с `setStyle` помощью функции Map. 
+> С помощью веб-пакета SDK можно загрузить несколько экземпляров карт на одной странице с разными языками и региональными параметрами. Кроме того, эти параметры можно обновить после загрузки сопоставлений с помощью `setStyle` функции Map. 
 
 Ниже приведен пример Azure Maps с языком, для которого задано значение "fr-FR", а для регионального представления задано значение "Авто".
 
@@ -233,9 +233,9 @@ atlas.setDomain('atlas.azure.us');
 var searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
 ```
 
-При непосредственном доступе к службам Azure Maps RESTFUL измените домен URL `atlas.azure.us`-адреса на. Например, при использовании службы API поиска измените домен URL-адреса с `https://atlas.microsoft.com/search/` на. `https://atlas.azure.us/search/`
+При непосредственном доступе к службам Azure Maps RESTFUL измените домен URL-адреса на `atlas.azure.us` . Например, при использовании службы API поиска измените домен URL-адреса с `https://atlas.microsoft.com/search/` на `https://atlas.azure.us/search/` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как создавать и взаимодействовать с картой:
 

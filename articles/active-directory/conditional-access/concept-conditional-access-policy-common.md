@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 20b699f0672b49dd2f947e0cf00d0ffcef7961e6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80295309"
 ---
 # <a name="common-conditional-access-policies"></a>Распространенные политики условного доступа
@@ -44,11 +44,11 @@ ms.locfileid: "80295309"
 
 * [Условный доступ на основе рисков (требуется Azure AD Premium P2)](howto-conditional-access-policy-risk.md)
 * [Запрос на доверенное расположение для регистрации MFA](howto-conditional-access-policy-registration.md)
-* [Блокирование доступа по расположению](howto-conditional-access-policy-location.md)
+* [Блокировать доступ по расположению](howto-conditional-access-policy-location.md)
 * [Требование использовать соответствующее устройство](howto-conditional-access-policy-compliant-device.md)
 * [Блокировать доступ, за исключением конкретных приложений](howto-conditional-access-policy-block-access.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Моделирование поведения входа с помощью средства What If условного доступа.](troubleshoot-conditional-access-what-if.md)
 

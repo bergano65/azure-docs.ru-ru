@@ -14,10 +14,10 @@ ms.author: brandwe
 ms.reviewer: brandwe
 ms.custom: aaddev
 ms.openlocfilehash: 7cecbc48eb362c2c0f1741352e6f7f5f6ad40c9e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80550257"
 ---
 # <a name="shared-device-mode-for-ios-devices"></a>Режим совместной работы с устройством iOS
@@ -45,7 +45,7 @@ ms.locfileid: "80550257"
 
 1. [**Требуется только во время общедоступной предварительной версии**] Пользователь с ролью " [Администратор облачного устройства](../users-groups-roles/directory-assign-admin-roles.md#cloud-device-administrator) " должен запустить [приложение Microsoft Authenticator](../user-help/user-help-auth-app-overview.md) и присоединить его устройство к Организации.
 
-    Настройка членства в ролях Организации в портал Azure: **Azure Active Directory** > **роли и администраторы** > **облачных устройств администратора**
+    Настройка членства в ролях Организации в портал Azure: **Azure Active Directory**  >  **роли и администраторы**  >  **облачных устройств администратора**
 
 Следующие разделы содержат сведения о том, как обновить приложение для поддержки режима общего устройства.
 

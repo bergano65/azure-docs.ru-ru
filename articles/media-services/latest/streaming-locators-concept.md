@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 03/04/2020
 ms.author: juliako
 ms.openlocfilehash: 41b2d0ad1e072fb2bf5860ae80f8f25f886b37f7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80582672"
 ---
 # <a name="streaming-locators"></a>Указатели потоковой передачи
@@ -26,9 +26,9 @@ ms.locfileid: "80582672"
 
 При создании **указателя потоковой передачи**необходимо указать имя **ресурса** и имя **политики потоковой передачи** . Дополнительные сведения см. в следующих разделах:
 
-* [Ресурсы](assets-concept.md)
+* [Активы](assets-concept.md)
 * [Политики потоковой передачи](streaming-policy-concept.md)
-* [Политики ключа содержимого](content-key-policy-concept.md)
+* [Политики ключей содержимого](content-key-policy-concept.md)
 
 Можно также указать время начала и окончания для указателя потоковой передачи, что позволит пользователю воспроизводить содержимое в указанное время (например, от 5/1/2019 до 5/5/2019).  
 
@@ -56,7 +56,7 @@ StreamingLocator locator = await client.StreamingLocators.CreateAsync(
     });
 ```
 
-### <a name="encrypted"></a>зашифрованные; 
+### <a name="encrypted"></a>С шифрованием 
 
 Если необходимо зашифровать содержимое с помощью шифрования CENC, задайте для политики значение "Predefined_MultiDrmCencStreaming". Шифрование Widevine будет применяться к потоку ШТРИХа, а PlayReady — к Smooth. Ключ будет доставлен клиенту воспроизведения на основе настроенных лицензий DRM.
 
@@ -98,13 +98,13 @@ StreamingLocator locator = await client.StreamingLocators.CreateAsync(
 |Java|[ассетстреаминглокатор](https://docs.microsoft.com/rest/api/media/assets/liststreaminglocators#assetstreaminglocator)|
 |Node.js|[listStreamingLocators](https://docs.microsoft.com/javascript/api/@azure/arm-mediaservices/assets#liststreaminglocators-string--string--string--msrest-requestoptionsbase-)|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
-* [Ресурсы](assets-concept.md)
+* [Активы](assets-concept.md)
 * [Политики потоковой передачи](streaming-policy-concept.md)
-* [Политики ключа содержимого](content-key-policy-concept.md)
+* [Политики ключей содержимого](content-key-policy-concept.md)
 * [Учебник. Отправка, кодирование и потоковая передача видео с помощью .NET](stream-files-tutorial-with-api.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание указателя потоковой передачи и URL-адресов сборки](create-streaming-locator-build-url.md)

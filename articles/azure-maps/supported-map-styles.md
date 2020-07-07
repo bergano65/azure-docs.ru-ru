@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.openlocfilehash: 2eafe3c16a89723d55ec52fde785e9ec69e45e0c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80334040"
 ---
 # <a name="azure-maps-supported-map-styles"></a>Стили карт, поддерживаемые в службе Azure Maps
@@ -34,12 +34,12 @@ ms.locfileid: "80334040"
 **Пустые** и **blank_accessible** стили карт предоставляют пустой холст для визуализации данных. Стиль **blank_accessible** будет по-прежнему предоставлять обновления средства чтения с экрана сведениями о расположении, даже если базовая схема не отображается.
 
 > [!Note]
-> В веб-пакете SDK можно изменить цвет фона на карте, установив стиль CSS `background-color` для элемента Map div.
+> В веб-пакете SDK можно изменить цвет фона на карте, установив `background-color` стиль CSS для элемента Map div.
 
 **Применимые API:**
 * Элемент управления картой веб-пакета SDK
 
-## <a name="satellite"></a>спутник 
+## <a name="satellite"></a>satellite 
 Стиль **спутник** представляет собой комбинацию спутниковых и аэроснимков.
 
 ![стиль карты вспомогательных плиток](./media/supported-map-styles/satellite.png)
@@ -108,7 +108,7 @@ ms.locfileid: "80334040"
 **Применимые API:**
 * Элемент управления картой веб-пакета SDK
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как задать стиль схемы в Azure Maps.
 

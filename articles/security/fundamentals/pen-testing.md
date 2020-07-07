@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 08/13/2018
 ms.author: terrylan
 ms.openlocfilehash: 413ec8b121838a4ffac4119421ec3266e141618b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80549249"
 ---
 # <a name="penetration-testing"></a>Выполнение тестов на проникновение
@@ -44,6 +44,6 @@ ms.locfileid: "80549249"
 
 К тестам, которые запрещено выполнять, относятся атаки типа ["отказ в обслуживании" (DoS)](https://en.wikipedia.org/wiki/Denial-of-service_attack) . В эту категорию включены как запуск DoS-атаки, так и все сопутствующие тесты, которые могут определять, демонстрировать или имитировать DoS-атаку любого типа.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Если вы хотите формально документировать тестирование на проникновение приложений, размещенных в Microsoft Azure, перейдите к [правилам тестирования уязвимости](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=2) и заполните форму уведомления о тестировании.

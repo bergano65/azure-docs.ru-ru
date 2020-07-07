@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 3353620f1751e939a04543115fe704555fb3bc21
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80334079"
 ---
 # <a name="supported-data-format-details"></a>Сведения о поддерживаемых форматах данных
@@ -47,81 +47,81 @@ ms.locfileid: "80334079"
 
 | Имя элемента         | Чтение    | запись   | Примечания                                                                                                                      |
 |----------------------|---------|---------|----------------------------------------------------------------------------------------------------------------------------|
-| `address`            | частично | да     | Объект анализируется, но не используется для позиционирования фигуры.                                                                    |
-| `AddressDetails`     | частично | нет      | Объект анализируется, но не используется для позиционирования фигуры.                                                                    |
+| `address`            | partial | да     | Объект анализируется, но не используется для позиционирования фигуры.                                                                    |
+| `AddressDetails`     | partial | нет      | Объект анализируется, но не используется для позиционирования фигуры.                                                                    |
 | `atom:author`        | да     | да     |                                                                                                                            |
 | `atom:link`          | да     | да     |                                                                                                                            |
 | `atom:name`          | да     | да     |                                                                                                                            |
-| `BalloonStyle`       | частично | частично | `displayMode` не поддерживается. Преобразуется в `PopupTemplate`. Для записи добавьте `popupTemplate` свойство в качестве свойства компонента, для которого необходимо создать запись. |
+| `BalloonStyle`       | partial | partial | `displayMode` не поддерживается. Преобразуется в `PopupTemplate` . Для записи добавьте свойство в `popupTemplate` качестве свойства компонента, для которого необходимо создать запись. |
 | `begin`              | да     | да     |                                                                                                                            |
-| `color`              | да     | да     | Включает `#AABBGGRR` и `#BBGGRR`. Синтаксический анализ в строке цвета CSS                                                           |
-| `colorMode`          | да     | Нет      |                                                                                                                            |
+| `color`              | да     | да     | Включает `#AABBGGRR` и `#BBGGRR` . Синтаксический анализ в строке цвета CSS                                                           |
+| `colorMode`          | да     | нет      |                                                                                                                            |
 | `coordinates`        | да     | да     |                                                                                                                            |
 | `Data`               | да     | да     |                                                                                                                            |
 | `description`        | да     | да     |                                                                                                                            |
 | `displayName`        | да     | да     |                                                                                                                            |
 | `Document`           | да     | да     |                                                                                                                            |
-| `drawOrder`          | частично | нет      | Чтение для наложения земельных участков и использование для их сортировки. 
+| `drawOrder`          | partial | нет      | Чтение для наложения земельных участков и использование для их сортировки. 
 | `east`               | да     | да     |                                                                                                                            |
 | `end`                | да     | да     |                                                                                                                            |
-| `ExtendedData`       | да     | да     | Поддерживает нетипизированные `Data`, `SimpleData` или `Schema`и, а также замены сущностей в форме `$[dataName]`.                      |
-| `extrude`            | частично | частично | Поддерживается только для многоугольников. Многообъектная геометрия с многоугольниками разной высоты будет разбита на отдельные функции. Стили линий не поддерживаются. Многоугольники с высотой 0 будут подготавливаться к просмотру как плоский многоугольник. При чтении высота первой координаты наружного кольца будет добавлена в качестве свойства высоты многоугольника. Затем для отрисовки многоугольника на карте будет использоваться высота первой координаты. |
+| `ExtendedData`       | да     | да     | Поддерживает нетипизированные `Data` , `SimpleData` или `Schema` и, а также замены сущностей в форме `$[dataName]` .                      |
+| `extrude`            | partial | partial | Поддерживается только для многоугольников. Многообъектная геометрия с многоугольниками разной высоты будет разбита на отдельные функции. Стили линий не поддерживаются. Многоугольники с высотой 0 будут подготавливаться к просмотру как плоский многоугольник. При чтении высота первой координаты наружного кольца будет добавлена в качестве свойства высоты многоугольника. Затем для отрисовки многоугольника на карте будет использоваться высота первой координаты. |
 | `fill`               | да     | да     |                                                                                                                            |
 | `Folder`             | да     | да     |                                                                                                                            |
 | `GroundOverlay`      | да     | да     | `color`не поддерживается                                                                                                   |
-| `heading`            | частично | нет      | Анализируется, `SimpleDataLayer`но не подготавливается к просмотру. Выполняет запись только в том случае, если данные хранятся в свойстве фигуры.                 |
-| `hotSpot`            | да     | частично | Выполняет запись только в том случае, если данные хранятся в свойстве фигуры. Единицы выводятся только как "Пиксели".                         |
+| `heading`            | partial | нет      | Анализируется, но не подготавливается к просмотру `SimpleDataLayer` . Выполняет запись только в том случае, если данные хранятся в свойстве фигуры.                 |
+| `hotSpot`            | да     | partial | Выполняет запись только в том случае, если данные хранятся в свойстве фигуры. Единицы выводятся только как "Пиксели".                         |
 | `href`               | да     | да     |                                                                                                                            |
-| `Icon`               | частично | частично | Анализируется, `SimpleDataLayer`но не подготавливается к просмотру. Записывает только свойство Icon фигуры, если оно содержит данные URI. Поддерживается только `href`. |
-| `IconStyle`          | частично | частично | `icon`значения `heading`, `colorMode`, и `hotspots` анализируются, но не отображаются`SimpleDataLayer`         |
+| `Icon`               | partial | partial | Анализируется, но не подготавливается к просмотру `SimpleDataLayer` . Записывает только свойство Icon фигуры, если оно содержит данные URI. Поддерживается только `href`. |
+| `IconStyle`          | partial | partial | `icon``heading`значения,, `colorMode` и `hotspots` анализируются, но не отображаются`SimpleDataLayer`         |
 | `innerBoundaryIs`    | да     | да     |                                                                                                                            |
 | `kml`                | да     | да     |                                                                                                                            |
-| `LabelStyle`         | нет      | нет      |                                                                                                                            |
+| `LabelStyle`         | Нет      | нет      |                                                                                                                            |
 | `LatLonBox`          | да     | да     |                                                                                                                            |
 | `gx:LatLonQuad`      | да     | да     |                                                                                                                            |
 | `LinearRing`         | да     | да     |                                                                                                                            |
 | `LineString`         | да     | да     |                                                                                                                            |
 | `LineStyle`          | да     | да     | `colorMode` не поддерживается.                                                                                         |
-| `Link`               | да     | Нет      | Для сетевых `href` соединений поддерживается только свойство.                                                                   |
-| `MultiGeometry`      | частично | частично | Может быть разбит на отдельные компоненты при чтении.                                                                     |
+| `Link`               | да     | нет      | `href`Для сетевых соединений поддерживается только свойство.                                                                   |
+| `MultiGeometry`      | partial | partial | Может быть разбит на отдельные компоненты при чтении.                                                                     |
 | `name`               | да     | да     |                                                                                                                            |
-| `NetworkLink`        | да     | Нет      | Ссылки должны находиться в том же домене, что и документ.                                                                  |
-| `NetworkLinkControl` | нет      | нет      |                                                                                                                            |
+| `NetworkLink`        | да     | нет      | Ссылки должны находиться в том же домене, что и документ.                                                                  |
+| `NetworkLinkControl` | Нет      | нет      |                                                                                                                            |
 | `north`              | да     | да     |                                                                                                                            |
 | `open`               | да     | да     |                                                                                                                            |
 | `outerBoundaryIs`    | да     | да     |                                                                                                                            |
 | `outline`            | да     | да     |                                                                                                                            |
-| `overlayXY`          | нет      | нет      |                                                                                                                            |
-| `Pair`               | частично | нет      | Поддерживается только `normal` стиль в `StyleMap` . `highlight` не поддерживается.                                   |
+| `overlayXY`          | Нет      | нет      |                                                                                                                            |
+| `Pair`               | partial | нет      | Поддерживается только `normal` стиль в `StyleMap` . `highlight` не поддерживается.                                   |
 | `phoneNumber`        | да     | да     |                                                                                                                            |
-| `PhotoOverlay`       | нет      | нет      |                                                                                                                            |
+| `PhotoOverlay`       | Нет      | нет      |                                                                                                                            |
 | `Placemark`          | да     | да     |                                                                                                                            |
 | `Point`              | да     | да     |                                                                                                                            |
 | `Polygon`            | да     | да     |                                                                                                                            |
 | `PolyStyle`          | да     | да     |                                                                                                                            |
-| `Region`             | частично | частично | `LatLongBox`поддерживается на уровне документа.                                                                      |
-| `rotation`           | нет      | нет      |                                                                                                                            |
-| `rotationXY`         | нет      | нет      |                                                                                                                            |
-| `scale`              | нет      | нет      |                                                                                                                            |
+| `Region`             | partial | partial | `LatLongBox`поддерживается на уровне документа.                                                                      |
+| `rotation`           | Нет      | Нет      |                                                                                                                            |
+| `rotationXY`         | Нет      | Нет      |                                                                                                                            |
+| `scale`              | Нет      | нет      |                                                                                                                            |
 | `Schema`             | да     | да     |                                                                                                                            |
 | `SchemaData`         | да     | да     |                                                                                                                            |
-| `schemaUrl`          | частично | да     | Не поддерживает загрузку стилей из внешних документов, которые не входят в КМЗ.                             |
-| `ScreenOverlay`      | нет      | нет      |                                                                                                                            |
-| `screenXY`           | нет      | нет      |                                                                                                                            |
+| `schemaUrl`          | partial | да     | Не поддерживает загрузку стилей из внешних документов, которые не входят в КМЗ.                             |
+| `ScreenOverlay`      | Нет      | Нет      |                                                                                                                            |
+| `screenXY`           | Нет      | нет      |                                                                                                                            |
 | `SimpleData`         | да     | да     |                                                                                                                            |
 | `SimpleField`        | да     | да     |                                                                                                                            |
-| `size`               | нет      | нет      |                                                                                                                            |
-| `Snippet`            | частично | частично | `maxLines`атрибут не учитывается.                                                                                  |
+| `size`               | Нет      | нет      |                                                                                                                            |
+| `Snippet`            | partial | partial | `maxLines`атрибут не учитывается.                                                                                  |
 | `south`              | да     | да     |                                                                                                                            |
 | `Style`              | да     | да     |                                                                                                                            |
-| `StyleMap`           | частично | нет      | Поддерживается только стиль "Стандартный" `StyleMap` в.                                                                        |
-| `styleUrl`           | частично | да     | URL-адреса внешних стилей не поддерживаются.                                                                         |
+| `StyleMap`           | partial | нет      | Поддерживается только стиль "Стандартный" в `StyleMap` .                                                                        |
+| `styleUrl`           | partial | да     | URL-адреса внешних стилей не поддерживаются.                                                                         |
 | `text`               | да     | да     | Замена `$[geDirections]` не поддерживается                                                                          |
 | `textColor`          | да     | да     |                                                                                                                            |
 | `TimeSpan`           | да     | да     |                                                                                                                            |
 | `TimeStamp`          | да     | да     |                                                                                                                            |
 | `value`              | да     | да     |                                                                                                                            |
-| `viewRefreshMode`    | частично | нет      |  При наведении указателя на службу WMS поддерживается только `onStop` для наложения заземления. Будет добавляться `BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth]` к URL-адресу и обновляться при перемещении схемы.  |
+| `viewRefreshMode`    | partial | нет      |  При наведении указателя на службу WMS поддерживается только `onStop` для наложения заземления. Будет добавляться `BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth]` к URL-адресу и обновляться при перемещении схемы.  |
 | `visibility`         | да     | да     |                                                                                                                            |
 | `west`               | да     | да     |                                                                                                                            |
 | `when`               | да     | да     |                                                                                                                            |
@@ -153,9 +153,9 @@ ms.locfileid: "80334079"
 | `atom:title`             | да     | да   |                                                                                                |
 | `atom:updated`           | да     | да   |                                                                                                |
 | `atom:uri`               | да     | да   |                                                                                                |
-| `geo:lat`                | да     | нет    | Написано как `georss:point`.                                                                   |
-| `geo:lon`                | да     | нет    | Написано как `georss:point`.                                                                   |
-| `geo:long`               | да     | нет    | Написано как `georss:point`.                                                                   |
+| `geo:lat`                | да     | нет    | Написано как `georss:point` .                                                                   |
+| `geo:lon`                | да     | нет    | Написано как `georss:point` .                                                                   |
+| `geo:long`               | да     | нет    | Написано как `georss:point` .                                                                   |
 | `georss:box`             | да     | нет    | Прочтите как многоугольник и задается `subType` свойство "Rectangle"                                |
 | `georss:circle`          | да     | да   |                                                                                                |
 | `georss:elev`            | да     | да   |                                                                                                |
@@ -168,35 +168,35 @@ ms.locfileid: "80334079"
 | `georss:radius`          | да     | да   |                                                                                                |
 | `georss:relationshiptag` | да     | да   |                                                                                                |
 | `georss:where`           | да     | да   |                                                                                                |
-| `geourl:latitude`        | да     | нет    | Написано как `georss:point`.                                                                   |
-| `geourl:longitude`       | да     | нет    | Написано как `georss:point`.                                                                   |
-| `position`               | да     | нет    | Некоторые XML-каналы заключают GML с помощью тега расположения вместо того, чтобы `georss:where` упаковывать его с помощью тега. Будет считать этот тег, но будет записан с помощью `georss:where` тега. |
+| `geourl:latitude`        | да     | нет    | Написано как `georss:point` .                                                                   |
+| `geourl:longitude`       | да     | нет    | Написано как `georss:point` .                                                                   |
+| `position`               | да     | нет    | Некоторые XML-каналы заключают GML с помощью тега расположения вместо того, чтобы упаковывать его с помощью `georss:where` тега. Будет считать этот тег, но будет записан с помощью `georss:where` тега. |
 | `rss`                    | да     | нет    | Жеорсс, написанный в формате ATOM.                                                                 |
-| `rss:author`             | да     | частично | Написано как `atom:author`.                                                                 |
-| `rss:category`           | да     | частично | Написано как `atom:category`.                                                               |
-| `rss:channel`            | да     | Нет    |                                                                                                |
-| `rss:cloud`              | да     | Нет    |                                                                                                |
-| `rss:comments`           | да     | Нет    |                                                                                                |
-| `rss:copyright`          | да     | частично | Записывается `atom:rights` как `rights` `properties` свойство, если у фигуры еще нет свойства.       |
-| `rss:description`        | да     | частично | Записывается `atom:content` как `content` `properties` свойство, если у фигуры еще нет свойства.      |
-| `rss:docs`               | да     | Нет    |                                                                                                |
-| `rss:enclosure`          | да     | Нет    |                                                                                                |
-| `rss:generator`          | да     | Нет    |                                                                                                |
-| `rss:guid`               | да     | частично | Записывается `atom:id` как `id` `properties` свойство, если у фигуры еще нет свойства.         |
-| `rss:image`              | да     | частично | Записывается `atom:logo` как `logo` `properties` свойство, если у фигуры еще нет свойства.      |
-| `rss:item`               | да     | частично | Написано как `atom:entry`.                                                                  |
-| `rss:language`           | да     | Нет    |                                                                                                |
-| `rss:lastBuildDate`      | да     | частично | Записывается `atom:updated` как `updated` `properties` свойство, если у фигуры еще нет свойства.     |
-| `rss:link`               | да     | частично | Написано как `atom:link`.                                                                   |
-| `rss:managingEditor`     | да     | частично | Написано как `atom:contributor`.                                                            |
-| `rss:pubDate`            | да     | частично | Записывается `atom:published` как `published` `properties` свойство, если у фигуры еще нет свойства.  |
-| `rss:rating`             | да     | Нет    |                                                                                                |
-| `rss:skipDays`           | да     | Нет    |                                                                                                |
-| `rss:skipHours`          | да     | Нет    |                                                                                                |
-| `rss:source`             | да     | частично | Записывается `atom:source` как объект `atom:link`, содержащий.                                       |
-| `rss:textInput`          | да     | Нет    |                                                                                                |
-| `rss:title`              | да     | частично | Написано как `atom:title`.                                                                  |
-| `rss:ttl`                | да     | Нет    |                                                                                                |
+| `rss:author`             | да     | partial | Написано как `atom:author` .                                                                 |
+| `rss:category`           | да     | partial | Написано как `atom:category` .                                                               |
+| `rss:channel`            | да     | нет    |                                                                                                |
+| `rss:cloud`              | да     | нет    |                                                                                                |
+| `rss:comments`           | да     | нет    |                                                                                                |
+| `rss:copyright`          | да     | partial | Записывается как `atom:rights` свойство, если у фигуры `rights` `properties` еще нет свойства.       |
+| `rss:description`        | да     | partial | Записывается как `atom:content` свойство, если у фигуры `content` `properties` еще нет свойства.      |
+| `rss:docs`               | да     | нет    |                                                                                                |
+| `rss:enclosure`          | да     | нет    |                                                                                                |
+| `rss:generator`          | да     | нет    |                                                                                                |
+| `rss:guid`               | да     | partial | Записывается как `atom:id` свойство, если у фигуры `id` `properties` еще нет свойства.         |
+| `rss:image`              | да     | partial | Записывается как `atom:logo` свойство, если у фигуры `logo` `properties` еще нет свойства.      |
+| `rss:item`               | да     | partial | Написано как `atom:entry` .                                                                  |
+| `rss:language`           | да     | нет    |                                                                                                |
+| `rss:lastBuildDate`      | да     | partial | Записывается как `atom:updated` свойство, если у фигуры `updated` `properties` еще нет свойства.     |
+| `rss:link`               | да     | partial | Написано как `atom:link` .                                                                   |
+| `rss:managingEditor`     | да     | partial | Написано как `atom:contributor` .                                                            |
+| `rss:pubDate`            | да     | partial | Записывается как `atom:published` свойство, если у фигуры `published` `properties` еще нет свойства.  |
+| `rss:rating`             | да     | нет    |                                                                                                |
+| `rss:skipDays`           | да     | нет    |                                                                                                |
+| `rss:skipHours`          | да     | нет    |                                                                                                |
+| `rss:source`             | да     | partial | Записывается как объект, `atom:source` содержащий `atom:link` .                                       |
+| `rss:textInput`          | да     | нет    |                                                                                                |
+| `rss:title`              | да     | partial | Написано как `atom:title` .                                                                  |
+| `rss:ttl`                | да     | нет    |                                                                                                |
 | `rss:webMaster`          | да     | нет    |                                                                                                |
 
 ### <a name="gml-elements"></a>Элементы GML
@@ -205,10 +205,10 @@ ms.locfileid: "80334079"
 
 | Имя элемента            | Чтение | запись | Примечания                                                                                  |
 |-------------------------|------|-------|----------------------------------------------------------------------------------------|
-| `gml:coordinates`       | да  | нет    | Написано как `gml:posList`.                                                              |
-| `gml:curveMember`       | да  | Нет    |                                                                                        |
-| `gml:curveMembers`      | да  | Нет    |                                                                                        |
-| `gml:Box`               | да  | нет    | Написано как `gml:Envelope`.                                                             |
+| `gml:coordinates`       | да  | нет    | Написано как `gml:posList` .                                                              |
+| `gml:curveMember`       | да  | нет    |                                                                                        |
+| `gml:curveMembers`      | да  | нет    |                                                                                        |
+| `gml:Box`               | да  | нет    | Написано как `gml:Envelope` .                                                             |
 | `gml:description`       | да  | да   |                                                                                        |
 | `gml:Envelope`          | да  | да   |                                                                                        |
 | `gml:exterior`          | да  | да   |                                                                                        |
@@ -219,26 +219,26 @@ ms.locfileid: "80334079"
 | `gml:geometryMember`    | да  | да   |                                                                                        |
 | `gml:geometryMembers`   | да  | да   |                                                                                        |
 | `gml:identifier`        | да  | да   |                                                                                        |
-| `gml:innerBoundaryIs`   | да  | нет    | Написано с `gml.interior`помощью.                                                          |
+| `gml:innerBoundaryIs`   | да  | нет    | Написано с помощью `gml.interior` .                                                          |
 | `gml:interior`          | да  | да   |                                                                                        |
 | `gml:LinearRing`        | да  | да   |                                                                                        |
 | `gml:LineString`        | да  | да   |                                                                                        |
 | `gml:lineStringMember`  | да  | да   |                                                                                        |
-| `gml:lineStringMembers` | да  | Нет    |                                                                                        |
-| `gml:MultiCurve`        | да  | нет    | Считывает `gml:LineString` только элементы. Написано как`gml.MultiLineString`                  |
-| `gml:MultiGeometry`     | частично  | частично   | Только чтение в качестве Феатуреколлектион.                                              |
+| `gml:lineStringMembers` | да  | нет    |                                                                                        |
+| `gml:MultiCurve`        | да  | нет    | Считывает только `gml:LineString` элементы. Написано как`gml.MultiLineString`                  |
+| `gml:MultiGeometry`     | partial  | partial   | Только чтение в качестве Феатуреколлектион.                                              |
 | `gml:MultiLineString`   | да  | да   |                                                                                        |
 | `gml:MultiPoint`        | да  | да   |                                                                                        |
 | `gml:MultiPolygon`      | да  | да   |                                                                                        |
-| `gml:MultiSurface`      | да  | нет    | Считывает `gml:Polygon` только элементы. Написано как`gml.MultiPolygon`                        |
+| `gml:MultiSurface`      | да  | нет    | Считывает только `gml:Polygon` элементы. Написано как`gml.MultiPolygon`                        |
 | `gml:name`              | да  | да   |                                                                                        |
-| `gml:outerBoundaryIs`   | да  | нет    | Написано с `gml.exterior`помощью.                                                          |
+| `gml:outerBoundaryIs`   | да  | нет    | Написано с помощью `gml.exterior` .                                                          |
 | `gml:Point`             | да  | да   |                                                                                        |
 | `gml:pointMember`       | да  | да   |                                                                                        |
-| `gml:pointMembers`      | да  | Нет    |                                                                                        |
+| `gml:pointMembers`      | да  | нет    |                                                                                        |
 | `gml:Polygon`           | да  | да   |                                                                                        |
 | `gml:polygonMember`     | да  | да   |                                                                                        |
-| `gml:polygonMembers`    | да  | Нет    |                                                                                        |
+| `gml:polygonMembers`    | да  | нет    |                                                                                        |
 | `gml:pos`               | да  | да   |                                                                                        |
 | `gml:posList`           | да  | да   |                                                                                        |
 | `gml:surfaceMember`     | да  | да   |                                                                                        |
@@ -264,7 +264,7 @@ ms.locfileid: "80334079"
 | `gpx:desc`               | да     | да     | Копируется в свойство Description при чтении для согласования с другими XML-форматами.               |
 | `gpx:dgpsid`             | да     | да     |                                                                                             |
 | `gpx:ele`                | да     | да     |                                                                                             |
-| `gpx:extensions`         | частично | частично | При чтении извлекаются сведения о стиле. Все остальные расширения будут сведены в простой объект JSON. Записываются только сведения о стиле фигуры. |
+| `gpx:extensions`         | partial | partial | При чтении извлекаются сведения о стиле. Все остальные расширения будут сведены в простой объект JSON. Записываются только сведения о стиле фигуры. |
 | `gpx:geoidheight`        | да     | да     |                                                                                             |
 | `gpx:gpx`                | да     | да     |                                                                                             |
 | `gpx:hdop`               | да     | да     |                                                                                             |
@@ -287,13 +287,13 @@ ms.locfileid: "80334079"
 | `gpx:vdop`               | да     | да     |                                                                                             |
 | `gpx:wpt`                | да     | да     |                                                                                             |
 | `gpx_style:color`        | да     | да     |                                                                                             |
-| `gpx_style:line`         | частично | частично | `color``opacity` `width` `lineCap`                                           |
+| `gpx_style:line`         | partial | partial | `color``opacity` `width` `lineCap` поддерживаются.                                           |
 | `gpx_style:opacity`      | да     | да     |                                                                                             |
 | `gpx_style:width`        | да     | да     |                                                                                             |
-| `gpxx:DisplayColor`      | да     | нет      | Используется для указания цвета фигуры. При записи вместо `gpx_style:line` него будет использоваться цвет.  |
-| `gpxx:RouteExtension`    | частично | нет      | Все свойства считываются в `properties`. Используется только `DisplayColor`.                     |
-| `gpxx:TrackExtension`    | частично | нет      | Все свойства считываются в `properties`. Используется только `DisplayColor`.                     |
-| `gpxx:WaypointExtension` | частично | нет      | Все свойства считываются в `properties`. Используется только `DisplayColor`.                     |
+| `gpxx:DisplayColor`      | да     | нет      | Используется для указания цвета фигуры. При записи `gpx_style:line` вместо него будет использоваться цвет.  |
+| `gpxx:RouteExtension`    | partial | нет      | Все свойства считываются в `properties` . Используется только `DisplayColor`.                     |
+| `gpxx:TrackExtension`    | partial | нет      | Все свойства считываются в `properties` . Используется только `DisplayColor`.                     |
+| `gpxx:WaypointExtension` | partial | нет      | Все свойства считываются в `properties` . Используется только `DisplayColor`.                     |
 | `gpx:keywords`           | да     | да     |                                                                                             |
 | `gpx:fix`                | да     | да     |                                                                                             |
 
@@ -337,9 +337,9 @@ ms.locfileid: "80334079"
 | GEOMETRYCOLLECTION М | x | x<sup>[2]</sup> | 
 | GEOMETRYCOLLECTION ZM | x<sup>[1]</sup><sup>[2]</sup> | x | 
 
-\[1\] только параметр Z захватывается и добавляется в качестве третьего значения в value.
+\[1 \] только параметр Z захватывается и добавляется в качестве третьего значения в value.
 
-\[параметр\] 2 M не захвачен.
+\[\]параметр 2 M не захвачен.
 
 ## <a name="delimited-spatial-data-support"></a>Поддержка пространственных данных с разделителями
 
@@ -427,7 +427,7 @@ ms.locfileid: "80334079"
 
 Если сведения о типе не могут быть извлечены из заголовка, а при чтении включен параметр динамической типизации, каждая ячейка будет анализироваться отдельно, чтобы определить, какой тип данных лучше всего использовать для приведения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 

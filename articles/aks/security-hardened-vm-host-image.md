@@ -8,10 +8,10 @@ ms.date: 09/11/2019
 ms.author: mlearned
 ms.custom: mvc
 ms.openlocfilehash: b7552fc083c5ed340dc54c2a31160b0c8b4bd076
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80420898"
 ---
 # <a name="security-hardening-for-aks-agent-node-host-os"></a>Усиление безопасности для операционной системы узла агента AKS
@@ -75,13 +75,13 @@ ms.locfileid: "80420898"
 |5.4.4 |Убедитесь, что пользователь по умолчанию umask является 027 или более узким |
 |5.6 |Убедитесь, что доступ к команде SU ограничен.|
 
-## <a name="additional-notes"></a>Дополнительные сведения
+## <a name="additional-notes"></a>Дополнительные замечания
  
 * Чтобы еще больше сократить контактную зону для атак, в ОС были отключены некоторые ненужные драйверы модулей ядра.
 
 * Операционная система с усиленной защитой разработана и поддерживается специально для AKS и не поддерживается за пределами платформы AKS.
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 Дополнительные сведения о безопасности AKS см. в следующих статьях: 
 

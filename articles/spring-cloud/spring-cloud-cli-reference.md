@@ -7,10 +7,10 @@ ms.topic: reference
 ms.date: 10/03/2019
 ms.author: brendm
 ms.openlocfilehash: 33d13d2d4fa9003ef041c4c96be83a69ac595a78
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80298780"
 ---
 # <a name="az-spring-cloud"></a>AZ пружины — облако
@@ -89,7 +89,7 @@ az spring-cloud create  --name -n
                         --no-wait
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --Name-n | Имя для этого экземпляра облака Azure весны. |
 | --resource-group -g | Указывает группу ресурсов для этого приложения.  Настройка группы по умолчанию с помощью`az configure --defaults group=<name>` |
@@ -117,7 +117,7 @@ az spring cloud --name -n
                 --no-wait
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --Name-n | Имя удаляемого экземпляра Azure весны. |
 | --resource-group -g | Имя группы ресурсов, к которой принадлежит Azure Веснного облака. |
@@ -142,7 +142,7 @@ az spring-cloud delete -n MyService -g MyResourceGroup
 az spring-cloud list --resource-group -g
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --resource-group -g | Имя группы ресурсов. |
 
@@ -155,7 +155,7 @@ az spring-cloud show --name -n
                      -- resource-group -g
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --Name-n | Имя экземпляра Azure весны облака. |
 | --resource-group -g | Имя группы ресурсов, к которой принадлежит экземпляр облака Azure весны.
@@ -175,11 +175,11 @@ az spring-cloud app create --name -n
                             --memory
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --Name-n | Имя приложения |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 | Необязательные параметры | |
 | --- | ---: |
@@ -213,11 +213,11 @@ az spring cloud app delete  --name -n
                             --service -s
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --Name-n | Имя приложения |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 ## <a name="az-spring-cloud-app-deploy"></a>AZ пружина — облачное развертывание приложений
 
@@ -240,11 +240,11 @@ az spring cloud app deploy  --name -n
                             --version
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --Name-n | Имя приложения |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 | Необязательные параметры | |
 | --- | ---: |
@@ -253,10 +253,10 @@ az spring cloud app deploy  --name -n
 | --env | Переменные окружения, разделенные пробелами, в формате "ключ [= значение]". |
 | --instance-count | Число экземпляров. |
 | --JAR-Path | Если указано, разверните JAR-файл по указанному пути. В противном случае разверните текущую папку как tar. |
-| --виртуальной машины Java-параметры | Строка, содержащая параметры ВИРТУАЛЬНОЙ машины Java.  Используйте "=" вместо "", чтобы избежать ошибок синтаксического анализа оболочки. Например, `--jvm-options='-Xms1024m -Xmx2048m`. |
+| --виртуальной машины Java-параметры | Строка, содержащая параметры ВИРТУАЛЬНОЙ машины Java.  Используйте "=" вместо "", чтобы избежать ошибок синтаксического анализа оболочки. Например, `--jvm-options='-Xms1024m -Xmx2048m` . |
 | --memory | Количество ГБ памяти на экземпляр. |
 | --no-wait | Не дожидаться завершения долго выполняемых операций. |
-| --Runtime-Version | Версия среды выполнения языка, используемого в приложении.  Допустимые значения `Java_11`: `Java_8`,. |
+| --Runtime-Version | Версия среды выполнения языка, используемого в приложении.  Допустимые значения: `Java_11` , `Java_8` . |
 | --Target-Module | Дочерний модуль для развертывания.  Требуется при построении нескольких пакетов jar из исходного кода. |
 | --version | Версия развертывания.  Без изменений, если не задано. |
 
@@ -289,10 +289,10 @@ az spring-cloud app list --resource-group -g
                          --service -s
 ```
 
-|Необходимые параметры | |
+|Обязательные параметры | |
 | --- | ---: |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 ## <a name="az-spring-cloud-app-restart"></a>AZ пружина — перезапуск облачного приложения
 
@@ -306,11 +306,11 @@ az spring-cloud app restart --name -n
                             --no-wait
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --Name-n | Имя приложения |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 | Необязательные параметры | |
 | --- | ---: |
@@ -332,11 +332,11 @@ az spring-cloud app scale --name -n
                           --no-wait
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --Name-n | Имя приложения |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 | Необязательные параметры | |
 | --- | ---: |
@@ -372,12 +372,12 @@ az spring-cloud app set-deployment --deployment -d
                                    --no-wait
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --Deployment-d | Имя существующего развертывания приложения. |
 | --Name-n | Имя приложения |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 | Необязательные параметры | |
 | --- | ---: |
@@ -401,11 +401,11 @@ az spring-cloud app show --name -n
                          --service -s
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --Name-n | Имя приложения |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 ## <a name="az-spring-cloud-app-show-deploy-log"></a>AZ пружины — Cloud App, демонстрация-Deploy — журнал
 
@@ -418,11 +418,11 @@ az spring-cloud app show-deploy-log --name -n
                                     --deployment -d
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --Name-n | Имя приложения |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 | Необязательные параметры | |
 | --- | ---: |
@@ -440,11 +440,11 @@ az spring-cloud app start --name -n
                           --no-wait
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --Name-n | Имя приложения |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 | Необязательные параметры | |
 | --- | ---: |
@@ -463,11 +463,11 @@ az spring-cloud app stop --name -n
                          --no-wait
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --Name-n | Имя приложения |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 | Необязательные параметры | |
 | --- | ---: |
@@ -491,11 +491,11 @@ az spring-cloud app update --name -n
                            --runtime-version
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --Name-n | Имя приложения |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 | Необязательные параметры | |
 | --- | ---: |
@@ -503,9 +503,9 @@ az spring-cloud app update --name -n
 | --Enable-persistent-хранилище | Логическое.  Если значение — true, подключите диск 50 ГБ с путем по умолчанию. |
 | --env | Переменные окружения, разделенные пробелами, в формате "ключ [= значение]". |
 | --является открытым | Логическое.  Если значение — true, назначьте приложению общедоступный домен. |
-| --виртуальной машины Java-параметры | Строка, содержащая параметры ВИРТУАЛЬНОЙ машины Java.  Используйте "=" вместо "", чтобы избежать ошибок синтаксического анализа оболочки. Например, `--jvm-options='-Xms1024m -Xmx2048m`. |
+| --виртуальной машины Java-параметры | Строка, содержащая параметры ВИРТУАЛЬНОЙ машины Java.  Используйте "=" вместо "", чтобы избежать ошибок синтаксического анализа оболочки. Например, `--jvm-options='-Xms1024m -Xmx2048m` . |
 | --no-wait | Не дожидаться завершения долго выполняемых операций. |
-| --Runtime-Version | Версия среды выполнения языка, используемого в приложении.  Допустимые значения `Java_11`: `Java_8`,. |
+| --Runtime-Version | Версия среды выполнения языка, используемого в приложении.  Допустимые значения: `Java_11` , `Java_8` . |
 
 ### <a name="example"></a>Пример
 
@@ -525,11 +525,11 @@ az spring-cloud app binding list --app
                                  --service -s
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --приложение | Имя приложения |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 ## <a name="az-spring-cloud-app-binding-remove"></a>AZ пружина — удаление привязки облачного приложения
 
@@ -542,12 +542,12 @@ az spring-cloud app binding list --app
                                  --service -s
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --приложение | Имя приложения |
 | --name | Имя удаляемой привязки службы. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 ## <a name="az-spring-cloud-app-binding-show"></a>AZ пружины — отображение привязки облачных приложений
 
@@ -560,12 +560,12 @@ az spring-cloud app binding show --app
                                  --service -s
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --приложение | Имя приложения |
 | --name | Имя привязки службы. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 ## <a name="az-spring-cloud-app-binding-cosmos-add"></a>AZ пружина — Cosmos Добавление привязки облачного приложения
 
@@ -590,13 +590,13 @@ az spring-cloud app binding list --app
                                  --service -s
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --API-тип | Укажите тип API, используя одно из следующих значений: Cassandra, Gremlin, Mongo, SQL, Table. |
 | --приложение | Имя приложения |
 | --name | Имя привязки службы. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 |Необязательные параметры | |
 | --- | ---: |
@@ -616,12 +616,12 @@ az spring-cloud app binding cosmos update --app
                                           --key-space
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --приложение | Имя приложения |
 | --name | Имя привязки службы. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 |Необязательные параметры | |
 | --- | ---: |
@@ -641,7 +641,7 @@ az spring-cloud app binding mysql add --app
                                       --username
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --приложение | Имя приложения |
 | --имя базы данных | Имя базы данных. |
@@ -649,7 +649,7 @@ az spring-cloud app binding mysql add --app
 | --name | Имя привязки службы. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
 | --Resource-ID | Идентификатор ресурса Azure для привязки к службе. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 | --username | Имя пользователя для доступа к базе данных. |
 
 ## <a name="az-spring-cloud-app-binding-mysql-update"></a>AZ пружина — обновление привязки облачного приложения MySQL
@@ -666,12 +666,12 @@ az spring-cloud app binding mysql update --add
                                          --username
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --приложение | Имя приложения |
 | --name | Имя привязки службы. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 | Необязательные параметры | |
 | --- | ---: |
@@ -692,13 +692,13 @@ az spring-cloud app binding redis add --app
                                       --disable-ssl
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --приложение | Имя приложения |
 | --name | Имя привязки службы. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
 | --Resource-ID | Идентификатор ресурса Azure службы, с которой необходимо выполнить привязку. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 | Необязательные параметры | |
 | --- | ---: |
@@ -708,12 +708,12 @@ az spring-cloud app binding redis add --app
 
 Обновите привязку службы для кэша Azure для Redis.
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --приложение | Имя приложения |
 | --name | Имя привязки службы. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 | Необязательные параметры | |
 | --- | ---: |
@@ -723,14 +723,14 @@ az spring-cloud app binding redis add --app
 
 Создайте промежуточное развертывание для приложения.
 
-Чтобы развернуть код или обновить параметры существующего развертывания, используйте `az spring-cloud app deploy --deployment <staging-deployment>` или AZ пружины — облачное обновление приложения — развертывание. <staging deployment>
+Чтобы развернуть код или обновить параметры существующего развертывания, используйте `az spring-cloud app deploy --deployment <staging-deployment>` или AZ пружины — облачное обновление приложения — развертывание <staging deployment> .
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --приложение | Имя приложения |
 | --name | Имя привязки службы. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 | Необязательные параметры | |
 | --- | ---: |
@@ -738,10 +738,10 @@ az spring-cloud app binding redis add --app
 | --env | Переменные окружения, разделенные пробелами, в формате "ключ [= значение]". |
 | --instance-count | Число экземпляров. Значение по умолчанию: 1. |
 | --JAR-Path | Если оно предоставлено, разверните JAR-файл.  В противном случае разверните текущую папку как tar. |
-| --виртуальной машины Java-параметры | Строка, содержащая параметры ВИРТУАЛЬНОЙ машины Java.  Используйте "=" вместо "", чтобы избежать ошибок синтаксического анализа оболочки. Например, `--jvm-options='-Xms1024m -Xmx2048m`. |
+| --виртуальной машины Java-параметры | Строка, содержащая параметры ВИРТУАЛЬНОЙ машины Java.  Используйте "=" вместо "", чтобы избежать ошибок синтаксического анализа оболочки. Например, `--jvm-options='-Xms1024m -Xmx2048m` . |
 | --memory | Количество ГБ памяти на экземпляр. |
 | --no-wait | Не дожидаться завершения долго выполняемых операций. |
-| --Runtime-Version | Версия среды выполнения языка, используемого в приложении.  Допустимые значения `Java_11`: `Java_8`,. |
+| --Runtime-Version | Версия среды выполнения языка, используемого в приложении.  Допустимые значения: `Java_11` , `Java_8` . |
 | --Skip-Clone-Settings | Создайте промежуточное развертывание, клонировать текущие параметры развертывания в рабочей среде. |
 | --Target-Module | Дочерний модуль для развертывания.  Требуется при построении нескольких пакетов jar из исходного кода. |
 | --version | Версия развертывания.  Без изменений, если не задано. |
@@ -771,12 +771,12 @@ az spring-cloud app deployment delete --app
                                       --service -s
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --приложение | Имя приложения |
 | --name | Имя развертывания. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 ## <a name="az-spring-cloud-app-deployment-list"></a>AZ пружины — список развертывания облачных приложений
 
@@ -788,11 +788,11 @@ az spring-cloud app deployment list --app
                                     --service -s
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --приложение | Имя приложения |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 ## <a name="az-spring-cloud-app-deployment-show"></a>AZ пружины — демонстрация развертывания облачных приложений
 
@@ -805,12 +805,12 @@ az spring-cloud app deployment show --app
                                     --service -s
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --приложение | Имя приложения |
 | --name | Имя развертывания. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
-| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с `az configure --defaults spring-cloud=<name>`помощью. |
+| --Service-s | Имя облака Azure весны.  Службу по умолчанию можно настроить с помощью `az configure --defaults spring-cloud=<name>` . |
 
 ## <a name="az-spring-cloud-config-server-clear"></a>AZ пружины — облачная конфигурация — очистка сервера
 
@@ -821,7 +821,7 @@ az spring-cloud config-server clear --name
                                         --resource-group -g
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --name | Имя облака Azure весны. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
@@ -837,7 +837,7 @@ az spring-cloud config-server set --config-file
                                   --no-wait
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --config-файл | Путь к файлу манифеста YAML для конфигурации сервера конфигурации. |
 | --name | Имя облака Azure весны. |
@@ -856,7 +856,7 @@ az spring-cloud config-server show --name -n
                                    --resource-group -g
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --name | Имя облака Azure весны. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
@@ -880,7 +880,7 @@ az spring-cloud config-server git set --name -n
                                       --username
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --name | Имя облака Azure весны. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
@@ -888,7 +888,7 @@ az spring-cloud config-server git set --name -n
 
 | Необязательные параметры | |
 | --- | ---: |
-| --отсрочка | Временно Сохраните объект в локальном кэше вместо отправки в Azure.  Для `az cache` просмотра и очистки используйте. |
+| --отсрочка | Временно Сохраните объект в локальном кэше вместо отправки в Azure.  `az cache`Для просмотра и очистки используйте. |
 | --узел-ключ | Ключ узла для добавленной конфигурации. |
 | --Host-Key-Algorithm | Алгоритм ключа узла для добавленной конфигурации. |
 | --Метка | Метка добавленной конфигурации. |
@@ -917,7 +917,7 @@ az spring-cloud config-server git repo add --name -n
                                            --username
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --name | Имя облака Azure весны. |
 | --репозиторий-имя | URI репозитория. |
@@ -926,7 +926,7 @@ az spring-cloud config-server git repo add --name -n
 
 | Необязательные параметры | |
 | --- | ---: |
-| --отсрочка | Временно Сохраните объект в локальном кэше вместо отправки в Azure.  Для `az cache` просмотра и очистки используйте. |
+| --отсрочка | Временно Сохраните объект в локальном кэше вместо отправки в Azure.  `az cache`Для просмотра и очистки используйте. |
 | --узел-ключ | Ключ узла для добавленной конфигурации. |
 | --Host-Key-Algorithm | Алгоритм ключа узла для добавленной конфигурации. |
 | --Метка | Метка добавленной конфигурации. |
@@ -947,14 +947,14 @@ az spring-cloud config-server git repo list --name -n
                                        --defer
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --name | Имя облака Azure весны. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
 
 | Необязательные параметры | |
 | --- | ---: |
-| --отсрочка | Временно Сохраните объект в локальном кэше вместо отправки в Azure.  Для `az cache` просмотра и очистки используйте. |
+| --отсрочка | Временно Сохраните объект в локальном кэше вместо отправки в Azure.  `az cache`Для просмотра и очистки используйте. |
 
 ## <a name="az-spring-cloud-config-server-git-repo-remove"></a>AZ пружины — облачная конфигурация — Удаление репозитория Git сервера
 
@@ -967,7 +967,7 @@ az spring-cloud config-server git repo remove --name -n
                                          --defer
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --name | Имя облака Azure весны. |
 | --репозиторий-имя | URI репозитория. |
@@ -975,7 +975,7 @@ az spring-cloud config-server git repo remove --name -n
 
 | Необязательные параметры | |
 | --- | ---: |
-| --отсрочка | Временно Сохраните объект в локальном кэше вместо отправки в Azure.  Для `az cache` просмотра и очистки используйте. |
+| --отсрочка | Временно Сохраните объект в локальном кэше вместо отправки в Azure.  `az cache`Для просмотра и очистки используйте. |
 
 ## <a name="az-spring-cloud-test-endpoint-disable"></a>AZ пружина — тестирование облака — отключение конечной точки
 
@@ -986,7 +986,7 @@ az spring-cloud test-endpoint disable --name -n
                                       --resource-group -g
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --name | Имя облака Azure весны. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
@@ -1000,7 +1000,7 @@ az spring-cloud test-endpoint enable --name -n
                                      --resource-group -g
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --name | Имя облака Azure весны. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
@@ -1016,7 +1016,7 @@ az spring-cloud test-endpoint list --name -n
                                    --deployment -d
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --name | Имя облака Azure весны. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |
@@ -1036,7 +1036,7 @@ az spring-cloud test-endpoint renew-key --name -n
                                         --type
 ```
 
-| Необходимые параметры | |
+| Обязательные параметры | |
 | --- | ---: |
 | --name | Имя облака Azure весны. |
 | --resource-group -g | Имя группы ресурсов.  Вы можете настроить расположение по умолчанию с помощью `az configure --defaults group=<name>`. |

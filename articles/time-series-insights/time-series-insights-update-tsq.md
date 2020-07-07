@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/25/2020
 ms.custom: seodec18
 ms.openlocfilehash: 23094ec71dac5780def10e16b90de0b818ef3c68
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80284897"
 ---
 # <a name="data-querying-in-azure-time-series-insights-preview"></a>Запросы данных в предварительной версии службы "аналитика временных рядов Azure"
@@ -38,7 +38,7 @@ ms.locfileid: "80284897"
 ## <a name="environment-apis"></a>Программные интерфейсы среды
 
 * [Получить API окружений](https://docs.microsoft.com/rest/api/time-series-insights/management/environments/get): Возвращает список сред, к которым вызывающему объекту разрешен доступ.
-* [Получение API доступности сред](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/getavailability): Возвращает распределение количества событий по метке времени `$ts`события. Этот API помогает определить, есть ли в среде какие-либо события, возвращая количество событий, разбитых на интервалы времени, если таковые существуют.
+* [Получение API доступности сред](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/getavailability): Возвращает распределение количества событий по метке времени события `$ts` . Этот API помогает определить, есть ли в среде какие-либо события, возвращая количество событий, разбитых на интервалы времени, если таковые существуют.
 * [Получение API схемы событий](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/geteventschema): Возвращает метаданные схемы событий для заданного диапазона поиска. Этот API позволяет получить все метаданные и свойства, доступные в схеме для заданной области поиска.
 
 ## <a name="time-series-model-query-tsm-q-apis"></a>API запросов модели временных рядов (TSM-Q)
@@ -66,7 +66,7 @@ ms.locfileid: "80284897"
 
   Метки времени, возвращаемые в наборе ответов, имеют левые границы интервала, а не события выборки из интервала. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о различных переменных, которые могут быть определены в [модели временных рядов](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-tsm).
 - Узнайте больше о том, как запрашивать данные из [обозревателя "аналитика временных рядов](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-explorer)".

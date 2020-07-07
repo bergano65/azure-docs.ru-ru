@@ -1,6 +1,6 @@
 ---
 title: Создание ASE v1
-description: Описание потока создания для среды службы приложений v1. Этот документ предоставляется только для клиентов, использующих устаревшую версию V1 ASE.
+description: Описание потока создания для среды службы приложений v1. Этот документ предоставляется только для клиентов, использующих устаревшую версию ASE (версию 1).
 author: ccompy
 ms.assetid: 81bd32cf-7ae5-454b-a0d2-23b57b51af47
 ms.topic: article
@@ -8,10 +8,10 @@ ms.date: 07/11/2017
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: 89dc96370f65ff20d7f8be38ff78d6c1664305d3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80477796"
 ---
 # <a name="how-to-create-an-app-service-environment-v1"></a>Как создать среду службы приложений версии 1 

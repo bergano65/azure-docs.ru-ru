@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 09/10/2019
 ms.author: memildin
 ms.openlocfilehash: 4a760fe1e5df7cf614a68f8fa8a05926326d3edf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80583219"
 ---
 # <a name="retirement-of-security-center-features-july-2019"></a>Выбытие средств центра безопасности (Июль 2019)
@@ -53,7 +53,7 @@ ms.locfileid: "80583219"
 
 Мы рекомендуем использовать собственные возможности Azure Log Analytics для просмотра важных событий в рабочих областях.
 
-Если вы создали пользовательские важные события в центре безопасности, они будут доступны. В log Analytics перейдите к разделу выбор**сохраненных поисковых запросов** **рабочей области** > . Ваши данные не будут потеряны или изменены. Собственные важные события также доступны на одном экране в Log Analytics.
+Если вы создали пользовательские важные события в центре безопасности, они будут доступны. В log Analytics перейдите к разделу **Выбор**  >  **сохраненных поисковых запросов**рабочей области. Ваши данные не будут потеряны или изменены. Собственные важные события также доступны на одном экране в Log Analytics.
 
 ![Сохраненные поиски в рабочей области][3]
 
@@ -189,7 +189,7 @@ ms.locfileid: "80583219"
 
 Вы можете получить исходные Log Analytics запросы, которые заполняют панель мониторинга безопасность и аудит в [репозитории GitHub](https://github.com/Azure/Azure-Security-Center/tree/master/Legacy%20Log%20Analytics%20dashboards) для центра безопасности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/).
 - Дополнительные сведения об [Azure Sentinel](https://docs.microsoft.com/azure/sentinel).

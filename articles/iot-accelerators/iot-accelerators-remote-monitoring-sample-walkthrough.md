@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/08/2019
 ms.author: dobett
 ms.openlocfilehash: f501eb55f72811063ddf1d8e02a0ce2137d598f3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80546310"
 ---
 # <a name="remote-monitoring-solution-accelerator-overview"></a>Обзор акселератора решения для удаленного мониторинга
@@ -157,7 +157,7 @@ ms.locfileid: "80546310"
 
 Микрослужба конфигурации обеспечивает сохранение и извлечение параметров конфигурации пользовательским интерфейсом.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы хотите просмотреть исходный код и документацию разработчика, начните с одного из двух репозиториев GitHub:
 
