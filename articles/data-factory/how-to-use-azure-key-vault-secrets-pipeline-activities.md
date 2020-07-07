@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: chlound
 ms.openlocfilehash: f2531ebfd8b1eafc04fa6eda660b0eec3d1147f2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81417075"
 ---
 # <a name="use-azure-key-vault-secrets-in-pipeline-activities"></a>Использование секретов Azure Key Vault в действиях конвейера
@@ -23,7 +23,7 @@ ms.locfileid: "81417075"
 
 Можно сохранить учетные данные или секретные значения в Azure Key Vault и использовать их во время выполнения конвейера для передачи в действия.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Эта функция основана на управляемом удостоверении фабрики данных.  Узнайте, как это работает из [управляемого удостоверения для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) и убедитесь, что фабрика данных имеет одну связь.
 
@@ -63,12 +63,12 @@ ms.locfileid: "81417075"
     > Необходимо добавить **? API-Version = 7.0** в конец URI секрета.  
 
     > [!CAUTION]
-    > Задайте для параметра безопасный вывод значение true, чтобы предотвратить запись секретного значения в обычный текст.  Для всех дальнейших действий, использующих это значение, параметр Secure input должен иметь значение true.
+    > Задайте для параметра безопасный вывод значение true, чтобы предотвратить запись секретного значения в обычный текст.  Для всех дальнейших действий, которые используют это значение, параметр "Защищенный ввод" должен иметь значение true.
 
-5. Чтобы использовать значение в другом действии, используйте следующее выражение ** @activityкода ("web1"). Output. Value**.
+5. Чтобы использовать значение в другом действии, используйте следующее выражение кода ** @activity ("web1"). Output. Value**.
 
     ![Выражение кода](media/how-to-use-azure-key-vault-secrets-pipeline-activities/usewebactivity.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об использовании Azure Key Vault для хранения учетных данных для хранилищ данных и вычислений см. [в разделе Хранение учетных данных в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault)

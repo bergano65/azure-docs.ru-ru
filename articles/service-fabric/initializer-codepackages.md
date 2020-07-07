@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.author: shsha
 ms.openlocfilehash: 8483e00f55d0dd49ba57db58b99b237ce0a169e5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81430634"
 ---
 # <a name="initializer-codepackages"></a>Initializer Code Packages
@@ -52,7 +52,7 @@ ms.locfileid: "81430634"
 >
 > Этот пример ссылается на mcr.microsoft.com/windows/nanoserver:1809. Контейнеры Windows Server совместимы не со всеми версиями ОС узла. Дополнительные сведения см. в разделе [Совместимость версий контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/version-compatibility).
 
-Следующий ServiceManifest. XML строится на основе фрагмента ServiceManifest, описанного ранее. *InitCodePackage0*, *InitCodePackage1* и *ворклоадкодепаккаже* — содержащиеся, которые представляют контейнеры. После активации сначала выполняется *InitCodePackage0* . Он записывает сообщение в файл и завершает работу. Затем выполняется *InitCodePackage1* , который также записывает сообщение в файл и завершает работу. Наконец, *ворклоадкодепаккаже* начинает выполнение. Он также записывает сообщение в файл, выводит содержимое файла в **stdout** , а затем выполняет проверку связи бессрочно.
+Следующий ServiceManifest.xml строится на основе фрагмента ServiceManifest, описанного ранее. *InitCodePackage0*, *InitCodePackage1* и *ворклоадкодепаккаже* — содержащиеся, которые представляют контейнеры. После активации сначала выполняется *InitCodePackage0* . Он записывает сообщение в файл и завершает работу. Затем выполняется *InitCodePackage1* , который также записывает сообщение в файл и завершает работу. Наконец, *ворклоадкодепаккаже* начинает выполнение. Он также записывает сообщение в файл, выводит содержимое файла в **stdout** , а затем выполняет проверку связи бессрочно.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -93,7 +93,7 @@ ms.locfileid: "81430634"
 </ServiceManifest>
 ```
 
-В следующем ApplicationManifest. XML описывается приложение на основе файла ServiceManifest. XML, описанного выше. Обратите внимание, что он задает один и тот же **том** для всех контейнеров, т. е. **к:\воркспацеонхост** подключается по адресу **к:\воркспацеонконтаинер** во всех трех контейнерах. В результате все контейнеры записываются в один и тот же файл журнала в том порядке, в котором они были активированы.
+В следующем ApplicationManifest.xml описывается приложение, основанное на ServiceManifest.xml, описанном выше. Обратите внимание, что он задает один и тот же **том** для всех контейнеров, т. е. **к:\воркспацеонхост** подключается по адресу **к:\воркспацеонконтаинер** во всех трех контейнерах. В результате все контейнеры записываются в один и тот же файл журнала в том порядке, в котором они были активированы.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -127,7 +127,7 @@ ms.locfileid: "81430634"
   </DefaultServices>
 </ApplicationManifest>
 ```
-После успешной активации ServicePackage содержимое **к:\воркспацеонхост\лог.ткст** должно быть следующим.
+После успешной активации ServicePackage содержимое **C:\WorkspaceOnHost\log.txt** должно быть следующим.
 
 ```console
 C:\Users\test>type C:\WorkspaceOnHost\log.txt
@@ -136,7 +136,7 @@ Hi from InitCodePackage1.
 Hi from WorkloadCodePackage.
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях.
 

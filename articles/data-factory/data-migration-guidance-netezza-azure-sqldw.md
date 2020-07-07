@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 9/03/2019
 ms.openlocfilehash: a0263880262da95f4d26ee8388da464e9a59efca
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81416458"
 ---
 # <a name="use-azure-data-factory-to-migrate-data-from-an-on-premises-netezza-server-to-azure"></a>Перенос данных с локального сервера Netezza в Azure с помощью фабрики данных Azure 
@@ -24,16 +24,16 @@ ms.locfileid: "81416458"
 
 Фабрика данных Azure предоставляет производительный, надежный и экономичный механизм переноса данных с локального сервера Netezza в учетную запись хранения Azure или базу данных хранилища данных SQL Azure. 
 
-Эта статья содержит следующие сведения для инженеров и разработчиков данных:
+В этой статье содержатся следующие сведения для специалистов по обработке и анализу данных и разработчиков:
 
 > [!div class="checklist"]
-> * Тестирование 
-> * Устойчивость к копированию
+> * Производительность 
+> * Устойчивость копирования
 > * Безопасность сети
-> * Архитектура высокого уровня решения 
+> * Общая архитектура решения 
 > * Рекомендации по реализации  
 
-## <a name="performance"></a>Тестирование
+## <a name="performance"></a>Производительность
 
 Фабрика данных Azure предлагает бессерверную архитектуру, обеспечивающую параллелизм на различных уровнях. Если вы являетесь разработчиком, это означает, что вы можете создавать конвейеры для полного использования полосы пропускания сети и базы данных, чтобы максимально увеличить пропускную способность перемещения данных для вашей среды.
 
@@ -57,7 +57,7 @@ ms.locfileid: "81416458"
 
 ## <a name="network-security"></a>Безопасность сети 
 
-По умолчанию фабрика данных Azure передает данные с локального сервера Netezza в учетную запись хранения Azure или базу данных хранилища данных SQL Azure, используя зашифрованное соединение по протоколу HTTPS. HTTPS обеспечивает шифрование данных при передаче и предотвращает атаки перехвата и атак типа "злоумышленник в середине".
+По умолчанию фабрика данных Azure передает данные с локального сервера Netezza в учетную запись хранения Azure или базу данных хранилища данных SQL Azure, используя зашифрованное соединение по протоколу HTTPS. HTTPS обеспечивает шифрование данных при передаче и предотвращает прослушивание трафика и атаки типа "злоумышленник в середине".
 
 Кроме того, если вы не хотите, чтобы данные передавались через общедоступный Интернет, вы можете повысить безопасность, передавая данные через частный пиринг через канал Azure Express Route. 
 
@@ -115,7 +115,7 @@ ms.locfileid: "81416458"
    
    - Также можно использовать [субъект-службу](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse#service-principal-authentication) или [проверку подлинности SQL](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse#sql-authentication).
 
-- Если управляемые удостоверения для ресурсов Azure не используются, настоятельно рекомендуется [хранить учетные данные в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault) , чтобы упростить централизованное управление ключами и их вращение без изменения связанных служб фабрики данных Azure. Это также один из рекомендаций [по интеграции и откомпакт-диску](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#best-practices-for-cicd). 
+- Если управляемые удостоверения для ресурсов Azure не используются, настоятельно рекомендуется [хранить учетные данные в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault) , чтобы упростить централизованное управление ключами и их вращение без изменения связанных служб фабрики данных Azure. Это также одна из [рекомендаций для CI/CD](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#best-practices-for-cicd). 
 
 ### <a name="migrate-initial-snapshot-data"></a>Перенос исходных данных моментальных снимков 
 
@@ -151,7 +151,7 @@ ms.locfileid: "81416458"
 
 Рекомендуется провести проверку концепции производительности с помощью репрезентативного примера набора данных, чтобы можно было определить подходящий размер раздела для каждого действия копирования. Мы рекомендуем загрузить каждую секцию в Azure в течение двух часов.  
 
-Чтобы скопировать таблицу, начните с одного действия копирования с единой, размещенной на собственном компьютере IR. Постепенно увеличивайте значение `parallelCopies` в зависимости от количества секций срезов данных в таблице. Узнайте, можно ли загрузить всю таблицу в Azure в течение двух часов в соответствии с пропускной способностью, полученной в результате задания копирования. 
+Чтобы скопировать таблицу, начните с одного действия копирования с единой, размещенной на собственном компьютере IR. Постепенно увеличивайте значение в `parallelCopies` зависимости от количества секций срезов данных в таблице. Узнайте, можно ли загрузить всю таблицу в Azure в течение двух часов в соответствии с пропускной способностью, полученной в результате задания копирования. 
 
 Если его невозможно загрузить в Azure в течение двух часов, а емкость автономного узла IR и хранилища данных не используется полностью, постепенно увеличивайте количество одновременных операций копирования до тех пор, пока не достигнет ограничения сети или ограничения пропускной способности хранилищ данных. 
 
@@ -185,9 +185,9 @@ ms.locfileid: "81416458"
 ![Таблица цен](media/data-migration-guidance-netezza-azure-sqldw/pricing-table.png)
 
 > [!NOTE]
-> В приведенной выше таблице указаны гипотетические цены. Реальная цена зависит от фактической пропускной способности в вашей среде. Цена на компьютере с Windows (с установленным локальным IR) не включена. 
+> В приведенной выше таблице указаны гипотетические цены. Реальная цена зависит от фактической пропускной способности в среде. Цена на компьютере с Windows (с установленным локальным IR) не включена. 
 
-### <a name="additional-references"></a>Дополнительная справка
+### <a name="additional-references"></a>Дополнительные ссылки
 
 Дополнительные сведения см. в следующих статьях и руководствах:
 
@@ -196,16 +196,16 @@ ms.locfileid: "81416458"
 - [Соединитель ODBC](https://docs.microsoft.com/azure/data-factory/connector-odbc)
 - [Соединитель хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage)
 - [Copy data to or from Azure Data Lake Storage Gen2 Preview using Azure Data Factory (Preview)](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage) (Копирование данных в Azure Data Lake Storage Gen2 (предварительная версия) или из него с помощью фабрики данных Azure)
-- [Соединитель хранилища данных SQL Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse)
-- [Краткое руководств по настройке производительности действий копирования](https://docs.microsoft.com/azure/data-factory/copy-activity-performance)
+- [Соединитель хранилища данных Azure SQL](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-data-warehouse)
+- [Руководство по настройке производительности действия копирования](https://docs.microsoft.com/azure/data-factory/copy-activity-performance)
 - [Создание и настройка локальной среды выполнения интеграции](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime)
 - [Высокая доступность и масштабируемость локальной среды выполнения интеграции](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime#high-availability-and-scalability)
 - [Вопросы безопасности при перемещении данных](https://docs.microsoft.com/azure/data-factory/data-movement-security-considerations)
 - [Хранение учетных данных в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault)
 - [Добавочное копирование данных из одной таблицы](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-portal)
 - [Добавочное копирование данных из нескольких таблиц](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-multiple-tables-portal)
-- [Страница с ценами на фабрику данных Azure](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/)
+- [Страница цен на Фабрику данных Azure](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Копирование файлов из нескольких контейнеров с помощью фабрики данных Azure](solution-template-copy-files-multiple-containers.md)

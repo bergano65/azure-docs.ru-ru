@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/04/2018
 ms.openlocfilehash: 2c8ada22b4492bef0239b6f811d5a7bd58e58510
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81417210"
 ---
 # <a name="filter-activity-in-azure-data-factory"></a>Действие Filter в фабрике данных Azure
@@ -37,12 +37,12 @@ ms.locfileid: "81417210"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Описание | Допустимые значения | Обязательный
+Свойство | Описание | Допустимые значения | Обязательно
 -------- | ----------- | -------------- | --------
 name | Имя действия `Filter`. | Строка | Да
 type | Должно быть задано значение **filter**. | Строка | Да
-condition | Условие, которое можно использовать для фильтрации входных данных. | Выражение | Да
-items | Входной массив, к которому должен применяться фильтр. | Выражение | Да
+condition | Условие, которое можно использовать для фильтрации входных данных. | Expression | Да
+items | Входной массив, к которому должен применяться фильтр. | Expression | Да
 
 ## <a name="example"></a>Пример
 
@@ -112,7 +112,7 @@ items | Входной массив, к которому должен приме
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 
 - [Действие условия If](control-flow-if-condition-activity.md)

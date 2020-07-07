@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 12/09/2019
 ms.custom: sfrev
 ms.openlocfilehash: dd0cbd3251185a7831852ead47ca0b120126cf55
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81415672"
 ---
 # <a name="configure-managed-identity-support-for-a-new-service-fabric-cluster"></a>Настройка поддержки управляемого удостоверения для нового кластера Service Fabric
@@ -36,7 +36,7 @@ ms.locfileid: "81415672"
 ]
 ```
 
-## <a name="errors"></a>ошибки
+## <a name="errors"></a>Ошибки
 
 Если развертывание завершается сбоем с этим сообщением, это означает, что кластер не находится в требуемой версии Service Fabric (минимальная поддерживаемая среда выполнения — 6,5 CU2):
 
@@ -48,13 +48,13 @@ ms.locfileid: "81415672"
 }
 ```
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 * Проверка [поддержки управляемого удостоверения](./concepts-managed-identity.md) в Azure Service Fabric
 
 * [Включение поддержки управляемого удостоверения в существующем кластере Azure Service Fabric](./configure-existing-cluster-enable-managed-identity-token-service.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание приложения Service Fabric Azure с управляемым удостоверением, назначенным системой](./how-to-deploy-service-fabric-application-system-assigned-managed-identity.md)
 * [Развертывание приложения Service Fabric Azure с помощью управляемого удостоверения, назначенного пользователем](./how-to-deploy-service-fabric-application-user-assigned-managed-identity.md)

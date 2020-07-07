@@ -15,10 +15,10 @@ ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: borisb
 ms.openlocfilehash: ae6bfb0ab0208d0f778476c9f0959b0c0f1d6471
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81683734"
 ---
 # <a name="implement-oracle-golden-gate-on-an-azure-linux-vm"></a>Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux 
@@ -37,7 +37,7 @@ Azure CLI используется для создания ресурсов Azur
 
 Ниже приводится сводка конфигурации среды.
 > 
-> |  | **Основной сайт** | **Сайт репликации** |
+> |  | **Первичный сайт** | **Сайт репликации** |
 > | --- | --- | --- |
 > | **Версия Oracle** |Версия 2 Oracle 12c — (12.1.0.2) |Версия 2 Oracle 12c — (12.1.0.2)|
 > | **Имя компьютера** |myVM1 |myVM2 |
@@ -416,7 +416,7 @@ SQL> EXIT;
    > Ключ должен содержать строку `ssh-rsa`. Кроме того, содержимое ключа должно быть одной строкой текста.
    >  
 
-6. Запустите PuTTY. В области **Категория** выберите **Подключение** > **SSH** > **AUTH**. В поле **файл закрытого ключа для проверки подлинности** перейдите к разделу, созданному ранее.
+6. Запустите PuTTY. В области **Категория** выберите **Подключение**  >  **SSH**  >  **AUTH**. В поле **файл закрытого ключа для проверки подлинности** перейдите к разделу, созданному ранее.
 
    ![Снимок экрана со страницей настройки закрытого ключа](./media/oracle-golden-gate/setprivatekey.png)
 
@@ -439,7 +439,7 @@ SQL> EXIT;
    $ ./runInstaller
    ```
 
-2. Выберите Oracle GoldenGate for Oracle Database 12c (Oracle GoldenGate для базы данных Oracle 12c). Нажмите кнопку **Далее**, чтобы продолжить.
+2. Выберите Oracle GoldenGate for Oracle Database 12c (Oracle GoldenGate для базы данных Oracle 12c). Затем нажмите кнопку **Далее** , чтобы продолжить.
 
    ![Снимок экрана со страницей выбора установки в установщике](./media/oracle-golden-gate/golden_gate_install_01.png)
 
@@ -781,7 +781,7 @@ GGSCI> VIEW REPORT INITEXT
 
 ### <a name="view-job-status-and-troubleshooting"></a>Просмотр состояния задания и устранение неполадок
 
-#### <a name="view-reports"></a>Просмотр отчетов
+#### <a name="view-reports"></a>Отображение отчетов
 Чтобы просмотреть отчеты на myVM1, выполните следующие команды:
 
   ```bash
@@ -819,7 +819,7 @@ GGSCI> VIEW REPORT INITEXT
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите [руководство по созданию высокодоступных виртуальных машин](../../linux/create-cli-complete.md).
 

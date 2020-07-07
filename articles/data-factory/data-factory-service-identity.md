@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/16/2020
 ms.author: jingwang
 ms.openlocfilehash: d47450f3252074d3bae8df97766bf8858fca5972
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81416584"
 ---
 # <a name="managed-identity-for-data-factory"></a>Управляемое удостоверение для Фабрики данных
@@ -191,7 +191,7 @@ Id                    : 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc
 Type                  : ServicePrincipal
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В следующих разделах представлены сведения о том, когда и как использовать управляемое удостоверение фабрики данных.
 
 - [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md)

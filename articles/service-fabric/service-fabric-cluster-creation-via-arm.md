@@ -4,10 +4,10 @@ description: Сведения о настройке защищенного кл�
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.openlocfilehash: 24bc80a7ab3ce61b79466cdd943c60efd367ce01
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81458306"
 ---
 # <a name="create-a-service-fabric-cluster-using-azure-resource-manager"></a>Создание кластера Service Fabric с помощью Azure Resource Manager 
@@ -26,7 +26,7 @@ ms.locfileid: "81458306"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 В этой статье для развертывания кластера используйте модули Azure CLI или Service Fabric RM для PowerShell:
 
 * [Azure PowerShell версии 4.1 и выше][azure-powershell].
@@ -63,7 +63,7 @@ az account set --subscription $subscriptionId
 Следующая команда позволяет создать кластеры Windows или Linux (нужно указать соответствующую ОС). Команды PowerShell или CLI также сохраняют сертификат в указанную папку *CertificateOutputFolder*, но сначала нужно убедиться, что папка для сертификатов уже создана. Команда принимает и другие параметры (например, номер SKU виртуальной машины).
 
 > [!NOTE]
-> Следующая команда PowerShell работает только с модулем Azure PowerShell `Az` . Чтобы проверить текущую версию Azure Resource Manager PowerShell, выполните следующую команду PowerShell "Get-Module AZ". Если нужно обновить версию PowerShell для Azure Resource Manager, щелкните [эту ссылку](/powershell/azure/install-Az-ps). 
+> Следующая команда PowerShell работает только с `Az` модулем Azure PowerShell. Чтобы проверить текущую версию Azure Resource Manager PowerShell, выполните следующую команду PowerShell "Get-Module AZ". Если нужно обновить версию PowerShell для Azure Resource Manager, щелкните [эту ссылку](/powershell/azure/install-Az-ps). 
 >
 >
 
@@ -278,7 +278,7 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
     --template-file $templateFilePath --parameter-file $parameterFilePath 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 На этом этапе у вас есть защищенный кластер, работающий в Azure. Далее [подключитесь к этому кластеру](service-fabric-connect-to-secure-cluster.md) и узнайте, как [управлять секретами приложений](service-fabric-application-secret-management.md).
 
 Синтаксис и свойства JSON, используемые в шаблоне, доступны в справочнике по шаблону [Microsoft.ServiceFabric/clusters](/azure/templates/microsoft.servicefabric/clusters).
