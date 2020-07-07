@@ -5,10 +5,10 @@ services: container-service
 ms.topic: article
 ms.date: 03/27/2020
 ms.openlocfilehash: 242fefb3b153d11e23d66f26049d0b68c0a4bf4a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80383996"
 ---
 # <a name="use-gpus-for-compute-intensive-workloads-on-azure-kubernetes-service-aks"></a>Использование процессоров GPU для интенсивных вычислительных рабочих нагрузок в Службе Azure Kubernetes (AKS)
@@ -24,7 +24,7 @@ ms.locfileid: "80383996"
 
 В этой статье предполагается, что у вас есть кластер AKS с узлами, поддерживающими процессоры GPU. Кластер AKS должен работать на платформе Kubernetes 1.10 или более поздней версии. Если вам нужен кластер AKS, соответствующий этим требованиям, обратитесь к первой части этой статьи, чтобы [создать кластер AKS](#create-an-aks-cluster).
 
-Также требуется Azure CLI версии 2.0.64 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Также требуется Azure CLI версии 2.0.64 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
 ## <a name="create-an-aks-cluster"></a>Создание кластера AKS
 
@@ -36,7 +36,7 @@ ms.locfileid: "80383996"
 az group create --name myResourceGroup --location eastus
 ```
 
-Теперь выполните команду [az aks create][az-aks-create], чтобы создать кластер AKS. В следующем примере создается кластер с одним узлом размером `Standard_NC6`:
+Теперь выполните команду [az aks create][az-aks-create], чтобы создать кластер AKS. В следующем примере создается кластер с одним узлом размером `Standard_NC6` :
 
 ```azurecli-interactive
 az aks create \
@@ -222,7 +222,7 @@ kubectl apply -f samples-tf-mnist-demo.yaml
 
 ## <a name="view-the-status-and-output-of-the-gpu-enabled-workload"></a>Просмотр состояния и выходных данных рабочей нагрузки с поддержкой GPU
 
-Отслеживайте ход выполнения задания с помощью команды [kubectl get jobs][kubectl-get] с аргументом `--watch`. Извлечение изображения и последующая обработка набора данных может занять несколько минут. Когда в столбце *завершения* отображается *1/1*, задание успешно завершено. Выйдите `kubetctl --watch` из команды с помощью *клавиш CTRL-C*:
+Отслеживайте ход выполнения задания с помощью команды [kubectl get jobs][kubectl-get] с аргументом `--watch`. Извлечение изображения и последующая обработка набора данных может занять несколько минут. Когда в столбце *завершения* отображается *1/1*, задание успешно завершено. Выйдите из `kubetctl --watch` команды с помощью *клавиш CTRL-C*:
 
 ```console
 $ kubectl get jobs samples-tf-mnist-demo --watch
@@ -327,7 +327,7 @@ Adding run metadata for 499
 kubectl delete jobs samples-tf-mnist-demo
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы выполнять задания Apache Spark, ознакомьтесь с разделом [Запуск заданий Apache Spark в AKS][aks-spark].
 

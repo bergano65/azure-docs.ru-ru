@@ -4,15 +4,15 @@ description: Сводка предложений по соответствию �
 ms.topic: conceptual
 ms.date: 03/16/2020
 ms.openlocfilehash: da25c6b9b8206ebd2e7ca1a3d90ec88a6efe04b8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80423123"
 ---
 # <a name="azure-backup-compliance-offerings"></a>Предложения соответствия Azure Backup
 
-Чтобы помочь организациям соответствовать национальным, региональным и отраслевым требованиям, регулирующим сбор и использование данных пользователей, Microsoft Azure & Azure Backup предлагают исчерпывающий набор сертификатов и аттестаций.
+Чтобы помочь организациям соблюдать государственные, региональные и отраслевые требования, регулирующие сбор и использование пользовательских данных, Microsoft Azure и Azure Backup предоставляют разные сертификаты и аттестаты.
 
 Вы можете найти следующие предложения соответствия требованиям для Azure Backup, чтобы обеспечить соблюдение требований к службе при использовании службы Azure Backup.
 
@@ -29,7 +29,7 @@ ms.locfileid: "80423123"
 * [ISO 9001](https://docs.microsoft.com/microsoft-365/compliance/offering-iso-9001)
 * [SOC 1, 2, 3](https://docs.microsoft.com/microsoft-365/compliance/offering-soc)
 
-## <a name="us-government"></a>US Government
+## <a name="us-government"></a>US (США)
 
 * [DoD DISA L2, L4, L5](https://docs.microsoft.com/microsoft-365/compliance/offering-dod-disa-l2-l4-l5?view=o365-worldwide)
 * [FedRAMP](https://docs.microsoft.com/microsoft-365/compliance/offering-fedramp)
@@ -46,6 +46,6 @@ ms.locfileid: "80423123"
 * [CCSL/IRAP (Австралия)](https://docs.microsoft.com/microsoft-365/compliance/offering-ccsl-irap-australia)
 * [GDPR (ЕС)](https://www.microsoft.com/trustcenter/privacy/gdpr)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с последним покрытием и сведениями о соответствии в [Microsoft трустцентер](https://www.microsoft.com/TrustCenter/Compliance/default.aspx).

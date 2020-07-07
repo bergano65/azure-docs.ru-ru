@@ -7,18 +7,18 @@ ms.subservice: cosmosdb-graph
 ms.topic: how-to
 ms.date: 06/03/2020
 ms.author: mjbrown
-ms.openlocfilehash: 1f927823fd7984014e2b8dd4d2ab90d83f144605
-ms.sourcegitcommit: 635114a0f07a2de310b34720856dd074aaf4f9cd
+ms.openlocfilehash: 01e46d144c287569687bb79e7e9cb67b4923b78a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85262962"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85552906"
 ---
 # <a name="azure-cli-samples-for-azure-cosmos-db-gremlin-api"></a>Примеры Azure CLI для API Gremlin в Azure Cosmos DB
 
 В следующей таблице содержатся ссылки на примеры скриптов Azure CLI для API Gremlin в Azure Cosmos DB. Страницы справки для всех команд интерфейса командной строки Azure Cosmos DB доступны в [справочнике по Azure CLI](/cli/azure/cosmosdb). Все примеры сценариев Azure Cosmos DB CLI можно найти в [этом репозитории на сайте GitHub](https://github.com/Azure-Samples/azure-cli-samples/tree/master/cosmosdb).
 
-| |  |
+|Задача | Описание |
 |---|---|
 | [Создание учетной записи Azure Cosmos, базы данных и графа](scripts/cli/gremlin/create.md?toc=%2fcli%2fazure%2ftoc.json)| Создает учетную запись, базу данных и граф для API Gremlin в Azure Cosmos DB. |
 | [Изменение пропускной способности](scripts/cli/gremlin/throughput.md?toc=%2fcli%2fazure%2ftoc.json) | Обновляет ЕЗ/с в базе данных и графе.|

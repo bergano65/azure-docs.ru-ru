@@ -12,17 +12,17 @@ ms.topic: troubleshooting
 ms.date: 02/04/2020
 ms.custom: seodec18
 ms.openlocfilehash: 4d9efa1ebf1a3e3b146c4f45b0e84047562141cd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82192720"
 ---
 # <a name="diagnose-and-solve-issues-in-your-time-series-insights-environment"></a>Диагностика и устранение неполадок в среде "Аналитика временных рядов Azure"
 
 В этой статье описываются проблемы, которые могут возникнуть в среде службы "аналитика временных рядов Azure". В статье перечислены возможные причины проблем и способы их устранения.
 
-## <a name="video"></a>Видеоролик
+## <a name="video"></a>Видео
 
 ### <a name="learn-about-common-time-series-insights-challenges-and-mitigationsbr"></a>Дополнительные сведения о проблемах и предотвращении анализа временных рядов</br>
 
@@ -132,7 +132,7 @@ ms.locfileid: "82192720"
 - *Значок календаря*: указывает, что аналитика временных рядов считывает значения данных в виде значений DateTime.
 - *#*: Указывает, что аналитика временных рядов считывает значения данных как целые числа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте [, как устранить задержку в службе "аналитика временных рядов Azure](time-series-insights-environment-mitigate-latency.md)".
 

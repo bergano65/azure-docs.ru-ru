@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: mbaldwin
 ms.openlocfilehash: bb5288d043ab5638bb33c357cea55c64b03fcf1d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81432129"
 ---
 # <a name="provide-key-vault-authentication-with-a-managed-identity"></a>Предоставление Key Vault проверки подлинности с помощью управляемого удостоверения
@@ -26,9 +26,9 @@ ms.locfileid: "81432129"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
-Для работы с этим руководством необходимы следующие ресурсы. 
+Для работы с этим руководством вам потребуются следующие ресурсы. 
 
 - Хранилище ключей. Вы можете использовать существующее хранилище ключей или создать новое, выполнив действия, описанные в одном из этих кратких руководств:
    - [Создание хранилища ключей с помощью интерфейса командной строки Azure](../secrets/quick-create-cli.md)
@@ -50,7 +50,7 @@ ms.locfileid: "81432129"
 
 1. Выберите **Управляемое удостоверение**. 
 
-1. На вкладке **Назначено системой** для параметра **Состояние** установите значение **Вкл**. Нажмите кнопку **Сохранить**. 
+1. На вкладке **Назначено системой** для параметра **Состояние** установите значение **Вкл**. Выберите команду **Сохранить**. 
 
     ![](../media/managed-identity-system-assigned.png)
 
@@ -77,7 +77,7 @@ az webapp identity assign --name myApp --resource-group myResourceGroup
 az functionapp identity assign --name myApp --resource-group myResourceGroup
 ```
 
-Запишите значение `PrincipalId`, которое потребуется в следующем разделе.
+Запишите значение `PrincipalId` , которое потребуется в следующем разделе.
 
 ```json
 {

@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: shsha
 ms.openlocfilehash: adf4b11412aa752144d4ed4fef06d2de1d76598d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81431297"
 ---
 # <a name="runtocompletion"></a>RunToCompletion
@@ -22,7 +22,7 @@ ms.locfileid: "81431297"
 > Семантика Рунтокомплетион в настоящее время не поддерживается для служб, написанных с помощью модели программирования [Reliable Services][reliable-services-link] .
  
 ## <a name="runtocompletion-semantics-and-specification"></a>Семантика и спецификация Рунтокомплетион
-Семантику Рунтокомплетион можно указать как **ExecutionPolicy** при [импорте ServiceManifest][application-and-service-manifests-link]. Указанная политика наследуется всеми содержащиеся, составляющими ServiceManifest. В следующем фрагменте кода ApplicationManifest. XML приведен пример.
+Семантику Рунтокомплетион можно указать как **ExecutionPolicy** при [импорте ServiceManifest][application-and-service-manifests-link]. Указанная политика наследуется всеми содержащиеся, составляющими ServiceManifest. В следующем фрагменте кода ApplicationManifest.xml приведен пример.
 
 ```xml
 <ServiceManifestImport>
@@ -47,7 +47,7 @@ ms.locfileid: "81431297"
 >
 > Этот пример ссылается на mcr.microsoft.com/windows/nanoserver:1809. Контейнеры Windows Server совместимы не со всеми версиями ОС узла. Дополнительные сведения см. в разделе [Совместимость версий контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/version-compatibility).
 
-В следующем ServiceManifest. XML описывается ServicePackage, состоящий из двух содержащиеся, которые представляют контейнеры. *RunToCompletionCodePackage1* просто записывает сообщение в **stdout** и завершает работу. *RunToCompletionCodePackage2* проверяет связь с адресом замыкания на себя через некоторое время, а затем завершается кодом выхода **0**, **1** или **2**.
+В следующем ServiceManifest.xml описывается ServicePackage, состоящий из двух содержащиеся, которые представляют контейнеры. *RunToCompletionCodePackage1* просто записывает сообщение в **stdout** и завершает работу. *RunToCompletionCodePackage2* проверяет связь с адресом замыкания на себя через некоторое время, а затем завершается кодом выхода **0**, **1** или **2**.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -78,7 +78,7 @@ ms.locfileid: "81431297"
 </ServiceManifest>
 ```
 
-В следующем ApplicationManifest. XML описывается приложение на основе файла ServiceManifest. XML, описанного выше. Он указывает **рунтокомплетион** **ExecutionPolicy** для *виндовсрунтокомплетионсервицепаккаже* с политикой перезапуска **onFailure**. После активации *виндовсрунтокомплетионсервицепаккаже*будет запущено его составное содержащиеся. *RunToCompletionCodePackage1* должен успешно выйти при первой активации. Однако *RunToCompletionCodePackage2* может завершиться неудачно **(ненулевой код выхода)**. в этом случае он будет перезапущен, так как политика перезапуска находится в **onFailure**.
+В следующем ApplicationManifest.xml описывается приложение, основанное на ServiceManifest.xml, описанном выше. Он указывает **рунтокомплетион** **ExecutionPolicy** для *виндовсрунтокомплетионсервицепаккаже* с политикой перезапуска **onFailure**. После активации *виндовсрунтокомплетионсервицепаккаже*будет запущено его составное содержащиеся. *RunToCompletionCodePackage1* должен успешно выйти при первой активации. Однако *RunToCompletionCodePackage2* может завершиться неудачно **(ненулевой код выхода)**. в этом случае он будет перезапущен, так как политика перезапуска находится в **onFailure**.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -112,7 +112,7 @@ ms.locfileid: "81431297"
 * Сценарии обновления для приложений с семантикой Рунтокомплетион не допускаются. При необходимости пользователи должны удалять и повторно создавать такие приложения.
 * События отработки отказа могут привести к повторному выполнению содержащиеся после успешного завершения, на том же узле или на других узлах кластера. Примерами событий отработки отказа являются перезапуски узлов и обновление среды выполнения Service Fabric на узле.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях.
 

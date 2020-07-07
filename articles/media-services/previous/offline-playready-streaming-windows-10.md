@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/16/2019
 ms.author: willzhan
 ms.openlocfilehash: 001d408eaa7ce637bd7cc1f1183dd8748cddf539
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82189528"
 ---
 # <a name="offline-playready-streaming-for-windows-10"></a>Потоковая передача содержимого с технологией PlayReady для Windows 10 (автономный режим)  
@@ -28,7 +28,7 @@ ms.locfileid: "82189528"
 > * [Версия 2](offline-playready-streaming-windows-10.md)
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 Службы мультимедиа Azure поддерживают автономное скачивание и воспроизведение содержимого с защитой DRM. В этой статье рассматривается автономная поддержка Служб мультимедиа Azure для клиентов Windows 10 с PlayReady. Вы можете прочесть о поддержке автономного режима для устройств iOS с FairPlay и Android с Widevine в следующих статьях:
 
@@ -126,7 +126,7 @@ private async void LoadUri_Click(object sender, RoutedEventArgs e)
 * Доставка лицензии PlayReady может происходить из Служб мультимедиа Azure или из другого места.
 * Подготовленное содержимое для потоковой передачи Smooth Streaming все еще можно использовать для потоковой передачи в режиме онлайн через DASH или Smooth с использованием PlayReady в качестве DRM.
 
-## <a name="additional-notes"></a>Дополнительные сведения
+## <a name="additional-notes"></a>Дополнительные замечания
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 

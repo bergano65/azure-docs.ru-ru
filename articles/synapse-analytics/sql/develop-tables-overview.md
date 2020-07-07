@@ -11,10 +11,10 @@ ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
 ms.openlocfilehash: f1eec76d92edc97f7e4058d3afe813f0bb2aae47
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81431882"
 ---
 # <a name="design-tables-using-synapse-sql"></a>Разработка таблиц с помощью синапсе SQL
@@ -76,7 +76,7 @@ CREATE SCHEMA wwi;
 | Таблица WideWorldImportersDW  | Тип таблицы | Пул SQL |
 |:-----|:-----|:------|:-----|
 | Город | Измерение | wwi.DimCity |
-| Порядок | Факты | wwi.FactOrder |
+| Номер | Факты | wwi.FactOrder |
 
 ## <a name="table-persistence"></a>Сохраняемость таблицы
 
@@ -144,7 +144,7 @@ SQL по запросу поддерживает временные таблиц
 |:---------------|:--------------------|
 | Факты           | Используйте хэш-распределение с кластеризованным индексом columnstore. Производительность улучшается, когда две хэш-таблицы объединены по одному столбцу распределения. |
 | Измерение      | Используйте репликацию для небольших таблиц. Если таблицы слишком велики для хранения на каждом вычислительном узле, используйте хэш-распределение. |
-| Поэтапное создание        | Используйте циклический перебор для промежуточных таблиц. Загрузка с помощью инструкции CTAS выполняется быстро. Когда данные помещается в промежуточную таблицу, используйте инструкцию INSERT... Выберите, чтобы переместить данные в рабочие таблицы. |
+| Промежуточный        | Используйте циклический перебор для промежуточных таблиц. Загрузка с помощью инструкции CTAS выполняется быстро. Когда данные помещается в промежуточную таблицу, используйте инструкцию INSERT... Выберите, чтобы переместить данные в рабочие таблицы. |
 
 ## <a name="partitions"></a>Секции
 
@@ -230,7 +230,7 @@ ORDER BY
 - Внешний ключ, проверка [ограничений таблицы](/sql/t-sql/statements/alter-table-table-constraint-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [Вычисляемые столбцы](/sql/t-sql/statements/alter-table-computed-column-definition-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [Индексированные представления](/sql/relational-databases/views/create-indexed-views?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
-- [Виртуализирован](/sql/t-sql/statements/create-sequence-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
+- [Последовательность](/sql/t-sql/statements/create-sequence-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [Разреженные столбцы](/sql/relational-databases/tables/use-sparse-columns?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 - Суррогатные ключи, реализация с помощью [Identity](../sql-data-warehouse/sql-data-warehouse-tables-identity.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
 - [Синонимы](/sql/t-sql/statements/create-synonym-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
@@ -439,6 +439,6 @@ ORDER BY    distribution_id
 ;
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания таблицы для хранилища данных загрузите данные в таблицу.  Руководство по загрузке см. в разделе [Загрузка данных в пул SQL](../sql-data-warehouse/load-data-wideworldimportersdw.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#load-the-data-into-sql-pool).

@@ -7,17 +7,17 @@ ms.date: 02/18/2020
 ms.author: danlep
 ms.custom: mvc
 ms.openlocfilehash: 212624b857d65297830995018603c2627f83369b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81453529"
 ---
 # <a name="deploy-to-azure-container-instances-from-azure-container-registry"></a>Развертывание в службе "Экземпляры контейнеров Azure" из реестра контейнеров Azure
 
 [Реестр контейнеров Azure](../container-registry/container-registry-intro.md) — это управляемая служба реестра контейнеров на базе Azure, используемая для хранения частных образов контейнеров Docker. В этой статье описывается, как извлечь образы контейнеров, хранящиеся в реестре контейнеров Azure, при развертывании в службе "экземпляры контейнеров Azure". Для настройки доступа к реестру рекомендуется создать субъект-службу Azure Active Directory и пароль, а также сохранить учетные данные входа в хранилище ключей Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 **Реестр контейнеров Azure**. для выполнения действий, описанных в этой статье, требуется реестр контейнеров Azure, а также по крайней мере один образ контейнера в реестре. Если вам нужен реестр, см. сведения о его создании в статье [Краткое руководство. Создание реестра контейнеров с использованием Azure CLI](../container-registry/container-registry-get-started-azure-cli.md).
 
@@ -160,7 +160,7 @@ az container create \
 
     ![Представление сведений для группы контейнеров службы "Экземпляры контейнеров Azure"][aci-detailsview]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Более подробные сведения об аутентификации в реестре контейнеров Azure см. в статье [Аутентификация с помощью частного реестра контейнеров Docker](../container-registry/container-registry-authentication.md).
 

@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: edfb2fe5cc37a00335ca7b5be851a88825b03eb1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "72792215"
 ---
 # <a name="how-to-manage-concurrency-in-azure-cognitive-search"></a>Управление параллелизмом в Azure Когнитивный поиск
@@ -214,8 +214,8 @@ ms.locfileid: "72792215"
 + [REST API пример на GitHub](https://github.com/Azure-Samples/search-rest-api-getting-started)
 + [Пример пакета SDK для .NET на сайте GitHub](https://github.com/Azure-Samples/search-dotnet-getting-started). Это решение включает в себя проект DotNetEtagsExplainer, который содержит код, представленный в этой статье.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
-[Общие](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search)
-
-[коды состояния HTTP](https://docs.microsoft.com/rest/api/searchservice/http-status-codes)для операций с индексами HTTP-запросов и ответов[(REST API)](https://docs.microsoft.com/rest/api/searchservice/index-operations)
+[Общие заголовки](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search) 
+ http-запросов и ответов [Коды](https://docs.microsoft.com/rest/api/searchservice/http-status-codes) 
+ состояния HTTP [Операции с индексами (REST API)](https://docs.microsoft.com/rest/api/searchservice/index-operations)

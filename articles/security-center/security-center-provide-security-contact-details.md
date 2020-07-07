@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 08/09/2019
 ms.author: memildin
 ms.openlocfilehash: 08ad761e81909e6ab23c7c07f5ce05865136bc47
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82204106"
 ---
 # <a name="provide-security-contact-details-in-azure-security-center"></a>Предоставление сведений о контактных лицах по вопросам безопасности в центре безопасности Azure
@@ -57,14 +57,14 @@ ms.locfileid: "82204106"
 
 1. Чтобы применить контактную информацию безопасности к своей подписке, нажмите кнопку **сохранить**.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
 * [Настройка политик безопасности в центре безопасности Azure](tutorial-security-policy.md) — Узнайте, как настроить политики безопасности для подписок и групп ресурсов Azure.
 * [Управление рекомендациями по безопасности в центре безопасности Azure](security-center-recommendations.md) — Узнайте, как рекомендации помогут защитить ресурсы Azure.
 * [Мониторинг работоспособности системы безопасности в центре безопасности Azure](security-center-monitoring.md) — Узнайте, как отслеживать работоспособность ресурсов Azure.
 * [Управление оповещениями безопасности в центре безопасности Azure и](security-center-managing-and-responding-alerts.md) реагирование на них — Узнайте, как управлять оповещениями системы безопасности и реагировать на них.
-* [Мониторинг решений партнеров с помощью центра безопасности Azure](security-center-partner-solutions.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
+* [Мониторинг решений партнеров с помощью центра безопасности Azure](security-center-partner-solutions.md) — Узнайте, как отслеживать состояние работоспособности решений партнеров.
 
 <!--Image references-->
 [1]: ./media/security-center-provide-security-contacts/provide-contacts.png

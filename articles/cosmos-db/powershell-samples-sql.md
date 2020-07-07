@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 06/12/2020
 ms.author: mjbrown
-ms.openlocfilehash: 82d709567e75540a865758162ac87f55dfa84bea
-ms.sourcegitcommit: 398fecceba133d90aa8f6f1f2af58899f613d1e3
+ms.openlocfilehash: fc4ec916e71f2fcfd3b411420879d42b2fa90f18
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2020
-ms.locfileid: "85126099"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85563839"
 ---
 # <a name="azure-powershell-samples-for-azure-cosmos-db---sql-core-api"></a>Примеры Azure PowerShell для Azure Cosmos DB — API SQL (Core)
 
@@ -22,7 +22,7 @@ ms.locfileid: "85126099"
 > [!NOTE]
 > В примерах используются командлеты управления [Az.CosmosDB](https://docs.microsoft.com/powershell/module/az.cosmosdb). Регулярно проверяйте наличие обновлений для `Az.CosmosDB`.
 
-| | |
+|Задача | Описание |
 |---|---|
 |[Создание учетной записи, базы данных и контейнера](scripts/powershell/sql/ps-sql-create.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание учетной записи, базы данных и контейнера Azure Cosmos DB |
 |[Создание контейнера с ключом большого раздела](scripts/powershell/sql/ps-sql-container-create-large-partition-key.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создает контейнер с ключом большого раздела. |

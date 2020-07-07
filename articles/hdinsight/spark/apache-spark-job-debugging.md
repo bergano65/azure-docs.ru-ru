@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
 ms.openlocfilehash: 75f8c1f77a372d3b9b9e9a5582927f24b99fe9ed
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82190220"
 ---
 # <a name="debug-apache-spark-jobs-running-on-azure-hdinsight"></a>Отладка заданий Apache Spark в Azure HDInsight
@@ -34,7 +34,7 @@ ms.locfileid: "82190220"
     ![портал Azure запуска пользовательского интерфейса YARN](./media/apache-spark-job-debugging/launch-apache-yarn-ui.png)
 
    > [!TIP]  
-   > Также пользовательский интерфейс YARN можно открыть из пользовательского интерфейса Ambari. Чтобы запустить пользовательский интерфейс Ambari, выберите **Ambari Home** в разделе **панели мониторинга кластера**. В пользовательском интерфейсе Ambari перейдите по **YARN** > **ссылке YARN Quick Links** > The Active диспетчер ресурсов > **Диспетчер ресурсов UI**.
+   > Также пользовательский интерфейс YARN можно открыть из пользовательского интерфейса Ambari. Чтобы запустить пользовательский интерфейс Ambari, выберите **Ambari Home** в разделе **панели мониторинга кластера**. В пользовательском интерфейсе Ambari перейдите по **YARN**  >  **ссылке YARN Quick Links** > The Active диспетчер ресурсов > **Диспетчер ресурсов UI**.
 
 2. Так как задание Spark запущено с помощью записных книжек Jupyter, оно имеет имя **ремотеспаркмагикс** (имя для всех приложений, запускаемых из записных книжек). Чтобы получить дополнительные сведения о задании, выберите идентификатор приложения в имени приложения. Это действие запускает представление приложения.
 
@@ -98,13 +98,13 @@ ms.locfileid: "82190220"
     ![портал Azure запустить сервер журнала Spark](./media/apache-spark-job-debugging/launch-spark-history-server.png "Запуск Сервер1 журнала Spark")
 
    > [!TIP]  
-   > Также пользовательский интерфейс сервера журнала Spark можно открыть из пользовательского интерфейса Ambari. Чтобы запустить пользовательский интерфейс Ambari, в колонке Обзор выберите **Ambari домой** в разделе **панели мониторинга кластера**. В пользовательском интерфейсе Ambari перейдите к разделу **Spark2** > **быстрые ссылки** > **Spark2 History Server UI**.
+   > Также пользовательский интерфейс сервера журнала Spark можно открыть из пользовательского интерфейса Ambari. Чтобы запустить пользовательский интерфейс Ambari, в колонке Обзор выберите **Ambari домой** в разделе **панели мониторинга кластера**. В пользовательском интерфейсе Ambari перейдите к разделу **Spark2**  >  **быстрые ссылки**  >  **Spark2 History Server UI**.
 
 2. Отобразится список всех завершенных приложений. Выберите идентификатор приложения для детализации приложения для получения дополнительных сведений.
 
     ![Завершенные приложения сервера журнала Spark](./media/apache-spark-job-debugging/view-completed-applications.png "Запуск журнала Spark Server2")
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Управление ресурсами кластера Apache Spark в Azure HDInsight](apache-spark-resource-manager.md)
 * [Отладка заданий Apache Spark с помощью расширенного сервера журнала Spark](apache-azure-spark-history-server.md)

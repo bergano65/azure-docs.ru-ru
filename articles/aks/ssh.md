@@ -5,10 +5,10 @@ services: container-service
 ms.topic: article
 ms.date: 07/31/2019
 ms.openlocfilehash: 70ebcb1f340ba28cf80ad3e24a464aad5584b3a4
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82207162"
 ---
 # <a name="connect-with-ssh-to-azure-kubernetes-service-aks-cluster-nodes-for-maintenance-or-troubleshooting"></a>Подключение по протоколу SSH к узлам кластера Службы Azure Kubernetes (AKS) для обслуживания или устранения неполадок
@@ -17,15 +17,15 @@ ms.locfileid: "82207162"
 
 В этой статье показано, как создать SSH-подключение к узлу AKS с использованием его частного IP-адреса.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
 По умолчанию ключи SSH получаются или создаются, а затем добавляются в узлы при создании кластера AKS. В этой статье показано, как указать разные ключи SSH, отличные от ключей SSH, используемых при создании кластера AKS. В этой статье также показано, как определить частный IP-адрес узла и подключиться к нему с помощью SSH. Если не нужно указывать другой ключ SSH, вы можете пропустить шаг добавления открытого ключа SSH к узлу.
 
 В этой статье также предполагается, что у вас есть ключ SSH. Ключ SSH можно создать с помощью [macOS или Linux][ssh-nix] или [Windows][ssh-windows]. Если для создания пары ключей используется выводимое значение Gen, сохраните пару ключей в формате OpenSSH, а не в формате закрытого ключа по умолчанию (PPK-файл).
 
-Также требуется Azure CLI версии 2.0.64 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Также требуется Azure CLI версии 2.0.64 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
 ## <a name="configure-virtual-machine-scale-set-based-aks-clusters-for-ssh-access"></a>Настройка кластеров AKS на основе масштабируемых наборов виртуальных машин для доступа по протоколу SSH
 
@@ -149,7 +149,7 @@ aks-nodepool1-79590246-0  10.240.0.4
     >
     > `kubectl run -it --rm aks-ssh --image=debian --overrides='{"apiVersion":"apps/v1","spec":{"template":{"spec":{"nodeSelector":{"beta.kubernetes.io/os":"linux"}}}}}'`
 
-1. После подключения терминального сеанса к контейнеру установите SSH-клиент с помощью `apt-get`:
+1. После подключения терминального сеанса к контейнеру установите SSH-клиент с помощью `apt-get` :
 
     ```console
     apt-get update && apt-get install openssh-client -y
@@ -196,7 +196,7 @@ aks-nodepool1-79590246-0  10.240.0.4
 
 Закончив, `exit` из сеанса SSH, а затем `exit` из интерактивного сеанса контейнера. Когда сеанса с этим контейнером закроется, модуль pod, используемый для доступа по протоколу SSH, будет удален из кластера AKS.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вам нужны дополнительные сведения об устранении неполадок, вы можете [просмотреть журналы kubelet][view-kubelet-logs] или [журналы главного узла Kubernetes][view-master-logs].
 
