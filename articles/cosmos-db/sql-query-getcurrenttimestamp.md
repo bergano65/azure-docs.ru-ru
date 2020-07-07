@@ -8,10 +8,10 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: b816c63da56025fe6e9cbaece2cde5dcd01585d4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "71351008"
 ---
 # <a name="getcurrenttimestamp-azure-cosmos-db"></a>Жеткурренттиместамп (Azure Cosmos DB)
@@ -27,7 +27,7 @@ GetCurrentTimestamp ()
   
   Возвращает числовое значение, текущее число миллисекунд, истекших с момента, прошедших с версии в 00:00:00 четверг, 1 января 1970.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Замечания
 
   Жеткурренттиместамп () является недетерминированной функцией.
   
@@ -53,4 +53,4 @@ SELECT GetCurrentTimestamp() AS currentUtcTimestamp
 
 - [Функции даты и времени Azure Cosmos DB](sql-query-date-time-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство с Azure Cosmos DB](introduction.md)
+- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)

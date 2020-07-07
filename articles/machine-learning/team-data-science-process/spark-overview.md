@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 64caa1228cd073358bef496721c22b17554031d3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82189289"
 ---
 # <a name="overview-of-data-science-using-spark-on-azure-hdinsight"></a>Общие сведения об обработке и анализе данных с помощью платформы Spark в Azure HDInsight
@@ -35,7 +35,7 @@ ms.locfileid: "82189289"
 Эти записные книжки должны выполняться в ядре PySpark на сервере записной книжки Jupyter:
 
 - [pySpark-machine-learning-data-science-spark-data-exploration-modeling.ipynb](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark1.6/pySpark-machine-learning-data-science-spark-data-exploration-modeling.ipynb). Содержит сведения о том, как выполнять просмотр данных, моделирование и оценку с использованием нескольких различных алгоритмов.
-- [pySpark-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark1.6/pySpark-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb). Содержит разделы в записной книжке №1 и варианты моделей с использованием настройки гиперпараметров и перекрестной проверки.
+- [pySpark-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb.](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark1.6/pySpark-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb) Содержит разделы в записной книжке 1 и варианты моделей с использованием настройки гиперпараметров и перекрестной проверки.
 - [pySpark-machine-learning-data-science-spark-model-consumption.ipynb](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark1.6/pySpark-machine-learning-data-science-spark-model-consumption.ipynb). Показывает, как применять сохраненную модель в кластерах HDInsight с помощью Python.
 
 ### <a name="spark-20-notebooks"></a>Записные книжки для Spark 2.0
@@ -141,11 +141,11 @@ ms.locfileid: "82189289"
 | tip_class |Класс чаевых (0: 0 долларов, 1: 0–5 долларов, 2: 6–10 долларов, 3: 11–20 долларов, 4: >20 долларов) |
 
 ## <a name="execute-code-from-a-jupyter-notebook-on-the-spark-cluster"></a>Выполнение кода из записной книжки Jupyter в кластере Spark
-Записную книжку Jupyter можно запустить с портала Azure. Найдите кластер Spark на панели мониторинга и щелкните его, чтобы войти на страницу управления кластером. Чтобы открыть записную книжку, связанную с кластером Spark, щелкните **панели мониторинга** -> кластера**Jupyter Notebook**.
+Записную книжку Jupyter можно запустить с портала Azure. Найдите кластер Spark на панели мониторинга и щелкните его, чтобы войти на страницу управления кластером. Чтобы открыть записную книжку, связанную с кластером Spark, щелкните **панели мониторинга кластера**  ->  **Jupyter Notebook**.
 
 ![Панели мониторинга кластера](./media/spark-overview/spark-jupyter-on-portal.png)
 
-Кроме того, можно перейти ***`https://CLUSTERNAME.azurehdinsight.net/jupyter`*** к записным книжкам Jupyter. Замените в этом URL-адресе фрагмент CLUSTERNAME именем вашего кластера. Для доступа к записным книжкам необходим пароль к учетной записи администратора.
+Кроме того, можно перейти к ***`https://CLUSTERNAME.azurehdinsight.net/jupyter`*** записным книжкам Jupyter. Замените в этом URL-адресе фрагмент CLUSTERNAME именем вашего кластера. Для доступа к записным книжкам необходим пароль к учетной записи администратора.
 
 ![Просмотр записных книжек Jupyter](./media/spark-overview/spark-jupyter-notebook.png)
 
@@ -164,7 +164,7 @@ ms.locfileid: "82189289"
 
 * просмотреть код, щелкнув записную книжку;
 * выполнить отдельную ячейку, нажав клавиши **SHIFT+ВВОД**;
-* Запустите всю записную книжку, щелкнув **элемент** -> **выполнить**.
+* Запустите всю записную книжку, щелкнув **элемент**  ->  **выполнить**.
 * использовать автоматическую визуализацию запросов.
 
 > [!TIP]
@@ -174,12 +174,12 @@ ms.locfileid: "82189289"
 
 ![Кривая ROC логистической регрессии для универсального подхода](./media/spark-overview/pyspark-jupyter-autovisualization.png)
 
-## <a name="whats-next"></a>Что дальше?
+## <a name="whats-next"></a>Дальнейшие действия
 Теперь, когда вы настроили кластер HDInsight Spark и отправили записные книжки Jupyter, все готово для работы со статьями, посвященными этим трем записным книжкам PySpark. В них рассказывается, как исследовать данные, а также как создавать и использовать модели. С помощью записной книжки по расширенному исследованию и моделированию данных можно более подробно ознакомиться с тем, как использовать перекрестную проверку, перебор гиперпараметров и оценку модели.
 
 **Исследование и моделирование данных с помощью Spark**. Исследуйте набор данных, а затем создайте, оцените и проанализируйте модели машинного обучения, выполнив инструкции из статьи, посвященной [созданию моделей двоичной классификации и регрессии для данных с помощью набора средств Spark MLlib](spark-data-exploration-modeling.md).
 
 **Использование модели**. Дополнительные сведения об оценке моделей классификации и регрессии, созданных в этой статье, см. в статье [Оценка моделей машинного обучения, созданных с помощью Spark](spark-model-consumption.md).
 
-**Перекрестная проверка и очистка параметров**. Дополнительные сведения о том, как можно обучить модели с помощью перекрестной проверки и вычистки параметров Hyper-Parameter, см. в статье [расширенное исследование данных и моделирование с использованием Spark](spark-advanced-data-exploration-modeling.md) .
+**Перекрестная проверка и перебор гиперпараметров.** Сведения об обучении моделей с помощью перекрестной проверки и перебора гиперпараметров см. в статье [Расширенное исследование и моделирование данных с помощью Spark](spark-advanced-data-exploration-modeling.md).
 

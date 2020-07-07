@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 04/20/2020
 ms.author: apimpm
 ms.openlocfilehash: 6edb639cacc48e8b59c458bcf0ac9c9c5e07b030
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82203576"
 ---
 # <a name="upgrade-and-scale-an-azure-api-management-instance"></a>Обновление и масштабирование экземпляра управления API Azure  
@@ -29,7 +29,7 @@ ms.locfileid: "82203576"
 >[!NOTE]
 >В [этой статье](https://azure.microsoft.com/pricing/details/api-management/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) представлены примерные данные о производительности единиц для каждого уровня. Чтобы получить более точные сведения, изучите приближенный к реальному сценарий использования API. См. статью о [емкости экземпляра службы Azure "Управление API"](api-management-capacity.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить шаги из этой статьи, понадобится следующее:
 
@@ -74,13 +74,13 @@ ms.locfileid: "82203576"
 1. Перейдите к службе управления API в [портал Azure](https://portal.azure.com/).
 2. Щелкните **ценовую** категорию в меню.
 3. Выберите нужный уровень службы из раскрывающегося списка. Используйте ползунок, чтобы указать масштаб службы управления API после изменения.
-4. Нажмите кнопку **Сохранить**.
+4. Выберите команду **Сохранить**.
 
 ## <a name="downtime-during-scaling-up-and-down"></a>Время простоя при масштабировании вверх и вниз
 При масштабировании от или до уровня разработчика будет просто. В противном случае время простоя отсутствует. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Развертывание экземпляра службы управления Azure API в различных регионах Azure](api-management-howto-deploy-multi-region.md)
 - [Автоматическое масштабирование экземпляра службы управления API Azure](api-management-howto-autoscale.md)

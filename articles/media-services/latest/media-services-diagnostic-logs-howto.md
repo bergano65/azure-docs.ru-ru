@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 07/08/2019
 ms.author: juliako
 ms.openlocfilehash: 4d4587c701a054828fc34785e2ae680fef47625d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80382925"
 ---
 # <a name="monitor-media-services-diagnostic-logs"></a>Мониторинг журналов диагностики служб мультимедиа
@@ -49,7 +49,7 @@ ms.locfileid: "80382925"
 
    ![Раздел параметров диагностики](media/media-services-diagnostic-logs/logs02.png)
 1. Задайте для ползунка **Хранение (в днях)** значение 30. Этот ползунок задает количество дней хранения данных мониторинга в учетной записи хранения. Azure Monitor автоматически удаляет данные, которые хранятся дольше заданного количества дней. Нулевое значение для периода хранения означает, что данные будут храниться неограниченно долго.
-1. Нажмите кнопку **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 Данные мониторинга из ресурса теперь поступают в учетную запись хранения.
 
@@ -96,7 +96,7 @@ az monitor diagnostic-settings create --name amsv3diagnostic \
 
  Теперь можно просмотреть событие JSON, сохраненное в учетной записи хранения.
 
-### <a name="examples-of-pt1hjson"></a>Примеры PT1H. JSON
+### <a name="examples-of-pt1hjson"></a>Примеры PT1H.js
 
 #### <a name="clear-key-delivery-log"></a>Очистить журнал доставки ключей
 
@@ -174,16 +174,16 @@ az monitor diagnostic-settings create --name amsv3diagnostic \
 }
 ```
 
-## <a name="additional-notes"></a>Дополнительные сведения
+## <a name="additional-notes"></a>Дополнительные замечания
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Метрики Azure Monitor](../../azure-monitor/platform/data-platform.md)
 * [Журналы диагностики Azure Monitor](../../azure-monitor/platform/platform-logs-overview.md)
 * [Как получить и использовать данные журнала из ресурсов Azure](../../azure-monitor/platform/platform-logs-overview.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Метрики мониторинга](media-services-metrics-howto.md)

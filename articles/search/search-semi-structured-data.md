@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 06/23/2020
-ms.openlocfilehash: 64cb864b50f44f70bb9ceccc9983641970116cc7
-ms.sourcegitcommit: 635114a0f07a2de310b34720856dd074aaf4f9cd
+ms.openlocfilehash: 0e6759837519feccf6069e805e3fe0f72562fb7b
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85261449"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85559018"
 ---
 # <a name="tutorial-index-json-blobs-from-azure-storage-using-rest"></a>Руководство по индексированию больших двоичных объектов JSON из службы хранилища Azure с помощью REST
 
@@ -112,13 +112,13 @@ ms.locfileid: "85261449"
 
   ![URL-адрес и заголовок запроса Postman](media/search-get-started-postman/postman-url.png "URL-адрес и заголовок запроса Postman")
 
-Универсальный код ресурса (URI) должен указывать версию API, и каждый вызов должен возвращать ответ **201 Created** (201 — Создан ресурс). Общедоступная версия API (api-version) для использования массивов JSON — `2019-05-06`.
+Универсальный код ресурса (URI) должен указывать версию API, и каждый вызов должен возвращать ответ **201 Created** (201 — Создан ресурс). Общедоступная версия API (api-version) для использования массивов JSON — `2020-06-30`.
 
 ## <a name="3---create-a-data-source"></a>3\. Создание источника данных
 
 [API создания источника данных](https://docs.microsoft.com/rest/api/searchservice/create-data-source) создает объект службы "Когнитивный поиск Azure", в котором указываются данные для индексирования.
 
-1. Задайте для конечной точки этого вызова значение `https://[service name].search.windows.net/datasources?api-version=2019-05-06`. Замените `[service name]` именем службы поиска. 
+1. Задайте для конечной точки этого вызова значение `https://[service name].search.windows.net/datasources?api-version=2020-06-30`. Замените `[service name]` именем службы поиска. 
 
 1. Скопируйте следующий код JSON в текст запроса.
 
@@ -161,7 +161,7 @@ ms.locfileid: "85261449"
     
 Второй вызов — [API создания индекса](https://docs.microsoft.com/rest/api/searchservice/create-index), создающий индекс службы "Когнитивный поиск Azure", в котором хранятся все доступные для поиска данные. Индекс указывает все параметры и их атрибуты.
 
-1. Задайте для конечной точки этого вызова значение `https://[service name].search.windows.net/indexes?api-version=2019-05-06`. Замените `[service name]` именем службы поиска.
+1. Задайте для конечной точки этого вызова значение `https://[service name].search.windows.net/indexes?api-version=2020-06-30`. Замените `[service name]` именем службы поиска.
 
 1. Скопируйте следующий код JSON в текст запроса.
 
@@ -236,7 +236,7 @@ ms.locfileid: "85261449"
 
 Индексатор подключает источник данных, импортирует данные в целевой индекс поиска и при необходимости предоставляет расписание для автоматизации обновления данных. REST API — [создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
 
-1. Задайте для универсального кода ресурса (URI) этого вызова значение `https://[service name].search.windows.net/indexers?api-version=2019-05-06`. Замените `[service name]` именем службы поиска.
+1. Задайте для универсального кода ресурса (URI) этого вызова значение `https://[service name].search.windows.net/indexers?api-version=2020-06-30`. Замените `[service name]` именем службы поиска.
 
 1. Скопируйте следующий код JSON в текст запроса.
 
@@ -281,7 +281,7 @@ ms.locfileid: "85261449"
 
 1. Измените команду на **GET**.
 
-1. Задайте для универсального кода ресурса (URI) этого вызова значение `https://[service name].search.windows.net/indexes/clinical-trials-json-index/docs?search=*&api-version=2019-05-06&$count=true`. Замените `[service name]` именем службы поиска.
+1. Задайте для универсального кода ресурса (URI) этого вызова значение `https://[service name].search.windows.net/indexes/clinical-trials-json-index/docs?search=*&api-version=2020-06-30&$count=true`. Замените `[service name]` именем службы поиска.
 
 1. Отправьте запрос. Это неопределенный полнотекстовый поисковый запрос, который возвращает все поля, помеченные как доступные для получения в индексе, вместе с числом документов. Результат должен выглядеть следующим образом:
 
@@ -313,7 +313,7 @@ ms.locfileid: "85261449"
             . . . 
     ```
 
-1. Добавьте параметр запроса `$select`, чтобы ограничить результаты меньшим числом полей: `https://[service name].search.windows.net/indexes/clinical-trials-json-index/docs?search=*&$select=Gender,metadata_storage_size&api-version=2019-05-06&$count=true`.  Для этого запроса 100 документов совпадают, но по умолчанию Когнитивный поиск Azure возвращает в результатах только 50.
+1. Добавьте параметр запроса `$select`, чтобы ограничить результаты меньшим числом полей: `https://[service name].search.windows.net/indexes/clinical-trials-json-index/docs?search=*&$select=Gender,metadata_storage_size&api-version=2020-06-30&$count=true`.  Для этого запроса 100 документов совпадают, но по умолчанию Когнитивный поиск Azure возвращает в результатах только 50.
 
    ![Параметризованный запрос](media/search-semi-structured-data/lastquery.png "Параметризованный запрос")
 
@@ -333,7 +333,7 @@ ms.locfileid: "85261449"
 Для удаления индексов, индексаторов и источников данных вы также можете использовать портал. Или используйте **DELETE** и укажите URL-адреса для каждого объекта. Следующая команда удаляет индексатор.
 
 ```http
-DELETE https://[YOUR-SERVICE-NAME].search.windows.net/indexers/clinical-trials-json-indexer?api-version=2019-05-06
+DELETE https://[YOUR-SERVICE-NAME].search.windows.net/indexers/clinical-trials-json-indexer?api-version=2020-06-30
 ```
 
 При успешном удалении возвращается код состояния 204.

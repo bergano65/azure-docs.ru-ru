@@ -14,10 +14,10 @@ ms.reviewer: vincesm
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 227230f2d6f46fae27e2cec69d99390f5054c7db
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80366251"
 ---
 # <a name="what-are-the-default-user-permissions-in-azure-active-directory"></a>Разрешения пользователя по умолчанию в Azure Active Directory
@@ -40,7 +40,7 @@ ms.locfileid: "80366251"
 Устройства | Чтение всех свойств устройств<br>Управление всеми свойствами собственных устройств<br> | Нет разрешений<br>Удаление собственных устройств<br>
 Каталог | Чтение всей информации о компании<br>Чтение всех доменов<br>Чтение всех контрактов партнера | Чтение отображаемого имени и проверенных доменов
 Роли и области | Чтение всех административных ролей и членств<br>Чтение всех свойств и членств административных единиц | Нет разрешений 
-Subscriptions | Чтение всех подписок<br>Включение участника плана обслуживания | Нет разрешений
+Подписки | Чтение всех подписок<br>Включение участника плана обслуживания | Нет разрешений
 Политики | Чтение всех свойств политик<br>Управление всеми свойствами собственной политики | Нет разрешений
 
 ## <a name="to-restrict-the-default-permissions-for-member-users"></a>Ограничение разрешений по умолчанию для пользователей-участников
@@ -75,14 +75,14 @@ Subscriptions | Чтение всех подписок<br>Включение у�
 
 | **Действия** | **Описание** |
 | --- | --- |
-| Microsoft. Directory, приложения, аудитория и обновление | Изменение свойства applications.audience в Azure Active Directory. |
-| Microsoft. Directory/приложения, проверка подлинности или обновление | Изменение свойства applications.authentication в Azure Active Directory. |
-| Microsoft. Directory/Applications/Basic/Update | Изменение базовых свойств приложений в Azure Active Directory. |
-| Microsoft. Directory/приложения/учетные данные/обновление | Изменение свойства applications.credentials в Azure Active Directory. |
-| Microsoft. Directory/Applications/Delete | Удаление приложений в Azure Active Directory. |
-| Microsoft. Directory, приложения, владельцы и обновление | Изменение свойства applications.owners в Azure Active Directory. |
-| Microsoft. Directory/приложения/разрешения/обновление | Изменение свойства applications.permissions в Azure Active Directory. |
-| Microsoft. Directory, приложения, политики или обновление | Изменение свойства applications.policies в Azure Active Directory. |
+| microsoft.directory/applications/audience/update | Изменение свойства applications.audience в Azure Active Directory. |
+| microsoft.directory/applications/authentication/update | Изменение свойства applications.authentication в Azure Active Directory. |
+| microsoft.directory/applications/basic/update | Изменение базовых свойств приложений в Azure Active Directory. |
+| microsoft.directory/applications/credentials/update | Изменение свойства applications.credentials в Azure Active Directory. |
+| microsoft.directory/applications/delete | Удаление приложений в Azure Active Directory. |
+| microsoft.directory/applications/owners/update | Изменение свойства applications.owners в Azure Active Directory. |
+| microsoft.directory/applications/permissions/update | Изменение свойства applications.permissions в Azure Active Directory. |
+| microsoft.directory/applications/policies/update | Изменение свойства applications.policies в Azure Active Directory. |
 | Microsoft. каталог/приложения/восстановление | Восстановление приложений в Azure Active Directory. |
 
 #### <a name="owned-enterprise-applications"></a>Собственные корпоративные приложения
@@ -90,43 +90,43 @@ Subscriptions | Чтение всех подписок<br>Включение у�
 
 | **Действия** | **Описание** |
 | --- | --- |
-| Microsoft. Directory/auditLogs/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
-| Microsoft. Directory/политики/базовый/обновление | Обновление базовых свойств политик в Azure Active Directory. |
-| Microsoft. Каталог/политики/удаление | Удаление политик в Azure Active Directory. |
-| Microsoft. Directory, политики, владельцы и обновление | Изменение свойства policies.owners в Azure Active Directory. |
-| Microsoft. Directory/свойства serviceprincipals/appRoleAssignedTo/Update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
-| Microsoft. Directory/свойства serviceprincipals/appRoleAssignments/Update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
-| Microsoft. Directory/свойства serviceprincipals/аудитория/обновление | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
-| Microsoft. Directory/свойства serviceprincipals, проверка подлинности или обновление | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
-| Microsoft. Directory/свойства serviceprincipals/Basic/Update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
-| Microsoft. Directory/свойства serviceprincipals/учетные данные/обновление | Обновление свойства servicePrincipals.credentials в Azure Active Directory. |
-| Microsoft. Directory/свойства serviceprincipals/удаление | Удаление объектов servicePrincipal в Azure Active Directory. |
-| Microsoft. Directory/свойства serviceprincipals/Owners/Update | Изменение свойства servicePrincipals.owners в Azure Active Directory. |
-| Microsoft. Directory/свойства serviceprincipals/разрешения/обновление | Обновление свойства servicePrincipals.permissions в Azure Active Directory. |
-| Microsoft. Directory/свойства serviceprincipals/политики/обновление | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
-| Microsoft. Directory/Сигнинрепортс/Аллпропертиес/Read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| microsoft.directory/policies/basic/update | Обновление базовых свойств политик в Azure Active Directory. |
+| microsoft.directory/policies/delete | Удаление политик в Azure Active Directory. |
+| microsoft.directory/policies/owners/update | Изменение свойства policies.owners в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/audience/update | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/authentication/update | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/basic/update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/credentials/update | Обновление свойства servicePrincipals.credentials в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/delete | Удаление объектов servicePrincipal в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/owners/update | Изменение свойства servicePrincipals.owners в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/permissions/update | Обновление свойства servicePrincipals.permissions в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/policies/update | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
+| microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 
 #### <a name="owned-devices"></a>Принадлежащие устройства
 Пользователи могут выполнять следующие действия на собственных устройствах.
 
 | **Действия** | **Описание** |
 | --- | --- |
-| Microsoft. Directory/Devices/Битлоккеррековерикэйс/Read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
-| Microsoft. Directory/Devices/Disable | Отключение устройств в Azure Active Directory. |
+| microsoft.directory/devices/bitLockerRecoveryKeys/read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
+| microsoft.directory/devices/disable | Отключение устройств в Azure Active Directory. |
 
 #### <a name="owned-groups"></a>Собственные группы
 Пользователи могут выполнять следующие действия в собственных группах.
 
 | **Действия** | **Описание** |
 | --- | --- |
-| Microsoft. Directory/Groups/appRoleAssignments/обновление | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
-| Microsoft. Directory/Groups/базовый/обновление | Обновление базовых свойств в группах в Azure Active Directory. |
-| Microsoft. Directory/Groups/удалить | Удаление групп в Azure Active Directory. |
+| microsoft.directory/groups/appRoleAssignments/update | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
+| microsoft.directory/groups/basic/update | Обновление базовых свойств в группах в Azure Active Directory. |
+| microsoft.directory/groups/delete | Удаление групп в Azure Active Directory. |
 | Microsoft. Directory/Groups/dynamicMembershipRule/обновление | Изменение свойства groups.dynamicMembershipRule в Azure Active Directory. |
-| Microsoft. Directory/Groups/Members/Update | Изменение свойства groups.members в Azure Active Directory. |
-| Microsoft. Directory, группы, владельцы и обновление | Изменение свойства groups.owners в Azure Active Directory. |
-| Microsoft. каталог/группы/восстановление | Восстановление групп в Azure Active Directory. |
-| Microsoft. каталог/группы/параметры/обновление | Изменение свойства groups.settings в Azure Active Directory. |
+| microsoft.directory/groups/members/update | Изменение свойства groups.members в Azure Active Directory. |
+| microsoft.directory/groups/owners/update | Изменение свойства groups.owners в Azure Active Directory. |
+| microsoft.directory/groups/restore | Восстановление групп в Azure Active Directory. |
+| microsoft.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

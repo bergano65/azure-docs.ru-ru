@@ -7,12 +7,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 11/04/2019
 ms.author: zhshang
-ms.openlocfilehash: f87625fe4f56b369f2bf4aade3ef5424084b6fe8
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 4665666fe56c208b2437a7051bbf9201383365f8
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81254892"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85962141"
 ---
 # <a name="quickstart-create-a-chat-room-by-using-signalr-service"></a>Краткое руководство. Создание чата с помощью Службы SignalR
 
@@ -45,7 +45,9 @@ Azure SignalR — это служба Azure, которая помогает р�
 
 2. В новой папке выполните следующую команду, чтобы создать проект:
 
-        dotnet new mvc
+    ```dotnetcli
+    dotnet new mvc
+    ```
 
 
 ## <a name="add-secret-manager-to-the-project"></a>Добавление менеджера секретных ключей в проект
@@ -74,11 +76,15 @@ Azure SignalR — это служба Azure, которая помогает р�
 
 1. Добавьте ссылку на пакет NuGet `Microsoft.Azure.SignalR`, выполнив следующую команду:
 
-        dotnet add package Microsoft.Azure.SignalR
+    ```dotnetcli
+    dotnet add package Microsoft.Azure.SignalR
+    ```
 
 2. Выполните следующую команду, чтобы восстановить пакеты проекта:
 
-        dotnet restore
+    ```dotnetcli
+    dotnet restore
+    ```
 
 3. Добавьте секрет с именем *Azure: SignalR: ConnectionString* в диспетчер секретов. 
 
@@ -86,7 +92,7 @@ Azure SignalR — это служба Azure, которая помогает р�
 
     Эту команду необходимо выполнять в том же каталоге, где расположен *CSPROJ*-файл.
 
-    ```
+    ```dotnetcli
     dotnet user-secrets set Azure:SignalR:ConnectionString "<Your connection string>"    
     ```
 
@@ -224,19 +230,25 @@ connection.start()
 
 1. Чтобы создать приложение с помощью .NET Core CLI, выполните следующую команду в оболочке командной строки:
 
-        dotnet build
+    ```dotnetcli
+    dotnet build
+    ```
 
 2. Когда сборка завершится, запустите веб-приложение локально с помощью следующей команды:
 
-        dotnet run
+    ```dotnetcli
+    dotnet run
+    ```
 
     Приложение будет размещено на порту 5000 локального компьютера, как указано в профиле среды выполнения разработки:
 
-        E:\Testing\chattest>dotnet run
-        Hosting environment: Development
-        Content root path: E:\Testing\chattest
-        Now listening on: http://localhost:5000
-        Application started. Press Ctrl+C to shut down.    
+    ```output
+    E:\Testing\chattest>dotnet run
+    Hosting environment: Development
+    Content root path: E:\Testing\chattest
+    Now listening on: http://localhost:5000
+    Application started. Press Ctrl+C to shut down.    
+    ```
 
 3. Откройте два окна браузера. В каждом из них откройте адрес `http://localhost:5000`. Вам будет предложено ввести имя. Введите имя клиента для обоих клиентов и протестируйте передачу сообщений между клиентами с помощью кнопки **Отправить**.
 

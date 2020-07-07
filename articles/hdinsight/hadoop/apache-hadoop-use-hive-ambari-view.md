@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
 ms.openlocfilehash: 832caaed0816e3dd7d177f634209dea42e5312c7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82192686"
 ---
 # <a name="use-apache-ambari-hive-view-with-apache-hadoop-in-hdinsight"></a>Использование представления Hive Apache Ambari с Apache Hadoop в HDInsight
@@ -27,9 +27,9 @@ ms.locfileid: "82192686"
 
 ## <a name="run-a-hive-query"></a>Выполнение запроса Hive
 
-1. В [портал Azure](https://portal.azure.com/)выберите свой кластер.  Инструкции см. в разделе [список и отображение кластеров](../hdinsight-administer-use-portal-linux.md#showClusters) . Кластер открывается в новом представлении портала.
+1. На [портале Azure](https://portal.azure.com/) выберите свой кластер.  Инструкции см. в разделе [список и отображение кластеров](../hdinsight-administer-use-portal-linux.md#showClusters) . Кластер открывается в новом представлении портала.
 
-1. На **панели мониторинга кластера**выберите **представления Ambari**. Если запрашивается проверка подлинности, используйте имя пользователя и пароль учетной записи входа в кластер (по умолчанию — `admin`), указанные при создании кластера. Можно также выбрать `https://CLUSTERNAME.azurehdinsight.net/#/main/views` в браузере, где `CLUSTERNAME` — это имя кластера.
+1. На **панели мониторинга кластера**выберите **представления Ambari**. Если запрашивается проверка подлинности, используйте имя пользователя и пароль учетной записи входа в кластер (по умолчанию — `admin`), указанные при создании кластера. Можно также выбрать `https://CLUSTERNAME.azurehdinsight.net/#/main/views` в браузере `CLUSTERNAME` , где — это имя кластера.
 
 1. В списке представлений выберите __Представление Hive__.
 

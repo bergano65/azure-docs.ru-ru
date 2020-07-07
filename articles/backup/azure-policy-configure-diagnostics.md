@@ -4,10 +4,10 @@ description: Настройка параметров диагностики Log 
 ms.topic: conceptual
 ms.date: 02/14/2020
 ms.openlocfilehash: e6ba8eb98ca1d6af9fc745d9baf3840ccd1ac224
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82195712"
 ---
 # <a name="configure-vault-diagnostics-settings-at-scale"></a>Настройка параметров диагностики хранилища в масштабе
@@ -82,7 +82,7 @@ ms.locfileid: "82195712"
 >
 > Обратите внимание, что задача исправления **не** будет завершаться ошибкой, если для параметра "Диагностика" в качестве назначения выбрана только установите azurebackupreport с параметром "Рабочая область X", так как в этом случае перекрытие между событиями, включенными существующим параметром, и событиями, включенными параметром, созданным задачей "исправление", не произойдет.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения об использовании отчетов резервного копирования](https://docs.microsoft.com/azure/backup/configure-reports)
 * [Дополнительные сведения о политике Azure](https://docs.microsoft.com/azure/governance/policy/)

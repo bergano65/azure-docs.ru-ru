@@ -7,18 +7,18 @@ ms.subservice: cosmosdb-table
 ms.topic: how-to
 ms.date: 06/03/2020
 ms.author: mjbrown
-ms.openlocfilehash: 36e85ccf4c145b6881670cb95f5e84ec177ce2a5
-ms.sourcegitcommit: 635114a0f07a2de310b34720856dd074aaf4f9cd
+ms.openlocfilehash: 8c6456074e29efe47819e4f31235d957bde81cfb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85262928"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85560615"
 ---
 # <a name="azure-cli-samples-for-azure-cosmos-db-table-api"></a>Примеры Azure CLI для API таблиц Azure Cosmos DB
 
 В следующей таблице содержатся ссылки на примеры сценариев Azure CLI для API таблиц Azure Cosmos DB. Страницы справки для всех команд интерфейса командной строки Azure Cosmos DB доступны в [справочнике по Azure CLI](/cli/azure/cosmosdb). Все примеры сценариев Azure Cosmos DB CLI можно найти в [этом репозитории на сайте GitHub](https://github.com/Azure-Samples/azure-cli-samples/tree/master/cosmosdb).
 
-| |  |
+|Задача | Описание |
 |---|---|
 | [Создание учетной записи Azure Cosmos и таблицы](scripts/cli/table/create.md?toc=%2fcli%2fazure%2ftoc.json)| Создает учетную запись Azure Cosmos DB и таблицу для API таблиц. |
 | [Изменение пропускной способности](scripts/cli/table/throughput.md?toc=%2fcli%2fazure%2ftoc.json) | Обновляет значение ЕЗ/с в таблице.|
