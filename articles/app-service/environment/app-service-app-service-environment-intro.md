@@ -1,6 +1,6 @@
 ---
 title: Введение в ASE v1
-description: Сведения о функциях Среда службы приложений v1. Этот документ предоставляется только для клиентов, использующих устаревшую версию V1 ASE.
+description: Сведения о функциях Среда службы приложений v1. Этот документ предоставляется только для клиентов, использующих устаревшую версию ASE (версию 1).
 author: stefsch
 ms.assetid: 78e6d4f5-da46-4eb5-a632-b5fdc17d2394
 ms.topic: article
@@ -8,10 +8,10 @@ ms.date: 07/11/2017
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: cd3881617227430488f8dd3f2f3d24072b24b8ce
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80478723"
 ---
 # <a name="introduction-to-app-service-environment-v1"></a>Введение в среду службы приложения версии 1

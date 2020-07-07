@@ -20,22 +20,22 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 06eb29f2f3245d3f4fd047fb86b2b57fb1f0989e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "72793347"
 ---
 # <a name="odata-full-text-search-functions-in-azure-cognitive-search---searchismatch-and-searchismatchscoring"></a>Функции полнотекстового поиска OData в Azure Когнитивный поиск — `search.ismatch` и`search.ismatchscoring`
 
-Azure Когнитивный поиск поддерживает полнотекстовый поиск в контексте [выражений фильтра OData](query-odata-filter-orderby-syntax.md) с помощью функций `search.ismatch` и `search.ismatchscoring` . Эти функции позволяют объединять полнотекстовый поиск с помощью исключительной логической фильтрации, так как это невозможно только с помощью параметра верхнего уровня `search` [API поиска](https://docs.microsoft.com/rest/api/searchservice/search-documents).
+Azure Когнитивный поиск поддерживает полнотекстовый поиск в контексте [выражений фильтра OData](query-odata-filter-orderby-syntax.md) с помощью `search.ismatch` `search.ismatchscoring` функций и. Эти функции позволяют объединять полнотекстовый поиск с помощью исключительной логической фильтрации, так как это невозможно только с помощью параметра верхнего уровня `search` [API поиска](https://docs.microsoft.com/rest/api/searchservice/search-documents).
 
 > [!NOTE]
-> Функции `search.ismatch` и `search.ismatchscoring` поддерживаются только в фильтрах в [API поиска](https://docs.microsoft.com/rest/api/searchservice/search-documents). Они не поддерживаются в интерфейсах API [предложения](https://docs.microsoft.com/rest/api/searchservice/suggestions) или [автозаполнения](https://docs.microsoft.com/rest/api/searchservice/autocomplete) .
+> `search.ismatch`Функции и `search.ismatchscoring` поддерживаются только в фильтрах в [API поиска](https://docs.microsoft.com/rest/api/searchservice/search-documents). Они не поддерживаются в интерфейсах API [предложения](https://docs.microsoft.com/rest/api/searchservice/suggestions) или [автозаполнения](https://docs.microsoft.com/rest/api/searchservice/autocomplete) .
 
 ## <a name="syntax"></a>Синтаксис
 
-Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику функций `search.ismatch` и. `search.ismatchscoring`
+Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику `search.ismatch` `search.ismatchscoring` функций и.
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -61,7 +61,7 @@ search_mode ::= "'any'" | "'all'"
 
 ### <a name="searchismatch"></a>Поиск. Match
 
-`search.ismatch` Функция вычисляет полнотекстовый поисковый запрос как часть критерия фильтра. Документы, соответствующие поисковому запросу, будут возвращены в результирующем наборе. Доступны следующие перегрузки этой функции:
+`search.ismatch`Функция вычисляет полнотекстовый поисковый запрос как часть критерия фильтра. Документы, соответствующие поисковому запросу, будут возвращены в результирующем наборе. Доступны следующие перегрузки этой функции:
 
 - `search.ismatch(search)`
 - `search.ismatch(search, searchFields)`
@@ -73,26 +73,26 @@ search_mode ::= "'any'" | "'all'"
 | --- | --- | --- |
 | `search` | `Edm.String` | Поисковый запрос (как [простой](query-simple-syntax.md) , так и [полный](query-lucene-syntax.md) синтаксис запроса Lucene). |
 | `searchFields` | `Edm.String` | Разделенный запятыми список полей с возможностью поиска, в которых выполняется поиск; по умолчанию для всех полей, поддерживающих поиск, в индексе. При использовании [поискового](query-lucene-syntax.md#bkmk_fields) запроса в `search` параметре описатели полей в запросе Lucene переопределяют все поля, указанные в этом параметре. |
-| `queryType` | `Edm.String` | `'simple'`или `'full'`; по умолчанию `'simple'`имеет значение. Указывает, какой язык запроса использовался в параметре `search`. |
-| `searchMode` | `Edm.String` | `'any'`значение `'all'`по умолчанию — `'any'`. Указывает, должны ли быть сопоставлены все или все `search` условия поиска в параметре, чтобы подсчитать документ как совпадение. При использовании [логических операторов Lucene](query-lucene-syntax.md#bkmk_boolean) в `search` параметре они будут иметь приоритет над этим параметром. |
+| `queryType` | `Edm.String` | `'simple'``'full'`значение по умолчанию — `'simple'` . Указывает, какой язык запроса использовался в параметре `search`. |
+| `searchMode` | `Edm.String` | `'any'``'all'`значение по умолчанию — `'any'` . Указывает, должны ли быть сопоставлены все или все условия поиска в `search` параметре, чтобы подсчитать документ как совпадение. При использовании [логических операторов Lucene](query-lucene-syntax.md#bkmk_boolean) в `search` параметре они будут иметь приоритет над этим параметром. |
 
 Все указанные выше параметры эквивалентны соответствующим [параметрам поискового запроса в API поиска](https://docs.microsoft.com/rest/api/searchservice/search-documents).
 
 Функция `search.ismatch` возвращает значение типа `Edm.Boolean`, которое позволяет составить его с другими подвыражениями фильтра с помощью [логических операторов](search-query-odata-logical-operators.md) Boolean.
 
 > [!NOTE]
-> Когнитивный поиск Azure не поддерживает использование `search.ismatch` лямбда- `search.ismatchscoring` выражений или внутри них. Это означает, что невозможно записать фильтры для коллекций объектов, которые могут сопоставлять полнотекстовые поисковые совпадения с ограниченным совпадением фильтра для одного и того же объекта. Дополнительные сведения об этом ограничении, а также примеры см. [в разделе Устранение неполадок фильтров сбора в Azure когнитивный Поиск](search-query-troubleshoot-collection-filters.md). Более подробные сведения о том, почему это ограничение существует, см. в разделе [Основные сведения о фильтрах коллекции в когнитивный Поиск Azure](search-query-understand-collection-filters.md).
+> Когнитивный поиск Azure не поддерживает использование `search.ismatch` `search.ismatchscoring` лямбда-выражений или внутри них. Это означает, что невозможно записать фильтры для коллекций объектов, которые могут сопоставлять полнотекстовые поисковые совпадения с ограниченным совпадением фильтра для одного и того же объекта. Дополнительные сведения об этом ограничении, а также примеры см. [в разделе Устранение неполадок фильтров сбора в Azure когнитивный Поиск](search-query-troubleshoot-collection-filters.md). Более подробные сведения о том, почему это ограничение существует, см. в разделе [Основные сведения о фильтрах коллекции в когнитивный Поиск Azure](search-query-understand-collection-filters.md).
 
 
 ### <a name="searchismatchscoring"></a>Поиск. исматчскоринг
 
-`search.ismatchscoring` Функция, как и `search.ismatch` функция, возвращает `true` для документов, которые соответствуют запросу полнотекстового поиска, переданному в качестве параметра. Разница между ними заключается в том, что оценка релевантности документов, соответствующих запросу функции `search.ismatchscoring`, будет влиять на общую оценку документа, а в случае функции `search.ismatch` оценка документа не будет изменена. Следующие перегрузки этой функции доступны с параметрами, идентичными параметрам функции `search.ismatch`:
+`search.ismatchscoring`Функция, как и `search.ismatch` функция, возвращает `true` для документов, которые соответствуют запросу полнотекстового поиска, переданному в качестве параметра. Разница между ними заключается в том, что оценка релевантности документов, соответствующих запросу функции `search.ismatchscoring`, будет влиять на общую оценку документа, а в случае функции `search.ismatch` оценка документа не будет изменена. Следующие перегрузки этой функции доступны с параметрами, идентичными параметрам функции `search.ismatch`:
 
 - `search.ismatchscoring(search)`
 - `search.ismatchscoring(search, searchFields)`
 - `search.ismatchscoring(search, searchFields, queryType, searchMode)`
 
-Функции `search.ismatch` и `search.ismatchscoring` могут использоваться в одном и том же критерии фильтра.
+`search.ismatch` `search.ismatchscoring` Функции и могут использоваться в одном и том же критерии фильтра.
 
 ## <a name="examples"></a>Примеры
 
@@ -110,7 +110,7 @@ search_mode ::= "'any'" | "'all'"
 
 Найти документы с фразой "ocean view" или рейтингом 5. Запрос `search.ismatchscoring` будет выполняться только по отношению к полям `HotelName` и `Rooms/Description`.
 
-Документы, которые совпали только с вторым предложением дизъюнкции, будут возвращены — Гостиницы со `Rating` значением, равным 5. Чтобы сделать так, чтобы эти документы не соответствовали ни одной из оцененных частей выражения, они будут возвращены с оценками, равными нулю.
+Документы, которые совпали только с вторым предложением дизъюнкции, будут возвращены — Гостиницы со значением, `Rating` равным 5. Чтобы сделать так, чтобы эти документы не соответствовали ни одной из оцененных частей выражения, они будут возвращены с оценками, равными нулю.
 
     search.ismatchscoring('"ocean view"', 'Rooms/Description,HotelName') or Rating eq 5
 

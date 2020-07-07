@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/02/2017
 ms.author: mbaldwin
 ms.openlocfilehash: 436b9c1569d7c33f79a126cd4d0513bac9385d8a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81431921"
 ---
 # <a name="azure-key-vault-net-20---release-notes-and-migration-guide"></a>Хранилище ключей Azure .NET 2.0. Руководство по миграции и заметки о выпуске
@@ -49,12 +49,12 @@ ms.locfileid: "81431921"
 
 * *Secret* — изменено на *SecretBundle*.
 * *Dictionary* — изменено на *IDictionary*.
-* *List\<t>, строка []* изменена *на\<IList T>*
+* *List\<T>, string []*  — изменено на *IList\<T>*.
 * *NextList* — изменено на *NextPageLink*.
 
 ## <a name="return-types"></a>Типы возвращаемых данных
 
-* **KeyList** и **SecretList** теперь возвращают *IPage\<T>* вместо *listkeysresponsemessage.*
+* **KeyList** и **SecretList** теперь возвращают *IPage\<T>* вместо *ListKeysResponseMessage*.
 * Созданный метод **BackupKeyAsync** теперь возвращает *BackupKeyResult* (содержит *Value* — большой двоичный объект для резервного копирования). Ранее метод был внутренним и возвращал только значение.
 
 ## <a name="exceptions"></a>Исключения

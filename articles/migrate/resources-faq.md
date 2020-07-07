@@ -4,10 +4,10 @@ description: Получите ответы на часто задаваемые 
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.openlocfilehash: 9b71888b284fd9cc125def4758d1e3800a92acf2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81530323"
 ---
 # <a name="azure-migrate-common-questions"></a>Служба "миграция Azure": распространенные вопросы
@@ -19,7 +19,7 @@ ms.locfileid: "81530323"
 
 ## <a name="what-is-azure-migrate"></a>Что представляет собой служба "Миграция Azure"?
 
-Служба "миграция Azure" предоставляет центральный концентратор для наблюдения за обнаружением, оценкой и миграцией локальных приложений и рабочих нагрузок, а также виртуальных машин частного и общедоступного облака в Azure. Центр предоставляет средства миграции Azure для оценки и миграции, а также сторонних сторонних поставщиков программного обеспечения. [Подробнее](migrate-services-overview.md).
+Служба "миграция Azure" предоставляет центральный концентратор для наблюдения за обнаружением, оценкой и миграцией локальных приложений и рабочих нагрузок, а также виртуальных машин частного и общедоступного облака в Azure. Центр предоставляет средства миграции Azure для оценки и миграции, а также сторонних сторонних поставщиков программного обеспечения. [Подробнее.](migrate-services-overview.md)
 
 ## <a name="what-can-i-do-with-azure-migrate"></a>Что можно сделать с помощью службы "миграция Azure"?
 
@@ -53,9 +53,9 @@ ms.locfileid: "81530323"
 
 ## <a name="which-geographies-are-supported"></a>Какие географические области поддерживаются?
 
-Ознакомьтесь с поддерживаемыми географическими регионами для [общедоступных](migrate-support-matrix.md#supported-geographies-public-cloud) и [правительственных облаков](migrate-support-matrix.md#supported-geographies-azure-government).
+Просмотрите список поддерживаемых географических регионов для [общедоступного](migrate-support-matrix.md#supported-geographies-public-cloud) облака и облака для [государственных организаций](migrate-support-matrix.md#supported-geographies-azure-government).
 
-## <a name="how-do-i-get-started"></a>Начало работы
+## <a name="how-do-i-get-started"></a>С чего начать?
 
 Укажите необходимый инструмент, а затем добавьте его в проект службы "миграция Azure". 
 
@@ -70,6 +70,6 @@ ms.locfileid: "81530323"
 
 Узнайте, как [удалить проект](how-to-delete-project.md). 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с [обзором службы "миграция Azure](migrate-services-overview.md)".

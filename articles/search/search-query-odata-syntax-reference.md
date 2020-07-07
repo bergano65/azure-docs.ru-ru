@@ -20,15 +20,15 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: f3422fd10e062ae87bc165491e0d01ac2b4943d2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "72793235"
 ---
 # <a name="odata-expression-syntax-reference-for-azure-cognitive-search"></a>Справочник по синтаксису выражений OData для Azure Когнитивный поиск
 
-Azure Когнитивный поиск использует [выражения OData](https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html) в качестве параметров во всех API. Чаще всего для параметров `$orderby` и `$filter` используются выражения OData. Эти выражения могут быть сложными, содержащими несколько предложений, функций и операторов. Однако даже простые выражения OData, такие как пути к свойствам, используются во многих частях REST API Когнитивный поиск Azure. Например, выражения пути используются для ссылки на вложенные поля сложных полей везде в API, например при перечислении вложенных полей в [предложении](index-add-suggesters.md), [функции оценки](index-add-scoring-profiles.md), `$select` параметре или даже [при поиске по полям в запросах Lucene](query-lucene-syntax.md).
+Azure Когнитивный поиск использует [выражения OData](https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html) в качестве параметров во всех API. Чаще всего для параметров и используются выражения OData `$orderby` `$filter` . Эти выражения могут быть сложными, содержащими несколько предложений, функций и операторов. Однако даже простые выражения OData, такие как пути к свойствам, используются во многих частях REST API Когнитивный поиск Azure. Например, выражения пути используются для ссылки на вложенные поля сложных полей везде в API, например при перечислении вложенных полей в [предложении](index-add-suggesters.md), [функции оценки](index-add-scoring-profiles.md), `$select` параметре или даже [при поиске по полям в запросах Lucene](query-lucene-syntax.md).
 
 В этой статье описываются все формы выражений OData с использованием формальной грамматики. Также есть [Интерактивная схема](#syntax-diagram) , позволяющая визуально изучить грамматику.
 

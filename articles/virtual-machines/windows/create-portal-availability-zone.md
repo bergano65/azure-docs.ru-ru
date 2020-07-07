@@ -10,10 +10,10 @@ ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: ''
 ms.openlocfilehash: b8a5f6543bc265605361b7875fad5232d428e27e
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82208998"
 ---
 # <a name="create-a-windows-virtual-machine-in-an-availability-zone-with-the-azure-portal"></a>Создание виртуальной машины Windows в зоне доступности с помощью портала Azure
@@ -28,7 +28,7 @@ ms.locfileid: "82208998"
 
 ## <a name="create-virtual-machine"></a>Создание виртуальной машины
 
-1. Щелкните **создать ресурс** в верхнем левом углу портал Azure.
+1. Щелкните **Создать ресурс** в верхнем левом углу окна портала Azure.
 
 2. Выберите **Вычисления**, а затем — **Windows Server 2016 Datacenter**. 
 
@@ -40,7 +40,7 @@ ms.locfileid: "82208998"
 
     ![Выбор размера виртуальной машины](./media/create-portal-availability-zone/create-windows-vm-portal-sizes.png)  
 
-5. В разделе **Параметры** > **Высокая доступность**выберите одну из пронумерованных зон в раскрывающемся списке **Зона доступности** , примите оставшиеся значения по умолчанию и нажмите кнопку **ОК**.
+5. В разделе **Параметры**  >  **Высокая доступность**выберите одну из пронумерованных зон в раскрывающемся списке **Зона доступности** , примите оставшиеся значения по умолчанию и нажмите кнопку **ОК**.
 
     ![Выбор зоны доступности](./media/create-portal-availability-zone/create-windows-vm-portal-availability-zone.png)
 
@@ -66,6 +66,6 @@ ms.locfileid: "82208998"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статье вы узнали, как создать виртуальную машину в зоне доступности. Дополнительные сведения о [доступности](availability.md) для виртуальных машин Azure.

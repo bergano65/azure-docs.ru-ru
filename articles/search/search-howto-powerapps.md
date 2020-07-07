@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: rest-api
 ms.topic: tutorial
 ms.date: 04/25/2020
-ms.openlocfilehash: 2a2e292390b2f060bf31d739605d7506203a5619
-ms.sourcegitcommit: 0fda81f271f1a668ed28c55dcc2d0ba2bb417edd
+ms.openlocfilehash: 66289c512a746a30ed8dbd3e5c2df92bea27d907
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82901396"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85565843"
 ---
 # <a name="tutorial-query-a-cognitive-search-index-from-power-apps"></a>Руководство по Создание запроса к индексу Когнитивного поиска из Power Apps
 
@@ -74,7 +74,7 @@ ms.locfileid: "82901396"
 
    * Выберите команду `GET`.
 
-   * В качестве URL-адреса введите пример запроса к индексу поиска (например, `search=*` возвращает все документы, а `$select=` позволяет выбрать поля). Версию API нужно обязательно указать. Полный URL-адрес может выглядеть так: `https://mydemo.search.windows.net/indexes/hotels-sample-index/docs?search=*&$select=HotelName,Description,Address/City&api-version=2019-05-06`.
+   * В качестве URL-адреса введите пример запроса к индексу поиска (например, `search=*` возвращает все документы, а `$select=` позволяет выбрать поля). Версию API нужно обязательно указать. Полный URL-адрес может выглядеть так: `https://mydemo.search.windows.net/indexes/hotels-sample-index/docs?search=*&$select=HotelName,Description,Address/City&api-version=2020-06-30`.
 
    * В разделе "Заголовки" введите `Content-Type`. 
 
@@ -94,7 +94,7 @@ ms.locfileid: "82901396"
 
     :::image type="content" source="./media/search-howto-powerapps/1-10-4-parameter-metadata-select.png" alt-text="Метаданные параметра Version" border="true":::
 
-1. В разделе *api-version* выполните следующее. Задайте `2019-05-06` в качестве **значения по умолчанию**, для параметра **Обязательно** укажите *true* и для параметра **Видимость** — *Внутренняя*.  
+1. В разделе *api-version* выполните следующее. Задайте `2020-06-30` в качестве **значения по умолчанию**, для параметра **Обязательно** укажите *true* и для параметра **Видимость** — *Внутренняя*.  
 
     :::image type="content" source="./media/search-howto-powerapps/1-10-2-parameter-metadata-version.png" alt-text="Метаданные параметра version" border="true":::
 
@@ -106,7 +106,7 @@ ms.locfileid: "82901396"
     parameters:
       - {name: search, in: query, required: false, type: string, default: '*'}
       - {name: $select, in: query, required: false, type: string, default: 'HotelName,Description,Address/City'}
-      - {name: api-version, in: query, required: true, type: string, default: '2019-05-06',
+      - {name: api-version, in: query, required: true, type: string, default: '2020-06-30',
         x-ms-visibility: internal}
       - {name: Content-Type, in: header, required: false, type: string}
     ```

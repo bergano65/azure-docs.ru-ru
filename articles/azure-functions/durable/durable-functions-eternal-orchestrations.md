@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
 ms.openlocfilehash: d55e08fecbd1338284607ac59fe354c6fa8cb1ea
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80478819"
 ---
 # <a name="eternal-orchestrations-in-durable-functions-azure-functions"></a>Нескончаемые оркестрации в устойчивых функциях (Функции Azure)
@@ -22,7 +22,7 @@ ms.locfileid: "80478819"
 
 ## <a name="resetting-and-restarting"></a>Сброс и перезапуск
 
-Вместо бесконечных циклов функции Orchestrator сбрасывают свое состояние, вызывая `ContinueAsNew` метод (.NET) `continueAsNew` или (JavaScript) [привязки триггера оркестрации](durable-functions-bindings.md#orchestration-trigger). Этот метод принимает один параметр в формате JSON, который передает входные данные в следующие поколение функции оркестрации.
+Вместо бесконечных циклов функции Orchestrator сбрасывают свое состояние, вызывая `ContinueAsNew` метод (.NET) или `continueAsNew` (JavaScript) [привязки триггера оркестрации](durable-functions-bindings.md#orchestration-trigger). Этот метод принимает один параметр в формате JSON, который передает входные данные в следующие поколение функции оркестрации.
 
 При вызове `ContinueAsNew` экземпляр помещает в очередь сообщение для себя и завершает выполнение. Это сообщение приводит к повторному запуску экземпляра с новыми входными значениями. Функция оркестратора сохраняет тот же идентификатор экземпляра, но журнал для нее обнуляется.
 
@@ -51,7 +51,7 @@ public static async Task Run(
 ```
 
 > [!NOTE]
-> Предыдущий пример C# предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо. `IDurableOrchestrationContext` Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> Предыдущий пример C# предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext` . Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -76,7 +76,7 @@ module.exports = df.orchestrator(function*(context) {
 
 ## <a name="starting-an-eternal-orchestration"></a>Запуск оркестрации нескончаемые
 
-Используйте метод `StartNewAsync` (.NET) или `startNew` (JavaScript), чтобы запустить нескончаемые оркестрации, как и любую другую функцию оркестрации.  
+Используйте `StartNewAsync` метод (.NET) или `startNew` (JavaScript), чтобы запустить нескончаемые оркестрации, как и любую другую функцию оркестрации.  
 
 > [!NOTE]
 > Если необходимо обеспечить выполнение оркестрации одноэлементного нескончаемые, важно поддерживать тот же экземпляр `id` при запуске оркестрации. Дополнительные сведения см. в [статье об управлении экземплярами](durable-functions-instance-management.md).
@@ -97,7 +97,7 @@ public static async Task<HttpResponseMessage> OrchestrationTrigger(
 ```
 
 > [!NOTE]
-> Предыдущий код предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо `OrchestrationClient` использовать атрибут, а не `DurableClient` атрибут, и тип `DurableOrchestrationClient` параметра следует использовать вместо. `IDurableOrchestrationClient` Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> Предыдущий код предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `OrchestrationClient` атрибут, а не `DurableClient` атрибут, и `DurableOrchestrationClient` тип параметра следует использовать вместо `IDurableOrchestrationClient` . Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -122,9 +122,9 @@ module.exports = async function (context, req) {
 
 Если потребуется завершить функцию оркестрации, достаточно лишь *не* вызывать метод `ContinueAsNew` и дождаться обычного выхода из функции.
 
-Если функция Orchestrator находится в бесконечном цикле и должна быть остановлена, используйте `TerminateAsync` метод (.NET) `terminate` или (JavaScript) [привязки клиента orchestration](durable-functions-bindings.md#orchestration-client) , чтобы остановить его. Дополнительные сведения см. в [статье об управлении экземплярами](durable-functions-instance-management.md).
+Если функция Orchestrator находится в бесконечном цикле и должна быть остановлена, используйте `TerminateAsync` метод (.NET) или `terminate` (JavaScript) [привязки клиента orchestration](durable-functions-bindings.md#orchestration-client) , чтобы остановить его. Дополнительные сведения см. в [статье об управлении экземплярами](durable-functions-instance-management.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Узнайте, как реализовать одноэкземплярные оркестрации](durable-functions-singletons.md)

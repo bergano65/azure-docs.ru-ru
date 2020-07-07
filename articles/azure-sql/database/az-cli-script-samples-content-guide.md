@@ -3,7 +3,7 @@ title: Примеры скриптов для Azure CLI
 titleSuffix: Azure SQL Database & SQL Managed Instance
 description: Примеры сценариев Azure CLI для создания Базы данных SQL Azure и Управляемого экземпляра SQL Azure и управления ими
 services: sql-database
-ms.service: sql-database
+ms.service: sql-db-mi
 ms.subservice: service
 ms.custom: overview-samples, mvc, sqldbrb=2
 ms.devlang: azurecli
@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 02/03/2019
-ms.openlocfilehash: 1f63b8adfabb9de427fd19a992f913d032aa9d8b
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: cc762c3c10c087a8c0db5bd17f9c38b8f9d26134
+ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85251528"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85982811"
 ---
 # <a name="azure-cli-samples-for-azure-sql-database-and-sql-managed-instance"></a>Примеры Azure CLI для Базы данных SQL Azure и Управляемого экземпляра SQL 
  
@@ -35,7 +35,7 @@ ms.locfileid: "85251528"
 
 В следующей таблице содержатся ссылки на примеры сценариев Azure CLI для управления отдельными базами данных и базами данных в пулах в Базе данных SQL Azure. 
 
-| | |
+|Область|Описание|
 |---|---|
 |**Создание баз данных в Базе данных SQL Azure**||
 | [Создание отдельной базы данных и настройка правила брандмауэра](scripts/create-and-configure-database-cli.md) | Создает Базу данных SQL и настраивает правило брандмауэра уровня сервера. |
@@ -63,7 +63,7 @@ ms.locfileid: "85251528"
 
 В следующей таблице содержатся ссылки на примеры скриптов Azure CLI для Управляемого экземпляра SQL Azure.
 
-| | |
+|Область|Описание|
 |---|---|
 | **Создание Управляемого экземпляра SQL**||
 | [Создание Управляемого экземпляра SQL](../../sql-database/scripts/sql-database-create-configure-managed-instance-cli.md)| Создает Управляемый экземпляр SQL. |

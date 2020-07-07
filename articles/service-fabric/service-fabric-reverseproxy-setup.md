@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: pepogors
 ms.openlocfilehash: 6e3edb0fe238dcaddb7d99cc68660591f081581c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80476671"
 ---
 # <a name="set-up-and-configure-reverse-proxy-in-azure-service-fabric"></a>Установка и настройка обратного прокси-сервера в Azure Service Fabric
@@ -326,6 +326,6 @@ ms.locfileid: "80476671"
 
 Несколько параметров структуры используются для создания защищенного подключения между обратным прокси-сервером и службами. Подробные сведения об этих параметрах см. [в статье подключение к безопасной службе с помощью обратных прокси-серверов](service-fabric-reverseproxy-configure-secure-communication.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Подключение к защищенной службе с помощью обратного прокси-сервера](service-fabric-reverseproxy-configure-secure-communication.md)
 * Параметры конфигурации обратного прокси-сервера описаны в статье [Настройка параметров кластера Service Fabric и политики обновления структур](service-fabric-cluster-fabric-settings.md#applicationgatewayhttp).

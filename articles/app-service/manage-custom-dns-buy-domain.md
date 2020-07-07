@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 11/24/2017
 ms.custom: seodec18
 ms.openlocfilehash: 47daf4ecd034c390a1460610e78d4fffd9277ac7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81535712"
 ---
 # <a name="buy-a-custom-domain-name-for-azure-app-service"></a>Приобретение личного доменного имени в Службе приложений Azure
@@ -140,7 +140,7 @@ ms.locfileid: "81535712"
 > **Небезопасная** метка для личного домена означает, что он еще не привязан к сертификату TLS/SSL, а любой запрос HTTPS из браузера в личный домен получит ошибку или предупреждение в зависимости от браузера. Сведения о настройке привязки TLS см. [в статье Защита настраиваемого DNS-имени с помощью привязки TLS/SSL в службе приложений Azure](configure-ssl-bindings.md).
 >
 
-Чтобы проверить имена узлов, перейдите по указанным именам узлов в браузере. В примере на предыдущем снимке экрана перейдите к _kontoso.NET_ и _www\.kontoso.NET_.
+Чтобы проверить имена узлов, перейдите по указанным именам узлов в браузере. В примере на предыдущем снимке экрана перейдите к _kontoso.NET_ и _www \. kontoso.NET_.
 
 ## <a name="assign-hostnames-to-app"></a>Назначение имен узлов для приложения
 
@@ -171,7 +171,7 @@ ms.locfileid: "81535712"
 В диалоговом окне **Добавить имя узла** введите полное доменное имя домена службы приложений или любой поддомен. Пример:
 
 - kontoso.net
-- www\.kontoso.NET
+- www \. kontoso.NET
 - abc.kontoso.net
 
 По завершении выберите **Проверить**. Тип записи имени узла выбирается автоматически.
@@ -235,7 +235,7 @@ Azure работает с доменами службы приложений с 
 
 ### <a name="open-app-service-domain"></a>Открытие домена службы приложений
 
-В портал Azure в меню слева выберите **все службы** > **домены службы приложений**.
+В портал Azure в меню слева выберите **все службы**  >  **домены службы приложений**.
 
 ![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-access.png)
 
@@ -255,7 +255,7 @@ Azure работает с доменами службы приложений с 
 
 ### <a name="open-app-service-domain"></a>Открытие домена службы приложений
 
-В портал Azure в меню слева выберите **все службы** > **домены службы приложений**.
+В портал Azure в меню слева выберите **все службы**  >  **домены службы приложений**.
 
 ![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-access.png)
 

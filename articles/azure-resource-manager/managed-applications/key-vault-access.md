@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: tomfitz
 ms.openlocfilehash: 5dc219747b9cc74b6c6aac8ab190ebfbe5ae9b32
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81458289"
 ---
 # <a name="access-key-vault-secret-when-deploying-azure-managed-applications"></a>Доступ к секрету Key Vault при развертывании Управляемых приложений Azure
@@ -22,7 +22,7 @@ ms.locfileid: "81458289"
 
 1. На портале выберите Key Vault.
 
-1. Выберите **политики доступа**.   
+1. Выберите **Политики доступа**.   
 
    ![Выбор политик доступа](./media/key-vault-access/select-access-policies.png)
 
@@ -30,17 +30,17 @@ ms.locfileid: "81458289"
 
    ![Отображение политик расширенного доступа](./media/key-vault-access/advanced.png)
 
-1. Выберите **Включить доступ к Azure Resource Manager для развертывания шаблонов**. Затем выберите **сохранить**.
+1. Выберите **Включить доступ к Azure Resource Manager для развертывания шаблонов**. Затем нажмите кнопку **Сохранить**.
 
    ![Включение развертывания шаблона](./media/key-vault-access/enable-template.png)
 
 ## <a name="add-service-as-contributor"></a>Добавление службы в качестве участника
 
-1. Выберите **Управление доступом (IAM)**.
+1. Выберите **Управление доступом (IAM)** .
 
    ![Выбор управления доступом](./media/key-vault-access/access-control.png)
 
-1. Выберите **добавить назначение ролей**.
+1. Выберите **Добавить назначение ролей**.
 
    ![Выбор элемента "Добавить"](./media/key-vault-access/add-access-control.png)
 
@@ -48,7 +48,7 @@ ms.locfileid: "81458289"
 
    ![Поиск поставщика](./media/key-vault-access/search-provider.png)
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ## <a name="reference-key-vault-secret"></a>Ссылка на секрет Key Vault
 
@@ -162,7 +162,7 @@ ms.locfileid: "81458289"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы настроили доступ к Key Vault во время развертывания управляемого приложения.
 

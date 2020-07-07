@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
 ms.openlocfilehash: c5f01a00d70869882d3d3398607ecfebbfd54417
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82209083"
 ---
 # <a name="ports-used-by-apache-hadoop-services-on-hdinsight"></a>Порты, используемые службами Apache Hadoop в HDInsight
@@ -59,7 +59,7 @@ HDInsight реализуется несколькими виртуальными
 
 Все общедоступные службы в Интернете должны проходить проверку подлинности.
 
-| Порт | Учетные данные |
+| Port | Учетные данные |
 | --- | --- |
 | 22 или 23 |Учетные данные пользователя SSH, указанные при создании кластера. |
 | 443 |Имя для входа (по умолчанию — admin) и пароль, указанные при создании кластера. |
@@ -74,12 +74,12 @@ HDInsight реализуется несколькими виртуальными
 
 ### <a name="ambari"></a>Ambari
 
-| Служба | Узлы | Порт | URL-адрес | Протокол |
+| Служба | Узлы | Port | URL-адрес | Протокол |
 | --- | --- | --- | --- | --- |
 | Веб-интерфейс Ambari | Головные узлы | 8080 | / | HTTP |
 | Ambari REST API | Головные узлы | 8080 | /api/v1 | HTTP |
 
-Примеры
+Примеры:
 
 * Ambari REST API: `curl -u admin "http://10.0.0.11:8080/api/v1/clusters"`
 
@@ -168,6 +168,6 @@ HDInsight реализуется несколькими виртуальными
 | Сервер Livy | Головные узлы | 8998 | HTTP | &nbsp; | Служба для запуска инструкций, заданий и приложений |
 | Записная книжка Jupyter | Головные узлы | 8001 | HTTP | &nbsp; | Веб-сайт записных книжек Jupyter |
 
-Примеры
+Примеры:
 
 * Livy: `curl -u admin -G "http://10.0.0.11:8998/"`. В этом примере `10.0.0.11` — IP-адрес головного узла, на котором размещена служба Livy.
