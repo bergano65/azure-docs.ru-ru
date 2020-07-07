@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 04/22/2020
 ms.assetid: 3cd520fd-eaf7-4ef9-b4d3-4827057e5028
 ms.openlocfilehash: 944abc62f25473ea52836af7dc1fdcd1e16d9269
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82120786"
 ---
 # <a name="issues-using-vm-extensions-in-python-3-enabled-linux-azure-virtual-machines-systems"></a>Проблемы с использованием расширений виртуальной машины в системах на виртуальных машинах Linux с поддержкой Python 3
@@ -33,7 +33,7 @@ ms.locfileid: "82120786"
 - Расширения, которые все еще переходят в поддержку Python 3. x
 - Расширения, использующие устаревшую `/usr/bin/python` точку входа
 
-Пользователи дистрибутива Linux, которые перешли на **Python 3. x** , должны убедиться `/usr/bin/python` в наличии устаревшей точки входа, прежде чем пытаться развернуть эти расширения на их виртуальных машинах. В противном случае развертывание расширения может завершиться ошибкой. 
+Пользователи дистрибутива Linux, которые перешли на **Python 3. x** , должны убедиться в наличии устаревшей `/usr/bin/python` точки входа, прежде чем пытаться развернуть эти расширения на их виртуальных машинах. В противном случае развертывание расширения может завершиться ошибкой. 
 
 - Рекомендуемые дистрибутивы Linux, которые затрагиваются, включают **Ubuntu Server 20,04 LTS** и **Ubuntu Pro 20,04 LTS**.
 
@@ -88,6 +88,6 @@ ms.locfileid: "82120786"
         },
       ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в [других базовых изменениях базовой системы, начиная с 18,04 LTS-Python 3 по умолчанию](https://wiki.ubuntu.com/FocalFossa/ReleaseNotes#Python3_by_default) .

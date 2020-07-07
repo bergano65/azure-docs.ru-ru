@@ -14,21 +14,21 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 0654bce86cf5fb0b5bd117e444721e95f137dd47
-ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82652697"
 ---
 # <a name="considerations-for-using-universal-windows-platform-with-msalnet"></a>Рекомендации по использованию универсальная платформа Windows с MSAL.NET
 Разработчики приложений, использующих универсальная платформа Windows (UWP) с MSAL.NET, должны учитывать концепции, представленные в этой статье.
 
 ## <a name="the-usecorporatenetwork-property"></a>Свойство Усекорпоратенетворк
-На платформе среда выполнения Windows (WinRT) `PublicClientApplication` имеет логическое свойство. `UseCorporateNetwork` Это свойство позволяет приложениям Windows 8.1 и приложениям UWP использовать преимущества встроенной проверки подлинности Windows (IWA), если пользователь вошел в учетную запись с клиентом Федерации Azure Active Directory (Azure AD). Пользователи, выполнившие вход в операционную систему, также могут использовать единый вход (SSO). При задании `UseCorporateNetwork` свойства MSAL.NET использует брокер веб-проверки подлинности (WAB).
+На платформе среда выполнения Windows (WinRT) `PublicClientApplication` имеет логическое свойство `UseCorporateNetwork` . Это свойство позволяет приложениям Windows 8.1 и приложениям UWP использовать преимущества встроенной проверки подлинности Windows (IWA), если пользователь вошел в учетную запись с клиентом Федерации Azure Active Directory (Azure AD). Пользователи, выполнившие вход в операционную систему, также могут использовать единый вход (SSO). При задании `UseCorporateNetwork` свойства MSAL.NET использует брокер веб-проверки подлинности (WAB).
 
 > [!IMPORTANT]
-> Присвоение `UseCorporateNetwork` свойству значения true предполагает, что разработчик приложения включил IWA в приложении. Чтобы включить IWA, сделайте следующее:
-> - В приложении `Package.appxmanifest`UWP на вкладке **возможности** включите следующие возможности.
+> Присвоение `UseCorporateNetwork` свойству значения true предполагает, что разработчик приложения ВКЛЮЧИЛ IWA в приложении. Чтобы включить IWA, сделайте следующее:
+> - В приложении UWP `Package.appxmanifest` на вкладке **возможности** включите следующие возможности.
 >   - **Корпоративная проверка подлинности**
 >   - **Частные сети (клиент и сервер)**
 >   - **Сертификат общего пользователя**

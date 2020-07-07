@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: zhshang
 ms.openlocfilehash: 8ba34edfc382f0f03abe080d78a6a47dcb65501b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82105766"
 ---
 # <a name="azure-signalr-service-internals"></a>Внутренние компоненты службы Azure SignalR
@@ -23,7 +23,7 @@ ms.locfileid: "82105766"
 
 Кроме того, рассматриваются отличия от локального приложения ASP.NET Core SignalR.
 
-![Architecture](./media/signalr-concept-internals/arch.png)
+![Архитектура](./media/signalr-concept-internals/arch.png)
 
 ## <a name="server-connections"></a>Подключения к серверу
 

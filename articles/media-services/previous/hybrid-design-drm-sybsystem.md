@@ -16,10 +16,10 @@ ms.date: 03/14/2019
 ms.author: willzhan
 ms.reviewer: juliako
 ms.openlocfilehash: 44095cb85c62fd40032263d96ad678bdeb5effc0
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82159409"
 ---
 # <a name="hybrid-design-of-drm-subsystems"></a>Гибридный дизайн подсистем DRM 
@@ -93,7 +93,7 @@ ms.locfileid: "82159409"
 
 ## <a name="scenarios-and-samples"></a>Сценарии и примеры
 
-В соответствии с объяснениями, приведенными в предыдущем разделе, в следующих пяти гибридных сценариях используются соответствующие комбинации конфигурации-**политики доставки ресурса** **ключа содержимого**(примеры, упомянутые в последнем столбце, следуют таблице):
+В соответствии с объяснениями, приведенными в предыдущем разделе, в следующих пяти гибридных сценариях используются соответствующие **Content key** - комбинации конфигурации**политики доставки ресурса** ключа содержимого (примеры, упомянутые в последнем столбце, следуют таблице):
 
 |**Размещение содержимого и источник**|**Шифрование DRM**|**Доставка лицензий DRM**|**Настройка ключа содержимого**|**Настройка политики доставки ресурсов**|**Пример**|
 |---|---|---|---|---|---|
@@ -127,7 +127,7 @@ ms.locfileid: "82159409"
 * URL-адрес источника: https://willzhanmswest.streaming.mediaservices.windows.net/7c085a59-ae9a-411e-842c-ef10f96c3f89/20150807-bridges-2500.ism/manifest 
 * URL-адрес для приобретения лицензии PlayReady (DASH и Smooth Streaming): `https://willzhan12.cloudapp.net/playready/rightsmanager.asmx` 
 
-## <a name="additional-notes"></a>Дополнительные сведения
+## <a name="additional-notes"></a>Дополнительные замечания
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
@@ -135,11 +135,11 @@ ms.locfileid: "82159409"
 
 Таким образом, компоненты DRM служб мультимедиа Azure являются гибкими. Их можно использовать в гибридных сценариях при правильной настройке ключа содержимого и политики доставки ресурсов, как описано в этой статье.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

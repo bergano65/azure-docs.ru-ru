@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 08/15/2019
 ms.author: hrasheed
 ms.openlocfilehash: 2c153d818136c5d8804dae72004dfaf17fd1bf7a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73494523"
 ---
 # <a name="known-issues-for-apache-spark-cluster-on-hdinsight"></a>Известные проблемы в работе кластера Apache Spark в HDInsight
@@ -32,7 +32,7 @@ ms.locfileid: "73494523"
 
         yarn application –list
 
-    Если задания запущены с помощью интерактивного сеанса Livy без явно заданных имен, по умолчанию используются имена Livy. Для сеанса Livy, запущенного [Jupyter Notebook](https://jupyter.org/), имя задания начинается с `remotesparkmagics_*`.
+    Если задания запущены с помощью интерактивного сеанса Livy без явно заданных имен, по умолчанию используются имена Livy. Для сеанса Livy, запущенного [Jupyter Notebook](https://jupyter.org/), имя задания начинается с `remotesparkmagics_*` .
 
 3. Чтобы аннулировать эти задания, выполните следующую команду:
 
@@ -81,7 +81,7 @@ java.io.FileNotFoundException: /var/log/spark/sparkdriver_hdiuser.log (Permissio
 
 ### <a name="error-while-loading-notebooks-of-larger-sizes"></a>Ошибка при загрузке записных книжек большого размера
 
-При загрузке записных книжек большего размера может появиться сообщение об ошибке **`Error loading notebook`** .  
+При **`Error loading notebook`** загрузке записных книжек большего размера может появиться сообщение об ошибке.  
 
 **Устранение рисков**
 
@@ -91,7 +91,7 @@ java.io.FileNotFoundException: /var/log/spark/sparkdriver_hdiuser.log (Permissio
 
 Чтобы избежать этой ошибки в будущем, необходимо следовать некоторым рекомендациям.
 
-* Записная книжка должна быть небольшого размера. В записной книжке сохраняются любые выходные данные заданий Spark, которые отправляются обратно в Jupyter.  Рекомендуется использовать Jupyter в целом для предотвращения выполнения `.collect()` в больших блоках RDD или данных. Вместо этого, если вы хотите просмотреть содержимое RDD, рассмотрите возможность запуска `.take()` или `.sample()` , чтобы выходные данные не были слишком большими.
+* Записная книжка должна быть небольшого размера. В записной книжке сохраняются любые выходные данные заданий Spark, которые отправляются обратно в Jupyter.  Рекомендуется использовать Jupyter в целом, чтобы не запускать `.collect()` большие RDD или кадры данных. вместо этого, если вы хотите просмотреть содержимое RDD, рассмотрите возможность запуска `.take()` или `.sample()` , чтобы выходные данные не слишком большими.
 * Кроме того, если при сохранении записной книжки очистить все ячейки выходных данных, это также поможет уменьшить размер.
 
 ### <a name="notebook-initial-startup-takes-longer-than-expected"></a>Начальная загрузка записной книжки загружается дольше ожидаемого
@@ -115,9 +115,9 @@ java.io.FileNotFoundException: /var/log/spark/sparkdriver_hdiuser.log (Permissio
 
 2. Перезапустите записную книжку, которую вы пытались запустить. Теперь ресурсов должно быть достаточно для создания сеанса.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
-* [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
+* [Обзор: Spark в Azure HDInsight](apache-spark-overview.md)
 
 ### <a name="scenarios"></a>Сценарии
 

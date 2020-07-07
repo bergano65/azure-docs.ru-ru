@@ -4,10 +4,10 @@ description: Узнайте, как включить управляемое уд
 ms.topic: article
 ms.date: 04/15/2020
 ms.openlocfilehash: 31dc198bfb2023684f3a9022bec5a5f50f0d9a72
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82115726"
 ---
 # <a name="how-to-use-managed-identities-with-azure-container-instances"></a>Использование управляемых удостоверений для службы "Экземпляры контейнеров Azure"
@@ -190,7 +190,7 @@ token=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=
 
 ```
 
-Теперь используйте маркер доступа для проверки подлинности в хранилище ключей и чтения секрета. Обязательно замените имя хранилища ключей URL-адресом (*https:\//mykeyvault.Vault.Azure.NET/...*):
+Теперь используйте маркер доступа для проверки подлинности в хранилище ключей и чтения секрета. Обязательно замените имя хранилища ключей URL-адресом (*https: \/ /mykeyvault.Vault.Azure.NET/...*):
 
 ```bash
 curl https://mykeyvault.vault.azure.net/secrets/SampleSecret/?api-version=2016-10-01 -H "Authorization: Bearer $token"
@@ -298,7 +298,7 @@ az keyvault secret show \
 
 ## <a name="enable-managed-identity-using-resource-manager-template"></a>Включение управляемого удостоверения с помощью шаблона Resource Manager
 
-Чтобы включить управляемое удостоверение для группы контейнеров с помощью [шаблона Resource Manager](container-instances-multi-container-group.md), присвойте свойству `identity` объекта `Microsoft.ContainerInstance/containerGroups` значение объекта `ContainerGroupIdentity`. В следующих фрагментах кода показана настройка свойства `identity` для разных сценариев. Подробные сведения см. в [справочнике по шаблонам Resource Manager](/azure/templates/microsoft.containerinstance/containergroups). Укажите минимум `apiVersion` `2018-10-01`.
+Чтобы включить управляемое удостоверение для группы контейнеров с помощью [шаблона Resource Manager](container-instances-multi-container-group.md), присвойте свойству `identity` объекта `Microsoft.ContainerInstance/containerGroups` значение объекта `ContainerGroupIdentity`. В следующих фрагментах кода показана настройка свойства `identity` для разных сценариев. Подробные сведения см. в [справочнике по шаблонам Resource Manager](/azure/templates/microsoft.containerinstance/containergroups). Укажите минимум `apiVersion` `2018-10-01` .
 
 ### <a name="user-assigned-identity"></a>Назначаемое пользователем удостоверение
 
@@ -346,7 +346,7 @@ az keyvault secret show \
 ## <a name="enable-managed-identity-using-yaml-file"></a>Включение управляемого удостоверения с помощью YAML-файла
 
 Чтобы включить управляемое удостоверение в группе контейнеров, развернутой с помощью [YAML-файла](container-instances-multi-container-yaml.md), добавьте следующий YAML-файл.
-Укажите минимум `apiVersion` `2018-10-01`.
+Укажите минимум `apiVersion` `2018-10-01` .
 
 ### <a name="user-assigned-identity"></a>Назначаемое пользователем удостоверение
 
@@ -383,7 +383,7 @@ identity:
    {'myResourceID1':{}}
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как использовать управляемые удостоверения в службе "Экземпляры контейнеров Azure" и выполнять следующие действия:
 
@@ -392,6 +392,6 @@ identity:
 > * Предоставление удостоверениям доступа к хранилищу ключей Azure
 > * Использование управляемого удостоверения для доступа к хранилищу ключей из работающего контейнера
 
-* Дополнительные сведения см. в статье [Использование управляемых удостоверений в Службе приложений и Функциях Azure](/azure/active-directory/managed-identities-azure-resources/).
+* Дополнительные сведения об [управляемых удостоверениях для ресурсов Azure](/azure/active-directory/managed-identities-azure-resources/).
 
 * См. Пример использования управляемого удостоверения для доступа к хранилищу ключей из службы "экземпляры контейнеров Azure [" в пакете SDK для Azure Go](https://medium.com/@samkreter/c98911206328) .

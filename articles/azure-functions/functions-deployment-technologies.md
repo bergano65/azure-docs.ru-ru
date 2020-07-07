@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: glenga
 ms.openlocfilehash: ec5e9da2ab80f4728d342303e1eb08c49f765485
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82735306"
 ---
 # <a name="deployment-technologies-in-azure-functions"></a>Технологии развертывания в функциях Azure
@@ -21,8 +21,8 @@ ms.locfileid: "82735306"
 
 Функции Azure поддерживают локальную разработку и размещение на разных платформах в Windows и Linux. Сейчас доступны три плана размещения:
 
-+ [Затрат](functions-scale.md#consumption-plan)
-+ [Premium](functions-scale.md#premium-plan)
++ [Потребление](functions-scale.md#consumption-plan)
++ [Премиальный](functions-scale.md#premium-plan)
 + [Выделенная (служба приложений)](functions-scale.md#app-service-plan)
 
 Каждый план имеет разные поведения. Для каждой разновидности функций Azure доступны не все технологии развертывания. На следующей диаграмме показано, какие технологии развертывания поддерживаются для каждого сочетания операционной системы и плана размещения.
@@ -52,7 +52,7 @@ ms.locfileid: "82735306"
 
 * Перезапустите приложение функции в портал Azure
 * Отправка запроса HTTP POST на `https://{functionappname}.azurewebsites.net/admin/host/synctriggers?code=<API_KEY>` использование [главного ключа](functions-bindings-http-webhook-trigger.md#authorization-keys).
-* Отправьте запрос HTTP POST в `https://management.azure.com/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP_NAME>/providers/Microsoft.Web/sites/<FUNCTION_APP_NAME>/syncfunctiontriggers?api-version=2016-08-01`. Замените заполнители ИДЕНТИФИКАТОРом подписки, именем группы ресурсов и именем приложения функции.
+* Отправьте запрос HTTP POST в `https://management.azure.com/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP_NAME>/providers/Microsoft.Web/sites/<FUNCTION_APP_NAME>/syncfunctiontriggers?api-version=2016-08-01` . Замените заполнители ИДЕНТИФИКАТОРом подписки, именем группы ресурсов и именем приложения функции.
 
 ### <a name="remote-build"></a>Удаленная сборка
 
@@ -106,7 +106,7 @@ URL-адрес внешнего пакета можно использовать
 
 >__Как его использовать:__ Выполните развертывание с помощью любимого клиентского средства: [Visual Studio Code](functions-develop-vs-code.md#publish-to-azure), [Visual Studio](functions-develop-vs.md#publish-to-azure)или из командной строки с помощью [Azure functions Core Tools](functions-run-local.md#project-file-deployment). По умолчанию эти средства используют ZIP-развертывание и [запускаются из пакета](run-functions-from-deployment-package.md). Основные средства и расширение Visual Studio Code позволяют включить [удаленную сборку](#remote-build) при развертывании в Linux. Чтобы вручную развернуть ZIP-файл в приложении-функции, следуйте инструкциям в разделе [развертывание из файла с расширением ZIP или URL-адреса](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file-or-url).
 
->При развертывании с помощью ZIP-развертывания можно настроить приложение для [запуска из пакета](run-functions-from-deployment-package.md). Чтобы запустить из пакета, задайте для `WEBSITE_RUN_FROM_PACKAGE` `1`параметра приложения значение. Рекомендуется использовать ZIP-развертывание. Это позволяет ускорить загрузку приложений, и это значение по умолчанию для VS Code, Visual Studio и Azure CLI. 
+>При развертывании с помощью ZIP-развертывания можно настроить приложение для [запуска из пакета](run-functions-from-deployment-package.md). Чтобы запустить из пакета, задайте `WEBSITE_RUN_FROM_PACKAGE` для параметра приложения значение `1` . Рекомендуется использовать ZIP-развертывание. Это позволяет ускорить загрузку приложений, и это значение по умолчанию для VS Code, Visual Studio и Azure CLI. 
 
 >__Когда его использовать:__ ZIP Deploy — это рекомендуемая технология развертывания для функций Azure.
 
@@ -169,7 +169,7 @@ URL-адрес внешнего пакета можно использовать
 
 В редакторе на основе портала можно изменять файлы, которые находятся в приложении-функции (по сути, развертывая каждый раз при сохранении изменений).
 
->__Как его использовать:__ Чтобы иметь возможность изменять функции в портал Azure, необходимо [создать функции на портале](functions-create-first-azure-function.md). Чтобы сохранить один источник истинности, использование любого другого метода развертывания сделает функцию только для чтения и не позволит продолжить редактирование на портале. Чтобы вернуться к состоянию, в котором можно изменить файлы в портал Azure, можно вручную снова включить режим редактирования `Read/Write` и удалить все параметры приложения, связанные с развертыванием (например `WEBSITE_RUN_FROM_PACKAGE`,). 
+>__Как его использовать:__ Чтобы иметь возможность изменять функции в портал Azure, необходимо [создать функции на портале](functions-create-first-azure-function.md). Чтобы сохранить один источник истинности, использование любого другого метода развертывания сделает функцию только для чтения и не позволит продолжить редактирование на портале. Чтобы вернуться к состоянию, в котором можно изменить файлы в портал Azure, можно вручную снова включить режим редактирования `Read/Write` и удалить все параметры приложения, связанные с развертыванием (например `WEBSITE_RUN_FROM_PACKAGE` ,). 
 
 >__Когда его использовать:__ Портал — хороший способ начать работу с функциями Azure. Для более интенсивной работы по разработке рекомендуется использовать одно из следующих клиентских средств:
 >
@@ -188,7 +188,7 @@ URL-адрес внешнего пакета можно использовать
 | JavaScript (Node.js) |✔|✔|✔| |✔<sup>\*</sup>|✔<sup>\*</sup>|
 | Python (предварительная версия) | | | | | | |
 | PowerShell (предварительная версия) |✔|✔|✔| | | |
-| TypeScript (Node. js) | | | | | | |
+| TypeScript (Node.js) | | | | | | |
 
 <sup>*</sup>Редактирование на портале включено только для триггеров HTTP и таймера для функций в Linux, использующих Premium и выделенные планы.
 

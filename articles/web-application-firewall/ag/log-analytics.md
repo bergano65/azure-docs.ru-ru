@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 09/06/2019
 ms.author: victorh
 ms.openlocfilehash: 4d6b984fd451a835afaa51482f0158e9f315f8fc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82130917"
 ---
 # <a name="use-log-analytics-to-examine-application-gateway-web-application-firewall-logs"></a>Использование Log Analytics для проверки журналов брандмауэра веб-приложения Шлюза приложений
@@ -81,6 +81,6 @@ AzureDiagnostics
 
 ![Панель мониторинга](../media/log-analytics/dashboard.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Работоспособность серверной части, журналы ресурсов и метрики для шлюза приложений](../../application-gateway/application-gateway-diagnostics.md)

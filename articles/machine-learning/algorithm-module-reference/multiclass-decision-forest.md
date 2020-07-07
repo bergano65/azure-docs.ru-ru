@@ -10,15 +10,15 @@ author: likebupt
 ms.author: keli19
 ms.date: 04/22/2020
 ms.openlocfilehash: 9e8798ea1c03ebf4c0d08adfbf5a0ee0755164a6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82137813"
 ---
 # <a name="multiclass-decision-forest-module"></a>Модуль леса решения для многоклассовых решений
 
-В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
+В этой статье описывается модуль в конструкторе Машинного обучения Azure (предварительная версия).
 
 Этот модуль используется для создания модели машинного обучения на основе алгоритма *леса принятия решений* . Лес принятия решений — это ансамблей модель, которая быстро создает ряд деревьев принятия решений при обучении данных с тегами.
 
@@ -89,6 +89,6 @@ ms.locfileid: "82137813"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 
+Ознакомьтесь с [набором доступных модулей](module-reference.md) в службе Машинного обучения Azure. 

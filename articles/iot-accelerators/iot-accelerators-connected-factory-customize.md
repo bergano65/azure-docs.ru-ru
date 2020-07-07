@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: dobett
 ms.openlocfilehash: 6062f8b3992732e0e0f9bbdae9549e69c393f4ff
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67080484"
 ---
 # <a name="customize-how-the-connected-factory-solution-displays-data-from-your-opc-ua-servers"></a>Настройка отображения данных с серверов OPC UA в решении "Подключенная фабрика"
@@ -71,17 +71,17 @@ ms.locfileid: "67080484"
 
 ## <a name="deploy-the-changes"></a>Развертывание изменений
 
-Завершив внесение изменений в файл **ContosoTopologyDescription. JSON** , необходимо повторно развернуть решение подключенной фабрики в учетной записи Azure.
+Завершив внесение изменений в **ContosoTopologyDescription.jsв** файле, необходимо повторно развернуть решение подключенной фабрики в учетной записи Azure.
 
 Репозиторий **azure-iot-connected-factory** содержит скрипт PowerShell **build.ps1**, который можно использовать, чтобы повторно создать и развернуть решение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об акселераторе решения "Подключенная фабрика" см. в следующих статьях:
 
 * [Разрешения на сайте azureiotsolutions.com][lnk-permissions]
 * [Вопросы и ответы о подключенной фабрике](iot-accelerators-faq-cf.md)
-* [Вопросы и ответы][lnk-faq]
+* [Часто задаваемые вопросы][lnk-faq]
 
 
 [img-oee-kpi]: ./media/iot-accelerators-connected-factory-customize/oeenadkpi.png

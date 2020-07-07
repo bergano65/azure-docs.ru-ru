@@ -1,5 +1,5 @@
 ---
-title: Варианты развертывания
+title: Параметры развертывания
 description: Приступите к работе, чтобы понять базовый рабочий процесс центра безопасности Azure для функций и служб IoT.
 services: asc-for-iot
 ms.service: asc-for-iot
@@ -16,17 +16,17 @@ ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
 ms.openlocfilehash: 452372f187e97a95b9eee88936b15a0409dd4fe0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81311373"
 ---
 # <a name="get-started-with-azure-security-center-for-iot"></a>Начало работы с Центром безопасности Azure для Интернета вещей
 
 В этой статье содержится описание различных компонентов центра безопасности Azure для службы IoT и объясняется, как приступить к работе со службой с помощью двух возможных вариантов развертывания.
 
-## <a name="deployment-options"></a>Варианты развертывания
+## <a name="deployment-options"></a>Параметры развертывания
 
 Выберите сценарий службы, который наилучшим образом соответствует требованиям к устройству и среде Интернета вещей.
 
@@ -43,7 +43,7 @@ ms.locfileid: "81311373"
 
 Запустите [Улучшенное развертывание](security-agents.md) с помощью комплексного решения для защиты от угроз и управления уровнями безопасности на основе агентов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Включение [центра безопасности Azure для Интернета вещей](quickstart-onboard-iot-hub.md)
 - Настройка [решения](quickstart-configure-your-solution.md)

@@ -8,10 +8,10 @@ ms.service: container-service
 ms.topic: article
 ms.date: 09/25/2019
 ms.openlocfilehash: 24163adcec889e9eedc2362ff1f01f00257a98f3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80063177"
 ---
 # <a name="manage-security-context-constraints-in-azure-red-hat-openshift"></a>Управление ограничениями контекста безопасности в Azure Red Hat OpenShift 
@@ -37,7 +37,7 @@ restricted         false     []        MustRunAs   MustRunAsRange     MustRunAs 
 
 ## <a name="examine-an-object-for-security-context-constraints"></a>Проверка объекта на наличие ограничений контекста безопасности
 
-Чтобы проверить определенную SCC, используйте `oc get`, `oc describe`или `oc edit`.  Например, чтобы проверить **ограниченную** SCC, используйте следующую команду:
+Чтобы проверить определенную SCC, используйте `oc get` , `oc describe` или `oc edit` .  Например, чтобы проверить **ограниченную** SCC, используйте следующую команду:
 ```bash
 $ oc describe scc restricted
 Name:                    restricted
@@ -71,6 +71,6 @@ Settings:
   Supplemental Groups Strategy: RunAsAny
     Ranges:                <none>
 ```
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Создание кластера Azure Red Hat OpenShift](tutorial-create-cluster.md) 

@@ -4,10 +4,10 @@ description: Описание рабочих нагрузок, которые м
 ms.topic: conceptual
 ms.date: 03/18/2020
 ms.openlocfilehash: 2b901425a0020c0ccc7b834ee36d965910028018
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80062842"
 ---
 # <a name="about-disaster-recovery-for-on-premises-apps"></a>Сведения об аварийном восстановлении для локальных приложений
@@ -160,6 +160,6 @@ Site Recovery обеспечивает защиту развертывания C
 
 Дополнительные [сведения](site-recovery-citrix-xenapp-and-xendesktop.md) об аварийном восстановлении для развертываний Citrix XenApp и XenDesktop. Также можно обратиться к [документу Citrix](https://aka.ms/citrix-xenapp-xendesktop-with-asr).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные [сведения](azure-to-azure-quickstart.md) об аварийном восстановлении для виртуальной машины Azure.

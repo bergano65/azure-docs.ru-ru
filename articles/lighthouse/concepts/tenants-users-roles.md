@@ -4,10 +4,10 @@ description: Изучите принципы действия арендатор
 ms.date: 04/03/2020
 ms.topic: conceptual
 ms.openlocfilehash: 7ed5af18efbb0f5b97dcab20093cc45e8bed1d03
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82144922"
 ---
 # <a name="tenants-roles-and-users-in-azure-lighthouse-scenarios"></a>Арендаторы, роли и пользователи в сценариях Azure Lighthouse
@@ -43,9 +43,9 @@ ms.locfileid: "82144922"
 - Убедитесь, что любой пользователь, которому нужно [просматривать страницу "Мои клиенты" на портале Azure](../how-to/view-manage-customers.md), имеет роль [Читатель](../../role-based-access-control/built-in-roles.md#reader) (или другую встроенную роль, которая предоставляет доступ для чтения).
 
 > [!IMPORTANT]
-> Чтобы добавить разрешения для группы Azure AD, **Тип группы** должен быть " **Безопасность** ", а не **Office 365**. Этот параметр выбирается при создании группы. Дополнительные сведения см. в разделе [Создание базовой группы и добавление членов с помощью Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
+> Чтобы добавить разрешения для группы Azure AD, для параметра **Тип группы** нужно указать значение **Безопасность**, но не **Office 365**. Этот вариант автоматически выбирается при создании группы. Дополнительные сведения см. в статье [Создание простой группы и добавление в нее участников с помощью Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [рекомендациях по обеспечению безопасности для делегированного управления ресурсами Azure](recommended-security-practices.md).
 - Подключите клиентов к делегированному управлению ресурсами Azure с помощью [шаблонов Azure Resource Manager](../how-to/onboard-customer.md) или путем [публикации предложения частных или общедоступных управляемых служб в Azure Marketplace](../how-to/publish-managed-services-offers.md).

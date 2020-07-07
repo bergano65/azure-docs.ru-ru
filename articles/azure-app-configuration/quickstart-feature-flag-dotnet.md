@@ -14,12 +14,12 @@ ms.tgt_pltfrm: .NET
 ms.workload: tbd
 ms.date: 10/21/2019
 ms.author: lcozzens
-ms.openlocfilehash: 5ea9749c07aadc7037e753160e9b053992bebae2
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: bf2ccd93a94036c6ab5b6224456cd1f5a13239c5
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77619318"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85855017"
 ---
 # <a name="quickstart-add-feature-flags-to-a-net-framework-app"></a>Краткое руководство. Добавление флагов функций в приложение .NET Framework
 
@@ -105,11 +105,15 @@ ms.locfileid: "77619318"
 
 1. Задайте переменную среды с именем **ConnectionString** для строки подключения к хранилищу службы "Конфигурация приложений". При использовании командной строки Windows выполните следующую команду:
 
+    ```console
         setx ConnectionString "connection-string-of-your-app-configuration-store"
+    ```
 
     Если вы используете Windows PowerShell, выполните следующую команду:
 
+    ```powershell
         $Env:ConnectionString = "connection-string-of-your-app-configuration-store"
+    ```
 
 1. Перезапустите Visual Studio, чтобы изменение вступило в силу. 
 
