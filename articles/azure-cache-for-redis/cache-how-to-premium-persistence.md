@@ -7,10 +7,10 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 08/24/2017
 ms.openlocfilehash: 84a5b4784a36fb22ae50a7a1ec4fcb7e5ef5b7c5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80245282"
 ---
 # <a name="how-to-configure-data-persistence-for-a-premium-azure-cache-for-redis"></a>Настройка постоянного хранения данных для кэша Redis для Azure ценовой категории "Премиум"
@@ -178,7 +178,7 @@ ms.locfileid: "80245282"
 После перезаписи в хранилище создается два набора файлов AOF. Операции перезаписи выполняются в фоновом режиме и добавляются к первому набору файлов, а операции над множеством, которые отправляются в кэш во время перезаписи, добавляются ко второму набору. Во время перезаписи на случай сбоя временно сохраняется резервная копия, которая сразу же удаляется после завершения перезаписи.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как использовать расширенные функции кэша.
 
 * [Общие сведения о кэше Azure для Redis уровня "Премиум"](cache-premium-tier-intro.md)

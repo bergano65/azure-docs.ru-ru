@@ -15,10 +15,10 @@ ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
 ROBOTS: NOINDEX
 ms.openlocfilehash: e4a7fb72d40f5db65e8e30264e9d68b2727749e4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80154412"
 ---
 # <a name="web-apps"></a>Веб-приложения
@@ -53,7 +53,7 @@ ms.locfileid: "80154412"
 
 Срок действия сеанса пользователя истекает, когда истечет срок действия маркера, выданного Azure AD. При необходимости приложение может сократить этот период времени, например, обеспечивая выход пользователей на основании некоторого периода бездействия. По окончании сеанса пользователю будет предложено войти в систему снова.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в статье [о других типах приложений и сценариях](app-types.md)
 * Сведения об [основах проверки подлинности](v1-authentication-scenarios.md) Azure AD

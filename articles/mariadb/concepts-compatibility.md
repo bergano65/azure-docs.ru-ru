@@ -7,10 +7,10 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: a0cee198f028fd90e04dac15e98d7cd33aee9201
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79532354"
 ---
 # <a name="mariadb-drivers-and-management-tools-compatible-with-azure-database-for-mariadb"></a>Драйверы MariaDB и средства управления, совместимые с базой данных Azure для MariaDB
@@ -23,7 +23,7 @@ ms.locfileid: "79532354"
 
 Целью является поддержка трех последних версий драйверов MariaDB и усилий с авторами из сообщества Open Source, чтобы постоянно улучшать функциональность и удобство использования драйверов MariaDB. Список драйверов, которые были протестированы и совместимы с базой данных Azure для MariaDB 10,2, приведен в следующей таблице:
 
-**Драйвер** | **Ссылки** | **Совместимые версии** | **Несовместимые версии** | **Примечания**.
+**Драйвер** | **Ссылки** | **Совместимые версии** | **Несовместимые версии** | **Примечания**
 ---|---|---|---|---
 PHP | https://secure.php.net/downloads.php | 5.5, 5.6, 7.x | 5,3 | Для подключения PHP 7.0 с SSL MySQLi добавьте MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT в строке подключения. <br> ```mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306, NULL, MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT);```<br> Набор PDO: параметр ```PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT``` имеет значение False.
 .NET | [MySqlConnector на GitHub](https://github.com/mysql-net/MySqlConnector) <br> [Пакет установки из Nuget](https://www.nuget.org/packages/MySqlConnector/) | Версия 0.27 и более поздние версии | Версия 0.26.5 и предыдущие версии |
@@ -48,6 +48,6 @@ SSL-соединение | X | X | X
 Отображение параметров сервера | X | X | X
 Отображение клиентских подключений | X | X | X
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Устранение проблем с подключением к Базе данных Azure для MariaDB](howto-troubleshoot-common-connection-issues.md)

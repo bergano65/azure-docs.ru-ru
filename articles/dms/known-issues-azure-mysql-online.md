@@ -15,10 +15,10 @@ ms.custom:
 ms.topic: article
 ms.date: 02/20/2020
 ms.openlocfilehash: 8c3de28ea934302086a5b14e61482e6a4ab9a7ca
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80235278"
 ---
 # <a name="online-migration-issues--limitations-to-azure-db-for-mysql-with-azure-database-migration-service"></a>Проблемы оперативной миграции & ограничения для базы данных Azure для MySQL с Azure Database Migration Service
@@ -35,7 +35,7 @@ ms.locfileid: "80235278"
 - Миграция между одинаковыми версиями. Миграция с MySQL 5.6 в Базу данных Azure для MySQL 5.7 не поддерживается.
 - Включите ведение двоичных журналов в файле my.ini (Windows) или my.cnf (Unix).
   - Установите для значения Server_id любое число, которое больше или равно 1, например, Server_id = 1 (только для MySQL 5.6).
-  - Set log-bin = \<Path> (только для MySQL 5,6)
+  - Установите log-bin = \<path> (только для MySQL 5.6).
   - Установите binlog_format = row.
   - Установите Expire_logs_days = 5 ( рекомендуется только для MySQL 5.6).
 - Пользователю должна быть назначена роль ReplicationAdmin.
@@ -93,7 +93,7 @@ ms.locfileid: "80235278"
 
 При попытке выполнить миграцию через Интернет из AWS RDS MySQL в базу данных Azure для MySQL могут возникнуть следующие ошибки.
 
-- **Ошибка:** В базе{0}данных "" есть внешние ключи. Исправьте целевой объект и запустите новую процедуру переноса данных. Выполните приведенный ниже скрипт на целевом объекте, чтобы вывести список внешних ключей.
+- **Ошибка:** В базе данных " {0} " есть внешние ключи. Исправьте целевой объект и запустите новую процедуру переноса данных. Выполните приведенный ниже скрипт на целевом объекте, чтобы вывести список внешних ключей.
 
   **Ограничение**. при наличии внешних ключей в схеме начальная нагрузка и непрерывная синхронизация миграции завершатся сбоем.
   Инструкции по **решению**: выполните следующий скрипт в MySQL Workbench, чтобы извлечь скрипт удаления внешнего ключа и добавить скрипт внешнего ключа:
@@ -102,7 +102,7 @@ ms.locfileid: "80235278"
   SET group_concat_max_len = 8192; SELECT SchemaName, GROUP_CONCAT(DropQuery SEPARATOR ';\n') as DropQuery, GROUP_CONCAT(AddQuery SEPARATOR ';\n') as AddQuery FROM (SELECT KCU.REFERENCED_TABLE_SCHEMA as SchemaName, KCU.TABLE_NAME, KCU.COLUMN_NAME, CONCAT('ALTER TABLE ', KCU.TABLE_NAME, ' DROP FOREIGN KEY ', KCU.CONSTRAINT_NAME) AS DropQuery, CONCAT('ALTER TABLE ', KCU.TABLE_NAME, ' ADD CONSTRAINT ', KCU.CONSTRAINT_NAME, ' FOREIGN KEY (`', KCU.COLUMN_NAME, '`) REFERENCES `', KCU.REFERENCED_TABLE_NAME, '` (`', KCU.REFERENCED_COLUMN_NAME, '`) ON UPDATE ',RC.UPDATE_RULE, ' ON DELETE ',RC.DELETE_RULE) AS AddQuery FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE KCU, information_schema.REFERENTIAL_CONSTRAINTS RC WHERE KCU.CONSTRAINT_NAME = RC.CONSTRAINT_NAME AND KCU.REFERENCED_TABLE_SCHEMA = RC.UNIQUE_CONSTRAINT_SCHEMA AND KCU.REFERENCED_TABLE_SCHEMA = 'SchemaName') Queries GROUP BY SchemaName;
   ```
 
-- **Ошибка:** База данных{0}"" не существует на сервере. На указанном исходном сервере MySQL учитывается регистр. Проверьте имя базы данных.
+- **Ошибка:** База данных " {0} " не существует на сервере. На указанном исходном сервере MySQL учитывается регистр. Проверьте имя базы данных.
 
   **Ограничение**. при миграции базы данных MySQL в Azure с помощью интерфейса командной строки (CLI) пользователи могут столкнуться с этой ошибкой. Службе не удалось найти базу данных на исходном сервере, так как возможно, вы указали неправильное имя базы данных или база данных не существует на указанном сервере. Обратите внимание, что в именах баз данных учитывается регистр.
 

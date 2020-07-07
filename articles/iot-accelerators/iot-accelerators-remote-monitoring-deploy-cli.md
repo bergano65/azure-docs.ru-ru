@@ -9,25 +9,25 @@ services: iot-accelerators
 ms.date: 03/08/2019
 ms.topic: conceptual
 ms.openlocfilehash: 501ca51a9542229a14e98a56679837950a82891e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80258300"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-using-the-cli"></a>Развертывание акселератора решения для удаленного мониторинга с помощью CLI
 
 В этом руководстве показано, как развернуть акселератор решения для удаленного мониторинга. Решение развертывается с помощью интерфейса командной строки. Вы также можете развернуть решение с помощью веб-интерфейса пользователя на сайте azureiotsolutions.com. Дополнительные сведения об этом параметре см. в руководстве по [развертыванию решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md) .
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы развернуть акселератор решения для удаленного мониторинга, нужна активная подписка Azure.
 
-Если ее нет, можно создать бесплатную пробную учетную запись всего за несколько минут. Дополнительные сведения см. в статье [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
+Если ее нет, можно создать бесплатную пробную учетную запись всего за несколько минут. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
 
 Чтобы запустить интерфейс командной строки, на локальном компьютере необходимо установить [Node.js](https://nodejs.org/).
 
-## <a name="install-the-cli"></a>Установка CLI
+## <a name="install-the-cli"></a>Установка интерфейса командной строки
 
 Чтобы установить интерфейс командной строки, в среде командной строки выполните следующую команду:
 
@@ -45,13 +45,13 @@ pcs login
 
 Для завершения процесса входа следуйте инструкциям на экране.
 
-## <a name="deployment-options"></a>Варианты развертывания
+## <a name="deployment-options"></a>Параметры развертывания
 
 При развертывании акселератора решений существует несколько вариантов для настройки процесса.
 
 | Параметр | Значения | Описание |
 | ------ | ------ | ----------- |
-| номер SKU    | `basic`, `standard`, `local` | _Базовое_ развертывание предназначено для тестирования и демонстрации. При этом все микрослужбы развертываются на одной виртуальной машине. _Стандартное_ развертывание предназначено для рабочей среды. При этом микрослужбы развертываются на нескольких виртуальных машинах. При _локальном_ развертывании контейнер Docker настраивается для запуска микрослужб на локальном компьютере и использует облачные службы Azure, например, хранилище и Cosmos DB. |
+| Номер SKU    | `basic`, `standard`, `local` | _Базовое_ развертывание предназначено для тестирования и демонстрации. При этом все микрослужбы развертываются на одной виртуальной машине. _Стандартное_ развертывание предназначено для рабочей среды. При этом микрослужбы развертываются на нескольких виртуальных машинах. При _локальном_ развертывании контейнер Docker настраивается для запуска микрослужб на локальном компьютере и использует облачные службы Azure, например, хранилище и Cosmos DB. |
 | Среда выполнения | `dotnet`, `java` | Позволяет выбирать языковую реализацию микрослужб. |
 
 Дополнительные сведения об использовании локального развертывания см. в разделе [Локальное развертывание акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-deploy-local.md).
@@ -68,20 +68,20 @@ pcs login
 
 Базовое развертывание создает в вашей подписке следующие группы ресурсов.
 
-| Счетчик | Ресурс                       | Type         | Область использования |
+| Count | Ресурс                       | Тип         | Область использования |
 |-------|--------------------------------|--------------|----------|
 | 1     | [Виртуальная машина Linux](https://azure.microsoft.com/services/virtual-machines/) | Standard D1 V2  | Размещение микрослужб |
 | 1     | [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub/)                  | S1 — уровень "Стандартный" | Управление устройствами и обмен данными |
-| 1     | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)              | Standard        | Хранение данных конфигурации, правил, оповещений и других холодных данных |  
-| 1     | [Учетная запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction#types-of-storage-accounts)  | Standard        | Хранилище для виртуальных машин и контрольных точек потоковой передачи |
+| 1     | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)              | Стандартный        | Хранение данных конфигурации, правил, оповещений и других холодных данных |  
+| 1     | [Учетная запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction#types-of-storage-accounts)  | Стандартный        | Хранилище для виртуальных машин и контрольных точек потоковой передачи |
 | 1     | [Веб-приложение](https://azure.microsoft.com/services/app-service/web/)        |                 | Размещение интерфейсных веб-приложений |
 | 1     | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/)        |                 | Управление удостоверениями пользователей и безопасностью |
-| 1     | [Azure Maps](https://azure.microsoft.com/services/azure-maps/)        | Standard                | Просмотр расположений ресурса |
+| 1     | [Azure Maps](https://azure.microsoft.com/services/azure-maps/)        | Стандартный                | Просмотр расположений ресурса |
 | 1     | [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/)        |   3 единицы              | Поддержка аналитики в режиме реального времени |
 | 1     | [Служба подготовки устройств Azure](https://docs.microsoft.com/azure/iot-dps/)        |       S1          | Подготовка устройств в нужном масштабе |
-| 1     | [Azure Time Series Insights](https://azure.microsoft.com/services/time-series-insights/)        |   S1 — 1 единица              | Хранилище для данных сообщений и глубокий анализ данных телеметрии |
+| 1     | [Аналитика временных рядов Azure](https://azure.microsoft.com/services/time-series-insights/)        |   S1 — 1 единица              | Хранилище для данных сообщений и глубокий анализ данных телеметрии |
 
-### <a name="standard"></a>Standard
+### <a name="standard"></a>Стандартный
 
 Стандартное развертывание можно выполнить только с помощью интерфейса командной строки.
 
@@ -89,21 +89,21 @@ pcs login
 
 Стандартное развертывание создает в вашей подписке Azure следующие группы ресурсов.
 
-| Счетчик | Ресурс                                     | Размер (номер SKU)      | Область использования |
+| Count | Ресурс                                     | Размер (номер SKU)      | Область использования |
 |-------|----------------------------------------------|-----------------|----------|
 | 1     | [Служба Azure Kubernetes (AKS)](https://azure.microsoft.com/services/kubernetes-service)| Используйте полностью управляемую службу оркестрации контейнеров Kubernetes; по умолчанию применяется 3 агента|
 | 1     | [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub/)                     | S2 — уровень "Стандартный" | Команды и средства для управления устройствами |
-| 1     | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)                 | Standard        | Хранение данных конфигурации и данных телеметрии, например правил, оповещений и сообщений |
-| 5     | [Учетные записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction#types-of-storage-accounts)    | Standard        | 4 для хранения виртуальных машин и 1 для контрольных точек потоковой передачи |
+| 1     | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)                 | Стандартный        | Хранение данных конфигурации и данных телеметрии, например правил, оповещений и сообщений |
+| 5     | [Учетные записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction#types-of-storage-accounts)    | Стандартный        | 4 для хранения виртуальных машин и 1 для контрольных точек потоковой передачи |
 | 1     | [Служба приложений](https://azure.microsoft.com/services/app-service/web/)             | Стандартный S1     | Шлюз приложений через TLS |
 | 1     | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/)        |                 | Управление удостоверениями пользователей и безопасностью |
-| 1     | [Azure Maps](https://azure.microsoft.com/services/azure-maps/)        | Standard                | Просмотр расположений ресурса |
+| 1     | [Azure Maps](https://azure.microsoft.com/services/azure-maps/)        | Стандартный                | Просмотр расположений ресурса |
 | 1     | [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/)        |   3 единицы              | Поддержка аналитики в режиме реального времени |
 | 1     | [Служба подготовки устройств Azure](https://docs.microsoft.com/azure/iot-dps/)        |       S1          | Подготовка устройств в нужном масштабе |
-| 1     | [Azure Time Series Insights](https://azure.microsoft.com/services/time-series-insights/)        |   S1 — 1 единица              | Хранилище для данных сообщений и глубокий анализ данных телеметрии |
+| 1     | [Аналитика временных рядов Azure](https://azure.microsoft.com/services/time-series-insights/)        |   S1 — 1 единица              | Хранилище для данных сообщений и глубокий анализ данных телеметрии |
 
 > [!NOTE]
-> Сведения о ценах на эти службы можно найти по [https://azure.microsoft.com/pricing](https://azure.microsoft.com/pricing)адресу. Сведения об объеме потребления и выставлении счетов для подписки можно найти на [портале Azure](https://portal.azure.com/).
+> Сведения о ценах на эти службы можно найти по адресу [https://azure.microsoft.com/pricing](https://azure.microsoft.com/pricing) . Сведения об объеме потребления и выставлении счетов для подписки можно найти на [портале Azure](https://portal.azure.com/).
 
 ## <a name="deploy-the-solution-accelerator"></a>Развертывание акселератора решений
 
@@ -144,7 +144,7 @@ pcs -h
 
 Дополнительные сведения об интерфейсе командной строки см. в статье [Azure IoT PCS CLI Overview](https://github.com/Azure/pcs-cli/blob/master/README.md)(Обзор интерфейса командной строки для предварительно настроенного решения Центра Интернета вещей Azure).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали следующее:
 

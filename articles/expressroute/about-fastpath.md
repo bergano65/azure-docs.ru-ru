@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 03/25/2020
 ms.author: cherylmc
 ms.openlocfilehash: 265004b1171d1df95b3090676d5836b951c28a28
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80282857"
 ---
 # <a name="about-expressroute-fastpath"></a>Сведения об ExpressRoute FastPath
@@ -20,7 +20,7 @@ ms.locfileid: "80282857"
 
 ## <a name="requirements"></a>Requirements (Требования)
 
-### <a name="circuits"></a>Защит
+### <a name="circuits"></a>Каналы
 
 Фастпас доступен для всех каналов ExpressRoute.
 
@@ -45,6 +45,6 @@ ms.locfileid: "80282857"
 
 * Частная ссылка. Если вы подключаетесь к [частной конечной точке](../private-link/private-link-overview.md) в виртуальной сети из локальной сети, подключение будет проходить через шлюз виртуальной сети.
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о включении Фастпас см. в статье [связывание виртуальной сети с ExpressRoute](expressroute-howto-linkvnet-arm.md#configure-expressroute-fastpath).

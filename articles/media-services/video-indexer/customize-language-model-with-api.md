@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 02/04/2020
 ms.author: anzaman
 ms.openlocfilehash: 19067bbbaf93c9abc9a9220b09dd482ce9115655
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80127983"
 ---
 # <a name="customize-a-language-model-with-the-video-indexer-api"></a>Настройка языковой модели с помощью API индексатора видео
@@ -105,7 +105,7 @@ API [-интерфейс обучения языковой модели](https:/
 }
 ```
 
-Возвращаемое `id` значение является уникальным идентификатором, используемым для различения языковых моделей, в `languageModelId` то время как используется как для [отправки видео для индексирования](https://api-portal.videoindexer.ai/docs/services/operations/operations/Upload-video?) , так и для повторного [индексирования](https://api-portal.videoindexer.ai/docs/services/operations/operations/Re-index-video?) API-интерфейсов видео (которые также называются `linguisticModelId` в API-интерфейсах для отправки и переиндексирования индексатора видео).
+Возвращаемое значение `id` является уникальным идентификатором, используемым для различения языковых моделей, в то время `languageModelId` как используется как для [отправки видео для индексирования](https://api-portal.videoindexer.ai/docs/services/operations/operations/Upload-video?) , так и для повторного [индексирования](https://api-portal.videoindexer.ai/docs/services/operations/operations/Re-index-video?) API-интерфейсов видео (которые также называются `linguisticModelId` в API-интерфейсах для отправки и переиндексирования индексатора видео).
 
 ## <a name="delete-a-language-model"></a>Удаление языковой модели
 
@@ -177,7 +177,7 @@ API [удаления языковой модели](https://api-portal.videoind
 }
 ```
 
-Используйте из `id` файла, возвращенного в ответе, для загрузки содержимого файла.
+Используйте `id` из файла, возвращенного в ответе, для загрузки содержимого файла.
 
 ## <a name="get-a-specific-language-model"></a>Получение конкретной языковой модели
 
@@ -213,7 +213,7 @@ API [Get](https://api-portal.videoindexer.ai/docs/services/operations/operations
 }
 ```
 
-Используйте из `id` файла, возвращенного в ответе, для загрузки содержимого файла.
+Используйте `id` из файла, возвращенного в ответе, для загрузки содержимого файла.
 
 ## <a name="get-all-the-language-models"></a>Получение всех языковых моделей
 
@@ -297,6 +297,6 @@ API [удаления](https://api-portal.videoindexer.ai/docs/services/operatio
 
 Ответом будет загрузка текстового файла с содержимым файла в формате JSON.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Customize a Language model with the Video Indexer website](customize-language-model-with-website.md) (Настройка языковой модели с помощью веб-сайта Индексатора видео)

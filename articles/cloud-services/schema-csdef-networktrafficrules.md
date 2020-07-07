@@ -14,10 +14,10 @@ caps.latest.revision: 17
 author: tgore03
 ms.author: tagore
 ms.openlocfilehash: e53c10395ec3168e656633cc43fb2d01902209fa
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79534734"
 ---
 # <a name="azure-cloud-services-definition-networktrafficrules-schema"></a>Схема NetworkTrafficRules определения облачных служб Azure
@@ -78,8 +78,8 @@ ms.locfileid: "79534734"
 
 | attribute      | Тип     | Описание |
 | -------------- | -------- | ----------- |
-| `endpointName` | `string` | Обязательный элемент. Имя конечной точки, к которой разрешается трафик.|
-| `roleName`     | `string` | Обязательный элемент. Имя веб-роли, с которой разрешается обмен данными.|
+| `endpointName` | `string` | Обязательный. Имя конечной точки, к которой разрешается трафик.|
+| `roleName`     | `string` | Обязательный. Имя веб-роли, с которой разрешается обмен данными.|
 
 ## <a name="allowalltraffic-element"></a>Элемент AllowAllTraffic
 Элемент `AllowAllTraffic` — это правило, которое разрешает всем ролям обмениваться данными с конечными точками, определенными в узле `Destinations`.
@@ -89,16 +89,16 @@ ms.locfileid: "79534734"
 
 | attribute | Тип     | Описание |
 | --------- | -------- | ----------- |
-| `matches` | `string` | Обязательный элемент. Указывает правило, применяемое при разрешении обмена данными. Сейчас единственное допустимое значение — `AnyRule`.|
+| `matches` | `string` | Обязательный. Указывает правило, применяемое при разрешении обмена данными. Сейчас единственное допустимое значение — `AnyRule`.|
   
 ##  <a name="fromrole-element"></a><a name="FromRole"></a>FromRole, элемент
 Элемент `FromRole` указывает роли, которые могут обмениваться данными с конечными точками, определенными в узле `Destinations`. Можно указать несколько элементов `FromRole`, если существует несколько ролей, которые могут обмениваться данными с конечными точками.
 
 | attribute  | Тип     | Описание |
 | ---------- | -------- | ----------- |
-| `roleName` | `string` | Обязательный элемент. Имя роли, из которой разрешается обмен данными.|
+| `roleName` | `string` | Обязательный. Имя роли, из которой разрешается обмен данными.|
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 [Схема определения облачных служб (классических)](schema-csdef-file.md).
 
 

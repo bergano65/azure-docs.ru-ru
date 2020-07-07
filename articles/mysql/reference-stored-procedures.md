@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: 6a3fa40eaae174d3616fd0318f81576b7c59eac7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80067703"
 ---
 # <a name="azure-database-for-mysql-management-stored-procedures"></a>Хранимые процедуры управления базой данных Azure для MySQL
@@ -41,8 +41,8 @@ ms.locfileid: "80067703"
 |-----|-----|-----|-----|
 |*MySQL. az_kill*|processlist_id|Недоступно|Эквивалентно [`KILL CONNECTION`](https://dev.mysql.com/doc/refman/8.0/en/kill.html) команде. Будет завершать подключение, связанное с указанным processlist_id после завершения любой инструкции, когда соединение выполняется.|
 |*MySQL. az_kill_query*|processlist_id|Недоступно|Эквивалентно [`KILL QUERY`](https://dev.mysql.com/doc/refman/8.0/en/kill.html) команде. Прекратит выполнение инструкции, в которой выполняется подключение. Оставляет подключение активным.|
-|*MySQL. az_load_timezone*|Недоступно|Недоступно|Загружает таблицы часовых поясов, `time_zone` чтобы разрешить Присвоение параметру именованных значений (например, "США/тихоокеанское").|
+|*MySQL. az_load_timezone*|Недоступно|Недоступно|Загружает таблицы часовых поясов, чтобы разрешить `time_zone` Присвоение параметру именованных значений (например, "США/тихоокеанское").|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте, как настроить [репликация входных данных](howto-data-in-replication.md)
 - Сведения об использовании [таблиц часовых поясов](howto-server-parameters.md#working-with-the-time-zone-parameter)

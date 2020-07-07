@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: dacurwin
 ms.openlocfilehash: b17e4031edaedc6b0a63d305d20a77e5b58f91ba
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80247390"
 ---
 # <a name="azure-backup-for-sql-server-running-in-azure-vm"></a>Azure Backup для SQL Server, работающих на виртуальной машине Azure
@@ -20,7 +20,7 @@ ms.locfileid: "80247390"
 Azure Backup, среди прочих предложений, обеспечивает поддержку резервного копирования рабочих нагрузок, таких как SQL Server, выполняемых на виртуальных машинах Azure. Так как приложение SQL выполняется на виртуальной машине Azure, службе архивации требуется разрешение на доступ к приложению и получение необходимых сведений.
 Для этого Azure Backup устанавливает расширение **азуребаккупвиндовсворклоад** на виртуальной машине, в которой выполняется SQL Server, во время процесса регистрации, инициированного пользователем.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Список поддерживаемых сценариев см. в [матрице поддержки](../../backup/sql-support-matrix.md#scenario-support) , поддерживаемой Azure Backup.
 
@@ -111,7 +111,7 @@ Register-AzRecoveryServicesBackupContainer -ResourceId $myVM.ID -BackupManagemen
 
 Команда вернет **контейнер резервного копирования** этого ресурса, и состояние будет **зарегистрировано**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Подробнее](https://docs.microsoft.com/azure/backup/backup-sql-server-azure-troubleshoot) о рекомендациях по устранению неполадок при резервном копировании виртуальных машин Azure SQL Server
 - [Распространенные вопросы](https://docs.microsoft.com/azure/backup/faq-backup-sql-server) о резервном копировании SQL Server баз данных, работающих на виртуальных машинах Azure и использующих службу Azure Backup.

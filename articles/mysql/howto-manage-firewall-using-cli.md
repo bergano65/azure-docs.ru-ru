@@ -8,10 +8,10 @@ ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: 11aa4a80deba4df14c239e69910ea38bac1b9c55
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80063515"
 ---
 # <a name="create-and-manage-azure-database-for-mysql-firewall-rules-by-using-the-azure-cli"></a>Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью Azure CLI
@@ -19,7 +19,7 @@ ms.locfileid: "80063515"
 
 Правила виртуальной сети (VNet) также можно использовать для защиты доступа к серверу. Дополнительные сведения о [создании конечных точек и правил виртуальных сетевых служб и управлении ими с помощью Azure CLI](howto-manage-vnet-using-cli.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 * [Установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 * [Сервер и база данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-cli.md).
 
@@ -42,7 +42,7 @@ ms.locfileid: "80063515"
     ```
    Эта команда выведет код, который понадобится на следующем шаге.
 
-2. Откройте страницу [https://aka.ms/devicelogin](https://aka.ms/devicelogin)с помощью веб-браузера, а затем введите код.
+2. Откройте страницу с помощью веб-браузера [https://aka.ms/devicelogin](https://aka.ms/devicelogin) , а затем введите код.
 
 3. В командной строке выполните вход с использованием учетных данных Azure.
 
@@ -118,7 +118,7 @@ az mysql server firewall-rule delete --resource-group myresourcegroup --server-n
 ```
 При успешном выполнении выходные данные отсутствуют. В случае сбоя отображается текст сообщения об ошибке.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [правилах брандмауэра сервера базы данных Azure для MySQL](./concepts-firewall-rules.md).
 - [Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью портала Azure](./howto-manage-firewall-using-portal.md).
 - Более безопасный доступ к серверу путем [создания конечных точек и правил службы виртуальной сети и управления ими с помощью Azure CLI](howto-manage-vnet-using-cli.md).

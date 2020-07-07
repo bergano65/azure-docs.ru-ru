@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 01/14/2020
 ms.author: anzaman
 ms.openlocfilehash: fa41fca7f8ad96cf507aa6f04059b1254c8c3961
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80127891"
 ---
 # <a name="customize-a-person-model-with-the-video-indexer-api"></a>Настройка модели пользователя с помощью API Индексатора видео
@@ -75,7 +75,7 @@ ms.locfileid: "80127891"
 ]
 ```
 
-Вы можете выбрать модель, которая будет использоваться для видео, `id` используя значение модели Person для `personModelId` параметра при [отправке видео для индексирования или повторного](https://api-portal.videoindexer.ai/docs/services/operations/operations/Upload-video?) [индексирования видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Re-index-video?).
+Вы можете выбрать модель, которая будет использоваться для видео, используя `id` значение модели Person для `personModelId` параметра при [отправке видео для индексирования или повторного](https://api-portal.videoindexer.ai/docs/services/operations/operations/Upload-video?) [индексирования видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Re-index-video?).
 
 ## <a name="update-a-face"></a>Обновление информации о лицах
 
@@ -87,8 +87,8 @@ ms.locfileid: "80127891"
 
 Для обновления грани используйте API [обновления видеоролика](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Video-Face?) .
 
-Имена являются уникальными для моделей Person, поэтому если вы придаете двум разным лицам одну и ту же `name` одну и ту же величину параметра, индексатор видео просматривает людей как одного и объединяет их после переиндексации видео.
+Имена являются уникальными для моделей Person, поэтому если вы придаете двум разным лицам одну и ту же одну и ту же `name` величину параметра, индексатор видео просматривает людей как одного и объединяет их после переиндексации видео.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Customize Person model using the Video Indexer website](customize-person-model-with-website.md) (Настройка модели пользователя с помощью веб-сайта Индексатора видео)
