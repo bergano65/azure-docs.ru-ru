@@ -8,10 +8,10 @@ ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 3/16/2020
 ms.openlocfilehash: 8bf887b8d86131e0b358056fc1744a8d144be3fc
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82584112"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-postgresql---hyperscale-citus"></a>Использование портал Azure для настройки оповещений в метриках для базы данных Azure для PostgreSQL-Scale (Цитус)
@@ -92,7 +92,7 @@ ms.locfileid: "82584112"
 
 ## <a name="suggested-alerts"></a>Предлагаемые оповещения
 
-### <a name="disk-space"></a>Место на диске
+### <a name="disk-space"></a>Пространство на диске
 
 Мониторинг и оповещения важны для каждой группы серверов рабочей среды Цитус. Для правильной работы базовой базы данных PostgreSQL требуется свободное место на диске. Если диск заполнен, узел сервера базы данных переходит в режим «вне сети» и отклоняется, пока не появится свободное место. На этом этапе для решения этой проблемы требуется запрос в службу поддержки Майкрософт.
 

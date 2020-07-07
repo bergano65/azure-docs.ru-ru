@@ -3,16 +3,16 @@ title: Настройка сетевых конечных точек Файло�
 description: Общие сведения о параметрах сети службы "Файлы Azure".
 author: roygara
 ms.service: storage
-ms.topic: overview
+ms.topic: how-to
 ms.date: 3/19/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: e58a84d8c001ad273cfa14ffb871aaea71bc468b
-ms.sourcegitcommit: 813f7126ed140a0dff7658553a80b266249d302f
-ms.translationtype: HT
+ms.openlocfilehash: 0859b034cf0caa60039fbf9eb4dd9be54448a940
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84465026"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85510320"
 ---
 # <a name="configuring-azure-files-network-endpoints"></a>Настройка сетевых конечных точек Файлов Azure
 Файлы Azure предоставляют два основных типа конечных точек для доступа к общим папкам Azure: 

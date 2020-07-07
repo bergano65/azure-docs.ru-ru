@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 04/29/2020
 ms.author: danlep
 ms.openlocfilehash: 77fbdb1720e571027f28b5bdca5c0e3c65c3ded2
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82584406"
 ---
 # <a name="virtual-network-scenarios-and-resources"></a>Сценарии и ресурсы виртуальной сети
 
-[Виртуальная сеть Azure](../virtual-network/virtual-networks-overview.md) предоставляет защищенные частные сети для Azure и локальных ресурсов. Развертывание групп контейнеров в виртуальной сети Azure позволяет контейнерам безопасно обмениваться данными с другими ресурсами в виртуальной сети. 
+[Виртуальная сеть Azure](../virtual-network/virtual-networks-overview.md) обеспечивает безопасное и конфиденциальное сетевое подключение для Azure и локальных ресурсов. Развертывание групп контейнеров в виртуальной сети Azure позволяет контейнерам безопасно обмениваться данными с другими ресурсами в виртуальной сети. 
 
 В этой статье содержатся общие сведения о сценариях виртуальной сети, ограничениях и ресурсах. Примеры развертывания с помощью Azure CLI см. в статье [развертывание экземпляров контейнеров в виртуальной сети Azure](container-instances-vnet.md).
 

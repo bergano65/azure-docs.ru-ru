@@ -6,10 +6,10 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/04/2020
 ms.openlocfilehash: 81040adf6cfbb8820ec7f306c7d614830e3a2613
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82791121"
 ---
 # <a name="create-and-run-custom-availability-tests-using-azure-functions"></a>Создание и запуск пользовательских тестов доступности с помощью функций Azure
@@ -37,7 +37,7 @@ ms.locfileid: "82791121"
     - По умолчанию при создании приложения "функции Azure" будет создан ресурс Application Insights.
     - Следуйте инструкциям, чтобы [создать ресурс функций Azure и функцию, активируемую с помощью таймера](https://docs.microsoft.com/azure/azure-functions/functions-create-scheduled-function) (до завершения очистки).
 
-## <a name="sample-code"></a>Образец кода
+## <a name="sample-code"></a>Пример кода
 
 Скопируйте приведенный ниже код в файл run. CSX (это заменит уже существующий код). Для этого перейдите в приложение функций Azure и выберите функцию триггера таймера слева.
 
@@ -45,7 +45,7 @@ ms.locfileid: "82791121"
 >![Функция Azure Run. CSX в портал Azure](media/availability-azure-functions/runcsx.png)
 
 > [!NOTE]
-> Для адреса конечной точки, который будет использоваться `EndpointAddress= https://dc.services.visualstudio.com/v2/track`:. Если ресурс не находится в регионе, например Azure для государственных организаций или Azure для Китая, в этом случае обратитесь к этой статье, чтобы узнать о [переопределении конечных точек по умолчанию](https://docs.microsoft.com/azure/azure-monitor/app/custom-endpoints#regions-that-require-endpoint-modification) и выбрать соответствующую конечную точку канала телеметрии для вашего региона.
+> Для адреса конечной точки, который будет использоваться: `EndpointAddress= https://dc.services.visualstudio.com/v2/track` . Если ресурс не находится в регионе, например Azure для государственных организаций или Azure для Китая, в этом случае обратитесь к этой статье, чтобы узнать о [переопределении конечных точек по умолчанию](https://docs.microsoft.com/azure/azure-monitor/app/custom-endpoints#regions-that-require-endpoint-modification) и выбрать соответствующую конечную точку канала телеметрии для вашего региона.
 
 ```C#
 #load "runAvailabilityTest.csx"
@@ -160,7 +160,7 @@ public async static Task RunAvailbiltyTestAsync(ILogger log)
 Чтобы убедиться, что все работает, можно просмотреть диаграмму на вкладке доступность Application Insights ресурса.
 
 > [!NOTE]
-> Если вы реализовали собственную бизнес-логику в Рунаваилабилититест. CSX, вы увидите результаты, как на снимках экрана ниже, если вы не сделали этого, вы увидите результаты с ошибками. Тесты, созданные `TrackAvailability()` с помощью, будут отображаться с **настраиваемым** рядом с именем теста.
+> Если вы реализовали собственную бизнес-логику в Рунаваилабилититест. CSX, вы увидите результаты, как на снимках экрана ниже, если вы не сделали этого, вы увидите результаты с ошибками. Тесты, созданные с помощью `TrackAvailability()` , будут отображаться с **настраиваемым** рядом с именем теста.
 
 >[!div class="mx-imgBorder"]
 >![Вкладка "доступность" с успешными результатами](media/availability-azure-functions/availability-custom.png)
@@ -187,5 +187,5 @@ public async static Task RunAvailbiltyTestAsync(ILogger log)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Схема приложений](../../azure-monitor/app/app-map.md)
+- [Схема сопоставления приложений](../../azure-monitor/app/app-map.md)
 - [Диагностика транзакции](../../azure-monitor/app/transaction-diagnostics.md)

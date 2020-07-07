@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
 ms.openlocfilehash: be0f0a48e2fd334e2000c8a4b8c2e0101b291cef
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82791873"
 ---
 # <a name="capacity-planning-and-scaling-for-azure-service-fabric"></a>Планирование емкости и масштабирование для Azure Service Fabric
@@ -48,7 +48,7 @@ ms.locfileid: "82791873"
 
 Вертикальное масштабирование масштабируемого набора виртуальных машин является обратимой операцией. Вместо этого необходимо горизонтально масштабировать кластер, добавив новый масштабируемый набор с требуемым номером SKU. Затем перенесите службы в нужный номер SKU, чтобы выполнить операцию безопасного вертикального масштабирования. Изменение номера SKU ресурса масштабируемого набора виртуальных машин является обратимой операцией, так как она перестраивает узлы, удаляя все локально сохраняемое состояние.
 
-Кластер использует [Свойства узла Service Fabric и ограничения на размещение](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-cluster-description#node-properties-and-placement-constraints) , чтобы решить, где следует размещать службы приложения. При вертикальном масштабировании типа первичного узла объявите одинаковые значения свойств для `"nodeTypeRef"`. Эти значения можно найти в расширении Service Fabric для масштабируемых наборов виртуальных машин. 
+Кластер использует [Свойства узла Service Fabric и ограничения на размещение](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-cluster-description#node-properties-and-placement-constraints) , чтобы решить, где следует размещать службы приложения. При вертикальном масштабировании типа первичного узла объявите одинаковые значения свойств для `"nodeTypeRef"` . Эти значения можно найти в расширении Service Fabric для масштабируемых наборов виртуальных машин. 
 
 В следующем фрагменте шаблона диспетчер ресурсов отображаются свойства, которые вы объявите. Он имеет то же значение для вновь подготовленных масштабируемых наборов, на которые выполняется масштабирование, и поддерживается только в качестве временной службы с отслеживанием состояния для кластера.
 
@@ -59,7 +59,7 @@ ms.locfileid: "82791873"
 ```
 
 > [!NOTE]
-> Не оставляйте кластер, работающий с несколькими масштабируемыми наборами, `nodeTypeRef` которые используют одно и то же значение свойства дольше, чем требуется для успешного выполнения операции вертикального масштабирования.
+> Не оставляйте кластер, работающий с несколькими масштабируемыми наборами, которые используют одно и то же `nodeTypeRef` значение свойства дольше, чем требуется для успешного выполнения операции вертикального масштабирования.
 >
 > Всегда проверяйте операции в тестовых средах, прежде чем выполнять изменения в рабочей среде. По умолчанию Service Fabric системные службы кластера имеют ограничение на размещение только для целевого типа первичного узла.
 
@@ -140,7 +140,7 @@ using (var client = new FabricClient())
         .FirstOrDefault();
 ```
 
-Отключите и удалите узел, используя тот же `FabricClient` экземпляр (`client` в данном случае) и экземпляр узла (`instanceIdString` в данном случае), который использовался в предыдущем коде:
+Отключите и удалите узел, используя тот же `FabricClient` экземпляр ( `client` в данном случае) и экземпляр узла ( `instanceIdString` в данном случае), который использовался в предыдущем коде:
 
 ```csharp
 var scaleSet = AzureClient.VirtualMachineScaleSets.GetById(ScaleSetId);
@@ -166,7 +166,7 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 ```
 
 > [!NOTE]
-> При масштабировании в кластере вы увидите, что удаленный экземпляр узла или виртуальной машины отображается в неработоспособном состоянии Service Fabric Explorer. Описание этого поведения см. [в разделе варианты поведения, которые могут возникнуть в Service Fabric Explorer](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-scale-in-out#behaviors-you-may-observe-in-service-fabric-explorer). Можно сделать следующее:
+> При масштабировании в кластере вы увидите, что удаленный экземпляр узла или виртуальной машины отображается в неработоспособном состоянии Service Fabric Explorer. Описание этого поведения см. [в разделе варианты поведения, которые могут возникнуть в Service Fabric Explorer](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-scale-in-out#behaviors-you-may-observe-in-service-fabric-explorer). Вы можете:
 > * Вызовите [команду Remove-ServiceFabricNodeState](https://docs.microsoft.com/powershell/module/servicefabric/remove-servicefabricnodestate?view=azureservicefabricps) с соответствующим именем узла.
 > * Разверните в кластере [вспомогательное приложение автомасштабирования Service Fabric](https://github.com/Azure/service-fabric-autoscale-helper/) . Это приложение гарантирует, что масштабируемые узлы будут удалены из Service Fabric Explorer.
 

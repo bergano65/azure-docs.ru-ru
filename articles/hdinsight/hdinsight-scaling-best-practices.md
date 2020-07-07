@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: seoapr2020
 ms.date: 04/29/2020
 ms.openlocfilehash: 2dae0f662eefa7f7b1f56d057cd47f1cb92244ce
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82592066"
 ---
 # <a name="scale-azure-hdinsight-clusters"></a>Масштабирование кластеров Azure HDInsight
@@ -35,7 +35,7 @@ HDInsight обеспечивает эластичность с помощью п
 |[PowerShell Az](https://docs.microsoft.com/powershell/azure)|[`Set-AzHDInsightClusterSize`](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) `-ClusterName CLUSTERNAME -TargetInstanceCount NEWSIZE`|
 |[PowerShell AzureRM](https://docs.microsoft.com/powershell/azure/azurerm) |[`Set-AzureRmHDInsightClusterSize`](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) `-ClusterName CLUSTERNAME -TargetInstanceCount NEWSIZE`|
 |[Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) | [`az hdinsight resize`](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) `--resource-group RESOURCEGROUP --name CLUSTERNAME --workernode-count NEWSIZE`|
-|[Классический интерфейс командной строки Azure](hdinsight-administer-use-command-line.md)|`azure hdinsight cluster resize CLUSTERNAME NEWSIZE` |
+|[Классический Azure CLI](hdinsight-administer-use-command-line.md)|`azure hdinsight cluster resize CLUSTERNAME NEWSIZE` |
 |[Портал Azure](https://portal.azure.com)|Откройте панель кластера HDInsight, выберите **Размер кластера** в меню слева, затем на панели размер кластера введите число рабочих узлов и нажмите кнопку Сохранить.|  
 
 ![Параметр масштабирования кластера портал Azure](./media/hdinsight-scaling-best-practices/azure-portal-settings-nodes.png)
@@ -119,14 +119,14 @@ HDInsight обеспечивает эластичность с помощью п
 
 Чтобы просмотреть список ожидающих и выполняющихся заданий, можно использовать **Пользовательский интерфейс YARN диспетчер ресурсов**, выполнив следующие действия.
 
-1. В [портал Azure](https://portal.azure.com/)выберите свой кластер.  Кластер открывается на новой странице портала.
-2. В главном представлении перейдите к **панели мониторинга** > кластера**Ambari Домашняя страница**. Введите учетные данные кластера.
+1. На [портале Azure](https://portal.azure.com/) выберите свой кластер.  Кластер откроется на новой странице портала.
+2. В главном представлении перейдите к **панели мониторинга кластера**  >  **Ambari Домашняя страница**. Введите учетные данные кластера.
 3. В пользовательском интерфейсе Ambari выберите **YARN** в списке служб в меню слева.  
 4. На странице YARN выберите **быстрые ссылки** и наведите указатель мыши на активный головной узел, а затем выберите **Диспетчер ресурсов Пользовательский интерфейс**.
 
     ![Быстрые ссылки Apache Ambari диспетчер ресурсов UI](./media/hdinsight-scaling-best-practices/resource-manager-ui1.png)
 
-Вы можете получить прямой доступ к диспетчер ресурсов пользовательскому интерфейсу с помощью `https://<HDInsightClusterName>.azurehdinsight.net/yarnui/hn/cluster`.
+Вы можете получить прямой доступ к диспетчер ресурсов пользовательскому интерфейсу с помощью `https://<HDInsightClusterName>.azurehdinsight.net/yarnui/hn/cluster` .
 
 Вы увидите список заданий и их текущее состояние. На снимке экрана в настоящее время выполняется одно задание:
 
@@ -187,7 +187,7 @@ org.apache.http.conn.HttpHostConnectException: Connect to active-headnode-name.s
 
 Если при работе Hive остались временные файлы, их можно вручную очистить, а затем выполнить уменьшение масштаба, чтобы избежать активации безопасного режима.
 
-1. Проверьте, какое расположение используется для временных файлов Hive, просмотрев свойство `hive.exec.scratchdir` конфигурации. Этот параметр задается `/etc/hive/conf/hive-site.xml`в:
+1. Проверьте, какое расположение используется для временных файлов Hive, просмотрев `hive.exec.scratchdir` свойство конфигурации. Этот параметр задается в `/etc/hive/conf/hive-site.xml` :
 
     ```xml
     <property>

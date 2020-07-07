@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 06/19/2019
 ms.openlocfilehash: 6cd2a28ddbe970385ff44deec2158c257937982e
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82591658"
 ---
 # <a name="overview-of-log-queries-in-azure-monitor"></a>Общие сведения о запросах журналов в Azure Monitor
@@ -76,7 +76,7 @@ on $left.timestamp == $right.TimeGenerated
 
 
 ## <a name="what-is-log-analytics"></a>Что такое Log Analytics?
-Log Analytics является основным инструментом в портал Azure для написания запросов журналов и интерактивного анализа результатов. Даже если запрос журнала используется где-либо еще в Azure Monitor, обычно вы сначала пишете и тестируете запрос с помощью Log Analytics.
+Log Analytics является основным инструментом портала Azure для написания запросов журналов и интерактивного анализа результатов. Даже если запрос журнала используется где-либо еще в Azure Monitor, обычно вы сначала пишете и тестируете запрос с помощью Log Analytics.
 
 Вы можете запустить Log Analytics из нескольких мест в портал Azure. Область данных, доступных для Log Analytics, определяется способом запуска. Дополнительные сведения см. в разделе [область запроса](scope.md) .
 

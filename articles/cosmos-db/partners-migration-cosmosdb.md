@@ -7,10 +7,10 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.openlocfilehash: ad5ed2b45a182c1f33f33ca1f6d4e3212c61b6a2
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82791737"
 ---
 # <a name="azure-cosmos-db-nosql-migration-and-application-development-partners"></a>Партнеры по разработке миграции и приложения Azure Cosmos DB для NoSQL
@@ -25,7 +25,7 @@ ms.locfileid: "82791737"
 | [10thMagnitude](https://www.10thmagnitude.com/) | IoT, розница (Инвентаризация), операционная аналитика (Spark), бессерверная архитектура, разработка приложений | США |
 |[Altoros Development LLC](https://www.altoros.com/)  |  IoT, розница для персонализации (Инвентаризация), бессерверные архитектуры NoSQL миграция, разработка приложений|   США |
 |[Avanade](https://www.avanade.com/) | IoT, розница (Инвентаризация), бессерверная архитектура, разработка приложений | Австрия, Германия, Швейцария, Италия, Норвегия, Испания, Великобритания, Канада |
-|[Accenture](https://www.accenture.com/) | IoT, розница (Инвентаризация), бессерверная архитектура, разработка приложений |Глобальная|
+|[Accenture](https://www.accenture.com/) | IoT, розница (Инвентаризация), бессерверная архитектура, разработка приложений |Глобальный|
 |[Bluemetal](https://www.bluemetal.com/)     |  IoT, розница для персонализации (Инвентаризация), операционная аналитика для Enterprise & SMC, аннотация изображений AI, управление активами, NoSQL миграция, разработка приложений     |    Северная Америка и Азиатско-Тихоокеанский регион     |
 |[Capax Global LLC](https://www.capaxglobal.com/) | IoT, персонализация, розничная торговля (Инвентаризация), операционная аналитика (Spark), бессерверная архитектура, разработка приложений|    США     |  
 | [Capgemini](https://www.capgemini.com/) | Розничная торговля (Инвентаризация), IoT, операционная аналитика (Spark), разработка приложений | США, Франция, Великобритания, Нидерланды, Финляндия  |

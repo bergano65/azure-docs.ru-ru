@@ -10,19 +10,19 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.openlocfilehash: efce2eb33bb95a3dc13cec4cbe0ea89d1a2c3452
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82796750"
 ---
 # <a name="create-a-vm-using-a-generalized-image"></a>Создание виртуальной машины с помощью обобщенного образа 
 
 Создайте виртуальную машину из обобщенного образа, хранящегося в коллекции общих образов. Если вы хотите создать виртуальную машину с помощью специализированного образа, см. раздел [Создание виртуальной машины на основе специализированного образа](vm-specialized-image-version-powershell.md).
 
-После создания обобщенной версии образа можно создать одну или несколько новых виртуальных машин. С помощью командлета [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm) . 
+После создания обобщенной версии образа можно создать одну или несколько новых виртуальных машин. Используйте командлет [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm). 
 
-В этом примере мы используем идентификатор определения образа, чтобы убедиться, что новая виртуальная машина будет использовать самую последнюю версию образа. Вы также можете использовать определенную версию с помощью идентификатора версии образа для `Set-AzVMSourceImage -Id`. Например, чтобы использовать тип Image версии *1.0.0* : `Set-AzVMSourceImage -Id "/subscriptions/<subscription ID where the gallery is located>/resourceGroups/myGalleryRG/providers/Microsoft.Compute/galleries/myGallery/images/myImageDefinition/versions/1.0.0"`. 
+В этом примере мы используем идентификатор определения образа, чтобы убедиться, что новая виртуальная машина будет использовать самую последнюю версию образа. Вы также можете использовать определенную версию с помощью идентификатора версии образа для `Set-AzVMSourceImage -Id` . Например, чтобы использовать тип Image версии *1.0.0* : `Set-AzVMSourceImage -Id "/subscriptions/<subscription ID where the gallery is located>/resourceGroups/myGalleryRG/providers/Microsoft.Compute/galleries/myGallery/images/myImageDefinition/versions/1.0.0"` . 
 
 Имейте в виду, что использование конкретной версии образа означает, что автоматизация может завершиться ошибкой, если эта версия изображения недоступна, так как она была удалена или удалена из региона. Рекомендуется использовать идентификатор определения образа для создания новой виртуальной машины, если только не требуется определенная версия образа.
 
@@ -149,9 +149,9 @@ New-AzVM `
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
 
-- [Создание Общей коллекции образов.](https://azure.microsoft.com/resources/templates/101-sig-create/)
-- [Создание определения образа в Общей коллекции образов](https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/)
-- [Создание версии образа в Общей коллекции образов](https://azure.microsoft.com/resources/templates/101-sig-image-version-create/)
+- [Создание коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-create/)
+- [Создание определения образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/)
+- [Создание версии образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-version-create/)
 - [Создание виртуальной машины из версии образа](https://azure.microsoft.com/resources/templates/101-vm-from-sig/)
 
 Дополнительные сведения о коллекциях общих образов см. в [обзорной статье](./windows/shared-image-galleries.md). Если вы столкнетесь с проблемами, обратитесь к статье об [устранении неполадок c коллекциями общих образов](./windows/troubleshooting-shared-images.md).

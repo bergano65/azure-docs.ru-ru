@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 04/25/2018
 ms.author: mimckitt
 ms.openlocfilehash: 92bb254873669ae7c0894d633f17b5701b7ddc97
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82594735"
 ---
 # <a name="use-the-azure-custom-script-extension-version-2-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 2 на виртуальных машинах Linux
@@ -106,24 +106,24 @@ ms.locfileid: "82594735"
 ```
 
 >[!NOTE]
-> Свойство managedIdentity **не должно** использоваться в сочетании со свойствами StorageAccountName или storageAccountKey
+> Свойство managedIdentity **не должны** использоваться в сочетании со свойствами storageAccountName или storageAccountKey
 
 ### <a name="property-values"></a>Значения свойств
 
-| Название | Значение и пример | Тип данных | 
+| Имя | Значение и пример | Тип данных | 
 | ---- | ---- | ---- |
 | версия_API | 2019-03-01 | Дата |
 | publisher | Microsoft.Compute.Extensions | строка |
 | type | CustomScript | строка |
-| typeHandlerVersion | 2.1 | int |
+| typeHandlerVersion | 2.1 | INT |
 | fileUris (пример) | `https://github.com/MyProject/Archive/MyPythonScript.py` | массиве |
-| commandToExecute (пример) | > " \<My-Param1" Python MyPythonScript.py | строка |
+| commandToExecute (пример) | MyPythonScript.py Python\<my-param1> | строка |
 | скрипт | IyEvYmluL3NoCmVjaG8gIlVwZGF0aW5nIHBhY2thZ2VzIC4uLiIKYXB0IHVwZGF0ZQphcHQgdXBncmFkZSAteQo= | строка |
-| skipDos2Unix (например) | false | boolean |
+| skipDos2Unix (например) | false | Логическое |
 | метка времени (например) | 123456789 | 32-разрядное целое число |
 | storageAccountName (пример) | examplestorageacct | строка |
 | storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | строка |
-| managedIdentity (например,) | {} или {"clientId": "31b403aa-c364-4240-A7FF-d85fb6cd7232"} или {"objectId": "12dd289c-0583-46e5-b9b4-115d5c19ef4b"} | объект JSON |
+| managedIdentity (пример) | {} или {"clientId": "31b403aa-c364-4240-A7FF-d85fb6cd7232"} или {"objectId": "12dd289c-0583-46e5-b9b4-115d5c19ef4b" } | Объект JSON |
 
 ### <a name="property-value-details"></a>Сведения о значениях свойств
 * `apiVersion`: Наиболее актуальные apiVersion можно найти с помощью [Обозреватель ресурсов](https://resources.azure.com/) или из Azure CLI с помощью следующей команды.`az provider list -o json`
@@ -135,8 +135,8 @@ ms.locfileid: "82594735"
 * `storageAccountName`: (необязательное, строка) имя учетной записи хранения. Если указаны учетные данные хранилища, все значения `fileUris` должны иметь формат URL-адресов для BLOB-объектов Azure.
 * `storageAccountKey`: (необязательное, строка) ключ доступа для учетной записи хранения.
 * `managedIdentity`: (необязательный, объект JSON) [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для скачивания файлов
-  * `clientId`: (необязательный, строка) идентификатор клиента управляемого удостоверения.
-  * `objectId`: (необязательный, строка) идентификатор объекта управляемого удостоверения.
+  * `clientId`: (необязательный, строка) идентификатор клиента управляемого удостоверения
+  * `objectId`: (необязательный, строка) идентификатор объекта управляемого удостоверения
 
 
 Указанные ниже значения можно задавать либо в открытых, либо в защищенных параметрах. Расширение отклонит любую конфигурацию, в которой приведенные ниже значения будут указаны в открытых и защищенных параметрах одновременно.
@@ -210,13 +210,13 @@ cat script | gzip -9 | base64 -w 0
 
 ####  <a name="property-managedidentity"></a>Свойство: managedIdentity
 > [!NOTE]
-> Это свойство **должно** быть указано только в защищенных параметрах.
+> Это свойство **должно** быть задано только в защищенных параметрах.
 
-CustomScript (начиная с версии 2,1) поддерживает [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для загрузки файлов с URL-адресов, указанных в параметре "fileUris". Это позволяет CustomScript доступ к частным BLOB-объектам или контейнерам службы хранилища Azure без необходимости передавать секреты, такие как маркеры SAS или ключи учетной записи хранения.
+CustomScript (начиная с версии 2,1) поддерживает [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для загрузки файлов с URL-адресов, указанных в параметре "fileUris". Это предоставляет CustomScript доступ к частным BLOB-объектам или контейнерам службы хранилища Azure без необходимости передавать секреты, такие как маркеры SAS или ключи учетной записи хранения.
 
-Чтобы использовать эту функцию, пользователь должен добавить [назначенное системой](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-system-assigned-identity) или [назначенное пользователем](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-user-assigned-identity) удостоверение в виртуальную машину или VMSS, где ожидается запуск CustomScript, и [предоставить управляемому удостоверению доступ к контейнеру или BLOB-объекту службы хранилища Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/tutorial-vm-windows-access-storage#grant-access).
+Чтобы использовать эту функцию, пользователь должен добавить [назначенное системой](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-system-assigned-identity) или [назначенное пользователем](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-user-assigned-identity) удостоверение на виртуальную машину или VMSS, где ожидается выполнение CustomScript, и [предоставить управляемому удостоверению доступ к контейнеру службы хранилища Azure или BLOB-объектов](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/tutorial-vm-windows-access-storage#grant-access).
 
-Чтобы использовать назначенное системой удостоверение на целевой виртуальной машине или VMSS, задайте для поля "managedidentity" пустой объект JSON. 
+Чтобы использовать назначенное системой удостоверение на целевой виртуальной машине или VMSS, задайте в поле "managedidentity" пустой объект JSON. 
 
 > Пример
 >
@@ -248,7 +248,7 @@ CustomScript (начиная с версии 2,1) поддерживает [уп
 > ```
 
 > [!NOTE]
-> Свойство managedIdentity **не должно** использоваться в сочетании со свойствами StorageAccountName или storageAccountKey
+> Свойство managedIdentity **не должны** использоваться в сочетании со свойствами storageAccountName или storageAccountKey
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Для запуска расширения пользовательских сценариев во время развертывания шаблона Azure Resource Manager в нем можно использовать схему JSON, описанную в предыдущем разделе. Пример шаблона, который содержит расширение пользовательских сценариев, можно найти на сайте [GitHub](https://github.com/Microsoft/dotnet-core-sample-templates/tree/master/dotnet-core-music-linux).
@@ -448,7 +448,7 @@ time=2018-04-26T17:47:23Z version=v2.0.6/git@1008306-clean operation=enable seq=
 * расширение, скачивающее файл, и результат скачивания;
 * выполняемая команда и результат выполнения.
 
-Можно также получить состояние выполнения расширения пользовательских скриптов, включая фактические аргументы, переданные в `commandToExecute` качестве с помощью Azure CLI:
+Можно также получить состояние выполнения расширения пользовательских скриптов, включая фактические аргументы, переданные в качестве с `commandToExecute` помощью Azure CLI:
 
 ```azurecli
 az vm extension list -g myResourceGroup --vm-name myVM

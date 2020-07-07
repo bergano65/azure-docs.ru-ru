@@ -4,10 +4,10 @@ description: Узнайте, как защитить значения секре
 ms.topic: conceptual
 ms.date: 01/04/2019
 ms.openlocfilehash: 18090dd3e4046da2069e3035be4edb4d2f979204
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82583236"
 ---
 # <a name="manage-encrypted-secrets-in-service-fabric-applications"></a>Управление зашифрованными секретами в приложениях Service Fabric
@@ -45,7 +45,7 @@ ms.locfileid: "82583236"
 </CodePackage>
 ```
 
-Секреты также должны быть добавлены в приложение Service Fabric, указав сертификат в манифесте приложения. Добавьте элемент **секретсцертификате** в **ApplicationManifest. XML** и включите отпечаток требуемого сертификата.
+Секреты также должны быть добавлены в приложение Service Fabric, указав сертификат в манифесте приложения. Добавьте элемент **секретсцертификате** , чтобы **ApplicationManifest.xml** и включить отпечаток требуемого сертификата.
 
 ```xml
 <ApplicationManifest … >

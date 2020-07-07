@@ -4,10 +4,10 @@ description: Узнайте, как обратимое удаление для S
 ms.topic: conceptual
 ms.date: 04/27/2020
 ms.openlocfilehash: f1e3ecae5d643b8e32f8f4f07808d56cdc421163
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82791380"
 ---
 # <a name="soft-delete-for-sql-server-in-azure-vm-and-sap-hana-in-azure-vm-workloads"></a>Обратимое удаление для SQL Server на виртуальной машине Azure и SAP HANA в рабочих нагрузках виртуальных машин Azure
@@ -21,7 +21,7 @@ Azure Backup теперь обеспечивает обратимое удале
 
 ## <a name="steps-to-enroll-in-preview"></a>Действия для регистрации в предварительной версии
 
-1. Войдите в свою учетную запись Azure.
+1. Войдите в учетную запись Azure.
 
    ```powershell
    Login-AzureRmAccount

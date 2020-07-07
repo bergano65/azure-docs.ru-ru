@@ -10,10 +10,10 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.openlocfilehash: 10cd8514b529f29f68ea3df14cdc208dd8fdd556
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82796932"
 ---
 # <a name="copy-an-image-from-another-gallery"></a>Копирование изображения из другой коллекции
@@ -21,7 +21,7 @@ ms.locfileid: "82796932"
 При наличии нескольких коллекций в Организации можно создавать образы из образов, хранящихся в других галереях. Например, у вас может быть коллекция разработки и тестирования для создания и тестирования новых образов. Когда они готовы к использованию в рабочей среде, их можно скопировать в рабочую коллекцию, используя этот пример. Вы также можете создать образ из изображения в другой коллекции, используя [Azure CLI](image-version-another-gallery-cli.md).
 
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для работы с этой статьей необходимо наличие существующей коллекции источников, определения образа и версии образа. Кроме того, у вас должна быть конечная коллекция. 
 
@@ -39,7 +39,7 @@ ms.locfileid: "82796932"
 
 Перечислите сведения о существующих галереях, определениях образов и версиях изображений с помощью командлета [Get-азресаурце](/powershell/module/az.resources/get-azresource) .
 
-Результаты представлены в формате `gallery\image definition\image version`.
+Результаты представлены в формате `gallery\image definition\image version` .
 
 ```azurepowershell-interactive
 Get-AzResource `
@@ -47,7 +47,7 @@ Get-AzResource `
    Format-Table -Property Name,ResourceGroupName
 ```
 
-После получения всех необходимых сведений можно получить идентификатор исходной версии образа с помощью команды [Get-азгаллеримажеверсион](/powershell/module/az.compute/get-azgalleryimageversion). В этом примере мы получаем `1.0.0` версию образа `myImageDefinition` определения в коллекции `myGallery` исходных файлов в группе `myResourceGroup` ресурсов.
+После получения всех необходимых сведений можно получить идентификатор исходной версии образа с помощью команды [Get-азгаллеримажеверсион](/powershell/module/az.compute/get-azgalleryimageversion). В этом примере мы получаем `1.0.0` версию образа `myImageDefinition` определения в `myGallery` коллекции исходных файлов в `myResourceGroup` группе ресурсов.
 
 ```azurepowershell-interactive
 $sourceImgVer = Get-AzGalleryImageVersion `
@@ -125,7 +125,7 @@ $destinationImgDef  = New-AzGalleryImageDefinition `
 
 Создайте версию образа с помощью команды [New-азгаллеримажеверсион](https://docs.microsoft.com/powershell/module/az.compute/new-azgalleryimageversion). Необходимо передать идентификатор исходного образа в `--managed-image` параметре для создания версии образа в коллекции назначения. 
 
-Допустимыми знаками для имени версии образа являются цифры и точки. Числа должны быть в диапазоне 32-битного целого числа. Формат: *majorversion*. *Minorversion*. *Исправление*.
+Допустимыми знаками для имени версии образа являются цифры и точки. Числа должны быть в диапазоне 32-битного целого числа. Формат: *основной номер версии*.*дополнительный номер версии*.*исправление*.
 
 В этом примере конечная коллекция называется *мидестинатионгаллери*в группе ресурсов *Мидестинатионрг* в регионе *Западная часть США* . Версия нашего образа — *1.0.0* , и мы создадим 1 реплику в *юго-центральном регионе США* и 2 реплики в регионе " *Западная часть США* ". 
 
@@ -156,7 +156,7 @@ $job.State
 > [!NOTE]
 > Прежде чем использовать тот же управляемый образ для создания другой версии образа, необходимо дождаться завершения сборки и репликации версии образа.
 >
-> Вы также можете сохранить образ в хранилище `-StorageAccountType Premium_LRS`премиун, добавив хранилище или [избыточное в зону](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs) , добавив `-StorageAccountType Standard_ZRS` его при создании версии образа.
+> Вы также можете сохранить образ в хранилище класса Premium, добавив `-StorageAccountType Premium_LRS`, или [хранилище, избыточное между зонами](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs), добавив `-StorageAccountType Standard_ZRS` при создании версии образа.
 >
 
 

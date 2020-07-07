@@ -8,10 +8,10 @@ ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 3/16/2020
 ms.openlocfilehash: f8e8e1672f754e843a3bd1c75d496599d31e5f11
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82583998"
 ---
 # <a name="scale-a-hyperscale-citus-server-group"></a>Масштабирование группы серверов с горизонтальным масштабированием (Цитус)
@@ -37,12 +37,12 @@ ms.locfileid: "82583998"
 SELECT rebalance_table_shards('distributed_table_name');
 ```
 
-`rebalance_table_shards` Функция перераспределяет все таблицы в группе совместного [размещения](concepts-hyperscale-colocation.md) таблицы с именем в аргументе. Поэтому нет необходимости вызывать функцию для каждой распределенной таблицы, просто вызвать ее в репрезентативной таблице из каждой группы совместного размещения.
+`rebalance_table_shards`Функция перераспределяет все таблицы в группе совместного [размещения](concepts-hyperscale-colocation.md) таблицы с именем в аргументе. Поэтому нет необходимости вызывать функцию для каждой распределенной таблицы, просто вызвать ее в репрезентативной таблице из каждой группы совместного размещения.
 
 ## <a name="increase-or-decrease-vcores-on-nodes"></a>Увеличение или уменьшение виртуальных ядер на узлах
 
 > [!NOTE]
-> Эта функция в настоящее время находится на стадии предварительной версии. Чтобы запросить изменение в виртуальных ядер для узлов в группе серверов, [обратитесь в службу поддержки Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+> Сейчас эта функция доступна в предварительной версии. Чтобы запросить изменение в виртуальных ядер для узлов в группе серверов, [обратитесь в службу поддержки Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
 Помимо добавления новых узлов можно увеличить возможности существующих узлов. Регулировка емкости вычислений может оказаться полезной для экспериментов с производительностью, а также для краткосрочных или долгосрочных изменений в требованиях к трафику.
 
