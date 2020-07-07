@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/24/2018
 ms.openlocfilehash: 4da54318bea21daf9ec363be61bea18adaa2ce63
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82629038"
 ---
 # <a name="delta-copy-from-a-database-with-a-control-table"></a>Разностное копирование из базы данных с помощью управляющей таблицы
@@ -40,7 +40,7 @@ ms.locfileid: "82629038"
 - **Копировать** копирует только изменения из базы данных источника в целевое хранилище. Запрос, определяющий изменения в базе данных-источнике, аналогичен "SELECT * FROM Data_Source_Table, где TIMESTAMP_Column >" последняя большая Подложка "и TIMESTAMP_Column <=" текущий верхний предел ".
 - **SqlServerStoredProcedure** записывает текущее значение высокой подложки во внешнюю таблицу управления для разностного копирования в следующий раз.
 
-Шаблон определяет следующие параметры:
+Ниже описаны параметры, которые определяет шаблон:
 - *Data_Source_Table_Name* — это таблица в базе данных-источнике, из которой необходимо загрузить данные.
 - *Data_Source_WaterMarkColumn* — имя столбца в исходной таблице, который используется для обнаружения новых или обновленных строк. Этот столбец обычно имеет тип *DateTime*, *int*или аналогичный.
 - *Data_Destination_Container* — это корневой путь места, куда копируются данные в целевом хранилище.
@@ -104,7 +104,7 @@ ms.locfileid: "82629038"
 
     ![Создание подключения к хранилищу данных контрольной таблицы](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable6.png)
 
-7. Выберите **Использовать этот шаблон**.
+7. Щелкните **Использовать этот шаблон**.
     
 8. Вы увидите доступный конвейер, как показано в следующем примере:
   
@@ -114,11 +114,11 @@ ms.locfileid: "82629038"
 
     ![Задание действия хранимой процедуры](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable9.png)  
 
-10. Запишите содержимое ** \@{Activity (' лукупкуррентватермарк '). Output. firstRow. невватермарквалуе}** и нажмите кнопку **Готово**.  
+10. Запишите содержимое ** \@ {Activity (' лукупкуррентватермарк '). Output. FirstRow. невватермарквалуе}** и нажмите кнопку **Готово**.  
 
     ![Запись содержимого для параметров хранимой процедуры](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable10.png)       
      
-11. Выберите **Отладка**, введите **Параметры**и нажмите кнопку **Готово**.
+11. Выберите **Отладка**, введите **Параметры**, а затем нажмите **Готово**.
 
     ![Выберите * * Отладка * *](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable11.png)
 

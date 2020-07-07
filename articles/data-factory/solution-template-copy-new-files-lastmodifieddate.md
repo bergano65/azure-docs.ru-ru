@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 3/8/2019
 ms.openlocfilehash: 363af1012b327a55703cc6e35a02dc1f27869bd0
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82629071"
 ---
 # <a name="copy-new-and-changed-files-by-lastmodifieddate-with-azure-data-factory"></a>Копирование новых и измененных файлов с помощью LastModifiedDate с фабрикой данных Azure
@@ -49,7 +49,7 @@ ms.locfileid: "82629071"
 
     ![Создание нового подключения к целевому хранилищу](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate3.png)
 
-3. Выберите **Использовать этот шаблон**.
+3. Щелкните **Использовать этот шаблон**.
 
     ![Использовать этот шаблон](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate4.png)
     
@@ -84,12 +84,12 @@ ms.locfileid: "82629071"
     ![Создание триггера](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate10.png)    
     
 10. Задайте значения для **параметров запуска триггера** следующим образом, а затем нажмите кнопку **Готово**.
-    - **FolderPath_Source** = **sourcefolder**.  Вы можете заменить папку в исходном хранилище данных.
-    - **Directory_Source** = **Вложенная папка**Directory_Source.  Вы можете заменить вложенной папкой в исходном хранилище данных.
-    - **FolderPath_Destination** = **destinationfolder**.  Вы можете заменить папку в целевом хранилище данных.
-    - **Directory_Destination** = **Вложенная папка**Directory_Destination.  Вы можете заменить вложенной папкой в целевом хранилище данных.
-    - **LastModified_From** =  **Триггер LastModified_From\@(). Outputs. windowStartTime**.  Это системная переменная из триггера, определяющая время, когда конвейер был активирован в последний раз.
-    - **LastModified_To** = **Триггер LastModified_To\@(). Outputs. windowEndTime**.  Это системная переменная из триггера, определяющая время активации конвейера на данный момент.
+    - **FolderPath_Source**  =  **sourcefolder**.  Вы можете заменить папку в исходном хранилище данных.
+    - **Directory_Source**  =  **вложенная папка**.  Вы можете заменить вложенной папкой в исходном хранилище данных.
+    - **FolderPath_Destination**  =  **destinationfolder**.  Вы можете заменить папку в целевом хранилище данных.
+    - **Directory_Destination**  =  **вложенная папка**.  Вы можете заменить вложенной папкой в целевом хранилище данных.
+    - **LastModified_From**  =   ** \@ триггер (). Outputs. windowStartTime**.  Это системная переменная из триггера, определяющая время, когда конвейер был активирован в последний раз.
+    - **LastModified_To**  =  ** \@ триггер (). Outputs. windowEndTime**.  Это системная переменная из триггера, определяющая время активации конвейера на данный момент.
     
     ![Входные параметры](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate11.png)
     
@@ -107,4 +107,4 @@ ms.locfileid: "82629071"
     
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Знакомство с Фабрикой данных Azure](introduction.md)
+- [Общие сведения о службе фабрики данных Azure, службе интеграции данных в облаке](introduction.md)
