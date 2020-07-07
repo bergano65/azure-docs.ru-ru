@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/28/2020
 ms.openlocfilehash: 01cdc121abded954c2443599c5d69689acd69b62
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82562344"
 ---
 # <a name="apache-spark-guidelines"></a>Рекомендации по Apache Spark
@@ -22,7 +22,7 @@ ms.locfileid: "82562344"
 
 | Параметр | Документы |
 |---|---|
-| VSCode | [Использование Spark & средств Hive для Visual Studio Code](../hdinsight-for-vscode.md) |
+| VSCode | [Использование средств Spark и Hive для Visual Studio Code](../hdinsight-for-vscode.md) |
 | Jupyter Notebook | [Руководство. Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight](./apache-spark-load-data-run-query.md) |
 | IntelliJ | [Учебник. Использование Azure Toolkit for IntelliJ для создания Apache Spark приложений для кластера HDInsight](./apache-spark-intellij-tool-plugin.md) |
 | IntelliJ | [Руководство по Создание приложения Scala Maven для Apache Spark в HDInsight с помощью IntelliJ](./apache-spark-create-standalone-application.md) |
@@ -62,11 +62,11 @@ ms.locfileid: "82562344"
 
 | Параметр | Документы |
 |---|---|
-| Data Lake Storage 2-го поколения | [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md) |
-| Data Lake Storage 1-го поколения | [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-store.md) |
+| Data Lake Storage 2-го поколения | [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md) |
+| Azure Data Lake Storage 1-го поколения | [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-store.md) |
 | хранилище BLOB-объектов Azure | [Использование службы хранилища Azure с кластерами Azure HDInsight](../hdinsight-hadoop-use-blob-storage.md) |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка параметров Apache Spark](apache-spark-settings.md)
-* [Оптимизация заданий Apache Spark в HDInsight](apache-spark-perf.md)
+* [Оптимизация заданий Apache Spark в Azure HDInsight](apache-spark-perf.md)

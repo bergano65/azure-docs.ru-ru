@@ -9,10 +9,10 @@ ms.date: 03/27/2020
 ms.topic: how-to
 manager: philmea
 ms.openlocfilehash: 9ca1c8f4a8e92babf65ec049b3784882bd3af689
-ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82744974"
 ---
 # <a name="manage-iot-central-from-azure-powershell"></a>Управление IoT Central в Azure PowerShell
@@ -70,7 +70,7 @@ New-AzIotCentralApp -ResourceGroupName "MyIoTCentralResourceGroup" `
 |------------------|------------|
 |ResourceGroupName |Группа ресурсов, в которой содержится приложение. В подписке уже должна существовать эта группа ресурсов. |
 |Расположение |По умолчанию этот командлет использует расположение из группы ресурсов. В настоящее время вы можете создать IoT Centralное приложение в **странах Австралии**, **Азиатско-Тихоокеанский регион**, **Европе**, США **, Великобритании**и **Японии** . **United States** |
-|Название              |Имя приложения на портале Azure. |
+|Имя              |Имя приложения на портале Azure. |
 |Поддомен         |Поддомен в URL-адресе приложения. В примере URL-адрес приложения — `https://mysubdomain.azureiotcentral.com`. |
 |Sku               |В настоящее время можно использовать либо **ST1** , либо **ST2**. Ознакомьтесь с разделом [Цены на Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
 |Шаблон          | Шаблон приложения для использования. Дополнительные сведения приведены в таблице ниже. |

@@ -6,10 +6,10 @@ services: container-service
 ms.topic: article
 ms.date: 04/27/2020
 ms.openlocfilehash: 59f1b63a5c72ed5583b88af9e42bf5337f358b47
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82561902"
 ---
 # <a name="create-an-https-ingress-controller-on-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика HTTPS в Службе Azure Kubernetes (AKS)
@@ -28,7 +28,7 @@ ms.locfileid: "82561902"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
 В этой статье также предполагается, что у вас есть [личный домен][custom-domain] с [зоной DNS][dns-zone] в той же группе ресурсов, что и кластер AKS.
 
@@ -46,7 +46,7 @@ ms.locfileid: "82561902"
 > В следующем примере создается пространство имен Kubernetes для входящих ресурсов с именем входящие *-Basic*. При необходимости укажите пространство имен для своей среды.
 
 > [!TIP]
-> Если вы хотите включить [Сохранение IP-адреса источника клиента][client-source-ip] для запросов к контейнерам в кластере, `--set controller.service.externalTrafficPolicy=Local` добавьте команду Helm install. Исходный IP-адрес клиента хранится в заголовке запроса в разделе *X-forwardd-for*. При использовании контроллера входящего трафика с включенным сохранением IP-адресов источника клиента передача TLS не будет работать.
+> Если вы хотите включить [Сохранение IP-адреса источника клиента][client-source-ip] для запросов к контейнерам в кластере, добавьте `--set controller.service.externalTrafficPolicy=Local` команду Helm install. Исходный IP-адрес клиента хранится в заголовке запроса в разделе *X-forwardd-for*. При использовании контроллера входящего трафика с включенным сохранением IP-адресов источника клиента передача TLS не будет работать.
 
 ```console
 # Create a namespace for your ingress resources
@@ -249,7 +249,7 @@ spec:
     app: aks-helloworld-two
 ```
 
-Запустите два демонстрационных приложения с `kubectl apply`помощью:
+Запустите два демонстрационных приложения с помощью `kubectl apply` :
 
 ```console
 kubectl apply -f aks-helloworld-one.yaml --namespace ingress-basic
@@ -258,12 +258,12 @@ kubectl apply -f aks-helloworld-two.yaml --namespace ingress-basic
 
 ## <a name="create-an-ingress-route"></a>Создание маршрута для входящего трафика
 
-Оба приложения запущены в кластере Kubernetes. Однако для них настроена служба типа `ClusterIP` и они недоступны из Интернета. Чтобы сделать их доступными, создайте ресурс входящего трафика Kubernetes. Ресурс входящего трафика настраивает правила, по которым осуществляется маршрутизация трафика к одному из двух приложений.
+Оба приложения запущены в кластере Kubernetes. Однако для них настроена служба типа и они недоступны `ClusterIP` из Интернета. Чтобы сделать их доступными, создайте ресурс входящего трафика Kubernetes. Ресурс входящего трафика настраивает правила, по которым осуществляется маршрутизация трафика к одному из двух приложений.
 
 В следующем примере трафик к адресу *Hello-World-входящий. MY_CUSTOM_DOMAIN* направляется в службу *AKS-HelloWorld* . Трафик к адресу *Hello-World-входящий. MY_CUSTOM_DOMAIN/Хелло-Ворлд-тво* направляется в службу *AKS-HelloWorld-Two* . Трафик, входящий в *Hello-World. MY_CUSTOM_DOMAIN/Статик* направляется в службу с именем *AKS-HelloWorld* для статических ресурсов.
 
 > [!NOTE]
-> Если вы настроили полное доменное имя для IP-адреса контроллера входящего трафика вместо личного домена, используйте полное доменное имя вместо *входных данных Hello-World. MY_CUSTOM_DOMAIN*. Например, если полное доменное имя — *Demo-AKS-Ingress.eastus.cloudapp.Azure.com*, замените *Hello-World-in. MY_CUSTOM_DOMAIN* с *Demo-AKS-Ingress.eastus.cloudapp.Azure.com* в `hello-world-ingress.yaml`.
+> Если вы настроили полное доменное имя для IP-адреса контроллера входящего трафика вместо личного домена, используйте полное доменное имя вместо *входных данных Hello-World. MY_CUSTOM_DOMAIN*. Например, если полное доменное имя — *Demo-AKS-Ingress.eastus.cloudapp.Azure.com*, замените *Hello-World-in. MY_CUSTOM_DOMAIN* с *Demo-AKS-Ingress.eastus.cloudapp.Azure.com* в `hello-world-ingress.yaml` .
 
 Создайте файл с именем `hello-world-ingress.yaml` , используя приведенный ниже пример YAML. Обновите *узлы* и *узел*, указав DNS-имя, которое вы создали на предыдущем шаге.
 
@@ -360,7 +360,7 @@ kubectl delete namespace ingress-basic
 kubectl delete -f cluster-issuer.yaml --namespace ingress-basic
 ```
 
-Выведите список выпусков `helm list` Helm с помощью команды. Найдите диаграммы с именами *nginx* и *CERT-Manager*, как показано в следующем примере выходных данных:
+Выведите список выпусков Helm с помощью `helm list` команды. Найдите диаграммы с именами *nginx* и *CERT-Manager*, как показано в следующем примере выходных данных:
 
 ```
 $ helm list --namespace ingress-basic
@@ -370,7 +370,7 @@ cert-manager            ingress-basic   1               2020-01-15 10:23:36.5155
 nginx                   ingress-basic   1               2020-01-15 10:09:45.982693 -0600 CST    deployed        nginx-ingress-1.29.1    0.27.0  
 ```
 
-Удалите выпуски с `helm uninstall` помощью команды. В следующем примере производится удаление развертываний NGINX и диспетчера сертификатов.
+Удалите выпуски с помощью `helm uninstall` команды. В следующем примере производится удаление развертываний NGINX и диспетчера сертификатов.
 
 ```
 $ helm uninstall cert-manager nginx --namespace ingress-basic

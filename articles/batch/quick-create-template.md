@@ -4,12 +4,12 @@ description: Быстро научитесь выполнять пакетное
 ms.topic: quickstart
 ms.date: 05/19/2020
 ms.custom: subject-armqs
-ms.openlocfilehash: 1e3becaa8a71fbb0f3c7baea97b57a03722a99cc
-ms.sourcegitcommit: 635114a0f07a2de310b34720856dd074aaf4f9cd
+ms.openlocfilehash: 5f26aeead41fa1ffcebefdeaabae84490dfdae2b
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85262690"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85959829"
 ---
 # <a name="quickstart-create-a-batch-account-by-using-azure-resource-manager-template"></a>Краткое руководство. Создание учетной записи пакетной службы с помощью шаблона Azure Resource Manager
 
@@ -33,8 +33,8 @@ ms.locfileid: "85262690"
 
 В шаблоне определено два ресурса Azure:
 
-- [Microsoft.Storage/storageAccounts](https://docs.microsoft.com/azure/templates/microsoft.storage/storageaccounts): Создание учетной записи хранения.
-- [Microsoft.Batch/batchAccounts](https://docs.microsoft.com/azure/templates/microsoft.batch/batchaccounts): Создает учетную запись пакетной службы.
+- [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts): Создание учетной записи хранения.
+- [Microsoft.Batch/batchAccounts](/azure/templates/microsoft.batch/batchaccounts): Создает учетную запись пакетной службы.
 
 ### <a name="deploy-the-template"></a>Развертывание шаблона
 

@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 04/20/2020
 ms.author: apimpm
 ms.openlocfilehash: 17c92558ebef2eee0a4daead45d16a295cedd1bb
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82790485"
 ---
 # <a name="how-to-deploy-an-azure-api-management-service-instance-to-multiple-azure-regions"></a>Развертывание экземпляра службы управления Azure API в различных регионах Azure
@@ -102,8 +102,8 @@ ms.locfileid: "82790485"
 
 1. Создайте собственный [диспетчер трафика Azure](https://azure.microsoft.com/services/traffic-manager/).
 1. Если вы используете личный домен, [используйте его с диспетчером трафика](../traffic-manager/traffic-manager-point-internet-domain.md) вместо службы управления API.
-1. [Настройте региональные конечные точки управления API в диспетчере трафика](../traffic-manager/traffic-manager-manage-endpoints.md). Региональные конечные точки соответствуют шаблону URL `https://<service-name>-<region>-01.regional.azure-api.net`-адреса, `https://contoso-westus2-01.regional.azure-api.net`например.
-1. [Настройка конечных точек регионального состояния управления API в диспетчере трафика](../traffic-manager/traffic-manager-monitoring.md). Конечные точки регионального состояния следуют шаблону URL `https://<service-name>-<region>-01.regional.azure-api.net/status-0123456789abcdef`-адреса, `https://contoso-westus2-01.regional.azure-api.net/status-0123456789abcdef`например.
+1. [Настройте региональные конечные точки управления API в диспетчере трафика](../traffic-manager/traffic-manager-manage-endpoints.md). Региональные конечные точки соответствуют шаблону URL-адреса `https://<service-name>-<region>-01.regional.azure-api.net` , например `https://contoso-westus2-01.regional.azure-api.net` .
+1. [Настройка конечных точек регионального состояния управления API в диспетчере трафика](../traffic-manager/traffic-manager-monitoring.md). Конечные точки регионального состояния следуют шаблону URL-адреса `https://<service-name>-<region>-01.regional.azure-api.net/status-0123456789abcdef` , например `https://contoso-westus2-01.regional.azure-api.net/status-0123456789abcdef` .
 1. Укажите [метод маршрутизации](../traffic-manager/traffic-manager-routing-methods.md) диспетчера трафика.
 
 [create an api management service instance]: get-started-create-service-instance.md

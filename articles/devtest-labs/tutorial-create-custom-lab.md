@@ -1,25 +1,14 @@
 ---
 title: Создание лаборатории с помощью Azure DevTest Labs | Документация Майкрософт
 description: С помощью этого руководства вы создадите лабораторию в Azure DevTest Labs на портале Azure. Администратор лаборатории настраивает лабораторию, в которой он создает виртуальные машины и настраивает политики.
-services: devtest-lab, lab-services, virtual-machines
-documentationcenter: na
-author: spelluru
-manager: ''
-editor: ''
-ms.service: lab-services
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.custom: mvc
-ms.date: 01/24/2020
-ms.author: spelluru
-ms.openlocfilehash: 44539c6779afaece6d955a907819ef82d8cd7d5a
-ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
+ms.date: 06/26/2020
+ms.openlocfilehash: 9d016b38beb2f338a97ac862a060dc5ec3a77780
+ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84889172"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85476569"
 ---
 # <a name="tutorial-set-up-a-lab-by-using-azure-devtest-labs"></a>Руководство. Настройка лаборатории с помощью Azure DevTest Labs
 С помощью этого руководства вы создадите лабораторию на портале Azure. Администратор лаборатории настраивает в организации лабораторию, в которой он создает виртуальные машины и настраивает политики. Пользователи лаборатории (например, разработчик и тестировщики) запрашивают виртуальные машины лаборатории, подключаются к ним и используют их. 

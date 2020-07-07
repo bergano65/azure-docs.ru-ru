@@ -8,10 +8,10 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.openlocfilehash: a39cb5f49c9f038f567b7f3322b5962bc1dc9fc8
-ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82744699"
 ---
 # <a name="co-sell-state-and-province-codes-in-azure-marketplace"></a>Коды штата и провинции для совместной продажи в Azure Marketplace
@@ -31,7 +31,7 @@ ms.locfileid: "82744699"
 | Коннектикут                         | US-CT     |
 | Delaware                            | US-DE     |
 | Флорида                             | US-FL     |
-| Джорджия                             | US-GA     |
+| Грузия                             | US-GA     |
 | Гавайи                              | US-HI     |
 | Idaho                               | US-ID     |
 | Иллинойс                            | US-IL     |
@@ -75,7 +75,7 @@ ms.locfileid: "82744699"
 | Округ Колумбия                | US-DC     |
 | Американское Самоа                      | US-AS     |
 | Гуам                                | US-GU     |
-| Северные Марианские острова            | US-MP     |
+| Северные Марианские о-ва            | US-MP     |
 | Пуэрто-Рико                         | US-PR     |
 | Внешние малые острова США | US-UM    |
 | Виргинские острова, США                 | US-VI    |

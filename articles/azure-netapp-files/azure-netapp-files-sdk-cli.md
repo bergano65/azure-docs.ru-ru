@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 08/28/2019
 ms.author: b-juche
 ms.openlocfilehash: 93d51681a703258477baa81cc8737fefd4955e82
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82731684"
 ---
 # <a name="azure-netapp-files-sdks-and-cli-tools"></a>Пакеты SDK для Azure NetApp Files и средства CLI
@@ -42,7 +42,7 @@ ms.locfileid: "82731684"
 
 В таблице ниже перечислены поддерживаемые средства CLI и их Справочник по командам.   
 
-|    Инструмент    |    Справочник по командам    |
+|    Средство    |    Справочник по командам    |
 |------------------|--------------------------------------------|
 |    Azure CLI  |    [AZ нетаппфилес](https://docs.microsoft.com/cli/azure/netappfiles?view=azure-cli-latest)    |
 |    PowerShell   |    [Azure PowerShell для Azure NetApp Files](https://docs.microsoft.com/powershell/module/az.netappfiles/?view=azps-2.5.0#netapp_files)    |

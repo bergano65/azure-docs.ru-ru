@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/09/2018
 ms.author: dekapur
 ms.openlocfilehash: 8d0279cc323f7eee87feb2a596a4c2df0b4667e1
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82790853"
 ---
 # <a name="upgrade-the-configuration-of-a-standalone-cluster"></a>Обновление конфигурации изолированного кластера 
@@ -17,9 +17,9 @@ ms.locfileid: "82790853"
 Для любой современной системы возможность обновления является ключом к успеху вашего продукта в долгосрочной перспективе. Кластер Azure Service Fabric — это ресурс, владельцем которого вы являетесь. Из этой статьи вы узнаете, как обновить параметры конфигурации для изолированного кластера Service Fabric.
 
 ## <a name="customize-cluster-settings-in-the-clusterconfigjson-file"></a>Настройка параметров кластера в файле ClusterConfig.json
-Автономные кластеры настраиваются с помощью файла *ClusterConfig. JSON* . Дополнительные сведения о различных параметрах см. в статье [Параметры конфигурации для изолированного кластера Windows](service-fabric-cluster-manifest.md).
+Автономные кластеры настраиваются с помощью *ClusterConfig.jsв* файле. Дополнительные сведения о различных параметрах см. в статье [Параметры конфигурации для изолированного кластера Windows](service-fabric-cluster-manifest.md).
 
-Добавить, обновить или удалить параметры можно в `fabricSettings` разделе [Свойства кластера](./service-fabric-cluster-manifest.md#cluster-properties) в *ClusterConfig. JSON*. 
+Добавить, обновить или удалить параметры можно в `fabricSettings` разделе [Свойства кластера](./service-fabric-cluster-manifest.md#cluster-properties) раздела *ClusterConfig.json*. 
 
 Например, следующий JSON добавляет новый параметр *MaxDiskQuotaInMB* в разделе *Diagnostics* в строке `fabricSettings`:
 
