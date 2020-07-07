@@ -11,10 +11,10 @@ ms.date: 05/29/2019
 ms.author: radwiv
 ms.reviewer: chadmat;genli
 ms.openlocfilehash: dcf86deda32069bf9711dbeb733dc9361e22a771
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80631769"
 ---
 # <a name="how-to-validate-vpn-throughput-to-a-virtual-network"></a>Порядок проверки пропускной способности VPN для виртуальной сети
@@ -123,27 +123,27 @@ ms.locfileid: "80631769"
 
 ## <a name="test-vms-running-windows"></a>Тестирование виртуальных машин под Windows
 
-### <a name="load-latteexe-onto-the-vms"></a>Загрузка латте. exe на виртуальные машины
+### <a name="load-latteexe-onto-the-vms"></a>Загрузка Latte.exe на виртуальные машины
 
-Скачайте последнюю версию [латте. exe.](https://gallery.technet.microsoft.com/Latte-The-Windows-tool-for-ac33093b)
+Скачайте последнюю версию [Latte.exe](https://gallery.technet.microsoft.com/Latte-The-Windows-tool-for-ac33093b)
 
-Рассмотрите возможность помещения латте. exe в отдельную папку, например`c:\tools`
+Рассмотрите возможность помещения Latte.exe в отдельную папку, например`c:\tools`
 
-### <a name="allow-latteexe-through-the-windows-firewall"></a>Разрешить латте. exe через брандмауэр Windows
+### <a name="allow-latteexe-through-the-windows-firewall"></a>Разрешить Latte.exe через брандмауэр Windows
 
-На приемнике создайте правило разрешения в брандмауэре Windows, чтобы разрешить поступление трафика латте. exe. Проще всего разрешать всей программе латте. exe по имени, а не разрешать передачу конкретных TCP-портов.
+Чтобы разрешить поступление трафика Latte.exe, создайте на приемнике правило разрешения в брандмауэре Windows. Проще всего разрешить всем Latte.exe программу по имени, а не разрешать входящие TCP-порты.
 
-### <a name="allow-latteexe-through-the-windows-firewall-like-this"></a>Разрешить латте. exe через брандмауэр Windows, как это сделать
+### <a name="allow-latteexe-through-the-windows-firewall-like-this"></a>Разрешить Latte.exe через брандмауэр Windows
 
 `netsh advfirewall firewall add rule program=<PATH>\latte.exe name="Latte" protocol=any dir=in action=allow enable=yes profile=ANY`
 
-Например, если вы скопировали латте. exe в папку «c:\Tools», это будет команда
+Например, если вы скопировали latte.exe в папку "c:\Tools", это будет команда
 
 `netsh advfirewall firewall add rule program=c:\tools\latte.exe name="Latte" protocol=any dir=in action=allow enable=yes profile=ANY`
 
 ### <a name="run-latency-tests"></a>Запуск тестов задержки
 
-Запустите латте. exe на ПРИЕМНИКе (запустите из CMD-файла, а не из PowerShell):
+Запуск latte.exe на ПРИЕМНИКе (запуск из CMD, а не из PowerShell):
 
 `latte -a <Receiver IP address>:<port> -i <iterations>`
 
@@ -155,7 +155,7 @@ ms.locfileid: "80631769"
 
 `latte -c -a 10.0.0.4:5005 -i 65100`
 
-Запуск латте. exe на отправителю (запуск из CMD, а не из PowerShell)
+Запуск latte.exe отправителю (запуск из CMD, а не из PowerShell)
 
 `latte -c -a <Receiver IP address>:<port> -i <iterations>`
 
@@ -225,7 +225,7 @@ ms.locfileid: "80631769"
 
 Даже если общая пропускная способность, оцененная с помощью предыдущих шагов (iPERF/NTTTCP/и т. д.), была хорошей, вы можете столкнуться с задержкой файлов скопировав при использовании проводника или при перетаскивании через сеанс RDP. Обычно эта проблема вызвана одним или обоими следующими факторами:
 
-* Приложения для копирования файлов, такие как проводник и RDP, не используют несколько потоков при копировании. Для повышения производительности используйте многопоточное приложение, например [Richcopy](https://technet.microsoft.com/magazine/2009.04.utilityspotlight.aspx), которое копирует файлы с помощью 16 или 32 потоков. Чтобы изменить номер потока для копирования файлов в ричкопи, щелкните **действие** > **Копировать параметры** > копирования**файл копировать**.
+* Приложения для копирования файлов, такие как проводник и RDP, не используют несколько потоков при копировании. Для повышения производительности используйте многопоточное приложение, например [Richcopy](https://technet.microsoft.com/magazine/2009.04.utilityspotlight.aspx), которое копирует файлы с помощью 16 или 32 потоков. Чтобы изменить номер потока для копирования файлов в ричкопи, щелкните **действие**  >  **Копировать параметры**копирования  >  **файл копировать**.
 
    ![Проблемы с низкой скоростью при копировании файлов](./media/vpn-gateway-validate-throughput-to-vnet/Richcopy.png)<br>
 
@@ -265,4 +265,4 @@ ms.locfileid: "80631769"
 
 Для получения дополнительных сведений или справки ознакомьтесь со следующей ссылкой:
 
-* [Служба технической поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)
+* [Поддержка Microsoft](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)

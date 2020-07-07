@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 03/25/2020
 ms.author: mialdrid
 ms.openlocfilehash: 182195190fed70b46185f98f595de6b6c32bbffe
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80619396"
 ---
 # <a name="working-remotely-using-azure-bastion"></a>Работа в удаленном режиме с помощью Azure бастиона
@@ -28,7 +28,7 @@ Azure бастиона играет роль сводной роли в подд
 
 Azure бастиона развертывается для каждой виртуальной сети. Это означает, что компании могут настраивать один бастиона Azure и управлять им для быстрой поддержки удаленного доступа пользователей к виртуальным машинам в виртуальной сети Azure. Инструкции по созданию бастиона Azure и управлению ими см. в статье [Создание узла бастиона](bastion-create-host-portal.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Настройте Azure бастиона с помощью [портал Azure](bastion-create-host-portal.md), [PowerShell](bastion-create-host-powershell.md)или Azure CLI.
 

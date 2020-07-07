@@ -16,17 +16,17 @@ ms.workload: na
 ms.date: 10/07/2019
 ms.author: mlottner
 ms.openlocfilehash: c52a3e55e3801eaaac885b9a3c364283f74906ba
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81311656"
 ---
 # <a name="azure-security-center-for-iot-baseline-and-custom-checks"></a>Центр безопасности Azure для базового плана IoT и пользовательские проверки
 
 В этой статье описывается центр безопасности Azure для базовых показателей IoT и приводятся сводные сведения обо всех связанных свойствах базовых пользовательских проверок.
 
-## <a name="baseline"></a>Базовый
+## <a name="baseline"></a>Базовая версия
 
 Базовый план устанавливает стандартное поведение для каждого устройства и упрощает установку необычного поведения или отклонений от ожидаемых норм.
 
@@ -72,7 +72,7 @@ ms.locfileid: "81311656"
 
 Дополнительные примеры базовых показателей см. в разделе [Пользовательский базовый пример 1](https://ascforiot.blob.core.windows.net/public/custom_baseline_example_hyperv_ubuntu1804.xml) и [Пользовательский базовый пример — 2](https://ascforiot.blob.core.windows.net/public/oms_audits.xml).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Доступ к [необработанным данным безопасности](how-to-security-data-access.md)
 - [Исследование устройства](how-to-investigate-device.md)

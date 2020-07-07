@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 03/09/2020
 ms.openlocfilehash: a0e75957a0ab49394dab56f2b7fb847dee4b43cb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81413679"
 ---
 # <a name="flatten-transformation-in-mapping-data-flow"></a>Преобразование «сведение» в потоке данных сопоставления
@@ -20,7 +20,7 @@ ms.locfileid: "81413679"
 
 Используйте преобразование «сведение», чтобы принимать значения массива в иерархических структурах, таких как JSON, и разбить их на отдельные строки. Этот процесс называется денормализацией.
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 Преобразование «Сведение» содержит следующие параметры конфигурации.
 
@@ -66,9 +66,9 @@ ms.locfileid: "81413679"
 
 ### <a name="no-unroll-root-with-string-array"></a>Нет несведенного корня с массивом строк
 
-| Отменить развертывание | Развернуть корень | Проекция |
+| Отменить развертывание | Развернуть корень | Прогнозирование |
 | --------- | ----------- | ---------- |
-| товары. клиенты | Нет | name <br> Клиент = товары. Клиент |
+| товары. клиенты | None | name <br> Клиент = товары. Клиент |
 
 #### <a name="output"></a>Выходные данные
 
@@ -84,9 +84,9 @@ ms.locfileid: "81413679"
 
 ### <a name="no-unroll-root-with-complex-array"></a>Нет несведенного корня с комплексным массивом
 
-| Отменить развертывание | Развернуть корень | Проекция |
+| Отменить развертывание | Развернуть корень | Прогнозирование |
 | --------- | ----------- | ---------- |
-| товары. заказы. отгруженные. orderItems | Нет | name <br> orderId = товары. Orders. orderId <br> itemName = товары. Orders. отгружено. orderItems. itemName <br> Итемкти = товары. Orders. отгружено. orderItems. Итемкти <br> расположение = расположение |
+| товары. заказы. отгруженные. orderItems | None | name <br> orderId = товары. Orders. orderId <br> itemName = товары. Orders. отгружено. orderItems. itemName <br> Итемкти = товары. Orders. отгружено. orderItems. Итемкти <br> расположение = расположение |
 
 #### <a name="output"></a>Выходные данные
 
@@ -105,7 +105,7 @@ ms.locfileid: "81413679"
 
 ### <a name="same-root-as-unroll-array"></a>Тот же корень, что и unrollный массив
 
-| Отменить развертывание | Развернуть корень | Проекция |
+| Отменить развертывание | Развернуть корень | Прогнозирование |
 | --------- | ----------- | ---------- |
 | товары. заказы | товары. заказы | name <br> товары. заказы. отгруженные. orderItems. itemName <br> товары. клиенты <br> location |
 
@@ -121,7 +121,7 @@ ms.locfileid: "81413679"
 
 ### <a name="unroll-root-with-complex-array"></a>Развернуть корень с помощью сложного массива
 
-| Отменить развертывание | Развернуть корень | Проекция |
+| Отменить развертывание | Развернуть корень | Прогнозирование |
 | --------- | ----------- | ---------- |
 | товары. заказы. отгруженные. orderItem | товары. заказы |name <br> orderId = товары. Orders. orderId <br> itemName = товары. Orders. отгружено. orderItems. itemName <br> Итемкти = товары. Orders. отгружено. orderItems. Итемкти <br> расположение = расположение |
 
@@ -169,7 +169,7 @@ source foldDown(unroll(goods.orders.shipped.orderItems, goods.orders),
     skipDuplicateMapOutputs: false) 
 ```    
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Используйте [Преобразование «Сведение](data-flow-pivot.md) » для сведения строк в столбцы.
 * Используйте [Преобразование отменить сведение](data-flow-unpivot.md) для сведения столбцов в строки.

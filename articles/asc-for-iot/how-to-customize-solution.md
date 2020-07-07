@@ -1,5 +1,5 @@
 ---
-title: Настройка параметров
+title: Параметры настройки
 description: В этом разделе приведены инструкции по настройке параметров в центре безопасности Azure для решения IoT.
 services: asc-for-iot
 ms.service: asc-for-iot
@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 09/25/2019
 ms.author: mlottner
 ms.openlocfilehash: efacec21482704393d4aa6e728377311e2bc5cda
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81311268"
 ---
 # <a name="customize-your-azure-security-center-for-iot-solution"></a>Настройка центра безопасности Azure для решения IoT
@@ -51,7 +51,7 @@ ms.locfileid: "81311268"
 1. Отключите или включите рекомендации по решению, относящиеся к вашей организации и рабочим процессам.
 1. Нажмите кнопку **сохранить** в верхней части экрана, чтобы сохранить выбранные параметры.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обзор](overview.md) центра безопасности Azure для службы IOT
 - Узнайте, как [получить доступ к данным безопасности](how-to-security-data-access.md)

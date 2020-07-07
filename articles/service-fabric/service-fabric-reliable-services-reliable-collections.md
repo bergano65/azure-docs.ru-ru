@@ -4,10 +4,10 @@ description: Службы с отслеживанием состояния Servi
 ms.topic: conceptual
 ms.date: 3/10/2020
 ms.openlocfilehash: 78ecc57a4da43bf416839226253e6d0e2f4c1651
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81398429"
 ---
 # <a name="introduction-to-reliable-collections-in-azure-service-fabric-stateful-services"></a>Введение в надежные коллекции в службах с отслеживанием состояния Azure Service Fabric
@@ -44,7 +44,7 @@ API надежных коллекций являются развитием API 
 * [надежная очередь](https://msdn.microsoft.com/library/azure/dn971527.aspx) (реплицируемая, транзакционная и асинхронная очередь, функционирующая строго по методу FIFO; как и в **ConcurrentQueue**, значение может быть любого типа).
 * [Надежная параллельная очередь](service-fabric-reliable-services-reliable-concurrent-queue.md) — реплицируемая, транзакционная и асинхронная упорядочивающая очередь для обеспечения высокой пропускной способности. Как и в **ConcurrentQueue**, значение может быть любого типа.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Рекомендации по надежной коллекции & рекомендации](service-fabric-reliable-services-reliable-collections-guidelines.md)
 * [Работа с Reliable Collections](service-fabric-work-with-reliable-collections.md)

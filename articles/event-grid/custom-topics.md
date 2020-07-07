@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: spelluru
 ms.openlocfilehash: 166a48d74d32c8b0a3a59310e693ea96ada29116
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81394362"
 ---
 # <a name="custom-topics-in-azure-event-grid"></a>Пользовательские разделы в службе "Сетка событий Azure"
@@ -72,7 +72,7 @@ ms.locfileid: "81394362"
 | [Шаблон Resource Manager для создания пользовательского раздела и конечной точки веб-перехватчика](https://github.com/Azure/azure-quickstart-templates/tree/master/101-event-grid) | Шаблон Resource Manager, который создает пользовательский раздел и подписку для этого раздела. Он отправляет события в веб-перехватчик. |
 | [Шаблон Resource Manager для создания пользовательского раздела и конечной точки Центров событий](https://github.com/Azure/azure-quickstart-templates/tree/master/101-event-grid-event-hubs-handler)| Шаблон Resource Manager, который создает подписку для пользовательского раздела. Он отправляет события в Центры событий Azure. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи: 
 
 - [Системные разделы](system-topics.md)

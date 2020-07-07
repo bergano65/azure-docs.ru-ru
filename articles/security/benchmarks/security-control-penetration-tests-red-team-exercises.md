@@ -8,10 +8,10 @@ ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
 ms.openlocfilehash: fe9c672e53ea0f46328320daf75f65fd77f5db29
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81408298"
 ---
 # <a name="security-control-penetration-tests-and-red-team-exercises"></a>Управление безопасностью: тесты на проникновение и упражнения красных команд
@@ -22,7 +22,7 @@ ms.locfileid: "81408298"
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 11,1 | 20,1, 20,2, 20,3, 20,4, 20,5, 20,6, 20,7, 20,8 | Shared |
+| 11,1 | 20,1, 20,2, 20,3, 20,4, 20,5, 20,6, 20,7, 20,8 | Совмещаемая блокировка |
 
 Следуйте правилам взаимодействия Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
 
@@ -31,6 +31,6 @@ ms.locfileid: "81408298"
 - [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Вернуться к [обзору производительности системы безопасности Azure](overview.md)

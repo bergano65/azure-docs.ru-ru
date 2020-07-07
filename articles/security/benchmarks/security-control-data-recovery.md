@@ -8,17 +8,17 @@ ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
 ms.openlocfilehash: 4f3e8540902809f951a441aa2fe8d00026c44d82
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81408589"
 ---
 # <a name="security-control-data-recovery"></a>Управление безопасностью: восстановление данных
 
 Убедитесь, что все системные данные, конфигурации и секреты автоматически архивируются на регулярной основе.
 
-## <a name="91-ensure-regular-automated-back-ups"></a>9,1: Обеспечьте регулярную автоматическую архивацию
+## <a name="91-ensure-regular-automated-back-ups"></a>9.1. Обеспечение регулярного автоматического резервного копирования
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
@@ -28,7 +28,7 @@ ms.locfileid: "81408589"
 
 - [Включение Azure Backup](https://docs.microsoft.com/azure/backup/)
 
-## <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9,2: выполните полное резервное копирование системы и резервное копирование ключей, управляемых клиентом.
+## <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9.2. Выполнение полного резервного копирования системы и любых ключей, управляемых клиентом
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
@@ -38,9 +38,9 @@ ms.locfileid: "81408589"
 
 - [Включение Azure Backup](https://docs.microsoft.com/azure/backup/)
 
-- [Резервное копирование ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
+- [Как создать резервную копию ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
 
-## <a name="93-validate-all-backups-including-customer-managed-keys"></a>9,3: Проверьте все резервные копии, включая управляемые клиентом ключи.
+## <a name="93-validate-all-backups-including-customer-managed-keys"></a>9.3. Проверка всех резервных копий, включая управляемые клиентом ключи
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
@@ -50,9 +50,9 @@ ms.locfileid: "81408589"
 
 - [Как восстановить файлы из резервной копии виртуальной машины Azure](https://docs.microsoft.com/azure/backup/backup-azure-restore-files-from-vm)
 
-- [Восстановление ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+- [Как восстановить резервную копию ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 
-## <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9,4: Обеспечьте защиту резервных копий и управляемых клиентом ключей
+## <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9.4. Обеспечение защиты резервных копий и управляемых клиентом ключей
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
@@ -69,6 +69,6 @@ ms.locfileid: "81408589"
 - [Soft delete for Azure Storage blobs](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal) (Обратимое удаление больших двоичных объектов службы хранилища Azure)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. следующий контроль безопасности: [реагирование на инциденты](security-control-incident-response.md)

@@ -7,10 +7,10 @@ ms.author: sujie
 ms.date: 4/11/2020
 ms.topic: conceptual
 ms.openlocfilehash: 25ece3174cd65df9c665888d913cf6b9029904b1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81394401"
 ---
 # <a name="intellisense-in-azure-stream-analytics-tools-for-visual-studio-code"></a>IntelliSense в средствах Azure Stream Analytics для Visual Studio Code
@@ -23,7 +23,7 @@ ms.locfileid: "81394401"
 
 Функции IntelliSense в Stream Analytics средствах для VS Code на основе языковой службы. Языковая служба анализирует исходный код и предоставляет интеллектуальные завершения кода на основе семантики языка. Если языковая служба знает о возможных завершениях выполнения, при вводе появляется предложение IntelliSense. Если продолжить ввод, список членов, таких как переменные и методы, фильтруется, добавляя только те элементы, которые содержат введенные символы. При нажатии клавиш `Tab` или `Enter` IntelliSense вставляет выбранный элемент.
 
-Вы можете активировать IntelliSense в любом окне редактора, введя символ триггера, например символ `.`точки.
+Вы можете активировать IntelliSense в любом окне редактора, введя символ триггера, например символ точки `.` .
 
 ![Автозавершение IntelliSense](./media/vs-code-intellisense/auto-completion.gif)
 
@@ -36,7 +36,7 @@ Stream Analytics средства для VS Code IntelliSense предлагае
 
 |       |         |       |
 | ----- | ------- | ----- |
-| Ключевые слова | `keyword`
+| Keywords | `keyword`
 | Функции | `build-in function`, `user defined function`  |
 | Имя набора данных| `input`, `output`, `intermediate result set`|
 | Имя столбца набора данных|`input`, `intermediate result set`|
@@ -70,7 +70,7 @@ Stream Analytics средства для VS Code IntelliSense предлагае
 
 Эта проблема вызвана отсутствием входной конфигурации, которая предоставляет данные. Можно проверить правильность настройки [локального ввода](visual-studio-code-local-run.md#define-a-local-input) или [ввода в реальном времени](visual-studio-code-local-run-live-input.md#define-a-live-stream-input) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство. Создание задания Azure Stream Analytics в Visual Studio Code](quick-create-vs-code.md)
 * [Локальное тестирование запросов Stream Analytics с использованием примера данных и Visual Studio Code](visual-studio-code-local-run.md)

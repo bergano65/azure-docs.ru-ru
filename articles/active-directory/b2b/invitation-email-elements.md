@@ -13,10 +13,10 @@ ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0429cfb62c319675806d76b4759b776a7b32dbcb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81407228"
 ---
 # <a name="the-elements-of-the-b2b-collaboration-invitation-email---azure-active-directory"></a>Элементы сообщения с приглашением службы совместной работы B2B Azure Active Directory
@@ -32,15 +32,15 @@ ms.locfileid: "81407228"
 
 Давайте рассмотрим основные элементы сообщения, чтобы понять, как лучше использовать их возможности.
 
-### <a name="subject"></a>Тема
+### <a name="subject"></a>Субъект
 
 Тема сообщения электронной почты соответствует следующему шаблону:
 
-&lt;пользователь&gt; приглашает вас получить доступ к приложениям в своей организации.
+&lt;пользователь &gt; приглашает вас получить доступ к приложениям в своей организации.
 
 ### <a name="from-address"></a>Адрес отправителя
 
-Для адреса отправителя используется формат, аналогичный сети LinkedIn. Этот шаблон должен быть ясным тем, что по исправной электронной почте invites@microsoft.comприглашение относится к другой организации. Формат: <invites@microsoft.com> Microsoft приглашения или приглашения Майкрософт от имени &lt;tenantname.&gt; <invites@microsoft.com> 
+Для адреса отправителя используется формат, аналогичный сети LinkedIn. Этот шаблон должен быть ясным тем, что по исправной электронной почте invites@microsoft.com приглашение относится к другой организации. Формат: Microsoft приглашения  <invites@microsoft.com> или приглашения Майкрософт от имени &lt; tenantname &gt;  <invites@microsoft.com> . 
 
 ### <a name="reply-to"></a>Ответить
 
@@ -87,11 +87,11 @@ ms.locfileid: "81407228"
 
 Если ни один из этих параметров не настроен, по умолчанию выбирается английский язык (США).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Другие статьи о службе совместной работы Azure AD B2B перечислены ниже.
 
-- [Что такое предварительная версия службы совместной работы Azure AD B2B?](what-is-b2b.md)
+- [Что такое служба совместной работы Azure AD B2B](what-is-b2b.md)
 - [Как администраторы Azure Active Directory могут добавить пользователей службы совместной работы B2B?](add-users-administrator.md)
 - [Как информационные работники могут добавить пользователей службы совместной работы B2B в Azure Active Directory?](add-users-information-worker.md)
 - [Активация приглашения службы совместной работы B2B](redemption-experience.md)

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: dsindona
 ms.openlocfilehash: 78d77ce176c07aed22433f29365b2d338ea32c03
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81414569"
 ---
 # <a name="comparing-microsoft-appsource-and-azure-marketplace"></a>Сравнение Microsoft AppSource и Azure Marketplace
@@ -36,6 +36,6 @@ ms.locfileid: "81414569"
 | **Несколько типов облака** | Публикуйте решения для общедоступного облака и локальной среды, используя следующие типы:<ul> <li>Azure Stack</li> <li>Azure для государственных организаций</li> <li>региональные облака, включая Китай и Германию.</li></ul> | Сейчас не поддерживает Azure Stack, Azure для государственных организаций или региональных облаков. |
 | **Презентация в контексте для клиентов** | Сделайте свое решение доступным для контекстного поиска с использованием интерфейса Azure. Используйте возможности публикации шаблонов решений для виртуальных машин и приложений Azure. | Привлекайте большее количество клиентов через взаимодействие в приложении для продуктов Майкрософт, таких как Dynamics 365, Power BI и Office 365. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с [руководством по публикации в коммерческом магазине](./marketplace-publishers-guide.md).

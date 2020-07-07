@@ -7,17 +7,17 @@ ms.date: 03/05/2018
 ms.author: juda
 ms.custom: mvc
 ms.openlocfilehash: 95039573c607f516755f08f1ebad8b968416ec8b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80631472"
 ---
 # <a name="using-openfaas-on-aks"></a>Использование OpenFaaS в AKS
 
 [OpenFaaS][open-faas] — это платформа для создания бессерверных функций с помощью контейнеров. Как проект с открытым кодом она стала очень популярной в сообществе. В этом документе описано, как установить и использовать OpenFaas в кластере Службы Azure Kubernetes (AKS).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
@@ -28,7 +28,7 @@ ms.locfileid: "80631472"
 
 ## <a name="add-the-openfaas-helm-chart-repo"></a>Добавление репозитория диаграммы OpenFaaS Helm
 
-Перейдите в [https://shell.azure.com](https://shell.azure.com) , чтобы открыть Azure Cloud Shell в браузере.
+Перейдите по адресу [https://shell.azure.com](https://shell.azure.com), чтобы открыть Azure Cloud Shell в браузере.
 
 OpenFaaS поддерживает собственные диаграммы Helm, чтобы поддерживать актуальность всех последних изменений.
 
@@ -58,7 +58,7 @@ kubectl -n openfaas create secret generic basic-auth \
 --from-literal=basic-auth-password="$PASSWORD"
 ```
 
-Значение секрета можно получить с помощью `echo $PASSWORD`.
+Значение секрета можно получить с помощью `echo $PASSWORD` .
 
 Созданный здесь пароль будет использоваться Helm диаграммой для включения обычной проверки подлинности на шлюзе OpenFaaS, доступ к которому предоставляется через Интернет через облачную подсистему.
 
@@ -108,7 +108,7 @@ gateway            ClusterIP      10.0.156.194   <none>         8080/TCP        
 gateway-external   LoadBalancer   10.0.28.18     52.186.64.52   8080:30800/TCP   7m
 ```
 
-Чтобы протестировать систему OpenFaaS, перейдите к внешнему IP-адресу на порту 8080 (в этом примере — `http://52.186.64.52:8080`). Вам будет предложено войти в систему. Чтобы получить пароль, введите `echo $PASSWORD`.
+Чтобы протестировать систему OpenFaaS, перейдите к внешнему IP-адресу на порту 8080 (в этом примере — `http://52.186.64.52:8080`). Вам будет предложено войти в систему. Чтобы получить пароль, введите `echo $PASSWORD` .
 
 ![Пользовательский интерфейс OpenFaaS](media/container-service-serverless/openfaas.png)
 
@@ -244,7 +244,7 @@ curl -s http://52.186.64.52:8080/function/cosmos-query
 
 ![замещающий текст](media/container-service-serverless/OpenFaaSUI.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Вы можете продолжить изучение OpenFaaSного семинара с помощью набора практических лабораторных занятий, в которых рассматриваются такие темы, как создание собственного робота GitHub, использование секретов, просмотр метрик и автоматическое масштабирование.
 

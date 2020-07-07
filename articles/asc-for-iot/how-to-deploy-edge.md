@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 1/30/2020
 ms.author: mlottner
 ms.openlocfilehash: 4dd7ca8f926862487b9505731c0662e68ee3d7c0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81311280"
 ---
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Развертывание модуля безопасности на устройстве IoT Edge
@@ -34,7 +34,7 @@ ms.locfileid: "81311280"
 
 Выполните следующие действия, чтобы развернуть модуль безопасности Azure для центра Интернета вещей для IoT Edge.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 1. В центре Интернета вещей убедитесь, что устройство [зарегистрировано как устройство IOT Edge](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-portal).
 
@@ -97,7 +97,7 @@ ms.locfileid: "81311280"
       "ms_iotn:urn_azureiot_Security_SecurityAgentConfiguration"
     ```
 
-1. Выберите **Обновить**.
+1. Нажмите кнопку **Обновить**.
 
 #### <a name="step-2-runtime-settings"></a>Шаг 2. параметры среды выполнения
 
@@ -129,7 +129,7 @@ ms.locfileid: "81311280"
     }
     ```
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 1. Выберите **Далее**.
 
@@ -179,9 +179,9 @@ ms.locfileid: "81311280"
 
    `sudo docker logs azureiotsecurity`
 
-1. Для получения более подробных журналов добавьте следующую переменную среды в развертывание модуля **азуреиотсекурити** : `logLevel=Debug`.
+1. Для получения более подробных журналов добавьте следующую переменную среды в развертывание модуля **азуреиотсекурити** : `logLevel=Debug` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о параметрах конфигурации, перейдите к руководству по настройке модуля.
 > [!div class="nextstepaction"]

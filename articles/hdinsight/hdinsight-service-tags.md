@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 04/15/2020
 ms.openlocfilehash: 5608d0cd83e506bc6b30337db5148f344f59f80e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81410856"
 ---
 # <a name="nsg-service-tags-for-azure-hdinsight"></a>Теги службы NSG для Azure HDInsight
@@ -73,10 +73,10 @@ ms.locfileid: "81410856"
 | Япония | Западная Япония | HDInsight. Жапанвест |
 | Франция | Центральная Франция| HDInsight. Францецентрал |
 | Соединенное Королевство | южная часть Соединенного Королевства | HDInsight. UKSouth |
-| Azure для государственных организаций | Центральная Восточная | HDInsight. Усдодцентрал |
+| Azure для государственных организаций | Центральная часть США (DoD) | HDInsight. Усдодцентрал |
 | &nbsp; | USGov (Техас) | HDInsight. Усговтексас |
 | &nbsp; | Восточная Восток | HDInsight. Усдодеаст |
-| &nbsp; | USGov (Аризона)  | HDInsight. Усговаризона |
+| &nbsp; | USGov (Аризона) | HDInsight. Усговаризона |
 
 ### <a name="use-multiple-regional-service-tags"></a>Использование нескольких региональных тегов служб
 
@@ -86,7 +86,7 @@ ms.locfileid: "81410856"
 
 #### <a name="group-1"></a>Группа 1
 
-Если кластер создается в одном из регионов в следующей таблице, разрешите теги `HDInsight.WestUS` службы и. `HDInsight.EastUS` Кроме того, в списке указан тег регионального сервиса. Для регионов в этом разделе требуется три тега службы.
+Если кластер создается в одном из регионов в следующей таблице, разрешите Теги службы `HDInsight.WestUS` и `HDInsight.EastUS` . Кроме того, в списке указан тег регионального сервиса. Для регионов в этом разделе требуется три тега службы.
 
 Например, если кластер создается в `East US 2` регионе, необходимо добавить следующие теги службы в группу безопасности сети:
 
@@ -111,17 +111,17 @@ ms.locfileid: "81410856"
 
 #### <a name="group-2"></a>Группа 2
 
-Кластеры в регионах *Северный Китай* и *Восточный Китай* должны разрешать два тега службы: `HDInsight.ChinaNorth` и. `HDInsight.ChinaEast`
+Кластеры в регионах *Северный Китай* и *Восточный Китай* должны разрешать два тега службы: `HDInsight.ChinaNorth` и `HDInsight.ChinaEast` .
 
 #### <a name="group-3"></a>Группа 3
 
-Кластеры в регионах *US gov (Айова)* и *US gov (Вирджиния)* должны разрешать два тега службы: `HDInsight.USGovIowa` и. `HDInsight.USGovVirginia`
+Кластеры в регионах *US gov (Айова)* и *US gov (Вирджиния)* должны разрешать два тега службы: `HDInsight.USGovIowa` и `HDInsight.USGovVirginia` .
 
 #### <a name="group-4"></a>Группа 4
 
-Для кластеров в регионах *центрального региона Германии* и *северо в Германии* необходимо разрешить два тега службы `HDInsight.GermanyCentral` : `HDInsight.GermanyNortheast`и.
+Для кластеров в регионах *центрального региона Германии* и *северо в Германии* необходимо разрешить два тега службы: `HDInsight.GermanyCentral` и `HDInsight.GermanyNortheast` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Группы безопасности сети: Теги служб](../virtual-network/security-overview.md#security-rules)
 - [Создание виртуальных сетей для кластеров Azure HDInsight](hdinsight-create-virtual-network.md)
