@@ -10,10 +10,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 04/04/2018
 ms.author: liydu
 ms.openlocfilehash: deb1ea8c7b41ad48bddebfbed1b15c667ee0071a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73483949"
 ---
 # <a name="mxchip-iot-devkit"></a>MXChip IoT DevKit
@@ -106,7 +106,7 @@ ms.locfileid: "73483949"
 ![Пример процедуры тестирования](media/iot-hub-arduino-iot-devkit-az3166-devkit-state/devkit-state.gif)
 
 > [!NOTE]
-> Необработанные данные двойникаов устройств можно просмотреть в портал Azure: центр Интернета\> вещей — устройства\> * \<IOT —\> *  - \> устройство двойника устройства.
+> Необработанные данные двойникаов устройств можно просмотреть в портал Azure: центр Интернета вещей — \> устройства IOT — \> *\<your device\>*  - \> устройства двойника.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -117,4 +117,4 @@ ms.locfileid: "73483949"
 Ниже приведены предлагаемые дальнейшие действия:
 
 * [Общие сведения об акселераторе решения Azure IoT для удаленного мониторинга](https://docs.microsoft.com/azure/iot-suite/)
-* [Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central](/azure/iot-central/core/howto-connect-devkit)
+* [Connect an MXChip IoT DevKit device to your Azure IoT Central application](/azure/iot-central/core/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central)

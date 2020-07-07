@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 02/03/2018
 ms.author: apimpm
 ms.openlocfilehash: 467d9cee74567fc0d19031773415675ae7c51818
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "71066755"
 ---
 # <a name="advanced-request-throttling-with-azure-api-management"></a>Расширенное регулирование запросов с помощью API Management
@@ -30,7 +30,7 @@ ms.locfileid: "71066755"
 ## <a name="custom-key-based-throttling"></a>Регулирование запросов на основе настраиваемых ключей
 
 > [!NOTE]
-> Политики `rate-limit-by-key` и `quota-by-key` недоступны, если используется уровень потребления службы управления API Azure. 
+> `rate-limit-by-key`Политики и недоступны, `quota-by-key` Если используется уровень потребления службы управления API Azure. 
 
 Новые политики [rate-limit-by-key](/azure/api-management/api-management-access-restriction-policies#LimitCallRateByKey) и [quota-by-key](/azure/api-management/api-management-access-restriction-policies#SetUsageQuotaByKey) увеличивают гибкость управления трафиком. Они позволяют определять выражения для идентификации ключей, которые используются для контроля за объемом трафика. Принцип работы этих политик лучше всего демонстрирует пример. 
 

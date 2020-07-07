@@ -15,10 +15,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 03/18/2019
 ms.openlocfilehash: 8eb03a42f38c0cc7fe82eda6a81d1c8c1213ec74
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "71212398"
 ---
 # <a name="export-and-import-azure-notification-hubs-registrations-in-bulk"></a>Экспорт и импорт регистраций центров уведомлений Azure в групповой операции
@@ -115,7 +115,7 @@ while (i > 0 && job.Status != NotificationHubJobStatus.Completed)
 }
 ```
 
-В дополнение к входным и выходным URL-адресам в `NotificationHubJob` этом примере создается объект `JobType` , содержащий объект, который может иметь один из следующих типов:
+В дополнение к входным и выходным URL-адресам в этом примере создается `NotificationHubJob` объект, содержащий `JobType` объект, который может иметь один из следующих типов:
 
 - `ImportCreateRegistrations`
 - `ImportUpdateRegistrations`
@@ -128,7 +128,7 @@ while (i > 0 && job.Status != NotificationHubJobStatus.Completed)
 - `/<hub>/<jobid>/Failed.txt`
 - `/<hub>/<jobid>/Output.txt`
 
-Эти файлы содержат список успешных и неудачных операций из пакета. Формат файла `.cvs`, в котором каждая строка имеет номер строки исходного входного файла, и выходные данные операции (обычно это созданное или обновленное описание регистрации).
+Эти файлы содержат список успешных и неудачных операций из пакета. Формат файла `.cvs` , в котором каждая строка имеет номер строки исходного входного файла, и выходные данные операции (обычно это созданное или обновленное описание регистрации).
 
 ### <a name="full-sample-code"></a>Полный пример кода
 В следующем примере кода выполняется импорт регистраций в концентратор уведомлений.

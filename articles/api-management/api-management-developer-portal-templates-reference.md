@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 9bbb7ef46fbde881c8968128870d24a03b046c23
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73176786"
 ---
 # <a name="developer-portal-templates"></a>Шаблоны портала разработчика
@@ -46,7 +46,7 @@ ms.locfileid: "73176786"
         -   [Ruby](api-management-api-templates.md#Ruby)  
 -   [Продукты](api-management-product-templates.md)  
     -   [Список продуктов](api-management-product-templates.md#ProductList)  
-    -   [Продукта](api-management-product-templates.md#Product)  
+    -   [Продукт](api-management-product-templates.md#Product)  
 -   [Приложения](api-management-application-templates.md)  
     -   [Список приложений](api-management-application-templates.md#ProductList)  
     -   [Приложение](api-management-application-templates.md#Application)  
@@ -57,8 +57,8 @@ ms.locfileid: "73176786"
     -   [Подписки](api-management-user-profile-templates.md#Subscriptions)  
     -   [Приложения](api-management-user-profile-templates.md#Applications)  
     -   [Обновить сведения об учетной записи](api-management-user-profile-templates.md#UpdateAccountInfo)  
--   [См](api-management-page-templates.md)  
-    -   [Войти](api-management-page-templates.md#SignIn)  
+-   [Страницы](api-management-page-templates.md)  
+    -   [Выполните вход.](api-management-page-templates.md#SignIn)  
     -   [Регистрация](api-management-page-templates.md#SignUp)  
     -   [Страница не найдена](api-management-page-templates.md#PageNotFound)
 

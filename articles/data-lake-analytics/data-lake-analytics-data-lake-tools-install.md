@@ -10,10 +10,10 @@ ms.assetid: ad8a6992-02c7-47d4-a108-62fc5a0777a3
 ms.topic: conceptual
 ms.date: 08/30/2019
 ms.openlocfilehash: 08f0456b6a8b663f0af68fbb179de14b9e3acf79
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "70914101"
 ---
 # <a name="install-data-lake-tools-for-visual-studio"></a>Установка инструментов Data Lake для Visual Studio
@@ -48,7 +48,7 @@ ms.locfileid: "70914101"
 
 Скачайте и установите [Microsoft Azure Data Lake и средства Stream Analytics для Visual Studio ](https://aka.ms/adltoolsvs). После установки Visual Studio будет иметь следующие изменения:
 
-* Узел **Обозреватель сервера** > **Azure** содержит узел **Data Lake Analytics** .
+* Узел **Обозреватель сервера**  >  **Azure** содержит узел **Data Lake Analytics** .
 * в меню **Средства** появился пункт **Data Lake**.
 
 ## <a name="next-steps"></a>Дальнейшие действия

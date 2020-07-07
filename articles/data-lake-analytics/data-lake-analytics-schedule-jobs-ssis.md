@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.workload: big-data
 ms.date: 07/17/2018
 ms.openlocfilehash: 0650fcc5023ac57b193fa23b0dedf65113fd64e6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "71672893"
 ---
 # <a name="schedule-u-sql-jobs-using-sql-server-integration-services-ssis"></a>Планирование заданий U-SQL с использованием служб Integration Services (SSIS)
@@ -93,7 +93,7 @@ ms.locfileid: "71672893"
     
     Создание файла подключения.
 
-   1. Выберите ** \<новое соединение... >** в параметре FileConnection.
+   1. Выберите **\<New Connection...>** параметр FileConnection.
    2. Задайте параметру **Тип использования** значение **Существующий файл**, а параметру **Файл** — любой путь к существующему файлу.
 
        ![Настройка контейнера "Цикл по каждому элементу"](./media/data-lake-analytics-schedule-jobs-ssis/configure-file-connection-for-foreach-loop-container.png)
@@ -106,7 +106,7 @@ ms.locfileid: "71672893"
 
 3. Задайте параметру **AzureDataLakeAnalyticsConnection** учетную запись Azure Data Lake Analytics, в которую требуется отправлять задания. Дополнительные сведения о [диспетчере подключений Azure Data Lake Analytics](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-data-lake-analytics-connection-manager?view=sql-server-2017).
 
-4. Задайте другие конфигурации задания. Дополнительные [сведения](https://docs.microsoft.com/sql/integration-services/control-flow/azure-data-lake-analytics-task?view=sql-server-2017).
+4. Задайте другие конфигурации задания. [Подробнее](https://docs.microsoft.com/sql/integration-services/control-flow/azure-data-lake-analytics-task?view=sql-server-2017)
 
 5. Используйте **Выражения** для динамической настройки имени задания U-SQL.
 
