@@ -112,6 +112,12 @@
               href: 'https://www.nuget.org/packages/Azure.DigitalTwins.Core'
             - name: "Пакет SDK для .NET (C#)\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core'
+    - name: CLI Digital Twins
+      items:
+        - name: Справочник по CLI Digital Twins
+          href: /cli/azure/ext/azure-iot/dt?view=azure-cli-latest
+        - name: Пакет CLI
+          href: 'https://github.com/Azure/azure-iot-cli-extension/releases'
     - name: DTDL
       items:
         - name: "Спецификация DTDL версии\_2"
@@ -126,12 +132,6 @@
           href: 'https://github.com/Azure/digital-twin-model-identifier'
     - name: Инструменты Azure
       items:
-        - name: Справочник по Azure CLI
-          href: /cli/azure/iot
-        - name: Расширение CLI для Azure IoT (справочник)
-          href: /cli/azure/ext/azure-iot/iot?view=azure-cli-latest
-        - name: Расширение CLI для Azure IoT (выпуски)
-          href: 'https://github.com/Azure/azure-iot-cli-extension/releases'
         - name: Azure Cloud Shell
           href: 'https://shell.azure.com'
         - name: Azure PowerShell

@@ -133,6 +133,8 @@
               href: howto-use-app-templates.md
             - name: Мониторинг работоспособности приложений
               href: howto-monitor-application-health.md
+            - name: Сведения о приложении
+              href: howto-get-app-info.md
         - name: Управление с помощью других решений
           items:
             - name: Управление с помощью портала Azure

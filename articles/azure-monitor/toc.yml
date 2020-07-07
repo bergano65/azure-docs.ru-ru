@@ -389,6 +389,8 @@
               href: log-query/unify-app-resource-data.md
         - name: Примеры и руководства
           items:
+            - name: Примеры запросов
+              href: log-query/saved-queries.md
             - name: Примеры запросов к журналу
               href: log-query/examples.md
             - name: Примеры смарт-аналитики
@@ -1125,6 +1127,8 @@
               href: learn/tutorial-logs-dashboards.md
             - name: Панель мониторинга с использованием данных приложения
               href: learn/tutorial-app-dashboards.md
+            - name: Обновление панелей мониторинга Log Analytics
+              href: log-query/dashboard-upgrade.md
         - name: Отправка данных в Grafana
           href: platform/grafana-plugin.md
     - name: Сбор и анализ пользовательских данных
@@ -1200,6 +1204,10 @@
           href: app/custom-endpoints.md
         - name: Функции Azure
           href: app/azure-functions-supported-features.md
+        - name: Заметки о выпуске
+          items:
+            - name: Расширение веб-приложения
+              href: app/web-app-extension-release-notes.md
         - name: Модель данных
           items:
             - name: Обзор

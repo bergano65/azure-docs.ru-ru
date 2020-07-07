@@ -86,6 +86,8 @@
           href: container-instances-start-command.md
         - name: Выполнение команды (exec)
           href: container-instances-exec.md
+        - name: Запуск контейнера установки (init)
+          href: container-instances-init-container.md
         - name: Использование управляемого удостоверения (предварительная версия)
           href: container-instances-managed-identity.md
         - name: Использование ресурсов GPU (предварительная версия)

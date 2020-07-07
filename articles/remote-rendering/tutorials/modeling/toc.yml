@@ -1,2 +1,4 @@
-- name: Настройка физически корректной отрисовки материалов в Maya
+- name: Настройка физически корректной отрисовки материалов в Autodesk Maya
   href: maya-material-setup.md
+- name: Настройка физически корректной отрисовки материалов в Autodesk 3DSMax
+  href: 3dsmax-material-setup.md

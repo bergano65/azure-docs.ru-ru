@@ -208,14 +208,14 @@
       items:
         - name: Что такое база данных SQL?
           href: database/sql-database-paas-overview.md
+        - name: Новые возможности
+          href: database/doc-changes-updates-release-notes.md?&tabs=single-database
         - name: Отдельные базы данных
           href: database/single-database-overview.md
         - name: Эластичные пулы
           href: database/elastic-pool-overview.md
         - name: "Логические серверы SQL\_Server"
           href: database/logical-servers.md
-        - name: Заметки о выпуске
-          href: database/doc-changes-updates-release-notes.md?&tabs=single-database
         - name: Уровни служб
           items:
             - name: Бессерверные приложения
@@ -654,13 +654,13 @@
       items:
         - name: Что такое Управляемый экземпляр SQL?
           href: managed-instance/sql-managed-instance-paas-overview.md
+        - name: Новые возможности
+          href: database/doc-changes-updates-release-notes.md?&tabs=managed-instance
         - name: Пулы экземпляров
           href: managed-instance/instance-pools-overview.md
         - name: Часто задаваемые вопросы
           displayName: faq
           href: managed-instance/frequently-asked-questions-faq.md
-        - name: Заметки о выпуске
-          href: database/doc-changes-updates-release-notes.md?&tabs=managed-instance
     - name: Краткие руководства
       href: managed-instance/quickstart-content-reference-guide.md
       items:
@@ -883,92 +883,99 @@
           items:
             - name: "Общие сведения о виртуальной машине SQL\_Server"
               href: virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md
-            - name: Изменения в документации
+            - name: Новые возможности
               href: virtual-machines/windows/doc-changes-updates-release-notes.md
         - name: Краткие руководства
           items:
-            - name: "Создание виртуальной машины SQL\_— портал"
+            - name: Создание виртуальной машины SQL
+              items: null
+            - name: Портал
               href: virtual-machines/windows/sql-vm-create-portal-quickstart.md
-            - name: "Создание виртуальной машины SQL\_— PowerShell"
+            - name: PowerShell
               href: virtual-machines/windows/sql-vm-create-powershell-quickstart.md
+            - name: Шаблон ARM
+              href: virtual-machines/windows/create-sql-vm-resource-manager-template.md
         - name: Основные понятия
           items:
-            - name: Рекомендации
-              items:
-                - name: Оптимальные методы повышения производительности
-                  href: virtual-machines/windows/performance-guidelines-best-practices.md
-                - name: Вопросы безопасности
-                  href: virtual-machines/windows/security-considerations-best-practices.md
-                - name: Шаблоны приложений
-                  href: virtual-machines/windows/application-patterns-development-strategies.md
             - name: Непрерывность бизнес-процессов
               items:
-                - name: Возможности обеспечения высокой доступности
+                - name: Обзор
                   href: virtual-machines/windows/business-continuity-high-availability-disaster-recovery-hadr-overview.md
-                - name: Группа доступности AlwaysOn
-                  href: virtual-machines/windows/availability-group-overview.md
                 - name: Резервное копирование и восстановление
                   href: virtual-machines/windows/backup-restore.md
-                - name: "Автоматизированное резервное копирование для SQL\_Server\_2014"
-                  href: virtual-machines/windows/automated-backup-sql-2014.md
-                - name: "Автоматизированное резервное копирование для SQL\_Server\_2016+"
-                  href: virtual-machines/windows/automated-backup.md
+                - name: Резервное копирование с помощью службы хранилища Azure
+                  href: virtual-machines/windows/azure-storage-sql-server-backup-restore-use.md
+                - name: Группа доступности AlwaysOn
+                  href: virtual-machines/windows/availability-group-overview.md
+                - name: Экземпляр отказоустойчивого кластера
+                  href: virtual-machines/windows/failover-cluster-instance-overview.md
+            - name: Рекомендации
+              items:
+                - name: Производительность
+                  href: virtual-machines/windows/performance-guidelines-best-practices.md
+                - name: Безопасность
+                  href: virtual-machines/windows/security-considerations-best-practices.md
+                - name: Конфигурация кластера
+                  href: virtual-machines/windows/hadr-cluster-best-practices.md
+                - name: Шаблоны приложений
+                  href: virtual-machines/windows/application-patterns-development-strategies.md
             - name: Управление
               items:
                 - name: Выделенный узел
                   href: virtual-machines/windows/dedicated-host.md
-                - name: С помощью портала Azure
-                  href: virtual-machines/windows/manage-sql-vm-portal.md
                 - name: Расширенная поддержка SQL 2008 и R2
                   href: virtual-machines/windows/sql-server-2008-extend-end-of-support.md
-                - name: Подключение к виртуальной машине
-                  href: virtual-machines/windows/ways-to-connect-to-sql.md
-                - name: Настройка хранилища
-                  href: virtual-machines/windows/storage-configuration.md
-                - name: Автоматизация задач управления
-                  items:
-                    - name: "Использование расширения агента IaaS для SQL\_Server"
-                      href: virtual-machines/windows/sql-server-iaas-agent-extension-automate-management.md
-                    - name: Автоматическое исправление
-                      href: virtual-machines/windows/automated-patching.md
-                    - name: Настройка интеграции с Azure Key Vault
-                      href: virtual-machines/windows/azure-key-vault-integration-configure.md
         - name: Практические руководства
           items:
-            - name: Создание виртуальной машины SQL
+            - name: Подключение к виртуальной машине SQL Server
+              href: virtual-machines/windows/ways-to-connect-to-sql.md
+            - name: Создание виртуальной машины SQL Server
               items:
                 - name: Использование портала
                   href: virtual-machines/windows/create-sql-vm-portal.md
                 - name: Использование Azure PowerShell
                   href: virtual-machines/windows/create-sql-vm-powershell.md
-            - name: Регистрация через поставщика ресурсов виртуальной машины SQL
-              displayName: 'resource provider, registration'
-              items:
-                - name: Одиночная виртуальная машина
-                  href: virtual-machines/windows/sql-vm-resource-provider-register.md
-                - name: Массовая регистрация нескольких виртуальных машин
-                  href: virtual-machines/windows/sql-vm-resource-provider-bulk-register.md
             - name: Управление
               items:
+                - name: С помощью портала Azure
+                  href: virtual-machines/windows/manage-sql-vm-portal.md
                 - name: Модель лицензирования
                   displayName: 'ahb, ahub, payg, change, modify, update'
                   href: virtual-machines/windows/licensing-model-azure-hybrid-benefit-ahb-change.md
                 - name: Выпуск
                   displayName: 'change, modify, update'
                   href: virtual-machines/windows/change-sql-server-edition.md
-                - name: Версия
-                  displayName: 'change, modify, update'
-                  href: virtual-machines/windows/change-sql-server-version.md
-                - name: Резервное копирование и восстановление с помощью службы хранилища Azure
-                  href: virtual-machines/windows/azure-storage-sql-server-backup-restore-use.md
+                - name: Память
+                  href: virtual-machines/windows/storage-configuration.md
+                - name: Интеграция с Azure Key Vault
+                  href: virtual-machines/windows/azure-key-vault-integration-configure.md
+                - name: Регистрация через поставщика ресурсов виртуальной машины SQL
+                  displayName: 'resource provider, registration'
+                  items:
+                    - name: Одиночная виртуальная машина
+                      href: virtual-machines/windows/sql-vm-resource-provider-register.md
+                    - name: Массовая регистрация нескольких виртуальных машин
+                      href: virtual-machines/windows/sql-vm-resource-provider-bulk-register.md
+                - name: Автоматизация задач управления
+                  items:
+                    - name: "Использование расширения агента IaaS для SQL\_Server"
+                      href: virtual-machines/windows/sql-server-iaas-agent-extension-automate-management.md
+                    - name: Автоматическое исправление
+                      href: virtual-machines/windows/automated-patching.md
             - name: Миграция
               items:
                 - name: Перенос базы данных SQL Server на виртуальную машину
                   href: virtual-machines/windows/migrate-to-vm-from-sql-server.md
                 - name: Перемещение виртуальной машины в другой регион
                   href: virtual-machines/windows/move-sql-vm-different-region.md
-            - name: Настройка высокого уровня доступности
+            - name: Непрерывность бизнес-процессов
               items:
+                - name: Резервное копирование и восстановление
+                  items:
+                    - name: "Автоматическое резервное копирование (SQL\_2016+)"
+                      href: virtual-machines/windows/automated-backup.md
+                    - name: "Автоматическое резервное копирование (SQL\_2014+)"
+                      href: virtual-machines/windows/automated-backup-sql-2014.md
                 - name: Группа доступности AlwaysOn
                   items:
                     - name: Использование CLI виртуальной машины SQL в Azure
@@ -989,12 +996,30 @@
                           href: virtual-machines/windows/availability-group-load-balancer-portal-configure.md
                         - name: "Подсистема балансировки нагрузки\_— Azure PowerShell"
                           href: virtual-machines/windows/availability-group-listener-powershell-configure.md
-                - name: Экземпляр отказоустойчивого кластера
+                - name: Экземпляр отказоустойчивого кластера (FCI)
                   items:
-                    - name: Использование Локальных дисковых пространств
-                      href: virtual-machines/windows/failover-cluster-instance-storage-spaces-direct-manually-configure.md
-                    - name: Использование общей папки (цен. категория "Премиум")
-                      href: virtual-machines/windows/failover-cluster-instance-premium-file-share-manually-configure.md
+                    - name: Подготовка виртуальной машины к FCI
+                      href: virtual-machines/windows/failover-cluster-instance-prepare-vm.md
+                    - name: Создание FCI с помощью указанных ниже средств
+                      items:
+                        - name: "Общие диски Azure (SQL\_2019+)"
+                          href: virtual-machines/windows/failover-cluster-instance-azure-shared-disks-manually-configure.md
+                        - name: Локальные дисковые пространства (Win2016+)
+                          href: virtual-machines/windows/failover-cluster-instance-storage-spaces-direct-manually-configure.md
+                        - name: Общая папка ценовой категории "Премиум" (Win2012+)
+                          href: virtual-machines/windows/failover-cluster-instance-premium-file-share-manually-configure.md
+                    - name: Имя распределенной сети (DNN)
+                      items:
+                        - name: Создание DNN для FCI
+                          href: virtual-machines/windows/hadr-distributed-network-name-dnn-configure.md
+                        - name: Взаимодействие функций с DNN
+                          href: virtual-machines/windows/failover-cluster-instance-dnn-interoperability.md
+                        - name: "Функции DNN и SQL\_Server для FCI"
+                          href: virtual-machines/windows/failover-cluster-instance-dnn-interoperability.md
+                - name: Настройка подключения
+                  items:
+                    - name: Имя виртуальной сети (VNN)
+                      href: virtual-machines/windows/hadr-vnn-azure-load-balancer-configure.md
         - name: Справочник
           items:
             - name: Azure PowerShell

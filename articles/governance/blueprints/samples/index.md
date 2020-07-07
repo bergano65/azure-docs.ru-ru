@@ -1,14 +1,13 @@
 ---
 title: Индекс примеров схем
 description: Индексы соответствия и стандартные примеры для развертывания сред, политик и базовых решений Cloud Adoption Framework с помощью Azure Blueprints.
-ms.date: 06/02/2020
+ms.date: 07/01/2020
 ms.topic: sample
-ms.openlocfilehash: 0ed5af98644f116622aa44a2503161ce2fd6225b
-ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
-ms.translationtype: HT
+ms.openlocfilehash: 7e45cbbbf7cf6c2e267156dbb0087a19d8288aa2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84730005"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85832327"
 ---
 # <a name="azure-blueprints-samples"></a>Примеры для Azure Blueprints
 
@@ -19,10 +18,11 @@ ms.locfileid: "84730005"
 |  |  |
 |---------|---------|
 | [Australian Government ISM PROTECTED](./ism-protected/control-mapping.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям Australian Government ISM PROTECTED. |
-| [Решение для оценки безопасности Azure](./azure-security-benchmark.md) | В этом документе описаны ограничения для обеспечения соответствия требованиям [тестов производительности системы безопасности Azure](../../../security/benchmarks/overview.md). |
+| [Общие сведения о Тесте производительности системы безопасности Azure](./azure-security-benchmark.md) | В этом документе описаны ограничения для обеспечения соответствия требованиям [тестов производительности системы безопасности Azure](../../../security/benchmarks/overview.md). |
 | [Canada Federal PBMM](./canada-federal-pbmm/index.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям Canada Federal Protected B, Medium Integrity, Medium Availability (PBMM). |
 | [Тест производительности CIS для платформ Microsoft Azure](./cis-azure-1-1-0.md)| Набор политик, которые помогут обеспечить соответствие рекомендациям по использованию тестов производительности от CIS для платформ Microsoft Azure. |
 | [Уровень влияния DoD 4](./dod-impact-level-4/index.md) | Набор политик, которые помогут обеспечить соответствие требованиям уровня влияния DoD 4. |
+| [Уровень влияния DoD 5](./dod-impact-level-5/index.md) | Набор политик, которые помогут обеспечить соответствие требованиям уровня влияния DoD 5. |
 | [FedRAMP — средний уровень](./fedramp-m/index.md) | Набор политик, которые помогут обеспечить соответствие требованиям FedRAMP среднего уровня. |
 | [FedRAMP — высокий уровень](./fedramp-h/index.md) | Набор политик, которые помогут обеспечить соответствие требованиям FedRAMP высокого уровня. |
 | [HIPAA HITRUST](./HIPAA-HITRUST/index.md) | Набор политик, которые помогут обеспечить соответствие требованиям HIPAA HITRUST. |
@@ -32,6 +32,7 @@ ms.locfileid: "84730005"
 | [ISO 27001: рабочая нагрузка Среды службы приложений или Базы данных SQL](./iso27001-ase-sql-workload/index.md) | Предоставляет дополнительную инфраструктуру для примера схемы [ISO 27001: общие службы](./iso27001-shared/index.md). |
 | [Носитель](./media/index.md) | Набор политик, которые помогут обеспечить соответствие требованиям Media MPAA. |
 | [NIST SP 800-53, ред. 4](./nist-sp-800-53-r4.md) | В этом документе описаны средства защиты для соответствия требованиям NIST SP 800-53, ред. 4. |
+| [NIST SP 800-171 R2](./nist-sp-800-171-r2.md) | В этом документе описаны средства защиты для соответствия требованиям NIST SP 800-171, ред. 2. |
 | [PCI-DSS версии 3.2.1](./pci-dss-3.2.1/index.md) | Предоставляет набор политик для обеспечения соответствия требованиям PCI-DSS версии 3.2.1. |
 | [SWIFT CSP-CSCF v2020](./swift-2020/index.md) | Средства обеспечения соответствия SWIFT CSP-CSCF v2020. |
 | [Система управления UK OFFICIAL и UK NHS](./ukofficial/index.md) | Предоставляет набор соответствующих шаблонов инфраструктуры и средства, обеспечивающие соответствие политикам, для прохождения аттестации UK OFFICIAL и UK NHS |

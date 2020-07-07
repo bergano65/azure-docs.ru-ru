@@ -1005,7 +1005,7 @@
               href: performance-tips-async-java.md
             - name: "Пакет SDK для Sync Java версии\_2"
               href: performance-tips-java.md
-            - name: "Пакет SDK для Async Java версии\_2"
+            - name: "Устранение неполадок\_— пакет SDK для Async Java версии\_2"
               href: troubleshoot-java-async-sdk.md
         - name: "Тест производительности\_— пример приложения"
           href: performance-testing.md

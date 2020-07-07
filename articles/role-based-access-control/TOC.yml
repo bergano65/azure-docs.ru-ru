@@ -101,6 +101,8 @@
       href: elevate-access-global-admin.md
     - name: Администраторы классической подписки
       href: classic-administrators.md
+    - name: Перенос подписки в другой каталог (предварительная версия)
+      href: transfer-subscription.md
     - name: Диагностика
       href: troubleshooting.md
 - name: Справочник

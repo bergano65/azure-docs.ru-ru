@@ -1,18 +1,20 @@
 ---
 title: Краткое описание примера схемы для уровня влияния DoD 4
 description: Краткое описание примера для уровня влияния DoD 4. Этот пример схемы помогает клиентам оценить отдельные средства управления для уровня влияния DoD 4.
-ms.date: 03/12/2020
+ms.date: 06/30/2020
 ms.topic: sample
-ms.openlocfilehash: 3b032e1a26c4fb5e97b1c7ab4fff65bc1b046f21
-ms.sourcegitcommit: 581aaca8956b1717b7bc1c1d7710c782c22e6320
-ms.translationtype: HT
+ms.openlocfilehash: 1c06cd738b9a63cb7a3ec14ef48bb8ae7c6dd6cb
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2020
-ms.locfileid: "85517258"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85800398"
 ---
 # <a name="overview-of-the-dod-impact-level-4-blueprint-sample"></a>Краткое описание примера схемы для уровня влияния DoD 4
 
 Пример схемы для уровня влияния 4 в Министерстве обороны США (DoD IL4) с помощью службы [Политика Azure](../../../policy/overview.md) предоставляет средства для соответствия требованиям, что позволяет оценить отдельные средства управления для уровня влияния DoD 4. Схема помогает клиентам развернуть основной набор политик для любой развернутой в Azure архитектуры, в которой необходимо реализовать средства управления для уровня влияния DoD 4. Последние сведения о том, какие облака и службы Azure соответствуют требованиям авторизации DoD уровня влияния 4, см. в статье [Службы Azure по области аудита FedRAMP и DoD CC SRG](../../../../azure-government/compliance/azure-services-in-fedramp-auditscope.md).
+
+> [!NOTE]
+> Этот пример схемы доступен в Azure для государственных организаций.
 
 ## <a name="control-mapping"></a>Сопоставление элементов управления
 

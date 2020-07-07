@@ -146,6 +146,10 @@
       href: preprocess-text.md
     - name: Латентное распределение Дирихле (LDA)
       href: latent-dirichlet-allocation.md
+    - name: Оценка модели Vowpal Wabbit
+      href: score-vowpal-wabbit-model.md
+    - name: Обучение модели Vowpal Wabbit
+      href: train-vowpal-wabbit-model.md
 - name: компьютерное зрение;
   items:
     - name: Применение преобразования изображений

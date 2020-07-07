@@ -99,6 +99,10 @@
     - name: Аудит виртуальных машин с гостевой конфигурацией
       displayName: 'provider, tools, definition'
       href: ./concepts/guest-configuration.md
+    - name: Безопасность
+      items:
+        - name: 'Базовые показатели безопасности, учитываемые решением для оценки безопасности Azure'
+          href: ./concepts/azure-security-benchmark-baseline.md
 - name: Практические руководства
   items:
     - name: Расширение Политики Azure для VS Code

@@ -7,10 +7,16 @@
       href: what-is-application-management.md
 - name: Краткие руководства
   items:
-    - name: Просмотр корпоративных приложений
+    - name: Просмотр приложений
       href: view-applications-portal.md
-    - name: Добавление облачного приложения из коллекции
+    - name: Добавление приложения
       href: add-application-portal.md
+    - name: Настройка приложения
+      href: add-application-portal-configure.md
+    - name: Настройка единого входа
+      href: add-application-portal-setup-sso.md
+    - name: Удаление приложения
+      href: delete-application-portal.md
 - name: Учебники
   items:
     - name: 'Интегрированные приложения из коллекции (например, ServiceNow, Salesforce, Dropbox)'

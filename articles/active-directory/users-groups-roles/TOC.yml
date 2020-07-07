@@ -58,6 +58,8 @@
           href: /azure/active-directory/fundamentals/active-directory-users-restore?context=azure/active-directory/users-groups-roles/context/ugr-context
         - name: Массовое восстановление пользователей
           href: users-bulk-restore.md
+        - name: Отзыв доступа пользователя
+          href: users-revoke-access.md
         - name: Закрытие учетной записи в неуправляемом каталоге
           href: users-close-account.md
         - name: Добавление пользователей B2B

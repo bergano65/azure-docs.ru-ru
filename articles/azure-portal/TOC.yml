@@ -43,8 +43,8 @@
       items:
         - name: Создание запроса на поддержку Azure
           href: supportability/how-to-create-azure-support-request.md
-        - name: Отправка файлов для обращения в службу поддержки
-          href: supportability/how-to-use-file-uploader.md
+        - name: Управление запросом на поддержку Azure
+          href: supportability/how-to-manage-azure-support-request.md
         - name: Запрос на увеличение квоты
           items:
             - name: Увеличение лимита виртуальных ЦП

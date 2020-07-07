@@ -7,10 +7,14 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Создание службы с помощью портала
-      href: quickstart-create-data-migration-service-portal.md
-    - name: Создание службы в гибридном режиме с помощью портала
-      href: quickstart-create-data-migration-service-hybrid-portal.md
+    - name: Создание службы
+      items:
+        - name: Портал
+          href: quickstart-create-data-migration-service-portal.md
+        - name: Шаблон ARM
+          href: create-dms-resource-manager-template.md
+        - name: в гибридном режиме (портал)
+          href: quickstart-create-data-migration-service-hybrid-portal.md
 - name: Основные понятия
   items:
     - name: Предварительные требования
