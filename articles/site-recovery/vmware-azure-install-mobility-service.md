@@ -7,10 +7,9 @@ ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
 ms.openlocfilehash: a2f4bdb96b8d1ecb23ddcec844726439ec46fff2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74186449"
 ---
 # <a name="prepare-source-machine-for-push-installation-of-mobility-agent"></a>Подготовка исходного компьютера к принудительной установке агента Mobility Service
@@ -53,7 +52,7 @@ ms.locfileid: "74186449"
 
       ![Linux](./media/vmware-azure-install-mobility-service/mobility2.png)
 
-8. Перезапустите службу **sshd** .
+8. Перезапустите службу **sshd**.
 9. Добавьте учетную запись, созданную в CSPSConfigtool. Чтобы сделать это, войдите на сервер конфигурации.
 10. Запустите файл **cspsconfigtool.exe**. Доступ к нему можно получить, щелкнув ярлык на рабочем столе, или перейдя в папку %ProgramData%\home\svsystems\bin.
 11. На вкладке **Управление учетными записями** щелкните **Добавить учетную запись**.
@@ -64,7 +63,7 @@ ms.locfileid: "74186449"
 
 Если на компьютерах, которые нужно реплицировать, запущено антивирусное ПО, обязательно исключите установочную папку службы Mobility в список исключений из антивирусной проверки (*C:\ProgramData\ASR\agent*). Это обеспечит правильную работу репликации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После установки службы Mobility Service на портале Azure выберите **+ Репликация**, чтобы приступить к защите виртуальных машин. Дополнительные сведения о включении репликации для [виртуальных машин VMware](vmware-azure-enable-replication.md) и [физических серверов](physical-azure-disaster-recovery.md#enable-replication).
 

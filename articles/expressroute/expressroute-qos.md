@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: cherylmc
 ms.openlocfilehash: debc5d91478d0a5c3cc16c7b09f5713ba09b467e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74080098"
 ---
 # <a name="expressroute-qos-requirements"></a>Требования к качеству обслуживания для ExpressRoute
@@ -28,17 +27,17 @@ ms.locfileid: "74080098"
 
 | **Класс трафика** | **Обработка (пометки DSCP)** | **Рабочие нагрузки Microsoft Teams и Skype для бизнеса** |
 | --- | --- | --- |
-| **Счета** |EF (46) |Skype, Microsoft Teams или Lync Voice |
-| **Interactive (Интерактивные)** |AF41 (34) |Видео, VBSS |
+| **Голосовая связь** |EF (46) |Skype, Microsoft Teams или Lync Voice |
+| **Интерактивный** |AF41 (34) |Видео, VBSS |
 | |AF21 (18) |Совместный доступ к приложениям | 
-| **Параметры** |AF11 (10) |Передача файлов |
+| **По умолчанию** |AF11 (10) |Передача файлов |
 | |CS0 (0) |Другие варианты |
 
 * Вам необходимо классифицировать рабочие нагрузки и пометить правильные значения DSCP. Следуйте указанным [здесь](https://docs.microsoft.com/SkypeForBusiness/manage/network-management/qos/configuring-port-ranges-for-your-skype-clients#configure-quality-of-service-policies-for-clients-running-on-windows-10) инструкциям по настройке пометок DSCP в сети.
 * Вам необходимо настроить и поддерживать несколько очередей качества обслуживания в сети. Voice должен быть отдельным классом и принимать обработку EF, указанную в [RFC 3246](https://www.ietf.org/rfc/rfc3246.txt). 
 * Вы можете решить, какие механизм очередей, политику обнаружения перегрузки и пропускную способность использовать для каждого класса трафика. Тем не менее необходимо сохранить пометки DSCP для рабочих нагрузок Skype для бизнеса. Если вы используете пометки DSCP, которых нет в списке выше, например AF31 (26), то перед отправкой пакета в корпорацию Майкрософт необходимо перезаписать это значение DSCP и сделать его равным 0. Корпорация Майкрософт отправляет только те пакеты, которые помечены значениями DSCP, указанными в таблице выше. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * См. сведения о требованиях для [маршрутизации](expressroute-routing.md) и [преобразования сетевых адресов (NAT)](expressroute-nat.md).
 * Чтобы настроить подключение ExpressRoute, см. следующие статьи:
   

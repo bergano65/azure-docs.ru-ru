@@ -7,10 +7,9 @@ ms.topic: conceptual
 ms.date: 05/30/2017
 ms.author: yegu
 ms.openlocfilehash: 9596b8cb771f114cb09c5d6c6ae33b4fc4a8cada
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74122685"
 ---
 # <a name="migrate-from-managed-cache-service-to-azure-cache-for-redis"></a>Перенос из управляемой службы кэша в кэш Azure для Redis
@@ -180,6 +179,6 @@ cache.StringSet("key1", "value1", TimeSpan.FromMinutes(90));
 ## <a name="migrate-aspnet-session-state-and-output-caching-to-azure-cache-for-redis"></a>Перенос состояний сеансов ASP.NET и кэширование выводимых данных в кэш Azure для Redis.
 В кэше Azure для Redis есть поставщики состояния сеанса ASP.NET и кэширования вывода страниц. Чтобы перенести приложение, использующее те версии поставщиков, которые предназначены для управляемой службы кэша, сначала нужно удалить существующие разделы из файла web.config, а затем настроить версии поставщиков, которые использует кэш Azure для Redis. Инструкции по использованию поставщиков ASP.NET кэша Azure для Redis см. в статьях [ASP.NET Session State Provider for Azure Cache for Redis](cache-aspnet-session-state-provider.md) (Поставщик состояний сеансов ASP.NET для кэша Azure для Redis) и [ASP.NET Output Cache Provider for Azure Cache for Redis](cache-aspnet-output-cache-provider.md) (Поставщик кэша вывода ASP.NET для кэша Azure для Redis).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с руководствами, образцами и видеозаписями в [документации по кэшу Azure для Redis](https://azure.microsoft.com/documentation/services/cache/).
 

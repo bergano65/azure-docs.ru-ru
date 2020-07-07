@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.date: 07/10/2018
 ms.author: dobett
 ms.openlocfilehash: b53177d578768428665891704269e63bd8edb09e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73820179"
 ---
 # <a name="use-features-in-the-connected-factory-solution-accelerator-dashboard"></a>Использование функций панели мониторинга акселератора решений для подключенной фабрики
@@ -66,7 +65,7 @@ ms.locfileid: "73820179"
 
 1. Перейдите к узлу в дереве обозревателя сервера на основе унифицированной архитектуры OPC, который необходимо опубликовать.
 
-1. Щелкните узел правой кнопкой мыши. Нажмите **Опубликовать**:
+1. Щелкните узел правой кнопкой мыши. Нажмите кнопку **опубликовать**:
 
     [![Узел публикации ускорителя решений подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/publishnode-inline.png)](./media/iot-accelerators-connected-factory-dashboard/publishnode-expanded.png#lightbox)
 
@@ -107,7 +106,7 @@ ms.locfileid: "73820179"
 > [!NOTE]
 > Полностью удалить все ресурсы, связанные с акселератором решений, можно на сайте [azureiotsolutions.com](https://www.azureiotsolutions.com/Accelerators#dashboard). Не удаляйте группу ресурсов на портале.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы развернули рабочей акселератор решений, можно продолжить знакомство с акселератором решений Интернета вещей. Для этого ознакомьтесь со следующими статьями:
 

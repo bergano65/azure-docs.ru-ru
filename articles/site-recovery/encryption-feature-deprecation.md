@@ -9,10 +9,9 @@ ms.topic: article
 ms.date: 11/15/2019
 ms.author: rajanaki
 ms.openlocfilehash: 5e74466891a5926d8ae8feb3c1c48348ecf3cfe6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74135000"
 ---
 # <a name="deprecation-of-site-recovery-data-encryption-feature"></a>Нерекомендуемая функция шифрования данных Site Recovery
@@ -42,6 +41,6 @@ ms.locfileid: "74135000"
 После завершения начальной репликации в учетные записи хранения с включенным SSE виртуальные машины будут использовать шифрование неактивных данных с Azure Site Recovery.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Спланируйте выполнение действий по исправлению и выполните их в самом раннем случае. Если у вас есть запросы, касающиеся этой нерекомендуемости, обратитесь к служба поддержки Майкрософт. Дополнительные сведения о сценарии Hyper-V в Azure см. [здесь](hyper-v-vmm-architecture.md).
 

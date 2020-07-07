@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 11/14/2019
 ms.author: raynew
 ms.openlocfilehash: 6b68b4c943ec96620427978c2309f27e1fb1f217
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74082560"
 ---
 # <a name="prepare-network-mapping-for-hyper-v-vm-disaster-recovery-to-azure"></a>Подготовка сетевого сопоставления для аварийного восстановления виртуальных машин Hyper-V в Azure
@@ -60,7 +59,7 @@ ms.locfileid: "74082560"
 Чикаго | VMM-Chicago| VMNetwork1-Chicago | Сопоставляется с VMNetwork1-NewYork
  | | VMNetwork2-Chicago | Не сопоставлена
 
-В этом примере:
+В данном примере:
 
 - При создании реплики виртуальной машины для любой виртуальной машины, подключенной к VMNetwork1-NewYork, она будет подключена к VMNetwork1-Chicago.
 - Когда создается реплика виртуальной машины для VMNetwork2-NewYork или VMNetwork2-Chicago, она не будет подключена ни к какой сети.
@@ -88,7 +87,7 @@ SilverCloud2 | <p>Н/Д</p><p></p> | <p>LogicalNetwork1-NewYork</p><p>LogicalNet
 
 В следующей таблице показаны варианты, доступные при выборе целевой сети виртуальных машин, для этих параметров.
 
-**Выбрать** | **Защищенное облако** | **Защита облака** | **Доступная целевая сеть**
+**Select** | **Защищенное облако** | **Защита облака** | **Доступная целевая сеть**
 ---|---|---|---
 VMNetwork1-Chicago | SilverCloud1 | SilverCloud2 | Доступно
  | GoldCloud1 | GoldCloud2 | Доступно
@@ -120,7 +119,7 @@ VM2 (реплика VM1) | VMNetwork1-Chicago
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Set up IP addressing to connect to a secondary on-premises site after failover](hyper-v-vmm-networking.md) (Настройка назначения IP-адресов для подключения к дополнительному локальному сайту после отработки отказа).
 - [Подробнее](concepts-on-premises-to-azure-networking.md) о настройке назначения IP-адресов после отработки отказа в Azure.

@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
 ms.openlocfilehash: a61f7ff69e648262eb721eb61a98b09dbbee924c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73961431"
 ---
 # <a name="set-up-ip-addressing-to-connect-to-a-secondary-on-premises-site-after-failover"></a>Настройка назначения IP-адресов для подключения к локальному веб-сайту после отработки отказа
@@ -125,7 +124,7 @@ ms.locfileid: "73961431"
 ![Другой IP-адрес — после отработки отказа](./media/hyper-v-vmm-networking/network-design11.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Выполнение отработки отказа](hyper-v-vmm-failover-failback.md)
 

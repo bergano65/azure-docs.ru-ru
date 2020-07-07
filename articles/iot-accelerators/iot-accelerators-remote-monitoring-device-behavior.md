@@ -9,10 +9,9 @@ services: iot-accelerators
 ms.date: 01/29/2018
 ms.topic: conceptual
 ms.openlocfilehash: c39ca0a018bd22844cf7e5350e6d3586319aac16
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73890848"
 ---
 # <a name="implement-the-device-model-behavior"></a>Реализация поведения модели устройства
@@ -256,7 +255,7 @@ function main(context, previousState, previousProperties) {
 
 Сведения о локальном запуске службы имитирования устройств содержатся в статье [Running the service locally](https://github.com/Azure/device-simulation-dotnet#running-the-service-locally-eg-for-development-tasks) (Локальный запуск службы) на сайте GitHub. Локальный запуск службы упрощает отладку имитированного устройства перед его развертыванием в облако.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье описывается, как определить поведение собственной настраиваемой модели имитированного устройства. Из этой статьи вы узнали, как выполнять следующие задачи:
 

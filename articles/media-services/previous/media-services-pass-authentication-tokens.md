@@ -16,10 +16,9 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 15d4cbc372f5d5ec0d323170189329152ed436e3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73684944"
 ---
 # <a name="learn-how-clients-pass-tokens-to-the-azure-media-services-key-delivery-service"></a>Сведения о том, как клиенты передают маркеры в службу доставки ключей Служб мультимедиа Azure
@@ -54,6 +53,6 @@ ms.locfileid: "73684944"
 
 - С использованием альтернативного списка воспроизведения HTTP Live Streaming (HLS). Если необходимо настроить маркер аутентификации для воспроизведения HLS с шифрованием AES в Safari или iOS, вы не сможете отправить маркер напрямую. Дополнительные сведения об изменении списка воспроизведения для реализации этого сценария см. в [этой записи блога](https://azure.microsoft.com/blog/2015/03/06/how-to-make-token-authorized-aes-encrypted-hls-stream-working-in-safari/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

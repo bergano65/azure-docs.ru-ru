@@ -13,10 +13,9 @@ ms.custom: seodec18
 ms.date: 03/27/2019
 ms.author: mbaldwin
 ms.openlocfilehash: d83d688707baf6098d63dfde9b4181eb04fb9729
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "70881004"
 ---
 # <a name="azure-dedicated-hsm-supportability"></a>Поддержка выделенного устройства HSM Azure
@@ -89,12 +88,12 @@ ms.locfileid: "70881004"
 Уровни обслуживания в отношении поддержки Майкрософт см. на странице [Планы поддержки Azure](https://azure.microsoft.com/support/plans/).
 Уровни обслуживания в отношении поддержки Gemalto см. в статье [Основные сведения о поддержке Gemalto](https://azure.microsoft.com/support/plans/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Рекомендуем хорошо разобраться в таких основных концепциях, как высокий уровень доступности и безопасность, прежде чем приступать к подготовке устройств, проектированию или развертыванию приложений.
 
 * [Архитектура развертывания](deployment-architecture.md)
 * [Обеспечение высокого уровня доступности](high-availability.md)
 * [Физическая безопасность](physical-security.md)
-* [Сетевое взаимодействие](networking.md)
+* [Сеть](networking.md)
 

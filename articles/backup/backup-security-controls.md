@@ -4,10 +4,9 @@ description: Сведения об элементах управления бе�
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.openlocfilehash: 0e3f5ce942ea8aef9bf5eb98883ae1e72a7ab239
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74172142"
 ---
 # <a name="security-controls-for-azure-backup"></a>Элементы управления безопасностью для Azure Backup

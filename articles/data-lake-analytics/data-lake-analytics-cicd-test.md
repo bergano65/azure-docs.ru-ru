@@ -11,10 +11,9 @@ ms.topic: conceptual
 ms.workload: big-data
 ms.date: 08/30/2019
 ms.openlocfilehash: d568a267952a22d2e7a6b7acb6d54cf41f803367
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "70913963"
 ---
 # <a name="test-your-azure-data-lake-analytics-code"></a>Тестирование кода Azure Data Lake Analytics
@@ -55,7 +54,7 @@ Azure Data Lake предоставляет язык [U-SQL](data-lake-analytics-
 
 ### <a name="run-test-cases-in-visual-studio"></a>Запуск тестовых случаев в Visual Studio
 
-Тестовый проект сценария U-SQL создается на базе платформы модульного тестирования C#. После построения проекта выберите **тест** > **Windows** > **Test Explorer**. Тестовые случаи можно запускать из **обозревателя тестов**. Можно также щелкнуть правой кнопкой мыши CS-файл в модульном тесте и выбрать пункт **запустить тесты**.
+Тестовый проект сценария U-SQL создается на базе платформы модульного тестирования C#. После построения проекта выберите **тест**  >  **Windows**  >  **Test Explorer**. Тестовые случаи можно запускать из **обозревателя тестов**. Можно также щелкнуть правой кнопкой мыши CS-файл в модульном тесте и выбрать пункт **запустить тесты**.
 
 ## <a name="test-c-udos"></a>Тестирование определяемых пользователем операторов C#
 
@@ -108,7 +107,7 @@ Azure Data Lake предоставляет язык [U-SQL](data-lake-analytics-
 
 ### <a name="run-test-cases-in-visual-studio"></a>Запуск тестовых случаев в Visual Studio
 
-После построения проекта выберите **тест** > **Windows** > **Test Explorer**. Тестовые случаи можно запускать из **обозревателя тестов**. Можно также щелкнуть правой кнопкой мыши CS-файл в модульном тесте и выбрать пункт **запустить тесты**.
+После построения проекта выберите **тест**  >  **Windows**  >  **Test Explorer**. Тестовые случаи можно запускать из **обозревателя тестов**. Можно также щелкнуть правой кнопкой мыши CS-файл в модульном тесте и выбрать пункт **запустить тесты**.
 
 ## <a name="run-test-cases-in-azure-pipelines"></a>Выполнение тестовых случаев в Azure Pipelines<a name="run-test-cases-in-azure-devops"></a>
 
@@ -116,7 +115,7 @@ Azure Data Lake предоставляет язык [U-SQL](data-lake-analytics-
 
 ### <a name="run-u-sql-test-cases-in-azure-pipelines"></a>Выполнение тестовых случаев U-SQL в Azure Pipelines
 
-Для теста U-SQL убедитесь, что вы загрузили `CPPSDK` на компьютер сборки, а затем передадите `CPPSDK` путь к `USqlScriptTestRunner(cppSdkFolderFullPath: @"")`.
+Для теста U-SQL убедитесь, что вы загрузили `CPPSDK` на компьютер сборки, а затем передадите `CPPSDK` путь к `USqlScriptTestRunner(cppSdkFolderFullPath: @"")` .
 
 #### <a name="what-is-cppsdk"></a>Что такое CPPSDK?
 
@@ -132,7 +131,7 @@ CPPSDK — это пакет, включающий Microsoft Visual C++ 14 и Wi
 
 1. Заархивировать папку, содержащую библиотеки CPPSDK.
 
-1. Добавьте ZIP-файл в систему управления версиями ZIP-файл гарантирует возврат всех библиотек в папке CPPSDK, чтобы файлы не игнорировались из- `.gitignore` за файла.
+1. Добавьте ZIP-файл в систему управления версиями ZIP-файл гарантирует возврат всех библиотек в папке CPPSDK, чтобы файлы не игнорировались из-за `.gitignore` файла.
 
 1. Распакуйте ZIP-файл в конвейер сборки.
 
@@ -148,7 +147,7 @@ CPPSDK — это пакет, включающий Microsoft Visual C++ 14 и Wi
 
 Если вы ссылаетесь на них с помощью [Microsoft.Azure.DataLake.USQL.Interfaces пакета Nuget ](https://www.nuget.org/packages/Microsoft.Azure.DataLake.USQL.Interfaces/), добавьте задачу восстановления NuGet в конвейер сборки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка конвейера CI/CD для Azure Data Lake Analytics](data-lake-analytics-cicd-overview.md)
 - [Запуск скриптов U-SQL на локальном компьютере](data-lake-analytics-data-lake-tools-local-run.md)

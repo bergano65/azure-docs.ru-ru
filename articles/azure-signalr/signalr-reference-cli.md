@@ -7,10 +7,9 @@ ms.topic: reference
 ms.date: 11/13/2019
 ms.author: zhshang
 ms.openlocfilehash: 3c28781362e60d22b0d9a4e3754daaa24e5b61ee
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74158126"
 ---
 # <a name="azure-cli-reference"></a>Справочник по Azure CLI
@@ -19,7 +18,7 @@ ms.locfileid: "74158126"
 
 | | |
 |-|-|
-|**Создать**||
+|**Создание**||
 | [Создание службы SignalR и группы ресурсов](scripts/signalr-cli-create-service.md) | Создает ресурс службы Azure SignalR со случайным именем в новой группе ресурсов.  |
 |**Интеграция**||
 | [Создание службы SignalR и веб-приложения, настроенного для использования SignalR](scripts/signalr-cli-create-with-app-service.md) | Создает ресурс службы Azure SignalR со случайным именем в новой группе ресурсов. Также добавляет новое веб-приложение и план службы приложений для размещения веб-приложения ASP.NET Core, которое использует службу SignalR. Веб-приложение настраивается с использованием параметра приложения для подключения к новому ресурсу службы SignalR. |

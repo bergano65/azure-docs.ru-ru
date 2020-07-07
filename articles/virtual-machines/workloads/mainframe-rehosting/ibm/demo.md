@@ -13,10 +13,9 @@ ms.date: 02/22/2019
 tags: ''
 keywords: ''
 ms.openlocfilehash: 66f80c79219090c27da37dfc1d9149df5604961f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "68841388"
 ---
 # <a name="set-up-an-application-developers-controlled-distribution-adcd-in-ibm-zdt-v1"></a>Настройка управляемого распределения для разработчиков приложений (АДКД) в IBM зд&T v1
@@ -83,7 +82,7 @@ ms.locfileid: "68841388"
 6. Запустите отправку в созданный каталог виртуальных машин Azure, который станет хранилищем образов для зд&T.
 
     > [!NOTE]
-    > Убедитесь, что **адкдтулс. XML** включается в загрузку в каталог **Home/МЮСЕРИД/ЗДТ/адкд/nov2017** . Оно понадобится вам позднее.
+    > Убедитесь, что **ADCDTOOLS.XML** включена в отправку в каталог **Home/мюсерид/ЗДТ/адкд/nov2017** . Оно понадобится вам позднее.
 
 7. Дождитесь отправки файлов, что может занять некоторое время в зависимости от вашего подключения к Azure.
 
@@ -105,7 +104,7 @@ ms.locfileid: "68841388"
         /opt/ibm/zDT/bin/startServer
     ```
 2. Запишите вывод URL-адреса с помощью команды и используйте этот URL-адрес для доступа к веб-серверу. Он выглядит примерно так:
-     > HTTPS://(имя виртуальной машины или IP-адрес): 9443/ЗДТМК/index. HTML
+     > HTTPS://(имя виртуальной машины или IP-адрес): 9443/ЗДТМК/index.html.
      >
      > Помните, что ваш веб-доступ использует порт 9443. Используйте этот параметр для входа на веб-сервер. ИДЕНТИФИКАТОРом пользователя для зд&T является **здтадмин** , а пароль — **Password**.
 
@@ -186,7 +185,7 @@ ms.locfileid: "68841388"
 
 Поздравляем! Теперь вы используете среду IBM мэйнфреймов в Azure.
 
-## <a name="learn-more"></a>Дополнительные сведения
+## <a name="learn-more"></a>Подробнее
 
 - [Миграция мэйнфреймов: мифы и факты](https://docs.microsoft.com/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/myths-and-facts)
 - [IBM DB2 Пурескале в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/ibm-db2-purescale-azure)

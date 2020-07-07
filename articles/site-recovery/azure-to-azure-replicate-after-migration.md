@@ -9,10 +9,9 @@ ms.topic: article
 ms.date: 11/14/2019
 ms.author: raynew
 ms.openlocfilehash: 874c282ff878126297dc46ca0e7a4c19910e40a1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74159109"
 ---
 # <a name="set-up-disaster-recovery-for-azure-vms-after-migration-to-azure"></a>Настройка аварийного восстановления виртуальных машин Azure после миграции в Azure 
@@ -82,7 +81,7 @@ ms.locfileid: "74159109"
         ```
 2. Перед настройкой репликации перезапустите виртуальную машину.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Ознакомьтесь с разрешениями по устранению неполадок](site-recovery-extension-troubleshoot.md) для расширения Site Recovery в АГЕНТЕ виртуальной машины Azure.
 Ознакомьтесь с [кратким руководством по репликации](azure-to-azure-quickstart.md) виртуальных машин Azure в дополнительный регион.

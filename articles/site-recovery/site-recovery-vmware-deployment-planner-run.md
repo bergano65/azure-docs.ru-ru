@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 4/15/2019
 ms.author: mayg
 ms.openlocfilehash: 044e5c5df8e0af67e4717b864de1e31fc2520408
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73953282"
 ---
 # <a name="run-the-deployment-planner-for-vmware-disaster-recovery"></a>Запуск Планировщик развертывания аварийного восстановления VMware
@@ -95,7 +94,7 @@ ASRDeploymentPlanner.exe -Operation StartProfiling /?
 <!-- Maximum number of vms supported-->
 <add key="MaxVmsSupported" value="1000"/>
 ```
-Используя параметры по умолчанию, для профилирования, например, 1500 виртуальных машин создайте два файла VMList.txt. Один файл должен содержать 1000 виртуальных машин, а второй — 500. Запустите два экземпляра Планировщик развертывания Azure Site Recovery: один с списком vmlist1. txt, а другой — с списком vmlist2. txt. Профилируемые данные обеих виртуальных машин VMList можно хранить в одной папке.
+Используя параметры по умолчанию, для профилирования, например, 1500 виртуальных машин создайте два файла VMList.txt. Один файл должен содержать 1000 виртуальных машин, а второй — 500. Запустите два экземпляра Планировщик развертывания Azure Site Recovery, один с VMList1.txt и другой с VMList2.txt. Профилируемые данные обеих виртуальных машин VMList можно хранить в одной папке.
 
 Мы убедились, что в зависимости от конфигурации оборудования (особенно в зависимости от размера ОЗУ сервера, на котором запускается средство для создания отчетов), операция может завершиться ошибкой из-за нехватки памяти. При наличии хорошего оборудования можно увеличить значение параметра MaxVMsSupported.  
 
@@ -290,5 +289,5 @@ ASRDeploymentPlanner.exe -Operation GetThroughput -Directory  E:\vCenter1_Profil
 >
 >  4. Измените параметры Site Recovery на сервере обработки, чтобы [увеличить объем пропускной способности сети, необходимой для репликации](./site-recovery-plan-capacity-vmware.md#control-network-bandwidth).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Анализ созданного отчета](site-recovery-vmware-deployment-planner-analyze-report.md).

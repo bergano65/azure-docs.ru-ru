@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
 ms.openlocfilehash: c410ac7f41adb623a7198320a1edced097778569
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73826241"
 ---
 # <a name="frequently-asked-questions-for-remote-monitoring-solution-accelerator"></a>Часто задаваемые вопросы об акселераторе решения для удаленного мониторинга
@@ -40,9 +39,9 @@ ms.locfileid: "73826241"
 
 ### <a name="where-can-i-find-information-about-the-previous-version-of-the-remote-monitoring-solution"></a>Где можно найти сведения о предыдущей версии решения для удаленного мониторинга?
 
-Предыдущая версия акселератора решения для удаленного мониторинга была известна как предварительно сконфигурированное решение удаленного мониторинга IoT Suite. Архивную документацию можно найти по адресу [https://docs.microsoft.com/previous-versions/azure/iot-suite/](https://docs.microsoft.com/previous-versions/azure/iot-suite/).
+Предыдущая версия акселератора решения для удаленного мониторинга была известна как предварительно сконфигурированное решение удаленного мониторинга IoT Suite. Архивную документацию можно найти по адресу [https://docs.microsoft.com/previous-versions/azure/iot-suite/](https://docs.microsoft.com/previous-versions/azure/iot-suite/) .
 
-### <a name="next-steps"></a>Дальнейшие действия
+### <a name="next-steps"></a>Дальнейшие шаги
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 

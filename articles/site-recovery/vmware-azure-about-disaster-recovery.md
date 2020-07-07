@@ -7,10 +7,9 @@ ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
 ms.openlocfilehash: 589dda80d68fba73a729da4b6e59270cc09c18cb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73954391"
 ---
 # <a name="about-disaster-recovery-of-vmware-vms-to-azure"></a>Сведения об аварийном восстановлении виртуальных машин VMware в Azure
@@ -58,7 +57,7 @@ ms.locfileid: "73954391"
 2. Создайте сеть Azure, к которой будут присоединяться виртуальные машины Azure при их создании из учетных записей хранения или управляемых дисков после отработки отказа.
 3. Настройте хранилище Служб восстановления для Site Recovery. Хранилище находится на портале Azure и используется для развертывания, настройки, управления, мониторинга и устранения неполадок развертывания Site Recovery.
 
-*Нужна дополнительная помощь?*
+*Требуется дополнительная помощь?*
 
 Узнайте, как настроить Azure, [проверив учетную запись](tutorial-prepare-azure.md#verify-account-permissions), создав [сеть](tutorial-prepare-azure.md#set-up-an-azure-network)и [настроив хранилище](tutorial-prepare-azure.md#create-a-recovery-services-vault).
 
@@ -76,7 +75,7 @@ ms.locfileid: "73954391"
 2. Если вы не сделали это ранее, проверьте совместимость инфраструктуры VMware.
 3. Убедитесь, что вы можете подключиться к виртуальным машинам Azure после отработки отказа. Настройте RDP на локальных компьютерах Windows или SSH на компьютерах Linux.
 
-*Нужна дополнительная помощь?*
+*Требуется дополнительная помощь?*
 - Подготовьте учетную запись для [автоматического обнаружения](vmware-azure-tutorial-prepare-on-premises.md#prepare-an-account-for-automatic-discovery) и [установки службы Mobility](vmware-azure-tutorial-prepare-on-premises.md#prepare-an-account-for-mobility-service-installation).
 - [Проверьте](vmware-azure-tutorial-prepare-on-premises.md#check-vmware-requirements) совместимость параметров VMware.
 - [Подготовьтесь](vmware-azure-tutorial-prepare-on-premises.md#prepare-to-connect-to-azure-vms-after-failover), чтобы обеспечить возможность подключения после отработки отказа в Azure.
@@ -99,7 +98,7 @@ ms.locfileid: "73954391"
 5. **Политика репликации**. Укажите, как должна выполняться репликация. К числу этих параметров относится то, как часто нужно создавать и хранить точки восстановления и следует ли создавать моментальные снимки с согласованием приложений.
 6. **Включите репликацию**. Включите репликацию для локальных компьютеров. Если вы создали учетную запись для установки службы Mobility, то установка начнется при запуске репликации для компьютера. 
 
-*Нужна дополнительная помощь?*
+*Требуется дополнительная помощь?*
 
 - Краткое пошаговое руководство приведено в [руководстве по VMware](vmware-azure-tutorial.md) и статье [Настройка аварийного восстановления в Azure для локальных физических серверов](physical-azure-disaster-recovery.md).
 - [Дополнительные сведения](vmware-azure-set-up-source.md) о настройке исходной среды.
@@ -119,6 +118,6 @@ ms.locfileid: "73954391"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После выполнения репликации следует [запустить тестовое аварийное восстановление](tutorial-dr-drill-azure.md), чтобы убедиться, что отработка отказа работает правильно. 

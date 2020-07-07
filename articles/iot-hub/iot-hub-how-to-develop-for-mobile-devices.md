@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 04/16/2018
 ms.author: robinsh
 ms.openlocfilehash: 945b02003a443c04e692fdc06ca5714de362d074
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "68883081"
 ---
 # <a name="develop-for-mobile-devices-using-azure-iot-sdks"></a>Разработка для мобильных устройств с помощью пакетов SDK для Центра Интернета вещей Azure
@@ -50,7 +49,7 @@ ms.locfileid: "68883081"
 * [Send telemetry from a device to an IoT hub (Swift)](quickstart-send-telemetry-android.md) (Отправка данных телеметрии с устройства в Центр Интернета вещей (Swift))  
 * [Краткое руководство. Управление устройством](quickstart-control-device-android.md) 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Справочник по REST API Центра Интернета вещей](https://docs.microsoft.com/rest/api/iothub/)
 * [Исходный код пакета SDK для Интернета вещей Azure для C](https://github.com/Azure/azure-iot-sdk-c)

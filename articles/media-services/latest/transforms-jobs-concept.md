@@ -13,10 +13,9 @@ ms.topic: article
 ms.date: 08/19/2019
 ms.author: juliako
 ms.openlocfilehash: ab99b974aed6f8cd5e1da2ee9b427f593b405889
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73571238"
 ---
 # <a name="transforms-and-jobs-in-media-services"></a>Преобразования и задания в службах мультимедиа
@@ -114,12 +113,12 @@ ms.locfileid: "73571238"
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Коды ошибок](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode)
 * [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Перед началом разработки ознакомьтесь [с разработкой с помощью API-интерфейсов служб мультимедиа v3](media-services-apis-overview.md) (содержит сведения о доступе к API, соглашения об именовании и т. д.).
 - Ознакомьтесь с этими учебниками:

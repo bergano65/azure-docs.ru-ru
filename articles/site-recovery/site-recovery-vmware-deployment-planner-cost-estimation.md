@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 7/29/2019
 ms.author: mayg
 ms.openlocfilehash: 27678fff1c0322f9755e7726026c73934810d5d6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73953342"
 ---
 # <a name="review-cost-estimations-in-the-vmware-deployment-planner"></a>Обзор оценок затрат в Планировщик развертывания VMware 
@@ -150,7 +149,7 @@ eastus, eastus2, westus, centralus, northcentralus, southcentralus, northeurope,
 ## <a name="supported-currencies"></a>Поддерживаемые валюты
 При помощи планировщика развертывания Azure Site Recovery можно создать отчет с использованием любой из следующих валют:
 
-|Валюта|Имя||Валюта|Имя||Валюта|Имя|
+|Валюта|name||Валюта|name||Валюта|name|
 |---|---|---|---|---|---|---|---|
 |ARS|Аргентинское песо ($)||AUD|Австралийский доллар ($)||BRL|Бразильский реал (R$)|
 |CAD|Канадский доллар ($)||CHF|Швейцарский франк (chf)||DKK|Датская крона (kr)|
@@ -161,5 +160,5 @@ eastus, eastus2, westus, centralus, northcentralus, southcentralus, northeurope,
 |SAR|Саудовский риял (SR)||SEK|Шведская крона (kr)||TWD|Тайваньский доллар (NT$)|
 |TRY|Турецкая лира (TL)||USD| Доллар США ($)||ZAR|Южноафриканский рэнд (R)|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с дополнительными сведениями о защите [виртуальных машин VMware в Azure с помощью Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/tutorial-vmware-to-azure).

@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.date: 06/10/2019
 ms.author: dobett
 ms.openlocfilehash: c868aa0f1c2449ccf163523c9ded25a31d1d84c4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73820112"
 ---
 # <a name="what-is-connected-factory-iot-solution-accelerator"></a>Общие сведения об акселераторе решений IoT для подключенной фабрики
@@ -63,6 +62,6 @@ ms.locfileid: "73820112"
 - Вы можете настроить решение в соответствии с потребностями конкретной организации.
 - Полный исходный код решения вы найдете на сайте GitHub. См. также репозиторий [предварительно настроенного решения подключенной фабрики](https://github.com/Azure/azure-iot-connected-factory).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о комплекте Solution Accelerator для подключенной фабрики см. в руководстве по использованию [облачного решения для управления устройствами IOT](quickstart-connected-factory-deploy.md).

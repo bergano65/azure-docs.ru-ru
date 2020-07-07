@@ -9,10 +9,9 @@ ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
 ms.openlocfilehash: 231d1efa02ec80e8ad56a8895d4262d774480111
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73824103"
 ---
 # <a name="deploying-dependencies-for-local-development"></a>Развертывание зависимостей для локальной разработки
@@ -50,7 +49,7 @@ ms.locfileid: "73824103"
 2. Кроме того, можно развернуть частный клиент AAD, перезапустить сценарий и выбрать его для использования.
 3. Продолжить без проверки подлинности.  Так как вы используете микрослужбы локально, это приемлемо, но не имитирует рабочие среды.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда службы двойника OPC успешно развернуты в существующем проекте, мы предлагаем следующий шаг:
 

@@ -9,10 +9,9 @@ ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
 ms.openlocfilehash: 5da3a2e5d003a191bff66af6599cae4d34ab60c6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74038089"
 ---
 # <a name="azcopy"></a>azcopy
@@ -21,9 +20,9 @@ AzCopy — это программа командной строки, котор
 
 ## <a name="synopsis"></a>Краткий обзор
 
-Общий формат команд: `azcopy [command] [arguments] --[flag-name]=[flag-value]`.
+Общий формат команд: `azcopy [command] [arguments] --[flag-name]=[flag-value]` .
 
-Чтобы сообщить о проблемах или узнать больше об этом средстве, [https://github.com/Azure/azure-storage-azcopy](https://github.com/Azure/azure-storage-azcopy)см. раздел.
+Чтобы сообщить о проблемах или узнать больше об этом средстве, см [https://github.com/Azure/azure-storage-azcopy](https://github.com/Azure/azure-storage-azcopy) . раздел.
 
 ## <a name="related-conceptual-articles"></a>Связанные концептуальные статьи
 

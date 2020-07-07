@@ -16,10 +16,9 @@ ms.workload: na
 ms.date: 05/02/2018
 ms.author: robreed
 ms.openlocfilehash: f7edbd0fd8791829a2d9ffaa4e7c0ee0e561cc5d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73748969"
 ---
 # <a name="pass-credentials-to-the-azure-dscextension-handler"></a>Передача учетных данных в обработчик Azure DSCExtension
@@ -85,7 +84,7 @@ $vm | Update-AzVM
 
 Этот процесс отличается от [использования безопасных конфигураций без обработчика расширений](/powershell/scripting/dsc/pull-server/securemof). Среда Azure предоставляет способ безопасной передачи данных конфигурации с помощью сертификатов. При использовании обработчика расширений DSC нет необходимости указывать запись **$CertificatePath** либо **$CertificateID**/ **$Thumbprint** в **ConfigurationData**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с [общими сведениями об обработчике расширения Desired State Configuration в Azure](dsc-overview.md).
 - Изучите [шаблон Azure Resource Manager для расширения DSC](dsc-template.md).

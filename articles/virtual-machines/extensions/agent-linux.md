@@ -16,10 +16,9 @@ ms.date: 10/17/2016
 ms.author: akjosh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 5f22fbd77069488e7aaf490f93f42cde747444a8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74073854"
 ---
 # <a name="understanding-and-using-the-azure-linux-agent"></a>Что такое агент Linux для Azure и как его использовать
@@ -42,7 +41,7 @@ ms.locfileid: "74073854"
   * Управление диском ресурсов
   * Форматирование и подключение диска ресурсов
   * Настройка пространства подкачки
-* **Сетевое взаимодействие**
+* **Сеть**
   
   * Управляет маршрутами для улучшения совместимости с DHCP-серверами платформы
   * Обеспечивает стабильность имени сетевого интерфейса
@@ -68,7 +67,7 @@ ms.locfileid: "74073854"
 * Прилагаемый DVD, используемый во время загрузки, для развернутых приложений IaaS. На этом DVD содержится OVF-совместимый файл конфигурации, включающий всю информацию для подготовки кроме самих пар ключей SSH.
 * Чтобы получить развертывание и настройку топологии, используется конечная точка TCP с REST API.
 
-## <a name="requirements"></a>Требования
+## <a name="requirements"></a>Requirements (Требования)
 Следующие системы протестированы и гарантированно поддерживают работу с агентом Linux для Azure:
 
 > [!NOTE]
@@ -131,7 +130,7 @@ ms.locfileid: "74073854"
 * daemon: запуск waagent в качестве управляющей программы для контроля взаимодействия с платформой. Этот аргумент указывается для waagent в сценарии инициализации waagent.
 * start: запуск waagent как фонового процесса
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 Файл конфигурации (/ etc/waagent.conf) определяет действия waagent. Ниже показан пример файла конфигурации.
 
     ```
@@ -204,14 +203,14 @@ Default: y
 ```
 Если задан, waagent отслеживает виртуальную машину Linux на предмет изменений имени узла (как значение, возвращаемое командой "hostname") и автоматически обновляет сетевую конфигурацию образа в соответствии с изменениями. Для передачи изменения имени на DNS-серверы сеть на виртуальной машине будет перезапущена. Это приведет к кратковременной потере подключения к Интернету.
 
-**Provisioning.DecodeCustomData**  
+**Provisioning.DecodeCustomData;**  
 ```
 Type: Boolean  
 Default: n
 ```
 Если задан, waagent декодирует пользовательские данные CustomData из кодировки Base64.
 
-**Provisioning.ExecuteCustomData**  
+**Provisioning.ExecuteCustomData.**  
 ```
 Type: Boolean  
 Default: n

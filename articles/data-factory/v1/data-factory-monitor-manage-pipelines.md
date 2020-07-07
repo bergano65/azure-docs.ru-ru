@@ -12,10 +12,9 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/30/2018
 ms.openlocfilehash: 44aadecfa80524345932c03abb51e8ebd040a902
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73666981"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-azure-portal-and-powershell"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью портала Azure и PowerShell
@@ -87,7 +86,7 @@ ms.locfileid: "73666981"
 
 <table>
 <tr>
-    <th align="left">Состояние</th><th align="left">Подсостояние</th><th align="left">Описание</th>
+    <th align="left">Область</th><th align="left">Подсостояние</th><th align="left">Описание:</th>
 </tr>
 <tr>
     <td rowspan="8">Waiting</td><td>ScheduleTime</td><td>Время для выполнения среза еще не пришло.</td>
@@ -121,7 +120,7 @@ ms.locfileid: "73666981"
 <td>Срез обрабатывается.</td>
 </tr>
 <tr>
-<td rowspan="4">Failed</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
+<td rowspan="4">Ошибка</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
 </tr>
 <tr>
 <td>Отменено</td><td>Срез был отменен пользователем.</td>
@@ -132,13 +131,13 @@ ms.locfileid: "73666981"
 <tr>
 <td>-</td><td>Не удалось создать и/или проверить срез.</td>
 </tr>
-<td>Готово</td><td>-</td><td>Срез готов к использованию.</td>
+<td>Ready</td><td>-</td><td>Срез готов к использованию.</td>
 </tr>
 <tr>
-<td>Пропущено</td><td>None</td><td>Срез не обрабатывается.</td>
+<td>Пропущено</td><td>Отсутствуют</td><td>Срез не обрабатывается.</td>
 </tr>
 <tr>
-<td>None</td><td>-</td><td>Срез, который ранее существовал с другим состоянием, но был сброшен.</td>
+<td>Отсутствуют</td><td>-</td><td>Срез, который ранее существовал с другим состоянием, но был сброшен.</td>
 </tr>
 </table>
 

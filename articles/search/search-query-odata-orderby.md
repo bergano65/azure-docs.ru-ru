@@ -20,10 +20,9 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 99ec639b88f3334530243242aadfa0ab52a40df0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74113147"
 ---
 # <a name="odata-orderby-syntax-in-azure-cognitive-search"></a>Синтаксис $orderby OData в Azure Когнитивный поиск
@@ -50,11 +49,11 @@ sortable_function ::= geo_distance_call | 'search.score()'
 > [!NOTE]
 > Полный EBNF см. в [справочнике по синтаксису выражений OData для Azure когнитивный Поиск](search-query-odata-syntax-reference.md) .
 
-Каждое предложение имеет критерий сортировки, при необходимости за которым следует направление сортировки`asc` (для по возрастанию или `desc` по убыванию). Если не указать направление, по умолчанию используется значение по возрастанию. Критерий сортировки может быть либо путем к `sortable` полю, либо вызовом либо [`geo.distance`](search-query-odata-geo-spatial-functions.md) [`search.score`](search-query-odata-search-score-function.md) функций, либо.
+Каждое предложение имеет критерий сортировки, при необходимости за которым следует направление сортировки ( `asc` для по возрастанию или `desc` по убыванию). Если не указать направление, по умолчанию используется значение по возрастанию. Критерий сортировки может быть либо путем к полю, `sortable` либо вызовом либо [`geo.distance`](search-query-odata-geo-spatial-functions.md) функций, либо [`search.score`](search-query-odata-search-score-function.md) .
 
 Если несколько документов имеют одинаковые условия сортировки и `search.score` функция не используется (например, если сортировка выполняется по числовому `Rating` полю, а все три документа имеют оценку 4), то в убывающем порядке они будут разорваны. Если оценки документа одинаковы (например, если в запросе не указан запрос полнотекстового поиска), относительный порядок связанных документов является неопределенным.
 
-Вы можете определить несколько условий сортировки. Порядок выражений определяет окончательный порядок сортировки. Например, для сортировки по убыванию по показателям, за которыми следует оценка, синтаксис будет выглядеть `$orderby=search.score() desc,Rating desc`так:.
+Вы можете определить несколько условий сортировки. Порядок выражений определяет окончательный порядок сортировки. Например, для сортировки по убыванию по показателям, за которыми следует оценка, синтаксис будет выглядеть так `$orderby=search.score() desc,Rating desc` :.
 
 Синтаксис для `geo.distance` в **$orderby** такой же, как и в **$filter**. При использовании функции `geo.distance` в **$orderby** поле, к которому она применяется, должно быть сортируемым (`sortable`) и иметь тип `Edm.GeographyPoint`.
 
@@ -78,7 +77,7 @@ sortable_function ::= geo_distance_call | 'search.score()'
 
     $orderby=search.score() desc,Rating desc,geo.distance(Location, geography'POINT(-122.131577 47.678581)') asc
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дальнейшие шаги  
 
 - [Работа с результатами поиска в Azure Когнитивный поиск](search-pagination-page-layout.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)

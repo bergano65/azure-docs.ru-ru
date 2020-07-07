@@ -8,10 +8,9 @@ ms.topic: guide
 ms.date: 10/16/2019
 ms.author: mebeatty
 ms.openlocfilehash: a4a5b058666fab3e9048a7d92726dccd1360ff37
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74184255"
 ---
 # <a name="azure-internet-analyzer-faq-preview"></a>Вопросы и ответы по Azure Internet Analyzer (Предварительная версия)
@@ -103,6 +102,6 @@ ms.locfileid: "74184255"
 
 Azure применяет [надежные процедуры обеспечения безопасности и соответствует целому ряду стандартов](https://azure.microsoft.com/support/trust-center/). Доступ к данным будет только у вас и вашей команды. Сотрудникам Майкрософт может предоставляться ограниченный доступ к данным только при определенных условиях и с вашего ведома. Оно шифруется при передаче и при хранении.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в нашем [обзоре Internet Analyzer](internet-analyzer-overview.md).

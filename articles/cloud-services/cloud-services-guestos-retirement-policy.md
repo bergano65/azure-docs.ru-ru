@@ -14,10 +14,9 @@ ms.workload: tbd
 ms.date: 9/20/2017
 ms.author: raiye
 ms.openlocfilehash: fbe9b3379799fe3cf0a56d921ab257bc87606ca9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "68945447"
 ---
 # <a name="azure-guest-os-supportability-and-retirement-policy"></a>Политика поддержки и прекращения использования гостевой ОС Azure
@@ -77,5 +76,5 @@ ms.locfileid: "68945447"
 
 Если архитектура веб-приложения зависит от базовых функций операционной системы, используйте возможности, поддерживаемые платформой, например [задачи запуска](cloud-services-startup-tasks.md) или другие механизмы расширяемости. Кроме того, можно использовать [виртуальные машины Azure](https://azure.microsoft.com/documentation/scenarios/virtual-machines/) (IaaS — инфраструктура как услуга), где пользователь ответственен за поддержку базовой операционной системы.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите последние [выпуски гостевой ОС](cloud-services-guestos-update-matrix.md).

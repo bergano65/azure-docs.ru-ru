@@ -17,10 +17,9 @@ ms.date: 05/13/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.openlocfilehash: b3db86137207ae726c7befc393f62590fd1456d7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74008267"
 ---
 # <a name="usage-and-insights-report-in-the-azure-active-directory-portal"></a>Отчет об использовании и аналитике на портале Azure Active Directory
@@ -31,7 +30,7 @@ ms.locfileid: "74008267"
 *   Какие приложения имеют самые неудачные попытки входа? 
 *   Каковы основные ошибки входа для каждого приложения?
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Предварительные условия 
 
 Чтобы получить доступ к данным из отчета об использовании и Insights, вам потребуется:
 
@@ -41,7 +40,7 @@ ms.locfileid: "74008267"
 
 ## <a name="access-the-usage-and-insights-report"></a>Доступ к отчету об использовании и Insights
 
-1. Перейдите к [портал Azure](https://portal.azure.com).
+1. Перейдите на [портал Azure](https://portal.azure.com).
 2. Выберите нужный каталог, а затем выберите **Azure Active Directory** и выберите **корпоративные приложения**.
 3. В разделе **действие** выберите **Использование & Insights** , чтобы открыть отчет. 
 
@@ -60,6 +59,6 @@ ms.locfileid: "74008267"
 
 ![Отчет об использовании и аналитике](./media/concept-usage-insights-report/usage-and-insights-report.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Отчет о входе](concept-sign-ins.md)

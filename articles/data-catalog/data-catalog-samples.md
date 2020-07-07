@@ -7,10 +7,9 @@ ms.author: jasonh
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.openlocfilehash: 7d0e27802745dda62f87e412053650907e9b812c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "68950159"
 ---
 # <a name="azure-data-catalog-developer-samples"></a>Примеры для разработчиков, использующие Каталог данных Azure
@@ -47,5 +46,5 @@ ms.locfileid: "68950159"
 
    В этом примере показано, как можно программно публиковать сведения о связях в каталоге данных.
    
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Справочник по REST API каталога данных Azure](/rest/api/datacatalog/)
