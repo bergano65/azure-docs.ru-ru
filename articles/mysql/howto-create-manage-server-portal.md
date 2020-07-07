@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
 ms.openlocfilehash: c0bee0b628a49746a19545d14b8b8761d0e880d2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80062404"
 ---
 # <a name="manage-an-azure-database-for-mysql-server-using-the-azure-portal"></a>Управление базой данных Azure для сервера MySQL с помощью портал Azure
@@ -90,7 +90,7 @@ ms.locfileid: "80062404"
 
 1. Выберите сервер в портал Azure. В окне **обзора** выберите **Удалить**.
 
-    !["Удалить"](./media/howto-create-manage-server-portal/overview-delete.png)
+    ![удалить](./media/howto-create-manage-server-portal/overview-delete.png)
 
 2. Введите имя сервера в поле ввода, чтобы убедиться, что это сервер, который требуется удалить.
 
@@ -102,6 +102,6 @@ ms.locfileid: "80062404"
 3. Выберите команду **Удалить**.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Сведения о [резервном копировании и восстановлении сервера](howto-restore-server-portal.md)
 - Сведения о [параметрах настройки и мониторинга в службе "база данных Azure для MySQL](concepts-monitoring.md) "

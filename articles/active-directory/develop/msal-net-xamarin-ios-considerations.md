@@ -14,16 +14,16 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 7125559dd39e1626634dae7c45b0744bfff57d8c
-ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82652659"
 ---
 # <a name="considerations-for-using-xamarin-ios-with-msalnet"></a>Рекомендации по использованию Xamarin iOS с MSAL.NET
 При использовании библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET) в Xamarin iOS необходимо выполнить следующие действия: 
 
-- Переопределите и реализуйте `OpenUrl` функцию `AppDelegate`в.
+- Переопределите и реализуйте `OpenUrl` функцию в `AppDelegate` .
 - Включите группы цепочки ключей.
 - Включите совместное использование кэша маркеров.
 - Включите доступ к цепочке ключей.
@@ -31,7 +31,7 @@ ms.locfileid: "82652659"
 
 ## <a name="implement-openurl"></a>Реализация OpenUrl
 
-Переопределите `OpenUrl` метод `FormsApplicationDelegate` производного класса и вызовите `AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs`. Ниже приведен пример:
+Переопределите `OpenUrl` метод `FormsApplicationDelegate` производного класса и вызовите `AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs` . Ниже приведен пример:
 
 ```csharp
 public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
@@ -61,7 +61,7 @@ var builder = PublicClientApplicationBuilder
      .Build();
 ```
 
-Также включите доступ к цепочке `Entitlements.plist` ключей в файле. Используйте следующую группу доступа или собственную группу доступа.
+Также включите доступ к цепочке ключей в `Entitlements.plist` файле. Используйте следующую группу доступа или собственную группу доступа.
 
 ```xml
 <dict>
@@ -72,7 +72,7 @@ var builder = PublicClientApplicationBuilder
 </dict>
 ```
 
-При использовании `WithIosKeychainSecurityGroup()` API MSAL автоматически добавляет группу безопасности в конец *идентификатора группы* приложения (`AppIdentifierPrefix`). MSAL добавляет группу безопасности, так как при создании приложения в Xcode оно будет выполнять те же действия. Именно поэтому права в `Entitlements.plist` файле должны быть включены `$(AppIdentifierPrefix)` перед группой доступа к цепочке ключей.
+При использовании `WithIosKeychainSecurityGroup()` API MSAL автоматически добавляет группу безопасности в конец *идентификатора группы* приложения ( `AppIdentifierPrefix` ). MSAL добавляет группу безопасности, так как при создании приложения в Xcode оно будет выполнять те же действия. Именно поэтому `Entitlements.plist` права в файле должны быть включены `$(AppIdentifierPrefix)` перед группой доступа к цепочке ключей.
 
 Дополнительные сведения см. в документации по назначениям [iOS](https://developer.apple.com/documentation/security/keychain_services/keychain_items/sharing_access_to_keychain_items_among_a_collection_of_apps). 
 
@@ -82,14 +82,14 @@ var builder = PublicClientApplicationBuilder
 
 При совместном использовании кэша маркеров вы разрешаете единый вход (SSO) для всех приложений, использующих одну группу доступа к цепочке ключей.
 
-Чтобы включить этот общий доступ к кэшу, `WithIosKeychainSecurityGroup()` используйте метод, чтобы задать для группы доступа к цепочке ключей одно и то же значение во всех приложениях, использующих общий кэш. В первом примере кода в этой статье показано, как использовать метод.
+Чтобы включить этот общий доступ к кэшу, используйте `WithIosKeychainSecurityGroup()` метод, чтобы задать для группы доступа к цепочке ключей одно и то же значение во всех приложениях, использующих общий кэш. В первом примере кода в этой статье показано, как использовать метод.
 
-Ранее в этой статье вы узнали, что MSAL добавляет `$(AppIdentifierPrefix)` каждый раз при использовании `WithIosKeychainSecurityGroup()` API. MSAL добавляет этот элемент, так как идентификатор `AppIdentifierPrefix` команды гарантирует, что только приложения, созданные одним издателем, могут использовать доступ к цепочке ключей.
+Ранее в этой статье вы узнали, что MSAL добавляет `$(AppIdentifierPrefix)` каждый раз при использовании `WithIosKeychainSecurityGroup()` API. MSAL добавляет этот элемент, так как идентификатор команды `AppIdentifierPrefix` гарантирует, что только приложения, созданные одним издателем, могут использовать доступ к цепочке ключей.
 
 > [!NOTE]
-> `KeychainSecurityGroup` Свойство является устаревшим.
+> `KeychainSecurityGroup`Свойство является устаревшим.
 > 
-> Начиная с MSAL 2. x разработчики вынуждены включать `TeamId` префикс при использовании `KeychainSecurityGroup` свойства. Но начиная с версии MSAL 2.7. x, при использовании нового `iOSKeychainSecurityGroup` свойства MSAL разрешает `TeamId` префикс во время выполнения. При использовании этого свойства не включайте `TeamId` префикс в значение. Префикс не требуется.
+> Начиная с MSAL 2. x разработчики вынуждены включать `TeamId` префикс при использовании `KeychainSecurityGroup` Свойства. Но начиная с версии MSAL 2.7. x, при использовании нового `iOSKeychainSecurityGroup` Свойства MSAL разрешает `TeamId` префикс во время выполнения. При использовании этого свойства не включайте `TeamId` префикс в значение. Префикс не требуется.
 >
 > Поскольку `KeychainSecurityGroup` свойство устарело, используйте `iOSKeychainSecurityGroup` свойство.
 

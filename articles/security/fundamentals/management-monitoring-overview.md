@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 10/28/2019
 ms.author: terrylan
 ms.openlocfilehash: 7ad7a29a92d25556190b4cf44f4e48158a6f0952
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73162750"
 ---
 # <a name="azure-security-management-and-monitoring-overview"></a>Обзор управления безопасностью Azure и ее мониторинга
@@ -138,7 +138,7 @@ Intelligent Security Graph в реальном времени предостав
 
 * [Intelligent Security Graph](https://www.microsoft.com/security/intelligence)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Сведения об [общей модели ответственности](shared-responsibility.md) , а также о том, какие задачи безопасности обрабатываются корпорацией Майкрософт и какие задачи обрабатываются вами.
 
 Дополнительные сведения об управлении безопасностью см. в статье [Управление безопасностью в Azure](management.md).

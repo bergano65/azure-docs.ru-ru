@@ -5,15 +5,15 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: tutorial
-ms.date: 02/21/2020
+ms.date: 06/24/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 064fcf618914bca31ad9e7e60c76df8f599cd8bf
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: 151e7d286dac91ddd0e988027968f2e44a83e35e
+ms.sourcegitcommit: f98ab5af0fa17a9bba575286c588af36ff075615
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84687197"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85362651"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-using-the-azure-portal"></a>Руководство по Развертывание и настройка службы "Брандмауэр Azure" с помощью портала Azure
 
@@ -26,7 +26,9 @@ ms.locfileid: "84687197"
 
 При маршрутизации трафика на брандмауэр, используемый в качестве шлюза по умолчанию, для подсети к трафику применяются настроенные правила брандмауэра.
 
-В этом руководстве вы создадите упрощенную виртуальную сеть с тремя подсетями для легкого развертывания: Для развертываний в рабочей среде рекомендуется использовать [звездообразную модель](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke). Брандмауэр находится в собственной виртуальной сети. Серверы рабочей нагрузки размещены в одноранговых виртуальных сетях в одном регионе с одной или несколькими подсетями.
+В этом руководстве вы создадите упрощенную виртуальную сеть с тремя подсетями для легкого развертывания:
+
+Для развертываний в рабочей среде рекомендуется использовать [звездообразную модель](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke), в которой брандмауэр находится в собственной виртуальной сети. Серверы рабочей нагрузки размещены в одноранговых виртуальных сетях в одном регионе с одной или несколькими подсетями.
 
 * **AzureFirewallSubnet** — в этой подсети находится брандмауэр.
 * **Workload-SN** — в этой подсети находится сервер рабочей нагрузки. Трафик этой подсети проходит через брандмауэр.

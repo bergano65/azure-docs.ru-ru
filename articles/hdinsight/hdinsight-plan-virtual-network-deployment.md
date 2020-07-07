@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 05/04/2020
 ms.openlocfilehash: e2db6d1d60026a00fa8e766fbaa1c72975fa2e99
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82786620"
 ---
 # <a name="plan-a-virtual-network-for-azure-hdinsight"></a>Планирование виртуальной сети для Azure HDInsight
@@ -207,9 +207,9 @@ Azure предоставляет разрешение имен для служб
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Примеры кода и примеры создания виртуальных сетей Azure см. в статье [Создание виртуальных сетей для кластеров Azure HDInsight](hdinsight-create-virtual-network.md).
+* Примеры кода и создания виртуальных сетей Azure см. в статье [Создание виртуальных сетей для кластеров Azure HDInsight](hdinsight-create-virtual-network.md).
 * Полный пример настройки HDInsight для подключения к локальной сети см. в статье [Подключение HDInsight к локальной сети](./connect-on-premises-network.md).
 * Дополнительные сведения о виртуальных сетях Azure см. в статье [Виртуальная сеть Azure](../virtual-network/virtual-networks-overview.md).
 * Дополнительные сведения о группах безопасности сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](../virtual-network/security-overview.md).
-* Дополнительные сведения об определяемых пользователем маршрутах см. в разделе [определяемые пользователем маршруты и IP-пересылка](../virtual-network/virtual-networks-udr-overview.md).
+* Дополнительные сведения о пользовательских маршрутах см. в статье [User-defined routes and IP forwarding](../virtual-network/virtual-networks-udr-overview.md) (Определяемые пользователем маршруты и IP-пересылка).
 * Дополнительные сведения об управлении трафиком см. в разделе [Управление сетевым трафиком](./control-network-traffic.md).

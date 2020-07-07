@@ -7,10 +7,10 @@ ms.service: media-services
 ms.topic: reference
 ms.date: 04/20/2020
 ms.openlocfilehash: ca4dc888af414ede270118eff72652f098d3306c
-ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82779048"
 ---
 # <a name="localization"></a>Локализация #
@@ -31,7 +31,7 @@ ms.locfileid: "82779048"
 | Английский {по умолчанию}   | en   | Хорватский                | hr     | Румынский                | ro           |
 | Арабский              | ar   | Венгерский               | hu     | Словацкий                  | sk           |
 | Болгарский           | bg   | Индонезийский              | идентификатор     | Slovene                 | sl           |
-| Каталонский             | Корнев   | Исландский               | — это     | Сербский — кириллица      | SR-Цирл-CS   |
+| Каталонский             | ca   | Исландский               | — это     | Сербский — кириллица      | SR-Цирл-CS   |
 | Чешский               | cs   | Итальянский                 | it     | Сербский — латиница         | sr-latn-rs   |
 | Датский              | da   | Японский                | ja     | Русский                 | ru           |
 | Немецкий              | de   | Казахский                  | kk     | Шведский                 | sv           |

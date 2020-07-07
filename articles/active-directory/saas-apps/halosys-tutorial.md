@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d224f8fa5d696cd55b4f214111280d9210f836e9
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 3f7cdc8dce8a4b30b543c4e332207354697a9e0d
+ms.sourcegitcommit: bf8c447dada2b4c8af017ba7ca8bfd80f943d508
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73159118"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85367671"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-halosys"></a>Руководство по интеграции Azure Active Directory с Halosys
 
@@ -111,7 +111,7 @@ ms.locfileid: "73159118"
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<company-name>.halosys.com/<instance name>`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки Halosys](https://halosys.com/halosys#contact). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки Halosys](https://www.sonata-software.com/form/contact). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -129,7 +129,7 @@ ms.locfileid: "73159118"
 
 ### <a name="configure-halosys-single-sign-on"></a>Настройка единого входа в Halosys
 
-Чтобы настроить единый вход на стороне **Halosys**, отправьте скачанный **XML-файл метаданных федерации** и URL-адреса, скопированные на портале Azure, в [службу поддержки Halosys](https://halosys.com/halosys#contact). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Halosys**, отправьте скачанный **XML-файл метаданных федерации** и URL-адреса, скопированные на портале Azure, в [службу поддержки Halosys](https://www.sonata-software.com/form/contact). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -184,7 +184,7 @@ ms.locfileid: "73159118"
 
 ### <a name="create-halosys-test-user"></a>Создание тестового пользователя в Halosys
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Halosys. Обратитесь к  [группе поддержки Halosys](https://halosys.com/halosys#contact), чтобы добавить пользователей на платформу Halosys. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Halosys. Обратитесь к  [группе поддержки Halosys](https://www.sonata-software.com/form/contact), чтобы добавить пользователей на платформу Halosys. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

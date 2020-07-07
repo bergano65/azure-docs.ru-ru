@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: b-juche
 ms.openlocfilehash: 56322dc8def288ed388713e143f6b77816360ba3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82117052"
 ---
 # <a name="benefits-of-using-azure-netapp-files-with-oracle-database"></a>Преимущества использования Azure NetApp Files с Oracle Database
@@ -59,7 +59,7 @@ Oracle Direct NFS (Днфс) делает возможным более высо
 
 Можно повысить производительность Oracle Днфс со службой Azure NetApp Files. Служба предоставляет полный контроль над производительностью приложения. Он может отвечать очень требовательным приложениям. Сочетание Oracle Днфс с Azure NetApp Files предоставляет большие преимущества для рабочих нагрузок.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Архитектура решений, использующих Azure NetApp Files](azure-netapp-files-solution-architectures.md)
-- [Общие сведения о приложениях и решениях Oracle в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/oracle-overview)
+- [Обзор приложений и решений Oracle в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/oracle-overview)

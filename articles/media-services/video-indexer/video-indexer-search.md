@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 05/15/2019
 ms.author: juliako
 ms.openlocfilehash: 1c3326456fefbbef9228cf26b5821f306cd21601
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80127911"
 ---
 # <a name="search-for-exact-moments-in-videos-with-video-indexer"></a>Поиск точного видео с помощью индексатора видео
@@ -48,14 +48,14 @@ ms.locfileid: "80127911"
 
     ![Поиск точного времени в индексаторе видео](./media/video-indexer-search/video-indexer-search03.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Когда вы найдете точное время в видео, с которым хотите работать, можно продолжить обработку видео. Дополнительные сведения см. в следующих разделах:
 
 - [Использование глубокой аналитики видео](use-editor-create-project.md)
-- [Использование API Индексатора видео](video-indexer-use-apis.md)
-- [Embed visual widgets in your application](video-indexer-embed-widgets.md) (Внедрение визуальных мини-приложений в собственное приложение)
+- [Обработка содержимого с помощью индексатора видео REST API](video-indexer-use-apis.md)
+- [Внедрение визуальных элементов в приложение](video-indexer-embed-widgets.md)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 [Общие сведения об Индексаторе видео](video-indexer-overview.md)

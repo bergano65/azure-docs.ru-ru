@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: mikerou
 ms.openlocfilehash: bd7c57f3089115e4da861fc8fd20331ab92bc33e
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82787147"
 ---
 # <a name="scale-a-service-fabric-cluster-programmatically"></a>Программное масштабирование кластера Service Fabric 
@@ -24,12 +24,12 @@ ms.locfileid: "82787147"
 
 Чтобы создать субъект-службу, необходимо выполнить следующие действия:
 
-1. Войдите в Azure CLI (`az login`) в качестве пользователя с доступом к масштабируемому набору виртуальных машин.
+1. Войдите в Azure CLI () в `az login` качестве пользователя с доступом к масштабируемому набору виртуальных машин.
 2. Создайте субъект-службу с помощью `az ad sp create-for-rbac`.
     1. Запишите идентификатор приложения (другое название — идентификатор клиента), имя, пароль и клиент для последующего использования.
     2. Также вам понадобится идентификатор подписки, который можно просмотреть с помощью `az account list`.
 
-Библиотека вычислений Fluent может выполнить вход с использованием этих учетных данных, как показано ниже (Обратите внимание `IAzure` , что основные типы Azure Fluent, такие как, находятся в пакете [Microsoft. Azure. Management. Fluent](https://www.nuget.org/packages/Microsoft.Azure.Management.Fluent/) ):
+Библиотека вычислений Fluent может выполнить вход с использованием этих учетных данных, как показано ниже (Обратите внимание, что основные типы Azure Fluent, такие как `IAzure` , находятся в пакете [Microsoft. Azure. Management. Fluent](https://www.nuget.org/packages/Microsoft.Azure.Management.Fluent/) ):
 
 ```csharp
 var credentials = new AzureCredentials(new ServicePrincipalLoginInformation {

@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 10/08/2018
 ms.author: guybo
 ms.openlocfilehash: f700dec6486bad9e7024d7c908a70dd0ff2b342c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80066761"
 ---
 # <a name="information-for-non-endorsed-distributions"></a>Информация о нерекомендованных дистрибутивах
@@ -28,7 +28,7 @@ ms.locfileid: "80066761"
 * **[Debian Linux](debian-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
 * **[Oracle Linux](oracle-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
 * **[Red Hat Enterprise Linux](redhat-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
-* **[SLES & openSUSE](suse-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
+* **[SLES и OpenSUSE](suse-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
 * **[Ubuntu](create-upload-ubuntu.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
 
 В этой статье приводятся общие рекомендации по работе с дистрибутивом Linux в Azure.
@@ -64,7 +64,7 @@ ms.locfileid: "80066761"
 ### <a name="resizing-vhds"></a>Изменение размера VHD
 Размер виртуальной памяти образов VHD в Azure должен быть округлен до 1 МБ.  Как правило, размер VHD, созданных с помощью Hyper-V, настроен правильно.  Если виртуальный жесткий диск (VHD) настроен неправильно, при попытке создать образ из VHD-файла может появиться следующее сообщение об ошибке.
 
-* Виртуальный жесткий диск HTTP\//\<: mystorageaccount>. BLOB.Core.Windows.NET/VHDs/MyLinuxVM.VHD имеет неподдерживаемый размер 21475270656 байт. Размер должен задаваться целым числом (в МБ).
+* Виртуальный жесткий диск http: \/ / \<mystorageaccount> . BLOB.Core.Windows.NET/VHDs/MyLinuxVM.VHD имеет неподдерживаемый размер 21475270656 байт. Размер должен задаваться целым числом (в МБ).
 
 В таком случае вы можете изменить размер виртуальной машины с помощью консоли диспетчера Hyper-V или командлета Powershell [Resize-VHD](https://technet.microsoft.com/library/hh848535.aspx).  Если вы работаете не в среде Windows, воспользуйтесь командой `qemu-img` для преобразования (если необходимо) и изменения размера VHD.
 

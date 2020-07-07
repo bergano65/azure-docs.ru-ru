@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 7155a3fa9481ef5f2da62d85d4a932ad5e8e8ab1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81382523"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
@@ -28,9 +28,9 @@ ms.locfileid: "81382523"
 
 | Ресурс                                                                           | Требование | Справочник по синтаксису и свойствам                                                         |   |
 |------------------------------------------------------------------------------------|-------------|-----------------------------------------------------------------------------------------|---|
-| Приложение-функция.                                                                     | Обязательный    | [Microsoft. Web/Sites](/azure/templates/microsoft.web/sites)                             |   |
-| Учетная запись [хранения Azure](../storage/index.yml) ;                                   | Обязательный    | [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |   |
-| Компонент [Application Insights](../azure-monitor/app/app-insights-overview.md) | Необязательный    | [Microsoft. Insights/компоненты](/azure/templates/microsoft.insights/components)         |   |
+| Приложение-функция.                                                                     | Обязательно    | [Microsoft. Web/Sites](/azure/templates/microsoft.web/sites)                             |   |
+| Учетная запись [хранения Azure](../storage/index.yml) ;                                   | Обязательно    | [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |   |
+| Компонент [Application Insights](../azure-monitor/app/app-insights-overview.md) | Необязательно    | [Microsoft. Insights/компоненты](/azure/templates/microsoft.insights/components)         |   |
 | [План размещения](./functions-scale.md)                                             | Необязательно<sup>1</sup>    | [Microsoft. Web/serverfarms](/azure/templates/microsoft.web/serverfarms)                 |   |
 
 <sup>1</sup> План размещения требуется только в том случае, если вы решили запустить приложение-функцию в [плане Premium](./functions-premium-plan.md) или в [плане службы приложений](../app-service/overview-hosting-plans.md).
@@ -96,7 +96,7 @@ ms.locfileid: "81382523"
         },
 ```
 
-Кроме того, ключ инструментирования необходимо предоставить приложению функции, используя параметр `APPINSIGHTS_INSTRUMENTATIONKEY` приложения. Это свойство указывается в `appSettings` коллекции `siteConfig` объекта:
+Кроме того, ключ инструментирования необходимо предоставить приложению функции, используя `APPINSIGHTS_INSTRUMENTATIONKEY` параметр приложения. Это свойство указывается в `appSettings` коллекции `siteConfig` объекта:
 
 ```json
 "appSettings": [
@@ -111,7 +111,7 @@ ms.locfileid: "81382523"
 
 Определение плана размещения изменяется и может быть одним из следующих:
 * [План потребления](#consumption) (по умолчанию)
-* [План "Премиум"](#premium)
+* [План категории "Премиум"](#premium)
 * [План обслуживания приложения](#app-service-plan)
 
 ### <a name="function-app"></a>Приложение-функция
@@ -142,7 +142,7 @@ ms.locfileid: "81382523"
 | AzureWebJobsStorage          | Строка подключения к учетной записи хранения, которую среда выполнения функций использует для внутренней очереди | См. [учетную запись хранения](#storage)       |
 | FUNCTIONS_EXTENSION_VERSION  | Версия среды выполнения функций Azure                                                | `~2`                                  |
 | FUNCTIONS_WORKER_RUNTIME     | Стек языка, используемый для функций в этом приложении                                   | `dotnet`, `node`, `java`, `python` или `powershell` |
-| WEBSITE_NODE_DEFAULT_VERSION | Указывает используемую версию, `node` только если используется языковой стек.              | `10.14.1`                             |
+| WEBSITE_NODE_DEFAULT_VERSION | Указывает используемую версию, только если используется `node` языковой стек.              | `10.14.1`                             |
 
 Эти свойства указываются в `appSettings` коллекции в `siteConfig` свойстве:
 
@@ -183,7 +183,7 @@ ms.locfileid: "81382523"
 
 План потребления не требуется определять. Он будет автоматически создан или выбран для каждого региона при создании самого ресурса приложения-функции.
 
-План потребления — это особый тип ресурса "ферма серверов". Для Windows это можно указать с помощью `Dynamic` значения свойств `computeMode` и. `sku`
+План потребления — это особый тип ресурса "ферма серверов". Для Windows это можно указать с помощью `Dynamic` значения `computeMode` `sku` свойств и.
 
 ```json
 {  
@@ -208,13 +208,13 @@ ms.locfileid: "81382523"
 > [!NOTE]
 > План потребления нельзя явно определить для Linux. Он будет создан автоматически.
 
-Если вы явно определили план потребления, необходимо задать `serverFarmId` свойство в приложении, чтобы оно указывало на идентификатор ресурса плана. Необходимо также убедиться, что у приложения-функции `dependsOn` есть параметр для плана.
+Если вы явно определили план потребления, необходимо задать `serverFarmId` свойство в приложении, чтобы оно указывало на идентификатор ресурса плана. Необходимо также убедиться, что у приложения-функции есть `dependsOn` параметр для плана.
 
 ### <a name="create-a-function-app"></a>Создание приложения-функции
 
 #### <a name="windows"></a>Windows
 
-В Windows план потребления требует два дополнительных параметра в конфигурации сайта: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` и. `WEBSITE_CONTENTSHARE` Эти свойства настраивают учетную запись хранения и путь к файлам кода приложения-функции и конфигурации.
+В Windows план потребления требует два дополнительных параметра в конфигурации сайта: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` и `WEBSITE_CONTENTSHARE` . Эти свойства настраивают учетную запись хранения и путь к файлам кода приложения-функции и конфигурации.
 
 ```json
 {
@@ -261,7 +261,7 @@ ms.locfileid: "81382523"
 
 #### <a name="linux"></a>Linux
 
-В Linux приложение функции должно `kind` иметь значение `functionapp,linux`, а `reserved` свойство должно иметь значение: `true`
+В Linux приложение функции должно иметь `kind` значение `functionapp,linux` , а свойство должно иметь значение `reserved` `true` :
 
 ```json
 {
@@ -309,7 +309,7 @@ ms.locfileid: "81382523"
 
 ### <a name="create-a-premium-plan"></a>Создание плана "Премиум"
 
-План "Премиум" — это особый тип ресурса "ферма серверов". Его `EP1`можно указать с помощью, `EP2`или `EP3` для значения `Name` свойства в `sku` [объекте Description](https://docs.microsoft.com/azure/templates/microsoft.web/2018-02-01/serverfarms#skudescription-object).
+План "Премиум" — это особый тип ресурса "ферма серверов". Его можно указать с помощью `EP1` , `EP2` или `EP3` для `Name` значения свойства в `sku` [объекте Description](https://docs.microsoft.com/azure/templates/microsoft.web/2018-02-01/serverfarms#skudescription-object).
 
 ```json
 {
@@ -334,7 +334,7 @@ ms.locfileid: "81382523"
 
 ### <a name="create-a-function-app"></a>Создание приложения-функции
 
-Для приложения-функции в плане Premium должно быть `serverFarmId` задано значение идентификатора ресурса созданного ранее плана. Кроме того, для плана Premium требуются два дополнительных параметра в конфигурации сайта: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` и. `WEBSITE_CONTENTSHARE` Эти свойства настраивают учетную запись хранения и путь к файлам кода приложения-функции и конфигурации.
+Для приложения-функции в плане Premium должно быть `serverFarmId` задано значение идентификатора ресурса созданного ранее плана. Кроме того, для плана Premium требуются два дополнительных параметра в конфигурации сайта: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` и `WEBSITE_CONTENTSHARE` . Эти свойства настраивают учетную запись хранения и путь к файлам кода приложения-функции и конфигурации.
 
 ```json
 {
@@ -410,7 +410,7 @@ ms.locfileid: "81382523"
 }
 ```
 
-Чтобы запустить приложение в Linux, необходимо также задать для `kind` `Linux`параметра значение:
+Чтобы запустить приложение в Linux, необходимо также задать для параметра значение `kind` `Linux` :
 
 ```json
 {
@@ -431,7 +431,7 @@ ms.locfileid: "81382523"
 
 ### <a name="create-a-function-app"></a>Создание приложения-функции
 
-Для приложения-функции в плане службы приложений `serverFarmId` свойство должно иметь значение, РАВНОе идентификатору ресурса созданного ранее плана.
+Для приложения-функции в плане службы приложений свойство должно иметь `serverFarmId` значение, равное идентификатору ресурса созданного ранее плана.
 
 ```json
 {
@@ -470,7 +470,7 @@ ms.locfileid: "81382523"
 }
 ```
 
-Приложения Linux также должны содержать `linuxFxVersion` свойство в разделе `siteConfig`. Если вы только разворачиваете код, значение для этого параметра определяется требуемым стеком времени выполнения:
+Приложения Linux также должны содержать `linuxFxVersion` свойство в разделе `siteConfig` . Если вы только разворачиваете код, значение для этого параметра определяется требуемым стеком времени выполнения:
 
 | Стек            | Пример значения                                         |
 |------------------|-------------------------------------------------------|
@@ -516,7 +516,7 @@ ms.locfileid: "81382523"
 }
 ```
 
-Если вы [развертываете пользовательский образ контейнера](./functions-create-function-linux-custom-image.md), необходимо указать его с помощью `linuxFxVersion` и включить конфигурацию, позволяющую получать образ, как в [веб-приложение для контейнеров](/azure/app-service/containers). Кроме того, `WEBSITES_ENABLE_APP_SERVICE_STORAGE` задайте `false`для значение, так как содержимое приложения предоставляется в контейнере:
+Если вы [развертываете пользовательский образ контейнера](./functions-create-function-linux-custom-image.md), необходимо указать его с помощью `linuxFxVersion` и включить конфигурацию, позволяющую получать образ, как в [веб-приложение для контейнеров](/azure/app-service/containers). Кроме того, задайте `WEBSITES_ENABLE_APP_SERVICE_STORAGE` для значение `false` , так как содержимое приложения предоставляется в контейнере:
 
 ```json
 {
@@ -670,7 +670,7 @@ ms.locfileid: "81382523"
 
 ### <a name="deploy-using-powershell"></a>Развертывание с помощью PowerShell
 
-Следующие команды PowerShell создают группу ресурсов и развертывают шаблон, который создает приложение-функцию с необходимыми ресурсами. Для локального запуска необходимо установить [Azure PowerShell](/powershell/azure/install-az-ps) . Выполните [`Connect-AzAccount`](/powershell/module/az.accounts/connect-azaccount) команду, чтобы войти.
+Следующие команды PowerShell создают группу ресурсов и развертывают шаблон, который создает приложение-функцию с необходимыми ресурсами. Для локального запуска необходимо установить [Azure PowerShell](/powershell/azure/install-az-ps) . Выполните команду [`Connect-AzAccount`](/powershell/module/az.accounts/connect-azaccount) , чтобы войти.
 
 ```powershell
 # Register Resource Providers if they're not already registered
@@ -689,7 +689,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "MyResourceGroup" -TemplateFile
 
 Чтобы протестировать это развертывание, можно использовать [шаблон, аналогичный этому](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-function-app-create-dynamic/azuredeploy.json) , который создает приложение-функцию в Windows в плане потребления. Замените `<function-app-name>` уникальным именем для приложения-функции.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о разработке и настройке Функций Azure:
 
@@ -699,5 +699,5 @@ New-AzResourceGroupDeployment -ResourceGroupName "MyResourceGroup" -TemplateFile
 
 <!-- LINKS -->
 
-[Приложение-функция в плане потребления]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-function-app-create-dynamic/azuredeploy.json
-[Приложение-функция в плане службы приложений Azure]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-function-app-create-dedicated/azuredeploy.json
+[Function app on Consumption plan]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-function-app-create-dynamic/azuredeploy.json (Приложение-функция в плане потребления)
+[Function app on Azure App Service plan]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-function-app-create-dedicated/azuredeploy.json (Приложение-функция в плане службы приложений Azure).

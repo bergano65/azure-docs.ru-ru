@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/12/2020
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 9717c76b42a63479c77f862057bfb141954eacff
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 0381418f20e126f94060b9f495fe1fe8b54e713b
+ms.sourcegitcommit: bf8c447dada2b4c8af017ba7ca8bfd80f943d508
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83673413"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85378514"
 ---
 ## <a name="create-a-device-template"></a>Создание шаблона устройства
 
@@ -21,7 +21,7 @@ ms.locfileid: "83673413"
 
 Скачайте JSON-файл [модели возможностей для датчика окружающей среды](https://raw.githubusercontent.com/Azure/IoTPlugandPlay/9004219bff1e958b7cd6ff2a52209f4b7ae19396/samples/EnvironmentalSensorInline.capabilitymodel.json) и сохраните его в папке `environmental-sensor`.
 
-С помощью текстового редактора замените в скачанном файле `EnvironmentalSensorInline.capabilitymodel.json` два вхождения строки `{YOUR_COMPANY_NAME_HERE}` названием своей компании.
+С помощью текстового редактора замените в скачанном файле `EnvironmentalSensorInline.capabilitymodel.json` два вхождения строки `{YOUR_COMPANY_NAME_HERE}` названием своей компании. Используйте только символы a–z, A–Z, 0–9 и знак подчеркивания.
 
 Создайте в приложении Azure IoT Central шаблон устройства с именем *Датчик окружающей среды*, импортировав файл модели возможностей устройства `EnvironmentalSensorInline.capabilitymodel.json`.
 
