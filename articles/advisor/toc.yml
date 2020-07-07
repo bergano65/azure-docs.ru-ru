@@ -11,6 +11,7 @@
         - name: Портал Azure
           href: advisor-alerts-portal.md
         - name: Шаблон ARM
+          displayName: Resource Manager
           href: advisor-alerts-arm.md
 - name: Учебники
   items:
