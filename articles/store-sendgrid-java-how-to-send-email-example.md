@@ -16,10 +16,10 @@ ms.date: 10/30/2014
 ms.author: erikre
 ms.reviewer: vibhork;dominic.may@sendgrid.com;elmer.thomas@sendgrid.com
 ms.openlocfilehash: 35307848c09391ae4468afc00adafd8171aaaa7b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67876479"
 ---
 # <a name="how-to-send-email-using-sendgrid-from-java-in-an-azure-deployment"></a>Как отправлять электронную почту с помощью SendGrid из Java в развертывании Azure
@@ -205,7 +205,7 @@ ms.locfileid: "67876479"
     </body>
     </html>
 
-Помимо отправки электронной почты, emailform. JSP предоставляет пользователю результат. Пример приведен на следующем снимке экрана:
+Помимо отправки сообщения, emailform.jsp дает результат пользователю; Пример приведен на следующем снимке экрана:
 
 ![Результат отправки почты][emailresult]
 

@@ -16,10 +16,10 @@ ms.date: 07/15/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 3c14ff9c4f6d2bc2b1a62d1874d01950d09491c0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "70099816"
 ---
 # <a name="azure-hana-large-instances-control-through-azure-portal"></a>Управление крупными экземплярами HANA в Azure с помощью портала Azure
@@ -81,7 +81,7 @@ ms.locfileid: "70099816"
 - [Доступные номера SKU для HLI](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-available-skus)
 - [Архитектура хранилища SAP HANA (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-storage-architecture) 
 
-Дополнительные данные в правой нижней части — это редакция метки крупных экземпляров HANA. Возможны следующие значения:
+Дополнительные данные в правой нижней части — это редакция метки крупных экземпляров HANA. Доступны следующие значения:
 
 - Редакция 3
 - Редакция 4

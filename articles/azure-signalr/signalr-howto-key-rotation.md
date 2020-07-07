@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: zhshang
 ms.openlocfilehash: 133edc64ac2f858a397a4a184c24497dae8af333
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67565729"
 ---
 # <a name="how-to-rotate-access-key-for-azure-signalr-service"></a>How to rotate access key for Azure SignalR Service (Смена ключей доступа для Службы Azure SignalR)
@@ -59,4 +59,4 @@ ms.locfileid: "67565729"
 > [Учебник по аутентификации службы Azure SignalR](./signalr-concept-authenticate-oauth.md)
 
 > [!div class="nextstepaction"]
-> [Руководство по аутентификации в службе Azure SignalR с помощью Функций Azure](./signalr-tutorial-authenticate-azure-functions.md)
+> [Создание бессерверного приложения в реальном времени с аутентификацией](./signalr-tutorial-authenticate-azure-functions.md)
