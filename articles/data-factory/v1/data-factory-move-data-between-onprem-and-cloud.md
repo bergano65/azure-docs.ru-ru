@@ -12,12 +12,11 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: be797f76988c924503e11b6f66cce899b515e3a2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 7f07f08cd320d94495403b0f5ae65d60d8dc93b5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75982199"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84195992"
 ---
 # <a name="move-data-between-on-premises-sources-and-the-cloud-with-data-management-gateway"></a>Перемещение данных между локальными источниками и облаком с помощью шлюза управления данными
 > [!NOTE]
@@ -47,7 +46,7 @@ ms.locfileid: "75982199"
 
 * **Подписка Azure**.  Если у вас нет подписки, вы можете создать бесплатную пробную версию учетной записи всего за несколько минут. Дополнительные сведения см. в статье [Бесплатная пробная версия](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись хранения Azure**. В этом руководстве в качестве **назначения и приемника** будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, создайте ее, как описано в статье [Создание учетной записи хранения](../../storage/common/storage-account-create.md) .
-* **SQL Server**. В этом руководстве используйте локальную базу данных SQL Server в качестве **исходного** хранилища данных.
+* **SQL Server.** В этом руководстве вы используете базу данных SQL Server в качестве **исходного** хранилища данных.
 
 ## <a name="create-data-factory"></a>Создание фабрики данных
 На этом этапе вы с помощью портала Azure создадите экземпляр фабрики данных Azure с именем **ADFTutorialOnPremDF**.
@@ -104,7 +103,7 @@ ms.locfileid: "75982199"
 
     ![Шлюз — страница "Настройка"](./media/data-factory-move-data-between-onprem-and-cloud/OnPremGatewayConfigureBlade.png)
 
-    Это самый простой способ (одним щелчком) скачать, установить, настроить и зарегистрировать шлюз в один прием. Вы увидите, что на компьютере установлено приложение **Microsoft Data Management Gateway Configuration Manager** . Исполняемый файл **ConfigManager. exe** также можно найти в папке: **C:\Program Files\Microsoft управление данными Gateway\2.0\Shared**.
+    Это самый простой способ (одним щелчком) скачать, установить, настроить и зарегистрировать шлюз в один прием. Вы увидите, что на компьютере установлено приложение **Microsoft Data Management Gateway Configuration Manager** . Вы также можете найти исполняемый файл **ConfigManager.exe** в папке **C:\Program Files\Microsoft управление данными Gateway\2.0\Shared**.
 
     Шлюз также можно скачать и установить вручную, используя ссылки на этой странице. Затем вы можете зарегистрировать его с помощью ключа, указанного в текстовом поле **Создать ключ**.
 
@@ -140,7 +139,7 @@ ms.locfileid: "75982199"
    * задать прокси-сервер HTTP, который будет использовать шлюз.     
 9. (Необязательно.) Для устранения проблем в работе шлюза вы можете использовать подробное ведение журнала. Чтобы включить эту функцию, перейдите на вкладку **Диагностика** и установите флажок **Включить запись подробных сведений в журнал**. Данные журналов можно изучить в средстве **Просмотр событий**, открыв узел **Журналы приложений и служб** -> **Шлюз управления данными**.
 
-    ![Вкладка «Диагностика»](./media/data-factory-move-data-between-onprem-and-cloud/diagnostics-tab.png)
+    ![Вкладка "Diagnostics" (Диагностика)](./media/data-factory-move-data-between-onprem-and-cloud/diagnostics-tab.png)
 
     На вкладке **Диагностика** можно также выполнить следующие действия.
 
@@ -152,9 +151,9 @@ ms.locfileid: "75982199"
 12. В иерархической структуре слева найдите элемент **adftutorialgateway** в узле **Шлюзы данных**.  Щелкните его, чтобы увидеть связанные файлы JSON.
 
 ## <a name="create-linked-services"></a>Создание связанных служб
-На этом этапе вы создадите две связанные службы: **AzureStorageLinkedService** и **SqlServerLinkedService**. Служба **SqlServerLinkedService** связывает с фабрикой данных локальную базу данных SQL Server, а служба **AzureStorageLinkedService** — хранилище BLOB-объектов Azure. Далее, это руководство поможет вам создать конвейер, который копирует данные из локальной базы данных SQL Server в службу хранилища BLOB-объектов Azure.
+На этом этапе вы создадите две связанные службы: **AzureStorageLinkedService** и **SqlServerLinkedService**. **SqlServerLinkedService** связывает базу данных SQL Server и связанную службу **AzureStorageLinkedService** связывает хранилище больших двоичных объектов Azure с фабрикой данных. Далее в этом пошаговом руководстве вы создадите конвейер, который копирует данные из базы данных SQL Server в хранилище больших двоичных объектов Azure.
 
-#### <a name="add-a-linked-service-to-an-on-premises-sql-server-database"></a>Добавление связанной службы в локальную базу данных SQL Server
+#### <a name="add-a-linked-service-to-a-sql-server-database"></a>Добавление связанной службы в базу данных SQL Server
 1. В **редакторе фабрики данных** щелкните **Создать хранилище данных** на панели инструментов и выберите **SQL Server**.
 
    ![Создать связанную службу SQL Server](./media/data-factory-move-data-between-onprem-and-cloud/NewSQLServer.png)
@@ -189,7 +188,7 @@ ms.locfileid: "75982199"
 * В учетной записи хранения BLOB-объектов Azure, которую вы добавили в качестве связанной службы в фабрику данных, создайте контейнер BLOB-объектов с именем **adftutorial** .
 
 ### <a name="prepare-on-premises-sql-server-for-the-tutorial"></a>Подготовка локальной связанной службы SQL Server для учебника
-1. В базе данных SQL Server, которую вы указали для локальных связанных служб (**SqlServerLinkedService**), используйте следующий сценарий SQL, чтобы создать в базе данных таблицу **emp**.
+1. В базе данных, указанной для связанной службы SQL Server (**SqlServerLinkedService**), используйте следующий скрипт SQL для создания таблицы **EMP** в базе данных.
 
     ```SQL   
     CREATE TABLE dbo.emp
@@ -279,7 +278,7 @@ ms.locfileid: "75982199"
    * **folderPath** имеет значение **adftutorial/outfromonpremdf**, где outfromonpremdf — это папка в контейнере adftutorial. Если контейнер **adftutorial** еще не существует, создайте его.
    * Для уровня **доступности** устанавливается значение **ежечасно** (для параметра**Frequency** задано значение **Hour** , а для параметра **Interval** — значение **1**).  Фабрика данных каждый час создает срез выходных данных в таблице **emp** в базе данных SQL Azure.
 
-   Если не указать **имя файла** для **выходной таблицы**, созданные файлы в **FolderPath** будут называться в следующем формате: `Data.<Guid>.txt` (например: Data. 0a405f8a-93ff-4c6f-b3be-f69616f1df7a. txt).
+   Если не указать **имя файла** для **выходной таблицы**, созданные файлы в **FolderPath** будут называться в следующем формате: (например: `Data.<Guid>.txt` Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt.).
 
    Чтобы динамически установить параметры **folderPath** и **fileName** на основе времени **SliceStart**, используйте свойство partitionedBy. В следующем примере folderPath использует год, месяц и день из SliceStart (время начала обработки среза), а в fileName используется время (часы) из SliceStart. Например, если срез выполняется для временной отметки 2014-10-20T08:00:00, folderName получает значение wikidatagateway/wikisampledataout/2014/10/20, а fileName – 08.csv.
 
@@ -410,6 +409,6 @@ ms.locfileid: "75982199"
 
    ![Обозреватель службы хранилища Azure](./media/data-factory-move-data-between-onprem-and-cloud/OnPremAzureStorageExplorer.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 * Все дополнительные сведения о шлюзе управления данными см. в статье [Шлюз управления данными](data-factory-data-management-gateway.md).
 * Чтобы узнать, как перемещать данные из исходного хранилища данных в приемник данных с помощью действия копирования, ознакомьтесь со статьей [Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) .

@@ -8,12 +8,11 @@ ms.date: 05/04/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: f76489f384f233f65eb8fcca3a8359cd5b67c20a
-ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
-ms.translationtype: MT
+ms.openlocfilehash: ab085b9a41120a9f56c1c2e39a89def8c3893747
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82780731"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84221069"
 ---
 # <a name="azcopy-remove"></a>azcopy remove
 
@@ -55,13 +54,13 @@ azcopy rm "https://[account].blob.core.windows.net/[container]/[path/to/virtual/
 Удаление подмножества больших двоичных объектов в виртуальном каталоге (например, только файлы JPG и PDF или имя большого двоичного объекта "Ексактнаме"):
 
 ```azcopy
-azcopy rm "https://[account].blob.core.windows.net/[container]/[path/to/directory]?[SAS]" --recursive=true --include="*.jpg;*.pdf;exactName"
+azcopy rm "https://[account].blob.core.windows.net/[container]/[path/to/directory]?[SAS]" --recursive=true --include-pattern="*.jpg;*.pdf;exactName"
 ```
 
 Удалите весь виртуальный каталог, но исключите определенные большие двоичные объекты из области (например, каждый большой двоичный объект, начинающийся с foo или заканчивающийся на Bar):
 
 ```azcopy
-azcopy rm "https://[account].blob.core.windows.net/[container]/[path/to/directory]?[SAS]" --recursive=true --exclude="foo*;*bar"
+azcopy rm "https://[account].blob.core.windows.net/[container]/[path/to/directory]?[SAS]" --recursive=true --exclude-pattern="foo*;*bar"
 ```
 
 Удалите определенные большие двоичные объекты и виртуальные каталоги путем размещения в файле относительных путей (не закодированных в URL-адресах):
@@ -91,7 +90,7 @@ azcopy rm "https://[account].dfs.core.windows.net/[container]/[path/to/directory
 
 **--Delete — строка моментальных снимков** по умолчанию операция удаления завершается ошибкой, если BLOB-объект имеет моментальные снимки. Укажите "include", чтобы удалить корневой BLOB-объект и все его моментальные снимки. Кроме того, можно указать "только", чтобы удалить только моментальные снимки, но сохранив корневой большой двоичный объект.
 
-**--Строка исключения-путь** исключает эти пути при удалении. Этот параметр не поддерживает подстановочные знаки (*). Проверяет префикс относительного пути. Например: myFolder; myFolder/Субдирнаме/File. PDF.
+**--Строка исключения-путь** исключает эти пути при удалении. Этот параметр не поддерживает подстановочные знаки (*). Проверяет префикс относительного пути. Например: myFolder; myFolder/Субдирнаме/file.pdf.
 
 **--исключение-шаблон** строка исключает файлы, имя которых совпадает со списком шаблонов. Например: *. jpg;*. PDF; Ексактнаме
 
@@ -99,7 +98,7 @@ azcopy rm "https://[account].dfs.core.windows.net/[container]/[path/to/directory
 
 **-h,--** Справка по удалению
 
-**--include строка-Path** включает только эти пути при удалении. Этот параметр не поддерживает подстановочные знаки (*). Проверяет префикс относительного пути. Например: myFolder; myFolder/Субдирнаме/File. PDF
+**--include строка-Path** включает только эти пути при удалении. Этот параметр не поддерживает подстановочные знаки (*). Проверяет префикс относительного пути. Например: myFolder; myFolder/Субдирнаме/file.pdf
 
 **--include — строка шаблона** включает только файлы, имена которых совпадают с списком шаблонов. Например: *. jpg;*. PDF; Ексактнаме
 
@@ -111,12 +110,12 @@ azcopy rm "https://[account].dfs.core.windows.net/[container]/[path/to/directory
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Параметр|Описание|
+|Параметр|Описание:|
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
-|--Trusted-Microsoft-суффикс строка   | Указывает дополнительные суффиксы домена, в которых могут быть отправлены Azure Active Directory токены входа.  Значение по умолчанию — "*. Core.Windows.NET;*". core.chinacloudapi.cn; *. Core.cloudapi.de;*. core.usgovcloudapi.net ". Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.|
+|--Trusted-Microsoft-суффикс строка   |Указывает дополнительные суффиксы домена, в которых могут быть отправлены Azure Active Directory токены входа.  Значение по умолчанию — "*. Core.Windows.NET;*". core.chinacloudapi.cn; *. Core.cloudapi.de;*. core.usgovcloudapi.net ". Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.|
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 - [azcopy](storage-ref-azcopy.md)

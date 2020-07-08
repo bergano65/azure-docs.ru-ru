@@ -1,6 +1,6 @@
 ---
 title: Копирование данных из локальной среды в Azure с помощью PowerShell
-description: Этот сценарий PowerShell копирует данные из локальной базы данных SQL Server в другое хранилище BLOB-объектов Azure.
+description: Этот сценарий PowerShell копирует данные из базы данных SQL Server в другое хранилище BLOB-объектов Azure.
 services: data-factory
 ms.service: data-factory
 ms.workload: data-services
@@ -10,16 +10,15 @@ author: linda33wj
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 10/31/2017
-ms.openlocfilehash: 10555defc4888af66bb88d19190b6543aa8ae0c9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 6f0a1509a97d2d860b43146ffaf69bb241105910
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75974689"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84194629"
 ---
-# <a name="use-powershell-to-create-a-data-factory-pipeline-to-copy-data-from-on-premises-to-azure"></a>Создание конвейера фабрики данных для копирования данных из локальной среды в Azure с помощью PowerShell
+# <a name="use-powershell-to-create-a-data-factory-pipeline-to-copy-data-from-sql-server-to-azure"></a>Создание конвейера фабрики данных для копирования данных из SQL Server в Azure с помощью PowerShell
 
-Этот пример сценария PowerShell создает конвейер в фабрике данных Azure, который копирует данные локальной базы данных SQL Server в другое в хранилище BLOB-объектов Azure.
+Этот пример скрипта PowerShell создает конвейер в фабрике данных Azure, который копирует данные из базы данных SQL Server в хранилище BLOB-объектов Azure.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -27,12 +26,12 @@ ms.locfileid: "75974689"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- **SQL Server**. В этом примере в качестве **исходного** хранилища данных используется локальная база данных SQL Server.
-- **Учетная запись хранения Azure**. В этом примере в качестве **места назначения и приемника** будет использоваться хранилище BLOB-объектов Azure. Если у вас нет учетной записи хранения Azure, создайте ее, как описано в статье [Создание учетной записи хранения](../../storage/common/storage-account-create.md) .
+- **SQL Server.** В этом примере в качестве **исходного** хранилища данных используется база данных SQL Server.
+- **Учетная запись хранения Azure.** В этом примере в качестве **места назначения и приемника** будет использоваться хранилище BLOB-объектов Azure. Если у вас нет учетной записи хранения Azure, создайте ее, как описано в статье [Создание учетной записи хранения](../../storage/common/storage-account-create.md) .
 - Локальная **Среда выполнения интеграции**. Скачайте MSI-файл из [центра загрузки](https://www.microsoft.com/download/details.aspx?id=39717) и запустите его, чтобы установить локальную среду выполнения интеграции на компьютере.  
 
 ### <a name="create-sample-database-in-sql-server"></a>Создание примера базы данных в SQL Server
-1. В локальной базе данных SQL Server создайте таблицу **emp**, используя следующий сценарий SQL.
+1. В SQL Server базе данных создайте таблицу с именем **EMP** с помощью следующего скрипта SQL:
 
    ```sql   
      CREATE TABLE dbo.emp
@@ -57,7 +56,7 @@ ms.locfileid: "75974689"
 > [!IMPORTANT]
 > Этот скрипт создает JSON-файлы, определяющие сущности фабрики данных (связанную службу, набор данных и конвейер) на жестком диске в папке c:\.
 
-[!code-powershell[main](../../../powershell_scripts/data-factory/copy-from-onprem-sql-server-to-azure-blob/copy-from-onprem-sql-server-to-azure-blob.ps1 "Copy from on-premises SQL Server -> Azure Blob Storage")]
+[!code-powershell[main](../../../powershell_scripts/data-factory/copy-from-onprem-sql-server-to-azure-blob/copy-from-onprem-sql-server-to-azure-blob.ps1 "Copy from SQL Server -> Azure Blob Storage")]
 
 
 ## <a name="clean-up-deployment"></a>Очистка развертывания

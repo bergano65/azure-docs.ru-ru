@@ -9,12 +9,11 @@ ms.topic: conceptual
 ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 97bc3c8571793ec8c8b67fe0e7c5cb3b6a56fde4
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
-ms.translationtype: HT
+ms.openlocfilehash: 4ca22c39fcd7b488f527326e4fdeaa56b0485cb9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83726049"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84220295"
 ---
 # <a name="monitor-iot-edge-deployments"></a>Мониторинг развертываний IoT Edge
 
@@ -101,4 +100,4 @@ az iot edge deployment show-metric --deployment-id [deployment id] --metric-id [
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, как [взаимодействовать с EdgeAgent с помощью встроенных прямых методов](how-to-edgeagent-direct-method.md).
+Узнайте, как [отслеживать двойников модуля](how-to-monitor-module-twins.md), в первую очередь, IOT Edge агент и модули среды выполнения IOT Edge концентратора для подключения и работоспособности развертываний IOT Edge.

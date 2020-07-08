@@ -8,12 +8,11 @@ ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: cc0ed5f1eec76bedc21106c90e5e82332e27ce3c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 2307e510883b0cb7024c61c1b31bf2629ccbecb4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74033750"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84220098"
 ---
 # <a name="azcopy-env"></a>azcopy env
 
@@ -37,17 +36,18 @@ azcopy env [flags]
 
 ## <a name="options"></a>Параметры
 
-|Параметр|Описание|
+|Параметр|Описание:|
 |--|--|
 |-h, --help|Отображает содержимое справки для команды env. |
 |--показывать с учетом|Отображает конфиденциальные и секретные переменные среды.|
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Параметр|Описание|
+|Параметр|Описание:|
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
+|--Trusted-Microsoft-суффикс строка  | Указывает дополнительные суффиксы домена, в которых могут быть отправлены Azure Active Directory токены входа.  Значение по умолчанию — "*. Core.Windows.NET;*". core.chinacloudapi.cn; *. Core.cloudapi.de;*. core.usgovcloudapi.net ". Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.|
 
 ## <a name="see-also"></a>См. также
 

@@ -8,12 +8,11 @@ ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: d07d1a706635a7f269a9a51769ae6f8bbf57df3d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 8d2adca661882ea11d04ebe55afe25f7f9c2ef4e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80295404"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84219966"
 ---
 # <a name="azcopy-login"></a>azcopy login
 
@@ -99,9 +98,9 @@ azcopy login --service-principal --certificate-path /path/to/my/cert
 
 ## <a name="options"></a>Параметры
 
-|Параметр|Описание|
+|Параметр|Описание:|
 |--|--|
-|--AAD-Endpoint|Используемая конечная точка Azure Active Directory. Значение по умолчанию (`https://login.microsoftonline.com`) верно для общедоступного облака Azure. Задайте этот параметр при проверке подлинности в национальном облаке. См. раздел [конечные точки проверки подлинности Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud#azure-ad-authentication-endpoints).
+|--AAD-Endpoint|Используемая конечная точка Azure Active Directory. Значение по умолчанию ( `https://login.microsoftonline.com` ) верно для общедоступного облака Azure. Задайте этот параметр при проверке подлинности в национальном облаке. См. раздел [конечные точки проверки подлинности Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud#azure-ad-authentication-endpoints).
 Этот флаг не требуется для Управляемое удостоверение службы.|
 |--Строка идентификатора приложения|Идентификатор приложения, которому назначено пользовательское удостоверение. Требуется для проверки подлинности субъекта-службы.|
 |--Строка сертификата-путь|Путь к сертификату для проверки подлинности имени участника-службы. Требуется для проверки подлинности субъекта-службы на основе сертификата.|
@@ -115,10 +114,11 @@ azcopy login --service-principal --certificate-path /path/to/my/cert
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Параметр|Описание|
+|Параметр|Описание:|
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
+|--Trusted-Microsoft-суффикс строка   |Указывает дополнительные суффиксы домена, в которых могут быть отправлены Azure Active Directory токены входа.  Значение по умолчанию — "*. Core.Windows.NET;*". core.chinacloudapi.cn; *. Core.cloudapi.de;*. core.usgovcloudapi.net ". Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.|
 
 ## <a name="see-also"></a>См. также
 

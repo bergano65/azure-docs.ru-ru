@@ -1,18 +1,17 @@
 ---
-title: Включение функции "Управление обновлениями" службы автоматизации Azure на портале Azure
+title: Включение Управление обновлениями службы автоматизации Azure из портал Azure
 description: Эта статья содержит сведения о том, как включить функцию "Управление обновлениями" на портале Azure.
 services: automation
 ms.date: 04/11/2019
 ms.topic: article
 ms.custom: mvc
-ms.openlocfilehash: cb3bbf1a7c2e55d152d26c475369f9ccb6fb7d1e
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: 6eab9b543bfec90c0c338bdc758d690499f083e3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83743970"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84204928"
 ---
-# <a name="enable-update-management-from-azure-portal"></a>Включение функции "Управление обновлениями" на портале Azure
+# <a name="enable-update-management-from-the-azure-portal"></a>Включение Управления обновлениями на портале Azure
 
 Эта статья содержит сведения о включении функции [Управление обновлениями](automation-update-management.md) для виртуальных машин с помощью портала Azure. Чтобы включить большое количество виртуальных машин Azure, сначала нужно включить существующую виртуальную машину через функцию "Управление обновлениями". 
 
@@ -63,9 +62,6 @@ ms.locfileid: "83743970"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об использовании функции "Управления обновлениями" для виртуальных машин см. в статье [Управление обновлениями и исправлениями для виртуальных машин Azure](automation-tutorial-update-management.md).
-* Сведения о конфигурациях областей см. в статье [Работа с конфигурациями областей для Управления обновлениями](automation-scope-configurations-update-management.md).
-* Если рабочая область Log Analytics вам больше не нужна, воспользуйтесь инструкциями из статьи [Отмена связи рабочей области с учетной записью службы автоматизации для Управления обновлениями](automation-unlink-workspace-update-management.md).
-* Сведения об удалении виртуальных машин из Управления обновлениями см. в [этой статье](automation-remove-vms-from-update-management.md).
-* Сведения об устранении общих ошибок Управления обновлениями см. в [этой статье](troubleshoot/update-management.md).
-* Сведения об устранении неполадок, связанных с агентом обновления Windows, см. в статье [Устранение неполадок с агентом обновления Windows](troubleshoot/update-agent-issues.md).
-* Сведения об устранении неполадок с агентом обновления Linux см. в статье [Устранение неполадок с агентом обновления Linux](troubleshoot/update-agent-issues-linux.md).
+* Дополнительные сведения см. в статье [Устранение неполадок с Управлением обновлениями](troubleshoot/update-management.md).
+* Дополнительные сведения см. в статье [Устранение неполадок с агентом обновления Windows](troubleshoot/update-agent-issues.md).
+* Прочитайте, [как устранять неполадки, связанные с агентом обновления Linux](troubleshoot/update-agent-issues-linux.md).

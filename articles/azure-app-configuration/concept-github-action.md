@@ -6,12 +6,11 @@ ms.author: lcozzens
 ms.date: 02/20/2020
 ms.topic: conceptual
 ms.service: azure-app-configuration
-ms.openlocfilehash: 9cb1149073247b7f5fc3e74a1aef6f96388c7135
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 6d072cd03fa0e5c8da4593d8633a268d3b5a50fb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83648112"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84197063"
 ---
 # <a name="sync-your-github-repository-to-app-configuration"></a>Синхронизация репозитория GitHub с Конфигурацией приложений
 
@@ -92,7 +91,7 @@ jobs:
 ```
 ## <a name="sync-multiple-files-in-one-action"></a>Синхронизация нескольких файлов одним действием 
 
-Если конфигурация хранится в нескольких файлах, можно использовать приведенный ниже шаблон для активации синхронизации при изменении любого из этих файлов. В этом шаблоне используется библиотека glob https://www.npmjs.com/package/glob. 
+Если конфигурация хранится в нескольких файлах, можно использовать приведенный ниже шаблон для активации синхронизации при изменении любого из этих файлов. В этом шаблоне используется библиотека стандартная маска https://www.npmjs.com/package/glob . Обратите внимание, что если имя файла конфигурации содержит запятую, можно использовать обратную косую черту для экранирования запятой. 
 
 ```json
 on:
@@ -252,7 +251,7 @@ jobs:
 ## <a name="use-max-depth-to-limit-github-action"></a>Использование максимальной глубины для ограничения действия GitHub
 Поведение по умолчанию для вложенных атрибутов JSON состоит в том, чтобы преобразовать в плоскую структуру весь объект.  Приведенный ниже код JSON определяет пару "ключ-значение".
 
-| Клавиши | Значение |
+| Key | Значение |
 | --- | --- |
 | Object:Inner:InnerKey | InnerValue |
 

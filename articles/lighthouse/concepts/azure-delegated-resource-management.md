@@ -1,14 +1,13 @@
 ---
 title: Делегированное управление ресурсами Azure
 description: Предложения управляемых служб позволяют поставщикам услуг продавать предложения по управлению ресурсами клиентам в Azure Marketplace.
-ms.date: 04/01/2020
+ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: db9f562ca4f42d1c1d85eeac44495a8ec7e01beb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: e6f741ccbf0d52e0859722aa304aa6c273fb5acf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80548422"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84219070"
 ---
 # <a name="azure-delegated-resource-management"></a>Делегированное управление ресурсами Azure
 
@@ -40,7 +39,7 @@ ms.locfileid: "80548422"
 3. После того, как клиент был загружен, полномочные пользователи могут войти в систему своего арендатора поставщика услуг и выполнять задачи управления в заданной области клиента, основываясь на определенном вами доступе.
 
 > [!NOTE]
-> Делегирование подписки между двумя клиентами в разных облаках не поддерживается.
+> Вы можете управлять делегированными ресурсами, расположенными в разных [регионах](../../availability-zones/az-overview.md#regions). Однако делегирование подписок в [национальной облаке](../../active-directory/develop/authentication-national-cloud.md) и общедоступном облаке Azure или в двух отдельных национальных облаках не поддерживается.
 
 ## <a name="support-for-azure-delegated-resource-management"></a>Поддержка делегированного управления ресурсами Azure
 

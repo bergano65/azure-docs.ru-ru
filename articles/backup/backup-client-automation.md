@@ -3,12 +3,11 @@ title: Использование PowerShell для архивации Windows S
 description: Из этой статьи вы узнаете, как использовать PowerShell для настройки Azure Backup на сервере или клиенте Windows, а также для управления резервным копированием и восстановлением данных.
 ms.topic: conceptual
 ms.date: 12/2/2019
-ms.openlocfilehash: 67c80a76720dd544da355ee00540cd11a22bfb10
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.openlocfilehash: 696da2c94a439e5efaebbd148f6e05a9e0e15f37
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83848172"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84247756"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-windows-serverwindows-client-using-powershell"></a>Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell
 
@@ -42,7 +41,7 @@ ms.locfileid: "83848172"
     New-AzRecoveryServicesVault -Name "testvault" -ResourceGroupName " test-rg" -Location "WestUS"
     ```
 
-4. Укажите необходимый тип избыточности хранилища: [локально избыточное (LRS)](../storage/common/storage-redundancy-lrs.md) или [геоизбыточное (GRS)](../storage/common/storage-redundancy-grs.md). В следующем примере показано, что для параметра BackupStorageRedundancy для testVault задано значение GeoRedundant.
+4. Укажите тип избыточности хранилища, который будет использоваться. можно использовать [локально избыточное хранилище (LRS)](../storage/common/storage-redundancy-lrs.md) или [геоизбыточное хранилище (GRS)](../storage/common/storage-redundancy-grs.md). В следующем примере показано, что для параметра BackupStorageRedundancy для testVault задано значение GeoRedundant.
 
    > [!TIP]
    > Для многих командлетов службы архивации Azure требуется объект хранилища служб восстановления в качестве входных данных. По этой причине объект хранилища служб восстановления резервных копий удобно хранить в переменной.
@@ -694,7 +693,7 @@ The recovery operation completed successfully.
 * Все данные политики удаляются с компьютера, однако сведения о политике по-прежнему хранятся в службе.
 * Удаляются все расписания резервного копирования, и последующие операции резервного копирования больше не выполняются.
 
-Тем не менее, данные, хранящиеся в Azure, останутся там в течение установленного политикой хранения периода времени. Предыдущие точки восстановления автоматически рассматриваются как устаревшие.
+Однако данные, хранящиеся в Azure, остаются и сохраняются в соответствии с настройкой политики хранения. Предыдущие точки восстановления автоматически рассматриваются как устаревшие.
 
 ## <a name="remote-management"></a>Удаленное управление
 

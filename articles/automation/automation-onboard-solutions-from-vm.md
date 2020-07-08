@@ -5,12 +5,11 @@ services: automation
 ms.date: 03/04/2020
 ms.topic: conceptual
 ms.custom: mvc
-ms.openlocfilehash: cab114e50852f293a3d1caf5bdc9a341f75f2557
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: 481d59bd2a06103629dee88868d9e33de810fdab
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83743965"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84204911"
 ---
 # <a name="enable-update-management-from-an-azure-vm"></a>Включение Управления обновлениями на виртуальных машинах Azure
 
@@ -29,7 +28,7 @@ ms.locfileid: "83743965"
 
 Войдите на портал Azure по адресу https://portal.azure.com.
 
-## <a name="enable-update-management"></a>Включение управления обновлениями
+## <a name="enable-the-feature-for-deployment"></a>Включение функции для развертывания
 
 1. На домашней странице [портала Azure](https://portal.azure.com) выберите **Виртуальные машины** или выполните поиск по этому запросу и выберите **Виртуальные машины**.
 
@@ -43,16 +42,9 @@ ms.locfileid: "83743965"
 
     ![Включение управления обновлениями](media/automation-tutorial-update-management/manageupdates-update-enable.png)
 
-## <a name="check-the-scope-configuration"></a><a name="scope-configuration"></a>Проверка конфигурации области
-
-Функция "Управление обновлениями" использует конфигурацию области в пределах рабочей области для определения целевых компьютеров, на которых будет включено управление. Конфигурация области представляет собой группу из одного или нескольких сохраненных поисковых запросов, которая используется для ограничения области применения функции к конкретным компьютерам. Дополнительные сведения см. в статье [Работа с конфигурациями областей для Управления обновлениями](automation-scope-configurations-update-management.md).
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения об использовании функции "Управления обновлениями" для виртуальных машин см. в статье [Управление обновлениями и исправлениями для виртуальных машин Azure](automation-tutorial-update-management.md).
-* Сведения о конфигурациях областей см. в статье [Работа с конфигурациями областей для Управления обновлениями](automation-scope-configurations-update-management.md).
-* Если рабочая область Log Analytics вам больше не нужна, воспользуйтесь инструкциями из статьи [Отмена связи рабочей области с учетной записью службы автоматизации для Управления обновлениями](automation-unlink-workspace-update-management.md).
-* Сведения об удалении виртуальных машин из Управления обновлениями см. в [этой статье](automation-remove-vms-from-update-management.md).
-* Сведения об устранении общих ошибок Управления обновлениями см. в [этой статье](troubleshoot/update-management.md).
-* Сведения об устранении неполадок, связанных с агентом обновления Windows, см. в статье [Устранение неполадок с агентом обновления Windows](troubleshoot/update-agent-issues.md).
-* Сведения об устранении неполадок с агентом обновления Linux см. в статье [Устранение неполадок с агентом обновления Linux](troubleshoot/update-agent-issues-linux.md).
+* Дополнительные сведения об использовании Управления обновлениями для виртуальных машин см. в статье [Управление обновлениями и исправлениями для виртуальных машин Azure](automation-tutorial-update-management.md).
+* Дополнительные сведения см. в статье [Устранение неполадок с Управлением обновлениями](troubleshoot/update-management.md).
+* Дополнительные сведения см. в статье [Устранение неполадок с агентом обновления Windows](troubleshoot/update-agent-issues.md).
+* Прочитайте, [как устранять неполадки, связанные с агентом обновления Linux](troubleshoot/update-agent-issues-linux.md).

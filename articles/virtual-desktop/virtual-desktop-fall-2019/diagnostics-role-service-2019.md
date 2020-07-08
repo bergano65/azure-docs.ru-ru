@@ -8,12 +8,11 @@ ms.topic: conceptual
 ms.date: 05/13/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 5d4fb87ae5edd4919923e66336760aadf23d1888
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: b1822f6a5bf0d3ac4217a43978dfcc739044e812
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83657250"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84235552"
 ---
 # <a name="identify-and-diagnose-issues"></a>Выявление и диагностика неполадок
 
@@ -161,7 +160,7 @@ Get-RdsDiagnosticActivities -TenantName <tenantName> -ActivityId <ActivityGuid> 
 
 |Числовой код|Код ошибки|Предлагаемое решение|
 |---|---|---|
-|-2147467259|ConnectionFailedAdErrorNoSuchMember|Пользователь не является членом Azure Active Directory. Чтобы добавить его, выполните [эти инструкции для Центра администрирования Active Directory](/windows-server/identity/ad-ds/get-started/adac/active-directory-administrative-center).|
+|-2147467259|ConnectionFailedAdErrorNoSuchMember|Пользователь не является членом Active Directory. Чтобы добавить его, выполните [эти инструкции для Центра администрирования Active Directory](/windows-server/identity/ad-ds/get-started/adac/active-directory-administrative-center).|
 |-2147467259|ConnectionFailedAdTrustedRelationshipFailure|Узел сеансов неправильно присоединен к Active Directory.|
 |-2146233088|ConnectionFailedUserHasValidSessionButRdshIsUnhealthy|Не удалось установить подключение, так как узел сеансов недоступен. Проверьте работоспособность узла сеансов.|
 |-2146233088|ConnectionFailedClientDisconnect|Если эта ошибка возникает часто, убедитесь, что компьютер пользователя подключен к сети.|
@@ -172,6 +171,7 @@ Get-RdsDiagnosticActivities -TenantName <tenantName> -ActivityId <ActivityGuid> 
 |8|ConnectionBroken|Подключение между клиентом и шлюзом или сервером разорвано. Никаких действий не требуется, если это не происходит неожиданно.|
 |14|UnexpectedNetworkDisconnect|Подключение к сети разорвано. Попросите пользователя установить подключение.|
 |24|ReverseConnectFailed|Виртуальная машина узла не имеет прямой связи с шлюзом удаленных рабочих столов. Убедитесь, что IP-адрес шлюза успешно разрешается.|
+|1322|ConnectionFailedNoMappingOfSIDinAD|Пользователь не является членом Active Directory. Чтобы добавить его, выполните [эти инструкции для Центра администрирования Active Directory](/windows-server/identity/ad-ds/get-started/adac/active-directory-administrative-center).|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

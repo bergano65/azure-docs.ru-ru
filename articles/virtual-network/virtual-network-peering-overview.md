@@ -4,20 +4,19 @@ titlesuffix: Azure Virtual Network
 description: Сведения о пиринге между виртуальными сетями в Azure.
 services: virtual-network
 documentationcenter: na
-author: anavinahar
+author: altambaw
 ms.service: virtual-network
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/15/2019
-ms.author: anavin
-ms.openlocfilehash: 5fb54e812e72b9393ffdf632085d0f32ab8b1988
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.author: kumud
+ms.openlocfilehash: e1a2babef17e23457e1f41d8ec0a20a442452c23
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79279550"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84232957"
 ---
 # <a name="virtual-network-peering"></a>Пиринг между виртуальными сетями
 
@@ -76,7 +75,7 @@ Azure поддерживает следующие типы пиринга:
 
 При использовании одноранговых виртуальных сетей, совместно использующих одно подключение Azure ExpressRoute, трафик между ними проходит через отношение пиринга. Этот трафик использует магистральную сеть Azure. Вы по-прежнему можете использовать в каждой виртуальной сети локальные шлюзы для подключения к локальному каналу. В противном случае можно использовать общий шлюз и настроить транзит для локального подключения.
 
-## <a name="troubleshoot"></a>Диагностика
+## <a name="troubleshoot"></a>Устранение неполадок
 
 Чтобы убедиться в том, что виртуальные сети являются равноправными, можно проверить действующие маршруты. Проверьте маршруты для сетевого интерфейса в любой подсети в виртуальной сети. Если пиринг между виртуальными сетями настроен, все подсети виртуальной сети будут иметь маршруты со следующим прыжком типа *Пиринг виртуальных сетей* для каждого адресного пространства в каждой пиринговой виртуальной сети. Дополнительные сведения см. [в статье Диагностика проблем с маршрутизацией виртуальных машин](diagnose-network-routing-problem.md).
 
@@ -112,9 +111,9 @@ Azure поддерживает следующие типы пиринга:
 
     |Модель развертывания Azure             | Подписка  |
     |---------                          |---------|
-    |Обе — диспетчер ресурсов              |[Такая](tutorial-connect-virtual-networks-portal.md)|
+    |Обе — диспетчер ресурсов              |[Аналогично](tutorial-connect-virtual-networks-portal.md)|
     |                                   |[Разные](create-peering-different-subscriptions.md)|
-    |Одна — диспетчер ресурсов, вторая — классическая  |[Такая](create-peering-different-deployment-models.md)|
+    |Одна — диспетчер ресурсов, вторая — классическая  |[Аналогично](create-peering-different-deployment-models.md)|
     |                                   |[Разные](create-peering-different-deployment-models-subscriptions.md)|
 
 * Сведения о создании топологии концентратора и периферийной сети см. [в статье топология сети Hub в Azure](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?toc=%2fazure%2fvirtual-network%2ftoc.json).
