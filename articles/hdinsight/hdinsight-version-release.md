@@ -7,12 +7,12 @@ ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/14/2020
-ms.openlocfilehash: a71d8e251de1d1aedea1d1a329a27bfa236ddfff
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: b2e77049d121a11a45a096017f18f1345f6c6884
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83652380"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85374854"
 ---
 # <a name="azure-hdinsight-40-overview"></a>Обзор Azure HDInsight 4.0
 
@@ -91,6 +91,7 @@ Apache Oozie 4.3.1 входит в состав HDI 4.0 со следующим�
 
 * HDInsight 4.0 не поддерживает MapReduce для Apache Hive. Вместо этого используйте Apache Tez. Узнайте больше об [Apache Tez](https://tez.apache.org/).
 * HDInsight 4.0 не поддерживает Apache Storm.
+* HDInsight 4,0 не поддерживает тип кластера служб ML.
 * В HDInsight 4.0 больше не используется представление Hive.
 * Интерпретатор оболочки в Apache Zeppelin не поддерживается в кластерах Spark и Interactive Query.
 * Вы не можете *запретить* использование LLAP в кластере Spark LLAP. LLAP можно только выключить.

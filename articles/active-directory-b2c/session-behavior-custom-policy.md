@@ -6,16 +6,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/07/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 3f6af5e8e1cfadd302eadfedf189a6710ac4aeca
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.openlocfilehash: a2f20a4521efe2806c4bc66e4612b99caf84382a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82966601"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85385269"
 ---
 # <a name="configure-session-behavior-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка поведения сеанса с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -36,7 +36,7 @@ ms.locfileid: "82966601"
 
 Чтобы изменить конфигурации режима работы сеанса и SSO, добавьте элемент **UserJourneyBehaviors** в элемент [RelyingParty](relyingparty.md).  Элемент **UserJourneyBehaviors** должен сразу же следовать за элементом **DefaultUserJourney**. Элемент **усержаурнэйбехаворс** должен выглядеть, как в следующем примере:
 
-```XML
+```xml
 <UserJourneyBehaviors>
    <SingleSignOn Scope="Application" />
    <SessionExpiryType>Absolute</SessionExpiryType>
@@ -48,9 +48,9 @@ ms.locfileid: "82966601"
 
 ### <a name="configure-the-applications"></a>Настройка приложений
 
-При перенаправлении пользователя в конечную точку выхода Azure AD B2C (для протоколов OAuth2 и SAML) Azure AD B2C очищает сеанс пользователя из браузера.  Чтобы разрешить [единый выход](session-overview.md#single-sign-out), задайте `LogoutUrl` для приложения портал Azure:
+При перенаправлении пользователя в конечную точку выхода Azure AD B2C (для протоколов OAuth2 и SAML) Azure AD B2C очищает сеанс пользователя из браузера.  Чтобы разрешить [единый выход](session-overview.md#single-sign-out), задайте для `LogoutUrl` приложения портал Azure:
 
-1. Перейдите к [портал Azure](https://portal.azure.com).
+1. Перейдите на [портал Azure](https://portal.azure.com).
 1. Выберите каталог Azure AD B2C, щелкнув свою учетную запись в правом верхнем углу страницы.
 1. В меню слева выберите **Azure AD B2C**, выберите **Регистрация приложений**, а затем выберите свое приложение.
 1. Выберите **Параметры**, щелкните **свойства**, а затем найдите текстовое поле **logout URL** . 
@@ -60,7 +60,7 @@ ms.locfileid: "82966601"
 Для поддержки единого выхода в технический профиль издателя маркера для JWT и SAML необходимо указать:
 
 - Имя протокола, например`<Protocol Name="OpenIdConnect" />`
-- Ссылка на технический профиль сеанса, например `UseTechnicalProfileForSessionManagement ReferenceId="SM-jwt-issuer" />`.
+- Ссылка на технический профиль сеанса, например `UseTechnicalProfileForSessionManagement ReferenceId="SM-OAuth-issuer" />` .
 
 В следующем примере показаны издатели маркеров JWT и SAML с единым выходом:
 
@@ -74,7 +74,7 @@ ms.locfileid: "82966601"
       <Protocol Name="OpenIdConnect" />
       <OutputTokenFormat>JWT</OutputTokenFormat>
       ...    
-      <UseTechnicalProfileForSessionManagement ReferenceId="SM-jwt-issuer" />
+      <UseTechnicalProfileForSessionManagement ReferenceId="SM-OAuth-issuer" />
     </TechnicalProfile>
 
     <!-- Session management technical profile for OIDC based tokens -->
@@ -101,6 +101,6 @@ ms.locfileid: "82966601"
 </ClaimsProvider>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [Azure AD B2C сеансе](session-overview.md).

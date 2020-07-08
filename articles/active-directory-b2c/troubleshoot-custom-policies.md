@@ -6,16 +6,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 08/13/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 2f65e98cec04991fe9edef1b81bcb3ecc3d93d76
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c1b51792c86cfce15fa718040dfcbcc13997ee26
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78186372"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85384963"
 ---
 # <a name="troubleshoot-azure-ad-b2c-custom-policies-and-identity-experience-framework"></a>Устранение неполадок в пользовательских политиках Azure AD B2C и инфраструктуре процедур идентификации
 
@@ -52,13 +52,13 @@ ms.locfileid: "78186372"
 
 > Фрагмент кода ошибки: `Reason: User is currently logged as a user of 'yourtenant.onmicrosoft.com' tenant. In order to manage 'yourtenant.onmicrosoft.com', please login as a user of 'yourtenant.onmicrosoft.com' tenant`
 
-* Убедитесь, что значение TenantId в `<TrustFrameworkPolicy\>` элементах `<BasePolicy\>` и соответствует целевому клиенту Azure AD B2C.
+* Убедитесь, что значение TenantId в `<TrustFrameworkPolicy\>` `<BasePolicy\>` элементах и соответствует целевому клиенту Azure AD B2C.
 
 ## <a name="troubleshoot-the-runtime"></a>Устранение неполадок среды выполнения
 
 * Используйте **команду "запустить сейчас** ", `https://jwt.ms` чтобы протестировать политики независимо от веб-или мобильного приложения. Этот веб-сайт работает как приложение проверяющей стороны. Он отображает содержимое JSON Web Token (JWT), созданного политикой Azure AD B2C.
 
-    Чтобы создать тестовое приложение, которое может перенаправляться `https://jwt.ms` для проверки маркеров:
+    Чтобы создать тестовое приложение, которое может перенаправляться для `https://jwt.ms` проверки маркеров:
 
     [!INCLUDE [active-directory-b2c-appreg-idp](../../includes/active-directory-b2c-appreg-idp.md)]
 
@@ -74,7 +74,7 @@ ms.locfileid: "78186372"
 
 **Разрабатывайте и тестируйте пути взаимодействия пользователя с проверенными техническими профилями.** Поэтапно измените шаги оркестрации пути взаимодействия пользователя. Прогрессивно создавайте целевые сценарии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Доступно на сайте GitHub, скачайте архив [Active-Directory-B2C-Custom-Policy-starterpack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/archive/master.zip) . zip. Кроме того, можно клонировать репозиторий:
 

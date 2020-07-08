@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 11/04/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 403dbe6106cb7a1d277ba672112d2bc45dbc2987
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fad29c32731ee2470354a51acf32e350eb0c4cfc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78186273"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85384878"
 ---
 # <a name="collect-azure-active-directory-b2c-logs-with-application-insights"></a>Собирайте журналы Azure Active Directory B2C с помощью Application Insights
 
@@ -42,28 +42,28 @@ ms.locfileid: "78186273"
 
 ## <a name="configure-the-custom-policy"></a>Настройка настраиваемой политики
 
-1. Откройте файл проверяющей стороны (RP), например *SignUpOrSignin. XML*.
+1. Откройте файл проверяющей стороны (RP), например *SignUpOrSignin.xml*.
 1. Добавьте следующие атрибуты в элемент `<TrustFrameworkPolicy>`.
 
-   ```XML
+   ```xml
    DeploymentMode="Development"
    UserJourneyRecorderEndpoint="urn:journeyrecorder:applicationinsights"
    ```
 
-1. Добавьте в `<UserJourneyBehaviors>` `<RelyingParty>` узел дочерний узел, если он еще не создан. Он должен располагаться сразу `<DefaultUserJourney ReferenceId="UserJourney Id" from your extensions policy, or equivalent (for example:SignUpOrSigninWithAAD" />`после.
+1. Добавьте `<UserJourneyBehaviors>` в узел дочерний узел, если он еще не создан `<RelyingParty>` . Он должен располагаться сразу после `<DefaultUserJourney ReferenceId="UserJourney Id" from your extensions policy, or equivalent (for example:SignUpOrSigninWithAAD" />` .
 1. Добавьте следующий узел в качестве дочернего узла элемента `<UserJourneyBehaviors>`. Обязательно замените `{Your Application Insights Key}` Application Insightsным **ключом инструментирования** , записанным ранее.
 
-    ```XML
+    ```xml
     <JourneyInsights TelemetryEngine="ApplicationInsights" InstrumentationKey="{Your Application Insights Key}" DeveloperMode="true" ClientEnabled="false" ServerEnabled="true" TelemetryVersion="1.0.0" />
     ```
 
     * `DeveloperMode="true"`сообщает ApplicationInsights, что необходимо ускорить передачу данных телеметрии через конвейер обработки. Подходит для разработки, но ограничена большими объемами томов.
-    * `ClientEnabled="true"`отправляет скрипт на стороне клиента ApplicationInsights для отслеживания просмотра страниц и ошибок на стороне клиента. Их можно просмотреть в таблице **бровсертимингс** на портале Application Insights. При установке `ClientEnabled= "true"`вы добавляете в скрипт страницы Application Insights и получаете время загрузки страниц и вызовов AJAX, количество, сведения об исключениях браузера и сбоях AJAX, а также число пользователей и сеансов. Это поле является **необязательным**и по умолчанию `false` имеет значение.
+    * `ClientEnabled="true"`отправляет скрипт на стороне клиента ApplicationInsights для отслеживания просмотра страниц и ошибок на стороне клиента. Их можно просмотреть в таблице **бровсертимингс** на портале Application Insights. При установке `ClientEnabled= "true"` вы добавляете в скрипт страницы Application Insights и получаете время загрузки страниц и вызовов AJAX, количество, сведения об исключениях браузера и СБОЯХ AJAX, а также число пользователей и сеансов. Это поле является **необязательным**и по `false` умолчанию имеет значение.
     * Параметр `ServerEnabled="true"` отправляет существующие данные JSON UserJourneyRecorder как пользовательское событие в Application Insights.
 
     Пример:
 
-    ```XML
+    ```xml
     <TrustFrameworkPolicy
       ...
       TenantId="fabrikamb2c.onmicrosoft.com"
@@ -93,7 +93,7 @@ ms.locfileid: "78186273"
 
 Ниже приведен список запросов, которые можно использовать для просмотра журналов.
 
-| query | Описание |
+| Запрос | Описание |
 |---------------------|--------------------|
 `traces` | Просмотр всех журналов, созданных Azure AD B2C |
 `traces | where timestamp > ago(1d)` | Просмотр всех журналов, созданных Azure AD B2C за последний день
@@ -102,7 +102,7 @@ ms.locfileid: "78186273"
 
 Дополнительные сведения о запросах см. [в разделе Обзор запросов журналов в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Для разработчиков удостоверений сообщество разработало средство просмотра пути взаимодействия пользователя. Оно считывается из экземпляра Application Insights и обеспечивает хорошо структурированное представление событий пути взаимодействия пользователя. Исходный код можно получить и развернуть в собственном решении.
 

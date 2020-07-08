@@ -6,16 +6,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/07/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: f5400b47c1e0b4657e40d2c57f8212711bbdaf3f
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.openlocfilehash: ed10a9258590f8f9037a574bd0322a82dd309a5b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82927077"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85385252"
 ---
 # <a name="configure-session-behavior-in-azure-active-directory-b2c"></a>Настройка поведения сеанса в Azure Active Directory B2C
 
@@ -38,14 +38,14 @@ ms.locfileid: "82927077"
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент Azure AD B2C.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
-4. Выберите **потоки пользователя (политики)**.
-5. Откройте созданный ранее поток пользователя.
+4. Выберите **Потоки пользователей (политики)** .
+5. Откройте созданный ранее пользовательский поток.
 6. Выберите **Свойства**.
 7. Настройте **время существования сеанса веб-приложения (в минутах)**, **время ожидания сеанса веб-приложения**, **конфигурацию единого входа**и **требование маркера идентификатора при необходимости в запросах на выход** .
 
     ![Параметры свойства "поведение сеанса" в портал Azure](./media/session-behavior/session-behavior.png)
 
-8. Нажмите кнопку **Сохранить**.
+8. Выберите команду **Сохранить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

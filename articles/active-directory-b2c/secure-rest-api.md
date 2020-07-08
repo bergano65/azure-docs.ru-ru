@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/20/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 1f1897a4f58276bbac2a7de673544e592a562562
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 206768604c6d08a32c0caaf9b53a1417cfa1344b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83826678"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85385337"
 ---
 # <a name="secure-your-restful-services"></a>Защита служб с поддержкой RESTful 
 
@@ -114,7 +114,7 @@ ms.locfileid: "83826678"
 Если у вас еще нет сертификата, для всех сред, кроме рабочей, можно использовать самозаверяющий сертификат. В Windows для создания сертификата используется командлет PowerShell [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/new-selfsignedcertificate).
 
 1. Выполните эту команду PowerShell, чтобы создать самозаверяющий сертификат. Измените аргумент `-Subject`, указав реальные значения приложения и имени клиента Azure  AD B2C. Можно также скорректировать дату `-NotAfter`, чтобы указать другой срок действия сертификата.
-    ```PowerShell
+    ```powershell
     New-SelfSignedCertificate `
         -KeyExportPolicy Exportable `
         -Subject "CN=yourappname.yourtenant.onmicrosoft.com" `
@@ -285,7 +285,7 @@ Authorization: Bearer <token>
 
 После добавления представленных выше фрагментов кода технический профиль должен выглядеть аналогично следующему XML-коду:
 
-```XML
+```xml
 <ClaimsProvider>
   <DisplayName>REST APIs</DisplayName>
   <TechnicalProfiles>

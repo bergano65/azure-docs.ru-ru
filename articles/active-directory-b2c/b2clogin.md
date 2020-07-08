@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/04/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 64b440054795670b99a22e37dec7188f3e1cd74c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4297ee64742b81e86eb8b85c0a6c405fac07d67f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78189996"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85386170"
 ---
 # <a name="set-redirect-urls-to-b2clogincom-for-azure-active-directory-b2c"></a>Установка b2clogin.com в качестве URL-адреса перенаправления для Azure Active Directory B2C
 
@@ -50,7 +50,7 @@ ms.locfileid: "78189996"
 
 ## <a name="change-identity-provider-redirect-urls"></a>Изменение URL-адресов перенаправления поставщика удостоверений
 
-На каждом веб-сайте поставщика удостоверений, в котором вы создали приложение, измените все доверенные URL- `your-tenant-name.b2clogin.com` адреса, чтобы они перенаправлялись на *Login.microsoftonline.com*.
+На каждом веб-сайте поставщика удостоверений, в котором вы создали приложение, измените все доверенные URL-адреса, чтобы они перенаправлялись на `your-tenant-name.b2clogin.com` *Login.microsoftonline.com*.
 
 Для URL-адресов перенаправления b2clogin.com можно использовать два формата. Первый предоставляет преимущества отсутствия "Майкрософт" в URL-адресе, используя идентификатор клиента (GUID) вместо имени домена клиента:
 
@@ -58,7 +58,7 @@ ms.locfileid: "78189996"
 https://{your-tenant-name}.b2clogin.com/{your-tenant-id}/oauth2/authresp
 ```
 
-Во втором варианте используется доменное имя клиента в формате `your-tenant-name.onmicrosoft.com`. Пример:
+Во втором варианте используется доменное имя клиента в формате `your-tenant-name.onmicrosoft.com` . Пример:
 
 ```
 https://{your-tenant-name}.b2clogin.com/{your-tenant-name}.onmicrosoft.com/oauth2/authresp
@@ -71,7 +71,7 @@ https://{your-tenant-name}.b2clogin.com/{your-tenant-name}.onmicrosoft.com/oauth
 
 ## <a name="update-your-applications-and-apis"></a>Обновление приложений и API-интерфейсов
 
-Код в приложениях с поддержкой Azure AD B2C и API-интерфейсах может ссылаться `login.microsoftonline.com` в нескольких местах. Например, код может иметь ссылки на потоки пользователей и конечные точки маркеров. Вместо этого обновите следующие ссылки `your-tenant-name.b2clogin.com`:
+Код в приложениях с поддержкой Azure AD B2C и API-интерфейсах может ссылаться `login.microsoftonline.com` в нескольких местах. Например, код может иметь ссылки на потоки пользователей и конечные точки маркеров. Вместо этого обновите следующие ссылки `your-tenant-name.b2clogin.com` :
 
 * Конечная точка авторизации
 * Конечная точка маркера
@@ -91,7 +91,7 @@ https://contosob2c.b2clogin.com/00000000-0000-0000-0000-000000000000/B2C_1_signu
 
 ### <a name="validateauthority-property"></a>Валидатеаусорити, свойство
 
-Если вы используете [MSAL.NET][msal-dotnet] v2 или более раннюю версию, установите свойство **валидатеаусорити** в `false` значение On Client, чтобы разрешить перенаправление в *b2clogin.com*. Этот параметр не является обязательным для MSAL.NET v3 и более поздних версий.
+Если вы используете [MSAL.NET][msal-dotnet] v2 или более раннюю версию, установите свойство **валидатеаусорити** в значение `false` On Client, чтобы разрешить перенаправление в *b2clogin.com*. Этот параметр не является обязательным для MSAL.NET v3 и более поздних версий.
 
 ```csharp
 ConfidentialClientApplication client = new ConfidentialClientApplication(...); // Can also be PublicClientApplication
@@ -111,7 +111,7 @@ this.clientApplication = new UserAgentApplication(
 );
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о миграции веб-приложений на основе OWIN в b2clogin.com см. в статье [Миграция веб-API на основе OWIN в b2clogin.com](multiple-token-endpoints.md).
 

@@ -3,24 +3,24 @@ title: Часто задаваемые вопросы об Azure AD Application 
 description: Ознакомьтесь с ответами на часто задаваемые вопросы об использовании AD Application Proxy Azure для публикации внутренних локальных приложений для удаленных пользователей.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 10/03/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: a6efe74008b2271b960f877f5f0f6b2b6b549a8d
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.openlocfilehash: 839ce418fa8ad72e18537cf673c8af0479409ba7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82583083"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85386289"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)
 
@@ -40,7 +40,7 @@ ms.locfileid: "82583083"
 
 ### <a name="can-application-proxy-connector-services-run-in-a-different-user-context-than-the-default"></a>Могут ли службы соединителя прокси приложения запускаться в контексте пользователя, отличном от контекста по умолчанию?
 
-Нет, этот сценарий не поддерживается. Параметры по умолчанию:
+Нет, этот сценарий не поддерживается. По умолчанию используются следующие параметры:
 
 - Соединитель прокси приложения Microsoft AAD — Вапксвк — сетевая служба
 - Средство обновления соединителей Microsoft AAD Application Proxy-Вапкупдатерсвк-NT Authority\System
@@ -71,6 +71,13 @@ ms.locfileid: "82583083"
 ### <a name="does-the-azure-ad-application-proxy-connector-have-to-be-on-the-same-subnet-as-the-resource"></a>Должен ли соединитель Azure AD Application Proxy находиться в той же подсети, что и ресурс?
 
 Соединитель не обязательно должен находиться в той же подсети. Однако ему требуется разрешение имен (DNS, файл Hosts) для ресурса и необходимое сетевое подключение (маршрутизация к ресурсу, порты, открытые на ресурсе и т. д.). Рекомендации см. в разделе [рекомендации по топологии сети при использовании Azure Active Directory Application proxy](application-proxy-network-topology.md).
+
+### <a name="what-versions-of-windows-server-can-i-install-a-connector-on"></a>В каких версиях Windows Server можно установить соединитель?
+Для прокси приложения требуется Windows Server 2012 R2 или более поздней версии. В настоящее время существует ограничение на HTTP2 для Windows Server 2019. Для успешного использования соединителя в Windows Server 2019 необходимо добавить следующий раздел реестра и перезапустить сервер:
+    ```
+    HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\EnableDefaultHttp2 (DWORD) Value: 0 
+    ```
+
 
 ## <a name="application-configuration"></a>Настройка приложения
 
@@ -152,7 +159,7 @@ ms.locfileid: "82583083"
 
 ### <a name="does-websocket-support-work-for-applications-other-than-qliksense"></a>Поддерживает ли WebSocket работу для приложений, отличных от QlikSense?
 
-В настоящее время поддержка протокола WebSocket по-прежнему доступна в общедоступной предварительной версии, и она может не работать для других приложений. Некоторые клиенты успешно выполнили смешанный успешный протокол WebSocket с другими приложениями. При тестировании таких сценариев мы будем рады услышать результаты. Отправьте нам свой отзыв по адресу aadapfeedback@microsoft.com.
+В настоящее время поддержка протокола WebSocket по-прежнему доступна в общедоступной предварительной версии, и она может не работать для других приложений. Некоторые клиенты успешно выполнили смешанный успешный протокол WebSocket с другими приложениями. При тестировании таких сценариев мы будем рады услышать результаты. Отправьте нам свой отзыв по адресу aadapfeedback@microsoft.com .
 
 Функции (EventLog, PowerShell и службы удаленных рабочих столов) в центре администрирования Windows (ВАК) или удаленный рабочий стол веб-клиента (HTML5) не работают в Azure AD Application Proxy в настоящее время.
 
@@ -164,7 +171,7 @@ ms.locfileid: "82583083"
 
 Для лучшей производительности рекомендуется использовать идентичные внутренние и внешние URL-адреса, настроив [Личные домены](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-custom-domain). Если использование пользовательских доменов невозможно, можно улучшить производительность преобразования ссылок с помощью расширения для безопасного входа в мои приложения или браузера Microsoft ребра на мобильных устройствах. См. раздел [Перенаправление жестко закодированных ссылок для приложений, опубликованных с помощью Azure AD application proxy](application-proxy-configure-hard-coded-link-translation.md).
 
-## <a name="wildcards"></a>Подстановочные знаки
+## <a name="wildcards"></a>Знаки подстановки
 
 ### <a name="how-do-i-use-wildcards-to-publish-two-applications-with-the-same-custom-domain-name-but-with-different-protocols-one-for-http-and-one-for-https"></a>Разделы справки использовать подстановочные знаки для публикации двух приложений с одним и тем же именем личного домена, но с разными протоколами, одним для HTTP и одним для HTTPS?
 

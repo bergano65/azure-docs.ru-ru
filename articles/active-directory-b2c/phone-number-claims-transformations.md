@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 02/26/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 8052f94755019d8ad3fe818d979d2eb7f8ba0a5e
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: e175a81efc1ab0950c1fda314efb206ff97a2b7f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83738767"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85385388"
 ---
 # <a name="define-phone-number-claims-transformations-in-azure-ad-b2c"></a>Определение преобразований утверждений номеров телефона в Azure AD B2C
 
@@ -37,7 +37,7 @@ ms.locfileid: "83738767"
 
 В этом примере утверждение cellPhoneNumber с типом значения `phoneNumber` преобразуется в утверждение cellPhone с типом значения `string`.
 
-```XML
+```xml
 <ClaimsTransformation Id="PhoneNumberToString" TransformationMethod="ConvertPhoneNumberClaimToString">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="cellPhoneNumber" TransformationClaimType="phoneNumber" />
@@ -72,7 +72,7 @@ ms.locfileid: "83738767"
 
 Это преобразование утверждений можно использовать, чтобы убедиться, что указанное строковое утверждение является допустимым номером телефона. В противном случае выдается сообщение об ошибке. Следующий пример проверяет, что значение ClaimType для **phoneString** действительно соответствует допустимому номеру телефона, а затем возвращает номер телефона в стандартном формате Azure AD B2C. В противном случае отображается сообщение об ошибке.
 
-```XML
+```xml
 <ClaimsTransformation Id="ConvertStringToPhoneNumber" TransformationMethod="ConvertStringToPhoneNumberClaim">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="phoneString" TransformationClaimType="phoneNumberString" />
@@ -86,7 +86,7 @@ ms.locfileid: "83738767"
 
 Самоподтвержденный технический профиль, который вызывает технический профиль проверки, содержащий это преобразование утверждений, может определять сообщение об ошибке.
 
-```XML
+```xml
 <TechnicalProfile Id="SelfAsserted-LocalAccountSignup-Phone">
   <Metadata>
     <Item Key="UserMessageIfClaimsTransformationInvalidPhoneNumber">Custom error message if the phone number is not valid.</Item>
@@ -132,7 +132,7 @@ ms.locfileid: "83738767"
 
 В следующем примере производится попытка разделить номер телефона на национальной номер и код страны или региона. Если номер телефона действителен, то номер телефона будет заменен национальным номером. Если номер телефона является недопустимым, то исключение не будет порождено, а номер телефона сохранит свое исходное значение.
 
-```XML
+```xml
 <ClaimsTransformation Id="GetNationalNumberAndCountryCodeFromPhoneNumberString" TransformationMethod="GetNationalNumberAndCountryCodeFromPhoneNumberString">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="phoneNumber" TransformationClaimType="phoneNumber" />
@@ -150,7 +150,7 @@ ms.locfileid: "83738767"
 
 Самоподтвержденный технический профиль, который вызывает технический профиль проверки, содержащий это преобразование утверждений, может определять сообщение об ошибке.
 
-```XML
+```xml
 <TechnicalProfile Id="SelfAsserted-LocalAccountSignup-Phone">
   <Metadata>
     <Item Key="UserMessageIfPhoneNumberParseFailure">Custom error message if the phone number is not valid.</Item>

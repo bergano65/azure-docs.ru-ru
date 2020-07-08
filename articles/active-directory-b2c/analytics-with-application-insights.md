@@ -6,17 +6,17 @@ services: active-directory-b2c
 author: msmimart
 manager: celestedg
 ms.service: active-directory
-ms.topic: conceptual
+ms.topic: how-to
 ms.workload: identity
 ms.date: 04/05/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 25e62e7c6865f91daa242a33a0f491f8015be41a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 67ea7324419d86fa5b5c23a2f0aa5f8c057495d1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80672532"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85385983"
 ---
 # <a name="track-user-behavior-in-azure-active-directory-b2c-using-application-insights"></a>Отслеживание поведения пользователей в Azure Active Directory B2C с использованием Application Insights
 
@@ -57,12 +57,12 @@ Application Insights может объединить события с испо�
 
 ## <a name="define-claims"></a>Определение утверждений
 
-Утверждение предоставляет временное хранилище данных во время выполнения политики Azure AD B2C. [Схема утверждений](claimsschema.md) — это место, где объявляются утверждения.
+Утверждение предоставляет временное хранилище данных во время выполнения политики Azure AD B2C. [Схема утверждений](claimsschema.md) — это место, где вы объявляете свои утверждения.
 
-1. Откройте файл расширений политики. Например, <em> `SocialAndLocalAccounts/` </em>.
+1. Откройте файл расширения для политики, например <em>`SocialAndLocalAccounts/`**`TrustFrameworkExtensions.xml`**</em>.
 1. Найдите элемент [BuildingBlocks](buildingblocks.md). Если такой элемент не существует, добавьте его.
-1. Нахождение элемента [ClaimsSchema](claimsschema.md) . Если такой элемент не существует, добавьте его.
-1. Добавьте следующие утверждения в элемент **ClaimsSchema** . 
+1. Найдите элемент [ClaimsSchema](claimsschema.md). Если такой элемент не существует, добавьте его.
+1. Добавьте следующие утверждения в элемент **ClaimsSchema**. 
 
 ```xml
 <ClaimType Id="EventType">
@@ -171,7 +171,7 @@ Application Insights может объединить события с испо�
 
 ```xml
 <!-- Track that we have received a sign in request -->
-<OrchestrationStep Order="1" Type="ClaimsExchange">
+<OrchestrationStep Order="2" Type="ClaimsExchange">
   <ClaimsExchanges>
     <ClaimsExchange Id="TrackSignInRequest" TechnicalProfileReferenceId="AppInsights-SignInRequest" />
   </ClaimsExchanges>
@@ -220,7 +220,7 @@ Application Insights может объединить события с испо�
 Сохраните и отправьте файл *TrustFrameworkExtensions.xml*. Затем вызовите политику проверяющей стороны из своего приложения или используйте **Запустить сейчас** на портале Azure. За считаные секунды события будут доступны в Application Insights.
 
 1. Откройте **Application Insights** ресурс в клиенте Azure Active Directory.
-2. Выберите **Usage** > **события**использования.
+2. Выберите **Usage**  >  **события**использования.
 3. Установите для поля **Во время** значение **Последний час**, а для поля **By** (До) — **3 минуты**.  Возможно, для просмотра результатов понадобится выбрать элемент **Обновить**.
 
 ![Использование Application Insights. Колонка "События".](./media/analytics-with-application-insights/app-ins-graphic.png)
@@ -233,12 +233,12 @@ Application Insights может объединить события с испо�
 - **PartnerClaimType** — имя свойства, отображаемое в Azure Insights. Используйте синтаксис `{property:NAME}`, в котором свойство `NAME` добавляется в событие.
 - **DefaultValue** — используйте любой строковой параметр или арбитр утверждений.
 
-```XML
+```xml
 <InputClaim ClaimTypeReferenceId="app_session" PartnerClaimType="{property:app_session}" DefaultValue="{OAUTH-KV:app_session}" />
 <InputClaim ClaimTypeReferenceId="loyalty_number" PartnerClaimType="{property:loyalty_number}" DefaultValue="{OAUTH-KV:loyalty_number}" />
 <InputClaim ClaimTypeReferenceId="language" PartnerClaimType="{property:language}" DefaultValue="{Culture:RFC5646}" />
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [Application Insights](application-insights-technical-profile.md) техническом профиле см. в справочнике по инфраструктура процедур идентификации. 

@@ -6,19 +6,19 @@ author: rwike77
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: azuread-dev
-ms.topic: conceptual
+ms.topic: how-to
 ms.workload: identity
 ms.date: 08/21/2018
 ms.author: ryanwi
 ms.reviewer: jeedes
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: 3ad4efa3b8126a9b9c6557822f61e3bfff3fe120
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 163087461dbbcfd036b348f69362f0ad0010e791
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80154888"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85383858"
 ---
 # <a name="how-to-get-appsource-certified-for-azure-active-directory"></a>Как получить сертификат AppSource для Azure Active Directory
 
@@ -108,12 +108,12 @@ ms.locfileid: "80154888"
 
 Дополнительные сведения о пробной версии AppSource см. [в этом видео](https://aka.ms/trialexperienceforwebapps). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о разработке приложений, поддерживающих вход с помощью Azure AD, см. в статье [Сценарии проверки подлинности в Azure AD](https://docs.microsoft.com/azure/active-directory/develop/v1-authentication-scenarios).
 - Сведения о выводе списка приложений SaaS в AppSource см. на [странице сведений для партнеров AppSource](https://appsource.microsoft.com/partners).
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="get-support"></a>Техническая поддержка
 
 Для интеграции Azure AD мы используем [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-active-directory+appsource). Кроме того, участники сообщества могут предоставлять поддержку.
 

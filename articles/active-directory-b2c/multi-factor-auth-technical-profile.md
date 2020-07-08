@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 03/26/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c9ed0e329b498112feafaf21c34e85ea436cbb77
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 71040f831ed7a64f2bc7be7f3a75218976fc2559
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80332804"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85385949"
 ---
 # <a name="define-an-azure-mfa-technical-profile-in-an-azure-ad-b2c-custom-policy"></a>Определение технического профиля Azure MFA в Azure AD B2C настраиваемой политике
 
@@ -42,7 +42,7 @@ Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, 
 
 В следующем примере показан технический профиль Azure MFA:
 
-```XML
+```xml
 <TechnicalProfile Id="AzureMfa-SendSms">
     <DisplayName>Send Sms</DisplayName>
     <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
@@ -57,7 +57,7 @@ Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, 
 
 Элемент **inputclaim** содержит список утверждений для отправки в Azure mfa. Вы также можете сопоставлять имя заявки с именем, определенным в техническом профиле MFA.
 
-| клаимреференцеид | Обязательный | Описание |
+| клаимреференцеид | Обязательное значение | Описание |
 | --------- | -------- | ----------- |
 | userPrincipalName | Да | Идентификатор пользователя, владеющего номером телефона. |
 | phoneNumber | Да | Номер телефона, по которому отправляется код SMS. |
@@ -74,7 +74,7 @@ Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, 
 
 ### <a name="metadata"></a>Метаданные
 
-| Атрибут | Обязательный | Описание |
+| attribute | Обязательное значение | Описание |
 | --------- | -------- | ----------- |
 | Операция | Да | Должен быть **оневайсмс**.  |
 
@@ -82,18 +82,18 @@ Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, 
 
 Следующие метаданные можно использовать для настройки сообщений об ошибках, отображаемых при отправке ошибки SMS. Метаданные должны быть настроены в [самостоятельно утвержденном](self-asserted-technical-profile.md) техническом профиле. Сообщения об ошибках можно [локализовать](localization-string-ids.md#azure-mfa-error-messages).
 
-| Атрибут | Обязательный | Описание |
+| Атрибут | Обязательное значение | Описание |
 | --------- | -------- | ----------- |
-| усермессажеифкаулднтсендсмс | Нет | Сообщение об ошибке пользователя, если указанный номер телефона не принимает SMS. |
-| усермессажеифинвалидформат | Нет | Сообщение об ошибке пользователя, если указанный номер телефона не является допустимым номером телефона. |
-| усермессажеифсервереррор | Нет | Сообщение об ошибке пользователя, если на сервере произошла внутренняя ошибка. |
-| усермессажеифсроттлед| Нет | Сообщение об ошибке пользователя, если запрос был отрегулирован.|
+| UserMessageIfCouldntSendSms | Нет | Сообщение об ошибке пользователя, если указанный номер телефона не принимает SMS. |
+| UserMessageIfInvalidFormat | Нет | Сообщение об ошибке пользователя, если указанный номер телефона не является допустимым номером телефона. |
+| UserMessageIfServerError | Нет | Сообщение об ошибке пользователя, если на сервере произошла внутренняя ошибка. |
+| UserMessageIfThrottled| Нет | Сообщение об ошибке пользователя, если запрос был отрегулирован.|
 
 ### <a name="example-send-an-sms"></a>Пример. Отправка SMS
 
 В следующем примере показан технический профиль Azure MFA, который используется для отправки кода через SMS.
 
-```XML
+```xml
 <TechnicalProfile Id="AzureMfa-SendSms">
   <DisplayName>Send Sms</DisplayName>
   <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
@@ -119,7 +119,7 @@ Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, 
 
 Элемент **inputclaim** содержит список утверждений для отправки в Azure mfa. Вы также можете сопоставлять имя заявки с именем, определенным в техническом профиле MFA.
 
-| клаимреференцеид | Обязательный | Описание |
+| клаимреференцеид | Обязательное значение | Описание |
 | --------- | -------- | ----------- | ----------- |
 | phoneNumber| Да | Тот же номер телефона, который использовался ранее для отправки кода. Он также используется для нахождение сеанса проверки телефона. |
 | верификатионкоде  | Да | Код проверки, предоставленный пользователем для проверки |
@@ -134,7 +134,7 @@ Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, 
 
 ### <a name="metadata"></a>Метаданные
 
-| Атрибут | Обязательный | Описание |
+| attribute | Обязательное значение | Описание |
 | --------- | -------- | ----------- |
 | Операция | Да | Необходимо **проверить** |
 
@@ -142,18 +142,18 @@ Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, 
 
 Следующие метаданные можно использовать для настройки сообщений об ошибках, отображаемых при сбое проверки кода. Метаданные должны быть настроены в [самостоятельно утвержденном](self-asserted-technical-profile.md) техническом профиле. Сообщения об ошибках можно [локализовать](localization-string-ids.md#azure-mfa-error-messages).
 
-| Атрибут | Обязательный | Описание |
+| Атрибут | Обязательное значение | Описание |
 | --------- | -------- | ----------- |
-| усермессажеифмаксалловедкодеретриреачед| Нет | Сообщение об ошибке пользователя, если пользователь попытался слишком много раз выполнить проверку кода. |
-| усермессажеифсервереррор | Нет | Сообщение об ошибке пользователя, если на сервере произошла внутренняя ошибка. |
-| усермессажеифсроттлед| Нет | Сообщение об ошибке пользователя, если запрос регулируется.|
-| усермессажеифвронгкодинтеред| Нет| Сообщение об ошибке пользователя, если код, указанный для проверки, неверен.|
+| UserMessageIfMaxAllowedCodeRetryReached| Нет | Сообщение об ошибке пользователя, если пользователь попытался слишком много раз выполнить проверку кода. |
+| UserMessageIfServerError | Нет | Сообщение об ошибке пользователя, если на сервере произошла внутренняя ошибка. |
+| UserMessageIfThrottled| Нет | Сообщение об ошибке пользователя, если запрос регулируется.|
+| UserMessageIfWrongCodeEntered| Нет| Сообщение об ошибке пользователя, если код, указанный для проверки, неверен.|
 
 ### <a name="example-verify-a-code"></a>Пример: Проверка кода
 
 В следующем примере показан технический профиль Azure MFA, используемый для проверки кода.
 
-```XML
+```xml
 <TechnicalProfile Id="AzureMfa-VerifySms">
     <DisplayName>Verify Sms</DisplayName>
     <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />

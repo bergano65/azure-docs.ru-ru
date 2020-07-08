@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/25/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: eadac0e973b361b1fdee63dcc9cfa848a0b2bacb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d432912cb0442744061500fc01bdd86a4c5d97ef
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78183964"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85385354"
 ---
 # <a name="set-up-phone-sign-up-and-sign-in-with-custom-policies-in-azure-ad-b2c-preview"></a>Настройка регистрации и входа в систему с помощью настраиваемых политик в Azure AD B2C (Предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "78183964"
 
 Одноразовые пароли отправляются пользователям с помощью SMS-сообщений, и вам может потребоваться оплатить каждое отправленное сообщение. Сведения о ценах см. в разделе " **Специальные расходы** " статьи [Azure Active Directory B2C цены](https://azure.microsoft.com/pricing/details/active-directory-b2c/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед настройкой OTP вам потребуются следующие ресурсы.
 
@@ -48,31 +48,31 @@ ms.locfileid: "78183964"
 
     `active-directory-b2c-custom-policy-starterpack/scenarios/`**`phone-number-passwordless`**
 
-1. В каждом файле замените строку `yourtenant` именем клиента Azure AD B2C. Например, если имя клиента B2C — *contosob2c*, все экземпляры `yourtenant.onmicrosoft.com` станут. `contosob2c.onmicrosoft.com`
+1. В каждом файле замените строку `yourtenant` именем клиента Azure AD B2C. Например, если имя клиента B2C — *contosob2c*, все экземпляры `yourtenant.onmicrosoft.com` станут `contosob2c.onmicrosoft.com` .
 
 1. Выполните действия, описанные в разделе [Добавление идентификаторов приложений в пользовательскую политику](custom-policy-get-started.md#add-application-ids-to-the-custom-policy) статьи [Приступая к работе с пользовательскими политиками в Azure Active Directory B2C](custom-policy-get-started.md). В этом случае обновите `/phone-number-passwordless/` **`Phone_Email_Base.xml`** **идентификаторы приложения (клиента)** двух приложений, зарегистрированных при выполнении необходимых условий, *IdentityExperienceFramework* и *ProxyIdentityExperienceFramework*.
 
 ## <a name="upload-the-policy-files"></a>Отправка файлов политики
 
 1. Войдите в [портал Azure](https://portal.azure.com) и перейдите к своему клиенту Azure AD B2C.
-1. В разделе **политики**выберите **инфраструктура процедур идентификации**.
-1. Выберите **Отправить настраиваемую политику**.
+1. В разделе **Политики** выберите **Identity Experience Framework**.
+1. Выберите **Отправить пользовательскую политику**.
 1. Отправьте файлы политики в следующем порядке:
-    1. *Phone_Email_Base. XML*
-    1. *Сигнупорсигнинвисфоне. XML*
-    1. *Сигнупорсигнинвисфонеоремаил. XML*
-    1. *Профилидитфонеонли. XML*
-    1. *Профилидитфонимаил. XML*
-    1. *Чанжефоненумбер. XML*
-    1. *Пассвордресетемаил. XML*
+    1. *Phone_Email_Base.xml*
+    1. *SignUpOrSignInWithPhone.xml*
+    1. *SignUpOrSignInWithPhoneOrEmail.xml*
+    1. *ProfileEditPhoneOnly.xml*
+    1. *ProfileEditPhoneEmail.xml*
+    1. *ChangePhoneNumber.xml*
+    1. *PasswordResetEmail.xml*
 
-При передаче каждого файла Azure добавляет префикс `B2C_1A_`.
+При передаче каждого файла Azure добавляет префикс `B2C_1A_` .
 
 ## <a name="test-the-custom-policy"></a>Проверка пользовательской политики
 
 1. В разделе **пользовательские политики**выберите **B2C_1A_SignUpOrSignInWithPhone**.
 1. В разделе **Выбор приложения**выберите приложение *APP1* , которое вы зарегистрировали при выполнении необходимых условий.
-1. В качестве **URL-адреса ответа выберите** `https://jwt.ms`.
+1. В качестве **URL-адреса ответа выберите** `https://jwt.ms` .
 1. Выберите **Запустить сейчас** и зарегистрируйтесь, используя адрес электронной почты или номер телефона.
 1. Выберите **выполнить** еще раз и войдите с помощью той же учетной записи, чтобы подтвердить правильность конфигурации.
 
