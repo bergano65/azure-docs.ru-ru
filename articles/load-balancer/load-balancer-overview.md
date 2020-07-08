@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 1/14/2020
 ms.author: allensu
-ms.openlocfilehash: 1bc18788019c3ec97e06e3b01e823a0ba53541b8
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.openlocfilehash: 598df2f0a1e9badebbb1bf8e7ec0f93ff98d55ce
+ms.sourcegitcommit: 61d92af1d24510c0cc80afb1aebdc46180997c69
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82734762"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85341780"
 ---
 # <a name="what-is-azure-load-balancer"></a>Что такое Azure Load Balancer?
 
@@ -44,7 +44,7 @@ C помощью Load Balancer (цен. категория "Стандартны
 
 Ниже перечислены основные сценарии, которые можно выполнить с помощью подсистемы Load Balancer (цен. категория "Стандартный").
 
-- Балансировка нагрузки **[внутреннего](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-standard-manage-portal)** и **[внешнего](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-standard-internal-portal)** трафика на виртуальных машинах Azure.
+- Балансировка нагрузки **[внутреннего](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-standard-internal-portal)** и **[внешнего](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-standard-manage-portal)** трафика на виртуальных машинах Azure.
 
 - Повышение доступности за счет распределения ресурсов **[в пределах зон](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-standard-public-zonal-portal)** и **[между](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-standard-public-zone-redundant-portal)** ними.
 

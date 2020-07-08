@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3f020abd4d207a49068ccffb9bb7f57b88bc87df
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: 35e75037b4bf759fe90d608be0682004d3d3f23c
+ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85206399"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85480445"
 ---
 # <a name="sql-on-demand-preview-in-azure-synapse-analytics"></a>Использование SQL по запросу (предварительная версия) в Azure Synapse Analytics 
 
@@ -89,21 +89,21 @@ SQL по запросу не имеет локального хранилища 
 
 Чтобы обеспечить беспроблемное выполнение запросов "на месте" по данным, которые хранятся в файлах озера данных, существующая функция [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) в SQL по запросу дополнена следующими возможностями:
 
-[Запрашивание нескольких файлов или папок](develop-storage-files-overview.md#query-multiple-files-or-folders)
+[Запрашивание нескольких файлов или папок](query-data-storage.md#query-multiple-files-or-folders)
 
-[Формат PARQUET](develop-storage-files-overview.md#parquet-file-format)
+[Формат PARQUET](query-data-storage.md#query-parquet-files)
 
-[Дополнительные параметры для текстов с разделителями (признак конца поля, признак конца строки, escape-символ)](develop-storage-files-overview.md#additional-options-for-working-with-delimited-text)
+[Дополнительные параметры для текстов с разделителями (признак конца поля, признак конца строки, escape-символ)](query-data-storage.md#query-csv-files)
 
-[Считывание выбранного подмножества столбцов](develop-storage-files-overview.md#read-a-chosen-subset-of-columns)
+[Считывание выбранного подмножества столбцов](query-data-storage.md#read-a-chosen-subset-of-columns)
 
-[Вывод схемы](develop-storage-files-overview.md#schema-inference)
+[Вывод схемы](query-data-storage.md#schema-inference)
 
-[Функция filename](develop-storage-files-overview.md#filename-function)
+[Функция filename](query-data-storage.md#filename-function)
 
-[Функция filepath](develop-storage-files-overview.md#filepath-function)
+[Функция filepath](query-data-storage.md#filepath-function)
 
-[Работа со сложными типами, а также вложенными и повторяющимися структурами данных](develop-storage-files-overview.md#work-with-complex-types-and-nested-or-repeated-data-structures)
+[Работа со сложными типами, а также вложенными и повторяющимися структурами данных](query-data-storage.md#work-with-complex-types-and-nested-or-repeated-data-structures)
 
 ## <a name="security"></a>Безопасность
 

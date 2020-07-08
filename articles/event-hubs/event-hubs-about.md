@@ -1,22 +1,14 @@
 ---
 title: Что такое Центры событий Azure? Это служба приема больших данных | Документация Майкрософт
 description: В этой статье приводятся сведения о службе потоковой передачи больших данных "Центры событий Azure", которая способна принимать миллионы событий в секунду.
-services: event-hubs
-documentationcenter: na
-author: spelluru
-manager: timlt
-ms.service: event-hubs
 ms.topic: overview
-ms.custom: seodec18
 ms.date: 06/23/2020
-ms.author: spelluru
-ms.reviewer: shvija
-ms.openlocfilehash: 9f23bef37f6c858670de076b7a6a9ce5d8e2d046
-ms.sourcegitcommit: 4042aa8c67afd72823fc412f19c356f2ba0ab554
+ms.openlocfilehash: 175f7e249e02d5c85dd38cf49821b2893de159a3
+ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 06/24/2020
-ms.locfileid: "85297313"
+ms.locfileid: "85314258"
 ---
 # <a name="azure-event-hubs--a-big-data-streaming-platform-and-event-ingestion-service"></a>Центры событий Azure — платформа потоковой передачи больших данных и служба приема событий
 Центры событий Azure представляют собой платформу потоковой передачи больших данных и службу приема событий. Она может получать и обрабатывать миллионы событий в секунду. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения.

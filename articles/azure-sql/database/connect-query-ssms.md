@@ -13,12 +13,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/29/2020
-ms.openlocfilehash: 3b601fbbc448ef909b0700ac887375147c42ecdd
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: 14e7f4d09185f76786fd88576eef0b6df02877c4
+ms.sourcegitcommit: bf8c447dada2b4c8af017ba7ca8bfd80f943d508
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85253619"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85368079"
 ---
 # <a name="quickstart-use-ssms-to-connect-to-and-query-azure-sql-database-or-azure-sql-managed-instance"></a>Краткое руководство. Использование SSMS для подключения к Базе данных SQL Azure или Управляемому экземпляру SQL Azure
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -155,7 +155,7 @@ ms.locfileid: "85253619"
 
 ### <a name="update-data"></a>Обновление данных
 
-Запустите код Transact-SQL [UPDATE](/sql/t-sql/statements/update-transact-sql), чтобы обновить новый продукт.
+Запустите код Transact-SQL [UPDATE](/sql/t-sql/queries/update-transact-sql?view=sql-server-ver15), чтобы обновить новый продукт.
 
 1. Замените предыдущий запрос текущим, который возвращает созданную ранее запись:
 
