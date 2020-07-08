@@ -3,23 +3,22 @@ title: Подключение виртуальной файловой систе
 description: Узнайте, как подключить виртуальную файловую систему в пуле пакетной службы.
 ms.topic: how-to
 ms.date: 08/13/2019
-ms.openlocfilehash: 4e51e8a1f11d670515893a83398a0c6d7c6e9a46
-ms.sourcegitcommit: fc0431755effdc4da9a716f908298e34530b1238
-ms.translationtype: HT
+ms.openlocfilehash: 80acf5df0cf5262249b2eac584152744a4224a35
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83816035"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85954678"
 ---
 # <a name="mount-a-virtual-file-system-on-a-batch-pool"></a>Подключение виртуальной файловой системы в пуле пакетной службы
 
 Пакетная служба Azure теперь поддерживает подключение облачного хранилища или внешней файловой системы на вычисленных узлах Windows или Linux в пулах пакетной службы. Когда вычислительный узел присоединяется к пулу, виртуальная файловая система подключается и рассматривается как локальный диск на этом узле. Вы можете подключать файловые системы, такие как Файлы Azure, хранилище BLOB-объектов Azure, сетевая файловая система (NFS), а также [кэш Avere vFXT](../avere-vfxt/avere-vfxt-overview.md) или Common Internet File System (CIFS).
 
-Из этой статьи вы узнаете, как подключить виртуальную файловую систему в пуле вычислительных узлов с помощью [библиотеки управления пакетной службой для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/batch?view=azure-dotnet).
+Из этой статьи вы узнаете, как подключить виртуальную файловую систему в пуле вычислительных узлов с помощью [библиотеки управления пакетной службой для .NET](/dotnet/api/overview/azure/batch?view=azure-dotnet).
 
 > [!NOTE]
 > Подключение виртуальной файловой системы поддерживается в пулах пакетов, созданных 19 августа 2019 г или позже. Пулы пакетов, созданные до 19 августа 2019 г, не поддерживают эту функцию.
 > 
-> API-интерфейсы для подключения файловых систем в вычислительном узле входят в библиотеку [.NET для пакетной службы](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch?view=azure-dotnet).
+> API-интерфейсы для подключения файловых систем в вычислительном узле входят в библиотеку [.NET для пакетной службы](/dotnet/api/microsoft.azure.batch?view=azure-dotnet).
 
 ## <a name="benefits-of-mounting-on-a-pool"></a>Преимущества подключения в пуле
 
@@ -128,7 +127,7 @@ new PoolAddParameter
 
 ### <a name="common-internet-file-system"></a>Протокол Common Internet File System
 
-Протокол Common Internet File System также можно подключать к узлам пула, что позволяет легко получить доступ к традиционным файловым системам с помощью узлов пакетной службы Azure. CIFS — это протокол общего доступа к папкам, обеспечивающий открытый и кросс-платформенный механизм для запроса файлов и служб сетевого сервера. CIFS основан на усовершенствованной версии протокола SMB, который предоставляет общий доступ к файлам в Интернете и интрасети и позволяет выполнить подключение внешних файловых систем на узлах Windows. Дополнительные сведения о протоколе SMB см. в статье [Общие сведения о совместном использовании файлов с помощью протокола SMB 3 в Windows Server](https://docs.microsoft.com/windows-server/storage/file-server/file-server-smb-overview).
+Протокол Common Internet File System также можно подключать к узлам пула, что позволяет легко получить доступ к традиционным файловым системам с помощью узлов пакетной службы Azure. CIFS — это протокол общего доступа к папкам, обеспечивающий открытый и кросс-платформенный механизм для запроса файлов и служб сетевого сервера. CIFS основан на усовершенствованной версии протокола SMB, который предоставляет общий доступ к файлам в Интернете и интрасети и позволяет выполнить подключение внешних файловых систем на узлах Windows. Дополнительные сведения о протоколе SMB см. в статье [Общие сведения о совместном использовании файлов с помощью протокола SMB 3 в Windows Server](/windows-server/storage/file-server/file-server-smb-overview).
 
 ```csharp
 new PoolAddParameter
@@ -153,7 +152,7 @@ new PoolAddParameter
 
 ## <a name="diagnose-mount-errors"></a>Диагностика ошибок подключения
 
-В случае сбоя конфигурации подключения вычислительный узел в пуле возвращает ошибку и состояние узла становится непригодным к использованию. Чтобы диагностировать сбой конфигурации подключения, изучите свойство [`ComputeNodeError`](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) для получения сведений об ошибке.
+В случае сбоя конфигурации подключения вычислительный узел в пуле возвращает ошибку и состояние узла становится непригодным к использованию. Чтобы диагностировать сбой конфигурации подключения, изучите свойство [`ComputeNodeError`](/rest/api/batchservice/computenode/get#computenodeerror) для получения сведений об ошибке.
 
 Чтобы получить файлы журналов для отладки, используйте [OutputFiles](batch-task-output-files.md) для отправки файлов `*.log`. Файлы `*.log` содержат сведения о подключении файловой системы в расположении `AZ_BATCH_NODE_MOUNTS_DIR`. Файлы журнала подключения имеют формат `<type>-<mountDirOrDrive>.log` для каждого подключения. Например, подключение `cifs` в каталоге подключения`test` будет иметь файл журнала подключения `cifs-test.log`.
 
@@ -179,5 +178,5 @@ new PoolAddParameter
 
 - Дополнительные сведения о подключении общего ресурса службы файлов Azure с помощью [Windows](../storage/files/storage-how-to-use-files-windows.md) или [Linux](../storage/files/storage-how-to-use-files-linux.md).
 - Дополнительные сведения об использовании и подключении виртуальных файловых систем [blobfuse](https://github.com/Azure/azure-storage-fuse).
-- Дополнительные сведения о NFS и ее приложениях см. в [этой статье](https://docs.microsoft.com/windows-server/storage/nfs/nfs-overview).
-- Дополнительные сведения о CIFS см. в статье [Протокол SMB Майкрософт и обзор протокола CIFS](https://docs.microsoft.com/windows/desktop/fileio/microsoft-smb-protocol-and-cifs-protocol-overview).
+- Дополнительные сведения о NFS и ее приложениях см. в [этой статье](/windows-server/storage/nfs/nfs-overview).
+- Дополнительные сведения о CIFS см. в статье [Протокол SMB Майкрософт и обзор протокола CIFS](/windows/desktop/fileio/microsoft-smb-protocol-and-cifs-protocol-overview).

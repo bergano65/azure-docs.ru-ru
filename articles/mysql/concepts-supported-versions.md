@@ -5,13 +5,12 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 3/18/2020
-ms.openlocfilehash: 197b3100190711a51cfe125fe1214a59c18e1491
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 6/3/2020
+ms.openlocfilehash: 4d5b858e2384ffc7dd531444aaff17ca3739b408
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79536978"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84337705"
 ---
 # <a name="supported-azure-database-for-mysql-server-versions"></a>Поддерживаемые версии сервера базы данных Azure для MySQL
 
@@ -26,15 +25,15 @@ MySQL использует схему именования X.Y.Z. X являет
 
 ## <a name="mysql-version-56"></a>MySQL версии 5.6
 
-Исправление ошибки: 5.6.45
+Исправление ошибки: 5.6.47
 
-Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-45.html) MySQL.
+Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-47.html) MySQL.
 
 ## <a name="mysql-version-57"></a>MySQL версии 5.7
 
-Исправление ошибки: 5.7.27
+Исправление ошибки: 5.7.29
 
-Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-27.html) MySQL.
+Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-29.html) MySQL.
 
 ## <a name="mysql-version-80"></a>MySQL версии 8,0
 

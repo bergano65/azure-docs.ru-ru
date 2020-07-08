@@ -8,12 +8,11 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/24/2019
-ms.openlocfilehash: 19cfd5d8ed4100048c270fb41e5e54a920c61516
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 9e29d91aa3b146a8aacdccec01b67506d5e45bb3
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75548842"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86037925"
 ---
 # <a name="overview-of-apache-spark-structured-streaming"></a>Обзор структурированной потоковой передачи Apache Spark
 
@@ -62,11 +61,13 @@ ms.locfileid: "75548842"
 
 Простой пример запроса может суммировать показания температуры по часовым окнам. В этом случае данные хранятся в JSON-файлах в службе хранилища Azure (в качестве хранилища по умолчанию кластера HDInsight):
 
-    {"time":1469501107,"temp":"95"}
-    {"time":1469501147,"temp":"95"}
-    {"time":1469501202,"temp":"95"}
-    {"time":1469501219,"temp":"95"}
-    {"time":1469501225,"temp":"95"}
+```json
+{"time":1469501107,"temp":"95"}
+{"time":1469501147,"temp":"95"}
+{"time":1469501202,"temp":"95"}
+{"time":1469501219,"temp":"95"}
+{"time":1469501225,"temp":"95"}
+```
 
 Эти JSON-файлы хранятся во вложенной папке `temps` в контейнере кластера HDInsight.
 
@@ -74,41 +75,51 @@ ms.locfileid: "75548842"
 
 Сначала настройте кадр данных, который описывает источник данных, и задайте параметры, необходимые этому источнику. Этот пример извлекается из JSON-файлов в службу хранилища Azure и применяет к ним схему во время чтения.
 
-    import org.apache.spark.sql.types._
-    import org.apache.spark.sql.functions._
+```sql
+import org.apache.spark.sql.types._
+import org.apache.spark.sql.functions._
 
-    //Cluster-local path to the folder containing the JSON files
-    val inputPath = "/temps/" 
+//Cluster-local path to the folder containing the JSON files
+val inputPath = "/temps/" 
 
-    //Define the schema of the JSON files as having the "time" of type TimeStamp and the "temp" field of type String
-    val jsonSchema = new StructType().add("time", TimestampType).add("temp", StringType)
+//Define the schema of the JSON files as having the "time" of type TimeStamp and the "temp" field of type String
+val jsonSchema = new StructType().add("time", TimestampType).add("temp", StringType)
 
-    //Create a Streaming DataFrame by calling readStream and configuring it with the schema and path
-    val streamingInputDF = spark.readStream.schema(jsonSchema).json(inputPath) 
+//Create a Streaming DataFrame by calling readStream and configuring it with the schema and path
+val streamingInputDF = spark.readStream.schema(jsonSchema).json(inputPath)
+``` 
 
 #### <a name="apply-the-query"></a>Применение запроса
 
 Затем примените запрос, который содержит нужные операции к потоковому кадру данных. В этом случае агрегация группирует все строки в 1-часовые окна, а затем вычисляет минимальное, среднее и максимальное значение температуры в этом 1-часовом окне.
 
-    val streamingAggDF = streamingInputDF.groupBy(window($"time", "1 hour")).agg(min($"temp"), avg($"temp"), max($"temp"))
+```sql
+val streamingAggDF = streamingInputDF.groupBy(window($"time", "1 hour")).agg(min($"temp"), avg($"temp"), max($"temp"))
+```
 
 ### <a name="define-the-output-sink"></a>Определение приемника выходных данных
 
 Затем определите место назначения для строк, добавляемых в таблицу результатов в каждом интервале триггера. Этот пример выводит все строки в таблицу в памяти `temps`, которую можно позже запросить с помощью SparkSQL. Полный режим выходных данных гарантирует, что каждый раз выводятся все строки для всех окон.
 
-    val streamingOutDF = streamingAggDF.writeStream.format("memory").queryName("temps").outputMode("complete") 
+```sql
+val streamingOutDF = streamingAggDF.writeStream.format("memory").queryName("temps").outputMode("complete")
+``` 
 
 ### <a name="start-the-query"></a>Запуск запроса
 
 Запустите запрос потоковой передачи и продолжайте его работу, пока не будет получен сигнал завершения.
 
-    val query = streamingOutDF.start()  
+```sql
+val query = streamingOutDF.start() 
+``` 
 
 ### <a name="view-the-results"></a>Просмотр результатов
 
 Пока выполняется запрос, в том же сеансе SparkSession можно запустить запрос SparkSQL к таблице `temps`, где хранятся результаты запроса.
 
-    select * from temps
+```sql
+select * from temps
+```
 
 Этот запрос возвращает результаты, аналогичные приведенным ниже.
 
@@ -136,7 +147,7 @@ ms.locfileid: "75548842"
 
 Состояние всех приложений можно также проверить с помощью запроса GET к конечной точке LIVY. Наконец, можно закрыть работающее приложение, выполнив запрос DELETE к конечной точке LIVY. Дополнительные сведения об API LIVY см. в статье [Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](apache-spark-livy-rest-interface.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md)
 * [Руководство по программированию структурированной потоковой передачи Apache Spark](https://spark.apache.org/docs/2.1.0/structured-streaming-programming-guide.html)

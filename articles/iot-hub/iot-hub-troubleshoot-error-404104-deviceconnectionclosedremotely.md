@@ -10,10 +10,9 @@ ms.date: 01/30/2020
 ms.author: jlian
 ms.custom: mqtt
 ms.openlocfilehash: c8cb91aa0c7ce1610320d4107db282d3c34407ba
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81758726"
 ---
 # <a name="404104-deviceconnectionclosedremotely"></a>404104 DeviceConnectionClosedRemotely
@@ -36,23 +35,23 @@ ms.locfileid: "81758726"
 
 ## <a name="causes"></a>Причины
 
-### <a name="cause-1"></a>Причина 1
+### <a name="cause-1"></a>Причина 1
 
 Истек срок действия [маркера SAS, используемого для подключения к центру Интернета вещей](iot-hub-devguide-security.md#security-tokens) . в результате центр Интернета вещей отключится от устройства. Соединение будет восстановлено при обновлении маркера устройством. Например, [срок действия маркера SAS истекает каждый час по умолчанию для пакета SDK C](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/connection_and_messaging_reliability.md#connection-authentication), что может привести к обычному отключению.
 
 Дополнительные сведения см. в разделе [401003 иосубунаусоризед причина](iot-hub-troubleshoot-error-401003-iothubunauthorized.md#cause-1).
 
-### <a name="cause-2"></a>Причина 2
+### <a name="cause-2"></a>Причина 2
 
 К некоторым возможностям относятся:
 
 - Устройство потеряло базовое сетевое подключение дольше, чем [MQTT поддержания активности](iot-hub-mqtt-support.md#default-keep-alive-timeout), что приводит к удаленному времени ожидания простоя. Параметр проверки активности MQTT может быть разным для каждого устройства.
 
-- Устройство отправило сброс на уровне TCP/IP, но не отправило уровень `MQTT DISCONNECT`приложения. По сути, устройство внезапно закрыло базовое подключение к сокету. Иногда эта проблема вызвана ошибками в более ранних версиях пакета SDK для IoT Azure.
+- Устройство отправило сброс на уровне TCP/IP, но не отправило уровень приложения `MQTT DISCONNECT` . По сути, устройство внезапно закрыло базовое подключение к сокету. Иногда эта проблема вызвана ошибками в более ранних версиях пакета SDK для IoT Azure.
 
 - Сбой приложения на стороне устройства.
 
-### <a name="cause-3"></a>Причина 3
+### <a name="cause-3"></a>Причина 3
 
 В центре Интернета вещей может возникать временная проблема. См. статью [ошибка внутреннего сервера центра Интернета вещей](iot-hub-troubleshoot-error-500xxx-internal-errors.md#cause).
 

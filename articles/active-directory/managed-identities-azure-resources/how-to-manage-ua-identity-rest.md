@@ -1,6 +1,6 @@
 ---
 title: Управление назначенными пользователем управляемыми удостоверениями с помощью функции RESTFUL в Azure AD
-description: Пошаговые инструкции по созданию и удалению управляемых удостоверений, назначаемых пользователем, а также получению их списка для выполнения вызовов REST API.
+description: Пошаговые инструкции по созданию, отчислению и удалению назначенного пользователем управляемого удостоверения для выполнения REST APIных вызовов.
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -9,30 +9,29 @@ editor: ''
 ms.service: active-directory
 ms.subservice: msi
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 06/26/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39e108451e4c19e77e01b5bcc5d8dd21e86ad73a
-ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
-ms.translationtype: MT
+ms.openlocfilehash: 2c342359b015085804b127ef8c58aca8a4b13dcf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74547415"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85608472"
 ---
-# <a name="create-list-or-delete-a-user-assigned-managed-identity-using-rest-api-calls"></a>Создание и удаление управляемых удостоверений, назначаемых пользователем, а также получение их списка с помощью вызовов REST API
+# <a name="create-list-or-delete-a-user-assigned-managed-identity-using-rest-api-calls"></a>Создание, перечисление или удаление назначенного пользователем управляемого удостоверения с помощью вызовов REST API
 
 [!INCLUDE [preview-notice](~/includes/active-directory-msi-preview-notice-ua.md)]
 
-Управляемые удостоверения для ресурсов Azure можно использовать для аутентификации в службах, которые поддерживают аутентификацию Azure AD, без указания учетных данных в коде. 
+Управляемые удостоверения для ресурсов Azure предоставляют службам Azure возможность проверки подлинности в службах, поддерживающих проверку подлинности Azure AD, без необходимости учетных данных в коде. 
 
 В этой статье вы узнаете, как создавать и удалять управляемые удостоверения, назначаемые пользователем, а также получать их список с помощью CURL для выполнения вызовов REST API.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-- Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#how-does-the-managed-identities-for-azure-resources-work)**.
+- Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#managed-identity-types)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
 - Если вы используете Windows, установите [подсистему Windows для Linux](https://msdn.microsoft.com/commandline/wsl/about) или используйте [Azure Cloud Shell](../../cloud-shell/overview.md) на портале Azure.
 - Если вы используете [подсистему Windows для Linux](https://msdn.microsoft.com/commandline/wsl/about) или [дистрибутив Linux OS](/cli/azure/install-azure-cli-apt?view=azure-cli-latest), [установите локальную консоль Azure CLI](/cli/azure/install-azure-cli).
@@ -60,16 +59,16 @@ s/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<U
 
 **Заголовки запроса**
 
-|Заголовок запроса  |Описание  |
+|Заголовок запроса  |Описание:  |
 |---------|---------|
-|*Тип содержимого*     | Обязательный элемент. Задайте значение `application/json`.        |
-|*Проверки*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        |
+|*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
+|*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.        |
 
 **Текст запроса**
 
-|Имя  |Описание  |
+|name  |Описание:  |
 |---------|---------|
-|location     | Обязательный элемент. Расположение ресурса.        |
+|location     | Обязательный. Расположение ресурса.        |
 
 ## <a name="list-user-assigned-managed-identities"></a>Получение списка управляемых удостоверений, назначаемых пользователем
 
@@ -83,10 +82,10 @@ curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroup
 GET https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities?api-version=2015-08-31-preview HTTP/1.1
 ```
 
-|Заголовок запроса  |Описание  |
+|Заголовок запроса  |Описание:  |
 |---------|---------|
-|*Тип содержимого*     | Обязательный элемент. Задайте значение `application/json`.        |
-|*Проверки*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        |
+|*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
+|*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.        |
 
 ## <a name="delete-a-user-assigned-managed-identity"></a>Удаление управляемого удостоверения, назначаемого пользователем
 
@@ -103,11 +102,11 @@ s/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<U
 ```HTTP
 DELETE https://management.azure.com/subscriptions/80c696ff-5efa-4909-a64d-f1b616f423ca/resourceGroups/TestRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>?api-version=2015-08-31-preview HTTP/1.1
 ```
-|Заголовок запроса  |Описание  |
+|Заголовок запроса  |Описание:  |
 |---------|---------|
-|*Тип содержимого*     | Обязательный элемент. Задайте значение `application/json`.        |
-|*Проверки*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`.        |
+|*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
+|*Авторизация*     | Обязательный. Задайте допустимый маркер доступа для `Bearer`.        |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о том, как задать управляемое удостоверение, назначаемое пользователем, для виртуальной машины или масштабируемого набора виртуальных машин Azure, см. в разделах [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью вызовов REST API](qs-configure-rest-vm.md#user-assigned-managed-identity) и [Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью вызовов REST API](qs-configure-rest-vmss.md#user-assigned-managed-identity).

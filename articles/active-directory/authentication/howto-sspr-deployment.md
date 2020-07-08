@@ -11,19 +11,18 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6151bbd9f056ef95c0875b83c7b6fccb732aebfe
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
-ms.translationtype: HT
+ms.openlocfilehash: a56f7248d5782b63befc55c4215360e0f5cb52b2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83870963"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84338572"
 ---
 # <a name="plan-an-azure-active-directory-self-service-password-reset-deployment"></a>Планирование развертывания самостоятельного сброса пароля Azure Active Directory
 
 > [!IMPORTANT]
 > В данном плане развертывания представлены инструкции и рекомендации по развертыванию самостоятельного сброса пароля Azure AD (SSPR).
 >
-> **Если вам и конечному пользователю требуется вернуть доступ к своей учетной записи, перейдите на страницу [https://aka.ms/sspr](https://aka.ms/sspr)** .
+> **Если вы являетесь конечным пользователем и хотите вернуться к своей учетной записи, перейдите по [https://aka.ms/sspr](https://aka.ms/sspr) адресу **.
 
 [Самостоятельный сброс пароля (SSPR)](https://www.youtube.com/watch?v=tnb2Qf4hTP8) — это функция Azure Active Directory (AD), которая позволяет пользователям сбрасывать пароли без обращения за помощью в службу ИТ-поддержки. Пользователи могут быстро разблокировать свою учетную запись и продолжить работу, где бы они ни находились и в любое время суток. Предоставив сотрудникам возможность самостоятельной разблокировки своих учетных записей, ваша организация может сократить время простоя и сэкономить на поддержке при решении большинства распространенных проблем, связанных с паролями.
 

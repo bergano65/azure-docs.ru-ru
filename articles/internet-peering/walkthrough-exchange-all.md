@@ -5,15 +5,14 @@ description: Пошаговое руководство по пирингу че�
 services: internet-peering
 author: prmitiki
 ms.service: internet-peering
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: bb761afa6d8953b441b6c9541c43b73031719494
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: ec83778d034cfc512582eddf79995412dad405c2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75775177"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84710734"
 ---
 # <a name="exchange-peering-walkthrough"></a>Пошаговое руководство по пирингу через точку обмена
 
@@ -50,6 +49,6 @@ ms.locfileid: "75775177"
 > [!NOTE]
 > Если вы запускаете командлет PowerShell для удаления пиринга Exchange, если состояние подключения — Провисионингстартед или Провисионингкомплетед, операция завершится ошибкой.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о [предварительных требованиях для настройки пиринга с корпорацией Майкрософт](prerequisites.md).

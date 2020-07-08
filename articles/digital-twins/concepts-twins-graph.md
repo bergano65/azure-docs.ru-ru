@@ -1,0 +1,190 @@
+---
+title: Цифровые двойники и граф двойника
+titleSuffix: Azure Digital Twins
+description: Сведения о концепции цифрового двойника и о том, как их связи делают диаграмму.
+author: baanders
+ms.author: baanders
+ms.date: 3/12/2020
+ms.topic: conceptual
+ms.service: digital-twins
+ms.openlocfilehash: 6b6da2a15441564ef0b67e76ee5a0e0c85839a63
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85609322"
+---
+# <a name="understand-digital-twins-and-their-twin-graph"></a>Знакомство с цифровыми двойников и двойника диаграммой
+
+В решении Digital двойников сущности в вашей среде представлены в Azure **Digital двойников**. Цифровой двойника — это экземпляр одной из пользовательских [моделей](concepts-models.md). Он может быть подключен к другим цифровым двойников через **связи** для формирования **двойника графа**: этот двойника граф представляет собой представление всей среды.
+
+> [!TIP]
+> "Azure Digital двойников" относится к этой службе Azure в целом. "Digital двойника (s)" или "двойника (s)" относится к отдельным узлам двойника в экземпляре службы.
+
+## <a name="creating-digital-twins"></a>создания цифровых двойников;
+
+Прежде чем вы сможете создать цифровое двойника в своем экземпляре Azure Digital двойников, необходимо загрузить *модель* в службу. Модель описывает набор свойств, сообщений телеметрии и связей, которые могут быть связаны с определенным двойника. Сведения о типах данных, определенных в модели, см. в разделе [Основные понятия: пользовательские модели](concepts-models.md).
+
+После создания и отправки модели клиентское приложение может создать экземпляр типа. Это цифровой двойника. Например, после создания модели *этажа*можно создать один или несколько цифровых двойников, которые используют этот тип (например, двойника типа *Floor*, именуемый *граундфлур*, другой — *Floor2*и т. д.). 
+
+Ниже приведен фрагмент кода клиента, который использует [API дигиталтвинс](how-to-use-apis-sdks.md) для создания экземпляра двойника типа *Room*.
+
+В текущей предварительной версии Azure Digital двойников все свойства двойника должны быть инициализированы, прежде чем можно будет создать двойника. Это делается путем создания документа JSON, который предоставляет необходимые значения инициализации.
+
+```csharp
+public Task<boolean> CreateRoom(string id, double temperature, double humidity) 
+{
+    // Define the model for the twin to be created
+    Dictionary<string, object> meta = new Dictionary<string, object>()
+    {
+      { "$model", "dtmi:com:contoso:Room;2" }
+    };
+    // Initialize the twin properties
+    Dictionary<string, object> initData = new Dictionary<string, object>()
+    {
+      { "$metadata", meta },
+      { "Temperature", temperature},
+      { "Humidity", humidity},
+    };
+    try
+    {
+      await client.DigitalTwins.AddAsync(id, initData);
+      return true;
+    }
+    catch (ErrorResponseException e)
+    {
+      Console.WriteLine($"*** Error creating twin {id}: {e.Response.StatusCode}");
+      return false;
+    }
+}
+```
+
+## <a name="relationships-creating-a-graph-of-digital-twins"></a>Связи: создание графа цифровых двойников
+
+Двойников подключаются к двойника графу по их связям. Связи, которые может иметь двойника, определяются как часть своей модели.  
+
+Например, *основание* модели может определять, *содержит* отношение, которое предназначено для двойников типа *Room*. С помощью этого определения Azure Digital двойников позволит вам создавать *ссылки* из любой двойника *этажа* в любой двойника *комнаты* (включая двойников, которые относятся к подтипам *комнаты* ). 
+
+Ниже приведен пример клиентского кода, использующего [API дигиталтвинс](how-to-use-apis-sdks.md) для создания связи между цифровым типом *пола*двойника, именуемым *граундфлур* , и типом *комнаты*Digital двойника, именуемым *кафе*.
+
+```csharp
+// Create Twins, using functions similar to the previous sample
+await CreateRoom("Cafe", 70, 66);
+await CreateFloor("GroundFloor", averageTemperature=70);
+// Create relationships
+Dictionary<string, object> targetrec = new Dictionary<string, object>()
+{
+    { "$targetId", "Cafe" }
+};
+try
+{
+    await client.DigitalTwins.AddEdgeAsync("GroundFloor", "contains", "GF-to-Cafe", targetrec);
+} catch(ErrorResponseException e)
+{
+    Console.WriteLine($"*** Error creating relationship: {e.Response.StatusCode}");
+}
+```
+
+Результатом этого процесса является набор узлов (цифровой двойников), Соединенных через грани (их связи) в графе.
+
+## <a name="json-representations-of-graph-elements"></a>Представления JSON элементов Graph
+
+Данные цифровых двойника и данные о связях хранятся в формате JSON. Это означает, что при [запросе графа двойника](how-to-query-graph.md) в экземпляре Azure Digital двойников результатом будет представление JSON цифровых двойников и отношений, которые вы создали.
+
+### <a name="digital-twin-json-format"></a>Формат JSON Digital двойника
+
+При представлении в виде объекта JSON в цифровом двойника будут отображаться следующие поля:
+
+| Имя поля | Описание |
+| --- | --- |
+| `$dtId` | Предоставляемая пользователем строка, представляющая идентификатор цифрового двойника |
+| `$conformance` | Перечисление, содержащее состояние соответствия этой цифровой*двойника (несоответствие* *несогласованности*, *неизвестно*) |
+| `{propertyName}` | Значение свойства в JSON ( `string` , тип числа или объект) |
+| `$relationships` | URL-адрес пути к коллекции связей. Это поле отсутствует, если у цифрового двойника нет границ исходящего отношения. |
+| `$metadata.$model` | Используемых Идентификатор интерфейса модели, который характеризует этот цифровой двойника |
+| `$metadata.{propertyName}.desiredValue` | [Только для свойств, доступных для записи] Требуемое значение указанного свойства |
+| `$metadata.{propertyName}.desiredVersion` | [Только для свойств, доступных для записи] Версия требуемого значения |
+| `$metadata.{propertyName}.ackVersion` | Версия, подтвержденная приложением устройства, реализующим цифровое двойника |
+| `$metadata.{propertyName}.ackCode` | [Только для свойств, доступных для записи] `ack`Код, возвращенный приложением устройства, реализующим цифровой двойника |
+| `$metadata.{propertyName}.ackDescription` | [Только для свойств, доступных для записи] `ack`Описание, возвращаемое приложением устройства, реализующим цифровой двойника |
+| `{componentName}` | Объект JSON, содержащий значения свойств и метаданные компонента, аналогичные свойствам корневого объекта. Этот объект существует, даже если у компонента нет свойств. |
+| `{componentName}.{propertyName}` | Значение свойства компонента в JSON ( `string` , тип числа или объект) |
+| `{componentName}.$metadata` | Сведения о метаданных для компонента, аналогичные корневому уровню`$metadata` |
+
+Ниже приведен пример цифрового двойника, отформатированного как объект JSON:
+
+```json
+{
+  "$dtId": "Cafe",
+  "Temperature": 72,
+  "Location": {
+    "x": 101,
+    "y": 33
+  },
+  "component": {
+    "TableOccupancy": 1,
+    "$metadata": {
+      "TableOccupancy": {
+        "desiredValue": 1,
+        "desiredVersion": 3,
+        "ackVersion": 2,
+        "ackCode": 200,
+        "ackDescription": "OK"
+      }
+    }
+  },
+  "$metadata": {
+    "$model": "dtmi:com:contoso:Room;1",
+    "Temperature": {
+      "desiredValue": 72,
+      "desiredVersion": 5,
+      "ackVersion": 4,
+      "ackCode": 200,
+      "ackDescription": "OK"
+    },
+    "Location": {
+      "desiredValue": {
+        "x": 101,
+        "y": 33,
+      },
+      "desiredVersion": 8,
+      "ackVersion": 8,
+      "ackCode": 200,
+      "ackDescription": "OK"
+    }
+  }
+}
+```
+
+### <a name="relationship-json-format"></a>Формат JSON отношения
+
+При представлении в виде объекта JSON связь из цифрового двойника будет содержать следующие поля:
+
+| Имя поля | Описание |
+| --- | --- |
+| `$relationshipId` | Предоставляемая пользователем строка, представляющая идентификатор этой связи. Эта строка уникальна в контексте исходного цифрового двойника, что также означает `sourceId`  +  `relationshipId` уникальность в контексте экземпляра Digital двойников для Azure. |
+| `$sourceId` | Идентификатор исходного цифрового двойника |
+| `$targetId` | Идентификатор целевого цифрового двойника |
+| `$relationshipName` | Имя связи |
+| `{propertyName}` | Используемых Значение свойства этой связи в JSON ( `string` , тип числа или объект) |
+
+Ниже приведен пример связи, отформатированной как объект JSON.
+
+```json
+{
+  "$relationshipId": "relationship-01",
+  "$etag": "W/\"506e8391-2b21-4ac9-bca3-53e6620f6a90\"",
+  "$sourceId": "GroundFloor",
+  "$targetId": "Cafe",
+  "$relationshipName": "contains",
+  "startDate": "2020-02-04"
+}
+```
+
+## <a name="next-steps"></a>Дальнейшие шаги
+
+Узнайте, как управлять элементами графа с помощью API-интерфейсов Azure Digital двойника.
+* [Практические руководства. Управление цифровыми двойников](how-to-manage-twin.md)
+* [Руководство. Управление графом двойника с помощью связей](how-to-manage-graph.md)
+
+Дополнительные сведения см. в статье о запросах к двойников двойника для Azure Digital.
+* [Основные понятия: язык запросов](concepts-query-language.md)
