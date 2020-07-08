@@ -4,19 +4,18 @@ description: Параметры управления для Enterprise State Roa
 services: active-directory
 ms.service: active-directory
 ms.subservice: devices
-ms.topic: troubleshooting
+ms.topic: reference
 ms.date: 02/12/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: na
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdffbc3a140bd13dcd6d352db8c192803d39b03e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: ab24b3113f9dc69b8f3907037e228ba212a03106
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78672369"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85252939"
 ---
 # <a name="group-policy-and-mdm-settings"></a>Параметры групповой политики и управления мобильными устройствами
 
@@ -32,7 +31,7 @@ ms.locfileid: "78672369"
 
 Параметры политики MDM применяются к Windows 10 и Windows 10 Mobile.  Поддержка Windows 10 Mobile существует только для перемещения на основе учетной записи Майкрософт через учетную запись пользователя OneDrive. Дополнительные сведения о том, какие устройства поддерживаются для синхронизации на основе Azure AD, см. в разделе [устройства и конечные точки](enterprise-state-roaming-windows-settings-reference.md) .
 
-| Имя | Описание |
+| name | Описание: |
 | --- | --- |
 | Разрешить подключение к учетной записи Майкрософт |Позволяет проходить проверку подлинности с использованием учетной записи Майкрософт на устройстве |
 | Разрешить синхронизацию моих параметров |Позволяет перемещать параметры Windows и данные приложений. Отключение этой политики приведет к отключению синхронизации и архивации на мобильных устройствах. |
@@ -43,7 +42,7 @@ ms.locfileid: "78672369"
 
 Эти параметры расположены в разделе `Computer Configuration > Administrative Templates > Windows Components > Sync your settings`. 
 
-| Имя | Описание |
+| name | Описание: |
 | --- | --- |
 | Учетные записи: заблокировать учетные записи Майкрософт |Этот параметр политики запрещает пользователям добавлять новые учетные записи Майкрософт на этом компьютере |
 | Не синхронизировать |Не позволяет перемещать параметры Windows и данные приложений |
@@ -57,6 +56,6 @@ ms.locfileid: "78672369"
 | Не синхронизировать параметры приложений |Отключает перемещение данных приложений |
 | Не синхронизировать параметры запуска |Не используйте. Не действует |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Общие сведения см. в статье [Общие сведения о роуминге состояния предприятия](enterprise-state-roaming-overview.md).

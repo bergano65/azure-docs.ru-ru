@@ -8,20 +8,19 @@ manager: mtillman
 ms.assetid: 9e225dba-9044-4b13-b573-2f30d77925a9
 ms.service: role-based-access-control
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: db6b38f142254fa1812f34674e6a870629713d7e
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
-ms.translationtype: MT
+ms.openlocfilehash: 46aea9ab113a0c75ed24497ee39793d08c4f7165
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82735663"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84790897"
 ---
-# <a name="add-or-remove-azure-role-assignments-using-azure-powershell"></a>Добавление или удаление назначений ролей Azure с помощью Azure PowerShell
+# <a name="add-or-remove-azure-role-assignments-using-azure-powershell"></a>Добавление и удаление назначений ролей Azure с помощью Azure PowerShell
 
 [!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)]В этой статье описывается назначение ролей с помощью Azure PowerShell.
 
@@ -36,7 +35,7 @@ ms.locfileid: "82735663"
 
 ## <a name="get-object-ids"></a>Получение идентификаторов объектов
 
-Для добавления или удаления назначений ролей может потребоваться указать уникальный идентификатор объекта. Идентификатор имеет формат: `11111111-1111-1111-1111-111111111111`. Идентификатор можно получить с помощью портал Azure или Azure PowerShell.
+Для добавления или удаления назначений ролей может потребоваться указать уникальный идентификатор объекта. Идентификатор имеет следующий формат: `11111111-1111-1111-1111-111111111111`. Идентификатор можно получить с помощью портал Azure или Azure PowerShell.
 
 ### <a name="user"></a>Пользователь
 
@@ -56,7 +55,7 @@ Get-AzADGroup -SearchString <group_name_in_quotes>
 (Get-AzADGroup -DisplayName <group_name_in_quotes>).id
 ```
 
-### <a name="application"></a>Развертывание
+### <a name="application"></a>Приложение
 
 Чтобы получить идентификатор объекта для субъекта-службы Azure AD (удостоверения, используемого приложением), можно использовать [Get-азадсервицепринЦипал](/powershell/module/az.resources/get-azadserviceprincipal). Для субъекта-службы используйте идентификатор объекта, а **не** идентификатор приложения.
 
@@ -67,7 +66,7 @@ Get-AzADServicePrincipal -SearchString <service_name_in_quotes>
 
 ## <a name="add-a-role-assignment"></a>Добавление назначения роли
 
-В Azure RBAC для предоставления доступа необходимо добавить назначение роли.
+Чтобы предоставить доступ в Azure RBAC, нужно добавить назначение ролей.
 
 ### <a name="user-at-a-resource-group-scope"></a>Пользователь в области группы ресурсов
 
@@ -112,7 +111,7 @@ CanDelegate        : False
 New-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionId <role_id> -ResourceGroupName <resource_group_name>
 ```
 
-В следующем примере роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) назначается пользователю *\@(Alain example.com* в области группы ресурсов *Pharma-Sales* . Чтобы получить уникальный идентификатор роли, можно использовать [Get-азроледефинитион](/powershell/module/az.resources/get-azroledefinition) или ознакомиться со [встроенными ролями Azure](built-in-roles.md).
+В следующем примере роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) назначается пользователю *(Alain \@ example.com* в области группы ресурсов *Pharma-Sales* . Чтобы получить уникальный идентификатор роли, можно использовать [Get-азроледефинитион](/powershell/module/az.resources/get-azroledefinition) или ознакомиться со [встроенными ролями Azure](built-in-roles.md).
 
 ```Example
 PS C:\> New-AzRoleAssignment -ObjectId 44444444-4444-4444-4444-444444444444 -RoleDefinitionId 9980e02c-c2be-4d73-94e8-173b1dc7cf3c -Scope /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales
@@ -207,7 +206,7 @@ CanDelegate        : False
 
 Чтобы удалить доступ в Azure RBAC, необходимо удалить назначение роли с помощью [Remove-азролеассигнмент](/powershell/module/az.resources/remove-azroleassignment).
 
-В следующем примере удаляется назначение роли *участника виртуальной машины* из пользователя *(Alain\@example.com* в группе ресурсов *Pharma-Sales* .
+В следующем примере удаляется назначение роли *участника виртуальной машины* из пользователя *(Alain \@ example.com* в группе ресурсов *Pharma-Sales* .
 
 ```Example
 PS C:\> Remove-AzRoleAssignment -SignInName alain@example.com -RoleDefinitionName "Virtual Machine Contributor" -ResourceGroupName pharma-sales
@@ -225,11 +224,11 @@ Remove-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionName <role_name> -S
 Remove-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionName <role_name> -Scope /providers/Microsoft.Management/managementGroups/<group_id>
 ```
 
-При появление сообщения об ошибке "предоставленные сведения не сопоставляются с назначением ролей" убедитесь, что также указаны параметры `-Scope` или. `-ResourceGroupName` Дополнительные сведения см. в разделе [Устранение неполадок в Azure RBAC](troubleshooting.md#role-assignments-with-identity-not-found).
+При появление сообщения об ошибке "предоставленные сведения не сопоставляются с назначением ролей" убедитесь, что также указаны `-Scope` `-ResourceGroupName` Параметры или. Дополнительные сведения см. в разделе [Устранение неполадок в Azure RBAC](troubleshooting.md#role-assignments-with-identity-not-found).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Вывод списка назначений ролей Azure с помощью Azure PowerShell](role-assignments-list-powershell.md)
-- [Руководство. Предоставление группе доступа к ресурсам Azure с помощью Azure PowerShell](tutorial-role-assignments-group-powershell.md)
-- [Руководство. Создание настраиваемой роли Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
+- [Руководство по Предоставление доступа группам к ресурсам Azure с помощью Azure PowerShell](tutorial-role-assignments-group-powershell.md)
+- [Руководство по Создание настраиваемой роли Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
 - [Управление ресурсами с помощью Azure PowerShell](../azure-resource-manager/management/manage-resources-powershell.md)

@@ -3,13 +3,12 @@ title: Часто задаваемые вопросы
 description: Ответы на часто задаваемые вопросы, связанные со службой "экземпляры контейнеров Azure"
 author: dkkapur
 ms.topic: article
-ms.date: 04/10/2020
-ms.openlocfilehash: 4fca198356c8db006c4190e0f16b20f78dc1d477
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/02/2020
+ms.openlocfilehash: 21643ccfb6bb256e29114435ccb39a009d1b8dae
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82115233"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85806607"
 ---
 # <a name="frequently-asked-questions-about-azure-container-instances"></a>Часто задаваемые вопросы о службе "экземпляры контейнеров Azure"
 
@@ -27,25 +26,28 @@ ms.locfileid: "82115233"
 
 Поскольку один из основных определителями времени развертывания — это размер изображения, ищите способы уменьшения размера. Удалите ненужные слои или уменьшите размер слоев в изображении (путем выбора более светлого базового образа ОС). Например, если вы используете контейнеры Linux, рассмотрите возможность использования Alpine в качестве базового образа, а не полного сервера Ubuntu. Аналогично, для контейнеров Windows используйте базовый образ Nano Server, если это возможно. 
 
-Также следует проверить список предварительно кэшированных образов в образах контейнеров Azure, доступных через API-интерфейс для [кэшированных изображений](/rest/api/container-instances/listcachedimages) . Вы можете переключить слой изображения для одного из предварительно кэшированных изображений. 
+Также следует проверить список предварительно кэшированных образов в образах контейнеров Azure, доступных через API-интерфейс для [кэшированных изображений](/rest/api/container-instances/location/listcachedimages) . Вы можете переключить слой изображения для одного из предварительно кэшированных изображений. 
 
 См. более [подробные рекомендации](container-instances-troubleshooting.md#container-takes-a-long-time-to-start) по сокращению времени запуска контейнера.
 
 ### <a name="what-windows-base-os-images-are-supported"></a>Какие образы базовой ОС Windows поддерживаются?
 
+> [!NOTE]
+> Из-за проблем с обратной совместимостью после обновлений Windows в 2020 следующие версии образа содержат минимальный номер версии, который мы рекомендуем использовать в базовом образе. Текущие развертывания, использующие более старые версии образов, не затрагиваются, но новые развертывания должны соответствовать следующим базовым образам. 
+
 #### <a name="windows-server-2016-base-images"></a>Базовые образы Windows Server 2016
 
-* [Сервер Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `10.0.14393.x`,`sac2016`
-* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2016`,`10.0.14393.x`
+* [Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `sac2016` `10.0.14393.3506` или более поздняя версия
+* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2016` `10.0.14393.3506` или более поздней версии
 
 > [!NOTE]
 > Образы Windows на основе полугодовых каналов выпуска 1709 или 1803 не поддерживаются.
 
 #### <a name="windows-server-2019-and-client-base-images-preview"></a>Windows Server 2019 и базовые образы клиента (Предварительная версия)
 
-* [Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `1809` `10.0.17763.914` или более ранней версии
-* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2019`, `1809` `10.0.17763.914` или более ранней версии
-* [Windows](https://hub.docker.com/_/microsoft-windows): `1809` `10.0.17763.914` или более ранней версии
+* [Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `1809` `10.0.17763.1040` или более поздняя версия
+* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2019` , `1809` `10.0.17763.1040` или более поздней версии
+* [Windows](https://hub.docker.com/_/microsoft-windows): `1809` `10.0.17763.1040` или более поздняя версия
 
 ### <a name="what-net-or-net-core-image-layer-should-i-use-in-my-container"></a>Какой уровень образа .NET или .NET Core следует использовать в моем контейнере? 
 
@@ -72,7 +74,7 @@ ms.locfileid: "82115233"
 
 ### <a name="can-i-deploy-with-more-than-4-cores-and-16-gb-of-ram"></a>Можно ли выполнить развертывание с более чем 4 ядрами и 16 ГБ ОЗУ?
 
-Пока нет. В настоящее время это максимальные значения для группы контейнеров. Обратитесь в службу поддержки Azure с конкретными требованиями или запросами. 
+Эта возможность пока недоступна. В настоящее время это максимальные значения для группы контейнеров. Обратитесь в службу поддержки Azure с конкретными требованиями или запросами. 
 
 ### <a name="when-will-aci-be-in-a-specific-region"></a>Когда будет ACI в определенном регионе?
 

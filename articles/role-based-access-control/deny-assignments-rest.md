@@ -11,16 +11,15 @@ ms.service: role-based-access-control
 ms.workload: multiple
 ms.tgt_pltfrm: rest-api
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/19/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: dae0352566e6cb4f8ed1384ca12213e2aaa07f9d
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
-ms.translationtype: MT
+ms.openlocfilehash: 2f835c270930734bf9963a7c7c3168b873eddaf6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82733876"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84791917"
 ---
 # <a name="list-azure-deny-assignments-using-the-rest-api"></a>Список запрещенных назначений в Azure с помощью REST API
 
@@ -80,7 +79,7 @@ ms.locfileid: "82733876"
 1. Замените *{filter}* условием, по которому требуется отфильтровать список запретов назначений.
 
     > [!div class="mx-tableFixed"]
-    > | Filter | Описание |
+    > | Filter | Описание: |
     > | --- | --- |
     > | (без фильтра) | Список всех запретов назначений в указанной области, выше и ниже. |
     > | `$filter=atScope()` | Список запрещает назначения только для указанной области и более поздних версий. Не включаются запреты назначений во внутренних областях. |
@@ -102,14 +101,14 @@ ms.locfileid: "82733876"
 1. Замените *{filter}* условием, по которому требуется отфильтровать список запретов назначений. Необходимо указать фильтр.
 
     > [!div class="mx-tableFixed"]
-    > | Filter | Описание |
+    > | Filter | Описание: |
     > | --- | --- |
     > | `$filter=atScope()` | Вывод списка запретов назначений только в корневой области. Не включаются запреты назначений во внутренних областях. |
     > | `$filter=denyAssignmentName+eq+'{deny-assignment-name}'` | Вывод списка всех запретов назначений с указанным названием. |
 
 1. Удалите повышенный уровень доступа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения о назначении Deny в Azure](deny-assignments.md)
 - [Повышение прав доступа для управления всеми подписками Azure и группами управления](elevate-access-global-admin.md)

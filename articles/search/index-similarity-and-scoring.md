@@ -8,12 +8,11 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: 00cf806bf6575fd96af435abf8d0b3dd8734338a
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
-ms.translationtype: HT
+ms.openlocfilehash: 4c725fe74185088dea55b7506493fe667e71b7ae
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83679659"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85806641"
 ---
 # <a name="similarity-and-scoring-in-azure-cognitive-search"></a>Сходство и оценка в Когнитивном поиске Azure
 
@@ -38,7 +37,7 @@ ms.locfileid: "83679659"
 
 <a name="scoring-statistics"></a>
 
-## <a name="scoring-statistics-and-sticky-sessions-preview"></a>Статистика оценки и прикрепленные сеансы (предварительная версия)
+## <a name="scoring-statistics-and-sticky-sessions"></a>Статистика оценки и закрепленные сеансы
 
 Для обеспечения масштабируемости Когнитивный поиск Azure распределяет каждый индекс горизонтально через процесс сегментирования. Это означает, что части индекса физически разделены.
 
@@ -47,14 +46,14 @@ ms.locfileid: "83679659"
 Если вы предпочитаете вычислять оценку на основе статистических свойств всех сегментов, вы можете сделать это, добавив *scoringStatistics=global* в качестве [параметра запроса](https://docs.microsoft.com/rest/api/searchservice/search-documents) (или добавив *"scoringStatistics": "global"* в качестве параметра текста [запроса](https://docs.microsoft.com/rest/api/searchservice/search-documents)).
 
 ```http
-GET https://[service name].search.windows.net/indexes/[index name]/docs?scoringStatistics=global&api-version=2019-05-06-Preview&search=[search term]
+GET https://[service name].search.windows.net/indexes/[index name]/docs?scoringStatistics=global&api-version=2020-06-30&search=[search term]
   Content-Type: application/json
   api-key: [admin or query key]  
 ```
 Использование scoringStatistics гарантирует, что все сегменты в одной реплике обеспечивают одинаковые результаты. Тем не менее, разные реплики могут немного отличаться друг от друга, так как они всегда обновляются с последними изменениями в индексе. В некоторых случаях вам может потребоваться, чтобы пользователи во время "сеанса запроса" получали более согласованные результаты. В таких случаях вы можете предоставить `sessionId` как часть запросов. `sessionId` является уникальной строкой, которую вы создаете для ссылки на уникальный сеанс пользователя.
 
 ```http
-GET https://[service name].search.windows.net/indexes/[index name]/docs?sessionId=[string]&api-version=2019-05-06-Preview&search=[search term]
+GET https://[service name].search.windows.net/indexes/[index name]/docs?sessionId=[string]&api-version=2020-06-30&search=[search term]
   Content-Type: application/json
   api-key: [admin or query key]  
 ```
@@ -72,6 +71,37 @@ GET https://[service name].search.windows.net/indexes/[index name]/docs?sessionI
 В следующем фрагменте видео приведено краткое описание алгоритмов ранжирования, которые используются в Когнитивном поиске Azure. Дополнительные сведения можно получить, просмотрев полное видео.
 
 > [!VIDEO https://www.youtube.com/embed/Y_X6USgvB1g?version=3&start=322&end=643]
+
+<a name="featuresMode-param"></a>
+
+## <a name="featuresmode-parameter-preview"></a>параметр Феатуресмоде (Предварительная версия)
+
+В запросах [поиска документов](https://docs.microsoft.com/rest/api/searchservice/preview-api/search-documents) имеется новый параметр [феатуресмоде](https://docs.microsoft.com/rest/api/searchservice/preview-api/search-documents#featuresmode) , который может предоставить дополнительные сведения о релевантности на уровне полей. В то время как `@searchScore` вычисляется для всего документа (то, насколько это относится к этому документу в контексте этого запроса), через феатуресмоде можно получить сведения об отдельных полях, как указано в `@search.features` структуре. Структура содержит все поля, используемые в запросе (определенные поля с помощью **searchFields** в запросе или все поля с атрибутами, поддерживающими **Поиск** в индексе). Для каждого поля можно получить следующие значения:
+
++ Число уникальных токенов, найденных в поле
++ Оценка подобия или мера аналогичного содержимого поля относительно термина запроса
++ Частота терминов или количество раз, когда термин запроса был найден в поле
+
+Для запроса, предназначенного для полей "Description" и "Title", ответ, который содержит, `@search.features` может выглядеть следующим образом:
+
+```json
+"value": [
+ {
+    "@search.score": 5.1958685,
+    "@search.features": {
+        "description": {
+            "uniqueTokenMatches": 1.0,
+            "similarityScore": 0.29541412,
+            "termFrequency" : 2
+        },
+        "title": {
+            "uniqueTokenMatches": 3.0,
+            "similarityScore": 1.75451557,
+            "termFrequency" : 6
+        }
+```
+
+Вы можете использовать эти точки данных в [пользовательских решениях оценки](https://github.com/Azure-Samples/search-ranking-tutorial) или воспользоваться информацией для отладки проблем, связанных с поиском.
 
 ## <a name="see-also"></a>См. также раздел
 

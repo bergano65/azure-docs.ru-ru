@@ -11,12 +11,11 @@ ms.workload: identity
 ms.date: 01/31/2020
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: df06c4c55941f4424d6b90d2846af17bf055b2e4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: df5755c585d99333bf0c64ca08705309b4d4fc58
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80885469"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85253126"
 ---
 # <a name="scenario-daemon-application-that-calls-web-apis"></a>Сценарий: управляющее приложение, вызывающее веб-API
 
@@ -28,7 +27,7 @@ ms.locfileid: "80885469"
 
 ## <a name="overview"></a>Обзор
 
-Приложение может получить маркер для вызова веб-API от имени самого себя (не от имени пользователя). Этот сценарий полезен для управляющих приложений. Он использует стандартные [учетные данные клиента](v2-oauth2-client-creds-grant-flow.md) OAuth 2,0.
+Приложение может получить маркер для вызова веб-API от имени самого себя (не от имени пользователя). Этот сценарий полезен для управляющих приложений. В нем используется стандартное предоставление [учетных данных клиента](v2-oauth2-client-creds-grant-flow.md) OAuth 2.0.
 
 ![Управляющие программы](./media/scenario-daemon-app/daemon-app.svg)
 
@@ -59,7 +58,7 @@ ms.locfileid: "80885469"
 - При регистрации приложения в [конфигурации приложения](./scenario-daemon-app-configuration.md) необходимо предоставить учетные данные клиента совместно с Azure AD.
 - [Область](scenario-daemon-acquire-token.md#scopes-to-request) , используемая для получения маркера с помощью потока учетных данных клиента, должна быть статической областью.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Приложение управляющей программы — регистрация приложения](./scenario-daemon-app-registration.md)

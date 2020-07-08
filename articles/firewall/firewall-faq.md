@@ -5,14 +5,13 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 05/18/2020
+ms.date: 06/08/2020
 ms.author: victorh
-ms.openlocfilehash: d1ec04a0c16feb6d404018ff9538b9572e1d71c2
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: cf896f6783cca0a61892c43860328d87ada56a9c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83649610"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84791492"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
@@ -176,7 +175,7 @@ Set-AzFirewall -AzureFirewall $azfw
 
 ## <a name="how-long-does-it-take-for-azure-firewall-to-scale-out"></a>Сколько времени занимает масштабирование Брандмауэра Azure?
 
-Брандмауэр Azure масштабируется постепенно, когда средняя пропускная способность или загрузка ЦП составляет 60 %. Процесс масштабирования занимает от пяти до семи минут. При тестировании производительности убедитесь, что тестирование проводится в течение не менее 10–15 минут, и инициируйте новые подключения, чтобы воспользоваться преимуществами вновь созданных узлов Брандмауэра.
+Брандмауэр Azure масштабируется постепенно, когда средняя пропускная способность или загрузка ЦП составляет 60 %. Процесс масштабирования занимает от пяти до семи минут. При тестировании производительности обязательно выполните тестирование по крайней мере с 10 до 15 минут и запустите новые подключения, чтобы воспользоваться преимуществами только что созданных узлов брандмауэра.
 
 ## <a name="does-azure-firewall-allow-access-to-active-directory-by-default"></a>Разрешает ли Брандмауэр Azure доступ к Active Directory по умолчанию?
 
@@ -211,3 +210,11 @@ Set-AzFirewall -AzureFirewall $fw
 ## <a name="are-there-limits-for-the-number-of-ip-addresses-supported-by-ip-groups"></a>Существуют ли ограничения на число IP-адресов, поддерживаемых группами IP-адресов?
 
 Да. Дополнительные сведения см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-firewall-limits).
+
+## <a name="can-i-move-an-ip-group-to-another-resource-group"></a>Можно ли переместить группу IP-адресов в другую группу ресурсов?
+
+Нет, в настоящее время перемещение IP-группы в другую группу ресурсов не поддерживается.
+
+## <a name="what-is-the-tcp-idle-timeout-for-azure-firewall"></a>Каково время ожидания простоя TCP для брандмауэра Azure?
+
+Стандартное поведение сетевого брандмауэра заключается в том, чтобы обеспечить активность TCP-подключений и немедленно закрыть их в случае отсутствия активности. Время ожидания простоя TCP брандмауэра Azure составляет четыре минуты. Этот параметр не настраивается. Если период бездействия превышает значение времени ожидания, то нет никакой гарантии, что сеанс TCP или HTTP сохраняется. Распространенной практикой является проверка активности TCP. Такой подход позволяет поддерживать подключения активными в течение более длительного периода. Дополнительные сведения см. в [примерах .NET](https://docs.microsoft.com/dotnet/api/system.net.servicepoint.settcpkeepalive?redirectedfrom=MSDN&view=netcore-3.1#System_Net_ServicePoint_SetTcpKeepAlive_System_Boolean_System_Int32_System_Int32_).

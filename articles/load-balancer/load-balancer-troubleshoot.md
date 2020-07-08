@@ -8,17 +8,16 @@ manager: dcscontentpm
 ms.custom: seodoc18
 ms.service: load-balancer
 ms.devlang: na
-ms.topic: article
+ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/28/2020
 ms.author: allensu
-ms.openlocfilehash: e7c5e00f2e5565393ff46dbb06b30991ebcfc01f
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
-ms.translationtype: HT
+ms.openlocfilehash: 1cfe27fd5c63bc4c1436982212b91e07f54aedb5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83873707"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85801926"
 ---
 # <a name="troubleshoot-azure-load-balancer"></a>Устранение неполадок Azure Load Balancer
 
@@ -124,7 +123,7 @@ ms.locfileid: "83873707"
 
 ### <a name="cause-4-accessing-the-internal-load-balancer-frontend-from-the-participating-load-balancer-backend-pool-vm"></a>Причина 4. Доступ к интерфейсу внутреннего Load Balancer осуществляется из виртуальной машины серверного пула Load Balancer
 
-Если внутренний Load Balancer настроен в виртуальной сети, а одна из участвующих серверных виртуальных машин пытается получить доступ к интерфейсу внутреннего Load Balancer, то когда поток сопоставляется с исходной виртуальной машиной, могут произойти сбои. Такой сценарий не поддерживается. Просмотрите [ограничения](concepts.md#limitations) для подробного обсуждения.
+Если внутренний Load Balancer настроен в виртуальной сети, а одна из участвующих серверных виртуальных машин пытается получить доступ к интерфейсу внутреннего Load Balancer, то когда поток сопоставляется с исходной виртуальной машиной, могут произойти сбои. Такой сценарий не поддерживается.
 
 **Разрешение** Существует несколько способов разблокировать этот сценарий, включая использование прокси-сервера. Оцените шлюз приложений или другие сторонние прокси-серверы (например, nginx или haproxy). Дополнительные сведения о шлюзе приложений см. в статье [Обзор шлюза приложений](../application-gateway/application-gateway-introduction.md).
 
@@ -136,7 +135,7 @@ ms.locfileid: "83873707"
 
 Симптомом этого сценария является периодическое истечение времени ожидания подключения, когда поток возвращается к той же серверной части, из которой он возник. К общим обходным решениям относятся вставка уровня прокси-сервера за внутренней подсистемой балансировки нагрузки и использование правил прямого ответа от сервера (DSR). Дополнительные сведения см. в статье [Несколько внешних интерфейсов для Azure Load Balancer](load-balancer-multivip-overview.md).
 
-Вы можете объединить внутреннюю систему балансировки нагрузки со сторонним прокси-сервером или использовать внутренний [шлюз приложений](../application-gateway/application-gateway-introduction.md) для сценариев прокси-сервера с протоколами HTTP и HTTPS. Хотя вы можете использовать общедоступный Load Balancer в качестве обходного решения, полученный сценарий подвержен [исчерпанию SNAT](load-balancer-outbound-connections.md#snat). Избегайте этого второго подхода, если не сможете осуществить его тщательно.
+Вы можете объединить внутреннюю систему балансировки нагрузки со сторонним прокси-сервером или использовать внутренний [шлюз приложений](../application-gateway/application-gateway-introduction.md) для сценариев прокси-сервера с протоколами HTTP и HTTPS. Хотя вы можете использовать общедоступный Load Balancer в качестве обходного решения, полученный сценарий подвержен [исчерпанию SNAT](load-balancer-outbound-connections.md). Избегайте этого второго подхода, если не сможете осуществить его тщательно.
 
 ## <a name="symptom-cannot-change-backend-port-for-existing-lb-rule-of-a-load-balancer-which-has-vm-scale-set-deployed-in-the-backend-pool"></a>Симптом. В подсистеме балансировки нагрузки, в которой развернут набор масштабирования виртуальных машин во внутреннем пуле, невозможно изменить внутренний порт для существующего правила LB. 
 ### <a name="cause--the-backend-port-cannot-be-modified-for-a-load-balancing-rule-thats-used-by-a-health-probe-for-load-balancer-referenced-by-vm-scale-set"></a>Причина. Внутренний порт невозможно изменить для правила балансировки нагрузки, используемого зондом работоспособности для балансировщика нагрузки, на который ссылается масштабируемый набор виртуальных машин.

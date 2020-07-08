@@ -2,27 +2,23 @@
 title: Устранение неполадок с Управлением обновлениями службы автоматизации Azure
 description: Эта статья содержит сведения об устранении неполадок с Управлением обновлениями службы автоматизации Azure.
 services: automation
-author: mgoedtel
-ms.author: magoedte
-ms.date: 03/17/2020
+ms.date: 06/30/2020
 ms.topic: conceptual
 ms.service: automation
-manager: carmonm
-ms.openlocfilehash: 2989d85ddfca036a27ff6b886bd3b13a981c27a3
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
-ms.translationtype: HT
+ms.openlocfilehash: 95e3fc12a77124c32e220d700a112f52cbad08fb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84170262"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85801892"
 ---
 # <a name="troubleshoot-update-management-issues"></a>Устранение неполадок с Управлением обновлениями
 
 В этой статье обсуждаются проблемы, с которыми можно столкнуться при развертывании решения "Управление обновлениями" на компьютерах. Агент устранения неполадок определяет первоначальную проблему для агента гибридной рабочей роли Runbook. Дополнительные сведения о средстве устранения неполадок см. в статьях [Устранение неполадок с агентом обновления Windows](update-agent-issues.md) и [Устранение неполадок с агентом обновления Linux](update-agent-issues-linux.md). Сведения о других проблемах при развертывании компонентов см. в статье [Устранение неполадок с развертыванием компонентов](onboarding.md).
 
 >[!NOTE]
->Если возникают проблемы при развертывании решения "Управление обновлениями" на виртуальной машине, проверьте журнал **Operations Manager** в разделе **Журналы приложения и служб** на локальном компьютере. Найдите события с идентификатором 4502 и сведения о событии, содержащие `Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent`.
+>Если при развертывании Управление обновлениями на компьютере Windows возникают проблемы, откройте Просмотр событий Windows и проверьте журнал событий **Operations Manager** в разделе **журналы приложений и служб** на локальном компьютере. Найдите события с идентификатором 4502 и сведения о событии, содержащие `Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent`.
 
-## <a name="scenario-you-receive-the-error-failed-to-enable-the-update-solution"></a>Сценарий: отображается сообщение об ошибке Failed to enable the Update solution (Не удалось включить решение по обновлению)
+## <a name="scenario-you-receive-the-error-failed-to-enable-the-update-solution"></a><a name="failed-to-enable-error"></a>Сценарий: отображается сообщение об ошибке Failed to enable the Update solution (Не удалось включить решение по обновлению)
 
 ### <a name="issue"></a>Проблема
 
@@ -48,19 +44,17 @@ Error details: Failed to enable the Update solution
 
 * Дополнительные сведения о том, какие адреса и порты должны быть разрешены, чтобы Управление обновлениями работало, см. в разделе [о конфигурации сети](../automation-hybrid-runbook-worker.md#network-planning).  
 
-* Дополнительные сведения о том, какие адреса и порты должны быть разрешены, чтобы работал агент Log Analytics, см. в разделе [о конфигурации сети](../../azure-monitor/platform/log-analytics-agent.md#network-requirements).
-
-* Проверьте наличие проблем с конфигурацией области. [Конфигурация области](../automation-scope-configurations-update-management.md) определяет, какие компьютеры настроены для Управления обновлениями. Если компьютер отображается в рабочей области, но не на портале Управления обновлениями, необходимо задать конфигурацию области для целевых компьютеров. Дополнительные сведения о конфигурации области см. в разделе [Включение компьютеров в рабочей области](../automation-onboard-solutions-from-automation-account.md#enable-machines-in-the-workspace).
+* Проверьте наличие проблем с конфигурацией области. [Конфигурация области](../automation-scope-configurations-update-management.md) определяет, какие компьютеры настроены для Управления обновлениями. Если компьютер отображается в рабочей области, но не в Управление обновлениями, необходимо задать конфигурацию области для целевых компьютеров. Дополнительные сведения о конфигурации области см. в разделе [Включение компьютеров в рабочей области](../automation-onboard-solutions-from-automation-account.md#enable-machines-in-the-workspace).
 
 * Удалите конфигурацию рабочей роли, выполнив действия из разделов [Удаление гибридной рабочей роли Runbook с локального компьютера Windows](../automation-windows-hrw-install.md#remove-windows-hybrid-runbook-worker) или [Удаление гибридной рабочей роли Runbook с локального компьютера Linux](../automation-linux-hrw-install.md#remove-linux-hybrid-runbook-worker). 
 
 ## <a name="scenario-superseded-update-indicated-as-missing-in-update-management"></a>Сценарий: заменяемое обновление отображается как отсутствующее в Управлении обновлениями
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Старые обновления отображаются для учетной записи службы автоматизации как отсутствующие, даже если они были заменены. Заменяемое обновление не надо устанавливать, так как доступно более позднее обновление, устраняющее ту же уязвимость. Управление обновлениями игнорирует заменяемое обновление и делает его неприменимым. Вместо него используется заменяющее обновление. Сведения о связанных проблемах см. в разделе о [замененном обновлении](https://docs.microsoft.com/windows/deployment/update/windows-update-troubleshooting#the-update-is-not-applicable-to-your-computer).
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Заменяемые обновления не были правильно отмечены как отклоненные, чтобы их можно было считать неприменимыми.
 
@@ -86,7 +80,7 @@ Error details: Failed to enable the Update solution
 
 ## <a name="scenario-machines-dont-show-up-in-the-portal-under-update-management"></a><a name="nologs"></a>Сценарий. Компьютеры не отображаются на портале в разделе Управления обновлениями
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 У ваших компьютеров возникли указанные ниже симптомы:
 
@@ -96,7 +90,7 @@ Error details: Failed to enable the Update solution
 
 * У вас есть компьютеры, которые имеют состояние `Not assessed` в разделе **Соответствие**. Однако в журналах Azure Monitor отображаются данные пульса для гибридной рабочей роли Runbook, но не для Управления обновлениями.
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта проблема может быть вызвана проблемами с локальной конфигурацией или неправильно настроенной конфигурацией области. Возможные причины:
 
@@ -137,7 +131,7 @@ Error details: Failed to enable the Update solution
 
 ## <a name="scenario-unable-to-register-automation-resource-provider-for-subscriptions"></a><a name="rp-register"></a>Сценарий. Не удается оформить подписки для поставщика ресурсов службы автоматизации
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 При работе с развертываниями компонентов в учетной записи службы автоматизации возникает следующая ошибка:
 
@@ -145,7 +139,7 @@ Error details: Failed to enable the Update solution
 Error details: Unable to register Automation Resource Provider for subscriptions
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Поставщик ресурсов службы автоматизации не зарегистрирован в подписке.
 
@@ -165,7 +159,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 ## <a name="scenario-scheduled-update-with-a-dynamic-schedule-missed-some-machines"></a><a name="scheduled-update-missed-machines"></a>Сценарий. В запланированном обновлении с динамическим расписанием отсутствуют некоторые компьютеры
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Компьютеры, включенные в предварительный просмотр обновления, не отображаются в списке компьютеров, исправленных во время запланированного запуска.
 
@@ -219,7 +213,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 Виртуальные машины для выбранных областей динамической группы не отображаются в списке предварительного просмотра на портале Azure. В этом списке находятся все компьютеры, полученные через запрос ARG для выбранных областей. Области фильтруются для компьютеров, на которых установлены гибридные рабочие роли Runbook, к которым у вас есть право доступа. 
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
  
 Возможные причины этой проблемы:
 
@@ -280,7 +274,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 ## <a name="scenario-update-management-components-enabled-while-vm-continues-to-show-as-being-configured"></a><a name="components-enabled-not-working"></a>Сценарий. Компоненты Управления обновлениями включены, тогда как виртуальная машина продолжает отображаться во время настройки
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Приведенное ниже сообщение на виртуальной машине не исчезает в течение 15 минут после начала развертывания:
 
@@ -288,7 +282,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 The components for the 'Update Management' solution have been enabled, and now this virtual machine is being configured. Please be patient, as this can sometimes take up to 15 minutes.
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта ошибка может возникать по следующим причинам.
 
@@ -334,7 +328,7 @@ Update
 
 ## <a name="scenario-you-receive-a-linked-subscription-error-when-you-create-an-update-deployment-for-machines-in-another-azure-tenant"></a><a name="multi-tenant"></a>Сценарий. Вы получаете ошибку связанной подписки при создании развертывания обновлений для компьютеров в другом клиенте Azure
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Вы получаете следующую ошибку при попытке создания развертывания обновлений для компьютеров в другом клиенте Azure:
 
@@ -342,7 +336,7 @@ Update
 The client has permission to perform action 'Microsoft.Compute/virtualMachines/write' on scope '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroupName/providers/Microsoft.Automation/automationAccounts/automationAccountName/softwareUpdateConfigurations/updateDeploymentName', however the current tenant '00000000-0000-0000-0000-000000000000' is not authorized to access linked subscription '00000000-0000-0000-0000-000000000000'.
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта ошибка возникает при создании развертывания обновлений с виртуальными машинами Azure, расположенными в другом клиенте.
 
@@ -362,11 +356,11 @@ New-AzAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -AutomationA
 
 ## <a name="scenario-unexplained-reboots"></a><a name="node-reboots"></a>Сценарий. Необъяснимые перезагрузки
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Несмотря на то, что для параметра **управления перезагрузкой** установлено значение **Никогда не перезагружать**, компьютеры по-прежнему перезагружаются после установки обновлений.
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 В Центр обновления Windows могли внести изменения, используя некоторые разделы реестра, с помощью которых можно изменить поведение при перезагрузке.
 
@@ -376,7 +370,7 @@ New-AzAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -AutomationA
 
 ## <a name="scenario-machine-shows-failed-to-start-in-an-update-deployment"></a><a name="failed-to-start"></a>Сценарий. На компьютере отображается сообщение "Не удалось запустить" при развертывании обновлений
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 На компьютере отображается состояние `Failed to start`. При просмотре подробной информации о компьютере наблюдается следующая ошибка:
 
@@ -416,7 +410,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 
 При регистрации компьютера Windows в Управлении обновлениями отобразятся обновления, установленные без развертывания.
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Обновления устанавливаются в Windows автоматически, как только они становятся доступными. Такое поведение может вызвать путаницу, если вы не планировали развертывание обновления на компьютере.
 
@@ -430,7 +424,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 
 ## <a name="scenario-machine-is-already-registered-to-a-different-account"></a><a name="machine-already-registered"></a>Сценарий. Компьютер уже зарегистрирован в другой учетной записи
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Отображается следующее сообщение об ошибке:
 
@@ -438,7 +432,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 Unable to Register Machine for Patch Management, Registration Failed with Exception System.InvalidOperationException: {"Message":"Machine is already registered to a different account."}
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Компьютер уже развернут в другой рабочей области для Управления обновлениями.
 
@@ -449,7 +443,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ## <a name="scenario-machine-cant-communicate-with-the-service"></a><a name="machine-unable-to-communicate"></a>Сценарий. Компьютеру не удается связаться со службой
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Отображается одно из следующих сообщений об ошибке.
 
@@ -469,7 +463,7 @@ The certificate presented by the service <wsid>.oms.opinsights.azure.com was not
 Access is denied. (Exception form HRESULT: 0x80070005(E_ACCESSDENIED))
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Возможно, прокси-сервер, шлюз или брандмауэр блокируют сетевую связь. 
 
@@ -479,7 +473,7 @@ Access is denied. (Exception form HRESULT: 0x80070005(E_ACCESSDENIED))
 
 ## <a name="scenario-unable-to-create-self-signed-certificate"></a><a name="unable-to-create-selfsigned-cert"></a>Сценарий. Невозможно создать самозаверяющий сертификат
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Отображается одно из следующих сообщений об ошибке.
 
@@ -487,7 +481,7 @@ Access is denied. (Exception form HRESULT: 0x80070005(E_ACCESSDENIED))
 Unable to Register Machine for Patch Management, Registration Failed with Exception AgentService.HybridRegistration. PowerShell.Certificates.CertificateCreationException: Failed to create a self-signed certificate. ---> System.UnauthorizedAccessException: Access is denied.
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Гибридной рабочей роли Runbook не удалось создать самозаверяющий сертификат.
 
@@ -497,7 +491,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ## <a name="scenario-the-scheduled-update-failed-with-a-maintenancewindowexceeded-error"></a><a name="mw-exceeded"></a>Сценарий. Запланированное обновление завершилось с ошибкой MaintenanceWindowExceeded
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Период обслуживания по умолчанию для обновлений — 120 минут. Период обслуживания можно увеличить до 6 часов или 360 минут.
 
@@ -509,12 +503,12 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ## <a name="scenario-machine-shows-as-not-assessed-and-shows-an-hresult-exception"></a><a name="hresult"></a>Сценарий. Компьютер отображается как "Без оценки" и показывает исключение HRESULT
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 * У вас есть компьютеры, которые отображаются как `Not assessed` в разделе **Совместимость**, а ниже появляется сообщение об ошибке.
 * На портале отобразится код ошибки HRESULT.
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Агент обновления (агент Центра обновления Windows для Windows; диспетчер пакетов для дистрибутива Linux) настроен неправильно. Управление обновлениями зависит от агента обновления на компьютере для предоставления необходимых обновлений, состояния исправления и результатов развернутых исправлений. Без этой информации Управление обновлениями не сможет должным образом предоставлять отчеты об исправлениях, которые требуется установить или которые уже установлены.
 
