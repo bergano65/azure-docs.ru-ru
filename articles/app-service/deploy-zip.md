@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 08/12/2019
 ms.reviewer: sisirap
 ms.custom: seodec18
-ms.openlocfilehash: 716f6813e37aec086a7d496e001fe2ca0f4aab57
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 32fc57e720f9c23f6ef26f02b2cd4a82c4266984
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75945180"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85957041"
 ---
 # <a name="deploy-your-app-to-azure-app-service-with-a-zip-or-war-file"></a>Развертывание приложения в Службе приложений Azure с помощью ZIP- или WAR-файла
 
@@ -28,7 +28,10 @@ ms.locfileid: "75945180"
 
 [WAR](https://wikipedia.org/wiki/WAR_(file_format))-файл развертывается в службе приложений для запуска веб-приложения Java. См. раздел [Развертывание WAR-файла](#deploy-war-file).
 
-## <a name="prerequisites"></a>Предварительные требования
+> [!NOTE]
+> При использовании `ZipDeploy` файлы копируются только в том случае, если их метки времени не совпадают с уже развернутыми. Создание ZIP-файла с помощью процесса сборки, который кэширует выходные данные, может привести к ускорению развертываний. Дополнительные сведения см. в разделе [развертывание из ZIP-файла или URL](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file-or-url).
+
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы выполнить действия, описанные в этой статье, [Создайте приложение службы приложений](/azure/app-service/)или используйте приложение, созданное для другого руководства.
 
@@ -51,7 +54,7 @@ az webapp deployment source config-zip --resource-group <group-name> --name <app
 
 Эта команда позволяет развертывать файлы и каталоги из ZIP-файлов в папку для приложения службы приложений по умолчанию (`\home\site\wwwroot`). Затем приложение перезапускается.
 
-По умолчанию подсистема развертывания предполагает, что ZIP-файл готов к выполнению "как есть" и не выполняет автоматизацию сборки. Чтобы включить ту же автоматизацию сборки, что и в [развертывании Git](deploy-local-git.md), задайте параметр `SCM_DO_BUILD_DURING_DEPLOYMENT` приложения, выполнив следующую команду в [Cloud Shell](https://shell.azure.com):
+По умолчанию подсистема развертывания предполагает, что ZIP-файл готов к выполнению "как есть" и не выполняет автоматизацию сборки. Чтобы включить ту же автоматизацию сборки, что и в [развертывании Git](deploy-local-git.md), задайте `SCM_DO_BUILD_DURING_DEPLOYMENT` параметр приложения, выполнив следующую команду в [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <group-name> --name <app-name> --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
@@ -63,9 +66,9 @@ az webapp config appsettings set --resource-group <group-name> --name <app-name>
 
 ## <a name="deploy-war-file"></a>Развертывание WAR-файла
 
-Чтобы развернуть WAR-файл в службе приложений, отправьте запрос POST в `https://<app-name>.scm.azurewebsites.net/api/wardeploy`. В тексте сообщения запроса POST должен содержаться WAR-файл. Учетные данные развертывания для приложения указываются в запросе с использованием обычной проверки подлинности HTTP.
+Чтобы развернуть WAR-файл в службе приложений, отправьте запрос POST в `https://<app-name>.scm.azurewebsites.net/api/wardeploy` . В тексте сообщения запроса POST должен содержаться WAR-файл. Учетные данные развертывания для приложения указываются в запросе с использованием обычной проверки подлинности HTTP.
 
-Всегда используйте `/api/wardeploy` при РАЗВЕРТЫВАНИи War-файлов. Этот API расширяет WAR-файл и размещает его на общем файловом диске. использование других API-интерфейсов развертывания может привести к несовместимости поведения. 
+Всегда используйте `/api/wardeploy` при развертывании War-файлов. Этот API расширяет WAR-файл и размещает его на общем файловом диске. использование других API-интерфейсов развертывания может привести к несовместимости поведения. 
 
 Для обычной аутентификации HTTP требуются учетные данные развертывания службы приложений. См. дополнительные сведения об [установке и сбросе учетных данных на уровне пользователя](deploy-configure-credentials.md#userscope).
 
@@ -87,7 +90,7 @@ Publish-AzWebapp -ResourceGroupName <group-name> -Name <app-name> -ArchivePath <
 
 [!INCLUDE [What happens to my app during deployment?](../../includes/app-service-deploy-atomicity.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы изучить более сложные сценарии развертывания, ознакомьтесь с [развертыванием в Azure с помощью Git](deploy-local-git.md). Развертывание в Azure на основе Git обеспечивает систему управления версиями, восстановление пакета, MSBuild и многое другое.
 
