@@ -11,21 +11,19 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 181e8192170cd7394d6817edd655f4e8257b48a4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 81cd2649ff056ab107491cf60602f0da7435b228
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80654043"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85550630"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-on-premises-resources-with-azure-active-directory-preview"></a>Включение входа в систему с помощью ключа безопасности без пароля для локальных ресурсов с Azure Active Directory (Предварительная версия)
 
 В этом документе рассматривается включение проверки подлинности без пароля для локальных ресурсов в средах с присоединенными к **Azure AD** и гибридными устройствами Windows 10, **присоединенными к Azure** AD. Эта функция обеспечивает простой единый вход (SSO) в локальные ресурсы с помощью совместимых с Майкрософт ключей безопасности.
 
-|     |
-| --- |
-| Ключи безопасности FIDO2 — это общедоступная Предварительная версия функции Azure Active Directory. Дополнительные сведения о предварительных версиях см. в разделе Дополнительные [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)|
-|     |
+> [!NOTE]
+> Ключи безопасности FIDO2 — это общедоступная Предварительная версия функции Azure Active Directory. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="sso-to-on-premises-resources-using-fido2-keys"></a>Единый вход в локальные ресурсы с помощью ключей FIDO2
 
@@ -42,7 +40,7 @@ Azure Active Directory (AD) может выдавать билеты Kerberos н
 1. Клиентский компьютер обращается к локальному контроллеру домена AD и задействует частичный TGT для полностью сформированного TGT.
 1. Теперь на клиентском компьютере имеется Azure AD PRT и полное Active Directory TGT, а также доступ к облачным и локальным ресурсам.
 
-## <a name="requirements"></a>Требования
+## <a name="requirements"></a>Requirements (Требования)
 
 Перед выполнением действий, описанных в этой статье, организации должны выполнить действия по [включению ключа безопасности без пароля для входа на устройства с Windows 10 (Предварительная версия)](howto-authentication-passwordless-security-key.md) .
 
@@ -111,7 +109,7 @@ Get-AzureADKerberosServer -Domain $domain -CloudCredential $cloudCred -DomainCre
 
 Эта команда выводит свойства сервера Azure AD Kerberos. Можно проверить свойства, чтобы убедиться, что все находится в правильном порядке.
 
-| Свойство | Описание |
+| Свойство. | Описание |
 | --- | --- |
 | ID | Уникальный идентификатор объекта AD DS контроллера домена. Этот идентификатор иногда называют "слотом" или "ИДЕНТИФИКАТОРом ветви". |
 | DomainDnsName | Доменное имя DNS домен Active Directory. |
@@ -148,7 +146,7 @@ Remove-AzureADKerberosServer -Domain $domain -CloudCredential $cloudCred -Domain
 
 Объект сервера Kerberos Azure AD представлен в Azure AD как объект *керберосдомаин* . Каждый локальный домен Active Directory представляется в Azure AD как один объект *керберосдомаин* .
 
-Например, в Организации имеется Active Directory лес с двумя доменами `contoso.com` и. `fabrikam.com` Если вы решили разрешить Azure AD выдавать TGT Kerberos для всего леса, в Azure AD есть два объекта *керберосдомаин* . Один объект *керберосдомаин* для `contoso.com`, и один для `fabrikam.com`. При наличии нескольких Active Directory лесов существует один объект *керберосдомаин* для каждого домена в каждом лесу.
+Например, в Организации имеется Active Directory лес с двумя доменами `contoso.com` и `fabrikam.com` . Если вы решили разрешить Azure AD выдавать TGT Kerberos для всего леса, в Azure AD есть два объекта *керберосдомаин* . Один объект *керберосдомаин* для `contoso.com` , и один для `fabrikam.com` . При наличии нескольких Active Directory лесов существует один объект *керберосдомаин* для каждого домена в каждом лесу.
 
 Необходимо выполнить шаги для [создания объекта сервера Kerberos](#create-kerberos-server-object) в каждом домене и лесу организации, которые содержат пользователей Azure AD.
 
@@ -192,13 +190,13 @@ Remove-AzureADKerberosServer -Domain $domain -CloudCredential $cloudCred -Domain
 
 Если вы выполняете чистую установку гибридного компьютера, присоединенного к Azure AD, после присоединения и перезапуска домена необходимо войти в систему с помощью пароля и дождаться синхронизации политики, прежде чем использовать FIDO для входа.
 
-- Проверьте текущее `dsregcmd /status` состояние, введя в командное окно и убедитесь, что для обоих *AzureAdJoined* и *домаинжоинед* отображается *значение Да*.
+- Проверьте текущее состояние, введя `dsregcmd /status` в командное окно и убедитесь, что для обоих *AzureAdJoined* и *домаинжоинед* отображается *значение Да*.
 - Эта задержка является известным ограничением для устройств, присоединенных к домену, и не зависит от FIDO.
 
 ### <a name="im-unable-to-get-sso-to-my-ntlm-network-resource-after-signing-in-with-fido-and-get-a-credential-prompt"></a>Не удается получить единый вход для сетевого ресурса NTLM после входа с помощью FIDO и получения запроса учетных данных
 
-Убедитесь, что все контроллеры домена исправлены на время ответа на обслуживание запроса ресурсов. Чтобы проверить, доступен ли контроллер домена, на котором работает эта функция, просмотрите выходные данные `nltest /dsgetdc:contoso /keylist /kdc`.
+Убедитесь, что все контроллеры домена исправлены на время ответа на обслуживание запроса ресурсов. Чтобы проверить, доступен ли контроллер домена, на котором работает эта функция, просмотрите выходные данные `nltest /dsgetdc:contoso /keylist /kdc` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Дополнительные сведения о пароле](concept-authentication-passwordless.md)

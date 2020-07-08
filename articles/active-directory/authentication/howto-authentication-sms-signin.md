@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: rateller
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 450e6aa1b22806fbd4d142e47caee720d7f63648
-ms.sourcegitcommit: 95269d1eae0f95d42d9de410f86e8e7b4fbbb049
-ms.translationtype: HT
+ms.openlocfilehash: 55e64fad910aba25354d8d7829fc1189b744ca16
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83860177"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85550486"
 ---
 # <a name="configure-and-enable-users-for-sms-based-authentication-using-azure-active-directory-preview"></a>Настройка и подключение пользователей для аутентификации на основе SMS с помощью Azure Active Directory (предварительная версия)
 
@@ -24,10 +24,8 @@ ms.locfileid: "83860177"
 
 В этой статье показано, как включить аутентификацию на основе SMS для отдельных пользователей или групп в Azure AD.
 
-|     |
-| --- |
-| Аутентификация через SMS — это общедоступная предварительная версия функции Azure Active Directory. См. подробные сведения о [Дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)|
-|     |
+> [!NOTE]
+> Аутентификация через SMS — это общедоступная предварительная версия функции Azure Active Directory. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -150,12 +148,16 @@ ms.locfileid: "83860177"
 
 Дополнительные способы входа в Azure AD без пароля, как, например, через приложение Microsoft Authenticator или ключи безопасности FIDO2, см. в статье [Параметры аутентификации без пароля для Azure AD][concepts-passwordless].
 
+Вы также можете использовать бета-версию Microsoft Graph REST API для [включения][rest-enable] или [отключения][rest-disable] входа на основе SMS.
+
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: ../fundamentals/sign-up-organization.md
 [associate-azure-ad-tenant]: ../fundamentals/active-directory-how-subscriptions-associated-directory.md
 [concepts-passwordless]: concept-authentication-passwordless.md
 [tutorial-azure-mfa]: tutorial-enable-azure-mfa.md
 [tutorial-sspr]: tutorial-enable-sspr.md
+[rest-enable]: /graph/api/phoneauthenticationmethod-enablesmssignin?view=graph-rest-beta&tabs=http
+[rest-disable]: /graph/api/phoneauthenticationmethod-disablesmssignin?view=graph-rest-beta&tabs=http
 
 <!-- EXTERNAL LINKS -->
 [azure-portal]: https://portal.azure.com

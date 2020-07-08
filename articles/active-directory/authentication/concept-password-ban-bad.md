@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef127d120b32f5344bce0f68d79f48401087f0ce
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0f905b3eb6d1675f0bc252c3500169b3144287d9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79264002"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85550706"
 ---
 # <a name="eliminate-bad-passwords-in-your-organization"></a>Исключение неправильных паролей в организации
 
@@ -158,7 +158,7 @@ ms.locfileid: "79264002"
 
 ## <a name="license-requirements"></a>Требования лицензий
 
-|   | Защита паролей Azure AD с помощью списка глобально заблокированных паролей | Защита паролей Azure AD с помощью настраиваемого списка заблокированных паролей|
+| Пользователи | Защита паролей Azure AD с помощью списка глобально заблокированных паролей | Защита паролей Azure AD с помощью настраиваемого списка заблокированных паролей|
 | --- | --- | --- |
 | Только пользователи облака | Azure AD уровня "Бесплатный" | Azure AD Premium (P1 или P2) |
 | Пользователи, синхронизированные с локальным сервером Windows Server Active Directory | Azure AD Premium (P1 или P2) | Azure AD Premium (P1 или P2) |
@@ -174,7 +174,7 @@ ms.locfileid: "79264002"
 
 К сожалению, ваш пароль содержит слово, фразу или сочетание символов, которые легко угадать. Попробуйте ввести другой пароль.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка пользовательского списка заблокированных паролей](howto-password-ban-bad.md)
 - [Развертывание предварительной версии защиты паролем Azure AD](howto-password-ban-bad-on-premises-deploy.md)

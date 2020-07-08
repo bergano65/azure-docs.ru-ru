@@ -12,12 +12,12 @@ ms.date: 05/20/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe9c9f44c42ef1e8dd6ff3401ad7201b174aa952
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
-ms.translationtype: HT
+ms.openlocfilehash: 3bf5e161b46b9ec6e39702ddd8435a7c7672111f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83725301"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85550125"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect выполняет следующие функции: Журнал выпуска версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -582,8 +582,6 @@ Allow    | Прошедшие проверку пользователи         
 Allow    | Прошедшие проверку пользователи           | Чтение всех свойств  | этому объекту  |
 Allow    | Прошедшие проверку пользователи           | Разрешения на чтение     | этому объекту  |
 
-Чтобы настроить параметры для учетной записи службы AD DS, можно выполнить [этот скрипт PowerShell](https://gallery.technet.microsoft.com/Prepare-Active-Directory-ef20d978). Скрипт PowerShell назначит указанные выше разрешения учетной записи AD DS.
-
 #### <a name="powershell-script-to-tighten-a-pre-existing-service-account"></a>Скрипт PowerShell для настройки существующей учетной записи службы
 
 Чтобы использовать скрипт PowerShell, который применит эти параметры к существующей учетной записи AD DS (предоставленной вашей организацией или созданной при предыдущей установке Azure AD Connect), скачайте этот скрипт по указанной выше ссылке.
@@ -903,18 +901,31 @@ CBool(
 ```
 
 * Добавлен следующий набор функций, совместимых с сертификатом X509Certificate2, чтобы создать выражения правила синхронизации для обработки значений сертификата в атрибуте userCertificate:
-
-    ||||
-    | --- | --- | --- |
-    |CertSubject|CertIssuer|CertKeyAlgorithm|
-    |CertSubjectNameDN|CertIssuerOid|CertNameInfo|
-    |CertSubjectNameOid|CertIssuerDN|IsCert|
-    |CertFriendlyName|CertThumbprint|CertExtensionOids|
-    |CertFormat|CertNotAfter|CertPublicKeyOid|
-    |CertSerialNumber|CertNotBefore|CertPublicKeyParametersOid|
-    |CertVersion|CertSignatureAlgorithmOid|Выберите пункт|
-    |CertKeyAlgorithmParams|CertHashString|Where|
-    |||With|
+  * CertSubject 
+  * CertIssuer
+  * CertKeyAlgorithm
+  * CertSubjectNameDN
+  * CertIssuerOid
+  * CertNameInfo
+  * CertSubjectNameOid
+  * CertIssuerDN
+  * IsCert
+  * CertFriendlyName
+  * CertThumbprint
+  * CertExtensionOids
+  * CertFormat
+  * CertNotAfter
+  * CertPublicKeyOid 
+  * CertSerialNumber
+  * CertNotBefore
+  * CertPublicKeyParametersOid
+  * CertVersion
+  * CertSignatureAlgorithmOid
+  * Выберите пункт
+  * CertKeyAlgorithmParams
+  * CertHashString
+  * Where
+  * With
 
 * Чтобы разрешить пользователям создавать пользовательские правила синхронизации для потока sAMAccountName, domainNetBios и domainFQDN для объектов-групп, а также distinguishedName для объектов-пользователей, были введены следующие изменения схемы:
 
@@ -990,7 +1001,7 @@ CBool(
 
 * Azure AD Connect теперь автоматически обеспечивает использование атрибута ConsistencyGuid в качестве атрибута привязки к источнику для локальных объектов AD. Более того, Azure AD Connect заполняет атрибут ConsistencyGuid значением атрибута objectGuid, если оно пустое. Эта функция применима только к новому развертыванию. Чтобы узнать больше об этой функции, прочитайте раздел [Azure AD Connect: использование ms-DS-ConsistencyGuid в качестве sourceAnchor](plan-connect-design-concepts.md#using-ms-ds-consistencyguid-as-sourceanchor)
 * Добавлен новый командлет для устранения неполадок Invoke-ADSyncDiagnostics, который помогает диагностировать проблемы, связанные с синхронизацией хэша паролей. Сведения об использовании командлета см.в статье [Устранение неполадок синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](tshoot-connect-password-hash-synchronization.md).
-* Теперь Azure AD Connect поддерживает синхронизацию объектов общедоступной папки с поддержкой электронной почты из локальной службы AD в Azure AD. Эту функцию можно включить с помощью мастера Azure AD Connect в разделе "Дополнительные возможности". Сведения об этой функции см. в записи блога [Office 365 Directory Based Edge Blocking support for on-premises Mail Enabled Public Folders](https://blogs.technet.microsoft.com/exchange/2017/05/19/office-365-directory-based-edge-blocking-support-for-on-premises-mail-enabled-public-folders) (Пограничная блокировка на основе каталогов Office 365 для локальных общедоступных папок с поддержкой почты).
+* Теперь Azure AD Connect поддерживает синхронизацию объектов общедоступной папки с поддержкой электронной почты из локальной службы AD в Azure AD. Эту функцию можно включить с помощью мастера Azure AD Connect в разделе "Дополнительные возможности". Сведения об этой функции см. в записи блога [Office 365 Directory Based Edge Blocking support for on-premises Mail Enabled Public Folders](https://techcommunity.microsoft.com/t5/exchange/office-365-directory-based-edge-blocking-support-for-on-premises/m-p/74218) (Пограничная блокировка на основе каталогов Office 365 для локальных общедоступных папок с поддержкой почты).
 * Для синхронизации из локального каталога AD службе Azure AD Connect требуются учетные записи AD DS. Раньше при экспресс-установке Azure AD Connect можно было предоставить учетные данные учетной записи администратора предприятия, а Azure AD Connect создавал необходимую учетную запись службы AD DS. Но при выборочной установке и при добавлении лесов в существующее развертывание необходимо предоставить учетную запись AD DS. Теперь у вас есть возможность предоставить учетные данные учетной записи администратора предприятия при выборочной установке, а также разрешить Azure AD Connect создать необходимую учетную запись AD DS.
 * Azure AD Connect теперь поддерживает функцию SQL AOA. Перед установкой Azure AD Connect включите функцию SQL AOA. При установке Azure AD Connect определяет, включена ли в указанном экземпляре SQL функция SQL AOA. Если функция SQL AOA включена, то Azure AD Connect определяет, какая в SQL AOA настроена репликация (синхронная или асинхронная). При настройке прослушивателя группы доступности рекомендуется задать свойству RegisterAllProvidersIP значение 0. Это требуется по той причине, что для подключения к SQL служба Azure AD Connect сейчас использует SQL Native Client, а SQL Native Client не поддерживает свойство MultiSubNetFailover.
 * Если при использовании LocalDB как базы данных для сервера Azure AD Connect достигнуто ограничение размера в 10 ГБ, то служба синхронизации больше не сможет запускаться. Раньше в LocalDB требовалось выполнить операцию ShrinkDatabase, чтобы освободить достаточно места в базе данных для запуска службы синхронизации. После этого можно было воспользоваться Synchronization Service Manager для удаления журнала выполнения, чтобы освободить еще больше места в базе данных. Теперь с помощью командлета Start-ADSyncPurgeRunHistory можно очистить данные журнала выполнения из LocalDB и тем самым освободить место в базе данных. Кроме того, этот командлет поддерживает автономный режим (если указать параметр -offline), который можно использовать, когда служба синхронизации не запущена. Примечание. Автономный режим можно использовать только в том случае, если служба синхронизации не запущена и используется база данных LocalDB.
@@ -1055,7 +1066,7 @@ Desktop SSO
 
 Desktop SSO
 
-* Мастеру Azure AD Connect больше не нужен открытый в сети порт 9090 при настройке сквозной проверки подлинности и Desktop SSO. Требуется только порт 443. 
+* Мастеру Azure AD Connect больше не нужен открытый в сети порт 9090 при настройке сквозной проверки подлинности и Desktop SSO. Требуется только порт 443.
 
 ## <a name="114430"></a>1.1.443.0
 Выпущено: Март 2017 г.

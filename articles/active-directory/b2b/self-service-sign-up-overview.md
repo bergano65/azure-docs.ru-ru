@@ -11,18 +11,17 @@ author: msmimart
 manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98456f26fbc7ca3955883eb283b54084bd86d503
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: 34b08e2e530843dd98c87e424812706247388228
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83737764"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85551331"
 ---
 # <a name="self-service-sign-up-preview"></a>Самостоятельная регистрация (предварительная версия)
-|     |
-| --- |
-| Функция самостоятельной регистрации в Azure Active Directory предоставляется в режиме общедоступной предварительной версии. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
-|     |
+
+> [!NOTE]
+> Функция самостоятельной регистрации в Azure Active Directory предоставляется в режиме общедоступной предварительной версии. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 При совместном использовании приложения с внешними пользователями вы не всегда можете знать заранее, кому потребуется к нему доступ. В качестве альтернативы отправке приглашений пользователям напрямую можно разрешить внешним пользователям регистрироваться для использования конкретных приложений, включив самостоятельную регистрацию. Вы можете создать персонализированную процедуру регистрации, настроив поток пользователя для самостоятельной регистрации. Например, вы можете настроить возможность регистрации с помощью Azure AD или поставщиков удостоверений социальных сетей и собирать сведения о пользователях в процессе регистрации.
 

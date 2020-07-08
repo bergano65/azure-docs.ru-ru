@@ -16,12 +16,12 @@ ms.date: 07/12/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c3102480e316c634930c356ae02f769767b7d08
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 327d365cd1b110a6b57b11f92e70d221d3712cfb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "69900042"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85550185"
 ---
 # <a name="azure-ad-connect-sync-functions-reference"></a>Синхронизация Azure AD Connect: справочник по функциям
 В службе Azure AD Connect функции используются для обработки значения атрибута во время синхронизации.  
@@ -52,42 +52,100 @@ ms.locfileid: "69900042"
 
 ## <a name="functions-reference"></a>Справочник по функциям
 
-| Список функций |  |  |  |  |
-| --- | --- | --- | --- | --- |
-| **Сертификат** | | | | |
-| [CertExtensionOids](#certextensionoids) |[CertFormat](#certformat) |[CertFriendlyName](#certfriendlyname) |[CertHashString](#certhashstring) | |
-| [CertIssuer](#certissuer) |[CertIssuerDN](#certissuerdn) |[CertIssuerOid](#certissueroid) |[CertKeyAlgorithm](#certkeyalgorithm) | |
-| [CertKeyAlgorithmParams](#certkeyalgorithmparams) |[CertNameInfo](#certnameinfo) |[CertNotAfter](#certnotafter) |[CertNotBefore](#certnotbefore) | |
-| [CertPublicKeyOid](#certpublickeyoid) |[CertPublicKeyParametersOid](#certpublickeyparametersoid) |[CertSerialNumber](#certserialnumber) |[CertSignatureAlgorithmOid](#certsignaturealgorithmoid) | |
-| [CertSubject](#certsubject) |[CertSubjectNameDN](#certsubjectnamedn) |[CertSubjectNameOid](#certsubjectnameoid) |[CertThumbprint](#certthumbprint) | |
-[CertVersion](#certversion) |[IsCert](#iscert) | | | |
-| **Преобразование** | | | | |
-| [CBool](#cbool) |[CDate](#cdate) |[CGuid](#cguid) |[ConvertFromBase64](#convertfrombase64) | |
-| [ConvertToBase64](#converttobase64) |[ConvertFromUTF8Hex](#convertfromutf8hex) |[ConvertToUTF8Hex](#converttoutf8hex) |[CNum](#cnum) | |
-| [CRef](#cref) |[CStr](#cstr) |[стрингфромгуид](#stringfromguid) |[стрингфромсид](#stringfromsid) | |
-| **Дата и время** | | | | |
-| [DateAdd](#dateadd) |[DateFromNum](#datefromnum) |[FormatDateTime](#formatdatetime) |[Сейчас](#now) | |
-| [NumFromDate](#numfromdate) | | | | |
-| **Каталоги** | | | | |
-| [DNComponent](#dncomponent) |[DNComponentRev](#dncomponentrev) |[EscapeDNComponent](#escapedncomponent) | | |
-| **Оценка** | | | | |
-| [IsBitSet](#isbitset) |[Функция ISDATE](#isdate) |[IsEmpty](#isempty) |[IsGuid](#isguid) | |
-| [IsNull](#isnull) |[IsNullOrEmpty](#isnullorempty) |[IsNumeric](#isnumeric) |[IsPresent](#ispresent) | |
-| [Substring](#isstring) | | | | |
-| **Math** | | | | |
-| [BitAnd](#bitand) |[BitOr](#bitor) |[RandomNum](#randomnum) | | |
-| **Функции с несколькими значениями:** | | | | |
-| [Содержащих](#contains) |[Count](#count) |[Элемент](#item) |[ItemOrNull](#itemornull) | |
-| [Присоединение](#join) |[RemoveDuplicates](#removeduplicates) |[Биваем](#split) | | |
-| **Program Flow** | | | | |
-| [Error](#error) |[IIF](#iif) |[Выбрать](#select) |[Ключом](#switch) | |
-| [Которому](#where) |[Учет](#with) | | | |
-| **Текст** | | | | |
-| [УСТРОЙСТВА](#guid) |[InStr](#instr) |[InStrRev](#instrrev) |[лкасе](#lcase) | |
-| [Слева](#left) |[Len](#len) |[LTrim](#ltrim) |[Mid](#mid) | |
-| [PadLeft](#padleft) |[PadRight](#padright) |[PCase](#pcase) |[Восстановить](#replace) | |
-| [ReplaceChars](#replacechars) |[Правильно](#right) |[RTrim](#rtrim) |[Возмож](#trim) | |
-| [укасе](#ucase) |[Word](#word) | | | |
+* **Сертификат**
+  * [CertExtensionOids](#certextensionoids)
+  * [CertFormat](#certformat)
+  * [CertFriendlyName](#certfriendlyname)
+  * [CertHashString](#certhashstring)
+  * [CertIssuer](#certissuer)
+  * [CertIssuerDN](#certissuerdn)
+  * [CertIssuerOid](#certissueroid)
+  * [CertKeyAlgorithm](#certkeyalgorithm)
+  * [CertKeyAlgorithmParams](#certkeyalgorithmparams)
+  * [CertNameInfo](#certnameinfo)
+  * [CertNotAfter](#certnotafter)
+  * [CertNotBefore](#certnotbefore)
+  * [CertPublicKeyOid](#certpublickeyoid)
+  * [CertPublicKeyParametersOid](#certpublickeyparametersoid)
+  * [CertSerialNumber](#certserialnumber)
+  * [CertSignatureAlgorithmOid](#certsignaturealgorithmoid)
+  * [CertSubject](#certsubject)
+  * [CertSubjectNameDN](#certsubjectnamedn)
+  * [CertSubjectNameOid](#certsubjectnameoid)
+  * [CertThumbprint](#certthumbprint)
+  * [CertVersion](#certversion)
+  * [IsCert](#iscert)
+* **Преобразование**
+  * [CBool](#cbool)
+  * [CDate](#cdate)
+  * [CGuid](#cguid)
+  * [ConvertFromBase64](#convertfrombase64)
+  * [ConvertToBase64](#converttobase64)
+  * [ConvertFromUTF8Hex](#convertfromutf8hex)
+  * [ConvertToUTF8Hex](#converttoutf8hex)
+  * [CNum](#cnum)
+  * [CRef](#cref)
+  * [CStr](#cstr)
+  * [стрингфромгуид](#stringfromguid)
+  * [стрингфромсид](#stringfromsid)
+* **Дата и время**
+  * [DateAdd](#dateadd)
+  * [DateFromNum](#datefromnum)
+  * [FormatDateTime](#formatdatetime)
+  * [Сейчас](#now)
+  * [NumFromDate](#numfromdate)
+* **Каталог**
+  * [DNComponent](#dncomponent)
+  * [DNComponentRev](#dncomponentrev)
+  * [EscapeDNComponent](#escapedncomponent)
+* **Аттестаци**
+  * [IsBitSet](#isbitset)
+  * [Функция ISDATE](#isdate)
+  * [IsEmpty](#isempty)
+  * [IsGuid](#isguid)
+  * [IsNull](#isnull)
+  * [IsNullOrEmpty](#isnullorempty)
+  * [IsNumeric](#isnumeric)
+  * [IsPresent](#ispresent)
+  * [Substring](#isstring)
+* **Math**
+  * [BitAnd](#bitand)
+  * [BitOr](#bitor)
+  * [RandomNum](#randomnum)
+* **Несколько * значений**
+  * [Содержит](#contains)
+  * [Количество](#count)
+  * [Элемент](#item)
+  * [ItemOrNull](#itemornull)
+  * [Join](#join)
+  * [RemoveDuplicates](#removeduplicates)
+  * [Биваем](#split)
+* **Program Flow**
+  * [Ошибка](#error)
+  * [IIF](#iif)
+  * [Select](#select)
+  * [Параметр](#switch)
+  * [Которому](#where)
+  * [Учет](#with)
+* **Текстовые**
+  * [GUID](#guid)
+  * [InStr](#instr)
+  * [InStrRev](#instrrev)
+  * [лкасе](#lcase)
+  * [Слева](#left)
+  * [Len](#len)
+  * [LTrim](#ltrim)
+  * [Mid](#mid)
+  * [PadLeft](#padleft)
+  * [PadRight](#padright)
+  * [PCase](#pcase)
+  * [Восстановить](#replace)
+  * [ReplaceChars](#replacechars)
+  * [Правильно](#right)
+  * [RTrim](#rtrim)
+  * [Возмож](#trim)
+  * [укасе](#ucase)
+  * [Word](#word)
 
 ---
 ### <a name="bitand"></a>BitAnd
@@ -810,7 +868,7 @@ Azure Active Directory использует этот формат в качес�
 `Switch(IsPresent([directManager]),[directManager], IsPresent([skiplevelManager]),[skiplevelManager], IsPresent([director]),[director])`
 
 ---
-### <a name="item"></a>Элемент
+### <a name="item"></a>Item
 **Описание:**  
  Функция Item возвращает один элемент из строки или атрибута с несколькими значениями.
 
@@ -877,7 +935,7 @@ Azure Active Directory использует этот формат в качес�
  Возвращает значение Test.
 
 ---
-### <a name="left"></a>Слева
+### <a name="left"></a>Левый
 **Описание:**  
  Функция Left возвращает указанное количество символов из левой части строки.
 
@@ -1072,7 +1130,7 @@ Azure Active Directory использует этот формат в качес�
  Возвращает очищенный атрибут proxyAddress, в котором удалены все повторяющиеся значения.
 
 ---
-### <a name="replace"></a>Replace
+### <a name="replace"></a>Замените
 **Описание:**  
  Функция Replace заменяет все экземпляры строки на другую строку.
 
@@ -1128,7 +1186,7 @@ Azure Active Directory использует этот формат в качес�
 Возвращает значение ONeil. Апостроф определен как символ для удаления.
 
 ---
-### <a name="right"></a>Right
+### <a name="right"></a>Правый
 **Описание:**  
  Функция Right возвращает указанное количество символов из правой части (в конце) строки.
 
@@ -1309,7 +1367,7 @@ Azure Active Directory использует этот формат в качес�
 
 
 ---
-### <a name="word"></a>Word
+### <a name="word"></a>Слово
 **Описание:**  
  Функция Word возвращает слово, содержащееся внутри строки, в зависимости от параметров, описывающих разделители и количество слов для возврата.
 
@@ -1338,4 +1396,4 @@ Azure Active Directory использует этот формат в качес�
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 * [Знакомство с выражениями декларативной подготовки](concept-azure-ad-connect-sync-declarative-provisioning-expressions.md)
 * [Синхронизация Azure AD Connect: Настройка параметров синхронизации](how-to-connect-sync-whatis.md)
-* [Интеграция локальных удостоверений с Azure Active Directory.](whatis-hybrid-identity.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)

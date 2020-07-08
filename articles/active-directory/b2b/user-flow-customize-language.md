@@ -6,23 +6,22 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.subservice: B2B
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/06/2020
 ms.author: mimart
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ed56acc9276177951919a3bc63c8a1dc3876e1c4
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: abd6423ebbdba11cd1b0e0c2d00cfd36aa745e72
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83594703"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85551145"
 ---
 # <a name="language-customization-in-azure-active-directory-preview"></a>Настройка языка в Azure Active Directory (предварительная версия)
-|     |
-| --- |
-| Функция самостоятельной регистрации в Azure Active Directory предоставляется в режиме общедоступной предварительной версии. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
-|     |
+
+> [!NOTE]
+> Функция самостоятельной регистрации в Azure Active Directory предоставляется в режиме общедоступной предварительной версии. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Настройка языка в Azure Active Directory (Azure AD) позволяет добавить в поток пользователя различные языки в соответствии с потребностями ваших пользователей. Корпорация Майкрософт предоставляет переводы для [36 языков](#supported-languages). Даже если интерфейс предоставляется только для одного языка, вы можете настроить имена атрибутов на странице "Коллекция атрибутов".
 

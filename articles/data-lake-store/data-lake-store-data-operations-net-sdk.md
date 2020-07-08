@@ -3,21 +3,21 @@ title: Пакет SDK для .NET — операции файловой сист
 description: Используйте пакет SDK для Azure Data Lake Storage 1-го поколения .NET для операций файловой системы на Data Lake Storage 1-го поколения таких как создание папок и т. д.
 author: twooley
 ms.service: data-lake-store
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/03/2020
 ms.author: twooley
-ms.openlocfilehash: 9e52a3cb8d31b5fccc9a0b5a3a76d4e9b43de123
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
+ms.openlocfilehash: eb950f6029511cf834791c161e6a730bcadcabcc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82690966"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85515660"
 ---
 # <a name="filesystem-operations-on-data-lake-storage-gen1-using-the-net-sdk"></a>Операции файловой системы на Data Lake Storage 1-го поколения с помощью пакета SDK для .NET
 
 > [!div class="op_single_selector"]
 > * [Пакет SDK для .NET](data-lake-store-data-operations-net-sdk.md)
-> * [Пакет SDK для Java](data-lake-store-get-started-java-sdk.md)
+> * [пакет SDK для Java](data-lake-store-get-started-java-sdk.md)
 > * [REST API](data-lake-store-data-operations-rest-api.md)
 > * [Python](data-lake-store-data-operations-python.md)
 >
@@ -198,11 +198,11 @@ client.DeleteRecursive("/Test");
 * [Базовый пример на GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-get-started/tree/master/AdlsSDKGettingStarted)
 * [Расширенный пример на GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-samples)
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Операции управления учетными записями в Data Lake Storage 1-го поколения c использованием пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
 * [Библиотеки Azure Data Lake Store для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)

@@ -4,26 +4,25 @@ description: Сведения о прямой федерации с постав
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
-ms.topic: conceptual
-ms.date: 05/11/2020
+ms.topic: how-to
+ms.date: 06/24/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 299b0a677e7ca7bea9481d94ecf98c993af0a6ed
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: 78ad8761d3a4ff3e3cdab9dee5f50b469ff840fd
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83591222"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85551535"
 ---
 # <a name="direct-federation-with-ad-fs-and-third-party-providers-for-guest-users-preview"></a>Прямая федерация с AD FS и сторонними поставщиками для гостевых пользователей (предварительная версия)
-|     |
-| --- |
-| Прямая федерация — это общедоступная предварительная версия функции Azure Active Directory. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
-|     |
+
+> [!NOTE]
+>  Прямая федерация — это общедоступная предварительная версия функции Azure Active Directory. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 В этой статье описывается, как настроить прямую федерацию с другой организацией для совместной работы B2B. Вы можете настроить прямую федерацию с любой организацией, поставщик удостоверений которой поддерживает протокол SAML 2.0 или WS-Fed.
 После настройки прямой федерации с IdP партнера, новые гостевые пользователи из соответствующего домена смогут использовать собственную учетную запись организации, управляемую таким IdP, чтобы войти в клиент Azure AD и начать сотрудничество с вами. При этом гостевому пользователю не нужно создавать отдельную учетную запись Azure AD.
@@ -221,3 +220,7 @@ B2B в Azure AD можно настроить для федерации с по
    ```powershell
    Remove-AzureADExternalDomainFederation -ExternalDomainName  $domainName
    ```
+
+## <a name="next-steps"></a>Дальнейшие шаги
+
+Узнайте больше о процессе [активации приглашения](redemption-experience.md) , когда внешние пользователи входят с различными поставщиками удостоверений.

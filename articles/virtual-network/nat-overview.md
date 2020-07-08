@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/14/2020
 ms.author: allensu
-ms.openlocfilehash: 94ef9b9754527bbb36ef1028f80e957da8c631dd
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
-ms.translationtype: HT
+ms.openlocfilehash: 80e2ba8df9c81d2a34f63b2f1bc943ee5d731bae
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84688404"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85549587"
 ---
 # <a name="what-is-virtual-network-nat"></a>Что такое NAT виртуальной сети?
 
@@ -144,7 +144,7 @@ NAT виртуальной сети и ресурс шлюза NAT поддер�
 
 Поддержка NAT осуществляется с помощью стандартных каналов.
 
-## <a name="feedback"></a>Отзывы
+## <a name="suggestions"></a>Предложения
 
 Нам важно знать, как можно улучшить эту услугу. Кроме того, вы можете вносить предложения и идеи для NAT в разделе [UserVoice](https://aka.ms/natuservoice).
 
