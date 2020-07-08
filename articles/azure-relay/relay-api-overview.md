@@ -1,25 +1,14 @@
 ---
 title: Обзор API ретранслятора Azure | Документация Майкрософт
-description: В этой статье представлен обзор доступных Azure Relay интерфейсов API (.NET Standard, .NET Framework, Node. js и т. д.).
-services: service-bus-relay
-documentationcenter: na
-author: spelluru
-manager: timlt
-editor: ''
-ms.assetid: fdaa1d2b-bd80-4e75-abb9-0c3d0773af2d
-ms.service: service-bus-relay
-ms.devlang: na
+description: В этой статье представлен обзор доступных Azure Relay интерфейсов API (.NET Standard, .NET Framework, Node.js и т. д.).
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/21/2020
-ms.author: spelluru
-ms.openlocfilehash: ad7226b5c5badfddf9f436a1229a48f729485821
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.date: 06/23/2020
+ms.openlocfilehash: 15e13ccac9b05e6e1b0730b38b372dec20c69dda
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210597"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85316961"
 ---
 # <a name="available-relay-apis"></a>Доступные интерфейсы API ретранслятора
 
@@ -49,13 +38,13 @@ ms.locfileid: "83210597"
 
 Модули гибридных подключений в приведенной выше таблице заменяют или изменяют существующие модули Node.js с помощью альтернативных реализаций, которые ожидают передачи данных из службы ретрансляции Azure, а не локального сетевого стека.
 
-`hyco-https`Модуль изменяет и частично переопределяет основные модули Node. js `http` и `https` предоставляет реализацию прослушивателя HTTPS, совместимую с множеством существующих модулей Node. js и приложений, которые используют эти основные модули.
+`hyco-https`Модуль изменяет и частично переопределяет основные Node.js модули `http` и `https` предоставляет реализацию прослушивателя HTTPS, совместимую с множеством существующих модулей Node.js и приложений, которые используют эти основные модули.
 
 Модули `hyco-ws` и `hyco-websocket` изменяют популярные модули `ws` и `websocket` для Node.js, предоставляя альтернативные реализации прослушивателя, позволяющие модулям и приложениям использовать любой из этих модулей в зоне действия ретранслятора гибридных подключений.
 
 Сведения об этих модулях можно найти в репозитории GitHub [azure-relay-node](https://github.com/Azure/azure-relay-node).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о ретрансляторе Azure доступны по следующим ссылкам:
 * [Что такое ретранслятор Azure?](relay-what-is-it.md)

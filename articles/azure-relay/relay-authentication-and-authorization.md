@@ -1,25 +1,14 @@
 ---
 title: Проверка подлинности и авторизация в ретрансляторе Azure | Документация Майкрософт
 description: В этой статье представлен обзор проверки подлинности подписанного URL-адресом (SAS) в службе Azure Relay.
-services: service-bus-relay
-documentationcenter: na
-author: spelluru
-manager: timlt
-editor: ''
-ms.assetid: ''
-ms.service: service-bus-relay
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/21/2020
-ms.author: spelluru
-ms.openlocfilehash: aac5c973a99b13d5918a0162feb7f1ede443463b
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.date: 06/23/2020
+ms.openlocfilehash: 63e075bc9bf75005a92866f9fa0f90ddaba2f016
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210571"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85316940"
 ---
 # <a name="azure-relay-authentication-and-authorization"></a>Проверка подлинности и авторизация в ретрансляторе Azure
 
@@ -46,7 +35,7 @@ ms.locfileid: "83210571"
 
 Поддержка проверки подлинности SAS для ретранслятора Azure включена в пакет Azure SDK для .NET 2.0 и более поздних версий. SAS включает в себя поддержку правила [SharedAccessAuthorizationRule](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule). Все интерфейсы API, которые принимают строку подключения в качестве параметра, поддерживают строки подключения SAS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о SAS см. в статье [Аутентификация служебной шины с помощью подписанных URL-адресов](../service-bus-messaging/service-bus-sas.md).
 - Подробные сведения о функции гибридных подключений см. в руководстве [Протокол гибридных подключений ретранслятора Azure](relay-hybrid-connections-protocol.md).
