@@ -6,22 +6,22 @@ manager: jillfra
 ms.prod: visual-studio-windows
 ms.technology: vs-azure
 ms.workload: azure-vs
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
-ms.openlocfilehash: 9a9f8aaa9e3f90e78668d2294ea9959b480e3384
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ee79333e1092cfcf2cd35e408f86dcfc9e1327cc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80886081"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85479017"
 ---
 # <a name="get-started-with-azure-active-directory-webapi-projects"></a>Начало работы с Azure Active Directory (проекты WebApi)
 
 > [!div class="op_single_selector"]
 > - [Начало работы](vs-active-directory-webapi-getting-started.md)
-> - [Что случилось](vs-active-directory-webapi-what-happened.md)
+> - [Что произошло?](vs-active-directory-webapi-what-happened.md)
 
 В этой статье приведены дополнительные рекомендации, которые потребуются вам, когда вы добавите Active Directory в проект ASP.NET WebAPI, последовательно выбрав **Проект > Подключенные службы** в Visual Studio. Если вы еще не добавили службу в проект, это можно сделать в любое время.
 
@@ -33,5 +33,5 @@ ms.locfileid: "80886081"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сценарии проверки подлинности для Azure Active Directory](authentication-scenarios.md)
+- [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md)
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v2-aspnet-webapp.md)

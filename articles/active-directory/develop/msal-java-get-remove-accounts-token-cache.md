@@ -7,18 +7,18 @@ author: sangonzal
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.topic: conceptual
+ms.topic: how-to
 ms.workload: identity
 ms.date: 11/07/2019
 ms.author: sagonzal
 ms.reviewer: navyasri.canumalla
 ms.custom: aaddev
-ms.openlocfilehash: 2b138678b186cc41b76254658ad604c2da2d76c1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 150708e7d54e456e1a4e35cfe381e5de5d0f1e8c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76696203"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85479357"
 ---
 # <a name="get-and-remove-accounts-from-the-token-cache-using-msal-for-java"></a>Получение и удаление учетных записей из кэша маркеров с помощью MSAL для Java
 
@@ -26,7 +26,7 @@ MSAL для Java предоставляет кэш маркеров в памя�
 
 ## <a name="see-which-accounts-are-in-the-cache"></a>Узнайте, какие учетные записи находятся в кэше
 
-Вы можете проверить, какие учетные записи находятся в кэше `PublicClientApplication.getAccounts()` , вызвав, как показано в следующем примере:
+Вы можете проверить, какие учетные записи находятся в кэше, вызвав, `PublicClientApplication.getAccounts()` как показано в следующем примере:
 
 ```java
 PublicClientApplication pca = new PublicClientApplication.Builder(
@@ -39,7 +39,7 @@ Set<IAccount> accounts = pca.getAccounts().join();
 
 ## <a name="remove-accounts-from-the-cache"></a>Удаление учетных записей из кэша
 
-Чтобы удалить учетную запись из кэша, найдите учетную запись, которую необходимо удалить, а затем `PublicClientApplicatoin.removeAccount()` вызовите ее, как показано в следующем примере:
+Чтобы удалить учетную запись из кэша, найдите учетную запись, которую необходимо удалить, а затем вызовите ее, `PublicClientApplicatoin.removeAccount()` как показано в следующем примере:
 
 ```java
 Set<IAccount> accounts = pca.getAccounts().join();
@@ -51,6 +51,6 @@ IAccount accountToBeRemoved = accounts.stream().filter(
 pca.removeAccount(accountToBeRemoved).join();
 ```
 
-## <a name="learn-more"></a>Дополнительные сведения
+## <a name="learn-more"></a>Подробнее
 
 Если вы используете MSAL для Java, ознакомьтесь с [сериализацией кэша пользовательской лексемы в MSAL для Java](msal-java-token-cache-serialization.md).

@@ -6,17 +6,17 @@ services: active-directory
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.topic: conceptual
+ms.topic: how-to
 ms.workload: identity
 ms.date: 02/13/2020
 ms.author: davidmu
 ms.custom: aaddev
-ms.openlocfilehash: 67dbf696903e7a930d75762deb00ad58ed1a4f69
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0cdcb5287434c72bf54337611d67de8d6f65d8d9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80886472"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85479519"
 ---
 # <a name="microsoft-graph-api"></a>API Microsoft Graph
 
@@ -55,6 +55,6 @@ Microsoft Graph предоставляет интерфейсы API и клие�
 
 ## <a name="tools"></a>Инструменты
 
-Microsoft Graph Explorer — это веб-инструмент, который можно использовать для создания и тестирования запросов с помощью Microsoft Graph API. Доступ к Microsoft Graph Explorer можно получить по `https://developer.microsoft.com/graph/graph-explorer`адресу:.
+Microsoft Graph Explorer — это веб-инструмент, который можно использовать для создания и тестирования запросов с помощью Microsoft Graph API. Доступ к Microsoft Graph Explorer можно получить по адресу: `https://developer.microsoft.com/graph/graph-explorer` .
 
-POST представляет собой средство, которое можно также использовать для построения и тестирования запросов с помощью API-интерфейсов Microsoft Graph. Вы можете загрузить posts по адресу: `https://www.getpostman.com/`. Для взаимодействия с Microsoft Graph в POST используется коллекция Microsoft Graph в POST. Дополнительные сведения см. [в статье Использование POST с API Microsoft Graph](/graph/use-postman?context=graph%2Fapi%2Fbeta&view=graph-rest-beta).
+POST представляет собой средство, которое можно также использовать для построения и тестирования запросов с помощью API-интерфейсов Microsoft Graph. Вы можете загрузить posts по адресу: `https://www.getpostman.com/` . Для взаимодействия с Microsoft Graph в POST используется коллекция Microsoft Graph в POST. Дополнительные сведения см. [в статье Использование POST с API Microsoft Graph](/graph/use-postman?context=graph%2Fapi%2Fbeta&view=graph-rest-beta).

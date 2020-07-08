@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 05/02/2019
 ms.author: robreed
-ms.openlocfilehash: a8b1c53a5c060f2124a36b69365bdd9b62896b56
-ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
-ms.translationtype: HT
+ms.openlocfilehash: b85aab2491f4186cf4d6ee73144bc235a40cdeac
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84220963"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85478490"
 ---
 # <a name="custom-script-extension-for-windows"></a>Расширение Custom Script в ОС Windows
 
@@ -66,6 +66,7 @@ ms.locfileid: "84220963"
 * Расширение настраиваемых скриптов не имеет собственной поддержки прокси-серверов. Но можно использовать средство передачи файлов, которое поддерживает прокси-серверы в скрипте, например *Curl*.
 * Следует учитывать настраиваемые расположения каталогов, которые могут использоваться скриптами или командами, и иметь в распоряжении логику для обработки таких ситуаций.
 * Расширение пользовательских скриптов будет выполняться под учетной записью LocalSystem
+* Если вы планируете использовать свойства *storageAccountName* и *storageAccountKey* , эти свойства должны быть выровнены в *protectedSettings*.
 
 ## <a name="extension-schema"></a>Схема расширения
 
@@ -123,13 +124,13 @@ ms.locfileid: "84220963"
 | Имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | версия_API | 2015-06-15 | Дата |
-| publisher | Microsoft.Compute; | строка |
-| type | CustomScriptExtension | строка |
+| publisher | Microsoft.Compute; | string |
+| type | CustomScriptExtension | string |
 | typeHandlerVersion | 1,10 | INT |
 | fileUris (пример) | https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-windows/scripts/configure-music-app.ps1 | массиве |
 | метка времени (например) | 123456789 | 32-разрядное целое число |
-| commandToExecute (пример) | powershell -ExecutionPolicy Unrestricted -File configure-music-app.ps1 | строка |
-| storageAccountName (пример) | examplestorageacct | строка |
+| commandToExecute (пример) | powershell -ExecutionPolicy Unrestricted -File configure-music-app.ps1 | string |
+| storageAccountName (пример) | examplestorageacct | string |
 | storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | строка |
 | managedIdentity (пример) | {} или {"clientId": "31b403aa-c364-4240-A7FF-d85fb6cd7232"} или {"objectId": "12dd289c-0583-46e5-b9b4-115d5c19ef4b" } | Объект JSON |
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/30/2020
 ms.author: Zhchia
-ms.openlocfilehash: cd2217046a725f0bb0a05f1eb0afc5434bf3b6fa
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 838542bf4c3d566c76987754c8f336e00250d04a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83662722"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85482417"
 ---
 # <a name="tutorial-configure-mediusflow-for-automatic-user-provisioning"></a>Руководство по Настройка MediusFlow для автоматической подготовки пользователей
 
@@ -52,15 +52,15 @@ ms.locfileid: "83662722"
 
 ## <a name="step-2-configure-mediusflow-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка MediusFlow для поддержки подготовки с помощью Azure AD
 
-### <a name="activate-the-office-365-app-within-mediusflow"></a>Активация приложения Office 365 в MediusFlow
+### <a name="activate-the-microsoft-365-app-within-mediusflow"></a>Активация приложения Microsoft 365 в MediusFlow
 Для начала включите доступ в MediusFlow для имени входа Azure AD и функции настройки через Azure AD, сделав следующее.
 
 #### <a name="user-login"></a>Вход пользователя
-Чтобы включить поток входа в Office 365 или Azure AD, см. [эту статью] (https://success.mediusflow.com/documentation/administration_guide/user_login_and_transfer/office365userintegration/#user-login-setup).
+Чтобы включить поток входа в Microsoft 365 или Azure AD, обратитесь к [This] ( https://success.mediusflow.com/documentation/administration_guide/user_login_and_transfer/office365userintegration/#user-login-setup) статья.
 
 #### <a name="user-transfer-configuration"></a>Конфигурация передачи пользователей
-Чтобы включить портал конфигурации для подготовки пользователей из Azure AD, см. [эту статью](
-https://success.mediusflow.com/documentation/administration_guide/user_login_and_transfer/office365userintegration/#user-sync-setup).
+Сведения о включении портала конфигурации пользователей для подготовки из Azure AD см. в [этой](
+https://success.mediusflow.com/documentation/administration_guide/user_login_and_transfer/office365userintegration/#user-sync-setup) статье.
 
 #### <a name="configure-user-provisioning"></a>Настроить подготовку учетных записей пользователей
 
@@ -94,7 +94,7 @@ https://success.mediusflow.com/documentation/administration_guide/user_login_and
 
     ![Authenticate](./media/mediusflow-provisioning-tutorial/7-confirm-secret.png)
 
-8. Чтобы импортируемые в MediusFlow пользователи получали заранее определенный набор ролей, компаний и других общих параметров конфигурации, вам нужно их настроить. Для начала добавьте конфигурацию, щелкнув **Добавить конфигурацию**.
+8. Чтобы получить пользователей, импортированных с помощью предварительно определенного набора ролей, компаний и других общих конфигураций в MediusFlow, необходимо сначала настроить его. Для начала добавьте конфигурацию, щелкнув **Добавить конфигурацию**.
 
     ![Настройка пользователей](./media/mediusflow-provisioning-tutorial/8-configure-user-configuration-1.png)
 

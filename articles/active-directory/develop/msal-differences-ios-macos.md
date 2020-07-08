@@ -7,18 +7,18 @@ author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.topic: conceptual
+ms.topic: how-to
 ms.workload: identity
 ms.date: 08/28/2019
 ms.author: marsma
 ms.reviewer: oldalton
 ms.custom: aaddev
-ms.openlocfilehash: 62b79ee7398286b8e6c8ed8612bd001595e1f6ea
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 41389bc5ed8580cd80dbc40e771c7f15241f5ae7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77084981"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85479408"
 ---
 # <a name="microsoft-authentication-library-for-ios-and-macos-differences"></a>Отличия библиотеки проверки подлинности Майкрософт для iOS и macOS
 
@@ -33,7 +33,7 @@ MSAL для macOS — это подмножество функций, досту
 
 MSAL для macOS не поддерживает:
 
-- различные типы браузеров, `ASWebAuthenticationSession`такие `SFAuthenticationSession`как `SFSafariViewController`,,.
+- различные типы браузеров, такие как `ASWebAuthenticationSession` , `SFAuthenticationSession` , `SFSafariViewController` .
 - Проверка подлинности через посредника через Microsoft Authenticator приложение не поддерживается для macOS.
 
 Совместное использование цепочки ключей между приложениями одного издателя более ограничено в macOS 10,14 и более ранних версиях. Используйте [списки управления доступом](https://developer.apple.com/documentation/security/keychain_services/access_control_lists?language=objc) , чтобы указать пути к приложениям, которые должны совместно использовать цепочку ключей. Пользователь может видеть дополнительные запросы цепочки ключей.

@@ -5,16 +5,16 @@ services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
 ms.topic: how-to
-ms.subservice: ''
+ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: e8d7301799bfb4af9a0f5a6f242be929e8253d7c
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: bf62d57aab07f5b1f2839b9e6e45c42e6b1b2c51
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83744221"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85478422"
 ---
 # <a name="using-file-metadata-in-queries"></a>Использование метаданных файлов в запросах
 
@@ -22,7 +22,7 @@ ms.locfileid: "83744221"
 
 Иногда бывает нужно узнать, какой исходный файл или папка соотносятся с определенной строкой результирующего набора.
 
-Функции `filepath` и `filename` можно применить для получения имен файлов и (или) путей в результирующем наборе. Также вы можете применить их для фильтрации данных по именам файлов и (или) путям к папкам. Эти функции описаны в разделах, посвященных [функции filename](develop-storage-files-overview.md#filename-function) и [функции filepath](develop-storage-files-overview.md#filepath-function). Ниже вы найдете краткие описания и примеры по ним.
+Функции `filepath` и `filename` можно применить для получения имен файлов и (или) путей в результирующем наборе. Также вы можете применить их для фильтрации данных по именам файлов и (или) путям к папкам. Эти функции описаны в разделах, посвященных [функции filename](query-data-storage.md#filename-function) и [функции filepath](query-data-storage.md#filepath-function). Ниже вы найдете краткие описания и примеры по ним.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
