@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 09/16/2019
 ms.author: genli
-ms.openlocfilehash: 4e827c5f6eedc819bc3635cb09a28f65df51312c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 09056846ee3e531724f597ee35f92d812ce2c335
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75862583"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86037840"
 ---
 # <a name="troubleshooting-an-azure-site-to-site-vpn-connection-cannot-connect-and-stops-working"></a>Устранение проблемы подключения VPN типа "сеть — сеть" Azure
 
@@ -60,11 +60,15 @@ ms.locfileid: "75862583"
 
 Для модели развертывания с помощью Azure Resource Manager выполните следующую команду:
 
-    Get-AzVirtualNetworkGatewayConnectionSharedKey -Name <Connection name> -ResourceGroupName <Resource group name>
+```azurepowershell
+Get-AzVirtualNetworkGatewayConnectionSharedKey -Name <Connection name> -ResourceGroupName <Resource group name>
+```
 
 Выполните следующую команду для классической модели развертывания:
 
-    Get-AzureVNetGatewayKey -VNetName -LocalNetworkSiteName
+```azurepowershell
+Get-AzureVNetGatewayKey -VNetName -LocalNetworkSiteName
+```
 
 ### <a name="step-3-verify-the-vpn-peer-ips"></a>Шаг 3. Проверка IP-адресов VPN-узла
 
@@ -104,7 +108,7 @@ ms.locfileid: "75862583"
 
 Функция полной безопасности пересылки может вызвать проблемы отключения. Если для VPN-устройства включена функция полной безопасности пересылки, отключите эту функцию. Затем обновите политику IPsec VPN-шлюза.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 -   [Настройка подключения типа "сеть — сеть" к виртуальной сети](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
 -   [Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"](vpn-gateway-ipsecikepolicy-rm-powershell.md)
