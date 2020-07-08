@@ -7,16 +7,19 @@ ms.reviewer: gamal
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/01/2019
-ms.openlocfilehash: f5a7f372f286a7b26a4a9916ed9df913b151e967
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.openlocfilehash: f9b5380fa219d768651703eeb9fe445fcd215332
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82628475"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85921768"
 ---
 # <a name="prepare-data-with-wrangling-data-flow"></a>Подготовка данных с помощью потока данных структурирование
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+
+> [!NOTE]
+> Поток данных структурирование в настоящее время доступных в общедоступной предварительной версии
 
 ## <a name="create-a-wrangling-data-flow"></a>Создание потока данных структурирование
 
@@ -26,7 +29,7 @@ ms.locfileid: "82628475"
 
 Другой метод находится на панели действия на холсте конвейера. Откройте элемент " **Перемещение и преобразование** " и перетащите действие **потока данных** на холст.
 
-В обоих методах в боковой области щелкните **создать новый поток данных** и выберите **структурирование Data Flow (поток данных**). Нажмите кнопку "ОК".
+В обоих методах в боковой области щелкните **создать новый поток данных** и выберите **структурирование Data Flow (поток данных**). Щелкните ОК.
 
 ![Структурирование](media/wrangling-data-flow/tutorial1.png)
 
@@ -57,6 +60,6 @@ ms.locfileid: "82628475"
 
 ![Структурирование](media/wrangling-data-flow/tutorial2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как [создать поток данных сопоставления](tutorial-data-flow.md).

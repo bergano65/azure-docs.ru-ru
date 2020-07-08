@@ -4,20 +4,16 @@ ms.author: aahi
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/19/2020
-ms.openlocfilehash: 13fb00a7d82639c8f51744b6c2e5374d08d9bb03
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: cb50e5a009b63bebd1656513d2b58c4ec61a8060
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83869342"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85805702"
 ---
 ## <a name="create-an-azure-resource"></a>Создание ресурса Azure
 
 Чтобы начать работу с API Проверки орфографии Bing, создайте один из следующих ресурсов Azure.
-
-[Пробный ресурс](https://azure.microsoft.com/try/cognitive-services/?api=spellcheck-api-v7)
-   * Подписка Azure не требуется.
-   * срок действия —7 дней, бесплатно. Когда вы зарегистрируетесь, ключ пробной версии и конечная точка будут доступны на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/).
 
 [Ресурс проверки орфографии Bing](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingSpellCheck-v7)
    * доступен на портале Azure до удаления.

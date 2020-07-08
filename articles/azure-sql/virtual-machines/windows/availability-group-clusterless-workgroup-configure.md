@@ -1,6 +1,6 @@
 ---
 title: Настройка независимой от домена группы доступности рабочей группы
-description: Узнайте, как настроить независимую от домена Active Directory группу доступности Always On на виртуальной машине SQL Server в Azure.
+description: Узнайте, как настроить Active Directory независимую от домена группу доступности Always On на SQL Server виртуальной машине в Azure.
 services: virtual-machines-windows
 documentationcenter: na
 author: MashaMSFT
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 01/29/2020
 ms.author: mathoma
-ms.openlocfilehash: 36c4a141acf38d83ff925bafaa75c294847a7d74
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
-ms.translationtype: HT
+ms.openlocfilehash: 93819332def05022272eabc130e0f2240938f244
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84037235"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85955511"
 ---
 # <a name="configure-a-workgroup-availability-group"></a>Настройка группы доступности рабочей группы 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -46,13 +46,13 @@ ms.locfileid: "84037235"
 | **Имя рабочей группы** | AGWorkgroup | 
 | &nbsp; | &nbsp; |
 
-## <a name="set-dns-suffix"></a>Установка DNS-суффикса 
+## <a name="set-a-dns-suffix"></a>Задание DNS-суффикса 
 
 На этом этапе настраивается DNS-суффикс для обоих серверов. Например, `ag.wgcluster.example.com`. Это позволяет использовать имя объекта, к которому нужно подключиться, в качестве полного адреса в сети, например `AGNode1.ag.wgcluster.example.com`. 
 
 Чтобы настроить DNS-суффикс, выполните следующие действия:
 
-1. Подключитесь к первому узлу через RDP и откройте диспетчер сервера. 
+1. На первом узле и откройте диспетчер сервера RDP. 
 1. Выберите **Локальный сервер**, затем в разделе **Имя компьютера** выберите имя виртуальной машины. 
 1. Выберите **Изменить...** в разделе **Чтобы переименовать этот компьютер...** . 
 1. Дайте рабочей группе понятное название, например `AGWORKGROUP`: 
@@ -71,13 +71,13 @@ ms.locfileid: "84037235"
 1. Перезагрузите сервер, когда будет предложено. 
 1. Повторите эти действия на всех других узлах, которые будут использоваться в группы доступности. 
 
-## <a name="edit-host-file"></a>Редактирование файла hosts
+## <a name="edit-a-host-file"></a>Изменение файла узла
 
 Поскольку Active Directory не используется, проверка подлинности подключений Windows невозможна. В связи с этим нужно задать доверенные узлы, отредактировав файл hosts в текстовом редакторе. 
 
 Чтобы отредактировать файл hosts, выполните следующие действия:
 
-1. Подключитесь к виртуальной машине по протоколу RDP. 
+1. RDP в виртуальной машине. 
 1. В **проводнике** откройте папку `c:\windows\system32\drivers\etc`. 
 1. Щелкните правой кнопкой мыши файл **hosts** и откройте его в **Блокноте** (или любом другом текстовом редакторе).
 1. В конце файла добавьте запись для каждого узла, группы доступности и прослушивателя в виде `IP Address, DNS Suffix #comment`. Например: 
@@ -104,7 +104,7 @@ new-itemproperty -path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
 
 ## <a name="create-the-failover-cluster"></a>Создание отказоустойчивого кластера.
 
-На этом этапе создается отказоустойчивый кластер. Если вы не знакомы с этой процедурой, вы можете воспользоваться инструкциями из [учебника по отказоустойчивым кластерам](failover-cluster-instance-storage-spaces-direct-manually-configure.md#step-2-configure-the-windows-server-failover-cluster-with-storage-spaces-direct).
+На этом этапе создается отказоустойчивый кластер. Если вы не знакомы с этой процедурой, вы можете воспользоваться инструкциями из [учебника по отказоустойчивым кластерам](failover-cluster-instance-storage-spaces-direct-manually-configure.md).
 
 Вот несколько важных различий между процедурой, описанной в учебнике, и действиями, которые необходимо выполнить для кластера рабочей группы:
 - Снимите флажки **Хранение** и **Локальные дисковые пространства** перед запуском проверки кластера. 
@@ -130,13 +130,13 @@ new-itemproperty -path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
 
 ## <a name="create-a-cloud-witness"></a>Создание облака-свидетеля 
 
-На этом этапе настраивается облачный ресурс-свидетель. Если вы не знакомы с этой процедурой, см. [учебник по отказоустойчивым кластерам](failover-cluster-instance-storage-spaces-direct-manually-configure.md#create-a-cloud-witness). 
+На этом этапе настраивается облачный ресурс-свидетель. Если вы не знакомы с этими шагами, см. статью [развертывание облака-свидетеля для отказоустойчивого кластера](/windows-server/failover-clustering/deploy-cloud-witness). 
 
-## <a name="enable-availability-group-feature"></a>Включение компонента "Группы доступности" 
+## <a name="enable-the-availability-group-feature"></a>Включение функции группы доступности 
 
 На этом этапе включается компонент "Группы доступности". Если вы не знакомы с этой процедурой, см. [учебник по группам доступности](availability-group-manually-configure-tutorial.md#enable-availability-groups). 
 
-## <a name="create-keys-and-certificate"></a>Создание ключей и сертификатов
+## <a name="create-keys-and-certificates"></a>Создание ключей и сертификатов
 
 На этом этапе создаются сертификаты, которые используются для входа в SQL на зашифрованной конечной точке. Создайте на каждом узле папку для хранения резервных копий сертификатов, например `c:\certs`. 
 
@@ -277,19 +277,19 @@ GO
 
 Если в кластере есть и другие узлы, повторите для них эти действия, меняя соответствующие названия сертификатов и имена пользователей. 
 
-## <a name="configure-availability-group"></a>Настройка группы доступности
+## <a name="configure-an-availability-group"></a>Настройка группы доступности
 
 На этом этапе настраивается группа доступности и в нее добавляются базы данных. Не создавайте прослушиватель на этом шаге. Если вы не знакомы с этой процедурой, см. [учебник по группам доступности](availability-group-manually-configure-tutorial.md#create-the-availability-group). Не забудьте запустить процедуру отработки отказа и восстановления размещения, чтобы убедиться, что все работает должным образом. 
 
    > [!NOTE]
    > Если при синхронизации возникнет сбой, вам может потребоваться временно предоставить учетной записи `NT AUTHORITY\SYSTEM` права системного администратора для создания ресурсов кластера на первом узле, например `AGNode1`. 
 
-## <a name="configure-load-balancer"></a>Настройка подсистемы балансировки нагрузки
+## <a name="configure-a-load-balancer"></a>Настройка балансировщика нагрузки
 
-На этом заключительном этапе с помощью [портала Azure](availability-group-load-balancer-portal-configure.md) или [PowerShell](availability-group-listener-powershell-configure.md) настраивается подсистема балансировки нагрузки.
+На этом последнем шаге настройте подсистему балансировки нагрузки с помощью [портал Azure](availability-group-load-balancer-portal-configure.md) или [PowerShell](availability-group-listener-powershell-configure.md).
 
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Для настройки группы доступности также можно использовать [интерфейс командной строки виртуальной машины AZ SQL](availability-group-az-cli-configure.md). 
 

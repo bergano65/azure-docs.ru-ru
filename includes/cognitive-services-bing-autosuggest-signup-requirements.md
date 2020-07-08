@@ -4,20 +4,16 @@ ms.author: aahi
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/06/2020
-ms.openlocfilehash: 01dabff80f0c7e46e183a05a000251797d490e32
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.openlocfilehash: f12fbe3ea9fa07c5ba8498a1f0b846a72647f5da
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82929538"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85805794"
 ---
 ## <a name="create-an-azure-resource"></a>Создание ресурса Azure
 
 Начните использовать API Автозаполнения Bing, создав один из следующих ресурсов Azure.
-
-### <a name="trial-resource"></a>[Пробный ресурс](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api)
-   * Подписка Azure не требуется.
-   * срок действия —7 дней, бесплатно. Когда вы зарегистрируетесь, ключ пробной версии и конечная точка будут доступны на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/).
 
 ### <a name="bing-autosuggest-resource"></a>[Ресурс Автозаполнения Bing](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingAutosuggest-v7)
    * доступен на портале Azure до удаления.
