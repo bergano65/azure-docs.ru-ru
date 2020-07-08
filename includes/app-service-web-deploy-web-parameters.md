@@ -4,12 +4,12 @@ ms.service: app-service-web
 ms.topic: include
 ms.date: 11/03/2016
 ms.author: cephalin
-ms.openlocfilehash: 5bde217601d27129e044b64d90184727ea717950
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.openlocfilehash: 329db6b3fc0bd6d11e5fbac9472aa03899caec2a
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
-ms.locfileid: "67185095"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86050222"
 ---
 С помощью диспетчера ресурсов Azure можно определить параметры значений, которые должны указываться на этапе развертывания шаблона. В шаблоне есть раздел "Параметры", содержащий все значения параметров.
 Для этих значений необходимо определить параметры, которые будут зависеть от развертываемого проекта либо от среды, в которой выполняется развертывание. Не задавайте параметры для значений, которые не меняются. Значение каждого параметра в шаблоне определяет развертываемые ресурсы. 
@@ -21,56 +21,64 @@ ms.locfileid: "67185095"
 ### <a name="sitename"></a>siteName
 Имя создаваемого веб-приложения.
 
-    "siteName":{
-      "type":"string"
-    }
+```config
+"siteName":{
+  "type":"string"
+}
+```
 
 ### <a name="hostingplanname"></a>hostingPlanName
 Имя плана службы приложений для размещения веб-приложения.
 
-    "hostingPlanName":{
-      "type":"string"
-    }
+```config
+"hostingPlanName":{
+  "type":"string"
+}
+```
 
 ### <a name="sku"></a>sku
 Ценовая категория плана размещения.
 
-    "sku": {
-      "type": "string",
-      "allowedValues": [
-        "F1",
-        "D1",
-        "B1",
-        "B2",
-        "B3",
-        "S1",
-        "S2",
-        "S3",
-        "P1",
-        "P2",
-        "P3",
-        "P4"
-      ],
-      "defaultValue": "S1",
-      "metadata": {
-        "description": "The pricing tier for the hosting plan."
-      }
-    }
+```config
+"sku": {
+  "type": "string",
+  "allowedValues": [
+    "F1",
+    "D1",
+    "B1",
+    "B2",
+    "B3",
+    "S1",
+    "S2",
+    "S3",
+    "P1",
+    "P2",
+    "P3",
+    "P4"
+  ],
+  "defaultValue": "S1",
+  "metadata": {
+    "description": "The pricing tier for the hosting plan."
+  }
+}
+```
 
 В шаблоне определены значения, допустимые для этого параметра. Если значение не указано, параметру назначается значение по умолчанию (S1).
 
 ### <a name="workersize"></a>workerSize
 Размер экземпляра плана размещения (малый, средний или большой).
 
-    "workerSize":{
-      "type":"string",
-      "allowedValues":[
-        "0",
-        "1",
-        "2"
-      ],
-      "defaultValue":"0"
-    }
+```config
+"workerSize":{
+  "type":"string",
+  "allowedValues":[
+    "0",
+    "1",
+    "2"
+  ],
+  "defaultValue":"0"
+}
+```
 
 В шаблоне определены значения, допустимые для этого параметра (0, 1 и 2). Если значение не указано, параметру назначается значение по умолчанию (0). Эти величины соответствуют малому, среднему и большому размерам.
 

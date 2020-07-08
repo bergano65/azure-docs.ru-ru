@@ -11,6 +11,10 @@
       href: ./quickstarts/client-libraries.md
 - name: Учебники
   items:
+    - name: Запуск иммерсивного средства чтения (Android)
+      href: tutorial-android.md
+    - name: Запуск иммерсивного средства чтения (iOS)
+      href: tutorial-ios.md
     - name: Запуск иммерсивного средства чтения (Python)
       href: tutorial-python.md
     - name: Использование нескольких ресурсов иммерсивного средства чтения

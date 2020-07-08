@@ -4,17 +4,17 @@ ms.service: app-service
 ms.topic: include
 ms.date: 11/03/2016
 ms.author: cephalin
-ms.openlocfilehash: 79fb8517ec6880e8a3eae0e74275567a24644b87
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: 0019e50615f3e66778709ad8cb28f92967c66e2e
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "67185090"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86050206"
 ---
 ## <a name="deployment-customization"></a>Настройка развертывания
 
 При развертывании предполагается, что отправляемый ZIP-файл содержит готовое к запуску приложение. По умолчанию настройки не задаются. Чтобы включить те же процессы компиляции, что и при непрерывной интеграции, добавьте в параметры приложения следующее:
 
-    SCM_DO_BUILD_DURING_DEPLOYMENT=true 
+`SCM_DO_BUILD_DURING_DEPLOYMENT=true`
 
 При развертывании из отправленного ZIP-файла для этого параметра по умолчанию установлено значение **false**. Для развертываний с непрерывной интеграцией значение по умолчанию — **true**. Если установлено значение **true**, при развертывании используются связанные с ним параметры, которые вы задали. Эти параметры можно настроить как параметры приложения, или указать в файле конфигурации .deployment, который находится в корневом каталоге ZIP-файла. Дополнительные сведения см. в разделе о [параметрах, связанных с репозиторием и развертыванием,](https://github.com/projectkudu/kudu/wiki/Configurable-settings#repository-and-deployment-related-settings) справочника по развертыванию.
