@@ -4,10 +4,9 @@ description: В этой статье описаны решения пробле
 ms.topic: troubleshooting
 ms.date: 01/30/2019
 ms.openlocfilehash: bcb30fa7eb3e05099761fc751b09a9fb16134e34
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75664749"
 ---
 # <a name="troubleshoot-system-center-data-protection-manager"></a>Устранение неполадок при работе с System Center Data Protection Manager
@@ -58,7 +57,7 @@ ms.locfileid: "75664749"
 
 - Убедитесь, что вы используете самую последнюю версию агента Azure Backup.
 - Убедитесь в наличии подключения (по сети, через брандмауэр или прокси-сервер) между сервером Data Protection Manager и защищенным сервером.
-- Если вы защищаете SQL Server, убедитесь, что в свойстве **имя входа** > **NT AUTHORITY\SYSTEM** отображается параметр **sysadmin** .
+- Если вы защищаете SQL Server, убедитесь, что в свойстве **имя входа**  >  **NT AUTHORITY\SYSTEM** отображается параметр **sysadmin** .
 
 ## <a name="error-server-not-registered-as-specified-in-vault-credential-file"></a>Ошибка: "Server not registered as specified in vault credential file" (Сервер не зарегистрирован так, как указано в файле учетных данных хранилища)
 

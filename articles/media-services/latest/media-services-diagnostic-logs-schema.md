@@ -14,10 +14,9 @@ ms.topic: article
 ms.date: 01/20/2019
 ms.author: juliako
 ms.openlocfilehash: 37baed076ca074c1d558af36649e90959a0034c9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75750872"
 ---
 # <a name="diagnostic-logs-schemas"></a>Схемы для журналов диагностики
@@ -34,11 +33,11 @@ ms.locfileid: "75750872"
 
 ## <a name="key-delivery-log-schema"></a>Схема журнала доставки ключей
 
-### <a name="properties"></a>Свойства
+### <a name="properties"></a>Элемент Property
 
 Эти свойства относятся к схеме журнала доставки ключей.
 
-|Имя|Описание|
+|name|Описание:|
 |---|---|
 |keyId|ИДЕНТИФИКАТОР запрошенного ключа.|
 |keyType|Может принимать одно из следующих значений: "Clear" (без шифрования), "FairPlay", "PlayReady" или "Widevine".|
@@ -108,10 +107,10 @@ ms.locfileid: "75750872"
 } 
 ```
 
-## <a name="additional-notes"></a>Дополнительные сведения
+## <a name="additional-notes"></a>Дополнительные замечания
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Мониторинг метрик и журналов диагностики служб мультимедиа](media-services-metrics-diagnostic-logs.md)

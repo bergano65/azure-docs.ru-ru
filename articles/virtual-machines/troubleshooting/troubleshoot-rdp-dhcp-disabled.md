@@ -13,10 +13,9 @@ ms.workload: infrastructure
 ms.date: 11/13/2018
 ms.author: genli
 ms.openlocfilehash: 2c5b0556554d280e57b2df51875e1b057b5fb4a8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75749894"
 ---
 #  <a name="cannot-rdp-to-azure-virtual-machines-because-the-dhcp-client-service-is-disabled"></a>Не удается подключиться по протоколу удаленного рабочего стола к виртуальным машинам Azure из-за того, что отключена служба DHCP-клиента
@@ -75,7 +74,7 @@ ms.locfileid: "75749894"
     Попробуйте подключиться к виртуальной машине и убедитесь, что проблема устранена.
 5. Если служба не запускается, используйте одно из следующих решений в зависимости от полученного сообщения об ошибке:
 
-    | Ошибка  |  Решение |
+    | Error  |  Решение |
     |---|---|
     | 5 — ACCESS DENIED  | Перейдите к разделу [Служба DHCP-клиента остановлена из-за ошибки отказа в доступе](#dhcp-client-service-is-stopped-because-of-an-access-denied-error).  |
     |1053 — ERROR_SERVICE_REQUEST_TIMEOUT   | Перейдите к разделу [Происходит сбой службы DHCP-клиента или она зависает](#dhcp-client-service-crashes-or-hangs).  |
@@ -200,6 +199,6 @@ ms.locfileid: "75749894"
 
 4. [Отключение диска операционной системы и повторное создание виртуальной машины](../windows/troubleshoot-recovery-disks-portal.md). Затем проверьте, устранена ли проблема.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет устранить проблему.

@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 11/07/2016
 tags: connectors
 ms.openlocfilehash: c7f97ff33742eb545cbfbd7521ba135584851e5e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75666777"
 ---
 # <a name="create-and-manage-files-in-box-by-using-azure-logic-apps"></a>Создание файлов и управление ими в Box с помощью Azure Logic Apps
@@ -27,7 +26,7 @@ ms.locfileid: "75666777"
   Когда эти действия получают ответ, они делают выходные данные доступными для использования другими действиями. 
   Например, при изменении файла в Box можно отправить измененный файл по электронной почте с помощью Office 365.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Учетная запись [Box](https://www.box.com/home).
 
@@ -36,7 +35,7 @@ ms.locfileid: "75666777"
 * Приложение логики, из которого необходимо получить доступ к учетной записи Box. Чтобы запустить приложение логики с помощью триггера Box, требуется [пустое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 * Базовые знания о [создании приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
-Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
+Если вы не знакомы с приложениями логики, ознакомьтесь с [Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
 ## <a name="connector-reference"></a>Справочник по соединителям
 

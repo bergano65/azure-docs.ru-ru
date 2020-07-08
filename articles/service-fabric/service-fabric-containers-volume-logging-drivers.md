@@ -4,10 +4,9 @@ description: Service Fabric поддерживает использование 
 ms.topic: conceptual
 ms.date: 6/10/2018
 ms.openlocfilehash: 514a0cb12359d58e38ebc30ae12cdb277757f2b2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75750046"
 ---
 # <a name="azure-files-volume-driver-for-service-fabric"></a>Драйвер тома файлов Azure для Service Fabric
@@ -18,7 +17,7 @@ ms.locfileid: "75750046"
 > Выпущена версия 6.5.661.9590 подключаемого модуля тома файлов Azure для общедоступной версии.
 >
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 * Версия подключаемого модуля тома службы файлов Azure для Windows работает только в операционных системах [Windows Server версии 1709](/windows-server/get-started/whats-new-in-windows-server-1709), [Windows 10 версии 1709](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1709) или более поздних версий.
 
 * Версия подключаемого модуля тома службы файлов Azure для Linux работает во всех версиях операционной системы, поддерживаемых Service Fabric.
@@ -29,7 +28,7 @@ ms.locfileid: "75750046"
 
 * Вам потребуется установить [PowerShell с модулем Service Fabric](/azure/service-fabric/service-fabric-get-started) или [SFCTL](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli).
 
-* Если вы используете контейнеры Hyper-V, необходимо добавить следующие фрагменты в раздел ClusterManifest (локальный кластер) или fabricSettings в шаблоне Azure Resource Manager (кластер Azure) или ClusterConfig. JSON (изолированный кластер).
+* Если вы используете контейнеры Hyper-V, необходимо добавить следующие фрагменты в раздел ClusterManifest (локальный кластер) или fabricSettings в шаблоне Azure Resource Manager (кластер Azure) или ClusterConfig.jsв (изолированном кластере).
 
 В файле ClusterManifest в раздел Hosting нужно добавить приведенный ниже код. В этом примере имя тома — **сфазурефиле** , а порт, который он прослушивает в кластере, — **19100**. Замените их правильными значениями для кластера.
 
@@ -39,7 +38,7 @@ ms.locfileid: "75750046"
 </Section>
 ```
 
-В разделе fabricSettings шаблона Azure Resource Manager (для развертываний Azure) или ClusterConfig. JSON (для автономных развертываний) необходимо добавить следующий фрагмент кода. Опять же, замените имя тома и значения порта своим собственным.
+В разделе fabricSettings шаблона Azure Resource Manager (для развертываний Azure) или ClusterConfig.jsв (для автономных развертываний) необходимо добавить следующий фрагмент кода. Опять же, замените имя тома и значения порта своим собственным.
 
 ```json
 "fabricSettings": [
@@ -239,6 +238,6 @@ docker plugin install --alias azure --grant-all-permissions docker4x/cloudstor:1
 
 Если задан драйвер ведения журналов Docker, необходимо развернуть агенты (или контейнеры) для обработки журналов в кластере. Чтобы указать параметры драйвера ведения журналов можно использовать тег **DriverOption**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Примеры контейнеров, включая драйвер тома, приведены в разделе [Примеры контейнеров Service Fabric](https://github.com/Azure-Samples/service-fabric-containers).
 * Сведения о развертывании контейнеров в кластере Service Fabric см. в статье [развертывание контейнера в Service Fabric](service-fabric-deploy-container.md)

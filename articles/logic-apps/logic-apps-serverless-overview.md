@@ -9,10 +9,9 @@ ms.reviewer: klam, estfan, logicappspm
 ms.topic: article
 ms.date: 03/30/2017
 ms.openlocfilehash: 0f20bb5fb249ad6bac862afe2b0e8eee4b32e2a9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75666556"
 ---
 # <a name="azure-serverless-overview-for-building-cloud-based-apps-and-solutions-with-azure-logic-apps-and-azure-functions"></a>Без сервера Azure. Общие сведения о создании облачных приложений и решений с помощью Azure Logic Apps и функций Azure
@@ -41,7 +40,7 @@ ms.locfileid: "75666556"
 
 Azure предоставляет широкие средства для разработки, развертывания и управления бессерверными приложениями. Приложения можно создавать непосредственно в портал Azure, с помощью [инструментов в Visual Studio](logic-apps-serverless-get-started-vs.md)или [Visual Studio Code](quickstart-create-logic-apps-visual-studio-code.md). После сборки приложения можно [быстро развернуть это приложение с помощью шаблонов Azure Resource Manager](logic-apps-deploy-azure-resource-manager-templates.md). Azure также предоставляет средства мониторинга, к которым можно получить доступ через портал Azure, через API или пакеты SDK или с помощью интегрированных средств для Azure Monitor журналов и Application Insights.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание бессерверного приложения в Visual Studio](logic-apps-serverless-get-started-vs.md)
 * [Создание панели мониторинга Customer Insights с бессерверным](logic-apps-scenario-social-serverless.md)

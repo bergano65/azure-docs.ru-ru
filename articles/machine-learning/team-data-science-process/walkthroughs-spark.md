@@ -12,10 +12,9 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 91aac279a264d64ace5988d147c4caf8c52e9656
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75864151"
 ---
 # <a name="hdinsight-spark-data-science-walkthroughs-using-pyspark-and-scala-on-azure"></a>Пошаговое руководство обработки и анализа данных HDInsight Spark с использованием PySpark и Scala в Azure
@@ -43,7 +42,7 @@ ms.locfileid: "75864151"
 В пошаговом руководстве [Использование Scala с Spark в Azure](scala-walkthrough.md) прогнозируется, оплачивается ли Совет, а также диапазон сумм, которые должны быть оплачены. В этом руководстве показано, как с помощью Scala выполнять контролируемые задачи машинного обучения, используя библиотеку машинного обучения Spark (MLlib) и пакеты SparkML в кластере Azure HDInsight со Spark. В нем рассматриваются задачи, составляющие [процесс обработки и анализа данных](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/): прием данных и исследование, визуализация, проектирование признаков, моделирование и использование модели. В моделях используются логистическая и линейная регрессия, случайные леса и градиентный бустинг деревьев.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Общие сведения о процессе обработки и анализа данных группы см. в разделе [Общие сведения о процессе обработки и анализа данных группы](overview.md).
 

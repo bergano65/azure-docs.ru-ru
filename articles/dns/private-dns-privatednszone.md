@@ -8,10 +8,9 @@ ms.topic: article
 ms.date: 9/24/2019
 ms.author: rohink
 ms.openlocfilehash: a951bc07c4a8ed42b1c116332d13674656bbaafd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75646801"
 ---
 # <a name="what-is-a-private-azure-dns-zone"></a>Что такое частная зона Azure DNS
@@ -32,7 +31,7 @@ Azure DNS предоставляет надежную и защищенную с
 * Отдельные частные зоны DNS с меткой не поддерживаются. Частная зона DNS должна содержать две или более меток. Например, contoso.com имеет две метки, разделенные точкой. В частной зоне DNS может быть не более 34 меток.
 * Нельзя создать делегирование зоны (записи NS) в частной зоне DNS. Если вы планируете использовать дочерний домен, можно напрямую создать домен в качестве частной зоны DNS и связать его с виртуальной сетью, не настроив делегирование nameserver из родительской зоны.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, как создать частную зону в Azure DNS с помощью [Azure PowerShell](./private-dns-getstarted-powershell.md) или [интерфейса командной строки Azure](./private-dns-getstarted-cli.md).
 

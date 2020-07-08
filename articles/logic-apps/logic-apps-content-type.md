@@ -7,10 +7,9 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 07/20/2018
 ms.openlocfilehash: ae0abe288edda2ce01311d8533b1f104409efce0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75666879"
 ---
 # <a name="handle-content-types-in-azure-logic-apps"></a>Обработка типов содержимого в Azure Logic Apps
@@ -175,10 +174,10 @@ ms.locfileid: "75666879"
 
 Служба Logic Apps предоставляет собственные функции для обработки данных формы. Например следующие. 
 
-* [triggerFormDataValue()](../logic-apps/workflow-definition-language-functions-reference.md#triggerFormDataValue)
-* [triggerFormDataMultiValues()](../logic-apps/workflow-definition-language-functions-reference.md#triggerFormDataMultiValues)
-* [formDataValue()](../logic-apps/workflow-definition-language-functions-reference.md#formDataValue) 
-* [formDataMultiValues()](../logic-apps/workflow-definition-language-functions-reference.md#formDataMultiValues)
+* [Тригжерформдатавалуе ()](../logic-apps/workflow-definition-language-functions-reference.md#triggerFormDataValue)
+* [Тригжерформдатамултивалуес ()](../logic-apps/workflow-definition-language-functions-reference.md#triggerFormDataMultiValues)
+* [Формдатавалуе ()](../logic-apps/workflow-definition-language-functions-reference.md#formDataValue) 
+* [Формдатамултивалуес ()](../logic-apps/workflow-definition-language-functions-reference.md#formDataMultiValues)
 
 Или можно вручную сделать доступ к данным с помощью выражения следующего вида.
 

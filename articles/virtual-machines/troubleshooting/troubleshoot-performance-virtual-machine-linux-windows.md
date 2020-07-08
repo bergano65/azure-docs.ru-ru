@@ -14,10 +14,9 @@ ms.topic: troubleshooting
 ms.date: 09/18/2019
 ms.author: v-miegge
 ms.openlocfilehash: 176b0634fe2c7ee2f47162e439c4ea16bde77a8a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75772624"
 ---
 # <a name="troubleshoot-azure-virtual-machine-performance-on-linux-or-windows"></a>Устранение неполадок производительности виртуальных машин Azure в Linux или Windows
@@ -139,7 +138,7 @@ ms.locfileid: "75772624"
 
 Стабильное увеличение потребления — возможно, это потребление является общим для запуска ядер СУБД. Однако это также может быть знаком утечки памяти в приложении. Определить приложение и понять, ожидается ли поведение.
 
-Использование файла страницы или подкачки. Проверьте, используется ли слишком интенсивное использование файла подкачки Windows (\) расположенного в папке D: или `/dev/sdb`Windows Swap File (расположенном на). Если на этих томах нет ничего, Кроме этих файлов, проверьте наличие высокой доступности для чтения и записи на этих дисках. Эта проблема говорит о нехватке памяти.
+Использование файла страницы или подкачки. Проверьте, используется ли слишком интенсивное использование файла подкачки Windows (расположенного в папке D: \) или Windows Swap File (расположенном на `/dev/sdb` ). Если на этих томах нет ничего, Кроме этих файлов, проверьте наличие высокой доступности для чтения и записи на этих дисках. Эта проблема говорит о нехватке памяти.
 
 ### <a name="high-memory-utilization-remediation"></a>Интенсивное исправление использования памяти
 
@@ -248,8 +247,8 @@ AverageE2ELatency представляет задержку клиента. Пр
 
 * [Использование хранилища Azure класса Premium с SQL Server](https://azure.microsoft.com/documentation/articles/virtual-machines-sql-server-use-premium-storage/)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вам нужна дополнительная помощь в любой момент в этой статье, обратитесь к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/).
 
-Кроме того, можно зафайлировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **получить поддержку**.
+Кроме того, можно зафайлировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**.

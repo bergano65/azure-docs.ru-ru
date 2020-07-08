@@ -10,10 +10,9 @@ ms.topic: conceptual
 ms.date: 12/05/2019
 ms.author: cherylmc
 ms.openlocfilehash: f1bbaab99b6422de4053839e2099869d2d08db95
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75864304"
 ---
 # <a name="about-zone-redundant-virtual-network-gateways-in-azure-availability-zones"></a>Избыточные между зонами шлюзы виртуальной сети в Зонах доступности Azure
@@ -38,7 +37,7 @@ ms.locfileid: "75864304"
 
 ![схема с зональными шлюзами](./media/create-zone-redundant-vnet-gateway/zonal.png)
 
-## <a name="gateway-skus"></a><a name="gwskus"></a>SKU шлюза
+## <a name="gateway-skus"></a><a name="gwskus"></a>SKU шлюзов
 
 Шлюзы, избыточные между зонами, и зональные шлюзы используют новые номера SKU шлюзов. Мы добавили новые номера SKU шлюза виртуальной сети в регионах Зон доступности Azure. Эти номера SKU аналогичны соответствующим существующим номерам SKU для шлюза ExpressRoute и VPN-шлюза, за исключением того, что они относятся к шлюзам, избыточным между зонами, и зональным шлюзам. Эти номера SKU можно найти, выполнив команду AZ в имени SKU.
 
@@ -85,6 +84,6 @@ ms.locfileid: "75864304"
 
 Допускается одновременное функционирование VPN-шлюзов и шлюзов Express Route в одной виртуальной сети. Но при этом необходимо зарезервировать диапазон IP-адресов /27 для подсети шлюза.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Создание шлюза виртуальной сети, избыточного между зонами](create-zone-redundant-vnet-gateway.md)
