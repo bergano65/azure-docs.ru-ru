@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 02/20/2020
-ms.openlocfilehash: e7efdb7244e2c7e4651a4507b538123f8d320c1e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: da0c00f0b4a8f2c49996fbcb9b34ee4a1ab65273
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77650781"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85856651"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-sql-database"></a>Известные проблемы и ограничения миграции при оперативной миграции в базу данных SQL Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "77650781"
 
 **Обходное решение**
 
-Выполните следующие действия.
+Для этого выполните следующие действия:
 
 1. Найдите темпоральные таблицы в схеме источника, используя приведенный ниже запрос.
 
@@ -66,7 +66,7 @@ ms.locfileid: "77650781"
 
 **Обходное решение**
 
-Выполните следующие действия.
+Для этого выполните следующие действия:
 
 1. Найдите таблицы пользователя, включающие столбцы с типом данных hierarchyid, используя приведенный ниже запрос.
 
@@ -82,7 +82,7 @@ ms.locfileid: "77650781"
 
 **Обходное решение**
 
-Выполните следующие действия.
+Для этого выполните следующие действия:
 
 1. В базе данных-источнике найдите триггеры, которые сейчас активны, используя приведенный ниже запрос:
 
@@ -142,7 +142,9 @@ Azure Database Migration Service не выполняет миграцию исх
 
 Сбой миграции с сообщением об ошибке, содержащим следующий текст:
 
-     “** encountered a fatal error”, "errorEvents":<Table>.<Column> is of type 'GEOGRAPHY', which is not supported by 'Full Load' under 'Full LOB' support mode."
+```output
+"** encountered a fatal error", "errorEvents":<Table>.<Column> is of type 'GEOGRAPHY', which is not supported by 'Full Load' under 'Full LOB' support mode.
+```
 
 **Обходное решение**
 
@@ -154,7 +156,9 @@ Azure Database Migration Service не выполняет миграцию исх
 
 Сбой миграции с сообщением об ошибке, содержащим следующий текст:
 
-    Migration settings validation error: The edition of the server [Business Intelligence Edition (64-bit)] does not match the supported edition(s) [Enterprise,Standard,Developer].
+```output
+Migration settings validation error: The edition of the server [Business Intelligence Edition (64-bit)] does not match the supported edition(s) [Enterprise,Standard,Developer].
+```
 
 **Обходное решение**
 

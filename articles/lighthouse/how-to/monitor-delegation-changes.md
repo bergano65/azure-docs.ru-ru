@@ -2,13 +2,13 @@
 title: Мониторинг изменений делегирования в управляющем клиенте
 description: Узнайте, как отслеживать действия делегирования от клиентов клиентов до управляющего клиента.
 ms.date: 03/30/2020
-ms.topic: conceptual
-ms.openlocfilehash: a4593b34311eca34e4fb68926a3820899ab3f324
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: how-to
+ms.openlocfilehash: 9a772cc577392558f050211b7f767928ecbb707b
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81458817"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85919134"
 ---
 # <a name="monitor-delegation-changes-in-your-managing-tenant"></a>Мониторинг изменений делегирования в управляющем клиенте
 
@@ -44,7 +44,7 @@ ms.locfileid: "81458817"
 
 - [Создайте новую учетную запись субъекта-службы](../../active-directory/develop/howto-create-service-principal-portal.md) , которая будет использоваться только для этой функции, вместо того, чтобы назначать эту роль существующему субъекту-службе, используемому для другой автоматизации.
 - Убедитесь, что этот субъект-служба не имеет доступа к каким-либо делегированным ресурсам клиента.
-- [Используйте сертификат для проверки подлинности](../../active-directory/develop/howto-create-service-principal-portal.md#certificates-and-secrets) и [безопасного хранения в Azure Key Vault](../../key-vault/general/best-practices.md).
+- [Используйте сертификат для проверки подлинности](../../active-directory/develop/howto-create-service-principal-portal.md#upload-a-certificate-or-create-a-secret-for-signing-in) и [безопасного хранения в Azure Key Vault](../../key-vault/general/best-practices.md).
 - Ограничьте число пользователей, имеющих доступ к действиям от имени субъекта-службы.
 
 Используйте один из следующих методов для создания назначений корневой области.
@@ -73,7 +73,7 @@ az role assignment create --assignee 00000000-0000-0000-0000-000000000000 --role
 
 После создания новой учетной записи субъекта-службы с наблюдением за доступом к корневой области управляемого клиента вы можете использовать его для запроса и создания отчетов о действиях делегирования в клиенте. 
 
-[Этот Azure PowerShell сценарий](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/tools/monitor-delegation-changes) можно использовать для запроса последнего 1-дневного действия и отчетов по любому добавленному или удаленному делегированию (или неудачным попыткам). Он запрашивает данные [журнала действий клиента](https://docs.microsoft.com/rest/api/monitor/TenantActivityLogs/List) , затем конструирует следующие значения, чтобы сообщить о добавлении или удалении делегирований.
+[Этот Azure PowerShell сценарий](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/tools/monitor-delegation-changes) можно использовать для запроса последнего 1-дневного действия и отчетов по любому добавленному или удаленному делегированию (или неудачным попыткам). Он запрашивает данные [журнала действий клиента](/rest/api/monitor/TenantActivityLogs/List) , затем конструирует следующие значения, чтобы сообщить о добавлении или удалении делегирований.
 
 - **Делегатедресаурцеид**: идентификатор делегированной подписки или группы ресурсов.
 - **Кустомертенантид**: идентификатор клиента клиента.

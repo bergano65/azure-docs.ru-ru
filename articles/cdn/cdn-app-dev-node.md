@@ -11,15 +11,15 @@ ms.service: azure-cdn
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 18dbcbf93947306334ccc2c156d9266884198e19
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c83323ff7b951892b96d49f3173c022592aac331
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "67594128"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85920167"
 ---
 # <a name="get-started-with-azure-cdn-development"></a>Приступая к разработке для Azure CDN
 > [!div class="op_single_selector"]
@@ -44,7 +44,9 @@ ms.locfileid: "67594128"
 
 Создайте папку для хранения приложения.  С помощью консоли, в которой средства Node.js включены в текущий путь, перейдите в эту новую папку и инициализируйте проект с помощью следующей команды:
 
-    npm init
+```console
+npm init
+```
 
 Вам будет предложено ответить на ряд вопросов для инициализации проекта.  В качестве **точки входа**в этом руководстве используется *app.js*.  В приведенном ниже примере вы можете увидеть значения других параметров.
 
@@ -52,8 +54,10 @@ ms.locfileid: "67594128"
 
 Теперь наш проект будет инициализирован с помощью файла *packages.json* .  В проекте будут использоваться некоторые библиотеки Azure, содержащиеся в пакетах NPM.  Мы будем использовать клиентскую среду Azure для Node.js (ms-rest-azure) и клиентскую библиотеку Azure CDN для Node.js (azure-arm-cd).  Давайте добавим эти зависимости в проект.
 
-    npm install --save ms-rest-azure
-    npm install --save azure-arm-cdn
+```console
+npm install --save ms-rest-azure
+npm install --save azure-arm-cdn
+```
 
 Когда установка этих пакетов завершится, файл *package.json* должен выглядеть примерно так (номер версии может отличаться):
 
@@ -86,7 +90,7 @@ ms.locfileid: "67594128"
     var msRestAzure = require('ms-rest-azure');
     var cdnManagementClient = require('azure-arm-cdn');
     ```
-2. Необходимо определить несколько констант, которые будут использоваться нашими методами.  Добавьте следующий код.  Обязательно замените заполнители, включая ** &lt;угловые скобки&gt;**, собственными значениями.
+2. Необходимо определить несколько констант, которые будут использоваться нашими методами.  Добавьте следующий код.  Обязательно замените заполнители, включая **&lt;угловые скобки&gt;** , собственными значениями.
    
     ``` javascript
     //Tenant app constants
@@ -119,7 +123,7 @@ ms.locfileid: "67594128"
     var cdnClient = new cdnManagementClient(credentials, subscriptionId);
     ```
    
-    Не забудьте заменить элементы в ** &lt;угловых скобках&gt; ** на правильные данные.  Вместо `<redirect URI>`укажите универсальный код ресурса (URI) перенаправления, который вы ввели при регистрации приложения в Azure AD.
+    Не забудьте заменить элементы в ** &lt; угловых скобках &gt; ** на правильные данные.  Вместо `<redirect URI>`укажите универсальный код ресурса (URI) перенаправления, который вы ввели при регистрации приложения в Azure AD.
 4. Консольное приложение Node.js будет принимать некоторые параметры командной строки.  Давайте добавим проверку того, что передан хотя бы один параметр.
    
    ```javascript
@@ -358,9 +362,9 @@ function cdnDelete() {
 
 И в завершение давайте удалим профиль.
 
-![Удаление профиля](./media/cdn-app-dev-node/cdn-delete-profile.png)
+![Удалить профиль](./media/cdn-app-dev-node/cdn-delete-profile.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 Чтобы просмотреть описываемый в этом руководстве готовый проект, [скачайте пример](https://code.msdn.microsoft.com/Azure-CDN-SDK-for-Nodejs-c712bc74).
 
 Справочную информацию о пакете SDK Azure CDN для Node.js вы найдете [здесь](https://azure.github.io/azure-sdk-for-node/azure-arm-cdn/latest/).

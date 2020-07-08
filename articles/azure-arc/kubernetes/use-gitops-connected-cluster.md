@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Применение GitOps для настройки кластера с поддержкой Azure Arc (предварительная версия)
 keywords: GitOps, Kubernetes, K8s, Azure, Arc, служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: 954c77503e8adacc4cd27b25b68b50cac1f80458
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
-ms.translationtype: HT
+ms.openlocfilehash: 890b35aac33a6fa207a71d76143997a1b93116bf
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83779716"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85856985"
 ---
 # <a name="use-gitops-for-an-azure-arc-enabled--configuration-preview"></a>Применение GitOps для настройки с поддержкой Azure Arc (предварительная версия)
 
@@ -167,7 +167,7 @@ az k8sconfiguration show --resource-group AzureArcTest --name cluster-config --c
 Command group 'k8sconfiguration' is in preview. It may be changed/removed in a future release.
 {
   "complianceStatus": {
-    "complianceState": "Compliant",
+    "complianceState": "Installed",
     "lastConfigApplied": "2019-12-05T05:34:41.481000",
     "message": "...",
     "messageLevel": "3"
@@ -201,8 +201,8 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 Во время процесса подготовки состояние `sourceControlConfiguration` будет несколько раз меняться. Отслеживайте ход выполнения с помощью приведенной выше команды `az k8sconfiguration show ...`:
 
 1. `complianceStatus` -> `Pending`: представляет состояния начала и выполнения.
-1. `complianceStatus` -> `Compliant`: `config-agent` удалось успешно настроить кластер и развернуть `flux` без ошибок.
-1. `complianceStatus` -> `Noncompliant`: в `config-agent` возникла ошибка при развертывании `flux`, сведения должны быть доступны в тексте ответа `complianceStatus.message`.
+1. `complianceStatus` -> `Installed`: `config-agent` удалось успешно настроить кластер и развернуть `flux` без ошибок.
+1. `complianceStatus` -> `Failed`: в `config-agent` возникла ошибка при развертывании `flux`, сведения должны быть доступны в тексте ответа `complianceStatus.message`.
 
 ## <a name="apply-configuration-from-a-private-git-repository"></a>Применение конфигурации из частного репозитория Git
 

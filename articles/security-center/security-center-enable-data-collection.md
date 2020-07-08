@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 04/27/2020
 ms.author: memildin
-ms.openlocfilehash: 843cd74c85c619dbbd2b11a32fccf75d030b5613
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
-ms.translationtype: HT
+ms.openlocfilehash: be212de7a24b416ad4e5dc08998ba1147c6f3753
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83772970"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85855930"
 ---
 # <a name="data-collection-in-azure-security-center"></a>Сбор данных в центре безопасности Azure
 Центр безопасности собирает данные c ваших виртуальных машин Azure, масштабируемых наборов виртуальных машин, контейнеров IaaS и компьютеров, не относящихся к Azure (в том числе локальных), чтобы отслеживать уязвимости и угрозы безопасности. Для сбора данных используется агент Log Analytics, который считывает различные конфигурации, связанные с безопасностью, и журналы событий с компьютера, а также копирует данные в рабочую область для анализа. К примерам таких данных относятся тип и версия операционной системы, журналы операционной системы (журналы событий Windows), выполняющиеся процессы, имя компьютера, IP-адреса и имя вошедшего пользователя.
@@ -199,7 +199,7 @@ ms.locfileid: "83772970"
 <br>
 Для компьютеров Linux одновременная работа с несколькими поставщиками услуг еще не поддерживается, поэтому при обнаружении существующей установки агента автоматическая подготовка не выполняется, и конфигурация компьютера не будет изменена.
 <br>
-Для существующих компьютеров в подписках, подключенных к Центру безопасности до 17 марта 2019 года, при обнаружении существующего агента расширение агента Log Analytics не будет установлено, и конфигурация компьютера не будет изменена. Рекомендации по устранению проблем установки агента на таких компьютерах см. в разделе "Устранение проблем работоспособности агента мониторинга на ваших компьютерах".
+Для существующих компьютеров в подписках, подключенных к центру безопасности до 17 2019 марта, когда будет обнаружен существующий агент, расширение агента Log Analytics не будет установлено и компьютер не будет затронуты. Рекомендации по устранению проблем установки агента на таких компьютерах см. в разделе "Устранение проблем работоспособности агента мониторинга на ваших компьютерах".
 
   
 - Агент System Center Operations Manager уже установлен на компьютере<br>
@@ -237,58 +237,44 @@ ms.locfileid: "83772970"
 ### <a name="operations-management-suite-vm-extension-deployment"></a>Развертывание расширения виртуальной машины Operations Management Suite 
 
 Вручную установите агент Log Analytics, чтобы Центр безопасности мог собирать данные безопасности с ваших виртуальных машин, а также предоставлять рекомендации и предупреждения.
-1. Выберите для параметра "Автоматическая подготовка" значение "ВЫКЛ".
-2. Создайте рабочую область и выберите ценовую категорию для установки агента Log Analytics:
 
-   а.  В главном меню центра безопасности выберите пункт **Политика безопасности**.
-     
-   b.  Выберите рабочую область, в которой требуется подключить агент. Убедитесь, что рабочая область находится в той же подписке, которая используется в центре безопасности, а у вас есть разрешения на чтение и запись в этой рабочей области.
-       ![Выбор рабочей области][8]
-3. Выберите ценовую категорию.
-   ![Выбор ценовой категории][9] 
-   >[!NOTE]
-   >Если в рабочей области уже включено решение **Security** или **SecurityCenterFree**, ценовая категория будет задана автоматически. 
+1. Отключите автоматическую подготовку.
+
+1. При необходимости создайте рабочую область.
+
+1. Укажите рабочую область, в которой вы устанавливаете агент Log Analytics для стандартной ценовой категории:
+
+    1. В меню центра безопасности выберите пункт **параметры ценообразования &**.
+
+    1. Укажите рабочую область, в которой вы устанавливаете агент. Убедитесь, что рабочая область находится в той же подписке, которая используется в центре безопасности, а у вас есть разрешения на чтение и запись в этой рабочей области.
+
+    1. Задайте ценовую категорию "Стандартный" и нажмите кнопку **сохранить**.
+
+        ![Задание ценовой категории "Стандартный" для рабочей области](.\media\security-center-enable-data-collection\workspace-to-standard-tier.gif)
+
+       >[!NOTE]
+       >Если в рабочей области уже включено решение **Security** или **SecurityCenterFree**, ценовая категория будет задана автоматически. 
    > 
 
-4. Если вы хотите развернуть агенты на новых виртуальных машинах с помощью шаблона Resource Manager, установите расширение виртуальной машины OMS:
+1. Если вы хотите развернуть агенты на новых виртуальных машинах с помощью шаблона диспетчер ресурсов, установите агент Log Analytics.
 
-   а.  [Установка расширения виртуальной машины OMS для Windows](../virtual-machines/extensions/oms-windows.md)
+   а.  [Установка агента Log Analytics для Windows](../virtual-machines/extensions/oms-windows.md)
     
-   b.  [Установка расширения виртуальной машины OMS для Linux](../virtual-machines/extensions/oms-linux.md)
-5. Чтобы развернуть расширения на имеющихся виртуальных машинах, следуйте инструкциям из статьи [Сбор данных о виртуальных машинах Azure](../azure-monitor/learn/quick-collect-azurevm.md).
+   b.  [Установка агента Log Analytics для Linux](../virtual-machines/extensions/oms-linux.md)
+
+1. Чтобы развернуть расширения на имеющихся виртуальных машинах, следуйте инструкциям из статьи [Сбор данных о виртуальных машинах Azure](../azure-monitor/learn/quick-collect-azurevm.md).
 
    > [!NOTE]
    > Действия из раздела **Сбор данных о событиях и производительности** выполнять необязательно.
    >
-6. Чтобы развернуть расширение с помощью PowerShell, используйте следующий пример PowerShell.
-   
-   [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-   
-   1. Перейдите к **Log Analytics** и выберите **Дополнительные параметры**.
-    
-      ![Настройка Log Analytics][11]
 
-   2. Скопируйте значения из полей **WorkspaceID** и **Первичный ключ**.
-  
-      ![Копирование значений][12]
+1. Чтобы использовать PowerShell для развертывания расширения, используйте инструкции из документации по виртуальным машинам:
 
-   3. Заполните общедоступную и частную конфигурации следующими значениями:
-     
-           $PublicConf = @{
-               "workspaceId"= "<WorkspaceID value>"
-           }
- 
-           $PrivateConf = @{
-               "workspaceKey"= "<Primary key value>"
-           }
+    - [Для компьютеров Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/oms-windows?toc=%2Fazure%2Fazure-monitor%2Ftoc.json#powershell-deployment)
 
-      - При установке на виртуальной машине Windows:
-        
-            Set-AzVMExtension -ResourceGroupName $vm.ResourceGroupName -VMName $vm.Name -Name "MicrosoftMonitoringAgent" -Publisher "Microsoft.EnterpriseCloud.Monitoring" -ExtensionType "MicrosoftMonitoringAgent" -TypeHandlerVersion '1.0' -Location $vm.Location -settings $PublicConf -ProtectedSettingString $PrivateConf -ForceRerun True 
-    
-      - При установке на виртуальной машине Linux:
-        
-            Set-AzVMExtension -ResourceGroupName $vm1.ResourceGroupName -VMName $vm1.Name -Name "OmsAgentForLinux" -Publisher "Microsoft.EnterpriseCloud.Monitoring" -ExtensionType "OmsAgentForLinux" -TypeHandlerVersion '1.0' -Location $vm.Location -Settingstring $PublicConf -ProtectedSettingString $PrivateConf -ForceRerun True`
+    - [Для компьютеров Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/oms-linux?toc=%2Fazure%2Fazure-monitor%2Ftoc.json#azure-cli-deployment)
+
+
 
 > [!NOTE]
 > Инструкции о том, как подключиться к центру безопасности с помощью PowerShell, см. в разделе [Automate onboarding of Azure Security Center using PowerShell](security-center-powershell-onboarding.md) (Автоматизация подключения центра безопасности Azure с помощью PowerShell).

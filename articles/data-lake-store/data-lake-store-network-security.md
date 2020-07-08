@@ -8,17 +8,17 @@ manager: mtillman
 editor: cgronlun
 ms.service: data-lake-store
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 10/09/2018
 ms.author: elsung
-ms.openlocfilehash: 7d6c826df2a509ffb378809e3682073bd5ab1301
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9066c53fce750b1c8402c5a0ccbd10debd5ec431
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "60612555"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85855708"
 ---
 # <a name="virtual-network-integration-for-azure-data-lake-storage-gen1"></a>Интеграция с виртуальной сетью для Azure Data Lake Storage 1-го поколения
 
@@ -46,17 +46,17 @@ ms.locfileid: "60612555"
 
 **Общедоступный IP-адрес ADLS**. Используйте общедоступный IP-адрес для целевых учетных записей ADLS 1-го поколения. IP-адреса для учетных записей Azure Data Lake Storage 1-го поколения можно определить, [разрешая DNS-имена](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-connectivity-from-vnets#enabling-connectivity-to-azure-data-lake-storage-gen1-from-vms-with-restricted-connectivity) учетных записей. Создайте отдельную запись для каждого адреса.
 
-    ```azurecli
-    # Create a route table for your resource group.
-    az network route-table create --resource-group $RgName --name $RouteTableName
-    
-    # Create route table rules for Data Lake Storage public IP addresses.
-    # There's one rule per Data Lake Storage public IP address. 
-    az network route-table route create --name toADLSregion1 --resource-group $RgName --route-table-name $RouteTableName --address-prefix <ADLS Public IP Address> --next-hop-type Internet
-    
-    # Update the virtual network, and apply the newly created route table to it.
-    az network vnet subnet update --vnet-name $VnetName --name $SubnetName --resource-group $RgName --route-table $RouteTableName
-    ```
+```azurecli
+# Create a route table for your resource group.
+az network route-table create --resource-group $RgName --name $RouteTableName
+
+# Create route table rules for Data Lake Storage public IP addresses.
+# There's one rule per Data Lake Storage public IP address. 
+az network route-table route create --name toADLSregion1 --resource-group $RgName --route-table-name $RouteTableName --address-prefix <ADLS Public IP Address> --next-hop-type Internet
+
+# Update the virtual network, and apply the newly created route table to it.
+az network vnet subnet update --vnet-name $VnetName --name $SubnetName --resource-group $RgName --route-table $RouteTableName
+```
 
 ## <a name="data-exfiltration-from-the-customer-virtual-network"></a>Утечка данных из виртуальной сети клиента
 
@@ -81,7 +81,7 @@ ms.locfileid: "60612555"
   
 - Данные файлов и папок в учетной записи ADLS 1-го поколения с поддержкой интеграции с виртуальной сетью недоступны на портале. Это включает доступ из виртуальной машины, которая находится в пределах виртуальной сети, и такие действия, как использование обозревателя данных. Действия по управлению учетными записями будут работать. Данные файлов и папок в учетной записи ADLS с интеграцией с виртуальной сетью доступны через все ресурсы вне портала. Это пакет SDK для доступа, скрипты PowerShell, другие службы Azure (когда поступают не с портала) и т. д. 
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 ### <a name="step-1-configure-your-virtual-network-to-use-an-azure-ad-service-endpoint"></a>Шаг 1. Настройка виртуальной сети для использования конечной точки службы AAD
 
@@ -128,7 +128,7 @@ ms.locfileid: "60612555"
 
     ![Выбор виртуальной сети и подсетей.](media/data-lake-store-network-security/config-adls-3.png)
 
-6.  Убедитесь, что виртуальные сети и подсети отображаются в списке корректно. Щелкните **Сохранить**.
+6.  Убедитесь, что виртуальные сети и подсети отображаются в списке корректно. Нажмите кнопку **Сохранить**.
 
     ![Сохранение нового правила](media/data-lake-store-network-security/config-adls-4.png)
 

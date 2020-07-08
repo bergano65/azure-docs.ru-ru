@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 05/19/2020
-ms.openlocfilehash: 53cfb983579c8a02ed6c1d80ff4821efa5950298
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.openlocfilehash: 1996f607d05cb84a80acbb105504ce0b5d3bb0c1
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83848217"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85856895"
 ---
 # <a name="algorithm--module-reference-for-azure-machine-learning-designer-preview"></a>Справочник по модулям и алгоритмам для конструктора Машинного обучения Azure (предварительная версия)
 
@@ -34,7 +34,7 @@ ms.locfileid: "83848217"
 
 | Функциональность | Описание | Модуль |
 | --- |--- | --- |
-| Ввод и вывод данных | Перемещение данных из облачных источников в конвейер. Запишите результаты или промежуточные данные в службу хранилища Azure, базу данных SQL или Hive во время выполнения конвейера или используйте облачное хранилище для обмена данными между конвейерами.  | [Ввод данных вручную](enter-data-manually.md) <br/> [Экспорт данных](export-data.md) <br/> [Импорт данных](import-data.md) |
+| Ввод и вывод данных | Перемещение данных из облачных источников в конвейер. Запишите результаты или промежуточные данные в службу хранилища Azure, базу данных SQL или Hive, во время выполнения конвейера или используйте облачное хранилище для обмена данными между конвейерами.  | [Ввод данных вручную](enter-data-manually.md) <br/> [Экспорт данных](export-data.md) <br/> [Импорт данных](import-data.md) |
 | Преобразование данных | Операции с данными, которые являются уникальными для машинного обучения, такие как нормализация или группирование данных, сокращение размерности и преобразование данных между разными форматами файлов.| [Добавление столбцов](add-columns.md) <br/> [Добавление строк](add-rows.md) <br/> [Применение математической операции](apply-math-operation.md) <br/> [Применение преобразования SQL](apply-sql-transformation.md) <br/> [Очистка недостающих данных](clean-missing-data.md) <br/> [Обрезка значений](clip-values.md) <br/> [Преобразование в CSV-файл](convert-to-csv.md) <br/> [Преобразование в набор данных](convert-to-dataset.md) <br/> [Преобразование в значения индикатора](convert-to-indicator-values.md) <br/> [Изменение метаданных](edit-metadata.md) <br/> [Группирование данных в ячейки](group-data-into-bins.md) <br/> [Объединение данных](join-data.md) <br/> [Нормализация данных](normalize-data.md) <br/> [Секционирование и выборка](partition-and-sample.md)  <br/> [Удаление дублирующихся строк](remove-duplicate-rows.md) <br/> [SMOTE](smote.md) <br/> [Преобразование "Выбор столбцов"](select-columns-transform.md) <br/> [Выбор столбцов в наборе данных](select-columns-in-dataset.md) <br/> [Split Data](split-data.md) (Разделение данных); |
 | Выбор компонентов | Выбор важных и полезных функций для построения аналитической модели. | [Выбор признаков с помощью фильтра](filter-based-feature-selection.md) <br/> [Значение функции перестановки](permutation-feature-importance.md) |
 | Статистические функции | Широкий спектр статистических методов, относящихся к обработке и анализу данных. | [Сведение данных](summarize-data.md)|
@@ -51,12 +51,13 @@ ms.locfileid: "83848217"
 
 | Функциональность | Описание | Модуль |
 | --- |--- | --- |
-| Обучение модели | Обработка данных с помощью алгоритма. |  [Обучение модели кластеризации](train-clustering-model.md) <br/> [Train Model](train-model.md) (Обучение модели);  <br/> [Настройка гиперпараметров модели](tune-model-hyperparameters.md) |
-| Анализ и оценка модели | Измерение точности обученной модели. | [Применение преобразования](apply-transformation.md) <br/> [Назначение данных в кластеры](assign-data-to-clusters.md) <br/> [Перекрестная проверка модели](cross-validate-model.md) <br/> [Анализ модели](evaluate-model.md) <br/> [Оценка модели](score-model.md) |
+| Обучение модели | Обработка данных с помощью алгоритма. |  [Обучение модели кластеризации](train-clustering-model.md) <br/> [Train Model](train-model.md) (Обучение модели); <br/> [Обучение модели PyTorch](train-pytorch-model.md) <br/> [Настройка гиперпараметров модели](tune-model-hyperparameters.md) |
+| Анализ и оценка модели | Измерение точности обученной модели. | [Применение преобразования](apply-transformation.md) <br/> [Назначение данных в кластеры](assign-data-to-clusters.md) <br/> [Перекрестная проверка модели](cross-validate-model.md) <br/> [Анализ модели](evaluate-model.md) <br/> [Оценка моделей изображений](score-image-model.md) <br/> [Оценка модели](score-model.md) |
 | Язык Python | Внедрение кода в модуль для интеграции Python с вашим конвейером. | [Создание модели Python](create-python-model.md) <br/> [Выполнение скриптов Python](execute-python-script.md) |
 | Язык R | Внедрение кода в модуль для интеграции R с вашим конвейером. | [Выполнение скрипта R](execute-r-script.md) |
-| Анализ текста | Специализированные вычислительные средства для работы со структурированным и неструктурированным текстом. |  [Преобразование слов в векторы](convert-word-to-vector.md) <br/> [Извлечение N-грамм из текста](extract-n-gram-features-from-text.md) <br/> [Хэширование признаков](feature-hashing.md) <br/> [Предварительная обработка текста](preprocess-text.md) <br/> [Латентное распределение Дирихле (LDA)](latent-dirichlet-allocation.md) |
-| Рекомендация | Построение моделей рекомендаций. | [Оценка рекомендателя](evaluate-recommender.md) <br/> [Оценка рекомендателя SVD](score-svd-recommender.md) <br/> [Обучение рекомендателя SVD](train-SVD-recommender.md) |
+| Анализ текста | Специализированные вычислительные средства для работы со структурированным и неструктурированным текстом. |  [Преобразование слов в векторы](convert-word-to-vector.md) <br/> [Извлечение N-грамм из текста](extract-n-gram-features-from-text.md) <br/> [Хэширование признаков](feature-hashing.md) <br/> [Предварительная обработка текста](preprocess-text.md) <br/> [Латентное распределение Дирихле (LDA)](latent-dirichlet-allocation.md) <br/> [Оценка модели Vowpal Wabbit](score-vowpal-wabbit-model.md) <br/> [Обучение модели Vowpal Wabbit](train-vowpal-wabbit-model.md)|
+| Компьютерное зрение | Модули, связанные с предварительной обработкой данных образа и распознаванием изображений. |  [Применение преобразования изображений](apply-image-transformation.md) <br/> [Преобразование в каталог изображений](convert-to-image-directory.md) <br/> [Инициализация преобразования изображений](init-image-transformation.md) <br/> [Разделение каталога изображений](split-image-directory.md) <br/> [DenseNet](densenet.md) <br/> [ResNet](resnet.md) |
+| Рекомендация | Построение моделей рекомендаций. | [Оценка рекомендателя](evaluate-recommender.md) <br/> [Оценка рекомендателя SVD](score-svd-recommender.md) <br/> [Оценка Wide and Deep Recommender](score-wide-and-deep-recommender.md)<br/> [Обучение рекомендателя SVD](train-SVD-recommender.md) <br/> [Обучение Wide and Deep Recommender](train-wide-and-deep-recommender.md)|
 | Обнаружение аномалий | Построение моделей обнаружения аномалий. | [Обнаружение аномалий на основе анализа первичных компонентов](pca-based-anomaly-detection.md) <br/> [Обучение модели обнаружения аномалий](train-anomaly-detection-model.md) |
 
 

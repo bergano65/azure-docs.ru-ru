@@ -2,13 +2,13 @@
 title: Подключение клиента к системе делегированного управления ресурсами Azure
 description: Узнайте, как подключить клиента к системе делегированного управления ресурсами Azure, предоставив доступ к ресурсам и возможность управления ими через собственный клиент.
 ms.date: 05/26/2020
-ms.topic: conceptual
-ms.openlocfilehash: a6cdfea7e0520aa704e70a12784f7a7ba5d6aa6d
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
-ms.translationtype: HT
+ms.topic: how-to
+ms.openlocfilehash: 149398a822d5aa21335be4122e92c96800d94255
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83871122"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85920915"
 ---
 # <a name="onboard-a-customer-to-azure-delegated-resource-management"></a>Подключение клиента к системе делегированного управления ресурсами Azure
 
@@ -189,7 +189,7 @@ az role definition list --name "<roleName>" | grep name
 }
 ```
 
-Последняя авторизация в приведенном выше примере добавляет параметр **principalId** с ролью "Администратор доступа пользователя" (18d7d88d-d35e-4fb5-a5c3-7773c20a72d9). При назначении этой роли вы должны включить свойство **delegatedRoleDefinitionIds** и одну или несколько встроенных ролей. Пользователь, созданный с этой авторизацией, сможет назначить эти встроенные роли [управляемым удостоверениям](../../active-directory/managed-identities-azure-resources/overview.md) в арендаторе клиента, что необходимо для [развертывания политик, которые можно исправить](deploy-policy-remediation.md). К этому пользователю не будут применяться никакие другие разрешения, обычно связанные с ролью "Администратор доступа пользователей".
+Последняя авторизация в приведенном выше примере добавляет параметр **principalId** с ролью "Администратор доступа пользователя" (18d7d88d-d35e-4fb5-a5c3-7773c20a72d9). При назначении этой роли вы должны включить свойство **delegatedRoleDefinitionIds** и одну или несколько встроенных ролей. Пользователь, созданный с этой авторизацией, сможет назначить эти встроенные роли [управляемым удостоверениям](../../active-directory/managed-identities-azure-resources/overview.md) в арендаторе клиента, что необходимо для [развертывания политик, которые можно исправить](deploy-policy-remediation.md).  Пользователь также может создавать обращения в службу поддержки.  К этому пользователю не будут применяться никакие другие разрешения, обычно связанные с ролью "Администратор доступа пользователей".
 
 ## <a name="deploy-the-azure-resource-manager-templates"></a>Развертывание шаблонов Azure Resource Manager
 
@@ -198,9 +198,9 @@ az role definition list --name "<roleName>" | grep name
 Так как это развертывание уровня подписки, его невозможно инициировать на портале Azure. Развертывание можно выполнить с помощью PowerShell или Azure CLI, как показано ниже.
 
 > [!IMPORTANT]
-> Развертывание на уровне подписки должно быть выполнено с помощью негостевой учетной записи в арендаторе клиента, которая имеет [встроенную роль владельца](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) для подключаемой подписки (или которая содержит подключаемые группы ресурсов). Чтобы найти пользователей, которые могут делегировать подписку, пользователь клиента может выбрать подписку на портале Azure, открыть **управление доступом (IAM)** и [просмотреть всех пользователей с ролью владельца](../../role-based-access-control/role-assignments-list-portal.md#list-owners-of-a-subscription).
+> Развертывание на уровне подписки должно быть выполнено с помощью негостевой учетной записи в арендаторе клиента, которая имеет [встроенную роль владельца](../../role-based-access-control/built-in-roles.md#owner) для подключаемой подписки (или которая содержит подключаемые группы ресурсов). Чтобы найти пользователей, которые могут делегировать подписку, пользователь клиента может выбрать подписку на портале Azure, открыть **управление доступом (IAM)** и [просмотреть всех пользователей с ролью владельца](../../role-based-access-control/role-assignments-list-portal.md#list-owners-of-a-subscription).
 >
-> Если подписка была создана в рамках [программы "Поставщик облачных решений" (CSP)](../concepts/cloud-solution-provider.md), развертывание может выполнить любой пользователь с ролью [агента администратора](https://docs.microsoft.com/partner-center/permissions-overview#manage-commercial-transactions-in-partner-center-azure-ad-and-csp-roles) в арендаторе поставщика услуг.
+> Если подписка была создана в рамках [программы "Поставщик облачных решений" (CSP)](../concepts/cloud-solution-provider.md), развертывание может выполнить любой пользователь с ролью [агента администратора](/partner-center/permissions-overview#manage-commercial-transactions-in-partner-center-azure-ad-and-csp-roles) в арендаторе поставщика услуг.
 
 ### <a name="powershell"></a>PowerShell
 

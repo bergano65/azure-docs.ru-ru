@@ -4,29 +4,25 @@ description: Интеграция приложения со Службой пр�
 author: ccompy
 ms.assetid: 90bc6ec6-133d-4d87-a867-fcf77da75f5a
 ms.topic: article
-ms.date: 04/16/2020
+ms.date: 06/08/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 9b7df06ea7ff07907a292bdcc32e66aafa44ae68
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
-ms.translationtype: HT
+ms.openlocfilehash: 7b6b310cdc03cb45fba6ba06dbcf2add9818f6cf
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84170789"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85857028"
 ---
 # <a name="integrate-your-app-with-an-azure-virtual-network"></a>Интеграция приложения с виртуальной сетью Azure
 
-В этой статье описана функция службы приложений Azure — интеграция с виртуальной сетью (VNet). Кроме того, приведены инструкции по ее настройке для приложений в [Службе приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714). [Виртуальные сети Azure][VNETOverview] позволяют размещать многие ресурсы Azure в сети, недоступной из Интернета.
+В этой статье описана функция службы приложений Azure — интеграция с виртуальной сетью (VNet). Кроме того, приведены инструкции по ее настройке для приложений в [Службе приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714). [Виртуальные сети Azure][VNETOverview] позволяют размещать многие ресурсы Azure в сети, недоступной из Интернета. Функция интеграции с виртуальной сетью позволяет приложениям получать доступ к ресурсам в виртуальной сети или через нее. Интеграция с виртуальной сетью не обеспечивает частный доступ к приложениям.
 
-Служба приложений Azure реализована в виде двух моделей.
+Служба приложений Azure имеет две разновидности функции интеграции с виртуальной сетью:
 
 [!INCLUDE [app-service-web-vnet-types](../../includes/app-service-web-vnet-types.md)]
 
 ## <a name="enable-vnet-integration"></a>Активация интеграции виртуальной сети
-
-> [!NOTE]
-> Если колонка "Сеть" в меню для ваших Linux-приложений отключена (имеет серый цвет), это означает, что данная возможность пока что недоступна.
->
 
 1. Откройте раздел интерфейса **Сеть** на портале Службы приложений. В разделе **Интеграция виртуальной сети** выберите **Щелкните здесь для настройки**.
 
@@ -75,8 +71,8 @@ ms.locfileid: "84170789"
 
 Интеграция с виртуальной сетью на базе шлюза недоступна:
 
-* для приложений Linux;
 * для виртуальных сетей с подключением на базе Microsoft Azure ExpressRoute;
+* Из приложения Linux
 * для доступа к защищенным ресурсам конечной точки службы.
 * в режиме сосуществования со шлюзом, который поддерживает как ExpressRoute, так и VPN типа "точка — сеть" или "сеть — сеть".
 
@@ -155,25 +151,27 @@ ms.locfileid: "84170789"
 
 Для интеграции с региональной виртуальной сетью поддерживается интерфейс командной строки (CLI). Для доступа к указанным ниже командам [установите Azure CLI][installCLI].
 
-        az webapp vnet-integration --help
+```azurecli
+az webapp vnet-integration --help
 
-        Group
-            az webapp vnet-integration : Methods that list, add, and remove virtual network integrations
-            from a webapp.
-                This command group is in preview. It may be changed/removed in a future release.
-        Commands:
-            add    : Add a regional virtual network integration to a webapp.
-            list   : List the virtual network integrations on a webapp.
-            remove : Remove a regional virtual network integration from webapp.
+Group
+    az webapp vnet-integration : Methods that list, add, and remove virtual network
+    integrations from a webapp.
+        This command group is in preview. It may be changed/removed in a future release.
+Commands:
+    add    : Add a regional virtual network integration to a webapp.
+    list   : List the virtual network integrations on a webapp.
+    remove : Remove a regional virtual network integration from webapp.
 
-        az appservice vnet-integration --help
+az appservice vnet-integration --help
 
-        Group
-            az appservice vnet-integration : A method that lists the virtual network integrations used in an
-            appservice plan.
-                This command group is in preview. It may be changed/removed in a future release.
-        Commands:
-            list : List the virtual network integrations used in an appservice plan.
+Group
+    az appservice vnet-integration : A method that lists the virtual network
+    integrations used in an appservice plan.
+        This command group is in preview. It may be changed/removed in a future release.
+Commands:
+    list : List the virtual network integrations used in an appservice plan.
+```
 
 При интеграции с виртуальной сетью на базе шлюза службу приложений можно интегрировать с виртуальной сетью Azure с помощью PowerShell. Готовый к использованию скрипт см. в статье о [подключении приложения в службе приложений Azure к виртуальной сети Azure](https://gallery.technet.microsoft.com/scriptcenter/Connect-an-app-in-Azure-ab7527e3).
 

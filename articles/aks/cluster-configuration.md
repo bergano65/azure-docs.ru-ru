@@ -3,13 +3,15 @@ title: Настройка кластера в Службе Azure Kubernetes (AKS
 description: Сведения о том, как настроить кластер в Службе Kubernetes Azure (AKS)
 services: container-service
 ms.topic: conceptual
-ms.date: 03/12/2020
-ms.openlocfilehash: fe5ce13d9db8f2bc2231f87de7e602e63d239bfa
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
-ms.translationtype: HT
+ms.date: 07/02/2020
+ms.author: jpalma
+author: palma21
+ms.openlocfilehash: 3c8d374935c777548d1dc0d43ccd131fe21fd509
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83725152"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85856072"
 ---
 # <a name="configure-an-aks-cluster"></a>Настройка кластера AKS.
 
@@ -19,9 +21,14 @@ ms.locfileid: "83725152"
 
 Теперь AKS поддерживает Ubuntu 18.04 в качестве операционной системы узла (предварительная версия). В период действия предварительной версии доступны Ubuntu 16.04 и Ubuntu 18.04.
 
+> [!IMPORTANT]
+> Пулы узлов, созданные по умолчанию в Kubernetes v 18E или более поздней версии, имеют требуемый `AKS Ubuntu 18.04` образ узла. Пулы узлов в поддерживаемой версии Kubernetes меньше, чем 1,18, получают `AKS Ubuntu 16.04` как образ узла, но будут обновлены до, `AKS Ubuntu 18.04` когда версия Kubernetes пула узлов обновится до версии v 18E или выше.
+> 
+> Настоятельно рекомендуется протестировать рабочие нагрузки в пулах узлов AKS Ubuntu 18,04, прежде чем использовать кластеры на 1,18 или более поздней версии. Узнайте о том, как [тестировать пулы узлов Ubuntu 18,04](#use-aks-ubuntu-1804-existing-clusters-preview).
+
 Нужно установить следующие ресурсы:
 
-- Azure CLI 2.2.0 или более поздней версии;
+- [Azure CLI][azure-cli-install]версии 2.2.0 или более поздней.
 - расширение aks-preview 0.4.35.
 
 Чтобы установить расширение aks-preview 0.4.35 или более поздней версии, выполните следующие команды Azure CLI:
@@ -49,26 +56,182 @@ az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/U
 az provider register --namespace Microsoft.ContainerService
 ```
 
-### <a name="new-clusters"></a>Новые кластеры
+### <a name="use-aks-ubuntu-1804-on-new-clusters-preview"></a>Использование AKS Ubuntu 18,04 в новых кластерах (Предварительная версия)
 
 При создании кластера выберите для него ОС Ubuntu 18.04. Установите флаг `--aks-custom-headers`, чтобы назначить Ubuntu 18.04 операционной системой по умолчанию.
 
-```azure-cli
+```azurecli
 az aks create --name myAKSCluster --resource-group myResourceGroup --aks-custom-headers CustomizedUbuntu=aks-ubuntu-1804
 ```
 
-Если вы предпочитаете обычный кластер Ubuntu 16.04, просто не указывайте пользовательский тег `--aks-custom-headers`.
+Если вы хотите создать кластеры с образом AKS Ubuntu 16,04, это можно сделать, опустив пользовательский `--aks-custom-headers` тег.
 
-### <a name="existing-clusters"></a>Существующие кластеры
+### <a name="use-aks-ubuntu-1804-existing-clusters-preview"></a>Использование существующих кластеров AKS Ubuntu 18,04 (Предварительная версия)
 
 Настройте для нового пула использование Ubuntu 18.04. Установите флаг `--aks-custom-headers`, чтобы назначить Ubuntu 18.04 операционной системой по умолчанию для этого пула узлов.
 
-```azure-cli
+```azurecli
 az aks nodepool add --name ubuntu1804 --cluster-name myAKSCluster --resource-group myResourceGroup --aks-custom-headers CustomizedUbuntu=aks-ubuntu-1804
 ```
 
-Если вы предпочитаете обычный пул узлов Ubuntu 16.04, просто не указывайте пользовательский тег `--aks-custom-headers`.
+Если вы хотите создать пулы узлов с помощью образа AKS Ubuntu 16,04, это можно сделать, опустив пользовательский `--aks-custom-headers` тег.
 
+
+## <a name="container-runtime-configuration-preview"></a>Настройка среды выполнения контейнера (Предварительная версия)
+
+Среда выполнения контейнера — это программное обеспечение, выполняющее контейнеры и управляющее образами контейнеров на узле. Среда выполнения помогает отказаться от функций, связанных с sys-Calls или операционной системой (ОС), для запуска контейнеров в Linux или Windows. Сегодня AKS использует [значок Кита](https://mobyproject.org/) (вышестоящий DOCKER) в качестве среды выполнения контейнера. 
+    
+![DOCKER CRI](media/cluster-configuration/docker-cri.png)
+
+[`Containerd`](https://containerd.io/)— Это базовая среда выполнения класса [OCI](https://opencontainers.org/) (открытая инициатива по открытому контейнеру), которая предоставляет минимальный набор необходимых функций для выполнения контейнеров и управления образами на узле. Он был [передан в](https://www.cncf.io/announcement/2017/03/29/containerd-joins-cloud-native-computing-foundation/) облачную основу вычислений (кнкф) в марте 2017. Текущая версия значок Кита, используемая в настоящее время в AKS, уже использует и построена на основе `containerd` , как показано выше. 
+
+При использовании пулов узлов и узлов, основанных на контейнерах, вместо того `dockershim` , чтобы обращаться к, kubelet будет напрямую взаимодействовать `containerd` через подключаемый модуль CRI (интерфейс среды выполнения контейнера), удаляя дополнительные прыжки в потоке по сравнению с реализацией DOCKER CRI. Таким образом, вы увидите лучшую задержку при запуске модуля и меньшее использование ресурсов (ЦП и памяти).
+
+При использовании `containerd` для узлов AKS задержка запуска Pod повышается, и потребление ресурсов узла уменьшается в результате выполнения контейнера. Эти улучшения реализованы в этой новой архитектуре, где kubelet напрямую обращается к `containerd` подключаемому модулю CRI, а в значок Кита/DOCKER Architecture kubelet будет взаимодействовать с `dockershim` подсистемой DOCKER и до достижения этого места `containerd` , что потребует дополнительных прыжков в потоке.
+
+![DOCKER CRI](media/cluster-configuration/containerd-cri.png)
+
+`Containerd`работает с каждой общедоступной версией kubernetes в AKS, а в каждой вышестоящей версии kubernetes выше 1,10 и поддерживает все функции kubernetes и AKS.
+
+> [!IMPORTANT]
+> После того как `containerd` общедоступна в AKS, она будет доступна по умолчанию и доступен только для среды выполнения контейнера в новых кластерах. Вы по-прежнему можете использовать значок Кита нодепулс и кластеры в старых поддерживаемых версиях до тех пор, пока они не выйдут из поддержки. 
+> 
+> Мы рекомендуем протестировать рабочие нагрузки на `containerd` пулах узлов перед обновлением или созданием новых кластеров с помощью этой среды выполнения контейнеров.
+
+### <a name="use-containerd-as-your-container-runtime-preview"></a>Использование `containerd` в качестве среды выполнения контейнеров (Предварительная версия)
+
+Необходимо иметь следующие предварительные требования:
+
+- [Azure CLI][azure-cli-install], установленная версия 2.8.0 или более поздняя
+- Расширение AKS-Preview версии 0.4.53 или более поздней.
+- `UseCustomizedContainerRuntime`Зарегистрированный флаг функции
+- `UseCustomizedUbuntuPreview`Зарегистрированный флаг функции
+
+Чтобы установить расширение AKS-Preview 0.4.53 или более позднюю версию, используйте следующие Azure CLI команды:
+
+```azurecli
+az extension add --name aks-preview
+az extension list
+```
+
+Зарегистрируйте `UseCustomizedContainerRuntime` `UseCustomizedUbuntuPreview` компоненты и:
+
+```azurecli
+az feature register --name UseCustomizedContainerRuntime --namespace Microsoft.ContainerService
+az feature register --name UseCustomizedUbuntuPreview --namespace Microsoft.ContainerService
+
+```
+
+Состояние **Registered** (Зарегистрировано) может появиться через несколько минут. Состояние регистрации можно проверить с помощью команды [az feature list](https://docs.microsoft.com/cli/azure/feature?view=azure-cli-latest#az-feature-list):
+
+```azurecli
+az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/UseCustomizedContainerRuntime')].{Name:name,State:properties.state}"
+az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/UseCustomizedUbuntuPreview')].{Name:name,State:properties.state}"
+```
+
+Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](https://docs.microsoft.com/cli/azure/provider?view=azure-cli-latest#az-provider-register):
+
+```azurecli
+az provider register --namespace Microsoft.ContainerService
+```  
+
+### <a name="use-containerd-on-new-clusters-preview"></a>Использовать `containerd` в новых кластерах (Предварительная версия)
+
+Настройте кластер для использования `containerd` при создании кластера. Используйте `--aks-custom-headers` флаг, чтобы задать в `containerd` качестве среды выполнения контейнера.
+
+> [!NOTE]
+> `containerd`Среда выполнения поддерживается только для узлов и пулов узлов с помощью образа AKS Ubuntu 18,04.
+
+```azurecli
+az aks create --name myAKSCluster --resource-group myResourceGroup --aks-custom-headers CustomizedUbuntu=aks-ubuntu-1804,ContainerRuntime=containerd
+```
+
+Если вы хотите создавать кластеры с помощью среды выполнения значок Кита (DOCKER), это можно сделать, опустив пользовательский `--aks-custom-headers` тег.
+
+### <a name="use-containerd-on-existing-clusters-preview"></a>Использование `containerd` в существующих кластерах (Предварительная версия)
+
+Настройте новый пул узлов для использования `containerd` . Используйте `--aks-custom-headers` флаг, чтобы задать в `containerd` качестве среды выполнения для этого пула узлов.
+
+```azurecli
+az aks nodepool add --name ubuntu1804 --cluster-name myAKSCluster --resource-group myResourceGroup --aks-custom-headers CustomizedUbuntu=aks-ubuntu-1804,ContainerRuntime=containerd
+```
+
+Если вы хотите создать пулы узлов с помощью среды выполнения значок Кита (DOCKER), это можно сделать, опустив пользовательский `--aks-custom-headers` тег.
+
+
+### <a name="containerd-limitationsdifferences"></a>`Containerd`ограничения и различия
+
+* Чтобы использовать в `containerd` качестве среды выполнения контейнера, в качестве базового образа ОС необходимо использовать AKS Ubuntu 18,04.
+* Хотя набор инструментов DOCKER по-прежнему существует на узлах, Kubernetes использует в `containerd` качестве среды выполнения контейнера. Таким образом, поскольку значок Кита/DOCKER не управляет контейнерами, созданными Kubernetes на узлах, вы не можете просматривать контейнеры и взаимодействовать с ними с помощью команд DOCKER (например `docker ps` ,) или API DOCKER.
+* Для для `containerd` [`crictl`](https://kubernetes.io/docs/tasks/debug-application-cluster/crictl) **устранения неполадок** в Pod, контейнерах и образах контейнеров на узлах Kubernetes рекомендуется использовать в качестве замещающего интерфейса командной строки вместо DOCKER CLI (например, `crictl ps` ). 
+   * Он не предоставляет полный набор функций интерфейса командной строки DOCKER. Он предназначен только для устранения неполадок.
+   * `crictl`предлагает более kubernetes представление контейнеров с такими концепциями, как модули Pod и т. д.
+* `Containerd`Настраивает ведение журнала с использованием стандартизированного `cri` формата ведения журнала (который отличается от используемого в настоящее время драйвера JSON DOCKER). Ваше решение для ведения журнала должно поддерживать `cri` Формат ведения журнала (например, [Azure Monitor для контейнеров](../azure-monitor/insights/container-insights-enable-new-cluster.md)).
+* Вы больше не можете получить доступ к подсистеме DOCKER `/var/run/docker.sock` или использовать DOCKER-in-DOCKER (динд).
+  * Если в данный момент вы извлечете журналы приложений или данные мониторинга из подсистемы DOCKER, используйте вместо них нечто вроде [Azure Monitor для контейнеров](../azure-monitor/insights/container-insights-enable-new-cluster.md) . Кроме того, AKS не поддерживает выполнение команд с использованием аппаратного контроллера управления на узлах агента, которые могут привести к нестабильной работе.
+  * Даже при использовании значок Кита/DOCKER создание образов и непосредственное использование подсистемы DOCKER с помощью приведенных выше методов настоятельно не рекомендуется. Kubernetes не полностью осведомлен о потребляемых ресурсах, и эти подходы представляют множество проблем, описанных [здесь](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/) , и [здесь](https://securityboulevard.com/2018/05/escaping-the-whale-things-you-probably-shouldnt-do-with-docker-part-1/), например.
+* Создание образов. Рекомендуемый подход для создания образов — использование [задач контроля](../container-registry/container-registry-quickstart-task-cli.md)доступа. Альтернативный подход заключается в использовании более защищенных параметров в кластере, таких как [DOCKER буилдкс](https://github.com/docker/buildx).
+
+## <a name="generation-2-virtual-machines-preview"></a>Виртуальные машины поколения 2 (Предварительная версия)
+
+Azure поддерживает [виртуальные машины версии 2 (Gen2)](../virtual-machines/windows/generation-2.md). Виртуальные машины поколения 2 поддерживают ключевые функции, которые не поддерживаются в виртуальных машинах поколения 1 (GEN1). Эти функции включают увеличенную память, Intel Software Guard Extensions и виртуализированную постоянную память (vPMEM).
+
+Виртуальные машины 2-го поколения используют новую архитектуру загрузки на основе UEFI, а не архитектуру на основе BIOS, используемую виртуальными машинами 1-го поколения.
+Виртуальные машины Gen2 поддерживают только определенные номера SKU и размеры. Проверьте [список поддерживаемых размеров](../virtual-machines/windows/generation-2.md#generation-2-vm-sizes), чтобы узнать, поддерживает ли SKU или требует Gen2.
+
+Кроме того, не все образы виртуальных машин поддерживают Gen2, на виртуальных машинах AKS Gen2 будет использоваться новый [образ AKS Ubuntu 18,04](#os-configuration-preview). Этот образ поддерживает все номера SKU и размеры Gen2.
+
+Чтобы использовать виртуальные машины Gen2 в режиме предварительной версии, вам потребуется:
+- `aks-preview`Установленное расширение CLI.
+- `Gen2VMPreview`Зарегистрированный флаг функции.
+
+Зарегистрируйте компонент `Gen2VMPreview`:
+
+```azurecli
+az feature register --name Gen2VMPreview --namespace Microsoft.ContainerService
+```
+
+Состояние **Registered** (Зарегистрировано) может появиться через несколько минут. Состояние регистрации можно проверить с помощью команды [az feature list](https://docs.microsoft.com/cli/azure/feature?view=azure-cli-latest#az-feature-list):
+
+```azurecli
+az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/Gen2VMPreview')].{Name:name,State:properties.state}"
+```
+
+Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](https://docs.microsoft.com/cli/azure/provider?view=azure-cli-latest#az-provider-register):
+
+```azurecli
+az provider register --namespace Microsoft.ContainerService
+```
+
+Чтобы установить расширение CLI AKS-Preview, используйте следующие Azure CLI команды:
+
+```azurecli
+az extension add --name aks-preview
+```
+
+Чтобы обновить расширение CLI AKS-Preview, используйте следующие Azure CLI команды:
+
+```azurecli
+az extension update --name aks-preview
+```
+
+### <a name="use-gen2-vms-on-new-clusters-preview"></a>Использование виртуальных машин Gen2 в новых кластерах (Предварительная версия)
+Настройте кластер для использования виртуальных машин Gen2 для выбранного SKU при создании кластера. Используйте `--aks-custom-headers` флаг, чтобы задать Gen2 в качестве создания виртуальной машины в новом кластере.
+
+```azure-cli
+az aks create --name myAKSCluster --resource-group myResourceGroup -s Standard_D2s_v3 --aks-custom-headers usegen2vm=true
+```
+
+Если вы хотите создать обычный кластер с помощью виртуальных машин поколения 1 (GEN1), это можно сделать, опустив пользовательский `--aks-custom-headers` тег. Вы также можете добавить виртуальные машины Gen1 или Gen2 в соответствии с разрядом.
+
+### <a name="use-gen2-vms-on-existing-clusters-preview"></a>Использование виртуальных машин Gen2 в существующих кластерах (Предварительная версия)
+Настройте новый пул узлов для использования виртуальных машин Gen2. Используйте `--aks-custom-headers` флаг, чтобы задать Gen2 в качестве создания виртуальной машины для этого пула узлов.
+
+```azure-cli
+az aks nodepool add --name gen2 --cluster-name myAKSCluster --resource-group myResourceGroup -s Standard_D2s_v3 --aks-custom-headers usegen2vm=true
+```
+
+Если вы хотите создать обычные пулы узлов Gen1, это можно сделать, опустив пользовательский `--aks-custom-headers` тег.
 
 ## <a name="custom-resource-group-name"></a>Пользовательское имя группы ресурсов
 
@@ -86,7 +249,7 @@ az aks create --name myAKSCluster --resource-group myResourceGroup --node-resour
 
 - указать существующую группу ресурсов для узлов;
 - поместить узлы в группу ресурсов в другой подписке;
-- изменить имя группы ресурсов для узлов после создания кластера;
+- изменить имя группы ресурсов узла после создания кластера;
 - выбрать имена управляемых ресурсов в группе ресурсов для узлов;
 - изменять или удалять созданные Azure теги управляемых ресурсов в группе ресурсов для узлов.
 
@@ -94,4 +257,17 @@ az aks create --name myAKSCluster --resource-group myResourceGroup --node-resour
 
 - Узнайте, как с помощью `Kured` [применять обновления для системы безопасности и ядра для узлов Linux](node-updates-kured.md) в кластере.
 - Сведения о том, как обновить кластер до последней версии Kubernetes, см. в статье [Обновление кластера Службы Azure Kubernetes (AKS)](upgrade-cluster.md).
+- Ознакомьтесь с дополнительными сведениями о [ `containerd` и Kubernetes](https://kubernetes.io/blog/2018/05/24/kubernetes-containerd-integration-goes-ga/)
 - В списке [вопросов и ответов об AKS](faq.md) собраны самые популярные рекомендации.
+
+
+<!-- LINKS - internal -->
+[azure-cli-install]: /cli/azure/install-azure-cli
+[az-feature-register]: /cli/azure/feature#az-feature-register
+[az-feature-list]: /cli/azure/feature#az-feature-list
+[az-provider-register]: /cli/azure/provider#az-provider-register
+[az-extension-add]: /cli/azure/extension#az-extension-add
+[az-extension-update]: /cli/azure/extension#az-extension-update
+[az-feature-register]: /cli/azure/feature#az-feature-register
+[az-feature-list]: /cli/azure/feature#az-feature-list
+[az-provider-register]: /cli/azure/provider#az-provider-register

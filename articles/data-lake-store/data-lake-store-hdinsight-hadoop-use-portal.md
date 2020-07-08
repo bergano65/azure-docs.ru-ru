@@ -3,15 +3,15 @@ title: Создание кластеров Azure HDInsight с помощью Dat
 description: Создание и использование кластеров HDInsight для работы с Azure Data Lake Storage 1-го поколения с помощью портала Azure
 author: twooley
 ms.service: data-lake-store
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 1d1368ef8ffb474c6bec1240f567f043961597fb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e3e54b037485a85d836e7e7e67c9af2d9d140986
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79265575"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85856813"
 ---
 # <a name="create-hdinsight-clusters-with-azure-data-lake-storage-gen1-by-using-the-azure-portal"></a>Создание кластеров HDInsight, использующих Azure Data Lake Storage 1-го поколения, с помощью портала Azure
 
@@ -170,7 +170,9 @@ ms.locfileid: "79265575"
 
 Например, если вы используете созданный кластер, в котором основным хранилищем является Data Lake Storage 1-го поколения, то путь к данным будет следующим: *adl://<имя_учетной_записи_data_lake_storage_gen1>/azuredatalakestore.net/path/to/file*. Запрос Hive для создания таблицы на основе демонстрационных данных, хранящихся в учетной записи Data Lake Storage 1-го поколения, выглядит следующим образом:
 
-    CREATE EXTERNAL TABLE websitelog (str string) LOCATION 'adl://hdiadlsg1storage.azuredatalakestore.net/clusters/myhdiadlcluster/HdiSamples/HdiSamples/WebsiteLogSampleData/SampleLog/'
+```console
+CREATE EXTERNAL TABLE websitelog (str string) LOCATION 'adl://hdiadlsg1storage.azuredatalakestore.net/clusters/myhdiadlcluster/HdiSamples/HdiSamples/WebsiteLogSampleData/SampleLog/'
+```
 
 Описание
 

@@ -6,18 +6,18 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/29/2016
 ms.custom: seodec18
-ms.openlocfilehash: 516c7f50f7ff9fe947475b12120a527fc69353bc
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.openlocfilehash: 26746a477da301eb352f002e105e883f992aaf0a
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82926856"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85857213"
 ---
 # <a name="troubleshoot-an-app-in-azure-app-service-using-visual-studio"></a>Устранение неполадок приложения в Cлужбе приложений Azure с помощью Visual Studio
 ## <a name="overview"></a>Обзор
 В этом руководстве показано, как использовать инструменты Visual Studio, которые позволяют отлаживать работу приложения в [Cлужбе приложений](https://go.microsoft.com/fwlink/?LinkId=529714) путем запуска приложения удаленно в [режиме отладки](https://docs.microsoft.com/visualstudio/debugger/) или путем просмотра журналов приложения и журналов веб-сервера.
 
-Вы узнаете:
+Вы познакомитесь со следующими аспектами:
 
 * Какие функции управления приложением доступны в среде Visual Studio.
 * Как использовать удаленное представление Visual Studio для быстрого изменения удаленного приложения.
@@ -125,7 +125,7 @@ Visual Studio обеспечивает доступ к сокращенному 
     }
     ```
 
-1. [Задайте точку останова](https://docs.microsoft.com/visualstudio/debugger/) в строке `ViewBag.Message`.
+1. [Установите точку останова](https://docs.microsoft.com/visualstudio/debugger/) в `ViewBag.Message` строке.
 
 1. В **Обозреватель решений**щелкните правой кнопкой мыши проект и выберите команду **опубликовать**.
 
@@ -271,7 +271,7 @@ Visual Studio обеспечивает доступ к сокращенному 
 Сведения о том, как создавать журналы приложений в веб-заданиях, см. в разделе [Работа с хранилищем очередей Azure с помощью пакета SDK веб-заданий — создание записей в журналах](https://github.com/Azure/azure-webjobs-sdk/wiki). Следующие инструкции для просмотра журналов и управления их хранением в Azure также применяются для журналов приложений, созданных с помощью Azure.
 
 ### <a name="add-tracing-statements-to-the-application"></a>Добавление инструкций трассировки в приложение
-1. Откройте *Controllers\HomeController.CS*и замените `Index`методы, `About`и `Contact` следующим кодом, чтобы добавить `Trace` инструкции и `using` инструкцию для: `System.Diagnostics`
+1. Откройте *Controllers\HomeController.CS*и замените `Index` `About` методы, и `Contact` следующим кодом, чтобы добавить `Trace` инструкции и `using` инструкцию для `System.Diagnostics` :
 
     ```csharp
     public ActionResult Index()
@@ -337,7 +337,7 @@ Visual Studio обеспечивает доступ к сокращенному 
     ```
 
 1. Для запуска приложения нажмите сочетание клавиш CTRL+F5.
-1. В адресной строке окна браузера добавьте *Trace. axd* к URL-адресу и нажмите клавишу ВВОД (URL-адрес похож на `http://localhost:53370/trace.axd`).
+1. В адресной строке окна браузера добавьте *Trace. axd* к URL-адресу и нажмите клавишу ВВОД (URL-адрес похож на `http://localhost:53370/trace.axd` ).
 1. На странице **Трассировка приложения** щелкните **Просмотр сведений** в первой строке (не в строке BrowserLink).
 
     ![trace.axd](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-traceaxd1.png)
@@ -348,7 +348,9 @@ Visual Studio обеспечивает доступ к сокращенному 
 
     По умолчанию `trace.axd` доступен только локально. Если он должен быть доступен также в удаленном приложении, можно добавить строку `localOnly="false"` в элемент `trace` файла *Web.config*, как показано в следующем примере.
 
-        <trace enabled="true" writeToDiagnosticsTrace="true" localOnly="false" mostRecent="true" pageOutput="false" />
+    ```xml
+    <trace enabled="true" writeToDiagnosticsTrace="true" localOnly="false" mostRecent="true" pageOutput="false" />
+    ```
 
     Тем не менее включение `trace.axd` в рабочем приложении не рекомендуется по соображениям безопасности. В следующих разделах вы изучите более простой способ чтения журналов трассировки в приложении Службы приложений.
 

@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 04/29/2019
-ms.openlocfilehash: b95ee80a7a99009918f4869b62a3e3768e6e58d3
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: f0fba815cdc8425f016b74be7df36e5b28dfee3d
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83828276"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85856961"
 ---
 # <a name="azure-cache-for-redis-faq"></a>Вопросы и ответы по кэшу Redis для Azure
 Ответы на часто задаваемые вопросы, шаблоны и рекомендации по поводу кэша Azure для Redis.
@@ -100,7 +100,7 @@ ms.locfileid: "83828276"
 * **Проблемы с производительностью сети**. Если у вас есть рабочая нагрузка, которая требует высокой пропускной способности, то уровень "Премиум" предоставит большую пропускную способность по сравнению с уровнями "Стандартный" или "Базовый". Также в рамках каждого уровня пропускная способность для кэшей большего размера выше из-за виртуальной машины, на которой размещен кэш. Дополнительные сведения приведены в [таблице ниже](#cache-performance).
 * **Пропускная способность**. Уровень "Премиум" предлагает максимальную доступную пропускную способность. При достижении сервером кэширования или клиентом пределов пропускной способности на стороне клиента могут возникнуть простои. Дополнительные сведения приведены в таблице ниже.
 * **Высокий уровень доступности и Cоглашение об уровне обслуживания**. Кэш Azure для Redis гарантирует, что кэш уровня "Стандартный" или "Премиум" будет доступен не менее 99,9 % времени. Дополнительные сведения о Cоглашении об уровне обслуживания см. на странице [Соглашение об уровне обслуживания для Управляемой службы кэша](https://azure.microsoft.com/support/legal/sla/cache/v1_0/). Соглашение об уровне обслуживания распространяется только на подключения к конечным точкам кэша. Соглашение об уровне обслуживания не включает защиту от потери данных. Для повышения устойчивости к потере данных рекомендуется использовать функцию постоянного хранения данных Redis уровня Премиум.
-* **Сохраняемость данных Redis**. Уровень Премиум позволяет сохранить данные кэша в учетной записи хранения Azure. В кэше уровня "Базовый" или "Стандартный" все данные хранятся только в памяти. Проблемы с базовой инфраструктурой могут привести к потере данных. Для повышения устойчивости к потере данных рекомендуется использовать функцию постоянного хранения данных Redis уровня Премиум. Кэш Azure для Redis предлагает варианты RDB и AOF (ожидается в ближайшее время) для сохраняемости Redis. Дополнительные сведения см. в статье [How to configure persistence for a Premium Azure Cache for Redis](cache-how-to-premium-persistence.md) (Как настроить сохраняемость для кэша Azure для Redis категории "Премиум").
+* **Сохраняемость данных Redis**. Уровень Премиум позволяет сохранить данные кэша в учетной записи хранения Azure. В кэше уровня "Базовый" или "Стандартный" все данные хранятся только в памяти. Проблемы с базовой инфраструктурой могут привести к потере данных. Для повышения устойчивости к потере данных рекомендуется использовать функцию постоянного хранения данных Redis уровня Премиум. Кэш Azure для Redis предлагает параметры RDB и AOF (Предварительная версия) в сохраняемости Redis. Дополнительные сведения см. в статье [How to configure persistence for a Premium Azure Cache for Redis](cache-how-to-premium-persistence.md) (Как настроить сохраняемость для кэша Azure для Redis категории "Премиум").
 * **Кластер Redis**. Используется для создания кэша размером более 120 ГБ или сегментации данных по нескольким узлам Redis. Более того, можно воспользоваться кластеризацией Redis, которая доступна на уровне "Премиум". Каждый узел состоит из пары кэшей (основной кэш и реплика) для обеспечения высокой доступности. Дополнительные сведения см. в статье [How to configure clustering for a Premium Azure Cache for Redis](cache-how-to-premium-clustering.md) (Настройка кластеризации кэша Azure для Redis категории "Премиум").
 * **Оптимизированная защита и сетевая изоляция**. Развертывание виртуальной сети Azure обеспечивает дополнительные возможности защиты и изоляции для кэша Azure для Redis. Такие развертывания позволяют определять подсети, настраивать политики контроля доступа, а также использовать другие функции ограничения доступа. Дополнительные сведения см. в статье [How to configure Virtual Network support for a Premium Azure Cache for Redis](cache-how-to-premium-vnet.md) (Настройка поддержки виртуальной сети для кэша Azure для Redis уровня "Премиум").
 * **Настройка Redis**. На уровнях "Стандартный" и "Премиум" вы можете настроить уведомления пространства ключей в Redis.
@@ -213,22 +213,23 @@ StackExchange.Redis имеет много параметров. В этом ра
 ### <a name="is-there-a-local-emulator-for-azure-cache-for-redis"></a>Существует ли локальный эмулятор кэша Azure для Redis?
 Локального эмулятора кэша Azure для Redis нет, но можно запустить версию MSOpenTech redis-server.exe из [программ командной строки Redis](https://github.com/MSOpenTech/redis/releases/) на локальном компьютере и подключиться к нему, чтобы получить возможности, аналогичные локальному эмулятору кэша, как показано в следующем примере:
 
-    private static Lazy<ConnectionMultiplexer>
-          lazyConnection = new Lazy<ConnectionMultiplexer>
-        (() =>
-        {
-            // Connect to a locally running instance of Redis to simulate a local cache emulator experience.
-            return ConnectionMultiplexer.Connect("127.0.0.1:6379");
-        });
+```csharp
+private static Lazy<ConnectionMultiplexer>
+      lazyConnection = new Lazy<ConnectionMultiplexer>
+    (() =>
+    {
+        // Connect to a locally running instance of Redis to simulate a local cache emulator experience.
+        return ConnectionMultiplexer.Connect("127.0.0.1:6379");
+    });
 
-        public static ConnectionMultiplexer Connection
+    public static ConnectionMultiplexer Connection
+    {
+        get
         {
-            get
-            {
-                return lazyConnection.Value;
-            }
+            return lazyConnection.Value;
         }
-
+    }
+```
 
 При необходимости можно настроить файл [redis.conf](https://redis.io/topics/config) для более точного соответствия [параметрам кэша по умолчанию](cache-configure.md#default-redis-server-configuration) для подключенного к сети кэша Azure для Redis.
 
@@ -289,7 +290,7 @@ StackExchange.Redis имеет много параметров. В этом ра
 >
 >
 
-Инструменты Redis, такие как `redis-cli`, не работают с портом TLS, но вы можете использовать служебную программу, например `stunnel`, для безопасного подключения инструментов к порту TLS в соответствии с указаниями в записи блога [Анонс поставщика состояний сеансов ASP.NET для предварительной версии Redis](https://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx).
+Инструменты Redis, такие как `redis-cli`, не работают с портом TLS, но вы можете использовать служебную программу, например `stunnel`, для безопасного подключения инструментов к порту TLS в соответствии с указаниями в записи блога [Анонс поставщика состояний сеансов ASP.NET для предварительной версии Redis](https://devblogs.microsoft.com/aspnet/announcing-asp-net-session-state-provider-for-redis-preview-release/).
 
 Инструкции по скачиванию инструментов Redis см. в разделе [Как выполнять команды Redis?](#cache-commands).
 
@@ -366,10 +367,12 @@ StackExchange.Redis имеет много параметров. В этом ра
 
 Если взглянуть на пример сообщения об ошибке от StackExchange.Redis (сборка 1.0.450 или более поздней версии), вы увидите, что теперь оно содержит статистику ThreadPool (подробности о рабочих потоках и потоках IOCP см. ниже).
 
+```output
     System.TimeoutException: Timeout performing GET MyKey, inst: 2, mgr: Inactive,
     queue: 6, qu: 0, qs: 6, qc: 0, wr: 0, wq: 0, in: 0, ar: 0,
     IOCP: (Busy=6,Free=994,Min=4,Max=1000),
     WORKER: (Busy=3,Free=997,Min=4,Max=1000)
+```
 
 В предыдущем примере можно увидеть, что для потока IOCP существует шесть занятых потоков, а минимальное количество потоков — четыре. В этом случае клиент, скорее всего, столкнется с двумя задержками по 500 мс, так как 6 больше 4.
 

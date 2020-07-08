@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 07/31/2017
 ms.author: yegu
-ms.openlocfilehash: 29ad5ca6c9058b88a539c7a3bb8ace4d9a65083a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 84abbe8d9958bf41768f3706a700ae0ecad6b44f
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79278094"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85857010"
 ---
 # <a name="import-and-export-data-in-azure-cache-for-redis"></a>Импорт и экспорт данных в кэше Azure для Redis
 Функция импорта и экспорта является операцией управления данными в кэше Azure для Redis, которая позволяет импортировать данные в кэш и экспортировать их оттуда путем импорта и экспорта моментального снимка базы данных кэша Azure для Redis (RDB) из кэша категории "Премиум" в большой двоичный объект в учетной записи службы хранилища Azure.
@@ -142,7 +142,9 @@ ms.locfileid: "79278094"
 ### <a name="i-received-a-timeout-error-during-my-importexport-operation-what-does-it-mean"></a>Во время операции импорта/экспорта возникла ошибка времени ожидания. Что это означает?
 Если перед запуском операции вы находитесь в колонке **Импорт данных** или **Экспорт данных** дольше 15 минут, то появится сообщение об ошибке следующего вида:
 
-    The request to import data into cache 'contoso55' failed with status 'error' and error 'One of the SAS URIs provided could not be used for the following reason: The SAS token end time (se) must be at least 1 hour from now and the start time (st), if given, must be at least 15 minutes in the past.
+```output
+The request to import data into cache 'contoso55' failed with status 'error' and error 'One of the SAS URIs provided could not be used for the following reason: The SAS token end time (se) must be at least 1 hour from now and the start time (st), if given, must be at least 15 minutes in the past.
+```
 
 Чтобы устранить эту проблему, запустите операцию импорта или экспорта до истечения 15 минут.
 
