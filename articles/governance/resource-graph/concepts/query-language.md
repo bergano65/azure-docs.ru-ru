@@ -1,14 +1,14 @@
 ---
 title: Основные сведения о языке запросов
 description: Описание таблиц Resource Graph и доступных типов данных, операторов и функций Kusto, которые можно использовать с Azure Resource Graph.
-ms.date: 03/07/2020
+ms.date: 06/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 944d0f2676f1a82c80be33a6c1a91d34bc8a32f7
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 4c545a8a5113f800545660a3ea812b61711630c2
+ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83654450"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85970456"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Общие сведения о языке запросов графика ресурсов Azure
 
@@ -17,12 +17,13 @@ ms.locfileid: "83654450"
 В этой статье рассматриваются компоненты языка, поддерживаемые Resource Graph:
 
 - [таблицы Resource Graph;](#resource-graph-tables)
+- [Пользовательские элементы языка графа ресурсов](#resource-graph-custom-language-elements)
 - [поддерживаемые элементы языка KQL;](#supported-kql-language-elements)
 - [escape-символы.](#escape-characters)
 
 ## <a name="resource-graph-tables"></a>Таблицы Resource Graph
 
-Resource Graph предоставляет несколько таблиц для хранения данных по типам ресурсов Resource Manager и их свойствам. Эти таблицы можно использовать с оператором `join` или `union` для получения свойств из связанных типов ресурсов. Ниже приведен список таблиц, доступных в Resource Graph.
+Граф ресурсов предоставляет несколько таблиц для хранения данных о Azure Resource Manager типах ресурсов и их свойствах. Эти таблицы можно использовать с оператором `join` или `union` для получения свойств из связанных типов ресурсов. Ниже приведен список таблиц, доступных в Resource Graph.
 
 |Таблицы Resource Graph |Описание |
 |---|---|
@@ -61,6 +62,33 @@ Resources
 
 > [!NOTE]
 > При ограничении результатов `join` с помощью `project` свойство, используемое `join` для связывания двух таблиц (_subscriptionId_ в приведенном выше примере), должно включаться в `project`.
+
+## <a name="resource-graph-custom-language-elements"></a>Пользовательские элементы языка графа ресурсов
+
+### <a name="shared-query-syntax-preview"></a><a name="shared-query-syntax"></a>Синтаксис общего запроса (Предварительная версия)
+
+В качестве функции предварительной версии [общий доступ к общему запросу](../tutorials/create-share-query.md) можно получить непосредственно в запросе графа ресурсов. Этот сценарий позволяет создавать стандартные запросы как общие запросы и использовать их повторно. Чтобы вызвать общий запрос в запросе графа ресурсов, используйте `{{shared-query-uri}}` синтаксис. URI общего запроса — это _идентификатор ресурса_ общего запроса на странице **параметров** этого запроса. В этом примере наш URI общего запроса — `/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/SharedQueries/providers/Microsoft.ResourceGraph/queries/Count VMs by OS` .
+Этот URI указывает на подписку, группу ресурсов и полное имя общего запроса, на который мы хотим ссылаться в другом запросе. Этот запрос аналогичен тому, который был создан в [руководстве: создание и совместное использование запроса](../tutorials/create-share-query.md).
+
+> [!NOTE]
+> Нельзя сохранить запрос, который ссылается на общий запрос, в качестве общего запроса.
+
+Пример 1. использование только общего запроса
+
+Результаты этого запроса графа ресурсов совпадают с результатами запроса, хранящегося в общем запросе.
+
+```kusto
+{{/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/SharedQueries/providers/Microsoft.ResourceGraph/queries/Count VMs by OS}}
+```
+
+Пример 2. Включение общего запроса в состав более крупного запроса
+
+Сначала этот запрос использует общий запрос, а затем использует `limit` для ограничения результатов.
+
+```kusto
+{{/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/SharedQueries/providers/Microsoft.ResourceGraph/queries/Count VMs by OS}}
+| where properties_storageProfile_osDisk_osType =~ 'Windows'
+```
 
 ## <a name="supported-kql-language-elements"></a>Поддерживаемые элементы языка KQL
 

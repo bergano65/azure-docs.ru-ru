@@ -9,12 +9,12 @@ ms.topic: article
 ms.workload: storage-backup-recovery
 ms.date: 01/08/2020
 ms.author: mayg
-ms.openlocfilehash: 9ef38829a18f9e43f38cbdb291a799110d710cd7
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 7b43105d23de516b994521ad46bb45737798717c
+ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83834736"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85971085"
 ---
 # <a name="troubleshoot-errors-when-failing-over-vmware-vm-or-physical-machine-to-azure"></a>Устранение ошибок при отработке отказа виртуальной машины VMware или физического компьютера в Azure
 
@@ -73,6 +73,10 @@ ms.locfileid: "83834736"
         This system is now no-hydration compatible. 
 
 ## <a name="unable-to-connectrdpssh-to-the-failed-over-virtual-machine-due-to-grayed-out-connect-button-on-the-virtual-machine"></a>Не удается подключиться по протоколу RDP или SSH к виртуальной машине, для которой выполнена отработка отказа, поскольку кнопка подключения неактивна на виртуальной машине
+
+Подробные инструкции по устранению неполадок в RDP см. в нашей [документации.](../virtual-machines/troubleshooting/troubleshoot-rdp-connection.md)
+
+Подробные инструкции по устранению неполадок, связанных с SSH, см. в [нашей документации.](../virtual-machines/troubleshooting/troubleshoot-ssh-connection.md)
 
 Если кнопка **Подключиться** на виртуальной машине, для которой выполнена отработка отказа, неактивна и вы не подключены к Azure через Express Route или VPN-подключение типа "сеть — сеть".
 

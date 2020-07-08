@@ -1,17 +1,17 @@
 ---
-title: Решение по управлению Office 365 в Azure | Документация Майкрософт
+title: Решение для управления Office 365 в Azure
 description: В этой статье представлены сведения о настройке и использовании решения Office 365 в Azure.  Она содержит подробное описание записей Office 365, создаваемых в службе Azure Monitor.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/30/2020
-ms.openlocfilehash: 2c6eb5407ec62b6e9e771ce257b66fca2a91e0a5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4d89c64b7ceea730dab61ffe1254d838d219b785
+ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82023611"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85971051"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
@@ -19,7 +19,7 @@ ms.locfileid: "82023611"
 
 > [!IMPORTANT]
 > ## <a name="solution-update"></a>Обновление решения
-> Это решение заменено решением "общедоступная доступность [Office 365](../../sentinel/connect-office-365.md) " в [Azure Sentinel](../../sentinel/overview.md) , а также [решением Azure AD Reporting and Monitoring](../../active-directory/reports-monitoring/plan-monitoring-and-reporting.md). Вместе они предоставляют обновленную версию предыдущего решения Azure Monitor Office 365 с улучшенными возможностями настройки. Вы можете продолжать использовать существующее решение до 30 июля 2020 г.
+> Это решение заменено решением "общедоступная доступность [Office 365](../../sentinel/connect-office-365.md) " в [Azure Sentinel](../../sentinel/overview.md) , а также [решением Azure AD Reporting and Monitoring](../../active-directory/reports-monitoring/plan-monitoring-and-reporting.md). Вместе они предоставляют обновленную версию предыдущего решения Azure Monitor Office 365 с улучшенными возможностями настройки. Вы можете продолжать использовать существующее решение до 31 октября 2020 г.
 > 
 > Azure Sentinel — это облачная собственная информация о безопасности и решение для управления событиями, которое принимает журналы и предоставляет дополнительные функции SIEM, в том числе обнаружения, исследования, поиска и анализа машинного обучения. С помощью Sentinel Azure вы получите возможность приема данных об активности Office 365 SharePoint и журналах управления Exchange.
 > 
@@ -35,8 +35,8 @@ ms.locfileid: "82023611"
 >
 > ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 > 
-> ### <a name="q-is-it-possible-to-on-board-the-office-365-azure-monitor-solution-between-now-and-july-30th"></a>Вопрос. можно ли подключить решение Office 365 Azure Monitor между сейчас и 30 июля?
-> Нет, сценарии адаптации решения Azure Monitor Office 365 больше не доступны. Решение будет удалено 30 июля.
+> ### <a name="q-is-it-possible-to-on-board-the-office-365-azure-monitor-solution-between-now-and-october-31"></a>Вопрос. можно ли подключить решение Office 365 Azure Monitor между сейчас и 31 октября?
+> Нет, сценарии адаптации решения Azure Monitor Office 365 больше не доступны. Решение будет удалено 31 октября.
 > 
 > ### <a name="q-will-the-tables-and-schemas-be-changed"></a>Вопрос. будут ли изменены таблицы и схемы?
 > Имя и схема таблицы **оффицеактивити** останутся такими же, как и в текущем решении. Вы можете продолжать использовать те же запросы в новом решении, за исключением запросов, которые ссылаются на данные Azure AD.
@@ -102,11 +102,11 @@ ms.locfileid: "82023611"
 > ### <a name="q-does-azure-sentinel-provide-additional-connectors-as-part-of-the-solution"></a>Вопрос. поддерживает ли Azure Sentinel дополнительные соединители в рамках решения?
 > Да, см. статью [Azure Sentinel Connect Data Sources](../../sentinel/connect-data-sources.md).
 > 
-> ###    <a name="q-what-will-happen-on-july-30-do-i-need-to-offboard-beforehand"></a>Вопрос. что произойдет 30 июля? Нужно ли отключение заранее?
+> ###    <a name="q-what-will-happen-on-october-31-do-i-need-to-offboard-beforehand"></a>Вопрос. что произойдет 31 октября? Нужно ли отключение заранее?
 > 
 > - Вы не сможете получать данные из решения **Office 365** . Решение больше не будет доступно в Marketplace
 > - Для клиентов с метками Azure **Office 365** в решение Azure Sentinel **секуритинсигхтс** будет включена log Analyticsная Рабочая область.
-> - Если вы не отключение свое решение вручную, данные будут автоматически отключены 30 июля.
+> - Если вы не отключение решение вручную, данные будут автоматически отключены 31 октября.
 > 
 > ### <a name="q-will-my-data-transfer-to-the-new-solution"></a>Вопрос. будет ли переносить данные в новое решение?
 > Да. При удалении решения **Office 365** из рабочей области его данные становятся временно недоступными из-за удаления схемы. При включении нового соединителя **Office 365** в метку схема восстанавливается в рабочую область, а все собранные данные становятся доступными. 
@@ -121,7 +121,7 @@ ms.locfileid: "82023611"
 - Оперативно устраняйте неполадки с помощью [запросов журнала](../log-query/log-query-overview.md) на основе данных о действиях Office 365 в вашей организации.
 
 
-## <a name="uninstall"></a>Uninstall
+## <a name="uninstall"></a>Удаление
 
 Вы можете удалить решение по управлению Office 365 с помощью процесса, описанного в этом [разделе](solutions.md#remove-a-monitoring-solution). Однако это не остановит сбор данных в Office 365 и последующую их отправку в Azure Monitor. Выполните процедуру ниже, чтобы отменить подписку на Office 365 и прекратить сбор данных.
 
@@ -218,7 +218,7 @@ ms.locfileid: "82023611"
     .\office365_unsubscribe.ps1 -WorkspaceName <Log Analytics workspace name> -ResourceGroupName <Resource Group name> -SubscriptionId <Subscription ID> -OfficeTennantID <Tenant ID> 
     ```
 
-    Пример:
+    Пример.
 
     ```powershell
     .\office365_unsubscribe.ps1 -WorkspaceName MyWorkspace -ResourceGroupName MyResourceGroup -SubscriptionId '60b79d74-f4e4-4867-b631-yyyyyyyyyyyy' -OfficeTennantID 'ce4464f8-a172-4dcf-b675-xxxxxxxxxxxx'
@@ -226,7 +226,7 @@ ms.locfileid: "82023611"
 
 Вам будет предложено ввести учетные данные. Укажите учетные данные для рабочей области Log Analytics.
 
-## <a name="data-collection"></a>Сбор данных
+## <a name="data-collection"></a>сбор данных
 
 Для сбора данных может потребоваться несколько часов. После запуска сбора при создании каждой записи Office 365 отправляет в службу Azure Monitor [уведомление веб-перехватчика](https://msdn.microsoft.com/office-365/office-365-management-activity-api-reference#receiving-notifications) с подробными данными. Эта запись становится доступной в Azure Monitor в течение нескольких минут после ее получения.
 
@@ -261,7 +261,7 @@ ms.locfileid: "82023611"
 
 Следующие свойства являются общими для всех записей Office 365.
 
-| Свойство | Описание |
+| Свойство. | Описание |
 |:--- |:--- |
 | Type | *OfficeActivity* |
 | ClientIP | IP-адрес устройства, которое использовалось при записи действия в журнал. IP-адрес отображается в формате IPv4- или IPv6-адреса. |
@@ -272,14 +272,14 @@ ms.locfileid: "82023611"
 | ResultStatus | Указывает, было ли успешным действие (указанное в свойстве Operation). Возможные значения: Succeeded (Успешно), PartiallySucceeded (Выполнено частично) и Failed (Сбой). Для действий администратора Exchange возможные значения — True (Истина) или False (Ложь). |
 | UserId | Имя участника-пользователя (UPN) для пользователя, который выполнил действие, приведшее к регистрации в журнале данной записи. Например, my_name@my_domain_name. Обратите внимание, что сюда также включаются записи для действий, выполняемых системными учетными записями (такими как SHAREPOINT\system или NTAUTHORITY\SYSTEM). | 
 | UserKey | Альтернативный идентификатор пользователя, определенного в свойстве UserId.  Например, значение этого свойства может заполняться уникальным идентификатором Passport (PUID) для событий, выполняемых пользователями в SharePoint, OneDrive для бизнеса и Exchange. Это свойство также может указывать то же значение, что и свойство UserID событий, происходящих в других службах, и событий, выполняемых системными учетными записями.|
-| UserType | Тип пользователя, выполнившего операцию.<br><br>Администратор<br>Приложение<br>DcAdmin<br>Обычный<br>Reserved<br>ServicePrincipal<br>система |
+| UserType | Тип пользователя, выполнившего операцию.<br><br>Административный<br>Приложение<br>DcAdmin<br>Обычный<br>Зарезервированное<br>ServicePrincipal<br>Система |
 
 
 ### <a name="azure-active-directory-base"></a>Основа Azure Active Directory
 
 Следующие свойства являются общими для всех записей Azure Active Directory.
 
-| Свойство | Описание |
+| Свойство. | Описание: |
 |:--- |:--- |
 | OfficeWorkload | AzureActiveDirectory |
 | RecordType     | AzureActiveDirectory |
@@ -291,7 +291,7 @@ ms.locfileid: "82023611"
 
 Эти записи создаются при попытке пользователя Active Directory войти в систему.
 
-| Свойство | Описание |
+| Свойство. | Описание: |
 |:--- |:--- |
 | `OfficeWorkload` | AzureActiveDirectory |
 | `RecordType`     | AzureActiveDirectoryAccountLogon |
@@ -305,7 +305,7 @@ ms.locfileid: "82023611"
 
 Эти записи создаются при внесении изменений или дополнений в объекты Azure Active Directory.
 
-| Свойство | Описание |
+| Свойство. | Описание: |
 |:--- |:--- |
 | OfficeWorkload | AzureActiveDirectory |
 | RecordType     | AzureActiveDirectory |
@@ -323,7 +323,7 @@ ms.locfileid: "82023611"
 
 Эти записи создаются на основе данных аудита безопасности центра обработки данных.  
 
-| Свойство | Описание |
+| Свойство. | Описание: |
 |:--- |:--- |
 | EffectiveOrganization | Имя клиента, в отношении которого выполнялось повышение прав или командлет. |
 | ElevationApprovedTime | Метка времени, когда был утвержден запрос на повышение прав. |
@@ -339,7 +339,7 @@ ms.locfileid: "82023611"
 
 Эти записи создаются при внесении изменений в конфигурацию Exchange.
 
-| Свойство | Описание |
+| Свойство. | Описание: |
 |:--- |:--- |
 | OfficeWorkload | Exchange |
 | RecordType     | ExchangeAdmin |
@@ -354,7 +354,7 @@ ms.locfileid: "82023611"
 
 Эти записи создаются при внесении изменений или дополнений в почтовые ящики Exchange.
 
-| Свойство | Описание |
+| Свойство. | Описание: |
 |:--- |:--- |
 | OfficeWorkload | Exchange |
 | RecordType     | ExchangeItem |
@@ -377,11 +377,11 @@ ms.locfileid: "82023611"
 
 Эти записи создаются при создании записей аудита почтового ящика.
 
-| Свойство | Описание |
+| Свойство. | Описание: |
 |:--- |:--- |
 | OfficeWorkload | Exchange |
 | RecordType     | ExchangeItem |
-| Элемент | Представляет элемент, в отношении которого выполнялась операция. | 
+| Item | Представляет элемент, в отношении которого выполнялась операция. | 
 | SendAsUserMailboxGuid | Идентификатор GUID Exchange почтового ящика, к которому осуществлялся доступ для отправки почты с помощью команды "Отправить как". |
 | SendAsUserSmtp | SMTP-адрес пользователя, олицетворяемого при отправке. |
 | SendonBehalfOfUserMailboxGuid | Идентификатор GUID Exchange почтового ящика, к которому осуществлялся доступ для отправки почты с помощью команды "Отправить от имени". |
@@ -392,7 +392,7 @@ ms.locfileid: "82023611"
 
 Эти записи создаются при внесении изменений или дополнений в группы Exchange.
 
-| Свойство | Описание |
+| Свойство. | Описание: |
 |:--- |:--- |
 | OfficeWorkload | Exchange |
 | OfficeWorkload | ExchangeItemGroup |
@@ -411,7 +411,7 @@ ms.locfileid: "82023611"
 
 Эти свойства являются общими для всех записей SharePoint.
 
-| Свойство | Описание |
+| Свойство. | Описание: |
 |:--- |:--- |
 | OfficeWorkload | SharePoint |
 | OfficeWorkload | SharePoint |
@@ -428,7 +428,7 @@ ms.locfileid: "82023611"
 
 Эти записи создаются при внесении изменений в конфигурацию SharePoint.
 
-| Свойство | Описание |
+| Свойство. | Описание: |
 |:--- |:--- |
 | OfficeWorkload | SharePoint |
 | OfficeWorkload | SharePoint |
@@ -441,7 +441,7 @@ ms.locfileid: "82023611"
 
 Эти записи создаются в ответ на операции с файлами в SharePoint.
 
-| Свойство | Описание |
+| Свойство. | Описание: |
 |:--- |:--- |
 | OfficeWorkload | SharePoint |
 | OfficeWorkload | SharePointFileOperation |
@@ -462,7 +462,7 @@ ms.locfileid: "82023611"
 
 В следующей таблице приведены примеры запросов к журналу для записей обновления, собранных этим решением.
 
-| query | Описание |
+| Запрос | Описание |
 | --- | --- |
 |Количество всех операций для подписки Office 365 |OfficeActivity &#124; summarize count() by Operation |
 |Использование сайтов SharePoint|Оффицеактивити &#124;, где Оффицеворклоад = ~ "SharePoint" &#124; суммировать Count () путем SiteUrl \| сортировки по убыванию|
