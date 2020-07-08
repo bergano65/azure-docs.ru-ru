@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 3694a1d04ec25f44cfcf9395bdd148e2fd3c0d9f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6ae5f4ba88880a53db765ab0ad9fde5bd9a4e4f9
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79371565"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86043650"
 ---
 # <a name="storage-account-overview"></a>Общие сведения об учетной записи хранения
 
@@ -98,7 +98,7 @@ ms.locfileid: "79371565"
 
 ### <a name="filestorage-storage-accounts"></a>Учетные записи хранения Филестораже
 
-Учетные записи хранения Филестораже обеспечивают уровень производительности "Премиум" для файловых ресурсов Azure. Дополнительные сведения см. в статье [целевые показатели масштабируемости и производительности службы файлов Azure](../files/storage-files-scale-targets.md).
+Учетные записи хранения Филестораже обеспечивают уровень производительности "Премиум" для файловых ресурсов Azure. Дополнительные сведения см. в статье [Целевые показатели масштабируемости и производительности Файлов Azure](../files/storage-files-scale-targets.md).
 
 ## <a name="access-tiers-for-block-blob-data"></a>Уровни доступа для данных блочных BLOB-объектов
 
@@ -119,7 +119,7 @@ ms.locfileid: "79371565"
 
 [!INCLUDE [storage-common-redundancy-options](../../../includes/storage-common-redundancy-options.md)]
 
-## <a name="encryption"></a>Encryption
+## <a name="encryption"></a>Шифрование
 
 Все данные в вашей учетной записи хранения шифруются на стороне службы. Дополнительные сведения о шифровании см. в статье [Шифрование службы хранилища Azure для неактивных данных](storage-service-encryption.md).
 
@@ -185,7 +185,9 @@ AzCopy — это программа командной строки Windows, п
 
 [!INCLUDE [storage-account-billing-include](../../../includes/storage-account-billing-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+[!INCLUDE [cost-management-horizontal](../../../includes/cost-management-horizontal.md)]
 
-- [Создание учетной записи хранения](storage-account-create.md)
+## <a name="next-steps"></a>Дальнейшие действия
+
+- [создать учетную запись хранения;](storage-account-create.md)
 - [Создание учетной записи хранения блочных BLOB-объектов](../blobs/storage-blob-create-account-block-blob.md)

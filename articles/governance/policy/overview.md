@@ -3,12 +3,12 @@ title: Общие сведения о Политике Azure
 description: "\"Политика Azure\" — это служба в Azure, которая используется для создания, присваивания определений политик, а также управления ими в среде Azure."
 ms.date: 06/17/2020
 ms.topic: overview
-ms.openlocfilehash: e204a4eeff547877a48789eba6f1b8cac017d08e
-ms.sourcegitcommit: 51977b63624dfd3b4f22fb9fe68761d26eed6824
+ms.openlocfilehash: 2ac8c175f586d9649e35328a483be918276c115d
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84944667"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86044198"
 ---
 # <a name="what-is-azure-policy"></a>Что такое служба "Политика Azure"?
 
@@ -82,7 +82,7 @@ RBAC контролирует [действия](../../role-based-access-control
 
 ### <a name="resources-covered-by-azure-policy"></a>Какие ресурсы охватывает Политика Azure
 
-Политика Azure оценивает все ресурсы в Azure. Для некоторых поставщиков ресурсов, таких как [гостевая конфигурация](./concepts/guest-configuration.md), [Служба Azure Kubernetes](../../aks/intro-kubernetes.md) и [Azure Key Vault](../../key-vault/key-vault-overview.md), поддерживается более глубокая интеграция для управления параметрами и объектами. См. сведения о [режимах поставщиков ресурсов](./concepts/definition-structure.md).
+Политика Azure оценивает все ресурсы в Azure. Для некоторых поставщиков ресурсов, таких как [гостевая конфигурация](./concepts/guest-configuration.md), [Служба Azure Kubernetes](../../aks/intro-kubernetes.md) и [Azure Key Vault](../../key-vault/general/overview.md), поддерживается более глубокая интеграция для управления параметрами и объектами. См. сведения о [режимах поставщиков ресурсов](./concepts/definition-structure.md).
 
 ### <a name="recommendations-for-managing-policies"></a>Рекомендации по управлению политиками
 
