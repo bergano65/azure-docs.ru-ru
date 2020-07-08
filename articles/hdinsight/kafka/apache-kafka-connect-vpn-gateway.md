@@ -5,14 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive, tracking-python
 ms.date: 03/04/2020
-ms.openlocfilehash: d8bf80cad86f45c24a475799a840b861c23fc28a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 62034ec84f454e4d726348a1c71b492f8aa598b6
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84610956"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087441"
 ---
 # <a name="connect-to-apache-kafka-on-hdinsight-through-an-azure-virtual-network"></a>Подключение к Apache Kafka в HDInsight с помощью виртуальной сети Azure
 
@@ -365,7 +366,7 @@ HDInsight не разрешает прямое подключение к Kafka �
 
     * Если вы включили __разрешение имен через пользовательский DNS-сервер__, замените записи `kafka_broker` полным доменным именем рабочих узлов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об использовании HDInsight с виртуальной сетью см. в документе [Планирование развертывания виртуальной сети для кластеров Azure HDInsight](../hdinsight-plan-virtual-network-deployment.md) .
 

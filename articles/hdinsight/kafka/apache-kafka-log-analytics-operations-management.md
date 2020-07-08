@@ -5,14 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 02/17/2020
-ms.openlocfilehash: 3f8ff3cbc24f6e3a7e0eccf1b18e01941c9584b9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 593d6861ee5913fffb25bfdea4829e1b1ce6ddc6
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77471186"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087407"
 ---
 # <a name="analyze-logs-for-apache-kafka-on-hdinsight"></a>Анализ журналов для Apache Kafka в HDInsight
 
@@ -24,7 +25,7 @@ ms.locfileid: "77471186"
 
 Журналы Apache Kafka в кластере находятся в папке `/var/log/kafka` . Журналы Kafka не сохраняются и не сохраняются в течение жизненного цикла кластера, независимо от того, используются ли управляемые диски. В следующей таблице показаны доступные журналы.
 
-|Журнал |Описание: |
+|Журнал |Описание |
 |---|---|
 |Kafka. out|stdout и stderr процесса Kafka. В этом файле находятся журналы запуска и завершения работы Kafka.|
 |Server. log|Основной журнал сервера Kafka. Все журналы Kafka Broker находятся здесь.|
@@ -93,7 +94,7 @@ ms.locfileid: "77471186"
 
     Кроме того, вы можете ввести `*` для поиска всех типов данных журнала. В настоящее время для запросов доступны следующие журналы:
 
-    | Тип журнала | Описание: |
+    | Тип журнала | Описание |
     | ---- | ---- |
     | log\_kafkaserver\_CL | Брокер Kafka, server.log |
     | log\_kafkacontroller\_CL | Брокер Kafka, controller.log |
@@ -101,7 +102,7 @@ ms.locfileid: "77471186"
 
     ![Использование ЦП в службе log Analytics для Apache Kafka](./media/apache-kafka-log-analytics-operations-management/apache-kafka-cpu-usage.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure Monitor см. в статьях [обзор Azure Monitor](../../log-analytics/log-analytics-get-started.md)и [запрос Azure Monitor журналов для мониторинга кластеров HDInsight](../hdinsight-hadoop-oms-log-analytics-use-queries.md).
 

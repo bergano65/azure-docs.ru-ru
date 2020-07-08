@@ -1,5 +1,5 @@
 ---
-title: Миграция пакетов служб SSIS в управляемый экземпляр SQL
+title: Миграция пакетов служб SSIS в SQL Управляемый экземпляр
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как перенести пакеты и проекты SQL Server Integration Services (SSIS) в Управляемый экземпляр SQL Azure с помощью Azure Database Migration Service или Помощник по миграции данных.
 services: database-migration
@@ -12,11 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 02/20/2020
-ms.openlocfilehash: d27905acc60e953ec5ed92e77d7a352c1c3fec8b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 13fcda03f3ccd0c28e1dce594c46b8c0d9449054
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84196569"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086574"
 ---
 # <a name="migrate-sql-server-integration-services-packages-to-an-azure-sql-managed-instance"></a>Перенос пакетов SQL Server Integration Services в Управляемый экземпляр SQL Azure
 Если вы используете SQL Server Integration Services (SSIS) и хотите перенести проекты или пакеты служб SSIS из исходной SSISDB, размещенной SQL Server, в целевую SSISDB, размещенную Управляемый экземпляр Azure SQL, можно использовать Azure Database Migration Service.
@@ -32,7 +33,7 @@ ms.locfileid: "84196569"
 > * Оценка проектов и пакетов исходной SSIS.
 > * Перенос проектов и пакетов SSIS в Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этих действий вам потребуется следующее:
 
@@ -84,7 +85,7 @@ ms.locfileid: "84196569"
 
     Дополнительные сведения о создании виртуальной сети в портал Azure см. в статье [Создание виртуальной сети с помощью портал Azure](https://aka.ms/DMSVnet).
 
-    Подробные сведения см. в статье [Сетевые топологии для переноса Управляемого экземпляра Базы данных Azure SQL с помощью Azure Database Migration Service](https://aka.ms/dmsnetworkformi).
+    Дополнительные сведения см. в статье [сетевые топологии для миграции управляемый экземпляр Azure SQL с помощью Azure Database Migration Service](https://aka.ms/dmsnetworkformi).
 
 6. Выберите ценовую категорию.
 
@@ -149,6 +150,6 @@ ms.locfileid: "84196569"
 
 * Выберите **Запустить миграцию**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Просмотрите [руководство по миграции базы данных Майкрософт](https://datamigration.microsoft.com/).

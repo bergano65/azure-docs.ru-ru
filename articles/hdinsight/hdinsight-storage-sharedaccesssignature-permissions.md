@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: 77314514ca26997fecd6b5d7c6ba1fc7d14c2584
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 3756e7d1f58c37038347888a21d98326cd4eb71f
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82209066"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087458"
 ---
 # <a name="use-azure-storage-shared-access-signatures-to-restrict-access-to-data-in-hdinsight"></a>Использование подписанных URL-адресов хранилища Azure для ограничения доступа к данным в HDInsight
 
@@ -31,19 +31,19 @@ HDInsight имеет полный доступ к данным в учетных
 
 * Существующий [контейнер хранилища](../storage/blobs/storage-quickstart-blobs-portal.md).  
 
-* При использовании PowerShell вам потребуется [модуль AZ](https://docs.microsoft.com/powershell/azure/overview).
+* При использовании PowerShell вам потребуется [модуль Az](https://docs.microsoft.com/powershell/azure/overview).
 
-* Если вы хотите использовать Azure CLI и вы еще не установили его, см. статью [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+* Если вы хотите использовать Azure CLI и еще не установили его, обратитесь к разделу [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 * При использовании [Python](https://www.python.org/downloads/)версии 2,7 или более поздней.
 
 * При использовании C# Visual Studio должна иметь версию 2013 или более позднюю.
 
-* Схема универсального кода ресурса (URI) для вашей учетной записи хранения. Эта схема будет использоваться `wasb://` для службы хранилища Azure `abfs://` , Azure Data Lake Storage 2-го поколения или `adl://` для Azure Data Lake Storage 1-го поколения. Если для службы хранилища Azure включено безопасное перемещение, URI будет таким: `wasbs://`.
+* Схема универсального кода ресурса (URI) для вашей учетной записи хранения. Эта схема будет использоваться `wasb://` для службы хранилища Azure, `abfs://` Azure Data Lake Storage 2-го поколения или `adl://` для Azure Data Lake Storage 1-го поколения. Если для службы хранилища Azure включено безопасное перемещение, URI будет таким: `wasbs://`.
 
 * Существующий кластер HDInsight, в который добавляется подписанный URL-доступ. Если нет, создайте кластер с помощью Azure PowerShell и добавьте подписанный URL-адрес в процессе создания кластера.
 
-* Примеры файлов из [https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature](https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature). Этот репозиторий содержит указанные далее элементы.
+* Примеры файлов из [https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature](https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature) . Этот репозиторий содержит указанные далее элементы.
 
   * Проект Visual Studio, способный создать контейнер хранилища, хранимую политику и SAS для использования с HDInsight.
   * Сценарий Python, способный создать контейнер хранилища, хранимую политику и SAS для использования с HDInsight.
@@ -88,7 +88,7 @@ HDInsight имеет полный доступ к данным в учетных
 
 ### <a name="using-powershell"></a>Использование PowerShell
 
-Замените `RESOURCEGROUP`, `STORAGEACCOUNT`и `STORAGECONTAINER` соответствующими значениями для существующего контейнера хранилища. Измените каталог на `hdinsight-dotnet-python-azure-storage-shared-access-signature-master` или измените `-File` параметр, чтобы он содержал абсолютный путь для `Set-AzStorageblobcontent`. Введите следующую команду PowerShell:
+Замените `RESOURCEGROUP` , `STORAGEACCOUNT` и `STORAGECONTAINER` соответствующими значениями для существующего контейнера хранилища. Измените каталог на `hdinsight-dotnet-python-azure-storage-shared-access-signature-master` или измените параметр, `-File` чтобы он содержал абсолютный путь для `Set-AzStorageblobcontent` . Введите следующую команду PowerShell:
 
 ```powershell
 $resourceGroupName = "RESOURCEGROUP"
@@ -154,7 +154,7 @@ Set-AzStorageblobcontent `
 
 Использование переменных в этом разделе основано на среде Windows. Для bash или других сред потребуются небольшие вариации.
 
-1. Замените `STORAGEACCOUNT`и `STORAGECONTAINER` соответствующими значениями для существующего контейнера хранилища.
+1. Замените `STORAGEACCOUNT` и `STORAGECONTAINER` соответствующими значениями для существующего контейнера хранилища.
 
     ```azurecli
     # set variables
@@ -171,14 +171,14 @@ Set-AzStorageblobcontent `
     az storage account keys list --account-name %AZURE_STORAGE_ACCOUNT% --query "[0].{PrimaryKey:value}" --output table
     ```
 
-2. Задайте для полученного первичного ключа переменную для последующего использования. Замените `PRIMARYKEY` на полученное значение на предыдущем шаге, а затем введите следующую команду:
+2. Задайте для полученного первичного ключа переменную для последующего использования. Замените на `PRIMARYKEY` полученное значение на предыдущем шаге, а затем введите следующую команду:
 
     ```console
     #set variable for primary key
     set AZURE_STORAGE_KEY=PRIMARYKEY
     ```
 
-3. Измените каталог на `hdinsight-dotnet-python-azure-storage-shared-access-signature-master` или измените `--file` параметр, чтобы он содержал абсолютный путь для `az storage blob upload`. Выполните оставшиеся команды:
+3. Измените каталог на `hdinsight-dotnet-python-azure-storage-shared-access-signature-master` или измените параметр, `--file` чтобы он содержал абсолютный путь для `az storage blob upload` . Выполните оставшиеся команды:
 
     ```azurecli
     # Create stored access policy on the containing object
@@ -199,9 +199,9 @@ Set-AzStorageblobcontent `
 
 ### <a name="using-python"></a>Использование Python
 
-Откройте `SASToken.py` файл и замените `storage_account_name`значения, `storage_account_key`и `storage_container_name` соответствующими значениями для существующего контейнера хранилища, а затем запустите скрипт.
+Откройте `SASToken.py` файл и замените `storage_account_name` значения, `storage_account_key` и `storage_container_name` соответствующими значениями для существующего контейнера хранилища, а затем запустите скрипт.
 
-Может потребоваться выполнить `pip install --upgrade azure-storage` , если появится сообщение `ImportError: No module named azure.storage`об ошибке.
+Может потребоваться выполнить, `pip install --upgrade azure-storage` Если появится сообщение об ошибке `ImportError: No module named azure.storage` .
 
 ### <a name="using-c"></a>Использование C\#
 
@@ -211,7 +211,7 @@ Set-AzStorageblobcontent `
 
 3. Выберите **Параметры** и добавьте значения для следующих записей:
 
-    |Элемент |Описание |
+    |Item |Описание: |
     |---|---|
     |StorageConnectionString|Строка подключения к учетной записи хранения, для которой необходимо создать хранимую политику и SAS. Требуется формат: `DefaultEndpointsProtocol=https;AccountName=myaccount;AccountKey=mykey`, где `myaccount` — это имя вашей учетной записи хранения, а `mykey` — ключ к учетной записи хранения.|
     |ContainerName;|Контейнер в учетной записи хранения, доступ к которому необходимо ограничить.|
@@ -228,7 +228,7 @@ Set-AzStorageblobcontent `
 
 ### <a name="create-a-cluster-that-uses-the-sas"></a>Создание кластера, использующего SAS
 
-Замените `CLUSTERNAME`, `RESOURCEGROUP`, `DEFAULTSTORAGEACCOUNT`, `STORAGECONTAINER`, `STORAGEACCOUNT`и `TOKEN` соответствующими значениями. Введите команды PowerShell:
+Замените `CLUSTERNAME` , `RESOURCEGROUP` , `DEFAULTSTORAGEACCOUNT` , `STORAGECONTAINER` , `STORAGEACCOUNT` и `TOKEN` соответствующими значениями. Введите команды PowerShell:
 
 ```powershell
 $clusterName = 'CLUSTERNAME'
@@ -353,14 +353,14 @@ Remove-AzResourceGroup `
 
 1. Откройте веб-интерфейс Ambari для вашего кластера. Адрес этой страницы: `https://YOURCLUSTERNAME.azurehdinsight.net`. При появлении запроса пройдите проверку подлинности, указав имя пользователя и пароль администратора, которые использовались при создании кластера.
 
-1. Перейдите в раздел**конфигурации** >  **HDFS** > **Расширенные** > **пользовательские основные компоненты — сайт**.
+1. Перейдите в **HDFS**раздел  >  **конфигурации**HDFS  >  **Расширенные**  >  **пользовательские основные компоненты — сайт**.
 
 1. Разверните раздел **пользовательское ядро — сайт** , прокрутите до конца и выберите **Добавить свойство...**. Используйте следующие значения для **ключа** и **значения**:
 
     * **Ключ:** `fs.azure.sas.CONTAINERNAME.STORAGEACCOUNTNAME.blob.core.windows.net`
     * **Значение**: SAS, возвращенный одним из методов, выполненных ранее.
 
-    Замените `CONTAINERNAME` на имя контейнера, используемого в приложении C# или SAS. Замените `STORAGEACCOUNTNAME` на имя учетной записи хранения, которую вы использовали.
+    Замените на `CONTAINERNAME` имя контейнера, используемого в приложении C# или SAS. Замените на `STORAGEACCOUNTNAME` имя учетной записи хранения, которую вы использовали.
 
     Выберите **Добавить** , чтобы сохранить этот ключ и значение
 
@@ -393,11 +393,11 @@ Remove-AzResourceGroup `
     hdfs dfs -ls wasbs://SASCONTAINER@SASACCOUNTNAME.blob.core.windows.net/
     ```
 
-    Замените `SASCONTAINER` на имя контейнера, созданного для учетной записи хранения SAS. Замените `SASACCOUNTNAME` именем учетной записи хранения, используемой для SAS.
+    Замените на `SASCONTAINER` имя контейнера, созданного для учетной записи хранения SAS. Замените `SASACCOUNTNAME` именем учетной записи хранения, используемой для SAS.
 
     Список включает файл, отправленный при создании контейнера и SAS.
 
-3. Проверьте, можете ли вы прочитать содержимое файла, выполнив следующую команду: Замените `SASCONTAINER` и `SASACCOUNTNAME` , как в предыдущем шаге. Замените `sample.log` на имя файла, отображаемого в предыдущей команде:
+3. Проверьте, можете ли вы прочитать содержимое файла, выполнив следующую команду: Замените `SASCONTAINER` и, `SASACCOUNTNAME` как в предыдущем шаге. Замените на `sample.log` имя файла, отображаемого в предыдущей команде:
 
     ```bash
     hdfs dfs -text wasbs://SASCONTAINER@SASACCOUNTNAME.blob.core.windows.net/sample.log
@@ -421,7 +421,9 @@ Remove-AzResourceGroup `
 
     Должно появиться сообщение следующего вида:
 
-        put: java.io.IOException
+    ```output
+    put: java.io.IOException
+    ```
 
     Эта ошибка возникает из-за того, что расположение хранилища доступно только для чтения и включения в списки. Разместите данные в хранилище по умолчанию доступного для записи кластера, выполнив следующую команду:
 
@@ -431,7 +433,7 @@ Remove-AzResourceGroup `
 
     На этот раз операция должна завершиться успешно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как добавить хранилище с ограниченным доступом в кластер HDInsight, Узнайте о других способах работы с данными в кластере:
 

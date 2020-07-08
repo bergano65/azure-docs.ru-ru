@@ -1,6 +1,6 @@
 ---
 title: База данных SQL Azure. Управление долгосрочным хранением резервных копий
-description: Сведения о хранении и восстановлении автоматически создаваемых резервных копий для одной базы данных SQL Azure или в составе пула в службе хранилища Azure (до 10 лет) с помощью портал Azure и PowerShell.
+description: Узнайте, как хранить и восстанавливать автоматически создаваемые резервные копии базы данных SQL Azure в службе хранилища Azure (до 10 лет) с помощью портал Azure и PowerShell.
 services: sql-database
 ms.service: sql-db-mi
 ms.subservice: backup-restore
@@ -11,11 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 04/14/2020
-ms.openlocfilehash: e3abe203c32994c63ddd1cecc45cbcc8b566c45a
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 713ac569acb7866b4c7431b80e2afb1e7953ce08
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027907"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087373"
 ---
 # <a name="manage-azure-sql-database-long-term-backup-retention"></a>Управление долгосрочным хранением резервных копий базы данных SQL Azure
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -186,7 +187,7 @@ Remove-AzSqlDatabaseLongTermRetentionBackup -ResourceId $ltrBackup.ResourceId
 
 ### <a name="restore-from-ltr-backups"></a>Восстановление из резервных копий LTR
 
-В этом примере показано, как выполнить восстановление из резервной копии LTR. Обратите внимание, что интерфейс не меняется, но параметр идентификатора ресурса теперь требует наличия идентификатора ресурса резервной копии LTR.
+В этом примере показано, как выполнить восстановление из резервной копии LTR. Обратите внимание, что этот интерфейс не изменился, но для параметра идентификатора ресурса теперь требуется идентификатор ресурса резервного копирования LTR.
 
 ```powershell
 # restore a specific LTR backup as an P1 database on the server $serverName of the resource group $resourceGroup
@@ -200,7 +201,7 @@ Restore-AzSqlDatabase -FromLongTermRetentionBackup -ResourceId $ltrBackup.Resour
 > [!NOTE]
 > Здесь вы можете подключиться к восстановленной базе данных с помощью SQL Server Management Studio и выполнить необходимые задания, например извлечь часть данных из восстановленной базы данных, чтобы скопировать их в имеющуюся базу данных или удалить имеющуюся базу данных и присвоить ее имя восстановленной базе данных. Ознакомьтесь с [восстановлением до точки во времени](recovery-using-backups.md#point-in-time-restore).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о резервных копиях базы данных, создаваемых автоматически службой, см. в [этой статье](automated-backups-overview.md).
 - Дополнительные сведения о долгосрочном хранении резервных копий см. в статье [Хранение резервных копий базы данных SQL Azure до 10 лет](long-term-retention-overview.md).

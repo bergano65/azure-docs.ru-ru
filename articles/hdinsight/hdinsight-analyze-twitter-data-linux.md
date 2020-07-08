@@ -5,14 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: H1Hack27Feb2017,hdinsightactive
 ms.date: 12/16/2019
-ms.openlocfilehash: f3705170be28f33e5994bd00e363dc7ec7f94642
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8031e917d998b877e6c3a5830d69abf81c9bdebe
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75435618"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086727"
 ---
 # <a name="analyze-twitter-data-using-apache-hive-and-apache-hadoop-on-hdinsight"></a>Анализ данных Twitter с помощью Apache Hive и Apache Hadoop в HDInsight
 
@@ -36,7 +37,7 @@ Twitter позволяет получать данные для каждого �
    | Поле | Значение |
    |--- |--- |
    | Имя |MyHDInsightApp |
-   | Описание: |MyHDInsightApp |
+   | Описание |MyHDInsightApp |
    | Веб-сайт |`https://www.myhdinsightapp.com` |
 
 4. Выберите **Да, я принимаю**, а затем выберите **создать приложение Twitter**.
@@ -307,7 +308,7 @@ hdfs dfs -put tweets.txt /tutorials/twitter/data/tweets.txt
     > [!NOTE]  
     > Если вы изменили фильтр в сценарии `gettweets.py`, замените **Azure** одним из используемых фильтров.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Вы узнали, как преобразовать неструктурированный набор данных JSON в структурированную [Apache Hive](https://hive.apache.org/) таблицу. Дополнительные сведения о Hive в HDInsight см. в следующих документах:
 

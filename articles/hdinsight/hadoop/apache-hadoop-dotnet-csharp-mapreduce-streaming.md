@@ -5,14 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: 28817489af535ee45a6cc06cc5fe9d4fde9da8eb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 77d8143743f899bcb9fd3927de223d84d406ed6f
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82996838"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086795"
 ---
 # <a name="use-c-with-mapreduce-streaming-on-apache-hadoop-in-hdinsight"></a>Использование C# для потоковой передачи MapReduce в Apache Hadoop в HDInsight
 
@@ -217,7 +218,7 @@ namespace reducer
 
    В следующем списке описывается, что представляет каждый параметр и параметр.
 
-   |Параметр | Описание: |
+   |Параметр | Описание |
    |---|---|
    |hadoop-streaming.jar|Указывает JAR-файл, содержащий функцию потоковой передачи MapReduce.|
    |— файлы|Указывает *mapper.exe* и *reducer.exe* файлы для этого задания. `wasbs:///` `adl:///` Объявление протокола, или `abfs:///` перед каждым файлом представляет собой путь к корню хранилища по умолчанию для кластера.|
@@ -266,7 +267,7 @@ yourselves      3
 youth   17
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Используйте MapReduce в Apache Hadoop в HDInsight](hdinsight-use-mapreduce.md).
 * [Используйте определяемую пользователем функцию C# с Apache Hive и Apache Pig](apache-hadoop-hive-pig-udf-dotnet-csharp.md).

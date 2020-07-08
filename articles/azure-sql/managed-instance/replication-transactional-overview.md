@@ -12,11 +12,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 04/20/2020
-ms.openlocfilehash: 2163a6e47767f6ce990526c7ececb7b4b554bf4e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 00f456d87bd5791b7d49644cb801dca20431b0b5
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84708505"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086404"
 ---
 # <a name="transactional-replication-with-azure-sql-managed-instance"></a>Репликация транзакций с помощью Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -28,8 +29,8 @@ ms.locfileid: "84708505"
 Репликацию транзакций можно использовать для отправки изменений, внесенных в Управляемый экземпляр Azure SQL, в:
 
 - SQL Server базы данных локально или на виртуальной машине Azure;
-- Отдельная база данных или в составе пула в базе данных SQL Azure
-- Отдельная или в составе пула база данных в Azure SQL Управляемый экземпляр
+- База данных в базе данных SQL Azure
+- База данных экземпляра в Azure SQL Управляемый экземпляр
 
   > [!NOTE]
   > Чтобы использовать все функции Управляемый экземпляр Azure SQL, необходимо использовать последние версии [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) и [SQL Server Data Tools (SSDT)](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt).
@@ -136,7 +137,7 @@ ms.locfileid: "84708505"
 
 В этой конфигурации база данных в базе данных SQL Azure или Azure SQL Управляемый экземпляр является подписчиком. Эта конфигурация поддерживает миграцию из локальной среды в Azure. Если подписчик является базой данных в базе данных SQL Azure, она должна находиться в режиме принудительной отправки.  
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
 - Используйте проверку подлинности SQL для подключения между участниками репликации.
 - Используйте общий ресурс учетной записи хранения Azure для рабочего каталога, используемого репликацией.
@@ -188,7 +189,7 @@ ms.locfileid: "84708505"
 - Для отработки отказа с потерей данных также будет работать репликация. После этого будет выполнена повторная репликация потерянных изменений.
 - Для отработки отказа с потерей данных, но потери данных выходят за пределы срока хранения базы данных распространителя, администратору SQL Управляемый экземпляр потребуется повторно инициализировать базу данных подписки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о настройке репликации транзакций см. в следующих учебниках:
 
@@ -197,7 +198,7 @@ ms.locfileid: "84708505"
 - [Создайте публикацию](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication).
 - [Создайте принудительную подписку](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription) , используя имя сервера в качестве подписчика (например, `N'azuresqldbdns.database.windows.net` и базу данных в имени базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks**). )
 
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>Дополнительно  
 
 - [Репликация с помощью Управляемый экземпляр SQL и группы отработки отказа](transact-sql-tsql-differences-sql-server.md#replication)
 - [Репликация в Базу данных SQL](../database/replication-to-sql-database.md)

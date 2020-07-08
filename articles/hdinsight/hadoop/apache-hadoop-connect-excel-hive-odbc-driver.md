@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 04/22/2020
-ms.openlocfilehash: 388f59f5090be43469acfde5197a658942e817f7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b5499a8c4fd6ee200ca0fac800c8c17c92a1cc0c
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82182452"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087849"
 ---
 # <a name="connect-excel-to-apache-hadoop-in-azure-hdinsight-with-the-microsoft-hive-odbc-driver"></a>Подключение Excel к Apache Hadoop с помощью драйвера Microsoft Hive ODBC в Azure HDInsight
 
@@ -48,7 +48,7 @@ ms.locfileid: "82182452"
 
 1. Введите или выберите следующие значения:
 
-   | Свойство | Описание |
+   | Свойство. | Описание |
    | --- | --- |
    |  Имя базы данных-источника |Присвойте имя источнику данных |
    |  Узлы |Введите `HDInsightClusterName.azurehdinsight.net`. Например, `myHDICluster.azurehdinsight.net`. Примечание. `HDInsightClusterName-int.azurehdinsight.net` поддерживается до тех пор, пока клиентская виртуальная машина будет соединена с той же виртуальной сетью. |
@@ -94,7 +94,7 @@ ms.locfileid: "82182452"
 
     ![Навигатор по ODBC для Hive в HDInsight Excel](./media/apache-hadoop-connect-excel-hive-odbc-driver/hdinsight-hive-odbc-navigator.png "Навигатор по ODBC для Hive в HDInsight Excel")
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В рамках этой статьи вы узнали, как получить данные из службы HDInsight в Excel с помощью драйвера Microsoft Hive ODBC. Аналогичным образом можно получать данные из службы HDInsight в базу данных SQL. Также можно передать данные в службу HDInsight. Дополнительные сведения см. на следующих ресурсах:
 

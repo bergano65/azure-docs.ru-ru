@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/23/2019
-ms.openlocfilehash: e4e15d1c6554fc567f668b2033bff5b5664db918
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 82e3374491aa119d9985ea7ef31e180c920511d3
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75972795"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087747"
 ---
 # <a name="create-apache-hbase-clusters-on-hdinsight-in-azure-virtual-network"></a>Создание кластеров Apache HBase в HDInsight в виртуальной сети Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "75972795"
 
 1. В диалоговом окне **Настраиваемое развертывание** выберите **изменить шаблон**.
 
-1. В строке 165 измените значение `Standard_A3` на. `Standard_A4_V2` Затем нажмите кнопку **Save** (Сохранить).
+1. В строке 165 измените значение `Standard_A3` на `Standard_A4_V2` . Затем нажмите кнопку **Save** (Сохранить).
 
 1. Заполните оставшийся шаблон следующими сведениями:
 
@@ -134,15 +134,17 @@ ms.locfileid: "75972795"
 
 Чтобы использовать эту информацию в Java-приложении, создайте приложение, выполнив шаги, представленные в статье [Создание приложений Java для Apache HBase](./apache-hbase-build-java-maven-linux.md). Чтобы приложение подключилось к удаленному серверу HBase, измените файл **hbase-site.xml** в этом примере, чтобы использовать полное доменное имя для ZooKeeper. Пример:
 
-    <property>
-        <name>hbase.zookeeper.quorum</name>
-        <value>zookeeper0.<dns suffix>,zookeeper1.<dns suffix>,zookeeper2.<dns suffix></value>
-    </property>
+```xml
+<property>
+    <name>hbase.zookeeper.quorum</name>
+    <value>zookeeper0.<dns suffix>,zookeeper1.<dns suffix>,zookeeper2.<dns suffix></value>
+</property>
+```
 
 > [!NOTE]  
 > Чтобы получить дополнительную информацию о разрешении имен в виртуальных сетях Azure, а также об использовании своего​ собственного DNS-сервера, ознакомьтесь со статьей [Разрешение имен для ВМ и экземпляров ролей](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как создать кластер Apache HBase. Дополнительные сведения см. на следующих ресурсах:
 

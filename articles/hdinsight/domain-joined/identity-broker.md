@@ -5,13 +5,14 @@ ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/12/2019
-ms.openlocfilehash: 1bea8adbdb39d2ce83cfe7821ef052fdc1f1d512
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: ff7cb3c03edf9b421347815311796896caaffd70
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85921329"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086608"
 ---
 # <a name="use-id-broker-preview-for-credential-management"></a>Использование брокера ИДЕНТИФИКАТОРов (Предварительная версия) для управления учетными данными
 
@@ -105,7 +106,7 @@ ms.locfileid: "85921329"
 * AppId: 7865c1d2-F040-46cc-875f-831a1ef6a28a
 *   Разрешение: (имя: Cluster. ReadWrite, идентификатор: 8f89faa0-ffef-4007-974d-4989b39ad77d)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Настройка кластера HDInsight с Корпоративный пакет безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure-using-azure-adds.md)
 * [Синхронизация пользователей Azure Active Directory с кластером HDInsight](../hdinsight-sync-aad-users-to-cluster.md)

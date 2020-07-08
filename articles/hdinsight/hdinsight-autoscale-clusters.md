@@ -5,14 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/29/2020
-ms.openlocfilehash: ccd729510341a9232764b1c211aa18c197ad5a37
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 29c04fc8f6af016200e06ad239095a3665de5869
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84248640"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086438"
 ---
 # <a name="automatically-scale-azure-hdinsight-clusters"></a>Автоматическое масштабирование кластеров Azure HDInsight
 
@@ -258,6 +259,6 @@ https://management.azure.com/subscriptions/{subscription Id}/resourceGroups/{res
 
 Не уменьшайте размер кластера до трех узлов. Масштабирование кластера до трех узлов может привести к зависанию в защищенном режиме из-за недостаточной репликации файлов.  Дополнительные сведения см. [в разделе зависнуть в защищенном режиме](./hdinsight-scaling-best-practices.md#getting-stuck-in-safe-mode).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с рекомендациями по масштабированию кластеров вручную в [руководстве по масштабированию](hdinsight-scaling-best-practices.md) .

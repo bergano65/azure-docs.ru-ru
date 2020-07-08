@@ -5,14 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/21/2019
-ms.openlocfilehash: d868cdd346c79cf77d4f8c1ea6e4b20adcd99b6c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e2f4bbe6157e1affa4975f6dcee2ad0f1d98a71b
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74327401"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086098"
 ---
 # <a name="apache-spark-streaming-dstream-example-with-apache-kafka-on-hdinsight"></a>Пример потоковой передачи Apache Spark (DStream) с использованием Apache Kafka в HDInsight
 
@@ -50,7 +51,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
 1. Используйте следующие сведения, чтобы заполнить раздел **Настраиваемое развертывание**:
 
-    |Свойство. |Значение |
+    |Свойство |Значение |
     |---|---|
     |Группа ресурсов|Создайте новую группу или выберите существующую.|
     |Расположение|Выберите близкое к вам географическое расположение.|
@@ -83,7 +84,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
 Выполнив описанные здесь инструкции, вы создадите два кластера в одной группе ресурсов Azure. Следовательно, вы можете удалить эту группу ресурсов на портале Azure. При этом будут удалены все созданные в рамках этого руководства и используемые в кластерах ресурсы, виртуальная сеть Azure и учетная запись хранения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 В этом примере описано, как использовать Spark для чтения и записи данных в Kafka. Другие материалы, посвященные работе с Kafka, доступны по следующим ссылкам:
 

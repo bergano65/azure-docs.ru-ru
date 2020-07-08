@@ -11,11 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/15/2020
 ms.author: jingwang
-ms.openlocfilehash: 5ec6778e3e00a85a2fa7d43383df5c2ce6c47faa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8041ce07c08c3b6063e2a1b3c7b55b1cec59b19a
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84629479"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087764"
 ---
 # <a name="copy-data-from-the-hdfs-server-by-using-azure-data-factory"></a>Копирование данных с сервера HDFS с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите версию используемой службы фабрики данных:"]
@@ -246,7 +247,7 @@ ms.locfileid: "84629479"
 
 Действие копирования поддерживает использование DistCp для копирования файлов в хранилище BLOB-объектов Azure (включая [промежуточное копирование](copy-activity-performance.md)) или Azure Data Lake Store. В этом случае DistCp может воспользоваться возможностями кластера, а не работать в локальной среде выполнения интеграции. Использование DistCp обеспечивает лучшую пропускную способность копирования, особенно если ваш кластер очень мощный. На основе конфигурации в фабрике данных действие копирования автоматически создаст команду DistCp, отправляет ее в кластер Hadoop и отслеживает состояние копирования.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать DistCp для копирования файлов в виде из HDFS в хранилище BLOB-объектов Azure (включая промежуточную копию) или Azure Data Lake Store, убедитесь, что кластер Hadoop соответствует следующим требованиям.
 
@@ -274,7 +275,7 @@ ms.locfileid: "84629479"
 
 ### <a name="option-1-join-a-self-hosted-integration-runtime-machine-in-the-kerberos-realm"></a><a name="kerberos-join-realm"></a>Вариант 1. Присоединение компьютера с локальной средой выполнения интеграции в области Kerberos
 
-#### <a name="requirements"></a>Requirements (Требования)
+#### <a name="requirements"></a>Требования
 
 * Локальная среда выполнения интеграции должна быть присоединена к области Kerberos и не может присоединяться к какому-либо домену Windows.
 
@@ -286,17 +287,21 @@ ms.locfileid: "84629479"
 
     Компьютер должен быть настроен в качестве члена Рабочей группы, так как область Kerberos отличается от домена Windows. Эту конфигурацию можно достичь, задав область Kerberos и добавив сервер KDC, выполнив следующие команды. Замените *realm.com* именем своей области.
 
-            C:> Ksetup /setdomain REALM.COM
-            C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
+    ```console
+    C:> Ksetup /setdomain REALM.COM
+    C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
+    ```
 
     После выполнения этих команд перезапустите компьютер.
 
 2.  Проверьте конфигурацию с помощью `Ksetup` команды. Результат должен выглядеть примерно так:
 
-            C:> Ksetup
-            default realm = REALM.COM (external)
-            REALM.com:
-                kdc = <your_kdc_server_address>
+    ```output
+    C:> Ksetup
+    default realm = REALM.COM (external)
+    REALM.com:
+        kdc = <your_kdc_server_address>
+    ```
 
 **В фабрике данных:**
 
@@ -304,7 +309,7 @@ ms.locfileid: "84629479"
 
 ### <a name="option-2-enable-mutual-trust-between-the-windows-domain-and-the-kerberos-realm"></a><a name="kerberos-mutual-trust"></a>Вариант 2. Включение взаимного доверия между доменом Windows и областью Kerberos
 
-#### <a name="requirements"></a>Requirements (Требования)
+#### <a name="requirements"></a>Требования
 
 *   Компьютер, на котором размещена локальная среда выполнения интеграции, должен быть присоединен к домену Windows.
 *   Требуется разрешение на обновление параметров контроллера домена.
@@ -318,45 +323,49 @@ ms.locfileid: "84629479"
 
 1. Измените конфигурацию KDC в файле *krb5. conf* , чтобы разрешить KDC доверять домену Windows, обратившись к следующему шаблону конфигурации. По умолчанию файл конфигурации содержится в папке */etc/krb5.conf*.
 
-           [logging]
-            default = FILE:/var/log/krb5libs.log
-            kdc = FILE:/var/log/krb5kdc.log
-            admin_server = FILE:/var/log/kadmind.log
+   ```config
+   [logging]
+    default = FILE:/var/log/krb5libs.log
+    kdc = FILE:/var/log/krb5kdc.log
+    admin_server = FILE:/var/log/kadmind.log
             
-           [libdefaults]
-            default_realm = REALM.COM
-            dns_lookup_realm = false
-            dns_lookup_kdc = false
-            ticket_lifetime = 24h
-            renew_lifetime = 7d
-            forwardable = true
+   [libdefaults]
+    default_realm = REALM.COM
+    dns_lookup_realm = false
+    dns_lookup_kdc = false
+    ticket_lifetime = 24h
+    renew_lifetime = 7d
+    forwardable = true
             
-           [realms]
-            REALM.COM = {
-             kdc = node.REALM.COM
-             admin_server = node.REALM.COM
-            }
-           AD.COM = {
-            kdc = windc.ad.com
-            admin_server = windc.ad.com
-           }
+   [realms]
+    REALM.COM = {
+     kdc = node.REALM.COM
+     admin_server = node.REALM.COM
+    }
+   AD.COM = {
+    kdc = windc.ad.com
+    admin_server = windc.ad.com
+   }
             
-           [domain_realm]
-            .REALM.COM = REALM.COM
-            REALM.COM = REALM.COM
-            .ad.com = AD.COM
-            ad.com = AD.COM
+   [domain_realm]
+    .REALM.COM = REALM.COM
+    REALM.COM = REALM.COM
+    .ad.com = AD.COM
+    ad.com = AD.COM
             
-           [capaths]
-            AD.COM = {
-             REALM.COM = .
-            }
+   [capaths]
+    AD.COM = {
+     REALM.COM = .
+    }
+    ```
 
    После настройки файла перезапустите службу KDC.
 
 2. Подготовьте субъект с именем *KRBTGT/realm. COM \@ AD.com* на сервере KDC с помощью следующей команды:
 
-           Kadmin> addprinc krbtgt/REALM.COM@AD.COM
+    ```cmd
+    Kadmin> addprinc krbtgt/REALM.COM@AD.COM
+    ```
 
 3. В файл конфигурации службы HDFS *hadoop.security.auth_to_local* добавьте `RULE:[1:$1@$0](.*\@AD.COM)s/\@.*//`.
 
@@ -364,12 +373,16 @@ ms.locfileid: "84629479"
 
 1.  `Ksetup`Чтобы добавить запись области, выполните следующие команды:
 
-        C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
-        C:> ksetup /addhosttorealmmap HDFS-service-FQDN REALM.COM
+    ```cmd
+    C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
+    C:> ksetup /addhosttorealmmap HDFS-service-FQDN REALM.COM
+    ```
 
 2.  Установите доверие между доменом Windows и областью Kerberos. [password] представляет собой пароль для субъекта *krbtgt/REALM.COM\@AD.COM*.
 
-        C:> netdom trust REALM.COM /Domain: AD.COM /add /realm /password:[password]
+    ```cmd
+    C:> netdom trust REALM.COM /Domain: AD.COM /add /realm /password:[password]
+    ```
 
 3.  Выберите алгоритм шифрования, используемый в Kerberos.
 
@@ -383,7 +396,9 @@ ms.locfileid: "84629479"
 
     d. Используйте `Ksetup` команду, чтобы указать алгоритм шифрования, используемый в указанной области.
 
-        C:> ksetup /SetEncTypeAttr REALM.COM DES-CBC-CRC DES-CBC-MD5 RC4-HMAC-MD5 AES128-CTS-HMAC-SHA1-96 AES256-CTS-HMAC-SHA1-96
+    ```cmd
+    C:> ksetup /SetEncTypeAttr REALM.COM DES-CBC-CRC DES-CBC-MD5 RC4-HMAC-MD5 AES128-CTS-HMAC-SHA1-96 AES256-CTS-HMAC-SHA1-96
+    ```
 
 4.  Создайте сопоставление между учетной записью домена и участником Kerberos, чтобы можно было использовать субъект Kerberos в домене Windows.
 
@@ -401,8 +416,10 @@ ms.locfileid: "84629479"
 
 * Выполните следующие `Ksetup` команды, чтобы добавить запись области.
 
-        C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
-        C:> ksetup /addhosttorealmmap HDFS-service-FQDN REALM.COM
+   ```cmd
+   C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
+   C:> ksetup /addhosttorealmmap HDFS-service-FQDN REALM.COM
+   ```
 
 **В фабрике данных:**
 
@@ -464,7 +481,7 @@ ms.locfileid: "84629479"
 
 ### <a name="legacy-copy-activity-source-model"></a>Исходная модель действия копирования прежних версий
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство *Type* источника действия копирования должно иметь значение *HdfsSource*. |Да |
 | recursive | Указывает, следует ли читать данные рекурсивно из вложенных папок или только из указанной папки. Если параметру recursive присвоено значение *true* , а приемник является хранилищем на основе файлов, то пустая папка или подпапка не будет скопирована или создана в приемнике.<br/>Допустимые значения: *true* (по умолчанию) и *false*. | Нет |
@@ -487,5 +504,5 @@ ms.locfileid: "84629479"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Список хранилищ данных, которые поддерживаются в качестве источников и приемников действием копирования в фабрике данных Azure, см. в разделе [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats).

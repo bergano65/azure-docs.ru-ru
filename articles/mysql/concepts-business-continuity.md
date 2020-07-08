@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 3/18/2020
-ms.openlocfilehash: af0069adc741cfc802c37c90c0c7ec3c3ba74bb2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 7/7/2020
+ms.openlocfilehash: b5751bdccde33fa16d5f09cfbe9a411a351518b0
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79537233"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086557"
 ---
 # <a name="understand-business-continuity-in-azure-database-for-mysql"></a>Сведения о непрерывности бизнес-процессов в базе данных Azure для MySQL
 
@@ -48,7 +48,11 @@ ms.locfileid: "79537233"
 > [!IMPORTANT]
 > Геовосстановление возможно только в том случае, если сервер был подготовлен с геоизбыточным хранилищем резервных копий. Если вы хотите переключиться с локально избыточных на геоизбыточные резервные копии на существующем сервере, необходимо с помощью mysqldump сделать дамп имеющегося сервера и восстановить его на только что созданном сервере, где настроено геоизбыточное резервное копирование.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="cross-region-read-replicas"></a>Реплики чтения между регионами
+
+Для повышения непрерывности бизнес-процессов и планирования аварийного восстановления можно использовать реплики чтения в разных регионах. Реплики чтения обновляются асинхронно с помощью технологии репликации двоичных журналов MySQL. Дополнительные сведения о репликах чтения, доступных регионах и отработки отказа см. в [статье основные понятия чтения реплик](concepts-read-replicas.md). 
+
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения об автоматическом создании резервных копий в Базе данных Azure для MySQL см. в [этой статье](concepts-backup.md).
 - Дополнительные сведения см. в статьях [Как заархивировать и восстановить сервер в базе данных Azure для PostgreSQL с помощью портала Azure](howto-restore-server-portal.md) или [Как выполнить резервное копирование и восстановление сервера в базе данных Azure для PostgreSQL с помощью Azure CLI](howto-restore-server-cli.md).

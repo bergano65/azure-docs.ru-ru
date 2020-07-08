@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: tutorial
 ms.date: 02/11/2019
-ms.openlocfilehash: 09026d7f2aeb25f9a7c4a3c31c4f8d0b4cdb223a
-ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
+ms.openlocfilehash: 2e2edd7930ba4555748791210ad303c54f93c347
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84117831"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086115"
 ---
 # <a name="tutorial-1-predict-credit-risk---azure-machine-learning-studio-classic"></a>Руководство 1. Прогнозирование кредитного риска — Студия машинного обучения Azure (классическая)
 
@@ -99,11 +99,15 @@ ms.locfileid: "84117831"
 
 Преобразовать эти данные можно разными способами. Один из них — с помощью следующей команды Windows PowerShell:   
 
-    cat german.data | %{$_ -replace " ",","} | sc german.csv  
+```powershell
+cat german.data | %{$_ -replace " ",","} | sc german.csv  
+```
 
 Другой — с помощью команды sed Unix:  
 
-    sed 's/ /,/g' german.data > german.csv  
+```console
+sed 's/ /,/g' german.data > german.csv
+```
 
 В любом случае вы создаете версию разделенных запятыми данных в файле **german.csv**, который будет использоваться в эксперименте.
 
@@ -256,11 +260,13 @@ ms.locfileid: "84117831"
 
 1. На панели **Свойства** удалите текст по умолчанию в параметре **R-скрипт** и введите следующий сценарий:
    
-       dataset1 <- maml.mapInputPort(1)
-       data.set<-dataset1[dataset1[,21]==1,]
-       pos<-dataset1[dataset1[,21]==2,]
-       for (i in 1:5) data.set<-rbind(data.set,pos)
-       maml.mapOutputPort("data.set")
+    ```r
+    dataset1 <- maml.mapInputPort(1)
+    data.set<-dataset1[dataset1[,21]==1,]
+    pos<-dataset1[dataset1[,21]==2,]
+    for (i in 1:5) data.set<-rbind(data.set,pos)
+    maml.mapOutputPort("data.set")
+    ```
 
     ![Сценарий R в модуле "Выполнить сценарий R"](./media/tutorial-part1-credit-risk/execute-r-script.png)
 

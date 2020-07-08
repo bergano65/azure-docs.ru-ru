@@ -6,13 +6,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/02/2020
-ms.openlocfilehash: 1c79d0390a80a1358ddb09707fbabf6a5a2affdc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4d3568e3869415a3223154af30b22d85c8104199
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75660245"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087628"
 ---
 # <a name="azure-storage-solutions-for-ml-services-on-azure-hdinsight"></a>Решения службы хранилища Azure для служб ML в Azure HDInsight
 
@@ -173,7 +174,7 @@ hadoop fs –ls adl://rkadl1.azuredatalakestore.net/share
 - [Использование хранилища файлов Azure с Linux](../../storage/files/storage-how-to-use-files-linux.md)
 - [Использование хранилища файлов Azure в Windows](../../storage/files/storage-dotnet-how-to-use-files.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Основные сведения о кластере служб машинного обучения в HDInsight](r-server-overview.md)
 - [Варианты контекста вычислений для кластера служб машинного обучения в HDInsight](r-server-compute-contexts.md)

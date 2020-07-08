@@ -1,20 +1,20 @@
 ---
-title: Перенос рабочих нагрузок Hive Azure HDInsight 3,6 в HDInsight 4,0
+title: Перенос рабочих нагрузок Hive из Azure HDInsight 3.6 в HDInsight 4.0
 description: Узнайте, как перенести рабочие нагрузки Apache Hive в HDInsight 3,6 в HDInsight 4,0.
 author: msft-tacox
 ms.author: tacox
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/13/2019
-ms.openlocfilehash: 14849dd1f68f281009808d1bd1dc1cae62927ab4
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.openlocfilehash: 313b6afb8bd96f8ae507118cd552110d5f07ff78
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82594242"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087525"
 ---
-# <a name="migrate-azure-hdinsight-36-hive-workloads-to-hdinsight-40"></a>Перенос рабочих нагрузок Hive Azure HDInsight 3,6 в HDInsight 4,0
+# <a name="migrate-azure-hdinsight-36-hive-workloads-to-hdinsight-40"></a>Перенос рабочих нагрузок Hive из Azure HDInsight 3.6 в HDInsight 4.0
 
 В этом документе показано, как перенести рабочие нагрузки Apache Hive и LLAP в HDInsight 3,6 в HDInsight 4,0. HDInsight 4,0 предоставляет более новые функции Hive и LLAP, такие как материализованные представления и кэширование результатов запросов. При переносе рабочих нагрузок в HDInsight 4,0 можно использовать множество новых функций Hive 3, которые недоступны в HDInsight 3,6.
 
@@ -34,17 +34,17 @@ ms.locfileid: "82594242"
 Таблицы HDInsight 3,6 и HDInsight 4,0 ACID по-разному понимают различия ACID. Единственное действие, необходимое перед миграцией, — выполнение "основных" сжатия для каждой таблицы ACID в кластере 3,6. Дополнительные сведения о сжатии см. в [руководстве по языку Hive](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-AlterTable/Partition/Compact) .
 
 ### <a name="2-copy-sql-database"></a>2. копирование базы данных SQL
-Создайте новую копию внешнего хранилище метаданных. Если вы используете внешний хранилище метаданных, один из надежных и простых способов создания копии хранилище метаданных — [Восстановление базы данных](../../sql-database/sql-database-recovery-using-backups.md#point-in-time-restore) с другим именем с помощью функции восстановления базы данных SQL.  Дополнительные сведения о подключении внешних хранилище метаданных к кластеру HDInsight см. в статье [использование внешних хранилищ метаданных в Azure hdinsight](../hdinsight-use-external-metadata-stores.md) .
+Создайте новую копию внешнего хранилище метаданных. Если вы используете внешний хранилище метаданных, один из надежных и простых способов создания копии хранилище метаданных — [Восстановление базы данных](../../azure-sql/database/recovery-using-backups.md#point-in-time-restore) с другим именем с помощью `RESTORE` функции.  Дополнительные сведения о подключении внешних хранилище метаданных к кластеру HDInsight см. в статье [использование внешних хранилищ метаданных в Azure hdinsight](../hdinsight-use-external-metadata-stores.md) .
 
 ### <a name="3-upgrade-metastore-schema"></a>3. обновление схемы хранилище метаданных
 После завершения **копирования** хранилище метаданных запустите сценарий обновления схемы в [действии сценария](../hdinsight-hadoop-customize-cluster-linux.md) в существующем кластере HDInsight 3,6, чтобы обновить схему хранилище метаданных до куста 3. (Этот шаг не требует подключения нового хранилище метаданных к кластеру.) Это позволяет подключить базу данных как HDInsight 4,0 хранилище метаданных.
 
-Используйте значения в таблице ниже. Замените `SQLSERVERNAME DATABASENAME USERNAME PASSWORD` на соответствующие значения для хранилище метаданных Hive **копии**, разделенные пробелами. При указании имени SQL Server не включайте ". database.windows.net".
+Используйте значения в таблице ниже. Замените на `SQLSERVERNAME DATABASENAME USERNAME PASSWORD` соответствующие значения для хранилище метаданных Hive **копии**, разделенные пробелами. При указании имени SQL Server не включайте ". database.windows.net".
 
-|Свойство | Применение |
+|Свойство | Значение |
 |---|---|
 |Тип скрипта|- Custom|
-|Название|Обновление Hive|
+|Имя|Обновление Hive|
 |URI bash-скрипта|`https://hdiconfigactions.blob.core.windows.net/hivemetastoreschemaupgrade/launch-schema-upgrade.sh`|
 |Типы узлов|Head|
 |Параметры|SQLSERVERNAME ИМЯ ПОЛЬЗОВАТЕЛЯ, ПАРОЛЬ|
@@ -70,7 +70,7 @@ select * from dbo.version
 
 По умолчанию управляемые таблицы должны быть совместимы с ACID в HDInsight 4,0. После завершения миграции хранилище метаданных запустите средство после обновления, чтобы сделать ранее не совместимые с кластером HDInsight 4,0 таблицы, отличные от ACID. Это средство будет применять следующее преобразование:
 
-|3.6 |4,0 |
+|3.6 |4.0 |
 |---|---|
 |Внешние таблицы|Внешние таблицы|
 |Таблицы, не являющиеся управляемыми ACID|Внешние таблицы со свойством "External. Table. unочисткой" = "true"|
@@ -124,7 +124,7 @@ select * from dbo.version
     chmod 755 exporthive_hdi_3_6.sh
     ```
 
-    * Для обычного кластера HDInsight без ESP просто выполните `exporthive_hdi_3_6.sh`.
+    * Для обычного кластера HDInsight без ESP просто выполните `exporthive_hdi_3_6.sh` .
 
     * Для кластера с ESP kinit и измените аргументы на Beeline: выполните следующую команду, определив пользователя и домен для пользователя Azure AD с полными разрешениями Hive.
 
@@ -214,26 +214,26 @@ select * from dbo.version
 
 В HDInsight 3,6 клиент GUI для взаимодействия с сервером Hive является представлением Hive Ambari. HDInsight 4,0 не поставляется с Ambari представлением. Мы предоставили нашим клиентам способ использования Data Analytics Studio (DAS), который не является основной службой HDInsight. DAS не поставляется с кластерами HDInsight и не является официально поддерживаемым пакетом. Однако DAS можно установить в кластере с помощью [действия сценария](../hdinsight-hadoop-customize-cluster-linux.md) следующим образом:
 
-|Свойство | Применение |
+|Свойство | Значение |
 |---|---|
 |Тип скрипта|- Custom|
-|Название|DAS|
+|Имя|DAS|
 |URI bash-скрипта|`https://hdiconfigactions.blob.core.windows.net/dasinstaller/LaunchDASInstaller.sh`|
 |Типы узлов|Head|
 
-Подождите 10 – 15 минут, а затем запустите Data Analytics Studio с помощью этого URL `https://CLUSTERNAME.azurehdinsight.net/das/`-адреса:.
+Подождите 10 – 15 минут, а затем запустите Data Analytics Studio с помощью этого URL-адреса: `https://CLUSTERNAME.azurehdinsight.net/das/` .
 
 Перед доступом к DAS может потребоваться обновить пользовательский интерфейс Ambari и (или) перезапустить все компоненты Ambari.
 
 После установки DAS, если вы не видите запросы, которые вы выполняли в средстве просмотра запросов, выполните следующие действия.
 
 1. Задайте конфигурации для Hive, TEZ и DAS, как описано в [этом разделе руководства по устранению неполадок установки Das](https://docs.hortonworks.com/HDPDocuments/DAS/DAS-1.2.0/troubleshooting/content/das_queries_not_appearing.html).
-2. Убедитесь, что следующие конфигурации каталога службы хранилища Azure являются страничными BLOB-объектами и перечислены в разделе `fs.azure.page.blob.dirs`:
+2. Убедитесь, что следующие конфигурации каталога службы хранилища Azure являются страничными BLOB-объектами и перечислены в разделе `fs.azure.page.blob.dirs` :
     * `hive.hook.proto.base-directory`
     * `tez.history.logging.proto-base-dir`
 3. Перезапустите HDFS, Hive, TEZ и DAS в обоих головных узлах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Объявление о HDInsight 4,0](../hdinsight-version-release.md)
 * [HDInsight 4,0. подробное углубление](https://azure.microsoft.com/blog/deep-dive-into-azure-hdinsight-4-0/)
