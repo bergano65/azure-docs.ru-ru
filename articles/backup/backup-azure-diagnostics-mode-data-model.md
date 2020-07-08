@@ -3,12 +3,12 @@ title: Модель данных для журналов Azure Monitor
 description: В этой статье представлены сведения о модели данных Log Analytics в Azure Monitor для данных Azure Backup.
 ms.topic: conceptual
 ms.date: 02/26/2019
-ms.openlocfilehash: 78d43e4c65f31b47f4b6070f071c932692cee883
-ms.sourcegitcommit: a3c6efa4d4a48e9b07ecc3f52a552078d39e5732
-ms.translationtype: HT
+ms.openlocfilehash: e776649ff22e3249e2472adbe298c869ff5c946a
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83707995"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85854763"
 ---
 # <a name="log-analytics-data-model-for-azure-backup-data"></a>Модель данных Log Analytics для данных Azure Backup
 
@@ -22,7 +22,7 @@ ms.locfileid: "83707995"
 
 ## <a name="using-azure-backup-data-model"></a>Использование модели данных Azure Backup
 
-Вы можете использовать следующие поля, предоставляемые как часть модели данных, для создания визуальных элементов, пользовательских запросов и панели мониторинга в соответствии с вашими требованиями.
+Для создания визуальных элементов, настраиваемых запросов и панелей мониторинга в соответствии с вашими требованиями можно использовать следующие поля, предоставляемые в составе модели данных.
 
 ### <a name="alert"></a>Предупреждение
 
@@ -466,6 +466,30 @@ ms.locfileid: "83707995"
 По соображениям обратной совместимости сейчас данные диагностики для агента Azure Backup и резервной копии виртуальных машин Azure отправляются в таблицу Диагностики Azure в обеих схемах — V1 и V2 (при этом схема V1 запланирована к объявлению в качестве нерекомендуемой). Вы можете определить, какие записи в Log Analytics относятся к схеме V1, отфильтровав записи по SchemaVersion_s=="V1" в запросах журнала. 
 
 Чтобы узнать, какие столбцы относятся только к схеме V1, см. третий столбец, Description, в [модели данных](https://docs.microsoft.com/azure/backup/backup-azure-diagnostics-mode-data-model#using-azure-backup-data-model), описанной выше.
+
+### <a name="modifying-your-queries-to-use-the-v2-schema"></a>Изменение запросов для использования схемы v2
+Поскольку схема v1 находится в пути устаревания, рекомендуется использовать только схему v2 во всех пользовательских запросах Azure Backup диагностических данных. Ниже приведен пример обновления запросов для удаления зависимости от схемы v1.
+
+1. Определяет, использует ли запрос любое поле, применимое только к схеме v1. Предположим, что у вас есть запрос на перечисление всех элементов резервных копий и связанных с ними защищенных серверов следующим образом:
+
+````Kusto
+AzureDiagnostics
+| where Category=="AzureBackupReport"
+| where OperationName=="BackupItemAssociation"
+| distinct BackupItemUniqueId_s, ProtectedServerUniqueId_s
+````
+
+В приведенном выше запросе используется поле ProtectedServerUniqueId_s которое применимо только к схеме v1. Значение, эквивалентное этому полю в схеме v2, — ProtectedContainerUniqueId_s (см. таблицы выше). Поле BackupItemUniqueId_s применимо даже к схеме версии 2, и в этом запросе можно использовать одно и то же поле.
+
+2. Обновите запрос, чтобы использовать имена полей схемы v2. Рекомендуется использовать фильтр "Where SchemaVersion_s = =" v2 "во всех запросах, чтобы только записи, соответствующие схеме v2, анализировались запросом:
+
+````Kusto
+AzureDiagnostics
+| where Category=="AzureBackupReport"
+| where OperationName=="BackupItemAssociation"
+| where SchemaVersion_s=="V2"
+| distinct BackupItemUniqueId_s, ProtectedContainerUniqueId_s 
+````
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -2,13 +2,13 @@
 title: Развертывание шаблонов Resource Manager с помощью действий GitHub
 description: Описывает развертывание шаблонов Azure Resource Manager с помощью действий GitHub.
 ms.topic: conceptual
-ms.date: 05/05/2020
-ms.openlocfilehash: f2e0d73c838d16c161605972b87d6f07ef8869b9
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
-ms.translationtype: HT
+ms.date: 07/02/2020
+ms.openlocfilehash: 313354499901bc69ec6e00f0ba7c385065cae615
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83869189"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85854746"
 ---
 # <a name="deploy-azure-resource-manager-templates-by-using-github-actions"></a>Развертывание шаблонов Resource Manager с помощью действий GitHub
 
@@ -82,7 +82,7 @@ https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-st
 
 ## <a name="create-workflow"></a>Создание рабочего процесса
 
-Файл рабочего процесса должен храниться в папке **.github/workflow** в корне репозитория. Расширение файла рабочего процесса может быть либо **.yml**, либо **.yaml**.
+Файл рабочего процесса должен храниться в папке **. GitHub/Workflows** в корне репозитория. Расширение файла рабочего процесса может быть либо **.yml**, либо **.yaml**.
 
 Вы можете создать файл рабочего процесса и отправить его в репозиторий либо использовать следующую процедуру:
 

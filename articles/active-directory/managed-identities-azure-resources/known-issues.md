@@ -17,12 +17,12 @@ ms.date: 12/12/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: d29689b088759b73465b24d06d4341571b599782
-ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
-ms.translationtype: HT
+ms.openlocfilehash: 6f18c9fe43b0b714e5709b014c051520b3722138
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83714055"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85855140"
 ---
 # <a name="faqs-and-known-issues-with-managed-identities-for-azure-resources"></a>Часто задаваемые вопросы об управляемых удостоверениях для ресурсов Azure, а также известные проблемы в их работе
 
@@ -32,6 +32,24 @@ ms.locfileid: "83714055"
 
 > [!NOTE]
 > Управляемые удостоверения для ресурсов Azure — это новое название службы "Управляемое удостоверение службы" (MSI).
+
+
+### <a name="how-can-you-find-resources-that-have-a-managed-identity"></a>Как можно найти ресурсы с управляемым удостоверением?
+
+Список ресурсов, которым назначено системное управляемое удостоверение, можно найти с помощью следующей команды Azure CLI: 
+
+`az resource list --query "[?identity.type=='SystemAssigned'].{Name:name,  principalId:identity.principalId}" --output table`
+
+
+
+
+### <a name="do-managed-identities-have-a-backing-app-object"></a>Есть ли управляемые удостоверения с резервным объектом приложения?
+
+Нет. Управляемые удостоверения и Azure AD App регистрации в каталоге не совпадают. 
+
+Регистрация приложений два компонента: объект приложения и объект субъекта-службы. Управляемые удостоверения для ресурсов Azure имеют только один из этих компонентов: объект субъекта-службы. 
+
+Управляемые удостоверения не содержат объект приложения в каталоге, который обычно используется для предоставления разрешений приложению для MS Graph. Вместо этого разрешения на MS Graph для управляемых удостоверений должны быть предоставлены непосредственно субъекту-службе.  
 
 ### <a name="does-managed-identities-for-azure-resources-work-with-azure-cloud-services"></a>Можно ли использовать управляемые удостоверения для ресурсов Azure с облачными службами Azure?
 
@@ -114,6 +132,8 @@ az vm update -n <VM Name> -g <Resource Group> --remove tags.fixVM
 
  - Управляемые удостоверения, назначаемые системой, нужно отключить и снова включить. 
  - Управляемые удостоверения, назначаемые пользователем, нужно удалить, повторно создать и присоединить к необходимым ресурсам (например, виртуальным машинам).
+
+Дополнительные сведения см. в статье [Перенос подписки Azure в другой каталог Azure AD (Предварительная версия)](../../role-based-access-control/transfer-subscription.md).
 
 ### <a name="moving-a-user-assigned-managed-identity-to-a-different-resource-groupsubscription"></a>Перемещение управляемого удостоверения, назначаемого пользователем, в другую группу ресурсов/подписку
 

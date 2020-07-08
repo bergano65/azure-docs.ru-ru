@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4dcc095648111348a6935225a6aa10798109f76e
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: d67e2639c2d4b168babeb7c29ef977d39d9e11cb
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83832238"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85855309"
 ---
 # <a name="deploy-an-amazon-web-services-vm-with-a-runbook"></a>Развертывание виртуальных машин Amazon Web Services с помощью модуля runbook
 
@@ -64,7 +64,7 @@ ms.locfileid: "83832238"
 
 8. Чтобы получить список имен образов из подписки AWS, запустите PowerShell ISE и импортируйте модуль AWS PowerShell. Аутентификация в AWS путем замены `Get-AutomationPSCredential` в среде ISE на `AWScred = Get-Credential`. Этот оператор выдаст запрос на ввод учетных данных. Идентификатор ключа доступа можно указать в качестве имени пользователя, а секретный ключ доступа в качестве пароля. 
 
-        ```powershell
+      ```powershell
         #Sample to get the AWS VM available images
         #Please provide the path where you have downloaded the AWS PowerShell module
         Import-Module AWSPowerShell
@@ -78,7 +78,7 @@ ms.locfileid: "83832238"
         Set-DefaultAWSRegion -Region $AwsRegion
    
         Get-EC2ImageByName -ProfileName AWSProfile
-        ```
+      ```
         
     Возвращается следующий результат:<br><br>
    ![Получение образов AWS](./media/automation-scenario-aws-deployment/powershell-ise-output.png)<br>  
