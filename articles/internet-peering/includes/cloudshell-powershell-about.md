@@ -9,10 +9,10 @@ ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: 3a5485475e3d8030bf85734faec53b0ff0747499
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81678472"
 ---
 Для запуска командлетов можно использовать бесплатную интерактивную оболочку Azure Cloud Shell. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Выберите **Копировать** , чтобы скопировать код, и вставьте его в Cloud Shell. Затем нажмите клавишу **Ввод** , чтобы запустить его. Существует несколько способов запуска Cloud Shell.

@@ -9,10 +9,10 @@ ms.date: 03/12/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 4ea97e2dbee87f7ab129c4295276c9024c0212c7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80117037"
 ---
 Новой функцией VPN-клиента Windows 10, Always On, является возможность поддерживать VPN-подключение. Используя Always On, активный профиль VPN может подключаться автоматически и оставаться подключенным на основе триггеров, таких как вход пользователя, изменение состояния сети или активный экран устройства.

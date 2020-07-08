@@ -9,10 +9,10 @@ ms.date: 03/12/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: feaf72de1d2c578d2b2d0df9e86ec0fbe0b49445
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79371778"
 ---
 Чтобы успешно установить туннель устройства, необходимо соблюдение следующих требований.
@@ -28,7 +28,7 @@ ms.locfileid: "79371778"
 
 После настройки шлюза виртуальной сети и установки сертификата клиента в хранилище локального компьютера на клиенте Windows 10 используйте следующие примеры для настройки туннеля клиентского устройства.
 
-1. Скопируйте приведенный ниже текст и сохраните его как ***девицецерт. ps1***.
+1. Скопируйте приведенный ниже текст и сохраните его как ***devicecert.ps1***.
 
    ```
    Param(
@@ -80,7 +80,7 @@ ms.locfileid: "79371778"
    $Message = "Complete."
    Write-Host "$Message"
    ```
-1. Скопируйте приведенный ниже текст и сохраните его как ***впнпрофиле. XML*** в той же папке, что и **девицецерт. ps1**. Измените следующий текст в соответствии с вашей средой.
+1. Скопируйте приведенный ниже текст и сохраните его как ***VPNProfile.xml*** в той же папке, что и **devicecert.ps1**. Измените следующий текст в соответствии с вашей средой.
 
    * `<Servers>azuregateway-1234-56-78dc.cloudapp.net</Servers> <= Can be found in the VpnSettings.xml in the downloaded profile zip file`
    * `<Address>192.168.3.5</Address> <= IP of resource in the vnet or the vnet address space`
@@ -124,7 +124,7 @@ ms.locfileid: "79371778"
    ```
 
    ![powershell](./media/vpn-gateway-vwan-always-on-device/powershell.png)
-1. В PowerShell перейдите в папку, где находятся **девицецерт. ps1** и **впнпрофиле. XML** , и выполните следующую команду:
+1. В PowerShell перейдите в папку, где находятся **devicecert.ps1** и **VPNProfile.xml** , и выполните следующую команду:
 
    ```powershell
    .\devicecert.ps1 .\VPNProfile.xml MachineCertTest

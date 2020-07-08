@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: vpn-gateway
 author: cherylmc
@@ -9,10 +9,10 @@ ms.date: 03/03/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: d2cf1a2e2ab9cf2d6e35aa12b5b0f8ddc04ad0e7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78301962"
 ---
 Чтобы создать виртуальную сеть с помощью модели развертывания Resource Manager и портала Azure, следуйте приведенным ниже инструкциям. См. дополнительные сведения о [виртуальных сетях](../articles/virtual-network/virtual-networks-overview.md).
@@ -38,7 +38,7 @@ ms.locfileid: "78301962"
    ![Вкладка «основы»](./media/vpn-gateway-basic-vnet-rm-portal-include/basics.png "Вкладка "Основные сведения"") При заполнении полей отображается зеленая галочка при проверке символов, вводимых в поле. Некоторые значения автоматически заполнены. Вы можете заменить их собственными значениями:
 
    - **Подписка**. Убедитесь, что указана правильная подписка. Подписки можно менять с помощью раскрывающегося списка.
-   - **Группа ресурсов**. Выберите существующую группу ресурсов или щелкните **создать** , чтобы создать новую. Дополнительные сведения о группах ресурсов см. в статье [Общие сведения об Azure Resource Manager](../articles/azure-resource-manager/management/overview.md#resource-groups).
+   - **Группа ресурсов**. Выберите существующую группу ресурсов или щелкните **создать** , чтобы создать новую. Дополнительные сведения о группах ресурсов см. в разделе [Общие сведения о Azure Resource Manager](../articles/azure-resource-manager/management/overview.md#resource-groups).
    - **Имя**: введите имя виртуальной сети.
    - **Регион**: выберите расположение виртуальной сети. Расположение определяет, где будут находиться ресурсы, развертываемые в этой виртуальной сети.
 
