@@ -5,15 +5,15 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 08/15/2019
+ms.date: 06/03/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 72d87142f9b9c1f7bcb2b02281851bd1e29bc9c8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 45b611144d5a62171061febfd4efa98db69bacb9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78262101"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84436031"
 ---
 Управляемые диски Azure в настоящее время поддерживают четыре типа дисков, каждый из которых предназначен для конкретных сценариев клиентов.
 
@@ -26,7 +26,7 @@ ms.locfileid: "78262101"
 |Тип диска   |SSD   |SSD   |SSD   |HDD   |
 |Сценарий   |Рабочие нагрузки с интенсивным вводом-выводом, такие как [SAP HANA](../articles/virtual-machines/workloads/sap/hana-vm-operations-storage.md), базы данных верхнего уровня (например, SQL, Oracle) и другие рабочие нагрузки с большим объемом транзакций.   |Рабочая среда, чувствительная к уровню производительности   |Веб-серверы, редко используемые корпоративные приложения и среды разработки и тестирования.   |Резервное копирование, не критически важный и нечастый доступ.   |
 |Максимальный размер диска   |65 536 ГиБ    |32 767 ГиБ    |32 767 ГиБ   |32 767 ГиБ   |
-|Максимальная пропускная способность   |2000 МиБ/с    |900 МиБ/с   |750 МиБ/с   |500 МиБ/с   |
+|Максимальная пропускная способность   |2000 МБ/с    |900 МБ/с   |750 МБ/с   |500 МБ/с   |
 |Maкс. количество операций ввода-вывода в секунду   |160 000    |20 000   |6000   |2 000   |
 
 ## <a name="ultra-disk"></a>Диск (цен. категория "Ультра")
