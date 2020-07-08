@@ -12,12 +12,12 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: 5b7e36c12dab65f4bcc6c05a1ee902301c402d5e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a7fab9515051180fdb1b894602478768a60177ef
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82147681"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85362063"
 ---
 # <a name="onboarding-and-installing"></a>Подключение и установка
 
@@ -50,6 +50,7 @@ ms.locfileid: "82147681"
 
 - Зоны — контактные данные:cloudsupport@zones.com
 - Вортелл — контактные данные:info@wortell.nl
+- Логическое, контактные данные:Matthew.Curtis@us.logicalis.com 
 
 ### <a name="become-a-partner"></a>Стать партнером
 
@@ -57,7 +58,7 @@ ms.locfileid: "82147681"
 
 ## <a name="installing-the-microsoft-security-code-analysis-extension"></a>Установка расширения Microsoft Security Code Analysis
 
-1. После того как расширение будет предоставлено для вашей организации Azure DevOps, перейдите на страницу Организации Azure DevOps. Примером URL-адреса для такой страницы является `https://dev.azure.com/contoso`.
+1. После того как расширение будет предоставлено для вашей организации Azure DevOps, перейдите на страницу Организации Azure DevOps. Примером URL-адреса для такой страницы является `https://dev.azure.com/contoso` .
 1. Щелкните значок "набор покупок" в правом верхнем углу рядом с именем, а затем выберите **Управление расширениями**.
 1. Выберите **Общий**.
 1. Выберите расширение "анализ кода безопасности Microsoft" и нажмите кнопку **установить**.
@@ -72,7 +73,7 @@ ms.locfileid: "82147681"
 ## <a name="adding-specific-build-tasks-to-your-azure-devops-pipeline"></a>Добавление конкретных задач сборки в конвейер Azure DevOps
 
 1. В Организации Azure DevOps откройте командный проект.
-1. Выберите**сборки** **конвейеров** > .
+1. Выберите **сборки конвейеров**  >  **Builds**.
 1. Выберите конвейер, в который необходимо добавить задачи сборки расширения:
    - Новый конвейер: выберите **создать** и выполните действия, описанные в разделе Создание нового конвейера.
    - Изменить конвейер. Выберите существующий конвейер и нажмите кнопку **изменить** , чтобы начать редактирование конвейера.

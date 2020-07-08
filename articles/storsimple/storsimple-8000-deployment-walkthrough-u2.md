@@ -8,6 +8,7 @@ ms.date: 04/23/2018
 ms.author: alkohli
 ms.openlocfilehash: a56610dd81d6e50da11bbd65bcf0682e399b1783
 ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/02/2020
 ms.locfileid: "84707401"
@@ -33,7 +34,7 @@ ms.locfileid: "84707401"
 ## <a name="deployment-steps"></a>Шаги по развертыванию
 Выполните эти обязательные действия по настройке и подключению устройства StorSimple к службе диспетчера устройств StorSimple. Помимо обязательных существуют дополнительные шаги и процедуры, которые могут потребоваться в ходе развертывания. В пошаговых инструкциях по развертыванию будет рассказано, когда необходимо предпринять каждый из этих дополнительных шагов.
 
-| Шаг | Описание: |
+| Шаг | Описание |
 | --- | --- |
 | **ТРЕБОВАНИЙ** |При подготовке к предстоящему развертыванию необходимо выполнить следующее. |
 | [Контрольный список конфигурации развертывания](#deployment-configuration-checklist) |Этот контрольный список служит для сбора и записи информации до и во время развертывания. |
@@ -203,7 +204,7 @@ ms.locfileid: "84707401"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 * [Deploy and manage a StorSimple Cloud Appliance in Azure (Update 3 and later)](storsimple-8000-cloud-appliance-u2.md) (Развертывание и администрирование облачного устройства StorSimple в Azure (обновление 3 и более поздней версии)).
 * [Use the StorSimple Device Manager service to administer your StorSimple device](storsimple-8000-manager-service-administration.md) (Использование службы диспетчера устройств StorSimple для управления устройством StorSimple).
 

@@ -10,22 +10,22 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/28/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24143f8c94a294da90be84bacfe633db0cd24f85
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 714fe5d1bdaddac2873194ab066f304e72bdde67
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "60244505"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85358877"
 ---
 # <a name="getting-started-with-azure-ad-connect-using-express-settings"></a>Приступая к работе с Azure AD Connect с использованием стандартных параметров
 **Стандартные параметры** Azure AD Connect применяются, если вы используете для проверки подлинности топологию с одним лесом и [синхронизацию хэша паролей](how-to-connect-password-hash-synchronization.md). **Стандартные параметры** заданы по умолчанию и используются в большинстве часто развертываемых сценариев. Выполнив всего несколько простых действий, можно расширить локальный каталог в облако.
 
-Перед установкой Azure AD Connect, [скачайте Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771) и выполните предварительные шаги, перечисленные в статье [Необходимые условия для Azure AD Connect](how-to-connect-install-prerequisites.md).
+Перед установкой Azure AD Connect [скачайте Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771) и выполните предварительные шаги, перечисленные в перечне [требований к оборудованию и программному обеспечению](how-to-connect-install-prerequisites.md).
 
 Если стандартные параметры не соответствуют топологии, см. сведения о других сценариях в [дополнительной документации](#related-documentation).
 
@@ -37,10 +37,10 @@ ms.locfileid: "60244505"
 3. На экране приветствия установите флажок, подтверждающий ваше согласие с условиями лицензионного соглашения, и нажмите кнопку **Продолжить**.  
 4. На экране «Стандартные параметры» щелкните **Использовать стандартные параметры**.  
    ![Приветствие мастера установки Azure AD Connect.](./media/how-to-connect-install-express/express.png)
-5. На экране "Подключение к Azure AD" введите имя пользователя и пароль глобального администратора Azure AD. Щелкните **Далее**.  
+5. На экране "Подключение к Azure AD" введите имя пользователя и пароль глобального администратора Azure AD. Нажмите кнопку **Далее**.  
    ![Подключение к Azure AD](./media/how-to-connect-install-express/connectaad.png)  
    Если вы получаете сообщение об ошибке и испытываете проблемы с подключением, см. сведения в статье [Устранение неполадок подключения в Azure AD Connect](tshoot-connect-connectivity.md).
-6. На экране "Подключение к AD DS" введите имя пользователя и пароль учетной записи администратора предприятия. Вы можете указать имя домена в формате NetBios, либо ввести полное доменное имя, т. е. FABRIKAM\administrator или fabrikam.com\administrator. Щелкните **Далее**.  
+6. На экране "Подключение к AD DS" введите имя пользователя и пароль учетной записи администратора предприятия. Вы можете указать имя домена в формате NetBios, либо ввести полное доменное имя, т. е. FABRIKAM\administrator или fabrikam.com\administrator. Нажмите кнопку **Далее**.  
    ![Подключение к AD DS](./media/how-to-connect-install-express/connectad.png)
 7. Страница [**Настройка входа в Azure AD**](plan-connect-user-signin.md#azure-ad-sign-in-configuration) будет отображаться, только если вы не завершили [проверку доменов](../active-directory-domains-add-azure-portal.md) при выполнении [предварительных требований](how-to-connect-install-prerequisites.md).
    ![Непроверенные домены](./media/how-to-connect-install-express/unverifieddomain.png)  
@@ -60,14 +60,14 @@ ms.locfileid: "60244505"
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 После установки Azure AD Connect можно [проверить установку и назначить лицензии](how-to-connect-post-installation.md).
 
 Дополнительные сведения о функциях, которые были включены в процессе установки, см. в следующих статьях: [Azure AD Connect: автоматическое обновление](how-to-connect-install-automatic-upgrade.md), [Синхронизация Azure AD Connect: предотвращение случайного удаления](how-to-connect-sync-feature-prevent-accidental-deletes.md) и [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-sync.md).
 
 Дополнительные сведения см. в статье [Синхронизация Azure AD Connect: планировщик](how-to-connect-sync-feature-scheduler.md).
 
-Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
 
 ## <a name="related-documentation"></a>Дополнительная документация
 

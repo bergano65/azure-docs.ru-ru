@@ -1,5 +1,5 @@
 ---
-title: Допортал Azure URL-адреса в брандмауэре или прокси-сервере.
+title: Добавление URL-адресов портала Azure в список надежных адресов в брандмауэре или на прокси-сервере
 description: Добавьте эти URL-адреса в обход сервера для взаимодействия с портал Azure и его службами.
 services: azure-portal
 keywords: ''
@@ -9,14 +9,14 @@ ms.date: 04/10/2020
 ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
-ms.openlocfilehash: 399c64c88e78079432fcf7c09dafd199da83358b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 67ccf6e2f113c0ec72cfcbccedf88017e452ec4b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81255055"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85361665"
 ---
-# <a name="safelist-the-azure-portal-urls-on-your-firewall-or-proxy-server"></a>Допортал Azure URL-адреса в брандмауэре или прокси-сервере.
+# <a name="safelist-the-azure-portal-urls-on-your-firewall-or-proxy-server"></a>Добавление URL-адресов портала Azure в список надежных адресов в брандмауэре или на прокси-сервере
 
 Вы можете настроить локальные устройства безопасности, чтобы обойти ограничения безопасности для URL-адресов портал Azure. Такая конфигурация может повысить производительность и возможность подключения между локальной или глобальной сетью и облаком Azure.
 
@@ -53,6 +53,7 @@ ms.locfileid: "81255055"
 #### <a name="us-government-cloud"></a>[Облако для государственных организаций США](#tab/us-government-cloud)
 
 ```
+*.applicationinsights.us
 *.azure.us
 *.loganalytics.us
 *.microsoft.us

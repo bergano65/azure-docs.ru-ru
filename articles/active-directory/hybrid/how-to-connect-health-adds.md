@@ -12,16 +12,16 @@ ms.subservice: hybrid
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e27287a414a2a4edef3e9090b7d91beb1c70f554
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: dc7e8e3219cc2b11ed123889973c375edd22664d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76897323"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85359404"
 ---
 # <a name="using-azure-ad-connect-health-with-ad-ds"></a>Использование Azure AD Connect Health с AD DS
 Приведенная ниже документация относится к мониторингу доменных служб Active Directory с помощью Azure AD Connect Health. Поддерживаемые версии AD DS: Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 и Windows Server 2016.
@@ -49,10 +49,10 @@ ms.locfileid: "76897323"
 
 ![Состояние репликации](./media/how-to-connect-health-adds/aadconnect-health-adds-replication.png)
 
-## <a name="monitoring"></a>Мониторинг
+## <a name="monitoring"></a>Наблюдение
 Эта функция позволяет в графической форме отобразить тенденции разных счетчиков производительности, данные которых постоянно собираются со всех отслеживаемых контроллеров домена. Производительность контроллера домена можно легко сравнить с производительностью всех остальных отслеживаемых контроллеров домена в лесу. Кроме того, вы можете просматривать различные счетчики производительности параллельно. Эти данные могут пригодиться при устранении неполадок в среде.
 
-![Мониторинг](./media/how-to-connect-health-adds/aadconnect-health-adds-monitoring.png)
+![Наблюдение](./media/how-to-connect-health-adds/aadconnect-health-adds-monitoring.png)
 
 По умолчанию выделены четыре счетчика производительности. Но вы можете включить другие. Для этого щелкните команду "Фильтр" и выберите нужные счетчики или отмените выбор ненужных. Если дважды щелкнуть график счетчика производительности, откроется новая колонка, содержащая точки данных каждого отслеживаемого контроллера домена.
 

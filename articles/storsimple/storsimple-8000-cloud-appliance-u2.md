@@ -16,6 +16,7 @@ ms.date: 11/08/2017
 ms.author: alkohli
 ms.openlocfilehash: 01ce952ea774ba852c83d0d6aa3fe38d5dfd677e
 ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/02/2020
 ms.locfileid: "84711856"
@@ -275,6 +276,6 @@ ms.locfileid: "84711856"
 5. Если командлет `nslookup` завершается ошибкой, это значит, что облачное устройство нельзя зарегистрировать в службе диспетчера устройств StorSimple из-за ошибки подключения к Интернету.
 6. Внесите необходимые изменения в свою виртуальную сеть, чтобы обеспечить доступ облачного устройства к сайтам Azure, таким как _windows.net_.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте, как [управлять облачным устройством с помощью службы диспетчера устройств StorSimple](storsimple-8000-manager-service-administration.md).
 * Узнайте, как [восстановить том StorSimple из резервного набора данных](storsimple-8000-restore-from-backup-set-u2.md).

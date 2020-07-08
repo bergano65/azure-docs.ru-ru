@@ -11,6 +11,7 @@ services: azure-maps
 manager: timlt
 ms.openlocfilehash: 307f1ea8d98aec8594dd4f666d4e18922122b0f6
 ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/02/2020
 ms.locfileid: "84988439"
@@ -69,7 +70,7 @@ ms.locfileid: "84988439"
    
 [!INCLUDE [grant role access to users](./includes/grant-rbac-users.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дальнейшее понимание сценария одностраничного приложения:
 > [!div class="nextstepaction"]

@@ -3,25 +3,36 @@ title: Служба Azure Kubernetes (AKS) с Соглашением об уро
 description: Сведения о варианте Соглашения об уровне обслуживания с гарантией времени доступности для сервера API Azure Kubernetes Service (AKS).
 services: container-service
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 06/24/2020
 ms.custom: references_regions
-ms.openlocfilehash: 2df0ad675f03b25363ab0f5b13dceb762a657ed7
-ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
-ms.translationtype: HT
+ms.openlocfilehash: 9f8b0cc5a80853542b15d1993713d8a97f5371b9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84299559"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85361580"
 ---
 # <a name="azure-kubernetes-service-aks-uptime-sla"></a>Соглашение об уровне обслуживания с гарантией времени доступности для Службы Azure Kubernetes (AKS)
 
 Соглашение об уровне обслуживания с гарантией времени доступности — это возможность за дополнительную плату получить более высокий уровень обслуживания кластера. Соглашение об уровне обслуживания с гарантией времени доступности гарантирует 99,95% доступности для конечной точки сервера Kubernetes API любому кластеру, который использует [Зоны доступности][availability-zones], или 99,9% доступности для кластеров, которые не используют Зоны доступности. AKS использует реплики главного узла в доменах обновления и сбоя, чтобы обеспечить соблюдение Соглашения об уровне обслуживания.
 
-Такое соглашение предназначено для клиентов, которым оно требуется для соблюдения нормативных требований или охвата его условиями конечных пользователей. Оно также может быть полезным для клиентов с критически важными рабочими нагрузками. Вариант Соглашения об уровне обслуживания с гарантией времени доступности совместно с Зонами доступности обеспечивает более высокий уровень доступности для сервера API Kubernetes.  
+Клиенты, которым требуется соглашение об уровне обслуживания для удовлетворения требований соответствия или требуют расширения соглашения об уровне обслуживания для конечных пользователей, должны включить эту функцию. Оно также может быть полезным для клиентов с критически важными рабочими нагрузками. Вариант Соглашения об уровне обслуживания с гарантией времени доступности совместно с Зонами доступности обеспечивает более высокий уровень доступности для сервера API Kubernetes.  
 
 Клиенты по-прежнему смогут создавать неограниченное число бесплатных кластеров с целевым уровнем обслуживания 99,5% и по своему усмотрению выбирать Цель уровня обслуживания или Соглашение об уровне обслуживания с гарантией времени доступности.
 
 > [!Important]
 > Для кластеров с блокировкой исходящего трафика необходимо [открыть соответствующие порты](limit-egress-traffic.md).
+
+## <a name="region-availability"></a>Доступность по регионам
+
+Соглашение об уровне обслуживания для времени работы доступно в общедоступных регионах, где [поддерживается AKS](https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service).
+
+* В настоящее время Azure для государственных организаций не поддерживается.
+* В настоящее время в Azure Китая 21Vianet не поддерживается.
+
+## <a name="limitations"></a>Ограничения
+
+* Пользовательские кластеры в настоящее время не поддерживаются.
 
 ## <a name="sla-terms-and-conditions"></a>Условия Соглашения об уровне обслуживания
 
@@ -29,23 +40,28 @@ ms.locfileid: "84299559"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-* Azure CLI 2.7.0 или более поздней версии
+* Установка [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) версии 2.8.0 или более поздней
 
-## <a name="creating-a-cluster-with-uptime-sla"></a>Создание кластера, защищенного Соглашением об уровне обслуживания с гарантией времени доступности
+## <a name="creating-a-new-cluster-with-uptime-sla"></a>Создание нового кластера с соглашением об уровне обслуживания для времени работы
+
+> [!NOTE]
+> В настоящее время, если вы включили соглашение об уровне обслуживания "время работы", удалить его из кластера невозможно.
 
 Чтобы создать новый кластер, защищенный Соглашением об уровне обслуживания с гарантией времени доступности, используйте Azure CLI.
 
 В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
 ```azurecli-interactive
+# Create a resource group
 az group create --name myResourceGroup --location eastus
 ```
-Используйте команду [az aks create][az-aks-create], чтобы создать кластер AKS. В следующем примере создается кластер *myAKSCluster* с одним узлом. Также с помощью параметра *--enable-addons monitoring* можно включить Azure Monitor для контейнеров.  Эта операция занимает несколько минут.
+Используйте [`az aks create`][az-aks-create] команду, чтобы создать кластер AKS. В следующем примере создается кластер *myAKSCluster* с одним узлом. Выполнение этой операции займет несколько минут:
 
 ```azurecli-interactive
-az aks create --resource-group myResourceGroup --name myAKSCluster --uptime-sla --node-count 1 --enable-addons monitoring --generate-ssh-keys
+# Create an AKS cluster with uptime SLA
+az aks create --resource-group myResourceGroup --name myAKSCluster --uptime-sla --node-count 1
 ```
-Через несколько минут выполнение команды завершается и отображаются сведения о кластере в формате JSON. Следующий фрагмент кода JSON определяет для кластера платный уровень ценовой категории и применение Соглашения об уровне обслуживания с гарантией времени доступности.
+Через несколько минут выполнение команды завершается и отображаются сведения о кластере в формате JSON. В следующем фрагменте кода JSON показан платный уровень номера SKU, указывающий, что кластер включен с соглашением об уровне обслуживания времени работы:
 
 ```output
   },
@@ -55,15 +71,61 @@ az aks create --resource-group myResourceGroup --name myAKSCluster --uptime-sla 
   },
 ```
 
-## <a name="limitations"></a>Ограничения
+## <a name="modify-an-existing-cluster-to-use-uptime-sla"></a>Изменение существующего кластера для использования соглашения об уровне обслуживания времени работы
 
-* В настоящее время нельзя применить Соглашения об уровне обслуживания с гарантией времени доступности к существующему кластеру.
-* Сейчас нельзя отменить Соглашение об уровне обслуживания с гарантией времени доступности для кластера AKS, если эта возможность была активирована при его создании.  
-* Пользовательские кластеры в настоящее время не поддерживаются.
+При необходимости можно обновить существующие кластеры, чтобы использовать соглашение об уровне обслуживания времени работы.
+
+Если вы создали кластер AKS с предыдущими шагами, удалите группу ресурсов:
+
+```azurecli-interactive
+# Delete the existing cluster by deleting the resource group 
+az group delete --name myResourceGroup --yes --no-wait
+```
+
+Создайте новую группу ресурсов:
+
+```azurecli-interactive
+# Create a resource group
+az group create --name myResourceGroup --location eastus
+```
+
+Создайте новый кластер и не используйте соглашение об уровне обслуживания времени работы:
+
+```azurecli-interactive
+# Create a new cluster without uptime SLA
+az aks create --resource-group myResourceGroup --name myAKSCluster--node-count 1
+```
+
+Используйте [`az aks update`][az-aks-nodepool-update] команду, чтобы обновить существующий кластер:
+
+```azurecli-interactive
+# Update an existing cluster to use Uptime SLA
+ az aks update --resource-group myResourceGroup --name myAKSCluster --uptime-sla
+ ```
+
+ В следующем фрагменте кода JSON показан платный уровень номера SKU, указывающий, что кластер включен с соглашением об уровне обслуживания времени работы:
+
+ ```output
+  },
+  "sku": {
+    "name": "Basic",
+    "tier": "Paid"
+  },
+  ```
+
+## <a name="clean-up"></a>Очистка
+
+Чтобы избежать расходов, очистите созданные ресурсы. Чтобы удалить кластер, [`az group delete`][az-group-delete] удалите группу ресурсов AKS с помощью команды:
+
+```azurecli-interactive
+az group delete --name myResourceGroup --yes --no-wait
+```
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Примените [Зоны доступности][availability-zones], чтобы повысить уровень доступности для рабочих нагрузок кластера AKS.
+
 Настройте для кластера [ограничение исходящего трафика](limit-egress-traffic.md).
 
 <!-- LINKS - External -->
@@ -79,3 +141,5 @@ az aks create --resource-group myResourceGroup --name myAKSCluster --uptime-sla 
 [limit-egress-traffic]: ./limit-egress-traffic.md
 [az-extension-add]: /cli/azure/extension#az-extension-add
 [az-extension-update]: /cli/azure/extension#az-extension-update
+[az-aks-nodepool-update]: /cli/azure/aks/nodepool?view=azure-cli-latest#az-aks-nodepool-update
+[az-group-delete]: /cli/azure/group#az-group-delete

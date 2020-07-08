@@ -9,6 +9,7 @@ ms.date: 05/16/2017
 ms.author: cherylmc
 ms.openlocfilehash: 93a7c0bb15c17b6939d6d53018e4fed84b1ae020
 ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/02/2020
 ms.locfileid: "84984567"
@@ -44,6 +45,6 @@ ms.locfileid: "84984567"
 
 [!INCLUDE [Classic PowerShell](../../includes/vpn-gateway-verify-connection-ps-classic-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * В виртуальные сети можно добавлять виртуальные машины. Инструкции см. в статье о [создании виртуальной машины](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

@@ -11,6 +11,7 @@ ms.date: 10/09/2019
 ms.author: cherylmc
 ms.openlocfilehash: 5a74f1ca8d1055885561a35dbd18899193d3924d
 ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/02/2020
 ms.locfileid: "84984139"
@@ -85,6 +86,6 @@ ms.locfileid: "84984139"
 
 [!INCLUDE [vpn-gateway-verify-connection-ps-rm](../../includes/vpn-gateway-verify-connection-ps-rm-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительную информацию о виртуальных машинах см. в [схеме обучения](/learn/paths/deploy-a-website-with-azure-virtual-machines/).

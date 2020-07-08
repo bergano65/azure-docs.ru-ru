@@ -11,6 +11,7 @@ services: azure-maps
 manager: timlt
 ms.openlocfilehash: d33fbdf2e95faaa82c13b4fc0d52ea3f188c3f86
 ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/02/2020
 ms.locfileid: "84988442"
@@ -114,7 +115,7 @@ ms.locfileid: "84988442"
 > [!WARNING]
 > Azure Maps определения встроенных ролей предоставляют очень большие разрешения на доступ к множеству Azure Maps интерфейсов API. Чтобы ограничить доступ через API к минимуму, см. раздел [Создание пользовательского определения роли и назначение назначенного системой удостоверения](https://docs.microsoft.com/azure/role-based-access-control/custom-roles) пользовательскому определению роли. Это обеспечит минимальный уровень привилегий, необходимых приложению для доступа к Azure Maps.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дальнейшее понимание сценария одностраничного приложения:
 > [!div class="nextstepaction"]

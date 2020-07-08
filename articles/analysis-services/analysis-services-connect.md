@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/17/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: cc671629934d80b3e727ca69f9026f534d05e160
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f1b4e56dfeae2d4b7826f3ad30bc5eb4b8672b85
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81676649"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85361478"
 ---
 # <a name="connecting-to-servers"></a>Подключение к серверам
 
@@ -20,7 +20,7 @@ ms.locfileid: "81676649"
 
 ## <a name="client-libraries"></a>Клиентские библиотеки
 
-[Получение последних версий клиентских библиотек](analysis-services-data-providers.md)
+[Получение последних версий клиентских библиотек](https://docs.microsoft.com/analysis-services/client-libraries?view=azure-analysis-services-current)
 
 Все подключения к серверу независимо от типа требуют обновленных клиентских библиотек AMO, ADOMD.NET и OLEDB для взаимодействия с сервером Analysis Services. Для SSMS, Visual Studio, Excel 2016 и более поздних версий и Power BI последние клиентские библиотеки устанавливаются или обновляются в ежемесячных выпусках. Однако в некоторых случаях последние версии могут отсутствовать в приложении. Например, такое возможно, если обновление откладывается политикой либо если обновление Office 365 производится по отложенному каналу.
 
@@ -45,7 +45,7 @@ ms.locfileid: "81676649"
 > [!NOTE]
 > Протокол для региона "Восточная часть США 2" — **aspaaseastus2**.
 
-## <a name="connection-string"></a>Строка подключения.
+## <a name="connection-string"></a>Строка подключения
 
 При подключении к службам Azure Analysis Services с помощью модели табличного объекта используйте следующие форматы строки подключения:
 

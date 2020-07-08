@@ -4,33 +4,33 @@ description: Узнайте, как использовать средство у
 services: container-service
 author: zr-msft
 ms.topic: article
-ms.date: 11/22/2019
+ms.date: 06/24/2020
 ms.author: zarhoads
-ms.openlocfilehash: e46bed5fc9fd83a907f8c9e716317a54548c58cc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6ee99eee02e874208106d39c6442f54f59f95dad
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81870254"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85361614"
 ---
 # <a name="install-existing-applications-with-helm-in-azure-kubernetes-service-aks"></a>Установка существующих приложений с помощью Helm в службе Kubernetes Azure (AKS)
 
-[Helm][helm] — это средство упаковки с открытым кодом, которое помогает установить приложения Kubernetes и управлять их жизненным циклом. Аналогично диспетчерам пакетов Linux, таких как *APT* и *Yum*, Helm используется для управления чартами Kubernetes, представляющими собой пакеты предварительно настроенных ресурсов Kubernetes.
+[Helm][helm] — это средство упаковки с открытым исходным кодом, помогающее в установке и управлении жизненным циклом приложений Kubernetes. Аналогично диспетчерам пакетов Linux, таким как *APT* и *Yum*, Helm используется для управления диаграммами Kubernetes, которые представляют собой пакеты предварительно настроенных ресурсов Kubernetes.
 
 В этой статье показано, как настроить и использовать Helm в кластере Kubernetes в AKS.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
 Также необходимо установить Helm CLI, который является клиентом, работающим в системе разработки. Она позволяет запускать, прекращать работу приложений и управлять ими с помощью Helm. Если вы используете Azure Cloud Shell, интерфейс командной строки Helm уже установлен. Инструкции по установке на локальной платформе см. в разделе [Installing Helm][helm-install].
 
 > [!IMPORTANT]
-> Helm предназначен для работы на узлах Linux. Если в кластере есть узлы Windows Server, необходимо убедиться, что Helm Pod планируется запускать только на узлах Linux. Также необходимо убедиться, что все устанавливаемые Helm диаграммы запланированы на правильных узлах. Команды, приведенные в этой статье, используют селекторы [узлов][k8s-node-selector] , чтобы убедиться, что модули Pod запланированы для правильных узлов, но не все Helm диаграммы могут предоставлять выбор узла. Можно также использовать другие параметры в кластере, например [таинтс][taints].
+> Helm предназначен для работы на узлах Linux. Если в кластере есть узлы Windows Server, необходимо убедиться, что Helm Pod планируется запускать только на узлах Linux. Также необходимо убедиться, что все устанавливаемые Helm диаграммы запланированы на правильных узлах. В командах, приведенных в этой статье, используются [селекторы узлов] [K8S-node-Selector], чтобы убедиться, что модули Pod запланированы на правильные узлы, но не все Helm диаграммы могут предоставлять селектор узла. Можно также использовать другие параметры в кластере, например [таинтс][taints].
 
 ## <a name="verify-your-version-of-helm"></a>Проверка версии Helm
 
-Используйте `helm version` команду, чтобы проверить установленную версию Helm:
+Используйте `helm version` команду, чтобы убедиться, что установлен Helm 3:
 
 ```console
 helm version
@@ -43,8 +43,6 @@ $ helm version
 
 version.BuildInfo{Version:"v3.0.0", GitCommit:"e29ce2a54e96cd02ccfce88bee4f58bb6e2a28b6", GitTreeState:"clean", GoVersion:"go1.13.4"}
 ```
-
-Для Helm v3 выполните действия, описанные в [разделе Helm v3](#install-an-application-with-helm-v3). Для Helm v2 выполните действия, описанные в [разделе Helm v2](#install-an-application-with-helm-v2) .
 
 ## <a name="install-an-application-with-helm-v3"></a>Установка приложения с помощью Helm v3
 
@@ -65,7 +63,6 @@ helm search repo stable
 ```
 
 В следующем кратком примере выходные данные содержат некоторые из доступных для использования чартов Helm:
-
 
 ```console
 $ helm search repo stable
@@ -114,7 +111,13 @@ stable/datadog                          1.38.3          6.14.0                  
 ...
 ```
 
-Чтобы обновить список чартов, используйте команду [helm repo update][helm-repo-update]. Ниже приведен пример успешного обновления репозитория:
+Чтобы обновить список чартов, используйте команду [helm repo update][helm-repo-update].
+
+```console
+helm repo update
+```
+
+Ниже приведен пример успешного обновления репозитория:
 
 ```console
 $ helm repo update
@@ -154,7 +157,13 @@ You can watch the status by running 'kubectl --namespace default get services -o
 ...
 ```
 
-Используйте `kubectl get services` команду, чтобы получить *внешний IP-адрес* службы. Например, приведенная ниже команда демонстрирует *внешний IP-адрес* для службы *My-nginx-входящий-Controller* :
+Используйте `kubectl get services` команду, чтобы получить *внешний IP-адрес* службы.
+
+```console
+kubectl --namespace default get services -o wide -w my-nginx-ingress-controller
+```
+
+Например, приведенная ниже команда демонстрирует *внешний IP-адрес* для службы *My-nginx-входящий-Controller* :
 
 ```console
 $ kubectl --namespace default get services -o wide -w my-nginx-ingress-controller
@@ -196,185 +205,6 @@ $ helm uninstall my-nginx-ingress
 release "my-nginx-ingress" uninstalled
 ```
 
-## <a name="install-an-application-with-helm-v2"></a>Установка приложения с помощью Helm v2
-
-### <a name="create-a-service-account"></a>Создание учетной записи службы
-
-Перед развертыванием Helm в кластере AKS с поддержкой RBAC необходимо создать учетную запись службы и привязку роли для службы Tiller. Дополнительные сведения о защите Helm и Tiller в кластере с поддержкой RBAC см. в руководстве по [использованию Tiller, пространств имен и RBAC][tiller-rbac]. Если в кластере AKS не включена поддержка RBAC, пропустите этот шаг.
-
-Создайте файл `helm-rbac.yaml` и скопируйте в него следующий код YAML:
-
-```yaml
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: tiller
-  namespace: kube-system
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: tiller
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
-subjects:
-  - kind: ServiceAccount
-    name: tiller
-    namespace: kube-system
-```
-
-Создайте учетную запись службы и привязку роли с помощью команды `kubectl apply`:
-
-```console
-kubectl apply -f helm-rbac.yaml
-```
-
-### <a name="secure-tiller-and-helm"></a>Защита Tiller и Helm
-
-Клиент Helm и служба Tiller проверяют подлинность и взаимодействуют друг с другом с помощью протокола TLS/SSL. Этот метод проверки подлинности позволяет обеспечить безопасность кластера Kubernetes и развертываемых служб. Для повышения безопасности можно создавать собственные подписанные сертификаты. Каждый пользователь Helm получит собственный сертификат клиента, и инициализация Tiller в кластере Kubernetes будет выполняться с помощью сертификатов. Дополнительные сведения см. в статье [Using TLS/SSL between Helm and Tiller][helm2-ssl].
-
-Благодаря кластеру Kubernetes с поддержкой RBAC вы можете контролировать уровень доступа Tiller в кластере. Можно определить пространство имен Kubernetes, в котором развертывается Tiller, и ограничить пространства имен, в которых Tiller может развертывать ресурсы. Такой подход позволяет создавать экземпляры Tiller в разных пространствах имен и определять границы развертывания, а также ограничивать область пользователей клиента Helm определенными пространствами имен. Дополнительные сведения см. в статье об [управлении доступом на основе ролей Helm][helm2-rbac].
-
-### <a name="configure-helm"></a>Настройка Helm
-
-Чтобы развернуть базовую службу Tiller в кластере AKS, используйте команду [helm init][helm2-init]. Если в кластере не включена поддержка RBAC, удалите значение и аргумент `--service-account`. В следующих примерах также задается [Журнал — максимум —][helm2-history-max] 200.
-
-Если вы настроили TLS/SSL для Tiller и Helm, пропустите эту процедуру базовой инициализации и укажите необходимый `--tiller-tls-`, как показано в следующем примере.
-
-```console
-helm init --history-max 200 --service-account tiller --node-selectors "beta.kubernetes.io/os=linux"
-```
-
-Если вы настроили подключение TLS/SSL между Helm и Tiller, укажите параметры `--tiller-tls-*` и имена собственных сертификатов, как показано в следующем примере:
-
-```console
-helm init \
-    --tiller-tls \
-    --tiller-tls-cert tiller.cert.pem \
-    --tiller-tls-key tiller.key.pem \
-    --tiller-tls-verify \
-    --tls-ca-cert ca.cert.pem \
-    --history-max 200 \
-    --service-account tiller \
-    --node-selectors "beta.kubernetes.io/os=linux"
-```
-
-### <a name="find-helm-charts"></a>Поиск чартов Helm
-
-Чарты Helm используются для развертывания приложений в кластере Kubernetes. Чтобы найти предварительно созданные диаграммы Helm, используйте команду [поиска Helm][helm2-search] :
-
-```console
-helm search
-```
-
-В следующем кратком примере выходные данные содержат некоторые из доступных для использования чартов Helm:
-
-```
-$ helm search
-
-NAME                           CHART VERSION    APP VERSION  DESCRIPTION
-stable/aerospike               0.1.7            v3.14.1.2    A Helm chart for Aerospike in Kubernetes
-stable/anchore-engine          0.1.7            0.1.10       Anchore container analysis and policy evaluatio...
-stable/apm-server              0.1.0            6.2.4        The server receives data from the Elastic APM a...
-stable/ark                     1.0.1            0.8.2        A Helm chart for ark
-stable/artifactory             7.2.1            6.0.0        Universal Repository Manager supporting all maj...
-stable/artifactory-ha          0.2.1            6.0.0        Universal Repository Manager supporting all maj...
-stable/auditbeat               0.1.0            6.2.4        A lightweight shipper to audit the activities o...
-stable/aws-cluster-autoscaler  0.3.3                         Scales worker nodes within autoscaling groups.
-stable/bitcoind                0.1.3            0.15.1       Bitcoin is an innovative payment network and a ...
-stable/buildkite               0.2.3            3            Agent for Buildkite
-stable/burrow                  0.4.4            0.17.1       Burrow is a permissionable smart contract machine
-stable/centrifugo              2.0.1            1.7.3        Centrifugo is a real-time messaging server.
-stable/cerebro                 0.1.0            0.7.3        A Helm chart for Cerebro - a web admin tool tha...
-stable/cert-manager            v0.3.3           v0.3.1       A Helm chart for cert-manager
-stable/chaoskube               0.7.0            0.8.0        Chaoskube periodically kills random pods in you...
-stable/chartmuseum             1.5.0            0.7.0        Helm Chart Repository with support for Amazon S...
-stable/chronograf              0.4.5            1.3          Open-source web application written in Go and R...
-stable/cluster-autoscaler      0.6.4            1.2.2        Scales worker nodes within autoscaling groups.
-stable/cockroachdb             1.1.1            2.0.0        CockroachDB is a scalable, survivable, strongly...
-stable/concourse               1.10.1           3.14.1       Concourse is a simple and scalable CI system.
-stable/consul                  3.2.0            1.0.0        Highly available and distributed service discov...
-stable/coredns                 0.9.0            1.0.6        CoreDNS is a DNS server that chains plugins and...
-stable/coscale                 0.2.1            3.9.1        CoScale Agent
-stable/dask                    1.0.4            0.17.4       Distributed computation in Python with task sch...
-stable/dask-distributed        2.0.2                         DEPRECATED: Distributed computation in Python
-stable/datadog                 0.18.0           6.3.0        DataDog Agent
-...
-```
-
-Чтобы обновить список чартов, используйте команду [helm repo update][helm2-repo-update]. Ниже приведен пример успешного обновления репозитория:
-
-```console
-$ helm repo update
-
-Hold tight while we grab the latest from your chart repositories...
-...Skip local chart repository
-...Successfully got an update from the "stable" chart repository
-Update Complete.
-```
-
-### <a name="run-helm-charts"></a>Выполнение чартов Helm
-
-Чтобы установить чарты с помощью Helm, используйте команду [helm install][helm2-install-command] и укажите имя чарта для установки. Чтобы увидеть, как установить Helm диаграмму в действии, давайте установим базовое развертывание nginx с помощью диаграммы Helm. Если вы настроили TLS/SSL, добавьте параметр `--tls`, чтобы использовать сертификат клиента Helm.
-
-```console
-helm install stable/nginx-ingress \
-    --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux \
-    --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux
-```
-
-В следующем кратком примере выходные данные содержат состояние развертывания ресурсов Kubernetes, созданное чартом Helm:
-
-```
-$ helm install stable/nginx-ingress --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux
-
-NAME:   flailing-alpaca
-LAST DEPLOYED: Thu May 23 12:55:21 2019
-NAMESPACE: default
-STATUS: DEPLOYED
-
-RESOURCES:
-==> v1/ConfigMap
-NAME                                      DATA  AGE
-flailing-alpaca-nginx-ingress-controller  1     0s
-
-==> v1/Pod(related)
-NAME                                                            READY  STATUS             RESTARTS  AGE
-flailing-alpaca-nginx-ingress-controller-56666dfd9f-bq4cl       0/1    ContainerCreating  0         0s
-flailing-alpaca-nginx-ingress-default-backend-66bc89dc44-m87bp  0/1    ContainerCreating  0         0s
-
-==> v1/Service
-NAME                                           TYPE          CLUSTER-IP  EXTERNAL-IP  PORT(S)                     AGE
-flailing-alpaca-nginx-ingress-controller       LoadBalancer  10.0.109.7  <pending>    80:31219/TCP,443:32421/TCP  0s
-flailing-alpaca-nginx-ingress-default-backend  ClusterIP     10.0.44.97  <none>       80/TCP                      0s
-...
-```
-
-Для заполнения *внешнего IP* -адреса службы контроллера nginx-входящий-Controller и предоставления доступа к ней через веб-браузер требуется около двух минут.
-
-### <a name="list-helm-releases"></a>Список выпусков Helm
-
-Чтобы просмотреть список выпусков, установленных в кластере, используйте команду [helm list][helm2-list]. В следующем примере показан выпуск nginx-входящий, развернутый на предыдущем шаге. Если вы настроили TLS/SSL, добавьте параметр `--tls`, чтобы использовать сертификат клиента Helm.
-
-```console
-$ helm list
-
-NAME                REVISION    UPDATED                     STATUS      CHART                 APP VERSION   NAMESPACE
-flailing-alpaca   1         Thu May 23 12:55:21 2019    DEPLOYED    nginx-ingress-1.6.13    0.24.1      default
-```
-
-### <a name="clean-up-resources"></a>Очистка ресурсов
-
-При развертывании диаграммы Helm создается несколько ресурсов Kubernetes. К ним относятся элементы pod, развертывания и службы. Для очистки этих ресурсов используйте команду `helm delete` и укажите имя выпуска, как описано в предыдущей команде `helm list`. В следующем примере удаляется выпуск с именем *флаилинг-алпака*:
-
-```console
-$ helm delete flailing-alpaca
-
-release "flailing-alpaca" deleted
-```
-
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об управлении развертываниями приложений Kubernetes с помощью Helm см. в документации по Helm.
@@ -391,20 +221,8 @@ release "flailing-alpaca" deleted
 [helm-repo-add]: https://helm.sh/docs/intro/quickstart/#initialize-a-helm-chart-repository
 [helm-search]: https://helm.sh/docs/intro/using_helm/#helm-search-finding-charts
 [helm-repo-update]: https://helm.sh/docs/intro/using_helm/#helm-repo-working-with-repositories
-[helm2-init]: https://v2.helm.sh/docs/helm/#helm-init
-[helm2-install-command]: https://v2.helm.sh/docs/helm/#helm-install
-[helm2-install-options]: https://github.com/kubernetes/helm/blob/master/docs/install.md
-[helm2-list]: https://v2.helm.sh/docs/helm/#helm-list
-[helm2-history-max]: https://v2.helm.sh/docs/using_helm/#initialize-helm-and-install-tiller
-[helm2-rbac]: https://v2.helm.sh/docs/using_helm/#role-based-access-control
-[helm2-repo-update]: https://v2.helm.sh/docs/helm/#helm-repo-update
-[helm2-search]: https://v2.helm.sh/docs/helm/#helm-search
-[tiller-rbac]: https://v2.helm.sh/docs/using_helm/#tiller-namespaces-and-rbac
-[helm2-ssl]: https://v2.helm.sh/docs/using_helm/#using-ssl-between-helm-and-tiller
             
 <!-- LINKS - internal -->
 [aks-quickstart-cli]: kubernetes-walkthrough.md
 [aks-quickstart-portal]: kubernetes-walkthrough-portal.md
-[install-azure-cli]: /cli/azure/install-azure-cli
-[k8s-node-selector]: concepts-clusters-workloads.md#node-selectors
 [taints]: operator-best-practices-advanced-scheduler.md

@@ -11,17 +11,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
-ms.date: 03/09/2020
+ms.topic: how-to
+ms.date: 06/09/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 661d4f622dce45aeca1d41ead60f05ccdcfbc9c9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 118abaef1fd1458057a7dbe28d5cd74ded55fe28
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81406877"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85358299"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Сквозная проверка подлинности Azure Active: ответы на часто задаваемые вопросы
 
@@ -44,7 +44,7 @@ ms.locfileid: "81406877"
 Да. Все возможности условного доступа, включая многофакторную идентификацию Azure, работают с сквозной проверкой подлинности.
 
 ## <a name="does-pass-through-authentication-support-alternate-id-as-the-username-instead-of-userprincipalname"></a>Поддерживает ли сквозная проверка подлинности в качестве имени пользователя "Alternate ID", а не "userPrincipalName"?
-Вход с использованием значения, отличного от имени участника-пользователя, такого как альтернативный адрес электронной почты, в настоящее время тестируется в закрытой предварительной версии для сквозной проверки подлинности (PTA) и синхронизации хэша паролей (PHS).
+Да, вход с использованием значения, отличного от имени участника-пользователя, такого как альтернативный адрес электронной почты, поддерживается для сквозной проверки подлинности (PTA) и синхронизации хэша паролей (PHS). Дополнительные сведения об [альтернативном идентификаторе входа](../authentication/howto-authentication-use-email-signin.md).
 
 ## <a name="does-password-hash-synchronization-act-as-a-fallback-to-pass-through-authentication"></a>Действует ли синхронизация хэша паролей как переход на резервный ресурс при сквозной аутентификации?
 
@@ -113,7 +113,7 @@ ms.locfileid: "81406877"
 
 Если агент сквозной аутентификации выполняется, он остается активным и постоянно обрабатывает запросы на вход пользователей. Если вы хотите удалить агент аутентификации, выберите **Панель управления > Программы > Программы и компоненты** и удалите программы **Microsoft Azure AD Connect Authentication Agent** и **Microsoft Azure AD Connect Agent Updater**.
 
-Если открыть колонку "Сквозная проверка подлинности" в [центре администрирования Azure Active Directory](https://aad.portal.azure.com) после завершения предыдущего шага, то вы увидите, что агент аутентификации **неактивен**. Это _ожидаемое поведение_. Агент аутентификации будет автоматически удален из списка через несколько дней.
+Если открыть колонку "Сквозная проверка подлинности" в [центре администрирования Azure Active Directory](https://aad.portal.azure.com) после завершения предыдущего шага, то вы увидите, что агент аутентификации **неактивен**. Это _ожидаемое_. Агент аутентификации будет автоматически удален из списка через несколько дней.
 
 ## <a name="i-already-use-ad-fs-to-sign-in-to-azure-ad-how-do-i-switch-it-to-pass-through-authentication"></a>Я уже использую AD FS для входа в Azure AD. Как изменить этот метод на сквозную проверку подлинности?
 
@@ -174,7 +174,7 @@ ms.locfileid: "81406877"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Текущие ограничения](how-to-connect-pta-current-limitations.md). Сведения о том, какие сценарии поддерживаются, а какие нет.
 - [Краткое руководство по сквозной аутентификации Azure Active Directory](how-to-connect-pta-quick-start.md). Настройка и подготовка к работе сквозной аутентификации Azure Active Directory.
 - [Migrate from AD FS to Pass-through Authentication](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx?raw=true) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.

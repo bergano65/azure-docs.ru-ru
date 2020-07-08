@@ -11,17 +11,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/26/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6269d00c9a6a8f827a4e31044d9d20efb0f8471b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4f082ec896bf0542b63c8c1d0257679681334050
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "60243551"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85358673"
 ---
 # <a name="install-azure-ad-connect-using-sql-delegated-administrator-permissions"></a>Установка Azure AD Connect с использованием делегированных разрешений администратора SQL
 До последней сборки Azure AD Connect административное делегирование при развертывании конфигураций, для которых требовался SQL, не поддерживалось.  Пользователям, которые хотят установить Azure AD Connect, необходимо иметь разрешения администратора сервера на сервере SQL.
@@ -63,7 +63,7 @@ ms.locfileid: "60243551"
 
 Если администратор SQL Server восстановил базу данных ADSync из предыдущей Azure AD Connect резервной копии, необходимо будет установить новый сервер Azure AD Connect с помощью существующей базы данных. Дополнительные сведения об установке Azure AD Connect с существующей базой данных см. в [статье установка Azure AD Connect с использованием существующей базы данных ADSync](how-to-connect-install-existing-database.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Приступая к работе с Azure AD Connect с использованием стандартных параметров](how-to-connect-install-express.md)
 - [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md)
 - [Установка Azure AD Connect с помощью имеющейся базы данных ADSync](how-to-connect-install-existing-database.md)  

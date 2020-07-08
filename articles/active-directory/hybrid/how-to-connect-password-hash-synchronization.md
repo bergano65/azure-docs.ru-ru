@@ -8,19 +8,19 @@ manager: daveba
 ms.assetid: 05f16c3e-9d23-45dc-afca-3d0fa9dbf501
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/26/2020
 ms.subservice: hybrid
 ms.author: billmath
 search.appverid:
 - MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c41b11ab65f5710d338ce0041579e1eb4678ec42
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 47f0dea435af56f6994b57079983a63b3a29600d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80331368"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85358568"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 В этой статье содержатся сведения о том, как синхронизировать пароли пользователей локального экземпляра службы Active Directory (AD) и облачного экземпляра службы Azure Active Directory (Azure AD).
@@ -63,7 +63,7 @@ ms.locfileid: "80331368"
 > [!NOTE]
 > Оригинальный MD4-хэш не передается в Azure AD. Вместо этого передается SHA256-хэш от оригинального MD4-хэша. Это означает, что хранимый в Azure AD хэш невозможно использовать для атаки Pass-the-Hash на локальную систему, даже если удастся его получить.
 
-### <a name="security-considerations"></a>Замечания по безопасности
+### <a name="security-considerations"></a>Вопросы безопасности
 
 При синхронизации паролей их текстовое значение никогда не передается в службу синхронизации хэшированных паролей, в Azure AD или другие связанные службы.
 
@@ -89,14 +89,13 @@ ms.locfileid: "80331368"
 
 Даже если срок действия синхронизируемого пароля в локальной среде истек, его можно использовать для входа в облачные службы. Пароль для облачной учетной записи изменяется, когда вы изменяете пароль в локальной среде.
 
-##### <a name="public-preview-of-the-enforcecloudpasswordpolicyforpasswordsyncedusers-feature"></a>Общедоступная Предварительная версия компонента *енфорцеклаудпассвордполицифорпассвордсинцедусерс*
+##### <a name="enforcecloudpasswordpolicyforpasswordsyncedusers"></a>енфорцеклаудпассвордполицифорпассвордсинцедусерс
 
 Если есть синхронизированные пользователи, которые взаимодействуют только со службами, интегрированными с Azure AD, и должны соответствовать политике истечения срока действия пароля, вы можете принудительно применить ее к политике истечения срока действия пароля Azure AD, включив функцию *енфорцеклаудпассвордполицифорпассвордсинцедусерс* .
 
 Если *енфорцеклаудпассвордполицифорпассвордсинцедусерс* отключен (значение по умолчанию), Azure AD Connect устанавливает атрибут PasswordPolicies синхронизированных пользователей в "DisablePasswordExpiration". Это выполняется при каждом синхронизации пароля пользователя и указывает Azure AD игнорировать политику срока действия облачных паролей для этого пользователя. Значение атрибута можно проверить с помощью модуля Azure AD PowerShell, выполнив следующую команду:
 
 `(Get-AzureADUser -objectID <User Object ID>).passwordpolicies`
-
 
 Чтобы включить функцию Енфорцеклаудпассвордполицифорпассвордсинцедусерс, выполните следующую команду с помощью модуля PowerShell MSOnline, как показано ниже. Для параметра Enable необходимо ввести да, как показано ниже.
 
@@ -118,15 +117,14 @@ Continue with this operation?
 
 Azure AD поддерживает отдельную политику срока действия паролей для каждого зарегистрированного домена.
 
-Предостережение. Если у вас есть синхронизированные учетные записи, которые должны иметь неистекшие пароли в Azure AD, необходимо `DisablePasswordExpiration` явно добавить значение в атрибут PasswordPolicies объекта User в Azure AD.  Это можно сделать, выполнив следующую команду.
+Предостережение. Если у вас есть синхронизированные учетные записи, которые должны иметь неистекшие пароли в Azure AD, необходимо явно добавить `DisablePasswordExpiration` значение в атрибут PasswordPolicies объекта User в Azure AD.  Это можно сделать, выполнив следующую команду.
 
 `Set-AzureADUser -ObjectID <User Object ID> -PasswordPolicies "DisablePasswordExpiration"`
 
 > [!NOTE]
-> Эта функция доступна в общедоступной предварительной версии прямо сейчас.
 > Команда PowerShell Set-MsolPasswordPolicy не будет работать в федеративных доменах. 
 
-#### <a name="public-preview-of-synchronizing-temporary-passwords-and-force-password-change-on-next-logon"></a>Общедоступная Предварительная версия синхронизации временных паролей и "принудительное изменение пароля при следующем входе"
+#### <a name="synchronizing-temporary-passwords-and-force-password-change-on-next-logon"></a>Синхронизация временных паролей и "принудительное изменение пароля при следующем входе"
 
 Обычно пользователю приходится менять свой пароль при первом входе в систему, особенно после сброса пароля администратора.  Он обычно называется "временным" паролем и завершается установкой флага "Требовать смену пароля при следующем входе в систему" для объекта пользователя в Active Directory (AD).
   
@@ -141,9 +139,6 @@ Azure AD поддерживает отдельную политику срока
 
 > [!CAUTION]
 > Эту функцию следует использовать, только если в клиенте включена функция обратной записи SSPR и пароля.  Таким образом, если пользователь изменит свой пароль через SSPR, он будет синхронизирован с Active Directory.
-
-> [!NOTE]
-> Эта функция доступна в общедоступной предварительной версии прямо сейчас.
 
 #### <a name="account-expiration"></a>Срок действия учетной записи
 
@@ -238,5 +233,5 @@ Azure AD поддерживает отдельную политику срока
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 * [Синхронизация Azure AD Connect: Настройка параметров синхронизации](how-to-connect-sync-whatis.md)
-* [Интеграция локальных удостоверений с Azure Active Directory.](whatis-hybrid-identity.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
 * [Получить поэтапный план развертывания для перехода с ADFS на синхронизацию хэша паролей](https://aka.ms/authenticationDeploymentPlan)

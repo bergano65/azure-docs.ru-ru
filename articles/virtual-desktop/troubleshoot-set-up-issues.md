@@ -8,19 +8,19 @@ ms.topic: troubleshooting
 ms.date: 01/08/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 65a61babe58e1cb9438262186a7f4cf37cb10a34
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: 3e248e7af5fc9ed2bc144a4b302577be56524d7d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82612607"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85361173"
 ---
 # <a name="host-pool-creation"></a>Создание пула узлов
 
 >[!IMPORTANT]
->Это содержимое относится к обновлению пружины 2020 с Azure Resource Manager объектов виртуальных рабочих столов Windows. Если вы используете виртуальный рабочий стол Windows в выпуске 2019 без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/troubleshoot-set-up-issues-2019.md).
+>Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете выпуск Виртуального рабочего стола Windows за осень 2019 года без объектов Azure Resource Manager, см. [эту статью](./virtual-desktop-fall-2019/troubleshoot-set-up-issues-2019.md).
 >
-> Обновление 2020 виртуального рабочего стола Windows в настоящее время находится в общедоступной предварительной версии. Эта предварительная версия предоставляется без соглашения об уровне обслуживания, и мы не рекомендуем использовать ее для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. 
+> Обновление Виртуального рабочего стола Windows за весну 2020 года пока предоставляется как общедоступная предварительная версия. без соглашений об уровне обслуживания. Мы не рекомендуем использовать ее для выполнения производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. 
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 В этой статье рассматриваются проблемы во время первоначальной настройки клиента виртуальных рабочих столов Windows и соответствующей инфраструктуры пула узлов сеансов.
@@ -31,13 +31,14 @@ ms.locfileid: "82612607"
 
 ## <a name="acquiring-the-windows-10-enterprise-multi-session-image"></a>Получение многосеансового образа Windows 10 Корпоративная
 
-Чтобы использовать многосеансовый образ Windows 10 Enterprise, перейдите в Azure Marketplace, выберите начало **работы** > с**Microsoft Windows 10** > и [Windows 10 Корпоративная многосеансовая версия 1809](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsdesktop.windows-10?tab=PlansAndPrice).
+Чтобы использовать многосеансовый образ Windows 10 Enterprise, перейдите в Azure Marketplace, выберите начало **работы**с  >  **Microsoft Windows 10** > и [Windows 10 Корпоративная многосеансовая версия 1809](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsdesktop.windows-10?tab=PlansAndPrice).
 
 ## <a name="issues-with-using-the-azure-portal-to-create-host-pools"></a>Проблемы с использованием портал Azure для создания пулов узлов
 
 ### <a name="error-create-a-free-account-appears-when-accessing-the-service"></a>Ошибка: при доступе к службе отображается сообщение "создание бесплатной учетной записи"
 
-![Изображение, показывающее, на портал Azure отображается сообщение "создание бесплатной учетной записи"](media/create-new-account.png)
+> [!div class="mx-imgBorder"]
+> ![Изображение, показывающее, на портал Azure отображается сообщение "создание бесплатной учетной записи"](media/create-new-account.png)
 
 **Причина**: в учетной записи, в которой вы вошли в Azure, нет активных подписок, или у учетной записи нет разрешений на просмотр подписок. 
 
@@ -60,9 +61,10 @@ ms.locfileid: "82612607"
 3. После определения ошибки используйте сообщение об ошибке и ресурсы в статье [Устранение распространенных ошибок развертывания Azure с Azure Resource Manager](../azure-resource-manager/resource-manager-common-deployment-errors.md) для решения проблемы.
 4. Удалите все ресурсы, созданные во время предыдущего развертывания, и повторите попытку развертывания шаблона.
 
-### <a name="error-your-deployment-failedhostnamejoindomain"></a>Ошибка: не удалось выполнить развертывание...\<. имя узла>/жоиндомаин
+### <a name="error-your-deployment-failedhostnamejoindomain"></a>Ошибка: сбой развертывания... \<hostname> /жоиндомаин
 
-![Снимок экрана сбоя развертывания.](media/failure-joindomain.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана сбоя развертывания.](media/failure-joindomain.png)
 
 Пример необработанной ошибки:
 
@@ -103,7 +105,8 @@ ms.locfileid: "82612607"
 
 ### <a name="error-vmextensionprovisioningerror"></a>Ошибка: Вмекстенсионпровисионинжеррор
 
-![Снимок экрана развертывания: не удалось выполнить состояние подготовки терминала.](media/failure-vmextensionprovisioning.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана развертывания: не удалось выполнить состояние подготовки терминала.](media/failure-vmextensionprovisioning.png)
 
 **Причина 1:** Временная ошибка в среде виртуальных рабочих столов Windows.
 
@@ -113,7 +116,8 @@ ms.locfileid: "82612607"
 
 ### <a name="error-the-admin-username-specified-isnt-allowed"></a>Ошибка: указанное имя администратора не разрешено
 
-![Снимок экрана развертывания, в котором указанное административное сообщение не разрешено.](media/failure-username.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана развертывания, в котором указанное административное сообщение не разрешено.](media/failure-username.png)
 
 Пример необработанной ошибки:
 
@@ -130,7 +134,8 @@ ms.locfileid: "82612607"
 
 ### <a name="error-vm-has-reported-a-failure-when-processing-extension"></a>Ошибка: виртуальная машина сообщила об ошибке при обработке расширения
 
-![Снимок экрана: операция с ресурсом завершена с состоянием подготовки терминала в развертывании.](media/failure-processing.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана: операция с ресурсом завершена с состоянием подготовки терминала в развертывании.](media/failure-processing.png)
 
 Пример необработанной ошибки:
 
@@ -149,7 +154,8 @@ ms.locfileid: "82612607"
 
 ### <a name="error-deploymentfailed--powershell-dsc-configuration-firstsessionhost-completed-with-errors"></a>Ошибка: DeploymentFailed — конфигурация PowerShell DSC "Фирстсессионхост" завершена с ошибками
 
-![Снимок экрана развертывания с конфигурацией PowerShell DSC "Фирстсессионхост" завершился с ошибками.](media/failure-dsc.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана развертывания с конфигурацией PowerShell DSC "Фирстсессионхост" завершился с ошибками.](media/failure-dsc.png)
 
 Пример необработанной ошибки:
 
@@ -254,12 +260,12 @@ the VM.\\\"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Общие сведения об устранении неполадок с виртуальным рабочим столом Windows и сведениями о эскалации см. в разделе [Обзор устранения неполадок, обратная связь и поддержка](troubleshoot-set-up-overview.md).
-- Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
+- Общие сведения об устранении неполадок с Виртуальным рабочим столом Windows и о путях эскалации см. в статье [Общие сведения об устранении неисправностей, отзывы и поддержка](troubleshoot-set-up-overview.md).
+- Инструкции по устранению неполадок при настройке виртуальной машины через Виртуальный рабочий стол Windows см. в статье [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
 - Сведения об устранении неполадок подключения клиентов к виртуальным рабочим столам Windows см. в статье [подключения к службе виртуальных рабочих столов Windows](troubleshoot-service-connection.md).
 - Сведения об устранении неполадок, связанных с удаленный рабочий стол клиентами, см. [в разделе Устранение неполадок клиента удаленный рабочий стол](troubleshoot-client.md)
-- Сведения об устранении неполадок при использовании PowerShell с виртуальным рабочим столом Windows см. в статье [Windows Virtual Desktop PowerShell](troubleshoot-powershell.md).
+- Инструкции по устранению неполадок при использовании PowerShell через Виртуальный рабочий стол Windows см. в статье [Виртуальный рабочий стол Windows — PowerShell](troubleshoot-powershell.md).
 - Дополнительные сведения о службе см. в разделе [Среда виртуальных рабочих столов Windows](environment-setup.md).
-- Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](../azure-resource-manager/templates/template-tutorial-troubleshoot.md).
+- Сведения об устранении неполадок см. в статье [Tutorial: Troubleshoot Resource Manager template deployments](../azure-resource-manager/templates/template-tutorial-troubleshoot.md) (Руководство. Устранение неполадок развертывания шаблонов Resource Manager)
 - Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](../azure-resource-manager/management/view-activity-logs.md).
 - Дополнительные сведения об определении ошибок во время развертывания см. в статье [Просмотр операций развертывания с помощью портала Azure](../azure-resource-manager/templates/deployment-history.md).

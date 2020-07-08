@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: c9e602f9ed6a9132c78dbdf0ea3246cbeae80671
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 4f62a94c8ed8baa9979aa1469e785d26781af7f0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83832356"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85361631"
 ---
 # <a name="runbook-execution-in-azure-automation"></a>Выполнение модуля Runbook в службе автоматизации Azure
 
@@ -79,7 +79,7 @@ ASC накладывает ограничения на пользователе�
 
 ## <a name="azure-monitor"></a>Azure Monitor
 
-Служба автоматизации Azure использует [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) для наблюдения за работой виртуальных машин. Для выполнения операций требуются рабочая область Log Analytics и [агенты Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent).
+Служба автоматизации Azure использует [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) для наблюдения за операциями компьютера. Для выполнения операций требуются рабочая область Log Analytics и [агенты Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent).
 
 ### <a name="log-analytics-agent-for-windows"></a>агент Log Analytics для Windows.
 

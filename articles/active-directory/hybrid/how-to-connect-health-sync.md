@@ -11,17 +11,17 @@ ms.subservice: hybrid
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/18/2017
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 61490f75d12967f7f396d5f767f2d2e696474572
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 356697c4843742c12aa39d82602815e38dcca74a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76897207"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85359149"
 ---
 # <a name="monitor-azure-ad-connect-sync-with-azure-ad-connect-health"></a>Мониторинг синхронизации Azure AD Connect с помощью Azure AD Connect Health
 Приведенная ниже документация относится к мониторингу синхронизации Azure AD Connect с помощью Azure AD Connect Health.  Сведения о мониторинге AD FS с помощью Azure AD Connect Health см. в [этой статье](how-to-connect-health-adfs.md). Кроме того, сведения о мониторинге домен Active Directoryных служб с помощью Azure AD Connect Health см. в статье [использование Azure AD Connect Health с AD DS](how-to-connect-health-adds.md).
@@ -88,7 +88,7 @@ ms.locfileid: "76897207"
 | Сбой проверки данных |Ошибки, возникшие из-за недопустимых данных, таких как неподдерживаемые символы в важных атрибутах (например, UserPrincipalName), ошибки формата, не проходящие проверку перед записью в Azure AD. |
 | Смена федеративного домена | Ошибки, которые возникают, когда в учетных записях используются разные федеративные домены. |
 | Большой атрибут |Ошибки, возникающие, если размер, длина и количество атрибутов превышают установленный предел. |
-| Другой |Все другие ошибки, не входящие в категории выше. На основе отзывов эти категории будут разделены на подкатегории. |
+| Другое |Все другие ошибки, не входящие в категории выше. На основе отзывов эти категории будут разделены на подкатегории. |
 
 ![Сводка по отчету об ошибках синхронизации](./media/how-to-connect-health-sync/errorreport01.png)
 ![Категории отчета об ошибках синхронизации](./media/how-to-connect-health-sync/SyncErrorByTypes.PNG)
@@ -115,7 +115,7 @@ ms.locfileid: "76897207"
 
 ## <a name="related-links"></a>Связанные ссылки
 * [Устранение ошибок во время синхронизации](tshoot-connect-sync-errors.md)
-* [Синхронизация удостоверений и устойчивость повторяющихся атрибутов](how-to-connect-syncservice-duplicate-attribute-resiliency.md)
+* [Устойчивость повторяющихся атрибутов](how-to-connect-syncservice-duplicate-attribute-resiliency.md)
 * [Azure AD Connect Health](whatis-hybrid-identity-health.md)
 * [Установка агента Azure AD Connect Health](how-to-connect-health-agent-install.md)
 * [Операции Azure AD Connect Health](how-to-connect-health-operations.md)

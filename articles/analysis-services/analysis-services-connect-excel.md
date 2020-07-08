@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b5c46c8b85af59efaf611300e2ab7129b3ef3cde
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 123e271ae1b83603d599b9ef0381e25b3c963def
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80411383"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85361563"
 ---
 # <a name="connect-with-excel"></a>Подключение с помощью Excel
 
 После создания сервера и развертывания на нем табличной модели клиенты смогут подключиться к нему для работы с данными. 
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Учетная запись, с помощью которой вы вошли в систему, должна принадлежать к роли шаблона базы данных по крайней мере с правами на чтение. Дополнительные сведения см. в руководстве по [аутентификации и настройке пользовательских разрешений](analysis-services-manage-users.md). 
 
@@ -40,9 +40,9 @@ ms.locfileid: "80411383"
     ![Подключение из Excel: выбор модели](./media/analysis-services-connect-excel/aas-connect-excel-select.png)
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
-[Клиентские библиотеки](analysis-services-data-providers.md)   
+[Клиентские библиотеки](https://docs.microsoft.com/analysis-services/client-libraries?view=azure-analysis-services-current)   
 [Управление службами Analysis Services](analysis-services-manage.md)     
 
 

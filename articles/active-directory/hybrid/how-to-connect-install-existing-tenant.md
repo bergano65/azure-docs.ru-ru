@@ -11,17 +11,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/25/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3636b88b14cf7e76e4fb023434316e7ee31ded04
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 001706d63b22899016cc2c45e384597db3d6747f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "71336825"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85358834"
 ---
 # <a name="azure-ad-connect-when-you-have-an-existent-tenant"></a>Azure AD Connect: если имеется существующий клиент
 В большинстве разделов об использовании Azure AD Connect предполагается, что вы начинаете с нового клиента Azure AD, в котором отсутствуют какие-либо пользователи или другие объекты. Но если вы начали с клиента Azure AD, заполнили его пользователями и другими объектами, а теперь хотите использовать Connect, то этот раздел предназначен именно для вас.
@@ -34,7 +34,7 @@ ms.locfileid: "71336825"
 Если вы начали управлять пользователями в Azure AD, и некоторые пользователи также имеются в локальной среде AD, и вам потребовалось использовать Connect, то следует учесть некоторые дополнительные моменты.
 
 ## <a name="sync-with-existing-users-in-azure-ad"></a>Синхронизация с существующими пользователями в Azure AD
-Когда вы установите Azure AD Connect и начнете синхронизацию, служба синхронизации Azure AD (в Azure AD) будет проверять каждый новый объект и пытаться найти существующий объект для сопоставления. Для этого используются три атрибута: **userPrincipalName**, **proxyAddresses** и **sourceAnchor**/**immutableID**. Сопоставление по **userPrincipalName** и **proxyAddresses** называется **нестрогим сопоставлением**. Сопоставление по**sourceAnchor** называется **строгим сопоставлением**. Для оценки по атрибуту **proxyAddresses** используются только значения с **SMTP:**, представляющие собой основной электронный адрес.
+При установке Azure AD Connect и запуске синхронизации служба синхронизации Azure AD (в Azure AD) выполняет проверку каждого нового объекта и пытается найти существующий объект для сопоставления. Для этого используются три атрибута: **userPrincipalName**, **proxyAddresses** и **sourceAnchor**/**immutableID**. Сопоставление по **userPrincipalName** и **proxyAddresses** называется **нестрогим сопоставлением**. Сопоставление по**sourceAnchor** называется **строгим сопоставлением**. Для оценки по атрибуту **proxyAddresses** используются только значения с **SMTP:**, представляющие собой основной электронный адрес.
 
 Соответствие оценивается только для новых объектов, поступающих из Connect. Если изменить существующий объект, чтобы он соответствовал какому-либо из этих атрибутов, то появится сообщение об ошибке.
 
@@ -75,4 +75,4 @@ ms.locfileid: "71336825"
 Если единственная причина, по которой планируется добавить локальную среду AD, это поддержка бизнес-приложений, то вам следует рассмотреть возможность использования [доменных служб Azure AD](../../active-directory-domain-services/index.yml).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
