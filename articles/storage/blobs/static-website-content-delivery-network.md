@@ -4,15 +4,14 @@ description: Узнайте, как кэшировать статическое 
 author: normesta
 ms.service: storage
 ms.subservice: blobs
-ms.topic: conceptual
+ms.topic: how-to
 ms.author: normesta
 ms.date: 04/07/2020
-ms.openlocfilehash: 4516e9f48174a0f1f5201c46cf114badf13d99d6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 02b7e02c33161db33420e2efe1ef4b70a138d127
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80878831"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84465224"
 ---
 # <a name="integrate-a-static-website-with-azure-cdn"></a>Интеграция статического веб-сайта с Azure CDN
 
@@ -41,7 +40,7 @@ ms.locfileid: "80878831"
    Чтобы узнать конечную точку статического веб-сайта, перейдите к параметрам **Статический веб-сайт** для своей учетной записи хранения.  Скопируйте основную конечную точку и вставьте ее в конфигурацию CDN.
 
    > [!IMPORTANT]
-   > Не забудьте удалить идентификатор протокола (*например*, HTTPS) и косую черту в URL-адресе. Например, если статическая конечная точка веб- `https://mystorageaccount.z5.web.core.windows.net/`сайта —, то в `mystorageaccount.z5.web.core.windows.net` поле **имя узла источника** следует указать.
+   > Не забудьте удалить идентификатор протокола (*например*, HTTPS) и косую черту в URL-адресе. Например, если статическая конечная точка веб-сайта — `https://mystorageaccount.z5.web.core.windows.net/` , то `mystorageaccount.z5.web.core.windows.net` в поле **имя узла источника** следует указать.
 
    На следующем изображении показан пример конфигурации конечной точки.
 
@@ -53,7 +52,7 @@ ms.locfileid: "80878831"
 
     ![Снимок экрана с разделом общих сведений о конечной точке CDN](media/storage-blob-static-website-custom-domain/verify-cdn-endpoint.png)
 
-1. После подготовки конечной точки CDN переход к конечной точке CDN отображает содержимое файла index. HTML, который ранее был отправлен на статический веб-сайт.
+1. После подготовки конечной точки CDN переход к конечной точке CDN отображает содержимое файла index.html, который ранее был отправлен на статический веб-сайт.
 
 1. Чтобы просмотреть параметры источника для конечной точки CDN, перейдите в подраздел **Источник** раздела **Параметры** конечной точки CDN. Вы увидите, что параметр **Тип источника** имеет значение *Настраиваемый источник*, а в поле **Имя узла источника** отображается конечная точка статического веб-сайта.
 

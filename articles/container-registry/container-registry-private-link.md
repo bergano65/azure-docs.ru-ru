@@ -1,14 +1,13 @@
 ---
 title: Настройка приватного канала
-description: Настройка частной конечной точки в реестре контейнеров и предоставление доступа по частной ссылке в локальной виртуальной сети
+description: Настройте закрытую конечную точку в реестре контейнеров и разрешите доступ через частную ссылку в локальной виртуальной сети. Доступ к частным ссылкам является компонентом уровня служб Premium.
 ms.topic: article
 ms.date: 05/19/2020
-ms.openlocfilehash: da51a35b66b793294f146c5a0a30b6a91d8aa01b
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.openlocfilehash: f25f7b94a3008b829340cdaaed247d7ab1203c19
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83850051"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84509344"
 ---
 # <a name="configure-azure-private-link-for-an-azure-container-registry"></a>Настройка Приватного канала Azure для реестра контейнеров Azure 
 

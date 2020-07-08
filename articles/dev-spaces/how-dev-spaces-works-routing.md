@@ -4,37 +4,36 @@ services: azure-dev-spaces
 ms.date: 03/24/2020
 ms.topic: conceptual
 description: Описывает процессы, работающие с Power Azure Dev Spaces и принцип работы маршрутизации.
-keywords: Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры
-ms.openlocfilehash: e9bc1875c053335da6a8e2603406bcdb34a6dd04
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Служба Azure Kubernetes, контейнеры
+ms.openlocfilehash: 126a534cec2ee4b07aa3a127fb3f47f9931f0031
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80241391"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84307424"
 ---
 # <a name="how-routing-works-with-azure-dev-spaces"></a>Как работает маршрутизация с Azure Dev Spaces
 
-Azure Dev Spaces предоставляет несколько способов быстрого перебора и отладки Kubernetes приложений и совместной работы с командой в кластере службы Kubernetes Azure (AKS). После запуска проекта в пространстве разработки Azure Dev Spaces предоставляет дополнительные возможности сети и маршрутизации для проекта.
+Azure Dev Spaces предоставляет несколько способов быстро перебора и отладки приложений Kubernetes, а также совместной работы в кластере Службы Azure Kubernetes (AKS). После запуска проекта в пространстве разработки Azure Dev Spaces предоставляет дополнительные возможности сети и маршрутизации для проекта.
 
 В этой статье описывается, как маршрутизация работает с пространствами разработки.
 
 ## <a name="how-routing-works"></a>Принцип работы маршрутизации
 
-Пространство разработки построено на основе AKS и использует те же [Основные понятия сети](../aks/concepts-network.md). Azure Dev Spaces также имеет централизованную службу *ингрессманажер* и развертывает свой собственный контроллер входящего трафика в кластере AKS. Служба *ингрессманажер* отслеживает кластеры AKS с помощью пространств разработки и дополняет контроллер Azure dev Spaces входящего трафика в кластере с помощью входящих объектов для маршрутизации модулей приложения. Контейнер девспацес-proxy в каждом модуле Pod добавляет заголовок `azds-route-as` HTTP для HTTP-трафика в пространство разработчика на основе URL-адреса. Например, запрос к URL-адресу *http://azureuser.s.default.serviceA.fedcba09...azds.io* будет получать заголовок HTTP с `azds-route-as: azureuser`. Контейнер девспацес-proxy не добавит `azds-route-as` заголовок, если он уже существует.
+Пространство разработки построено на основе AKS и использует те же [Основные понятия сети](../aks/concepts-network.md). Azure Dev Spaces также имеет централизованную службу *ингрессманажер* и развертывает свой собственный контроллер входящего трафика в кластере AKS. Служба *ингрессманажер* отслеживает кластеры AKS с помощью пространств разработки и дополняет контроллер Azure dev Spaces входящего трафика в кластере с помощью входящих объектов для маршрутизации модулей приложения. Контейнер девспацес-proxy в каждом модуле Pod добавляет `azds-route-as` заголовок HTTP для HTTP-трафика в пространство разработчика на основе URL-адреса. Например, запрос к URL-адресу *http://azureuser.s.default.serviceA.fedcba09...azds.io* будет получать заголовок HTTP с `azds-route-as: azureuser` . Контейнер девспацес-proxy не добавит `azds-route-as` заголовок, если он уже существует.
 
 При выполнении HTTP-запроса к службе извне кластера запрос переходит на входной контроллер. Входной контроллер направляет запрос непосредственно в соответствующий Pod на основе входящих в него объектов и правил. Контейнер девспацес-proxy в Pod получает запрос, добавляет `azds-route-as` заголовок на основе URL-адреса, а затем направляет запрос в контейнер приложения.
 
 При выполнении HTTP-запроса к службе из другой службы в кластере запрос сначала проходит через контейнер девспацес-proxy вызывающей службы. Контейнер девспацес-proxy просматривает HTTP-запрос и проверяет `azds-route-as` заголовок. На основе заголовка контейнер девспацес-proxy выполнит поиск IP-адреса службы, связанной со значением заголовка. Если IP-адрес найден, контейнер девспацес-proxy перенаправит запрос на этот IP-адрес. Если IP-адрес не найден, контейнер девспацес-proxy направляет запрос в родительский контейнер приложения.
 
-Например, приложения *Service* a и *serviceB* развертываются в родительском пространстве разработки, именуемом *по умолчанию*. *Служба* a использует *serviceB* и выполняет HTTP-вызовы. Пользователь Azure создает Дочернее пространство разработки на основе пространства *по умолчанию* с именем *azureuser*. Пользователь Azure также развертывает собственную версию *Service* a в своем дочернем пространстве. Когда выполняется запрос к *http://azureuser.s.default.serviceA.fedcba09...azds.io*:
+Например, приложения *Service* a и *serviceB* развертываются в родительском пространстве разработки, именуемом *по умолчанию*. *Служба* a использует *serviceB* и выполняет HTTP-вызовы. Пользователь Azure создает Дочернее пространство разработки на основе пространства *по умолчанию* с именем *azureuser*. Пользователь Azure также развертывает собственную версию *Service* a в своем дочернем пространстве. Когда выполняется запрос к *http://azureuser.s.default.serviceA.fedcba09...azds.io* :
 
 ![Маршрутизация Azure Dev Spaces](media/how-dev-spaces-works/routing.svg)
 
 1. Контроллер входящего трафика находит IP-адрес модуля Pod, связанного с URL-адресом *Service azureuser*.
 1. Входной контроллер находит IP-адрес для Pod в пространстве разработки пользователя Azure и направляет запрос в модуль *Service a. azureuser* .
-1. Контейнер девспацес-proxy в модуле *Service a. azureuser* получает запрос и добавляет `azds-route-as: azureuser` его в качестве заголовка HTTP.
+1. Контейнер девспацес-proxy в модуле *Service a. azureuser* получает запрос и добавляет его `azds-route-as: azureuser` в качестве заголовка HTTP.
 1. Контейнер девспацес-proxy в модуле *Service a. azureuser* выполняет маршрутизацию запроса в контейнер приложения *Service* a в модуль Service a *. azureuser* .
-1. Приложение *Service* a в модуле *Service a. Azureuser* выполняет вызов *serviceB*. Приложение *Service* a также содержит код для сохранения существующего `azds-route-as` заголовка, который в данном случае имеет значение. `azds-route-as: azureuser`
+1. Приложение *Service* a в модуле *Service a. Azureuser* выполняет вызов *serviceB*. Приложение *Service* a также содержит код для сохранения существующего `azds-route-as` заголовка, который в данном случае имеет значение `azds-route-as: azureuser` .
 1. Контейнер девспацес-proxy в модуле *Service a. azureuser* получает запрос и выполняет поиск IP-адреса *serviceB* на основе значения `azds-route-as` заголовка.
 1. Контейнер девспацес-proxy в модуле *Service a. azureuser* Pod не находит IP-адрес для *serviceB. azureuser*.
 1. Контейнер девспацес-proxy в модуле *Service a. azureuser* ищет IP-адрес *serviceB* в родительском пространстве, то есть *serviceB. по умолчанию*.
@@ -64,12 +63,12 @@ Azure Dev Spaces предоставляет несколько способов 
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-Некоторые примеры того, как Azure Dev Spaces использует маршрутизацию для обеспечения быстрой итерации и разработки, см. в статье [как подключить компьютер разработки к пространству][how-it-works-connect]разработки, [как выполняется удаленная отладка кода с Azure dev Spaces][how-it-works-remote-debugging]и [действия GitHub & службы Azure Kubernetes][pr-flow].
+Вот несколько примеров того, как Azure Dev Spaces использует маршрутизацию для обеспечения быстрой итерации и разработки, Узнайте, как [работает локальный процесс с Kubernetes][how-it-works-local-process-kubernetes], [как выполняется удаленная отладка кода с Azure dev Spaces][how-it-works-remote-debugging]и [действия GitHub & службы Kubernetes Azure][pr-flow].
 
 Чтобы приступить к использованию маршрутизации с Azure Dev Spaces для коллективной разработки, ознакомьтесь с руководством по [разработке групп в Azure dev Spaces][quickstart-team] кратком руководстве.
 
 [helm-upgrade]: https://helm.sh/docs/intro/using_helm/#helm-upgrade-and-helm-rollback-upgrading-a-release-and-recovering-on-failure
-[how-it-works-connect]: how-dev-spaces-works-connect.md
+[how-it-works-local-process-kubernetes]: how-dev-spaces-works-local-process-kubernetes.md
 [how-it-works-remote-debugging]: how-dev-spaces-works-remote-debugging.md
 [pr-flow]: how-to/github-actions.md
 [quickstart-team]: quickstart-team-development.md

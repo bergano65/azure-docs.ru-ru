@@ -6,13 +6,12 @@ ms.author: mhopkins
 ms.date: 11/20/2018
 ms.service: storage
 ms.subservice: blobs
-ms.topic: conceptual
-ms.openlocfilehash: 2e168abaf522fa1126e3cb4618941952b562df31
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.topic: how-to
+ms.openlocfilehash: 378c21a6904acad16847bb32955e4bc091e587df
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83831880"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84465496"
 ---
 # <a name="how-to-use-blob-storage-from-ios"></a>Использование хранилища BLOB-объектов из iOS
 
@@ -82,7 +81,7 @@ ms.locfileid: "83831880"
 #import <AZSClient/AZSClient.h>
 ```
 
-Если вы используете Swift, потребуется создать промежуточный заголовок и импортировать \<AZSClient/AZSClient.h>:
+При использовании SWIFT необходимо создать заголовок моста и импортировать его \<AZSClient/AZSClient.h> :
 
 1. Создайте файл заголовка `Bridging-Header.h` и добавьте приведенный выше оператор импорта.
 2. Откройте вкладку *Параметры сборки* и найдите *Заголовок Objective-C*.

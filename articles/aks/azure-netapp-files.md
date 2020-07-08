@@ -2,28 +2,25 @@
 title: Интеграция Azure NetApp Files со службой Kubernetes Azure
 description: Узнайте, как интегрировать Azure NetApp Files со службой Kubernetes Azure
 services: container-service
-author: zr-msft
 ms.topic: article
 ms.date: 09/26/2019
-ms.author: zarhoads
-ms.openlocfilehash: 1c4996df66d475c63110e3d2797f55598fd85b8d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: c0648100e155d1462f3291a7f5f078cf316bc0aa
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78273752"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84465649"
 ---
 # <a name="integrate-azure-netapp-files-with-azure-kubernetes-service"></a>Интеграция Azure NetApp Files со службой Kubernetes Azure
 
 [Azure NetApp Files][anf] — это высокопроизводительная служба хранилища файлов в масштабе корпоративного класса, работающая в Azure. В этой статье показано, как интегрировать Azure NetApp Files со службой Azure Kubernetes (AKS).
 
-## <a name="before-you-begin"></a>Подготовка к работе
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
+## <a name="before-you-begin"></a>Перед началом
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
 > [!IMPORTANT]
 > Кластер AKS также должен находиться [в регионе, поддерживающем Azure NetApp Files][anf-regions].
 
-Также требуется Azure CLI версии 2.0.59 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Кроме того, нужно установить и настроить Azure CLI версии 2.0.59 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
 ### <a name="limitations"></a>Ограничения
 
@@ -148,7 +145,7 @@ az netappfiles volume show --resource-group $RESOURCE_GROUP --account-name $ANF_
 }
 ```
 
-Создайте `pv-nfs.yaml` определение персистентволуме. Замените `path` на *Креатионтокен* и `server` с *ipAddress* из предыдущей команды. Пример:
+Создайте `pv-nfs.yaml` Определение персистентволуме. Замените `path` на *креатионтокен* и `server` с *ipAddress* из предыдущей команды. Пример:
 
 ```yaml
 ---
@@ -180,7 +177,7 @@ kubectl describe pv pv-nfs
 
 ## <a name="create-the-persistentvolumeclaim"></a>Создание Персистентволумеклаим
 
-Создайте `pvc-nfs.yaml` определение персистентволуме. Пример:
+Создайте `pvc-nfs.yaml` Определение персистентволуме. Пример:
 
 ```yaml
 apiVersion: v1
@@ -210,7 +207,7 @@ kubectl describe pvc pvc-nfs
 
 ## <a name="mount-with-a-pod"></a>Подключение с помощью Pod
 
-Создайте `nginx-nfs.yaml` определение Pod, использующего персистентволумеклаим. Пример:
+Создайте `nginx-nfs.yaml` Определение Pod, использующего персистентволумеклаим. Пример:
 
 ```yaml
 kind: Pod
@@ -246,7 +243,7 @@ kubectl apply -f nginx-nfs.yaml
 kubectl describe pod nginx-nfs
 ```
 
-Убедитесь, что том подключен к модулю, используя [kubectl Exec][kubectl-exec] для подключения к Pod, а затем `df -h` проверьте, подключен ли том.
+Убедитесь, что том подключен к модулю, используя [kubectl Exec][kubectl-exec] для подключения к Pod, а затем `df -h` Проверьте, подключен ли том.
 
 ```console
 $ kubectl exec -it nginx-nfs -- bash

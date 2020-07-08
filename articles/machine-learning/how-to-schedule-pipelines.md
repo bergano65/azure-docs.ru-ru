@@ -5,16 +5,16 @@ description: Планирование Машинное обучение Azure к
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.author: laobri
 author: lobrien
 ms.date: 11/12/2019
-ms.openlocfilehash: 8e1e718fa4e6660d72203ac98bb6d427cdba2059
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.custom: tracking-python
+ms.openlocfilehash: 3fede6bf194d0dd6b18118df7a44b7ccd0224a25
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82024563"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84552177"
 ---
 # <a name="schedule-machine-learning-pipelines-with-azure-machine-learning-sdk-for-python"></a>Планирование конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure для Python
 
@@ -54,9 +54,9 @@ pipeline_id = "aaaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
 
 ## <a name="create-a-schedule"></a>Создание расписания
 
-Чтобы выполнить конвейер на повторяющейся основе, создайте расписание. Объект `Schedule` связывает конвейер, эксперимент и триггер. Триггер может иметь значение`ScheduleRecurrence` , описывающее время ожидания между запусками или путь к хранилищу данных, указывающий каталог для отслеживания изменений. В любом случае вам потребуется идентификатор конвейера и имя эксперимента, в котором создается расписание.
+Чтобы выполнить конвейер на повторяющейся основе, создайте расписание. Объект `Schedule` связывает конвейер, эксперимент и триггер. Триггер может иметь значение `ScheduleRecurrence` , описывающее время ожидания между запусками или путь к хранилищу данных, указывающий каталог для отслеживания изменений. В любом случае вам потребуется идентификатор конвейера и имя эксперимента, в котором создается расписание.
 
-В верхней части файла Python импортируйте классы `Schedule` и: `ScheduleRecurrence`
+В верхней части файла Python импортируйте `Schedule` `ScheduleRecurrence` классы и:
 
 ```python
 
@@ -65,7 +65,7 @@ from azureml.pipeline.core.schedule import ScheduleRecurrence, Schedule
 
 ### <a name="create-a-time-based-schedule"></a>Создание расписания на основе времени
 
-`ScheduleRecurrence` Конструктор имеет обязательный `frequency` аргумент, который должен быть одной из следующих строк: "Minute", "Hour", "Day", "Week" или "month". Кроме того, требуется целочисленный `interval` аргумент, указывающий, `frequency` сколько единиц должно пройти между запусками расписания. Необязательные аргументы позволяют более подробно узнать о времени запуска, как описано в [документации по пакету SDK для счедулерекурренце](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.schedule.schedulerecurrence?view=azure-ml-py).
+`ScheduleRecurrence`Конструктор имеет обязательный `frequency` аргумент, который должен быть одной из следующих строк: "Minute", "Hour", "Day", "Week" или "month". Кроме того, требуется целочисленный `interval` аргумент, указывающий, сколько `frequency` единиц должно пройти между запусками расписания. Необязательные аргументы позволяют более подробно узнать о времени запуска, как описано в [документации по пакету SDK для счедулерекурренце](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.schedule.schedulerecurrence?view=azure-ml-py).
 
 Создайте `Schedule` , который начинает выполнение каждые 15 минут:
 
@@ -82,9 +82,9 @@ recurring_schedule = Schedule.create(ws, name="MyRecurringSchedule",
 
 Конвейеры, активируемые изменениями файлов, могут оказаться более эффективными по сравнению с расписаниями, основанными на времени. Например, может потребоваться выполнить шаг предварительной обработки при изменении файла или при добавлении нового файла в каталог данных. Вы можете отслеживать любые изменения в хранилище данных или изменения в определенном каталоге в хранилище данных. При мониторинге определенного каталога изменения в подкаталогах этого каталога _не_ активируют запуск.
 
-Для создания реактивного `Schedule`файла необходимо задать `datastore` параметр в вызове [Schedule. Create](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.schedule.schedule?view=azure-ml-py#create-workspace--name--pipeline-id--experiment-name--recurrence-none--description-none--pipeline-parameters-none--wait-for-provisioning-false--wait-timeout-3600--datastore-none--polling-interval-5--data-path-parameter-name-none--continue-on-step-failure-none--path-on-datastore-none---workflow-provider-none---service-endpoint-none-). Для наблюдения за папкой задайте `path_on_datastore` аргумент.
+Для создания реактивного файла `Schedule` необходимо задать `datastore` параметр в вызове [Schedule. Create](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.schedule.schedule?view=azure-ml-py#create-workspace--name--pipeline-id--experiment-name--recurrence-none--description-none--pipeline-parameters-none--wait-for-provisioning-false--wait-timeout-3600--datastore-none--polling-interval-5--data-path-parameter-name-none--continue-on-step-failure-none--path-on-datastore-none---workflow-provider-none---service-endpoint-none-). Для наблюдения за папкой задайте `path_on_datastore` аргумент.
 
-`polling_interval` Аргумент позволяет указать в минутах частоту проверки хранилища данных на наличие изменений.
+`polling_interval`Аргумент позволяет указать в минутах частоту проверки хранилища данных на наличие изменений.
 
 Если конвейер был создан с помощью [пути](https://docs.microsoft.com/python/api/azureml-core/azureml.data.datapath.datapath?view=azure-ml-py) [пипелинепараметер](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelineparameter?view=azure-ml-py), можно присвоить этой переменной имя измененного файла, задав `data_path_parameter_name` аргумент.
 
@@ -97,7 +97,7 @@ reactive_schedule = Schedule.create(ws, name="MyReactiveSchedule", description="
 
 ### <a name="optional-arguments-when-creating-a-schedule"></a>Необязательные аргументы при создании расписания
 
-В дополнение к описанным выше аргументам можно задать для `status` аргумента значение `"Disabled"` , чтобы создать неактивное расписание. Наконец, `continue_on_step_failure` позволяет передать логическое значение, которое будет переопределять поведение по умолчанию при сбоях конвейера.
+В дополнение к описанным выше аргументам можно задать для `status` аргумента значение, `"Disabled"` чтобы создать неактивное расписание. Наконец, `continue_on_step_failure` позволяет передать логическое значение, которое будет переопределять поведение по умолчанию при сбоях конвейера.
 
 ### <a name="use-azure-logic-apps-for-more-complex-workflows"></a>Использование Azure Logic Apps для более сложных рабочих процессов
 
@@ -113,7 +113,7 @@ Azure Logic Apps поддерживает более сложные рабочи
 
 ## <a name="deactivate-the-pipeline"></a>Деактивация конвейера
 
-Если у вас есть `Pipeline` публикация, но она не запланирована, ее можно отключить с помощью:
+Если у вас есть `Pipeline` Публикация, но она не запланирована, ее можно отключить с помощью:
 
 ```python
 pipeline = PublishedPipeline.get(ws, id=pipeline_id)
@@ -128,7 +128,7 @@ for s in ss:
     print(s)
 ```
 
-После того, как `schedule_id` вы хотите отключить, выполните:
+После того, как вы `schedule_id` хотите отключить, выполните:
 
 ```python
 def stop_by_schedule_id(ws, schedule_id):
@@ -139,7 +139,7 @@ def stop_by_schedule_id(ws, schedule_id):
 stop_by_schedule_id(ws, schedule_id)
 ```
 
-При повторном запуске `Schedule.list(ws)` необходимо получить пустой список.
+При `Schedule.list(ws)` повторном запуске необходимо получить пустой список.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

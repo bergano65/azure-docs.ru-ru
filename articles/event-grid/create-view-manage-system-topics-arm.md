@@ -1,0 +1,198 @@
+---
+title: Использование шаблонов Azure Resource Manager для создания системных разделов в службе "Сетка событий Azure"
+description: В этой статье показано, как использовать шаблоны Azure Resource Manager для создания системных разделов в службе "Сетка событий Azure".
+services: event-grid
+author: spelluru
+ms.service: event-grid
+ms.topic: conceptual
+ms.date: 06/02/2020
+ms.author: spelluru
+ms.openlocfilehash: a2fe0ffd5f8ac801d15dc08d027c9442c57ef2b9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84457417"
+---
+# <a name="create-system-topics-in-azure-event-grid-using-resource-manager-templates"></a>Создание системных разделов в службе "Сетка событий Azure" с помощью шаблонов диспетчер ресурсов
+В этой статье показано, как создавать системные разделы и управлять ими с помощью шаблонов диспетчер ресурсов. Общие сведения о системных разделах см. в разделе [системные разделы](system-topics.md).
+
+## <a name="create-system-topic-first-and-then-create-event-subscription"></a>Создать системный раздел сначала, а затем создать подписку на события
+Чтобы сначала создать системный раздел в источнике Azure, а затем создать подписку на события для этого раздела, можно использовать такой шаблон: 
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageName": {
+            "type": "string",
+            "defaultValue": "[concat('storage', uniqueString(resourceGroup().id))]",
+            "metadata": {
+                "description": "Provide a unique name for the Blob Storage account."
+            }
+        },
+        "location": {
+            "type": "string",
+            "defaultValue": "[resourceGroup().location]",
+            "metadata": {
+                "description": "Provide a location for the Blob Storage account that supports Event Grid."
+            }
+        },
+        "eventSubName": {
+            "type": "string",
+            "defaultValue": "subToStorage",
+            "metadata": {
+                "description": "Provide a name for the Event Grid subscription."
+            }
+        },
+        "endpoint": {
+            "type": "string",
+            "metadata": {
+                "description": "Provide the URL for the WebHook to receive events. Create your own endpoint for events."
+            }
+        },
+        "systemTopicName": {
+            "type": "String",
+            "defaultValue": "mystoragesystemtopic",
+            "metadata": {
+                "description": "Provide a name for the system topic."
+            }
+        }
+    },
+    "resources": [
+        {
+            "name": "[parameters('storageName')]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2017-10-01",
+            "sku": {
+                "name": "Standard_LRS"
+            },
+            "kind": "StorageV2",
+            "location": "[parameters('location')]",
+            "tags": {},
+            "properties": {
+                "accessTier": "Hot"
+            }
+        },
+        {
+            "name": "[parameters('systemTopicName')]",
+            "type": "Microsoft.EventGrid/systemTopics",
+            "apiVersion": "2020-04-01-preview",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[parameters('storageName')]"
+            ],
+            "properties": {
+                "source": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageName'))]",
+                "topicType": "Microsoft.Storage.StorageAccounts"
+            }
+        },
+        {
+            "type": "Microsoft.EventGrid/systemTopics/eventSubscriptions",
+            "apiVersion": "2020-04-01-preview",
+            "name": "[concat(parameters('systemTopicName'), '/', parameters('eventSubName'))]",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventGrid/systemTopics', parameters('systemTopicName'))]"
+            ],
+            "properties": {
+                "destination": {
+                    "properties": {
+                        "endpointUrl": "[parameters('endpoint')]"
+                    },
+                    "endpointType": "WebHook"
+                },
+                "filter": {
+                    "includedEventTypes": [
+                        "Microsoft.Storage.BlobCreated",
+                        "Microsoft.Storage.BlobDeleted"
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
+
+Инструкции по созданию системных разделов и подписок для них с помощью шаблонов диспетчер ресурсов см. в статье [Маршрутизация событий хранилища BLOB-объектов в конечную точку в Интернете с помощью шаблона Azure Resource Manager](blob-event-quickstart-template.md) . 
+
+## <a name="create-system-topic-while-creating-an-event-subscription"></a>Создать системный раздел при создании подписки на события 
+Чтобы создать системный раздел неявно, при создании подписки на события в источнике Azure можно использовать следующий шаблон:
+
+``` json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageName": {
+            "type": "string",
+            "defaultValue": "[concat('storage', uniqueString(resourceGroup().id))]",
+            "metadata": {
+                "description": "Provide a unique name for the Blob Storage account."
+            }
+        },
+        "location": {
+            "type": "string",
+            "defaultValue": "[resourceGroup().location]",
+            "metadata": {
+                "description": "Provide a location for the Blob Storage account that supports Event Grid."
+            }
+        },
+        "eventSubName": {
+            "type": "string",
+            "defaultValue": "subToStorage",
+            "metadata": {
+                "description": "Provide a name for the Event Grid subscription."
+            }
+        },
+        "endpoint": {
+            "type": "string",
+            "metadata": {
+                "description": "Provide the URL for the WebHook to receive events. Create your own endpoint for events."
+            }
+        }
+    },
+    "resources": [
+        {
+            "name": "[parameters('storageName')]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2017-10-01",
+            "sku": {
+                "name": "Standard_LRS"
+            },
+            "kind": "StorageV2",
+            "location": "[parameters('location')]",
+            "tags": {},
+            "properties": {
+                "accessTier": "Hot"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/providers/eventSubscriptions",
+            "name": "[concat(parameters('storageName'), '/Microsoft.EventGrid/', parameters('eventSubName'))]",
+            "apiVersion": "2018-01-01",
+            "dependsOn": [
+                "[parameters('storageName')]"
+            ],
+            "properties": {
+                "destination": {
+                    "endpointType": "WebHook",
+                    "properties": {
+                        "endpointUrl": "[parameters('endpoint')]"
+                    }
+                },
+                "filter": {
+                    "subjectBeginsWith": "",
+                    "subjectEndsWith": "",
+                    "isSubjectCaseSensitive": false,
+                    "includedEventTypes": [
+                        "All"
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
+
+## <a name="next-steps"></a>Дальнейшие шаги
+Дополнительные сведения о системных разделах и типах разделов, поддерживаемых службой "Сетка событий Azure", см. в разделе [системные разделы в службе "Сетка событий Azure](system-topics.md) ". 

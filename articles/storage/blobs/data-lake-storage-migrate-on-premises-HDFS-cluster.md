@@ -5,15 +5,14 @@ author: normesta
 ms.service: storage
 ms.date: 02/14/2019
 ms.author: normesta
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: jamesbak
-ms.openlocfilehash: b7f7793016d2a408d6b286f417e3e89e7a22ca91
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
-ms.translationtype: MT
+ms.openlocfilehash: 6c5f2a041f03d53e1ea7c3f981683f4b70d3963b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82232382"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84466006"
 ---
 # <a name="migrate-from-on-prem-hdfs-store-to-azure-storage-with-azure-data-box"></a>Перенос из локального хранилища HDFS в службу хранилища Azure с помощью Azure Data Box
 
@@ -59,11 +58,11 @@ ms.locfileid: "82232382"
 
 2. В диалоговом окне доступ к учетной записи хранения и отправка данных скопируйте **конечную точку службы BLOB-объектов** и **ключ учетной записи хранения**. В конечной точке службы BLOB-объектов опустите `https://` и замыкающую косую черту.
 
-    В этом случае конечной точкой является: `https://mystorageaccount.blob.mydataboxno.microsoftdatabox.com/`. Часть URI, которую вы будете использовать, имеет следующие узлы: `mystorageaccount.blob.mydataboxno.microsoftdatabox.com`. Пример см. в разделе [Подключение к оставшимся по протоколу HTTP](/azure/databox/data-box-deploy-copy-data-via-rest). 
+    В этом случае конечной точкой является: `https://mystorageaccount.blob.mydataboxno.microsoftdatabox.com/` . Часть URI, которую вы будете использовать, имеет следующие узлы: `mystorageaccount.blob.mydataboxno.microsoftdatabox.com` . Пример см. в разделе [Подключение к оставшимся по протоколу HTTP](/azure/databox/data-box-deploy-copy-data-via-rest). 
 
      ![Диалоговое окно "доступ к учетной записи хранения и передача данных"](media/data-lake-storage-migrate-on-premises-HDFS-cluster/data-box-connection-string-http.png)
 
-3. Добавьте конечную точку и Data Box или IP-адрес узла Data Box Heavy `/etc/hosts` на каждый узел.
+3. Добавьте конечную точку и Data Box или IP-адрес узла Data Box Heavy на `/etc/hosts` каждый узел.
 
     ```    
     10.128.5.42  mystorageaccount.blob.mydataboxno.microsoftdatabox.com
@@ -71,11 +70,11 @@ ms.locfileid: "82232382"
 
     Если вы используете другой механизм для DNS, следует убедиться, что конечная точка Data Box может быть разрешена.
 
-4. Задайте для переменной `azjars` оболочки расположение JAR-файлов `hadoop-azure` и. `azure-storage` Эти файлы можно найти в каталоге установки Hadoop.
+4. Задайте для переменной оболочки `azjars` расположение `hadoop-azure` `azure-storage` JAR-файлов и. Эти файлы можно найти в каталоге установки Hadoop.
 
-    Чтобы определить, существуют ли эти файлы, используйте следующую команду: `ls -l $<hadoop_install_dir>/share/hadoop/tools/lib/ | grep azure`. Замените `<hadoop_install_dir>` заполнитель на путь к каталогу, в котором установлен Hadoop. Обязательно используйте полные пути.
+    Чтобы определить, существуют ли эти файлы, используйте следующую команду: `ls -l $<hadoop_install_dir>/share/hadoop/tools/lib/ | grep azure` . Замените `<hadoop_install_dir>` заполнитель на путь к каталогу, в котором установлен Hadoop. Обязательно используйте полные пути.
 
-    Примеры
+    Примеры:
 
     `azjars=$hadoop_install_dir/share/hadoop/tools/lib/hadoop-azure-2.6.0-cdh5.14.0.jar` `azjars=$azjars,$hadoop_install_dir/share/hadoop/tools/lib/microsoft-windowsazure-storage-sdk-0.6.0.jar`
 
@@ -135,9 +134,9 @@ ms.locfileid: "82232382"
 
     * Замените `<destination_directory>` заполнитель именем каталога, в который необходимо скопировать данные.
 
-    `-libjars` Параметр используется, чтобы сделать `hadoop-azure*.jar` и зависимые `azure-storage*.jar` файлы доступными для `distcp`. Это может быть уже для некоторых кластеров.
+    `-libjars`Параметр используется, чтобы сделать `hadoop-azure*.jar` и зависимые `azure-storage*.jar` файлы доступными для `distcp` . Это может быть уже для некоторых кластеров.
 
-    В следующем примере показано, `distcp` как команда используется для копирования данных.
+    В следующем примере показано, как `distcp` команда используется для копирования данных.
 
     ```
      hadoop distcp \
@@ -151,7 +150,7 @@ ms.locfileid: "82232382"
   
     Чтобы повысить скорость копирования, сделайте следующее:
 
-    * Попробуйте изменить число модулей сопоставления. (В приведенном выше `m` примере используются модули сопоставления = 4).
+    * Попробуйте изменить число модулей сопоставления. (В приведенном выше примере используются модули `m` сопоставления = 4).
 
     * Попробуйте выполнить несколько `distcp` параллельно.
 
@@ -233,13 +232,13 @@ sudo -u hdfs ./copy-acls.sh -s /{hdfs_path} > ./filelist.json
 
 * Замените `<container-name>` заполнитель именем своего контейнера.
 
-* Замените `<application-id>` заполнители `<client-secret>` и на идентификатор приложения и секрет клиента, собранные при создании субъекта-службы.
+* Замените `<application-id>` `<client-secret>` заполнители и на идентификатор приложения и секрет клиента, собранные при создании субъекта-службы.
 
 ## <a name="appendix-split-data-across-multiple-data-box-devices"></a>Приложение. разбиение данных между несколькими Data Box устройствами
 
 Перед переносом данных на устройство Data Box необходимо скачать некоторые вспомогательные скрипты, убедиться, что данные упорядочены в соответствии с устройством Data Box, и исключить все ненужные файлы.
 
-<a id="download-helper-scripts" />
+<a id="download-helper-scripts"></a>
 
 ### <a name="download-helper-scripts-and-set-up-your-edge-node-to-run-them"></a>Скачивание вспомогательных скриптов и настройка пограничных узлов для их запуска
 
@@ -323,13 +322,13 @@ sudo -u hdfs ./copy-acls.sh -s /{hdfs_path} > ./filelist.json
 
 В локальном кластере Hadoop, где планируется инициировать задание DistCp, создайте файл, указывающий список каталогов, которые необходимо исключить.
 
-Пример:
+Ниже приведен пример:
 
 ```
 .*ranger/audit.*
 .*/hbase/data/WALs.*
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как Data Lake Storage 2-го поколения работает с кластерами HDInsight. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight).

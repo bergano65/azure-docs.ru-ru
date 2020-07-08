@@ -9,18 +9,18 @@ ms.devlang: python
 ms.topic: conceptual
 ms.date: 07/18/2017
 ms.author: tagore
-ms.openlocfilehash: b832831a2483b11a7a3c1942dd79065e8be65bf9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.custom: tracking-python
+ms.openlocfilehash: 93e120a0519e1fc61a716e606e088801fdf508dd
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75360724"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84556358"
 ---
 # <a name="python-web-and-worker-roles-with-python-tools-for-visual-studio"></a>Использование веб-ролей и рабочих ролей Python с помощью средств Python для Visual Studio
 
 В этой статье представлен обзор способов использования веб-ролей и рабочих ролей Python с помощью [инструментов Python для Visual Studio][Python Tools for Visual Studio]. Узнайте, как с помощью Visual Studio создать и развернуть базовую облачную службу, которая использует Python.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 * [Visual Studio 2013, 2015 или 2017](https://www.visualstudio.com/)
 * [Инструменты Python для Visual Studio][Python Tools for Visual Studio] (PTVS)
 * [Инструменты пакета SDK для Azure для VS 2013][Azure SDK Tools for VS 2013] или  
@@ -33,7 +33,7 @@ ms.locfileid: "75360724"
 ## <a name="what-are-python-web-and-worker-roles"></a>Что такое веб-роли и рабочие роли Python?
 Azure предоставляет три вычислительные модели запуска приложений: [веб-приложения в службе приложений Azure][execution model-web sites], [виртуальные машины Azure][execution model-vms] и [облачные службы Azure][execution model-cloud services]. Все три модели поддерживают Python. Облачные службы, которые включают в себя веб-роли и рабочие роли, предоставляют *платформу как службу (PaaS)*. В рамках облачной службы веб-роль предоставляет выделенный веб-сервер IIS для размещения внешних веб-приложений, тогда как рабочая роль может выполнять асинхронные, долгосрочные или постоянные задачи, не зависящие от пользовательских действий и пользовательского ввода.
 
-Дополнительные сведения см. в разделе [Информация об облачных службах].
+Дополнительные сведения см. [в разделе что такое облачная служба?].
 
 > [!NOTE]
 > *Требуется создать простой веб-сайт?*
@@ -325,7 +325,7 @@ if not exist "%DiagnosticStore%\LogFiles" mkdir "%DiagnosticStore%\LogFiles"
 ### <a name="investigate-logs"></a>Изучение журналов
 После того как виртуальная машина в облачной службе запустится и установит Python, можно просмотреть журналы, чтобы найти сообщения о сбое. Эти журналы расположены в папке **C:\Resources\Directory\\{role}\LogFiles**. В файле **PrepPython.err.txt** содержится по крайней мере одна ошибка, которая возникает при попытке скрипта обнаружить, установлен ли язык Python. В файле **PipInstaller.err.txt** может быть сообщение о том, что существующая версия PIP устарела.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 С дополнительной информацией о работе с веб-ролями и рабочими ролями в средствах Python для Visual Studio можно ознакомиться в документации PTVS:
 
 * [Проекты для облачной службы][Cloud Service Projects]
@@ -336,7 +336,7 @@ if not exist "%DiagnosticStore%\LogFiles" mkdir "%DiagnosticStore%\LogFiles"
 * [Служба таблиц][Table Service]
 * [Служба очередей][Queue Service]
 * [Очереди служебной шины][Service Bus Queues]
-* [Как использовать разделы и подписки служебной шины][Service Bus Topics]
+* [Разделы служебной шины][Service Bus Topics]
 
 <!--Link references-->
 

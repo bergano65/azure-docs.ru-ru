@@ -4,16 +4,15 @@ description: Подключение контейнера хранилища BLOB
 author: rishabpoh
 ms.service: storage
 ms.subservice: blobs
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 2/1/2019
 ms.author: ripohane
 ms.reviewer: dineshm
-ms.openlocfilehash: a0a03df59bc6ecffcb4f0a701616297f2da78fdb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 3505cdaa009520f581e2ccf9f8bc60cbfb65586c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80061428"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84465479"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse
 
@@ -52,7 +51,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
 ```
 
-Аналогичным образом измените URL- `.../ubuntu/16.04/...` адрес `.../ubuntu/18.04/...` на или для ссылки на другую версию Ubuntu.
+Аналогичным образом измените URL-адрес на `.../ubuntu/16.04/...` или `.../ubuntu/18.04/...` для ссылки на другую версию Ubuntu.
 
 ### <a name="install-blobfuse"></a>Установка blobfuse
 
@@ -98,7 +97,7 @@ accountName myaccount
 accountKey storageaccesskey
 containerName mycontainer
 ```
-`accountName` — Это префикс для учетной записи хранения, а не полный URL-адрес.
+`accountName`— Это префикс для учетной записи хранения, а не полный URL-адрес.
 
 Создать этот файл с помощью:
 

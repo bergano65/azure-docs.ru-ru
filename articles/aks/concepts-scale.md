@@ -2,16 +2,13 @@
 title: Основные понятия масштабирования приложений в Службе Azure Kubernetes (AKS)
 description: Изучите масштабирование в Службе Azure Kubernetes (AKS), включая средство горизонтального автомасштабирования pod, средство автомасштабирования кластера и соединитель Экземпляров контейнеров Azure.
 services: container-service
-author: zr-msft
 ms.topic: conceptual
 ms.date: 02/28/2019
-ms.author: zarhoads
-ms.openlocfilehash: c5c1180acec726d0863e11a3fe0825ffc7c48e3f
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
-ms.translationtype: MT
+ms.openlocfilehash: 83cbaf49f26a53518b1aa1e211b61af1959642a6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82232536"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84465343"
 ---
 # <a name="scaling-options-for-applications-in-azure-kubernetes-service-aks"></a>Возможности масштабирования приложений в Службе Azure Kubernetes (AKS)
 
@@ -88,13 +85,13 @@ ACI позволяет быстро развернуть экземпляры к
 
 Виртуальные узлы развертываются в дополнительную подсеть в той же виртуальной сети, что и кластер AKS. Эта конфигурация виртуальной сети обеспечивает защиту трафика, передаваемого между ACI и AKS. Как и кластер AKS, экземпляр ACI является безопасным логическим вычислительным ресурсом, который изолирован от других пользователей.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы приступить к масштабированию приложений, сначала изучите [краткое руководство по созданию кластера AKS с помощью Azure CLI][aks-quickstart]. Затем вы можете вручную или автоматически масштабировать приложения в кластере AKS:
 
 - Масштабирование элементов [pod][aks-manually-scale-pods] или [узлов][aks-manually-scale-nodes] вручную.
 - Использование [средства горизонтального автомасштабирования pod][aks-hpa].
-- Использование [средства автомасштабирования кластера][aks-cluster-autoscaler].
+- Использование [автомасштабирования кластера][aks-cluster-autoscaler]
 
 Дополнительные сведения о ключевых понятиях Kubernetes и AKS приведены в следующих статьях:
 

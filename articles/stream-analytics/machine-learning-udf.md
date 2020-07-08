@@ -7,12 +7,11 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/19/2020
-ms.openlocfilehash: c232ab06d2b3a28dad7ae98a8f22f457778fd3e6
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
-ms.translationtype: HT
+ms.openlocfilehash: b138d93b400c16837c250ede1e264b54a851327c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83874082"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84488755"
 ---
 # <a name="integrate-azure-stream-analytics-with-azure-machine-learning-preview"></a>Интеграция Azure Stream Analytics со службой "Машинное обучение Azure" (предварительная версия)
 
@@ -24,7 +23,7 @@ ms.locfileid: "83874082"
 
 1. [Разверните модель как веб-службу](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-and-where) с помощью Машинного обучения Azure.
 
-2. В сценарии оценки должен содержаться [образец входных и выходных данных](../machine-learning/how-to-deploy-and-where.md#example-entry-script), который используется Машинным обучением Azure для создания спецификации схемы. Stream Analytics использует эту схему для понимания сигнатуры функции веб-службы.
+2. В сценарии оценки должен содержаться [образец входных и выходных данных](../machine-learning/how-to-deploy-and-where.md#example-entry-script), который используется Машинным обучением Azure для создания спецификации схемы. Stream Analytics использует эту схему для понимания сигнатуры функции веб-службы. Вы можете использовать этот [Пример определения Swagger](https://github.com/Azure/azure-stream-analytics/blob/master/Samples/AzureML/swagger-example.json) в качестве ссылки, чтобы убедиться, что она правильно настроена.
 
 3. Убедитесь, что веб-служба принимает и возвращает сериализованные данные JSON.
 

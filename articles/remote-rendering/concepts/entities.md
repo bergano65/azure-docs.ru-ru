@@ -5,12 +5,11 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/03/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7981a28db23ab8c0aed05013dd260ffd97a11c07
-ms.sourcegitcommit: 0690ef3bee0b97d4e2d6f237833e6373127707a7
-ms.translationtype: HT
+ms.openlocfilehash: 5f6f7fc52a186117afcb92f6a2f80bf068e50ab9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83758730"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84509208"
 ---
 # <a name="entities"></a>Сущности
 
@@ -25,6 +24,33 @@ ms.locfileid: "83758730"
 Сущность имеет строго один родительский элемент. При удалении родительского элемента с помощью `Entity.Destroy()` удаляются и все его дочерние элементы, в том числе подключенные [компоненты](components.md). Таким образом, модель из сцены можно удалить путем вызова `Destroy` для корневого узла модели, полученного от метода `AzureSession.Actions.LoadModelAsync()` или аналогичного метода SAS `AzureSession.Actions.LoadModelFromSASAsync()`.
 
 Сущности создаются, когда сервер загружает содержимое или пользователь выражает намерение добавить объект в сцену. Например, если пользователь хочет добавить плоскость разрезания для визуализации внутренней части сетки, он может создать сущность в том положении, где должна располагаться эта плоскость, а затем добавить к ней компонент плоскости разрезания.
+
+## <a name="create-an-entity"></a>Создание сущности
+
+Чтобы добавить в сцену новую сущность, например для передачи ее в качестве корневого объекта для загрузки моделей или присоединения к нему компонентов, используйте следующий код:
+
+```cs
+Entity CreateNewEntity(AzureSession session)
+{
+    Entity entity = session.Actions.CreateEntity();
+    entity.Position = new LocalPosition(1, 2, 3);
+    return entity;
+}
+```
+
+```cpp
+ApiHandle<Entity> CreateNewEntity(ApiHandle<AzureSession> session)
+{
+    ApiHandle<Entity> entity(nullptr);
+    if (auto entityRes = session->Actions()->CreateEntity())
+    {
+        entity = entityRes.value();
+        entity->Position(Double3{ 1, 2, 3 });
+        return entity;
+    }
+    return entity;
+}
+```
 
 ## <a name="query-functions"></a>Функции запросов
 

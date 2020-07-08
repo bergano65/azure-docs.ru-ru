@@ -7,25 +7,24 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 03/20/2019
+ms.date: 06/06/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: f18f44208b97ab5bc8d9cd9ff01d604c62deb963
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 1a7cb964064e229ee29591ca14aa8ef33e393a7d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81678168"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84484181"
 ---
 # <a name="custom-policies-in-azure-active-directory-b2c"></a>Пользовательские политики в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Пользовательские политики — это файлы конфигурации, определяющие поведение клиента Azure Active Directory B2C (Azure AD B2C). Потоки пользователей предопределены на портале Azure AD B2C для наиболее распространенных задач идентификации. Разработчик удостоверений может полностью изменять пользовательские политики для выполнения большого количества задач.
+Настраиваемые политики — это файлы конфигурации, определяющие поведение вашего клиента Azure Active Directory B2C (Azure AD B2C). Потоки пользователей предопределены на портале Azure AD B2C для наиболее распространенных задач идентификации. Разработчик удостоверений может полностью изменять пользовательские политики для выполнения большого количества задач.
 
 ## <a name="comparing-user-flows-and-custom-policies"></a>Сравнение потоков пользователей и пользовательских политик
 
-| | Маршруты пользователей | Пользовательские политики |
+| Контекст | Маршруты пользователей | Пользовательские политики |
 |-|-------------------|-----------------|
 | Целевые пользователи | Все разработчики приложений имеют или не имеют опыт работы с удостоверениями. | Специалисты по удостоверениям, системные интеграторы, консультанты и внутренние команды по работе с удостоверениями. Они хорошо знакомы с потоками подключения OpenID Connect и понимают поставщиков удостоверений и проверки подлинности на основе утверждений. |
 | Метод настройки | Портал Azure с удобным пользовательским интерфейсом. | Непосредственное изменение XML-файлов и их отправка на портал Azure. |

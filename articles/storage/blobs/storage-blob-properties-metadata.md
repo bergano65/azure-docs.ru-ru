@@ -7,13 +7,12 @@ ms.author: mhopkins
 ms.date: 08/09/2019
 ms.service: storage
 ms.subservice: blobs
-ms.topic: conceptual
-ms.openlocfilehash: 74c023c06e7b28183a53772be6798419c91dd37a
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
-ms.translationtype: MT
+ms.topic: how-to
+ms.openlocfilehash: 3d86b6e39d6199d2f0268070cfa5456e512daa49
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82692461"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84465887"
 ---
 # <a name="manage-blob-properties-and-metadata-with-net"></a>Управление свойствами и метаданными больших двоичных объектов с помощью .NET
 
@@ -30,14 +29,14 @@ ms.locfileid: "82692461"
 >
 > Дополнительные сведения об этой функции см. в статье [Управление и поиск данных в хранилище BLOB-объектов Azure с помощью индекса больших двоичных объектов (Предварительная версия)](storage-manage-find-blobs.md).
 
-Получение метаданных и значений свойств для ресурса хранилища BLOB-объектов — это двухэтапный процесс. Прежде чем можно будет прочитать эти значения, необходимо явно получить их, вызвав `FetchAttributes` метод `FetchAttributesAsync` или. Исключением из этого правила является то, `Exists` что `ExistsAsync` методы и вызывают соответствующий `FetchAttributes` метод в рамках. При вызове одного из этих методов также не требуется вызывать `FetchAttributes`.
+Получение метаданных и значений свойств для ресурса хранилища BLOB-объектов — это двухэтапный процесс. Прежде чем можно будет прочитать эти значения, необходимо явно получить их, вызвав `FetchAttributes` `FetchAttributesAsync` метод или. Исключением из этого правила является то, `Exists` что `ExistsAsync` методы и вызывают соответствующий `FetchAttributes` метод в рамках. При вызове одного из этих методов также не требуется вызывать `FetchAttributes` .
 
 > [!IMPORTANT]
-> Если вы обнаружите, что значения свойств или метаданных для ресурса хранилища не заполнены, убедитесь, что код вызывает метод `FetchAttributes` или. `FetchAttributesAsync`
+> Если вы обнаружите, что значения свойств или метаданных для ресурса хранилища не заполнены, убедитесь, что код вызывает `FetchAttributes` `FetchAttributesAsync` метод или.
 
 ## <a name="set-and-retrieve-properties"></a>Задание и получение свойств
 
-В следующем примере кода задаются системные свойства `ContentType` и `ContentLanguage` для большого двоичного объекта.
+В следующем примере кода задаются `ContentType` `ContentLanguage` системные свойства и для большого двоичного объекта.
 
 ```csharp
 public static async Task SetBlobPropertiesAsync(CloudBlob blob)
@@ -65,7 +64,7 @@ public static async Task SetBlobPropertiesAsync(CloudBlob blob)
 }
 ```
 
-Чтобы получить свойства большого двоичного объекта `FetchAttributes` , `FetchAttributesAsync` вызовите метод или для большого двоичного `Properties` объекта, чтобы заполнить свойство. Следующий пример кода получает системные свойства большого двоичного объекта и отображает некоторые из значений:
+Чтобы получить свойства большого двоичного объекта, вызовите `FetchAttributes` метод или для `FetchAttributesAsync` большого двоичного объекта, чтобы заполнить `Properties` свойство. Следующий пример кода получает системные свойства большого двоичного объекта и отображает некоторые из значений:
 
 ```csharp
 private static async Task GetBlobPropertiesAsync(CloudBlob blob)
@@ -94,7 +93,7 @@ private static async Task GetBlobPropertiesAsync(CloudBlob blob)
 
 ## <a name="set-and-retrieve-metadata"></a>Установка и получение метаданных
 
-Метаданные можно указать как одну или несколько пар "имя-значение" для BLOB-ресурса или ресурса контейнера. Чтобы задать метаданные, добавьте пары "имя-значение" `Metadata` в коллекцию ресурса. Затем вызовите один из следующих методов для записи значений:
+Метаданные можно указать как одну или несколько пар "имя-значение" для BLOB-ресурса или ресурса контейнера. Чтобы задать метаданные, добавьте пары "имя-значение" в `Metadata` коллекцию ресурса. Затем вызовите один из следующих методов для записи значений:
 
 - [сетметадата](/dotnet/api/microsoft.azure.storage.blob.cloudblob.setmetadata)
 - [сетметадатаасинк](/dotnet/api/microsoft.azure.storage.blob.cloudblob.setmetadataasync)
@@ -130,7 +129,7 @@ public static async Task AddBlobMetadataAsync(CloudBlob blob)
 }
 ```
 
-Чтобы получить метаданные, вызовите `FetchAttributes` метод `FetchAttributesAsync` или для большого двоичного объекта или контейнера, чтобы `Metadata` заполнить коллекцию, а затем считайте значения, как показано в примере ниже.
+Чтобы получить метаданные, вызовите `FetchAttributes` метод или для `FetchAttributesAsync` большого двоичного объекта или контейнера, чтобы заполнить `Metadata` коллекцию, а затем считайте значения, как показано в примере ниже.
 
 ```csharp
 public static async Task ReadBlobMetadataAsync(CloudBlob blob)
@@ -163,7 +162,7 @@ public static async Task ReadBlobMetadataAsync(CloudBlob blob)
 
 [!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 - [Операция задания свойств BLOB-объекта](/rest/api/storageservices/set-blob-properties)
 - [Операция получения свойств BLOB-объекта](/rest/api/storageservices/get-blob-properties)

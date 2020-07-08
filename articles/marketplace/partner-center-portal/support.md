@@ -7,12 +7,11 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 03/07/2020
-ms.openlocfilehash: fd7582877a74aa998de3a6d0a0f38e56c3c3af91
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: a007fe80c7c95305d65819eaa7081a8ff69e1cfc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81733111"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84463694"
 ---
 # <a name="support-for-the-commercial-marketplace-program-in-partner-center"></a>Поддержка программы коммерческого рынка в центре партнеров
 
@@ -40,7 +39,7 @@ ms.locfileid: "81733111"
 
 5. Выберите **[сообщество партнеров Marketplace](https://www.microsoftpartnercommunity.com/t5/Azure-Marketplace-and-AppSource/bd-p/2222)** , чтобы ответить на ваши вопросы, используя знания других издателей Майкрософт. 
 
-6. Щелкните **[Дополнительная справка](https://partner.microsoft.com/support/v2/?stage=1)** , чтобы открыть **новый запрос в службу поддержки** .  
+6. Щелкните **[Дополнительная справка](https://aka.ms/marketplacepublishersupport)** , чтобы открыть **новый запрос в службу поддержки** .  
 
 ## <a name="how-to-open-a-support-ticket"></a>Как открыть запрос в службу поддержки
 
@@ -57,7 +56,7 @@ ms.locfileid: "81733111"
 
 Найдя нужный раздел, выберите **проверить решения**.
 
-![Дальнейшие действия](./media/next-step.png)
+![Следующий шаг](./media/next-step.png)
 
 Станут доступны следующие параметры:
 
@@ -77,6 +76,6 @@ ms.locfileid: "81733111"
 
 Чтобы ознакомиться со всеми открытыми и закрытыми билетами, перейдите в меню " **коммерческие рынки** " на левой панели навигации и выберите пункт " **Поддержка**".
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Update an existing offer in the Commercial Marketplace](./update-existing-offer.md) (Обновление имеющегося предложения на коммерческой платформе Marketplace)

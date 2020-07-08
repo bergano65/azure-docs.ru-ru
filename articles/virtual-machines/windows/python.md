@@ -7,12 +7,12 @@ ms.workload: infrastructure
 ms.topic: article
 ms.date: 06/22/2017
 ms.author: cynthn
-ms.openlocfilehash: 81b8f83115a8bcb953fc4445899f7ea9afc1007c
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
-ms.translationtype: HT
+ms.custom: tracking-python
+ms.openlocfilehash: b5f8b0e8f22a476ad379b55275d79c2874966852
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84233351"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84551981"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-python"></a>Развертывание виртуальной машины Azure с помощью Python
 
@@ -25,7 +25,7 @@ ms.locfileid: "84233351"
 > * Создание ресурсов
 > * Выполнение задач управления.
 > * Удаление ресурсов
-> * Выполнение приложения
+> * Запуск приложения
 
 На выполнение этих действий требуется примерно 20 минут.
 

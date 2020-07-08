@@ -1,19 +1,18 @@
 ---
 title: Отслеживание разделов и подписок на события в службе "Сетка событий Azure" IoT Edge | Документация Майкрософт
 description: Отслеживание разделов и подписок на события
-author: banisadr
-ms.author: babanisa
+author: femila
+ms.author: femila
 ms.reviewer: spelluru
 ms.date: 01/09/2020
 ms.topic: article
 ms.service: event-grid
 services: event-grid
-ms.openlocfilehash: ce7c92f121fb458d528d63d0af0aad025b377386
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: d4fbc5232722bfb08bde9be51d44e8e8d7514570
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77086676"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84554355"
 ---
 # <a name="monitor-topics-and-event-subscriptions"></a>Отслеживание разделов и подписок на события
 
@@ -21,7 +20,7 @@ ms.locfileid: "77086676"
 
 ## <a name="enable-metrics"></a>Включить метрики
 
-Настройте модуль для отправки метрик, задав для `metrics__reporterType` `prometheus` переменной среды значение в параметрах создания контейнера:
+Настройте модуль для отправки метрик, задав `metrics__reporterType` для переменной среды значение `prometheus` в параметрах создания контейнера:
 
  ```json
         {

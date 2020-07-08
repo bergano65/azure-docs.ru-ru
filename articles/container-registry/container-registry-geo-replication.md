@@ -1,16 +1,15 @@
 ---
 title: Георепликация реестра
-description: Сведения о создании и администрировании реестра контейнеров Azure с георепликацией, которая позволяет реестру обслуживать несколько регионов с несколькими региональными репликами.
+description: Сведения о создании и администрировании реестра контейнеров Azure с георепликацией, которая позволяет реестру обслуживать несколько регионов с несколькими региональными репликами. Георепликация — это функция уровня обслуживания "Премиум".
 author: stevelas
 ms.topic: article
 ms.date: 05/11/2020
 ms.author: stevelas
-ms.openlocfilehash: bea71695c66c77a8e9fff3cb708113a04f24ed96
-ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
-ms.translationtype: HT
+ms.openlocfilehash: 35525906135db02c453c55d8798e1405396c8598
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83711573"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84508800"
 ---
 # <a name="geo-replication-in-azure-container-registry"></a>Георепликация в реестре контейнеров Azure
 
