@@ -7,11 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 05/08/2019
 ms.openlocfilehash: 043369bd6112c4cac36539bbd764393d889439c0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79274584"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84696972"
 ---
 # <a name="azure-diagnostics-troubleshooting"></a>Устранение неполадок с помощью системы диагностики Azure
 Данная статья содержит сведения об устранении неполадок, относящихся к средствами диагностики Azure. Дополнительные сведения о системе диагностики Azure см. в [обзоре системы диагностики Azure](diagnostics-extension-overview.md).
@@ -29,34 +28,34 @@ ms.locfileid: "79274584"
 ### <a name="azure-cloud-services"></a>Oблачныe службы Azure
 | Артефакт | Path |
 | --- | --- |
-| **Файл конфигурации системы диагностики Azure** | %SystemDrive%\Packages\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics\<версия>\Config.txt |
-| **Файлы журналов** | C:\Logs\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics\<версия>\ |
-| **Локальное хранилище данных диагностики** | C:\Resources\Directory\<CloudServiceDeploymentID>.\<RoleName>.DiagnosticStore\WAD0107\Tables |
-| **Файл конфигурации агента мониторинга** | C:\Resources\Directory\<CloudServiceDeploymentID>.\<RoleName>.DiagnosticStore\WAD0107\Configuration\MaConfig.xml |
-| **Пакет расширения система диагностики Azure** | %SystemDrive%\Packages\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics\<версия> |
+| **Файл конфигурации системы диагностики Azure** | %SystemDrive%\Packages\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics \<version>\Config.txt |
+| **Файлы журналов** | к:\логс\плугинс\микрософт.азуре.диагностикс.паасдиагностикс\<version>\ |
+| **Локальное хранилище данных диагностики** | C:\Resources\Directory \<CloudServiceDeploymentID> . \<RoleName> DiagnosticStore\WAD0107\Tables |
+| **Файл конфигурации агента мониторинга** | C:\Resources\Directory \<CloudServiceDeploymentID> . \<RoleName>.DiagnosticStore\WAD0107\Configuration\MaConfig.xml |
+| **Пакет расширения система диагностики Azure** | %SystemDrive%\Packages\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics\<version> |
 | **Путь к служебной программе сбора журналов** | %SystemDrive%\Packages\GuestAgent\ |
-| **Файл журнала MonAgentHost** | C:\Resources\Directory\<ИД_разверт._облачн._службы>.\<имя_роли>.DiagnosticStore\WAD0107\Configuration\MonAgentHost.<текущ._номер>.log |
+| **Файл журнала MonAgentHost** | C:\Resources\Directory \<CloudServiceDeploymentID> . \<RoleName> DiagnosticStore\WAD0107\Configuration\MonAgentHost. <seq_num>. log |
 
 ### <a name="virtual-machines"></a>Виртуальные машины
 | Артефакт | Path |
 | --- | --- |
-| **Файл конфигурации системы диагностики Azure** | C:\Packages\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<версия>\RuntimeSettings |
+| **Файл конфигурации системы диагностики Azure** | C:\Packages\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics \<version> \рунтимесеттингс |
 | **Файлы журналов** | C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<DiagnosticsVersion>\ |
-| **Локальное хранилище данных диагностики** | C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<версия_системы_диагностики>\WAD0107\Tables |
-| **Файл конфигурации агента мониторинга** | C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<версия_системы_диагностики>\WAD0107\Configuration\MaConfig.xml |
-| **Состояние файла** | C:\Packages\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<версия>\Status |
-| **Пакет расширения система диагностики Azure** | C:\Packages\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<версия_системы_диагностики>|
+| **Локальное хранилище данных диагностики** | C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics \<DiagnosticsVersion> \WAD0107\Tables |
+| **Файл конфигурации агента мониторинга** | C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics \<DiagnosticsVersion>\WAD0107\Configuration\MaConfig.xml |
+| **Состояние файла** | C:\Packages\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics \<version> \статус |
+| **Пакет расширения система диагностики Azure** | C:\Packages\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<DiagnosticsVersion>|
 | **Путь к служебной программе сбора журналов** | к:\виндовсазуре\логс\вааппажент.лог |
-| **Файл журнала MonAgentHost** | C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<версия_системы_диагностики>\WAD0107\Configuration\MonAgentHost.<текущ._номер>.log |
+| **Файл журнала MonAgentHost** | C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics \<DiagnosticsVersion> \WAD0107\Configuration\MonAgentHost. <seq_num>. log |
 
 ## <a name="metric-data-doesnt-appear-in-the-azure-portal"></a>Данные метрик не отображается на портале Azure
-Система диагностики Azure предоставляет данные метрик, которые могут отображаться на портале Azure. Если у вас возникли проблемы с просмотром данных на портале\* , проверьте таблицу WADMetrics в учетной записи хранения система диагностики Azure, чтобы узнать, есть ли соответствующие записи метрик, и убедитесь, что [поставщик ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services) Microsoft. Insights зарегистрирован.
+Система диагностики Azure предоставляет данные метрик, которые могут отображаться на портале Azure. Если у вас возникли проблемы с просмотром данных на портале, проверьте \* таблицу WADMetrics в учетной записи хранения система диагностики Azure, чтобы узнать, есть ли соответствующие записи метрик, и убедитесь, что [поставщик ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services) Microsoft. Insights зарегистрирован.
 
 Здесь **PartitionKey** таблицы — это идентификатор ресурса, виртуальной машины или масштабируемого набора виртуальных машин. **RowKey** — это имя метрики (также известное как имя счетчика производительности).
 
 Если идентификатор ресурса неверный, необходимо проверить правильность его значения. Для этого выберите **Diagnostics** **Configuration** (Конфигурация диагностики)  > **Метрики** > **ResourceId**.
 
-Если данные для определенной метрики отсутствуют, проверьте, включен ли показатель (счетчик производительности) в **конфигурации** > диагностики**PerformanceCounter** . Следующие счетчики включены по умолчанию.
+Если данные для определенной метрики отсутствуют, проверьте, **Diagnostics Configuration**  >  включен ли показатель (счетчик производительности) в конфигурации диагностики**PerformanceCounter** . Следующие счетчики включены по умолчанию.
 - \Процессор (_общий объем ресурсов)\% загруженности процессора
 - \Память\доступные байты
 - \ASP.NET Applications(__Total__)\Requests/Sec
@@ -70,7 +69,7 @@ ms.locfileid: "79274584"
 - \Process(WaWorkerHost)\% Processor Time
 - \Process(WaWorkerHost)\Private Bytes
 - \Memory\Page Faults/sec
-- \.Время_общей_памяти CLR (глобальное\% ) в GC
+- \.Время общей памяти CLR (_глобальное_) \% в GC
 - \LogicalDisk(C:)\Disk Write Bytes/sec
 - \LogicalDisk(C:)\Disk Read Bytes/sec
 - \LogicalDisk(D:)\Disk Write Bytes/sec
@@ -102,7 +101,7 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 
 Решение. Исправьте файл конфигурации системы диагностики и переустановите систему диагностики.
 
-Если учетная запись хранения настроена правильно, удаленный доступ к компьютеру и убедитесь, что *DiagnosticsPlugin. exe* и *MonAgentCore. exe* работают. Если они не запущены, выполните действия, описанные в [система диагностики Azure не запускается](#azure-diagnostics-is-not-starting).
+Если учетная запись хранения настроена правильно, удаленный доступ к компьютеру и убедитесь, что *DiagnosticsPlugin.exe* и *MonAgentCore.exe* работают. Если они не запущены, выполните действия, описанные в [система диагностики Azure не запускается](#azure-diagnostics-is-not-starting).
 
 Если процессы выполняются, перейдите к разделу [Сохраняются ли собранные данные локально?](#is-data-getting-captured-locally) и следуйте инструкциям в нем.
 
@@ -125,7 +124,7 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 - **Журналы трассировки.** Удаленно подключитесь к виртуальной машине и добавьте экземпляр TextWriterTraceListener в файл конфигурации приложения.  Сведения о настройке прослушивателя см. по ссылке https://msdn.microsoft.com/library/sk36c28t.aspx.  Проверьте, имеет ли элемент `<trace>` значение `<trace autoflush="true">`.<br />
 Если журналы трассировки не создаются, дополнительные сведения см. в разделе "Подробные сведения об отсутствии журналов трассировки".
 
-- **Трассировка событий Windows.** Удаленно подключитесь к виртуальной машине и установите PerfView.  В PerfView выполните**команду** > пользователя **File** > **Listen etwprovder1** > **etwprovider2**и т. д. Команда **Ожидать передачи данных** учитывает регистр. Поставщики трассировки событий Windows следует указывать через запятые без пробелов. Если выполнение этой команды завершилось сбоем, нажмите кнопку **Журнал** в правом нижнем углу средства Perfview, чтобы просмотреть попытки и результаты запуска.  Если все входные данные верны, через несколько секунд откроется новое окно с событиями трассировки событий Windows.
+- **Трассировка событий Windows.** Удаленно подключитесь к виртуальной машине и установите PerfView.  В PerfView выполните **File**  >  **команду пользователя**file  >  **Listen etwprovder1**  >  **etwprovider2**и т. д. Команда **Ожидать передачи данных** учитывает регистр. Поставщики трассировки событий Windows следует указывать через запятые без пробелов. Если выполнение этой команды завершилось сбоем, нажмите кнопку **Журнал** в правом нижнем углу средства Perfview, чтобы просмотреть попытки и результаты запуска.  Если все входные данные верны, через несколько секунд откроется новое окно с событиями трассировки событий Windows.
 
 - **Журналы трассировки.** Удаленно подключитесь к виртуальной машине. Откройте `Event Viewer`, а затем убедитесь, что события существуют.
 
@@ -207,10 +206,10 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 
 | событие | Имя таблицы |
 | --- | --- |
-| Provider = "prov1" &lt;ИД события = "1"/&gt; |Вадевент + MD5 ("prov1") + "1" |
-| Provider = "prov1" &lt;ИД события = "2" евентдестинатион = "dest1"/&gt; |WADdest1 |
-| Provider = "prov1" &lt;дефаултевентс/&gt; |Ваддефаулт + MD5 ("prov1") |
-| Provider = "prov2" &lt;дефаултевентс евентдестинатион = "dest2"/&gt; |WADdest2 |
+| Provider = "prov1" &lt; ИД события = "1"/&gt; |Вадевент + MD5 ("prov1") + "1" |
+| Provider = "prov1" &lt; ИД события = "2" евентдестинатион = "dest1"/&gt; |WADdest1 |
+| Provider = "prov1" &lt; дефаултевентс/&gt; |Ваддефаулт + MD5 ("prov1") |
+| Provider = "prov2" &lt; Дефаултевентс евентдестинатион = "dest2"/&gt; |WADdest2 |
 
 ## <a name="references"></a>Ссылки
 
@@ -228,7 +227,7 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 ### <a name="azure-diagnostics-plugin-exit-codes"></a>Коды выхода подключаемого модуля системы диагностики Azure
 Подключаемый модуль возвращает следующие коды выхода:
 
-| Код выхода | Описание |
+| Код выхода | Описание: |
 | --- | --- |
 | 0 |Успешно. |
 | -1 |Общая ошибка. |
@@ -266,9 +265,9 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 >[!NOTE]
 > Следующие сведения главным образом относятся к облачным службам Azure, если вы не настроили DiagnosticsMonitorTraceListener в приложении, выполняющемся на виртуальной машине IaaS.
 
-- Убедитесь, что **DiagnosticMonitorTraceListener** настроен в файле Web. config или App. config.  Этот параметр настроен по умолчанию в проектах облачных служб. но некоторые клиенты могут закомментировать его, в результате чего система диагностики не собирает трассировочные операторы.
+- Убедитесь, что **DiagnosticMonitorTraceListener** настроен в web.config или app.config.  Этот параметр настроен по умолчанию в проектах облачных служб. но некоторые клиенты могут закомментировать его, в результате чего система диагностики не собирает трассировочные операторы.
 
-- Если журналы не записываются из метода **OnStart** или **Run** , убедитесь, что **DiagnosticMonitorTraceListener** находится в файле App. config.  По умолчанию он находится в файле Web. config, но применяется только к коду, выполняемому в w3wp. exe. Поэтому этот класс также нужно определить в файле app.config, чтобы собирать трассировки, выполненные в средстве WaIISHost.exe.
+- Если журналы не записываются из метода **OnStart** или **Run** , убедитесь, что **DiagnosticMonitorTraceListener** находится в app.config.  По умолчанию он находится в web.config, но применяется только к коду, выполняемому в w3wp.exe. Поэтому этот класс также нужно определить в файле app.config, чтобы собирать трассировки, выполненные в средстве WaIISHost.exe.
 
 - Убедитесь, что вы используете **Diagnostics.Trace.TraceXXX**, а не **Diagnostics.Debug.WriteXXX**. Операторы отладки удаляются из конечной сборки.
 
@@ -294,7 +293,7 @@ System.IO.FileLoadException: Could not load file or assembly 'System.Threading.T
 
 На портале виртуальных машин данные определенных счетчиков производительности отображаются по умолчанию. Если счетчики производительности не отображаются, но известно, что данные создаются, так как они доступна в хранилище, проверьте следующее:
 
-- Указаны ли имена счетчиков в хранилище на английском. В противном случае диаграмма метрик на портале не сможет распознать их. **Предотвращение.** Изменить язык системных учетных записей виртуальной машины на английский. Для этого выберите область **панели** > управления**регион** > **административные** > **Параметры копирования**. Далее отмените выделение параметра **Экран приветствия и системные учетные записи**, чтобы пользовательский язык не применялся к системной учетной записи.
+- Указаны ли имена счетчиков в хранилище на английском. В противном случае диаграмма метрик на портале не сможет распознать их. **Предотвращение.** Изменить язык системных учетных записей виртуальной машины на английский. Для этого выберите область **панели управления**  >  **регион**  >  **административные**  >  **Параметры копирования**. Далее отмените выделение параметра **Экран приветствия и системные учетные записи**, чтобы пользовательский язык не применялся к системной учетной записи.
 
-- Если вы используете подстановочные знаки (\*) в именах счетчиков производительности, портал не сможет отслеживать настроенные и собранные показатели счетчика, отправляемые в приемник службы хранилища Azure. **Устранение**. чтобы убедиться, что вы можете использовать подстановочные знаки, а портал развернет\*(), направьте счетчики производительности в приемник Azure Monitor.
+- Если вы используете подстановочные знаки (\*) в именах счетчиков производительности, портал не сможет отслеживать настроенные и собранные показатели счетчика, отправляемые в приемник службы хранилища Azure. **Устранение**. чтобы убедиться, что вы можете использовать подстановочные знаки, а портал развернет ( \* ), направьте счетчики производительности в приемник Azure Monitor.
 

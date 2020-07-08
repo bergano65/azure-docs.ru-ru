@@ -6,13 +6,12 @@ ms.subservice: update-management
 ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
-ms.date: 04/24/2020
-ms.openlocfilehash: 0a83117d6d58f45d6ee1de2b8d61c2157738fc75
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.date: 06/10/2020
+ms.openlocfilehash: feb1cc132bf5463550a2e7921f347c8f2f48260e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83830997"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84668004"
 ---
 # <a name="enable-update-management-using-azure-resource-manager-template"></a>Включение Управления обновлениями с помощью шаблона Azure Resource Manager
 
@@ -23,12 +22,9 @@ ms.locfileid: "83830997"
 * связывание учетной записи службы автоматизации с рабочей областью Log Analytics, если такая связь отсутствует;
 * включение Управления обновлениями.
 
-Этот шаблон не автоматизирует включение одной или нескольких виртуальных машин, предоставляемых Azure или сторонними поставщиками.
+Этот шаблон не позволяет автоматизировать включение Управление обновлениями на одной или нескольких виртуальных машинах Azure или не в Azure.
 
-Если у вас уже есть рабочая область Log Analytics и учетная запись службы автоматизации, развернутая в поддерживаемом регионе в вашей подписке, они не связаны между собой. В рабочей области еще не включено Управление обновлениями. С помощью этого шаблона вы создадите ссылку и развернете Управление обновлениями для виртуальных машин. 
-
->[!NOTE]
->Пользователь **nxautomation**, включенный в Управление обновлениями в Linux, выполняет только подписанные последовательности runbook.
+Если у вас уже есть рабочая область Log Analytics и учетная запись службы автоматизации, развернутая в поддерживаемом регионе в вашей подписке, они не связаны между собой. Использование этого шаблона позволяет успешно создавать ссылку и развертывать Управление обновлениями.
 
 ## <a name="api-versions"></a>Версии API
 
@@ -36,8 +32,8 @@ ms.locfileid: "83830997"
 
 | Ресурс | Тип ресурса | Версия API |
 |:---|:---|:---|
-| Рабочая область | workspaces | 2017-03-15-preview |
-| Учетная запись службы автоматизации | служба автоматизации | 2015-10-31 | 
+| Рабочая область | workspaces | 2020-03-01 — предварительная версия |
+| Учетная запись службы автоматизации | служба автоматизации | 2018-06-30 | 
 | Решение | solutions | 2015-11-01-preview |
 
 ## <a name="before-using-the-template"></a>Перед применением шаблона
@@ -49,9 +45,10 @@ ms.locfileid: "83830997"
 Во время работы с шаблоном JSON вам нужно будет ввести следующие сведения:
 
 * имя рабочей области;
-* регион для создания рабочей области;
-* имя учетной записи службы автоматизации;
-* регион для создания этой учетной записи.
+* Регион, в котором создается рабочая область.
+* , Чтобы включить разрешения для ресурсов или рабочих областей.
+* Имя учетной записи службы автоматизации.
+* Регион, в котором создается учетная запись.
 
 Шаблон в формате JSON указывает значения по умолчанию для других параметров, которые в вашей среде скорее всего будут использоваться в стандартной конфигурации. Шаблон можно сохранить в учетной записи хранения Azure для совместного использования в пределах организации. Дополнительную информацию о работе с шаблонами см. в руководстве [Развертывание ресурсов с помощью шаблонов ARM и Azure CLI](../azure-resource-manager/templates/deploy-cli.md).
 
@@ -59,7 +56,6 @@ ms.locfileid: "83830997"
 
 * sku — по умолчанию используется новый тарифный план с платой за гигабайт, выпущенный в апреле 2018 года.
 * Срок хранения данных — 30 дней по умолчанию.
-* Резервирование мощности — 100 ГБ по умолчанию.
 
 >[!WARNING]
 >При создании или настройке рабочей области Log Analytics в подписке, использующей модель ценообразования от апреля 2018 года, доступна только ценовая категория **PerGB2018**.
@@ -114,18 +110,17 @@ ms.locfileid: "83830997"
                 "description": "Number of days of retention. Workspaces in the legacy Free pricing tier can only have 7 days."
             }
         },
-        "immediatePurgeDataOn30Days": {
-            "type": "bool",
-            "defaultValue": "[bool('false')]",
-            "metadata": {
-                "description": "If set to true when changing retention to 30 days, older data will be immediately deleted. Use this with extreme caution. This only applies when retention is being set to 30 days."
-            }
-        },
         "location": {
             "type": "string",
             "metadata": {
                 "description": "Specifies the location in which to create the workspace."
             }
+        },
+        "resourcePermissions": {
+              "type": "bool",
+              "metadata": {
+                "description": "true to use resource or workspace permissions. false to require workspace permissions."
+              }
         },
         "automationAccountName": {
             "type": "string",
@@ -150,13 +145,11 @@ ms.locfileid: "83830997"
         {
         "type": "Microsoft.OperationalInsights/workspaces",
             "name": "[parameters('workspaceName')]",
-            "apiVersion": "2017-03-15-preview",
+            "apiVersion": "2020-03-01-preview",
             "location": "[parameters('location')]",
             "properties": {
                 "sku": {
-                    "Name": "[parameters('sku')]",
-                    "name": "CapacityReservation",
-                    "capacityReservationLevel": 100
+                    "name": "[parameters('sku')]",
                 },
                 "retentionInDays": "[parameters('dataRetention')]",
                 "features": {
@@ -168,7 +161,7 @@ ms.locfileid: "83830997"
             "resources": [
                 {
                     "apiVersion": "2015-11-01-preview",
-                    "location": "[resourceGroup().location]",
+                    "location": "[parameters('location')]",
                     "name": "[variables('Updates').name]",
                     "type": "Microsoft.OperationsManagement/solutions",
                     "id": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.OperationsManagement/solutions/', variables('Updates').name)]",
@@ -189,7 +182,7 @@ ms.locfileid: "83830997"
         },
         {
             "type": "Microsoft.Automation/automationAccounts",
-            "apiVersion": "2015-01-01-preview",
+            "apiVersion": "2018-06-30",
             "name": "[parameters('automationAccountName')]",
             "location": "[parameters('automationAccountLocation')]",
             "dependsOn": [],
@@ -201,10 +194,10 @@ ms.locfileid: "83830997"
             },
         },
         {
-            "apiVersion": "2015-11-01-preview",
+            "apiVersion": "2020-03-01-preview",
             "type": "Microsoft.OperationalInsights/workspaces/linkedServices",
             "name": "[concat(parameters('workspaceName'), '/' , 'Automation')]",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('location')]",
             "dependsOn": [
                 "[concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]",
                 "[concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))]"
@@ -242,8 +235,7 @@ ms.locfileid: "83830997"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об использовании Управления обновлениями для виртуальных машин см. в статье [Управление обновлениями и исправлениями для виртуальных машин Azure](automation-tutorial-update-management.md).
+
 * Если рабочая область Log Analytics вам больше не нужна, выполните инструкции из статьи [Отмена связи рабочей области с учетной записью службы автоматизации для Управления обновлениями](automation-unlink-workspace-update-management.md).
+
 * Дополнительные сведения см. в статье [Удаление виртуальной машины из Управления обновлениями](automation-remove-vms-from-update-management.md).
-* Дополнительные сведения см. в статье [Устранение неполадок с Управлением обновлениями](troubleshoot/update-management.md).
-* Дополнительные сведения см. в статье [Устранение неполадок с агентом обновления Windows](troubleshoot/update-agent-issues.md).
-* Дополнительные сведения см. в статье [Устранение неполадок с агентом обновления Linux](troubleshoot/update-agent-issues-linux.md).

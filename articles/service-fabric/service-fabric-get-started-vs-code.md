@@ -6,11 +6,10 @@ ms.topic: article
 ms.date: 06/29/2018
 ms.author: pepogors
 ms.openlocfilehash: 17bff459a0399d39c6bfdd772ad16d0b5b2f6771
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79258490"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84692604"
 ---
 # <a name="service-fabric-for-visual-studio-code"></a>Service Fabric для Visual Studio Code
 
@@ -27,7 +26,7 @@ ms.locfileid: "79258490"
 
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Node.js](https://nodejs.org/)
-* [Git](https://git-scm.com/)
+* [Git](https://git-scm.com/);
 * [Пакет SDK для Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started)
 * Генераторы Yeoman (установите соответствующие генераторы для своего приложения)
 
@@ -50,7 +49,7 @@ ms.locfileid: "79258490"
 * [.NET Core](https://www.microsoft.com/net/learn/get-started) (версия 2.0.0 или более новая)
 * [Расширение VS Code C# для Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp). Необходимо для отладки служб C#. Для установки воспользуйтесь VS Code Marketplace или щелкните значок "Расширения" на **панели действий** в VS Code и выполните поиск расширения.
 
-## <a name="setup"></a>Настройка
+## <a name="setup"></a>Установка
 
 1. Откройте VS Code.
 2. Щелкните значок "Расширения" на **панели действий** в левой части VS Code. Выполните поиск словосочетания "Service Fabric". Нажмите кнопку **Установить** для расширения Reliable Services на платформе Service Fabric.
@@ -98,7 +97,7 @@ ms.locfileid: "79258490"
 Команда **Service Fabric: Deploy Application** (Service Fabric: развернуть приложение) развертывает приложение Service Fabric в локальном кластере. Перед использованием команды убедитесь, что локальный кластер запущен. 
 
 1. Выберите команду **Service Fabric: Deploy Application** (Service Fabric: развернуть приложение).
-2. Просмотрите локальный кластер с Service Fabric Explorer (http:\//ЛОКАЛХОСТ: 19080/Explorer), чтобы убедиться, что приложение установлено. Это может занять некоторое время.
+2. Просмотрите локальный кластер с Service Fabric Explorer (http: \/ /ЛОКАЛХОСТ: 19080/Explorer), чтобы убедиться, что приложение установлено. Это может занять некоторое время.
 3. Для развертывания в локальном кластере можно также использовать команду **Service Fabric: Publish Application** (Service Fabric: опубликовать приложение) без параметров, заданных в файле Cloud.json.
 
 > [!NOTE]

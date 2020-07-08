@@ -7,18 +7,15 @@ ms.service: virtual-machines
 ms.topic: article
 ms.date: 03/06/2020
 ms.author: mimckitt
-ms.openlocfilehash: c0dd5c8cd61d1c7abf11d97e858fdc30d774e456
-ms.sourcegitcommit: 223cea58a527270fe60f5e2235f4146aea27af32
-ms.translationtype: HT
+ms.openlocfilehash: 444c3afefcf4cfdafc817af3b7bc6ce4463853c1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84259122"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84678364"
 ---
 # <a name="custom-data-and-cloud-init-on-azure-virtual-machines"></a>Пользовательские данные и Cloud-Init на виртуальных машинах Azure
 
-## <a name="what-is-custom-data"></a>Что такое пользовательские данные?
-
-Клиенты часто спрашивают, как они могут внедрить скрипт или другие метаданные в виртуальную машину Microsoft Azure во время подготовки.  В других облаках эти данные часто называются пользовательскими данными.  В Microsoft Azure существует аналогичная функция, которая называется пользовательскими данными. 
+Может потребоваться внедрить скрипт или другие метаданные в Microsoft Azure виртуальную машину во время подготовки.  В других облаках эти данные часто называются пользовательскими данными.  В Microsoft Azure существует аналогичная функция, которая называется пользовательскими данными. 
 
 Пользовательские данные становятся доступными для виртуальной машины только во время первой или начальной настройки, поэтому мы называем этот процесс "подготовкой". Подготовка — это процесс, в ходе которого доступны параметры создания виртуальной машины (например, имя узла, имя пользователя, пароль, сертификаты, пользовательские данные, ключи и т. д.), а агент подготовки их обрабатывает, например [агент Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux) и [Cloud-Init](https://docs.microsoft.com/azure/virtual-machines/linux/using-cloud-init#troubleshooting-cloud-init). 
 

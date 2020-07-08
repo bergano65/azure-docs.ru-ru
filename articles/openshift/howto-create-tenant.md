@@ -7,11 +7,10 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 05/13/2019
 ms.openlocfilehash: ad03538cafcce9c1d660d0f2ac5eb3c6ae5f4f38
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79243696"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84694911"
 ---
 # <a name="create-an-azure-ad-tenant-for-azure-red-hat-openshift"></a>Создание клиента Azure AD для Azure Red Hat OpenShift
 
@@ -33,7 +32,7 @@ ms.locfileid: "79243696"
 
     ![Снимок экрана портала, отображающий имя клиента в верхнем правом углу][tenantcallout]  
 
-8. Запишите *идентификатор клиента* , чтобы позднее указать, где можно создать кластер Azure Red Hat OpenShift. На портале отобразится колонка обзор Azure Active Directory для нового клиента. Выберите **Свойства** и скопируйте значение для **идентификатора каталога**. Мы будем называть это значение, как `TENANT` описано в учебнике [Создание кластера Azure Red Hat OpenShift](tutorial-create-cluster.md) .
+8. Запишите *идентификатор клиента* , чтобы позднее указать, где можно создать кластер Azure Red Hat OpenShift. На портале отобразится колонка обзор Azure Active Directory для нового клиента. Выберите **Свойства** и скопируйте значение для **идентификатора каталога**. Мы будем называть это значение, как описано `TENANT` в учебнике [Создание кластера Azure Red Hat OpenShift](tutorial-create-cluster.md) .
 
 [tenantcallout]: ./media/howto-create-tenant/tenant-callout.png
 

@@ -5,21 +5,18 @@ description: Создайте конечные точки веб-службы в
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: conceptual
+ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 02/15/2019
-ms.openlocfilehash: 980ed1e54de30ec8a2dc0c1fdac6546d31f48a00
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: e465d739c485009f68d6d5c5ecbb0850d73a6e60
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79218205"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84696428"
 ---
 # <a name="create-endpoints-for-deployed-azure-machine-learning-studio-classic-web-services"></a>Создание конечных точек для развернутых веб-служб Машинное обучение Azure Studio (классическая модель)
-
-[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 > [!NOTE]
 > В этом разделе описываются методы, применимые к **классической** веб-службе машинное обучение.

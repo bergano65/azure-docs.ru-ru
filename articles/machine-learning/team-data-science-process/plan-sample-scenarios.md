@@ -12,11 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 48b51c40e5de8f10d9d1d16b02e2c70b045816b3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79251626"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84687452"
 ---
 # <a name="scenarios-for-advanced-analytics-in-azure-machine-learning"></a>Сценарии для расширенной аналитики в Машинном обучении Azure
 В этой статье описаны различные источники примеров данных и типовые сценарии, в которых можно использовать [процесс обработки и анализа данных группы (TDSP)](overview.md). Процесс TDSP предоставляет систематический подход для совместной работы групп над созданием интеллектуальных приложений. В представленных сценариях продемонстрированы варианты рабочих процессов обработки данных на основе характеристик данных, исходных расположений и целевых репозиториев в Azure.
@@ -29,13 +28,13 @@ ms.locfileid: "79251626"
 > **Для каждого из них вам понадобится:**
 > <br/>
 > 
-> * [Создание учетной записи хранения](../../storage/common/storage-account-create.md)
+> * [создать учетную запись хранения;](../../storage/common/storage-account-create.md)
 >   <br/>
 > * [Создание рабочей области машинного обучения Azure](../studio/create-workspace.md)
 > 
 > 
 
-## <a name="scenario-1-small-to-medium-tabular-dataset-in-local-files"></a><a name="smalllocal"></a>Сценарий \#1. Малый и средний табличный набор данных в локальных файлах
+## <a name="scenario-1-small-to-medium-tabular-dataset-in-local-files"></a><a name="smalllocal"></a>Сценарий \# 1. Малый и средний табличный набор данных в локальных файлах
 ![Локальные файлы небольшого и среднего размера][1]
 
 #### <a name="additional-azure-resources-none"></a>Дополнительные ресурсы Azure: отсутствуют
@@ -101,7 +100,7 @@ ms.locfileid: "79251626"
 1. Считайте данные непосредственно из SQL Server с помощью модуля [Импорт данных][import-data]. Вставьте необходимый запрос, который извлекает поля, создает компоненты и образцы данных, если это необходимо, непосредственно в запросе на [Импорт данных][import-data] .
 1. Создайте поток операций эксперимента Машинного обучения Azure, начиная с принятых наборов данных.
 
-## <a name="scenario-5-large-dataset-in-local-files-target-sql-server-in-azure-vm"></a><a name="largelocaltodb"></a>Сценарий \#5. большой набор данных в локальных файлах, целевой SQL Server на виртуальной машине Azure
+## <a name="scenario-5-large-dataset-in-local-files-target-sql-server-in-azure-vm"></a><a name="largelocaltodb"></a>Сценарий \# 5. большой набор данных в локальных файлах, целевой SQL Server на виртуальной машине Azure
 ![Локальные файлы большого размера для базы данных SQL в Azure][5]
 
 #### <a name="additional-azure-resources-azure-virtual-machine-sql-server--ipython-notebook-server"></a>Дополнительные ресурсы Azure: виртуальная машина Azure (сервер SQL Server и IPython Notebook)
@@ -109,14 +108,14 @@ ms.locfileid: "79251626"
 1. Отправка данных в контейнер службы хранилища Azure.
 1. Предварительно обработайте и очистите данные (необязательно).
    
-    a.  Предварительно обработайте и очистите данные в IPython Notebook из больших двоичных объектов Azure.
+    а.  Предварительно обработайте и очистите данные в IPython Notebook из больших двоичных объектов Azure.
    
     b.  При необходимости преобразуйте данные в очищенную табличную форму.
    
     c.  Сохраните данные в локальных файлах виртуальной машины (IPython Notebook запущен на виртуальной машине, и в качестве локальных дисков используются диски виртуальной машины).
 1. Загрузите данные в базу данных SQL Server на виртуальной машине Azure.
    
-    a.  Войдите в SQL Server виртуальную машину.
+    а.  Войдите в SQL Server виртуальную машину.
    
     b.  Если данные еще не сохранены, Скачайте файлы данных из контейнера хранилища Azure в локальную папку виртуальной машины.
    
@@ -138,7 +137,7 @@ ms.locfileid: "79251626"
 1. Считайте данные непосредственно из SQL Server с помощью модуля [Импорт данных][import-data]. Вставьте необходимый запрос, который извлекает поля, создает компоненты и образцы данных, если это необходимо, непосредственно в запросе на [Импорт данных][import-data] .
 1. Создайте простой поток операций эксперимента Машинного обучения Azure, начиная с отправленного набора данных.
 
-## <a name="scenario-6-large-dataset-in-a-sql-server-database-on-premises-targeting-sql-server-in-an-azure-virtual-machine"></a><a name="largedbtodb"></a>Сценарий \#6. большой набор данных в локальной базе данных SQL Server, нацеленный на SQL Server на виртуальной машине Azure
+## <a name="scenario-6-large-dataset-in-a-sql-server-database-on-premises-targeting-sql-server-in-an-azure-virtual-machine"></a><a name="largedbtodb"></a>Сценарий \# 6. большой набор данных в локальной базе данных SQL Server, нацеленный на SQL Server на виртуальной машине Azure
 ![Большая локальная база данных SQL для базы данных SQL в Azure][6]
 
 #### <a name="additional-azure-resources-azure-virtual-machine-sql-server--ipython-notebook-server"></a>Дополнительные ресурсы Azure: виртуальная машина Azure (сервер SQL Server и IPython Notebook)
@@ -152,7 +151,7 @@ ms.locfileid: "79251626"
 1. Отправка файлов дампа в контейнер службы хранилища Azure.
 1. Загрузите данные в базу данных SQL Server на виртуальной машине Azure.
    
-   a.  Войдите на виртуальную машину SQL Server.
+   а.  Войдите на виртуальную машину SQL Server.
    
    b.  Скачайте файлы данных из контейнера службы хранилища Azure в локальную папку виртуальной машины.
    
@@ -194,7 +193,7 @@ ms.locfileid: "79251626"
 1. Создайте кластер Azure HDInsight Hadoop.
 1. Предварительно обработайте и очистите данные (необязательно).
    
-   a.  Предварительно обработайте и очистите данные в IPython Notebook из Azure.
+   а.  Предварительно обработайте и очистите данные в IPython Notebook из Azure.
    
        blobs.
    
@@ -204,7 +203,7 @@ ms.locfileid: "79251626"
 1. Отправьте данные в контейнер по умолчанию для кластера Hadoop, выбранный на шаге 2.
 1. Загрузите данные в базу данных Hive в кластере Azure HDInsight Hadoop.
    
-   a.  Войдите на головной узел кластера Hadoop.
+   а.  Войдите на головной узел кластера Hadoop.
    
    b.  Откройте командную строку Hadoop.
    
@@ -218,7 +217,7 @@ ms.locfileid: "79251626"
    > 
 1. Просмотрите данные и при необходимости создайте компоненты в командной строке Hadoop. Эти функции не нужно материализовать в таблицах базы данных. Необходимо указать только запросы, требуемые для их создания.
    
-   a.  Войдите на головной узел кластера Hadoop.
+   а.  Войдите на головной узел кластера Hadoop.
    
    b.  Откройте командную строку Hadoop.
    

@@ -5,21 +5,18 @@ description: Развертывание рабочей области для М�
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: conceptual
+ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 02/05/2018
-ms.openlocfilehash: 34333d4fe6e9b34a0c8b56cca8123f4ed93a917a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 8a6ec4c8f5e59546c0ec5ee3cdd128e70d89802b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79218121"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84696275"
 ---
 # <a name="deploy-azure-machine-learning-studio-classic-workspace-using-azure-resource-manager"></a>Развертывание рабочей области Машинное обучение Azure Studio (классическая модель) с помощью Azure Resource Manager
-
-[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 Шаблон развертывания Azure Resource Manager позволяет сэкономить время, предоставляя масштабируемый способ развертывания взаимосвязанных компонентов с возможностью проверки и механизмом повтора. Например, чтобы настроить рабочие области Машинное обучение Azure Studio (классические), необходимо сначала настроить учетную запись хранения Azure, а затем развернуть рабочую область. Представьте себе выполнение этого задания вручную для сотен рабочих областей. Более простой альтернативой является использование шаблона Azure Resource Manager для развертывания рабочей области Studio (классической) и всех ее зависимостей. В этой статье представлено пошаговое выполнение этого процесса. Подробный обзор Azure Resource Manager см. в статье [Общие сведения об Azure Resource Manager](../../azure-resource-manager/management/overview.md).
 
@@ -143,7 +140,7 @@ Get-AzResource |? { $_.ResourceType -Like "*MachineLearning/workspaces*"} |ForEa
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-* Узнайте больше о [создании шаблонов Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md).
+* Дополнительные сведения о [создании шаблонов Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md).
 * Просмотрите [репозиторий шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates).
 * Просмотрите видео об [Azure Resource Manager](https://channel9.msdn.com/Events/Ignite/2015/C9-39).
 * Подробные сведения см. в статье [Microsoft.MachineLearning resource types](https://docs.microsoft.com/azure/templates/microsoft.machinelearning/allversions) (Типы ресурсов Microsoft.MachineLearning)

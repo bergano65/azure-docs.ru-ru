@@ -5,20 +5,18 @@ description: Выбор оптимального набора параметро
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: conceptual
+ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.date: 11/29/2017
-ms.openlocfilehash: 23a201ef63a9a1a6bb5bd078867ccc1200893049
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
-ms.translationtype: MT
+ms.openlocfilehash: a99c1d71ed7e718d4d47ba55573a16466f62de5f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82982026"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84687775"
 ---
 # <a name="interpret-model-results-in-azure-machine-learning-studio-classic"></a>Интерпретация результатов модели в Студии машинного обучения Azure (классическая версия)
 
-[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 В этом разделе объясняется, как визуализировать и интерпретировать результаты прогноза в Машинное обучение Azure Studio (классическая модель). Когда вы обучите модель и получите с ее помощью прогнозы (оценки модели), этот результат нужно интерпретировать.
 
 Существует четыре основных типа моделей машинного обучения в Машинное обучение Azure Studio (классическая модель):

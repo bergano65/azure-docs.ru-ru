@@ -5,21 +5,18 @@ description: Чтобы использовать Машинное обучени
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: conceptual
+ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 12/07/2017
-ms.openlocfilehash: 7b01e7667392d475bcab70dcd3dfaad2c3956e8f
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
-ms.translationtype: MT
+ms.openlocfilehash: ede84fefed7db9d2afcc0ad65833ab2c0fefbc03
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82208539"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84696530"
 ---
 # <a name="create-and-share-an-azure-machine-learning-studio-classic-workspace"></a>Создание и совместное использование рабочей области Машинное обучение Azure Studio (классическая модель)
-
-[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 Чтобы использовать Машинное обучение Azure Studio (классическая модель), необходимо иметь рабочую область Машинное обучение Studio (классическая). Такая рабочая область содержит инструменты, необходимые для создания, публикации экспериментов и управления ими.
 
@@ -56,7 +53,7 @@ ms.locfileid: "82208539"
 
 После развертывания рабочей области ее можно открыть в Машинное обучение Studio (классическая модель).
 
-1. Перейдите в Машинное обучение Studio (классическая модель) [https://studio.azureml.net/](https://studio.azureml.net/)по адресу.
+1. Перейдите в Машинное обучение Studio (классическая модель) по адресу [https://studio.azureml.net/](https://studio.azureml.net/) .
 
 2. В правом верхнем углу выберите рабочую область.
 

@@ -1,15 +1,14 @@
 ---
 title: Выбор размеров виртуальных машин для пулов
 description: Выбор доступных размеров виртуальной машины для вычислительных узлов в пулах пакетной службы Azure
-ms.topic: how-to
-ms.date: 09/12/2019
+ms.topic: conceptual
+ms.date: 06/10/2020
 ms.custom: seodec18
-ms.openlocfilehash: 2e0d403f405d58c0d7488ac6d0c306be2f2d79ea
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
-ms.translationtype: HT
+ms.openlocfilehash: c1621bbbe6676144176636346f3f5c34db169b7a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83779156"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84693164"
 ---
 # <a name="choose-a-vm-size-for-compute-nodes-in-an-azure-batch-pool"></a>Выбор размера виртуальной машины для вычислительных узлов в пуле пакетной службы Azure
 
@@ -35,9 +34,13 @@ ms.locfileid: "83779156"
 | DC | None |
 | Dv2, DSv2 | Все размеры |
 | Dv3, Dsv3 | Все размеры |
-| Dav4, Dasv4 | Нет. Пока недоступно |
+| Dav4<sup>1</sup> | Нет. Пока недоступно |
+| Dasv4<sup>1</sup> | Все размеры, кроме Standard_D48as_v4, Standard_D64as_v4, Standard_D96as_v4 |
+| Ddv4, Ddsv4 |  Нет. Пока недоступно |
 | Ev3, Esv3 | Все размеры, кроме E64is_v3 и E64i_v3 |
-| Eav4, Easv4 | Нет. Пока недоступно |
+| Eav4<sup>1</sup> | Все размеры, кроме Standard_E48a_v4, Standard_E64a_v4, Standard_E96a_v4 |
+| Easv4<sup>1</sup> | Все размеры, кроме Standard_E48as_v4, Standard_E64as_v4, Standard_E96as_v4 |
+| Edv4, Edsv4 |  Нет. Пока недоступно |
 | F, Fs | Все размеры |
 | Fsv2 | Все размеры |
 | G, Gs | Все размеры |
@@ -46,8 +49,8 @@ ms.locfileid: "83779156"
 | HBv2<sup>1</sup> | Все размеры |
 | HC<sup>1</sup> | Все размеры |
 | Ls | Все размеры |
-| Lsv2 | Нет. Пока недоступно |
-| M<sup>1</sup> | Все размеры, кроме M64, M64m, M128, M128m |
+| Lsv2<sup>1</sup> | Все размеры |
+| M<sup>1</sup> | Все размеры |
 | Mv2 | Нет. Пока недоступно |
 | NC | Все размеры |
 | NCv2<sup>1</sup> | Все размеры |
@@ -56,7 +59,7 @@ ms.locfileid: "83779156"
 | NDv2<sup>1</sup> | Нет. Пока недоступно |
 | NV | Все размеры |
 | NVv3<sup>1</sup> | Все размеры |
-| NVv4 | None |
+| NVv4 | Отсутствуют |
 | SAP HANA | None |
 
 <sup>1</sup> Эти размеры виртуальных машин можно выделить в пулах пакетной службы в конфигурации виртуальной машины, однако следует создать новую учетную запись пакетной службы и запросить определенное [увеличение квоты](batch-quota-limit.md#increase-a-quota). Это ограничение будет удалено, когда для учетных записей пакетной службы будет полностью поддерживаться квота виртуальных ЦП на серию виртуальных машин.

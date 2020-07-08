@@ -9,11 +9,10 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: 96bd6b461a5374b5f5bc578c5f58dbcd09cd7087
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79271386"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84699300"
 ---
 # <a name="develop-your-own-iot-edge-modules"></a>Разработка собственных модулей IoT Edge
 
@@ -51,7 +50,7 @@ ms.locfileid: "79271386"
 
 Сообщения с устройства в облако, обрабатываемые концентратором Edge, имеют следующие свойства системы:
 
-| Свойство | Описание |
+| Свойство. | Описание: |
 | -------- | ----------- |
 | $connectionDeviceId | Идентификатор устройства клиента, отправившего сообщение. |
 | $connectionModuleId | Идентификатор модуля, отправившего сообщение. |
@@ -65,7 +64,7 @@ ms.locfileid: "79271386"
 1. Создайте экземпляр ModuleClient в приложении.
 2. Убедитесь, что приложение принимает сертификат, предоставленный центром IoT Edge на этом устройстве.
 
-Создайте экземпляр ModuleClient для подключения модуля к центру IoT Edge, запущенному на устройстве, аналогично тому, как экземпляры DeviceClient подключают устройства Интернета вещей к Центру Интернета вещей. Дополнительные сведения о классе модулеклиент и его методах связи см. в справочнике по API для вашего предпочтительного языка SDK: [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet), [C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h), [Python](https://docs.microsoft.com/python/api/azure-iot-device/azure.iot.device.iothubmoduleclient?view=azure-python), [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable)или [node. js](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
+Создайте экземпляр ModuleClient для подключения модуля к центру IoT Edge, запущенному на устройстве, аналогично тому, как экземпляры DeviceClient подключают устройства Интернета вещей к Центру Интернета вещей. Дополнительные сведения о классе модулеклиент и его методах связи см. в справочнике по API для вашего предпочтительного языка SDK: [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet), [C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h), [Python](https://docs.microsoft.com/python/api/azure-iot-device/azure.iot.device.iothubmoduleclient?view=azure-python), [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable)или [Node.js](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
 
 ## <a name="language-and-architecture-support"></a>Поддержка языков и архитектур
 
@@ -77,7 +76,7 @@ IoT Edge поддерживает несколько операционных с
 
 | Язык разработки | Инструменты разработки |
 | -------------------- | ----------------- |
-| В | Visual Studio Code<br>Visual Studio 2017 или 2019 |
+| C | Visual Studio Code<br>Visual Studio 2017 или 2019 |
 | C# | Visual Studio Code<br>Visual Studio 2017 или 2019 |
 | Java | Visual Studio Code |
 | Node.js | Visual Studio Code |
@@ -92,7 +91,7 @@ IoT Edge поддерживает несколько операционных с
 
 | Язык разработки | Инструменты разработки |
 | -------------------- | ----------------- |
-| В | Visual Studio 2017 или 2019 |
+| C | Visual Studio 2017 или 2019 |
 | C# | Visual Studio Code (без возможностей отладки)<br>Visual Studio 2017 или 2019 |
 
 ## <a name="next-steps"></a>Дальнейшие шаги

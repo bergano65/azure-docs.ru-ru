@@ -14,11 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: c3b6123c63bf530463379a175745ef86baf2c5a3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79249507"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84689993"
 ---
 # <a name="azure-api-management-template-resources"></a>Ресурсы шаблонов управления API Azure
 Служба управления API Azure предоставляет следующие типы ресурсов для использования в шаблонах портала разработчика:  
@@ -113,13 +112,13 @@ ms.locfileid: "79249507"
   
 ###  <a name="apisstrings"></a><a name="ApisStrings"></a>аписстрингс  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
-|PageTitleApis|Программные интерфейсы|  
+|PageTitleApis|API-интерфейсы|  
   
 ###  <a name="appdetailsstrings"></a><a name="AppDetailsStrings"></a>аппдетаилсстрингс  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |WebApplicationsDetailsTitle|Предварительная версия приложения|  
 |WebApplicationsRequirementsHeader|Requirements (Требования)|  
@@ -128,29 +127,29 @@ ms.locfileid: "79249507"
   
 ###  <a name="applicationliststrings"></a><a name="ApplicationListStrings"></a>аппликатионлистстрингс  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |WebDevelopersAppDeleteConfirmation|Вы действительно хотите удалить приложение?|  
 |WebDevelopersAppNotPublished|Не опубликовано|  
 |WebDevelopersAppNotSubmitted|Не отправлено|  
 |WebDevelopersAppTableCategoryHeader|Категория|  
-|WebDevelopersAppTableNameHeader|Имя|  
-|WebDevelopersAppTableStateHeader|Состояние|  
+|WebDevelopersAppTableNameHeader|name|  
+|WebDevelopersAppTableStateHeader|Область|  
 |WebDevelopersEditLink|Правка|  
 |WebDevelopersRegisterAppLink|Регистрация приложения|  
 |WebDevelopersRemoveLink|Удалить|  
-|WebDevelopersSubmitLink|Submit|  
+|WebDevelopersSubmitLink|Отправить|  
 |WebDevelopersYourApplicationsHeader|Ваши приложения|  
   
 ###  <a name="appstrings"></a><a name="AppStrings"></a>аппстрингс  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |WebApplicationsHeader|Приложения|  
   
 ###  <a name="commonresources"></a><a name="CommonResources"></a>коммонресаурцес  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |NoItemsToDisplay|Результаты отсутствуют.|  
 |GeneralExceptionMessage|Возникла проблема. Возможно, это временный сбой или ошибка. Повторите попытку позже.|  
@@ -161,15 +160,15 @@ ms.locfileid: "79249507"
   
 ###  <a name="commonstrings"></a><a name="CommonStrings"></a>коммонстрингс  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
-|ButtonLabelCancel|Отмена|  
-|ButtonLabelSave|Сохранять|  
+|ButtonLabelCancel|Отменить|  
+|ButtonLabelSave|Сохранить|  
 |GeneralExceptionMessage|Возникла проблема. Возможно, это временный сбой или ошибка. Повторите попытку позже.|  
 |NoItemsToDisplay|Нет элементов для отображения|  
-|PagerButtonLabelFirst|Первый|  
+|PagerButtonLabelFirst|First|  
 |PagerButtonLabelLast|Последний|  
-|PagerButtonLabelNext|Дальше|  
+|PagerButtonLabelNext|Следующая|  
 |PagerButtonLabelPrevious|Предыдущий|  
 |PagerLabelPageNOfM|Страница {0} из {1}|  
 |PasswordTooShort|Пароль слишком короткий|  
@@ -185,7 +184,7 @@ ms.locfileid: "79249507"
   
 ###  <a name="documentation"></a><a name="Documentation"></a>По  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |WebDocumentationInvalidHeaderErrorMessage|Недопустимый заголовок {0}|  
 |WebDocumentationInvalidRequestErrorMessage|Недопустимый URL-адрес запроса|  
@@ -324,16 +323,16 @@ ms.locfileid: "79249507"
 |ButtonLinkOpenConsole|Попробовать|  
 |SectionHeadingRequestBody|Тело запроса|  
 |SectionHeadingRequestParameters|Параметры запроса|  
-|SectionHeadingRequestUrl|Request URL (URL-адрес запроса)|  
+|SectionHeadingRequestUrl|URL-адрес запроса|  
 |SectionHeadingResponse|Ответ|  
-|SectionHeadingRequestHeaders|Заголовки запроса|  
-|FormLabelSubtextOptional|необязательно|  
+|SectionHeadingRequestHeaders|Заголовки запросов|  
+|FormLabelSubtextOptional|необязательный|  
 |SectionHeadingCodeSamples|Примеры кода|  
-|TextblockOpenidConnectHeaderDescription|Маркер OpenID Connect Connect ID получен от <i\> {0}</i\>. Поддерживаемые типы предоставления: <i\>{1}</i\>.|  
+|TextblockOpenidConnectHeaderDescription|Маркер OpenID Connect Connect ID получен от <i \> {0}</i \> . Поддерживаемые типы предоставления: <i\>{1}</i\>.|  
   
 ###  <a name="errorpagestrings"></a><a name="ErrorPageStrings"></a>еррорпажестрингс  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |LinkLabelBack|Назад|  
 |LinkLabelHomePage|домашняя страница|  
@@ -351,7 +350,7 @@ ms.locfileid: "79249507"
   
 ###  <a name="issuesstrings"></a><a name="IssuesStrings"></a>иссуесстрингс  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |WebIssuesIndexTitle|Проблемы|  
 |WebIssuesNoActiveSubscriptions|У вас нет активных подписок. Чтобы сообщить о проблеме, необходимо подписаться на продукт.|  
@@ -362,7 +361,7 @@ ms.locfileid: "79249507"
   
 ###  <a name="notfoundstrings"></a><a name="NotFoundStrings"></a>нотфаундстрингс  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |LinkLabelHomePage|домашняя страница|  
 |LinkLabelSendUsEmail|Отправьте нам сообщение электронной почты.|  
@@ -377,11 +376,11 @@ ms.locfileid: "79249507"
   
 ###  <a name="productdetailsstrings"></a><a name="ProductDetailsStrings"></a>продуктдетаилсстрингс  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |WebProductsAgreement|Подписавшись на продукт `<a data-toggle='modal' href='#legal-terms'\>Terms of Use</a\>`, я принимаю {0}.|  
 |WebProductsLegalTermsLink|Условия использования|  
-|WebProductsSubscribeButton|Подписаться|  
+|WebProductsSubscribeButton|Subscribe|  
 |WebProductsUsageLimitsHeader|Ограничения использования|  
 |WebProductsYouAreNotSubscribed|Вы подписаны на продукт.|  
 |WebProductsYouRequestedSubscription|Вы запросили подписку на этот продукт.|  
@@ -399,13 +398,13 @@ ms.locfileid: "79249507"
   
 ###  <a name="productsstrings"></a><a name="ProductsStrings"></a>продуктсстрингс  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |PageTitleProducts|Продукты|  
   
 ###  <a name="providerinfostrings"></a><a name="ProviderInfoStrings"></a>провидеринфострингс  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |TextboxExternalIdentitiesDisabled|В данный момент вход отключен администратором.|  
 |TextboxExternalIdentitiesSigninInvitation|Вход можно выполнить с помощью|  
@@ -413,7 +412,7 @@ ms.locfileid: "79249507"
   
 ###  <a name="signinresources"></a><a name="SigninResources"></a>сигнинресаурцес  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |PrincipalNotFound|Субъект не найден или недопустимая подпись.|  
 |ErrorSsoAuthenticationFailed|Сбой проверки подлинности SSO.|  
@@ -432,8 +431,8 @@ ms.locfileid: "79249507"
 |WebAuthenticationEmailHasBeenRevertedNotice|Ваш адрес электронной почты уже существует. Запрос отменен.|  
 |ValidationErrorEmailAlreadyExists|Адрес электронной почты уже существует.|  
 |ValidationErrorEmailInvalid|Недопустимый адрес электронной почты.|  
-|TextboxLabelEmail|Электронная почта|  
-|ValidationErrorEmailRequired|Требуется указать адрес электронной почты.|  
+|TextboxLabelEmail|Адрес электронной почты|  
+|ValidationErrorEmailRequired|Требуется адрес электронной почты.|  
 |WebAuthenticationErrorNoticeHeader|Ошибка|  
 |WebAuthenticationFieldLengthErrorMessage|Максимальная длина {0} — {1}.|  
 |TextboxLabelEmailFirstName|Имя|  
@@ -509,19 +508,19 @@ ms.locfileid: "79249507"
   
 ###  <a name="signinstrings"></a><a name="SigninStrings"></a>сигнинстрингс  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |WebAuthenticationForgotPassword|Забыли пароль?|  
 |WebAuthenticationIfAdministrator|Если вы являетесь администратором, войдите `<a href="{0}"\>here</a\>`.|  
 |WebAuthenticationNotAMember|Еще не являетесь участником? `<a href="/signup"\>Sign up now</a\>`|  
 |WebAuthenticationRemember|Запомнить меня на этом компьютере|  
 |WebAuthenticationSigininWithPassword|Войдите с использованием имени пользователя и пароля.|  
-|WebAuthenticationSigninTitle|Вход|  
+|WebAuthenticationSigninTitle|Войти|  
 |WebAuthenticationSignUpNow|Зарегистрируйтесь сейчас|  
   
 ###  <a name="signupstrings"></a><a name="SignupStrings"></a>сигнупстрингс  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |PageTitleSignup|Регистрация|  
 |WebAuthenticationAlreadyAMember|Уже являетесь участником?|  
@@ -531,7 +530,7 @@ ms.locfileid: "79249507"
   
 ###  <a name="subscriptionliststrings"></a><a name="SubscriptionListStrings"></a>субскриптионлистстрингс  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |SubscriptionCancelConfirmation|Вы действительно хотите отменить эту подписку?|  
 |SubscriptionRenewConfirmation|Вы действительно хотите обновить эту подписку?|  
@@ -543,8 +542,8 @@ ms.locfileid: "79249507"
 |ButtonLabelRenewSubscription|Возобновление|  
 |WebDevelopersSubscriptionRequested|Дата запроса: {0}.|  
 |WebDevelopersSubscriptionRequestedState|Запрошено|  
-|WebDevelopersSubscriptionTableNameHeader|Имя|  
-|WebDevelopersSubscriptionTableStateHeader|Состояние|  
+|WebDevelopersSubscriptionTableNameHeader|name|  
+|WebDevelopersSubscriptionTableStateHeader|Область|  
 |WebDevelopersUsageStatisticsLink|Аналитические отчеты|  
 |WebDevelopersYourSubscriptions|Ваши подписки|  
 |SubscriptionPropertyLabelRequestedDate|Дата запроса|  
@@ -554,7 +553,7 @@ ms.locfileid: "79249507"
   
 ###  <a name="subscriptionstrings"></a><a name="SubscriptionStrings"></a>субскриптионстрингс  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |SectionHeadingCloseAccount|Хотите закрыть учетную запись?|  
 |PageTitleDeveloperProfile|Профиль|  
@@ -565,19 +564,19 @@ ms.locfileid: "79249507"
   
 ###  <a name="updateprofilestrings"></a><a name="UpdateProfileStrings"></a>упдатепрофилестрингс  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |ButtonLabelUpdateProfile|Обновить профиль|  
 |PageTitleUpdateProfile|Обновить сведения об учетной записи|  
   
 ###  <a name="userprofile"></a><a name="UserProfile"></a>Филе  
   
-|Имя|Text|  
+|name|Text|  
 |----------|----------|  
 |ButtonLabelChangeAccountInfo|Изменение сведений об учетной записи|  
 |ButtonLabelChangePassword|Изменить пароль|  
 |ButtonLabelCloseAccount|Закрыть учетную запись|  
-|TextboxLabelEmail|Электронная почта|  
+|TextboxLabelEmail|Адрес электронной почты|  
 |TextboxLabelEmailFirstName|Имя|  
 |TextboxLabelEmailLastName|Фамилия|  
 |TextboxLabelNotificationsSenderEmail|Электронная почта отправителя уведомлений|  

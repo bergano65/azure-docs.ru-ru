@@ -13,11 +13,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: ff608cac9786ebc0d3908ce4d88fb501e621be6c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79244021"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84690189"
 ---
 # <a name="azure-api-management-page-controls"></a>Элементы управления страницей в службе управления API Azure
 Служба управления API Azure предоставляет следующие элементы управления страницей для использования в шаблонах портала разработчика.  
@@ -41,7 +40,7 @@ ms.locfileid: "79244021"
 -   [App-действия](#app-actions)  
 -   [Базовый — вход](#basic-signin)  
 -   [Управление разбиением на страницы](#paging-control)  
--   [поставщик](#providers)  
+-   [providers](#providers)  
 -   [Поиск — контроль](#search-control)  
 -   [sign-up](#sign-up)  
 -   [кнопка подписки](#subscribe-button)  
@@ -60,7 +59,7 @@ ms.locfileid: "79244021"
   
 ### <a name="parameters"></a>Параметры  
   
-|Параметр|Описание|  
+|Параметр|Описание:|  
 |---------------|-----------------|  
 |appId|Идентификатор приложения.|  
   
@@ -81,12 +80,12 @@ ms.locfileid: "79244021"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Отсутствует.  
+ Нет.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `basic-signin` можно использовать в следующих шаблонах портала разработчика:  
   
--   [Войти](api-management-page-templates.md#SignIn)  
+-   [Выполните вход.](api-management-page-templates.md#SignIn)  
   
 ##  <a name="paging-control"></a><a name="paging-control"></a> paging-control  
  Элемент `paging-control` предоставляет функцию разбиения по страницам, которую можно использовать на страницах со списками на портале разработчика.  
@@ -100,7 +99,7 @@ ms.locfileid: "79244021"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Отсутствует.  
+ Нет.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `paging-control` можно использовать в следующих шаблонах портала разработчика:  
@@ -123,12 +122,12 @@ ms.locfileid: "79244021"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Отсутствует.  
+ Нет.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `providers` можно использовать в следующих шаблонах портала разработчика:  
   
--   [Войти](api-management-page-templates.md#SignIn)  
+-   [Выполните вход.](api-management-page-templates.md#SignIn)  
   
 ##  <a name="search-control"></a><a name="search-control"></a> search-control  
  Элемент `search-control` предоставляет функцию поиска, которую можно использовать на страницах со списками на портале разработчика.  
@@ -142,7 +141,7 @@ ms.locfileid: "79244021"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Отсутствует.  
+ Нет.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `search-control` можно использовать в следующих шаблонах портала разработчика:  
@@ -163,7 +162,7 @@ ms.locfileid: "79244021"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Отсутствует.  
+ Нет.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `sign-up` можно использовать в следующих шаблонах портала разработчика:  
@@ -182,12 +181,12 @@ ms.locfileid: "79244021"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Отсутствует.  
+ Нет.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `subscribe-button` можно использовать в следующих шаблонах портала разработчика:  
   
--   [Продукта](api-management-product-templates.md#Product)  
+-   [Продукт](api-management-product-templates.md#Product)  
   
 ##  <a name="subscription-cancel"></a><a name="subscription-cancel"></a> subscription-cancel  
  Элемент управления `subscription-cancel` предоставляет интерфейс для отмены подписки на продукт на странице профиля пользователя на портале разработчика.  
@@ -212,7 +211,7 @@ ms.locfileid: "79244021"
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `subscription-cancel` можно использовать в следующих шаблонах портала разработчика:  
   
--   [Продукта](api-management-product-templates.md#Product)
+-   [Продукт](api-management-product-templates.md#Product)
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

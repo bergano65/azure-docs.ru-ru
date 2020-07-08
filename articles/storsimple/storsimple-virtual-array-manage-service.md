@@ -15,11 +15,10 @@ ms.workload: na
 ms.date: 07/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 2ff987448e3900c2a533789b2f38fd3ced71ce72
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79267460"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84698943"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-virtual-array"></a>Развертывание службы диспетчера устройств StorSimple для виртуального массива StorSimple
 
@@ -73,7 +72,7 @@ ms.locfileid: "79267460"
 1. Перейдите ко **всем ресурсам**. Найдите службу диспетчера устройств StorSimple. Выберите службу, которую требуется удалить.
    
     ![Выбор службы, которую необходимо удалить](./media/storsimple-virtual-array-manage-service/deleteservice2.png)
-2. Перейдите к панели мониторинга службы, чтобы убедиться в отсутствии устройств, подключенных к службе. Если в этой службе не зарегистрированы устройства, вы также увидите заглавное сообщение, указывающее, что они отсутствуют. Щелкните **Удалить**.
+2. Перейдите к панели мониторинга службы, чтобы убедиться в отсутствии устройств, подключенных к службе. Если в этой службе не зарегистрированы устройства, вы также увидите заглавное сообщение, указывающее, что они отсутствуют. Щелкните **Delete** (Удалить).
    
     ![Удаление службы](./media/storsimple-virtual-array-manage-service/deleteservice3.png)
 

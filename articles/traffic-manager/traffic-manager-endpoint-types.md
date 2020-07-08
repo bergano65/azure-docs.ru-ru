@@ -4,7 +4,6 @@ description: В этой статье описываются разные тип
 services: traffic-manager
 documentationcenter: ''
 author: rohinkoul
-manager: twooley
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
@@ -12,12 +11,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/29/2017
 ms.author: rohink
-ms.openlocfilehash: 3d8f899a7899243129d31c2620a51dc764a8e917
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: cd5c6968425c64bd670e56bbe7ae016c59662169
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79250937"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84698671"
 ---
 # <a name="traffic-manager-endpoints"></a>Конечные точки диспетчера трафика
 
@@ -91,7 +89,7 @@ PublicIPAddress — это ресурсы Azure Resource Manager. Они отс
 
 Если все конечные точки в профиле отключены или отключен сам профиль, диспетчер трафика в ответ на новый запрос DNS отправляет ответ NXDOMAIN.
 
-## <a name="faqs"></a>Частые вопросы
+## <a name="faqs"></a>Часто задаваемые вопросы
 
 * [Можно ли использовать в диспетчере трафика конечные точки из нескольких подписок?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-with-endpoints-from-multiple-subscriptions)
 
