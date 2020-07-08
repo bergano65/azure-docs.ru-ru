@@ -3,12 +3,12 @@ title: Обработка и обнаружение ошибок в пакетн
 description: Получите представление об обработке ошибок в рабочих процессах пакетной службы с точки зрения разработчика.
 ms.topic: article
 ms.date: 05/15/2020
-ms.openlocfilehash: 07b9d43ea9bdf21fe3188c4481e6dd0c86374607
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
-ms.translationtype: HT
+ms.openlocfilehash: 3bd460598dae08fa18415e1c9865249f3ca4c9c2
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83790831"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85964283"
 ---
 # <a name="error-handling-and-detection-in-azure-batch"></a>Обработка и обнаружение ошибок в пакетной службе Azure
 
@@ -23,13 +23,13 @@ ms.locfileid: "83790831"
 - Ошибки, связанные с регулированием полосы пропускания или количества запросов, например HTTP-ответы с кодом состояния 429 или 503 и заголовком Retry-After.
 - Ошибки с кодом 4xx, например AlreadyExists и InvalidOperation. Это означает, что текущее состояние ресурса не позволяет осуществить переход между состояниями.
 
-Подробные сведения о конкретных кодах ошибок, включая коды ошибок REST API, пакетной службы, задач или их планирования см. в разделе [Коды состояний и ошибок пакетной службы](https://docs.microsoft.com/rest/api/batchservice/batch-status-and-error-codes).
+Подробные сведения о конкретных кодах ошибок, включая коды ошибок REST API, пакетной службы, задач или их планирования см. в разделе [Коды состояний и ошибок пакетной службы](/rest/api/batchservice/batch-status-and-error-codes).
 
 ## <a name="application-failures"></a>Ошибки приложений
 
 Во время выполнения приложение может создавать диагностические данные, которые помогут устранить неполадки. Как упоминалось в разделе [Файлы и каталоги](files-and-directories.md), пакетная служба записывает содержимое стандартных потоков вывода и ошибок в файлы `stdout.txt` и `stderr.txt` соответственно, расположенные в каталоге задач на вычислительном узле.
 
-Чтобы получить эти файлы, можно использовать портал Azure или один из пакетов SDK пакетной службы. Например, вы можете получить эти и другие файлы для устранения неполадок, используя методы [ComputeNode.GetNodeFile](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.computenode) и [CloudTask.GetNodeFile](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudtask) библиотеки .NET для пакетной службы.
+Чтобы получить эти файлы, можно использовать портал Azure или один из пакетов SDK пакетной службы. Например, вы можете получить эти и другие файлы для устранения неполадок, используя методы [ComputeNode.GetNodeFile](/dotnet/api/microsoft.azure.batch.computenode) и [CloudTask.GetNodeFile](/dotnet/api/microsoft.azure.batch.cloudtask) библиотеки .NET для пакетной службы.
 
 ## <a name="task-errors"></a>Ошибки задач
 
@@ -73,10 +73,10 @@ ms.locfileid: "83790831"
 
 ## <a name="connect-to-compute-nodes"></a>Подключение к вычислительным узлам
 
-Дополнительные возможности для отладки и устранения неполадок можно получить, выполнив вход на вычислительный узел удаленно. Вы можете использовать портал Azure, чтобы скачать RDP-файл для узлов Windows и получить сведения о подключении SSH для узлов Linux. Это также можно сделать с помощью API пакетной службы, например с помощью [Batch .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.computenode) или [Batch Python](batch-linux-nodes.md#connect-to-linux-nodes-using-ssh).
+Дополнительные возможности для отладки и устранения неполадок можно получить, выполнив вход на вычислительный узел удаленно. Вы можете использовать портал Azure, чтобы скачать RDP-файл для узлов Windows и получить сведения о подключении SSH для узлов Linux. Это также можно сделать с помощью API пакетной службы, например с помощью [Batch .NET](/dotnet/api/microsoft.azure.batch.computenode) или [Batch Python](batch-linux-nodes.md#connect-to-linux-nodes-using-ssh).
 
 > [!IMPORTANT]
-> Чтобы подключиться к узлу по протоколу RDP или SSH, на узле нужно создать пользователя. Для этого можно использовать портал Azure, [добавить учетную запись пользователя на узел](https://docs.microsoft.com/rest/api/batchservice/computenode/adduser) с помощью REST API пакетной службы, вызвать метод [ComputeNode.CreateComputeNodeUser](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.computenode) в .NET API пакетной службы или метод [add_user](batch-linux-nodes.md#connect-to-linux-nodes-using-ssh) в модуле Python пакетной службы.
+> Чтобы подключиться к узлу по протоколу RDP или SSH, на узле нужно создать пользователя. Для этого можно использовать портал Azure, [добавить учетную запись пользователя на узел](/rest/api/batchservice/computenode/adduser) с помощью REST API пакетной службы, вызвать метод [ComputeNode.CreateComputeNodeUser](/dotnet/api/microsoft.azure.batch.computenode) в .NET API пакетной службы или метод [add_user](batch-linux-nodes.md#connect-to-linux-nodes-using-ssh) в модуле Python пакетной службы.
 
 Если необходимо ограничить или отключить доступ к вычислительным узлам по RDP или SSH, см. руководство по [настройке или отключению удаленного доступа к вычислительным узлам в пуле пакетной службы Azure](pool-endpoint-configuration.md).
 
@@ -84,21 +84,21 @@ ms.locfileid: "83790831"
 
 В ситуациях, когда при выполнении некоторых задач происходит сбой, пакетное клиентское приложение или служба может проверить метаданные неудачных задач для определения узла, который плохо работает. Каждому узлу в пуле присваивается уникальный идентификатор, а сведения об узле, на котором выполняется задача, включены в метаданные задачи. Определив проблемный узел, вы можете предпринять некоторые действия:
 
-- **Перезапустить узел** ([REST](https://docs.microsoft.com/rest/api/batchservice/computenode/reboot) | [.NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.computenode.reboot))
+- **Перезапустить узел** ([REST](/rest/api/batchservice/computenode/reboot) | [.NET](/dotnet/api/microsoft.azure.batch.computenode.reboot))
 
     В некоторых случаях перезапуск узла может устранить некоторые скрытые проблемы, например задержки и сбои при выполнении процессов. Если пул использует начальную задачу или задание использует задачу подготовки задания, они будут выполнены при перезапуске узла.
-- **Пересоздать образ узла** ([REST](https://docs.microsoft.com/rest/api/batchservice/computenode/reimage) | [.NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.computenode.reimage))
+- **Пересоздать образ узла** ([REST](/rest/api/batchservice/computenode/reimage) | [.NET](/dotnet/api/microsoft.azure.batch.computenode.reimage))
 
     Это обеспечит переустановку операционной системы на узле. Как и в случае перезагрузки узла, задачи запуска и задачи подготовки заданий будут повторно выполнены после повторного создания образа узла.
-- **Удалить узел из пула** ([REST](https://docs.microsoft.com/rest/api/batchservice/pool/removenodes) | [.NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.pooloperations))
+- **Удалить узел из пула** ([REST](/rest/api/batchservice/pool/removenodes) | [.NET](/dotnet/api/microsoft.azure.batch.pooloperations))
 
     Иногда бывает необходимо полностью удалить узел из пула.
-- **Отключить планирование задач на узле** ([REST](https://docs.microsoft.com/rest/api/batchservice/computenode/disablescheduling) | [.NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.computenode.disablescheduling))
+- **Отключить планирование задач на узле** ([REST](/rest/api/batchservice/computenode/disablescheduling) | [.NET](/dotnet/api/microsoft.azure.batch.computenode.disablescheduling))
 
-    Это эффективно переключит узел в "автономный режим", чтобы ему не назначались дальнейшие задачи, но сохранялась возможность продолжать выполнять текущие задачи, оставаясь в пуле. Благодаря этому вы сможете продолжить поиск причины сбоев без потери данных невыполненной задачи и без сбоев при выполнении дополнительных задач на узле. Например, можно отключить планирование задач на узле, а затем выполнить удаленный вход на узел для анализа журналов событий или устранения других неполадок. Проанализировав проблемы, вы сможете снова подключить узел к сети, включив планирование задач ([REST](https://docs.microsoft.com/rest/api/batchservice/computenode/enablescheduling) | [.NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.computenode.enablescheduling)) или выполнив одно из указанных выше действий.
+    Это эффективно переключит узел в "автономный режим", чтобы ему не назначались дальнейшие задачи, но сохранялась возможность продолжать выполнять текущие задачи, оставаясь в пуле. Благодаря этому вы сможете продолжить поиск причины сбоев без потери данных невыполненной задачи и без сбоев при выполнении дополнительных задач на узле. Например, можно отключить планирование задач на узле, а затем выполнить удаленный вход на узел для анализа журналов событий или устранения других неполадок. Проанализировав проблемы, вы сможете снова подключить узел к сети, включив планирование задач ([REST](/rest/api/batchservice/computenode/enablescheduling) | [.NET](/dotnet/api/microsoft.azure.batch.computenode.enablescheduling)) или выполнив одно из указанных выше действий.
 
 > [!IMPORTANT]
-> С помощью описанных выше действий можно указать, как задачи, выполняемые в данный момент на узле, будут обрабатываться при выполнении действия. Например, при отключении планирования задач на узле с помощью клиентской библиотеки .NET для пакетной службы вы можете задать значение перечисления [DisableComputeNodeSchedulingOption](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.common.disablecomputenodeschedulingoption), чтобы указать, что нужно сделать до выполнения действия (**TaskCompletion**): **прекратить выполнение** текущих задач, **повторно поставить их в очередь** для планирования выполнения на других узлах или разрешить их завершение.
+> С помощью описанных выше действий можно указать, как задачи, выполняемые в данный момент на узле, будут обрабатываться при выполнении действия. Например, при отключении планирования задач на узле с помощью клиентской библиотеки .NET для пакетной службы вы можете задать значение перечисления [DisableComputeNodeSchedulingOption](/dotnet/api/microsoft.azure.batch.common.disablecomputenodeschedulingoption), чтобы указать, что нужно сделать до выполнения действия (**TaskCompletion**): **прекратить выполнение** текущих задач, **повторно поставить их в очередь** для планирования выполнения на других узлах или разрешить их завершение.
 
 ## <a name="retry-after-errors"></a>Повторный запуск после устранения ошибок
 
@@ -110,4 +110,4 @@ ms.locfileid: "83790831"
 
 - Узнайте, как [проверить наличие ошибок в пуле и на узле](batch-pool-node-error-checking.md).
 - Узнайте, как [проверить наличие ошибок заданий и задач](batch-job-task-error-checking.md).
-- Ознакомьтесь со списком [кодов состояний и ошибок пакетной службы](https://docs.microsoft.com/rest/api/batchservice/batch-status-and-error-codes).
+- Ознакомьтесь со списком [кодов состояний и ошибок пакетной службы](/rest/api/batchservice/batch-status-and-error-codes).

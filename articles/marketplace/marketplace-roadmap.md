@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.openlocfilehash: ae482a4c7b656a4bc84895501c49bf0a98517acc
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
-ms.translationtype: HT
+ms.openlocfilehash: 89a60016f8f4496e44c138a79a3864782791d1db
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83800643"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85963297"
 ---
 # <a name="microsoft-commercial-marketplace-resources"></a>Ресурсы для коммерческой платформы Майкрософт
 
@@ -28,9 +28,8 @@ ms.locfileid: "83800643"
 * [Аналитика коммерческой платформы в Центре партнеров](./partner-center-portal/analytics.md)
 * [Блог по Microsoft Build Marketplace](https://aka.ms/marketplacebuildblog)
 * [Блог об обновлениях Marketplace за май](https://azure.microsoft.com/blog/microsoft-commercial-marketplace-updates-may-2019/)
-* Центр партнеров: [Создание учетной записи](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) / [Управление учетной записью](https://docs.microsoft.com/azure/marketplace/partner-center-portal/manage-account) / [Миграции из CPP](https://docs.microsoft.com/azure/marketplace/partner-center-portal/account-migration-from-cpp-to-pc)
-* Центр партнеров: [Создание предложения SaaS](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-saas-offer) / [Состояние публикации](https://docs.microsoft.com/azure/marketplace/partner-center-portal/publishing-status
-) / [Обновление существующего предложения](https://docs.microsoft.com/azure/marketplace/partner-center-portal/update-existing-offer) / [Аналитика предложений](https://docs.microsoft.com/azure/marketplace/partner-center-portal/analytics)
-* [Поддержка по Marketplace в Центре партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/support)
+* Центр партнеров: [Создание учетной записи](partner-center-portal/create-account.md) / [Управление учетной записью](partner-center-portal/manage-account.md) / [Миграции из CPP](partner-center-portal/account-migration-from-cpp-to-pc.md)
+* Центр партнеров: [Создание](partner-center-portal/create-new-saas-offer.md)  /  [состояния публикации](partner-center-portal/publishing-status.md) предложения SaaS) или [Обновление существующей](partner-center-portal/update-existing-offer.md)  /  [аналитики предложения](partner-center-portal/analytics.md) предложения
+* [Поддержка по Marketplace в Центре партнеров](partner-center-portal/support.md)
 
 Мы приветствуем ваши предложения! Присоединяйтесь к обсуждениям в [сообществе партнеров Майкрософт](https://www.microsoftpartnercommunity.com/), чтобы получать последние новости о новых возможностях, программах и событиях.

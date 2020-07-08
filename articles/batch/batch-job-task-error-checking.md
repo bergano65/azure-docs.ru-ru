@@ -5,12 +5,12 @@ author: mscurrell
 ms.topic: how-to
 ms.date: 03/10/2019
 ms.author: markscu
-ms.openlocfilehash: 368b803ae3e62c0e27da9e52d9df9842037757ff
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
-ms.translationtype: HT
+ms.openlocfilehash: ece0f1473b3c453ca5506f06b7ef094533d146aa
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83726627"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85964334"
 ---
 # <a name="job-and-task-error-checking"></a>Проверка ошибок для заданий и задач
 
@@ -24,34 +24,34 @@ ms.locfileid: "83726627"
 
 При добавлении задания следует обратить внимание на следующие параметры, которые могут повлиять на возможные сбои в работе.
 
-- [Ограничения заданий](https://docs.microsoft.com/rest/api/batchservice/job/add#jobconstraints)
-  - При необходимости свойство `maxWallClockTime` может быть включено, чтобы установить максимальное время, в течение которого задание может быть активным или работающим. При превышении предела задание будет завершено, при этом изменив свойство `terminateReason` в [executionInfo](https://docs.microsoft.com/rest/api/batchservice/job/get#cloudjob).
-- [Задача подготовки задания](https://docs.microsoft.com/rest/api/batchservice/job/add#jobpreparationtask)
+- [Ограничения заданий](/rest/api/batchservice/job/add#jobconstraints)
+  - При необходимости свойство `maxWallClockTime` может быть включено, чтобы установить максимальное время, в течение которого задание может быть активным или работающим. При превышении предела задание будет завершено, при этом изменив свойство `terminateReason` в [executionInfo](/rest/api/batchservice/job/get#cloudjob).
+- [Задача подготовки задания](/rest/api/batchservice/job/add#jobpreparationtask)
   - При включении параметра задача подготовки задания будет выполняться при первом запуске задачи на узле. Задача подготовки задания может завершиться с ошибкой, что приведет к невыполнению задачи, а задание не будет завершено.
-- [Задача отключения задания](https://docs.microsoft.com/rest/api/batchservice/job/add#jobreleasetask)
+- [Задача отключения задания](/rest/api/batchservice/job/add#jobreleasetask)
   - Задачу отключения задания можно указать только в том случае, когда настроена задача подготовки задания. Когда задание завершится, задача отключения задания выполнится на каждом узле пула, где выполнялась задача подготовки задания. Задача отключения может завершиться с ошибкой, но само задание по-прежнему перейдет в состояние `completed`.
 
 ### <a name="job-properties"></a>Свойства задания
 
 Следующие свойства заданий следует проверять на наличие ошибок.
 
-- [executionInfo](https://docs.microsoft.com/rest/api/batchservice/job/get#jobexecutioninformation):
+- [executionInfo](/rest/api/batchservice/job/get#jobexecutioninformation):
   - Свойство `terminateReason` может иметь значения, указывающие, что указанное в ограничениях для задания `maxWallClockTime` было превышено и поэтому задание было завершено. Его также можно задать, чтобы указать, что задача завершилась ошибкой, если свойство `onTaskFailure` было настроено соответствующим образом.
-  - Свойство [schedulingError](https://docs.microsoft.com/rest/api/batchservice/job/get#jobschedulingerror) устанавливается при возникновении ошибки планирования.
+  - Свойство [schedulingError](/rest/api/batchservice/job/get#jobschedulingerror) устанавливается при возникновении ошибки планирования.
  
 ### <a name="job-preparation-tasks"></a>Задачи подготовки задания
 
 Если задача подготовки задания была установлена для задания, то экземпляр этой задачи будет выполнен при первом запуске задачи для данного задания на узле. Настроенная задача подготовки задания по сути является шаблоном задачи, при этом выполняется несколько экземпляров задач подготовки, вплоть до количества узлов в пуле.
 
 Следующие экземпляры задач подготовки задания следует проверять на ошибки.
-- Когда запускается задача подготовки задания, задача, которая активировала задачу подготовки задания, переходит в [состояние](https://docs.microsoft.com/rest/api/batchservice/task/get#taskstate) `preparing`; если задача подготовки задания завершается с ошибкой, то задача, вызывающая срабатывание, вернется к состоянию `active` и не будет выполняться.  
-- Все экземпляры задачи подготовки задания, которые были запущены, можно получить из задания через API [Список статуса задач подготовки и отключения](https://docs.microsoft.com/rest/api/batchservice/job/listpreparationandreleasetaskstatus). Как и в случае с любой другой задачей, [сведения о выполнении](https://docs.microsoft.com/rest/api/batchservice/job/listpreparationandreleasetaskstatus#jobpreparationandreleasetaskexecutioninformation) имеют несколько свойств, такие как `failureInfo`, `exitCode` и `result`.
+- Когда запускается задача подготовки задания, задача, которая активировала задачу подготовки задания, переходит в [состояние](/rest/api/batchservice/task/get#taskstate) `preparing`; если задача подготовки задания завершается с ошибкой, то задача, вызывающая срабатывание, вернется к состоянию `active` и не будет выполняться.  
+- Все экземпляры задачи подготовки задания, которые были запущены, можно получить из задания через API [Список статуса задач подготовки и отключения](/rest/api/batchservice/job/listpreparationandreleasetaskstatus). Как и в случае с любой другой задачей, [сведения о выполнении](/rest/api/batchservice/job/listpreparationandreleasetaskstatus#jobpreparationandreleasetaskexecutioninformation) имеют несколько свойств, такие как `failureInfo`, `exitCode` и `result`.
 - Если задача подготовки задания завершается с ошибкой, то запустившая задание задача не будет выполняться, а само задание остановится и не будет выполнена. Пул может оставаться неиспользованным при отсутствии заданий с задачами, которые можно запланировать.
 
 ### <a name="job-release-tasks"></a>Задачи отключения задания
 
 Если для задания установлена задача отключения, то, когда задание завершится, задача отключения задания выполнится на каждом узле пула, где выполнялась задача подготовки задания.  Следующие экземпляры задач остановки задания следует проверять на ошибки:
-- Все экземпляры задачи остановки задания, которые были запущены, можно получить из задания через API [Список статуса задач подготовки и отключения](https://docs.microsoft.com/rest/api/batchservice/job/listpreparationandreleasetaskstatus). Как и в случае с любой другой задачей, [сведения о выполнении](https://docs.microsoft.com/rest/api/batchservice/job/listpreparationandreleasetaskstatus#jobpreparationandreleasetaskexecutioninformation) имеют несколько свойств, такие как `failureInfo`, `exitCode` и `result`.
+- Все экземпляры задачи остановки задания, которые были запущены, можно получить из задания через API [Список статуса задач подготовки и отключения](/rest/api/batchservice/job/listpreparationandreleasetaskstatus). Как и в случае с любой другой задачей, [сведения о выполнении](/rest/api/batchservice/job/listpreparationandreleasetaskstatus#jobpreparationandreleasetaskexecutioninformation) имеют несколько свойств, такие как `failureInfo`, `exitCode` и `result`.
 - Если одна или несколько задач остановки задания завершаются с ошибкой, задание будет по-прежнему завершено и перейдет в состояние `completed`.
 
 ## <a name="tasks"></a>Задания
@@ -61,23 +61,23 @@ ms.locfileid: "83726627"
 - Командная строка задачи завершается неудачно, возвращаясь с ненулевым кодом выхода.
 - Для задачи были заданы параметры `resourceFiles`, но ошибка произошла при скачивании одного или нескольких файлов.
 - Для задачи были заданы параметры `outputFiles`, но ошибка произошла при загрузке одного или нескольких файлов.
-- Был превышен предел времени для задачи, установленный свойством `maxWallClockTime` в [ограничениях задачи](https://docs.microsoft.com/rest/api/batchservice/task/add#taskconstraints).
+- Был превышен предел времени для задачи, установленный свойством `maxWallClockTime` в [ограничениях задачи](/rest/api/batchservice/task/add#taskconstraints).
 
 Во всех представленных случаях следует проверить на ошибки (и ознакомиться с информацией об ошибках) следующие свойства.
-- Свойство [executionInfo](https://docs.microsoft.com/rest/api/batchservice/task/get#taskexecutioninformation) содержит несколько свойств, предоставляющих сведения об ошибке. Свойство [result](https://docs.microsoft.com/rest/api/batchservice/task/get#taskexecutionresult) указывает на наличие факта сбоя, а `exitCode` и `failureInfo` предоставляют более подробную информацию о данном сбое.
-- Задача всегда будет переходить в [состояние](https://docs.microsoft.com/rest/api/batchservice/task/get#taskstate) `completed` независимо от того, была ли она завершена успешно или нет.
+- Свойство [executionInfo](/rest/api/batchservice/task/get#taskexecutioninformation) содержит несколько свойств, предоставляющих сведения об ошибке. Свойство [result](/rest/api/batchservice/task/get#taskexecutionresult) указывает на наличие факта сбоя, а `exitCode` и `failureInfo` предоставляют более подробную информацию о данном сбое.
+- Задача всегда будет переходить в [состояние](/rest/api/batchservice/task/get#taskstate) `completed` независимо от того, была ли она завершена успешно или нет.
 
-Влияние сбоев задач на задание и любые зависимости задач обязательно должно быть рассмотрено.  Свойство [exitConditions](https://docs.microsoft.com/rest/api/batchservice/task/add#exitconditions) может быть установлено для задачи, чтобы настроить действия для зависимостей и для задания.
-- Для зависимостей свойство [DependencyAction](https://docs.microsoft.com/rest/api/batchservice/task/add#dependencyaction) определяет, блокируются или выполняются задачи, зависящие от невыполненной задачи.
-- Для задания свойство [JobAction](https://docs.microsoft.com/rest/api/batchservice/task/add#jobaction) определяет, будет ли неудачная задача приводить к отключению, завершению задания или сохранению заданием прежнего статуса.
+Влияние сбоев задач на задание и любые зависимости задач обязательно должно быть рассмотрено.  Свойство [exitConditions](/rest/api/batchservice/task/add#exitconditions) может быть установлено для задачи, чтобы настроить действия для зависимостей и для задания.
+- Для зависимостей свойство [DependencyAction](/rest/api/batchservice/task/add#dependencyaction) определяет, блокируются или выполняются задачи, зависящие от невыполненной задачи.
+- Для задания свойство [JobAction](/rest/api/batchservice/task/add#jobaction) определяет, будет ли неудачная задача приводить к отключению, завершению задания или сохранению заданием прежнего статуса.
 
 ### <a name="task-command-line-failures"></a>Сбои командной строки задачи
 
 При выполнении командной строки задачи выходные данные записываются в `stderr.txt` и `stdout.txt`. Кроме того, приложение может выполнять запись в относящиеся к нему файлы журналов.
 
-Если узел пула, на котором выполняется задача, все еще существует, то файлы журнала с него можно получить и просмотреть. Например, портал Azure выводит списки файлов журналов для узла или пула, а также может их просматривать. Несколько интерфейсов API также позволяют выводить и получать списки файлов задач, например [Get From Task](https://docs.microsoft.com/rest/api/batchservice/file/getfromtask).
+Если узел пула, на котором выполняется задача, все еще существует, то файлы журнала с него можно получить и просмотреть. Например, портал Azure выводит списки файлов журналов для узла или пула, а также может их просматривать. Несколько интерфейсов API также позволяют выводить и получать списки файлов задач, например [Get From Task](/rest/api/batchservice/file/getfromtask).
 
-Пулы и узлы пула часто являются временными, при этом узлы постоянно добавляются и удаляются, поэтому рекомендуется сохранять файлы журналов. [Выходные файлы задач](https://docs.microsoft.com/azure/batch/batch-task-output-files) — удобный способ сохранения файлов журнала в службе хранилища Microsoft Azure.
+Пулы и узлы пула часто являются временными, при этом узлы постоянно добавляются и удаляются, поэтому рекомендуется сохранять файлы журналов. [Выходные файлы задач](./batch-task-output-files.md) — удобный способ сохранения файлов журнала в службе хранилища Microsoft Azure.
 
 ### <a name="output-file-failures"></a>Сбои выходного файла
 В каждом сеансе передачи файла пакетная служба записывает в вычислительный узел два файла журнала: `fileuploadout.txt` и `fileuploaderr.txt`. Для получения дополнительных сведений о конкретной ошибке можно проанализировать файлы журнала. В тех случаях, когда передача файлов никогда не выполнялась, например в случае невозможности выполнения самой задачи, эти файлы журналов вообще не будут записаны.  

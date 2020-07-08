@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/04/2017
-ms.openlocfilehash: 2fd148dbb85a4fd60fe63d4fb73128bf92dea1d8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 10851754bda73fc769e613153582e491265ebb71
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77670565"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85963246"
 ---
 # <a name="collect-performance-counters-for-linux-applications-in-azure-monitor"></a>Сбор данных счетчиков производительности приложений Linux в Azure Monitor 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
@@ -34,16 +34,16 @@ ms.locfileid: "77670565"
 ### <a name="authentication-file-format"></a>Формат файла аутентификации
 Ниже описан формат файла проверки подлинности OMI MySQL
 
-    [Port]=[Bind-Address], [username], [Base64 encoded Password]
-    (Port)=(Bind-Address), (username), (Base64 encoded Password)
-    (Port)=(Bind-Address), (username), (Base64 encoded Password)
-    AutoUpdate=[true|false]
+> [Порт] = [BIND-address], [имя_пользователя], [пароль в кодировке Base64]  
+> (Порт) = (адрес привязки), (username), (пароль в кодировке Base64)  
+> (Порт) = (адрес привязки), (username), (пароль в кодировке Base64)  
+> Автообновление = [true | false]  
 
 Параметры файла проверки подлинности описаны в следующей таблице.
 
-| Свойство | Описание |
+| Свойство. | Описание: |
 |:--|:--|
-| Порт | Представляет текущий порт, который прослушивает экземпляр MySQL. Порт 0 означает, что для экземпляра по умолчанию используются следующие свойства. |
+| Port | Представляет текущий порт, который прослушивает экземпляр MySQL. Порт 0 означает, что для экземпляра по умолчанию используются следующие свойства. |
 | адрес привязки;| Текущий адрес привязки MySQL. |
 | username| Пользователь MySQL, который используется мониторинга экземпляра сервера MySQL. |
 | пароль в кодировке Base64.| Пароль пользователя, который используется для мониторинга MySQL, в кодировке Base64. |
@@ -54,7 +54,7 @@ ms.locfileid: "77670565"
 
 В следующей таблице приведены примеры параметров экземпляра 
 
-| Описание | Файл |
+| Описание: | Файл |
 |:--|:--|
 | Экземпляр по умолчанию и экземпляр с портом 3308. | `0=127.0.0.1, myuser, cnBwdA==`<br>`3308=, ,`<br>`AutoUpdate=true` |
 | Экземпляр по умолчанию и экземпляр с портом 3308 и другими именем пользователя и паролем. | `0=127.0.0.1, myuser, cnBwdA==`<br>`3308=127.0.1.1, myuser2,cGluaGVhZA==`<br>`AutoUpdate=true` |
@@ -63,33 +63,36 @@ ms.locfileid: "77670565"
 ### <a name="mysql-omi-authentication-file-program"></a>Программа для изменения файла проверки подлинности OMI MySQL
 В состав поставщика OMI MySQL входит программа для изменения файла проверки подлинности OMI MySQL. Программа для изменения файла проверки подлинности находится в следующем каталоге.
 
-    /opt/microsoft/mysql-cimprov/bin/mycimprovauth
+`/opt/microsoft/mysql-cimprov/bin/mycimprovauth`
 
 > [!NOTE]
 > Файл учетных данных должен быть доступен для чтения для учетной записи omsagent. Рекомендуется выполнить команду mycimprovauth, используя учетную запись omsgent.
 
 В следующей таблице приведены сведения о синтаксисе mycimprovauth.
 
-| Операция | Пример | Описание
+| Операция | Пример | Описание:
 |:--|:--|:--|
 | autoupdate *false or true* | mycimprovauth autoupdate false | Устанавливает, следует ли автоматически обновлять файл проверки подлинности при перезапуске или обновлении. |
 | default *bind-address username password* | mycimprovauth default 127.0.0.1 root pwd | Задает экземпляр по умолчанию в файле проверки подлинности OMI MySQL.<br>Пароль в поле пароля следует вводить в формате обычного текста, так как в файле проверки подлинности OMI MySQL он будет зашифрован в кодировке Base 64. |
 | delete *default or port_num* | mycimprovauth 3308 | Удаляет указанный экземпляр по умолчанию или удаляет экземпляр по номеру порта. |
-| справка | mycimprov help | Выводит список используемых команд. |
+| help | mycimprov help | Выводит список используемых команд. |
 | print | mycimprov print | Выводит содержимое файла проверки подлинности OMI MySQL в удобном формате. |
 | update port_num *bind-address username password* | mycimprov update 3307 127.0.0.1 root pwd | Обновляет указанный экземпляр или добавляет экземпляр, если его не существует. |
 
 С помощью команд в следующем примере определяется учетная запись пользователя по умолчанию для сервера MySQL на узле localhost.  Пароль в поле пароля следует вводить в формате обычного текста, так как в файле проверки подлинности OMI MySQL он будет зашифрован в кодировке Base 64.
 
-    sudo su omsagent -c '/opt/microsoft/mysql-cimprov/bin/mycimprovauth default 127.0.0.1 <username> <password>'
-    sudo /opt/omi/bin/service_control restart
+```console
+sudo su omsagent -c '/opt/microsoft/mysql-cimprov/bin/mycimprovauth default 127.0.0.1 <username> <password>'
+sudo /opt/omi/bin/service_control restart
+```
 
 ### <a name="database-permissions-required-for-mysql-performance-counters"></a>Разрешения базы данных, необходимые для счетчиков производительности MySQL
 Для сбора данных о производительности сервера MySQL у пользователя MySQL должен быть доступ к следующим запросам. 
 
-    SHOW GLOBAL STATUS;
-    SHOW GLOBAL VARIABLES:
-
+```sql
+SHOW GLOBAL STATUS;
+SHOW GLOBAL VARIABLES:
+```
 
 Пользователю MySQL также необходим доступ с разрешением SELECT для следующих таблиц по умолчанию.
 
@@ -98,9 +101,10 @@ ms.locfileid: "77670565"
 
 Эти привилегии можно предоставить, выполнив следующие команды:
 
-    GRANT SELECT ON information_schema.* TO ‘monuser’@’localhost’;
-    GRANT SELECT ON mysql.* TO ‘monuser’@’localhost’;
-
+```sql
+GRANT SELECT ON information_schema.* TO ‘monuser’@’localhost’;
+GRANT SELECT ON mysql.* TO ‘monuser’@’localhost’;
+```
 
 > [!NOTE]
 > Чтобы предоставить разрешения пользователю мониторинга MySQL, у пользователя, предоставляющего разрешения, должна быть привилегия с параметром GRANT, а также предоставляемая привилегия.
@@ -132,12 +136,14 @@ ms.locfileid: "77670565"
 
 ## <a name="apache-http-server"></a>HTTP-сервер Apache 
 Если при установке пакета omsagent на компьютере обнаружен HTTP-сервер Apache, будет автоматически установлен поставщик мониторинга производительности для HTTP-сервера Apache. Для доступа к данным производительности этот поставщик использует модуль Apache, который необходимо загрузить на HTTP-сервер Apache. Этот модуль можно загрузить с помощью следующей команды:
-```
+
+```console
 sudo /opt/microsoft/apache-cimprov/bin/apache_config.sh -c
 ```
 
 Чтобы выгрузить модуль мониторинга Apache, выполните следующую команду:
-```
+
+```console
 sudo /opt/microsoft/apache-cimprov/bin/apache_config.sh -u
 ```
 

@@ -7,16 +7,16 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/16/2020
 ms.author: dsindona
-ms.openlocfilehash: 58bfe5cdc58c41c2ead82ac2d280629e4fec9bcd
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
-ms.translationtype: HT
+ms.openlocfilehash: 633656af72790c7dfebeee567713875ce0d609b4
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83798146"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85964215"
 ---
 # <a name="cloud-solution-provider-program"></a>Программа "Поставщик облачных решений"
 
-В этой статье описано, как настроить предложение, чтобы оно стало доступным в рамках программы "Поставщик облачных решений" (CSP). Кроме возможности публиковать предложения через [онлайн-магазины коммерческой платформы](https://docs.microsoft.com/azure/marketplace/comparing-appsource-azure-marketplace), вы можете продавать эти предложения в рамках программы CSP миллионам квалифицированных клиентов Майкрософт, которые работают с этой программой.
+В этой статье описано, как настроить предложение, чтобы оно стало доступным в рамках программы "Поставщик облачных решений" (CSP). Кроме возможности публиковать предложения через [онлайн-магазины коммерческой платформы](comparing-appsource-azure-marketplace.md), вы можете продавать эти предложения в рамках программы CSP миллионам квалифицированных клиентов Майкрософт, которые работают с этой программой.
 
 Вы можете настроить доступность новых или уже существующих предложений в рамках программы CSP на основе согласия. Так партнеры CSP смогут продавать ваши продукты и создавать пакетные решения для клиентов.
 
@@ -191,7 +191,7 @@ ms.locfileid: "83798146"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. [руководство по публикации в Azure Marketplace и AppSource для издателя](https://docs.microsoft.com/azure/marketplace/marketplace-publishers-guide).
+См. [руководство по публикации в Azure Marketplace и AppSource для издателя](marketplace-publishers-guide.md).
 
 Чтобы узнать больше о службах GTM для marketplace, см. статью [Рекомендации по маркетингу](https://partner.microsoft.com/reach-customers/gtm).
 

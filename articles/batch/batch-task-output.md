@@ -4,12 +4,12 @@ description: Дополнительные сведения о различных
 ms.topic: how-to
 ms.date: 11/14/2018
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 492de237acdf2d6d42f27638bac3adc0f6549828
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
-ms.translationtype: HT
+ms.openlocfilehash: 4ebe0b6d57225eff9f3f1251d5e491c95e9b7ffc
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83726304"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85965116"
 ---
 # <a name="persist-job-and-task-output"></a>Сохранение пакетных заданий и выходных данных задач
 
@@ -35,7 +35,7 @@ ms.locfileid: "83726304"
 
 ### <a name="use-the-batch-service-api"></a>Использование API пакетной службы
 
-Пакетная служба поддерживает указание выходных файлов в службе хранилища Azure для данных задачи при [добавлении отдельной задачи](https://docs.microsoft.com/rest/api/batchservice/add-a-task-to-a-job) или [их коллекции](https://docs.microsoft.com/rest/api/batchservice/add-a-collection-of-tasks-to-a-job) в задание.
+Пакетная служба поддерживает указание выходных файлов в службе хранилища Azure для данных задачи при [добавлении отдельной задачи](/rest/api/batchservice/add-a-task-to-a-job) или [их коллекции](/rest/api/batchservice/add-a-collection-of-tasks-to-a-job) в задание.
 
 Дополнительные сведения о сохранении выходных данных задач с помощью API пакетной службы см. в разделе [Сохранение данных для задач в службе хранилища Azure с помощью API пакетной службы](batch-task-output-files.md).
 

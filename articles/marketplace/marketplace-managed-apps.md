@@ -7,12 +7,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/22/2020
 ms.author: dsindona
-ms.openlocfilehash: 5bd89e406c3067585595479dc1d8351e9ea7eea8
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: a4b788749e6178c49010b153fb5caae35b79abf9
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82856116"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85963586"
 ---
 # <a name="publishing-guide-for-azure-managed-applications"></a>Рекомендации по публикации для управляемых приложений Azure
 
@@ -30,11 +30,11 @@ ms.locfileid: "82856116"
 
 ## <a name="managed-application-offer-requirements"></a>Требования к предложению для управляемого приложения
 
-|Requirements (Требования) |Подробности  |
+|Требования |Сведения  |
 |---------|---------|
 |Подписка Azure | Управляемые приложения должны быть развернуты в подписке клиента, но ими может управлять третья сторона. |
 |Выставление счетов и ценообразование    |  Ресурсы предоставляются в подписке Azure клиента. Виртуальные машины, использующие модель оплаты по мере использования, взаимодействует с клиентом через корпорацию Майкрософт и оплачиваются через подписку Azure клиента. <br><br> Для виртуальных машин с собственной лицензией Корпорация Майкрософт выставляет счета за все ресурсы инфраструктуры, которые были включены в подписку клиента, но вы оплачиваете лицензии на программное обеспечение с клиентом напрямую.        |
-|Виртуальный жесткий диск, совместимый с Azure (VHD)    |   Виртуальные машины должны быть созданы на платформе Windows или Linux.<br><br>Дополнительные сведения о создании виртуального жесткого диска Linux см. в статье [Дистрибутивы Linux, рекомендованные для использования в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros).<br><br>Дополнительные сведения о создании виртуального жесткого диска Windows см. в разделе [Создание предложения приложения Azure](./partner-center-portal/create-new-azure-apps-offer.md). |
+|Виртуальный жесткий диск, совместимый с Azure (VHD)    |   Виртуальные машины должны быть созданы на платформе Windows или Linux.<br><br>Дополнительные сведения о создании виртуального жесткого диска Linux см. в статье [Дистрибутивы Linux, рекомендованные для использования в Azure](../virtual-machines/linux/endorsed-distros.md).<br><br>Дополнительные сведения о создании виртуального жесткого диска Windows см. в разделе [Создание предложения приложения Azure](./partner-center-portal/create-new-azure-apps-offer.md). |
 
 ---
 
@@ -44,11 +44,11 @@ ms.locfileid: "82856116"
 > [!Note]
 > Теперь вы можете получить доступ к партнерским каналам поставщика облачных решений (CSP). Дополнительные сведения о маркетинге вашего предложения с помощью партнерских каналов Microsoft CSP см. в статье [поставщики облачных решений](./cloud-solution-providers.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы еще не сделали этого, Узнайте, как [расширить свой облачный бизнес с помощью Azure Marketplace](https://azuremarketplace.microsoft.com/sell).
+Если вы еще не сделали этого, ознакомьтесь со статьей [Расширение облачного бизнеса с помощью Azure Marketplace](https://azuremarketplace.microsoft.com/sell).
 
-Чтобы зарегистрироваться и начать работу в центре партнеров, выполните следующие действия.
+Чтобы зарегистрироваться и начать работу в Центре партнеров, выполните следующие действия.
 
-- [Войдите в центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) , чтобы создать или завершить свое предложение.
+- [Войдите в Центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership), чтобы создать или завершить свое предложение.
 - Дополнительные сведения см. [в разделе Создание предложения приложения Azure](./partner-center-portal/create-new-azure-apps-offer.md) .

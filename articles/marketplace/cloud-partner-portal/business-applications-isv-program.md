@@ -1,5 +1,5 @@
 ---
-title: Microsoft Business Applications независимый поставщик программного обеспечения (ISV) подключение программы по подключению
+title: Руководство по адаптации независимого поставщика программного обеспечения (ISV) Microsoft Business Applications
 description: Вот как присоединиться к программе Business Applications ISV Connect.
 author: qianw211
 ms.service: marketplace
@@ -7,14 +7,14 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 7/12/2019
 ms.author: dsindona
-ms.openlocfilehash: f7fd3f43c7faddb5481411dc9c4c94864b6dc0b1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1f312fad8e4cbdbfae6bd17f293f65fc3bb637a3
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80288977"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85964895"
 ---
-# <a name="microsoft-business-applications-independent-software-vendor-isv-connect-program-onboarding-guide"></a>Microsoft Business Applications независимый поставщик программного обеспечения (ISV) подключение программы по подключению
+# <a name="microsoft-business-applications-independent-software-vendor-isv-connect-program-onboarding-guide"></a>Руководство по адаптации независимого поставщика программного обеспечения (ISV) Microsoft Business Applications
 
 [Программа Business Applications Connect ISV](https://partner.microsoft.com/solutions/business-applications/isv-overview) предназначена для ускорения роста и общего успеха независимых поставщиков программного обеспечения (ISV), создающих современные, облачные, бизнес-решения с *участием клиента Dynamics 365 и PowerApps* ("предложения Dynamics CE") или *Dynamics 365 Финансы и операции* ("предложения Dynamics Ops"). Вот как они должны быть частью.
 
@@ -43,7 +43,7 @@ ms.locfileid: "80288977"
 1. Войдите на страницу **профиля издателя** в [портал Cloud Partner](https://cloudpartner.azure.com/).
 2. Если отображается баннер, показывающий, что параметры учетной записи были перенесены в центр партнеров, перейдите к следующему разделу. В противном случае выберите баннер, предлагающий активировать учетную запись центра партнеров.
 
-Дополнительные сведения см. в статье [Миграция учетных записей из портал Cloud Partner в центр партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/account-migration-from-cpp-to-pc).
+Дополнительные сведения см. в статье [Миграция учетных записей из портал Cloud Partner в центр партнеров](../partner-center-portal/account-migration-from-cpp-to-pc.md).
 
 ## <a name="accept-the-business-applications-isv-program-addendum"></a>Примите условия для Business Applications программ ISV
 
@@ -88,7 +88,7 @@ ms.locfileid: "80288977"
 Заключительный этап регистрации в программе Business Applications ISV Connect приводит к повторной сертификации существующих приложений.
 
 1. [Выполните следующие действия](https://partner.microsoft.com/solutions/business-applications/isv-publish) , чтобы повторно сертифицировать приложение в AppSource.
-2. [Создайте и опубликуйте новое предложение](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-customer-engagement-offer). Это предложение будет совершенно новым предложением и не заменит существующее.
+2. [Создайте и опубликуйте новое предложение](../partner-center-portal/create-new-customer-engagement-offer.md). Это предложение будет совершенно новым предложением и не заменит существующее.
 
 ## <a name="further-info"></a>Дополнительные сведения
 

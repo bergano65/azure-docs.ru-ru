@@ -8,12 +8,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: dsindona
-ms.openlocfilehash: 4d1ee4fc0760e76af7475dd3b2dc83f306e7a7bd
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 46f8da8b2b688900e50548bbece01117a7a47e24
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83657826"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85963841"
 ---
 # <a name="saas-applications-offer-publishing-guide"></a>Руководство по публикации приложений SaaS
 
@@ -62,11 +62,9 @@ ms.locfileid: "83657826"
 
 Полезную документацию по Azure Active Directory, примеры и руководства см. последующим ссылкам: 
 
-* [Руководство разработчика по Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-developers-guide)
+* [Руководство разработчика по Azure Active Directory](../active-directory/develop/index.yml)
 
-* [Интеграция с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-how-to-integrate)
-
-* [Интеграция приложений с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications)
+* [Интеграция с Azure Active Directory](../active-directory/develop/active-directory-how-to-integrate.md)
 
 * [Безопасность и идентификация на странице стратегии развития Azure](https://azure.microsoft.com/roadmap/?category=security-identity)
 
@@ -90,7 +88,7 @@ ms.locfileid: "83657826"
 
 ## <a name="using-azure-active-directory-to-enable-trials"></a>Активация пробных версий с помощью Azure Active Directory  
 
-Корпорация Майкрософт выполняет аутентификацию всех пользователей Marketplace с помощью Azure AD. Когда пользователь, прошедший аутентификацию, щелкает ваш список пробных версий в Marketplace и перенаправляется в вашу пробную среду, вы можете выполнить подготовку для пользователя непосредственно в пробной среде без необходимости дополнительного входа. Токен, получаемый вашим приложением от Azure AD во время аутентификации, содержит ценные сведения о пользователе, которые помогут вам создать его учетную запись в своем приложении, чтобы автоматизировать процесс подготовки и повысить вероятность перехода. Дополнительные сведения о токене см. в статье [Справочник по токенам в Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-token-and-claims).
+Корпорация Майкрософт выполняет аутентификацию всех пользователей Marketplace с помощью Azure AD. Когда пользователь, прошедший аутентификацию, щелкает ваш список пробных версий в Marketplace и перенаправляется в вашу пробную среду, вы можете выполнить подготовку для пользователя непосредственно в пробной среде без необходимости дополнительного входа. Токен, получаемый вашим приложением от Azure AD во время аутентификации, содержит ценные сведения о пользователе, которые помогут вам создать его учетную запись в своем приложении, чтобы автоматизировать процесс подготовки и повысить вероятность перехода. Дополнительные сведения о токене см. в статье [Справочник по токенам в Azure AD](../active-directory/develop/active-directory-token-and-claims.md).
 
 С помощью Azure AD для приложения или пробной версии можно включить аутентификацию одним щелчком. Она предоставляет следующие преимущества:  
 * упрощается взаимодействие клиентов с пробной версией в Marketplace;  
@@ -106,15 +104,15 @@ ms.locfileid: "83657826"
 
 Если вы уже используете Azure AD, сделайте следующее:
 1.    Зарегистрируйте приложение на портале Azure.
-2.    Включите функцию поддержки мультитенантности в Azure AD, чтобы получить пробную версию одним щелчком. Дополнительные сведения можно найти [здесь](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications).  
+2.    Включите функцию поддержки мультитенантности в Azure AD, чтобы получить пробную версию одним щелчком. Дополнительные сведения можно найти [здесь](../active-directory/develop/active-directory-integrating-applications.md).  
 
 Если вы впервые используете федеративный единый вход в Azure AD, сделайте следующее: 
 1.  Зарегистрируйте приложение на портале Azure.
-2.  Настройте единый вход в Azure AD с помощью [OpenID Connect](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-openid-connect-code) или [OAuth 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-oauth-code).
-3.  Включите функцию поддержки мультитенантности в AAD, чтобы получить пробную версию одним щелчком. Дополнительные сведения можно найти [здесь](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-appsource-certified).  
+2.  Настройте единый вход в Azure AD с помощью [OpenID Connect](../active-directory/develop/active-directory-protocols-openid-connect-code.md) или [OAuth 2.0](../active-directory/develop/active-directory-protocols-oauth-code.md).
+3.  Включите функцию поддержки мультитенантности в AAD, чтобы получить пробную версию одним щелчком. Дополнительные сведения можно найти [здесь](../active-directory/develop/active-directory-devhowto-appsource-certified.md).  
 
 **Для однотенантного приложения используйте любой из следующих вариантов:**  
-* Добавьте пользователей в свой каталог в качестве гостевых пользователей, используя [Azure B2B](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)
+* Добавьте пользователей в свой каталог в качестве гостевых пользователей, используя [Azure B2B](../active-directory/active-directory-b2b-what-is-azure-ad-b2b.md)
 * Вручную подготовьте пробную версию для клиентов с использованием функции "Связаться со мной".
 * Разработайте тестовый выпуск для одного клиента.
 * Создайте демонстрационное мультитенантное приложение с SSO.
@@ -137,9 +135,9 @@ ms.locfileid: "83657826"
 >В настоящее время стала доступна возможность использования партнерских каналов поставщиков облачных решений.  Дополнительные сведения о маркетинге своего предложения с помощью партнерских каналов поставщиков облачных решений (Майкрософт) см. в статье [Поставщики облачных решений](./cloud-solution-providers.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Если это еще не сделано:
+Если это еще не сделано,
 
-* [Узнайте больше](https://azuremarketplace.microsoft.com/sell) об онлайн-магазине.
+* [Узнайте больше](https://azuremarketplace.microsoft.com/sell) о marketplace
 
 Чтобы зарегистрироваться в Центре партнеров, начните создавать новое предложение или продолжите работу над существующим:
 

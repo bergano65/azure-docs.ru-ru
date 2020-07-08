@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/09/2020
-ms.openlocfilehash: fe04cb12dc1afea78b023eab623927a07224888c
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
-ms.translationtype: HT
+ms.openlocfilehash: 63f18556847a717322b00092b973f59877102a1d
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83726151"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85963909"
 ---
 # <a name="azure-virtual-machine-vm-image-certification"></a>Сертификация образа виртуальной машины Azure
 
@@ -649,4 +649,4 @@ New-AzResourceGroupDeployment -Name"dplisvvm$postfix" -ResourceGroupName"$rgName
 
 ## <a name="next-step"></a>Следующий шаг
 
-- [Создание универсальных кодов ресурсов (URI) для каждого виртуального жесткого диска](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/virtual-machine/cpp-get-sas-uri)
+- [Распространенные проблемы с URI SAS и способы их устранения](common-sas-uri-issues.md)

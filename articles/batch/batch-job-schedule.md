@@ -4,12 +4,12 @@ description: Используйте планирование заданий дл
 ms.topic: how-to
 ms.date: 02/20/2020
 ms.custom: seodec18
-ms.openlocfilehash: c75f635a937dcddd2c1c02cc717f96f1441efe81
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
-ms.translationtype: HT
+ms.openlocfilehash: 89881808e48b3fbe44fbcd5352a15afc4eb427ef
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83726644"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85964351"
 ---
 # <a name="schedule-jobs-for-efficiency"></a>Планирование заданий для повышения эффективности
 
@@ -67,7 +67,7 @@ ms.locfileid: "83726644"
 
 ## <a name="for-more-information"></a>Дополнительные сведения
 
-Сведения об управлении заданием с помощью Azure CLI см. в разделе [Пакетное задание AZ — Расписание](https://docs.microsoft.com/cli/azure/batch/job-schedule?view=azure-cli-latest).
+Сведения об управлении заданием с помощью Azure CLI см. в разделе [Пакетное задание AZ — Расписание](/cli/azure/batch/job-schedule?view=azure-cli-latest).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

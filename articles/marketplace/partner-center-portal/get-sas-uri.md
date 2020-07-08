@@ -7,12 +7,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: mingshen
-ms.openlocfilehash: 42e2419301b282685b2afe13782c2deb4f52823c
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
-ms.translationtype: HT
+ms.openlocfilehash: 24ba593a56d4d12211d10f143261caaf6d901bfc
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83725879"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85964674"
 ---
 # <a name="get-shared-access-signature-uri-for-your-vm-image"></a>Получение универсального кода ресурса (URI) подписанного URL-адреса для образа виртуальной машины
 
@@ -124,6 +124,6 @@ ms.locfileid: "83725879"
 
 ## <a name="next-step"></a>Следующий шаг
 
-Если у вас возникли трудности при создании URI SAS, обратитесь к статье [Распространенные проблемы с URL-адресом SAS](https://docs.microsoft.com/azure/marketplace/partner-center-portal/common-sas-uri-issues). В противном случае сохраните URI SAS в надежном расположении для последующего использования. Он потребуется вам для публикации предложения виртуальной машины в Центре партнеров.
+Если у вас возникли трудности при создании URI SAS, обратитесь к статье [Распространенные проблемы с URL-адресом SAS](common-sas-uri-issues.md). В противном случае сохраните URI SAS в надежном расположении для последующего использования. Он потребуется вам для публикации предложения виртуальной машины в Центре партнеров.
 
-* [Создание предложения виртуальной машины Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/azure-vm-create-offer)
+* [Создание предложения виртуальной машины Azure](azure-vm-create-offer.md)

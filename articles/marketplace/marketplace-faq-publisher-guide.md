@@ -7,12 +7,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: dsindona
-ms.openlocfilehash: 1eae45eea35a118be51dc1e2f95055238212560d
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
-ms.translationtype: HT
+ms.openlocfilehash: 985a8ac83d48de11ac134bc9a942c766e4ff5d32
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83800658"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85963603"
 ---
 # <a name="common-questions-about-microsoft-commercial-marketplace"></a>Распространенные вопросы о коммерческой платформе Майкрософт
 
@@ -67,7 +67,7 @@ ms.locfileid: "83800658"
 
 После регистрации и принятия издательского соглашения вы получите доступ к странице коммерческой платформы в Центре партнеров. Здесь можно создавать предложения и управлять ими, а также просматривать аналитические отчеты. Для приложений Microsoft 365 также необходимо активировать программу Магазина Office в Центре партнеров.
 
-Дополнительные сведения см. на страницах [Вас приветствует коммерческая платформа](https://docs.microsoft.com/azure/marketplace/) и [Монетизация надстройки Office 365 через Microsoft Commercial Marketplace](https://docs.microsoft.com/office/dev/store/monetize-addins-through-microsoft-commercial-marketplace).
+Дополнительные сведения см. на страницах [Вас приветствует коммерческая платформа](index.yml) и [Монетизация надстройки Office 365 через Microsoft Commercial Marketplace](https://docs.microsoft.com/office/dev/store/monetize-addins-through-microsoft-commercial-marketplace).
 
 ### <a name="how-do-i-get-support-assistance-for-the-commercial-marketplace"></a>Как получить техническую поддержку по коммерческой платформе?
 
@@ -77,7 +77,7 @@ ms.locfileid: "83800658"
 
 ### <a name="what-analytics-are-available-to-my-organization-from-the-commercial-marketplace"></a>Какие аналитики доступны моей организации на коммерческой платформе?
 
-Мы предоставляем отчеты о ваших предложениях на коммерческой платформе. Чтобы узнать о том, как получить доступ к данным о клиентах, заказах, взаимодействием с магазинами и т. д., см. статью [Доступ к аналитическим отчетам для коммерческой платформы в Центре партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/analytics).
+Мы предоставляем отчеты о ваших предложениях на коммерческой платформе. Чтобы узнать о том, как получить доступ к данным о клиентах, заказах, взаимодействием с магазинами и т. д., см. статью [Доступ к аналитическим отчетам для коммерческой платформы в Центре партнеров](partner-center-portal/analytics.md).
 
 ### <a name="what-is-microsofts-relationship-with-my-customers"></a>В чем заключается отношение корпорации Майкрософт с моими клиентами?
 
@@ -89,7 +89,7 @@ ms.locfileid: "83800658"
 
 Можно создавать изменения, которые применяются ко всем клиентам, или вносить изменения, относящиеся только к определенным. Вы можете также полностью настроить условия, которые можно ввести в текстовое поле или разместить на веб-сайте, который будет отображаться в виде веб-адреса.
 
-Дополнительные сведения см. в статье [Стандартный контракт для коммерческой платформы Майкрософт](https://docs.microsoft.com/azure/marketplace/standard-contract).
+Дополнительные сведения см. в статье [Стандартный контракт для коммерческой платформы Майкрософт](standard-contract.md).
 
 ### <a name="is-azure-marketplace-available-in-azure-government"></a>Магазин Azure Marketplace доступен в службе Azure для государственных организаций?
 
@@ -126,7 +126,7 @@ ms.locfileid: "83800658"
 
 Когда клиенты взаимодействуют с вашими предложениями в онлайн-магазинах Microsoft AppSource и Azure Marketplace, эта информация фиксируется. Если потенциальный клиент проявляет достаточный интерес, создается лид, а информация о возможной сделке отправляется в систему по вашему усмотрению. Издатели, успешно работающие с нашей коммерческой платформой, обычно следят за потенциальными клиентами, устанавливают связи, а затем интерес становится сделкой.
 
-Дополнительные сведения см. в статье [Лиды из вашего предложения в Marketplace](https://docs.microsoft.com/azure/marketplace/partner-center-portal/commercial-marketplace-get-customer-leads).
+Дополнительные сведения см. в статье [Лиды из вашего предложения в Marketplace](partner-center-portal/commercial-marketplace-get-customer-leads.md).
 
 ### <a name="why-arent-my-changes-reflected-in-the-offer-on-microsoft-appsource-or-azure-marketplace"></a>Почему изменения не отражаются в предложении Microsoft AppSource или Azure Marketplace?
 
@@ -146,7 +146,7 @@ Microsoft AppSource используется для бизнеса и отрас
 
 В нашу глобальную сеть торговых посредников входят десятки тысяч организаций, которые принимают участие в программе поставщиков облачных решений. Программа CSP позволяет организациям перепродавать наши продукты и предложения из Marketplace, а также предоставляет им средства для успешной работы.
 
-Дополнительные сведения см. в статье [Поставщики облачных решений](https://docs.microsoft.com/azure/marketplace/cloud-solution-providers).
+Дополнительные сведения см. в статье [Поставщики облачных решений](cloud-solution-providers.md).
 
 ### <a name="how-can-i-find-resellers-to-establish-partnerships"></a>Как найти торговых посредников для установления партнерства?
 
@@ -156,7 +156,7 @@ Microsoft AppSource используется для бизнеса и отрас
 
 Да, в программе поставщиков облачных решений вы можете сделать предложения доступными для всех посредников или только тем, которых вы указали.
 
-Дополнительные сведения см. в статье [Поставщики облачных решений](https://docs.microsoft.com/azure/marketplace/cloud-solution-providers).
+Дополнительные сведения см. в статье [Поставщики облачных решений](cloud-solution-providers.md).
 
 ### <a name="how-can-i-pay-margin-to-resellers"></a>Как выплачивать часть от продажи торговым посредникам?
 
@@ -229,7 +229,7 @@ Microsoft AppSource поддерживает платежи с помощью к
 
 Приобретать решения с коммерческой платформы могут клиенты из 141 страны или региона по всему миру.
 
-Чтобы просмотреть список стран и регионов, перейдите на страницу [Сведения о налогах для издателей Marketplace](https://docs.microsoft.com/azure/marketplace/partner-center-portal/tax-details-paid-transactions).
+Чтобы просмотреть список стран и регионов, перейдите на страницу [Сведения о налогах для издателей Marketplace](partner-center-portal/tax-details-paid-transactions.md).
 
 ### <a name="what-currencies-are-supported-with-the-commercial-marketplace"></a>Какие валюты поддерживаются на коммерческой платформе?
 
@@ -252,7 +252,7 @@ Microsoft AppSource поддерживает платежи с помощью к
 - TWD
 - USD
 
-Чтобы просмотреть список валют, перейдите на страницу [Поддержка географической доступности и валюты для коммерческой платформы](https://docs.microsoft.com/azure/marketplace/marketplace-geo-availability-currencies).
+Чтобы просмотреть список валют, перейдите на страницу [Поддержка географической доступности и валюты для коммерческой платформы](marketplace-geo-availability-currencies.md).
 
 ### <a name="can-customers-change-subscriptions-or-license-volumes-mid-term"></a>Могут ли клиенты менять подписки или тома лицензий, когда покупка уже совершена?
 
@@ -274,29 +274,32 @@ Microsoft AppSource поддерживает платежи с помощью к
 
 ### <a name="how-often-will-i-receive-payouts-for-sales-through-the-commercial-marketplace"></a>Как часто я буду получать выплаты по продажам через коммерческую платформу?
 
-Выплаты происходят ежемесячно. Сборы, обработанные за предыдущий месяц, оплачиваются единовременно. Минимальное значение продаж за месяц составляет $50,00.
+Выплаты происходят ежемесячно. Дополнительные сведения о графиках платежей, поиске предстоящих выплат в центре партнеров и о том, как мы работаем с неоплатой клиентов, см. в разделе [сведения о политике выплаты](partner-center-portal/payout-policy-details.md).
 
-Счета за подписки и покупке по кредитной карте выставляются ежемесячно, а счета по соглашению с клиентами корпорации Майкрософт или Соглашению Enterprise Agreement могут выставляться реже. С момента выставления счетов у клиентов есть 30 дней на оплату. После получения оплаты нами, у транзакции с кредитной каты начинается 30-дневный условный период.
+- Для транзакций, в которых клиент использовал Соглашение Enterprise, выплата выдается в следующем цикле выплаты 30 дней после счета клиента. 
+- Для транзакций, в которых клиент использовал кредитную карту, после получения платежа для гарантии того, что деньги были ясными и нет гибких или потенциально мошенничества, взимается дополнительная 30-дневная отсрочка.
 
-Подробные сведения см. в разделе [Минимальные суммы, способы и временные рамки платежей](https://docs.microsoft.com/azure/marketplace/partner-center-portal/payment-thresholds-methods-timeframes).
+Выплата выдается, только если для продаж достигнуто минимальное объединенное значение $50,00.
+
+Подробные сведения см. в разделе [Минимальные суммы, способы и временные рамки платежей](partner-center-portal/payment-thresholds-methods-timeframes.md).
 
 ### <a name="in-what-countriesregions-are-taxes-managed-on-my-behalf"></a>В каких странах или регионах налоги управляются от моего имени?
 
 Клиенты могут найти решения на нашей коммерческой платформе по всему миру, а нами управляются налоги во многих странах или регионах. 
 
-Чтобы просмотреть полный список стран и регионов, перейдите на страницу [Сведения о налогах для издателей Marketplace](https://docs.microsoft.com/azure/marketplace/partner-center-portal/tax-details-paid-transactions).
+Чтобы просмотреть полный список стран и регионов, перейдите на страницу [Сведения о налогах для издателей Marketplace](partner-center-portal/tax-details-paid-transactions.md).
 
 ### <a name="where-can-i-find-payout-reporting-for-the-commercial-marketplace"></a>Где можно найти отчеты о выплатах для коммерческой платформы?
 
 В Центре партнеров пользователь с разрешениями *владельца* или *финансового донора* может просматривать отчеты о выплатах. Эти пользователи могут получить доступ к отчетам в правом верхнем углу, щелкнув значок с изображением руки, держащей счет.
 
-Дополнительные сведения см. в разделе [отчеты о выплатах](https://docs.microsoft.com/azure/marketplace/partner-center-portal/payout-summary).
+Дополнительные сведения см. в разделе [отчеты о выплатах](partner-center-portal/payout-summary.md).
 
 ### <a name="how-do-i-configure-my-payout-method-and-destination"></a>Как мне настроить метод и назначение выплаты?
 
 В Центре партнеров пользователи с разрешениями *владельца* могут настроить выплаты и налоговые формы. Пользователи могут сделать это, нажав кнопку **Параметры** (значок шестеренки) в правом верхнем углу.
 
-Дополнительные сведения см. в статье [Настройка счета для выплат и налоговых форм](https://docs.microsoft.com/azure/marketplace/partner-center-portal/set-up-your-payout-account-tax-forms).
+Дополнительные сведения см. в статье [Настройка счета для выплат и налоговых форм](partner-center-portal/set-up-your-payout-account-tax-forms.md).
 
 ### <a name="are-returns-and-refunds-supported-with-the-commercial-marketplace"></a>Поддерживаются ли на коммерческой платформе возвраты денежных средств?
 
@@ -310,7 +313,7 @@ Microsoft AppSource поддерживает платежи с помощью к
 
 - [Работа с коммерческой платформой Майкрософт](/azure/marketplace/marketplace-publishers-guide)
 - [Вопросы и ответы о коммерческой платформе Майкрософт](https://partner.microsoft.com/asset/collection/commercial-marketplace#/)
-- [Вас приветствует коммерческая платформа](https://docs.microsoft.com/azure/marketplace/)
+- [Вас приветствует коммерческая платформа](index.yml)
 
 ### <a name="how-can-i-engage-with-microsoft-and-other-partners"></a>Как связаться с корпорацией Майкрософт и другими партнерами?
 
@@ -322,7 +325,7 @@ Microsoft AppSource поддерживает платежи с помощью к
 ### <a name="where-can-i-learn-more-about-partner-center"></a>Где можно подробнее узнать о Центре партнеров?
 
 - [Документация для разработчиков Центра партнеров](https://docs.microsoft.com/partner-center/)
-- [Вас приветствует коммерческая платформа](https://docs.microsoft.com/azure/marketplace/)
+- [Вас приветствует коммерческая платформа](index.yml)
 
 ### <a name="where-can-i-learn-more-about-the-microsoft-admin-center"></a>Где можно узнать больше о Центре администрирования Майкрософт?
 
@@ -330,14 +333,14 @@ Microsoft AppSource поддерживает платежи с помощью к
 
 ### <a name="where-can-i-learn-more-about-azure-billing"></a>Где можно подробнее узнать о выставление счетов службами Azure?
 
-- [Документация по службе Управления затратами и выставления счетов Azure](https://docs.microsoft.com/azure/cost-management-billing/)
-- [Основная информация о расходах на заказы Azure Marketplace](https://docs.microsoft.com/azure/cost-management-billing/understand/understand-azure-marketplace-charges)
-- [Оплата подписок Azure по счету](https://docs.microsoft.com/azure/cost-management-billing/manage/pay-by-invoice)
+- [Документация по службе Управления затратами и выставления счетов Azure](../cost-management-billing/index.yml)
+- [Основная информация о расходах на заказы Azure Marketplace](../cost-management-billing/understand/understand-azure-marketplace-charges.md)
+- [Оплата подписок Azure по счету](../cost-management-billing/manage/pay-by-invoice.md)
 
 ### <a name="where-can-i-learn-about-azure-government-and-the-azure-government-marketplace"></a>Где можно узнать об Azure для государственных организаций и Azure Marketplace для государственных организаций?
 
 - [Azure для государственных организаций](https://azure.microsoft.com/global-infrastructure/government)
 - [Центр управления безопасностью Майкрософт](https://www.microsoft.com/trust-center)
-- [Документация по Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/)
-- [Azure Marketplace для государственных организаций](https://docs.microsoft.com/azure/azure-government/documentation-government-manage-marketplace)
-- [Соответствие требованиям в Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/documentation-government-plan-compliance)
+- [Документация по Azure для государственных организаций](../azure-government/index.yml)
+- [Azure Marketplace для государственных организаций](../azure-government/documentation-government-manage-marketplace.md)
+- [Соответствие требованиям в Azure для государственных организаций](../azure-government/documentation-government-plan-compliance.md)

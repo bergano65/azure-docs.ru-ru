@@ -3,18 +3,18 @@ title: Рабочий процесс и ресурсы пакетной служ
 description: Ознакомьтесь с функциями пакетной службы и обобщенной схемой ее рабочего процесса с точки зрения разработки.
 ms.topic: conceptual
 ms.date: 05/12/2020
-ms.openlocfilehash: 5084ae222d0a9da0d8aa171bc89dba48377a9dd4
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 76a0b140f3bea4b07a6de632abbcbc3fd26e582d
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83835926"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85965218"
 ---
 # <a name="batch-service-workflow-and-resources"></a>Рабочий процесс и ресурсы пакетной службы
 
 В этом обзоре рассматривается обобщенная схема рабочего процесса и основные ресурсы пакетной службы Azure, которые могут использовать разработчики при создании решений для крупномасштабных параллельных вычислительных нагрузок.
 
-Как при разработке распределенного вычислительного приложения или службы, которая отправляет прямые вызовы [REST API](https://docs.microsoft.com/rest/api/batchservice/), так и при использовании одного из [пакетов SDK для пакетной службы](batch-apis-tools.md#batch-service-apis) вам понадобятся многие ресурсы и функции, описанные в этой статье.
+Как при разработке распределенного вычислительного приложения или службы, которая отправляет прямые вызовы [REST API](/rest/api/batchservice/), так и при использовании одного из [пакетов SDK для пакетной службы](batch-apis-tools.md#batch-service-apis) вам понадобятся многие ресурсы и функции, описанные в этой статье.
 
 > [!TIP]
 > Дополнительные сведения о пакетной службе Azure см. в [этой статье](batch-technical-overview.md). Также см. последние [обновления пакетной службы](https://azure.microsoft.com/updates/?product=batch).
@@ -47,4 +47,4 @@ ms.locfileid: "83835926"
 - См. дополнительные сведения об [API-интерфейсах и средствах пакетной службы](batch-apis-tools.md) для сборки решений пакетной службы.
 - Здесь приведены основные сведения о разработке приложений с поддержкой пакетной службы с помощью [клиентской библиотеки .NET для пакетной службы](quick-run-dotnet.md) или [Python](quick-run-python.md). В этом кратком руководстве рассматривается пример приложения, которое использует пакетную службу для выполнения рабочей нагрузки на нескольких вычислительных узлах и службу хранилища Azure для помещения файла рабочей нагрузки на промежуточное хранение и обработку и его извлечения.
 - Скачайте и установите [Batch Explorer](https://azure.github.io/BatchExplorer/) для использования во время разработки решений пакетной службы. Используйте Batch Explorer для создания, отладки и мониторинга приложений пакетной службы Azure.
-- См. ресурсы сообщества, в том числе [сайт Stack Overflow](https://stackoverflow.com/questions/tagged/azure-batch), [репозиторий сообщества пакетной службы](https://github.com/Azure/Batch) и [форум пакетной службы Azure](https://docs.microsoft.com/answers/topics/azure-batch.html).
+- См. ресурсы сообщества, в том числе [сайт Stack Overflow](https://stackoverflow.com/questions/tagged/azure-batch), [репозиторий сообщества пакетной службы](https://github.com/Azure/Batch) и [форум пакетной службы Azure](/answers/topics/azure-batch.html).

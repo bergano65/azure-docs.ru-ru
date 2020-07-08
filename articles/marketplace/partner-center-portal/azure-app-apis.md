@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/10/2019
-ms.openlocfilehash: e50534639f5f46b1675ba5c074fb8fdd843ac87e
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
-ms.translationtype: HT
+ms.openlocfilehash: 3d86329313c1b6af1e4723dc64c982f9c81ea86b
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83770063"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85964980"
 ---
 # <a name="partner-center-submission-api-to-onboard-azure-apps-in-partner-center"></a>API отправки Центра партнеров для подключения приложений Azure в Центре партнеров
 
@@ -29,7 +29,7 @@ ms.locfileid: "83770063"
 
 Прежде чем приступить к написанию кода для вызова API отправки Центра партнеров, убедитесь, что выполнены следующие предварительные требования.
 
-- У вас (или вашей организации) должен иметься каталог Azure AD, а также у вас должен быть доступ уровня [глобального администратора](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) к этому каталогу. Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, то у вас уже есть каталог Azure AD. В противном случае можно [создать новую службу Azure AD в Центре партнеров](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) совершенно бесплатно.
+- У вас (или вашей организации) должен иметься каталог Azure AD, а также у вас должен быть доступ уровня [глобального администратора](../../active-directory/users-groups-roles/directory-assign-admin-roles.md) к этому каталогу. Если вы уже используете Microsoft 365 или другие бизнес-службы Майкрософт, у вас уже есть каталог Azure AD. В противном случае можно [создать новую службу Azure AD в Центре партнеров](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) совершенно бесплатно.
 
 - Необходимо [связать приложение Azure AD с учетной записью Центра партнеров](https://docs.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services#associate-an-azure-ad-application-with-your-windows-partner-center-account) и получить идентификатор арендатора, идентификатор и ключ клиента. Эти значения необходимы для получения маркера доступа Azure AD, который будет использоваться в вызовах к API отправки Microsoft Store.
 
