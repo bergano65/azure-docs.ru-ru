@@ -13,11 +13,10 @@ ms.workload: infrastructure
 ms.date: 09/28/2018
 ms.author: genli
 ms.openlocfilehash: beb1562738699bbcede58d8214e69342abbb7c93
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79266940"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84701904"
 ---
 # <a name="windows-shows-blue-screen-error-when-booting-an-azure-vm"></a>Отображение ошибки "синий экран" при загрузке виртуальной машины Azure под управлением Windows
 В этой статье описываются ошибки "синий экран", которые могут возникнуть при загрузке виртуальной машины Windows в Microsoft Azure. Представляем шаги, которые помогут вам при сборе данных для запроса в службу поддержки. 
@@ -32,7 +31,7 @@ ms.locfileid: "79266940"
 
 В этом разделе перечислены распространенные сообщения об ошибках, которые могут возникать при управлении виртуальной машиной.
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Ошибка с остановкой работы может возникать по нескольким причинам. Ниже перечислены наиболее распространенные из них.
 

@@ -5,15 +5,14 @@ description: Преобразование устаревшего пиринга 
 services: internet-peering
 author: derekolo
 ms.service: internet-peering
-ms.topic: article
+ms.topic: how-to
 ms.date: 5/21/2020
 ms.author: derekol
-ms.openlocfilehash: e4f9f5b59b61065c300b58fb1cdb88e12b7ddbe0
-ms.sourcegitcommit: 8017209cc9d8a825cc404df852c8dc02f74d584b
-ms.translationtype: HT
+ms.openlocfilehash: 6249d68486af754f2d2980aaed9d5fd8287dcb5e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84247229"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84700167"
 ---
 # <a name="convert-a-legacy-exchange-peering-to-an-azure-resource-by-using-the-azure-portal"></a>Преобразование устаревшего пиринга Exchange в ресурс Azure с помощью портала Azure
 

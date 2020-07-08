@@ -5,15 +5,14 @@ description: Преобразование устаревшего прямого 
 services: internet-peering
 author: prmitiki
 ms.service: internet-peering
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 5d2a8c910c9e384e137785bc1cd491bc85c7e7a8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 803d2a09fb4114dae36dcb6147139c7b657501f8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81678496"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84700133"
 ---
 # <a name="convert-a-legacy-direct-peering-to-an-azure-resource-by-using-powershell"></a>Преобразование устаревшего прямого пиринга в ресурс Azure с помощью PowerShell
 
@@ -21,8 +20,8 @@ ms.locfileid: "81678496"
 
 При желании вы можете выполнить это пошаговое руководством с помощью [портала](howto-legacy-direct-portal.md)Azure.
 
-## <a name="before-you-begin"></a>Подготовка к работе
-* Прежде чем начать настройку, ознакомьтесь с [предварительными требованиями](prerequisites.md) и [пошаговым руководством по непосредственному пирингу](walkthrough-direct-all.md) .
+## <a name="before-you-begin"></a>Перед началом
+* Прежде чем начать настройку, изучите [предварительные требования](prerequisites.md) и [пошаговое руководство по прямому пирингу](walkthrough-direct-all.md).
 
 ### <a name="work-with-azure-powershell"></a>Работа с Azure PowerShell
 [!INCLUDE [CloudShell](./includes/cloudshell-powershell-about.md)]
@@ -118,8 +117,8 @@ Tags                 : {}
 Get-Help Get-AzPeering -detailed
 ```
 
-Дополнительные сведения см. в разделе [часто задаваемые вопросы об пиринга через Интернет](faqs.md).
+Дополнительные сведения см. в разделе [Часто задаваемые вопросы об интернет-пиринге](faqs.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание или изменение прямого пиринга с помощью PowerShell](howto-direct-powershell.md)

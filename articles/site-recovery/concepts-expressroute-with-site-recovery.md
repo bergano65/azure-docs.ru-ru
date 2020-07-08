@@ -9,11 +9,10 @@ ms.topic: conceptual
 ms.date: 10/13/2019
 ms.author: mayg
 ms.openlocfilehash: e4525bdc6165e8e736db5f539c764d25250cb248
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79258009"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84700891"
 ---
 # <a name="azure-expressroute-with-azure-site-recovery"></a>Использование Azure ExpressRoute и Azure Site Recovery
 
@@ -33,9 +32,9 @@ Azure Site Recovery позволяет осуществлять аварийно
 
 Site Recovery реплицирует данные в учетную запись хранения Azure или управляемый диск реплики в целевом регионе Azure через общедоступную конечную точку. Для использования ExpressRoute для Site Recovery трафика репликации можно использовать [пиринг Майкрософт](../expressroute/expressroute-circuit-peerings.md#microsoftpeering) или существующий [общедоступный пиринг](../expressroute/about-public-peering.md) (не рекомендуется для новых операций создания). Пиринг Майкрософт является рекомендуемым доменом маршрутизации для репликации. Обратите внимание, что репликация не поддерживается через частный пиринг.
 
-Убедитесь, что также выполнены [требования к сети](vmware-azure-configuration-server-requirements.md#network-requirements) для сервера конфигурации. Серверу конфигурации требуется подключение к конкретным URL-адресам для согласования Site Recovery репликации. ExpressRoute нельзя использовать для этого подключения. 
+Убедитесь, что также выполнены [требования к сети](vmware-azure-configuration-server-requirements.md#network-requirements) для сервера конфигурации. Для оркестрации репликации в Site Recovery требуется возможность подключения сервера конфигурации к определенным URL-адресам. Для такого подключения невозможно использовать ExpressRoute. 
 
-Если вы используете локальный прокси-сервер и хотите использовать ExpressRoute для трафика репликации, необходимо настроить список обхода прокси-сервера на сервере конфигурации и серверах обработки. Выполните инструкции, описанные ниже.
+Если вы используете локальный прокси-сервер и хотите использовать ExpressRoute для трафика репликации, необходимо настроить список обхода прокси-сервера на сервере конфигурации и серверах обработки. Выполните следующие действия.
 
 - Скачайте средство [PsExec отсюда, чтобы получить](https://aka.ms/PsExec) доступ к контексту пользователя системы.
 - Откройте Internet Explorer в контексте системного пользователя, выполнив следующую командную строку: PsExec-s-i "%Програмфилес%\интернет Explorer\iexplore.exe"

@@ -9,11 +9,10 @@ ms.topic: conceptual
 ms.date: 07/03/2019
 ms.author: ramamill
 ms.openlocfilehash: 902c14211e91a1500c6b50cd790b347e337c4f70
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79257879"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84699929"
 ---
 # <a name="set-up-the-configuration-server-for-disaster-recovery-of-physical-servers-to-azure"></a>Настройка сервера конфигурации для аварийного восстановления физических серверов в Azure
 
@@ -24,7 +23,7 @@ ms.locfileid: "79257879"
 В этой статье предполагается, что у вас уже имеется:
 - Хранилище служб восстановления в [портал Azure](https://portal.azure.com "Портал Azure").
 - Физический компьютер для установки сервера конфигурации.
-- Если вы отключили TLS 1,0 на компьютере, на котором устанавливается сервер конфигурации, убедитесь, что TLs 1,2 включен и что на компьютере установлен .NET Framework версии 4,6 или более поздней (с включенной стойким шифрованием). [Подробнее](https://support.microsoft.com/help/4033999/how-to-resolve-azure-site-recovery-agent-issues-after-disabling-tls-1).
+- Если вы отключили TLS 1,0 на компьютере, на котором устанавливается сервер конфигурации, убедитесь, что TLs 1,2 включен и что на компьютере установлен .NET Framework версии 4,6 или более поздней (с включенной стойким шифрованием). [Подробнее.](https://support.microsoft.com/help/4033999/how-to-resolve-azure-site-recovery-agent-issues-after-disabling-tls-1)
 
 ### <a name="configuration-server-minimum-requirements"></a>Минимальные требования к серверу конфигурации
 В следующей таблице перечислены минимальные требования к оборудованию, программному обеспечению и сети сервера конфигурации.
@@ -36,7 +35,7 @@ ms.locfileid: "79257879"
 ## <a name="choose-your-protection-goals"></a>Выбор целевых объектов для защиты
 
 1. На портале Azure откройте колонку **Хранилища служб восстановления** и выберите свое хранилище.
-2. В меню **ресурсов** хранилища выберите **Начало работы** > **Site Recovery** > **Шаг 1. Подготовка инфраструктуры** > **цель защиты**.
+2. В меню **ресурсов** хранилища выберите **Начало работы**  >  **Site Recovery**  >  **Шаг 1. Подготовка инфраструктуры**  >  **цель защиты**.
 
     ![Выбор цели](./media/physical-azure-set-up-source/choose-goals.png)
 3. На странице **Цель защиты** выберите **To Azure** (В Azure), а затем — **Без виртуализации или иное**. Нажмите кнопку **ОК**.
@@ -63,7 +62,7 @@ ms.locfileid: "79257879"
 [!INCLUDE [site-recovery-add-configuration-server](../../includes/site-recovery-add-configuration-server.md)]
 
 > [!NOTE]
-> Сервер конфигурации можно установить с помощью командной строки. [Подробнее](physical-manage-configuration-server.md#install-from-the-command-line).
+> Сервер конфигурации можно установить с помощью командной строки. [Подробнее.](physical-manage-configuration-server.md#install-from-the-command-line)
 
 
 ## <a name="common-issues"></a>Распространенные проблемы

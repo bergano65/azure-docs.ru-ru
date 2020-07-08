@@ -9,11 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 02/26/2020
 ms.openlocfilehash: 2c6495454e5ba2449d4b3c74a096681f74610813
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79272777"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84699368"
 ---
 # <a name="manage-azure-hdinsight-clusters-using-azure-cli"></a>Управление кластерами Azure HDInsight с помощью Azure CLI
 
@@ -31,7 +30,7 @@ ms.locfileid: "79272777"
 
 ## <a name="connect-to-azure"></a>Подключение к Azure
 
-Войдите в свою подписку Azure. Если вы планируете использовать Azure Cloud Shell, щелкните **Попробовать** в правом верхнем углу блока кода. В противном случае введите следующую команду:
+Войдите в подписку Azure. Если вы планируете использовать Azure Cloud Shell, щелкните **Попробовать** в правом верхнем углу блока кода. В противном случае введите следующую команду:
 
 ```azurecli-interactive
 az login
@@ -42,7 +41,7 @@ az login
 
 ## <a name="list-clusters"></a>список кластеров
 
-Список кластеров можно получить с помощью команды [AZ hdinsight List](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-list) . Измените приведенные ниже команды, `RESOURCE_GROUP_NAME` заменив именем своей группы ресурсов, а затем введите команды:
+Список кластеров можно получить с помощью команды [AZ hdinsight List](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-list) . Измените приведенные ниже команды, заменив `RESOURCE_GROUP_NAME` именем своей группы ресурсов, а затем введите команды:
 
 ```azurecli-interactive
 # List all clusters in the current subscription
@@ -60,7 +59,7 @@ az hdinsight list --resource-group RESOURCE_GROUP_NAME --query "[].{clusterName:
 
 ## <a name="show-cluster"></a>Отображение кластеров
 
-Чтобы отобразить сведения об указанном кластере, используйте команду [AZ hdinsight демонстрация](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-show) . Измените приведенную ниже команду, `RESOURCE_GROUP_NAME`заменив `CLUSTER_NAME` и соответствующей информацией, а затем введите команду:
+Чтобы отобразить сведения об указанном кластере, используйте команду [AZ hdinsight демонстрация](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-show) . Измените приведенную ниже команду, заменив `RESOURCE_GROUP_NAME` и `CLUSTER_NAME` соответствующей информацией, а затем введите команду:
 
 ```azurecli-interactive
 az hdinsight show --resource-group RESOURCE_GROUP_NAME --name CLUSTER_NAME
@@ -68,7 +67,7 @@ az hdinsight show --resource-group RESOURCE_GROUP_NAME --name CLUSTER_NAME
 
 ## <a name="delete-clusters"></a>Удаление кластеров
 
-Чтобы удалить указанный кластер, используйте команду [AZ hdinsight Delete](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-delete) . Измените приведенную ниже команду, `RESOURCE_GROUP_NAME`заменив `CLUSTER_NAME` и соответствующей информацией, а затем введите команду:
+Чтобы удалить указанный кластер, используйте команду [AZ hdinsight Delete](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-delete) . Измените приведенную ниже команду, заменив `RESOURCE_GROUP_NAME` и `CLUSTER_NAME` соответствующей информацией, а затем введите команду:
 
 ```azurecli-interactive
 az hdinsight delete --resource-group RESOURCE_GROUP_NAME --name CLUSTER_NAME
@@ -82,7 +81,7 @@ az group delete --name RESOURCE_GROUP_NAME
 
 ## <a name="scale-clusters"></a>Масштабирование кластеров
 
-Чтобы изменить размер указанного кластера HDInsight до указанного размера, используйте команду [AZ hdinsight изменить](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) размер. Измените приведенную ниже команду, `RESOURCE_GROUP_NAME`заменив `CLUSTER_NAME` и соответствующими данными. Замените `WORKERNODE_COUNT` требуемым числом рабочих узлов для кластера. Дополнительные сведения о масштабировании кластеров см. в статье [масштабирование кластеров HDInsight](./hdinsight-scaling-best-practices.md). Введите команду:
+Чтобы изменить размер указанного кластера HDInsight до указанного размера, используйте команду [AZ hdinsight изменить](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) размер. Измените приведенную ниже команду, заменив `RESOURCE_GROUP_NAME` и `CLUSTER_NAME` соответствующими данными. Замените `WORKERNODE_COUNT` требуемым числом рабочих узлов для кластера. Дополнительные сведения о масштабировании кластеров см. в статье [масштабирование кластеров HDInsight](./hdinsight-scaling-best-practices.md). Введите команду:
 
 ```azurecli-interactive
 az hdinsight resize --resource-group RESOURCE_GROUP_NAME --name CLUSTER_NAME --workernode-count WORKERNODE_COUNT

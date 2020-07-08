@@ -6,11 +6,10 @@ ms.topic: conceptual
 ms.date: 8/24/2018
 ms.author: dekapur
 ms.openlocfilehash: 37162287e130b05dc41453c579b3a628ac878fca
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79282267"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84699823"
 ---
 # <a name="diagnostic-functionality-for-stateful-reliable-services"></a>Диагностические функции для надежных служб с отслеживанием состояния
 Класс StatefulServiceBase служб Reliable Services с отслеживанием состояния Azure Service Fabric генерирует события [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx), которые можно использовать для отладки. Они позволяют исследовать работу среды выполнения и помогают устранять неполадки.
@@ -21,13 +20,13 @@ ms.locfileid: "79282267"
 Для сбора и просмотра событий EventSource вы можете использовать такие средства и технологии, как [PerfView](https://www.microsoft.com/download/details.aspx?id=28567), [система диагностики Azure](../cloud-services/cloud-services-dotnet-diagnostics.md) и [библиотека Microsoft TraceEvent](https://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
 
 ## <a name="events"></a>События
-| Имя события | Код события | Level | Описание события |
+| Имя события. | Идентификатор события | Level | Описание события |
 | --- | --- | --- | --- |
-| StatefulRunAsyncInvocation |1 |Informational |Генерируется, когда запускается задача RunAsync службы. |
-| StatefulRunAsyncCancellation |2 |Informational |Генерируется, когда отменяется задача RunAsync службы. |
-| StatefulRunAsyncCompletion |3 |Informational |Генерируется, когда завершается задача RunAsync службы. |
+| StatefulRunAsyncInvocation |1 |Информационное |Генерируется, когда запускается задача RunAsync службы. |
+| StatefulRunAsyncCancellation |2 |Информационное |Генерируется, когда отменяется задача RunAsync службы. |
+| StatefulRunAsyncCompletion |3 |Информационное |Генерируется, когда завершается задача RunAsync службы. |
 | StatefulRunAsyncSlowCancellation |4 |Предупреждение |Генерируется, когда отмена задачи RunAsync службы выполняется слишком долго. |
-| StatefulRunAsyncFailure |5 |Error |Генерируется, когда задача RunAsync службы вызывает исключение. |
+| StatefulRunAsyncFailure |5 |Ошибка |Генерируется, когда задача RunAsync службы вызывает исключение. |
 
 ## <a name="interpret-events"></a>Интерпретация событий
 События StatefulRunAsyncInvocation, StatefulRunAsyncCompletion и StatefulRunAsyncCancellation полезны для разработчика служб тем, что позволяют понять жизненный цикл службы и правильно определить время запуска, отмены или завершения службы. Эти сведения могут быть полезными при отладке службы и анализе ее жизненного цикла.
@@ -60,7 +59,7 @@ Service Fabric TStore — это компонент, который исполь
 
 `ServiceFabricPartitionId:ServiceFabricReplicaId`
 
-*ServiceFabricPartitionID* — это строка идентификатора секции Service Fabric, c которой связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление формируется [`Guid.ToString`](https://msdn.microsoft.com/library/97af8hh4.aspx) с помощью описателя формата "D".
+*ServiceFabricPartitionID* — это строка идентификатора секции Service Fabric, c которой связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление формируется с помощью [`Guid.ToString`](https://msdn.microsoft.com/library/97af8hh4.aspx) описателя формата "D".
 
 *ServiceFabricReplicaId* — идентификатор, связанный с конкретной репликой надежной службы. Идентификатор реплики включается в имя экземпляра счетчика производительности, чтобы обеспечить его уникальность и избежать конфликтов с другими экземплярами счетчиков производительности, созданными той же секцией. Дополнительные сведения о репликах и их роли в надежных службах см. в [этой статье](service-fabric-concepts-replica-lifecycle.md).
 
@@ -75,7 +74,7 @@ Service Fabric TStore — это компонент, который исполь
 
 `ServiceFabricPartitionId:ServiceFabricReplicaId:StateProviderId_PerformanceCounterInstanceDifferentiator_StateProviderName`
 
-*ServiceFabricPartitionID* — это строка идентификатора секции Service Fabric, c которой связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление формируется [`Guid.ToString`](https://msdn.microsoft.com/library/97af8hh4.aspx) с помощью описателя формата "D".
+*ServiceFabricPartitionID* — это строка идентификатора секции Service Fabric, c которой связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление формируется с помощью [`Guid.ToString`](https://msdn.microsoft.com/library/97af8hh4.aspx) описателя формата "D".
 
 *ServiceFabricReplicaId* — идентификатор, связанный с конкретной репликой надежной службы. Идентификатор реплики включается в имя экземпляра счетчика производительности, чтобы обеспечить его уникальность и избежать конфликтов с другими экземплярами счетчиков производительности, созданными той же секцией. Дополнительные сведения о репликах и их роли в надежных службах см. в [этой статье](service-fabric-concepts-replica-lifecycle.md).
 
@@ -89,13 +88,13 @@ Service Fabric TStore — это компонент, который исполь
 
 `00d0126d-3e36-4d68-98da-cc4f7195d85e:131652217797162571:142652217797162571_1337_urn:MyReliableDictionary/dataStore`
 
-В предыдущем примере `00d0126d-3e36-4d68-98da-cc4f7195d85e` является строковым представлением идентификатора секции Service Fabric, `131652217797162571` — идентификатором реплики, `142652217797162571` — идентификатор поставщика состояний, а `1337` — идентификатор экземпляра счетчика производительности. `urn:MyReliableDictionary/dataStore`имя поставщика состояний, в котором хранятся данные для коллекции с именем `urn:MyReliableDictionary`.
+В предыдущем примере `00d0126d-3e36-4d68-98da-cc4f7195d85e` является строковым представлением идентификатора секции Service Fabric, `131652217797162571` — идентификатором реплики, `142652217797162571` — идентификатор поставщика состояний, а `1337` — идентификатор экземпляра счетчика производительности. `urn:MyReliableDictionary/dataStore`имя поставщика состояний, в котором хранятся данные для коллекции с именем `urn:MyReliableDictionary` .
 
 ### <a name="transactional-replicator-performance-counters"></a>Счетчики производительности репликатора транзакций
 
 Среда выполнения Reliable Services выдает следующие события в категории `Service Fabric Transactional Replicator`.
 
- Имя счетчика | Описание |
+ Имя счетчика | Описание: |
 | --- | --- |
 | Операций начала транзакций/с | Число новых транзакций записи, создаваемых в секунду.|
 | Операций транзакций/с | Число операций добавления, обновления и удаления, выполненных для надежных коллекций, в секунду.|
@@ -108,7 +107,7 @@ Service Fabric TStore — это компонент, который исполь
 
 Среда выполнения Reliable Services выдает следующие события в категории `Service Fabric TStore`.
 
- Имя счетчика | Описание |
+ Имя счетчика | Описание: |
 | --- | --- |
 | Число элементов | Число элементов в хранилище.|
 | Размер диска | Общий размер в байтах, занимаемый на диске файлами контрольных точек хранилища.|
