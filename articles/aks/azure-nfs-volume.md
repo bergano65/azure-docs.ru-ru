@@ -8,10 +8,9 @@ ms.topic: article
 ms.date: 4/25/2019
 ms.author: obboms
 ms.openlocfilehash: 7db3f806df88e5b23012e97ba5c2f14ca65b2508
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80803472"
 ---
 # <a name="manually-create-and-use-an-nfs-network-file-system-linux-server-volume-with-azure-kubernetes-service-aks"></a>Создание и использование тома NFS сервера Linux (сетевой файловой системы) вручную с помощью службы Kubernetes Azure (AKS)
@@ -20,7 +19,7 @@ ms.locfileid: "80803472"
 
 В этой статье показано, как создать NFS Server на виртуальной машине Ubuntu. Кроме того, предоставьте контейнерам AKS доступ к этой общей файловой системе.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 В этой статье предполагается, что у вас уже есть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по AKS, [используя Azure CLI][aks-quickstart-cli] или [с помощью портал Azure][aks-quickstart-portal].
 
 Кластер AKS должен быть активным в тех же или одноранговых виртуальных сетях, что и сервер NFS. Кластер должен быть создан в существующей виртуальной сети, которая может быть той же виртуальной машиной, что и виртуальная машина.
@@ -155,9 +154,9 @@ ls -l
 Чтобы получить полное пошаговое руководство или помочь вам в отладке программы установки сервера NFS, ознакомьтесь с подробным руководством:
   - [Учебник по NFS][nfs-tutorial]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Соответствующие рекомендации см. в разделе рекомендации [по хранению и резервному копированию в AKS][operator-best-practices-storage].
+Соответствующие рекомендации см. в разделе [Рекомендации по хранению и резервному копированию в AKS][operator-best-practices-storage].
 
 <!-- LINKS - external -->
 [kubernetes-volumes]: https://kubernetes.io/docs/concepts/storage/volumes/

@@ -8,10 +8,9 @@ ms.date: 04/04/2020
 ms.author: thvankra
 ms.reviewer: sngun
 ms.openlocfilehash: 7de38097acdbfa1f9c9b90f3051c68dec5465b32
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80758031"
 ---
 # <a name="secondary-indexing-in-azure-cosmos-db-cassandra-api"></a>Дополнительное индексирование в Azure Cosmos DB API Cassandra
@@ -51,7 +50,7 @@ insert into sampleks.t1(user_id,lastname) values (8, 'Theo');
 insert into sampleks.t1(user_id,lastname) values (9, 'jagan');
 ```
 
-Если вы попробуете выполнить следующую инструкцию, вы получите сообщение об ошибке, в котором `ALLOW FILTERING`будет предложено использовать: 
+Если вы попробуете выполнить следующую инструкцию, вы получите сообщение об ошибке, в котором будет предложено использовать `ALLOW FILTERING` : 
 
 ```shell
 select user_id, lastname from sampleks.t1 where lastname='nishu';
@@ -62,10 +61,10 @@ select user_id, lastname from sampleks.t1 where lastname='nishu';
 ```shell
 CREATE INDEX ON sampleks.t1 (lastname);
 ```
-После создания индекса в поле LastName теперь можно успешно выполнить предыдущий запрос. При использовании API Cassandra в Azure Cosmos DB не нужно указывать имя индекса. Используется индекс по умолчанию `tablename_columnname_idx` с форматом. Например, ` t1_lastname_idx` — это имя индекса для предыдущей таблицы.
+После создания индекса в поле LastName теперь можно успешно выполнить предыдущий запрос. При использовании API Cassandra в Azure Cosmos DB не нужно указывать имя индекса. Используется индекс по умолчанию с форматом `tablename_columnname_idx` . Например, ` t1_lastname_idx` — это имя индекса для предыдущей таблицы.
 
 ## <a name="dropping-the-index"></a>Удаление индекса 
-Необходимо знать имя индекса для удаления индекса. Выполните `desc schema` команду, чтобы получить описание таблицы. Выходные данные этой команды включают имя индекса в формате `CREATE INDEX tablename_columnname_idx ON keyspacename.tablename(columnname)`. Затем можно использовать имя индекса для удаления индекса, как показано в следующем примере:
+Необходимо знать имя индекса для удаления индекса. Выполните `desc schema` команду, чтобы получить описание таблицы. Выходные данные этой команды включают имя индекса в формате `CREATE INDEX tablename_columnname_idx ON keyspacename.tablename(columnname)` . Затем можно использовать имя индекса для удаления индекса, как показано в следующем примере:
 
 ```shell
 drop index sampleks.t1_lastname_idx;

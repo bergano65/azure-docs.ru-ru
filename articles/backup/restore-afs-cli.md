@@ -4,10 +4,9 @@ description: Узнайте, как с помощью Azure CLI восстано
 ms.topic: conceptual
 ms.date: 01/16/2020
 ms.openlocfilehash: 980044011e3417a2aff8447a939e02299923da38
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80757089"
 ---
 # <a name="restore-azure-file-shares-with-the-azure-cli"></a>Восстановление файловых ресурсов Azure с помощью Azure CLI
@@ -27,7 +26,7 @@ Azure CLI предоставляет возможности командной �
 
 Чтобы установить и использовать интерфейс командной строки локально, необходимо использовать Azure CLI версии 2.0.18 или более поздней. Чтобы получить необходимую версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что у вас уже есть файловый ресурс Azure, для которого создана резервная копия Azure Backup. Если у вас ее нет, см. раздел [резервное копирование файловых ресурсов Azure с помощью интерфейса командной строки](backup-afs-cli.md) для настройки резервного копирования для общей папки. В этой статье вы используете следующие ресурсы:
 
@@ -138,7 +137,7 @@ babeb61c-d73d-4b91-9830-b8bfa83c349a  azurefiles
 
 Используйте командлет [AZ Backup Restore-azurefiles](https://docs.microsoft.com/cli/azure/backup/restore?view=azure-cli-latest#az-backup-restore-restore-azurefiles) с параметром Restore Mode, имеющим значение *оригиналлокатион* , чтобы восстановить определенные файлы или папки в исходное расположение.
 
-В следующем примере файл *ресторетест. txt* восстанавливается в исходном расположении: файловый ресурс *azurefiles* .
+В следующем примере файл *RestoreTest.txt* восстанавливается в исходном расположении: файловый ресурс *azurefiles* .
 
 ```azurecli-interactive
 az backup restore restore-azurefiles --vault-name azurefilesvault --resource-group azurefiles --rp-name 932881556234035474 --container-name "StorageContainer;Storage;AzureFiles;afsaccount" --item-name "AzureFileShare;azurefiles" --restore-mode originallocation  --source-file-type file --source-file-path "Restore/RestoreTest.txt" --resolve-conflict overwrite  --out table
@@ -160,7 +159,7 @@ df4d9024-0dcb-4edc-bf8c-0a3d18a25319  azurefiles
 * **--Target-File-Share**: общая папка в целевой учетной записи хранения, в которую восстанавливается резервное содержимое.
 * **--Target-Folder**— папка в общей папке, в которую восстанавливаются данные. Если резервное содержимое должно быть восстановлено в корневую папку, присвойте значение целевой папки в виде пустой строки.
 
-В следующем примере восстанавливается файл *ресторетест. txt* , изначально находящиеся в общей папке *azurefiles* , в альтернативное расположение: папка *ресторедата* в общей папке *azurefiles1* , размещенной в учетной записи хранения *afaccount1* .
+В следующем примере выполняется восстановление файла *RestoreTest.txt* , первоначально присутствующего в общей папке *azurefiles* , в альтернативное расположение: папка *ресторедата* в общей папке *azurefiles1* , размещенной в учетной записи хранения *afaccount1* .
 
 ```azurecli-interactive
 az backup restore restore-azurefiles --vault-name azurefilesvault --resource-group azurefiles --rp-name 932881556234035474 --container-name "StorageContainer;Storage;AzureFiles;afsaccount" --item-name "AzureFileShare;azurefiles" --restore-mode alternatelocation --target-storage-account afaccount1 --target-file-share azurefiles1 --target-folder restoredata --resolve-conflict overwrite --source-file-type file --source-file-path "Restore/RestoreTest.txt" --out table
@@ -178,7 +177,7 @@ df4d9024-0dcb-4edc-bf8c-0a3d18a25319  azurefiles
 
 Чтобы выполнить восстановление нескольких элементов, передайте значение параметра **Source-File-Path** в виде **разделенных пробелами** путей ко всем файлам или папкам, которые требуется восстановить.
 
-В следующем примере *восстанавливаются файлы Restore. txt* и *AFS Tests Report. docx* в исходном расположении.
+В следующем примере выполняется восстановление *Restore.txt* и *AFS Report.docx* файлов в их исходном расположении.
 
 ```azurecli-interactive
 az backup restore restore-azurefiles --vault-name azurefilesvault --resource-group azurefiles --rp-name 932889937058317910 --container-name "StorageContainer;Storage;AzureFiles;afsaccount" --item-name "AzureFileShare;azurefiles" --restore-mode originallocation  --source-file-type file --source-file-path "Restore Test.txt" "AFS Testing Report.docx" --resolve-conflict overwrite  --out table

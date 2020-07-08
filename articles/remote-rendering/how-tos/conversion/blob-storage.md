@@ -6,10 +6,9 @@ ms.author: jakras
 ms.date: 02/04/2020
 ms.topic: how-to
 ms.openlocfilehash: 6f0605077bd131c54f27e3bf46240331557fd92e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80681653"
 ---
 # <a name="use-azure-blob-storage-for-model-conversion"></a>Использование хранилища BLOB-объектов Azure для преобразования модели
@@ -57,7 +56,7 @@ URI SAS можно создать с помощью одного из следу
   - Щелкните правой кнопкой мыши контейнер "получить подписанный URL-доступ" (чтение, получение списка доступа для входного контейнера, доступ на запись для контейнера выходных данных).
 - Пакеты SDK (C#, Python...)
 
-Пример использования подписанных URL-символов в преобразовании ресурса показан в примере преобразования. ps1 для [сценариев PowerShell](../../samples/powershell-example-scripts.md#script-conversionps1).
+Пример использования подписанных URL-символов в преобразовании ресурса приведен в Conversion.ps1 [примеров сценариев PowerShell](../../samples/powershell-example-scripts.md#script-conversionps1).
 
 ## <a name="upload-an-input-model"></a>Отправка входной модели
 
@@ -65,12 +64,12 @@ URI SAS можно создать с помощью одного из следу
 
 - [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) — удобный пользовательский интерфейс для отправки, скачивания и управления файлами в хранилище BLOB-объектов Azure.
 - [Командная строка Azure](https://docs.microsoft.com/azure/storage/common/storage-azure-cli)
-- [модуль Azure PowerShell;](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-2.2.0)
+- [Overview of Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-2.2.0) (Общие сведения об Azure PowerShell)
   - см. [примеры сценариев PowerShell](../../samples/powershell-example-scripts.md) .
 - [Использование пакета SDK для хранилища (Python, C#...)](https://docs.microsoft.com/azure/storage/)
 - [Использование API-интерфейсов службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api)
 
-Пример передачи данных для преобразования см. в разделе Преобразование. ps1 в [примерах сценариев PowerShell](../../samples/powershell-example-scripts.md#script-conversionps1).
+Пример передачи данных для преобразования см. в Conversion.ps1 [примеров сценариев PowerShell](../../samples/powershell-example-scripts.md#script-conversionps1).
 
 ## <a name="get-a-sas-uri-for-the-converted-model"></a>Получение URI SAS для преобразованной модели
 
