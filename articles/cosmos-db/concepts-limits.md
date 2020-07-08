@@ -6,12 +6,11 @@ ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 04/03/2020
-ms.openlocfilehash: 7ef7a55c81441077d2217ccfc41a2a9c9578eefe
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
-ms.translationtype: HT
+ms.openlocfilehash: 296f212e26d066613c54f7d69802654e5f7b5090
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83697567"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85391848"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Квоты для службы Azure Cosmos DB
 
@@ -117,7 +116,7 @@ Cosmos DB поддерживает эластичное масштабиров�
 
 ## <a name="per-request-limits"></a>Ограничения для каждого запроса
 
-Azure Cosmos DB поддерживает [CRUD и операции с запросами](https://docs.microsoft.com/rest/api/cosmos-db/) для ресурсов, таких как контейнеры, элементы и базы данных. Также поддерживаются [транзакционные пакетные запросы](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.transactionalbatch) к нескольким элементам с одним и тем же ключом раздела в контейнере.
+Azure Cosmos DB поддерживает [CRUD и операции с запросами](/rest/api/cosmos-db/) для ресурсов, таких как контейнеры, элементы и базы данных. Также поддерживаются [транзакционные пакетные запросы](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.transactionalbatch) к нескольким элементам с одним и тем же ключом раздела в контейнере.
 
 | Ресурс | Ограничение по умолчанию |
 | --- | --- |

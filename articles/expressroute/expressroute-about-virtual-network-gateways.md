@@ -8,11 +8,10 @@ ms.topic: conceptual
 ms.date: 10/14/2019
 ms.author: mialdrid
 ms.openlocfilehash: 58e75e4efecf390c4c1449b7ec59684554fa7516
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79281422"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84710513"
 ---
 # <a name="about-expressroute-virtual-network-gateways"></a>Сведения о шлюзах виртуальной сети ExpressRoute
 
@@ -28,7 +27,7 @@ ms.locfileid: "79281422"
 
 В виртуальной сети каждому типу шлюза может соответствовать только один шлюз виртуальной сети. Например, у вас может быть только один шлюз виртуальной сети типа VPN и только один типа ExpressRoute.
 
-## <a name="gateway-skus"></a><a name="gwsku"></a>SKU шлюза
+## <a name="gateway-skus"></a><a name="gwsku"></a>SKU шлюзов
 [!INCLUDE [expressroute-gwsku-include](../../includes/expressroute-gwsku-include.md)]
 
 Если вы хотите обновить шлюз до более мощного SKU шлюза, в большинстве случаев можно использовать командлет PowerShell "Resize-Азвиртуалнетворкгатевай". Это подойдет для обновлений до SKU Standard и HighPerformance. Однако для обновления до SKU UltraPerformance шлюз необходимо создать заново. Повторное создание шлюза вызовет простой.
@@ -86,12 +85,12 @@ Add-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.3.0/2
 ## <a name="rest-apis-and-powershell-cmdlets"></a><a name="resources"></a>Интерфейсы REST API и командлеты PowerShell
 Дополнительные технические материалы и специальные требования к синтаксису, действующие при использовании интерфейсов REST API и командлетов PowerShell для настройки конфигураций шлюзов виртуальных сетей, доступны по приведенным ниже ссылкам.
 
-| **Классические** | **Resource Manager** |
+| **Классический** | **Resource Manager** |
 | --- | --- |
 | [PowerShell](https://docs.microsoft.com/powershell/module/servicemanagement/azure/?view=azuresmps-4.0.0#azure) |[PowerShell](https://docs.microsoft.com/powershell/module/az.network#networking) |
 | [REST API](https://msdn.microsoft.com/library/jj154113.aspx) |[REST API](https://msdn.microsoft.com/library/mt163859.aspx) |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о доступных конфигурациях подключений см. в статье [Обзор ExpressRoute](expressroute-introduction.md).
 

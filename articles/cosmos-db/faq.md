@@ -7,12 +7,11 @@ ms.topic: conceptual
 ms.date: 09/01/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: a5ef03689a6374dc1cf945a787f9f82b9979a1e0
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: f6b2d081b0dc475e0950b12de31bab83cbe7da8b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83834917"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85213097"
 ---
 # <a name="frequently-asked-questions-about-different-apis-in-azure-cosmos-db"></a>Часто задаваемые вопросы о различных API в службе Azure Cosmos DB
 
@@ -152,7 +151,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Контейнер представляет собой группу документов и связанную с ними логику в виде приложения JavaScript. Контейнер — это тарифицируемая сущность. Ее [стоимость](performance-levels.md) определяется используемыми объемом хранилища и пропускной способностью. Контейнеры могут охватывать одну или несколько секций либо серверов. Кроме того, они поддерживают масштабирование практически до неограниченных объемов хранилища или пропускной способности.
 
-* Для API SQL контейнер сопоставляется с контейнером.
+* Для API SQL ресурс называется контейнером.
 * Для учетных записей API Cosmos DB для MongoDB контейнер сопоставляется с коллекцией.
 * Для учетных записей API Cassandra и Table контейнер сопоставляется с таблицей.
 * Для учетных записей API Gremlin контейнер сопоставляется с графом.

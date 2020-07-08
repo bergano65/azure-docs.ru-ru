@@ -11,12 +11,11 @@ ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
 ms.date: 04/30/2020
-ms.openlocfilehash: 0feab5c4c03ddce6fb4df2395316484bf35bae81
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
-ms.translationtype: HT
+ms.openlocfilehash: d997c6d4eae93290cbb1e4cafe6c7ad662a65933
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83772868"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85336878"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Непрерывные интеграция и поставка в Фабрике данных Azure
 
@@ -98,7 +97,7 @@ ms.locfileid: "83772868"
 
     ![Представлении этапа](media/continuous-integration-deployment/continuous-integration-image14.png)
 
-    b.  Создайте задачу. Найдите параметр **Развертывание группы ресурсов Azure**, а затем выберите **Добавить**.
+    b.  Создайте задачу. Найдите **Развертывание шаблона ARM**и нажмите кнопку **Добавить**.
 
     c.  В задаче "Развертывание" выберите подписку, группу ресурсов и расположение для целевой фабрики данных. При необходимости предоставьте учетные данные.
 
@@ -361,6 +360,14 @@ ms.locfileid: "83772868"
                         "value": "-::secureString"
                     },
                     "resourceId": "="
+                },
+                "computeProperties": {
+                    "dataFlowProperties": {
+                        "externalComputeInfo": [{
+                                "accessToken": "-::secureString"
+                            }
+                        ]
+                    }
                 }
             }
         }
@@ -395,6 +402,7 @@ ms.locfileid: "83772868"
                     "accessKeyId": "=",
                     "servicePrincipalId": "=",
                     "userId": "=",
+                    "host": "=",
                     "clientId": "=",
                     "clusterUserName": "=",
                     "clusterSshUserName": "=",
@@ -413,7 +421,11 @@ ms.locfileid: "83772868"
                     "systemNumber": "=",
                     "server": "=",
                     "url":"=",
+                    "functionAppUrl":"=",
+                    "environmentUrl": "=",
                     "aadResourceId": "=",
+                    "sasUri": "|:-sasUri:secureString",
+                    "sasToken": "|",
                     "connectionString": "|:-connectionString:secureString"
                 }
             }
@@ -570,27 +582,7 @@ ms.locfileid: "83772868"
 
 Если у вас не настроен Git, доступ к связанным шаблонам можно получить, выбрав **Export ARM Template** (Экспорт шаблона ARM) в списке **шаблонов ARM**.
 
-## <a name="exclude-azure-ssis-integration-runtimes-from-cicd"></a>Исключение сред выполнения интеграции Azure-SSIS из CI/CD
-
-Если в вашей фабрике для разработки есть среда выполнения интеграции Azure-SSIS, вы можете исключить все среды выполнения интеграции Azure-SSIS из процесса CI/CD в приведенном ниже сценарии:
-
-- Инфраструктура Azure-SSIS IR является сложной и различается в каждой среде.  
-- Azure-SSIS IR настраивается вручную для каждой среды с тем же именем. В противном случае публикация завершится ошибкой, если есть активность, зависящая от Azure-SSIS IR.
-
-Для исключения среды выполнения интеграции Azure-SSIS выполните следующие действия:
-
-1. Добавьте файл publish_config.json в корневую папку в ветви совместной работы, если его нет.
-1. Добавьте приведенный ниже параметр в publish_config.json: 
-
-```json
-{
-    " excludeIRs": "true"
-}
-```
-
-При публикации из ветви совместной работы среды выполнения интеграции Azure-SSIS будут исключены из созданного шаблона Resource Manager.
-
-## <a name="hotfix-production-branch"></a>Рабочая ветвь пакета исправлений
+## <a name="hotfix-production-environment"></a>Рабочая среда исправления
 
 Если вы развертываете фабрику в рабочей среде и понимаете, что существует ошибка, которую необходимо исправить немедленно, но вы не можете развернуть текущую ветвь совместной работы, может потребоваться развернуть пакет исправлений. Этот подход известен как наложение исправлений или исправление QFE.
 
@@ -631,7 +623,7 @@ ms.locfileid: "83772868"
 - Ожидаемо, что Фабрика данных не допускает выборочного отбора фиксаций или публикации ресурсов. Публикации будут включать все изменения, внесенные в фабрику данных.
 
     - Сущности фабрики данных зависят друг от друга. Например, триггеры зависят от конвейеров, а конвейеры зависят от наборов данных и других конвейеров. Выборочная публикация подмножества ресурсов может привести к непредвиденному поведению и ошибкам.
-    - В редких случаях, когда требуется выборочная публикация, рассмотрите возможность использования исправления. Дополнительные сведения см. в разделе [Рабочая ветвь пакета исправлений](#hotfix-production-branch).
+    - В редких случаях, когда требуется выборочная публикация, рассмотрите возможность использования исправления. Дополнительные сведения см. в [статье исправление рабочей среды](#hotfix-production-environment).
 
 -   Вы не можете опубликовать из частных ветвей.
 
@@ -734,8 +726,10 @@ function triggerSortUtil {
         return;
     }
     $visited[$trigger.Name] = $true;
-    $trigger.Properties.DependsOn | Where-Object {$_ -and $_.ReferenceTrigger} | ForEach-Object{
-        triggerSortUtil -trigger $triggerNameResourceDict[$_.ReferenceTrigger.ReferenceName] -triggerNameResourceDict $triggerNameResourceDict -visited $visited -sortedList $sortedList
+    if ($trigger.Properties.DependsOn) {
+        $trigger.Properties.DependsOn | Where-Object {$_ -and $_.ReferenceTrigger} | ForEach-Object{
+            triggerSortUtil -trigger $triggerNameResourceDict[$_.ReferenceTrigger.ReferenceName] -triggerNameResourceDict $triggerNameResourceDict -visited $visited -sortedList $sortedList
+        }
     }
     $sortedList.Push($trigger)
 }

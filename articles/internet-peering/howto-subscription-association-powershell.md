@@ -5,19 +5,18 @@ description: Связывание однорангового ASN с подпис
 services: internet-peering
 author: prmitiki
 ms.service: internet-peering
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 77cc4732e017d95cbae19578cf26b1111b08fdde
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: c0ad9ae885a458da5df8975d5d13018fd92bbdaf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75908984"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84710785"
 ---
 # <a name="associate-peer-asn-to-azure-subscription-using-powershell"></a>Связывание однорангового ASN с подпиской Azure с помощью PowerShell
 
-Прежде чем отправлять запрос пиринга, необходимо сначала связать ASN с подпиской Azure, выполнив приведенные ниже действия.
+Прежде чем отправлять запрос пиринга, сначала нужно связать ASN с подпиской Azure, выполнив описанные ниже действия.
 
 При желании вы можете выполнить инструкции с помощью [портала](howto-subscription-association-portal.md).
 
@@ -29,8 +28,8 @@ ms.locfileid: "75908984"
 ### <a name="sign-in-to-your-azure-account-and-select-your-subscription"></a>Войдите в учетную запись Azure и выберите подписку.
 [!INCLUDE [Account](./includes/account-powershell.md)]
 
-### <a name="register-for-peering-resource-provider"></a>Регистрация для поставщика ресурсов пиринга
-Зарегистрируйтесь для использования поставщика ресурсов пиринга в подписке с помощью приведенной ниже команды. Если вы не выполните эту процедуру, ресурсы Azure, необходимые для настройки пиринга, недоступны.
+### <a name="register-for-peering-resource-provider"></a>Регистрация в качестве поставщика ресурсов пиринга
+Зарегистрируйтесь для использования поставщика ресурсов пиринга в подписке с помощью приведенной ниже команды. Если вы не выполните эту процедуру, ресурсы Azure, необходимые для настройки пиринга, будут недоступны.
 
 ```powershell
 Register-AzResourceProvider -ProviderNamespace Microsoft.Peering
@@ -86,9 +85,9 @@ Type            : Microsoft.Peering/peerAsns
 ```
 
 > [!IMPORTANT]
-> Дождитесь включения утверждения Валидатионстате перед отправкой запроса пиринга. Для этого утверждения может потребоваться до 12 часов.
+> Дождитесь, пока состояние проверки не изменится на "Утверждено", а потом отправьте запрос пиринга. Утверждение может занять до 12 часов.
 
-## <a name="modify-peerasn"></a>Изменить PeerAsn
+## <a name="modify-peerasn"></a>Изменение PeerAsn
 Вы можете изменить контактные данные в любое время.
 
 Ниже приведен пример:
@@ -97,10 +96,10 @@ Type            : Microsoft.Peering/peerAsns
 Set-PeerAsn -Name Contoso_1234 -Email "newemail@test.com" -Phone "1800-000-0000"
 ```
 
-## <a name="delete-peerasn"></a>Удалить PeerAsn
+## <a name="delete-peerasn"></a>Удаление PeerAsn
 Удаление PeerASN в настоящее время не поддерживается. Если вам нужно удалить PeerASN, обратитесь в службу [пиринга Майкрософт](mailto:peering@microsoft.com).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание или изменение прямого пиринга](howto-direct-powershell.md)
 * [Преобразование устаревшего прямого пиринга в ресурс Azure](howto-legacy-direct-powershell.md)
@@ -109,4 +108,4 @@ Set-PeerAsn -Name Contoso_1234 -Email "newemail@test.com" -Phone "1800-000-0000"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-Дополнительные сведения см. на странице [часто задаваемые вопросы об пиринга через Интернет](faqs.md)
+Дополнительные сведения см. в разделе [Часто задаваемые вопросы об интернет-пиринге](faqs.md).

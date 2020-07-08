@@ -5,12 +5,11 @@ author: pkcsf
 ms.topic: troubleshooting
 ms.date: 8/24/2018
 ms.author: pkc
-ms.openlocfilehash: ee602b3aa6c701eb10730f4c5c387175bb070ef3
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: f2da9fbb04f9d1fa696250967db404864a3cce82
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83834600"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85921817"
 ---
 # <a name="azure-service-fabric-support-options"></a>Варианты поддержки Azure Service Fabric
 
@@ -26,7 +25,7 @@ ms.locfileid: "83834600"
 - [Поддержка Premier](https://support.microsoft.com/en-us/premier).
 
 > [!Note]
-> Кластеры с бронзовым уровнем надежности или кластер с одним узлом позволяют выполнять только тестовые рабочие нагрузки. При возникновении проблем с кластером с бронзовым уровнем надежности или кластером с одним узлом техническая поддержка Майкрософт поможет устранить неполадку, но анализ первопричин проводить не будет. Дополнительные сведения см. в разделе [Характеристики надежности кластера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#the-reliability-characteristics-of-the-cluster).
+> Кластеры с бронзовым уровнем надежности или кластер с одним узлом позволяют выполнять только тестовые рабочие нагрузки. При возникновении проблем с кластером с бронзовым уровнем надежности или кластером с одним узлом техническая поддержка Майкрософт поможет устранить неполадку, но анализ первопричин проводить не будет. Дополнительные сведения см. в разделе [Характеристики надежности кластера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#reliability-characteristics-of-the-cluster).
 >
 > Дополнительные сведения о том, что требуется для пригодного для промышленной эксплуатации кластера, см. в статье [Контрольный список готовности рабочей среды](https://docs.microsoft.com/azure/service-fabric/service-fabric-production-readiness-checklist).
 
@@ -51,7 +50,7 @@ ms.locfileid: "83834600"
 
 ### <a name="stackoverflow-and-msdn-forums"></a>Сайт StackOverflow и форум MSDN
 
-[Тег Service Fabric на сайте StackOverflow][stackoverflow] и [форум MSDN по Service Fabric][msdn-forum] лучше всего использовать для вопросов о принципах работы платформы и о том, как с ее помощью выполнять различные задачи.
+[Тег Service Fabric на сайте StackOverflow][stackoverflow] и [форум MSDN по Service Fabric][msdn-forum] очень удобно использовать, чтобы задавать вопросы о принципах работы платформы и о том, как выполнять различные задачи с ее помощью.
 
 ### <a name="azure-feedback-forum"></a>Форум отзывов и предложений по Azure
 
@@ -72,3 +71,4 @@ ms.locfileid: "83834600"
 [uservoice-forum]: https://feedback.azure.com/forums/293901-service-fabric
 [acom-docs]: https://aka.ms/servicefabricdocs
 [sample-repos]: https://aka.ms/servicefabricsamples
+[msdn-forum]: https://social.msdn.microsoft.com/forums/azure/en-US/home?category=windowsazureplatform

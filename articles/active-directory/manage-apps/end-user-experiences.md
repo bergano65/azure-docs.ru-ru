@@ -2,22 +2,21 @@
 title: Взаимодействие с конечным пользователем для приложений — Azure Active Directory
 description: Azure Active Directory (Azure AD) предоставляет несколько настраиваемых способов развертывания приложений для пользователей в организации.
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/27/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: arvindh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 72b3e37a423442194b81e3d10ecc7157201ff8be
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 5c2ec85af2c954c2189f0df1b407a2c40967f096
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79266628"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84763403"
 ---
 # <a name="end-user-experiences-for-applications-in-azure-active-directory"></a>Возможности для взаимодействия пользователя с приложениями в Azure Active Directory
 
@@ -44,7 +43,7 @@ Azure Active Directory (Azure AD) предоставляет несколько 
 
 ## <a name="office-365-application-launcher"></a>средство запуска приложений Office 365;
 
-Для организаций, которые развернули Office 365, приложения, назначенные пользователям через Azure AD, также будут отображаться на портале Office 365 по адресу [https://portal.office.com/myapps](https://portal.office.com/myapps). Благодаря этому пользователи в организации могут легко запускать приложения без входа на второй портал. Это решение рекомендуется для запуска приложений в организациях, использующих Office 365.
+Для организаций, которые развернули Office 365, приложения, назначенные пользователям через Azure AD, также будут отображаться на портале Office 365 по адресу [https://portal.office.com/myapps](https://portal.office.com/myapps) . Благодаря этому пользователи в организации могут легко запускать приложения без входа на второй портал. Это решение рекомендуется для запуска приложений в организациях, использующих Office 365.
 
 ![На снимке экрана показан портал Office 365](./media/end-user-experiences/microsoft-365-portal-office-com.png)
 
@@ -60,7 +59,7 @@ Azure Active Directory (Azure AD) предоставляет несколько 
 
 Azure AD также поддерживает ссылки для прямого единого входа в отдельные приложения, которые поддерживают единый вход на основе пароля, связанный единый вход или любой вид федеративного единого входа.
 
-Эти ссылки представляют собой специально созданные URL-адреса, позволяющие пользователю войти в конкретное приложение с помощью Azure AD, не запуская его с панели доступа Azure AD или Office 365. Эти **URL-адреса пользователей** доступны в свойствах доступных корпоративных приложений. В портал Azure выберите **Azure Active Directory** > **корпоративные приложения**. Выберите приложение и щелкните **Свойства**.
+Эти ссылки представляют собой специально созданные URL-адреса, позволяющие пользователю войти в конкретное приложение с помощью Azure AD, не запуская его с панели доступа Azure AD или Office 365. Эти **URL-адреса пользователей** доступны в свойствах доступных корпоративных приложений. На портале Azure выберите **Azure Active Directory** > **Корпоративные приложения**. Выберите приложение и щелкните **Свойства**.
 
 ![Пример URL-адреса доступа пользователя в свойствах Twitter](media/end-user-experiences/direct-sign-on-link.png)
 

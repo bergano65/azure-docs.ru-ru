@@ -5,15 +5,14 @@ services: vpn-gateway
 titleSuffix: Azure VPN Gateway
 author: cherylmc
 ms.service: vpn-gateway
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/14/2018
 ms.author: cherylmc
-ms.openlocfilehash: a354f8031c26ca86876dc6f3a2092610226cc84b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: e93bae91827b2807ef577d7659924a5d37454fa4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75834574"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84987125"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-azure-cli"></a>Настройка подключения VPN-шлюза между виртуальными сетями с помощью Azure CLI
 
@@ -292,7 +291,7 @@ ms.locfileid: "75834574"
 
 ### <a name="step-7---create-and-configure-testvnet5"></a><a name="TestVNet5"></a>Шаг 7. Создание и настройка TestVNet5
 
-Это действие необходимо выполнить в контексте новой подписки — подписки 5. Эту часть может выполнить администратор в другой организации, которой принадлежит подписка. Для переключения между подписками используйте `az account list --all` для перечисления подписок, доступных для вашей учетной записи `az account set --subscription <subscriptionID>` , а затем используйте для переключения на подписку, которую вы хотите использовать.
+Это действие необходимо выполнить в контексте новой подписки — подписки 5. Эту часть может выполнить администратор в другой организации, которой принадлежит подписка. Для переключения между подписками используйте `az account list --all` для перечисления подписок, доступных для вашей учетной записи, а затем используйте `az account set --subscription <subscriptionID>` для переключения на подписку, которую вы хотите использовать.
 
 1. Проверьте подключение к подписке 5, а затем создайте группу ресурсов.
 
@@ -331,7 +330,7 @@ ms.locfileid: "75834574"
 
 ### <a name="step-8---create-the-connections"></a><a name="connections5"></a>Шаг 8. Создание подключений
 
-Так как шлюзы находятся в разных подписках, мы разделили этот шаг на два сеанса интерфейса командной строки, обозначенные **[Подписка 1]** и **[Подписка 5]**. Для переключения между подписками используйте `az account list --all` для перечисления подписок, доступных для вашей учетной записи `az account set --subscription <subscriptionID>` , а затем используйте для переключения на подписку, которую вы хотите использовать.
+Так как шлюзы находятся в разных подписках, мы разделили этот шаг на два сеанса интерфейса командной строки, обозначенные **[Подписка 1]** и **[Подписка 5]**. Для переключения между подписками используйте `az account list --all` для перечисления подписок, доступных для вашей учетной записи, а затем используйте `az account set --subscription <subscriptionID>` для переключения на подписку, которую вы хотите использовать.
 
 1. **[Подписка 1].** Войдите в систему и подключитесь к подписке 1. Чтобы получить имя и идентификатор шлюза из выходных данных, выполните следующую команду:
 
@@ -375,7 +374,7 @@ ms.locfileid: "75834574"
 ## <a name="vnet-to-vnet-faq"></a><a name="faq"></a>Часто задаваемые вопросы о подключениях типа "виртуальная сеть — виртуальная сеть"
 [!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-faq-vnet-vnet-include.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения см. в [документации по виртуальным машинам](https://docs.microsoft.com/azure/).
 * Сведения о BGP см. в статьях [Обзор использования BGP с VPN-шлюзами Azure](vpn-gateway-bgp-overview.md) и [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md).

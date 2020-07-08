@@ -10,11 +10,10 @@ ms.topic: article
 ms.service: event-grid
 services: event-grid
 ms.openlocfilehash: ba82b1bea4753cd51e275a78b248247032d79a01
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79281006"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84710870"
 ---
 # <a name="tutorial-publish-subscribe-to-events-locally"></a>Учебник. Публикация, подписка на события локально
 
@@ -118,7 +117,7 @@ ms.locfileid: "79281006"
 
 Как издатель события, необходимо создать раздел «Сетка событий». В службе "Сетка событий Azure" раздел ссылается на конечную точку, в которой издатели могут отсылать события.
 
-1. Создайте раздел. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md).
+1. Создайте topic.jsсо следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md).
 
     ```json
         {
@@ -129,7 +128,7 @@ ms.locfileid: "79281006"
         }
     ```
 
-1. Выполните следующую команду, чтобы создать раздел "Сетка событий". Убедитесь, что отображается код состояния HTTP `200 OK`.
+1. Выполните следующую команду, чтобы создать раздел "Сетка событий". Убедитесь, что отображается код состояния HTTP `200 OK` .
 
     ```sh
     curl -k -H "Content-Type: application/json" -X PUT -g -d @topic.json https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic1?api-version=2019-01-01-preview
@@ -141,7 +140,7 @@ ms.locfileid: "79281006"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic1?api-version=2019-01-01-preview
     ```
 
-   Образец вывода:
+   Пример результатов выполнения:
 
    ```json
         [
@@ -163,7 +162,7 @@ ms.locfileid: "79281006"
 
 [!INCLUDE [event-grid-deploy-iot-edge](../../../includes/event-grid-edge-persist-event-subscriptions.md)]
 
-1. Создайте объект Subscription. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
+1. Создайте subscription.jsсо следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
     ```json
         {
@@ -180,7 +179,7 @@ ms.locfileid: "79281006"
 
     >[!NOTE]
     > Свойство **endpointType** указывает, что подписчик является веб- **перехватчиком**.  **EndpointUrl** указывает URL-адрес, по которому подписчик прослушивает события. Этот URL-адрес соответствует образцу подписчика Azure, который вы развернули ранее.
-2. Выполните следующую команду, чтобы создать подписку для раздела. Убедитесь, что отображается код состояния HTTP `200 OK`.
+2. Выполните следующую команду, чтобы создать подписку для раздела. Убедитесь, что отображается код состояния HTTP `200 OK` .
 
     ```sh
     curl -k -H "Content-Type: application/json" -X PUT -g -d @subscription.json https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic1/eventSubscriptions/sampleSubscription1?api-version=2019-01-01-preview
@@ -191,7 +190,7 @@ ms.locfileid: "79281006"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic1/eventSubscriptions/sampleSubscription1?api-version=2019-01-01-preview
     ```
 
-    Образец вывода:
+    Пример результатов выполнения:
 
    ```json
         {
@@ -212,7 +211,7 @@ ms.locfileid: "79281006"
 
 ## <a name="publish-an-event"></a>Публикация события
 
-1. Создайте Event. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md).
+1. Создайте event.jsсо следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md).
 
     ```json
         [
@@ -252,7 +251,7 @@ ms.locfileid: "79281006"
     sudo docker logs subscriber
     ```
 
-    Образец вывода:
+    Пример результатов выполнения:
 
     ```sh
         Received Event:

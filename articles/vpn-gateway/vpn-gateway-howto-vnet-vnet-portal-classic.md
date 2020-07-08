@@ -5,15 +5,14 @@ services: vpn-gateway
 titleSuffix: Azure VPN Gateway
 author: cherylmc
 ms.service: vpn-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 02/12/2020
 ms.author: cherylmc
-ms.openlocfilehash: 63c6329ad62289cd127902c1438073b28fc8683e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: bdd27645045195016b7a563787470bf6f2187115
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77201855"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84985466"
 ---
 # <a name="configure-a-vnet-to-vnet-connection-classic"></a>Настройка подключения между виртуальными сетями (классическая модель)
 
@@ -280,5 +279,5 @@ ms.locfileid: "77201855"
 * Все туннели VPN виртуальной сети, включая VPN-подключения типа "точка — сеть", совместно используют доступную пропускную способность VPN-шлюза Azure и регулируются одним соглашением об уровне обслуживания, определяющим время работы VPN-шлюзов в Azure.
 * Трафик между виртуальными сетями проходит через магистральную сеть Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Проверьте подключения. Дополнительные сведения см. в статье [Проверка подключения VPN-шлюза](vpn-gateway-verify-connection-resource-manager.md).

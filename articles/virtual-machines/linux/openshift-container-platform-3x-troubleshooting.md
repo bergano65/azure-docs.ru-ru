@@ -11,10 +11,9 @@ ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
 ms.openlocfilehash: 90fd3680cfdc4ecd1dcb0ce33b63f8d76dd8bfae
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81759470"
 ---
 # <a name="troubleshoot-openshift-container-platform-311-deployment-in-azure"></a>Устранение неполадок развертывания OpenShift для платформы контейнеров 3,11 в Azure
@@ -37,7 +36,7 @@ ms.locfileid: "81759470"
 
 ## <a name="log-files"></a>Файлы журнала
 
-Файлы журналов (stderr и stdout) для сценариев подготовки узла находятся в `/var/lib/waagent/custom-script/download/0` папке на всех узлах. Если произошла ошибка во время подготовки узла, просмотрите файлы журналов, чтобы определить ошибку.
+Файлы журналов (stderr и stdout) для сценариев подготовки узла находятся в папке `/var/lib/waagent/custom-script/download/0` на всех узлах. Если произошла ошибка во время подготовки узла, просмотрите файлы журналов, чтобы определить ошибку.
 
 Если подготовительные сценарии выполнены успешно, необходимо проверить файлы журналов в `/var/lib/waagent/custom-script/download/1` каталоге узла ansible сборник тренировочных заданий. Если ошибка произошла во время фактической установки OpenShift, в файле STDOUT она будет указана. Используйте эту информацию при обращении в службу поддержки за помощью.
 
@@ -114,5 +113,5 @@ az group update -g <openshift resource group> --set tags.sptest=test
 
 При некоторых ошибках можно также использовать следующие команды для получения дополнительных сведений:
 
-1. > службы \<состояния systemctl
+1. systemctl status \<service>
 2. journalctl -xe

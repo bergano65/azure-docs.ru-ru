@@ -2,13 +2,12 @@
 title: Публикация предложения управляемой службы в Azure Marketplace
 description: Узнайте, как опубликовать предложение управляемой службы, которое осуществляет подключение клиентов к управлению делегированными ресурсами Azure.
 ms.date: 05/04/2020
-ms.topic: conceptual
-ms.openlocfilehash: 04da33d0232371f4175a935bf1e35925376babbc
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
-ms.translationtype: MT
+ms.topic: how-to
+ms.openlocfilehash: 214a71faca59072660f1e1f413cb107d8e8f6fc9
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82788745"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85920895"
 ---
 # <a name="publish-a-managed-service-offer-to-azure-marketplace"></a>Публикация предложения управляемой службы в Azure Marketplace
 
@@ -18,7 +17,7 @@ ms.locfileid: "82788745"
 
 Для создания и публикации предложений необходимо иметь действительную [учетную запись в центре партнеров](../../marketplace/partner-center-portal/create-account.md) . Если у вас еще нет учетной записи, [процесс регистрации](https://aka.ms/joinmarketplace) поможет вам выполнить действия по созданию учетной записи в центре партнеров и регистрации в программе коммерческого рынка.
 
-В соответствии с [требованиями к сертификации для управляемой службы](https://docs.microsoft.com/legal/marketplace/certification-policies#7004-business-requirements)необходимо иметь [уровень компетенции серебряной или Золотой облачной платформы](https://docs.microsoft.com/partner-center/learn-about-competencies) или [экспертный MSP](https://partner.microsoft.com/membership/azure-expert-msp) -пакет Azure для публикации предложения управляемой службы.
+В соответствии с [требованиями к сертификации для управляемой службы](/legal/marketplace/certification-policies#7004-business-requirements)необходимо иметь [уровень компетенции серебряной или Золотой облачной платформы](/partner-center/learn-about-competencies) или [экспертный MSP](https://partner.microsoft.com/membership/azure-expert-msp) -пакет Azure для публикации предложения управляемой службы.
 
 Ваш идентификатор Microsoft Partner Network будет [автоматически связан](../../billing/billing-partner-admin-link-started.md) с публикуемыми предложениями, чтобы отследить влияние на привлечение клиентов.
 
@@ -29,7 +28,7 @@ ms.locfileid: "82788745"
 
 Подробные инструкции по созданию предложения, включая все сведения и активы, которые необходимо предоставить, см. в разделе [Создание предложения управляемой службы](../../marketplace/partner-center-portal/create-new-managed-service-offer.md).
 
-Чтобы узнать об общем процессе публикации, ознакомьтесь с [руководством по публикации в Azure Marketplace и AppSource](../../marketplace/marketplace-publishers-guide.md). Также следует ознакомиться [с политиками сертификации для коммерческой платформы Marketplace](https://docs.microsoft.com/legal/marketplace/certification-policies), в частности с разделом [Managed Services](https://docs.microsoft.com/legal/marketplace/certification-policies#700-managed-services) (Управляемые службы).
+Чтобы узнать об общем процессе публикации, ознакомьтесь с [руководством по публикации в Azure Marketplace и AppSource](../../marketplace/marketplace-publishers-guide.md). Также следует ознакомиться [с политиками сертификации для коммерческой платформы Marketplace](/legal/marketplace/certification-policies), в частности с разделом [Managed Services](/legal/marketplace/certification-policies#700-managed-services) (Управляемые службы).
 
 После того как клиент добавит ваше предложение, он сможет делегировать одну или несколько подписок или групп ресурсов, которые затем будут подключены [для делегированного управления ресурсами Azure](#the-customer-onboarding-process).
 
@@ -40,18 +39,18 @@ ms.locfileid: "82788745"
 
 Когда вы заполните все разделы, вашим следующим шагом будет публикация предложения в Azure Marketplace. Нажмите кнопку **Опубликовать**, чтобы запустить процесс активации предложения. Дополнительные сведения об этом процессе можно найти [здесь](../../marketplace/partner-center-portal/create-new-managed-service-offer.md#publish). 
 
-Вы можете в любое время [опубликовать обновленную версию предложения](../..//marketplace/partner-center-portal/update-existing-offer.md). Например, вам может потребоваться добавить новое определение роли к опубликованному ранее предложению. После этого клиенты, которые уже добавили предложение, увидят значок на странице [**Поставщики услуг**](view-manage-service-providers.md) на портале Azure, который сообщит им, доступно ли обновление. Каждый клиент сможет [проверить изменения](view-manage-service-providers.md#update-service-provider-offers) и решить, требуется ли им обновление до новой версии. 
+Вы можете в любое время [опубликовать обновленную версию предложения](../..//marketplace/partner-center-portal/update-existing-offer.md). Например, вам может потребоваться добавить новое определение роли к опубликованному ранее предложению. После этого клиенты, которые уже добавили предложение, увидят значок на странице [**Поставщики услуг**](view-manage-service-providers.md) на портале Azure, который сообщит им, доступно ли обновление. Каждый клиент сможет [просматривать изменения](view-manage-service-providers.md#update-service-provider-offers) и принимать решение о необходимости обновления до новой версии. 
 
 ## <a name="the-customer-onboarding-process"></a>Процесс подключения пользователей
 
 После того, как пользователь добавит ваше предложение, он [сможет делегировать одну или несколько конкретных подписок или групп ресурсов](view-manage-service-providers.md#delegate-resources), которые затем будут подключены к системе делегированного управления ресурсами Azure. Если пользователь принял предложение, но еще не делегировал никаких ресурсов, он увидит примечание в верхней части раздела **Provider offers** (Предложения поставщиков) страницы [**Поставщики услуг**](view-manage-service-providers.md) на портале Azure.
 
 > [!IMPORTANT]
-> Делегирование должно выполняться учетной записью, отличной от гостевой, в клиенте клиента, имеющей [встроенную роль владельца](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) подписки (или содержащей группы ресурсов, для которых выполняется подключение). Чтобы найти пользователей, которые могут делегировать подписку, пользователь клиента может выбрать подписку на портале Azure, открыть **управление доступом (IAM)** и [просмотреть всех пользователей с ролью владельца](../../role-based-access-control/role-assignments-list-portal.md#list-owners-of-a-subscription).
+> Делегирование должно выполняться учетной записью, отличной от гостевой, в клиенте клиента, имеющей [встроенную роль владельца](../../role-based-access-control/built-in-roles.md#owner) подписки (или содержащей группы ресурсов, для которых выполняется подключение). Чтобы найти пользователей, которые могут делегировать подписку, пользователь клиента может выбрать подписку на портале Azure, открыть **управление доступом (IAM)** и [просмотреть всех пользователей с ролью владельца](../../role-based-access-control/role-assignments-list-portal.md#list-owners-of-a-subscription).
 
 После того как клиент делегирует подписку (или одну или несколько групп ресурсов в подписке), поставщик ресурсов **Microsoft. ManagedServices** будет зарегистрирован для этой подписки, и пользователи вашего клиента смогут получить доступ к делегированным ресурсам в соответствии с авторизациями в вашем предложении.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о [коммерческом рынке](../../marketplace/partner-center-portal/commercial-marketplace-overview.md).
 - Узнайте больше об [интерфейсах управления для различных клиентов](../concepts/cross-tenant-management-experience.md).

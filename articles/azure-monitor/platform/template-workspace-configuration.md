@@ -7,10 +7,9 @@ author: bwren
 ms.author: bwren
 ms.date: 01/09/2020
 ms.openlocfilehash: dbeaa58da109c5afceb03a560e69e0c8bf63ad42
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81768131"
 ---
 # <a name="manage-log-analytics-workspace-using-azure-resource-manager-templates"></a>Управление рабочей областью Log Analytics с помощью шаблонов Azure Resource Manager
@@ -40,7 +39,7 @@ ms.locfileid: "81768131"
 | Ресурс | Тип ресурса | Версия API |
 |:---|:---|:---|
 | Рабочая область   | workspaces    | 2017-03-15-preview |
-| Система поиска      | savedSearches | 2015-03-20 |
+| Найти      | savedSearches | 2015-03-20 |
 | Источник данных | datasources   | 2015-11-01-preview |
 | Решение    | solutions     | 2015-11-01-preview |
 
@@ -51,7 +50,7 @@ ms.locfileid: "81768131"
 > [!WARNING]
 > Следующий шаблон создает рабочую область Log Analytics и настраивает сбор данных. Это может привести к изменению параметров выставления счетов. Ознакомьтесь [со сведениями об управлении использованием и затратами Azure Monitor](manage-cost-storage.md) для получения сведений о выставлении счетов за данные, собранные в log Analytics рабочей области, перед их применением в среде Azure.
 
-Для резервирования емкости необходимо определить выбранное резервирование емкости для приема данных, указав номер SKU `CapacityReservation` и значение в ГБ для свойства. `capacityReservationLevel` В следующем списке приведены поддерживаемые значения и поведение при его настройке.
+Для резервирования емкости необходимо определить выбранное резервирование емкости для приема данных, указав номер SKU `CapacityReservation` и значение в ГБ для свойства `capacityReservationLevel` . В следующем списке приведены поддерживаемые значения и поведение при его настройке.
 
 - После установки лимита резервирования нельзя изменить номер SKU в течение 31 дня.
 
@@ -153,7 +152,7 @@ ms.locfileid: "81768131"
    >* "Name": "КапаЦитиресерватион",
    >* "КапаЦитиресерватионлевел": 100
 
-2. Отредактируйте шаблон с учетом ваших требований. Вместо передачи параметров в виде встроенных значений рекомендуется создать [файл параметров Диспетчер ресурсов](../../azure-resource-manager/templates/parameter-files.md) . Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/2015-11-01-preview/workspaces) с описанием поддерживаемых свойств и значений. 
+2. Отредактируйте шаблон с учетом ваших требований. Вместо встраивания параметров в строку запуска попробуйте создать [файл параметров Resource Manager](../../azure-resource-manager/templates/parameter-files.md). Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/2015-11-01-preview/workspaces) с описанием поддерживаемых свойств и значений. 
 
 3. Сохраните этот файл как **deploylaworkspacetemplate.json** в локальной папке.
 
