@@ -6,12 +6,12 @@ ms.author: nikiest
 ms.topic: conceptual
 ms.date: 05/20/2020
 ms.subservice: ''
-ms.openlocfilehash: ddd34295bfe64fdd336d8b237482b45f02e30201
-ms.sourcegitcommit: fc0431755effdc4da9a716f908298e34530b1238
-ms.translationtype: HT
+ms.openlocfilehash: 14ecd1a35f8aae8365b7c7dc458712acdb894e62
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83816499"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85602590"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-monitor"></a>Использование Приватного канала Azure для безопасного подключения сетей к Azure Monitor
 
@@ -74,11 +74,17 @@ ms.locfileid: "83816499"
 
 Начните с создания ресурса области Приватного канала Azure Monitor.
 
-1. Перейдите в раздел **Создание ресурса** на портале Azure и выполните поиск фразы **область Приватного канала Azure Monitor**. 
-2. Щелкните **Create** (Создать). 
-3. Выберите подписку и группу ресурсов. 
-4. Присвойте области AMPLS имя. Лучше использовать такое имя, которое ясно показывает, какое назначение и границы безопасности будет иметь область, чтобы пользователь случайно не нарушил границы безопасности сети. Например, "AppServerProdTelem". 
+1. Перейдите в раздел **Создание ресурса** на портале Azure и выполните поиск фразы **область Приватного канала Azure Monitor**.
+
+   ![Поиск Azure Monitor области частной ссылки](./media/private-link-security/ampls-find-1c.png)
+
+2. Щелкните **Create** (Создать).
+3. Выберите подписку и группу ресурсов.
+4. Присвойте области AMPLS имя. Лучше использовать такое имя, которое ясно показывает, какое назначение и границы безопасности будет иметь область, чтобы пользователь случайно не нарушил границы безопасности сети. Например, "AppServerProdTelem".
 5. Щелкните **Просмотр и создание**. 
+
+   ![Создание Azure Monitor области частной ссылки](./media/private-link-security/ampls-create-1d.png)
+
 6. Дождитесь окончания проверки, а затем щелкните **Создать**.
 
 ## <a name="connect-azure-monitor-resources"></a>Подключение к ресурсам Azure Monitor
@@ -117,7 +123,7 @@ ms.locfileid: "83816499"
 
    а.    Выберите **виртуальную сеть** и **подсеть**, которые нужно подключить к ресурсам Azure Monitor. 
  
-   b.    Выберите **Да** для параметра **Интеграция с частной зоной DNS** и позвольте системе автоматически создать новую частную зону DNS. 
+   b.    Выберите **Да** для параметра **Интеграция с частной зоной DNS** и позвольте системе автоматически создать новую частную зону DNS. Фактические зоны DNS могут отличаться от тех, которые показаны на снимке экрана ниже. 
  
    c.    Щелкните **Review + create** (Просмотреть и создать).
  
@@ -162,9 +168,8 @@ ms.locfileid: "83816499"
 
 > [!NOTE]
 > Чтобы полностью защитить Application Insights на основе рабочих областей, необходимо заблокировать доступ к ресурсу Application Insights, а также к базовой рабочей области Log Analytics.
-
-> [!NOTE]
-> Диагностика на уровне кода (профилировщик/отладчик) сейчас не поддерживает Приватный канал.
+>
+> Диагностика на уровне кода (профилировщик или отладчик) требуют предоставления собственной учетной записи хранения для поддержки частной ссылки. Ниже приведена [Документация](https://docs.microsoft.com/azure/azure-monitor/app/profiler-bring-your-own-storage) по этому способу.
 
 ## <a name="use-apis-and-command-line"></a>Использование API и командной строки
 
@@ -174,7 +179,7 @@ ms.locfileid: "83816499"
 
 Для управления доступом к сети используйте флаги `[--ingestion-access {Disabled, Enabled}]` и `[--query-access {Disabled, Enabled}]` в [рабочих областях Log Analytics](https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace?view=azure-cli-latest) или [компонентах Application Insights](https://docs.microsoft.com/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest).
 
-## <a name="collect-custom-logs-over-private-link"></a>Сбор пользовательских журналов по Приватному каналу
+## <a name="collect-custom-logs-over-private-link"></a>Получение пользовательских журналов по частной ссылке
 
 Учетные записи хранения используются в процессе приема пользовательских журналов. По умолчанию используются учетные записи хранения, управляемые службой. Однако для приема пользовательских журналов через приватные каналы необходимо использовать собственные учетные записи хранения и связать их с рабочими областями Log Analytics. Дополнительные сведения о настройке таких учетных записей см. в разделе об [использовании командной строки](https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/linked-storage?view=azure-cli-latest).
 
@@ -188,7 +193,7 @@ ms.locfileid: "83816499"
 
 **Агент Log Analytics для Windows**
 
-Используйте агент Log Analytics версии 18.20.18038.0 или более поздней.
+Используйте Log Analytics агента версии 10.20.18038.0 или более поздней.
 
 **Агент Log Analytics для Linux**
 
@@ -201,7 +206,7 @@ $ sudo /opt/microsoft/omsagent/bin/omsadmin.sh -w <workspace id> -s <workspace k
 
 ### <a name="azure-portal"></a>Портал Azure
 
-Чтобы использовать такие функции на портале Azure Monitor, как Application Insights и Log Analytics, необходимо разрешить доступ к порталу Azure и расширениям Azure Monitor в частных сетях. Добавьте в свой брандмауэр [теги службы](../../firewall/service-tags.md) **AzureActiveDirectory**, **AzureResourceManager**, **AzureFrontDoor.FirstParty и **AzureFrontdoor.Frontend**.
+Чтобы использовать такие функции на портале Azure Monitor, как Application Insights и Log Analytics, необходимо разрешить доступ к порталу Azure и расширениям Azure Monitor в частных сетях. Добавьте в брандмауэр теги **AzureActiveDirectory**, **AzureResourceManager**, **азурефронтдур. фирстпарти**и **азурефронтдур. интерфейсной** [службы](../../firewall/service-tags.md) .
 
 ### <a name="programmatic-access"></a>Программный доступ
 
@@ -220,7 +225,14 @@ $ sudo /opt/microsoft/omsagent/bin/omsadmin.sh -w <workspace id> -s <workspace k
 
 | Облачная среда | Ресурс агента | порты; | Направление |
 |:--|:--|:--|:--|
-|Azure Public     | scadvisor.blob.core.windows.net         | 443 | Исходящие
+|Azure Public     | scadvisorcontent.blob.core.windows.net         | 443 | Исходящие
 |Azure для государственных организаций | usbn1oicore.blob.core.usgovcloudapi.net | 443 |  Исходящие
 |Azure China 21Vianet      | mceast2oicore.blob.core.chinacloudapi.cn| 443 | Исходящие
 
+### <a name="browser-dns-settings"></a>Параметры DNS браузера
+
+Если вы подключаетесь к ресурсам Azure Monitor по частной ссылке, трафик к этому ресурсу должен пройти через закрытую конечную точку, настроенную в сети. Чтобы включить частную конечную точку, обновите параметры DNS, как описано в [подсоединении к частной конечной точке](#connect-to-a-private-endpoint). Некоторые браузеры используют собственные параметры DNS вместо заданных. Браузер может попытаться подключиться к Azure Monitor общедоступным конечным точкам и полностью обойти частную ссылку. Убедитесь, что параметры браузера не переопределяют или кэшируют старые параметры DNS. 
+
+## <a name="next-steps"></a>Дальнейшие шаги
+
+- Сведения о [закрытом хранилище](private-storage.md)
