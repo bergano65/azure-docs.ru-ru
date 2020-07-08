@@ -11,10 +11,9 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: d9942c31b63de77196b8b51b88376cb8ef74b990
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76721257"
 ---
 # <a name="tasks-for-an-individual-contributor-in-the-team-data-science-process"></a>Задачи отдельного участника в командном процессе обработки и анализа данных
@@ -55,7 +54,7 @@ ms.locfileid: "76721257"
 
 Чтобы работать с репозиториями локально и отправить изменения в общие репозитории группы и проекта, сначала необходимо скопировать или *клонировать* репозитории на локальный компьютер. 
 
-1. В Azure DevOps перейдите на страницу сводки проекта команды по адресу *https:\//\<имя сервера>/\<название организации>/\<имя команды>*, например **https:\//dev.Azure.com/DataScienceUnit/myTeam**.
+1. В Azure DevOps перейдите на страницу сводки проекта команды по адресу *https: \/ / \<server name> / \<organization name> / \<team name> *, например **https: \/ /dev.Azure.com/DataScienceUnit/myTeam**.
    
 1. Выберите **репозиториев** в левой области навигации и в верхней части страницы выберите репозиторий, который необходимо клонировать.
    

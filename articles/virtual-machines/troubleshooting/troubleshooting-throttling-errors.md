@@ -14,10 +14,9 @@ ms.date: 09/18/2018
 ms.author: changov
 ms.reviewer: vashan, rajraj
 ms.openlocfilehash: f5fbd80fc9a8e519cf8f49ab16d7e747c6a8171b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76045357"
 ---
 # <a name="troubleshooting-api-throttling-errors"></a>Устранение ошибок регулирования API 
@@ -98,6 +97,6 @@ Content-Type: application/json; charset=utf-8
 - Если для кода клиента нужны виртуальные машины, диски и моментальные снимки из определенного расположения Azure, то используйте форму на основе расположения вместо запрашивания всех виртуальных машин в подписке, а затем примените фильтр по расположению на стороне клиента: запрос региональных конечных точек поставщика вычислительных ресурсов `GET /subscriptions/<subId>/providers/Microsoft.Compute/locations/<location>/virtualMachines?api-version=2017-03-30`. 
 -   При создании или обновлении ресурсов API, в частности виртуальных машин и масштабируемого набора виртуальных машин, гораздо более эффективно отслеживать завершение возвращаемой асинхронной операции, а не опрашивать URL-адрес ресурса (на основе `provisioningState`).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о механизме повторов для других служб в Azure см. [здесь](https://docs.microsoft.com/azure/architecture/best-practices/retry-service-specific).

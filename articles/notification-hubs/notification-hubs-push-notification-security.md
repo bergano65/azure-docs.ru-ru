@@ -17,10 +17,9 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 09/23/2019
 ms.openlocfilehash: b871775bc7a6d795e86147ae9cffa27bdd2f3348
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76263767"
 ---
 # <a name="notification-hubs-security"></a>Безопасность концентраторов уведомлений
@@ -48,7 +47,7 @@ ms.locfileid: "76263767"
 
 Аналогично другим сущностям, операции центра уведомлений разрешены для трех утверждений безопасности: **прослушивание**, **отправку**и **Управление**.
 
-| Утверждение   | Описание                                          | Разрешенные операции |
+| Утверждение   | Описание:                                          | Разрешенные операции |
 | ------- | ---------------------------------------------------- | ------------------ |
 | Прослушивание  | Создание, обновление, чтение и удаление отдельных регистраций | Создание и обновление регистрации<br><br>Чтение регистрации<br><br>Чтение всех регистраций для обработки<br><br>Регистрация удаления |
 | Send    | Отправка сообщений в центр уведомлений                | Отправить сообщение |
@@ -79,6 +78,6 @@ Endpoint=sb://mytestnamespace1.servicebus.windows.net/;SharedAccessKeyName=polic
 
 ![Получение ключей SAS](media/notification-hubs-push-notification-security/access1.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения о концентраторах уведомлений](notification-hubs-push-notification-overview.md)

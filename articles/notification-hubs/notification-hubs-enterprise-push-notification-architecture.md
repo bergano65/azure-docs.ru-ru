@@ -17,10 +17,9 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: 0104547a432f7f78d74731e11926bcd82088cef7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76264039"
 ---
 # <a name="enterprise-push-architectural-guidance"></a>Руководство по архитектуре push-уведомлений
@@ -58,7 +57,7 @@ ms.locfileid: "76264039"
 
 ## <a name="sample"></a>Пример
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 Чтобы ознакомиться с основными понятиями и общими процедурами создания и настройки, необходимо изучить следующие руководства.
 
@@ -287,7 +286,7 @@ ms.locfileid: "76264039"
 <!-- Links -->
 [коллекции примеров центра уведомлений]: https://github.com/Azure/azure-notificationhubs-samples
 [Мобильная служба Azure]: https://azure.microsoft.com/documentation/services/mobile-services/
-[Служебная шина Azure]: https://azure.microsoft.com/documentation/articles/fundamentals-service-bus-hybrid-solutions/
+[служебной шине Azure]: https://azure.microsoft.com/documentation/articles/fundamentals-service-bus-hybrid-solutions/
 [Использование разделов и подписок Service Bus]: https://azure.microsoft.com/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/
 [веб-задания Azure]: ../app-service/webjobs-create.md
 [Учебник по центрам уведомлений для Windows Universal]: https://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/

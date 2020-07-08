@@ -5,10 +5,9 @@ ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 0877161f8d668141c8efb7c06b10643bf209341f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76262968"
 ---
 # <a name="handling-external-events-in-durable-functions-azure-functions"></a>Обработка внешних событий в устойчивых функциях (Функции Azure)
@@ -20,7 +19,7 @@ ms.locfileid: "76262968"
 
 ## <a name="wait-for-events"></a>Ожидание событий
 
-Методы `WaitForExternalEvent` (.NET) и `waitForExternalEvent` (JavaScript) [привязки триггера оркестрации](durable-functions-bindings.md#orchestration-trigger) позволяют функции Orchestrator асинхронно ждать и прослушивать внешнее событие. Функция оркестратора, ожидающая передачи данных, объявляет *имя* события и *форму данных*, которую ожидает получить.
+`WaitForExternalEvent`Методы (.NET) и `waitForExternalEvent` (JavaScript) [привязки триггера оркестрации](durable-functions-bindings.md#orchestration-trigger) позволяют функции Orchestrator асинхронно ждать и прослушивать внешнее событие. Функция оркестратора, ожидающая передачи данных, объявляет *имя* события и *форму данных*, которую ожидает получить.
 
 # <a name="c"></a>[C#](#tab/csharp)
 
@@ -42,7 +41,7 @@ public static async Task Run(
 ```
 
 > [!NOTE]
-> Предыдущий код C# предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо. `IDurableOrchestrationContext` Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> Предыдущий код C# предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext` . Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -93,7 +92,7 @@ public static async Task Run(
 ```
 
 > [!NOTE]
-> Предыдущий код C# предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо. `IDurableOrchestrationContext` Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> Предыдущий код C# предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext` . Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -141,7 +140,7 @@ public static async Task Run(
 ```
 
 > [!NOTE]
-> Предыдущий код предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо. `IDurableOrchestrationContext` Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> Предыдущий код предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext` . Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 Если полезные данные события невозможно преобразовать в ожидаемый тип `T`, в .NET выдается исключение.
 
@@ -173,7 +172,7 @@ module.exports = df.orchestrator(function*(context) {
 
 ## <a name="send-events"></a>Отправка событий
 
-Метод `RaiseEventAsync` (.NET) или `raiseEvent` (JavaScript) [привязки клиента оркестрации](durable-functions-bindings.md#orchestration-client) отправляет события, которые `WaitForExternalEvent` (.NET) или `waitForExternalEvent` (JavaScript) ожидают.  Метод `RaiseEventAsync` принимает *eventName* и *eventData* в качестве параметров. Данные событий должны быть JSON-сериализуемыми.
+`RaiseEventAsync`Метод (.NET) или `raiseEvent` (JavaScript) [привязки клиента оркестрации](durable-functions-bindings.md#orchestration-client) отправляет события, которые `WaitForExternalEvent` (.NET) или `waitForExternalEvent` (JavaScript) ожидают.  Метод `RaiseEventAsync` принимает *eventName* и *eventData* в качестве параметров. Данные событий должны быть JSON-сериализуемыми.
 
 Ниже приведен пример функции, активируемой с помощью очереди, которая отправляет событие "Approval" в экземпляр функции оркестратора. Идентификатор экземпляра оркестрации поступает из текста сообщения очереди.
 
@@ -190,7 +189,7 @@ public static async Task Run(
 ```
 
 > [!NOTE]
-> Предыдущий код C# предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо `OrchestrationClient` использовать атрибут, а не `DurableClient` атрибут, и тип `DurableOrchestrationClient` параметра следует использовать вместо. `IDurableOrchestrationClient` Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> Предыдущий код C# предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `OrchestrationClient` атрибут, а не `DurableClient` атрибут, и `DurableOrchestrationClient` тип параметра следует использовать вместо `IDurableOrchestrationClient` . Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -210,7 +209,7 @@ module.exports = async function(context, instanceId) {
 > [!NOTE]
 > Если экземпляр оркестрации с указанным *идентификатором экземпляра* отсутствует, сообщение о событии отменяется.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Узнайте, как реализовать обработку ошибок](durable-functions-error-handling.md)

@@ -9,10 +9,9 @@ ms.service: time-series-insights
 ms.topic: conceptual
 ms.date: 01/06/2020
 ms.openlocfilehash: ce566080c6ddbc4784365ceda6011c3f6612732a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76276865"
 ---
 # <a name="connect-time-series-insights-to-power-bi"></a>Подключение Time Series Insights к Power BI  
@@ -21,7 +20,7 @@ ms.locfileid: "76276865"
 
 Служба "аналитика временных рядов Azure" теперь тесно интегрируется с [Power BI](https://powerbi.microsoft.com/), обеспечивая более широкие возможности визуализации и мониторинга для потоковых данных и позволяет обмениваться ценными сведениями и результатами в Организации.
 
-## <a name="video"></a>Видеоролик
+## <a name="video"></a>Видео
 
 ### <a name="learn-more-about-integrating-azure-time-series-insights-with-power-bibr"></a>Дополнительные сведения об интеграции службы "аналитика временных рядов Azure" с Power BI.</br>
 
@@ -59,7 +58,7 @@ ms.locfileid: "76276865"
 
 Для расширенной работы с запросами и редактированием в Power BI используйте Расширенный редактор Power BI.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, [как подключиться к службе "аналитика временных рядов" для Power BI](./how-to-connect-power-bi.md).
 

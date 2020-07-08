@@ -7,10 +7,9 @@ ms.topic: conceptual
 ms.date: 10/05/2019
 ms.author: brendm
 ms.openlocfilehash: 6c217096f0ba4200f49bd1fd8056768a6f6f6dbd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76278854"
 ---
 # <a name="discover-and-register-your-spring-cloud-services"></a>Обнаружение и регистрация облачных служб весны
@@ -19,8 +18,8 @@ ms.locfileid: "76278854"
 
 ## <a name="register-your-application-using-spring-cloud-service-registry"></a>Регистрация приложения с помощью реестра пружины облачной службы
 
-Прежде чем приложение сможет управлять регистрацией и обнаружением служб с помощью реестра пружины облачной службы, в файл *POM. XML* приложения должны быть добавлены несколько зависимостей.
-Включите зависимости для *пружины-Cloud-Starter-Netflix-Еурека-Client* и *пружины-Cloud-Starter-Azure-пружины-Cloud-Client* в *POM. XML*
+Прежде чем приложение сможет управлять регистрацией и обнаружением служб с помощью реестра пружины облачной службы, в файл *pom.xml* приложения необходимо добавить несколько зависимостей.
+Включите в *pom.xml* зависимости для *пружины-Cloud-Starter-Netflix-Еурека-Client* и *пружины-Cloud-Starter-Azure-пружины-Cloud-Client* .
 
 ```xml
     <dependency>

@@ -5,25 +5,24 @@ ms.topic: conceptual
 ms.date: 11/03/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 0565cc149a36baf31d8516fffcf48b194c465760
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76261489"
 ---
 # <a name="timers-in-durable-functions-azure-functions"></a>Таймеры в устойчивых функциях (Функции Azure)
 
 [Устойчивые функции](durable-functions-overview.md) предоставляют *устойчивые таймеры*, которые используются в функциях оркестраторов для реализации задержек или настройки времени ожидания в асинхронных действиях. Устойчивые таймеры следует использовать в функциях оркестраторов вместо `Thread.Sleep` (C#) или `Task.Delay``setTimeout()``setInterval()` (JavaScript).
 
-Устойчивый таймер создается путем вызова метода `CreateTimer` (.NET) или метода `createTimer` (JavaScript) [привязки триггера оркестрации](durable-functions-bindings.md#orchestration-trigger). Метод возвращает задачу, которая завершается в указанные дату и время.
+Устойчивый таймер создается путем вызова `CreateTimer` метода (.NET) или `createTimer` метода (JavaScript) [привязки триггера оркестрации](durable-functions-bindings.md#orchestration-trigger). Метод возвращает задачу, которая завершается в указанные дату и время.
 
 ## <a name="timer-limitations"></a>Ограничения таймера
 
 При создании таймера, срок действия которого истекает до 4:30 PM, базовая платформа устойчивых задач ставит в очередь сообщение, которое станет видимым только в 4:30 РМ. При запуске в плане потребления функций Azure вновь видимое сообщение таймера обеспечит активацию приложения функции на соответствующей виртуальной машине.
 
 > [!NOTE]
-> * Устойчивые таймеры в настоящее время ограничены 7 днями. Если требуется больше задержек, их можно имитировать с помощью API- `while` интерфейсов таймера в цикле.
-> * При вычислении времени срабатывания устойчивых таймеров всегда `CurrentUtcDateTime` используйте вместо `DateTime.UtcNow` в .NET или `currentUtcDateTime` вместо `Date.now` или `Date.UTC` в JavaScript. Дополнительные сведения см. в статье [ограничения кода функции Orchestrator](durable-functions-code-constraints.md) .
+> * Устойчивые таймеры в настоящее время ограничены 7 днями. Если требуется больше задержек, их можно имитировать с помощью API-интерфейсов таймера в `while` цикле.
+> * `CurrentUtcDateTime` `DateTime.UtcNow` `currentUtcDateTime` `Date.now` `Date.UTC` При вычислении времени срабатывания устойчивых таймеров всегда используйте вместо в .NET или вместо или в JavaScript. Дополнительные сведения см. в статье [ограничения кода функции Orchestrator](durable-functions-code-constraints.md) .
 
 ## <a name="usage-for-delay"></a>Использование для задержки
 
@@ -46,7 +45,7 @@ public static async Task Run(
 ```
 
 > [!NOTE]
-> Предыдущий пример на C# предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо. `IDurableOrchestrationContext` Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> Предыдущий пример на C# предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext` . Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -104,7 +103,7 @@ public static async Task<bool> Run(
 ```
 
 > [!NOTE]
-> Предыдущий пример на C# предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо. `IDurableOrchestrationContext` Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> Предыдущий пример на C# предназначен для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext` . Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -141,7 +140,7 @@ module.exports = df.orchestrator(function*(context) {
 
 Более подробный пример реализации времени ожидания в функциях Orchestrator см. в статье [взаимодействие с человеком & время ожидания — Проверка телефона](durable-functions-phone-verification.md) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Сведения о том, как вызывать и обрабатывать внешние события](durable-functions-external-events.md)

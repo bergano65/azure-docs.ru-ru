@@ -14,15 +14,14 @@ ms.topic: article
 ms.date: 06/10/2019
 ms.author: juliako
 ms.openlocfilehash: c39aded55fe36cb130459a4f6f119f872b1adbc4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76514329"
 ---
 # <a name="subclip-a-video-when-encoding-with-media-services---rest"></a>Подрезать видео при кодировании со службами мультимедиа — остальное
 
-Вы можете обрезать или подрезать видео при его кодировании с помощью [задания](https://docs.microsoft.com/rest/api/media/jobs). Эта функция работает с любым [преобразованием](https://docs.microsoft.com/rest/api/media/transforms) , построенным с помощью предустановок [буилтинстандарденкодерпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [стандарденкодерпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset) . 
+Вы можете обрезать или подрезать видео при его кодировании с помощью [задания](https://docs.microsoft.com/rest/api/media/jobs). Эта функция работает с любыми [преобразованиями](https://docs.microsoft.com/rest/api/media/transforms), созданными с помощью предустановок [BuiltInStandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset). 
 
 Пример RESTFUL в этом разделе создает задание, которое обрезает видео по мере отправки задания кодирования. 
 
@@ -39,7 +38,7 @@ ms.locfileid: "76514329"
 
 ## <a name="create-a-subclipping-job"></a>Создание задания подрезки
 
-1. В скачанной коллекции после этого выберите **преобразования и задания** -> **создать задание с вложенной обрезки**.
+1. В скачанной коллекции после этого выберите **преобразования и задания**  ->  **создать задание с вложенной обрезки**.
     
     Запрос на **Размещение** выглядит следующим образом:
     

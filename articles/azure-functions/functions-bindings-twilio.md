@@ -7,10 +7,9 @@ ms.date: 07/09/2018
 ms.author: cshoe
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 1426d6e770cca566c4b77ca4742e2f8a0fbb5465
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76715066"
 ---
 # <a name="twilio-binding-for-azure-functions"></a>Привязка Twilio для службы "Функции Azure"
@@ -203,7 +202,7 @@ module.exports = function (context, myQueueItem) {
 
 # <a name="python"></a>[Python](#tab/python)
 
-В следующем примере показано, как отправить SMS сообщения с помощью выходной привязки, как определено в следующей *функции. js*.
+В следующем примере показано, как отправить SMS сообщения с помощью выходной привязки, как определено в следующем *function.js*.
 
 ```json
     {
@@ -217,7 +216,7 @@ module.exports = function (context, myQueueItem) {
     }
 ```
 
-Можно передать сериализованный объект JSON в параметр, `func.Out` чтобы отправить SMS-сообщение.
+Можно передать сериализованный объект JSON в `func.Out` параметр, чтобы отправить SMS-сообщение.
 
 ```python
 import logging
@@ -241,7 +240,7 @@ def main(req: func.HttpRequest, twilioMessage: func.Out[str]) -> func.HttpRespon
 
 # <a name="java"></a>[Java](#tab/java)
 
-В следующем примере показано, как использовать заметку [твилиосмсаутпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.twiliosmsoutput) для отправки сообщения SMS. Значения для `to`, `from`и `body` являются обязательными в определении атрибута, даже если они переопределяются программным способом.
+В следующем примере показано, как использовать заметку [твилиосмсаутпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.twiliosmsoutput) для отправки сообщения SMS. Значения для `to` , `from` и `body` являются обязательными в определении атрибута, даже если они переопределяются программным способом.
 
 ```java
 package com.function;
@@ -303,40 +302,40 @@ public static CreateMessageOptions Run(
 }
  ```
 
-Полный пример см. в разделе [Пример C#](#example).
+Полный пример см. в разделе [пример на C#](#example).
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются скриптом C#.
+В скрипте C# атрибуты не поддерживаются.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+В JavaScript атрибуты не поддерживаются.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Атрибуты не поддерживаются в Python.
+В Python атрибуты не поддерживаются.
 
 # <a name="java"></a>[Java](#tab/java)
 
-Поместите заметку [твилиосмсаутпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.twiliosmsoutput) к [`OutputBinding<T>`](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.outputbinding) параметру `T` `int`, где может быть любым собственным типом Java, `String`например `byte[]`,, или типом POJO.
+Поместите заметку [твилиосмсаутпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.twiliosmsoutput) к [`OutputBinding<T>`](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.outputbinding) параметру `T` , где может быть любым собственным типом Java `int` , например,, `String` `byte[]` или типом POJO.
 
 ---
 
 ## <a name="configuration"></a>Конфигурация
 
-В следующей таблице описаны свойства конфигурации привязки, заданные в файле *Function. JSON* и `TwilioSms` атрибуте.
+В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `TwilioSms`.
 
 | Свойство function.json версии 1 | Свойство function.json версии 2 | Свойство атрибута |Описание|
 |---------|---------|---------|----------------------|
 |**type**|**type**| Нужно задать значение `twilioSms`.|
-|**двух**|**двух**| Нужно задать значение `out`.|
+|**direction**|**direction**| Нужно задать значение `out`.|
 |**name**|**name**| Имя переменной, используемое в коде функции для текстового SMS-сообщения Twilio. |
-|**accountSid**|**аккаунтсидсеттинг**| **AccountSidSetting**| Это значение должно быть равно имени параметра приложения, в котором хранится идентификатор безопасности учетной записи Twilio (`TwilioAccountSid`). Если значение не задано, имя параметра приложения по умолчанию — AzureWebJobsTwilioAccountSid. |
-|**authToken**|**authTokenSetting**|**аустокенсеттинг**| Это значение должно быть равно имени параметра приложения, содержащего токен проверки подлинности Twilio (`TwilioAccountAuthToken`). Если значение не задано, имя параметра приложения по умолчанию — AzureWebJobsTwilioAuthToken. |
-|**to**| Недоступно — указать в коде | **Кому**| Требуемое значение: номер телефона, на который отправляется текст SMS-сообщения.|
+|**accountSid**|**аккаунтсидсеттинг**| **AccountSidSetting**| Это значение должно быть равно имени параметра приложения, в котором хранится идентификатор безопасности учетной записи Twilio ( `TwilioAccountSid` ). Если значение не задано, имя параметра приложения по умолчанию — AzureWebJobsTwilioAccountSid. |
+|**authToken**|**authTokenSetting**|**аустокенсеттинг**| Это значение должно быть равно имени параметра приложения, содержащего токен проверки подлинности Twilio ( `TwilioAccountAuthToken` ). Если значение не задано, имя параметра приложения по умолчанию — AzureWebJobsTwilioAuthToken. |
+|**to**| Недоступно — указать в коде | **Чтобы**| Требуемое значение: номер телефона, на который отправляется текст SMS-сообщения.|
 |**from**|**from** | **От**| Требуемое значение: номер телефона, с которого отправляется текст SMS-сообщения.|
-|**body**|**body** | **Организм**| Это значение можно использовать для жесткого кодирования текстового SMS-сообщения, если его не нужно задавать динамически в коде функции. |  
+|**body**|**body** | **Текст**| Это значение можно использовать для жесткого кодирования текстового SMS-сообщения, если его не нужно задавать динамически в коде функции. |  
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 

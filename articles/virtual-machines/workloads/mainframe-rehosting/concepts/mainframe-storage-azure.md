@@ -7,10 +7,9 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.service: storage
 ms.openlocfilehash: 86419811cdf2c11204caae0ca5bf6f65fba063d2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76288920"
 ---
 # <a name="move-mainframe-storage-to-azure"></a>Перемещение хранилища мэйнфреймов в Azure
@@ -51,7 +50,7 @@ Azure предоставляет функции и емкость хранили
 
 <table>
 <thead>
-    <tr><th>Тип</th><th>Описание</th><th>Используйте, если хотите:</th></tr>
+    <tr><th>Type</th><th>Описание:</th><th>Используйте, если хотите:</th></tr>
 </thead>
 <tbody>
 <tr><td>Файлы Azure
@@ -102,7 +101,7 @@ Azure предоставляет функции и емкость хранили
 
 Хранилище BLOB-объектов предоставляет самый большой объем хранилища в Azure. В дополнение к размеру хранилища Azure предлагает как управляемое, так и неуправляемое хранилище. С помощью управляемого хранилища Azure управляет базовыми учетными записями хранения. В неуправляемом хранилище пользователь несет ответственность за настройку учетных записей хранения Azure соответствующего размера в соответствии с требованиями к хранилищу.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Миграция мэйнфреймов](/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/overview)
 - [Повторное размещение мэйнфреймов на виртуальных машинах Azure](/azure/virtual-machines/workloads/mainframe-rehosting/overview)

@@ -12,10 +12,9 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: c926aac3ea4360793ff52b616a55dc6198357c8a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76721784"
 ---
 # <a name="create-features-for-data-in-a-hadoop-cluster-using-hive-queries"></a>Создание признаков для данных в кластере Hadoop с помощью запросов Hive
@@ -27,7 +26,7 @@ ms.locfileid: "76721784"
 
 Эта задача является одним из этапов [процесса обработки и анализа данных группы (TDSP)](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 В этой статье предполагается, что вы:
 
 * Создали учетную запись хранения Azure. Инструкции см. в разделе [Создание учетной записи хранения](../../storage/common/storage-account-create.md).
@@ -89,14 +88,14 @@ ms.locfileid: "76721784"
         select day(<datetime field>), month(<datetime field>)
         from <databasename>.<tablename>;
 
-В этом запросе Hive предполагается, что * \<поле DateTime>* имеет формат даты и времени по умолчанию.
+В этом запросе Hive предполагается, что параметр *\<datetime field>* имеет формат даты и времени по умолчанию.
 
 Если поле даты и времени приведено не в формате по умолчанию, нужно преобразовать его в метку времени Unix, а затем преобразовать метку времени в строку даты и времени в формате по умолчанию. Когда дата и время указаны в формате по умолчанию, вы можете применять определяемые пользователями функции даты и времени для извлечения функций.
 
         select from_unixtime(unix_timestamp(<datetime field>,'<pattern of the datetime field>'))
         from <databasename>.<tablename>;
 
-В этом запросе, если * \<поле DateTime>* имеет такой же шаблон, *как 03/26/2015 12:04:39*, * \<шаблон поля datetime> "* должен иметь `'MM/dd/yyyy HH:mm:ss'`значение. Чтобы проверить шаблон поля даты и времени, можно выполнить такую команду:
+В этом запросе, если *\<datetime field>* имеет шаблон, например *03/26/2015 12:04:39*, должен быть * \<pattern of the datetime field> * `'MM/dd/yyyy HH:mm:ss'` . Чтобы проверить шаблон поля даты и времени, можно выполнить такую команду:
 
         select from_unixtime(unix_timestamp('05/15/2015 09:32:10','MM/dd/yyyy HH:mm:ss'))
         from hivesampletable limit 1;

@@ -8,10 +8,9 @@ ms.date: 01/21/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 648646b6f973762245c344cd2629a874a219b170
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76310158"
 ---
 # <a name="connecting-to-on-premises-data-sources-with-on-premises-data-gateway"></a>Подключение к локальным источникам данных с помощью локального шлюза данных
@@ -58,7 +57,7 @@ ms.locfileid: "76310158"
 
 Ниже приведены полные доменные имена, используемые шлюзом.
 
-| Имена доменов | Исходящие порты | Описание |
+| Имена доменов | Исходящие порты | Описание: |
 | --- | --- | --- |
 | *.powerbi.com |80 |HTTP для скачивания установщика. |
 | *.powerbi.com |443 |HTTPS |
@@ -93,5 +92,5 @@ ms.locfileid: "76310158"
 * [Настройка параметров прокси-сервера](https://docs.microsoft.com/data-integration/gateway/service-gateway-proxy)   
 * [Настройка параметров связи](https://docs.microsoft.com/data-integration/gateway/service-gateway-communication)   
 * [Настройка файлов журналов](https://docs.microsoft.com/data-integration/gateway/service-gateway-log-files)   
-* [Устранение неполадок](https://docs.microsoft.com/data-integration/gateway/service-gateway-tshoot)
-* [Отслеживание и оптимизация производительности шлюза](https://docs.microsoft.com/data-integration/gateway/service-gateway-performance)
+* [Устранение проблем](https://docs.microsoft.com/data-integration/gateway/service-gateway-tshoot)
+* [Мониторинг и оптимизация производительности шлюза](https://docs.microsoft.com/data-integration/gateway/service-gateway-performance)

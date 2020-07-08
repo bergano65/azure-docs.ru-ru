@@ -7,10 +7,9 @@ ms.topic: conceptual
 ms.date: 01/13/2020
 ms.author: rohogue
 ms.openlocfilehash: 78140fea74272dff6056bebfbd44ed9d55b0e1db
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76153689"
 ---
 <!-- filename is linked to in the marketplace template, make sure it gets a redirect if we rename it -->
@@ -21,7 +20,7 @@ ms.locfileid: "76153689"
 
 До и после создания кластера vFXT из Azure Marketplace необходимо выполнить несколько задач. Четкое понимание всего процесса поможет вам определить необходимые трудозатраты.
 
-## <a name="deployment-steps"></a>Шаги развертывания
+## <a name="deployment-steps"></a>Шаги по развертыванию
 
 [Спланировав систему](avere-vfxt-deploy-plan.md), вы можете приступить к созданию кластера Avere vFXT.
 
@@ -74,6 +73,6 @@ ms.locfileid: "76153689"
 
    Если необходимо переместить данные рабочего набора в новый контейнер больших двоичных объектов или другую серверную систему хранения, следуйте инструкциям в разделе [Перемещение данных в кластер вфкст](avere-vfxt-data-ingest.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Продолжайте [подготовку к созданию Авере вфкст](avere-vfxt-prereqs.md) для выполнения необходимых задач.

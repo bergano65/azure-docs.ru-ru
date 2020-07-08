@@ -16,10 +16,9 @@ ms.date: 01/17/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 01ce1599f86082aef3ff53d298cc53896074af66
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76277599"
 ---
 # <a name="azure-proximity-placement-groups-for-optimal-network-latency-with-sap-applications"></a>Группы размещения службы "близость" Azure для оптимальной сетевой задержки с приложениями SAP
@@ -159,7 +158,7 @@ New-AzVm -ResourceGroupName "myfirstppgexercise" -Name "myppgavsetappvm" -Locati
 Если вы уже развернули системы SAP, может потребоваться оптимизировать сетевую задержку некоторых критических систем и выбрать уровень приложения и уровень СУБД в одном центре обработки данных. Чтобы переместить виртуальные машины полной группы доступности Azure в существующую группу размещения с областью видимости, которая уже находится в области, необходимо завершить работу всех виртуальных машин группы доступности и назначить группу доступности существующей группе размещения с помощью портал Azure, PowerShell или CLI. Если вы хотите переместить виртуальную машину, которая не является частью группы доступности, в существующую группу размещения, вам нужно просто завершить работу виртуальной машины и назначить ее существующей группе размещения близости. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с документацией:
 
 - [Рабочие нагрузки SAP в Azure: контрольный список для планирования и развертывания](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-deployment-checklist)

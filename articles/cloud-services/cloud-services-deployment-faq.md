@@ -15,10 +15,9 @@ ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: 63a219078927e9001a8eb4085c722e7ec8d2fac9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75980626"
 ---
 # <a name="deployment-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы развертывания для облачных служб Azure. Вопросы и ответы (FAQ)
@@ -54,7 +53,7 @@ ms.locfileid: "75980626"
 ## <a name="why-does-deploying-a-cloud-service-sometime-fail-due-to-limitsquotasconstraints-on-my-subscription-or-service"></a>Почему развертывание облачной службы иногда завершается неудачно из-за ограничений или квот для моей подписки или службы?
 Развертывание облачной службы может завершиться неудачно, если ресурсы, которые требуется выделить, превышают квоту по умолчанию или максимальную квоту, разрешенную для вашей службы на уровне региона или центра обработки данных. Дополнительные сведения см. в статье [Ограничения облачных служб](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-cloud-services-limits).
 
-Вы также можете отслеживать текущую квоту и использование для своей подписки на портале: портал Azure = > "Подписки" = > \<соответствующая подписка> = > "Использование + квота".
+Вы также можете отслеживание текущего использования или квоты подписки на портале: портал Azure => Subscriptions => \<appropriate subscription>   => "использование + квота".
 
 Информацию об использовании ресурсов можно также получить через API выставления счетов Azure. См. раздел [API использования ресурсов Azure (предварительная версия)](../cost-management-billing/manage/usage-rate-card-overview.md#azure-resource-usage-api-preview).
 

@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 06/22/2017
 ms.author: vturecek
 ms.openlocfilehash: 2a331715d4e4538cfdda8d958ff549a81b627b79
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76028556"
 ---
 # <a name="service-fabric-with-azure-api-management-overview"></a>Общие сведения о Service Fabric со службой управления API Azure
@@ -105,7 +104,7 @@ ms.locfileid: "76028556"
 
 ![Обзор топологии Service Fabric со службой управления API Azure][sf-apim-dynamic-stateful]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Выполните указания в [этом руководстве](service-fabric-tutorial-deploy-api-management.md), чтобы настроить свой первый кластер Service Fabric со службой управления API и реализовать через нее отправку запросов к своим службам.
 

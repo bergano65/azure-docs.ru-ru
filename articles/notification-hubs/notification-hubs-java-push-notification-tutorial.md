@@ -17,10 +17,9 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: d48973cc7c5ed1fc7ae3f96128d488f3f1df3a05
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76263869"
 ---
 # <a name="how-to-use-notification-hubs-from-java"></a>Использование концентраторов уведомлений из Java
@@ -71,7 +70,7 @@ ms.locfileid: "76263869"
     hub = namespaceManager.createNotificationHub(hub);
     ```
 
- ИЛИ
+ OR
 
     ```java
     hub = new NotificationHub("connection string", "hubname");
@@ -374,7 +373,7 @@ API установки — это альтернативный механизм 
 
 ## <a name="next-steps"></a><a name="next-steps"></a>Дальнейшие действия
 
-В этом разделе было показано, как создать простой клиент REST Java для службы "Центры уведомлений". Здесь вы можете сделать следующее:
+В этом разделе было показано, как создать простой клиент REST Java для службы "Центры уведомлений". Здесь можно выполнять следующие действия:
 
 * Скачайте полный [пакет SDK для Java], содержащий весь код пакета SDK.
 * Попробуйте разные примеры:
@@ -384,7 +383,7 @@ API установки — это альтернативный механизм 
   * [Отправка уведомлений проверенным пользователям]
   * [Отправка кроссплатформенных уведомлений проверенным пользователям]
 
-[Пакет SDK для Java]: https://github.com/Azure/azure-notificationhubs-java-backend
+[пакет SDK для Java]: https://github.com/Azure/azure-notificationhubs-java-backend
 [Get started tutorial]: notification-hubs-ios-apple-push-notification-apns-get-started.md
 [Приступая к работе с центрами уведомлений]: notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md
 [Отправка экстренных новостей]: notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md

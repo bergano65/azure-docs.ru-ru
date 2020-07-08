@@ -14,17 +14,16 @@ ms.topic: article
 ms.date: 08/21/2019
 ms.author: juliako
 ms.openlocfilehash: f8fe1b13db6473e80f0d7cdc638b775a0c8062c7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76513507"
 ---
 # <a name="migrate-from-azure-media-encoder-to-media-encoder-standard"></a>Миграция из кодировщика мультимедиа Azure в Media Encoder Standard
 
-В этой статье рассматриваются действия по переходу с старого обработчика мультимедиа Azure Media Encoder (\) (который будет снят с учета) на процессор Media Encoder Standard Media. Сведения о датах выбытия см. в разделе об [устаревших компонентах](legacy-components.md) .
+В этой статье рассматриваются действия по переходу с старого обработчика мультимедиа Azure Media Encoder (\) (который будет снят с учета) на процессор Media Encoder Standard Media. Даты прекращения поддержки см. в разделе, посвященном [устаревшим компонентам](legacy-components.md).
 
-При кодировании файлов с именем в клиентах обычно используется именованная предустановленная строка, например `H264 Adaptive Bitrate MP4 Set 1080p`. Чтобы выполнить миграцию, необходимо обновить код для использования **Media Encoder Standardного** обработчика мультимедиа вместо «имя», а также одной из эквивалентных [системных предустановок](media-services-mes-presets-overview.md) , `H264 Multiple Bitrate 1080p`таких как. 
+При кодировании файлов с именем в клиентах обычно используется именованная предустановленная строка, например `H264 Adaptive Bitrate MP4 Set 1080p` . Чтобы выполнить миграцию, необходимо обновить код для использования **Media Encoder Standardного** обработчика мультимедиа вместо «имя», а также одной из эквивалентных [системных предустановок](media-services-mes-presets-overview.md) , таких как `H264 Multiple Bitrate 1080p` . 
 
 ## <a name="migrating-to-media-encoder-standard"></a>Переход на Media Encoder Standard
 
@@ -67,7 +66,7 @@ ITask task = job.Tasks.AddNew("My encoding task",
 Если вы создали собственную предустановку кодирования для \ "имя \", используя схему, то [для Media Encoder Standard существует эквивалентная схема](media-services-mes-schema.md). Если у вас возникли вопросы по сопоставлению старых параметров с новым кодировщиком, свяжитесь с нами по адресуmailto:amshelp@microsoft.com  
 ## <a name="known-differences"></a>Известные различия 
 
-Media Encoder Standard более надежна, надежна, имеет лучшую производительность и обеспечивает лучшую качество вывода, чем кодировщик устаревшей версии. Кроме того, примите во внимание: 
+Media Encoder Standard более надежна, надежна, имеет лучшую производительность и обеспечивает лучшую качество вывода, чем кодировщик устаревшей версии. Дополнительно 
 
 * Media Encoder Standard создает выходные файлы с другим соглашением об именовании, чем имя в имени.
 * Media Encoder Standard создает такие артефакты, как файлы, содержащие [метаданные входного файла](media-services-input-metadata-schema.md) и [метаданные выходных файлов](media-services-output-metadata-schema.md).

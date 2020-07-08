@@ -14,10 +14,9 @@ ms.topic: article
 ms.date: 02/10/2019
 ms.author: juliako
 ms.openlocfilehash: 38d46978e37ead59deb17a86f643df041452e497
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76705774"
 ---
 # <a name="upload-files-into-a-media-services-v3-account-using-rest"></a>Передача файлов в учетную запись служб мультимедиа v3 с помощью функции "ОСТАВШАЯся"
@@ -39,7 +38,7 @@ ms.locfileid: "76705774"
 
 В этом разделе показано, как создать новый ресурс.
 
-1. Выберите **активы** -> **создать или обновить ресурс**.
+1. Выберите **активы**  ->  **создать или обновить ресурс**.
 2. Нажмите кнопку **Отправить**.
 
     ![Создание ресурса](./media/upload-files/postman-create-asset.png)
@@ -50,7 +49,7 @@ ms.locfileid: "76705774"
 
 В этом разделе показано, как получить подписанный URL-адрес для созданного ресурса. URL-адрес был создан с разрешениями на чтение и запись и может использоваться для передачи цифровых файлов в контейнер ресурса.
 
-1. Выберите **активы** -> **список URL-адресов ресурсов**.
+1. Выберите **активы**  ->  **список URL-адресов ресурсов**.
 2. Нажмите кнопку **Отправить**.
 
     ![Отправка файла](./media/upload-files/postman-create-sas-locator.png)

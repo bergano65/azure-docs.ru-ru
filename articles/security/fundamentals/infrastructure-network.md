@@ -16,10 +16,9 @@ ms.workload: na
 ms.date: 02/20/2019
 ms.author: terrylan
 ms.openlocfilehash: c4756c36c2243840df69f3696e7ddac3628f3a00
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "68727171"
 ---
 # <a name="azure-network-architecture"></a>Сетевая архитектура Azure
@@ -102,7 +101,7 @@ Azure имеет две отдельные архитектуры. Некото�
 - [Доступность инфраструктуры Azure](infrastructure-availability.md)
 - [Компоненты и границы информационной системы Azure](infrastructure-components.md)
 - [Рабочая сеть Azure](production-network.md)
-- [Функции безопасности базы данных SQL Azure](infrastructure-sql.md)
+- [Возможности безопасности Базы данных SQL Azure](infrastructure-sql.md)
 - [Операции и управление в рабочей среде Azure](infrastructure-operations.md)
 - [Мониторинг инфраструктуры Azure](infrastructure-monitoring.md)
 - [Целостность инфраструктуры Azure](infrastructure-integrity.md)

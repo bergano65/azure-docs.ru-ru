@@ -9,10 +9,9 @@ ms.date: 07/25/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 5f5ded3faec3a080022eea70de2cca5d27529c4d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76272099"
 ---
 # <a name="deploy-storsimple-virtual-array---provision-in-vmware"></a>Развертывание виртуального массива StorSimple — подготовка в VMware
@@ -101,7 +100,7 @@ ms.locfileid: "76272099"
 9. На панели слева в окне **Datastore Browser** (Браузер хранилища данных) появится новая папка.
 
    ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image9.png)
-10. Щелкните значок ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image10.png) отправки и выберите **отправить файл**.
+10. Щелкните значок отправки ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image10.png) и выберите **отправить файл**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image11.png)
 11. Найдите скачанные VMDK-файлы и укажите их. Вы увидите два файла. Выберите файл для передачи.
@@ -116,7 +115,7 @@ ms.locfileid: "76272099"
 14. Вернитесь в окно клиента vSphere. Выбрав сервер ESXi, щелкните правой кнопкой мыши и выберите пункт **New Virtual Machine**(Создать виртуальную машину).
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image15.png)
-15. Отобразится окно **Create New Virtual Machine** (Создание виртуальной машины). На странице **Configuration** (Конфигурация) выберите параметр **Custom** (Настраиваемая). Щелкните **Далее**.
+15. Отобразится окно **Create New Virtual Machine** (Создание виртуальной машины). На странице **Configuration** (Конфигурация) выберите параметр **Custom** (Настраиваемая). Нажмите кнопку **Далее**.
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image16.png)
 16. На странице **Name and Location** (Имя и расположение) укажите имя виртуальной машины. Имя должно соответствовать имени папки (рекомендуется), указанному ранее на шаге 8.
 
@@ -130,10 +129,10 @@ ms.locfileid: "76272099"
 19. На странице **Guest Operating System** (Гостевая операционная система) задайте для параметра **Guest Operating System** (Гостевая операционная система) значение **Windows**. Для параметра **Version** (Версия) в раскрывающемся списке выберите значение **Microsoft Windows Server 2012 (64-bit)** (Microsoft Windows Server 2012 (64-разрядная версия)).
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image20.png)
-20. На странице **CPUs** (Процессоры) настройте параметры **Number of virtual sockets** (Количество виртуальных сокетов) и **Number of cores per virtual socket** (Количество ядер на виртуальный сокет) таким образом, чтобы значение параметра **Total number of cores** (Общее количество ядер) было не меньше 4. Щелкните **Далее**.
+20. На странице **CPUs** (Процессоры) настройте параметры **Number of virtual sockets** (Количество виртуальных сокетов) и **Number of cores per virtual socket** (Количество ядер на виртуальный сокет) таким образом, чтобы значение параметра **Total number of cores** (Общее количество ядер) было не меньше 4. Нажмите кнопку **Далее**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image21.png)
-21. На странице **Memory** (Память) укажите 8 ГБ (или больше) ОЗУ. Щелкните **Далее**.
+21. На странице **Memory** (Память) укажите 8 ГБ (или больше) ОЗУ. Нажмите кнопку **Далее**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image22.png)
 22. На странице **Network** (Сеть) укажите количество сетевых интерфейсов. Минимальное требование — один сетевой интерфейс.
@@ -142,10 +141,10 @@ ms.locfileid: "76272099"
 23. На странице **SCSI Controller** (SCSI-контроллер) примите значение по умолчанию **LSI Logic SAS controller** (SAS-контроллер с логикой LSI).
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image24.png)
-24. На странице **Select a Disk** (Выбор диска) выберите параметр **Use an existing virtual disk** (Использовать существующий виртуальный диск). Щелкните **Далее**.
+24. На странице **Select a Disk** (Выбор диска) выберите параметр **Use an existing virtual disk** (Использовать существующий виртуальный диск). Нажмите кнопку **Далее**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image25.png)
-25. На странице **Select Existing Disk** (Выбор существующего диска) в разделе **Disk File Path** (Путь к файлу диска) нажмите кнопку **Browse** (Обзор). Откроется диалоговое окно **Browse Datastores** (Обзор хранилищ данных). Перейдите к расположению, в которое был передан файл VMDK. Теперь вы увидите в хранилище данных только один файл, так как два файла, которые вы передали, были объединены. Выберите файл и нажмите кнопку **ОК**. Щелкните **Далее**.
+25. На странице **Select Existing Disk** (Выбор существующего диска) в разделе **Disk File Path** (Путь к файлу диска) нажмите кнопку **Browse** (Обзор). Откроется диалоговое окно **Browse Datastores** (Обзор хранилищ данных). Перейдите к расположению, в которое был передан файл VMDK. Теперь вы увидите в хранилище данных только один файл, так как два файла, которые вы передали, были объединены. Выберите файл и нажмите кнопку **ОК**. Нажмите кнопку **Далее**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image26.png)
 26. На странице **Advanced Options** (Дополнительные параметры) примите параметры по умолчанию и нажмите кнопку **Next** (Далее).
@@ -160,10 +159,10 @@ ms.locfileid: "76272099"
 29. Откроется окно **Add Hardware** (Установка оборудования). На странице **тип устройства** в разделе **выберите тип устройства, который вы хотите добавить**, выберите **жесткий диск**и нажмите кнопку **Далее**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image30.png)
-30. На странице **Select a Disk** (Выбор диска) выберите параметр **Create a new virtual disk** (Создать новый виртуальный диск). Щелкните **Далее**.
+30. На странице **Select a Disk** (Выбор диска) выберите параметр **Create a new virtual disk** (Создать новый виртуальный диск). Нажмите кнопку **Далее**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image31.png)
-31. На странице **Create a Disk** (Создание диска) измените значение параметра **Disk Size** (Размер диска) на 500 ГБ (или более). Минимальный размер диска — 500 ГБ, но можно подготовить диск большего размера. Обратите внимание, что после подготовки размер диска изменить нельзя. Дополнительные сведения о размере диска, подготове к работе, см. в разделе о размерах [документа рекомендации](storsimple-ova-best-practices.md). В разделе **Disk Provisioning** (Подготовка диска) выберите пункт **Thin Provision** (Тонкая подготовка). Щелкните **Далее**.
+31. На странице **Create a Disk** (Создание диска) измените значение параметра **Disk Size** (Размер диска) на 500 ГБ (или более). Минимальный размер диска — 500 ГБ, но можно подготовить диск большего размера. Обратите внимание, что после подготовки размер диска изменить нельзя. Дополнительные сведения о размере диска, подготове к работе, см. в разделе о размерах [документа рекомендации](storsimple-ova-best-practices.md). В разделе **Disk Provisioning** (Подготовка диска) выберите пункт **Thin Provision** (Тонкая подготовка). Нажмите кнопку **Далее**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image32.png)
 32. На странице **Advanced Options** (Дополнительные параметры) примите параметры по умолчанию.
@@ -237,7 +236,7 @@ ms.locfileid: "76272099"
 
 При возникновении любой другой ошибки во время начальной настройки с помощью локального веб-интерфейса см. сведения о соответствующих рабочих процессах.
 
-* Выполните диагностические тесты для [устранения неполадок при настройке веб-интерфейса](storsimple-ova-web-ui-admin.md#troubleshoot-web-ui-setup-errors).
+* Выполните диагностические тесты для [устранения неполадок настройки пользовательского веб-интерфейса](storsimple-ova-web-ui-admin.md#troubleshoot-web-ui-setup-errors).
 * [Создайте пакет журнала и просмотрите файлы журнала](storsimple-ova-web-ui-admin.md#generate-a-log-package).
 
 ## <a name="next-steps"></a>Дальнейшие действия

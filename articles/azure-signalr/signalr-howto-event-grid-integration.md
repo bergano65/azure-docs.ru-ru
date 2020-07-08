@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: chenyl
 ms.openlocfilehash: a76c9aaabf984723e2b60a7cd42425c9b29c916a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76710831"
 ---
 # <a name="how-to-send-events-from-azure-signalr-service-to-event-grid"></a>How to send events from Azure SignalR Service to Event Grid (Отправка событий из службы Azure SignalR в службу "Сетка событий")

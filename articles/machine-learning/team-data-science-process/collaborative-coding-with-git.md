@@ -11,10 +11,9 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 0708e395eff90ff5b889c05f0fd5e7a98205c5bc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76721903"
 ---
 # <a name="collaborative-coding-with-git"></a>Совместное программирование с помощью Git
@@ -39,7 +38,7 @@ Azure DevOps предоставляет удобный способ подклю
 git checkout -b <new branch name> <base branch name>
 
 ```
-Если не указать имя \<базовой ветви>, то новая ветвь будет основана на. `master` 
+Если не указать \<base branch name> , новая ветвь будет основана на `master` . 
 
 Чтобы переключиться на рабочую ветвь, выполните следующую команду: 
 
@@ -61,7 +60,7 @@ git checkout <working branch name>
 
 ## <a name="work-on-the-branch-and-commit-changes"></a><a name='WorkonaBranchandCommittheChanges-2'></a>Работа с ветвью и фиксация изменений 
 
-После внесения изменений в рабочий элемент, например при добавлении файла скрипта R в `script` ветвь локального компьютера, можно зафиксировать изменения из локальной ветви в вышестоящей рабочей ветви с помощью следующих команд git Bash:
+После внесения изменений в рабочий элемент, например при добавлении файла скрипта R в ветвь локального компьютера `script` , можно зафиксировать изменения из локальной ветви в вышестоящей рабочей ветви с помощью следующих команд git Bash:
 
 ```bash
 git status
@@ -72,11 +71,11 @@ git push origin script
 
 ![5](./media/collaborative-coding-with-git/5-sprint-push-to-branch.png)
 
-## <a name="create-a-pull-request"></a><a name='CreateapullrequestonVSTS-3'></a>Создание запроса на включение внесенных изменений
+## <a name="create-a-pull-request"></a><a name='CreateapullrequestonVSTS-3'></a>Создание запроса на вытягивание
 
 После завершения одной или нескольких фиксаций и push-уведомлений, когда вы будете готовы объединить текущую рабочую ветвь в базовую ветвь, вы можете создать и отправить *запрос на вытягивание* в Azure Repos. 
 
-На главной странице проекта Azure DevOps наведите указатель на **репозиториев** > **Pull (запросы на вытягивание** ) в левой области навигации. Затем выберите одну из **новых кнопок запроса на включение** внесенных изменений или ссылку **создать запрос на включение внесенных изменений** .
+На главной странице проекта Azure DevOps наведите указатель на **репозиториев**  >  **Pull (запросы на вытягивание** ) в левой области навигации. Затем выберите одну из **новых кнопок запроса на включение** внесенных изменений или ссылку **создать запрос на включение внесенных изменений** .
 
 ![6](./media/collaborative-coding-with-git/6-spring-create-pull-request.png)
 
@@ -98,7 +97,7 @@ git push origin script
 
 ![11](./media/collaborative-coding-with-git/11-spring-merge-pullrequest.png)
 
-Вернувшись к **репозиториев** в левой области навигации, можно увидеть, что вы перешли на главную ветвь с момента удаления `script` ветви.
+Вернувшись к **репозиториев** в левой области навигации, можно увидеть, что вы перешли на главную ветвь с момента `script` удаления ветви.
 
 ![12](./media/collaborative-coding-with-git/12-spring-branch-deleted.png)
 

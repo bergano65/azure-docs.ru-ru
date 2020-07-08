@@ -12,10 +12,9 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: a043a1655950f3ed7688e59352f8a912146e12c9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76720458"
 ---
 # <a name="the-team-data-science-process-lifecycle"></a>Жизненный цикл процесса обработки и анализа данных группы
@@ -28,11 +27,11 @@ ms.locfileid: "76720458"
 
 Жизненный цикл TDSP включает пять основных этапов, которые выполняются циклически. Эти этапы включают:
 
-   1. [Коммерческий аспект](lifecycle-business-understanding.md).
-   2. [Получение и понимание данных](lifecycle-data.md)
+   1. [Коммерческий аспект](lifecycle-business-understanding.md)
+   2. [Получение и изучение данных](lifecycle-data.md)
    3. [Моделирование](lifecycle-modeling.md)
    4. [Развертывание](lifecycle-deployment.md)
-   5. [Прием клиентом](lifecycle-acceptance.md).
+   5. [Приемка клиентом](lifecycle-acceptance.md)
 
 Визуальное представление жизненного цикла процесса обработки и анализа данных группы: 
 

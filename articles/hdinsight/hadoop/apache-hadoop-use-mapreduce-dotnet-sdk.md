@@ -9,17 +9,16 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/15/2020
 ms.openlocfilehash: e50510f2420d69be37af584a2648a794e1561ee3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76157058"
 ---
 # <a name="run-mapreduce-jobs-using-hdinsight-net-sdk"></a>Выполнение заданий MapReduce с использованием пакета SDK для HDInsight .NET
 
 [!INCLUDE [mapreduce-selector](../../../includes/hdinsight-selector-use-mapreduce.md)]
 
-Узнайте, как отправлять задания MapReduce с использованием пакета SDK для HDInsight .NET. В кластерах HDInsight предусмотрен JAR-файл с несколькими примерами MapReduce. JAR-файл — `/example/jars/hadoop-mapreduce-examples.jar`.  Один из примеров — **wordcount** (подсчет слов). Вы разрабатываете консольное приложение на C# для отправки задания по подсчету слов.  Задание считывает `/example/data/gutenberg/davinci.txt` файл и выводит результаты в `/example/data/davinciwordcount`.  Чтобы снова запустить приложение, необходимо очистить папку выходных данных.
+Узнайте, как отправлять задания MapReduce с использованием пакета SDK для HDInsight .NET. В кластерах HDInsight предусмотрен JAR-файл с несколькими примерами MapReduce. JAR-файл — `/example/jars/hadoop-mapreduce-examples.jar` .  Один из примеров — **wordcount** (подсчет слов). Вы разрабатываете консольное приложение на C# для отправки задания по подсчету слов.  Задание считывает `/example/data/gutenberg/davinci.txt` файл и выводит результаты в `/example/data/davinciwordcount` .  Чтобы снова запустить приложение, необходимо очистить папку выходных данных.
 
 > [!NOTE]  
 > Действия, описанные в этой статье, необходимо выполнять из клиента Windows. Чтобы получить сведения об использовании клиента Linux, OS X или Unix для работы с Hive, воспользуйтесь выбором вкладок в верхней части статьи.
@@ -36,13 +35,13 @@ ms.locfileid: "76157058"
 
 1. Запустите Visual Studio и создайте консольное приложение C#.
 
-1. Последовательно выберите **инструменты** > **Диспетчер** > пакетов NuGet**консоль диспетчера пакетов** и введите следующую команду:
+1. Последовательно выберите **инструменты**  >  **Диспетчер пакетов NuGet**  >  **консоль диспетчера пакетов** и введите следующую команду:
 
     ```   
     Install-Package Microsoft.Azure.Management.HDInsight.Job
     ```
 
-1. Скопируйте приведенный ниже код в **Program.CS**. Затем измените код, задав значения `existingClusterName`для:, `existingClusterPassword`, `defaultStorageAccountName` `defaultStorageAccountKey`, и. `defaultStorageContainerName`
+1. Скопируйте приведенный ниже код в **Program.CS**. Затем измените код, задав значения для: `existingClusterName` ,,, `existingClusterPassword` `defaultStorageAccountName` `defaultStorageAccountKey` и `defaultStorageContainerName` .
 
     ```csharp
     using System.Collections.Generic;
@@ -163,11 +162,11 @@ ms.locfileid: "76157058"
 
 1. Нажмите клавишу **F5** для запуска приложения.
 
-Чтобы снова запустить задание, необходимо изменить имя папки выходных данных задания в примере `/example/data/davinciwordcount`.
+Чтобы снова запустить задание, необходимо изменить имя папки выходных данных задания в примере `/example/data/davinciwordcount` .
 
-После успешного завершения задания приложение выводит содержимое выходного файла `part-r-00000`.
+После успешного завершения задания приложение выводит содержимое выходного файла `part-r-00000` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы ознакомились с несколькими способами создания кластера HDInsight. Дополнительные сведения см. в следующих статьях:
 

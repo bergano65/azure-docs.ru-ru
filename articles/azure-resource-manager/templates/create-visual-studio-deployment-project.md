@@ -4,10 +4,9 @@ description: Использование Visual Studio для создания п
 ms.topic: conceptual
 ms.date: 10/16/2019
 ms.openlocfilehash: 5127732ac0c33d4b27f70bd616fb23aaec5c871f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76152737"
 ---
 # <a name="creating-and-deploying-azure-resource-groups-through-visual-studio"></a>Создание и развертывание групп ресурсов Azure с помощью Visual Studio
@@ -20,7 +19,7 @@ ms.locfileid: "76152737"
 
 В этом разделе будет создан проект группы ресурсов Azure с помощью шаблона **Веб-приложение**.
 
-1. В Visual Studio выберите **файл**>**создать**>**проект**.
+1. В Visual Studio выберите **файл** > **создать** > **проект**.
 1. Выберите шаблон проекта **группы ресурсов Azure** и нажмите кнопку **Далее**.
 
     ![Создание проекта](./media/create-visual-studio-deployment-project/create-project.png)
@@ -139,7 +138,7 @@ ms.locfileid: "76152737"
 
 Для скрипта модуля AzureRM используйте Visual Studio:
 
-1. В контекстном меню узла проекта развертывания выберите пункт **развернуть** > **Новый**.
+1. В контекстном меню узла проекта развертывания выберите пункт **развернуть**  >  **Новый**.
 
     ![Пункт меню "Новое развертывание"](./media/create-visual-studio-deployment-project/deploy.png)
 
@@ -167,7 +166,7 @@ ms.locfileid: "76152737"
 
 На этом этапе инфраструктура для приложения уже развернута, а фактический код для проекта — еще нет.
 
-1. Добавьте проект в свое решение Visual Studio. Щелкните решение правой кнопкой мыши и выберите команду **Добавить** > **Новый проект**.
+1. Добавьте проект в свое решение Visual Studio. Щелкните решение правой кнопкой мыши и выберите команду **Добавить**  >  **Новый проект**.
 
     ![Добавление проекта](./media/create-visual-studio-deployment-project/add-project.png)
 

@@ -12,10 +12,9 @@ ms.topic: article
 ms.date: 07/08/2019
 ms.author: juliako
 ms.openlocfilehash: 08579f7ba952bb4ebcba1595508612affb852528
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75980384"
 ---
 # <a name="manage-azure-media-services-v3-accounts"></a>Управление учетными записями служб мультимедиа Azure v3
@@ -29,7 +28,7 @@ ms.locfileid: "75980384"
 > [!NOTE]
 > Службы мультимедиа v3 поддерживают модель с несколькими арендыми.
 
-### <a name="considerations"></a>Рекомендации
+### <a name="considerations"></a>Особенности
 
 * Перед миграцией в другую подписку создайте резервные копии всех данных в учетной записи.
 * Необходимо отключить все конечные точки потоковой передачи и ресурсы потоковой трансляции. Пользователи не смогут получить доступ к вашему содержимому на время перемещения группы ресурсов. 
