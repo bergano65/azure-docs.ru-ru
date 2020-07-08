@@ -5,20 +5,19 @@ description: Узнайте, как включить протокол HTTPS дл
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.reviewer: jmartens
 ms.author: aashishb
 author: aashishb
 ms.date: 03/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: a58b0120feaba907c62bc646f4f85d9185227fed
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: cb766a81cda822377eeda09cab75d19111523bef
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80287345"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84432858"
 ---
-# <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>Использование TLS для защиты веб-службы с помощью Машинное обучение Azure
+# <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>Использование TLS для защиты веб-службы с помощью Машинного обучения Azure.
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этой статье показано, как защитить веб-службу, развернутую с помощью Машинное обучение Azure.
@@ -54,7 +53,7 @@ ms.locfileid: "80287345"
 
 ## <a name="get-a-domain-name"></a>Получение доменного имени
 
-Если вы еще не владеете доменным именем, приобретите его у *регистратора доменных имен*. Процесс и цена отличаются между регистраторами. Регистратор предоставляет средства для управления доменным именем. Эти средства используются для преобразования полного доменного имени (например, www\.contoso.com) в IP-адрес, на котором размещена веб-служба.
+Если вы еще не владеете доменным именем, приобретите его у *регистратора доменных имен*. Процесс и цена отличаются между регистраторами. Регистратор предоставляет средства для управления доменным именем. Эти средства используются для преобразования полного доменного имени (например, www \. contoso.com) в IP-адрес, на котором размещена веб-служба.
 
 ## <a name="get-a-tlsssl-certificate"></a>Получение сертификата TLS/SSL
 
@@ -63,7 +62,7 @@ ms.locfileid: "80287345"
 * **Сертификат**. Сертификат должен содержать всю цепочку сертификатов и должен иметь значение "PEM-Encoded".
 * **Ключ**. Ключ также должен быть закодирован в виде PEM.
 
-При запросе сертификата необходимо указать полное доменное имя адреса, который планируется использовать для веб-службы (например, www\.contoso.com). Адрес, который был отмечен в сертификате, и адрес, используемый клиентами, сравнивается с целью проверки удостоверения веб-службы. Если эти адреса не совпадают, клиент получает сообщение об ошибке.
+При запросе сертификата необходимо указать полное доменное имя адреса, который планируется использовать для веб-службы (например, www \. contoso.com). Адрес, который был отмечен в сертификате, и адрес, используемый клиентами, сравнивается с целью проверки удостоверения веб-службы. Если эти адреса не совпадают, клиент получает сообщение об ошибке.
 
 > [!TIP]
 > Если центр сертификации не может предоставить сертификат и ключ в виде файлов в кодировке PEM, для изменения формата можно использовать служебную программу, например [OpenSSL](https://www.openssl.org/) .
@@ -87,7 +86,7 @@ ms.locfileid: "80287345"
 
 Метод **enable_ssl** может использовать сертификат, предоставляемый корпорацией Майкрософт или сертификатом, который вы приобрели.
 
-  * При использовании сертификата от корпорации Майкрософт необходимо использовать параметр *leaf_domain_label* . Этот параметр создает DNS-имя для службы. Например, значение Contoso создает доменное имя "Contoso\<" из шести-случайных символов>. \<благодаря>. cloudapp.Azure.com ", где \<благодаря> — это регион, содержащий службу. При необходимости можно использовать параметр *overwrite_existing_domain* для перезаписи существующего *leaf_domain_label*.
+  * При использовании сертификата от корпорации Майкрософт необходимо использовать параметр *leaf_domain_label* . Этот параметр создает DNS-имя для службы. Например, значение Contoso создает доменное имя Contoso \<six-random-characters> . \<azureregion> cloudapp.azure.com ", где \<azureregion> — регион, содержащий службу. При необходимости можно использовать параметр *overwrite_existing_domain* для перезаписи существующего *leaf_domain_label*.
 
     Чтобы развернуть (или повторно развернуть) службу с включенным протоколом TLS, задайте для параметра *Ssl_enabled* значение "true" везде, где это применимо. Присвойте параметру *ssl_certificate* значение файла *сертификата* . Задайте *ssl_key* в качестве значения файла *ключа* .
 
@@ -172,6 +171,10 @@ aci_config = AciWebservice.deploy_configuration(
 
 Если сертификат изначально был создан корпорацией Майкрософт (при использовании *leaf_domain_label* для создания службы), используйте один из следующих примеров для обновления сертификата.
 
+> [!IMPORTANT]
+> * Если существующий сертификат по-прежнему действителен, используйте `renew=True` (пакет SDK) или `--ssl-renew` (CLI), чтобы принудительно обновить конфигурацию. Например, если существующий сертификат по-прежнему действителен в течение 10 дней и не используется `renew=True` , то сертификат может быть не продлен.
+> * При первоначальном развертывании службы `leaf_domain_label` используется для создания DNS-имени с помощью шаблона `<leaf-domain-label>######.<azure-region>.cloudapp.azure.net` . Чтобы сохранить существующее имя (включая 6 созданных ранее цифр), используйте исходное `leaf_domain_label` значение. Не включайте созданные 6 цифр.
+
 **Использование пакета SDK**
 
 ```python
@@ -183,7 +186,7 @@ from azureml.core.compute.aks import SslConfiguration
 aks_target = AksCompute(ws, clustername)
 
 # Update the existing certificate by referencing the leaf domain label
-ssl_configuration = SslConfiguration(leaf_domain_label="myaks", overwrite_existing_domain=True)
+ssl_configuration = SslConfiguration(leaf_domain_label="myaks", overwrite_existing_domain=True, renew=True)
 update_config = AksUpdateConfiguration(ssl_configuration)
 aks_target.update(update_config)
 ```
@@ -191,7 +194,7 @@ aks_target.update(update_config)
 **Использование интерфейса командной строки**
 
 ```azurecli
-az ml computetarget update aks -g "myresourcegroup" -w "myresourceworkspace" -n "myaks" --ssl-leaf-domain-label "myaks" --ssl-overwrite-domain True
+az ml computetarget update aks -g "myresourcegroup" -w "myresourceworkspace" -n "myaks" --ssl-leaf-domain-label "myaks" --ssl-overwrite-domain True --ssl-renew
 ```
 
 Дополнительные сведения см. в следующих справочных документах:
@@ -241,7 +244,7 @@ az ml computetarget update aks -g "myresourcegroup" -w "myresourceworkspace" -n 
 
 ## <a name="disable-tls"></a>Отключить TLS
 
-Чтобы отключить TLS для модели, развернутой в службе Kubernetes Azure, `SslConfiguration` создайте `status="Disabled"`с помощью, а затем выполните обновление.
+Чтобы отключить TLS для модели, развернутой в службе Kubernetes Azure, создайте `SslConfiguration` с помощью `status="Disabled"` , а затем выполните обновление.
 
 ```python
 from azureml.core.compute import AksCompute
@@ -257,7 +260,7 @@ update_config = AksUpdateConfiguration(ssl_configuration)
 aks_target.update(update_config)
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Вы узнаете, как выполнять следующие задачи:
-+ [Использование модели Машинного обучения, развернутой в качестве веб-службы](how-to-consume-web-service.md)
++ [Использование модели машинного обучения, развернутой в качестве веб-службы](how-to-consume-web-service.md)
 + [Безопасный запуск экспериментов и вывод в виртуальной сети Azure](how-to-enable-virtual-network.md)

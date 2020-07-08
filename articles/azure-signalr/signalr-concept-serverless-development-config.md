@@ -6,12 +6,11 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: antchu
-ms.openlocfilehash: e1157a695d34c75b237391427b37365421366ef8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: dbacb6a5bbdead52750935c476f453423647fc0f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77523176"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84457139"
 ---
 # <a name="azure-functions-development-and-configuration-with-azure-signalr-service"></a>Azure Functions development and configuration with Azure SignalR Service (Разработка и настройка функций Azure с помощью Службы Azure SignalR)
 
@@ -32,17 +31,25 @@ ms.locfileid: "77523176"
 Для бессерверного приложения, работающего в реальном времени и созданного с помощью Функций Azure и Службы Azure SignalR, обычно требуется две функции Azure:
 
 * функция negotiate, которую клиент вызывает, чтобы получить действительный маркер доступа Службы SignalR и URL-адрес конечной точки службы;
-* одна или несколько функций для отправки сообщений или управления членством в группе.
+* Одна или несколько функций, которые обрабатывали сообщения из службы SignalR и отправляют сообщения или управляют членством в группе
 
 ### <a name="negotiate-function"></a>Функция Negotiate
 
 Клиентскому приложению требуется допустимый маркер доступа для подключения к службе Azure SignalR. Маркер доступа может быть анонимным или прошедшим проверку подлинности по указанному ИДЕНТИФИКАТОРу пользователя. Для приложений службы SignalR без сервера требуется конечная точка HTTP с именем "Negotiate" для получения маркера и других сведений о соединении, таких как URL-адрес конечной точки службы SignalR.
 
-Используйте функцию Azure, активируемую с помощью HTTP, и входную привязку *сигналрконнектионинфо* для создания объекта сведений о соединении. Функция должна иметь маршрут HTTP, который заканчивается на `/negotiate`.
+Используйте функцию Azure, активируемую с помощью HTTP, и входную привязку *сигналрконнектионинфо* для создания объекта сведений о соединении. Функция должна иметь маршрут HTTP, который заканчивается на `/negotiate` .
+
+[Модель на основе класса](#class-based-model) в C# не требует *сигналрконнектионинфо* входной привязки и может значительно упростить добавление пользовательских утверждений. См. статью о процессе [согласования в модели на основе классов](#negotiate-experience-in-class-based-model) .
 
 Дополнительные сведения о создании функции Negotiate см. в [справочнике по входной привязке *сигналрконнектионинфо* ](../azure-functions/functions-bindings-signalr-service-input.md).
 
 Дополнительные сведения о создании маркера с проверкой подлинности см. в разделе [использование проверки подлинности службы приложений](#using-app-service-authentication).
+
+### <a name="handle-messages-sent-from-signalr-service"></a>Обработку сообщений, отправленных из службы SignalR
+
+Используйте привязку *триггера SignalR* для обработки сообщений, отправленных службой SignalR. Вы можете активировать, когда клиенты отправляют сообщения или клиенты могут подключиться или отключиться.
+
+Дополнительные сведения см. в разделе [Справочник по привязке *триггера SignalR* .](../azure-functions/functions-bindings-signalr-service-trigger.md)
 
 ### <a name="sending-messages-and-managing-group-membership"></a>Отправка сообщений и управление членством в группах
 
@@ -56,6 +63,111 @@ ms.locfileid: "77523176"
 
 SignalR имеет концепцию "концентраторов". Каждое клиентское подключение и каждое сообщение, отправленное из функций Azure, ограничены конкретным концентратором. Концентраторы можно использовать как способ разделения подключений и сообщений на логические пространства имен.
 
+## <a name="class-based-model"></a>Модель на основе класса
+
+Модель на основе класса выделяется для C#. Модель на основе классов может иметь совместимый интерфейс программирования на стороне сервера SignalR. Он имеет следующие возможности.
+
+* Меньше конфигураций: имя класса используется как `HubName` , имя метода используется как, `Event` а параметр `Category` — автоматически в соответствии с именем метода.
+* Автоматическая привязка параметра: ни один `ParameterNames` атрибут `[SignalRParameter]` , ни не требуется. Параметры имеют автоматическую привязку к аргументам метода функции Azure по порядку.
+* Удобный процесс вывода и согласования.
+
+Эти функции демонстрируются в следующих кодах:
+
+```cs
+public class SignalRTestHub : ServerlessHub
+{
+    [FunctionName("negotiate")]
+    public SignalRConnectionInfo Negotiate([HttpTrigger(AuthorizationLevel.Anonymous)]HttpRequest req)
+    {
+        return Negotiate(req.Headers["x-ms-signalr-user-id"], GetClaims(req.Headers["Authorization"]));
+    }
+
+    [FunctionName(nameof(OnConnected))]
+    public async Task OnConnected([SignalRTrigger]InvocationContext invocationContext, ILogger logger)
+    {
+        await Clients.All.SendAsync(NewConnectionTarget, new NewConnection(invocationContext.ConnectionId));
+        logger.LogInformation($"{invocationContext.ConnectionId} has connected");
+    }
+
+    [FunctionName(nameof(Broadcast))]
+    public async Task Broadcast([SignalRTrigger]InvocationContext invocationContext, string message, ILogger logger)
+    {
+        await Clients.All.SendAsync(NewMessageTarget, new NewMessage(invocationContext, message));
+        logger.LogInformation($"{invocationContext.ConnectionId} broadcast {message}");
+    }
+
+    [FunctionName(nameof(OnDisconnected))]
+    public void OnDisconnected([SignalRTrigger]InvocationContext invocationContext)
+    {
+    }
+}
+```
+
+Все функции, которые хотят использовать модель на основе класса, должны быть методом класса, который наследует от **серверлесшуб**. Имя класса `SignalRTestHub` в примере — это имя концентратора.
+
+### <a name="define-hub-method"></a>Определение метода концентратора
+
+Все методы концентратора **должны** иметь `[SignalRTrigger]` атрибут и **должны** использовать конструктор без параметров. Затем **имя метода** обрабатывается как **событие**параметра.
+
+По умолчанию, `category=messages` за исключением имени метода является одно из следующих имен:
+
+* **Onconnected**: обрабатывается как`category=connections, event=connected`
+* **Ondisconnectо**: обрабатывается как`category=connections, event=disconnected`
+
+### <a name="parameter-binding-experience"></a>Интерфейс привязки параметров
+
+В модели на основе класса `[SignalRParameter]` не требуется, так как все аргументы помечаются как по `[SignalRParameter]` умолчанию, за исключением одного из следующих ситуаций:
+
+* Аргумент снабжен атрибутом привязки.
+* Тип аргумента — `ILogger` или.`CancellationToken`
+* Аргумент оформлен атрибутом`[SignalRIgnore]`
+
+### <a name="negotiate-experience-in-class-based-model"></a>Процесс согласования в модели на основе классов
+
+Вместо использования входной привязки SignalR `[SignalR]` согласование в модели на основе классов может быть более гибким. Базовый класс `ServerlessHub` содержит метод
+
+```cs
+SignalRConnectionInfo Negotiate(string userId = null, IList<Claim> claims = null, TimeSpan? lifeTime = null)
+```
+
+Эти функции пользователь настраивает `userId` или `claims` во время выполнения функции.
+
+## <a name="use-signalrfilterattribute"></a>Используйте `SignalRFilterAttribute`.
+
+Пользователь может наследовать и реализовывать абстрактный класс `SignalRFilterAttribute` . Если исключения вызываются в `FilterAsync` , `403 Forbidden` будут отправляться обратно клиентам.
+
+В следующем примере показано, как реализовать фильтр клиента, позволяющий только `admin` вызывать `broadcast` .
+
+```cs
+[AttributeUsage(AttributeTargets.Method, AllowMultiple = true, Inherited = true)]
+internal class FunctionAuthorizeAttribute: SignalRFilterAttribute
+{
+    private const string AdminKey = "admin";
+
+    public override Task FilterAsync(InvocationContext invocationContext, CancellationToken cancellationToken)
+    {
+        if (invocationContext.Claims.TryGetValue(AdminKey, out var value) &&
+            bool.TryParse(value, out var isAdmin) &&
+            isAdmin)
+        {
+            return Task.CompletedTask;
+        }
+
+        throw new Exception($"{invocationContext.ConnectionId} doesn't have admin role");
+    }
+}
+```
+
+Используйте атрибут для авторизации функции.
+
+```cs
+[FunctionAuthorize]
+[FunctionName(nameof(Broadcast))]
+public async Task Broadcast([SignalRTrigger]InvocationContext invocationContext, string message, ILogger logger)
+{
+}
+```
+
 ## <a name="client-development"></a>Разработка клиентских приложений
 
 Клиентские приложения SignalR могут использовать клиентский пакет SDK SignalR на одном из нескольких языков, чтобы легко подключаться и получать сообщения от службы Azure SignalR.
@@ -67,7 +179,7 @@ SignalR имеет концепцию "концентраторов". Каждо
 1. Выполните запрос к конечной точке *Negotiate* HTTP, описанной выше, чтобы получить допустимые сведения о соединении.
 1. Подключение к службе SignalR с помощью URL-адреса конечной точки службы и маркера доступа, полученных из конечной точки *согласования*
 
-Пакеты SDK клиента SignalR уже содержат логику, необходимую для выполнения подтверждения согласования. Передайте в пакет SDK URL-адрес конечной `negotiate` точки для согласования, за `HubConnectionBuilder`исключением сегмента. Ниже приведен пример в JavaScript:
+Пакеты SDK клиента SignalR уже содержат логику, необходимую для выполнения подтверждения согласования. Передайте в пакет SDK URL-адрес конечной точки для согласования, за исключением `negotiate` сегмента `HubConnectionBuilder` . Ниже приведен пример в JavaScript:
 
 ```javascript
 const connection = new signalR.HubConnectionBuilder()
@@ -102,12 +214,12 @@ const connection = new signalR.HubConnectionBuilder()
 
 #### <a name="localhost"></a>Localhost
 
-При запуске приложения-функции на локальном компьютере можно добавить `Host` раздел в *Local. Settings. JSON* , чтобы включить CORS. В `Host` разделе добавьте два свойства:
+При запуске приложения-функции на локальном компьютере можно добавить `Host` раздел в *local.settings.js* , чтобы включить CORS. В `Host` разделе добавьте два свойства:
 
 * `CORS`— Введите базовый URL-адрес, который является источником клиентского приложения.
 * `CORSCredentials`-Задайте значение `true` , чтобы разрешить запросы "вискредентиалс"
 
-Пример:
+Пример.
 
 ```json
 {
@@ -167,7 +279,7 @@ const connection = new signalR.HubConnectionBuilder()
 
 В портал Azure на вкладке *функции платформы* приложения-функции откройте окно Параметры *проверки подлинности и авторизации* . Чтобы настроить проверку подлинности с помощью выбранного поставщика удостоверений, следуйте инструкциям в документации по [проверке подлинности службы приложений](../app-service/overview-authentication-authorization.md) .
 
-После настройки прошедшие проверку подлинности HTTP `x-ms-client-principal-name` - `x-ms-client-principal-id` запросы будут включать заголовки, содержащие имя пользователя и идентификатор пользователя, прошедшего проверку подлинности, соответственно.
+После настройки прошедшие проверку подлинности HTTP-запросы будут включать `x-ms-client-principal-name` `x-ms-client-principal-id` заголовки, содержащие имя пользователя и идентификатор пользователя, прошедшего проверку подлинности, соответственно.
 
 Эти заголовки можно использовать в конфигурации привязки *сигналрконнектионинфо* для создания подключений, прошедших проверку подлинности. Ниже приведен пример функции Negotiate C#, которая использует `x-ms-client-principal-id` заголовок.
 

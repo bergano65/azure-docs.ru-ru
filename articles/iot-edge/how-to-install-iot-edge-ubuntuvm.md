@@ -7,14 +7,13 @@ ms.reviewer: kgremban
 ms.service: iot-edge
 services: iot-edge
 ms.topic: conceptual
-ms.date: 03/19/2020
+ms.date: 06/29/2020
 ms.author: pdecarlo
-ms.openlocfilehash: 64e2787aa282e75893fa34e6de1373e6afed09fe
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 050631731a04e4c2ea89d8c7792ec093d6ab316e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80349597"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85800568"
 ---
 # <a name="run-azure-iot-edge-on-ubuntu-virtual-machines"></a>Запуск Azure IoT Edge на виртуальных машинах Ubuntu
 
@@ -34,7 +33,7 @@ ms.locfileid: "80349597"
 
 1. Вы развернете виртуальную машину Linux с поддержкой Azure IoT Edge с помощью шаблона Azure Resource Manager iotedge-VM-Deploy.  Для начала нажмите кнопку ниже:
 
-    [![Кнопка развертывания в Azure для iotedge-VM-Deploy](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure%2Fiotedge-vm-deploy%2Fmaster%2FedgeDeploy.json)
+    [![Кнопка "Развернуть в Azure" для iotedge-vm-deploy](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure%2Fiotedge-vm-deploy%2Fmaster%2FedgeDeploy.json)
 
 1. В вновь запущенном окне заполните доступные поля формы:
 
@@ -63,7 +62,7 @@ ms.locfileid: "80349597"
 
     Когда все поля заполнены, установите флажок в нижней части страницы, чтобы принять условия, и выберите **купить** , чтобы начать развертывание.
 
-1. Убедитесь, что развертывание успешно завершено.  Ресурс виртуальной машины должен быть развернут в выбранной группе ресурсов.  Запишите имя компьютера, оно должно быть в формате `vm-0000000000000`. Кроме того, обратите внимание на соответствующее **DNS-имя**, которое должно быть в `<dnsLabelPrefix>`формате. `<location>`. cloudapp.Azure.com.
+1. Убедитесь, что развертывание успешно завершено.  Ресурс виртуальной машины должен быть развернут в выбранной группе ресурсов.  Запишите имя компьютера, оно должно быть в формате `vm-0000000000000` . Кроме того, обратите внимание на соответствующее **DNS-имя**, которое должно быть в `<dnsLabelPrefix>` формате `<location>` . cloudapp.azure.com.
 
     **DNS-имя** можно получить из раздела **Обзор** только что развернутой виртуальной машины в портал Azure.
 
@@ -108,11 +107,10 @@ ms.locfileid: "80349597"
 
 1. Создайте виртуальную машину:
 
-    Чтобы использовать **authenticationType** из `password`, см. пример ниже.
+    Чтобы использовать **authenticationType** из `password` , см. пример ниже.
 
    ```azurecli-interactive
-   az group deployment create \
-   --name edgeVm \
+   az deployment group create \
    --resource-group IoTEdgeResources \
    --template-uri "https://aka.ms/iotedge-vm-deploy" \
    --parameters dnsLabelPrefix='my-edge-vm1' \
@@ -122,15 +120,14 @@ ms.locfileid: "80349597"
    --parameters adminPasswordOrKey="<REPLACE_WITH_SECRET_PASSWORD>"
    ```
 
-    Для проверки подлинности с помощью ключа SSH это можно сделать, указав **authenticationType** из `sshPublicKey`, а затем укажите значение ключа SSH в параметре **админпассвордоркэй** .  Ниже приведен пример такого файла.
+    Для проверки подлинности с помощью ключа SSH это можно сделать, указав **authenticationType** из `sshPublicKey` , а затем укажите значение ключа SSH в параметре **админпассвордоркэй** .  Ниже приведен пример такого файла.
 
     ```azurecli-interactive
     #Generate the SSH Key
     ssh-keygen -m PEM -t rsa -b 4096 -q -f ~/.ssh/iotedge-vm-key -N ""  
 
     #Create a VM using the iotedge-vm-deploy script
-    az group deployment create \
-    --name edgeVm \
+    az deployment group create \
     --resource-group IoTEdgeResources \
     --template-uri "https://aka.ms/iotedge-vm-deploy" \
     --parameters dnsLabelPrefix='my-edge-vm1' \
@@ -138,10 +135,9 @@ ms.locfileid: "80349597"
     --parameters deviceConnectionString=$(az iot hub device-identity show-connection-string --device-id <REPLACE_WITH_DEVICE-NAME> --hub-name <REPLACE-WITH-HUB-NAME> -o tsv) \
     --parameters authenticationType='sshPublicKey' \
     --parameters adminPasswordOrKey="$(< ~/.ssh/iotedge-vm-key.pub)"
-     
     ```
 
-1. Убедитесь, что развертывание успешно завершено.  Ресурс виртуальной машины должен быть развернут в выбранной группе ресурсов.  Запишите имя компьютера, оно должно быть в формате `vm-0000000000000`. Кроме того, обратите внимание на соответствующее **DNS-имя**, которое должно быть в `<dnsLabelPrefix>`формате. `<location>`. cloudapp.Azure.com.
+1. Убедитесь, что развертывание успешно завершено.  Ресурс виртуальной машины должен быть развернут в выбранной группе ресурсов.  Запишите имя компьютера, оно должно быть в формате `vm-0000000000000` . Кроме того, обратите внимание на соответствующее **DNS-имя**, которое должно быть в `<dnsLabelPrefix>` формате `<location>` . cloudapp.azure.com.
 
     **DNS-имя** можно получить из выходных данных в формате JSON предыдущего шага в разделе **Outputs (выходные** данные) как часть **общедоступной записи SSH** .  Значение этой записи можно использовать для подключения к только что развернутой машине по протоколу SSH.
 

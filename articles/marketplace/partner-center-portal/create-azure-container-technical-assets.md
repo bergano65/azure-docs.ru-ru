@@ -7,12 +7,11 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/09/2020
-ms.openlocfilehash: 87c915330fdc0d59d0d32c0747c7dc7647c342ba
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
-ms.translationtype: HT
+ms.openlocfilehash: 8f32313529da965573a6c9884daee678e3bc64cc
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83700980"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85958605"
 ---
 # <a name="create-an-azure-container-offer"></a>Создание предложения по контейнерам Azure
 
@@ -20,7 +19,7 @@ ms.locfileid: "83700980"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Ознакомьтесь с [документацией по службе "Экземпляры контейнеров Azure"](https://docs.microsoft.com/azure/container-instances). Там вы найдете краткие инструкции, руководства и примеры для начала работы.
+Ознакомьтесь с [документацией по службе "Экземпляры контейнеров Azure"](../../container-instances/index.yml). Там вы найдете краткие инструкции, руководства и примеры для начала работы.
 
 ## <a name="fundamental-technical-knowledge"></a>Основные технические знания
 
@@ -43,7 +42,7 @@ ms.locfileid: "83700980"
 
 Кроме того, рекомендуем добавить в среду разработки следующие инструменты:
 
-- [Обозреватель службы хранилища Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows)
+- [Обозреватель службы хранилища Azure](../../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows)
 - [Visual Studio Code](https://code.visualstudio.com/)
   - Расширение: [Средства Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
   - Расширение: [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
@@ -55,9 +54,9 @@ ms.locfileid: "83700980"
 
 Дополнительные сведения см. в следующих руководствах:
 
-- [Руководство. Создание образа контейнера для развертывания в службе "Экземпляры контейнеров Azure"](https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-prepare-app)
-- [Руководство. Создание и развертывание образов контейнера в облаке с помощью службы "Задачи Реестра контейнеров Azure"](https://docs.microsoft.com/azure/container-registry/container-registry-tutorial-quick-task)
+- [Руководство. Создание образа контейнера для развертывания в службе "Экземпляры контейнеров Azure"](../../container-instances/container-instances-tutorial-prepare-app.md)
+- [Руководство. Создание и развертывание образов контейнера в облаке с помощью службы "Задачи Реестра контейнеров Azure"](../../container-registry/container-registry-tutorial-quick-task.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Создание предложения по контейнерам](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-azure-container-offer).
+- [Создание предложения по контейнерам](create-azure-container-offer.md).

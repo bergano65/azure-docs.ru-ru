@@ -5,17 +5,16 @@ description: Обнаружение смещения данных (Предва�
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.reviewer: jmartens
 ms.author: copeters
 author: cody-dkdc
 ms.date: 11/04/2019
-ms.openlocfilehash: d1da7309b296b57db0c28d5b52fe91efa86709c8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 0f56ab853983ebf9b3e27f38ae1737c0c2bce4ed
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75537010"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84430299"
 ---
 # <a name="detect-data-drift-preview-on-models-deployed-to-azure-kubernetes-service-aks"></a>Обнаружение смещения данных (Предварительная версия) в моделях, развернутых в службе Kubernetes Azure (AKS)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
@@ -75,12 +74,12 @@ ms.locfileid: "75537010"
     print(model_name, image_name, service_name, model)
     ```
 
-- [Включите сбор данных модели](how-to-enable-data-collection.md) для сбора данных из AKS развертывания модели и подтверждения сбора данных в контейнере `modeldata` больших двоичных объектов.
+- [Включите сбор данных модели](how-to-enable-data-collection.md) для сбора данных из AKS развертывания модели и подтверждения сбора данных в `modeldata` контейнере больших двоичных объектов.
 
 ## <a name="configure-data-drift"></a>Настройка смещения данных
 Чтобы настроить смещение данных для эксперимента, импортируйте зависимости, как показано в следующем примере Python. 
 
-В [`DataDriftDetector`](/python/api/azureml-datadrift/azureml.datadrift.datadriftdetector.datadriftdetector) этом примере демонстрируется настройка объекта:
+В этом примере демонстрируется настройка [`DataDriftDetector`](/python/api/azureml-datadrift/azureml.datadrift.datadriftdetector.datadriftdetector) объекта:
 
 ```python
 # Import Azure ML packages
@@ -98,7 +97,7 @@ print('Details of Datadrift Object:\n{}'.format(datadrift))
 
 ## <a name="submit-a-datadriftdetector-run"></a>Отправка Датадрифтдетектор выполнения
 
-После настройки `DataDriftDetector` объекта можно отправить [смещение данных](https://docs.microsoft.com/python/api/azureml-datadrift/azureml.datadrift.datadriftdetector.datadriftdetector#run-target-date--services-none--compute-target-none--create-compute-target-false--feature-list-none--drift-threshold-none-) в указанную дату для модели. В ходе выполнения включите Датадрифтдетектор Alerts, задав `drift_threshold` параметр. Если [datadrift_coefficient](#visualize-drift-metrics) выше заданного `drift_threshold`, отправляется сообщение электронной почты.
+`DataDriftDetector`После настройки объекта можно отправить [смещение данных](https://docs.microsoft.com/python/api/azureml-datadrift/azureml.datadrift.datadriftdetector.datadriftdetector#run-target-date--services-none--compute-target-none--create-compute-target-false--feature-list-none--drift-threshold-none-) в указанную дату для модели. В ходе выполнения включите Датадрифтдетектор Alerts, задав `drift_threshold` параметр. Если [datadrift_coefficient](#visualize-drift-metrics) выше заданного `drift_threshold` , отправляется сообщение электронной почты.
 
 ```python
 # adhoc run today
@@ -132,7 +131,7 @@ datadrift_contribution|Важность признаков компоненто�
 
 Существует несколько способов просмотра метрик смещения.
 
-* `RunDetails`Используйте мини-приложение [Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py).
+* Используйте мини-приложение `RunDetails` [Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py).
 * Используйте [`get_metrics()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py#get-metrics-name-none--recursive-false--run-type-none--populate-false-) функцию для любого `datadrift` объекта запуска.
 * Просмотрите метрики в разделе **модели** рабочей области в [машинное обучение Azure Studio](https://ml.azure.com).
 
@@ -152,7 +151,7 @@ drift_figures = datadrift.show(with_details=True)
 
 ## <a name="schedule-data-drift-scans"></a>Планирование сканирования смещения данных 
 
-Когда вы включаете обнаружение расхождения данных, Датадрифтдетектор выполняется по заданной запланированной частоте. Если datadrift_coefficient достигает заданного `drift_threshold`значения, при каждом запланированном выполнении отправляется сообщение электронной почты. 
+Когда вы включаете обнаружение расхождения данных, Датадрифтдетектор выполняется по заданной запланированной частоте. Если datadrift_coefficient достигает заданного значения `drift_threshold` , при каждом запланированном выполнении отправляется сообщение электронной почты. 
 
 ```python
 datadrift.enable_schedule()
@@ -187,7 +186,7 @@ datadrift.disable_schedule()
 * Оцените производительность вновь созданной модели.
 * Развертывайте новую модель, если производительность выше, чем в рабочей модели.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Полный пример использования смещения данных см. в [записной книжке "смещение данных машинного обучения Azure](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/monitor-models/data-drift/drift-on-aks.ipynb)". В этом Jupyter Notebook демонстрируется использование [открытого набора данных Azure](https://docs.microsoft.com/azure/open-datasets/overview-what-are-open-datasets) для обучения модели для прогнозирования погоды, ее развертывания в AKS и отслеживания смещения данных. 
 

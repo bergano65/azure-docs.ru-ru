@@ -8,12 +8,11 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 9b2a47cde4d79671aada7c280c2bffd9bb8fe759
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: c0b043bdb20cad508950a11853403958340acadf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83594033"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84434196"
 ---
 # <a name="use-the-azure-maps-indoor-maps-module"></a>Использование модуля схем помещений Azure Maps
 
@@ -33,12 +32,12 @@ ms.locfileid: "83594033"
 
 Чтобы использовать для модуля *схем помещений Azure Maps* глобально размещенную версию сети доставки содержимого Azure, добавьте ссылки на следующие ресурсы JavaScript и таблиц стилей в элементе `<head>` HTML-файла:
 
-  ```html
-    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
-    <script src="https://atlas.microsoft.com/sdk/javascript/indoor/0.1/atlas-indoor.min.js"></script>
-    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
-    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/indoor/0.1/atlas-indoor.min.css" type="text/css"/>
-  ```
+```html
+<script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+<script src="https://atlas.microsoft.com/sdk/javascript/indoor/0.1/atlas-indoor.min.js"></script>
+<link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
+<link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/indoor/0.1/atlas-indoor.min.css" type="text/css"/>
+```
 
  Или же скачайте модуль *схем помещений Azure Maps*. Модуль *схем помещений Azure Maps* содержит клиентскую библиотеку для доступа к службам Azure Maps. Выполните следующие действия, чтобы установить и загрузить модуль *схем помещений* в веб-приложение:  
   
@@ -47,8 +46,8 @@ ms.locfileid: "83594033"
   2. Установите пакет NPM. Не забудьте применить права администратора в консоли.
 
       ```powershell
-        >npm install azure-maps-control
-        >npm install azure-maps-indoor
+      >npm install azure-maps-control
+      >npm install azure-maps-indoor
       ```
 
   3. Укажите ссылки на ресурсы JavaScript и таблиц стилей для модуля *схем помещений Azure Maps* в элементе `<head>` HTML-файла:
@@ -63,16 +62,20 @@ ms.locfileid: "83594033"
 Для начала создайте объект *Map*. Объект *Map* мы применим на следующем шаге, чтобы создать экземпляр объекта *диспетчера схем помещений*.  В приведенном ниже коде показано, как создать экземпляр *объекта Map*.
 
 ```javascript
-  const subscriptionKey = "<your Azure Maps Primary Subscription Key>";
+const subscriptionKey = "<Your Azure Maps Primary Subscription Key>";
 
-  const map = new atlas.Map("map-id", {
-    //use your facility's location
-    center: [-122.13315, 47.63637],
-    //or, you can use bounds: [#,#,#,#] and replace # with your map's bounds
-    style: "blank",
-    subscriptionKey,
-    zoom: 19,
-  });
+const map = new atlas.Map("map-id", {
+  //use your facility's location
+  center: [-122.13315, 47.63637],
+  //or, you can use bounds: [# west, # south, # east, # north] and replace # with your map's bounds
+  style: "blank",
+  view: 'Auto',
+  authOptions: { 
+      authType: 'subscriptionKey',
+      subscriptionKey: subscriptionKey
+  },
+  zoom: 19,
+});
 ```
 
 ## <a name="instantiate-the-indoor-manager"></a>Создание экземпляра диспетчера схем помещений
@@ -92,7 +95,6 @@ const indoorManager = new atlas.indoor.IndoorManager(map, {
 Чтобы разрешить получение предоставляемых данных о состоянии, передайте `statesetId` и вызовите `indoorManager.setDynamicStyling(true)`. Опрос для получения данных о состоянии позволяет динамически обновлять состояние динамических свойств (*состояний*). Например, для компонента комнаты может существовать динамическое свойство (*состояние*) с именем `occupancy`. Приложение может выполнять опрос для получения сведений об изменениях *состояния*, чтобы отражать изменения на визуальной карте. Следующий пример кода демонстрирует поддержку опроса состояний:
 
 ```javascript
-
 const tilesetId = "";
 const statesetId = "";
 
@@ -104,7 +106,6 @@ const indoorManager = new atlas.indoor.IndoorManager(map, {
 if (statesetId.length > 0) {
     indoorManager.setDynamicStyling(true);
 }
-
 ```
 
 ## <a name="indoor-level-picker-control"></a>Элемент управления Indoor Level Picker (Выбор этажа помещения)
@@ -123,14 +124,14 @@ indoorManager.setOptions({ levelControl });
 ```javascript
 map.events.add("levelchanged", indoorManager, (eventData) => {
 
-    //code that you want to run after a level has been changed
-    console.log("The level has changed: ", eventData);
-
+  //code that you want to run after a level has been changed
+  console.log("The level has changed: ", eventData);
 });
+
 map.events.add("facilitychanged", indoorManager, (eventData) => {
 
-    //code that you want to run after a facility has been changed
-    console.log("The facility has changed: ", eventData);
+  //code that you want to run after a facility has been changed
+  console.log("The facility has changed: ", eventData);
 });
 ```
 
@@ -149,7 +150,7 @@ map.events.add("facilitychanged", indoorManager, (eventData) => {
 4. Инициализируйте *объект Map*. *Объект Map* поддерживает следующие параметры:
     - `Subscription key` содержит первичный ключ подписки на Azure Maps.
     - `center` определяет широту и долготу, соответствующие центру схемы помещения. Задайте значение `center`, если не будет указано значение `bounds`. Поддерживается следующий формат `center`: [-122.13315, 47.63637].
-    - `bounds` определяет наименьший возможный прямоугольник, который охватывает все данные элементов карты. Задайте значение `bounds`, если не будет указано значение `center`. Чтобы получить сведения о границах карты, вызовите API [списка фрагментов карты](https://docs.microsoft.com/rest/api/maps/tileset/listpreview). API списка фрагментов карты возвращает `bbox`, значение которого можно анализировать и присваивать `bounds`. Поддерживается следующий формат `bounds`: [#,#,#,#].
+    - `bounds` определяет наименьший возможный прямоугольник, который охватывает все данные элементов карты. Задайте значение `bounds`, если не будет указано значение `center`. Чтобы получить сведения о границах карты, вызовите API [списка фрагментов карты](https://docs.microsoft.com/rest/api/maps/tileset/listpreview). API списка фрагментов карты возвращает `bbox`, значение которого можно анализировать и присваивать `bounds`. Формат должен выглядеть следующим образом `bounds` : [# Западная, # Южный, # Восток, # Север].
     - `style` позволяет установить цвет фона. Чтобы отобразить белый фон, определите для `style` значение "blank".
     - `zoom` позволяет указать минимальный и максимальный уровни масштабирования для схемы.
 
@@ -168,10 +169,13 @@ map.events.add("facilitychanged", indoorManager, (eventData) => {
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, user-scalable=no" />
       <title>Indoor Maps App</title>
-       <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
-        <script src="https://atlas.microsoft.com/sdk/javascript/indoor/0.1/atlas-indoor.min.js"></script>
-        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
-        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/indoor/0.1/atlas-indoor.min.css" type="text/css"/>
+      
+      <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
+      <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/indoor/0.1/atlas-indoor.min.css" type="text/css"/>
+
+      <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+      <script src="https://atlas.microsoft.com/sdk/javascript/indoor/0.1/atlas-indoor.min.js"></script>
+        
       <style>
         html,
         body {
@@ -191,16 +195,20 @@ map.events.add("facilitychanged", indoorManager, (eventData) => {
     <body>
       <div id="map-id"></div>
       <script>
-        const subscriptionKey = "<your Azure Maps Primary Subscription Key>";
+        const subscriptionKey = "<Your Azure Maps Primary Subscription Key>";
         const tilesetId = "<your tilesetId>";
         const statesetId = "<your statesetId>";
 
         const map = new atlas.Map("map-id", {
           //use your facility's location
           center: [-122.13315, 47.63637],
-          //or, you can use bounds: [ # , # , # , # ] and replace # with your Map bounds
+          //or, you can use bounds: [# west, # south, # east, # north] and replace # with your Map bounds
           style: "blank",
-          subscriptionKey,
+          view: 'Auto',
+          authOptions: { 
+              authType: 'subscriptionKey',
+              subscriptionKey: subscriptionKey
+          },
           zoom: 19,
         });
 

@@ -1,24 +1,15 @@
 ---
 title: Обзор примеров обмена сообщениями в служебной шине Azure
 description: Примеры обмена сообщениями служебной шины демонстрируют основные возможности обмена сообщениями через служебную шину Azure. Содержит ссылки на примеры на GitHub.
-services: service-bus-messaging
-documentationcenter: na
-author: axisc
-editor: spelluru
-ms.assetid: 0b420343-2d2a-4c65-98f1-ee0e39ef55c8
-ms.service: service-bus-messaging
-ms.devlang: na
+author: spelluru
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/27/2020
-ms.author: aschhab
-ms.openlocfilehash: ccaca451ac4fb7b4301aca429a42baea91e5ed10
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/23/2020
+ms.author: spelluru
+ms.openlocfilehash: beafd0d49e8fccaef4ccc043d198875b9f1b1ebd
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76773465"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85341024"
 ---
 # <a name="service-bus-messaging-samples"></a>Примеры обмена сообщениями с помощью служебной шины
 В этих примерах демонстрируются ключевые возможности [обмена сообщениями служебной шины](https://azure.microsoft.com/services/service-bus/). В настоящее время примеры можно найти в следующих местах:

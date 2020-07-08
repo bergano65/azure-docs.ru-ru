@@ -8,13 +8,12 @@ ms.author: mhopkins
 ms.date: 08/06/2019
 ms.service: storage
 ms.subservice: common
-ms.topic: conceptual
-ms.openlocfilehash: 1495ed55c24a0f94b911d60d1db0f32940ea134a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.topic: how-to
+ms.openlocfilehash: 0a8eca9e7b3e890b67daf915ffe733dd54ef5896
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79137064"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85515044"
 ---
 # <a name="get-storage-account-type-and-sku-name-with-net"></a>Получение имени типа учетной записи хранения и номера SKU с помощью .NET
 
@@ -24,9 +23,9 @@ ms.locfileid: "79137064"
 
 ## <a name="about-account-type-and-sku-name"></a>Сведения о типе учетной записи и имени SKU
 
-**Тип учетной записи**: допустимые `BlobStorage`типы `BlockBlobStorage`учетных `Storage`записей включают `StorageV2`,, `FileStorage`, и. В разделе [Общие сведения об учетной записи хранения Azure](storage-account-overview.md) содержится дополнительная информация, включая описания различных учетных записей хранения.
+**Тип учетной записи**: допустимые типы учетных записей включают `BlobStorage` , `BlockBlobStorage` ,, `FileStorage` `Storage` и `StorageV2` . В разделе [Общие сведения об учетной записи хранения Azure](storage-account-overview.md) содержится дополнительная информация, включая описания различных учетных записей хранения.
 
-**Имя SKU**: допустимые имена SKU `Premium_LRS`включают `Premium_ZRS`, `Standard_GRS`, `Standard_GZRS`, `Standard_LRS`, `Standard_RAGRS`, `Standard_RAGZRS`, и `Standard_ZRS`. Имена SKU учитывают регистр и являются строковыми полями в [классе SkuName](/dotnet/api/microsoft.azure.management.storage.models.skuname?view=azure-dotnet).
+**Имя SKU**: допустимые имена SKU включают `Premium_LRS` , `Premium_ZRS` , `Standard_GRS` , `Standard_GZRS` , `Standard_LRS` ,, и `Standard_RAGRS` `Standard_RAGZRS` `Standard_ZRS` . Имена SKU учитывают регистр и являются строковыми полями в [классе SkuName](/dotnet/api/microsoft.azure.management.storage.models.skuname?view=azure-dotnet).
 
 ## <a name="retrieve-account-information"></a>Получение сведений об учетной записи
 

@@ -5,12 +5,11 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 211f8c8a203b81a4df6a8e9515b403f99cec572a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: f500e7cac7a049152057f7fc7c3349fb028a31a4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79277288"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85444545"
 ---
 # <a name="notification-hubs-output-binding-for-azure-functions"></a>Выходная привязка Центра уведомлений для службы "Функции Azure"
 
@@ -43,7 +42,7 @@ ms.locfileid: "79277288"
 * [Пример шаблона сценария C# — асинхронный](#c-script-template-example---asynchronous)
 * [Пример шаблона сценария C# — JSON](#c-script-template-example---json)
 * [Пример шаблона сценария C# — типы библиотек](#c-script-template-example---library-types)
-* [Ж #](#f-template-example)
+* [F#](#f-template-example)
 * [JavaScript](#javascript-template-example)
 
 ### <a name="c-script-template-example---out-parameter"></a>Пример шаблона сценария C# — параметр вывода
@@ -245,17 +244,17 @@ public static async Task Run(string myQueueItem, IAsyncCollector<Notification> n
 
 ## <a name="configuration"></a>Параметр Configuration
 
-В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `NotificationHub`:
+В следующей таблице описаны свойства конфигурации привязки, заданные в *function.jsдля* файла и `NotificationHub` атрибута.
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type** |н/д| Нужно задать значение `notificationHub`. |
-|**двух** |н/д| Нужно задать значение `out`. | 
-|**name** |н/д| Имя переменной, используемой в коде функции для сообщения Центра уведомлений. |
+|**direction** |н/д| Нужно задать значение `out`. | 
+|**name** |Недоступно| Имя переменной, используемой в коде функции для сообщения Центра уведомлений. |
 |**тажекспрессион** |**TagExpression** | Выражения тегов позволяют указать, что уведомления должны отправляться на устройства, зарегистрированные для получения уведомлений, соответствующих выражению тега.  Дополнительные сведения см. в статье [Маршрутизация и выражения тегов](../notification-hubs/notification-hubs-tags-segment-push-message.md). |
 |**hubName** | **HubName** | Имя ресурса Центра уведомлений на портале Azure. |
 |**connection**; | **ConnectionStringSetting** | Имя параметра приложения, содержащего строку подключения Центров уведомлений.  Для нее необходимо задать значение *DefaultFullSharedAccessSignature* для Центра уведомлений. Ознакомьтесь с разделом [Настройка строки подключения](#connection-string-setup) далее в этой статье.|
-|**platform** | **Платформа** | Свойство platform указывает целевую клиентскую платформу для ваших уведомлений. По умолчанию, если свойство платформы отсутствует в выходной привязке, шаблонные уведомления могут использоваться для любой платформы, настроенной в концентраторе уведомлений Azure. Дополнительные общие сведения об использовании шаблонов для отправки кроссплатформенных уведомлений с помощью центра уведомлений Azure см. в разделе [Шаблоны](../notification-hubs/notification-hubs-templates-cross-platform-push-messages.md). Если свойство **platform** задано, оно должно иметь одно из следующих значений: <ul><li><code>apns</code>&mdash; — Cлужба push-уведомлений Apple. Дополнительные сведения о настройке центра уведомлений для APNS и получении уведомления в клиентском приложении см. в статье [Отправка push-уведомлений в iOS с помощью концентраторов уведомлений Azure](../notification-hubs/notification-hubs-ios-apple-push-notification-apns-get-started.md).</li><li><code>adm</code>&mdash; — [Amazon Device Messaging](https://developer.amazon.com/device-messaging). Дополнительные сведения о настройке Центра уведомлений для ADM и получении уведомлений в приложении Kindle см. в статье [Приступая к работе с Центрами уведомлений для приложений Kindle](../notification-hubs/notification-hubs-kindle-amazon-adm-push-notification.md).</li><li><code>wns</code>&mdash; — [службы Microsoft SQL Server Notification Services](/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview) для различных платформ Windows. Службы WNS поддерживают также Windows Phone 8.1 и более поздние версии. Дополнительные сведения см. в статье [Начало работы с Центрами уведомлений для приложений универсальной платформы Windows](../notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).</li><li><code>mpns</code>&mdash; — [служба push-уведомлений (Майкрософт)](/previous-versions/windows/apps/ff402558(v=vs.105)). Данная платформа поддерживает Windows Phone 8 и более ранние версии платформ Windows Phone. Дополнительные сведения см. в статье [Отправка push-уведомлений в приложения Windows Phone с помощью Центров уведомлений Azure](../notification-hubs/notification-hubs-windows-mobile-push-notifications-mpns.md).</li></ul> |
+|**platform** | **Платформа** | Свойство platform указывает целевую клиентскую платформу для ваших уведомлений. По умолчанию, если свойство платформы отсутствует в выходной привязке, шаблонные уведомления могут использоваться для любой платформы, настроенной в концентраторе уведомлений Azure. Дополнительные общие сведения об использовании шаблонов для отправки кроссплатформенных уведомлений с помощью центра уведомлений Azure см. в разделе [Шаблоны](../notification-hubs/notification-hubs-templates-cross-platform-push-messages.md). Если свойство **platform** задано, оно должно иметь одно из следующих значений: <ul><li><code>apns</code>&mdash; — Cлужба push-уведомлений Apple. Дополнительные сведения о настройке центра уведомлений для APNS и получении уведомления в клиентском приложении см. в статье [Отправка push-уведомлений в iOS с помощью концентраторов уведомлений Azure](../notification-hubs/xamarin-notification-hubs-ios-push-notification-apns-get-started.md).</li><li><code>adm</code>&mdash; — [Amazon Device Messaging](https://developer.amazon.com/device-messaging). Дополнительные сведения о настройке Центра уведомлений для ADM и получении уведомлений в приложении Kindle см. в статье [Приступая к работе с Центрами уведомлений для приложений Kindle](../notification-hubs/notification-hubs-kindle-amazon-adm-push-notification.md).</li><li><code>wns</code>&mdash; — [службы Microsoft SQL Server Notification Services](/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview) для различных платформ Windows. Службы WNS поддерживают также Windows Phone 8.1 и более поздние версии. Дополнительные сведения см. в статье [Начало работы с Центрами уведомлений для приложений универсальной платформы Windows](../notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).</li><li><code>mpns</code>&mdash; — [служба push-уведомлений (Майкрософт)](/previous-versions/windows/apps/ff402558(v=vs.105)). Данная платформа поддерживает Windows Phone 8 и более ранние версии платформ Windows Phone. Дополнительные сведения см. в статье [Отправка push-уведомлений в приложения Windows Phone с помощью Центров уведомлений Azure](../notification-hubs/notification-hubs-windows-mobile-push-notifications-mpns.md).</li></ul> |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -296,7 +295,7 @@ public static async Task Run(string myQueueItem, IAsyncCollector<Notification> n
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка | Справочник |
+| Привязка | Справка |
 |---|---|
 | Центр уведомлений | [Руководство по операциям](https://docs.microsoft.com/rest/api/notificationhubs/) |
 

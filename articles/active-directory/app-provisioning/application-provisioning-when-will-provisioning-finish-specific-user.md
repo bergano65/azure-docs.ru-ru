@@ -2,21 +2,20 @@
 title: Узнайте, когда конкретный пользователь сможет получить доступ к приложению
 description: В этой статье описано, как определить, когда критически важный пользователь получит доступ к приложению, которое было настроено для подготовки пользователя в Azure AD.
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/03/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: 9d976785340e1a032aa4484dd2e8fd6cb2915129
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
-ms.translationtype: MT
+ms.openlocfilehash: 03af572c94500e046265a5e9affa4f1742fae544
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82593919"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84782030"
 ---
 # <a name="check-the-status-of-user-provisioning"></a>Проверка состояния подготовки пользователей
 
@@ -35,7 +34,7 @@ ms.locfileid: "82593919"
 
 После завершения цикла подготовки в разделе **Статистика по дате** отображается совокупное число пользователей и групп, которые были подготовлены к работе вместе с датой завершения и длительностью последнего цикла. **Идентификатор действия** однозначно определяет самый последний цикл подготовки. **Идентификатор задания** — это уникальный идентификатор задания подготовки, который относится к приложению в клиенте.
 
-Ход подготовки можно просмотреть в портал Azure, на вкладке **Подготовка Azure Active Directory &gt; &gt; \[\] &gt; приложения корпоративные приложения** .
+Ход подготовки можно просмотреть в портал Azure, на вкладке ** &gt; &gt; \[ \] &gt; Подготовка Azure Active Directory приложения корпоративные приложения** .
 
 ![Индикатор выполнения страницы подготовки](./media/application-provisioning-when-will-provisioning-finish-specific-user/provisioning-progress-bar-section.png)
 
@@ -99,5 +98,5 @@ ms.locfileid: "82593919"
 
 - Если производительность станет проблемой и вы пытаетесь подготавливать большинство пользователей и групп в клиенте, используйте фильтры области. Фильтры области позволяют точно настроить данные, которые служба подготовки получает из Azure AD, за счет фильтрации пользователей по значению конкретного атрибута. Дополнительные сведения о фильтрах области см. в статье [Подготовка приложений на основе атрибутов с использованием фильтров области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
-[Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](user-provisioning.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+[Автоматизируйте подготовку пользователей и отменяйте подготовку приложений SaaS с помощью Azure Active Directory](user-provisioning.md)

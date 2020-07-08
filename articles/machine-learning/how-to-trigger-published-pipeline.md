@@ -8,15 +8,14 @@ ms.author: sanpil
 ms.service: machine-learning
 ms.subservice: core
 ms.workload: data-services
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/07/2020
 ms.custom: contperfq4
-ms.openlocfilehash: 32b3e153a98ca7de91e0dd05258414780b39dec4
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
-ms.translationtype: MT
+ms.openlocfilehash: b56b07bce558a65df79a23eaf1948aac8e4fabad
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82857959"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84433757"
 ---
 # <a name="trigger-a-run-of-a-machine-learning-pipeline-from-a-logic-app"></a>Запуск конвейера Машинное обучение из приложения логики
 
@@ -88,7 +87,7 @@ ms.locfileid: "82857959"
     },
     ```
 
-    `DataStoreName` Используйте добавленные в рабочую область в качестве [необходимого компонента](#prerequisites).
+    Используйте `DataStoreName` добавленные в рабочую область в качестве [необходимого компонента](#prerequisites).
      
     > [!div class="mx-imgBorder"]
     > ![Параметры HTTP](media/how-to-trigger-published-pipeline/http-settings.png)

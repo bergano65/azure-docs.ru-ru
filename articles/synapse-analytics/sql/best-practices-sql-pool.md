@@ -6,16 +6,15 @@ author: mlee3gsd
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 345794eead05a4ff5e5d1396df78878d2693f405
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 8483fd2a1b33330b868fb21d71922377e906e6c8
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83834991"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85958427"
 ---
 # <a name="best-practices-for-sql-pools-in-azure-synapse-analytics"></a>Рекомендации по использованию пулов SQL в Azure Synapse Analytics
 
@@ -59,7 +58,7 @@ ms.locfileid: "83834991"
 
 Чтобы максимально повысить пропускную способность при использовании текстовых файлов в формате GZIP, разбейте файлы на 60 или больше частей. Это позволит достичь максимальной степени параллелизма для загрузки. Кроме того, для повышения общей пропускной способности можно загружать данные одновременно. Дополнительные сведения на темы, относящиеся к этому разделу, приведены в следующих статьях:
 
-- [Загрузка данных](data-loading-overview.md)
+- [Загрузка данных](../sql-data-warehouse/design-elt-data-loading.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
 - [руководством по использованию PolyBase](data-loading-best-practices.md)
 - [Шаблоны и стратегии загрузки пула SQL Azure](https://blogs.msdn.microsoft.com/sqlcat/20../../azure-sql-data-warehouse-loading-patterns-and-strategies/)
 - [Загрузка данных с помощью фабрики данных Azure](../../data-factory/load-azure-sql-data-warehouse.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)

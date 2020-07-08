@@ -6,12 +6,11 @@ ms.author: dech
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/10/2020
-ms.openlocfilehash: b398f739189232f39a2fee06fc6e6ff0d53348f0
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: ca4e79977132586c619f323015f9d915e04707f1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83656612"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84449521"
 ---
 # <a name="frequently-asked-questions-about-autoscale-provisioned-throughput-in-azure-cosmos-db"></a>Часто задаваемые вопросы об автомасштабировании подготовленной пропускной способности в Azure Cosmos DB
 
@@ -86,6 +85,10 @@ ms.locfileid: "83656612"
 
 ### <a name="what-is-the-number-of-allowed-containers-per-shared-throughput-database-when-autoscale-is-enabled"></a>Сколько контейнеров на базу данных с общей пропускной способностью допускается при включенном автомасштабировании?
 Azure Cosmos DB допускает не больше 25 контейнеров в базе данных с общей пропускной способностью, включая базы данных с автомасштабированием и стандартной пропускной способностью, подготовленной вручную. 
+
+### <a name="what-is-the-impact-of-autoscale-on-database-consistency-level"></a>Каково влияние автоматического масштабирования на уровне согласованности базы данных?
+Автоматическое масштабирование на уровне согласованности базы данных не влияет.
+Дополнительные сведения о доступных уровнях согласованности см. в статье [уровни согласованности](consistency-levels.md) .
 
 ### <a name="what-is-the-storage-limit-associated-with-each-max-rus-option"></a>Какой максимальный размер хранилища соответствует каждому максимальному значению ЕЗ/с?  
 Максимальный размер хранилища в ГБ для каждого максимального значения ЕЗ/с определяется по формуле: максимум ЕЗ/с для базы данных или контейнера / 100. Например, если максимальная пропускная способность составляет 20 000 ЕЗ/с, ресурс может поддерживать хранилище объемом до 200 ГБ. Доступные максимальные значения ЕЗ/с и хранилища см. в статье [Ограничения для автомасштабирования](provision-throughput-autoscale.md#autoscale-limits). 

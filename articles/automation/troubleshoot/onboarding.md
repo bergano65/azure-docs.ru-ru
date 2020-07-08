@@ -2,18 +2,14 @@
 title: Устранение неполадок при развертывании функций службы автоматизации Azure
 description: В этой статье рассказывается, как устранять неполадки, которые могут возникать при развертывании функций службы автоматизации Azure.
 services: automation
-author: mgoedtel
-ms.author: magoedte
-ms.date: 05/22/2019
+ms.date: 06/30/2020
 ms.topic: conceptual
 ms.service: automation
-manager: carmonm
-ms.openlocfilehash: 4c4c43d8522c6f507d458c56abc445e2da35fa6d
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: ca2f866dc882e003469163a22d32d3d72031443a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83739385"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85801035"
 ---
 # <a name="troubleshoot-feature-deployment-issues"></a>Устранение неполадок с развертыванием компонентов
 
@@ -71,7 +67,7 @@ The solution cannot be enabled on this VM because the permission to read the wor
 
 #### <a name="resolution"></a>Решение
 
-Убедитесь, что вы правильно настроили [разрешения на развертывание функций](../automation-role-based-access-control.md#feature-setup-permissions), и повторите попытку развертывания. Если вы получаете сообщение об ошибке `The solution cannot be enabled on this VM because the permission to read the workspace is missing`, проверьте наличие разрешения `Microsoft.OperationalInsights/workspaces/read`, которое позволяет проверить активность виртуальной машины для рабочей области.
+Убедитесь, что вы правильно настроили [разрешения на развертывание функций](../automation-role-based-access-control.md#feature-setup-permissions), и повторите попытку развертывания. Если появится сообщение об ошибке `The solution cannot be enabled on this VM because the permission to read the workspace is missing` , см. следующие [сведения по устранению неполадок](update-management.md#failed-to-enable-error).
 
 ### <a name="scenario-feature-deployment-fails-with-the-message-failed-to-configure-automation-account-for-diagnostic-logging"></a><a name="diagnostic-logging"></a>Сценарий. Развертывание функции завершается сбоем с ошибкой "Не удалось указать учетной записи службы автоматизации вести журнал диагностики".
 

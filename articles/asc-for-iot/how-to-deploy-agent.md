@@ -15,12 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: c3b514c79be87cd136375b4853226426965f4185
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 4253e496aca4cbf71fab7ef0ee388b1356df5c16
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81311214"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84456799"
 ---
 # <a name="select-and-deploy-a-security-agent-on-your-iot-device"></a>Выбор и развертывание агента безопасности на устройстве IoT
 
@@ -44,7 +43,7 @@ ms.locfileid: "81311214"
 
 |     | Агент безопасности на основе C | Агент безопасности на основе C# |
 | --- | ----------- | --------- |
-| Открытый исходный код | Доступно в рамках [лицензии MIT](https://en.wikipedia.org/wiki/MIT_License) в [GitHub](https://aka.ms/iot-security-github-cs) | Доступно в рамках [лицензии MIT](https://en.wikipedia.org/wiki/MIT_License) в [GitHub](https://aka.ms/iot-security-github-c) |
+| Открытый исходный код | Доступно в рамках [лицензии MIT](https://en.wikipedia.org/wiki/MIT_License) в [GitHub](https://aka.ms/iot-security-github-c) | Доступно в рамках [лицензии MIT](https://en.wikipedia.org/wiki/MIT_License) в [GitHub](https://aka.ms/iot-security-github-cs) |
 | Язык разработки    | C | C# |
 | Поддерживаемые платформы Windows | Нет | Да |
 | Предварительные требования для Windows | --- | [WMI](https://docs.microsoft.com/windows/desktop/wmisdk/) |
@@ -60,7 +59,7 @@ ms.locfileid: "81311214"
 
 ## <a name="security-agent-installation-guidelines"></a>Рекомендации по установке агента безопасности
 
-Для **Windows**: сценарий Install секуритяжент. ps1 должен быть выполнен из окна администратора PowerShell.
+Для **Windows**: сценарий установки SecurityAgent.ps1 должен быть выполнен из окна администратора PowerShell.
 
 Для **Linux**: InstallSecurityAgent.sh должен быть запущен от имени суперпользователя. Рекомендуется выполнить префикс "Sudo" для команды установки.
 
@@ -90,14 +89,14 @@ ms.locfileid: "81311214"
 
 |Центр безопасности Azure для агента IoT |Операционная система |Архитектура |
 |--------------|------------|--------------|
-|В|Ubuntu 16.04 |    X64|
-|В|Ubuntu 18.04 |    x64, ARMv7|
-|В|Debian 9 |    x64, x86|
-|C#|Ubuntu 16.04     |X64|
-|C#|Ubuntu 18.04    |x64, ARMv7|
+|C|Ubuntu 16.04 |    X64|
+|C|Ubuntu 18.04 |    x64, ARMv7|
+|C|Debian 9 |    x64, x86|
+|C#|Ubuntu 16.04     |X64|
+|C#|Ubuntu 18.04    |x64, ARMv7|
 |C#|Debian 9    |X64|
 |C#|Windows Server 2016|    X64|
-|C#|Windows 10 IoT базовая, сборка 17763    |X64|
+|C#|Windows 10 IoT Базовая, сборка 17763    |X64|
 |
 
 ## <a name="next-steps"></a>Дальнейшие шаги

@@ -7,12 +7,11 @@ ms.service: site-recovery
 ms.topic: troubleshooting
 ms.date: 11/10/2019
 ms.author: raynew
-ms.openlocfilehash: b59f933fedd5f1d3ed3f7972b1a1fe653df31be2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 5a6e4b415a9fe8ea80a84e415879df9d2f359478
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75893897"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84434369"
 ---
 # <a name="troubleshoot-microsoft-azure-site-recovery-provider-upgrade-failures"></a>Устранение неполадок с обновлением поставщика службы Microsoft Azure Site Recovery
 
@@ -65,4 +64,16 @@ Upgrade is not supported as a higher version of the software is already installe
 
 1. Для отслеживания процесса установки используйте диспетчер задач. Когда процесс CX_THIRDPARTY_SETUP.EXE больше не будет отображаться в диспетчере задач, перейдите к следующему этапу.
 1. Убедитесь, что путь C:\thirdparty существует и папка содержит библиотеки RRD.
-1. Вернитесь в папку со скачанным пакетом и запустите команду MicrosoftAzureSiteRecoveryUnifiedSetup.exe, чтобы завершить обновление. 
+1. Вернитесь в папку со скачанным пакетом и запустите команду MicrosoftAzureSiteRecoveryUnifiedSetup.exe, чтобы завершить обновление.
+
+## <a name="upgrade-failure-due-to-master-target-installation-failure"></a>Сбой обновления из-за сбоя установки главного целевого сервера
+
+При обновлении поставщика Microsoft Azure Site Recovery (DRA) установка главного целевого сервера завершается сбоем с ошибкой "расположение установки не существует и не содержит 1 ГБ свободного места и/или не существует на фиксированном диске".
+
+Это может быть вызвано значением NULL для параметра в разделе реестра. Для устранения проблемы —
+
+1. Запустите редактор реестра (regedit.exe) и откройте ветвь HKEY_LOCAL_MACHINE \SOFTWARE\Wow6432Node\InMage Системс\инсталлед Products\4.
+1. Проверьте значение ключа "InstallDirectory".Если он имеет значение null, добавьте текущее значение каталога установки.
+1. Аналогичным образом откройте ветвь HKEY_LOCAL_MACHINE \SOFTWARE\Wow6432Node\InMage Системс\инсталлед Products\5 в редакторе реестра.
+1. Проверьте значение ключа "InstallDirectory" и добавьте текущее значение каталога установки.
+1. Повторно запустите единый установщик установки.

@@ -6,19 +6,18 @@ author: curtand
 ms.author: curtand
 manager: mtillman
 ms.date: 04/16/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: active-directory
 ms.subservice: users-groups-roles
 ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3faca8d1a2538ed03a917d6db8d54323fe626369
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 65a6a622a0d3fac7b28cc699d860068f12b780fe
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81533698"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84728611"
 ---
 # <a name="bulk-download-members-of-a-group-in-azure-active-directory"></a>Пакетная загрузка членов группы в Azure Active Directory
 
@@ -26,8 +25,8 @@ ms.locfileid: "81533698"
 
 ## <a name="to-bulk-download-group-membership"></a>Для пакетного скачивания членства в группе
 
-1. Войдите в [портал Azure](https://portal.azure.com) с помощью учетной записи администратора пользователя в Организации. Владельцы групп также могут выполнять пакетное скачивание членов групп, которыми они владеют.
-1. В Azure AD выберите **группы** > **все группы**.
+1. Войдите на [портал Azure](https://portal.azure.com) с учетной записью администратора пользователей в организации. Владельцы групп также могут выполнять пакетное скачивание членов групп, которыми они владеют.
+1. В Azure AD выберите **Группы** > **Все группы**.
 1. Откройте группу, членство в которой необходимо скачать, а затем выберите **члены**.
 1. На странице **члены** выберите **скачать элементы** , чтобы скачать CSV-файл с перечнем членов группы.
 
@@ -35,7 +34,7 @@ ms.locfileid: "81533698"
 
 ## <a name="check-download-status"></a>Проверить состояние скачивания
 
-Состояние всех ожидающих выполнения незавершенных запросов можно просмотреть на странице **результатов групповой операции** .
+Состояние всех ожидающих выполнения массовых запросов можно просмотреть на странице **Результаты массовой операции**.
 
 [![](media/groups-bulk-download-members/bulk-center.png "Check status in the Bulk Operations Results page")](media/groups-bulk-download-members/bulk-center.png#lightbox)
 
@@ -43,7 +42,7 @@ ms.locfileid: "81533698"
 
 Каждое групповое действие для загрузки списка членов группы может выполняться в течение одного часа. Это позволяет скачать список по крайней мере 500 000 членов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Элементы группы группового импорта](groups-bulk-import-members.md)
-- [Групповое удаление членов группы](groups-bulk-download-members.md)
+- [Групповой импорт участников группы](groups-bulk-import-members.md)
+- [Массовое удаление участников группы](groups-bulk-download-members.md)

@@ -9,12 +9,11 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: jingwang
-ms.openlocfilehash: dbcfad3dd3db9f5c9431e07d85d77a77a10283c4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 24edeb686136a1264d75e81fd9527feff3d17c48
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81419040"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84191091"
 ---
 # <a name="supported-file-formats-and-compression-codecs-in-azure-data-factory"></a>Поддерживаемые форматы файлов и кодеки сжатия в фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -27,15 +26,15 @@ ms.locfileid: "81419040"
 
 Кроме того, можно выполнять синтаксический анализ или создание файлов определенного формата. Например, можно выполнить следующие действия.
 
-* Копирование данных из локальной базы данных SQL Server и запись в Azure Data Lake Storage 2-го поколения в формате Parquet.
+* Копирование данных из базы данных SQL Server и запись в Azure Data Lake Storage 2-го поколения в формате Parquet.
 * Копирование файлов в текстовом формате (CSV) из локальной файловой системы и запись в хранилище BLOB-объектов Azure в формате Avro.
 * Скопируйте ZIP-файлы из локальной файловой системы, распакуйте их в оперативном режиме и запишите извлеченные файлы в Azure Data Lake Storage 2-го поколения.
 * Копирование данных в формате сжатого текста gzip (CSV) из хранилища BLOB-объектов Azure и их запись в базу данных SQL Azure.
 * Многие другие действия, требующие сериализации, десериализации или сжатия и распаковки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. другие статьи о действиях копирования:
 
-- [Общие сведения о действии копирования](copy-activity-overview.md)
-- [Производительность действия копирования](copy-activity-performance.md)
+- [Действие копирования в фабрике данных Azure](copy-activity-overview.md)
+- [Руководство по настройке производительности действия копирования](copy-activity-performance.md)

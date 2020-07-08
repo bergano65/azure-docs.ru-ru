@@ -10,12 +10,11 @@ ms.date: 04/21/2020
 ms.author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: ereilebr
-ms.openlocfilehash: cea5fb507225f063e2d48c56fae254e123a8f72b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 3408970bcf5e34ce9f0f0afe9e723b4877dcd694
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81772123"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84193412"
 ---
 # <a name="query-acceleration-sql-language-reference-preview"></a>Справочник по языку SQL для ускорения запросов (Предварительная версия)
 
@@ -32,7 +31,7 @@ ms.locfileid: "81772123"
 SELECT * FROM table [WHERE expression] [LIMIT limit]
 ```
 
-Для данных в формате CSV *Таблица* должна иметь `BlobStorage`формат.  Это означает, что запрос будет выполняться для любого большого двоичного объекта, указанного в вызове функции RESTFUL.
+Для данных в формате CSV *Таблица* должна иметь формат `BlobStorage` .  Это означает, что запрос будет выполняться для любого большого двоичного объекта, указанного в вызове функции RESTFUL.
 Для данных в формате JSON *Таблица* является "дескриптором таблицы".   См. раздел [табличные дескрипторы](#table-descriptors) этой статьи.
 
 В следующем примере для каждой строки, для которой *выражение* WHERE возвращает значение true, эта инструкция вернет новую строку, созданную на основе вычисления каждого выражения проекции.
@@ -54,7 +53,7 @@ SELECT aggregate_expression FROM table [WHERE expression] [LIMIT limit]
 SELECT sys.split(split_size)FROM BlobStorage
 ```
 
-<a id="data-types" />
+<a id="data-types"></a>
 
 ## <a name="data-types"></a>Типы данных
 
@@ -109,9 +108,9 @@ SELECT sys.split(split_size)FROM BlobStorage
 |SUBSTRING|``SUBSTRING('123456789', 1, 5)``|``23456``|
 |TRIM|``TRIM(BOTH '123' FROM '1112211Microsoft22211122')``|``Microsoft``|
 
-Функция [Like](https://docs.microsoft.com/sql/t-sql/language-elements/like-transact-sql?view=sql-server-ver15) позволяет найти шаблон. Вот несколько примеров, в которых для поиска [LIKE](https://docs.microsoft.com/sql/t-sql/language-elements/like-transact-sql?view=sql-server-ver15) строки ``abc,abd,cd\ntest,test2,test3\na_bc,xc%d^e,gh[i ``данных используется функция LIKE.
+Функция [Like](https://docs.microsoft.com/sql/t-sql/language-elements/like-transact-sql?view=sql-server-ver15) позволяет найти шаблон. Вот несколько примеров, в которых для поиска строки данных используется функция [Like](https://docs.microsoft.com/sql/t-sql/language-elements/like-transact-sql?view=sql-server-ver15) ``abc,abd,cd\ntest,test2,test3\na_bc,xc%d^e,gh[i `` .
 
-|query|Пример|
+|Запрос|Пример|
 |--|--|
 |``SELECT _1, _2, _3 from BlobStorage where _2 LIKE 'a%'``|``abc,abd,cd\n``|
 |``SELECT * from BlobStorage where _1 LIKE 'a[bcd]c``|``abc,abd,cd\n``|
@@ -131,7 +130,7 @@ SELECT sys.split(split_size)FROM BlobStorage
 
 Язык SQL для ускорения запросов поддерживает год, месяц, день, час, минуту, секунду для ``DATE_ADD`` функции.
 
-Примеры
+Примеры:
 
 ```sql
 DATE_ADD(datepart, quantity, timestamp)
@@ -149,9 +148,9 @@ DATE_DIFF('hour','2018-11-09T00:00+05:30','2018-11-09T01:00:23-08:00')
 
 #### <a name="extract-function"></a>ИЗВЛЕЧЬ функцию
 
-Для ``DATE_ADD`` функции извлечения, отличной от даты, поддерживаемой функцией, язык SQL с ускорением запросов поддерживает timezone_hour и timezone_minute в качестве части даты.
+Для функции извлечения, отличной от даты, поддерживаемой ``DATE_ADD`` функцией, язык SQL с ускорением запросов поддерживает timezone_hour и timezone_minute в качестве части даты.
 
-Примеры
+Примеры:
 
 ```sql
 EXTRACT(datepart FROM timestampstring)
@@ -160,7 +159,7 @@ EXTRACT(YEAR FROM '2010-01-01T')
 
 #### <a name="to_string-function"></a>Функция TO_STRING
 
-Примеры
+Примеры:
 
 ```sql
 TO_STRING(TimeStamp , format)
@@ -184,7 +183,7 @@ TO_STRING(CAST('1969-07-20T20:18Z' AS TIMESTAMP),  'MMMM d, y')
 |h                |Час дня (1-12)                   |
 |hh               |Нулевые нули в днях OD (01-12)     |
 |H                |Час дня (0-23)                   |
-|ЧЧ               |Нулевой заполняющий час дня (00-23)      |
+|HH               |Нулевой заполняющий час дня (00-23)      |
 |m                |Минута часа (0-59)                |
 |ММ               |Нулевая заданная минута (00-59)           |
 |s                |Секунд (0-59)             |
@@ -203,7 +202,7 @@ TO_STRING(CAST('1969-07-20T20:18Z' AS TIMESTAMP),  'MMMM d, y')
 
 Поддерживаются только форматы IS08601.
 
-Примеры
+Примеры:
 
 ```sql
 TO_TIMESTAMP(string)
@@ -220,7 +219,7 @@ TO_TIMESTAMP('2007T')
 
 |Выражение|Описание|
 |--|--|
-|[COUNT (\*)](https://docs.microsoft.com/sql/t-sql/functions/count-transact-sql?view=sql-server-ver15)    |Возвращает количество записей, соответствующих выражению предиката.|
+|[COUNT ( \* )](https://docs.microsoft.com/sql/t-sql/functions/count-transact-sql?view=sql-server-ver15)    |Возвращает количество записей, соответствующих выражению предиката.|
 |[COUNT (выражение)](https://docs.microsoft.com/sql/t-sql/functions/count-transact-sql?view=sql-server-ver15)    |Возвращает число записей, для которых выражение не имеет значение null.|
 |[AVERAGE (выражение)](https://docs.microsoft.com/sql/t-sql/functions/avg-transact-sql?view=sql-server-ver15)    |Возвращает среднее значение выражения, отличное от NULL.|
 |[MIN (выражение)](https://docs.microsoft.com/sql/t-sql/functions/min-transact-sql?view=sql-server-ver15)    |Возвращает минимальное значение выражения, отличное от NULL.|
@@ -229,13 +228,13 @@ TO_TIMESTAMP('2007T')
 
 ### <a name="missing"></a>ОТСУТСТВУЮЩ
 
-``IS MISSING`` Оператор является единственным нестандартным, поддерживаемым языком SQL для ускорения запросов.  Если в данных JSON отсутствует поле из определенной входной записи, то поле ``IS MISSING`` выражения будет иметь логическое значение true.
+``IS MISSING``Оператор является единственным нестандартным, поддерживаемым языком SQL для ускорения запросов.  Если в данных JSON отсутствует поле из определенной входной записи, то поле выражения ``IS MISSING`` будет иметь логическое значение true.
 
-<a id="table-descriptors" />
+<a id="table-descriptors"></a>
 
 ## <a name="table-descriptors"></a>Дескрипторы таблиц
 
-Для данных CSV имя таблицы всегда `BlobStorage`равно.  Пример:
+Для данных CSV имя таблицы всегда равно `BlobStorage` .  Пример:
 
 ```sql
 SELECT * FROM BlobStorage
@@ -279,7 +278,7 @@ SELECT * FROM BlobStorage[*].path
 }
 ```
 
-Возможно, вас интересует только объект `warehouses` JSON из указанных выше данных. `warehouses` Объект является типом массива JSON, поэтому его можно упомянуть в предложении FROM. Пример запроса может выглядеть примерно так.
+Возможно, вас интересует только `warehouses` объект JSON из указанных выше данных. `warehouses`Объект является типом массива JSON, поэтому его можно упомянуть в предложении FROM. Пример запроса может выглядеть примерно так.
 
 ```sql
 SELECT latitude FROM BlobStorage[*].warehouses[*]
@@ -287,7 +286,7 @@ SELECT latitude FROM BlobStorage[*].warehouses[*]
 
 Запрос получает все поля, но выбирает только широту.
 
-Если требуется получить доступ только к значению объекта `dimensions` JSON, можно использовать ссылку на этот объект в запросе. Пример:
+Если требуется получить доступ только к `dimensions` значению объекта JSON, можно использовать ссылку на этот объект в запросе. Пример:
 
 ```sql
 SELECT length FROM BlobStorage[*].dimensions
@@ -300,9 +299,9 @@ SELECT weight,warehouses[0].longitude,id,tags[1] FROM BlobStorage[*]
 ```
 
 > [!NOTE]
-> Блобстораже и Блобстораже [\*] оба ссылаются на весь объект. Однако если в предложении FROM есть путь, необходимо использовать Блобстораже [\*]. Path.
+> Блобстораже и Блобстораже [ \* ] оба ссылаются на весь объект. Однако если в предложении FROM есть путь, необходимо использовать Блобстораже [ \* ]. Path.
 
-<a id="sys-split" />
+<a id="sys-split"></a>
 
 ## <a name="syssplit"></a>Sys. Split
 
@@ -314,7 +313,7 @@ SELECT sys.split(split_size)FROM BlobStorage
 
 Используйте эту инструкцию в тех случаях, когда необходимо загрузить и затем обработать записи данных в формате CSV в пакетах. Таким образом, можно обрабатывать записи параллельно, вместо того чтобы загружать все записи за один раз. Эта инструкция не возвращает записи из CSV-файла. Вместо этого он возвращает коллекцию размеров пакетов. Затем можно использовать каждый размер пакета для получения пакета записей данных. 
 
-Используйте параметр *split_size* , чтобы указать число байтов, которое должен содержать каждый пакет. Например, если вы хотите обрабатывать только 10 МБ данных одновременно, то оператор будет выглядеть следующим образом: `SELECT sys.split(10485760)FROM BlobStorage` так как 10 мб равно 10 485 760 байт. Каждый пакет будет содержать столько записей, сколько может уместиться в 10 МБ. 
+Используйте параметр *split_size* , чтобы указать число байтов, которое должен содержать каждый пакет. Например, если вы хотите обрабатывать только 10 МБ данных одновременно, то оператор будет выглядеть следующим образом: `SELECT sys.split(10485760)FROM BlobStorage` так как 10 МБ равно 10 485 760 байт. Каждый пакет будет содержать столько записей, сколько может уместиться в 10 МБ. 
 
 В большинстве случаев размер каждого пакета будет немного выше указанного числа. Это обусловлено тем, что пакет не может содержать частичную запись. Если последняя запись в пакете начинается до окончания порогового значения, пакет будет больше, чтобы он мог содержать всю запись. Размер последнего пакета, скорее всего, будет меньше указанного размера.
 

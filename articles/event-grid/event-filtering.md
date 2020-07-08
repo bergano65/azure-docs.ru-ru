@@ -7,12 +7,11 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 04/28/2020
 ms.author: spelluru
-ms.openlocfilehash: 0f503b21d5a7d0fdfbee79354c198775789c0b91
-ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
-ms.translationtype: MT
+ms.openlocfilehash: afe97fd1736fbaa6858adb2fc658b4ab34546f84
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82888781"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84456852"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Общие сведения о фильтрации событий для подписок на службу "Сетка событий Azure"
 
@@ -147,18 +146,18 @@ ms.locfileid: "82888781"
 Допустимые значения:
 
 * number
-* строка
-* boolean
+* string
+* Логическое
 * массиве
 
 ### <a name="limitations"></a>Ограничения
 
 Расширенная фильтрация имеет такие ограничения:
 
-* пять расширенных фильтров на каждую подписку сетки событий;
+* 5 дополнительных фильтров и 25 значений фильтров по всем подпискам на одну подписку на сетку событий
 * 512 знаков для значения строки;
 * пять значений для операторов **in** и **not in**;
-* Ключи с ** `.` символом (точкой)** . Пример: `http://schemas.microsoft.com/claims/authnclassreference` или `john.doe@contoso.com`. В настоящее время escape-символы в ключах не поддерживаются. 
+* Ключи с символом ** `.` (точкой)** . Пример: `http://schemas.microsoft.com/claims/authnclassreference` или `john.doe@contoso.com`. В настоящее время escape-символы в ключах не поддерживаются. 
 
 Один ключ можно использовать в нескольких фильтрах.
 
@@ -311,7 +310,7 @@ ms.locfileid: "82888781"
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. дополнительные сведения о фильтрации событий для Сетки событий с помощью [PowerShell и Azure CLI](how-to-filter-events.md).
 * Сведения о том, как быстро приступить к использованию службы "Сетка событий", см. в разделе [Создание и перенаправление пользовательского события со службой "Сетка событий Azure"](custom-event-quickstart.md).

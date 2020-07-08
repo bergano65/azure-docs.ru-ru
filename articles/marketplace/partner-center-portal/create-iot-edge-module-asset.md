@@ -7,12 +7,11 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/03/2020
-ms.openlocfilehash: fc35602b55e79f3351da0def800d2a2b2698e250
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
-ms.translationtype: MT
+ms.openlocfilehash: 36b56cdf5a2aaa57cc452db9054380528fa8c68b
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82856724"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85958588"
 ---
 # <a name="prepare-your-iot-edge-module-technical-assets"></a>Подготовка технических ресурсов для модуля IoT Edge
 
@@ -22,8 +21,8 @@ ms.locfileid: "82856724"
 
 Модуль IoT Edge — это контейнер, совместимый с DOCKER, который выполняется на устройстве IoT Edge.
 
-- Дополнительные сведения о модулях IoT Edge см. в статье [Общие сведения о модулях IoT Edge Azure](https://docs.microsoft.com/azure/iot-edge/iot-edge-modules).
-- Чтобы приступить к работе с разработкой модуля IoT Edge, ознакомьтесь с [разработкой собственных модулей IOT Edge](https://docs.microsoft.com/azure/iot-edge/module-development).
+- Дополнительные сведения о модулях IoT Edge см. в статье [Общие сведения о модулях IoT Edge Azure](../../iot-edge/iot-edge-modules.md).
+- Чтобы приступить к работе с разработкой модуля IoT Edge, ознакомьтесь с [разработкой собственных модулей IOT Edge](../../iot-edge/module-development.md).
 
 ## <a name="technical-requirements"></a>Технические требования
 
@@ -35,7 +34,7 @@ ms.locfileid: "82856724"
 
 #### <a name="tier-1-platforms-supported-by-iot-edge"></a>Платформы уровня 1, поддерживаемые IoT Edge
 
-Модуль должен поддерживать все платформы уровня 1, поддерживаемые IoT Edge (как записано в [поддержке Azure IOT Edge](https://docs.microsoft.com/azure/iot-edge/support)). Мы рекомендуем использовать именно этот вариант, так как он обеспечивает максимальное удобство для клиентов. Будут показаны модули, удовлетворяющие этому критерию. Модуль с поддержкой этих платформ должен соответствовать следующим требованиям:
+Модуль должен поддерживать все платформы уровня 1, поддерживаемые IoT Edge (как записано в [поддержке Azure IOT Edge](../../iot-edge/support.md)). Мы рекомендуем использовать именно этот вариант, так как он обеспечивает максимальное удобство для клиентов. Будут показаны модули, удовлетворяющие этому критерию. Модуль с поддержкой этих платформ должен соответствовать следующим требованиям:
 
 - Укажите последний тег и тег версии (например, 1.0.1), которые являются тегами манифеста, созданными с помощью [средства манифеста GitHub](https://github.com/estesp/manifest-tool).
 
@@ -43,7 +42,7 @@ ms.locfileid: "82856724"
 
 #### <a name="a-subset-of-tier-1-platforms-supported-by-iot-edge"></a>Группа платформ уровня 1, поддерживаемых IoT Edge
 
-Модуль должен поддерживать подмножество (по крайней мере, одну) платформы уровня 1, поддерживаемые IoT Edge (как записано в [поддержке Azure IOT Edge](https://docs.microsoft.com/azure/iot-edge/support)). Модуль с поддержкой этих платформ должен соответствовать следующим требованиям:
+Модуль должен поддерживать подмножество (по крайней мере, одну) платформы уровня 1, поддерживаемые IoT Edge (как записано в [поддержке Azure IOT Edge](../../iot-edge/support.md)). Модуль с поддержкой этих платформ должен соответствовать следующим требованиям:
 
 - Укажите последний тег и тег версии (например, 1.0.1), которые являются тегами манифеста, созданными с помощью [средства манифеста](https://github.com/estesp/manifest-tool) GitHub, если поддерживается более одной платформы. Теги манифеста необязательны, если поддерживается только одна платформа.
 - Используйте вкладку Список предложений в [центре партнеров](https://partner.microsoft.com/dashboard/commercial-marketplace) , чтобы добавить ссылку в разделе **полезные ссылки** , по крайней мере на одно IOT Edge устройство из [каталога сертифицированные устройства Azure IOT Edge](https://catalog.azureiotsolutions.com/).
@@ -64,7 +63,7 @@ ms.locfileid: "82856724"
 <p><u>Minimum hardware requirements:</u> Linux x64 and arm32 OS, 1GB of RAM, 500 Mb of storage</p>
 ```
 
-### <a name="configuration"></a>Конфигурация
+### <a name="configuration"></a>Параметр Configuration
 
 Модуль должен включать параметры конфигурации по умолчанию, чтобы развертывание на IoT Edge устройстве было как можно более простым. Эти сведения можно указать на странице **технической настройки** плана в [центре партнеров](https://partner.microsoft.com/dashboard/commercial-marketplace). Контейнер также может содержать пакет SDK для модуля IoT Edge, чтобы обеспечить взаимодействие с концентратором ребра и центром Интернета вещей.
 
@@ -108,7 +107,7 @@ ServerIPAddress = <MY_SERVER_IP_ADDRESS>
 Используйте один из следующих методов из пакета SDK для модуля IoT, чтобы задать для ProductInfo следующий идентификатор:
 
 - [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.productinfo?view=azure-dotnet#Microsoft_Azure_Devices_Client_DeviceClient_ProductInfo)
-- [В](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/Iothub_sdk_options.md)
+- [C](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/Iothub_sdk_options.md)
 - [Python](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/Iothub_sdk_options.md)
 - [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.productinfo?view=azure-java-stable)
 
@@ -139,8 +138,8 @@ ServerIPAddress = <MY_SERVER_IP_ADDRESS>
 
 ## <a name="host-module-in-azure-container-registry"></a>Модуль размещения в реестре контейнеров Azure
 
-Чтобы отправить модуль IoT Edge в Azure Marketplace, сначала необходимо разместить его в [реестре контейнеров Azure](https://azure.microsoft.com/services/container-registry/) (запись контроля доступа). Модуль должен включать все теги, которые необходимо опубликовать, включая теги изображений, на которые ссылается тег манифеста. Дополнительные сведения см. в руководстве по [созданию реестра контейнеров Azure и отправке образа контейнера](https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-prepare-acr).
+Чтобы отправить модуль IoT Edge в Azure Marketplace, сначала необходимо разместить его в [реестре контейнеров Azure](https://azure.microsoft.com/services/container-registry/) (запись контроля доступа). Модуль должен включать все теги, которые необходимо опубликовать, включая теги изображений, на которые ссылается тег манифеста. Дополнительные сведения см. в руководстве по [созданию реестра контейнеров Azure и отправке образа контейнера](../../container-instances/container-instances-tutorial-prepare-acr.md).
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Создание предложения модуля IoT Edge](https://docs.microsoft.com/azure/marketplace/partner-center-portal/azure-iot-edge-module-creation)
+- [Создание предложения модуля IoT Edge](azure-iot-edge-module-creation.md)

@@ -2,13 +2,12 @@
 title: Настройка Azure Red Hat OpenShift v3. x с Azure Monitor для контейнеров | Документация Майкрософт
 description: В этой статье описывается настройка мониторинга кластера Kubernetes с Azure Monitor, размещенных в Azure Red Hat OpenShift версии 3 и выше.
 ms.topic: conceptual
-ms.date: 04/02/2020
-ms.openlocfilehash: c39eda03fc5fb7521bcf08c52eaabc28d4cb1256
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
-ms.translationtype: MT
+ms.date: 06/30/2020
+ms.openlocfilehash: e04ef42971756cffe0906e1ddfb8406e876588bc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82204140"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85800517"
 ---
 # <a name="configure-azure-red-hat-openshift-v3-with-azure-monitor-for-containers"></a>Настройка Azure Red Hat OpenShift v3 с Azure Monitor для контейнеров
 
@@ -32,9 +31,47 @@ Azure Monitor для контейнеров поддерживает монит�
 
 ## <a name="prerequisites"></a>Предварительные условия
 
+- [Рабочая область Log Analytics](../platform/design-logs-deployment.md).
+
+    Azure Monitor для контейнеров поддерживает рабочую область Log Analytics в регионах, перечисленных в списке [продуктов Azure по регионам](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=monitor). Чтобы создать собственную рабочую область, ее можно создать с помощью [Azure Resource Manager](../platform/template-workspace-configuration.md), [PowerShell](../scripts/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json)или в [портал Azure](../learn/quick-create-workspace.md).
+
 - Чтобы включить функции и получить доступ к ним в Azure Monitor для контейнеров, как минимум необходимо быть участником роли *участника* Azure в подписке Azure и членом роли [*участника log Analytics*](../platform/manage-access.md#manage-access-using-azure-permissions) log Analytics рабочей области, настроенной с Azure Monitor для контейнеров.
 
 - Для просмотра данных мониторинга вы являетесь членом разрешения роли [*log Analytics читатель*](../platform/manage-access.md#manage-access-using-azure-permissions) с рабочей областью log Analytics, настроенной с Azure Monitor для контейнеров.
+
+## <a name="identify-your-log-analytics-workspace-id"></a>Идентификация идентификатора рабочей области Log Analytics
+
+ Чтобы выполнить интеграцию с существующей рабочей областью Log Analytics, начните с определения полного идентификатора ресурса Log Analytics рабочей области. Идентификатор ресурса рабочей области требуется для параметра `workspaceResourceId` при включении мониторинга с помощью метода шаблона Azure Resource Manager.
+
+1. Перечислите все подписки, к которым у вас есть доступ, выполнив следующую команду:
+
+    ```azurecli
+    az account list --all -o table
+    ```
+
+    Выходные данные будут выглядеть следующим образом:
+
+    ```azurecli
+    Name                                  CloudName    SubscriptionId                        State    IsDefault
+    ------------------------------------  -----------  ------------------------------------  -------  -----------
+    Microsoft Azure                       AzureCloud   0fb60ef2-03cc-4290-b595-e71108e8f4ce  Enabled  True
+    ```
+
+1. Скопируйте значение для **SubscriptionId**.
+
+1. Переключитесь на подписку, в которой размещена рабочая область Log Analytics, выполнив следующую команду:
+
+    ```azurecli
+    az account set -s <subscriptionId of the workspace>
+    ```
+
+1. Отобразите список рабочих областей в подписках в формате JSON по умолчанию, выполнив следующую команду:
+
+    ```
+    az resource list --resource-type Microsoft.OperationalInsights/workspaces -o json
+    ```
+
+1. В выходных данных найдите имя рабочей области, а затем скопируйте полный идентификатор ресурса этой Log Analytics рабочей области под **идентификатором**поля.
 
 ## <a name="enable-for-a-new-cluster-using-an-azure-resource-manager-template"></a>Включение для нового кластера с помощью шаблона Azure Resource Manager
 
@@ -54,7 +91,7 @@ Azure Monitor для контейнеров поддерживает монит�
 
 - [Группа безопасности Azure AD](../../openshift/howto-aad-app-configuration.md#create-an-azure-ad-security-group) , указанная после выполнения действий по созданию одной или одной уже созданной группы.
 
-- Идентификатор ресурса существующей рабочей области Log Analytics.
+- Идентификатор ресурса существующей рабочей области Log Analytics. Сведения о том, как получить эту информацию, см. в разделе [Определение идентификатора рабочей области log Analytics](#identify-your-log-analytics-workspace-id) .
 
 - Число главных узлов, создаваемых в кластере.
 
@@ -70,18 +107,16 @@ Azure Monitor для контейнеров поддерживает монит�
 
 Если вы решили использовать Azure CLI, необходимо сначала установить интерфейс командной строки и использовать его локально. Необходимо запустить Azure CLI версии 2.0.65 или более поздней. Для определения версии выполните `az --version`. Если вам необходимо установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
-Перед включением мониторинга с помощью Azure PowerShell или CLI необходимо создать рабочую область Log Analytics. Для создания рабочей области можно использовать [Azure Resource Manager](../../azure-monitor/platform/template-workspace-configuration.md), [PowerShell](../scripts/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json) или [портал Azure](../../azure-monitor/learn/quick-create-workspace.md).
-
 1. Скачайте и сохраните в локальной папке, шаблоне Azure Resource Manager и файле параметров, чтобы создать кластер с надстройкой мониторинга с помощью следующих команд:
 
-    `curl -LO https://raw.githubusercontent.com/microsoft/OMS-docker/ci_feature/docs/aro/enable_monitoring_to_new_cluster/newClusterWithMonitoring.json`
+    `curl -LO https://raw.githubusercontent.com/microsoft/Docker-Provider/ci_dev/scripts/onboarding/aro/enable_monitoring_to_new_cluster/newClusterWithMonitoring.json`
 
-    `curl -LO https://raw.githubusercontent.com/microsoft/OMS-docker/ci_feature/docs/aro/enable_monitoring_to_new_cluster/newClusterWithMonitoringParam.json`
+    `curl -LO https://raw.githubusercontent.com/microsoft/Docker-Provider/ci_dev/scripts/onboarding/aro/enable_monitoring_to_new_cluster/newClusterWithMonitoringParam.json`
 
 2. Вход в Azure
 
     ```azurecli
-    az login    
+    az login
     ```
 
     Если у вас есть доступ к нескольким подпискам, выполните команду `az account set -s {subscription ID}`, заменив `{subscription ID}` необходимой подпиской.
@@ -92,7 +127,7 @@ Azure Monitor для контейнеров поддерживает монит�
     az group create -g <clusterResourceGroup> -l <location>
     ```
 
-4. Измените файл параметров JSON **невклустервисмониторингпарам. JSON** и обновите следующие значения:
+4. Измените файл параметров JSON **newClusterWithMonitoringParam.jsв** и обновите следующие значения:
 
     - *расположение*
     - *имя_кластера*
@@ -149,7 +184,7 @@ Azure Monitor для контейнеров поддерживает монит�
 
 - Группа ресурсов, в которой развернут кластер.
 
-- Рабочая область Log Analytics.
+- Рабочая область Log Analytics. Сведения о том, как получить эту информацию, см. в разделе [Определение идентификатора рабочей области log Analytics](#identify-your-log-analytics-workspace-id) .
 
 Если вы не знакомы с концепцией развертывания ресурсов с помощью шаблона, ознакомьтесь со статьями:
 
@@ -159,18 +194,16 @@ Azure Monitor для контейнеров поддерживает монит�
 
 Если вы решили использовать Azure CLI, необходимо сначала установить интерфейс командной строки и использовать его локально. Необходимо запустить Azure CLI версии 2.0.65 или более поздней. Для определения версии выполните `az --version`. Если вам необходимо установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
-Перед включением мониторинга с помощью Azure PowerShell или CLI необходимо создать рабочую область Log Analytics. Для создания рабочей области можно использовать [Azure Resource Manager](../../azure-monitor/platform/template-workspace-configuration.md), [PowerShell](../scripts/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json) или [портал Azure](../../azure-monitor/learn/quick-create-workspace.md).
-
 1. Скачайте шаблон и файл параметров, чтобы обновить кластер с помощью надстройки мониторинга, используя следующие команды:
 
-    `curl -LO https://raw.githubusercontent.com/microsoft/OMS-docker/ci_feature/docs/aro/enable_monitoring_to_existing_cluster/existingClusterOnboarding.json`
+    `curl -LO https://raw.githubusercontent.com/microsoft/Docker-Provider/ci_dev/scripts/onboarding/aro/enable_monitoring_to_existing_cluster/existingClusterOnboarding.json`
 
-    `curl -LO https://raw.githubusercontent.com/microsoft/OMS-docker/ci_feature/docs/aro/enable_monitoring_to_existing_cluster/existingClusterParam.json`
+    `curl -LO https://raw.githubusercontent.com/microsoft/Docker-Provider/ci_dev/scripts/onboarding/aro/enable_monitoring_to_existing_cluster/existingClusterParam.json`
 
 2. Вход в Azure
 
     ```azurecli
-    az login    
+    az login
     ```
 
     Если у вас есть доступ к нескольким подпискам, выполните команду `az account set -s {subscription ID}`, заменив `{subscription ID}` необходимой подпиской.
@@ -187,7 +220,7 @@ Azure Monitor для контейнеров поддерживает монит�
     az openshift show -g <clusterResourceGroup> -n <clusterName>
     ```
 
-5. Измените файл параметров JSON **ексистингклустерпарам. JSON** и обновите значения *араресаурцеид* и *араресоруцелокатион*. Значение для **workspaceResourceId** — это полный идентификатор ресурса рабочей области Log Analytics, который включает имя рабочей области.
+5. Измените файл параметров JSON **existingClusterParam.js** и обновите значения *ароресаурцеид* и *ароресаурцелокатион*. Значение для **workspaceResourceId** — это полный идентификатор ресурса рабочей области Log Analytics, который включает имя рабочей области.
 
 6. Чтобы выполнить развертывание с Azure CLI, выполните следующие команды:
 

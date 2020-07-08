@@ -3,19 +3,18 @@ title: Моделирование и секционирование данных
 description: Сведения о моделировании и секционировании на примере реального использования Azure Cosmos DB Core API
 author: ThomasWeiss
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/23/2019
 ms.author: thweiss
-ms.openlocfilehash: 10f8ffd90215a21ca03e112aea463d444c623d06
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: af5211e82820c1052b9ea17ce1fbdb0ebd5b9f3b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75445382"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85800381"
 ---
 # <a name="how-to-model-and-partition-data-on-azure-cosmos-db-using-a-real-world-example"></a>Процесс моделирования и секционирования данных в Azure Cosmos DB на примере реального использования
 
-В этой статье применяется ряд ключевых понятий Azure Cosmos DB, таких как [моделирование данных](modeling-data.md), [секционирование](partitioning-overview.md) и [подготовленная пропускная способность](request-units.md), чтобы продемонстрировать решение реальной практической задачи по подготовке данных.
+Эта статья основана на нескольких Azure Cosmos DB таких концепциях, как [моделирование данных](modeling-data.md), [секционирование](partitioning-overview.md)и [подготовленная пропускная способность](request-units.md) , чтобы продемонстрировать, как выполнять реальные упражнения по проектированию данных.
 
 Если вы регулярно работаете с реляционными базами данных, у вас уже есть представление о моделях данных и определенный набор приемов по их созданию. Azure Cosmos DB имеет ряд уникальных преимуществ и специфичных ограничений. Поэтому многие традиционные рекомендации в этой среде плохо применимы и приводят к созданию неоптимальных решений. В этой статье наглядно демонстрируется полный процесс моделирования данных в Azure Cosmos DB на примере реального использования — от моделирования элементов до размещения сущностей и секционирования контейнеров.
 
@@ -65,10 +64,12 @@ ms.locfileid: "75445382"
 
 В этом контейнере хранятся только элементы с данными о пользователях:
 
-    {
-      "id": "<user-id>",
-      "username": "<username>"
-    }
+```json
+{
+    "id": "<user-id>",
+    "username": "<username>"
+}
+```
 
 Для него мы выполним секционирование по `id`. То есть каждая логическая секция в этом контейнере будет содержать только один элемент.
 
@@ -76,32 +77,34 @@ ms.locfileid: "75445382"
 
 В этом контейнере размещаются записи, комментарии и отметки "Нравится":
 
-    {
-      "id": "<post-id>",
-      "type": "post",
-      "postId": "<post-id>",
-      "userId": "<post-author-id>",
-      "title": "<post-title>",
-      "content": "<post-content>",
-      "creationDate": "<post-creation-date>"
-    }
+```json
+{
+    "id": "<post-id>",
+    "type": "post",
+    "postId": "<post-id>",
+    "userId": "<post-author-id>",
+    "title": "<post-title>",
+    "content": "<post-content>",
+    "creationDate": "<post-creation-date>"
+}
 
-    {
-      "id": "<comment-id>",
-      "type": "comment",
-      "postId": "<post-id>",
-      "userId": "<comment-author-id>",
-      "content": "<comment-content>",
-      "creationDate": "<comment-creation-date>"
-    }
+{
+    "id": "<comment-id>",
+    "type": "comment",
+    "postId": "<post-id>",
+    "userId": "<comment-author-id>",
+    "content": "<comment-content>",
+    "creationDate": "<comment-creation-date>"
+}
 
-    {
-      "id": "<like-id>",
-      "type": "like",
-      "postId": "<post-id>",
-      "userId": "<liker-id>",
-      "creationDate": "<like-creation-date>"
-    }
+{
+    "id": "<like-id>",
+    "type": "like",
+    "postId": "<post-id>",
+    "userId": "<liker-id>",
+    "creationDate": "<like-creation-date>"
+}
+```
 
 Для него мы выполним секционирование по `postId`, то есть каждая логическая секция в этом контейнере будет содержать одну запись, все комментарии и все отметки "Нравится" к ней.
 
@@ -122,7 +125,7 @@ ms.locfileid: "75445382"
 
 Этот запрос реализуется довольно просто: достаточно создать или обновить элемент в контейнере `users`. Такие запросы хорошо распределяются по всем секциям благодаря ключу секции `id`.
 
-![Запись одного элемента в контейнер users](./media/how-to-model-partition-example/V1-C1.png)
+:::image type="content" source="./media/how-to-model-partition-example/V1-C1.png" alt-text="Запись одного элемента в контейнер users" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -132,7 +135,7 @@ ms.locfileid: "75445382"
 
 Получение сведений о пользователе выполняется путем чтения соответствующего элемента из контейнера `users`.
 
-![Получение одного элемента из контейнера users](./media/how-to-model-partition-example/V1-Q1.png)
+:::image type="content" source="./media/how-to-model-partition-example/V1-Q1.png" alt-text="Получение одного элемента из контейнера users" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -142,7 +145,7 @@ ms.locfileid: "75445382"
 
 Аналогично операции **[C1]**, выполняется путем записи в контейнер `posts`.
 
-![Запись одного элемента в контейнер posts](./media/how-to-model-partition-example/V1-C2.png)
+:::image type="content" source="./media/how-to-model-partition-example/V1-C2.png" alt-text="Запись одного элемента в контейнер posts" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -152,7 +155,7 @@ ms.locfileid: "75445382"
 
 Сначала нужно извлечь соответствующий документ из контейнера `posts`. Но этого недостаточно, ведь согласно спецификации требуется предоставить имя пользователя автора записи, а также количество комментариев и отметок "Нравится" для этой записи. Для этого мы выполним еще три запроса SQL.
 
-![Получение записи и дополнительных статистических данных](./media/how-to-model-partition-example/V1-Q2.png)
+:::image type="content" source="./media/how-to-model-partition-example/V1-Q2.png" alt-text="Получение записи и дополнительных статистических данных" border="false":::
 
 В каждом из дополнительных запросов применяется фильтр по ключу секционирования соответствующего контейнера. Это позволяет добиться максимальной производительности и масштабируемости. Но в итоге мы выполняем четыре операции для возврата одной записи. Это поведение мы улучшим в следующей итерации.
 
@@ -164,7 +167,7 @@ ms.locfileid: "75445382"
 
 Сначала нам нужно извлечь требуемые записи с помощью запроса SQL, который возвращает записи по определенному пользователю. Также мы должны выполнить дополнительные запросы для получения имени пользователя автора, количества комментариев и отметок "Нравится".
 
-![Получение всех записей пользователя и статистическая обработка дополнительных данных](./media/how-to-model-partition-example/V1-Q3.png)
+:::image type="content" source="./media/how-to-model-partition-example/V1-Q3.png" alt-text="Получение всех записей пользователя и статистическая обработка дополнительных данных" border="false":::
 
 Представленная реализация имеет несколько недостатков:
 
@@ -179,7 +182,7 @@ ms.locfileid: "75445382"
 
 Комментарий создается путем сохранения соответствующего элемента в контейнер `posts`.
 
-![Запись одного элемента в контейнер posts](./media/how-to-model-partition-example/V1-C2.png)
+:::image type="content" source="./media/how-to-model-partition-example/V1-C2.png" alt-text="Запись одного элемента в контейнер posts" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -189,7 +192,7 @@ ms.locfileid: "75445382"
 
 Мы начинаем обработку с запроса, который позволяет извлечь все комментарии к нужной записи. Затем снова нужно получить имена пользователей отдельно для каждого комментария.
 
-![Получение всех комментариев к записи и статистическая обработка дополнительных данных](./media/how-to-model-partition-example/V1-Q4.png)
+:::image type="content" source="./media/how-to-model-partition-example/V1-Q4.png" alt-text="Получение всех комментариев к записи и статистическая обработка дополнительных данных" border="false":::
 
 Основной запрос позволяет отфильтровать данные контейнера по ключу секции, но раздельный сбор имен пользователей снижает общую производительность. Мы улучшим это поведение позже.
 
@@ -201,7 +204,7 @@ ms.locfileid: "75445382"
 
 Так же, как и при выполнении операции **[C3]**, мы создаем нужные элемент в контейнере `posts`.
 
-![Запись одного элемента в контейнер posts](./media/how-to-model-partition-example/V1-C2.png)
+:::image type="content" source="./media/how-to-model-partition-example/V1-C2.png" alt-text="Запись одного элемента в контейнер posts" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -211,7 +214,7 @@ ms.locfileid: "75445382"
 
 Так же, как и при выполнении операции **[Q4]**, мы запрашиваем отметки "Нравится" для нужной записи, а затем получаем для них имена пользователей.
 
-![Получение всех отметок "Нравится" к записи и статистическая обработка дополнительных данных](./media/how-to-model-partition-example/V1-Q5.png)
+:::image type="content" source="./media/how-to-model-partition-example/V1-Q5.png" alt-text="Получение всех отметок "Нравится" к записи и статистическая обработка дополнительных данных" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -221,9 +224,9 @@ ms.locfileid: "75445382"
 
 Мы запрашиваем последние записи из контейнера `posts`, отсортировав его по убыванию даты создания, а затем собираем имена пользователей и количество комментариев и отметок "Нравится" для каждой из записей.
 
-![Получение самых свежих записей и статистическая обработка дополнительных данных](./media/how-to-model-partition-example/V1-Q6.png)
+:::image type="content" source="./media/how-to-model-partition-example/V1-Q6.png" alt-text="Получение самых свежих записей и статистическая обработка дополнительных данных" border="false":::
 
-Опять же, наш первоначальный запрос не фильтрует ключ секции `posts` контейнера, который запускает дорогостоящее развертывание. Это еще хуже, так как мы нацелены на гораздо больший результирующий набор и отсортовать `ORDER BY` результаты с помощью предложения, которое делает его более дорогостоящим в плане единиц запросов.
+Опять же, наш первоначальный запрос не фильтрует ключ секции `posts` контейнера, который запускает дорогостоящее развертывание. Это еще хуже, так как мы нацелены на гораздо больший результирующий набор и отсортовать результаты с помощью `ORDER BY` предложения, которое делает его более дорогостоящим в плане единиц запросов.
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -244,39 +247,43 @@ ms.locfileid: "75445382"
 
 В нашем примере мы изменим элементы записей, чтобы они содержали имя пользователя, число комментариев и отметок "Нравится":
 
-    {
-      "id": "<post-id>",
-      "type": "post",
-      "postId": "<post-id>",
-      "userId": "<post-author-id>",
-      "userUsername": "<post-author-username>",
-      "title": "<post-title>",
-      "content": "<post-content>",
-      "commentCount": <count-of-comments>,
-      "likeCount": <count-of-likes>,
-      "creationDate": "<post-creation-date>"
-    }
+```json
+{
+    "id": "<post-id>",
+    "type": "post",
+    "postId": "<post-id>",
+    "userId": "<post-author-id>",
+    "userUsername": "<post-author-username>",
+    "title": "<post-title>",
+    "content": "<post-content>",
+    "commentCount": <count-of-comments>,
+    "likeCount": <count-of-likes>,
+    "creationDate": "<post-creation-date>"
+}
+```
 
 Мы также изменим элементы комментариев и отметок "Нравится",чтобы они содержали имя пользователя, создавшего их:
 
-    {
-      "id": "<comment-id>",
-      "type": "comment",
-      "postId": "<post-id>",
-      "userId": "<comment-author-id>",
-      "userUsername": "<comment-author-username>",
-      "content": "<comment-content>",
-      "creationDate": "<comment-creation-date>"
-    }
+```json
+{
+    "id": "<comment-id>",
+    "type": "comment",
+    "postId": "<post-id>",
+    "userId": "<comment-author-id>",
+    "userUsername": "<comment-author-username>",
+    "content": "<comment-content>",
+    "creationDate": "<comment-creation-date>"
+}
 
-    {
-      "id": "<like-id>",
-      "type": "like",
-      "postId": "<post-id>",
-      "userId": "<liker-id>",
-      "userUsername": "<liker-username>",
-      "creationDate": "<like-creation-date>"
-    }
+{
+    "id": "<like-id>",
+    "type": "like",
+    "postId": "<post-id>",
+    "userId": "<liker-id>",
+    "userUsername": "<liker-username>",
+    "creationDate": "<like-creation-date>"
+}
+```
 
 ### <a name="denormalizing-comment-and-like-counts"></a>Денормализация счетчиков комментариев и отметок "Нравится"
 
@@ -328,7 +335,7 @@ function createComment(postId, comment) {
 
 В нашем примере мы настроим канал изменений контейнера `users` таким образом, чтобы он реагировал на каждое изменение имен пользователей. Все эти изменения мы будем распространять с помощью другой хранимой процедуры из контейнера `posts`:
 
-![Денормализация имен пользователей в контейнере posts](./media/how-to-model-partition-example/denormalization-1.png)
+:::image type="content" source="./media/how-to-model-partition-example/denormalization-1.png" alt-text="Денормализация имен пользователей в контейнере posts" border="false":::
 
 ```javascript
 function updateUsernames(userId, username) {
@@ -368,7 +375,7 @@ function updateUsernames(userId, username) {
 
 Теперь, когда мы настроили денормализацию, для обработки этого запроса достаточно получить один элемент.
 
-![Получение одного элемента из контейнера posts](./media/how-to-model-partition-example/V2-Q2.png)
+:::image type="content" source="./media/how-to-model-partition-example/V2-Q2.png" alt-text="Получение одного элемента из контейнера posts" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -378,7 +385,7 @@ function updateUsernames(userId, username) {
 
 Здесь мы также избавились от затрат на дополнительные запросы имен пользователей и оставили лишь один запрос с фильтрацией по ключу секции.
 
-![Получение всех комментариев для записи](./media/how-to-model-partition-example/V2-Q4.png)
+:::image type="content" source="./media/how-to-model-partition-example/V2-Q4.png" alt-text="Получение всех комментариев для записи" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -388,7 +395,7 @@ function updateUsernames(userId, username) {
 
 Аналогичный результат достигнут и для перечисления отметок "Нравится".
 
-![Получение всех отметок "Нравится" для записи](./media/how-to-model-partition-example/V2-Q5.png)
+:::image type="content" source="./media/how-to-model-partition-example/V2-Q5.png" alt-text="Получение всех отметок "Нравится" для записи" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -402,7 +409,7 @@ function updateUsernames(userId, username) {
 
 В этот запрос в версии 2 уже были внесены улучшения, позволяющие избежать дополнительных запросов.
 
-![Получение всех записей пользователя](./media/how-to-model-partition-example/V2-Q3.png)
+:::image type="content" source="./media/how-to-model-partition-example/V2-Q3.png" alt-text="Получение всех записей пользователя" border="false":::
 
 Но сохранившийся запрос по-прежнему не выполняет фильтрацию контейнера `posts` по ключу раздела.
 
@@ -417,25 +424,27 @@ function updateUsernames(userId, username) {
 
 Контейнер `users` теперь содержит два вида элементов:
 
-    {
-      "id": "<user-id>",
-      "type": "user",
-      "userId": "<user-id>",
-      "username": "<username>"
-    }
+```json
+{
+    "id": "<user-id>",
+    "type": "user",
+    "userId": "<user-id>",
+    "username": "<username>"
+}
 
-    {
-      "id": "<post-id>",
-      "type": "post",
-      "postId": "<post-id>",
-      "userId": "<post-author-id>",
-      "userUsername": "<post-author-username>",
-      "title": "<post-title>",
-      "content": "<post-content>",
-      "commentCount": <count-of-comments>,
-      "likeCount": <count-of-likes>,
-      "creationDate": "<post-creation-date>"
-    }
+{
+    "id": "<post-id>",
+    "type": "post",
+    "postId": "<post-id>",
+    "userId": "<post-author-id>",
+    "userUsername": "<post-author-username>",
+    "title": "<post-title>",
+    "content": "<post-content>",
+    "commentCount": <count-of-comments>,
+    "likeCount": <count-of-likes>,
+    "creationDate": "<post-creation-date>"
+}
+```
 
 Обратите внимание на следующее.
 
@@ -444,11 +453,11 @@ function updateUsernames(userId, username) {
 
 Чтобы выполнить эту денормализацию, мы снова применяем канал изменений. Теперь мы настроим реагирование по каналу изменений в контейнере `posts`, чтобы переносить в контейнер `users` все новые или измененные записи. Кроме того, так как список записей не нужно возвращать с полным содержимым, мы можем усекать их при обработке.
 
-![Денормализация с переносом записей в контейнер users](./media/how-to-model-partition-example/denormalization-2.png)
+:::image type="content" source="./media/how-to-model-partition-example/denormalization-2.png" alt-text="Денормализация с переносом записей в контейнер users" border="false":::
 
 Теперь наш запрос можно направить к контейнеру `users` и использовать фильтрацию по ключу секции этого контейнера.
 
-![Получение всех записей пользователя](./media/how-to-model-partition-example/V3-Q3.png)
+:::image type="content" source="./media/how-to-model-partition-example/V3-Q3.png" alt-text="Получение всех записей пользователя" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -458,30 +467,32 @@ function updateUsernames(userId, username) {
 
 Ситуация здесь похожа на описанную выше: даже после удаления запросов, ставших ненужными после добавленной в версии 2 денормализации, оставшийся запрос не использует фильтрацию по ключу секции контейнера:
 
-![Извлечение самых последних записей](./media/how-to-model-partition-example/V2-Q6.png)
+:::image type="content" source="./media/how-to-model-partition-example/V2-Q6.png" alt-text="Извлечение самых последних записей" border="false":::
 
 Применяя тот же подход, производительность и масштабируемость этого запроса можно увеличить, ограничив область его действия одной секцией. Это вполне достижимо, так как возвращать нужно ограниченный набор элементов. Чтобы заполнить домашнюю страницу нашей платформы блогов достаточно лишь получить 100 самых последних записей, не перебирая весь набор данных.
 
 Чтобы оптимизировать этот последний запрос, мы добавляем в архитектуру третий контейнер, полностью посвященный обслуживанию этого запроса. Добавим также денормализацию запросов в этот новый контейнер `feed`:
 
-    {
-      "id": "<post-id>",
-      "type": "post",
-      "postId": "<post-id>",
-      "userId": "<post-author-id>",
-      "userUsername": "<post-author-username>",
-      "title": "<post-title>",
-      "content": "<post-content>",
-      "commentCount": <count-of-comments>,
-      "likeCount": <count-of-likes>,
-      "creationDate": "<post-creation-date>"
-    }
+```json
+{
+    "id": "<post-id>",
+    "type": "post",
+    "postId": "<post-id>",
+    "userId": "<post-author-id>",
+    "userUsername": "<post-author-username>",
+    "title": "<post-title>",
+    "content": "<post-content>",
+    "commentCount": <count-of-comments>,
+    "likeCount": <count-of-likes>,
+    "creationDate": "<post-creation-date>"
+}
+```
 
 Этот контейнер секционируется по полю `type`, которое для наших элементов всегда имеет значение `post`. Это гарантирует, что все элементы в контейнере будут размещаться в одной секции.
 
 Для достижения такой денормализации нужно лишь подключить конвейер канала изменений, который мы создали ранее, для передачи записей в новый контейнер. Здесь важно помнить один важный момент — нам нужно хранить только 100 самых последних записей, иначе размер контейнера может превысить максимальный размер секции. Для этого мы вызываем [триггер после операции](stored-procedures-triggers-udfs.md#triggers) при каждом добавлении документа в контейнер:
 
-![Денормализация с переносом записей в контейнер веб-канала](./media/how-to-model-partition-example/denormalization-3.png)
+:::image type="content" source="./media/how-to-model-partition-example/denormalization-3.png" alt-text="Денормализация с переносом записей в контейнер веб-канала" border="false":::
 
 Усечь коллекцию можно с помощью такого запроса:
 
@@ -532,7 +543,7 @@ function truncateFeed() {
 
 И, наконец, мы переадресуем существующий запрос в новый контейнер `feed`:
 
-![Извлечение самых последних записей](./media/how-to-model-partition-example/V3-Q6.png)
+:::image type="content" source="./media/how-to-model-partition-example/V3-Q6.png" alt-text="Извлечение самых последних записей" border="false":::
 
 | **Задержка** | **Стоимость в ЕЗ** | **Производительность** |
 | --- | --- | --- |
@@ -545,15 +556,15 @@ function truncateFeed() {
 | | V1 | V2 | V3 |
 | --- | --- | --- | --- |
 | **Тогда** | 7 мс / 5,71 ЕЗ | 7 мс / 5,71 ЕЗ | 7 мс / 5,71 ЕЗ |
-| **[Q1]** | 2 мс / 1 ЕЗ | 2 мс / 1 ЕЗ | 2 мс / 1 ЕЗ |
+| **Q1** | 2 мс / 1 ЕЗ | 2 мс / 1 ЕЗ | 2 мс / 1 ЕЗ |
 | **'** | 9 мс / 8,76 ЕЗ | 9 мс / 8,76 ЕЗ | 9 мс / 8,76 ЕЗ |
-| **[Q2]** | 9 мс / 19,54 ЕЗ | 2 мс / 1 ЕЗ | 2 мс / 1 ЕЗ |
-| **[Q3]** | 130 мс / 619,41 ЕЗ | 28 мс / 201,54 ЕЗ | 4 мс / 6,46 ЕЗ |
+| **Q2** | 9 мс / 19,54 ЕЗ | 2 мс / 1 ЕЗ | 2 мс / 1 ЕЗ |
+| **Q3** | 130 мс / 619,41 ЕЗ | 28 мс / 201,54 ЕЗ | 4 мс / 6,46 ЕЗ |
 | **Режим** | 7 мс / 8,57 ЕЗ | 7 мс / 15,27 ЕЗ | 7 мс / 15,27 ЕЗ |
-| **[Q4]** | 23 мс / 27,72 ЕЗ | 4 мс / 7,72 ЕЗ | 4 мс / 7,72 ЕЗ |
+| **Q4** | 23 мс / 27,72 ЕЗ | 4 мс / 7,72 ЕЗ | 4 мс / 7,72 ЕЗ |
 | **C4** | 6 мс / 7,05 ЕЗ | 7 мс / 14,67 ЕЗ | 7 мс / 14,67 ЕЗ |
-| **[Q5]** | 59 мс / 58,92 ЕЗ | 4 мс / 8,92 ЕЗ | 4 мс / 8,92 ЕЗ |
-| **[Q6]** | 306 мс / 2063,54 ЕЗ | 83 мс / 532,33 ЕЗ | 9 мс / 16,97 ЕЗ |
+| **Вопрос 5** | 59 мс / 58,92 ЕЗ | 4 мс / 8,92 ЕЗ | 4 мс / 8,92 ЕЗ |
+| **Вопрос 6** | 306 мс / 2063,54 ЕЗ | 83 мс / 532,33 ЕЗ | 9 мс / 16,97 ЕЗ |
 
 ### <a name="we-have-optimized-a-read-heavy-scenario"></a>Мы оптимизировали сценарий с интенсивной нагрузкой на чтение.
 
@@ -569,10 +580,10 @@ function truncateFeed() {
 
 В канале изменений, который мы используем для распространения обновлений в другие контейнеры, постоянно сохраняются все обновления. Это позволяет получить все обновления, реализованные с момента создания контейнера, и применить денормализованные представления в одной операции "наверстывания", даже если в системе накопился большой объем данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Изучив эту вводную статью о моделировании и секционировании данных, вы можете перейти к следующим статьям с дополнительными сведениями о рассмотренных здесь понятиях:
 
 - [Работа с базами данных, контейнерами и элементами](databases-containers-items.md)
-- [Секционирование в базе данных Azure Cosmos DB](partitioning-overview.md)
-- [Change feed in Azure Cosmos DB](change-feed.md) (Канал изменений в Azure Cosmos DB)
+- [Partitioning in Azure Cosmos DB](partitioning-overview.md) (Секционирование в Azure Cosmos DB)
+- [Веб-канал изменений в Azure Cosmos DB](change-feed.md)
