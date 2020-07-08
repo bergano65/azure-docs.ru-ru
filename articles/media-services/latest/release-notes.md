@@ -9,14 +9,13 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 05/28/2020
+ms.date: 06/03/2020
 ms.author: juliako
-ms.openlocfilehash: e072bcb0edc741b7843f470f14c3c37153338efb
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 6abb44012035f31f970a347687964afb0c715d29
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83647641"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84983375"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -32,9 +31,17 @@ ms.locfileid: "83647641"
 ## <a name="known-issues"></a>Известные проблемы
 
 > [!NOTE]
-> Вы можете использовать [портал Azure](https://portal.azure.com/) для управления [трансляциями](live-events-outputs-concept.md) в версии 3, просмотра [файлов](assets-concept.md) в версии 3, а также получения сведений о доступе к интерфейсам API. Для всех других задач управления (например, преобразований и заданий) следует использовать [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+> Вы можете использовать [портал Azure](https://portal.azure.com/) для управления [динамическими событиями](live-events-outputs-concept.md)v3, просмотреть v3 [Assets](assets-concept.md) and Jobs, получить сведения о доступе к API-интерфейсам, шифровать содержимое. Для всех других задач управления (например, для управления преобразованиями и заданиями) используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+>
+> Дополнительные сведения см. [в разделе ограничения портал Azure для служб мультимедиа v3](frequently-asked-questions.md#what-are-the-azure-portal-limitations-for-media-services-v3).
 
-Дополнительные сведения см. в статье [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-from-v2-to-v3.md#known-issues).
+## <a name="june-2020"></a>июнь 2020 г.
+
+### <a name="live-video-analytics-on-iot-edge-preview-release"></a>Интерактивная аналитика видео в предварительной версии IoT Edge
+
+Предварительная версия функции Live Video Analytics на IoT Edge стала общедоступной. Дополнительные сведения см. в разделе [заметки о выпуске](../live-video-analytics-edge/release-notes.md).
+
+Интерактивная аналитика видео на IoT Edge — это расширение семейства служб мультимедиа. Она позволяет анализировать видео в реальном времени с помощью моделей искусственного интеллекта на своих пограничных устройствах, а также при необходимости записывать и записывать это видео. Теперь вы можете создавать приложения с помощью анализа видео в реальном времени на границе, не беспокоясь о сложности создания и работы конвейера видео.
 
 ## <a name="may-2020"></a>Май 2020 г.
 
@@ -199,7 +206,7 @@ ms.locfileid: "83647641"
 
 ## <a name="march-2019"></a>Март 2019 г.
 
-Динамическая упаковка теперь поддерживает Dolby Atmos. Дополнительные сведения см. в разделе [Аудиокодеки, поддерживаемые для динамической упаковки](dynamic-packaging-overview.md#audio-codecs).
+Динамическая упаковка теперь поддерживает Dolby Atmos. Дополнительные сведения см. в разделе [Аудиокодеки, поддерживаемые для динамической упаковки](dynamic-packaging-overview.md#audio-codecs-supported-by-dynamic-packaging).
 
 Теперь можно указать список фильтров ресурсов или учетных записей, которые будут применяться к указателю потоковой передачи. Дополнительные сведения см. в разделе [Связывание фильтров с указателем потоковой передачи](filters-concept.md#associating-filters-with-streaming-locator).
 
@@ -362,11 +369,15 @@ ms.locfileid: "83647641"
 
 ### <a name="known-issues"></a>Известные проблемы
 
-* При отправке задания можно указать исходное видео для приема, используя URL-адреса HTTPS, URL-адреса SAS или пути к файлам, находящимся в хранилище BLOB-объектов Azure. В настоящее время AMS версии 3 не поддерживает кодирование блочной передачи по URL-адресам HTTPS.
+* При отправке задания можно указать исходное видео для приема, используя URL-адреса HTTPS, URL-адреса SAS или пути к файлам, находящимся в хранилище BLOB-объектов Azure. В настоящее время службы мультимедиа v3 не поддерживают блочную кодировку для URL-адресов HTTPS.
 
 ## <a name="ask-questions-give-feedback-get-updates"></a>Получение справки, отправка отзывов, получение обновлений
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
+
+## <a name="see-also"></a>См. также раздел
+
+[Руководство по миграции для перехода с служб мультимедиа версии 2 на v3](migrate-from-v2-to-v3.md#known-issues).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

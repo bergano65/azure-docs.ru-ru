@@ -9,10 +9,9 @@ ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
 ms.openlocfilehash: 2aa7110ab4e52fdc5c3804bd27be5f41081fb435
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81758504"
 ---
 # <a name="use-serial-console-to-access-grub-and-single-user-mode"></a>Использование последовательной консоли для доступа к GRUB и однопользовательскому режиму
@@ -181,4 +180,4 @@ SLES автоматически переключается в аварийную
 * Основная страница документации по последовательной консоли для Linux находится [здесь](serial-console.md).
 * Используйте последовательную консоль для [вызовов SysRq и NMI](serial-console-nmi-sysrq.md).
 * Последовательная консоль также доступна для виртуальных машин [Windows](../windows/serial-console.md).
-* См. дополнительные сведения о [диагностике загрузки](boot-diagnostics.md).
+* Дополнительные сведения о [диагностике загрузки](boot-diagnostics.md)

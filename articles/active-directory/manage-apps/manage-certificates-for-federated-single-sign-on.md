@@ -3,8 +3,8 @@ title: Управление сертификатами федерации в Azu
 description: Узнайте, как настроить срок действия сертификатов федерации, а также обновлять сертификаты с истекающим сроком действия.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,15 +12,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/04/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de60dc5095ce4ab4d0219a388c445b08f544e1f9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 1731d5ea5d8db9ea1c5855a32d2daca0387c0bf5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77159035"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84763216"
 ---
 # <a name="manage-certificates-for-federated-single-sign-on-in-azure-active-directory"></a>Управление сертификатами для федеративного единого входа в Azure Active Directory
 
@@ -30,7 +29,7 @@ ms.locfileid: "77159035"
 
 ## <a name="auto-generated-certificate-for-gallery-and-non-gallery-applications"></a>Автоматически созданный сертификат для приложений из коллекции и не из коллекции
 
-Когда вы добавляете новое приложение из коллекции и настраиваете вход на основе SAML (на странице Обзор приложения выбран **единый вход** > **SAML** ), Azure AD создает сертификат для приложения, которое действует в течение трех лет. Чтобы скачать активный сертификат в качестве файла сертификата безопасности (**CER**), вернитесь на эту страницу (**Вход на основе SAML**) и выберите ссылку для скачивания в заголовке **сертификата подписи SAML** . Можно выбрать сертификат необработанного (двоичного) или Base64 (Base 64-Encoded Text). Для приложений из коллекции в этом разделе также может отображаться ссылка для скачивания сертификата в виде XML-файла метаданных федерации ( **XML-** файл) в зависимости от требований приложения.
+Когда вы добавляете новое приложение из коллекции и настраиваете вход на основе SAML (на странице Обзор приложения выбран **единый вход**  >  **SAML** ), Azure AD создает сертификат для приложения, которое действует в течение трех лет. Чтобы скачать активный сертификат в качестве файла сертификата безопасности (**CER**), вернитесь на эту страницу (**Вход на основе SAML**) и выберите ссылку для скачивания в заголовке **сертификата подписи SAML** . Можно выбрать сертификат необработанного (двоичного) или Base64 (Base 64-Encoded Text). Для приложений из коллекции в этом разделе также может отображаться ссылка для скачивания сертификата в виде XML-файла метаданных федерации ( **XML-** файл) в зависимости от требований приложения.
 
 ![Параметры скачивания сертификата активного подписи SAML](./media/manage-certificates-for-federated-single-sign-on/active-certificate-download-options.png)
 
@@ -50,7 +49,7 @@ ms.locfileid: "77159035"
 
 Следующие два раздела помогут выполнить эти действия.
 
-### <a name="create-a-new-certificate"></a>Создание нового сертификата
+### <a name="create-a-new-certificate"></a>Создание сертификата
 
 Сначала создайте и сохраните новый сертификат с другим сроком действия:
 
@@ -111,4 +110,4 @@ Azure AD будет отправлять по электронной почте 
 - [Руководства по интеграции приложений SaaS с Azure Active Directory](../saas-apps/tutorial-list.md)
 - [Управление приложениями с помощью Azure Active Directory](what-is-application-management.md)
 - [Единый вход в приложениях в Azure Active Directory](what-is-single-sign-on.md)
-- [Отладка единого входа на основе SAML в приложения в Azure Active Directory](../azuread-dev/howto-v1-debug-saml-sso-issues.md)
+- [Отладка единого входа на основе SAML в приложениях в Azure Active Directory](../azuread-dev/howto-v1-debug-saml-sso-issues.md)

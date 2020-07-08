@@ -3,12 +3,11 @@ title: Резервное копирование баз данных SQL Server 
 description: В этой статье объясняется, как создать резервную копию SQL Server в Azure. Здесь также описывается восстановление SQL Server.
 ms.topic: conceptual
 ms.date: 06/18/2019
-ms.openlocfilehash: 537257733d7693598fd8007da6ce12c28fbeb02a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: e0a555125e50a974ae51a08d7870cdc3ec12fd39
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79408766"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84021098"
 ---
 # <a name="about-sql-server-backup-in-azure-vms"></a>Сведения о резервном копировании SQL Server на виртуальных машинах Azure
 
@@ -39,7 +38,7 @@ ms.locfileid: "79408766"
 
 Прежде чем начать, проверьте следующее:
 
-1. Убедитесь, что у вас есть экземпляр SQL Server, работающий в Azure. Вы можете [быстро создать экземпляр SQL Server](../virtual-machines/windows/sql/quickstart-sql-vm-create-portal.md) в marketplace.
+1. Убедитесь, что у вас есть экземпляр SQL Server, работающий в Azure. Вы можете [быстро создать экземпляр SQL Server](../azure-sql/virtual-machines/windows/sql-vm-create-portal-quickstart.md) в marketplace.
 2. Просмотрите [рекомендации о функциях](sql-support-matrix.md#feature-consideration-and-limitations) и сведения о [поддержке сценариев](sql-support-matrix.md#scenario-support).
 3. [Ознакомьтесь с часто задаваемыми вопросами об этом сценарии](faq-backup-sql-server.md).
 
@@ -107,9 +106,9 @@ ms.locfileid: "79408766"
 
     ![Предоставление разрешений в SSMS](media/backup-azure-sql-database/sql-2k8-grant-permission-ssms.png)
 
-7. Нажмите кнопку "ОК".
+7. Щелкните ОК.
 8. Чтобы добавить имя для входа NT Service\AzureWLBackupPluginSvc в экземпляр SQL Server, повторите ту же последовательность шагов (1 - 7 приведенных выше). Если имя для входа уже существует, убедитесь, что ему присвоена роль администратора сервера и в разделе состояния этому имени предоставлено разрешение на подключение к ядру СУБД и вход в качестве включено.
-9. После предоставления разрешения повторно **Определите баз данных** на портале: Рабочая нагрузка **->** "инфраструктура **->** резервного копирования хранилища" на виртуальной машине Azure:
+9. После предоставления разрешения повторно **Определите баз данных** на портале: **->** Рабочая нагрузка "инфраструктура резервного копирования хранилища" **->** на виртуальной машине Azure:
 
     ![Повторное обнаружение баз данных на портале Azure](media/backup-azure-sql-database/sql-rediscover-dbs.png)
 

@@ -4,18 +4,17 @@ description: Как создать запрос на поддержку для A
 services: synapse-analytics
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 03/10/2020
 author: kevinvngo
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: e0788f978fd25356b230a7923def6cbbea3dc305
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: de45e338b0b863dc2364af399a6991f56658b0e7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83835467"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85212281"
 ---
 # <a name="request-quota-increases-and-get-support-for-azure-synapse-analytics"></a>Запросы увеличений квоты и получение поддержки для Azure Synapse Analytics
 
@@ -53,59 +52,89 @@ ms.locfileid: "83835467"
 
    ![Выберите тип квоты](./media/sql-data-warehouse-get-started-create-support-ticket/select-quota-type.png)
 
-1. В окне **Сведения** выберите **Укажите сведения**, чтобы ввести дополнительные сведения.
+1. В окне **сведения** выберите **Введите сведения** , чтобы ввести дополнительные сведения.
 
    ![Ссылка "Укажите сведения"](./media/sql-data-warehouse-get-started-create-support-ticket/provide-details-link.png)
 
 ## <a name="quota-request-types"></a>Типы запросов квоты
 
-Если щелкнуть **Укажите сведения**, отобразится окно **Сведения о квотах**, в котором можно добавить дополнительные сведения. В следующих разделах описаны различные запросы квот, доступные для Azure Synapse Analytics.
+При нажатии кнопки **Ввод сведений** отображается окно **сведения о квоте** , в котором можно добавить дополнительные сведения. В следующих разделах описаны различные запросы квот, доступные для Azure Synapse Analytics.
 
-### <a name="data-warehouse-units-dwus-per-server"></a>Единиц использования хранилищ данных (DWU) на сервер
+### <a name="synapse-sql-pool-data-warehouse-units-dwus-per-server"></a>Синапсе единиц хранилища данных пула SQL (Dwu) на сервер
 
 Чтобы запросить увеличение количества DWU на сервер, выполните следующие действия.
 
-1. Выберите тип квоты **Единиц использования хранилищ данных (DWU) на сервер**.
+1. Выберите тип квоты **синапсе пул SQL DWU для каждого сервера** .
 
-1. В списке **Ресурс** выберите целевой ресурс.
+1. Выберите **ресурс** , для которого требуется увеличить квоту, с помощью раскрывающегося списка.
 
-1. В поле **Запрос квоты** введите новое ограничение DWU, которое вы запрашиваете.
+1. Введите новую квоту в раздел **Квота запросов** .
+
+1. Выберите **Сохранить и продолжить**.
 
    ![Сведения о квотах DWU](./media/sql-data-warehouse-get-started-create-support-ticket/quota-details-dwus.png)
 
+
 ### <a name="servers-per-subscription"></a>Серверов на подписку
 
-Чтобы запросить увеличение количества серверов на подписку, выполните следующие действия.
+Чтобы запросить увеличение количества серверов на подписку, необходимо выполнить следующие действия.
 
-1. Выберите тип квоты **Серверов на подписку**.
+1. Выберите **серверы SQL Server на подписку** в качестве типа квоты.
 
 1. В списке **Расположение** выберите целевой регион Azure. Квота для каждой подписки в каждом регионе.
 
-1. В поле **Новая квота** введите запрос максимального числа серверов в этом регионе.
+1. В поле **запрос квоты** введите запрос на максимальное число серверов в этом регионе.
 
    ![Сведения о квотах серверов](./media/sql-data-warehouse-get-started-create-support-ticket/quota-details-servers.png)
 
+
+
+1. Выберите **Сохранить и продолжить**.
+
+Некоторые типы предложений доступны не в каждом регионе. Вы можете получать следующую ошибку:
+
+![Ошибка доступа к региону](./media/sql-data-warehouse-get-started-create-support-ticket/region-access-error.png)
+
 ### <a name="enable-subscription-access-to-a-region"></a>Включение доступа к подписке для региона
 
-Некоторые типы предложений доступны не в каждом регионе. Может появиться сообщение об ошибке следующего вида:
+Чтобы включить доступ к регионам для подписки, необходимо выполнить следующие действия.  
 
-`This location is not available for subscription`
+1. Выберите тип квоты **доступа к региону пула SQL синапсе (хранилище данных)** .
 
-Если вашей подписке требуется доступ в определенном регионе, используйте параметр **Другой запрос на квоту**, чтобы запросить доступ. В запросе укажите сведения о предложении и номере SKU, которые необходимо включить для региона. Сведения о вариантах предложений и SKU см. в разделе [Цены на Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/synapse-analytics/).
+1. Выберите регион, выбрав **Расположение** из раскрывающегося списка.
+
+1. Укажите требования к производительности DWU в разделе **DWU Required (обязательный** ).
+
+1. Введите **Описание бизнес-требований**. 
+
+1. Выберите **Сохранить и продолжить**.
+
+![Доступ к региону](./media/sql-data-warehouse-get-started-create-support-ticket/quota-details-region.png)
+
+
+### <a name="for-other-quota-requests"></a>Для других запросов квот
+
+Выберите **другой запрос квоты** в раскрывающемся меню тип квоты для других типов запросов квоты:
 
 ![Другие сведения о квотах](./media/sql-data-warehouse-get-started-create-support-ticket/quota-details-whitelisting.png)
 
 ## <a name="submit-your-request"></a>Отправка запроса
 
-Последний шаг — указать остальные сведения в запросе поддержки для базы данных SQL. Затем щелкните **Next: Просмотр и создание >>** . После просмотра сведений о запросе щелкните **Создать**, чтобы отправить запрос.
+Последний шаг — указать остальные сведения в запросе поддержки для базы данных SQL. Затем нажмите кнопку **Далее: Проверка и создание>>**.
+
+![Проверить сведения о создании](./media/sql-data-warehouse-get-started-create-support-ticket/review-create-details.png)
+
+После просмотра сведений о запросе выберите **создать** , чтобы отправить запрос.
+
+![Создание билета](./media/sql-data-warehouse-get-started-create-support-ticket/create-ticket.png)
 
 ## <a name="monitor-a-support-ticket"></a>Мониторинг запроса в службу поддержки
 
-После отправки запроса с вами свяжется представитель службы поддержки Azure. Чтобы проверить состояние запроса и сведения о нем, щелкните **Все запросы на поддержку** на панели мониторинга.
+После отправки запроса с вами свяжется представитель службы поддержки Azure. Чтобы проверить состояние запроса и сведения, выберите **все запросы на поддержку** на панели мониторинга.
 
 ![Проверка состояния](./media/sql-data-warehouse-get-started-create-support-ticket/monitor-ticket.png)
 
 ## <a name="other-resources"></a>Другие ресурсы
 
-Вы также можете подключиться к сообществу Azure Synapse Analytics на [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-synapse+or+azure-sql-data-warehouse) или на странице [Вопросов и ответов Майкрософт для хранилища данных SQL Azure](https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html).
+Вы также можете подключиться к сообществу Azure синапсе Analytics на [Stack overflow](https://stackoverflow.com/questions/tagged/azure-synapse+or+azure-sql-data-warehouse) или на [странице Microsoft Q&A вопрос для Azure синапсе Analytics](https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html).
 

@@ -9,11 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/05/2020
 ms.openlocfilehash: 8c3cbf4c18b32a94abfe95e77be768020b44fda6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79272309"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84709255"
 ---
 # <a name="manage-logs-for-an-hdinsight-cluster"></a>Управление журналами для кластера HDInsight
 
@@ -91,7 +90,7 @@ Apache Ambari упрощает конфигурацию кластера HDInsig
 
 ### <a name="view-ambari-alerts-status-logs"></a>Просмотр журналов состояния оповещений Ambari
 
-Apache Ambari записывает изменения состояния оповещений в `ambari-alerts.log`. Полный путь — `/var/log/ambari-server/ambari-alerts.log`. Чтобы включить отладку для журнала, измените свойство в `/etc/ambari-server/conf/log4j.properties.` поле изменить, а затем `# Log alert state changes` введите в разделе от:
+Apache Ambari записывает изменения состояния оповещений в `ambari-alerts.log` . Полный путь — `/var/log/ambari-server/ambari-alerts.log` . Чтобы включить отладку для журнала, измените свойство в `/etc/ambari-server/conf/log4j.properties.` поле изменить, а затем введите в разделе `# Log alert state changes` от:
 
 ```
 log4j.logger.alerts=INFO,alerts
@@ -142,7 +141,7 @@ yarn logs -applicationId <applicationId> -appOwner <user-who-started-the-applica
 
 Пользовательский интерфейс YARN ResourceManager работает на головном узле кластера. Для доступа к нему можно использовать веб-интерфейс Ambari. Чтобы просмотреть журналы YARN, выполните следующие действия:
 
-1. Откройте браузер и перейдите по адресу `https://CLUSTERNAME.azurehdinsight.net`. Параметр CLUSTERNAME нужно заменить именем кластера HDInsight.
+1. В браузере перейдите на адрес `https://CLUSTERNAME.azurehdinsight.net`. Параметр CLUSTERNAME нужно заменить именем кластера HDInsight.
 2. В списке служб в левой части страницы выберите YARN.
 3. В раскрывающемся списке "Быстрые ссылки" выберите один из главных узлов кластера, а затем щелкните **ResourceManager logs** (Журналы Resource Manager). Вы увидите список ссылок на журналы YARN.
 

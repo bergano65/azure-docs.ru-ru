@@ -11,13 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 08/01/2019
-ms.openlocfilehash: 4dd82eea0a80ef81a0f972d1964a62e6c17a80c0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.date: 06/12/2020
+ms.openlocfilehash: 23a486dfe1256cea46f6722873950ffcb1bde084
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81417368"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84982702"
 ---
 # <a name="copy-data-from-dynamics-ax-by-using-azure-data-factory"></a>Копирование данных из Dynamics AX с помощью Фабрики данных Azure
 
@@ -143,6 +142,7 @@ ms.locfileid: "81417368"
 |:--- |:--- |:--- |
 | type | Свойство **type** источника действия копирования должно быть со значением **DynamicsAXSource**. | Да |
 | query | Параметры запроса OData для фильтрации данных. Например, `"?$select=Name,Description&$top=5"`.<br/><br/>**Примечание.** Соединитель копирует данные из объединенного URL-адреса: `[URL specified in linked service]/[path specified in dataset][query specified in copy activity source]`. Дополнительные сведения см. в статье о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет |
+| httpRequestTimeout | Время ожидания (значение **Временной диапазон**) ответа для HTTP-запроса. Это значение является интервалом времени для получения ответа, а не считывания данных ответа. Если не указано, значение по умолчанию — **00:30:00** (30 минут). | Нет |
 
 **Пример**
 

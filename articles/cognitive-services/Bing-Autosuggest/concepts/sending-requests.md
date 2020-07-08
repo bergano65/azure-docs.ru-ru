@@ -10,12 +10,11 @@ ms.subservice: bing-autosuggest
 ms.topic: conceptual
 ms.date: 06/27/2019
 ms.author: scottwhi
-ms.openlocfilehash: d479548e682e814345e13d9416d08ec453f90304
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
-ms.translationtype: MT
+ms.openlocfilehash: 7d16b0755fae91979802e50cb2ebbf4324ce2c45
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74072847"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85921148"
 ---
 # <a name="sending-requests-to-the-bing-autosuggest-api"></a>Отправка запросов к API Автозаполнения Bing.
 
@@ -27,7 +26,7 @@ ms.locfileid: "74072847"
 
 Чтобы получить предложенные запросы с помощью API Bing, отправьте запрос `GET` на указанную ниже конечную точку. Для определения дополнительных спецификаций используйте заголовки и параметры URL-адреса.
 
-**Конечная точка:** Возвращает варианты поиска в виде результатов JSON, которые относятся к входным данным пользователя, `?q=""`определенным в.
+**Конечная точка:** Возвращает варианты поиска в виде результатов JSON, которые относятся к входным данным пользователя, определенным в `?q=""` .
 
 ```http
 GET https://api.cognitive.microsoft.com/bing/v7.0/Suggestions 
@@ -68,15 +67,21 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/Suggestions
 
 Установить прокси-сервер CORS довольно просто. Это позволит нашему [учебному приложению](../tutorials/autosuggest.md) иметь доступ к необязательным заголовкам клиента. Для начала [установите платформу Node.js](https://nodejs.org/en/download/), если она еще не установлена. В командной строке введите следующую команду:
 
-    npm install -g cors-proxy-server
+```console
+npm install -g cors-proxy-server
+```
 
 Затем в HTML-файле измените конечную точку API автозаполнения Bing на следующую:
 
-    http://localhost:9090/https://api.cognitive.microsoft.com/bing/v7.0/Suggestions
+```http
+http://localhost:9090/https://api.cognitive.microsoft.com/bing/v7.0/Suggestions
+```
 
 И наконец, запустите прокси-сервер CORS с помощью следующей команды:
 
-    cors-proxy-server
+```console
+cors-proxy-server
+```
 
 Не закрывайте командное окно, пока используете учебное приложение. Это приведет к остановке прокси-сервера. Теперь в развертываемом разделе заголовков HTTP под результатами поиска можно увидеть заголовок `X-MSEdge-ClientID` (среди прочих) и убедиться, что он одинаковый для всех запросов.
 
@@ -167,7 +172,7 @@ BingAPIs-Market: en-US
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Что такое API автозаполнения Bing?](../get-suggested-search-terms.md)
 - [Справочник по API автозаполнения Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference)

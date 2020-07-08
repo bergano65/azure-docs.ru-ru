@@ -9,12 +9,11 @@ services: iot-accelerators
 ms.date: 03/08/2019
 ms.topic: conceptual
 ms.custom: has-adal-ref
-ms.openlocfilehash: 2774fc1374bf7fa3ed171258e8b1b51cfdb4b8b1
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
-ms.translationtype: HT
+ms.openlocfilehash: e41d3b47408d29a0463eed5f23117801be107c27
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82612951"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85920723"
 ---
 # <a name="configure-role-based-access-controls-in-the-remote-monitoring-solution-accelerator"></a>Настройка управления доступом на основе ролей в акселераторе решения для удаленного мониторинга
 
@@ -50,7 +49,7 @@ ms.locfileid: "82612951"
 
 ## <a name="add-or-remove-users"></a>Добавление или удаление пользователей
 
-Как владелец приложения Azure Active Directory вы можете добавить пользователя в решение для удаленного мониторинга или же удалить его оттуда на портале Azure. В следующих шагах используется [корпоративное приложение Azure Active Directory](../active-directory/manage-apps/add-application-portal.md#find-your-azure-ad-tenant-application), созданное при развертывании решения для удаленного мониторинга.
+Как владелец приложения Azure Active Directory вы можете добавить пользователя в решение для удаленного мониторинга или же удалить его оттуда на портале Azure. В следующих шагах используется [корпоративное приложение Azure Active Directory](../active-directory/manage-apps/view-applications-portal.md), созданное при развертывании решения для удаленного мониторинга.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 

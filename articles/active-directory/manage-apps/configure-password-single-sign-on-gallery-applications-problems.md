@@ -3,23 +3,22 @@ title: Проблемы при настройке единого входа с �
 description: Из этой статьи вы узнаете, какие проблемы возникают при настройке единого входа по паролю для пользовательских приложений из коллекции приложений Azure AD.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 07/11/2017
-ms.author: mimart
+ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e933c82229415a71182096a6aca9a2e535934d89
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 89fda2657a68fc8a3fd293c0c6001a71f5970548
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77159052"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84763522"
 ---
 # <a name="problem-configuring-password-single-sign-on-for-an-azure-ad-gallery-application"></a>Проблема при настройке единого входа по паролю для приложения из коллекции Azure AD
 
@@ -107,6 +106,6 @@ ms.locfileid: "77159052"
 
 -   [Расширение "Панель доступа" для Firefox](https://addons.mozilla.org/firefox/addon/access-panel-extension/)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Реализация единого входа в приложения с помощью прокси приложения](application-proxy-configure-single-sign-on-with-kcd.md)
 

@@ -8,28 +8,27 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 05/11/2020
 ms.author: anfeldma
-ms.openlocfilehash: 3738af6349a6f71f6100c601858b39c6329d0295
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: fdc3d4244daa1f3b3d12898d6de42128ae1670ec
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83660394"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85392052"
 ---
-# <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: Заметки о выпуске и материалы
+# <a name="azure-cosmos-db-net-core-sdk-v2-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB пакет SDK для .NET Core v2 для API SQL: заметки о выпуске и ресурсы
 > [!div class="op_single_selector"]
-> * [.NET Core](sql-api-sdk-dotnet-core.md)
-> * [.NET Standard](sql-api-sdk-dotnet-standard.md)
-> * [.NET](sql-api-sdk-dotnet.md)
-> * [Веб-канал изменений в .NET](sql-api-sdk-dotnet-changefeed.md)
+> * [Пакет SDK версии 3 для .NET](sql-api-sdk-dotnet-standard.md)
+> * [Пакет SDK для .NET версии 2](sql-api-sdk-dotnet.md)
+> * [Пакет SDK для .NET Core версии 2](sql-api-sdk-dotnet-core.md)
+> * [Пакет SDK для веб-канала изменений .NET версии 2](sql-api-sdk-dotnet-changefeed.md)
 > * [Node.js](sql-api-sdk-node.md)
 > * [Пакет SDK для Java версии 4](sql-api-sdk-java-v4.md)
 > * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
 > * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
 > * [Python](sql-api-sdk-python.md)
-> * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
-> * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
+> * ПОСЛЕДУЮЩИЕ (/рест/АПИ
+> * [Поставщик ресурсов REST](/rest/apier/)
 > * [SQL](sql-api-query-reference.md)
-> * [Исполнитель массовых операций — .NET](sql-api-sdk-bulk-executor-dot-net.md)
+> * [Групповой исполнитель — .NET v2](sql-api-sdk-bulk-executor-dot-net.md)
 > * [Исполнитель массовых операций — Java](sql-api-sdk-bulk-executor-java.md)
 
 | |  |

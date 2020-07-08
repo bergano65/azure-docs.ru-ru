@@ -11,12 +11,11 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: a47f30cf00624faf098c8b605534cf355eacadee
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 047915874dfd81fdf68dc97ac217274b2439d726
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79251587"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86027483"
 ---
 # <a name="the-team-data-science-process-in-action-using-sql-server"></a>Процесс обработки и анализа данных группы на практике: использование SQL Server
 В этом руководстве представлено пошаговое руководство по процессу создания и развертывания модели машинного обучения с помощью SQL Server и общедоступного набора данных [NYC Taxi Trips](https://www.andresmh.com/nyctaxitrips/). Процедура соответствует стандартному рабочему процессу обработки и аналитики данных: прием и анализ данных, разработка функций для упрощения обучения, а затем сборка и развертывание модели.
@@ -26,34 +25,50 @@ ms.locfileid: "79251587"
 
 1. CSV-файл trip_data содержит подробную информацию о поездке, например число пассажиров, пункты отправления и назначения, продолжительность поездки и ее расстояние. Вот несколько примеров записей:
    
-        medallion,hack_license,vendor_id,rate_code,store_and_fwd_flag,pickup_datetime,dropoff_datetime,passenger_count,trip_time_in_secs,trip_distance,pickup_longitude,pickup_latitude,dropoff_longitude,dropoff_latitude
-        89D227B655E5C82AECF13C3F540D4CF4,BA96DE419E711691B9445D6A6307C170,CMT,1,N,2013-01-01 15:11:48,2013-01-01 15:18:10,4,382,1.00,-73.978165,40.757977,-73.989838,40.751171
-        0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,1,N,2013-01-06 00:18:35,2013-01-06 00:22:54,1,259,1.50,-74.006683,40.731781,-73.994499,40.75066
-        0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,1,N,2013-01-05 18:49:41,2013-01-05 18:54:23,1,282,1.10,-74.004707,40.73777,-74.009834,40.726002
-        DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,1,N,2013-01-07 23:54:15,2013-01-07 23:58:20,2,244,.70,-73.974602,40.759945,-73.984734,40.759388
-        DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,1,N,2013-01-07 23:25:03,2013-01-07 23:34:24,1,560,2.10,-73.97625,40.748528,-74.002586,40.747868
+    `medallion,hack_license,vendor_id,rate_code,store_and_fwd_flag,pickup_datetime,dropoff_datetime,passenger_count,trip_time_in_secs,trip_distance,pickup_longitude,pickup_latitude,dropoff_longitude,dropoff_latitude`
+
+    `89D227B655E5C82AECF13C3F540D4CF4,BA96DE419E711691B9445D6A6307C170,CMT,1,N,2013-01-01 15:11:48,2013-01-01 15:18:10,4,382,1.00,-73.978165,40.757977,-73.989838,40.751171`
+
+    `0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,1,N,2013-01-06 00:18:35,2013-01-06 00:22:54,1,259,1.50,-74.006683,40.731781,-73.994499,40.75066`
+
+    `0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,1,N,2013-01-05 18:49:41,2013-01-05 18:54:23,1,282,1.10,-74.004707,40.73777,-74.009834,40.726002`
+
+    `DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,1,N,2013-01-07 23:54:15,2013-01-07 23:58:20,2,244,.70,-73.974602,40.759945,-73.984734,40.759388`
+
+    `DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,1,N,2013-01-07 23:25:03,2013-01-07 23:34:24,1,560,2.10,-73.97625,40.748528,-74.002586,40.747868`
+
 2. CSV-файл trip_fare содержит подробную информацию об оплате каждой поездки, такие как тип оплаты, сумма тарифа, надбавка и налоги, чаевые и пошлины, а также общая выплаченная сумма. Вот несколько примеров записей:
    
-        medallion, hack_license, vendor_id, pickup_datetime, payment_type, fare_amount, surcharge, mta_tax, tip_amount, tolls_amount, total_amount
-        89D227B655E5C82AECF13C3F540D4CF4,BA96DE419E711691B9445D6A6307C170,CMT,2013-01-01 15:11:48,CSH,6.5,0,0.5,0,0,7
-        0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,2013-01-06 00:18:35,CSH,6,0.5,0.5,0,0,7
-        0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,2013-01-05 18:49:41,CSH,5.5,1,0.5,0,0,7
-        DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,2013-01-07 23:54:15,CSH,5,0.5,0.5,0,0,6
-        DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,2013-01-07 23:25:03,CSH,9.5,0.5,0.5,0,0,10.5
+    `medallion, hack_license, vendor_id, pickup_datetime, payment_type, fare_amount, surcharge, mta_tax, tip_amount, tolls_amount, total_amount`
+
+    `89D227B655E5C82AECF13C3F540D4CF4,BA96DE419E711691B9445D6A6307C170,CMT,2013-01-01 15:11:48,CSH,6.5,0,0.5,0,0,7`
+
+    `0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,2013-01-06 00:18:35,CSH,6,0.5,0.5,0,0,7`
+
+    `0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,2013-01-05 18:49:41,CSH,5.5,1,0.5,0,0,7`
+
+    `DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,2013-01-07 23:54:15,CSH,5,0.5,0.5,0,0,6`
+
+    `DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,2013-01-07 23:25:03,CSH,9.5,0.5,0.5,0,0,10.5`
 
 Уникальный ключ для объединения trip\_data и trip\_fare состоит из полей medallion, hack\_licence и pickup\_datetime.
 
 ## <a name="examples-of-prediction-tasks"></a><a name="mltasks"></a>Примеры задач прогнозирования
 Мы сформулируем три перечисленные ниже задачи прогнозирования на основе *tip\_amount*.
 
-* Двоичная классификация: прогнозирование того, была ли взята подсказка для поездки, то *есть\_сумма TIP* , превышающая $0, является положительным примером, а *количество\_советов* $0 — отрицательный пример.
+* Двоичная классификация: прогнозирование того, была ли взята подсказка для поездки, то *есть \_ Сумма TIP* , превышающая $0, является положительным примером, а * \_ количество советов* $0 — отрицательный пример.
 * Мультиклассовая классификация: Спрогнозировать диапазон суммы чаевых за поездку. Мы разделяем *tip\_amount* на пять ячеек или классов:
-   
-        Class 0 : tip_amount = $0
-        Class 1 : tip_amount > $0 and tip_amount <= $5
-        Class 2 : tip_amount > $5 and tip_amount <= $10
-        Class 3 : tip_amount > $10 and tip_amount <= $20
-        Class 4 : tip_amount > $20
+
+   `Class 0 : tip_amount = $0`
+
+   `Class 1 : tip_amount > $0 and tip_amount <= $5`
+
+   `Class 2 : tip_amount > $5 and tip_amount <= $10`
+
+   `Class 3 : tip_amount > $10 and tip_amount <= $20`
+
+   `Class 4 : tip_amount > $20`
+
 * Задача регрессии: Спрогнозировать сумму чаевых, выплаченных за поездку.  
 
 ## <a name="setting-up-the-azure-data-science-environment-for-advanced-analytics"></a><a name="setup"></a>Настройка среды обработки данных Azure для расширенной аналитики
@@ -66,7 +81,7 @@ ms.locfileid: "79251587"
 
 Чтобы настроить среду научной обработки данных в Azure, выполните следующие действия.
 
-1. [Создание учетной записи хранения](../../storage/common/storage-account-create.md)
+1. [создать учетную запись хранения;](../../storage/common/storage-account-create.md)
 2. [Создание рабочей области машинного обучения Azure](../studio/create-workspace.md)
 3. [Подготовьте виртуальную машину для обработки и анализа данных](../data-science-virtual-machine/setup-sql-server-virtual-machine.md), которая будет служить сервером SQL Server и сервером IPython Notebook.
    
@@ -89,9 +104,11 @@ ms.locfileid: "79251587"
 1. Войдите на виртуальную машину (ВМ).
 2. Создайте новый каталог на диске данных виртуальной машины (Примечание. не используйте временный диск, входящий в состав виртуальной машины в качестве диска данных).
 3. В окне командной строки выполните следующую команду Azcopy, заменив <path_to_data_folder> соответствующей папкой данных, созданной на шаге (2):
-   
-        "C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\azcopy" /Source:https://nyctaxitrips.blob.core.windows.net/data /Dest:<path_to_data_folder> /S
-   
+
+    ```console
+    "C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\azcopy" /Source:https://nyctaxitrips.blob.core.windows.net/data /Dest:<path_to_data_folder> /S
+    ```
+
     Когда программа AzCopy завершит работу, в папке данных появится 24 сжатых CSV-файла (по 12 для trip\_data и trip\_fare).
 4. Распакуйте загруженные файлы. Обратите внимание на папку, в которой располагаются распакованные файлы. Эта папка будет называться <path\_to\_data\_files\>.
 
@@ -132,7 +149,7 @@ ms.locfileid: "79251587"
    
     Также можно выбрать режим проверки подлинности (по умолчанию — проверка подлинности Windows). Для запуска щелкните зеленую стрелку на панели инструментов. Сценарий параллельно запустит 24 операции массового импорта — по 12 на каждую секционированную таблицу. Чтобы отслеживать ход импорта данных, откройте папку данных SQL Server по умолчанию, настроенную выше.
 9. Сценарий PowerShell сообщает о времени начала и завершения операций. После завершения всех операций массового импорта сообщается время завершения. Проверьте папку "Целевая папка журнала", чтобы убедиться, что операции массовых импортов выполнены успешно, т. е. в папке журнала назначения ошибки не обнаружены.
-10. Теперь база данных готова к просмотру, проектированию характеристик и другим операциям. Так как таблицы секционированы в соответствии с полем **даты\_отправки** , запросы, включающие **условия\_отправки даты и времени** в предложении **WHERE** , получат преимущество от схемы секционирования.
+10. Теперь база данных готова к просмотру, проектированию характеристик и другим операциям. Так как таблицы секционированы в соответствии с полем ** \_ даты отправки** , запросы, включающие условия **отправки \_ даты и времени** в предложении **WHERE** , получат преимущество от схемы секционирования.
 11. В среде **SQL Server Management Studio** изучите предоставленный образец скрипта **sample\_queries.sql**. Чтобы запустить любой из образцов запросов, выделите строки запроса и нажмите кнопку **выполнить** на панели инструментов.
 12. Данные "Поездки такси Нью-Йорка" будут загружены в две отдельные таблицы. Для улучшения операций объединения настоятельно рекомендуется проиндексировать таблицы. Образец скрипта **create\_partitioned\_index.sql** создает секционированные индексы по ключу составного соединения **medallion, hack\_license и pickup\_datetime**.
 
@@ -157,77 +174,87 @@ ms.locfileid: "79251587"
 
 Быстрая проверка числа строк и столбцов в таблицах, заполненных ранее с помощью параллельного массового импорта:
 
-    -- Report number of rows in table nyctaxi_trip without table scan
-    SELECT SUM(rows) FROM sys.partitions WHERE object_id = OBJECT_ID('nyctaxi_trip')
-
-    -- Report number of columns in table nyctaxi_trip
-    SELECT COUNT(*) FROM information_schema.columns WHERE table_name = 'nyctaxi_trip'
+- Отчет число строк в таблице nyctaxi_trip без просмотра таблицы:`SELECT SUM(rows) FROM sys.partitions WHERE object_id = OBJECT_ID('nyctaxi_trip')`
+- Отчет число столбцов в nyctaxi_trip таблицы:`SELECT COUNT(*) FROM information_schema.columns WHERE table_name = 'nyctaxi_trip'`
 
 #### <a name="exploration-trip-distribution-by-medallion"></a>Просмотр: распределение поездок по параметру medallion
 В этом примере определяются медальоны (номера такси) с более чем 100 поездками за заданный период времени. Запрос будет использовать секционированный доступ к таблице, так как он обусловлен схемой секционирования **pickup\_datetime**. При запросе к полному набору данных также будет задействовано сканирование секционированной таблицы и/или индекса.
 
-    SELECT medallion, COUNT(*)
-    FROM nyctaxi_fare
-    WHERE pickup_datetime BETWEEN '20130101' AND '20130331'
-    GROUP BY medallion
-    HAVING COUNT(*) > 100
+```sql
+SELECT medallion, COUNT(*)
+FROM nyctaxi_fare
+WHERE pickup_datetime BETWEEN '20130101' AND '20130331'
+GROUP BY medallion
+HAVING COUNT(*) > 100
+```
 
 #### <a name="exploration-trip-distribution-by-medallion-and-hack_license"></a>Просмотр: распределение поездок по параметрам medallion и hack_license
-    SELECT medallion, hack_license, COUNT(*)
-    FROM nyctaxi_fare
-    WHERE pickup_datetime BETWEEN '20130101' AND '20130131'
-    GROUP BY medallion, hack_license
-    HAVING COUNT(*) > 100
+
+```sql
+SELECT medallion, hack_license, COUNT(*)
+FROM nyctaxi_fare
+WHERE pickup_datetime BETWEEN '20130101' AND '20130131'
+GROUP BY medallion, hack_license
+HAVING COUNT(*) > 100
+```
 
 #### <a name="data-quality-assessment-verify-records-with-incorrect-longitude-andor-latitude"></a>Оценка качества данных: Проверка записей с неверными значениями долготы и/или широты
 В этом примере анализируется, содержится ли в каких-либо полях долготы и/или широты неверное значение (количество градусов должно быть в пределах от -90 до 90) или значение координат (0, 0).
 
-    SELECT COUNT(*) FROM nyctaxi_trip
-    WHERE pickup_datetime BETWEEN '20130101' AND '20130331'
-    AND  (CAST(pickup_longitude AS float) NOT BETWEEN -90 AND 90
-    OR    CAST(pickup_latitude AS float) NOT BETWEEN -90 AND 90
-    OR    CAST(dropoff_longitude AS float) NOT BETWEEN -90 AND 90
-    OR    CAST(dropoff_latitude AS float) NOT BETWEEN -90 AND 90
-    OR    (pickup_longitude = '0' AND pickup_latitude = '0')
-    OR    (dropoff_longitude = '0' AND dropoff_latitude = '0'))
+```sql
+SELECT COUNT(*) FROM nyctaxi_trip
+WHERE pickup_datetime BETWEEN '20130101' AND '20130331'
+AND  (CAST(pickup_longitude AS float) NOT BETWEEN -90 AND 90
+OR    CAST(pickup_latitude AS float) NOT BETWEEN -90 AND 90
+OR    CAST(dropoff_longitude AS float) NOT BETWEEN -90 AND 90
+OR    CAST(dropoff_latitude AS float) NOT BETWEEN -90 AND 90
+OR    (pickup_longitude = '0' AND pickup_latitude = '0')
+OR    (dropoff_longitude = '0' AND dropoff_latitude = '0'))
+```
 
 #### <a name="exploration-tipped-vs-not-tipped-trips-distribution"></a>Просмотр: Выплаченные чаевые против Распределение поездок с чаевыми и без чаевых
 В этом примере определяется число поездок, в которых были выплачены чаевые, против тех, в которых чаевые не были выплачены, за заданный период времени (или по полному набору данных в случае охвата целого года). Это распределение отражает распределение двоичных меток, которые в дальнейшем будут использоваться для моделирования двоичной классификации.
 
-    SELECT tipped, COUNT(*) AS tip_freq FROM (
-      SELECT CASE WHEN (tip_amount > 0) THEN 1 ELSE 0 END AS tipped, tip_amount
-      FROM nyctaxi_fare
-      WHERE pickup_datetime BETWEEN '20130101' AND '20131231') tc
-    GROUP BY tipped
+```sql
+SELECT tipped, COUNT(*) AS tip_freq FROM (
+  SELECT CASE WHEN (tip_amount > 0) THEN 1 ELSE 0 END AS tipped, tip_amount
+  FROM nyctaxi_fare
+  WHERE pickup_datetime BETWEEN '20130101' AND '20131231') tc
+GROUP BY tipped
+```
 
 #### <a name="exploration-tip-classrange-distribution"></a>Просмотр: распределение классов/диапазонов чаевых
 В этом примере вычисляется распределение диапазонов чаевых за заданный период времени (или по полному набору данных в случае охвата целого года). Это распределение классов меток будет использоваться позже для моделирования многоклассовой классификации.
 
-    SELECT tip_class, COUNT(*) AS tip_freq FROM (
-        SELECT CASE
-            WHEN (tip_amount = 0) THEN 0
-            WHEN (tip_amount > 0 AND tip_amount <= 5) THEN 1
-            WHEN (tip_amount > 5 AND tip_amount <= 10) THEN 2
-            WHEN (tip_amount > 10 AND tip_amount <= 20) THEN 3
-            ELSE 4
-        END AS tip_class
-    FROM nyctaxi_fare
-    WHERE pickup_datetime BETWEEN '20130101' AND '20131231') tc
-    GROUP BY tip_class
+```sql
+SELECT tip_class, COUNT(*) AS tip_freq FROM (
+    SELECT CASE
+        WHEN (tip_amount = 0) THEN 0
+        WHEN (tip_amount > 0 AND tip_amount <= 5) THEN 1
+        WHEN (tip_amount > 5 AND tip_amount <= 10) THEN 2
+        WHEN (tip_amount > 10 AND tip_amount <= 20) THEN 3
+        ELSE 4
+    END AS tip_class
+FROM nyctaxi_fare
+WHERE pickup_datetime BETWEEN '20130101' AND '20131231') tc
+GROUP BY tip_class
+```
 
 #### <a name="exploration-compute-and-compare-trip-distance"></a>Просмотр: Вычисление и сравнение расстояния поездок
 В этом примере значения долготы и широты начальных и конечных пунктов поездок преобразуются в географические точки SQL, вычисляется расстояние поездки по разности географических точек и возвращается случайная выборка результатов для сравнения. В примере результаты ограничиваются только допустимыми координатами с помощью запроса оценки качества данных, описанного ранее.
 
-    SELECT
-    pickup_location=geography::STPointFromText('POINT(' + pickup_longitude + ' ' + pickup_latitude + ')', 4326)
-    ,dropoff_location=geography::STPointFromText('POINT(' + dropoff_longitude + ' ' + dropoff_latitude + ')', 4326)
-    ,trip_distance
-    ,computedist=round(geography::STPointFromText('POINT(' + pickup_longitude + ' ' + pickup_latitude + ')', 4326).STDistance(geography::STPointFromText('POINT(' + dropoff_longitude + ' ' + dropoff_latitude + ')', 4326))/1000, 2)
-    FROM nyctaxi_trip
-    tablesample(0.01 percent)
-    WHERE CAST(pickup_latitude AS float) BETWEEN -90 AND 90
-    AND   CAST(dropoff_latitude AS float) BETWEEN -90 AND 90
-    AND   pickup_longitude != '0' AND dropoff_longitude != '0'
+```sql
+SELECT
+pickup_location=geography::STPointFromText('POINT(' + pickup_longitude + ' ' + pickup_latitude + ')', 4326)
+,dropoff_location=geography::STPointFromText('POINT(' + dropoff_longitude + ' ' + dropoff_latitude + ')', 4326)
+,trip_distance
+,computedist=round(geography::STPointFromText('POINT(' + pickup_longitude + ' ' + pickup_latitude + ')', 4326).STDistance(geography::STPointFromText('POINT(' + dropoff_longitude + ' ' + dropoff_latitude + ')', 4326))/1000, 2)
+FROM nyctaxi_trip
+tablesample(0.01 percent)
+WHERE CAST(pickup_latitude AS float) BETWEEN -90 AND 90
+AND   CAST(dropoff_latitude AS float) BETWEEN -90 AND 90
+AND   pickup_longitude != '0' AND dropoff_longitude != '0'
+```
 
 #### <a name="feature-engineering-in-sql-queries"></a>Проектирование характеристик в запросах SQL
 Запросы на создание меток и просмотр преобразования географии можно также использовать для создания меток/характеристик путем удаления части, производящей подсчет. Дополнительные примеры проектирования характеристик на SQL содержатся в разделе [Просмотр данных и проектирование характеристик в IPython Notebook](#ipnb) . Более эффективным является выполнение запросов на создание компонентов к полному набору данных или крупному подмножеству с помощью запросов SQL, которые выполняются непосредственно в экземпляре базы данных SQL Server. Запросы могут выполняться в **SQL Server Management Studio**, записной книжке IPython Notebook или в любом средстве разработки или среде, которая может осуществлять доступ к базе данных локально или удаленно.
@@ -235,21 +262,22 @@ ms.locfileid: "79251587"
 #### <a name="preparing-data-for-model-building"></a>Подготовка данных для построения модели
 Следующий запрос соединяет таблицы **nyctaxi\_trip** и **nyctaxi\_fare**, создает метку двоичной классификации **tipped**, метку многоклассовой классификации **tip\_class**, а также извлекает малую выборку из полного соединенного набора данных. Этот запрос можно скопировать, а затем вставить непосредственно в модуль [Импорт данных](https://studio.azureml.net) [Студии машинного обучения Azure][import-data] для прямого приема данных из экземпляра базы данных SQL Server в Azure. Запрос исключает записи с неверными (0, 0) координатами.
 
-    SELECT t.*, f.payment_type, f.fare_amount, f.surcharge, f.mta_tax, f.tolls_amount,     f.total_amount, f.tip_amount,
-        CASE WHEN (tip_amount > 0) THEN 1 ELSE 0 END AS tipped,
-        CASE WHEN (tip_amount = 0) THEN 0
-            WHEN (tip_amount > 0 AND tip_amount <= 5) THEN 1
-            WHEN (tip_amount > 5 AND tip_amount <= 10) THEN 2
-            WHEN (tip_amount > 10 AND tip_amount <= 20) THEN 3
-            ELSE 4
-        END AS tip_class
-    FROM nyctaxi_trip t, nyctaxi_fare f
-    TABLESAMPLE (1 percent)
-    WHERE t.medallion = f.medallion
-    AND   t.hack_license = f.hack_license
-    AND   t.pickup_datetime = f.pickup_datetime
-    AND   pickup_longitude != '0' AND dropoff_longitude != '0'
-
+```sql
+SELECT t.*, f.payment_type, f.fare_amount, f.surcharge, f.mta_tax, f.tolls_amount,     f.total_amount, f.tip_amount,
+    CASE WHEN (tip_amount > 0) THEN 1 ELSE 0 END AS tipped,
+    CASE WHEN (tip_amount = 0) THEN 0
+        WHEN (tip_amount > 0 AND tip_amount <= 5) THEN 1
+        WHEN (tip_amount > 5 AND tip_amount <= 10) THEN 2
+        WHEN (tip_amount > 10 AND tip_amount <= 20) THEN 3
+        ELSE 4
+    END AS tip_class
+FROM nyctaxi_trip t, nyctaxi_fare f
+TABLESAMPLE (1 percent)
+WHERE t.medallion = f.medallion
+AND   t.hack_license = f.hack_license
+AND   t.pickup_datetime = f.pickup_datetime
+AND   pickup_longitude != '0' AND dropoff_longitude != '0'
+```
 
 ## <a name="data-exploration-and-feature-engineering-in-ipython-notebook"></a><a name="ipnb"></a>Исследование данных и проектирование характеристик в записной книжке IPython Notebook
 В этом разделе мы выполним просмотр данных и проектирование характеристик используя как Python, так и SQL-запросы, в отличии от созданной ранее базы данных SQL Server. Образец файла IPython Notebook с именем**machine-Learning-data-science-process-sql-story.ipynb** расположен в папке **Примеры файлов IPython Notebook**. Этот файл также доступен на [GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/iPythonNotebooks).
@@ -272,53 +300,64 @@ ms.locfileid: "79251587"
 #### <a name="initialize-database-credentials"></a>Инициализация учетных данных базы данных
 Инициализируйте параметры подключения к базе данных в следующих переменных:
 
-    SERVER_NAME=<server name>
-    DATABASE_NAME=<database name>
-    USERID=<user name>
-    PASSWORD=<password>
-    DB_DRIVER = <database server>
+```sql
+SERVER_NAME=<server name>
+DATABASE_NAME=<database name>
+USERID=<user name>
+PASSWORD=<password>
+DB_DRIVER = <database server>
+```
 
 #### <a name="create-database-connection"></a>Создание подключения к базе данных
-    CONNECTION_STRING = 'DRIVER={'+DRIVER+'};SERVER='+SERVER_NAME+';DATABASE='+DATABASE_NAME+';UID='+USERID+';PWD='+PASSWORD
-    conn = pyodbc.connect(CONNECTION_STRING)
+
+```sql
+CONNECTION_STRING = 'DRIVER={'+DRIVER+'};SERVER='+SERVER_NAME+';DATABASE='+DATABASE_NAME+';UID='+USERID+';PWD='+PASSWORD
+conn = pyodbc.connect(CONNECTION_STRING)
+```
 
 #### <a name="report-number-of-rows-and-columns-in-table-nyctaxi_trip"></a>Сообщение числа строк и столбцов в таблице nyctaxi_trip
-    nrows = pd.read_sql('''
-        SELECT SUM(rows) FROM sys.partitions
-        WHERE object_id = OBJECT_ID('nyctaxi_trip')
-    ''', conn)
 
-    print 'Total number of rows = %d' % nrows.iloc[0,0]
+```sql
+nrows = pd.read_sql('''
+    SELECT SUM(rows) FROM sys.partitions
+    WHERE object_id = OBJECT_ID('nyctaxi_trip')
+''', conn)
 
-    ncols = pd.read_sql('''
-        SELECT COUNT(*) FROM information_schema.columns
-        WHERE table_name = ('nyctaxi_trip')
-    ''', conn)
+print 'Total number of rows = %d' % nrows.iloc[0,0]
 
-    print 'Total number of columns = %d' % ncols.iloc[0,0]
+ncols = pd.read_sql('''
+    SELECT COUNT(*) FROM information_schema.columns
+    WHERE table_name = ('nyctaxi_trip')
+''', conn)
+
+print 'Total number of columns = %d' % ncols.iloc[0,0]
+```
 
 * Общее число строк = 173179759  
 * Общее число столбцов = 14
 
 #### <a name="read-in-a-small-data-sample-from-the-sql-server-database"></a>Считывание небольшой выборки данных из базы данных SQL Server
-    t0 = time.time()
 
-    query = '''
-        SELECT t.*, f.payment_type, f.fare_amount, f.surcharge, f.mta_tax,
-            f.tolls_amount, f.total_amount, f.tip_amount
-        FROM nyctaxi_trip t, nyctaxi_fare f
-        TABLESAMPLE (0.05 PERCENT)
-        WHERE t.medallion = f.medallion
-        AND   t.hack_license = f.hack_license
-        AND   t.pickup_datetime = f.pickup_datetime
-    '''
+```sql
+t0 = time.time()
 
-    df1 = pd.read_sql(query, conn)
+query = '''
+    SELECT t.*, f.payment_type, f.fare_amount, f.surcharge, f.mta_tax,
+        f.tolls_amount, f.total_amount, f.tip_amount
+    FROM nyctaxi_trip t, nyctaxi_fare f
+    TABLESAMPLE (0.05 PERCENT)
+    WHERE t.medallion = f.medallion
+    AND   t.hack_license = f.hack_license
+    AND   t.pickup_datetime = f.pickup_datetime
+'''
 
-    t1 = time.time()
-    print 'Time to read the sample table is %f seconds' % (t1-t0)
+df1 = pd.read_sql(query, conn)
 
-    print 'Number of rows and columns retrieved = (%d, %d)' % (df1.shape[0], df1.shape[1])
+t1 = time.time()
+print 'Time to read the sample table is %f seconds' % (t1-t0)
+
+print 'Number of rows and columns retrieved = (%d, %d)' % (df1.shape[0], df1.shape[1])
+```
 
 Время чтения таблицы выборки равно 6,492000 секунды  
 Число извлеченных строк и столбцов = (84952, 21)
@@ -326,52 +365,68 @@ ms.locfileid: "79251587"
 #### <a name="descriptive-statistics"></a>Описательная статистика
 Теперь все готово для просмотра выборки данных. Начнем с изучения описательной статистики для **trip\_distance** (или любых других полей).
 
-    df1['trip_distance'].describe()
+```sql
+df1['trip_distance'].describe()
+```
 
 #### <a name="visualization-box-plot-example"></a>Визуализация: Пример блочной диаграммы
 Далее рассмотрим блочную диаграмму расстояний поездок для визуализации квантилей
 
-    df1.boxplot(column='trip_distance',return_type='dict')
+```sql
+df1.boxplot(column='trip_distance',return_type='dict')
+```
 
 ![График #1][1]
 
 #### <a name="visualization-distribution-plot-example"></a>Визуализация: Пример графика распределения
-    fig = plt.figure()
-    ax1 = fig.add_subplot(1,2,1)
-    ax2 = fig.add_subplot(1,2,2)
-    df1['trip_distance'].plot(ax=ax1,kind='kde', style='b-')
-    df1['trip_distance'].hist(ax=ax2, bins=100, color='k')
+
+```sql
+fig = plt.figure()
+ax1 = fig.add_subplot(1,2,1)
+ax2 = fig.add_subplot(1,2,2)
+df1['trip_distance'].plot(ax=ax1,kind='kde', style='b-')
+df1['trip_distance'].hist(ax=ax2, bins=100, color='k')
+```
 
 ![График #2][2]
 
 #### <a name="visualization-bar-and-line-plots"></a>Визуализация: Гистограммы и линейные графики
 В этом примере мы сегментируем расстояния поездок на пять ячеек и визуализируем результаты сегментирования.
 
-    trip_dist_bins = [0, 1, 2, 4, 10, 1000]
-    df1['trip_distance']
-    trip_dist_bin_id = pd.cut(df1['trip_distance'], trip_dist_bins)
-    trip_dist_bin_id
+```sql
+trip_dist_bins = [0, 1, 2, 4, 10, 1000]
+df1['trip_distance']
+trip_dist_bin_id = pd.cut(df1['trip_distance'], trip_dist_bins)
+trip_dist_bin_id
+```
 
 Мы можем изобразить описанное выше распределение по ячейкам в виде гистограммы или линейного графика, как показано ниже
 
-    pd.Series(trip_dist_bin_id).value_counts().plot(kind='bar')
+```sql
+pd.Series(trip_dist_bin_id).value_counts().plot(kind='bar')
+```
 
 ![График #3][3]
 
-    pd.Series(trip_dist_bin_id).value_counts().plot(kind='line')
-
+```sql
+pd.Series(trip_dist_bin_id).value_counts().plot(kind='line')
+```
 ![График #4][4]
 
 #### <a name="visualization-scatterplot-example"></a>Визуализация: Пример точечной диаграммы
 Мы отобразим точечную диаграмму для параметров **trip\_time\_in\_secs** и **trip\_distance**, чтобы проверить возможную корреляцию.
 
-    plt.scatter(df1['trip_time_in_secs'], df1['trip_distance'])
+```sql
+plt.scatter(df1['trip_time_in_secs'], df1['trip_distance'])
+```
 
 ![График #6][6]
 
 Точно также мы можем проверить связь между **rate\_code** и **trip\_distance**.
 
-    plt.scatter(df1['passenger_count'], df1['trip_distance'])
+```sql
+plt.scatter(df1['passenger_count'], df1['trip_distance'])
+```
 
 ![График #8][8]
 
@@ -383,47 +438,55 @@ ms.locfileid: "79251587"
 #### <a name="create-a-sample-table-and-populate-with-1-of-the-joined-tables-drop-table-first-if-it-exists"></a>Создайте таблицу выборки и заполните ее 1 % данных из соединенных таблиц. Сначала удалите таблицу, если она существует.
 В этом разделе мы соединим таблицы **nyctaxi\_trip** и **nyctaxi\_fare**, извлечем однопроцентную случайную выборку и сохраним выбранные данные в новой таблице с именем **nyctaxi\_one\_percent**:
 
-    cursor = conn.cursor()
+```sql
+cursor = conn.cursor()
 
-    drop_table_if_exists = '''
-        IF OBJECT_ID('nyctaxi_one_percent', 'U') IS NOT NULL DROP TABLE nyctaxi_one_percent
-    '''
+drop_table_if_exists = '''
+    IF OBJECT_ID('nyctaxi_one_percent', 'U') IS NOT NULL DROP TABLE nyctaxi_one_percent
+'''
 
-    nyctaxi_one_percent_insert = '''
-        SELECT t.*, f.payment_type, f.fare_amount, f.surcharge, f.mta_tax, f.tolls_amount, f.total_amount, f.tip_amount
-        INTO nyctaxi_one_percent
-        FROM nyctaxi_trip t, nyctaxi_fare f
-        TABLESAMPLE (1 PERCENT)
-        WHERE t.medallion = f.medallion
-        AND   t.hack_license = f.hack_license
-        AND   t.pickup_datetime = f.pickup_datetime
-        AND   pickup_longitude <> '0' AND dropoff_longitude <> '0'
-    '''
+nyctaxi_one_percent_insert = '''
+    SELECT t.*, f.payment_type, f.fare_amount, f.surcharge, f.mta_tax, f.tolls_amount, f.total_amount, f.tip_amount
+    INTO nyctaxi_one_percent
+    FROM nyctaxi_trip t, nyctaxi_fare f
+    TABLESAMPLE (1 PERCENT)
+    WHERE t.medallion = f.medallion
+    AND   t.hack_license = f.hack_license
+    AND   t.pickup_datetime = f.pickup_datetime
+    AND   pickup_longitude <> '0' AND dropoff_longitude <> '0'
+'''
 
-    cursor.execute(drop_table_if_exists)
-    cursor.execute(nyctaxi_one_percent_insert)
-    cursor.commit()
+cursor.execute(drop_table_if_exists)
+cursor.execute(nyctaxi_one_percent_insert)
+cursor.commit()
+```
 
 ### <a name="data-exploration-using-sql-queries-in-ipython-notebook"></a>Просмотр данных с помощью SQL-запросов в IPython Notebook
-В этом разделе мы рассмотрим распределение данных с использованием данных выборки в 1%, которые хранятся в новой таблице, созданной ранее. Аналогичные исследования могут быть выполнены с помощью исходных таблиц, при необходимости с помощью **предложения TABLESAMPLE** для ограничения образца просмотра или путем ограничения результатов на заданный период времени с помощью секций **\_даты** отсчета, как показано в статье [исследование данных и проектирование](#dbexplore) признаков в SQL Server разделе.
+В этом разделе мы рассмотрим распределение данных с использованием данных выборки в 1%, которые хранятся в новой таблице, созданной ранее. Аналогичные исследования могут быть выполнены с помощью исходных таблиц, при необходимости с помощью **предложения TABLESAMPLE** для ограничения образца просмотра или путем ограничения результатов на заданный период времени с помощью секций ** \_ даты** отсчета, как показано в статье [исследование данных и проектирование](#dbexplore) признаков в SQL Server разделе.
 
 #### <a name="exploration-daily-distribution-of-trips"></a>Исследование: ежедневное распределение поездок
-    query = '''
-        SELECT CONVERT(date, dropoff_datetime) AS date, COUNT(*) AS c
-        FROM nyctaxi_one_percent
-        GROUP BY CONVERT(date, dropoff_datetime)
-    '''
 
-    pd.read_sql(query,conn)
+```sql
+query = '''
+    SELECT CONVERT(date, dropoff_datetime) AS date, COUNT(*) AS c
+    FROM nyctaxi_one_percent
+    GROUP BY CONVERT(date, dropoff_datetime)
+'''
+
+pd.read_sql(query,conn)
+```
 
 #### <a name="exploration-trip-distribution-per-medallion"></a>Исследование: распределение поездок по параметру medallion
-    query = '''
-        SELECT medallion,count(*) AS c
-        FROM nyctaxi_one_percent
-        GROUP BY medallion
-    '''
 
-    pd.read_sql(query,conn)
+```sql
+query = '''
+    SELECT medallion,count(*) AS c
+    FROM nyctaxi_one_percent
+    GROUP BY medallion
+'''
+
+pd.read_sql(query,conn)
+```
 
 ### <a name="feature-generation-using-sql-queries-in-ipython-notebook"></a>Создание характеристик с помощью SQL-запросов в IPython Notebook
 В этом разделе мы создадим новые метки и характеристики непосредственно с помощью SQL-запросов, работая над таблицей 1%-ной выборки, которую мы создали в предыдущем разделе.
@@ -433,116 +496,127 @@ ms.locfileid: "79251587"
 
 1. Метки двоичной классификации **tipped** (прогнозирование, будут ли выплачены чаевые).
 2. Мультиклассовые метки **tip\_class** (прогнозирование сегмента или диапазона чаевых).
+
+```sql   
+    nyctaxi_one_percent_add_col = '''
+        ALTER TABLE nyctaxi_one_percent ADD tipped bit, tip_class int
+    '''
    
-        nyctaxi_one_percent_add_col = '''
-            ALTER TABLE nyctaxi_one_percent ADD tipped bit, tip_class int
-        '''
+    cursor.execute(nyctaxi_one_percent_add_col)
+    cursor.commit()
    
-        cursor.execute(nyctaxi_one_percent_add_col)
-        cursor.commit()
+    nyctaxi_one_percent_update_col = '''
+        UPDATE nyctaxi_one_percent
+        SET
+           tipped = CASE WHEN (tip_amount > 0) THEN 1 ELSE 0 END,
+           tip_class = CASE WHEN (tip_amount = 0) THEN 0
+                            WHEN (tip_amount > 0 AND tip_amount <= 5) THEN 1
+                            WHEN (tip_amount > 5 AND tip_amount <= 10) THEN 2
+                            WHEN (tip_amount > 10 AND tip_amount <= 20) THEN 3
+                            ELSE 4
+                        END
+    '''
    
-        nyctaxi_one_percent_update_col = '''
-            UPDATE nyctaxi_one_percent
-            SET
-               tipped = CASE WHEN (tip_amount > 0) THEN 1 ELSE 0 END,
-               tip_class = CASE WHEN (tip_amount = 0) THEN 0
-                                WHEN (tip_amount > 0 AND tip_amount <= 5) THEN 1
-                                WHEN (tip_amount > 5 AND tip_amount <= 10) THEN 2
-                                WHEN (tip_amount > 10 AND tip_amount <= 20) THEN 3
-                                ELSE 4
-                            END
-        '''
-   
-        cursor.execute(nyctaxi_one_percent_update_col)
-        cursor.commit()
+    cursor.execute(nyctaxi_one_percent_update_col)
+    cursor.commit()
+```
 
 #### <a name="feature-engineering-count-features-for-categorical-columns"></a>Проектирование характеристик: Количественные характеристики для столбцов категорий
 Этот пример преобразует поле категории в числовое поле, заменяя каждую категорию количеством ее появлений в данных.
 
-    nyctaxi_one_percent_insert_col = '''
-        ALTER TABLE nyctaxi_one_percent ADD cmt_count int, vts_count int
-    '''
+```sql
+nyctaxi_one_percent_insert_col = '''
+    ALTER TABLE nyctaxi_one_percent ADD cmt_count int, vts_count int
+'''
 
-    cursor.execute(nyctaxi_one_percent_insert_col)
-    cursor.commit()
+cursor.execute(nyctaxi_one_percent_insert_col)
+cursor.commit()
 
-    nyctaxi_one_percent_update_col = '''
-        WITH B AS
-        (
-            SELECT medallion, hack_license,
-                SUM(CASE WHEN vendor_id = 'cmt' THEN 1 ELSE 0 END) AS cmt_count,
-                SUM(CASE WHEN vendor_id = 'vts' THEN 1 ELSE 0 END) AS vts_count
-            FROM nyctaxi_one_percent
-            GROUP BY medallion, hack_license
-        )
+nyctaxi_one_percent_update_col = '''
+    WITH B AS
+    (
+        SELECT medallion, hack_license,
+            SUM(CASE WHEN vendor_id = 'cmt' THEN 1 ELSE 0 END) AS cmt_count,
+            SUM(CASE WHEN vendor_id = 'vts' THEN 1 ELSE 0 END) AS vts_count
+        FROM nyctaxi_one_percent
+        GROUP BY medallion, hack_license
+    )
 
-        UPDATE nyctaxi_one_percent
-        SET nyctaxi_one_percent.cmt_count = B.cmt_count,
-            nyctaxi_one_percent.vts_count = B.vts_count
-        FROM nyctaxi_one_percent A INNER JOIN B
-        ON A.medallion = B.medallion AND A.hack_license = B.hack_license
-    '''
+    UPDATE nyctaxi_one_percent
+    SET nyctaxi_one_percent.cmt_count = B.cmt_count,
+        nyctaxi_one_percent.vts_count = B.vts_count
+    FROM nyctaxi_one_percent A INNER JOIN B
+    ON A.medallion = B.medallion AND A.hack_license = B.hack_license
+'''
 
-    cursor.execute(nyctaxi_one_percent_update_col)
-    cursor.commit()
+cursor.execute(nyctaxi_one_percent_update_col)
+cursor.commit()
+```
 
 #### <a name="feature-engineering-bin-features-for-numerical-columns"></a>Проектирование характеристик: Ячейка характеристик для числовых столбцов
 Этот пример преобразует непрерывное числовое поле в Предустановленные диапазоны категорий, т. е. Преобразование числового поля в поле категории.
 
-    nyctaxi_one_percent_insert_col = '''
-        ALTER TABLE nyctaxi_one_percent ADD trip_time_bin int
-    '''
+```sql
+nyctaxi_one_percent_insert_col = '''
+    ALTER TABLE nyctaxi_one_percent ADD trip_time_bin int
+'''
 
-    cursor.execute(nyctaxi_one_percent_insert_col)
-    cursor.commit()
+cursor.execute(nyctaxi_one_percent_insert_col)
+cursor.commit()
 
-    nyctaxi_one_percent_update_col = '''
-        WITH B(medallion,hack_license,pickup_datetime,trip_time_in_secs, BinNumber ) AS
-        (
-            SELECT medallion,hack_license,pickup_datetime,trip_time_in_secs,
-            NTILE(5) OVER (ORDER BY trip_time_in_secs) AS BinNumber from nyctaxi_one_percent
-        )
+nyctaxi_one_percent_update_col = '''
+    WITH B(medallion,hack_license,pickup_datetime,trip_time_in_secs, BinNumber ) AS
+    (
+        SELECT medallion,hack_license,pickup_datetime,trip_time_in_secs,
+        NTILE(5) OVER (ORDER BY trip_time_in_secs) AS BinNumber from nyctaxi_one_percent
+    )
 
-        UPDATE nyctaxi_one_percent
-        SET trip_time_bin = B.BinNumber
-        FROM nyctaxi_one_percent A INNER JOIN B
-        ON A.medallion = B.medallion
-        AND A.hack_license = B.hack_license
-        AND A.pickup_datetime = B.pickup_datetime
-    '''
+    UPDATE nyctaxi_one_percent
+    SET trip_time_bin = B.BinNumber
+    FROM nyctaxi_one_percent A INNER JOIN B
+    ON A.medallion = B.medallion
+    AND A.hack_license = B.hack_license
+    AND A.pickup_datetime = B.pickup_datetime
+'''
 
-    cursor.execute(nyctaxi_one_percent_update_col)
-    cursor.commit()
+cursor.execute(nyctaxi_one_percent_update_col)
+cursor.commit()
+```
 
 #### <a name="feature-engineering-extract-location-features-from-decimal-latitudelongitude"></a>Проектирование характеристик: Извлечение характеристик местоположения из десятичных значений широты/долготы
 В этом примере разбивается десятичное представление поля широты и/или долготы на несколько полей области с различной степенью детализации, например страна/регион, город, город, блок и т. д. Новые географические поля не сопоставлены с фактическими расположениями. Дополнительные сведения о сопоставлении местоположений геокодов см. в статье о [службах REST карт Bing](https://msdn.microsoft.com/library/ff701710.aspx).
 
-    nyctaxi_one_percent_insert_col = '''
-        ALTER TABLE nyctaxi_one_percent
-        ADD l1 varchar(6), l2 varchar(3), l3 varchar(3), l4 varchar(3),
-            l5 varchar(3), l6 varchar(3), l7 varchar(3)
-    '''
+```sql
+nyctaxi_one_percent_insert_col = '''
+    ALTER TABLE nyctaxi_one_percent
+    ADD l1 varchar(6), l2 varchar(3), l3 varchar(3), l4 varchar(3),
+        l5 varchar(3), l6 varchar(3), l7 varchar(3)
+'''
 
-    cursor.execute(nyctaxi_one_percent_insert_col)
-    cursor.commit()
+cursor.execute(nyctaxi_one_percent_insert_col)
+cursor.commit()
 
-    nyctaxi_one_percent_update_col = '''
-        UPDATE nyctaxi_one_percent
-        SET l1=round(pickup_longitude,0)
-            , l2 = CASE WHEN LEN (PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1)) >= 1 THEN SUBSTRING(PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1),1,1) ELSE '0' END     
-            , l3 = CASE WHEN LEN (PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1)) >= 2 THEN SUBSTRING(PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1),2,1) ELSE '0' END     
-            , l4 = CASE WHEN LEN (PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1)) >= 3 THEN SUBSTRING(PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1),3,1) ELSE '0' END     
-            , l5 = CASE WHEN LEN (PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1)) >= 4 THEN SUBSTRING(PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1),4,1) ELSE '0' END     
-            , l6 = CASE WHEN LEN (PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1)) >= 5 THEN SUBSTRING(PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1),5,1) ELSE '0' END     
-            , l7 = CASE WHEN LEN (PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1)) >= 6 THEN SUBSTRING(PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1),6,1) ELSE '0' END
-    '''
+nyctaxi_one_percent_update_col = '''
+    UPDATE nyctaxi_one_percent
+    SET l1=round(pickup_longitude,0)
+        , l2 = CASE WHEN LEN (PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1)) >= 1 THEN SUBSTRING(PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1),1,1) ELSE '0' END     
+        , l3 = CASE WHEN LEN (PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1)) >= 2 THEN SUBSTRING(PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1),2,1) ELSE '0' END     
+        , l4 = CASE WHEN LEN (PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1)) >= 3 THEN SUBSTRING(PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1),3,1) ELSE '0' END     
+        , l5 = CASE WHEN LEN (PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1)) >= 4 THEN SUBSTRING(PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1),4,1) ELSE '0' END     
+        , l6 = CASE WHEN LEN (PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1)) >= 5 THEN SUBSTRING(PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1),5,1) ELSE '0' END     
+        , l7 = CASE WHEN LEN (PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1)) >= 6 THEN SUBSTRING(PARSENAME(ROUND(ABS(pickup_longitude) - FLOOR(ABS(pickup_longitude)),6),1),6,1) ELSE '0' END
+'''
 
-    cursor.execute(nyctaxi_one_percent_update_col)
-    cursor.commit()
+cursor.execute(nyctaxi_one_percent_update_col)
+cursor.commit()
+```
 
 #### <a name="verify-the-final-form-of-the-featurized-table"></a>Проверка конечной формы таблицы с признаками
-    query = '''SELECT TOP 100 * FROM nyctaxi_one_percent'''
-    pd.read_sql(query,conn)
+
+```sql
+query = '''SELECT TOP 100 * FROM nyctaxi_one_percent'''
+pd.read_sql(query,conn)
+```
 
 Теперь мы готовы перейти к созданию модели и развертыванию модели в [машинное обучение Azure](https://studio.azureml.net). Данные готовы для любой из задач прогнозирования, определенных ранее.
 
@@ -619,7 +693,7 @@ ms.locfileid: "79251587"
 Итак, в этом пошаговом руководстве мы создали среду обработки данных, работали с большим общедоступным набором данных на протяжении всего процесса от получения данных до обучения модели и развертывания веб-службы машинного обучения Azure.
 
 ### <a name="license-information"></a>Сведения о лицензии
-Этот образец пошагового руководства и сопровождающие его сценарии и файлы IPython Notebook предоставлены корпорацией Майкрософт на условиях лицензии MIT. Для получения дополнительных сведений проверьте файл LICENSE. txt в каталоге примера кода на сайте GitHub.
+Этот образец пошагового руководства и сопровождающие его сценарии и файлы IPython Notebook предоставлены корпорацией Майкрософт на условиях лицензии MIT. Чтобы получить дополнительные сведения, проверьте файл LICENSE.txt в каталоге примера кода на сайте GitHub.
 
 ### <a name="references"></a>Ссылки
 •    [Страница Андреса Монройя для скачивания данных о поездках в такси Нью-Йорка](https://www.andresmh.com/nyctaxitrips/)  

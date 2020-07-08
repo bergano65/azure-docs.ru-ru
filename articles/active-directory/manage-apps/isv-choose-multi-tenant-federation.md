@@ -2,22 +2,21 @@
 title: Выбор протокола Федерации для приложения с несколькими клиентами
 description: Руководство для независимых поставщиков программного обеспечения при интеграции с Azure Active Directory
 services: active-directory
-author: barbaraselden
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 05/22/2019
-ms.author: baselden
+ms.author: kenwith
 ms.reviewer: jeeds
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b3edbbe037c3874d639476e516b3732b7573d9b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 5e7dc40d0e4736b4fef8012b08737cbd07bc36bf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75443373"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84763302"
 ---
 # <a name="choose-the-right-federation-protocol-for-your-multi-tenant-application"></a>Выбор правильного протокола Федерации для приложения с несколькими клиентами
 
@@ -94,7 +93,7 @@ Microsoft Graph — это структура данных для всех Micro
 
 Если для проверки подлинности используется открытая ИДЕНТИФИКАЦИя Connect, то процесс разработки будет непростым, так как вы будете использовать OAuth2, фундамент открытого идентификатора Connect, чтобы получить маркеры, которые можно использовать для вызова Microsoft Graph API. Если приложение использует SAML или WSFed, необходимо добавить дополнительный код в приложение, чтобы получить эти OAuth2 для получения маркеров, необходимых для вызова Microsoft Graph API. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Включение единого входа для мультитенантного приложения](isv-sso-content.md)
 
