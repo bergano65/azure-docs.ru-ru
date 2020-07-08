@@ -4,12 +4,12 @@ description: В этой статье показано, как оценить г
 ms.topic: tutorial
 ms.date: 06/03/2020
 ms.custom: mvc
-ms.openlocfilehash: 53cf4eea4bfe61951be9975bacf9adb2b3fcf435
-ms.sourcegitcommit: e04a66514b21019f117a4ddb23f22c7c016da126
+ms.openlocfilehash: 4c95916bf5f92f8a82b9dfae50aa311891857e7a
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85106486"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86114250"
 ---
 # <a name="assess-hyper-v-vms-with-azure-migrate-server-assessment"></a>Оценка виртуальных машин Hyper-V с помощью средства "Оценка сервера" службы "Миграция Azure"
 
@@ -130,7 +130,7 @@ ms.locfileid: "85106486"
 2. В меню **Choose Import Type** (Выбор типа импорта) щелкните **Copy the virtual machine (create a new unique ID)** (Копировать виртуальную машину (создать уникальный идентификатор)). Затем нажмите кнопку **Далее**.
 3. В меню **Choose Destination** (Выбор назначения) оставьте параметр по умолчанию. Щелкните **Далее**.
 4. В меню **Storage Folders** (Папки хранилища) оставьте значение по умолчанию. Щелкните **Далее**.
-5. В поле **Choose Network** (Выбор сети) укажите виртуальный коммутатор, который будет использоваться виртуальной машиной. Ему требуется подключение к Интернету для отправки данных в Azure. [Узнайте больше о](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines) создании виртуального коммутатора.
+5. В поле **Choose Network** (Выбор сети) укажите виртуальный коммутатор, который будет использоваться виртуальной машиной. Ему требуется подключение к Интернету для отправки данных в Azure. [Узнайте больше о](/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines) создании виртуального коммутатора.
 6. Просмотрите информацию на странице **Summary** (Сводка). Нажмите кнопку **Готово**.
 7. В диспетчере Hyper-V в разделе **Virtual Machines** (Виртуальные машины) запустите виртуальную машину.
 

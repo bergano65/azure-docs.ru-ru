@@ -4,12 +4,12 @@ description: Узнайте, как выполнить миграцию вирт
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: MVC
-ms.openlocfilehash: b01665e6ddb78ff95714004f4dbe5c97574aa5fb
-ms.sourcegitcommit: 99d016949595c818fdee920754618d22ffa1cd49
+ms.openlocfilehash: ca06dc9d5de9853915e2aaa0d86c1a444dab415a
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769750"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119265"
 ---
 # <a name="migrate-vmware-vms-to-azure-agent-based"></a>Миграция виртуальных машин VMware в Azure (на основе агента)
 
@@ -34,7 +34,7 @@ ms.locfileid: "84769750"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы с этим руководством [изучите](migrate-architecture.md) архитектуру миграции VMware на основе агента.
+Перед началом работы с этим руководством [изучите](./agent-based-migration-architecture.md) архитектуру миграции VMware на основе агента.
 
 ## <a name="prepare-azure"></a>Подготовка Azure
 
@@ -150,7 +150,7 @@ ms.locfileid: "84769750"
 3. В разделе **Обзор** щелкните **Оценка и миграция серверов**.
 4. В области **Обнаружение, оценка и перенос серверов** щелкните **Оценка и миграция серверов**.
 
-    ![Обнаружение и оценка серверов](./media/tutorial-migrate-vmware-agent/assess-migrate.png
+    ![Обнаружение и оценка серверов](./media/tutorial-migrate-vmware-agent/assess-migrate.png)
 
 1. В разделе **Обнаружение, оценка и перенос серверов** щелкните **Add tools** (Добавить инструменты).
 2. В разделе **Проект миграции** выберите подписку Azure и создайте группу ресурсов, если у вас ее нет.
@@ -355,7 +355,7 @@ ms.locfileid: "84769750"
     - Остановите репликацию для локального компьютера.
     - Удалите компьютер из числа **реплицируемых серверов** в средстве для миграции серверов Миграции Azure.
     - Очистите информацию о состоянии репликации виртуальной машины.
-2. Установите агент виртуальной машины Azure для [Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows) или [Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux) на перенесенных компьютерах.
+2. Установите агент виртуальной машины Azure для [Windows](../virtual-machines/extensions/agent-windows.md) или [Linux](../virtual-machines/extensions/agent-linux.md) на перенесенных компьютерах.
 3. Выполните любые действия по настройке после миграции приложения, такие как обновление строк подключения к базе данных и конфигурация веб-сервера.
 4. Выполните приемочное тестирование конечного приложения и миграции на перенесенном приложении, работающем в Azure.
 5. Остановите трафик для перенесенного экземпляра виртуальной машины Azure.
@@ -381,16 +381,16 @@ ms.locfileid: "84769750"
     - Обеспечьте безопасность данных путем резервного копирования виртуальных машин Azure с помощью службы Azure Backup. [Подробнее](../backup/quick-backup-vm-portal.md).
     - Обеспечьте непрерывную работу и постоянную доступность рабочих нагрузок за счет репликации виртуальных машин Azure в дополнительный регион с помощью Site Recovery. [Подробнее](../site-recovery/azure-to-azure-tutorial-enable-replication.md).
 - Для повышения уровня безопасности:
-    - Заблокируйте и ограничьте доступ входящего трафика с помощью [JIT-администрирования](https://docs.microsoft.com/azure/security-center/security-center-just-in-time) центра безопасности Azure.
-    - Ограничьте сетевой трафик конечными точками с помощью [групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview).
-    - Разверните [шифрование дисков Azure](https://docs.microsoft.com/azure/security/azure-security-disk-encryption-overview), чтобы обеспечить безопасность дисков и защитить данные от кражи и несанкционированного доступа.
+    - Заблокируйте и ограничьте доступ входящего трафика с помощью [JIT-администрирования](../security-center/security-center-just-in-time.md) центра безопасности Azure.
+    - Ограничьте сетевой трафик конечными точками с помощью [групп безопасности сети](../virtual-network/security-overview.md).
+    - Разверните [шифрование дисков Azure](../security/fundamentals/azure-disk-encryption-vms-vmss.md), чтобы обеспечить безопасность дисков и защитить данные от кражи и несанкционированного доступа.
     - Ознакомьтесь с дополнительными сведениями о [защите ресурсов IaaS](https://azure.microsoft.com/services/virtual-machines/secure-well-managed-iaas/) и посетите [центр безопасности Azure](https://azure.microsoft.com/services/security-center/).
 - Для мониторинга и управления:
-    - Рассмотрите возможность развертывания [службы "Управление затратами Azure"](https://docs.microsoft.com/azure/cost-management/overview) для мониторинга использования ресурсов и затрат.
+    - Рассмотрите возможность развертывания [службы "Управление затратами Azure"](../cost-management-billing/cloudyn/overview.md) для мониторинга использования ресурсов и затрат.
 
 
 
 
  ## <a name="next-steps"></a>Дальнейшие действия
 
-Проанализируйте процесс [миграции в облако](https://docs.microsoft.com/azure/architecture/cloud-adoption/getting-started/migrate) в Azure Cloud Adoption Framework.
+Проанализируйте процесс [миграции в облако](/azure/architecture/cloud-adoption/getting-started/migrate) в Azure Cloud Adoption Framework.

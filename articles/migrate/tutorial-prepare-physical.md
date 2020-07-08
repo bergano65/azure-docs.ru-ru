@@ -4,18 +4,18 @@ description: Узнайте, как подготовить физические 
 ms.topic: tutorial
 ms.date: 04/15/2020
 ms.custom: mvc
-ms.openlocfilehash: ed648458416bacb091212bb569a27ecdf13fe8ee
-ms.sourcegitcommit: 99d016949595c818fdee920754618d22ffa1cd49
+ms.openlocfilehash: 31db91b512a4532cca144dc012282ea58a87514f
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84771280"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86113257"
 ---
 # <a name="prepare-for-assessment-and-migration-of-physical-servers-to-azure"></a>Подготовка физических компьютеров к оценке и миграции в Azure
 
 В этой статье описывается, как подготовить к оценке локальные физические серверы с помощью службы [Миграция Azure](migrate-services-overview.md).
 
-Служба [Миграция Azure](migrate-overview.md) объединяет в себе инструменты, которые используются для поиска, оценки и переноса приложений, инфраструктуры и рабочих нагрузок в Microsoft Azure. Она включает в себя инструменты Миграции Azure и предложения независимых поставщиков программного обеспечения. 
+Служба [Миграция Azure](./migrate-services-overview.md) объединяет в себе инструменты, которые используются для поиска, оценки и переноса приложений, инфраструктуры и рабочих нагрузок в Microsoft Azure. Она включает в себя инструменты Миграции Azure и предложения независимых поставщиков программного обеспечения. 
 
 Это руководство является первым в цикле. В нем показано, как оценивать физические компьютеры с помощью Миграции Azure. В этом руководстве описано следующее:
 
@@ -75,11 +75,11 @@ ms.locfileid: "84771280"
     ![Разрешения Azure AD](./media/tutorial-prepare-hyper-v/aad.png)
 
 > [!NOTE]
-> Это значение по умолчанию, которое разрешает выполнять регистрацию. [Подробнее](https://docs.microsoft.com/azure/active-directory/develop/active-directory-how-applications-are-added#who-has-permission-to-add-applications-to-my-azure-ad-instance).
+> Это значение по умолчанию, которое разрешает выполнять регистрацию. [Подробнее](../active-directory/develop/active-directory-how-applications-are-added.md#who-has-permission-to-add-applications-to-my-azure-ad-instance).
 
 #### <a name="assign-application-developer-role"></a>Назначение роли разработчика приложения
 
-Администратор клиента и глобальный администратор могут назначить учетной записи роль разработчика приложений. [Подробнее](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal).
+Администратор клиента и глобальный администратор могут назначить учетной записи роль разработчика приложений. [Подробнее](../active-directory/fundamentals/active-directory-users-assign-role-azure-portal.md).
 
 
 ## <a name="prepare-azure-for-physical-server-migration"></a>Подготовка Azure к переносу физических серверов
