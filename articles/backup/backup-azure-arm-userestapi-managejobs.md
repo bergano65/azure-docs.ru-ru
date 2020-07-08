@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 08/03/2018
 ms.assetid: b234533e-ac51-4482-9452-d97444f98b38
 ms.openlocfilehash: 628569c547aa776ec2fbb7ec7e32edad7c1fe7dd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79273531"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85847767"
 ---
 # <a name="track-backup-and-restore-jobs-using-rest-api"></a>Отслеживание заданий резервного копирования и восстановления с помощью REST API
 
@@ -45,9 +45,9 @@ GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 ### <a name="response"></a>Ответ
 
-|Имя  |Type  |Описание  |
+|Имя  |Type  |Описание:  |
 |---------|---------|---------|
-|200 ОК     | [JobResource](https://docs.microsoft.com/rest/api/backup/jobdetails/get#jobresource)        | OK        |
+|200 ОК     | [JobResource](https://docs.microsoft.com/rest/api/backup/jobdetails/get#jobresource)        | ОК        |
 
 #### <a name="example-response"></a>Пример ответа
 

@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
 ms.openlocfilehash: 09144c4c35ab911b60931849807123608f2c3cdd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79271724"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85847483"
 ---
 # <a name="manage-farms"></a>Управление фермами
 
@@ -18,7 +18,7 @@ ms.locfileid: "79271724"
 
 ## <a name="create-farms"></a>Создание ферм
 
-Выполните указанные ниже действия.
+Выполните следующие шаги.
 
 1. Войдите в ускоритель фермы и отобразится страница **фермы** .
     На странице **фермы** отображается список ферм, если они уже созданы в подписке.
@@ -33,7 +33,7 @@ ms.locfileid: "79271724"
 
 Ниже приведены два способа определения границы фермы.
 
-1. **Пометить на карте**: используйте средство управления картой для рисования и пометки границы фермы. Чтобы отметить границы, ![перебивает](./media/create-farms-in-azure-farmbeats/pencil-icon-1.png) ферму проекта и помечает точные границы.
+1. **Пометить на карте**: используйте средство управления картой для рисования и пометки границы фермы. Чтобы отметить границы, ![ перебивает ферму проекта ](./media/create-farms-in-azure-farmbeats/pencil-icon-1.png) и помечает точные границы.
 
     ![Проект FarmBeats](./media/create-farms-in-azure-farmbeats/create-farm-mark-on-map-1.png)
 

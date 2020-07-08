@@ -2,30 +2,30 @@
 title: Предоставление согласия администратора на уровне клиента приложению в Azure AD
 description: Узнайте, как предоставить приложению согласие на выполнение приложения, чтобы конечные пользователи не запрашивают согласие при входе в приложение.
 services: active-directory
-author: psignoret
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/04/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c515fef4997720435c64bd5f3ae7b18f8921fc5d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3c24023bdd3540785dec58ebeaa14d99ab659ab1
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75480922"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85848369"
 ---
-# <a name="grant-tenant-wide-admin-consent-to-an-application"></a>Предоставление согласия администратора на уровне клиента для приложения
+# <a name="grant-tenant-wide-admin-consent-to-an-application"></a>Предоставление приложению согласия администратора на уровне арендатора
 
 Узнайте, как упростить взаимодействие с пользователем, предоставив приложению согласие администратора на уровне клиента. В этой статье представлены различные способы достижения этой ситуации. Эти методы применяются для всех пользователей в клиенте Azure Active Directory (AAD).
 
 Дополнительные сведения о предоставлении согласия для приложений см. в статье [Платформа предоставления согласия Azure Active Directory](../develop/consent-framework.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для предоставления согласия администратора на уровне клиента необходимо войти как [глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator), [Администратор приложения](../users-groups-roles/directory-assign-admin-roles.md#application-administrator)или [Администратор облачных приложений](../users-groups-roles/directory-assign-admin-roles.md#cloud-application-administrator).
 
@@ -69,21 +69,23 @@ ms.locfileid: "75480922"
 
 URL-адрес согласия администратора на уровне клиента следует в следующем формате:
 
-    https://login.microsoftonline.com/{tenant-id}/adminconsent?client_id={client-id}
+```http
+https://login.microsoftonline.com/{tenant-id}/adminconsent?client_id={client-id}
+```
 
-Где:
+Здесь:
 
 * `{client-id}`Идентификатор клиента приложения (также известный как идентификатор приложения).
 * `{tenant-id}`— Идентификатор клиента вашей организации или любое проверенное доменное имя.
 
 Как всегда, внимательно просматривайте разрешения, запрашиваемые приложением, перед предоставлением согласия.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Настройка согласия конечных пользователей для приложений](configure-user-consent.md)
 
 [Настройка рабочего процесса согласия администратора](configure-admin-consent-workflow.md)
 
-[Разрешения и согласие на платформе Microsoft Identity](../develop/active-directory-v2-scopes.md)
+[Разрешения и согласие для платформы удостоверений Майкрософт](../develop/active-directory-v2-scopes.md)
 
-[Azure AD на StackOverflow](https://stackoverflow.com/questions/tagged/azure-active-directory)
+[Azure AD в StackOverflow](https://stackoverflow.com/questions/tagged/azure-active-directory)

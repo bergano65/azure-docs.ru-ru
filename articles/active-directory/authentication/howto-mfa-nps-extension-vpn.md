@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28467dbaabb0b84bf7da9f2ae28d6405699b2c6b
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.openlocfilehash: bc2030f589185fd39c0f10b00c012db038a4e008
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83845752"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85848713"
 ---
 # <a name="integrate-your-vpn-infrastructure-with-azure-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Интеграция инфраструктуры VPN с Azure MFA с помощью расширения сервера политики сети для Azure
 
@@ -228,9 +228,9 @@ ms.locfileid: "83845752"
 
 2. В диспетчере сервера выберите **Средства**, а затем — **Маршрутизация и удаленный доступ**.
 
-3. В окне **Маршрутизация и удаленный доступ** щелкните правой кнопкой мыши **\<имя_сервера> (локальный)** , а затем выберите **Свойства**.
+3. В окне **Маршрутизация и удаленный доступ** щелкните правой кнопкой мыши ** \<server name> (local)** и выберите пункт **Свойства**.
 
-4. В окне **\<имя_сервера> (локальный) - свойства** щелкните вкладку **Безопасность**.
+4. В окне ** \<server name> Свойства (локальное)** выберите вкладку **Безопасность** .
 
 5. На вкладке **Безопасность** в разделе **Поставщик проверки подлинности** щелкните **Проверка подлинности RADIUS**, а затем — **Настройка**.
 
@@ -320,19 +320,15 @@ ms.locfileid: "83845752"
 
 Если задано значение *True* или значение не указано, то все запросы на аутентификацию обрабатываются с помощью запроса защиты MFA. Если задано значение *False*, то запросы защиты MFA выдаются только для пользователей, зарегистрированных в службе Azure MFA. Используйте параметр со значением *False* в тестовой или рабочей средах только в период подключения.
 
-### <a name="obtain-the-azure-active-directory-guid-id"></a>Получение идентификатора GUID Azure Active Directory
+### <a name="obtain-the-azure-active-directory-tenant-id"></a>Получение идентификатора клиента Azure Active Directory
 
-При настройке расширения NPS необходимо ввести учетные данные администратора и идентификатор клиента Azure AD. Получите этот идентификатор следующим образом.
+При настройке расширения NPS необходимо ввести учетные данные администратора и идентификатор клиента Azure AD. Чтобы получить идентификатор клиента, выполните следующие действия.
 
 1. Войдите на [портал Azure](https://portal.azure.com) как глобальный администратор клиента Azure.
+1. В меню портала Azure выберите **Azure Active Directory** или выполните на любой странице поиск по запросу **Azure Active Directory** и выберите этот пункт.
+1. На странице **Обзор** отображаются *сведения о клиенте* . Рядом с *идентификатором клиента*выберите значок **копирования** , как показано на снимке экрана ниже.
 
-2. В меню портала Azure выберите **Azure Active Directory** или выполните на любой странице поиск по запросу **Azure Active Directory** и выберите этот пункт.
-
-3. Выберите **Свойства**.
-
-4. Чтобы скопировать идентификатор Azure AD, нажмите кнопку **Копировать**.
-
-    ![Идентификатор каталога Azure Active Directory на портале Azure](./media/howto-mfa-nps-extension-vpn/azure-active-directory-id-in-azure-portal.png)
+   ![Получение идентификатора клиента из портал Azure](./media/howto-mfa-nps-extension-vpn/azure-active-directory-tenant-id-portal.png)
 
 ### <a name="install-the-nps-extension"></a>Установка расширения NPS
 
@@ -386,7 +382,7 @@ ms.locfileid: "83845752"
 
 5. Вставьте идентификатор клиента, скопированный ранее, в командную строку и нажмите клавишу ВВОД.
 
-    ![Ввод скопированного ранее идентификатора каталога Azure Active Directory](./media/howto-mfa-nps-extension-vpn/image40.png)
+    ![Введите идентификатор клиента Azure AD, скопированный ранее](./media/howto-mfa-nps-extension-vpn/image40.png)
 
     Этот сценарий создает самозаверяющий сертификат и выполняет другие изменения конфигурация. Выходные данные должны иметь вид, как показано на рисунке ниже.
 
@@ -412,7 +408,9 @@ ms.locfileid: "83845752"
 
 Чтобы просмотреть события успешного входа в журналах компонента "Просмотр событий" Windows, можно выполнить следующую команду PowerShell, которая запрашивает журнал безопасности Windows на NPS-сервере.
 
-    `Get-WinEvent -Logname Security | where {$_.ID -eq '6272'} | FL`
+```powershell
+Get-WinEvent -Logname Security | where {$_.ID -eq '6272'} | FL
+```
 
 ![Запрос журналов безопасности из службы "Просмотр событий" с помощью PowerShell](./media/howto-mfa-nps-extension-vpn/image44.png)
 
@@ -422,7 +420,9 @@ ms.locfileid: "83845752"
 
 На сервере с расширением NPS для Azure MFA можно найти журналы приложений службы "Просмотр событий", относящиеся к этому расширению: *Application and Services Logs\Microsoft\AzureMfa*.
 
-    `Get-WinEvent -Logname Security | where {$_.ID -eq '6272'} | FL`
+```powershell
+Get-WinEvent -Logname Security | where {$_.ID -eq '6272'} | FL
+```
 
 ![Пример панели "Журналы авторизации" в средстве просмотра событий](./media/howto-mfa-nps-extension-vpn/image46.png)
 

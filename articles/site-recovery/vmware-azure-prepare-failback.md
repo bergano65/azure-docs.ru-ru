@@ -4,11 +4,11 @@ description: Подготовка к восстановлению после с�
 ms.topic: conceptual
 ms.date: 12/24/2019
 ms.openlocfilehash: 5a330f8cba31640d0116ca3d5ccab352ce5b3509
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79257190"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85847734"
 ---
 # <a name="prepare-for-reprotection-and-failback-of-vmware-vms"></a>Подготовка к повторному включению защиты и восстановлению размещения виртуальных машин VMware
 
