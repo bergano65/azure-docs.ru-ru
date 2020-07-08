@@ -5,14 +5,14 @@ author: luisbosquez
 ms.author: lbosq
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/02/2019
-ms.openlocfilehash: 1cabe57a0e7f2869a30973c8bbc8b4b38f664d81
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9999dad15cd02577eda85c15b67b98780a27b4a8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75500022"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85261789"
 ---
 # <a name="visualize-graph-data-stored-in-azure-cosmos-db-gremlin-api-with-data-visualization-solutions"></a>Визуализация данных графа, хранящихся в Azure Cosmos DB API Gremlin с помощью решений для визуализации данных
 
@@ -20,17 +20,17 @@ ms.locfileid: "75500022"
 
 ## <a name="linkurious-enterprise"></a>Линкуриаус Enterprise
 
-![Логотип линкуриаус](./media/graph-visualization/linkurious-logo.jpg)
+:::image type="content" source="./media/graph-visualization/linkurious-logo.jpg" alt-text="Логотип линкуриаус" border="false":::
 
 [Линкуриаус Enterprise](https://linkurio.us/product/) использует технологии графа и визуализацию данных, чтобы превратить сложные наборы в интерактивные визуальные сети. Платформа подключается к источникам данных и позволяет исследованиям легко перемещаться по миллиардам сущностей и связей. В результате появилась новая возможность обнаруживать подозрительные связи без участия в запросах или таблицах.
 
 Интерактивный интерфейс Линкуриаус Enterprise предлагает простой способ исследовать сложные данные. Можно выполнять поиск конкретных сущностей, развертывать подключения для выявления скрытых связей и применять макеты по своему усмотрению для унтангле сложных сетей. Линкуриаус Enterprise теперь совместим с API Azure Cosmos DB Gremlin. Он подходит для сквозных сценариев визуализации графа и поддерживает возможности чтения и записи из пользовательского интерфейса. Вы можете запросить [демонстрацию линкуриаус с Azure Cosmos DB](https://linkurio.us/contact/)
 
-![Демонстрация линкуриаус](./media/graph-visualization/linkurious-demo.gif)
+:::image type="content" source="./media/graph-visualization/linkurious-demo.gif" alt-text="Демонстрация линкуриаус" border="false":::
 
 ## <a name="cambridge-intelligence"></a>Кембриджского Intelligence
 
-![Логотип Кембриджского Intelligence](./media/graph-visualization/ci-logo.png)
+:::image type="content" source="./media/graph-visualization/ci-logo.png" alt-text="Логотип Кембриджского Intelligence" border="false":::
 
 Наборы средств визуализации графа [Кембриджского Intelligence](https://cambridge-intelligence.com/products/) теперь поддерживают Azure Cosmos DB. В Azure Cosmos DB поддерживаются следующие два набора средств визуализации:
 
@@ -38,14 +38,14 @@ ms.locfileid: "75500022"
 
 - [Повторное построение графа для реагирования на разработчиков](https://cambridge-intelligence.com/regraph/)
 
-![Демонстрация Кембриджского Intelligence](./media/graph-visualization/ci-demo-2.gif)
+:::image type="content" source="./media/graph-visualization/ci-demo-2.gif" alt-text="Демонстрация Кембриджского Intelligence" border="false":::
 
 Эти наборы средств позволяют создавать высокопроизводительные приложения для визуализации и анализа графа для вашего случая использования. Они используют мощную визуализацию библиотеки Web Graphics (WebGL) и тщательно сконструированный код для предоставления пользователям быстрого и аналитического представления. Эти средства совместимы с любым браузером, устройством, сервером или базой данных и входят в состав пошаговых руководств, полностью документированных API и интерактивных демонстраций.
 
-![Демонстрация Кембриджского Intelligence](./media/graph-visualization/ci-demo-1.gif)
+:::image type="content" source="./media/graph-visualization/ci-demo-1.gif" alt-text="Демонстрация Кембриджского Intelligence" border="false":::
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
  
 - [Попробуйте использовать наборы средств](https://cambridge-intelligence.com/try/)
 - [Обзор технологии Кэйлинес](https://cambridge-intelligence.com/keylines/technology/)

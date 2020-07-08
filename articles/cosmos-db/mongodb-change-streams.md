@@ -4,22 +4,22 @@ description: Узнайте, как использовать потоки изм
 author: srchi
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
-ms.topic: conceptual
-ms.date: 11/16/2019
+ms.topic: how-to
+ms.date: 06/04/2020
 ms.author: srchi
-ms.openlocfilehash: cc6b74a56d2a538d35e324090832e6c7e03e609f
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 2028a8048830587195271675997bf4c880a3fae1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83647305"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85260769"
 ---
 # <a name="change-streams-in-azure-cosmos-dbs-api-for-mongodb"></a>Потоки изменений в API Azure Cosmos DB для MongoDB
 
 Поддержка [канала изменений](change-feed.md) в API Azure Cosmos DB для MongoDB доступна с помощью API потоков изменений. С помощью API потоков изменений приложения могут получать изменения, внесенные в коллекцию или элементы в пределах одного сегмента. На основе полученных результатов можно будет выполнять дальнейшие действия. Изменения элементов в коллекции фиксируются в порядке времени их изменения, и в каждом ключе сегмента обязательно соблюдается порядок сортировки.
 
-[!NOTE]
-Чтобы использовать потоки изменений, создайте учетную запись с API Azure Cosmos DB для MongoDB версии 3.6 или более поздней версии. При запуске примеров потока изменений в более ранней версии может появиться сообщение об ошибке `Unrecognized pipeline stage name: $changeStream`.
+> [!NOTE]
+> Чтобы использовать потоки изменений, создайте учетную запись с API Azure Cosmos DB для MongoDB версии 3.6 или более поздней версии. При запуске примеров потока изменений в более ранней версии может появиться сообщение об ошибке `Unrecognized pipeline stage name: $changeStream`.
 
 ## <a name="current-limitations"></a>Текущие ограничения
 
@@ -61,6 +61,7 @@ while (!cursor.isExhausted()) {
     }
 }
 ```
+
 # <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
@@ -81,6 +82,52 @@ while (enumerator.MoveNext()){
 
 enumerator.Dispose();
 ```
+
+# <a name="java"></a>[Java](#tab/java)
+
+В следующем примере показано, как использовать функции потока изменений в Java. полный пример см. в этом [репозитории GitHub](https://github.com/Azure-Samples/azure-cosmos-db-mongodb-java-changestream/blob/master/mongostream/src/main/java/com/azure/cosmos/mongostream/App.java). В этом примере также показано, как использовать `resumeAfter` метод для поиска всех изменений с момента последнего считывания. 
+
+```java
+Bson match = Aggregates.match(Filters.in("operationType", asList("update", "replace", "insert")));
+
+// Pick the field you are most interested in
+Bson project = Aggregates.project(fields(include("_id", "ns", "documentKey", "fullDocument")));
+
+// This variable is for second example
+BsonDocument resumeToken = null;
+
+// Now time to build the pipeline
+List<Bson> pipeline = Arrays.asList(match, project);
+
+//#1 Simple example to seek changes
+
+// Create cursor with update_lookup
+MongoChangeStreamCursor<ChangeStreamDocument<org.bson.Document>> cursor = collection.watch(pipeline)
+        .fullDocument(FullDocument.UPDATE_LOOKUP).cursor();
+
+Document document = new Document("name", "doc-in-step-1-" + Math.random());
+collection.insertOne(document);
+
+while (cursor.hasNext()) {
+    // There you go, we got the change document.
+    ChangeStreamDocument<Document> csDoc = cursor.next();
+
+    // Let is pick the token which will help us resuming
+    // You can save this token in any persistent storage and retrieve it later
+    resumeToken = csDoc.getResumeToken();
+    //Printing the token
+    System.out.println(resumeToken);
+    
+    //Printing the document.
+    System.out.println(csDoc.getFullDocument());
+    //This break is intentional but in real project feel free to remove it.
+    break;
+}
+
+cursor.close();
+
+```
+---
 
 ## <a name="changes-within-a-single-shard"></a>Изменения в пределах одного сегмента
 

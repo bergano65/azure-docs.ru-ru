@@ -6,14 +6,14 @@ ms.author: govindk
 ms.reviewer: sngun
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/24/2018
-ms.openlocfilehash: 0317fab158b2ea73b365bedc272721816da22c4e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8f15ad8c1edfa64268ec699c8195a7831d98482b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75442088"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85260548"
 ---
 # <a name="delete-data-in-azure-cosmos-db-cassandra-api-tables-from-spark"></a>Удаление данных из таблиц API Cassandra для Azure Cosmos DB из Spark
 
@@ -116,7 +116,7 @@ spark
   .show
 ```
 
-**Проверки**
+**Выходные данные:**
 
 ```
 == Physical Plan ==
@@ -199,7 +199,7 @@ spark
   .show
 ```
 
-**Проверки**
+**Выходные данные:**
 
 ```
 == Physical Plan ==
@@ -278,7 +278,7 @@ println("==================")
 println("3) After")
 sc.cassandraTable("books_ks", "books").collect.foreach(println)
 ```
-**Проверки**
+**Выходные данные:**
 
 ```
 ==================
@@ -331,7 +331,7 @@ println("3) After")
 sc.cassandraTable("books_ks", "books").take(4).foreach(println)
 ```
 
-**Проверки**
+**Выходные данные:**
 
 ```
 ==================
@@ -360,5 +360,5 @@ deleteBooksRDD: com.datastax.spark.connector.rdd.CassandraTableScanRDD[com.datas
 
 Чтобы выполнить операции агрегирования и копирования данных, обратитесь к следующим статьям:
  
-* [Операции агрегирования](cassandra-spark-aggregation-ops.md)
+* [Операции агрегатных вычислений](cassandra-spark-aggregation-ops.md)
 * [Операции копирования таблиц](cassandra-spark-table-copy-ops.md)

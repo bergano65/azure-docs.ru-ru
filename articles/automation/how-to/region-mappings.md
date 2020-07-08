@@ -6,16 +6,16 @@ ms.service: automation
 ms.subservice: process-automation
 author: mgoedtel
 ms.author: magoedte
-ms.date: 04/23/2020
+ms.date: 06/12/2020
 ms.topic: conceptual
 manager: carmonm
 ms.custom: references_regions
-ms.openlocfilehash: d594d5a9dd263817023d2b5987c03aa50828191c
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
-ms.translationtype: HT
+ms.openlocfilehash: a8b5f14147ee748f5d32d794f51d5437eeddfb51
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84191861"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85261194"
 ---
 # <a name="supported-regions-for-linked-log-analytics-workspace"></a>Регионы, в которых поддерживается связанная рабочая область Log Analytics
 
@@ -30,23 +30,25 @@ ms.locfileid: "84191861"
 |**США**||
 |EastUS <sup>1</sup>|EastUS2|
 |WestUS2|WestUS2|
-|WestCentralUS <sup>2</sup>|WestCentralUS <sup>2</sup>|
+|WestCentralUS|WestCentralUS|
 |**Канада**||
 |CanadaCentral|CanadaCentral|
 |**Азиатско-Тихоокеанский регион**||
 |AustraliaSoutheast|AustraliaSoutheast|
 |SoutheastAsia|SoutheastAsia|
 |CentralIndia|CentralIndia|
+|ChinaEast2<sup>2</sup>|ChinaEast2|
 |JapanEast|JapanEast|
 |**Европа**||
 |UKSouth|UKSouth|
 |WestEurope|WestEurope|
 |**US Gov**||
 |USGovVirginia|USGovVirginia|
+|Усговаризона<sup>2</sup>|USGov (Аризона)|
 
 <sup>1</sup> Сопоставление EastUS рабочих областей Log Analytics с учетными записями службы автоматизации не является точным сопоставлением региона с регионом, однако оно корректно.
 
-<sup>2</sup> Из-за ограничений емкости регион недоступен при создании новых ресурсов. К таким ресурсам относятся учетные записи службы автоматизации и рабочие области Log Analytics. Однако уже существующие связанные ресурсы в регионе должны по-прежнему работать.
+<sup>2</sup> в этом регионе поддерживается только управление обновлениями, а другие функции, такие как отслеживание изменений и Инвентаризация, в настоящее время недоступны.
 
 ## <a name="unlink-a-workspace"></a>Отмена связи для рабочей области
 

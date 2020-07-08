@@ -3,15 +3,15 @@ title: Использование обозревателя Azure Cosmos DB дл�
 description: Обозреватель Azure Cosmos DB — это автономный веб-интерфейс, который позволяет просматривать и управлять данными, которые хранятся в базе данных Azure Cosmos DB.
 author: deborahc
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/23/2019
 ms.author: dech
-ms.openlocfilehash: 57ba647ade45928f03cd7fb2b037642d5e4d52cc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 918f5a4a572f5518e5ae1b08db3d88d559571ed7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79096813"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85261891"
 ---
 # <a name="work-with-data-using-azure-cosmos-explorer"></a>Работа с данными с помощью обозревателя Azure Cosmos 
 
@@ -41,7 +41,7 @@ ms.locfileid: "79096813"
 
    Выберите тип доступа, с которым вы хотите открыть учетную запись, и нажмите **Открыть**. После того, как вы откроете обозреватель, возможности будут такими же, как и на вкладке "Обозреватель данных" на портале Azure.   
 
-   ![Открытие обозревателя Azure Cosmos DB](./media/data-explorer/open-data-explorer-with-access-url.png)
+   :::image type="content" source="./media/data-explorer/open-data-explorer-with-access-url.png" alt-text="Открыть обозреватель Azure Cosmos DB":::
 
 ## <a name="known-issues"></a>Известные проблемы
 

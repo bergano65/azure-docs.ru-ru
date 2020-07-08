@@ -3,15 +3,16 @@ title: Определение уникальных ключей для конт�
 description: Узнайте, как определить уникальные ключи для контейнера Azure Cosmos с помощью портал Azure, PowerShell, .NET, Java и других пакетов SDK.
 author: ThomasWeiss
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/02/2019
 ms.author: thweiss
-ms.openlocfilehash: af68d733dfb0e0d1c257c8db03656112eec7381b
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.custom: tracking-python
+ms.openlocfilehash: 056cd77104fe73f19588f3d13e11dc06fd93c3f6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82871005"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85261551"
 ---
 # <a name="define-unique-keys-for-an-azure-cosmos-container"></a>Определение уникальных ключей для контейнера Azure Cosmos
 
@@ -33,7 +34,7 @@ ms.locfileid: "82871005"
 
 1. При необходимости добавьте больше записей уникального ключа. Для этого щелкните **+ Add unique key** (+ Добавить уникальный ключ).
 
-    ![Снимок экрана записи ограничения уникального ключа на портале Azure](./media/how-to-define-unique-keys/unique-keys-portal.png)
+    :::image type="content" source="./media/how-to-define-unique-keys/unique-keys-portal.png" alt-text="Снимок экрана записи ограничения уникального ключа на портале Azure":::
 
 ## <a name="use-powershell"></a>С использованием PowerShell
 
@@ -41,7 +42,7 @@ ms.locfileid: "82871005"
 
 ## <a name="use-the-net-sdk"></a>Использование пакета SDK для .NET
 
-# <a name="net-sdk-v2"></a>[ПАКЕТ SDK ДЛЯ .NET ВЕРСИИ 2](#tab/dotnetv2)
+# <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
 При создании контейнера с помощью [пакета SDK для .NET версии 2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/) объект `UniqueKeyPolicy` можно использовать для определения ограничений уникального ключа.
 
@@ -61,7 +62,7 @@ client.CreateDocumentCollectionAsync(UriFactory.CreateDatabaseUri("database"), n
 });
 ```
 
-# <a name="net-sdk-v3"></a>[ПАКЕТ SDK ДЛЯ .NET V3](#tab/dotnetv3)
+# <a name="net-sdk-v3"></a>[Пакет SDK для .NET версии 3](#tab/dotnetv3)
 
 При создании нового контейнера с помощью [пакета SDK для .NET v3](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)используйте API Fluent пакета SDK, чтобы объявить уникальные ключи в кратком и удобочитаемом виде.
 
@@ -148,7 +149,7 @@ client.CreateContainer('dbs/' + config['DATABASE'], {
 })
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [секционировании](partition-data.md)
 - [Как работает индексация](index-overview.md)

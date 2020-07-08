@@ -3,15 +3,16 @@ title: Управление политиками индексирования в
 description: Узнайте, как управлять политиками индексации, включать или исключать свойства из индексирования, определять индексацию с помощью различных пакетов SDK Azure Cosmos DB
 author: timsander1
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/28/2020
 ms.author: tisande
-ms.openlocfilehash: b913ba58252f4cb84d010aea39d371316582bd6d
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.custom: tracking-python
+ms.openlocfilehash: 8b41a92f16fe7d71c17b6460289db76bf02c62ce
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82869924"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85261517"
 ---
 # <a name="manage-indexing-policies-in-azure-cosmos-db"></a>Управление политиками индексирования в Azure Cosmos DB
 
@@ -42,7 +43,7 @@ ms.locfileid: "82869924"
     }
 ```
 
-Эта политика индексирования эквивалентна приведенной ниже таблице, в ```kind```которой ```dataType```вручную устанавливаются, и ```precision``` в значения по умолчанию. Эти свойства больше не нужны для явной установки, и их можно полностью опустить в политике индексирования (как показано в примере выше).
+Эта политика индексирования эквивалентна приведенной ниже таблице, в которой вручную устанавливаются ```kind``` , ```dataType``` и ```precision``` в значения по умолчанию. Эти свойства больше не нужны для явной установки, и их можно полностью опустить в политике индексирования (как показано в примере выше).
 
 ```json
     {
@@ -96,7 +97,7 @@ ms.locfileid: "82869924"
     }
 ```
 
-Эта политика индексирования эквивалентна приведенной ниже таблице, в ```kind```которой ```dataType```вручную устанавливаются, и ```precision``` в значения по умолчанию. Эти свойства больше не нужны для явной установки, и их можно полностью опустить в политике индексирования (как показано в примере выше).
+Эта политика индексирования эквивалентна приведенной ниже таблице, в которой вручную устанавливаются ```kind``` , ```dataType``` и ```precision``` в значения по умолчанию. Эти свойства больше не нужны для явной установки, и их можно полностью опустить в политике индексирования (как показано в примере выше).
 
 ```json
     {
@@ -175,7 +176,7 @@ ms.locfileid: "82869924"
 Кроме добавления и удаления путей отдельных свойств, вы также можете указать составной индекс. Если вы хотите выполнить запрос, который содержит предложение `ORDER BY` для нескольких свойств, эти свойства должны содержать [составной индекс](index-policy.md#composite-indexes) Кроме того, составные индексы будут иметь преимущество в производительности для запросов, имеющих фильтр и предложения ORDER BY для различных свойств.
 
 > [!NOTE]
-> Составные пути имеют неявные `/?` , так как только скалярное значение в этом пути индексируется. `/*` Подстановочные знаки не поддерживаются в составных путях. Не следует указывать `/?` или `/*` в составном пути.
+> Составные пути имеют неявные, `/?` так как только скалярное значение в этом пути индексируется. `/*`Подстановочные знаки не поддерживаются в составных путях. Не следует указывать `/?` или `/*` в составном пути.
 
 ### <a name="composite-index-defined-for-name-asc-age-desc"></a>Определенный составной индекс (name asc, age desc):
 
@@ -323,7 +324,7 @@ WHERE c.name = "Tim" AND c.age > 18
 
 ### <a name="no-indexing"></a>Без индексирования
 
-Эта политика отключит индексирование. Если `indexingMode` параметр имеет значение `none`, то нельзя задать TTL для контейнера.
+Эта политика отключит индексирование. Если параметр `indexingMode` имеет значение `none` , то нельзя задать TTL для контейнера.
 
 ```json
     {
@@ -361,7 +362,7 @@ WHERE c.name = "Tim" AND c.age > 18
 
 1. После завершения нажмите кнопку **Save** (Сохранить).
 
-![Управление индексированием с помощью портала Azure](./media/how-to-manage-indexing-policy/indexing-policy-portal.png)
+:::image type="content" source="./media/how-to-manage-indexing-policy/indexing-policy-portal.png" alt-text="Управление индексированием с помощью портал Azure":::
 
 ## <a name="use-the-azure-cli"></a>Использование Azure CLI
 
@@ -373,9 +374,9 @@ WHERE c.name = "Tim" AND c.age > 18
 
 ## <a name="use-the-net-sdk"></a><a id="dotnet-sdk"></a>Использование пакета SDK для .NET
 
-# <a name="net-sdk-v2"></a>[ПАКЕТ SDK ДЛЯ .NET ВЕРСИИ 2](#tab/dotnetv2)
+# <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
-`DocumentCollection` Объект из [пакета SDK .NET v2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/) предоставляет `IndexingPolicy` свойство, которое позволяет изменять `IndexingMode` и добавлять и удалять `IncludedPaths` и. `ExcludedPaths`
+`DocumentCollection`Объект из [пакета SDK .NET v2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/) предоставляет `IndexingPolicy` свойство, которое позволяет изменять `IndexingMode` и добавлять и удалять `IncludedPaths` и `ExcludedPaths` .
 
 ```csharp
 // Retrieve the container's details
@@ -403,9 +404,9 @@ ResourceResponse<DocumentCollection> container = await client.ReadDocumentCollec
 long indexTransformationProgress = container.IndexTransformationProgress;
 ```
 
-# <a name="net-sdk-v3"></a>[ПАКЕТ SDK ДЛЯ .NET V3](#tab/dotnetv3)
+# <a name="net-sdk-v3"></a>[Пакет SDK для .NET версии 3](#tab/dotnetv3)
 
-`ContainerProperties` Объект из [пакета SDK .NET v3](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) (см. [это краткое руководство](create-sql-api-dotnet.md) `IndexingPolicy` по использованию) предоставляет свойство, которое позволяет изменять `IndexingMode` и добавлять и удалять `IncludedPaths` и. `ExcludedPaths`
+`ContainerProperties`Объект из [пакета SDK .NET v3](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) (см. [это краткое руководство](create-sql-api-dotnet.md) по использованию) предоставляет `IndexingPolicy` свойство, которое позволяет изменять `IndexingMode` и добавлять и удалять `IncludedPaths` и `ExcludedPaths` .
 
 ```csharp
 // Retrieve the container's details
@@ -429,7 +430,7 @@ containerResponse.Resource.IndexingPolicy.CompositeIndexes.Add(new Collection<Co
 await client.GetContainer("database", "container").ReplaceContainerAsync(containerResponse.Resource);
 ```
 
-Чтобы отслеживать ход преобразования индекса, `RequestOptions` передайте объект, который устанавливает `PopulateQuotaInfo` свойство, в `true`, а затем извлекает значение из заголовка `x-ms-documentdb-collection-index-transformation-progress` ответа.
+Чтобы отслеживать ход преобразования индекса, передайте `RequestOptions` объект, который устанавливает `PopulateQuotaInfo` свойство, в `true` , а затем извлекает значение из `x-ms-documentdb-collection-index-transformation-progress` заголовка ответа.
 
 ```csharp
 // retrieve the container's details
@@ -746,7 +747,7 @@ response = database_client.replace_container(container_client, container['partit
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об индексировании см. по следующим ссылкам:
 

@@ -3,15 +3,15 @@ title: Миграция из библиотеки NET выполнителя в 
 description: Узнайте, как перенести приложение из использования библиотеки пакетного исполнителя в пакетную поддержку в Azure Cosmos DB SDK v3.
 author: ealsur
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/24/2020
 ms.author: maquaran
-ms.openlocfilehash: d63b34c118cd719f73abbd6711dcb3ef02a6fb28
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1f204b6d73f121b8f05c807d6be47c36c006f607
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82146291"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85261432"
 ---
 # <a name="migrate-from-the-bulk-executor-library-to-the-bulk-support-in-azure-cosmos-db-net-v3-sdk"></a>Миграция из библиотеки NET выполнителя в пакетную поддержку в Azure Cosmos DB пакете SDK для .NET v3
 
@@ -33,7 +33,7 @@ ms.locfileid: "82146291"
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="Model":::
 
-Если требуется выполнить групповое импорт (аналогично использованию BulkExecutor. Булкимпортасинк), необходимо иметь одновременные вызовы `CreateItemAsync`. Пример:
+Если требуется выполнить групповое импорт (аналогично использованию BulkExecutor. Булкимпортасинк), необходимо иметь одновременные вызовы `CreateItemAsync` . Пример:
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="BulkImport":::
 
@@ -41,7 +41,7 @@ ms.locfileid: "82146291"
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="BulkUpdate":::
 
-Если вы хотите выполнить групповое *Удаление* (аналогично использованию [BulkExecutor. булкделетеасинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkexecutor.bulkdeleteasync)), необходимо иметь одновременные вызовы `DeleteItemAsync`с ключом раздела `id` и для каждого элемента. Пример:
+Если вы хотите выполнить групповое *Удаление* (аналогично использованию [BulkExecutor. булкделетеасинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkexecutor.bulkdeleteasync)), необходимо иметь одновременные вызовы `DeleteItemAsync` с `id` ключом раздела и для каждого элемента. Пример:
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="BulkDelete":::
 
@@ -51,7 +51,7 @@ ms.locfileid: "82146291"
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="CaptureOperationResult":::
 
-`OperationResponse` Где объявлен как:
+Где `OperationResponse` объявлен как:
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="OperationResult":::
 
@@ -61,7 +61,7 @@ ms.locfileid: "82146291"
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="BulkOperationsHelper":::
 
-`ExecuteAsync` Метод будет ожидать завершения всех операций, и вы сможете использовать его следующим образом:
+`ExecuteAsync`Метод будет ожидать завершения всех операций, и вы сможете использовать его следующим образом:
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="WhenAll":::
 
@@ -71,7 +71,7 @@ ms.locfileid: "82146291"
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/BulkExecutorMigration/Program.cs" ID="ResponseType":::
 
-`BulkOperationResponse` Содержит:
+`BulkOperationResponse`Содержит:
 
 1. Общее время, затраченное на обработку списка операций с помощью группового поддержки.
 1. Количество успешных операций.
@@ -80,18 +80,18 @@ ms.locfileid: "82146291"
 
 ## <a name="retry-configuration"></a>Настройка повторных попыток
 
-Библиотека полного Исполнительного исполнителя представила [рекомендации](bulk-executor-dot-net.md#bulk-import-data-to-an-azure-cosmos-account) по `MaxRetryWaitTimeInSeconds` установке `MaxRetryAttemptsOnThrottledRequests` и [RetryOptions](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.connectionpolicy.retryoptions) для RetryOptions `0` в для делегирования управления библиотеке.
+Библиотека полного Исполнительного исполнителя представила [рекомендации](bulk-executor-dot-net.md#bulk-import-data-to-an-azure-cosmos-account) по установке и для RetryOptions в для `MaxRetryWaitTimeInSeconds` `MaxRetryAttemptsOnThrottledRequests` [RetryOptions](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.connectionpolicy.retryoptions) `0` делегирования управления библиотеке.
 
 Для пакетной поддержки в пакете SDK для .NET нет скрытого поведения. Параметры повтора можно настроить непосредственно с помощью [космосклиентоптионс. максретряттемптсонрателимитедрекуестс](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.maxretryattemptsonratelimitedrequests) и [космосклиентоптионс. MaxRetryWaitTimeOnRateLimitedRequests](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.maxretrywaittimeonratelimitedrequests).
 
 > [!NOTE]
 > В тех случаях, когда подготовленные единицы запроса значительно ниже, чем ожидалось, в зависимости от объема данных, может потребоваться задать для них высокие значения. Эта операция требует больше времени, но она имеет более высокую шансы на полное успешное завершение из-за более высоких повторных попыток.
 
-## <a name="performance-improvements"></a>Повышение производительности
+## <a name="performance-improvements"></a>Улучшения производительности
 
 Как и в случае с другими операциями с пакетом SDK для .NET, использование интерфейсов API потока приводит к повышению производительности и позволяет избежать ненужной сериализации. 
 
-Использование API-интерфейсов потока возможно только в том случае, если характер используемых данных соответствует потоку байтов (например, потокам файлов). В таких случаях `CreateItemStreamAsync`использование методов, `ReplaceItemStreamAsync`или `DeleteItemStreamAsync` и работы с `ResponseMessage` (а не `ItemResponse`) увеличивает пропускную способность, которую можно достичь.
+Использование API-интерфейсов потока возможно только в том случае, если характер используемых данных соответствует потоку байтов (например, потокам файлов). В таких случаях использование `CreateItemStreamAsync` `ReplaceItemStreamAsync` методов, или `DeleteItemStreamAsync` и работы с `ResponseMessage` (а не `ItemResponse` ) увеличивает пропускную способность, которую можно достичь.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

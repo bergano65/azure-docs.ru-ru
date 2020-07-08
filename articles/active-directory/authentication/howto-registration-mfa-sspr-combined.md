@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40266f1b340ebe0ab665c576ff3be0e62ba7c705
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
-ms.translationtype: HT
+ms.openlocfilehash: 7feb69b2ea53794b780a983ed8ab4ba5874ac022
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83798283"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85260854"
 ---
 # <a name="enable-combined-security-information-registration-in-azure-active-directory"></a>Включение объединенной регистрации сведений о безопасности в Azure Active Directory
 
@@ -48,6 +48,9 @@ ms.locfileid: "83798283"
 ## <a name="conditional-access-policies-for-combined-registration"></a>Политики условного доступа для объединенной регистрации
 
 Защитить методы регистрации пользователей в службе Azure MFA и самостоятельного сброса пароля теперь можно с помощью пользовательских действий в политике условного доступа. Эта возможность доступна для тех организаций, которые включили [возможность объединенной регистрации](../authentication/concept-registration-mfa-sspr-combined.md). Эту возможность можно включить в тех организациях, где требуется регистрация пользователей для Azure MFA и SSPR в централизованном расположении, например доверенном сетевом расположении при подключении нового сотрудника.
+
+> [!NOTE]
+> Эта политика применяется только в том случае, если пользователь обращается к общей странице регистрации. Эта политика не применяет регистрацию MFA, когда пользователь обращается к другим приложениям. Политику регистрации MFA можно создать с помощью службы [защиты идентификации Azure. Настройте политику MFA](../identity-protection/howto-identity-protection-configure-mfa-policy.md).
 
 Дополнительные сведения о создании доверенных расположений с помощью условного доступа см. в статье [Что такое условие расположения в условном доступе Azure Active Directory?](../conditional-access/location-condition.md#named-locations)
 

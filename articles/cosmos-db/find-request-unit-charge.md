@@ -3,15 +3,15 @@ title: Определение расходов в единицах запрос�
 description: Узнайте, как определить расходы в единицах запроса (ЕЗ) для любой операции, выполняемой в контейнере Azure Cosmos.
 author: ThomasWeiss
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/01/2019
 ms.author: thweiss
-ms.openlocfilehash: e5420b9b765fffcf7b4ccd6775d05795b1b13871
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.openlocfilehash: bf109d3f15c9865a8e9ad1d27a1e8d320d172761
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82872232"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85261840"
 ---
 # <a name="find-the-request-unit-charge-in-azure-cosmos-db"></a>Определение расходов в единицах запроса в Azure Cosmos DB
 
@@ -37,11 +37,11 @@ ms.locfileid: "82872232"
 
 1. Выберите **Статистика запросов**, чтобы отобразилось количество ЕЗ, фактически затраченных на выполненный запрос.
 
-![Снимок экрана со сведениями о расходах в ЕЗ на SQL-запрос на портале Azure](./media/find-request-unit-charge/portal-sql-query.png)
+:::image type="content" source="./media/find-request-unit-charge/portal-sql-query.png" alt-text="Снимок экрана со сведениями о расходах в ЕЗ на SQL-запрос на портале Azure":::
 
 ### <a name="use-the-net-sdk"></a>Использование пакета SDK для .NET
 
-# <a name="net-sdk-v2"></a>[ПАКЕТ SDK ДЛЯ .NET ВЕРСИИ 2](#tab/dotnetv2)
+# <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
 Объекты, возвращаемые из [пакета SDK для .NET версии 2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/) предоставляют свойство `RequestCharge`.
 
@@ -76,7 +76,7 @@ while (query.HasMoreResults)
 }
 ```
 
-# <a name="net-sdk-v3"></a>[ПАКЕТ SDK ДЛЯ .NET V3](#tab/dotnetv3)
+# <a name="net-sdk-v3"></a>[Пакет SDK для .NET версии 3](#tab/dotnetv3)
 
 Объекты, возвращаемые из [пакета SDK для .NET версии 3](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) предоставляют свойство `RequestCharge`:
 
@@ -149,7 +149,7 @@ while (query.hasMoreResults()) {
 }
 ```
 
-Дополнительные сведения см. в разделе [Краткое руководство. Создание приложения Node. js с помощью учетной записи API Azure Cosmos DB SQL](create-sql-api-nodejs.md). 
+Дополнительные сведения см. в разделе [Краткое руководство. создание Node.js приложения с помощью учетной записи API Azure Cosmos DB SQL](create-sql-api-nodejs.md). 
 
 ### <a name="use-the-python-sdk"></a>Использование пакета SDK для Python
 
@@ -187,7 +187,7 @@ request_charge = client.last_response_headers['x-ms-request-charge']
 
 1. Выберите **Статистика запросов**, чтобы отобразилось количество ЕЗ, фактически затраченных на выполненный запрос.
 
-![Снимок экрана со сведениями о расходах в ЕЗ для MongoDB на портале Azure](./media/find-request-unit-charge/portal-mongodb-query.png)
+:::image type="content" source="./media/find-request-unit-charge/portal-mongodb-query.png" alt-text="Снимок экрана со сведениями о расходах в ЕЗ для MongoDB на портале Azure":::
 
 ### <a name="use-the-mongodb-net-driver"></a>Использование драйвера .NET для MongoDB
 
@@ -231,7 +231,7 @@ db.command({ getLastRequestStatistics: 1 }, function(err, result) {
 });
 ```
 
-Дополнительные сведения см. [в разделе Краткое руководство. Перенос существующего веб-приложения MongoDB Node. js в Azure Cosmos DB](create-mongodb-nodejs.md).
+Дополнительные сведения см. [в разделе Краткое руководство. Перенос существующего веб-приложения MongoDB Node.js в Azure Cosmos DB](create-mongodb-nodejs.md).
 
 ## <a name="cassandra-api"></a>API Cassandra
 
@@ -304,14 +304,14 @@ if (tableResult.RequestCharge.HasValue) // would be false when using Azure Stora
 
 Дополнительные сведения см. [в разделе Краткое руководство. создание API таблиц приложения с помощью пакета SDK для .NET и Azure Cosmos DB](create-table-dotnet.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения об оптимизации потребления ЕЗ см. в следующих статьях:
 
 * [Пропускная способность и единицы запросов в Azure Cosmos DB](request-units.md)
 * [Optimize provisioned throughput cost in Azure Cosmos DB](optimize-cost-throughput.md) (Оптимизация стоимости подготовленной пропускной способности в Azure Cosmos DB)
 * [Optimize query cost in Azure Cosmos DB](optimize-cost-queries.md) (Оптимизация затрат на отправку запросов в Azure Cosmos DB)
-* [Глобальное масштабирование подготовленной пропускной способности](scaling-throughput.md)
+* [Globally scale provisioned throughput](scaling-throughput.md) (Глобальное масштабирование подготовленной пропускной способности)
 * [Обеспечение необходимой пропускной способности для контейнеров и баз данных](set-throughput.md)
 * [Подготовка пропускной способности для контейнера](how-to-provision-container-throughput.md)
 * [Monitor and debug with metrics in Azure Cosmos DB](use-metrics.md) (Мониторинг и отладка с помощью метрик в Azure Cosmos DB)
