@@ -6,17 +6,17 @@ author: mlee3gsd
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 02/19/2019
 ms.author: martinle
 ms.reviewer: jrasnick
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 13b1f33ffe653627bcf45f6c995e82e741de32ea
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1177551b698bb2e295a71f6cd4a132411d1c5bea
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80742749"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85210700"
 ---
 # <a name="optimize-performance-by-upgrading-azure-synapse-analytics-sql-pool"></a>Оптимизация производительности путем обновления пула SQL Azure синапсе Analytics
 
@@ -31,7 +31,7 @@ ms.locfileid: "80742749"
 > [!IMPORTANT]
 > Это обновление применяется к Gen1 пулам SQL, оптимизированным для вычислений, в [поддерживаемых регионах](gen2-migration-schedule.md#automated-schedule-and-region-availability-table).
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 1. Проверьте, поддерживает ли ваш [регион](gen2-migration-schedule.md#automated-schedule-and-region-availability-table) перенос хранилища 1-го поколения в хранилище 2-го поколения. Обратите внимание на даты автоматического переноса. Чтобы избежать конфликтов с автоматизированным процессом, запланируйте ручной перенос на дату, предшествующую дате запуска автоматизированного процесса.
 2. Если вы находитесь в регионе, который еще не поддерживается, регулярно проверяйте, не был ли ваш регион добавлен в список поддерживаемых, или выполните [обновление с помощью восстановления](#upgrade-from-an-azure-geographical-region-using-restore-through-the-azure-portal) в поддерживаемый регион.
@@ -61,7 +61,7 @@ ms.locfileid: "80742749"
 - Миграция с GEN1 на Gen2 с помощью портал Azure является постоянной. Не существует процесса для возврата в Gen1.
 - Для миграции на Gen2 должен быть установлен пул SQL
 
-### <a name="before-you-begin"></a>Подготовка к работе
+### <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -110,7 +110,7 @@ ms.locfileid: "80742749"
 ## <a name="start-the-upgrade"></a>Начало обновления
 
 1. Перейдите в пул Gen1 SQL, оптимизированный для вычислений, в портал Azure. Если обновляемый пул SQL для оптимизированного уровня Gen1 будет приостановлен, [возобновите работу пула SQL](pause-and-resume-compute-portal.md).
-2. На вкладке Tasks (задачи) выберите **Upgrade to Gen2 (обновить до** карты): ![Upgrade_1](./media/upgrade-to-latest-generation/upgrade-to-gen2-1.png)
+2. На вкладке Tasks (задачи) выберите **Upgrade to Gen2 (обновить до** карты): ![ Upgrade_1](./media/upgrade-to-latest-generation/upgrade-to-gen2-1.png)
 
    > [!NOTE]
    > Если карта **Повысить до Gen2** не отображается на вкладке "Задачи", для типа вашей подписки действуют ограничения в текущем регионе.
@@ -238,7 +238,7 @@ $GeoRestoredDatabase.status
 ```
 
 > [!NOTE]
-> Чтобы настроить базу данных после восстановления, см. раздел [Настройка базы данных после восстановления](../../sql-database/sql-database-disaster-recovery.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#configure-your-database-after-recovery).
+> Чтобы настроить базу данных после восстановления, см. раздел [Настройка базы данных после восстановления](../../azure-sql/database/disaster-recovery-guidance.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#configure-your-database-after-recovery).
 
 Восстановленная база данных будет поддерживать прозрачное шифрование данных, если исходная база данных поддерживает прозрачное шифрование данных.
 

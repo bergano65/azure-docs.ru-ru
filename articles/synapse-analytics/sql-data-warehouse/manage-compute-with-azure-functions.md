@@ -6,17 +6,17 @@ author: julieMSFT
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 04/27/2018
 ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: aa2cff552b49bceeaf6fd46510bf78384f0e7bfb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9d680283250cc323c833f388f6b20d7fe6fa132d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80631967"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85211057"
 ---
 # <a name="use-azure-functions-to-manage-compute-resources-in-azure-synapse-analytics-sql-pool"></a>Использование функций Azure для управления ресурсами вычислений в пуле SQL Azure синапсе Analytics
 
@@ -29,7 +29,7 @@ ms.locfileid: "80631967"
 Чтобы развернуть шаблон, понадобится следующая информация:
 
 - Имя группы ресурсов, в которой находится экземпляр пула SQL
-- Имя логического сервера, в котором находится экземпляр пула SQL
+- Имя сервера, на котором находится экземпляр пула SQL
 - Имя экземпляра пула SQL
 - идентификатор клиента (идентификатор каталога) Azure Active Directory;
 - Идентификатор подписки
@@ -101,7 +101,7 @@ ms.locfileid: "80631967"
 
    ![Создание функции](./media/manage-compute-with-azure-functions/create-new-function.png)
 
-2. В поле "Язык" выберите *JavaScript*, а затем выберите *TimerTrigger*.
+2. На языке выберите *JavaScript*, а затем выберите *TimerTrigger*.
 
    ![Создание функции](./media/manage-compute-with-azure-functions/timertrigger-js.png)
 
@@ -115,7 +115,7 @@ ms.locfileid: "80631967"
 
 5. Установите для переменной операции требуемое поведение следующим образом:
 
-   ```javascript
+   ```JavaScript
    // Resume the SQL pool instance
    var operation = {
        "operationType": "ResumeDw"

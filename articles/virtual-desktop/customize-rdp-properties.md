@@ -4,32 +4,32 @@ description: Настройка свойств RDP для виртуальных
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
-ms.topic: conceptual
-ms.date: 04/30/2020
+ms.topic: how-to
+ms.date: 06/19/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 66b76fcdd9729b2a92ea2d561c740dbe148e0bbe
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: 9bc2116120f05db9cad63cc945df0ea4367fc3a4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82611557"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85207215"
 ---
 # <a name="customize-remote-desktop-protocol-properties-for-a-host-pool"></a>Настройка свойств протокол удаленного рабочего стола пула узлов
 
 >[!IMPORTANT]
->Это содержимое относится к обновлению пружины 2020 с Azure Resource Manager объектов виртуальных рабочих столов Windows. Если вы используете виртуальный рабочий стол Windows в выпуске 2019 без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/customize-rdp-properties-2019.md).
+>Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете выпуск Виртуального рабочего стола Windows за осень 2019 года без объектов Azure Resource Manager, см. [эту статью](./virtual-desktop-fall-2019/customize-rdp-properties-2019.md).
 >
-> Обновление 2020 виртуального рабочего стола Windows в настоящее время находится в общедоступной предварительной версии. Эта предварительная версия предоставляется без соглашения об уровне обслуживания, и мы не рекомендуем использовать ее для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. 
+> Обновление Виртуального рабочего стола Windows за весну 2020 года пока предоставляется как общедоступная предварительная версия. без соглашений об уровне обслуживания. Мы не рекомендуем использовать ее для выполнения производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Настройка свойств протокол удаленного рабочего стола пула узлов (RDP), таких как использование нескольких мониторов и перенаправление звука, позволяет обеспечить оптимальную работу пользователей в зависимости от их потребностей. Свойства RDP можно настроить в виртуальном рабочем столе Windows с помощью портал Azure или с помощью параметра *-кустомрдппроперти* в командлете **Update-азввдхостпул** .
 
 Полный список поддерживаемых свойств и их значений по умолчанию см. в разделе [Поддерживаемые параметры RDP-файла](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/rdp-files?context=/azure/virtual-desktop/context/context) .
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем начать, следуйте инструкциям в разделе [Настройка модуля PowerShell для виртуальных рабочих столов Windows](powershell-module.md) , чтобы настроить модуль PowerShell и войти в Azure.
+Прежде чем начать работу, выполните эти [ инструкции](powershell-module.md), чтобы настроить модуль PowerShell для Виртуального рабочего стола Windows и войти в Azure.
 
 ## <a name="default-rdp-properties"></a>Свойства RDP по умолчанию
 
@@ -37,7 +37,7 @@ ms.locfileid: "82611557"
 
 |Свойства RDP | Настольные системы | RemoteApps |
 |---|---| --- |
-| Режим с несколькими мониторами | Активировано | Н/Д |
+| Режим с несколькими мониторами | Включено | Н/Д |
 | Перенаправление дисков включено | Диски, буфер обмена, принтеры, COM-порты, USB-устройства и SmartCards| Диски, буфер обмена и принтеры |
 | Режим удаленного звука | Воспроизвести локально | Воспроизвести локально |
 
@@ -53,10 +53,10 @@ ms.locfileid: "82611557"
 4. На странице виртуальных рабочих столов Windows в меню в левой части экрана выберите **Пулы узлов** .
 5. Выберите **имя пула узлов** , который требуется обновить.
 6. Выберите **Свойства** в меню в левой части экрана.
-7. Выберите **параметры RDP** , чтобы начать редактирование свойств RDP.
+7. На вкладке **Свойства** перейдите в раздел **параметры RDP** , чтобы начать редактирование свойств RDP. Свойства должны быть представлены в формате с разделителями-запятыми, например в примерах PowerShell.
 8. Когда все будет готово, нажмите кнопку **сохранить** , чтобы сохранить изменения.
 
-Если требуется изменить параметр, который не отображается в меню параметры RDP, необходимо изменить его вручную, запустив командлеты в PowerShell. В следующих разделах вы узнаете, как изменить настраиваемые свойства RDP вручную в PowerShell.
+В следующих разделах вы узнаете, как изменить настраиваемые свойства RDP вручную в PowerShell.
 
 ## <a name="add-or-edit-a-single-custom-rdp-property"></a>Добавление или изменение одного настраиваемого свойства RDP
 
@@ -89,14 +89,14 @@ CustomRdpProperty : audiocapturemode:i:1;
 Чтобы добавить или изменить несколько настраиваемых свойств RDP, выполните следующие командлеты PowerShell, предоставив настраиваемые свойства RDP в виде строки с разделителями-запятыми:
 
 ```powershell
-$properties="<property1>;<property2>;<property3>" 
-Update-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> -CustomRdpProperty $properties 
+$properties="<property1>;<property2>;<property3>"
+Update-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> -CustomRdpProperty $properties
 ```
 
 Чтобы проверить, было ли Добавлено свойство RDP, выполните следующий командлет:
 
 ```powershell
-Get-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> | format-list Name, CustomRdpProperty 
+Get-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> | format-list Name, CustomRdpProperty
 
 Name              : <hostpoolname>
 CustomRdpProperty : <customRDPpropertystring>
@@ -105,9 +105,9 @@ CustomRdpProperty : <customRDPpropertystring>
 Если вы настроили несколько свойств RDP в пуле узлов 0301HP, то в соответствии с предыдущим примером командлет будет выглядеть следующим образом:
 
 ```powershell
-Get-AzWvdHostPool -ResourceGroupName 0301rg -Name 0301hp | format-list Name, CustomRdpProperty 
+Get-AzWvdHostPool -ResourceGroupName 0301rg -Name 0301hp | format-list Name, CustomRdpProperty
 
-Name              : 0301HP 
+Name              : 0301HP
 CustomRdpProperty : audiocapturemode:i:1;audiomode:i:0;
 ```
 
@@ -122,18 +122,18 @@ Update-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname>
 Чтобы убедиться, что этот параметр успешно удален, введите следующий командлет:
 
 ```powershell
-Get-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> | format-list Name, CustomRdpProperty 
+Get-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> | format-list Name, CustomRdpProperty
 
-Name              : <hostpoolname> 
+Name              : <hostpoolname>
 CustomRdpProperty : <CustomRDPpropertystring>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы настроили свойства протокола удаленного рабочего стола для определенного пула узлов, вы можете войти в клиент виртуальных рабочих столов Windows, чтобы протестировать их в рамках сеанса пользователя. В следующих руководствах вы узнаете, как подключиться к сеансу с помощью выбранного клиента:
 
-- [Подключение к клиенту Windows Desktop](connect-windows-7-and-10.md)
-- [Подключение к веб-клиенту](connect-web.md)
+- [Подключение с использованием клиента классических приложений Windows](connect-windows-7-and-10.md)
+- [Подключение с помощью веб-клиента](connect-web.md)
 - [Подключение к клиенту Android](connect-android.md)
 - [Подключение с помощью клиента macOS](connect-macos.md)
 - [Подключение с помощью клиента iOS](connect-ios.md)

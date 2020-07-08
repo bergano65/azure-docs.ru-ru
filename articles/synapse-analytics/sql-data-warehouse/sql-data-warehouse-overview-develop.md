@@ -6,16 +6,16 @@ author: XiaoyuMSFT
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 08/29/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 12f91633834ee98582eaad886b48eb8619378265
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a3c0d7924fb550761d050c9c404b1065c7d3cf72
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81411675"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85211499"
 ---
 # <a name="design-decisions-and-coding-techniques-for-a-synapse-sql-pool-in-azure-synapse-analytics"></a>Разработка решений и методов программирования для пула синапсе SQL в Azure синапсе Analytics 
  В этой статье вы найдете дополнительные ресурсы, которые помогут вам лучше понять ключевые решения по проектированию, рекомендации и методы программирования для пула SQL в Azure синапсе.
@@ -27,9 +27,9 @@ ms.locfileid: "81411675"
 * [параллелизма](resource-classes-for-workload-management.md)
 * [провод](sql-data-warehouse-develop-transactions.md)
 * [определяемые пользователем схемы](sql-data-warehouse-develop-user-defined-schemas.md)
-* [распределение таблиц](sql-data-warehouse-tables-distribute.md);
-* [индексы таблицы](sql-data-warehouse-tables-index.md);
-* [разделы таблицы;](sql-data-warehouse-tables-partition.md)
+* [распределение таблиц](sql-data-warehouse-tables-distribute.md)
+* [индексы таблицы](sql-data-warehouse-tables-index.md)
+* [секции таблицы](sql-data-warehouse-tables-partition.md)
 * [CTAS](sql-data-warehouse-develop-ctas.md)
 * [статистически](sql-data-warehouse-tables-statistics.md)
 
@@ -41,7 +41,7 @@ ms.locfileid: "81411675"
 * [представления;](sql-data-warehouse-develop-views.md)
 * [временные таблицы](sql-data-warehouse-tables-temporary.md)
 * [динамический SQL](sql-data-warehouse-develop-dynamic-sql.md)
-* [циклы](sql-data-warehouse-develop-loops.md);
+* [циклов](sql-data-warehouse-develop-loops.md)
 * [Параметры группировки](sql-data-warehouse-develop-group-by-options.md)
 * [Присваивание переменной](sql-data-warehouse-develop-variable-assignment.md)
 

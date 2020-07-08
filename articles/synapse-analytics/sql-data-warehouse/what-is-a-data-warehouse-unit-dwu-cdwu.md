@@ -6,17 +6,17 @@ author: mlee3gsd
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 11/22/2019
 ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: db282bae92ec14c1cb4f6a61b61d435814b0f13c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e96fc9af0aa4f362256a5f0fee9465441a1c3928
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81408054"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85210632"
 ---
 # <a name="data-warehouse-units-dwus"></a>Единицы хранилища данных (Dwu)
 
@@ -72,7 +72,7 @@ CREATE DATABASE mySQLDW
 
 Эти единицы поддерживают масштабирование вверх или вниз вычислительных ресурсов, а также приостановку вычислений, когда не нужно использовать хранилище данных. Все эти операции можно использовать по запросу. Чтобы улучшить уровень производительности, на вычислительных узлах поколения 2 используется локальный кэш на основе диска. При масштабировании или остановке системы кэш становится недействительным. Это значит, что для достижения оптимальной производительности требуется период подготовки кэша.  
 
-Для каждого сервера SQL (например, myserver.database.windows.net) предусмотрена квота [DTU (единицы передачи данных)](../../sql-database/sql-database-service-tiers-dtu.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json), которая позволяет применить только определенное число единиц использования хранилища данных. Дополнительные сведения см. в статье об [ограничениях емкости для управления рабочей нагрузкой](sql-data-warehouse-service-capacity-limits.md#workload-management).
+Для каждого сервера SQL (например, myserver.database.windows.net) предусмотрена квота [DTU (единицы передачи данных)](../../azure-sql/database/service-tiers-dtu.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json), которая позволяет применить только определенное число единиц использования хранилища данных. Дополнительные сведения см. в статье об [ограничениях емкости для управления рабочей нагрузкой](sql-data-warehouse-service-capacity-limits.md#workload-management).
 
 ## <a name="capacity-limits"></a>Ограничения емкости
 
@@ -107,7 +107,7 @@ CREATE DATABASE mySQLDW
 Чтобы просмотреть текущие параметры DWU, сделайте следующее:
 
 1. Откройте обозреватель объектов SQL Server в Visual Studio.
-2. Подключитесь к базе данных master, связанной с логическим сервером Базы данных SQL.
+2. Подключитесь к базе данных master, связанной с логическим сервером SQL Server.
 3. Выберите в sys.database_service_objectives динамическое административное представление. Например:
 
 ```sql
@@ -149,7 +149,7 @@ Set-AzSqlDatabase -DatabaseName "MySQLDW" -ServerName "MyServer" -RequestedServi
 
 Изменение DWU:
 
-1. Подключитесь к базе данных master, связанной с логическим сервером Базы данных SQL.
+1. Подключитесь к базе данных master, связанной с вашим сервером.
 2. Используйте оператор TSQL [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). В приведенном ниже примере для базы данных MySQLDW устанавливается целевой уровень обслуживания DW1000c.
 
 ```Sql
@@ -185,7 +185,7 @@ Content-Type: application/json; charset=UTF-8
 
 Чтобы проверить состояние изменений DWU, сделайте следующее:
 
-1. Подключитесь к базе данных master, связанной с логическим сервером Базы данных SQL.
+1. Подключитесь к базе данных master, связанной с вашим сервером.
 2. Отправьте запрос ниже, чтобы проверить состояние базы данных.
 
 ```sql

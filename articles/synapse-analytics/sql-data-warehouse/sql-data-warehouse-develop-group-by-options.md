@@ -6,17 +6,17 @@ author: XiaoyuMSFT
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 5d8d4c6d47e33ca365415542c2da9779b4d7d1dd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 260bd7cc6402a7cb4ed17d004d0f61b7462c51d3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81416201"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85213454"
 ---
 # <a name="group-by-options-in-synapse-sql-pool"></a>Группирование по параметрам в пуле синапсе SQL
 
@@ -52,7 +52,7 @@ GROUP BY ROLLUP (
 Используя ROLLUP, приведенный выше пример запрашивает следующие объединения.
 
 * Страна и регион
-* Country
+* Страна или регион
 * Grand Total
 
 Чтобы получить те же результаты без ROLLUP, можно использовать оператор UNION ALL и явным образом указать требуемые объединения.
@@ -183,6 +183,6 @@ ORDER BY 1,2,3
 
 Разбивая код на разделы и создавая циклическую конструкцию, код станет более управляемым и обслуживаемым.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](sql-data-warehouse-overview-develop.md).
+Дополнительные советы по разработке приведены в [обзоре разработки](sql-data-warehouse-overview-develop.md).

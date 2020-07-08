@@ -2,14 +2,14 @@
 title: Использование интерфейсов API службы Azure Блокчейн Workbench
 description: Сценарии использования предварительной версии Azure Блокчейн Workbench REST API
 ms.date: 03/05/2020
-ms.topic: article
+ms.topic: how-to
 ms.reviewer: brendal
-ms.openlocfilehash: 3084fcf343bc42fe01bf352b6791916d62f63540
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7c96e45c8bcc9834df7ef2a0b2a59f53fd8315cf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78672752"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85210068"
 ---
 # <a name="using-the-azure-blockchain-workbench-preview-rest-api"></a>Использование предварительной версии Azure Блокчейн Workbench REST API
 
@@ -28,7 +28,7 @@ Azure Блокчейн Workbench Preview REST API предоставляет р�
 
     ![URL-адрес конечной точки API службы приложений](media/use-api/app-service-api.png)
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Запросы к Блокчейн Workbench REST API защищены с помощью Azure Active Directory (Azure AD).
 

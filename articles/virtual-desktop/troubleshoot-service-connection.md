@@ -5,15 +5,15 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: troubleshooting
-ms.date: 05/20/2020
+ms.date: 06/19/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 7bf05fe039de2ab9e25495f9e2652fde8fac34e1
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: 56a31caeefb3589527fdbbac118fa3a544a0d1a1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83747700"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85208899"
 ---
 # <a name="windows-virtual-desktop-service-connections"></a>Подключения к службе Виртуального рабочего стола Windows
 
@@ -33,15 +33,17 @@ ms.locfileid: "83747700"
 
 Пользователь успешно запускает клиент удаленного рабочего стола и выполняет проверку подлинности, но не видит никаких значков в веб-канале обнаружения.
 
-Убедитесь, что пользователю, у которого возникла проблема, назначены группы приложений, выполнив следующую командную строку:
+1. Убедитесь, что пользователю, у которого возникла проблема, назначены группы приложений, выполнив следующую командную строку:
 
-```PowerShell
-Get-AzRoleAssignment -SignInName <userupn>
-```
+     ```powershell
+     Get-AzRoleAssignment -SignInName <userupn>
+     ```
 
-Убедитесь, что этот пользователь входит в систему с правильными учетными данными.
+2. Убедитесь, что этот пользователь входит в систему с правильными учетными данными.
 
-Если используется веб-клиент, проверьте возможные проблемы с кэшированием учетных данных.
+3. Если используется веб-клиент, проверьте возможные проблемы с кэшированием учетных данных.
+
+4. Если пользователь входит в группу пользователей Azure Active Directory (AD), убедитесь, что группа пользователей является группой безопасности, а не группой рассылки. Виртуальный рабочий стол Windows не поддерживает группы рассылки Azure AD.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -49,4 +51,4 @@ Get-AzRoleAssignment -SignInName <userupn>
 - Инструкции по устранению неполадок при создании среды Виртуального рабочего стола Windows и пула узлов в среде Виртуального рабочего стола Windows см. в [этой статье](troubleshoot-set-up-issues.md).
 - Инструкции по устранению неполадок при настройке виртуальной машины через Виртуальный рабочий стол Windows см. в статье [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
 - Инструкции по устранению неполадок при использовании PowerShell через Виртуальный рабочий стол Windows см. в статье [Виртуальный рабочий стол Windows — PowerShell](troubleshoot-powershell.md).
-- Сведения об устранении неполадок см. в статье [Tutorial: Руководство по устранению неполадок при развертывании шаблонов ARM](../azure-resource-manager/templates/template-tutorial-troubleshoot.md).
+- Сведения об устранении неполадок см. в статье [Tutorial: Troubleshoot Resource Manager template deployments](../azure-resource-manager/templates/template-tutorial-troubleshoot.md) (Руководство. Устранение неполадок развертывания шаблонов Resource Manager)

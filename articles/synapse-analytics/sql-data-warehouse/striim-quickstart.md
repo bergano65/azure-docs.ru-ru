@@ -6,17 +6,17 @@ author: mlee3gsd
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 10/12/2018
 ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: e963d62df8d2c416726852ee3d46daf1cd22936e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 945bcd03bc3bf13517836e7a5624bd5142782183
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80349943"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85208558"
 ---
 # <a name="striim-azure-sql-dw-marketplace-offering-install-guide"></a>Руководство по установке Striim для хранилища данных SQL Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "80349943"
 
 ![Настройка Striim][configure]
 
-После развертывания щелкните имя \<виртуальной машины>-мастерноде в портал Azure, щелкните подключить и скопируйте имя входа с помощью локальной учетной записи виртуальной машины. 
+После развертывания щелкните основной узел \<VM Name> на портале Azure, щелкните "Подключить" и скопируйте имя для входа, используя локальную учетную запись виртуальной машины. 
 
 ![Подключение Striim к хранилищу данных SQL Azure][connect]
 
@@ -56,7 +56,7 @@ ms.locfileid: "80349943"
 
 ![Запуск кластера Striim][start-striim]
 
-Теперь откройте свой любимый браузер и перейдите к \<DNS-имени>:9080
+Теперь откройте свой браузер и перейдите по адресу \<DNS Name>:9080
 
 ![Переход на экран входа][navigate]
 

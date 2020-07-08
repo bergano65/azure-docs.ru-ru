@@ -2,14 +2,14 @@
 title: Настройка доступа к Azure Active Directoryу Azure Блокчейн Service
 description: Как настроить службу Блокчейн Azure с доступом к Azure Active Directory
 ms.date: 11/22/2019
-ms.topic: article
+ms.topic: how-to
 ms.reviewer: janders
-ms.openlocfilehash: 682ab282036fcd592e66942d08a84cdce46d8915
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 337d01abc51d310d06aeea3427b770132be4824c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74455874"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85208779"
 ---
 # <a name="how-to-configure-azure-active-directory-access-for-azure-blockchain-service"></a>Настройка Azure Active Directoryного доступа для службы Azure Блокчейн
 
@@ -17,7 +17,7 @@ ms.locfileid: "74455874"
 
 Azure AD обеспечивает облачное управление удостоверениями и позволяет использовать единое удостоверение во всем корпоративном приложении и доступ к приложениям в Azure. Служба Блокчейн Azure интегрирована с Azure AD и предоставляет такие преимущества, как Федерация идентификации, единый вход и многофакторная идентификация.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * [Создание элемента блокчейн с помощью портал Azure](create-member.md)
 
@@ -41,7 +41,7 @@ Azure AD обеспечивает облачное управление удос
 
     ![Добавление назначения роли](./media/configure-aad/add-role-assignment.png)
 
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 ### <a name="grant-node-level-access"></a>Предоставление доступа на уровне узла
 
@@ -63,7 +63,7 @@ git clone https://github.com/Microsoft/azure-blockchain-connector.git
 
 ### <a name="connect-using-an-azure-ad-user-account"></a>Подключение с использованием учетной записи пользователя Azure AD
 
-1. Выполните следующую команду для проверки подлинности с помощью учетной записи пользователя Azure AD. Замените \<мяаддиректори\> на домен Azure AD. Например, `yourdomain.onmicrosoft.com`.
+1. Выполните следующую команду для проверки подлинности с помощью учетной записи пользователя Azure AD. Замените \<myAADDirectory\> доменом Azure AD. Например, `yourdomain.onmicrosoft.com`.
 
     ```
     connector.exe -remote <myMemberName>.blockchain.azure.com:3200 -method aadauthcode -tenant-id <myAADDirectory> 
@@ -87,7 +87,7 @@ git clone https://github.com/Microsoft/azure-blockchain-connector.git
 connector.exe -remote <myBlockchainEndpoint>  -method aadclient -client-id <myClientID> -client-secret "<myClientSecret>" -tenant-id <myAADDirectory>
 ```
 
-| Параметр | Описание |
+| Параметр | Описание: |
 |-----------|-------------|
 | Идентификатор клиента | Домен Azure AD, например`yourdomain.onmicrosoft.com`
 | client-id | Идентификатор клиента зарегистрированного приложения в Azure AD
@@ -99,12 +99,12 @@ connector.exe -remote <myBlockchainEndpoint>  -method aadclient -client-id <myCl
 
 Для мобильного устройства или текстового браузера, где всплывающее окно проверки подлинности Azure AD невозможно, Azure AD создает одноразовый секретный код. Вы можете скопировать секретный код и продолжить проверку подлинности Azure AD в другой среде.
 
-Чтобы создать секретный код, замените **аадаускоде** на **ааддевице**. Замените \<мяаддиректори\> на домен Azure AD. Например, `yourdomain.onmicrosoft.com`.
+Чтобы создать секретный код, замените **аадаускоде** на **ааддевице**. Замените \<myAADDirectory\> доменом Azure AD. Например, `yourdomain.onmicrosoft.com`.
 
 ```
 connector.exe -remote <myBlockchainEndpoint>  -method aaddevice -tenant-id <myAADDirectory>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о безопасности данных в службе Azure Блокчейн см. в статье [Безопасность службы Блокчейн Azure](data-security.md).

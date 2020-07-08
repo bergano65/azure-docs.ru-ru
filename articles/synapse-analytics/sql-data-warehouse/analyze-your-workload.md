@@ -6,21 +6,21 @@ author: ronortloff
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 6a38fe65b4aedf4f594531f5e9cd8cf9b5dfaac7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c547263be8c61d75491d1517b58c03b6365ef929
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80631236"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85208405"
 ---
 # <a name="analyze-your-workload-in-azure-synapse-analytics"></a>Анализ рабочей нагрузки в Azure синапсе Analytics
 
-Методы анализа рабочей нагрузки SQL синапсе в Azure синапсе Analytics.
+Методы анализа рабочей нагрузки SQL синапсе в Azure синапсе Analytics. 
 
 ## <a name="resource-classes"></a>Классы ресурсов
 
@@ -151,6 +151,6 @@ FROM    sys.dm_pdw_wait_stats w
 ;
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об управлении пользователями и безопасностью баз данных см. [в разделе Защита базы данных в СИНАПСЕ SQL](sql-data-warehouse-overview-manage-security.md). Дополнительные сведения о повышении качества кластеризованных индексов columnstore за счет повышения класса ресурсов см. в разделе [Повышение качества сегментов за счет перестроения индексов](sql-data-warehouse-tables-index.md#rebuilding-indexes-to-improve-segment-quality).
+Дополнительные сведения об управлении пользователями и безопасностью базы данных см. в статье о [защите базы данных в Synapse SQL](sql-data-warehouse-overview-manage-security.md). Дополнительные сведения о том, как крупные классы ресурсов могут улучшить качество кластеризованных индексов columnstore, см. [в разделе перестроение индексов для улучшения качества сегментов](sql-data-warehouse-tables-index.md#rebuilding-indexes-to-improve-segment-quality).

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: codepen
-ms.openlocfilehash: 1675d63fd3a65beda46042f4a78535bb4e066e62
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7c23e659463364c5e1a497ead138abb4c696627a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77190233"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85207504"
 ---
 # <a name="create-a-data-source"></a>Создание источника данных
 
@@ -22,11 +22,52 @@ Azure Maps веб-пакет SDK хранит данные в источника
 
 **Источник данных геоjson**
 
-Источник данных на основе геообъектного формата JSON загружает и сохраняет `DataSource` данные локально с помощью класса. Данные геоjson можно создавать или создавать вручную с помощью вспомогательных классов в пространстве имен [Atlas. Data](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data) . `DataSource` Класс предоставляет функции для импорта локальных и удаленных геоjson файлов. Удаленные геоjson-файлы должны размещаться на конечной точке с поддержкой CORs. `DataSource` Класс предоставляет функциональные возможности для данных точки кластеризации. И можно легко добавлять, удалять и обновлять данные с помощью `DataSource` класса.
+Источник данных на основе геообъектного формата JSON загружает и сохраняет данные локально с помощью `DataSource` класса. Данные геоjson можно создавать или создавать вручную с помощью вспомогательных классов в пространстве имен [Atlas. Data](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data) . `DataSource`Класс предоставляет функции для импорта локальных и удаленных геоjson файлов. Удаленные геоjson-файлы должны размещаться на конечной точке с поддержкой CORs. `DataSource`Класс предоставляет функциональные возможности для данных точки кластеризации. И можно легко добавлять, удалять и обновлять данные с помощью `DataSource` класса. В следующем коде показано, как можно создавать геообъектные данные JSON в Azure Maps.
 
+```Javascript
+//Create raw GeoJSON object.
+var rawGeoJson = {
+     "type": "Feature",
+     "geometry": {
+         "type": "Point",
+         "coordinates": [-100, 45]
+     },
+     "properties": {
+         "custom-property": "value"
+     }
+};
+
+//Create GeoJSON using helper classes (less error prone).
+var geoJsonClass = new atlas.data.Feature(new atlas.data.Point([-100, 45]), {
+    "custom-property": "value"
+}); 
+```
+
+После создания источники данных можно добавить на карту с помощью `map.sources` свойства, которое является [саурцеманажер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.sourcemanager). В следующем коде показано, как создать объект `DataSource` и добавить его в карту.
+
+```javascript
+//Create a data source and add it to the map.
+var dataSource = new atlas.source.DataSource();
+map.sources.add(dataSource);
+```
+
+В следующем коде показаны различные способы добавления данных геообъектного формата JSON в `DataSource` .
+
+```Javascript
+//GeoJsonData in the following code can be a single or array of GeoJSON features or geometries, a GeoJSON feature colleciton, or a single or array of atlas.Shape objects.
+
+//Add geoJSON object to data source. 
+dataSource.add(geoJsonData);
+
+//Load geoJSON data from URL. URL should be on a CORs enabled endpoint.
+dataSource.importDataFromUrl(geoJsonUrl);
+
+//Overwrite all data in data source.
+dataSource.setShapes(geoJsonData);
+```
 
 > [!TIP]
-> Допустим, вы хотите перезаписать все данные в `DataSource`. При вызове функций `clear` then `add` карту могут повторно отрисовываться дважды, что может привести к некоторой задержке. Вместо этого используйте `setShapes` функцию, которая удалит и заменит все данные в источнике данных и запустит только одну повторную визуализацию схемы.
+> Допустим, вы хотите перезаписать все данные в `DataSource` . При вызове `clear` `add` функций then карту могут повторно отрисовываться дважды, что может привести к некоторой задержке. Вместо этого используйте `setShapes` функцию, которая удалит и заменит все данные в источнике данных и запустит только одну повторную визуализацию схемы.
 
 **Источник плитки вектора**
 
@@ -38,14 +79,6 @@ Azure Maps веб-пакет SDK хранит данные в источника
  - Поскольку данные доставляются в виде векторной формы, для подготовки данных требуется меньше обработки на стороне сервера. В результате новые данные можно сделать доступными быстрее.
 
 Все слои, использующие Векторный источник, должны указывать `sourceLayer` значение.
-
-После создания источники данных можно добавить на карту с помощью `map.sources` свойства, которое является [саурцеманажер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.sourcemanager). В следующем коде показано, как создать объект `DataSource` и добавить его в карту.
-
-```javascript
-//Create a data source and add it to the map.
-var dataSource = new atlas.source.DataSource();
-map.sources.add(dataSource);
-```
 
 Azure Maps соответствует [спецификации плитки вектора мапбокс](https://github.com/mapbox/vector-tile-spec)— открытым стандартом.
 
@@ -119,7 +152,7 @@ var bubbleLayer = new atlas.layer.BubbleLayer(dataSource, 'myBubbleLayer', {
 map.layers.add([polygonLayer, lineLayer, bubbleLayer]);
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
@@ -147,7 +180,7 @@ map.layers.add([polygonLayer, lineLayer, bubbleLayer]);
 > [Добавление слоя символов](map-add-pin.md)
 
 > [!div class="nextstepaction"]
-> [Добавить пузырьковый слой](map-add-bubble-layer.md)
+> [Добавление слоя пузырьков](map-add-bubble-layer.md)
 
 > [!div class="nextstepaction"]
 > [Добавление слоя линий](map-add-line-layer.md)

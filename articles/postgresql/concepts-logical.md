@@ -5,41 +5,59 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 03/31/2020
-ms.openlocfilehash: 1213b38f2b67e8fed179cfda4308943808893e1b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/22/2020
+ms.openlocfilehash: 363c003a915763a7ab1165c2e0d8f945bc3dd510
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80522151"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85213692"
 ---
 # <a name="logical-decoding"></a>Логическое декодирование
  
 [Логическое декодирование в PostgreSQL](https://www.postgresql.org/docs/current/logicaldecoding.html) позволяет передавать изменения данных внешним потребителям. Логическое декодирование часто используется для потоковой передачи событий и сценариев отслеживания измененных данных.
 
-При логическом декодировании используется подключаемый модуль вывода для преобразования журнала упреждающего ввода postgres (WAL) в доступный для чтения формат. База данных Azure для PostgreSQL предоставляет два подключаемых модуля выходных данных: [test_decoding](https://www.postgresql.org/docs/current/test-decoding.html) и [wal2json](https://github.com/eulerto/wal2json).
- 
+При логическом декодировании используется подключаемый модуль вывода для преобразования журнала упреждающего ввода postgres (WAL) в доступный для чтения формат. Служба "база данных Azure для PostgreSQL" предоставляет выходные подключаемые модули [wal2json](https://github.com/eulerto/wal2json), [test_decoding](https://www.postgresql.org/docs/current/test-decoding.html) и пгаутпут. пгаутпут становится доступным для postgres из postgres версии 10 и выше.
+
+Общие сведения о том, как работает логическое декодирование postgres, см. в [нашем блоге](https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/change-data-capture-in-postgres-how-to-use-logical-decoding-and/ba-p/1396421). 
 
 > [!NOTE]
 > Логическая декодирование находится в общедоступной предварительной версии в базе данных Azure для PostgreSQL-Single Server.
 
 
-## <a name="set-up-your-server"></a>Настройка сервера
-Чтобы начать работу с логическим декодированием, включите сервер для сохранения и потоковой передачи WAL. 
+## <a name="set-up-your-server"></a>Настройка сервера 
+Логическая декодирование и [Чтение реплик](concepts-read-replicas.md) зависят от postgres журнала упреждающего записи (WAL) для получения сведений. Для этих двух функций требуется разный уровень ведения журнала от postgres. Для логического декодирования требуется более высокий уровень ведения журнала, чем считывание реплик.
 
-1. Задайте Azure. replication_support для `logical` использования Azure CLI. 
+Чтобы настроить правильный уровень ведения журнала, используйте параметр поддержки репликации Azure. Поддержка репликации в Azure имеет три параметра:
+
+* **Off** — накладывает наименьшую информацию в Wal. Этот параметр недоступен на большинстве серверов базы данных Azure для PostgreSQL.  
+* **Реплика** — более подробная, чем **Off**. Это минимальный уровень ведения журнала, необходимый для работы [реплик чтения](concepts-read-replicas.md) . Этот параметр используется по умолчанию на большинстве серверов.
+* **Логический** — более подробный, чем **реплика**. Это минимальный уровень ведения журнала для работы логического декодирования. Реплики чтения также работают с этим параметром.
+
+После изменения этого параметра сервер необходимо перезапустить. На внутреннем уровне этот параметр задает параметры postgres `wal_level` , `max_replication_slots` и `max_wal_senders` .
+
+### <a name="using-azure-cli"></a>Использование Azure CLI
+
+1. Задайте для Azure. replication_support значение `logical` .
    ```
    az postgres server configuration set --resource-group mygroup --server-name myserver --name azure.replication_support --value logical
-   ```
+   ``` 
 
-   > [!NOTE]
-   > Если вы используете реплики чтения, Azure. replication_support задать также `logical` , чтобы разрешить выполнение реплик. Если вы прекращаете использовать логическое декодирование, измените параметр обратно на `replica`. 
-
-
-2. Чтобы изменения вступили в силу, перезагрузите сервер.
+2. Перезапустите сервер, чтобы применить изменение.
    ```
    az postgres server restart --resource-group mygroup --name myserver
    ```
+
+### <a name="using-azure-portal"></a>Использование портала Azure
+
+1. Задайте для параметра Поддержка репликации Azure значение **логический**. Нажмите кнопку **Сохранить**.
+
+   ![База данных Azure для PostgreSQL — репликация — поддержка репликации Azure](./media/concepts-logical/replication-support.png)
+
+2. Перезапустите сервер, чтобы применить изменение, выбрав **Да**.
+
+   ![База данных Azure для PostgreSQL-Replication-подтверждение перезапуска](./media/concepts-logical/confirm-restart.png)
+
 
 ## <a name="start-logical-decoding"></a>Начать логическое декодирование
 
@@ -141,7 +159,7 @@ SELECT pg_drop_replication_slot('test_slot');
 ```
 
 > [!IMPORTANT]
-> Если вы перестаете использовать логическое декодирование, измените Azure. replication_support `replica` обратно `off`на или. Сведения о WAL, сохраняемые `logical` с помощью, являются более подробными и должны быть отключены, если не используется логическое декодирование. 
+> Если вы перестаете использовать логическое декодирование, измените Azure. replication_support обратно на `replica` или `off` . Сведения о WAL, сохраняемые с помощью, `logical` являются более подробными и должны быть отключены, если не используется логическое декодирование. 
 
  
 ## <a name="next-steps"></a>Дальнейшие шаги
