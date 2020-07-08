@@ -10,12 +10,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: ''
 manager: anandsub
-ms.openlocfilehash: ca88e42438c7cb48b062aa67d82053afbb9244bf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6a3b463196142691a59f625429953d1e82502f3d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81418292"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85255540"
 ---
 # <a name="configure-the-azure-ssis-integration-runtime-for-high-performance"></a>Настройка среды выполнения интеграции Azure-SSIS для высокой производительности
 
@@ -51,25 +51,25 @@ $AzureSSISNodeNumber = 2
 # Azure-SSIS IR edition/license info: Standard or Enterprise
 $AzureSSISEdition = "Standard" # Standard by default, while Enterprise lets you use advanced/premium features on your Azure-SSIS IR
 # Azure-SSIS IR hybrid usage info: LicenseIncluded or BasePrice
-$AzureSSISLicenseType = "LicenseIncluded" # LicenseIncluded by default, while BasePrice lets you bring your own on-premises SQL Server license with Software Assurance to earn cost savings from Azure Hybrid Benefit (AHB) option
+$AzureSSISLicenseType = "LicenseIncluded" # LicenseIncluded by default, while BasePrice lets you bring your existing SQL Server license with Software Assurance to earn cost savings from Azure Hybrid Benefit (AHB) option
 # For a Standard_D1_v2 node, up to 4 parallel executions per node are supported, but for other nodes, up to max(2 x number of cores, 8) are currently supported
 $AzureSSISMaxParallelExecutionsPerNode = 8
 # Custom setup info
 $SetupScriptContainerSasUri = "" # OPTIONAL to provide SAS URI of blob container where your custom setup script and its associated files are stored
 # Virtual network info: Classic or Azure Resource Manager
-$VnetId = "[your virtual network resource ID or leave it empty]" # REQUIRED if you use Azure SQL Database with virtual network service endpoints/Managed Instance/on-premises data, Azure Resource Manager virtual network is recommended, Classic virtual network will be deprecated soon
-$SubnetName = "[your subnet name or leave it empty]" # WARNING: Please use the same subnet as the one used with your Azure SQL Database with virtual network service endpoints or a different subnet than the one used for your Managed Instance
+$VnetId = "[your virtual network resource ID or leave it empty]" # REQUIRED if you use Azure SQL Database with virtual network service endpoints/SQL Managed Instance/on-premises data, Azure Resource Manager virtual network is recommended, Classic virtual network will be deprecated soon
+$SubnetName = "[your subnet name or leave it empty]" # WARNING: Please use the same subnet as the one used with your Azure SQL Database with virtual network service endpoints or a different subnet than the one used for your SQL Managed Instance
 
 ### SSISDB info
-$SSISDBServerEndpoint = "[your Azure SQL Database server name or Managed Instance name.DNS prefix].database.windows.net" # WARNING: Please ensure that there is no existing SSISDB, so we can prepare and manage one on your behalf
+$SSISDBServerEndpoint = "[your server name or managed instance name.DNS prefix].database.windows.net" # WARNING: Please ensure that there is no existing SSISDB, so we can prepare and manage one on your behalf
 # Authentication info: SQL or Azure Active Directory (AAD)
 $SSISDBServerAdminUserName = "[your server admin username for SQL authentication or leave it empty for AAD authentication]"
 $SSISDBServerAdminPassword = "[your server admin password for SQL authentication or leave it empty for AAD authentication]"
-$SSISDBPricingTier = "[Basic|S0|S1|S2|S3|S4|S6|S7|S9|S12|P1|P2|P4|P6|P11|P15|…|ELASTIC_POOL(name = <elastic_pool_name>) for Azure SQL Database or leave it empty for Managed Instance]"
+$SSISDBPricingTier = "[Basic|S0|S1|S2|S3|S4|S6|S7|S9|S12|P1|P2|P4|P6|P11|P15|…|ELASTIC_POOL(name = <elastic_pool_name>) for Azure SQL Database or leave it empty for SQL Managed Instance]"
 ```
 
 ## <a name="azuressislocation"></a>AzureSSISLocation
-**AzureSSISLocation** — расположение для рабочего узла среды выполнения интеграции. Рабочий узел поддерживает постоянное подключение к базе данных каталога SSIS (SSISDB) в базе данных Azure SQL. Задайте для **AzureSSISLocation** то же расположение, что и для сервера Базы данных SQL, на котором размещена SSISDB, что позволяет среде выполнения интеграции работать максимально эффективно.
+**AzureSSISLocation** — расположение для рабочего узла среды выполнения интеграции. Рабочий узел поддерживает постоянное подключение к базе данных каталога SSIS (SSISDB) в базе данных SQL Azure. Задайте для **азурессислокатион** то же расположение, что и для [логического сервера SQL Server](../azure-sql/database/logical-servers.md) , на котором размещена база данных SSISDB, что позволяет среде выполнения интеграции работать как можно эффективнее.
 
 ## <a name="azuressisnodesize"></a>AzureSSISNodeSize
 Служба "Фабрика данных Azure", включая среду выполнения интеграции MSSQL Integration Services Azure, поддерживает следующие параметры:
@@ -79,18 +79,18 @@ $SSISDBPricingTier = "[Basic|S0|S1|S2|S3|S4|S6|S7|S9|S12|P1|P2|P4|P6|P11|P15|…
 -   Standard\_D2\_v2
 -   Standard\_D3\_v2
 -   Standard\_D4\_v2
--   Стандартный\_D2\_v3
--   Стандартный\_D4\_v3
--   Стандартный\_D8\_v3
--   Стандартный\_D16\_v3
--   Стандартный\_d32\_v3
--   Стандартный\_D64\_v3
--   Стандартный\_E2\_v3
--   Стандартная\_E4\_v3
--   Стандартный\_E8\_v3
--   Стандартный\_E16\_v3
--   Стандартный\_E32\_v3
--   Стандартный\_E64\_v3
+-   Стандартный \_ D2 \_ v3
+-   Стандартный \_ D4 \_ v3
+-   Стандартный \_ D8 \_ v3
+-   Стандартный \_ D16 \_ v3
+-   Стандартный \_ d32 \_ v3
+-   Стандартный \_ D64 \_ v3
+-   Стандартный \_ E2 \_ v3
+-   Стандартная \_ E4 \_ v3
+-   Стандартный \_ E8 \_ v3
+-   Стандартный \_ E16 \_ v3
+-   Стандартный \_ E32 \_ v3
+-   Стандартный \_ E64 \_ v3
 
 В неофициальном внутреннем тестировании командой разработчиков служб SSIS оказалось, что устройства серии D (а не серии A) лучше использовать для выполнения пакета служб SSIS.
 
@@ -121,26 +121,26 @@ $SSISDBPricingTier = "[Basic|S0|S1|S2|S3|S4|S6|S7|S9|S12|P1|P2|P4|P6|P11|P15|…
 Если вы уже используете мощный рабочий узел для запуска пакетов, увеличение значения **AzureSSISMaxParallelExecutionsPerNode** может повысить общую пропускную способность среды выполнения интеграции. Для узлов Standard_D1_v2 поддерживаются 1–4 параллельных выполнения на каждом узле. Для всех остальных типов узлов поддерживаются 1 – максимум (2 x количество ядер, 8) параллельных выполнений на каждом узле. Если вы хотите, чтобы **азурессисмакспараллелексекутионсперноде** за пределами поддерживаемого максимума, вы можете отправить запрос в службу поддержки и увеличить максимальное значение для вас и после этого вам потребуется использовать Azure PowerShell для обновления **азурессисмакспараллелексекутионсперноде**.
 Вы можете определить подходящее значение на основе стоимости пакета и следующих конфигураций для рабочих узлов. Дополнительные сведения см. в статье [Размеры виртуальных машин общего назначения](../virtual-machines/windows/sizes-general.md).
 
-| Размер             | vCPU | Память, ГиБ | Временное хранилище (SSD): ГиБ | Максимальная пропускная способность временного хранилища: операций ввода-вывода в секунду / скорость чтения (МБит/с) / скорость записи (МБит/с) | Макс. число дисков данных / пропускная способность: операций ввода-вывода в секунду | Максимальное число сетевых адаптеров и ожидаемая производительность сети (Мбит/с) |
+| Размер             | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальная пропускная способность временного хранилища: операций ввода-вывода в секунду / операций чтения в Мбит/с / операций записи в Мбит/с | Максимальное число дисков данных / пропускная способность: ОПЕРАЦИЙ ВВОДА-ВЫВОДА | Максимальное число сетевых адаптеров и ожидаемая производительность сети (Мбит/с) |
 |------------------|------|-------------|------------------------|------------------------------------------------------------|-----------------------------------|------------------------------------------------|
-| Standard\_D1\_v2 | 1    | 3,5         | 50                     | 3000 / 46 / 23                                             | 2 / 2x500                         | 2 / 750                                        |
+| Standard\_D1\_v2 | 1    | 3.5         | 50                     | 3000 / 46 / 23                                             | 2 / 2x500                         | 2 / 750                                        |
 | Standard\_D2\_v2 | 2    | 7           | 100                    | 6000 / 93 / 46                                             | 4 / 4x500                         | 2 / 1500                                       |
 | Standard\_D3\_v2 | 4    | 14          | 200                    | 12000 / 187 / 93                                           | 8 / 8x500                         | 4 / 3000                                       |
 | Standard\_D4\_v2 | 8    | 28          | 400                    | 24000 / 375 / 187                                          | 16 / 16x500                       | 8 / 6000                                       |
 | Standard\_A4\_v2 | 4    | 8           | 40                     | 4000 / 80 / 40                                             | 8 / 8x500                         | 4 / 1000                                       |
 | Standard\_A8\_v2 | 8    | 16          | 80                     | 8000 / 160 / 80                                            | 16 / 16x500                       | 8 / 2000                                       |
-| Стандартный\_D2\_v3 | 2    | 8           | 50                     | 3000 / 46 / 23                                             | 4 и 6x500                         | 2 / 1000                                       |
-| Стандартный\_D4\_v3 | 4    | 16          | 100                    | 6000 / 93 / 46                                             | 8 или 12x500                        | 2 / 2000                                       |
-| Стандартный\_D8\_v3 | 8    | 32          | 200                    | 12000 / 187 / 93                                           | 16 или 24x500                       | 4 / 4000                                       |
-| Стандартный\_D16\_v3| 16   | 64          | 400                    | 24000 / 375 / 187                                          | 32/48x500                        | 8/8000                                       |
-| Стандартный\_d32\_v3| 32   | 128         | 800                    | 48000 / 750 / 375                                          | 32/96x500                       | 8 / 16 000                                      |
-| Стандартный\_D64\_v3| 64   | 256         | 1600                   | 96000/1000/500                                         | 32/192x500                      | 8/30 000                                      |
-| Стандартный\_E2\_v3 | 2    | 16          | 50                     | 3000 / 46 / 23                                             | 4 и 6x500                         | 2 / 1000                                       |
-| Стандартная\_E4\_v3 | 4    | 32          | 100                    | 6000 / 93 / 46                                             | 8 или 12x500                        | 2 / 2000                                       |
-| Стандартный\_E8\_v3 | 8    | 64          | 200                    | 12000 / 187 / 93                                           | 16 или 24x500                       | 4 / 4000                                       |
-| Стандартный\_E16\_v3| 16   | 128         | 400                    | 24000 / 375 / 187                                          | 32/48x500                       | 8/8000                                       |
-| Стандартный\_E32\_v3| 32   | 256         | 800                    | 48000 / 750 / 375                                          | 32/96x500                       | 8 / 16 000                                      |
-| Стандартный\_E64\_v3| 64   | 432         | 1600                   | 96000/1000/500                                         | 32/192x500                      | 8/30 000                                      |
+| Стандартный \_ D2 \_ v3 | 2    | 8           | 50                     | 3000 / 46 / 23                                             | 4 и 6x500                         | 2 / 1000                                       |
+| Стандартный \_ D4 \_ v3 | 4    | 16          | 100                    | 6000 / 93 / 46                                             | 8 или 12x500                        | 2 / 2000                                       |
+| Стандартный \_ D8 \_ v3 | 8    | 32          | 200                    | 12000 / 187 / 93                                           | 16 или 24x500                       | 4 / 4000                                       |
+| Стандартный \_ D16 \_ v3| 16   | 64          | 400                    | 24000 / 375 / 187                                          | 32/48x500                        | 8/8000                                       |
+| Стандартный \_ d32 \_ v3| 32   | 128         | 800                    | 48000 / 750 / 375                                          | 32/96x500                       | 8 / 16 000                                      |
+| Стандартный \_ D64 \_ v3| 64   | 256         | 1600                   | 96000/1000/500                                         | 32/192x500                      | 8/30 000                                      |
+| Стандартный \_ E2 \_ v3 | 2    | 16          | 50                     | 3000 / 46 / 23                                             | 4 и 6x500                         | 2 / 1000                                       |
+| Стандартная \_ E4 \_ v3 | 4    | 32          | 100                    | 6000 / 93 / 46                                             | 8 или 12x500                        | 2 / 2000                                       |
+| Стандартный \_ E8 \_ v3 | 8    | 64          | 200                    | 12000 / 187 / 93                                           | 16 или 24x500                       | 4 / 4000                                       |
+| Стандартный \_ E16 \_ v3| 16   | 128         | 400                    | 24000 / 375 / 187                                          | 32/48x500                       | 8/8000                                       |
+| Стандартный \_ E32 \_ v3| 32   | 256         | 800                    | 48000 / 750 / 375                                          | 32/96x500                       | 8 / 16 000                                      |
+| Стандартный \_ E64 \_ v3| 64   | 432         | 1600                   | 96000/1000/500                                         | 32/192x500                      | 8/30 000                                      |
 
 Ниже приведены рекомендации по настройке правильного значения для свойства **AzureSSISMaxParallelExecutionsPerNode**. 
 
@@ -150,7 +150,7 @@ $SSISDBPricingTier = "[Basic|S0|S1|S2|S3|S4|S6|S7|S9|S12|P1|P2|P4|P6|P11|P15|…
 
 ## <a name="ssisdbpricingtier"></a>SSISDBPricingTier
 
-Ценовая категория **SSISDBPricingTier** предназначена для базы данных каталога SSIS (SSISDB) в базе данных Azure SQL. Этот параметр влияет на максимальное число рабочих ролей в экземпляре IR, на скорость помещения операции выполнения пакета в очередь, а также на скорость загрузки журнала выполнения.
+**СсисдбприЦингтиер** — это ценовая категория для базы данных каталога SSIS (SSISDB) в базе данных SQL Azure. Этот параметр влияет на максимальное число рабочих ролей в экземпляре IR, на скорость помещения операции выполнения пакета в очередь, а также на скорость загрузки журнала выполнения.
 
 -   Если для вас не имеет значения скорость помещения операции выполнения пакета в очередь и загрузки журнала выполнения, вы можете выбрать самый низкий уровень ценовой категории для базы данных. База данных SQL Azure с ценовой категорией "Базовый" поддерживает 8 рабочих ролей в экземпляре среды выполнения интеграции.
 
@@ -163,5 +163,5 @@ $SSISDBPricingTier = "[Basic|S0|S1|S2|S3|S4|S6|S7|S9|S12|P1|P2|P4|P6|P11|P15|…
 ## <a name="design-for-high-performance"></a>Проектирование для обеспечения высокой производительности
 Проектирование пакета SSIS для запуска в Azure отличается от проектирования пакета для локального выполнения. Для более эффективного выполнения в Azure SSIS IR вместо объединения нескольких независимых задач в том же пакете разделите их на несколько пакетов. Создайте выполнение для каждого пакета, чтобы не приходилось ожидать выполнения каждого из них. Такой подход обеспечивает масштабируемость среды выполнения интеграции Azure-SSIS и улучшает общую пропускную способность.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте больше о среде выполнения интеграции Azure-SSIS в [этом разделе](concepts-integration-runtime.md#azure-ssis-integration-runtime).

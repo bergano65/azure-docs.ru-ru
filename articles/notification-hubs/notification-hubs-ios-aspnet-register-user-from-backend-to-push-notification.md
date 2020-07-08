@@ -5,8 +5,6 @@ services: notification-hubs
 documentationcenter: ios
 author: sethmanheim
 manager: femila
-editor: jwargo
-ms.assetid: 4e3772cf-20db-4b9f-bb74-886adfaaa65d
 ms.service: notification-hubs
 ms.workload: mobile
 ms.tgt_pltfrm: ios
@@ -16,12 +14,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 3fec04a1a45f8b154e27a1e5303e44111f4cb421
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a36fdbb985711887baa04320bb75e1a85cab84fe
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "71211870"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85253874"
 ---
 # <a name="register-the-current-user-for-push-notifications-by-using-aspnet"></a>Регистрация текущего пользователя для push-уведомлений с помощью ASP.NET
 
@@ -124,7 +122,7 @@ ms.locfileid: "71211870"
     Таким образом задается маркер устройства для запроса.
 
    > [!NOTE]
-   > На этом этапе в методе не должно быть никакого другого кода. Если в методе `registerNativeWithDeviceToken` уже есть вызов, добавленный при изучении статьи [Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure](notification-hubs-ios-apple-push-notification-apns-get-started.md), этот вызов нужно закомментировать или удалить.
+   > На этом этапе в методе не должно быть никакого другого кода. Если у вас уже есть вызов `registerNativeWithDeviceToken` метода, который был добавлен после завершения работы с руководством [Отправка push-уведомлений в приложения iOS с помощью центров уведомлений Azure](ios-sdk-get-started.md) , необходимо закомментировать или удалить этот вызов.
 
 8. Добавьте следующий метод в файле `PushToUserAppDelegate.m`:
 
@@ -258,4 +256,4 @@ ms.locfileid: "71211870"
 
 <!-- URLs. -->
 [Уведомление пользователей с помощью концентраторов уведомлений]: notification-hubs-aspnet-backend-ios-apple-apns-notification.md
-[Приступая к работе с центрами уведомлений]: notification-hubs-ios-apple-push-notification-apns-get-started.md
+[Приступая к работе с центрами уведомлений]: ios-sdk-get-started.md

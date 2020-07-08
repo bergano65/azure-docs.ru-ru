@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: tagore
-ms.openlocfilehash: f5ebb8874b7e277d15ef89aa419c4d26560a6e76
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 71020453f51e5baa9172ad8902eeb537dd55763b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75386737"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85255234"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
 
@@ -42,7 +42,7 @@ ms.locfileid: "75386737"
 * Как отправлять файлы и хранить их в службе BLOB-объектов Azure.
 * Как использовать службу очередей Azure для связи между уровнями.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 В руководстве предполагается, что вы понимаете [базовые концепции облачной службы Azure](cloud-services-choose-me.md), такие как термины *веб-роль* и *рабочая роль*.  Кроме того, предполагается, что вы знаете, как работать с проектами [ASP.NET MVC](https://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started) или [веб-форм](https://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview) в Visual Studio. Пример приложения использует MVC, но многое в руководство также применимо к веб-формам.
 
 Вы можете запускать приложение локально без подписки Azure, но она понадобится для развертывания приложения в облаке. Если у вас нет учетной записи, можно [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A55E3C668) или [подписаться на бесплатную пробную версию](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A55E3C668).
@@ -50,8 +50,8 @@ ms.locfileid: "75386737"
 Инструкции учебника работают со следующими продуктами:
 
 * Visual Studio 2013
-* Visual Studio 2015
-* Visual Studio 2017
+* Visual Studio 2015
+* Visual Studio 2017
 * Visual Studio 2019
 
 Если у вас нет ни одного из этих продуктов, Visual Studio может быть установлен автоматически при установке пакета SDK для Azure.
@@ -91,7 +91,7 @@ ms.locfileid: "75386737"
     Приложение переходит к странице индексации, но не показывает эскиз для новой рекламы, поскольку индексирование еще не проводилось.
 10. Подождите немного и затем обновите страницу индексации, чтобы увидеть эскиз.
 
-     ![Страница индексации](./media/cloud-services-dotnet-get-started/list.png)
+     ![Страница индексов](./media/cloud-services-dotnet-get-started/list.png)
 11. Щелкните **Details** , чтобы увидеть рекламу в полный размер.
 
      ![Страница сведений](./media/cloud-services-dotnet-get-started/details.png)
@@ -104,9 +104,9 @@ ms.locfileid: "75386737"
 Чтобы запустить приложение в облаке, выполните следующие действия:
 
 * Создайте облачную службу Azure.
-* Создайте базу данных SQL Azure.
+* Создайте базу данных в Базе данных SQL Azure.
 * Создайте учетную запись хранения Azure.
-* Настройте приложение для использования базы данных SQL Azure, когда оно работает в облаке Azure.
+* Настройте решение для использования базы данных при ее запуске в Azure.
 * Настройте приложение на использование вашей учетной записи хранения при запуске в Azure.
 * Разверните проект в облачной службе Azure.
 
@@ -130,7 +130,7 @@ ms.locfileid: "75386737"
 
     ![Новая облачная служба](./media/cloud-services-dotnet-get-started/newcs.png)
 
-### <a name="create-an-azure-sql-database"></a>Создание базы данных SQL Azure
+### <a name="create-a-database-in-azure-sql-database"></a>Создание базы данных в службе "База данных SQL Azure"
 Когда приложение запускается в облаке, оно использует расположенную в облаке базу данных.
 
 1. На [портале Azure](https://portal.azure.com) последовательно выберите **Создать ресурс > Базы данных > База данных SQL**.
@@ -152,7 +152,7 @@ ms.locfileid: "75386737"
 8. Проверьте **Разрешить службам Azure доступ к серверу**.
 9. Нажмите кнопку **Выбрать** для нового сервера.
 
-    ![Новый сервер базы данных SQL](./media/cloud-services-dotnet-get-started/newdbserver.png)
+    ![Новый сервер](./media/cloud-services-dotnet-get-started/newdbserver.png)
 10. Нажмите кнопку **Создать**.
 
 ### <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
@@ -182,8 +182,9 @@ ms.locfileid: "75386737"
 
     На следующем рисунке показано создание учетной записи хранилища с URL-адресом `csvccontosoads.core.windows.net`.
 
-### <a name="configure-the-solution-to-use-your-azure-sql-database-when-it-runs-in-azure"></a>Настройка приложения для использования базы данных SQL Azure, когда оно работает в облаке Azure
-Веб-проект и проект рабочей роли имеют свои строки подключения к базе данных, и обе они должны указывать на базу данных SQL Azure, когда приложение работает в Azure.
+### <a name="configure-the-solution-to-use-your-database-in-azure-sql-database-when-it-runs-in-azure"></a>Настройка решения для использования базы данных в базе данных SQL Azure при ее запуске в Azure
+
+Веб-проект и проект рабочей роли имеют собственную строку подключения к базе данных, и каждая из них должна указывать на базу данных в базе данных SQL Azure, когда приложение выполняется в Azure.
 
 Мы используем [преобразование Web.config](https://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/web-config-transformations) для веб-роли и настройку среды облачной службы для рабочей роли.
 
@@ -325,13 +326,13 @@ ms.locfileid: "75386737"
 2. В диалоговом окне **Создание проекта** в области слева разверните раздел **Visual C#**, выберите шаблоны **Облако** и шаблон **Облачная служба Azure**.
 3. Присвойте проекту имя ContosoAdsCloudService и нажмите кнопку **ОК**.
 
-    ![Создать проект](./media/cloud-services-dotnet-get-started/newproject.png)
+    ![Создание проекта](./media/cloud-services-dotnet-get-started/newproject.png)
 4. В диалоговом окне **Новая облачная служба Azure** добавьте веб-роль и рабочую роль. Присвойте веб-роли имя ContosoAdsWeb, а рабочей роли — ContosoAdsWorker. (Используйте значок карандаша на правой панели для изменения имен ролей по умолчанию.)
 
     ![Проект новой облачной службы](./media/cloud-services-dotnet-get-started/newcsproj.png)
 5. Когда появится диалоговое окно **Новый проект ASP.NET** для веб-роли, выберите шаблон MVC и щелкните **Изменить проверку подлинности**.
 
-    ![Изменить проверку подлинности](./media/cloud-services-dotnet-get-started/chgauth.png)
+    ![Измените метод проверки подлинности](./media/cloud-services-dotnet-get-started/chgauth.png)
 6. В диалоговом окне **Изменение проверки подлинности** щелкните **Без проверки подлинности** и нажмите кнопку **ОК**.
 
     ![Без аутентификации](./media/cloud-services-dotnet-get-started/noauth.png)
@@ -353,7 +354,7 @@ ms.locfileid: "75386737"
 6. Найдите пакет NuGet *Microsoft.WindowsAzure.ConfigurationManager* и установите его в проект рабочей роли.
 
 ### <a name="set-project-references"></a>Установите ссылки проекта
-1. Задайте в проекте ContosoAdsWeb ссылку на проект ContosoAdsCommon. Щелкните правой кнопкой мыши проект ContosoAdsWeb и выберите пункт **ссылки** - **Добавить ссылки**. В диалоговом окне **Диспетчер ссылок** выберите пункты **Решение — Проекты** на панели слева, щелкните **ContosoAdsCommon**, а затем нажмите кнопку **ОК**.
+1. Задайте в проекте ContosoAdsWeb ссылку на проект ContosoAdsCommon. Щелкните правой кнопкой мыши проект ContosoAdsWeb и выберите пункт **ссылки**  -  **Добавить ссылки**. В диалоговом окне **Диспетчер ссылок** выберите пункты **Решение — Проекты** на панели слева, щелкните **ContosoAdsCommon**, а затем нажмите кнопку **ОК**.
 2. Задайте в проекте ContosoAdsWorker ссылку на проект ContosoAdsCommon.
 
     ContosoAdsCommon будет содержать модель данных и контекстный класс Entity Framework, который будет использован как фоновой, так и интерфейсной службой.
@@ -398,12 +399,12 @@ ms.locfileid: "75386737"
 ### <a name="add-code-files"></a>Добавьте файлы кода
 В этом разделе скопируйте файлы кода из скачанного решения в новое решение. Следующие разделы покажут и объяснят важные части этого кода.
 
-Чтобы добавить файлы в проект или папку, щелкните правой кнопкой мыши проект или папку и выберите команду **Добавить** - **существующий элемент**. Выберите необходимые файлы и щелкните **Добавить**. При запросе о том, заменять ли существующие файлы, щелкните **Да**.
+Чтобы добавить файлы в проект или папку, щелкните правой кнопкой мыши проект или папку и выберите команду **Добавить**  -  **существующий элемент**. Выберите необходимые файлы и щелкните **Добавить**. При запросе о том, заменять ли существующие файлы, щелкните **Да**.
 
 1. В проекте ContosoAdsCommon удалите файл *Class1.cs* и добавьте на его место файлы *Ad.cs* и *ContosoAdscontext.cs* из скачанного проекта.
 2. В проекте ContosoAdsCommon добавьте следующие файлы из загруженного проекта.
 
-   * *Global.asax.cs*.  
+   * *Global.asax.CS*.  
    * В папку *Views\Shared*: файл *\_Layout.cshtml*.
    * В папке *Views\Home* : *index. cshtml*.
    * В папке *Controllers* : *AdController.CS*.
@@ -530,7 +531,7 @@ imagesQueue.CreateIfNotExists();
 ### <a name="contosoadsweb---adcontrollercs"></a>ContosoAdsWeb - AdController.cs
 В файле *AdController.cs* конструктор вызывает метод `InitializeStorage` для создания объектов клиентской библиотеки службы хранилища Azure, которые предоставляют API-интерфейс для работы с большими двоичными объектами и очередями.
 
-Затем код получает ссылку на контейнер больших двоичных объектов *Images* , как было показано ранее в *Global.asax.CS*. При этом он устанавливает [политику повторения](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling) по умолчанию, подходящую для веб-приложения. Политика повторения с экспоненциальной задержкой по умолчанию может застопорить веб-приложение более чем на минуту при повторяющихся повторах во время кратковременного сбоя. Политика повторения здесь указывает ожидание в три секунды после каждой попытки, всего до трех повторений.
+Затем код получает ссылку на контейнер больших двоичных объектов *Images* , как было показано ранее в *Global.asax.CS*. При этом он устанавливает [политику повторения](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling) по умолчанию, подходящую для веб-приложения. Стандартная политика повтора по умолчанию может привести к тому, что веб-приложение перестанет отвечать на запросы дольше, чем за минуту, при повторной попытке выполнения временной ошибки. Политика повторения здесь указывает ожидание в три секунды после каждой попытки, всего до трех повторений.
 
 ```csharp
 var blobClient = storageAccount.CreateCloudBlobClient();
@@ -758,7 +759,7 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 
 Для запуска приложения с полным эмулятором следует открыть Visual Studio с правами администратора.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Приложение Contoso Ads намеренно сделано простым для руководства по началу работы. Например, оно не реализует [вставку зависимостей](https://www.asp.net/mvc/tutorials/hands-on-labs/aspnet-mvc-4-dependency-injection) или [репозиторий и блок рабочих шаблонов](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application#repo), не использует [интерфейс для журналов](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry#log), не использует [EF Code First Migrations](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application) для управления изменениями модели данных или [EF Connection Resiliency](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application) для управления кратковременными ошибками сети и т. д.
 
 Есть несколько примеров приложений облачной службы, которые демонстрируют более жизненные примеры кодирования — от менее сложных к более сложным:
@@ -776,6 +777,3 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 * [Управление облачными службами](cloud-services-how-to-manage-portal.md)
 * [Хранилище Azure](https://docs.microsoft.com/azure/storage/)
 * [Как выбрать поставщика облачных служб](https://azure.microsoft.com/overview/choosing-a-cloud-service-provider/)
-
-
-
