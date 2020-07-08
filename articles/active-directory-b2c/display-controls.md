@@ -11,14 +11,14 @@ ms.topic: reference
 ms.date: 12/10/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 4998fb19e42e123edd57bfcf10931d594ac4cb44
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 131ecd010cba55f08199f713654792c0844a47e1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78188738"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85202302"
 ---
-# <a name="display-controls"></a>Отображение элементов управления
+# <a name="display-controls"></a>Элементы управления отображением
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
@@ -30,11 +30,11 @@ ms.locfileid: "78188738"
 
 [!INCLUDE [b2c-public-preview-feature](../../includes/active-directory-b2c-public-preview.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
  В разделе [метаданных](self-asserted-technical-profile.md#metadata) [самостоятельно утвержденного технического профиля](self-asserted-technical-profile.md) [контентдефинитион](contentdefinitions.md) должен иметь `DataUri` значение контракта страницы Version 2.0.0 или выше. Пример:
 
-```XML
+```xml
 <ContentDefinition Id="api.selfasserted">
   <LoadUri>~/tenant/default/selfAsserted.cshtml</LoadUri>
   <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
@@ -46,14 +46,14 @@ ms.locfileid: "78188738"
 
 Элемент **DisplayControl** содержит следующие атрибуты:
 
-| Атрибут | Обязательный | Описание |
+| Атрибут | Обязательное значение | Описание |
 | --------- | -------- | ----------- |
 | Идентификатор | Да | Идентификатор, используемый для элемента управления отображением. На него можно [ссылаться](#referencing-display-controls). |
 | усеринтерфацеконтролтипе | Да | Тип элемента управления отображением. В настоящее время поддерживается [верификатионконтрол](display-control-verification.md) |
 
 Элемент **DisplayControl** содержит следующие элементы:
 
-| Элемент | Вхождения | Описание |
+| Элемент | Вхождения | Описание: |
 | ------- | ----------- | ----------- |
 | InputClaims | 0:1 | **Inputclaim** используются для предварительного заполнения значений утверждений, собираемых от пользователя. |
 | дисплайклаимс | 0:1 | **Дисплайклаимс** используются для представления утверждений, собираемых от пользователя. |
@@ -66,7 +66,7 @@ ms.locfileid: "78188738"
 
 В следующем примере предварительно заполняется адрес электронной почты, который должен быть проверен с помощью уже существующего адреса.
 
-```XML
+```xml
 <DisplayControl Id="emailControl" UserInterfaceControlType="VerificationControl">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="emailAddress" />
@@ -78,11 +78,11 @@ ms.locfileid: "78188738"
 
 Для каждого типа элементов управления отображением требуется другой набор утверждений, утверждений [вывода](#output-claims)и [действий](#display-control-actions) , которые должны быть выполнены.
 
-Как и в случае с **утверждениями** , определенными в [самостоятельно утвержденном техническом профиле](self-asserted-technical-profile.md#display-claims), заявки на отображение представляют утверждения, которые должны быть собраны от пользователя в элементе управления отображением. Элементу, на который указывает **ссылка, необходимо** указать элемент **усеринпуттипе** для пользовательского типа ввода, поддерживаемого Azure AD B2C, `TextBox` например `DropdownSingleSelect`или. Если для **действия**требуется значение утверждения, задайте для атрибута **обязательный** атрибут `true` значение, чтобы пользователь предоставил для этого конкретного утверждения.
+Как и в случае с **утверждениями** , определенными в [самостоятельно утвержденном техническом профиле](self-asserted-technical-profile.md#display-claims), заявки на отображение представляют утверждения, которые должны быть собраны от пользователя в элементе управления отображением. Элементу, на который указывает **ссылка, необходимо** указать элемент **усеринпуттипе** для пользовательского типа ввода, поддерживаемого Azure AD B2C, например `TextBox` или `DropdownSingleSelect` . Если для **действия**требуется значение утверждения, задайте для атрибута **обязательный** атрибут `true` значение, чтобы пользователь предоставил для этого конкретного утверждения.
 
 Для определенных типов элементов управления отображением требуются определенные утверждения на отображение. Например, **верификатионкоде** требуется для элемента управления отображением типа **верификатионконтрол**. Используйте атрибут **контролклаимтипе** , чтобы указать, какой дисплайклаим назначен для этого обязательного утверждения. Пример:
 
-```XML
+```xml
 <DisplayClaim ClaimTypeReferenceId="otpCode" ControlClaimType="VerificationCode" Required="true" />
 ```
 
@@ -100,7 +100,7 @@ ms.locfileid: "78188738"
 
 В следующем примере код отправляется в сообщении электронной почты или в SMS на основе выбранного пользователем утверждения **мфатипе** .
 
-```XML
+```xml
 <Action Id="SendCode">
   <ValidationClaimsExchange>
     <ValidationClaimsExchangeTechnicalProfile TechnicalProfileReferenceId="AzureMfa-SendSms">
@@ -131,7 +131,7 @@ ms.locfileid: "78188738"
 
 Пример:
 
-```XML
+```xml
 <TechnicalProfile Id="SelfAsserted-ProfileUpdate">
   ...
   <DisplayClaims>

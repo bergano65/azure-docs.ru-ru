@@ -4,12 +4,13 @@ description: Сведения об использовании Azure Application 
 ms.assetid: 501722c3-f2f7-4224-a220-6d59da08a320
 ms.topic: conceptual
 ms.date: 04/04/2019
-ms.openlocfilehash: 2aaf52a528f929f183c9bf4565d9f0da4918f146
-ms.sourcegitcommit: 0690ef3bee0b97d4e2d6f237833e6373127707a7
-ms.translationtype: HT
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 578e1580bdaafb1b309a7af44353602cc31cb5a5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83757761"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85207013"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -245,7 +246,7 @@ traces
 
 ## <a name="configure-sampling"></a>Настройка выборки
 
-В Application Insights есть функция [выборки](../azure-monitor/app/sampling.md), которая позволяет избежать создания слишком большого объема данных телеметрии для завершенных выполнений в периоды пиковой нагрузки. Если скорость входящих выполнений превышает заданное пороговое значение, служба Application Insights будет случайным образом игнорировать часть входящих выполнений. Максимальное количество выполнений в секунду по умолчанию — 20 (пять в версии 1.x). Вы можете настроить выборку в файле [host.json].  Ниже приведен пример:
+В Application Insights есть функция [выборки](../azure-monitor/app/sampling.md), которая позволяет избежать создания слишком большого объема данных телеметрии для завершенных выполнений в периоды пиковой нагрузки. Если скорость входящих выполнений превышает заданное пороговое значение, служба Application Insights будет случайным образом игнорировать часть входящих выполнений. Максимальное количество выполнений в секунду по умолчанию — 20 (пять в версии 1.x). Вы можете настроить выборку в файле [host.json](https://docs.microsoft.com/azure/azure-functions/functions-host-json#applicationinsights).  Ниже приведен пример:
 
 ### <a name="version-2x-and-later"></a>Версия 2.x и более поздние
 
@@ -255,12 +256,15 @@ traces
     "applicationInsights": {
       "samplingSettings": {
         "isEnabled": true,
-        "maxTelemetryItemsPerSecond" : 20
+        "maxTelemetryItemsPerSecond" : 20,
+        "excludedTypes": "Request"
       }
     }
   }
 }
 ```
+
+В версии 2. x можно исключить определенные типы данных телеметрии из выборки. В приведенном выше примере данные типа `Request` исключаются из выборки. Это гарантирует, что *все* выполнения функций (запросов) записываются в журнал, а другие типы телеметрии остаются в процессе выборки.
 
 ### <a name="version-1x"></a>Версия 1.x 
 
@@ -313,7 +317,7 @@ logger.LogInformation("partitionKey={partitionKey}, rowKey={rowKey}", partitionK
 
 ```json
 {
-  customDimensions: {
+  "customDimensions": {
     "prop__{OriginalFormat}":"C# Queue trigger function processed: {message}",
     "Category":"Function",
     "LogLevel":"Information",
@@ -683,6 +687,28 @@ Get-AzSubscription
 Get-AzSubscription -SubscriptionName "<subscription name>" | Select-AzSubscription
 Get-AzWebSiteLog -Name <FUNCTION_APP_NAME> -Tail
 ```
+
+## <a name="scale-controller-logs"></a>Журналы контроллера масштабирования
+
+[Контроллер масштабирования функций Azure](./functions-scale.md#runtime-scaling) отслеживает экземпляры узлов функций, которые запускают приложение, и принимает решения о добавлении или удалении экземпляров узлов функций. Если необходимо разобраться с решениями, которые контроллер масштабирования делает в приложении, можно настроить его для отправки журналов в Application Insights или в хранилище BLOB-объектов.
+
+> [!WARNING]
+> Эта функция предоставляется в предварительной версии. Мы не рекомендуем включать эту функцию неограниченно долго, поэтому следует включить ее, если вам нужна собранная информация, а затем отключить ее.
+
+Чтобы включить эту функцию, добавьте новый параметр приложения с именем `SCALE_CONTROLLER_LOGGING_ENABLED` . Значение этого параметра должно быть в формате `{Destination}:{Verbosity}` , где:
+* `{Destination}`Указывает назначение для отправляемых журналов и должно иметь значение `AppInsights` или `Blob` .
+* `{Verbosity}`Указывает требуемый уровень ведения журнала и должен быть одним из `None` , `Warning` или `Verbose` .
+
+Например, чтобы заносить подробные сведения из контроллера масштабирования в Application Insights, используйте значение `AppInsights:Verbose` .
+
+> [!NOTE]
+> При включении `AppInsights` типа назначения необходимо обеспечить настройку [Application Insights для приложения функции](#enable-application-insights-integration).
+
+Если задать для назначения значение `Blob` , журналы будут созданы в контейнере больших двоичных объектов с именем в `azure-functions-scale-controller` учетной записи хранения, заданной в `AzureWebJobsStorage` параметре приложения.
+
+Если задать уровень детализации `Verbose` , контроллер масштабирования будет регистрировать причину каждого изменения в количестве рабочих ролей, а также сведения о триггерах, участвующих в принятии решений контроллера масштабирования. Например, в журналах будут содержаться предупреждения о триггерах и хэши, используемые триггерами до и после запуска контроллера масштабирования.
+
+Чтобы отключить ведение журнала масштабируемого контроллера, установите для параметра `{Verbosity}` значение `None` или удалите `SCALE_CONTROLLER_LOGGING_ENABLED` параметр приложения.
 
 ## <a name="disable-built-in-logging"></a>Отключение встроенного ведения журнала
 

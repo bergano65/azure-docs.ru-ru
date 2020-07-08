@@ -4,18 +4,19 @@ description: Список служб, которые поддерживают у
 services: active-directory
 author: MarkusVi
 ms.author: markvi
-ms.date: 05/12/2020
+ms.date: 06/11/2020
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: msi
 manager: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 550c025807b1ec3d0d5b8fb54f4b358c9f1ec6d3
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.custom: references_regions
+ms.openlocfilehash: 0dc8b77f75cffdd0b2017d8a9b0f7c168fb796cb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83846041"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85193776"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -55,6 +56,14 @@ ms.locfileid: "83846041"
 - [Azure PowerShell](/azure/app-service/overview-managed-identity#using-azure-powershell)
 - [Шаблон Azure Resource Manager](/azure/app-service/overview-managed-identity#using-an-azure-resource-manager-template)
 
+### <a name="azure-arc-enabled-kubernetes"></a>Azure Arc с поддержкой Kubernetes
+
+| Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Назначено системой | Preview (Предварительный просмотр) | Недоступно | Недоступно | Недоступно | 
+| Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
+
+В настоящее время Kubernetes с поддержкой Arc Azure [поддерживает назначенное системой удостоверение](https://docs.microsoft.com/azure/azure-arc/kubernetes/connect-cluster#azure-arc-agents-for-kubernetes). Сертификат управляемого удостоверения службы используется всеми агентами Kubernetes, поддерживающими Azure Arc, для взаимодействия с Azure.
 
 ### <a name="azure-blueprints"></a>Azure Blueprints
 
@@ -67,6 +76,14 @@ ms.locfileid: "83846041"
 
 - [Портал Azure — назначение схемы](../../governance/blueprints/create-blueprint-portal.md#assign-a-blueprint)
 - [REST API — назначение схемы](../../governance/blueprints/create-blueprint-rest-api.md#assign-a-blueprint)
+
+
+### <a name="azure-cognitive-search"></a>Когнитивный поиск Azure
+
+Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Назначено системой | ![Доступно][check] | ![Доступно][check] | Недоступно | ![Доступно][check] |
+| Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
 
 
 ### <a name="azure-container-instances"></a>Экземпляры контейнеров Azure
@@ -94,6 +111,12 @@ ms.locfileid: "83846041"
 
 - [Azure CLI](~/articles/container-registry/container-registry-tasks-authentication-managed-identity.md)
 
+### <a name="azure-data-explorer"></a>Azure Data Explorer
+
+Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Назначено системой | ![Доступно][check] | ![Доступно][check] | Недоступно | ![Доступно][check] |
+| Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
 
 ### <a name="azure-data-factory-v2"></a>Фабрика данных Azure версии 2
 
@@ -108,6 +131,22 @@ ms.locfileid: "83846041"
 - [PowerShell](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-powershell)
 - [REST](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-rest-api)
 - [Пакет SDK](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-sdk)
+
+
+
+### <a name="azure-event-grid"></a>Сетка событий Azure 
+
+Тип управляемого удостоверения |Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Назначено системой | Preview (Предварительный просмотр) | Недоступно | Недоступно | Недоступно |
+| Назначено пользователем | Недоступно | Недоступно  | Недоступно  | Недоступно |
+
+
+
+
+
+
+
 
 
 ### <a name="azure-functions"></a>Функции Azure
@@ -135,6 +174,13 @@ ms.locfileid: "83846041"
 
 - [Портал Azure](../../iot-hub/virtual-network-support.md#turn-on-managed-identity-for-iot-hub)
 
+### <a name="azure-importexport"></a>Служба импорта и экспорта Azure
+
+Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
+| --- | --- | --- | --- | --- |
+| Назначено системой | Доступно в регионе, где доступна служба импорта и экспорта Azure | Предварительный просмотр | Доступно | Доступно |
+| Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
+
 ### <a name="azure-kubernetes-service-aks"></a>Служба Azure Kubernetes (AKS)
 
 | Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
@@ -160,7 +206,24 @@ ms.locfileid: "83846041"
 - [Шаблон Azure Resource Manager](https://docs.microsoft.com/azure/logic-apps/logic-apps-azure-resource-manager-templates-overview)
 
 
+### <a name="azure-policy"></a>Политика Azure
+
+|Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Назначено системой | ![Доступно][check] | ![Доступно][check] | ![Доступно][check] | ![Доступно][check] |
+| Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
+
+См. следующий список, чтобы настроить управляемое удостоверение для политики Azure (в регионах, где это возможно):
+
+- [Портал Azure](../../governance/policy/tutorials/create-and-manage.md#assign-a-policy)
+- [PowerShell](../../governance/policy/how-to/remediate-resources.md#create-managed-identity-with-powershell)
+- [Azure CLI](https://docs.microsoft.com/cli/azure/policy/assignment?view=azure-cli-latest#az-policy-assignment-create)
+- [Шаблоны диспетчера ресурсов Azure](https://docs.microsoft.com/azure/templates/microsoft.authorization/policyassignments)
+- [REST](https://docs.microsoft.com/rest/api/resources/policyassignments/create)
+
+
 ### <a name="azure-service-fabric"></a>Azure Service Fabric
+
 [Управляемое удостоверение для приложений Service Fabric](https://docs.microsoft.com/azure/service-fabric/concepts-managed-identity) доступно в предварительной версии и во всех регионах.
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
@@ -169,16 +232,26 @@ ms.locfileid: "83846041"
 | Назначено пользователем | ![Доступно][check] | Недоступно | Недоступно |Недоступно |
 
 Чтобы настроить управляемое удостоверение для приложений Azure Service Fabric (в доступных регионах), ознакомьтесь с приведенным ниже списком.
+
 - [Шаблон Azure Resource Manager](https://github.com/Azure-Samples/service-fabric-managed-identity/tree/anmenard-docs)
 
+### <a name="azure-spring-cloud"></a>Azure Spring Cloud
+
+| Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Назначено системой | ![Доступно][check] | Недоступно | Недоступно | Недоступно | 
+| Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
+
+
+Дополнительные сведения см. [в статье Включение управляемого удостоверения, назначенного системой для облачного приложения Azure весны](~/articles/spring-cloud/spring-cloud-howto-enable-system-assigned-managed-identity.md).
 
 
 ### <a name="azure-virtual-machine-scale-sets"></a>Масштабируемые наборы виртуальных машин Azure
 
 |Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Назначено системой | ![Доступно][check] | Preview (Предварительный просмотр) | Preview (Предварительный просмотр) | Preview (Предварительный просмотр) |
-| Назначено пользователем | ![Доступно][check] | Preview (Предварительный просмотр) | Preview (Предварительный просмотр) | Preview (Предварительный просмотр) |
+| Назначено системой | ![Доступно][check] | Preview (Предварительный просмотр) | Предварительный просмотр | Предварительный просмотр |
+| Назначено пользователем | ![Доступно][check] | Preview (Предварительный просмотр) | Предварительный просмотр | Preview (Предварительный просмотр) |
 
 Чтобы настроить управляемые удостоверения для масштабируемых наборов виртуальных машин Azure (в регионах, где они доступны), см. следующий список.
 
@@ -194,7 +267,7 @@ ms.locfileid: "83846041"
 
 | Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Назначено системой | ![Доступно][check] | ![Доступно][check] | Preview (Предварительный просмотр) | Preview (Предварительный просмотр) | 
+| Назначено системой | ![Доступно][check] | ![Доступно][check] | Preview (Предварительный просмотр) | Предварительный просмотр | 
 | Назначено пользователем | ![Доступно][check] | ![Доступно][check] | Preview (Предварительный просмотр) | Preview (Предварительный просмотр) |
 
 Чтобы настроить управляемые удостоверения для виртуальных машин Azure (в регионах, где они доступны), см. следующий список.
@@ -206,7 +279,24 @@ ms.locfileid: "83846041"
 - [REST](qs-configure-rest-vm.md)
 
 
+### <a name="azure-vm-image-builder"></a>Построитель образов виртуальных машин Azure
 
+| Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Назначено системой | Недоступно | Недоступно | Недоступно | Недоступно | 
+| Назначено пользователем | [Доступно в поддерживаемых регионах](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder-overview#regions) | Недоступно | Недоступно | Недоступно |
+
+Сведения о настройке управляемого удостоверения для построителя образов виртуальных машин Azure (в регионах, где это возможно) см. в разделе [Общие сведения о построителе образов](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder-overview#permissions).
+### <a name="azure-signalr-service"></a>Служба SignalR Azure
+
+Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Назначено системой | Предварительный просмотр | Предварительный просмотр | Недоступно | Предварительный просмотр |
+| Назначено пользователем | Предварительный просмотр | Предварительный просмотр | Недоступно | Предварительный просмотр |
+
+Сведения о настройке управляемого удостоверения для службы SignalR Azure (в регионах, где это возможно) см. в следующем списке:
+
+- [Шаблон Azure Resource Manager](../../azure-signalr/howto-use-managed-identity.md)
 
 ## <a name="azure-services-that-support-azure-ad-authentication"></a>Службы Azure, поддерживающие аутентификацию Azure AD
 
@@ -237,7 +327,7 @@ ms.locfileid: "83846041"
 | Azure для Германии |  `https://vault.microsoftazure.de` | ![Доступно][check] |
 | Azure China 21Vianet | `https://vault.azure.cn` | ![Доступно][check] |
 
-### <a name="azure-data-lake"></a>Azure Data Lake; 
+### <a name="azure-data-lake"></a>Azure Data Lake;
 
 | Cloud | Идентификатор ресурса | Состояние |
 |--------|------------|:-:|
@@ -246,7 +336,7 @@ ms.locfileid: "83846041"
 | Azure для Германии |   | Недоступно |
 | Azure China 21Vianet |  | Недоступно |
 
-### <a name="azure-sql"></a>Azure SQL 
+### <a name="azure-sql"></a>Azure SQL
 
 | Cloud | Идентификатор ресурса | Состояние |
 |--------|------------|:-:|
@@ -289,15 +379,6 @@ ms.locfileid: "83846041"
 | Azure для государственных организаций | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.usgovcloudapi.net` <br /><br />`https://<account>.queue.core.usgovcloudapi.net` | ![Доступно][check] |
 | Azure для Германии | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.cloudapi.de` <br /><br />`https://<account>.queue.core.cloudapi.de` | ![Доступно][check] |
 | Azure China 21Vianet | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.chinacloudapi.cn` <br /><br />`https://<account>.queue.core.chinacloudapi.cn` | ![Доступно][check] |
-
-
-
-
-
-
-
-
-
 
 ### <a name="azure-analysis-services"></a>Службы Azure Analysis Services
 

@@ -4,12 +4,12 @@ description: Научитесь настраивать функцию прове
 ms.topic: article
 ms.date: 10/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: d57b196bf95ebdf31bc459ad4b9d718fd32ca495
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6efa5461fab9faf3ce1599a01540cf314b34281b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79280837"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85205651"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Расширенное использование проверки подлинности и авторизации в Службе приложений Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "79280837"
 
 На странице входа, на панели навигации или в любом другом расположении приложения добавьте ссылку входа для каждого включенного поставщика (`/.auth/login/<provider>`). Пример:
 
-```HTML
+```html
 <a href="/.auth/login/aad">Log in with Azure AD</a>
 <a href="/.auth/login/microsoftaccount">Log in with Microsoft Account</a>
 <a href="/.auth/login/facebook">Log in with Facebook</a>
@@ -47,7 +47,7 @@ ms.locfileid: "79280837"
 
 Чтобы перенаправить пользователя после входа по пользовательскому URL-адресу, используйте параметр строки запроса `post_login_redirect_url` (не следует путать с URI перенаправления в конфигурации поставщика удостоверений). Например, чтобы перенаправить пользователя к `/Home/Index` после входа в систему, используйте следующий код HTML:
 
-```HTML
+```html
 <a href="/.auth/login/<provider>?post_login_redirect_url=/Home/Index">Log in</a>
 ```
 
@@ -103,7 +103,7 @@ X-ZUMO-AUTH: <authenticationToken_value>
 
 Здесь представлена ссылка для простого выхода на веб-странице:
 
-```HTML
+```html
 <a href="/.auth/logout">Sign out</a>
 ```
 
@@ -176,9 +176,9 @@ az webapp config appsettings set --name <app_name> --resource-group <group_name>
 - **Учетная запись Майкрософт**. [Настраивая параметры проверки подлинности учетной записи Майкрософт](configure-authentication-provider-microsoft.md), выберите область `wl.offline_access`.
 - **Azure Active Directory**. В [https://resources.azure.com](https://resources.azure.com) сделайте следующее:
     1. В верхней части страницы выберите **Read/Write** (Чтение и запись).
-    2. В браузере слева перейдите **к элементу** > **_\<подписки подписки\_имя_** > **resourceGroups** > **_\<группа\_\_ресурсов имя>_**  >  **поставщики** > **Microsoft. Web** > **Sites** > **_\<имя приложения\_>_**  >  **config** > **authsettings**. 
-    3. Щелкните **Правка**.
-    4. Измените следующее свойство. Замените _ \<идентификатор\_приложения>_ Azure Active Directory идентификатором приложения службы, к которой требуется получить доступ.
+    2. В левом браузере перейдите к разделу **подписки** > * *_ \<subscription\_name_** > **resourceGroups** > * *_* * \<resource\_group\_name> _ **поставщики**>  >  **Microsoft. Web**  >  **Sites** > * *_ \<app\_name> _ * * > **config**  >  **authsettings**. 
+    3. Нажмите кнопку **Изменить**.
+    4. Измените следующее свойство. Замените _\<app\_id>_ Azure Active Directory идентификатором приложения службы, к которой требуется получить доступ.
 
         ```json
         "additionalLoginParams": ["response_type=code id_token", "resource=<app_id>"]
@@ -190,7 +190,7 @@ az webapp config appsettings set --name <app_name> --resource-group <group_name>
 
 Чтобы обновить маркер доступа в любое время, просто вызовите `/.auth/refresh` его на любом языке. В следующем фрагменте кода jQuery используется для обновления токенов доступа из клиента JavaScript.
 
-```JavaScript
+```javascript
 function refreshTokens() {
   let refreshUrl = "/.auth/refresh";
   $.ajax(refreshUrl) .done(function() {
@@ -221,17 +221,17 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 ## <a name="limit-the-domain-of-sign-in-accounts"></a>Ограничение домена учетных записей для входа
 
-Учетные записи Майкрософт и Azure Active Directory позволяют выполнять вход из нескольких доменов. Например, учетная запись Майкрософт позволяет выполнять вход с помощью учетных записей _outlook.com_, _live.com_ и _hotmail.com_. Azure AD позволяет любому числу пользовательских доменов для учетных записей входа. Тем не менее, вам может потребоваться ускорить работу пользователей с собственной фирменной страницей входа в Azure AD (например, `contoso.com`). Чтобы предложить доменное имя учетных записей входа, выполните следующие действия.
+Учетные записи Майкрософт и Azure Active Directory позволяют выполнять вход из нескольких доменов. Например, учетная запись Майкрософт позволяет выполнять вход с помощью учетных записей _outlook.com_, _live.com_ и _hotmail.com_. Azure AD позволяет любому числу пользовательских доменов для учетных записей входа. Тем не менее, вам может потребоваться ускорить работу пользователей с собственной фирменной страницей входа в Azure AD (например, `contoso.com` ). Чтобы предложить доменное имя учетных записей входа, выполните следующие действия.
 
-В [https://resources.azure.com](https://resources.azure.com) **перейдите к** > разделу**_\<подписка\_подписки имя_** > **resourceGroups** >   > **_\_группа\_имя>поставщики Microsoft. Web Sites имя приложения>config authsettings.\< _****Microsoft.Web** > **sites** >  > **authsettings** **providers** **config****_\<\_ _**  >  >  
+В [https://resources.azure.com](https://resources.azure.com) перейдите к разделу **подписки** > * *_ \<subscription\_name_** > **resourceGroups** > * *_* * \<resource\_group\_name> _ **поставщики**>  >  **Microsoft. Web**  >  **Sites** > * *_ \<app\_name> _ * * > **config**  >  **authsettings**. 
 
-Щелкните **Edit** (Изменить), измените следующее свойство и выберите **Put**. Не забудьте заменить _ \<доменное\_имя>именем_ нужного домена.
+Щелкните **Edit** (Изменить), измените следующее свойство и выберите **Put**. Не забудьте заменить _\<domain\_name>_ требуемым доменом.
 
 ```json
 "additionalLoginParams": ["domain_hint=<domain_name>"]
 ```
 
-Этот параметр добавляет параметр строки `domain_hint` запроса к URL-адресу перенаправления имени входа. 
+Этот параметр добавляет `domain_hint` параметр строки запроса к URL-адресу перенаправления имени входа. 
 
 > [!IMPORTANT]
 > Клиент может удалить `domain_hint` параметр после получения URL-адреса перенаправления, а затем войти в другой домен. Поэтому хотя эта функция удобна, она не является функцией безопасности.
@@ -247,13 +247,13 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 ### <a name="server-level-windows-apps-only"></a>Уровень сервера (только для приложений Windows)
 
-Для любого приложения Windows можно определить поведение авторизации веб-сервера IIS, изменив файл *Web. config* . Приложения Linux не используют IIS и не могут быть настроены с помощью *Web. config*.
+Для любого приложения Windows можно определить поведение авторизации веб-сервера IIS, изменив файл *Web.config* . Приложения Linux не используют IIS и не могут быть настроены с помощью *Web.config*.
 
 1. Перейдите на страницу `https://<app-name>.scm.azurewebsites.net/DebugConsole`.
 
-1. В обозревателе браузера файлов службы приложений перейдите на *сайт Site/wwwroot*. Если файл *Web. config* не существует, создайте его, выбрав **+**  > " **создать**". 
+1. В обозревателе браузера файлов службы приложений перейдите на *сайт Site/wwwroot*. Если *Web.config* не существует, создайте его, выбрав **+**  >  **создать файл**. 
 
-1. Выберите карандаш для *файла Web. config* , чтобы изменить его. Добавьте следующий код конфигурации и нажмите кнопку **сохранить**. Если *файл Web. config* уже существует, просто добавьте `<authorization>` элемент со всеми элементами. Добавьте учетные записи, которые требуется разрешить, `<allow>` в элементе.
+1. Выберите карандаш для *Web.config* , чтобы изменить его. Добавьте следующий код конфигурации и нажмите кнопку **сохранить**. Если *Web.config* уже существует, просто добавьте `<authorization>` элемент со всеми элементами. Добавьте учетные записи, которые требуется разрешить, в `<allow>` элементе.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -281,5 +281,5 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
-> [Руководство. Проверка подлинности и авторизация пользователей (Windows)](app-service-web-tutorial-auth-aad.md)
-> [руководство по проверке подлинности и авторизации пользователей (Linux)](containers/tutorial-auth-aad.md)
+> [Руководство. сквозная проверка подлинности и авторизация пользователей (Windows)](app-service-web-tutorial-auth-aad.md) 
+>  [Руководство. сквозная проверка подлинности и авторизация пользователей (Linux)](containers/tutorial-auth-aad.md)

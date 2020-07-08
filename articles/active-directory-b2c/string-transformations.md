@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 04/21/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c2291d4d2eca2abd11ef9c0f18f3fda52424ab93
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: d22d0da692516c89f6dd5ca7377ec83d7c430280
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83739113"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85203441"
 ---
 # <a name="string-claims-transformations"></a>Преобразования утверждений строк
 
@@ -41,7 +41,7 @@ ms.locfileid: "83739113"
 
 С помощью этого преобразования можно убедиться, что два параметра ClaimTypes имеют одинаковые значения. В противном случае выдается сообщение об ошибке. В следующем примере проверяется, равен ли параметр ClaimType **strongAuthenticationEmailAddress** параметру ClaimType **email**. В противном случае выдается сообщение об ошибке.
 
-```XML
+```xml
 <ClaimsTransformation Id="AssertEmailAndStrongAuthenticationEmailAddressAreEqual" TransformationMethod="AssertStringClaimsAreEqual">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="strongAuthenticationEmailAddress" TransformationClaimType="inputClaim1" />
@@ -55,7 +55,7 @@ ms.locfileid: "83739113"
 
 
 Технический профиль проверки **login-NonInteractive** вызывает преобразование утверждений **AssertEmailAndStrongAuthenticationEmailAddressAreEqual**.
-```XML
+```xml
 <TechnicalProfile Id="login-NonInteractive">
   ...
   <OutputClaimsTransformations>
@@ -66,7 +66,7 @@ ms.locfileid: "83739113"
 
 Самоподтвержденный технический профиль вызывает технический профиль проверки **login-NonInteractive**.
 
-```XML
+```xml
 <TechnicalProfile Id="SelfAsserted-LocalAccountSignin-Email">
   <Metadata>
     <Item Key="UserMessageIfClaimsTransformationStringsAreNotEqual">Custom error message the email addresses you provided are not the same.</Item>
@@ -98,7 +98,7 @@ ms.locfileid: "83739113"
 
 С помощью этого преобразования утверждений можно изменить любой строковый тип ClaimType в нижний или верхний регистр.
 
-```XML
+```xml
 <ClaimsTransformation Id="ChangeToLower" TransformationMethod="ChangeCase">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="email" TransformationClaimType="inputClaim1" />
@@ -132,7 +132,7 @@ ms.locfileid: "83739113"
 
 Это преобразование утверждения позволяет задать строковое значение параметра ClaimType.
 
-```XML
+```xml
 <ClaimsTransformation Id="CreateTermsOfService" TransformationMethod="CreateStringClaim">
   <InputParameters>
     <InputParameter Id="value" DataType="string" Value="Contoso terms of service..." />
@@ -164,7 +164,7 @@ ms.locfileid: "83739113"
 
 Используйте это преобразование, чтобы проверить, равно ли одно утверждение другому. Например, следующее преобразование утверждений проверяет, равно ли значение утверждения **email** утверждению **Verified.Email**.
 
-```XML
+```xml
 <ClaimsTransformation Id="CheckEmail" TransformationMethod="CompareClaims">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="Email" TransformationClaimType="inputClaim1" />
@@ -205,7 +205,7 @@ ms.locfileid: "83739113"
 
 С помощью этого преобразования можно проверить, равно ли утверждение указанному значению. Например, следующее преобразование утверждений проверяет, равно ли значение утверждения **termsOfUseConsentVersion** значению `v1`.
 
-```XML
+```xml
 <ClaimsTransformation Id="IsTermsOfUseConsentRequiredForVersion" TransformationMethod="CompareClaimToValue">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="termsOfUseConsentVersion" TransformationClaimType="inputClaim1" />
@@ -246,7 +246,7 @@ ms.locfileid: "83739113"
 
 В следующем примере создается глобальный уникальный идентификатор. С помощью этого преобразования утверждений создается случайное имя участника-пользователя.
 
-```XML
+```xml
 <ClaimsTransformation Id="CreateRandomUPNUserName" TransformationMethod="CreateRandomString">
   <InputParameters>
     <InputParameter Id="randomGeneratorType" DataType="string" Value="GUID" />
@@ -265,7 +265,7 @@ ms.locfileid: "83739113"
 
 В следующем примере создается случайное целое число от 0 до 1000. Значение форматируется в формат OTP_{случайное значение}.
 
-```XML
+```xml
 <ClaimsTransformation Id="SetRandomNumber" TransformationMethod="CreateRandomString">
   <InputParameters>
     <InputParameter Id="randomGeneratorType" DataType="string" Value="INTEGER" />
@@ -302,7 +302,7 @@ ms.locfileid: "83739113"
 
 Используйте это преобразование утверждений для форматирования любой строки с одним параметром {0}. В следующем примере создается **userPrincipalName**. Технические профили всех поставщиков удостоверений в социальных сетях, такие как `Facebook-OAUTH`, вызывают **CreateUserPrincipalName** для создания **userPrincipalName**.
 
-```XML
+```xml
 <ClaimsTransformation Id="CreateUserPrincipalName" TransformationMethod="FormatStringClaim">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="upnUserName" TransformationClaimType="inputClaim" />
@@ -338,7 +338,7 @@ ms.locfileid: "83739113"
 
 Используйте это преобразование утверждений для форматирования любой строки с двумя параметрами: {0} и {1}. В следующем примере создается **displayName** с указанным форматом:
 
-```XML
+```xml
 <ClaimsTransformation Id="CreateDisplayNameFromFirstNameAndLastName" TransformationMethod="FormatStringMultipleClaims">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="givenName" TransformationClaimType="inputClaim1" />
@@ -385,7 +385,7 @@ ms.locfileid: "83739113"
 
 Определите локализованные строки для английского языка (по умолчанию) и испанского.
 
-```XML
+```xml
 <Localization Enabled="true">
   <SupportedLanguages DefaultLanguage="en" MergeBehavior="Append">
     <SupportedLanguage>en</SupportedLanguage>
@@ -413,7 +413,7 @@ ms.locfileid: "83739113"
 
 Преобразование утверждений задает значение типа утверждения *subject* со значением `StringId` *email_subject*.
 
-```XML
+```xml
 <ClaimsTransformation Id="GetLocalizedStringsForEmail" TransformationMethod="GetLocalizedStringsTransformation">
   <OutputClaims>
     <OutputClaim ClaimTypeReferenceId="subject" TransformationClaimType="email_subject" />
@@ -444,7 +444,7 @@ ms.locfileid: "83739113"
 
 В следующем примере выполняется поиск описания сообщения об ошибке на основе ключа ошибки. Утверждение **ResponseMsg** содержит коллекцию сообщений об ошибках для представления пользователю или отправки проверяющей стороне.
 
-```XML
+```xml
 <ClaimType Id="responseMsg">
   <DisplayName>Error message: </DisplayName>
   <DataType>string</DataType>
@@ -458,7 +458,7 @@ ms.locfileid: "83739113"
 ```
 Преобразование утверждений ищет текст элемента и возвращает его значение. Если ограничение локализовано с помощью `<LocalizedCollection>`, преобразование утверждений возвращает локализованное значение.
 
-```XML
+```xml
 <ClaimsTransformation Id="GetResponseMsgMappedToResponseCode" TransformationMethod="GetMappedValueFromLocalizedCollection">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="responseCode" TransformationClaimType="mapFromClaim" />
@@ -489,7 +489,7 @@ ms.locfileid: "83739113"
 
 В следующем примере выполняется поиск доменного имени в одной из коллекций inputParameters. Преобразование утверждений ищет доменное имя в идентификаторе и возвращает его значение (идентификатор приложения).
 
-```XML
+```xml
  <ClaimsTransformation Id="DomainToClientId" TransformationMethod="LookupValue">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="domainName" TransformationClaimType="inputParameterId" />
@@ -524,7 +524,7 @@ ms.locfileid: "83739113"
 
 В следующем примере выполняется поиск доменного имени в одной из коллекций inputParameters. Преобразование утверждений ищет доменное имя в идентификаторе и возвращает его значение (идентификатор приложения) или выдает сообщение об ошибке.
 
-```XML
+```xml
  <ClaimsTransformation Id="DomainToClientId" TransformationMethod="LookupValue">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="domainName" TransformationClaimType="inputParameterId" />
@@ -564,7 +564,7 @@ ms.locfileid: "83739113"
 
 Это преобразование утверждений используется для удаления ненужных данных из контейнера свойств утверждения, чтобы сократить размер файла cookie сеанса. В следующем примере удаляется значение типа утверждения `TermsOfService`.
 
-```XML
+```xml
 <ClaimsTransformation Id="SetTOSToNull" TransformationMethod="NullClaim">
   <OutputClaims>
   <OutputClaim ClaimTypeReferenceId="TermsOfService" TransformationClaimType="claim_to_null" />
@@ -588,7 +588,7 @@ ms.locfileid: "83739113"
 
 Это преобразование утверждений используется для анализа доменного имени после символа @ пользователя. В следующих преобразованиях утверждений показано, как проанализировать доменное имя из утверждения **email**.
 
-```XML
+```xml
 <ClaimsTransformation Id="SetDomainName" TransformationMethod="ParseDomain">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="email" TransformationClaimType="emailAddress" />
@@ -624,7 +624,7 @@ ms.locfileid: "83739113"
 
 Проверяет, является ли указанный номер телефона действительным, на основе шаблона регулярного выражения номера телефона.
 
-```XML
+```xml
 <ClaimsTransformation Id="SetIsPhoneRegex" TransformationMethod="SetClaimsIfRegexMatch">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="phone" TransformationClaimType="claimToMatch" />
@@ -653,7 +653,7 @@ ms.locfileid: "83739113"
 
 Проверяет, является ли указанный адрес электронной почты действительным, и возвращает псевдоним электронной почты.
 
-```XML
+```xml
 <ClaimsTransformation Id="GetAliasFromEmail" TransformationMethod="SetClaimsIfRegexMatch">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="email" TransformationClaimType="claimToMatch" />
@@ -699,7 +699,7 @@ ms.locfileid: "83739113"
 
 С помощью этого преобразования можно проверить, равно ли утверждение указанному значению. Например, следующее преобразование утверждений проверяет, равно ли значение утверждения **termsOfUseConsentVersion** значению `v1`. Если да, измените значение на `v2`.
 
-```XML
+```xml
 <ClaimsTransformation Id="CheckTheTOS" TransformationMethod="SetClaimsIfStringsAreEqual">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="termsOfUseConsentVersion" TransformationClaimType="inputClaim" />
@@ -746,7 +746,7 @@ ms.locfileid: "83739113"
 
 Например, следующее преобразование утверждений проверяет, равно ли значение утверждения **ageGroup** значению `Minor`. Если да, возвращает значение для `B2C_V1_90001`.
 
-```XML
+```xml
 <ClaimsTransformation Id="SetIsMinor" TransformationMethod="SetClaimsIfStringsMatch">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="ageGroup" TransformationClaimType="claimToMatch" />
@@ -789,7 +789,7 @@ ms.locfileid: "83739113"
 
 Используйте это преобразование, чтобы проверить, содержит ли тип строкового утверждения подстроку. В следующем примере проверяется, содержит ли тип строкового утверждения `roles` значение **admin**.
 
-```XML
+```xml
 <ClaimsTransformation Id="CheckIsAdmin" TransformationMethod="StringContains">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="roles" TransformationClaimType="inputClaim"/>
@@ -828,7 +828,7 @@ ms.locfileid: "83739113"
 Например, получите префикс страны/региона для номера телефона.
 
 
-```XML
+```xml
 <ClaimsTransformation Id="GetPhonePrefix" TransformationMethod="StringSubstring">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="phoneNumber" TransformationClaimType="inputClaim" />
@@ -866,7 +866,7 @@ ms.locfileid: "83739113"
 Например, нормализация номера телефона путем удаления символов `-`
 
 
-```XML
+```xml
 <ClaimsTransformation Id="NormalizePhoneNumber" TransformationMethod="StringReplace">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="phoneNumber" TransformationClaimType="inputClaim" />
@@ -902,7 +902,7 @@ ms.locfileid: "83739113"
 
 В следующем примере коллекция строк для ролей пользователей преобразуется в строку с разделителем запятой. Этот метод можно использовать для хранения коллекции строк в учетной записи пользователя Azure AD. Позже, при чтении учетной записи из каталога, используйте `StringSplit` для преобразования строки с разделителем запятой обратно в коллекцию строк.
 
-```XML
+```xml
 <ClaimsTransformation Id="ConvertRolesStringCollectionToCommaDelimiterString" TransformationMethod="StringJoin">
   <InputClaims>
    <InputClaim ClaimTypeReferenceId="roles" TransformationClaimType="inputClaim" />
@@ -938,7 +938,7 @@ ms.locfileid: "83739113"
 
 В следующем примере строка ролей пользователей с разделителями запятыми преобразуется в коллекцию строк.
 
-```XML
+```xml
 <ClaimsTransformation Id="ConvertRolesToStringCollection" TransformationMethod="StringSplit">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="rolesCommaDelimiter" TransformationClaimType="inputClaim" />

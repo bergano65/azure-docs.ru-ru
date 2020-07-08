@@ -6,17 +6,17 @@ author: XiaoyuMSFT
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 09/05/2019
 ms.author: xiaoyul
 ms.reviewer: nibruno; jrasnick
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 088a0d10b96a30ef830b4e8a8dc12c19127141db
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6cd81031f27d772912383fa050e0f946bf9964c0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81417042"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85204665"
 ---
 # <a name="performance-tuning-with-ordered-clustered-columnstore-index"></a>Performance tuning with result set caching (Настройка производительности с помощью упорядоченного кластеризованного индекса columnstore)  
 
@@ -109,7 +109,7 @@ SELECT * FROM T1 WHERE Col_A = 'a' AND Col_C = 'c';
 
 - Используйте класс ресурсов xlargerc в более высоком DWU, чтобы обеспечить больше памяти для сортировки данных перед тем, как построитель индексов сжимает данные в сегменты.  В сегменте индекса невозможно изменить физическое расположение данных.  Сортировка данных внутри сегмента или между сегментами отсутствует.  
 
-- Создайте упорядоченный CCI с MAXDOP = 1.  Каждый поток, используемый для упорядочения создания CCI, работает с подмножеством данных и сортирует его локально.  Нет глобальной сортировки по данным, отсортированным различными потоками.  Использование параллельных потоков позволяет сократить время создания упорядоченного объекта CCI, но создаст более пересекающиеся сегменты, чем использование одного потока.  В настоящее время параметр MAXDOP поддерживается только при создании упорядоченной таблицы CCI с помощью CREATE TABLE в качестве команды SELECT.  Создание упорядоченного объекта CCI с помощью команд CREATE INDEX или CREATE TABLE не поддерживает параметр MAXDOP. Например, примененная к объекту директива
+- Создайте упорядоченный CCI с MAXDOP = 1.  Каждый поток, используемый для упорядочения создания CCI, работает с подмножеством данных и сортирует его локально.  Нет глобальной сортировки по данным, отсортированным различными потоками.  Использование параллельных потоков позволяет сократить время создания упорядоченного объекта CCI, но создаст более пересекающиеся сегменты, чем использование одного потока.  В настоящее время параметр MAXDOP поддерживается только при создании упорядоченной таблицы CCI с помощью CREATE TABLE в качестве команды SELECT.  Создание упорядоченного объекта CCI с помощью команд CREATE INDEX или CREATE TABLE не поддерживает параметр MAXDOP. Например,
 
 ```sql
 CREATE TABLE Table1 WITH (DISTRIBUTION = HASH(c1), CLUSTERED COLUMNSTORE INDEX ORDER(c1) )
@@ -153,6 +153,6 @@ ORDER (ProductKey, SalesAmount)
 WITH (DROP_EXISTING = ON)
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](sql-data-warehouse-overview-develop.md).
+Дополнительные советы по разработке приведены в [обзоре разработки](sql-data-warehouse-overview-develop.md).

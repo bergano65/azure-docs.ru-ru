@@ -6,17 +6,17 @@ author: kevinvngo
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 08/15/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 444cb2c8378ad873beb61116c5c4387ad3c59761
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: a3e8ea3b0ed2840e5eee7a046fa3a145f82884dc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83200345"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85200704"
 ---
 # <a name="connect-to-azure-synapse-analytics-with-visual-studio-and-ssdt"></a>Подключение к Azure синапсе Analytics с помощью Visual Studio и SSDT
 > [!div class="op_single_selector"]
@@ -28,13 +28,13 @@ ms.locfileid: "83200345"
 > 
 > 
 
-Используйте Visual Studio для запроса пула SQL в Azure синапсе всего за несколько минут. Этот метод использует расширение SQL Server Data Tools (SSDT) в Visual Studio 2019. 
+Используйте Visual Studio для запроса пула SQL в Azure синапсе всего за несколько минут. В этом методе используется расширение SQL Server Data Tools (SSDT) в Visual Studio 2019. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
-* Существующий пул SQL. Сведения о его создании см. в статье [Создание пула SQL Azure](create-data-warehouse-portal.md).
-* Расширение SSDT для Visual Studio. Если у вас есть Visual Studio, возможно, у вас уже есть SSDT для Visual Studio. Инструкции по установке и доступные варианты установки см. в статье [Установка Visual Studio 2015 и SSDT для хранилища данных SQL](sql-data-warehouse-install-visual-studio.md).
+* Пул SQL. Сведения о его создании см. в статье [Создание пула SQL Azure](create-data-warehouse-portal.md).
+* Расширение SSDT для Visual Studio. Если у вас есть Visual Studio, возможно, у вас уже есть SSDT для Visual Studio. Инструкции по установке и доступные варианты установки приведены в статье [Начало работы с Visual Studio 2019](sql-data-warehouse-install-visual-studio.md).
 * Полное имя сервера SQL Server. Чтобы найти эти сведения, см. раздел [Подключение к пулу SQL](../sql/connect-overview.md).
 
 ## <a name="1-connect-to-your-sql-pool"></a>1. подключение к пулу SQL
@@ -57,7 +57,7 @@ ms.locfileid: "83200345"
    
     ![Обзор AdventureWorksDW](./media/sql-data-warehouse-query-visual-studio/explore-sample.png)
 
-## <a name="2-run-a-sample-query"></a>2. Запуск примера запроса
+## <a name="2-run-a-sample-query"></a>2. Запуск пробного запроса
 Теперь, когда мы подключились к базе данных, давайте напишем запрос.
 
 1. Щелкните правой кнопкой мыши базу данных в обозревателе объектов SQL Server.
@@ -69,7 +69,7 @@ ms.locfileid: "83200345"
     ```sql
     SELECT COUNT(*) FROM dbo.FactInternetSales;
     ```
-4. Выполните запрос, щелкнув зеленую стрелку или воспользовавшись следующим сочетанием клавиш: `CTRL` + `SHIFT` + `E` .
+4. Запустите запрос, щелкнув зеленую стрелку или нажав клавиши `CTRL`+`SHIFT`+`E`.
    
     ![Выполнение запроса](./media/sql-data-warehouse-query-visual-studio/run-query.png)
 5. Просмотрите результаты запроса. В этом примере таблица FactInternetSales содержит 60 398 строк.
@@ -79,4 +79,4 @@ ms.locfileid: "83200345"
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы можете подключаться к базе данных и отправлять запросы, попробуйте [визуализировать данные с помощью Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md).
 
-Сведения о настройке среды для проверки подлинности Azure Active Directory см. в разделе [Аутентификация в пуле SQL](sql-data-warehouse-authentication.md).
+Сведения о том, как настроить аутентификацию Azure Active Directory в своей среде, см. в статье [Аутентификация в Azure синапсе Analytics](sql-data-warehouse-authentication.md).

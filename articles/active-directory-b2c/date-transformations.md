@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 02/16/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c02ac9392d6f3f95deef38ff86250e96dfb76d96
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: eaf58b964517162ee7f7eb925e1e64830eedc087
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79476694"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85202557"
 ---
 # <a name="date-claims-transformations"></a>Преобразования утверждений даты
 
@@ -27,10 +27,10 @@ ms.locfileid: "79476694"
 
 Проверяет, что одно утверждение даты и времени (строковый тип данных) соответствует более позднему моменту, чем второе утверждение даты и времени (строковый тип данных), и создает исключение.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | leftOperand | строка | Тип первого утверждения, который должен быть больше (позже) второго утверждения. |
-| InputClaim | rightOperand | строка | Тип второго утверждения, который должен быть меньше (раньше) первого утверждения. |
+| InputClaim | leftOperand | string | Тип первого утверждения, который должен быть больше (позже) второго утверждения. |
+| InputClaim | rightOperand | string | Тип второго утверждения, который должен быть меньше (раньше) первого утверждения. |
 | InputParameter | AssertIfEqualTo | Логическое | Указывает, выполняется ли это утверждение, если левый операнд равен правому. |
 | InputParameter | AssertIfRightOperandIsNotPresent | Логическое | Указывает, выполняется ли это утверждение, если правый операнд отсутствует. |
 | InputParameter | TreatAsEqualIfWithinMillseconds | INT | Указывает количество миллисекунд между двумя датами и временем, после которого они считаются равными (например, чтобы учесть разницу в показаниях часов). |
@@ -41,7 +41,7 @@ ms.locfileid: "79476694"
 
 В следующем примере сравнивается утверждение `currentDateTime` с утверждением `approvedDateTime`. Ошибка возникает в случае, когда `currentDateTime` больше (позже), чем `approvedDateTime`. Преобразование считает значения равными, если они отличаются не более, чем на 5 минут (30 000 миллисекунд).
 
-```XML
+```xml
 <ClaimsTransformation Id="AssertApprovedDateTimeLaterThanCurrentDateTime" TransformationMethod="AssertDateTimeIsGreaterThan">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="approvedDateTime" TransformationClaimType="leftOperand" />
@@ -56,7 +56,7 @@ ms.locfileid: "79476694"
 ```
 
 Технический профиль проверки `login-NonInteractive` вызывает преобразование утверждений `AssertApprovedDateTimeLaterThanCurrentDateTime`.
-```XML
+```xml
 <TechnicalProfile Id="login-NonInteractive">
   ...
   <OutputClaimsTransformations>
@@ -67,7 +67,7 @@ ms.locfileid: "79476694"
 
 Самоподтвержденный технический профиль вызывает технический профиль проверки **login-NonInteractive**.
 
-```XML
+```xml
 <TechnicalProfile Id="SelfAsserted-LocalAccountSignin-Email">
   <Metadata>
     <Item Key="DateTimeGreaterThan">Custom error message if the provided left operand is greater than the right operand.</Item>
@@ -89,14 +89,14 @@ ms.locfileid: "79476694"
 
 Преобразует ClaimType **Date** в тип **DateTime**. Преобразование утверждений преобразует формат времени и добавляет 00:00:00 к дате.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | Дата | ClaimType, который необходимо преобразовать. |
 | outputClaim | outputClaim | dateTime | ClaimType, который создается после вызова ClaimsTransformation. |
 
 В следующем примере показано преобразование утверждения `dateOfBirth` (тип данных date) в другое утверждение `dateOfBirthWithTime` (тип данных dateTime).
 
-```XML
+```xml
   <ClaimsTransformation Id="ConvertToDateTime" TransformationMethod="ConvertDateToDateTimeClaim">
     <InputClaims>
       <InputClaim ClaimTypeReferenceId="dateOfBirth" TransformationClaimType="inputClaim" />
@@ -118,14 +118,14 @@ ms.locfileid: "79476694"
 
 Преобразует тип данных DateTime в **дату** - **время** . Преобразование «утверждения» удаляет формат времени из даты.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | dateTime | ClaimType, который необходимо преобразовать. |
 | outputClaim | outputClaim | Дата | ClaimType, который создается после вызова ClaimsTransformation. |
 
 В следующем примере показано преобразование утверждения `systemDateTime` (тип данных DateTime) в другое утверждение `systemDate` (тип данных Date).
 
-```XML
+```xml
 <ClaimsTransformation Id="ConvertToDate" TransformationMethod="ConvertDateTimeToDateClaim">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="systemDateTime" TransformationClaimType="inputClaim" />
@@ -147,11 +147,11 @@ ms.locfileid: "79476694"
 
 Получает текущую дату и время в формате UTC и добавляет это значение к ClaimType.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | outputClaim | currentDateTime | dateTime | ClaimType, который создается после вызова ClaimsTransformation. |
 
-```XML
+```xml
 <ClaimsTransformation Id="GetSystemDateTime" TransformationMethod="GetCurrentDateTime">
   <OutputClaims>
     <OutputClaim ClaimTypeReferenceId="systemDateTime" TransformationClaimType="currentDateTime" />
@@ -168,18 +168,18 @@ ms.locfileid: "79476694"
 
 Определяет, является ли одно утверждение dateTime больше (позже), меньше (раньше) или равно другому. Результатом является новый логический параметр ClaimType со значением `true` или `false`.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | firstDateTime | dateTime | Первое значение dateTime для сравнения со вторым значением dateTime. При значении NULL возникает исключение. |
 | InputClaim | secondDateTime | dateTime | Второе значение dateTime для сравнения с первым значением dateTime. Значение NULL обрабатывается как текущее значение dateTime. |
 | InputParameter | оператор | строка | Одно из следующих значений: "same", "later than" или "earlier than" ("равно", "позже" или "раньше"). |
 | InputParameter | timeSpanInSeconds | INT | Добавление временного диапазона к первым дате и времени. |
-| outputClaim | набор по | Логическое | ClaimType, который создается после вызова ClaimsTransformation. |
+| outputClaim | result | Логическое | ClaimType, который создается после вызова ClaimsTransformation. |
 
 Это преобразование позволяет определить, являются ли два утверждения ClaimType равными, больше (позже) или меньше (раньше) друг друга. Например, вы можете сохранить время, когда пользователь последний раз принимал ваши условия предоставления услуг (TOS). Через 3 месяца вы можете попросить пользователя принять TOS еще раз.
 Чтобы выполнить преобразование утверждений, необходимо сначала получить текущее значение даты и времени, а также время, когда пользователь последний раз принимал TOS.
 
-```XML
+```xml
 <ClaimsTransformation Id="CompareLastTOSAcceptedWithCurrentDateTime" TransformationMethod="DateTimeComparison">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="currentDateTime" TransformationClaimType="firstDateTime" />

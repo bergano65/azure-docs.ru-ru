@@ -4,16 +4,16 @@ description: Настройка метода балансировки нагру
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/29/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 447de339d3ceef7aeb1c232605b0e30bbbb1e7d8
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: 5d5c39ff867add80833ee522ef173506fa1c642c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82612441"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85204354"
 ---
 # <a name="configure-the-windows-virtual-desktop-load-balancing-method"></a>Настройка метода балансировки нагрузки Виртуального рабочего стола Windows
 
@@ -33,15 +33,15 @@ ms.locfileid: "82612441"
 Чтобы настроить пул узлов для выполнения балансировки нагрузки с максимальной нагрузкой без настройки максимального ограничения сеанса, выполните следующий командлет PowerShell:
 
 ```powershell
-Update-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> -LoadBalancerType 'BreadthFirst' 
+Update-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> -LoadBalancerType 'BreadthFirst'
 ```
 
-После этого, чтобы убедиться, что вы установили метод балансировки нагрузки по ширине, выполните следующий командлет: 
+После этого, чтобы убедиться, что вы установили метод балансировки нагрузки по ширине, выполните следующий командлет:
 
 ```powershell
-Get-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> | format-list Name, LoadBalancerType 
+Get-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> | format-list Name, LoadBalancerType
 
-Name             : hostpoolname 
+Name             : hostpoolname
 LoadBalancerType : BreadthFirst
 ```
 
@@ -58,13 +58,13 @@ Update-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname>
 Чтобы настроить пул узлов для выполнения балансировки нагрузки с глубиной глубины, выполните следующий командлет PowerShell:
 
 ```powershell
-Update-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> -LoadBalancerType 'DepthFirst' -MaxSessionLimit ### 
+Update-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> -LoadBalancerType 'DepthFirst' -MaxSessionLimit ###
 ```
 
 Чтобы убедиться, что параметр обновлен, выполните следующий командлет:
 
 ```powershell
-Get-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> | format-list Name, LoadBalancerType, MaxSessionLimit 
+Get-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> | format-list Name, LoadBalancerType, MaxSessionLimit
 
 Name             : hostpoolname
 LoadBalancerType : DepthFirst
@@ -77,10 +77,10 @@ MaxSessionLimit  : 6
 
 Чтобы настроить балансировку нагрузки, выполните следующие действия.
 
-1. Войдите на портал Azure по адресу https://portal.azure.com. 
-2. Найдите и выберите пункт **виртуальный рабочий стол Windows** в разделе службы. 
+1. Войдите на портал Azure по адресу https://portal.azure.com.
+2. Найдите и выберите пункт **виртуальный рабочий стол Windows** в разделе службы.
 3. На странице виртуальных рабочих столов Windows выберите **Пулы узлов**.
 4. Выберите имя пула узлов, который нужно изменить.
 5. Выберите **Свойства**.
 6. Введите **Максимальное число сеансов** в поле и выберите в раскрывающемся меню необходимый **алгоритм балансировки нагрузки** для этого пула узлов.
-7. Щелкните **Сохранить**. При этом применяются новые параметры балансировки нагрузки.
+7. Нажмите кнопку **Сохранить**. При этом применяются новые параметры балансировки нагрузки.

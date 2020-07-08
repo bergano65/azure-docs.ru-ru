@@ -6,17 +6,17 @@ author: kevinvngo
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 05/13/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: faeab07ce7ec057981d23228461c2fa07600cdc1
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 1b73b82b4367d50cc5fbe9881a67e0afa041db86
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83660013"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85201164"
 ---
 # <a name="data-loading-strategies-for-synapse-sql-pool"></a>Стратегии загрузки данных для пула Synapse SQL
 
@@ -46,15 +46,13 @@ ms.locfileid: "83660013"
 5. Преобразуйте данные.
 6. Вставьте данные в рабочие таблицы.
 
-Руководство по загрузке данных в PolyBase см. на странице [Загрузка данных из хранилища BLOB-объектов Azure с помощью PolyBase](load-data-from-azure-blob-storage-using-polybase.md).
-
-Дополнительные сведения см. в записи блога о [стратегиях и шаблонах загрузки в хранилище данных SQL Azure](https://blogs.msdn.microsoft.com/sqlcat/20../../azure-sql-data-warehouse-loading-patterns-and-strategies/).
+Руководство по загрузке см. в статье [Загрузка данных из хранилища BLOB-объектов Azure](load-data-from-azure-blob-storage-using-polybase.md).
 
 ## <a name="1-extract-the-source-data-into-text-files"></a>1. Извлечение исходных данных в текстовые файлы
 
-Получение данных за пределами исходной системы зависит от расположения хранилища.  Основной целью является перемещение данных в CSV-файлы или текстовые с разделителями, поддерживаемыми PolyBase и COPY.
+Получение данных за пределами исходной системы зависит от расположения хранилища. Целью является перемещение данных в Поддерживаемые текстовые или CSV-файлы.
 
-### <a name="polybase-and-copy-external-file-formats"></a>Форматы внешних файлов PolyBase и COPY
+### <a name="supported-file-formats"></a>Поддерживаемые типы файлов
 
 С помощью PolyBase и инструкции COPY можно загружать данные из CSV-файлов или текстовых файлов с разделителями в кодировке UTF-8 и UTF-16. Кроме CSV-файлов или текстовых файлов с разделителями, данные также загружаются из форматов файлов Hadoop, таких как ORC и Parquet. PolyBase и инструкция COPY также могут загрузить данные из сжатых файлов Gzip и Snappy.
 
@@ -74,11 +72,11 @@ ms.locfileid: "83660013"
 
 Может потребоваться подготовка и очистка данных в учетной записи хранения перед их загрузкой. Подготовить данные можно, пока они хранятся в источнике, при экспорте данных в текстовые файлы или после того, как данные окажутся в службе хранилища Azure.  Лучше всего как можно раньше начать работу с данными.  
 
-### <a name="define-external-tables"></a>Определение внешних таблиц
+### <a name="define-the-tables"></a>Определение таблиц
 
-Если вы используете PolyBase, перед загрузкой данных необходимо определить внешние таблицы в пуле SQL. Для инструкции COPY внешние таблицы не требуются. PolyBase использует внешние таблицы для определения данных и доступа к ним в службе хранилища Azure.
+При использовании инструкции COPY необходимо сначала определить таблицы, которые вы загружаете в пул SQL.
 
-Внешняя таблица аналогична представлению базы данных. Внешняя таблица содержит схему таблицы и указывает на данные, хранящиеся за пределами пула SQL.
+Если вы используете PolyBase, перед загрузкой данных необходимо определить внешние таблицы в пуле SQL. PolyBase использует внешние таблицы для определения данных и доступа к ним в службе хранилища Azure. Внешняя таблица аналогична представлению базы данных. Внешняя таблица содержит схему таблицы и указывает на данные, хранящиеся за пределами пула SQL.
 
 Определение внешних таблиц включает указание источника данных, формата текстовых файлов и определений таблицы. Ниже приведены справочные статьи о синтаксисе T-SQL, которые вам понадобятся:
 
@@ -86,7 +84,7 @@ ms.locfileid: "83660013"
 - [CREATE EXTERNAL FILE FORMAT](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 
-Сопоставление типов данных SQL при загрузке Parquet:
+При загрузке файлов Parquet используйте следующее сопоставление типов данных SQL:
 
 |                         Тип Parquet                         |   Логический тип Parquet (заметка)   |  Тип данных SQL   |
 | :----------------------------------------------------------: | :-----------------------------------: | :--------------: |
@@ -126,7 +124,7 @@ ms.locfileid: "83660013"
 
 
 
-Пример создания внешних объектов см. в разделе [Создание внешних таблиц для примеров данных](load-data-from-azure-blob-storage-using-polybase.md#create-external-tables-for-the-sample-data) в руководстве по загрузке.
+Пример создания внешних объектов см. в разделе [Создание внешних таблиц](https://docs.microsoft.com/azure/synapse-analytics/sql/develop-tables-external-tables?tabs=sql-pool).
 
 ### <a name="format-text-files"></a>Форматирование текстовых файлов
 
@@ -139,17 +137,16 @@ ms.locfileid: "83660013"
 
 ## <a name="4-load-the-data-using-polybase-or-the-copy-statement"></a>4. Загрузка данных с помощью PolyBase или инструкции COPY
 
-Этот метод рекомендуется для загрузки данных в промежуточную таблицу. Промежуточные таблицы позволяют обрабатывать ошибки без оказания влияния на рабочие таблицы. Промежуточная таблица также предоставляет возможность использовать архитектуру MPP в пуле SQL для преобразования данных перед вставкой в рабочие таблицы.
+Этот метод рекомендуется для загрузки данных в промежуточную таблицу. Промежуточные таблицы позволяют обрабатывать ошибки без оказания влияния на рабочие таблицы. Промежуточная таблица также дает возможность использовать архитектуру параллельной обработки пула SQL для преобразований данных перед вставкой данных в рабочие таблицы.
 
-При загрузке данных в промежуточную таблицу с помощью инструкции COPY таблицу необходимо создать заранее.
+### <a name="options-for-loading"></a>Параметры загрузки
 
-### <a name="options-for-loading-with-polybase-and-copy-statement"></a>Варианты загрузки данных с помощью PolyBase и инструкции COPY
+Для загрузки данных можно использовать любой из следующих вариантов загрузки:
 
-Чтобы загрузить данные с помощью PolyBase, можно использовать любые из приведенных ниже вариантов загрузки.
-
-- [PolyBase с использованием T-SQL](load-data-from-azure-blob-storage-using-polybase.md) хорошо работает, когда данные хранятся в хранилище BLOB-объектов Azure или Azure Data Lake Store. Этот вариант предоставляет наибольший контроль над процессом загрузки, но также требует определения объектов внешних данных. Другие методы определяют эти объекты в фоновом режиме, когда вы сопоставляете исходные таблицы с целевыми.  Для оркестрации загрузок T-SQL можно использовать фабрику данных Azure, службы SSIS или функции Azure.
-- [PolyBase со службами SSIS](/sql/integration-services/load-data-to-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) является оптимальным выбором, когда исходные данные хранятся в SQL Server — локально или в облаке. Службы SSIS определяют сопоставления исходной и целевой таблиц, а также управляют загрузкой. При наличии пакетов служб SSIS можно изменить пакеты для работы с новым назначением хранилища данных.
+- [Инструкция Copy](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) является рекомендуемой программой загрузки, так как она позволяет легко и гибко загружать данные. Инструкция имеет множество дополнительных возможностей загрузки, которые не предоставляет Polybase. 
+- [Polybase с T-SQL](load-data-from-azure-blob-storage-using-polybase.md) требует определения внешних объектов данных.
 - [PolyBase и инструкция COPY с Фабрикой данных Azure (ADF)](../../data-factory/load-azure-sql-data-warehouse.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) представляют собой другое средство оркестрации.  Оно определяет конвейер и планирует расписания заданий.
+- [Polybase с SSIS](/sql/integration-services/load-data-to-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) хорошо работает, когда исходные данные находятся в SQL Server. Службы SSIS определяют сопоставления исходной и целевой таблиц, а также управляют загрузкой. При наличии пакетов служб SSIS можно изменить пакеты для работы с новым назначением хранилища данных.
 - [PolyBase с Azure Databricks](../../azure-databricks/databricks-extract-load-sql-data-warehouse.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) передает данные из таблицы в кадр данных Databricks и (или) записывает данные из кадра данных Databricks в таблицу с помощью PolyBase.
 
 ### <a name="other-loading-options"></a>Другие варианты загрузки

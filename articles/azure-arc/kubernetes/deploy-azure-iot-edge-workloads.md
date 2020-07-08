@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Развертывание рабочих нагрузок Azure IoT Edge
 keywords: Kubernetes, Arc, Azure, K8s, контейнеры
-ms.openlocfilehash: d82c93783d80060bc3443131191b7cec32dc4878
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
-ms.translationtype: HT
+ms.openlocfilehash: 2a688a221b2f4865d51bca2ebf4aaa0b1f714290
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83680775"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85193793"
 ---
 # <a name="deploy-azure-iot-edge-workloads-preview"></a>Развертывание рабочих нагрузок Azure IoT Edge (предварительная версия)
 

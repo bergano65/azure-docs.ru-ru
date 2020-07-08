@@ -4,15 +4,16 @@ description: Типы параметров сортировки, поддерж�
 author: filippopovic
 ms.service: synapse-analytics
 ms.topic: reference
+ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2b10aea962a31ba600deca866a8d9f7ab3b81ea8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0e9d8048c88a5ef37df2fde1ab282a834b07228a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82133660"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85206348"
 ---
 # <a name="database-collation-support-for-synapse-sql"></a>Поддержка параметров сортировки базы данных для синапсе SQL
 

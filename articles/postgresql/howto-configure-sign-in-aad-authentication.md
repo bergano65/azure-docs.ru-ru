@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 91435c2c5ca825793988e002c1ab9f6caacf2b17
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 7df9c40980d7a35c1eab0f892c3aca0a30938f57
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83652549"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85194116"
 ---
 # <a name="use-azure-active-directory-for-authenticating-with-postgresql"></a>Использование аутентификации Azure Active Directory с PostgreSQL
 
@@ -54,21 +54,19 @@ ms.locfileid: "83652549"
 
 Ниже приведены шаги, которые пользователь или приложение должны будут выполнить для аутентификации в Azure AD.
 
+### <a name="prerequisites"></a>Предварительные условия
+
+Вы можете следовать указаниям в Azure Cloud Shell, виртуальной машине Azure или на локальном компьютере. Убедитесь, что у вас [установлен Azure CLI](/cli/azure/install-azure-cli).
+
 ### <a name="step-1-authenticate-with-azure-ad"></a>Шаг 1. Аутентификация с помощью Azure AD
 
-Убедитесь, что у вас [установлен Azure CLI](/cli/azure/install-azure-cli).
+Начните с проверки подлинности в Azure AD с помощью средства Azure CLI. Этот шаг не требуется в Azure Cloud Shell.
 
-Вызовите средство Azure CLI, чтобы выполнить аутентификацию с помощью Azure AD. Для этого нужно указать ИД пользователя Azure AD и пароль.
-
-```azurecli-interactive
+```
 az login
 ```
 
-Эта команда запустит окно браузера на странице аутентификации Azure AD.
-
-> [!NOTE]
-> Для выполнения этих шагов вы также можете использовать Azure Cloud Shell.
-> Следует учитывать, что при извлечении маркера доступа Azure AD в Azure Cloud Shell необходимо явно вызвать `az login` и войти в систему еще раз (в отдельном окне с кодом). После этого команда `get-access-token` будет работать должным образом.
+Команда запустит окно браузера на странице аутентификации Azure AD. Для этого нужно указать ИД пользователя Azure AD и пароль.
 
 ### <a name="step-2-retrieve-azure-ad-access-token"></a>Шаг 2. Получение маркера доступа Azure AD
 
@@ -117,8 +115,12 @@ az account get-access-token --resource-type oss-rdbms
 
 Пример (Windows):
 
-```shell
+```cmd
 set PGPASSWORD=<copy/pasted TOKEN value from step 2>
+```
+
+```PowerShell
+$env:PGPASSWORD='<copy/pasted TOKEN value from step 2>'
 ```
 
 Пример (Linux/macOS):
@@ -132,6 +134,15 @@ export PGPASSWORD=<copy/pasted TOKEN value from step 2>
 ```shell
 psql "host=mydb.postgres... user=user@tenant.onmicrosoft.com@mydb dbname=postgres sslmode=require"
 ```
+
+Важные моменты при подключении:
+
+* `user@tenant.onmicrosoft.com`— имя пользователя или группы Azure AD, которую вы пытаетесь подключить.
+* Всегда добавлять имя сервера после имени пользователя или группы Azure AD (например, `@mydb` )
+* Убедитесь, что используется точный способ написания имени пользователя или группы Azure AD.
+* Имена пользователей и групп Azure AD чувствительны к регистру
+* При подключении в качестве группы используйте только имя группы (например,). `GroupName@mydb`
+* Если имя содержит пробелы, используйте `\` перед каждым пробелом, чтобы экранировать его.
 
 Теперь вы прошли аутентификацию на сервере PostgreSQL с использованием аутентификации Azure AD.
 
@@ -157,7 +168,7 @@ CREATE ROLE "user1@yourtenant.onmicrosoft.com" WITH LOGIN IN ROLE azure_ad_user;
 
 Чтобы разрешить группе Azure AD доступ к базе данных, используйте тот же механизм, что и для пользователей, но вместо имени пользователя укажите имя группы:
 
-**Пример**.
+**Пример.**
 
 ```sql
 CREATE ROLE "Prod DB Readonly" WITH LOGIN IN ROLE azure_ad_user;

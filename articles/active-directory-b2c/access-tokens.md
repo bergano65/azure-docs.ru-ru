@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/12/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 36027583d64ac91432888d866440932c6e1bdd07
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: de5c478ac6641fe5b1e342c063d134f70084b2ef
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83635444"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85201452"
 ---
 # <a name="request-an-access-token-in-azure-active-directory-b2c"></a>Запрос маркера доступа в Azure Active Directory B2C
 
@@ -29,7 +29,7 @@ ms.locfileid: "83635444"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - [Создайте поток пользователя](tutorial-create-user-flows.md), чтобы пользователи могли зарегистрироваться и войти в ваше приложение.
-- [Добавьте приложение веб-API приложения в клиент Azure Active Directory B2C](add-web-application.md), если это еще не сделано.
+- [Добавьте приложение веб-API приложения в клиент Azure Active Directory B2C](add-web-api-application.md), если это еще не сделано.
 
 ## <a name="scopes"></a>Области действия
 
@@ -49,7 +49,7 @@ scope=https://contoso.onmicrosoft.com/api/read openid offline_access
 scope=https%3A%2F%2Fcontoso.onmicrosoft.com%2Fapi%2Fread%20openid%20offline_access
 ```
 
-Если число запрашиваемых областей превышает число областей, предоставленных клиентскому приложению, вызов будет выполнен в случае предоставления по меньшей мере одного разрешения. Утверждение **scp** полученного маркера заполняется только успешно предоставленными разрешениями. Стандартное утверждение OpenID Connect определяет несколько специальных значений области. Следующие области представляют право доступа к профилю пользователя.
+Если число запрашиваемых областей превышает число областей, предоставленных клиентскому приложению, вызов будет выполнен в случае предоставления по меньшей мере одного разрешения. Утверждение **scp** полученного маркера заполняется только успешно предоставленными разрешениями. Стандартное утверждение OpenID Connect определяет несколько специальных значений области. Следующие области представляют разрешение на доступ к профилю пользователя:
 
 - **openid** — запрашивает маркер идентификатора.
 - **offline_access** — запрашивает маркер обновления с помощью [потоков кода аутентификации](authorization-code-flow.md).
@@ -67,7 +67,7 @@ scope=https%3A%2F%2Fcontoso.onmicrosoft.com%2Fapi%2Fread%20openid%20offline_acce
 - `<application-ID>` — идентификатор веб-приложения, которое вы зарегистрировали для поддержки потока пользователя.
 - `<redirect-uri>` — **URI перенаправления**, который вы ввели при регистрации клиентского приложения.
 
-```HTTP
+```http
 GET https://<tenant-name>.b2clogin.com/tfp/<tenant-name>.onmicrosoft.com/<policy-name>/oauth2/v2.0/authorize?
 client_id=<application-ID>
 &nonce=anyRandomValue
@@ -84,7 +84,7 @@ https://jwt.ms/?code=eyJraWQiOiJjcGltY29yZV8wOTI1MjAxNSIsInZlciI6IjEuMC...
 
 После успешного получения кода авторизации его можно использовать для запроса маркера доступа:
 
-```HTTP
+```http
 POST <tenant-name>.onmicrosoft.com/<policy-name>/oauth2/v2.0/token HTTP/1.1
 Host: <tenant-name>.b2clogin.com
 Content-Type: application/x-www-form-urlencoded
@@ -99,7 +99,7 @@ grant_type=authorization_code
 
 Должен отобразиться результат, аналогичный следующему ответу:
 
-```JSON
+```json
 {
     "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrN...",
     "token_type": "Bearer",
@@ -113,7 +113,7 @@ grant_type=authorization_code
 
 При использовании https://jwt.ms для проверки возвращенного маркера доступа вы должны увидеть примерно следующий результат:
 
-```JSON
+```json
 {
   "typ": "JWT",
   "alg": "RS256",

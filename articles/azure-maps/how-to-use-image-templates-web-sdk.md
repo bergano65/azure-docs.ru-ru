@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.custom: codepen
-ms.openlocfilehash: ee8e8ee4ca64de0390b6fa34e36fb4d06348a8ac
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 28fee67ccfc1e67d89d0151c8e14bd7c0b688749
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80804815"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85207098"
 ---
 # <a name="how-to-use-image-templates"></a>Использование шаблонов образов
 
@@ -32,7 +32,7 @@ ms.locfileid: "80804815"
 createFromTemplate(id: string, templateName: string, color?: string, secondaryColor?: string, scale?: number): Promise<void>
 ```
 
-`id` — Это уникальный идентификатор, который вы создаете. `id` Назначается образу при его добавлении в спрайт изображений Maps. Используйте этот идентификатор в слоях, чтобы указать, какой ресурс изображения следует визуализировать. `templateName` Указывает используемый шаблон изображения. `color` Параметр задает основной цвет изображения, а `secondaryColor` параметры задают вторичный цвет изображения. `scale` Параметр масштабирует шаблон изображения перед его применением к спрайту изображений. Когда изображение применяется к спрайту изображений, оно преобразуется в PNG. Чтобы обеспечить четкое отображение, лучше масштабировать шаблон изображения перед добавлением его к спрайту, чем масштабировать его в слое.
+`id`— Это уникальный идентификатор, который вы создаете. `id`Назначается образу при его добавлении в спрайт изображений Maps. Используйте этот идентификатор в слоях, чтобы указать, какой ресурс изображения следует визуализировать. `templateName`Указывает используемый шаблон изображения. `color`Параметр задает основной цвет изображения, а `secondaryColor` Параметры задают вторичный цвет изображения. `scale`Параметр масштабирует шаблон изображения перед его применением к спрайту изображений. Когда изображение применяется к спрайту изображений, оно преобразуется в PNG. Чтобы обеспечить четкое отображение, лучше масштабировать шаблон изображения перед добавлением его к спрайту, чем масштабировать его в слое.
 
 Эта функция асинхронно загружает изображение в спрайт изображений. Таким же методом возвращается обещание, которое можно ожидать завершения этой функции.
 
@@ -52,30 +52,30 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 
 ## <a name="use-an-image-template-with-a-symbol-layer"></a>Использование шаблона изображения с уровнем символов
 
-После загрузки шаблона изображения в спрайт изображений карт его можно визуализировать как символ на уровне символов, ссылаясь на идентификатор ресурса изображения в `image` параметре. `iconOptions`
+После загрузки шаблона изображения в спрайт изображений карт его можно визуализировать как символ на уровне символов, ссылаясь на идентификатор ресурса изображения в `image` параметре `iconOptions` .
 
-В следующем примере слой символов визуализируется с помощью шаблона `marker-flat` изображения с бирюзовым основным цветом и белым вторичным цветом. 
+В следующем примере слой символов визуализируется с помощью `marker-flat` шаблона изображения с бирюзовым основным цветом и белым вторичным цветом. 
 
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Слой символов с встроенным шаблоном значка" src="//codepen.io/azuremaps/embed/VoQMPp/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/VoQMPp/'>слой символов пера со встроенным шаблоном значка</a> Azure Maps<a href='https://codepen.io/azuremaps'>@azuremaps</a>() на <a href='https://codepen.io'>CodePen</a>.
+См. раздел <a href='https://codepen.io/azuremaps/pen/VoQMPp/'>слой символов пера со встроенным шаблоном значка</a> Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="use-an-image-template-along-a-lines-path"></a>Использование шаблона изображения вдоль строкового пути
 
-После загрузки шаблона изображения в спрайт изображений карт его можно визуализировать по пути линии, добавив LineString к источнику данных и используя слой символов с `lineSpacing`параметром и ОБРАТИВШИСЬ к идентификатору ресурса изображения в `image` параметре TH. `iconOptions` 
+После загрузки шаблона изображения в спрайт изображений карт его можно визуализировать по пути линии, добавив LineString к источнику данных и используя слой символов с `lineSpacing` параметром и обратившись к идентификатору ресурса изображения в `image` параметре TH `iconOptions` . 
 
-Следующий пример выводит розовую линию на карте и использует слой символов с помощью шаблона `car` изображения с синим основным цветом тускло-Васильковый и белым вторичным цветом. 
+Следующий пример выводит розовую линию на карте и использует слой символов с помощью `car` шаблона изображения с синим основным цветом тускло-Васильковый и белым вторичным цветом. 
 
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Слой линий со встроенным шаблоном значка" src="//codepen.io/azuremaps/embed/KOQvJe/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/KOQvJe/'>слой линий пера со встроенным шаблоном значка</a> Azure Maps<a href='https://codepen.io/azuremaps'>@azuremaps</a>() на <a href='https://codepen.io'>CodePen</a>.
+См. раздел <a href='https://codepen.io/azuremaps/pen/KOQvJe/'>слой линий пера со встроенным шаблоном значка</a> Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 > [!TIP]
-> Если вы указываете шаблон изображения, установите для `rotation` параметра значок на уровне символов значение 90, если хотите, чтобы он указывал на то же направление, что и линия.
+> Если вы указываете шаблон изображения, установите `rotation` для параметра значок на уровне символов значение 90, если хотите, чтобы он указывал на то же направление, что и линия.
 
 ## <a name="use-an-image-template-with-a-polygon-layer"></a>Использование шаблона изображения с слоем многоугольников
 
@@ -86,7 +86,7 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Заливка многоугольника с помощью встроенного шаблона значка" src="//codepen.io/azuremaps/embed/WVMEmz/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/WVMEmz/'>Заливка многоугольника с помощью встроенного шаблона значка</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+См. раздел <a href='https://codepen.io/azuremaps/pen/WVMEmz/'>Заливка многоугольника с помощью встроенного шаблона значка</a> Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 > [!TIP]
@@ -94,24 +94,35 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 
 ## <a name="use-an-image-template-with-an-html-marker"></a>Использование шаблона изображения с маркером HTML
 
-Шаблон изображения можно получить с помощью `altas.getImageTemplate` функции и использовать в качестве содержимого HTML-маркера. Шаблон `htmlContent` можно передать в параметр маркера, а затем настроить с помощью параметров `color`, `secondaryColor`и. `text`
+Шаблон изображения можно получить с помощью `altas.getImageTemplate` функции и использовать в качестве содержимого HTML-маркера. Шаблон можно передать в `htmlContent` параметр маркера, а затем настроить с помощью `color` `secondaryColor` параметров, и `text` .
 
 В следующем примере используется `marker-arrow` шаблон с красным основным цветом, розовым вторичным цветом и текстовым значением "00".
 
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="HTML-маркер со встроенным шаблоном значка" src="//codepen.io/azuremaps/embed/EqQvzq/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Просмотрите HTML- <a href='https://codepen.io/azuremaps/pen/EqQvzq/'>маркер пера со встроенным шаблоном значка</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+Просмотрите HTML- <a href='https://codepen.io/azuremaps/pen/EqQvzq/'>маркер пера со встроенным шаблоном значка</a> Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+
+> [!TIP]
+> Шаблоны изображений можно использовать за пределами схемы. Жетимажетемплате масштабируются возвращает строку SVG, которая содержит заполнители. `{color}`, `{secondaryColor}`, `{scale}`, `{text}`. Замените эти значения заполнителей, чтобы создать допустимую строку SVG. Затем можно либо добавить строку SVG непосредственно в HTML DOM, либо преобразовать ее в универсальный код ресурса (URI) данных и вставить в тег Image. Пример:
+> ```JavaScript
+> //Retrieve an SVG template and replace the placeholder values.
+> var svg = atlas.getImageTemplate('marker').replace(/{color}/, 'red').replace(/{secondaryColor}/, 'white').replace(/{text}/, '').replace(/{scale}/, 1);
+>
+> //Convert to data URI for use in image tags.
+> var dataUri = 'data:image/svg+xml;base64,' + btoa(svg);
+> ```
 
 ## <a name="create-custom-reusable-templates"></a>Создание настраиваемых многократно используемых шаблонов
 
 Если приложение использует один и тот же значок с разными значками или если вы создаете модуль, который добавляет дополнительные шаблоны изображений, вы можете легко добавлять и получать эти значки из веб-пакета SDK Azure Maps. Используйте следующие статические функции в `atlas` пространстве имен.
 
-| Имя | Тип возвращаемых данных | Описание | 
+| name | Тип возвращаемых данных | Описание: | 
 |-|-|-|
 | `addImageTemplate(templateName: string, template: string, override: boolean)` | | Добавляет пользовательский шаблон изображения SVG в пространство имен Atlas. |
-|  `getImageTemplate(templateName: string, scale?: number)`| строка | Извлекает шаблон SVG по имени. |
+|  `getImageTemplate(templateName: string, scale?: number)`| string | Извлекает шаблон SVG по имени. |
 | `getAllImageTemplateNames()` | string[] |  Извлекает шаблон SVG по имени. |
 
 Шаблоны изображений SVG поддерживают следующие значения заполнителей:
@@ -128,7 +139,7 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Добавление пользовательского шаблона значка в пространство имен Atlas" src="//codepen.io/azuremaps/embed/NQyvEX/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/NQyvEX/'>Добавление пользовательского шаблона значка в пространство имен Atlas</a> с<a href='https://codepen.io/azuremaps'>@azuremaps</a>помощью Azure Maps () в <a href='https://codepen.io'>CodePen</a>.
+См. раздел <a href='https://codepen.io/azuremaps/pen/NQyvEX/'>Добавление пользовательского шаблона значка в пространство имен Atlas</a> с помощью Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="list-of-image-templates"></a>Список шаблонов изображений
@@ -157,7 +168,7 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 | pin | закрепить-округлить | Скругленный квадрат | скругленное-квадратное-толстое |
 | ![значок закрепления](./media/image-templates/pin.png) | ![значок "закрепить на круге"](./media/image-templates/pin-round.png) | ![значок скругленного квадрата](./media/image-templates/rounded-square.png) | ![значок со скругленной квадратной линией](./media/image-templates/rounded-square-thick.png) |
 ||||
-| Стрелка вверх | стрелка — тонкая | автомобиль ||
+| Стрелка вверх | стрелка — тонкая | car ||
 | ![значок стрелки "вверх"](./media/image-templates/arrow-up.png) | ![Стрелка-вверх-тонкий значок](./media/image-templates/arrow-up-thin.png) | ![значок автомобиля](./media/image-templates/car.png) | |
 
 **Шаблоны узорной заливки многоугольников**
@@ -176,6 +187,25 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 | зигзаг — зигзаг | зигзаг-зигзаг-по вертикали | количество |  |
 | ![значок зигзаг-зигзаг](./media/image-templates/zig-zag.png) | ![значок зигзаг-зигзаг-Vertical](./media/image-templates/zig-zag-vertical.png) | ![значок точек](./media/image-templates/dots.png) | |
 
+**Значки предварительно загруженных изображений**
+
+Карта предварительно загружает набор значков в спрайт изображения Maps с помощью `marker` `pin` шаблонов, и `pin-round` . Эти имена значков и их цветовые значения перечислены в таблице ниже.
+
+| имя значка | color | секондариколор |
+|-----------|-------|----------------|
+| `marker-black` | `#231f20` | `#ffffff` |
+| `marker-blue` | `#1a73aa` | `#ffffff` |
+| `marker-darkblue` | `#003963` | `#ffffff` |
+| `marker-red` | `#ef4c4c` | `#ffffff` |
+| `marker-yellow` | `#f2c851` | `#ffffff` |
+| `pin-blue` | `#2072b8` | `#ffffff` |
+| `pin-darkblue` | `#003963` | `#ffffff` |
+| `pin-red` | `#ef4c4c` | `#ffffff` |
+| `pin-round-blue` | `#2072b8` | `#ffffff` |
+| `pin-round-darkblue` | `#003963` | `#ffffff` |
+| `pin-round-red` | `#ef4c4c` | `#ffffff` |
+
+
 ## <a name="try-it-now-tool"></a>Попробуйте это средство
 
 С помощью следующего средства можно отобразить различные встроенные шаблоны изображений различными способами и настроить основной и дополнительный цвета и масштаб.
@@ -183,10 +213,10 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Параметры шаблона значка" src="//codepen.io/azuremaps/embed/NQyaaO/?height=500&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Сведения о <a href='https://codepen.io/azuremaps/pen/NQyaaO/'>параметрах шаблона значок</a> пера см.<a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps () на <a href='https://codepen.io'>CodePen</a>.
+Сведения о <a href='https://codepen.io/azuremaps/pen/NQyaaO/'>параметрах шаблона значок</a> пера см. Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

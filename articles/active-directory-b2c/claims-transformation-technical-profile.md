@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 02/13/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 84c1cf798e88e4067da8a495c1591143d2ee1bd0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6553b9ec120ca0e1e479b400495b61bc68c88cf3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78189792"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85201214"
 ---
 # <a name="define-a-claims-transformation-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля преобразования утверждений в пользовательской политике в Azure Active Directory B2C
 
@@ -30,7 +30,7 @@ ms.locfileid: "78189792"
 
 В следующем примере показан технический профиль для преобразования утверждений:
 
-```XML
+```xml
 <TechnicalProfile Id="Facebook-OAUTH-UnLink">
     <DisplayName>Unlink Facebook</DisplayName>
     <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.ClaimsTransformationProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
@@ -52,7 +52,7 @@ ms.locfileid: "78189792"
 
 Элемент **OutputClaimsTransformations** может содержать коллекцию элементов **OutputClaimsTransformation**, которые используются для изменения или создания утверждений. Следующий технический профиль вызывает преобразование утверждений **RemoveAlternativeSecurityIdByIdentityProvider**. Это преобразование утверждений удаляет удостоверение социальной сети из коллекции **AlternativeSecurityIds**. Исходящие утверждения этого технического профиля — **identityProvider2**, которому задано значение `facebook.com`, и **AlternativeSecurityIds**, который содержит список удостоверений социальных сетей, связанный с данным пользователем, после удаления удостоверения facebook.com.
 
-```XML
+```xml
 <ClaimsTransformations>
   <ClaimsTransformation Id="RemoveAlternativeSecurityIdByIdentityProvider"
 TransformationMethod="RemoveAlternativeSecurityIdByIdentityProvider">
@@ -84,7 +84,7 @@ TransformationClaimType="collection" />
 
 Технический профиль преобразования утверждений позволяет выполнять преобразование утверждений на любом шаге оркестрации на пути взаимодействия пользователя. В следующем примере шаг оркестрации вызывает один из технических профилей с удаленной связью, такой как **UnLink-Facebook-OAUTH**. Этот технический профиль вызывает **ремовеалтернативесекуритидбидентитипровидер**технический профиль преобразования утверждений, который создает новое утверждение **AlternativeSecurityIds2** , содержащее список удостоверений пользователей социальных сетей, а также удаляет удостоверение Facebook из коллекций.
 
-```XML
+```xml
 <UserJourney Id="AccountUnLink">
   <OrchestrationSteps>
     ...
@@ -102,15 +102,15 @@ TransformationClaimType="collection" />
 
 ## <a name="metadata"></a>Метаданные
 
-| Атрибут | Обязательный | Описание |
+| attribute | Обязательное значение | Описание |
 | --------- | -------- | ----------- |
-| инклудеклаимресолвингинклаимшандлинг  | Нет | Для входных и выходных утверждений указывает, включено ли [разрешение утверждений](claim-resolver-overview.md) в технический профиль. Возможные значения: `true`или `false`  (по умолчанию). Если вы хотите использовать сопоставитель утверждений в техническом профиле, задайте для `true`этого параметра значение. |
+| инклудеклаимресолвингинклаимшандлинг  | Нет | Для входных и выходных утверждений указывает, включено ли [разрешение утверждений](claim-resolver-overview.md) в технический профиль. Возможные значения: `true` или `false`   (по умолчанию). Если вы хотите использовать сопоставитель утверждений в техническом профиле, задайте для этого параметра значение `true` . |
 
 ## <a name="use-a-validation-technical-profile"></a>Использование технического профиля проверки
 
 Технический профиль преобразования утверждений может использоваться для проверки информации. В следующем примере [самоподтвержденный технический профиль](self-asserted-technical-profile.md) с именем **LocalAccountSignUpWithLogonEmail** предлагает пользователю дважды ввести адрес электронной почты, а затем вызывает [технический профиль проверки](validation-technical-profile.md) с именем **Validate-Email** для проверки адреса электронной почты. Технический профиль **Validate-Email** вызывает преобразование утверждений **AssertEmailAreEqual** для сравнения двух утверждений **email** и **emailRepeat**. Если они не равны в соответствии с указанным сравнением, он создает исключение.
 
-```XML
+```xml
 <ClaimsTransformations>
   <ClaimsTransformation Id="AssertEmailAreEqual" TransformationMethod="AssertStringClaimsAreEqual">
     <InputClaims>
@@ -126,7 +126,7 @@ TransformationClaimType="collection" />
 
 Технический профиль преобразования утверждений вызывает преобразование утверждений **AssertEmailAreEqual**, которое подтверждает, что адреса электронной почты, предоставленные пользователем, одинаковы.
 
-```XML
+```xml
 <TechnicalProfile Id="Validate-Email">
   <DisplayName>Unlink Facebook</DisplayName>
   <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.ClaimsTransformationProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
@@ -145,7 +145,7 @@ TransformationClaimType="collection" />
 
 Самоподтвержденный технический профиль может вызвать технический профиль проверки и отобразить сообщение об ошибке, указанное в метаданных **UserMessageIfClaimsTransformationStringsAreNotEqual**.
 
-```XML
+```xml
 <TechnicalProfile Id="LocalAccountSignUpWithLogonEmail">
   <DisplayName>User ID signup</DisplayName>
   <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.SelfAssertedAttributeProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />

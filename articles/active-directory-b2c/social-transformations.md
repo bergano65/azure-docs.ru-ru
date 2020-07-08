@@ -11,20 +11,20 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: cb713651aca266ab2546ff26c3cd0175a4cbc289
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: eaa2984c0d7a5d3763f554e39f687fdbd2865e96
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78183760"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85203390"
 ---
 # <a name="social-accounts-claims-transformations"></a>Преобразования утверждений учетных записей социальных сетей
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В Azure Active Directory B2C (Azure AD B2C) идентификаторы учетных записей социальных сетей хранятся `userIdentities` в атрибуте типа утверждения **алтернативесекуритидколлектион** . Каждый элемент в утверждении **alternativeSecurityIdCollection** задает издателя (имя поставщика удостоверений, например facebook.com) и `issuerUserId` — уникальный идентификатор пользователя для издателя.
+В Azure Active Directory B2C (Azure AD B2C) идентификаторы учетных записей социальных сетей хранятся в `userIdentities` атрибуте типа утверждения **алтернативесекуритидколлектион** . Каждый элемент в утверждении **alternativeSecurityIdCollection** задает издателя (имя поставщика удостоверений, например facebook.com) и `issuerUserId` — уникальный идентификатор пользователя для издателя.
 
-```JSON
+```json
 "userIdentities": [{
     "issuer": "google.com",
     "issuerUserId": "MTA4MTQ2MDgyOTI3MDUyNTYzMjcw"
@@ -41,15 +41,15 @@ ms.locfileid: "78183760"
 
 Создает представление JSON свойства alternativeSecurityId пользователя, которое можно использовать в вызовах Azure Active Directory. Дополнительные сведения см. в схеме [AlternativeSecurityId](https://docs.microsoft.com/graph/api/resources/alternativesecurityid) .
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | ключ | строка | Тип ClaimType, который указывает уникальный идентификатор пользователя, используемый поставщиком удостоверений социальных сетей. |
-| InputClaim | identityProvider | строка | Тип ClaimType, который указывает имя поставщика удостоверений учетных записей социальных сетей, например facebook.com. |
-| outputClaim | alternativeSecurityId | строка | Тип ClaimType, который создается после вызова ClaimsTransformation. Содержит информацию об удостоверении пользователя учетной записи социальной сети. **issuer** — значение утверждения `identityProvider`. **issuerUserId** — значение утверждения `key` в формате base64. |
+| InputClaim | identityProvider | string | Тип ClaimType, который указывает имя поставщика удостоверений учетных записей социальных сетей, например facebook.com. |
+| outputClaim | alternativeSecurityId | string | Тип ClaimType, который создается после вызова ClaimsTransformation. Содержит информацию об удостоверении пользователя учетной записи социальной сети. **issuer** — значение утверждения `identityProvider`. **issuerUserId** — значение утверждения `key` в формате base64. |
 
 Это преобразование утверждений позволяет задать ClaimType для `alternativeSecurityId`. Преобразование используют все технические профили поставщиков удостоверений социальных сетей, например `Facebook-OAUTH`. Следующее преобразование утверждений позволяет получить идентификатор учетной записи пользователя социальной сети и имя поставщика удостоверений. Выходные данные этого технического профиля представляют собой строку в формате JSON, которую можно использовать в службах каталогов Azure AD.
 
-```XML
+```xml
 <ClaimsTransformation Id="CreateAlternativeSecurityId" TransformationMethod="CreateAlternativeSecurityId">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="issuerUserId" TransformationClaimType="key" />
@@ -73,9 +73,9 @@ ms.locfileid: "78183760"
 
 Добавляет `AlternativeSecurityId` к утверждению `alternativeSecurityIdCollection`.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | item | строка | Тип ClaimType, добавляемый к исходящему утверждению. |
+| InputClaim | item | string | Тип ClaimType, добавляемый к исходящему утверждению. |
 | InputClaim | коллекция | alternativeSecurityIdCollection | Типы ClaimType, используемые при преобразовании утверждений (если типы доступны в политике). Если это значение указано, при преобразовании утверждений в конец коллекции добавляется `item`. |
 | outputClaim | коллекция | alternativeSecurityIdCollection | Типы ClaimType, создаваемые после вызова этого преобразования ClaimsTransformation. Новая коллекция, содержащая как элементы из входного элемента `collection`, так и из `item`. |
 
@@ -86,7 +86,7 @@ ms.locfileid: "78183760"
 1. Вызовите преобразование утверждений **AddItemToAlternativeSecurityIdCollection**, чтобы добавить утверждение **AlternativeSecurityId2** к существующему утверждению **AlternativeSecurityIds**.
 1. Сохраните утверждение **alternativeSecurityIds** в учетной записи пользователя.
 
-```XML
+```xml
 <ClaimsTransformation Id="AddAnotherAlternativeSecurityId" TransformationMethod="AddItemToAlternativeSecurityIdCollection">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="AlternativeSecurityId2" TransformationClaimType="item" />
@@ -110,14 +110,14 @@ ms.locfileid: "78183760"
 
 Возвращает список издателей из утверждения **alternativeSecurityIdCollection** в новое утверждение **stringCollection**.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | alternativeSecurityIdCollection | alternativeSecurityIdCollection | Тип ClaimType, используемый для получения списка поставщиков удостоверений (издатель). |
 | outputClaim | identityProvidersCollection | stringCollection | Типы ClaimType, создаваемые после вызова этого преобразования ClaimsTransformation. Список поставщиков удостоверений, связанных со входящим утверждением alternativeSecurityIdCollection |
 
 Указанное ниже преобразование утверждений позволяет считать утверждение пользователя **alternativeSecurityIds** и извлечь список имен поставщиков удостоверений, связанных с этой учетной записью. Используйте выходную коллекцию **identityProvidersCollection**, чтобы для пользователя отобразился список поставщиков удостоверений, связанный с учетной записью. Или же на странице выбора поставщика удостоверений отфильтруйте список поставщиков удостоверений на основе исходящего утверждения **identityProvidersCollection**. Таким образом, пользователь по выбору может связать с учетной записью новое удостоверение социальной сети, которое с ней еще не связано.
 
-```XML
+```xml
 <ClaimsTransformation Id="ExtractIdentityProviders" TransformationMethod="GetIdentityProvidersFromAlternativeSecurityIdCollectionTransformation">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="alternativeSecurityIds" TransformationClaimType="alternativeSecurityIdCollection" />
@@ -137,9 +137,9 @@ ms.locfileid: "78183760"
 
 Удаляет **AlternativeSecurityId** из утверждения **alternativeSecurityIdCollection**.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | identityProvider | строка | Тип ClaimType, который содержит имя поставщика удостоверений, удаляемое из коллекции. |
+| InputClaim | identityProvider | string | Тип ClaimType, который содержит имя поставщика удостоверений, удаляемое из коллекции. |
 | InputClaim | коллекция | alternativeSecurityIdCollection | Типы ClaimType, используемые в преобразовании утверждений. При преобразовании утверждений identityProvider удаляется из коллекции. |
 | outputClaim | коллекция | alternativeSecurityIdCollection | Типы ClaimType, создаваемые после вызова этого преобразования ClaimsTransformation. Новая коллекция после удаления identityProvider из коллекции. |
 
@@ -149,7 +149,7 @@ ms.locfileid: "78183760"
 3. Вызовите технический профиль преобразования утверждений, который вызывает преобразование утверждений **RemoveAlternativeSecurityIdByIdentityProvider**, при котором было удалено выбранное удостоверение социальной сети, с использованием имени поставщика удостоверений.
 4. Сохранить утверждение **alternativeSecurityIds** в учетной записи пользователя.
 
-```XML
+```xml
 <ClaimsTransformation Id="RemoveAlternativeSecurityIdByIdentityProvider" TransformationMethod="RemoveAlternativeSecurityIdByIdentityProvider">
     <InputClaims>
         <InputClaim ClaimTypeReferenceId="secondIdentityProvider" TransformationClaimType="identityProvider" />

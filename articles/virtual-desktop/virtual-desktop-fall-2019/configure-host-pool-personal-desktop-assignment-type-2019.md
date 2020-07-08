@@ -4,16 +4,16 @@ description: Как настроить тип назначения для пул
 services: virtual-desktop
 author: HeidiLohr
 ms.service: virtual-desktop
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/22/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ddfd9346f4a72ceb2e8bf5c336fb3de9b5c8c5c7
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 376f9d78f508c245bec2d066863566ace68eff0a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83827477"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85204869"
 ---
 # <a name="configure-the-personal-desktop-host-pool-assignment-type"></a>Настройка типа назначения пула узлов персонального рабочего стола
 
@@ -31,7 +31,7 @@ ms.locfileid: "83827477"
 
 Для автоматического назначения пользователей сначала назначьте их пулу узлов персональных рабочих столов, чтобы они могли видеть рабочий стол в своем канале. Когда назначенный пользователь запускает рабочий стол в своем канале, он запрашивает доступный узел сеанса, если еще не подключился к пулу узлов, который завершает процесс назначения.
 
-Прежде чем начать, [скачайте и импортируйте модуль PowerShell виртуального рабочего стола Windows](/powershell/windows-virtual-desktop/overview/), если вы еще не сделали этого. 
+Прежде чем начать, [скачайте и импортируйте модуль PowerShell виртуального рабочего стола Windows](/powershell/windows-virtual-desktop/overview/), если вы еще не сделали этого.
 
 > [!NOTE]
 > Прежде чем выполнять эти инструкции, не забудьте установить модуль PowerShell версии 1.0.1534.2001 или более поздней виртуального рабочего стола Windows.
