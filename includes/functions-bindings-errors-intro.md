@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 09/04/2018
 ms.author: glenga
 ms.openlocfilehash: 629de079f7cc7d95d10f8ff951a47b8b8fc62dad
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77474110"
 ---
 Ошибки, возникающие в функциях Azure, могут поступать из любого из следующих источников:
@@ -34,7 +34,7 @@ ms.locfileid: "77474110"
 Следующие триггеры поддерживают встроенный механизм повторных попыток:
 
 * [Хранилище BLOB-объектов Azure](../articles/azure-functions/functions-bindings-storage-blob.md)
-* [Хранилище очередей Azure](../articles/azure-functions/functions-bindings-storage-queue.md)
+* [хранилище очередей Azure](../articles/azure-functions/functions-bindings-storage-queue.md);
 * [служебная шина Azure (очередь/тема)](../articles/azure-functions/functions-bindings-service-bus.md).
 
 По умолчанию эти запросы повторно поступают в пять раз. После пятой повторной попытки хранилище очередей Azure и триггеры служебной шины Azure записывают сообщение в [очередь подозрительных](..\articles\azure-functions\functions-bindings-storage-queue-trigger.md#poison-messages)сообщений.

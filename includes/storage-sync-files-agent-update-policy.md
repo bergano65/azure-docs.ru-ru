@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 12/11/2018
 ms.author: rogarana
 ms.openlocfilehash: aeb15fbb8da44a203789e06a359cb664998602ab
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77123149"
 ---
 Агент службы синхронизации файлов Azure обновляется на регулярной основе. Это позволяет добавлять новые возможности и устранять ошибки. Мы рекомендуем настроить Центр обновления Майкрософт, чтобы получать обновления службы синхронизации файлов Azure по мере их выпуска.
@@ -43,7 +43,7 @@ cd 'C:\Program Files\Azure\StorageSyncAgent'
 Import-Module -Name .\StorageSync.Management.ServerCmdlets.dll
 ```
 
-Можно запустить `Get-StorageSyncAgentAutoUpdatePolicy` , чтобы проверить текущий параметр политики и определить, нужно ли его изменить.
+Можно запустить, `Get-StorageSyncAgentAutoUpdatePolicy` чтобы проверить текущий параметр политики и определить, нужно ли его изменить.
 
 Чтобы изменить текущий параметр политики на отложенную запись обновления, можно использовать:
 ```powershell

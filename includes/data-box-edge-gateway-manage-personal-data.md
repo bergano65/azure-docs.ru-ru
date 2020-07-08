@@ -5,20 +5,20 @@ ms.topic: include
 ms.date: 04/16/2019
 ms.author: alkohli
 ms.openlocfilehash: af4c3829c8b12bfcaae0602dde8f459de7e50f3a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67185928"
 ---
 - **Сведения о заказе**. При создании заказа адрес доставки, адрес электронной почты и контактные данные пользователя сохраняются в портал Azure. Сохраненная информация включает следующее.
   - Имя контактного лица
-  - Номер телефона
+  - номер телефона.
   - Адрес электронной почты
   - Адрес по улице
   - Город
   - Почтовый индекс
-  - Состояние
+  - Область
   - Страна, район или регион
   - номер отслеживания доставки.
 

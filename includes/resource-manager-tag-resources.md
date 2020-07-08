@@ -9,10 +9,10 @@ ms.date: 03/19/2020
 ms.author: tomfitz
 ms.custom: include file
 ms.openlocfilehash: a00291182059506aeab9cde965fa4cbd5177ecf7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80132147"
 ---
 Если у пользователя нет необходимого доступа к применению тегов, можно назначить пользователю роль « **участник тега** ». Дополнительные сведения см. [в разделе Учебник. предоставление пользователю доступа к ресурсам Azure с помощью RBAC и портал Azure](../articles/role-based-access-control/quickstart-assign-role-user-portal.md).
@@ -37,7 +37,7 @@ ms.locfileid: "80132147"
 
 1. Чтобы добавить или удалить тег, выберите **Изменить**.
 
-1. Чтобы удалить тег, щелкните значок корзины. Затем выберите **сохранить**.
+1. Чтобы удалить тег, щелкните значок корзины. Затем нажмите кнопку **Сохранить**.
 
    ![Удаление тега](./media/resource-manager-tag-resources/delete-tag.png)
 

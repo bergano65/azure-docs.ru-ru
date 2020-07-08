@@ -9,10 +9,10 @@ ms.date: 03/12/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 17df5dca584b760cc52ddc171e92fb26b418c347
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79500200"
 ---
 1. Установите клиентские сертификаты на клиенте Windows 10, как показано в статье [клиент VPN типа "точка — сеть](../articles/vpn-gateway/point-to-site-how-to-vpn-client-install-azure-cert.md) ". Сертификат должен находиться в хранилище текущего пользователя.
@@ -23,7 +23,7 @@ ms.locfileid: "79500200"
 
 После настройки шлюза виртуальной сети и установки сертификата клиента в хранилище локального компьютера на клиенте Windows 10 настройте туннель клиентского устройства, используя следующие примеры:
 
-1. Скопируйте следующий текст и сохраните его как *усерцерт. ps1*:
+1. Скопируйте следующий текст и сохраните его как *usercert.ps1*:
 
    ```
    Param(
@@ -75,7 +75,7 @@ ms.locfileid: "79500200"
    $Message = "Complete."
    Write-Host "$Message"
    ```
-1. Скопируйте приведенный ниже текст и сохраните его как *впнпрофиле. XML* в той же папке, что и *усерцерт. ps1*. Измените следующий текст в соответствии с вашей средой:
+1. Скопируйте приведенный ниже текст и сохраните его как *VPNProfile.xml* в той же папке, что и *usercert.ps1*. Измените следующий текст в соответствии с вашей средой:
 
    * `<Servers>azuregateway-1234-56-78dc.cloudapp.net</Servers>  <= Can be found in the VpnSettings.xml in the downloaded profile zip file`
    * `<Address>192.168.3.5</Address>  <= IP of resource in the vnet or the vnet address space`
@@ -121,7 +121,7 @@ ms.locfileid: "79500200"
    ```
 1. Откройте сеанс PowerShell от имени администратора.
 
-1. В PowerShell перейдите в папку, где находятся *усерцерт. ps1* и *впнпрофиле. XML* , и выполните следующую команду:
+1. В PowerShell перейдите в папку, где находятся *usercert.ps1* и *VPNProfile.xml* , и выполните следующую команду:
 
    ```powershell
    C:\> .\usercert.ps1 .\VPNProfile.xml UserTest

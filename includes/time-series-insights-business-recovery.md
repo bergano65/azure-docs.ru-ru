@@ -6,10 +6,10 @@ ms.author: dpalled
 manager: cshankar
 ms.date: 02/03/2020
 ms.openlocfilehash: 6a3837d01815306e469a684404ab76506f547f43
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77013752"
 ---
 ## <a name="business-disaster-recovery"></a>Непрерывность бизнес-процессов и аварийное восстановление
@@ -38,7 +38,7 @@ ms.locfileid: "77013752"
 
 - [Аварийное восстановление высокого уровня доступности центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/iot-hub-ha-dr), включающее избыточность внутри региона
 - [Политики концентраторов событий Azure](https://docs.microsoft.com/azure/event-hubs/event-hubs-geo-dr)
-- [Избыточность службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-redundancy)
+- [Репликация службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-redundancy)
 
 Интеграция службы "аналитика временных рядов" с другими службами предоставляет дополнительные возможности аварийного восстановления. Например, данные телеметрии, отправляемые в концентратор событий, могут быть сохранены в резервной копии базы данных хранилища BLOB-объектов Azure.
 

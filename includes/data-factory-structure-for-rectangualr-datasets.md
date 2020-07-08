@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
 ms.openlocfilehash: 1ab404b838af65dcb75395dfeee1ca0553e497a1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67185957"
 ---
 ## <a name="specifying-structure-definition-for-rectangular-datasets"></a>Указание определения структуры для прямоугольных наборов данных
@@ -16,7 +16,7 @@ ms.locfileid: "67185957"
 
 У каждого столбца есть приведенные ниже свойства.
 
-| Свойство | Описание | Обязательный |
+| Свойство. | Описание | Обязательно |
 | --- | --- | --- |
 | name |Имя столбца. |Да |
 | type |Тип данных столбца. Для получения дополнительных сведений о том, когда следует указывать информацию о типе, см. раздел преобразований типов. |Нет |

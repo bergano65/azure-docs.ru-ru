@@ -6,10 +6,10 @@ ms.date: 10/26/2018
 ms.author: tamram
 ms.custom: seo-python-october2019
 ms.openlocfilehash: 23b93f507ef6abe19a0202b28afa31d28490b2b3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80151113"
 ---
 ## <a name="what-is-queue-storage"></a>Что такое хранилище очередей?
@@ -22,7 +22,7 @@ ms.locfileid: "80151113"
 
 ![Компоненты служба очередей Azure](./media/storage-queue-concepts-include/azure-queue-service-components.png)
 
-* **Формат URL-адреса:** Для адресации очередей используется следующий формат URL-адреса`<storage account>`: http://. Queue.Core.Windows.NET/`<queue>`
+* **Формат URL-адреса:** Для адресации очередей используется следующий формат URL-адреса: http:// `<storage account>` . Queue.Core.Windows.NET/`<queue>`
   
     Следующий URL-адрес позволяет обратиться к очереди на схеме:  
   

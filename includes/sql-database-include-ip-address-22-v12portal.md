@@ -11,10 +11,10 @@ ms.topic: include
 ms.date: 07/13/2018
 ms.author: ninarn
 ms.openlocfilehash: 8d0f9899dbb7599340b8d15ca010a0157011fb9e
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67185366"
 ---
 1. Войдите на [портал Azure](https://portal.azure.com/).
@@ -39,7 +39,7 @@ ms.locfileid: "67185366"
 
     * Удобными могут оказаться нижнее значение, оканчивающееся на **.0**, и верхнее, оканчивающееся на **.255**.
 
-11. Нажмите кнопку **Сохранить**.
+11. Щелкните **Сохранить**.
 
 <!-- Image references. -->
 
