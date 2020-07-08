@@ -13,10 +13,9 @@ ms.date: 03/16/2018
 ms.author: rohink
 ms.custom: ''
 ms.openlocfilehash: e38e1255b1a84ab5d3fd37e16eb65c76001dbfa1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76938433"
 ---
 # <a name="traffic-manager-real-user-measurements-overview"></a>Общие сведения об измерениях на стороне пользователей в диспетчере трафика
@@ -35,7 +34,7 @@ ms.locfileid: "76938433"
 
 При использовании этой функции счета выставляются в зависимости от количества измерений, отправленных диспетчеру трафика. Дополнительные сведения о ценах см. на [странице цен на диспетчер трафика](https://azure.microsoft.com/pricing/details/traffic-manager/).
 
-## <a name="faqs"></a>Частые вопросы
+## <a name="faqs"></a>Часто задаваемые вопросы
 
 * [Каковы преимущества при использовании реальных измерений пользователя?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-the-benefits-of-using-real-user-measurements)
 

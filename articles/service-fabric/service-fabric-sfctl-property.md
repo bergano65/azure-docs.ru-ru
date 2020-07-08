@@ -6,10 +6,9 @@ ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: a9bd75e0b7f8bfceb50a71ca83b60ff1e7b45508
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76905829"
 ---
 # <a name="sfctl-property"></a>Свойство sfctl
@@ -19,7 +18,7 @@ ms.locfileid: "76905829"
 
 |Команда|Описание|
 | --- | --- |
-| "Удалить" | Удаляет указанное свойство Service Fabric. |
+| удалить | Удаляет указанное свойство Service Fabric. |
 | get | Возвращает указанное свойство Service Fabric. |
 | list | Возвращает информацию обо всех свойствах Service Fabric с указанным именем. |
 | put | Создает или обновляет свойство Service Fabric. |
@@ -120,6 +119,6 @@ ms.locfileid: "76905829"
 | --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) Service Fabric CLI.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

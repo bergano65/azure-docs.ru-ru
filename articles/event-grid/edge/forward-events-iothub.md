@@ -10,10 +10,9 @@ ms.topic: article
 ms.service: event-grid
 services: event-grid
 ms.openlocfilehash: d0034810ff86de2a40e275ca54a2f0f9cbc856c2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76844706"
 ---
 # <a name="tutorial-forward-events-to-iothub"></a>Учебник. Пересылка событий в IoTHub
@@ -40,7 +39,7 @@ ms.locfileid: "76844706"
 
 Как издатель события, необходимо создать раздел «Сетка событий». Раздел относится к конечной точке, в которую издатели могут отправить события.
 
-1. Создайте topic4. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
+1. Создайте topic4.jsсо следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
    ```json
     {
@@ -62,7 +61,7 @@ ms.locfileid: "76844706"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic4?api-version=2019-01-01-preview
     ```
 
-   Образец вывода:
+   Пример результатов выполнения:
 
    ```json
         [
@@ -84,7 +83,7 @@ ms.locfileid: "76844706"
 
 [!INCLUDE [event-grid-deploy-iot-edge](../../../includes/event-grid-edge-persist-event-subscriptions.md)]
 
-1. Создайте subscription4. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
+1. Создайте subscription4.jsс помощью приведенного ниже содержимого. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
    ```json
     {
@@ -100,7 +99,7 @@ ms.locfileid: "76844706"
    ```
 
    >[!NOTE]
-   > `endpointType` Указывает, что подписчик имеет значение `edgeHub`. `outputName` Указывает выходные данные, на которых модуль сетки событий будет маршрутизировать события, соответствующие этой подписке, в edgeHub. Например, события, соответствующие указанной выше подписке, будут записываться `/messages/modules/eventgridmodule/outputs/sampleSub4`в.
+   > `endpointType`Указывает, что подписчик имеет значение `edgeHub` . `outputName`Указывает выходные данные, на которых модуль сетки событий будет маршрутизировать события, соответствующие этой подписке, в edgeHub. Например, события, соответствующие указанной выше подписке, будут записываться в `/messages/modules/eventgridmodule/outputs/sampleSub4` .
 2. Выполните следующую команду, чтобы создать подписку. Должен возвращаться код состояния HTTP, 200 ОК.
 
     ```sh
@@ -112,7 +111,7 @@ ms.locfileid: "76844706"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic4/eventSubscriptions/sampleSubscription4?api-version=2019-01-01-preview
     ```
 
-    Образец вывода:
+    Пример результатов выполнения:
 
    ```json
         {
@@ -147,7 +146,7 @@ ms.locfileid: "76844706"
   "fromEventGridToIoTHub":"FROM /messages/modules/eventgridmodule/outputs/sampleSub4 INTO $upstream"
   ```
 
-  Например, примененная к объекту директива
+  Например,
 
   ```json
   {
@@ -168,7 +167,7 @@ ms.locfileid: "76844706"
 
 ## <a name="publish-an-event"></a>Публикация события
 
-1. Создайте event4. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
+1. Создайте event4.jsсо следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
     ```json
         [

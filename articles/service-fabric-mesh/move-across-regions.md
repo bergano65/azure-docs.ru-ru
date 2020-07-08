@@ -7,10 +7,9 @@ ms.topic: how-to
 ms.date: 01/14/2020
 ms.custom: subject-moving-resources
 ms.openlocfilehash: 376808a6d8f61d4dc03d17061323a473d48053a6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76908167"
 ---
 # <a name="move-a-service-fabric-mesh-application-to-another-azure-region"></a>Перемещение Service Fabric приложения сетки в другой регион Azure
@@ -22,7 +21,7 @@ ms.locfileid: "76908167"
 ## <a name="prerequisites"></a>Предварительные условия
 
 * Входной контроллер (например, [шлюз приложений](https://docs.microsoft.com/azure/application-gateway/)), служащий посредником для маршрутизации трафика между клиентами и приложением Service Fabricной сетки
-* Доступность Service Fabric сети (Предварительная версия) в целевом регионе`westus`Azure `eastus`(, `westeurope`или)
+* Доступность Service Fabric сети (Предварительная версия) в целевом регионе Azure ( `westus` , `eastus` или `westeurope` )
 
 ## <a name="prepare"></a>Подготовка.
 

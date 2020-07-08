@@ -9,10 +9,9 @@ ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
 ms.openlocfilehash: 3095e398d7e5cfe59085144d5bb4e8dc33618064
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76960702"
 ---
 # <a name="429001-throttlingexception"></a>429001 ThrottlingException
@@ -23,7 +22,7 @@ ms.locfileid: "76960702"
 
 Запросы в центр Интернета вещей завершаются ошибкой **429001 сроттлинжексцептион**.
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Превышено [ограничение регулирования](./iot-hub-devguide-quotas-throttling.md) для центра Интернета вещей для запрошенной операции.
 

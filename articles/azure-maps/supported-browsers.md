@@ -9,10 +9,9 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.openlocfilehash: e81b15b974469d319384a67b08512130b7876a30
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76988793"
 ---
 # <a name="web-sdk-supported-browsers"></a>Браузеры, поддерживаемые в веб-пакетах SDK
@@ -29,7 +28,7 @@ if (!atlas.isSupported()) {
 }
 ```
 
-## <a name="desktop"></a>Настольные
+## <a name="desktop"></a>Классические приложения
 
 Веб-пакет SDK Azure Maps поддерживает следующие браузеры для настольных систем:
 
@@ -40,7 +39,7 @@ if (!atlas.isSupported()) {
 
 См. также в разделе [устаревшие браузеры](#Target-Legacy-Browsers) ниже в этой статье.
 
-## <a name="mobile"></a>Мобильный телефон
+## <a name="mobile"></a>Мобильные службы
 
 Веб-пакет SDK Azure Maps поддерживает следующие мобильные браузеры:
 
@@ -57,18 +56,18 @@ if (!atlas.isSupported()) {
 
 ## <a name="nodejs"></a>Node.js
 
-В Node. js также поддерживаются следующие модули веб-пакета SDK:
+В Node.js также поддерживаются следующие модули веб-пакета SDK:
 
-- Модуль служб ([Документация](how-to-use-services-module.md) | [NPM Module](https://www.npmjs.com/package/azure-maps-rest))
+- Модуль служб ([Документация](how-to-use-services-module.md)  |  [NPM Module](https://www.npmjs.com/package/azure-maps-rest))
 
 ## <a name="target-legacy-browsers"></a><a name="Target-Legacy-Browsers"></a>Целевые браузеры прежних версий
 
-Вы можете использовать более старые браузеры, которые не поддерживают WebGL или имеют только ограниченную поддержку. В таких случаях рекомендуется использовать службы Azure Maps вместе с элементом управления картой с открытым кодом, например [леафлет](https://leafletjs.com/). Пример:
+Вы можете использовать более старые браузеры, которые не поддерживают WebGL или имеют только ограниченную поддержку. В таких случаях рекомендуется использовать службы Azure Maps вместе с элементом управления картой с открытым кодом, например [леафлет](https://leafletjs.com/). Ниже приведен пример:
 
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Azure Maps + Леафлет" src="//codepen.io/azuremaps/embed/GeLgyx/?height=500&theme-id=0&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел "перо <a href='https://codepen.io/azuremaps/pen/GeLgyx/'>Azure Maps + леафлет</a> by<a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps () в <a href='https://codepen.io'>CodePen</a>.
+См. раздел "перо <a href='https://codepen.io/azuremaps/pen/GeLgyx/'>Azure Maps + леафлет</a> by Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 

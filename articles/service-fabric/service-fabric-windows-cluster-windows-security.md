@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 08/24/2017
 ms.author: dekapur
 ms.openlocfilehash: 46be6acc1ef08770826a2e020c8930eba0787791
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76774442"
 ---
 # <a name="secure-a-standalone-cluster-on-windows-by-using-windows-security"></a>Защита изолированного кластера под управлением Windows с помощью системы безопасности Windows
@@ -21,7 +20,7 @@ ms.locfileid: "76774442"
 >
 
 ## <a name="configure-windows-security-using-gmsa"></a>Настройка безопасности Windows с помощью групповой управляемой учетной записи службы  
-Пример файла конфигурации *ClusterConfig. gMSA. Windows. remachine. JSON* , скачанного с помощью [Microsoft. Azure. ServiceFabric. WindowsServer\< . пакет автономного кластера версии>. zip](https://go.microsoft.com/fwlink/?LinkId=730690) содержит шаблон для настройки безопасности Windows с помощью [групповой управляемой учетной записи службы (gMSA)](https://technet.microsoft.com/library/hh831782.aspx):  
+В примере файла конфигурации *ClusterConfig.gMSA.Windows.MultiMachine.JSON*, скачанном с пакетом автономного кластера [Microsoft.Azure.ServiceFabric.WindowsServer\<version>.zip](https://go.microsoft.com/fwlink/?LinkId=730690), содержится шаблон для настройки безопасности Windows с помощью [групповой управляемой учетной записи службы](https://technet.microsoft.com/library/hh831782.aspx):  
 
 ```
 "security": {
@@ -45,14 +44,14 @@ ms.locfileid: "76774442"
 | ClusterCredentialType |Задайте значение *Windows* , чтобы включить безопасность Windows для обмена данными между узлами.  | 
 | ServerCredentialType |Задайте значение *Windows*, чтобы включить систему безопасности Windows для связи между узлом и клиентом. |
 | WindowsIdentities |Содержит удостоверения кластера и клиента. |
-| ClustergMSAIdentity |Настраивает безопасность обмена данными между узлами. Групповая управляемая учетная запись службы. |
+| ClustergMSAIdentity |Настраивает безопасность обмена данными между узлами. групповой управляемой учетной записью. |
 | ClusterSPN |Зарегистрированное имя участника-службы для учетной записи gMSA|
 | ClientIdentities |Настраивает безопасность обмена данными между клиентами и узлами. Массив учетных записей клиентов. |
 | Идентификация |Добавьте пользователя домена "домен\имя_пользователя" для удостоверения клиента. |
 | IsAdmin |Задайте значение true, чтобы указать, что у пользователя домена есть клиентский доступ с правами администратора, или значение false, чтобы указать наличие клиентского доступа с правами пользователя. |
 
 > [!NOTE]
-> Значение ClustergMSAIdentity должно быть в формате "mysfgmsa@mydomain".
+> Значение ClustergMSAIdentity должно быть в формате " mysfgmsa@mydomain ".
 
 [Безопасность узла и узла](service-fabric-cluster-security.md#node-to-node-security) настраивается с помощью параметра **ClustergMSAIdentity** , когда Service Fabric должен выполняться в gMSA. Чтобы создать отношения доверия между узлами, им нужно сообщить друг о друге. Это можно сделать двумя разными способами: указав групповую управляемую учетную запись службы, которая включает все узлы в кластере, или указав группу компьютеров домена, которая включает все узлы в кластере. Настоятельно рекомендуем применять подход с использованием [групповой управляемой учетной записи службы](https://technet.microsoft.com/library/hh831782.aspx), в частности для больших кластеров (более 10 узлов) или для кластеров, размер которых может изменяться.  
 Кроме того, этот подход не требует создания группы домена, администраторам кластера которой были предоставлены права доступа для добавления и удаления участников. Эти учетные записи также можно использовать для автоматического управления паролями. Дополнительные сведения см. в статье [Начало работы с групповыми управляемыми учетными записями служб](https://technet.microsoft.com/library/jj128431.aspx).  
@@ -77,7 +76,7 @@ ms.locfileid: "76774442"
 ```
   
 ## <a name="configure-windows-security-using-a-machine-group"></a>Настройка безопасности Windows с использованием группы компьютеров  
-Эту модель не рекомендуется использовать. Рекомендуется использовать gMSA, как описано выше. Пример файла конфигурации *ClusterConfig. Windows. remachine. JSON* , скачанный с помощью [Microsoft. Azure. ServiceFabric. WindowsServer\< . пакет изолированного кластера версии>. zip](https://go.microsoft.com/fwlink/?LinkId=730690) содержит шаблон для настройки безопасности Windows.  Безопасность Windows настраивается в разделе **Properties** . 
+Эту модель не рекомендуется использовать. Рекомендуется использовать gMSA, как описано выше. В примере файла конфигурации *ClusterConfig.Windows.MultiMachine.JSON*, скачанном с пакетом автономного кластера [Microsoft.Azure.ServiceFabric.WindowsServer\<version>.zip](https://go.microsoft.com/fwlink/?LinkId=730690), содержится шаблон для настройки безопасности Windows.  Безопасность Windows настраивается в разделе **Properties** . 
 
 ```
 "security": {

@@ -7,10 +7,9 @@ ms.service: data-share
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.openlocfilehash: 1ff432c2073536448c8194ebe537c8bf8cf00663
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76964249"
 ---
 # <a name="how-to-configure-a-dataset-mapping-for-a-received-share-in-azure-data-share"></a>Настройка сопоставления набора данных для полученного общего ресурса в общей папке данных Azure
@@ -39,7 +38,7 @@ ms.locfileid: "76964249"
 
 ![Выберите формат](./media/sql-file-formats.png "Форматы файлов SQL")
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать, как приступить к обмену данными, перейдите к [этому](share-your-data.md) руководству.
 

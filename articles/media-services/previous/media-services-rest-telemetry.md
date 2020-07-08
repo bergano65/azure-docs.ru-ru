@@ -15,10 +15,9 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 4cf2bc919ecb8b39a23b23df95a6f37396f50603
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76774869"
 ---
 # <a name="configuring-azure-media-services-telemetry-with-rest"></a>Настройка телеметрии служб мультимедиа Azure с использованием REST
@@ -34,7 +33,7 @@ ms.locfileid: "76774869"
 - Получение конечных точек уведомления.
 - Создание конечной точки уведомления для мониторинга. 
 
-    Чтобы создать конечную точку уведомления, задайте для параметра EndPointType значение AzureTable (2), а для Endpontaddress — таблицу — таблицу хранилища (например, HTTPS\/:/telemetryvalidationstore.Table.Core.Windows.NET/).
+    Чтобы создать конечную точку уведомления, задайте для параметра EndPointType значение AzureTable (2), а для Endpontaddress — таблицу — таблицу хранилища (например, HTTPS: \/ /telemetryvalidationstore.Table.Core.Windows.NET/).
   
 - Получение конфигураций мониторинга
 
@@ -126,7 +125,7 @@ ms.locfileid: "76774869"
     }
 
 > [!NOTE]
-> Не забудьте изменить значение "https:\//telemetryvalidationstore.Table.Core.Windows.NET" в учетной записи хранения.
+> Не забудьте изменить значение "https: \/ /telemetryvalidationstore.Table.Core.Windows.NET" в учетной записи хранения.
 
 ### <a name="response"></a>Ответ
 
@@ -241,6 +240,6 @@ ms.locfileid: "76774869"
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

@@ -10,10 +10,9 @@ ms.topic: article
 ms.service: event-grid
 services: event-grid
 ms.openlocfilehash: 19f86b1d8233e05844201e1095c1f79324955cd7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76841835"
 ---
 # <a name="rest-api"></a>REST API
@@ -164,7 +163,7 @@ ms.locfileid: "76841835"
 **Ответ**: HTTP 200, пустые полезные данные
 
 ## <a name="manage-event-subscriptions"></a>Управление подписками на события
-В примерах этого раздела `EndpointType=Webhook;`используется. Примеры JSON для `EndpointType=EdgeHub / EndpointType=EventGrid` приведены в следующем разделе. 
+В примерах этого раздела используется `EndpointType=Webhook;` . Примеры JSON для `EndpointType=EdgeHub / EndpointType=EventGrid` приведены в следующем разделе. 
 
 ### <a name="put-event-subscription-create--update"></a>Размещение подписки на события (создание или обновление)
 
@@ -572,7 +571,7 @@ ms.locfileid: "76841835"
 ```
 
 ### <a name="set-up-topic-with-custom-schema"></a>Настройка раздела с помощью настраиваемой схемы
-Настраивает раздел, требующий публикации событий в `customschema`.
+Настраивает раздел, требующий публикации событий в `customschema` .
 
 ```json
     {
@@ -585,7 +584,7 @@ ms.locfileid: "76841835"
 ```
 
 ### <a name="set-up-topic-with-cloud-event-schema"></a>Настройка раздела с помощью схемы облачных событий
-Настраивает раздел, требующий публикации событий в `cloudeventschema`.
+Настраивает раздел, требующий публикации событий в `cloudeventschema` .
 
 ```json
     {
@@ -690,7 +689,7 @@ EndpointUrl
 
 ## <a name="set-up-event-hubs-as-a-destination"></a>Настройка концентраторов событий в качестве назначения
 
-Чтобы опубликовать в концентраторе событий, задайте `endpointType` для `eventHub` значение и укажите:
+Чтобы опубликовать в концентраторе событий, задайте `endpointType` для значение `eventHub` и укажите:
 
 * connectionString: строка подключения для определенного концентратора событий, созданного с помощью политики общего доступа.
 
@@ -712,7 +711,7 @@ EndpointUrl
 
 ## <a name="set-up-service-bus-queues-as-a-destination"></a>Настройка очередей служебной шины в качестве места назначения
 
-Чтобы опубликовать в очереди служебной шины, задайте `endpointType` для `serviceBusQueue` значение и укажите:
+Чтобы опубликовать в очереди служебной шины, задайте `endpointType` для значение `serviceBusQueue` и укажите:
 
 * connectionString: строка подключения для конкретной очереди служебной шины, созданной с помощью политики общего доступа.
 
@@ -734,7 +733,7 @@ EndpointUrl
 
 ## <a name="set-up-service-bus-topics-as-a-destination"></a>Настройка разделов служебной шины в качестве места назначения
 
-Чтобы опубликовать данные `endpointType` в разделе служебной шины, задайте для `serviceBusTopic` значение и укажите:
+Чтобы опубликовать данные в разделе служебной шины, задайте `endpointType` для значение `serviceBusTopic` и укажите:
 
 * connectionString: строка подключения для конкретного раздела служебной шины, созданного с помощью политики общего доступа.
 
@@ -756,7 +755,7 @@ EndpointUrl
 
 ## <a name="set-up-storage-queues-as-a-destination"></a>Настройка очередей хранилища в качестве места назначения
 
-Чтобы опубликовать в очереди хранилища, задайте `endpointType` для `storageQueue` значение и укажите:
+Чтобы опубликовать в очереди хранилища, задайте для значение `endpointType` `storageQueue` и укажите:
 
 * queueName: имя очереди хранилища, в которую выполняется публикация.
 * connectionString: строка подключения для учетной записи хранения, в которой находится очередь хранилища.

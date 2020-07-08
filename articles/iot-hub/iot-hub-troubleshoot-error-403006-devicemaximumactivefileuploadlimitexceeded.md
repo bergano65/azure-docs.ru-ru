@@ -9,10 +9,9 @@ ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
 ms.openlocfilehash: 1e3c05e4cc3ccf34573b55d3729aded16e26d66e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76960845"
 ---
 # <a name="403006-devicemaximumactivefileuploadlimitexceeded"></a>403006 DeviceMaximumActiveFileUploadLimitExceeded
@@ -23,7 +22,7 @@ ms.locfileid: "76960845"
 
 Запрос на отправку файла завершается ошибкой с кодом **403006** и сообщением "число активных запросов на отправку файлов не может превышать 10".
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Каждый клиент устройства ограничен [10 параллельными передачами файлов](./iot-hub-devguide-quotas-throttling.md#other-limits). 
 

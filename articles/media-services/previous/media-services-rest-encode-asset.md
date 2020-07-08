@@ -15,10 +15,9 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 6854400f2152a5952a7b24dbd860d7ad4bfc943d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76774920"
 ---
 # <a name="how-to-encode-an-asset-by-using-media-encoder-standard"></a>Как закодировать ресурс с помощью Media Encoder Standard
@@ -44,7 +43,7 @@ ms.locfileid: "76774920"
 
 Если выходной ресурс зашифрован в хранилище, необходимо настроить политику доставки ресурсов. Дополнительные сведения см. в разделе [Настройка политики доставки ресурсов](media-services-rest-configure-asset-delivery-policy.md).
 
-## <a name="considerations"></a>Рекомендации
+## <a name="considerations"></a>Особенности
 
 При доступе к сущностям в службах мультимедиа необходимо задать определенные поля и значения заголовков в HTTP-запросах. Дополнительную информацию см. в статье [Обзор интерфейса REST API служб мультимедиа](media-services-rest-how-to-use.md).
 
@@ -92,7 +91,7 @@ ms.locfileid: "76774920"
 
     { "TaskBody" : "<?xml version=\"1.0\" encoding=\"utf-8\"?><taskBody><inputAsset>JobInputAsset(0)</inputAsset><outputAsset assetName=\"CustomOutputAssetName\">JobOutputAsset(0)</outputAsset></taskBody>"}
 
-## <a name="considerations"></a>Рекомендации
+## <a name="considerations"></a>Особенности
 * Чтобы определить количество входных или выходных ресурсов, используемых задачей, в свойствах TaskBody необходимо использовать XML-литерал. В статье о задаче приведено определение схемы XML.
 * В определении TaskBody каждое внутреннее значение `<inputAsset>` и `<outputAsset>` необходимо установить как JobInputAsset(value) или JobOutputAsset(value).
 * В задаче может содержаться несколько выходных ресурсов. Значение JobOutputAsset(x) может использоваться только один раз в качестве выходных данных задачи в задании.
@@ -144,7 +143,7 @@ ms.locfileid: "76774920"
     }
 
 
-### <a name="considerations"></a>Рекомендации
+### <a name="considerations"></a>Особенности
 Чтобы включить создание цепных задач:
 
 * в задании должно быть по крайней мере две задачи;
@@ -273,7 +272,7 @@ ms.locfileid: "76774920"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="next-steps"></a>Дальнейшие шаги

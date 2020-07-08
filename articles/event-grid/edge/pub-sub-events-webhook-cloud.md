@@ -10,10 +10,9 @@ ms.topic: article
 ms.service: event-grid
 services: event-grid
 ms.openlocfilehash: c82f1edfc3acd73c1d38425f963aaaf2976a1cc5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76844601"
 ---
 # <a name="tutorial-publish-subscribe-to-events-in-cloud"></a>Учебник. Публикация, подписка на события в облаке
@@ -67,7 +66,7 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
 
 Как издатель события, необходимо создать раздел «Сетка событий». Раздел относится к конечной точке, в которой издатели могут отсылать события.
 
-1. Создайте topic2. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
+1. Создайте topic2.jsсо следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
     ```json
          {
@@ -88,7 +87,7 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic2?api-version=2019-01-01-preview
     ```
 
-   Образец вывода:
+   Пример результатов выполнения:
 
    ```json
         [
@@ -110,7 +109,7 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
 
 [!INCLUDE [event-grid-deploy-iot-edge](../../../includes/event-grid-edge-persist-event-subscriptions.md)]
 
-1. Создайте subscription2. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
+1. Создайте subscription2.jsсо следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
     ```json
         {
@@ -138,7 +137,7 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic2/eventSubscriptions/sampleSubscription2?api-version=2019-01-01-preview
     ```
 
-    Образец вывода:
+    Пример результатов выполнения:
 
    ```json
         {
@@ -159,7 +158,7 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
 
 ## <a name="publish-an-event"></a>Публикация события
 
-1. Создайте event2. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
+1. Создайте event2.jsсо следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
     ```json
         [
