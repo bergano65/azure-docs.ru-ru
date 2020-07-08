@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 01/30/2019
 ms.author: tomfitz
 ms.openlocfilehash: aac2f3ea2b52ac0319f96279deed13c1145749bd
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74451494"
 ---
 ## <a name="deploy-template-from-cloud-shell"></a>Развертывание шаблона из Cloud Shell
@@ -25,7 +25,7 @@ ms.locfileid: "74451494"
 
    ![Выбор учетной записи хранения](./media/resource-manager-cloud-shell-deploy/select-storage.png)
 
-1. Выберите **BLOB-объекты**.
+1. Выберите **Большие двоичные объекты**.
 
    ![Выберите "Большие двоичные объекты"](./media/resource-manager-cloud-shell-deploy/select-blobs.png)
 
@@ -33,7 +33,7 @@ ms.locfileid: "74451494"
 
    ![Добавление контейнера](./media/resource-manager-cloud-shell-deploy/add-container.png)
 
-1. Задайте контейнеру название и уровень доступа. Образец шаблона в данной статье не содержит конфиденциальных сведений и поэтому разрешает анонимный доступ для чтения. Нажмите кнопку **OK**.
+1. Задайте контейнеру название и уровень доступа. Образец шаблона в данной статье не содержит конфиденциальных сведений и поэтому разрешает анонимный доступ для чтения. Нажмите кнопку **ОК**.
 
    ![Указание значений для контейнера](./media/resource-manager-cloud-shell-deploy/provide-container-values.png)
 

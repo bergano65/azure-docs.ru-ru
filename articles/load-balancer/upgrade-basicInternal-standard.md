@@ -4,15 +4,15 @@ description: В этой статье показано, как обновить 
 services: load-balancer
 author: irenehua
 ms.service: load-balancer
-ms.topic: article
+ms.topic: how-to
 ms.date: 02/23/2020
 ms.author: irenehua
-ms.openlocfilehash: 960897abca67bf2a43c4c056b8dfa8cce0119faa
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.openlocfilehash: 801f57c8d5b67e31bd6b3ac25d845dc2e13e365c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82871582"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84809329"
 ---
 # <a name="upgrade-azure-internal-load-balancer--no-outbound-connection-required"></a>Обновление внутренней Load Balancer Azure — не требуется исходящее подключение
 [Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](https://docs.microsoft.com/azure/load-balancer/skus#skus).
@@ -56,7 +56,7 @@ ms.locfileid: "82871582"
 * Если вы не установили модули Azure az или не хотите удалять модули Azure AZ, лучшим вариантом будет использование `Install-Script` параметра для запуска сценария.
 * Если вам нужно разместить модули Azure AZ, лучше скачать сценарий и запустить его напрямую.
 
-Чтобы определить, установлены ли модули Azure AZ, запустите `Get-InstalledModule -Name az`. Если вы не видите ни одного установленного модуля AZ, то можете использовать `Install-Script` метод.
+Чтобы определить, установлены ли модули Azure AZ, запустите `Get-InstalledModule -Name az` . Если вы не видите ни одного установленного модуля AZ, то можете использовать `Install-Script` метод.
 
 ### <a name="install-using-the-install-script-method"></a>Установка с помощью метода Install-Script
 
@@ -104,8 +104,8 @@ ms.locfileid: "82871582"
 
 ### <a name="i-ran-into-some-issues-with-using-this-script-how-can-i-get-help"></a>При использовании этого сценария возникли проблемы. Как получить помощь?
   
-Вы можете отправить сообщение электронной почты slbupgradesupport@microsoft.com, открыть обращение в службу поддержки Azure или выполнить оба действия.
+Вы можете отправить сообщение электронной почты slbupgradesupport@microsoft.com , открыть обращение в службу поддержки Azure или выполнить оба действия.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Дополнительные сведения о Load Balancer (цен. категория "Стандартный")](load-balancer-overview.md)
