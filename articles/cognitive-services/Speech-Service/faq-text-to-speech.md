@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: panosper
-ms.openlocfilehash: 19b8be83a3678164197ec0650b07091e941a04d7
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: f647727c01bbddafe3b10877af3e1d5652bedd29
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74110495"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833593"
 ---
 # <a name="text-to-speech-frequently-asked-questions"></a>Часто задаваемые вопросы о преобразовании текста в речь
 
 Если в этой статье вы не нашли ответы на свои вопросы, ознакомьтесь с [другими вариантами поддержки](support.md).
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 
 **Вопрос. Чем отличаются стандартная и пользовательская голосовые модели?**
 
@@ -59,9 +59,9 @@ ms.locfileid: "74110495"
 
 **Вопрос. Мои запросы регулируются?**
 
-**Ответ**. REST API ограничивает количество запросов до 25 за 5 секунд. Подробные сведения можно найти на наших страницах о [преобразовании текста в речь](text-to-speech.md).
+Ответ **. REST API**ограничивает количество запросов до 25 секунд для стандартных подписок. Уровень Free (F0) ограничен 20 запросами в минуту.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Устранение неполадок](troubleshooting.md)
 - [Заметки о выпуске](releasenotes.md)

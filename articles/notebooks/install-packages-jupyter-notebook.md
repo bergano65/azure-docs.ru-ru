@@ -3,20 +3,20 @@ title: Установка пакетов в записных книжках Jupy
 description: 'Узнайте, как устанавливать пакеты Python, R и F # в записной книжке Jupyter, работающей в Azure.'
 ms.topic: how-to
 ms.date: 12/04/2018
-ms.openlocfilehash: f6359b4c010834ffaee00b6208d309997339f36e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 43d38c9f3a4b0095967ab3e103ea729ec86ea2bd
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75646234"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85831222"
 ---
 # <a name="install-packages-from-within-azure-notebooks-preview"></a>Установка пакетов из в предварительной версии Azure Notebook Preview
+
+[!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
 Несмотря на то что можно настроить [среду для записной книжки на уровне проекта](configure-manage-azure-notebooks-projects.md#configure-the-project-environment), может потребоваться установить пакеты непосредственно в отдельной записной книжке.
 
 Пакеты, установленные в записной книжке, применяются только к текущему сеансу сервера. Установки пакетов не сохраняются после завершения работы сервера.
-
-[!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
 ## <a name="python"></a>Python
 
@@ -73,7 +73,7 @@ Paket.Package
 open MathNet.Numerics
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Как настраивать проекты и управлять ими](configure-manage-azure-notebooks-projects.md)
 - [Как Показать слайд-шоу](present-jupyter-notebooks-slideshow.md)

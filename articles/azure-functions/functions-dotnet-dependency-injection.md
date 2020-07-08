@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/05/2019
 ms.author: cshoe
 ms.reviewer: jehollan
-ms.openlocfilehash: 97e8a34f3b8639990f8de736a8f1f7429ebfd448
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: a994111d2f7e938ecdd71236858e4cb8773b00f7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83739147"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85832871"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Использование внедрения зависимостей в Функциях Azure .NET
 
@@ -36,11 +36,8 @@ ms.locfileid: "83739147"
 Чтобы зарегистрировать метод, добавьте атрибут сборки `FunctionsStartup`, указывающий имя типа, используемого во время запуска.
 
 ```csharp
-using System;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Http;
-using Microsoft.Extensions.Logging;
 
 [assembly: FunctionsStartup(typeof(MyNamespace.Startup))]
 
@@ -52,7 +49,7 @@ namespace MyNamespace
         {
             builder.Services.AddHttpClient();
 
-            builder.Services.AddSingleton((s) => {
+            builder.Services.AddSingleton<IMyService>((s) => {
                 return new MyService();
             });
 
@@ -61,6 +58,8 @@ namespace MyNamespace
     }
 }
 ```
+
+В этом примере используется пакет [Microsoft.Extensions.Http](https://www.nuget.org/packages/Microsoft.Extensions.Http/), необходимый для регистрации `HttpClient` при запуске.
 
 ### <a name="caveats"></a>Предупреждения
 
@@ -72,48 +71,47 @@ namespace MyNamespace
 
 ## <a name="use-injected-dependencies"></a>Использование внедренных зависимостей
 
-Внедрение конструктора используется для обеспечения доступности зависимостей в функции. Использование внедрения конструктора требует неиспользования статических классов.
+Внедрение конструктора используется для обеспечения доступности зависимостей в функции. Использование внедрения конструктора требует, чтобы не использовались статические классы для внедренных служб или классов функций.
 
-В следующем примере показано, как зависимости `IMyService` и `HttpClient` вставляются в функцию, активируемую HTTP. В этом примере используется пакет [Microsoft.Extensions.Http](https://www.nuget.org/packages/Microsoft.Extensions.Http/), необходимый для регистрации `HttpClient` при запуске.
+В следующем примере показано, как зависимости `IMyService` и `HttpClient` вставляются в функцию, активируемую HTTP.
 
 ```csharp
-using System;
-using System.IO;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace MyNamespace
 {
-    public class HttpTrigger
+    public class MyHttpTrigger
     {
-        private readonly IMyService _service;
         private readonly HttpClient _client;
+        private readonly IMyService _service;
 
-        public HttpTrigger(IMyService service, HttpClient httpClient)
+        public MyHttpTrigger(HttpClient httpClient, MyService service)
         {
-            _service = service;
-            _client = httpClient;
+            this._client = httpClient;
+            this._service = service;
         }
 
-        [FunctionName("GetPosts")]
-        public async Task<IActionResult> Get(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "posts")] HttpRequest req,
+        [FunctionName("MyHttpTrigger")]
+        public async Task<IActionResult> Run(
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
-            var res = await _client.GetAsync("https://microsoft.com");
-            await _service.AddResponse(res);
+            var response = await _client.GetAsync("https://microsoft.com");
+            var message = _service.GetMessage();
 
-            return new OkResult();
+            return new OkObjectResult("Response from function with injected dependencies.");
         }
     }
 }
 ```
+
+В этом примере используется пакет [Microsoft.Extensions.Http](https://www.nuget.org/packages/Microsoft.Extensions.Http/), необходимый для регистрации `HttpClient` при запуске.
 
 ## <a name="service-lifetimes"></a>Время существования служб
 
@@ -121,13 +119,15 @@ namespace MyNamespace
 
 - **Временная**: временные службы создаются при каждом запросе службы.
 - **С заданной областью**: время существования службы с заданной областью соответствует времени выполнения функции. Службы с заданной областью создаются один раз для каждого выполнения. Последующие запросы к этой службе во время выполнения повторно используют существующий экземпляр службы.
-- **Отдельная**: время существования отдельной службы соответствует времени существования узла. Она повторно используется при повторном выполнении функций на этом экземпляре. Для подключений и клиентов рекомендуется использовать службы со временем жизни «отдельная», например экземпляры `SqlConnection` или `HttpClient`.
+- **Отдельная**: время существования отдельной службы соответствует времени существования узла. Она повторно используется при повторном выполнении функций на этом экземпляре. Для подключений и клиентов рекомендуется использовать службы со временем жизни «отдельная», например экземпляры `DocumentClient` или `HttpClient`.
 
 Просмотрите или скачайте [образцы служб с различными временами существования](https://aka.ms/functions/di-sample) на GitHub.
 
 ## <a name="logging-services"></a>Службы ведения журналов
 
-Если вам нужен собственный регистратор, зарегистрируйте пользовательский тип в качестве экземпляра `ILoggerProvider`. Application Insights автоматически добавляется Функциями Azure.
+Если вам нужен собственный поставщик ведения журнала, зарегистрируйте пользовательский тип в качестве экземпляра [`ILoggerProvider`](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggerfactory) , который доступен в пакете NuGet [Microsoft. Extensions. Logging. абстракций](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Abstractions/) .
+
+Application Insights автоматически добавляется Функциями Azure.
 
 > [!WARNING]
 > - Не добавляйте `AddApplicationInsightsTelemetry()` в коллекцию служб, поскольку он регистрирует службы, конфликтующие со службами, предоставляемыми средой.
@@ -135,7 +135,9 @@ namespace MyNamespace
 
 ### <a name="iloggert-and-iloggerfactory"></a>ILogger<T> и ILoggerFactory
 
-Узел будет внедрять службы `ILogger<T>` и `ILoggerFactory` в конструкторы.  Однако по умолчанию эти новые фильтры ведения журнала будут отфильтрованы из журналов функций.  Необходимо будет внести изменения в файл `host.json`, чтобы выбрать дополнительные фильтры и категории.  В следующем примере показано добавление `ILogger<HttpTrigger>` с журналами, которые будут предоставляться узлом,
+Узел внедряет `ILogger<T>` и `ILoggerFactory` службы в конструкторы.  Однако по умолчанию эти новые фильтры журнала отфильтровываются из журналов функций.  Необходимо изменить `host.json` файл, чтобы принять участие в дополнительных фильтрах и категориях.
+
+В следующем примере показано, как добавить `ILogger<HttpTrigger>` с журналами, которые доступны для узла.
 
 ```csharp
 namespace MyNamespace
@@ -160,7 +162,7 @@ namespace MyNamespace
 }
 ```
 
-и файла `host.json`, который добавляет фильтр журнала.
+В следующем примере `host.json` файла добавляется фильтр журнала.
 
 ```json
 {
@@ -183,9 +185,9 @@ namespace MyNamespace
 
 Узел функции регистрирует множество служб. Следующие службы можно уверенно использовать в качестве зависимости в приложении.
 
-|Тип службы|Срок действия|Описание|
+|Тип службы|Время существования|Описание|
 |--|--|--|
-|`Microsoft.Extensions.Configuration.IConfiguration`|Отдельная|Конфигурация среды выполнения|
+|`Microsoft.Extensions.Configuration.IConfiguration`|Одноэлементный|Конфигурация среды выполнения|
 |`Microsoft.Azure.WebJobs.Host.Executors.IHostIdProvider`|Отдельная|Отвечает за предоставление идентификатора экземпляра узла.|
 
 Если существуют другие службы, от которых требуется зависимость, [создайте вопрос и предложите его на GitHub](https://github.com/azure/azure-functions-host).
@@ -251,9 +253,9 @@ public class HttpTrigger
 Дополнительные сведения о работе с параметрами см. в [Шаблон параметров в ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/options).
 
 > [!WARNING]
-> Не пытайтесь считывать значения из таких файлов, как *local.settings.json* или *appsettings.{environment}.json*, в плане потребления. Значения, считанные из этих файлов, связанных с триггерами, недоступны при масштабировании приложения, так как инфраструктура размещения не имеет доступа к сведениям о конфигурации.
+> Не пытайтесь считывать значения из таких файлов, как *local.settings.json* или *appsettings.{environment}.json*, в плане потребления. Значения, считываемые из этих файлов, связанных с триггерами, недоступны при масштабировании приложения, так как инфраструктура размещения не имеет доступа к сведениям о конфигурации, так как контроллер масштабирования создает новые экземпляры приложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для получения дополнительных сведений см. следующие ресурсы:
 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 05/10/2020
 ms.author: ccompy
 ms.custom: seodec18, references_regions
-ms.openlocfilehash: 34daf74ddf5e9c93a05d27bad5f9ac55d767d5e6
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
-ms.translationtype: HT
+ms.openlocfilehash: 4f1914b857aa6499ab4d4445cddf801feef73f43
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84195121"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85831826"
 ---
 # <a name="app-service-environment-management-addresses"></a>Адреса управления среды службы приложений
 
@@ -39,15 +39,17 @@ ms.locfileid: "84195121"
 
 Адреса управления можно поместить в таблицу маршрутов с типом следующего прыжка "Интернет", чтобы обеспечить возможность возвращения всего входящего трафика управления по тому же пути. Эти маршруты необходимы при настройке принудительного туннелирования. Создать таблицу маршрутов можно с помощью портала, PowerShell или Azure CLI.  Ниже приведены команды, позволяющие создать таблицу маршрутов с помощью Azure CLI из командной строки PowerShell. 
 
-    $rg = "resource group name"
-    $rt = "route table name"
-    $location = "azure location"
-    $managementAddresses = "13.66.140.0", "13.67.8.128", "13.69.64.128", "13.69.227.128", "13.70.73.128", "13.71.170.64", "13.71.194.129", "13.75.34.192", "13.75.127.117", "13.77.50.128", "13.78.109.0", "13.89.171.0", "13.94.141.115", "13.94.143.126", "13.94.149.179", "20.36.106.128", "20.36.114.64", "23.102.135.246", "23.102.188.65", "40.69.106.128", "40.70.146.128", "40.71.13.64", "40.74.100.64", "40.78.194.128", "40.79.130.64", "40.79.178.128", "40.83.120.64", "40.83.121.56", "40.83.125.161", "40.112.242.192", "51.140.146.64", "51.140.210.128", "52.151.25.45", "52.162.106.192", "52.165.152.214", "52.165.153.122", "52.165.154.193", "52.165.158.140", "52.174.22.21", "52.178.177.147", "52.178.184.149", "52.178.190.65", "52.178.195.197", "52.187.56.50", "52.187.59.251", "52.187.63.19", "52.187.63.37", "52.224.105.172", "52.225.177.153", "52.231.18.64", "52.231.146.128", "65.52.172.237", "70.37.57.58", "104.44.129.141", "104.44.129.243", "104.44.129.255", "104.44.134.255", "104.208.54.11", "104.211.81.64", "104.211.146.128", "157.55.208.185", "191.233.203.64", "191.236.154.88"
+```azurepowershell-interactive
+$rg = "resource group name"
+$rt = "route table name"
+$location = "azure location"
+$managementAddresses = "13.66.140.0", "13.67.8.128", "13.69.64.128", "13.69.227.128", "13.70.73.128", "13.71.170.64", "13.71.194.129", "13.75.34.192", "13.75.127.117", "13.77.50.128", "13.78.109.0", "13.89.171.0", "13.94.141.115", "13.94.143.126", "13.94.149.179", "20.36.106.128", "20.36.114.64", "23.102.135.246", "23.102.188.65", "40.69.106.128", "40.70.146.128", "40.71.13.64", "40.74.100.64", "40.78.194.128", "40.79.130.64", "40.79.178.128", "40.83.120.64", "40.83.121.56", "40.83.125.161", "40.112.242.192", "51.140.146.64", "51.140.210.128", "52.151.25.45", "52.162.106.192", "52.165.152.214", "52.165.153.122", "52.165.154.193", "52.165.158.140", "52.174.22.21", "52.178.177.147", "52.178.184.149", "52.178.190.65", "52.178.195.197", "52.187.56.50", "52.187.59.251", "52.187.63.19", "52.187.63.37", "52.224.105.172", "52.225.177.153", "52.231.18.64", "52.231.146.128", "65.52.172.237", "70.37.57.58", "104.44.129.141", "104.44.129.243", "104.44.129.255", "104.44.134.255", "104.208.54.11", "104.211.81.64", "104.211.146.128", "157.55.208.185", "191.233.203.64", "191.236.154.88"
 
-    az network route-table create --name $rt --resource-group $rg --location $location
-    foreach ($ip in $managementAddresses) {
-        az network route-table route create -g $rg --route-table-name $rt -n $ip --next-hop-type Internet --address-prefix ($ip + "/32")
-    }
+az network route-table create --name $rt --resource-group $rg --location $location
+foreach ($ip in $managementAddresses) {
+    az network route-table route create -g $rg --route-table-name $rt -n $ip --next-hop-type Internet --address-prefix ($ip + "/32")
+}
+```
 
 Создав свою таблицу маршрутов, необходимо задать ее для подсети ASE.  
 
@@ -55,15 +57,18 @@ ms.locfileid: "84195121"
 
 С помощью вызова API системы можно получить список адресов управления, которые соответствуют ASE.
 
-    get /subscriptions/<subscription ID>/resourceGroups/<resource group>/providers/Microsoft.Web/hostingEnvironments/<ASE Name>/inboundnetworkdependenciesendpoints?api-version=2016-09-01
+```http
+get /subscriptions/<subscription ID>/resourceGroups/<resource group>/providers/Microsoft.Web/hostingEnvironments/<ASE Name>/inboundnetworkdependenciesendpoints?api-version=2016-09-01
+```
 
 API возвращает документ JSON, который включает все адреса входящего трафика для среды ASE. Список адресов включает адреса управления, виртуальный IP-адрес, используемый ASE и диапазон адресов подсети ASE.  
 
 Для вызова API с помощью [armclient](https://github.com/projectkudu/ARMClient) используйте приведенные ниже команды, но укажите свои идентификатор подписки, группу ресурсов и имя среды ASE.  
 
-    armclient login
-    armclient get /subscriptions/<subscription ID>/resourceGroups/<resource group>/providers/Microsoft.Web/hostingEnvironments/<ASE Name>/inboundnetworkdependenciesendpoints?api-version=2016-09-01
-
+```azurepowershell-interactive
+armclient login
+armclient get /subscriptions/<subscription ID>/resourceGroups/<resource group>/providers/Microsoft.Web/hostingEnvironments/<ASE Name>/inboundnetworkdependenciesendpoints?api-version=2016-09-01
+```
 
 <!--IMAGES-->
 [1]: ./media/management-addresses/managementaddr-nsg.png
