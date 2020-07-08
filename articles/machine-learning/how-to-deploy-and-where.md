@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 06/12/2020
 ms.custom: seoapril2019, tracking-python
-ms.openlocfilehash: bc9ab6ddf3a9032fd1919b70d830f0d65cdc06ed
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: aa961cb94816b50aa515532e69454fce9b370c54
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84817983"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86083087"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -545,6 +545,10 @@ az ml model profile -g <resource-group-name> -w <workspace-name> --inference-con
 
 [!INCLUDE [aml-compute-target-deploy](../../includes/aml-compute-target-deploy.md)]
 
+> [!NOTE]
+> * ACI подходит только для небольших моделей <размер 1 ГБ. 
+> * Мы рекомендуем использовать один узел AKS для разработки и тестирования больших моделей.
+
 ### <a name="define-your-deployment-configuration"></a>Определение конфигурации развертывания
 
 Перед развертыванием модели необходимо определить конфигурацию развертывания. *Конфигурация развертывания зависит от целевого объекта вычислений, в котором будет размещена веб-служба.* Например, при локальном развертывании модели необходимо указать порт, на котором служба принимает запросы. Конфигурация развертывания не является частью скрипта записи. Он используется для определения характеристик целевого объекта вычислений, в котором будет размещаться скрипт модели и входа.
@@ -604,7 +608,7 @@ az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.
 
 В следующей таблице описаны различные состояния службы.
 
-| Состояние WebService | Описание: | Конечное состояние?
+| Состояние WebService | Описание | Конечное состояние?
 | ----- | ----- | ----- |
 | Переход | Служба находится в процессе развертывания. | Нет |
 | Unhealthy; | Служба была развернута, но сейчас недоступна.  | Нет |
@@ -1218,7 +1222,7 @@ def run(request):
 > Машинное обучение Azure будет маршрутизировать только запросы POST и GET к контейнерам, запускающим службу оценки. Это может вызвать ошибки из-за браузеров, использующих запросы параметров для предварительного рейса запросов CORS.
 > 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)

@@ -6,13 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/06/2019
-ms.openlocfilehash: e05cd861f899b700e68c151fcbaa6778dc43eb3a
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: cf080f2a6173651fce8f306619dba60347067e0e
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85959200"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085618"
 ---
 # <a name="set-up-apache-hbase-cluster-replication-in-azure-virtual-networks"></a>Настройка репликации кластера Apache HBase в виртуальных сетях Azure
 
@@ -37,7 +38,7 @@ ms.locfileid: "85959200"
 
 Кластеры можно реплицировать с помощью скриптов [действий сценария](../hdinsight-hadoop-customize-cluster-linux.md), которые можно найти на [GitHub](https://github.com/Azure/hbase-utils/tree/master/replication).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступать к этой статье, необходимо иметь подписку Azure. См. страницу о [получении бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
 ## <a name="set-up-the-environments"></a>Настройка сред
@@ -65,7 +66,7 @@ ms.locfileid: "85959200"
 
 **VNet 1**
 
-| Свойство. | Значение |
+| Свойство | Значение |
 |----------|-------|
 | Расположение | западная часть США |
 | Имя виртуальной сети | &lt;префикс_имени_кластера>-vnet1 |
@@ -82,7 +83,7 @@ ms.locfileid: "85959200"
 
 **VNet 2**
 
-| Свойство. | Значение |
+| Свойство | Значение |
 |----------|-------|
 | Расположение | Восточная часть США |
 | Имя виртуальной сети | &lt;префикс_имени_кластера>-vnet2 |
@@ -308,7 +309,7 @@ sudo service bind9 status
 
 Ниже приведены обязательные аргументы.
 
-|name|Описание:|
+|Имя|Описание|
 |----|-----------|
 |-s, --src-cluster | Указывает DNS-имя исходного кластера HBase. например -s hbsrccluster, --src-cluster=hbsrccluster. |
 |-d, --dst-cluster | Указывает DNS-имя кластера назначения (реплики) HBase. например -s dsthbcluster, --src-cluster=dsthbcluster. |
@@ -317,7 +318,7 @@ sudo service bind9 status
 
 Необязательные аргументы для этой команды.
 
-|name|Описание:|
+|Имя|Описание|
 |----|-----------|
 |-su, --src-ambari-user | Указывает имя пользователя-администратора для Ambari в исходном кластере HBase. Значение по умолчанию — **admin**. |
 |-du, --dst-ambari-user | Указывает имя пользователя-администратора для Ambari в целевом кластере HBase. Значение по умолчанию — **admin**. |
@@ -405,7 +406,7 @@ sudo service bind9 status
 > Если планируется удалить целевой кластер, убедитесь, что он удален из однорангового списка исходного кластера. Это можно сделать, выполнив команду remove_peer "1" в оболочке HBase в исходном кластере. Сбой в исходном кластере может работать неправильно.
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как настроить репликацию Apache HBase в виртуальной сети или между двумя виртуальными сетями. Дополнительные сведения об HDInsight и Apache HBase см.в следующих статьях:
 

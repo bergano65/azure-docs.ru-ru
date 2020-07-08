@@ -1,6 +1,6 @@
 ---
 title: Правила брандмауэра для IP-адресов
-description: Настройте правила брандмауэра IP на уровне сервера для базы данных в базе данных SQL Azure или в брандмауэре Azure синапсе Analytics. Управление доступом и настройка правил брандмауэра для IP-адресов на уровне базы данных для отдельной базы данных или в составе пула.
+description: Настройте правила брандмауэра IP на уровне сервера для базы данных в базе данных SQL Azure или в брандмауэре Azure синапсе Analytics. Управление доступом и настройка правил брандмауэра для IP-адресов на уровне базы данных для базы данных SQL.
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
@@ -12,12 +12,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 ms.date: 06/17/2020
-ms.openlocfilehash: 19560c3746c67f8eb8ae789b3d6009e8f2fa74d3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e18c0470a2d1be8323c2fe1c0780bfd47f3f64cb
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84976818"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085112"
 ---
 # <a name="azure-sql-database-and-azure-synapse-ip-firewall-rules"></a>Правила брандмауэра для базы данных SQL Azure и IP-адреса Azure синапсе
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]

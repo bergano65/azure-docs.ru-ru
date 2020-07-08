@@ -5,14 +5,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/04/2020
-ms.openlocfilehash: 469019eb1e90654d1953156337593d5de99b46c0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d6f20780ccd90d83631ce07411820fb8c9280c3e
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82796685"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86084092"
 ---
 # <a name="optimize-apache-pig-with-apache-ambari-in-azure-hdinsight"></a>Оптимизация Apache Pig с помощью Apache Ambari в Azure HDInsight
 
@@ -83,7 +83,7 @@ Pig создает временные файлы во время выполне�
 
 Количество модулей сжатия вычисляется на основе параметра `pig.exec.reducers.bytes.per.reducer`. Этот параметр задает количество байтов, обрабатываемых модулем сжатия. По умолчанию он имеет значение 1 ГБ. Чтобы ограничить максимальное число модулей сжатия, установите `pig.exec.reducers.max` свойство по умолчанию 999.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md)
 * [Управление кластерами HDInsight с помощью REST API Ambari](hdinsight-hadoop-manage-ambari-rest-api.md)

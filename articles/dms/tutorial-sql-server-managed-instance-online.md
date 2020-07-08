@@ -1,5 +1,5 @@
 ---
-title: Руководство. Миграция SQL Server в оперативный режим в управляемый экземпляр SQL
+title: Руководство. Миграция SQL Server в оперативный режим в SQL Управляемый экземпляр
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить оперативную миграцию из SQL Server в Управляемый экземпляр SQL Azure с помощью Azure Database Migration Service.
 services: dms
@@ -12,11 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/10/2020
-ms.openlocfilehash: 817e1d740ce34704acb4b20a7c3f71807bfa66bc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3d462fa0fa2afe5937c60985938c8268991dfa41
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84187951"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86084228"
 ---
 # <a name="tutorial-migrate-sql-server-to-an-azure-sql-managed-instance-online-using-dms"></a>Руководство. Миграция SQL Server в Azure SQL Управляемый экземпляр Online с помощью DMS
 
@@ -24,7 +25,7 @@ Azure Database Migration Service можно использовать для пе
 
 В этом руководстве вы переносите базу данных **Adventureworks2012** из локального экземпляра SQL Server в управляемый экземпляр SQL с минимальным временем простоя с помощью Azure Database Migration Service.
 
-В этом руководстве вы узнаете, как:
+В этом руководстве описано следующее:
 > [!div class="checklist"]
 >
 > * создание экземпляра Azure Database Migration Service;
@@ -77,11 +78,11 @@ Azure Database Migration Service можно использовать для пе
 * Если вы запустили несколько именованных экземпляров SQL Server, использующих динамические порты, вы можете включить службу обозревателя SQL и разрешить доступ к UDP-порту 1434 через брандмауэры. Это позволит службе Azure Database Migration Service подключиться к именованному экземпляру на исходном сервере.
 * Если перед исходными базами данных используется брандмауэр, его правила должны разрешать службе Azure Database Migration Service доступ к исходным базам данных для миграции и файлам SMB через порт 445.
 * Создайте Управляемый экземпляр SQL, следуя сведениям в статье [создание управляемый экземпляр SQL в портал Azure](https://aka.ms/sqldbmi).
-* Убедитесь, что для подключения к исходному серверу SQL Server и целевому управляемому экземпляру используются имена, входящие в серверную роль sysadmin.
+* Убедитесь, что имена входа, используемые для подключения исходного SQL Server и целевого Управляемый экземпляр SQL, являются членами роли сервера sysadmin.
 * Укажите сетевую папку SMB, содержащую все файлы полных резервных копий базы данных и файлы резервных копий журнала транзакций, которые могут использоваться службой Azure Database Migration Service для миграции базы данных.
 * Предоставьте учетной записи службы, от имени которой выполняется исходный экземпляр SQL Server, права на запись в эту созданную сетевую папку, а учетной записи компьютера для исходного сервера — права на чтение и запись для этой папки.
 * Запишите имя пользователя и пароль учетной записи Windows, которой предоставлены полные права доступа к этой сетевой папке. Azure Database Migration Service олицетворяет учетные данные пользователя, чтобы передать файлы резервных копий в контейнер службы хранилища Azure для операции восстановления.
-* Создайте идентификатор приложения Azure Active Directory, создающего ключ идентификатора приложения, который может использоваться службой DMS для подключения к целевому управляемому экземпляру Базы данных SQL Azure и контейнеру службы хранилища Azure. Дополнительные сведения см. в статье [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal).
+* Создайте идентификатор приложения Azure Active Directory, который создает ключ идентификатора приложения, который Azure Database Migration Service можно использовать для подключения к целевым Управляемый экземпляр базы данных Azure и контейнеру хранилища Azure. Дополнительные сведения см. в статье [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal).
 
   > [!NOTE]
   > DMS необходимо разрешение участника в подписке для указанного идентификатора приложения. Кроме того, вы можете создать пользовательские роли, предоставляющие определенные разрешения, которые требует Azure Database Migration Service. Пошаговые инструкции по использованию пользовательских ролей см. в статье [пользовательские роли для SQL Server к SQL управляемый экземпляр оперативные миграции](https://docs.microsoft.com/azure/dms/resource-custom-roles-sql-db-managed-instance).
@@ -265,6 +266,6 @@ Azure Database Migration Service можно использовать для пе
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-* Руководство по переносу базы данных на управляемый экземпляр с помощью команды T-SQL RESTORE см. в разделе [Восстановление резервной копии в управляемый экземпляр с помощью команды Restore](../sql-database/sql-database-managed-instance-restore-from-backup-tutorial.md).
-* Дополнительные сведения об управляемом экземпляре см. [в разделе что такое управляемый экземпляр](../azure-sql/managed-instance/sql-managed-instance-paas-overview.md).
-* Сведения о подключении приложений к управляемому экземпляру см. в разделе [Connect](../azure-sql/managed-instance/connect-application-instance.md)Apps.
+* Руководство по переносу базы данных на SQL Управляемый экземпляр с помощью команды T-SQL RESTORE см. в разделе [Восстановление резервной копии в sql управляемый экземпляр с помощью команды Restore](../sql-database/sql-database-managed-instance-restore-from-backup-tutorial.md).
+* Дополнительные сведения о SQL Управляемый экземпляр см. в разделе [что такое sql управляемый экземпляр](../azure-sql/managed-instance/sql-managed-instance-paas-overview.md).
+* Сведения о подключении приложений к SQL Управляемый экземпляр см. в разделе [Подключение приложений](../azure-sql/managed-instance/connect-application-instance.md).

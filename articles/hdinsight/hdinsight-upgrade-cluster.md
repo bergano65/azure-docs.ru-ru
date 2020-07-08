@@ -6,15 +6,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/31/2020
-ms.openlocfilehash: f7198aeff5e9ef6d37e29c2336dc38e4eec0dda1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f3bfd430023330d3a399a0a760fd353b6ee60941
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77023979"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085894"
 ---
 # <a name="migrate-hdinsight-cluster-to-a-newer-version"></a>Перенос кластера HDInsight в более новую версию
 
@@ -51,9 +51,9 @@ ms.locfileid: "77023979"
 
 ## <a name="backup-and-restore"></a>Резервное копирование и восстановление
 
-Дополнительные сведения о резервном копировании и восстановлении базы данных см. в статье [Восстановление базы данных SQL Azure с помощью автоматических резервных копий базы данных](../sql-database/sql-database-recovery-using-backups.md).
+Дополнительные сведения о резервном копировании и восстановлении базы данных см. в статье [Восстановление базы данных в базе данных SQL Azure с помощью автоматических резервных копий базы данных](../azure-sql/database/recovery-using-backups.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Узнайте, как создавать кластеры HDInsight под управлением Linux](hdinsight-hadoop-provision-linux-clusters.md)
 * [Подключитесь к HDInsight с помощью протокола SSH](hdinsight-hadoop-linux-use-ssh-unix.md).

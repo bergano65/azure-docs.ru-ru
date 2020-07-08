@@ -5,14 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/27/2020
-ms.openlocfilehash: a2a9b149bd76ed276f3210f27ea0f60bbc7b7662
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 95756e9951b384c779f61651555482b3c8cb7321
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84190889"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86083378"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-by-using-the-azure-portal"></a>Создание кластеров под управлением Linux в HDInsight с помощью портала Azure
 
@@ -60,7 +61,7 @@ ms.locfileid: "84190889"
 
 Нажмите кнопку **Далее: >>хранилища** , чтобы перейти на следующую вкладку.
 
-## <a name="storage"></a>Память
+## <a name="storage"></a>Служба хранилища
 
 > [!WARNING] 
 > Начиная с 15 июня клиенты 2020 не смогут создать новый субъект-службу с помощью HDInsight. См. раздел [Создание субъекта-службы и сертификатов](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) с помощью Azure Active Directory.
@@ -93,7 +94,7 @@ ms.locfileid: "84190889"
 
 На вкладке **безопасность и сеть** укажите следующие сведения.
 
-|Свойство. |Описание: |
+|Свойство |Описание |
 |---|---|
 |Пакет безопасности корпоративного уровня|Необязательно: установите флажок, чтобы использовать **Корпоративный пакет безопасности**. Дополнительные сведения см. в статье [Настройка кластера HDInsight с корпоративный пакет безопасности с помощью доменных служб Azure Active Directory](./domain-joined/apache-domain-joined-configure-using-azure-adds.md).|
 |TLS|Необязательно. Выберите версию TLS из раскрывающегося списка. Дополнительные сведения см. в статье [о протоколе TLS](./transport-layer-security.md).|
@@ -110,7 +111,7 @@ ms.locfileid: "84190889"
 
 На вкладке **Настройка и цены** укажите следующие сведения.
 
-|Свойство. |Описание: |
+|Свойство |Описание |
 |---|---|
 |+ Добавить приложение|Необязательно. Выберите любые нужные приложения. Эти приложения могут разрабатывать корпорация Майкрософт, независимые поставщики программного обеспечения (ISV) или вы сами. Дополнительные сведения см. в разделе [Установка приложения во время создания кластера](hdinsight-apps-install-applications.md#install-applications-during-cluster-creation).|
 |Размер узла|Необязательно. Выберите узел другого размера.|
@@ -136,7 +137,7 @@ ms.locfileid: "84190889"
 
 Некоторые значки в окне описаны ниже.
 
-|Свойство. | Описание |
+|Свойство | Описание |
 |---|---|
 |Обзор|Предоставляет все ценные сведения о кластере. Например, имя, группа ресурсов, к которой она принадлежит, расположение, операционная система и URL-адрес панели мониторинга кластера.|
 |Панели мониторинга кластера|Направляет вас на портал Ambari, связанный с кластером.|
@@ -151,7 +152,7 @@ ms.locfileid: "84190889"
 
 Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](./hdinsight-hadoop-customize-cluster-linux.md#access-control).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Вы успешно создали кластер HDInsight. Теперь узнайте, как работать с кластером.
 

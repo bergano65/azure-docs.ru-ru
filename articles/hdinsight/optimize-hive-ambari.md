@@ -5,14 +5,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/04/2020
-ms.openlocfilehash: ce3916ef1155224a91c0736c3dabe907ae8d2611
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 33c2ee7bc477d3c9d3823642dbdd974650017822
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82796373"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86084364"
 ---
 # <a name="optimize-apache-hive-with-apache-ambari-in-azure-hdinsight"></a>Оптимизация Apache Hive с помощью Apache Ambari в Azure HDInsight
 
@@ -137,7 +137,7 @@ Hive обрабатывает данные построчно. Векториз�
 | GZip | GZip | DEFLATE | `.gz` | Нет |
 | Bzip2 | Bzip2 | Bzip2 |`.bz2` | Да |
 | LZO | `Lzop` | LZO | `.lzo` | Да, при индексации. |
-| Snappy | Недоступно | Snappy | Snappy | Нет |
+| Snappy | Н/Д | Snappy | Snappy | Нет |
 
 Как правило, метод сжатия разделяемы важен, в противном случае будет создано несколько средств сопоставления. Если входными данными является текст, то `bzip2` является наилучшим вариантом. Для формата ORC наиболее быстрым методом сжатия является Snappy.
 
@@ -241,7 +241,7 @@ Hive позволяет создавать динамические раздел
 | `tez.am.container.idle.release-timeout-min.millis` | Более 20 000 | 10000 |
 | `tez.am.container.idle.release-timeout-max.millis` | Более 40 000 | 20 000 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md)
 * [Управление кластерами HDInsight с помощью REST API Ambari](hdinsight-hadoop-manage-ambari-rest-api.md)

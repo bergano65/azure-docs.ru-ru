@@ -9,12 +9,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 06/01/2020
 ms.custom: amqp
-ms.openlocfilehash: a9bc0564a69124618d0a7e3ff6bafb65b2be0ee4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a7ab796ddd35ebe9b9c43509d8e3c2f4c41625c8
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84907488"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86084003"
 ---
 # <a name="read-device-to-cloud-messages-from-the-built-in-endpoint"></a>Чтение сообщений, пересылаемых с устройства в облако, из встроенной конечной точки
 
@@ -57,7 +57,7 @@ ms.locfileid: "84907488"
 | Имя узла | abcd1234namespace.servicebus.windows.net |
 | Пространство имен | abcd1234namespace |
 
-Затем можно использовать любую политику общего доступа с разрешениями **ServiceConnect**, которые позволяют подключаться к указанному концентратору событий.
+Затем можно выбрать любую политику общего доступа из раскрывающегося списка, как показано на снимке экрана выше. Он отображает только те политики, у которых есть разрешения **ServiceConnect** для подключения к указанному концентратору событий.
 
 Ниже перечислены некоторые пакеты SDK, которые можно использовать для подключения к предоставленной Центром Интернета вещей встроенной конечной точке, совместимой с Центрами событий.
 

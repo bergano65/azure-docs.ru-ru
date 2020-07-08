@@ -12,11 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: genli
-ms.openlocfilehash: 4b314fbdb9cbc0c0b797cbee8e92ee4702bbea81
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f41f3bd38013cb0ebd2cad55168551c303c1d231
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77919470"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86084334"
 ---
 # <a name="remote-desktop-services-isnt-starting-on-an-azure-vm"></a>Службы удаленных рабочих столов не запускаются на виртуальной машине Azure
 
@@ -46,7 +47,9 @@ ms.locfileid: "77919470"
 
     Кроме того, доступ к этим ошибкам можно получить через консоль последовательного доступа с помощью следующего запроса: 
 
-        wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Service Control Manager'] and EventID=7022 and TimeCreated[timediff(@SystemTime) <= 86400000]]]" | more 
+    ```console
+   wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Service Control Manager'] and EventID=7022 and TimeCreated[timediff(@SystemTime) <= 86400000]]]" | more
+    ```
 
 ## <a name="cause"></a>Причина:
  
@@ -178,22 +181,37 @@ ms.locfileid: "77919470"
 
 1. Эта проблема возникает, если запускаемая учетная запись этой службы была изменена. Изменить ее на учетную запись по умолчанию: 
 
-        sc config TermService obj= 'NT Authority\NetworkService'
+    ```console
+    sc config TermService obj= 'NT Authority\NetworkService'
+    ```
+
 2. Запустите службу:
 
-        sc start TermService
+    ```console
+    sc start TermService
+    ```
+
 3. Попробуйте подключиться к виртуальной машине с помощью удаленного рабочего стола.
 
 #### <a name="termservice-service-crashes-or-hangs"></a>Происходит сбой службы TermService сбоя или она зависает
 1. Если служба зависла в состоянии **Запуск** или**Остановка**, попробуйте остановить службу: 
 
-        sc stop TermService
+    ```console
+    sc stop TermService
+    ```
+
 2. Изолируйте службу в собственном контейнере svchost.
 
-        sc config TermService type= own
+    ```console
+    sc config TermService type= own
+    ```
+
 3. Запустите службу:
 
-        sc start TermService
+    ```console
+    sc start TermService
+    ```
+
 4. Если службу по-прежнему не удается запустить, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
 ### <a name="repair-the-vm-offline"></a>Автономное восстановление виртуальной машины

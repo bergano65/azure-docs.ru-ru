@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/15/2020
-ms.openlocfilehash: 146deba7a0ef1e0dc5ffe03f9ad414e752058274
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 70c1b35759241c2fdf687e7b7042cf4a18232bf5
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84945381"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085503"
 ---
 # <a name="what-is-monitored-by-azure-monitor"></a>Что отслеживает Azure Monitor?
 В этой статье описаны различные приложения и службы, которые отслеживаются с помощью Azure Monitor. 
@@ -32,7 +32,7 @@ ms.locfileid: "84945381"
 [Azure Monitor для групп ресурсов (предварительная версия)](insights/resource-group-insights.md) |  Обеспечивает рассмотрение и диагностику любых проблем с отдельными ресурсами, а также предоставляет контекст относительно работоспособности и производительности группы ресурсов в целом. |
 | [Azure Monitor для службы хранилища](insights/storage-insights-overview.md) | Обеспечивает комплексный мониторинг ваших учетных записей хранения Azure, создавая единое представление данных о производительности, ресурсах и доступности служб хранилища Azure. |
 | [Azure Monitor для виртуальных машин](insights/vminsights-overview.md) | Отслеживает виртуальные машины Azure и масштабируемые наборы виртуальных машин в большом масштабе. Это решение анализирует производительность и работоспособность виртуальных машин Windows и Linux, отслеживает их процессы и зависимости на других ресурсах, а также внешние процессы. |
-| [Azure Monitor для Key Vault (предварительная версия)](insights/key-vaults-insights-overview.md) | Обеспечивает комплексный мониторинг хранилищ ключей в едином представлении запросов, производительности, сбоев и задержки для Key Vault. |
+| [Azure Monitor для Key Vault (предварительная версия)](insights/key-vaults-insights-overview.md) | Обеспечивает полный мониторинг хранилищ ключей за счет унифицированного представления запросов Key Vault, производительности, сбоев и задержки. |
 | [Azure Monitor для Кэша Azure для Redis (предварительная версия)](insights/redis-cache-insights-overview.md) |  Обеспечивает единое интерактивное представление со сведениями об общей производительности, сбоях, емкости и работоспособности. |
 
 
@@ -184,7 +184,7 @@ ms.locfileid: "84945381"
 | [Microsoft Intune](https://docs.microsoft.com/intune/) | Настройка параметров диагностики для отправки журналов в Azure Monitor. См. статью [Отправка данных журнала в хранилище, концентраторы событий или Log Analytics в Intune (предварительная версия)](https://docs.microsoft.com/intune/fundamentals/review-logs-using-azure-monitor).  |
 | Сеть  | [Монитор производительности сети](insights/network-performance-monitor.md) — отслеживание сетевых подключений и производительности конечных точек служб и приложений.<br>[Шлюз приложений Azure](insights/azure-networking-analytics.md#azure-application-gateway-analytics-solution-in-azure-monitor) — анализ журналов и метрик из Шлюза приложений Azure.<br>[Аналитика трафика](/azure/network-watcher/traffic-analytics) — анализ журналов потоков группы безопасности сети (NSG) Наблюдателя за сетями и предоставление сведений о потоке трафика в облаке Azure. |
 | [Office 365](insights/solution-office-365.md) | Мониторинг среды Office 365. Обновленная версия с улучшенной процедурой подключения доступна в Azure Sentinel. |
-| [Аналитика SQL](insights/azure-sql.md) | Мониторинг производительности баз данных SQL Azure, эластичных пулов и управляемых экземпляров в большом масштабе и в нескольких подписках. |
+| [Аналитика SQL](insights/azure-sql.md) | Отслеживайте производительность баз данных SQL Azure и управляемых экземпляров SQL в масштабе и нескольких подписках. |
 | [Surface Hub](insights/surface-hubs.md) | Отслеживание работоспособности и использования устройств Surface Hub. |
 | [System Center Operations Manager](https://docs.microsoft.com/system-center/scom) | Позволяет собирать данные от агентов Operations Manager, подключив соответствующую группу управления к Azure Monitor. См. статью [Подключение Operations Manager к Azure Monitor](platform/om-agents.md)<br> Оценка рисков и работоспособности группы управления System Center Operations Manager с помощью решения [Operations Manager Assessment](insights/scom-assessment.md). |
 | [Комнаты Microsoft Teams](https://docs.microsoft.com/microsoftteams/room-systems/azure-monitor-deploy) | Интегрированное комплексное управление устройствами для Комнат Microsoft Teams. |

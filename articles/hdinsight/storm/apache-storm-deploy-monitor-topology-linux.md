@@ -5,20 +5,21 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/18/2019
-ms.openlocfilehash: e890289230b3215bd102d8c5a78dca4f1b7b90f8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9b190b5847c7412344e2bb09fd4000985816219b
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84700503"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085741"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-azure-hdinsight"></a>Развертывание и администрирование топологий Apache Storm в Azure HDInsight
 
 С помощью этого документа вы ознакомитесь с основами управления и мониторинга топологий [Apache Storm](https://storm.apache.org/), работающих в Storm в кластерах HDInsight.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер Apache Storm в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Storm** для параметра **Тип кластера**.
 
@@ -248,7 +249,7 @@ storm rebalance TOPOLOGYNAME
 
 Полное доменное имя (FQDN) головного узла кластера можно найти несколькими способами.
 
-| Метод обнаружения FQDN | Описание: |
+| Метод обнаружения FQDN | Описание |
 | --- | --- |
 | Сеанс SSH | Из сеанса SSH в кластер примените команду `headnode -f`. |
 | Веб-Ambari | На веб-странице кластера Ambari ( `https://CLUSTERNAME.azurehdinsight.net` ) выберите **службы** в верхней части страницы, а затем выберите множество. **Storm** На вкладке **Summary** (Сводка) выберите **Storm UI Server** (Сервер пользовательского интерфейса Storm). Полное доменное имя узла, на котором размещены пользовательский интерфейс Storm и REST API, отображено в верхней части страницы. |
@@ -265,7 +266,7 @@ storm rebalance TOPOLOGYNAME
 
 Сведения, возвращаемые из REST API, могут использоваться только в пределах кластера. Например, полное доменное имя (FQDN), возвращенное для серверов [Apache ZooKeeper](https://zookeeper.apache.org/) , недоступно из Интернета.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 См. дополнительные сведения о [разработке топологий на основе Java с помощью Apache Maven](apache-storm-develop-java-topology.md).
 

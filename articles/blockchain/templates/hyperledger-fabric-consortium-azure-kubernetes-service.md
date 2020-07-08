@@ -1,15 +1,15 @@
 ---
 title: Microsoft Kubernetes Service Fabric Consortium в службе Azure (AKS)
 description: Развертывание и настройка сети консорциума Kubernetes для структуры Microsoft Azure
-ms.date: 06/04/2020
+ms.date: 07/07/2020
 ms.topic: how-to
 ms.reviewer: ravastra
-ms.openlocfilehash: e85d8c196afa5535d4d36ffdc03078e2046e4ca1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e1cbfa56f1e4ea9f8cbaa0ad973d06e8b8d486ca
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85209714"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085816"
 ---
 # <a name="hyperledger-fabric-consortium-on-azure-kubernetes-service-aks"></a>Microsoft Kubernetes Service Fabric Consortium в службе Azure (AKS)
 
@@ -19,6 +19,18 @@ ms.locfileid: "85209714"
 
 - Получите опыт работы со структурой «Главная книга» и различные компоненты, которые формируют стандартные блоки блокчейн Network структуры.
 - Узнайте, как развернуть и настроить консорциум по работе с Kubernetes в службе Azure для рабочих сценариев.
+
+[!INCLUDE [Preview note](./includes/preview.md)]
+
+## <a name="choose-an-azure-blockchain-solution"></a>Выберите решение Azure Блокчейн
+
+Прежде чем использовать шаблон решения, Сравните свой сценарий с общими вариантами использования доступных параметров Azure Блокчейн.
+
+Параметр | Модель службы | Общий вариант использования
+-------|---------------|-----------------
+Шаблоны решений | IaaS | Шаблоны решений — это Azure Resource Manager шаблоны, которые можно использовать для предоставления полностью настроенной топологии сети блокчейн. Шаблоны развертывают и настраивают Microsoft Azure службы вычислений, сети и хранения для заданного типа сети блокчейн. Шаблоны решений предоставляются без соглашения об уровне обслуживания. Используйте [страницу Microsoft Q&A вопроса](https://docs.microsoft.com/answers/topics/azure-blockchain-workbench.html) для поддержки.
+[Служба Блокчейн Azure](../service/overview.md) | PaaS | Предварительная версия Azure Блокчейн Service позволяет упростить образование, управление и руководство по сетям блокчейн в консорциуме W3C. Используйте службу Блокчейн Azure для решений, которым требуются сведения о PaaS, управлении консорциумом, а также о конфиденциальности контрактов и транзакций.
+[Azure Blockchain Workbench](../workbench/overview.md) | IaaS и PaaS | Azure Blockchain Workbench (предварительная версия) — это совокупность служб и возможностей Azure, которые позволяют создавать и развертывать приложения блокчейн для совместного использования бизнес-процессов и данных с другими организациями. Используйте Azure Блокчейн Workbench для создания прототипа решения блокчейн или подтверждения концепции приложения блокчейн. Azure Blockchain Workbench предоставляется без соглашения об уровне обслуживания. Используйте [страницу Microsoft Q&A вопроса](https://docs.microsoft.com/answers/topics/azure-blockchain-workbench.html) для поддержки.
 
 ## <a name="hyperledger-fabric-consortium-architecture"></a>Архитектура консорциума по этой структуре в книге
 
@@ -429,6 +441,6 @@ kubectl describe pod fabric-tools -n tools | grep "Image:" | cut -d ":" -f 3
 
 Получите возможность проконсультироваться с инженерами Майкрософт и специалистами из сообщества Блокчейна Azure.
 
-- [Microsoft Q&страницу вопросов для службы Azure блокчейн](https://docs.microsoft.com/answers/topics/azure-blockchain-workbench.html). Поддержка инженеров шаблонов блокчейн ограничена проблемами развертывания.
+- [Страница вопросов Microsoft Q&](https://docs.microsoft.com/answers/topics/azure-blockchain-workbench.html). Поддержка инженеров шаблонов блокчейн ограничена проблемами развертывания.
 - [Техническое сообщество Майкрософт](https://techcommunity.microsoft.com/t5/Blockchain/bd-p/AzureBlockchain)
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-blockchain-workbench)
