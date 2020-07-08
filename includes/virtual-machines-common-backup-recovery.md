@@ -9,10 +9,10 @@ ms.date: 03/09/2018
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: be71b269e618d13a126e4005754b307e9c6517d7
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67185281"
 ---
 ## <a name="azure-backup"></a>Azure Backup
@@ -43,5 +43,5 @@ Azure Site Recovery позволяет защитить виртуальные �
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Вы можете опробовать Azure Backup, следуя инструкциям из руководств по резервному копированию виртуальных машин для [Linux](../articles/virtual-machines/linux/tutorial-backup-vms.md) или [Windows](../articles/virtual-machines/windows/tutorial-backup-vms.md).

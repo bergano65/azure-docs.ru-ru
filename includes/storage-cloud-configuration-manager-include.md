@@ -5,15 +5,15 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: tamram
 ms.openlocfilehash: 5102866cdda51ef545fd95b32946cb17c6e40a3c
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "72038171"
 ---
 [Библиотека Microsoft Azure Configuration Manager для .NET](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/) содержит класс для анализа строки подключения из файла конфигурации. Класс [CloudConfigurationManager](https://msdn.microsoft.com/library/azure/mt634650.aspx) анализирует параметры конфигурации. Он анализирует параметры клиентских приложений, которые выполняются на рабочем столе, на мобильном устройстве, в виртуальной машине Azure или в облачной службе Azure.
 
-Чтобы создать ссылку `CloudConfigurationManager` на пакет, добавьте следующие `using` директивы:
+Чтобы создать ссылку на `CloudConfigurationManager` пакет, добавьте следующие `using` директивы:
 
 ```csharp
 using Microsoft.Azure; //Namespace for CloudConfigurationManager

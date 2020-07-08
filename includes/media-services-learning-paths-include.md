@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 135232e3e9894bcef1ef657e41f5ad3a5e307289
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "69014657"
 ---
 ### <a name="media-services-v3-latest"></a>Службы мультимедиа версии 3 (последняя версия)
@@ -16,8 +16,8 @@ ms.locfileid: "69014657"
 Ознакомьтесь с последней версией служб мультимедиа Azure. 
 
 * [Обзор](https://docs.microsoft.com/azure/media-services/latest/media-services-overview)
-* [Основные понятия](https://docs.microsoft.com/azure/media-services/latest/concepts-overview)
-* [Начало разработки](https://docs.microsoft.com/azure/media-services/latest/developers-guide)
+* [Концепции](https://docs.microsoft.com/azure/media-services/latest/concepts-overview)
+* [Приступите к разработке](https://docs.microsoft.com/azure/media-services/latest/developers-guide)
 * [Руководство по миграции из версии 2 в версию 3](https://docs.microsoft.com/azure/media-services/latest/migrate-from-v2-to-v3)
 
 ### <a name="media-services-v2-legacy"></a>Службы мультимедиа версии 2 (прежняя версия)
