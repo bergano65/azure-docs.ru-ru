@@ -1,24 +1,14 @@
 ---
 title: Концентраторы событий Azure — обмен событиями с помощью разных протоколов
 description: В этой статье показано, как через Центры событий Azure организовать обмен событиями между потребителями и производителями, которые используют разные протоколы (AMQP, Apache Kafka и HTTPS).
-services: event-hubs
-documentationcenter: ''
-author: femila
-manager: ''
-ms.service: event-hubs
-ms.devlang: na
 ms.topic: article
-ms.custom: seodec18
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 12/20/2019
-ms.author: femila
-ms.openlocfilehash: 368cc568c40e878338e6b45205e74cba1d0b6378
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/23/2020
+ms.openlocfilehash: ec3122dcf151fe3e7b7b9578725e810ddca22bdf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80372219"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85320610"
 ---
 # <a name="exchange-events-between-consumers-and-producers-that-use-different-protocols-amqp-kafka-and-https"></a>Обмен событиями через Центры событий Azure между потребителями и производителями, использующими разные протоколы (AMQP, Apache Kafka и HTTPS).
 Центры событий Azure поддерживают для потребителей и производителей три протокола: AMQP, Kafka и HTTPS. В каждом из этих протоколов описан собственный способ представления сообщений, что приводит нас к логичному вопросу: как будут выглядеть разные компоненты и значения события при поступлении к потребителю, если в Центр событий они отправлялись по одному протоколу, а потребитель использовал для получения другой протокол? В этой статье обсуждаются современные рекомендации для производителей и потребителей, которые позволяют обеспечить правильную обработку потребителем всех значений в событии.

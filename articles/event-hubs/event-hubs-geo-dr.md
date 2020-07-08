@@ -1,24 +1,14 @@
 ---
 title: Геоизбыточное аварийное восстановление — Центры событий Azure | Документация Майкрософт
 description: Как использовать географические регионы для отработки отказа и аварийного восстановления в Центрах событий Azure.
-services: event-hubs
-documentationcenter: ''
-author: ShubhaVijayasarathy
-manager: timlt
-editor: ''
-ms.service: event-hubs
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 04/28/2020
-ms.author: shvija
-ms.openlocfilehash: 47e3a27ba9c0b7995f45f38ae4e19941cb4f8c01
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.date: 06/23/2020
+ms.openlocfilehash: 142e2b99376bef24a6477f7b40394ca2b67f292b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83659713"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85320552"
 ---
 # <a name="azure-event-hubs---geo-disaster-recovery"></a>Геоизбыточное аварийное восстановление в службе "Центры событий Azure" 
 При простое целых регионов Azure или центров обработки данных (если не используются [зоны доступности](../availability-zones/az-overview.md)) крайне важно, чтобы обработка данных продолжалась в другом регионе или центре обработки данных. Таким образом *географическое аварийное восстановление* и *георепликация* являются важными функциями для любого предприятия. Центры событий Azure поддерживают географическое аварийное восстановления и георепликацию на уровне пространства имен. 

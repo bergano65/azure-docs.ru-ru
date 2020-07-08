@@ -1,20 +1,14 @@
 ---
 title: Интеграция приложения Apache Spark с Центрами событий Azure | Документация Майкрософт
 description: В этой статье рассказывается, как использовать приложение Apache Spark с поддержкой Kafka в Центрах событий Azure.
-services: event-hubs
-documentationcenter: .net
-author: ShubhaVijayasarathy
-manager: timlt
-ms.service: event-hubs
 ms.topic: how-to
-ms.date: 04/02/2020
-ms.author: shvija
-ms.openlocfilehash: 1b292f9b894dac7df6b9634ce1bad627c8d24fe6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/23/2020
+ms.openlocfilehash: 00925242d5685749aba27ad2fc537ffb07f4c68d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80632760"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85320110"
 ---
 # <a name="connect-your-apache-spark-application-with-azure-event-hubs"></a>Подключение приложения Apache Spark к концентраторам событий Azure
 В этом руководстве описывается подключение приложения Spark к концентраторам событий для потоковой передачи в режиме реального времени. Такая интеграция обеспечивает потоковую передачу без необходимости изменять клиенты протокола или запускать собственные кластеры Kafka или Zookeeper. Для работы с этим руководством требуется Apache Spark v2.4+ и Apache Kafka v2.0+.
@@ -105,6 +99,6 @@ df.writeStream
 - [Подключение Apache Flink к концентратору событий](event-hubs-kafka-flink-tutorial.md)
 - [Интеграция Kafka Connect с концентратором событий](event-hubs-kafka-connect-tutorial.md)
 - [Migrating to Azure Event Hubs for Apache Kafka Ecosystems](https://github.com/Azure/azure-event-hubs-for-kafka) (Переход в Центры событий Azure для экосистем Apache Kafka)
-- [Подключение Akka Streams к концентратору событий](event-hubs-kafka-akka-streams-tutorial.md)
+- [Подключение потоков Akka Streams к концентратору событий](event-hubs-kafka-akka-streams-tutorial.md)
 - [Apache Kafka Guide для разработчиков концентраторов событий Azure](apache-kafka-developer-guide.md)
 

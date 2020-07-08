@@ -3,12 +3,12 @@ title: Мониторинг приложений Java в любом месте A
 description: Наблюдение за производительностью приложений Java, работающих в любой среде, без инструментирования приложения. Найдите основную причину проблем d с помощью распределенной трассировки и схемы приложения.
 ms.topic: conceptual
 ms.date: 04/16/2020
-ms.openlocfilehash: 478e42669339ac015076c89da103d91080090685
-ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.openlocfilehash: 0c66ad01f265dde7da2f48b17b3ad4438d59a0ae
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82509216"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85319692"
 ---
 # <a name="configuration-options---java-standalone-agent-for-azure-monitor-application-insights"></a>Параметры конфигурации — автономный агент Java для Azure Monitor Application Insights
 
@@ -33,22 +33,22 @@ ms.locfileid: "82509216"
 
 ## <a name="configuration-file-path"></a>Путь к файлу конфигурации
 
-По умолчанию Application Insights Java 3,0 Preview ждет, что файл конфигурации имеет имя `ApplicationInsights.json`и находится в том же каталоге, что `applicationinsights-agent-3.0.0-PREVIEW.4.jar`и.
+По умолчанию Application Insights Java 3,0 Preview ждет, что файл конфигурации имеет имя `ApplicationInsights.json` и находится в том же каталоге, что и `applicationinsights-agent-3.0.0-PREVIEW.5.jar` .
 
 Можно указать собственный путь к файлу конфигурации, используя либо
 
 * `APPLICATIONINSIGHTS_CONFIGURATION_FILE`переменная среды или
 * `applicationinsights.configurationFile`Системное свойство Java
 
-Если указан относительный путь, он будет разрешаться относительно каталога, в `applicationinsights-agent-3.0.0-PREVIEW.4.jar` котором находится.
+Если указан относительный путь, он будет разрешаться относительно каталога, в котором находится `applicationinsights-agent-3.0.0-PREVIEW.5.jar` .
 
-## <a name="connection-string"></a>Строка подключения.
+## <a name="connection-string"></a>Строка подключения
 
 Это обязательный шаг. Строку подключения можно найти в ресурсе Application Insights:
 
 :::image type="content" source="media/java-ipa/connection-string.png" alt-text="Строка подключения Application Insights":::
 
-Можно также задать строку подключения с помощью переменной `APPLICATIONINSIGHTS_CONNECTION_STRING`среды.
+Можно также задать строку подключения с помощью переменной среды `APPLICATIONINSIGHTS_CONNECTION_STRING` .
 
 ## <a name="cloud-role-name"></a>Имя облачной роли
 
@@ -68,7 +68,7 @@ ms.locfileid: "82509216"
 
 Если имя роли облака не задано, имя ресурса Application Insights будет использоваться для обозначения компонента на схеме приложения.
 
-Вы также можете задать имя роли облака с помощью переменной `APPLICATIONINSIGHTS_ROLE_NAME`среды.
+Вы также можете задать имя роли облака с помощью переменной среды `APPLICATIONINSIGHTS_ROLE_NAME` .
 
 ## <a name="cloud-role-instance"></a>Экземпляр облачной роли
 
@@ -86,13 +86,13 @@ ms.locfileid: "82509216"
 }
 ```
 
-Вы также можете задать экземпляр роли облака с помощью переменной `APPLICATIONINSIGHTS_ROLE_INSTANCE`среды.
+Вы также можете задать экземпляр роли облака с помощью переменной среды `APPLICATIONINSIGHTS_ROLE_INSTANCE` .
 
 ## <a name="application-log-capture"></a>Запись журнала приложений
 
 Application Insights Предварительная версия Java 3,0 автоматически захватывает ведение журнала приложений с помощью log4j, Logback и Java. util. Logging.
 
-По умолчанию он собирает все записи журнала, `WARN` выполненные на уровне или выше.
+По умолчанию он собирает все записи журнала, выполненные на `WARN` уровне или выше.
 
 Если вы хотите изменить это пороговое значение:
 
@@ -115,14 +115,14 @@ Application Insights Предварительная версия Java 3,0 авт
 | `threshold`  | Log4j  | Logback | ИЮЛ     |
 |--------------|--------|---------|---------|
 | OFF          | OFF    | OFF     | OFF     |
-| АВАРИЙ        | АВАРИЙ  | ошибка   | SEVERE  |
-| ОШИБКА/СЕРЬЕЗНАЯ | ошибка  | ошибка   | SEVERE  |
-| ПРЕДУПРЕЖДАТЬ/ПРЕДУПРЕЖДЕНИЕ | ДАТЬ   | ДАТЬ    | WARNING |
-| INFO         | INFO   | INFO    | INFO    |
+| АВАРИЙ        | АВАРИЙ  | ОШИБКА   | SEVERE  |
+| ОШИБКА/СЕРЬЕЗНАЯ | ОШИБКА  | ОШИБКА   | SEVERE  |
+| ПРЕДУПРЕЖДАТЬ/ПРЕДУПРЕЖДЕНИЕ | ДАТЬ   | ДАТЬ    | ПРЕДУПРЕЖДЕНИЕ |
+| ИНФОРМАЦИЯ         | ИНФОРМАЦИЯ   | ИНФОРМАЦИЯ    | ИНФОРМАЦИЯ    |
 | CONFIG       | DEBUG  | DEBUG   | CONFIG  |
 | ОТЛАДКА/ХОРОШЕЕ   | DEBUG  | DEBUG   | FINE    |
 | FINER        | DEBUG  | DEBUG   | FINER   |
-| ТРАССИРОВКА И FINEST | трассировка  | трассировка   | FINEST  |
+| ТРАССИРОВКА И FINEST | TRACE  | TRACE   | FINEST  |
 | ALL          | ALL    | ALL     | ALL     |
 
 ## <a name="jmx-metrics"></a>Метрики JMX
@@ -237,7 +237,7 @@ Application Insights Предварительная версия Java 3,0 авт
 
 Это может быть полезно для обнаружения и диагностики проблем с Application Insights.
 
-По умолчанию он записывается в консоль `warn`с уровнем, соответствующим этой конфигурации:
+По умолчанию он записывается в консоль с уровнем `warn` , соответствующим этой конфигурации:
 
 ```json
 {
@@ -252,7 +252,7 @@ Application Insights Предварительная версия Java 3,0 авт
 }
 ```
 
-Допустимые уровни `OFF`: `ERROR`, `WARN`, `INFO`, `DEBUG`, и `TRACE`.
+Допустимые уровни: `OFF` , `ERROR` ,,, `WARN` `INFO` `DEBUG` и `TRACE` .
 
 Если вы хотите записать в файл вместо ведения журнала в консоли, выполните следующие действия.
 
@@ -271,4 +271,4 @@ Application Insights Предварительная версия Java 3,0 авт
 }
 ```
 
-При использовании ведения журнала файлов после того, как `maxSizeMB`файл будет найден, он переключается, оставляя только последний завершенный файл журнала в дополнение к текущему файлу журнала.
+При использовании ведения журнала файлов после того, как файл будет найден, `maxSizeMB` он переключается, оставляя только последний завершенный файл журнала в дополнение к текущему файлу журнала.

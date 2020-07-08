@@ -1,19 +1,14 @@
 ---
 title: Динамическое добавление секций в концентратор событий (Центры событий Azure)
 description: Сведения о том, как динамически добавлять секции в концентратор событий в службе "Центры событий Azure"
-services: event-hubs
-author: spelluru
-ms.service: event-hubs
 ms.topic: how-to
-ms.date: 04/23/2020
-ms.author: spelluru
-ms.reviewer: shvija
-ms.openlocfilehash: 0fc1a29aa34be8e692a92c7c1cfb73b5c22b037d
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.date: 06/23/2020
+ms.openlocfilehash: ea0477dcc695c7a2fb936daadc3679c94bfac12f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83664012"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85317952"
 ---
 # <a name="dynamically-add-partitions-to-an-event-hub-apache-kafka-topic-in-azure-event-hubs"></a>Динамическое добавление секций в концентратор событий (раздел Apache Kafka) в службе "Центры событий Azure"
 Центры событий обеспечивают потоковую передачу сообщений так, чтобы каждый секционированный потребитель считывал только определенное подмножество (секцию) потока сообщений. Этот шаблон обеспечивает горизонтальное масштабирование для обработки событий и предоставляет другие функции, ориентированные на поток, которые недоступны для очередей и разделов. Секция — это упорядоченная последовательность событий, хранящаяся в концентраторе событий. По мере поступления новых событий они добавляются в конец этой последовательности. Дополнительные сведения о секциях см. в разделе [Секции](event-hubs-scalability.md#partitions).

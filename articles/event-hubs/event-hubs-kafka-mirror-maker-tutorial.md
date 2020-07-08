@@ -1,20 +1,14 @@
 ---
 title: Использование Apache Kafka MirrorMaker в службе "Центры событий Azure" | Документация Майкрософт
 description: В этой статье описано, как с помощью Kafka MirrorMaker настроить зеркальное отображение кластера Kafka в службе "Центры событий Azure".
-services: event-hubs
-documentationcenter: .net
-author: ShubhaVijayasarathy
-manager: timlt
-ms.service: event-hubs
 ms.topic: how-to
-ms.date: 04/02/2020
-ms.author: shvija
-ms.openlocfilehash: fb041ec0d3cd474cca12d5ad55b733337566b9cc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/23/2020
+ms.openlocfilehash: aea8ebcfa65d5f4c90aa1908d03f0fcde8906bba
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80632784"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85320196"
 ---
 # <a name="use-kafka-mirrormaker-with-event-hubs-for-apache-kafka"></a>Использование Apache Kafka MirrorMaker с Центрами событий
 
@@ -26,7 +20,7 @@ ms.locfileid: "80632784"
 > Этот пример можно найти на сайте [GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/mirror-maker).
 
 
-В этом руководстве описано следующее:
+В этом руководстве вы узнаете, как:
 > [!div class="checklist"]
 > * Создание пространства имен в Центрах событий
 > * Клонирование примера проекта
@@ -34,12 +28,12 @@ ms.locfileid: "80632784"
 > * Настройка Kafka MirrorMaker
 > * Запуск Kafka MirrorMaker
 
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Вступление
 Одним из важных аспектов для современных облачных приложений является возможность обновления, улучшения и изменения инфраструктуры без прерывания работы службы. В этом руководстве показано, как концентратор событий и Kafka MirrorMaker могут интегрировать существующий конвейер Kafka в Azure, выполнив "зеркальное отображение" входного потока Kafka в службе концентраторов событий. 
 
 Конечная точка Kafka Центров событий Azure позволяет подключаться к Центрам событий Azure с помощью протокола Kafka (т. е. клиентов Kafka). После внесения минимальных изменений в приложение Kafka вы сможете подключаться к Центрам событий Azure и пользоваться преимуществами экосистемы Azure. Концентраторы событий в настоящее время поддерживают Kafka версии 1,0 и более поздних версий.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В рамках этого руководства вам потребуются:
 
@@ -50,7 +44,7 @@ ms.locfileid: "80632784"
     * Обязательно настройте переменную среды JAVA_HOME так, чтобы она указывала на папку, в которой установлен пакет JDK.
 * [Скачивание](https://maven.apache.org/download.cgi) и [Установка](https://maven.apache.org/install.html) двоичного архива Maven
     * В Ubuntu выполните команду `apt-get install maven`, чтобы установить Maven.
-* [Git](https://www.git-scm.com/downloads)
+* [Git](https://www.git-scm.com/downloads);
     * В Ubuntu выполните команду `sudo apt-get install git`, чтобы установить Git.
 
 ## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
@@ -59,7 +53,7 @@ ms.locfileid: "80632784"
 
 ## <a name="clone-the-example-project"></a>Клонирование примера проекта
 
-Теперь, когда у вас есть строка подключения концентраторов событий, выполните Клонирование репозитория концентраторов событий Azure для Kafka `mirror-maker` и перейдите к вложенной папке:
+Теперь, когда у вас есть строка подключения концентраторов событий, выполните Клонирование репозитория концентраторов событий Azure для Kafka и перейдите к `mirror-maker` вложенной папке:
 
 ```shell
 git clone https://github.com/Azure/azure-event-hubs-for-kafka.git
@@ -132,5 +126,5 @@ bin/kafka-mirror-maker.sh --consumer.config source-kafka.config --num.streams 1 
 - [Подключение Apache Flink к концентратору событий](event-hubs-kafka-flink-tutorial.md)
 - [Интеграция Kafka Connect с концентратором событий](event-hubs-kafka-connect-tutorial.md)
 - [Migrating to Azure Event Hubs for Apache Kafka Ecosystems](https://github.com/Azure/azure-event-hubs-for-kafka) (Переход в Центры событий Azure для экосистем Apache Kafka)
-- [Подключение Akka Streams к концентратору событий](event-hubs-kafka-akka-streams-tutorial.md)
+- [Подключение потоков Akka Streams к концентратору событий](event-hubs-kafka-akka-streams-tutorial.md)
 - [Apache Kafka Guide для разработчиков концентраторов событий Azure](apache-kafka-developer-guide.md)

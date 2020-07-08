@@ -1,25 +1,14 @@
 ---
 title: Получение событий от Центров событий Azure с помощью узла обработчика событий | Документация Майкрософт
 description: В этой статье описывается узел обработчика событий в Центрах событий Azure, который упрощает управление параллельными контрольными точками, арендой и чтением событий.
-services: event-hubs
-documentationcenter: .net
-author: ShubhaVijayasarathy
-manager: timlt
-editor: ''
-ms.service: event-hubs
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.custom: seodec18
-ms.date: 01/10/2020
-ms.author: shvija
-ms.openlocfilehash: 485f51e45e342ca28d54d609fd975bef5b204f7e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/23/2020
+ms.openlocfilehash: 338b4e890d61aca0d48287db6f042f9dc088754b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80372228"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85320644"
 ---
 # <a name="event-processor-host"></a>Узел обработчика событий
 > [!NOTE]
@@ -206,8 +195,8 @@ public class SimpleEventProcessor : IEventProcessor
     - [.NET Core](get-started-dotnet-standard-send-v2.md)
     - [Java](get-started-java-send-v2.md)
     - [Python](get-started-python-send-v2.md)
-    - [JavaScript](get-started-java-send-v2.md)
+    - [JavaScript](get-started-node-send-v2.md)
 * [Руководство по программированию Центров событий](event-hubs-programming-guide.md)
 * [Доступность и согласованность в Центрах событий](event-hubs-availability-and-consistency.md)
-* [Центры событий: часто задаваемые вопросы](event-hubs-faq.md)
+* [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
 * [Azure Event Hubs samples](https://github.com/Azure/azure-event-hubs/tree/master/samples) (Примеры Центров событий Azure)

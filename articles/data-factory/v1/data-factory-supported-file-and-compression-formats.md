@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 901e15994b8a51a5fd45d57ca7a4db7778d968e1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 33f67e1bfa27f4314f64cbcc4d472905fcb15099
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79281617"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85318770"
 ---
 # <a name="file-and-compression-formats-supported-by-azure-data-factory"></a>Форматы файлов и сжатия данных, поддерживаемые фабрикой данных Azure
 *Этот раздел относится к соединителям для следующих компонентов: [Amazon S3](data-factory-amazon-simple-storage-service-connector.md), [большой двоичный объект Azure](data-factory-azure-blob-connector.md), [Azure Data Lake Store](data-factory-azure-datalake-connector.md), [файловая система](data-factory-onprem-file-system-connector.md), [FTP](data-factory-ftp-connector.md), [HDFS](data-factory-hdfs-connector.md), [HTTP](data-factory-http-connector.md) и [SFTP](data-factory-sftp-connector.md).*
@@ -35,7 +35,7 @@ ms.locfileid: "79281617"
 ## <a name="text-format"></a>Текстовый формат
 Если вам нужно считать данные из текстового файла или записать в него данные, задайте для свойства `type` в разделе `format` набора данных значение **TextFormat**. В разделе `format` также можно указать следующие **необязательные** свойства. Инструкции по настройке см. в разделе [Пример TextFormat](#textformat-example).
 
-| Свойство | Описание | Допустимые значения | Обязательный |
+| Свойство. | Описание | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
 | columnDelimiter |Знак, используемый для разделения столбцов в файле. Вы можете использовать редкие непечатаемые символы, которые, скорее всего, не содержатся в ваших данных. Например, укажите "\u0001", что соответствует символу начала заголовка (SOH). |Допускается только один знак. Значение **по умолчанию** — **запятая (",")**. <br/><br/>Чтобы использовать символ Юникода, см. соответствующие коды в статье о [символах Юникода](https://en.wikipedia.org/wiki/List_of_Unicode_characters). |Нет |
 | rowDelimiter |символ, используемый для разделения строк в файле. |Допускается только один знак. Значение **по умолчанию** — любое из следующих значений при чтении: **["\r\n", "\r", "\n"]** и **"\r\n"** при записи. |Нет |
@@ -45,7 +45,7 @@ ms.locfileid: "79281617"
 | encodingName |задает имя кодировки. |Допустимое имя кодировки. Ознакомьтесь с описанием свойства [Encoding.EncodingName](https://msdn.microsoft.com/library/system.text.encoding.aspx). Пример: windows-1250 или shift_jis. Значение **по умолчанию** — **UTF-8**. |Нет |
 | firstRowAsHeader |Указывает, следует ли рассматривать первую строки в качестве заголовка. Фабрика данных считывает первую строку входного набора данных как заголовок. Фабрика данных записывает первую строку как заголовок в выходной набор данных. <br/><br/>Примеры сценариев см. в разделе [Сценарии использования `firstRowAsHeader` и `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount). |True<br/><b>False (по умолчанию)</b> |Нет |
 | skipLineCount |Указывает количество строк, которые нужно пропустить при чтении данных из входных файлов. Если указаны skipLineCount и firstRowAsHeader, то сначала пропускаются строки, а затем считываются данные заголовка из входного файла. <br/><br/>Примеры сценариев см. в разделе [Сценарии использования `firstRowAsHeader` и `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount). |Целое число |Нет |
-| treatEmptyAsNull |Указывает, следует ли интерпретировать NULL или пустую строку как значение NULL при считывании данных из входного файла. |**True (по умолчанию)**<br/>False |Нет |
+| treatEmptyAsNull |Указывает, следует ли интерпретировать NULL или пустую строку как значение NULL при считывании данных из входного файла. |**True (по умолчанию)**<br/>False |нет |
 
 ### <a name="textformat-example"></a>Пример TextFormat
 В следующем определении JSON для набора данных задаются некоторые необязательные свойства.
@@ -85,7 +85,7 @@ ms.locfileid: "79281617"
 
 Если требуется проанализировать JSON-файлы или записать данные в формате JSON, задайте для свойства `type` в разделе `format` значение **JsonFormat**. В разделе `format` также можно указать следующие **необязательные** свойства. Инструкции по настройке см. в разделе [Пример JsonFormat](#jsonformat-example).
 
-| Свойство | Описание | Обязательный |
+| Свойство. | Описание: | Обязательное значение |
 | --- | --- | --- |
 | filePattern |Шаблон данных, хранящихся в каждом JSON-файле. Допустимые значения: **setOfObjects** и **arrayOfObjects**. Значение **по умолчанию** — **setOfObjects**. Подробные сведения об этих шаблонах см. в разделе [Шаблоны файлов JSON](#json-file-patterns). |Нет |
 | jsonNodeReference | Для итерации и извлечения данных из объектов в поле массива с таким же шаблоном укажите путь JSON этого массива. Это свойство поддерживается только в том случае, если данные копируются из JSON-файлов. | Нет |
@@ -219,7 +219,7 @@ ms.locfileid: "79281617"
 ```
 и вы хотите скопировать это содержимое (посредством извлечения данных из объекта и массива) в таблицу SQL Azure в следующем формате:
 
-| идентификатор | deviceType | targetResourceType | resourceManagementProcessRunId | occurrenceTime |
+| ID | deviceType | targetResourceType | resourceManagementProcessRunId | occurrenceTime |
 | --- | --- | --- | --- | --- |
 | ed0e4960-d9c5-11e6-85dc-d7996816aad3 | PC | Microsoft.Compute/virtualMachines | 827f8aaa-ab72-437c-ba48-d8917a7336a3 | 1/13/2017 11:24:37 AM |
 
@@ -349,7 +349,7 @@ ms.locfileid: "79281617"
 
 Если в базе данных SQL есть следующая таблица:
 
-| идентификатор | order_date | order_price | order_by |
+| ID | order_date | order_price | order_by |
 | --- | --- | --- | --- |
 | 1 | 20170119 | 2000 | David |
 | 2 | 20170120 | 3500 | Patrick |
@@ -497,17 +497,17 @@ ms.locfileid: "79281617"
 
 Когда вы определяете свойство `compression` во входном наборе данных JSON, конвейер может считывать сжатые данные из источника. При определении же этого свойства в выходном наборе данных JSON операция копирования может записывать сжатые данные в целевое расположение. Ниже приведено несколько примеров сценариев:
 
-* Считайте сжатые с помощью кодека GZIP данные из BLOB-объекта Azure, распакуйте их и запишите результирующие данные в базу данных SQL Azure. Вы определяете входной набор данных большого двоичного `compression` `type` объекта Azure с помощью свойства JSON в формате gzip.
-* Считайте данные из обычного текстового файла в локальной файловой системе, сожмите их в формате GZip и запишите сжатые данные в BLOB-объект Azure. Вы определяете выходной набор данных большого двоичного `compression` `type` объекта Azure с помощью свойства JSON в формате gzip.
-* Считайте ZIP-файл с FTP-сервера, распакуйте его, чтобы получить содержащиеся в нем файлы, и отправьте их в хранилище Azure Data Lake Store. Вы определяете входной набор данных FTP с `compression` `type` помощью свойства JSON как ZipDeflate.
-* Считайте сжатые с помощью кодека GZIP данные из BLOB-объекта Azure, распакуйте их и сожмите с помощью BZIP2, а затем запишите результирующие данные в BLOB-объект Azure. В этом случае вы определяете входной набор `compression` `type` данных большого двоичного объекта Azure, указав `compression` `type` для него значение gzip, а в качестве выходного набора данных — значение bzip2.   
+* Чтение сжатых данных GZIP из большого двоичного объекта Azure, распаковка и запись результирующих данных в базу данных SQL Azure. Вы определяете входной набор данных большого двоичного объекта Azure с помощью `compression` `type` Свойства JSON в формате gzip.
+* Считайте данные из обычного текстового файла в локальной файловой системе, сожмите их в формате GZip и запишите сжатые данные в BLOB-объект Azure. Вы определяете выходной набор данных большого двоичного объекта Azure с помощью `compression` `type` Свойства JSON в формате gzip.
+* Считайте ZIP-файл с FTP-сервера, распакуйте его, чтобы получить содержащиеся в нем файлы, и отправьте их в хранилище Azure Data Lake Store. Вы определяете входной набор данных FTP с помощью `compression` `type` Свойства JSON как ZipDeflate.
+* Считайте сжатые с помощью кодека GZIP данные из BLOB-объекта Azure, распакуйте их и сожмите с помощью BZIP2, а затем запишите результирующие данные в BLOB-объект Azure. В этом случае вы определяете входной набор данных большого двоичного объекта Azure, указав `compression` `type` для него значение gzip, а в качестве выходного набора данных — `compression` `type` значение bzip2.   
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ниже приведены статьи для файловых хранилищ данных, поддерживаемых фабрикой данных Azure.
 
 - [Хранилище BLOB-объектов Azure](data-factory-azure-blob-connector.md)
-- [Azure Data Lake Store](data-factory-azure-datalake-connector.md)
+- [Хранилище озера данных Azure](data-factory-azure-datalake-connector.md)
 - [FTP](data-factory-ftp-connector.md)
 - [HDFS](data-factory-hdfs-connector.md)
 - [Файловая система](data-factory-onprem-file-system-connector.md)

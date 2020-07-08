@@ -1,21 +1,14 @@
 ---
 title: Получение строки подключения к службе "Центры событий Azure" | Документация Майкрософт
 description: В этой статье приводятся инструкции по получению строки подключения, с помощью которой клиенты могут установить соединение со службой "Центры событий Azure".
-services: event-hubs
-documentationcenter: na
-author: spelluru
-manager: timlt
-ms.service: event-hubs
 ms.topic: article
-ms.custom: seodec18
-ms.date: 02/19/2019
-ms.author: spelluru
-ms.openlocfilehash: 77a768f907ad989a457ee498f26ad0f6e004f786
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/23/2020
+ms.openlocfilehash: 271d4dcc1f2fab08dc7f625ce36e021eda225b87
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79264938"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85320499"
 ---
 # <a name="get-an-event-hubs-connection-string"></a>Получение строки подключения Центров событий
 
@@ -76,7 +69,7 @@ az eventhubs eventhub authorization-rule keys list --resource-group dummyresourc
 
 Дополнительные сведения о командах интерфейса командной строки Azure для Центра событий см. в статье [az eventhubs](/cli/azure/eventhubs).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Центрах событий см. в следующих источниках:
 

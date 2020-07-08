@@ -1,21 +1,14 @@
 ---
 title: Часто задаваемые вопросы о службе "Центры событий Azure" | Документация Майкрософт
 description: В этой статье содержится список часто задаваемых вопросов о службе "Центры событий Azure" и ответы на эти вопросы.
-services: event-hubs
-documentationcenter: na
-author: ShubhaVijayasarathy
-manager: timlt
-ms.service: event-hubs
 ms.topic: article
-ms.custom: seodec18
-ms.date: 12/02/2019
-ms.author: shvija
-ms.openlocfilehash: e8ae3cbbca926a97bf90f4ac1104d4f082b332fd
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.date: 06/23/2020
+ms.openlocfilehash: 0094be0eef4595662477ef1c7914ae9f118b8e25
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83835620"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85320589"
 ---
 # <a name="event-hubs-frequently-asked-questions"></a>Часто задаваемые вопросы о Центрах событий
 
@@ -97,11 +90,29 @@ ms.locfileid: "83835620"
 2. Запишите имя в разделе **не заслуживающий доверия ответ**, который имеет один из следующих форматов: 
 
     ```
-    <name>-s1.servicebus.windows.net
-    <name>-s2.servicebus.windows.net
-    <name>-s3.servicebus.windows.net
+    <name>-s1.cloudapp.net
+    <name>-s2.cloudapp.net
+    <name>-s3.cloudapp.net
     ```
 3. Выполните команду nslookup для каждого из них с суффиксами s1, s2 и s3, чтобы получить IP-адреса всех трех экземпляров, работающих в трех зонах доступности. 
+
+### <a name="where-can-i-find-client-ip-sending-or-receiving-msgs-to-my-namespace"></a>Где можно найти IP-адрес клиента, отправляющий или получающий сообщения, в пространство имен?
+Сначала включите [фильтрацию IP-адресов](event-hubs-ip-filtering.md) в пространстве имен. 
+
+Затем включите журналы диагностики для [событий подключения виртуальной сети концентраторов событий](event-hubs-diagnostic-logs.md#event-hubs-virtual-network-connection-event-schema) , следуя инструкциям в разделе [Включение журналов диагностики](event-hubs-diagnostic-logs.md#enable-diagnostic-logs). Вы увидите IP-адрес, для которого запрещено подключение.
+
+```json
+{
+    "SubscriptionId": "0000000-0000-0000-0000-000000000000",
+    "NamespaceName": "namespace-name",
+    "IPAddress": "1.2.3.4",
+    "Action": "Deny Connection",
+    "Reason": "IPAddress doesn't belong to a subnet with Service Endpoint enabled.",
+    "Count": "65",
+    "ResourceId": "/subscriptions/0000000-0000-0000-0000-000000000000/resourcegroups/testrg/providers/microsoft.eventhub/namespaces/namespace-name",
+    "Category": "EventHubVNetConnectionEvent"
+}
+```
 
 ## <a name="apache-kafka-integration"></a>Интеграция с Apache Kafka
 
