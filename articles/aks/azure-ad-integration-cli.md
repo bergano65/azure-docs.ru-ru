@@ -4,18 +4,17 @@ description: Узнайте, как использовать Azure CLI для с
 services: container-service
 ms.topic: article
 ms.date: 04/16/2019
-ms.openlocfilehash: dba6590daf5c64dd1e53663e71a0cc27941b1470
-ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
-ms.translationtype: MT
+ms.openlocfilehash: 83ba43c3b8a00325750ec935fd3a43ec7d56074c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82779949"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85336527"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli"></a>Интеграция Azure Active Directory со службой Azure Kubernetes с помощью Azure CLI
 
 Службу Azure Kubernetes (AKS) можно настроить на использование Azure Active Directory (AD) для проверки подлинности пользователей. В этой конфигурации вы можете войти в кластер AKS с помощью маркера проверки подлинности Azure AD. Операторы кластера также могут настраивать Kubernetes управления доступом на основе ролей (RBAC) на основе удостоверения пользователя или членства в группе каталогов.
 
-В этой статье показано, как создать необходимые компоненты Azure AD, а затем развернуть кластер с поддержкой Azure AD и создать базовую роль RBAC в кластере AKS. [Эти действия также можно выполнить с помощью портал Azure][azure-ad-portal].
+В этой статье показано, как создать необходимые компоненты Azure AD, а затем развернуть кластер с поддержкой Azure AD и создать базовую роль RBAC в кластере AKS.
 
 Полный пример скрипта, используемый в этой статье, см. в разделе [Azure CLI Samples AKS Integration by Azure AD][complete-script].
 
@@ -25,7 +24,7 @@ ms.locfileid: "82779949"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Требуется Azure CLI версии 2.0.61 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
+Необходимо установить и настроить Azure CLI версии 2.0.61 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
 Перейдите по адресу [https://shell.azure.com](https://shell.azure.com), чтобы открыть Cloud Shell в браузере.
 
@@ -97,7 +96,7 @@ az ad app permission admin-consent --id  $serverApplicationId
 
 ## <a name="create-azure-ad-client-component"></a>Создание клиентского компонента Azure AD
 
-Второе приложение Azure AD используется, когда пользователь входит в кластер AKS с помощью интерфейса командной строки Kubernetes (`kubectl`). Это клиентское приложение принимает запрос на проверку подлинности от пользователя и проверяет свои учетные данные и разрешения. Создайте приложение Azure AD для клиентского компонента с помощью команды [AZ AD App Create][az-ad-app-create] .
+Второе приложение Azure AD используется, когда пользователь входит в кластер AKS с помощью интерфейса командной строки Kubernetes ( `kubectl` ). Это клиентское приложение принимает запрос на проверку подлинности от пользователя и проверяет свои учетные данные и разрешения. Создайте приложение Azure AD для клиентского компонента с помощью команды [AZ AD App Create][az-ad-app-create] .
 
 ```azurecli-interactive
 clientApplicationId=$(az ad app create \
@@ -196,7 +195,7 @@ kubectl apply -f basic-azure-ad-binding.yaml
 
 ## <a name="access-cluster-with-azure-ad"></a>Доступ к кластеру с помощью Azure AD
 
-Теперь давайте протестируем интеграцию аутентификации Azure AD для кластера AKS. Задайте для `kubectl` контекста конфигурации использование обычных учетных данных пользователя. Этот контекст передает все запросы проверки подлинности обратно через Azure AD.
+Теперь давайте протестируем интеграцию аутентификации Azure AD для кластера AKS. Задайте `kubectl` для контекста конфигурации использование обычных учетных данных пользователя. Этот контекст передает все запросы проверки подлинности обратно через Azure AD.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name $aksname --overwrite-existing
@@ -229,7 +228,7 @@ kube-system   metrics-server-7b97f9cd9-btxzz          1/1     Running   0       
 kube-system   tunnelfront-6ff887cffb-xkfmq            1/1     Running   0          23h
 ```
 
-Токен проверки подлинности `kubectl` , полученный для, кэшируется. После истечения срока действия маркера или повторного создания файла конфигурации Kubernetes будет предложено только выполнить вход.
+Токен проверки подлинности, полученный для `kubectl` , кэшируется. После истечения срока действия маркера или повторного создания файла конфигурации Kubernetes будет предложено только выполнить вход.
 
 Если вы видите сообщение об ошибке авторизации после успешного входа с помощью веб-браузера, как показано в следующем примере выходных данных, проверьте следующие возможные проблемы.
 
@@ -241,7 +240,7 @@ error: You must be logged in to the server (Unauthorized)
 * Пользователь не может быть членом более чем 200 групп.
 * Секрет, определенный в регистрации приложения для сервера, соответствует значению, заданному с помощью`--aad-server-app-secret`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Полный сценарий, содержащий команды, приведенные в этой статье, см. в разделе [сценарий интеграции Azure AD в репозитории примеров AKS][complete-script].
 

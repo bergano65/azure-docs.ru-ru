@@ -2,13 +2,12 @@
 title: Собирайте & анализа журналов ресурсов
 description: Записывайте и анализируйте события журнала ресурсов для реестра контейнеров Azure, такие как проверка подлинности, отправка образа и извлечение образа.
 ms.topic: article
-ms.date: 01/03/2020
-ms.openlocfilehash: 00f9468721126bd166051df47cec1596356e9b54
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/01/2020
+ms.openlocfilehash: b41b1001a669fe42721471bc196e7628eabff983
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79409649"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84343189"
 ---
 # <a name="azure-container-registry-logs-for-diagnostic-evaluation-and-auditing"></a>Журналы реестра контейнеров Azure для диагностической оценки и аудита
 
@@ -24,12 +23,14 @@ ms.locfileid: "79409649"
 
 В настоящее время регистрируются следующие события уровня репозитория для образов и других артефактов:
 
-* **События push-уведомлений**
-* **События извлечения**
-* **События удалить тег**
-* **Удаление событий** (включая события удаления репозитория)
+* **Принудительная отправка**
+* **Опрос**
+* **Удалить тег**
+* **Удалить** (включая события удаления репозитория)
+* **Очистить тег** и **очистить манифест**
 
-События уровня репозитория, которые в настоящее время не зарегистрированы: Очистка событий.
+> [!NOTE]
+> События очистки регистрируются только в том случае, если настроена [Политика хранения](container-registry-retention-policy.md) реестра.
 
 ## <a name="registry-resource-logs"></a>Журналы ресурсов реестра
 
@@ -37,7 +38,7 @@ ms.locfileid: "79409649"
 
 * **Контаинеррегистрилогиневентс** — события и состояние проверки подлинности реестра, включая входящий идентификатор и IP-адрес.
 * **Контаинеррегистрирепоситоревентс** — такие операции, как отправка и Извлечение изображений и других артефактов в репозиториях реестра.
-* **Азуреметрикс** - [метрики реестра контейнеров](../azure-monitor/platform/metrics-supported.md#microsoftcontainerregistryregistries) , такие как агрегированные push-уведомления и счетчики опрашивающей репликации.
+* **Азуреметрикс**  -  [Метрики реестра контейнеров](../azure-monitor/platform/metrics-supported.md#microsoftcontainerregistryregistries) , такие как агрегированные push-уведомления и счетчики опрашивающей репликации.
 
 Для операций данные журнала включают:
   * Состояние успеха или сбоя
@@ -83,16 +84,58 @@ ContainerRegistryRepositoryEvents
 
 Дополнительные сведения о запросах журналов см. [в разделе Общие сведения о запросах журналов в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
 
-### <a name="additional-query-examples"></a>Дополнительные примеры запросов
+## <a name="query-examples"></a>Примеры запросов
 
-#### <a name="100-most-recent-registry-events"></a>100. Последние события реестра
+### <a name="error-events-from-the-last-hour"></a>События ошибок за последний час
+
+```Kusto
+union Event, Syslog // Event table stores Windows event records, Syslog stores Linux records
+| where TimeGenerated > ago(1h)
+| where EventLevelName == "Error" // EventLevelName is used in the Event (Windows) records
+    or SeverityLevel== "err" // SeverityLevel is used in Syslog (Linux) records
+```
+
+### <a name="100-most-recent-registry-events"></a>100. Последние события реестра
 
 ```Kusto
 ContainerRegistryRepositoryEvents
 | union ContainerRegistryLoginEvents
 | top 100 by TimeGenerated
-| project TimeGenerated, LoginServer , OperationName , Identity , Repository , DurationMs , Region , ResultType
+| project TimeGenerated, LoginServer, OperationName, Identity, Repository, DurationMs, Region , ResultType
 ```
+
+### <a name="identity-of-user-or-object-that-deleted-repository"></a>Удостоверение пользователя или объекта, который удалил репозиторий
+
+```Kusto
+ContainerRegistryRepositoryEvents
+| where OperationName contains "Delete"
+| project LoginServer, OperationName, Repository, Identity, CallerIpAddress
+```
+
+### <a name="identity-of-user-or-object-that-deleted-tag"></a>Идентификатор пользователя или объекта, который удалил тег
+
+```Kusto
+ContainerRegistryRepositoryEvents
+| where OperationName contains "Untag"
+| project LoginServer, OperationName, Repository, Tag, Identity, CallerIpAddress
+```
+
+### <a name="reposity-level-operation-failures"></a>Сбои операций уровня репосити
+
+```kusto
+ContainerRegistryRepositoryEvents 
+| where ResultDescription contains "40"
+| project TimeGenerated, OperationName, Repository, Tag, ResultDescription
+```
+
+### <a name="registry-authentication-failures"></a>Ошибки проверки подлинности реестра
+
+```kusto
+ContainerRegistryLoginEvents 
+| where ResultDescription != "200"
+| project TimeGenerated, Identity, CallerIpAddress, ResultDescription
+```
+
 
 ## <a name="additional-log-destinations"></a>Дополнительные назначения журналов
 
@@ -100,7 +143,7 @@ ContainerRegistryRepositoryEvents
 
 Вы также можете выполнять потоковую передачу событий журнала диагностики в [концентратор событий Azure](../event-hubs/event-hubs-what-is-event-hubs.md). Центры событий способны принимать миллионы событий в секунду, позволяя преобразовать и сохранять их с помощью любого поставщика аналитики в реальном времени. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения об использовании [log Analytics](../azure-monitor/log-query/get-started-portal.md) и создании [запросов журналов](../azure-monitor/log-query/get-started-queries.md).
 * Сведения о журналах платформы, доступных на разных уровнях Azure, см. в статье [Обзор журналов платформы Azure](../azure-monitor/platform/platform-logs-overview.md) .

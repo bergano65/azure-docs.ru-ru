@@ -5,15 +5,14 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 3df7ca90b81b697c72ba8f36bfff56c70cc090f2
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
-ms.translationtype: MT
+ms.openlocfilehash: 5ca8f5d629a110d2a4d3b35cb357af2c723ec312
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82561302"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84339201"
 ---
 # <a name="use-the-azure-portal-to-manage-shares-on-your-azure-data-box-gateway"></a>Управление общими папками в Шлюзе Azure Data Box с помощью портала Azure 
 
@@ -72,7 +71,7 @@ ms.locfileid: "82561302"
 
     ![Выбор общей папки](media/data-box-gateway-manage-shares/delete-1.png)
 
-2. Щелкните **Удалить**. 
+2. Щелкните **Delete** (Удалить). 
 
     ![Нажмите кнопку "Удалить"](media/data-box-gateway-manage-shares/delete-2.png)
 
@@ -134,6 +133,6 @@ ms.locfileid: "82561302"
 > Это действие достаточно выполнить один раз для каждой учетной записи хранения. Не нужно повторять это действие для всех общих папок, связанных с одной учетной записью.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [управлять пользователями с помощью портала Azure](data-box-gateway-manage-users.md).

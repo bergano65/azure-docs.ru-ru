@@ -6,16 +6,18 @@ ms.author: lufittl
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/22/2019
-ms.openlocfilehash: 1fa34deaa12400a164602d38b6b2d349a64850c6
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: db7bfbef7435c47aa011c5f19e8c52d013c88dc3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83652250"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84636688"
 ---
 # <a name="use-azure-active-directory-for-authenticating-with-mysql"></a>Использование аутентификации Azure Active Directory с MySQL
 
 Эта статья поможет вам настроить доступ Azure Active Directory к Базе данных Azure для MySQL и выполнить подключение с помощью маркера Azure AD.
+
+> [!IMPORTANT]
+> Azure Active Directoryная проверка подлинности доступна только для MySQL 5,7 и более новых версий.
 
 ## <a name="setting-the-azure-ad-admin-user"></a>Настройка администратора Azure AD
 
@@ -24,7 +26,7 @@ ms.locfileid: "83652250"
 1. На портале Azure выберите экземпляр Базы данных Azure для MySQL, который необходимо включить для Azure AD.
 2. В разделе "Параметры" выберите "Администратор Active Directory".
 
-![Установка параметра "Администратор Azure AD"][2]
+![установите параметр "Администратор Azure AD".][2]
 
 3. Выберите действительного пользователя Azure AD в арендаторе клиента, который будет администратором Azure AD.
 
@@ -54,21 +56,19 @@ ms.locfileid: "83652250"
 
 Ниже приведены шаги, которые пользователь или приложение должны будут выполнить для аутентификации в Azure AD.
 
+### <a name="prerequisites"></a>Предварительные условия
+
+Вы можете следовать указаниям в Azure Cloud Shell, виртуальной машине Azure или на локальном компьютере. Убедитесь, что у вас [установлен Azure CLI](/cli/azure/install-azure-cli).
+
 ### <a name="step-1-authenticate-with-azure-ad"></a>Шаг 1. Аутентификация с помощью Azure AD
 
-Убедитесь, что у вас [установлен Azure CLI](/cli/azure/install-azure-cli).
-
-Вызовите средство Azure CLI, чтобы выполнить аутентификацию с помощью Azure AD. Для этого нужно указать свой ИД пользователя Azure AD и пароль.
+Начните с проверки подлинности в Azure AD с помощью средства Azure CLI. Этот шаг не требуется в Azure Cloud Shell.
 
 ```
 az login
 ```
 
-Эта команда запустит окно браузера на странице аутентификации Azure AD.
-
-> [!NOTE]
-> Для выполнения этих шагов вы также можете использовать Azure Cloud Shell.
-> Следует учитывать, что при извлечении маркера доступа Azure AD в Azure Cloud Shell необходимо явно вызвать `az login` и войти в систему еще раз (в отдельном окне с кодом). После этого команда `get-access-token` будет работать должным образом.
+Команда запустит окно браузера на странице аутентификации Azure AD. Для этого нужно указать ИД пользователя Azure AD и пароль.
 
 ### <a name="step-2-retrieve-azure-ad-access-token"></a>Шаг 2. Получение маркера доступа Azure AD
 
@@ -76,19 +76,19 @@ az login
 
 Пример (для общедоступного облака):
 
-```shell
+```azurecli-interactive
 az account get-access-token --resource https://ossrdbms-aad.database.windows.net
 ```
 
-Приведенное выше значение ресурса должно быть указано точно так, как показано. Для других облаков значение ресурса можно найти с помощью:
+Приведенное выше значение ресурса должно быть указано точно так, как показано. Для других облаков значение ресурса можно найти с помощью следующего.
 
-```shell
+```azurecli-interactive
 az cloud show
 ```
 
-Для Azure CLI версии 2.0.71 и более поздней команду можно указать в следующей более удобной версии для всех облаков:
+Для Azure CLI 2.0.71 и более поздних версий команду можно указать в следующей более удобной версии для всех облаков.
 
-```shell
+```azurecli-interactive
 az account get-access-token --resource-type oss-rdbms
 ```
 
@@ -123,6 +123,15 @@ mysql -h mydb.mysql.database.azure.com \
   --password=`az account get-access-token --resource-type oss-rdbms --output tsv --query accessToken`
 ```
 
+Важные моменты при подключении:
+
+* `user@tenant.onmicrosoft.com`— имя пользователя или группы Azure AD, которую вы пытаетесь подключить.
+* Всегда добавлять имя сервера после имени пользователя или группы Azure AD (например, `@mydb` )
+* Убедитесь, что используется точный способ написания имени пользователя или группы Azure AD.
+* Имена пользователей и групп Azure AD чувствительны к регистру
+* При подключении в качестве группы используйте только имя группы (например,). `GroupName@mydb`
+* Если имя содержит пробелы, используйте `\` перед каждым пробелом, чтобы экранировать его.
+
 Обратите внимание на параметр enable-cleartext-plugin — вам нужно использовать аналогичную конфигурацию с другими клиентами, чтобы маркер отправлялся на сервер без хеширования.
 
 Теперь вы прошли аутентификацию на сервере MySQL с использованием аутентификации Azure AD.
@@ -135,7 +144,7 @@ mysql -h mydb.mysql.database.azure.com \
 2. Войдите в свой экземпляр Базы данных Azure для MySQL в качестве администратора Azure AD.
 3. Создайте пользователя `<user>@yourtenant.onmicrosoft.com` в Базе данных Azure для MySQL.
 
-**Пример**.
+**Пример.**
 
 ```sql
 CREATE AADUSER 'user1@yourtenant.onmicrosoft.com';

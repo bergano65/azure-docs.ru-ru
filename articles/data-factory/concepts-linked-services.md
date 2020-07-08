@@ -11,12 +11,11 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/25/2019
-ms.openlocfilehash: 0703e7cd44a79dd45680e19c8f5f3232be840823
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: f826113abc756654fbf02e7d643b8ac1f9d9f98a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83826185"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84338130"
 ---
 # <a name="linked-services-in-azure-data-factory"></a>Связанные службы в Фабрике данных Azure
 
@@ -32,7 +31,7 @@ ms.locfileid: "83826185"
 
 ## <a name="overview"></a>Обзор
 
-Фабрика данных может иметь один или несколько конвейеров. **Конвейер** — это логическая группа **действий**, которые вместе выполняют задачу. Действия в конвейере определяют операции с данными. Например, вы можете использовать действие копирования, чтобы скопировать данные из локального сервера SQL Server в хранилище BLOB-объектов Azure. Затем можно использовать действие Hive для запуска сценария Hive в кластере HDInsight Azure, чтобы обработать данные из хранилища BLOB-объектов для получения выходных данных. Наконец, можно использовать второе действие копирования, чтобы скопировать выходные данные в хранилище данных SQL Azure, на основе которого созданы решения для создания отчетов бизнес-аналитики. Дополнительные сведения о конвейерах и действиях см. в статье [Конвейеры и действия в фабрике данных Azure](concepts-pipelines-activities.md).
+Фабрика данных может иметь один или несколько конвейеров. **Конвейер** — это логическая группа **действий**, которые вместе выполняют задачу. Действия в конвейере определяют операции с данными. Например, действие копирования можно использовать для копирования данных из SQL Server в хранилище BLOB-объектов Azure. Затем можно использовать действие Hive для запуска сценария Hive в кластере HDInsight Azure, чтобы обработать данные из хранилища BLOB-объектов для получения выходных данных. Наконец, можно использовать второе действие копирования, чтобы скопировать выходные данные в хранилище данных SQL Azure, на основе которого созданы решения для создания отчетов бизнес-аналитики. Дополнительные сведения о конвейерах и действиях см. в статье [Конвейеры и действия в фабрике данных Azure](concepts-pipelines-activities.md).
 
 Теперь **набор данных** — это именованное представление данных, которое указывает данные, необходимые для использования в **действиях**, разделяя их на входные и выходные.
 
@@ -95,7 +94,10 @@ connectVia | [Среда выполнения интеграции](concepts-int
 
 ## <a name="create-linked-services"></a>Создание связанных служб
 
-Связанные службы можно создавать с помощью таких средств и пакетов SDK: [API .NET](quickstart-create-data-factory-dot-net.md), [PowerShell](quickstart-create-data-factory-powershell.md), [REST API](quickstart-create-data-factory-rest-api.md), шаблон Azure Resource Manager и портал Azure.
+Связанные службы можно создать в службе "Фабрика данных Azure" через [центр управления](author-management-hub.md) и любые действия, наборы данных или потоки, которые ссылаются на них.
+
+Связанные службы можно создать с помощью одного из следующих средств или пакетов SDK: [.NET API](quickstart-create-data-factory-dot-net.md), [PowerShell](quickstart-create-data-factory-powershell.md), [REST API](quickstart-create-data-factory-rest-api.md), Azure Resource Manager шаблона и портал Azure.
+
 
 ## <a name="data-store-linked-services"></a>Связанные службы хранилища данных
 
@@ -112,4 +114,4 @@ connectVia | [Среда выполнения интеграции](concepts-int
 - [Создание фабрики данных и конвейера с помощью пакета SDK для .NET](quickstart-create-data-factory-dot-net.md)
 - [Создание фабрики данных и конвейера с помощью пакета PowerShell](quickstart-create-data-factory-powershell.md)
 - [Создание фабрики данных Azure и конвейера с помощью REST API](quickstart-create-data-factory-rest-api.md)
-- [Краткое руководство по созданию фабрики данных с помощью портала Azure](quickstart-create-data-factory-portal.md)
+- [Краткое руководство. Создание фабрики данных с помощью портала Azure](quickstart-create-data-factory-portal.md)

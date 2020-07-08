@@ -6,30 +6,30 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: reference
-ms.date: 05/11/2020
+ms.date: 05/27/2020
 ms.author: anfeldma
-ms.openlocfilehash: 23ba8b12651c4de05fd8fb0b2721839beb36a7a6
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 5fcde46738417a03cac8e5e99bea840ce2fd8bc6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83660461"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85392103"
 ---
 # <a name="net-bulk-executor-library-download-information"></a>Библиотека исполнителя массовых операций для .NET: информация о скачивании 
 
 > [!div class="op_single_selector"]
-> * [.NET](sql-api-sdk-dotnet.md)
-> * [Веб-канал изменений в .NET](sql-api-sdk-dotnet-changefeed.md)
-> * [.NET Core](sql-api-sdk-dotnet-core.md)
+> * [Пакет SDK версии 3 для .NET](sql-api-sdk-dotnet-standard.md)
+> * [Пакет SDK для .NET версии 2](sql-api-sdk-dotnet.md)
+> * [Пакет SDK для .NET Core версии 2](sql-api-sdk-dotnet-core.md)
+> * [Пакет SDK для веб-канала изменений .NET версии 2](sql-api-sdk-dotnet-changefeed.md)
 > * [Node.js](sql-api-sdk-node.md)
 > * [Пакет SDK для Java версии 4](sql-api-sdk-java-v4.md)
 > * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
 > * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
 > * [Python](sql-api-sdk-python.md)
-> * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
-> * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
+> * [REST](/rest/api/cosmos-db/)
+> * [Поставщик ресурсов REST](/rest/api/cosmos-db-resource-provider/)
 > * [SQL](sql-api-query-reference.md)
-> * [Исполнитель массовых операций — .NET](sql-api-sdk-bulk-executor-dot-net.md)
+> * [Групповой исполнитель — .NET v2](sql-api-sdk-bulk-executor-dot-net.md)
 > * [Исполнитель массовых операций — Java](sql-api-sdk-bulk-executor-java.md)
 
 | |  |
@@ -46,111 +46,115 @@ ms.locfileid: "83660461"
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
-### <a name="241-preview"></a><a name="2.4.1-preview"/>2.4.1-preview
+### <a name="241-preview"></a><a name="2.4.1-preview"></a>2.4.1-preview
 
 * Исправлено значение TotalElapsedTime в ответе BulkDelete, чтобы оно правильно отражало общее время с учетом всех повторных попыток.
 
-### <a name="240-preview"></a><a name="2.4.0-preview"/>2.4.0-preview
+### <a name="240-preview"></a><a name="2.4.0-preview"></a>2.4.0-preview
 
 * Изменена зависимость пакета SDK на >= 2.5.1
 
-### <a name="230-preview2"></a><a name="2.3.0-preview2"/>2.3.0-preview2
+### <a name="230-preview2"></a><a name="2.3.0-preview2"></a>2.3.0-preview2
 
 * В исполнитель массовых операций графа добавлена поддержка значений TTL для вершин и краев.
 
-### <a name="220-preview2"></a><a name="2.2.0-preview2"/>2.2.0-preview2
+### <a name="220-preview2"></a><a name="2.2.0-preview2"></a>2.2.0-preview2
 
 * Исправлена проблема, из-за которой возникали исключения во время эластичного масштабирования Azure Cosmos DB в режиме шлюза. Это исправление функционально эквивалентно выпуску 1.4.1.
 
-### <a name="210-preview2"></a><a name="2.1.0-preview2"/>2.1.0-preview2
+### <a name="210-preview2"></a><a name="2.1.0-preview2"></a>2.1.0-preview2
 
 * Добавлена поддержка BulkDelete, чтобы учетные записи API SQL принимали ключ секции и кортежи идентификаторов документов для удаления. Это изменение функционально эквивалентно выпуску 1.4.0.
 
-### <a name="200-preview2"></a><a name="2.0.0-preview2"/>2.0.0-preview2
+### <a name="200-preview2"></a><a name="2.0.0-preview2"></a>2.0.0-preview2
 
 * Включено MongoBulkExecutor для поддержки .NET Standard 2.0. Благодаря этой возможности выпуск функционально эквивалентен выпуску 1.3.0 с добавлением поддержки .NET Standard 2.0 в качестве целевой платформы.
 
-### <a name="200-preview"></a><a name="2.0.0-preview"/>2.0.0-preview
+### <a name="200-preview"></a><a name="2.0.0-preview"></a>2.0.0-preview
 
 * .NET Standard 2.0 добавлена в список поддерживаемых целевых платформ, чтобы библиотека исполнителя массовых операций работала с приложениями .NET Core.
 
-### <a name="188"></a><a name="1.8.8"/>1.8.8
+### <a name="189"></a><a name="1.8.9"></a>1.8.9
+
+* Исправлена проблема с Булкделетеасинк, когда значения с экранированными кавычками были переданы в качестве входных параметров.
+
+### <a name="188"></a><a name="1.8.8"></a>1.8.8
 
 * Исправлена проблема с MongoBulkExecutor, которая приводила к неожиданному увеличению размера документа из-за добавления заполнения, что в некоторых случаях приводило к превышению максимального размера документа.
 
-### <a name="187"></a><a name="1.8.7"/>1.8.7
+### <a name="187"></a><a name="1.8.7"></a>1.8.7
 
 * Исправлена проблема с BulkDeleteAsync, из-за которой элемент Collection содержал вложенные пути к ключам секций.
 
-### <a name="186"></a><a name="1.8.6"/>1.8.6
+### <a name="186"></a><a name="1.8.6"></a>1.8.6
 
 * MongoBulkExecutor теперь реализует интерфейс IDisposable и должен удаляться после использования.
 
-### <a name="185"></a><a name="1.8.5"/>1.8.5
+### <a name="185"></a><a name="1.8.5"></a>1.8.5
 
 * Устранена блокировка по версии пакета SDK. Теперь пакет зависит от пакета SDK >= 2.5.1.
 
-### <a name="184"></a><a name="1.8.4"/>1.8.4
+### <a name="184"></a><a name="1.8.4"></a>1.8.4
 
 * Исправлена обработка идентификаторов при вызове BulkImport со списком объектов POCO с числовыми значениями.
 
-### <a name="183"></a><a name="1.8.3"/>1.8.3
+### <a name="183"></a><a name="1.8.3"></a>1.8.3
 
 * Исправлено значение TotalElapsedTime в ответе BulkDelete, чтобы оно правильно отражало общее время с учетом всех повторных попыток.
 
-### <a name="182"></a><a name="1.8.2"/>1.8.2
+### <a name="182"></a><a name="1.8.2"></a>1.8.2
 
 * Исправлена проблема, приводившая к высокой загрузке ЦП в определенных сценариях.
 * Теперь трассировка использует TraceSource. Пользователи могут определять прослушиватели для источника `BulkExecutorTrace`.
 * Исправлена редкая проблема, которая вызывала блокировку при отправке документов размером около 2 МБ.
 
-### <a name="160"></a><a name="1.6.0"/>1.6.0
+### <a name="160"></a><a name="1.6.0"></a>1.6.0
 
 * Обновленный исполнитель массовых операций теперь использует последнюю версию пакета SDK для Azure Cosmos DB .NET (2.4.0).
 
-### <a name="150"></a><a name="1.5.0"/>1.5.0
+### <a name="150"></a><a name="1.5.0"></a>1.5.0
 
 * В исполнитель массовых операций графа добавлена поддержка значений TTL для вершин и краев.
 
-### <a name="141"></a><a name="1.4.1"/>1.4.1
+### <a name="141"></a><a name="1.4.1"></a>1.4.1
 
 * Исправлена проблема, из-за которой возникали исключения во время эластичного масштабирования Azure Cosmos DB в режиме шлюза.
 
-### <a name="140"></a><a name="1.4.0"/>1.4.0
+### <a name="140"></a><a name="1.4.0"></a>1.4.0
 
 * Добавлена поддержка BulkDelete, чтобы учетные записи API SQL принимали ключ секции и кортежи идентификаторов документов для удаления.
 
-### <a name="130"></a><a name="1.3.0"/>1.3.0
+### <a name="130"></a><a name="1.3.0"></a>1.3.0
 
 * Устранена проблема, вызывавшая проблему форматирования в агенте пользователя, используемом в исполнителе массовых операций.
 
-### <a name="120"></a><a name="1.2.0"/>1.2.0
+### <a name="120"></a><a name="1.2.0"></a>1.2.0
 
 * Внесены улучшения в API-интерфейсы импорта и обновления для исполнителя массовых операций, чтобы прозрачно адаптироваться к гибкому масштабированию контейнера Cosmos при превышении текущей емкости хранилища без создания исключений.
 
-### <a name="112"></a><a name="1.1.2"/>1.1.2
+### <a name="112"></a><a name="1.1.2"></a>1.1.2
 
 * Зависимость пакета SDK для .NET DocumentDB обновлена до версии 2.1.3.
 
-### <a name="111"></a><a name="1.1.1"/>1.1.1
+### <a name="111"></a><a name="1.1.1"></a>1.1.1
 
 * Устранена проблема, при которой исполнитель массовых операций создавал ошибку JSRT во время импорта в фиксированные коллекции.
 
-### <a name="110"></a><a name="1.1.0"/>1.1.0
+### <a name="110"></a><a name="1.1.0"></a>1.1.0
 
 * Добавлена поддержка операции BulkDelete для учетных записей API Azure Cosmos DB SQL.
 * Добавлена поддержка операции BulkImport для учетных записей API Azure Cosmos DB для MongoDB.
 * Зависимость пакета SDK для .NET DocumentDB обновлена до версии 2.0.0. 
 
-### <a name="102"></a><a name="1.0.2"/>1.0.2
+### <a name="102"></a><a name="1.0.2"></a>1.0.2
 
 * Добавлена поддержка операции BulkImport для учетных записей API Azure Cosmos DB Gremlin.
 
-### <a name="101"></a><a name="1.0.1"/>1.0.1
+### <a name="101"></a><a name="1.0.1"></a>1.0.1
 
 * Исправлена незначительная ошибка операции BulkImport для учетных записей API Azure Cosmos DB SQL.
 
-### <a name="100"></a><a name="1.0.0"/>1.0.0
+### <a name="100"></a><a name="1.0.0"></a>1.0.0
 
 * Добавлена поддержка операции BulkImport и BulkUpdate для учетных записей API Azure Cosmos DB SQL.
 

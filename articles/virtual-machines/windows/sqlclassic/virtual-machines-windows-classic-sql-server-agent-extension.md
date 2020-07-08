@@ -15,12 +15,11 @@ ms.workload: iaas-sql-server
 ms.date: 07/12/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 384b66020b3d18064ea1cd9f162911878caa598d
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
-ms.translationtype: HT
+ms.openlocfilehash: fe899eebb0139dffabef96da32ab1641c983f726
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84017550"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84338413"
 ---
 # <a name="automate-management-tasks-on-azure-virtual-machines-with-the-sql-server-agent-extension-classic"></a>Автоматизация задач управления на виртуальных машинах Azure с помощью расширения агента SQL Server (классическая модель)
 > [!div class="op_single_selector"]
@@ -82,7 +81,7 @@ ms.locfileid: "84017550"
 > В классических виртуальных машинах не предусмотрена функция установки и настройки расширения агента IaaS SQL через портал.
 
 > [!NOTE]
-> Расширение агента IaaS для SQL Server поддерживается только для [образов из коллекции виртуальных машин SQL Server](../../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md#get-started-with-sql-vms) (с оплатой по мере использования или с использованием собственной лицензии). Расширение не поддерживается, если вы вручную установили SQL Server на виртуальной машине Windows Server только с ОС или развертываете настраиваемый VHD виртуальной машины SQL Server. В таких случаях можно установить расширение и вручную управлять им с помощью PowerShell. Но мы настоятельно рекомендуем вместо этого установить образ из коллекции виртуальных машин SQL Server, а затем настроить его.
+> Расширение агента IaaS для SQL Server поддерживается только для [образов из коллекции виртуальных машин SQL Server](../../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md#get-started-with-sql-server-vms) (с оплатой по мере использования или с использованием собственной лицензии). Расширение не поддерживается, если вы вручную установили SQL Server на виртуальной машине Windows Server только с ОС или развертываете настраиваемый VHD виртуальной машины SQL Server. В таких случаях можно установить расширение и вручную управлять им с помощью PowerShell. Но мы настоятельно рекомендуем вместо этого установить образ из коллекции виртуальных машин SQL Server, а затем настроить его.
 
 ## <a name="status"></a>Состояние
 Одним из способов проверки того, что расширение установлено, является просмотр состояния агента на портале Azure. Выберите виртуальную машину в соответствующей колонке и щелкните **Расширения**. В списке будет указано расширение **SQLIaaSAgent** .

@@ -3,15 +3,14 @@ title: Использование сценариев PowerShell AzureRM для �
 description: Узнайте, как использовать сценарии Azure Resource Manager для автоматизации заданий StorSimple
 author: alkohli
 ms.service: storsimple
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 03a5ef49b2d58d351d882b30b5d11e4a5ba90264
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 009e8c7e1cb59d68f3d3aa15de32ec47083095f9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77471964"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85513102"
 ---
 # <a name="use-azure-resource-manager-sdk-based-scripts-to-manage-storsimple-devices"></a>Использование сценариев Azure Resource Manager для управления устройствами StorSimple на основе пакета SDK
 
@@ -25,7 +24,7 @@ ms.locfileid: "77471964"
 
 #### <a name="table-of-azure-resource-manager-sdk-based-sample-scripts"></a>Таблица сценариев на основе пакета SDK для Azure Resource Manager
 
-| Сценарии Azure Resource Manager                    | Описание                                                                                                                                                                                                       |
+| Сценарии Azure Resource Manager                    | Описание:                                                                                                                                                                                                       |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Authorize-ServiceEncryptionRollover.ps1](https://raw.githubusercontent.com/anoobbacker/storsimpledevicemgmttools/master/Authorize-ServiceEncryptionRollover.ps1)          | Этот сценарий позволяет авторизовать устройство StorSimple для изменения ключей шифрования данных службы.                                                                                                           |
 | [Create-StorSimpleCloudAppliance.ps1](https://raw.githubusercontent.com/anoobbacker/storsimpledevicemgmttools/master/Create-StorSimpleCloudAppliance.ps1)              | В этом сценарии создается облачное устройство StorSimple 8010 или 8020. Затем можно настроить и зарегистрировать облачное устройство в службе диспетчера данных StorSimple.                                                       |

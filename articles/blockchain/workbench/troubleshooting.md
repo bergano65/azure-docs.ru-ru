@@ -2,14 +2,13 @@
 title: Устранение неполадок в Azure Blockchain Workbench
 description: Устранение неполадок в предварительной версии приложения Azure Блокчейн Workbench.
 ms.date: 10/14/2019
-ms.topic: article
+ms.topic: troubleshooting
 ms.reviewer: brendal
-ms.openlocfilehash: ef4bce4dfba77aafa9b86c6877c153534b54636e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 20c0f9bdd6f820a73b1ba6660de805268c0d8714
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74324301"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85212859"
 ---
 # <a name="azure-blockchain-workbench-preview-troubleshooting"></a>Устранение неполадок в предварительной версии Azure Блокчейн Workbench
 
@@ -42,7 +41,7 @@ collectBlockchainWorkbenchTroubleshooting.ps1 -SubscriptionID "<subscription_id>
 ```
 Этот скрипт принимает следующие параметры.
 
-| Параметр  | Описание | Обязательный |
+| Параметр  | Описание | Обязательное значение |
 |---------|---------|----|
 | SubscriptionID | Идентификатор подписки, в которой создаются или используются ресурсы. | Да |
 | ResourceGroupName | Имя группы ресурсов Azure, в которой развернуто приложение Blockchain Workbench. | Да |
@@ -56,7 +55,7 @@ collectBlockchainWorkbenchTroubleshooting.ps1 -SubscriptionID "<subscription_id>
 
 Результирующий ZIP-файл содержит выходные данные в следующей структуре папок:
 
-| Папка или файл | Описание  |
+| Папка или файл | Описание:  |
 |---------|---------|
 | \Summary.txt | Общие сведения о системе |
 | \Metrics\blockchain | Метрики сети блокчейн |
@@ -68,7 +67,7 @@ collectBlockchainWorkbenchTroubleshooting.ps1 -SubscriptionID "<subscription_id>
 
 Папка **Metrics** содержит метрики различных компонентов системы по времени. Например, выходной файл `\Details\Workbench\apiMetrics.txt` содержит сводку различных кодов отклика, а также время отклика за весь период сбора. Папка **Details** содержит подробные журналы со сведениями об устранении определенных проблем с программой Workbench базовой сети блокчейн. Например, файл `\Details\Workbench\Exceptions.csv` содержит список последних исключений, произошедших в системе. Эти сведения полезны для устранения ошибок, связанных со смарт-контрактами или взаимодействием с блокчейном. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Azure Blockchain Workbench Application Insights troubleshooting guide](https://aka.ms/workbenchtroubleshooting) (Руководство по устранению неполадок с Application Insights в Azure Blockchain Workbench)

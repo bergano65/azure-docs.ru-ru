@@ -9,17 +9,16 @@ editor: ''
 ms.assetid: ''
 ms.service: storsimple
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/31/2017
 ms.author: alkohli
-ms.openlocfilehash: ade7da25d2307a382c17e7a3cbb26b601c34ef78
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 9f92a6277765447cbc1a9b12f06c3ec49548f4d1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "64693240"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85513449"
 ---
 # <a name="use-the-storsimple-manager-service-to-manage-access-control-records"></a>Использование службы StorSimple Manager для управления записями контроля доступа
 
@@ -91,7 +90,7 @@ ms.locfileid: "64693240"
 
     ![Изменение записей контроля доступа](./media/storsimple-8000-manage-acrs/editacr2.png)
 
-4. Выберите команду **Сохранить**. При запросе подтверждения нажмите кнопку **Да**. 
+4. Нажмите кнопку **Сохранить**. При запросе подтверждения нажмите кнопку **Да**. 
 
     ![Изменение записей контроля доступа](./media/storsimple-8000-manage-acrs/editacr3.png)
 
@@ -127,7 +126,7 @@ ms.locfileid: "64693240"
 
     ![Переход к записям контроля доступа](./media/storsimple-8000-manage-acrs/deleteacr5.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте больше об [управлении томами StorSimple](storsimple-8000-manage-volumes-u2.md).
 * Узнайте больше об [использовании службы StorSimple Manager для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

@@ -5,15 +5,14 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/06/2019
 ms.author: alkohli
-ms.openlocfilehash: 206d63e05b68cbcec65b0d06e11da48065251ea0
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
-ms.translationtype: MT
+ms.openlocfilehash: 7c12beaf30651a6cb1048a75b0f7cb353b45173a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82569996"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84339898"
 ---
 # <a name="develop-a-c-iot-edge-module-to-move-files-on-azure-stack-edge"></a>Разработка модуля IoT Edge C# для перемещения файлов на Azure Stack границе
 
@@ -24,6 +23,7 @@ ms.locfileid: "82569996"
 Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
+>
 > * Создание реестра контейнеров для хранения модулей (в виде образов Docker) и управление ими.
 > * Создайте модуль IoT Edge для развертывания на устройстве Azure Stackного периметра. 
 
@@ -69,13 +69,13 @@ ms.locfileid: "82569996"
    1. Создайте уникальное в пределах Azure **имя реестра**, которое содержит от 5 до 50 буквенно-цифровых символов.
    2. Выберите **подписку**.
    3. Выберите существующую **группу ресурсов** или создайте новую.
-   4. Выберите **Расположение**. Рекомендуется, чтобы это расположение совпадало с тем, что связано с Azure Stack граничным ресурсом.
+   4. Выберите **расположение**. Рекомендуется, чтобы это расположение совпадало с тем, что связано с Azure Stack граничным ресурсом.
    5. **Включите** параметр **Пользователь-администратор**.
    6. Для номера SKU выберите вариант **Базовый**.
 
       ![Создание реестра контейнеров](./media/azure-stack-edge-create-iot-edge-module/create-container-registry-1.png)
  
-4. Щелкните **Создать**.
+4. Выберите **Создать**.
 5. После создания реестра контейнеров просмотрите его и выберите **Ключи доступа**.
 
     ![Получение ключей доступа](./media/azure-stack-edge-create-iot-edge-module/get-access-keys-1.png)
@@ -274,6 +274,6 @@ ms.locfileid: "82569996"
 
 4. Полный адрес образа контейнера с тегом можно увидеть в окне интегрированного терминала VS Code. Адрес образа создается на основе информации, сохраненной в файле module.json в формате `<repository>:<version>-<platform>`. Для этой статьи адрес должен выглядеть так: `mycontreg2.azurecr.io/filecopymodule:0.0.1-amd64`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы развернуть и запустить этот модуль на Azure Stack пограничных устройств, см. действия в разделе [Добавление модуля](azure-stack-edge-deploy-configure-compute.md#add-a-module).

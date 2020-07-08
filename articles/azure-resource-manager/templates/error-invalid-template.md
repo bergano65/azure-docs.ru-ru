@@ -3,12 +3,11 @@ title: Ошибки, связанные с недопустимым шаблон
 description: Статья о том, как устранять ошибки, связанные с недопустимым шаблоном, при развертывании шаблонов Azure Resource Manager.
 ms.topic: troubleshooting
 ms.date: 05/22/2020
-ms.openlocfilehash: bb053f59c417827a7c07ca193ccea0b8509244d6
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 2902a6d82c32192bb241697825a31d759d5c7b75
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83832527"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84324068"
 ---
 # <a name="resolve-errors-for-invalid-template"></a>Устранение ошибок, связанных с недопустимым шаблоном
 
@@ -29,7 +28,7 @@ Message=<varies>
 
 Эта ошибка может появиться в результате ошибок нескольких различных типов. Как правило, это синтаксические или структурные ошибки в шаблоне.
 
-<a id="syntax-error" />
+<a id="syntax-error"></a>
 
 ## <a name="solution-1---syntax-error"></a>Решение 1 — синтаксическая ошибка
 
@@ -50,7 +49,7 @@ Message=Deployment template validation failed
 
 При получении сообщения об ошибке такого типа тщательно проверьте синтаксис выражения. Рекомендуется использовать редактор JSON, например [Visual Studio](create-visual-studio-deployment-project.md) или [Visual Studio Code](use-vs-code-to-create-template.md), в котором отображаются предупреждения о синтаксических ошибках.
 
-<a id="incorrect-segment-lengths" />
+<a id="incorrect-segment-lengths"></a>
 
 ## <a name="solution-2---incorrect-segment-lengths"></a>Решение 2 — неправильная длина сегментов
 
@@ -111,7 +110,7 @@ for type {resource-type} has incorrect segment lengths.
 }
 ```
 
-<a id="parameter-not-valid" />
+<a id="parameter-not-valid"></a>
 
 ## <a name="solution-3---parameter-is-not-valid"></a>Решение 3 — недопустимый параметр
 
@@ -126,13 +125,13 @@ part of the allowed values
 
 Внимательно проверьте допустимые значения в шаблоне и укажите одно из них во время развертывания. Дополнительные сведения о допустимых значениях параметров см. в статье [Раздел параметров в шаблонах Azure Resource Manager](template-syntax.md#parameters).
 
-<a id="too-many-resource-groups" />
+<a id="too-many-resource-groups"></a>
 
 ## <a name="solution-4---too-many-target-resource-groups"></a>Решение 4 — слишком много целевых групп ресурсов
 
 Эта ошибка могла возникать у вас в предыдущих развертываниях, так как для одного развертывания существовало ограничение в пять целевых групп ресурсов. В мае 2020 г. это ограничение было увеличено до 800 групп ресурсов. Дополнительные сведения см. в разделе [Развертывание ресурсов Azure в нескольких подписках или группах ресурсов](cross-resource-group-deployment.md).
 
-<a id="circular-dependency" />
+<a id="circular-dependency"></a>
 
 ## <a name="solution-5---circular-dependency-detected"></a>Решение 5 — обнаружена циклическая зависимость
 

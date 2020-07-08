@@ -4,19 +4,18 @@ description: Узнайте, как системная функция SQL ENDSWI
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/20/2020
+ms.date: 06/02/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 0cd927af50eca04aa8162d9d8f292077d9e4165c
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.openlocfilehash: 3d37786c7364b07228d1d8d6540e7b6d8a174eb5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83844970"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84322692"
 ---
 # <a name="endswith-azure-cosmos-db"></a>ENDSWITH (Azure Cosmos DB)
 
- Возвращает значение логического типа, указывающее, заканчивается ли первое строковое выражение вторым.  
+Возвращает значение логического типа, указывающее, заканчивается ли первое строковое выражение вторым.  
   
 ## <a name="syntax"></a>Синтаксис
   
@@ -75,6 +74,8 @@ SELECT ENDSWITH("abc", "b", false) AS e1, ENDSWITH("abc", "bC", false) AS e2, EN
 ```
 
 Первый запрос, скорее всего, будет использовать больше единиц запросов, чем второй, так как кратность town выше, чем кратностью country.
+
+Если размер свойства в EndsWith превышает 1 КБ для некоторых документов, обработчику запросов потребуется загрузить эти документы. В этом случае обработчик запросов не сможет полностью оценить EndsWith с помощью индекса. При наличии большого количества документов с размерами свойств, превышающими 1 КБ, плата за ЕДИНИЦу для EndsWith будет высока.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
