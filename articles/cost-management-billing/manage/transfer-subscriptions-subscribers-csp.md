@@ -7,12 +7,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 06/19/2020
 ms.author: banders
-ms.openlocfilehash: 91f11502a136ca08d62072808d270f8e840a8710
-ms.sourcegitcommit: e04a66514b21019f117a4ddb23f22c7c016da126
+ms.openlocfilehash: 925a69f1f3a408e50cb9dc1d03cb5c1cf673ef41
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85106433"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86102690"
 ---
 # <a name="transfer-azure-subscriptions-between-subscribers-and-csps"></a>Перенос подписок Azure между подписчиками и CSP
 
@@ -67,4 +67,4 @@ ms.locfileid: "85106433"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Get billing ownership of Azure subscriptions for your MPA account](mpa-request-ownership.md) (Запрос прав владения подписками Azure для учетной записи MPA).
-- Дополнительные сведения см. [Управление учетными записями и подписками с помощью API выставления счетов Azure](index.yml).
+- Дополнительные сведения см. [Управление учетными записями и подписками с помощью API выставления счетов Azure](../index.yml).

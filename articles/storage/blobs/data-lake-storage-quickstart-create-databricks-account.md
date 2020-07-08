@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 06/12/2020
 ms.reviewer: jeking
-ms.openlocfilehash: 6c44588f3c95e4707813143c216823323d8183da
-ms.sourcegitcommit: 52d2f06ecec82977a1463d54a9000a68ff26b572
+ms.openlocfilehash: 482d703689ca6cfc34dd5d78574ae52e4def2b1f
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84782966"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86109779"
 ---
 # <a name="quickstart-analyze-data-with-databricks"></a>Краткое руководство. Анализ данных с помощью Databricks
 
@@ -117,13 +117,17 @@ ms.locfileid: "84782966"
 
 Введите следующий код в ячейку записной книжки:
 
-    %sh wget -P /tmp https://raw.githubusercontent.com/Azure/usql/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json
+```bash
+%sh wget -P /tmp https://raw.githubusercontent.com/Azure/usql/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json
+```
 
 В ячейке нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
 
 Теперь в новую ячейку под этой введите следующий код и замените значения, которые отображаются в скобках, использованными ранее.
 
-    dbutils.fs.cp("file:///tmp/small_radio_json.json", "abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/")
+```python
+dbutils.fs.cp("file:///tmp/small_radio_json.json", "abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/")
+```
 
 В ячейке нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
 

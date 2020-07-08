@@ -1,20 +1,14 @@
 ---
 title: Краткое руководство. Отправка событий хранилища BLOB-объектов в конечную веб-точку с помощью портала
 description: Краткое руководство. Использование службы "Сетка событий Azure" и портала Azure для создания учетной записи хранилища BLOB-объектов и подписки на связанные события. Отправка событий в веб-перехватчик.
-services: event-grid
-keywords: ''
-author: spelluru
-ms.author: spelluru
-ms.date: 06/02/2020
+ms.date: 07/07/2020
 ms.topic: quickstart
-ms.service: event-grid
-ms.custom: seodec18
-ms.openlocfilehash: 8c1627b0a9ae37f7d784c49613eb14b0c851b9b1
-ms.sourcegitcommit: ba8df8424d73c8c4ac43602678dae4273af8b336
+ms.openlocfilehash: fe942a4daa877088bd354352aa994e4e283f9be5
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84457054"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86103642"
 ---
 # <a name="quickstart-route-blob-storage-events-to-web-endpoint-with-the-azure-portal"></a>Краткое руководство. Отправка событий хранилища BLOB-объектов в конечную веб-точку с помощью портала Azure
 
