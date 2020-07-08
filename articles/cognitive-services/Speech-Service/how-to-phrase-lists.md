@@ -9,14 +9,14 @@ ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/04/2020
-ms.author: dapine
+ms.author: trbye
 zone_pivot_groups: programming-languages-speech-services-one-nomore-no-go
-ms.openlocfilehash: d6418a863e8af75e4f2f063d9e6151e19a0e7e6e
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: 7347fee0cd8bdaae73467a84806819c913599a51
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82977589"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85834018"
 ---
 # <a name="phrase-lists-for-speech-to-text"></a>Списки фраз для преобразования речи в текст
 
@@ -91,7 +91,7 @@ phraseListGrammar.addPhrase("Move to Ted");
 >[!Note]
 > Максимальное число списков фраз, которое будет использоваться службой речи для сопоставления речи, — 1024 словосочетания.
 
-Можно также очистить фразы, связанные с `PhraseListGrammar` , вызвав Clear ().
+Можно также очистить фразы, связанные с, `PhraseListGrammar` вызвав Clear ().
 
 ::: zone pivot="programming-language-csharp"
 
@@ -136,6 +136,6 @@ phraseListGrammar.clear();
 > [!NOTE]
 > Изменения `PhraseListGrammar` объекта вступают в силу при следующем распознавании или после повторного подключения к службе речи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Справочная документация по пакету SDK для распознавания речи](speech-sdk.md)

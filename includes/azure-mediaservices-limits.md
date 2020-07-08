@@ -1,15 +1,15 @@
 ---
 author: rothja
-ms.service: cost-management-billing
+ms.service: media-services
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
-ms.openlocfilehash: 2fe091a4ff0295ecadfd69ba3f2d4ca59e9612e5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e24c345bfee216dd240f0c283402ad43c8f45c29
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80334795"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85838849"
 ---
 >[!NOTE]
 >Для нефиксированных ресурсов откройте запрос в службу поддержки, чтобы запросить увеличение квот. Не создавайте дополнительные учетные записи служб мультимедиа Azure при попытке получить более высокие ограничения.

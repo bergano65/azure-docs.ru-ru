@@ -8,15 +8,15 @@ ms.reviewer: nibaccam
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/20/2020
-ms.custom: seodec18
-ms.openlocfilehash: 09f0e0f47ecd94c6db67b3973218cc1323bccde3
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.custom: seodec18, tracking-python
+ms.openlocfilehash: 519d9f25276ea54fbfd49970ba3c288245ce9653
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83736166"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85833695"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка экспериментов автоматизированного машинного обучения на Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "83736166"
 
 ## <a name="select-your-experiment-type"></a>Выбор типа эксперимента
 
-Прежде чем начать эксперимент, следует определить тип задачи машинного обучения, которую необходимо решить. Автоматизированное машинное обучение поддерживает задачи классификации, регрессии и прогнозирования. Дополнительные сведения о [типах задач](how-to-define-task-type.md).
+Прежде чем начать эксперимент, следует определить тип задачи машинного обучения, которую необходимо решить. Автоматизированное машинное обучение поддерживает задачи классификации, регрессии и прогнозирования. Дополнительные сведения о [типах задач](concept-automated-ml.md#when-to-use-automl-classify-regression--forecast).
 
 Эта служба также поддерживает приведенные ниже алгоритмы для автоматизации и настройки. Пользователю не нужно указывать алгоритм.
 
@@ -58,12 +58,10 @@ ms.locfileid: "83736166"
 [Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)* |[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)* |[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)
 [Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)* |[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)* |[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)
 [Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)* |[Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)* | [Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)
-[Классификатор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNClassifier) |[Регрессор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor) | [Регрессор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor)|
-[Линейный классификатор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearClassifier)|[Линейный регрессор](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor) |[Линейный регрессор](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)
-[Упрощенный алгоритм Байеса](https://scikit-learn.org/stable/modules/naive_bayes.html#bernoulli-naive-bayes)* |[Быстрый линейный регрессор](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.fastlinearregressor?view=nimbusml-py-latest)|[Auto-ARIMA](https://www.alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html#pmdarima.arima.auto_arima)
-[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#sgd)* |[Регрессор вероятностного градиентного спуска](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.onlinegradientdescentregressor?view=nimbusml-py-latest)|[Prophet](https://facebook.github.io/prophet/docs/quick_start.html)
-|[Классификатор усредненного восприятия](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.averagedperceptronbinaryclassifier?view=nimbusml-py-latest)||ForecastTCN
-|[Линейный классификатор SVM](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.linearsvmbinaryclassifier?view=nimbusml-py-latest)* ||
+[Классификатор усредненного восприятия](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.averagedperceptronbinaryclassifier?view=nimbusml-py-latest)|[Регрессор вероятностного градиентного спуска](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.onlinegradientdescentregressor?view=nimbusml-py-latest) |[Auto-ARIMA](https://www.alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html#pmdarima.arima.auto_arima)
+[Упрощенный алгоритм Байеса](https://scikit-learn.org/stable/modules/naive_bayes.html#bernoulli-naive-bayes)* |[Быстрый линейный регрессор](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.fastlinearregressor?view=nimbusml-py-latest)|[Prophet](https://facebook.github.io/prophet/docs/quick_start.html)
+[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#sgd)* ||ForecastTCN
+|[Линейный классификатор SVM](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.linearsvmbinaryclassifier?view=nimbusml-py-latest)*||
 
 Чтобы указать тип эксперимента, используйте параметр `task` в конструкторе `AutoMLConfig`.
 
@@ -117,13 +115,14 @@ automl_config = AutoMLConfig(task = "classification")
 
 ## <a name="train-and-validation-data"></a>Обучение и проверка данных
 
-Указать обучающий и проверочный наборы данных можно непосредственно в конструкторе `AutoMLConfig`.
+Отдельные наборы обучения и проверки можно указать непосредственно в `AutoMLConfig` конструкторе с помощью следующих параметров. Дополнительные сведения о [настройке разбиения данных и перекрестной проверки](how-to-configure-cross-validation-data-splits.md) для экспериментов аутомл. 
 
 ### <a name="k-folds-cross-validation"></a>Перекрестная проверка по K-сверткам
 
 Используйте параметр `n_cross_validations`, чтобы указать количество перекрестных проверок. Набор данных для обучения будет разделен случайным образом на свертки `n_cross_validations` одинакового размера. Во время каждого цикла перекрестной проверки один из свертков будет использоваться для проверки модели, обученной на оставшихся свертках. Этот процесс повторяется для циклов `n_cross_validations`, пока каждый сверток не будет использован один раз в качестве набора для проверки. Будет отправлен отчет о средних показателях по всем циклам `n_cross_validations`, и соответствующая модель будет переобучена на целом наборе данных для обучения.
 
 Узнайте больше о том, как автоматизированное машинное обучение применяет перекрестную проверку, чтобы [предотвратить возникновение лжевзаимосвязи в моделях](concept-manage-ml-pitfalls.md#prevent-over-fitting).
+
 ### <a name="monte-carlo-cross-validation-repeated-random-sub-sampling"></a>Перекрестная проверка Монте-Карло (повторная случайная вложенная выборка)
 
 С помощью `validation_size` укажите процент набора данных для обучения, который должен использоваться для проверки, а с помощью `n_cross_validations` укажите число перекрестных проверок. Во время каждого цикла перекрестной проверки подмножество размера `validation_size` будет выбрано случайным образом для проверки модели, обученной с использованием оставшихся данных. Наконец, будет отправлен отчет о средних показателях по всем циклам `n_cross_validations`, и соответствующая модель будет переобучена на целом наборе данных для обучения. Проверка Монте-Карло не поддерживается для прогнозирования временных рядов.
@@ -196,15 +195,15 @@ automl_config = AutoMLConfig(task = "classification")
 
 ### <a name="data-featurization"></a>Конструирование признаков
 
-В каждом эксперименте по автоматизированному машинному обучению данные [автоматически масштабируются или нормализуются](concept-automated-ml.md#preprocess), что способствует эффективному выполнению *некоторых* алгоритмов, чувствительных к разным масштабам признаков.  Однако можно также включить дополнительные методы конструирования признаков, например заполнение отсутствующих значений, кодирование и преобразования. [Узнайте подробнее о компонентах конструирования признаков](how-to-use-automated-ml-for-ml-models.md#featurization).
+В каждом эксперименте по автоматизированному машинному обучению данные [автоматически масштабируются или нормализуются](how-to-configure-auto-features.md#), что способствует эффективному выполнению *некоторых* алгоритмов, чувствительных к разным масштабам признаков.  Однако можно также включить дополнительные методы конструирования признаков, например заполнение отсутствующих значений, кодирование и преобразования.
 
-При настройке экспериментов можно включить дополнительный параметр `featurization`. В приведенной ниже таблице показаны допустимые параметры для конструирования признаков в [классе AutoMLConfig](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig).
+При настройке экспериментов в `AutoMLConfig` объекте можно включить или отключить параметр `featurization` . В приведенной ниже таблице показаны допустимые параметры для конструирования признаков в [классе AutoMLConfig](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig).
 
 |Конфигурация конструирования признаков | Описание |
 | ------------- | ------------- |
-|`"featurization":`&nbsp;`'FeaturizationConfig'`| Указывает, что следует использовать настраиваемый шаг конструирования признаков. [Узнайте, как настроить конструирование признаков](how-to-configure-auto-train.md#customize-feature-engineering).|
+|`"featurization": 'auto'`| Указывает, что в рамках предварительной обработки [проверка данных и шаги конструирования признаков](how-to-configure-auto-features.md#featurization) выполняются автоматически. **Параметр по умолчанию**|
 |`"featurization": 'off'`| Указывает, что настраиваемый шаг конструирования признаков не должен выполняться автоматически.|
-|`"featurization": 'auto'`| Указывает, что в рамках предварительной обработки [проверка данных и шаги конструирования признаков](how-to-use-automated-ml-for-ml-models.md#advanced-featurization-options) выполняются автоматически.|
+|`"featurization":`&nbsp;`'FeaturizationConfig'`| Указывает, что следует использовать настраиваемый шаг конструирования признаков. [Узнайте, как настроить конструирование признаков](how-to-configure-auto-features.md#customize-featurization).|
 
 > [!NOTE]
 > Шаги конструирования признаков автоматизированного машинного обучения (нормализация признаков, обработка недостающих данных, преобразование текста в числовой формат и т. д.) становятся частью базовой модели. При использовании модели прогнозирования те же этапы конструирования признаков, которые выполнялись во время обучения, автоматически выполняются для входных данных.
@@ -345,6 +344,8 @@ run = experiment.submit(automl_config, show_output=True)
 
 Просмотреть результаты обучения можно в мини-приложении или во встроенном окне при работе с записной книжкой. Ознакомьтесь с разделом [Просмотр сведений о выполнении](how-to-track-experiments.md#view-run-details), чтобы получить дополнительные сведения.
 
+Дополнительные сведения о загрузке или регистрации модели для развертывания в веб-службе см. в статье [как и где развертывать модель](how-to-deploy-and-where.md).
+
 ## <a name="understand-automated-ml-models"></a>Анализ моделей автоматизированного машинного обучения
 
 Любая модель, созданная с помощью автоматизированного машинного обучения, включает в себя следующие шаги:
@@ -361,7 +362,7 @@ best_run, fitted_model = automl_run.get_output()
 
 ### <a name="automated-feature-engineering"></a>Автоматизированное конструирование признаков
 
-См. список действий предварительной обработки и [автоматизированного конструирования признаков](concept-automated-ml.md#preprocess), выполняемых при `"featurization": 'auto'`.
+См. список действий предварительной обработки и [автоматизированного конструирования признаков](), выполняемых при `"featurization": 'auto'`.
 
 Рассмотрим следующий пример.
 + Существует четыре входных признака: A (числовой), B (числовой), C (числовой), D (дата и время).
@@ -430,36 +431,9 @@ best_run, fitted_model = automl_run.get_output()
    |Dropped|Указывает, был ли входной признак удален или использован.|
    |EngineeringFeatureCount|Количество признаков, созданных с помощью преобразований в процессе автоматизированного конструирования признаков.|
    |Преобразования|Список преобразований, применяемых к входным признакам для создания сконструированных признаков.|
-   
-### <a name="customize-feature-engineering"></a>Настройка конструирования признаков
-Чтобы настроить конструирование признаков, укажите  `"featurization": FeaturizationConfig`.
-
-Поддерживаемые способы настройки:
-
-|Настройка|Определение|
-|--|--|
-|Изменение назначения столбца|Переопределите тип признака для указанного столбца.|
-|Изменение параметра преобразователя |Измените параметры для указанного преобразователя. В настоящее время поддерживаются Imputer (среднее, самое частое и медианное значения) и HashOneHotEncoder.|
-|Удаление столбцов |Столбцы, которые следует исключить из конструирования признаков.|
-|Блокирование преобразователей| Блокируйте преобразователи, используемые в процессе конструирования признаков.|
-
-Создайте объект FeaturizationConfig с помощью вызовов API:
-```python
-featurization_config = FeaturizationConfig()
-featurization_config.blocked_transformers = ['LabelEncoder']
-featurization_config.drop_columns = ['aspiration', 'stroke']
-featurization_config.add_column_purpose('engine-size', 'Numeric')
-featurization_config.add_column_purpose('body-style', 'CategoricalHash')
-#default strategy mean, add transformer param for for 3 columns
-featurization_config.add_transformer_params('Imputer', ['engine-size'], {"strategy": "median"})
-featurization_config.add_transformer_params('Imputer', ['city-mpg'], {"strategy": "median"})
-featurization_config.add_transformer_params('Imputer', ['bore'], {"strategy": "most_frequent"})
-featurization_config.add_transformer_params('HashOneHotEncoder', [], {"number_of_bits": 3})
-```
-
 ### <a name="scalingnormalization-and-algorithm-with-hyperparameter-values"></a>Масштабирование, нормализация и применение алгоритма со значениями гиперпараметров:
 
-Чтобы получить представление о масштабировании, нормализации и значениях гиперпараметров алгоритма для конвейера, используйте fitted_model.steps. [Дополнительные сведения о масштабировании и нормализации](concept-automated-ml.md#preprocess). Пример выходных данных:
+Чтобы получить представление о масштабировании, нормализации и значениях гиперпараметров алгоритма для конвейера, используйте fitted_model.steps. [Дополнительные сведения о масштабировании и нормализации](). Пример выходных данных:
 
 ```
 [('RobustScaler', RobustScaler(copy=True, quantile_range=[10, 90], with_centering=True, with_scaling=True)), ('LogisticRegression', LogisticRegression(C=0.18420699693267145, class_weight='balanced', dual=False, fit_intercept=True, intercept_scaling=1, max_iter=100, multi_class='multinomial', n_jobs=1, penalty='l2', random_state=None, solver='newton-cg', tol=0.0001, verbose=0, warm_start=False))
@@ -536,6 +510,9 @@ class_prob = fitted_model.predict_proba(X_test)
 Примеры кода, демонстрирующие включение функций интерпретации, в частности в экспериментах автоматизированного машинного обучения, см. в [этом руководстве](how-to-machine-learning-interpretability-automl.md).
 
 Общие сведения о том, как можно включить пояснения к моделям и важность признаков в других компонентах пакета SDK, не относящихся к автоматизированному машинному обучению, см. в [концептуальной статье об интерпретируемости](how-to-machine-learning-interpretability.md).
+
+> [!NOTE]
+> Модель Форекастткн в настоящее время не поддерживается клиентом пояснения. Эта модель не будет возвращать панель мониторинга с объяснением, если она возвращается в качестве лучшей модели и не поддерживает выполнение объяснения по требованию.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

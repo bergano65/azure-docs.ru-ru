@@ -7,11 +7,11 @@ ms.topic: reference
 ms.date: 10/09/2018
 ms.author: syclebsc
 ms.openlocfilehash: 669701f91ab28a4eb734b0346be6515dc44e8685
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79276768"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85846728"
 ---
 # <a name="azure-functions-f-developer-reference"></a>Справочник разработчика F# по Функциям Azure
 
@@ -48,7 +48,7 @@ FunctionsProject
 
 Существует общий файл [host.json](functions-host-json.md), который можно использовать для настройки приложения-функции. У каждой функции есть собственный файл кода (.fsx) и файл конфигурации привязки (function.json).
 
-Расширения привязки, необходимые в [версии 2. x и более поздних версиях](functions-versions.md) среды выполнения функций, определяются `extensions.csproj` в файле с фактическими файлами библиотеки в `bin` папке. При локальной разработке необходимо [зарегистрировать расширения привязки](./functions-bindings-register.md#extension-bundles). При разработке функций на портале Azure эта регистрация выполняется автоматически.
+Расширения привязки, необходимые в [версии 2.x и более поздних](functions-versions.md) среды выполнения функций, определены в файле `extensions.csproj` с фактическими файлами библиотеки в папке `bin`. При локальной разработке необходимо [зарегистрировать расширения привязки](./functions-bindings-register.md#extension-bundles). При разработке функций на портале Azure эта регистрация выполняется автоматически.
 
 ## <a name="binding-to-arguments"></a>Привязка к аргументам
 Каждая привязка поддерживает набор аргументов. Это подробно описано в [справочнике разработчика по триггерам и привязкам в Функциях Azure](functions-triggers-bindings.md). Например, одной из привязок аргументов, поддерживаемых триггером больших двоичных объектов, выступает POCO. Эту привязку можно представить с помощью записи F#. Пример:
@@ -89,7 +89,7 @@ let Run(input: string, item: byref<Item>) =
     item <- result
 ```
 
-## <a name="logging"></a>Logging
+## <a name="logging"></a>Ведение журнала
 Для записи выходных данных в [потоковые журналы](../app-service/troubleshoot-diagnostic-logs.md) в F# в функции следует использовать аргумент типа [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger). Для согласованности мы советуем назвать этот аргумент `log`. Пример:
 
 ```fsharp
@@ -98,7 +98,7 @@ let Run(blob: string, output: byref<string>, log: ILogger) =
     output <- input
 ```
 
-## <a name="async"></a>Async
+## <a name="async"></a>Асинхронный режим
 Рабочий процесс `async` можно использовать, но результат должен возвратить `Task`. Для этого нужно использовать `Async.StartAsTask`. Например:
 
 ```fsharp
@@ -284,7 +284,7 @@ let mylog(log: ILogger, text: string) =
 
 Директива `#load` работает только с файлами `.fsx` (скрипт F#), а не с файлами `.fs`.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения см. в следующих ресурсах:
 
 * [Руководство по языку F#](/dotnet/articles/fsharp/index)
