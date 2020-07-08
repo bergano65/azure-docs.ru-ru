@@ -11,12 +11,11 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 55de5a5c604273225a85e49ca682980f83a951d2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 3e5cc6bbe363e111f5c39147010d6a3d00cb45c8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75767574"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85604613"
 ---
 # <a name="what-are-baseline-policies"></a>Что такое базовые политики?
 
@@ -25,7 +24,7 @@ ms.locfileid: "75767574"
 Для управления настроенными политиками условного доступа требуется лицензия Azure AD Premium.
 
 > [!IMPORTANT]
-> Базовые политики являются устаревшими. Дополнительные сведения см. [в разделе новые возможности Azure Active Directory](../fundamentals/whats-new.md#replacement-of-baseline-policies-with-security-defaults) .
+> Базовые политики являются устаревшими. Дополнительные сведения см. [в разделе Архив для новых возможностей Azure Active Directory](../fundamentals/whats-new-archive.md#replacement-of-baseline-policies-with-security-defaults) .
 
 ## <a name="baseline-policies"></a>Базовые политики
 
@@ -50,16 +49,16 @@ ms.locfileid: "75767574"
 
 Требовать MFA для администраторов (Предварительная версия) — это базовая политика, требующая многофакторную проверку подлинности (MFA) для следующих ролей каталога, которая считается наиболее привилегированными ролями Azure AD:
 
-* Глобальный администратор
-* Администратор SharePoint.
-* Администратор Exchange.
+* Глобальный администратор.
+* администратор SharePoint;
+* администратор Exchange;
 * Администратор условного доступа
-* Администратор безопасности.
+* администратор безопасности;
 * Администратор службы поддержки / администратор паролей.
 * Администратор выставления счетов
-* Администратор пользователей.
+* Администратор пользователей
 
-Если в вашей организации эти учетные записи используются в сценариях или коде, рассмотрите возможность замены их [управляемыми удостоверениями](../managed-identities-azure-resources/overview.md).
+Если в вашей организации эти учетные записи используются в сценариях или в коде, попробуйте заменить их [управляемыми удостоверениями](../managed-identities-azure-resources/overview.md).
 
 ### <a name="end-user-protection-preview"></a>Защита конечных пользователей (Предварительная версия)
 
@@ -80,7 +79,7 @@ ms.locfileid: "75767574"
 
 ### <a name="require-mfa-for-service-management-preview"></a>Требовать MFA для управления службами (Предварительная версия)
 
-Организации используют различные службы Azure и управляют ими на основе Azure Resource Managerных средств, таких как:
+Организации используют различные службы Azure, управляемые через инструменты на базе диспетчера ресурсов Azure, в том числе следующие.
 
 * Портал Azure
 * Azure PowerShell
@@ -92,8 +91,8 @@ ms.locfileid: "75767574"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения см. в разделе:
 
 * [Включение параметров безопасности по умолчанию](../fundamentals/concept-fundamentals-security-defaults.md)
-* [Общие политики условного доступа](concept-conditional-access-policy-common.md)
+* [Распространенные политики условного доступа](concept-conditional-access-policy-common.md)
 * [Пять шагов по защите инфраструктуры удостоверений](../../security/fundamentals/steps-secure-identity.md)

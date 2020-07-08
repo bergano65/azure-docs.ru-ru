@@ -1,27 +1,13 @@
 ---
 title: Настройка журналов диагностики Центров событий Azure | Документация Майкрософт
 description: Узнайте, как настроить журналы действий и журналы диагностики для Центров событий в Azure.
-keywords: ''
-documentationcenter: ''
-services: event-hubs
-author: ShubhaVijayasarathy
-manager: ''
-editor: ''
-ms.assetid: ''
-ms.service: event-hubs
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: data-services
-ms.custom: seodec18
-ms.date: 04/28/2020
-ms.author: shvija
-ms.openlocfilehash: cb47119fdddad70f8b7d5de94f9a2d35efd80d76
-ms.sourcegitcommit: 223cea58a527270fe60f5e2235f4146aea27af32
-ms.translationtype: HT
+ms.date: 06/23/2020
+ms.openlocfilehash: 976d8a7127438164c8b807b6f14d3ae877f44b65
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84259309"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85322466"
 ---
 # <a name="set-up-diagnostic-logs-for-an-azure-event-hub"></a>Настройка журналов диагностики для центра событий Azure
 

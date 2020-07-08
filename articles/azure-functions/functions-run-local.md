@@ -5,12 +5,11 @@ ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: 19691a654162ee3855cb257fd42e29d2e1fc0157
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 35d408c636e20aef9495e72bc8535e0d7a99431e
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79276664"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85955274"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -35,7 +34,7 @@ ms.locfileid: "79276664"
 
 + **Версия 1. x**: поддерживает версию 1. x среды выполнения функций Azure. Эта версия поддерживается только на компьютерах с ОС Windows и устанавливается из [пакета npm](https://www.npmjs.com/package/azure-functions-core-tools).
 
-+ [**Версия 2. x/3. x**](#v2): поддерживает [версию 2. x или 3. x среды выполнения функций Azure](functions-versions.md). Эти версии поддерживают [Windows](/azure/azure-functions/functions-run-local?tabs=windows#v2), [macOS](/azure/azure-functions/functions-run-local?tabs=macos#v2)и [Linux](/azure/azure-functions/functions-run-local?tabs=linux#v2) и используют диспетчеры пакетов для конкретных платформ или NPM для установки.
++ [**Версия 3. x/2. x**](#v2): поддерживает [версию 3. x или 2. x среды выполнения функций Azure](functions-versions.md). Эти версии поддерживают [Windows](/azure/azure-functions/functions-run-local?tabs=windows#v2), [macOS](/azure/azure-functions/functions-run-local?tabs=macos#v2)и [Linux](/azure/azure-functions/functions-run-local?tabs=linux#v2) и используют диспетчеры пакетов для конкретных платформ или NPM для установки.
 
 Если не указано иное, примеры в этой статье относятся к версии 3. x.
 
@@ -46,9 +45,9 @@ ms.locfileid: "79276664"
 >[!IMPORTANT]
 >Чтобы иметь возможность публиковать в Azure из Azure Functions Core Tools, необходимо локально установить [Azure CLI](/cli/azure/install-azure-cli) .  
 
-### <a name="version-2x-and-3x"></a><a name="v2"></a>Версии 2. x и 3. x
+### <a name="version-3x-and-2x"></a><a name="v2"></a>Версии 3. x и 2. x
 
-Версия 2. x/3. x инструментов использует среду выполнения функций Azure, созданную на основе .NET Core. Эта версия поддерживается на всех платформах .NET Core, включая [Windows](/azure/azure-functions/functions-run-local?tabs=windows#v2), [macOS](/azure/azure-functions/functions-run-local?tabs=macos#v2)и [Linux](/azure/azure-functions/functions-run-local?tabs=linux#v2). 
+Версия 3. x/2. x инструментов использует среду выполнения функций Azure, созданную на основе .NET Core. Эта версия поддерживается на всех платформах .NET Core, включая [Windows](/azure/azure-functions/functions-run-local?tabs=windows#v2), [macOS](/azure/azure-functions/functions-run-local?tabs=macos#v2)и [Linux](/azure/azure-functions/functions-run-local?tabs=linux#v2). 
 
 > [!IMPORTANT]
 > Вы можете обойти требование для установки пакет SDK для .NET Core с помощью [пакетов расширений].
@@ -58,26 +57,26 @@ ms.locfileid: "79276664"
 На следующих шагах пакет npm используется для установки основных инструментов на компьютерах с Windows. Кроме того, можно использовать [Chocolatey](https://chocolatey.org/). Дополнительные сведения см. в [файле сведений об основных инструментах](https://github.com/Azure/azure-functions-core-tools/blob/master/README.md#windows).
 
 1. Установите [Node.js], который содержит пакет npm.
+    - Для версии 3. x средств поддерживаются только Node.js 10 и более поздних версий.
     - Для версии 2.x этих инструментов поддерживается только версия Node.js 8.5 и более поздние.
-    - Для средств версии 3. x поддерживаются только версии Node. js 10 и более поздних версий.
 
 1. Установите пакет основных инструментов:
 
-    ##### <a name="v2x"></a>Версия 2.x
-
-    ```cmd
-    npm install -g azure-functions-core-tools
-    ```
-
-    ##### <a name="v3x"></a>v3. x
+    ##### <a name="v3x-recommended"></a>v3. x (рекомендуется)
 
     ```cmd
     npm install -g azure-functions-core-tools@3
     ```
 
+    ##### <a name="v2x"></a>Версия 2.x
+
+    ```cmd
+    npm install -g azure-functions-core-tools@2
+    ```
+
    Загрузка и установка пакета основных средств может занять несколько минут.
 
-1. Если вы не планируете использовать [пакеты расширений], установите [пакет SDK для .NET Core 2. x для Windows](https://www.microsoft.com/net/download/windows).
+1. Если вы не планируете использовать [пакеты расширений](functions-bindings-register.md#extension-bundles), установите [пакет SDK для .NET Core 3. x для Windows](https://dotnet.microsoft.com/download).
 
 # <a name="macos"></a>[macOS](#tab/macos)
 
@@ -87,14 +86,7 @@ ms.locfileid: "79276664"
 
 1. Установите пакет основных инструментов:
 
-    ##### <a name="v2x"></a>Версия 2.x
-
-    ```bash
-    brew tap azure/functions
-    brew install azure-functions-core-tools
-    ```
-
-    ##### <a name="v3x"></a>v3. x
+    ##### <a name="v3x-recommended"></a>v3. x (рекомендуется)
 
     ```bash
     brew tap azure/functions
@@ -102,6 +94,15 @@ ms.locfileid: "79276664"
     # if upgrading on a machine that has 2.x installed
     brew link --overwrite azure-functions-core-tools@3
     ```
+    
+    ##### <a name="v2x"></a>Версия 2.x
+
+    ```bash
+    brew tap azure/functions
+    brew install azure-functions-core-tools@2
+    ```
+    
+1. Если вы не планируете использовать [пакеты расширений](functions-bindings-register.md#extension-bundles), установите [пакет SDK для .NET Core 3. x для macOS](https://dotnet.microsoft.com/download).
 
 # <a name="linux"></a>[Linux](#tab/linux)
 
@@ -132,10 +133,11 @@ ms.locfileid: "79276664"
 
     | Дистрибутив Linux | Версия |
     | --------------- | ----------- |
-    | Debian 9 | `stretch` |
-    | Debian 8 | `jessie` |
+    | Debian 10 | `buster`  |
+    | Debian 9  | `stretch` |
+    | Ubuntu 19.04    | `disco`     |
     | Ubuntu 18.10    | `cosmic`    |
-    | Ubuntu 18.04    | `bionic`    |
+    | Ubuntu 18.04    | `bionic`    |
     | Ubuntu 17.04    | `zesty`     |
     | Ubuntu 16.04/Linux Mint 18    | `xenial`  |
 
@@ -147,11 +149,19 @@ ms.locfileid: "79276664"
 
 1. Установите пакет основных инструментов:
 
+    ##### <a name="v3x-recommended"></a>v3. x (рекомендуется)
     ```bash
-    sudo apt-get install azure-functions-core-tools
+    sudo apt-get update
+    sudo apt-get install azure-functions-core-tools-3
+    ```
+    
+    ##### <a name="v2x"></a>Версия 2.x
+    ```bash
+    sudo apt-get update
+    sudo apt-get install azure-functions-core-tools-2
     ```
 
-1. Если вы не планируете использовать [пакеты расширений], установите [пакет SDK для .NET Core 2. x для Linux](https://www.microsoft.com/net/download/linux).
+1. Если вы не планируете использовать [пакеты расширений](functions-bindings-register.md#extension-bundles), установите [пакет SDK для .NET Core 3. x для Linux](https://dotnet.microsoft.com/download).
 
 ---
 
@@ -159,7 +169,7 @@ ms.locfileid: "79276664"
 
 Каталог проекта функций содержит файлы [host.json](functions-host-json.md) и [local.settings.json](#local-settings-file), а также вложенные папки, которые содержат код для отдельных функций. Этот каталог является эквивалентом приложения-функции в Azure. Дополнительные сведения о структуре папок службы "Функции Azure" см. в [Руководстве для разработчиков по Функциям Azure](functions-reference.md#folder-structure).
 
-Версия 2. x требует выбрать язык по умолчанию для проекта при его инициализации. В версии 2. x все добавленные функции используют шаблоны языка по умолчанию. В версии 1.x пользователю необходимо указывать язык при каждом создании функции.
+Версия 3. x/2. x требует выбрать язык по умолчанию для проекта при его инициализации. В версии 3. x/2. x все добавленные функции используют шаблоны языка по умолчанию. В версии 1.x пользователю необходимо указывать язык при каждом создании функции.
 
 В окне терминала или из командной строки выполните следующую команду, чтобы создать проект и локальный репозиторий Git:
 
@@ -168,7 +178,7 @@ func init MyFunctionProj
 ```
 
 Когда вы указываете имя проекта, то создается и инициализируется новая папка с этим именем. В противном случае инициализируется текущая папка.  
-При запуске команды в версии 2.x необходимо выбрать среду выполнения для проекта. 
+В версии 3. x/2. x при выполнении команды необходимо выбрать среду выполнения для проекта. 
 
 <pre>
 Select a worker runtime:
@@ -191,26 +201,26 @@ Writing C:\myfunctions\myMyFunctionProj\.vscode\extensions.json
 Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 </pre>
 
-`func init` поддерживает следующие параметры, которые подходят только для версии 2.x, если не указано иное:
+`func init`поддерживает следующие параметры версии 3. x/2. КС-Онли, если не указано иное.
 
-| Параметр     | Описание                            |
+| Параметр     | Описание:                            |
 | ------------ | -------------------------------------- |
 | **`--csharp`**<br/> **`--dotnet`** | Инициализирует [проект библиотеки классов C# (CS)](functions-dotnet-class-library.md). |
 | **`--csx`** | Инициализирует [проект скрипта C# (. CSX)](functions-reference-csharp.md). Необходимо указать `--csx` в последующих командах. |
 | **`--docker`** | Создает файл Docker для контейнера с использованием базового образа, основанного на выбранном параметре `--worker-runtime`. Используйте этот параметр, если планируете опубликовать в пользовательский контейнер Linux. |
-| **`--docker-only`** |  Добавляет Dockerfile в существующий проект. Запрашивает рабочую среду выполнения, если она не указана или задана в local. Settings. JSON. Используйте этот параметр при планировании публикации существующего проекта в пользовательском контейнере Linux. |
+| **`--docker-only`** |  Добавляет Dockerfile в существующий проект. Запрашивает рабочую среду выполнения, если она не указана или не задана в local.settings.js. Используйте этот параметр при планировании публикации существующего проекта в пользовательском контейнере Linux. |
 | **`--force`** | Инициализирует проект, даже если в нем уже есть файлы. Этот параметр перезаписывает имеющиеся файлы, используя те же имена. Это не влияет на другие файлы в папке проекта. |
 | **`--java`**  | Инициализирует [проект Java](functions-reference-java.md). |
 | **`--javascript`**<br/>**`--node`**  | Инициализирует [проект JavaScript](functions-reference-node.md). |
-| **`--no-source-control`**<br/>**`-n`** | Предотвращает создание по умолчанию репозитория Git в версии 1.x. В версии 2.x репозиторий Git не создается по умолчанию. |
+| **`--no-source-control`**<br/>**`-n`** | Предотвращает создание по умолчанию репозитория Git в версии 1.x. В версии 3. x/2. x репозиторий Git не создается по умолчанию. |
 | **`--powershell`**  | Инициализирует [проект PowerShell](functions-reference-powershell.md). |
 | **`--python`**  | Инициализирует [проект Python](functions-reference-python.md). |
 | **`--source-control`** | Определяет, создается ли репозиторий Git. По умолчанию репозиторий не создается. Если задано значение `true`, репозиторий создается. |
 | **`--typescript`**  | Инициализирует [проект TypeScript](functions-reference-node.md#typescript). |
-| **`--worker-runtime`** | Задает языковую среду выполнения для проекта. Поддерживаются следующие значения `csharp`: `dotnet`, `java`, `javascript`,`node` , (JavaScript) `powershell`, `python`, и `typescript`. Если этот параметр не задан, во время инициализации будет предложено выбрать среду выполнения. |
+| **`--worker-runtime`** | Задает языковую среду выполнения для проекта. Поддерживаются следующие значения: `csharp` ,,,, `dotnet` `java` `javascript` `node` (JavaScript), `powershell` , `python` и `typescript` . Если этот параметр не задан, во время инициализации будет предложено выбрать среду выполнения. |
 
 > [!IMPORTANT]
-> По умолчанию версия 2.x средства Core создает проекты приложений функций для среды выполнения .NET как [проектов класса C#](functions-dotnet-class-library.md) (.csproj). Эти проекты C#, которые могут использоваться с Visual Studio или Visual Studio Code, собираются во время тестирования и при публикации в Azure. Если вы хотите создавать и работать с тем же файлом сценария C# (.csx), созданным в версии 1.x и на портале, необходимо указать параметр `--csx` при создании и развертывании функций.
+> По умолчанию версия 3. x/2. x основных средств создает проекты приложения-функции для среды выполнения .NET как [проекты классов C#](functions-dotnet-class-library.md) (. csproj). Эти проекты C#, которые могут использоваться с Visual Studio или Visual Studio Code, собираются во время тестирования и при публикации в Azure. Если вы хотите создавать и работать с тем же файлом сценария C# (.csx), созданным в версии 1.x и на портале, необходимо указать параметр `--csx` при создании и развертывании функций.
 
 [!INCLUDE [functions-core-tools-install-extension](../../includes/functions-core-tools-install-extension.md)]
 
@@ -225,9 +235,9 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 * [Java](functions-reference-java.md#environment-variables)
 * [JavaScript](functions-reference-node.md#environment-variables)
 
-Если не задана допустимая строка подключения к [`AzureWebJobsStorage`] хранилищу и не используется эмулятор, отображается следующее сообщение об ошибке:
+Если не задана допустимая строка подключения к хранилищу [`AzureWebJobsStorage`] и не используется эмулятор, отображается следующее сообщение об ошибке:
 
-> Отсутствует значение AzureWebJobsStorage в local.settings.json. This is required for all triggers other than HTTP. You can run 'func azure functionapp fetch-app-settings \<functionAppName\>' or specify a connection string in local.settings.json (Оно требуется для всех триггеров, отличных от HTTP. Выполните команду func azure functionapp fetch-app-settings <имя_приложения_функции> или укажите строку подключения в файле local.settings.json).
+> Отсутствует значение AzureWebJobsStorage в local.settings.json. This is required for all triggers other than HTTP. You can run 'func azure functionapp fetch-app-settings \<functionAppName\>' or specify a connection string in local.settings.json (Отсутствует значение AzureWebJobsStorage в local.settings.json. Оно требуется для всех триггеров, отличных от HTTP. Выполните команду func azure functionapp fetch-app-settings или укажите строку подключения в файле local.settings.json).
 
 ### <a name="get-your-storage-connection-strings"></a>Получение параметров строк подключения службы хранилища
 
@@ -266,7 +276,7 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 func new
 ```
 
-В версии 2.x при запуске `func new` для приложения-функции предлагается выбрать шаблон языка по умолчанию, а затем имя для функции. В версии 1.x также предлагается выбрать язык.
+В версии 3. x/2. x при запуске вам будет `func new` предложено выбрать шаблон на языке по умолчанию для приложения-функции, а затем будет предложено выбрать имя функции. В версии 1.x также предлагается выбрать язык.
 
 <pre>
 Select a language: Select a template:
@@ -296,8 +306,8 @@ Writing C:\myfunctions\myMyFunctionProj\MyQueueTrigger\function.json
 
 | Аргумент     | Описание                            |
 | ------------------------------------------ | -------------------------------------- |
-| **`--csx`** | (Версия 2.x). Создаются те же шаблоны сценариев C# (.csx), которые используются в версии 1.x и на портале. |
-| **`--language`**, **`-l`**| Язык программирования шаблона, например C#, F# или JavaScript. Этот параметр необходим в версии 1.x. Не используйте этот параметр в версии 2.x или выберите язык, который совпадает со средой выполнения рабочей роли. |
+| **`--csx`** | (Версия 3. x/2. x) Создает те же шаблоны скрипта C# (. CSX), которые используются в версии 1. x и на портале. |
+| **`--language`**, **`-l`**| Язык программирования шаблона, например C#, F# или JavaScript. Этот параметр необходим в версии 1.x. В версии 3. x/2. x не используйте этот параметр или выберите язык, соответствующий рабочей среде выполнения. |
 | **`--name`**, **`-n`** | Имя функции. |
 | **`--template`**, **`-t`** | Используйте команду `func templates list`, чтобы просмотреть полный список доступных шаблонов для каждого поддерживаемого языка.   |
 
@@ -317,7 +327,7 @@ func new --template "Queue Trigger" --name QueueTriggerJS
 
 Чтобы запустить проект службы "Функции", запустите узел этой службы. Узел включает триггеры для всех функций в проекте. Команда запуска зависит от языка проекта.
 
-# <a name="c"></a>[Ц\#](#tab/csharp)
+# <a name="c"></a>[C\#](#tab/csharp)
 
 ```
 func start --build
@@ -360,7 +370,7 @@ npm start
 | **`--cors-credentials`** | Разрешить запросы с проверкой подлинности от источника (т. е. файлы cookie и заголовок проверки подлинности), которые не поддерживаются для версии 1. x. |
 | **`--cors`** | Список разрешенных источников CORS, разделенный запятыми без пробелов. |
 | **`--language-worker`** | Аргументы для настройки обработчика языка. Например, вы можете включить отладку для рабочей роли языка, предоставив [порт отладки и другие необходимые аргументы](https://github.com/Azure/azure-functions-core-tools/wiki/Enable-Debugging-for-language-workers). Не поддерживается для версии 1. x. |
-| **`--nodeDebugPort`**, **`-n`** | Порт для использования отладчиком Node. js. Значение по умолчанию — значение из launch.json или 5858. Только версия 1.x. |
+| **`--nodeDebugPort`**, **`-n`** | Порт, используемый отладчиком Node.js. Значение по умолчанию — значение из launch.json или 5858. Только версия 1.x. |
 | **`--password`** | Пароль или файл, содержащий пароль для PFX-файла. Используется только с `--cert`. Не поддерживается для версии 1. x. |
 | **`--port`**, **`-p`** | Локальный порт для прослушивания. Значение по умолчанию: 7071. |
 | **`--pause-on-error`** | Приостановка для получения дополнительных входных данных перед выходом из процесса. Используется только при запуске набора инструментов Core Tools из интегрированной среды разработки.|
@@ -394,7 +404,9 @@ Http Function MyHttpTrigger: http://localhost:7071/api/MyHttpTrigger
 
 Вызовите следующую конечную точку, чтобы запустить в локальной среде функции, активируемые по протоколу HTTP или с помощью веб-перехватчика.
 
-    http://localhost:{port}/api/{function_name}
+```http
+http://localhost:{port}/api/{function_name}
+```
 
 Используйте то же имя сервера и порт, прослушиваемый узлом службы "Функции". Их можно найти в выходных данных, полученных при запуске узла службы "Функции". Этот URL-адрес можно вызвать с помощью любого метода HTTP с поддержкой триггера.
 
@@ -428,7 +440,9 @@ curl --request POST http://localhost:7071/api/MyHttpTrigger --data "{'name':'Azu
 
 Вызовите следующую конечную точку администрирования, чтобы активировать функции, отличные от HTTP:
 
-    http://localhost:{port}/admin/functions/{function_name}
+```http
+http://localhost:{port}/admin/functions/{function_name}
+```
 
 Чтобы передать тестовые данные в конечную точку администрирования функции, укажите данные в тексте запроса POST. Текст сообщения должен иметь следующий формат JSON:
 
@@ -453,13 +467,13 @@ curl --request POST -H "Content-Type:application/json" --data "{'input':'sample 
 #### <a name="using-the-func-run-command-version-1x-only"></a>Использование `func run` команды (только версии 1. x)
 
 >[!IMPORTANT]
-> `func run` Команда поддерживается только в версии 1. x средств. Дополнительные сведения см. в статье [Выбор целевых версий среды выполнения Функций Azure](set-runtime-version.md).
+> `func run`Команда поддерживается только в версии 1. x средств. Дополнительные сведения см. в статье [Выбор целевых версий среды выполнения Функций Azure](set-runtime-version.md).
 
 В версии 1. x можно также вызвать функцию напрямую с помощью `func run <FunctionName>` и предоставить входные данные для функции. Эта команда аналогична выполнению функции с помощью вкладки **Тест** на портале Azure.
 
 `func run` имеет указанные ниже параметры.
 
-| Параметр     | Описание                            |
+| Параметр     | Описание:                            |
 | ------------ | -------------------------------------- |
 | **`--content`**, **`-c`** | Встроенное содержимое. |
 | **`--debug`**, **`-d`** | Подключение отладчика к хост-процессу перед выполнением функции.|
@@ -484,7 +498,7 @@ Azure Functions Core Tools поддерживает два типа развер
 
 ### <a name="deploy-project-files"></a><a name="project-file-deployment"></a>Развертывание файлов проекта
 
-Чтобы опубликовать локальный код в приложении-функции в Azure, используйте `publish` команду:
+Чтобы опубликовать локальный код в виде приложения-функции в Azure, используйте команду `publish`:
 
 ```
 func azure functionapp publish <FunctionAppName>
@@ -493,26 +507,26 @@ func azure functionapp publish <FunctionAppName>
 Эта команда публикует в существующее приложение-функцию в Azure. При попытке публикации в `<FunctionAppName>` , который не существует в вашей подписке, возникает ошибка. Чтобы узнать, как создать приложение-функцию из командной строки или из окна терминала, используя Azure CLI, см. статью [Создание приложения-функции для выполнения без сервера](./scripts/functions-cli-create-serverless.md). По умолчанию эта команда использует [удаленную сборку](functions-deployment-technologies.md#remote-build) и развертывает приложение для [запуска из пакета развертывания](run-functions-from-deployment-package.md). Чтобы отключить этот рекомендуемый режим развертывания, используйте `--nozip` параметр.
 
 >[!IMPORTANT]
-> При создании приложения-функции на портале Azure по умолчанию используется версия 2.x среды выполнения Функций. Чтобы в приложении-функции использовалась среда выполнения версии 1.x, следуйте инструкциям, приведенным в разделе [Создание приложений 1.x](functions-versions.md#creating-1x-apps).
+> При создании приложения-функции в портал Azure используется версия 3. x среды выполнения функции по умолчанию. Чтобы в приложении-функции использовалась среда выполнения версии 1.x, следуйте инструкциям, приведенным в разделе [Создание приложений 1.x](functions-versions.md#creating-1x-apps).
 > Изменить версию среды выполнения для приложения-функции, в котором уже есть функции, невозможно.
 
-Следующие параметры публикации применяются к обеим версиям, 1. x и 2. x:
+Следующие параметры публикации применимы к версиям 3. x, 2. x и 1. x:
 
-| Параметр     | Описание                            |
+| Параметр     | Описание:                            |
 | ------------ | -------------------------------------- |
 | **`--publish-local-settings -i`** |  Публикация параметров из файла local.settings.json в Azure с запросом на перезапись, если параметр уже существует. При использовании эмулятор хранения Microsoft Azure сначала измените параметр приложения на [реальное подключение к хранилищу](#get-your-storage-connection-strings). |
 | **`--overwrite-settings -y`** | Отключите запрос на перезапись параметров приложения при использовании `--publish-local-settings -i`.|
 
-Следующие параметры публикации поддерживаются только в версии 2.x:
+Следующие параметры публикации поддерживаются только в версиях 3. x и 2. x:
 
-| Параметр     | Описание                            |
+| Параметр     | Описание:                            |
 | ------------ | -------------------------------------- |
 | **`--publish-settings-only`**, **`-o`** |  Только публикует параметры и пропускает содержимое. Значение по умолчанию — запрос. |
 |**`--list-ignored-files`** | Отображает основанный на файле FUNCIGNORE список файлов, которые будут проигнорированы во время публикации. |
 | **`--list-included-files`** | Отображает основанный на файле FUNCIGNORE список файлов, которые будут опубликованы. |
 | **`--nozip`** | Выключает режим по умолчанию `Run-From-Package`. |
 | **`--build-native-deps`** | Пропускает создание папки. Wheels при публикации приложений функции Python. |
-| **`--build`**, **`-b`** | Выполняет действие сборки при развертывании в приложении-функции Linux. Принимает: `remote` и `local`. |
+| **`--build`**, **`-b`** | Выполняет действие сборки при развертывании в приложении-функции Linux. Принимает: `remote` и `local` . |
 | **`--additional-packages`** | Создает список пакетов установки при создании собственных зависимостей. Например: `python3-dev libevent-dev`. |
 | **`--force`** | Пропускает проверку, выполняемую до публикации, в определенных сценариях. |
 | **`--csx`** | Публикует проект скрипта C# (CSX). |
@@ -521,7 +535,7 @@ func azure functionapp publish <FunctionAppName>
 
 ### <a name="deploy-custom-container"></a>Развертывание настраиваемого контейнера
 
-Функции Azure позволяют развертывать проект функции в [пользовательском контейнере DOCKER](functions-deployment-technologies.md#docker-container). Дополнительные сведения см. в статье [Создание функции в Linux из пользовательского образа (предварительная версия)](functions-create-function-linux-custom-image.md). В пользовательских контейнерах должен быть файл Docker. Чтобы создать приложение с Dockerfile, используйте параметр--Dockerfile в `func init`.
+Функции Azure позволяют развертывать проект функции в [пользовательском контейнере DOCKER](functions-deployment-technologies.md#docker-container). Дополнительные сведения см. в статье [Создание функции в Linux из пользовательского образа (предварительная версия)](functions-create-function-linux-custom-image.md). В пользовательских контейнерах должен быть файл Docker. Чтобы создать приложение с Dockerfile, используйте параметр--Dockerfile в `func init` .
 
 ```
 func deploy
@@ -529,7 +543,7 @@ func deploy
 
 Для пользовательского контейнера доступны следующие параметры развертывания:
 
-| Параметр     | Описание                            |
+| Параметр     | Описание:                            |
 | ------------ | -------------------------------------- |
 | **`--registry`** | Имя реестра Docker, в который вошел текущий пользователь. |
 | **`--platform`** | Платформа размещения для приложения-функции. Допустимые параметры: `kubernetes`. |
@@ -566,7 +580,7 @@ func deploy
 
 <!-- LINKS -->
 
-[Azure Functions Core Tools]: https://www.npmjs.com/package/azure-functions-core-tools
+[Основные инструменты службы "Функции Azure"]: https://www.npmjs.com/package/azure-functions-core-tools
 [Портал Azure]: https://portal.azure.com 
 [Node.js]: https://docs.npmjs.com/getting-started/installing-node#osx-or-windows
 [`FUNCTIONS_WORKER_RUNTIME`]: functions-app-settings.md#functions_worker_runtime

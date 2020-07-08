@@ -10,10 +10,9 @@ ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
 ms.openlocfilehash: 8d76588ae9124d34902659cc0149063400b6e766
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81759517"
 ---
 # <a name="post-deployment-tasks"></a>Задачи, выполняемые после развертывания
@@ -34,9 +33,9 @@ ms.locfileid: "81759517"
 В этом примере для регистрации приложения используется Azure CLI, а для настройки разрешений — графический пользовательский интерфейс (портал). Чтобы зарегистрировать приложение, нужно знать следующие сведения для пяти параметров:
 
 - Отображаемое имя. Имя регистрируемого приложения (например, OCPAzureAD).
-- Домашняя страница: URL-адрес консоли OpenShift ( `https://masterdns343khhde.westus.cloudapp.azure.com/console`например,).
-- URI идентификатора: URL-адрес консоли OpenShift (например `https://masterdns343khhde.westus.cloudapp.azure.com/console`,).
-- URL-адрес ответа: основной общедоступный URL-адрес и имя регистрации `https://masterdns343khhde.westus.cloudapp.azure.com/oauth2callback/OCPAzureAD`приложения (например,).
+- Домашняя страница: URL-адрес консоли OpenShift (например, `https://masterdns343khhde.westus.cloudapp.azure.com/console` ).
+- URI идентификатора: URL-адрес консоли OpenShift (например, `https://masterdns343khhde.westus.cloudapp.azure.com/console` ).
+- URL-адрес ответа: основной общедоступный URL-адрес и имя регистрации приложения (например, `https://masterdns343khhde.westus.cloudapp.azure.com/oauth2callback/OCPAzureAD` ).
 - Пароль. Защищенный пароль (используйте надежный пароль).
 
 В следующем примере регистрируется приложение на основе приведенных выше сведений.
@@ -69,7 +68,7 @@ az ad app create --display-name OCPAzureAD --homepage https://masterdns343khhde.
 
 На портале Azure выполните следующие действия.
 
-1. Выберите **Azure Active Directory** > **Регистрация приложения**.
+1. Выберите **Azure Active Directory**  >  **Регистрация приложения**.
 2. Найдите зарегистрированное приложение (например, OCPAzureAD).
 3. В результатах поиска щелкните нужное зарегистрированное приложение.
 4. В области **Параметры** щелкните **Требуемые разрешения**.

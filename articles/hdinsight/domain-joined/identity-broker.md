@@ -7,12 +7,11 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: 1e7eaf49fb8b62259b8c619c89edffd629dfde7f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 1bea8adbdb39d2ce83cfe7821ef052fdc1f1d512
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81685516"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85921329"
 ---
 # <a name="use-id-broker-preview-for-credential-management"></a>Использование брокера ИДЕНТИФИКАТОРов (Предварительная версия) для управления учетными данными
 
@@ -47,7 +46,7 @@ ms.locfileid: "81685516"
 ![Параметр для включения брокера ИДЕНТИФИКАТОРов](./media/identity-broker/identity-broker-enable.png)
 
 ### <a name="using-azure-resource-manager-templates"></a>Использование шаблонов диспетчера ресурсов Azure
-При добавлении новой роли с именем `idbrokernode` со следующими атрибутами в профиль вычислений шаблона будет создан кластер с включенным узлом ID Broker:
+При добавлении новой роли `idbrokernode` с именем со следующими атрибутами в профиль вычислений шаблона будет создан кластер с включенным УЗЛОМ ID Broker:
 
 ```json
 .
@@ -90,9 +89,11 @@ ms.locfileid: "81685516"
 
 [Подключаемый модуль HDInsight IntelliJ](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-intellij-tool-plugin#integrate-with-hdinsight-identity-broker-hib) обновлен для поддержки OAuth. Этот подключаемый модуль можно использовать для подключения к кластеру и отправки заданий.
 
+Вы также можете использовать [Spark & средства Hive для VS Code](https://docs.microsoft.com/azure/hdinsight/hdinsight-for-vscode) , чтобы использовать записную книжку и отправлять задания.
+
 ## <a name="ssh-access-without-a-password-hash-in-azure-ad-ds"></a>Доступ по протоколу SSH без хэша пароля в Azure AD DS
 
-После включения брокера ИДЕНТИФИКАТОРов вам по-прежнему потребуется хэш пароля, хранящийся в AD DS Azure для сценариев SSH с учетными записями домена. Для подключения SSH к виртуальной машине, присоединенной к домену, `kinit` или для выполнения команды необходимо указать пароль. 
+После включения брокера ИДЕНТИФИКАТОРов вам по-прежнему потребуется хэш пароля, хранящийся в AD DS Azure для сценариев SSH с учетными записями домена. Для подключения SSH к виртуальной машине, присоединенной к домену, или для выполнения `kinit` команды необходимо указать пароль. 
 
 Для аутентификации SSH требуется, чтобы хэш был доступен в AD DS Azure. Если вы хотите использовать SSH только в административных сценариях, можно создать одну облачную учетную запись и использовать ее для подключения к кластеру по протоколу SSH. Другие пользователи по-прежнему могут использовать средства Ambari или HDInsight (например, подключаемый модуль IntelliJ) без использования хэша пароля в Azure AD DS.
 
@@ -100,7 +101,7 @@ ms.locfileid: "81685516"
 
 В программе установки компонента Service Broker можно обновить пользовательские приложения и клиенты, подключающиеся к шлюзу, чтобы сначала получить требуемый маркер OAuth. Вы можете выполнить действия, описанные в этом [документе](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-app) , чтобы получить маркер со следующими сведениями:
 
-*   URI ресурса OAuth:https://hib.azurehdinsight.net 
+*   URI ресурса OAuth:`https://hib.azurehdinsight.net` 
 * AppId: 7865c1d2-F040-46cc-875f-831a1ef6a28a
 *   Разрешение: (имя: Cluster. ReadWrite, идентификатор: 8f89faa0-ffef-4007-974d-4989b39ad77d)
 

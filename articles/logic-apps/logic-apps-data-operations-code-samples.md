@@ -7,11 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 09/01/2019
 ms.openlocfilehash: c56c31bb6f56efb10808ce25b6b232089391e831
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79270528"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84712451"
 ---
 # <a name="data-operation-code-samples-for-azure-logic-apps"></a>Примеры кода операций с данными для Azure Logic Apps
 

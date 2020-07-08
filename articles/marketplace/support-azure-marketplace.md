@@ -7,12 +7,11 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: dsindona
-ms.openlocfilehash: bd973a859ce1fa6a9ce5566b1403331988630960
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 8615a853ea218c0598f33d87d39c9ead15709cc0
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83828106"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85955460"
 ---
 # <a name="support-for-microsoft-commercial-marketplace"></a>Поддержка для коммерческой платформы Майкрософт
 
@@ -43,10 +42,9 @@ ms.locfileid: "83828106"
 | Эл. адрес: [gtm@microsoft.com](mailto:gtm@microsoft.com) | Поддержка преимуществ выхода на рынок по программе GTM и ответы на вопросы о программе. | Рабочие часы: тихоокеанский часовой пояс. |  
 | Эл. адрес: [cebrand@microsoft.com](mailto:cebrand@microsoft.com) | Ответы на вопросы об использовании торгового логотипа и фирменной символики Azure. |  |  
 
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Посетите страницу с [руководством для издателей коммерческой платформы](https://docs.microsoft.com/azure/marketplace/).
-* Дополнительные сведения о [поддержке для программы коммерческой платформы в Центре партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/support).
+* Посетите страницу с [руководством для издателей коммерческой платформы](index.yml).
+* Дополнительные сведения о [поддержке для программы коммерческой платформы в Центре партнеров](partner-center-portal/support.md).
 
 ---

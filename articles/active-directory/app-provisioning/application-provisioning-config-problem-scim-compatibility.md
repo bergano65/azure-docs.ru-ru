@@ -2,21 +2,20 @@
 title: Известные проблемы с соответствием протокола SCIM 2,0 — Azure AD
 description: Способы устранения распространенных проблем совместимости c протоколом, возникающих при добавлении приложения не из коллекции, которое поддерживает SCIM 2.0, в Azure AD
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 12/03/2018
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: 00551eb6c9d5d6fab9dc1d698a7a25bb6872901b
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
-ms.translationtype: MT
+ms.openlocfilehash: ae08589785d8a482801c71ce3641ba0d66d11133
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82594038"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84782268"
 ---
 # <a name="known-issues-and-resolutions-with-scim-20-protocol-compliance-of-the-azure-ad-user-provisioning-service"></a>Известные проблемы соответствия требованиям протокола SCIM 2.0 службы подготовки пользователей Azure AD и способы их устранения
 
@@ -107,6 +106,6 @@ Azure Active Directory (Azure AD) может выполнять автома�
 7. Завершите конфигурации подготовки пользователей, как обычно.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](user-provisioning.md)
 

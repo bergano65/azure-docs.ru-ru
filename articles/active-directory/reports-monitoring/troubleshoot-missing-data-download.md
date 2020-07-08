@@ -9,7 +9,7 @@ editor: ''
 ms.assetid: ffce7eb1-99da-4ea7-9c4d-2322b755c8ce
 ms.service: active-directory
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
@@ -17,12 +17,11 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee07fdb6f8a4e69600297bdb16b6ad74793f10c9
-ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
-ms.translationtype: MT
+ms.openlocfilehash: 5003d7b644a0c75401a17ed6a37f31acd8180aa9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74007722"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85608081"
 ---
 # <a name="i-cant-find-all-the-data-in-the-azure-active-directory-activity-logs-i-downloaded"></a>Я не могу найти данные в скачанных журналах действий Azure Active Directory
 
@@ -36,11 +35,11 @@ ms.locfileid: "74007722"
 
 При скачивании журналов действий в портал Azure мы ограничивают масштабирование до 250 000 записей, отсортированных по последним первым. 
 
-## <a name="resolution"></a>Разрешение
+## <a name="resolution"></a>Решение
 
 Вы можете в любой момент использовать [интерфейсы API отчетов Azure AD](concept-reporting-api.md), чтобы извлечь до миллиона записей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Вопросы и ответы об отчетах Azure Active Directory](reports-faq.md)
 

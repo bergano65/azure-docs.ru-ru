@@ -8,18 +8,17 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0ec46a1d2c7fca231b5cf6b045b634af50ee12a7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: fe3040bee56507fe40ce748d3e9e51b06eaa0213
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81459837"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85512885"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption-with-azure-ad-previous-release"></a>Создание и Настройка хранилища ключей для шифрования дисков Azure с помощью Azure AD (предыдущий выпуск)
 
 **Новый выпуск шифрования дисков Azure исключает необходимость предоставления параметра приложения Azure AD для включения шифрования дисков виртуальной машины. В новом выпуске больше не требуется предоставлять учетные данные Azure AD на этапе включения шифрования. Все новые виртуальные машины должны быть зашифрованы без параметров приложения Azure AD с помощью нового выпуска. Инструкции по включению шифрования дисков виртуальной машины с помощью нового выпуска см. в статье [Шифрование дисков Azure](disk-encryption-overview.md). Виртуальные машины, которые уже были зашифрованы с помощью параметров приложения Azure AD, по-прежнему поддерживаются и должны продолжать поддерживаться с использованием синтаксиса AAD.**
 
-Шифрование дисков Azure использует Azure Key Vault для управления ключами и секретами шифрования дисков, а так и управления ими.  Дополнительные сведения о хранилищах ключей см. в статье [Приступая к работе с Azure Key Vault](../../key-vault/key-vault-get-started.md) и [Защита хранилища ключей](../../key-vault/general/secure-your-key-vault.md). 
+Служба "Шифрование дисков Azure" использует Azure Key Vault, чтобы управлять секретами и ключами шифрования дисков и контролировать их использование.  Дополнительные сведения о хранилищах ключей см. в статье [Приступая к работе с Azure Key Vault](../../key-vault/key-vault-get-started.md) и [Защита хранилища ключей](../../key-vault/general/secure-your-key-vault.md). 
 
 Создание и Настройка хранилища ключей для использования с шифрованием дисков Azure в Azure AD (предыдущий выпуск) состоит из трех этапов:
 
@@ -28,12 +27,12 @@ ms.locfileid: "81459837"
 3. Настройте политику доступа к хранилищу ключей для приложения Azure AD.
 4. Установите политики расширенного доступа к хранилищу ключей.
  
-Вы также можете создать или импортировать ключ шифрования ключа (KEK), если нужно.
+При необходимости можно создать или импортировать ключ шифрования ключа (KEK).
 
 Инструкции по [установке средств и подключению к Azure](disk-encryption-key-vault.md#install-tools-and-connect-to-azure)см. в статье [Создание и Настройка хранилища ключей для шифрования дисков Azure](disk-encryption-key-vault.md) .
 
 > [!Note]
-> Действия, описанные в этой статье, автоматизированы в [сценарии CLI для предварительных требований к шифрованию дисков Azure](https://github.com/ejarvi/ade-cli-getting-started) и [сценарии PowerShell для компонента шифрования дисков Azure](https://github.com/Azure/azure-powershell/tree/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts).
+> Описанные в этой статье процессы автоматизируются с помощью скриптов подготовки необходимых компонентов для службы "Шифрование дисков Azure". Скрипты доступны для [интерфейса командной строки](https://github.com/ejarvi/ade-cli-getting-started) и [PowerShell](https://github.com/Azure/azure-powershell/tree/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts).
 
 
 ## <a name="create-a-key-vault"></a>Создайте хранилище ключей. 
@@ -123,10 +122,10 @@ ms.locfileid: "81459837"
 ### <a name="set-up-an-azure-ad-app-and-service-principal-though-the-azure-portal"></a><a name="bkmk_ADappRM"></a> Настройка приложения Azure AD и субъекта-службы на портале Azure
 Выполните шаги, описанные в статье [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../../active-directory/develop/howto-create-service-principal-portal.md), чтобы создать приложение Azure AD. Каждый шаг, указанный ниже, содержит ссылку непосредственно на раздел статьи. 
 
-1. [Проверьте необходимые разрешения](../../active-directory/develop/howto-create-service-principal-portal.md#required-permissions).
-2. [Создание приложения Azure Active Directory](../../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application) 
+1. [Проверьте необходимые разрешения](../../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app).
+2. [Создание приложения Azure Active Directory](../../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal) 
      - При создании приложения можно использовать любое имя и URL-адрес входа.
-3. [Получение идентификатора приложения и ключ проверки подлинности](../../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in). 
+3. [Получение идентификатора приложения и ключ проверки подлинности](../../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in). 
      - Ключ проверки подлинности является секретом клиента и используется в качестве AadClientSecret для Set-Азвмдискенкриптионекстенсион. 
         - Ключ проверки подлинности используется приложением в качестве учетной записи для входа в Azure AD. На портале Azure эти секреты называются ключами, но они не имеют никакого отношения к хранилищам ключей. Защитите этот секрет должным образом. 
      - Идентификатор приложения будет использоваться позже в качестве Аадклиентид для Set-Азвмдискенкриптионекстенсион и в качестве идентификатора свойства для Set-Азкэйваултакцессполици. 

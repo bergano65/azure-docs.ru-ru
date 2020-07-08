@@ -6,11 +6,10 @@ ms.topic: conceptual
 ms.date: 5/24/2019
 ms.author: hrushib
 ms.openlocfilehash: f56fcb7d1dde700d954c3b55bcf8cd7759893521
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79259010"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84712468"
 ---
 # <a name="periodic-backup-and-restore-in-an-azure-service-fabric-cluster"></a>Периодическое резервное копирование и восстановление в кластере Azure Service Fabric
 > [!div class="op_single_selector"]
@@ -68,7 +67,7 @@ Service Fabric предоставляет набор API для использо
 
 ### <a name="using-azure-portal"></a>Использование портала Azure
 
-Флажок `Include backup restore service` включить в разделе `+ Show optional settings` на `Cluster Configuration` вкладке.
+Флажок включить в `Include backup restore service` разделе `+ Show optional settings` на `Cluster Configuration` вкладке.
 
 ![Включение службы восстановления резервных копий с помощью портала][1]
 
@@ -76,7 +75,7 @@ Service Fabric предоставляет набор API для использо
 ### <a name="using-azure-resource-manager-template"></a>Использование шаблона Azure Resource Manager
 Сначала необходимо включить _службу резервного копирования и восстановления_ в кластере. Получите шаблон для кластера, который требуется развернуть. Вы можете использовать [примеры шаблонов](https://github.com/Azure/azure-quickstart-templates/tree/master/service-fabric-secure-cluster-5-node-1-nodetype) или создать шаблон Resource Manager. Включите _службу резервного копирования и восстановления_ следующим образом:
 
-1. Убедитесь, что `apiversion` **`2018-02-01`** для `Microsoft.ServiceFabric/clusters` ресурса задано значение, а в противном случае обновите его, как показано в следующем фрагменте кода:
+1. Убедитесь, что `apiversion` для ресурса задано значение, а в противном **`2018-02-01`** `Microsoft.ServiceFabric/clusters` случае обновите его, как показано в следующем фрагменте кода:
 
     ```json
     {

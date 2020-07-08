@@ -7,18 +7,17 @@ author: rolyon
 manager: mtillman
 ms.service: role-based-access-control
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/26/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: baf309a93f8ba976cb6511c05ba5032ad07a0fc9
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
-ms.translationtype: HT
+ms.openlocfilehash: e26f2ed498b8bfcf6b1518ea34815efb75a8eabe
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83874037"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85392460"
 ---
 # <a name="add-azure-role-assignments-using-azure-resource-manager-templates"></a>Добавление назначений ролей Azure с помощью шаблона Azure Resource Manager
 
@@ -68,7 +67,7 @@ objectid=$(az ad sp list --display-name "{name}" --query [].objectId --output ts
 
 Чтобы предоставить доступ в Azure RBAC, нужно добавить назначение ролей.
 
-### <a name="resource-group-without-parameters"></a>Группа ресурсов (без параметров)
+### <a name="resource-group-scope-without-parameters"></a>Область группы ресурсов (без параметров)
 
 Следующий шаблон демонстрирует базовый способ добавления назначения ролей. Некоторые значения указываются в шаблоне. Приведенный ниже шаблон демонстрирует:
 
@@ -111,7 +110,7 @@ az group deployment create --resource-group ExampleGroup --template-file rbac-te
 
 ![Назначение ролей в области группы ресурсов](./media/role-assignments-template/role-assignment-template.png)
 
-### <a name="resource-group-or-subscription"></a>Группа ресурсов или подписка
+### <a name="resource-group-or-subscription-scope"></a>Область группы ресурсов или подписки
 
 Предыдущий шаблон не очень гибкий. В следующем шаблоне используются параметры, и его можно использовать в разных областях. Приведенный ниже шаблон демонстрирует:
 
@@ -195,7 +194,7 @@ New-AzDeployment -Location centralus -TemplateFile rbac-test.json -principalId $
 az deployment create --location centralus --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Reader
 ```
 
-### <a name="resource"></a>Ресурс
+### <a name="resource-scope"></a>Область ресурса
 
 Если необходимо добавить назначение ролей на уровне ресурса, используется другой формат назначения ролей. Вы указываете пространство имен поставщика ресурсов и тип того ресурса, которому нужно назначить роль. Вы также включаете имя ресурса в имя назначения ролей.
 

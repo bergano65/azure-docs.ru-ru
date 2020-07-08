@@ -4,15 +4,14 @@ description: Узнайте о процессе тестирования про�
 author: roygara
 ms.author: rogarana
 ms.date: 01/11/2019
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: virtual-machines-linux
 ms.subservice: disks
-ms.openlocfilehash: 640ec54e9634751d05c2cea90d7c03d02e7a3387
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: a658bfc0815a03d0f6944d1c42eacdd04397458d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75720061"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84660891"
 ---
 # <a name="benchmarking-a-disk"></a>Тестирование производительности диска
 
@@ -24,7 +23,7 @@ ms.locfileid: "75720061"
 
 [!INCLUDE [virtual-machines-disks-benchmarking](../../../includes/virtual-machines-managed-disks-benchmarking.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Перейдите к нашей статье о [проектировании для обеспечения высокой производительности](premium-storage-performance.md).
 

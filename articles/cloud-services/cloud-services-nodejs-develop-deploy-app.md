@@ -9,12 +9,11 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 08/17/2017
 ms.author: tagore
-ms.openlocfilehash: 23fbb0b4c506b2f72000add9704618337b8b24cf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 774d2bb58fd7dd75825be8f433f078d70c13fe8c
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75386193"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85919982"
 ---
 # <a name="build-and-deploy-a-nodejs-application-to-an-azure-cloud-service"></a>Построение и развертывание приложения Node.js в облачной службе Azure
 
@@ -31,7 +30,7 @@ ms.locfileid: "75386193"
 
 ![В окне браузера отображается веб-страница "Hello World"][A web browser displaying the Hello World web page]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 > [!NOTE]
 > В этом учебнике используется Azure PowerShell, для которого требуется операционная система Windows.
 
@@ -47,19 +46,24 @@ ms.locfileid: "75386193"
 2. [Подключите PowerShell] к своей подписке.
 3. Введите следующий командлет PowerShell, чтобы создать проект:
 
-        New-AzureServiceProject helloworld
+   ```powershell
+   New-AzureServiceProject helloworld
+   ```
 
-    ![Результат выполнения команды New-AzureService helloworld][The result of the New-AzureService helloworld command]
+   ![Результат выполнения команды New-AzureService helloworld][The result of the New-AzureService helloworld command]
 
-    Командлет **New-AzureServiceProject** формирует базовую структуру для публикации приложения Node.js в облачной службе. Он содержит файлы конфигурации, необходимые для публикации в Azure. Командлет также изменяет рабочий каталог на каталог для службы.
+   Командлет **New-AzureServiceProject** формирует базовую структуру для публикации приложения Node.js в облачной службе. Он содержит файлы конфигурации, необходимые для публикации в Azure. Командлет также изменяет рабочий каталог на каталог для службы.
 
-    Командлет создает следующие файлы:
+   Командлет создает следующие файлы:
 
    * **ServiceConfiguration.Cloud.cscfg**, **ServiceConfiguration.Local.cscfg** и **ServiceDefinition.csdef** — специальные файлы Azure, необходимые для публикации приложения. См. [общие сведения о создании размещенной службы для Azure].
    * **deploymentSettings.json**хранит локальные параметры, используемые командлетами развертывания Azure PowerShell.
+
 4. Введите следующую команду, чтобы добавить новую веб-роль:
 
-       Add-AzureNodeWebRole
+   ```powershell
+   Add-AzureNodeWebRole
+   ```
 
    ![Вывод команды Add-AzureNodeWebRole.][The output of the Add-AzureNodeWebRole command]
 
@@ -70,12 +74,14 @@ ms.locfileid: "75386193"
 
 Приложение Node.js определяется в файле **server.js**, который находится в каталоге веб-роли (по умолчанию это **WebRole1**). Ниже приведен код:
 
-    var http = require('http');
-    var port = process.env.port || 1337;
-    http.createServer(function (req, res) {
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.end('Hello World\n');
-    }).listen(port);
+```js
+var http = require('http');
+var port = process.env.port || 1337;
+http.createServer(function (req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello World\n');
+}).listen(port);
+```
 
 Данный пример кода является практически аналогичным образцу Hello World на веб-сайте [nodejs.org] , за исключением того, что он использует номер порта, назначенный средой облака.
 
@@ -89,14 +95,18 @@ ms.locfileid: "75386193"
 
 1. Выполните следующий командлет Azure PowerShell:
 
-       Get-AzurePublishSettingsFile
+    ```powershell
+    Get-AzurePublishSettingsFile
+    ```
 
    Для перехода на страницу загрузки настроек публикации будет использован браузер. Может отобразиться предложение войти в систему с помощью учетной записи Майкрософт. В таком случае подписка Azure будет связана с этой учетной записью.
 
    Сохраните загруженный профиль в расположении файла, к которому есть доступ.
 2. Выполните следующий командлет, чтобы импортировать профиль публикации, который вы загрузили:
 
-       Import-AzurePublishSettingsFile [path to file]
+    ```powershell
+    Import-AzurePublishSettingsFile [path to file]
+    ```
 
     > [!NOTE]
     > После импорта настроек публикации удалите загруженный файл PUBLISHSETTINGS, поскольку он содержит информацию, которая может использоваться другими пользователями для доступа к вашей учетной записи.
@@ -104,8 +114,10 @@ ms.locfileid: "75386193"
 ### <a name="publish-the-application"></a>Публикация приложения
 Для публикации выполните следующие команды.
 
-      $ServiceName = "NodeHelloWorld" + $(Get-Date -Format ('ddhhmm'))
-    Publish-AzureServiceProject -ServiceName $ServiceName  -Location "East US" -Launch
+```powershell
+$ServiceName = "NodeHelloWorld" + $(Get-Date -Format ('ddhhmm'))
+Publish-AzureServiceProject -ServiceName $ServiceName  -Location "East US" -Launch
+```
 
 * **-ServiceName** указывает имя для развертывания. Это должно быть уникальное имя, в противном случае произойдет сбой в процессе публикации. Команда **Get-Date** добавляет к строке дату и время, чтобы сделать имя уникальным.
 * **-Location** указывает центр обработки данных, в котором будет размещаться приложение. Чтобы просмотреть список доступных центров обработки данных, используйте командлет **Get-AzureLocation** .
@@ -136,14 +148,18 @@ ms.locfileid: "75386193"
 
 1. В окне Windows PowerShell остановите развертывание службы, созданное в предыдущем разделе со следующего командлета:
 
-       Stop-AzureService
+    ```powershell
+    Stop-AzureService
+    ```
 
    Остановка службы может занять несколько минут. Если эта служба остановлена, появится сообщение, указывающее на то, что она была остановлена.
 
    ![Состояние команды Stop-AzureService][The status of the Stop-AzureService command]
 2. Чтобы удалить службу, вызовите следующий командлет:
 
-       Remove-AzureService
+    ```powershell
+    Remove-AzureService
+    ```
 
    При появлении запроса введите **Y** , чтобы удалить службу.
 
@@ -154,7 +170,7 @@ ms.locfileid: "75386193"
    > [!NOTE]
    > При удалении службы учетная запись хранения, созданная при первоначальной публикации службы, не удаляется. Оплата за использование хранилища будет насчитываться. Если хранилище не используется другими объектами, его можно удалить.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительную информацию см. в [центре разработчиков Node.js].
 
 <!-- URL List -->

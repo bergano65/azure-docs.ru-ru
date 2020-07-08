@@ -7,12 +7,11 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: guide
 ms.date: 04/09/2020
-ms.openlocfilehash: addf85f3ed966f45472fec6ee15272574a0f840e
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
-ms.translationtype: HT
+ms.openlocfilehash: e96118e3c570faaaffb4cc7ef64e6d2d0e075e47
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83724723"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85954182"
 ---
 # <a name="common-issues-during-vhd-creation"></a>Распространенные проблемы при создании виртуального жесткого диска
 
@@ -20,7 +19,7 @@ ms.locfileid: "83724723"
 
 ## <a name="how-do-i-create-a-vm-from-the-azure-portal-using-a-vhd-in-premium-storage"></a>Как создать виртуальную машину на портале Azure с помощью виртуального жесткого диска в хранилище класса Premium?
 
-Azure Marketplace в настоящее время не поддерживает создание предложений виртуальных машин на основе образов, находящихся в управляемом хранилище или в хранилище Azure класса Premium. Дополнительные сведения см. в статье [Общие сведения об управляемых дисках Azure](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview).
+Azure Marketplace в настоящее время не поддерживает создание предложений виртуальных машин на основе образов, находящихся в управляемом хранилище или в хранилище Azure класса Premium. Дополнительные сведения см. в статье [Общие сведения об управляемых дисках Azure](../../virtual-machines/windows/managed-disks-overview.md).
 
 ## <a name="can-i-use-generation-2-vms-for-offers"></a>Можно ли использовать виртуальные машины 2-го поколения для предложений?
 
@@ -45,9 +44,9 @@ Azure Marketplace в настоящее время не поддерживает
 
 Если вы используете модель развертывания Azure Resource Manager, у вас есть три варианта:
 
-* [Создание VPN-шлюза на основе маршрутов с помощью портала Azure](https://docs.microsoft.com/azure/vpn-gateway/create-routebased-vpn-gateway-portal)
-* [Создание VPN-шлюза на основе маршрутов с помощью Azure PowerShell](https://docs.microsoft.com/azure/vpn-gateway/create-routebased-vpn-gateway-powershell)
-* [Создание VPN-шлюза на основе маршрута с помощью CLI](https://docs.microsoft.com/azure/vpn-gateway/create-routebased-vpn-gateway-cli)
+* [Создание VPN-шлюза на основе маршрутов с помощью портала Azure](../../vpn-gateway/create-routebased-vpn-gateway-portal.md)
+* [Создание VPN-шлюза на основе маршрутов с помощью Azure PowerShell](../../vpn-gateway/create-routebased-vpn-gateway-powershell.md)
+* [Создание VPN-шлюза на основе маршрута с помощью CLI](../../vpn-gateway/create-routebased-vpn-gateway-cli.md)
 
 ## <a name="what-are-microsoft-support-policies-for-running-microsoft-server-software-on-azure-based-vms"></a>Каковы политики поддержки корпорации Майкрософт для запуска серверного программного обеспечения Майкрософт на виртуальных машинах Azure?
 
@@ -75,4 +74,4 @@ Azure Marketplace в настоящее время не поддерживает
 
 Каждый раз при попытке создать образ виртуальных жестких дисков в Azure PowerShell отображается следующее сообщение об ошибке: "VHD уже зарегистрирован в репозитории образов как ресурс". Я не создавал образы раньше, и в Azure отсутствует образ с таким именем. Как решить эту проблему?
 
-Эта проблема обычно возникает, если вы создали виртуальную машину на основе виртуального жесткого диска, который имеет блокировку. Убедитесь, что виртуальная машина не выделяется из такого виртуального жесткого диска, а затем повторите операцию. Если проблема не устранена, отправьте запрос в службу поддержки. См. статью [Поддержка для Центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/support).
+Эта проблема обычно возникает, если вы создали виртуальную машину на основе виртуального жесткого диска, который имеет блокировку. Убедитесь, что виртуальная машина не выделяется из такого виртуального жесткого диска, а затем повторите операцию. Если проблема не устранена, отправьте запрос в службу поддержки. См. статью [Поддержка для Центра партнеров](support.md).

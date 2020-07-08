@@ -5,15 +5,14 @@ author: mhopkins-msft
 ms.author: mhopkins
 ms.date: 04/24/2020
 ms.service: storage
-ms.subservice: common
-ms.topic: conceptual
+ms.subservice: blobs
+ms.topic: how-to
 ms.reviewer: hux
-ms.openlocfilehash: cc82b6578b06323d8cf9a09644d50043dba8e554
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
-ms.translationtype: HT
+ms.openlocfilehash: 6e3ce99211da35105fd9e118a850110dfd48ece1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83774329"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84986282"
 ---
 # <a name="utilize-blob-index-tags-preview-to-manage-and-find-data-on-azure-blob-storage"></a>Использование тегов индекса больших двоичных объектов (предварительная версия) для поиска данных и управления ими в хранилище BLOB-объектов Azure
 
@@ -22,7 +21,7 @@ ms.locfileid: "83774329"
 Дополнительные сведения об индексе больших двоичных объектов см. в статье [Управление данными в хранилище BLOB-объектов Azure и их поиск с помощью индекса больших двоичных объектов (предварительная версия)](storage-manage-find-blobs.md).
 
 > [!NOTE]
-> Индекс больших двоичных объектов находится в стадии общедоступной предварительной версии и доступен в регионах **Центральная Франция** и **Южная Франция**. Дополнительные сведения об этой функции, а также известных проблемах и ограничениях см. в статье [Управление данными в хранилище BLOB-объектов Azure и их поиск с помощью индекса больших двоичных объектов (предварительная версия)](storage-manage-find-blobs.md).
+> Индекс больших двоичных объектов доступен в общедоступной предварительной версии и доступен в регионах " **Центральная Канада**", " **Восточная Канада**", " **Франция** " и " **Франция** ". Дополнительные сведения об этой функции, а также известных проблемах и ограничениях см. в статье [Управление данными в хранилище BLOB-объектов Azure и их поиск с помощью индекса больших двоичных объектов (предварительная версия)](storage-manage-find-blobs.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 # <a name="portal"></a>[Портал](#tab/azure-portal)

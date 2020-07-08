@@ -10,12 +10,11 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: 0a3e3455615006c0e93cf32eebcdaedac9960a79
-ms.sourcegitcommit: 4042aa8c67afd72823fc412f19c356f2ba0ab554
-ms.translationtype: MT
+ms.openlocfilehash: 520b38f4c733e7bf28a2a06429ad14d016c5bd28
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85307734"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86027619"
 ---
 # <a name="send-custom-commands-activity-to-client-application"></a>Отправка действия настраиваемых команд клиентскому приложению
 
@@ -26,9 +25,9 @@ ms.locfileid: "85307734"
 - Определение и Отправка пользовательских полезных данных JSON из приложения пользовательских команд
 - Получение и визуализация содержимого настраиваемой полезной нагрузки JSON из клиентского приложения SDK для языка C# UWP
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 > [!div class = "checklist"]
-> * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
+> * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) или более поздней версии. В этом руководством используется Visual Studio 2019
 > * Ключ подписки Azure для службы речи: [получите бесплатную](get-started.md) или создайте ее на [портал Azure](https://portal.azure.com)
 > * Ранее [созданное приложение пользовательских команд](quickstart-custom-commands-application.md)
 > * Клиентское приложение с поддержкой Speech SDK: [практические руководства. Интеграция с клиентским приложением с помощью пакета SDK для речи](./how-to-custom-commands-setup-speech-sdk.md)
@@ -46,7 +45,7 @@ ms.locfileid: "85307734"
      "device": "{SubjectDevice}"
    }
    ```
-1. Нажмите кнопку **сохранить** , чтобы создать новое правило с действием Отправить действие.
+1. Нажмите кнопку **сохранить** , чтобы создать новое правило с действием Отправить действие, **обучить** и **опубликовать** изменение
 
    > [!div class="mx-imgBorder"]
    > ![Правило завершения отправки действия](media/custom-commands/send-activity-to-client-completion-rules.png)
@@ -55,9 +54,12 @@ ms.locfileid: "85307734"
 
 В [пошаговом окне Настройка клиентского приложения с помощью речевого пакета SDK (Предварительная версия)](./how-to-custom-commands-setup-speech-sdk.md)вы создали клиентское приложение UWP с пакетом SDK для распознавания речи, которое обрабатывает такие команды `turn on the tv` , как, `turn off the fan` . После добавления некоторых визуальных элементов можно увидеть результат этих команд.
 
-Добавьте помеченные поля с текстом, **указывающим** или **отключив** использование следующего XML-кода, добавленного в`MainPage.xaml`
+Чтобы добавить помеченные поля с текстом, **указывающим** или **выключая**, добавьте следующий XML-блок StackPanel в `MainPage.xaml` .
 
 ```xml
+<StackPanel Orientation="Vertical" H......>
+......
+</StackPanel>
 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
     <Grid x:Name="Grid_TV" Margin="50, 0" Width="100" Height="100" Background="LightBlue">
         <StackPanel>
@@ -72,6 +74,7 @@ ms.locfileid: "85307734"
         </StackPanel>
     </Grid>
 </StackPanel>
+<MediaElement ....../>
 ```
 
 ### <a name="add-reference-libraries"></a>Добавление библиотек ссылок
@@ -79,15 +82,21 @@ ms.locfileid: "85307734"
 Так как вы создали полезные данные JSON, необходимо добавить ссылку на библиотеку [JSON.NET](https://www.newtonsoft.com/json) для управления десериализацией.
 
 1. Щелкните правой кнопкой мыши клиентское решение.
-1. Выберите **Управление пакетами NuGet для решения**, нажмите кнопку **установить** . 
-1. Поиск **Newtonsoft.json** в списке обновлений обновите **Microsoft. NETCore. UniversalWindowsPlatform** до последней версии
+1. Выберите **Управление пакетами NuGet для решения**, нажмите кнопку **Обзор** . 
+1. Если вы уже установили **Newtonsoft.jsв**, убедитесь, что его версия по крайней мере 12.0.3. Если это не так, перейдите к разделу **Управление пакетами NuGet для обновления решения**, выполните поиск по **Newtonsoft.json** , чтобы обновить его. В этом руководством используется версия 12.0.3.
 
-> [!div class="mx-imgBorder"]
-> ![Отправка полезных данных действия](media/custom-commands/send-activity-to-client-json-nuget.png)
+    > [!div class="mx-imgBorder"]
+    > ![Отправка полезных данных действия](media/custom-commands/send-activity-to-client-json-nuget.png)
+
+1. Кроме того, убедитесь, что пакет NuGet **Microsoft. NETCore. UniversalWindowsPlatform** имеет по крайней мере 6.2.10. В этом руководством используется версия 6.2.10.
 
 В "MainPage. XAML. cs" добавьте
-- `using Newtonsoft.Json;` 
-- `using Windows.ApplicationModel.Core;`
+
+```C#
+using Newtonsoft.Json; 
+using Windows.ApplicationModel.Core;
+using Windows.UI.Core;
+```
 
 ### <a name="handle-the-received-payload"></a>Обрабатывает полученные полезные данные
 
@@ -146,7 +155,7 @@ connector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
    > [!div class="mx-imgBorder"]
    > ![Отправка полезных данных действия](media/custom-commands/send-activity-to-client-turn-on-tv.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Как настроить конечные веб-точки (Предварительная версия)](./how-to-custom-commands-setup-web-endpoints.md)

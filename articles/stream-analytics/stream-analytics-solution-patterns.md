@@ -7,12 +7,11 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
-ms.openlocfilehash: 3b95863c1ae53bd0642aec356f55aba1faf8ef09
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: 49c83fab54b7188c3a3838f3162e71d8495989dd
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79535788"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86037517"
 ---
 # <a name="azure-stream-analytics-solution-patterns"></a>Шаблоны решений Azure Stream Analytics
 
@@ -30,7 +29,7 @@ ms.locfileid: "79535788"
 
 ## <a name="use-sql-for-dashboard"></a>Использование SQL для панели мониторинга
 
-Панель мониторинга Power BI имеет низкую задержку, но ее нельзя использовать для создания полноценных Power BI отчетов. Общий шаблон отчетов — это предварительный вывод данных в базу данных SQL. Затем используйте соединитель SQL Power BI, чтобы запросить последние данные в SQL.
+Панель мониторинга Power BI имеет низкую задержку, но ее нельзя использовать для создания полноценных Power BI отчетов. Общий шаблон отчетов — сначала вывести данные в базу данных SQL. Затем используйте соединитель SQL Power BI, чтобы запросить последние данные в SQL.
 
 ![Панель мониторинга SQL ASA](media/stream-analytics-solution-patterns/sqldashboard.png)
 
@@ -183,7 +182,7 @@ SQL не является хранилищем данных с высокой п
 
 Ключом является проектирование системы в шаблонах с композицией, поэтому каждая подсистема может быть построена, протестирована, обновлена и восстановлена независимо друг от друга.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь вы узнали о различных шаблонах решений, использующих Azure Stream Analytics. Теперь вы можете вникнуть в детали и создать свое первое задание Stream Analytics:
 

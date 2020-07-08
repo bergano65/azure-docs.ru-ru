@@ -1,25 +1,19 @@
 ---
 title: Размеры виртуальных машин Azure общего назначения | Документация Майкрософт
 description: Список различных размеров виртуальных машин общего назначения в Azure. Сведения о количестве виртуальных ЦП, дисков данных и сетевых адаптеров, а также о пропускной способности хранилища и сети для размеров виртуальных машин этой серии.
-services: virtual-machines
-documentationcenter: ''
 author: mimckitt
-manager: gwallace
-editor: ''
-tags: azure-resource-manager,azure-service-management
-ms.assetid: ''
 ms.service: virtual-machines
+ms.subservice: sizes
 ms.devlang: na
 ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 02/20/2020
 ms.author: mimckitt
-ms.openlocfilehash: b5e597eebda6a730d301eefdbd2d7e6859f5a7cc
-ms.sourcegitcommit: 8017209cc9d8a825cc404df852c8dc02f74d584b
-ms.translationtype: HT
+ms.openlocfilehash: 1e9cce7adc6dbc9062dd133d690fbce92c3190fc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84248317"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84783322"
 ---
 # <a name="general-purpose-virtual-machine-sizes"></a>Размеры виртуальных машин общего назначения
 
@@ -36,12 +30,13 @@ ms.locfileid: "84248317"
 
 - [Серия DCv2](dcv2-series.md) может помочь защитить конфиденциальность и целостность данных и кода при его работе в общедоступном облаке. Эти машины поддерживают последнее поколение процессора Intel XEON E-2288G с технологией SGX. С помощью технологии Intel Turbo Boost эти компьютеры могут перейти на 5 ГГц. Экземпляры серии DCv2 позволяют клиентам во время использования создавать защищенные приложения на основе анклава для защиты своего кода и данных.
 
-- Виртуальные машины [серии Dv2 и Dsv2](dv2-dsv2-series.md), модификации исходной серии D, отличаются более мощным ЦП и оптимальным соотношением производительности ЦП и памяти, а значит, подходят для большинства производственных рабочих нагрузок. Серия Dv2 примерно на 35 % быстрее, чем серия D. В серии Dv2 используются процессоры Intel® Xeon® 8171M с тактовой частотой 2,1 ГГц (Skylake), или Intel® Xeon® E5-2673 версии 4 с тактовой частотой 2,3 ГГц (Broadwell), или Intel® Xeon® E5-2673 версии 3 с тактовой частотой 2,4 ГГц (Haswell) с технологией Intel Turbo Boost версии 2.0. Серия Dv2 имеет такие же конфигурации памяти и диска, как и серия D.
+- Виртуальные машины [серии Dv2 и Dsv2](dv2-dsv2-series.md), модификации исходной серии D, отличаются более мощным ЦП и оптимальным соотношением производительности ЦП и памяти, а значит, подходят для большинства производственных рабочих нагрузок. Серия Dv2 примерно на 35 % быстрее, чем серия D. Серии Dv2 работают на базе 2-го поколения Intel® Xeon® Platinum 8272CL (Cascade Lake), Intel® Xeon® 8171M 2.1 ГГц (Skylake), Intel® Xeon® 3 – 2673 v4 2,3 ГГц (Broadwell) или Intel® Xeon® 2673 v3 2,4 ГГц (Haswell) с 2,0 технологией Intel Turbo Boost. Серия Dv2 имеет такие же конфигурации памяти и диска, как и серия D.
 
-- Виртуальных машины [серии Dv3 и Dsv3](dv3-dsv3-series.md) работают на процессорах Intel® Xeon® 8171M с тактовой частотой 2,1 ГГц (Skylake), Intel® Xeon® E5-2673 версии 4 с тактовой частотой 2,3 ГГц (Broadwell) или Intel® Xeon® E5-2673 версии 3 с тактовой частотой 2,4 ГГц (Haswell) в конфигурации с поддержкой технологии Hyper-Threading, предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. Объем памяти увеличен с 3,5 ГиБ до 4 ГиБ на виртуальный ЦП, а дисковые и сетевые ограничения в связи с переходом на технологию Hyper Threading подстроены под каждое ядро. Серия Dv3 больше не предлагает виртуальные машины с большим объемом памяти серий D и Dv2. Такие виртуальные машины вынесены в новые, более оптимизированные для операций в памяти, серии [Ev3 и Esv3](ev3-esv3-series.md).
+- [Серии Dv3 и Dsv3](dv3-dsv3-series.md) Виртуальные машины работают на основе 2-го поколения Intel® Xeon® Platinum 8272CL (Cascade Lake), Intel® Xeon® 8171M 2.1 ГГц (Skylake), Intel® Xeon® Broadwell-2673 v4 2,3 ГГц (2673) или Intel® Xeon® Haswell v3 2,4 ГГц () в конфигурации с технологией Hyper-Threading, предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. Объем памяти увеличен с 3,5 ГиБ до 4 ГиБ на виртуальный ЦП, а дисковые и сетевые ограничения в связи с переходом на технологию Hyper Threading подстроены под каждое ядро. Серия Dv3 больше не предлагает виртуальные машины с большим объемом памяти серий D и Dv2. Такие виртуальные машины вынесены в новые, более оптимизированные для операций в памяти, серии [Ev3 и Esv3](ev3-esv3-series.md).
 
-- Виртуальные машины[серии Ddv4 и Ddsv4](ddv4-ddsv4-series.md) работают на процессорах второго поколения Intel&reg; Xeon&reg; Platinum 8272CL (Cascade Lake), предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. При этом поддерживается постоянная тактовая частота всех ядер 3,4 ГГц и используются технологии [Intel&reg; Turbo Boost 2.0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [Intel&reg; Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и [Intel&reg; Advanced Vector Extensions 512 (Intel AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html). 
+- [Серии dv4 и Dsv4](dv4-dsv4-series.md) Виртуальные машины работают на &reg; процессорах Intel Xeon &reg; Platinum 8272CL (Cascade Lake) 2-го поколения, предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. Виртуальные машины dv4 и Dsv4 — это новая категория виртуальных машин, которая зависит от удаленных дисков и не предоставляет временное локальное хранилище. При этом поддерживается постоянная тактовая частота всех ядер 3,4 ГГц и используются технологии [Intel&reg; Turbo Boost 2.0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [Intel&reg; Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и [Intel&reg; Advanced Vector Extensions 512 (Intel AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html). 
 
+- [Серии Ddv4 и Ddsv4](ddv4-ddsv4-series.md) Виртуальные машины работают на &reg; процессорах Intel Xeon &reg; Platinum 8272CL (Cascade Lake) 2-го поколения, предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. Виртуальные машины Ddv4 и Ddsv4 — это новая категория виртуальных машин, которая включает локальные временные диски данных. При этом поддерживается постоянная тактовая частота всех ядер 3,4 ГГц и используются технологии [Intel&reg; Turbo Boost 2.0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [Intel&reg; Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и [Intel&reg; Advanced Vector Extensions 512 (Intel AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html). 
 
 ## <a name="other-sizes"></a>Остальные размеры
 

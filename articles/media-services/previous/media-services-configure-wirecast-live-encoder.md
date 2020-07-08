@@ -15,12 +15,11 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.reviewer: cenkdin;anilmur
-ms.openlocfilehash: 8e3705aaecb0760513f0605aece89b7ffc0044a8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: f5ca4496b9de25d6e95f37076f679eacff28af81
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81641644"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85954981"
 ---
 # <a name="use-the-wirecast-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика Wirecast для отправки односкоростного обновляющегося потока 
 > [!div class="op_single_selector"]
@@ -102,7 +101,7 @@ ms.locfileid: "81641644"
 
     Задайте имя набора параметров и проверьте следующие рекомендуемые параметры:
 
-    **Роли**
+    **Видео**
 
    * Кодировщик: MainConcept H.264
    * Кадров в секунду: 30
@@ -110,7 +109,7 @@ ms.locfileid: "81641644"
    * Профиль: основной
    * Ключевой кадр: каждые 60 кадров
 
-     **Звук:**
+     **Аудиосигнал**
 
    * Конечная скорость: 192 Кбит/сек
    * Частота выборки: 44,100 кГц
@@ -132,7 +131,7 @@ ms.locfileid: "81641644"
 
     ![Wirecast](./media/media-services-wirecast-live-encoder/media-services-wirecast5.png)
 
-1. Нажмите кнопку **OK**.
+1. Нажмите кнопку **ОК**.
 2. На главном экране **Wirecast** подтвердите готовность источников ввода для видео и звука, а затем щелкните **Stream** (Потоковая передача) в верхнем левом углу.
 
     ![Wirecast](./media/media-services-wirecast-live-encoder/media-services-wirecast7.png)
@@ -147,7 +146,7 @@ ms.locfileid: "81641644"
 
 Перейдите в средство AMSE и щелкните правой кнопкой мыши канал, который необходимо проверить. В меню наведите указатель мыши на пункт **Playback the Preview** (Воспроизведение для предварительного просмотра) и выберите пункт **with Azure Media Player** (с помощью Проигрывателя мультимедиа Azure).  
 
-    ![wirecast](./media/media-services-wirecast-live-encoder/media-services-wirecast8.png)
+![Wirecast](./media/media-services-wirecast-live-encoder/media-services-wirecast8.png)
 
 Если поток отображается в проигрывателе, то кодировщик правильно настроен для подключения к AMS.
 
@@ -175,5 +174,5 @@ ms.locfileid: "81641644"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
