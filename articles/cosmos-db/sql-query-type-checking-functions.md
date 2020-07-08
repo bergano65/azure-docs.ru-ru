@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: cac8be4c39737ca209653532d00375c8c9bee48e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3ffe8fa9286c8594dc72d78582f8c7b0a3d05c78
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "71349078"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85563329"
 ---
 # <a name="type-checking-functions-azure-cosmos-db"></a>Функции проверки типов (Azure Cosmos DB)
 
@@ -23,17 +23,19 @@ ms.locfileid: "71349078"
 Ниже приведена таблица поддерживаемых встроенных функций проверки типов:
 
 Следующие функции поддерживают проверку типа входных значений и возвращают логическое значение.  
-  
-||||  
-|-|-|-|  
-|[IS_ARRAY](sql-query-is-array.md)|[IS_BOOL](sql-query-is-bool.md)|[IS_DEFINED](sql-query-is-defined.md)|  
-|[IS_NULL](sql-query-is-null.md)|[IS_NUMBER](sql-query-is-number.md)|[IS_OBJECT](sql-query-is-object.md)|  
-|[IS_PRIMITIVE](sql-query-is-primitive.md)|[IS_STRING](sql-query-is-string.md)||  
-  
 
-## <a name="next-steps"></a>Дальнейшие действия
+* [IS_ARRAY](sql-query-is-array.md)
+* [IS_BOOL](sql-query-is-bool.md)
+* [IS_DEFINED](sql-query-is-defined.md)
+* [IS_NULL](sql-query-is-null.md)
+* [IS_NUMBER](sql-query-is-number.md)
+* [IS_OBJECT](sql-query-is-object.md)
+* [IS_PRIMITIVE](sql-query-is-primitive.md)
+* [IS_STRING](sql-query-is-string.md)
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство с Azure Cosmos DB](introduction.md)
+- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
 - [Определенные пользователем функции](sql-query-udfs.md)
 - [Статистические выражения](sql-query-aggregates.md)

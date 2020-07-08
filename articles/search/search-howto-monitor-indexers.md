@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 699b5a4e5a7f10c883667ca5030dd971855467f5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 02a0de7760c660a7cce1bbd9cd36d4bb2a1180e0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74112976"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85565787"
 ---
 # <a name="how-to-monitor-azure-cognitive-search-indexer-status-and-results"></a>Как отслеживать состояние и результаты индексатора Azure Когнитивный поиск
 
@@ -82,7 +82,7 @@ Azure Когнитивный поиск предоставляет сведен�
 
 Состояние и журнал выполнения индексатора можно получить с помощью [команды получить состояние индексатора](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status):
 
-    GET https://[service name].search.windows.net/indexers/[indexer name]/status?api-version=2019-05-06
+    GET https://[service name].search.windows.net/indexers/[indexer name]/status?api-version=2020-06-30
     api-key: [Search service admin key]
 
 Ответ содержит сведения об общем состоянии индексатора, последнем (или текущем) вызове индексатора, а также журнал последних вызовов индексатора.
@@ -180,6 +180,6 @@ static void CheckIndexerStatus(Indexer indexer, SearchServiceClient searchServic
 
 Дополнительные сведения о кодах состояния и сведения о мониторинге индексаторов см. в разделе [жетиндексерстатус](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status) в REST API.
 
-Сведения об ошибках или предупреждениях, связанных с конкретным документом, можно получить `IndexerExecutionResult.Errors` , `IndexerExecutionResult.Warnings`перечисляя списки и.
+Сведения об ошибках или предупреждениях, связанных с конкретным документом, можно получить, перечисляя списки `IndexerExecutionResult.Errors` и `IndexerExecutionResult.Warnings` .
 
 Дополнительные сведения о классах пакета SDK для .NET, используемых для мониторинга индексаторов, см. в разделе [индексерексекутионинфо](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexerexecutioninfo?view=azure-dotnet) и [индексерексекутионресулт](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexerexecutionresult?view=azure-dotnet).

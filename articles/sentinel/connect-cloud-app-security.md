@@ -1,6 +1,6 @@
 ---
 title: Подключение Cloud App Security данных к Azure Sentinel | Документация Майкрософт
-description: Узнайте, как подключить данные Cloud App Security к Azure Sentinel.
+description: Узнайте, как использовать соединитель Microsoft Cloud App Security (МКАС) для потоковой передачи предупреждений и Cloud Discovery журналов из МКАС в Azure Sentinel. 
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -14,16 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/24/2020
 ms.author: yelevin
-ms.openlocfilehash: 266d97e834247088d40837cbec1436e00d0f4be2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8439c8f7aa4e75abd727d2ce2e80d98e6fce5411
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80422141"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85563948"
 ---
 # <a name="connect-data-from-microsoft-cloud-app-security"></a>Подключение данных из Microsoft Cloud App Security 
-
-
 
 Соединитель [Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/what-is-cloud-app-security) (МКАС) позволяет передавать оповещения и [Cloud Discovery журналы](https://docs.microsoft.com/cloud-app-security/tutorial-shadow-it) из МКАС в метку Azure. Это позволит вам получить сведения об облачных приложениях, получить комплексную аналитику для определения и борьбы с киберугроз и контролировать, как передаются данные.
 
@@ -50,7 +48,9 @@ ms.locfileid: "80422141"
 
 1. Щелкните **Применить изменения**.
 
-1. Чтобы использовать соответствующую схему в Log Analytics для Cloud App Security предупреждений, введите `SecurityAlert` в окне запроса. Для схемы Cloud Discovery журналов введите `McasShadowItReporting`.
+1. Вы можете выбрать, будут ли оповещения в центре безопасности Azure автоматически создавать инциденты в Azure Sentinel. В разделе **Создание инцидентов**выберите **включено** , чтобы включить правило аналитики по умолчанию, которое автоматически создает инциденты на основе оповещений. Затем можно изменить это правило в разделе **аналитика**на вкладке **активные правила** .
+
+1. Чтобы использовать соответствующую схему в Log Analytics для Cloud App Security предупреждений, введите `SecurityAlert` в окне запроса. Для схемы Cloud Discovery журналов введите `McasShadowItReporting` .
 
 > [!NOTE]
 > Cloud Discovery помогает обнаруживать и выявлять тенденции путем статистической обработки подключений пользователей базовых данных к облачным приложениям.

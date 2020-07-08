@@ -9,12 +9,12 @@ ms.reviewer: jasonwhowell
 ms.assetid: bcd0b01e-1755-4112-8e8a-a5cabdca4df2
 ms.topic: conceptual
 ms.date: 11/30/2017
-ms.openlocfilehash: 72239fc1679d2ebbfd9c9b5be6b79b58efb760cb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 292ceccd5a3687488c0e8b03f4a8cd351d611dce
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "71315817"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85564908"
 ---
 # <a name="debug-user-defined-c-code-for-failed-u-sql-jobs"></a>Отладка определяемого пользователем кода C# для заданий U-SQL, завершившихся сбоем
 
@@ -80,7 +80,7 @@ U-SQL поддерживает для C# модель расширяемости
 
 2. Получите путь к папке проекта **FailedVertexDebugHost**. 
 
-3. Щелкните правой кнопкой мыши **Свойства** для добавленного проекта исходного кода сборок. Слева выберите вкладку **Сборка** и вставьте в параметр **Вывод > Выходной путь** скопированный путь, который завершается строкой \bin\debug. Окончательный путь вывода подобен `<DataLakeTemp path>\fd91dd21-776e-4729-a78b-81ad85a4fba6\loiu0t1y.mfo\FailedVertexDebug\FailedVertexDebugHost\bin\Debug\`.
+3. Щелкните правой кнопкой мыши **Свойства** для добавленного проекта исходного кода сборок. Слева выберите вкладку **Сборка** и вставьте в параметр **Вывод > Выходной путь** скопированный путь, который завершается строкой \bin\debug. Окончательный путь вывода подобен `<DataLakeTemp path>\fd91dd21-776e-4729-a78b-81ad85a4fba6\loiu0t1y.mfo\FailedVertexDebug\FailedVertexDebugHost\bin\Debug\` .
 
     ![Настройка пути pdb при отладке U-SQL в Azure Data Lake Analytics](./media/data-lake-analytics-debug-u-sql-jobs/data-lake-analytics-set-pdb-path.png)
 
@@ -93,7 +93,7 @@ U-SQL поддерживает для C# модель расширяемости
 
 Когда отладка будет завершена, после успешного выполнения проекта в окне вывода отобразится следующее сообщение:
 
-    The Program 'LocalVertexHost.exe' has exited with code 0 (0x0).
+`The Program 'LocalVertexHost.exe' has exited with code 0 (0x0).`
 
 ![Успешное завершение отладки U-SQL в Azure Data Lake Analytics](./media/data-lake-analytics-debug-u-sql-jobs/data-lake-analytics-debug-succeed.png)
 
@@ -105,7 +105,7 @@ U-SQL поддерживает для C# модель расширяемости
 
 3. Повторно отправьте задание U-SQL.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Руководство по программированию U-SQL](data-lake-analytics-u-sql-programmability-guide.md)
 - [Разработка определяемых пользователем операторов U-SQL для заданий аналитики озера данных Azure](data-lake-analytics-u-sql-develop-user-defined-operators.md)

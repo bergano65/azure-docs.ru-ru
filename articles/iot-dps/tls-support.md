@@ -5,26 +5,29 @@ services: iot-dps
 author: wesmc7777
 ms.service: iot-dps
 ms.topic: conceptual
-ms.date: 05/11/2020
+ms.date: 06/18/2020
 ms.author: wesmc
-ms.openlocfilehash: 285832d80d37c8553ffc8e37c6f6eab5d7f6d943
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: 9a90180fa606b14b06c94d3211fdf492add0350d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82984854"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85564965"
 ---
 # <a name="tls-support-in-azure-iot-hub-device-provisioning-service-dps"></a>Поддержка TLS в службе подготовки устройств для центра Интернета вещей Azure (DPS)
 
-Служба DPS использует протокол TLS для защиты подключений с устройств IoT. В настоящее время поддерживаются три версии протокола TLS, а именно версии 1,0, 1,1 и 1,2.
+Служба DPS использует [протокол TLS](http://wikipedia.org/wiki/Transport_Layer_Security) для защиты подключений с устройств IOT. 
 
-Протоколы TLS 1,0 и 1,1 считаются устаревшими и планируются для устаревания. Дополнительные сведения см. в разделе [устаревшие протоколы TLS 1,0 и 1,1 для центра Интернета вещей](../iot-hub/iot-hub-tls-deprecating-1-0-and-1-1.md). При подключении к службе DPS настоятельно рекомендуется использовать TLS 1,2 в качестве предпочтительной версии TLS.
+Текущие версии протокола TLS, поддерживаемые службой DPS: 
+* TLS 1.2
+
+Протоколы TLS 1.0 и 1.1 считаются устаревшими, и в будущем их использование будет прекращено. Дополнительные сведения см. в статье [Устаревшие протоколы TLS 1.0 и 1.1 для центра Интернета вещей](../iot-hub/iot-hub-tls-deprecating-1-0-and-1-1.md). 
 
 ## <a name="restrict-connections-to-tls-12"></a>Ограничение подключений к TLS 1,2
 
 Для повышения безопасности рекомендуется настроить экземпляры DPS так, чтобы *только* подключения клиентов устройств, использующие TLS версии 1,2, и принудительно использовать [рекомендованные шифры](#recommended-ciphers).
 
-Для этого подготавливает новый ресурс DPS в любом из [поддерживаемых регионов](#supported-regions) и присвойте `minTlsVersion` свойству значение `1.2` в спецификации ресурса DPS шаблона Azure Resource Manager. В следующем примере шаблона JSON указывается `minTlsVersion` свойство для нового экземпляра DP.
+Чтобы сделать это, подготавливает новый ресурс DPS, задав `minTlsVersion` для свойства значение `1.2` в спецификации ресурса dps шаблона Azure Resource Manager. В следующем примере шаблона JSON указывается `minTlsVersion` свойство для нового экземпляра DP.
 
 ```json
 {
@@ -35,7 +38,7 @@ ms.locfileid: "82984854"
             "type": "Microsoft.Devices/ProvisioningServices",
             "apiVersion": "2020-01-01",
             "name": "<provide-a-valid-DPS-resource-name>",
-            "location": "<any-of-supported-regions-below>",
+            "location": "<any-region>",
             "properties": {
                 "minTlsVersion": "1.2"
             },
@@ -59,40 +62,63 @@ az deployment group create -g <your resource group name> --template-file templat
 Ресурс DPS, созданный с помощью этой конфигурации, отказывает устройства, которые пытаются подключиться с помощью TLS версии 1,0 и 1,1. Аналогичным образом, подтверждение TLS будет отвергнуто, если в сообщении HELLO клиента устройства не перечислены [рекомендованные шифры](#recommended-ciphers).
 
 > [!NOTE]
-> `minTlsVersion` Свойство доступно только для чтения и не может быть изменено после создания ресурса DPS. Поэтому важно правильно протестировать и проверить, что *все* устройства Интернета вещей совместимы с TLS 1,2 и [рекомендованными шифрами](#recommended-ciphers) заранее.
+> `minTlsVersion`Свойство доступно только для чтения и не может быть изменено после создания ресурса DPS. Поэтому важно правильно протестировать и проверить, что *все* устройства Интернета вещей совместимы с TLS 1,2 и [рекомендованными шифрами](#recommended-ciphers) заранее.
 
-## <a name="supported-regions"></a>Поддерживаемые регионы
-
-Экземпляры DP центра Интернета вещей, требующие использования TLS 1,2, могут быть созданы в следующих регионах:
-
-* US Gov (Аризона)
-* US Gov (Вирджиния)
 
 > [!NOTE]
 > После отработки отказа `minTlsVersion` свойство DPS остается эффективным в географической области после отработки отказа.
 
 ## <a name="recommended-ciphers"></a>Рекомендуемые шифры
 
-Экземпляры DPS, настроенные для приема только TLS 1,2, также будут применять следующие Рекомендуемые шифры:
+Экземпляры DPS, настроенные для приема только TLS 1,2, также будут применять следующие комплекты шифров:
 
-* `TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`
-* `TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384`
-* `TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256`
-* `TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384`
+### <a name="tls-12-cipher-suites"></a>Комплекты шифров TLS 1,2
+
+| Нижний отрезок |
+| :--- |
+| `TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`<br>`TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384`<br>`TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`<br>`TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384`<br>`TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256`<br>`TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384`<br>`TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256`<br>`TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384` |
+
+| Возможность для совершения |
+| :--- |
+| `TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384`<br>`TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`<br>`TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384`<br>`TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`<br>`TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384`<br>`TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256`<br>`TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384`<br>`TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256` |
+
+### <a name="cipher-suite-ordering-prior-to-windows-10"></a>Упорядочение набора шифров до Windows 10
+
+| Нижний отрезок |
+| :--- |
+| `TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256_P256`<br>`TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384_P384`<br>`TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256`<br>`TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384`<br>`TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA_P256`<br>`TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA_P384`<br>`TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA_P256`<br>`TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA_P384` |
+
+| Возможность для совершения |
+| :--- |
+| `TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384_P384`<br>`TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256_P256`<br>`TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384`<br>`TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256`<br>`TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA_P384`<br>`TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA_P256`<br>`TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA_P384`<br>`TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA_P256` |
+
+### <a name="legacy-cipher-suites"></a>Устаревшие комплекты шифров 
+
+| Параметр #1 (Улучшенная безопасность) |
+| :--- |
+| `TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA_P384 (uses SHA-1)`<br>`TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA_P256 (uses SHA-1)`<br>`TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA_P384   (uses SHA-1)`<br>`TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA_P256   (uses SHA-1)`<br>`TLS_RSA_WITH_AES_256_GCM_SHA384           (lack of Perfect Forward Secrecy)`<br>`TLS_RSA_WITH_AES_128_GCM_SHA256           (lack of Perfect Forward Secrecy)`<br>`TLS_RSA_WITH_AES_256_CBC_SHA256           (lack of Perfect Forward Secrecy)`<br>`TLS_RSA_WITH_AES_128_CBC_SHA256           (lack of Perfect Forward Secrecy)`<br>`TLS_RSA_WITH_AES_256_CBC_SHA              (uses SHA-1, lack of Perfect Forward Secrecy)`<br>`TLS_RSA_WITH_AES_128_CBC_SHA              (uses SHA-1, lack of Perfect Forward Secrecy)` |
+
+| #2 параметров (более высокая производительность) |
+| :--- |
+| `TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA_P256 (uses SHA-1)`<br>`TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA_P384 (uses SHA-1)`<br>`TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA_P256   (uses SHA-1)`<br>`TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA_P384   (uses SHA-1)`<br>`TLS_RSA_WITH_AES_128_GCM_SHA256           (lack of Perfect Forward Secrecy)`<br>`TLS_RSA_WITH_AES_256_GCM_SHA384           (lack of Perfect Forward Secrecy)`<br>`TLS_RSA_WITH_AES_128_CBC_SHA256           (lack of Perfect Forward Secrecy)`<br>`TLS_RSA_WITH_AES_256_CBC_SHA256           (lack of Perfect Forward Secrecy)`<br>`TLS_RSA_WITH_AES_128_CBC_SHA              (uses SHA-1, lack of Perfect Forward Secrecy)`<br>`TLS_RSA_WITH_AES_256_CBC_SHA              (uses SHA-1, lack of Perfect Forward Secrecy)` |
+
 
 ## <a name="use-tls-12-in-the-iot-sdks"></a>Использование TLS 1,2 в пакетах SDK для IoT
 
 Используйте приведенные ниже ссылки, чтобы настроить TLS 1,2 и разрешенные шифры в пакетах SDK клиента Azure IoT.
 
-| Язык | Версии, поддерживающие TLS 1,2 | Документация |
+| Язык | Версии, поддерживающие TLS 1.2 | Документация |
 |----------|------------------------------------|---------------|
-| C        | Тег 2019-12-11 или более поздней версии            | [Ссылка](https://aka.ms/Tls_C_SDK_IoT) |
-| Python   | Версия 2.0.0 или более поздняя             | [Ссылка](https://aka.ms/Tls_Python_SDK_IoT) |
-| C#       | Версия 1.21.4 или более поздняя            | [Ссылка](https://aka.ms/Tls_CSharp_SDK_IoT) |
-| Java     | Версия 1.19.0 или более поздняя            | [Ссылка](https://aka.ms/Tls_Java_SDK_IoT) |
-| Node.js   | Версия 1.12.2 или более поздняя            | [Ссылка](https://aka.ms/Tls_Node_SDK_IoT) |
+| C        | Тег 2019-12-11 или более новый            | [Ссылка](https://aka.ms/Tls_C_SDK_IoT) |
+| Python   | Версия 2.0.0 или более новая             | [Ссылка](https://aka.ms/Tls_Python_SDK_IoT) |
+| C#       | Версия 1.21.4 или более новая            | [Ссылка](https://aka.ms/Tls_CSharp_SDK_IoT) |
+| Java     | Версия 1.19.0 или более новая            | [Ссылка](https://aka.ms/Tls_Java_SDK_IoT) |
+| Node.js   | Версия 1.12.2 или более новая            | [Ссылка](https://aka.ms/Tls_Node_SDK_IoT) |
 
+## <a name="use-tls-12-with-iot-hub"></a>Использование TLS 1,2 с центром Интернета вещей
+
+В центре Интернета вещей можно настроить использование TLS 1,2 при обмене данными с устройствами. Дополнительные сведения см. в статье [Устаревшие протоколы TLS 1.0 и 1.1 для центра Интернета вещей](../iot-hub/iot-hub-tls-deprecating-1-0-and-1-1.md).
 
 ## <a name="use-tls-12-with-iot-edge"></a>Использование TLS 1,2 с IoT Edge
 
-IoT Edge устройства можно настроить для использования TLS 1,2 при взаимодействии с центром Интернета вещей и службой DPS. Для этой цели используйте [страницу документации IOT Edge](https://github.com/Azure/iotedge/blob/master/edge-modules/edgehub-proxy/README.md).
+IoT Edge устройства можно настроить для использования TLS 1,2 при взаимодействии с центром Интернета вещей и службой DPS. Дополнительные сведения см. на [странице документации IOT Edge](https://github.com/Azure/iotedge/blob/master/edge-modules/edgehub-proxy/README.md).

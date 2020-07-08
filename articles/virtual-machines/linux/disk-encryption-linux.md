@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: f1ec7328363cf835c733a4d0c266732c6748c829
-ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
-ms.translationtype: HT
+ms.openlocfilehash: 3fbbeaeafd8de5a38489034a13738ca3a9b934d5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84218616"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85601397"
 ---
 # <a name="azure-disk-encryption-scenarios-on-linux-vms"></a>Сценарии шифрования дисков Azure для виртуальных машин Linux
 
@@ -388,23 +388,7 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 
 
 ## <a name="disable-encryption-for-linux-vms"></a>Отключение шифрования для виртуальных машин Linux
-Вы можете отключить шифрование с помощью Azure PowerShell, Azure CLI или шаблона Resource Manager. 
-
->[!IMPORTANT]
->Отключение шифрования, выполняемого с помощью службы шифрования Azure, на виртуальных машинах Linux поддерживается только для томов данных. Если том операционной системы зашифрован, то отключение не поддерживается для томов данных и томов ОС.  
-
-- **Отключение шифрования дисков с помощью Azure PowerShell:** Для отключения шифрования используйте командлет [Disable-AzVMDiskEncryption](/powershell/module/az.compute/disable-azvmdiskencryption). 
-     ```azurepowershell-interactive
-     Disable-AzVMDiskEncryption -ResourceGroupName 'MyVirtualMachineResourceGroup' -VMName 'MySecureVM' [-VolumeType DATA]
-     ```
-
-- **Отключение шифрования дисков с помощью Azure CLI:** чтобы отключить шифрование, используйте команду [az vm encryption disable](/cli/azure/vm/encryption#az-vm-encryption-disable). 
-     ```azurecli-interactive
-     az vm encryption disable --name "MySecureVM" --resource-group "MyVirtualMachineResourceGroup" --volume-type DATA
-     ```
-- **Отключение шифрования с помощью шаблона Resource Manager:** используйте шаблон [отключения шифрования на работающей виртуальной машине Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-running-linux-vm-without-aad) для отключения шифрования.
-     1. Нажмите кнопку **Развернуть в Azure**.
-     2. Выберите подписку, группу ресурсов, расположение, виртуальную машину, условия использования и соглашение.
+[!INCLUDE [disk-encryption-disable-encryption-cli](../../../includes/disk-encryption-disable-cli.md)]
 
 ## <a name="unsupported-scenarios"></a>Неподдерживаемые сценарии
 
@@ -420,12 +404,15 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 - динамические тома;
 - Временные диски ОС.
 - Шифрование общих и распределенных файловых систем, таких как (но не ограничиваясь ими): DFS, GFS, DRDB и CephFS.
-- Перемещение зашифрованной виртуальной машины в другую подписку.
+- Перемещение зашифрованной виртуальной машины в другую подписку или регион.
+- Создание образа или моментального снимка зашифрованной виртуальной машины и его использование для развертывания дополнительных виртуальных машин.
 - Аварийный дамп памяти ядра (kdump).
 - Oracle ACFS (файловая система кластера ASM).
 - Виртуальные машины Gen2 (см.: [Поддержка виртуальных машин 2-го поколения в Azure](generation-2.md#generation-1-vs-generation-2-capabilities)).
 - Виртуальные машины серии Lsv2 (см: [Lsv2-series](../lsv2-series.md)).
 - Виртуальная машина с "вложенными точками подключения"; то есть несколько точек подключения находятся по одному пути (например, "/1stmountpoint/Data/2stmountpoint").
+- Виртуальная машина с диском данных, подключенным поверх папки ОС.
+- Виртуальные машины серии M с Ускоритель записиными дисками.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

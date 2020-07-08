@@ -1,28 +1,25 @@
 ---
-title: Просмотр хранилища знаний (Предварительная версия) с Обозреватель службы хранилища
+title: Просмотр хранилища знаний с помощью Обозревателя службы хранилища
 titleSuffix: Azure Cognitive Search
-description: Просматривайте и анализируйте хранилище знаний Когнитивного поиска Azure с помощью Обозревателя службы хранилища портала Azure. хранилище знаний сейчас находится в общедоступной предварительной версии.
+description: Просматривайте и анализируйте хранилище знаний Когнитивного поиска Azure с помощью Обозревателя службы хранилища портала Azure.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 12/30/2019
-ms.openlocfilehash: 167316eca1f85530a040d4543f98ae34a9fb93c6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/30/2020
+ms.openlocfilehash: ba0b02067c032f9038051c169866588ded44af73
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75754065"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85566027"
 ---
 # <a name="view-a-knowledge-store-with-storage-explorer"></a>Просмотр хранилища знаний с помощью Обозревателя службы хранилища
 
-> [!IMPORTANT] 
-> Сейчас предоставляется общедоступная предварительная версия хранилища знаний. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). [Версия REST API 2019-05-06-Preview](search-api-preview.md) предоставляет предварительные версии функций. Сейчас доступна ограниченная поддержка портала. Поддержка пакета SDK для .NET пока не реализована.
-
 В этой статье вы узнаете, как подключиться к хранилищу знаний и исследовать его с помощью Обозреватель службы хранилища в портал Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 + Выполните действия, описанные в разделе [Создание хранилища знаний на портале Azure](knowledge-store-create-portal.md), чтобы создать образец хранилища знаний, используемый в этом пошаговом руководстве.
 
@@ -61,5 +58,5 @@ ms.locfileid: "75754065"
 Подключите это хранилище знаний к Power BI для более глубокого анализа или вперед с помощью кода, используя REST API и POST, чтобы создать другое хранилище знаний.
 
 > [!div class="nextstepaction"]
-> [Подключение с помощью Power BI](knowledge-store-connect-power-bi.md)
-> [Создание хранилища знаний в оставшейся](knowledge-store-create-rest.md) работе
+> [Подключение с помощью Power BI](knowledge-store-connect-power-bi.md) 
+>  [Создание хранилища знаний в оставшейся базе данных](knowledge-store-create-rest.md)

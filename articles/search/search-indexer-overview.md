@@ -1,7 +1,7 @@
 ---
 title: Индексаторы для обхода данных при импорте
 titleSuffix: Azure Cognitive Search
-description: Просканировать базу данных SQL Azure, Azure Cosmos DB или службу хранилища Azure, чтобы извлечь данные для поиска и заполнить индекс Azure Когнитивный поиск.
+description: Просканировать базу данных SQL Azure, SQL Управляемый экземпляр, Azure Cosmos DB или службу хранилища Azure, чтобы извлечь данные для поиска и заполнить индекс Azure Когнитивный поиск.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 2719bba0e88ba3125bd5ba163804e31885b286a2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a728eff7addc7f835f82e795457e722fd60d2e30
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79282995"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85564597"
 ---
 # <a name="indexers-in-azure-cognitive-search"></a>Indexers in Azure Cognitive Search (Индексаторы в службе "Когнитивный поиск Azure")
 
@@ -50,14 +50,14 @@ ms.locfileid: "79282995"
 * [Azure Data Lake Storage 2-го поколения](search-howto-index-azure-data-lake-storage.md) (Предварительная версия)
 * [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
-* [База данных SQL Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
+* [База данных SQL Azure и Управляемый экземпляр SQL](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [SQL Server на виртуальных машинах Azure](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
-* [Управляемые экземпляры SQL в Azure](search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md)
+* [Управляемый экземпляр SQL](search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md)
 
 ## <a name="basic-configuration-steps"></a>Основные этапы настройки
 В индексаторах реализованы уникальные функции для работы с источниками данных. Поэтому тип индексатора будет определять особенности настройки источника данных или индексатора. Тем не менее всем индексаторам присущи сходные структура и требования. Ниже описаны действия, общие для всех индексаторов.
 
-### <a name="step-1-create-a-data-source"></a>Шаг 1. Создание источника данных
+### <a name="step-1-create-a-data-source"></a>Шаг 1. Создание источника данных
 Индексатор получает соединение с источником данных из объекта *источника данных* . Определение источника данных предоставляет строку подключения и, возможно, учетные данные. Чтобы создать ресурс, вызовите REST API для [создания источника данных](https://docs.microsoft.com/rest/api/searchservice/create-data-source) или [класс DataSource](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.datasource).
 
 Источники данных настраиваются и управляются независимо от индексаторов, которые их используют. Это означает, что источник данных может использоваться несколькими индексаторами для одновременной загрузки нескольких индексов.
@@ -77,7 +77,7 @@ ms.locfileid: "79282995"
 
 Хотя можно запланировать индексирование, для вызова индексатора также может быть вызвано использование [команды Run](https://docs.microsoft.com/rest/api/searchservice/run-indexer):
 
-    POST https://[service name].search.windows.net/indexers/[indexer name]/run?api-version=2019-05-06
+    POST https://[service name].search.windows.net/indexers/[indexer name]/run?api-version=2020-06-30
     api-key: [Search service admin key]
 
 > [!NOTE]
@@ -92,7 +92,7 @@ ms.locfileid: "79282995"
 Состояние и журнал выполнения индексатора можно получить с помощью [команды получить состояние индексатора](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status):
 
 
-    GET https://[service name].search.windows.net/indexers/[indexer name]/status?api-version=2019-05-06
+    GET https://[service name].search.windows.net/indexers/[indexer name]/status?api-version=2020-06-30
     api-key: [Search service admin key]
 
 Ответ содержит сведения об общем состоянии индексатора, последнем (или текущем) вызове индексатора, а также журнал последних вызовов индексатора.
@@ -128,7 +128,7 @@ ms.locfileid: "79282995"
 ## <a name="next-steps"></a>Дальнейшие шаги
 Теперь, когда вы ознакомились с основной идеей, можно переходить к изучению требований и задач, связанных с каждым типом источника данных.
 
-* [База данных Azure SQL (или SQL Server на виртуальных машинах Azure);](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
+* [База данных SQL Azure, SQL Управляемый экземпляр или SQL Server на виртуальной машине Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 * [Хранилище BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
 * [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)

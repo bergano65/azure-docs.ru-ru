@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/17/2019
-ms.openlocfilehash: 254c912114e3f1c7a495f389bc6a6416cbde7e11
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ffb52cd34d56c227fc689ea70146e99983e17c0d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77472457"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85564440"
 ---
 # <a name="attach-a-cognitive-services-resource-to-a-skillset-in-azure-cognitive-search"></a>Подключение Cognitive Services ресурса к набору навыков в Azure Когнитивный поиск 
 
@@ -29,7 +29,7 @@ ms.locfileid: "77472457"
 
 + Когнитивный поиск Azure использует ключ ресурса Cognitive Services, предоставленный в наборе навыков, для выставления счетов за использование образа и текста. Выполнение оплачиваемых навыков относится к цене за [Cognitive Services с оплатой по мере](https://azure.microsoft.com/pricing/details/cognitive-services/)использования.
 
-+ Извлечение изображений — это операция Azure Когнитивный поиск, которая происходит при взломе документов перед обогащением. Продается оплата за извлечение изображений. Сведения о ценах на извлечение изображений см. на [странице цен на когнитивный Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
++ Извлечение изображений — это операция Azure Когнитивный поиск, которая происходит при взломе документов перед обогащением. Продается оплата за извлечение изображений. Сведения о ценах на извлечение изображений см. на [странице цен на когнитивный Поиск Azure](https://azure.microsoft.com/pricing/details/search/).
 
 + Извлечение текста также происходит во время взлома документа. Оплата не взимается.
 
@@ -110,10 +110,10 @@ ms.locfileid: "77472457"
 
 При определении набора навыков программным способом добавьте раздел `cognitiveServices` к набору навыков. В этом разделе включите ключ ресурса Cognitive Services, который необходимо связать с набором навыков. Помните, что ресурс должен находиться в том же регионе, что и ресурс Azure Когнитивный поиск. Также включите `@odata.type` и присвойте ему значение `#Microsoft.Azure.Search.CognitiveServicesByKey`.
 
-Этот шаблон приведен в примере ниже. Обратите `cognitiveServices` внимание на раздел в конце определения.
+Этот шаблон приведен в примере ниже. Обратите внимание на `cognitiveServices` раздел в конце определения.
 
 ```http
-PUT https://[servicename].search.windows.net/skillsets/[skillset name]?api-version=2019-05-06
+PUT https://[servicename].search.windows.net/skillsets/[skillset name]?api-version=2020-06-30
 api-key: [admin key]
 Content-Type: application/json
 ```

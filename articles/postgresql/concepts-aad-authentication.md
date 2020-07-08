@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 8fa9a4ebe64880ae136a8460d35200fb84abb6cf
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 737587ccf46d4af292dc11d37567249c13260f51
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83660187"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85565503"
 ---
 # <a name="use-azure-active-directory-for-authenticating-with-postgresql"></a>Использование проверки подлинности Azure Active Directory с PostgreSQL
 
@@ -66,8 +66,11 @@ ms.locfileid: "83660187"
 - Встроенная служба Azure Active Directory.
 - Универсальная служба Azure Active Directory с поддержкой MFA.
 - Использование сертификатов приложений или секретов клиента Active Directory.
+- [Управляемое удостоверение](howto-connect-with-managed-identity.md)
 
 После проверки подлинности в Active Directory выдается маркер. Этот маркер является вашим паролем для входа в систему.
+
+Обратите внимание, что операции управления, такие как добавление новых пользователей, поддерживаются только для ролей пользователей Azure AD на этом этапе.
 
 > [!NOTE]
 > Дополнительные сведения о подключении с помощью маркера Active Directory см. в статье [Использование Azure Active Directory для проверки подлинности с помощью PostgreSQL](howto-configure-sign-in-aad-authentication.md).

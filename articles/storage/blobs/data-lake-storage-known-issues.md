@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 05/10/2020
+ms.date: 06/29/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 315bab473ccb42c3ca7b481c16bf8d8fbcfaac67
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
-ms.translationtype: HT
+ms.openlocfilehash: f3861ab8839ba0483c5096e29cd09b6268bd765e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84193459"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85563918"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -65,19 +65,6 @@ API больших двоичных объектов и API Data Lake Storage 2-
 ## <a name="file-system-support-in-sdks-powershell-and-azure-cli"></a>Поддержка файловых систем в пакетах SDK, PowerShell и Azure CLI
 
 - Операции получения и сохранения списков управления доступом в данный момент не выполняются рекурсивно.
-
-
-## <a name="lifecycle-management-policies"></a>Политики управления жизненным циклом
-
-Удаление моментальных снимков BLOB-объектов пока не поддерживается. 
-
-## <a name="archive-tier"></a>Уровень архива
-
-В настоящее время существует ошибка, влияющая на уровень доступа к уровню архива.
-
-## <a name="blobfuse"></a>Blobfuse
-
-Blobfuse пока не поддерживается.
 
 <a id="known-issues-tools"></a>
 

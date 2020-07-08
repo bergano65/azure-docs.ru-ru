@@ -5,15 +5,15 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: disk
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 06/14/2019
 ms.author: alkohli
-ms.openlocfilehash: f8116ec0836623adf803991017950ddc7f960923
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 35b4b206de9c16d66387135b0ca75b6aaeb7c744
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "67805707"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85565002"
 ---
 # <a name="use-logs-to-troubleshoot-validation-issues-in-azure-data-box-disk"></a>Используйте журналы для устранения неполадок, связанных с проверкой, в Диск Azure Data Box
 
@@ -21,13 +21,13 @@ ms.locfileid: "67805707"
 
 ## <a name="validation-tool-log-files"></a>Файлы журналов средства проверки
 
-При проверке данных на дисках с помощью [средства проверки](data-box-disk-deploy-copy-data.md#validate-data)создается *ошибка. XML* для регистрации ошибок. Файл журнала находится в `Drive:\DataBoxDiskImport\logs` папке на диске. Ссылка на журнал ошибок предоставляется при выполнении проверки.
+При проверке данных на дисках с помощью [средства проверки](data-box-disk-deploy-copy-data.md#validate-data)создается *error.xml* для регистрации ошибок. Файл журнала находится в `Drive:\DataBoxDiskImport\logs` папке на диске. Ссылка на журнал ошибок предоставляется при выполнении проверки.
 
 <!--![Validation tool with link to error log](media/data-box-disk-troubleshoot/validation-tool-link-error-log.png)-->
 
 Если для проверки запущено несколько сеансов, то для каждого сеанса создается один журнал ошибок.
 
-- Ниже приведен пример журнала ошибок, когда данные, загруженные в `PageBlob` папку, не выделяются в 512-байтах. Все данные, передаваемые в PageBlob, должны быть согласованы по 512 байт, например VHD или VHDX. Ошибки в этом файле находятся в предупреждениях `<Errors>` и в `<Warnings>`.
+- Ниже приведен пример журнала ошибок, когда данные, загруженные в папку, не выделяются в `PageBlob` 512-байтах. Все данные, передаваемые в PageBlob, должны быть согласованы по 512 байт, например VHD или VHDX. Ошибки в этом файле находятся в `<Errors>` предупреждениях и в `<Warnings>` .
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -48,7 +48,7 @@ ms.locfileid: "67805707"
         </ErrorLog>
     ```
 
-- Ниже приведен пример журнала ошибок, когда имя контейнера недопустимо. Папка, созданная в разделе `BlockBlob`, `PageBlob`или `AzureFile` папки на диске, станет контейнером в вашей учетной записи хранения Azure. Имя контейнера должно соответствовать [соглашениям об именовании Azure](data-box-disk-limits.md#azure-block-blob-page-blob-and-file-naming-conventions).
+- Ниже приведен пример журнала ошибок, когда имя контейнера недопустимо. Папка, созданная в разделе `BlockBlob` , `PageBlob` или `AzureFile` папки на диске, станет контейнером в вашей учетной записи хранения Azure. Имя контейнера должно соответствовать [соглашениям об именовании Azure](data-box-disk-limits.md#azure-block-blob-page-blob-and-file-naming-conventions).
 
     ```xml
         <?xml version="1.0" encoding="utf-8"?>
@@ -71,7 +71,7 @@ ms.locfileid: "67805707"
 
 ## <a name="validation-tool-errors"></a>Ошибки средства проверки
 
-Ошибки, содержащиеся в *файле Error. XML* с соответствующими рекомендуемыми действиями, приведены в следующей таблице.
+В следующей таблице приведены ошибки, содержащиеся в *error.xml* с соответствующими рекомендуемыми действиями.
 
 | Код ошибки| Описание                       | Рекомендованные действия               |
 |------------|--------------------------|-----------------------------------|
@@ -91,9 +91,9 @@ ms.locfileid: "67805707"
 | `InvalidFileNameFormat` | Путь к файлу не соответствует допустимому пути к файлу в облаке согласно соглашениям об именовании файлов Azure. |Переименуйте файл, чтобы он соответствует [соглашениям об именовании Azure](data-box-disk-limits.md#azure-block-blob-page-blob-and-file-naming-conventions). Повторите проверку. |
 | `InvalidDiskNameFormat` | Путь к файлу не соответствует допустимому имени диска в облаке согласно соглашениям об именовании управляемых дисков Azure. |Переименуйте файл, чтобы он соответствует [соглашениям об именовании Azure](data-box-disk-limits.md#azure-block-blob-page-blob-and-file-naming-conventions). Повторите проверку.       |
 | `NotPartOfFileShare` | Недопустимый путь для передачи файлов. Отправьте файлы в папку в службе файлов Azure.   | Удалите файлы с ошибками и отправьте их в созданную папку. Повторите проверку. |
-| `NonVhdFileNotSupportedForManagedDisk` | Не удается отправить файл, не являющийся VHD-файлом, в качестве управляемого диска. |Удалите из `ManagedDisk` папки файлы, не являющиеся VHD-файлами, так как они не поддерживаются, или `PageBlob` переместите эти файлы в папку. Повторите проверку. |
+| `NonVhdFileNotSupportedForManagedDisk` | Не удается отправить файл, не являющийся VHD-файлом, в качестве управляемого диска. |Удалите из папки файлы, не являющиеся VHD-файлами, `ManagedDisk` так как они не поддерживаются, или переместите эти файлы в `PageBlob` папку. Повторите проверку. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Устранение [ошибок передачи данных](data-box-disk-troubleshoot-upload.md).

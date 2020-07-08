@@ -1,26 +1,24 @@
 ---
-title: Перенос конфигураций брандмауэра Azure в политику брандмауэра Azure (Предварительная версия) с помощью PowerShell
-description: Сведения о переносе конфигураций брандмауэра Azure в политику брандмауэра Azure (Предварительная версия)
+title: Перенос конфигураций брандмауэра Azure в политику брандмауэра Azure с помощью PowerShell
+description: Узнайте, как перенести конфигурации брандмауэра Azure в политику брандмауэра Azure.
 author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
-ms.topic: conceptual
-ms.date: 02/18/2020
+ms.topic: how-to
+ms.date: 06/30/2020
 ms.author: victorh
-ms.openlocfilehash: 498863c98f308a9fd9b47f80328d572187475901
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a9dadc875e5e6d35a78930b4a02c48e9cbb6f6ba
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77443114"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85601332"
 ---
-# <a name="migrate-azure-firewall-configurations-to-azure-firewall-policy-preview-using-powershell"></a>Перенос конфигураций брандмауэра Azure в политику брандмауэра Azure (Предварительная версия) с помощью PowerShell
-
-[!INCLUDE [Preview](../../includes/firewall-manager-preview-notice.md)]
+# <a name="migrate-azure-firewall-configurations-to-azure-firewall-policy-using-powershell"></a>Перенос конфигураций брандмауэра Azure в политику брандмауэра Azure с помощью PowerShell
 
 Вы можете использовать скрипт Azure PowerShell для переноса существующих конфигураций брандмауэра Azure в ресурс политики брандмауэра Azure. Затем можно развернуть политику с помощью диспетчера брандмауэра Azure.
 
-`AZFWMigrationScript.ps1` Скрипт создает фиреваллполици с тремя объектами Рулеколлектионграуп для Аппликатионрулеколлектионс, Нетворкрулеколлектионс и NatRuleCollections соответственно. 
+`AZFWMigrationScript.ps1`Скрипт создает фиреваллполици с тремя объектами рулеколлектионграуп для аппликатионрулеколлектионс, нетворкрулеколлектионс и NatRuleCollections соответственно. 
 
 Рулеколлектионграуп — это новая группировка верхнего уровня для коллекций правил для будущего расширения. Рекомендуется использовать указанные выше значения по умолчанию и автоматически выполнять на портале.
 
@@ -161,4 +159,4 @@ If ($azfw.NatRuleCollections.Count -gt 0) {
 ```
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-Дополнительные сведения о развертывании диспетчера брандмауэра Azure: [Обзор развертывания диспетчера брандмауэра Azure](deployment-overview.md).
+См. Дополнительные сведения о развертывании диспетчера брандмауэра Azure. [Общие сведения о развертывании диспетчера брандмауэра Azure](deployment-overview.md).

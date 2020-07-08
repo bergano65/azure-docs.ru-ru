@@ -1,24 +1,21 @@
 ---
-title: Подключение к хранилищу знаний (предварительная версия) с помощью Power BI
+title: Подключение к хранилищу знаний с помощью Power BI
 titleSuffix: Azure Cognitive Search
-description: Подключение к хранилищу знаний (предварительная версия) службы "Когнитивный поиск Azure" с помощью Power BI для анализа и исследования.
+description: Подключение к хранилищу знаний службы "Когнитивный поиск Azure" с помощью Power BI для анализа и исследования.
 author: HeidiSteen
 ms.author: heidist
 manager: nitinme
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 05/05/2020
-ms.openlocfilehash: e67bd688d720ed3d7549a86c9cff752bc19fb2fc
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.date: 06/30/2020
+ms.openlocfilehash: 438d8cbc4bf03fa9e03d0d2e1920522768ba9127
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82858820"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85565341"
 ---
 # <a name="connect-a-knowledge-store-with-power-bi"></a>Подключение хранилища знаний с помощью Power BI
-
-> [!IMPORTANT] 
-> Сейчас предоставляется общедоступная предварительная версия хранилища знаний. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). [Версия REST API 2019-05-06-Preview](search-api-preview.md) предоставляет предварительные версии функций. Сейчас доступна ограниченная поддержка портала. Поддержка пакета SDK для .NET пока не реализована.
 
 В этой статье объясняется, как подключить и изучить хранилище знаний с помощью Power Query в приложении Power BI Desktop. Вы можете быстрее приступить к работе с помощью шаблонов или создать пользовательскую панель мониторинга с нуля. В этом кратком видео показано, как можно расширить возможности работы с данными с помощью Когнитивный поиск Azure в сочетании с Power BI.
 

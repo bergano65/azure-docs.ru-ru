@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.reviewer: sngun
-ms.openlocfilehash: c47016d0b82a4e4ed084f5d82394d91fd2b46be1
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
-ms.translationtype: HT
+ms.openlocfilehash: 8916f4b9824f88361fdeb9d866f84adb71e8138e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83697710"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85563790"
 ---
 # <a name="change-feed-pull-model-in-azure-cosmos-db"></a>Модель извлечения канала изменений в Azure Cosmos DB
 
@@ -164,7 +164,7 @@ FeedIterator<User> iteratorThatResumesFromLastPoint = container.GetChangeFeedIte
 
 Ниже перечислены некоторые ключевые различия между обработчиком веб-канала изменений и моделью извлечения.
 
-|  | Обработчик канала изменений| Модель извлечения |
+|Компонент  | Обработчик канала изменений| Модель извлечения |
 | --- | --- | --- |
 | Отслеживание текущей точки обработки в веб-канале изменений | Аренда (хранится в контейнере Azure Cosmos DB) | Маркер продолжения (сохраненный в памяти или вручную) |
 | Возможность воспроизведения прошлых изменений | Да, с моделью отправки | Да, с моделью извлечения|

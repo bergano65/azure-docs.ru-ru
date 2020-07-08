@@ -1,6 +1,6 @@
 ---
 title: Подключение данных Palo Alto Networks к Azure Sentinel | Документация Майкрософт
-description: Узнайте, как подключить данные Palo Alto Networks к Azure Sentinel.
+description: Узнайте, как использовать соединитель данных Palo Alto Networks для простого подключения журналов Palo Alto Networks к Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
-ms.openlocfilehash: a79b7a1448e1decb377aa0072261df068c366567
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 245db436fc3216fe5c8c8f51c50c0ac03190f9eb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77588133"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85564555"
 ---
 # <a name="connect-palo-alto-networks-to-azure-sentinel"></a>Подключение Palo Alto Networks к Azure Sentinel
 
@@ -34,7 +34,7 @@ ms.locfileid: "77588133"
 Настройте Palo Alto Networks для пересылки сообщений системного журнала в формате CEF в рабочую область Azure с помощью агента syslog:
 1.  Перейдите в раздел "Общие сведения о [настройке формата событий (CEF)](https://docs.paloaltonetworks.com/resources/cef) " и скачайте PDF-файл для типа устройства. Следуйте всем инструкциям в этом разделе, чтобы настроить устройство Palo Alto Networks для получения сведений о событиях CEF. 
 
-1.  Перейдите к разделу [Настройка мониторинга системного журнала](https://aka.ms/asi-syslog-paloalto-forwarding) и выполните шаги 2 и 3, чтобы настроить пересылку событий CEF с устройства Palo Alto Networks на метку Azure Sentinel.
+1.  Перейдите к разделу [Настройка мониторинга системного журнала](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/use-syslog-for-monitoring/configure-syslog-monitoring) и выполните шаги 2 и 3, чтобы настроить пересылку событий CEF с устройства Palo Alto Networks на метку Azure Sentinel.
 
     1. Убедитесь, что в качестве **формата syslog-сервера** выбрано **BSD**.
 
@@ -45,15 +45,15 @@ ms.locfileid: "77588133"
 
 1. Чтобы использовать соответствующую схему в Log Analytics для событий Palo Alto Networks, выполните поиск по запросу **CommonSecurityLog**.
 
-1. Перейдите к [шагу 3. Проверка подключения](connect-cef-verify.md).
+1. Перейдите к процедуре [Шаг 3. Проверка подключения](connect-cef-verify.md).
 
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить устройства Palo Alto Networks к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
-- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+- [Используйте книги](tutorial-monitor-your-data.md) для мониторинга данных.
 
 

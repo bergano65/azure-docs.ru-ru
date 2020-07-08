@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: bf600890bfed570e712a159005b8ef5267298cc0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 580c6294856145530e354b6e5cced955dbaa9f9c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76122327"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85565565"
 ---
 # <a name="how-to-index-csv-blobs-using-delimitedtext-parsing-mode-and-blob-indexers-in-azure-cognitive-search"></a>Как индексировать большие двоичные объекты CSV с помощью режима синтаксического анализа delimitedText и индексаторов BLOB-объектов в Azure Когнитивный поиск
 
@@ -24,13 +24,13 @@ ms.locfileid: "76122327"
     1, 2016-01-12, "azure-search,azure,cloud" 
     2, 2016-07-07, "cloud,mobile" 
 
-В этой статье вы узнаете, как анализировать большие двоичные объекты CSV с помощью индексатора BLOB-объектов Azure `delimitedText` когнитивный Поиск, установив режим анализа. 
+В этой статье вы узнаете, как анализировать большие двоичные объекты CSV с помощью индексатора BLOB-объектов Azure Когнитивный поиск, установив `delimitedText` режим анализа. 
 
 > [!NOTE]
 > Следуйте рекомендациям по настройке индексатора в [индексировании "один ко многим](search-howto-index-one-to-many-blobs.md) ", чтобы вывести несколько документов поиска из одного большого двоичного объекта Azure.
 
 ## <a name="setting-up-csv-indexing"></a>Настройка индексирования CSV
-Чтобы индексировать большие двоичные объекты CSV, создайте или обновите определение индексатора с помощью режима `delimitedText` анализа для запроса на [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer) :
+Чтобы индексировать большие двоичные объекты CSV, создайте или обновите определение индексатора с помощью `delimitedText` режима анализа для запроса на [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer) :
 
     {
       "name" : "my-csv-indexer",
@@ -60,7 +60,7 @@ ms.locfileid: "76122327"
 
 Источник данных: 
 
-    POST https://[service name].search.windows.net/datasources?api-version=2019-05-06
+    POST https://[service name].search.windows.net/datasources?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
 
@@ -73,7 +73,7 @@ ms.locfileid: "76122327"
 
 Индексатор:
 
-    POST https://[service name].search.windows.net/indexers?api-version=2019-05-06
+    POST https://[service name].search.windows.net/indexers?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
 

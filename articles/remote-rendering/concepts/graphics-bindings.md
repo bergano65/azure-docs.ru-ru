@@ -9,12 +9,12 @@ ms.author: flborn
 ms.date: 12/11/2019
 ms.topic: conceptual
 ms.service: azure-remote-rendering
-ms.openlocfilehash: 4854d5ff9d697a2bf082a788c0e761a2152b0294
-ms.sourcegitcommit: 0690ef3bee0b97d4e2d6f237833e6373127707a7
-ms.translationtype: HT
+ms.openlocfilehash: d29500db5efd0abde4c9555fde9a7e3d5bbe070a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83758713"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85564977"
 ---
 # <a name="graphics-binding"></a>Графическая привязка
 
@@ -27,7 +27,7 @@ ms.locfileid: "83758713"
 В Unity вся привязка обрабатывается структурой `RemoteUnityClientInit`, передаваемой в `RemoteManagerUnity.InitializeManager`. Чтобы задать графический режим, в поле `GraphicsApiType` необходимо задать выбранную привязку. Это поле заполняется автоматически, в зависимости от наличия XRDevice. Это поведение можно переопределить вручную, используя следующие варианты:
 
 * **HoloLens 2**: всегда используется графическая привязка [Windows Mixed Reality](#windows-mixed-reality).
-* **Двухмерное классическое приложение UWP**: всегда используется [моделирование](#simulation). Чтобы использовать этот режим, выполните действия, описанные в [руководстве по настройке проекта Unity с нуля](../tutorials/unity/project-setup.md).
+* **Двухмерное классическое приложение UWP**: всегда используется [моделирование](#simulation).
 * **Unity Editor**: всегда используется [моделирование](#simulation), если не подключена гарнитура виртуальной реальности WMR. В этом случае служба ARR будет отключена, чтобы сделать возможной отладку частей приложения, не связанных с ARR. Ознакомьтесь также с [голографическим удаленным взаимодействием](../how-tos/unity/holographic-remoting.md).
 
 Еще одной важной частью для Unity является только доступ к [базовой привязке](#access), все остальные разделы, приведенные ниже, можно пропустить.
@@ -233,4 +233,4 @@ else
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Руководство. Настройка проекта Unity с нуля](../tutorials/unity/project-setup.md)
+* [Учебник. Просмотр удаленных моделей](../tutorials/unity/view-remote-models/view-remote-models.md)

@@ -1,17 +1,17 @@
 ---
 title: Аутентификация на основе управляемых удостоверений
-description: Получение доступа к ресурсам, защищенным Azure Active Directory, без использования учетных данных или секрета, с использованием управляемого удостоверения
+description: Доступ к ресурсам, защищенным Azure Active Directory, без входа с использованием учетных данных или секретов с помощью управляемого удостоверения
 services: logic-apps
 ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 02/10/2020
-ms.openlocfilehash: 73f3e7561b97574c4603e480b972eaf2a9a1ed48
-ms.sourcegitcommit: a3c6efa4d4a48e9b07ecc3f52a552078d39e5732
-ms.translationtype: HT
+ms.openlocfilehash: 190cc74bc2967cdee7f3154e0d6a6fedd8ee90dd
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83708046"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85565040"
 ---
 # <a name="authenticate-access-to-azure-resources-by-using-managed-identities-in-azure-logic-apps"></a>Проверка подлинности и получение доступа к ресурсам Azure с помощью управляемых удостоверений в Azure Logic Apps.
 

@@ -7,36 +7,66 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 02/25/2020
-ms.openlocfilehash: d2b25fb93a1e35ffa82cf49c60d181b841b1692d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/12/2020
+ms.openlocfilehash: 3399ace71d3a28ea903991e0439f1c9ddcc939d4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77616196"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85565391"
 ---
 # <a name="documentation-resources-for-ai-enrichment-in-azure-cognitive-search"></a>Ресурсы документации для обогащения данных с помощью ИИ в Когнитивном поиске Azure
 
-Обогащение данных с помощью ИИ — это информационная функция индексирования в службе "Когнитивный поиск Azure", которая находит скрытые сведения в нетекстовых источниках и неразделенном тексте, преобразуя их в текстовое содержимое с полными возможностями поиска в службе "Когнитивный поиск Azure".
+Обогащение искусственного интеллекта — это надстройка индексирования на основе индексатора, которая находит скрытые сведения в нетекстовых источниках и неотличающемся тексте, преобразуя ее в полнотекстовый Поисковый контент в Когнитивный поиск Azure. 
 
-Далее представлена полная документация со статьями по обогащению данных с помощью ИИ.
+Для встроенной обработки предварительно обученные модели искусственного интеллекта в Cognitive Services вызываются внутренним образом для выполнения анализа. Вы также можете интегрировать пользовательские модели с помощью Машинное обучение Azure, функций Azure или других подходов.
 
-## <a name="getting-started"></a>Начало работы
-+ [Общие сведения об ИИ в Когнитивном поиске Azure](cognitive-search-concept-intro.md)
+Ниже приведен объединенный список документации для обогащения искусственного интеллекта.
+
+## <a name="concepts"></a>Основные понятия
+
++ [Дополнения искусственного интеллекта](cognitive-search-concept-intro.md)
++ [Наборы навыков](cognitive-search-working-with-skillsets.md)
++ [Сеансы отладки](cognitive-search-debug-session.md)
++ [Хранилища знаний](knowledge-store-concept-intro.md)
++ [Проекции](knowledge-store-projection-overview.md)
++ [Добавочное дополнение (повторное использование кэшированного обогащенного документа)](cognitive-search-incremental-indexing-conceptual.md)
+
+## <a name="hands-on-walkthroughs"></a>Практические руководства
+
 + [Краткое руководство. Создание набора квалификационных навыков в портал Azure](cognitive-search-quickstart-blob.md)
 + [Учебник. обогащенное индексирование с помощью искусственного интеллекта](cognitive-search-tutorial-blob.md)
-+ [Пример. Создание пользовательского навыка для обогащения искусственного интеллекта](cognitive-search-create-custom-skill-example.md)
++ [Учебник. Диагностика, восстановление и фиксация изменений в наборе навыков с помощью сеансов отладки](cognitive-search-tutorial-debug-sessions.md)
+
+## <a name="knowledge-stores"></a>Хранилища знаний
+
++ [Краткое руководство. Создание хранилища знаний в портал Azure](knowledge-store-create-portal.md)
++ [Создание хранилища знаний с помощью REST и Postman](knowledge-store-create-rest.md)
++ [Просмотр хранилища знаний с помощью Обозревателя службы хранилища](knowledge-store-view-storage-explorer.md)
++ [Подключение хранилища знаний с помощью Power BI](knowledge-store-connect-power-bi.md)
++ [Примеры проекции (как формировать и экспортировать дополнения)](knowledge-store-projections-examples.md)
+
+## <a name="custom-skills-advanced"></a>Пользовательские навыки (дополнительно)
+
++ [How to add a custom skill to a cognitive search pipeline](cognitive-search-custom-skill-interface.md) (Добавление пользовательского навыка в конвейер когнитивного поиска)
++ [Пример. Создание пользовательского навыка с помощью функций Azure (и Поиск сущностей Bing API)](cognitive-search-create-custom-skill-example.md)
++ [Пример. Создание пользовательского навыка с помощью Python](cognitive-search-custom-skill-python.md)
++ [Пример. Создание пользовательского навыка с помощью распознавателя форм](cognitive-search-custom-skill-form.md) 
++ [Пример. Создание пользовательского навыка с помощью Машинное обучение Azure](cognitive-search-tutorial-aml-custom-skill.md) 
 
 ## <a name="how-to-guidance"></a>Практические руководства
-+ [Определение набора навыков](cognitive-search-defining-skillset.md)
-+ [How to reference annotations in a skillset](cognitive-search-concept-annotations-syntax.md) (Создание ссылок на аннотации в наборе навыков когнитивного поиска)
-+ [Сопоставление обогащенных полей с индексом, поддерживающим поиск](cognitive-search-output-field-mapping.md)
-+ [How to process and extract information from images in cognitive search scenarios](cognitive-search-concept-image-scenarios.md) (Обработка и извлечение информации из изображений в сценариях когнитивного поиска)
-+ [Как перестроить индекс службы "Когнитивный поиск Azure"](search-howto-reindex.md)
-+ [How to add a custom skill to a cognitive search pipeline](cognitive-search-custom-skill-interface.md) (Добавление пользовательского навыка в конвейер когнитивного поиска)
-+ [Советы по устранению неполадок](cognitive-search-concept-troubleshooting.md)
 
-## <a name="reference"></a>Справочник
++ [Вложение ресурса Cognitive Services](cognitive-search-attach-cognitive-services.md)
++ [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [ссылки на аннотации в наборе навыков](cognitive-search-concept-annotations-syntax.md)
++ [Сопоставьте поля с индексом](cognitive-search-output-field-mapping.md)
++ [Извлечение информации из изображений и ее обработка](cognitive-search-concept-image-scenarios.md)
++ [Настройка кэширования для добавочного дополнения](search-howto-incremental-index.md)
++ [Как перестроить индекс службы "Когнитивный поиск Azure"](search-howto-reindex.md)
++ [Советы по проектированию](cognitive-search-concept-troubleshooting.md)
++ [Распространенные ошибки и предупреждения](cognitive-search-common-errors-warnings.md)
+
+## <a name="skills-reference"></a>Справочник по навыкам
 
 + [Встроенные навыки](cognitive-search-predefined-skills.md)
   + [Microsoft.Skills.Text.KeyPhraseExtractionSkill](cognitive-search-skill-keyphrases.md)
@@ -54,14 +84,17 @@ ms.locfileid: "77616196"
   + [Microsoft.Skills.Util.ShaperSkill](cognitive-search-skill-shaper.md)
 
 + Пользовательские навыки
+  + [Microsoft. Skills. Custom. Амлскилл](cognitive-search-aml-skill.md)
   + [Microsoft.Skills.Custom.WebApiSkill](cognitive-search-custom-skill-web-api.md)
 
 + [Устаревшие навыки](cognitive-search-skill-deprecated.md)
   + [Microsoft.Skills.Text.NamedEntityRecognitionSkill](cognitive-search-skill-named-entity-recognition.md)
 
+## <a name="apis"></a>API-интерфейсы
+
 + [REST API](https://docs.microsoft.com/rest/api/searchservice/)
-  + [Создание набора навыков (api-version=2019-05-06)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
-  + [Создание индексатора (api-version=2019-05-06)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
+  + [Создание набора навыков (API-Version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
+  + [Create индексатор (API-Version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
 
 ## <a name="see-also"></a>См. также
 

@@ -5,15 +5,14 @@ services: data-lake-analytics
 ms.service: data-lake-analytics
 author: jasonwhowell
 ms.author: jasonh
-ms.assetid: cf5633d4-bc43-444e-90fc-f90fbd0b7935
 ms.topic: conceptual
 ms.date: 02/12/2018
-ms.openlocfilehash: 7fd88383e909ebd6be64c22721b813946e37179e
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.openlocfilehash: ba0311da88f1fe0cbc0bf885197785db10b1bac2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
-ms.locfileid: "60616517"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85564842"
 ---
 # <a name="accessing-diagnostic-logs-for-azure-data-lake-analytics"></a>Доступ к журналам диагностики для Azure Data Lake Analytics
 
@@ -25,7 +24,7 @@ ms.locfileid: "60616517"
 
 ## <a name="enable-logging"></a>Включение ведения журналов
 
-1. Войдите в [портал Azure](https://portal.azure.com).
+1. Выполните вход на [портал Azure](https://portal.azure.com).
 
 2. Откройте свою учетную запись Data Lake Analytics и в разделе __Мониторинг__ выберите **Журналы диагностики**. Затем выберите __Turn on diagnostics__ (Включить диагностику).
 
@@ -60,32 +59,34 @@ ms.locfileid: "60616517"
 
 2. Журналы в контейнерах хранятся в такой структуре файлов:
 
-        resourceId=/
-          SUBSCRIPTIONS/
-            <<SUBSCRIPTION_ID>>/
-              RESOURCEGROUPS/
-                <<RESOURCE_GRP_NAME>>/
-                  PROVIDERS/
-                    MICROSOFT.DATALAKEANALYTICS/
-                      ACCOUNTS/
-                        <DATA_LAKE_ANALYTICS_NAME>>/
-                          y=####/
-                            m=##/
-                              d=##/
-                                h=##/
-                                  m=00/
-                                    PT1H.json
+   ```text
+   resourceId=/
+     SUBSCRIPTIONS/
+       <<SUBSCRIPTION_ID>>/
+         RESOURCEGROUPS/
+           <<RESOURCE_GRP_NAME>>/
+             PROVIDERS/
+               MICROSOFT.DATALAKEANALYTICS/
+                 ACCOUNTS/
+                   <DATA_LAKE_ANALYTICS_NAME>>/
+                     y=####/
+                       m=##/
+                         d=##/
+                           h=##/
+                             m=00/
+                               PT1H.json
+   ```
 
    > [!NOTE]
    > В колонке `##` в пути обозначают год, месяц, день и час создания журнала. Служба Data Lake Analytics создает один файл каждый час, поэтому параметр `m=` всегда содержит значение `00`.
 
     Например, полный путь к журналу аудита может выглядеть таким образом:
 
-        https://adllogs.blob.core.windows.net/insights-logs-audit/resourceId=/SUBSCRIPTIONS/<sub-id>/RESOURCEGROUPS/myresourcegroup/PROVIDERS/MICROSOFT.DATALAKEANALYTICS/ACCOUNTS/mydatalakeanalytics/y=2016/m=07/d=18/h=04/m=00/PT1H.json
+    `https://adllogs.blob.core.windows.net/insights-logs-audit/resourceId=/SUBSCRIPTIONS/<sub-id>/RESOURCEGROUPS/myresourcegroup/PROVIDERS/MICROSOFT.DATALAKEANALYTICS/ACCOUNTS/mydatalakeanalytics/y=2016/m=07/d=18/h=04/m=00/PT1H.json`
 
     Аналогично, полный путь к журналу запросов может выглядеть так:
 
-        https://adllogs.blob.core.windows.net/insights-logs-requests/resourceId=/SUBSCRIPTIONS/<sub-id>/RESOURCEGROUPS/myresourcegroup/PROVIDERS/MICROSOFT.DATALAKEANALYTICS/ACCOUNTS/mydatalakeanalytics/y=2016/m=07/d=18/h=14/m=00/PT1H.json
+    `https://adllogs.blob.core.windows.net/insights-logs-requests/resourceId=/SUBSCRIPTIONS/<sub-id>/RESOURCEGROUPS/myresourcegroup/PROVIDERS/MICROSOFT.DATALAKEANALYTICS/ACCOUNTS/mydatalakeanalytics/y=2016/m=07/d=18/h=14/m=00/PT1H.json`
 
 ## <a name="log-structure"></a>Структура журнала
 
@@ -95,37 +96,39 @@ ms.locfileid: "60616517"
 
 Ниже приведен пример записи журнала запросов в формате JSON. Каждый большой двоичный объект имеет один корневой объект под названием **records** , который содержит массив объектов журнала.
 
+```json
+{
+"records":
+  [
+    . . . .
+    ,
     {
-    "records":
-      [        
-        . . . .
-        ,
-        {
-             "time": "2016-07-07T21:02:53.456Z",
-             "resourceId": "/SUBSCRIPTIONS/<subscription_id>/RESOURCEGROUPS/<resource_group_name>/PROVIDERS/MICROSOFT.DATALAKEANALYTICS/ACCOUNTS/<data_lake_analytics_account_name>",
-             "category": "Requests",
-             "operationName": "GetAggregatedJobHistory",
-             "resultType": "200",
-             "callerIpAddress": "::ffff:1.1.1.1",
-             "correlationId": "4a11c709-05f5-417c-a98d-6e81b3e29c58",
-             "identity": "1808bd5f-62af-45f4-89d8-03c5e81bac30",
-             "properties": {
-                 "HttpMethod":"POST",
-                 "Path":"/JobAggregatedHistory",
-                 "RequestContentLength":122,
-                 "ClientRequestId":"3b7adbd9-3519-4f28-a61c-bd89506163b8",
-                 "StartTime":"2016-07-07T21:02:52.472Z",
-                 "EndTime":"2016-07-07T21:02:53.456Z"
-                 }
-        }
-        ,
-        . . . .
-      ]
+         "time": "2016-07-07T21:02:53.456Z",
+         "resourceId": "/SUBSCRIPTIONS/<subscription_id>/RESOURCEGROUPS/<resource_group_name>/PROVIDERS/MICROSOFT.DATALAKEANALYTICS/ACCOUNTS/<data_lake_analytics_account_name>",
+         "category": "Requests",
+         "operationName": "GetAggregatedJobHistory",
+         "resultType": "200",
+         "callerIpAddress": "::ffff:1.1.1.1",
+         "correlationId": "4a11c709-05f5-417c-a98d-6e81b3e29c58",
+         "identity": "1808bd5f-62af-45f4-89d8-03c5e81bac30",
+         "properties": {
+             "HttpMethod":"POST",
+             "Path":"/JobAggregatedHistory",
+             "RequestContentLength":122,
+             "ClientRequestId":"3b7adbd9-3519-4f28-a61c-bd89506163b8",
+             "StartTime":"2016-07-07T21:02:52.472Z",
+             "EndTime":"2016-07-07T21:02:53.456Z"
+             }
     }
+    ,
+    . . . .
+  ]
+}
+```
 
 #### <a name="request-log-schema"></a>Схема журнала запросов
 
-| Имя | Type | Описание |
+| Имя | Type | Описание: |
 | --- | --- | --- |
 | time |Строка |Метка времени журнала (в формате UTC). |
 | resourceId |Строка |Идентификатор ресурса, с которым была выполнена операция |
@@ -134,15 +137,15 @@ ms.locfileid: "60616517"
 | resultType |Строка |Состояние операции. Например, 200. |
 | callerIpAddress |Строка |IP-адрес клиента, отправившего запрос. |
 | correlationId |Строка |Идентификатор журнала. С помощью этого значения можно группировать связанные записи журнала. |
-| identity |Объект |Идентификатор, для которого был создан журнал. |
+| удостоверение |Объект |Идентификатор, для которого был создан журнал. |
 | properties |JSON |Дополнительные сведения см. в следующем разделе ("Схема свойств журнала запросов"). |
 
 #### <a name="request-log-properties-schema"></a>Схема свойств журнала запросов
 
-| Имя | Type | Описание |
+| Имя | Type | Описание: |
 | --- | --- | --- |
 | HttpMethod |Строка |Метод HTTP, использованный для операции. Например, GET. |
-| путь |Строка |Путь выполнения операции. |
+| Path |Строка |Путь выполнения операции. |
 | RequestContentLength |INT |Длина содержимого HTTP-запроса. |
 | ClientRequestId |Строка |Идентификатор, однозначно определяющий данный запрос. |
 | StartTime |Строка |Время получения запроса сервером. |
@@ -152,32 +155,30 @@ ms.locfileid: "60616517"
 
 Ниже приведен пример записи журнала аудита в формате JSON. Каждый большой двоичный объект имеет один корневой объект под названием **records** , который содержит массив объектов журнала.
 
+```json
+{
+"records":
+  [
     {
-    "records":
-      [        
-        . . . .
-        ,
-        {
-             "time": "2016-07-28T19:15:16.245Z",
-             "resourceId": "/SUBSCRIPTIONS/<subscription_id>/RESOURCEGROUPS/<resource_group_name>/PROVIDERS/MICROSOFT.DATALAKEANALYTICS/ACCOUNTS/<data_lake_ANALYTICS_account_name>",
-             "category": "Audit",
-             "operationName": "JobSubmitted",
-             "identity": "user@somewhere.com",
-             "properties": {
-                 "JobId":"D74B928F-5194-4E6C-971F-C27026C290E6",
-                 "JobName": "New Job",
-                 "JobRuntimeName": "default",
-                 "SubmitTime": "7/28/2016 7:14:57 PM"
-                 }
-        }
-        ,
-        . . . .
-      ]
+         "time": "2016-07-28T19:15:16.245Z",
+         "resourceId": "/SUBSCRIPTIONS/<subscription_id>/RESOURCEGROUPS/<resource_group_name>/PROVIDERS/MICROSOFT.DATALAKEANALYTICS/ACCOUNTS/<data_lake_ANALYTICS_account_name>",
+         "category": "Audit",
+         "operationName": "JobSubmitted",
+         "identity": "user@somewhere.com",
+         "properties": {
+             "JobId":"D74B928F-5194-4E6C-971F-C27026C290E6",
+             "JobName": "New Job",
+             "JobRuntimeName": "default",
+             "SubmitTime": "7/28/2016 7:14:57 PM"
+             }
     }
+  ]
+}
+```
 
 #### <a name="audit-log-schema"></a>Схема журнала аудита
 
-| Имя | Type | Описание |
+| Имя | Type | Описание: |
 | --- | --- | --- |
 | time |Строка |Метка времени журнала (в формате UTC). |
 | resourceId |Строка |Идентификатор ресурса, с которым была выполнена операция |
@@ -185,7 +186,7 @@ ms.locfileid: "60616517"
 | operationName |Строка |Имя операции, добавленной в журнал. Например, JobSubmitted. |
 | resultType |Строка |Подсостояние состояния задания (operationName). |
 | resultSignature |Строка |Дополнительные сведения о состоянии задания (operationName). |
-| identity |Строка |Пользователь, который запросил операцию. Например, susan@contoso.com. |
+| удостоверение |Строка |Пользователь, который запросил операцию. Например, susan@contoso.com. |
 | properties |JSON |Дополнительные сведения см. в следующем разделе ("Схема свойств журнала аудита"). |
 
 > [!NOTE]
@@ -195,7 +196,7 @@ ms.locfileid: "60616517"
 
 #### <a name="audit-log-properties-schema"></a>Схема свойств журнала аудита
 
-| Имя | Type | Описание |
+| Имя | Type | Описание: |
 | --- | --- | --- |
 | JobId |Строка |Идентификатор, присвоенный заданию. |
 | JobName |Строка |Имя, указанное для задания. |
@@ -210,7 +211,8 @@ ms.locfileid: "60616517"
 
 ## <a name="process-the-log-data"></a>Обработка данных журнала
 
-В Azure Data Lake Analytics есть пример обработки и анализа данных журнала. Пример можно найти по адресу [https://github.com/Azure/AzureDataLake/tree/master/Samples/AzureDiagnosticsSample](https://github.com/Azure/AzureDataLake/tree/master/Samples/AzureDiagnosticsSample).
+В Azure Data Lake Analytics есть пример обработки и анализа данных журнала. Пример можно найти по адресу [https://github.com/Azure/AzureDataLake/tree/master/Samples/AzureDiagnosticsSample](https://github.com/Azure/AzureDataLake/tree/master/Samples/AzureDiagnosticsSample) .
 
-## <a name="next-steps"></a>Следующие шаги
-* [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+
+[Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)

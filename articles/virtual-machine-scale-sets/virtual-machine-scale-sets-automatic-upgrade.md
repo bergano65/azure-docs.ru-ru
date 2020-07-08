@@ -6,15 +6,15 @@ ms.author: avverma
 ms.topic: conceptual
 ms.service: virtual-machine-scale-sets
 ms.subservice: management
-ms.date: 04/14/2020
+ms.date: 06/26/2020
 ms.reviewer: jushiman
 ms.custom: avverma
-ms.openlocfilehash: c06ad5ab2688bd62fdf898950a8f64cd655a9fcc
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: af0dea5297cca02b12aecdc8252e62030032b93e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83124981"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85601349"
 ---
 # <a name="azure-virtual-machine-scale-set-automatic-os-image-upgrades"></a>Автоматические обновления образа ОС масштабируемого набора виртуальных машин Azure
 
@@ -46,24 +46,24 @@ ms.locfileid: "83124981"
 Оркестратор обновления ОС масштабируемого набора проверяет общее состояние работоспособности масштабируемого набора перед обновлением каждого пакета. При обновлении пакета может быть выполнено другое параллельное плановое или внеплановое обслуживание, которое может повлиять на работоспособность экземпляров масштабируемого набора. В таких случаях более 20 % экземпляров масштабируемого набора становятся неработоспособными, обновление масштабируемого набора останавливается в конце текущего пакета.
 
 ## <a name="supported-os-images"></a>Поддерживаемые образы ОС
-В настоящее время поддерживаются только определенные образы платформ ОС. Поддержка пользовательских образов доступна [в предварительной версии](virtual-machine-scale-sets-automatic-upgrade.md#automatic-os-image-upgrade-for-custom-images-preview) для пользовательских образов с помощью [общей коллекции образов](shared-image-galleries.md).
+В настоящее время поддерживаются только определенные образы платформ ОС. Пользовательские образы [поддерживаются](virtual-machine-scale-sets-automatic-upgrade.md#automatic-os-image-upgrade-for-custom-images) , если масштабируемый набор использует пользовательские образы с помощью [общей коллекции образов](shared-image-galleries.md).
 
 В настоящее время поддерживаются следующие SKU платформы (и периодически добавляются дополнительные):
 
-| Издатель               | Предложение ОС      |  Sku               |
+| Publisher               | Предложение ОС      |  Sku               |
 |-------------------------|---------------|--------------------|
 | Canonical               | UbuntuServer  | 16.04-LTS          |
 | Canonical               | UbuntuServer  | 18.04-LTS          |
-| Rogue Wave (OpenLogic)  | CentOS        | 7.5                |
+| Rogue Wave (OpenLogic)  | CentOS        | 7,5 %                |
 | CoreOS                  | CoreOS        | объем стабилен             |
-| Корпорация Майкрософт   | WindowsServer | 2012-R2-Datacenter |
-| Корпорация Майкрософт   | WindowsServer | 2016-Datacenter    |
-| Корпорация Майкрософт   | WindowsServer | 2016-Datacenter-Smalldisk |
-| Корпорация Майкрософт   | WindowsServer | 2016-Datacenter-with-Containers |
-| Корпорация Майкрософт   | WindowsServer | 2019-Datacenter |
-| Корпорация Майкрософт   | WindowsServer | 2019 — центр обработки данных — Смаллдиск |
-| Корпорация Майкрософт   | WindowsServer | 2019-Datacenter-with-Containers |
-| Корпорация Майкрософт   | WindowsServer | Datacenter-Core-1903-with-Containers-смаллдиск |
+| Microsoft Corporation   | WindowsServer | 2012-R2-Datacenter |
+| Microsoft Corporation   | WindowsServer | 2016-Datacenter    |
+| Microsoft Corporation   | WindowsServer | 2016-Datacenter-Smalldisk |
+| Microsoft Corporation   | WindowsServer | 2016-Datacenter-with-Containers |
+| Microsoft Corporation   | WindowsServer | 2019-Datacenter |
+| Microsoft Corporation   | WindowsServer | 2019 — центр обработки данных — Смаллдиск |
+| Microsoft Corporation   | WindowsServer | 2019-Datacenter-with-Containers |
+| Microsoft Corporation   | WindowsServer | Datacenter-Core-1903-with-Containers-смаллдиск |
 
 
 ## <a name="requirements-for-configuring-automatic-os-image-upgrade"></a>Требования к настройке автоматического обновления образа ОС
@@ -77,90 +77,25 @@ ms.locfileid: "83124981"
 ### <a name="service-fabric-requirements"></a>Требования к Service Fabric
 
 При использовании Service Fabric убедитесь, что выполняются следующие условия.
--   Service Fabric [уровень устойчивости](../service-fabric/service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster) — серебро или Gold, а не бронзовый.
+-   Service Fabric [уровень устойчивости](../service-fabric/service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster) — серебро или Gold, а не бронзовый.
 -   Расширение Service Fabric в определении модели масштабируемого набора должно иметь TypeHandlerVersion 1,1 или более поздней версии.
 -   Уровень устойчивости должен быть одинаковым для кластера Service Fabric и Service Fabricного расширения в определении модели масштабируемого набора.
+- Дополнительный зонд работоспособности или использование расширения работоспособности приложений не требуется.
 
 Убедитесь, что параметры устойчивости не совпадают на Service Fabric кластере и Service Fabricном расширении, так как несоответствие приведет к ошибкам обновления. Уровни устойчивости можно изменять в соответствии с рекомендациями, изложенными на [этой странице](../service-fabric/service-fabric-cluster-capacity.md#changing-durability-levels).
 
 
-## <a name="automatic-os-image-upgrade-for-custom-images-preview"></a>Автоматическое обновление образа ОС для пользовательских образов (Предварительная версия)
+## <a name="automatic-os-image-upgrade-for-custom-images"></a>Автоматическое обновление образа ОС для пользовательских образов
 
-> [!IMPORTANT]
-> Автоматическое обновление образа ОС для пользовательских образов сейчас находится в общедоступной предварительной версии. Для использования функции общедоступной предварительной версии, описанной ниже, требуется процедура согласия.
-> Предварительная версия предоставляется без соглашения об уровне обслуживания. Мы не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
-
-Автоматическое обновление образа ОС доступно в предварительной версии для пользовательских образов, развернутых с помощью [общей коллекции образов](shared-image-galleries.md). Другие пользовательские образы не поддерживаются при автоматическом обновлении образа ОС.
-
-Для включения функции предварительной версии требуется одноразовый явный выбор функции *аутоматикосупградевисгаллеримаже* на подписку, как описано ниже.
-
-### <a name="rest-api"></a>REST API
-В следующем примере показано, как включить предварительную версию для подписки.
-
-```
-POST on `/subscriptions/{subscriptionId}/providers/Microsoft.Features/providers/Microsoft.Compute/features/AutomaticOSUpgradeWithGalleryImage/register?api-version=2015-12-01`
-```
-
-Регистрация компонентов может занять до 15 минут. Чтобы проверить состояние регистрации, выполните следующие действия.
-
-```
-GET on `/subscriptions/{subscriptionId}/providers/Microsoft.Features/providers/Microsoft.Compute/features/AutomaticOSUpgradeWithGalleryImage?api-version=2015-12-01`
-```
-
-После регистрации функции для подписки завершите процесс согласия, добавив изменения в поставщик ресурсов вычислений.
-
-```
-POST on `/subscriptions/{subscriptionId}/providers/Microsoft.Compute/register?api-version=2019-12-01`
-```
-
-### <a name="azure-powershell"></a>Azure PowerShell
-Используйте командлет [Register-азпровидерфеатуре](/powershell/module/az.resources/register-azproviderfeature) , чтобы включить предварительную версию для подписки.
-
-```azurepowershell-interactive
-Register-AzProviderFeature -FeatureName AutomaticOSUpgradeWithGalleryImage -ProviderNamespace Microsoft.Compute
-```
-
-Регистрация компонентов может занять до 15 минут. Чтобы проверить состояние регистрации, выполните следующие действия.
-
-```azurepowershell-interactive
-Get-AzProviderFeature -FeatureName AutomaticOSUpgradeWithGalleryImage -ProviderNamespace Microsoft.Compute
-```
-
-После регистрации функции для подписки завершите процесс согласия, добавив изменения в поставщик ресурсов вычислений.
-
-```azurepowershell-interactive
-Register-AzResourceProvider -ProviderNamespace Microsoft.Compute
-```
-
-### <a name="azure-cli-20"></a>Azure CLI 2.0
-Чтобы включить предварительную версию подписки, используйте команду [AZ Feature Register](/cli/azure/feature#az-feature-register) .
-
-```azurecli-interactive
-az feature register --namespace Microsoft.Compute --name AutomaticOSUpgradeWithGalleryImage
-```
-
-Регистрация компонентов может занять до 15 минут. Чтобы проверить состояние регистрации, выполните следующие действия.
-
-```azurecli-interactive
-az feature show --namespace Microsoft.Compute --name AutomaticOSUpgradeWithGalleryImage
-```
-
-После регистрации функции для подписки завершите процесс согласия, добавив изменения в поставщик ресурсов вычислений.
-
-```azurecli-interactive
-az provider register --namespace Microsoft.Compute
-```
+Автоматическое обновление образа ОС поддерживается для пользовательских образов, развернутых с помощью [общей коллекции образов](shared-image-galleries.md). Другие пользовательские образы не поддерживаются при автоматическом обновлении образа ОС.
 
 ### <a name="additional-requirements-for-custom-images"></a>Дополнительные требования к пользовательским образам
-- Описанный выше процесс согласия должен быть выполнен только один раз для каждой подписки. После завершения согласия на завершение можно включить автоматическое обновление ОС для любого масштабируемого набора в этой подписке.
-- Коллекция общих образов может находиться в любой подписке и не обязательно должна быть выбрана отдельно. Только подписка на масштабируемый набор требует обязательного включения компонента.
-- Процесс настройки автоматического обновления образа ОС одинаков для всех масштабируемых наборов, как описано в [разделе Конфигурация](virtual-machine-scale-sets-automatic-upgrade.md#configure-automatic-os-image-upgrade) этой страницы.
+- Процесс установки и настройки автоматического обновления образа ОС одинаков для всех масштабируемых наборов, как описано в [разделе Конфигурация](virtual-machine-scale-sets-automatic-upgrade.md#configure-automatic-os-image-upgrade) этой страницы.
 - Экземпляры масштабируемых наборов, настроенных для автоматического обновления образа ОС, будут обновлены до последней версии образа коллекции общих образов, когда новая версия образа публикуется и [реплицируется](shared-image-galleries.md#replication) в регион этого масштабируемого набора. Если новый образ не реплицируется в регион, где развернут масштаб, то экземпляры масштабируемых наборов не будут обновлены до последней версии. С помощью многоязыковой репликации образов можно управлять развертыванием нового образа для масштабируемых наборов.
 - Не следует исключать новую версию образа из последней версии для этого образа коллекции. Версии образов, исключенные из последней версии образа коллекции, не развертываются в масштабируемом наборе с помощью автоматического обновления образа ОС.
 
 > [!NOTE]
->Чтобы масштабируемый набор мог активировать первое обновление образа после настройки автоматического обновления ОС, может потребоваться до 3 часов. Это одноразовая временная шкала для масштабируемого набора. Последующие развертывания образа активируются в масштабируемом наборе в течение 30 минут.
+>Чтобы масштабируемый набор мог активировать первое обновление образа после настройки автоматического обновления ОС, может потребоваться до 3 часов. Это одноразовая временная шкала для масштабируемого набора. Последующие развертывания образа активируются в масштабируемом наборе в течение 30-60 минут.
 
 
 ## <a name="configure-automatic-os-image-upgrade"></a>Настройка автоматического обновления образа ОС
@@ -193,11 +128,14 @@ Update-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" 
 ```
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
-Чтобы настроить автоматическое обновление образа ОС для масштабируемого набора, используйте команду [AZ vmss Update](/cli/azure/vmss#az-vmss-update) . Использование Azure CLI 2.0.47 или более поздней версии В следующем примере выполняется настройка автоматического обновления для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
+Используется `[az vmss update](/cli/azure/vmss#az-vmss-update)` для настройки автоматического обновления образа ОС для масштабируемого набора. Использование Azure CLI 2.0.47 или более поздней версии В следующем примере выполняется настройка автоматического обновления для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
 
 ```azurecli-interactive
 az vmss update --name myScaleSet --resource-group myResourceGroup --set UpgradePolicy.AutomaticOSUpgradePolicy.EnableAutomaticOSUpgrade=true
 ```
+
+> [!NOTE]
+>После настройки автоматических обновлений образа ОС для масштабируемого набора необходимо также перенести виртуальные машины масштабируемого набора в последнюю модель масштабируемого набора, если в масштабируемом наборе используется [Политика обновления](virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model)"вручную".
 
 ## <a name="using-application-health-probes"></a>Использование проверок работоспособности приложений
 
@@ -357,5 +295,5 @@ az vmss rolling-upgrade start --resource-group "myResourceGroup" --name "myScale
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fvm-scale-sets%2Fmaster%2Fpreview%2Fupgrade%2Fautoupdate.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"/></a>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные примеры использования автоматических обновлений ОС с масштабируемыми наборами см. в [репозитории GitHub](https://github.com/Azure/vm-scale-sets/tree/master/preview/upgrade).
