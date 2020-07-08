@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 02/28/2020
 ms.openlocfilehash: ac3904284ebf20fa1d5e75f9249732be3963f677
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78206288"
 ---
 # <a name="use-apache-spark-rest-api-to-submit-remote-jobs-to-an-hdinsight-spark-cluster"></a>Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API
@@ -77,7 +76,7 @@ curl -k --user "admin:mypassword1!" -v -X DELETE "https://<spark_cluster_name>.a
 
 ### <a name="example"></a>Пример
 
-Удаление пакетного задания с ИДЕНТИФИКАТОРом `5`пакета.
+Удаление пакетного задания с ИДЕНТИФИКАТОРом пакета `5` .
 
 ```cmd
 curl -k --user "admin:mypassword1!" -v -X DELETE "https://mysparkcluster.azurehdinsight.net/livy/batches/5"
@@ -99,7 +98,7 @@ Livy обеспечивает высокую доступность задани
 
 Выполните следующие действия:
 
-1. Для простоты использования задайте переменные среды. Этот пример основан на среде Windows, изменяя переменные по мере необходимости для вашей среды. Замените `CLUSTERNAME`и `PASSWORD` соответствующими значениями.
+1. Для простоты использования задайте переменные среды. Этот пример основан на среде Windows, изменяя переменные по мере необходимости для вашей среды. Замените `CLUSTERNAME` и `PASSWORD` соответствующими значениями.
 
     ```cmd
     set clustername=CLUSTERNAME

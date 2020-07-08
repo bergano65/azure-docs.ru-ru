@@ -16,10 +16,9 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4ac09fb3faf55be6c07a1e0a88b6e2032c9ab8ce
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78299335"
 ---
 # <a name="understand-the-azure-ad-schema"></a>Общие сведения о схеме Azure AD
@@ -42,7 +41,7 @@ ms.locfileid: "78299335"
 
 Синхронизация атрибутов может быть прямой, где значение в Azure AD напрямую устанавливается в значение атрибута локальный. Или же программное выражение может справиться с синхронизацией. Программное выражение требуется в тех случаях, когда для заполнения значения необходимо выполнить некоторую логику или определение.
 
-Например, если у вас есть атрибутjohn.smith@contoso.commail и требуется удалить часть «@contoso.com» и передать только значение «Джон. Иванов», то вы будете использовать нечто вроде этого:
+Например, если у вас есть атрибут mail john.smith@contoso.com и требуется удалить @contoso.com часть «» и передать только значение «Джон. Иванов», то вы будете использовать нечто вроде этого:
 
 `Replace([mail], "@contoso.com", , ,"", ,)`  
 
@@ -61,7 +60,7 @@ ms.locfileid: "78299335"
 |cn|Прямой доступ|commonName
 |countryCode|Прямой доступ|countryCode|
 |displayName|Прямой доступ|displayName|
-|givenName|Выражение|givenName|
+|givenName|Expression|givenName|
 |objectGUID|Прямой доступ|sourceAnchorBinary|  
 |userprincipalName|Прямой доступ|userPrincipalName|
 |проксядресс|Прямой доступ|ProxyAddress|
@@ -75,8 +74,8 @@ ms.locfileid: "78299335"
 1.  Перейдите в [проводник Graph](https://developer.microsoft.com/graph/graph-explorer).
 1.  Войдите с помощью учетной записи глобального администратора.
 1.  В левой части экрана выберите **изменить разрешения** и убедитесь, что параметр **Directory. ReadWrite. ALL** *имеет значение.*
-1.  Выполните запрос `https://graph.microsoft.com/beta/serviceprincipals/?$filter=startswith(Displayname,'Active')`. Этот запрос возвращает отфильтрованный список субъектов-служб.
-1.  Найдите `"appDisplayName": "Active Directory to Azure Active Directory Provisioning"` и запишите значение для `"id"`параметра.
+1.  Выполните запрос `https://graph.microsoft.com/beta/serviceprincipals/?$filter=startswith(Displayname,'Active')` . Этот запрос возвращает отфильтрованный список субъектов-служб.
+1.  Найдите `"appDisplayName": "Active Directory to Azure Active Directory Provisioning"` и запишите значение для параметра `"id"` .
     ```
     "value": [
             {
@@ -149,8 +148,8 @@ ms.locfileid: "78299335"
                 "passwordCredentials": []
             },
     ```
-1. Замените `{Service Principal id}` на свое значение и выполните запрос `https://graph.microsoft.com/beta/serviceprincipals/{Service Principal id}/synchronization/jobs/`.
-1. Найдите `"id": "AD2AADProvisioning.fd1c9b9e8077402c8bc03a7186c8f976"` и запишите значение для `"id"`параметра.
+1. Замените `{Service Principal id}` на свое значение и выполните запрос `https://graph.microsoft.com/beta/serviceprincipals/{Service Principal id}/synchronization/jobs/` .
+1. Найдите `"id": "AD2AADProvisioning.fd1c9b9e8077402c8bc03a7186c8f976"` и запишите значение для параметра `"id"` .
     ```
     {
                 "id": "AD2AADProvisioning.fd1c9b9e8077402c8bc03a7186c8f976",
@@ -241,7 +240,7 @@ ms.locfileid: "78299335"
                 ]
             }
     ```
-1. Теперь выполните запрос `https://graph.microsoft.com/beta/serviceprincipals/{Service Principal Id}/synchronization/jobs/{AD2AAD Provisioning id}/schema`.
+1. Теперь выполните запрос `https://graph.microsoft.com/beta/serviceprincipals/{Service Principal Id}/synchronization/jobs/{AD2AAD Provisioning id}/schema` .
  
     Пример: https://graph.microsoft.com/beta/serviceprincipals/653c0018-51f4-4736-a3a3-94da5dcb6862/synchronization/jobs/AD2AADProvisioning.e9287a7367e444c88dc67a531c36d8ec/schema
 

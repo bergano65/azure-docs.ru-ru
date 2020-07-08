@@ -9,10 +9,9 @@ ms.subservice: security-develop
 ms.topic: article
 ms.date: 01/15/2019
 ms.openlocfilehash: a921310f14f0d48922165a46d750366e170ee374
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78269916"
 ---
 # <a name="threat-modeling-tool-ga-release-71509112---9122018"></a>Threat Modeling Tool, общедоступный выпуск 7.1.50911.2 от 12.09.2018
@@ -49,7 +48,7 @@ ms.locfileid: "78269916"
 
 ### <a name="users-of-high-resolution-screens-may-experience-small-text-in-the-threat-properties"></a>Пользователи экранов с высоким разрешением могут видеть мелкий текст в свойствах угрозы
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 В представлении "Анализ" средства, если пользователь использует экран с высоким разрешением, который по умолчанию настроен на увеличение масштаба для удобства чтения в Windows, раздел Possible Mitigation(s) (Возможные способы устранения рисков) может отображаться мелким текстом.
 
@@ -61,7 +60,7 @@ ms.locfileid: "78269916"
 
 ### <a name="files-in-the-recently-opened-models-section-of-the-main-window-may-fail-to-open"></a>Не удается открыть файлы в разделе Recently Opened Models (Недавно открытые модели) главного окна
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Функция, позволяющая открыть из OneDrive, в предварительной версии была удалена. Пользователи с недавно открытыми моделями, которые были сохранены в OneDrive, получат следующую ошибку.
 

@@ -4,10 +4,9 @@ description: Сведения о настройке Azure Active Directory (Azur
 ms.topic: conceptual
 ms.date: 6/28/2019
 ms.openlocfilehash: 28c4c65cfcc77607dfe9a463a09ecd10389a6eca
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78193392"
 ---
 # <a name="set-up-azure-active-directory-for-client-authentication"></a>Настройка Azure Active Directory для проверки подлинности клиента
@@ -49,7 +48,7 @@ $Configobj = .\SetupApplications.ps1 -TenantId '0e3d2646-78b3-4711-b8be-74a381d9
 > [!NOTE]
 > Для национальных облаков (например, Azure для государственных организаций, Azure для Китая и Azure для Германии) также необходимо указать параметр `-Location`.
 
-Идентификатор *TenantId* можно найти, выполнив команду `Get-AzureSubscription`PowerShell. После выполнения этой команды для каждой подписки отображается TenantId.
+Идентификатор *TenantId* можно найти, выполнив команду PowerShell `Get-AzureSubscription` . После выполнения этой команды для каждой подписки отображается TenantId.
 
 Значение *ClusterName* используется в качестве префикса для приложений Azure AD, создаваемых скриптом. Точное совпадение с именем реального кластера не требуется. Оно предназначено только для упрощения сопоставления артефактов Azure AD с кластером Service Fabric, с которым они используются.
 
@@ -110,13 +109,13 @@ https://&lt;cluster_domain&gt;:19080/Explorer
 
 ### <a name="connecting-to-the-cluster-using-azure-ad-authentication-via-powershell-gives-an-error-when-you-sign-in-aadsts50011"></a>При подключении к кластеру с использованием проверки подлинности Azure AD с помощью PowerShell возникает ошибка при входе в систему: "AADSTS50011"
 #### <a name="problem"></a>Проблема
-При попытке подключения к кластеру Service Fabric с помощью Azure AD через PowerShell страница входа возвращает ошибку: "AADSTS50011: URL-адрес ответа, указанный в запросе, не совпадает с URL-адреса ответа, настроенного для приложения: &lt;GUID&gt;".
+При попытке подключения к кластеру Service Fabric с помощью Azure AD через PowerShell страница входа возвращает ошибку: "AADSTS50011: URL-адрес ответа, указанный в запросе, не совпадает с URL-адреса ответа, настроенного для приложения: &lt; GUID &gt; ".
 
 #### <a name="reason"></a>Причина
 Как и в предыдущих выпусках, PowerShell пытается выполнить проверку подлинности в Azure AD, которая предоставляет URL-адрес перенаправления, не указанный в списке **URL-адресов ответа** приложения Azure AD.  
 
 #### <a name="solution"></a>Решение
-Используйте тот же процесс, что и в предыдущем выпуске, но URL-адрес `urn:ietf:wg:oauth:2.0:oob`должен иметь значение, специальное перенаправление для проверки подлинности в командной строке.
+Используйте тот же процесс, что и в предыдущем выпуске, но URL-адрес должен иметь значение `urn:ietf:wg:oauth:2.0:oob` , специальное перенаправление для проверки подлинности в командной строке.
 
 ### <a name="connect-the-cluster-by-using-azure-ad-authentication-via-powershell"></a>Подключение к кластеру с помощью аутентификации Azure AD с использованием PowerShell
 Чтобы подключить кластер Service Fabric, воспользуйтесь следующим примером команды PowerShell:

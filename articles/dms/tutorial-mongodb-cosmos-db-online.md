@@ -13,17 +13,16 @@ ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 09/25/2019
 ms.openlocfilehash: 66375d83dca4edef17919e3b493d5e45be37cc40
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78255616"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-online-using-dms"></a>Руководство. Миграция MongoDB в API Azure Cosmos DB для MongoDB Online с помощью DMS
 
 С помощью Azure Database Migration Service можно оперативно переносить базы данных (с минимальным простоем) из локального или облачного экземпляра MongoDB в API Azure Cosmos DB для MongoDB.
 
-В этом руководстве описано следующее:
+В этом руководстве вы узнаете, как:
 > [!div class="checklist"]
 >
 > * создание экземпляра Azure Database Migration Service;
@@ -44,7 +43,7 @@ ms.locfileid: "78255616"
 
 В этой статье описан перенос баз данных по сети из MongoDB в API Azure Cosmos DB для MongoDB. Чтобы узнать, как выполнить миграцию в автономном режиме, см. [руководство по миграции MongoDB в API Azure Cosmos DB для MongoDB в автономном режиме с помощью DMS](tutorial-mongodb-cosmos-db.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется следующее:
 
@@ -75,7 +74,7 @@ ms.locfileid: "78255616"
 
     ![Отображение поставщиков ресурсов](media/tutorial-mongodb-to-cosmosdb-online/portal-select-resource-provider.png)
 
-3. Найдите миграцию, а затем справа от **Microsoft. Migration**выберите **Register**.
+3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
 
     ![Регистрация поставщика ресурсов](media/tutorial-mongodb-to-cosmosdb-online/portal-register-resource-provider.png)    
 

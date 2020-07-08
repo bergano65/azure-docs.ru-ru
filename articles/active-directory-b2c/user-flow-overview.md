@@ -11,10 +11,9 @@ ms.date: 11/30/2018
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: c11bc48742c398d2048a236c7d00af044971f845
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78185623"
 ---
 # <a name="user-flows-in-azure-active-directory-b2c"></a>Потоки пользователей в Azure Active Directory B2C
@@ -83,6 +82,6 @@ client_id=2d4d11a2-f814-46a7-890a-274a72a7309e      // Your registered Applicati
 
 Через API Microsoft Graph доступны только свойства **осермаилс** и **signInNames** . Адрес электронной почты в свойстве сведений строгой проверки подлинности недоступен.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы создать рекомендованные пользовательские потоки, следуйте инструкциям в разделе [учебник. Создание потока пользователя](tutorial-create-user-flows.md).

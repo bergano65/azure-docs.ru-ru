@@ -5,10 +5,9 @@ ms.topic: troubleshooting
 ms.date: 08/18/2017
 ms.author: pepogors
 ms.openlocfilehash: bf61858b446c1ac6d4a0210571fffaa721ad0166
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78254888"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Распространенные вопросы о Service Fabric
@@ -125,8 +124,8 @@ ms.locfileid: "78254888"
 ### <a name="how-can-my-application-authenticate-to-keyvault-to-get-secrets"></a>Как приложение может выполнить аутентификацию в хранилище ключей и получить секреты?
 Ниже приведены средства для того, чтобы ваше приложение получило учетные данные для аутентификации в KeyVault:
 
-А) Во время задания сборки и упаковки вы можете внедрить сертификат в пакет данных приложения Service Fabric и использовать его для аутентификации в KeyVault.
-Б) Для узлов с поддержкой MSI масштабируемого набора виртуальных машин можно разработать простой SetupEntryPoint PowerShell для приложения SF, чтобы получить [маркер доступа из конечной точки MSI](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [извлечь свои секреты из KeyVault](/powershell/module/azurerm.keyvault/get-azurekeyvaultsecret).
+A. Во время задания сборки и упаковки вы можете внедрить сертификат в пакет данных приложения Service Fabric и использовать его для аутентификации в KeyVault.
+Б. Для узлов с поддержкой MSI масштабируемого набора виртуальных машин можно разработать простой SetupEntryPoint PowerShell для приложения SF, чтобы получить [маркер доступа из конечной точки MSI](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [извлечь свои секреты из KeyVault](/powershell/module/azurerm.keyvault/get-azurekeyvaultsecret).
 
 ## <a name="application-design"></a>Проектирование приложений
 
@@ -181,6 +180,6 @@ Reliable Services обычно состоит из нескольких разд
 
 После объявления о начале их реализации см. дополнительные сведения в [блоге Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с [основными понятиями Service Fabric](service-fabric-technical-overview.md) и [рекомендациями по использованию платформы](service-fabric-best-practices-overview.md).

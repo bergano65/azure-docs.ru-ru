@@ -4,10 +4,9 @@ description: Сведения о подключении тома gitRepo для 
 ms.topic: article
 ms.date: 06/15/2018
 ms.openlocfilehash: 405cacd7a1649f95640a8dabf476729e101d03f8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78252082"
 ---
 # <a name="mount-a-gitrepo-volume-in-azure-container-instances"></a>Подключение тома gitRepo в службе "Экземпляры контейнеров Azure"
@@ -33,7 +32,7 @@ ms.locfileid: "78252082"
 
 Чтобы подключить том gitRepo при развертывании экземпляров контейнера с помощью [Azure CLI](/cli/azure), укажите параметры `--gitrepo-url` и `--gitrepo-mount-path` в команде [az container create][az-container-create]. При необходимости можно указать каталог тома, в который будет осуществляться клонирование (`--gitrepo-dir`) и хэш фиксации редакции, которая будет клонирована (`--gitrepo-revision`).
 
-В этом примере команда копирует пример приложения Microsoft [ACI-HelloWorld][aci-helloworld] в в экземпляре контейнера: `/mnt/aci-helloworld`
+В этом примере команда копирует пример приложения Microsoft [ACI-HelloWorld][aci-helloworld] в `/mnt/aci-helloworld` в экземпляре контейнера:
 
 ```azurecli-interactive
 az container create \

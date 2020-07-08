@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/27/2019
 ms.openlocfilehash: 90d7da9c8ddd8c9c595f2209dcc34e2f595acfd2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78196932"
 ---
 # <a name="configure-apache-hive-policies-in-hdinsight-with-enterprise-security-package"></a>Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности
@@ -52,7 +51,7 @@ ms.locfileid: "78196932"
 2. Выберите **CLUSTERNAME_Hive**в разделе **Hive**. Отобразятся две предварительно настроенные политики.
 3. Выберите **Добавить новую политику**, а затем введите следующие значения:
 
-    |Свойство |Значение |
+    |Свойство. |Значение |
     |---|---|
     |Имя политики|Read-hivesampletable — все|
     |База данных Hive|default|
@@ -70,7 +69,7 @@ ms.locfileid: "78196932"
 
 5. Повторите последние два шага, чтобы создать еще одну политику со следующими свойствами.
 
-    |Свойство |Значение |
+    |Свойство. |Значение |
     |---|---|
     |Имя политики|Read-hivesampletable-devicemake|
     |База данных Hive|default|
@@ -83,11 +82,11 @@ ms.locfileid: "78196932"
 
 Инструкции см. в разделе [Создание источника данных Hive ODBC](../hadoop/apache-hadoop-connect-excel-hive-odbc-driver.md).  
 
- | Свойство.  |Описание |
+ | Свойство.  |Описание: |
  | --- | --- |
  | Имя базы данных-источника | Присвойте имя источнику данных |
  | Узел | Введите CLUSTERNAME.azurehdinsight.net. Например, myHDICluster.azurehdinsight.net |
- | Порт | Используйте **443**. (Этот порт был изменен с 563 на 443.) |
+ | Port | Используйте **443**. (Этот порт был изменен с 563 на 443.) |
  | База данных | Использовать **значение по умолчанию**. |
  | Тип сервера Hive | Выберите **Hive Server 2**. |
  | Механизм | Выберите **Служба Azure HDInsight**. |

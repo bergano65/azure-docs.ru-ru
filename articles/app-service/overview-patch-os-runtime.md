@@ -5,10 +5,9 @@ ms.topic: article
 ms.date: 02/02/2018
 ms.custom: seodec18
 ms.openlocfilehash: 597964914f4022899ab027b735ec6932105497b4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78273637"
 ---
 # <a name="os-and-runtime-patching-in-azure-app-service"></a>Установка исправлений для ОС и среды выполнения в Службе приложений Azure
@@ -75,7 +74,7 @@ az webapp config set --java-version 1.8 --java-container Tomcat --java-container
 
 В следующей таблице показано, как запросить версии Windows и языковой среды выполнения, в которых работают ваши приложения:
 
-| Данные | Где ее найти | 
+| Сведения | Где ее найти | 
 |-|-|
 | Версия Windows | См. `https://<appname>.scm.azurewebsites.net/Env.cshtml` (в разделе "Сведения о системе") |
 | Версия .NET | Откройте `https://<appname>.scm.azurewebsites.net/DebugConsole` и выполните следующую команду в командной строке: <br>`powershell -command "gci 'Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Net Framework Setup\NDP\CDF'"` |

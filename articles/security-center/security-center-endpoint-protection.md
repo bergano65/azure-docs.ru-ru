@@ -14,10 +14,9 @@ ms.workload: na
 ms.date: 12/29/2019
 ms.author: memildin
 ms.openlocfilehash: dcf7df501665ea3885d00b9f7668a95cbbf02428
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78208548"
 ---
 # <a name="endpoint-protection-assessment-and-recommendations-in-azure-security-center"></a>Оценка и рекомендации по защите конечных точек в центре безопасности Azure
@@ -55,7 +54,7 @@ ms.locfileid: "78208548"
 
 ## <a name="microsoft-system-center-endpoint-protection"></a>Microsoft System Center Endpoint Protection
 
-* Центр безопасности рекомендует **"установить решения Endpoint Protection на виртуальной машине"** при импорте **сцепмпмодуле ("$env:P рограмфилес\микрософт Security Client\MpProvider\MpProvider.PSD1")** и выполнении **Get-мпроткомпутерстатус** Results WITH **амсервицеенаблед = false** .
+* Центр безопасности рекомендует **"установить решения Endpoint Protection на виртуальной машине"** при импорте **сцепмпмодуле ("$env:P рограмфилес\микрософт Security Client\MpProvider\MpProvider.psd1")** и выполнении **Get-мпроткомпутерстатус** Results WITH **амсервицеенаблед = false** .
 
 * Центр безопасности рекомендует **«разрешать проблемы работоспособности Endpoint Protection на ваших компьютерах»** при запуске **Get-мпроткомпутерстатус** и выполнении любого из следующих условий.
 
@@ -94,7 +93,7 @@ ms.locfileid: "78208548"
 
 * **HKLM: \ Софтваре\симантек\симантек конечная точка Протектион\куррентверсион\публик-опстате\асруннингстатус = 1**
 
-Или
+либо
 
 * **HKLM: \ Software\Wow6432Node\Symantec\Symantec конечная точка Протектион\куррентверсион\продуктнаме = "Symantec Endpoint Protection"**
 
@@ -175,10 +174,10 @@ ms.locfileid: "78208548"
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="troubleshoot"></a>Устранение неполадок
+### <a name="troubleshoot"></a>Диагностика
 
 Журналы расширений антивредоносного по Майкрософт доступны по адресу: **%системдриве%\виндовсазуре\логс\плугинс\микрософт.Азуре.секурити.иаасантималваре (или PaaSAntimalware) \1.5.5.x (версия #) \CommandExecution.log**
 
 ### <a name="support"></a>Поддержка
 
-Для получения дополнительной помощи обратитесь к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/). Или зафайлировать инцидент службы поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите получить поддержку. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Для получения дополнительной помощи обратитесь к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/). Или зафайлировать инцидент службы поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).

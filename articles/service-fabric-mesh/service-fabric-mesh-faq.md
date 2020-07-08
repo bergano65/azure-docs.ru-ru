@@ -5,10 +5,9 @@ ms.author: pepogors
 ms.date: 4/23/2019
 ms.topic: troubleshooting
 ms.openlocfilehash: 2a5c2ea63d162eb6fb78ab702e0519f8ac25dcc7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78252491"
 ---
 # <a name="commonly-asked-service-fabric-mesh-questions"></a>Распространенные вопросы о службе "Сетка Service Fabric"
@@ -85,8 +84,8 @@ az mesh app show --resource-group myResourceGroup --name helloWorldApp
 
 Ниже приведены образы ОС контейнера, которые можно использовать для развертывания служб.
 - Windows: windowsservercore и nanoserver
-    - Windows Server 1709;
-    - Windows Server 1803.
+    - Windows Server 1709
+    - Windows Server 1803
     - Windows Server 1809
     - Windows Server 2019 LTSC
 - Linux
@@ -123,7 +122,7 @@ EXPOSE 80
 
 Другие известные проблемы DNS, связанные с запуском кластера Service Fabric Development в Windows 10, см. в разделе [Отладка контейнеров Windows](/azure/service-fabric/service-fabric-how-to-debug-windows-containers) и [известных проблем с DNS](https://docs.microsoft.com/azure/service-fabric/service-fabric-dnsservice#known-issues).
 
-### <a name="networking"></a>Сеть
+### <a name="networking"></a>Сети
 
 Преобразование сетевых адресов (NAT) сети ServiceFabric может исчезнуть при запуске приложения на локальном компьютере. Чтобы определить, случилось ли это, выполните в командной строке команду
 

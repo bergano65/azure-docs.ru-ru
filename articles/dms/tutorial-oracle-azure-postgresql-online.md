@@ -13,17 +13,16 @@ ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/24/2020
 ms.openlocfilehash: 956523e2b51795a4bc97c653dab8b408b06061f4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78255567"
 ---
 # <a name="tutorial-migrate-oracle-to-azure-database-for-postgresql-online-using-dms-preview"></a>Руководство. Миграция Oracle в базу данных Azure для PostgreSQL через Интернет с помощью DMS (Предварительная версия)
 
 Службу Azure Database Migration Service можно использовать для переноса баз данных Oracle из локальной среды или виртуальных машин в [Базу данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/) с минимальным временем простоя. Другими словами, миграцию можно завершить с минимальным временем простоя для приложения. В этом руководстве выполняется перенос примера базы данных **отдела кадров** из экземпляра Oracle 11g, размещенного в локальной среде или на виртуальной машине, в Базу данных Azure для PostgreSQL с помощью операции сетевого переноса в Azure Database Migration Service.
 
-В этом руководстве описано следующее:
+В этом руководстве вы узнаете, как:
 > [!div class="checklist"]
 >
 > * оценка мероприятий по миграции с помощью средства ora2pg;
@@ -43,7 +42,7 @@ ms.locfileid: "78255567"
 
 В этой статье описывается выполнение сетевого переноса из Oracle в Базу данных Azure для PostgreSQL.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется следующее:
 
@@ -221,7 +220,7 @@ Azure Database Migration Service также может создать схему
     ![Отображение подписок на портале](media/tutorial-oracle-azure-postgresql-online/dms-migration-settings.png)
 
 > [!NOTE]
-> Если необходимо сопоставлять имена исходных таблиц с таблицами с разными именами, электронной почтой [dmsfeedback@microsoft.com](mailto:dmsfeedbac@microsoft.com) , и мы можем предоставить скрипт для автоматизации процесса.
+> Если необходимо сопоставлять имена исходных таблиц с таблицами с разными именами, электронной почтой, [dmsfeedback@microsoft.com](mailto:dmsfeedbac@microsoft.com) и мы можем предоставить скрипт для автоматизации процесса.
 
 ### <a name="when-the-postgresql-table-schema-doesnt-exist"></a>Если схема таблицы PostgreSQL не существует
 
@@ -249,7 +248,7 @@ Azure Database Migration Service также может создать схему
     | HR | targetHR.HR | "HR"."COUNTRIES"."COUNTRY_ID" |
     | HR | targetHR.Hr | *Невозможно сопоставить смешанные регистры |
 
-    * Чтобы создать смешанную схему Case и имена таблиц в целевом PostgreSQL [dmsfeedback@microsoft.com](mailto:dmsfeedback@microsoft.com), обратитесь к. Мы можем предоставить скрипт для настройки схемы таблицы со смешанными регистрами в целевой базе данных PostgreSQL.
+    * Чтобы создать смешанную схему Case и имена таблиц в целевом PostgreSQL, обратитесь к [dmsfeedback@microsoft.com](mailto:dmsfeedback@microsoft.com) . Мы можем предоставить скрипт для настройки схемы таблицы со смешанными регистрами в целевой базе данных PostgreSQL.
 
 ## <a name="register-the-microsoftdatamigration-resource-provider"></a>Регистрация поставщика ресурсов Microsoft.DataMigration
 
@@ -261,7 +260,7 @@ Azure Database Migration Service также может создать схему
 
     ![Отображение поставщиков ресурсов](media/tutorial-oracle-azure-postgresql-online/portal-select-resource-provider.png)
 
-3. Найдите миграцию, а затем справа от **Microsoft. Migration**выберите **Register**.
+3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
 
     ![Регистрация поставщика ресурсов](media/tutorial-oracle-azure-postgresql-online/portal-register-resource-provider.png)
 
@@ -322,7 +321,7 @@ Azure Database Migration Service также может создать схему
 
 ## <a name="upload-oracle-oci-driver"></a>Загрузка драйвера Oracle OCI
 
-1. Выберите **сохранить**, а затем на экране **Установка драйвера OCI** Войдите в учетную запись Oracle и скачайте драйвер **инстантклиент-басиклите-Виндовс. x64-12.2.0.1.0. zip** (37 128 586 байт) (контрольная сумма SHA1:865082268) [отсюда.](https://www.oracle.com/technetwork/topics/winx64soft-089540.html#ic_winx64_inst)
+1. Нажмите кнопку **сохранить**, а затем на экране **Установка драйвера OCI** Войдите в учетную запись Oracle и скачайте драйвер **instantclient-basiclite-windows.x64-12.2.0.1.0.zip** (37 128 586 байт) (контрольная сумма SHA1:865082268) [отсюда.](https://www.oracle.com/technetwork/topics/winx64soft-089540.html#ic_winx64_inst)
 2. Поместите драйвер в общую папку.
 
    Убедитесь, что общий доступ к этой папке предоставляется от имени пользователя с минимальным доступом только для чтения. Azure Database Migration Service обращается к этой папке и считывает драйвер OCI для загрузки в Azure, олицетворяя пользователя с указанным именем.
