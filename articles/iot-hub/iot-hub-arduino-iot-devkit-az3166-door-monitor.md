@@ -9,10 +9,9 @@ ms.tgt_pltfrm: arduino
 ms.date: 03/19/2018
 ms.author: liydu
 ms.openlocfilehash: 6bebe8ac6b9869466938600d6267fd0062c84477
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75977300"
 ---
 # <a name="door-monitor----using-azure-functions-and-sendgrid-send-email-when-a-door-is-opened"></a>Монитор двери — использование функций Azure и SendGrid, отправка электронной почты при открытии дверцы           
@@ -81,7 +80,7 @@ ms.locfileid: "75977300"
 
 ![Управление SendGrid](media/iot-hub-arduino-iot-devkit-az3166-door-monitor/sendgrid-manage.png)
 
-На странице SendGrid щелкните **Параметры** > **API ключи** > **создать ключ API**.
+На странице SendGrid щелкните **Параметры**  >  **API ключи**  >  **создать ключ API**.
 
 ![Первый снимок экрана создания API SendGrid](media/iot-hub-arduino-iot-devkit-az3166-door-monitor/sendgrid-create-api-first.png)
 
@@ -134,7 +133,7 @@ ms.locfileid: "75977300"
 
 ![Минирешение: примеры](media/iot-hub-arduino-iot-devkit-az3166-door-monitor/vscode-examples.png)
 
-Пример приложения также можно открыть из палитры команд. Нажмите `Ctrl+Shift+P` (macOS: `Cmd+Shift+P`) для вызова палитры команд. Введите **Arduino**, затем найдите и выберите **Arduino: Examples** (Arduino: примеры).
+Пример приложения также можно открыть из палитры команд. Нажмите `Ctrl+Shift+P` (macOS: `Cmd+Shift+P`) для вызова палитры команд. Введите **Arduino**, а затем найдите и выберите **Arduino: примеры**.
 
 ### <a name="provision-azure-services"></a>Подготовка служб Azure
 
@@ -200,4 +199,4 @@ ms.locfileid: "75977300"
 Вы узнали, как подключить устройство DevKit к акселератору решения Azure IoT для удаленного мониторинга и как использовать службу SendGrid для отправки сообщений электронной почты. Ниже приведены предлагаемые дальнейшие действия:
 
 * [Общие сведения об акселераторе решения Azure IoT для удаленного мониторинга](https://docs.microsoft.com/azure/iot-suite/)
-* [Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central](/azure/iot-central/core/howto-connect-devkit)
+* [Connect an MXChip IoT DevKit device to your Azure IoT Central application](/azure/iot-central/core/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central)

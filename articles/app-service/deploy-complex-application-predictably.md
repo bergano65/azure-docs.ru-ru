@@ -6,10 +6,9 @@ ms.topic: article
 ms.date: 01/06/2016
 ms.custom: seodec18
 ms.openlocfilehash: 62d0bf776b2d0c97d95b992ed6a1fd2a356e467a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75967377"
 ---
 # <a name="provision-and-deploy-microservices-predictably-in-azure"></a>Предсказуемые подготовка и развертывание микрослужб в Azure
@@ -39,7 +38,7 @@ ms.locfileid: "75967377"
 ### <a name="azure-powershell-080-or-later"></a>Azure PowerShell 0.8.0 или более поздней версии
 Начиная с версии 0.8.0, установка Azure PowerShell в дополнение к модулю Azure содержит модуль диспетчера ресурсов Azure. Этот новый модуль позволяет создавать скрипты развертывания групп ресурсов.
 
-Дополнительные сведения см. в статье [Использование Azure PowerShell с Azure Resource Manager](../powershell-azure-resource-manager.md).
+Дополнительные сведения см. в разделе [использование Azure PowerShell с Azure Resource Manager](../powershell-azure-resource-manager.md)
 
 ### <a name="azure-resource-explorer"></a>Обозреватель ресурсов Azure
 Этот [инструмент предварительного просмотра](https://resources.azure.com) позволяет изучать определения JSON всех групп ресурсов в подписке и отдельных ресурсов. Этот инструмент предназначен для изменения определений JSON ресурса, удаления всей иерархии ресурсов и создания новых ресурсов.  Сведения, доступные в этом средстве, очень полезны для создания шаблонов, так как они показывают, какие свойства необходимо задать для конкретного типа ресурса, правильные значения и т. д. Вы даже можете создать группу ресурсов на [портале Azure](https://portal.azure.com/), а затем проверить определения JSON в средстве обозревателя, чтобы помочь вам темплатизе группу ресурсов.
@@ -180,10 +179,10 @@ ms.locfileid: "75967377"
 Кроме того, вложенные ресурсы должны иметь иерархию, очень похожую на иерархию в файле шаблона JSON, и вы должны убедиться, что параметры приложения, строки подключения и т. д. правильно отображаются в области JSON. Отсутствие здесь параметров может указывать на проблему с файлом JSON и может помочь при отладке файла шаблона JSON.
 
 ## <a name="deploy-the-resource-group-template-yourself"></a>Развертывание шаблона группы ресурсов вручную
-Кнопка **Развертывание в Azure** — это отлично, но она позволяет развернуть шаблон группы ресурсов в azuredeploy.json только в том случае, если azuredeploy.json уже помещен в GitHub. Пакет SDK для Azure .NET также предоставляет средства для развертывания любого файла шаблона JSON непосредственно с локального компьютера. Для этого сделайте следующее.
+Кнопка **Развертывание в Azure** — это отлично, но она позволяет развернуть шаблон группы ресурсов в azuredeploy.json только в том случае, если azuredeploy.json уже помещен в GitHub. Пакет SDK для Azure .NET также предоставляет средства для развертывания любого файла шаблона JSON непосредственно с локального компьютера. Выполните указанные ниже действия:
 
-1. В Visual Studio щелкните **файл** > **создать** > **проект**.
-2. Щелкните **Visual C#** > **Cloud** > **Группа ресурсов Azure**, а затем нажмите кнопку **ОК**.
+1. В Visual Studio выберите **Файл** > **Создать** > **Проект**.
+2. Щелкните **Visual C#**  >  **Cloud**  >  **Группа ресурсов Azure**, а затем нажмите кнопку **ОК**.
    
    ![](./media/app-service-deploy-complex-application-predictably/deploy-1-vsproject.png)
 3. В разделе **Выберите шаблон Azure** выберите **Пустой шаблон** и нажмите кнопку **ОК**.
@@ -209,7 +208,7 @@ ms.locfileid: "75967377"
 11. Найдите свойства `location` и `isEnabled`, а затем задайте их, как показано ниже. Выполните то же самое для других трех предупреждений (фиолетового цвета).
     
     ![](./media/app-service-deploy-complex-application-predictably/deploy-7-alerts.png)
-12. Теперь все готово для развертывания. Щелкните проект правой кнопкой мыши и выберите пункт **развернуть** > **новое развертывание**.
+12. Теперь все готово для развертывания. Щелкните проект правой кнопкой мыши и выберите пункт **развернуть**  >  **новое развертывание**.
     
     ![](./media/app-service-deploy-complex-application-predictably/deploy-8-newdeployment.png)
 13. Войдите в свою учетную запись Azure, если вы еще этого не сделали.
@@ -228,9 +227,9 @@ ms.locfileid: "75967377"
     > Автоматическое масштабирование — это функция, предлагаемая в категории **Standard** или более высокой категории. Предупреждения уровня плана — это возможности, предлагаемые в категории **Basic** или более высокой. Для просмотра всех новых ресурсов App Insights необходимо задать для параметра **sku** значение **Standard** или **Premium**.
     > 
     > 
-16. Нажмите кнопку **Развернуть**. Если вы выбрали параметр **Сохранить пароль**, пароль будет сохранен в файле параметров **в виде обычного текста**. В противном случае вам будет предложено ввести пароль для базы данных во время развертывания.
+16. Щелкните **Развернуть**. Если вы выбрали параметр **Сохранить пароль**, пароль будет сохранен в файле параметров **в виде обычного текста**. В противном случае вам будет предложено ввести пароль для базы данных во время развертывания.
 
-Вот и все! Теперь нужно просто перейти на [портал Azure](https://portal.azure.com/) и с помощью инструмента [Обозреватель ресурсов Azure](https://resources.azure.com) просмотреть новые параметры автоматического масштабирования и предупреждения, добавляемые в развертываемое приложение JSON.
+Это все! Теперь нужно просто перейти на [портал Azure](https://portal.azure.com/) и с помощью инструмента [Обозреватель ресурсов Azure](https://resources.azure.com) просмотреть новые параметры автоматического масштабирования и предупреждения, добавляемые в развертываемое приложение JSON.
 
 Действия, описанные в этом разделе, главным образом охватывают следующее.
 
@@ -257,14 +256,14 @@ ms.locfileid: "75967377"
 * [Использование Azure PowerShell с диспетчером ресурсов Azure](../azure-resource-manager/powershell-azure-resource-manager.md)
 * [Устранение неполадок при развертывании групп ресурсов в Azure](../azure-resource-manager/templates/common-deployment-errors.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о синтаксисе JSON и свойствах для типов ресурсов, развертываемых в этой статье, см. таких справочниках:
 
 * [Microsoft.Sql/servers](/azure/templates/microsoft.sql/servers)
-* [Microsoft.Sql/servers/databases](/azure/templates/microsoft.sql/servers/databases)
-* [Microsoft. SQL/Servers/Фиреваллрулес](/azure/templates/microsoft.sql/servers/firewallrules)
+* [Microsoft. SQL/Servers/databases](/azure/templates/microsoft.sql/servers/databases)
+* [Microsoft.Sql/servers/firewallRules](/azure/templates/microsoft.sql/servers/firewallrules)
 * [Microsoft. Web/serverfarms](/azure/templates/microsoft.web/serverfarms)
 * [Microsoft. Web/Sites](/azure/templates/microsoft.web/sites)
-* [Microsoft.Web/sites/slots](/azure/templates/microsoft.web/sites/slots)
+* [Microsoft. Web/Sites/слоты](/azure/templates/microsoft.web/sites/slots)
 * [Microsoft. Insights/autoscalesettings](/azure/templates/microsoft.insights/autoscalesettings)

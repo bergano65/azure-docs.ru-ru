@@ -16,10 +16,9 @@ ms.topic: article
 ms.date: 08/17/2017
 ms.author: jegeib
 ms.openlocfilehash: 1454826095bcced9b20935405c0befd5a1ed1ddd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "68728329"
 ---
 # <a name="getting-started-with-the-threat-modeling-tool"></a>Начало работы со средством моделирования угроз
@@ -142,6 +141,6 @@ ms.locfileid: "68728329"
 
 Продемонстрированный в этой статье подход к моделированию угроз существенно проще, чем подход, который корпорация Майкрософт использовала в прошлом. Мы обнаружили, что подход к разработке программного обеспечения хорошо подходит для многих команд разработчиков. Мы надеемся, что это относится и к вам.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Отправляйте свои вопросы, комментарии и проблемы по адресу tmtextsupport@microsoft.com. **[Скачайте](https://aka.ms/threatmodelingtool)** средство моделирования угроз, чтобы начать работу.

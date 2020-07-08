@@ -15,10 +15,9 @@ ms.workload: TBD
 ms.date: 06/06/2017
 ms.author: twooley
 ms.openlocfilehash: a841ce8b664389ccd8fdf55de9965f09412fecf5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75930211"
 ---
 # <a name="install-and-configure-the-storsimple-adapter-for-sharepoint"></a>Установка и настройка адаптера StorSimple для SharePoint
@@ -238,7 +237,7 @@ ms.locfileid: "75930211"
 2. Дважды щелкните программу установки адаптера StorSimple для SharePoint. Откроется мастер установки.
    
     ![Мастер установки](./media/storsimple-adapter-for-sharepoint/sasp2.png)
-3. Щелкните **Далее**. Откроется следующая страница.
+3. Нажмите кнопку **Далее**. Откроется следующая страница.
    
     ![Мастер установки: страница удаления](./media/storsimple-adapter-for-sharepoint/sasp3.png)
 4. Чтобы выбрать процесс удаления, нажмите кнопку **Удалить**. Откроется следующая страница.
@@ -253,7 +252,7 @@ ms.locfileid: "75930211"
 1. Откройте панель управления и выберите пункт **Программы и компоненты**.
 2. Выберите **Адаптер StorSimple для SharePoint** и нажмите кнопку **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Узнайте больше о StorSimple](storsimple-overview.md).
 
 <!--Reference links-->

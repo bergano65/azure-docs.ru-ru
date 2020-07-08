@@ -8,10 +8,9 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 11/08/2019
 ms.openlocfilehash: 26eec9cdd327ceb51e72deb1d6f40d585ce368fb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75896140"
 ---
 # <a name="authentication-issues-in-azure-hdinsight"></a>Проблемы проверки подлинности в Azure HDInsight
@@ -24,7 +23,7 @@ ms.locfileid: "75896140"
 
 ## <a name="invalid_grant-or-unauthorized_client-50126"></a>invalid_grant или unauthorized_client, 50126
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Сбой входа для федеративных пользователей с кодом ошибки 50126 (вход выполнен успешно для пользователей облака). Сообщение об ошибке выглядит следующим образом:
 
@@ -34,17 +33,17 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ### <a name="cause"></a>Причина:
 
-Код ошибки Azure AD 50126 означает, `AllowCloudPasswordValidation` что политика не была задана клиентом.
+Код ошибки Azure AD 50126 означает, что `AllowCloudPasswordValidation` политика не была задана клиентом.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
-Администратор компании клиента Azure AD должен разрешить Azure AD использовать хэши паролей для пользователей, которые поддерживают ADFS.  Примените `AllowCloudPasswordValidationPolicy` , как показано в статье [использование Корпоративный пакет безопасности в HDInsight](../domain-joined/apache-domain-joined-architecture.md).
+Администратор компании клиента Azure AD должен разрешить Azure AD использовать хэши паролей для пользователей, которые поддерживают ADFS.  Примените, `AllowCloudPasswordValidationPolicy` как показано в статье [использование Корпоративный пакет безопасности в HDInsight](../domain-joined/apache-domain-joined-architecture.md).
 
 ---
 
 ## <a name="invalid_grant-or-unauthorized_client-50034"></a>invalid_grant или unauthorized_client, 50034
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Сбой входа с кодом ошибки 50034. Сообщение об ошибке выглядит следующим образом:
 
@@ -56,7 +55,7 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 Неверное имя пользователя (не существует). Пользователь не использует то же имя пользователя, которое используется в портал Azure.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Используйте то же имя пользователя, которое работает на этом портале.
 
@@ -64,7 +63,7 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ## <a name="invalid_grant-or-unauthorized_client-50053"></a>invalid_grant или unauthorized_client, 50053
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Учетная запись пользователя заблокирована, код ошибки 50053. Сообщение об ошибке выглядит следующим образом:
 
@@ -76,7 +75,7 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 Слишком много попыток входа с неверным паролем.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Подождите 30 минут или закройте все приложения, которые могут попытаться пройти проверку подлинности.
 
@@ -84,7 +83,7 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ## <a name="invalid_grant-or-unauthorized_client-50053"></a>invalid_grant или unauthorized_client, 50053
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Срок действия пароля истек, код ошибки 50053. Сообщение об ошибке выглядит следующим образом:
 
@@ -96,7 +95,7 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 Срок действия пароля истек.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Измените пароль в портал Azure (в локальной системе), а затем подождите 30 минут, пока синхронизация будет продолжена.
 
@@ -104,15 +103,15 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ## <a name="interaction_required"></a>interaction_required
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
-Получение сообщения `interaction_required`об ошибке.
+Получение сообщения об ошибке `interaction_required` .
 
 ### <a name="cause"></a>Причина:
 
 Политика условного доступа или MFA применяется к пользователю. Так как интерактивная проверка подлинности еще не поддерживается, пользователь или кластер необходимо исключить из процедуры MFA или условного доступа. Если вы решили исключить кластер (политика исключения на основе IP-адреса), убедитесь, что Active Directory `ServiceEndpoints` включена для этой виртуальной сети.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Используйте политику условного доступа и исключайте кластеры Хдинисгхт из MFA, как показано в подокне [Настройка кластера HDInsight с корпоративный пакет безопасности с помощью доменных служб Azure Active Directory](./apache-domain-joined-configure-using-azure-adds.md).
 
@@ -120,7 +119,7 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ## <a name="sign-in-denied"></a>Вход запрещен
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Вход запрещен.
 
@@ -128,7 +127,7 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 Чтобы перейти к этому этапу, проверка подлинности OAuth не является проблемой, но используется проверка подлинности Kerberos. Если этот кластер поддерживается ADLS, то вход в OAuth выполнен до попытки проверки подлинности Kerberos. В кластерах WASB попытки входа OAuth не предпринимались. Для хэшей паролей с ошибками Kerberos может быть не синхронизирована, учетная запись пользователя заблокирована в Azure AD DS и т. д. Хэши паролей синхронизируются, только когда пользователь изменяет пароль. При создании экземпляра AD DS Azure начнется синхронизация паролей, измененных после создания. Он не задним числом синхронизацию паролей, которые были заданы до его порождения.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Если вы считаете, что пароли могут не синхронизироваться, попробуйте изменить пароль и подождите несколько минут, чтобы синхронизироваться.
 
@@ -138,7 +137,7 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ## <a name="kinit-fails"></a>Сбой kinit
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Сбой kinit.
 
@@ -146,11 +145,11 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 Возможны разные варианты.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
-Для успешности kinit вам нужно знать `sAMAccountName` (это короткое имя учетной записи без области). `sAMAccountName`обычно является префиксом учетной записи (например `bob@contoso.com`, Бобом в). Для некоторых пользователей это может отличаться. Вам потребуется возможность просмотра и поиска в каталоге для изучения `sAMAccountName`.
+Для успешности kinit вам нужно знать `sAMAccountName` (это короткое имя учетной записи без области). `sAMAccountName`обычно является префиксом учетной записи (например, Бобом в `bob@contoso.com` ). Для некоторых пользователей это может отличаться. Вам потребуется возможность просмотра и поиска в каталоге для изучения `sAMAccountName` .
 
-Способы поиска `sAMAccountName`:
+Способы поиска `sAMAccountName` :
 
 * Если вы можете войти в Ambari с помощью локального администратора Ambari, просмотрите список пользователей.
 
@@ -158,37 +157,37 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 * С головного узла можно использовать команды SAMBA для поиска. Для этого требуется допустимый сеанс Kerberos (успешный kinit). Поиск баннеров в Интернете "(userPrincipalName = Bob *)"
 
-    Результаты поиска и обзора должны показывать `sAMAccountName` атрибут. Кроме того, можно просмотреть другие атрибуты, такие `pwdLastSet`как `badPasswordTime`, `userPrincipalName` и т. д., чтобы узнать, соответствуют ли эти свойства вашим ожиданиям.
+    Результаты поиска и обзора должны показывать `sAMAccountName` атрибут. Кроме того, можно просмотреть другие атрибуты, такие как `pwdLastSet` , `badPasswordTime` и `userPrincipalName` т. д., чтобы узнать, соответствуют ли эти свойства вашим ожиданиям.
 
 ---
 
 ## <a name="kinit-fails-with-preauthentication-failure"></a>Сбой kinit с ошибкой предварительной проверки подлинности
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
-Kinit завершается `Preauthentication` сбоем с ошибкой.
+Kinit завершается сбоем с `Preauthentication` ошибкой.
 
 ### <a name="cause"></a>Причина:
 
 Неправильное имя пользователя или пароль.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
-Проверьте имя пользователя и пароль. Также проверьте другие свойства, описанные выше. Чтобы включить подробную отладку, `export KRB5_TRACE=/tmp/krb.log` выполните из сеанса, прежде чем пытаться kinit.
+Проверьте имя пользователя и пароль. Также проверьте другие свойства, описанные выше. Чтобы включить подробную отладку, выполните `export KRB5_TRACE=/tmp/krb.log` из сеанса, прежде чем пытаться kinit.
 
 ---
 
 ## <a name="job--hdfs-command-fails-due-to-tokennotfoundexception"></a>Сбой команды задания или HDFS из-за Токеннотфаундексцептион
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
-Сбой команды задания или HDFS из- `TokenNotFoundException`за ошибки.
+Сбой команды задания или HDFS из-за ошибки `TokenNotFoundException` .
 
 ### <a name="cause"></a>Причина:
 
 Необходимый маркер доступа OAuth не найден для завершения задания или команды. Драйвер ADLS/АБФС попытается получить маркер доступа OAuth из службы учетных данных перед выполнением запросов к хранилищу. Этот маркер регистрируется при входе на портал Ambari с помощью того же пользователя.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Убедитесь, что вы успешно выполнили вход на портал Ambari через имя пользователя, удостоверение которого используется для запуска задания.
 
@@ -196,15 +195,15 @@ Kinit завершается `Preauthentication` сбоем с ошибкой.
 
 ## <a name="error-fetching-access-token"></a>Ошибка при выборке маркера доступа
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
-Пользователь получает сообщение `Error fetching access token`об ошибке.
+Пользователь получает сообщение об ошибке `Error fetching access token` .
 
 ### <a name="cause"></a>Причина:
 
 Эта ошибка возникает периодически, когда пользователи пытаются получить доступ к ADLS 2-го поколения с помощью списков ACL, и срок действия маркера Kerberos истек.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 * Для Azure Data Lake Storage 1-го поколения очистите кэш браузера и снова войдите в Ambari.
 
@@ -212,12 +211,12 @@ Kinit завершается `Preauthentication` сбоем с ошибкой.
 
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
+* Получите ответы специалистов Azure на [сайте поддержки сообщества пользователей Azure](https://azure.microsoft.com/support/community/).
 
-* Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

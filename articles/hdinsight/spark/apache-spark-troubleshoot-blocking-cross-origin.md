@@ -8,15 +8,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 07/29/2019
 ms.openlocfilehash: e241657186582955d21981f7dfe18856724aa692
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75894415"
 ---
 # <a name="scenario-jupyter-server-404-not-found-error-due-to-blocking-cross-origin-api-in-azure-hdinsight"></a>Сценарий: Jupyter Server 404 "не найдено" из-за "блокировки межисточникового API" в Azure HDInsight
 
-В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при использовании Apache Spark компонентов в кластерах Azure HDInsight.
+В этой статье описываются действия по устранению неполадок и возможные способы исправления проблем, возникающих при использовании компонентов Apache Spark в кластерах Azure HDInsight.
 
 ## <a name="issue"></a>Проблема
 
@@ -36,9 +35,9 @@ Origin: https://xxx.xxx.xxx, Host: pnhr01.j101qxjrl4zebmhb0vmhg044xe.ax.internal
 
 - Если вы настроили правила группы безопасности сети (NSG), чтобы ограничивать доступ к кластеру. При ограничении доступа с помощью правил NSG вы сможете получить прямой доступ к Apache Ambari и другим службам, используя IP-адрес, а не имя кластера. Однако при доступе к Jupyter может появиться ошибка 404 "не найдено".
 
-- Если вы задаете шлюзу HDInsight настраиваемое DNS-имя, отличное `xxx.azurehdinsight.net`от стандартного.
+- Если вы задаете шлюзу HDInsight настраиваемое DNS-имя, отличное от стандартного `xxx.azurehdinsight.net` .
 
-## <a name="resolution"></a>Разрешение
+## <a name="resolution"></a>Решение
 
 1. Измените файлы jupyter.py в следующих двух местах:
 
@@ -47,11 +46,11 @@ Origin: https://xxx.xxx.xxx, Host: pnhr01.j101qxjrl4zebmhb0vmhg044xe.ax.internal
     /var/lib/ambari-agent/cache/common-services/JUPYTER/1.0.0/package/scripts/jupyter.py
     ```
 
-1. Найдите строку, в которой написано `NotebookApp.allow_origin='\"https://{2}.{3}\"'` : и измените ее на `NotebookApp.allow_origin='\"*\"'`:.
+1. Найдите строку, в которой написано: `NotebookApp.allow_origin='\"https://{2}.{3}\"'` и измените ее на: `NotebookApp.allow_origin='\"*\"'` .
 
 1. Перезапустите службу Jupyter из Ambari.
 
-1. При `ps aux | grep jupyter` вводе в командной строке должна отобразиться возможность подключения к любому URL-адресу.
+1. При вводе `ps aux | grep jupyter` в командной строке должна отобразиться возможность подключения к любому URL-адресу.
 
 Это менее безопасно, чем уже установленный параметр. Но предполагается, что доступ к кластеру ограничен, и что у него из внешней сети разрешено подключаться к кластеру, так как мы NSG на месте.
 
@@ -59,8 +58,8 @@ Origin: https://xxx.xxx.xxx, Host: pnhr01.j101qxjrl4zebmhb0vmhg044xe.ax.internal
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
+* Получите ответы специалистов Azure на [сайте поддержки сообщества пользователей Azure](https://azure.microsoft.com/support/community/).
 
-* Подключайтесь с помощью [@AzureSupport](https://twitter.com/azuresupport) официальной учетной записи Microsoft Azure для улучшения качества работы клиентов, подключив сообщество Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подключитесь к [@AzureSupport](https://twitter.com/azuresupport) — официальной учетной записи Microsoft Azure. Она помогает оптимизировать работу пользователей благодаря возможности доступа к ресурсам сообщества Azure (ответы на вопросы, поддержка и консультации специалистов).
 
-* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
