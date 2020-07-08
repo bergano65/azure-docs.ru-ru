@@ -2,16 +2,14 @@
 title: Смена сертификатов в службе Kubernetes Azure (AKS)
 description: Узнайте, как поворачивать сертификаты в кластере Azure Kubernetes Service (AKS).
 services: container-service
-author: zr-msft
 ms.topic: article
 ms.date: 11/15/2019
-ms.author: zarhoads
-ms.openlocfilehash: 00dcef4ae0f04fc7f550859238ae8c7e1ad19384
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 715771c7a1704e0d39f790d018980c4b39ba351b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80549065"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84817444"
 ---
 # <a name="rotate-certificates-in-azure-kubernetes-service-aks"></a>Смена сертификатов в службе Kubernetes Azure (AKS)
 
@@ -19,7 +17,7 @@ ms.locfileid: "80549065"
 
 В этой статье показано, как поворачивать сертификаты в кластере AKS.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Для работы с этой статьей требуется Azure CLI версии 2.0.77 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
@@ -41,8 +39,7 @@ AKS создает и использует следующие сертифика
 > 
 > Кроме того, можно проверить дату окончания срока действия сертификата кластера. Например, следующая команда отображает сведения о сертификате для кластера *myAKSCluster* .
 > ```console
-> kubectl config view --raw -o jsonpath="{.clusters[?(@.name == 'myAKSCluster')].cluster.certificate-authority-data}" | base64 -d > my-cert.crt
-> openssl x509 -in my-cert.crt -text
+> kubectl config view --raw -o jsonpath="{.clusters[?(@.name == 'myAKSCluster')].cluster.certificate-authority-data}" | base64 -d | openssl x509 -text | grep -A2 Validity
 > ```
 
 ## <a name="rotate-your-cluster-certificates"></a>Смена сертификатов кластера
@@ -50,7 +47,7 @@ AKS создает и использует следующие сертифика
 > [!WARNING]
 > Смена сертификатов с помощью `az aks rotate-certs` может привести к простою в течение 30 минут бездействия для кластера AKS.
 
-Для входа в кластер AKS используйте команду [AZ AKS Get-Credential][az-aks-get-credentials] . Эта команда также скачивает и настраивает сертификат `kubectl` клиента на локальном компьютере.
+Для входа в кластер AKS используйте команду [AZ AKS Get-Credential][az-aks-get-credentials] . Эта команда также скачивает и настраивает `kubectl` сертификат клиента на локальном компьютере.
 
 ```azurecli
 az aks get-credentials -g $RESOURCE_GROUP_NAME -n $CLUSTER_NAME
@@ -63,16 +60,16 @@ az aks rotate-certs -g $RESOURCE_GROUP_NAME -n $CLUSTER_NAME
 ```
 
 > [!IMPORTANT]
-> Для `az aks rotate-certs` завершения может потребоваться до 30 минут. Если команда не выполняется до завершения, используйте `az aks show` для проверки состояния кластера на *вращение сертификата*. Если кластер находится в состоянии сбоя, повторно запустите `az aks rotate-certs` его, чтобы снова повернуть сертификаты.
+> Для завершения может потребоваться до 30 минут `az aks rotate-certs` . Если команда не выполняется до завершения, используйте `az aks show` для проверки состояния кластера на *вращение сертификата*. Если кластер находится в состоянии сбоя, повторно запустите `az aks rotate-certs` его, чтобы снова повернуть сертификаты.
 
-Убедитесь, что старые сертификаты больше не являются допустимыми, выполнив `kubectl` команду. Так как вы не обновили сертификаты `kubectl`, используемые, вы увидите ошибку.  Пример:
+Убедитесь, что старые сертификаты больше не являются допустимыми, выполнив `kubectl` команду. Так как вы не обновили сертификаты, используемые `kubectl` , вы увидите ошибку.  Пример:
 
 ```console
 $ kubectl get no
 Unable to connect to the server: x509: certificate signed by unknown authority (possibly because of "crypto/rsa: verification error" while trying to verify candidate authority certificate "ca")
 ```
 
-Обновите сертификат, используемый `kubectl` службами, `az aks get-credentials`выполнив.
+Обновите сертификат, используемый службами `kubectl` , выполнив `az aks get-credentials` .
 
 ```azurecli
 az aks get-credentials -g $RESOURCE_GROUP_NAME -n $CLUSTER_NAME --overwrite-existing

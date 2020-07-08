@@ -4,12 +4,12 @@ description: Узнайте, как быстро создать кластер K
 services: container-service
 ms.topic: article
 ms.date: 05/06/2020
-ms.openlocfilehash: 28925961ea3b99f939ac650d54b5dcece2551f59
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
-ms.translationtype: HT
+ms.openlocfilehash: 29ee22cb4b28726b25ead6ff78d90de99847666b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82926635"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84886960"
 ---
 # <a name="create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Создание контейнера Windows Server в кластере Службы Azure Kubernetes (AKS) с помощью Azure CLI
 
@@ -67,24 +67,35 @@ az group create --name myResourceGroup --location eastus
 
 ## <a name="create-an-aks-cluster"></a>Создание кластера AKS
 
-Чтобы запустить кластер AKS, который поддерживает пулы узлов для контейнеров Windows Server, такой кластер должен использовать сетевую политику с подключаемым сетевым модулем [Azure CNI][azure-cni-about] (расширенным). Более подробные сведения о том, как планировать диапазоны подсетей и оценивать требования к сети, см в статье о [настройке сетевого взаимодействия Azure CNI][use-advanced-networking]. Приведенная ниже команда [az aks create][az-aks-create] позволяет создать кластер AKS с именем *myAKSCluster*. Эта команда создаст обязательные сетевые ресурсы, если они еще не существуют.
+Чтобы запустить кластер AKS, который поддерживает пулы узлов для контейнеров Windows Server, такой кластер должен использовать сетевую политику с подключаемым сетевым модулем [Azure CNI][azure-cni-about] (расширенным). Более подробные сведения о том, как планировать диапазоны подсетей и оценивать требования к сети, см в статье о [настройке сетевого взаимодействия Azure CNI][use-advanced-networking]. Используйте команду [AZ AKS Create][az-aks-create] , чтобы создать кластер AKS с именем *myAKSCluster*. Эта команда создаст обязательные сетевые ресурсы, если они еще не существуют.
+
+* Кластер настроен с двумя узлами
+* Параметры *Windows-Admin-Password* и *Windows-Admin-username* устанавливают учетные данные администратора для всех контейнеров Windows Server, созданных в кластере.
+* Пул узлов использует`VirtualMachineScaleSets`
 
 > [!NOTE]
 > Чтобы обеспечить надежную работу кластера, создайте не менее 2 (двух) узлов в пуле узлов по умолчанию.
 
+Предоставьте собственный безопасный *PASSWORD_WIN* (Помните, что команды в этой статье введены в оболочку Bash):
+
 ```azurecli-interactive
+PASSWORD_WIN="P@ssw0rd1234"
+
 az aks create \
     --resource-group myResourceGroup \
     --name myAKSCluster \
     --node-count 2 \
     --enable-addons monitoring \
-    --kubernetes-version 1.16.7 \
     --generate-ssh-keys \
+    --windows-admin-password $PASSWORD_WIN \
+    --windows-admin-username azureuser \
+    --vm-set-type VirtualMachineScaleSets \
     --network-plugin azure
 ```
 
-> [!Note]
-> Если кластер AKS невозможно создать из-за того, что нужная версия не поддерживается в вашем регионе, выполните команду [az aks get-versions --location eastus], чтобы получить список поддерживаемых версий для этого региона.
+> [!NOTE]
+> Если вы получаете сообщение об ошибке проверки пароля, попробуйте создать группу ресурсов в другом регионе.
+> Затем попытайтесь создать кластер с новой группой ресурсов.
 
 Через несколько минут выполнение команды завершается и отображаются сведения о кластере в формате JSON. Инициализация кластера иногда может выполняться не сразу же. В таком случае подождите примерно 10 минут.
 
@@ -98,8 +109,7 @@ az aks nodepool add \
     --cluster-name myAKSCluster \
     --os-type Windows \
     --name npwin \
-    --node-count 1 \
-    --kubernetes-version 1.16.7
+    --node-count 1
 ```
 
 Приведенная выше команда создает новый пул узлов с именем *npwin* и добавляет его в *myAKSCluster*. При создании пула узлов для запуска контейнеров Windows Server для параметра *node-vm-size* по умолчанию задается значение *Standard_D2s_v3*. Если вы хотите указать другое значение для параметра *node-vm-size*, не забудьте проверить список [ограниченных размеров виртуальных машин][restricted-vm-sizes]. Минимальное рекомендуемое значение размера: *Standard_D2s_v3*. Приведенная выше команда также использует подсеть по умолчанию в виртуальной сети по умолчанию (создается при запуске `az aks create`).
@@ -128,8 +138,8 @@ kubectl get nodes
 
 ```output
 NAME                                STATUS   ROLES   AGE    VERSION
-aks-nodepool1-12345678-vmssfedcba   Ready    agent   13m    v1.16.7
-aksnpwin987654                      Ready    agent   108s   v1.16.7
+aks-nodepool1-12345678-vmssfedcba   Ready    agent   13m    v1.16.9
+aksnpwin987654                      Ready    agent   108s   v1.16.9
 ```
 
 ## <a name="run-the-application"></a>Выполнение приложения

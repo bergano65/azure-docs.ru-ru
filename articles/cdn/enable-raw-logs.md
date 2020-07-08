@@ -7,15 +7,15 @@ manager: danielgi
 ms.service: azure-cdn
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/23/2020
 ms.author: sohamnc
-ms.openlocfilehash: f4693cdac2d5d3a57987cc692797756314ded11e
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: a2522eba17574246ab99a0d47a42f128d5f61ace
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83747302"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84888637"
 ---
 # <a name="azure-cdn-http-raw-logs"></a>Необработанные журналы HTTP (Azure CDN)
 Необработанные журналы предоставляют широкие сведения об операциях и ошибках, полезные для аудита и (или) устранения неполадок. Необработанные журналы отличаются от журналов действий. Журналы действий позволяют анализировать операции, выполненные с ресурсами Azure. Необработанные журналы содержат записи действий самого ресурса.
@@ -33,7 +33,7 @@ ms.locfileid: "83747302"
 
 Чтобы настроить необработанные журналы для Azure CDN из профиля Майкрософт, выполните следующие действия: 
 
-1. В меню портала Azure выберите элементы **Все ресурсы** >>  **\<профиль_CDN>** .
+1. В меню портал Azure выберите **все ресурсы**  >>  **\<your-CDN-profile>** .
 
 2. В разделе **Мониторинг** выберите элемент **Параметры диагностики**.
 

@@ -6,16 +6,16 @@ ms.topic: conceptual
 ms.date: 10/18/2019
 ms.author: alehall
 ms.custom: mvc
-ms.openlocfilehash: 2e399c1a7b0f9bbc2aac375fe8af969a2b9e0e48
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 962d0d6dd51bb30f5df9ca0b609acf932777ebcf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80877633"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84887520"
 ---
 # <a name="running-apache-spark-jobs-on-aks"></a>Запуск заданий Apache Spark в AKS
 
-[Apache Spark][apache-spark] — это быстрый механизм для обработки больших данных. Начиная с версии [Spark 2.3.0][spark-latest-release], Apache Spark поддерживает встроенную интеграцию с кластерами Kubernetes. Служба Azure Kubernetes (AKS) — это управляемая среда Kubernetes, выполняющаяся в Azure. В этом документе описывается подготовка и запуск заданий Apache Spark в кластере Службы Azure Kubernetes (AKS).
+[Apache Spark][apache-spark] — это быстрый механизм для обработки больших данных. Начиная с версии [Spark 2.3.0][spark-kubernetes-earliest-version], Apache Spark поддерживает встроенную интеграцию с кластерами Kubernetes. Служба Azure Kubernetes (AKS) — это управляемая среда Kubernetes, выполняющаяся в Azure. В этом документе описывается подготовка и запуск заданий Apache Spark в кластере Службы Azure Kubernetes (AKS).
 
 ## <a name="prerequisites"></a>Предварительные условия
 
@@ -25,6 +25,7 @@ ms.locfileid: "80877633"
 * Учетная запись [центра Docker][docker-hub] или [Реестра контейнеров Azure][acr-create].
 * [Установленный][azure-cli] компонент Azure CLI в системе разработки.
 * [JDK 8][java-install], установленный в вашей системе.
+* [Apache Maven][maven-install] , установленный в системе.
 * [Средство сборки Scala][sbt-install] (SBT), установленное в вашей системе.
 * Средства командной строки Git, установленные в системе.
 
@@ -46,7 +47,7 @@ az group create --name mySparkCluster --location eastus
 az ad sp create-for-rbac --name SparkSP
 ```
 
-Создайте кластер AKS с узлами, имеющими размер `Standard_D3_v2`, и значениями AppID и Password, передаваемыми в качестве параметров субъекта-службы и клиентского секрета.
+Создайте кластер AKS с узлами, имеющими размер `Standard_D3_v2` , и значениями AppID и Password, передаваемыми в качестве параметров субъекта-службы и клиентского секрета.
 
 ```azurecli
 az aks create --resource-group mySparkCluster --name mySparkCluster --node-vm-size Standard_D3_v2 --generate-ssh-keys --service-principal <APPID> --client-secret <PASSWORD>
@@ -293,7 +294,7 @@ Pi is roughly 3.152155760778804
 
 В приведенном выше примере JAR-файл Spark был загружен в хранилище Azure. Другой вариант — упаковать JAR-файл в пользовательские образы Docker.
 
-Для этого найдите `dockerfile` для образа Spark в каталоге `$sparkdir/resource-managers/kubernetes/docker/src/main/dockerfiles/spark/`. Добавьте `ADD` оператор для задания `jar` Spark где-либо между `WORKDIR` объявлениями и. `ENTRYPOINT`
+Для этого найдите `dockerfile` для образа Spark в каталоге `$sparkdir/resource-managers/kubernetes/docker/src/main/dockerfiles/spark/`. Добавьте `ADD` оператор для задания Spark где- `jar` либо между `WORKDIR` `ENTRYPOINT` объявлениями и.
 
 Обновите путь к JAR-файлу, указав расположение файла `SparkPi-assembly-0.1.0-SNAPSHOT.jar` в вашей системе разработки. Также можно использовать собственный настраиваемый JAR-файл.
 
@@ -340,9 +341,10 @@ ENTRYPOINT [ "/opt/entrypoint.sh" ]
 [apache-spark]: https://spark.apache.org/
 [docker-hub]: https://docs.docker.com/docker-hub/
 [java-install]: https://aka.ms/azure-jdks
+[maven-install]: https://maven.apache.org/install.html
 [sbt-install]: https://www.scala-sbt.org/1.0/docs/Setup.html
 [spark-docs]: https://spark.apache.org/docs/latest/running-on-kubernetes.html
-[spark-latest-release]: https://spark.apache.org/releases/spark-release-2-3-0.html
+[spark-kubernetes-earliest-version]: https://spark.apache.org/releases/spark-release-2-3-0.html
 [spark-quickstart]: https://spark.apache.org/docs/latest/quick-start.html
 
 

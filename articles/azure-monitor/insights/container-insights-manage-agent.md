@@ -2,13 +2,13 @@
 title: Как управлять агентом Azure Monitor для контейнеров | Документация Майкрософт
 description: В этой статье описывается управление наиболее распространенными задачами обслуживания с помощью контейнерного агента Log Analytics, используемого решением "Azure Monitor для контейнеров".
 ms.topic: conceptual
-ms.date: 05/12/2020
-ms.openlocfilehash: ce014d27c6acc473c4a435dfed4757fb0884f4fe
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.date: 06/15/2020
+ms.openlocfilehash: ca0fa88cf27db15d45a2c855a1af351764c48fde
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83652191"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84887503"
 ---
 # <a name="how-to-manage-the-azure-monitor-for-containers-agent"></a>Как управлять агентом Azure Monitor для контейнеров
 
@@ -68,7 +68,7 @@ $ helm upgrade --name myrelease-1 \
 --set omsagent.secret.wsid=<your_workspace_id>,omsagent.secret.key=<your_workspace_key>,omsagent.env.clusterName=<my_prod_cluster> incubator/azuremonitor-containers
 ```
 
-Если рабочая область Log Analytics находится в Azure для Китая, выполните следующую команду.
+Если Рабочая область Log Analytics находится в Azure для Китая (21Vianet), выполните следующую команду:
 
 ```
 $ helm upgrade --name myrelease-1 \
@@ -93,6 +93,20 @@ $ helm upgrade --name myrelease-1 \
 ```
 $ helm upgrade --name myrelease-1 \
 --set omsagent.secret.wsid=<your_workspace_id>,omsagent.secret.key=<your_workspace_key>,omsagent.env.clusterId=<azureAroV4ResourceId> incubator/azuremonitor-containers
+```
+
+### <a name="upgrade-agent-on-azure-arc-enabled-kubernetes"></a>Обновление агента в службе "Дуга" в Azure с включенной Kubernetes
+
+Выполните следующую команду, чтобы обновить агент в кластере Kubernetes с включенной службой "Дуга Azure" без конечной точки прокси-сервера.
+
+```
+$ helm upgrade --install azmon-containers-release-1  –set omsagent.secret.wsid=<your_workspace_id>,omsagent.secret.key=<your_workspace_key>,omsagent.env.clusterId=<resourceIdOfAzureArcK8sCluster>
+```
+
+Выполните следующую команду, чтобы обновить агент, если указана конечная точка прокси-сервера. Дополнительные сведения о конечной точке прокси-сервера см. в разделе [Настройка конечной точки прокси-](container-insights-enable-arc-enabled-clusters.md#configure-proxy-endpoint)сервера.
+
+```
+helm upgrade –name azmon-containers-release-1 –set omsagent.proxy=<proxyEndpoint>,omsagent.secret.wsid=<your_workspace_id>,omsagent.secret.key=<your_workspace_key>,omsagent.env.clusterId=<resourceIdOfAzureArcK8sCluster>
 ```
 
 ## <a name="how-to-disable-environment-variable-collection-on-a-container"></a>Как отключить коллекцию переменных среды для контейнера

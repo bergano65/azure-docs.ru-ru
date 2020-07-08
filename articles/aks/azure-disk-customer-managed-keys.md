@@ -4,12 +4,12 @@ description: Применяйте собственные ключи (BYOK), чт
 services: container-service
 ms.topic: article
 ms.date: 01/12/2020
-ms.openlocfilehash: bb6ba5e6dd4ace9e33043079c0f435c10baf5cb2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9fd04b44be969e03eec2ed18f618068316572066
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77596510"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84882530"
 ---
 # <a name="bring-your-own-keys-byok-with-azure-disks-in-azure-kubernetes-service-aks"></a>Перенесите собственные ключи (BYOK) с помощью дисков Azure в службе Kubernetes Azure (AKS)
 
@@ -18,7 +18,7 @@ ms.locfileid: "77596510"
 > [!NOTE]
 > BYOK Linux и кластеры AKS на базе Windows доступны в [регионах Azure][supported-regions] , поддерживающих шифрование на стороне сервера для управляемых дисков Azure.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 * В этой статье предполагается, что вы создаете *новый кластер AKS*.
 
@@ -34,7 +34,7 @@ ms.locfileid: "77596510"
 
 ## <a name="install-latest-aks-cli-preview-extension"></a>Установка последнего расширения AKS CLI Preview
 
-Для использования управляемых клиентом ключей требуется расширение CLI *AKS-Preview* версии 0.4.26 или более поздней. Установите расширение Azure CLI *AKS-Preview* с помощью команды [AZ Extension Add][az-extension-add] , а затем проверьте наличие доступных обновлений с помощью команды [AZ Extension Update][az-extension-update] .
+Для использования управляемых клиентом ключей требуется расширение CLI *AKS-Preview* версии 0.4.26 или более поздней. Установите расширение Azure CLI *aks-preview* с помощью команды [az extension add][az-extension-add], а затем проверьте наличие доступных обновлений с помощью команды [az extension update][az-extension-update].
 
 ```azurecli-interactive
 # Install the aks-preview extension
@@ -88,9 +88,6 @@ desIdentity=$(az disk-encryption-set show -n myDiskEncryptionSetName  -g myResou
 
 # Update security policy settings
 az keyvault set-policy -n myKeyVaultName -g myResourceGroup --object-id $desIdentity --key-permissions wrapkey unwrapkey get
-
-# Assign the reader role
-az role assignment create --assignee $desIdentity --role Reader --scope $keyVaultId
 ```
 
 ## <a name="create-a-new-aks-cluster-and-encrypt-the-os-disk"></a>Создание нового кластера AKS и шифрование диска ОС
@@ -108,14 +105,13 @@ diskEncryptionSetId=$(az resource show -n mydiskEncryptionSetName -g myResourceG
 az group create -n myResourceGroup -l myAzureRegionName
 
 # Create the AKS cluster
-az aks create -n myAKSCluster -g myResourceGroup --node-osdisk-diskencryptionset-id $diskEncryptionSetId --kubernetes-version 1.17.0 --generate-ssh-keys
+az aks create -n myAKSCluster -g myResourceGroup --node-osdisk-diskencryptionset-id $diskEncryptionSetId --kubernetes-version KUBERNETES_VERSION --generate-ssh-keys
 ```
 
 При добавлении новых пулов узлов в кластер, созданный выше, для шифрования диска операционной системы используется управляемый клиентом ключ, указанный во время создания.
 
-## <a name="encrypt-your-aks-cluster-data-disk"></a>Шифрование диска данных кластера AKS
-
-Вы также можете зашифровать диски данных AKS с помощью собственных ключей.
+## <a name="encrypt-your-aks-cluster-data-diskoptional"></a>Шифрование диска данных кластера AKS (необязательно)
+Ключ шифрования диска ОС будет использоваться для шифрования диска данных, если ключ не предоставлен для диска данных из v 1.17.2, а также можно зашифровать диски данных AKS с помощью других ключей.
 
 > [!IMPORTANT]
 > Убедитесь, что у вас есть правильные учетные данные AKS. Субъекту-службе потребуется доступ участника к группе ресурсов, в которой развернута дискенкриптионсет. В противном случае возникнет ошибка, предлагающая, что у субъекта-службы нет разрешений.
@@ -169,11 +165,9 @@ kubectl apply -f byok-azure-disk.yaml
 ## <a name="limitations"></a>Ограничения
 
 * BYOK сейчас доступно только в общедоступной версии и в некоторых [регионах Azure][supported-regions] .
-* Шифрование дисков ОС, поддерживаемое с Kubernetes версии 1,17 и выше   
+* Шифрование дисков данных, поддерживаемое с Kubernetes версии 1,17 и выше   
 * Доступно только в регионах, где поддерживается BYOK
 * Шифрование с помощью управляемых клиентом ключей в настоящее время предназначено только для новых кластеров AKS, обновление существующих кластеров невозможно
-* Требуется кластер AKS, использующий масштабируемые наборы виртуальных машин, без поддержки групп доступности виртуальных машин
-
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

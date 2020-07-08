@@ -11,15 +11,15 @@ ms.service: azure-cdn
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/19/2018
 ms.author: allensu
-ms.openlocfilehash: 7ae7224efdaa281106dfbe2118ab0092c8284c6e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fba1f0b1f8160dece41c312b61cbc8ae9571436d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81260162"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84887031"
 ---
 # <a name="restrict-azure-cdn-content-by-countryregion"></a>Ограничение Azure CDN содержимого по странам или регионам
 
@@ -59,8 +59,8 @@ ms.locfileid: "81260162"
 - **Блокировать**: пользователям из указанных стран или регионов отказано в доступе к ресурсам, запрошенным из рекурсивного пути. Если для этого расположения не настроены другие параметры фильтрации для страны или региона, доступ будет разрешен всем остальным пользователям.
 
 Например, правило геофильтрации для блокировки путей */фотографии/Strasbourg/* фильтрует следующие файлы:     
-*HTTP\//:\<конечная точка>. azureedge.NET/Photos/Strasbourg/1000.jpg*
-*http:\//\<Endpoint>. azureedge.NET/Photos/Strasbourg/Cathedral/1000.jpg*
+*http: \/ / \<endpoint> . azureedge.NET/Photos/Strasbourg/1000.jpg* 
+ *http: \/ / \<endpoint> . azureedge.NET/Photos/Strasbourg/Cathedral/1000.jpg*
 
 ### <a name="define-the-countriesregions"></a>Определение стран и регионов
 В списке **коды стран** выберите страны или регионы, которые требуется заблокировать или разрешить для пути. 
@@ -98,7 +98,7 @@ ms.locfileid: "81260162"
 ### <a name="clean-up-resources"></a>Очистка ресурсов
 В таблице правила фильтрации страны или региона щелкните значок удаления рядом с правилом, чтобы удалить его, или значок редактирования, чтобы изменить его.
 
-## <a name="considerations"></a>Рекомендации
+## <a name="considerations"></a>Особенности
 * Изменения в конфигурации геофильтрации для страны вступают в силу не сразу:
    * Для профилей **Azure CDN категории "Стандартный" от Майкрософт** распространение обычно выполняется в течение 10 минут. 
    * Для профилей **Azure CDN уровня "Стандартный" от Akamai** распространение обычно завершается в течение одной минуты. 

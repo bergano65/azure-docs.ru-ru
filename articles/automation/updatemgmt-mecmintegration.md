@@ -5,20 +5,23 @@ services: automation
 ms.subservice: update-management
 author: mgoedtel
 ms.author: magoedte
-ms.date: 12/11/2019
+ms.date: 06/16/2020
 ms.topic: conceptual
-ms.openlocfilehash: ae8c4f09c0133dde7b0a73b7c2fcd0a28aa22ae3
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
-ms.translationtype: HT
+ms.openlocfilehash: 2bcf2518ab7f4e5a3648b508e42868fd5bb1a863
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84013203"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84817209"
 ---
 # <a name="integrate-update-management-with-windows-endpoint-configuration-manager"></a>Интеграция Управления обновлениями с Microsoft Endpoint Configuration Manager
 
 Клиенты, которые инвестировали в Microsoft Endpoint Configuration Manager для управления компьютерами, серверами и мобильными устройствами, также полагаются на его надежность и зрелость при управлении обновлениями программного обеспечения в рамках цикла управления обновлениями программного обеспечения (SUM).
 
 Выполнив создание и предварительное промежуточное размещение развертываемых обновлений программного обеспечения в Microsoft Endpoint Configuration Manager, можно получать отчеты и обновлять управляемые серверы Windows, а также получать подробные сведения о состоянии завершенных развертываний обновлений с помощью решения [Управление обновлениями](automation-update-management.md). При использовании Microsoft Endpoint Configuration Manager для отчетов о соответствии нормативным требованиям (но не для управления развертываниями обновлений на серверах Windows) можно продолжать отправлять отчеты в Configuration Manager, в то время как обновлениями безопасности управляет решение "Управление обновлениями" службы автоматизации Azure.
+
+>[!NOTE]
+>Хотя Управление обновлениями поддерживает оценку обновлений и установку исправлений для Windows Server 2008 R2, она не поддерживает клиентов, управляемых конечной точкой Configuration Manager выполнения этой операционной системы.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

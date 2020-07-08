@@ -9,10 +9,10 @@ ms.date: 09/15/2018
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: f30518c3bfc9876cbddaf8295ff9e8b667a70200
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74014556"
 ---
 ## <a name="overview"></a>Обзор
@@ -108,7 +108,7 @@ ms.locfileid: "74014556"
 
 ![Восстановление диска из моментальных снимков](../articles/virtual-machines/windows/media/incremental-snapshots/storage-incremental-snapshots-2.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о создании моментальных снимков BLOB-объектов и планировании инфраструктуры резервного копирования виртуальных машин см. по следующим ссылкам:
 
 * [Создание моментального снимка большого двоичного объекта](https://docs.microsoft.com/rest/api/storageservices/Creating-a-Snapshot-of-a-Blob)
