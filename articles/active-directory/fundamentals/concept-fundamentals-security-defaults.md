@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 62933a0e83a7494bc208068cb418f9ccc29ba637
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
-ms.translationtype: HT
+ms.openlocfilehash: 385107f3bb5dd30a118d3a5f7a5f14213f0ad1c8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84266361"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85554530"
 ---
 # <a name="what-are-security-defaults"></a>Что такое параметры безопасности по умолчанию?
 
@@ -92,7 +92,7 @@ ms.locfileid: "84266361"
 > [!WARNING]
 > Перед включением параметров безопасности по умолчанию убедитесь, что администраторы не используют старые протоколы проверки подлинности. Дополнительные сведения см. в разделе [Как отказаться от устаревшей проверки подлинности](concept-fundamentals-block-legacy-authentication.md).
 
-- [Как настроить отправку электронной почты с помощью Office 365 и Microsoft 365 на многофункциональном устройстве или в приложении](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-office-3)
+- [Как настроить отправку электронной почты с помощью Office 365 и Microsoft 365 на многофункциональном устройстве или в приложении](https://docs.microsoft.com/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)
 
 ### <a name="protecting-privileged-actions"></a>Защита привилегированных действий
 
@@ -122,7 +122,7 @@ ms.locfileid: "84266361"
 
 Эти бесплатные параметры безопасности по умолчанию позволяют регистрировать и использовать Azure MFA, **используя только приложение Microsoft Authenticator с уведомлениями**. Условный доступ позволяет использовать любой метод проверки подлинности, выбранный администратором.
 
-|   | Параметры безопасности по умолчанию | Условный доступ |
+| Метод | Параметры безопасности по умолчанию | Условный доступ |
 | --- | --- | --- |
 | Уведомление в мобильном приложении | X | X |
 | Код проверки из мобильного приложения или токен оборудования | X** | X |

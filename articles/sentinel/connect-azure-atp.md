@@ -1,6 +1,6 @@
 ---
 title: Подключение данных Azure ATP к Azure Sentinel | Документация Майкрософт
-description: Узнайте, как подключить данные Azure ATP к Azure Sentinel.
+description: Узнайте, как выполнять потоковую передачу журналов из Azure Advanced Threat protection (ATP) в Azure Sentinel одним щелчком мыши.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
-ms.openlocfilehash: 387d04cbbb125006efcc4efc53a02015fe3f5919
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f58c38ccfa234752a80c05c300d245c6c9e97cf0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77588592"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85559165"
 ---
 # <a name="connect-data-from-azure-advanced-threat-protection-atp"></a>Подключение данных из Azure Advanced Threat protection (ATP)
 

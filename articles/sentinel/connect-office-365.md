@@ -1,6 +1,6 @@
 ---
-title: Подключение данных Office 365 к Azure Sentinel | Документация Майкрософт
-description: Узнайте, как подключить данные Office 365 к Azure Sentinel.
+title: Подключение журналов Office 365 к Azure Sentinel | Документация Майкрософт
+description: Узнайте, как использовать соединитель журналов Office 365 для получения сведений о текущих действиях пользователя и администратора в Exchange и SharePoint, включая OneDrive.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -9,49 +9,54 @@ editor: ''
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/12/2020
+ms.date: 05/21/2020
 ms.author: yelevin
-ms.openlocfilehash: c3e63063b3ea4e7fba3997ddd645aa59fe857488
-ms.sourcegitcommit: 0690ef3bee0b97d4e2d6f237833e6373127707a7
-ms.translationtype: HT
+ms.openlocfilehash: 180b25f80bd27caea20b1c17cd84fda38c172e0f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83758577"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85559336"
 ---
-# <a name="connect-data-from-office-365-logs"></a>Подключение данных из журналов Office 365
+# <a name="connect-office-365-logs-to-azure-sentinel"></a>Подключение журналов Office 365 к Azure Sentinel
 
+Соединитель журналов [Office 365](https://docs.microsoft.com/office/) содержит сведения о Sentinel-метках Azure для текущих действий пользователя и администратора в **Exchange** и **SharePoint** (включая **OneDrive**). Эти сведения включают сведения о таких действиях, как скачивание файлов, запросы на доступ, изменения в событиях группы и операции с почтовыми ящиками, а также сведения о пользователе, выполнившего действия. Подключение журналов Office 365 к Azure Sentinel позволяет просматривать и анализировать эти данные в книгах, запрашивать их для создания пользовательских оповещений и внедрять их для улучшения процесса расследования, обеспечивая более подробную информацию о безопасности Office 365.
 
+## <a name="prerequisites"></a>Предварительные условия
 
-Можно выполнять потоковую передачу журналов аудита из [Office 365](https://docs.microsoft.com/office365/admin/admin-home?view=o365-worldwide) в Azure Sentinel одним щелчком мыши. Можно выполнять потоковую передачу журналов аудита из Office 365 в рабочую область Sentinel Azure в том же арендаторе. Соединитель журнала действий Office 365 предоставляет информацию о текущих действиях пользователей. Предоставляются сведения о событиях и действиях разных пользователей, администраторов, системы и политик из журналов действий Office 365. Подключив журналы Office 365 к Azure Sentinel, вы сможете использовать эти данные для просмотра панелей мониторинга, создания настраиваемых оповещений и улучшения процесса расследования.
-
-> [!IMPORTANT]
-> Если у вас есть лицензия E3, прежде чем получить доступ к данным через API действий управления Office 365, необходимо включить унифицированное ведение журнала аудита для организации Office 365. Для этого необходимо включить журнал аудита Office 365. Инструкции см. в разделе [Включение или отключение поиска по журналам аудита Office 365](https://docs.microsoft.com/office365/securitycompliance/turn-audit-log-search-on-or-off). Дополнительные сведения см. в справочнике по [API действий управления Office 365](https://docs.microsoft.com/office/office-365-management-api/office-365-management-activity-api-reference).
-
-## <a name="prerequisites"></a>Предварительные требования
+- У вас должны быть разрешения на чтение и запись в рабочей области Sentinel Azure.
 
 - Необходимо иметь права глобального администратора или администратора безопасности на вашем арендаторе.
-- Для арендатора должен быть включен унифицированный аудит. Для арендаторов с лицензиями Office 365 E3 или E5 по умолчанию включен унифицированный аудит. <br>Если у арендатора нет одной из этих лицензий, для включения унифицированного аудита на арендаторе используется один из следующих методов.
-    - [Использование командлета Set-AdminAuditLogConfig](https://docs.microsoft.com/powershell/module/exchange/policy-and-compliance-audit/set-adminauditlogconfig?view=exchange-ps) и включение параметра UnifiedAuditLogIngestionEnabled).
-    - [Использование интерфейса пользователя Центра безопасности и соответствия требованиям Office 365](https://docs.microsoft.com/office365/securitycompliance/search-the-audit-log-in-security-and-compliance#before-you-begin).
-   
+
+- Развертывание Office 365 должно находиться в том же клиенте, что и Рабочая область Azure Sentinel.
+
+> [!IMPORTANT]
+> - Чтобы соединитель мог получить доступ к данным через API-интерфейс действия управления Office 365, необходимо включить **единое ведение журнала аудита** в развертывании Office 365. В зависимости от типа лицензии Office 365/Microsoft 365 она может быть включена по умолчанию. Просмотрите [Центр безопасности и соответствия требованиям Office 365](https://docs.microsoft.com/office365/servicedescriptions/office-365-platform-service-description/office-365-securitycompliance-center) , чтобы проверить состояние единого ведения журнала аудита в соответствии с типом лицензии.
+> - Вы также можете вручную включить, отключить и проверить текущее состояние единого ведения журнала аудита Office 365. Инструкции см. в разделе [Включение или отключение поиска по журналам аудита Office 365](https://docs.microsoft.com/office365/securitycompliance/turn-audit-log-search-on-or-off).
+> - Дополнительные сведения см. в [справочнике по API действия управления Office 365](https://docs.microsoft.com/office/office-365-management-api/office-365-management-activity-api-reference).
+
+
    > [!NOTE]
-   > В настоящее время соединитель данных O365 автоматически записывает действия Exchange и SharePoint, как описано на странице соединителя в разделе "Типы данных". Рекомендуется ознакомиться с [этой статьей, если вам нужны данные аудита Teams и необходимо обеспечить защиту Teams с помощью Sentinel](https://techcommunity.microsoft.com/t5/azure-sentinel/protecting-your-teams-with-azure-sentinel/ba-p/1265761). 
+   > Как отмечалось выше, и как вы увидите на странице соединителя в разделе **типы данных**, соединитель Azure Sentinel Office 365 в настоящее время поддерживает прием журналов аудита только из Microsoft Exchange и SharePoint (включая OneDrive). Однако есть несколько внешних решений, если вы заинтересованы в переносе [данных из команд](https://techcommunity.microsoft.com/t5/azure-sentinel/protecting-your-teams-with-azure-sentinel/ba-p/1265761) или [других данных Office](https://techcommunity.microsoft.com/t5/azure-sentinel/ingesting-office-365-alerts-with-graph-security-api/ba-p/984888) в метку Azure. 
 
-## <a name="connect-to-office-365"></a>Подключение к Office 365
+## <a name="enable-the-office-365-log-connector"></a>Включение соединителя журнала Office 365
 
-1. В Azure Sentinel выберите **Соединители данных**, а затем щелкните элемент **Office 365**.
+1. В меню навигации меток Azure выберите **соединители данных**.
 
-2. Если вы еще не включили эту функцию, перейдите в колонку **Соединители данных** и выберите соединитель **Office 365**. Здесь можно щелкнуть **страницу "Открыть соединитель"** и выбрать в разделе конфигурации с меткой **Конфигурация** все журналы действий Office 365, которые необходимо подключить к Azure Sentinel. 
+1. В списке **соединители данных** щелкните **Office 365**, а затем нажмите кнопку **Открыть соединительную страницу** в правом нижнем углу.
+
+1. В разделе **Конфигурация**под названием установите флажки для журналов действий Office 365, которые вы хотите подключить к Azure Sentinel, и нажмите кнопку **Применить изменения**. 
+
    > [!NOTE]
-   > Если вы уже подключили несколько арендаторов к поддерживаемой ранее версии соединителя Office 365 в Azure Sentinel, вы сможете просматривать и изменять журналы, полученные от каждого арендатора. Добавление дополнительных арендаторов не предусмотрено, но можно удалить ранее добавленные арендаторы.
-3. Чтобы использовать соответствующую схему при анализе журналов Office 365, выполните поиск **OfficeActivity**.
+   > Если вы ранее подключили несколько клиентов к Azure Sentinel, используя более раннюю версию соединителя Office 365, которая поддерживала эту возможность, вы сможете просматривать и изменять журналы, собранные из каждого клиента. Добавление дополнительных арендаторов не предусмотрено, но можно удалить ранее добавленные арендаторы.
 
+1. Чтобы запросить данные журнала Office 365 в Log Analytics, введите `OfficeActivity` первую строку окна запроса.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Этот документ описывает подключение Office 365 к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
-- Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
-- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
+- Приступите к обнаружению угроз с помощью Azure Sentinel, используя [встроенные](tutorial-detect-threats-built-in.md) или [Настраиваемые](tutorial-detect-threats-custom.md) правила.
 

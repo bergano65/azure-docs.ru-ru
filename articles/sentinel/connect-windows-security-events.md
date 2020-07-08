@@ -1,6 +1,6 @@
 ---
 title: Подключение данных событий безопасности Windows к Azure Sentinel | Документация Майкрософт
-description: Узнайте, как подключить данные событий безопасности Windows к Azure Sentinel.
+description: Узнайте, как использовать соединитель событий безопасности для потоковой передачи всех событий безопасности из систем Windows в рабочую область "Sentinel" Azure. 
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/22/2020
 ms.author: yelevin
-ms.openlocfilehash: 30055ba1befc68d015e3e3162d8db11a2916f3d4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8da05da1b4aa9966b7743bc38b09d1c4b34c8cc8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80124967"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85555714"
 ---
 # <a name="connect-windows-security-events"></a>Подключение событий безопасности Windows 
 

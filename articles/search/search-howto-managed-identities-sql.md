@@ -1,7 +1,7 @@
 ---
-title: Настройка подключения к базе данных SQL Azure с использованием управляемого удостоверения (предварительная версия)
+title: Настройка подключения к базе данных SQL Azure с помощью управляемого удостоверения (Предварительная версия)
 titleSuffix: Azure Cognitive Search
-description: Сведения о том, как настроить подключение индексатора к базе данных SQL Azure с использованием управляемого удостоверения (предварительная версия)
+description: Узнайте, как настроить подключение индексатора к базе данных SQL Azure с помощью управляемого удостоверения (Предварительная версия)
 manager: luisca
 author: markheff
 ms.author: maheff
@@ -9,22 +9,23 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 05/18/2020
-ms.openlocfilehash: 87389651707a3bdcc18ae7eb03b88681b5303c4d
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: d0933f5305007bc4a8238adb2b6b949ab0c11edf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83663462"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85559941"
 ---
-# <a name="set-up-an-indexer-connection-to-an-azure-sql-database-using-a-managed-identity-preview"></a>Настройка подключения индексатора к базе данных SQL Azure с использованием управляемого удостоверения (предварительная версия)
+# <a name="set-up-an-indexer-connection-to-azure-sql-database-using-a-managed-identity-preview"></a>Настройка подключения индексатора к базе данных SQL Azure с помощью управляемого удостоверения (Предварительная версия)
 
 > [!IMPORTANT] 
 > Поддержка подключения к источнику данных с использованием управляемого удостоверения в настоящее время предоставляется в режиме общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде.
 > Чтобы запросить доступ к предварительной версии этой функции, заполните [эту форму](https://aka.ms/azure-cognitive-search/mi-preview-request).
 
-На этой странице описывается, как настроить подключение индексатора к базе данных SQL Azure с использованием управляемого удостоверения вместо того, чтобы включать учетные данные в строку подключения к объекту источника данных.
+На этой странице описывается, как настроить подключение индексатора к базе данных SQL Azure с помощью управляемого удостоверения вместо предоставления учетных данных в строке подключения к объекту источника данных.
 
 Перед изучением этой функции желательно иметь представление о том, что такое индексатор и как настроить индексатор для источника данных. См. подробнее в следующих статьях:
+
 * [Обзор индексатора](search-indexer-overview.md)
 * [Индексатор SQL Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 
@@ -39,7 +40,7 @@ ms.locfileid: "83663462"
 Нажав **Сохранить**, вы увидите идентификатор объекта, назначенный вашей службе поиска.
 
 ![Идентификатор объекта](./media/search-managed-identities/system-assigned-identity-object-id.png "Идентификатор объекта.")
- 
+
 ### <a name="2---provision-azure-active-directory-admin-for-sql-server"></a>2\. Подготовка администратора Azure Active Directory для SQL Server
 
 При подключении к базе данных на следующем шаге вам потребуется учетная запись Azure Active Directory (Azure AD) с правами администратора на доступ к базе данных, чтобы вы могли предоставить службе поиска разрешение на доступ к базе данных.
@@ -102,7 +103,7 @@ ms.locfileid: "83663462"
 * Свойство **name** — уникальное имя источника данных в службе поиска.
 * **type** — `azuresql`
 * **credentials**
-    * Если для проверки подлинности используется управляемое удостоверение, формат **учетных данных** отличается от того, который используется без управляемого удостоверения. Здесь вы будете предоставлять имя начального каталога или базы данных и ResourceId без ключа учетной записи или пароля. ResourceId должен содержать идентификатор подписки для базы данных SQL Azure, группу ресурсов для базы данных SQL и имя базы данных SQL. 
+    * Если для проверки подлинности используется управляемое удостоверение, формат **учетных данных** отличается от того, который используется без управляемого удостоверения. Здесь вы будете предоставлять имя начального каталога или базы данных и ResourceId без ключа учетной записи или пароля. ResourceId должен включать идентификатор подписки базы данных SQL Azure, группу ресурсов базы данных SQL и имя базы данных SQL. 
     * Формат строки подключения для управляемого удостоверения:
         * *Initial Catalog|Database=**имя базы данных**;ResourceId=/subscriptions/**ИД подписки**/resourceGroups/**имя группы ресурсов**/providers/Microsoft.Sql/servers/**имя сервера SQL Server**/;Connection Timeout=**время ожидания подключения**;*
 * **container** указывает имя таблицы или представления, которые необходимо индексировать.
@@ -110,7 +111,7 @@ ms.locfileid: "83663462"
 Пример создания объекта SQL Azure в качестве источника данных с помощью [REST API](https://docs.microsoft.com/rest/api/searchservice/create-data-source):
 
 ```
-POST https://[service name].search.windows.net/datasources?api-version=2019-05-06
+POST https://[service name].search.windows.net/datasources?api-version=2020-06-30
 Content-Type: application/json
 api-key: [admin key]
 
@@ -131,7 +132,7 @@ api-key: [admin key]
 Создать индекс с полем `booktitle`, доступным для поиска, можно следующим образом.   
 
 ```
-POST https://[service name].search.windows.net/indexes?api-version=2019-05-06
+POST https://[service name].search.windows.net/indexes?api-version=2020-06-30
 Content-Type: application/json
 api-key: [admin key]
 
@@ -155,7 +156,7 @@ api-key: [admin key]
 Пример определения индексатора для SQL Azure:
 
 ```
-POST https://[service name].search.windows.net/indexers?api-version=2019-05-06
+POST https://[service name].search.windows.net/indexers?api-version=2020-06-30
 Content-Type: application/json
 api-key: [admin key]
 

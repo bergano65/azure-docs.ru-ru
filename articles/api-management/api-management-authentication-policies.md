@@ -11,14 +11,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 11/27/2017
+ms.date: 06/12/2020
 ms.author: apimpm
-ms.openlocfilehash: 828f738ff8923dc8194e2449f5fb0be74ef45ad7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 70f1e4414888ceb8fb04fd92dc954d1a7c06dcb4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79473563"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85557977"
 ---
 # <a name="api-management-authentication-policies"></a>Политики аутентификации в службе управления API
 В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](https://go.microsoft.com/fwlink/?LinkID=398186).
@@ -48,16 +48,16 @@ ms.locfileid: "79473563"
 
 ### <a name="elements"></a>Элементы
 
-|Имя|Описание|Обязательный|
+|name|Описание|Обязательное значение|
 |----------|-----------------|--------------|
 |authentication-basic|Корневой элемент.|Да|
 
 ### <a name="attributes"></a>Атрибуты
 
-|Имя|Описание|Обязательный|По умолчанию|
+|name|Описание|Обязательное значение|Значение по умолчанию|
 |----------|-----------------|--------------|-------------|
-|username|Задает имя пользователя для обычных учетных данных.|Да|Недоступно|
-|пароль|Задает пароль для обычных учетных данных.|Да|Недоступно|
+|username|Задает имя пользователя для обычных учетных данных.|Да|Н/Д|
+|password|Задает пароль для обычных учетных данных.|Да|Н/Д|
 
 ### <a name="usage"></a>Использование
  Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
@@ -77,27 +77,38 @@ ms.locfileid: "79473563"
 
 ### <a name="examples"></a>Примеры
 
-В этом примере сертификат клиента идентифицируется по его отпечатку.
+В этом примере сертификат клиента определяется по его отпечатку:
+
 ```xml
 <authentication-certificate thumbprint="CA06F56B258B7A0D4F2B05470939478651151984" />
 ```
-В этом примере сертификат клиента идентифицируется по имени ресурса.
+
+В этом примере сертификат клиента идентифицируется по имени ресурса:
+
 ```xml  
 <authentication-certificate certificate-id="544fe9ddf3b8f30fb490d90f" />  
-```  
+``` 
+
+В этом примере сертификат клиента задается в политике, а не извлекается из встроенного хранилища сертификатов.
+
+```xml
+<authentication-certificate body="@(context.Variables.GetValueOrDefault<byte[]>("byteCertificate"))" password="optional-certificate-password" />
+```
 
 ### <a name="elements"></a>Элементы  
   
-|Имя|Описание|Обязательный|  
+|name|Описание|Обязательное значение|  
 |----------|-----------------|--------------|  
 |authentication-certificate|Корневой элемент.|Да|  
   
 ### <a name="attributes"></a>Атрибуты  
   
-|Имя|Описание|Обязательный|По умолчанию|  
+|name|Описание|Обязательное значение|Значение по умолчанию|  
 |----------|-----------------|--------------|-------------|  
-|thumbprint|Отпечаток для сертификата клиента.|`certificate-id` Должен присутствовать либо. `thumbprint`|Недоступно|  
-|ИД сертификата|Имя ресурса сертификата.|`certificate-id` Должен присутствовать либо. `thumbprint`|Недоступно|  
+|thumbprint|Отпечаток для сертификата клиента.|`thumbprint` `certificate-id` Должен присутствовать либо.|Н/Д|
+|ИД сертификата|Имя ресурса сертификата.|`thumbprint` `certificate-id` Должен присутствовать либо.|Н/Д|
+|текст|Сертификат клиента как массив байтов.|Нет|Недоступно|
+|password|Пароль для сертификата клиента.|Используется, если сертификат, указанный в `body` , защищен паролем.|Н/Д|
   
 ### <a name="usage"></a>Использование  
  Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
@@ -107,12 +118,14 @@ ms.locfileid: "79473563"
 -   **Области политики:** все области.  
 
 ##  <a name="authenticate-with-managed-identity"></a><a name="ManagedIdentity"></a>Проверка подлинности с помощью управляемого удостоверения  
- Используйте `authentication-managed-identity` политику для аутентификации в серверной службе с помощью управляемого удостоверения службы управления API. Эта политика по сути использует управляемое удостоверение для получения маркера доступа из Azure Active Directory для доступа к указанному ресурсу. После успешного получения маркера политика задаст значение маркера в `Authorization` заголовке с помощью `Bearer` схемы.
+ Используйте `authentication-managed-identity` политику для аутентификации в серверной службе с помощью управляемого удостоверения. Эта политика по сути использует управляемое удостоверение для получения маркера доступа из Azure Active Directory для доступа к указанному ресурсу. После успешного получения маркера политика задаст значение маркера в `Authorization` заголовке с помощью `Bearer` схемы.
+
+Для запроса маркера может использоваться удостоверение, назначенное системой, и любое из нескольких назначенных пользователю удостоверений. Если `client-id` значение не указано, предполагается, что назначено системой удостоверение. Если `client-id` переменная предоставлена, для этого назначенного пользователю удостоверения запрашивается маркер Azure Active Directory
   
 ### <a name="policy-statement"></a>Правило политики  
   
 ```xml  
-<authentication-managed-identity resource="resource" output-token-variable-name="token-variable" ignore-error="true|false"/>  
+<authentication-managed-identity resource="resource" client-id="clientid of user-assigned identity" output-token-variable-name="token-variable" ignore-error="true|false"/>  
 ```  
   
 ### <a name="example"></a>Пример  
@@ -127,7 +140,7 @@ ms.locfileid: "79473563"
 <authentication-managed-identity resource="https://vault.azure.net"/> <!--Azure Key Vault-->
 ```
 ```xml  
-<authentication-managed-identity resource="https://servicebus.azure.net/"/> <!--Azure Service Busr-->
+<authentication-managed-identity resource="https://servicebus.azure.net/"/> <!--Azure Service Bus-->
 ```
 ```xml  
 <authentication-managed-identity resource="https://storage.azure.com/"/> <!--Azure Blob Storage-->
@@ -135,7 +148,21 @@ ms.locfileid: "79473563"
 ```xml  
 <authentication-managed-identity resource="https://database.windows.net/"/> <!--Azure SQL-->
 ```
-  
+
+```xml
+<authentication-managed-identity resource="api://Client_id_of_Backend"/> <!--Your own Azure AD Application-->
+```
+
+#### <a name="use-managed-identity-and-set-header-manually"></a>Использование управляемого удостоверения и заголовка Set вручную
+
+```xml
+<authentication-managed-identity resource="api://Client_id_of_Backend"
+   output-token-variable-name="msi-access-token" ignore-error="false" /> <!--Your own Azure AD Application-->
+<set-header name="Authorization" exists-action="override">
+   <value>@("Bearer " + (string)context.Variables["msi-access-token"])</value>
+</set-header>
+```
+
 #### <a name="use-managed-identity-in-send-request-policy"></a>Использование управляемого удостоверения в политике отправки запросов
 ```xml  
 <send-request mode="new" timeout="20" ignore-error="false">
@@ -147,17 +174,18 @@ ms.locfileid: "79473563"
 
 ### <a name="elements"></a>Элементы  
   
-|Имя|Описание|Обязательный|  
+|name|Описание|Обязательное значение|  
 |----------|-----------------|--------------|  
 |Проверка подлинности — управляемое удостоверение |Корневой элемент.|Да|  
   
 ### <a name="attributes"></a>Атрибуты  
   
-|Имя|Описание|Обязательный|По умолчанию|  
+|name|Описание|Обязательное значение|Значение по умолчанию|  
 |----------|-----------------|--------------|-------------|  
-|resource|Строка. Идентификатор приложения целевого веб-API (защищенный ресурс) в Azure Active Directory.|Да|Недоступно|  
-|Output-Token-переменная-имя|Строка. Имя переменной контекста, которая будет принимать значение токена в качестве типа `string`объекта. |Нет|Недоступно|  
-|ignore-error|Логическое. Если задано `true`значение, конвейер политики продолжит выполняться, даже если маркер доступа не получен.|Нет|false|  
+|ресурс|Строка. Идентификатор приложения целевого веб-API (защищенный ресурс) в Azure Active Directory.|Да|Н/Д|
+|client-id|Строка. Идентификатор приложения, которому назначено пользовательское удостоверение, в Azure Active Directory.|Нет|удостоверение, назначенное системой|
+|Output-Token-переменная-имя|Строка. Имя переменной контекста, которая будет принимать значение токена в качестве типа объекта `string` . |Нет|Недоступно|  
+|ignore-error|Логическое. Если задано значение `true` , конвейер политики продолжит выполняться, даже если маркер доступа не получен.|Нет|false|  
   
 ### <a name="usage"></a>Использование  
  Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  

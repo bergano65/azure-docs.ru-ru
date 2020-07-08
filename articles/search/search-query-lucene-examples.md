@@ -9,12 +9,12 @@ tags: Lucene query analyzer syntax
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: bc691299f38d562aee5c08a89e10372331663f8e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c344d7bd7007dfbea366ea597ec622e35bf1e2eb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81262814"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85561767"
 ---
 # <a name="use-the-full-lucene-search-syntax-advanced-queries-in-azure-cognitive-search"></a>Использование полного синтаксиса поиска Lucene (расширенные запросы в Azure Когнитивный поиск)
 
@@ -53,7 +53,7 @@ URL-адрес содержит следующие элементы.
 + **`https://azs-playground.search.windows.net/`**— это служба поиска "песочницы", поддерживаемая командой разработчиков Когнитивный поиск Azure. 
 + **`indexes/nycjobs/`** Индекс заданий Нью в коллекции индексов этой службы. Имя службы и индекс должны быть указаны в запросе.
 + **`docs`**— Это коллекция Documents, содержащая все содержимое, доступное для поиска. Значение api-key в заголовке запроса подходит только для операций чтения, нацеленных на эту коллекцию документов.
-+ **`api-version=2019-05-06`** Задает версию API, которая является обязательным параметром при каждом запросе.
++ **`api-version=2020-06-30`** Задает версию API, которая является обязательным параметром при каждом запросе.
 + **`search=*`** Строка запроса, которая в исходном запросе имеет значение null, возвращает первые 50 результатов (по умолчанию).
 
 ## <a name="send-your-first-query"></a>Отправка первого запроса
@@ -63,10 +63,10 @@ URL-адрес содержит следующие элементы.
 Вставьте этот URL-адрес в клиент RESTFUL в качестве шага проверки и просмотрите структуру документа.
 
   ```http
-  https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&search=*
+  https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&search=*
   ```
 
-Строка запроса,, **`search=*`** является неопределенным поиском, эквивалентом null или пустым поиском. Это самый простой поиск, который можно выполнить.
+Строка запроса, **`search=*`** , является неопределенным поиском, эквивалентом null или пустым поиском. Это самый простой поиск, который можно выполнить.
 
 При необходимости можно добавить **`$count=true`** в URL-адрес, чтобы вернуть число документов, соответствующих условиям поиска. При пустой строке поиска это будут все документы в индексе (примерно 2800 в случае вакансий в Нью-Йорке).
 
@@ -75,7 +75,7 @@ URL-адрес содержит следующие элементы.
 Добавьте **queryType=full**, чтобы вызвать полный синтаксис запроса, переопределив простой синтаксис запроса по умолчанию. 
 
 ```GET
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&queryType=full&search=*
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&search=*
 ```
 
 Во всех примерах в этой статье задается параметр поиска **queryType=full**, указывающий, что полный синтаксис обрабатывается средством синтаксического анализа запросов Lucene. 
@@ -101,12 +101,12 @@ search=*&searchFields=business_title, posting_type&$select=business_title, posti
 Пробелы после запятых необязательны.
 
 > [!Tip]
-> При использовании REST API из кода приложения не забудьте указать параметры кодирования URL-адреса, такие `$select` как `searchFields`и.
+> При использовании REST API из кода приложения не забудьте указать параметры кодирования URL-адреса, такие как `$select` и `searchFields` .
 
 ### <a name="full-url"></a>Полный URL-адрес
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&queryType=full&$count=true&search=*&searchFields=business_title&$select=business_title
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&search=*&searchFields=business_title&$select=business_title
 ```
 
 Результат запроса должен выглядеть, как на снимке экрана ниже.
@@ -134,7 +134,7 @@ $select=business_title, posting_type&search=business_title:(senior NOT junior) A
 ### <a name="full-url"></a>Полный URL-адрес
 
 ```GET
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&queryType=full&$count=true&$select=business_title&search=business_title:(senior NOT junior)
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&$select=business_title&search=business_title:(senior NOT junior)
 ```
 
   ![Пример ответа Postman](media/search-query-lucene-examples/intrafieldfilter.png)
@@ -150,7 +150,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 Поле, указанное в **fieldname: сеарчекспрессион** , должно быть полем с возможностью поиска. Дополнительные сведения об использовании атрибутов индекса в определениях полей см. в статье [Создание индекса (REST API когнитивный Поиск Azure)](https://docs.microsoft.com/rest/api/searchservice/create-index) .
 
 > [!NOTE]
-> В приведенном выше примере не нужно использовать `searchFields` параметр, так как в каждой части запроса указано явное имя поля. Тем не менее можно по-прежнему `searchFields` использовать параметр, если требуется выполнить запрос, в котором часть частей ограничена определенным полем, а остальное может быть применено к нескольким полям. `search=business_title:(senior NOT junior) AND external&searchFields=posting_type` Например, запрос будет сопоставляться `senior NOT junior` только с `business_title` полем, тогда как он будет сопоставляться с `posting_type` полем external. Имя поля, указанное в **fieldname: сеарчекспрессион** , всегда имеет приоритет над `searchFields` параметром, поэтому в этом примере не нужно включать `business_title` в `searchFields` параметр.
+> В приведенном выше примере не нужно использовать `searchFields` параметр, так как в каждой части запроса указано явное имя поля. Тем не менее можно по-прежнему использовать `searchFields` параметр, если требуется выполнить запрос, в котором часть частей ограничена определенным полем, а остальное может быть применено к нескольким полям. Например, запрос `search=business_title:(senior NOT junior) AND external&searchFields=posting_type` будет сопоставляться `senior NOT junior` только с `business_title` полем, тогда как он будет сопоставляться с `posting_type` полем external. Имя поля, указанное в **fieldname: сеарчекспрессион** , всегда имеет приоритет над `searchFields` параметром, поэтому в этом примере не нужно включать `business_title` в `searchFields` параметр.
 
 ## <a name="example-3-fuzzy-search"></a>Пример 3. Поиск нечетких соответствий
 
@@ -174,7 +174,7 @@ searchFields=business_title&$select=business_title&search=business_title:asosiat
 Этот запрос осуществляет поиск вакансий со словом "associate" (намеренно написанного с ошибкой).
 
 ```GET
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:asosiate~
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:asosiate~
 ```
   ![Ответ на поиск нечетких соответствий](media/search-query-lucene-examples/fuzzysearch.png)
 
@@ -197,14 +197,14 @@ searchFields=business_title&$select=business_title&search=business_title:%22seni
 Этот запрос осуществляет поиск вакансий, содержащих словосочетание "senior analyst", разделенное не более чем одним словом.
 
 ```GET
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:%22senior%20analyst%22~1
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:%22senior%20analyst%22~1
 ```
   ![Запрос с учетом расположения](media/search-query-lucene-examples/proximity-before.png)
 
 Выполните эту операцию поиска снова, при этом не допуская разделения словосочетания "senior analyst" другими словами. Обратите внимание на то, что для этого запроса возвращены 8 документов, в отличие от 10 документов для предыдущего запроса.
 
 ```GET
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:%22senior%20analyst%22~0
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:%22senior%20analyst%22~0
 ```
 
 ## <a name="example-5-term-boosting"></a>Пример 5. Повышение приоритета терминов
@@ -215,14 +215,14 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 Этот запрос before выполняет поиск вакансий, содержащих термин *computer analyst*. Обратите внимание на то, что вакансии, содержащие оба слова *computer* и *analyst*, не найдены, а вакансии со словом *computer* выведены в верхней части результатов.
 
 ```GET
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:computer%20analyst
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:computer%20analyst
 ```
   ![Повышение приоритета термина before](media/search-query-lucene-examples/termboostingbefore.png)
 
 В запросе after выполните этот поиск снова, при этом повышая приоритет результатов, содержащих термин *analyst*, относительно результатов, содержащих слово *computer*, если оба слова не встречаются одновременно. 
 
 ```GET
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:computer%20analyst%5e2
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:computer%20analyst%5e2
 ```
 Более понятная для человека версия приведенного выше запроса: `search=business_title:computer analyst^2`. Для работоспособности запроса `^2` кодируется как `%5E2`, что сложнее для чтения.
 
@@ -247,10 +247,10 @@ searchFields=business_title&$select=business_title&search=business_title:/(Sen|J
 
 ### <a name="full-url"></a>Полный URL-адрес
 
-В этом запросе найдите задания с термином старший или младший: `search=business_title:/(Sen|Jun)ior/`.
+В этом запросе найдите задания с термином старший или младший: `search=business_title:/(Sen|Jun)ior/` .
 
 ```GET
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:/(Sen|Jun)ior/
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:/(Sen|Jun)ior/
 ```
 
   ![Запрос регулярных выражений](media/search-query-lucene-examples/regex.png)
@@ -273,7 +273,7 @@ searchFields=business_title&$select=business_title&search=business_title:prog*
 Этот запрос выполняет поиск вакансий, содержащих в начале"prog". В результате будут найдены вакансии со словами "programming" и "programmer". Символ "*" или "?" не может находиться в начале поискового запроса.
 
 ```GET
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:prog*
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:prog*
 ```
   ![Запрос с подстановочным знаком](media/search-query-lucene-examples/wildcard.png)
 

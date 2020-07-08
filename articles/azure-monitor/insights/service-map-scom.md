@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/12/2019
-ms.openlocfilehash: a20884c33d5232661e858e0b3ec722f139825aea
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.openlocfilehash: dc9425b25fa594d06473865f1add9c91c7760a97
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82928012"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85557217"
 ---
 # <a name="integrate-system-center-operations-manager-with-azure-monitor-for-vms-map-feature"></a>Интеграция System Center Operations Manager с функцией карт Azure Monitor для виртуальных машин
 
@@ -29,7 +29,7 @@ ms.locfileid: "82928012"
 
 ## <a name="install-the-service-map-management-pack"></a>Установка пакета управления схемы услуги
 
-Интеграция между Operations Manager и функцией Map включается путем импорта пакета управления Microsoft. SystemCenter. ServiceMap (Microsoft. SystemCenter. ServiceMap. MPB). Скачать пакет управления можно в [Центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=55763). Этот набор содержит следующие пакеты управления:
+Интеграция между Operations Manager и функцией Map включается путем импорта пакета управления Microsoft.SysТемцентер. ServiceMap (Microsoft.SysТемцентер. ServiceMap. MPB). Скачать пакет управления можно в [Центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=55763). Этот набор содержит следующие пакеты управления:
 
 * Microsoft.ServiceMap.Application.Views;
 * Microsoft.System.Center.ServiceMap.Internal;
@@ -117,7 +117,7 @@ ms.locfileid: "82928012"
 
 ## <a name="configure-rules-and-overrides"></a>Настройка правил и переопределений
 
-Правило *Microsoft. SystemCenter. ServiceMapImport. Rule*периодически извлекает сведения из функции карт Azure Monitor для виртуальных машин. Чтобы изменить интервал синхронизации, можно переопределить правило и изменить значение параметра **интервалминутес**.
+Правило, *Microsoft.Sysтемцентер. ServiceMapImport. Rule*, периодически извлекает сведения из функции карт Azure Monitor для виртуальных машин. Чтобы изменить интервал синхронизации, можно переопределить правило и изменить значение параметра **интервалминутес**.
 
 ![Operations Manager: окно свойств переопределений](media/service-map-scom/scom-overrides.png)
 
@@ -142,5 +142,6 @@ ms.locfileid: "82928012"
 * [Использование интерфейса командной строки Azure для создания субъекта-службы и доступа к ресурсам](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authenticate-service-principal-cli)
 * [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal)
 
-### <a name="feedback"></a>Отзывы
+### <a name="suggestions"></a>Предложения
+
 У вас есть отзывы о интеграции с функцией Azure Monitor для виртуальных машин Map или этой документации? Посетите [страницу пользователя Voice](https://feedback.azure.com/forums/267889-log-analytics/category/184492-service-map), где можно предложить возможности или проголосовать за существующие предложения.

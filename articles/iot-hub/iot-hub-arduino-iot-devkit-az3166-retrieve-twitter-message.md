@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 03/07/2018
 ms.author: liydu
-ms.openlocfilehash: dc4ff35ff04680e8635d54c25212c8ae639ae472
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 464e2c14fa238160ca198b9f1c8a9808e70933f9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "60779904"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85560967"
 ---
 # <a name="shake-shake-for-a-tweet----retrieve-a-twitter-message-with-azure-functions"></a>Shake, Shake: получение сообщений из Twitter с помощью решения "Функции Azure"
 
@@ -29,7 +29,7 @@ ms.locfileid: "60779904"
 
 Активная подписка Azure. Если у вас ее нет, зарегистрируйтесь одним из следующих способов:
 
-* Активация [бесплатной 30-дневной пробной Microsoft Azure учетной записи](https://azure.microsoft.com/free/)
+* Вы можете активировать [бесплатную 30-дневную пробную учетную запись Microsoft Azure](https://azure.microsoft.com/free/).
 * Заявка на [кредит Azure](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) , если вы являетесь подписчиком MSDN или Visual Studio
 
 ## <a name="open-the-project-folder"></a>Открытие папки проекта
@@ -92,7 +92,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 1. Нажмите `Ctrl+P`, чтобы запустить задачу `task device-upload`.
 
-2. Терминал предложит перейти в режим настройки. Для этого выполните следующие действия.
+2. Терминал предложит перейти в режим настройки. Для этого сделайте следующее:
 
    * Нажмите и удерживайте кнопку A.
 
@@ -196,8 +196,6 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 2. Найдите созданное приложение решения "Функции Azure" на [портале Azure](https://portal.azure.com/) и перезапустите его:
 
    ![azure-function-restart](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/azure-function-restart.png)
-
-### <a name="feedback"></a>Отзывы
 
 Если вы столкнулись с другими проблемами, изучите [часто задаваемые вопросы по IoT DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/) или свяжитесь с нами по любому из доступных каналов:
 

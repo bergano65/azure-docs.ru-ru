@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 12/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: fb7ddce34a32d7108587bf1a3d47be4b31214535
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 387e100a05cb51eb034f737b259bad4e5812465c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83832288"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85557885"
 ---
 # <a name="monitor-runbook-output"></a>Мониторинг выходных данных runbook
 
@@ -88,7 +88,7 @@ Verbose inside of function
 
 #### <a name="declare-output-data-type-in-a-workflow"></a>Объявление типа выходных данных в рабочем процессе
 
-Рабочий процесс указывает тип выходных данных с помощью [атрибута OutputType](https://technet.microsoft.com/library/hh847785.aspx). Этот атрибут не оказывает влияния во время выполнения, но позволяет получить указания об ожидаемых выходных данных runbook во время разработки. Так как набор инструментов для последовательностей runbook продолжает увеличиваться, растет и важность объявления типов выходных данных во время разработки. Поэтому рекомендуется включать это объявление во все создаваемые последовательности runbook.
+Рабочий процесс указывает тип выходных данных с помощью [атрибута OutputType](/powershell/module/microsoft.powershell.core/about/about_functions_outputtypeattribute). Этот атрибут не оказывает влияния во время выполнения, но позволяет получить указания об ожидаемых выходных данных runbook во время разработки. Так как набор инструментов для последовательностей runbook продолжает увеличиваться, растет и важность объявления типов выходных данных во время разработки. Поэтому рекомендуется включать это объявление во все создаваемые последовательности runbook.
 
 Следующий пример Runbook выводит строковый объект и включает в себя объявление типа выходных данных. Если Runbook выводит массив определенного типа, все равно следует указать его тип, а не массив типа.
 

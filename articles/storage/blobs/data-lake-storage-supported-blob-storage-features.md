@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 05/10/2020
+ms.date: 06/29/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 5be7c9800076cfaf361a3e752162e14d10f22655
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 15e6cf7adfda995148a75ec21b8d8e5d8a5cab2e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83650756"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85559077"
 ---
 # <a name="blob-storage-features-available-in-azure-data-lake-storage-gen2"></a>Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения
 
@@ -39,19 +39,20 @@ ms.locfileid: "83650756"
 |Команды Azure CLI для хранилища BLOB-объектов|Общедоступная версия|Preview (Предварительный просмотр)|[Краткое руководство. Создание, скачивание и составление списка больших двоичных объектов с помощью Azure CLI](storage-quickstart-blobs-cli.md)|
 |API хранилища BLOB-объектов|Общедоступная версия|Preview (Предварительный просмотр)|[Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 12 для .NET](storage-quickstart-blobs-dotnet.md)<br>[Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Java версии 12](storage-quickstart-blobs-java.md)<br>[Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Python версии 12](storage-quickstart-blobs-python.md)<br>[Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 12 в Node.js](storage-quickstart-blobs-nodejs.md)|
 |Журналы диагностики|Общедоступная версия|Preview (Предварительный просмотр) <div role="complementary" aria-labelledby="diagnostic-logging"><sup>1</sup></div> |[Ведение журнала аналитики службы хранилища Azure](../common/storage-analytics-logging.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Архивный уровень доступа|Общедоступная версия|Не поддерживается|[Хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа](storage-blob-storage-tiers.md)|
 |Вход в Azure Monitor|Preview (Предварительный просмотр) |Еще не поддерживается|[Мониторинг службы хранилища Azure](../common/monitor-storage.md)|
-|Архивный уровень доступа|Preview (Предварительный просмотр)|Не поддерживается|[Хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа](storage-blob-storage-tiers.md)|
+|Моментальные снимки|Preview (Предварительный просмотр)|Еще не поддерживается|[Моментальные снимки BLOB-объектов](snapshots-overview.md)|
+|Статические веб-сайты|Preview (Предварительный просмотр)|Еще не поддерживается|[Размещение статических веб-сайтов в службе хранилища Azure](storage-blob-static-website.md)|
+|Неизменяемое хранилище|Preview (Предварительный просмотр)|Еще не поддерживается|[Хранение критически важных для бизнеса данных большого двоичного объекта с помощью неизменяемого хранилища](storage-blob-immutable-storage.md)|
 |Политики управления жизненным циклом|Preview (Предварительный просмотр)|Еще не поддерживается|[Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](storage-lifecycle-management-concepts.md)|
+|Blobfuse|Preview (Предварительный просмотр)|Еще не поддерживается|[Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse](storage-how-to-mount-container-linux.md)|
 |Канал изменений|Еще не поддерживается|Еще не поддерживается|[Поддержка канала изменений в хранилище BLOB-объектов Azure](storage-blob-change-feed.md)|
 |Отработка отказа учетной записи|Еще не поддерживается|Еще не поддерживается|[Аварийное восстановление и отработка отказа учетной записи](../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Список управления доступом для контейнера больших двоичных объектов|Еще не поддерживается|Еще не поддерживается|[Set Container ACL](https://docs.microsoft.com/rest/api/storageservices/set-container-acl)|
 |Личные домены|Еще не поддерживается|Еще не поддерживается|[Сопоставление личного домена с конечной точкой хранилища BLOB-объектов Azure](storage-custom-domain-name.md)|
-|Неизменяемое хранилище|Еще не поддерживается|Еще не поддерживается|[Хранение критически важных для бизнеса данных большого двоичного объекта с помощью неизменяемого хранилища](storage-blob-immutable-storage.md)|
-|Моментальные снимки|Еще не поддерживается|Еще не поддерживается|[Создание моментальных снимков больших двоичных объектов и управление ими в .NET](storage-blob-snapshots.md)|
 |обратимое удаление.|Еще не поддерживается|Еще не поддерживается|[Soft delete for Azure Storage blobs](storage-blob-soft-delete.md) (Обратимое удаление больших двоичных объектов службы хранилища Azure)|
-|Статические веб-сайты|Еще не поддерживается|Еще не поддерживается|[Размещение статических веб-сайтов в службе хранилища Azure](storage-blob-static-website.md)|
 
-<div id="diagnostic-logging"><sup>1</sup> Для учетных записей хранения блочных BLOB-объектов ценовой категории "Премиум" невозможно включить журналы диагностики (классические) с помощью портала Azure. Их можно включить с помощью PowerShell.</div>
+<div id="diagnostic-logging"><sup>1</sup> для учетных записей хранения блочных BLOB-объектов уровня "Премиум" невозможно включить журналы диагностики (классические) с помощью портал Azure. Их можно включить с помощью PowerShell.</div>
 
 ## <a name="see-also"></a>См. также раздел
 

@@ -11,18 +11,18 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e4521cb67ae95a1cd4a3e728a13e43bfd5773ab
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: ca08b81a71cd61e727b11bbeb88c0c235d25c5e6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83737033"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85554912"
 ---
 # <a name="azure-ad-joined-devices"></a>Устройства, присоединенные к Azure AD
 
 Присоединение к Azure AD предназначено для организаций, в которых облачные технологии стоят на первом месте. Любая организация, независимо от размера или отрасли, может развернуть присоединенные к Azure AD устройства. Присоединение к Azure AD работает даже в гибридной среде, обеспечивая доступ как к локальным, так и к облачным приложениям и ресурсам.
 
-|   | Присоединение к Azure AD |
+| Присоединение к Azure AD | Описание: |
 | --- | --- |
 | **Определение** | Присоединено только к Azure AD, для входа на устройство требуется учетная запись организации |
 | **Основная аудитория** | Подходит для полностью облачных и гибридных организаций. |

@@ -1,6 +1,6 @@
 ---
 title: Подключение данных Fortinet к Azure Sentinel | Документация Майкрософт
-description: Узнайте, как подключить данные Fortinet к Azure Sentinel.
+description: Подключите устройство Fortinet к Sentinel Azure для просмотра панелей мониторинга, создания пользовательских оповещений и улучшения расследования. 
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
-ms.openlocfilehash: aabc95fcb8d3b32b89bb83f4f6892c3d40b03417
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 72ba4acd694933db503b01611e63867af99a129f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77588201"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85555966"
 ---
 # <a name="connect-fortinet-to-azure-sentinel"></a>Подключение Fortinet к Azure Sentinel
 
@@ -50,15 +50,15 @@ ms.locfileid: "77588201"
    > [!NOTE] 
    > Для получения дополнительных сведений перейдите в [библиотеку документов Fortinet](https://aka.ms/asi-syslog-fortinet-fortinetdocumentlibrary). Выберите свою **версию и воспользуйтесь** **справочной ссылкой и сообщением журнала**.
 
-1. Чтобы использовать соответствующую схему в Azure Monitor Log Analytics для событий Fortinet, выполните поиск по `CommonSecurityLog`запросу.
+1. Чтобы использовать соответствующую схему в Azure Monitor Log Analytics для событий Fortinet, выполните поиск по запросу `CommonSecurityLog` .
 
-1. Перейдите к [шагу 3. Проверка подключения](connect-cef-verify.md).
+1. Перейдите к процедуре [Шаг 3. Проверка подключения](connect-cef-verify.md).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Из этой статьи вы узнали, как подключить устройства Fortinet к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
-- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+- [Используйте книги](tutorial-monitor-your-data.md) для мониторинга данных.
 
 

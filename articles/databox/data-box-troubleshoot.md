@@ -5,15 +5,15 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: pod
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 04/30/2020
 ms.author: alkohli
-ms.openlocfilehash: 12ca4df6e5dd4ba86ece8469255195e2fa1c155e
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.openlocfilehash: 3aa48f42c767a8f1fb1c7bf0ad78fef8b8af1594
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82628901"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85558544"
 ---
 # <a name="troubleshoot-issues-related-to-azure-data-box-and-azure-data-box-heavy"></a>Устранение неполадок, связанных с Azure Data Box и Azure Data Box Heavy
 
@@ -23,12 +23,12 @@ ms.locfileid: "82628901"
 
 Ошибки в Data Box и Data Box Heavy обобщены следующим образом:
 
-| Категория ошибки *        | Описание        | Рекомендованное действие    |
+| Категория ошибки *        | Описание:        | Рекомендованное действие    |
 |----------------------------------------------|---------|--------------------------------------|
-| Имя контейнера или общего ресурса | Имена контейнера или общего ресурса не соответствуют правилам именования Azure.  |Скачайте списки ошибок. <br> Переименуйте контейнеры или общие папки. [Дополнительные сведения](#container-or-share-name-errors).  |
-| Ограничение размера контейнера или общего ресурса | Общий объем данных в контейнерах или общих ресурсах превышает предел в Azure.   |Скачайте списки ошибок. <br> Сократите общие данные в контейнере или общей папке. [Дополнительные сведения](#container-or-share-size-limit-errors).|
-| Предельный размер объекта или файла | Объект или файлы в контейнерах или общих папках превышают предел в Azure.|Скачайте списки ошибок. <br> Уменьшите размер файла в контейнере или в общей папке. [Дополнительные сведения](#object-or-file-size-limit-errors). |    
-| Тип данных или файла | Формат данных или тип файла не поддерживаются. |Скачайте списки ошибок. <br> Для страничных BLOB-объектов или управляемых дисков убедитесь, что данные находятся в 512-байтах и скопированы в предварительно созданные папки. [Дополнительные сведения](#data-or-file-type-errors). |
+| Имя контейнера или общего ресурса | Имена контейнера или общего ресурса не соответствуют правилам именования Azure.  |Скачайте списки ошибок. <br> Переименуйте контейнеры или общие папки. [Подробнее.](#container-or-share-name-errors)  |
+| Ограничение размера контейнера или общего ресурса | Общий объем данных в контейнерах или общих ресурсах превышает предел в Azure.   |Скачайте списки ошибок. <br> Сократите общие данные в контейнере или общей папке. [Подробнее.](#container-or-share-size-limit-errors)|
+| Предельный размер объекта или файла | Объект или файлы в контейнерах или общих папках превышают предел в Azure.|Скачайте списки ошибок. <br> Уменьшите размер файла в контейнере или в общей папке. [Подробнее.](#object-or-file-size-limit-errors) |    
+| Тип данных или файла | Формат данных или тип файла не поддерживаются. |Скачайте списки ошибок. <br> Для страничных BLOB-объектов или управляемых дисков убедитесь, что данные находятся в 512-байтах и скопированы в предварительно созданные папки. [Подробнее.](#data-or-file-type-errors) |
 | Некритические ошибки BLOB-объекта или файла  | Имена BLOB-объектов или файлов не соответствуют правилам именования Azure, или тип файла не поддерживается. | Эти большие двоичные объекты или файлы не могут быть скопированы, или имена могут быть изменены. [Узнайте, как устранить эти ошибки](#non-critical-blob-or-file-errors). |
 
 \*Первые четыре категории ошибок являются критическими и должны быть исправлены, прежде чем можно будет приступить к подготовке к отправке.
@@ -51,8 +51,8 @@ ms.locfileid: "82628901"
     - Имена могут содержать только буквы, цифры и дефисы.
     - Имена не могут начинаться или заканчиваться дефисами.
     - Имена не могут иметь последовательные дефисы.
-    - Примеры допустимых имен: `my-folder-1`,`my-really-extra-long-folder-111`
-    - Примеры недопустимых имен `my-folder_1`:, `my`, `--myfolder`,, `myfolder--``myfolder!`
+    - Примеры допустимых имен: `my-folder-1` ,`my-really-extra-long-folder-111`
+    - Примеры недопустимых имен: `my-folder_1` , `my` , `--myfolder` , `myfolder--` ,`myfolder!`
 
     Дополнительные сведения см. в разделе соглашения об именовании Azure для [имен контейнеров](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) и [общих имен](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names).
 
@@ -70,8 +70,8 @@ ms.locfileid: "82628901"
     - Имена могут содержать только буквы, цифры и дефисы.
     - Имена не могут начинаться или заканчиваться дефисами.
     - Имена не могут иметь последовательные дефисы.
-    - Примеры допустимых имен: `my-folder-1`,`my-really-extra-long-folder-111`
-    - Примеры недопустимых имен `my-folder_1`:, `my`, `--myfolder`,, `myfolder--``myfolder!`
+    - Примеры допустимых имен: `my-folder-1` ,`my-really-extra-long-folder-111`
+    - Примеры недопустимых имен: `my-folder_1` , `my` , `--myfolder` , `myfolder--` ,`myfolder!`
 
     Дополнительные сведения см. в разделе соглашения об именовании Azure для [имен контейнеров](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) и [общих имен](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names).
 
@@ -88,8 +88,8 @@ ms.locfileid: "82628901"
     - Имена могут содержать только буквы, цифры и дефисы.
     - Имена не могут начинаться или заканчиваться дефисами.
     - Имена не могут иметь последовательные дефисы.
-    - Примеры допустимых имен: `my-folder-1`,`my-really-extra-long-folder-111`
-    - Примеры недопустимых имен `my-folder_1`:, `my`, `--myfolder`,, `myfolder--``myfolder!`
+    - Примеры допустимых имен: `my-folder-1` ,`my-really-extra-long-folder-111`
+    - Примеры недопустимых имен: `my-folder_1` , `my` , `--myfolder` , `myfolder--` ,`myfolder!`
 
     Дополнительные сведения см. в разделе соглашения об именовании Azure для [имен контейнеров](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) и [общих имен](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names).
     
@@ -102,7 +102,7 @@ ms.locfileid: "82628901"
 - На странице Подключение и копирование локального веб-интерфейса Скачайте и проверьте файлы ошибок, чтобы найти имена папок с проблемами. 
 - Переименуйте каталог или контейнеры, чтобы убедиться, что они соответствуют соглашениям об именовании Azure.
 
-Дополнительные сведения см. в разделе соглашения об именовании Azure для [каталогов](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names) и [контейнеров](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names).
+Дополнительные сведения см. в разделе соглашения об именовании Azure для [каталогов](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#directory-and-file-names)   и [контейнеров](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names).
 
 ## <a name="container-or-share-size-limit-errors"></a>Ошибки ограничения размера контейнера или общего ресурса
 
@@ -254,6 +254,6 @@ ms.locfileid: "82628901"
 Дополнительные сведения см. [в статье копирование на управляемые диски](data-box-deploy-copy-data-from-vhds.md#connect-to-data-box).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о [требованиях к системе для хранилища BLOB-объектов Data Box](data-box-system-requirements-rest.md).

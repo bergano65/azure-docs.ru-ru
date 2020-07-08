@@ -8,12 +8,12 @@ ms.author: jlembicz
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: ca2bc66c755da2011cc7016f37b194caa6200d9a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 344b3bb30c9a92046a5fbd13c35b0efc7e6f3a23
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "72793596"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85560842"
 ---
 # <a name="how-to-create-an-index-for-multiple-languages-in-azure-cognitive-search"></a>Создание индекса для нескольких языков в Azure Когнитивный поиск
 
@@ -44,7 +44,7 @@ Azure Когнитивный поиск предлагает широкий вы
 
 Если известен язык агента, отправившего запрос, запрос поиска можно ограничить определенным полем с помощью параметра **searchFields** . Следующий запрос будет применен только к описанию на польском языке:
 
-`https://[service name].search.windows.net/indexes/[index name]/docs?search=darmowy&searchFields=PolishContent&api-version=2019-05-06`
+`https://[service name].search.windows.net/indexes/[index name]/docs?search=darmowy&searchFields=PolishContent&api-version=2020-06-30`
 
 Вы можете запросить индекс на портале с помощью [**обозревателя поиска**](search-explorer.md) , чтобы вставить запрос, аналогичный показанному выше.
 
@@ -61,8 +61,8 @@ Azure Когнитивный поиск предлагает широкий вы
       }
     ]
 
-`https://[service name].search.windows.net/indexes/[index name]/docs?search=Microsoft&scoringProfile=englishFirst&api-version=2019-05-06`
+`https://[service name].search.windows.net/indexes/[index name]/docs?search=Microsoft&scoringProfile=englishFirst&api-version=2020-06-30`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы являетесь разработчиком .NET, обратите внимание, что вы можете настроить языковые анализаторы с помощью [пакета SDK Azure когнитивный Поиск .NET](https://www.nuget.org/packages/Microsoft.Azure.Search) и свойства [анализатора](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.analyzer?view=azure-dotnet) . 

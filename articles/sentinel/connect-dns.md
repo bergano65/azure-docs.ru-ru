@@ -1,6 +1,6 @@
 ---
 title: Подключение данных DNS в Azure Sentinel | Документация Майкрософт
-description: Узнайте, как подключить данные DNS в Azure Sentinel.
+description: Узнайте, как подключить любой сервер доменных имен (DNS), работающий в Windows, с Sentinel в Azure, установив агент на DNS-компьютере.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/24/2019
 ms.author: yelevin
-ms.openlocfilehash: 6d43b82ecd13ac5e082d270ee44ce61fef763d2c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a88696ba69fdf53f5c7e15d174b126d69f4230ea
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77588320"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85555439"
 ---
 # <a name="connect-your-domain-name-server"></a>Подключение сервера доменных имен
 

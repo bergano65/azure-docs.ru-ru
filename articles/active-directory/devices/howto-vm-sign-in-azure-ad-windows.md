@@ -4,28 +4,27 @@ description: Вход Azure AD в виртуальную машину Azure по
 services: active-directory
 ms.service: active-directory
 ms.subservice: devices
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/29/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
+ms.custom: references_regions
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88ae3c45126403161e35ec46e5ccc2666c3edb55
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 152f7ab6ccb9f01c7fe70553501c8cf8afa1c650
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80050063"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85554893"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
 Организации теперь могут использовать проверку подлинности Azure Active Directory (AD) для виртуальных машин Azure под **Windows Server 2019 Datacenter Edition** или **Windows 10 1809** и более поздних версий. Использование Azure AD для проверки подлинности на виртуальных машинах обеспечивает централизованное управление и применение политик. Такие средства, как управление доступом на основе ролей (RBAC) и условный доступ Azure AD, позволяют управлять доступом к виртуальной машине. В этой статье показано, как создать и настроить виртуальную машину Windows Server 2019 для использования проверки подлинности Azure AD.
 
-|     |
-| --- |
-| Функция входа Azure AD для виртуальных машин Azure Windows — это общедоступная Предварительная версия функции Azure Active Directory. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
-|     |
+> [!NOTE]
+> Функция входа Azure AD для виртуальных машин Azure Windows — это общедоступная Предварительная версия функции Azure Active Directory. Дополнительные сведения о предварительных версиях см. в разделе Дополнительные [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Существует множество преимуществ использования проверки подлинности Azure AD для входа на виртуальные машины Windows в Azure, в том числе:
 
@@ -33,14 +32,14 @@ ms.locfileid: "80050063"
 - Больше не требуется управлять учетными записями локального администратора.
 - Azure RBAC позволяет предоставлять соответствующий доступ к виртуальным машинам в зависимости от необходимости и удалять его, если он больше не нужен.
 - Перед предоставлением доступа к виртуальной машине условный доступ Azure AD может применять дополнительные требования, например: 
-   - многофакторную идентификацию;
+   - Многофакторная Идентификация
    - Проверка риска при входе
 - Автоматизируйте и масштабируйте присоединение Azure AD к виртуальным машинам Windows Azure, которые являются частью развертывания VDI.
 
 > [!NOTE]
 > После включения этой возможности виртуальные машины Windows в Azure будут присоединены к Azure AD. Вы не можете присоединить его к другому домену, например к локальной службе AD или Azure AD DS. Если это необходимо, необходимо отключить виртуальную машину от клиента Azure AD путем удаления расширения.
 
-## <a name="requirements"></a>Требования
+## <a name="requirements"></a>Requirements (Требования)
 
 ### <a name="supported-azure-regions-and-windows-distributions"></a>Поддерживаемые регионы Azure и дистрибутивы Windows
 
@@ -63,10 +62,10 @@ ms.locfileid: "80050063"
 
 Чтобы включить проверку подлинности Azure AD для виртуальных машин Windows в Azure, необходимо убедиться, что конфигурация сети виртуальных машин разрешает исходящий доступ к следующим конечным точкам через TCP-порт 443:
 
-- HTTPS:\//enterpriseregistration.Windows.NET
+- HTTPS: \/ /enterpriseregistration.Windows.NET
 - https:\//login.microsoftonline.com
-- HTTPS:\//Device.Login.microsoftonline.com
-- HTTPS:\//PAS.Windows.NET
+- HTTPS: \/ /Device.Login.microsoftonline.com
+- HTTPS: \/ /PAS.Windows.NET
 
 ## <a name="enabling-azure-ad-login-in-for-windows-vm-in-azure"></a>Включение входа Azure AD в для виртуальной машины Windows в Azure
 
@@ -141,7 +140,7 @@ az vm extension set \
     --vm-name myVM
 ```
 
-Параметр `provisioningState` из `Succeeded` отображается, если расширение установлено на виртуальной машине.
+Параметр `provisioningState` из отображается `Succeeded` , если расширение установлено на виртуальной машине.
 
 ## <a name="configure-role-assignments-for-the-vm"></a>Настройка назначений ролей для виртуальной машины
 
@@ -188,7 +187,7 @@ az role assignment create \
 ```
 
 > [!NOTE]
-> Если домен доменных имен AAD и имя пользователя для входа не совпадают, необходимо указать идентификатор объекта учетной записи пользователя, а `--assignee-object-id`не только имя пользователя для `--assignee`. Идентификатор объекта учетной записи пользователя можно получить с помощью команды [az ad user list](/cli/azure/ad/user#az-ad-user-list).
+> Если домен доменных имен AAD и имя пользователя для входа не совпадают, необходимо указать идентификатор объекта учетной записи пользователя, а `--assignee-object-id` не только имя пользователя для `--assignee` . Идентификатор объекта учетной записи пользователя можно получить с помощью команды [az ad user list](/cli/azure/ad/user#az-ad-user-list).
 
 Дополнительные сведения об использовании RBAC для управления доступом к ресурсам подписки Azure см. в следующих статьях:
 
@@ -243,21 +242,21 @@ az role assignment create \
    | `curl -H @{"Metadata"="true"} "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01"` | Допустимый маркер доступа, выданный Azure Active Directory для управляемого удостоверения, назначенного этой виртуальной машине |
 
    > [!NOTE]
-   > Маркер доступа можно декодировать с помощью такого средства, как [http://calebb.net/](http://calebb.net/). Проверьте, что идентификатор AppID в маркере доступа соответствует управляемому удостоверению, назначенному виртуальной машине.
+   > Маркер доступа можно декодировать с помощью такого средства, как [http://calebb.net/](http://calebb.net/) . Проверьте, что идентификатор AppID в маркере доступа соответствует управляемому удостоверению, назначенному виртуальной машине.
 
 1. Убедитесь, что необходимые конечные точки доступны из виртуальной машины с помощью командной строки:
    
-   - фигурная HTTPS\/:/login.microsoftonline.com/-D —
-   - фигурная HTTPS\/:/`<TenantID>`Login.microsoftonline.com//-D —
+   - фигурная HTTPS: \/ /Login.microsoftonline.com/-D —
+   - фигурная HTTPS: \/ /Login.microsoftonline.com/ `<TenantID>` /-D —
 
    > [!NOTE]
    > Замените `<TenantID>` идентификатором клиента Azure AD, связанным с подпиской Azure.
 
-   - фигурная HTTPS\/:/Enterpriseregistration.Windows.NET/-D-
-   - фигурная HTTPS\/:/Device.Login.microsoftonline.com/-D-
-   - фигурная HTTPS\/:/PAS.Windows.NET/-D-
+   - фигурная HTTPS: \/ /enterpriseregistration.Windows.NET/-D-
+   - фигурная HTTPS: \/ /Device.Login.microsoftonline.com/-D-
+   - фигурная HTTPS: \/ /PAS.Windows.NET/-D-
 
-1. Состояние устройства можно просмотреть, выполнив `dsregcmd /status`. Цель — показывать состояние устройства как `AzureAdJoined : YES`.
+1. Состояние устройства можно просмотреть, выполнив `dsregcmd /status` . Цель — показывать состояние устройства как `AzureAdJoined : YES` .
 
    > [!NOTE]
    > Действие присоединение к Azure AD регистрируется в средстве просмотра событий в журнале Регистратион\админов устройств пользователя.
@@ -282,22 +281,22 @@ az role assignment create \
 
 1. Убедитесь, что необходимые конечные точки доступны из виртуальной машины с помощью командной строки:
 
-   - фигурная HTTPS\/:/login.microsoftonline.com/-D —
-   - фигурная HTTPS\/:/`<TenantID>`Login.microsoftonline.com//-D —
+   - фигурная HTTPS: \/ /Login.microsoftonline.com/-D —
+   - фигурная HTTPS: \/ /Login.microsoftonline.com/ `<TenantID>` /-D —
    
    > [!NOTE]
    > Замените `<TenantID>` идентификатором клиента Azure AD, связанным с подпиской Azure. Если необходимо найти идентификатор клиента, можно навести указатель мыши на имя учетной записи, чтобы получить идентификатор каталога или клиента, или выбрать Azure Active Directory > свойства > идентификатор каталога в портал Azure.
 
-   - фигурная HTTPS\/:/Enterpriseregistration.Windows.NET/-D-
-   - фигурная HTTPS\/:/Device.Login.microsoftonline.com/-D-
-   - фигурная HTTPS\/:/PAS.Windows.NET/-D-
+   - фигурная HTTPS: \/ /enterpriseregistration.Windows.NET/-D-
+   - фигурная HTTPS: \/ /Device.Login.microsoftonline.com/-D-
+   - фигурная HTTPS: \/ /PAS.Windows.NET/-D-
 
-1. Если какая-либо из команд завершается с ошибкой "не `<URL>`удалось разрешить узел", попробуйте выполнить эту команду, чтобы определить сервер DNS, используемый виртуальной машиной.
+1. Если какая-либо из команд завершается с ошибкой "не удалось разрешить узел `<URL>` ", попробуйте выполнить эту команду, чтобы определить сервер DNS, используемый виртуальной машиной.
    
    `nslookup <URL>`
 
    > [!NOTE] 
-   > Замените `<URL>` на полные доменные имена, используемые конечными точками, например "Login.microsoftonline.com".
+   > Замените на `<URL>` полные доменные имена, используемые конечными точками, например "Login.microsoftonline.com".
 
 1. Далее, если указать общедоступный DNS-сервер, команда будет выполнена:
 
@@ -315,7 +314,7 @@ az role assignment create \
 
 Некоторые распространенные ошибки при попытке входа по протоколу RDP с использованием учетных данных Azure AD включают в себя не назначенные роли RBAC, несанкционированный клиент или 2FA. Чтобы устранить эти проблемы, используйте следующие сведения.
 
-Состояние устройства и единого входа можно просмотреть, выполнив `dsregcmd /status`. Целью является отображение состояния устройства, которое отображается как `AzureAdJoined : YES` и `SSO State` для отображения `AzureAdPrt : YES`.
+Состояние устройства и единого входа можно просмотреть, выполнив `dsregcmd /status` . Целью является отображение состояния устройства, которое отображается как `AzureAdJoined : YES` и `SSO State` для отображения `AzureAdPrt : YES` .
 
 Кроме того, вход по протоколу RDP с помощью учетных записей Azure AD регистрируется в средстве просмотра событий в журналах событий Аад\оператионал.
 
@@ -363,6 +362,6 @@ az role assignment create \
 
 Поделитесь своими отзывами об этой предварительной версии функции или сообщите о проблемах с ее помощью на [форуме обратной связи Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis).

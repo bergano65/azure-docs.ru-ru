@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/22/2019
-ms.openlocfilehash: 0c56652b4e098213bae0c69d4be5ac77e1b1393c
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 12316abd4a738d54e01f88873498e4b299d6053d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83635291"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85556366"
 ---
 # <a name="use-azure-active-directory-for-authenticating-with-mysql"></a>Использование аутентификации Azure Active Directory с MySQL
 
@@ -66,14 +66,18 @@ ms.locfileid: "83635291"
 - Встроенная служба Azure Active Directory.
 - Универсальная служба Azure Active Directory с поддержкой MFA.
 - Использование сертификатов приложений или секретов клиента Active Directory
+- [Управляемое удостоверение](howto-connect-with-managed-identity.md)
 
-После аутентификации в Active Directory выдается маркер. Этот маркер является вашим паролем для входа в систему.
+После проверки подлинности в Active Directory выдается маркер. Этот маркер является вашим паролем для входа в систему.
+
+Обратите внимание, что операции управления, такие как добавление новых пользователей, поддерживаются только для ролей пользователей Azure AD на этом этапе.
 
 > [!NOTE]
 > Дополнительные сведения о подключении с помощью маркера Active Directory см. в разделе [Использование Azure Active Directory для проверки подлинности с помощью MySQL](howto-configure-sign-in-azure-ad-authentication.md).
 
 ## <a name="additional-considerations"></a>Дополнительные сведения
 
+- Azure Active Directoryная проверка подлинности доступна только для MySQL 5,7 и более новых версий.
 - Для сервера Базы данных Azure для MySQL одновременно может быть настроен только один администратор Azure AD.
 - Изначально только администратор Azure AD для MySQL может подключаться к Базе данных Azure для MySQL, используя учетную запись Azure Active Directory. Затем администратор Active Directory может настроить других пользователей базы данных Azure AD.
 - Если пользователь удален из Azure AD, он больше не сможет проходить аутентификацию в Azure AD, поэтому получить маркер доступа для этого пользователя будет невозможно. В этом случае, хотя соответствующий пользователь по-прежнему будет присутствовать в базе данных, он не сможет подключиться к серверу.
