@@ -4,15 +4,15 @@ description: В этой статье приведены этапы перехо
 services: expressroute
 author: cherylmc
 ms.service: expressroute
-ms.topic: article
+ms.topic: how-to
 ms.date: 12/12/2019
 ms.author: cherylmc
-ms.openlocfilehash: 48ecfcc0d6241e7926892a3ca1c9925b0dc07241
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2f6b3ec93498ab58ba67a2ca08199feaa2da73ef
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75436839"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84738368"
 ---
 # <a name="move-a-public-peering-to-microsoft-peering"></a>Переход с общедоступного пиринга на пиринг Майкрософт
 
@@ -33,7 +33,7 @@ ms.locfileid: "75436839"
 
 Используйте [асимметричную маршрутизацию с несколькими сетевыми путями](https://docs.microsoft.com/azure/expressroute/expressroute-asymmetric-routing) для предупреждения о асимметричной маршрутизации перед настройкой пиринга Майкрософт.
 
-* Если вы используете общедоступный пиринг и для доступа к [службе хранилища Azure](../storage/common/storage-network-security.md) или [базе данных SQL Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md) применяются правила IP-сети для общедоступных IP-адресов, убедитесь, что пул IP-адресов NAT, настроенный с пирингом Майкрософт, указан в списке общедоступных IP-адресов для учетной записи хранения Azure или учетной записи Azure SQL.<br>
+* Если вы используете общедоступный пиринг и для доступа к [службе хранилища Azure](../storage/common/storage-network-security.md) или [базе данных SQL Azure](../azure-sql/database/vnet-service-endpoint-rule-overview.md) применяются правила IP-сети для общедоступных IP-адресов, убедитесь, что пул IP-адресов NAT, настроенный с пирингом Майкрософт, указан в списке общедоступных IP-адресов для учетной записи хранения Azure или учетной записи Azure SQL.<br>
 * Чтобы переместить пиринг Майкрософт без простоев, выполните инструкции в этой статье в том порядке, в котором они представлены.
 
 ## <a name="1-create-microsoft-peering"></a><a name="create"></a>1. Создание пиринга Майкрософт
@@ -91,4 +91,4 @@ ms.locfileid: "75436839"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об ExpressRoute см. в статье [вопросы и ответы по expressroute](expressroute-faqs.md).
+Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

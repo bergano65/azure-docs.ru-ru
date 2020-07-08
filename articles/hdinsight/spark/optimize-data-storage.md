@@ -7,14 +7,14 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/20/2020
-ms.openlocfilehash: 5728a8e254074cd96ae1f13cb053220f347e3983
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
-ms.translationtype: HT
+ms.openlocfilehash: 7162e2e8c42f3e83a47c46d739f93cfc4cfcaac6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83790761"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84737637"
 ---
-# <a name="data-storage-optimization"></a>Оптимизация хранилища данных
+# <a name="data-storage-optimization-for-apache-spark"></a>Оптимизация хранилища данных для Apache Spark
 
 В этой статье обсуждаются стратегии оптимизации хранилища данных для эффективного выполнения заданий Apache Spark в Azure HDInsight.
 

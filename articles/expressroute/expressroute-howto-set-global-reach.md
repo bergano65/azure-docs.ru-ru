@@ -4,21 +4,21 @@ description: В этой статье содержатся сведения о �
 services: expressroute
 author: jaredr80
 ms.service: expressroute
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/25/2019
 ms.author: jaredro
-ms.openlocfilehash: 587a17659a412d6f894faf5a744a7d9c444935c8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ddf4625b8e638f7cb13999136ec5aa1afc99418a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80656745"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84738419"
 ---
 # <a name="configure-expressroute-global-reach"></a>Настройка ExpressRoute Global Reach
 
 Эта статья поможет вам настроить ExpressRoute Global Reach с помощью PowerShell. Дополнительные сведения см. в разделе [Связывание каналов ExpressRoute для включения ExpressRoute Global Reach (предварительная версия)](expressroute-global-reach.md).
 
- ## <a name="before-you-begin"></a>Подготовка к работе
+ ## <a name="before-you-begin"></a>Перед началом
 
 Прежде чем начать настройку, проверьте следующее:
 

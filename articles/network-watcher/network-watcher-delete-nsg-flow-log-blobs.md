@@ -8,17 +8,17 @@ manager: ''
 editor: ''
 ms.service: network-watcher
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/16/2019
 ms.author: damendo
-ms.openlocfilehash: 948347f38b4b0fefe1e61cc4560eaa46e1bfd6f0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 84f34c9441805352422215fcbac300bd900024d0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82187976"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84737960"
 ---
 # <a name="delete-network-security-group-flow-log-storage-blobs-in-network-watcher"></a>Удаление больших двоичных объектов хранилища журналов потоков для групп безопасности сети в наблюдателе за сетями
 
@@ -130,12 +130,12 @@ Write-Output ('Retention policy for all NSGs evaluated and completed successfull
    - **Location** [обязательный]: _строка расположения_ области группы безопасности сети, для которой необходимо удалить большие двоичные объекты журнала потоков NSG. Эти сведения можно просмотреть на портал Azure или на сайте [GitHub](https://github.com/Azure/azure-extensions-cli/blob/beb3d3fe984cfa9c7798cb11a274c5337968cbc5/regions.go#L23).
    - **Подтверждение** [необязательно]: передайте флаг подтверждения, если вы хотите вручную подтвердить удаление каждого BLOB-объекта хранилища.
 
-1. Запустите сохраненный скрипт, как показано в следующем примере, где файл скрипта был сохранен как **делете-нсгфловлогсблобс. ps1**:
+1. Запустите сохраненный скрипт, как показано в следующем примере, где файл скрипта был сохранен как **Delete-NsgFlowLogsBlobs.ps1**:
    ```
    .\Delete-NsgFlowLogsBlobs.ps1 -SubscriptionId <subscriptionId> -Location  <location> -Confirm
    ```
     
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Клиенты могут автоматизировать выполнение скрипта с помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) или [службы автоматизации Azure](https://azure.microsoft.com/services/automation/) .
 - Дополнительные сведения о ведении журнала NSG см. в разделе [журналы Azure Monitor для групп безопасности сети (группы безопасности сети)](../virtual-network/virtual-network-nsg-manage-log.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json).
 

@@ -7,17 +7,17 @@ documentationcenter: na
 author: damendo
 ms.service: network-watcher
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 74c9f44ff5fbbbb50bba1594d371633fd49857eb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d833a4cf26ee8ab69d16cbd1d776ca49a2df4bc4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76845037"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84738221"
 ---
 # <a name="monitor-vpn-gateways-with-network-watcher-troubleshooting"></a>Мониторинг VPN-шлюзов с помощью средства устранения неполадок Наблюдателя за сетями
 
@@ -36,7 +36,7 @@ ms.locfileid: "76845037"
 - Как создать модуль runbook, вызывающий командлет `Start-AzureRmNetworkWatcherResourceTroubleshooting` для устранения неполадок подключения.
 - Подключение расписания к модулю runbook
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Прежде чем приступить к работе с этим сценарием, следует подготовить такие необходимые компоненты:
 
@@ -65,13 +65,13 @@ ms.locfileid: "76845037"
 
 ![Колонка модулей runbook][2]
 
-### <a name="step-3"></a>Шаг 3.
+### <a name="step-3"></a>Шаг 3
 
 В разделе **Быстрое создание**, нажмите кнопку **Создать новый Runbook**, чтобы создать модуль runbook.
 
 ![Колонка добавления модуля runbook][3]
 
-### <a name="step-4"></a>Шаг 4.
+### <a name="step-4"></a>Шаг 4
 
 На этом этапе присвойте модулю runbook имя. В этом примере он называется **Get-VPNGatewayStatus**. Необходимо указать описательное имя модуля runbook. Кроме того, рекомендуется присвоить ему имя, которое соответствует стандартам именования PowerShell. Тип модуля runbook в этом примере — **PowerShell**. Другие варианты: графический, рабочий процесс PowerShell и графический рабочий процесс PowerShell.
 
@@ -79,7 +79,7 @@ ms.locfileid: "76845037"
 
 ### <a name="step-5"></a>Шаг 5
 
-На этом шаге создается модуль runbook. В примере ниже содержится весь необходимый код. Элементы \<value\> в этом коде необходимо заменить значениями из вашей подписки.
+На этом шаге создается модуль runbook. В примере ниже содержится весь необходимый код. Элементы в коде, которые содержат, \<value\> должны быть заменены значениями из подписки.
 
 Используйте следующий код и нажмите кнопку **Сохранить**.
 
@@ -177,7 +177,7 @@ else
 
 ![Шаг 9.][9]
 
-### <a name="step-3"></a>Шаг 3.
+### <a name="step-3"></a>Шаг 3
 
 Нажмите кнопку "Сохранить", чтобы сохранить расписание для модуля runbook.
 

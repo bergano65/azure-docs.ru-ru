@@ -4,20 +4,20 @@ description: Сведения о частной ссылке Azure
 services: private-link
 author: malopMSFT
 ms.service: private-link
-ms.topic: article
+ms.topic: how-to
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: 8af33e95c92cf51bdabe3325bd9249b4662b7d28
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.openlocfilehash: 0c6fc36be101679cea3a770f311005f63c3f0d66
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82583768"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84737382"
 ---
 # <a name="create-a-private-endpoint-using-azure-powershell"></a>Создание частной конечной точки с помощью Azure PowerShell
 Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки. 
 
-В этом кратком руководстве вы узнаете, как создать виртуальную машину в виртуальной сети Azure и сервер базы данных SQL с частной конечной точкой Azure, используя Azure PowerShell. Затем вы сможете безопасно получить доступ к серверу базы данных SQL с виртуальной машины.
+В этом кратком руководстве вы узнаете, как создать виртуальную машину в виртуальной сети Azure, логическом сервере SQL Server с частной конечной точкой Azure, используя Azure PowerShell. Затем вы сможете безопасно получить доступ к Базе данных SQL на виртуальной машине.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -61,7 +61,7 @@ $subnetConfig = Add-AzVirtualNetworkSubnetConfig `
 ```
 
 > [!CAUTION]
-> `PrivateEndpointNetworkPoliciesFlag` Параметр можно легко запутать с другим доступным флагом, `PrivateLinkServiceNetworkPoliciesFlag`так как оба слова являются длинными словами и имеют одинаковый внешний вид.  Убедитесь, что используется правильный, `PrivateEndpointNetworkPoliciesFlag`.
+> Параметр можно легко запутать `PrivateEndpointNetworkPoliciesFlag` с другим доступным флагом, `PrivateLinkServiceNetworkPoliciesFlag` так как оба слова являются длинными словами и имеют одинаковый внешний вид.  Убедитесь, что используется правильный, `PrivateEndpointNetworkPoliciesFlag` .
 
 ### <a name="associate-the-subnet-to-the-virtual-network"></a>Связывание подсети с виртуальной сетью
 
@@ -98,9 +98,9 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 1      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
 ```
 
-## <a name="create-a-sql-database-server"></a>Создание сервера базы данных SQL 
+## <a name="create-a-logical-sql-server"></a>Создание логического сервера SQL Server 
 
-Создайте сервер базы данных SQL с помощью команды New-Азсклсервер. Помните, что имя сервера базы данных SQL должно быть уникальным в пределах Azure, поэтому замените значение заполнителя в квадратных скобках своим уникальным значением:
+Создайте логический сервер SQL Server с помощью команды New-Азсклсервер. Помните, что имя сервера должно быть уникальным в пределах Azure, поэтому замените значение заполнителя в квадратных скобках своим уникальным значением:
 
 ```azurepowershell-interactive
 $adminSqlLogin = "SqlAdmin"
@@ -120,7 +120,7 @@ New-AzSqlDatabase  -ResourceGroupName "myResourceGroup" `
 
 ## <a name="create-a-private-endpoint"></a>Создание частной конечной точки
 
-Частная конечная точка для сервера базы данных SQL в виртуальной сети с помощью [New-азпривателинксервицеконнектион](/powershell/module/az.network/New-AzPrivateLinkServiceConnection): 
+Частная конечная точка для сервера в виртуальной сети с помощью [New-азпривателинксервицеконнектион](/powershell/module/az.network/New-AzPrivateLinkServiceConnection): 
 
 ```azurepowershell
 
@@ -142,7 +142,7 @@ $privateEndpoint = New-AzPrivateEndpoint -ResourceGroupName "myResourceGroup" `
 ``` 
 
 ## <a name="configure-the-private-dns-zone"></a>Настройка частной зоны DNS 
-Создайте частную зону DNS для домена сервера базы данных SQL и создайте связь связи с виртуальной сетью: 
+Создайте частную зону DNS для домена базы данных SQL, создайте ассоциированную связь с виртуальной сетью и создайте группу зоны DNS, чтобы связать частную конечную точку с частной зоной DNS.
 
 ```azurepowershell
 
@@ -153,19 +153,11 @@ $link  = New-AzPrivateDnsVirtualNetworkLink -ResourceGroupName "myResourceGroup"
   -ZoneName "privatelink.database.windows.net"`
   -Name "mylink" `
   -VirtualNetworkId $virtualNetwork.Id  
- 
-$networkInterface = Get-AzResource -ResourceId $privateEndpoint.NetworkInterfaces[0].Id -ApiVersion "2019-04-01" 
- 
-foreach ($ipconfig in $networkInterface.properties.ipConfigurations) { 
-foreach ($fqdn in $ipconfig.properties.privateLinkConnectionProperties.fqdns) { 
-Write-Host "$($ipconfig.properties.privateIPAddress) $($fqdn)"  
-$recordName = $fqdn.split('.',2)[0] 
-$dnsZone = $fqdn.split('.',2)[1] 
-New-AzPrivateDnsRecordSet -Name $recordName -RecordType A -ZoneName "privatelink.database.windows.net"  `
--ResourceGroupName "myResourceGroup" -Ttl 600 `
--PrivateDnsRecords (New-AzPrivateDnsRecordConfig -IPv4Address $ipconfig.properties.privateIPAddress)  
-} 
-} 
+
+$config = New-AzPrivateDnsZoneConfig -Name "privatelink.database.windows.net" -PrivateDnsZoneId $zone.ResourceId
+
+$privateDnsZoneGroup = New-AzPrivateDnsZoneGroup -ResourceGroupName "myResourceGroup" `
+ -PrivateEndpointName "myPrivateEndpoint" -name "MyZoneGroup" -PrivateDnsZoneConfig $config
 ``` 
   
 ## <a name="connect-to-a-vm-from-the-internet"></a>Подключение к виртуальной машине из Интернета
@@ -192,13 +184,13 @@ mstsc /v:<publicIpAddress>
   > [!NOTE]
   > Вам может потребоваться выбрать дополнительные варианты > использовать другую учетную запись, чтобы указать учетные данные, введенные при создании виртуальной машины. 
   
-3. Щелкните **ОК**. 
+3. Нажмите кнопку **ОК**. 
 4. Вы можете получить предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить**. 
 
-## <a name="access-sql-database-server-privately-from-the-vm"></a>Доступ с виртуальной машины к серверу базы данных SQL в частном порядке
+## <a name="access-sql-database-privately-from-the-vm"></a>Доступ с виртуальной машины к базе данных SQL в частном порядке
 
 1. Откройте PowerShell на удаленном рабочем столе myVm.
-2. Введите `nslookup myserver.database.windows.net`. Не забудьте `myserver` заменить на имя SQL Server.
+2. Введите `nslookup myserver.database.windows.net`. Не забудьте заменить на `myserver` имя SQL Server.
 
     Должно появиться сообщение следующего вида:
     
@@ -211,7 +203,7 @@ mstsc /v:<publicIpAddress>
     Aliases:   myserver.database.windows.net
     ```
     
-3. Установите SQL Server Management Studio.
+3. Установите [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15).
 4. В окне **Подключение к серверу** введите или выберите следующую информацию:
 
     | Параметр | Значение |
@@ -228,7 +220,7 @@ mstsc /v:<publicIpAddress>
 8. Закройте подключение к удаленному рабочему столу *myVM*. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов 
-Завершив использование частной конечной точки, сервера базы данных SQL и виртуальной машины, удалите группу ресурсов и все ресурсы, используя команду [Remove-азресаурцеграуп](/powershell/module/az.resources/remove-azresourcegroup) .
+Завершив использование частной конечной точки, базы данных SQL и виртуальной машины, удалите группу ресурсов и все ресурсы, используя команду [Remove-азресаурцеграуп](/powershell/module/az.resources/remove-azresourcegroup) .
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name myResourceGroup -Force

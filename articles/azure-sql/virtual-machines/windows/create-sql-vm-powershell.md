@@ -1,10 +1,9 @@
 ---
-title: Руководство по подготовке виртуальных машин SQL Server с помощью Azure PowerShell | Документация Майкрософт
+title: Инструкции по использованию Azure PowerShell для инициализации SQL Server на виртуальной машине Azure
 description: Содержит описание действий и команд PowerShell для создания виртуальной машины Azure на основе образа из коллекции образов виртуальных машин SQL Server.
 services: virtual-machines-windows
 documentationcenter: na
 author: MashaMSFT
-manager: craigg
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 98d50dd8-48ad-444f-9031-5378d8270d7b
@@ -15,17 +14,18 @@ ms.workload: iaas-sql-server
 ms.date: 12/21/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 39289740bd1d00a5916db45178f1eb1ef9bc7b12
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
-ms.translationtype: HT
+ms.openlocfilehash: 2c5ef71059fd3ba96299624818a13ebe1ae0929b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84032635"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84737858"
 ---
-# <a name="how-to-provision-sql-server-virtual-machines-with-azure-powershell"></a>Как подготовить виртуальные машины SQL Server с помощью Azure PowerShell
+# <a name="how-to-use-azure-powershell-to-provision-sql-server-on-azure-virtual-machines"></a>Использование Azure PowerShell для инициализации SQL Server на виртуальных машинах Azure
+
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
-В этом руководстве рассматриваются варианты создания виртуальных машин SQL Server под управлением ОС Windows с помощью Azure PowerShell. Краткий пример Azure PowerShell с дополнительными значениями по умолчанию приведен в статье [Создание виртуальной машины SQL Server под управлением Windows с помощью Azure PowerShell](sql-vm-create-powershell-quickstart.md).
+В этом руководстве описываются возможности использования PowerShell для инициализации SQL Server на виртуальных машинах Azure. Более простой Azure PowerShell пример, в котором используются значения по умолчанию, см. в разделе [Краткое руководство по Azure PowerShellию виртуальной машины SQL](sql-vm-create-powershell-quickstart.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -39,13 +39,15 @@ ms.locfileid: "84032635"
    Connect-AzAccount
    ```
 
-1. Должно отобразиться окно для ввода учетных данных. Используйте тот же адрес электронной почты и пароль, который вы используете для входа на портал Azure.
+1. При появлении запроса введите свои учетные данные. Используйте тот же адрес электронной почты и пароль, который вы используете для входа на портал Azure.
 
 ## <a name="define-image-variables"></a>Определение переменных образа
+
 Чтобы повторно использовать значения и упростить создание скриптов, начните с определения количества переменных. Изменяйте значения параметров по своему усмотрению, но учитывайте при этом ограничения именования, связанные с длиной имени и специальными знаками.
 
 ### <a name="location-and-resource-group"></a>Расположение и группа ресурсов
-Определите область данных и группу ресурсов, в которых вы создадите другие ресурсы для виртуальной машины.
+
+Определите область данных и группу ресурсов, в которых нужно создать другие ресурсы виртуальной машины.
 
 Измените, а затем выполните эти командлеты, чтобы инициализировать переменные.
 
@@ -55,9 +57,10 @@ $ResourceGroupName = "sqlvm2"
 ```
 
 ### <a name="storage-properties"></a>Свойства хранилища
+
 Определите учетную запись хранения и тип хранилища для виртуальной машины.
 
-Измените, а затем выполните приведенный ниже командлет, чтобы инициализировать переменные. Для производственных рабочих нагрузок рекомендуются [SSD (цен. категория "Премиум")](../../../virtual-machines/windows/disks-types.md#premium-ssd).
+Измените нужным образом, а затем выполните следующий командлет, чтобы инициализировать эти переменные. Для производственных рабочих нагрузок рекомендуются [SSD (цен. категория "Премиум")](../../../virtual-machines/windows/disks-types.md#premium-ssd).
 
 ```powershell
 $StorageName = $ResourceGroupName + "storage"
@@ -65,6 +68,7 @@ $StorageSku = "Premium_LRS"
 ```
 
 ### <a name="network-properties"></a>Свойства сети
+
 Определите свойства, используемые для сети на виртуальной машине. 
 
 - сетевому интерфейсу
@@ -89,7 +93,13 @@ $DomainName = $ResourceGroupName
 ```
 
 ### <a name="virtual-machine-properties"></a>Свойства виртуальной машины
-Определите имя виртуальной машины, имя компьютера, размер виртуальной машины и имя диска операционной системы для виртуальной машины.
+
+Определите следующие свойства:
+
+- Имя виртуальной машины
+- Имя компьютера
+- размер виртуальной машины;
+- Имя диска операционной системы для виртуальной машины
 
 Измените, а затем выполните эти командлеты, чтобы инициализировать переменные.
 
@@ -104,7 +114,7 @@ $OSDiskName = $VMName + "OSDisk"
 
 Используйте следующие переменные, чтобы определить образ SQL Server, который будет применен для виртуальной машины. 
 
-1. Сначала получите список всех образов SQL Server, выполнив команду `Get-AzVMImageOffer`. Эта команда выводит список текущих образов, доступных на портале Azure, и старых образов, которые устанавливаются только с помощью PowerShell:
+1. Сначала перечислите все предложения образа SQL Server с помощью `Get-AzVMImageOffer` команды. Эта команда перечисляет текущие образы, доступные в портал Azure, а также более старые образы, которые можно установить только с помощью PowerShell:
 
    ```powershell
    Get-AzVMImageOffer -Location $Location -Publisher 'MicrosoftSQLServer'
@@ -131,6 +141,7 @@ $OSDiskName = $VMName + "OSDisk"
    ```
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
+
 Если используется модель развертывания с помощью Resource Manager, первый создаваемый объект — группа ресурсов. Чтобы создать группу ресурсов и входящие в нее ресурсы Azure, используйте командлет [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Укажите переменные, инициализированные ранее для имени группы ресурсов и расположения.
 
 Выполните следующий командлет, чтобы создать группу ресурсов.
@@ -140,7 +151,8 @@ New-AzResourceGroup -Name $ResourceGroupName -Location $Location
 ```
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
-Виртуальной машине требуются ресурсы хранения для диска операционной системы, а также файлов данных и журналов SQL Server. Для упрощения создайте один диск для всех ресурсов. Позже можно будет подключить дополнительные диски, выполнив командлет [Add-Azure Disk](https://docs.microsoft.com/powershell/module/servicemanagement/azure/add-azuredisk), чтобы поместить файлы данных и журналов SQL Server на выделенные диски. Чтобы создать стандартную учетную запись хранения в новой группе ресурсов, используйте командлет [New-AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount). Укажите переменные, инициализированные ранее для имени учетной записи хранения, SKU хранилища и расположения.
+
+Виртуальной машине требуются ресурсы хранения для диска операционной системы, а также файлов данных и журналов SQL Server. Для упрощения создайте один диск для всех ресурсов. Позже можно будет подключить дополнительные диски, выполнив командлет [Add-Azure Disk](https://docs.microsoft.com/powershell/module/servicemanagement/azure/add-azuredisk), чтобы поместить файлы данных и журналов SQL Server на выделенные диски. Чтобы создать стандартную учетную запись хранения в новой группе ресурсов, используйте командлет [New-AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount). Укажите переменные, которые ранее были инициализированы для имени учетной записи хранения, имени SKU хранилища и расположения.
 
 Выполните этот командлет, чтобы создать учетную запись хранения.
 
@@ -154,6 +166,7 @@ $StorageAccount = New-AzStorageAccount -ResourceGroupName $ResourceGroupName `
 > Создание учетной записи хранения может занять несколько минут.
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
+
 Виртуальной машине нужны сетевые ресурсы для подключения к сети.
 
 * Каждой виртуальной машине требуется виртуальная сеть.
@@ -161,6 +174,7 @@ $StorageAccount = New-AzStorageAccount -ResourceGroupName $ResourceGroupName `
 * Для сетевого интерфейса следует определить общедоступный или частный IP-адрес.
 
 ### <a name="create-a-virtual-network-subnet-configuration"></a>Создание конфигурации подсети в виртуальной сети
+
 Сначала создайте конфигурацию подсети для виртуальной сети. В рамках этого руководства мы создадим подсеть по умолчанию, используя командлет [New-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig). Укажите переменные, инициализированные ранее для имени подсети и префикса адреса.
 
 > [!NOTE]
@@ -173,6 +187,7 @@ $SubnetConfig = New-AzVirtualNetworkSubnetConfig -Name $SubnetName -AddressPrefi
 ```
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
+
 Далее с помощью командлета [New-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork) создайте виртуальную сеть в новой группе ресурсов. Укажите переменные, инициализированные ранее для имени, расположения и префикса адреса. Используйте конфигурацию подсети, определенную на предыдущем этапе.
 
 Выполните следующий командлет, чтобы создать виртуальную сеть.
@@ -184,6 +199,7 @@ $VNet = New-AzVirtualNetwork -Name $VNetName `
 ```
 
 ### <a name="create-the-public-ip-address"></a>Создание общедоступного IP-адреса
+
 Определив виртуальную сеть, необходимо настроить IP-адрес для подключения к виртуальной машине. В рамках этого руководства мы создадим общедоступный IP-адрес с применением динамического предоставления IP-адресов, чтобы обеспечить подключение к Интернету. Создайте общедоступный IP-адрес в новой группе ресурсов с помощью командлета [New-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/new-azpublicipaddress). Укажите переменные, инициализированные ранее для имени, расположения, метода распределения и метки доменного имени DNS.
 
 > [!NOTE]
@@ -198,9 +214,10 @@ $PublicIp = New-AzPublicIpAddress -Name $InterfaceName `
 ```
 
 ### <a name="create-the-network-security-group"></a>Создание группы безопасности сети
+
 Чтобы защитить трафик виртуальной машины и SQL Server, создайте группу безопасности сети.
 
-1. Сначала создайте правило группы безопасности сети для RDP, которое разрешает подключения с удаленного рабочего стола.
+1. Сначала создайте правило группы безопасности сети для удаленного рабочего стола (RDP), чтобы разрешить подключения по протоколу RDP.
 
    ```powershell
    $NsgRuleRDP = New-AzNetworkSecurityRuleConfig -Name "RDPRule" -Protocol Tcp `
@@ -224,7 +241,8 @@ $PublicIp = New-AzPublicIpAddress -Name $InterfaceName `
    ```
 
 ### <a name="create-the-network-interface"></a>Создание сетевого интерфейса
-Теперь все готово для создания сетевого интерфейса, который будет использовать виртуальная машина. Создайте сетевой интерфейс в новой группе ресурсов с помощью командлета [New-AzNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface). Укажите определенные ранее имя, расположение, подсеть и общедоступный IP-адрес.
+
+Теперь можно приступать к созданию сетевого интерфейса для виртуальной машины. Используйте командлет [New-азнетворкинтерфаце](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface) , чтобы создать сетевой интерфейс в новой группе ресурсов. Укажите определенные ранее имя, расположение, подсеть и общедоступный IP-адрес.
 
 Выполните следующий командлет, чтобы создать сетевой интерфейс.
 
@@ -236,6 +254,7 @@ $Interface = New-AzNetworkInterface -Name $InterfaceName `
 ```
 
 ## <a name="configure-a-vm-object"></a>Настройка объекта виртуальной машины
+
 После определения ресурсов хранения и сетевых ресурсов можно определить вычислительные ресурсы для виртуальной машины.
 
 - Укажите размер виртуальной машины и различные свойства операционной системы.
@@ -244,6 +263,7 @@ $Interface = New-AzNetworkInterface -Name $InterfaceName `
 - Укажите диск для операционной системы.
 
 ### <a name="create-the-vm-object"></a>Создание виртуальной машины
+
 Сначала укажем размер виртуальной машины. В рамках этого руководства выберите размер DS13. Создайте настраиваемый объект виртуальной машины с помощью командлета [New-AzVMConfig](https://docs.microsoft.com/powershell/module/az.compute/new-azvmconfig). Укажите переменные, инициализированные ранее для имени и размера.
 
 Выполните этот командлет, чтобы создать объект виртуальной машины.
@@ -253,15 +273,17 @@ $VirtualMachine = New-AzVMConfig -VMName $VMName -VMSize $VMSize
 ```
 
 ### <a name="create-a-credential-object-to-hold-the-name-and-password-for-the-local-administrator-credentials"></a>Создание объекта учетных данных для хранения имени и пароля локального администратора
+
 Чтобы задать свойства операционной системы для виртуальной машины, необходимо сначала предоставить учетные данные для учетной записи локального администратора в виде защищенной строки. Для этого используйте командлет [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx).
 
-Выполните следующий командлет и в окне запроса учетных данных PowerShell введите имя и пароль, которые будут использоваться для учетной записи локального администратора на виртуальной машине.
+Выполните следующий командлет. Необходимо ввести имя локального администратора виртуальной машины и пароль в окно запроса учетных данных PowerShell.
 
 ```powershell
 $Credential = Get-Credential -Message "Type the name and password of the local administrator account."
 ```
 
 ### <a name="set-the-operating-system-properties-for-the-virtual-machine"></a>Определение свойств операционной системы для виртуальной машины
+
 Теперь вы можете настроить свойства операционной системы виртуальной машины, выполнив командлет [Set-AzVMOperatingSystem](https://docs.microsoft.com/powershell/module/az.compute/set-azvmoperatingsystem).
 
 - Укажите Windows в качестве типа операционной системы.
@@ -278,6 +300,7 @@ $VirtualMachine = Set-AzVMOperatingSystem -VM $VirtualMachine `
 ```
 
 ### <a name="add-the-network-interface-to-the-virtual-machine"></a>Добавление сетевого интерфейса к виртуальной машине
+
 Используйте командлет [Add-AzVMNetworkInterface](https://docs.microsoft.com/powershell/module/az.compute/add-azvmnetworkinterface) и определенную ранее переменную, чтобы добавить сетевой интерфейс.
 
 Выполните следующий командлет, чтобы указать сетевой интерфейс для виртуальной машины.
@@ -287,7 +310,8 @@ $VirtualMachine = Add-AzVMNetworkInterface -VM $VirtualMachine -Id $Interface.Id
 ```
 
 ### <a name="set-the-blob-storage-location-for-the-disk-to-be-used-by-the-virtual-machine"></a>Определение расположения хранилища BLOB-объектов для диска, используемого виртуальной машиной
-Далее укажите расположение хранилища BLOB-объектов для диска виртуальной машины с помощью определенных ранее переменных.
+
+Затем задайте расположение хранилища BLOB-объектов для диска виртуальной машины с переменными, определенными ранее.
 
 Выполните следующий командлет, чтобы задать расположение хранилища BLOB-объектов.
 
@@ -296,6 +320,7 @@ $OSDiskUri = $StorageAccount.PrimaryEndpoints.Blob.ToString() + "vhds/" + $OSDis
 ```
 
 ### <a name="set-the-operating-system-disk-properties-for-the-virtual-machine"></a>Определение свойств диска операционной системы для виртуальной машины
+
 Затем определите свойства диска операционной системы для виртуальной машины с помощью командлета [Set-AzVMOSDisk](https://docs.microsoft.com/powershell/module/az.compute/set-azvmosdisk). 
 
 - Укажите для виртуальной машины операционную систему, которая будет запускаться из образа.
@@ -310,6 +335,7 @@ $VirtualMachine = Set-AzVMOSDisk -VM $VirtualMachine -Name `
 ```
 
 ### <a name="specify-the-platform-image-for-the-virtual-machine"></a>Определение образа платформы для виртуальной машины
+
 Последний этап конфигурации — определение образа платформы для виртуальной машины. В рамках этого руководства используется последний образ SQL Server 2016 CTP-версии. Чтобы использовать образ согласно значениям переменных, определенных ранее, примените командлет [Set-AzVMSourceImage](https://docs.microsoft.com/powershell/module/az.compute/set-azvmsourceimage).
 
 Выполните следующий командлет, чтобы указать образ платформы для виртуальной машины.
@@ -321,6 +347,7 @@ $VirtualMachine = Set-AzVMSourceImage -VM $VirtualMachine `
 ```
 
 ## <a name="create-the-sql-vm"></a>Создание виртуальной машины SQL
+
 Теперь, по завершении конфигурации, все готово для создания виртуальной машины. Для этого используйте командлет [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm) и уже определенные переменные.
 
 > [!TIP]
@@ -338,7 +365,8 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $Location -VM $VirtualM
 > Если вы получите сообщение об ошибке диагностики загрузки, ее можно пропустить. Стандартная учетная запись хранения создается для диагностики загрузки, так как для диска виртуальной машины указана учетная запись хранилища класса Premium.
 
 ## <a name="install-the-sql-iaas-agent"></a>Установка агента SQL IaaS
-Виртуальные машины SQL Server поддерживают функции автоматизированного управления при наличии [расширения агента IaaS SQL Server](sql-server-iaas-agent-extension-automate-management.md). Чтобы установить агент на новой виртуальной машине и зарегистрировать его в поставщике ресурсов, выполните команду [New-AzSqlVM](/powershell/module/az.sqlvirtualmachine/new-azsqlvm) после создания виртуальной машины. Укажите тип лицензии для виртуальной машины SQL Server, выбрав одну из них с помощью [Преимущества гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/), — с оплатой по мере использования или собственную лицензию. Дополнительные сведения о лицензировании см. [здесь](licensing-model-azure-hybrid-benefit-ahb-change.md). 
+
+Виртуальные машины SQL Server поддерживают функции автоматизированного управления при наличии [расширения агента IaaS SQL Server](sql-server-iaas-agent-extension-automate-management.md). Чтобы установить агент на новой виртуальной машине и зарегистрировать его с помощью поставщика ресурсов, выполните команду [New-азсклвм](/powershell/module/az.sqlvirtualmachine/new-azsqlvm) после создания виртуальной машины. Укажите тип лицензии для виртуальной машины SQL Server, выбрав одну из них с помощью [Преимущества гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/), — с оплатой по мере использования или собственную лицензию. Дополнительные сведения о лицензировании см. [здесь](licensing-model-azure-hybrid-benefit-ahb-change.md). 
 
 
    ```powershell
@@ -357,6 +385,7 @@ Stop-AzVM -Name $VMName -ResourceGroupName $ResourceGroupName
 С помощью команды **Remove-AzResourceGroup** вы можете удалить все ресурсы, связанные с виртуальной машиной, без возможности восстановления. Это также приведет к окончательному удалению самой виртуальной машины, поэтому используйте указанную команду с осторожностью.
 
 ## <a name="example-script"></a>Пример сценария
+
 Файл ниже содержит полный сценарий PowerShell для этого руководства. Предполагается, что вы уже настроили подписку Azure для использования с командами **Connect-AzAccount** и **Select-AzSubscription**.
 
 ```powershell
@@ -426,6 +455,7 @@ New-AzSqlVM -ResourceGroupName $ResourceGroupName -Name $VMName -Location $Locat
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 После создания виртуальной машины можно:
 
 - подключаться к виртуальной машине с помощью протокола удаленного рабочего стола (RDP);
@@ -434,4 +464,3 @@ New-AzSqlVM -ResourceGroupName $ResourceGroupName -Name $VMName -Location $Locat
    - [автоматизированные задачи управления](sql-server-iaas-agent-extension-automate-management.md).
 - [настраивать подключение](ways-to-connect-to-sql.md);
 - подключать клиентов и приложения к новому экземпляру SQL Server.
-

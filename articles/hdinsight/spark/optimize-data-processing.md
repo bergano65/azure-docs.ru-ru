@@ -7,14 +7,14 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/20/2020
-ms.openlocfilehash: 1e48573c2b73c10f10f665b5b91759d54d79acdd
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
-ms.translationtype: HT
+ms.openlocfilehash: 021999e1757993eea4bbfe3aec0bd68049a37e42
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83790791"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84737671"
 ---
-# <a name="data-processing-optimization"></a>Оптимизация обработки данных
+# <a name="data-processing-optimization-for-apache-spark"></a>Оптимизация обработки данных для Apache Spark
 
 В этой статье описано, как оптимизировать конфигурацию кластера Apache Spark, чтобы обеспечить наилучшую производительность в Azure HDInsight.
 

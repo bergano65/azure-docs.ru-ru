@@ -5,19 +5,19 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 3/30/2020
-ms.openlocfilehash: 332feffead74174ba0b9b278d8de1c5957d5b9e6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 6/11/2020
+ms.openlocfilehash: 0b23b01faf1b6ba09f1c55db2ddabd1696e452be
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80422470"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84738113"
 ---
 # <a name="configure-data-in-replication-in-azure-database-for-mariadb"></a>Настройка Репликация входных данных в базе данных Azure для MariaDB
 
-В этой статье описывается, как настроить Репликация входных данных в базе данных Azure для MariaDB, настроив главные и репликовые серверы. В этой статье предполагается, что у вас есть опыт работы с серверами и базами данных MariaDB.
+В этой статье описывается, как настроить [репликация входных данных](concepts-data-in-replication.md) в базе данных Azure для MariaDB, настроив главные и репликовые серверы. В этой статье предполагается, что у вас есть опыт работы с серверами и базами данных MariaDB.
 
-Чтобы создать реплику в службе "база данных Azure для MariaDB", Репликация входных данных синхронизирует данные с главного MariaDB-сервера в локальной среде, на виртуальных машинах или в облачных службах баз данных.
+Чтобы создать реплику в службе "база данных Azure для MariaDB", [репликация входных данных](concepts-data-in-replication.md) синхронизирует данные с главного MariaDB-сервера в локальной среде, на виртуальных машинах или в облачных службах баз данных. Репликация входных данных основана на функции собственной репликации в MariaDB на основе позиции файла двоичного журнала (binlog). Дополнительные сведения о репликации binlog см. в [этой статье](https://mariadb.com/kb/en/library/replication-overview/).
 
 Перед выполнением действий, описанных в этой статье, ознакомьтесь с [ограничениями и требованиями к](concepts-data-in-replication.md#limitations-and-considerations) репликации данных.
 
@@ -42,6 +42,12 @@ ms.locfileid: "80422470"
 
    Измените правила брандмауэра на [портале Azure](howto-manage-firewall-portal.md) или с помощью [Azure CLI](howto-manage-firewall-cli.md).
 
+> [!NOTE]
+> Обмен данными без смещения
+>
+> Корпорация Майкрософт поддерживает различные и включенные среды. Эта статья содержит ссылки на слово _Slave_. В соответствии с [руководством по стилю Майкрософт для обмена данными без](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) пересчета этот термин распознается как исключение. Это слово используется в этой статье для обеспечения согласованности, так как в настоящее время это слово, которое отображается в программном обеспечении. При обновлении программного обеспечения для удаления слова эта статья будет обновлена для выравнивания.
+>
+
 ## <a name="configure-the-master-server"></a>Настройка главного сервера
 
 Следующие шаги подготавливают и настраивают сервер MariaDB, размещенный локально, на виртуальной машине или в облачной службе базы данных для Репликация входных данных. Сервер MariaDB является главным в Репликация входных данных.
@@ -60,13 +66,13 @@ ms.locfileid: "80422470"
    SHOW VARIABLES LIKE 'log_bin';
    ```
 
-   Если переменная [`log_bin`](https://mariadb.com/kb/en/library/replication-and-binary-log-server-system-variables/#log_bin) возвращает значение `ON`, ведение двоичного журнала включено на сервере.
+   Если переменная [`log_bin`](https://mariadb.com/kb/en/library/replication-and-binary-log-server-system-variables/#log_bin) возвращает значение `ON` , ведение двоичного журнала включено на сервере.
 
-   Если `log_bin` возвращает значение `OFF`, измените файл **My. cnf** , чтобы `log_bin=ON` включить ведение двоичного журнала. Перезапустите сервер, чтобы изменения вступили в силу.
+   Если `log_bin` возвращает значение `OFF` , измените файл **My. cnf** , чтобы `log_bin=ON` включить ведение двоичного журнала. Перезапустите сервер, чтобы изменения вступили в силу.
 
 3. Настройте параметры главного сервера.
 
-    Для Репликация входных данных требуется согласованность параметра `lower_case_table_names` между главным сервером и серверами реплики. `lower_case_table_names` Параметр по умолчанию установлен `1` в базе данных Azure для MariaDB.
+    Для Репликация входных данных требуется `lower_case_table_names` согласованность параметра между главным сервером и серверами реплики. `lower_case_table_names`Параметр по `1` умолчанию установлен в базе данных Azure для MariaDB.
 
    ```sql
    SET GLOBAL lower_case_table_names = 1;
@@ -78,7 +84,7 @@ ms.locfileid: "80422470"
    
    Чтобы узнать, как добавить учетные записи пользователей на главном сервере, см. [документацию по MariaDB](https://mariadb.com/kb/en/library/create-user/).
 
-   С помощью приведенных ниже команд новая роль репликации может получить доступ к мастеру с любого компьютера, а не только с компьютера, на котором размещается сам хозяин. Для этого доступа укажите **синкусер\@"%"** в команде, чтобы создать пользователя.
+   С помощью приведенных ниже команд новая роль репликации может получить доступ к мастеру с любого компьютера, а не только с компьютера, на котором размещается сам хозяин. Для этого доступа укажите **синкусер \@ "%"** в команде, чтобы создать пользователя.
    
    Дополнительные сведения о документации по MariaDB см. в разделе [Указание имен учетных записей](https://mariadb.com/kb/en/library/create-user/#account-names).
 
@@ -128,7 +134,7 @@ ms.locfileid: "80422470"
 
 6. Возвращает текущее имя двоичного файла журнала и смещение.
 
-   Чтобы определить текущее имя двоичного файла журнала и смещение, выполните команду [`show master status`](https://mariadb.com/kb/en/library/show-master-status/).
+   Чтобы определить текущее имя двоичного файла журнала и смещение, выполните команду [`show master status`](https://mariadb.com/kb/en/library/show-master-status/) .
     
    ```sql
    show master status;
@@ -141,7 +147,7 @@ ms.locfileid: "80422470"
    
 7. Получите расположение ГТИД (необязательно, необходимое для репликации с помощью ГТИД).
 
-   Выполните функцию [`BINLOG_GTID_POS`](https://mariadb.com/kb/en/library/binlog_gtid_pos/) , чтобы получить расположение гтид для соответствующего имени и смещения файла бинлог.
+   Выполните функцию, [`BINLOG_GTID_POS`](https://mariadb.com/kb/en/library/binlog_gtid_pos/) чтобы получить расположение гтид для соответствующего имени и смещения файла бинлог.
   
     ```sql
     select BINLOG_GTID_POS('<binlog file name>', <binlog offset>);
@@ -177,13 +183,13 @@ ms.locfileid: "80422470"
 
    Все функции репликации входных данных выполняются хранимыми процедурами. Все процедуры можно найти в статье о [хранимых процедурах репликации входных данных](reference-data-in-stored-procedures.md). Хранимые процедуры можно запускать в оболочке MySQL или MySQL Workbench.
 
-   Чтобы связать два сервера и запустить репликацию, войдите на целевой сервер реплики в службе "база данных Azure для MariaDB". Затем задайте внешний экземпляр в качестве главного сервера с помощью хранимой процедуры `mysql.az_replication_change_master` или `mysql.az_replication_change_master_with_gtid` на сервере базы данных Azure для MariaDB.
+   Чтобы связать два сервера и запустить репликацию, войдите на целевой сервер реплики в службе "база данных Azure для MariaDB". Затем задайте внешний экземпляр в качестве главного сервера с помощью `mysql.az_replication_change_master` `mysql.az_replication_change_master_with_gtid` хранимой процедуры или на сервере базы данных Azure для MariaDB.
 
    ```sql
    CALL mysql.az_replication_change_master('<master_host>', '<master_user>', '<master_password>', 3306, '<master_log_file>', <master_log_pos>, '<master_ssl_ca>');
    ```
    
-   или диспетчер конфигурации служб
+   или
    
    ```sql
    CALL mysql.az_replication_change_master_with_gtid('<master_host>', '<master_user>', '<master_password>', 3306, '<master_gtid_pos>', '<master_ssl_ca>');
@@ -241,13 +247,13 @@ ms.locfileid: "80422470"
    show slave status;
    ```
 
-   Если `Slave_IO_Running` и `Slave_SQL_Running` находятся в состоянии `yes`, а значение `Seconds_Behind_Master` равно `0`, то репликация работает. `Seconds_Behind_Master` указывает величину задержки на реплике. Если значение не `0`равно, реплика обрабатывает обновления.
+   Если `Slave_IO_Running` и `Slave_SQL_Running` находятся в состоянии `yes` , а значение `Seconds_Behind_Master` равно `0` , то репликация работает. `Seconds_Behind_Master` указывает величину задержки на реплике. Если значение не равно `0` , реплика обрабатывает обновления.
 
 4. Обновите соответствующие переменные сервера, чтобы обеспечить безопасность репликации данных (требуется только для репликации без ГТИД).
     
-    Из-за ограничений собственной репликации в MariaDB необходимо задать [`sync_master_info`](https://mariadb.com/kb/en/library/replication-and-binary-log-system-variables/#sync_master_info) переменные и [`sync_relay_log_info`](https://mariadb.com/kb/en/library/replication-and-binary-log-system-variables/#sync_relay_log_info) в репликации без сценария гтид.
+    Из-за ограничений собственной репликации в MariaDB необходимо задать [`sync_master_info`](https://mariadb.com/kb/en/library/replication-and-binary-log-system-variables/#sync_master_info) [`sync_relay_log_info`](https://mariadb.com/kb/en/library/replication-and-binary-log-system-variables/#sync_relay_log_info) переменные и в репликации без сценария гтид.
 
-    Проверьте значения `sync_master_info` и `sync_relay_log_info` переменные подчиненного сервера, чтобы убедиться в стабильной репликации данных, и задайте для `1`переменных значение.
+    Проверьте значения и переменные подчиненного сервера `sync_master_info` `sync_relay_log_info` , чтобы убедиться в стабильной репликации данных, и задайте для переменных значение `1` .
     
 ## <a name="other-stored-procedures"></a>Другие хранимые процедуры
 

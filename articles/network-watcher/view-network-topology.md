@@ -6,17 +6,17 @@ documentationcenter: na
 author: damendo
 ms.service: network-watcher
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/09/2018
 ms.author: damendo
-ms.openlocfilehash: 675919db55932d3ccc04fd5397f6f673832b4900
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c04da65af27ebd5ac654bc059ae004c157a20f33
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76840576"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84737535"
 ---
 # <a name="view-the-topology-of-an-azure-virtual-network"></a>Просмотр топологии виртуальной сети Azure
 
@@ -84,7 +84,7 @@ ms.locfileid: "76840576"
 
 Выполнять команды можно одним из следующих способов:
 - В Azure Cloud Shell выберите **Попробовать** вверху справа от любой команды. Azure Cloud Shell — это бесплатная интерактивная оболочка, в которой предустановлены и настроены для использования с вашей учетной записью стандартные средства Azure.
-- Запустите PowerShell с компьютера. При запуске PowerShell с компьютера для работы с этой статьей требуется модуль `Az` Azure PowerShell. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+- Запустите PowerShell с компьютера. При запуске PowerShell с компьютера для работы с этой статьей требуется `Az` модуль Azure PowerShell. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 Используемая учетная запись должна предоставлять необходимые [разрешения](required-rbac-permissions.md).
 
