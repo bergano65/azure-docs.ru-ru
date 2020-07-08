@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: xpouyat
 ms.reviewer: anilmur;juliako
-ms.openlocfilehash: 27bdf82d4515678e28eadf07fe325860fe5df063
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4a51a67200ec411f0f9362bc92bf7926f221b1f2
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79251002"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86056809"
 ---
 # <a name="using-multiple-input-files-and-component-properties-with-premium-encoder"></a>Использование нескольких входных файлов и свойств компонентов в кодировщике Premium
 ## <a name="overview"></a>Обзор
@@ -83,7 +83,7 @@ task.OutputAssets.AddNew("Output asset", AssetCreationOptions.None);
 
 **setRuntimeProperties** используется для переопределения свойства в компонентах рабочего процесса.
 
-Пример:
+Пример.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -99,7 +99,7 @@ task.OutputAssets.AddNew("Output asset", AssetCreationOptions.None);
 ### <a name="property-with-an-xml-value"></a>Свойство со значением XML
 Для задания свойства, которое ожидает значение XML, необходима инкапсуляция с использованием синтаксиса `<![CDATA[ and ]]>`.
 
-Пример:
+Пример.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -141,7 +141,7 @@ task.OutputAssets.AddNew("Output asset", AssetCreationOptions.None);
 
 ![Действие/Изменить](./media/media-services-media-encoder-premium-workflow-multiplefilesinput/capture6_actionedit.png)
 
-![Свойство](./media/media-services-media-encoder-premium-workflow-multiplefilesinput/capture7_viewproperty.png)
+![Свойство.](./media/media-services-media-encoder-premium-workflow-multiplefilesinput/capture7_viewproperty.png)
 
 ## <a name="multiple-input-files"></a>Несколько входных файлов
 Для каждой задачи, которую нужно передать в обработчик **Расширенный рабочий процесс кодировщика мультимедиа** , требуются два ресурса.
@@ -366,7 +366,7 @@ XML-файл со списком клипов можно указать в ра�
 
 Необходимо задать имя для выходного файла. Щелкните компонент **вывода файла** и измените выражение для файла.
 
-    ${ROOT_outputWriteDirectory}\${ROOT_sourceFileBaseName}_withoverlay.mp4
+`${ROOT_outputWriteDirectory}\${ROOT_sourceFileBaseName}_withoverlay.mp4`
 
 ![Имя вывода файла](./media/media-services-media-encoder-premium-workflow-multiplefilesinput/capture17_filenameoutput.png)
 
@@ -477,5 +477,5 @@ public ITask AddNew(string taskName, IMediaProcessor mediaProcessor, string conf
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

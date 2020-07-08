@@ -5,12 +5,12 @@ author: mumian
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.author: jgao
-ms.openlocfilehash: b3c4110c8761b3e8daf324d65ac7fa1dcbcdf61f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: be55138a2aa6dc0552c7556438ffd43705687c87
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77023503"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86055056"
 ---
 # <a name="provide-post-deployment-configurations-by-using-extensions"></a>Предоставление конфигураций после развертывания с помощью расширений
 
@@ -20,13 +20,13 @@ ms.locfileid: "77023503"
 
 Ниже приведены имеющиеся расширения:
 
-- [Microsoft. COMPUTE/virtualMachines/Extensions](https://docs.microsoft.com/azure/templates/microsoft.compute/2018-10-01/virtualmachines/extensions)
-- [Microsoft.Compute virtualMachineScaleSets/extensions](https://docs.microsoft.com/azure/templates/microsoft.compute/2018-10-01/virtualmachinescalesets/extensions)
-- [Microsoft.HDInsight clusters/extensions](https://docs.microsoft.com/azure/templates/microsoft.hdinsight/2018-06-01-preview/clusters)
-- [Microsoft.Sql servers/databases/extensions](https://docs.microsoft.com/azure/templates/microsoft.sql/2014-04-01/servers/databases/extensions) 
-- [Microsoft.Web/sites/siteextensions](https://docs.microsoft.com/azure/templates/microsoft.web/2016-08-01/sites/siteextensions)
+- [Microsoft. COMPUTE/virtualMachines/Extensions](/azure/templates/microsoft.compute/2018-10-01/virtualmachines/extensions)
+- [Microsoft.Compute virtualMachineScaleSets/extensions](/azure/templates/microsoft.compute/2018-10-01/virtualmachinescalesets/extensions)
+- [Microsoft.HDInsight clusters/extensions](/azure/templates/microsoft.hdinsight/2018-06-01-preview/clusters)
+- [Microsoft.Sql servers/databases/extensions](/azure/templates/microsoft.sql/2014-04-01/servers/databases/extensions) 
+- [Microsoft.Web/sites/siteextensions](/azure/templates/microsoft.web/2016-08-01/sites/siteextensions)
 
-Чтобы узнать доступные расширения, перейдите по [ссылке на шаблон](https://docs.microsoft.com/azure/templates/). В **фильтре по названию** введите **расширение**.
+Чтобы узнать доступные расширения, перейдите по [ссылке на шаблон](/azure/templates/). В **фильтре по названию** введите **расширение**.
 
 Подробнее об использовании этих расширений см. в следующих статьях:
 
@@ -36,4 +36,4 @@ ms.locfileid: "77023503"
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
-> [Руководство. Развертывание расширений виртуальной машины с помощью шаблонов Azure Resource Manager](template-tutorial-deploy-vm-extensions.md)
+> [Руководство. Развертывание расширений виртуальной машины с помощью шаблонов Azure Resource Manager](template-tutorial-deploy-vm-extensions.md).

@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/01/2019
 ms.author: juliako
-ms.openlocfilehash: edea04e15fe5b844654f250a22a05a753f0df123
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 63b3def9c37f53ebf68642faf3f45cee6602bbe5
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836402"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86057302"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 
@@ -191,12 +191,14 @@ ms.locfileid: "83836402"
 ## <a name="february-2016-release"></a><a id="feb_changes16"></a>Выпуск: февраль 2016 г.
 Последняя версия пакета SDK служб мультимедиа для .NET (3.5.3) содержит исправление ошибки, связанной с Google Widevine. Не удавалось повторно использовать AssetDeliveryPolicy для нескольких ресурсов, зашифрованных с помощью Widevine. В рамках этого исправления в пакет SDK добавлено следующее свойство: WidevineBaseLicenseAcquisitionUrl.
 
-    Dictionary<AssetDeliveryPolicyConfigurationKey, string> assetDeliveryPolicyConfiguration =
-        new Dictionary<AssetDeliveryPolicyConfigurationKey, string>
-    {
-        {AssetDeliveryPolicyConfigurationKey.WidevineBaseLicenseAcquisitionUrl,"http://testurl"},
+```csharp
+Dictionary<AssetDeliveryPolicyConfigurationKey, string> assetDeliveryPolicyConfiguration =
+    new Dictionary<AssetDeliveryPolicyConfigurationKey, string>
+{
+    {AssetDeliveryPolicyConfigurationKey.WidevineBaseLicenseAcquisitionUrl,"http://testurl"},
 
-    };
+};
+```
 
 ## <a name="january-2016-release"></a><a id="jan_changes_16"></a>Выпуск: январь 2016 г.
 Зарезервированные единицы кодирования переименованы во избежание путаницы с именами кодировщика.
@@ -323,7 +325,9 @@ REST API служб мультимедиа обновлены до версии 
 
 В этом выпуске конструктор Microsoft.WindowsAzure.MediaServices.Client.ContentKeyAuthorization.TokenRestrictionTemplate по умолчанию отмечен как устаревший. Новый конструктор принимает в качестве аргумента TokenType.
 
-    TokenRestrictionTemplate template = new TokenRestrictionTemplate(TokenType.SWT);
+```csharp
+TokenRestrictionTemplate template = new TokenRestrictionTemplate(TokenType.SWT);
+```
 
 
 ## <a name="december-2014-release"></a><a id="december_changes_14"></a>Выпуск: декабрь 2014 г.

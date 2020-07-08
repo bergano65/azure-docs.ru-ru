@@ -13,12 +13,12 @@ ms.date: 04/10/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: f389943d284c573312473f426048f8aadb79088e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e758c69f91fb60a83dfcc119b2c7f7aba44384ca
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81533978"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86054667"
 ---
 # <a name="migrating-applications-to-msalnet"></a>Перенос приложений на MSAL.NET
 
@@ -264,6 +264,6 @@ AuthenticationResult result = await appRt.AcquireTokenByRefreshToken(null, rt)
 
 Этот метод можно использовать в разных процессах интеграции, если у вас есть готовый маркер обновления.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об областях можно найти в статье [Permissions and consent in the Microsoft identity platform endpoint](v2-permissions-and-consent.md) (Разрешения и согласие для конечной точки платформы удостоверений Майкрософт).

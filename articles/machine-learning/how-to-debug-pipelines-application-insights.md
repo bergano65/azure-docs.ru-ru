@@ -1,5 +1,5 @@
 ---
-title: Отладка и устранение неполадок конвейеров машинного обучения в Application Insights
+title: Мониторинг &сбора файлов журналов конвейера
 titleSuffix: Azure Machine Learning
 description: Добавьте ведение журнала в конвейеры обучения и пакетной оценки и просмотрите записанные результаты в Application Insights.
 services: machine-learning
@@ -7,18 +7,17 @@ author: sanpil
 ms.author: sanpil
 ms.service: machine-learning
 ms.subservice: core
-ms.workload: data-services
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/16/2020
-ms.custom: seodec18
-ms.openlocfilehash: b3e4bf19a7ec153f85483f3c5028e468e06ed7f0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: seodec18, tracking-python
+ms.openlocfilehash: a87ceb5a216b05f3fae6d570bbfed1c4a622c911
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80982367"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86055721"
 ---
-# <a name="debug-and-troubleshoot-machine-learning-pipelines-in-application-insights"></a>Отладка и устранение неполадок конвейеров машинного обучения в Application Insights
+# <a name="collect-machine-learning-pipeline-log-files-in-application-insights-for-alerts-and-debugging"></a>Получение файлов журнала конвейера машинного обучения в Application Insights для предупреждений и отладки
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Библиотеку [опенценсус](https://opencensus.io/quickstart/python/) Python можно использовать для маршрутизации журналов в Application Insights из скриптов. Объединение журналов из конвейеров в одном месте позволяет создавать запросы и диагностировать проблемы. Использование Application Insights позволяет вести мониторинг журналов и сравнивать журналы конвейера во время выполнения.
@@ -39,7 +38,7 @@ ms.locfileid: "80982367"
 
 В этом разделе представлены общие сведения об использовании Опенценсус из конвейера Машинное обучение Azure. Подробное руководство см. в разделе [опенценсус Azure Monitor EXPORTS](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-azure) .
 
-Добавьте Писонскриптстеп в конвейер машинного обучения Azure. Настройте [RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py) с зависимостью от опенценсус-ext-Azure. Настройте переменную `APPLICATIONINSIGHTS_CONNECTION_STRING` среды.
+Добавьте Писонскриптстеп в конвейер машинного обучения Azure. Настройте [RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py) с зависимостью от опенценсус-ext-Azure. Настройте `APPLICATIONINSIGHTS_CONNECTION_STRING` переменную среды.
 
 ```python
 from azureml.core.conda_dependencies import CondaDependencies
@@ -142,7 +141,7 @@ logger.info("I will be sent to Application Insights with Custom Dimensions", cus
 
 Опенценсус Азурелогхандлер используется для перенаправления журналов Python в Application Insights. В результате следует учитывать особенности ведения журнала Python. При создании средства ведения журнала оно имеет уровень ведения журнала по умолчанию и отображает журналы, которые больше или равны этому уровню. Хорошим справочником по использованию возможностей ведения журнала Python является [Cookbook ведения журнала](https://docs.python.org/3/howto/logging-cookbook.html).
 
-Для `APPLICATIONINSIGHTS_CONNECTION_STRING` Библиотеки опенценсус требуется переменная среды. Рекомендуется задавать эту переменную среды вместо передачи ее в качестве параметра конвейера, чтобы избежать передачи строк соединения в виде открытого текста.
+`APPLICATIONINSIGHTS_CONNECTION_STRING`Для библиотеки опенценсус требуется переменная среды. Рекомендуется задавать эту переменную среды вместо передачи ее в качестве параметра конвейера, чтобы избежать передачи строк соединения в виде открытого текста.
 
 ## <a name="querying-logs-in-application-insights"></a>Запрос журналов в Application Insights
 
@@ -156,14 +155,14 @@ logger.info("I will be sent to Application Insights with Custom Dimensions", cus
 
 В некоторых запросах ниже используется "customDimensions. Level". Эти уровни серьезности соответствуют уровню, с которым был первоначально отправлен журнал Python. Дополнительные сведения о запросах см. в разделе [Azure Monitor запросы журналов](https://docs.microsoft.com/azure/azure-monitor/log-query/query-language).
 
-| Вариант использования                                                               | query                                                                                              |
+| Вариант использования                                                               | Запрос                                                                                              |
 |------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
 | Заносить в журнал результаты для конкретного пользовательского измерения, например "parent_run_id" | <pre>traces \| <br>where customDimensions.parent_run_id == '931024c2-3720-11ea-b247-c49deda841c1</pre> |
 | Записывать результаты всех обучающих запусков за последние семь дней                     | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.run_type == 'training'</pre>           |
 | Регистрировать результаты с ошибкой Северитилевел за последние семь дней              | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.Level == 'ERROR'                     |
 | Число результатов журнала с Северитилевел ошибкой за последние семь дней     | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.Level == 'ERROR' \| <br>summarize count()</pre> |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 После получения журналов в экземпляре Application Insights их можно использовать для установки [предупреждений Azure Monitor](../azure-monitor/platform/alerts-overview.md#what-you-can-alert-on) на основе результатов запроса.
 

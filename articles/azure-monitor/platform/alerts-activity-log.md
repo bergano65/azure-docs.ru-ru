@@ -4,12 +4,12 @@ description: Создавайте оповещения журнала дейст
 ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 06/25/2019
-ms.openlocfilehash: 45345d06e64194224df48a33fab1e74433a1eaac
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: 242192118d59f972cebe2837d74c34310cac74aa
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83744268"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86056265"
 ---
 # <a name="create-view-and-manage-activity-log-alerts-by-using-azure-monitor"></a>Создание, просмотр оповещений журнала действий и управление ими с помощью Azure Monitor  
 
@@ -200,6 +200,11 @@ ms.locfileid: "83744268"
 }
 ```
 Приведенный выше пример JSON можно сохранить с именем, например sampleActivityLogAlert.json, чтобы использовать в данном пошаговом руководстве. Его можно развернуть с помощью [Azure Resource Manager на портале Azure](../../azure-resource-manager/templates/deploy-portal.md).
+
+  > [!NOTE]
+  > 
+  > Обратите внимание, что можно определить наиболее подписку на оповещения журнала действий высшего уровня.
+  > Это означает, что вы не можете определить предупреждение для нескольких подписок, поэтому определение должно быть оповещено на подписку.
 
 Следующие поля — это параметры, которые можно использовать в шаблоне Azure Resource Manager для полей условий. Обратите внимание, что "Работоспособность ресурсов", "Помощник" и "Работоспособность служб" имеют дополнительные поля свойств для своих особых полей. 
 1. resourceId —  идентификатор затронутого ресурса в событии журнала действий, для которого должно быть создано оповещение.

@@ -105,9 +105,6 @@
           href: luis-concept-test.md
         - name: Пакетное тестирование
           href: luis-concept-batch-test.md
-    - name: Ключи разработки и среды выполнения
-      displayName: 'shared, transfer, ownership, author, access, import'
-      href: luis-concept-keys.md
     - name: Управление данными
       items:
         - name: Изменение данных

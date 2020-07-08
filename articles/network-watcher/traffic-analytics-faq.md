@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: damendo
-ms.openlocfilehash: 2402e72d2ef9fcda46f2f40bff48759262ee30e0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 87b4f0573fbcc73573c508a7f8e39acadcfa05af
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82189051"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86056486"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Часто задаваемые вопросы по Аналитике трафика Azure
 
@@ -264,7 +264,7 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
 - Щелкните "создать правило генерации оповещений", чтобы создать оповещение.
 - Сведения о создании оповещения см. в [документации по оповещениям журнала](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) .
 
-## <a name="how-do-i-check-which-vms-are-receiving-most-on-premise-traffic"></a>Разделы справки проверить, какие виртуальные машины получают наибольший объем локального трафика
+## <a name="how-do-i-check-which-vms-are-receiving-most-on-premises-traffic"></a>Разделы справки проверить, какие виртуальные машины получают наибольший объем локального трафика?
 
             AzureNetworkAnalytics_CL
             | where SubType_s == "FlowLog" and FlowType_s == "S2S" 
@@ -288,7 +288,7 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
 
 Для времени используйте формат: гггг-мм-дд 00:00:00
 
-## <a name="how-do-i-check-standard-deviation-in-traffic-recieved-by-my-vms-from-on-premise-machines"></a>Разделы справки проверить стандартное отклонение в трафике, получаемом из виртуальных машин с локальных компьютеров
+## <a name="how-do-i-check-standard-deviation-in-traffic-received-by-my-vms-from-on-premises-machines"></a>Разделы справки проверить стандартное отклонение трафика, полученного из виртуальных машин из локальных компьютеров?
 
             AzureNetworkAnalytics_CL
             | where SubType_s == "FlowLog" and FlowType_s == "S2S" 
@@ -309,7 +309,7 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
             | extend traffic = AllowedInFlows_d + DeniedInFlows_d + AllowedOutFlows_d + DeniedOutFlows_d // For bytes use: | extend traffic = InboundBytes_d + OutboundBytes_d
             | summarize deviation = stdev(traffic)  by IP
             
-## <a name="how-do-i-check-which-ports-are-reachable-or-bocked-between-ip-pairs-with-nsg-rules"></a>Разделы справки проверить, какие порты доступны (или боккед) между парами IP-адресов и правилами NSG
+## <a name="how-do-i-check-which-ports-are-reachable-or-blocked-between-ip-pairs-with-nsg-rules"></a>Разделы справки проверить, какие порты являются доступными (или заблокированными) между парами IP-адресов с правилами NSG?
 
             AzureNetworkAnalytics_CL
             | where SubType_s == "FlowLog" and TimeGenerated between (startTime .. endTime)
@@ -347,7 +347,7 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
 ### <a name="keyboard-navigation-at-any-stage"></a>Навигация с помощью клавиатуры на любом этапе
     
 - Клавиша `Esc` позволяет свернуть развернутый элемент.
-- Клавиша `Up arrow` работает так же, как `Esc`. Клавиша `Down arrow` работает так же, как `Enter`.
+- Клавиша `Up-arrow` работает так же, как `Esc`. Клавиша `Down arrow` работает так же, как `Enter`.
 - Клавиши `Shift+Plus` позволяют увеличить масштаб, а `Shift+Minus` — уменьшить его.
 
 ## <a name="how-can-i-navigate-by-using-the-keyboard-in-the-virtual-network-topology-view"></a>Как перемещаться в представлении топологии виртуальной сети с помощью клавиатуры?

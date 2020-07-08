@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 11/19/2019
 ms.author: diberry
-ms.openlocfilehash: f1aed6b1c03a2b83e3b4fd91f1106614adb5a701
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.openlocfilehash: d1f534b801ec3a71e891bf654628f9e49fc04b0d
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84344396"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86055636"
 ---
 # <a name="add-contributors-to-your-app"></a>Добавление участников в приложение
 
@@ -94,9 +94,9 @@ ms.locfileid: "84344396"
 Узнайте больше о пользователях и согласии Azure Active Directory.
 * [Ограничить приложение](../../active-directory/develop/howto-restrict-your-app-to-a-set-of-users.md) набором пользователей
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте [, как использовать версии](luis-how-to-manage-versions.md) для управления жизненным циклом приложения.
-* Изучите основные понятия, в том числе [ресурсы для разработки](luis-concept-keys.md#authoring-key) и [участников](luis-concept-keys.md#contributions-from-other-authors) этого ресурса.
+* Изучите основные понятия, в том числе [ресурсы для разработки](luis-how-to-azure-subscription.md#authoring-key) и [участников](luis-how-to-azure-subscription.md#contributions-from-other-authors) этого ресурса.
 * Сведения [о создании](luis-how-to-azure-subscription.md) ресурсов разработки и среды выполнения
 * Переход на новый [ресурс создания](luis-migration-authoring.md)

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: abdb926825abcac4485cb11b71bdc82597391727
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b258b0b5dba902e94e8d221e0d8f0292fdec9f67
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82176827"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86057404"
 ---
 # <a name="publish-content-in-the-azure-portal"></a>Публикация содержимого на портале Azure  
 > [!div class="op_single_selector"]
@@ -42,19 +42,19 @@ ms.locfileid: "82176827"
 
 Чтобы создать URL-адрес потоковой передачи HLS, добавьте *(format=m3u8-aapl)* к URL-адресу:
 
-    {streaming endpoint name-media services account name}/{locator ID}/{file name}.ism/Manifest(format=m3u8-aapl)
+`{streaming endpoint name-media services account name}/{locator ID}/{file name}.ism/Manifest(format=m3u8-aapl)`
 
 Чтобы создать URL-адрес потоковой передачи для воспроизведения ресурсов Smooth Streaming, используйте следующий формат:
 
-    {streaming endpoint name-media services account name}/{locator ID}/{file name}.ism/Manifest
+`{streaming endpoint name-media services account name}/{locator ID}/{file name}.ism/Manifest`
 
 Чтобы создать URL-адрес для потоковой передачи в формате MPEG-DASH, добавьте к исходному адресу строку *(format=mpd-time-csf)*:
 
-    {streaming endpoint name-media services account name}/{locator ID}/{file name}.ism/Manifest(format=mpd-time-csf)
+`{streaming endpoint name-media services account name}/{locator ID}/{file name}.ism/Manifest(format=mpd-time-csf)`
 
 Подписанный URL-адрес имеет следующий формат:
 
-    {blob container name}/{asset name}/{file name}/{shared access signature}
+`{blob container name}/{asset name}/{file name}/{shared access signature}`
 
 Дополнительные сведения см. в статье [Доставка содержимого клиентам](media-services-deliver-content-overview.md).
 
@@ -95,6 +95,6 @@ URL-адрес будет добавлен в список **опубликов�
 ## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 

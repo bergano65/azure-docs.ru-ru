@@ -2,13 +2,13 @@
 title: Проверка подлинности между реестрами с помощью задачи ACR
 description: Настройка задачи Реестра контейнеров Azure (задача ACR) для доступа к другому частному реестру контейнеров в Azure с использованием управляемого удостоверения для ресурсов Azure
 ms.topic: article
-ms.date: 01/14/2020
-ms.openlocfilehash: 47b2a50784cf56b089fea0981e5a06d581b8ba3a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.date: 07/06/2020
+ms.openlocfilehash: 8b961a2ff6a795f03798cc6f6a7d303391036ef8
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76842505"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86057367"
 ---
 # <a name="cross-registry-authentication-in-an-acr-task-using-an-azure-managed-identity"></a>Проверка подлинности между реестрами с помощью задачи ACR с использованием удостоверения, управляемого Azure 
 
@@ -44,6 +44,7 @@ ms.locfileid: "76842505"
 ```bash
 echo FROM node:9-alpine > Dockerfile
 ```
+
 В текущем каталоге выполните команду [az acr build][az-acr-build], чтобы создать и отправить базовый образ в базовый реестр. На практике другая команда или процесс в организации могут использовать базовый реестр.
     
 ```azurecli
@@ -85,6 +86,27 @@ az acr task create \
 
 [!INCLUDE [container-registry-tasks-user-id-properties](../../includes/container-registry-tasks-user-id-properties.md)]
 
+### <a name="give-identity-pull-permissions-to-the-base-registry"></a>Предоставление удостоверению разрешений на извлечение данных из базового реестра
+
+В этом разделе описано, как предоставить управляемому удостоверению разрешения на извлечение данных из базового реестра *mybaseregistry*.
+
+Используйте команду [az acr show][az-acr-show], чтобы получить идентификатор ресурса для базового реестра и сохранить его в переменной.
+
+```azurecli
+baseregID=$(az acr show --name mybaseregistry --query id --output tsv)
+```
+
+Используйте команду [az role assignment create][az-role-assignment-create], чтобы назначить удостоверению роль `acrpull` для доступа к базовому реестру. Эта роль имеет разрешения только на извлечение образов из реестра.
+
+```azurecli
+az role assignment create \
+  --assignee $principalID \
+  --scope $baseregID \
+  --role acrpull
+```
+
+Перейдите к [разделу Добавление учетных данных целевого реестра в задачу](#add-target-registry-credentials-to-task).
+
 ## <a name="option-2-create-task-with-system-assigned-identity"></a>Вариант 2. Создание задачи с удостоверением, назначаемым системой
 
 В этом разделе описано, как создать задачу и включить удостоверение, назначаемое системой. Если вы хотите включить удостоверение, назначаемое пользователем, см. раздел [Вариант 1. Создание задачи с удостоверением, назначаемым пользователем](#option-1-create-task-with-user-assigned-identity). 
@@ -103,7 +125,7 @@ az acr task create \
 ```
 [!INCLUDE [container-registry-tasks-system-id-properties](../../includes/container-registry-tasks-system-id-properties.md)]
 
-## <a name="give-identity-pull-permissions-to-the-base-registry"></a>Предоставление удостоверению разрешений на извлечение данных из базового реестра
+### <a name="give-identity-pull-permissions-to-the-base-registry"></a>Предоставление удостоверению разрешений на извлечение данных из базового реестра
 
 В этом разделе описано, как предоставить управляемому удостоверению разрешения на извлечение данных из базового реестра *mybaseregistry*.
 

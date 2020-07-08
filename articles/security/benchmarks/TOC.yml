@@ -41,10 +41,14 @@
       href: ../../automation/security-baseline.md
     - name: Базовая конфигурация безопасности для Кэша Azure для Redis
       href: ../../azure-cache-for-redis/security-baseline.md
+    - name: Базовые показатели безопасности Политики Azure
+      href: ../../governance/policy/concepts/azure-security-benchmark-baseline.md
     - name: Базовые средства безопасности резервного копирования
       href: ../../backup/security-baseline.md
     - name: Базовый уровень безопасности пакетной службы
       href: ../../batch/security-baseline.md
+    - name: Базовые показатели безопасности Cognitive Services
+      href: ../../cognitive-services/security-baseline.md
     - name: Базовые показатели системы безопасности для Экземпляров контейнеров
       href: ../../container-instances/security-baseline.md
     - name: Базовая конфигурация безопасности для Реестра контейнеров
@@ -87,3 +91,5 @@
       href: ../../stream-analytics/security-baseline.md
     - name: Базовые средства безопасности хранилища
       href: ../../storage/common/security-baseline.md
+    - name: Базовые показатели безопасности Synapse Analytics
+      href: ../../synapse-analytics/security-baseline.md
