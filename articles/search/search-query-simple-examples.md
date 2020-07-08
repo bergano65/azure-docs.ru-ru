@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 3a801af7b97954510139a009a6d1344b281cf056
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3ea1c42234267bdbc5f8a7d35f0fd73bbb59b33c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81261811"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85553415"
 ---
 # <a name="create-a-simple-query-in-azure-cognitive-search"></a>Создание простого запроса в Azure Когнитивный поиск
 
@@ -50,7 +50,7 @@ URL-адрес содержит следующие элементы.
 + **`https://azs-playground.search.windows.net/`**— это служба поиска "песочницы", поддерживаемая командой разработчиков Когнитивный поиск Azure. 
 + **`indexes/nycjobs/`** Индекс заданий Нью в коллекции индексов этой службы. Имя службы и индекс должны быть указаны в запросе.
 + **`docs`**— Это коллекция Documents, содержащая все содержимое, доступное для поиска. Значение api-key в заголовке запроса подходит только для операций чтения, нацеленных на эту коллекцию документов.
-+ **`api-version=2019-05-06`** Задает версию API, которая является обязательным параметром при каждом запросе.
++ **`api-version=2020-06-30`** Задает версию API, которая является обязательным параметром при каждом запросе.
 + **`search=*`** Строка запроса, которая в исходном запросе имеет значение null, возвращает первые 50 результатов (по умолчанию).
 
 ## <a name="send-your-first-query"></a>Отправка первого запроса
@@ -60,10 +60,10 @@ URL-адрес содержит следующие элементы.
 Вставьте этот URL-адрес в клиент RESTFUL в качестве шага проверки и просмотрите структуру документа.
 
   ```http
-  https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&search=*
+  https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&search=*
   ```
 
-Строка запроса,, **`search=*`** является неопределенным поиском, эквивалентом null или пустым поиском. Этот запрос не очень полезен, но это самый простой поиск, который можно выполнить.
+Строка запроса, **`search=*`** , является неопределенным поиском, эквивалентом null или пустым поиском. Этот запрос не очень полезен, но это самый простой поиск, который можно выполнить.
 
 При необходимости можно добавить **`$count=true`** в URL-адрес, чтобы вернуть число документов, соответствующих условиям поиска. При пустой строке поиска это будут все документы в индексе (примерно 2800 в случае вакансий в Нью-Йорке).
 
@@ -92,7 +92,7 @@ search=*&searchFields=business_title, posting_type&$select=business_title, posti
 ### <a name="full-url"></a>Полный URL-адрес
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&searchFields=business_title&$select=business_title&search=*
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&searchFields=business_title&$select=business_title&search=*
 ```
 
 Результат запроса должен выглядеть, как на снимке экрана ниже.
@@ -108,13 +108,13 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 Все документы имеют уникальный идентификатор. Чтобы проверить синтаксис запроса поиска, сначала получите список идентификаторов документов, чтобы найти в нем нужный идентификатор. В индексе вакансий в Нью-Йорке идентификаторы хранятся в поле `id`.
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&searchFields=id&$select=id&search=*
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&searchFields=id&$select=id&search=*
 ```
 
 В следующем примере выполняется запрос поиска, возвращающий определенный документ по значению `id` "9E1E3AF9-0660-4E00-AF51-9B654925A2D5", которое было указано первым в предыдущем ответе. Следующий запрос возвращает весь документ, а не отдельные поля. 
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs/9E1E3AF9-0660-4E00-AF51-9B654925A2D5?api-version=2019-05-06&$count=true&search=*
+https://azs-playground.search.windows.net/indexes/nycjobs/docs/9E1E3AF9-0660-4E00-AF51-9B654925A2D5?api-version=2020-06-30&$count=true&search=*
 ```
 
 ## <a name="example-3-filter-queries"></a>Пример 3. Фильтрация запросов
@@ -122,7 +122,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs/9E1E3AF9-0660-4E0
 [Синтаксис фильтра](https://docs.microsoft.com/azure/search/search-query-odata-filter) — это выражение OData, которое можно использовать с параметром **search** или само по себе. Автономный фильтр без параметра поиска полезен, когда выражение фильтра может полностью определить интересующие документы. Без строки запроса не выполняется лексический или лингвистический анализ (все оценки имеют значение 1), нет оценки и рейтинга. Обратите внимание, что строка поиска пуста.
 
 ```http
-POST /indexes/nycjobs/docs/search?api-version=2019-05-06
+POST /indexes/nycjobs/docs/search?api-version=2020-06-30
     {
       "search": "",
       "filter": "salary_frequency eq 'Annual' and salary_range_from gt 90000",
@@ -138,13 +138,13 @@ POST /indexes/nycjobs/docs/search?api-version=2019-05-06
 Если вы хотите попробовать это в Postman, используя GET, вы можете вставить эту строку:
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&$select=job_id,business_title,agency,salary_range_from&search=&$filter=salary_frequency eq 'Annual' and salary_range_from gt 90000
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&$select=job_id,business_title,agency,salary_range_from&search=&$filter=salary_frequency eq 'Annual' and salary_range_from gt 90000
 ```
 
 Еще один эффективный способ объединения фильтра и поиска заключается **`search.ismatch*()`** в критерии фильтра, где можно использовать поисковый запрос в фильтре. Это выражение фильтра использует подстановочный знак для термина *план*, чтобы выбрать должность business_title, содержащую термины "план", "планировщик", "планирование" и т. д.
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&$select=job_id,business_title,agency&search=&$filter=search.ismatch('plan*', 'business_title', 'full', 'any')
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&$select=job_id,business_title,agency&search=&$filter=search.ismatch('plan*', 'business_title', 'full', 'any')
 ```
 
 Дополнительные сведения о функции см. в [описании search.ismatch в разделе с примерами фильтров](https://docs.microsoft.com/azure/search/search-query-odata-full-text-search-functions#examples).
@@ -158,7 +158,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 Следующие примеры приведены в формате POST для удобства чтения (числовой диапазон, за которым следует текстовый диапазон):
 
 ```http
-POST /indexes/nycjobs/docs/search?api-version=2019-05-06
+POST /indexes/nycjobs/docs/search?api-version=2020-06-30
     {
       "search": "",
       "filter": "num_of_positions ge 5 and num_of_positions lt 10",
@@ -171,7 +171,7 @@ POST /indexes/nycjobs/docs/search?api-version=2019-05-06
 
 
 ```http
-POST /indexes/nycjobs/docs/search?api-version=2019-05-06
+POST /indexes/nycjobs/docs/search?api-version=2020-06-30
     {
       "search": "",
       "filter": "business_title ge 'A*' and business_title lt 'C*'",
@@ -186,11 +186,11 @@ POST /indexes/nycjobs/docs/search?api-version=2019-05-06
 Вы также можете попробовать их в Postman, используя GET:
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&search=&$filter=num_of_positions ge 5 and num_of_positions lt 10&$select=job_id, business_title, num_of_positions, agency&$orderby=agency&$count=true
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&search=&$filter=num_of_positions ge 5 and num_of_positions lt 10&$select=job_id, business_title, num_of_positions, agency&$orderby=agency&$count=true
 ```
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&search=&$filter=business_title ge 'A*' and business_title lt 'C*'&$select=job_id, business_title, agency&$orderby=business_title&$count=true
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&search=&$filter=business_title ge 'A*' and business_title lt 'C*'&$select=job_id, business_title, agency&$orderby=business_title&$count=true
 ```
 
 > [!NOTE]
@@ -203,7 +203,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 Следующий пример приведен в формате POST для удобства чтения:
 
 ```http
-POST /indexes/nycjobs/docs/search?api-version=2019-05-06
+POST /indexes/nycjobs/docs/search?api-version=2020-06-30
     {
       "search": "",
       "filter": "geo.distance(geo_location, geography'POINT(-74.11734 40.634384)') le 4",
@@ -216,7 +216,7 @@ POST /indexes/nycjobs/docs/search?api-version=2019-05-06
 Вы также можете попробовать их в Postman, используя GET:
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&search=&$select=job_id, business_title, work_location&$filter=geo.distance(geo_location, geography'POINT(-74.11734 40.634384)') le 4
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&search=&$select=job_id, business_title, work_location&$filter=geo.distance(geo_location, geography'POINT(-74.11734 40.634384)') le 4
 ```
 
 ## <a name="example-6-search-precision"></a>Пример 6. Точность поиска
@@ -226,19 +226,19 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 Пример 1. **`&search=fire`** возвращает 150 результатов, где все совпадения содержат слово Fire где-нибудь в документе.
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&search=fire
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&search=fire
 ```
 
 Пример 2. **`&search=fire department`** возвращает 2002 результатов. Возвращаются документы, содержащие слово "fire" или "department".
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&search=fire department
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&search=fire department
 ```
 
-Пример 3. **`&search="fire department"`** возвращает 82 результатов. Заключение строки в кавычки позволяет выполнить буквальный поиск обоих терминов, и в индексе, состоящем из объединенных терминов, найдены совпадения с терминами, снабженными маркером. Это объясняет, почему Поиск, **`search=+fire +department`** например, не эквивалентен. Оба термина являются обязательными, но их наличие проверяется независимо друг от друга. 
+Пример 3. **`&search="fire department"`** возвращает 82 результатов. Заключение строки в кавычки позволяет выполнить буквальный поиск обоих терминов, и в индексе, состоящем из объединенных терминов, найдены совпадения с терминами, снабженными маркером. Это объясняет, почему поиск **`search=+fire +department`** , например, не эквивалентен. Оба термина являются обязательными, но их наличие проверяется независимо друг от друга. 
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&search="fire department"
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&search="fire department"
 ```
 
 ## <a name="example-7-booleans-with-searchmode"></a>Пример 7. Логические операторы с параметром searchMode
@@ -248,7 +248,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 С помощью параметра searchMode по умолчанию (any) возвращаются 2800 документов. Это документы, которые содержат составной термин "fire department", а также все документы, в которых нет термина "Metrotech Center".
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&searchMode=any&search="fire department"  -"Metrotech Center"
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&searchMode=any&search="fire department"  -"Metrotech Center"
 ```
 
   ![режим поиска "любой"](media/search-query-simple-examples/searchmodeany.png)
@@ -256,7 +256,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 Изменение значения параметра searchMode на `all` обеспечивает эффект накопления условий и возвращает меньший результирующий набор — 21 документ. Это документы, содержащие фразу ""fire department", кроме вакансий по адресу Metrotech Center.
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&searchMode=all&search="fire department"  -"Metrotech Center"
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&searchMode=all&search="fire department"  -"Metrotech Center"
 ```
   ![режим поиска "все"](media/search-query-simple-examples/searchmodeall.png)
 
@@ -265,24 +265,24 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 Несколько параметров управляют тем, какие поля добавляются в результаты поиска, числом документов, возвращаемых в каждом пакете, и порядком сортировки. В этом примере используются некоторые из предыдущих примеров, но результаты ограничиваются конкретными полями с помощью оператора **$select** и условия буквального поиска. Результат содержит 82 совпадения. 
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&$select=job_id,agency,business_title,civil_service_title,work_location,job_description&search="fire department"
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&$select=job_id,agency,business_title,civil_service_title,work_location,job_description&search="fire department"
 ```
 Они добавлены к предыдущему примеру, и их можно отсортировать по заголовку. Сортировка работает, так как поле civil_service_title является *сортируемым* в индексе.
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&$select=job_id,agency,business_title,civil_service_title,work_location,job_description&search="fire department"&$orderby=civil_service_title
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&$select=job_id,agency,business_title,civil_service_title,work_location,job_description&search="fire department"&$orderby=civil_service_title
 ```
 
 Разбиение результатов по страницам реализуется с помощью параметра **$top**. В этом случае возвращаются первые 5 документов.
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&$select=job_id,agency,business_title,civil_service_title,work_location,job_description&search="fire department"&$orderby=civil_service_title&$top=5&$skip=0
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&$select=job_id,agency,business_title,civil_service_title,work_location,job_description&search="fire department"&$orderby=civil_service_title&$top=5&$skip=0
 ```
 
 Чтобы получить следующие 5 документов, пропустите первый пакет.
 
 ```http
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&$select=job_id,agency,business_title,civil_service_title,work_location,job_description&search="fire department"&$orderby=civil_service_title&$top=5&$skip=5
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&$select=job_id,agency,business_title,civil_service_title,work_location,job_description&search="fire department"&$orderby=civil_service_title&$top=5&$skip=5
 ```
 
 ## <a name="next-steps"></a>Дальнейшие шаги

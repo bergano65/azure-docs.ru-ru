@@ -1,19 +1,19 @@
 ---
 title: Фильтры безопасности для усечения результатов
 titleSuffix: Azure Cognitive Search
-description: Управление доступом к содержимому Когнитивный поиск Azure с помощью фильтров безопасности и удостоверений пользователей.
+description: Права безопасности на уровне документа для результатов поиска Когнитивный поиск Azure с использованием фильтров безопасности и удостоверений пользователей.
 manager: nitinme
-author: brjohnstmsft
-ms.author: brjohnst
+author: HeidiSteen
+ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: 24f168f68a60ebb0408b7f1c367039ea5caea6d1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/04/2020
+ms.openlocfilehash: e97f607c17f746c3cb16a17b7f579a58d4914608
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "72794277"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85553139"
 ---
 # <a name="security-filters-for-trimming-results-in-azure-cognitive-search"></a>Фильтры безопасности для усечения результатов в Azure Когнитивный поиск
 
@@ -27,12 +27,12 @@ ms.locfileid: "72794277"
 > [!div class="checklist"]
 > * Создание поля, содержащего идентификаторы субъектов. 
 > * Принудительная отправка или обновление имеющихся документов с соответствующими идентификаторами субъектов.
-> * Выдача поискового запроса `search.in` с помощью`filter`
+> * Выдача поискового запроса с помощью `search.in``filter`
 
 >[!NOTE]
 > В этом документе не рассматривается процесс получения идентификаторов субъектов. Его следует узнать у поставщика службы идентификации.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В этой статье предполагается, что у вас есть [Подписка Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F), [Служба когнитивный Поиск azure](https://docs.microsoft.com/azure/search/search-create-service-portal)и [индекс когнитивный Поиск Azure](https://docs.microsoft.com/azure/search/search-create-index-portal).  
 
@@ -60,7 +60,7 @@ ms.locfileid: "72794277"
 Отправьте запрос HTTP POST к конечной точке URL-адреса индекса. Текст HTTP-запроса является объектом JSON, содержащим документы, которые нужно добавить.
 
 ```
-POST https://[search service].search.windows.net/indexes/securedfiles/docs/index?api-version=2019-05-06  
+POST https://[search service].search.windows.net/indexes/securedfiles/docs/index?api-version=2020-06-30  
 Content-Type: application/json
 api-key: [admin key]
 ```
@@ -118,7 +118,7 @@ api-key: [admin key]
 Выполните запрос HTTP POST:
 
 ```
-POST https://[service name].search.windows.net/indexes/securedfiles/docs/search?api-version=2019-05-06
+POST https://[service name].search.windows.net/indexes/securedfiles/docs/search?api-version=2020-06-30
 Content-Type: application/json  
 api-key: [admin or query key]
 ```
@@ -151,7 +151,7 @@ api-key: [admin or query key]
 ```
 ## <a name="conclusion"></a>Заключение
 
-Вот как можно фильтровать результаты на основе удостоверения пользователя и функции Когнитивный поиск `search.in()` Azure. Эту функцию можно использовать для передачи идентификаторов принципов запрашивающего пользователя для сопоставления с идентификаторами участников, связанными с каждым целевым документом. Во время обработки поискового запроса функция `search.in` отфильтровывает результаты поиска, отклоняя файлы, для которых ни один из субъектов-пользователей не имеет доступа на чтение. Идентификаторы субъектов могут представлять группы безопасности, роли или даже удостоверение пользователя.
+Вот как можно фильтровать результаты на основе удостоверения пользователя и функции Когнитивный поиск Azure `search.in()` . Эту функцию можно использовать для передачи идентификаторов принципов запрашивающего пользователя для сопоставления с идентификаторами участников, связанными с каждым целевым документом. Во время обработки поискового запроса функция `search.in` отфильтровывает результаты поиска, отклоняя файлы, для которых ни один из субъектов-пользователей не имеет доступа на чтение. Идентификаторы субъектов могут представлять группы безопасности, роли или даже удостоверение пользователя.
  
 ## <a name="see-also"></a>См. также
 

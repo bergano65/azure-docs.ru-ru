@@ -8,12 +8,12 @@ ms.author: natinimn
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/08/2020
-ms.openlocfilehash: cb17fe24339ad618229b3456ece15c206f79bdb7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f6bda61960efd9a5e176f8792601e315ba96bcca
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76899948"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85553289"
 ---
 # <a name="encryption-at-rest-of-content-in-azure-cognitive-search-using-customer-managed-keys-in-azure-key-vault"></a>Шифрование неактивных содержимого в Azure Когнитивный поиск с помощью ключей, управляемых клиентом, в Azure Key Vault
 
@@ -26,7 +26,7 @@ ms.locfileid: "76899948"
 Ключи не должны находиться в одном Key Vault. Одна служба поиска может размещать несколько зашифрованных индексов или сопоставлений синонимов, каждый из которых шифруется с помощью собственных ключей шифрования, управляемых клиентом, хранящихся в разных хранилищах ключей.  Индексы и карты синонимов можно также использовать в той же службе, которая не зашифрована с помощью управляемых клиентом ключей. 
 
 > [!IMPORTANT] 
-> Эта функция доступна на [REST API версии 2019-05-06](https://docs.microsoft.com/rest/api/searchservice/) и [пакете SDK для .NET версии 8,0-Preview](search-dotnet-sdk-migration-version-9.md). Сейчас не поддерживается настройка ключей шифрования, управляемых клиентом, в портал Azure. Служба поиска должна быть создана после января 2019 и не может быть бесплатной (общей) службой.
+> Эта функция доступна на [REST API](https://docs.microsoft.com/rest/api/searchservice/) и [пакете SDK для .NET версии 8,0-Preview](search-dotnet-sdk-migration-version-9.md). Сейчас не поддерживается настройка ключей шифрования, управляемых клиентом, в портал Azure. Служба поиска должна быть создана после января 2019 и не может быть бесплатной (общей) службой.
 
 ## <a name="prerequisites"></a>Предварительные условия
 
@@ -38,7 +38,7 @@ ms.locfileid: "76899948"
 
 + Для задач настройки используется [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) или [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) .
 
-+ Для вызова REST API можно использовать [POST](search-get-started-postman.md), [Azure PowerShell](search-create-index-rest-api.md) и [пакет SDK Azure когнитивный Поиск](https://aka.ms/search-sdk-preview) . В настоящее время портал для шифрования, управляемого клиентом, не поддерживается.
++ [POST](search-get-started-postman.md), [Azure PowerShell](search-create-index-rest-api.md) и [Предварительная версия пакета SDK для .net](https://aka.ms/search-sdk-preview) можно использовать для вызова REST API. В настоящее время портал для шифрования, управляемого клиентом, не поддерживается.
 
 >[!Note]
 > Из-за особенностей шифрования с помощью функций, управляемых клиентом, Когнитивный поиск Azure не сможет получить данные, если ключ хранилища ключей Azure будет удален. Чтобы предотвратить потери данных, вызванные случайным удалением Key Vault ключей, **необходимо** включить обратимое удаление и очистку для Key Vault перед использованием. Дополнительные сведения см. в разделе [Azure Key Vault обратимого удаления](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete).   
@@ -222,7 +222,7 @@ az keyvault update -n <vault_name> -g <resource_group> --enable-soft-delete --en
 Для поддержки таких топологий Azure Когнитивный поиск поддерживает использование приложений Azure Active Directory (AAD) для проверки подлинности между службой поиска и Key Vault.    
 Чтобы создать приложение AAD на портале, выполните следующие действия.
 
-1. [Создайте приложение Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-an-azure-active-directory-application).
+1. [Создание приложения Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-an-azure-active-directory-application).
 
 1. [Получите идентификатор приложения и ключ проверки подлинности](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) , так как они потребуются для создания зашифрованного индекса. Значения, которые потребуется указать, включают **идентификатор приложения** и **ключ проверки подлинности**.
 
