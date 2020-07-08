@@ -5,14 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 04/30/2020
-ms.openlocfilehash: d956a9c93280ac22c4707f22c0769853f0f36c83
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2d6ebcd720a5cea8d41bf3c05f753f2e9d4775d1
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84015154"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085911"
 ---
 # <a name="use-external-metadata-stores-in-azure-hdinsight"></a>Использование внешних хранилищ метаданных в Azure HDInsight
 
@@ -110,6 +111,6 @@ Apache Oozie — это система координации рабочих п�
 
 Сведения о том, как использовать собственную внешнюю базу данных с Apache Ambari в HDInsight, см. в статье [пользовательские базы данных Apache Ambari](hdinsight-custom-ambari-db.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий](./hdinsight-hadoop-provision-linux-clusters.md)
