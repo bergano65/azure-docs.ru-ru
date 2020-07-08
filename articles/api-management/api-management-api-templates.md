@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: eee95a2b6acde3ad3b7d94cf5cdd0f74f9f09fd9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.custom: tracking-python
+ms.openlocfilehash: 467d8b89ef5c114d647a257053ed3367d6336bdc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79265965"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84559336"
 ---
 # <a name="api-templates-in-azure-api-management"></a>Шаблоны API в службе управления API Azure
 
@@ -89,7 +89,7 @@ ms.locfileid: "79265965"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Type|Описание|  
+|Свойство.|Type|Описание:|  
 |--------------|----------|-----------------|  
 |`apis`|Коллекция сущностей [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|API, доступные для текущего пользователя.|  
   
@@ -344,14 +344,14 @@ ms.locfileid: "79265965"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Type|Описание|  
+|Свойство.|Type|Описание|  
 |--------------|----------|-----------------|  
 |`apiId`|строка|Идентификатор текущего API.|  
-|`apiName`|строка|Имя API.|  
-|`apiDescription`|строка|Описание API.|  
+|`apiName`|string|Имя API.|  
+|`apiDescription`|string|Описание API.|  
 |`api`|Сущность [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|Текущий API.|  
 |`operation`|[Операция](api-management-template-data-model-reference.md#Operation)|Операция, отображаемая в настоящий момент.|  
-|`sampleUrl`|строка|URL-адрес текущей операции.|  
+|`sampleUrl`|string|URL-адрес текущей операции.|  
 |`operationMenu`|[Меню "операция"](api-management-template-data-model-reference.md#Menu)|Меню операций для API.|  
 |`consoleUrl`|URI|Универсальный код ресурса для кнопки **Попробуйте**.|  
 |`samples`|Коллекция сущностей [Code sample](api-management-template-data-model-reference.md#Sample) (Пример кода).|Примеры кода для текущей операции.|  
@@ -717,7 +717,7 @@ curl -v -X {{method}} "{{scheme}}://{{host}}{{path}}{{query | escape }}"
 }  
 ```  
   
-### <a name="c"></a><a name="CSharp"></a>Ц #  
+### <a name="c"></a><a name="CSharp"></a> C#  
  Шаблон **DocumentationSamplesCsharp** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
@@ -1283,7 +1283,7 @@ catch (HttpException $ex)
 }  
 ```  
   
-### <a name="python"></a><a name="Python"></a>Языке  
+### <a name="python"></a><a name="Python"></a> Python  
  Шаблон **DocumentationSamplesPython** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  

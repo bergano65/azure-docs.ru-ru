@@ -2,13 +2,12 @@
 title: Просмотр действий поставщика служб
 description: Клиенты могут просматривать зарегистрированные в журнале действия, чтобы просмотреть действия, выполняемые поставщиками услуг через делегированное управление ресурсами Azure.
 ms.date: 01/15/2020
-ms.topic: conceptual
-ms.openlocfilehash: a923a57ecc94ac15af207c2b8dc8998708b708d4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.topic: how-to
+ms.openlocfilehash: 42af2aa7fca5031eb50bd421a5207320858b70cf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77649642"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84636450"
 ---
 # <a name="view-service-provider-activity"></a>Просмотр действий поставщика служб
 
@@ -45,5 +44,5 @@ ms.locfileid: "77649642"
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- Дополнительные сведения о [Azure Monitor](../../azure-monitor/index.yml).
+- Узнайте подробнее о службе [Azure Monitor](../../azure-monitor/index.yml).
 - Узнайте, как [просматривать предложения поставщиков услуг и управлять ими](view-manage-service-providers.md) в портал Azure.

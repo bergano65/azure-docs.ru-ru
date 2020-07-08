@@ -10,13 +10,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
-ms.custom: aaddev
-ms.openlocfilehash: d07add7950da531330fe9f64629299cef9fad1ac
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
-ms.translationtype: MT
+ms.custom: aaddev, tracking-python
+ms.openlocfilehash: f197dd5063f8584968277d8d55298c03d9d71ea6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82734592"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84558846"
 ---
 # <a name="desktop-app-that-calls-web-apis-code-configuration"></a>Классическое приложение, вызывающее веб-API: конфигурация кода
 
@@ -39,7 +38,7 @@ ms.locfileid: "82734592"
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 
-Вам потребуется создать MSAL.NET `IPublicClientApplication`и управлять им.
+Вам потребуется создать MSAL.NET и управлять им `IPublicClientApplication` .
 
 ![ипубликклиентаппликатион](media/scenarios/public-client-application.png)
 
@@ -52,7 +51,7 @@ IPublicClientApplication app = PublicClientApplicationBuilder.Create(clientId)
     .Build();
 ```
 
-Если вы планируете использовать интерактивную проверку подлинности или поток кода устройства, как показано `.WithRedirectUri` выше, используйте модификатор.
+Если вы планируете использовать интерактивную проверку подлинности или поток кода устройства, как показано выше, используйте `.WithRedirectUri` модификатор.
 
 ```csharp
 IPublicClientApplication app;
@@ -103,16 +102,16 @@ app = PublicClientApplicationBuilder.Create(clientId)
         .Build();
 ```
 
-### <a name="learn-more"></a>Дополнительные сведения
+### <a name="learn-more"></a>Подробнее
 
 Дополнительные сведения о настройке классического приложения MSAL.NET:
 
-- Список всех модификаторов, доступных в `PublicClientApplicationBuilder`, см. в справочной документации [публикклиентаппликатионбуилдер](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder#methods).
-- Описание всех параметров, предоставляемых в `PublicClientApplicationOptions`, см. в разделе [публикклиентаппликатионоптионс](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationoptions) в справочной документации.
+- Список всех модификаторов, доступных в `PublicClientApplicationBuilder` , см. в справочной документации [публикклиентаппликатионбуилдер](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder#methods).
+- Описание всех параметров, предоставляемых в `PublicClientApplicationOptions` , см. в разделе [публикклиентаппликатионоптионс](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationoptions) в справочной документации.
 
 ### <a name="complete-example-with-configuration-options"></a>Полный пример с параметрами конфигурации
 
-Представьте себе консольное приложение .NET Core, которое имеет `appsettings.json` следующий файл конфигурации:
+Представьте себе консольное приложение .NET Core, которое имеет следующий `appsettings.json` файл конфигурации:
 
 ```json
 {

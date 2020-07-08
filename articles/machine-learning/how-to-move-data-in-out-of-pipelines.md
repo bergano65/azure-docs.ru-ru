@@ -5,17 +5,16 @@ description: Сведения о входных & выходных данных 
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.author: laobri
 author: lobrien
 ms.date: 04/01/2020
-ms.custom: contperfq4
-ms.openlocfilehash: 233361fb238342cde3c692174e85fb57f69979b1
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
-ms.translationtype: MT
+ms.custom: contperfq4, tracking-python
+ms.openlocfilehash: 54b8161634d15853719d98a52d0d17e2e55a6bb3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82858454"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84559357"
 ---
 # <a name="moving-data-into-and-between-ml-pipeline-steps-python"></a>Перемещение данных в этапы конвейера машинного обучения и между ними (Python)
 
@@ -36,13 +35,13 @@ ms.locfileid: "82858454"
 
 Что вам понадобится:
 
-- Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
+- Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Попробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree).
 
-- [Машинное обучение Azure пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)или доступ к [машинное обучение Azure Studio](https://ml.azure.com/).
+- [Пакет SDK для Машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) или доступ к [Студии машинного обучения Azure](https://ml.azure.com/).
 
 - Рабочая область машинного обучения Azure.
   
-  [Создайте машинное обучение Azure рабочую область](how-to-manage-workspace.md) или используйте существующую, используя пакет SDK для Python. Импортируйте `Workspace` класс `Datastore` и и загрузите сведения о подписке из файла `config.json` с помощью функции. `from_config()` Эта функция ищет JSON-файл в текущем каталоге по умолчанию, но можно также указать параметр path, указывающий на файл с помощью `from_config(path="your/file/path")`.
+  [Создайте рабочую область Машинного обучения Azure](how-to-manage-workspace.md) или используйте существующую с помощью пакета SDK для Python. Импортируйте классы `Workspace` и `Datastore` и загрузите сведения о подписке из файла `config.json` с помощью функции `from_config()`. Эта функция ищет JSON-файл в текущем каталоге по умолчанию, но можно также указать параметр path, указывающий на файл с помощью `from_config(path="your/file/path")` .
 
    ```python
    import azureml.core
@@ -75,15 +74,15 @@ cats_dogs_dataset = Dataset.File.from_files(
 
 ### <a name="pass-datasets-to-your-script"></a>Передача наборов данных в скрипт
 
-Чтобы передать путь к набору данных в скрипт, используйте `Dataset` `as_named_input()` метод объекта. Можно либо передать полученный `DatasetConsumptionConfig` объект в скрипт в качестве аргумента, либо, используя `inputs` аргумент для скрипта конвейера, извлечь набор данных с помощью. `Run.get_context().input_datasets[]`
+Чтобы передать путь к набору данных в скрипт, используйте `Dataset` `as_named_input()` метод объекта. Можно либо передать полученный `DatasetConsumptionConfig` объект в скрипт в качестве аргумента, либо, используя `inputs` аргумент для скрипта конвейера, извлечь набор данных с помощью `Run.get_context().input_datasets[]` .
 
-После создания именованного входа можно выбрать его режим доступа: `as_mount()` или. `as_download()` Если сценарий обрабатывает все файлы в наборе данных, а диск в ресурсе вычислений достаточно велик для набора данных, то лучше использовать режим доступа для загрузки. Режим доступа для загрузки позволяет избежать издержек при потоковой передаче данных во время выполнения. Если скрипт обращается к подмножеству набора данных или слишком велик для вычислений, используйте режим подключения к подключению. Дополнительные сведения см. в статье [Установка и загрузка.](https://docs.microsoft.com/azure/machine-learning/how-to-train-with-datasets#mount-vs-download)
+После создания именованного входа можно выбрать его режим доступа: `as_mount()` или `as_download()` . Если сценарий обрабатывает все файлы в наборе данных, а диск в ресурсе вычислений достаточно велик для набора данных, то лучше использовать режим доступа для загрузки. Режим доступа для загрузки позволяет избежать издержек при потоковой передаче данных во время выполнения. Если скрипт обращается к подмножеству набора данных или слишком велик для вычислений, используйте режим подключения к подключению. Дополнительные сведения см. в статье [Установка и загрузка.](https://docs.microsoft.com/azure/machine-learning/how-to-train-with-datasets#mount-vs-download)
 
 Чтобы передать набор данных на шаг конвейера, выполните следующие действия.
 
-1. Чтобы `TabularDataset.as_named_inputs()` создать `FileDataset.as_named_input()` `DatasetConsumptionConfig` объект, используйте оператор или (No "в конце)"
+1. `TabularDataset.as_named_inputs()` `FileDataset.as_named_input()` Чтобы создать объект, используйте оператор или (No "в конце)" `DatasetConsumptionConfig`
 1. Использование `as_mount()` или `as_download()` для установки режима доступа
-1. Передайте наборы данных в этапы конвейера, используя либо `arguments` `inputs` аргумент, либо
+1. Передайте наборы данных в этапы конвейера, используя либо `arguments` аргумент, либо `inputs`
 
 В следующем фрагменте кода показан общий шаблон объединения этих шагов в `PythonScriptStep` конструкторе: 
 
@@ -97,7 +96,7 @@ train_step = PythonScriptStep(
 )
 ```
 
-Можно также использовать методы, такие как `random_split()` и `take_sample()` , чтобы создать несколько входов или уменьшить объем данных, передаваемых на шаг конвейера:
+Можно также использовать методы, такие как `random_split()` и, `take_sample()` чтобы создать несколько входов или уменьшить объем данных, передаваемых на шаг конвейера:
 
 ```python
 seed = 42 # PRNG seed
@@ -114,7 +113,7 @@ train_step = PythonScriptStep(
 
 ### <a name="access-datasets-within-your-script"></a>Доступ к наборам данных в скрипте
 
-Именованные входные данные для скрипта шага конвейера доступны в виде `Run` словаря внутри объекта. Получите активный `Run` объект, используя `Run.get_context()` , а затем получите словарь именованных входов `input_datasets`с помощью. Если вы передали `DatasetConsumptionConfig` объект с помощью `arguments` аргумента, а `inputs` не аргумента, получите доступ `ArgParser` к данным с помощью кода. Оба метода показаны в следующем фрагменте кода.
+Именованные входные данные для скрипта шага конвейера доступны в виде словаря внутри `Run` объекта. Получите активный `Run` объект, используя `Run.get_context()` , а затем получите словарь именованных входов с помощью `input_datasets` . Если вы передали `DatasetConsumptionConfig` объект с помощью `arguments` аргумента, а не `inputs` аргумента, получите доступ к данным с помощью `ArgParser` кода. Оба метода показаны в следующем фрагменте кода.
 
 ```python
 # In pipeline definition script:
@@ -148,7 +147,7 @@ ds = Dataset.get_by_name(workspace=ws, name='mnist_opendataset')
 
 ## <a name="use-pipelinedata-for-intermediate-data"></a>Использовать `PipelineData` для промежуточных данных
 
-Хотя `Dataset` объекты представляют постоянные данные, объекты [пипелинедата](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py) используются для временных данных, выводимых шагами конвейера. Так как время существования `PipelineData` объекта длиннее, чем один шаг конвейера, оно определяется в скрипте определения конвейера. При создании `PipelineData` объекта необходимо указать имя и хранилище данных, в котором будут размещаться данные. Передайте `PipelineData` `PythonScriptStep` _объекты в объект с помощью_ `arguments` `outputs` аргументов и.
+Хотя `Dataset` объекты представляют постоянные данные, объекты [пипелинедата](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py) используются для временных данных, выводимых шагами конвейера. Так как время существования `PipelineData` объекта длиннее, чем один шаг конвейера, оно определяется в скрипте определения конвейера. При создании `PipelineData` объекта необходимо указать имя и хранилище данных, в котором будут размещаться данные. Передайте `PipelineData` объекты в объект `PythonScriptStep` _both_ с помощью `arguments` `outputs` аргументов и.
 
 ```python
 default_datastore = workspace.get_default_datastore()
@@ -164,7 +163,7 @@ dataprep_step = PythonScriptStep(
 )
 ```
 
-Вы можете создать `PipelineData` объект с помощью режима доступа, который обеспечивает немедленную передачу. В этом случае при `PipelineData`создании задайте `upload_mode` для `"upload"` значение и используйте `output_path_on_compute` аргумент, чтобы указать путь, по которому будут записываться данные:
+Вы можете создать `PipelineData` объект с помощью режима доступа, который обеспечивает немедленную передачу. В этом случае при создании `PipelineData` задайте `upload_mode` для значение `"upload"` и используйте аргумент, чтобы `output_path_on_compute` указать путь, по которому будут записываться данные:
 
 ```python
 PipelineData("clean_data", datastore=def_blob_store, output_mode="upload", output_path_on_compute="clean_data_output/")
@@ -172,7 +171,7 @@ PipelineData("clean_data", datastore=def_blob_store, output_mode="upload", outpu
 
 ### <a name="use-pipelinedata-as-outputs-of-a-training-step"></a>Использование `PipelineData` в качестве выходных данных для этапа обучения
 
-В конвейере `PythonScriptStep`можно получить доступные выходные пути с помощью аргументов программы. Если этот шаг является первым и будет инициализировать выходные данные, необходимо создать каталог по указанному пути. Затем можно записать все файлы, которые должны содержаться в `PipelineData`.
+В конвейере `PythonScriptStep` можно получить доступные выходные пути с помощью аргументов программы. Если этот шаг является первым и будет инициализировать выходные данные, необходимо создать каталог по указанному пути. Затем можно записать все файлы, которые должны содержаться в `PipelineData` .
 
 ```python
 parser = argparse.ArgumentParser()
@@ -185,11 +184,11 @@ with open(args.output_path, 'w') as f:
     f.write("Step 1's output")
 ```
 
-`PipelineData` Если вы создали `is_directory` с аргументом, для `True`которого задано значение, достаточно просто выполнить `os.makedirs()` вызов, после чего вы сможете писать любые файлы, необходимые для пути. Дополнительные сведения см. в справочной документации по [пипелинедата](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py) .
+Если вы создали `PipelineData` с `is_directory` аргументом, для которого задано значение `True` , достаточно просто выполнить `os.makedirs()` вызов, после чего вы сможете писать любые файлы, необходимые для пути. Дополнительные сведения см. в справочной документации по [пипелинедата](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py) .
 
 ### <a name="read-pipelinedata-as-inputs-to-non-initial-steps"></a>Считать `PipelineData` входные данные неначальными шагами
 
-После того, как начальный этап конвейера записывает `PipelineData` некоторые данные в путь и получает выходные данные этого начального шага, его можно использовать в качестве входных данных для последующего шага:
+После того, как начальный этап конвейера записывает некоторые данные в `PipelineData` путь и получает выходные данные этого начального шага, его можно использовать в качестве входных данных для последующего шага:
 
 ```python
 step1_output_data = PipelineData("processed_data", datastore=def_blob_store, output_mode="upload")
@@ -215,7 +214,7 @@ step2 = PythonScriptStep(
 pipeline = Pipeline(workspace=ws, steps=[step1, step2])
 ```
 
-`PipelineData` Входным значением является путь к предыдущему выходному файлу. Если, как показано ранее, первый шаг записал один файл, его использование может выглядеть следующим образом: 
+`PipelineData`Входным значением является путь к предыдущему выходному файлу. Если, как показано ранее, первый шаг записал один файл, его использование может выглядеть следующим образом: 
 
 ```python
 parser = argparse.ArgumentParser()
@@ -226,16 +225,16 @@ with open(args.pd) as f:
     print(f.read())
 ```
 
-## <a name="convert-pipelinedata-objects-to-datasets"></a>Преобразовать `PipelineData` объекты в `Dataset`s
+## <a name="convert-pipelinedata-objects-to-datasets"></a>Преобразовать `PipelineData` объекты в `Dataset` s
 
-Если вы хотите сделать `PipelineData` доступной больше времени выполнения, используйте его `as_dataset()` функцию для преобразования в. `Dataset` Затем вы можете зарегистрировать `Dataset`, сделав его членом первого класса в вашей рабочей области. Так как `PipelineData` у объекта `create_new_version` будет свой путь `True` при каждом запуске конвейера, настоятельно рекомендуется задать значение при регистрации `Dataset` созданного из `PipelineData` объекта.
+Если вы хотите сделать `PipelineData` доступной больше времени выполнения, используйте его `as_dataset()` функцию для преобразования в `Dataset` . Затем вы можете зарегистрировать `Dataset` , сделав его членом первого класса в вашей рабочей области. Так как у `PipelineData` объекта будет свой путь при каждом запуске конвейера, настоятельно рекомендуется задать значение `create_new_version` `True` при регистрации `Dataset` созданного из `PipelineData` объекта.
 
 ```python
 step1_output_ds = step1_output_data.as_dataset()
 step1_output_ds.register(name="processed_data", create_new_version=True)
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Создание набора данных машинного обучения Azure](how-to-create-register-datasets.md)
+* [Создание набора данных Машинного обучения Azure](how-to-create-register-datasets.md)
 * [Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure](how-to-create-your-first-pipeline.md)

@@ -1,29 +1,29 @@
 ---
-title: Подключение c перенаправлением (База данных Azure для MySQL)
-description: В этой статье описывается, как настроить в приложении подключение с перенаправлением к Базе данных Azure для MySQL.
+title: Подключение с перенаправлением — база данных Azure для MariaDB
+description: В этой статье описывается, как настроить приложение для подключения к базе данных Azure для MariaDB с перенаправлением.
 author: ajlam
 ms.author: andrela
-ms.service: mysql
+ms.service: mariadb
 ms.topic: conceptual
 ms.date: 6/8/2020
-ms.openlocfilehash: 4036fe5b08a087f1f26027d5c5d98da851fb377c
+ms.openlocfilehash: ae61f58f2ac44db77db496dd5d3e38fad268129f
 ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/02/2020
-ms.locfileid: "84610293"
+ms.locfileid: "84612412"
 ---
-# <a name="connect-to-azure-database-for-mysql-with-redirection"></a>Подключение с перенаправлением к Базе данных Azure для MySQL
+# <a name="connect-to-azure-database-for-mariadb-with-redirection"></a>Подключение к базе данных Azure для MariaDB с перенаправлением
 
-Здесь вы узнаете, как подключить приложение к серверу Базы данных Azure для MySQL в режиме перенаправления. Перенаправление предназначено для того, чтобы сократить задержку в сети между клиентскими приложениями и серверами MySQL, разрешая приложениям подключаться непосредственно к внутренним серверным узлам.
+В этом разделе объясняется, как подключить приложение к серверу базы данных Azure для MariaDB с режимом перенаправления. Перенаправление нацелено на сокращение задержки в сети между клиентскими приложениями и серверами MariaDB, позволяя приложениям подключаться непосредственно к внутренним серверам.
 
 ## <a name="before-you-begin"></a>Перед началом
-Войдите на [портал Azure](https://portal.azure.com). Создайте сервер Базы данных Azure для MySQL с версией ядра 5.6, 5.7 или 8.0. 
+Войдите на [портал Azure](https://portal.azure.com). Создайте сервер базы данных Azure для MariaDB с ядром версии 10,2 или 10,3. 
 
-Дополнительные сведения см. в статье Создание сервера базы данных Azure для MySQL с помощью [портал Azure](quickstart-create-mysql-server-database-using-azure-portal.md) или [Azure CLI](quickstart-create-mysql-server-database-using-azure-cli.md).
+Дополнительные сведения см. в статье Создание сервера базы данных Azure для MariaDB с помощью [портал Azure](quickstart-create-mariadb-server-database-using-azure-portal.md) или [Azure CLI](quickstart-create-mariadb-server-database-using-azure-cli.md).
 
 ## <a name="enable-redirection"></a>Включить перенаправление
 
-На сервере базы данных Azure для MySQL задайте для `redirect_enabled` параметра значение, `ON` чтобы разрешить подключения с помощью режима перенаправления. Чтобы обновить этот параметр сервера, используйте [портал Azure](howto-server-parameters.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).
+На сервере базы данных Azure для MariaDB задайте для `redirect_enabled` параметра значение, `ON` чтобы разрешить подключения с помощью режима перенаправления. Чтобы обновить этот параметр сервера, используйте [портал Azure](howto-server-parameters.md) или [Azure CLI](howto-configure-server-parameters-cli.md).
 
 ## <a name="php"></a>PHP
 
@@ -46,7 +46,7 @@ ms.locfileid: "84610293"
 |**значение mysqlnd_azure.enableRedirect**| **Поведение**|
 |----------------------------------------|-------------|
 |`off` или `0`|Перенаправление не будет использоваться. |
-|`on` или `1`|– Если для подключения не используется протокол SSL на стороне драйвера, оно не будет установлено. Будет возвращена следующая ошибка: *"mysqlnd_azure.enableRedirect is on, but SSL option is not set in connection string. Redirection is only possible with SSL."* (Расширение mysqlnd_azure.enableRedirect включено, но в строке подключения не указано использование SSL. Перенаправление возможно только при использовании SSL.)<br>– Если на стороне драйвера используется протокол SSL, но на сервере не поддерживается перенаправление, первое подключение прерывается и возвращается следующая ошибка: *"Connection aborted because redirection is not enabled on the MySQL server or the network package doesn't meet redirection protocol."* (Подключение прервано, поскольку перенаправление не включено на сервере MySQL или сетевой пакет не соответствует протоколу перенаправления).<br>— Если сервер MySQL поддерживает перенаправление, но в при перенаправлении подключения происходит сбой, первое прокси-подключение также прерывается. При этом возвращается ошибка о перенаправленном подключении.|
+|`on` или `1`|– Если для подключения не используется протокол SSL на стороне драйвера, оно не будет установлено. Будет возвращена следующая ошибка: *"mysqlnd_azure.enableRedirect is on, but SSL option is not set in connection string. Redirection is only possible with SSL."* (Расширение mysqlnd_azure.enableRedirect включено, но в строке подключения не указано использование SSL. Перенаправление возможно только при использовании SSL.)<br>— Если на стороне драйвера используется протокол SSL, но перенаправление не поддерживается на сервере, первое подключение прерывается и возвращается следующая ошибка: *"соединение прервано, так как перенаправление не включено на сервере MariaDB, или сетевой пакет не соответствует протоколу перенаправления".*<br>— Если сервер MariaDB поддерживает перенаправление, но по какой-либо причине перенаправленное соединение не удалось, также прерывается первое подключение прокси. При этом возвращается ошибка о перенаправленном подключении.|
 |`preferred` либо `2`<br> (значение по умолчанию)|– mysqlnd_azure будет использовать перенаправление, если возможно.<br>– Если при подключении не используется протокол SSL на стороне драйвера, сервер не поддерживает перенаправление или перенаправленное подключение невозможно установить по любой устранимой причине, но при этом первое прокси-подключение остается допустимым, оно будет использоваться как резервное.|
 
 В последующих разделах документа описано, как установить расширение `mysqlnd_azure` с помощью PECL и задать значение этого параметра.
@@ -57,7 +57,7 @@ ms.locfileid: "84610293"
 - Версия PHP 7.2.15 и выше или 7.3.2 и выше
 - PHP PEAR 
 - php-mysql
-- Сервер Базы данных Azure для MySQL
+- База данных Azure для сервера MariaDB
 
 1. Установите [mysqlnd_azure](https://github.com/microsoft/mysqlnd_azure) с помощью [PECL](https://pecl.php.net/package/mysqlnd_azure). Мы рекомендуем использовать версию 1.1.0 или выше.
 
@@ -95,7 +95,7 @@ ms.locfileid: "84610293"
 #### <a name="prerequisites"></a>Предварительные требования 
 - Версия PHP 7.2.15 и выше или 7.3.2 и выше
 - php-mysql
-- Сервер Базы данных Azure для MySQL
+- База данных Azure для сервера MariaDB
 
 1. Чтобы узнать используемую версию PHP (x64 или x86), выполните следующую команду:
 
@@ -140,7 +140,7 @@ ms.locfileid: "84610293"
  
  ```php
 <?php
-$host = '<yourservername>.mysql.database.azure.com';
+$host = '<yourservername>.mariadb.database.azure.com';
 $username = '<yourusername>@<yourservername>';
 $password = '<yourpassword>';
 $db_name = 'testdb';

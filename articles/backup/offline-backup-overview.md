@@ -3,12 +3,11 @@ title: Обзор автономного резервного копирован
 description: Сведения о компонентах автономного резервного копирования. Сюда относятся рабочие процессы автономного резервного копирования на основе Azure Data Box и службы "Импорт и экспорт Microsoft Azure".
 ms.topic: conceptual
 ms.date: 1/28/2020
-ms.openlocfilehash: c3ef79136ca32c24ae6d16057d3195b57e8ced2d
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: 84f79efe10f867b37d1e3bb21363be4b12156615
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83744639"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84628344"
 ---
 # <a name="overview-of-offline-backup"></a>Обзор автономного резервного копирования
 
@@ -60,7 +59,7 @@ Azure Backup поддерживает автономное резервное к
 
 Чтобы использовать автономное резервное копирование с применением службы "Импорт и экспорт Microsoft Azure" и агента MARS, воспользуйтесь статьей [Рабочий процесс автономного резервного копирования в Azure Backup](https://docs.microsoft.com/azure/backup/backup-azure-backup-import-export).
 
-Аналогичный процесс с применением MABS или DPM-A описан в [этой статье](https://docs.microsoft.com/azure/backup/backup-azure-backup-server-import-export-).
+Аналогичный процесс с применением MABS или DPM-A описан в [этой статье](https://docs.microsoft.com/azure/backup/backup-azure-backup-server-import-export).
 
 ## <a name="offline-backup-support-summary"></a>Обзорные сведения о поддержке автономного резервного копирования
 
@@ -83,4 +82,4 @@ Azure Backup поддерживает автономное резервное к
 
 - [Автономное резервное копирование с помощью Azure Data Box](offline-backup-azure-data-box.md#backup-data-size-and-supported-data-box-skus)
 - [Автономное резервное копирование в Azure Backup](backup-azure-backup-import-export.md)
-- [Автономное резервное копирование для DPM и Azure Backup Server](backup-azure-backup-server-import-export-.md)
+- [Автономное резервное копирование для DPM и Azure Backup Server](backup-azure-backup-server-import-export.md)

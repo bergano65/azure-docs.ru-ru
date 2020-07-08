@@ -11,12 +11,11 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 3/27/2020
 ms.author: yexu
-ms.openlocfilehash: a386c7d44cf5ba7eda895006cda7ce1fa9b798ac
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: a45c8ce820532d11f18758924dc3399818cb9158
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83663712"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84610242"
 ---
 #  <a name="data-consistency-verification-in-copy-activity-preview"></a>Проверка согласованности данных в действии копирования (предварительная версия)
 
@@ -93,9 +92,8 @@ path | Путь к файлам журнала. | Укажите путь, по 
 
 >[!NOTE]
 >- Согласованность данных не поддерживается в сценарии промежуточного копирования. 
->- При копировании двоичных файлов из любого хранилища в хранилище BLOB-объектов Azure или Azure Data Lake Storage 2-го поколения действие копирования выполняет проверку размера файла и проверку контрольной суммы MD5, чтобы обеспечить согласованность данных между исходным и конечным хранилищами. 
->- При копировании двоичных файлов из любого хранилища в любое хранилище, отличное от хранилища BLOB-объектов Azure или Azure Data Lake Storage 2-го поколения, действие копирования выполняет проверку размера файла, чтобы обеспечить согласованность данных между исходным и конечным хранилищами.
-
+>- При копировании файлов или в большой двоичный объект или Azure Data Lake Storage 2-го поколения Azure ADF выполняет проверку контрольной суммы MD5 на уровне блоков, используя [API больших двоичных объектов Azure](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions?view=azure-dotnet-legacy) и [API Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/rest/api/storageservices/datalakestoragegen2/path/update#request-headers). Если ContentMD5 для файлов существует в хранилище BLOB-объектов Azure или Azure Data Lake Storage 2-го поколения в качестве источников данных, то ADF проверяет контрольную сумму MD5 на уровне файлов после считывания файлов. После копирования файлов в большой двоичный объект Azure или Azure Data Lake Storage 2-го поколения в качестве назначения данных служба ADF записывает ContentMD5 в большой двоичный объект Azure или Azure Data Lake Storage 2-го поколения, которые могут быть дополнительно использованы приложениями для проверки согласованности данных.
+>- Файл ADF проверяет размер файла при копировании файлов между хранилищами хранилища.
 
 ## <a name="monitoring"></a>Наблюдение
 

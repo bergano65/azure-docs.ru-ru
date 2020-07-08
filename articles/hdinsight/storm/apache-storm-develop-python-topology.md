@@ -6,14 +6,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.custom: hdinsightactive,hdiseo17may2017
+ms.custom: hdinsightactive,hdiseo17may2017, tracking-python
 ms.date: 12/16/2019
-ms.openlocfilehash: 20e4827b1a86bff338646ef71f0dd732255c09c9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 71709e2f1dcbab188646241eaeb4809e168d5697
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77460030"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84608780"
 ---
 # <a name="develop-apache-storm-topologies-using-python-on-hdinsight"></a>Разработка топологий Apache Storm с помощью Python в HDInsight
 
@@ -22,7 +21,7 @@ ms.locfileid: "77460030"
 > [!IMPORTANT]  
 > Сведения в этом документе были проверены с использованием Storm в HDInsight 3.6.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Кластер Apache Storm в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Storm** для параметра **Тип кластера**.
 
@@ -36,7 +35,7 @@ ms.locfileid: "77460030"
 
 ## <a name="storm-multi-language-support"></a>Многоязыковая поддержка Storm
 
-Среда разработки Apache Storm была разработана для работы с компонентами, написанными на любом языке программирования. Компоненты должны "понимать", как работать с определением Thrift для Storm. В рамках проекта Apache Storm предоставляется модуль для Python, который позволяет легко взаимодействовать со Storm. Этот модуль можно найти по адресу [https://github.com/apache/storm/blob/master/storm-multilang/python/src/main/resources/resources/storm.py](https://github.com/apache/storm/blob/master/storm-multilang/python/src/main/resources/resources/storm.py).
+Среда разработки Apache Storm была разработана для работы с компонентами, написанными на любом языке программирования. Компоненты должны "понимать", как работать с определением Thrift для Storm. В рамках проекта Apache Storm предоставляется модуль для Python, который позволяет легко взаимодействовать со Storm. Этот модуль можно найти по адресу [https://github.com/apache/storm/blob/master/storm-multilang/python/src/main/resources/resources/storm.py](https://github.com/apache/storm/blob/master/storm-multilang/python/src/main/resources/resources/storm.py) .
 
 Storm является процессом Java, который работает на виртуальной машине Java (JVM). Компоненты, написанные на других языках, выполняются как подпроцессы. Storm взаимодействуют с этими подпроцессами с помощью сообщений JSON, отправляемых через стандартные потоки stdin и stdout. Дополнительные сведения о связи между компонентами можно найти в документации по [многоязыковому протоколу](https://storm.apache.org/releases/current/Multilang-protocol.html) .
 
@@ -72,11 +71,11 @@ Flux ожидает, что сценарии Python находятся в кат
 
 Как упоминалось ранее, существует `storm.py` файл, реализующий определение Thrift для работы с расширением. Платформа Flux добавляет `storm.py` автоматически при выполнении сборки проекта, поэтому не нужно беспокоиться о его добавлении.
 
-## <a name="build-the-project"></a>Построение проекта
+## <a name="build-the-project"></a>Сборка проекта
 
-1. Скачайте проект из [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount).
+1. Скачайте проект из [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount) .
 
-1. Откройте командную строку и перейдите к корневому каталогу `hdinsight-python-storm-wordcount-master`проекта:. Введите следующую команду:
+1. Откройте командную строку и перейдите к корневому каталогу проекта: `hdinsight-python-storm-wordcount-master` . Введите следующую команду:
 
     ```cmd
     mvn clean compile package
@@ -86,7 +85,7 @@ Flux ожидает, что сценарии Python находятся в кат
 
 ## <a name="run-the-storm-topology-on-hdinsight"></a>Запуск топологии Storm в HDInsight
 
-1. Используйте [команду SSH](../hdinsight-hadoop-linux-use-ssh-unix.md) , чтобы скопировать `WordCount-1.0-SNAPSHOT.jar` файл в свой кластер HDInsight. Измените приведенную ниже команду, заменив ИМЯ_КЛАСТЕРА именем кластера, а затем введите следующую команду:
+1. Используйте [команду SSH](../hdinsight-hadoop-linux-use-ssh-unix.md) , чтобы скопировать `WordCount-1.0-SNAPSHOT.jar` файл в свой кластер HDInsight. Измените приведенную ниже команду, заменив CLUSTERNAME именем своего кластера, а затем введите команду:
 
     ```cmd
     scp target/WordCount-1.0-SNAPSHOT.jar sshuser@CLUSTERNAME-ssh.azurehdinsight.net:
@@ -143,6 +142,6 @@ storm jar WordCount-1.0-SNAPSHOT.jar org.apache.storm.flux.Flux -l -R /topology.
 
 Чтобы остановить топологию, нажмите сочетание клавиш __CTRL+C__.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Другие способы использования Python с HDInsight см. в следующих документах: [как использовать пользовательские функции Python (UDF) в Apache Pig и Apache Hive](../hadoop/python-udf-hdinsight.md).

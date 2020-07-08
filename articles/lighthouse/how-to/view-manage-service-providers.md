@@ -2,13 +2,12 @@
 title: Просмотр поставщиков служб и управление ими
 description: Клиенты могут использовать страницу "Поставщики услуг" на портале Azure для просмотра сведений о поставщиках услуг, предложениях поставщиков услуг и делегированных ресурсах.
 ms.date: 04/24/2020
-ms.topic: conceptual
-ms.openlocfilehash: 7e0522d1cd13ab1a4be589bc0c22c4ebfcf24d3f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.topic: how-to
+ms.openlocfilehash: 8b48fb9c92cf6922cea62fe04943ae76d3d3b590
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82144334"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84636467"
 ---
 # <a name="view-and-manage-service-providers"></a>Просмотр поставщиков служб и управление ими
 

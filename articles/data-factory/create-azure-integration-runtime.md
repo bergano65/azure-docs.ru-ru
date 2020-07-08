@@ -6,16 +6,15 @@ documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 03/13/2020
+ms.date: 06/09/2020
 author: nabhishek
 ms.author: abnarain
 manager: anandsub
-ms.openlocfilehash: 901761c8a5dc17cd7f00c3f04153c8e9aa99b648
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
-ms.translationtype: MT
+ms.openlocfilehash: c7880fd7fb687483409ce591059e0f5b2d2e2991
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82858004"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84659710"
 ---
 # <a name="how-to-create-and-configure-azure-integration-runtime"></a>Создание и настройка среды выполнения интеграции Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -29,7 +28,7 @@ ms.locfileid: "82858004"
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="default-azure-ir"></a>Среда выполнения интеграции Azure по умолчанию
-По умолчанию в каждой фабрике данных на сервере есть среда выполнения интеграции Azure, которая поддерживает операции в облачном хранилище данных и вычислительные службы в общедоступной сети. Расположение среды выполнения интеграции Azure разрешается автоматически. Если свойство **connectVia** не задано в определении связанной службы, используется среда выполнения интеграции Azure по умолчанию. Среду выполнения интеграции Azure необходимо явно создавать, если нужно явно определить ее расположение или если нужно виртуально группировать выполнения действий в разных средах выполнения интеграции для управления. 
+По умолчанию в каждой фабрике данных на сервере есть среда выполнения интеграции Azure, которая поддерживает операции в облачном хранилище данных и вычислительные службы в общедоступной сети. Расположение этого Azure IR разрешается Авторазрешение. Если свойство **connectVia** не задано в определении связанной службы, используется среда выполнения интеграции Azure по умолчанию. Среду выполнения интеграции Azure необходимо явно создавать, если нужно явно определить ее расположение или если нужно виртуально группировать выполнения действий в разных средах выполнения интеграции для управления. 
 
 ## <a name="create-azure-ir"></a>Создание среды выполнения интеграции Azure
 
@@ -48,13 +47,13 @@ Set-AzDataFactoryV2IntegrationRuntime -DataFactoryName "SampleV2DataFactory1" -N
 ### <a name="create-an-azure-ir-via-azure-data-factory-ui"></a>Создание Azure IR с помощью пользовательского интерфейса фабрики данных Azure
 Чтобы создать Azure IR с помощью пользовательского интерфейса фабрики данных Azure, выполните следующие действия.
 
-1. На странице Приступая к **работе** в пользовательском интерфейсе фабрики данных Azure выберите вкладку **Автор** в области слева.
+1. На странице **Начало работы** в пользовательском интерфейсе Фабрики данных Azure выберите вкладку [управления](https://docs.microsoft.com/azure/data-factory/author-management-hub) в крайней области слева.
 
-   ![Кнопка "Автор" домашней страницы](media/doc-common-process/get-started-page-author-button.png)
+   ![Кнопка управления на домашней странице](media/doc-common-process/get-started-page-manage-button.png)
 
-1. В нижней части левой панели выберите **подключения** , а затем в окне **подключения** выберите пункт **среды выполнения интеграции** . Выберите **+ создать**.
+1. Выберите элемент **Integration runtimes** (Среды выполнения интеграции) на панели слева. Затем выберите команду **+Создать**.
 
-   ![Создание среды выполнения интеграции](media/create-azure-integration-runtime/new-integration-runtime.png)
+   ![Создание среды выполнения интеграции](media/doc-common-process/manage-new-integration-runtime.png)
 
 1. На странице **Настройка среды выполнения интеграции** выберите **Azure,** локальное размещение и нажмите кнопку **продолжить**. 
 
@@ -90,6 +89,6 @@ Set-AzDataFactoryV2IntegrationRuntime -DataFactoryName "SampleV2DataFactory1" -N
 ## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о создании других типов среды выполнения интеграции см. в следующих статьях:
 
-- [Создание локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md)
+- [Создание и настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md)
 - [Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](create-azure-ssis-integration-runtime.md)
  

@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 74574fb905ae4ebd2552ef97cd0b5430eea6363a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.custom: tracking-python
+ms.openlocfilehash: 18e3f2ab7c581a1ff93a65e410e83739564b5be5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79530229"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84558304"
 ---
 # <a name="how-to-connect-applications-to-azure-database-for-mariadb"></a>Подключение приложений к базе данных Azure для MariaDB
 В этой статье перечислены типы строк подключения, поддерживаемые базой данных Azure для MariaDB, а также шаблоны и примеры. Строка подключения может содержать различные параметры и настройки.

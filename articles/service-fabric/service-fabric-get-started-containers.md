@@ -3,12 +3,12 @@ title: Создание приложения контейнера Service Fabric
 description: Создание первого приложения-контейнера Windows в Azure Service Fabric. Создайте образ DOCKER с помощью приложения Python, отправьте образ в реестр контейнеров, а затем выполните сборку и развертывание контейнера в Azure Service Fabric.
 ms.topic: conceptual
 ms.date: 01/25/2019
-ms.openlocfilehash: 8e1de48874655721f708bfd1dfdda8d975f94c4b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.custom: tracking-python
+ms.openlocfilehash: d7076226b63fa3b45eaae82c2964997d3065ed88
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79258477"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84560665"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-windows"></a>Создание первого контейнера-приложения Service Fabric в Windows
 
@@ -142,12 +142,12 @@ docker run -d --name my-web-site helloworldapp
 docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" my-web-site
 ```
 
-Если эта команда не возвращает ничего, выполните следующую команду и проверьте элемент **нетворксеттингс**->**Networks** для IP-адреса:
+Если эта команда не возвращает ничего, выполните следующую команду и проверьте элемент **нетворксеттингс** -> **Networks** для IP-адреса:
 ```
 docker inspect my-web-site
 ```
 
-Подключитесь к запущенному контейнеру. Откройте веб-браузер, указывающий на возвращенный IP-адрес, например "\/http:/172.31.194.61". Вы должны увидеть заголовок Hello World! в браузере.
+Подключитесь к запущенному контейнеру. Откройте веб-браузер, указывающий на возвращенный IP-адрес, например "http: \/ /172.31.194.61". Вы должны увидеть заголовок Hello World! в браузере.
 
 Чтобы остановить контейнер, выполните следующую команду:
 
@@ -166,7 +166,7 @@ docker rm my-web-site
 
 Убедившись, что контейнер запускается на компьютере разработки, отправьте образ в реестр в реестре контейнеров Azure.
 
-Выполните ``docker login`` команду, чтобы войти в реестр контейнеров с [учетными данными реестра](../container-registry/container-registry-authentication.md).
+Выполните команду ``docker login`` , чтобы войти в реестр контейнеров с [учетными данными реестра](../container-registry/container-registry-authentication.md).
 
 Следующая команда передает идентификатор и пароль [субъекта-службы](../active-directory/develop/app-objects-and-service-principals.md) Azure Active Directory. Например, назначение субъекта-службы для реестра позволяет автоматизировать некоторые сценарии. Также можно выполнить вход с помощью имени пользователя и пароля реестра.
 
@@ -189,7 +189,7 @@ docker push myregistry.azurecr.io/samples/helloworldapp
 ## <a name="create-the-containerized-service-in-visual-studio"></a>Создание контейнерной службы в Visual Studio
 Пакет SDK и средства для Service Fabric предоставляют шаблон службы для создания контейнерного приложения.
 
-1. Запустите среду Visual Studio. Выберите **файл** > **создать** > **проект**.
+1. Запустите среду Visual Studio. Выберите **Файл** > **Создать** > **Проект**.
 2. Выберите **Приложение Service Fabric**, назовите его MyFirstContainer и нажмите кнопку **ОК**.
 3. В списке **шаблонов служб** выберите значение **Container** (Контейнер).
 4. В поле **Имя образа** введите myregistry.azurecr.io/samples/helloworldapp — это образ, который вы отправили в репозиторий контейнера.

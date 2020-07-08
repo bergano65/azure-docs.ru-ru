@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 04/16/2020
 ms.author: cshoe
-ms.openlocfilehash: dedca6912fd9d9e7b6f5089d02de9e4020e4e0ef
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.custom: tracking-python
+ms.openlocfilehash: 1a7cc37f297f902fb5de473303f1dc260cbea9ca
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83122343"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84559107"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>Непрерывная поставка с помощью действия GitHub
 
@@ -18,13 +18,13 @@ ms.locfileid: "83122343"
 
 В действиях GitHub [Рабочий процесс](https://help.github.com/articles/about-github-actions#workflow) — это автоматизированный процесс, который определяется в репозитории GitHub. Этот процесс говорит GitHub о том, как создать и развернуть проект приложения функций на GitHub. 
 
-Рабочий процесс определяется файлом YAML (. yml) в `/.github/workflows/` пути в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс. 
+Рабочий процесс определяется файлом YAML (.yml) по пути `/.github/workflows/` в вашем репозитории. Это определение содержит разные шаги и параметры рабочего процесса. 
 
 Для рабочего процесса функций Azure файл содержит три раздела: 
 
 | Section | Задания |
 | ------- | ----- |
-| **Authentication** | <ol><li>Определите субъект-службу.</li><li>Скачивание профиля публикации.</li><li>Создайте секрет GitHub.</li></ol>|
+| **Аутентификация** | <ol><li>Определите субъект-службу.</li><li>Скачивание профиля публикации.</li><li>Создайте секрет GitHub.</li></ol>|
 | **Сборка** | <ol><li>Настройте среду.</li><li>Создайте приложение-функцию.</li></ol> |
 | **Развертывание** | <ol><li>Разверните приложение функции.</li></ol>|
 
@@ -33,16 +33,16 @@ ms.locfileid: "83122343"
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
-Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [AZ AD SP Create/for-RBAC](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) в [Azure CLI](/cli/azure/). Эту команду можно выполнить с помощью [Azure Cloud Shell](https://shell.azure.com) в портал Azure или нажав кнопку **попробовать** .
+Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) в [Azure CLI](/cli/azure/). Эту команду можно выполнить в [Azure Cloud Shell](https://shell.azure.com) на портале Azure или с помощью кнопки **Попробовать**.
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.Web/sites/<APP_NAME> --sdk-auth
 ```
 
-В этом примере Замените заполнители в ресурсе ИДЕНТИФИКАТОРом подписки, группой ресурсов и именем приложения функции. Выходные данные — это учетные данные назначения роли, которые предоставляют доступ к приложению-функции. Скопируйте этот объект JSON, который можно использовать для проверки подлинности из GitHub.
+В этом примере Замените заполнители в ресурсе ИДЕНТИФИКАТОРом подписки, группой ресурсов и именем приложения функции. Выходные данные — это учетные данные назначения роли, которые предоставляют доступ к приложению-функции. Скопируйте этот объект JSON, который затем можно использовать для выполнения аутентификации из GitHub.
 
 > [!IMPORTANT]
-> Всегда рекомендуется предоставлять минимальный доступ. Именно поэтому область в предыдущем примере ограничена конкретным приложением-функцией, а не всей группой ресурсов.
+> Рекомендуется всегда предоставлять минимальные разрешения доступа. Именно поэтому область в предыдущем примере ограничена конкретным приложением-функцией, а не всей группой ресурсов.
 
 ## <a name="download-the-publishing-profile"></a>Скачивание профиля публикации
 
@@ -203,8 +203,8 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 |Параметр |Объяснение  |
 |---------|---------|
-|**_имя приложения_** | Заполнен Имя приложения функции. |
-|_**имя слота**_ | Используемых Имя [слота развертывания](functions-deployment-slots.md) , в который требуется выполнить развертывание. Слот уже должен быть определен в приложении функции. |
+|**_app-name_** | Заполнен Имя приложения функции. |
+|_**slot-name**_ | Используемых Имя [слота развертывания](functions-deployment-slots.md) , в который требуется выполнить развертывание. Слот уже должен быть определен в приложении функции. |
 
 
 В следующем примере используется версия 1 из `functions-action` :
@@ -217,7 +217,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         app-name: PLEASE_REPLACE_THIS_WITH_YOUR_FUNCTION_APP_NAME
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы просмотреть полный файл Workflow. YAML, ознакомьтесь с одним из файлов в [репозитории примеров рабочих процессов Azure GitHub](https://aka.ms/functions-actions-samples) , имеющих `functionapp` имя. Эти примеры можно использовать в качестве отправной точки для рабочего процесса.
 

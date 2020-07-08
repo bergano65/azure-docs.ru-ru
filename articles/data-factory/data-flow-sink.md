@@ -8,42 +8,55 @@ manager: anandsub
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/12/2019
-ms.openlocfilehash: 4b10a4c98abd6bec4074bf35764a9cbb85d5b157
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/03/2020
+ms.openlocfilehash: 143c94527b947495709d2e94f107dc578e7f2866
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81605971"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84610208"
 ---
 # <a name="sink-transformation-in-mapping-data-flow"></a>Преобразование приемника в потоке данных сопоставления
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-После преобразования данных можно принять их в целевой набор данных. Для каждого потока данных требуется по крайней мере одно преобразование приемника, но при необходимости можно выполнить запись в любое количество приемников для завершения потока преобразования. Для записи в дополнительные приемники создайте новые потоки с помощью новых ветвей и условных разбиений.
+После завершения преобразования данных запишите их в целевое хранилище, используя преобразование приемника. Для каждого потока данных требуется по крайней мере одно преобразование приемника, но при необходимости можно выполнить запись в любое количество приемников для завершения потока преобразования. Для записи в дополнительные приемники создайте новые потоки с помощью новых ветвей и условных разбиений.
 
-Каждое преобразование приемника связано только с одним набором данных фабрики данных. Набор данных определяет форму и расположение данных, в которые необходимо выполнить запись.
+Каждое преобразование приемника связано только с одним объектом набора данных фабрики данных Azure или связанной службой. Преобразование «приемник» определяет форму и расположение данных, в которые необходимо выполнить запись.
 
-## <a name="supported-sink-connectors-in-mapping-data-flow"></a>Поддерживаемые соединители приемников в потоке данных сопоставления
+## <a name="inline-datasets"></a>Встроенные наборы данных
 
-В настоящее время в преобразовании приемника можно использовать следующие наборы данных:
-    
-* [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md#mapping-data-flow-properties) (JSON, Avro, Text, Parquet)
-* [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md#mapping-data-flow-properties) (JSON, Avro, Text, Parquet)
-* [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md#mapping-data-flow-properties) (JSON, Avro, Text, Parquet)
-* [Azure Synapse Analytics](connector-azure-sql-data-warehouse.md#mapping-data-flow-properties)
-* [База данных SQL Azure](connector-azure-sql-database.md#mapping-data-flow-properties)
-* [Azure CosmosDB](connector-azure-cosmos-db.md#mapping-data-flow-properties)
+При создании преобразования «приемник» укажите, определяются ли сведения о приемнике внутри объекта DataSet или в преобразовании приемника. Большинство форматов доступны только в одном или другом. Чтобы узнать, как использовать конкретный соединитель, ознакомьтесь с соответствующим документом соединителя.
 
-Параметры, относящиеся к этим соединителям, находятся на вкладке " **Параметры** ". сведения об этих параметрах находятся в документации по соединителю. 
+Если формат поддерживается как для встроенного, так и для объекта DataSet, то оба имеют преимущества. Объекты DataSet — это многократно используемые сущности, которые можно использовать в других потоках данных и действиях, таких как копирование. Они особенно полезны при использовании зафиксированной схемы. Наборы данных не основаны на Spark и иногда может потребоваться переопределить некоторые параметры или проекции схемы в преобразовании приемника.
 
-Фабрика данных Azure имеет доступ к более чем [90 собственным соединителям](connector-overview.md). Чтобы записать данные в другие источники из потока данных, используйте действие копирования, чтобы загрузить эти данные из одной из поддерживаемых промежуточных областей после завершения потока данных.
+Встроенные наборы данных рекомендуются при использовании гибких схем, одноразовых экземпляров приемников или параметризованных приемников. Если ваш приемник сильно параметризован, встроенные наборы данных позволяют не создавать фиктивные объекты. Встроенные наборы данных основаны на Spark, а их свойства являются собственными для потока данных.
+
+Чтобы использовать встроенный набор данных, выберите нужный формат в селекторе **типа приемника** . Вместо выбора набора данных приемника выберите связанную службу, к которой нужно подключиться.
+
+![Встроенный набор данных](media/data-flow/inline-selector.png "Встроенный набор данных")
+
+##  <a name="supported-sink-types"></a><a name="supported-sinks"></a>Поддерживаемые типы приемников
+
+Поток данных сопоставления соответствует подходу "извлечь", "Загрузка", "преобразование" (ELT) и работает с *промежуточными* наборами DataSet, которые находятся в Azure. В настоящее время в преобразовании источника можно использовать следующие наборы данных:
+
+| Соединитель | Формат | Набор данных или встраивание |
+| --------- | ------ | -------------- |
+| [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md#mapping-data-flow-properties) | [JSON](format-json.md#mapping-data-flow-properties) <br> [Avro](format-avro.md#mapping-data-flow-properties) <br> [Текст с разделителями](format-delimited-text.md#mapping-data-flow-properties) <br> [Parquet](format-parquet.md#mapping-data-flow-properties) | ✓/- <br> ✓/- <br> ✓/- <br> ✓/- |
+| [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md#mapping-data-flow-properties) | [JSON](format-json.md#mapping-data-flow-properties) <br> [Avro](format-avro.md#mapping-data-flow-properties) <br> [Текст с разделителями](format-delimited-text.md#mapping-data-flow-properties) <br> [Parquet](format-parquet.md#mapping-data-flow-properties)  | ✓/- <br> ✓/- <br> ✓/- <br> ✓/- |
+| [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md#mapping-data-flow-properties) | [JSON](format-json.md#mapping-data-flow-properties) <br> [Avro](format-avro.md#mapping-data-flow-properties) <br> [Текст с разделителями](format-delimited-text.md#mapping-data-flow-properties) <br> [Parquet](format-parquet.md#mapping-data-flow-properties)  <br> [Общая модель данных (Предварительная версия)](format-common-data-model.md#sink-properties) | ✓/- <br> ✓/- <br> ✓/- <br> ✓/- <br> -/✓ |
+| [Azure Synapse Analytics](connector-azure-sql-data-warehouse.md#mapping-data-flow-properties) | | ✓/- |
+| [База данных SQL Azure](connector-azure-sql-database.md#mapping-data-flow-properties) | | ✓/- |
+| [Azure CosmosDB (API SQL)](connector-azure-cosmos-db.md#mapping-data-flow-properties) | | ✓/- |
+
+Параметры, характерные для этих соединителей, находятся на вкладке " **Параметры** ". примеры скриптов для данных и потоковой передачи в этих параметрах находятся в документации по соединителю. 
+
+Фабрике данных Azure доступно более [90 собственных соединителей](connector-overview.md). Чтобы записать данные в другие источники из потока данных, используйте действие копирования для загрузки этих данных из поддерживаемого приемника.
 
 ## <a name="sink-settings"></a>Параметры приемника
 
 После добавления приемника настройте его с помощью вкладки **приемник** . Здесь можно выбрать или создать набор данных, в который будет записываться приемник. Ниже приведен видеоролик, объясняющий ряд различных параметров приемника для типов файлов с разделителями текста:
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4tf7T]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4tf7T]
 
 ![Параметры приемника](media/data-flow/sink-settings.png "Параметры приемника")
 

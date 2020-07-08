@@ -10,13 +10,12 @@ ms.author: abnarain
 author: nabhishek
 manager: anansub
 ms.custom: seo-lt-2019
-ms.date: 10/31/2018
-ms.openlocfilehash: 0f018d6b94d1c5b9d9002a767b3ebceb6c9c746c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.date: 06/10/2020
+ms.openlocfilehash: 8422d6978c21744696e3d37c34fdd867b014a19e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82106633"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84655735"
 ---
 # <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory"></a>Создание общей локальной среды выполнения интеграции в Фабрике данных Azure
 
@@ -28,21 +27,19 @@ ms.locfileid: "82106633"
 
 Чтобы создать общую локальную среду выполнения интеграции с помощью пользовательского интерфейса Фабрики данных Azure, можно выполнить следующие действия:
 
-1. В локальной среде выполнения интеграции для совместного использования предоставьте разрешения фабрике данных, в которой нужно создать связанную среду IR.
+1. В локальной среде IR, для которой предоставляется общий доступ, выберите **предоставить разрешение для другой фабрики данных** и на странице "Настройка среды выполнения интеграции" выберите фабрику данных, в которой необходимо создать связанный IR.
       
-    ![Кнопка предоставления разрешений на вкладке "Общий доступ"](media/create-self-hosted-integration-runtime/grant-permissions-IR-sharing.png)
-      
-    ![Выбранные элементы для назначения разрешений](media/create-self-hosted-integration-runtime/3_rbac_permissions.png)     
+    ![Кнопка предоставления разрешений на вкладке "Общий доступ"](media/create-self-hosted-integration-runtime/grant-permissions-IR-sharing.png)  
     
-2. Запишите идентификатор ресурса локальной среды IR, к которой нужно предоставить общий доступ.
-      
-   ![Расположение идентификатора ресурса](media/create-self-hosted-integration-runtime/4_ResourceID_self-hostedIR.png)
-    
+2. Запишите и скопируйте приведенный выше "идентификатор ресурса" автономного IR-файла для совместного размещения.
+         
 3. В фабрике данных, которой были предоставлены разрешения, создайте новую локальную среду IR (связанную) и введите идентификатор ресурса.
       
-   ![Кнопка создания связанной локальной среды выполнения интеграции](media/create-self-hosted-integration-runtime/6_create-linkedIR_2.png)
-      
-    ![Поля для имени и идентификатора ресурса](media/create-self-hosted-integration-runtime/6_create-linkedIR_3.png)
+    ![Кнопка для создания локальной среды выполнения интеграции](media/create-self-hosted-integration-runtime/create-linkedir-1.png)
+   
+    ![Кнопка создания связанной локальной среды выполнения интеграции](media/create-self-hosted-integration-runtime/create-linkedir-2.png) 
+
+    ![Поля для имени и идентификатора ресурса](media/create-self-hosted-integration-runtime/create-linkedir-3.png)
 
 ## <a name="create-a-shared-self-hosted-ir-using-azure-powershell"></a>Создание общей локальной среды выполнения интеграции с помощью Azure PowerShell
 

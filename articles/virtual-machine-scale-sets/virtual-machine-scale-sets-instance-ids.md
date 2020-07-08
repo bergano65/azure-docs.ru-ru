@@ -9,12 +9,11 @@ ms.subservice: management
 ms.date: 02/22/2018
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 6ffc92fe8d17970e1408262387140331189d6e51
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.openlocfilehash: 430c08fc318a89c4d11575eab90ee524b88a979a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83200126"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84607352"
 ---
 # <a name="understand-instance-ids-for-azure-vm-scale-set-vms"></a>Общие сведения об идентификаторах экземпляров для виртуальных машин масштабируемого набора Azure
 В этой статье описаны идентификаторы экземпляров для масштабируемых наборов и связанные с ними возможности.
@@ -23,7 +22,7 @@ ms.locfileid: "83200126"
 
 Каждой виртуальной машине в масштабируемом наборе присваивается определяющий ее идентификатор экземпляра. Он используется в программных интерфейсах (API) масштабируемого набора для выполнения операций на определенной виртуальной машине в масштабируемом наборе. Например, при использовании API пересоздания образа можно указать определенный идентификатор экземпляра:
 
-REST API: `POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}/reimage?api-version={apiVersion}` (дополнительные сведения см. в [документации по REST API](https://docs.microsoft.com/rest/api/compute/virtualmachinescalesets/reimage)).
+REST API: `POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}/virtualmachines/{instanceId}/reimage?api-version={apiVersion}` (дополнительные сведения см. в [документации по REST API](https://docs.microsoft.com/rest/api/compute/virtualmachinescalesetvms/reimage)).
 
 PowerShell: `Set-AzVmssVM -ResourceGroupName {resourceGroupName} -VMScaleSetName {vmScaleSetName} -InstanceId {instanceId} -Reimage` (дополнительные сведения см. в [документации по PowerShell](https://docs.microsoft.com/powershell/module/az.compute/set-azvmssvm)).
 

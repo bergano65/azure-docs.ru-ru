@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 02/25/2019
 ms.topic: conceptual
-ms.openlocfilehash: c2871c4c988675dd9a1a5749d908805994b6b309
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.custom: tracking-python
+ms.openlocfilehash: f3ba52c1396928d8c76fb85fda3f29c625e60919
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83835161"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84561852"
 ---
 # <a name="manage-python-2-packages-in-azure-automation"></a>Управление пакетами Python 2 в службе автоматизации Azure
 
@@ -48,10 +48,10 @@ C:\Python27\Scripts\pip2.7.exe download -d <output dir> <package name>
 
  Чтобы получить runbook, [импортируйте пакеты Python 2 из PyPi в учетную запись службы автоматизации Azure](https://gallery.technet.microsoft.com/scriptcenter/Import-Python-2-packages-57f7d509) из коллекции. Убедитесь, что в параметрах запуска задано значение **Azure** и запустите runbook с нужными параметрами. Для работы runbook требуется учетная запись запуска от имени, чтобы использовать учетную запись службы автоматизации. Следите за тем, чтобы в начале каждого параметра был правильный символ, как показано в следующем списке и на рисунке ниже.
 
-* -s \<subscriptionId\>
-* -g \<resourceGroup\>
-* -a \<automationAccount\>
-* -m \<modulePackage\>
+* -s\<subscriptionId\>
+* -g\<resourceGroup\>
+* -a\<automationAccount\>
+* -m\<modulePackage\>
 
 ![Список пакетов](media/python-packages/import-python-runbook.png)
 

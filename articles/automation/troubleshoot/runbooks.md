@@ -9,12 +9,11 @@ ms.topic: conceptual
 ms.service: automation
 manager: carmonm
 ms.custom: has-adal-ref
-ms.openlocfilehash: 1ee6920d1870b7449f4b77394aaf918947f57ea5
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: 5de4b6f16f52d7cab7088ab39aa70267110eed88
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83744316"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84606893"
 ---
 # <a name="troubleshoot-runbook-issues"></a>Устранение неполадок с последовательностями runbook
 
@@ -50,7 +49,7 @@ ms.locfileid: "83744316"
 
 1. Выполните этот шаг, если задание runbook или среда с гибридной рабочей ролью Runbook не отвечает.
 
-    Если runbook выполняется с помощью гибридной рабочей роли, а не в службе автоматизации Azure, возможно, вам потребуется [устранить неполадки самой гибридной рабочей роли](https://docs.microsoft.com/azure/automation/troubleshoot/hybrid-runbook-worker).
+    Если runbook выполняется с помощью гибридной рабочей роли, а не в службе автоматизации Azure, возможно, вам потребуется [устранить неполадки самой гибридной рабочей роли](hybrid-runbook-worker.md).
 
 ## <a name="scenario-runbook-fails-with-a-no-permission-or-forbidden-403-error"></a><a name="runbook-fails-no-permission"></a>Сценарий. Выполнение последовательности runbook прекратилось с ошибкой "Нет разрешения" или "Запрещено 403"
 
@@ -64,7 +63,7 @@ ms.locfileid: "83744316"
 
 ### <a name="resolution"></a>Решение
 
-Убедитесь, что у вашей учетной записи запуска от имени [есть разрешения на доступ к любым ресурсам](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal), используемым в скрипте.
+Убедитесь, что у вашей учетной записи запуска от имени [есть разрешения на доступ к любым ресурсам](../../role-based-access-control/role-assignments-portal.md), используемым в скрипте.
 
 ## <a name="scenario-sign-in-to-azure-account-failed"></a><a name="sign-in-failed"></a>Сценарий. Не удается войти в учетную запись Azure
 
@@ -99,7 +98,7 @@ No certificate was found in the certificate store with thumbprint
    Connect-AzAccount –Credential $Cred
    ```
 
-1. Если произошел локальный сбой проверки подлинности, значит учетные данные Azure Active Directory (Azure AD) указаны неправильно. Сведения о том, как правильно настроить учетную запись Azure AD, см. в записи блога о [проверке подлинности в Azure с помощью Azure Active Directory](https://azure.microsoft.com/blog/azure-automation-authenticating-to-azure-using-azure-active-directory/).
+1. Если произошел локальный сбой проверки подлинности, значит учетные данные Azure Active Directory (Azure AD) указаны неправильно. Чтобы правильно настроить учетную запись Azure AD, см. статью [Проверка подлинности в Azure с помощью Azure Active Directory](../automation-use-azure-ad.md).
 
 1. Если ошибка, скорее всего, временная, попробуйте добавить логику повторных попыток в процедуру проверки подлинности, чтобы сделать ее более надежной.
 
@@ -137,7 +136,7 @@ Run Login-AzureRMAccount to login.
 
 ### <a name="cause"></a>Причина
 
-Эта ошибка может произойти, если вы не используете учетную запись запуска от имени или срок ее действия истек. Дополнительные сведения см. в статье [Управление учетными записями запуска от имени службы автоматизации Azure](https://docs.microsoft.com/azure/automation/manage-runas-account).
+Эта ошибка может произойти, если вы не используете учетную запись запуска от имени или срок ее действия истек. Дополнительные сведения см. в статье [Управление учетными записями запуска от имени службы автоматизации Azure](../manage-runas-account.md).
 
 Эта ошибка происходит по двум основным причинам.
 
@@ -274,7 +273,7 @@ Add-AzureAccount: AADSTS50079: Strong authentication enrollment (proof-up) is re
 
 ### <a name="resolution"></a>Решение
 
-Сведения об использовании сертификата с командлетами классической модели развертывания Azure см. в руководстве по [созданию и добавлению сертификатов для управления службами Azure](https://blogs.technet.com/b/orchestrator/archive/2014/04/11/managing-azure-services-with-the-microsoft-azure-automation-preview-service.aspx). Сведения об использовании субъекта-службы с командлетами диспетчера ресурсов Azure см. в статьях о [создании субъекта-службы с помощью портала Azure](../../active-directory/develop/howto-create-service-principal-portal.md) и о [проверке подлинности субъекта-службы в Azure Resource Manager](../../active-directory/develop/howto-authenticate-service-principal-powershell.md).
+Сведения об использовании классической учетной записи запуска от имени с командлетами классической модели развертывания Azure см. [в статье Создание классической учетной записи запуска от имени для управления службами Azure](../automation-create-standalone-account.md#create-a-classic-run-as-account). Сведения об использовании субъекта-службы с командлетами диспетчера ресурсов Azure см. в статьях о [создании субъекта-службы с помощью портала Azure](../../active-directory/develop/howto-create-service-principal-portal.md) и о [проверке подлинности субъекта-службы в Azure Resource Manager](../../active-directory/develop/howto-authenticate-service-principal-powershell.md).
 
 ## <a name="scenario-runbook-fails-with-a-task-was-canceled-error-message"></a><a name="task-was-cancelled"></a>Сценарий. Сбой runbook с сообщением об ошибке "Задача была отменена"
 
@@ -383,7 +382,7 @@ Add-AzAccount : Object reference not set to an instance of an object
 
 ### <a name="cause"></a>Причина
 
-Эта ошибка может происходить, если runbook не выполняет нужных действий перед вызовом `Add-AzAccount` для добавления учетной записи службы автоматизации. Примером одного из необходимых действий может служить вход с использованием учетной записи запуска от имени. Сведения о том, какие операции следует использовать в runbook, см. в статье [Выполнение runbook в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-runbook-execution).
+Эта ошибка может происходить, если runbook не выполняет нужных действий перед вызовом `Add-AzAccount` для добавления учетной записи службы автоматизации. Примером одного из необходимых действий может служить вход с использованием учетной записи запуска от имени. Сведения о том, какие операции следует использовать в runbook, см. в статье [Выполнение runbook в службе автоматизации Azure](../automation-runbook-execution.md).
 
 ## <a name="scenario-object-reference-not-set-to-an-instance-of-an-object"></a><a name="child-runbook-object"></a>Сценарий. Ссылка на объект не указывает на экземпляр объекта
 
@@ -419,7 +418,7 @@ $waitTime = 0
 while((IsJobTerminalState $job.Status) -eq $false -and $waitTime -lt $maxTimeout) {
    Start-Sleep -Seconds $pollingSeconds
    $waitTime += $pollingSeconds
-   $job = $job | Get-AzAutomationJob
+   $jobResults = $job | Get-AzAutomationJob
 }
 
 $jobResults | Get-AzAutomationJobOutput | Get-AzAutomationJobOutputRecord | Select-Object -ExpandProperty Value
@@ -652,16 +651,16 @@ Operation returned an invalid status code 'Forbidden'
 
 #### <a name="not-using-a-run-as-account"></a>Не используется учетная запись запуска от имени
 
-Выполните шаг 5 [Добавление проверки подлинности для управления ресурсами Azure](https://docs.microsoft.com/azure/automation/automation-first-runbook-textual-powershell#add-authentication-to-manage-azure-resources) и убедитесь, что для доступа к Key Vault используется учетная запись запуска от имени.
+Выполните шаг 5 [Добавление проверки подлинности для управления ресурсами Azure](../automation-first-runbook-textual-powershell.md#add-authentication-to-manage-azure-resources) и убедитесь, что для доступа к Key Vault используется учетная запись запуска от имени.
 
 #### <a name="insufficient-permissions"></a>Недостаточные разрешения
 
-[Добавьте разрешения для Key Vault](https://docs.microsoft.com/azure/automation/manage-runas-account#add-permissions-to-key-vault), чтобы обеспечить учетной записи запуска от имени достаточные разрешения для доступа к Key Vault.
+[Добавьте разрешения для Key Vault](../manage-runas-account.md#add-permissions-to-key-vault), чтобы обеспечить учетной записи запуска от имени достаточные разрешения для доступа к Key Vault.
 
 ## <a name="recommended-documents"></a>Рекомендуемые документы
 
 * [Выполнение модуля Runbook в службе автоматизации Azure](../automation-runbook-execution.md)
-* [Запуск модуля Runbook в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-starting-a-runbook)
+* [Запуск модуля Runbook в службе автоматизации Azure](../automation-starting-a-runbook.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

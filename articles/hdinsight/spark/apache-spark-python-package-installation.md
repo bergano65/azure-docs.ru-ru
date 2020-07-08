@@ -6,14 +6,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.custom: seoapr2020
+ms.custom: seoapr2020, tracking-python
 ms.date: 04/29/2020
-ms.openlocfilehash: ec914db1e26e6f052715440c3e418df09fe8a361
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: f1ed0ae33d1f83fd77adb337aded95605c17f38b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83835977"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84607318"
 ---
 # <a name="safely-manage-python-environment-on-azure-hdinsight-using-script-action"></a>Безопасное управление средой Python в Azure HDInsight с помощью действия скрипта
 
@@ -146,7 +145,7 @@ ms.locfileid: "83835977"
 
 ## <a name="known-issue"></a>Известная проблема
 
-Существует известная ошибка в Anaconda версий `4.7.11`, `4.7.12` и `4.8.0`. Если действия скрипта зависают на `"Collecting package metadata (repodata.json): ...working..."` и завершаются ошибкой `"Python script has been killed due to timeout after waiting 3600 secs"`, можно скачать [этот скрипт](https://gregorysfixes.blob.core.windows.net/public/fix-conda.sh) и выполнить его как действия скрипта во всех узлах, чтобы устранить проблему.
+Существует известная ошибка в Anaconda версий `4.7.11`, `4.7.12` и `4.8.0`. Если вы видите, что действия сценария перестают отвечать на запросы `"Collecting package metadata (repodata.json): ...working..."` и завершаются с ошибкой `"Python script has been killed due to timeout after waiting 3600 secs"` . можно скачать [этот скрипт](https://gregorysfixes.blob.core.windows.net/public/fix-conda.sh) и выполнить его как действия скрипта во всех узлах, чтобы устранить проблему.
 
 Чтобы проверить версию Anaconda, можно подключиться по SSH к головному узлу кластера и выполнить команду `/usr/bin/anaconda/bin/conda --v`.
 

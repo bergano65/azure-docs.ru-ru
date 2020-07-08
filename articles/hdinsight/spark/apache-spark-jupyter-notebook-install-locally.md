@@ -6,14 +6,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.custom: hdinsightactive,seoapr2020
+ms.custom: hdinsightactive,seoapr2020, tracking-python
 ms.date: 04/23/2020
-ms.openlocfilehash: b2394c580b871105fee84d63c478c3c490b56a0b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 2084bf136300126e56414599caa63d24c98f4542
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82191929"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84604241"
 ---
 # <a name="install-jupyter-notebook-on-your-computer-and-connect-to-apache-spark-on-hdinsight"></a>Установка записной книжки Jupyter на компьютере и ее подключение к Apache Spark в HDInsight
 
@@ -49,7 +48,7 @@ ms.locfileid: "82191929"
     |v 3.6 и v 3.5 |`pip install sparkmagic==0.13.1`|
     |v 3.4|`pip install sparkmagic==0.2.3`|
 
-1. Убедитесь `ipywidgets` , что установлен правильный параметр, выполнив следующую команду:
+1. Убедитесь, что `ipywidgets` установлен правильный параметр, выполнив следующую команду:
 
     ```cmd
     jupyter nbextension enable --py --sys-prefix widgetsnbextension
@@ -74,7 +73,7 @@ ms.locfileid: "82191929"
     |PySpark|`jupyter-kernelspec install sparkmagic/kernels/pysparkkernel`|
     |PySpark3|`jupyter-kernelspec install sparkmagic/kernels/pyspark3kernel`|
 
-1. Необязательный параметр. Введите следующую команду, чтобы включить расширение сервера:
+1. Необязательный элемент. Введите следующую команду, чтобы включить расширение сервера:
 
     ```cmd
     jupyter serverextension enable --py sparkmagic
@@ -90,7 +89,7 @@ ms.locfileid: "82191929"
     python
     ```
 
-2. Сведения о конфигурации Jupyter обычно хранятся в домашнем каталоге пользователей. Введите следующую команду, чтобы указать домашний каталог, и создайте папку с именем ** \.sparkmagic**.  Будет выведен полный путь.
+2. Сведения о конфигурации Jupyter обычно хранятся в домашнем каталоге пользователей. Введите следующую команду, чтобы указать домашний каталог, и создайте папку с именем ** \. sparkmagic**.  Будет выведен полный путь.
 
     ```python
     import os
@@ -100,7 +99,7 @@ ms.locfileid: "82191929"
     exit()
     ```
 
-3. В папке `.sparkmagic`создайте файл с именем **config. JSON** и добавьте в него следующий фрагмент JSON.  
+3. В папке `.sparkmagic` Создайте файл с именем **config.js** и добавьте в него следующий фрагмент JSON.  
 
     ```json
     {
@@ -130,12 +129,12 @@ ms.locfileid: "82191929"
 
     |Значение шаблона | Новое значение |
     |---|---|
-    |ИМЕН|Имя входа кластера, по `admin`умолчанию —.|
+    |ИМЕН|Имя входа кластера, по умолчанию — `admin` .|
     |CLUSTERDNSNAME|Имя кластера|
-    |{BASE64ENCODEDPASSWORD}|Пароль в кодировке Base64 для фактического пароля.  Пароль для base64 можно создать по адресу [https://www.url-encode-decode.com/base64-encode-decode/](https://www.url-encode-decode.com/base64-encode-decode/).|
-    |`"livy_server_heartbeat_timeout_seconds": 60`|При использовании `sparkmagic 0.12.7` (кластеры версии 3.5 и 3.6) не заключайте.  При использовании `sparkmagic 0.2.3` (Clusters v 3.4) Замените на `"should_heartbeat": true`.|
+    |{BASE64ENCODEDPASSWORD}|Пароль в кодировке Base64 для фактического пароля.  Пароль для base64 можно создать по адресу [https://www.url-encode-decode.com/base64-encode-decode/](https://www.url-encode-decode.com/base64-encode-decode/) .|
+    |`"livy_server_heartbeat_timeout_seconds": 60`|При использовании `sparkmagic 0.12.7` (кластеры версии 3.5 и 3.6) не заключайте.  При использовании `sparkmagic 0.2.3` (Clusters v 3.4) Замените на `"should_heartbeat": true` .|
 
-    Полный пример файла см. в файле [Sample config. JSON](https://github.com/jupyter-incubator/sparkmagic/blob/master/sparkmagic/example_config.json).
+    Полный пример файла можно просмотреть в [образце config.jsв](https://github.com/jupyter-incubator/sparkmagic/blob/master/sparkmagic/example_config.json)разделе.
 
    > [!TIP]  
    > Сигналы пульса отправляются, чтобы предотвратить утечку сеансов. При переходе в спящий режим или завершении работы компьютера пульс не отправляется, что приводит к очистке сеанса. Если вы хотите отключить такое поведение для кластеров версии 3.4, то можете настроить для параметра Livy `livy.server.interactive.heartbeat.timeout` значение `0` с помощью пользовательского интерфейса Ambari. Если для кластеров версии 3.5 не настроить соответствующую конфигурацию, приведенную выше, то сеанс не будет удален.
@@ -153,7 +152,7 @@ ms.locfileid: "82191929"
     ![Доступные ядра в записной книжке Jupyter](./media/apache-spark-jupyter-notebook-install-locally/jupyter-kernels-notebook.png "Ядра в записной книжке Jupyter")
 
     > [!IMPORTANT]  
-    > После выбора **нового** проверьте оболочку на наличие ошибок.  Если отображается сообщение об ошибке `TypeError: __init__() got an unexpected keyword argument 'io_loop'` , возможно, возникла известная проблема с определенными версиями Торнадо.  Если это так, завершите работу ядра, а затем понизить установку торнадо, выполнив `pip install tornado==4.5.3`следующую команду:.
+    > После выбора **нового** проверьте оболочку на наличие ошибок.  Если отображается сообщение об ошибке, `TypeError: __init__() got an unexpected keyword argument 'io_loop'` возможно, возникла известная проблема с определенными версиями Торнадо.  Если это так, завершите работу ядра, а затем понизить установку торнадо, выполнив следующую команду: `pip install tornado==4.5.3` .
 
     b. Запустите следующий фрагмент кода.
 
@@ -164,13 +163,13 @@ ms.locfileid: "82191929"
 
     Если вы успешно получили выходные данные, подключение к кластеру HDInsight работает.
 
-    Если вы хотите обновить конфигурацию записной книжки для подключения к другому кластеру, обновите файл config. JSON, используя новый набор значений, как показано на шаге 3 выше.
+    Если вы хотите обновить конфигурацию записной книжки для подключения к другому кластеру, обновите config.jsс новым набором значений, как показано на шаге 3 выше.
 
 ## <a name="why-should-i-install-jupyter-on-my-computer"></a>Зачем устанавливать Jupyter на моем компьютере?
 
 Причины для установки Jupyter на компьютере и последующего подключения к кластеру Apache Spark в HDInsight:
 
-* Предоставляет возможность создавать записные книжки локально, тестировать приложение в работающем кластере, а затем отправлять в кластер записные книжки. Чтобы отправить записные книжки в кластер, можно отправить их с помощью записной книжки Jupyter, которая работает под управлением или в кластере, `/HdiNotebooks` или сохранить в папке в учетной записи хранения, связанной с кластером. Дополнительные сведения о хранении записных книжек в кластере см. в разделе [Где хранятся записные книжки](apache-spark-jupyter-notebook-kernels.md#where-are-the-notebooks-stored).
+* Предоставляет возможность создавать записные книжки локально, тестировать приложение в работающем кластере, а затем отправлять в кластер записные книжки. Чтобы отправить записные книжки в кластер, можно отправить их с помощью записной книжки Jupyter, которая работает под управлением или в кластере, или сохранить в `/HdiNotebooks` папке в учетной записи хранения, связанной с кластером. Дополнительные сведения о хранении записных книжек в кластере см. в разделе [Где хранятся записные книжки](apache-spark-jupyter-notebook-kernels.md#where-are-the-notebooks-stored).
 * С помощью локально доступных записных книжек вы сможете подключиться к различным кластерам Spark в зависимости от потребностей вашего приложения.
 * Можно использовать GitHub для реализации системы управления версиями, чтобы контролировать версии записных книжек. Вы также можете создать среду совместной работы, в которой несколько пользователей будут работать с одной записной книжкой.
 * Вы можете работать с записными книжками локально даже без кластера. Кластер нужен только для тестирования записных книжек, но не обязателен для ручного управления записными книжками или средой разработки.
@@ -181,6 +180,6 @@ ms.locfileid: "82191929"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
+* [Обзор: Spark в Azure HDInsight](apache-spark-overview.md)
 * [Ядра для записной книжки Jupyter на Apache Spark](apache-spark-jupyter-notebook-kernels.md)
 * [Использование внешних пакетов с записными книжками Jupyter в Apache Spark](apache-spark-jupyter-notebook-use-external-packages.md)

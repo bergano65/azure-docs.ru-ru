@@ -2,18 +2,17 @@
 title: Получение событий из Сетки событий Azure в конечную точку HTTP
 description: Описано, как проверить конечную точку HTTP, затем проверить и десериализировать события из Сетки событий Azure
 services: event-grid
-author: banisadr
+author: femila
 manager: darosa
 ms.service: event-grid
 ms.topic: conceptual
 ms.date: 01/01/2019
-ms.author: babanisa
-ms.openlocfilehash: 7c363fd4e55fdd6fe04a099ac833a256bbfd2eb2
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.author: femila
+ms.openlocfilehash: dd7535030ea4f6d6769630e463618faab62944a0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83116974"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84558470"
 ---
 # <a name="receive-events-to-an-http-endpoint"></a>Получение событий через конечную точку HTTP
 
@@ -22,7 +21,7 @@ ms.locfileid: "83116974"
 > [!NOTE]
 > При активации службы "Функции Azure" с помощью Сетки событий **настоятельно** рекомендуется использовать [триггер Сетки событий](../azure-functions/functions-bindings-event-grid.md). Универсальный триггер веб-перехватчика используется для демонстрации.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Вам потребуется приложение-функция с функцией, активируемой HTTP.
 
@@ -366,7 +365,7 @@ module.exports = function (context, req) {
 
 Кроме того, эту функцию можно протестировать в реальном времени, [отправив пользовательское событие с помощью CURL с портала](./custom-event-quickstart-portal.md) или [опубликовав в пользовательском разделе](./post-to-custom-topic.md), используя любую службу или приложение, которое может выполнять оператор POST в конечной точке, например [Postman](https://www.getpostman.com/). Создайте пользовательский раздел и подписку событий с помощью конечной точки, заданной в качестве URL-адреса функции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь со статьей [Пакеты SDK для управления службой "Сетка событий Azure" и публикации в ней](./sdk-overview.md).
 * Дополнительные сведения см. в статье [Публикация в пользовательском разделе для службы "Сетка событий Azure"](./post-to-custom-topic.md).

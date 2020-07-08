@@ -4,16 +4,15 @@ description: Безопасное перемещение файлов на ви�
 author: cynthn
 ms.service: virtual-machines-linux
 ms.workload: infrastructure
-ms.topic: article
+ms.topic: how-to
 ms.date: 07/12/2017
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: a0837790b70de42073338bf085ee0f3976b866f6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 531edf5bb857b570e595fc1a179a887013e094f3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78969601"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84659770"
 ---
 # <a name="move-files-to-and-from-a-linux-vm-using-scp"></a>Перемещение файлов на виртуальную машину Linux и с нее с помощью SCP
 
@@ -65,7 +64,7 @@ scp ~/.azure/config azureuser@myserver.eastus.cloudapp.com:/home/azureuser/confi
 scp -r azureuser@myserver.eastus.cloudapp.com:/home/azureuser/logs/. /tmp/
 ```
 
-`-r` Флаг указывает scpу рекурсивно копировать файлы и каталоги из каталога, указанного в команде.  Обратите также внимание, что синтаксис для командной строки аналогичен синтаксису команды копирования `cp`.
+`-r`Флаг указывает scpу рекурсивно копировать файлы и каталоги из каталога, указанного в команде.  Обратите также внимание, что синтаксис для командной строки аналогичен синтаксису команды копирования `cp`.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

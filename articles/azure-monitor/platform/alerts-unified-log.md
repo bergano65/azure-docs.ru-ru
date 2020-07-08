@@ -6,16 +6,15 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 5/31/2019
 ms.subservice: alerts
-ms.openlocfilehash: a6abf4665c27771497037da35f85bb540e6e904e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 0e81d48f4e709a9a0bb8ebb33c7029d3841167b6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77665227"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84609052"
 ---
 # <a name="log-alerts-in-azure-monitor"></a>Оповещения журнала в Azure Monitor
 
-В этой статье рассматриваются оповещения журнала. Это один из типов оповещений, которые поддерживаются в системе [оповещений Azure](../../azure-monitor/platform/alerts-overview.md) и позволяют пользователям применять платформу аналитики Azure в качестве основы для оповещений.
+Оповещения журнала — это один из типов оповещений, которые поддерживаются в [оповещениях Azure](../../azure-monitor/platform/alerts-overview.md). Оповещения журнала позволяют пользователям использовать платформу Azure Analytics в качестве основания для создания оповещений.
 
 Оповещение журнала состоит из правил поиска по журналам, созданных для [Azure Monitor Logs](../../azure-monitor/learn/tutorial-viewdata.md) или [Application Insights](../../azure-monitor/app/cloudservices.md#view-azure-diagnostics-events). Дополнительные сведения о его использовании см. в сведениях о [создании оповещений журнала в Azure](../../azure-monitor/platform/alerts-log.md).
 

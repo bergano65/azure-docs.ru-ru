@@ -3,12 +3,12 @@ title: Создание приложения контейнера Azure Service 
 description: Создание первого приложения-контейнера Linux в Azure Service Fabric. Создание образа Docker с приложением, отправка образа в реестр контейнеров, сборка и развертывание приложения-контейнера Service Fabric.
 ms.topic: conceptual
 ms.date: 1/4/2019
-ms.openlocfilehash: f2f8c7884323667f843382b02c73a570e58617f1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.custom: tracking-python
+ms.openlocfilehash: 07e3682ec1787ceb350ac72c8b80d86eed80b339
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75457962"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84560645"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-linux"></a>Создание первого контейнера-приложения Service Fabric в Linux
 > [!div class="op_single_selector"]
@@ -20,7 +20,7 @@ ms.locfileid: "75457962"
 > [!NOTE]
 > Эта статья касается среды разработки Linux.  Среда выполнения кластера Service Fabric и среда выполнения Docker должны работать под управлением одной операционной системы.  Контейнеры Linux нельзя запускать в кластере Windows.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 * Компьютер для разработки, на котором установлено ПО, перечисленное ниже.
   * [Service Fabric пакет SDK и средства](service-fabric-get-started-linux.md).
   * [Предварительные выпуски](https://docs.docker.com/engine/installation/#prior-releases). 
@@ -113,9 +113,9 @@ docker run -d -p 4000:80 --name my-web-site helloworldapp
 
 Параметр *name* присваивает имя запущенному контейнеру (вместо идентификатора контейнера).
 
-Подключитесь к запущенному контейнеру. Откройте веб-браузер, указывающий на IP-адрес, возвращенный через порт 4000, например\/"http:/ЛОКАЛХОСТ: 4000". Вы должны увидеть заголовок Hello World! в браузере.
+Подключитесь к запущенному контейнеру. Откройте веб-браузер, указывающий на IP-адрес, возвращенный через порт 4000, например "http: \/ /ЛОКАЛХОСТ: 4000". Вы должны увидеть заголовок Hello World! в браузере.
 
-![Привет, мир!][hello-world]
+![Пример "Здравствуй,][hello-world]
 
 Чтобы остановить контейнер, выполните следующую команду:
 
@@ -132,7 +132,7 @@ docker rm my-web-site
 ## <a name="push-the-image-to-the-container-registry"></a>Отправка образа в реестр контейнеров
 Убедившись, что приложение запускается в Docker, отправьте образ в реестр в реестре контейнеров Azure.
 
-Выполните `docker login` команду, чтобы войти в реестр контейнеров с [учетными данными реестра](../container-registry/container-registry-authentication.md).
+Выполните команду `docker login` , чтобы войти в реестр контейнеров с [учетными данными реестра](../container-registry/container-registry-authentication.md).
 
 Следующая команда передает идентификатор и пароль [субъекта-службы](../active-directory/develop/app-objects-and-service-principals.md) Azure Active Directory. Например, назначение субъекта-службы для реестра позволяет автоматизировать некоторые сценарии. Также можно выполнить вход с помощью имени пользователя и пароля реестра.
 
@@ -256,11 +256,11 @@ sfctl cluster select --endpoint http://localhost:19080
 ./install.sh
 ```
 
-Откройте браузер и перейдите в Service Fabric Explorer по адресу HTTP\/:/ЛОКАЛХОСТ: 19080/Explorer (замените localhost на частный IP-адрес виртуальной машины, если используется Vagrant на Mac OS X). Разверните узел приложения. Вы увидите одну запись для типа приложения и еще одну — для первого экземпляра этого типа.
+Откройте браузер и перейдите в Service Fabric Explorer по адресу http: \/ /ЛОКАЛХОСТ: 19080/Explorer (замените localhost на частный IP-адрес виртуальной машины, если используется Vagrant на Mac OS X). Разверните узел приложения. Вы увидите одну запись для типа приложения и еще одну — для первого экземпляра этого типа.
 
-Подключитесь к запущенному контейнеру. Откройте веб-браузер, указывающий на IP-адрес, возвращенный через порт 4000, например\/"http:/ЛОКАЛХОСТ: 4000". Вы должны увидеть заголовок Hello World! в браузере.
+Подключитесь к запущенному контейнеру. Откройте веб-браузер, указывающий на IP-адрес, возвращенный через порт 4000, например "http: \/ /ЛОКАЛХОСТ: 4000". Вы должны увидеть заголовок Hello World! в браузере.
 
-![Привет, мир!][hello-world]
+![Пример "Здравствуй,][hello-world]
 
 
 ## <a name="clean-up"></a>Очистка
@@ -465,7 +465,7 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения о запуске [контейнеров в Service Fabric](service-fabric-containers-overview.md).
 * Ознакомьтесь с руководством [Развертывание приложения-контейнера .NET в Azure Service Fabric](service-fabric-host-app-in-a-container.md).
 * Дополнительные сведения о [жизненном цикле приложения](service-fabric-application-lifecycle.md) Service Fabric.

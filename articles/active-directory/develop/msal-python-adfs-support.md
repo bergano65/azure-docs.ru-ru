@@ -12,13 +12,12 @@ ms.workload: identity
 ms.date: 11/23/2019
 ms.author: abpati
 ms.reviewer: nacanuma
-ms.custom: aaddev
-ms.openlocfilehash: 01d4cb626aabc83117e864b75b49eec63a6c0af0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.custom: aaddev, tracking-python
+ms.openlocfilehash: 2e5df49ea681eefeccaf621739de185767c0aa16
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76699552"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84558634"
 ---
 # <a name="active-directory-federation-services-support-in-msal-for-python"></a>Поддержка службы федерации Active Directory (AD FS) в MSAL для Python
 
@@ -35,7 +34,7 @@ ms.locfileid: "76699552"
 
 Приведенные ниже зависимости применяются непосредственно к службы федерации Active Directory (AD FS) (AD FS) или через Active Directory.
 
-При вызове `acquire_token_by_authorization_code` или `acquire_token_by_device_flow`интерфейс пользователя обычно выглядит следующим образом:
+При вызове `acquire_token_by_authorization_code` или `acquire_token_by_device_flow` интерфейс пользователя обычно выглядит следующим образом:
 
 1. Пользователь вводит идентификатор своей учетной записи.
 2. В Azure AD отображается краткое сообщение "идет переход на страницу вашей организации", и пользователь перенаправляется на страницу входа поставщика удостоверений. Страница входа обычно настраивается с помощью логотипа Организации.
@@ -49,7 +48,7 @@ ms.locfileid: "76699552"
 
 Приведенные ниже зависимости применяются непосредственно к службы федерации Active Directory (AD FS) (AD FS) или через Active Directory.
 
-При получении маркера с помощью `acquire_token_by_username_password`MSAL Python Получает поставщик удостоверений для связи на основе имени пользователя. MSAL Python получает [токен SAML 1,1](reference-saml-tokens.md) от поставщика удостоверений, который затем предоставляет Azure AD, который возвращает JSON Web Token (JWT).
+При получении маркера с помощью `acquire_token_by_username_password` MSAL Python Получает поставщик удостоверений для связи на основе имени пользователя. MSAL Python получает [токен SAML 1,1](reference-saml-tokens.md) от поставщика удостоверений, который затем предоставляет Azure AD, который возвращает JSON Web Token (JWT).
 
 ## <a name="connecting-directly-to-ad-fs"></a>Прямое подключение к AD FS
 
@@ -59,6 +58,6 @@ MSAL Python поддерживает ADFS 2019.
 
 Он не поддерживает прямое подключение к ADFS 2016 или ADFS v2. Если вам требуется поддержка сценариев, требующих прямого подключения к ADFS 2016, используйте последнюю версию ADAL Python. После обновления локальной системы до ADFS 2019 можно использовать MSAL Python.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения об объединенном варианте см. в статье [Настройка поведения при входе Azure Active Directory для приложения с помощью политики обнаружения домашней области](../manage-apps/configure-authentication-for-federated-users-portal.md) .

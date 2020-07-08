@@ -7,18 +7,17 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.tgt_pltfrm: arduino
-ms.date: 6/06/2019
+ms.date: 6/08/2020
 ms.author: robinsh
-ms.openlocfilehash: f0b909d10790511408e090546fd3359889ea5aca
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: ed429d2f584da20439b0cb0eedcf4742b9ae4599
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73954630"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84634513"
 ---
 # <a name="visualize-real-time-sensor-data-from-azure-iot-hub-using-power-bi"></a>Визуализация данных, поступающих от датчиков в реальном времени, из Центра Интернета вещей с помощью Power BI
 
-![Комплексная схема](./media/iot-hub-live-data-visualization-in-power-bi/1_end-to-end-diagram.png)
+![Комплексная схема](./media/iot-hub-live-data-visualization-in-power-bi/end-to-end-diagram.png)
 
 [!INCLUDE [iot-hub-get-started-note](../../includes/iot-hub-get-started-note.md)]
 
@@ -36,7 +35,7 @@ ms.locfileid: "73954630"
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
-* Заполните учебник [Raspberry Pi Online Simulator](iot-hub-raspberry-pi-web-simulator-get-started.md) или одно из учебников по устройствам. Например, [Raspberry Pi с Node. js](iot-hub-raspberry-pi-kit-node-get-started.md). В этих статьях рассматриваются следующие требования:
+* Пройдите одно из руководств по [использованию симулятора Raspberry Pi в подключенном режиме](iot-hub-raspberry-pi-web-simulator-get-started.md), например [Подключение онлайн-симулятора Raspberry Pi к Центру Интернета вещей Azure (Node.js)](iot-hub-raspberry-pi-kit-node-get-started.md). В этих статьях рассматриваются следующие требования:
   
   * Активная подписка Azure.
   * Центр Интернета вещей Azure в подписке;
@@ -56,27 +55,27 @@ ms.locfileid: "73954630"
 
 2. Введите представленные ниже сведения для задания.
 
-   **Имя задания**: имя задания. Оно должно быть глобально уникальным.
+   **Имя задания.** Имя задания. Оно должно быть глобально уникальным.
 
-   **Группа ресурсов**. Используйте ту же группу ресурсов, которую использует центр Интернета вещей.
+   **Группа ресурсов.** Выберите ту же группу ресурсов, которую использует центр Интернета вещей.
 
-   **Расположение**. Выберите то же расположение, которое использует группа ресурсов.
+   **Расположение.** Выберите то же расположение, которое использует группа ресурсов.
 
-   ![Создание задания Stream Analytics в Azure](./media/iot-hub-live-data-visualization-in-power-bi/create-stream-analytics-job-azure.png)
+   ![Создание задания Stream Analytics в Azure](./media/iot-hub-live-data-visualization-in-power-bi/create-stream-analytics-job.png)
 
-3. Нажмите кнопку **создания**.
+3. Выберите **Создать**.
 
 ### <a name="add-an-input-to-the-stream-analytics-job"></a>Добавление входных данных в задание Stream Analytics
 
 1. Откройте задание Stream Analytics.
 
-2. В разделе **Топология задания** выберите **Входные данные**.
+2. В разделе **топология задания**выберите **входные данные**.
 
 3. В области **входные данные** выберите **добавить потоковый вход**, а затем в раскрывающемся списке выберите **центр Интернета вещей** . На новой панели ввода введите следующие сведения.
 
    **Входной псевдоним**: введите уникальный псевдоним для входных данных.
 
-   **Укажите центр Интернета вещей из подписки**: Выберите этот переключатель.
+   **Выберите центр Интернета вещей в своей подписке**: Выберите этот переключатель.
 
    **Подписка**: выберите подписку Azure, которую вы используете для работы с этим руководством.
 
@@ -92,13 +91,13 @@ ms.locfileid: "73954630"
 
    Оставьте значения по умолчанию для всех остальных полей.
 
-   ![Добавление входных данных в задание Stream Analytics в Azure](./media/iot-hub-live-data-visualization-in-power-bi/add-input-to-stream-analytics-job-azure.png)
+   ![Добавление входных данных в задание Stream Analytics в Azure](./media/iot-hub-live-data-visualization-in-power-bi/add-input-to-stream-analytics-job.png)
 
-4. Щелкните **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
 ### <a name="add-an-output-to-the-stream-analytics-job"></a>Добавление выходных данных в задание Stream Analytics
 
-1. В разделе **Топология задания** выберите **Выходные данные**.
+1. В разделе **топология задания**выберите **выходные данные**.
 
 2. В области **выходные данные** выберите **Добавить** и **Power BI**.
 
@@ -108,35 +107,39 @@ ms.locfileid: "73954630"
 
    **Выходной псевдоним**: уникальный псевдоним для выходных данных.
 
-   **Рабочая область группы**. Выберите целевую рабочую область группы.
+   **Рабочая область группы**: выберите рабочую область целевой группы.
 
-   **Имя набора данных**. Введите имя набора данных.
+   **Имя набора данных**: введите имя набора данных.
 
-   **Имя таблицы**. Введите имя таблицы.
+   **Имя таблицы**: введите имя таблицы.
 
-   ![Добавление выходных данных в задание Stream Analytics в Azure](./media/iot-hub-live-data-visualization-in-power-bi/add-output-to-stream-analytics-job-azure.png)
+   **Режим проверки подлинности**. Оставьте значение по умолчанию.
 
-5. Щелкните **Сохранить**.
+   ![Добавление выходных данных в задание Stream Analytics в Azure](./media/iot-hub-live-data-visualization-in-power-bi/add-output-to-stream-analytics-job.png)
+
+5. Нажмите кнопку **Сохранить**.
 
 ### <a name="configure-the-query-of-the-stream-analytics-job"></a>Настройка запроса задания Stream Analytics
 
-1. В разделе **Топология задания** выберите **Запрос**.
+1. В разделе **топология задания**выберите **запрос**.
 
 2. Замените значение `[YourInputAlias]` значением псевдонима входных данных задания.
 
 3. Замените значение `[YourOutputAlias]` значением псевдонима выходных данных задания.
 
-   ![Добавление запроса в задание Stream Analytics в Azure](./media/iot-hub-live-data-visualization-in-power-bi/add-query-stream-analytics-job-azure.png)
+   ![Добавление запроса в задание Stream Analytics в Azure](./media/iot-hub-live-data-visualization-in-power-bi/add-query-to-stream-analytics-job.png)
 
-4. Щелкните **Сохранить**.
+4. Нажмите кнопку **Сохранить запрос**.
 
 ### <a name="run-the-stream-analytics-job"></a>Выполнение задания Stream Analytics
 
-В Stream Analytics задание выберите **Обзор**, а затем выберите **начать** > **сейчас** > **.** После успешного запуска состояние задания **Остановлено** изменится на **Выполняется**.
+В Stream Analytics задание выберите **Обзор**, а затем выберите **начать**  >  **сейчас**  >  **Start**. После успешного запуска состояние задания **Остановлено** изменится на **Выполняется**.
 
-![Выполнение задания Stream Analytics в Azure](./media/iot-hub-live-data-visualization-in-power-bi/run-stream-analytics-job-azure.png)
+![Выполнение задания Stream Analytics в Azure](./media/iot-hub-live-data-visualization-in-power-bi/run-stream-analytics-job.png)
 
 ## <a name="create-and-publish-a-power-bi-report-to-visualize-the-data"></a>Создание отчета Power BI и его публикация для визуализации данных
+
+Ниже описано, как создать и опубликовать отчет с помощью служба Power BI. Если вы хотите использовать "новый вид" в Power BI, можно выполнить эти действия с некоторыми изменениями. Чтобы понять различия и переходить к разделу "новый вид", см. раздел ["новый вид" служба Power BI](https://docs.microsoft.com/power-bi/consumer/service-new-look).
 
 1. Убедитесь, что пример приложения запущен на устройстве. Если нет, вы можете обратиться к руководствам в статье [Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)](https://docs.microsoft.com/azure/iot-hub/iot-hub-raspberry-pi-kit-node-get-started).
 
@@ -144,13 +147,13 @@ ms.locfileid: "73954630"
 
 3. Выберите используемую рабочую область " **Моя рабочая область**".
 
-4. Выберите **наборы данных**.
+4. Щелкните **Наборы данных**.
 
    Вы должны увидеть набор данных, указанный при создании выходных данных для задания Stream Analytics.
 
 5. Для созданного набора данных выберите **Добавить отчет** (первый значок справа от имени набора данных).
 
-   ![Создание отчета Microsoft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/start-power-bi.png)
+   ![Создание отчета Microsoft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-create-report.png)
 
 6. Создайте график для отображения данных температуры в реальном времени за определенный период времени.
 
@@ -164,9 +167,9 @@ ms.locfileid: "73954630"
 
       График создан. Ось Х отображает дату и время в часовом поясе UTC. Ось Y отображает данные температуры, полученные от датчика.
 
-      ![Добавление графика данных температуры в отчет Microsoft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-add-temp.png)
+      ![Добавление графика данных температуры в отчет Microsoft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-add-temperature.png)
 
-7. Создайте другой график для отображения влажности в реальном времени за определенный период времени. Выполните действия, аналогичные действиям выше, и перетащите **EventEnqueuedUtcTime** на ось Х, а **влажность** на ось Y.
+7. Создайте другой график для отображения влажности в реальном времени за определенный период времени. Для этого щелкните пустую часть холста и выполните те же действия, чтобы поместить **то есть eventenqueuedutctime** на ось x и **влажности** по оси y.
 
    ![Добавление графика данных влажности в отчет Microsoft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-add-humidity.png)
 
@@ -174,17 +177,24 @@ ms.locfileid: "73954630"
 
 9. Выберите **отчеты** на левой панели, а затем выберите только что созданный отчет.
 
-10. Выберите **файл** > **опубликовать в Интернете**.
+10. Выберите **файл**  >  **опубликовать в Интернете**.
+
+    ![Выберите Опубликовать в Интернете для отчета Microsoft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-select-publish-to-web.png)
+
+    > [!NOTE]
+    > Если вы получите уведомление для связи с администратором, чтобы включить создание кода внедрения, вам может потребоваться обратиться к ним. Для выполнения этого шага необходимо включить создание кода внедрения.
+    >
+    > ![Обратитесь к уведомлению администратора](./media/iot-hub-live-data-visualization-in-power-bi/contact-admin.png)
 
 11. Выберите **создать код внедрения**, а затем нажмите кнопку **опубликовать**.
 
 Вы указали ссылку на отчет, которую можно предоставить всем пользователям для доступа к отчету, и фрагмент кода, который можно использовать для интеграции отчета в блог или на веб-сайт.
 
-![Публикация отчета Microsoft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-publish.png)
+![Публикация отчета Microsoft Power BI](./media/iot-hub-live-data-visualization-in-power-bi/power-bi-web-output.png)
 
 Корпорация Майкрософт также предлагает [мобильные приложения Power BI](https://powerbi.microsoft.com/en-us/documentation/powerbi-power-bi-apps-for-mobile-devices/) для просмотра информационных панелей и отчетов Power BI, а также взаимодействия с ними.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы успешно использовали Power BI для визуализации данных, полученных от датчика в режиме реального времени, из Центра Интернета вещей Azure.
 

@@ -6,12 +6,11 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/04/2020
-ms.openlocfilehash: cbefe2e2b25db7ce16a7a1bde423f60fda412590
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
-ms.translationtype: HT
+ms.openlocfilehash: ce7edf4dd5ae52f3ea604fe4b8d88d1a29de5a69
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83773361"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84608372"
 ---
 # <a name="log-analytics-agent-overview"></a>Общие сведения об агенте Log Analytics
 Агент Log Analytics разработан для комплексного управления на виртуальных машинах, размещенных на облаке, на локальных компьютерах, и других отслеживаемых с помощью [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/) компьютерах. Агенты Windows и Linux отправляют в рабочую область вашего Log Analytics в Azure Monitor собранные данные из разных источников, а также уникальные журналы и метрики, как задано в решении мониторинга. Агент Log Analytics также поддерживает аналитику и другие службы в Azure Monitor, такие как [Azure Monitor для виртуальных машин](../insights/vminsights-enable-overview.md), [Центр безопасности Azure](/azure/security-center/) и [Служба автоматизации Azure](../../automation/automation-intro.md).
@@ -114,6 +113,24 @@ ms.locfileid: "83773361"
 >[!NOTE]
 >Если вы используете дистрибутив или версию, которые в настоящее время не поддерживаются и не соответствуют нашей модели поддержки, мы рекомендуем вам сделать вилку этого репозитория, согласившись, что специалисты службы поддержки Майкрософт не будут предоставлять помощь при работе с версиями разветвленных агентов.
 
+
+### <a name="python-2-requirement"></a>Требование к Python 2
+ Для агента Log Analytics требуется Python 2. Если ваша виртуальная машина использует дистрибутив, которая по умолчанию не включает Python 2, ее необходимо установить. Приведенные ниже примеры команд будут устанавливать Python 2 на разных дистрибутивов.
+
+ - Red Hat, CentOS, Oracle:`yum install -y python2`
+ - Ubuntu, Debian:`apt-get install -y python2`
+ - SUSE: `zypper install -y python2`
+
+Исполняемый файл python2 должен иметь псевдоним для Python с помощью следующей команды:
+
+```
+alternatives --set python /usr/sbin/python2
+```
+
+### <a name="supported-distros"></a>Поддерживаемые дистрибутивы
+
+Следующие версии операционной системы Linux официально поддерживаются для агента Linux:
+
 * Amazon Linux 2017.09 (x64)
 * CentOS Linux 6 (x64) и 7 (x64)  
 * Oracle Linux 6 и 7 (x64) 
@@ -210,4 +227,3 @@ ms.locfileid: "83773361"
 * Дополнительные сведения об источниках данных, доступных для сбора данных из операционных систем Windows или Linux, см. в статье [Data sources in Log Analytics](agent-data-sources.md) (Источники данных в Log Analytics). 
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 
 * Узнайте больше о [решениях мониторинга](../insights/solutions.md), которые расширяют функции службы Azure Monitor и собирают данные в ее рабочей области.
-
