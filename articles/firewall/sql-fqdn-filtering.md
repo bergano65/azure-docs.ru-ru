@@ -4,15 +4,15 @@ description: В этой статье рассказывается о настр
 services: firewall
 author: vhorne
 ms.service: firewall
-ms.topic: article
-ms.date: 05/18/2020
+ms.topic: how-to
+ms.date: 06/18/2020
 ms.author: victorh
-ms.openlocfilehash: 1195bb2676634dd3e7c9310da4e8855c4ff814f3
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
-ms.translationtype: HT
+ms.openlocfilehash: e921ea707e4a0df968d162726fe53064491cb032
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84015970"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85610512"
 ---
 # <a name="configure-azure-firewall-application-rules-with-sql-fqdns"></a>Настройка правил приложений брандмауэра Azure с полными доменными именами SQL
 
@@ -24,7 +24,7 @@ ms.locfileid: "84015970"
 - Из локальной среды в управляемые экземпляры SQL Azure или IaaS SQL, выполняемую в ваших виртуальных сетях.
 - Из туннеля spoke-to-spoke в управляемые экземпляры SQL Azure или IaaS SQL, выполняемую в ваших виртуальных сетях.
 
-Фильтрация полных доменных имен SQL поддерживается только в [прокси-режиме](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-architecture#connection-policy) (порт 1433). При использовании SQL в режиме перенаправления по умолчанию можно фильтровать доступ, используя тег службы SQL в составе [сетевых правил](overview.md#network-traffic-filtering-rules).
+Фильтрация полных доменных имен SQL поддерживается только в [прокси-режиме](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-architecture#connection-policy) (порт 1433). При использовании SQL в режиме перенаправления по умолчанию можно фильтровать доступ, используя тег службы SQL в составе [сетевых правил](features.md#network-traffic-filtering-rules).
 Если для трафика IaaS SQL используются порты не по умолчанию, можно настроить эти порты в правилах приложений брандмауэра.
 
 ## <a name="configure-using-azure-cli"></a>Настройка с использованием интерфейса командной строки Azure
@@ -63,4 +63,4 @@ ms.locfileid: "84015970"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения о прокси-сервере SQL и режимах перенаправления доступны в разделе [Архитектура подключений к базе данных SQL Azure](../azure-sql/database/connectivity-architecture.md).
+Дополнительные сведения о прокси-сервере SQL и режимах перенаправления см. в статье [Архитектура подключения к базе данных SQL Azure](../azure-sql/database/connectivity-architecture.md).

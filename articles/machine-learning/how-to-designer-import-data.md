@@ -1,23 +1,23 @@
 ---
 title: Импорт данных
 titleSuffix: Azure Machine Learning
-description: Узнайте, как импортировать данные в конструктор Машинного обучения Azure из разных источников.
+description: Узнайте, как импортировать данные в конструктор Машинное обучение Azure из различных источников данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 author: peterclu
 ms.author: peterlu
 ms.date: 01/16/2020
 ms.custom: designer
-ms.openlocfilehash: 2b42f8f9dfe6ef2993b4615f0e4584874beabb28
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 12473aca589f8a04dd0e09fdc2dc7f0d4e450c5a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83644571"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85610954"
 ---
-# <a name="import-your-data-into-azure-machine-learning-designer-preview"></a>Импорт данных в конструктор Машинного обучения Azure (предварительная версия)
+# <a name="import-data-into-azure-machine-learning-designer-preview"></a>Импорт данных в конструктор Машинное обучение Azure (Предварительная версия)
 
 Из этой статьи вы узнаете, как импортировать собственные данные в конструктор, чтобы создавать пользовательские решения. Импортировать данные в конструктор можно двумя способами. 
 
@@ -89,6 +89,10 @@ ms.locfileid: "83644571"
 ## <a name="data-constraints"></a>Ограничения данных
 
 Модули в конструкторе ограничены размером целевого объекта вычислений. Для больших наборов данных следует использовать больший ресурс Машинного обучения Azure. Дополнительные сведения о вычислениях в Машинном обучении Azure см. в разделе [Что такое целевые вычисления в Машинном обучении Azure?](concept-compute-target.md#azure-machine-learning-compute-managed)
+
+## <a name="access-data-in-a-virtual-network"></a>Доступ к данным в виртуальной сети
+
+Если Рабочая область находится в виртуальной сети, необходимо выполнить дополнительные действия по настройке для визуализации данных в конструкторе. Дополнительные сведения о том, как использовать хранилища и наборы данных в виртуальной сети, см. в статье [Сетевая изоляция во время обучения & вывода с частными виртуальными сетями](how-to-enable-virtual-network.md#machine-learning-studio).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

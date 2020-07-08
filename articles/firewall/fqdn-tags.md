@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 04/24/2020
+ms.date: 06/30/2020
 ms.author: victorh
-ms.openlocfilehash: f4fcadb6d930f7863c733dad105432a64127b59b
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: e29e568786881f663414dcdf3eff72d4d72ab181
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82232655"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85610614"
 ---
 # <a name="fqdn-tags-overview"></a>Общие сведения о тегах FQDN
 
@@ -28,7 +28,7 @@ ms.locfileid: "82232655"
 
 ## <a name="current-fqdn-tags"></a>Текущие теги полного доменного имени
 
-|Тег FQDN  |Описание  |
+|Тег FQDN  |Описание:  |
 |---------|---------|
 |Центр обновления Windows     |Разрешает исходящий доступ к Центру обновления Майкрософт, как описано в разделе [Настройка брандмауэра для обновлений программного обеспечения](https://technet.microsoft.com/library/bb693717.aspx).|
 |диагностика Windows.|Разрешает исходящий доступ ко всем [конечным точкам диагностики Windows](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#endpoints).|
@@ -36,11 +36,12 @@ ms.locfileid: "82232655"
 |Среда службы приложений (ASE).|Разрешает исходящий доступ к трафику платформы ASE. Этот тег не распространяется на конечные точки пользовательского хранилища и SQL, созданные ASE. Требуется включение с использованием [конечных точек службы](../virtual-network/tutorial-restrict-network-access-to-resources.md) или добавление вручную.<br><br>Дополнительные сведения об интеграции Брандмауэра Azure со средой службы приложений Azure см. в статье [Блокирование среды службы приложений](../app-service/environment/firewall-integration.md#configuring-azure-firewall-with-your-ase).|
 |Azure Backup|Разрешает исходящий доступ к службам Azure Backup.|
 |Azure HDInsight|Разрешает исходящий доступ для трафика платформы HDInsight. Этот тег не охватывает специфические для клиента хранилища или трафик SQL из HDInsight. Включите их с помощью [конечных точек службы](../virtual-network/tutorial-restrict-network-access-to-resources.md) или добавьте их вручную.|
-|Виндовсвиртуалдесктоп (ВВД)|Разрешает исходящий трафик платформы виртуальных рабочих столов Windows. Этот тег не охватывает специфические для развертывания хранилища и конечные точки служебной шины, созданные ВВД. Кроме того, требуются правила сети DNS и службы KMS. Дополнительные сведения об интеграции брандмауэра Azure с ВВД см. в статье [Использование брандмауэра Azure для защиты развертывания виртуальных рабочих столов в Windows](protect-windows-virtual-desktop.md). 
+|Виндовсвиртуалдесктоп (ВВД)|Разрешает исходящий трафик платформы виртуальных рабочих столов Windows. Этот тег не охватывает специфические для развертывания хранилища и конечные точки служебной шины, созданные ВВД. Кроме того, требуются правила сети DNS и службы KMS. Дополнительные сведения об интеграции брандмауэра Azure с ВВД см. в статье [Использование брандмауэра Azure для защиты развертывания виртуальных рабочих столов в Windows](protect-windows-virtual-desktop.md).|
+|Служба Azure Kubernetes (AKS)|Разрешает исходящий доступ к AKS. Дополнительные сведения см. [в статье Использование брандмауэра Azure для защиты развертываний Azure Kubernetes Service (AKS)](protect-azure-kubernetes-service.md).|
 
 > [!NOTE]
 > При выборе тега FQDN в правиле приложения поле protocol:port должно иметь значение **https**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. дополнительные сведения о том, как [развернуть и настроить Брандмауэр Azure с помощью портала Azure](tutorial-firewall-deploy-portal.md).

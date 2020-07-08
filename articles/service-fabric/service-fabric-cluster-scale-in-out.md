@@ -3,12 +3,12 @@ title: Масштабирование Service Fabricного кластера
 description: Масштабировать Service Fabric кластер в или в соответствии с потребностями, задавая правила автомасштабирования для каждого типа узла или масштабируемого набора виртуальных машин. Добавление узлов в кластер Service Fabric
 ms.topic: conceptual
 ms.date: 03/12/2019
-ms.openlocfilehash: 670e2a1fcccf80faaf652f1ce0c749b315c3aaec
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: c72f8eca9bc054446ceec35448c930098c5f81fd
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82797270"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85610257"
 ---
 # <a name="scale-a-cluster-in-or-out"></a>увеличение или уменьшение масштаба кластера;
 
@@ -247,7 +247,7 @@ az vmss scale -g sfclustertutorialgroup -n nt1vm --new-capacity 5
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о планировании емкости кластера, обновлении кластера и секционировании служб см. в следующих статьях:
 
 * [Планирование емкости кластера](service-fabric-cluster-capacity.md)
@@ -258,4 +258,4 @@ az vmss scale -g sfclustertutorialgroup -n nt1vm --new-capacity 5
 [BrowseServiceFabricClusterResource]: ./media/service-fabric-cluster-scale-in-out/BrowseServiceFabricClusterResource.png
 [ClusterResources]: ./media/service-fabric-cluster-scale-in-out/ClusterResources.png
 
-[durability]: service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster
+[durability]: service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster

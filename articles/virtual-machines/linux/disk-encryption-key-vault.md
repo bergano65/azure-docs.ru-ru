@@ -7,12 +7,12 @@ author: msmbaldwin
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2adb158032582dff7449c7c0fc7b13419745f36c
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: 543e3c5d8148632eaca33935cc15e2d2ab1c0cea
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83743564"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85611600"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption"></a>Создание и настройка хранилища ключей для службы "Шифрование дисков Azure"
 
@@ -30,7 +30,7 @@ ms.locfileid: "83743564"
 Эти этапы продемонстрированы в следующих кратких руководствах.
 
 - [Создание и шифрование виртуальной машины Linux с помощью Azure CLI](disk-encryption-cli-quickstart.md)
-- [Создание и шифрование виртуальной машины Linux с помощью Azure PowerShell](disk-encryption-cli-quickstart.md)
+- [Создание и шифрование виртуальной машины Linux с помощью Azure PowerShell](disk-encryption-powershell-quickstart.md)
 
 При необходимости можно создать или импортировать ключ шифрования ключа (KEK).
 

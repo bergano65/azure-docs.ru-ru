@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: rogarana
 ms.service: virtual-machines-windows
 ms.subservice: disks
-ms.openlocfilehash: 164ce87df77d81a7d36d4448f5d8da8287ed0a01
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: c3a73028350054d54c6714107bfdfa7ead3ee4a3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83656717"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85610454"
 ---
 # <a name="server-side-encryption-of-azure-managed-disks"></a>Шифрование управляемых дисков Azure на стороне сервера
 
@@ -75,12 +75,11 @@ ms.locfileid: "83656717"
 
 - Если эта функция включена для диска, ее нельзя отключить.
     Если нужно обойти это ограничение, необходимо [скопировать все данные](disks-upload-vhd-to-managed-disk-powershell.md#copy-a-managed-disk) на другой управляемый диск, не использующий ключи, управляемые клиентом.
-- Поддерживаются только ["мягкие" и "жесткие" ключи RSA](../../key-vault/keys/about-keys.md) размером 2080, другие типы и размеры не поддерживаются.
+- Поддерживаются только [ключи RSA для программного обеспечения и HSM](../../key-vault/keys/about-keys.md) , имеющие размер 2080, а другие ключи и размеры отсутствуют.
 - Диски, созданные на основе пользовательских образов, зашифрованных с помощью шифрования на стороне сервера и ключей, управляемых клиентом, должны быть зашифрованы с помощью тех же самых управляемых клиентом ключей и должны находиться в одной подписке.
 - Моментальные снимки дисков, зашифрованных с помощью шифрования на стороне сервера и ключей, управляемых клиентом, должны быть зашифрованы с помощью тех же управляемых клиентом ключей.
 - Все ресурсы, связанные с ключами, управляемыми клиентом (хранилища Azure Key Vault, наборы шифрования дисков, виртуальные машины, диски и моментальные снимки), должны находиться в одной подписке и регионе.
 - Диски, моментальные снимки и образы, зашифрованные с помощью управляемых клиентом ключей, нельзя переместить в другую подписку.
-- Если вы используете портал Azure для создания набора шифрования диска, то в настоящее время нельзя использовать моментальные снимки.
 - Управляемые диски, зашифрованные на стороне сервера с помощью ключей, управляемых клиентом, нельзя дополнительно зашифровать с помощью шифрования дисков Azure, и наоборот.
 - Сведения об использовании управляемых клиентом ключей с общими коллекциями образов см. в разделе [Предварительная версия: использование управляемых клиентом ключей для шифрования образов](../image-version-encryption.md).
 
@@ -88,41 +87,7 @@ ms.locfileid: "83656717"
 
 #### <a name="setting-up-your-azure-key-vault-and-diskencryptionset"></a>Настройка хранилища Azure Key Vault и набора DiskEncryptionSet
 
-1. Убедитесь, что у вас установлена последняя версия [Azure PowerShell](/powershell/azure/install-az-ps) и вы вошли в учетную запись Azure с помощью командлета Connect-AzAccount.
-
-1. Создайте экземпляр Azure Key Vault и ключ шифрования.
-
-    При создании экземпляра Key Vault необходимо включить обратимое удаление и защиту от удаления. Обратимое удаление гарантирует, что Key Vault будет хранить удаленный ключ в течение заданного срока (по умолчанию 90 дней). Защита от удаления гарантирует, что удаленный ключ нельзя удалить навсегда до истечения срока хранения. Эти параметры защищают от потери данных из-за случайного удаления. Эти параметры являются обязательными при использовании Key Vault для шифрования управляемых дисков.
-    
-    ```powershell
-    $ResourceGroupName="yourResourceGroupName"
-    $LocationName="westcentralus"
-    $keyVaultName="yourKeyVaultName"
-    $keyName="yourKeyName"
-    $keyDestination="Software"
-    $diskEncryptionSetName="yourDiskEncryptionSetName"
-
-    $keyVault = New-AzKeyVault -Name $keyVaultName -ResourceGroupName $ResourceGroupName -Location $LocationName -EnableSoftDelete -EnablePurgeProtection
-
-    $key = Add-AzKeyVaultKey -VaultName $keyVaultName -Name $keyName -Destination $keyDestination  
-    ```
-
-1.    Создайте экземпляр DiskEncryptionSet. 
-    
-        ```powershell
-        $desConfig=New-AzDiskEncryptionSetConfig -Location $LocationName -SourceVaultId $keyVault.ResourceId -KeyUrl $key.Key.Kid -IdentityType SystemAssigned
-        
-        $des=New-AzDiskEncryptionSet -Name $diskEncryptionSetName -ResourceGroupName $ResourceGroupName -InputObject $desConfig 
-        ```
-
-1.    Предоставьте ресурсу DiskEncryptionSet доступ к хранилищу ключей.
-
-        > [!NOTE]
-        > Создание удостоверения DiskEncryptionSet в Azure Active Directory может занять несколько минут. Если при выполнении следующей команды появляется сообщение об ошибке вида "Не удается найти объект Active Directory", подождите несколько минут и повторите попытку.
-        
-        ```powershell  
-        Set-AzKeyVaultAccessPolicy -VaultName $keyVaultName -ObjectId $des.Identity.PrincipalId -PermissionsToKeys wrapkey,unwrapkey,get
-        ```
+[!INCLUDE [virtual-machines-disks-encryption-create-key-vault-powershell](../../../includes/virtual-machines-disks-encryption-create-key-vault-powershell.md)]
 
 #### <a name="create-a-vm-using-a-marketplace-image-encrypting-the-os-and-data-disks-with-customer-managed-keys"></a>Создание виртуальной машины с помощью образа Marketplace, шифрование дисков операционной системы и данных с помощью управляемых клиентом ключей
 
@@ -260,14 +225,7 @@ Update-AzDiskEncryptionSet -Name $diskEncryptionSetName -ResourceGroupName $Reso
 
 #### <a name="find-the-status-of-server-side-encryption-of-a-disk"></a>Определение состояния шифрования диска на стороне сервера
 
-```PowerShell
-$ResourceGroupName="yourResourceGroupName"
-$DiskName="yourDiskName"
-
-$disk=Get-AzDisk -ResourceGroupName $ResourceGroupName -DiskName $DiskName
-$disk.Encryption.Type
-
-```
+[!INCLUDE [virtual-machines-disks-encryption-status-powershell](../../../includes/virtual-machines-disks-encryption-status-powershell.md)]
 
 > [!IMPORTANT]
 > Управляемые клиентом ключи используют управляемые удостоверения для ресурсов Azure — функцию Azure Active Directory (Azure AD). При настройке управляемых пользователем ключей управляемое удостоверение автоматически назначается вашим ресурсам. При перемещении подписки, группы ресурсов или управляемого диска из одного каталога Azure AD в другой управляемое удостоверение, связанное с управляемыми дисками, не передается в новый клиент, поэтому управляемые клиентом ключи могут перестать работать. Дополнительные сведения см. в статье [Передача подписки между каталогами Azure AD](../../active-directory/managed-identities-azure-resources/known-issues.md#transferring-a-subscription-between-azure-ad-directories).

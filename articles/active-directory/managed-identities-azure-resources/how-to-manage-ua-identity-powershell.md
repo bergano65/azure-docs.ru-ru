@@ -1,6 +1,6 @@
 ---
 title: Создание, перечисление & удаление назначенного пользователем управляемого удостоверения с помощью Azure PowerShell Azure AD
-description: Пошаговые инструкции по созданию и удалению управляемых удостоверений, назначаемых пользователем, а также получения их списка с помощью Azure PowerShell.
+description: Пошаговые инструкции по созданию, перечислению и удалению назначенного пользователем управляемого удостоверения с помощью Azure PowerShell.
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -9,32 +9,32 @@ editor: ''
 ms.service: active-directory
 ms.subservice: msi
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/16/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c512a867685b4480c7b31ac582e2cee069ee2447
-ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
+ms.openlocfilehash: 675c9a795a75f2a37e107ab9e8129a761581cde0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74547398"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85608455"
 ---
-# <a name="create-list-or-delete-a-user-assigned-managed-identity-using-azure-powershell"></a>Создание и удаление управляемых удостоверений, назначаемых пользователем, а также получение их списка с помощью Azure PowerShell
+# <a name="create-list-or-delete-a-user-assigned-managed-identity-using-azure-powershell"></a>Создание, перечисление или удаление назначенного пользователем управляемого удостоверения с помощью Azure PowerShell
 
 [!INCLUDE [preview-notice](~/includes/active-directory-msi-preview-notice-ua.md)]
 
-Функция управляемых удостоверений для ресурсов Azure предоставляет службам Azure управляемые удостоверения в Azure Active Directory. Это удостоверение можно использовать для аутентификации в службах, которые поддерживают аутентификацию Azure AD, без учетных данных в коде. 
+Управляемые удостоверения для ресурсов Azure предоставляют службы Azure с управляемым удостоверением в Azure Active Directory. Это удостоверение можно использовать для аутентификации в службах, которые поддерживают аутентификацию Azure AD, без учетных данных в коде. 
 
-В этой статье вы узнаете, как создавать и удалять управляемые удостоверения, назначаемые пользователем, а также получить их список с помощью Azure PowerShell.
+Из этой статьи вы узнаете, как создать, перечислить и удалить назначенное пользователем управляемое удостоверение с помощью Azure PowerShell.
 
 [!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-- Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#how-does-the-managed-identities-for-azure-resources-work)**.
+- Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#managed-identity-types)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
 - Установите [последнюю версию Azure PowerShell](/powershell/azure/install-az-ps), если это еще не сделано.
 - Если модуль PowerShell запущен локально, необходимо также выполнить следующие действия. 
@@ -79,6 +79,6 @@ Remove-AzUserAssignedIdentity -ResourceGroupName <RESOURCE GROUP> -Name <USER AS
 > [!NOTE]
 > При удалении управляемого удостоверения, назначаемого пользователем, не удаляются ссылки из ресурсов, которым оно было назначено. Назначения удостоверения должны быть удалены отдельно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Полный список команд Azure PowerShell для управляемых удостоверений для ресурсов Azure и дополнительные сведения о них приведены в разделе [Az.ManagedServiceIdentity](/powershell/module/az.managedserviceidentity#managed_service_identity).

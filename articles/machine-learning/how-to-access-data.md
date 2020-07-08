@@ -5,25 +5,27 @@ description: Узнайте, как использовать хранилища 
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.author: sihhu
 author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 03/24/2020
-ms.custom: seodec18
-ms.openlocfilehash: 904738d73aaa0580773a085c70cd74f4240fc4b7
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
-ms.translationtype: HT
+ms.custom: seodec18, tracking-python
+ms.openlocfilehash: cb52935b731a507d2408d174a5aa571fb2bfc973
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83773939"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85609271"
 ---
 # <a name="connect-to-azure-storage-services"></a>Подключение к службам хранилища Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-В этой статье приводятся сведения о подключении к службам хранилища Azure с помощью хранилищ данных Машинного обучения Azure. В хранилищах данных содержатся данные о подключении, такие как идентификатор подписки и авторизация с помощью маркеров в [Key Vault](https://azure.microsoft.com/services/key-vault/), связанных с рабочей областью. С их помощью вы можете безопасно получать доступ к хранилищу без необходимости их жесткого кодирования в сценариях. Сведения о работе с хранилищами данных в общем рабочем процессе доступа к данным в Машинном обучение Azure см. в статье о [безопасном доступе к данным](concept-data.md#data-workflow).
+Из этой статьи вы узнаете, как **подключиться к службам хранилища Azure с помощью машинное обучение Azure хранилищ данных**. В хранилищах данных содержатся данные о подключении, такие как идентификатор подписки и авторизация с помощью маркеров в [Key Vault](https://azure.microsoft.com/services/key-vault/), связанных с рабочей областью. С их помощью вы можете безопасно получать доступ к хранилищу без необходимости их жесткого кодирования в сценариях. 
 
-Хранилища данных можно создавать на основе [этих решений службы хранилища Azure](#matrix). При использовании неподдерживаемых решений хранилищ и для сокращения затрат на исходящие данные во время экспериментов машинного обучения рекомендуется [переместить данные](#move) в поддерживаемые решения для хранилища Azure. 
+**Для неподдерживаемых решений для хранения**данных и для сохранения затрат на исходящие данные во время экспериментов в машинном [коде перенесите данные](#move) в поддерживаемые решения службы хранилища Azure.  Хранилища данных можно создавать на основе [этих решений службы хранилища Azure](#matrix). 
+
+Сведения о работе с хранилищами данных в общем рабочем процессе доступа к данным в Машинном обучение Azure см. в статье о [безопасном доступе к данным](concept-data.md#data-workflow).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -70,7 +72,7 @@ ms.locfileid: "83773939"
 
 [Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction?toc=/azure/storage/blobs/toc.json) создано на основе хранилища BLOB-объектов Azure и предназначено для анализа больших данных в организации. Основная часть Data Lake Storage 2-го поколения — это добавление [иерархического пространства имен](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace) в хранилище BLOB-объектов. Иерархическое пространство имен позволяет упорядочивать объекты и файлы в иерархии каталогов для эффективного доступа к данным.
 
-При создании рабочей области в ней автоматически регистрируются контейнер BLOB-объектов Azure и общая папка Azure. Они называются `workspaceblobstore` и `workspacefilestore`, соответственно. `workspaceblobstore` используется для хранения артефактов рабочей области и журналов экспериментов машинного обучения. `workspacefilestore` используется для хранения записных книжек и скриптов R, авторизованных с помощью [вычислительной операции](https://docs.microsoft.com/azure/machine-learning/concept-compute-instance#accessing-files). Контейнер `workspaceblobstore` задан в качестве хранилища данных по умолчанию.
+При создании рабочей области в ней автоматически регистрируются контейнер BLOB-объектов Azure и общая папка Azure. Они называются `workspaceblobstore` и `workspacefilestore`, соответственно. `workspaceblobstore` используется для хранения артефактов рабочей области и журналов экспериментов машинного обучения. `workspacefilestore` используется для хранения записных книжек и скриптов R, авторизованных с помощью [вычислительной операции](https://docs.microsoft.com/azure/machine-learning/concept-compute-instance#accessing-files). `workspaceblobstore`Контейнер задается в качестве хранилища данных по умолчанию и не может быть удален из рабочей области.
 
 > [!IMPORTANT]
 > Конструктор машинного обучения Azure (предварительная версия) автоматически создаст хранилище данных с именем **azureml_globaldatasets** при открытии примера на домашней странице конструктора. В этом хранилище данных содержатся только примеры наборов данных. **Не** используйте это хранилище данных для доступа к конфиденциальным данным.
@@ -91,17 +93,22 @@ ms.locfileid: "83773939"
 
 Все методы регистрации содержатся в классе [`Datastore`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py) и имеют форму `register_azure_*`.
 > [!IMPORTANT]
-> Если ваша учетная запись хранения находится в виртуальной сети, поддерживается создание хранилищ данных только **с помощью пакета SDK**.
+> Если вы планируете создать хранилище данных для учетных записей хранения, которые находятся в виртуальной сети, см. раздел доступ к данным в виртуальной сети.
 
 Сведения, необходимые для заполнения метода `register_azure_*()`, можно найти на [портале Azure](https://portal.azure.com).
+
+* Имя хранилища данных должно состоять только из строчных букв, цифр и знаков подчеркивания. 
 
 * Если для проверки подлинности вы планируете использовать ключ учетной записи или маркер SAS, выберите элемент **Учетные записи хранения** на панели слева и выберите учетную запись хранения, которую требуется зарегистрировать. 
   * На странице **Обзор** приводятся такие сведения, как имя учетной записи, контейнер и имя общей папки. 
       1. Чтобы использовать ключи учетной записи, перейдите к элементу **Ключи доступа** на панели **Параметры**. 
       1. Чтобы использовать маркеры SAS, перейдите к элементу **Подписанные URL-адреса** на панели **Параметры**.
 
-* Если проверка подлинности будет выполняться с помощью субъекта-службы, перейдите в раздел **Регистрация приложений** и выберите нужное приложение. 
-    * На соответствующей странице **Обзор** вы найдете такие требуемые сведения, такие как идентификаторы клиентов (tenant ID и client iD).
+* Если вы планируете использовать субъект-службу для проверки подлинности, перейдите к **Регистрация приложений** и выберите приложение, которое вы хотите использовать. 
+    * Соответствующая страница **обзора** будет содержать требуемые сведения, такие как идентификатор клиента и идентификатор клиента.
+
+> [!IMPORTANT]
+> По соображениям безопасности может потребоваться изменить ключи доступа для учетной записи хранения Azure (ключ учетной записи или маркер SAS). При этом необходимо синхронизировать новые учетные данные с рабочей областью и подключенными к ней хранилищами данных. Узнайте, как синхронизировать обновленные учетные данные с помощью [этих шагов](how-to-change-storage-access-key.md). 
 
 В следующих примерах показано, как зарегистрировать контейнер BLOB-объектов Azure, общую папку Azure и Azure Data Lake Storage 2-го поколения в качестве хранилища данных. Параметры, приведенные в этих примерах, являются **обязательными** для создания и регистрации хранилища данных. 
 
@@ -109,7 +116,7 @@ ms.locfileid: "83773939"
 
 #### <a name="blob-container"></a>Контейнер BLOB-объектов
 
-Чтобы зарегистрировать контейнер BLOB-объектов в качестве хранилища данных, используйте [`register_azure_blob-container()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py#register-azure-blob-container-workspace--datastore-name--container-name--account-name--sas-token-none--account-key-none--protocol-none--endpoint-none--overwrite-false--create-if-not-exists-false--skip-validation-false--blob-cache-timeout-none--grant-workspace-access-false--subscription-id-none--resource-group-none-).
+Чтобы зарегистрировать контейнер BLOB-объектов в качестве хранилища данных, используйте [`register_azure_blob_container()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py#register-azure-blob-container-workspace--datastore-name--container-name--account-name--sas-token-none--account-key-none--protocol-none--endpoint-none--overwrite-false--create-if-not-exists-false--skip-validation-false--blob-cache-timeout-none--grant-workspace-access-false--subscription-id-none--resource-group-none-).
 
 Следующий код создает и регистрирует хранилище данных `blob_datastore_name` в рабочей области `ws`. Это хранилище данных обращается к контейнеру BLOB-объектов `my-container-name` в учетной записи хранения `my-account-name` с помощью предоставленного ключа доступа учетной записи.
 
@@ -125,7 +132,7 @@ blob_datastore = Datastore.register_azure_blob_container(workspace=ws,
                                                          account_name=account_name,
                                                          account_key=account_key)
 ```
-Если контейнер BLOB-объектов находится в виртуальной сети, включите параметр `skip_validation=True` в метод [`register_azure_blob-container()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py#register-azure-blob-container-workspace--datastore-name--container-name--account-name--sas-token-none--account-key-none--protocol-none--endpoint-none--overwrite-false--create-if-not-exists-false--skip-validation-false--blob-cache-timeout-none--grant-workspace-access-false--subscription-id-none--resource-group-none-). 
+Если контейнер BLOB-объектов находится в виртуальной сети, включите параметр `skip_validation=True` в метод [`register_azure_blob_container()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py#register-azure-blob-container-workspace--datastore-name--container-name--account-name--sas-token-none--account-key-none--protocol-none--endpoint-none--overwrite-false--create-if-not-exists-false--skip-validation-false--blob-cache-timeout-none--grant-workspace-access-false--subscription-id-none--resource-group-none-). 
 
 #### <a name="file-share"></a>Общая папка
 
@@ -150,8 +157,6 @@ file_datastore = Datastore.register_azure_file_share(workspace=ws,
 #### <a name="azure-data-lake-storage-generation-2"></a>Azure Data Lake Storage 2-го поколения
 
 Для хранилища данных Azure Data Lake Storage 2-го поколения (ADLS 2-го поколения) используйте [register_azure_data_lake_gen2()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore.datastore?view=azure-ml-py#register-azure-data-lake-gen2-workspace--datastore-name--filesystem--account-name--tenant-id--client-id--client-secret--resource-url-none--authority-url-none--protocol-none--endpoint-none--overwrite-false-) для регистрации базы данных учетных данных, подключенной к хранилищу Azure DataLake 2-го поколения, с [разрешениями субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal). Чтобы использовать субъект-службу, необходимо [зарегистрировать приложение](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals) и предоставить субъекту-службе доступ с правами на *чтение данных BLOB-объектов хранилища*. Узнайте больше о [контроле доступа в ADLS 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control). 
-
-Чтобы использовать субъект-службу, необходимо [зарегистрировать приложение](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals) и предоставить субъекту-службе соответствующие права доступа к данным. Узнайте больше о [контроле доступа в ADLS 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control). 
 
 Следующий код создает и регистрирует хранилище данных `adlsgen2_datastore_name` в рабочей области `ws`. Это хранилище данных обращается к файловой системе `test` в учетной записи хранения `account_name` с помощью предоставленных учетных данных субъекта-службы.
 
@@ -180,20 +185,23 @@ adlsgen2_datastore = Datastore.register_azure_data_lake_gen2(workspace=ws,
 Создайте хранилище данных, выполнив всего несколько шагов в Студии машинного обучения Azure.
 
 > [!IMPORTANT]
-> Если ваша учетная запись хранения находится в виртуальной сети, поддерживается создание хранилищ данных только [с помощью пакета SDK](#python-sdk). 
+> Если учетная запись хранения данных находится в виртуальной сети, необходимо выполнить дополнительные действия по настройке, чтобы обеспечить доступ к данным в студии. См. раздел [сетевая изоляция & конфиденциальность] (инструкции по включению виртуальной сети. md # Machine-Learning-Studio), чтобы обеспечить применение соответствующих действий по настройке. 
 
 1. Войдите в [Студию машинного обучения Azure](https://ml.azure.com/).
 1. Выберите элемент **Хранилища данных** на панели слева в разделе **Управление**.
 1. Выберите **+ Новое хранилище данных**.
 1. Заполните форму для нового хранилища данных. Форма самостоятельно интеллектуально обновится в соответствии с выбранным типом хранилища Azure и типа проверки подлинности.
   
-Сведения, необходимые для заполнения формы, можно найти на [портале Azure](https://portal.azure.com). Выберите элемент **Учетные записи хранения** на панели слева и выберите учетную запись хранения, которую требуется зарегистрировать. На странице **Обзор** приводятся такие сведения, как имя учетной записи, контейнер и имя общей папки. 
+Сведения, необходимые для заполнения формы, можно найти на [портале Azure](https://portal.azure.com). Выберите элемент **Учетные записи хранения** на панели слева и выберите учетную запись хранения, которую требуется зарегистрировать. На странице " **Обзор** " представлены такие сведения, как имя учетной записи, контейнер и имя общего файлового ресурса. 
 
 * Для использования элементов проверки подлинности, таких как ключ учетной записи или маркер SAS, перейдите к элементу **Ключи доступа** на панели **Параметры**. 
 
 * Для использования элементов субъекта-службы, таких как идентификаторы клиентов (tenant ID и client ID), перейдите в раздел **Регистрация приложений** и выберите нужное приложение. Эти элементы будут находиться на соответствующей странице **Обзор**. 
 
-В следующем примере показано, как выглядит форма при создании хранилища BLOB-объектов Azure. 
+> [!IMPORTANT]
+> По соображениям безопасности может потребоваться изменить ключи доступа для учетной записи хранения Azure (ключ учетной записи или маркер SAS). При этом необходимо синхронизировать новые учетные данные с рабочей областью и подключенными к ней хранилищами данных. Узнайте, как синхронизировать обновленные учетные данные с помощью [этих шагов](how-to-change-storage-access-key.md). 
+
+В следующем примере показано, как выглядит форма при создании **хранилища BLOB-объектов Azure**. 
     
 ![Форма для нового хранилища данных.](media/how-to-access-data/new-datastore-form.png)
 
@@ -227,6 +235,7 @@ datastore = ws.get_default_datastore()
 ```Python
  ws.set_default_datastore(new_default_datastore)
 ```
+
 <a name="up-and-down"></a>
 ## <a name="upload-and-download-data"></a>Отправка и загрузка данных
 
@@ -290,6 +299,11 @@ run_config.source_directory_data_store = "workspaceblobstore"
 | [Модуль Azure IoT Edge](how-to-deploy-and-where.md) | &nbsp; | Развертывание моделей на устройствах IoT Edge. |
 
 В случаях, когда пакет SDK не предоставляет доступ к хранилищам данных, можно создать пользовательский код для доступа к данным с помощью соответствующего пакета SDK Azure Например, [пакет SDK для хранилища Azure для Python](https://github.com/Azure/azure-storage-python) является клиентской библиотекой, подходящей для доступа к данным, хранящимся в BLOB-объектах или файлах.
+
+
+## <a name="access-data-in-a-virtual-network"></a>Доступ к данным в виртуальной сети
+
+Если хранилище находится за виртуальной сетью, необходимо выполнить дополнительные действия по настройке рабочей области и хранилища данных для доступа к данным. Дополнительные сведения о том, как использовать хранилища и наборы данных в виртуальной сети, см. в статье [Сетевая изоляция во время обучения & вывода с частными виртуальными сетями](how-to-enable-virtual-network.md#use-datastores-and-datasets).
 
 <a name="move"></a>
 

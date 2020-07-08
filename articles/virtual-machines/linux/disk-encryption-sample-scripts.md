@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: b54f9f3466fe5f7e2da622077f53575d6f43f72d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 32d4e709036135a9a88ec36eaafaa176df33fabf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80585954"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85610359"
 ---
 # <a name="azure-disk-encryption-sample-scripts"></a>Примеры скриптов шифрования дисков Azure 
 
@@ -43,7 +43,7 @@ ms.locfileid: "80585954"
 В следующей таблице показано, какие параметры могут использоваться в сценарии PowerShell: 
 
 
-|Параметр|Описание|Обязательное?|
+|Параметр|Описание:|Обязательное?|
 |------|------|------|
 |$resourceGroupName| Имя группы ресурсов, к которой принадлежит хранилище ключей.  При отсутствии группы ресурсов с таким именем — она будет создана.| True|
 |$keyVaultName|Имя хранилища ключей, в котором будут размещаться ключи шифрования. При отсутствии хранилища ключей с таким именем — оно будет создано.| True|
@@ -227,7 +227,7 @@ ms.locfileid: "80585954"
     fi
    ```
 
-2. Измените настройки шифрования в */etc/crypttab*. Результат будет выглядеть так:
+2. Измените настройки шифрования в */etc/crypttab*. Он должен выглядеть так:
    ```
     xxx_crypt uuid=xxxxxxxxxxxxxxxxxxxxx none luks,discard,keyscript=/usr/local/sbin/azure_crypt_key.sh
     ```
@@ -252,7 +252,7 @@ ms.locfileid: "80585954"
 
 8. Перейдите к следующему шагу и передайте свой виртуальный жесткий диск в Azure.
 
-### <a name="opensuse-132"></a>openSUSE 13.2
+### <a name="opensuse-132"></a>openSUSE 13.2
 Чтобы настроить шифрование во время установки дистрибутива, сделайте следующее:
 1. При настройке разделов дисков выберите **Encrypt Volume Group** (Шифрование группы томов), а затем введите пароль. Это пароль, который потребуется передать в хранилище ключей.
 
@@ -320,7 +320,7 @@ ms.locfileid: "80585954"
 
 6. Теперь виртуальную машину можно отозвать и передать свой виртуальный жесткий диск в Azure.
 
-### <a name="centos-7-and-rhel-81"></a>CentOS 7 и RHEL 8,1
+### <a name="centos-7-and-rhel-7"></a>CentOS 7 и RHEL 7
 
 Чтобы настроить шифрование во время установки дистрибутива, сделайте следующее:
 1. Во время настройки разделов дисков выберите **Encrypt my data** (Шифрование личных данных).

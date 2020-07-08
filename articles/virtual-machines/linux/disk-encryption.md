@@ -1,22 +1,22 @@
 ---
 title: Шифрование управляемых дисков Azure на стороне сервера — Azure CLI
-description: Служба хранилища Azure защищает ваши данные путем шифрования неактивных данных перед их сохранением в кластерах хранилища. Для шифрования управляемых дисков можно использовать ключи, управляемые корпорацией Майкрософт, или ключи, управляемые клиентом с помощью собственных ключей.
+description: Служба хранилища Azure защищает ваши данные путем шифрования неактивных данных перед их сохранением в кластерах хранилища. Для шифрования управляемых дисков можно использовать ключи, управляемые корпорацией Майкрософт, или ключи, управляемые клиентом, для управления шифрованием своими собственными ключами.
 author: roygara
 ms.date: 04/21/2020
 ms.topic: conceptual
 ms.author: rogarana
 ms.service: virtual-machines-linux
 ms.subservice: disks
-ms.openlocfilehash: a27f37f9c69dcadd1234faf67e23eaaa46d33f7a
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: a77f40f554e459ad1f28b11969421689cd29b4bb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83651059"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85609399"
 ---
 # <a name="server-side-encryption-of-azure-managed-disks"></a>Шифрование управляемых дисков Azure на стороне сервера
 
-Управляемые диски Azure по умолчанию автоматически шифруют данные при сохранении их в облаке. Шифрование на стороне сервера (SSE) защищает данные и помогает соблюсти корпоративные обязательствам по обеспечению безопасности и соответствия. 
+Управляемые диски Azure по умолчанию автоматически шифруют данные при сохранении их в облаке. Шифрование на стороне сервера (SSE) защищает данные и помогает соблюсти корпоративные обязательства по обеспечению безопасности и соответствия. 
 
 Данные в управляемых дисках Azure шифруются прозрачно с использованием 256-разрядного [шифрования AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), одного из наиболее сильных блочных шифров, который совместим со стандартом FIPS 140-2. Дополнительные сведения о криптографических модулях, лежащих в основе функции управляемых дисков Azure, см. в статье [Cryptography API: Next Generation](https://docs.microsoft.com/windows/desktop/seccng/cng-portal) (API Cryptography: следующее поколение).
 
@@ -27,7 +27,7 @@ ms.locfileid: "83651059"
 
 ## <a name="about-encryption-key-management"></a>Об управлении ключами шифрования
 
-Вы можете использовать ключи, управляемые платформой, для шифрования управляемого диска, или управлять шифрованием с помощью собственных ключей. Если вы решили управлять шифрованием с помощью собственных ключей, вы можете указать *управляемый клиентом ключ*, который будет использоваться для шифрования и расшифровки всех данных на управляемых дисках. 
+Вы можете использовать ключи, управляемые платформой, для шифрования управляемого диска или управлять шифрованием с помощью собственных ключей. Если вы решили управлять шифрованием с помощью собственных ключей, вы можете указать *управляемый клиентом ключ*, который будет использоваться для шифрования и расшифровки всех данных на управляемых дисках. 
 
 В следующих разделах подробно описаны все варианты управления ключами.
 
@@ -75,63 +75,18 @@ ms.locfileid: "83651059"
 
 - Если эта функция включена для диска, ее нельзя отключить.
     Если нужно обойти это ограничение, необходимо [скопировать все данные](disks-upload-vhd-to-managed-disk-cli.md#copy-a-managed-disk) на другой управляемый диск, не использующий ключи, управляемые клиентом.
-- Поддерживаются только ["мягкие" и "жесткие" ключи RSA](../../key-vault/keys/about-keys.md) размером 2048, другие типы и размеры не поддерживаются.
+- Поддерживаются только [ключи RSA для программного обеспечения и HSM](../../key-vault/keys/about-keys.md) , имеющие размер 2048, а другие ключи и размеры отсутствуют.
 - Диски, созданные на основе пользовательских образов, зашифрованных с помощью шифрования на стороне сервера и ключей, управляемых клиентом, должны быть зашифрованы с помощью тех же самых управляемых клиентом ключей и должны находиться в одной подписке.
 - Моментальные снимки дисков, зашифрованных с помощью шифрования на стороне сервера и ключей, управляемых клиентом, должны быть зашифрованы с помощью тех же управляемых клиентом ключей.
 - Все ресурсы, связанные с ключами, управляемыми клиентом (хранилища Azure Key Vault, наборы шифрования дисков, виртуальные машины, диски и моментальные снимки), должны находиться в одной подписке и регионе.
 - Диски, моментальные снимки и образы, зашифрованные с помощью управляемых клиентом ключей, нельзя переместить в другую подписку.
-- Если вы используете портал Azure для создания набора шифрования диска, то в настоящее время нельзя использовать моментальные снимки.
 - Управляемые диски, зашифрованные с помощью ключей, управляемых клиентом, также нельзя зашифровать с помощью шифрования дисков Azure.
 - Сведения об использовании управляемых клиентом ключей с общими коллекциями образов см. в разделе [Предварительная версия: использование управляемых клиентом ключей для шифрования образов](../image-version-encryption.md).
 
 ### <a name="cli"></a>CLI
 #### <a name="setting-up-your-azure-key-vault-and-diskencryptionset"></a>Настройка хранилища Azure Key Vault и набора DiskEncryptionSet
 
-1. Обязательно установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index).
-
-1. Создайте экземпляр Azure Key Vault и ключ шифрования.
-
-    При создании экземпляра Key Vault необходимо включить обратимое удаление и защиту от удаления. Обратимое удаление гарантирует, что Key Vault будет хранить удаленный ключ в течение заданного срока (по умолчанию 90 дней). Защита от удаления гарантирует, что удаленный ключ нельзя удалить навсегда до истечения срока хранения. Эти параметры защищают от потери данных из-за случайного удаления. Эти параметры являются обязательными при использовании Key Vault для шифрования управляемых дисков.
-
-    > [!IMPORTANT]
-    > Не используйте "верблюжий стиль написания" для региона, так как в этом случае могут возникнуть проблемы при назначении дополнительных дисков ресурсу на портале Azure.
-
-    ```azurecli
-    subscriptionId=yourSubscriptionID
-    rgName=yourResourceGroupName
-    location=westcentralus
-    keyVaultName=yourKeyVaultName
-    keyName=yourKeyName
-    diskEncryptionSetName=yourDiskEncryptionSetName
-    diskName=yourDiskName
-
-    az account set --subscription $subscriptionId
-
-    az keyvault create -n $keyVaultName -g $rgName -l $location --enable-purge-protection true --enable-soft-delete true
-
-    az keyvault key create --vault-name $keyVaultName -n $keyName --protection software
-    ```
-
-1.    Создайте экземпляр DiskEncryptionSet. 
-    
-        ```azurecli
-        keyVaultId=$(az keyvault show --name $keyVaultName --query [id] -o tsv)
-    
-        keyVaultKeyUrl=$(az keyvault key show --vault-name $keyVaultName --name $keyName --query [key.kid] -o tsv)
-    
-        az disk-encryption-set create -n $diskEncryptionSetName -l $location -g $rgName --source-vault $keyVaultId --key-url $keyVaultKeyUrl
-        ```
-
-1.    Предоставьте ресурсу DiskEncryptionSet доступ к хранилищу ключей. 
-
-        > [!NOTE]
-        > Создание удостоверения DiskEncryptionSet в Azure Active Directory может занять несколько минут. Если при выполнении следующей команды появляется сообщение об ошибке вида "Не удается найти объект Active Directory", подождите несколько минут и повторите попытку.
-
-        ```azurecli
-        desIdentity=$(az disk-encryption-set show -n $diskEncryptionSetName -g $rgName --query [identity.principalId] -o tsv)
-    
-        az keyvault set-policy -n $keyVaultName -g $rgName --object-id $desIdentity --key-permissions wrapkey unwrapkey get
-        ```
+[!INCLUDE [virtual-machines-disks-encryption-create-key-vault](../../../includes/virtual-machines-disks-encryption-create-key-vault-cli.md)]
 
 #### <a name="create-a-vm-using-a-marketplace-image-encrypting-the-os-and-data-disks-with-customer-managed-keys"></a>Создание виртуальной машины с помощью образа Marketplace, шифрование дисков операционной системы и данных с помощью управляемых клиентом ключей
 
@@ -158,7 +113,7 @@ rgName=yourResourceGroupName
 diskName=yourDiskName
 diskEncryptionSetName=yourDiskEncryptionSetName
  
-az disk update -n $diskName -g $rgName --encryption-type EncryptionAtRestWithCustomerKey --disk-encryption-set $diskEncryptionSetId
+az disk update -n $diskName -g $rgName --encryption-type EncryptionAtRestWithCustomerKey --disk-encryption-set $diskEncryptionSetName
 ```
 
 #### <a name="create-a-virtual-machine-scale-set-using-a-marketplace-image-encrypting-the-os-and-data-disks-with-customer-managed-keys"></a>Создание масштабируемого набора виртуальных машин с помощью образа Marketplace, шифрование дисков операционной системы и данных с помощью управляемых клиентом ключей
@@ -218,11 +173,7 @@ az disk-encryption-set update -n keyrotationdes -g keyrotationtesting --key-url 
 
 #### <a name="find-the-status-of-server-side-encryption-of-a-disk"></a>Определение состояния шифрования диска на стороне сервера
 
-```azurecli
-
-az disk show -g yourResourceGroupName -n yourDiskName --query [encryption.type] -o tsv
-
-```
+[!INCLUDE [virtual-machines-disks-encryption-status-cli](../../../includes/virtual-machines-disks-encryption-status-cli.md)]
 
 > [!IMPORTANT]
 > Управляемые клиентом ключи используют управляемые удостоверения для ресурсов Azure — функцию Azure Active Directory (Azure AD). При настройке управляемых пользователем ключей управляемое удостоверение автоматически назначается вашим ресурсам. При перемещении подписки, группы ресурсов или управляемого диска из одного каталога Azure AD в другой управляемое удостоверение, связанное с управляемыми дисками, не передается в новый клиент, поэтому управляемые клиентом ключи могут перестать работать. Дополнительные сведения см. в статье [Передача подписки между каталогами Azure AD](../../active-directory/managed-identities-azure-resources/known-issues.md#transferring-a-subscription-between-azure-ad-directories).
