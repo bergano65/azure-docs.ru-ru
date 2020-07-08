@@ -8,17 +8,17 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/28/2019
 ms.author: marsma
 ms.reviewer: oldalton
 ms.custom: aaddev
-ms.openlocfilehash: d94bf7ffe955c9ec9ee2a2e7f7c4dbaaa28df270
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 06e197a6e445c7dc1179be696318905f2132ee36
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77085865"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85477742"
 ---
 # <a name="configure-keychain"></a>Настройка цепочки ключей
 
@@ -30,21 +30,21 @@ ms.locfileid: "77085865"
 
 ### <a name="ios"></a>iOS
 
-По умолчанию MSAL в `com.microsoft.adalcache` iOS использует группу доступа. Это группа общего доступа, используемая как в пакетах SDK MSAL, так и в библиотеке аутентификация Azure AD Library (ADAL), и обеспечивает оптимальное взаимодействие единого входа между несколькими приложениями из одного издателя.
+По умолчанию MSAL в iOS использует `com.microsoft.adalcache` группу доступа. Это группа общего доступа, используемая как в пакетах SDK MSAL, так и в библиотеке аутентификация Azure AD Library (ADAL), и обеспечивает оптимальное взаимодействие единого входа между несколькими приложениями из одного издателя.
 
-В `com.microsoft.adalcache` iOS добавьте группу цепочки ключей в назначение вашего приложения в Xcode в**Capabilities** > разделе **Параметры** > проекта**общий доступ к цепочке ключей**
+В iOS добавьте `com.microsoft.adalcache` группу цепочки ключей в назначение вашего приложения в Xcode в разделе **Параметры проекта**  >  **Capabilities**  >  **общий доступ к цепочке ключей**
 
 ### <a name="macos"></a>macOS
 
 MSAL в macOS использует `com.microsoft.identity.universalstorage` группу доступа по умолчанию.
 
-Из-за ограничений macOS цепочки ключей `access group` MSAL не переводится непосредственно в атрибут группы доступа к цепочке ключей (см. [Ксекаттракцессграуп](https://developer.apple.com/documentation/security/ksecattraccessgroup?language=objc)) в macOS 10,14 и более ранних версиях. Однако он ведет себя аналогично с точки зрения единого входа, гарантируя, что несколько приложений, распространяемых одним и тем же разработчиком Apple, могут иметь автоматический единый вход.
+Из-за ограничений macOS цепочки ключей MSAL не переводится `access group` непосредственно в атрибут группы доступа к цепочке ключей (см. [ксекаттракцессграуп](https://developer.apple.com/documentation/security/ksecattraccessgroup?language=objc)) в macOS 10,14 и более ранних версиях. Однако он ведет себя аналогично с точки зрения единого входа, гарантируя, что несколько приложений, распространяемых одним и тем же разработчиком Apple, могут иметь автоматический единый вход.
 
 В macOS 10,15 (macOS Catalina) MSAL использует атрибут группы доступа к цепочке ключей для автоматического входа в систему, аналогично iOS.
 
 ## <a name="custom-keychain-access-group"></a>Пользовательская группа доступа к цепочке ключей
 
-Если вы хотите использовать другую группу доступа к цепочке ключей, можно передать пользовательскую группу при создании `MSALPublicClientApplicationConfig` перед созданием `MSALPublicClientApplication`, например:
+Если вы хотите использовать другую группу доступа к цепочке ключей, можно передать пользовательскую группу при создании `MSALPublicClientApplicationConfig` перед созданием `MSALPublicClientApplication` , например:
 
 # <a name="objective-c"></a>[Objective-C](#tab/objc)
 
@@ -108,6 +108,6 @@ if let bundleIdentifier = Bundle.main.bundleIdentifier {
 
 В macOS приложения могут выполняться без подписи разработчика. Хотя большая часть функций MSAL будет продолжать работать, единый вход через цепочку ключей требует, чтобы приложение было подписано. Если у вас есть несколько запросов на цепочку ключей, убедитесь, что подпись приложения действительна.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте больше о группах доступа к цепочке ключей в [общем доступе Apple к элементам цепочки ключей из статьи коллекция приложений](https://developer.apple.com/documentation/security/keychain_services/keychain_items/sharing_access_to_keychain_items_among_a_collection_of_apps?language=objc) .

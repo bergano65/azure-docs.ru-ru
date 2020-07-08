@@ -8,17 +8,17 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/24/2018
 ms.author: kkrishna
 ms.reviewer: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 8bdc7e6e3795719128a8ecfb1e8bc97c1a9a08c7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: da09f78817e1271832397b4a130195385207645f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81759025"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85477793"
 ---
 # <a name="how-to-restrict-your-azure-ad-app-to-a-set-of-users-in-an-azure-ad-tenant"></a>Как ограничить приложение Azure AD набором пользователей в клиенте Azure AD
 
@@ -82,7 +82,7 @@ ms.locfileid: "81759025"
 
 После того как вы настроили приложение для включения назначения пользователя, вы можете продолжить и назначить приложению пользователей и группы.
 
-1. Щелкните панель **Пользователи и группы** в меню навигации приложения слева.
+1. В меню навигации слева в приложении выберите панель **Пользователи и группы** .
 1. Вверху списка **Пользователи и группы** нажмите кнопку **Добавить пользователя**, чтобы открыть панель **Добавление назначения**.
 1. В области **добавления назначения** щелкните селектор **Пользователи**. 
 
@@ -96,7 +96,7 @@ ms.locfileid: "81759025"
 ## <a name="more-information"></a>Дополнительные сведения
 
 - [Как добавить роли приложения в приложение](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps)
-- [Добавление авторизации с помощью ролей приложения & утверждения ролей в веб-приложение ASP.NET Core](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/5-WebApp-AuthZ/5-1-Roles)
+- [Добавление авторизации с помощью ролей приложения и утверждения ролей в веб-приложение ASP.NET Core](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/5-WebApp-AuthZ/5-1-Roles)
 - [August 9: Using application roles and security groups in your apps (Video)](https://www.youtube.com/watch?v=V8VUPixLSiM) (9 августа. Использование ролей приложения и групп безопасности в приложениях (видео))
 - [Azure Active Directory, now with Group Claims and Application Roles](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Azure-Active-Directory-now-with-Group-Claims-and-Application/ba-p/243862) (Azure Active Directory с утверждениями групп и ролями приложения)
 - [Манифест приложения Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest)

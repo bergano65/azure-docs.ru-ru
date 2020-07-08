@@ -8,17 +8,17 @@ ms.topic: article
 ms.workload: infrastructure
 ms.date: 02/22/2019
 ms.author: cynthn
-ms.openlocfilehash: 4180f62e589ef79227d8e60ca19661e1c65f0097
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
-ms.translationtype: HT
+ms.openlocfilehash: ec6fcfbc171b7227c79741c00adbc16be4c7ce87
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83773327"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85445531"
 ---
 # <a name="how-to-use-packer-to-create-windows-virtual-machine-images-in-azure"></a>Использование Packer для создания образов виртуальных машин Windows в Azure
 Каждая виртуальная машина в Azure создается из образа, который определяет дистрибутив Windows и версию операционной системы. Образы могут содержать предварительно установленные приложения и конфигурации. Azure Marketplace предоставляет большое количество образов Майкрософт и сторонних разработчиков для наиболее распространенных операционных систем и приложений. Кроме того, вы можете создать собственные настраиваемые образы, отвечающие конкретным потребностям. В этой статье описывается определение и создание пользовательских образов в Azure с использованием инструмента с открытым кодом [Packer](https://www.packer.io/).
 
-Последнее тестирование этой статьи выполнялось 21.02.2019 г. с помощью [модуля Az PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) версии 1.3.0 и [Packer](https://www.packer.io/docs/install/index.html) версии 1.3.4.
+Последнее тестирование этой статьи выполнялось 21.02.2019 г. с помощью [модуля Az PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) версии 1.3.0 и [Packer](https://www.packer.io/docs/install) версии 1.3.4.
 
 > [!NOTE]
 > В Azure теперь есть служба "Конструктор образов Azure" (предварительная версия), которая используется для определения и создания собственных пользовательских образов. Так как Конструктор образов Azure создан на основе Packer, вы можете даже использовать имеющиеся скрипты подготовки оболочки Packer. Чтобы приступить к работе с Конструктором образов Azure, ознакомьтесь со статьей [Предварительный просмотр. Создание виртуальной машины Windows с помощью Конструктора образов Azure](image-builder.md).
@@ -122,7 +122,7 @@ Get-AzSubscription
 
 
 ## <a name="build-packer-image"></a>Создание образа Packer
-Если средство Packer еще не установлено на локальном компьютере, [следуйте инструкциям по его установке](https://www.packer.io/docs/install/index.html).
+Если средство Packer еще не установлено на локальном компьютере, [следуйте инструкциям по его установке](https://learn.hashicorp.com/packer/getting-started/install).
 
 Создайте образ, открыв командную строку и указав файл шаблона Packer следующим образом:
 

@@ -7,18 +7,18 @@ author: rwike77
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.topic: conceptual
+ms.topic: how-to
 ms.workload: identity
 ms.date: 03/17/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur, lenalepa, sureshja, kkrishna
 ms.custom: aaddev
-ms.openlocfilehash: f22ecb13284eaf6fb2a833791b5563351ca19147
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f4b76bd91a47f14104a9f7f23a4a545ee3d40e59
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80884092"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85477861"
 ---
 # <a name="how-to-sign-in-any-azure-active-directory-user-using-the-multi-tenant-application-pattern"></a>Реализация входа любого пользователя Azure Active Directory с помощью шаблона мультитенантного приложения
 
@@ -169,15 +169,15 @@ ms.locfileid: "80884092"
 
 Мультитенантные приложения также могут получать маркеры доступа для вызова API, защищенных службой Azure AD. Распространенной ошибкой при использовании библиотеки проверки подлинности Active Directory (ADAL) с мультитенантным приложением является начальный запрос маркера для пользователя с помощью конечной точки /common, получение ответа, а затем запрос последующего маркера для того же пользователя с помощью той же точки /common. Так как ответ от Azure AD приходит из клиента, а не из точки /common, то ADAL кэширует маркер как полученный из клиента. Последующий вызов точки "/common" для получения маркера доступа для пользователя не записывается в кэш (происходит промах кэша), и пользователю предлагается выполнить вход повторно. Во избежание промахов кэша убедитесь, что последующие вызовы для выполнившего вход пользователя осуществляются в конечную точку клиента.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье было показано, как создать приложение, поддерживающее вход пользователя с любого клиента Azure AD. После включения единого входа между своим приложением и Azure AD вы также можете обновить приложение для доступа к API, которые предоставляются ресурсами Майкрософт, например Office 365. Это позволит вам предлагать своим пользователям персонализированные возможности при работе с приложением, например отображать контекстную информацию — такую, как изображение профиля или следующая встреча из календаря. Дополнительные сведения о вызовах API к службам Azure AD и Office 365 (например, Exchange, SharePoint, OneDrive, OneNote и др.) см. в статье об [API Microsoft Graph][MSFT-Graph-overview].
 
-## <a name="related-content"></a>Связанное содержимое
+## <a name="related-content"></a>Связанная информация
 
 * [Пример приложения с несколькими клиентами](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/2-WebApp-graph-user/2-3-Multi-Tenant/README.md)
 * [Рекомендации по фирменной символике для приложений][AAD-App-Branding]
-* [Объекты приложения и субъекта-службы в Azure Active Directory (Azure AD)][AAD-App-SP-Objects]
+* [Объекты приложения и объекты субъекта-службы][AAD-App-SP-Objects]
 * [Интеграция приложений с Azure Active Directory][AAD-Integrating-Apps]
 * [Обзор платформы согласия][AAD-Consent-Overview]
 * [Справочник по разрешениям Microsoft Graph][MSFT-Graph-permission-scopes]

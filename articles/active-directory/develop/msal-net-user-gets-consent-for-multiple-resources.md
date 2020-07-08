@@ -7,31 +7,31 @@ author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.topic: conceptual
+ms.topic: how-to
 ms.workload: identity
 ms.date: 04/30/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 94c9a2b6a46262ad293da9ca3ba493d6f898c870
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e36237e67b4498ca6aad4b7ffa8c645abeff6143
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77085840"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85477300"
 ---
 # <a name="user-gets-consent-for-several-resources-using-msalnet"></a>Пользователь получает согласие на использование нескольких ресурсов с помощью MSAL.NET
-Конечная точка платформы Microsoft Identity не позволяет получить маркер для нескольких ресурсов одновременно. При использовании библиотеки проверки подлинности Microsoft для .NET (MSAL.NET) параметр областей в методе получения маркера должен содержать только области для одного ресурса. Однако можно заранее согласиться с несколькими ресурсами, указав дополнительные области с помощью метода `.WithExtraScopeToConsent` Builder.
+Конечная точка платформы Microsoft Identity не позволяет получить маркер для нескольких ресурсов одновременно. При использовании библиотеки проверки подлинности Microsoft для .NET (MSAL.NET) параметр областей в методе получения маркера должен содержать только области для одного ресурса. Однако можно заранее согласиться с несколькими ресурсами, указав дополнительные области с помощью `.WithExtraScopeToConsent` метода Builder.
 
 > [!NOTE]
 > Получение согласия для нескольких ресурсов работает для платформы Microsoft Identity, но не для Azure AD B2C. Azure AD B2C поддерживает только разрешение администратора, а не согласие пользователя.
 
 Например, при наличии двух ресурсов с двумя областями:
 
-- HTTPS:\//mytenant.onmicrosoft.com/customerapi (с 2 областями `customer.read` и `customer.write`)
-- HTTPS:\//mytenant.onmicrosoft.com/vendorapi (с 2 областями `vendor.read` и `vendor.write`)
+- HTTPS: \/ /mytenant.onmicrosoft.com/customerapi (с 2 областями `customer.read` и `customer.write` )
+- HTTPS: \/ /mytenant.onmicrosoft.com/vendorapi (с 2 областями `vendor.read` и `vendor.write` )
 
-Следует использовать `.WithExtraScopeToConsent` модификатор, который имеет параметр *екстраскопестоконсент* , как показано в следующем примере:
+Следует использовать модификатор, `.WithExtraScopeToConsent` который имеет параметр *екстраскопестоконсент* , как показано в следующем примере:
 
 ```csharp
 string[] scopesForCustomerApi = new string[]

@@ -4,17 +4,17 @@ description: Узнайте, как обучить модель, преобра�
 keywords: Развертывание SQL для пограничных вычислений
 services: sql-edge
 ms.service: sql-edge
-ms.subservice: ''
+ms.subservice: machine-learning
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
 ms.date: 05/19/2020
-ms.openlocfilehash: 66e2fb663d14ed2590af9c0cc62e6dad119d086f
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
-ms.translationtype: HT
+ms.openlocfilehash: b5cd655aaf9992c6908a7f9287f691fd36d84871
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84233260"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85476739"
 ---
 # <a name="deploy-and-make-predictions-with-an-onnx-model-in-azure-sql-edge-preview"></a>Развертывание и создание прогнозов с помощью модели ONNX в SQL Azure для пограничных вычислений (предварительная версия)
 
@@ -380,11 +380,11 @@ AS (
         , PTRATIO
         , B
         , LSTAT
-    FROM [onnx].[dbo].[features]
+    FROM [dbo].[features]
     )
 SELECT predict_input.id
     , p.variable1 AS MEDV
-FROM PREDICT(MODEL = @model, DATA = predict_input, RUNTIME=ONNX) WITH (variable1 FLOAT) AS p
+FROM PREDICT(MODEL = @model, DATA = predict_input, RUNTIME=ONNX) WITH (variable1 FLOAT) AS p;
 ```
 
 ## <a name="next-steps"></a>Next Steps

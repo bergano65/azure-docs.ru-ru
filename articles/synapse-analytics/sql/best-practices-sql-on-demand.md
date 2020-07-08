@@ -6,16 +6,16 @@ author: filippopovic
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql
 ms.date: 05/01/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 79318ab67ec58ed10520365a366785ea0de41666
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 7bebfeba6da1493557d51777ba8438747e160750
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836334"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85476280"
 ---
 # <a name="best-practices-for-sql-on-demand-preview-in-azure-synapse-analytics"></a>Рекомендации по использованию SQL по запросу (предварительная версия) в Azure Synapse Analytics
 
@@ -52,7 +52,7 @@ SQL по запросу позволяет запрашивать файлы в 
 
 ## <a name="push-wildcards-to-lower-levels-in-the-path"></a>Отправка подстановочных знаков на более низкие уровни в пути
 
-В пути можно использовать подстановочные знаки, чтобы [запрашивать несколько файлов и папок](develop-storage-files-overview.md#query-multiple-files-or-folders). SQL по запросу с помощью API хранилища выводит список файлов в учетной записи хранения, начиная с первого знака "*". При этом файлы, которые не соответствуют указанному пути, исключаются. Сокращение исходного списка файлов может повысить производительность, если есть много файлов, соответствующих указанному пути до первого подстановочного знака.
+В пути можно использовать подстановочные знаки, чтобы [запрашивать несколько файлов и папок](query-data-storage.md#query-multiple-files-or-folders). SQL по запросу с помощью API хранилища выводит список файлов в учетной записи хранения, начиная с первого знака "*". При этом файлы, которые не соответствуют указанному пути, исключаются. Сокращение исходного списка файлов может повысить производительность, если есть много файлов, соответствующих указанному пути до первого подстановочного знака.
 
 ## <a name="use-appropriate-data-types"></a>Использование соответствующих типов данных
 
@@ -113,7 +113,7 @@ FROM
 
 Данные часто организованы в разделы. Вы можете указать, чтобы служба "SQL по запросу" запрашивала определенные папки и файлы. Это сокращает количество файлов и объем данных для чтения и обработки в рамках запроса. Дополнительное преимущество — это увеличение производительности.
 
-См. дополнительные сведения о функциях [filename](develop-storage-files-overview.md#filename-function) и [filepath](develop-storage-files-overview.md#filepath-function), а также примеры [запросов к конкретным файлам](query-specific-files.md).
+См. дополнительные сведения о функциях [filename](query-data-storage.md#filename-function) и [filepath](query-data-storage.md#filepath-function), а также примеры [запросов к конкретным файлам](query-specific-files.md).
 
 > [!TIP]
 > Всегда приводите результаты функций filepath и filename к соответствующим типам данных. Если используются символьные типы данных, убедитесь, что используется соответствующая длина.
