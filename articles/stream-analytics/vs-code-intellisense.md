@@ -5,13 +5,13 @@ ms.service: stream-analytics
 author: su-jie
 ms.author: sujie
 ms.date: 4/11/2020
-ms.topic: conceptual
-ms.openlocfilehash: 25ece3174cd65df9c665888d913cf6b9029904b1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.topic: how-to
+ms.openlocfilehash: df6e7435d072cc88e82f3dc9a323a5b21145c432
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81394401"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86037262"
 ---
 # <a name="intellisense-in-azure-stream-analytics-tools-for-visual-studio-code"></a>IntelliSense в средствах Azure Stream Analytics для Visual Studio Code
 
@@ -34,13 +34,12 @@ ms.locfileid: "81394401"
 
 Stream Analytics средства для VS Code IntelliSense предлагает различные типы завершения, включая предложения языка сервера, фрагменты кода и простые текстовые автозавершения на основе слов.
 
-|       |         |       |
-| ----- | ------- | ----- |
+|Completion     |  Type       |
+| ----- | ------- |
 | Keywords | `keyword`
 | Функции | `build-in function`, `user defined function`  |
 | Имя набора данных| `input`, `output`, `intermediate result set`|
 | Имя столбца набора данных|`input`, `intermediate result set`|
-|
 
 #### <a name="name-completion"></a>Завершение имени
 
@@ -70,7 +69,7 @@ Stream Analytics средства для VS Code IntelliSense предлагае
 
 Эта проблема вызвана отсутствием входной конфигурации, которая предоставляет данные. Можно проверить правильность настройки [локального ввода](visual-studio-code-local-run.md#define-a-local-input) или [ввода в реальном времени](visual-studio-code-local-run-live-input.md#define-a-live-stream-input) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Краткое руководство. Создание задания Azure Stream Analytics в Visual Studio Code](quick-create-vs-code.md)
 * [Локальное тестирование запросов Stream Analytics с использованием примера данных и Visual Studio Code](visual-studio-code-local-run.md)

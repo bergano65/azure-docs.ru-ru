@@ -5,19 +5,19 @@ ms.service: stream-analytics
 author: su-jie
 ms.author: sujie
 ms.date: 11/14/2019
-ms.topic: conceptual
-ms.openlocfilehash: 34ce91a1385f951847abeedd3a6b526d3a07af35
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: how-to
+ms.openlocfilehash: 1b2268426b66ddb9ffdd48d6901ab991e76cb95c
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75660857"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86037449"
 ---
 # <a name="test-stream-analytics-queries-locally-against-live-stream-input-by-using-visual-studio-code"></a>Тестирование Stream Analytics запросов локально для входа в динамический поток с помощью Visual Studio Code
 
 Azure Stream Analytics инструменты можно использовать для Visual Studio Code для локального тестирования заданий Stream Analytics в потоке ввода в режиме реального времени. Входные данные могут поступать из источника, такого как концентраторы событий Azure или центр Интернета вещей Azure. Выходные результаты отправляются в виде JSON-файлов в папку в проекте с именем **локалрунаутпутс**.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Установите [пакет SDK для .NET Core](https://dotnet.microsoft.com/download) и перезапустите Visual Studio Code.
 
@@ -69,7 +69,7 @@ Azure Stream Analytics инструменты можно использоват�
 
 ![Просмотреть результат локального запуска](./media/vscode-local-run-live-input/vscode-livetesting.gif)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Просмотр Azure Stream Analytics заданий с помощью Visual Studio Code (Предварительная версия)](visual-studio-code-explore-jobs.md)
 

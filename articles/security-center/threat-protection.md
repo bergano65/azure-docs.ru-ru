@@ -12,6 +12,7 @@ ms.date: 06/30/2020
 ms.author: memildin
 ms.openlocfilehash: f5218b2346b6ddebcee87a0e24f4924deafdb0f2
 ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/07/2020
 ms.locfileid: "86037194"
@@ -180,7 +181,7 @@ ms.locfileid: "86037194"
 
 
 
-### <a name="next-steps"></a>Дальнейшие шаги 
+### <a name="next-steps"></a>Следующие шаги 
 
 Сведения о ценах, в том числе о бесплатной 30-дневной пробной версии, см. на странице [цен на Центр безопасности Azure](https://azure.microsoft.com/pricing/details/security-center/).
 

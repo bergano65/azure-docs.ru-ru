@@ -3,17 +3,17 @@ title: Коды ошибок данных — Azure Stream Analytics
 description: Устранить неполадки с Azure Stream Analytics помогут коды ошибок данных.
 ms.author: mamccrea
 author: mamccrea
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 05/07/2020
 ms.service: stream-analytics
-ms.openlocfilehash: f7383a56a11ac9b567c80e73cc84944174c30ac8
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: 56d7527eebb91bd09895f6cd0238721574df1015
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83594093"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86037330"
 ---
-# <a name="azure-stream-analytics-configuration-error-codes"></a>Коды ошибок данных в Azure Stream Analytics
+# <a name="azure-stream-analytics-data-error-codes"></a>Коды ошибок данных Azure Stream Analytics
 
 Журналы действий и журналы ресурсов можно использовать для отладки и устранения ошибок при выполнении заданий в Azure Stream Analytics. В этой статье приводится описание всех кодов ошибок данных. Ошибки данных возникают при наличии в потоке недопустимых данных, таких как непредвиденная схема записи.
 
