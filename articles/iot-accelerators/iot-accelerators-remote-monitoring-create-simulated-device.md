@@ -10,10 +10,9 @@ ms.date: 03/08/2019
 ms.topic: conceptual
 ms.custom: mqtt
 ms.openlocfilehash: d31e520dac1c7e2a13fbd9e24a0cd3167f69e904
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81682003"
 ---
 # <a name="create-and-test-a-new-simulated-device"></a>Создание и тестирование нового имитированного устройства
@@ -54,7 +53,7 @@ ms.locfileid: "81682003"
 
 В таблице ниже приведены действия, поддерживаемые новым устройством.
 
-| Имя        |
+| name        |
 | ----------- |
 | Включение   |
 | Выключение  |
@@ -83,7 +82,7 @@ ms.locfileid: "81682003"
 
 * Visual Studio Code. Вы можете [скачать Visual Studio Code для Mac, Linux и Windows](https://code.visualstudio.com/download).
 * .NET Core. Вы можете скачать [.NET Core для Mac, Linux и Windows](https://www.microsoft.com/net/download).
-* [C# для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp);
+* [C# для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 * Postman. Вы можете скачать [Postman для Mac, Windows или Linux](https://www.getpostman.com/apps).
 * [Центр Интернета вещей для вашей подписки Azure](../../articles/iot-hub/iot-hub-create-through-portal.md). Для выполнения шагов этого руководства вам понадобится строка подключения Центра Интернета вещей. Вы можете получить строку подключения с портала Azure.
 * База данных Cosmos DB, которая использует SQL API и которая настроена на [строгую согласованность](../../articles/cosmos-db/how-to-manage-database-account.md). Для выполнения шагов этого руководства вам понадобится строка подключения базы данных Cosmos DB. Вы можете получить строку подключения с портала Azure.
@@ -108,7 +107,7 @@ ms.locfileid: "81682003"
 
 Откройте папку **remote-monitoring-services-dotnet-master\storage-adapter** в Visual Studio Code. Чтобы исправить любые нерешенные зависимости, щелкните любую кнопку **Восстановить**.
 
-Откройте файл **стораже-адаптер/WebService/appSettings. ini** и назначьте строку подключения Cosmos DB переменной **документдбконнектионстринг** .
+Откройте файл **адаптера хранилища, веб-службы или appsettings.ini** и назначьте строку подключения Cosmos DB переменной **документдбконнектионстринг** .
 
 Чтобы запустить микрослужбу локально, нажмите **Отладка > Начать отладку**.
 
@@ -425,7 +424,7 @@ ms.locfileid: "81682003"
 
 Откройте папку **​​device-simulation-dotnet-master**, загруженную с GitHub, в новом экземпляре Visual Studio Code. Чтобы исправить любые нерешенные зависимости, щелкните любую кнопку **Восстановить**.
 
-Откройте файл **WebService/appSettings. ini** и назначьте строку подключения Cosmos DB **documentdb_connstring** переменной, а также измените параметры следующим образом:
+Откройте файл **WebService/appsettings.ini** и назначьте в переменной **documentdb_connstring** строку подключения Cosmos DB, а также измените параметры следующим образом:
 
 ```ini
 device_models_folder = C:\temp\devicemodels\

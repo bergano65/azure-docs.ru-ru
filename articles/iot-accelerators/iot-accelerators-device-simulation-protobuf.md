@@ -12,10 +12,9 @@ ms.custom:
 ms.date: 11/06/2018
 ms.author: dobett
 ms.openlocfilehash: c49745b30d2c4acc115a72af095f3e941dc4d509
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81683991"
 ---
 # <a name="serialize-telemetry-using-protocol-buffers"></a>Сериализация данных телеметрии с помощью буферов протокола
@@ -65,7 +64,7 @@ ms.locfileid: "81683991"
 
 Откройте папку **remote-monitoring-services-dotnet-master\storage-adapter** в Visual Studio Code. Чтобы исправить любые нерешенные зависимости, нажмите кнопку **Восстановить**.
 
-Откройте файл **. vscode/Launch. JSON** и назначьте строку подключения Cosmos DB компьютерам **\_\_сторажеадаптер DOCUMENTDB\_CONNSTRING** среды.
+Откройте файл **. vscode/launch.jsв** файле и назначьте строку подключения Cosmos DB для переменной среды ** \_ сторажеадаптер \_ DOCUMENTDB \_ CONNSTRING** .
 
 > [!NOTE]
 > При запуске микрослужбы локально на компьютере ей по прежнему требуется экземпляр Cosmos DB в Azure для правильной работы.
@@ -202,7 +201,7 @@ ms.locfileid: "81683991"
 * Строка подключения учетной записи хранения для переменной среды **PCS\_AZURE\_ХРАНИЛИЩЕ\_УЧЕТНАЯ ЗАПИСЬ**.
 * Назначьте строку подключения Cosmos DB для переменной среды **PCS\_STORAGEADAPTER\_DOCUMENTDB\_CONNSTRING**.
 
-Откройте файл **вебсервице\аппсеттингс.ини** и измените параметры следующим образом:
+Откройте файл **WebService\appsettings.ini** и измените параметры следующим образом:
 
 #### <a name="configure-the-solution-to-include-your-new-device-model-files"></a>Настройка решения для включения файлов новой модели устройства
 
@@ -251,7 +250,7 @@ az iot hub monitor-events --hub-name device-simulation-test
 
 1. Выберите **Файл \> Импорт**. Затем нажмите **Выбор файлов**.
 
-1. Выберите **решение "моделирование устройств Интернета вещей Azure". Опубликуйте\_коллекцию** и **решение "моделирование устройств Azure IOT\_** ". После этого выполните команду " **Открыть**".
+1. Выберите **решение "моделирование устройств Интернета вещей Azure". Опубликуйте \_ коллекцию** и **решение "моделирование устройств Azure IOT \_ ** ". После этого выполните команду " **Открыть**".
 
 1. Разверните **Акселератор решений имитации устройств Azure loT** для просмотра запросов, которые вы можете отправить.
 

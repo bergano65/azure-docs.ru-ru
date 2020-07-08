@@ -15,10 +15,9 @@ ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: borisb
 ms.openlocfilehash: aa65b789d02c60ef6042aa62e1c138c0e1bd7224
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81676897"
 ---
 # <a name="set-up-oracle-asm-on-an-azure-linux-virtual-machine"></a>Настройка Oracle ASM в виртуальной машине Linux в Azure  
@@ -246,7 +245,7 @@ ssh <publicIpAddress>
    Syncing disks.
    ```
 
-4. Повторите предыдущую `fdisk` команду для `/dev/sdd`, `/dev/sde`и `/dev/sdf`.
+4. Повторите предыдущую `fdisk` команду для `/dev/sdd` , `/dev/sde` и `/dev/sdf` .
 
 5. Проверьте конфигурацию диска:
 
@@ -427,7 +426,7 @@ ssh <publicIpAddress>
    > Ключ должен содержать строку `ssh-rsa`. Кроме того, содержимое ключа должно быть одной строкой текста.
    >  
 
-6. В клиентской системе запустите PuTTY. В области **Категория** выберите **Подключение** > **SSH** > **AUTH**. В поле **файл закрытого ключа для проверки подлинности** перейдите к разделу, созданному ранее.
+6. В клиентской системе запустите PuTTY. В области **Категория** выберите **Подключение**  >  **SSH**  >  **AUTH**. В поле **файл закрытого ключа для проверки подлинности** перейдите к разделу, созданному ранее.
 
    ![Снимок экрана параметров аутентификации SSH](./media/oracle-asm/setprivatekey.png)
 

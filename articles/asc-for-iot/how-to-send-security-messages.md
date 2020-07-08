@@ -16,10 +16,9 @@ ms.workload: na
 ms.date: 1/30/2020
 ms.author: mlottner
 ms.openlocfilehash: 4877493982671b1b5db686715ef854f25c2966ea
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81310997"
 ---
 # <a name="send-security-messages-sdk"></a>Пакет SDK для отправки сообщений системы безопасности
@@ -32,7 +31,7 @@ ms.locfileid: "81310997"
 > * Отправка сообщений безопасности с помощью пакета SDK для Azure IoT C
 > * Отправка сообщений безопасности с помощью пакета SDK для C# для Azure IoT
 > * Отправка сообщений безопасности с помощью пакета SDK Python для Azure IoT
-> * Отправка сообщений безопасности с помощью пакета SDK для Node. js для Azure IoT
+> * Отправка сообщений безопасности с помощью пакета SDK для Node.js Azure IoT
 > * Отправка сообщений безопасности с помощью пакета SDK для Java Azure IoT
 
 ## <a name="azure-security-center-for-iot-capabilities"></a>Центр безопасности Azure для возможностей Интернета вещей
@@ -47,7 +46,7 @@ ms.locfileid: "81310997"
 - Если сообщение соответствует [схеме сообщения безопасности](https://aka.ms/iot-security-schemas)
 - Если сообщение было задано как сообщение безопасности перед отправкой
 
-Каждое сообщение безопасности содержит метаданные отправителя, такие как `AgentId`, `AgentVersion` `MessageSchemaVersion` и список событий безопасности.
+Каждое сообщение безопасности содержит метаданные отправителя, такие как `AgentId` , `AgentVersion` `MessageSchemaVersion` и список событий безопасности.
 Схема определяет допустимые и обязательные свойства сообщения безопасности, включая типы событий.
 
 > [!NOTE]
@@ -92,7 +91,7 @@ ms.locfileid: "81310997"
 
 ## <a name="send-security-messages"></a>Отправка сообщений системы безопасности
 
-Отправка сообщений безопасности *без* использования центра безопасности Azure для агента IOT с помощью [пакета SDK для устройств с](https://github.com/Azure/azure-iot-sdk-c/tree/public-preview)Azure IOT C [, пакет SDK для устройств C# для Azure IOT](https://github.com/Azure/azure-iot-sdk-csharp/tree/preview), [пакет SDK для](https://github.com/Azure/azure-iot-sdk-node)Microsoft Azure IOT, пакет SDK для Microsoft Azure для [Python](https://github.com/Azure/azure-iot-sdk-python)или [пакет SDK для Azure IOT Java](https://github.com/Azure/azure-iot-sdk-java).
+Отправка сообщений безопасности *без* использования центра безопасности Azure для агента IOT с помощью [пакета SDK для устройств с](https://github.com/Azure/azure-iot-sdk-c/tree/public-preview)Azure IOT C [, пакета SDK для устройств C# для Azure IOT](https://github.com/Azure/azure-iot-sdk-csharp/tree/preview),,, пакета SDK для Azure IOT [Node.js](https://github.com/Azure/azure-iot-sdk-node), пакета SDK для Azure [IOT](https://github.com/Azure/azure-iot-sdk-python)или [пакета SDK для Azure IOT Java](https://github.com/Azure/azure-iot-sdk-java).
 
 Чтобы отправить данные устройства с устройств для обработки с помощью центра безопасности Azure для Интернета вещей, используйте один из следующих интерфейсов API, чтобы пометить сообщения для правильной маршрутизации в центр безопасности Azure для конвейера обработки IoT.
 
@@ -100,7 +99,7 @@ ms.locfileid: "81310997"
 
 ### <a name="send-security-message-api"></a>API для отправки сообщений системы безопасности
 
-API **отправки сообщений безопасности** в настоящее время доступен на языках C и C#, Python, Node. js и Java.
+API **отправки сообщений безопасности** в настоящее время доступен на языках C и C#, Python, Node.js и Java.
 
 #### <a name="c-api"></a>API C
 

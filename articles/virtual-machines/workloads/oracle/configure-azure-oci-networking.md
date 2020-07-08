@@ -14,10 +14,9 @@ ms.workload: infrastructure
 ms.date: 03/16/2020
 ms.author: borisb
 ms.openlocfilehash: 70556cbbfefd6ad22ef96ee16065209031ea456c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81683754"
 ---
 # <a name="set-up-a-direct-interconnection-between-azure-and-oracle-cloud-infrastructure"></a>Настройка прямого взаимодействия между Azure и облачной инфраструктурой Oracle  
@@ -25,12 +24,12 @@ ms.locfileid: "81683754"
 Чтобы создать [интегрированную среду с несколькими облаками](oracle-oci-overview.md), корпорация Майкрософт и Oracle предлагают прямое взаимодействие между Azure и облачной инфраструктурой Oracle (OCI) через [ExpressRoute](../../../expressroute/expressroute-introduction.md) и [фастконнект](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectoverview.htm). Благодаря взаимосвязи ExpressRoute и Фастконнект клиенты могут столкнуться с низкой задержкой, высокой пропускной способностью и частным прямым подключением между двумя облаками.
 
 > [!IMPORTANT]
-> Oracle будет сертифицировать эти приложения для запуска в Azure при использовании решения Azure/Oracle Cloud Interconnect с 2020 мая.
-> * Набор E-Business
-> * JD Edwards EnterpriseOne
-> * PeopleSoft
-> * Розничные приложения Oracle
-> * Oracle Hyperion Financial Management
+> К маю 2020 г. следующие приложения будут сертифицированы Oracle для запуска в Azure при использовании соединения между облаками Azure и Oracle Cloud:
+> * E-Business Suite
+> * JD Edwards EnterpriseOne;
+> * PeopleSoft;
+> * приложения Oracle Retail;
+> * Oracle Hyperion Financial Management.
 
 На следующем рисунке показан общий обзор соединения:
 
@@ -82,13 +81,13 @@ ms.locfileid: "81683754"
 
 После завершения настройки сети можно проверить допустимость конфигурации, щелкнув ссылку **получить записи ARP** и **получить таблицу маршрутов** в колонке частного пиринга ExpressRoute в портал Azure.
 
-## <a name="automation"></a>Служба автоматизации
+## <a name="automation"></a>Автоматизация
 
 Корпорация Майкрософт создала сценарии terraform, чтобы включить автоматическое развертывание сетевого соединения. Перед выполнением скрипты terraform должны пройти проверку подлинности в Azure, так как для них требуются соответствующие разрешения в подписке Azure. Проверку подлинности можно выполнить с помощью [субъекта-службы Azure Active Directory](../../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) или с помощью Azure CLI. Дополнительные сведения см. в [документации по terraform](https://www.terraform.io/docs/providers/azurerm/auth/azure_cli.html).
 
 Сценарии terraform и связанная документация по развертыванию межподключения можно найти в этом [репозитории GitHub](https://aka.ms/azureociinterconnecttf).
 
-## <a name="monitoring"></a>Мониторинг
+## <a name="monitoring"></a>Наблюдение
 
 Установив агенты в обоих облаках, вы можете использовать Azure [Монитор производительности сети (NPM)](../../../expressroute/how-to-npm.md) для мониторинга производительности сквозной сети. NPM помогает легко выявление сетевых проблем и помогает устранить их.
 

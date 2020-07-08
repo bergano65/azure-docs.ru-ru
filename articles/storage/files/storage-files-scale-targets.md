@@ -8,10 +8,9 @@ ms.date: 10/16/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 46c46faf8f7ee52978ae5542ab7ebd72a41b8357
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81536454"
 ---
 # <a name="azure-files-scalability-and-performance-targets"></a>Целевые показатели масштабируемости и производительности службы файлов Azure
@@ -113,4 +112,4 @@ ms.locfileid: "81536454"
 ## <a name="see-also"></a>См. также
 
 - [Планирование развертывания службы файлов Azure](storage-files-planning.md)
-- [Планирование развертывания службы синхронизации файлов Azure](storage-sync-files-planning.md)
+- [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md)

@@ -1,5 +1,5 @@
 ---
-title: Подключение Raspberry Pi к центру Интернета вещей Azure в облаке (Node. js)
+title: Подключение Raspberry Pi к центру Интернета вещей Azure в облаке (Node.js)
 description: Узнайте, как настроить и подключить Raspberry Pi к центру Интернета вещей Azure для Raspberry Pi, чтобы отправить данные на облачную платформу Azure в этом руководстве.
 author: wesmc7777
 manager: eliotgra
@@ -11,10 +11,9 @@ ms.topic: conceptual
 ms.date: 03/13/2020
 ms.author: wesmc
 ms.openlocfilehash: 3175956e35603cc4ad3a938f3d316c0af8f2d227
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81640533"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-nodejs"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)
@@ -94,13 +93,13 @@ ms.locfileid: "81640533"
 
 1. Скачайте ОС Raspbian.
 
-   a. [Raspbian бустер с рабочим столом](https://www.raspberrypi.org/downloads/raspbian/) (ZIP-файл).
+   а. [Raspbian бустер с рабочим столом](https://www.raspberrypi.org/downloads/raspbian/) (ZIP-файл).
 
    b. Извлеките образ ОС Raspbian в папку на компьютере.
 
 2. Установите ОС Raspbian на карту microSD.
 
-   a. [Скачайте и установите служебную программу для записи SD Card](https://etcher.io/).
+   а. [Скачайте и установите служебную программу для записи SD Card](https://etcher.io/).
 
    b. Запустите Etcher и выберите образ Raspbian, извлеченный на шаге 1.
 
@@ -116,9 +115,9 @@ ms.locfileid: "81640533"
 
 1. Подключите Pi к монитору, клавиатуре и мыши.
 
-2. Запустите PI, а затем войдите в Raspbian, `pi` используя в качестве имени пользователя `raspberry` и пароля.
+2. Запустите PI, а затем войдите в Raspbian, используя в `pi` качестве имени пользователя и `raspberry` пароля.
 
-3. Щелкните значок Raspberry > **настройки** > **Raspberry Pi**.
+3. Щелкните значок Raspberry > **настройки**  >  **Raspberry Pi**.
 
    ![Меню параметров Raspbian](./media/iot-hub-raspberry-pi-kit-node-get-started/1-raspbian-preferences-menu.png)
 
@@ -171,7 +170,7 @@ ms.locfileid: "81640533"
 
    **Пользователи Windows**
 
-   a. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows.
+   а. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows.
 
    b. Скопируйте IP-адрес устройства Pi и вставьте его в поле для имени узла (или для IP-адреса), а затем выберите тип подключения SSH.
 
@@ -192,7 +191,7 @@ ms.locfileid: "81640533"
    node -v
    ```
 
-   Если версия меньше 10. x или если на устройстве PI отсутствует Node. js, установите последнюю версию.
+   Если версия меньше 10. x или если на устройстве PI нет Node.js, установите последнюю версию.
 
    ```bash
    curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
@@ -229,7 +228,7 @@ ms.locfileid: "81640533"
 
    Если у вас **нет датчика**, задайте для параметра `simulatedData` значение `true`, чтобы пример приложения создал и использовал смоделированные данные датчика.
 
-   *Примечание. адрес I2C, используемый в этом руководстве, по умолчанию — 0x77. В зависимости от конфигурации это также может быть 0x76: Если возникла ошибка I2C, попробуйте изменить значение на 118 и убедитесь, что это работает лучше. Чтобы узнать, какой адрес используется датчиком, выполните `sudo i2cdetect -y 1` команду в оболочке на устройстве Raspberry Pi.*
+   *Примечание. адрес I2C, используемый в этом руководстве, по умолчанию — 0x77. В зависимости от конфигурации это также может быть 0x76: Если возникла ошибка I2C, попробуйте изменить значение на 118 и убедитесь, что это работает лучше. Чтобы узнать, какой адрес используется датчиком, выполните команду `sudo i2cdetect -y 1` в оболочке на устройстве Raspberry Pi.*
 
 2. Сохраните изменения и закройте окно, нажав клавиши CTRL+O > ВВОД > CTRL+X.
 

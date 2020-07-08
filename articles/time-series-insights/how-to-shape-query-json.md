@@ -10,17 +10,16 @@ ms.topic: article
 ms.date: 04/17/2020
 ms.custom: seodec18
 ms.openlocfilehash: 63a708f80ad18309269e37c354b047c304a260d3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81641294"
 ---
 # <a name="shape-json-to-maximize-query-performance"></a>Формирование JSON для повышения производительности запросов
 
 В этой статье содержатся рекомендации по формированию JSON для повышения эффективности запросов службы "аналитика временных рядов Azure".
 
-## <a name="video"></a>Видеоролик
+## <a name="video"></a>Видео
 
 ### <a name="learn-best-practices-for-shaping-json-to-meet-your-storage-needsbr"></a>Ознакомьтесь с рекомендациями по формированию JSON в соответствии с потребностями хранилища.</br>
 
@@ -165,7 +164,7 @@ ms.locfileid: "81641294"
 
 * Таблица ссылочных данных с ключевыми свойствами **deviceId** и **Series. tagId**:
 
-   | deviceId | series.tagId | messageId | deviceLocation | type | unit |
+   | deviceId | series.tagId | messageId | deviceLocation | тип | unit |
    | --- | --- | --- | --- | --- | --- |
    | FXXX | pumpRate | LINE\_DATA | EU | Скорость потока | ft3/s |
    | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi |
@@ -174,7 +173,7 @@ ms.locfileid: "81641294"
 
 * Таблица событий "аналитика временных рядов" после спрямления:
 
-   | deviceId | series.tagId | messageId | deviceLocation | type | unit | TIMESTAMP | series.value |
+   | deviceId | series.tagId | messageId | deviceLocation | тип | unit | TIMESTAMP | series.value |
    | --- | --- | --- | --- | --- | --- | --- | --- |
    | FXXX | pumpRate | LINE\_DATA | EU | Скорость потока | ft3/s | 2018-01-17T01:17:00Z | 1.0172575712203979 | 
    | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 34.7 |

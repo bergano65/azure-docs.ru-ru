@@ -13,10 +13,9 @@ ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
 ms.openlocfilehash: e0a38eb03df3d1da64172842fb6eca3cd762f9cd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81537242"
 ---
 # <a name="signing-key-rollover-in-azure-active-directory"></a>Смена ключей подписывания Azure Active Directory
@@ -273,7 +272,7 @@ namespace JWTValidation
 
 Выполните следующие шаги, чтобы убедиться, что логика смены ключей работает должным образом.
 
-1. Убедившись, что приложение использует приведенный выше код, откройте файл **Web. config** и перейдите к блоку ** \<>IssuerNameRegistry** , в частности, найдите следующие несколько строк:
+1. Убедившись, что приложение использует код, приведенный выше, откройте файл **Web.config**, перейдите к блоку **\<issuerNameRegistry>** и найдите следующие несколько строк.
    ```
    <issuerNameRegistry type="System.IdentityModel.Tokens.ValidatingIssuerNameRegistry, System.IdentityModel.Tokens.ValidatingIssuerNameRegistry">
         <authority name="https://sts.windows.net/ec4187af-07da-4f01-b18f-64c2f5abecea/">
@@ -281,7 +280,7 @@ namespace JWTValidation
             <add thumbprint="3A38FA984E8560F19AADC9F86FE9594BB6AD049B" />
           </keys>
    ```
-2. В >параметре ** \<Добавление отпечатка = ""** измените значение отпечатка, заменив любой символ другим. Сохраните файл **Web.config**.
+2. В **\<add thumbprint="">** параметре измените значение отпечатка, заменив любой символ другим. Сохраните файл **Web.config**.
 3. Выполните сборку приложения и запустите его. Если у вас получилось войти, приложение успешно обновляет ключ, скачивая необходимые данные из документа метаданных федерации каталога. Если при входе возникают проблемы, убедитесь, что в приложение внесены правильные изменения. Для этого прочитайте статью о [добавлении единого входа в веб-приложение с помощью Azure AD](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect) или скачайте и проверьте пример кода в разделе [Multi-Tenant Cloud Application for Azure Active Directory](https://code.msdn.microsoft.com/multi-tenant-cloud-8015b84b) (Мультитенантное облачное приложение для Azure Active Directory).
 
 ### <a name="web-applications-protecting-resources-and-created-with-visual-studio-2008-or-2010-and-windows-identity-foundation-wif-v10-for-net-35"></a><a name="vs2010"></a>Защищающие ресурсы веб-приложения, созданные с помощью Visual Studio 2008 или 2010 и Windows Identity Foundation v1.0 для .NET 3.5

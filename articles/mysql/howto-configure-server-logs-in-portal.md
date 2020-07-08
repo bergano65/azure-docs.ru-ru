@@ -7,10 +7,9 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 4/13/2020
 ms.openlocfilehash: 59faf63312bd7cc657f8b96ca3110707ea997c02
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81273616"
 ---
 # <a name="configure-and-access-slow-query-logs-from-the-azure-portal"></a>Настройка и доступ к журналам запросов с высокой занесением портал Azure
@@ -66,7 +65,7 @@ ms.locfileid: "81273616"
 
 ## <a name="set-up-diagnostic-logs"></a>Настройка журналов диагностики
 
-1. В разделе **мониторинг** на боковой панели выберите **Параметры** > диагностики**Добавить параметры диагностики**.
+1. В разделе **мониторинг** на боковой панели выберите **параметры диагностики**  >  **Добавить параметры диагностики**.
 
    ![Снимок экрана параметров параметров диагностики](./media/howto-configure-server-logs-in-portal/add-diagnostic-setting.png)
 

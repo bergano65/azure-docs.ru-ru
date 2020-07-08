@@ -12,17 +12,16 @@ ms.topic: conceptual
 ms.date: 04/13/2020
 ms.custom: seodec18
 ms.openlocfilehash: 85910ee5467ecc9f4fe3c1a8bc13110b6f218e5c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81272718"
 ---
 # <a name="plan-your-azure-time-series-insights-ga-environment"></a>Планирование общедоступной среды службы "аналитика временных рядов Azure"
 
 В этой статье описывается, как спланировать среду общедоступной версии службы "аналитика временных рядов Azure" в зависимости от ожидаемой скорости входящего трафика и требований к хранению данных.
 
-## <a name="video"></a>Видеоролик
+## <a name="video"></a>Видео
 
 **Просмотрите это видео, чтобы узнать больше о хранении данных в службе "аналитика временных рядов Azure" и о том, как спланировать его**.<br /><br />
 

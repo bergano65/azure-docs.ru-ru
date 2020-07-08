@@ -15,10 +15,9 @@ ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: borisb
 ms.openlocfilehash: c5f02117d3af7fb411c75d783df82f6008d8104e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81687001"
 ---
 # <a name="back-up-and-recover-an-oracle-database-12c-database-on-an-azure-linux-virtual-machine"></a>Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure
@@ -508,7 +507,7 @@ ms.locfileid: "81687001"
 
     ![Список общедоступных IP-адресов](./media/oracle-backup-recovery/create_ip_00.png)
 
-2.  В колонке **Общедоступные IP-адреса** щелкните **Добавить**. В колонке **Создать общедоступный IP-адрес** для параметра **Имя** выберите имя общедоступного IP-адреса. Для параметра **Группа ресурсов** выберите **Использовать существующий**. Затем нажмите кнопку **создать**.
+2.  В колонке **Общедоступные IP-адреса** щелкните **Добавить**. В колонке **Создать общедоступный IP-адрес** для параметра **Имя** выберите имя общедоступного IP-адреса. Для параметра **Группа ресурсов** выберите **Использовать существующий**. Затем нажмите кнопку **Создать**.
 
     ![Создание IP-адреса](./media/oracle-backup-recovery/create_ip_01.png)
 

@@ -11,10 +11,9 @@ ms.custom:
 - mvc
 - amqp
 ms.openlocfilehash: c110e90f26f595bcbf181b72e13f12a6de2fa8ce
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81687208"
 ---
 # <a name="how-to-use-different-attestation-mechanisms-with-device-provisioning-service-client-sdk-for-c"></a>Использование разных механизмов аттестации с клиентским пакетом SDK для службы подготовки устройств в Azure для С
@@ -140,7 +139,7 @@ cmake -Ddps_auth_type=tpm_simulator ..
 
 ## <a name="create-a-device-enrollment-entry-in-device-provisioning-services"></a>Создание записи регистрации устройства в службе подготовки устройств
 
-### <a name="tpm"></a>TPM
+### <a name="tpm"></a>TPM (Доверенный платформенный модуль)
 Если вы используете TPM, следуйте инструкциям из статьи [Создание и подготовка имитированного устройства доверенного платформенного модуля (ТРМ) с помощью пакета SDK для устройства C для службы подготовки устройств Центра Интернета вещей](./quick-create-simulated-device.md), чтобы создать запись регистрации устройств в службе подготовки устройств и смоделировать первую загрузку.
 
 ### <a name="x509"></a>X.509

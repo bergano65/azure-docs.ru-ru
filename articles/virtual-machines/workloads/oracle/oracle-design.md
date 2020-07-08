@@ -15,10 +15,9 @@ ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: borisb
 ms.openlocfilehash: ad446180b3bd864c5b6df808e6e4efac7d6c1c65
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81687542"
 ---
 # <a name="design-and-implement-an-oracle-database-in-azure"></a>Разработка базы данных Oracle и ее реализация в Azure
@@ -46,14 +45,14 @@ ms.locfileid: "81687542"
 > 
 > |  | **Реализация в локальной среде** | **Реализация в Azure** |
 > | --- | --- | --- |
-> | **Сетевое взаимодействие** |Локальная или глобальная сеть  |SDN (программно-конфигурируемая сеть)|
+> | **Сеть** |Локальная или глобальная сеть  |SDN (программно-конфигурируемая сеть)|
 > | **Группа безопасности** |Средства ограничения портов и IP-адресов |[Группа безопасности сети (NSG)](https://azure.microsoft.com/blog/network-security-groups) |
 > | **Устойчивость** |MTBF (среднее время безотказной работы) |MTTR (среднее время восстановления)|
 > | **Плановое техническое обслуживание** |Установка исправлений и обновлений|[Группы доступности](https://docs.microsoft.com/azure/virtual-machines/windows/infrastructure-availability-sets-guidelines) (установка исправлений и обновлений, управляемая Azure) |
 > | **Ресурс** |Выделенные  |Совместное использование с другими клиентами|
 > | **Регионы** |Центры обработки данных |[Пары регионов](https://docs.microsoft.com/azure/virtual-machines/windows/regions#region-pairs)|
-> | **Хранилище** |Сеть SAN и физические диски |[Хранилище под управлением Azure](https://azure.microsoft.com/pricing/details/managed-disks/?v=17.23h)|
-> | **Масштабирование** |Вертикальное масштабирование |Горизонтальное масштабирование|
+> | **Память** |Сеть SAN и физические диски |[Хранилище под управлением Azure](https://azure.microsoft.com/pricing/details/managed-disks/?v=17.23h)|
+> | **Масштаб** |Вертикальное масштабирование |Горизонтальное масштабирование|
 
 
 ### <a name="requirements"></a>Requirements (Требования)
@@ -61,7 +60,7 @@ ms.locfileid: "81687542"
 - Определите скорость увеличения и размер базы данных.
 - Определите требования к числу операций ввода-вывода, которое можно рассчитать на основе отчета Oracle AWR или других средств мониторинга сети.
 
-## <a name="configuration-options"></a>Параметры конфигурации
+## <a name="configuration-options"></a>Варианты настройки
 
 В среде Azure есть четыре области, которые можно настроить для повышения производительности:
 
@@ -146,7 +145,7 @@ SQL> @?/rdbms/admin/awrrpt.sql
 - Используйте виртуальные машины с [ускоренной сетью](https://docs.microsoft.com/azure/virtual-network/create-vm-accelerated-networking-cli) для повышения производительности сети.
 - Для некоторых диструбутионсов Linux рассмотрите возможность включения [поддержки TRIM/](https://docs.microsoft.com/azure/virtual-machines/linux/configure-lvm#trimunmap-support)unотмена сопоставления.
 - Установите [Oracle Enterprise Manager](https://www.oracle.com/technetwork/oem/enterprise-manager/overview/index.html) на отдельной виртуальной машине.
-- По умолчанию огромные страницы не включены в Linux. Рассмотрите возможность включения огромных `use_large_pages = ONLY` страниц и установки на Oracle DB. Это может повысить производительность. Дополнительные сведения см. [здесь](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/refrn/USE_LARGE_PAGES.html#GUID-1B0F4D27-8222-439E-A01D-E50758C88390).
+- По умолчанию огромные страницы не включены в Linux. Рассмотрите возможность включения огромных страниц и установки `use_large_pages = ONLY` на Oracle DB. Это может повысить производительность. Дополнительные сведения см. [здесь](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/refrn/USE_LARGE_PAGES.html#GUID-1B0F4D27-8222-439E-A01D-E50758C88390).
 
 ### <a name="disk-types-and-configurations"></a>Типы дисков и их конфигурации
 
@@ -225,7 +224,7 @@ SQL> @?/rdbms/admin/awrrpt.sql
 - *Частная сеть (подсети):* рекомендуем устанавливать службу приложений и базу данных в разных подсетях, чтобы политика NSG могла настроить расширенные возможности управления.
 
 
-## <a name="additional-reading"></a>Дополнительные материалы
+## <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 - [Настройка Oracle ASM](configure-oracle-asm.md)
 - [Настройка Oracle Data Guard](configure-oracle-dataguard.md)

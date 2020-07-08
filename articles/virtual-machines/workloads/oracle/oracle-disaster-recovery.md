@@ -15,10 +15,9 @@ ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: borisb
 ms.openlocfilehash: adf4c54d4f43f806ae985f7c1523303cf574b4c1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81687462"
 ---
 # <a name="disaster-recovery-for-an-oracle-database-12c-database-in-an-azure-environment"></a>Аварийное восстановление базы данных Oracle Database 12c в среде Azure.
@@ -95,7 +94,7 @@ ms.locfileid: "81687462"
 
 ![Снимок экрана страницы топологии аварийного восстановления](./media/oracle-disaster-recovery/oracle_topology_03.png)
 
-## <a name="additional-reading"></a>Дополнительные материалы
+## <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 - [Design and implement an Oracle database in Azure](oracle-design.md) (Разработка базы данных Oracle и ее реализация в Azure)
 - [Настройка Oracle Data Guard](configure-oracle-dataguard.md)

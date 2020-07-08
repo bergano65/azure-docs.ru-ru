@@ -10,10 +10,9 @@ ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
 ms.openlocfilehash: c804cc8942a40e2f30c980636194daa82e0fb0e8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81687327"
 ---
 # <a name="workbook-text-parameters"></a>Текстовые параметры книги
@@ -60,7 +59,7 @@ ms.locfileid: "81687327"
     ![Изображение, показывающее текстовый параметр, на который ссылается ККЛ](./media/workbooks-text/text-reference.png)
 
 > [!NOTE]
-> В приведенном выше примере `{SlowRequestThreshold}` представляет целочисленное значение. Если вы запрашиваете строку, например `{ComputerName}` , вам потребуется изменить запрос Kusto, чтобы добавить кавычки `"{ComputerName}"` , чтобы поле параметра принимало входные данные без кавычек.
+> В приведенном выше примере `{SlowRequestThreshold}` представляет целочисленное значение. Если вы запрашиваете строку, например `{ComputerName}` , вам потребуется изменить запрос Kusto, чтобы добавить кавычки, чтобы `"{ComputerName}"` поле параметра принимало входные данные без кавычек.
 
 ## <a name="setting-default-values"></a>Установка значений по умолчанию
 1. Начните с пустой книги в режиме редактирования.

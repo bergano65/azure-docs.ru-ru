@@ -15,10 +15,9 @@ ms.workload: infrastructure-services
 ms.date: 02/14/2017
 ms.author: mimckitt
 ms.openlocfilehash: f226e240a59b33c2913919495410b1a4923b4902
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81261675"
 ---
 # <a name="network-watcher-agent-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины агента Наблюдателя за сетями для Windows
@@ -30,7 +29,7 @@ ms.locfileid: "81261675"
 
 В этом документе подробно описаны поддерживаемые платформы и параметры развертывания для расширения виртуальной машины агента Наблюдателя за сетями для Windows. Установка агента не прерывается и не требует перезагрузки виртуальной машины. Расширение можно развернуть на развертываемой виртуальной машине. Если виртуальная машина развернута службой Azure, необходимо проверить документацию службы на наличие разрешения на установку расширения для виртуальной машины.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
@@ -68,7 +67,7 @@ ms.locfileid: "81261675"
 | ---- | ---- |
 | версия_API | 2015-06-15 |
 | publisher | Microsoft.Azure.NetworkWatcher |
-| type | NetworkWatcherAgentWindows |
+| тип | NetworkWatcherAgentWindows |
 | typeHandlerVersion | 1.4 |
 
 
@@ -109,4 +108,4 @@ C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.NetworkWatcher.NetworkWatcherAgentW
 
 ### <a name="support"></a>Поддержка
 
-Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете ознакомиться с руководством пользователя для Наблюдателя за сетями или обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите получить поддержку. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете ознакомиться с руководством пользователя для Наблюдателя за сетями или обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).

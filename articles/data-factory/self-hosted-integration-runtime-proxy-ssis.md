@@ -13,10 +13,9 @@ manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 04/15/2020
 ms.openlocfilehash: 4cb5b84f3889dcf4e0f28d525afb42cfeac5b54c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81605497"
 ---
 # <a name="configure-a-self-hosted-ir-as-a-proxy-for-an-azure-ssis-ir-in-azure-data-factory"></a>Настройка самостоятельно размещенного IR в качестве прокси-сервера для Azure-SSIS IR в фабрике данных Azure
@@ -58,7 +57,7 @@ ms.locfileid: "81605497"
 - В качестве **метода проверки подлинности**выберите **ключ учетной записи**, **URI SAS**или **субъект-служба**.  
 
     >[!TIP]
-    >Если выбран метод **субъекта-службы** , предоставьте субъекту-службе по крайней мере роль  *участника данных большого двоичного объекта хранилища*. Дополнительные сведения см. в статье о [соединителе хранилища BLOB-объектов Azure](connector-azure-blob-storage.md#linked-service-properties).
+    >Если выбран метод **субъекта-службы** , предоставьте субъекту-службе по крайней мере роль *участника данных большого двоичного объекта хранилища*   . Дополнительные сведения см. в статье о [соединителе хранилища BLOB-объектов Azure](connector-azure-blob-storage.md#linked-service-properties).
 
 ![Подготовка связанной службы хранилища BLOB-объектов Azure для промежуточного хранения](media/self-hosted-integration-runtime-proxy-ssis/shir-azure-blob-storage-linked-service.png)
 
@@ -78,7 +77,7 @@ ms.locfileid: "81605497"
 
    1. В поле **промежуточный путь** укажите контейнер больших двоичных объектов в выбранной учетной записи хранилища BLOB-объектов Azure или оставьте его пустым, чтобы использовать по умолчанию для промежуточного хранения.
 
-   1. Выберите пункт **Продолжить**.
+   1. Выберите **Continue** (Продолжить).
 
    ![Дополнительные параметры с локальным IR](./media/tutorial-create-azure-ssis-runtime-portal/advanced-settings-shir.png)
 
@@ -118,7 +117,7 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 
 ## <a name="enable-ssis-packages-to-connect-by-proxy"></a>Включение пакетов служб SSIS для подключения с помощью прокси-сервера
 
-Используя последнюю версию SSDT с расширением проектов SSIS для Visual Studio или автономный установщик, можно найти новое `ConnectByProxy` свойство, добавленное в ДИСПЕТЧЕРЕ соединений OLEDB или неструктурированных файлов.
+Используя последнюю версию SSDT с расширением проектов SSIS для Visual Studio или автономный установщик, можно найти новое `ConnectByProxy` свойство, добавленное в диспетчере соединений OLEDB или неструктурированных файлов.
 * [Скачивание расширения SSDT с проектами служб SSIS для Visual Studio](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects)
 * [Скачать автономный установщик](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017#ssdt-for-vs-2017-standalone-installer)   
 
@@ -135,11 +134,11 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
   
   ![Включить Коннектбипрокси property3](media/self-hosted-integration-runtime-proxy-ssis/shir-connection-managers-tab-ssis-activity.png)
 
-- **Вариант б.** Повторно разверните проект, содержащий эти пакеты, для выполнения в среде IR служб SSIS. Затем можно включить свойство, указав путь его `\Package.Connections[YourConnectionManagerName].Properties[ConnectByProxy]`свойства, и задав для него *значение true* в качестве переопределения свойства на вкладке **Дополнительно** во всплывающем окне **выполнение пакета** при выполнении пакетов из среды SSMS.
+- **Вариант б.** Повторно разверните проект, содержащий эти пакеты, для выполнения в среде IR служб SSIS. Затем можно включить свойство, указав путь его свойства, `\Package.Connections[YourConnectionManagerName].Properties[ConnectByProxy]` и задав для него *значение true* в качестве переопределения свойства на вкладке **Дополнительно** во всплывающем окне **выполнение пакета** при выполнении пакетов из среды SSMS.
 
   ![Включить Коннектбипрокси property4](media/self-hosted-integration-runtime-proxy-ssis/shir-advanced-tab-ssms.png)
 
-  Можно также `\Package.Connections[YourConnectionManagerName].Properties[ConnectByProxy]`включить свойство, указав его путь к свойству, и задав для него *значение true* в качестве переопределения свойства на вкладке **переопределения свойств** для [действия выполнение пакета служб SSIS](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity) при выполнении пакетов в конвейерах фабрики данных.
+  Можно также включить свойство, указав его путь к свойству, `\Package.Connections[YourConnectionManagerName].Properties[ConnectByProxy]` и задав для него *значение true* в качестве переопределения свойства на вкладке **переопределения свойств** для [действия выполнение пакета служб SSIS](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity) при выполнении пакетов в конвейерах фабрики данных.
   
   ![Включить Коннектбипрокси property5](media/self-hosted-integration-runtime-proxy-ssis/shir-property-overrides-tab-ssis-activity.png)
 
@@ -153,7 +152,7 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 
 Если промежуточные задачи на локальном IR-сервере нуждаются в проверке подлинности Windows, [Настройте пакеты служб SSIS для использования одной и той же проверки подлинности Windows](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-connect-with-windows-auth?view=sql-server-ver15). 
 
-Промежуточные задачи будут вызываться с помощью учетной записи локальной службы IR (по умолчанию*NT сервице\диахостсервице*), и доступ к хранилищам данных будет осуществляться с помощью учетной записи проверки подлинности Windows. Для обеих учетных записей необходимо назначить определенные политики безопасности. На автономном IR-компьютере перейдите в раздел **Локальная политика** > безопасности**локальные** > политики**Назначение прав пользователя**и выполните следующие действия.
+Промежуточные задачи будут вызываться с помощью учетной записи локальной службы IR (по умолчанию*NT сервице\диахостсервице*), и доступ к хранилищам данных будет осуществляться с помощью учетной записи проверки подлинности Windows. Для обеих учетных записей необходимо назначить определенные политики безопасности. На автономном IR-компьютере перейдите в раздел **Локальная политика безопасности**  >  **локальные**политики  >  **Назначение прав пользователя**и выполните следующие действия.
 
 1. Назначьте *для процесса квоты на настройку памяти* и *замените политики маркеров на уровне процесса* на локальную учетную запись службы IR. Это должно происходить автоматически при установке автономного IR с учетной записью службы по умолчанию. Если это не так, назначьте эти политики вручную. Если вы используете другую учетную запись службы, назначьте ей те же политики.
 

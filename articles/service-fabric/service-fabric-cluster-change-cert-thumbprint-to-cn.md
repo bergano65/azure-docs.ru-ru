@@ -4,10 +4,9 @@ description: Сведения о переключении кластера Servi
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.openlocfilehash: 1926b0501766eb0a5fe086ceada0c9bf45e3dcf6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81272633"
 ---
 # <a name="change-cluster-from-certificate-thumbprint-to-common-name"></a>Переход с отпечатка на общее имя сертификата для кластера
@@ -118,7 +117,7 @@ Update-AzVmss -ResourceGroupName $VmssResourceGroupName -Verbose `
 
     Также рассмотрите возможность удаления *certificateThumbprint*, но на него больше нельзя ссылаться в шаблоне диспетчер ресурсов.
 
-2. В ресурсе **Microsoft.Compute/virtualMachineScaleSets** обновите расширение виртуальной машины, чтобы использовать общее имя в параметрах сертификата вместо отпечатка.  В **virtualMachineProfile**->**extensionProfile**->**свойствах****settings**->**certificate** `"commonNames": ["[parameters('certificateCommonName')]"],` **extensions**->virtualMachineProfile extensionProfile Extensions (параметры сертификата) добавьте и удалите `"thumbprint": "[parameters('certificateThumbprint')]",`->
+2. В ресурсе **Microsoft.Compute/virtualMachineScaleSets** обновите расширение виртуальной машины, чтобы использовать общее имя в параметрах сертификата вместо отпечатка.  В **virtualMachineProfile** -> свойствах virtualMachineProfile**extensionProfile** -> **Extensions** -> **properties** -> (**Параметры** -> **сертификата**) добавьте `"commonNames": ["[parameters('certificateCommonName')]"],` и удалите `"thumbprint": "[parameters('certificateThumbprint')]",` .
     ```json
         "virtualMachineProfile": {
         "extensionProfile": {
