@@ -3,15 +3,14 @@ title: Использование кэша Azure HPC и Azure NetApp Files
 description: Использование кэша HPC для Azure для улучшения доступа к данным, хранящимся в Azure NetApp Files
 author: ekpgh
 ms.service: hpc-cache
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/30/2019
 ms.author: rohogue
-ms.openlocfilehash: 6d4dd69b30acb26d02218fe05a60ace9aa855ddc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 374f3106ec42233cd5309c2773b05e3c96bbf98e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82194964"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85515487"
 ---
 # <a name="use-azure-hpc-cache-with-azure-netapp-files"></a>Использование кэша HPC для Azure с Azure NetApp Files
 
@@ -88,7 +87,7 @@ az netappfiles volume list -g ${RESOURCE_GROUP} --account-name ${ANF_ACCOUNT} --
 
 Клиентские компьютеры должны подключать кэш вместо того, чтобы подключать Azure NetApp Files тома напрямую. Следуйте инструкциям в разделе [Подключение кэша HPC для Azure](hpc-cache-mount.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте больше о настройке и использовании [Azure NetApp Files](../azure-netapp-files/index.yml)
 * Чтобы получить помощь в планировании и настройке системы кэша HPC Azure для использования Azure NetApp Files, [обратитесь в службу поддержки](hpc-cache-support-ticket.md).

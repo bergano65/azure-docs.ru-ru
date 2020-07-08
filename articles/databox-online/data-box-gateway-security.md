@@ -8,12 +8,11 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 08/21/2019
 ms.author: alkohli
-ms.openlocfilehash: 2476cf360909374f711564fb5fad5c9e0706083d
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
-ms.translationtype: MT
+ms.openlocfilehash: 2711160534270f38845ab7b48234f4a441c236b4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82562480"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84195868"
 ---
 # <a name="azure-data-box-gateway-security-and-data-protection"></a>Шлюз Azure Data Box безопасность и защита данных
 
@@ -27,7 +26,6 @@ ms.locfileid: "82562480"
 - **Устройство шлюз Data Box**. Виртуальное устройство, которое вы подготавливаете в гипервизоре предоставленной вами системы. Это виртуальное устройство используется для импорта локальных данных в Azure.
 - **Клиенты и узлы, подключенные к устройству**. Клиенты в инфраструктуре, которые подключаются к устройству Шлюз Data Box и содержат данные, требующие защиты.
 - **Облачное хранилище**. Расположение на облачной платформе Azure, в которой хранятся данные. Это обычно учетная запись хранения, связанная с создаваемым ресурсом Шлюз Data Box.
-
 
 ## <a name="data-box-gateway-service-protection"></a>Защита Шлюз Data Box служб
 
@@ -56,7 +54,7 @@ ms.locfileid: "82562480"
 
 Пароли гарантируют, что только полномочные пользователи могут получить доступ к вашим данным. Шлюз Data Box устройства загружаются в заблокированном состоянии.
 
-Можно сделать следующее:
+Вы можете:
 
 - Подключитесь к локальному веб-ИНТЕРФЕЙСу устройства через браузер, а затем укажите пароль для входа на устройство.
 - Удаленное подключение к интерфейсу PowerShell устройства через HTTP. Удаленное управление включено по умолчанию. Затем можно указать пароль устройства для входа на устройство. Дополнительные сведения см. [в статье удаленное подключение к устройству шлюз Data Box](data-box-gateway-connect-powershell-interface.md#connect-to-the-powershell-interface).
@@ -64,8 +62,7 @@ ms.locfileid: "82562480"
 [!INCLUDE [data-box-edge-gateway-password-best-practices](../../includes/data-box-edge-gateway-password-best-practices.md)]
 - Используйте локальный веб-интерфейс для [изменения пароля](data-box-gateway-manage-access-power-connectivity-mode.md#manage-device-access). Если вы измените пароль, не забудьте уведомить всех пользователей удаленного доступа, чтобы у них не было проблем при входе в систему.
 
-
-## <a name="protect-your-data"></a>Защита ваших данных
+## <a name="protect-your-data"></a>Защита своих данных
 
 В этом разделе описаны функции безопасности Шлюз Data Box, защищающие транзитные и хранимые данные.
 
@@ -77,10 +74,18 @@ ms.locfileid: "82562480"
 
 [!INCLUDE [data-box-edge-gateway-data-flight](../../includes/data-box-edge-gateway-data-flight.md)]
 
-### <a name="protect-data-via-storage-accounts"></a>Защита данных с помощью учетных записей хранения
+### <a name="protect-data-using-storage-accounts"></a>Защита данных с помощью учетных записей хранения
 
 [!INCLUDE [data-box-edge-gateway-data-storage-accounts](../../includes/data-box-edge-gateway-protect-data-storage-accounts.md)]
+
 - Регулярно вращайте и [синхронизируйте ключи учетной записи хранения](data-box-gateway-manage-shares.md#sync-storage-keys) , чтобы защитить учетную запись хранения от неавторизованных пользователей.
+
+### <a name="protect-the-device-data-using-bitlocker"></a>Защита данных устройства с помощью BitLocker
+
+Чтобы защитить виртуальные диски на Шлюз Data Box виртуальной машине, рекомендуется включить BitLocker. По умолчанию средство BitLocker выключено. Дополнительные сведения см. в разделе:
+
+- [Параметры поддержки шифрования в диспетчере Hyper-V](hhttps://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v#encryption-support-settings-in-hyper-v-manager)
+- [BitLocker support in a virtual machine (Поддержка BitLocker на виртуальной машине)](https://kb.vmware.com/s/article/2036142)
 
 ## <a name="manage-personal-information"></a>Управление личными сведениями
 
@@ -92,6 +97,6 @@ ms.locfileid: "82562480"
 
 Для получения дополнительных сведений ознакомьтесь с политикой конфиденциальности Майкрософт в [центре управления безопасностью](https://www.microsoft.com/trustcenter).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Развертывание устройства Шлюз Data Box](data-box-gateway-deploy-prep.md)

@@ -1,22 +1,21 @@
 ---
-title: Создание моментального снимка BLOB-объекта и управление им в .NET
+title: Создание моментальных снимков больших двоичных объектов и управление ими в .NET
 titleSuffix: Azure Storage
 description: Узнайте, как создать моментальный снимок большого двоичного объекта, доступного только для чтения, для резервного копирования данных большого двоичного объекта в определенный момент времени.
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/02/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 438692d5c142c3f617ee9d0c3f55b9b3740f9b7a
-ms.sourcegitcommit: d815163a1359f0df6ebfbfe985566d4951e38135
-ms.translationtype: MT
+ms.openlocfilehash: be3d06d8ea493ab7c246ace5c49d5e5bc0036108
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82884700"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84463541"
 ---
-# <a name="create-and-manage-a-blob-snapshot-in-net"></a>Создание моментального снимка BLOB-объекта и управление им в .NET
+# <a name="create-and-manage-a-blob-snapshot-in-net"></a>Создание моментальных снимков больших двоичных объектов и управление ими в .NET
 
 Моментальный снимок — это версия BLOB-объекта только для чтения, сделанная в определенный момент времени. В этой статье показано, как создавать моментальные снимки BLOB-объектов и управлять ими с помощью [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage?view=azure-dotnet).
 
@@ -135,7 +134,7 @@ private static async Task CreateBlockBlobSnapshot(CloudBlobContainer container)
 - [DeleteIfExists](/dotnet/api/azure.storage.blobs.specialized.blobbaseclient.deleteifexists)
 - [DeleteIfExistsAsync](/dotnet/api/azure.storage.blobs.specialized.blobbaseclient.deleteifexistsasync)
 
-В следующем примере кода показано, как удалить большой двоичный объект и его моментальные снимки в `blobClient` .NET, где — это объект типа [блобклиент](/dotnet/api/azure.storage.blobs.blobclient).
+В следующем примере кода показано, как удалить большой двоичный объект и его моментальные снимки в .NET, где `blobClient` — это объект типа [блобклиент](/dotnet/api/azure.storage.blobs.blobclient).
 
 ```csharp
 await blobClient.DeleteIfExistsAsync(DeleteSnapshotsOption.IncludeSnapshots, null, default);
@@ -150,7 +149,7 @@ await blobClient.DeleteIfExistsAsync(DeleteSnapshotsOption.IncludeSnapshots, nul
 - [DeleteIfExists](/dotnet/api/microsoft.azure.storage.blob.cloudblob.deleteifexists)
 - [DeleteIfExistsAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblob.deleteifexistsasync)
 
-В следующем примере кода показано, как удалить большой двоичный объект и его моментальные снимки в `blockBlob` .NET, где является объектом типа [CloudBlockBlob] [dotnet_CloudBlockBlob]:
+В следующем примере кода показано, как удалить большой двоичный объект и его моментальные снимки в .NET, где `blockBlob` является объектом типа [CloudBlockBlob] [dotnet_CloudBlockBlob]:
 
 ```csharp
 await blockBlob.DeleteIfExistsAsync(DeleteSnapshotsOption.IncludeSnapshots, null, null, null);
@@ -158,7 +157,7 @@ await blockBlob.DeleteIfExistsAsync(DeleteSnapshotsOption.IncludeSnapshots, null
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Моментальные снимки BLOB-объектов](snapshots-overview.md)
 - [Версии BLOB-объектов (Предварительная версия)](versioning-overview.md)

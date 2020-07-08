@@ -4,19 +4,18 @@ description: Узнайте, как пользовательские элеме�
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/18/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8c149279a755eb186a3fdc7891e9b511d18c7f2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 4d926d027b59a225d76f6a73ab3ee4ec09b595e5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80050553"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85253313"
 ---
 # <a name="custom-controls-preview"></a>Настраиваемые элементы управления (предварительная версия)
 
@@ -55,10 +54,10 @@ ms.locfileid: "80050553"
 
 Пользовательские элементы управления нельзя использовать с автоматизацией защиты идентификации, требующей многофакторной идентификации Azure, самостоятельного сброса пароля Azure AD (SSPR), удовлетворения требований к заявкам многофакторной проверки подлинности или повышения роли в диспетчере привилегированных удостоверений (PIM).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Общие политики условного доступа](concept-conditional-access-policy-common.md)
+- [Распространенные политики условного доступа](concept-conditional-access-policy-common.md)
 
 - [Режим "Только отчет"](concept-conditional-access-report-only.md)
 
-- [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)
+- [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)

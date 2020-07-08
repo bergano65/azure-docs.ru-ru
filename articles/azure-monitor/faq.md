@@ -7,12 +7,11 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/15/2020
-ms.openlocfilehash: 4cf851022a2b2b0c9a9781f4d41b40982bf2ad57
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 4e4abdd5d5a9e3cddf00cf47d7388a57d0d4d6fa
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83835348"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85807712"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor: вопросы и ответы
 
@@ -272,7 +271,7 @@ WireData
 
 Это классическое приложение, которое можно использовать на веб-сервере IIS для настройки Application Insights в веб-приложениях. Оно не собирает телеметрию: его можно остановить, когда вы не настраиваете приложение. 
 
-[Подробнее](app/monitor-performance-live-website-now.md#questions).
+[Подробнее.](app/monitor-performance-live-website-now.md#questions)
 
 ### <a name="what-telemetry-is-collected-by-application-insights"></a>Какую телеметрию собирает Application Insights?
 
@@ -318,7 +317,7 @@ WireData
 * Дополнительные сведения о том, как в Application Insights собираются IP-адреса и данные о географическом расположении, см. в [этой статье](https://docs.microsoft.com/azure/azure-monitor/app/ip-collection).
 
 
-Вы можете настроить `ClientIpHeaderTelemetryInitializer` для получения IP-адреса из другого заголовка. Например, в некоторых системах он переносится прокси-сервером, балансировщиком нагрузки или сетью CDN в `X-Originating-IP`. [Подробнее](https://apmtips.com/blog/2016/07/05/client-ip-address/).
+Вы можете настроить `ClientIpHeaderTelemetryInitializer` для получения IP-адреса из другого заголовка. Например, в некоторых системах он переносится прокси-сервером, балансировщиком нагрузки или сетью CDN в `X-Originating-IP`. [Подробнее](https://apmtips.com/posts/2016-07-05-client-ip-address/).
 
 Вы можете [использовать Power BI](app/export-power-bi.md ) для отображения данных телеметрии по запросам на карте.
 
@@ -367,7 +366,7 @@ WireData
 ### <a name="what-are-the-user-and-session-counts"></a>Что такое количество пользователей и сеансов?
 
 * Пакет SDK для JavaScript создает файл cookie пользователя в веб-клиенте для определения возвращающихся пользователей и файл cookie сеанса для группировки действий.
-* Если скрипт на стороне клиента отсутствует, вы можете [задать файлы cookie на сервере](https://apmtips.com/blog/2016/07/09/tracking-users-in-api-apps/).
+* Если скрипт на стороне клиента отсутствует, вы можете [задать файлы cookie на сервере](https://apmtips.com/posts/2016-07-09-tracking-users-in-api-apps/).
 * Если один реальный пользователь работает с вашим сайтом в разных браузерах, на разных компьютерах либо использует конфиденциальный режим просмотра или режим инкогнито, то он будет учитываться несколько раз.
 * Для определения вошедшего в систему пользователя на разных компьютерах и в разных браузерах добавьте вызов [setAuthenticatedUserContext()](app/api-custom-events-metrics.md#authenticated-users).
 

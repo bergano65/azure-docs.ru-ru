@@ -1,25 +1,13 @@
 ---
 title: Справочник по синтаксису SQLFilter для служебной шины Azure | Документация Майкрософт
 description: В этой статье содержатся сведения о грамматике SQLFilter. SqlFilter поддерживает подмножество стандарта SQL-92.
-services: service-bus-messaging
-documentationcenter: na
-author: spelluru
-manager: timlt
-editor: ''
-ms.assetid: ''
-ms.service: service-bus-messaging
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 09/05/2018
-ms.author: spelluru
-ms.openlocfilehash: d5a8e165fcee23c5feecd5935983dd77d3ec6c30
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/23/2020
+ms.openlocfilehash: 8412dea583ae119b30976e53d4751411b45339a4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76759669"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85341600"
 ---
 # <a name="sqlfilter-syntax"></a>Синтаксис SQLFilter
 
@@ -60,9 +48,9 @@ ms.locfileid: "76759669"
   
 ## <a name="arguments"></a>Аргументы  
   
--   `<scope>` — необязательная строка, указывающая область `<property_name>`. Допустимые значения: `sys` или `user`. `sys` Значение указывает область системы, где `<property_name>` — это имя общедоступного свойства [класса BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage). `user`Указывает область пользователя, `<property_name>` где является ключом словаря [класса BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) . Область `user` используется по умолчанию, если аргумент `<scope>` не указан.  
+-   `<scope>` — необязательная строка, указывающая область `<property_name>`. Допустимые значения: `sys` или `user`. `sys`Значение указывает область системы, где `<property_name>` — это имя общедоступного свойства [класса BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage). `user`Указывает область пользователя, где `<property_name>` является ключом словаря [класса BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) . Область `user` используется по умолчанию, если аргумент `<scope>` не указан.  
   
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
 Попытка доступа к несуществующему системному свойству вызывает ошибку, а попытка доступа к несуществующему свойству пользователя — нет. Вместо этого несуществующее свойство пользователя вычисляется внутри системы как неизвестное значение. Неизвестное значение обрабатывается особым образом во время вычисления оператора.  
   
@@ -115,7 +103,7 @@ ms.locfileid: "76759669"
       <expression>  
 ```  
   
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
   
 Свойство `<pattern>` должно быть выражением, которое будет вычисляться как строка. Оно используется в качестве шаблона для оператора LIKE.      Оно может содержать следующие подстановочные знаки:  
   
@@ -130,7 +118,7 @@ ms.locfileid: "76759669"
       <expression>  
 ```  
   
-### <a name="remarks"></a>Remarks  
+### <a name="remarks"></a>Комментарии  
 
 Свойство `<escape_char>` должно быть выражением, которое будет вычисляться в качестве строки с 1 символом. Оно используется в качестве escape-символа для оператора LIKE.  
   
@@ -179,7 +167,7 @@ ms.locfileid: "76759669"
       TRUE | FALSE  
 ```  
   
-### <a name="remarks"></a>Remarks  
+### <a name="remarks"></a>Комментарии  
 
 Логические константы представлены в виде ключевого слова **TRUE** или **FALSE**. Значения хранятся в виде `System.Boolean`.  
   
@@ -189,7 +177,7 @@ ms.locfileid: "76759669"
 <string_constant>  
 ```  
   
-### <a name="remarks"></a>Remarks  
+### <a name="remarks"></a>Комментарии  
 
 Строковые константы заключаются в одинарные кавычки и включают любые допустимые символы Юникода. Одинарная кавычка, внедренная в строковую константу, представляется в виде двух одинарных кавычек.  
   
@@ -201,13 +189,13 @@ ms.locfileid: "76759669"
       property(name) | p(name)  
 ```  
   
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
   
 Функция `newid()` возвращает значение **System.Guid**, созданное методом `System.Guid.NewGuid()`.  
   
 Функция `property(name)` возвращает значение свойства, на которое указывает `name`. В качестве значения `name` может использоваться любое допустимое выражение, возвращающее строковое значение.  
   
-## <a name="considerations"></a>Рекомендации
+## <a name="considerations"></a>Особенности
   
 Рассмотрим следующую семантику [SqlFilter](/dotnet/api/microsoft.servicebus.messaging.sqlfilter):  
   

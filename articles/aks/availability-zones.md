@@ -2,15 +2,14 @@
 title: Использование зон доступности в Службе Azure Kubernetes (AKS)
 description: Узнайте, как создать кластер, который распределяет узлы между зонами доступности в службе Kubernetes Azure (AKS)
 services: container-service
-ms.custom: fasttrack-edit
+ms.custom: fasttrack-edit, references_regions
 ms.topic: article
 ms.date: 02/27/2020
-ms.openlocfilehash: 35aaad31728f4a0cd73913ecf397d8123b3f909a
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
-ms.translationtype: HT
+ms.openlocfilehash: 06507c75d486717a77676154818f2032b7e8c807
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83725102"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84195565"
 ---
 # <a name="create-an-azure-kubernetes-service-aks-cluster-that-uses-availability-zones"></a>Создание кластера Службы Azure Kubernetes (AKS), который использует зоны доступности
 
@@ -48,7 +47,7 @@ ms.locfileid: "83725102"
 
 ### <a name="azure-disks-limitations"></a>Ограничения для дисков Azure
 
-Тома, использующие управляемые диски Azure, в настоящее время не являются ресурсами, избыточными между зонами. Тома не могут быть присоединены между зонами и должны размещаться в той же зоне, что и данный узел, на котором размещен целевой модуль pod.
+Тома, использующие управляемые диски Azure, в настоящее время не являются ресурсами, избыточными между зонами. Тома не могут быть присоединены между зонами и должны размещаться в той же зоне, что и данный узел, на котором размещен целевой модуль.
 
 Если необходимо запустить рабочие нагрузки с отслеживанием состояния, используйте допуски и элементы taint пула узлов в спецификациях pod для группировки расписания модулей pod в той же зоне, что и диски. Кроме того, можно использовать сетевое хранилище, например Файлы Azure, которые могут подключаться к модулям pod, так как они планируются между зонами.
 

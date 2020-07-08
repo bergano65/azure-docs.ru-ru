@@ -7,13 +7,12 @@ ms.author: mhopkins
 ms.date: 08/20/2019
 ms.service: storage
 ms.subservice: blobs
-ms.topic: conceptual
-ms.openlocfilehash: 9ffa69980f020580376aea447f40ac615f26cf03
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.topic: how-to
+ms.openlocfilehash: f4e6e2f2732d1c90e8fe669788d82692c8016fd6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79135893"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84463456"
 ---
 # <a name="copy-a-blob-with-net"></a>Копирование большого двоичного объекта с помощью .NET
 
@@ -109,7 +108,7 @@ private static async Task CopyBlockBlobAsync(CloudBlobContainer container)
 
 ## <a name="abort-a-blob-copy-operation"></a>Прервать операцию копирования BLOB-объектов
 
-Прерывание операции копирования приводит к получению целевого большого двоичного объекта нулевой длины для блочных BLOB-объектов, добавления больших двоичных объектов и страничных больших двоичных объектов. Однако метаданные для целевого BLOB-объекта будут иметь новые значения, скопированные из исходного большого двоичного объекта или явно заданы в вызове [старткопи](/dotnet/api/microsoft.azure.storage.blob.cloudblob.startcopy?view=azure-dotnet) или [старткопясинк](/dotnet/api/microsoft.azure.storage.blob.cloudblob.startcopyasync?view=azure-dotnet) . Для сохранения исходных метаданных перед копированием Создайте моментальный снимок целевого большого двоичного объекта перед вызовом `StartCopy` или `StartCopyAsync`.
+Прерывание операции копирования приводит к получению целевого большого двоичного объекта нулевой длины для блочных BLOB-объектов, добавления больших двоичных объектов и страничных больших двоичных объектов. Однако метаданные для целевого BLOB-объекта будут иметь новые значения, скопированные из исходного большого двоичного объекта или явно заданы в вызове [старткопи](/dotnet/api/microsoft.azure.storage.blob.cloudblob.startcopy?view=azure-dotnet) или [старткопясинк](/dotnet/api/microsoft.azure.storage.blob.cloudblob.startcopyasync?view=azure-dotnet) . Для сохранения исходных метаданных перед копированием Создайте моментальный снимок целевого большого двоичного объекта перед вызовом `StartCopy` или `StartCopyAsync` .
 
 При прерывании текущей операции копирования больших двоичных объектов [копистате. status](/dotnet/api/microsoft.azure.storage.blob.copystate.status?view=azure-dotnet#Microsoft_Azure_Storage_Blob_CopyState_Status) целевого большого двоичного объекта имеет значение [копистатус. прервано](/dotnet/api/microsoft.azure.storage.blob.copystatus?view=azure-dotnet).
 
@@ -133,5 +132,5 @@ if (destBlob.CopyState.Status == CopyStatus.Pending)
 
 В следующих разделах содержатся сведения о копировании больших двоичных объектов и прерывании текущих операций копирования с помощью интерфейсов API службы Azure.
 
-- [Copy Blob](/rest/api/storageservices/copy-blob)
+- [Копирование BLOB-объекта](/rest/api/storageservices/copy-blob)
 - [Прерывание копирования большого двоичного объекта](/rest/api/storageservices/abort-copy-blob)

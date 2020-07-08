@@ -10,19 +10,18 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 02/18/2020
 ms.custom: seodec18
-ms.openlocfilehash: 39ebbf99ad31cce20eabc20fbdc056c889235713
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 2fa56217c54ac662a62a5ce835d75e3d85f05bfa
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77470757"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86041478"
 ---
 # <a name="data-modeling-in-azure-time-series-insights-preview"></a>Моделирование данных в предварительной версии службы "Аналитика временных рядов"
 
 В этой статье описывается работа с моделью временных рядов в предварительной версии службы "аналитика временных рядов Azure". Здесь подробно рассматриваются несколько распространенных сценариев данных.
 
 > [!TIP]
-> * Ознакомьтесь с [моделью временных рядов](time-series-insights-update-tsm.md)предварительной версии.
+> * Ознакомьтесь с [моделью временных рядов](concepts-model-overview.md)предварительной версии.
 > * Дополнительные сведения о навигации по пользовательскому интерфейсу просмотра в [обозревателе предварительного просмотра службы "аналитика временных рядов Azure](./time-series-insights-update-explorer.md)".
 
 ## <a name="instances"></a>Экземпляры
@@ -37,7 +36,7 @@ ms.locfileid: "77470757"
 
     [![Создайте отдельный экземпляр, выбрав экземпляры.](media/v2-update-how-to-tsm/how-to-tsm-instances-panel.png)](media/v2-update-how-to-tsm/how-to-tsm-instances-panel.png#lightbox)
 
-1. Выберите **+ Добавить**.
+1. Щелкните **+ Добавить**.
 
     [![Добавьте экземпляр, нажав кнопку + Добавить.](media/v2-update-how-to-tsm/how-to-tsm-add-instance.png)](media/v2-update-how-to-tsm/how-to-tsm-add-instance.png#lightbox)
 
@@ -85,7 +84,7 @@ ms.locfileid: "77470757"
 
     [![Создайте иерархию с помощью панели.](media/v2-update-how-to-tsm/how-to-tsm-hierarchy-panel.png)](media/v2-update-how-to-tsm/how-to-tsm-hierarchy-panel.png#lightbox)
 
-1. Выберите **+ Добавить**.
+1. Щелкните **+ Добавить**.
 
     [![Кнопка "иерархия + добавить".](media/v2-update-how-to-tsm/how-to-tsm-add-new-hierarchy.png)](media/v2-update-how-to-tsm/how-to-tsm-add-new-hierarchy.png#lightbox)
 
@@ -168,7 +167,7 @@ ms.locfileid: "77470757"
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- Дополнительные сведения о модели временных рядов см. в статье [моделирование данных](./time-series-insights-update-tsm.md).
+- Дополнительные сведения о модели временных рядов см. в статье [моделирование данных](./concepts-model-overview.md).
 
 - Дополнительные сведения о возможностях предварительной версии см. в статье [Visualize data in the explorer Preview](./time-series-insights-update-explorer.md) (Визуализация данных в обозревателе предварительной версии службы).
 

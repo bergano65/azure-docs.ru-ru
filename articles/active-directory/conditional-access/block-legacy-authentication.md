@@ -4,19 +4,18 @@ description: Узнайте, как улучшить безопасность, �
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/13/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83e657114f4e51775fb73267322a48e362f57b1c
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: bd66bc742d0832cba5d6f302bfe30c85e2d82716
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83641697"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85253347"
 ---
 # <a name="how-to-block-legacy-authentication-to-azure-ad-with-conditional-access"></a>Руководство. Блокировка устаревших методов аутентификации в Azure AD с помощью условного доступа   
 
@@ -65,6 +64,7 @@ AAD поддерживает несколько широко распростр�
 
 - SMTP с проверкой подлинности — используется клиентами POP и IMAP для отправки сообщений электронной почты.
 - Автообнаружение — используется клиентами Outlook и EAS для поиска почтовых ящиков в Exchange Online и подключения к ним.
+- Exchange ActiveSync (EAS) — используется для подключения к почтовым ящикам в Exchange Online.
 - PowerShell в Exchange Online — используется для подключения к Exchange Online с помощью удаленной оболочки PowerShell. Если вы заблокируете обычную аутентификацию для PowerShell в Exchange Online, для подключения понадобится использовать модуль PowerShell Exchange Online. Инструкции см. в статье [Подключение к PowerShell Exchange Online с помощью многофакторной проверки подлинности](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell).
 - Веб-службы Exchange (EWS) — программный интерфейс, используемый Outlook, Outlook для Mac и сторонними приложениями.
 - IMAP4 — используется клиентами электронной почты IMAP.

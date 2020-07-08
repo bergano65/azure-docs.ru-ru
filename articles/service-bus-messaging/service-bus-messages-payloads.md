@@ -1,24 +1,13 @@
 ---
 title: Сообщения, полезные данные и сериализация в служебной шине Azure | Документация Майкрософт
 description: В этой статье содержатся общие сведения о сообщениях, полезных данных, маршрутизации сообщений и сериализации в служебной шине Azure.
-services: service-bus-messaging
-documentationcenter: ''
-author: axisc
-manager: timlt
-editor: spelluru
-ms.service: service-bus-messaging
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 01/24/2020
-ms.author: aschhab
-ms.openlocfilehash: 11e56ae2483a254fb00e3593da7841f3f3d844f3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/23/2020
+ms.openlocfilehash: d426489776dff652cbf72d640f3e74b1bc8e30d4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76759403"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85341683"
 ---
 # <a name="messages-payloads-and-serialization"></a>Сообщения, полезные данные и сериализация
 
@@ -77,7 +66,7 @@ ms.locfileid: "76759403"
 
 В отличие от вариантов Java или .NET Standard версия .NET Framework API служебной шины поддерживает создание экземпляров **BrokeredMessage**, передавая произвольные объекты .NET в конструктор. 
 
-При использовании предыдущих версий протокола SBMP эти объекты затем сериализуются с помощью стандартного двоичного сериализатора или с помощью сериализатора, который предоставляется извне. При использовании протокола AMQP объект сериализуется в объект AMQP. Получатель может извлекать эти объекты с помощью метода [>\<() в теле T](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) , предоставляя ожидаемый тип. При использовании AMQP объекты сериализуются в граф AMQP, состоящий из объектов **ArrayList** и **IDictionary<string,object>**, и любой клиент AMQP может декодировать их. 
+При использовании предыдущих версий протокола SBMP эти объекты затем сериализуются с помощью стандартного двоичного сериализатора или с помощью сериализатора, который предоставляется извне. При использовании протокола AMQP объект сериализуется в объект AMQP. Получатель может получить объекты с помощью метода [GetBody\<T>()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1), передавая ожидаемый тип. При использовании AMQP объекты сериализуются в граф AMQP, состоящий из объектов **ArrayList** и **IDictionary<string,object>**, и любой клиент AMQP может декодировать их. 
 
 Хотя эта скрытая волшебная команда сериализации удобна, приложение должно явно контролировать сериализацию объектов и преобразовать их диаграммы объектов в потоки, прежде чем включить их в сообщение и выполнить обратную операцию на стороне получателя. Это дает взаимодействующие результаты. Следует также отметить, что хотя протокол AMQP имеет мощную модель двоичного кодирования, он связан с экосистемой обмена сообщениями AMQP. HTTP-клиенты будут иметь проблемы при декодировании этих полезных данных. 
 

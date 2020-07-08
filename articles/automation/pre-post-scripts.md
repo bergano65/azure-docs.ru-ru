@@ -5,12 +5,11 @@ services: automation
 ms.subservice: update-management
 ms.date: 05/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: 7fa2dd335e457307dd6d7e4ecdc787015b742b32
-ms.sourcegitcommit: 2721b8d1ffe203226829958bee5c52699e1d2116
-ms.translationtype: HT
+ms.openlocfilehash: f05e705f351d75fdf772d3197b94fcece40d43fb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84148282"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85100378"
 ---
 # <a name="manage-pre-scripts-and-post-scripts"></a>Управление сценариями предварительного и последующего выполнения
 
@@ -90,6 +89,9 @@ ms.locfileid: "84148282"
 
 > [!NOTE]
 > Объект `SoftwareUpdateConfigurationRunContext` может содержать повторяющиеся записи для компьютеров. В этом случае сценарии предварительного и последующего выполнения будут выполнены на одном компьютере несколько раз. Если такое поведение нежелательно, используйте `Sort-Object -Unique` для выбора только уникальных имен виртуальных машин.
+
+> [!NOTE]
+> В настоящее время только модули Runbook PowerShell поддерживаются в качестве скриптов pre и POST. Другие типы модулей Runbook, такие как Python, графический поток, Рабочий процесс PowerShell, в настоящее время не поддерживаются в качестве скриптов предварительной или публикации.
 
 ## <a name="use-a-pre-script-or-post-script-in-a-deployment"></a>Использование сценариев предварительного и последующего выполнения в развертывании
 

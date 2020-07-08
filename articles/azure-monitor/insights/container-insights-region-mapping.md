@@ -3,12 +3,12 @@ title: Azure Monitor для сопоставлений областей конт
 description: В этой статье описываются сопоставления регионов, поддерживаемые между Azure Monitor для контейнеров, Log Analytics рабочей области и настраиваемых метрик.
 ms.topic: conceptual
 ms.date: 06/26/2019
-ms.openlocfilehash: a058f9cac987bb5c7130019f50370c6a176b09ac
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.custom: references_regions
+ms.openlocfilehash: 3e8ead78c5e0e534e07c1e2ab0e25eb3f5a90c38
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75403420"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84194988"
 ---
 # <a name="region-mappings-supported-by-azure-monitor-for-containers"></a>Сопоставления регионов, поддерживаемые Azure Monitor для контейнеров
 
@@ -33,7 +33,7 @@ ms.locfileid: "75403420"
 |SoutheastAsia |SoutheastAsia |
 |**Бразилия** | |
 |бразилсаус | SouthCentralUS |
-|**Canada** ||
+|**Канада** ||
 |CanadaCentral |CanadaCentral |
 |CanadaEast |CanadaCentral |
 |**Европа** | |
@@ -53,13 +53,13 @@ ms.locfileid: "75403420"
 |**Корея** | |
 |KoreaCentral |KoreaCentral |
 |KoreaSouth |KoreaCentral |
-|**СОВМЕСТ** | |
+|**США** | |
 |CentralUS |CentralUS|
 |EastUS |EastUS |
 |EastUS2 |EastUS2 |
 |WestUS |WestUS |
 |WestUS2 |WestUS2 |
-|WestCentralUS<sup>1</sup>|EastUS<sup>1</sup>|
+|WestCentralUS<sup>1</sup>|EastUS <sup>1</sup>|
 |US Gov (Вирджиния) |US Gov (Вирджиния) |
 
 <sup>1</sup> из-за емкости ограничений регион недоступен при создании новых ресурсов. Это относится к рабочей области Log Analytics. Однако уже существующие связанные ресурсы в регионе должны продолжать работать.
@@ -68,6 +68,6 @@ ms.locfileid: "75403420"
 
 Сбор метрик из узлов кластеров Azure Kubernetes Services (AKS) и модулей Pod поддерживается для публикации в качестве пользовательских метрик только в следующих [регионах Azure](../platform/metrics-custom-overview.md#supported-regions).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы начать мониторинг кластера AKS, ознакомьтесь со сведениями о том, [как включить Azure Monitor для контейнеров](container-insights-onboard.md) , чтобы понять требования и доступные методы для включения мониторинга.  

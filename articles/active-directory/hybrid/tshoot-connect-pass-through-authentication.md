@@ -11,17 +11,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 4/15/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae83cea866367fa6a6596caa683d0287bea96c29
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
-ms.translationtype: MT
+ms.openlocfilehash: 36844c3c2fcfdbf016b3e2d148345e9ce31ea2b4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
-ms.locfileid: "60456177"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85356157"
 ---
 # <a name="troubleshoot-azure-active-directory-pass-through-authentication"></a>Устранение неполадок в работе сквозной аутентификации Azure Active Directory
 
@@ -44,7 +43,7 @@ ms.locfileid: "60456177"
 
 Если пользователи не могут выполнить вход с использованием сквозной аутентификации, для них могут отображаться следующие ошибки на экране входа в Azure AD: 
 
-|Error|Описание|Разрешение
+|Ошибка|Описание:|Решение
 | --- | --- | ---
 |AADSTS80001|Не удалось подключиться к Active Directory|Убедитесь, что серверы с агентами являются членами того же леса, что и пользователи, чьи пароли должны быть проверены, и могут подключиться к Active Directory.  
 |AADSTS8002|Истекло время ожидания подключения к Active Directory|Убедитесь, что служба Active Directory доступна и отвечает на запросы агентов.
@@ -52,15 +51,42 @@ ms.locfileid: "60456177"
 |AADSTS80005|При проверке было обнаружено непредсказуемое исключение WebException|Это временная проблема. Повторите запрос. Если проблема не исчезла, обратитесь в службу поддержки Майкрософт.
 |AADSTS80007|Произошла ошибка при взаимодействии с Active Directory|Посмотрите дополнительные сведения в журналах агентов и убедитесь, что Active Directory работает должным образом.
 
+### <a name="users-get-invalid-usernamepassword-error"></a>Пользователи получают неверное сообщение об ошибке имени пользователя или пароля 
+
+Это может произойти, если локальное имя участника-пользователя (UPN) отличается от имени UPN пользователя в облаке.
+
+Чтобы убедиться, что это проблема, сначала проверьте, правильно ли работает агент сквозной аутентификации:
+
+
+1. Создайте тестовую учетную запись.  
+2. Импортируйте модуль PowerShell на компьютере агента:
+ 
+ ```powershell
+ Import-Module "C:\Program Files\Microsoft Azure AD Connect Authentication  Agent\Modules\PassthroughAuthPSModule\PassthroughAuthPSModule.psd1"
+ ```
+3. Выполните команду Invoke PowerShell: 
+
+ ```powershell
+ Invoke-PassthroughAuthOnPremLogonTroubleshooter 
+ ``` 
+4. При появлении запроса на ввод учетных данных введите те же имя пользователя и пароль, которые используются для входа в ( https://login.microsoftonline.com) .
+
+Если вы получаете одно и то же сообщение об ошибке имени пользователя и пароля, это означает, что агент сквозной проверки подлинности работает правильно, и проблема может быть в том, что локальный UPN не поддерживает маршрутизацию. Дополнительные сведения см. в разделе [Настройка альтернативного имени пользователя]( https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configuring-alternate-login-id#:~:text=%20Configuring%20Alternate%20Login%20ID,See%20Also.%20%20More).
+
+
+
+
+
+
 ### <a name="sign-in-failure-reasons-on-the-azure-active-directory-admin-center-needs-premium-license"></a>Причины сбоя единого входа в центре администрирования Azure Active Directory (требуется лицензия Premium)
 
 Если к клиенту привязана лицензия Azure AD Premium, вы можете также изучить [отчет о действиях при входе](../reports-monitoring/concept-sign-ins.md) в [центре администрирования Azure Active Directory](https://aad.portal.azure.com/).
 
 ![Центр администрирования Azure Active Directory — отчет о действиях входа](./media/tshoot-connect-pass-through-authentication/pta4.png)
 
-Перейдите в раздел **Azure Active Directory** -> **входы** в [центр администрирования Azure Active Directory](https://aad.portal.azure.com/) и щелкните действие входа конкретного пользователя. Найдите поле **КОД ОШИБКИ ВХОДА**. Сопоставьте значение этого поля c причиной сбоя и способом разрешения с помощью следующей таблицы:
+Перейдите в раздел **Azure Active Directory**  ->  **входы** в [центр администрирования Azure Active Directory](https://aad.portal.azure.com/) и щелкните действие входа конкретного пользователя. Найдите поле **КОД ОШИБКИ ВХОДА**. Сопоставьте значение этого поля c причиной сбоя и способом разрешения с помощью следующей таблицы:
 
-|Код ошибки входа|Причина ошибки входа|Разрешение
+|Код ошибки входа|Причина ошибки входа|Решение
 | --- | --- | ---
 | 50144 | Истек срок действия пароля пользователя Active Directory. | Сбросьте пароль пользователя в локальной службе Active Directory.
 | 80001 | Агент аутентификации недоступен. | Установите и зарегистрируйте агент аутентификации.

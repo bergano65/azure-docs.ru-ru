@@ -3,20 +3,19 @@ title: Настройка единого входа на основе SAML с п
 titleSuffix: Azure Active Directory
 description: Вам нужно настроить единый вход на основе SAML для нескольких экземпляров одного приложения? Узнайте, как сэкономить время, автоматизировав настройку единого входа на основе SAML при помощи API Microsoft Graph.
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/19/2020
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: luleon
-ms.openlocfilehash: fd59dcdd566110d1df02333f5701c0c206442d5d
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.openlocfilehash: 50ee9e3c22c885931e2586f65ba2fa3353fccfeb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83846466"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85355851"
 ---
 # <a name="automate-saml-based-sso-app-configuration-with-microsoft-graph-api"></a>Автоматизация настройки единого входа на основе SAML для приложений с помощью API Microsoft Graph
 
@@ -40,8 +39,8 @@ ms.locfileid: "83846466"
 |Тип ресурса |Метод |
 |---------|---------|
 |[applicationTemplate](https://docs.microsoft.com/graph/api/resources/applicationtemplate?view=graph-rest-beta)|[List applicationTemplate](https://docs.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-beta&tabs=http) <br>[Instantiate applicationTemplate](https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-beta&tabs=http)|
-|[servicePrincipals](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta)|[Update servicePrincipal](https://docs.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-beta&tabs=http) <br> [Create appRoleAssignments](https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-beta&tabs=http) <br> [Assign claimsMappingPolicies](https://docs.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-beta&tabs=http)|
-|[applications](https://docs.microsoft.com/graph/api/resources/application?view=graph-rest-1.0)|[Update application](https://docs.microsoft.com/graph/api/application-update?view=graph-rest-beta&tabs=http)|
+|[servicePrincipals](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0)|[Update servicePrincipal](https://docs.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-1.0&tabs=http) <br> [Create appRoleAssignments](https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-1.0&tabs=http) <br> [Assign claimsMappingPolicies](https://docs.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-beta&tabs=http)|
+|[applications](https://docs.microsoft.com/graph/api/resources/application?view=graph-rest-1.0)|[Update application](https://docs.microsoft.com/graph/api/application-update?view=graph-rest-1.0&tabs=http)|
 |[claimsMappingPolicy](https://docs.microsoft.com/graph/api/resources/claimsmappingpolicy?view=graph-rest-beta)| [Create claimsMappingPolicy](https://docs.microsoft.com/graph/api/claimsmappingpolicy-post-claimsmappingpolicies?view=graph-rest-beta&tabs=http)
 
 >[!NOTE]
@@ -111,6 +110,8 @@ Content-type: application/json
 
 Используя идентификатор шаблона, который вы получили для приложения на предыдущем шаге, [создайте экземпляр](https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-beta&tabs=http) приложения и субъект-службу в клиенте.
 
+> [!NOTE] 
+> Вы можете использовать API Аппликатионтемплате для создания экземпляров [приложений, не относящихся к коллекции](add-non-gallery-app.md). Используйте Аппликатионтемплатеид `8adf8e6e-67b2-4cf2-a259-e3dc5476c621` .
 #### <a name="request"></a>Запрос
 
 <!-- {
@@ -190,7 +191,7 @@ Content-type: application/json
 ```
 ### <a name="set-single-sign-on-mode"></a>Настройка режима единого входа
 
-В этом примере вы настроите режим единого входа `saml` для [типа ресурса servicePrincipal](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta). Также вы можете настроить другие свойства единого входа SAML: `notificationEmailAddresses`, `loginUrl` и `samlSingleSignOnSettings.relayState`.
+В этом примере вы настроите режим единого входа `saml` для [типа ресурса servicePrincipal](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-1.0). Также вы можете настроить другие свойства единого входа SAML: `notificationEmailAddresses`, `loginUrl` и `samlSingleSignOnSettings.relayState`.
 
 #### <a name="request"></a>Запрос
 
@@ -200,14 +201,11 @@ Content-type: application/json
 }-->
 
 ```msgraph-interactive
-PATCH https://graph.microsoft.com/beta/servicePrincipals/f47a6776-bca7-4f2e-bc6c-eec59d058e3e
+PATCH https://graph.microsoft.com/v1.0/servicePrincipals/f47a6776-bca7-4f2e-bc6c-eec59d058e3e
 Content-type: servicePrincipal/json
 
 {
-    "preferredSingleSignOnMode": "saml",
-    "notificationEmailAddresses": [
-        "john@contoso.com"
-      ]
+    "preferredSingleSignOnMode": "saml"
 }
 ```
 
@@ -234,7 +232,7 @@ HTTP/1.1 204
 }-->
 
 ```msgraph-interactive
-PATCH https://graph.microsoft.com/beta/applications/cbc071a6-0fa5-4859-8g55-e983ef63df63
+PATCH https://graph.microsoft.com/v1.0/applications/cbc071a6-0fa5-4859-8g55-e983ef63df63
 Content-type: applications/json
 
 {
@@ -275,7 +273,7 @@ HTTP/1.1 204
 }-->
 
 ```msgraph-interactive
-PATCH https://graph.microsoft.com/beta/serviceprincipals/f47a6776-bca7-4f2e-bc6c-eec59d058e3e
+PATCH https://graph.microsoft.com/v1.0/serviceprincipals/f47a6776-bca7-4f2e-bc6c-eec59d058e3e
 Content-type: serviceprincipals/json
 
 {
@@ -340,6 +338,8 @@ HTTP/1.1 204
 | roles | assignedroles |
 | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier` | userprincipalname |
 
+Дополнительные сведения см. [в разделе Настройка утверждений, выпущенных в токене](https://docs.microsoft.com/azure/active-directory/develop/active-directory-claims-mapping).
+
 #### <a name="request"></a>Запрос
 
 <!-- {
@@ -348,7 +348,7 @@ HTTP/1.1 204
 }-->
 
 ```msgraph-interactive
-POST https://graph.microsoft.com/beta/policies/claimsMappingPolicies
+POST https://graph.microsoft.com/v1.0/policies/claimsMappingPolicies
 Content-type: claimsMappingPolicies/json
 
 {
@@ -406,7 +406,7 @@ HTTP/1.1 200 OK
 Content-type: claimsMappingPolicies/json
 
 {
-    "@odata.context": "https://graph.microsoft.com/beta/$metadata#policies/claimsMappingPolicies/$entity",
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#policies/claimsMappingPolicies/$entity",
     "id": "6b33aa8e-51f3-41a6-a0fd-d660d276197a",
     "definition": [
         "{\"ClaimsMappingPolicy\": {\"Version\": 1,\"IncludeBasicClaimSet\": \"true\",\"ClaimsSchema\": [{\"Source\": \"user\",\"ID\": \"assignedroles\",\"SamlClaimType\":\"https://aws.amazon.com/SAML/Attributes/Role\"\r\n                    },{\"Source\": \"user\",\"ID\": \"userprincipalname\",\"SamlClaimType\": \"https://aws.amazon.com/SAML/Attributes/RoleSessionName\"},{\"Source\": \"user\",\"ID\": \"900\",\"SamlClaimType\": \"https://aws.amazon.com/SAML/Attributes/SessionDuration\"},{\"Source\": \"user\",\"ID\": \"assignedroles\",\"SamlClaimType\":\"appRoles\"},{\"Source\": \"user\",\"ID\": \"userprincipalname\",\"SamlClaimType\": \"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier\"}]}}"
@@ -430,7 +430,7 @@ POST https://graph.microsoft.com/beta/servicePrincipals/f47a6776-bca7-4f2e-bc6c-
 Content-type: claimsMappingPolicies/json
 
 {
-  "@odata.id":"https://graph.microsoft.com/beta/policies/claimsMappingPolicies/6b33aa8e-51f3-41a6-a0fd-d660d276197a"
+  "@odata.id":"https://graph.microsoft.com/v1.0/policies/claimsMappingPolicies/6b33aa8e-51f3-41a6-a0fd-d660d276197a"
 }
 ```
 
@@ -503,14 +503,14 @@ Export-Certificate -cert $path -FilePath $cerFile
 #### <a name="request"></a>Запрос
 
 > [!NOTE]
-> Значение key в свойстве keyCredentials сокращено для удобства чтения.
+> Значение key в свойстве keyCredentials сокращено для удобства чтения. Значение — Base 64 в кодировке. Для закрытого ключа свойство `usage` имеет значение "Sign". Для открытого ключа свойство `usage` — «Verify».
 
 <!-- {
   "blockType": "request",
   "name": "servicePrincipals"
 }-->
 ```msgraph-interactive
-PATCH https://graph.microsoft.com/beta/servicePrincipals/f47a6776-bca7-4f2e-bc6c-eec59d058e3e
+PATCH https://graph.microsoft.com/v1.0/servicePrincipals/f47a6776-bca7-4f2e-bc6c-eec59d058e3e
 
 Content-type: servicePrincipals/json
 
@@ -571,7 +571,7 @@ HTTP/1.1 204
   "name": "servicePrincipals"
 }-->
 ```msgraph-interactive
-PATCH https://graph.microsoft.com/beta/servicePrincipals/f47a6776-bca7-4f2e-bc6c-eec59d058e3e
+PATCH https://graph.microsoft.com/v1.0/servicePrincipals/f47a6776-bca7-4f2e-bc6c-eec59d058e3e
 
 Content-type: servicePrincipals/json
 
@@ -609,7 +609,7 @@ HTTP/1.1 204
   "name": "servicePrincipals"
 }-->
 ```msgraph-interactive
-POST https://graph.microsoft.com/beta/servicePrincipals/f47a6776-bca7-4f2e-bc6c-eec59d058e3e/appRoleAssignments
+POST https://graph.microsoft.com/v1.0/servicePrincipals/f47a6776-bca7-4f2e-bc6c-eec59d058e3e/appRoleAssignments
 
 Content-type: appRoleAssignments/json
 
@@ -642,7 +642,7 @@ Content-type: appRoleAssignments/json
 }
 ```
 
-Дополнительные сведения см. в документации по типу ресурса [appRoleAssignment](https://docs.microsoft.com/graph/api/resources/approleassignment?view=graph-rest-beta).
+Дополнительные сведения см. в документации по типу ресурса [appRoleAssignment](https://docs.microsoft.com/graph/api/resources/approleassignment?view=graph-rest-1.0).
 
 ## <a name="step-6-configure-the-application-side"></a>Шаг 6. Настройка на стороне приложения
 

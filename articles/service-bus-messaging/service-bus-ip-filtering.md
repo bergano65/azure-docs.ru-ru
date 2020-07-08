@@ -1,22 +1,13 @@
 ---
 title: Настройка правил брандмауэра IP-адресов для Служебной шины Azure
 description: Использование правил брандмауэра для разрешения подключений к Служебной шине Azure с определенных IP-адресов.
-services: service-bus
-documentationcenter: ''
-author: axisc
-manager: timlt
-editor: spelluru
-ms.service: service-bus
-ms.devlang: na
 ms.topic: article
-ms.date: 05/14/2020
-ms.author: aschhab
-ms.openlocfilehash: fdd3540248c5210e2f6fc47f439641c007a793d8
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.date: 06/23/2020
+ms.openlocfilehash: a5ae491f82e73c5364788dff8b531e81d17ebb68
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83647808"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85341441"
 ---
 # <a name="configure-ip-firewall-rules-for-azure-service-bus"></a>Настройка правил брандмауэра IP-адресов для Служебной шины Azure
 По умолчанию пространства имен Служебной шины доступны из Интернета при условии, что запрос поступает с действительной аутентификацией и авторизацией. С помощью IP-брандмауэра такой доступ можно дополнительно ограничить набором или диапазоном IPv4-адресов, введя их в нотации [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).

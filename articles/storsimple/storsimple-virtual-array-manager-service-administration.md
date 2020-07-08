@@ -9,17 +9,16 @@ editor: ''
 ms.assetid: 958244a5-f9f5-455e-b7ef-71a65558872e
 ms.service: storsimple
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/1/2016
 ms.author: alkohli
-ms.openlocfilehash: bb6bb491ca71e5ced5aecc8137e9e1cbd950e80b
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
-ms.translationtype: MT
+ms.openlocfilehash: d7c7cf335336cc552adaf5d9490bc58d64b0cdc9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "62123811"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85515442"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-administer-your-storsimple-virtual-array"></a>Администрирование виртуального массива StorSimple с помощью службы диспетчера устройств StorSimple
 ![Последовательность операций процесса настройки](./media/storsimple-virtual-array-manager-service-administration/manage4.png)
@@ -42,7 +41,7 @@ ms.locfileid: "62123811"
 Служба диспетчера устройств StorSimple работает в Microsoft Azure и подключается к нескольким виртуальным массивам StorSimple. Для управления этими устройствами используется центральный портал Microsoft Azure в браузере. Чтобы подключиться к службе диспетчера устройств StorSimple, выполните следующие действия.
 
 #### <a name="to-connect-to-the-service"></a>Подключение к службе
-1. Перейдите на сайт [https://ms.portal.azure.com](https://ms.portal.azure.com).
+1. Перейдите на страницу [https://ms.portal.azure.com](https://ms.portal.azure.com).
 2. С помощью учетной записи Майкрософт войдите на портал Microsoft Azure (расположен в правой верхней части панели).
 3. Для просмотра всех диспетчеров устройств в данной подписки щелкните "Больше служб" и примените фильтр "Диспетчеры устройств StorSimple".
 
@@ -71,11 +70,11 @@ ms.locfileid: "62123811"
 > Следующие задачи выполняются только в [локальном веб-интерфейсе](storsimple-ova-web-ui-admin.md) :
 > 
 > * [получение ключа шифрования данных службы;](storsimple-ova-web-ui-admin.md#get-the-service-data-encryption-key)
-> * [создание пакета журналов;](storsimple-ova-web-ui-admin.md#generate-a-log-package)
+> * [Создание пакета поддержки](storsimple-ova-web-ui-admin.md#generate-a-log-package)
 > * [остановка и повторный запуск виртуального массива.](storsimple-ova-web-ui-admin.md#shut-down-and-restart-your-device)
 > 
 > 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 Сведения о веб-интерфейсе и способах его использования см. в статье [Использование веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).
 

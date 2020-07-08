@@ -4,11 +4,10 @@ description: Узнайте, как настроить переменные ср
 ms.topic: article
 ms.date: 04/17/2019
 ms.openlocfilehash: c3c76ba0c6131a8ab3de68c13c9dfddaf7e8749a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79247232"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84686741"
 ---
 # <a name="set-environment-variables-in-container-instances"></a>Установка переменных среды в экземплярах контейнеров
 
@@ -38,7 +37,7 @@ az container create \
     --restart-policy OnFailure
 ```
 
-Чтобы изменить выходные данные, запустите второй контейнер с добавленным `--environment-variables` аргументом, указав значения для переменных *нумвордс* и *minLength* . (В этом примере предполагается, что вы используете интерфейс командной строки оболочки Bash или Azure Cloud Shell. Если вы используете командную строку Windows, заключите переменные в двойные кавычки, например: `--environment-variables "NumWords"="5" "MinLength"="8"`.)
+Чтобы изменить выходные данные, запустите второй контейнер с `--environment-variables` добавленным аргументом, указав значения для переменных *Нумвордс* и *minLength* . (В этом примере предполагается, что вы используете интерфейс командной строки оболочки Bash или Azure Cloud Shell. Если вы используете командную строку Windows, заключите переменные в двойные кавычки, например: `--environment-variables "NumWords"="5" "MinLength"="8"`.)
 
 ```azurecli-interactive
 az container create \
@@ -236,7 +235,7 @@ root@caas-ef3ee231482549629ac8a40c0d3807fd-3881559887-5374l:/# echo $SECRET
 my-secret-value
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В скриптах на основе задач, таких как пакетная обработка большого набора данных с несколькими контейнерами, могут использоваться пользовательские переменные среды во время выполнения. Дополнительные сведения о выполнении контейнеров на основе задач см. [в статье выполнение контейнерных задач с помощью политик перезапуска](container-instances-restart-policy.md).
 

@@ -9,12 +9,11 @@ ms.topic: article
 ms.date: 09/27/2018
 ms.author: cynthn
 ms.custom: legacy
-ms.openlocfilehash: 1b72be91ee11ef7003e225fe830a59ea42310ac6
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: cf8d4cd3c70e28a6c70ab9321a8f55271ead754f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83656688"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85807508"
 ---
 # <a name="create-a-managed-image-of-a-generalized-vm-in-azure"></a>Создание управляемого образа универсальной виртуальной машины в Azure
 
@@ -26,7 +25,7 @@ ms.locfileid: "83656688"
 
 Sysprep удаляет все сведения о вашей учетной записи и безопасности, а затем подготавливает машину к использованию в качестве образа. Дополнительные сведения о Sysprep приведены в [обзоре Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).
 
-Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в статье [Поддержка ролей сервера в Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep-support-for-server-roles) и [Неподдерживаемые сценарии](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview#unsupported-scenarios).
+Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в статье [Поддержка ролей сервера в Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep-support-for-server-roles) и [Неподдерживаемые сценарии](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview#unsupported-scenarios). Программа Sysprep требует, чтобы диски были полностью расшифрованы перед выполнением. Если вы включили шифрование на виртуальной машине, отключите шифрование перед запуском Sysprep.
 
 > [!IMPORTANT]
 > После применения Sysprep на виртуальной машине она считается *универсальной*, что препятствует ее перезапуску. Процесс обобщения виртуальной машины необратим. Если необходимо сохранить исходную виртуальную машину в рабочем состоянии, нужно создать [копию виртуальной машины](create-vm-specialized.md#option-3-copy-an-existing-azure-vm) и обобщить эту копию. 

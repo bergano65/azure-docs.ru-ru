@@ -1,25 +1,13 @@
 ---
 title: Служебная шина Azure — исключения обмена сообщениями | Документация Майкрософт
 description: В этой статье представлен список исключений обмена сообщениями служебной шины Azure и предлагаемых действий, которые необходимо выполнить при возникновении исключения.
-services: service-bus-messaging
-documentationcenter: na
-author: axisc
-manager: timlt
-editor: spelluru
-ms.assetid: 3d8526fe-6e47-4119-9f3e-c56d916a98f9
-ms.service: service-bus-messaging
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 03/23/2020
-ms.author: aschhab
-ms.openlocfilehash: f1a4caf6ffd5740b4227aff2f38d9cb709c77b48
-ms.sourcegitcommit: d9cd51c3a7ac46f256db575c1dfe1303b6460d04
-ms.translationtype: MT
+ms.date: 06/23/2020
+ms.openlocfilehash: dd57938c24565257aefebc89a8b070865e6791af
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82739353"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85341643"
 ---
 # <a name="service-bus-messaging-exceptions"></a>Исключения обмена сообщениями служебной шины
 В этой статье перечислены исключения .NET, созданные .NET Framework API. 
@@ -29,7 +17,7 @@ API обмена сообщениями создают исключения, к�
 
 1. Ошибка кодирования пользователя ([System. ArgumentException](https://msdn.microsoft.com/library/system.argumentexception.aspx), [System. InvalidOperationException](https://msdn.microsoft.com/library/system.invalidoperationexception.aspx), [System. OperationCanceledException](https://msdn.microsoft.com/library/system.operationcanceledexception.aspx), [System. Runtime. Serialization. SerializationException](https://msdn.microsoft.com/library/system.runtime.serialization.serializationexception.aspx)). Общее действие: прежде чем продолжить, попытайтесь исправить код.
 2. Ошибка установки или конфигурации ([Microsoft. servicebus. Messaging. MessagingEntityNotFoundException](/dotnet/api/microsoft.azure.servicebus.messagingentitynotfoundexception), [System. UnauthorizedAccessException](https://msdn.microsoft.com/library/system.unauthorizedaccessexception.aspx). Общее действие: проверьте конфигурацию и измените ее при необходимости.
-3. Временные исключения ([Microsoft. servicebus. Messaging. MessagingException](/dotnet/api/microsoft.servicebus.messaging.messagingexception), [Microsoft. servicebus. Messaging. ServerBusyException](/dotnet/api/microsoft.azure.servicebus.serverbusyexception), [Microsoft. servicebus. Messaging. MessagingCommunicationException](/dotnet/api/microsoft.servicebus.messaging.messagingcommunicationexception)). Общее действие: повторите операцию или уведомите пользователей. `RetryPolicy` Класс в КЛИЕНТСКОМ пакете SDK можно настроить на автоматическую обработку повторных попыток. Дополнительные сведения см. в разделе [руководство по повторным попыткам](/azure/architecture/best-practices/retry-service-specific#service-bus).
+3. Временные исключения ([Microsoft. servicebus. Messaging. MessagingException](/dotnet/api/microsoft.servicebus.messaging.messagingexception), [Microsoft. servicebus. Messaging. ServerBusyException](/dotnet/api/microsoft.azure.servicebus.serverbusyexception), [Microsoft. servicebus. Messaging. MessagingCommunicationException](/dotnet/api/microsoft.servicebus.messaging.messagingcommunicationexception)). Общее действие: повторите операцию или уведомите пользователей. `RetryPolicy`Класс в клиентском пакете SDK можно настроить на автоматическую обработку повторных попыток. Дополнительные сведения см. в разделе [руководство по повторным попыткам](/azure/architecture/best-practices/retry-service-specific#service-bus).
 4. Другие исключения ([System. Transactions. TransactionException](https://msdn.microsoft.com/library/system.transactions.transactionexception.aspx), [System. TimeoutException](https://msdn.microsoft.com/library/system.timeoutexception.aspx), [Microsoft. servicebus. Messaging. MessageLockLostException](/dotnet/api/microsoft.azure.servicebus.messagelocklostexception), [Microsoft. servicebus. Messaging. SessionLockLostException](/dotnet/api/microsoft.azure.servicebus.sessionlocklostexception)). Общее действие: зависит от типа исключения; см. таблицу в следующем разделе: 
 
 ## <a name="exception-types"></a>Типы исключений
@@ -103,7 +91,7 @@ ConnectionsQuotaExceeded for namespace xxx.
 
 ## <a name="messagelocklostexception"></a>MessageLockLostException
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 **MessageLockLostException** создается при получении сообщения с помощью режима получения [PeekLock](message-transfers-locks-settlement.md#peeklock) , а блокировка, удерживаемая клиентом, истекает на стороне службы.
 
@@ -122,7 +110,7 @@ ConnectionsQuotaExceeded for namespace xxx.
 
 ## <a name="sessionlocklostexception"></a>SessionLockLostException
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 **SessionLockLostException** вызывается при принятии сеанса и истечения срока действия, удерживаемого клиентом на стороне службы.
 
@@ -139,7 +127,7 @@ ConnectionsQuotaExceeded for namespace xxx.
 
 ## <a name="socketexception"></a>SocketException
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Исключение **SocketException** в следующих случаях:
    * При неудачной попытке соединения из-за неправильного ответа узла через указанное время (код ошибки TCP 10060).
@@ -149,7 +137,7 @@ ConnectionsQuotaExceeded for namespace xxx.
 
 ### <a name="resolution"></a>Решение
 
-Ошибки **SocketException** указывают на то, что виртуальная машина, на которой размещены приложения, `<mynamespace>.servicebus.windows.net` не может преобразовать имя в соответствующий IP-адрес. 
+Ошибки **SocketException** указывают на то, что виртуальная машина, на которой размещены приложения, не может преобразовать имя `<mynamespace>.servicebus.windows.net` в соответствующий IP-адрес. 
 
 Проверьте, выполняется ли следующая команда при сопоставлении с IP-адресом.
 
@@ -172,7 +160,7 @@ Aliases:  <mynamespace>.servicebus.windows.net
 
 ## <a name="messagingexception"></a>MessagingException
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 **MessagingException** — это универсальное исключение, которое может вызываться по различным причинам. Некоторые из причин перечислены ниже.
 
@@ -191,6 +179,6 @@ Aliases:  <mynamespace>.servicebus.windows.net
    * Для **временных проблем** ***(где параметру with задано*** ***значение true***) или для **проблем регулирования**, повторная попытка операции может разрешить ее. Для этого можно использовать политику повтора по умолчанию в пакете SDK.
    * Для других проблем сведения в исключении указывают на проблемы и способы их устранения, которые можно вывести из одного и того же.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Полные справочные материалы по API служебной шины для .NET доступны в [справочнике по API Azure для .NET](/dotnet/api/overview/azure/service-bus).
 Советы по устранению неполадок см. в разделе [руководство по устранению неполадок](service-bus-troubleshooting-guide.md)

@@ -1,6 +1,6 @@
 ---
-title: Использование Управляемого экземпляра Базы данных SQL Azure с помощью Azure MSSQL Integration Services в Фабрике данных Azure
-description: Узнайте, как использовать Управляемый экземпляр Базы данных SQL Azure с помощью MSSQL Integration Services в Фабрике данных Azure.
+title: Использование Управляемый экземпляр Azure SQL с Azure-SQL Server Integration Services (SSIS) в фабрике данных Azure
+description: Узнайте, как использовать Управляемый экземпляр Azure SQL с SQL Server Integration Services (SSIS) в фабрике данных Azure.
 services: data-factory
 documentationcenter: ''
 author: chugugrace
@@ -11,30 +11,29 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 4/15/2020
-ms.openlocfilehash: 74cad0ab9ffc3eb05219cb9e2c2585e73498c9bd
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: f53c7ccec5e82b79966807f12978adfb00940354
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83663542"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84195370"
 ---
-# <a name="use-azure-sql-database-managed-instance-with-sql-server-integration-services-ssis-in-azure-data-factory"></a>Использование Управляемого экземпляра Базы данных SQL Azure с помощью MSSQL Integration Services в Фабрике данных Azure
+# <a name="use-azure-sql-managed-instance-with-sql-server-integration-services-ssis-in-azure-data-factory"></a>Использование Управляемый экземпляр Azure SQL с SQL Server Integration Services (SSIS) в фабрике данных Azure
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-xxx-md.md)]
 
-Проекты, пакеты и рабочие нагрузки служб SQL Server Integration Services (SSIS) теперь можно переносить в облако Azure. Для управления, развертывания и выполнения проектов и пакетов SSIS, размещенных в Базе данных SQL Azure или Управляемом экземпляре Базы данных SQL, вы можете использовать привычные вам инструменты, например SQL Server Management Studio (SSMS). В этой статье рассматриваются следующие вопросы, связанные с использованием Управляемого экземпляра Базы данных SQL Azure с помощью Azure-SSIS Integration Runtime (IR):
+Проекты, пакеты и рабочие нагрузки служб SQL Server Integration Services (SSIS) теперь можно переносить в облако Azure. Развертывание, запуск и управление проектами и пакетами служб SSIS в базе данных SQL Azure или Управляемый экземпляр SQL с помощью привычных средств, таких как SQL Server Management Studio (SSMS). В этой статье рассматриваются следующие вопросы, связанные с использованием Управляемый экземпляр Azure SQL с помощью среды выполнения интеграции Azure SSIS (IR).
 
-- [Подготовка к работе Azure-SSIS IR с помощью каталога SSIS (SSISDB), размещенного в Управляемом экземпляре Базы данных SQL Azure](#provision-azure-ssis-ir-with-ssisdb-hosted-by-azure-sql-database-managed-instance).
+- [Подготавливает Azure-SSIS IR с помощью каталога SSIS (SSISDB), размещенного в Azure SQL Управляемый экземпляр](#provision-azure-ssis-ir-with-ssisdb-hosted-by-azure-sql-managed-instance)
 - [Выполнение пакетов служб интеграции SQL Server с помощью задания агента Управляемого экземпляра SQL Azure](how-to-invoke-ssis-package-managed-instance-agent.md).
 - [Очистка журналов SSISDB с помощью задания агента Управляемого экземпляра SQL Azure](#clean-up-ssisdb-logs).
-- [Отработка отказа Azure-SSIS IR с помощью Управляемого экземпляра Базы данных SQL Azure](configure-bcdr-azure-ssis-integration-runtime.md#azure-ssis-ir-failover-with-a-sql-database-managed-instance).
-- [Перенос локальных рабочих нагрузок служб интеграции SQL Server в службы интеграции SQL Server в ADF с помощью Управляемого экземпляра Базы данных SQL Azure в качестве назначения рабочей нагрузки базы данных](scenario-ssis-migration-overview.md#azure-sql-database-managed-instance-as-database-workload-destination).
+- [Azure-SSIS IR отработки отказа с помощью Управляемый экземпляр SQL Azure](configure-bcdr-azure-ssis-integration-runtime.md#azure-ssis-ir-failover-with-a-sql-managed-instance)
+- [Перенос локальных рабочих нагрузок служб SSIS в службы SSIS в ADF с помощью Управляемый экземпляр Azure SQL в качестве назначения рабочей нагрузки базы данных](scenario-ssis-migration-overview.md#azure-sql-managed-instance-as-database-workload-destination)
 
-## <a name="provision-azure-ssis-ir-with-ssisdb-hosted-by-azure-sql-database-managed-instance"></a>Подготовка к работе Azure-SSIS IR с помощью каталога SSISDB, размещенного в Управляемом экземпляре Базы данных SQL Azure
+## <a name="provision-azure-ssis-ir-with-ssisdb-hosted-by-azure-sql-managed-instance"></a>Подготавливайте Azure-SSIS IR с SSISDB, размещенной в Azure SQL Управляемый экземпляр
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-1. [Включите Azure Active Directory (Azure AD) в Управляемом экземпляре Базы данных SQL Azure](enable-aad-authentication-azure-ssis-ir.md#configure-azure-ad-authentication-for-azure-sql-database-managed-instance) при выборе проверки подлинности Azure Active Directory.
+1. [Включите Azure Active Directory (Azure AD) в управляемый экземпляр SQL Azure](enable-aad-authentication-azure-ssis-ir.md#configure-azure-ad-authentication-for-azure-sql-managed-instance)при выборе проверки подлинности Azure Active Directory.
 
 1. Выберите способ подключения управляемого экземпляра SQL: через частную или общедоступную конечную точку.
 
@@ -44,13 +43,13 @@ ms.locfileid: "83663542"
             - Вы можете выбрать ту же виртуальную сеть, в которой расположен управляемый экземпляр SQL с **другой подсетью**.
             - Или выбрать виртуальную сеть, отличную от сети управляемого экземпляра SQL, используя пиринг между виртуальными сетями (в том же регионе из-за ограничений при глобальном пиринге виртуальных сетей) или подключение типа "виртуальная сеть — виртуальная сеть".
 
-            Дополнительные сведения см. в статье [Подключение приложения к Управляемому экземпляру Базы данных SQL](https://review.docs.microsoft.com/azure/sql-database/sql-database-managed-instance-connect-app).
+            Дополнительные сведения о подключении управляемого экземпляра SQL см. в статье [Подключение приложения к Azure SQL управляемый экземпляр](https://review.docs.microsoft.com/azure/sql-database/sql-database-managed-instance-connect-app).
 
         1. [Настройте виртуальную сеть](#configure-virtual-network).
 
     - Через общедоступную конечную точку.
 
-        Управляемые экземпляры Базы данных SQL Azure могут подключаться через [общедоступные конечные точки](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-public-endpoint-configure). Чтобы разрешить трафик между Управляемым экземпляром SQL и Azure-SSIS IR необходимо соблюдать требования к входящему и исходящему трафику:
+        Управляемые экземпляры SQL Azure могут предоставлять возможность подключения через [общедоступные конечные точки](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-public-endpoint-configure). Чтобы разрешить трафик между Управляемым экземпляром SQL и Azure-SSIS IR необходимо соблюдать требования к входящему и исходящему трафику:
 
         - Если Azure-SSIS IR расположен не в виртуальной сети (рекомендуется):
 
@@ -90,8 +89,8 @@ ms.locfileid: "83663542"
     1. Убедитесь, что группа ресурсов виртуальной сети может создавать и удалять определенные ресурсы сети Azure.
 
         Среда выполнения интеграции Azure SSIS должна создать определенные сетевые ресурсы в той же группе ресурсов, в которой находится виртуальная сеть. К этим ресурсам относятся:
-        - подсистема балансировки нагрузки с именем *\<Guid>-azurebatch-cloudserviceloadbalancer*;
-        - группа безопасности сети с именем *\<Guid>-azurebatch-cloudservicenetworksecuritygroup;
+        - Балансировщик нагрузки Azure с именем * \<Guid> -azurebatch-клаудсервицелоадбаланцер*
+        - Группа безопасности сети с именем * \<Guid> -azurebatch-клаудсервиценетворксекуритиграуп
         - общедоступный IP-адрес Azure с именем -azurebatch-cloudservicepublicip.
 
         Эти ресурсы будут созданы при запуске Azure-SSIS IR. Они будут удалены после остановки Azure-SSIS IR. Чтобы предотвратить блокировку остановки Azure-SSIS IR, не используйте повторно эти сетевые ресурсы в других ресурсах.
@@ -147,7 +146,7 @@ ms.locfileid: "83663542"
 
     ![catalog-public-endpoint](./media/how-to-use-sql-managed-instance-with-ir/catalog-aad.png)
 
-    Дополнительную информацию см. в разделе [Настройка проверки подлинности Azure AD для Управляемого экземпляра SQL Azure](enable-aad-authentication-azure-ssis-ir.md#configure-azure-ad-authentication-for-azure-sql-database-managed-instance).
+    Дополнительные сведения о том, как включить аутентификацию Azure AD, см. [в статье Включение Azure AD в управляемый экземпляр SQL Azure](enable-aad-authentication-azure-ssis-ir.md#configure-azure-ad-authentication-for-azure-sql-managed-instance).
 
 1. При применении параметров присоедините Azure-SSIS IR к виртуальной сети.
 

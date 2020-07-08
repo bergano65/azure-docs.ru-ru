@@ -3,12 +3,11 @@ title: Приложения для рендеринга
 description: Вы можете использовать в пакетной службе Azure любые приложения для рендеринга Но некоторые распространенные версии уже включены в образы виртуальных машин Azure Marketplace.
 ms.date: 09/19/2019
 ms.topic: how-to
-ms.openlocfilehash: 70e3fb18f0cc4788303ed16656e1eed0f8177dfc
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
-ms.translationtype: HT
+ms.openlocfilehash: f876671c6ac16137c2c1cf8d40bd70860c06975b
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83726491"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85960492"
 ---
 # <a name="pre-installed-applications-on-rendering-vm-images"></a>Предварительно установленные приложения в образах виртуальных машин для рендеринга
 
@@ -87,4 +86,4 @@ ms.locfileid: "83726491"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы использовать образы виртуальных машин для рендеринга, их необходимо указывать в конфигурации пула при создании пула. Подробнее см. статью о [возможностях рендеринга в пакетной службе](https://docs.microsoft.com/azure/batch/batch-rendering-functionality#batch-pools).
+Чтобы использовать образы виртуальных машин для рендеринга, их необходимо указывать в конфигурации пула при создании пула. Подробнее см. статью о [возможностях рендеринга в пакетной службе](./batch-rendering-functionality.md#batch-pools).

@@ -11,17 +11,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 03/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6feed11fcfc597658f3ec148b5dd18bb7e3f8f83
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: dbc9e5a9187f9ef16ea03cfa6c97e438c2b26c99
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79253550"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85807610"
 ---
 # <a name="troubleshoot-password-hash-synchronization-with-azure-ad-connect-sync"></a>Устранение неполадок синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 
@@ -206,9 +205,9 @@ ms.locfileid: "79253550"
 
 2. Запустите `Set-ExecutionPolicy RemoteSigned` или `Set-ExecutionPolicy Unrestricted`.
 
-3. Выполните команду `Import-Module ADSyncDiagnostics`.
+3. Выполните `Import-Module ADSyncDiagnostics`.
 
-4. Выполните команду `Invoke-ADSyncDiagnostics -PasswordSync`.
+4. Выполните `Invoke-ADSyncDiagnostics -PasswordSync`.
 
 
 
@@ -227,7 +226,7 @@ ms.locfileid: "79253550"
 
 2. Запустите `Set-ExecutionPolicy RemoteSigned` или `Set-ExecutionPolicy Unrestricted`.
 
-3. Выполните команду `Import-Module ADSyncDiagnostics`.
+3. Выполните `Import-Module ADSyncDiagnostics`.
 
 4. Выполните следующий командлет:
 
@@ -288,12 +287,15 @@ ms.locfileid: "79253550"
 6. Доступны ли контроллеры домена для Azure AD Connect? Если серверу Connect не удается подключиться ко всем контроллерам домена, настройте параметр **Only use preferred domain controller** (Использовать только предпочтительные контроллеры домена).  
     
     ![Контроллер домена, используемый соединителем Active Directory](./media/tshoot-connect-password-hash-synchronization/preferreddc.png)  
-    
+
 7. Вернитесь в меню **Synchronization Service Manager** и выберите **Configure Directory Partitions** (Настройка разделов каталога). 
  
 8. В списке **Select directory partitions** (Выбор разделов каталога) выберите свой домен, установите флажок **Only use preferred domain controllers** (Использовать только предпочтительные контроллеры домена), а затем щелкните **Configure** (Настроить). 
 
 9. В списке введите контроллеры домена, которые Connect должны использовать для синхронизации паролей. Для импорта и экспорта также используется один и тот же список. Выполните эти действия для всех доменов.
+
+> [!NOTE]
+> Чтобы применить эти изменения, перезапустите службу **синхронизации Microsoft Azure AD** (ADSync).
 
 10. Если в сценарии отображается отсутствие пульса, тогда запустите сценарий, приведенный в разделе [Запуск полной синхронизации всех паролей](#trigger-a-full-sync-of-all-passwords).
 
@@ -442,8 +444,8 @@ Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConn
 Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConnector $aadConnector -Enable $true
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](how-to-connect-password-hash-synchronization.md)
 * [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
-* [Интеграция локальных удостоверений с Azure Active Directory.](whatis-hybrid-identity.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
