@@ -10,10 +10,9 @@ ms.topic: reference
 ms.date: 11/08/2019
 ms.author: alkarche
 ms.openlocfilehash: 013001eebeec232cc60e31f1a850aeab4fd6c905
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82982247"
 ---
 # <a name="azure-functions-warm-up-trigger"></a>Триггер прогрева функций Azure
@@ -76,7 +75,7 @@ namespace WarmupSample
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
 
-В следующем примере показан триггер прогрева в файле *Function. JSON* и [функция сценария C#](functions-reference-csharp.md) , которая будет выполняться на каждом новом экземпляре при добавлении в приложение.
+В следующем примере показан триггер прогрева в *function.jsдля* файла и [функция сценария C#](functions-reference-csharp.md) , которая будет выполняться на каждом новом экземпляре при добавлении в приложение.
 
 Функция должна называться ```warmup``` (без учета регистра), а для каждого приложения может существовать только одна функция прогрева.
 
@@ -107,7 +106,7 @@ public static void Run(ILogger log)
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-В следующем примере показан триггер прогрева в файле *Function. JSON* и [функция JavaScript](functions-reference-node.md) , которая будет выполняться на каждом новом экземпляре при добавлении в приложение.
+В следующем примере показан триггер прогрева в *function.jsдля* файла и [функция JavaScript](functions-reference-node.md) , которая будет выполняться в каждом новом экземпляре при добавлении в приложение.
 
 Функция должна называться ```warmup``` (без учета регистра), а для каждого приложения может существовать только одна функция прогрева.
 
@@ -137,7 +136,7 @@ module.exports = async function (context, warmupContext) {
 
 # <a name="python"></a>[Python](#tab/python)
 
-В следующем примере показан триггер прогрева в файле *Function. JSON* и [функция Python](functions-reference-python.md) , которая будет выполняться на каждом новом экземпляре при добавлении в приложение.
+В следующем примере показан триггер прогрева в *function.jsдля* файла и [функция Python](functions-reference-python.md) , которая будет выполняться на каждом новом экземпляре при добавлении в приложение.
 
 Функция должна называться ```warmup``` (без учета регистра), а для каждого приложения может существовать только одна функция прогрева.
 
@@ -191,7 +190,7 @@ public void run( ExecutionContext context) {
 
 В этом примере демонстрируется использование атрибута [прогрева](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/dev/src/WebJobs.Extensions/Extensions/Warmup/Trigger/WarmupTriggerAttribute.cs) .
 
-Обратите внимание, что функция должна ```Warmup``` быть вызвана, и для каждого приложения может быть только одна функция прогрева.
+Обратите внимание, что функция должна быть вызвана ```Warmup``` , и для каждого приложения может быть только одна функция прогрева.
 
 ```csharp
  [FunctionName("Warmup")]
@@ -202,19 +201,19 @@ public void run( ExecutionContext context) {
         }
 ```
 
-Полный пример см. в [примере триггера](#trigger---example).
+Полный пример триггера см. [здесь](#trigger---example).
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются скриптом C#.
+В скрипте C# атрибуты не поддерживаются.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+В JavaScript атрибуты не поддерживаются.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Атрибуты не поддерживаются в Python.
+В Python атрибуты не поддерживаются.
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -224,13 +223,13 @@ public void run( ExecutionContext context) {
 
 ## <a name="trigger---configuration"></a>Конфигурация триггера
 
-В следующей таблице описаны свойства конфигурации привязки, заданные в файле *Function. JSON* и `WarmupTrigger` атрибуте.
+В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `WarmupTrigger`.
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-| **type** | н/д| Обязательное. Необходимо задать значение `warmupTrigger`. |
-| **двух** | н/д| Обязательное. Необходимо задать значение `in`. |
-| **name** | н/д| Обязательное. имя переменной, используемое в коде функции.|
+| **type** | Недоступно| Обязательное. Необходимо задать значение `warmupTrigger`. |
+| **direction** | Недоступно| Обязательное. Необходимо задать значение `in`. |
+| **name** | Недоступно| Обязательное. имя переменной, используемое в коде функции.|
 
 ## <a name="trigger---usage"></a>Использование триггера
 
@@ -243,6 +242,6 @@ public void run( ExecutionContext context) {
 * Триггер прогрева нельзя вызывать после того, как уже запущен экземпляр.
 * В каждом приложении функции может быть только одна функция триггера прогрева.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

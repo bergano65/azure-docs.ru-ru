@@ -8,10 +8,9 @@ ms.topic: how-to
 ms.service: virtual-machines-linux
 ms.subservice: imaging
 ms.openlocfilehash: 0c0e688c628d553c8b732081f1a8b8debff8846e
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82930664"
 ---
 # <a name="create-an-image-and-use-a-user-assigned-managed-identity-to-access-files-in-azure-storage"></a>Создание образа и использование управляемого удостоверения, назначенного пользователем, для доступа к файлам в службе хранилища Azure 
@@ -24,23 +23,23 @@ ms.locfileid: "82930664"
 
 
 > [!IMPORTANT]
-> Azure Image Builder сейчас находится в общедоступной предварительной версии.
+> Конструктор образов Azure сейчас поддерживается в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="register-the-features"></a>Регистрация компонентов
-Чтобы использовать Azure Image Builder во время предварительной версии, необходимо зарегистрировать новую функцию.
+## <a name="register-the-features"></a>Регистрация функций
+Чтобы использовать Конструктор образов Azure на этапе предварительной версии, необходимо зарегистрировать новую функцию.
 
 ```azurecli-interactive
 az feature register --namespace Microsoft.VirtualMachineImages --name VirtualMachineTemplatePreview
 ```
 
-Проверьте состояние регистрации компонента.
+Проверьте состояние регистрации функции.
 
 ```azurecli-interactive
 az feature show --namespace Microsoft.VirtualMachineImages --name VirtualMachineTemplatePreview | grep state
 ```
 
-Проверьте регистрацию.
+Проверьте свою регистрацию.
 
 
 ```azurecli-interactive
@@ -50,7 +49,7 @@ az provider show -n Microsoft.Compute | grep registrationState
 az provider show -n Microsoft.Storage | grep registrationState
 ```
 
-Если они не зарегистрированы, выполните следующую команду:
+Если регистрация не выполнена, примените следующую команду:
 
 ```azurecli-interactive
 az provider register -n Microsoft.VirtualMachineImages
@@ -62,7 +61,7 @@ az provider register -n Microsoft.Storage
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Мы будем использовать несколько фрагментов информации повторно, поэтому мы создадим некоторые переменные для хранения этих данных.
+Мы будем использовать несколько фрагментов информации повторно, поэтому создадим переменные для их хранения.
 
 
 ```console
@@ -78,7 +77,7 @@ imageName=aibCustLinuxImgMsi01
 runOutputName=u1804ManImgMsiro
 ```
 
-Создайте переменную для идентификатора подписки. Это можно сделать с помощью `az account show | grep id`.
+Создайте переменную для идентификатора подписки. Его можно получить с помощью `az account show | grep id`.
 
 ```console
 subscriptionID=<Your subscription ID>
@@ -150,7 +149,7 @@ az storage blob copy start \
     --source-uri https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/customizeScript.sh
 ```
 
-Предоставьте разрешение Image Builder для создания ресурсов в группе ресурсов образа. `--assignee` ЗНАЧЕНИЕМ является идентификатор удостоверения пользователя.
+Предоставьте разрешение Image Builder для создания ресурсов в группе ресурсов образа. `--assignee`Значением является идентификатор удостоверения пользователя.
 
 ```azurecli-interactive
 az role assignment create \
@@ -179,7 +178,7 @@ sed -i -e "s%<runOutputName>%$runOutputName%g" helloImageTemplateMsi.json
 
 ## <a name="create-the-image"></a>Создание образа
 
-Отправьте конфигурацию образа в службу Azure Image Builder.
+Отправьте конфигурацию образа в службу "Конструктор образов Azure".
 
 ```azurecli-interactive
 az resource create \
@@ -222,7 +221,7 @@ az vm create \
 ssh aibuser@<publicIp>
 ```
 
-Вы должны увидеть, что образ был настроен с сообщением дня, как только подключение SSH установлено.
+Вы увидите, что для образа настроено сообщение дня, как только SSH-подключение будет установлено.
 
 ```output
 
@@ -254,6 +253,6 @@ az group delete -n $imageResourceGroup
 az group delete -n $strResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если у вас возникли проблемы с построителем образов Azure, см. раздел [Устранение неполадок](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md?toc=%2fazure%2fvirtual-machines%context%2ftoc.json).

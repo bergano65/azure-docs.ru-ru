@@ -12,10 +12,9 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/16/2018
 ms.openlocfilehash: e8fb39e8762d31f00029a0eeea33f1e630fb15a6
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82927417"
 ---
 # <a name="update-ml-studio-classicv-models-by-using-update-resource-activity"></a>Обновление моделей машинного обучения (классическая модель) v с помощью действия "обновить ресурс"
@@ -33,7 +32,7 @@ ms.locfileid: "82927417"
 
 На следующем рисунке показа связь между обучением и прогнозными веб-службами.
 
-![ВЕБ-СЛУЖБЫ](./media/update-machine-learning-models/web-services.png)
+![Веб-службы](./media/update-machine-learning-models/web-services.png)
 
 ## <a name="ml-studio-classic-update-resource-activity"></a>Действие по обновлению ресурсов в студии машинного обучения (классическая модель)
 
@@ -59,10 +58,10 @@ ms.locfileid: "82927417"
 }
 ```
 
-| Свойство                      | Описание                              | Обязательно |
+| Свойство.                      | Описание                              | Обязательно |
 | :---------------------------- | :--------------------------------------- | :------- |
 | name                          | Имя действия в конвейере.     | Да      |
-| description                   | Описание действия.  | нет       |
+| description                   | Описание действия.  | Нет       |
 | type                          | Для действия обновления ресурса в службе машинного обучения Azure тип действия — **AzureMLUpdateResource**. | Да      |
 | linkedServiceName             | Связанная служба машинного обучения Azure, которая содержит свойство updateResourceEndpoint. | Да      |
 | trainedModelName              | Имя модуля модели обучения для обновления в эксперименте веб-службы. | Да      |

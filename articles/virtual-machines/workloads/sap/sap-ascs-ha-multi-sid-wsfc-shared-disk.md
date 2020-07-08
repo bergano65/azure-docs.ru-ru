@@ -17,10 +17,9 @@ ms.date: 05/05/2017
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: e8c235cd204b86573746be4bce615939f3b072fa
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82977912"
 ---
 # <a name="sap-ascsscs-instance-multi-sid-high-availability-with-windows-server-failover-clustering-and-shared-disk-on-azure"></a>Обеспечение высокого уровня доступности с несколькими идентификаторами безопасности для экземпляра SAP ASCS/SCS с помощью отказоустойчивой кластеризации Windows Server и общего диска в Azure
@@ -28,7 +27,7 @@ ms.locfileid: "82977912"
 > ![Windows][Logo_Windows] Windows
 >
 
-В сентябре 2016 Корпорация Майкрософт выпустила функцию, в которой можно управлять несколькими виртуальными IP-адресами с помощью [внутреннего балансировщика нагрузки Azure][load-balancer-multivip-overview]. Эта функция уже существует во внешней подсистеме балансировки нагрузки Azure. 
+В сентябре 2016 г. корпорация Майкрософт выпустила функцию, которая дает возможность управлять несколькими виртуальными IP-адресами с помощью [внутренней подсистемы балансировки нагрузки Azure][load-balancer-multivip-overview]. Эта функция уже существует во внешней подсистеме балансировки нагрузки Azure. 
 
 Если у вас есть развертывание SAP, чтобы создать конфигурацию кластера Windows для экземпляров SAP Central Services (ASCS/SCS), необходимо использовать внутреннюю подсистему балансировки нагрузки.
 
@@ -228,9 +227,9 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
 1. [Установите SAP с экземпляром ASCS/SCS высокого уровня доступности][sap-high-availability-installation-wsfc-shared-disk-install-ascs].  
  На этом шаге устанавливается SAP с высокодоступным экземпляром ASCS/SCS на существующем узле 1 кластера WSFC.
 
-2. [Измените профиль SAP экземпляра ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk-modify-ascs-profile].
+2. [Изменение профиля SAP для экземпляра ASCS/SCS.][sap-high-availability-installation-wsfc-shared-disk-modify-ascs-profile]
 
-3. [Настройка порта пробы][sap-high-availability-installation-wsfc-shared-disk-add-probe-port].  
+3. [Настройка порта пробы.][sap-high-availability-installation-wsfc-shared-disk-add-probe-port]  
  На этом шаге настраивается порт пробы SAP-SID2-IP кластерного ресурса SAP с помощью PowerShell. Настройку следует выполнять на одном из узлов кластера SAP ASCS/SCS.
 
 4. Установите экземпляр базы данных.  
@@ -252,7 +251,7 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
 
 9. Установите дополнительный сервер приложений SAP на новой выделенной виртуальной машине, как описано в руководстве по установке SAP.
 
-10. [Протестируйте отработку отказа экземпляра SAP ASCS/SCS и репликацию SIOS][sap-high-availability-installation-wsfc-shared-disk-test-ascs-failover-and-sios-repl].
+10. [Тестирование отработки отказа экземпляра SAP ASCS/SCS и репликации SIOS.][sap-high-availability-installation-wsfc-shared-disk-test-ascs-failover-and-sios-repl]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
