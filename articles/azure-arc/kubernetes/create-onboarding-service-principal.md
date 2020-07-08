@@ -10,7 +10,6 @@ description: 'Создание подключения субъекта-служ�
 keywords: Kubernetes, Arc, Azure, контейнеры
 ms.openlocfilehash: 3c95c6bb85c7c1bc097b7751a560a658863c0afd
 ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
-ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/21/2020
 ms.locfileid: "83725607"
