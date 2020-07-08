@@ -7,10 +7,9 @@ ms.topic: article
 ms.date: 06/05/2018
 ms.author: cynthn
 ms.openlocfilehash: 1594c030839cccdd48c4b032c6ad92f746f78e26
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78970269"
 ---
 # <a name="create-a-linux-virtual-machine-that-uses-ssh-authentication-with-the-rest-api"></a>Создание виртуальной машины Linux, в которой используется проверка подлинности по SSH с интерфейсом REST API
@@ -46,7 +45,7 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 | Заголовок запроса   | Описание |
 |------------------|-----------------|
 | *Content-Type:*  | Обязательный элемент. Задайте значение `application/json`. |
-| *Authorization:* | Обязательный элемент. Задайте допустимый  [маркер доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients)`Bearer`. |
+| *Authorization:* | Обязательный. Задайте допустимый  [маркер доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients)`Bearer`. |
 
 Общие сведения о работе с запросами REST API см. в разделе [Components of a REST API request/response](/rest/api/azure/#components-of-a-rest-api-requestresponse) (Компоненты запроса или ответа REST API).
 
@@ -54,9 +53,9 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 Для создания текста запроса используются следующие общие определения.
 
-| Имя                       | Обязательно | Type                                                                                | Описание  |
+| Имя                       | Обязательно | Type                                                                                | Описание:  |
 |----------------------------|----------|-------------------------------------------------------------------------------------|--------------|
-| location                   | True     | строка                                                                              | Расположение ресурса. |
+| location                   | True     | string                                                                              | Расположение ресурса. |
 | name                       |          | строка                                                                              | Имя виртуальной машины. |
 | properties.hardwareProfile |          | [HardwareProfile](/rest/api/compute/virtualmachines/createorupdate#hardwareprofile) | Указывает параметры оборудования виртуальной машины. |
 | properties.storageProfile  |          | [StorageProfile](/rest/api/compute/virtualmachines/createorupdate#storageprofile)   | Указывает параметры хранилища дисков виртуальной машины. |
@@ -128,10 +127,10 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 Существует два успешных ответа для операции по созданию или обновлению виртуальной машины.
 
-| Имя        | Type                                                                              | Описание |
+| name        | Type                                                                              | Описание: |
 |-------------|-----------------------------------------------------------------------------------|-------------|
-| 200 ОК      | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | OK          |
-| 201 Создано | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | Создание     |
+| 200 ОК      | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | ОК          |
+| 201 Создано | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | Создано     |
 
 Сокращенный ответ *201 Создано*, полученный из предыдущего примера текста запроса, который создает виртуальную машину, показывает, что *vmId* был назначен, и что *ProvisionState* находится в состоянии *Создание*.
 
@@ -151,4 +150,4 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 - [Azure Compute](/rest/api/compute/) (Служба вычислений Azure)
 - [Начало работы с Azure REST API](/rest/api/azure/)
 - [Azure CLI](/cli/azure/)
-- [модуль Azure PowerShell;](/powershell/azure/overview)
+- [Overview of Azure PowerShell](/powershell/azure/overview) (Общие сведения об Azure PowerShell)

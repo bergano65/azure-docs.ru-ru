@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 01/09/2018
 ms.author: alkohli
 ms.openlocfilehash: 8d118e71b29b54b034788c37916091ad8f8b996f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79254759"
 ---
 # <a name="unpack-rack-mount-and-cable-your-storsimple-8600-device"></a>Распаковка, установка в стойку и подключение устройства StorSimple 8600
@@ -213,7 +212,7 @@ Microsoft Azure StorSimple 8600 представляет собой устрой
 | --- | --- |
 | Объект |Локальная сеть с доступом к Интернету |
 | B |Контроллер 0 |
-| В |PCM 0 |
+| C |PCM 0 |
 | D |Контроллер 1 |
 | E |PCM 1 |
 | F |Контроллер EBOD 0 |

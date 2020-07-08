@@ -14,10 +14,9 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: ce56c406c884471c445b25343d5c42f9edcbe4c4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79249546"
 ---
 # <a name="page-templates-in-azure-api-management"></a>Шаблоны страниц в службе управления API Azure
@@ -25,7 +24,7 @@ ms.locfileid: "79249546"
   
  С помощью шаблонов в этом разделе вы сможете настроить содержимое страниц входа, регистрации и страницы с ошибкой "Страница не найдена" на портале разработчика.  
   
--   [Войти](#SignIn)  
+-   [Выполните вход.](#SignIn)  
   
 -   [Регистрация](#SignUp)  
   
@@ -104,7 +103,7 @@ ms.locfileid: "79249546"
   
 -   [Базовый — вход](api-management-page-controls.md#basic-signin)  
   
--   [поставщик](api-management-page-controls.md#providers)  
+-   [providers](api-management-page-controls.md#providers)  
   
 ### <a name="data-model"></a>Модель данных  
  Сущность [входа пользователя](api-management-template-data-model-reference.md#UseSignIn).  
@@ -185,7 +184,7 @@ ms.locfileid: "79249546"
 }  
 ```  
   
-##  <a name="page-not-found"></a><a name="PageNotFound"></a> Страница не найдена  
+##  <a name="page-not-found"></a><a name="PageNotFound"></a>Страница не найдена  
  Шаблон страницы с ошибкой **Страница не найдена** позволяет настроить страницу с ошибкой "Страница не найдена" на портале разработчика.  
   
  ![Страница "не найдено"](./media/api-management-page-templates/APIM-Not-Found-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика для APIM не найденных страниц")  
@@ -227,13 +226,13 @@ ms.locfileid: "79249546"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Type|Описание|  
+|Свойство.|Type|Описание:|  
 |--------------|----------|-----------------|  
-|referenceCode|строка|Код формируется, если эта страница отобразилась в результате внутренней ошибки.|  
-|errorCode|строка|Код формируется, если эта страница отобразилась в результате внутренней ошибки.|  
-|emailBody|строка|Текст сообщения электронной почты формируется, если эта страница отобразилась в результате внутренней ошибки.|  
-|requestedUrl|строка|URL-адрес, запрашиваемый, если страница не найдена.|  
-|referrerUrl|строка|URL-адрес источника ссылки для запрошенного URL-адреса.|  
+|referenceCode|string|Код формируется, если эта страница отобразилась в результате внутренней ошибки.|  
+|errorCode|string|Код формируется, если эта страница отобразилась в результате внутренней ошибки.|  
+|emailBody|string|Текст сообщения электронной почты формируется, если эта страница отобразилась в результате внутренней ошибки.|  
+|requestedUrl|string|URL-адрес, запрашиваемый, если страница не найдена.|  
+|referrerUrl|string|URL-адрес источника ссылки для запрошенного URL-адреса.|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   

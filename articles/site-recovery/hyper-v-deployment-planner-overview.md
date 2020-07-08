@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 3/13/2020
 ms.author: mayg
 ms.openlocfilehash: 07c1f7f258dbea7bcf7a6e7ea51fdcfdfaa006aa
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79368729"
 ---
 # <a name="about-the-azure-site-recovery-deployment-planner-for-hyper-v-disaster-recovery-to-azure"></a>Сведения об использовании Планировщика развертывания Azure Site Recovery для аварийного восстановления виртуальных машин Hyper-V в Azure
@@ -70,7 +69,7 @@ ms.locfileid: "79368729"
 
 ## <a name="support-matrix"></a>Матрица поддержки
 
-| | **Из VMware в Azure** |**Hyper-V в Azure**|**Из Azure в Azure**|**Из Hyper-V на дополнительный сайт**|**Из VMware на дополнительный сайт**
+| | **VMware в VMware** |**Hyper-V в Azure**|**Из Azure в Azure**|**Из Hyper-V на дополнительный сайт**|**Из VMware на дополнительный сайт**
 --|--|--|--|--|--
 Поддерживаемые сценарии |Да|Да|Нет|Да*|Нет
 Поддерживаемая версия | vCenter 6,7, 6,5, 6,0 или 5,5| Windows Server 2016, Windows Server 2012 R2 | Н/Д |Windows Server 2016, Windows Server 2012 R2|Н/Д
@@ -82,7 +81,7 @@ ms.locfileid: "79368729"
 ## <a name="prerequisites"></a>Предварительные условия
 Планирование развертывания Hyper-V при помощи программы состоит из трех основных этапов: получение списка виртуальных машин, профилирование и создание отчетов. С помощью этой программы также можно оценить пропускную способность. В следующей таблице представлены требования к серверу, на котором выполняются различные этапы обработки.
 
-| Требование к серверу | Описание |
+| Требование к серверу | Описание: |
 |---|---|
 |Получение списка виртуальных машин, профилирование и оценка пропускной способности |<ul><li>Операционная система: Microsoft Windows Server 2016 или Microsoft Windows Server 2012 R2 </li><li>Конфигурация виртуальной машины: 8 виртуальных ЦП, 16 ГБ ОЗУ, жесткий диск емкостью 300 ГБ.</li><li>[Microsoft .NET Framework 4.5](https://aka.ms/dotnet-framework-45)</li><li>[Распространяемый компонент Microsoft Visual C++ для Visual Studio 2012](https://aka.ms/vcplusplus-redistributable).</li><li>Доступ в Интернет к Azure (*. blob.core.windows.net) с этого сервера, порт 443<br>[Это необязательно. Вы можете указать доступную пропускную способность во время создания отчета вручную.]</li><li>Учетная запись хранения Azure.</li><li>Права администратора на доступ к серверу.</li><li>Минимальное свободное место на диске: 100 ГБ (предполагается, что профилирование 1000 виртуальных машин в среднем с 3 дисками на каждую выполняется 30 дней).</li><li>Виртуальную машину, на которой выполняется планировщик развертывания Azure Site Recovery, необходимо добавить в список TrustedHosts для всех серверов Hyper-V.</li><li>Все серверы Hyper-V для профилирования нужно добавить в список TrustedHosts на клиентской виртуальной машине, где запущена программа. [Дополнительные сведения о добавлении серверов в список TrustedHosts](#steps-to-add-servers-into-trustedhosts-list). </li><li> Программу следует запускать с правами администратора из PowerShell или консоли командной строки в клиенте.</ul></ul>|
 | Создание отчетов. | Любой компьютер с Windows или Windows Server с Microsoft Excel 2013 или более поздней версии. |
@@ -96,7 +95,7 @@ ms.locfileid: "79368729"
 
 1.  Для каждого узла Hyper-V, который необходимо профилировать, необходимо:
 
-    a. Указать виртуальную машину, на которой будет выполняться программа, в списке TrustedHosts. Выполните следующую команду в сеансе PowerShell с повышенными привилегиями в узле Hyper-V:
+    а. Указать виртуальную машину, на которой будет выполняться программа, в списке TrustedHosts. Выполните следующую команду в сеансе PowerShell с повышенными привилегиями в узле Hyper-V:
 
             set-item wsman:\localhost\Client\TrustedHosts -value '<ComputerName>[,<ComputerName>]' -Concatenate
 

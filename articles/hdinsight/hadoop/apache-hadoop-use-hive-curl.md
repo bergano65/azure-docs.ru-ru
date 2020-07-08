@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/06/2020
 ms.openlocfilehash: 10a2f413142124db7547e68280a0d5e9abac9b98
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79298756"
 ---
 # <a name="run-apache-hive-queries-with-apache-hadoop-in-hdinsight-using-rest"></a>Выполнение запросов Apache Hive в Apache Hadoop в HDInsight с использованием REST
@@ -21,7 +20,7 @@ ms.locfileid: "79298756"
 
 Узнайте, как с помощью REST API WebHCat выполнять запросы Apache Hive с Apache Hadoop в кластере Azure HDInsight.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер Apache Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 
@@ -31,9 +30,9 @@ ms.locfileid: "79298756"
 
 ## <a name="base-uri-for-rest-api"></a>Базовый URI для API-интерфейса RESTful
 
-Базовый универсальный код ресурса (URI) для REST API в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME`, где `CLUSTERNAME` — это имя кластера.  В именах кластеров в URI **учитывается регистр**.  Хотя имя кластера в части URI (`CLUSTERNAME.azurehdinsight.net`) в полном доменном имени () не учитывает регистр, другие ВХОЖДЕНИЯ в URI учитывают регистр.
+Базовый универсальный код ресурса (URI) для REST API в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME` , где `CLUSTERNAME` — это имя кластера.  В именах кластеров в URI **учитывается регистр**.  Хотя имя кластера в части URI () в полном доменном имени ( `CLUSTERNAME.azurehdinsight.net` ) не учитывает регистр, другие вхождения в URI учитывают регистр.
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 При использовании Curl или любых других средств связи REST с WebHCat нужно выполнять аутентификацию запросов с помощью пароля и имени пользователя администратора кластера HDInsight. REST API защищен с помощью [обычной проверки подлинности](https://en.wikipedia.org/wiki/Basic_access_authentication). Чтобы обеспечить безопасную отправку учетных данных на сервер, все запросы следует отправлять с помощью протокола HTTPS.
 
@@ -42,7 +41,7 @@ ms.locfileid: "79298756"
 Сохраните свои учетные данные, чтобы избежать их повторного ввода для каждого примера.  Имя кластера будет сохранено на отдельном шаге.
 
 **A. bash**  
-Измените приведенный ниже сценарий, `PASSWORD` заменив его фактическим паролем.  Затем введите команду.
+Измените приведенный ниже сценарий, заменив его `PASSWORD` фактическим паролем.  Затем введите команду.
 
 ```bash
 export password='PASSWORD'
@@ -58,7 +57,7 @@ $creds = Get-Credential -UserName "admin" -Message "Enter the HDInsight login"
 
 Фактический регистр имени кластера может отличаться от ожидаемого, в зависимости от способа создания кластера.  В этих шагах будет показан фактический регистр, а затем сохранен в переменной для всех последующих примеров.
 
-Измените приведенные ниже сценарии, `CLUSTERNAME` чтобы они заменили имя кластера. Затем введите команду. (Имя кластера для FQDN не учитывает регистр.)
+Измените приведенные ниже сценарии, чтобы они заменили `CLUSTERNAME` имя кластера. Затем введите команду. (Имя кластера для FQDN не учитывает регистр.)
 
 ```bash
 export clusterName=$(curl -u admin:$password -sS -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters" | jq -r '.items[].Clusters.cluster_name')

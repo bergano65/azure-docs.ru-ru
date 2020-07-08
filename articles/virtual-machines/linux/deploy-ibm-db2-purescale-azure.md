@@ -7,10 +7,9 @@ ms.topic: article
 ms.date: 11/09/2018
 ms.author: edprice
 ms.openlocfilehash: 98e912894a4d93a057a2f6a2153d0690deaed250
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78968897"
 ---
 # <a name="deploy-ibm-db2-purescale-on-azure"></a>Развертывание IBM DB2 pureScale в Azure
@@ -73,7 +72,7 @@ ms.locfileid: "78968897"
 
 | Имя экрана               | Поле                                        | Значение                                                                                                 |
 |---------------------------|----------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| Экран приветствия                   |                                              | "New Install" (Новая установка)                                                                                           |
+| Приветствие                   |                                              | "New Install" (Новая установка)                                                                                           |
 | "Choose a Product" (Выбор продукта)          |                                              | "DB2 Version 11.1.3.3. Server Editions with Db2 pureScale" (Db2 версии 11.1.3.3, серверные выпуски с Db2 pureScale)                                              |
 | Параметр Configuration             | Каталог                                    | /data1/opt/ibm/db2/V11.1                                                                              |
 |                           | "Select the installation type" (Выбор типа установки)                 | "Typical" (Стандартный)                                                                                               |

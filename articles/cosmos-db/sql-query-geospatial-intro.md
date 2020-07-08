@@ -7,10 +7,9 @@ ms.topic: conceptual
 ms.date: 02/20/2020
 ms.author: tisande
 ms.openlocfilehash: 59c8b31dcc8594d2cafb2db7832e290b01026f60
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79367590"
 ---
 # <a name="geospatial-and-geojson-location-data-in-azure-cosmos-db"></a>Данные о геопространственном и географическом расположении в Azure Cosmos DB
@@ -38,7 +37,7 @@ Azure Cosmos DB поддерживает следующие пространст
 
 - Точка
 - LineString
-- Многоугольник
+- Polygon
 - MultiPolygon
 
 ### <a name="points"></a>точки
@@ -174,7 +173,7 @@ client.createDocument(`dbs/${databaseName}/colls/${collectionName}`, userProfile
 });
 ```
 
-При работе с API-интерфейсами SQL можно `Point`использовать классы, `LineString`, `Polygon`и `MultiPolygon` в `Microsoft.Azure.Cosmos.Spatial` пространстве имен для внедрения сведений о расположении в объекты приложения. Эти классы помогают упростить сериализацию и десериализацию пространственных данных в GeoJSON.
+При работе с API-интерфейсами SQL можно использовать `Point` `LineString` классы,, `Polygon` и `MultiPolygon` в `Microsoft.Azure.Cosmos.Spatial` пространстве имен для внедрения сведений о расположении в объекты приложения. Эти классы помогают упростить сериализацию и десериализацию пространственных данных в GeoJSON.
 
 **Создание документа с геопространственными данными в .NET**
 
@@ -201,7 +200,7 @@ await container.CreateItemAsync( new UserProfile
 
 Если у вас нет информации широты и долготы, но у вас есть физические адреса или расположение, например город или страна или регион, можно найти фактические координаты, используя службу геокодирования, например службы Bing Maps для служб RESTFUL. Дополнительные сведения о геокодировании в Картах Bing можно найти [здесь](https://msdn.microsoft.com/library/ff701713.aspx).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы ознакомились с предварительными сведениями о поддержке геопространственных данных в Azure Cosmos DB, вы можете сделать следующее:
 

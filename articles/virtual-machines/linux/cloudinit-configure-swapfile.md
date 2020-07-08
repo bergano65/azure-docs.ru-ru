@@ -8,10 +8,9 @@ ms.topic: article
 ms.date: 11/29/2017
 ms.author: rclaus
 ms.openlocfilehash: 1247652e536042ee249054d86aed3c3f8e7aa7bf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78969202"
 ---
 # <a name="use-cloud-init-to-configure-a-swap-partition-on-a-linux-vm"></a>Настройка раздела подкачки на виртуальной машине Linux с помощью Cloud-init
@@ -22,7 +21,7 @@ ms.locfileid: "78969202"
 
 ## <a name="create-swap-partition-for-red-hat-and-centos-based-images"></a>Создание раздела подкачки для изображений на основе Red Hat и CentOS
 
-Создайте файл в текущей оболочке с именем *cloud_init_swappart. txt* и вставьте следующую конфигурацию. Для этого примера создайте файл в Cloud Shell (не на локальном компьютере). Вы можете использовать любой редактор. Введите `sensible-editor cloud_init_swappart.txt`, чтобы создать файл и просмотреть список доступных редакторов. Выберите первый пункт, чтобы использовать редактор **nano**. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка.  
+Создайте файл в текущей оболочке с именем *cloud_init_swappart.txt* и вставьте следующую конфигурацию. Для этого примера создайте файл в Cloud Shell (не на локальном компьютере). Вы можете использовать любой редактор. Введите `sensible-editor cloud_init_swappart.txt`, чтобы создать файл и просмотреть список доступных редакторов. Выберите первый пункт, чтобы использовать редактор **nano**. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка.  
 
 ```yaml
 #cloud-config
@@ -81,7 +80,7 @@ Filename                Type        Size    Used    Priority
 > [!NOTE] 
 > Если у вас есть образ Azure с настроенной секцией подкачки и вы хотите изменить конфигурацию раздела подкачки для новых образов, следует удалить существующую секцию подкачки. Дополнительные сведения см. в документе "Customize Images to provision by cloud-init" (Настройка образов для подготовки с помощью cloud-init).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные примеры изменения конфигурации с помощью cloud-init см. в следующих статьях:
  
 - [Добавление пользователя Linux к виртуальной машине](cloudinit-add-user.md)

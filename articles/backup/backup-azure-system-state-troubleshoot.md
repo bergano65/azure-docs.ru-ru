@@ -5,10 +5,9 @@ ms.reviewer: srinathv
 ms.topic: troubleshooting
 ms.date: 07/22/2019
 ms.openlocfilehash: 28647b72334d592692c5fe1b031735330d1a0509
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78969576"
 ---
 # <a name="troubleshoot-system-state-backup"></a>Устранение неполадок резервного копирования состояния системы
@@ -19,9 +18,9 @@ ms.locfileid: "78969576"
 
 Прежде чем начать устранение неполадок с резервным копированием состояния системы, рекомендуется выполнить приведенную ниже проверку.
 
-- [Убедитесь, что агент Службы восстановления Microsoft Azure (MARS) не устарел](https://go.microsoft.com/fwlink/?linkid=229525&clcid=0x409)
+- [Убедитесь, что используется последняя версия агента служб восстановления Microsoft Azure (MARS)](https://go.microsoft.com/fwlink/?linkid=229525&clcid=0x409)
 - [Убедитесь, что между агентом служб восстановления Microsoft Azure и Azure установлено сетевое подключение](https://docs.microsoft.com/azure/backup/backup-azure-mars-troubleshoot#the-microsoft-azure-recovery-service-agent-was-unable-to-connect-to-microsoft-azure-backup)
-- Убедитесь, что службы восстановления Microsoft Azure запущены (на сервисной консоли). При необходимости перезапустите и повторите операцию.
+- Убедитесь, что службы восстановления Microsoft Azure запущены (на сервисной консоли). Если необходимо, выполните перезагрузку и повторите операцию.
 - [Убедитесь, что в расположении временной папки доступно 5–10 % свободного места](https://docs.microsoft.com/azure/backup/backup-azure-file-folder-backup-faq#whats-the-minimum-size-requirement-for-the-cache-folder).
 - [Проверьте, не влияет ли на работу службы Azure Backup другой процесс или антивирусная программа](https://docs.microsoft.com/azure/backup/backup-azure-troubleshoot-slow-backup-performance-issue#cause-another-process-or-antivirus-software-interfering-with-azure-backup).
 - [Запланированное резервное копирование завершается сбоем, но резервное копирование вручную работает](https://docs.microsoft.com/azure/backup/backup-azure-mars-troubleshoot#backups-dont-run-according-to-schedule).
@@ -82,7 +81,7 @@ Get-WindowsFeature Windows-Server-Backup
 5. На вкладке **Подтверждение** нажмите кнопку **установить** , чтобы начать процесс установки.
 6. На вкладке **результаты** отобразится компонент Cистема архивации данных Windows Server успешно установлен на сервере Windows Server.
 
-    ![набор по](./media/backup-azure-system-state-troubleshoot/results.jpg)
+    ![result](./media/backup-azure-system-state-troubleshoot/results.jpg)
 
 ### <a name="system-volume-information-permission"></a>Разрешение "сведения о системном томе"
 
@@ -106,7 +105,7 @@ Get-WindowsFeature Windows-Server-Backup
 
 - Убедитесь, что служба WSB PowerShell запущена
 
-  - Запустите `Get-WBJob` программу из PowerShell с повышенными привилегиями и убедитесь, что она не возвращает следующую ошибку:
+  - Запустите программу `Get-WBJob` из PowerShell с повышенными привилегиями и убедитесь, что она не возвращает следующую ошибку:
 
     > [!WARNING]
     > Get-Вбжоб: термин "Get-Вбжоб" не распознан как имя командлета, функции, файла скрипта или исполняемой программы. Проверьте правильность написания имени, а если включен путь, то проверьте правильность пути и повторите попытку.
@@ -137,7 +136,7 @@ Get-WindowsFeature Windows-Server-Backup
 
 | Симптом | Решение
 | -- | --
-| -Агент MARS завершается сбоем с сообщением об ошибке: не удалось выполнить резервное копирование, так как не удалось увеличить том теневой копии из-за недостатка места на томах, содержащих системные файлы <br/><br/> -В журналах системных событий Volsnap присутствует следующий журнал ошибок и предупреждений: "недостаточно места на диске в томе C: для увеличения размера хранилища теневых копий на диск c: из-за этого сбоя все теневые копии тома C: подвергаются риску удаления" | — Освободите место в выделенном томе в журнале событий, чтобы в процессе резервного копирования было достаточно места для увеличения размера теневых копий. <br/><br/> — При настройке пространства теневого копирования можно ограничить объем пространства, используемого для теневого копирования. Дополнительные сведения см. в этой [статье](https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin-resize-shadowstorage) .
+| -Агент MARS завершается сбоем с сообщением об ошибке: не удалось выполнить резервное копирование, так как не удалось увеличить том теневой копии из-за недостатка места на томах, содержащих системные файлы <br/><br/> -В журналах системных событий Volsnap присутствует следующий журнал ошибок и предупреждений: "недостаточно места на диске в томе C: для увеличения размера хранилища теневых копий на диск c: из-за этого сбоя все теневые копии тома C: подвергаются риску удаления" | — Освободите место в выделенном томе в журнале событий, чтобы в процессе резервного копирования было достаточно места для увеличения размера теневых копий. <br/><br/> — При настройке пространства теневого копирования можно ограничить объем пространства, используемого для теневого копирования. Дополнительные сведения см. в [этой статье](https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin-resize-shadowstorage).
 
 ### <a name="efi-partition-locked"></a>Раздел EFI заблокирован
 

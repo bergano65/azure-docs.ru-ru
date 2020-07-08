@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.date: 04/09/2019
 ms.author: wesmc
 ms.openlocfilehash: 2a7e0932d226b1533c039b8529c2c11de06cf525
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79285153"
 ---
 # <a name="control-access-to-azure-iot-hub-device-provisioning-service"></a>Управление доступом к службе подготовки устройств Центра Интернета вещей Azure
@@ -30,7 +29,7 @@ ms.locfileid: "79285153"
 
 ## <a name="access-control-and-permissions"></a>Контроль доступа и разрешений
 
-Предоставить [разрешения](#device-provisioning-service-permissions) можно следующими способами.
+Предоставить [разрешения](#device-provisioning-service-permissions) можно следующими способами:
 
 * **Политики авторизации общего доступа**. Политики общего доступа могут предоставлять любое сочетание [разрешений](#device-provisioning-service-permissions). Политики можно задавать на [портале Azure][lnk-management-portal] или программными средствами, используя [интерфейсы REST API службы подготовки устройств][lnk-resource-provider-apis]. По умолчанию для только что созданной службы подготовки задана следующая политика по умолчанию:
 
@@ -39,7 +38,7 @@ ms.locfileid: "79285153"
 > [!NOTE]
 > Дополнительные сведения см. в статье о [разрешениях](#device-provisioning-service-permissions).
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Служба подготовки устройств Центра Интернета вещей Azure предоставляет доступ к конечным точкам, проверяя токен на соответствие политикам общего доступа. Учетные данные безопасности, например симметричные ключи, никогда не отправляются по сети.
 

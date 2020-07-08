@@ -9,10 +9,9 @@ ms.topic: article
 ms.date: 06/13/2018
 ms.author: routlaw
 ms.openlocfilehash: 07e91f3d9fd32f01db91415bfd90746cd1aef403
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78944753"
 ---
 # <a name="get-virtual-machine-usage-metrics-using-the-rest-api"></a>Получение метрик использования виртуальной машины с помощью REST API
@@ -29,7 +28,7 @@ ms.locfileid: "78944753"
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmname}/providers/microsoft.insights/metrics?api-version=2018-01-01&metricnames=Percentage%20CPU&timespan=2018-06-05T03:00:00Z/2018-06-07T03:00:00Z
 ```
 
-### <a name="request-headers"></a>Заголовки запроса
+### <a name="request-headers"></a>Заголовки запросов
 
 Ниже приведены обязательные заголовки. 
 
@@ -40,7 +39,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 ### <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
 
-| Имя | Описание |
+| name | Описание |
 | :--- | :---------- |
 | subscriptionId | Идентификатор подписки Azure. Если у вас несколько подписок, см. раздел [Работа с несколькими подписками](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
 | имя_группы_ресурсов | Имя группы ресурсов Azure, связанное с ресурсом. Вы можете получить это значение из API-интерфейса Azure Resource Manager, CLI или портала. |

@@ -14,10 +14,9 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 393563427e936e07315cd44b78cb793d4292b352
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79243930"
 ---
 # <a name="product-templates-in-azure-api-management"></a>Шаблоны продуктов в службе управления API Azure
@@ -28,7 +27,7 @@ ms.locfileid: "79243930"
   
 -   [Список продуктов](#ProductList)  
   
--   [Продукта](#Product)  
+-   [Продукт](#Product)  
   
 > [!NOTE]
 >  Примеры шаблонов по умолчанию включены в следующую документацию, но могут в любой момент измениться, так как ведется постоянная работа по их улучшению. Актуальные шаблоны по умолчанию можно просмотреть на портале разработчика, перейдя к требуемому отдельному шаблону. Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](https://azure.microsoft.com/documentation/articles/api-management-developer-portal-templates/).  
@@ -79,7 +78,7 @@ ms.locfileid: "79243930"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Type|Описание|  
+|Свойство.|Type|Описание:|  
 |--------------|----------|-----------------|  
 |Разбивка на страницы|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции продуктов.|  
 |Фильтрация|Сущность [фильтрации](api-management-template-data-model-reference.md#Filtering).|Сведения о фильтрации для страницы со списком продуктов.|  
@@ -204,16 +203,16 @@ ms.locfileid: "79243930"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Type|Описание|  
+|Свойство.|Type|Описание:|  
 |--------------|----------|-----------------|  
-|Продукт|[Продукта](api-management-template-data-model-reference.md#Product)|Выбранный продукт.|  
+|Продукт|[Продукт](api-management-template-data-model-reference.md#Product)|Выбранный продукт.|  
 |IsDeveloperSubscribed|Логическое|Указывает, подписан ли текущий пользователь на этот продукт.|  
 |SubscriptionState|number|Состояние подписки. Возможны следующие состояния.<br /><br /> —-   `0 - suspended`: подписка заблокирована, и подписчик не может вызвать ни один API продукта.<br />— -   `1 - active`: подписка активна.<br />— -   `2 - expired`: срок действия подписки истек, и она была деактивирована.<br />— -   `3 - submitted`: запрос разработчика на подписку выполнен, но еще не был утвержден или отклонен.<br />—-   `4 - rejected`: администратор отклонил запрос на подписку.<br />— -   `5 - cancelled`: подписка была отменена разработчиком или администратором.|  
 |Ограничения|массиве|Это свойство является устаревшим и не должно использоваться.|  
 |DelegatedSubscriptionEnabled|Логическое|Указывает, включено ли [делегирование](https://azure.microsoft.com/documentation/articles/api-management-howto-setup-delegation/) для этой подписки.|  
-|DelegatedSubscriptionUrl|строка|Если делегирование включено, содержит URL-адрес делегированной подписки.|  
+|DelegatedSubscriptionUrl|string|Если делегирование включено, содержит URL-адрес делегированной подписки.|  
 |IsAgreed|Логическое|Указывает, принял ли текущий пользователь условия использования продукта, если они определены.|  
-|Subscriptions|Коллекция сущностей [Сводка по подписке](api-management-template-data-model-reference.md#SubscriptionSummary).|Подписки на продукт.|  
+|Подписки|Коллекция сущностей [Сводка по подписке](api-management-template-data-model-reference.md#SubscriptionSummary).|Подписки на продукт.|  
 |Apis|коллекция сущностей [API](api-management-template-data-model-reference.md#API)|API-интерфейсы, существующие для этого продукта.|  
 |CannotAddBecauseSubscriptionNumberLimitReached|Логическое|Определяет, имеет ли текущий пользователь право подписаться на этот продукт в контексте лимита подписки.|  
 |CannotAddBecauseMultipleSubscriptionsNotAllowed|Логическое|Определяет, имеет ли текущий пользователь право подписаться на этот продукт в контексте допустимости нескольких подписок.|  

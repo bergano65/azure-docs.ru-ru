@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 04/16/2018
 ms.author: srrengar
 ms.openlocfilehash: c3c1bf511f3313e7408d6ce90b73de60bd1309f7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79366751"
 ---
 # <a name="performance-monitoring-with-azure-monitor-logs"></a>Мониторинг производительности с помощью журналов Azure Monitor
@@ -67,7 +66,7 @@ ms.locfileid: "79366751"
 
 После добавления агента Log Analytics перейдите на портал Log Analytics, чтобы выбрать счетчики производительности, данные которых необходимо собирать.
 
-1. На портале Azure перейдите в группу ресурсов, в которой вы создали решение "Аналитика Service Fabric". Выберите **ServiceFabric\<имя_рабочей_области_Log_Analytics\>**.
+1. На портале Azure перейдите в группу ресурсов, в которой вы создали решение "Аналитика Service Fabric". Выберите **ServiceFabric \<nameOfLog AnalyticsWorkspace\> **.
 
 2. Щелкните **Log Analytics**.
 

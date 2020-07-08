@@ -1,5 +1,5 @@
 ---
-title: Ресурсы
+title: Активы
 titleSuffix: Azure Media Services
 description: Сведения о том, какие ресурсы и как они используются службами мультимедиа Azure.
 services: media-services
@@ -14,10 +14,9 @@ ms.date: 03/09/2020
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: 9b04941a5799955097fbd54ad9bdf50eccb87541
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79087903"
 ---
 # <a name="assets-in-azure-media-services-v3"></a>Ресурсы в службах мультимедиа Azure v3
@@ -32,13 +31,13 @@ ms.locfileid: "79087903"
 
 ## <a name="naming"></a>Именование 
 
-### <a name="assets"></a>Ресурсы
+### <a name="assets"></a>Активы
 
 Имена ресурсов должны быть уникальными. Имена ресурсов служб мультимедиа v3 (например, ресурсы, задания, преобразования) подчиняются Azure Resource Manager ограничениям именования. Дополнительные сведения см. в разделе [соглашения об именовании](media-services-apis-overview.md#naming-conventions).
 
 ### <a name="blobs"></a>BLOB-объекты
 
-Имена файлов и больших двоичных объектов в ресурсе должны соответствовать требованиям к [имени большого двоичного объекта](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata) и [требованиям к имени NTFS](https://docs.microsoft.com/windows/win32/fileio/naming-a-file). Причина этих требований заключается в том, что файлы могут быть скопированы из хранилища BLOB-объектов на локальный диск NTFS для обработки.
+Имена файлов и больших двоичных объектов в ресурсе должны соответствовать как [требованиям к именованию больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata), так и [требованиям к именованию для NTFS](https://docs.microsoft.com/windows/win32/fileio/naming-a-file). Это связано с тем, что такие файлы могут копироваться для обработки из хранилища BLOB-объектов на локальный диск NTFS.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

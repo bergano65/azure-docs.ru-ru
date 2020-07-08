@@ -6,10 +6,9 @@ ms.author: dekapur
 ms.date: 12/12/2018
 ms.topic: conceptual
 ms.openlocfilehash: a674047722d4deca02d8f4d38a0826e479065037
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79259205"
 ---
 # <a name="set-up-your-windows-development-environment-to-build-service-fabric-mesh-apps"></a>Чтобы создавать приложения Сетки Service Fabric, настройте среду разработки Windows
@@ -36,7 +35,7 @@ ms.locfileid: "79259205"
 Для развертывания Service Fabric приложений сетки требуется Visual Studio 2017 или более поздней версии. [Его версия должна быть не ниже 15.6.0][download-visual-studio] и включать следующие рабочие нагрузки.
 
 * ASP.NET и веб-разработка.
-* Разработка в Azure
+* разработка Azure.
 
 ## <a name="install-docker"></a>Установка Docker
 
@@ -58,7 +57,7 @@ ms.locfileid: "79259205"
 Install-WindowsFeature -Name Hyper-V -IncludeManagementTools
 ```
 
-Перезагрузите компьютер.
+Перезапустите компьютер.
 
 Чтобы установить Docker, запустите PowerShell как администратор и выполните следующую команду.
 

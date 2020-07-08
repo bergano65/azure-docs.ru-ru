@@ -9,15 +9,14 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/17/2019
 ms.openlocfilehash: adcd4d9e81eecad9540a4ef1be5e675f940ffb8d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79367998"
 ---
 # <a name="visualize-interactive-query-apache-hive-data-with-microsoft-power-bi-using-direct-query-in-hdinsight"></a>Визуализация интерактивных запросов Apache Hive данных с помощью Microsoft Power BI с использованием прямого запроса в HDInsight
 
-Эта статья рассказывает о том, как подключить Microsoft Power BI к кластерам Interactive Query в Azure HDInsight и визуализировать данные Apache Hive с использованием прямого запроса. Приведенный пример загружает данные из таблицы `hivesampletable` Hive в Power BI. В `hivesampletable` таблице Hive содержатся некоторые данные об использовании мобильного телефона. Затем вы отобразите эти данные на карте мира:
+Эта статья рассказывает о том, как подключить Microsoft Power BI к кластерам Interactive Query в Azure HDInsight и визуализировать данные Apache Hive с использованием прямого запроса. Приведенный пример загружает данные из `hivesampletable` таблицы Hive в Power BI. В `hivesampletable` таблице Hive содержатся некоторые данные об использовании мобильного телефона. Затем вы отобразите эти данные на карте мира:
 
 ![Отчет карты HDInsight Power BI](./media/apache-hadoop-connect-hive-power-bi-directquery/hdinsight-power-bi-visualization.png)
 
@@ -26,16 +25,16 @@ ms.locfileid: "79367998"
 ## <a name="prerequisites"></a>Предварительные условия
 Чтобы выполнить действия, указанные в этой статье, вам потребуется:
 
-* **Кластер HDInsight.** Это может быть кластер HDInsight с Apache Hive или новый кластер Interactive Query. Сведения о создании кластеров см. в [этом разделе](../hadoop/apache-hadoop-linux-tutorial-get-started.md).
+* **Кластер HDInsight**. Это может быть кластер HDInsight с Apache Hive или новый кластер Interactive Query. Сведения о создании кластеров см. в [этом разделе](../hadoop/apache-hadoop-linux-tutorial-get-started.md).
 * **[Microsoft Power BI Desktop](https://powerbi.microsoft.com/desktop/)**. Копию этой программы можно скачать в [Центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=45331).
 
 ## <a name="load-data-from-hdinsight"></a>Загрузка данных из HDInsight
 
-Таблица `hivesampletable` Hive поставляется со всеми кластерами HDInsight.
+`hivesampletable`Таблица Hive поставляется со всеми кластерами HDInsight.
 
 1. Запустите Power BI Desktop.
 
-2. В строке меню выберите **Домашняя страница** > **получить** > **Дополнительные данные.**...
+2. В строке меню выберите **Домашняя страница**  >  **получить**  >  **Дополнительные данные.**...
 
     ![Power BI получения данных в HDInsight](./media/apache-hadoop-connect-hive-power-bi-directquery/hdinsight-power-bi-open-odbc.png)
 
@@ -47,9 +46,9 @@ ms.locfileid: "79367998"
 
 6. В окне " **интерактивный запрос HDInsight** " введите следующие сведения и нажмите кнопку " **ОК**":
 
-    |Свойство | Значение |
+    |Свойство. | Значение |
     |---|---|
-    |Server (Сервер) |Введите имя кластера, например *myiqcluster.azurehdinsight.NET*.|
+    |Сервер |Введите имя кластера, например *myiqcluster.azurehdinsight.NET*.|
     |База данных |Введите **значение по умолчанию** для этой статьи.|
     |Режим подключения к данным |Выберите **DirectQuery** для этой статьи.|
 

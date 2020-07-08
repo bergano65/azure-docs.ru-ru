@@ -9,10 +9,9 @@ ms.date: 07/19/2019
 ms.topic: conceptual
 ms.service: container-service
 ms.openlocfilehash: d4f53238951784a74e6e3fc8a73d1f112ce75608
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79139119"
 ---
 # <a name="manage-projects-templates-image-streams-in-an-azure-red-hat-openshift-cluster"></a>Управление проектами, шаблонами, потоками изображений в кластере Azure Red Hat OpenShift 
@@ -25,9 +24,9 @@ ms.locfileid: "79139119"
 
 При отправке запроса проекта API заменяет следующие параметры в шаблоне:
 
-| Параметр               | Описание                                    |
+| Параметр               | Описание:                                    |
 | ----------------------- | ---------------------------------------------- |
-| PROJECT_NAME            | Имя проекта. Обязательный элемент.             |
+| PROJECT_NAME            | Имя проекта. Обязательный.             |
 | PROJECT_DISPLAYNAME     | Отображаемое имя проекта. Значение может быть пустым. |
 | PROJECT_DESCRIPTION     | Описание проекта. Значение может быть пустым.  |
 | PROJECT_ADMIN_USER      | Имя пользователя для администрирования.       |
@@ -69,7 +68,7 @@ ms.locfileid: "79139119"
    oc edit clusterrolebinding.rbac.authorization.k8s.io self-provisioners
    ```
 
-3. Удалите роль из процесса обновления АТО, добавив следующую аннотацию: `openshift.io/reconcile-protect: "true"`.
+3. Удалите роль из процесса обновления АТО, добавив следующую аннотацию: `openshift.io/reconcile-protect: "true"` .
 
    ```
    ...
@@ -79,7 +78,7 @@ ms.locfileid: "79139119"
    ...
    ```
 
-4. Измените привязку роли кластера, чтобы `system:authenticated:oauth` предотвратить создание проектов:
+4. Измените привязку роли кластера, чтобы предотвратить `system:authenticated:oauth` Создание проектов:
 
    ```
    apiVersion: rbac.authorization.k8s.io/v1
@@ -122,7 +121,7 @@ ms.locfileid: "79139119"
    ...
    ```
 
-   Любой отдельный объект в `openshift` пространстве имен можно удалить из процесса обновления, добавив к нему `openshift.io/reconcile-protect: "true"` заметку.
+   Любой отдельный объект в `openshift` пространстве имен можно удалить из процесса обновления, добавив `openshift.io/reconcile-protect: "true"` к нему заметку.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

@@ -9,10 +9,9 @@ ms.author: magoedte
 ms.date: 03/12/2020
 ms.topic: conceptual
 ms.openlocfilehash: 1fb64463b0372202adb04c2deb304c389c7773b8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79164687"
 ---
 # <a name="how-to-install-the-connected-machine-agent-using-windows-powershell-dsc"></a>Установка агента подключенного компьютера с помощью Windows PowerShell DSC
@@ -29,7 +28,7 @@ ms.locfileid: "79164687"
 
 ## <a name="install-the-connectedmachine-dsc-module"></a>Установка модуля DSC Коннектедмачине
 
-1. Чтобы вручную установить модуль, скачайте исходный код и распакуйте содержимое каталога проекта в `$env:ProgramFiles\WindowsPowerShell\Modules folder`. Или выполните следующую команду, чтобы установить из коллекции PowerShell с помощью PowerShellGet (в PowerShell 5,0):
+1. Чтобы вручную установить модуль, скачайте исходный код и распакуйте содержимое каталога проекта в `$env:ProgramFiles\WindowsPowerShell\Modules folder` . Или выполните следующую команду, чтобы установить из коллекции PowerShell с помощью PowerShellGet (в PowerShell 5,0):
 
     ```powershell
     Find-Module -Name AzureConnectedMachineDsc -Repository PSGallery | Install-Module
@@ -47,7 +46,7 @@ ms.locfileid: "79164687"
 
 ## <a name="install-the-agent-and-connect-to-azure"></a>Установка агента и подключение к Azure
 
-Ресурсы в этом модуле предназначены для управления конфигурацией агента подключенного компьютера Azure. Также включен сценарий `AzureConnectedMachineAgent.ps1`PowerShell, находящийся в `AzureConnectedMachineDsc\examples` папке. Он использует ресурсы сообщества для автоматизации загрузки и установки и установления подключения к службе "Дуга Azure". Этот сценарий выполняет аналогичные действия, описанные в статье [портал Azure подключение гибридных компьютеров к Azure](onboard-portal.md) .
+Ресурсы в этом модуле предназначены для управления конфигурацией агента подключенного компьютера Azure. Также включен сценарий PowerShell `AzureConnectedMachineAgent.ps1` , находящийся в `AzureConnectedMachineDsc\examples` папке. Он использует ресурсы сообщества для автоматизации загрузки и установки и установления подключения к службе "Дуга Azure". Этот сценарий выполняет аналогичные действия, описанные в статье [портал Azure подключение гибридных компьютеров к Azure](onboard-portal.md) .
 
 Если компьютеру необходимо взаимодействовать через прокси-сервер со службой, после установки агента необходимо выполнить команду, описанную [здесь](onboard-portal.md#configure-the-agent-proxy-setting). Она задает переменную системной среды для прокси-сервера `https_proxy`. Вместо выполнения команды вручную можно выполнить этот шаг с DSC с помощью модуля [компутеманажементдск](https://www.powershellgallery.com/packages/ComputerManagementDsc/6.0.0.0) .
 
@@ -65,7 +64,7 @@ ms.locfileid: "79164687"
 
 - `ResourceGroup`— Имя группы ресурсов, к которой должны принадлежать подключенные компьютеры.
 
-- `Location`: См. раздел [Поддерживаемые регионы Azure](overview.md#supported-regions). Это расположение может совпадать с расположением группы ресурсов или совпадать с ним.
+- `Location`: См. раздел [Поддерживаемые регионы Azure](overview.md#supported-regions). Это расположение может совпадать или не совпадать с расположением группы ресурсов.
 
 - `Tags`: Строковый массив тегов, которые должны применяться к ресурсу подключенного компьютера.
 
@@ -79,7 +78,7 @@ ms.locfileid: "79164687"
     .\`AzureConnectedMachineAgent.ps1 -TenantId <TenantId GUID> -SubscriptionId <SubscriptionId GUID> -ResourceGroup '<ResourceGroupName>' -Location '<LocationName>' -Tags '<Tag>' -Credential <psCredential>
     ```
 
-3. Будет создан `localhost.mof file` в новой папке с именем `C:\dsc`.
+3. Будет создан `localhost.mof file` в новой папке с именем `C:\dsc` .
 
 После установки агента и настройки его подключения к Azure Arc для серверов (предварительная версия) перейдите на портал Azure, чтобы убедиться, что сервер подключен. Просмотрите свои компьютеры на [портале Azure](https://aka.ms/hybridmachineportal).
 
@@ -89,8 +88,8 @@ ms.locfileid: "79164687"
 
 Модуль [компситересаурце](https://www.powershellgallery.com/packages/compositeresource/0.4.0) из коллекция PowerShell можно использовать для создания [составного ресурса](https://docs.microsoft.com/powershell/scripting/dsc/resources/authoringResourceComposite?view=powershell-7) в примере конфигурации для дальнейшего упрощения объединения конфигураций.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте, как управлять компьютером с помощью [политики Azure](../../governance/policy/overview.md), например [гостевой конфигурации](../../governance/policy/concepts/guest-configuration.md)виртуальной машины, проверки того, что компьютер сообщает о предполагаемой log Analytics рабочей области, включить мониторинг с помощью [Azure Monitor с виртуальными машинами](../../azure-monitor/insights/vminsights-enable-at-scale-policy.md)и многое другое.
+- Узнайте, как управлять компьютером с помощью [Политики Azure](../../governance/policy/overview.md), например для [гостевой конфигурации](../../governance/policy/concepts/guest-configuration.md) виртуальной машины, проверять отправку отчетов с компьютера в ожидаемую рабочую область Log Analytics, включать мониторинг с помощью [Azure Monitor с виртуальными машинами](../../azure-monitor/insights/vminsights-enable-at-scale-policy.md) и т. д.
 
-- Дополнительные сведения об [агенте log Analytics](../../azure-monitor/platform/log-analytics-agent.md). Агент Log Analytics для Windows и Linux необходим, если требуется упреждающе отслеживать ОС и рабочие нагрузки на компьютере, выполнять управление с помощью runbook службы автоматизации или с помощью решений, таких как Управление обновлениями, или использовать другие службы Azure, например, [Центр безопасности Azure](../../security-center/security-center-intro.md).
+- Узнайте больше об [агенте Log Analytics](../../azure-monitor/platform/log-analytics-agent.md). Агент Log Analytics для Windows и Linux необходим, если требуется упреждающе отслеживать ОС и рабочие нагрузки на компьютере, выполнять управление с помощью runbook службы автоматизации или с помощью решений, таких как Управление обновлениями, или использовать другие службы Azure, например, [Центр безопасности Azure](../../security-center/security-center-intro.md).

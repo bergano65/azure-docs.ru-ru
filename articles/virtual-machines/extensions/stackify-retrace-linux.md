@@ -14,10 +14,9 @@ ms.workload: infrastructure-services
 ms.date: 04/12/2018
 ms.author: akjosh
 ms.openlocfilehash: 5914947bd994ee405f253e34c3dd919dd6561898
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79253797"
 ---
 # <a name="stackify-retrace-linux-agent-extension"></a>Расширение агента Stackify Retrace для Linux
@@ -37,7 +36,7 @@ Retrace — это единственный инструмент, который
 
 Это расширение предоставляет путь установки агента Retrace для Linux. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система 
 

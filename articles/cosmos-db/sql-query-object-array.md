@@ -7,10 +7,9 @@ ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: tisande
 ms.openlocfilehash: 5b2801b0a71f04803955e9d8bc18a97133019996
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79246556"
 ---
 # <a name="working-with-arrays-and-objects-in-azure-cosmos-db"></a>Работа с массивами и объектами в Azure Cosmos DB
@@ -90,7 +89,7 @@ API SQL обеспечивает поддержку итерации по мас
     ]
 ```
 
-Следующий запрос выполняет итерацию `children` в `Families` контейнере. Выходной массив отличается от предыдущего запроса. В этом примере показано `children`разбиение и сведение результатов в один массив:  
+Следующий запрос выполняет итерацию `children` в `Families` контейнере. Выходной массив отличается от предыдущего запроса. В этом примере показано разбиение `children` и сведение результатов в один массив:  
 
 ```sql
     SELECT *
@@ -155,8 +154,8 @@ API SQL обеспечивает поддержку итерации по мас
     ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Начало работы](sql-query-getting-started.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
-- [Соединения](sql-query-join.md)
+- [Joins](sql-query-join.md)

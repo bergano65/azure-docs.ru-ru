@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 03/13/2020
 ms.author: mayg
 ms.openlocfilehash: 70d84516e2d7a42b1c6a3714d9060bedf6535f58
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79366302"
 ---
 # <a name="about-the-azure-site-recovery-deployment-planner-for-vmware-to-azure"></a>О Планировщике развертывания Azure Site Recovery для восстановления виртуальных машин VMware в Azure
@@ -62,7 +61,7 @@ ms.locfileid: "79366302"
 
 ## <a name="support-matrix"></a>Матрица поддержки
 
-| | **Из VMware в Azure** |**Hyper-V в Azure**|**Из Azure в Azure**|**Из Hyper-V на дополнительный сайт**|**Из VMware на дополнительный сайт**
+| | **VMware в VMware** |**Hyper-V в Azure**|**Из Azure в Azure**|**Из Hyper-V на дополнительный сайт**|**Из VMware на дополнительный сайт**
 --|--|--|--|--|--
 Поддерживаемые сценарии |Да|Да|Нет|Да*|Нет
 Поддерживаемая версия | vCenter 6,7, 6,5, 6,0 или 5,5| Windows Server 2016, Windows Server 2012 R2 | Н/Д |Windows Server 2016, Windows Server 2012 R2|Н/Д
@@ -74,7 +73,7 @@ ms.locfileid: "79366302"
 ## <a name="prerequisites"></a>Предварительные условия
 Программа выполняет два основных действия: осуществляет профилирование и создает отчет. С ее помощью также можно оценить пропускную способность. В таблице ниже приведены требования к серверу, на котором инициируется профилирование и измерение пропускной способности.
 
-| Требование к серверу | Описание|
+| Требование к серверу | Описание:|
 |---|---|
 |Профилирование и измерение пропускной способности| <ul><li>Операционная система: Windows Server 2016 или Windows Server 2012 R2.<br>(в идеале соответствует [рекомендациям по размеру сервера конфигурации](https://aka.ms/asr-v2a-on-prem-components)).</li><li>Конфигурация виртуальной машины: 8 виртуальных ЦП, 16 ГБ ОЗУ, жесткий диск емкостью 300 ГБ.</li><li>[.NET Framework 4.5](https://aka.ms/dotnet-framework-45)</li><li>[VMware vSphere PowerCLI 6.0 R3](https://aka.ms/download_powercli).</li><li>[Распространяемый компонент Visual C++ для Visual Studio 2012](https://aka.ms/vcplusplus-redistributable).</li><li>Доступ в Интернет к Azure (*. blob.core.windows.net) с этого сервера, порт 443<br>[Это необязательно. Вы можете указать доступную пропускную способность во время создания отчета вручную.]</li><li>Учетная запись хранения Azure.</li><li>Права администратора на доступ к серверу.</li><li>Минимальное свободное место на диске: 100 ГБ (предполагается, что профилирование 1,000 виртуальных машин в среднем с 3 дисками на каждую выполняется 30 дней).</li><li>Параметрам уровня статистики vCenter VMware можно присвоить значение 1 или выше.</li><li>Разрешение порта vCenter (по умолчанию 443). Планировщик развертывания Site Recovery использует этот порт для подключения к серверу vCenter или к хосту ESXi.</ul></ul>|
 | Создание отчетов. | Компьютер, поддерживающий Windows или Windows Server с Excel 2013 или более поздней версии.<li>[.NET Framework 4.5](https://aka.ms/dotnet-framework-45)</li><li>[Распространяемый компонент Visual C++ для Visual Studio 2012](https://aka.ms/vcplusplus-redistributable).</li><li>[VMware vSphere PowerCLI 6.0 R3](https://aka.ms/download_powercli) необходим только при передаче параметра пользователя в команде генерации отчета для получения последней информации о конфигурации для виртуальных машин. Планировщик развертывания подключается к серверу vCenter. Разрешите порту vCenter (по умолчанию 443) подключиться к серверу vCenter.</li>|

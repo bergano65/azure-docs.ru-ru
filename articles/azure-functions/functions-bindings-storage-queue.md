@@ -7,10 +7,9 @@ ms.date: 02/18/2020
 ms.author: cshoe
 ms.custom: cc996988-fb4f-47
 ms.openlocfilehash: 71321fa631bafde5b1dbaac2d165cb68fd8116d4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79277314"
 ---
 # <a name="azure-queue-storage-trigger-and-bindings-for-azure-functions-overview"></a>Обзор триггеров и привязок хранилища очередей Azure для функций Azure
@@ -24,11 +23,11 @@ ms.locfileid: "79277314"
 
 ## <a name="add-to-your-functions-app"></a>Добавление в приложение функций
 
-### <a name="functions-2x-and-higher"></a>Функции 2. x и более поздних версий
+### <a name="functions-2x-and-higher"></a>Функции 2.x и более поздних версий
 
 Для работы с триггером и привязками требуется ссылка на соответствующий пакет. Пакет NuGet используется для библиотек классов .NET, в то время как набор расширений используется для всех других типов приложений.
 
-| Язык                                        | Добавить по...                                   | Remarks 
+| Язык                                        | Добавить по...                                   | Комментарии 
 |-------------------------------------------------|---------------------------------------------|-------------|
 | C#                                              | Установка [пакета NuGet], версия 3. x | |
 | Скрипт C#, Java, JavaScript, Python, PowerShell | Регистрация [пакета расширений]          | [Расширение "инструменты Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack) " рекомендуется использовать с Visual Studio Code. |

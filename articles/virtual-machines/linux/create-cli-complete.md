@@ -7,10 +7,9 @@ ms.topic: article
 ms.date: 12/14/2017
 ms.author: cynthn
 ms.openlocfilehash: 7ee4674f5e7c04709256459c3417a1379a65aedc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78969564"
 ---
 # <a name="create-a-complete-linux-virtual-machine-with-the-azure-cli"></a>Создание полнофункциональной виртуальной машины Linux с помощью Azure CLI
@@ -21,7 +20,7 @@ ms.locfileid: "78969564"
 В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *myVnet* и *myVM*.
 
 ## <a name="create-resource-group"></a>Создать группу ресурсов
-Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Группу ресурсов нужно создать перед виртуальной машиной и вспомогательными ресурсами виртуальной сети. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Группу ресурсов нужно создать перед виртуальной машиной и вспомогательными ресурсами виртуальной сети. Создайте группу ресурсов с помощью команды [AZ Group Create](/cli/azure/group). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
 ```azurecli
 az group create --name myResourceGroup --location eastus
@@ -556,7 +555,7 @@ sudo apt-get install -y nginx
 az group export --name myResourceGroup > myResourceGroup.json
 ```
 
-С помощью этой команды в текущем рабочем каталоге создается файл `myResourceGroup.json`. При создании среды на основе этого шаблона запрашиваются все имена ресурсов. Эти имена можно указать в файле шаблона, добавив параметр `--include-parameter-default-value` в команду `az group export`. Измените шаблон JSON, чтобы указать имена ресурсов, или [создайте файл parameters.json](../../resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) , задающий их.
+С помощью этой команды в текущем рабочем каталоге создается файл `myResourceGroup.json`. При создании среды на основе этого шаблона запрашиваются все имена ресурсов. Эти имена можно указать в файле шаблона, добавив параметр `--include-parameter-default-value` в команду `az group export`. Измените шаблон JSON, чтобы указать имена ресурсов, или [создайте parameters.jsдля файла](../../resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) , указывающего имена ресурсов.
 
 Чтобы создать среду с помощью шаблона, используйте команду [az group deployment create](/cli/azure/group/deployment) следующим образом:
 

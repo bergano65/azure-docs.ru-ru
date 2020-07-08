@@ -7,10 +7,9 @@ ms.author: evternov
 ms.date: 08/08/2018
 ms.reviewer: mbullwin
 ms.openlocfilehash: 121e4699bd6a72f6865d3a6ffdef58c1b3806047
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79082767"
 ---
 # <a name="correlating-application-insights-data-with-custom-data-sources"></a>Корреляция данных Application Insights с пользовательскими источниками данных
@@ -55,7 +54,7 @@ app('myAI').requests
 ) on $left.cloud_RoleInstance == $right.Computer
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения см. по ссылке [​​API сборщика данных](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-collector-api).
 - Дополнительные сведения о [межресурсном соединении](https://docs.microsoft.com/azure/log-analytics/log-analytics-cross-workspace-search).

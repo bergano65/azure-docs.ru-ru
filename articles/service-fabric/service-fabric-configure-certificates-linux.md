@@ -5,10 +5,9 @@ ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: pepogors
 ms.openlocfilehash: 802e76614f51e1f6479a311e61a49d83b8125546
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79282579"
 ---
 # <a name="certificates-and-security-on-linux-clusters"></a>Сертификаты и безопасность в кластерах Linux
@@ -33,7 +32,7 @@ Service Fabric обычно ожидает, что сертификаты X.509 
 
 ### <a name="using-x509-securitycredentialstype"></a>Использование SecurityCredentialsType X509
 
-При использовании пакетов SDK для .NET или Java вы можете указать **X509** для **SecurityCredentialsType**. Соответствует типу `X509Credentials` ([.NET](https://msdn.microsoft.com/library/system.fabric.x509credentials.aspx)/[Java)](https://docs.microsoft.com/java/api/system.fabric.x509credentials) `SecurityCredentials` ([.NET](https://msdn.microsoft.com/library/system.fabric.securitycredentials.aspx)/[Java](https://docs.microsoft.com/java/api/system.fabric.securitycredentials)).
+При использовании пакетов SDK для .NET или Java вы можете указать **X509** для **SecurityCredentialsType**. Соответствует `X509Credentials` типу (.NET Java[.NET](https://msdn.microsoft.com/library/system.fabric.x509credentials.aspx) / [)](https://docs.microsoft.com/java/api/system.fabric.x509credentials) `SecurityCredentials` ([.NET](https://msdn.microsoft.com/library/system.fabric.securitycredentials.aspx) / [Java](https://docs.microsoft.com/java/api/system.fabric.securitycredentials)).
 
 Ссылка **X509** определяет местонахождение сертификата в хранилище сертификатов. В следующем коде XML показаны параметры, используемые для указания расположения сертификата:
 
@@ -43,7 +42,7 @@ Service Fabric обычно ожидает, что сертификаты X.509 
     <Parameter Name="CertificateStoreName" Value="My" />
 ```
 
-Для службы, работающей в Linux, **хранилище LocalMachine**/**My** указывает на расположение по умолчанию для сертификатов, каталог */Вар/либ/сфцертс* . Для Linux любые другие сочетания **CertificateStoreLocation** и **CertificateStoreName** не определены. 
+Для службы, работающей в Linux, **хранилище LocalMachine** / **My** указывает на расположение по умолчанию для сертификатов, каталог */Вар/либ/сфцертс* . Для Linux любые другие сочетания **CertificateStoreLocation** и **CertificateStoreName** не определены. 
 
 Всегда указывайте **LocalMachine** для параметра **CertificateStoreLocation**. Нет необходимости указывать параметр **CertificateStoreName**, так как по умолчанию используется значение My. Со ссылкой **X509** файлы сертификатов должны размещаться в каталоге */var/lib/sfcerts* в узле кластера.  
 
