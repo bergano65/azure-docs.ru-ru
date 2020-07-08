@@ -1,0 +1,344 @@
+---
+title: Создание виртуальной машины Windows с помощью Azure Image Builder с использованием PowerShell
+description: Создайте виртуальную машину Windows с помощью модуля PowerShell для Azure Image Builder.
+author: cynthn
+ms.author: cynthn
+ms.date: 06/17/2020
+ms.topic: how-to
+ms.service: virtual-machines-windows
+ms.subservice: imaging
+ms.openlocfilehash: c8a5e1b1324ca49d8b540998a82ebf125b3c5364
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84975866"
+---
+# <a name="preview-create-a-windows-vm-with-azure-image-builder-using-powershell"></a>Предварительная версия: создание виртуальной машины Windows с помощью Azure Image Builder с использованием PowerShell
+
+В этой статье показано, как создать настраиваемый образ Windows с помощью модуля PowerShell для сборщика образов виртуальных машин Azure.
+
+> [!CAUTION]
+> Конструктор образов Azure сейчас поддерживается в общедоступной предварительной версии. Эта предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуется использовать для рабочих нагрузок в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+
+Если вы решили использовать PowerShell локально, для работы с этой статьей установите модуль PowerShell Az и подключитесь к учетной записи Azure с помощью командлета [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount). См. сведения об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+
+> [!IMPORTANT]
+> Хотя модули PowerShell **AZ. имажебуилдер** и **AZ. манажедсервицеидентити** доступны в предварительной версии, их необходимо установить отдельно с помощью `Install-Module` командлета с `AllowPrerelease` параметром. После того как эти модули PowerShell станут общедоступными, они становятся частью будущих выпусков AZ PowerShell и доступны в рамках Azure Cloud Shell.
+
+```azurepowershell-interactive
+'Az.ImageBuilder', 'Az.ManagedServiceIdentity' | ForEach-Object {Install-Module -Name $_ -AllowPrerelease}
+```
+
+[!INCLUDE [cloud-shell-try-it](../../../includes/cloud-shell-try-it.md)]
+
+Если вы используете несколько подписок Azure, выберите ту, за ресурсы в которой будут выставляться счета. Выберите определенную подписку с помощью командлета [Set-азконтекст](https://docs.microsoft.com/powershell/module/az.accounts/set-azcontext) .
+
+```azurepowershell-interactive
+Set-AzContext -SubscriptionId 00000000-0000-0000-0000-000000000000
+```
+
+### <a name="register-features"></a>Регистрация функций
+
+Если вы впервые используете Azure Image Builder во время предварительной версии, зарегистрируйте новую функцию **виртуалмачинетемплатепревиев** .
+
+```azurepowershell-interactive
+Register-AzProviderFeature -ProviderNamespace Microsoft.VirtualMachineImages -FeatureName VirtualMachineTemplatePreview
+```
+
+Проверьте состояние регистрации функции.
+
+> [!NOTE]
+> **RegistrationState** может находиться в состоянии в `Registering` течение нескольких минут до перехода на `Registered` . Прежде чем продолжить, подождите, пока состояние не будет **зарегистрировано** .
+
+```azurepowershell-interactive
+Get-AzProviderFeature -ProviderNamespace Microsoft.VirtualMachineImages -FeatureName VirtualMachineTemplatePreview
+```
+
+Зарегистрируйте следующие поставщики ресурсов для использования с подпиской Azure, если они еще не зарегистрированы.
+
+- Microsoft.Compute;
+- Microsoft.KeyVault
+- Microsoft.Storage;
+- Microsoft.VirtualMachineImages
+
+```azurepowershell-interactive
+Get-AzResourceProvider -ProviderNamespace Microsoft.Compute, Microsoft.KeyVault, Microsoft.Storage, Microsoft.VirtualMachineImages |
+  Where-Object RegistrationState -ne Registered |
+    Register-AzResourceProvider
+```
+
+## <a name="define-variables"></a>Определение переменных
+
+Несколько фрагментов данных будут многократно использоваться. Создайте переменные для хранения информации.
+
+```azurepowershell-interactive
+# Destination image resource group name
+$imageResourceGroup = 'myWinImgBuilderRG'
+
+# Azure region
+$location = 'WestUS2'
+
+# Name of the image to be created
+$imageTemplateName = 'myWinImage'
+
+# Distribution properties of the managed image upon completion
+$runOutputName = 'myDistResults'
+```
+
+Создайте переменную для идентификатора подписки Azure. Чтобы убедиться, что `subscriptionID` переменная содержит идентификатор подписки, можно выполнить вторую строку в следующем примере.
+
+```azurepowershell-interactive
+# Your Azure Subscription ID
+$subscriptionID = (Get-AzContext).Subscription.Id
+Write-Output $subscriptionID
+```
+
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
+
+Создайте [группу ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) с помощью командлета [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
+
+В следующем примере создается группа ресурсов на основе имени в `$imageResourceGroup` переменной в регионе, указанном в `$location` переменной. Эта группа ресурсов используется для хранения артефакта шаблона конфигурации образа и образа.
+
+```azurepowershell-interactive
+New-AzResourceGroup -Name $imageResourceGroup -Location $location
+```
+
+## <a name="create-user-identity-and-set-role-permissions"></a>Создание удостоверений пользователей и задание разрешений роли
+
+Предоставьте разрешения Azure Image Builder для создания образов в указанной группе ресурсов, используя следующий пример. Без этого разрешения процесс сборки образа не будет выполнен успешно.
+
+Создайте переменные для определения роли и имен удостоверений. Эти значения должны быть однозначными.
+
+```azurepowershell-interactive
+[int]$timeInt = $(Get-Date -UFormat '%s')
+$imageRoleDefName = "Azure Image Builder Image Def $timeInt"
+$identityName = "myIdentity$timeInt"
+```
+
+Создайте удостоверение пользователя.
+
+```azurepowershell-interactive
+New-AzUserAssignedIdentity -ResourceGroupName $imageResourceGroup -Name $identityName
+```
+
+Сохраните идентификаторы ресурса удостоверения и субъекта в переменных.
+
+```azurepowershell-interactive
+$identityNameResourceId = (Get-AzUserAssignedIdentity -ResourceGroupName $imageResourceGroup -Name $identityName).Id
+$identityNamePrincipalId = (Get-AzUserAssignedIdentity -ResourceGroupName $imageResourceGroup -Name $identityName).PrincipalId
+```
+
+### <a name="assign-permissions-for-identity-to-distribute-images"></a>Назначение разрешений удостоверению для распространения образов
+
+Скачайте файл конфигурации. JSON и измените его в соответствии с параметрами, определенными в этой статье.
+
+```azurepowershell-interactive
+$myRoleImageCreationUrl = 'https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/solutions/12_Creating_AIB_Security_Roles/aibRoleImageCreation.json'
+$myRoleImageCreationPath = "$env:TEMP\myRoleImageCreation.json"
+
+Invoke-WebRequest -Uri $myRoleImageCreationUrl -OutFile $myRoleImageCreationPath -UseBasicParsing
+
+$Content = Get-Content -Path $myRoleImageCreationPath -Raw
+$Content = $Content -replace '<subscriptionID>', $subscriptionID
+$Content = $Content -replace '<rgName>', $imageResourceGroup
+$Content = $Content -replace 'Azure Image Builder Service Image Creation Role', $imageRoleDefName
+$Content | Out-File -FilePath $myRoleImageCreationPath -Force
+```
+
+Создайте определение роли.
+
+```azurepowershell-interactive
+New-AzRoleDefinition -InputFile $myRoleImageCreationPath
+```
+
+Предоставьте определение роли для субъекта-службы Image Builder.
+
+```azurepowershell-interactive
+$RoleAssignParams = @{
+  ObjectId = $identityNamePrincipalId
+  RoleDefinitionName = $imageRoleDefName
+  Scope = "/subscriptions/$subscriptionID/resourceGroups/$imageResourceGroup"
+}
+New-AzRoleAssignment @RoleAssignParams
+```
+
+> [!NOTE]
+> Если появится сообщение об ошибке: "_New-азроледефинитион: превышен предел определения роли. Невозможно создать дополнительные определения ролей._ см. раздел [Устранение неполадок в Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/troubleshooting).
+
+## <a name="create-a-shared-image-gallery"></a>Создание Общей коллекции образов.
+
+Создайте галерею.
+
+```azurepowershell-interactive
+$myGalleryName = 'myImageGallery'
+$imageDefName = 'winSvrImages'
+
+New-AzGallery -GalleryName $myGalleryName -ResourceGroupName $imageResourceGroup -Location $location
+```
+
+Создайте определение галереи.
+
+```azurepowershell-interactive
+$GalleryParams = @{
+  GalleryName = $myGalleryName
+  ResourceGroupName = $imageResourceGroup
+  Location = $location
+  Name = $imageDefName
+  OsState = 'generalized'
+  OsType = 'Windows'
+  Publisher = 'myCo'
+  Offer = 'Windows'
+  Sku = 'Win2019'
+}
+New-AzGalleryImageDefinition @GalleryParams
+```
+
+## <a name="create-an-image"></a>Создание образа
+
+Создайте исходный объект построителя образов Azure. Допустимые значения параметров см. [в статье Поиск образов виртуальных машин Windows в Azure Marketplace с помощью Azure PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/cli-ps-findimage) .
+
+```azurepowershell-interactive
+$SrcObjParams = @{
+  SourceTypePlatformImage = $true
+  Publisher = 'MicrosoftWindowsServer'
+  Offer = 'WindowsServer'
+  Sku = '2019-Datacenter'
+  Version = 'latest'
+}
+$srcPlatform = New-AzImageBuilderSourceObject @SrcObjParams
+```
+
+Создайте объект распространителя Azure Image Builder.
+
+```azurepowershell-interactive
+$disObjParams = @{
+  SharedImageDistributor = $true
+  ArtifactTag = @{tag='dis-share'}
+  GalleryImageId = "/subscriptions/$subscriptionID/resourceGroups/$imageResourceGroup/providers/Microsoft.Compute/galleries/$myGalleryName/images/$imageDefName"
+  ReplicationRegion = $location
+  RunOutputName = $runOutputName
+  ExcludeFromLatest = $false
+}
+$disSharedImg = New-AzImageBuilderDistributorObject @disObjParams
+```
+
+Создайте объект настройки построителя образов Azure.
+
+```azurepowershell-interactive
+$ImgCustomParams = @{
+  PowerShellCustomizer = $true
+  CustomizerName = 'settingUpMgmtAgtPath'
+  RunElevated = $false
+  Inline = @("mkdir c:\\buildActions", "echo Azure-Image-Builder-Was-Here  > c:\\buildActions\\buildActionsOutput.txt")
+}
+$Customizer = New-AzImageBuilderCustomizerObject @ImgCustomParams
+```
+
+Создайте шаблон Azure Image Builder.
+
+```azurepowershell-interactive
+$ImgTemplateParams = @{
+  ImageTemplateName = $imageTemplateName
+  ResourceGroupName = $imageResourceGroup
+  Source = $srcPlatform
+  Distribute = $disSharedImg
+  Customize = $Customizer
+  Location = $location
+  UserAssignedIdentityId = $identityNameResourceId
+}
+New-AzImageBuilderTemplate @ImgTemplateParams
+```
+
+По завершении возвращается сообщение и создается шаблон конфигурации построителя изображений в `$imageResourceGroup` .
+
+Чтобы определить успешность процесса создания шаблона, можно использовать следующий пример.
+
+```azurepowershell-interactive
+Get-AzImageBuilderTemplate -ImageTemplateName $imageTemplateName -ResourceGroupName $imageResourceGroup |
+  Select-Object -Property Name, LastRunStatusRunState, LastRunStatusMessage, ProvisioningState
+```
+
+В фоновом режиме построитель образов также создает промежуточную группу ресурсов в подписке. Эта группа ресурсов используется для сборки образа. Он имеет формат: `IT_<DestinationResourceGroup>_<TemplateName>` .
+
+> [!WARNING]
+> Не удаляйте промежуточную группу ресурсов напрямую. Удаление артефакта шаблона образа приведет к удалению промежуточной группы ресурсов.
+
+Если служба сообщает о сбое во время отправки шаблона конфигурации образа:
+
+- См. раздел [Устранение неполадок сборки образа виртуальной машины Azure (AIB)](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#template-submission-errors--troubleshooting).
+- Удалите шаблон, используя следующий пример, прежде чем повторять попытку.
+
+```azurepowershell-interactive
+Remove-AzImageBuilderTemplate -ImageTemplateName $imageTemplateName -ResourceGroupName $imageResourceGroup
+```
+
+## <a name="start-the-image-build"></a>Запуск сборки образа
+
+Отправьте конфигурацию образа в службу "Построитель образов виртуальных машин".
+
+```azurepowershell-interactive
+Start-AzImageBuilderTemplate -ResourceGroupName $imageResourceGroup -Name $imageTemplateName
+```
+
+Дождитесь завершения процесса сборки образа. Этот шаг может занять до часа.
+
+При возникновении ошибок ознакомьтесь с [разрешениями по устранению неполадок сборки образа виртуальной машины Azure (AIB)](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#image-build-errors--troubleshooting).
+
+## <a name="create-a-vm"></a>Создание виртуальной машины
+
+Сохраните учетные данные входа для виртуальной машины в переменной. Пароль должен быть сложным.
+
+```azurepowershell-interactive
+$Cred = Get-Credential
+```
+
+Создайте виртуальную машину с помощью созданного образа.
+
+```azurepowershell-interactive
+$ArtifactId = (Get-AzImageBuilderRunOutput -ImageTemplateName $imageTemplateName -ResourceGroupName $imageResourceGroup).ArtifactId
+
+New-AzVM -ResourceGroupName $imageResourceGroup -Image $ArtifactId -Name myWinVM01 -Credential $Cred
+```
+
+## <a name="verify-the-customization"></a>Проверка настройки
+
+Подключитесь к виртуальной машине через подключение к удаленному рабочему столу, используя имя пользователя и пароль, заданные при создании виртуальной машины. В виртуальной машине откройте PowerShell и выполните команду `Get-Content` , как показано в следующем примере:
+
+```azurepowershell-interactive
+Get-Content -Path C:\buildActions\buildActionsOutput.txt
+```
+
+Вы должны увидеть выходные данные на основе содержимого файла, созданного в процессе настройки образа.
+
+```Output
+Azure-Image-Builder-Was-Here
+```
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если ресурсы, созданные в этой статье, не нужны, их можно удалить, выполнив следующие примеры.
+
+### <a name="delete-the-image-builder-template"></a>Удаление шаблона построителя образов
+
+```azurepowershell-interactive
+Remove-AzImageBuilderTemplate -ResourceGroupName $imageResourceGroup -Name $imageTemplateName
+```
+
+### <a name="delete-the-image-resource-group"></a>Удаление группы ресурсов образа
+
+> [!CAUTION]
+> Следующий пример удаляет указанную группу ресурсов и все содержащиеся в ней ресурсы.
+> Если ресурсы за пределами области этой статьи находятся в указанной группе ресурсов, они также будут удалены.
+
+```azurepowershell-interactive
+Remove-AzResourceGroup -Name $imageResourceGroup
+```
+
+## <a name="next-steps"></a>Дальнейшие шаги
+
+Дополнительные сведения о компонентах JSON, использованных в этой статье, см. в разделе [Справочник по шаблонам для Image Builder](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

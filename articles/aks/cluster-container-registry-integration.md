@@ -5,25 +5,25 @@ services: container-service
 manager: gwallace
 ms.topic: article
 ms.date: 02/25/2020
-ms.openlocfilehash: 514cc25e1959145c65fe60cd3054cec4ed28f44d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: aa2b82e70b1a1372076483c7405c32b66da377af
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80617427"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84974438"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes
 
-При использовании реестра контейнеров Azure (ACR) со Службой Azure Kubernetes (AKS) необходимо установить механизм аутентификации. В этой статье приведены примеры настройки проверки подлинности между этими двумя службами Azure. 
+При использовании реестра контейнеров Azure (ACR) со Службой Azure Kubernetes (AKS) необходимо установить механизм аутентификации. Эта операция реализуется как часть интерфейса командной строки и портала, предоставляя необходимые разрешения для записи контроля доступа. В этой статье приведены примеры настройки проверки подлинности между этими двумя службами Azure. 
 
 Вы можете настроить AKS для интеграции записей контроля доступа в нескольких простых командах с Azure CLI. Эта интеграция назначает роль Акрпулл субъекту-службе, связанному с кластером AKS.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Для этих примеров требуются:
 
 * Роль **владельца** или **администратора учетной записи Azure** в **подписке Azure**
-* Azure CLI версии 2.0.73 или более поздней
+* Azure CLI версии 2.7.0 или более поздней
 
 Чтобы избежать необходимости в роли администратора или **владельца** **учетной записи Azure** , можно вручную настроить субъект-службу или использовать существующий субъект-службу для проверки ПОдлинности записей контроля доступа из AKS. Дополнительные сведения см. в статьях [Аутентификация в реестре контейнеров Azure с помощью субъектов-служб](../container-registry/container-registry-auth-service-principal.md) и [Проверка подлинности в Kubernetes с использованием секрета для извлечения](../container-registry/container-registry-auth-kubernetes.md).
 
@@ -33,7 +33,7 @@ ms.locfileid: "80617427"
 
 ```azurecli
 # set this to the name of your Azure Container Registry.  It must be globally unique
-$MYACR=myContainerRegistry
+MYACR=myContainerRegistry
 
 # Run the following line to create an Azure Container Registry if you do not already have one
 az acr create -n $MYACR -g myContainerRegistryResourceGroup --sku basic
@@ -72,7 +72,7 @@ az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acr-resource-id>
 az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acrName>
 ```
 
-или диспетчер конфигурации служб
+или
 
 ```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-resource-id>
@@ -142,6 +142,10 @@ NAME                                 READY   STATUS    RESTARTS   AGE
 nginx0-deployment-669dfc4d4b-x74kr   1/1     Running   0          20s
 nginx0-deployment-669dfc4d4b-xdpd6   1/1     Running   0          20s
 ```
+
+### <a name="troubleshooting"></a>Устранение неполадок
+* Дополнительные сведения о [диагностике записей контроля](../container-registry/container-registry-diagnostics-audit-logs.md) доступа
+* Дополнительные сведения о [работоспособности записей контроля](../container-registry/container-registry-check-health.md) доступа
 
 <!-- LINKS - external -->
 [AKS AKS CLI]:  https://docs.microsoft.com/cli/azure/aks?view=azure-cli-latest#az-aks-create

@@ -1,19 +1,19 @@
 ---
 title: Установка драйвера GPU AMD для виртуальных машин Azure серии N под управлением Windows
 description: Сведения о том, как установить драйверы GPU AMD для виртуальных машин серии N под управлением Windows Server или Windows в Azure
-author: vikancha
+author: vikancha-MSFT
 manager: jkabat
 ms.service: virtual-machines-windows
 ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 12/4/2019
 ms.author: vikancha
-ms.openlocfilehash: 745ec7ebf792fe1165022516be4c83fb9e864cc9
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
-ms.translationtype: HT
+ms.openlocfilehash: c4ab6f8dd1c2484ca560fd570f88476f31897b28
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83799882"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84975199"
 ---
 # <a name="install-amd-gpu-drivers-on-n-series-vms-running-windows"></a>Установка драйверов GPU AMD на виртуальные машины серии N под управлением Windows
 
@@ -38,9 +38,11 @@ ms.locfileid: "83799882"
 
 1. Подключитесь к каждой виртуальной машине серии NVv4 по протоколу удаленного рабочего стола.
 
-2. Скачайте и установите последний выпуск драйвера.
+2. Если необходимо удалить предыдущую версию драйвера, а затем скачать программу очистки AMD, не [используйте программу,](https://download.microsoft.com/download/4/f/1/4f19b714-9304-410f-9c64-826404e07857/AMDCleanupUtilityni.exe) поставляемую с предыдущей версией драйвера.
 
-3. Перезагрузите виртуальную машину.
+3. Скачайте и установите последний выпуск драйвера.
+
+4. Перезагрузите виртуальную машину.
 
 ## <a name="verify-driver-installation"></a>Проверка установки драйверов
 
@@ -50,7 +52,7 @@ ms.locfileid: "83799882"
 
 С помощью средства dxdiag можно проверить свойства GPU, в том числе объем видеопамяти. В следующем примере показаны сведения об одной из двух секций карты Radeon Instinct MI25 на виртуальной машине Azure серии NVv4.
 <br />
-![Свойства драйвера GPU](./media/n-series-amd-driver-setup/dxdiag-output.png)
+![Свойства драйвера GPU](./media/n-series-amd-driver-setup/dxdiag-output-new.png)
 
 Если вы используете Windows 10 сборки 1903 или более позднюю версию, средство dxdiag не будет отображать сведения на вкладке "Монитор". Используйте действие "Сохранить все сведения" в нижней части окна, чтобы получить сведения о GPU AMD MI25 в выходном файле.
 
