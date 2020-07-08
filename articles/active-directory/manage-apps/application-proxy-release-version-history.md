@@ -3,8 +3,8 @@ title: 'AD Application Proxy Azure: журнал выпусков версий |
 description: В этой статье перечислены все выпуски Azure AD Application Proxy и описаны новые функции и исправлены проблемы.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 editor: ''
 ms.assetid: ''
 ms.service: active-directory
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/07/2020
 ms.subservice: app-mgmt
-ms.author: mimart
+ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f027fbce66a73306165a0ad35d1ba3faa7a5c0bc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 83c41a357ebaf65cca8465bfc48dda3dd065c3e0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80983897"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84760003"
 ---
 # <a name="azure-ad-application-proxy-version-release-history"></a>Azure AD Application Proxy: журнал выпусков версий
 В этой статье перечислены версии и функции прокси-сервера приложения Azure Active Directory (Azure AD), которые были выпущены. Команда Azure AD регулярно обновляет прокси приложения с помощью новых функций и функций. Соединители прокси приложения обновляются автоматически при выпуске новой версии. 
@@ -106,6 +106,6 @@ ms.locfileid: "80983897"
 
 Если вы используете версию соединителя прокси приложения, предшествующую 1.5.36.0, обновите ее до последней версии, чтобы убедиться в наличии новейших полностью поддерживаемых функций.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения об [удаленном доступе к локальным приложениям с помощью Azure AD application proxy](application-proxy.md).
 - Чтобы приступить к использованию прокси приложения, см. раздел [учебник. Добавление локального приложения для удаленного доступа через прокси приложения](application-proxy-add-on-premises-application.md).

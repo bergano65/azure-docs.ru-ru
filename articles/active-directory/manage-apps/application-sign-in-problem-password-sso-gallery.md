@@ -2,25 +2,25 @@
 title: Проблема входа в приложение из коллекции Azure AD, для которого настроен единый вход | Документация Майкрософт
 description: Устранение проблем с приложением из коллекции Azure AD, для которого настроен единый вход по паролю.
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 07/11/2017
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9fd17d9e066be6a1abff5165436a09b8921184e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6eebde3a7c6163b7faf92be193fe442cd5b74d2c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "68381311"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84759119"
 ---
 # <a name="sign-in-problems-with-an-azure-ad-gallery-app-configured-for-sso"></a>Проблемы при входе в приложение из коллекции Azure AD, для которого настроен единый вход
 
@@ -77,7 +77,7 @@ ms.locfileid: "68381311"
 
 -   [Домен Active Directory службы](https://msdn.microsoft.com/library/aa362244%28v=vs.85%29.aspx) должны быть настроены, а компьютеры пользователей должны быть присоединены к домену.
 
--   У вас есть разрешение на изменение параметров для изменения объекта групповая политика (GPO). По умолчанию такое разрешение имеют члены следующих групп безопасности: «Администраторы домена», «Администраторы предприятия» и «Владельцы-создатели групповой политики». [Подробнее](https://technet.microsoft.com/library/cc781991%28v=ws.10%29.aspx).
+-   У вас есть разрешение на изменение параметров для изменения объекта групповая политика (GPO). По умолчанию такое разрешение имеют члены следующих групп безопасности: «Администраторы домена», «Администраторы предприятия» и «Владельцы-создатели групповой политики». [Подробнее.](https://technet.microsoft.com/library/cc781991%28v=ws.10%29.aspx)
 
 Сведения о настройке групповой политики и ее развертывании для пользователей см. в статье [Развертывание расширения панели доступа для Internet Explorer с помощью групповой политики](https://docs.microsoft.com/azure/active-directory/active-directory-saas-ie-group-policy).
 
@@ -193,5 +193,5 @@ ms.locfileid: "68381311"
 -   Часовой пояс и интервал времени и времени, когда произошла ошибка
 -   трассировки Fiddler.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Реализация единого входа в приложения с помощью прокси приложения](application-proxy-configure-single-sign-on-with-kcd.md)

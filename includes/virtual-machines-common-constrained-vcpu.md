@@ -2,18 +2,18 @@
 title: Включить имя файла
 description: включить файл
 services: virtual-machines
-author: jonbeck7
+author: mimckitt
 ms.service: virtual-machines
 ms.topic: include
 ms.date: 03/09/2018
-ms.author: azcspmt;jonbeck;cynthn
+ms.author: mimckitt
 ms.custom: include file
-ms.openlocfilehash: 24fbab2bb637edf6c7e31215cdc7ac82bdb0ebab
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.openlocfilehash: 5c898721102177a0d796db3b8b0f194c4ec3efae
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
-ms.locfileid: "67185282"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84793644"
 ---
 Некоторые рабочие нагрузки баз данных, например SQL Server или Oracle, требуют большого объема памяти, хранилища и пропускной способности ввода-вывода, но не требуют наличия большого количества ядер. Многие рабочие нагрузки баз данных не нагружают процессор. Azure предлагает определенные размеры виртуальных машин, в которых вы можете ограничить количество виртуальных ЦП, чтобы снизить затраты на лицензирование программного обеспечения, сохранив при этом те же ресурсы памяти, хранилища и пропускную способность ввода-вывода.
 
@@ -24,7 +24,7 @@ ms.locfileid: "67185282"
 Цена за лицензии на виртуальные машины SQL Server или Oracle взымается в зависимости от нового количества виртуальных ЦП. Это же правило должно применяться и к цене за остальные продукты. Это позволяет на 50–75 % увеличить соотношение характеристик виртуальной машины с активными (подлежащими оплате) ЦП. Эти новые размеры виртуальных машин позволяют рабочим нагрузкам клиентов использовать одну и ту же память, хранилище и пропускную способность ввода-вывода при оптимизации стоимости лицензирования программного обеспечения. Сейчас затраты на вычисление, в том числе лицензирование операционной системы, остаются прежними. Дополнительные сведения см. в записи блога [Announcing new Azure VM sizes for more cost-effective database workloads](https://azure.microsoft.com/blog/announcing-new-azure-vm-sizes-for-more-cost-effective-database-workloads/) (Объявление новых размеров виртуальных машин Azure для более экономичных рабочих нагрузок базы данных).
 
 
-| Имя                | vCPU | Спецификации           |
+| name                | vCPU | Спецификации           |
 |---------------------|------|-----------------|
 | Standard_M8-2ms     | 2    | См. M8ms    |
 | Standard_M8-4ms     | 4    | См. M8ms    |
@@ -45,6 +45,24 @@ ms.locfileid: "67185282"
 | Standard_E32-8s_v3  | 8    | Совпадает с E32s_v3 |
 | Standard_E64-32s_v3 | 32   | Совпадает с E64s_v3 |
 | Standard_E64-16s_v3 | 16   | Совпадает с E64s_v3 |
+| Standard_E4 2s_v4   | 2    | То же, что E4s_v4  |
+| Standard_E8 4s_v4   | 4    | То же, что E8s_v4  |
+| Standard_E8 2s_v4   | 2    | То же, что E8s_v4  |
+| Standard_E16 8s_v4  | 8    | То же, что E16s_v4 |
+| Standard_E16 4s_v4  | 4    | То же, что E16s_v4 |
+| Standard_E32 16s_v4 | 16   | То же, что E32s_v4 |
+| Standard_E32 8s_v4  | 8    | То же, что E32s_v4 |
+| Standard_E64 32s_v4 | 32   | То же, что E64s_v4 |
+| Standard_E64 16s_v4 | 16   | То же, что E64s_v4 |
+| Standard_E4 2ds_v4  | 2    | То же, что E4ds_v4 |
+| Standard_E8 4ds_v4  | 4    | То же, что E8ds_v4 |
+| Standard_E8 2ds_v4  | 2    | То же, что E8ds_v4 |
+| Standard_E16 8ds_v4 | 8    | То же, что E16ds_v4|
+| Standard_E16 4ds_v4 | 4    | То же, что E16ds_v4|
+| Standard_E32 16ds_v4| 16   | То же, что E32ds_v4|
+| Standard_E32 8ds_v4 | 8    | То же, что E32ds_v4|
+| Standard_E64 32ds_v4| 32   | То же, что E64ds_v4|
+| Standard_E64 16ds_v4| 16   | То же, что E64ds_v4|
 | Standard_GS4-8      | 8    | Совпадает с GS4     |
 | Standard_GS4-4      | 4    | Совпадает с GS4     |
 | Standard_GS5-16     | 16   | Совпадает с GS5     |

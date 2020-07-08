@@ -8,14 +8,14 @@ ms.service: storage
 ms.date: 03/12/2020
 ms.topic: conceptual
 ms.author: tamram
-ms.reviewer: cbrooks
+ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: c8a5555c5c33255fdc5902a115e7e9103a4e936f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0e5a85bcc4ded3b4bf3fcbcaf095d7c8ef01c458
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79410068"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84805315"
 ---
 # <a name="provide-an-encryption-key-on-a-request-to-blob-storage-preview"></a>Укажите ключ шифрования для запроса к хранилищу BLOB-объектов (Предварительная версия)
 
@@ -25,7 +25,7 @@ ms.locfileid: "79410068"
 
 Когда клиентское приложение предоставляет ключ шифрования для запроса, служба хранилища Azure прозрачно выполняет шифрование и расшифровку при чтении и записи данных больших двоичных объектов. Служба хранилища Azure записывает хэш SHA-256 ключа шифрования вместе с содержимым большого двоичного объекта. Хэш используется для проверки того, что все последующие операции с BLOB-объектом используют один и тот же ключ шифрования.
 
-Служба хранилища Azure не хранит ключ шифрования, который клиент отправляет вместе с запросом, и не управляет им. Ключ безопасно удаляется сразу после завершения процесса шифрования или расшифровки.
+Служба хранилища Azure не хранит ключ шифрования, который клиент отправляет вместе с запросом, и не управляет им. Ключ безопасно удаляется сразу по завершении процесса шифрования или расшифровки.
 
 Когда клиент создает или обновляет большой двоичный объект с помощью предоставленного клиентом ключа в запросе, последующие запросы на чтение и запись для этого большого двоичного объекта также должны предоставлять ключ. Если ключ не предоставлен по запросу для большого двоичного объекта, который уже зашифрован с помощью предоставленного клиентом ключа, запрос завершается ошибкой с кодом 409 (конфликт).
 
@@ -39,7 +39,7 @@ ms.locfileid: "79410068"
 
 Для вызовов RESTFUL клиенты могут использовать следующие заголовки для безопасной передачи сведений о ключе шифрования в запрос в хранилище BLOB-объектов:
 
-|Заголовок запроса | Описание |
+|Заголовок запроса | Описание: |
 |---------------|-------------|
 |`x-ms-encryption-key` |Требуется для запросов Write и Read. Значение ключа шифрования AES-256 в кодировке Base64. |
 |`x-ms-encryption-key-sha256`| Требуется для запросов Write и Read. Значение SHA256 ключа шифрования в кодировке Base64. |
@@ -51,19 +51,19 @@ ms.locfileid: "79410068"
 
 Следующие операции хранилища BLOB-объектов поддерживают отправку предоставленных клиентом ключей шифрования для запроса:
 
-- [вставка большого двоичного объекта](/rest/api/storageservices/put-blob);
-- [вставка списка блокировки](/rest/api/storageservices/put-block-list);
-- [Put Block](/rest/api/storageservices/put-block)
+- [Put BLOB (Вставка BLOB-объекта)](/rest/api/storageservices/put-blob)
+- [Put Block List (Вставка списка блокировки)](/rest/api/storageservices/put-block-list)
+- [Put Block (Вставка блокировки)](/rest/api/storageservices/put-block)
 - [Разместить блок по URL-адресу](/rest/api/storageservices/put-block-from-url)
 - [Put Page](/rest/api/storageservices/put-page)
-- [Размещение страницы по URL-адресу](/rest/api/storageservices/put-page-from-url)
+- [Put Page from URL](/rest/api/storageservices/put-page-from-url) (размещение страницы по URL-адресу);
 - [Append Block](/rest/api/storageservices/append-block)
-- [задание свойств службы BLOB-объекта](/rest/api/storageservices/set-blob-properties).
-- [Set Blob Metadata](/rest/api/storageservices/set-blob-metadata)
+- [Set BLOB Properties (Задание свойств службы BLOB-объекта)](/rest/api/storageservices/set-blob-properties)
+- [Set BLOB Metadata (Задание метаданных BLOB-объекта)](/rest/api/storageservices/set-blob-metadata)
 - [Get BLOB (Получение BLOB-объекта)](/rest/api/storageservices/get-blob)
 - [Get BLOB Properties (Получение свойств BLOB-объекта)](/rest/api/storageservices/get-blob-properties)
 - [Get BLOB Metadata (Получение метаданных BLOB-объекта)](/rest/api/storageservices/get-blob-metadata)
-- [Большой двоичный объект моментальных снимков](/rest/api/storageservices/snapshot-blob)
+- [Создание моментального снимка большого двоичного объекта](/rest/api/storageservices/snapshot-blob)
 
 ## <a name="rotate-customer-provided-keys"></a>Поворачивайте ключи, предоставленные клиентом
 
@@ -77,4 +77,4 @@ ms.locfileid: "79410068"
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Указание предоставленного клиентом ключа для запроса к хранилищу BLOB-объектов с помощью .NET](../blobs/storage-blob-customer-provided-key.md)
-- [Шифрование неактивных данных в службе хранилища Azure](storage-service-encryption.md)
+- [Шифрование службы хранилища Azure для неактивных данных](storage-service-encryption.md)

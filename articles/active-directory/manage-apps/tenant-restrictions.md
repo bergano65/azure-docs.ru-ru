@@ -3,8 +3,8 @@ title: Использование ограничений клиентов для
 description: Сведения об использовании ограничений клиентов для управления доступом пользователей к приложениям на основе их клиента Azure AD.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/28/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: richagi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c43a1250f4d2be956b028689ee10eb4b968701f
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
-ms.translationtype: HT
+ms.openlocfilehash: cd302791aa783f1a95d48f666366aa845fcaadbb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83680138"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84763029"
 ---
 # <a name="use-tenant-restrictions-to-manage-access-to-saas-cloud-applications"></a>Использование ограничений клиентов для управления доступом к облачным приложениям SaaS
 
@@ -74,7 +74,7 @@ ms.locfileid: "83680138"
 
 Эти заголовки должен содержать следующие элементы.
 
-- Для *Restrict-Access-To-Tenants* используйте значение \<permitted tenant list\>, которое представляет собой разделенный запятыми список клиентов, доступ к которым нужно разрешить пользователям. Для идентификации клиента в этом списке может использоваться любой домен, зарегистрированный в клиенте. Например, чтобы разрешить доступ к клиентам Contoso и Fabrikam, используются пары "имя-значение" следующего вида: `Restrict-Access-To-Tenants: contoso.onmicrosoft.com,fabrikam.onmicrosoft.com`
+- Для *ограничения-доступа к клиентам*используйте значение \<permitted tenant list\> , которое представляет собой разделенный запятыми список клиентов, к которым требуется предоставить доступ пользователям. Для идентификации клиента в этом списке может использоваться любой домен, зарегистрированный в клиенте. Например, чтобы разрешить доступ к клиентам Contoso и Fabrikam, используются пары "имя-значение" следующего вида: `Restrict-Access-To-Tenants: contoso.onmicrosoft.com,fabrikam.onmicrosoft.com`
 
 - Для *Restrict-Access-Context* используйте значение отдельного идентификатора каталога, объявляющего, какой клиент устанавливает ограничение клиентов. Например, чтобы объявить Contoso в качестве клиента, устанавливающего политику ограничения клиентов, используются пары "имя-значение" следующего вида: `Restrict-Access-Context: 456ff232-35l2-5h23-b3b3-3236w0826f3d`.  
 
@@ -155,7 +155,7 @@ Fiddler — бесплатный прокси-сервер веб-отладки
 
    1. В инструменте Fiddler Web Debugger выберите меню **Rules** (Правила) и щелкните **Customize Rules…** (Настройка правил…), чтобы открыть файл CustomRules.
 
-   2. Добавьте в начало функции `OnBeforeRequest` следующие строки кода. Замените \<tenant domain\> доменом, зарегистрированным в вашем клиенте (например, `contoso.onmicrosoft.com`). Замените \<directory ID\> идентификатором GUID Azure AD своего клиента.
+   2. Добавьте в начало функции `OnBeforeRequest` следующие строки кода. Замените на \<tenant domain\> домен, зарегистрированный в клиенте (например, `contoso.onmicrosoft.com` ). Замените \<directory ID\> идентификатором GUID Azure AD клиента.
 
       ```JScript.NET
       if (

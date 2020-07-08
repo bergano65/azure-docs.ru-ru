@@ -1,28 +1,26 @@
 ---
-title: Виртуальные машины Azure серий Ddv4 и Ddsv4
+title: Серии Ddv4 и Ddsv4
 description: Спецификации виртуальных машин серии Dv4, Ddv4, Dsv4 и Ddsv4.
 author: brbell
 ms.author: brbell
-ms.reviewer: cynthn
+ms.reviewer: mimckitt
 ms.custom: mimckitt
 ms.service: virtual-machines
+ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: 42b42a7477326196546ad445367691192f00569a
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
-ms.translationtype: HT
+ms.openlocfilehash: 28963f7b8d6b7fd7361d114935a401a00b6683a3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84263251"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84753668"
 ---
 # <a name="ddv4-and-ddsv4-series"></a>Серии Ddv4 и Ddsv4
 
-Виртуальные машины серии Ddv4 и Ddsv4 работают на процессорах Intel&reg; Xeon&reg; Platinum 8272CL (Cascade Lake) с поддержкой технологии Hyper Threading, предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. При этом поддерживается постоянная тактовая частота всех ядер 3,4 ГГц и используются технологии [Intel&reg; Turbo Boost 2.0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [Intel&reg; Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и [Intel&reg; Advanced Vector Extensions 512 (Intel&reg; AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html). Эти новые размеры виртуальных машин получат на 50 % больший объем локального хранилища, а также более высокий лимит на операции ввода-вывода в секунду для чтения и записи на локальном диске по сравнению с размерами [Dv3/Dsv3](https://docs.microsoft.com/azure/virtual-machines/dv3-dsv3-series) для [виртуальных машин 2-го поколения](https://docs.microsoft.com/azure/virtual-machines/linux/generation-2).
+Виртуальные машины серии Ddv4 и Ddsv4 работают на процессорах Intel&reg; Xeon&reg; Platinum 8272CL (Cascade Lake) с поддержкой технологии Hyper Threading, предоставляя лучшее ценное предложение для большинства рабочих нагрузок общего назначения. При этом поддерживается постоянная тактовая частота всех ядер 3,4 ГГц и используются технологии [Intel&reg; Turbo Boost 2.0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [Intel&reg; Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и [Intel&reg; Advanced Vector Extensions 512 (Intel&reg; AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html). Они также поддерживают [ускорение Intel для &reg; глубокого обучения](https://software.intel.com/content/www/us/en/develop/topics/ai/deep-learning-boost.html). Эти новые размеры виртуальных машин получат на 50 % больший объем локального хранилища, а также более высокий лимит на операции ввода-вывода в секунду для чтения и записи на локальном диске по сравнению с размерами [Dv3/Dsv3](https://docs.microsoft.com/azure/virtual-machines/dv3-dsv3-series) для [виртуальных машин 2-го поколения](https://docs.microsoft.com/azure/virtual-machines/linux/generation-2).
 
 Среди вариантов использования серии D — приложения корпоративного уровня, реляционные базы данных, кэширование в памяти и аналитика.
-
-> [!IMPORTANT]
-> Если вы развертываете новую виртуальную машину на основе серии Ddv4 или Ddsv4 и планируете использовать образ Linux, нужно выбрать RHEL 8.x, CentOS 8.x, Oracle 7.x или более новые версии. Если вы выберете RHEL 7.x, CentOS 7.x или Orcale 6.x, будет происходить ошибка Kernel Panic. Корпорация Майкрософт активно развертывает исправление. Затрагиваются только RHEL, CentOS и Oracle. 
 
 ## <a name="ddv4-series"></a>Серия Ddv4
 
@@ -69,7 +67,7 @@ ACU: 195-210
 
 Обновления с сохранением памяти: Поддерживается
 
-| Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальное число дисков данных | Максимальная пропускная способность временного хранилища с кэшированием: операций ввода-вывода в секунду / МБит/с | Максимальная пропускная способность дисков без кэширования: операций ввода-вывода в секунду / МБит/с | Максимальное количество сетевых адаптеров/ожидаемая пропускная способность сети (Мбит/с) |
+| Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальное число дисков данных | Максимальная пропускная способность кэшированного и временного хранилища: операций ввода-вывода в секунду (размер кэша в гиб) | Максимальная пропускная способность дисков без кэширования: операций ввода-вывода в секунду / МБит/с | Максимальное количество сетевых адаптеров/ожидаемая пропускная способность сети (Мбит/с) |
 |---|---|---|---|---|---|---|---|
 | Standard_D2ds_v4 | 2 | 8 | 75 | 4 | 19000/120(50) | 3000/48 | 2/1000 |
 | Standard_D4ds_v4 | 4 | 16 | 150 | 8 | 38500/242(100) | 6400/96 | 2/2000 |

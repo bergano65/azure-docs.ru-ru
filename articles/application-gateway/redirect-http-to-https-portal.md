@@ -4,15 +4,15 @@ description: Узнайте, как создать шлюз приложений
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: victorh
-ms.openlocfilehash: cd33d23a506bd86b9651af3d4c3bbca01673a7a4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: dbf4770bf5ac1747d596e6907dbc903ce8c16de9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81312097"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84804354"
 ---
 # <a name="create-an-application-gateway-with-http-to-https-redirection-using-the-azure-portal"></a>Создание шлюза приложений с перенаправлением трафика HTTP в HTTPS с помощью портала Azure
 
@@ -146,7 +146,7 @@ Export-PfxCertificate `
 12. В разделе **Сети** убедитесь, что для параметра **Выбрать параметры балансировки нагрузки** установлено значение **Шлюз приложений**.
 13. Убедитесь, что для **шлюза приложений** установлено значение **myAppGateway**.
 14. Убедитесь, что для **подсети** установлено значение **myBackendSubnet**.
-15. Щелкните **Создать**.
+15. Выберите **Создать**.
 
 ### <a name="associate-the-scale-set-with-the-proper-backend-pool"></a>Связывание масштабируемого набора с правильным серверным пулом
 
@@ -172,7 +172,7 @@ Export-PfxCertificate `
 1. Выберите масштабируемый набор **myvmss**.
 2. В разделе **Параметры** выберите **Экземпляры**.
 3. Выберите оба экземпляра, а затем щелкните **Обновить**.
-4. Нажмите кнопку **Да** для подтверждения.
+4. Выберите **Да** для подтверждения.
 5. Когда операция будет завершена, вернитесь к **myAppGateway** и выберите **Серверные пулы**. Теперь вы увидите, что **appGatewayBackendPool** имеет два целевых объекта, а **myAppGatewaymyvmss** — ни одного.
 6. Выберите **myAppGatewaymyvmss**, а затем — **Удалить**.
 7. Для подтверждения нажмите кнопку **ОК**.
@@ -206,7 +206,7 @@ Update-AzVmss `
 1. Выберите масштабируемый набор **myvmss**.
 2. В разделе **Параметры** выберите **Экземпляры**.
 3. Выберите оба экземпляра, а затем щелкните **Обновить**.
-4. Нажмите кнопку **Да** для подтверждения.
+4. Выберите **Да** для подтверждения.
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
@@ -215,7 +215,7 @@ Update-AzVmss `
 1. Выберите **myAppGateway**.
 2. На странице **Обзор** запишите IP-адрес в разделе **Общедоступный интерфейсный IP-адрес**.
 
-3. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например http://52.170.203.149.
+3. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например: http://52.170.203.149
 
    ![Предупреждение системы безопасности](./media/redirect-http-to-https-powershell/application-gateway-secure.png)
 

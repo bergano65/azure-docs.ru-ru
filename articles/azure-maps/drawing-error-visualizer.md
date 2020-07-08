@@ -3,17 +3,17 @@ title: Использование визуализатора ошибок рис
 description: В этой статье представлены сведения о том, как визуализировать предупреждения и ошибки, возвращаемые API преобразования в Creator.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 05/18/2020
+ms.date: 06/12/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 01d131833f36c1b46eea1b9c08339b067fb9e937
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
-ms.translationtype: HT
+ms.openlocfilehash: 7e43995c4221127580333c3f013fcb209730f863
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83681959"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84791131"
 ---
 # <a name="using-the-azure-maps-drawing-error-visualizer"></a>Использование визуализатора ошибок рисования в Azure Maps
 
@@ -78,15 +78,15 @@ ms.locfileid: "83681959"
 
 После запуска средства визуализации ошибок рисования отобразится страница отправки. На этой странице есть поле для перетаскивания. Это же поле для перетаскивания выполняет и роль кнопки, которая запускает диалоговое окно проводника.
 
-![Приложение визуализатора ошибок рисования — начальная страница](./media/drawing-errors-visualizer/start-page.png)
+:::image type="content" source="./media/drawing-errors-visualizer/start-page.png" alt-text="Приложение визуализатора ошибок рисования — начальная страница":::
 
 Файл _ConversionWarningsAndErrors.json_ помещен в корень папки downloaded. Чтобы передать файл _ConversionWarningsAndErrors.json_, можно перетащить его в соответствующее поле либо щелкнуть поле и найти файл в диалоговом окне проводника.
 
-![Приложение визуализатора ошибок рисования — перетаскивание для загрузки данных](./media/drawing-errors-visualizer/loading-data.gif)
+:::image type="content" source="./media/drawing-errors-visualizer/loading-data.gif" alt-text="Приложение визуализатора ошибок рисования — перетаскивание для загрузки данных":::
 
-Когда завершится отправка файла _ConversionWarningsAndErrors.json_, вы увидите список ошибок и предупреждений пакета рисунков. Для всех ошибок и предупреждений указывается информация о слое и уровне, а также текст сообщения. Вы можете перейти к любой ошибке, чтобы получить дополнительные сведения о ее устранении.  
+Когда завершится отправка файла _ConversionWarningsAndErrors.json_, вы увидите список ошибок и предупреждений пакета рисунков. Для всех ошибок и предупреждений указывается информация о слое и уровне, а также текст сообщения. Чтобы просмотреть подробные сведения об ошибке или предупреждении, щелкните ссылку **сведения** . После этого отобразится подраздел, который можно отозвать. Вы можете перейти к любой ошибке, чтобы получить дополнительные сведения о ее устранении.
 
-![Приложение визуализатора ошибок рисования — ошибки и предупреждения](./media/drawing-errors-visualizer/errors.png)
+:::image type="content" source="./media/drawing-errors-visualizer/errors.png" alt-text="Приложение визуализатора ошибок рисования — ошибки и предупреждения":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

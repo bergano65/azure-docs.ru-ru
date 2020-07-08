@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/10/2019
 ms.author: jeedes
-ms.openlocfilehash: e3d4ca6f8e67f069bffcd27563d7f32b55f6591e
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
-ms.translationtype: HT
+ms.openlocfilehash: da62efff5db5c71b087657b0eec93f8dd4702665
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83780517"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84751506"
 ---
 # <a name="tutorial-configure-servicenow-for-automatic-user-provisioning"></a>Руководство по Настройка ServiceNow для автоматической подготовки пользователей
 
@@ -54,12 +54,19 @@ ms.locfileid: "83780517"
 
 1. Найдите имя экземпляра ServiceNow. Это имя экземпляра можно взять из URL-адреса, который используется для доступа к ServiceNow. В следующем примере имя экземпляра имеет значение dev35214.
 
-![Имя экземпляра ServiceNow](media/servicenow-provisioning-tutorial/servicenow_instance.png)
+   ![Имя экземпляра ServiceNow](media/servicenow-provisioning-tutorial/servicenow_instance.png)
 
-    
 2. Получите учетные данные для администратора в ServiceNow. Перейдите к профилю пользователя в ServiceNow и убедитесь, что у этого пользователя есть роль администратора. 
 
-![Роль администратора ServiceNow](media/servicenow-provisioning-tutorial/servicenow-admin-role.png)
+   ![Роль администратора ServiceNow](media/servicenow-provisioning-tutorial/servicenow-admin-role.png)
+
+3. Убедитесь, что в ServiceNow **отключены** следующие параметры:
+
+   1. Выберите параметры **безопасности системы**  >  **высокий уровень безопасности**  >  **требовать обычную проверку подлинности для входящих запросов схемы**.
+   2. Выберите **системные свойства**  >  **веб-службы**  >  **требуется обычная авторизация для входящих запросов SOAP**.
+     
+   > [!IMPORTANT]
+   > Если эти параметры *включены*, подсистема подготовки не сможет связаться с ServiceNow.
 
 ## <a name="step-3-add-servicenow-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление ServiceNow из коллекции приложений Azure AD
 
@@ -67,7 +74,7 @@ ms.locfileid: "83780517"
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Шаг 4. Определение пользователей для включения в область подготовки 
 
-Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, на основе назначения приложению и (или) атрибутов пользователя или группы. Если вы решили определить пользователей на основе назначения, выполните следующие [действия](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили определить пользователей только на основе атрибутов пользователя или группы, примените фильтр области, как описано [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
+Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, на основе назначения приложению и (или) атрибутов пользователя или группы. Если вы решили указать, кто именно будет подготовлен к работе в приложении, на основе назначения, можно выполнить следующие [действия](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили определить пользователей только на основе атрибутов пользователя или группы, примените фильтр области, как описано [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
 
 * При назначении пользователей и групп для ServiceNow необходимо выбрать роль, отличающуюся от роли **Доступ по умолчанию**. Пользователи с такой ролью исключаются из подготовки и будут помечены в журналах подготовки как не имеющие разрешений. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps), чтобы добавить дополнительные роли. 
 
@@ -100,7 +107,7 @@ ms.locfileid: "83780517"
 
     ![Подготовка](./media/servicenow-provisioning-tutorial/provisioning.png)
 
-6. В поле **Электронная почта для уведомлений** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
+6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
@@ -131,17 +138,25 @@ ms.locfileid: "83780517"
 После этого начнется цикл начальной синхронизации всех пользователей и групп, определенных в поле **Область** в разделе **Параметры**. Начальный цикл занимает больше времени, чем последующие циклы. Пока служба подготовки Azure AD запущена, они выполняются примерно каждые 40 минут. 
 
 ## <a name="step-6-monitor-your-deployment"></a>Шаг 6. Мониторинг развертывания
-Настроив подготовку, используйте следующие ресурсы для мониторинга развертывания:
+После настройки подготовки используйте следующие ресурсы для мониторинга развертывания.
 
 1. Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
 2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
-3. Если конфигурация подготовки находится в неработоспособном состоянии, приложение перейдет в режим карантина. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).  
+3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).  
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 * **InvalidLookupReference:** при подготовке некоторых атрибутов, таких как Department и Location в ServiceNow, эти значения должны уже существовать в ссылочной таблице в ServiceNow. Предположим, что у вас есть два расположения (Seattle, Los Angeles) и три отдела (Sales, Finance, Marketing) в таблице **добавить_имя_таблицы** в ServiceNow. При попытке подготовить пользователя, для которого указаны отдел Sales и расположение Seattle, подготовка завершится успешно. Но для пользователя с отделом Sales и расположением LA подготовка не будет выполнена. Необходимо либо добавить значение LA в ссылочную таблицу в ServiceNow, либо изменить атрибут пользователя в Azure AD, чтобы он соответствовал формату ServiceNow. 
 * **EntryJoiningPropertyValueIsMissing:** проверьте [сопоставления атрибутов](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes), чтобы найти соответствующий атрибут. Это значение должно присутствовать у пользователя или группы, которые вы пытаетесь подготавливать. 
 * Изучите [API ServiceNow SOAP](https://docs.servicenow.com/bundle/newyork-application-development/page/integrate/web-services-apis/reference/r_DirectWebServiceAPIFunctions.html), чтобы понять все требования и ограничения (например, если нужно указать для пользователя код страны).
 * По умолчанию запросы на подготовку отправляются на адрес https://{имя_вашего_экземпляра}.service-now.com/{имя_таблицы}. Если вам нужно использовать собственный URL-адрес клиента, введите этот URL-адрес полностью в поле "Имя экземпляра".
+* **сервиценовинстанцеинвалид** 
+  
+  `Details: Your ServiceNow instance name appears to be invalid.  Please provide a current ServiceNow administrative user name and          password along with the name of a valid ServiceNow instance.`                                                              
+
+   Эта ошибка указывает на ошибку при взаимодействии с экземпляром ServiceNow. Проверьте, не *отключены* ли в ServiceNow следующие параметры:
+   
+   1. Выберите параметры **безопасности системы**  >  **высокий уровень безопасности**  >  **требовать обычную проверку подлинности для входящих запросов схемы**.
+   2. Выберите **системные свойства**  >  **веб-службы**  >  **требуется обычная авторизация для входящих запросов SOAP**.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

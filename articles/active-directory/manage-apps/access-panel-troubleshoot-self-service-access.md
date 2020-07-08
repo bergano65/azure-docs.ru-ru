@@ -3,25 +3,25 @@ title: Проблемы с использованием самостоятель
 description: Проблемы с устранением неполадок, связанные с самостоятельным доступом к приложению
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 07/11/2017
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: japere,asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a981dfb1d72c21eccf2ad7119ea219114ed15aed
-ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
+ms.openlocfilehash: 8a8a748b11e695041aa6baece381bc8d7d068992
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "65784279"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84760921"
 ---
 # <a name="problem-using-self-service-application-access"></a>Проблемы при использовании самостоятельного доступа к приложениям
 
@@ -53,7 +53,7 @@ ms.locfileid: "65784279"
 
 5. Щелкните **Все приложения**, чтобы открыть полный список приложений.
 
-   * Если нужное приложение не отображается здесь, используйте элемент управления **Фильтр** в верхней части **списка все приложения** и задайте для параметра **Показать** значение **все приложения.**
+   * Если нужное приложение отсутствует в списке, в верхней части списка **Все приложения** воспользуйтесь элементом управления **Фильтр**, указав в нем для параметра **Показать** значение **Все приложения**.
 
 6. Выберите из списка приложение, для которого необходимо включить функцию самостоятельного доступа.
 
@@ -98,5 +98,5 @@ ms.locfileid: "65784279"
 
 -   трассировки Fiddler.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Настройка Azure Active Directory для самостоятельного управления группами](../users-groups-roles/groups-self-service-management.md)

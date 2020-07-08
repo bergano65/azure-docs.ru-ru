@@ -4,16 +4,16 @@ description: Узнайте, как маршрутизировать веб-тр
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 07/31/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 8ca5c411db5644182f7e87f1ee1c63f3cbc4d2e9
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: fccc7281ed2978ccc63cd7b53a82c8a00b57d3c2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "73200406"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84805991"
 ---
 # <a name="route-web-traffic-based-on-the-url-using-azure-powershell"></a>Маршрутизация веб-трафика на основе URL-адреса с использованием Azure PowerShell
 
@@ -422,11 +422,11 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ![Тестирование базового URL-адреса в шлюзе приложений](./media/tutorial-url-route-powershell/application-gateway-iistest.png)
 
-Измените URL-адрес на&lt;http://IP-&gt;Address: 8080/Images/Test.htm, замените IP-адрес &lt;на IP&gt;, и вы увидите нечто вроде следующего:
+Измените URL-адрес на http:// &lt; IP-address &gt; : 8080/Images/test.htm, ЗАменив IP-адрес &lt; IP &gt; , и вы увидите нечто вроде следующего:
 
 ![Тестирование URL-адреса изображений в шлюзе приложений](./media/tutorial-url-route-powershell/application-gateway-iistest-images.png)
 
-Измените URL-адрес на&lt;http://IP-&gt;Address: 8080/Video/Test.htm, замените IP-адрес &lt;на IP&gt;, и вы увидите нечто вроде следующего:
+Измените URL-адрес на http:// &lt; IP-address &gt; : 8080/видео/test.htm, заменив свой IP-адрес &lt; IP-address &gt; , и вы увидите нечто вроде следующего:
 
 ![Тестирование URL-адреса видео в шлюзе приложений](./media/tutorial-url-route-powershell/application-gateway-iistest-video.png)
 

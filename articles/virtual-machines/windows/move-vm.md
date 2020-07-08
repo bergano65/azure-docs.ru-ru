@@ -1,5 +1,5 @@
 ---
-title: Перемещение ресурса Windows VM в Azure
+title: Перемещение ресурса виртуальной машины Windows в Azure
 description: Из этой статьи вы узнаете, как перенести виртуальную машину Windows в другую подписку или группу ресурсов Azure в модели развертывания Resource Manager.
 author: cynthn
 ms.service: virtual-machines-windows
@@ -7,15 +7,15 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 07/03/2019
 ms.author: cynthn
-ms.openlocfilehash: 0c3f5541405d1fd983bbf988b99d2b4e10d8908c
-ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
+ms.openlocfilehash: 6e156af2d4805ba310443a2acf6cc47d06a735eb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81865658"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84762332"
 ---
 # <a name="move-a-windows-vm-to-another-azure-subscription-or-resource-group"></a>Перемещение виртуальной машины Windows в другую подписку или группу ресурсов Azure
-В этой статье описано перемещение виртуальной машины Windows между группами ресурсов или подписками. Перемещение между подписками может понадобиться, если вы создали виртуальную машину в личной подписке и вам нужно переместить ее в корпоративную подписку, чтобы продолжить работу. Вам не нужно запускать VM для того, чтобы переместить его, и он должен продолжать работать во время движения.
+В этой статье описано перемещение виртуальной машины Windows между группами ресурсов или подписками. Перемещение между подписками может понадобиться, если вы создали виртуальную машину в личной подписке и вам нужно переместить ее в корпоративную подписку, чтобы продолжить работу. Не нужно прерывать виртуальную машину, чтобы переместить ее, и она должна продолжать выполняться во время перемещения.
 
 > [!IMPORTANT]
 >Во время перемещения создаются новые идентификаторы ресурсов. После перемещения виртуальной машины вам нужно будет обновить средства и сценарии, чтобы использовать новые идентификаторы ресурсов.
@@ -32,7 +32,7 @@ ms.locfileid: "81865658"
  Get-AzResource -ResourceGroupName myResourceGroup | Format-table -wrap -Property ResourceId
 ```
 
-Выможете использовать вывод предыдущей команды для создания отдельного списка интидоув ресурса, разделенного запятой, для перемещения [ресурса](https://docs.microsoft.com/powershell/module/az.resources/move-azresource) для перемещения каждого ресурса в пункт назначения.
+Вы можете использовать выходные данные предыдущей команды, чтобы создать разделенный запятыми список идентификаторов ресурсов для [Move-азресаурце](https://docs.microsoft.com/powershell/module/az.resources/move-azresource) , чтобы переместить каждый ресурс в место назначения.
 
 ```azurepowershell-interactive
 Move-AzResource -DestinationResourceGroupName "myDestinationResourceGroup" `
@@ -50,5 +50,5 @@ Move-AzResource -DestinationSubscriptionId "<myDestinationSubscriptionID>" `
 
 При появлении запроса на подтверждение перемещения указанных ресурсов введите **Да** для подтверждения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Вы можете перемещать разные типы ресурсов между группами ресурсов и подписками. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../../azure-resource-manager/management/move-resource-group-and-subscription.md).    

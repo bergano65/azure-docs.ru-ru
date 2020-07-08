@@ -3,27 +3,28 @@ title: 'Управление приложениями: рекомендации 
 description: Ознакомьтесь с рекомендациями и рекомендациями по управлению приложениями в Azure Active Directory. Сведения об использовании автоматической подготовки и публикации локальных приложений с помощью прокси приложения.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 editor: ''
 ms.assetid: ''
 ms.service: active-directory
 ms.devlang: na
-ms.topic: reference
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/13/2019
 ms.subservice: app-mgmt
-ms.author: mimart
+ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6534efb6fcd07ee3b9f3979cabf2feb77496a8b8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c633f6d311d052b9f9388a38b17c6459aec4b6cc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74085295"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84760275"
 ---
 # <a name="application-management-best-practices"></a>Рекомендации по управлению приложениями
+
 Эта статья содержит рекомендации и рекомендации по управлению приложениями в Azure Active Directory (Azure AD), использовании автоматической подготовки и публикации локальных приложений с помощью прокси приложения.
 
 ## <a name="cloud-app-and-single-sign-on-recommendations"></a>Рекомендации для облачного приложения и единого входа

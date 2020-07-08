@@ -8,27 +8,27 @@ manager: mtillman
 ms.assetid: 9e225dba-9044-4b13-b573-2f30d77925a9
 ms.service: role-based-access-control
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 03/18/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: ffb53bff4e70fbeb80e518fe13aaeaa8b396cfac
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.openlocfilehash: 540da4103c3f7800521407441d645070e1e3e7ca
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82734813"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84790217"
 ---
-# <a name="create-or-update-azure-custom-roles-using-azure-powershell"></a>Создание или обновление пользовательских ролей Azure с помощью Azure PowerShell
+# <a name="create-or-update-azure-custom-roles-using-azure-powershell"></a>Создание или изменение настраиваемых ролей Azure с помощью Azure PowerShell
 
 > [!IMPORTANT]
-> Добавление группы управления в сейчас `AssignableScopes` находится на этапе предварительной версии.
+> Добавление группы управления в `AssignableScopes` сейчас находится на этапе предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Если [встроенные роли Azure](built-in-roles.md) не отвечают конкретным потребностям Организации, можно создать собственные пользовательские роли. В этой статье описывается, как получить список, создать, обновить или удалить пользовательские роли с помощью Azure PowerShell.
+Если [встроенные роли Azure](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные настраиваемые роли. В этой статье описывается, как получить список, создать, обновить или удалить пользовательские роли с помощью Azure PowerShell.
 
 Пошаговое руководство по созданию настраиваемой роли см. в разделе [учебник. Создание настраиваемой роли Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md).
 
@@ -133,7 +133,7 @@ PS C:\> (Get-AzRoleDefinition "Virtual Machine Operator").Actions
 "Microsoft.Support/*"
 ```
 
-## <a name="create-a-custom-role"></a>Создание пользовательской роли
+## <a name="create-a-custom-role"></a>Создание настраиваемой роли
 
 Чтобы создать пользовательскую роль, используется команда [New-AzRoleDefinition](/powershell/module/az.resources/new-azroledefinition). Существует два способа структурирования роли: с помощью объекта `PSRoleDefinition` или шаблона JSON. 
 
@@ -302,7 +302,7 @@ AssignableScopes : {/subscriptions/00000000-0000-0000-0000-000000000000,
                    /subscriptions/22222222-2222-2222-2222-222222222222}
 ```
 
-В следующем примере добавляется группа управления в `AssignableScopes` настраиваемую роль *оператора виртуальной машины* . Добавление группы управления в сейчас `AssignableScopes` находится на этапе предварительной версии.
+В следующем примере добавляется группа управления в `AssignableScopes` настраиваемую роль *оператора виртуальной машины* . Добавление группы управления в `AssignableScopes` сейчас находится на этапе предварительной версии.
 
 ```azurepowershell
 Get-AzManagementGroup
@@ -399,8 +399,8 @@ Are you sure you want to remove role definition with name 'Virtual Machine Opera
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Руководство. Создание настраиваемой роли Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
-- [Пользовательские роли Azure](custom-roles.md)
+- [Руководство по Создание настраиваемой роли Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
+- [Настраиваемые роли Azure](custom-roles.md)
 - [Операции поставщика ресурсов Azure Resource Manager](resource-provider-operations.md)

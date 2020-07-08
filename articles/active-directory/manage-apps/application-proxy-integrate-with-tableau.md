@@ -2,29 +2,29 @@
 title: Azure Active Directory Application Proxy и Tableau | Документация Майкрософт
 description: Сведения об использовании Azure Active Directory Application Proxy (Azure AD) для предоставления удаленного доступа к развертыванию Tableau.
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/20/2018
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1aa99e7e71ad78a62c1a9da303b2ecc8347ebeb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6df0a0bf21f4be824738d86ac6bdb3c75c9c3564
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "65783848"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84764508"
 ---
 # <a name="azure-active-directory-application-proxy-and-tableau"></a>Azure Active Directory Application Proxy и Tableau 
 
 Использование Azure Active Directory Application Proxy и Tableau упрощает использование прокси приложения для предоставления удаленного доступа к развертыванию Tableau. В этой статье описывается настройка сценария.  
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Предварительные условия 
 
 Сценарий в этой статье предполагает, что:
 
@@ -70,7 +70,7 @@ ms.locfileid: "65783848"
 
 8. Щелкните **Назначить**, чтобы сохранить назначение тестового пользователя. 
 
-9. (Необязательно.) На странице управления приложением щелкните **Единый вход**. Выберите **Встроенная проверка подлинности Windows** в раскрывающемся меню и заполните обязательные поля на основе конфигурации Tableau. Щелкните **Сохранить**. 
+9. (Необязательно.) На странице управления приложением щелкните **Единый вход**. Выберите **Встроенная проверка подлинности Windows** в раскрывающемся меню и заполните обязательные поля на основе конфигурации Tableau. Нажмите кнопку **Сохранить**. 
 
  
 
@@ -80,7 +80,7 @@ ms.locfileid: "65783848"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о прокси приложения Azure AD см. в статье [Как обеспечить безопасный удаленный доступ к локальным приложениям](application-proxy.md).
 

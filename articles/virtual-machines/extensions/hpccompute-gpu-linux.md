@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/11/2019
 ms.author: akjosh
-ms.openlocfilehash: 2cfc48f7c152f0f38ca70713dc989029e4e64e8b
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
-ms.translationtype: HT
+ms.openlocfilehash: 68dddde965900b966efa96fbd7da7141f1ed8a94
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83773123"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84753543"
 ---
 # <a name="nvidia-gpu-driver-extension-for-linux"></a>Расширение драйвера GPU NVIDIA для Linux
 
@@ -39,8 +39,8 @@ https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup).
 | Distribution | Версия |
 |---|---|
 | Linux: Ubuntu | 16.04 LTS, 18.04 LTS |
-| Linux: Red Hat Enterprise Linux | 7.3, 7.4, 7.5, 7.6 |
-| Linux: CentOS | 7.3, 7.4, 7.5, 7.6 |
+| Linux: Red Hat Enterprise Linux | 7,3, 7,4, 7,5, 7,6, 7,7 |
+| Linux: CentOS | 7,3, 7,4, 7,5, 7,6, 7,7 |
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
@@ -62,7 +62,7 @@ https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup).
   "properties": {
     "publisher": "Microsoft.HpcCompute",
     "type": "NvidiaGpuDriverLinux",
-    "typeHandlerVersion": "1.2",
+    "typeHandlerVersion": "1.3",
     "autoUpgradeMinorVersion": true,
     "settings": {
     }
@@ -77,7 +77,7 @@ https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup).
 | версия_API | 2015-06-15 | Дата |
 | publisher | Microsoft.HpcCompute | строка |
 | type | NvidiaGpuDriverLinux | строка |
-| typeHandlerVersion | 1.2 | INT |
+| typeHandlerVersion | 1.3 | INT |
 
 ### <a name="settings"></a>Настройки
 
@@ -113,7 +113,7 @@ https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup).
   "properties": {
     "publisher": "Microsoft.HpcCompute",
     "type": "NvidiaGpuDriverLinux",
-    "typeHandlerVersion": "1.2",
+    "typeHandlerVersion": "1.3",
     "autoUpgradeMinorVersion": true,
     "settings": {
     }
@@ -131,14 +131,14 @@ Set-AzVMExtension
     -Publisher "Microsoft.HpcCompute" `
     -ExtensionName "NvidiaGpuDriverLinux" `
     -ExtensionType "NvidiaGpuDriverLinux" `
-    -TypeHandlerVersion 1.2 `
+    -TypeHandlerVersion 1.3 `
     -SettingString '{ `
     }'
 ```
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Ниже показаны примеры Azure Resource Manager и PowerShell, о которых говорилось ранее. Также в них добавлены настраиваемые параметры в качестве примера установки драйвера, отличного от драйвера умолчанию. В частности, обновляется ядро ОС и устанавливается конкретный драйвер версии набора инструментов CUDA Toolkit.
+В следующем примере показаны приведенные выше Azure Resource Manager и примеры PowerShell.
 
 ```azurecli
 az vm extension set \
@@ -146,10 +146,21 @@ az vm extension set \
   --vm-name myVM \
   --name NvidiaGpuDriverLinux \
   --publisher Microsoft.HpcCompute \
-  --version 1.2 \
+  --version 1.3 
+```
+
+В следующем примере также добавляются два дополнительных настраиваемых параметра в качестве примера для установки драйвера, не установленного по умолчанию. В частности, он обновляет ядро ОС до последней версии и устанавливает конкретный драйвер CUDA Toolkit. Обратите внимание, что параметр "--Settings" является необязательным и имеет значение по умолчанию. Обратите внимание, что обновление ядра может увеличить время установки расширения. Кроме того, выбор определенной (более старой) версии CUDA толкит может быть не всегда совместим с новыми ядрами.
+
+```azurecli
+az vm extension set \
+  --resource-group myResourceGroup \
+  --vm-name myVM \
+  --name NvidiaGpuDriverLinux \
+  --publisher Microsoft.HpcCompute \
+  --version 1.3 \
   --settings '{ \
     "updateOS": true, \
-    "driverVersion": "9.1.85" \
+    "driverVersion": "10.0.130" \
   }'
 ```
 
@@ -167,7 +178,7 @@ Get-AzVMExtension -ResourceGroupName myResourceGroup -VMName myVM -Name myExtens
 az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 ```
 
-Выходные данные выполнения расширения регистрируются в следующем файле:
+Выходные данные выполнения расширения записываются в следующий файл. Сведения о состоянии установки (любой длительный запуск) и об устранении любых сбоев см. в этом файле.
 
 ```bash
 /var/log/azure/nvidia-vmext-status

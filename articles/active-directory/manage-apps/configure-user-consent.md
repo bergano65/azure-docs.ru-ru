@@ -2,21 +2,21 @@
 title: Настройка согласия конечных пользователей для приложений с помощью Azure Active Directory
 description: Узнайте, как управлять согласием пользователей на приложения, которые будут иметь доступ к данным вашей организации.
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/19/2020
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
-ms.openlocfilehash: 0a508e52189938447ea6fc1928d441d81deab392
-ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
-ms.translationtype: HT
+ms.openlocfilehash: 0c9844d5e3f65dba5e51170367cfd16715a08883
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83714029"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84763471"
 ---
 # <a name="configure-how-end-users-consent-to-applications"></a>Настройка согласия конечных пользователей для приложений
 
@@ -49,7 +49,7 @@ ms.locfileid: "83714029"
 1. В разделе **Согласие пользователя для приложений** выберите параметр согласия, который вы хотите настроить для всех пользователей.
 1. Нажмите кнопку **Save** (Сохранить), чтобы сохранить настройки.
 
-![Параметры согласия пользователя](./media/configure-user-consent/setting-for-all-users.png)
+:::image type="content" source="media/configure-user-consent/setting-for-all-users.png" alt-text="Параметры согласия пользователя":::
 
 > [!TIP]
 > Рассмотрите возможность [включения рабочего процесса согласия администратора](configure-admin-consent-workflow.md), чтобы разрешить пользователям запрашивать у администратора проверку и утверждение приложения, которому пользователю не разрешено предоставлять согласие, например, когда согласие пользователя было отключено или когда приложение запрашивает разрешения, которые пользователю запрещено предоставлять.
@@ -102,7 +102,7 @@ ms.locfileid: "83714029"
 
 В этом примере мы классифицировали минимальный набор разрешений, необходимых для единого входа:
 
-![Классификации разрешений](./media/configure-user-consent/permission-classifications.png)
+:::image type="content" source="media/configure-user-consent/permission-classifications.png" alt-text="Классификации разрешений":::
 
 > [!TIP]
 > Для Microsoft Graph API минимальными разрешениями, необходимыми для простого единого входа, являются `openid`, `profile`, `User.Read` и `offline_access`. С этими разрешениями приложение может считывать сведения о профиле пользователя, выполнившего вход, и поддерживать этот доступ, даже если пользователь больше не использует приложение.
@@ -192,7 +192,7 @@ ms.locfileid: "83714029"
 
 В этом примере всем владельцам групп разрешено давать согласие на доступ приложений к данным группы:
 
-![Классификации разрешений](./media/configure-user-consent/group-owner-consent.png)
+:::image type="content" source="media/configure-user-consent/group-owner-consent.png" alt-text="Параметры согласия владельца группы":::
 
 ### <a name="configure-group-owner-consent-using-powershell"></a>Настройка согласия владельца группы с помощью PowerShell
 

@@ -3,24 +3,24 @@ title: Настройка назначения самостоятельного 
 description: Включите самостоятельный доступ к приложениям, позволяющий пользователям найти свои приложения
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/20/2020
-ms.author: mimart
+ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 89e09fd63ee6121ac9bf7f3c2be00f0ac22f752f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e2a59343d4eafaa0e11f56636daa7471e748abf2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81731707"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84763148"
 ---
 # <a name="how-to-configure-self-service-application-assignment"></a>Настройка назначения самостоятельного доступа к приложениям
 
@@ -53,9 +53,9 @@ ms.locfileid: "81731707"
 
 1. Войдите в [портал Azure](https://portal.azure.com) в качестве глобального администратора.
 
-2. Выберите **Azure Active Directory**. В меню навигации слева выберите **корпоративные приложения**.
+2. Выберите **Azure Active Directory**. В области слева выберите **Корпоративные приложения**.
 
-3. Выберите приложение из списка. Если приложение не отображается, начните вводить его имя в поле поиска. Или используйте элементы управления фильтра, чтобы выбрать тип приложения, состояние или видимость, а затем нажмите кнопку **Применить**.
+3. Выберите нужное приложение в списке. Если приложение не отображается, начните вводить его название в поле поиска. Либо используйте элементы управления фильтрами, чтобы выбрать тип приложения, статус или видимость, а затем нажмите **Применить**.
 
 4. В меню навигации слева выберите **Self-Service**.
 
