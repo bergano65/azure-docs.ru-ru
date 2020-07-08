@@ -1,7 +1,7 @@
 ---
 title: Поиск данных SQL Azure
 titleSuffix: Azure Cognitive Search
-description: Импорт данных из базы данных SQL Azure с помощью индексаторов для полнотекстового поиска в Когнитивный поиск Azure. В этой статье описываются подключения, конфигурация индексатора и прием данных.
+description: Импорт данных из базы данных SQL Azure или SQL Управляемый экземпляр с помощью индексаторов для полнотекстового поиска в Когнитивный поиск Azure. В этой статье описываются подключения, конфигурация индексатора и прием данных.
 manager: nitinme
 author: mgottein
 ms.author: magottei
@@ -9,20 +9,20 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: c09727e8d92a449b41124eae6ad8381d66cb2619
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 862b3056445bddb358e6485ce5fec4de4d53eace
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74113305"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86039285"
 ---
-# <a name="connect-to-and-index-azure-sql-database-content-using-an-azure-cognitive-search-indexer"></a>Подключение к содержимому базы данных SQL Azure и его индексирование с помощью индексатора Azure Когнитивный поиск
+# <a name="connect-to-and-index-azure-sql-content-using-an-azure-cognitive-search-indexer"></a>Подключение к содержимому SQL Azure и его индексирование с помощью индексатора Azure Когнитивный поиск
 
-Прежде чем можно будет выполнить запрос к [индексу Azure когнитивный Поиск](search-what-is-an-index.md), необходимо заполнить его данными. Если данные находятся в базе данных SQL Azure, то **индексатор azure когнитивный Поиск для базы данных SQL Azure** (или **индексатор SQL Azure** ) может автоматизировать процесс индексирования, что означает меньше кода для написания и меньшей инфраструктуры.
+Прежде чем можно будет выполнить запрос к [индексу Azure когнитивный Поиск](search-what-is-an-index.md), необходимо заполнить его данными. Если данные находятся в базе данных SQL Azure или Управляемый экземпляр SQL, **индексатор когнитивный Поиск Azure для базы данных SQL Azure** (или **индексатор SQL Azure** ) может автоматизировать процесс индексирования, что означает меньше кода для записи и меньшей инфраструктуры.
 
-В этой статье рассматривается механизм использования [индексаторов](search-indexer-overview.md), а также подробно описываются функции, доступные только в базах данных SQL Azure (например, интегрированное отслеживание изменений). 
+В этой статье рассматривается механизм использования [индексаторов](search-indexer-overview.md), а также описываются функции, доступные только в базе данных SQL Azure или управляемый экземпляр SQL (например, Интегрированное отслеживание изменений). 
 
-В дополнение к базам данных SQL Azure Когнитивный поиск Azure предоставляет индексаторы для [Azure Cosmos DB](search-howto-index-cosmosdb.md), [хранилища BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)и [хранилища таблиц Azure](search-howto-indexing-azure-tables.md). Чтобы запросить поддержку других источников данных, отправьте свой отзыв на [форум отзывов Azure когнитивный Поиск](https://feedback.azure.com/forums/263029-azure-search/).
+В дополнение к базе данных SQL Azure и Управляемый экземпляр SQL Azure Когнитивный поиск предоставляет индексаторы для [Azure Cosmos DB](search-howto-index-cosmosdb.md), [хранилища BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)и [хранилища таблиц Azure](search-howto-indexing-azure-tables.md). Чтобы запросить поддержку других источников данных, отправьте свой отзыв на [форум отзывов Azure когнитивный Поиск](https://feedback.azure.com/forums/263029-azure-search/).
 
 ## <a name="indexers-and-data-sources"></a>Индексаторы и источники данных
 
@@ -62,7 +62,7 @@ ms.locfileid: "74113305"
 1. Создайте источник данных:
 
    ```
-    POST https://myservice.search.windows.net/datasources?api-version=2019-05-06
+    POST https://myservice.search.windows.net/datasources?api-version=2020-06-30
     Content-Type: application/json
     api-key: admin-key
 
@@ -80,8 +80,8 @@ ms.locfileid: "74113305"
 
 3. Создайте индексатор, задав ему имя и связав источник данных с целевым индексом:
 
-    ```
-    POST https://myservice.search.windows.net/indexers?api-version=2019-05-06
+   ```
+    POST https://myservice.search.windows.net/indexers?api-version=2020-06-30
     Content-Type: application/json
     api-key: admin-key
 
@@ -90,12 +90,14 @@ ms.locfileid: "74113305"
         "dataSourceName" : "myazuresqldatasource",
         "targetIndexName" : "target index name"
     }
-    ```
+   ```
 
 У индексатора, созданного таким образом, нет расписания. Он автоматически выполняется один раз сразу после создания. Вы можете снова выполнить его в любой момент с помощью запроса на **запуск индексатора** :
 
-    POST https://myservice.search.windows.net/indexers/myindexer/run?api-version=2019-05-06
+```
+    POST https://myservice.search.windows.net/indexers/myindexer/run?api-version=2020-06-30
     api-key: admin-key
+```
 
 Вы можете настроить несколько аспектов поведения индексатора, например размер пакета и сколько документов можно пропустить, прежде чем выполнение индексатора завершится с ошибкой. Чтобы узнать больше, ознакомьтесь с [API создания индексатора](https://docs.microsoft.com/rest/api/searchservice/Create-Indexer).
 
@@ -103,11 +105,14 @@ ms.locfileid: "74113305"
 
 Для наблюдения за состоянием индексатора и журналом выполнения (количество проиндексированных элементов, ошибки и т. д.) используйте запрос на получение **состояния индексатора**:
 
-    GET https://myservice.search.windows.net/indexers/myindexer/status?api-version=2019-05-06
+```
+    GET https://myservice.search.windows.net/indexers/myindexer/status?api-version=2020-06-30
     api-key: admin-key
+```
 
 Ответ должен выглядеть так:
 
+```
     {
         "\@odata.context":"https://myservice.search.windows.net/$metadata#Microsoft.Azure.Search.V2015_02_28.IndexerExecutionInfo",
         "status":"running",
@@ -138,14 +143,16 @@ ms.locfileid: "74113305"
             ... earlier history items
         ]
     }
+```
 
 Журнал выполнения включает до 50 записей о недавно завершенных запусках, которые сортируются в обратном хронологическом порядке (то есть в ответе первым отображается последний запуск).
-Дополнительные сведения об ответе см. [здесь](https://go.microsoft.com/fwlink/p/?LinkId=528198).
+Дополнительные сведения об ответе см. [здесь](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status).
 
 ## <a name="run-indexers-on-a-schedule"></a>Запуск индексаторов по расписанию
 Вы также можете организовать запуск индикатора по расписанию. Для этого добавьте свойство **schedule** при создании или обновлении индексатора. В примере ниже показан PUT- запрос для обновления индексатора:
 
-    PUT https://myservice.search.windows.net/indexers/myindexer?api-version=2019-05-06
+```
+    PUT https://myservice.search.windows.net/indexers/myindexer?api-version=2020-06-30
     Content-Type: application/json
     api-key: admin-key
 
@@ -154,10 +161,11 @@ ms.locfileid: "74113305"
         "targetIndexName" : "target index name",
         "schedule" : { "interval" : "PT10M", "startTime" : "2015-01-01T00:00:00Z" }
     }
+```
 
 Параметр **interval** обязателен. Он указывает время между двумя последовательными запусками индексатора. Наименьшее допустимое значение — 5 минут, наибольшее — один день. Значение должно быть отформатировано как значение dayTimeDuration XSD (ограниченное подмножество значения [продолжительности ISO 8601](https://www.w3.org/TR/xmlschema11-2/#dayTimeDuration) ). Используется следующий шаблон: `P(nD)(T(nH)(nM))`. Примеры: `PT15M` для каждых 15 минут, `PT2H` для каждых 2 часов.
 
-Дополнительные сведения об определении расписаний индексаторов см. [в статье Планирование индексаторов для когнитивный Поиск Azure](search-howto-schedule-indexers.md).
+Дополнительные сведения об определении расписаний индексаторов для Когнитивного поиска Azure см. [здесь](search-howto-schedule-indexers.md).
 
 <a name="CaptureChangedRows"></a>
 
@@ -168,11 +176,11 @@ ms.locfileid: "74113305"
 ### <a name="sql-integrated-change-tracking-policy"></a>Интегрированная политика отслеживания изменений SQL
 Если база данных SQL поддерживает [Отслеживание изменений](https://docs.microsoft.com/sql/relational-databases/track-changes/about-change-tracking-sql-server), рекомендуется использовать **встроенную политику отслеживание изменений SQL**. Это наиболее эффективная политика. Кроме того, он позволяет Azure Когнитивный поиск выявление удаленных строк без необходимости добавления в таблицу явного столбца "обратимого удаления".
 
-#### <a name="requirements"></a>Требования 
+#### <a name="requirements"></a>Requirements (Требования) 
 
 + Требования к версии базы данных:
   * SQL Server 2012 SP3 и более поздних версий, если вы используете SQL Server на виртуальных машинах Azure.
-  * База данных SQL Azure 12, если вы используете базу данных SQL Azure.
+  * База данных SQL Azure или SQL Управляемый экземпляр.
 + Только таблицы (представлений нет). 
 + В базе данных [включите отслеживание изменений](https://docs.microsoft.com/sql/relational-databases/track-changes/enable-and-disable-change-tracking-sql-server) таблицы. 
 + Нет составного первичного ключа (первичный ключ, содержащий более одного столбца) в таблице.  
@@ -181,6 +189,7 @@ ms.locfileid: "74113305"
 
 Чтобы использовать эту политику, создайте или обновите источник данных следующим образом:
 
+```
     {
         "name" : "myazuresqldatasource",
         "type" : "azuresql",
@@ -190,6 +199,7 @@ ms.locfileid: "74113305"
            "@odata.type" : "#Microsoft.Azure.Search.SqlIntegratedChangeTrackingPolicy"
       }
     }
+```
 
 При использовании интегрированной политики отслеживания изменений SQL не указывайте отдельную политику обнаружения удаления данных, так как она уже поддерживает выявление удаленных строк. Однако, чтобы автоматически обнаруживать удаления, ключ документа в индексе поиска должен быть таким же, что и основной ключ в таблице SQL. 
 
@@ -202,7 +212,7 @@ ms.locfileid: "74113305"
 
 Политика обнаружения изменений зависит от столбца изменений максимального уровня, записывающего версию или время последнего обновления строки. При использовании представления следует использовать политику максимального уровня. Столбец максимального уровня должен соответствовать следующим требованиям.
 
-#### <a name="requirements"></a>Требования 
+#### <a name="requirements"></a>Requirements (Требования) 
 
 * при каждой вставке указывается значение для столбца;
 * при всех обновлениях элементов также изменяется значение столбца;
@@ -216,6 +226,7 @@ ms.locfileid: "74113305"
 
 Чтобы использовать политику верхнего предела, создайте или обновите источник данных следующим образом.
 
+```
     {
         "name" : "myazuresqldatasource",
         "type" : "azuresql",
@@ -226,27 +237,59 @@ ms.locfileid: "74113305"
            "highWaterMarkColumnName" : "[a rowversion or last_updated column name]"
       }
     }
+```
 
 > [!WARNING]
 > Если в исходной таблице нет индекса в столбце верхнего уровня, то время ожидания запросов, используемых индексатором SQL, может истекает. В частности, `ORDER BY [High Water Mark Column]` предложение требует эффективного выполнения индекса, если таблица содержит много строк.
 >
 >
 
+<a name="convertHighWaterMarkToRowVersion"></a>
+
+##### <a name="converthighwatermarktorowversion"></a>конверсигхватермаркторовверсион
+
+Если вы используете тип данных [rowversion](https://docs.microsoft.com/sql/t-sql/data-types/rowversion-transact-sql) для столбца высокой подложки, попробуйте использовать `convertHighWaterMarkToRowVersion` параметр конфигурации индексатора. `convertHighWaterMarkToRowVersion` выполняет две задачи:
+
+* Используйте тип данных rowversion для столбца верхнего уровня пометки в запросе SQL индексатора. Использование правильного типа данных повышает производительность запросов индексатора.
+* Вычтите 1 из значения rowversion перед выполнением запроса индексатора. Представления с числом соединений от 1 до нескольких могут содержать строки с повторяющимися значениями rowversion. Вычитание 1 гарантирует, что запрос индексатора не пропустил эти строки.
+
+Чтобы включить эту функцию, создайте или обновите индексатор со следующей конфигурацией:
+
+```
+    {
+      ... other indexer definition properties
+     "parameters" : {
+            "configuration" : { "convertHighWaterMarkToRowVersion" : true } }
+    }
+```
+
+<a name="queryTimeout"></a>
+
+##### <a name="querytimeout"></a>queryTimeout
+
 Если возникают ошибки времени ожидания, можно использовать параметр конфигурации индексатора `queryTimeout`, чтобы задать время ожидания запроса, превышающее время ожидания по умолчанию, равное 5 минутам. Например, чтобы задать время ожидания, равное 10 минутам, создайте или обновите индексатор, используя приведенную ниже конфигурацию.
 
+```
     {
       ... other indexer definition properties
      "parameters" : {
             "configuration" : { "queryTimeout" : "00:10:00" } }
     }
+```
+
+<a name="disableOrderByHighWaterMarkColumn"></a>
+
+##### <a name="disableorderbyhighwatermarkcolumn"></a>disableOrderByHighWaterMarkColumn
 
 Можно также отключить предложение `ORDER BY [High Water Mark Column]`. Однако это не рекомендуется, так как в случае прерывания выполнения индексатора из-за ошибки ему придется повторно обработать все строки при последующем запуске, даже если на момент прерывания почти все из них уже были обработаны. Чтобы отключить предложение `ORDER BY`, используйте параметр `disableOrderByHighWaterMarkColumn` в определении индексатора.  
 
+```
     {
      ... other indexer definition properties
      "parameters" : {
             "configuration" : { "disableOrderByHighWaterMarkColumn" : true } }
     }
+```
 
 ### <a name="soft-delete-column-deletion-detection-policy"></a>Политика обнаружения обратимого удаления столбца
 Строки, удаляемые из исходной таблицы, вероятно, также следует удалить из индекса поиска. Если вы используете интегрированную политику отслеживания изменений SQL, это происходит автоматически. Однако политика отслеживания изменений максимального уровня не затрагивает удаленные строки. Что делать?
@@ -255,6 +298,7 @@ ms.locfileid: "74113305"
 
 При использовании метода обратимого удаления можно указать соответствующую политику во время создания или обновления источника данных:
 
+```
     {
         …,
         "dataDeletionDetectionPolicy" : {
@@ -263,6 +307,7 @@ ms.locfileid: "74113305"
            "softDeleteMarkerValue" : "[the value that indicates that a row is deleted]"
         }
     }
+```
 
 Параметр **softDeleteMarkerValue** должен быть строкой. Используйте строковое представление действительного значения. Например, если имеется столбец целочисленных значений, в котором удаленные строки помечаются значением 1, то следует использовать `"1"`. Если имеется битовый столбец, в котором удаленные строки помечаются логическим значением true, то используйте строковый литерал `True` или `true`, при этом регистр значения не имеет.
 
@@ -280,24 +325,26 @@ ms.locfileid: "74113305"
 | smalldatetime, datetime, datetime2, date, datetimeoffset |Edm.DateTimeOffset, Edm.String | |
 | uniqueidentifer |Edm.String | |
 | geography |Edm.GeographyPoint |Поддерживаются только географические объекты типа POINT с SRID 4326 (значение по умолчанию). |
-| rowversion |Недоступно |Столбцы версии строк не могут храниться в индексе поиска, но их можно использовать для отслеживания изменений. |
-| time, timespan, binary, varbinary, image, xml, geometry, CLR types |Недоступно |Не поддерживается |
+| rowversion |Н/Д |Столбцы версии строк не могут храниться в индексе поиска, но их можно использовать для отслеживания изменений. |
+| time, timespan, binary, varbinary, image, xml, geometry, CLR types |Н/Д |Не поддерживается |
 
 ## <a name="configuration-settings"></a>Параметры конфигурации
 Индексатор SQL предоставляет несколько параметров конфигурации.
 
-| Параметр | Тип данных | Назначение | Значение по умолчанию |
+| Параметр | Тип данных | Цель | Значение по умолчанию |
 | --- | --- | --- | --- |
-| queryTimeout |строка |Задает время ожидания для выполнения запроса SQL. |5 мин ("00:05:00") |
+| queryTimeout |string |Задает время ожидания для выполнения запроса SQL. |5 мин ("00:05:00") |
 | disableOrderByHighWaterMarkColumn |bool |Указывает SQL-запросу, используемому политикой верхнего предела, опустить предложение ORDER BY. Ознакомьтесь с [политикой верхнего предела](#HighWaterMarkPolicy). |false |
 
 Эти параметры используются в объекте `parameters.configuration` в определении индексатора. Например, чтобы задать время ожидания запроса, равное 10 минутам, создайте или обновите индексатор, используя приведенную ниже конфигурацию.
 
+```
     {
       ... other indexer definition properties
      "parameters" : {
             "configuration" : { "queryTimeout" : "00:10:00" } }
     }
+```
 
 ## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
@@ -323,17 +370,17 @@ ms.locfileid: "74113305"
 
 **Вопрос. Можно ли использовать вторичную реплику в [отказоустойчивом кластере](https://docs.microsoft.com/azure/sql-database/sql-database-geo-replication-overview) в качестве источника данных?**
 
-Здесь возможны варианты в зависимости от обстоятельств. Для полной индексации таблицы или представления можно использовать вторичные реплики. 
+Это зависит от нескольких условий. Для полной индексации таблицы или представления можно использовать вторичные реплики. 
 
 Для добавочного индексирования Azure Когнитивный поиск поддерживает две политики обнаружения изменений: Интегрированное отслеживание изменений SQL и верхняя маркировка воды.
 
-В репликах только для чтения база данных SQL не поддерживает интегрированное отслеживание изменений. Таким образом необходимо использовать политику максимального уровня. 
+В репликах только для чтения база данных SQL не поддерживает Интегрированное отслеживание изменений. Таким образом необходимо использовать политику максимального уровня. 
 
-Стандартно рекомендуется использовать тип данных rowversion для столбца максимального уровня. Однако использование rowversion зависит от функции `MIN_ACTIVE_ROWVERSION` базы данных SQL, которая не поддерживается репликами только для чтения. Таким образом необходимо направить индексатор на первичную реплику при использовании rowversion.
+Стандартно рекомендуется использовать тип данных rowversion для столбца максимального уровня. Однако использование rowversion зависит от `MIN_ACTIVE_ROWVERSION` функции, которая не поддерживается в репликах только для чтения. Таким образом необходимо направить индексатор на первичную реплику при использовании rowversion.
 
 При попытке использовать rowversion с репликой только для чтения появится следующая ошибка: 
 
-    "Using a rowversion column for change tracking is not supported on secondary (read-only) availability replicas. Please update the datasource and specify a connection to the primary availability replica.Current database 'Updateability' property is 'READ_ONLY'".
+"Использование столбца rowversion для отслеживания изменений не поддерживается во вторичных репликах доступности (только для чтения). Обновите источник данных и укажите соединение с первичной репликой доступности. Свойство "обновление текущей базы данных" имеет значение "READ_ONLY" ".
 
 **Вопрос. Можно ли использовать другой столбец, не rowversion, для отслеживания изменений максимального уровня?**
 

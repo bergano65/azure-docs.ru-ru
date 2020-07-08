@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 05/18/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: ea756b965a2539886e695585c9b5f5034eac7684
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
-ms.translationtype: HT
+ms.openlocfilehash: fd44c07ea44e7487a22b0de67737dcc135c813b6
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84263213"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86038044"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети
 <a name="network-service-tags"></a>
@@ -96,7 +96,7 @@ ms.locfileid: "84263213"
 | **PowerQueryOnline** | Power Query Online. | both | Нет | Нет |
 | **Служебная шина** | Трафик служебной шины Azure, использующий уровень служб "Премиум". | Исходящие | Да | Да |
 | **Service Fabric** | Azure Service Fabric.<br/><br/>*Примечание.* Этот тег представляет конечную точку службы Service Fabric для уровня управления для каждого региона. Это позволяет клиентам выполнять операции управления для своих кластеров Service Fabric из виртуальной сети (конечная точка, например, https://westus.servicefabric.azure.com). | both | Нет | Нет |
-| **SQL** | База данных SQL Azure, база данных Azure для MySQL, база данных Azure для PostgreSQL и Хранилище данных SQL Azure.<br/><br/>*Примечание.* Этот тег представляет службу, но не определенные экземпляры службы. Например, тег представляет службу "База данных SQL Microsoft Azure", но не определенную базу данных или сервер SQL Azure. Этот тег не применяется к управляемому экземпляру SQL. | Исходящие | Да | Да |
+| **SQL** | База данных SQL Azure, база данных Azure для MySQL, база данных Azure для PostgreSQL и Хранилище данных SQL Azure.<br/><br/>*Примечание.* Этот тег представляет службу, но не определенные экземпляры службы. Например, тег представляет службу "База данных SQL Microsoft Azure", но не определенную базу данных или сервер SQL Azure. Этот тег не применяется к SQL Управляемый экземпляр. | Исходящие | Да | Да |
 | **SqlManagement** | Трафик управления для развертываний, выделенных для SQL. | both | Нет | Да |
 | **Память** | служба хранилища Azure. <br/><br/>*Примечание.* Этот тег представляет службу, но не определенные экземпляры службы. Например, тег представляет службу хранилища Azure, но не определенную учетную запись хранения Azure. | Исходящие | Да | Да |
 | **StorageSyncService** | Служба хранилища Azure. | both | Нет | Нет |
@@ -139,6 +139,8 @@ ms.locfileid: "84263213"
 - [Azure для US Gov организаций.](https://www.microsoft.com/download/details.aspx?id=57063)  
 - [Azure для Китая](https://www.microsoft.com/download/details.aspx?id=57062) 
 - [Azure для Германии](https://www.microsoft.com/download/details.aspx?id=57064)   
+
+Диапазоны IP-адресов в этих файлах находятся в нотации CIDR. 
 
 > [!NOTE]
 >Подмножество этих сведений опубликовано в файлах XML для [Azure Public](https://www.microsoft.com/download/details.aspx?id=41653), [Azure для Китая](https://www.microsoft.com/download/details.aspx?id=42064) и [Azure для Германии](https://www.microsoft.com/download/details.aspx?id=54770). Эти загрузки XML станут устаревшими 30 июня 2020 г. и больше не будут доступны после этой даты. Необходимо выполнить миграцию для использования API обнаружения или скачивания файла JSON, как описано в предыдущих разделах.

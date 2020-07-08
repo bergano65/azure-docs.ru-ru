@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3dd1b4cf554e773f49a15ac5cedcbcc5b3e710b9
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 34cc8154660db8afcd5859d45ccfd622bc7ca88f
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74380108"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86039829"
 ---
 # <a name="quickstart-require-terms-of-use-to-be-accepted-before-accessing-cloud-apps"></a>Краткое руководство. Требование принятия условий использования перед доступом к облачным приложениям
 
@@ -29,9 +29,9 @@ ms.locfileid: "74380108"
 
 ![Создание политики](./media/require-tou/5555.png)
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить сценарий в этом кратком руководстве, вам понадобится:
 
@@ -209,5 +209,4 @@ ms.locfileid: "74380108"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Требование многофакторной идентификации (MFA) для конкретных приложений с помощью условного доступа Azure Active Directory](app-based-mfa.md)
-> [Block access when a session risk is detected with Azure Active Directory conditional access](app-sign-in-risk.md) (Блокировка доступа при обнаружении риска безопасности сеанса с помощью условного доступа Azure Active Directory)
+> [Требование многофакторной проверки подлинности для конкретных приложений](app-based-mfa.md)

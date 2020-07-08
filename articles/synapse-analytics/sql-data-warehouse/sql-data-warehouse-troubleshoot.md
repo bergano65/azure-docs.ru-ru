@@ -6,17 +6,17 @@ author: kevinvngo
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 02/04/2019
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 6f697cf205af9bdfaadfe20e123bcf0b4935c90f
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 44755ab13b95db1ffec8183d00a4054e291c5a50
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83829993"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86039030"
 ---
 # <a name="troubleshooting-synapse-sql-in-azure-synapse-analytics"></a>Устранение неполадок с Synapse SQL в Azure Synapse Analytics
 
@@ -28,7 +28,7 @@ ms.locfileid: "83829993"
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Ошибка входа пользователя "NT AUTHORITY\ANONYMOUS LOGON". (Microsoft SQL Server, ошибка: 18456) | Эта ошибка возникает, когда пользователь Azure AD пытается подключиться к базе данных master, в которой нет соответствующей учетной записи пользователя.  Для устранения этой проблемы либо укажите пул SQL, к которому необходимо подключиться во время подключения, либо добавьте учетную запись пользователя в базу данных master.  См. дополнительные сведения в статье [Обзор безопасности](sql-data-warehouse-overview-manage-security.md). |
 | Субъект-сервер "MyUserName" не может получить доступ к базе данных master в текущем контексте безопасности. Невозможно открыть пользовательскую базу данных по умолчанию. Ошибка входа. Пользователю "MyUserName" не удалось войти в систему. (Microsoft SQL Server, ошибка: 916) | Эта ошибка возникает, когда пользователь Azure AD пытается подключиться к базе данных master, в которой нет соответствующей учетной записи пользователя.  Для устранения этой проблемы либо укажите пул SQL, к которому необходимо подключиться во время подключения, либо добавьте учетную запись пользователя в базу данных master.  См. дополнительные сведения в статье [Обзор безопасности](sql-data-warehouse-overview-manage-security.md). |
-| Ошибка CTAIP                                                  | Эта ошибка может возникнуть, когда имя для входа создано в базе данных master SQL Server, но не создано в базе данных SQL.  Если возникла эта ошибка, ознакомьтесь со статьей с [общими сведениями о безопасности](sql-data-warehouse-overview-manage-security.md) .  В этой статье объясняется, как создать имя для входа и пользователя в базе данных master, а затем создать пользователя в базе данных SQL. |
+| Ошибка CTAIP                                                  | Эта ошибка может возникать при создании имени входа в базе данных master базы данных SQL, но не в конкретной базе данных SQL.  Если возникла эта ошибка, ознакомьтесь со статьей с [общими сведениями о безопасности](sql-data-warehouse-overview-manage-security.md) .  В этой статье объясняется, как создать имя входа и пользователя в базе данных master, а затем создать пользователя в базе данных SQL. |
 | Заблокировано брандмауэром                                          | Пулы SQL защищены брандмауэрами. Это гарантирует, что доступ к базе данных возможен только с известных IP-адресов. Брандмауэры являются безопасными по умолчанию. Это означает, что перед подключением необходимо прямо разрешить доступ для IP-адреса или диапазона IP-адресов.  Чтобы настроить брандмауэр для предоставления доступа, выполните указания в разделе [Настройка доступа через брандмауэр сервера для IP-адреса вашего клиента](create-data-warehouse-portal.md) в статье [Инструкции по подготовке](create-data-warehouse-portal.md). |
 | Не удается подключиться с помощью средства или драйвера                           | Пул Synapse SQL рекомендует использовать [SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), [SSDT для Visual Studio](sql-data-warehouse-install-visual-studio.md) или [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md) для запроса данных. Для получения дополнительной информации о драйверах и подключении к Azure Synapse обратитесь к статьям [Драйверы для Azure Synapse](sql-data-warehouse-connection-strings.md) и [Подключение к Azure Synapse](sql-data-warehouse-connect-overview.md). |
 
@@ -59,7 +59,7 @@ ms.locfileid: "83829993"
 | Сообщение 40847: "Не удалось выполнить операцию, так как сервер достиг допустимой квоты в 45 000 единиц транзакций базы данных (DTU)". | Либо уменьшите значение [DWU](what-is-a-data-warehouse-unit-dwu-cdwu.md) создаваемой базы данных, либо [запросите увеличение квоты](sql-data-warehouse-get-started-create-support-ticket.md). |
 | Анализ использования пространства                              | Сведения об использовании пространства в системе см. в разделе о [размерах таблиц](sql-data-warehouse-tables-overview.md#table-size-queries). |
 | Справка по управлению таблицами                                    | Справочную информацию об управлении таблицами см. в статье [Обзор таблиц](sql-data-warehouse-tables-overview.md).  Эта статья также содержит ссылки на более подробные разборы следующих тем: [Типы табличных данных](sql-data-warehouse-tables-data-types.md), [Распределение таблицы](sql-data-warehouse-tables-distribute.md), [Индексирование таблицы](sql-data-warehouse-tables-index.md), [Разделение таблицы на разделы](sql-data-warehouse-tables-partition.md), [Ведение статистики таблицы](sql-data-warehouse-tables-statistics.md) и [Временные таблицы](sql-data-warehouse-tables-temporary.md). |
-| На портале Azure не обновляется индикатор хода прозрачного шифрования данных (TDE) | Состояние прозрачного шифрования данных можно узнать с помощью [PowerShell](/powershell/module/az.sql/get-azsqldatabasetransparentdataencryption?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). |
+| На портале Azure не обновляется индикатор хода прозрачного шифрования данных (TDE) | Состояние TDE можно просмотреть с помощью [PowerShell](/powershell/module/az.sql/get-azsqldatabasetransparentdataencryption?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). |
 
 ## <a name="differences-from-sql-database"></a>Отличия от базы данных SQL
 
