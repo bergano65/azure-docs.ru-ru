@@ -5,12 +5,11 @@ ms.date: 03/24/2020
 ms.topic: conceptual
 description: Узнайте, как работает настройка кластера Службы Azure Kubernetes для Azure Dev Spaces
 keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: 6b158ca7f425e8b7c492c27521dba588a508b534
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
-ms.translationtype: HT
+ms.openlocfilehash: 60f6c466e7c016ccd07e37b2f0d1ce9989fb8f9f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83873545"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "83995893"
 ---
 # <a name="how-setting-up-a-cluster-for-azure-dev-spaces-works"></a>Как работает настройка кластера для Azure Dev Spaces
 
@@ -18,7 +17,7 @@ Azure Dev Spaces предоставляет несколько способов
 
 ## <a name="prepare-your-aks-cluster"></a>Подготовка кластера AKS
 
-Чтобы подготовить кластер AKS для Dev Spaces, такой кластер AKS должен находиться в [поддерживаемом для Azure Dev Spaces регионе][supported-regions] и работать под управлением Kubernetes 1.10.3 или более поздней версии. Чтобы включить Azure Dev Spaces в кластере с помощью портала Azure, перейдите к этому кластеру, щелкните *Dev Spaces*, укажите для параметра *Использовать Dev Spaces* значение *Да* и щелкните *Сохранить*. Можно также включить Azure Dev Spaces из Azure CLI, запустив `az aks use-dev-spaces`.
+Чтобы подготовить кластер AKS для Dev Spaces, такой кластер AKS должен находиться в [поддерживаемом для Azure Dev Spaces регионе][supported-regions] и работать под управлением Kubernetes 1.10.3 или более поздней версии. Вы можете включить Azure Dev Spaces из Azure CLI, выполнив `az aks use-dev-spaces` .
 
 Пример настройки кластера AKS для Dev Spaces см. в [кратком руководстве по групповой разработке][quickstart-team].
 

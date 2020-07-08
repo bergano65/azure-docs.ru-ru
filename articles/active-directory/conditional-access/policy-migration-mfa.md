@@ -4,19 +4,18 @@ description: В этой статье описано, как перенести 
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
-ms.topic: conceptual
-ms.date: 12/04/2019
+ms.topic: how-to
+ms.date: 05/26/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: nigu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d637ac464b689a25ce5d5a79cf47da0c85d38d0f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: d1dc7b7227dbaee488726a75fe7120bd26614dbf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74846044"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "83993734"
 ---
 # <a name="migrate-a-classic-policy-in-the-azure-portal"></a>Перенос классической политики в портал Azure
 
@@ -32,7 +31,7 @@ ms.locfileid: "74846044"
 
 ## <a name="open-a-classic-policy"></a>Открытие классической политики
 
-1. В [портал Azure](https://portal.azure.com)перейдите к **Azure Active Directory** > **Безопасность** > **Условный доступ**.
+1. В [портал Azure](https://portal.azure.com)перейдите к **Azure Active Directory**  >  **Безопасность**  >  **Условный доступ**.
 1. Выберите **классические политики**.
 
    ![Представление классических политик](./media/policy-migration-mfa/12.png)
@@ -41,7 +40,7 @@ ms.locfileid: "74846044"
 
 ## <a name="create-a-new-conditional-access-policy"></a>Создание политики условного доступа
 
-1. В [портал Azure](https://portal.azure.com)перейдите к **Azure Active Directory** > **Безопасность** > **Условный доступ**.
+1. В [портал Azure](https://portal.azure.com)перейдите к **Azure Active Directory**  >  **Безопасность**  >  **Условный доступ**.
 1. Чтобы создать новую политику условного доступа, выберите **создать политику**.
 1. На странице **Создать** в текстовом поле **Имя** введите имя политики.
 1. В разделе **Назначения** щелкните **Пользователи и группы**.
@@ -69,7 +68,7 @@ ms.locfileid: "74846044"
 
 ![Отключить классические политики](./media/policy-migration-mfa/14.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о переносе классических политик на портале Azure см. в [этой статье](policy-migration.md).
 - [Используйте режим "только отчет" для условного доступа, чтобы определить влияние новых политик.](concept-conditional-access-report-only.md)

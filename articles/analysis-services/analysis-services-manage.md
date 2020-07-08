@@ -7,12 +7,11 @@ ms.topic: conceptual
 ms.date: 10/28/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 28d7b2955c84833841760e441cd2919181e22bc7
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
-ms.translationtype: MT
+ms.openlocfilehash: a5dce5b53df817bd365d4ce9670ffd556ce365f7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "73572800"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84015508"
 ---
 # <a name="manage-analysis-services"></a>Управление службами Analysis Services
 После создания сервера служб Analysis Services в Azure некоторые задачи управления и администрирования необходимо выполнять сразу же, а некоторые — в дальнейшей работе. Например, запускать обработку для обновления данных, управлять доступом к моделям на сервере или отслеживать работоспособность сервера. Некоторые задачи управления можно выполнять только на портале Azure, другие — только в SQL Server Management Studio (SSMS), а некоторые — и там, и там.
@@ -51,7 +50,7 @@ ms.locfileid: "73572800"
 
     **Проверка подлинности с помощью пароля Active Directory** — для входа используется учетная запись организации. Например, при подключении с компьютера, не присоединенного к домену.
 
-    **Active Directory — универсальная с поддержкой MFA** — для входа используется [неинтерактивная или многофакторная проверка подлинности](../sql-database/sql-database-ssms-mfa-authentication.md). 
+    **Active Directory — универсальная с поддержкой MFA** — для входа используется [неинтерактивная или многофакторная проверка подлинности](../azure-sql/database/authentication-mfa-ssms-overview.md). 
    
     ![Подключение в среде SSMS](./media/analysis-services-manage/aas-manage-connect-ssms.png)
 
@@ -62,7 +61,7 @@ ms.locfileid: "73572800"
 ## <a name="troubleshooting-connection-problems"></a>Устранение неполадок с подключением
 Если при подключении с помощью SSMS возникают проблемы, может потребоваться очистить кэш входа. Ничего не кэшируется на диске. Чтобы очистить кэш, закройте и перезапустите процесс подключения. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Если вы все еще не развернули табличную модель нового сервера, сейчас самое время это сделать. Дополнительные сведения см. в статье [Deploy to Azure Analysis Services](analysis-services-deploy.md) (Развертывание в службы Azure Analysis Services).
 
 Если модель для сервера развернута, к ней можно подключиться с помощью клиента или браузера. Дополнительные сведения см. в статье [Получение данных из служб Azure Analysis Services](analysis-services-connect.md).

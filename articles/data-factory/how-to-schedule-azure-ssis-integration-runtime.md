@@ -13,12 +13,11 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: anandsub
-ms.openlocfilehash: 83ccc3160ed62a1ea801dd8c5795328fd2b5109f
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
-ms.translationtype: MT
+ms.openlocfilehash: 0023bcc4a7c31a0e337683fa3d3080a45445fc49
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82584027"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84117913"
 ---
 # <a name="how-to-start-and-stop-azure-ssis-integration-runtime-on-a-schedule"></a>Запуск и остановка Azure-SSIS Integration Runtime по расписанию
 
@@ -49,7 +48,7 @@ ms.locfileid: "82584027"
 ### <a name="create-your-adf"></a>Создание ADF
 
 1. Войдите на [портал Azure](https://portal.azure.com/).    
-2. В меню слева щелкните **создать** , щелкните **данные и аналитика**и выберите **фабрика данных**. 
+2. В меню слева щелкните **Создать**, выберите **Данные+аналитика** и щелкните **Фабрика данных**. 
    
    ![Создать -> Фабрика данных](./media/tutorial-create-azure-ssis-runtime-portal/new-data-factory-menu.png)
    
@@ -62,7 +61,7 @@ ms.locfileid: "82584027"
    `Data factory name MyAzureSsisDataFactory is not available`
       
 4. Выберите **подписку** Azure, в которой нужно создать ADF. 
-5. Для **группы ресурсов** выполните одно из следующих действий:
+5. Для **группы ресурсов**выполните одно из следующих действий.
      
    - Выберите **Использовать существующую**и укажите существующую группу ресурсов в раскрывающемся списке. 
    - Выберите **Создать новую**и укажите имя новой группы ресурсов.   
@@ -91,7 +90,7 @@ ms.locfileid: "82584027"
    
 2. На панели элементов **Действия** разверните меню **Общие** и перетащите **веб-действие** в область конструктора конвейера. На вкладке **Общие** в окне свойств действия измените имя действия на **startMyIR**. Перейдите на вкладку **Настройки** и выполните здесь следующие действия:
 
-    1. В **поле URL-адрес**введите следующий URL-адрес для REST API, который `{subscriptionId}`начинается `{resourceGroupName}`Azure-SSIS IR `{factoryName}`, заменяя,, и `{integrationRuntimeName}` фактические значения `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/start?api-version=2018-06-01` для вашего IR: Кроме того, можно также скопировать & вставьте идентификатор ресурса IR со страницы мониторинга в пользовательском интерфейсе или приложении ADF, чтобы заменить следующую часть приведенного выше URL-адреса:`/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}`
+    1. В поле **URL-адрес**введите следующий URL-адрес для REST API, который начинается Azure-SSIS IR, заменяя `{subscriptionId}` ,, `{resourceGroupName}` `{factoryName}` и `{integrationRuntimeName}` фактические значения для вашего IR: `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/start?api-version=2018-06-01` Кроме того, можно также скопировать & вставьте идентификатор ресурса IR со страницы мониторинга в пользовательском интерфейсе или приложении ADF, чтобы заменить следующую часть приведенного выше URL-адреса:`/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}`
     
        ![Идентификатор ресурса Azure-SSIS IR](./media/how-to-schedule-azure-ssis-integration-runtime/adf-ssis-ir-resource-id.png)
   
@@ -104,7 +103,7 @@ ms.locfileid: "82584027"
   
 3. Клонируйте первый конвейер, чтобы создать второй, присвоив ему имя действия **stopMyIR** и изменив свойства, как описано ниже.
 
-    1. В поле **URL-адрес**введите следующий URL-адрес для REST API, который `{subscriptionId}`останавливает `{resourceGroupName}`Azure-SSIS IR `{factoryName}`, заменяя,, и `{integrationRuntimeName}` фактические значения для своего IR:`https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/stop?api-version=2018-06-01`
+    1. В поле **URL-адрес**введите следующий URL-адрес для REST API, который останавливает Azure-SSIS IR, заменяя `{subscriptionId}` ,, `{resourceGroupName}` `{factoryName}` и `{integrationRuntimeName}` фактические значения для своего IR:`https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/integrationRuntimes/{integrationRuntimeName}/stop?api-version=2018-06-01`
     
     2. В поле **Текст** введите `{"message":"Stop my IR"}`. 
 
@@ -133,12 +132,12 @@ ms.locfileid: "82584027"
     
 2. Чтобы протестировать третий конвейер, запустите SQL Server Management Studio (SSMS). В окне **Подключение к серверу** сделайте следующее: 
 
-    1. В поле **Имя сервера** введите значение **&lt;имя_сервера_Базы_данных_SQL_Azure&gt;.database.windows.net**.
+    1. В качестве **имени сервера**введите ** &lt; имя сервера &gt; . Database.Windows.NET**.
     2. Выберите **Параметры >>**.
     3. В поле **Подключение к базе данных** выберите **SSISDB**.
     4. Выберите **Подключиться**. 
-    5. Разверните папку **Integration Services каталоги** -> **SSISDB** -> > **проекты** , > свои **пакеты**> проекта SSIS. 
-    6. Щелкните правой кнопкой мыши указанный пакет служб SSIS для запуска и выберите пункт **отчеты** -> **Стандартные отчеты** -> **все выполнения**. 
+    5. Разверните папку **Integration Services каталоги**  ->  **SSISDB** -> > **проекты** , > свои **пакеты**> проекта SSIS. 
+    6. Щелкните правой кнопкой мыши указанный пакет служб SSIS для запуска и выберите пункт **отчеты**  ->  **Стандартные отчеты**  ->  **все выполнения**. 
     7. Убедитесь, что конвейер выполнен. 
 
    ![Проверка запуска пакета SSIS](./media/how-to-schedule-azure-ssis-integration-runtime/verify-ssis-package-run.png)
@@ -230,7 +229,7 @@ ms.locfileid: "82584027"
     4. В поле **Расположение** выберите расположение для учетной записи службы автоматизации Azure. 
     5. В поле **Создать учетную запись запуска от имени Azure** подтвердите создание, выбрав **Да**. Это действие позволяет создать в Azure Active Directory субъект-службу и назначить ей роль **Участник** в подписке Azure.
     6. Выберите **Закрепить на панели мониторинга**, чтобы этот субъект постоянно отображался на панели мониторинга Azure. 
-    7. Щелкните **Создать**. 
+    7. Выберите **Создать**. 
 
    ![Создать -> Мониторинг и управление -> Служба автоматизации](./media/how-to-schedule-azure-ssis-integration-runtime/add-automation-account-window.png)
    
@@ -244,7 +243,7 @@ ms.locfileid: "82584027"
 
 ### <a name="import-adf-modules"></a>Импорт модулей ADF
 
-1. Выберите **модули** в разделе **Общие ресурсы** в меню слева и убедитесь, что у вас есть команда **AZ.** + объект**AZ. Profile** в списке модулей.
+1. Выберите **модули** в разделе **Общие ресурсы** в меню слева и убедитесь, что у вас есть команда **AZ.** объект  +  **AZ. Profile** в списке модулей.
 
    ![Проверка необходимых модулей](media/how-to-schedule-azure-ssis-integration-runtime/automation-fix-image1.png)
 
@@ -268,7 +267,7 @@ ms.locfileid: "82584027"
 
     1. В поле **Имя** введите **StartStopAzureSsisRuntime**.
     2. Для поля **Тип Runbook** выберите значение **PowerShell**.
-    3. Щелкните **Создать**.
+    3. Выберите **Создать**.
     
    ![Кнопка добавления модуля runbook](./media/how-to-schedule-azure-ssis-integration-runtime/add-runbook-window.png)
    
@@ -339,7 +338,7 @@ ms.locfileid: "82584027"
     2. В поле **DATA FACTORY NAME** (Имя Фабрики данных) введите имя ADF, где расположена Azure-SSIS IR. 
     3. В поле **AZURESSISNAME** (Имя Azure-SSIS) введите имя Azure-SSIS IR. 
     4. Для параметра **OPERATION** введите **START**. 
-    5. Щелкните **ОК**.  
+    5. Нажмите кнопку **ОК**.  
 
    ![Окно "Запуск Runbook"](./media/how-to-schedule-azure-ssis-integration-runtime/start-runbook-window.png)
    
@@ -367,7 +366,7 @@ ms.locfileid: "82584027"
     4. В поле **Запускается** введите время на несколько минут позже текущего времени. 
     5. Для параметра **Периодичность** выберите значение **Повторяющееся**. 
     6. В поле **Повторять каждые** введите значение **1** и выберите **День**. 
-    7. Щелкните **Создать**. 
+    7. Выберите **Создать**. 
 
    ![Расписание для запуска IR Azure SSIS](./media/how-to-schedule-azure-ssis-integration-runtime/new-schedule-start.png)
     
@@ -383,7 +382,7 @@ ms.locfileid: "82584027"
     
 6. Завершив тестирование, измените параметры расписаний, чтобы отключить их. Выберите **Расписания** в меню слева, выберите **Start IR daily/Stop IR daily** ("Запускать IR ежедневно" или "Останавливать IR ежедневно") и укажите значение **Нет** для параметра **Включено**. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 См. в следующей записи блога:
 -   [Модернизация и расширение рабочих процессов ETL/ELT с помощью операций MSSQL Integration Services в конвейерах ADF](https://techcommunity.microsoft.com/t5/SQL-Server-Integration-Services/Modernize-and-Extend-Your-ETL-ELT-Workflows-with-SSIS-Activities/ba-p/388370)
 

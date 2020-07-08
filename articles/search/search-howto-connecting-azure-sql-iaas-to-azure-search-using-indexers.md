@@ -8,12 +8,11 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 1ab2b7860e8a75da5f8acef2fc4fa54d4b73a30d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: bf25c74f0190bc67e7da703e242d5d4bb3e299f5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80256969"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84020648"
 ---
 # <a name="configure-a-connection-from-an-azure-cognitive-search-indexer-to-sql-server-on-an-azure-vm"></a>Настройка подключения из индексатора Когнитивный поиск Azure для SQL Server на виртуальной машине Azure
 
@@ -52,7 +51,7 @@ ms.locfileid: "80256969"
 ## <a name="configure-sql-server-connectivity-in-the-vm"></a>Настройка подключения к SQL Server на виртуальной машине
 После настройки зашифрованного подключения, необходимого для Когнитивный поиск Azure, необходимо выполнить дополнительные действия по настройке SQL Server на виртуальных машинах Azure. Если это еще не было сделано, то следующий шаг позволит вам завершить настройку. Воспользуйтесь одной из следующих статей:
 
-* Если вы используете виртуальную машину **Resource Manager** , то ознакомьтесь с разделом [Подключение к виртуальной машине SQL Server в Azure (диспетчер ресурсов)](../virtual-machines/windows/sql/virtual-machines-windows-sql-connect.md). 
+* Если вы используете виртуальную машину **Resource Manager** , то ознакомьтесь с разделом [Подключение к виртуальной машине SQL Server в Azure (диспетчер ресурсов)](../azure-sql/virtual-machines/windows/ways-to-connect-to-sql.md). 
 * Если вы используете **классическую** виртуальную машину, см. статью [Подключение к виртуальной машине SQL Server в Azure (классическое развертывание)](../virtual-machines/windows/classic/sql-connect.md).
 
 В частности, в каждой из этих статей ознакомьтесь с разделом "Подключение к SQL Server через Интернет".
@@ -73,9 +72,9 @@ ms.locfileid: "80256969"
 Назначение IP-адресов может создать некоторые сложности, но их можно легко преодолеть, если знать о проблеме и о возможных путях ее решения. В дальнейших разделах приводятся рекомендации по устранению проблем, связанных с IP-адресами в списке управления доступом.
 
 #### <a name="restrict-access-to-the-azure-cognitive-search"></a>Ограничение доступа к Когнитивный поиск Azure
-Мы настоятельно рекомендуем ограничить доступ к IP-адресу службы поиска и к диапазону `AzureCognitiveSearch` IP-адресов в списке ACL, а не сделать так, чтобы SQL Azure виртуальные машины открывались для всех запросов на подключение. [service tag](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags)
+Мы настоятельно рекомендуем ограничить доступ к IP-адресу службы поиска и к диапазону IP-адресов `AzureCognitiveSearch` [service tag](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) в списке ACL, а не сделать так, чтобы SQL Azure виртуальные машины открывались для всех запросов на подключение.
 
-IP-адрес можно узнать, обратившись к полному доменному имени (например, `<your-search-service-name>.search.windows.net`) службы поиска.
+IP-адрес можно узнать, обратившись к полному доменному имени (например, `<your-search-service-name>.search.windows.net` ) службы поиска.
 
 Диапазон IP-адресов для `AzureCognitiveSearch` [тега службы](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) можно узнать с помощью [загружаемых файлов JSON](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#discover-service-tags-by-using-downloadable-json-files) или через [API обнаружения тегов служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#use-the-service-tag-discovery-api-public-preview). Диапазон IP-адресов обновляется еженедельно.
 
@@ -89,7 +88,7 @@ IP-адрес можно узнать, обратившись к полному 
 Третьим эффективным (но не самым безопасным) подходом является указание диапазона IP-адресов в регионе Azure, в котором выполняется подготовка службы поиска. Список диапазонов IP-адресов, из которых общедоступные IP-адреса назначаются ресурсам Azure, опубликован в файле с [диапазонами IP-адресов центров обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). 
 
 #### <a name="include-the-azure-cognitive-search-portal-ip-addresses"></a>Включение IP-адресов портала Когнитивный поиск Azure
-Если вы используете портал Azure для создания индексатора, логике портала Когнитивный поиск Azure также требуется доступ к виртуальной машине SQL Azure во время создания. IP-адреса портала Когнитивный поиск Azure можно найти с помощью команды `stamp2.search.ext.azure.com`ping.
+Если вы используете портал Azure для создания индексатора, логике портала Когнитивный поиск Azure также требуется доступ к виртуальной машине SQL Azure во время создания. IP-адреса портала Когнитивный поиск Azure можно найти с помощью команды ping `stamp2.search.ext.azure.com` .
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 После настройки вы можете указать SQL Server на виртуальной машине Azure в качестве источника данных для индексатора Azure Когнитивный поиск. Дополнительные сведения см. [в статье подключение базы данных SQL Azure к azure когнитивный Поиск с помощью индексаторов](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md) .

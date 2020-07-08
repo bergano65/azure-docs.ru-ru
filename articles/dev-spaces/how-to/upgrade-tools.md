@@ -7,7 +7,6 @@ description: Узнайте, как обновить средства коман
 keywords: Docker, Kubernetes, Azure, AKS, Azure Container Service, containers
 ms.openlocfilehash: 1dad455b834bbef046b295b2cba040831a74f757
 ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
-ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/27/2020
 ms.locfileid: "83873488"

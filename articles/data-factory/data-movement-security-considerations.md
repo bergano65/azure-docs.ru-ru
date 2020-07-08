@@ -1,5 +1,5 @@
 ---
-title: Замечания по безопасности
+title: Вопросы безопасности
 description: В этой статье описывается базовая инфраструктура безопасности, используемая службами перемещения данных в фабрике данных Azure для помощи в защите информации.
 services: data-factory
 ms.author: abnarain
@@ -10,13 +10,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 03/11/2020
-ms.openlocfilehash: bb3f22223bd64c06cfa4a5f6ffabe7b128dff1d5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 05/26/2020
+ms.openlocfilehash: 6496e5c953b3dd5e387a79906b22645ba4a24b4f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81416465"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84019985"
 ---
 #  <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Вопросы безопасности при перемещении данных в фабрике данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -64,7 +63,7 @@ ms.locfileid: "81416465"
 - **Храните учетные данные в Azure Key Vault**. Учетные данные хранилища также можно хранить в [Azure Key Vault](https://azure.microsoft.com/services/key-vault/). Фабрика данных получает учетные данные во время выполнения действия. Дополнительные сведения см. в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md).
 
 ### <a name="data-encryption-in-transit"></a>Шифрование данных при передаче
-Если облачное хранилище данных поддерживает протоколы HTTPS или TLS, то передача всех данных между службами перемещения данных в Фабрике данных и облачным хранилищем данных выполняется через эти защищенные каналы.
+Если облачное хранилище данных поддерживает протоколы HTTPS или TLS, то передача всех данных между службами перемещения данных в фабрике данных и облачным хранилищем данных выполняется через эти защищенные каналы.
 
 > [!NOTE]
 > Во время передачи данных в базу данных и из нее все подключения к Базе данных SQL Azure и хранилищу данных SQL Azure должны быть зашифрованы (с помощью SSL или TLS). Разрабатывая конвейер с помощью JSON, добавьте свойство "encryption" и в строке подключения задайте для него значение **true**. Для службы хранилища Azure можно использовать **протокол HTTPS** в строке подключения.
@@ -155,6 +154,12 @@ Salesforce поддерживает шифрование Shield Platform Encrypt
 
 ### <a name="firewall-configurations-and-allow-list-setting-up-for-ip-addresses"></a><a name="firewall-configurations-and-allow-list-setting-up-for-ip-address-of-gateway"></a>Настройки брандмауэра и разрешения для списка разрешений для IP-адресов
 
+> [!NOTE] 
+> Возможно, потребуется управлять портами или настроить список разрешений для доменов на уровне корпоративного брандмауэра согласно требованиям соответствующих источников данных. В этой таблице в качестве примеров используются база данных SQL Azure, хранилище данных SQL Azure и Azure Data Lake Store.
+
+> [!NOTE] 
+> Дополнительные сведения о стратегиях доступа к данным с помощью фабрики данных Azure см. в [этой статье](https://docs.microsoft.com/azure/data-factory/data-access-strategies#data-access-strategies-through-azure-data-factory).
+
 #### <a name="firewall-requirements-for-on-premisesprivate-network"></a>Требования к брандмауэру для локальной или частной сети    
 На предприятии корпоративный брандмауэр работает на центральном маршрутизаторе организации. Брандмауэр Windows работает как управляющая программа на локальном компьютере, на котором установлена локальная среда выполнения интеграции. 
 
@@ -167,7 +172,7 @@ Salesforce поддерживает шифрование Shield Platform Encrypt
 
 В следующей таблице представлены требования к входящему порту для брандмауэра Windows.
 
-| Входящие порты | Описание                              |
+| Входящие порты | Описание:                              |
 | ------------- | ---------------------------------------- |
 | 8060 (TCP)    | Требуется для командлета шифрования PowerShell, как описано в статье [Шифрование учетных данных для локальных хранилищ данных в фабрике данных Azure](encrypt-credentials-self-hosted-integration-runtime.md), или для приложения диспетчера учетных данных, чтобы обеспечить безопасную настройку учетных данных для локальных хранилищ данных в локальной среде выполнения интеграции. |
 
@@ -178,9 +183,9 @@ Salesforce поддерживает шифрование Shield Platform Encrypt
 
 Для следующих облачных хранилищ данных требуется разрешить IP-адрес компьютера, на котором размещена локальная среда выполнения интеграции. Некоторые из этих хранилищ данных по умолчанию могут не требовать наличия списка разрешений. 
 
-- [База данных SQL Azure](../sql-database/sql-database-firewall-configure.md) 
+- [База данных SQL Azure](../azure-sql/database/firewall-configure.md) 
 - [Хранилище данных SQL Azure](../sql-data-warehouse/sql-data-warehouse-get-started-provision.md)
-- [Azure Data Lake Store](../data-lake-store/data-lake-store-secure-data.md#set-ip-address-range-for-data-access)
+- [Хранилище озера данных Azure](../data-lake-store/data-lake-store-secure-data.md#set-ip-address-range-for-data-access)
 - [Azure Cosmos DB](../cosmos-db/firewall-support.md)
 - [Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html) 
 

@@ -2,13 +2,12 @@
 title: Непрерывный экспорт данных телеметрии из Application Insights | Документация Майкрософт
 description: Экспортируйте данные диагностики и использования в хранилище в Microsoft Azure и загрузите их оттуда.
 ms.topic: conceptual
-ms.date: 05/20/2020
-ms.openlocfilehash: 7284e6305b1028cbcb62041ff8196d06250f4414
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.date: 05/26/2020
+ms.openlocfilehash: 91bce217b1b8d7c86c7d75ecd4ce6b698019e169
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83744860"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84147976"
 ---
 # <a name="export-telemetry-from-application-insights"></a>Экспорт данных телеметрии из Application Insights
 Хотите увеличить период удержания телеметрии или анализировать ее особым образом? Функция "Непрерывный экспорт" идеально подходит для этого. События, которые отображаются на портале Application Insights, можно экспортировать в хранилище Microsoft Azure в формате JSON. Из этого расположения можно скачать данные и написать любой код, необходимый для их обработки.  
@@ -24,7 +23,7 @@ ms.locfileid: "83744860"
 * [Аналитика](../../azure-monitor/app/analytics.md) предоставляет эффективный язык запросов для телеметрии и позволяет экспортировать результаты.
 * Если вы собираетесь [исследовать данные в Power BI](../../azure-monitor/app/export-power-bi.md ), это можно сделать, не прибегая к непрерывному экспорту.
 * [REST API доступа к данным](https://dev.applicationinsights.io/) позволяет получить доступ к телеметрии программным образом.
-* Можно также настроить [непрерывный экспорт с помощью PowerShell](https://docs.microsoft.com/powershell/module/az.applicationinsights/new-azapplicationinsightscontinuousexport).
+* Вы также можете получить доступ к настройке [непрерывного экспорта с помощью PowerShell](https://docs.microsoft.com/powershell/module/az.applicationinsights/new-azapplicationinsightscontinuousexport).
 
 После того, как во время непрерывного экспорта данные будут скопированы в хранилище (где они могут храниться столько, сколько необходимо), они по-прежнему будут доступны в Application Insights в течение обычного [периода хранения](../../azure-monitor/app/data-retention-privacy.md).
 
@@ -33,8 +32,6 @@ ms.locfileid: "83744860"
 Непрерывный экспорт **не поддерживает** следующие функции и конфигурации службы хранилища Azure:
 
 * использование [брандмауэров виртуальной сети и службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-network-security) в сочетании с хранилищем BLOB-объектов Azure;
-
-* [хранение данных в неизменяемом виде](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutable-storage) для хранилища BLOB-объектов Azure;
 
 * [Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction).
 
@@ -53,7 +50,8 @@ ms.locfileid: "83744860"
 
 4. Создайте или выберите контейнер в хранилище.
 
-После создания параметров экспорта запускается процедура экспорта. Вы получите только те данные, которые поступят после создания параметров экспорта.
+> [!NOTE]
+> После создания экспорта новые полученные данные начнут передаваться в хранилище BLOB-объектов Azure. Непрерывный экспорт будет передавать только новые данные телеметрии, созданные или полученные после включения непрерывного экспорта. Все данные, существовавшие до включения непрерывного экспорта, не будут экспортированы, и не существует поддерживаемого способа задним числом экспорта ранее созданных данных с помощью непрерывного экспорта.
 
 Возможна задержка около часа до появления данных в хранилище.
 

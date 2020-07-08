@@ -8,119 +8,23 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: seoapr2020
 ms.date: 04/17/2020
-ms.openlocfilehash: 2396207c88716420d299382006a270eb747ddc03
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 3b270b8ae4e9729d2c0f8ae99a3c19c68561df95
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82192669"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84119252"
 ---
 # <a name="use-the-apache-beeline-client-with-apache-hive"></a>Использование клиента Apache Beeline с Apache Hive
 
 Узнайте, как использовать [Apache Beeline](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-Beeline–NewCommandLineShell) для выполнения запросов Apache Hive в HDInsight.
 
-Beeline — это клиент Hive, установленный на головных узлах кластера HDInsight. Чтобы установить Beeline локально, см. раздел [Install Beeline Client (установка клиента](#install-beeline-client)) ниже. Он подключается к службе HiveServer2, размещенной на кластере HDInsight, с помощью JDBC. Beeline также позволяет удаленно подключаться к Hive в HDInsight через Интернет. В следующих примерах приведены наиболее распространенные строки подключения, используемые для подключения к HDInsight из Beeline.
-
-## <a name="types-of-connections"></a>Типы подключений
-
-### <a name="from-an-ssh-session"></a>Из сеанса SSH
-
-При подключении из сеанса SSH к кластеру головного узла можно подключиться к `headnodehost` адресу через порт: `10001`
-
-```bash
-beeline -u 'jdbc:hive2://headnodehost:10001/;transportMode=http'
-```
-
----
-
-### <a name="over-an-azure-virtual-network"></a>Через виртуальную сеть Azure
-
-При подключении клиента к HDInsight через виртуальную сеть Azure необходимо указать полное доменное имя головного узла кластера. Так как подключение устанавливается напрямую к узлам кластера, для подключения используется порт `10001`:
-
-```bash
-beeline -u 'jdbc:hive2://<headnode-FQDN>:10001/;transportMode=http'
-```
-
-Замените `<headnode-FQDN>` на полное доменное имя кластера головного узла. Чтобы найти полное доменное имя головного узла, используйте сведения из [этого раздела](../hdinsight-hadoop-manage-ambari-rest-api.md#get-the-fqdn-of-cluster-nodes).
-
----
-
-### <a name="to-hdinsight-enterprise-security-package-esp-cluster-using-kerberos"></a>В кластер HDInsight Корпоративный пакет безопасности (ESP) по протоколу Kerberos
-
-При подключении клиента к кластеру Корпоративный пакет безопасности (ESP), присоединенному к Azure Active Directory (AAD) — DS на компьютере в той же области кластера, необходимо также указать имя `<AAD-Domain>` домена и имя учетной записи пользователя домена с разрешениями на доступ к кластеру: `<username>`
-
-```bash
-kinit <username>
-beeline -u 'jdbc:hive2://<headnode-FQDN>:10001/default;principal=hive/_HOST@<AAD-Domain>;auth-kerberos;transportMode=http' -n <username>
-```
-
-Замените `<username>` на имя учетной записи домена с разрешениями на доступ к кластеру. Замените `<AAD-DOMAIN>` именем Azure Active Directory (AAD), к которому присоединен кластер. Используйте строку в `<AAD-DOMAIN>` верхнем регистре для значения, в противном случае учетные данные не будут найдены. При `/etc/krb5.conf` необходимости проверьте имена областей.
-
-Чтобы найти URL-адрес JDBC из Ambari, сделайте следующее:
-
-1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net/#/main/services/HIVE/summary`, где `CLUSTERNAME` — это имя вашего кластера. Убедитесь, что HiveServer2 работает.
-
-1. Используйте буфер обмена для копирования URL-адреса JDBC HiveServer2.
-
----
-
-### <a name="over-public-or-private-endpoints"></a>Через общедоступные или частные конечные точки
-
-При подключении к кластеру с помощью общедоступных или частных конечных точек необходимо указать имя учетной записи для `admin`входа в кластер (по умолчанию) и пароль. Например, при использовании Beeline из системы клиента для подключения к адресу `clustername.azurehdinsight.net`. Это подключение устанавливается через порт `443`и шифруется с помощью TLS/SSL.
-
-Замените `clustername` на имя вашего кластера HDInsight. Замените `admin` учетной записью для входа в кластер. Для кластеров ESP используйте полное имя участника-пользователя (например user@domain.com,). Замените `password` паролем этой учетной записи.
-
-```bash
-beeline -u 'jdbc:hive2://clustername.azurehdinsight.net:443/;ssl=true;transportMode=http;httpPath=/hive2' -n admin -p 'password'
-```
-
-или для частной конечной точки:
-
-```bash
-beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transportMode=http;httpPath=/hive2' -n admin -p 'password'
-```
-
-Частные конечные точки указывают на базовую подсистему балансировки нагрузки, доступ к которой можно получить только с виртуальных сетей пиринга в том же регионе. Дополнительные сведения см. [в статье ограничения для пиринга глобальной виртуальной сети и подсистем балансировки нагрузки](../../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) . Вы можете использовать `curl` команду с `-v` параметром для устранения проблем с подключением к общедоступным или частным конечным точкам перед использованием Beeline.
-
----
-
-### <a name="use-beeline-with-apache-spark"></a>Использование Beeline с Apache Spark
-
-Apache Spark предоставляет собственную реализацию HiveServer2, которая иногда называется сервером Thrift Spark. Эта служба использует Spark SQL для разрешения запросов, а не Hive. И могут повысить производительность в зависимости от запроса.
-
-#### <a name="through-public-or-private-endpoints"></a>Через общедоступные или частные конечные точки
-
-Используемая строка подключения немного отличается. Вместо содержащего `httpPath=/hive2` его использования `httpPath/sparkhive2`. Замените `clustername` на имя вашего кластера HDInsight. Замените `admin` учетной записью для входа в кластер. Для кластеров ESP используйте полное имя участника-пользователя (например user@domain.com,). Замените `password` паролем этой учетной записи.
-
-```bash
-beeline -u 'jdbc:hive2://clustername.azurehdinsight.net:443/;ssl=true;transportMode=http;httpPath=/sparkhive2' -n admin -p 'password'
-```
-
-или для частной конечной точки:
-
-```bash
-beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transportMode=http;httpPath=/sparkhive2' -n admin -p 'password'
-```
-
-Частные конечные точки указывают на базовую подсистему балансировки нагрузки, доступ к которой можно получить только с виртуальных сетей пиринга в том же регионе. Дополнительные сведения см. [в статье ограничения для пиринга глобальной виртуальной сети и подсистем балансировки нагрузки](../../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) . Вы можете использовать `curl` команду с `-v` параметром для устранения проблем с подключением к общедоступным или частным конечным точкам перед использованием Beeline.
-
----
-
-#### <a name="from-cluster-head-or-inside-azure-virtual-network-with-apache-spark"></a>Из головного кластера или внутри виртуальной сети Azure с Apache Spark
-
-При подключении непосредственно из головного узла кластера или из ресурса в той же виртуальной сети Azure, что и кластер HDInsight, вместо порта `10001` для сервера Spark Thrift нужно использовать порт `10002`. В следующем примере показано, как подключиться непосредственно к головному узлу:
-
-```bash
-/usr/hdp/current/spark2-client/bin/beeline -u 'jdbc:hive2://headnodehost:10002/;transportMode=http'
-```
-
----
+Beeline — это клиент Hive, установленный на головных узлах кластера HDInsight. Чтобы подключиться к клиенту Beeline, установленному в кластере HDInsight, или установить Beeline локально, см. раздел [Подключение к или установка Apache Beeline](connect-install-beeline.md). Он подключается к службе HiveServer2, размещенной на кластере HDInsight, с помощью JDBC. Beeline также позволяет удаленно подключаться к Hive в HDInsight через Интернет. В следующих примерах приведены наиболее распространенные строки подключения, используемые для подключения к HDInsight из Beeline.
 
 ## <a name="prerequisites-for-examples"></a>Предварительные требования для примеров
 
 * Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 
-* Обратите внимание на схему URI для основного хранилища кластера. Например, `wasb://` для службы хранилища Azure, `abfs://` для Azure Data Lake Storage 2-го поколения или `adl://` для Azure Data Lake Storage 1-го поколения. Если для службы хранилища Azure включено безопасное перемещение, URI имеет `wasbs://`значение. Дополнительные сведения см. в разделе [безопасное перемещение](../../storage/common/storage-require-secure-transfer.md).
+* Обратите внимание на схему URI для основного хранилища кластера. Например, `wasb://` для службы хранилища Azure, `abfs://` для Azure Data Lake Storage 2-го поколения или `adl://` для Azure Data Lake Storage 1-го поколения. Если для службы хранилища Azure включено безопасное перемещение, URI имеет значение `wasbs://` . Дополнительные сведения см. в разделе [безопасное перемещение](../../storage/common/storage-require-secure-transfer.md).
 
 * Вариант 1. клиент SSH. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md). В большинстве действий, описанных в этом документе, предполагается, что вы используете Beeline из сеанса SSH в кластере.
 
@@ -200,7 +104,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
     Эти инструкции выполняют следующие действия:
 
-    |. |Описание |
+    |. |Описание: |
     |---|---|
     |DROP TABLE|Если таблица существует, она удаляется.|
     |CREATE EXTERNAL TABLE|Создает **внешнюю** таблицу в Hive. Внешние таблицы хранят только определения таблицы в Hive. Данные остаются в исходном расположении.|
@@ -263,7 +167,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
     Эти инструкции выполняют следующие действия:
 
-    |. |Описание |
+    |. |Описание: |
     |---|---|
     |CREATE TABLE, ЕСЛИ НЕ СУЩЕСТВУЕТ|Если таблица еще не существует, она создается. Поскольку ключевое слово **External** не используется, эта инструкция создает внутреннюю таблицу. Внутренние таблицы хранятся в хранилище данных Hive и полностью управляются Hive.|
     |ХРАНИТСЯ В ВИДЕ ORC|Позволяет сохранить данные в формате ORC. Это высокооптимизированный и эффективный формат для хранения данных Hive.|
@@ -272,7 +176,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
     > [!NOTE]  
     > В отличие от внешних таблиц, удаление внутренней таблицы приводит к удалению базовых данных.
 
-1. Чтобы сохранить файл, нажмите **клавиши CTRL**+**X**, введите **Y**и, наконец, **введите**.
+1. Чтобы сохранить файл, нажмите **клавиши CTRL** + **X**, введите **Y**и, наконец, **введите**.
 
 1. Запустите файл с помощью Beeline, используя следующую команду:
 
@@ -300,67 +204,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
         +---------------+---------------+---------------+---------------+---------------+---------------+---------------+--+
         3 rows selected (0.813 seconds)
 
-## <a name="install-beeline-client"></a>Установка клиента Beeline
-
-Хотя Beeline входит в головные узлы, может потребоваться установить его локально.  Шаги установки для локального компьютера основаны на [подсистеме Windows для Linux](https://docs.microsoft.com/windows/wsl/install-win10).
-
-1. Обновление списков пакетов. Введите следующую команду в оболочке bash:
-
-    ```bash
-    sudo apt-get update
-    ```
-
-1. Установите Java, если он не установлен. Можно проверить с помощью `which java` команды.
-
-    1. Если пакет Java не установлен, введите следующую команду:
-
-        ```bash
-        sudo apt install openjdk-11-jre-headless
-        ```
-
-    1. Откройте файл bashrc (часто находится в ~ файл/.bashrc): `nano ~/.bashrc`.
-
-    1. Измените файл bashrc. В конце файла добавьте следующую строку:
-
-        ```bash
-        export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
-        ```
-
-        Затем нажмите клавиши **CTRL + X**, затем **Y**, а затем введите.
-
-1. Скачайте архивы Hadoop и Beeline, введите следующие команды:
-
-    ```bash
-    wget https://archive.apache.org/dist/hadoop/core/hadoop-2.7.3/hadoop-2.7.3.tar.gz
-    wget https://archive.apache.org/dist/hive/hive-1.2.1/apache-hive-1.2.1-bin.tar.gz
-    ```
-
-1. Распакуйте архивы и введите следующие команды:
-
-    ```bash
-    tar -xvzf hadoop-2.7.3.tar.gz
-    tar -xvzf apache-hive-1.2.1-bin.tar.gz
-    ```
-
-1. Дополнительные уточнение файла bashrc. Необходимо будет задать путь, по которому будут распакованы архивы. Если используется [подсистема Windows для Linux](https://docs.microsoft.com/windows/wsl/install-win10)и вы следовали инструкциям в точности, путь будет иметь `/mnt/c/Users/user/`вид, где `user` — это имя пользователя.
-
-    1. Откройте файл:`nano ~/.bashrc`
-
-    1. Измените приведенные ниже команды, указав соответствующий путь, а затем введите их в конце файла bashrc:
-
-        ```bash
-        export HADOOP_HOME=/path_where_the_archives_were_unpacked/hadoop-2.7.3
-        export HIVE_HOME=/path_where_the_archives_were_unpacked/apache-hive-1.2.1-bin
-        PATH=$PATH:$HIVE_HOME/bin
-        ```
-
-    1. Затем нажмите клавиши **CTRL + X**, затем **Y**, а затем введите.
-
-1. Закройте и снова откройте сеанс bash.
-
-1. Проверьте подключение. Используйте формат подключения [через общедоступные или частные конечные точки](#over-public-or-private-endpoints)выше.
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные общие сведения о Hive в HDInsight см. в статье [использование Apache Hive с Apache Hadoop в hdinsight](hdinsight-use-hive.md) .
 

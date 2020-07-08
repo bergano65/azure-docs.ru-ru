@@ -3,17 +3,18 @@ title: Журнал развертывания
 description: Сведения о просмотре операций развертывания Azure Resource Manager с помощью портала, PowerShell, Azure CLI и REST API.
 tags: top-support-issue
 ms.topic: conceptual
-ms.date: 05/22/2020
-ms.openlocfilehash: 1f22bdfac5eb12688a5b5778d4da1505e36ef6bf
-ms.sourcegitcommit: fc0431755effdc4da9a716f908298e34530b1238
-ms.translationtype: HT
+ms.date: 05/26/2020
+ms.openlocfilehash: b7439a70a3bd802a5f8a7c371fc04ab3eed31a5b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83816290"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84117835"
 ---
 # <a name="view-deployment-history-with-azure-resource-manager"></a>Просмотр журнала развертываний с помощью Azure Resource Manager
 
-Azure Resource Manager позволяет просматривать журнал развертывания и проверять конкретные операции в прошлых развертываниях. Вы можете просмотреть развернутые ресурсы и получить сведения об ошибках.
+Azure Resource Manager позволяет просматривать журнал развертывания. Вы можете изучить определенные операции в прошлых развертываниях и просмотреть данные о развернутых ресурсах. Этот журнал содержит сведения об ошибках.
+
+Журнал развертывания для группы ресурсов ограничен 800 развертываниями. Как только вы приближаетесь к ограничению, развертывания автоматически удаляются из журнала. Дополнительные сведения см. [в разделе Автоматическое удаление из журнала развертывания](deployment-history-deletions.md).
 
 Сведения об устранении некоторых ошибок развертывания см. в статье об [устранении распространенных ошибок при развертывании ресурсов в Azure с помощью Azure Resource Manager](common-deployment-errors.md).
 
@@ -117,7 +118,7 @@ GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/
 
 1. На странице сводных данных по развертыванию выберите **Сведения об операции**.
 
-    ![Выбор операций развертывания](./media/deployment-history/get-operation-details.png)
+    ![Выберите сведения об операции](./media/deployment-history/get-operation-details.png)
 
 1. Вы увидите подробные сведения об этом шаге развертывания. Если возникла ошибка, сведения о ней будут включены в это сообщение.
 
@@ -210,6 +211,6 @@ GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об устранении некоторых ошибок развертывания см. в статье об [устранении распространенных ошибок при развертывании ресурсов в Azure с помощью Azure Resource Manager](common-deployment-errors.md).
-* Дополнительные сведения об использовании журналов действий для мониторинга других типов действий см. в статье [Операции аудита с помощью диспетчера ресурсов](../management/view-activity-logs.md).
+* Сведения о том, как управление развертываниями осуществляется в журнале, см. в разделе [Автоматическое удаление из журнала развертывания](deployment-history-deletions.md).
 * Чтобы проверить развернутую службу перед ее выполнением, ознакомьтесь со статьей [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](deploy-powershell.md).
 

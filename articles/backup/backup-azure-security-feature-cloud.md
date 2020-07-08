@@ -3,12 +3,11 @@ title: Обратимое удаление для Azure Backup
 description: Узнайте, как использовать функции безопасности в Azure Backup, чтобы сделать резервные копии более безопасными.
 ms.topic: conceptual
 ms.date: 04/30/2020
-ms.openlocfilehash: d7831488482ef154ce00685e513b36ed235e335e
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
-ms.translationtype: MT
+ms.openlocfilehash: 2b0d7a00bce8dfa427958f6db6d7174b9d5f7a79
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82791397"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84116416"
 ---
 # <a name="soft-delete-for-azure-backup"></a>Обратимое удаление для Azure Backup
 
@@ -16,7 +15,10 @@ ms.locfileid: "82791397"
 
 Одной из таких функций является обратимое удаление. При обратимом удалении, даже если вредоносный субъект удаляет резервную копию (или данные резервной копии случайно удаляются), данные резервного копирования сосохранены в течение 14 дополнительных дней, что позволяет восстановить этот элемент без потери данных. Дополнительные 14 дней хранения резервных копий данных в состоянии "обратимого" удаления не повлечет за собой никаких затрат на клиент.
 
-[Защита от обратимого удаления для виртуальных машин Azure](soft-delete-virtual-machines.md) и [обратимого удаления для SQL Server в виртуальной машине Azure и обратимого удаления для SAP HANA в рабочих нагрузках виртуальных машин Azure](soft-delete-sql-saphana-in-azure-vm.md) доступны всем пользователям.
+Для этих служб доступна защита с обратимым удалением:
+
+- [Обратимое удаление для виртуальных машин Azure](soft-delete-virtual-machines.md)
+- [Обратимое удаление для SQL Server на виртуальной машине Azure и обратимое удаление для SAP HANA в рабочих нагрузках виртуальных машин Azure](soft-delete-sql-saphana-in-azure-vm.md)
 
 На этой блок-схеме показаны различные шаги и состояния элемента резервного копирования, когда включено обратимое удаление.
 
@@ -32,11 +34,11 @@ ms.locfileid: "82791397"
 
 Чтобы отключить обратимое удаление, выполните следующие действия.
 
-1. В портал Azure перейдите в хранилище, а затем выберите **Параметры** -> **Свойства**.
-2. На панели Свойства выберите **Параметры** -> безопасности**Обновить**.  
+1. В портал Azure перейдите в хранилище, а затем выберите **Параметры**  ->  **Свойства**.
+2. На панели Свойства выберите **Параметры безопасности**  ->  **Обновить**.  
 3. В области Параметры безопасности в разделе **обратимое удаление**выберите **Отключить**.
 
-![Отключить обратимое удаление](./media/backup-azure-security-feature-cloud/disable-soft-delete.png)
+![Отключение обратимого удаления](./media/backup-azure-security-feature-cloud/disable-soft-delete.png)
 
 ### <a name="disabling-soft-delete-using-azure-powershell"></a>Отключение обратимого удаления с помощью Azure PowerShell
 
@@ -137,7 +139,7 @@ AppVM1           DeleteBackupData     Completed            12/5/2019 12:44:15 PM
 2. Затем отключите функцию обратимого удаления с помощью REST API, выполнив описанные [здесь](use-restapi-update-vault-properties.md#update-soft-delete-state-using-rest-api)действия.
 3. Затем удалите резервные копии с помощью REST API, как описано [здесь](backup-azure-arm-userestapi-backupazurevms.md#stop-protection-and-delete-data).
 
-## <a name="frequently-asked-questions"></a>Вопросы и ответы
+## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
 ### <a name="do-i-need-to-enable-the-soft-delete-feature-on-every-vault"></a>Нужно ли включать функцию обратимого удаления в каждом хранилище?
 
@@ -175,6 +177,6 @@ AppVM1           DeleteBackupData     Completed            12/5/2019 12:44:15 PM
 
 Операции обратимого удаления можно выполнить с помощью PowerShell. В настоящее время CLI не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Общие сведения о функциях безопасности в Azure Backup](security-overview.md)
+- [Общие сведения о средствах безопасности в Azure Backup](security-overview.md)

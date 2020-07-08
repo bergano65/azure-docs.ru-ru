@@ -10,12 +10,11 @@ ms.technology: integration-services
 author: swinarko
 ms.author: sawinark
 ms.reviewer: maghan
-ms.openlocfilehash: 6f2983b375e3eeb73a0372e123d4d2763b3c65ec
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
-ms.translationtype: MT
+ms.openlocfilehash: 5dd8e483751010a6090e0ec415c40d381e978fd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82629394"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84118812"
 ---
 # <a name="access-data-stores-and-file-shares-with-windows-authentication-from-ssis-packages-in-azure"></a>Доступ к хранилищам данных и общим папкам из пакетов служб Integration Services в Azure с использованием проверки подлинности Windows
 
@@ -25,16 +24,16 @@ ms.locfileid: "82629394"
 
 | Метод подключения | Область действия | Этап настройки | Метод доступа в пакетах | Число наборов учетных данных и подключенных ресурсов | Тип подключенных ресурсов | 
 |---|---|---|---|---|---|
-| Настройка контекста выполнения на уровне действий | Для каждого выполняемого действия пакета служб Integration Services | Настройте свойство **проверки подлинности Windows** для настройки контекста выполнения или запуска как при выполнении пакетов служб Integration Services в виде действий "Выполнение пакета SSIS" в конвейерах ADF.<br/><br/> Дополнительные сведения см. в руководстве по [настройке действий "Выполнение пакета SSIS"](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity). | Доступ к ресурсам напрямую в пакетах через UNC-путь, например, при использовании файловых ресурсов или файлов `\\YourFileShareServerName\YourFolderName` Azure: или`\\YourAzureStorageAccountName.file.core.windows.net\YourFolderName` | Поддержка только одного набора учетных данных для всех подключенных ресурсов: | — общие файловые ресурсы в локальной среде и (или) на виртуальных машинах Azure;<br/><br/> — файлы Azure, как описано в [этой статье](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-windows). <br/><br/> – серверы SQL Server в локальной среде или на виртуальных машинах Azure с проверкой подлинности Windows;<br/><br/> – другие ресурсы с проверкой подлинности Windows. |
-| Настройка контекста выполнения на уровне каталога | На Azure-SSIS IR, но переопределяется при настройке контекста выполнения на уровне действия (см. выше). | Выполните хранимую процедуру SSISDB `catalog.set_execution_credential`, чтобы настроить контекст выполнения или запуска как.<br/><br/> Дополнительные сведения см. ниже в этой статье. | Доступ к ресурсам напрямую в пакетах через UNC-путь, например, при использовании файловых ресурсов или файлов `\\YourFileShareServerName\YourFolderName` Azure: или`\\YourAzureStorageAccountName.file.core.windows.net\YourFolderName` | Поддержка только одного набора учетных данных для всех подключенных ресурсов: | — общие файловые ресурсы в локальной среде и (или) на виртуальных машинах Azure;<br/><br/> — файлы Azure, как описано в [этой статье](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-windows). <br/><br/> – серверы SQL Server в локальной среде или на виртуальных машинах Azure с проверкой подлинности Windows;<br/><br/> – другие ресурсы с проверкой подлинности Windows. |
-| Сохранение учетных данных посредством команды `cmdkey` | На Azure-SSIS IR, но переопределяется при настройке контекста выполнения действия или уровня каталога (см. выше). | Выполните `cmdkey` команду в пользовательском скрипте установки (`main.cmd`) при подготовке Azure-SSIS IR, например, при использовании файловых ресурсов или файлов Azure: `cmdkey /add:YourFileShareServerName /user:YourDomainName\YourUsername /pass:YourPassword` или. `cmdkey /add:YourAzureStorageAccountName.file.core.windows.net /user:azure\YourAzureStorageAccountName /pass:YourAccessKey`<br/><br/> Дополнительные сведения см. в статье [Пользовательская установка для среды выполнения интеграции Azure–SSI](https://docs.microsoft.com/azure/data-factory/how-to-configure-azure-ssis-ir-custom-setup). | Доступ к ресурсам напрямую в пакетах через UNC-путь, например, при использовании файловых ресурсов или файлов `\\YourFileShareServerName\YourFolderName` Azure: или`\\YourAzureStorageAccountName.file.core.windows.net\YourFolderName` | Поддержка нескольких наборов учетных данных для разных подключенных ресурсов: | — общие файловые ресурсы в локальной среде и (или) на виртуальных машинах Azure;<br/><br/> — файлы Azure, как описано в [этой статье](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-windows). <br/><br/> – серверы SQL Server в локальной среде или на виртуальных машинах Azure с проверкой подлинности Windows;<br/><br/> – другие ресурсы с проверкой подлинности Windows. |
+| Настройка контекста выполнения на уровне действий | Для каждого выполняемого действия пакета служб Integration Services | Настройте свойство **проверки подлинности Windows** для настройки контекста выполнения или запуска как при выполнении пакетов служб Integration Services в виде действий "Выполнение пакета SSIS" в конвейерах ADF.<br/><br/> Дополнительные сведения см. в руководстве по [настройке действий "Выполнение пакета SSIS"](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity). | Доступ к ресурсам напрямую в пакетах через UNC-путь, например, при использовании файловых ресурсов или файлов Azure: `\\YourFileShareServerName\YourFolderName` или`\\YourAzureStorageAccountName.file.core.windows.net\YourFolderName` | Поддержка только одного набора учетных данных для всех подключенных ресурсов: | — общие файловые ресурсы в локальной среде и (или) на виртуальных машинах Azure;<br/><br/> — файлы Azure, как описано в [этой статье](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-windows). <br/><br/> – серверы SQL Server в локальной среде или на виртуальных машинах Azure с проверкой подлинности Windows;<br/><br/> – другие ресурсы с проверкой подлинности Windows. |
+| Настройка контекста выполнения на уровне каталога | На Azure-SSIS IR, но переопределяется при настройке контекста выполнения на уровне действия (см. выше). | Выполните хранимую процедуру SSISDB `catalog.set_execution_credential`, чтобы настроить контекст выполнения или запуска как.<br/><br/> Дополнительные сведения см. ниже в этой статье. | Доступ к ресурсам напрямую в пакетах через UNC-путь, например, при использовании файловых ресурсов или файлов Azure: `\\YourFileShareServerName\YourFolderName` или`\\YourAzureStorageAccountName.file.core.windows.net\YourFolderName` | Поддержка только одного набора учетных данных для всех подключенных ресурсов: | — общие файловые ресурсы в локальной среде и (или) на виртуальных машинах Azure;<br/><br/> — файлы Azure, как описано в [этой статье](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-windows). <br/><br/> – серверы SQL Server в локальной среде или на виртуальных машинах Azure с проверкой подлинности Windows;<br/><br/> – другие ресурсы с проверкой подлинности Windows. |
+| Сохранение учетных данных посредством команды `cmdkey` | На Azure-SSIS IR, но переопределяется при настройке контекста выполнения действия или уровня каталога (см. выше). | Выполните `cmdkey` команду в пользовательском скрипте установки ( `main.cmd` ) при подготовке Azure-SSIS IR, например, при использовании файловых ресурсов или файлов Azure: `cmdkey /add:YourFileShareServerName /user:YourDomainName\YourUsername /pass:YourPassword` или `cmdkey /add:YourAzureStorageAccountName.file.core.windows.net /user:azure\YourAzureStorageAccountName /pass:YourAccessKey` .<br/><br/> Дополнительные сведения см. в статье [Пользовательская установка для среды выполнения интеграции Azure–SSI](https://docs.microsoft.com/azure/data-factory/how-to-configure-azure-ssis-ir-custom-setup). | Доступ к ресурсам напрямую в пакетах через UNC-путь, например, при использовании файловых ресурсов или файлов Azure: `\\YourFileShareServerName\YourFolderName` или`\\YourAzureStorageAccountName.file.core.windows.net\YourFolderName` | Поддержка нескольких наборов учетных данных для разных подключенных ресурсов: | — общие файловые ресурсы в локальной среде и (или) на виртуальных машинах Azure;<br/><br/> — файлы Azure, как описано в [этой статье](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-windows). <br/><br/> – серверы SQL Server в локальной среде или на виртуальных машинах Azure с проверкой подлинности Windows;<br/><br/> – другие ресурсы с проверкой подлинности Windows. |
 | Подключение дисков во время выполнения пакета (без сохранения состояния) | Для каждого пакета | Выполните команду `net use` в задаче "Выполнение процесса", которая добавляется в начало потока управления в пакетах, например, `net use D: \\YourFileShareServerName\YourFolderName`. | Обращение к общим папкам через подключенные диски. | Поддержка нескольких дисков для разных файловых ресурсов: | — общие файловые ресурсы в локальной среде и (или) на виртуальных машинах Azure;<br/><br/> — файлы Azure, как описано в [этой статье](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-windows). |
 |||||||
 
 > [!WARNING]
 > Если вы не используете ни один из указанных выше методов для доступа к хранилищам данных с помощью проверки подлинности Windows, пакеты, зависящие от проверки подлинности Windows, не смогут получить доступ к ним и завершиться сбоем во время выполнения. 
 
-Далее в статье описано, как настроить каталог служб Integration Services (SSISDB), размещенный на сервере Базы данных SQL Azure или в Управляемом экземпляре, для запуска пакетов в среде Azure-SSIS IR, в которой используется проверка подлинности Windows для доступа к хранилищам данных. 
+В оставшейся части этой статьи описывается настройка каталога служб SSIS (SSISDB), размещенного в базе данных SQL или SQL Управляемый экземпляр, для запуска пакетов на Azure-SSIS IR, использующих проверку подлинности Windows для доступа к хранилищам данных. 
 
 ## <a name="you-can-only-use-one-set-of-credentials"></a>Можно использовать только один набор учетных данных
 
@@ -44,7 +43,7 @@ ms.locfileid: "82629394"
 
 Чтобы задать учетные данные домена, с помощью которых пакеты смогут подключаться к локальным хранилищам данных, используя проверку подлинности Windows, сделайте следующее:
 
-1. С помощью SQL Server Management Studio (SSMS) или другого средства подключитесь к серверу Базы данных SQL Azure или Управляемому экземпляру, где размещается SSISDB. Дополнительные сведения см. в статье [Подключение к каталогу SSIS (SSISDB) в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-connect-to-catalog-database).
+1. С помощью SQL Server Management Studio (SSMS) или другого средства подключитесь к базе данных SQL или Управляемый экземпляр SQL, где размещается SSISDB. Дополнительные сведения см. в статье [Подключение к каталогу SSIS (SSISDB) в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-connect-to-catalog-database).
 
 2. Откройте окно запроса для текущей базы данных SSISDB.
 
@@ -60,7 +59,7 @@ ms.locfileid: "82629394"
 
 Чтобы просмотреть активные учетные данные домена, выполните указанные ниже действия.
 
-1. С помощью SSMS или другого средства подключитесь к серверу Базы данных SQL Azure или Управляемому экземпляру, где размещается SSISDB. Дополнительные сведения см. в статье [Подключение к каталогу SSIS (SSISDB) в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-connect-to-catalog-database).
+1. С помощью SSMS или другого средства подключитесь к базе данных SQL или Управляемый экземпляр SQL, где размещается SSISDB. Дополнительные сведения см. в статье [Подключение к каталогу SSIS (SSISDB) в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-connect-to-catalog-database).
 
 2. Откройте окно запроса для текущей базы данных SSISDB.
 
@@ -75,7 +74,7 @@ ms.locfileid: "82629394"
 ### <a name="clear-domain-credentials"></a>Удаление учетных данных домена
 Чтобы удалить учетные данные, заданные согласно инструкциям в этой статье, выполните указанные ниже действия.
 
-1. С помощью SSMS или другого средства подключитесь к серверу Базы данных SQL Azure или Управляемому экземпляру, где размещается SSISDB. Дополнительные сведения см. в статье [Подключение к каталогу SSIS (SSISDB) в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-connect-to-catalog-database).
+1. С помощью SSMS или другого средства подключитесь к базе данных SQL или Управляемый экземпляр SQL, где размещается SSISDB. Дополнительные сведения см. в статье [Подключение к каталогу SSIS (SSISDB) в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-connect-to-catalog-database).
 
 2. Откройте окно запроса для текущей базы данных SSISDB.
 
@@ -140,7 +139,7 @@ ms.locfileid: "82629394"
 
 Для включения доступа к общей папке на виртуальной машине Azure из пакетов, выполняющихся в Azure, сделайте следующее:
 
-1. С помощью SSMS или другого средства подключитесь к серверу Базы данных SQL Azure или Управляемому экземпляру, где размещается SSISDB. Дополнительные сведения см. в статье [Подключение к каталогу SSIS (SSISDB) в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-connect-to-catalog-database).
+1. С помощью SSMS или другого средства подключитесь к базе данных SQL или Управляемый экземпляр SQL, где размещается SSISDB. Дополнительные сведения см. в статье [Подключение к каталогу SSIS (SSISDB) в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-connect-to-catalog-database).
 
 2. Откройте окно запроса для текущей базы данных SSISDB.
 
@@ -156,7 +155,7 @@ ms.locfileid: "82629394"
 
 Для включения доступа к общей папке в Файлах Azure из пакетов, выполняющихся в Azure, сделайте следующее:
 
-1. С помощью SSMS или другого средства подключитесь к серверу Базы данных SQL Azure или Управляемому экземпляру, где размещается SSISDB. Дополнительные сведения см. в статье [Подключение к каталогу SSIS (SSISDB) в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-connect-to-catalog-database).
+1. С помощью SSMS или другого средства подключитесь к базе данных SQL или Управляемый экземпляр SQL, где размещается SSISDB. Дополнительные сведения см. в статье [Подключение к каталогу SSIS (SSISDB) в Azure](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-connect-to-catalog-database).
 
 2. Откройте окно запроса для текущей базы данных SSISDB.
 

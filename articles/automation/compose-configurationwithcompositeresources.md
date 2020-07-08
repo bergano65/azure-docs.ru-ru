@@ -6,18 +6,17 @@ services: automation
 ms.subservice: dsc
 ms.date: 08/21/2018
 ms.topic: conceptual
-ms.openlocfilehash: e7a190792714e1dd1a54da7e674e63d4453c548e
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: ef8145f0b447f24265ff4576884b0977190b063e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83835076"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84020359"
 ---
 # <a name="compose-dsc-configurations"></a>Создание конфигураций DSC
 
 Если для управления ресурсом вам нужно более одной конфигурации требуемого состояния (DSC), лучше всего использовать [составные ресурсы](/powershell/scripting/dsc/resources/authoringresourcecomposite). Составной ресурс — это вложенная и параметризованная конфигурация, используемая как ресурс DSC в другой конфигурации. Использование составных ресурсов позволяет формировать сложные конфигурации, позволяя раздельно создавать и администрировать базовые составные ресурсы.
 
-Служба автоматизации Azure позволяет [импортировать и компилировать составные ресурсы](automation-dsc-compile.md). Завершив импорт составных ресурсов в учетную запись службы автоматизации, вы можете применить возможность State Configuration службы автоматизации Azure, открыв на страницу **State Configuration (DSC)** на портале Azure.
+Служба автоматизации Azure позволяет [импортировать и компилировать составные ресурсы](automation-dsc-compile.md). После импорта составных ресурсов в учетную запись службы автоматизации можно использовать конфигурацию состояния службы автоматизации Azure с помощью функции **настройки состояния (DSC)** в портал Azure.
 
 ## <a name="compose-a-configuration"></a>Создание конфигурации
 

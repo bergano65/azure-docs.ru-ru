@@ -12,12 +12,11 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 02/20/2020
-ms.openlocfilehash: 90a39b8fe3604a05f1d35a875ae4e34491b47d72
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 483f60138dcaa6252999b9d15e846fbd1c68e9a2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77648535"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84021523"
 ---
 # <a name="redeploy-ssis-packages-to-azure-sql-database-with-azure-database-migration-service"></a>Повторное развертывание пакетов служб SSIS в базе данных SQL Azure с помощью Azure Database Migration Service
 
@@ -26,7 +25,7 @@ ms.locfileid: "77648535"
 Если используется более ранняя версия служб SSIS, чем 2012, то перед повторным развертыванием пакетов или проектов SSIS в модель развертывания проекта сначала необходимо преобразовать их с помощью мастера преобразования проектов Integration Services, который также можно запустить из SSMS. Дополнительные сведения см. в статье [Преобразование проектов в модель развертывания проекта](https://docs.microsoft.com/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages?view=sql-server-2017#convert).
 
 > [!NOTE]
-> Azure Database Migration Service (DMS) сейчас не поддерживает миграцию исходного SSISDB на сервер базы данных SQL Azure, но вы можете повторно развернуть проекты или пакеты служб SSIS, используя следующий процесс.
+> Azure Database Migration Service (DMS) сейчас не поддерживает миграцию исходного SSISDB в базу данных SQL Azure, но вы можете повторно развернуть проекты или пакеты служб SSIS, используя следующий процесс.
 
 Вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
@@ -39,20 +38,20 @@ ms.locfileid: "77648535"
 Для выполнения этих действий вам потребуется следующее:
 
 * SSMS 17.2 или более поздней версии.
-* Экземпляр целевого сервера базы данных для размещения SSISDB. Если у вас ее еще нет, создайте сервер базы данных SQL Azure (без базы данных), используя портал Azure, перейдя к [форме](https://ms.portal.azure.com/#create/Microsoft.SQLServer)SQL Server (только логический сервер).
-* Службы SSIS должны быть подготовлены в фабрике данных Azure (ADF), которая содержит Azure-SSIS Integration Runtime (IR) с целевой базой данных SSISDB, размещенной на экземпляре сервера Azure SQL Server (как описано в статье [подготовка Azure-SSIS Integration Runtime в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/tutorial-deploy-ssis-packages-azure)).
+* Экземпляр целевого сервера базы данных для размещения SSISDB. Если у вас ее еще нет, создайте [логический сервер SQL](../azure-sql/database/logical-servers.md) Server (без базы данных), используя портал Azure, перейдя к [форме](https://ms.portal.azure.com/#create/Microsoft.SQLServer)SQL Server (только логический сервер).
+* Службы SSIS должны быть подготовлены в службе "Фабрика данных Azure" (ADF), которая содержит Azure-SSIS Integration Runtime (IR) с целевой базой данных SSISDB, размещенной на базе SQL Server (как описано в статье [подготовка Azure-SSIS Integration Runtime в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/tutorial-deploy-ssis-packages-azure)).
 
 ## <a name="assess-source-ssis-projectspackages"></a>Оценка проектов и пакетов исходной SSIS
 
-Хотя оценка исходного SSISDB еще не интегрирована в базу данных Помощник по миграции (DMA) или Azure Database Migration Service (DMS), проекты и пакеты служб SSIS будут оцениваться или проверяться при повторном развертывании в целевом SSISDB, размещенном на сервере базы данных SQL Azure.
+Хотя оценка исходного SSISDB еще не интегрирована в базу данных Помощник по миграции (DMA) или Azure Database Migration Service (DMS), проекты и пакеты служб SSIS будут оцениваться или проверяться при повторном развертывании в целевой SSISDB, размещенной в базе данных SQL Azure.
 
 ## <a name="migrate-ssis-projectspackages"></a>Управление проектами и пакетами SSIS
 
-Чтобы перенести проекты или пакеты служб SSIS на сервер базы данных SQL Azure, выполните следующие действия.
+Чтобы перенести проекты или пакеты служб SSIS в базу данных SQL Azure, выполните следующие действия.
 
 1. Откройте среду SSMS и выберите **Параметры**, чтобы открыть диалоговое окно **Подключиться к серверу**.
 
-2. На вкладке **имя входа** укажите сведения, необходимые для подключения к серверу базы данных SQL Azure, на котором будет размещена целевая SSISDB.
+2. На вкладке **имя входа** укажите сведения, необходимые для подключения к серверу, на котором будет размещена целевая база данных SSISDB.
 
     ![Вкладка "Вход в систему" SSIS](media/how-to-migrate-ssis-packages/dms-ssis-login-tab.png)
 
@@ -81,7 +80,7 @@ ms.locfileid: "77648535"
 8. Выберите **Далее**.
 9. На странице **Выбор места назначения** укажите назначение проекта.
 
-    a. В текстовом поле имя сервера введите полное имя сервера базы данных SQL Azure (<server_name>. database.windows.net).
+    а. В текстовом поле имя сервера введите полное имя сервера (<server_name>. database.windows.net).
 
     b. Укажите сведения для проверки подлинности и выберите **Подключиться**.
 
@@ -106,7 +105,7 @@ ms.locfileid: "77648535"
 13. Выберите **Развернуть**, чтобы запустить процесс развертывания.
 
 14. После завершения развертывания можно просмотреть страницу "Результаты", на которой отображается информация об успешном или неудачном результате каждого действия развертывания.
-    a. Если произошел сбой любого действия, в столбце **Результат** выберите **Сбой**, чтобы отобразить описание ошибки.
+    а. Если произошел сбой любого действия, в столбце **Результат** выберите **Сбой**, чтобы отобразить описание ошибки.
     b. При необходимости выберите **Сохранить отчет**, чтобы сохранить результаты в XML-файл.
 
 15. Выберите **Закрыть**, чтобы выйти из мастера развертывания Integration Services.

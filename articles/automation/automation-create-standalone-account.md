@@ -5,12 +5,11 @@ services: automation
 ms.subservice: process-automation
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 0734ac0843eec164ad2207020da9dd1a7e9fa429
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 3739f8691a144f183e72af19233f776a24066cbc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83837099"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84118796"
 ---
 # <a name="create-a-standalone-azure-automation-account"></a>Создание автономной учетной записи службы автоматизации Azure
 
@@ -31,7 +30,7 @@ ms.locfileid: "83837099"
 Чтобы создать или обновить учетную запись службы автоматизации и выполнить задачи, приведенные в этой статье, вам потребуются указанные ниже привилегии и разрешения.
 
 * Для создания учетной записи службы автоматизации необходимо добавить учетную запись пользователя Azure AD к роли с разрешениями, аналогичными разрешениям для роли владельца ресурсов `Microsoft.Automation`. Дополнительные сведения см. в статье [Управление доступом на основе ролей в службе автоматизации Azure](automation-role-based-access-control.md).
-* На портале Azure выберите **Azure Active Directory** > **Управление** > **Параметры пользователя**. Если для параметра **Регистрация приложений** установлено значение **Да**, то пользователи без прав администратора могут [зарегистрировать приложения Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#check-azure-subscription-permissions) в клиенте Azure AD. Если для параметра **Регистрация приложений** задано значение **Нет**, пользователю потребуются права глобального администратора в Azure AD, чтобы выполнить это действие.
+* На портале Azure выберите **Azure Active Directory** > **Управление** > **Параметры пользователя**. Если для параметра **Регистрация приложений** установлено значение **Да**, то пользователи без прав администратора могут [зарегистрировать приложения Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#check-azure-subscription-permissions) в клиенте Azure AD. Если параметр **Регистрация приложений** имеет значение **нет**, пользователь, выполняющий это действие, должен иметь по крайней мере роль РАЗРАБОТЧИКА приложения в Azure AD.
 
 Если пользователь, которому назначают роль глобального администратора или соадминистратора подписки, не является участником экземпляра подписки Active Directory, он будет добавлен в Active Directory в качестве гостя. В этом случае на панели добавления учетной записи службы автоматизации появится сообщение: `You do not have permissions to create.`
 

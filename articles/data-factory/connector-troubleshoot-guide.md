@@ -9,12 +9,11 @@ ms.date: 01/09/2020
 ms.author: jingwang
 ms.reviewer: craigg
 ms.custom: has-adal-ref
-ms.openlocfilehash: 7e818a80f9df97ce4e5f5b8f1ef9385d2e6b0ecc
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: a1b2f74af02db1560dbcdd0bf0c72976dc6dcea8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83827766"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84022339"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Устранение неполадок с соединителями Фабрики данных Azure
 
@@ -203,7 +202,7 @@ ms.locfileid: "83827766"
 
 - **Причина.** Если сообщение об ошибке содержит строку "Клиенту с IP-адресом "..." запрещен доступ к серверу" и вы пытаетесь подключиться к базе данных SQL Azure, обычно причиной является проблема с брандмауэром базы данных SQL Azure.
 
-- **Рекомендация**.  В конфигурации брандмауэра Azure SQL Server включите параметр "Разрешить доступ к серверу службам и ресурсам Azure". Справочный документ: https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure.
+- **Рекомендация**: в логической конфигурации брандмауэра SQL Server включите параметр "разрешить службам Azure и ресурсам доступ к этому серверу". Справочный документ: https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure.
 
 
 ### <a name="error-code--sqloperationfailed"></a>Код ошибки:  SqlOperationFailed

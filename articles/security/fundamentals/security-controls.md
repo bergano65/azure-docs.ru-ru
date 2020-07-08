@@ -10,12 +10,11 @@ ms.subservice: security-fundamentals
 ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 9c3657a5b55303429d7825bd317c6f9eeb8c06c5
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
-ms.translationtype: MT
+ms.openlocfilehash: 2222c1d5e434e1c51cb66c2c5943badd58f95af9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82583265"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84013033"
 ---
 # <a name="index-of-built-in-security-controls-articles-for-azure-services"></a>Индекс статьи "встроенные элементы управления безопасностью" для служб Azure
 
@@ -30,11 +29,11 @@ ms.locfileid: "82583265"
 - [Центры событий Azure](../../event-hubs/event-hubs-security-controls.md)
 - [Azure ExpressRoute](../../expressroute/expressroute-security-controls.md)
 - [Azure Load Balancer](../../load-balancer/load-balancer-security-controls.md)
-- [Обмен сообщениями служебной шины Azure](../../service-bus-messaging/service-bus-messaging-security-controls.md)
+- [Службы сообщений Служебной шины Azure](../../service-bus-messaging/service-bus-messaging-security-controls.md)
 - [Ретрансляция служебной шины Azure](../../service-bus-relay/service-bus-relay-security-controls.md)
 - [Azure Service Fabric](../../service-fabric/service-fabric-security-controls.md)
 - [Azure Spring Cloud](../../spring-cloud/spring-cloud-concept-security-controls.md)
-- [База данных SQL Azure](../../sql-database/sql-database-security-controls.md)
+- [База данных SQL Azure](../../azure-sql/database/security-controls.md)
 - [Масштабируемые наборы виртуальных машин Azure](../../virtual-machine-scale-sets/virtual-machine-scale-sets-security-controls.md)
 - [Виртуальные машины Linux](../../virtual-machines/linux/virtual-machines-linux-security-controls.md)
 - [Виртуальные машины Windows](../../virtual-machines/windows/virtual-machines-windows-security-controls.md)

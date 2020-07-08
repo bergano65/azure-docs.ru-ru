@@ -8,12 +8,11 @@ ms.topic: conceptual
 description: Узнайте, как использовать Azure Dev Spaces и службы Azure Kubernetes Services для обеспечения непрерывности бизнес-процессов и подготовки к аварийному восстановлению
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
 manager: gwallace
-ms.openlocfilehash: 37c0048bfa7e72b25eb56603fc027045eba25cea
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 993866a35f530616c235728cbe59e52e083aa968
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78295833"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "83996930"
 ---
 # <a name="business-continuity-and-disaster-recovery-in-azure-dev-spaces"></a>Непрерывность бизнес-процессов и аварийное восстановление в Azure Dev Spaces
 
@@ -26,14 +25,6 @@ Azure Dev Spaces — это функция Службы Azure Kubernetes (AKS).
 Если включить Dev Spaces в кластерах AKS в разных регионах, вы сможете и дальше использовать Dev Spaces сразу после сбоя в каком-либо регионе Azure.
 
 Общие сведения о развертывании Службы Azure Kubernetes в нескольких регионах см. в разделе [Планирование развертывания в нескольких регионах](https://docs.microsoft.com/azure/aks/operator-best-practices-multi-region#plan-for-multiregion-deployment).
-
-### <a name="enable-dev-spaces-via-the-azure-portal"></a>Включение Dev Spaces с помощью портала Azure
-
-Выберите пункт меню **пространства разработки** в параметрах каждого кластера в портал Azure. Затем выберите параметр, чтобы включить пространства разработки и сохранить.
-
-![Включение Dev Spaces с помощью портала Azure](../media/common/enable-dev-spaces.jpg)
-
-Повторите эту операцию для каждого кластера.
 
 ### <a name="enable-dev-spaces-via-the-azure-cli"></a>Включение Dev Spaces с помощью интерфейса командной строки Azure
 

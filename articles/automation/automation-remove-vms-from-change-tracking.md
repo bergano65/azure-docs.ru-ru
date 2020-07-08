@@ -5,16 +5,17 @@ services: automation
 ms.topic: conceptual
 ms.date: 05/10/2018
 ms.custom: mvc
-ms.openlocfilehash: 22cb49c414e21e5c47330f2c67fc2cf30e3364b2
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 8e9b80c60c098e4daf247db07fa48baa322aa7f0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836674"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84169460"
 ---
 # <a name="remove-vms-from-change-tracking-and-inventory"></a>Исключение виртуальных машин из Отслеживания изменений и инвентаризации
 
 После завершения развертывания изменений на виртуальных машинах в вашей среде их можно удалить из компонента [Отслеживание изменений и инвентаризация](change-tracking.md).
+
+## <a name="to-remove-your-vms"></a>Удаление виртуальных машин
 
 1. В учетной записи службы автоматизации выберите **Отслеживание изменений** или **Инвентаризация** в разделе **Управление конфигурацией**.
 
@@ -24,7 +25,7 @@ ms.locfileid: "83836674"
     az vm show -g MyResourceGroup -n MyVm -d
     ```
 
-3. В рабочей области Log Analytics в разделе **Общие** перейдите к сохраненным поисковым запросам.
+3. В рабочей области Log Analytics в разделе **Общие**обратитесь к сохраненным поисковым запросам конфигурации области `MicrosoftDefaultScopeConfig-ChangeTracking` .
 
 4. Для сохраненного поискового запроса `MicrosoftDefaultComputerGroup` нажмите кнопку с многоточием справа и выберите **Изменить**. 
 

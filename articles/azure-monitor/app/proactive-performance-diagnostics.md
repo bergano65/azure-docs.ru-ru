@@ -4,18 +4,17 @@ description: Служба Application Insights выполняет интелле
 ms.topic: conceptual
 ms.date: 05/04/2017
 ms.reviewer: antonfr
-ms.openlocfilehash: ad4341993d92052123eacd3d37500905a0b25179
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
-ms.translationtype: HT
+ms.openlocfilehash: 22c1eeb00372b9b3c67d6a87f2300225a071438e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83697175"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84016854"
 ---
 # <a name="smart-detection---performance-anomalies"></a>Интеллектуальное обнаружение. Аномалии производительности
 
 [Application Insights](../../azure-monitor/app/app-insights-overview.md) автоматически анализирует производительность веб-приложения и предупреждает о потенциальных проблемах. Возможно, вы читаете это потому, что получили одно из уведомлений интеллектуального обнаружения.
 
-Эта функция не требует специальной настройки, нужно лишь настроить приложение для использования Application Insights (с помощью [ASP.NET](../../azure-monitor/app/asp-net.md), [Java](../../azure-monitor/app/java-get-started.md) или [Node.js](../../azure-monitor/app/nodejs.md) и в [коде веб-страницы](../../azure-monitor/app/javascript.md)). Она работает, когда приложение создает достаточно данных телеметрии.
+Эта функция не требует специальной настройки, Кроме настройки приложения для Application Insights [поддерживаемого языка](../../azure-monitor/app/platforms.md). Она работает, когда приложение создает достаточно данных телеметрии.
 
 ## <a name="when-would-i-get-a-smart-detection-notification"></a>Когда я буду получать уведомления интеллектуального обнаружения?
 
