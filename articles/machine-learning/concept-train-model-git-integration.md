@@ -10,10 +10,9 @@ ms.author: jordane
 author: jpe316
 ms.date: 03/05/2020
 ms.openlocfilehash: 7cc2e346a35cd1cdf1278b527dc451a903d60f89
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78402823"
 ---
 # <a name="git-integration-for-azure-machine-learning"></a>Интеграция с Git для Машинное обучение Azure
@@ -41,7 +40,7 @@ ms.locfileid: "78402823"
 
 При отправке обучающего запуска из пакета SDK для Python или Машинное обучение CLI файлы, необходимые для обучения модели, отправляются в рабочую область. Если `git` команда доступна в среде разработки, процесс отправки использует его для проверки того, хранятся ли файлы в репозитории Git. Если да, то сведения из репозитория Git также передаются в ходе обучающего запуска. Эти сведения хранятся в следующих свойствах для обучающего запуска:
 
-| Свойство | Команда git, используемая для получения значения | Описание |
+| Свойство. | Команда git, используемая для получения значения | Описание: |
 | ----- | ----- | ----- |
 | `azureml.git.repository_uri` | `git ls-remote --get-url` | Универсальный код ресурса (URI), из которого был клонирован репозиторий. |
 | `mlflow.source.git.repoURL` | `git ls-remote --get-url` | Универсальный код ресурса (URI), из которого был клонирован репозиторий. |
@@ -49,7 +48,7 @@ ms.locfileid: "78402823"
 | `mlflow.source.git.branch` | `git symbolic-ref --short HEAD` | Активная ветвь при отправке выполнения. |
 | `azureml.git.commit` | `git rev-parse HEAD` | Хэш фиксации кода, отправленного для выполнения. |
 | `mlflow.source.git.commit` | `git rev-parse HEAD` | Хэш фиксации кода, отправленного для выполнения. |
-| `azureml.git.dirty` | `git status --porcelain .` | `True`, если ветвь или фиксация являются грязными; в противном случае — `false`. |
+| `azureml.git.dirty` | `git status --porcelain .` | `True`, если ветвь или фиксация являются грязными; в противном случае — `false` . |
 
 Эти сведения отправляются для запусков, использующих оценщик, конвейер машинного обучения или запуск скрипта.
 
@@ -62,7 +61,7 @@ ms.locfileid: "78402823"
 > git --version
 > ```
 >
-> Если этот параметр установлен и в пути, вы получаете ответ, аналогичный `git version 2.4.1`. Дополнительные сведения об установке Git в среде разработки см. на [веб-сайте Git](https://git-scm.com/).
+> Если этот параметр установлен и в пути, вы получаете ответ, аналогичный `git version 2.4.1` . Дополнительные сведения об установке Git в среде разработки см. на [веб-сайте Git](https://git-scm.com/).
 
 ## <a name="view-the-logged-information"></a>Просмотр записанных данных
 
@@ -73,7 +72,7 @@ ms.locfileid: "78402823"
 1. В [портал Azure](https://portal.azure.com)выберите свою рабочую область.
 1. Выберите __эксперименты__и выберите один из экспериментов.
 1. Выберите один из запусков из столбца __номер запуска__ .
-1. Выберите __журналы__, а затем разверните __журналы__ и записи __azureml__ . Выберите ссылку, которая начинается с __ ### \_Azure__.
+1. Выберите __журналы__, а затем разверните __журналы__ и записи __azureml__ . Выберите ссылку, которая начинается с __ ### \_ Azure__.
 
     ![Запись # # #_azure на портале](./media/concept-train-model-git-integration/azure-machine-learning-logs.png)
 
@@ -98,7 +97,7 @@ ms.locfileid: "78402823"
 
 ### <a name="python-sdk"></a>Пакет SDK для Python
 
-После отправки обучающего запуска возвращается объект [запуска](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py) . `properties` Атрибут этого объекта содержит записанные сведения о git. Например, следующий код получает хэш фиксации:
+После отправки обучающего запуска возвращается объект [запуска](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py) . `properties`Атрибут этого объекта содержит записанные сведения о git. Например, следующий код получает хэш фиксации:
 
 ```python
 run.properties['azureml.git.commit']
@@ -106,7 +105,7 @@ run.properties['azureml.git.commit']
 
 ### <a name="cli"></a>CLI
 
-Команду `az ml run` CLI можно использовать для получения свойств из запуска. Например, следующая команда возвращает свойства для последнего запуска в эксперименте с именем `train-on-amlcompute`:
+`az ml run`Команду CLI можно использовать для получения свойств из запуска. Например, следующая команда возвращает свойства для последнего запуска в эксперименте с именем `train-on-amlcompute` :
 
 ```azurecli-interactive
 az ml run list -e train-on-amlcompute --last 1 -w myworkspace -g myresourcegroup --query '[].properties'
@@ -116,4 +115,4 @@ az ml run list -e train-on-amlcompute --last 1 -w myworkspace -g myresourcegroup
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Настройка и использование целевых объектов вычислений для обучения модели](how-to-set-up-training-targets.md)
+* [Настройка и использование целевых объектов вычислений для обучения моделей](how-to-set-up-training-targets.md)

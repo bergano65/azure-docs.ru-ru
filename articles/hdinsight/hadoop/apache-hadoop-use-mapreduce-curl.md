@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/13/2020
 ms.openlocfilehash: abc3cc8c526e37e18f1e67b109a9a8e15ff8c989
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78302718"
 ---
 # <a name="run-mapreduce-jobs-with-apache-hadoop-on-hdinsight-using-rest"></a>Запуск заданий MapReduce в среде Apache Hadoop, размещенной в HDInsight, с помощью REST
@@ -22,7 +21,7 @@ ms.locfileid: "78302718"
 > [!NOTE]  
 > Если вы уже знакомы с использованием серверов Hadoop на платформе Linux, но не знакомы с HDInsight, ознакомьтесь с документом [Сведения об использовании HDInsight в Linux](../hdinsight-hadoop-linux-information.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер Apache Hadoop в HDInsight. См. раздел [Создание кластеров Apache Hadoop с помощью портал Azure](../hdinsight-hadoop-create-linux-clusters-portal.md).
 
@@ -87,7 +86,7 @@ ms.locfileid: "78302718"
 
        job_1415651640909_0026
 
-1. Чтобы проверить состояние задания, используйте следующую команду. Замените значение `JOBID` на **фактическое** значение, возвращенное на предыдущем шаге. При необходимости измените расположение **JQ** .
+1. Чтобы проверить состояние задания, используйте следующую команду. Замените значение на `JOBID` **фактическое** значение, возвращенное на предыдущем шаге. При необходимости измените расположение **JQ** .
 
     ```cmd
     set JOBID=job_1415651640909_0026

@@ -12,10 +12,9 @@ ms.topic: article
 ms.date: 03/04/2020
 ms.author: juliako
 ms.openlocfilehash: 2972c60aa5874c21a6f7bce21020ad58b5f3b556
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78304567"
 ---
 # <a name="create-a-streaming-locator-and-build-urls"></a>Создание указателя потоковой передачи и формирование URL-адресов
@@ -24,7 +23,7 @@ ms.locfileid: "78304567"
 
 В этой статье показано, как создать указатель потоковой передачи и создать URL-адрес потоковой передачи с помощью пакетов SDK для Java и .NET.
 
-## <a name="prerequisite"></a>Предварительные требования 
+## <a name="prerequisite"></a>Предварительное требование 
 
 Предварительный просмотр [динамической упаковки](dynamic-packaging-overview.md)
 

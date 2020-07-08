@@ -14,10 +14,9 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 8254d121c62a20de0a1593920b7793195f8eb50e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78926712"
 ---
 # <a name="import-the-postman-environment"></a>Импорт среды Postman  
@@ -25,7 +24,7 @@ ms.locfileid: "78926712"
 Эта статья содержит определение переменных среды **Postman**, которые используются в [коллекции Postman](postman-collection.md), содержащий сгруппированные HTTP-запросы для вызова REST API служб мультимедиа. Файлы среды и коллекции используются в учебнике[Configure Postman for Media Services REST API calls](media-rest-apis-with-postman.md) (Настройка Postman для вызовов REST API служб мультимедиа).
 
 > [!NOTE]
-> `AzureADSTSEndpoint `  = Значение `https://login.microsoftonline.com/{{TenantId}}/oauth2/token`. Чтобы получить идентификатор клиента, можно навести указатель мыши на имя пользователя на портале (в правом верхнем углу) и поместить его в каталог: Microsoft ({{TENANTID}}).
+> Значение `AzureADSTSEndpoint `  =  `https://login.microsoftonline.com/{{TenantId}}/oauth2/token` . Чтобы получить идентификатор клиента, можно навести указатель мыши на имя пользователя на портале (в правом верхнем углу) и поместить его в каталог: Microsoft ({{TENANTID}}).
 
 ```
 {

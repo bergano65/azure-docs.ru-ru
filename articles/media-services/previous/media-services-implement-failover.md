@@ -14,10 +14,9 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: ae1371a8f025fd5e5722d483323fbe937538eb15
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78939225"
 ---
 # <a name="implement-failover-streaming-with-media-services-v2"></a>Реализация потоковой передачи отработки отказа с помощью служб мультимедиа v2
@@ -62,8 +61,8 @@ ms.locfileid: "78939225"
 В этом разделе вы создадите и настроите проект консольного приложения на C#.
 
 1. Чтобы создать новое решение, содержащее проект консольного приложения на C#, используйте Visual Studio. Введите в качестве имени **HandleRedundancyForOnDemandStreaming** и нажмите кнопку **ОК**.
-2. Создайте папку **SupportFiles** на том же уровне, где находится файл проекта **HandleRedundancyForOnDemandStreaming.csproj**. В папке **SupportFiles** создайте папки **OutputFiles** и **MP4Files**. Скопируйте MP4-файл в папку **MP4Files**. (В этом примере используется файл **Ignite. MP4** .) 
-3. Используйте **NuGet** для добавления ссылок на библиотеки DLL, связанные со службами мультимедиа. В **главном меню Visual Studio**выберите **Сервис** > **Диспетчер** > пакетов NuGet**консоль диспетчера пакетов**. В окне консоли введите **Install-Package windowsazure.mediaservices** и нажмите клавишу ВВОД.
+2. Создайте папку **SupportFiles** на том же уровне, где находится файл проекта **HandleRedundancyForOnDemandStreaming.csproj**. В папке **SupportFiles** создайте папки **OutputFiles** и **MP4Files**. Скопируйте MP4-файл в папку **MP4Files**. (В этом примере используется файл **ignite.mp4** .) 
+3. Используйте **NuGet** для добавления ссылок на библиотеки DLL, связанные со службами мультимедиа. В **главном меню Visual Studio**выберите **Сервис**  >  **Диспетчер пакетов NuGet**  >  **консоль диспетчера пакетов**. В окне консоли введите **Install-Package windowsazure.mediaservices** и нажмите клавишу ВВОД.
 4. Добавьте другие ссылки, необходимые для этого проекта: System. Runtime. Serialization и System. Web.
 5. Замените операторы **using**, добавленные в файл **Programs.cs** по умолчанию, на следующие:
 
@@ -763,6 +762,6 @@ using System.Runtime.Serialization.Json;
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
