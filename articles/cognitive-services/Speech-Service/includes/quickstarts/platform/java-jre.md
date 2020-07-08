@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 10/11/2019
 ms.author: erhopf
-ms.openlocfilehash: 94946b4b6d0f0fc9c94cac7aca1e971b3f6262f9
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 95bf939feaad39d261e03938a3c7dd12a76cdd99
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83673226"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85805644"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для 64-разрядной версии среды JRE Java 8. Если вам нужно только имя пакета, чтобы приступить к работе самостоятельно, учитывайте, что пакет SDK для Java недоступен в центральном репозитории Maven. Независимо от того, что вы используете: Gradle или файл зависимостей `pom.xml`, нужно добавить пользовательский репозиторий с указанием на `https://csspeechstorage.blob.core.windows.net/maven/` (имя пакета см. ниже).
 
@@ -40,24 +40,24 @@ ms.locfileid: "83673226"
 
   - Чтобы установить необходимые пакеты в Ubuntu, выполните следующие команды:
 
-        ```sh
-        sudo apt-get update
-        sudo apt-get install build-essential libssl1.0.0 libasound2
-        ```
+    ```sh
+    sudo apt-get update
+    sudo apt-get install build-essential libssl1.0.0 libasound2
+    ```
 
   - Чтобы установить необходимые пакеты в Debian 9, выполните следующие команды:
 
-        ```sh
-        sudo apt-get update
-        sudo apt-get install build-essential libssl1.0.2 libasound2
-        ```
+    ```sh
+    sudo apt-get update
+    sudo apt-get install build-essential libssl1.0.2 libasound2
+    ```
 
   - Чтобы установить необходимые пакеты в RHEL/CentOS, выполните следующие команды:
 
-        ```sh
-        sudo yum update
-        sudo yum install alsa-lib java-1.8.0-openjdk-devel openssl
-        ```
+    ```sh
+    sudo yum update
+    sudo yum install alsa-lib java-1.8.0-openjdk-devel openssl
+    ```
 
 > [!NOTE]
 > - Если вы используете RHEL/CentOS 7, выполните инструкции по [настройке пакета SDK службы "Речь" в RHEL/CentOS 7](~/articles/cognitive-services/speech-service/how-to-configure-rhel-centos-7.md).
