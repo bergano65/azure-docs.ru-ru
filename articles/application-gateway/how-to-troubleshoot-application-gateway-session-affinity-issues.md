@@ -5,15 +5,15 @@ description: В этой статье содержатся сведения об
 services: application-gateway
 author: abshamsft
 ms.service: application-gateway
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 11/14/2019
 ms.author: absha
-ms.openlocfilehash: f5f5c16f3d6aa1d7115e99cbae0dbd6cd926b25a
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.openlocfilehash: 5acf4ac1ec75d5cec057e4b66e3c6cbd8a463271
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82202542"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84808019"
 ---
 # <a name="troubleshoot-azure-application-gateway-session-affinity-issues"></a>Устранение проблем с сходством сеансов шлюза приложений Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "82202542"
 
 ### <a name="the-application-cannot-handle-cookie-based-affinity"></a>Приложение не может управлять сходством на основе файлов cookie
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Шлюз приложений может выполнять сходство на основе сеанса только с помощью файла cookie.
 
@@ -75,7 +75,7 @@ ms.locfileid: "82202542"
 
 #### <a name="symptom"></a>Симптом
 
-Если вы включили параметр сходства на основе файлов cookie, при доступе к шлюзу приложений с помощью URL-адреса короткого имени в Internet `http://website` Explorer, например:, запрос по-прежнему перемещается между внутренними серверами.
+Если вы включили параметр сходства на основе файлов cookie, при доступе к шлюзу приложений с помощью URL-адреса короткого имени в Internet Explorer, например: `http://website` , запрос по-прежнему перемещается между внутренними серверами.
 
 Чтобы найти эту ошибку, следуйте инструкциям:
 
@@ -91,7 +91,7 @@ ms.locfileid: "82202542"
 
 Приложение по-своему пытается задать файл cookie для каждого запроса, пока он не получит ответ.
 
-#### <a name="cause"></a>Причина
+#### <a name="cause"></a>Причина:
 
 Эта проблема возникает из-за того, что Internet Explorer и другие браузеры могут не хранить или использовать файл cookie с кратким именем.
 
@@ -161,7 +161,7 @@ ms.locfileid: "82202542"
 
 Используйте веб-отладчик по своему усмотрению. В этом примере мы будем использовать Fiddler для сбора и анализа трафика HTTP или HTTPS, следуя инструкциям:
 
-1. Загрузите средство Fiddler по адресу <https://www.telerik.com/download/fiddler>.
+1. Загрузите средство Fiddler по адресу <https://www.telerik.com/download/fiddler> .
 
     > [!NOTE]
     > Выберите Fiddler4, если на компьютере для записи установлен .NET 4. В противном случае выберите Fiddler2.
@@ -174,7 +174,7 @@ ms.locfileid: "82202542"
 
     ![Устранение неполадок с сходством сеансов-проблемы — 13](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-13.png)
 
-4. Скорее всего, вы захотите расшифровать трафик HTTPS, а также включить расшифровку HTTPS, выбрав **инструменты** > **Fiddler параметры**и установив флажок " **расшифровать HTTPS трафик**".
+4. Скорее всего, вы захотите расшифровать трафик HTTPS, а также включить расшифровку HTTPS, выбрав **инструменты**  >  **Fiddler параметры**и установив флажок " **расшифровать HTTPS трафик**".
 
     ![Устранение неполадок — проблемы с сходством-сеансы — 14](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-14.png)
 
@@ -182,7 +182,7 @@ ms.locfileid: "82202542"
 
     ![Устранение неполадок — проблемы с сходством-сеансы — 15](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-15.png)
 
-6. Когда вы воссоздаете ошибку, сохраните файл для проверки, выбрав **файл** > **сохранить** > **все сеансы..**. 
+6. Когда вы воссоздаете ошибку, сохраните файл для проверки, выбрав **файл**  >  **сохранить**  >  **все сеансы..**. 
 
     ![Устранение неполадок-сеанс-сходств-проблемы — 16](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-16.png)
 
@@ -206,6 +206,6 @@ ms.locfileid: "82202542"
 
  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если описанные выше шаги не устранят проблему, отправьте [запрос в службу поддержки](https://azure.microsoft.com/support/options/).

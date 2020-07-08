@@ -4,15 +4,15 @@ description: В этой статье содержатся сведения о �
 services: application-gateway
 author: caya
 ms.service: application-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: 5d0543a3a43d53e462a6406312faddf37d2653c6
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: 8c8b8b0090877db7abc8fae0e44f928e8b10dcf5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "73795592"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84808003"
 ---
 # <a name="add-health-probes-to-your-service"></a>Добавление проб работоспособности в службу
 По умолчанию входной контроллер выполняет инициализацию HTTP GET для предоставляемых модулей Pod.
@@ -47,15 +47,15 @@ spec:
 
 Справочник по API Kubernetes:
 * [Зонды контейнеров](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes)
-* [Действие HttpGet](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.14/#httpgetaction-v1-core)
+* [Действие HttpGet](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#httpgetaction-v1-core)
 
 > [!NOTE]
-> * `readinessProbe`и `livenessProbe` поддерживаются при настройке с `httpGet`помощью.
+> * `readinessProbe`и `livenessProbe` поддерживаются при настройке с помощью `httpGet` .
 > * Проверка на портах, отличных от показанных в модуле Pod, сейчас не поддерживается.
-> * `HttpHeaders`, `InitialDelaySeconds`, `SuccessThreshold` не поддерживаются.
+> * `HttpHeaders`, `InitialDelaySeconds` , `SuccessThreshold` не поддерживаются.
 
 ##  <a name="without-readinessprobe-or-livenessprobe"></a>Без `readinessProbe` или`livenessProbe`
-Если указанные `Path` выше проверки не предоставлены, то контроллер входящего трафика предполагала, что служба доступна в указанном для `backend-path-prefix` аннотации или `path` указании в `ingress` определении службы.
+Если указанные выше проверки не предоставлены, то контроллер входящего трафика предполагала, что служба доступна в `Path` указанном для `backend-path-prefix` аннотации или `path` указании в `ingress` определении службы.
 
 ## <a name="default-values-for-health-probe"></a>Значения по умолчанию для проверки работоспособности
 Для любого свойства, которое не может быть определено с помощью проверки готовности или жизни, устанавливаются значения по умолчанию.

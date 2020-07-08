@@ -5,12 +5,12 @@ author: erscorms
 ms.author: erscor
 ms.date: 02/11/2020
 ms.topic: reference
-ms.openlocfilehash: 6a1a51ee09422607ae1392704add4d49d3367d57
-ms.sourcegitcommit: 0690ef3bee0b97d4e2d6f237833e6373127707a7
-ms.translationtype: HT
+ms.openlocfilehash: 17f98f452764abdc8458cdc38661d464ecb0a60d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83759053"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84808550"
 ---
 # <a name="limitations"></a>Ограничения
 
@@ -26,9 +26,10 @@ ms.locfileid: "83759053"
 * Общее допустимое количество объектов одного типа (Entity, CutPlaneComponent и т. д.): 16 777 215
 * Общее допустимое количество активных сечений: 8.
 
-## <a name="materials"></a>Материалы
+## <a name="geometry"></a>Geometry
 
 * Общее допустимое количество материалов в ресурсе: 65 535.
+* Максимальная размерность одной текстуры: 16 384 x 16 384. Более крупные исходные текстуры будут масштабироваться по процессу преобразования.
 
 ## <a name="overall-number-of-polygons"></a>Общее число многоугольников
 
@@ -39,12 +40,14 @@ ms.locfileid: "83759053"
 |standard| 20 млн |
 |Премиум| без ограничений |
 
+Более подробные сведения об этом ограничении см. в разделе [Размер виртуальной машины](../reference/vm-sizes.md) .
 
 ## <a name="platform-limitations"></a>Ограничения платформы
 
 **Windows 10 Desktop**
 
 * Поддерживается только платформа UWP/x86. UWP/x64 не поддерживается.
+* Win32/x64 является единственной поддерживаемой платформой Win32. Win32/x86 не поддерживаются.
 
 **Hololens 2**
 

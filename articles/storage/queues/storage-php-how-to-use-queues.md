@@ -6,14 +6,14 @@ ms.author: mhopkins
 ms.date: 01/11/2018
 ms.service: storage
 ms.subservice: queues
-ms.topic: conceptual
-ms.reviewer: cbrooks
-ms.openlocfilehash: 692c943e48c08771b5f1c60b66412270081cf0e6
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.topic: how-to
+ms.reviewer: dineshm
+ms.openlocfilehash: aefd03b9d0ce726e086dff96a648e5f3a6b28e6e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "72302974"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84809200"
 ---
 # <a name="how-to-use-queue-storage-from-php"></a>Использование хранилища очередей из PHP
 
@@ -37,7 +37,7 @@ ms.locfileid: "72302974"
 
 ### <a name="install-via-composer"></a>Установка через компоновщик
 
-1. Создайте файл с именем **Composer. JSON** в корне проекта и добавьте в него следующий код:
+1. Создайте файл с именем **composer.js** в корневом каталоге проекта и добавьте в него следующий код:
    
     ```json
     {
@@ -421,7 +421,7 @@ catch(ServiceException $e){
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы изучили основную информацию о хранилище очередей Azure. Дополнительную информацию о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 

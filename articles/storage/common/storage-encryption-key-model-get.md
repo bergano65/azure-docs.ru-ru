@@ -8,14 +8,14 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 03/13/2020
 ms.author: tamram
-ms.reviewer: cbrooks
+ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 0df0ba4ce76d249bcb4738b41c94677e061f14ca
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7f16902a779fdb7c86fb7506711d2bce77ca9d05
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79409867"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84809219"
 ---
 # <a name="determine-which-azure-storage-encryption-key-model-is-in-use-for-the-storage-account"></a>Определение модели ключа шифрования службы хранилища Azure, используемой для учетной записи хранения
 
@@ -57,7 +57,7 @@ $account = Get-AzStorageAccount -ResourceGroupName <resource-group> `
 $account.Encryption.KeySource
 ```
 
-Если свойство **KeySource** имеет `Microsoft.Storage`значение, то учетная запись шифруется с помощью ключей, управляемых корпорацией Майкрософт. Если свойство **KeySource** имеет `Microsoft.Keyvault`значение, то учетная запись шифруется с помощью ключей, управляемых клиентом.
+Если свойство **KeySource** имеет значение `Microsoft.Storage` , то учетная запись шифруется с помощью ключей, управляемых корпорацией Майкрософт. Если свойство **KeySource** имеет значение `Microsoft.Keyvault` , то учетная запись шифруется с помощью ключей, управляемых клиентом.
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/cli)
 
@@ -71,11 +71,11 @@ key_source=$(az storage account show \
     --output tsv)
 ```
 
-Если свойство **keySource** имеет `Microsoft.Storage`значение, то учетная запись шифруется с помощью ключей, управляемых корпорацией Майкрософт. Если свойство **keySource** имеет `Microsoft.Keyvault`значение, то учетная запись шифруется с помощью ключей, управляемых клиентом.
+Если свойство **keySource** имеет значение `Microsoft.Storage` , то учетная запись шифруется с помощью ключей, управляемых корпорацией Майкрософт. Если свойство **keySource** имеет значение `Microsoft.Keyvault` , то учетная запись шифруется с помощью ключей, управляемых клиентом.
 
 ---
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Шифрование неактивных данных в службе хранилища Azure](storage-service-encryption.md)
+- [Шифрование службы хранилища Azure для неактивных данных](storage-service-encryption.md)
 - [Использование управляемых клиентом ключей с Azure Key Vault для управления шифрованием службы хранилища Azure](encryption-customer-managed-keys.md)

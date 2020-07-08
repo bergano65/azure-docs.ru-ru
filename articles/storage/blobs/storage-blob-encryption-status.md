@@ -7,14 +7,14 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 11/26/2019
 ms.author: tamram
-ms.reviewer: cbrooks
+ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 5cef0e94a43b3ef16d45f7f43658f962e07b5345
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6d0392cd8e94ba8a9026f557b90e740fbed7f50c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74707600"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84809087"
 ---
 # <a name="check-the-encryption-status-of-a-blob"></a>Проверка состояния шифрования большого двоичного объекта
 
@@ -96,6 +96,6 @@ azcopy copy 'C:\temp\blob1.txt' 'https://storagesamples.blob.core.windows.net/sa
 
 Дополнительные сведения об использовании AzCopy для копирования данных BLOB-объектов см. в статье [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](../common/storage-use-azcopy-blobs.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Шифрование неактивных данных в службе хранилища Azure](../common/storage-service-encryption.md)
+[Шифрование службы хранилища Azure для неактивных данных](../common/storage-service-encryption.md)

@@ -8,13 +8,13 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 05/05/2020
 ms.author: tamram
-ms.reviewer: cbrooks
-ms.openlocfilehash: 7c524cb30b73c95329650924123b2ebc26a5d8a5
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.reviewer: ozgun
+ms.openlocfilehash: 61f27d81cda2e57eb5730016dcc22252508fdd01
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82856009"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84809007"
 ---
 # <a name="manage-anonymous-read-access-to-containers-and-blobs"></a>Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам
 
@@ -44,7 +44,7 @@ ms.locfileid: "82856009"
 
 На следующем снимке экрана показано, как изменить общий уровень доступа для выбранных контейнеров.
 
-![Снимок экрана, показывающий, как задать общий уровень доступа на портале](./media/storage-manage-access-to-resources/storage-manage-access-to-resources-0.png)
+![Снимок экрана, на котором показано, как настроить уровень общего доступа на портале](./media/storage-manage-access-to-resources/storage-manage-access-to-resources-0.png)
 
 > [!NOTE]
 > Нельзя изменить общий уровень доступа для отдельного большого двоичного объекта. Уровень общего доступа задается только на уровне контейнера.
@@ -59,7 +59,7 @@ ms.locfileid: "82856009"
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_SetPublicContainerPermissions":::
 
-# <a name="net-v11-sdk"></a>[\.Пакет SDK для NET версии 11](#tab/dotnet11)
+# <a name="net-v11-sdk"></a>[\..NET (пакет SDK версии 11)](#tab/dotnet11)
 
 Чтобы задать разрешения для контейнера с помощью клиентской библиотеки службы хранилища Azure для .NET, сначала извлеките существующие разрешения контейнера, вызвав один из следующих методов:
 
@@ -100,7 +100,7 @@ private static async Task SetPublicContainerPermissions(CloudBlobContainer conta
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_CreateAnonymousBlobClient":::
 
-# <a name="net-v11-sdk"></a>[\.Пакет SDK для NET версии 11](#tab/dotnet11)
+# <a name="net-v11-sdk"></a>[\..NET (пакет SDK версии 11)](#tab/dotnet11)
 
 ```csharp
 public static void CreateAnonymousBlobClient()
@@ -130,7 +130,7 @@ public static void CreateAnonymousBlobClient()
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_ListBlobsAnonymously":::
 
-# <a name="net-v11-sdk"></a>[\.Пакет SDK для NET версии 11](#tab/dotnet11)
+# <a name="net-v11-sdk"></a>[\..NET (пакет SDK версии 11)](#tab/dotnet11)
 
 ```csharp
 public static void ListBlobsAnonymously()
@@ -158,7 +158,7 @@ public static void ListBlobsAnonymously()
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_DownloadBlobAnonymously":::
 
-# <a name="net-v11-sdk"></a>[\.Пакет SDK для NET версии 11](#tab/dotnet11)
+# <a name="net-v11-sdk"></a>[\..NET (пакет SDK версии 11)](#tab/dotnet11)
 
 ```csharp
 public static void DownloadBlobAnonymously()

@@ -6,25 +6,23 @@ ms.author: mhopkins
 ms.date: 12/08/2016
 ms.service: storage
 ms.subservice: queues
-ms.topic: conceptual
-ms.reviewer: cbrooks
-ms.openlocfilehash: 7658b8541e7a79a5e547a6649b35681446e34b0b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: how-to
+ms.reviewer: dineshm
+ms.openlocfilehash: a0c94f3c9af9220bb3cf6476c50799d1f3313ffc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80067131"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84809249"
 ---
 # <a name="how-to-use-queue-storage-from-java"></a>Использование хранилища очередей из Java
 
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
 
-[!INCLUDE [storage-check-out-samples-java](../../../includes/storage-check-out-samples-java.md)]
-
 В этом руководстве показано, как реализовать типичные сценарии с использованием службы хранения очередей Azure. Примеры написаны на Java и используют [пакет SDK службы хранилища Azure для Java][Azure Storage SDK for Java]. В число рассматриваемых сценариев входят **Вставка**, **Просмотр**, **Получение**и **Удаление** сообщений очереди, а также **Создание** и **Удаление** очередей. Дополнительные сведения об очередях см. в разделе [Дальнейшие действия](#next-steps).
 
-> [!NOTE]
-> Пакет SDK доступен разработчикам, использующим хранилище Azure на устройствах Android. Дополнительные сведения см. в разделе [Microsoft Azure Storage SDK for Android][Azure Storage SDK for Android] (Пакет SDK хранилища Azure для Android).
+> [!IMPORTANT]
+> Эта статья относится к устаревшей версии клиентской библиотеки службы хранилища Azure для Java. Чтобы приступить к работе с последней версией, см [. статью Краткое руководство. Клиентская библиотека хранилища очередей Azure для Java](storage-quickstart-queues-java.md)
 
 [!INCLUDE [storage-queue-concepts-include](../../../includes/storage-queue-concepts-include.md)]
 
@@ -391,12 +389,17 @@ catch (Exception e)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+[!INCLUDE [storage-check-out-samples-java](../../../includes/storage-check-out-samples-java.md)]
+
+> [!NOTE]
+> Пакет SDK доступен разработчикам, использующим хранилище Azure на устройствах Android. Дополнительные сведения см. в разделе [Microsoft Azure Storage SDK for Android][Azure Storage SDK for Android] (Пакет SDK хранилища Azure для Android).
+
+## <a name="next-steps"></a>Дальнейшие шаги
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
 * [Пакет SDK службы хранилища Azure для Java][Azure Storage SDK for Java]
 * [справочнике по пакету SDK для клиента службы хранилища Azure][Azure Storage Client SDK Reference]
-* [REST API служб хранилища Azure][Azure Storage Services REST API]
+* [API-интерфейс REST служб хранилища Azure][Azure Storage Services REST API]
 * [Блог рабочей группы службы хранилища Azure][Azure Storage Team Blog]
 
 [Azure SDK for Java]: https://go.microsoft.com/fwlink/?LinkID=525671

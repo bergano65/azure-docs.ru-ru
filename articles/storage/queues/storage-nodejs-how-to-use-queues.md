@@ -1,28 +1,31 @@
 ---
-title: Использование хранилища очередей Azure из Node. js в службе хранилища Azure
+title: Использование хранилища очередей Azure из Node.js — службы хранилища Azure
 description: Вы узнаете, как использовать службы очередей Azure для создания и удаления очередей, вставки, получения и удаления сообщений. Примеры кода написаны на Node.js.
 author: mhopkins-msft
 ms.author: mhopkins
 ms.date: 12/08/2016
 ms.service: storage
 ms.subservice: queues
-ms.topic: conceptual
-ms.reviewer: cbrooks
+ms.topic: how-to
+ms.reviewer: dineshm
 ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 7abcad03678131668700f5d2c64b9c971081cb89
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4b8f15831c02a74bbba85ca4327369af6a4dbb2a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80060936"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84808793"
 ---
-# <a name="use-azure-queue-service-to-create-and-delete-queues-from-nodejs"></a>Использование службы очередей Azure для создания и удаления очередей из Node. js
+# <a name="use-azure-queue-service-to-create-and-delete-queues-from-nodejs"></a>Использование службы очередей Azure для создания и удаления очередей из Node.js
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
 
 [!INCLUDE [storage-check-out-samples-all](../../../includes/storage-check-out-samples-all.md)]
 
 ## <a name="overview"></a>Обзор
 В этом руководстве показано, как реализовать типичные сценарии с использованием службы очередей Microsoft Azure. Примеры написаны с использованием интерфейса API Node.js. Здесь описаны такие сценарии, как **вставка**, **просмотр**, **получение** и **удаление** сообщений очереди, а также **создание и удаление очередей**.
+
+> [!IMPORTANT]
+> Эта статья относится к устаревшей версии клиентской библиотеки службы хранилища Azure для JavaScript. Чтобы приступить к работе с последней версией, ознакомьтесь со статьей [Краткое руководство. Клиентская библиотека хранилища очередей Azure для JavaScript.](storage-quickstart-queues-nodejs.md)
 
 [!INCLUDE [storage-queue-concepts-include](../../../includes/storage-queue-concepts-include.md)]
 
@@ -51,7 +54,7 @@ ms.locfileid: "80060936"
     +-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
     ```
 
-3. Можно вручную выполнить команду **Ls** , чтобы убедиться, что папка **Node\_modules** создана. В этой папке находится пакет **azure-storage** , содержащий библиотеки, необходимые для доступа к хранилищу.
+3. Выполнив команду **ls** вручную, можно убедиться, что папка **node\_modules** создана. В этой папке находится пакет **azure-storage** , содержащий библиотеки, необходимые для доступа к хранилищу.
 
 ### <a name="import-the-package"></a>Импорт пакета
 Используйте Блокнот или другой текстовый редактор, чтобы добавить следующий код в начало файла **server.js** приложения, где планируется использовать хранилище.
@@ -83,7 +86,7 @@ queueSvc.createQueueIfNotExists('myqueue', function(error, results, response){
 Если очередь создана, значение `result.created` будет истинно. Если очередь уже существует, значение `result.created` будет ложно.
 
 ### <a name="filters"></a>Фильтры
-Дополнительные операции фильтрации можно применить к выполняемым операциям, используя **QueueService**. Операции фильтрации могут включать ведение журнала, автоматическую повторную попытку и т. д. Фильтры — это объекты, реализующие метод с сигнатурой:
+Дополнительные операции фильтрации можно применить к выполняемым операциям, используя **QueueService**. К операциям фильтрации могут относиться ведение журнала, автоматический повтор и т. д. Фильтры являются объектами, реализующими метод со следующей сигнатурой:
 
 ```javascript
 function handle (requestOptions, next)
@@ -324,7 +327,7 @@ queueSvc.getQueueAcl('myqueue', function(error, result, response) {
 queueSAS = queueSvc.generateSharedAccessSignature('myqueue', { Id: 'user2' });
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
 * Посетите [блог команды разработчиков службы хранилища Azure][Azure Storage Team Blog].

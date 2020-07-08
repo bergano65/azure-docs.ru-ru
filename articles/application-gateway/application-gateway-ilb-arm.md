@@ -4,15 +4,15 @@ description: На этой странице приводятся инструк�
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: victorh
-ms.openlocfilehash: 406dcdb419dba2e8044a173f4c05028abbaba3da
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 439523fe55f231548ebc80ebc5d3b53c2f0d6e2f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81312422"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84808144"
 ---
 # <a name="create-an-application-gateway-with-an-internal-load-balancer-ilb"></a>Создание шлюза приложений с внутренней подсистемой балансировки нагрузки (ILB)
 
@@ -20,7 +20,7 @@ ms.locfileid: "81312422"
 
 В этой статье приводятся пошаговые инструкции по настройке шлюза приложений с использованием ILB.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -68,7 +68,7 @@ Get-AzSubscription
 
 Вам будет предложено указать свои учетные данные для проверки подлинности.
 
-### <a name="step-3"></a>Шаг 3.
+### <a name="step-3"></a>Шаг 3
 
 Выберите, какие подписки Azure будут использоваться.
 
@@ -76,7 +76,7 @@ Get-AzSubscription
 Select-AzSubscription -Subscriptionid "GUID of subscription"
 ```
 
-### <a name="step-4"></a>Шаг 4.
+### <a name="step-4"></a>Шаг 4
 
 Создайте группу ресурсов (если вы используете существующую группу, пропустите этот шаг).
 
@@ -108,7 +108,7 @@ $vnet = New-AzVirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Locati
 
 На этом шаге создается виртуальная сеть appgwvnet в группе ресурсов appgw-rg для региона западная часть США с помощью префикса 10.0.0.0/16 с подсетью 10.0.0.0/24.
 
-### <a name="step-3"></a>Шаг 3.
+### <a name="step-3"></a>Шаг 3
 
 ```powershell
 $subnet = $vnet.subnets[0]
@@ -134,7 +134,7 @@ $pool = New-AzApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddres
 
 В этом шаге выполняется настройка внутреннего пула IP-адресов pool01 с IP-адресами 10.1.1.8, 10.1.1.9, 10.1.1.10. Эти адреса будут использоваться для получения сетевого трафика от конечной точки с интерфейсным IP-адресом. Замените приведенные выше IP-адреса и добавьте IP-адреса конечных точек своего приложения.
 
-### <a name="step-3"></a>Шаг 3.
+### <a name="step-3"></a>Шаг 3
 
 ```powershell
 $poolSetting = New-AzApplicationGatewayBackendHttpSettings -Name poolsetting01 -Port 80 -Protocol Http -CookieBasedAffinity Disabled
@@ -142,7 +142,7 @@ $poolSetting = New-AzApplicationGatewayBackendHttpSettings -Name poolsetting01 -
 
 На этом шаге осуществляется настройка параметров шлюза приложений poolsetting01 для балансировки нагрузки сетевого трафика в пуле серверной части.
 
-### <a name="step-4"></a>Шаг 4.
+### <a name="step-4"></a>Шаг 4
 
 ```powershell
 $fp = New-AzApplicationGatewayFrontendPort -Name frontendport01  -Port 80
@@ -263,5 +263,5 @@ Get-AzureApplicationGateway : ResourceNotFound: The gateway does not exist.
 Дополнительные сведения о параметрах балансировки нагрузки в целом см. в статьях:
 
 * [Azure Load Balancer](https://azure.microsoft.com/documentation/services/load-balancer/)
-* [Диспетчер трафика Azure](https://azure.microsoft.com/documentation/services/traffic-manager/)
+* [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
