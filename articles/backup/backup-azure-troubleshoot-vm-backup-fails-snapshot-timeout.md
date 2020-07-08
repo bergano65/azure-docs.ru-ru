@@ -6,10 +6,9 @@ ms.topic: troubleshooting
 ms.date: 07/05/2019
 ms.service: backup
 ms.openlocfilehash: 3ee84c0c868f47dca1aee0401865563a326df3db
-ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82864408"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
@@ -45,7 +44,7 @@ ms.locfileid: "82864408"
 
 **Причина 4. [Параметры конфигурации агента виртуальной машины не заданы (для виртуальных машин Linux)](#vm-agent-configuration-options-are-not-set-for-linux-vms)**
 
-**Причина 5. [решение "Управление приложениями" блокирует иаасбкдрекстенсион. exe](#application-control-solution-is-blocking-iaasbcdrextensionexe)**
+**Причина 5. [решение "Управление приложениями" блокирует IaaSBcdrExtension.exe](#application-control-solution-is-blocking-iaasbcdrextensionexe)**
 
 ## <a name="usererrorvmprovisioningstatefailed---the-vm-is-in-failed-provisioning-state"></a>Усереррорвмпровисионингстатефаилед — виртуальная машина находится в состоянии "сбой подготовки"
 
@@ -205,13 +204,13 @@ ms.locfileid: "82864408"
 Файл конфигурации (/ etc/waagent.conf) определяет действия waagent. Для параметров файла конфигурации **Extensions. Enable** должно быть задано значение **y** и **подготовка.** для работы резервного копирования агент должен иметь значение **Авто** .
 Полный список параметров файла конфигурации агента виртуальной машины см. в разделе.<https://github.com/Azure/WALinuxAgent#configuration-file-options>
 
-### <a name="application-control-solution-is-blocking-iaasbcdrextensionexe"></a>Решение "Управление приложениями" блокирует Иаасбкдрекстенсион. exe
+### <a name="application-control-solution-is-blocking-iaasbcdrextensionexe"></a>Решение "Управление приложениями" блокирует IaaSBcdrExtension.exe
 
-Если вы используете [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/what-is-applocker) (или другое решение для управления приложениями), а правила — на основе издателя или пути, они могут заблокировать запуск исполняемого файла **иаасбкдрекстенсион. exe** .
+Если вы используете [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/what-is-applocker) (или другое решение для управления приложениями), а правила — на основе издателя или пути, они могут блокировать запуск исполняемого **IaaSBcdrExtension.exe** .
 
 #### <a name="solution"></a>Решение
 
-Исключите `/var/lib` путь или исполняемый файл **иаасбкдрекстенсион. exe** из AppLocker (или другого программного обеспечения для управления приложениями).
+Исключите `/var/lib` путь или **IaaSBcdrExtension.exe** исполняемый файл из AppLocker (или другого программного обеспечения для управления приложениями).
 
 ### <a name="the-snapshot-status-cant-be-retrieved-or-a-snapshot-cant-be-taken"></a><a name="the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken"></a>Не удалось получить состояние моментального снимка или создать моментальный снимок
 
@@ -221,7 +220,7 @@ ms.locfileid: "82864408"
 
 Сбой задачи создания снимка может быть вызван следующими условиями.
 
-| Причина | Решение |
+| Причина: | Решение |
 | --- | --- |
 | Состояние виртуальной машины отображается неправильно из-за того, что ее работа была завершена в протоколе удаленного рабочего стола (RDP). | Когда вы завершаете работу виртуальной машины в RDP, проверьте, правильно ли отображается состояние виртуальной машины на портале. Если это не так, завершите работу виртуальной машины на портале с помощью команды **Завершение работы** на панели мониторинга виртуальной машины. |
 | Виртуальная машина не может получить адрес узла или структуры по протоколу DHCP. | Чтобы архивация виртуальной машины IaaS работала, в гостевой учетной записи нужно включить протокол DHCP. Если виртуальная машина не может получить адрес узла или структуры в виде ответа DHCP 245, то она не сможет скачать или запустить какие-либо расширения. Если вам нужен статический частный IP-адрес, настройте его с помощью **портал Azure** или **PowerShell** и убедитесь, что в ВИРТУАЛЬНОЙ машине включен параметр DHCP. Дополнительные сведения о настройке статического IP-адреса с помощью PowerShell см. [здесь](../virtual-network/virtual-networks-static-private-ip-arm-ps.md#change-the-allocation-method-for-a-private-ip-address-assigned-to-a-network-interface) .
@@ -229,7 +228,7 @@ ms.locfileid: "82864408"
 ### <a name="remove-lock-from-the-recovery-point-resource-group"></a><a name="remove_lock_from_the_recovery_point_resource_group"></a>Удаление блокировки с группы ресурсов точки восстановления
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. Перейдите к **параметру все ресурсы**, выберите группу ресурсов коллекция точек восстановления в следующем формате AzureBackupRG_`<Geo>`_.`<number>`
+2. Перейдите к **параметру все ресурсы**, выберите группу ресурсов коллекция точек восстановления в следующем формате AzureBackupRG_ `<Geo>` _ `<number>` .
 3. В разделе **Параметры** выберите **Блокировки**, чтобы отобразить блокировки.
 4. Чтобы удалить блокировку, щелкните многоточие и нажмите кнопку **Удалить**.
 

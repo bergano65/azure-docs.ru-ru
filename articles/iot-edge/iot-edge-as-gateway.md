@@ -12,10 +12,9 @@ ms.custom:
 - amqp
 - mqtt
 ms.openlocfilehash: 916eeaa60bc054301af039164ce1c14e77ceb91a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81733530"
 ---
 # <a name="how-an-iot-edge-device-can-be-used-as-a-gateway"></a>Использование устройства IoT Edge в качестве шлюза
@@ -63,6 +62,6 @@ ms.locfileid: "81733530"
 
 Узнайте, как настроить прозрачный шлюз.
 
-* [Настройка устройства IoT Edge для работы в качестве прозрачного шлюза](how-to-create-transparent-gateway.md)
+* [Настройка устройства IoT Edge для использования в качестве прозрачного шлюза](how-to-create-transparent-gateway.md)
 * [Аутентификация подчиненного устройства в Центре Интернета вещей](how-to-authenticate-downstream-device.md)
-* [Подключение подчиненного устройства к шлюзу Azure IoT Edge](how-to-connect-downstream-device.md)
+* [Connect a downstream device to an Azure IoT Edge gateway](how-to-connect-downstream-device.md) (Подключение подчиненного устройства к шлюзу Azure IoT Edge)

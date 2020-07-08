@@ -9,19 +9,18 @@ ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
 ms.openlocfilehash: 2ce3afb533aa33b88b15510eacc88c0884811cc6
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82792604"
 ---
 # <a name="enable-azure-disk-encryption-with-azure-ad-on-linux-vms-previous-release"></a>Включение шифрования дисков Azure с помощью Azure AD на виртуальных машинах Linux (предыдущий выпуск)
 
 Новый выпуск шифрования дисков Azure исключает необходимость предоставления параметра приложения Azure Active Directory (Azure AD) для включения шифрования дисков виртуальной машины. В новом выпуске больше не требуется вводить учетные данные Azure AD на этапе включения шифрования. Все новые виртуальные машины должны быть зашифрованы без параметров приложения Azure AD с помощью нового выпуска. Инструкции по включению шифрования дисков виртуальной машины с помощью нового выпуска см. в статье [Шифрование дисков Azure для виртуальных машин Linux](disk-encryption-linux.md). Виртуальные машины, которые уже были зашифрованы с помощью параметров приложения Azure AD, по-прежнему поддерживаются. Их следует и дальше обслуживать с использованием синтаксиса AAD.
 
-Можно включить много сценариев шифрования дисков, и действия могут отличаться в зависимости от сценария. В следующих разделах более подробно рассматриваются сценарии для виртуальных машин в инфраструктуре Linux как услуги (IaaS). Шифрование дисков можно применить только к виртуальным машинам [поддерживаемых размеров виртуальных машин и операционных систем](disk-encryption-overview.md#supported-vms-and-operating-systems). Необходимо также выполнить следующие предварительные требования.
+Можно включить много сценариев шифрования дисков, и действия могут отличаться в зависимости от сценария. В следующих разделах более подробно рассматриваются сценарии для виртуальных машин в инфраструктуре Linux как услуги (IaaS). Шифрование дисков можно применить только к виртуальным машинам [поддерживаемых размеров и операционных систем](disk-encryption-overview.md#supported-vms-and-operating-systems). Также необходимы следующие элементы:
 
-- [Дополнительные требования для виртуальных машин](disk-encryption-overview.md#supported-vms-and-operating-systems)
+- [Дополнительные требования к ВМ](disk-encryption-overview.md#supported-vms-and-operating-systems)
 - [Сетевые подключения и групповая политика](disk-encryption-overview-aad.md#networking-and-group-policy)
 - [Требования к хранилищу ключей шифрования](disk-encryption-overview-aad.md#encryption-key-storage-requirements)
 
@@ -72,16 +71,16 @@ ms.locfileid: "82792604"
          az vm encryption show --name "MySecureVM" --resource-group "MyVirtualMachineResourceGroup"
      ```
 
-- **Отключение шифрования.** Чтобы отключить шифрование, используйте команду [az vm encryption disable](/cli/azure/vm/encryption#az-vm-encryption-disable). Для виртуальных машин Linux отключение шифрования возможно только для томов данных.
+- **Отключение шифрования:** чтобы отключить шифрование, используйте команду [az vm encryption disable](/cli/azure/vm/encryption#az-vm-encryption-disable). Для виртуальных машин Linux отключение шифрования возможно только для томов данных.
     
      ```azurecli-interactive
          az vm encryption disable --name "MySecureVM" --resource-group "MyVirtualMachineResourceGroup" --volume-type DATA
      ```
 
 ### <a name="enable-encryption-on-an-existing-or-running-linux-vm-by-using-powershell"></a><a name="bkmk_RunningLinuxPSH"> </a> Включение шифрования на существующей или работающей виртуальной машине Linux с помощью PowerShell
-Используйте командлет [Set-азвмдискенкриптионекстенсион](/powershell/module/az.compute/set-azvmdiskencryptionextension) , чтобы включить шифрование на работающей виртуальной машине IaaS в Azure. Создайте [моментальный снимок](snapshot-copy-managed-disk.md) или создайте резервную копию виртуальной машины с [Azure Backup](../../backup/backup-azure-vms-encryption.md) перед шифрованием дисков. Параметр-skipVmBackup уже указан в сценариях PowerShell для шифрования работающей виртуальной машины Linux.
+Используйте командлет [Set-азвмдискенкриптионекстенсион](/powershell/module/az.compute/set-azvmdiskencryptionextension) , чтобы включить шифрование на работающей виртуальной машине IaaS в Azure. Создайте [моментальный снимок](snapshot-copy-managed-disk.md) или создайте резервную копию виртуальной машины с [Azure Backup](../../backup/backup-azure-vms-encryption.md) перед шифрованием дисков. Параметр -skipVmBackup уже указан в сценариях PowerShell для шифрования работающей виртуальной машины Linux.
 
-- **Зашифруйте работающую виртуальную машину с помощью секрета клиента:** Следующий скрипт инициализирует переменные и запускает командлет Set-Азвмдискенкриптионекстенсион. Группа ресурсов, виртуальная машина, хранилище ключей, приложение Azure AD и секрет клиента должны быть уже созданы в качестве необходимых компонентов. Замените Мивиртуалмачинересаурцеграуп, Микэйваултресаурцеграуп, Мисекуревм, Мисекуреваулт, My-AAD-Client-ID, а мой-AAD-Client-Secret значениями. Измените параметр-параметра volumetype значение, чтобы указать диски, для которых выполняется шифрование.
+- **Зашифруйте работающую виртуальную машину с помощью секрета клиента:** Следующий скрипт инициализирует переменные и запускает командлет Set-Азвмдискенкриптионекстенсион. Группа ресурсов, виртуальная машина, хранилище ключей, приложение Azure AD и секрет клиента должны быть уже созданы в качестве необходимых компонентов. Замените Мивиртуалмачинересаурцеграуп, Микэйваултресаурцеграуп, Мисекуревм, Мисекуреваулт, My-AAD-Client-ID, а мой-AAD-Client-Secret значениями. Измените значение параметра -VolumeType, чтобы указать диски, для которых выполняется шифрование.
 
      ```azurepowershell
          $VMRGName = 'MyVirtualMachineResourceGroup';
@@ -97,7 +96,7 @@ ms.locfileid: "82792604"
     
          Set-AzVMDiskEncryptionExtension -ResourceGroupName $VMRGName -VMName $vmName -AadClientID $aadClientID -AadClientSecret $aadClientSecret -DiskEncryptionKeyVaultUrl $diskEncryptionKeyVaultUrl -DiskEncryptionKeyVaultId $KeyVaultResourceId -VolumeType '[All|OS|Data]' -SequenceVersion $sequenceVersion -skipVmBackup;
      ```
-- **Зашифруйте работающую виртуальную машину с помощью KEK, чтобы заключить секрет клиента:** Шифрование дисков Azure позволяет указать существующий ключ в хранилище ключей, чтобы включить в него секреты шифрования дисков, созданные при включении шифрования. Если указан ключ шифрования ключа, шифрование дисков Azure использует этот ключ для упаковки секретов шифрования перед записью в хранилище ключей. Измените параметр-параметра volumetype значение, чтобы указать диски, для которых выполняется шифрование. 
+- **Зашифруйте работающую виртуальную машину с помощью KEK, чтобы заключить секрет клиента:** Шифрование дисков Azure позволяет указать существующий ключ в хранилище ключей, чтобы включить в него секреты шифрования дисков, созданные при включении шифрования. Если указан ключ шифрования ключа, шифрование дисков Azure использует этот ключ для упаковки секретов шифрования перед записью в хранилище ключей. Измените значение параметра -VolumeType, чтобы указать диски, для которых выполняется шифрование. 
 
      ```azurepowershell
          $KVRGname = 'MyKeyVaultResourceGroup';
@@ -142,7 +141,7 @@ ms.locfileid: "82792604"
 
 В следующей таблице перечислены параметры шаблона Resource Manager для существующих или работающих виртуальных машин, которые используют идентификатор клиента Azure AD.
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | --- | --- |
 | AADClientID | Идентификатор клиента приложения Azure AD, которое имеет разрешения на запись секретов в хранилище ключей. |
 | AADClientSecret | Секрет клиента приложения Azure AD, которое имеет разрешения на запись секретов в ваше хранилище ключей. |
@@ -164,7 +163,7 @@ ms.locfileid: "82792604"
 > Енкриптформаталл не следует использовать при наличии необходимых данных на томах данных виртуальной машины. Вы можете исключить диски из шифрования, отключив их. Сначала Испытайте параметр Енкриптформаталл на тестовой виртуальной машине, чтобы понять параметр компонента и его результат, прежде чем использовать его на рабочей виртуальной машине. Параметр Енкриптформаталл форматирует диск данных, поэтому все данные на нем будут потеряны. Прежде чем продолжать, убедитесь, что все диски, которые вы хотите исключить, правильно отключены. </br></br>
  >Если задать этот параметр во время обновления параметров шифрования, это может привести к перезагрузке перед фактическим шифрованием. В этом случае необходимо также удалить диск, который вы не хотите отформатировать из файла fstab. Аналогичным образом необходимо добавить секцию, для которой требуется шифрование, в файл fstab перед запуском операции шифрования. 
 
-### <a name="encryptformatall-criteria"></a><a name="bkmk_EFACriteria"> </a> Критерии EncryptFormatAll
+### <a name="encryptformatall-criteria"></a><a name="bkmk_EFACriteria"> </a> Критерии енкриптформаталл
 Параметр проходит через все секции и шифрует их при условии, что они отвечают *всем* следующим критериям: 
 - это не корневой или загрузочный раздел, а также не раздел операционной системы;
 - этот раздел еще не зашифрован;
@@ -184,8 +183,8 @@ ms.locfileid: "82792604"
 4. Выберите подписку, группу ресурсов, расположение группы ресурсов, другие параметры, условия использования и соглашение. Выберите **создать** , чтобы включить шифрование на существующей или работающей виртуальной машине IaaS.
 
 
-### <a name="use-the-encryptformatall-parameter-with-a-powershell-cmdlet"></a><a name="bkmk_EFAPSH"> </a> Использование параметра EncryptFormatAll с командлетом PowerShell
-Используйте командлет [Set-азвмдискенкриптионекстенсион](/powershell/module/az.compute/set-azvmdiskencryptionextension) с параметром енкриптформаталл.
+### <a name="use-the-encryptformatall-parameter-with-a-powershell-cmdlet"></a><a name="bkmk_EFAPSH"> </a> Использование параметра енкриптформаталл с командлетом PowerShell
+Используйте командлет [Set-AzVMDiskEncryptionExtension](/powershell/module/az.compute/set-azvmdiskencryptionextension) с параметром EncryptFormatAll.
 
 **Зашифруйте работающую виртуальную машину с помощью секрета клиента и енкриптформаталл:** Например, следующий скрипт инициализирует переменные и выполняет командлет Set-Азвмдискенкриптионекстенсион с параметром Енкриптформаталл. Группа ресурсов, виртуальная машина, хранилище ключей, приложение Azure AD и секрет клиента должны быть уже созданы в качестве необходимых компонентов. Замените Микэйваултресаурцеграуп, Мивиртуалмачинересаурцеграуп, Мисекуревм, Мисекуреваулт, My-AAD-Client-ID, а мой-AAD-Client-Secret значениями.
   
@@ -203,7 +202,7 @@ ms.locfileid: "82792604"
    ```
 
 
-### <a name="use-the-encryptformatall-parameter-with-logical-volume-manager-lvm"></a><a name="bkmk_EFALVM"> </a> Использование параметра EncryptFormatAll с диспетчером логических томов (LVM) 
+### <a name="use-the-encryptformatall-parameter-with-logical-volume-manager-lvm"></a><a name="bkmk_EFALVM"> </a> Использование параметра Енкриптформаталл с диспетчером логических ТОМОВ (LVM) 
 Рекомендуем установить LVM-on-crypt. Для всех следующих примеров замените Device-Path и точки подключения на любой из вариантов использования. Эту настройку можно выполнить следующим образом.
 
 - Добавить диски данных, которые составляют виртуальную машину.
@@ -245,7 +244,7 @@ ms.locfileid: "82792604"
 
 
 ### <a name="use-azure-powershell-to-encrypt-iaas-vms-with-pre-encrypted-vhds"></a><a name="bkmk_VHDprePSH"> </a> Использование Azure PowerShell для шифрования виртуальных машин IaaS с предварительно зашифрованными виртуальными жесткими дисками 
-Вы можете включить шифрование дисков на зашифрованном виртуальном жестком диске с помощью командлета PowerShell [Set-азвмосдиск](/powershell/module/az.compute/set-azvmosdisk#examples). В следующем примере приводятся некоторые общие параметры. 
+Можно включить шифрование дисков для зашифрованного виртуального жесткого диска с помощью командлета PowerShell [Set-AzVMOSDisk](/powershell/module/az.compute/set-azvmosdisk#examples). В следующем примере приводятся некоторые общие параметры. 
 
 ```powershell
 $VirtualMachine = New-AzVMConfig -VMName "MySecureVM" -VMSize "Standard_A1"
@@ -328,7 +327,7 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
          Disable-AzVMDiskEncryption -ResourceGroupName 'MyVirtualMachineResourceGroup' -VMName 'MySecureVM' [--volume-type {ALL, DATA, OS}]
      ```
 
-- **Отключение шифрования с помощью Azure CLI.** Для отключения шифрования используйте команду [az vm encryption disable](/cli/azure/vm/encryption#az-vm-encryption-disable). 
+- **Отключение шифрования дисков с помощью Azure CLI:** чтобы отключить шифрование, используйте команду [az vm encryption disable](/cli/azure/vm/encryption#az-vm-encryption-disable). 
      ```azurecli-interactive
          az vm encryption disable --name "MySecureVM" --resource-group "MyVirtualMachineResourceGroup" --volume-type [ALL, DATA, OS]
      ```
@@ -338,7 +337,7 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
      3. Выберите **приобрести** , чтобы отключить шифрование дисков на работающей виртуальной машине Windows. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения о шифровании дисков Azure для Linux](disk-encryption-overview-aad.md)
 - [Создание и Настройка хранилища ключей для шифрования дисков Azure с помощью Azure AD (предыдущий выпуск)](disk-encryption-key-vault-aad.md)

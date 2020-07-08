@@ -8,10 +8,9 @@ ms.date: 05/05/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: aa98a13b84e89c90e29525fb6743ac33faf1d917
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82871297"
 ---
 # <a name="backup-and-restore"></a>Резервное копирование и восстановление
@@ -40,7 +39,7 @@ ms.locfileid: "82871297"
 
 2.  Щелкните **Включено**, а затем — **Параметры хранилища**.
 
-    ![Включить](./media/analysis-services-backup/aas-backup-enable.png)
+    ![Включите параметр](./media/analysis-services-backup/aas-backup-enable.png)
 
 3. Выберите имеющуюся учетную запись хранения или создайте новую.
 
@@ -52,13 +51,13 @@ ms.locfileid: "82871297"
 
     ![Сохранение параметров архивации](./media/analysis-services-backup/aas-backup-save.png)
 
-## <a name="backup"></a>Резервное копирование
+## <a name="backup"></a>Backup
 
 ### <a name="to-backup-by-using-ssms"></a>Архивация с помощью SSMS
 
 1. В среде SSMS щелкните правой кнопкой мыши базу данных и выберите **Архивировать**.
 
-2. В файле **резервная** > **копия**резервной копии базы данных нажмите кнопку **Обзор**.
+2. В файле резервная копия резервной копии **базы данных**  >  **Backup file**нажмите кнопку **Обзор**.
 
 3. В диалоговом окне **Сохранить файл как** проверьте путь к папке, а затем введите имя для архивного файла. 
 

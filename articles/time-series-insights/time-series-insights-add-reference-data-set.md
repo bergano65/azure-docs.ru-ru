@@ -12,10 +12,9 @@ ms.topic: conceptual
 ms.date: 05/05/2020
 ms.custom: seodec18~~~~
 ms.openlocfilehash: 010f7b908ceb9c8d07208db1312d8af8d4e27051
-ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82838524"
 ---
 # <a name="create-a-reference-data-set-for-your-time-series-insights-environment-using-the-azure-portal"></a>Создание эталонного набора данных для среды Аналитики временных рядов с помощью портала Azure
@@ -26,7 +25,7 @@ ms.locfileid: "82838524"
 
 Ретроактивное объединение с эталонными данными не поддерживается. Таким же, только текущие и будущие входящие данные сопоставляются и соединяются со ссылочной датой после настройки и отправки.
 
-## <a name="video"></a>Видеоролик
+## <a name="video"></a>Видео
 
 ### <a name="learn-about-time-series-insights-reference-data-modelbr"></a>Сведения о модели ссылочных данных аналитики временных рядов.</br>
 
@@ -64,9 +63,9 @@ ms.locfileid: "82838524"
    - вставьте данные в текстовый редактор а затем нажмите кнопку **Проанализировать эталонные данные**;
    - нажмите кнопку **Выберите файл**, чтобы добавить данные из локального текстового файла.
 
-   Например, вставьте данные CSV: [ ![вставленные данные CSV](media/add-reference-data-set/select-csv-and-enter-data.png)](media/add-reference-data-set/select-csv-and-enter-data.png#lightbox)
+   Например, вставьте данные CSV: [ ![ вставленные данные CSV](media/add-reference-data-set/select-csv-and-enter-data.png)](media/add-reference-data-set/select-csv-and-enter-data.png#lightbox)
 
-   Например, вставьте данные массива JSON: [ ![Вставка данных JSON](media/add-reference-data-set/select-json-option-and-enter-data.png)](media/add-reference-data-set/select-json-option-and-enter-data.png#lightbox)
+   Например, вставьте данные массива JSON: [ ![ Вставка данных JSON](media/add-reference-data-set/select-json-option-and-enter-data.png)](media/add-reference-data-set/select-json-option-and-enter-data.png#lightbox)
 
    Если при анализе значений данных произойдет ошибка, она отобразится красным цветом в нижней части страницы, например таким образом: `CSV parsing error, no rows extracted`.
 
@@ -114,7 +113,7 @@ ms.locfileid: "82838524"
    > [!NOTE]
    > Добавленные строки **не** обязательно должны быть *прямоугольными* — они могут содержать меньшее, большее или изменяющееся число столбцов из других записей в эталонном наборе данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Управление эталонными данными](time-series-insights-manage-reference-data-csharp.md) программными средствами.
 

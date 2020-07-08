@@ -1,5 +1,5 @@
 ---
-title: Итерация и развитие конвейеров машинного обучения
+title: Итерация и доработка конвейеров машинного обучения
 titleSuffix: Azure Machine Learning
 description: Шаблоны, практические рекомендации и советы по быстрой разработке
 services: machine-learning
@@ -10,13 +10,12 @@ ms.author: laobri
 author: lobrien
 ms.date: 05/01/2020
 ms.openlocfilehash: 2ea353469ed111eebb591aa6ba86c652683cc2f0
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82858192"
 ---
-# <a name="iterating-and-evolving-machine-learning-pipelines"></a>Итерация и развитие конвейеров машинного обучения
+# <a name="iterating-and-evolving-machine-learning-pipelines"></a>Итерация и доработка конвейеров машинного обучения
 
 Машинное обучение Azure конвейеры обеспечивают эффективный способ разделения кода, повторного использования результатов и оптимизации ресурсов вычислений. Ниже приведены некоторые практические советы и рекомендации по работе с конвейерами.
 

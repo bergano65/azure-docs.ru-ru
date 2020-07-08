@@ -10,17 +10,16 @@ ms.date: 05/05/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.openlocfilehash: 0e24bcb54fd26d4a3d983681b3348ef736b277cf
-ms.sourcegitcommit: d815163a1359f0df6ebfbfe985566d4951e38135
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82884349"
 ---
-# <a name="enable-and-manage-blob-versioning"></a>Включение управления версиями BLOB-объектов и управление ими
+# <a name="enable-and-manage-blob-versioning"></a>Включение управления версиями BLOB-объектов и работа с ним
 
 Вы можете в любое время включить или отключить управление версиями BLOB-объектов (Предварительная версия) для учетной записи хранения с помощью портал Azure или шаблона Azure Resource Manager.
 
-## <a name="enable-blob-versioning"></a>Включить управление версиями BLOB-объектов
+## <a name="enable-blob-versioning"></a>Включение управления версиями BLOB-объектов
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
@@ -37,7 +36,7 @@ ms.locfileid: "82884349"
 Чтобы включить управление версиями BLOB-объектов с помощью шаблона, создайте шаблон со свойством **исверсионинженаблед** в **значение true**. Следующие шаги описывают создание шаблона в портал Azure.
 
 1. В портал Azure выберите **создать ресурс**.
-1. В строке **Поиск в Marketplace** введите **развертывание шаблона** и нажмите клавишу **ВВОД**.
+1. В **поле Поиск в Marketplace**введите **шаблон развертывание**и нажмите клавишу **Ввод**.
 1. Выберите **шаблоны развертывания**, выберите **создать**, а затем — создать **собственный шаблон в редакторе**.
 1. В редакторе шаблонов вставьте следующий код JSON. Замените заполнитель `<accountName>` именем вашей учетной записи хранения.
 1. при сохранении шаблона;
@@ -152,7 +151,7 @@ static void PrintMetadata(Response<BlobProperties> propertiesResponse)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Управление версиями BLOB-объектов (Предварительная версия)](versioning-overview.md)
+- [Управление версиями BLOB-объектов (предварительная версия)](versioning-overview.md)
 - [Soft delete for Azure Storage blobs](soft-delete-overview.md) (Обратимое удаление больших двоичных объектов службы хранилища Azure)

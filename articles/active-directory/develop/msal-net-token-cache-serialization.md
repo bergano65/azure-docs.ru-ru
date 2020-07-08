@@ -14,10 +14,9 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: abc4836b5e8729eec45a0eb2cd8b5fa7be6b1ce4
-ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82890563"
 ---
 # <a name="token-cache-serialization-in-msalnet"></a>Сериализация кэша маркеров в MSAL.NET
@@ -42,7 +41,7 @@ ms.locfileid: "82890563"
 - Обратный вызов `TokenCacheCallback` передается событиям, что позволяет обрабатывать операции сериализации. Они будут вызываться с аргументами типа `TokenCacheNotificationArgs`.
 - `TokenCacheNotificationArgs` предоставляет только `ClientId` приложения и ссылку на пользователя, для которого доступен маркер.
 
-  ![Диаграмма классов](media/msal-net-token-cache-serialization/class-diagram.png)
+  ![Схема классов](media/msal-net-token-cache-serialization/class-diagram.png)
 
 > [!IMPORTANT]
 > MSAL.NET создает кэши маркеров и предоставляет кэш `IToken` при вызове свойств `UserTokenCache` и `AppTokenCache` приложения. Вам не нужно самостоятельно реализовать этот интерфейс. При реализации пользовательской сериализации для кэша маркеров в вашу зону ответственности входит следующее:
@@ -124,7 +123,7 @@ $"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\{A
  }
 ```
 
-Сериализатор на основе файлов кэша маркеров качества продукта для общедоступных клиентских приложений (для настольных приложений, работающих под управлением Windows, Mac и Linux) доступен в библиотеке [Microsoft. Identity. Client. Extensions. Msal](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet/tree/master/src/Microsoft.Identity.Client.Extensions.Msal) с открытым исходным кодом. Его можно включить в приложения из следующего пакета NuGet: [Microsoft. Identity. Client. Extensions. Msal](https://www.nuget.org/packages/Microsoft.Identity.Client.Extensions.Msal/).
+Сериализатор на основе файлов кэша маркеров качества продукта для общедоступных клиентских приложений (для настольных приложений, работающих под управлением Windows, Mac и Linux) доступен в библиотеке [Microsoft. Identity. Client. Extensions. Msal](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet/tree/master/src/Microsoft.Identity.Client.Extensions.Msal) с открытым исходным кодом. Это решение можно включить в приложение из следующего пакета NuGet: [Microsoft.Identity.Client.Extensions.Msal](https://www.nuget.org/packages/Microsoft.Identity.Client.Extensions.Msal/).
 
 #### <a name="dual-token-cache-serialization-msal-unified-cache-and-adal-v3"></a>Сериализация сдвоенного кэша маркеров (единого кэша для MSAL и ADAL версии 3)
 
@@ -278,11 +277,11 @@ namespace CommonCacheMsalV3
 Библиотека [Microsoft. Identity. Web](https://github.com/AzureAD/microsoft-identity-web) предоставляет предварительный просмотр пакета NuGet [Microsoft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web) , содержащего сериализацию кэша маркеров:
 
 
-| Метод расширения | Подпространство имен Microsoft. Identity. Web | Описание  |
+| Метод расширения | Подпространство имен Microsoft. Identity. Web | Описание:  |
 | ---------------- | --------- | ------------ |
 | `AddInMemoryTokenCaches` | `TokenCacheProviders.InMemory` | В сериализации кэша маркеров памяти. Эта реализация отлично подходит для примеров. Это также хорошо в рабочих приложениях, если при перезапуске веб-приложения вы не будете иметь в виду, что кэш маркеров будет потерян. `AddInMemoryTokenCaches`принимает необязательный параметр типа `MsalMemoryTokenCacheOptions` , который позволяет указать срок действия записи кэша, если он не используется.
 | `AddSessionTokenCaches` | `TokenCacheProviders.Session` | Кэш маркеров привязан к сеансу пользователя. Этот параметр не является идеальным, если маркер идентификатора содержит много утверждений, так как файл cookie становится слишком большим.
-| `AddDistributedTokenCaches` | `TokenCacheProviders.Distributed` | Кэш маркеров является адаптером для реализации ASP.NET Core `IDistributedCache` , поэтому можно выбрать между распределенным кэшем памяти, кэшем Redis, распределенным NCache или кэшем SQL Server. Дополнительные сведения о реализациях см. `IDistributedCache` в https://docs.microsoft.com/aspnet/core/performance/caching/distributed#distributed-memory-cacheразделе.
+| `AddDistributedTokenCaches` | `TokenCacheProviders.Distributed` | Кэш маркеров является адаптером для `IDistributedCache` реализации ASP.NET Core, поэтому можно выбрать между распределенным кэшем памяти, кэшем Redis, распределенным NCache или кэшем SQL Server. Дополнительные сведения о `IDistributedCache` реализациях см. в разделе https://docs.microsoft.com/aspnet/core/performance/caching/distributed#distributed-memory-cache .
 
 Простой случай использования кэша в памяти:
 
@@ -325,7 +324,7 @@ services.AddDistributedSqlServerCache(options =>
 
 Их использование описывается в руководстве по [веб-приложению ASP.NET Core](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/) в [кэше маркеров этапа 2-2](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-2-TokenCache).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Приведенные ниже примеры демонстрируют сериализацию кэша маркеров.
 

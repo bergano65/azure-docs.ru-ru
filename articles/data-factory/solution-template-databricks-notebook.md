@@ -12,10 +12,9 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 04/27/2020
 ms.openlocfilehash: 2503c26ac0348739bbf117c3538af797833ce8b8
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82857642"
 ---
 # <a name="transformation-with-azure-databricks"></a>Преобразование с помощью Azure Databricks
@@ -34,9 +33,9 @@ ms.locfileid: "82857642"
 
 ![Схема конвейера](media/solution-template-Databricks-notebook/pipeline-example.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-- Учетная запись хранилища BLOB-объектов Azure с `sinkdata` контейнером, который вызывается для использования в качестве приемника.
+- Учетная запись хранилища BLOB-объектов Azure с контейнером, который вызывается `sinkdata` для использования в качестве приемника.
 
   Запишите имя учетной записи хранения, имя контейнера и ключ доступа. Эти значения понадобятся позже в шаблоне.
 
@@ -47,8 +46,8 @@ ms.locfileid: "82857642"
 Чтобы импортировать записную книжку **преобразования** в рабочую область "кирпичы", сделайте следующее:
 
 1. Войдите в рабочую область Azure Databricks и выберите **Импорт**.
-       ![Команда меню для импорта рабочей области](media/solution-template-Databricks-notebook/import-notebook.png) путь к рабочей области может отличаться от отображаемого, но его следует запомнить для последующего использования.
-1. Выберите **Импорт из: URL-адрес**. В текстовом поле введите `https://adflabstaging1.blob.core.windows.net/share/Transformations.html`.
+       ![Команда меню для импорта рабочей области ](media/solution-template-Databricks-notebook/import-notebook.png) путь к рабочей области может отличаться от отображаемого, но его следует запомнить для последующего использования.
+1. Выберите **Импорт из: URL-адрес**. В текстовом поле введите `https://adflabstaging1.blob.core.windows.net/share/Transformations.html` .
 
    ![Параметры для импорта записной книжки](media/solution-template-Databricks-notebook/import-from-url.png)
 
@@ -56,7 +55,7 @@ ms.locfileid: "82857642"
 
    В импортированной записной книжке перейдите к **команде 5** , как показано в следующем фрагменте кода.
 
-   - Замените `<storage name>`и `<access key>` собственными сведениями о подключении к хранилищу.
+   - Замените `<storage name>` и `<access key>` собственными сведениями о подключении к хранилищу.
    - Используйте учетную запись хранения с `sinkdata` контейнером.
 
     ```python
@@ -90,7 +89,7 @@ ms.locfileid: "82857642"
 
     ![Кнопка "создать"](media/solution-template-Databricks-notebook/generate-new-token.png)
 
-   *Сохраните маркер доступа* для последующего использования при создании связанной службы "кирпичы". Маркер доступа выглядит примерно так `dapi32db32cbb4w6eee18b7d87e45exxxxxx`.
+   *Сохраните маркер доступа* для последующего использования при создании связанной службы "кирпичы". Маркер доступа выглядит примерно так `dapi32db32cbb4w6eee18b7d87e45exxxxxx` .
 
 ## <a name="how-to-use-this-template"></a>Как использовать этот шаблон
 
@@ -118,7 +117,7 @@ ms.locfileid: "82857642"
 
         ![Параметры для подключения к кластеру](media/solution-template-Databricks-notebook/databricks-connection.png)
 
-1. Выберите **Использовать этот шаблон**. Вы увидите созданный конвейер.
+1. Щелкните **Использовать этот шаблон**. Вы увидите созданный конвейер.
 
     ![Создание конвейера](media/solution-template-Databricks-notebook/new-pipeline.png)
 
@@ -126,19 +125,19 @@ ms.locfileid: "82857642"
 
 В новом конвейере большинство параметров настраиваются автоматически со значениями по умолчанию. Проверьте конфигурации конвейера и внесите необходимые изменения.
 
-1. В **флаге доступности**действия **проверки** убедитесь, что для `SourceAvailabilityDataset` параметра исходный **набор данных** задано значение, созданное ранее.
+1. В **флаге доступности**действия **проверки** убедитесь, что для параметра исходный **набор данных** задано значение `SourceAvailabilityDataset` , созданное ранее.
 
    ![Значение исходного набора данных](media/solution-template-Databricks-notebook/validation-settings.png)
 
 1. В файле действия **копирование данных** в **BLOB-объект**проверьте вкладки **источник** и **приемник** . При необходимости измените параметры.
 
-   - **Source** Вкладка источника ![на вкладке «Источник»](media/solution-template-Databricks-notebook/copy-source-settings.png)
+   - Вкладка источника на вкладке « **источник** » ![](media/solution-template-Databricks-notebook/copy-source-settings.png)
 
-   - Вкладка **приемника вкладки** ![приемника](media/solution-template-Databricks-notebook/copy-sink-settings.png)
+   - **Sink** ![ Вкладка приемника вкладки приемника](media/solution-template-Databricks-notebook/copy-sink-settings.png)
 
 1. В **преобразовании**«действие **записной книжки** » проверьте и при необходимости обновите пути и параметры.
 
-   Для **связанной службы "кирпичные** данные" необходимо предварительно заполнить значение из предыдущего шага, как показано: ![заполненное значение для связанной службы "кирпичные данные"](media/solution-template-Databricks-notebook/notebook-activity.png)
+   Для **связанной службы "кирпичные** данные" необходимо предварительно заполнить значение из предыдущего шага, как показано: ![ заполненное значение для связанной службы "кирпичные данные"](media/solution-template-Databricks-notebook/notebook-activity.png)
 
    Чтобы проверить параметры **записной книжки** , сделайте следующее:
   
@@ -150,7 +149,7 @@ ms.locfileid: "82857642"
 
        ![Базовые параметры](media/solution-template-Databricks-notebook/base-parameters.png)
 
-1. Убедитесь, что **Параметры конвейера** соответствуют приведенным на следующем снимке экрана ![: параметры конвейера.](media/solution-template-Databricks-notebook/pipeline-parameters.png)
+1. Убедитесь, что **Параметры конвейера** соответствуют приведенным на следующем снимке экрана: ![ Параметры конвейера.](media/solution-template-Databricks-notebook/pipeline-parameters.png)
 
 1. Подключитесь к наборам данных.
 
@@ -167,9 +166,9 @@ ms.locfileid: "82857642"
 
    - **Дестинатионфилесдатасет** — копирование данных в целевое расположение приемника. Используйте следующие значения:
 
-     - **Связанная служба** - `sinkBlob_LS`, созданная на предыдущем шаге.
+     - **Связанная служба**  -  `sinkBlob_LS` , созданная на предыдущем шаге.
 
-     - **Путь к** - `sinkdata/staged_sink`файлу.
+     - **Путь к файлу**  -  `sinkdata/staged_sink` .
 
        ![Варианты выбора для связанной службы и пути к файлу для Дестинатионфилесдатасет](media/solution-template-Databricks-notebook/destination-dataset.png)
 
@@ -183,6 +182,6 @@ ms.locfileid: "82857642"
     > Для сопоставления с запусками конвейера фабрики данных этот пример добавляет идентификатор запуска конвейера из фабрики данных в выходную папку. Это помогает отследить файлы, создаваемые каждым запуском.
     > ![Добавленный идентификатор запуска конвейера](media/solution-template-Databricks-notebook/verify-data-files.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Знакомство с Фабрикой данных Azure](introduction.md)
+- [Общие сведения о службе фабрики данных Azure, службе интеграции данных в облаке](introduction.md)

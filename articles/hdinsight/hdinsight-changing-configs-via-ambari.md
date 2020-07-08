@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 05/04/2020
 ms.openlocfilehash: a819c3a57efdc0ae87cf969fd7471818c51895f6
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82793165"
 ---
 # <a name="optimize-clusters-with-apache-ambari-in-azure-hdinsight"></a>Оптимизация кластеров с помощью Apache Ambari в Azure HDInsight
@@ -59,7 +58,7 @@ HDInsight предоставляет кластеры Apache Hadoop для пр�
 
     !["Apache Ambari Save Configurations"](./media/hdinsight-changing-configs-via-ambari/ambari-save-changes1.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md)
 * [Управление кластерами HDInsight с помощью REST API Ambari](hdinsight-hadoop-manage-ambari-rest-api.md)

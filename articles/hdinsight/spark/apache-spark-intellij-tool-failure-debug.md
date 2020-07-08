@@ -10,17 +10,16 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 07/12/2019
 ms.openlocfilehash: 052b12817b788ff38f0fab72a5420896b062c732
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82857421"
 ---
 # <a name="failure-spark-job-debugging-with-azure-toolkit-for-intellij-preview"></a>Сбой отладки задания Spark с Azure Toolkit for IntelliJ (Предварительная версия)
 
 В этой статье содержатся пошаговые инструкции по использованию средств HDInsight в [Azure Toolkit for IntelliJ](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij) для запуска приложений **отладки Spark с ошибкой** .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * [Комплект разработчика Oracle Java](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). В этом руководстве используется Java версии 8.0.202.
   
@@ -38,7 +37,7 @@ ms.locfileid: "82857421"
 
 1. Откройте IntelliJ IDEA. Откройте окно **Новый проект** .
 
-   a. На левой панели щелкните **Azure Spark/HDInsight**.
+   а. На левой панели щелкните **Azure Spark/HDInsight**.
 
    b. В главном окне выберите **проект Spark с неудачной отладкой задачи (Предварительная версия) (Scala)** .
 
@@ -50,7 +49,7 @@ ms.locfileid: "82857421"
 
    ![IntelliJ новый проект выберите версию Spark](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-new-project.png)
 
-   a. Введите имя и расположение проекта.
+   а. Введите имя и расположение проекта.
 
    b. В раскрывающемся списке **пакет SDK для проекта** выберите **Java 1,8** для кластера **Spark 2.3.2** .
 
@@ -58,7 +57,7 @@ ms.locfileid: "82857421"
 
    d. Нажмите кнопку **Готово**.
 
-3. Выберите **src** > **Main** > **Scala** , чтобы открыть код в проекте. В этом примере используется скрипт **AgeMean_Div ()** .
+3. Выберите **src**  >  **Main**  >  **Scala** , чтобы открыть код в проекте. В этом примере используется скрипт **AgeMean_Div ()** .
 
 ## <a name="run-a-spark-scalajava-application-on-an-hdinsight-cluster"></a>Запуск приложения Spark Scala/Java в кластере HDInsight
 
@@ -90,7 +89,7 @@ ms.locfileid: "82857421"
 
 В случае сбоя отправки задания можно скачать профиль невыполненного задания на локальный компьютер для дальнейшей отладки.
 
-1. Откройте **Обозреватель службы хранилища Microsoft Azure**, выберите учетную запись HDInsight кластера для невыполненного задания, скачайте невыполненные ресурсы заданий из соответствующего расположения: **\hdp\spark2-Events\\. Spark-\\\<Fails Application ID>** в локальную папку. В окне **действия** отобразится ход загрузки.
+1. Откройте **Обозреватель службы хранилища Microsoft Azure**, выберите учетную запись HDInsight кластера для невыполненного задания, скачайте невыполненные ресурсы заданий из соответствующего расположения: **\hdp\spark2-Events \\ . Spark — сбои \\ \<application ID> ** в локальной папке. В окне **действия** отобразится ход загрузки.
 
    ![Сбой загрузки Обозреватель службы хранилища Azure](./media/apache-spark-intellij-tool-failure-debug/hdinsight-find-spark-file-001.png)
 

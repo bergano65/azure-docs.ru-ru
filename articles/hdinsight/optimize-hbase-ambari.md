@@ -8,10 +8,9 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/04/2020
 ms.openlocfilehash: a7da6bc23d797e0e89b2338f446fc850b0fd0577
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82797166"
 ---
 # <a name="optimize-apache-hbase-with-apache-ambari-in-azure-hdinsight"></a>Оптимизация Apache HBase с Apache Ambari в Azure HDInsight
@@ -79,7 +78,7 @@ HBase хранит данные во внутреннем формате фай�
 
 * Свойство `hbase.hregion.memstore.flush.size` определяет размер, по достижении которого содержимое Memstore освобождается на диск. Его значение по умолчанию составляет 128 МБ.
 
-* Множитель блока HBase региона определяется `hbase.hregion.memstore.block.multiplier`. Значение по умолчанию — 4. Максимально допустимое значение равно 8.
+* Множитель блока HBase региона определяется `hbase.hregion.memstore.block.multiplier` . Значение по умолчанию — 4. Максимально допустимое значение равно 8.
 
 * HBase блокирует обновления, если Memstore содержит (`hbase.hregion.memstore.flush.size` * `hbase.hregion.memstore.block.multiplier`) байтов.
 
@@ -97,7 +96,7 @@ HBase хранит данные во внутреннем формате фай�
 
 ![hbase.hregion.memstore.mslab.enabled](./media/optimize-hbase-ambari/hbase-hregion-memstore-mslab-enabled.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md)
 * [Управление кластерами HDInsight с помощью REST API Ambari](hdinsight-hadoop-manage-ambari-rest-api.md)

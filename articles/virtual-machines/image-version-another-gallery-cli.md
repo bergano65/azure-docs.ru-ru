@@ -10,10 +10,9 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.openlocfilehash: add08d7b8ef39322f03e0faf78959b08a6ae2a14
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82797062"
 ---
 # <a name="copy-an-image-from-another-gallery"></a>Копирование изображения из другой коллекции
@@ -135,7 +134,7 @@ az sig image-definition create \
 
 Создайте версии с помощью команды [AZ Image Gallery создать-Image-Version](/cli/azure/sig/image-version#az-sig-image-version-create). Вам нужно ввести идентификатор управляемого образа, чтобы использовать его в качестве базового плана для создания версии образа. Для сведений об образах, содержащихся в группе ресурсов, можно использовать команду [az image list](/cli/azure/image?view#az-image-list). 
 
-Допустимыми знаками для имени версии образа являются цифры и точки. Числа должны быть в диапазоне 32-битного целого числа. Формат: *majorversion*. *Minorversion*. *Исправление*.
+Допустимыми знаками для имени версии образа являются цифры и точки. Числа должны быть в диапазоне 32-битного целого числа. Формат: *основной номер версии*.*дополнительный номер версии*.*исправление*.
 
 В этом примере версия нашего образа — *1.0.0* , и мы создадим 1 реплику в *юго-центральном регионе США* и 1 реплику в регионе *Восточной* части США, используя хранилище, избыточное в пределах зоны.
 
@@ -154,10 +153,10 @@ az sig image-version create \
 > [!NOTE]
 > Прежде чем использовать тот же управляемый образ для создания другой версии образа, необходимо дождаться завершения сборки и репликации версии образа.
 >
-> Вы также можете сохранить образ в хранилище `--storage-account-type  premium_lrs`премиун, добавив хранилище или [избыточное в зону](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs) , добавив `--storage-account-type  standard_zrs` его при создании версии образа.
+> Вы также можете сохранить образ в хранилище класса Premium, добавив `--storage-account-type  premium_lrs`, или [хранилище, избыточное между зонами](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs), добавив `--storage-account-type  standard_zrs` при создании версии образа.
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Создайте виртуальную машину на основе [обобщенной](vm-generalized-image-version-cli.md) или [специализированной](vm-specialized-image-version-cli.md) версии образа.
 

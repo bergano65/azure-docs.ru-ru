@@ -11,10 +11,9 @@ ms.date: 10/07/2017
 ms.author: rogarana
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: dc283d1845926b79fb541d8ccb011fe853f50484
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81870283"
 ---
 # <a name="migrate-from-amazon-web-services-aws-and-other-platforms-to-managed-disks-in-azure"></a>Переход из Amazon Web Services (AWS) и других платформ на Управляемые диски Azure
@@ -91,6 +90,6 @@ ms.locfileid: "81870283"
 Ознакомьтесь с [ценами на Управляемые диски](https://azure.microsoft.com/pricing/details/managed-disks/). Цены на управляемые диски уровня "Премиум" совпадают с ценами на неуправляемые диски уровня "Премиум". При этом цены на управляемые диски уровня "Стандартный" отличаются от цен на неуправляемые диски уровня "Стандартный".
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Перед отправкой любого виртуального жесткого диска в Azure необходимо выполнить [подготовку VHD или VHDX для Windows к отправке в Azure](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) .

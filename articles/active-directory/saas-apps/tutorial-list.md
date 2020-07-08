@@ -18,10 +18,9 @@ ms.custom: it-pro
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: be265eee32a739bdfc2d4c3b746e01cd0c5ec06a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82129976"
 ---
 # <a name="tutorials-for-integrating-saas-applications-with-azure-active-directory"></a>Руководства по интеграции приложений SaaS с Azure Active Directory
@@ -34,7 +33,7 @@ ms.locfileid: "82129976"
 
 ## <a name="quick-links"></a>Быстрые ссылки
 
-| Логотип | Руководство по настройке единого входа для приложения | Руководство по подготовке пользователей для приложения |
+| Эмблема | Руководство по настройке единого входа для приложения | Руководство по подготовке пользователей для приложения |
 | :--- | :--- | :--- |
 | ![логотип](./media/tutorial-list/active-directory-saas-atlassian-cloud-tutorial.png)| [Atlassian Cloud](atlassian-cloud-tutorial.md)| [Atlassian Cloud-подготовка пользователей](atlassian-cloud-provisioning-tutorial.md)|
 | ![логотип](./media/tutorial-list/active-directory-saas-servicenow-tutorial.png)| [ServiceNow](servicenow-tutorial.md)|[ServiceNow — подготовка пользователей](servicenow-provisioning-tutorial.md)|
@@ -46,7 +45,7 @@ ms.locfileid: "82129976"
 
 ## <a name="cloud-integrations"></a>Облачные интеграции
 
-| Логотип | Руководство по настройке единого входа для приложения | Руководство по подготовке пользователей для приложения |
+| Эмблема | Руководство по настройке единого входа для приложения | Руководство по подготовке пользователей для приложения |
 | :--- | :--- | :--- |
 | ![логотип](./media/tutorial-list/active-directory-saas-amazon-web-service-tutorial.png)| [Консоль Amazon Web Services (AWS)](amazon-web-service-tutorial.md)| [Консоль Amazon Web Services (AWS) — подготовка роли](amazon-web-service-tutorial.md#configure-azure-ad-sso) |
 | ![логотип](./media/tutorial-list/active-directory-saas-alibaba-tutorial.png)| [Облачная служба Алибаба (единый вход ролей)](alibaba-cloud-service-role-based-sso-tutorial.md)| |
@@ -56,7 +55,7 @@ ms.locfileid: "82129976"
 
 ## <a name="oneclick-sso"></a>Единый вход Онекликк
 
-| Логотип | Руководство по настройке единого входа для приложения |        |
+| Эмблема | Руководство по настройке единого входа для приложения |        |
 | :--- | :--- | :--- |
 | ![логотип](./media/tutorial-list/active-directory-saas-acquireio-tutorial.png)| [AcquireIO](acquireio-tutorial.md)|      |
 | ![логотип](./media/tutorial-list/active-directory-saas-aha-tutorial.png)| [Aha!](aha-tutorial.md)|      |
@@ -91,7 +90,7 @@ ms.locfileid: "82129976"
 | ![логотип](./media/tutorial-list/active-directory-saas-mondaycom-tutorial.png)| [monday.com](mondaycom-tutorial.md)|       |
 | ![логотип](./media/tutorial-list/active-directory-saas-myworkdrive-tutorial.png)| [MyWorkDrive](myworkdrive-tutorial.md)|       |
 | ![логотип](./media/tutorial-list/active-directory-saas-nuclino-tutorial.png)| [Nuclino](nuclino-tutorial.md)|       |
-| ![логотип](./media/tutorial-list/active-directory-saas-people-tutorial.png)| [Люди](people-tutorial.md)|       |
+| ![логотип](./media/tutorial-list/active-directory-saas-people-tutorial.png)| [Пользователи](people-tutorial.md)|       |
 | ![логотип](./media/tutorial-list/active-directory-saas-purelyhr-tutorial.png)| [PurelyHR](purelyhr-tutorial.md)|       |
 | ![логотип](./media/tutorial-list/active-directory-saas-ringcentral-tutorial.png)| [RingCentral](ringcentral-tutorial.md)|       |
 | ![логотип](./media/tutorial-list/active-directory-saas-scalex-enterprise-tutorial.png)| [ScaleX Enterprise](scalex-enterprise-tutorial.md)|       |
@@ -116,6 +115,6 @@ ms.locfileid: "82129976"
 | ![логотип](./media/tutorial-list/active-directory-saas-zscaler-two-tutorial.png)| [Zscaler Two](zscaler-two-tutorial.md)|        |
 | ![логотип](./media/tutorial-list/active-directory-saas-zscaler-zscloud-tutorial.png)| [Zscaler ZSCloud](zscaler-zscloud-tutorial.md)|         |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об управлении приложениями см. в статье [Управление приложениями с помощью Azure Active Directory](../manage-apps/what-is-application-management.md).

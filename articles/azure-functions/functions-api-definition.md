@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alkarche
 ms.openlocfilehash: cbfd0e36307210851070c22e74acb0a858446ce1
-ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81866718"
 ---
 # <a name="openapi-20-metadata-support-in-azure-functions-preview"></a>Поддержка метаданных OpenAPI 2.0 в Функциях Azure (предварительная версия)
@@ -40,7 +39,7 @@ ms.locfileid: "81866718"
 
 ### <a name="available-templates"></a><a name="templates"></a>Доступные шаблоны
 
-|Имя| Описание |
+|name| Описание: |
 |:-----|:-----|
 |Созданное определение|Определение OpenAPI с максимальным объемом информации, которую можно извлечь из имеющихся метаданных функции.|
 
@@ -50,10 +49,10 @@ ms.locfileid: "81866718"
 
 |Swagger.json|Пользовательский интерфейс портала|Function.json|
 |:----|:-----|:-----|
-|[Узел](https://swagger.io/specification/#fixed-fields-15)|**Настройки** > приложения**приложения App Service настройки** > **Обзор** > **URL**|*Не присутствует*
-|[Пути](https://swagger.io/specification/#paths-object-29)|**Интеграция** > **выбранных методов HTTP**|Bindings: Route
-|[Path Item](https://swagger.io/specification/#path-item-object-32)|**Шаблон интеграции** > **маршрута**|Bindings: Methods
-|[Безопасность](https://swagger.io/specification/#security-scheme-object-112)|**Ключи**|*Не присутствует*|
+|[Узел](https://swagger.io/specification/#fixed-fields-15)|**Параметры**  >  приложения функции **Параметры**  >  службы приложений **Общие сведения**  >  **URL-адрес**|*Отсутствует*
+|[Пути](https://swagger.io/specification/#paths-object-29)|**Интеграция**  >  **Выбранные методы HTTP**|Bindings: Route
+|[Path Item](https://swagger.io/specification/#path-item-object-32)|**Интеграция**  >  **Шаблон маршрута**|Bindings: Methods
+|[Безопасность](https://swagger.io/specification/#security-scheme-object-112)|**Ключи**|*Отсутствует*|
 |operationID*|**Маршрут + допустимые команды**|Маршрут + допустимые команды|
 
 \*Идентификатор операции необходим только для интеграции с PowerApps и Flow.
@@ -64,7 +63,7 @@ ms.locfileid: "81866718"
 
 ## <a name="use-cicd-to-set-an-api-definition"></a><a name="CICD"></a>Создание определения API с помощью процесса непрерывной интеграции и доставки
 
- Прежде чем включать систему управления версиями для изменения из нее определения API, необходимо включить размещение определения API на портале. Выполните следующие действия:
+ Прежде чем включать систему управления версиями для изменения из нее определения API, необходимо включить размещение определения API на портале. Следуйте указаниям, приведенным ниже:
 
 1. Перейдите к **API Definition (preview)** (Определение API (предварительная версия)) в параметрах приложения-функции.
    1. Задайте для параметра **API definition source** (Источник определения API) значение **Функция**.
@@ -75,7 +74,7 @@ ms.locfileid: "81866718"
 
 Теперь изменения, внесенные в файл swagger.json в репозитории, размещаются приложением-функцией с использованием URL-адреса и ключа определения API, которые указаны на шаге 1.в.
 
-## <a name="next-steps"></a>Дальнейшие действия
-* [Начало начала учебник](functions-api-definition-getting-started.md). Попробуйте воспользоваться нашим пошаговым руководством, чтобы увидеть определения OpenAPI в действии.
-* [Репозиторий Azure Функции GitHub](https://github.com/Azure/Azure-Functions/). Ознакомьтесь со сведениями о Функциях в репозитории и оставьте свои отзывы о предварительной версии средства поддержки определений API. Добавьте на GitHub сведения обо всех проблемах, которые необходимо устранить.
-* [Ссылка разработчика Azure Functions](functions-reference.md). Сведения о написании кода функций и определении триггеров и привязок.
+## <a name="next-steps"></a>Дальнейшие шаги
+* [Руководство по началу работы](functions-api-definition-getting-started.md). Попробуйте воспользоваться нашим пошаговым руководством, чтобы увидеть определения OpenAPI в действии.
+* [Репозиторий GitHub для функций Azure](https://github.com/Azure/Azure-Functions/). Ознакомьтесь со сведениями о Функциях в репозитории и оставьте свои отзывы о предварительной версии средства поддержки определений API. Добавьте на GitHub сведения обо всех проблемах, которые необходимо устранить.
+* [Справочник разработчика по функциям Azure](functions-reference.md). Сведения о написании кода функций и определении триггеров и привязок.

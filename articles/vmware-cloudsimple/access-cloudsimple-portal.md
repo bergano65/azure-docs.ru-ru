@@ -9,21 +9,20 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 91d3dd2eee6f771df23b72eae7a33122c42f1690
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81869333"
 ---
 # <a name="access-the-vmware-solution-by-cloudsimple-portal-from-the-azure-portal"></a>Доступ к решению VMware с помощью портала Клаудсимпле из портал Azure
 
 Единый вход поддерживается для доступа к порталу Клаудсимпле. После входа в портал Azure вы можете получить доступ к порталу Клаудсимпле, не войдя в систему повторно. При первом обращении к порталу Клаудсимпле вам будет предложено авторизовать приложение [авторизации службы клаудсимпле](#consent-to-cloudsimple-service-authorization-application) .  Авторизация является однократным действием.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Пользователи со встроенными ролями **владельца** и **участника** могут получить доступ к порталу клаудсимпле.  Роли должны быть настроены в группе ресурсов, в которой развернута служба Клаудсимпле.  Роли также можно настроить в объекте службы Клаудсимпле.  Дополнительные сведения о проверке роли см. в статье [Просмотр назначений ролей](https://docs.microsoft.com/azure/role-based-access-control/check-access) . Только пользователи со встроенными ролями **владельца** и **участника** могут получить доступ к порталу клаудсимпле.  Роли должны быть настроены в подписке.  Дополнительные сведения о проверке роли см. в статье [Просмотр назначений ролей](https://docs.microsoft.com/azure/role-based-access-control/check-access) .
 
-При использовании настраиваемых ролей роль должна иметь одну из следующих операций в ```Actions```.  Дополнительные сведения о пользовательских ролях см. в статье [пользовательские роли для ресурсов Azure](https://docs.microsoft.com/azure/role-based-access-control/custom-roles).  Если какая-либо из операций является частью ```NotActions```, пользователь не может получить доступ к порталу клаудсимпле.
+При использовании настраиваемых ролей роль должна иметь одну из следующих операций в ```Actions``` .  Дополнительные сведения о пользовательских ролях см. в статье [пользовательские роли для ресурсов Azure](https://docs.microsoft.com/azure/role-based-access-control/custom-roles).  Если какая-либо из операций является частью ```NotActions``` , пользователь не может получить доступ к порталу клаудсимпле.
 
 ```
 Microsoft.VMwareCloudSimple/*

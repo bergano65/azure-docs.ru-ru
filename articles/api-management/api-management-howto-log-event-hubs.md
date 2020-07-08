@@ -14,10 +14,9 @@ ms.topic: article
 ms.date: 01/29/2018
 ms.author: apimpm
 ms.openlocfilehash: 0d122a56035e58bd5065da8fde56246da6478d54
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82871259"
 ---
 # <a name="how-to-log-events-to-azure-event-hubs-in-azure-api-management"></a>Как регистрировать события в Центрах событий Azure при использовании службы управления API Azure
@@ -46,7 +45,7 @@ ms.locfileid: "82871259"
 6. В окне обработки входящих или исходящих запросов щелкните треугольник (рядом со значком карандаша).
 7. Выберите редактор кода. Дополнительные сведения см. в статье [Настройка или изменение политик службы управления API Azure](set-edit-policies.md).
 8. Наведите указатель мыши на раздел политики `inbound` или `outbound`.
-9. В окне справа выберите **Расширенные политики** > **Журнал для EventHub**. В результате будет вставлен шаблон инструкции политики `log-to-eventhub`.
+9. В окне справа выберите **Расширенные политики**  >  **Журнал для EventHub**. В результате будет вставлен шаблон инструкции политики `log-to-eventhub`.
 
 ```xml
 <log-to-eventhub logger-id="logger-id">
@@ -76,7 +75,7 @@ ms.locfileid: "82871259"
 3. На карточке **Включение аналитики в реальном времени из событий** выберите **проводник**.
 4. Вы можете просмотреть журнал на вкладке " **Просмотр ввода** ". Если отображаемые данные не являются текущими, выберите **Обновить** , чтобы просмотреть последние события.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительная информация о Центрах событий Azure
   * [Приступая к работе с Центрами событий Azure](../event-hubs/event-hubs-c-getstarted-send.md)
   * [Прием сообщений через EventProcessorHost](../event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph.md)

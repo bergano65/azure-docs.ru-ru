@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.date: 12/12/2017
 ms.author: dobett
 ms.openlocfilehash: 0c8739dff39490f14b613af483f769ac031c1bd9
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82792383"
 ---
 # <a name="frequently-asked-questions-for-connected-factory-solution-accelerator"></a>Часто задаваемые вопросы об акселераторе решения "Подключенная фабрика"
@@ -82,7 +81,7 @@ IP-адрес можно удалить двумя вариантами.
         export IOTHUB_CONNECTIONSTRING="HostName={yourdeployment}.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey={your key}"
         ```
 
-    * Запустите `./startsimulation`.
+    * Выполните `./startsimulation`.
 
 ### <a name="how-do-i-update-the-simulation-in-the-vm"></a>Как обновить симуляцию на виртуальной машине?
 
@@ -190,7 +189,7 @@ IP-адрес можно удалить двумя вариантами.
 
 1. Перезапустите службу приложений для решения "Подключенная фабрика".
 
-### <a name="next-steps"></a>Следующие шаги
+### <a name="next-steps"></a>Дальнейшие шаги
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 

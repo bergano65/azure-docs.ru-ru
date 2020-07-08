@@ -10,17 +10,16 @@ ms.topic: article
 ms.author: apimpm
 ms.date: 04/23/2020
 ms.openlocfilehash: 38cfab8a3b73eeef28249f53bd2f5c56e26b21a1
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82854109"
 ---
 # <a name="deploy-a-self-hosted-gateway-to-kubernetes"></a>Развертывание независимого шлюза в Kubernetes
 
 В этой статье описаны действия по развертыванию компонента самостоятельно размещенного шлюза службы управления API Azure в кластере Kubernetes.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
 - Создайте кластер Kubernetes.
@@ -110,7 +109,7 @@ ms.locfileid: "82854109"
 ### <a name="configuration-backup"></a>Резервная копия конфигурации
 Сведения о работе с локальным шлюзом при наличии временного сбоя подключения Azure см. в статье [Общие сведения о шлюзе для размещения](self-hosted-gateway-overview.md#connectivity-to-azure).
 
-Настройте локальный том хранилища для контейнера самостоятельно размещенного шлюза, чтобы он мог сохранить резервную копию последней скачанной конфигурации. Если подключение не работает, том хранилища может использовать резервную копию после перезагрузки. Путь подключения тома должен иметь <code>/apim/config</code>значение. См. пример на [GitHub](https://github.com/Azure/api-management-self-hosted-gateway/blob/master/examples/self-hosted-gateway-with-configuration-backup.yaml).
+Настройте локальный том хранилища для контейнера самостоятельно размещенного шлюза, чтобы он мог сохранить резервную копию последней скачанной конфигурации. Если подключение не работает, том хранилища может использовать резервную копию после перезагрузки. Путь подключения тома должен иметь значение <code>/apim/config</code> . См. пример на [GitHub](https://github.com/Azure/api-management-self-hosted-gateway/blob/master/examples/self-hosted-gateway-with-configuration-backup.yaml).
 Дополнительные сведения о хранилище в Kubernetes см. на [веб-сайте Kubernetes](https://kubernetes.io/docs/concepts/storage/volumes/).
 
 ### <a name="local-logs-and-metrics"></a>Локальные журналы и метрики

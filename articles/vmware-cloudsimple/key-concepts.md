@@ -10,10 +10,9 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 410215550f728d6b11b02b3ef108d429481e42a0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81869025"
 ---
 # <a name="key-concepts-for-administration-of-azure-vmware-solutions-by-cloudsimple"></a>Основные понятия администрирования решений Azure VMware с помощью Клаудсимпле
@@ -58,7 +57,7 @@ ms.locfileid: "81869025"
 
 С помощью службы Клаудсимпле можно управлять виртуальными машинами VMware из портал Azure. Один или несколько кластеров или пулов ресурсов из среды vSphere можно сопоставить с подпиской, в которой создана служба.
 
-Дополнительные сведения
+Дополнительные сведения:
 
 * [Клаудсимпле виртуальные машины](cloudsimple-virtual-machines.md)
 * [Сопоставление подписок Azure](https://docs.microsoft.com/azure/vmware-cloudsimple/azure-subscription-mapping/)
