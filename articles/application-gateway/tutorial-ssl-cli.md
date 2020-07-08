@@ -4,16 +4,16 @@ description: Узнайте, как создать шлюз приложений
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/14/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 6cd8cca65762de3da6a0e69e93c8d79bbe498dde
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 16ad8d7fd0f46381f2e2e7076015af65bd4bddcd
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81311973"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84806144"
 ---
 # <a name="create-an-application-gateway-with-tls-termination-using-the-azure-cli"></a>Создание шлюза приложений с завершением TLS с помощью Azure CLI
 
@@ -165,7 +165,7 @@ az network public-ip show \
   --output tsv
 ```
 
-Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. В этом примере URL-адрес: **https://52.170.203.149**.
+Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. В этом примере URL-адрес: **https://52.170.203.149** .
 
 ![Предупреждение системы безопасности](./media/tutorial-ssl-cli/application-gateway-secure.png)
 
@@ -181,6 +181,6 @@ az network public-ip show \
 az group delete --name myResourceGroupAG --location eastus
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание шлюза приложений для размещения нескольких веб-сайтов](./tutorial-multiple-sites-cli.md)

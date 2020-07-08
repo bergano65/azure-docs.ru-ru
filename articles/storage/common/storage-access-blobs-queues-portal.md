@@ -8,14 +8,14 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 04/14/2020
 ms.author: tamram
-ms.reviewer: cbrooks
+ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: e556e21238db5de7dddce13ea912dae30723fe8c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9b2de4f320801b20de5bcc9687a723dadb182ef8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81383685"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84807709"
 ---
 # <a name="use-the-azure-portal-to-access-blob-or-queue-data"></a>Использование портал Azure для доступа к данным BLOB-объектов или очередей
 
@@ -88,7 +88,7 @@ ms.locfileid: "81383685"
 
 Обратите внимание, что в списке нет BLOB-объектов, если у вашей учетной записи Azure AD нет разрешений на их просмотр. Щелкните ссылку **Переключение на ключ доступа** , чтобы снова использовать ключ доступа для проверки подлинности.
 
-### <a name="authenticate-with-your-azure-ad-account"></a>Проверка подлинности с помощью учетной записи Azure AD
+### <a name="authenticate-with-your-azure-ad-account"></a>Пройдите проверку подлинности с учетной записью Azure AD.
 
 Если вы выполняете проверку подлинности с помощью учетной записи Azure AD, вы увидите на портале **учетную запись пользователя Azure AD** , указанную в качестве метода проверки подлинности:
 

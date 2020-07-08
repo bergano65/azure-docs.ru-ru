@@ -4,16 +4,16 @@ description: В этой статье вы узнаете, как маршрут
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/01/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: b6bc0b00579bdef0a358f756b8cf2b6034aca017
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: fc32dd5c477a76a20bc3a641ec8761e95c129554
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "68688179"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84805891"
 ---
 # <a name="route-web-traffic-based-on-the-url-using-the-azure-cli"></a>Маршрутизация веб-трафика на основе URL-адресов с помощью Azure CLI
 
@@ -252,7 +252,7 @@ az network public-ip show \
 
 ![Тестирование URL-адреса изображений в шлюзе приложений](./media/tutorial-url-route-cli/application-gateway-nginx-images.png)
 
-Измените URL-адрес на&lt;http://IP-&gt;Address: 8080/Video/Test.HTML, замените IP-адрес &lt;на IP&gt;, и вы увидите нечто вроде приведенного в следующем примере.
+Измените URL-адрес на http:// &lt; IP-address &gt; : 8080/видео/test.html, заменив IP &lt; -адрес IP &gt; , и вы увидите нечто вроде следующего.
 
 ![Тестирование URL-адреса видео в шлюзе приложений](./media/tutorial-url-route-cli/application-gateway-nginx-video.png)
 
@@ -264,6 +264,6 @@ az network public-ip show \
 az group delete --name myResourceGroupAG
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Создание шлюза приложений с перенаправлением на основе URL-пути](./tutorial-url-redirect-cli.md)
