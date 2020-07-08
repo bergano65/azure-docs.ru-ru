@@ -7,17 +7,16 @@ author: rohinkoul
 manager: kumudD
 ms.service: traffic-manager
 ms.devlang: na
-ms.topic: article
+ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/03/2017
 ms.author: rohink
-ms.openlocfilehash: 6d720067b619b0d871899f2ac9025a9d8ab24d95
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: b0585c755e8dd9a6625a8259dc71ca521f156afb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82130772"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84704069"
 ---
 # <a name="troubleshooting-degraded-state-on-azure-traffic-manager"></a>Устранение неполадок, связанных со сбоем диспетчера трафика
 
@@ -48,7 +47,7 @@ ms.locfileid: "82130772"
 
 Кроме того, для просмотра ответа HTTP можно воспользоваться вкладкой "Сеть" средств отладки F12 в Internet Explorer.
 
-В этом примере мы хотим увидеть ответ от нашего URL-адреса пробы: HTTP\/:/watestsdp2008r2.cloudapp.NET:80/Probe. Проблема продемонстрирована в приведенном ниже примере PowerShell.
+В этом примере мы хотим увидеть ответ от нашего URL-адреса пробы: http: \/ /watestsdp2008r2.cloudapp.NET:80/Probe. Проблема продемонстрирована в приведенном ниже примере PowerShell.
 
 ```powershell
 Invoke-WebRequest 'http://watestsdp2008r2.cloudapp.net/Probe' -MaximumRedirection 0 -ErrorAction SilentlyContinue | Select-Object StatusCode,StatusDescription
@@ -79,7 +78,7 @@ public class TrustAllCertsPolicy : ICertificatePolicy {
 [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 [О методах маршрутизации трафика в диспетчере трафика](traffic-manager-routing-methods.md)
 
@@ -87,7 +86,7 @@ public class TrustAllCertsPolicy : ICertificatePolicy {
 
 [Облачные службы](https://go.microsoft.com/fwlink/?LinkId=314074)
 
-[Служба приложений Azure](https://azure.microsoft.com/documentation/services/app-service/web/)
+[служба приложений Azure](https://azure.microsoft.com/documentation/services/app-service/web/);
 
 [Операции с диспетчером трафика (справочник по REST API)](https://go.microsoft.com/fwlink/?LinkId=313584)
 

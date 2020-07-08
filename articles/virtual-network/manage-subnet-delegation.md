@@ -7,17 +7,16 @@ documentationcenter: na
 author: KumudD
 ms.service: virtual-network
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/06/2019
 ms.author: kumud
-ms.openlocfilehash: 6f767abdf8673e3adffc6c4e3748733054ba723d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: d2db8eb5b93d84a5ece182fffbca5870762ee89e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77201872"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84703933"
 ---
 # <a name="add-or-remove-a-subnet-delegation"></a>Добавление или удаление делегирования подсети
 
@@ -33,7 +32,7 @@ ms.locfileid: "77201872"
 
 В этом разделе вы создадите виртуальную сеть и подсеть, которые позже будут делегироваться службе Azure.
 
-1. В верхней левой части экрана выберите **создать ресурс** > **сети** > **Виртуальная сеть**.
+1. В верхней левой части экрана выберите **создать ресурс**  >  **сети**  >  **Виртуальная сеть**.
 1. В подменю **Создать виртуальную сеть** введите или выберите следующую информацию:
 
     | Параметр | Значение |
@@ -50,7 +49,7 @@ ms.locfileid: "77201872"
 
 ### <a name="permissions"></a>Разрешения
 
-Если вы не создали подсеть, которую вы хотите делегировать службе Azure, вам потребуется следующее разрешение: `Microsoft.Network/virtualNetworks/subnets/write`.
+Если вы не создали подсеть, которую вы хотите делегировать службе Azure, вам потребуется следующее разрешение: `Microsoft.Network/virtualNetworks/subnets/write` .
 
 Встроенная роль « [участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) » также содержит необходимые разрешения.
 
@@ -90,7 +89,7 @@ ms.locfileid: "77201872"
 ```
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
-Создайте виртуальную сеть с именем **myVnet** с подсетью с именем **mySubnet** в **myResourceGroup** с помощью команды [AZ Network vnet Create](https://docs.microsoft.com/cli/azure/network/vnet).
+С помощью команды [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet) создайте виртуальную сеть с именем **myVnet**, содержащую подсеть **mySubnet**, в группе ресурсов **myResourceGroup**.
 
 ```azurecli-interactive
   az network vnet create \
@@ -103,7 +102,7 @@ ms.locfileid: "77201872"
 ```
 ### <a name="permissions"></a>Разрешения
 
-Если вы не создали подсеть, которую вы хотите делегировать службе Azure, вам потребуется следующее разрешение: `Microsoft.Network/virtualNetworks/subnets/write`.
+Если вы не создали подсеть, которую вы хотите делегировать службе Azure, вам потребуется следующее разрешение: `Microsoft.Network/virtualNetworks/subnets/write` .
 
 Встроенная роль « [участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) » также содержит необходимые разрешения.
 
@@ -193,7 +192,7 @@ ms.locfileid: "77201872"
 ```
 ### <a name="create-virtual-network"></a>Создание виртуальной сети
 
-Создайте виртуальную сеть с именем **myVnet** с подсетью с именем **MySubnet** , используя [New-Азвиртуалнетворксубнетконфиг](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig?view=latest) в **myResourceGroup** с помощью [New-азвиртуалнетворк](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork?view=latest). Пространство IP-адресов для виртуальной сети — **10.0.0.0/16**. Подсеть в виртуальной сети — **10.0.0.0/24**.  
+Создайте виртуальную сеть с именем **myVnet** и подсетью **mySubnet** с помощью командлета [New-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig?view=latest) в группе **myResourceGroup**, используя командлет [New-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork?view=latest). Пространство IP-адресов для виртуальной сети — **10.0.0.0/16**. Подсеть в виртуальной сети — **10.0.0.0/24**.  
 
 ```azurepowershell-interactive
   $subnet = New-AzVirtualNetworkSubnetConfig -Name mySubnet -AddressPrefix "10.0.0.0/24"
@@ -202,7 +201,7 @@ ms.locfileid: "77201872"
 ```
 ### <a name="permissions"></a>Разрешения
 
-Если вы не создали подсеть, которую вы хотите делегировать службе Azure, вам потребуется следующее разрешение: `Microsoft.Network/virtualNetworks/subnets/write`.
+Если вы не создали подсеть, которую вы хотите делегировать службе Azure, вам потребуется следующее разрешение: `Microsoft.Network/virtualNetworks/subnets/write` .
 
 Встроенная роль « [участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) » также содержит необходимые разрешения.
 

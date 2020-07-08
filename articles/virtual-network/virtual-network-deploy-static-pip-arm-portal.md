@@ -7,18 +7,17 @@ author: asudbring
 manager: KumudD
 ms.service: virtual-network
 ms.subservice: ip-services
-ms.devlang: azurecli
-ms.topic: article
+ms.devlang: ''
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/08/2018
 ms.author: allensu
-ms.openlocfilehash: 3ef96c83b460346ba49051f6f5c4fd0dd5df34ab
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
-ms.translationtype: MT
+ms.openlocfilehash: 745b12e2278c487ed49a9d2d726a760a7df8f276
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82790173"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84703173"
 ---
 # <a name="create-a-virtual-machine-with-a-static-public-ip-address-using-the-azure-portal"></a>Создание виртуальной машины со статическим общедоступным IP-адресом с помощью портала Azure
 
@@ -41,7 +40,7 @@ ms.locfileid: "82790173"
     |Пароль| Введите выбранный пароль. Пароль должен включать минимум 12 символов и соответствовать [определенным требованиям к сложности](../virtual-machines/windows/faq.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).|
     |Подписка| Выберите свою подписку.|
     |Группа ресурсов| Щелкните **Использовать существующую** и выберите **myResourceGroup**.|
-    |Расположение| Выберите **Восточная часть США**|
+    |Расположение| Выберите **Восточная часть США**.|
 
 4. Выберите размер виртуальной машины и щелкните **Выбрать**.
 5. В разделе **Параметры** выберите **Общедоступный IP-адрес**.
@@ -77,11 +76,11 @@ ms.locfileid: "82790173"
 
 1. В поле **Поиск** в верхней части портала введите *myResourceGroup*. Когда группа ресурсов **myResourceGroup** появится в результатах поиска, выберите ее.
 2. Выберите **Удалить группу ресурсов**.
-3. Введите *myResourceGroup* **в поле введите имя группы ресурсов:** и выберите **Удалить**.
+3. Введите *myResourceGroup* в поле **TYPE THE RESOURCE GROUP NAME:** (Введите имя группы ресурсов:) и нажмите кнопку **Удалить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения об [общедоступных IP-адресах в Azure](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
-- Дополнительные сведения обо всех [параметрах общедоступных IP-адресов](virtual-network-public-ip-address.md#create-a-public-ip-address).
+- Дополнительные сведения об [общедоступных IP-адресах](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses) в Azure
+- Дополнительные сведения о всех [параметрах общедоступного IP-адреса](virtual-network-public-ip-address.md#create-a-public-ip-address)
 - Дополнительные сведения о [частных IP-адресах](virtual-network-ip-addresses-overview-arm.md#private-ip-addresses) и назначении [статического частного IP-адреса](virtual-network-network-interface-addresses.md#add-ip-addresses) виртуальной машине Azure
 - Дополнительные сведения о создании виртуальных машин [Linux](../virtual-machines/windows/tutorial-manage-vm.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [Windows](../virtual-machines/windows/tutorial-manage-vm.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
