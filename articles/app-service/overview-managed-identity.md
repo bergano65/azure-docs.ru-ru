@@ -3,15 +3,16 @@ title: Управляемые удостоверения
 description: Узнайте, как управляемые удостоверения работают в Службе приложений Azure и Функциях Azure, как настроить управляемое удостоверение и создать маркер для внутреннего ресурса.
 author: mattchenderson
 ms.topic: article
-ms.date: 04/14/2020
+ms.date: 05/27/2020
 ms.author: mahender
 ms.reviewer: yevbronsh
-ms.openlocfilehash: 0bb17ab98dc17bbe7623467451acc65a126bcaf1
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
-ms.translationtype: HT
+ms.custom: tracking-python
+ms.openlocfilehash: 87e4d67086ea9f260becb2d63765e807e2b73546
+ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83779970"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85985758"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Использование управляемых удостоверений в Службе приложений и Функциях Azure
 
@@ -42,7 +43,7 @@ ms.locfileid: "83779970"
 
 
 > [!NOTE] 
-> Чтобы найти управляемое удостоверение для веб-приложения или приложения слота на портале Azure, перейдите к разделу "Параметры пользователя" в области корпоративных приложений.
+> Чтобы найти управляемое удостоверение для веб-приложения или приложения слота в портал Azure, в разделе **корпоративные приложения**просмотрите раздел **Параметры пользователя** . Обычно имя слота аналогично `<app name>/slots/<slot name>` .
 
 
 ### <a name="using-the-azure-cli"></a>Использование Azure CLI
@@ -79,7 +80,9 @@ ms.locfileid: "83779970"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Ниже описаны действия по созданию веб-приложения и присвоению удостоверения ему с помощью Azure PowerShell:
+Следующие шаги помогут вам создать приложение и назначить ему удостоверение с помощью Azure PowerShell. Инструкции по созданию веб-приложения и приложения функции различаются.
+
+#### <a name="using-azure-powershell-for-a-web-app"></a>Использование Azure PowerShell для веб-приложения
 
 1. При необходимости установите Azure PowerShell с помощью инструкций из [руководства по Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Login-AzAccount`, чтобы создать подключение к Azure.
 
@@ -87,20 +90,39 @@ ms.locfileid: "83779970"
 
     ```azurepowershell-interactive
     # Create a resource group.
-    New-AzResourceGroup -Name myResourceGroup -Location $location
+    New-AzResourceGroup -Name $resourceGroupName -Location $location
 
     # Create an App Service plan in Free tier.
-    New-AzAppServicePlan -Name $webappname -Location $location -ResourceGroupName myResourceGroup -Tier Free
+    New-AzAppServicePlan -Name $webappname -Location $location -ResourceGroupName $resourceGroupName -Tier Free
 
     # Create a web app.
-    New-AzWebApp -Name $webappname -Location $location -AppServicePlan $webappname -ResourceGroupName myResourceGroup
+    New-AzWebApp -Name $webappname -Location $location -AppServicePlan $webappname -ResourceGroupName $resourceGroupName
     ```
 
 3. Выполните команду `Set-AzWebApp -AssignIdentity`, чтобы создать удостоверение для этого приложения.
 
     ```azurepowershell-interactive
-    Set-AzWebApp -AssignIdentity $true -Name $webappname -ResourceGroupName myResourceGroup 
+    Set-AzWebApp -AssignIdentity $true -Name $webappname -ResourceGroupName $resourceGroupName 
     ```
+
+#### <a name="using-azure-powershell-for-a-function-app"></a>Использование Azure PowerShell для приложения-функции
+
+1. При необходимости установите Azure PowerShell с помощью инструкций из [руководства по Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Login-AzAccount`, чтобы создать подключение к Azure.
+
+2. Создание приложения-функции с помощью Azure PowerShell. Дополнительные примеры использования Azure PowerShell с функциями Azure см. в [справочнике по AZ. functions](https://docs.microsoft.com/powershell/module/az.functions/?view=azps-4.1.0#functions):
+
+    ```azurepowershell-interactive
+    # Create a resource group.
+    New-AzResourceGroup -Name $resourceGroupName -Location $location
+
+    # Create a storage account.
+    New-AzStorageAccount -Name $storageAccountName -ResourceGroupName $resourceGroupName -SkuName $sku
+
+    # Create a function app with a system-assigned identity.
+    New-AzFunctionApp -Name $functionAppName -ResourceGroupName $resourceGroupName -Location $location -StorageAccountName $storageAccountName -Runtime $runtime -IdentityType SystemAssigned
+    ```
+
+Можно также обновить существующее приложение функции `Update-AzFunctionApp` , используя вместо этого.
 
 ### <a name="using-an-azure-resource-manager-template"></a>Использование шаблона Azure Resource Manager
 
@@ -176,6 +198,35 @@ ms.locfileid: "83779970"
 6. Найдите созданное ранее удостоверение и выберите его. Нажмите кнопку **Добавить**.
 
     ![Управляемое удостоверение в Службе приложений](media/app-service-managed-service-identity/user-assigned-managed-identity-in-azure-portal.png)
+
+### <a name="using-azure-powershell"></a>Использование Azure PowerShell
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+Следующие шаги помогут вам создать приложение и назначить ему удостоверение с помощью Azure PowerShell.
+
+> [!NOTE]
+> Текущая версия Azure PowerShell командлеты для службы приложений Azure не поддерживает назначенные пользователю удостоверения. Приведенные ниже инструкции предназначены для функций Azure.
+
+1. При необходимости установите Azure PowerShell с помощью инструкций из [руководства по Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Login-AzAccount`, чтобы создать подключение к Azure.
+
+2. Создание приложения-функции с помощью Azure PowerShell. Дополнительные примеры использования Azure PowerShell с функциями Azure см. в [справочнике по AZ. functions](https://docs.microsoft.com/powershell/module/az.functions/?view=azps-4.1.0#functions). В приведенном ниже скрипте также используется, `New-AzUserAssignedIdentity` который должен быть установлен отдельно при [создании, перечислении или удалении назначенного пользователем управляемого удостоверения с помощью Azure PowerShell](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md).
+
+    ```azurepowershell-interactive
+    # Create a resource group.
+    New-AzResourceGroup -Name $resourceGroupName -Location $location
+
+    # Create a storage account.
+    New-AzStorageAccount -Name $storageAccountName -ResourceGroupName $resourceGroupName -SkuName $sku
+
+    # Create a user-assigned identity. This requires installation of the "Az.ManagedServiceIdentity" module.
+    $userAssignedIdentity = New-AzUserAssignedIdentity -Name $userAssignedIdentityName -ResourceGroupName $resourceGroupName
+
+    # Create a function app with a user-assigned identity.
+    New-AzFunctionApp -Name $functionAppName -ResourceGroupName $resourceGroupName -Location $location -StorageAccountName $storageAccountName -Runtime $runtime -IdentityType UserAssigned -IdentityId $userAssignedIdentity.Id
+    ```
+
+Можно также обновить существующее приложение функции `Update-AzFunctionApp` , используя вместо этого.
 
 ### <a name="using-an-azure-resource-manager-template"></a>Использование шаблона Azure Resource Manager
 
@@ -428,7 +479,11 @@ $accessToken = $tokenResponse.access_token
 
 ## <a name="remove-an-identity"></a><a name="remove"></a>Удаление удостоверения
 
-Чтобы удалить назначаемое системой удостоверение, нужно отключить возможность с помощью портала, PowerShell или интерфейса командной строки точно так же, как и при его создании. Назначаемые пользователем удостоверения можно удалить по отдельности. Чтобы удалить все удостоверения, задайте для типа значение "Нет" в [шаблоне ARM](#using-an-azure-resource-manager-template):
+Чтобы удалить назначаемое системой удостоверение, нужно отключить возможность с помощью портала, PowerShell или интерфейса командной строки точно так же, как и при его создании. Назначаемые пользователем удостоверения можно удалить по отдельности. Чтобы удалить все удостоверения, задайте для параметра Тип удостоверения значение "нет".
+
+Если назначаемое системой удостоверение удаляется таким способом, то оно также удаляется и из Azure AD. Назначаемые системой удостоверения также автоматически удаляются из Azure AD, когда удаляется ресурс приложения.
+
+Чтобы удалить все удостоверения в [шаблоне ARM](#using-an-azure-resource-manager-template), выполните следующие действия.
 
 ```json
 "identity": {
@@ -436,7 +491,12 @@ $accessToken = $tokenResponse.access_token
 }
 ```
 
-Если назначаемое системой удостоверение удаляется таким способом, то оно также удаляется и из Azure AD. Назначаемые системой удостоверения также автоматически удаляются из Azure AD, когда удаляется ресурс приложения.
+Чтобы удалить все удостоверения в Azure PowerShell (только для функций Azure):
+
+```azurepowershell-interactive
+# Update an existing function app to have IdentityType "None".
+Update-AzFunctionApp -Name $functionAppName -ResourceGroupName $resourceGroupName -IdentityType None
+```
 
 > [!NOTE]
 > Также вы можете установить параметр приложения WEBSITE_DISABLE_MSI, который отключает локальную службу маркеров. Но при этом само удостоверение сохранится, а управляемое удостоверение будет отображаться как "включенное". По этой причине мы рекомендуем не использовать такой параметр.

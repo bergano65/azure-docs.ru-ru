@@ -6,19 +6,19 @@ ms.author: mingshen
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 05/19/2020
-ms.openlocfilehash: bd9d643708515855e81ac6729843388a690b2c45
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
-ms.translationtype: HT
+ms.date: 06/17/2020
+ms.openlocfilehash: b9bac7b5b23c4e7d4042b53b93347628488be953
+ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83700948"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85984276"
 ---
 # <a name="create-a-consulting-service-offer"></a>Создание предложения консультационных услуг
 
-В этой статье описано, как публиковать предложение консультационных услуг в [Microsoft AppSource](https://appsource.microsoft.com/) или [Azure Marketplace](https://azuremarketplace.microsoft.com/). Вы сможете разместить предложение консультационных услуг на основе Microsoft [Dynamics 365](https://dynamics.microsoft.com/) и Power Platform в AppSource, а также размещение предложений услуг на основе Microsoft Azure в Azure Marketplace. Сначала [создайте учетную запись на коммерческой платформе в Центре партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account), если вы еще этого не сделали. Убедитесь, что ваша учетная запись зарегистрирована в программе коммерческой платформы.
+В этой статье описано, как публиковать предложение консультационных услуг в [Microsoft AppSource](https://appsource.microsoft.com/) или [Azure Marketplace](https://azuremarketplace.microsoft.com/). Вы сможете разместить предложение консультационных услуг на основе Microsoft [Dynamics 365](https://dynamics.microsoft.com/) и Power Platform в AppSource, а также размещение предложений услуг на основе Microsoft Azure в Azure Marketplace. Сначала [создайте учетную запись на коммерческой платформе в Центре партнеров](create-account.md), если вы еще этого не сделали. Убедитесь, что ваша учетная запись зарегистрирована в программе коммерческой платформы.
 
-Перед созданием предложения ознакомьтесь со статьей [Предварительные требования к консультационным услугам](https://docs.microsoft.com/azure/marketplace/partner-center-portal/consulting-service-prerequisites).
+Перед созданием предложения ознакомьтесь со статьей [Предварительные требования к консультационным услугам](consulting-service-prerequisites.md).
 
 ## <a name="publishing-benefits"></a>Преимущества публикации
 
@@ -63,12 +63,12 @@ ms.locfileid: "83700948"
 
 1. Выберите **Подключить**, чтобы указать, куда будут отправляться данные о потенциальных клиентах. Центр партнеров поддерживает следующие системы:
 
-    - [Dynamics 365](https://docs.microsoft.com/azure/marketplace/partner-center-portal/commercial-marketplace-lead-management-instructions-dynamics) для плана Customer Engagement
-    - [Marketo](https://docs.microsoft.com/azure/marketplace/partner-center-portal/commercial-marketplace-lead-management-instructions-marketo)
-    - [Salesforce](https://docs.microsoft.com/azure/marketplace/partner-center-portal/commercial-marketplace-lead-management-instructions-salesforce)
+    - [Dynamics 365](commercial-marketplace-lead-management-instructions-dynamics.md) для плана Customer Engagement
+    - [Marketo](commercial-marketplace-lead-management-instructions-marketo.md)
+    - [Salesforce](commercial-marketplace-lead-management-instructions-salesforce.md)
 
     > [!NOTE]
-    > Если ваша система CRM не указана выше, используйте [таблицу Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/commercial-marketplace-lead-management-instructions-azure-table) или [конечные точки HTTPS](https://docs.microsoft.com/azure/marketplace/partner-center-portal/commercial-marketplace-lead-management-instructions-https) для хранения данных о потенциальных клиентах, а затем экспортируйте их в систему CRM.
+    > Если ваша система CRM не указана выше, используйте [таблицу Azure](commercial-marketplace-lead-management-instructions-azure-table.md) или [конечные точки HTTPS](commercial-marketplace-lead-management-instructions-https.md) для хранения данных о потенциальных клиентах, а затем экспортируйте их в систему CRM.
 
 2. При публикации предложения в Центре партнеров подключите свое предложение к месту назначения данных о потенциальных клиентах.
 3. Убедитесь, что подключение к месту назначения данных о потенциальных клиентах настроено правильно. После публикации в Центре партнеров мы проверим подключение и отправим вам данные тестового потенциального клиента. На этапе предварительной версии предложения перед его публикацией вы также можете проверить подключение для передачи данных о потенциальных клиентах. Для этого попробуйте приобрести предложение самостоятельно в предварительной версии среды.
@@ -76,9 +76,9 @@ ms.locfileid: "83700948"
 
 Ниже приведены дополнительные ресурсы по управлению потенциальными клиентами.
 
-- [Общие сведения об управлении потенциальными клиентами](https://docs.microsoft.com/azure/marketplace/partner-center-portal/commercial-marketplace-get-customer-leads)
-- [Раздел часто задаваемых вопросов об управлении потенциальными клиентами](https://docs.microsoft.com/azure/marketplace/lead-management-for-cloud-marketplace#frequently-asked-questions)
-- [Распространенные ошибки конфигурации интересов во время публикации на Портале Cloud Partner](https://docs.microsoft.com/azure/marketplace/lead-management-for-cloud-marketplace#publishing-config-errors)
+- [Общие сведения об управлении потенциальными клиентами](commercial-marketplace-get-customer-leads.md)
+- [Часто задаваемые вопросы по управлению интересами](../lead-management-for-cloud-marketplace.md#frequently-asked-questions))
+- [Распространенные ошибки конфигурации интересов](../lead-management-for-cloud-marketplace.md#publishing-config-errors))
 - [Общие сведения об управлении потенциальными клиентами](https://assetsprod.microsoft.com/mpn/cloud-marketplace-lead-management.pdf) (PDF-документ; убедитесь, что блокирование всплывающих окон отключено)
 
 Чтобы продолжить, выберите **Сохранить черновик**.
@@ -96,19 +96,59 @@ ms.locfileid: "83700948"
     - **Подтверждение концепции**. Ограниченная область реализации, позволяющая определить применимость решения к требованиям клиента.
     - **Семинар**. Интерактивная вовлеченность на территории клиента. Сюда может входить обучение, брифинги, оценки и демонстрации, основанные на данных или рабочей среде клиента.
 
-3. Если в качестве основного продукта вы выбрали **Azure**, задайте не более трех **областей решения**. Так клиенты быстрее найдут ваше предложение в Azure Marketplace. Если вы выбрали другой продукт, пропустите этот шаг.
-4. Если вы выбрали _другой_ основной продукт, задайте не более трех **применимых продуктов**. Так клиенты быстрее найдут ваше предложение в AppSource. Дополнительные сведения см. в документе [с рекомендациями по размещению консультационных услуг в Microsoft AppSource](https://go.microsoft.com/fwlink/?LinkId=828734&amp;clcid=0x409) (в формате PDF).
-5. Выберите до шести **отраслей**, к которым относится ваше предложение. Так клиенты быстрее найдут ваше предложение.
-6. Добавьте до трех **компетенций** своей компании для отображения вместе с предложением консультационных услуг. Необходимо указать по меньшей мере одну компетенцию (за исключением Azure Expert MSP и Azure Networking MSP).
+3. Если вы выбрали **Azure** в качестве основного продукта, выберите до трех **областей решения**. Так клиенты быстрее найдут ваше предложение в Azure Marketplace. Если вы выбрали другой продукт, пропустите этот шаг.
+
+    | Область решения | | | |
+    | --- | --- | --- | --- |
+    | Аналитика | Backup | DevOps | Миграция |
+    | Модернизации приложения | Данные большого размера | Аварийное восстановление | Сети |
+    | Архив | Платформа данных | Идентификация | Безопасность |
+    | ИИ и машинное обучение | Управление центром обработки данных | Интернет вещей | Память |
+
+1. Если вы выбрали **Azure** в качестве основного продукта, то можете выбрать до шести **отраслей**. Так клиенты быстрее найдут ваше предложение в Azure Marketplace. Полный список отраслей в [предложении](../gtm-offer-listing-best-practices.md)содержит рекомендации. Если вы не выбрали Azure, пропустите этот шаг.
+1. Если вы выбрали *другой* основной продукт, задайте не более трех **применимых продуктов**. Так клиенты быстрее найдут ваше предложение в AppSource. Дополнительные сведения см. в документе [с рекомендациями по размещению консультационных услуг в Microsoft AppSource](https://go.microsoft.com/fwlink/?LinkId=828734&amp;clcid=0x409) (в формате PDF).
+1. Если вы выбрали *основной продукт, отличный от* Azure, можно выбрать до двух **отраслей** и два **вертикальных** варианта для каждой отрасли. Так клиенты быстрее найдут ваше предложение в AppSource. Полный список отраслей и по вертикали см. в списке [предлагаемых рекомендаций](../gtm-offer-listing-best-practices.md).
+1. Добавьте до трех **компетенций** своей компании для отображения вместе с предложением консультационных услуг. Необходимо указать по меньшей мере одну компетенцию (за исключением Azure Expert MSP и Azure Networking MSP).
 
 Чтобы продолжить, выберите **Сохранить черновик**.
 
 ## <a name="offer-listing"></a>Размещение предложения
 
-Здесь необходимо указать сведения о предложении, которые будут отображаться в Marketplace, в том числе название предложения, описание, изображения и т. п. При настройке предложения обязательно руководствуйтесь политиками, изложенными на [странице политик сертификации для коммерческой платформы](https://docs.microsoft.com/legal/marketplace/certification-policies#800-consulting-services).
+Здесь необходимо задать сведения о предложении, которые будут отображаться в Marketplace, в том числе название предложения, описание, изображения и т. п. При настройке предложения обязательно руководствуйтесь политиками, изложенными на [странице политик сертификации для коммерческой платформы](https://docs.microsoft.com/legal/marketplace/certification-policies#800-consulting-services).
 
 > [!NOTE]
 > Сведения о предложении не обязательно должны быть изложены на английском языке, если описание предложения начинается с фразы &quot;Это приложение доступно только на [язык, отличный от английского]&quot;. Кроме того, можно предоставить полезную ссылку на касающееся предложения содержимое на языке, отличном от того, который используется в его описании.
+
+Ниже приведен пример того, как в Azure Marketplace отображаются сведения о предложении (любые указанные цены приведены только в качестве примера и не должны отражать фактические затраты):
+
+:::image type="content" source="media/example-consulting-service-offer.png" alt-text="Показывает, как это предложение отображается в Azure Marketplace.":::
+
+#### <a name="call-out-descriptions"></a>Описания вызова
+
+1. Эмблема
+2. Price
+3. Области решения
+4. Отрасли
+5. Название предложения
+6. Сводка
+7. Описание:
+8. Снимки экрана и видео
+
+<br>Ниже приведен пример того, как отображаются сведения о предложении в Microsoft AppSource (любые указанные цены приведены только для примера и не предназначены для отражения фактических затрат):
+
+:::image type="content" source="media/example-consulting-service-offer-appsource.png" alt-text="Показывает, как это предложение появляется в Microsoft AppSource.":::
+
+#### <a name="call-out-descriptions"></a>Описания вызова
+
+1. Эмблема
+2. Price
+3. Продукты
+4. Отрасли
+5. Название предложения
+6. Сводка
+7. Описание:
+8. Снимки экрана и видео
+9. Документы
 
 ### <a name="name"></a>Имя
 
@@ -199,8 +239,8 @@ ms.locfileid: "83700948"
 4. Когда будете готовы, нажмите кнопку **Отправить**.
 5. На странице **Обзор предложения** можно будет видеть, на каком этапе публикации находится ваше предложение.
 
-Дополнительные сведения о том, сколько времени требуется на прохождение каждого этапа публикации, см. в статье [Проверка состояния публикации предложения на коммерческой платформе](https://docs.microsoft.com/azure/marketplace/partner-center-portal/publishing-status).
+Дополнительные сведения о том, сколько времени требуется на прохождение каждого этапа публикации, см. в статье [Проверка состояния публикации предложения на коммерческой платформе](publishing-status.md).
 
 ## <a name="update-your-existing-consulting-service-offers"></a>Обновление существующих предложений консультационных услуг
 
-- [Обновление имеющегося предложения на коммерческой платформе](https://docs.microsoft.com/azure/marketplace/partner-center-portal/update-existing-offer)
+- [Обновление имеющегося предложения на коммерческой платформе](update-existing-offer.md)

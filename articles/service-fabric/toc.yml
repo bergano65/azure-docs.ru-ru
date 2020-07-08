@@ -278,6 +278,8 @@
               href: service-fabric-backup-restore-service-trigger-restore.md
             - name: Резервное копирование раздела по запросу
               href: service-fabric-backup-restore-service-ondemand-backup.md
+            - name: Просмотр и изменение резервной копии надежных коллекций в автономном режиме
+              href: backup-explorer.md
         - name: Initializer Code Packages
           href: initializer-codepackages.md
         - name: RunToCompletion

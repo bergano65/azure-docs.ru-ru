@@ -109,6 +109,8 @@
           href: concepts-data-encryption-mysql.md
         - name: "Аутентификация Azure\_AD"
           href: concepts-azure-ad-authentication.md
+        - name: Двойное шифрование инфраструктуры
+          href: concepts-infrastructure-double-encryption.md
         - name: Базовые средства безопасности
           href: security-baseline.md
     - name: Непрерывность бизнес-процессов
@@ -276,6 +278,10 @@
           href: howto-data-encryption-cli.md
         - name: Проверка шифрования данных
           href: howto-data-encryption-validation.md
+    - name: Двойное шифрование инфраструктуры
+      items:
+        - name: Настройка двойного шифрования инфраструктуры
+          href: howto-double-encryption.md
     - name: "Интеграция с Azure\_AD"
       items:
         - name: Настройка интеграции Azure AD

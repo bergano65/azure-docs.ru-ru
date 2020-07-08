@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: JenCook
-ms.openlocfilehash: 49b159434497d4b455a338ba88058d73d7de10ee
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
-ms.translationtype: HT
+ms.openlocfilehash: 6e853edf5b7ba756aaedceaf59b1f7d1d7e48b39
+ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83773140"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85985432"
 ---
 # <a name="solutions-on-azure-virtual-machines"></a>Решения для виртуальных машин Azure
 
@@ -69,6 +69,9 @@ az vm list-skus
     --size dc 
     --query "[?family=='standardDCSv2Family']"
 ```
+### <a name="dedicated-host-requirements"></a>Требования к выделенному узлу
+Развертывание **Standard_DC8_v2** размера виртуальной машины в СЕМЕЙСТВЕ виртуальных машин серии DCSv2 будет занимать весь узел и не будет использоваться совместно с другими клиентами или подписками. Семейство SKU виртуальной машины обеспечивает изоляцию, которые могут потребоваться для удовлетворения нормативных требований по соответствию требованиям и безопасности, которые обычно выполняются с помощью выделенной службы узла. При выборе **Standard_DC8_v2** SKU физический сервер узла выделит все доступные ресурсы оборудования, включая память EPC, только на виртуальную машину. Обратите внимание, что эта функция существует в структуре инфраструктуры и все функции **Standard_DC8_v2** будут поддерживаться. Это развертывание отличается от [выделенной службы узла Azure](https://docs.microsoft.com/azure/virtual-machines/windows/dedicated-hosts) , предоставляемой другими СЕМЕЙСТВАМИ виртуальных машин Azure.
+
 
 ## <a name="deployment-considerations"></a>Рекомендации по развертыванию
 

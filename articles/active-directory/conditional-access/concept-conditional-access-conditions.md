@@ -5,20 +5,20 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/25/2020
+ms.date: 07/02/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 622950c394d59d8ba504901f5bb0eea6bc04707f
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.openlocfilehash: 121b3ced2e021f3907983623ea60185286797670
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
-ms.locfileid: "82160721"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86024464"
 ---
-# <a name="conditional-access-conditions"></a>Условный доступ: условия
+# <a name="conditional-access-conditions"></a>Условный доступ. Условия
 
 В рамках политики условного доступа администратор может использовать сигналы из таких условий, как риск, платформа устройства или расположение, чтобы улучшить свои решения по политике. 
 
@@ -32,6 +32,10 @@ ms.locfileid: "82160721"
 
 Для клиентов, имеющих доступ к [защите идентификации](../identity-protection/overview-identity-protection.md), риск входа можно оценить как часть политики условного доступа. Риск входа представляет вероятность того, что данный запрос проверки подлинности не является полномочным для владельца удостоверения. Дополнительные сведения о риске при входе можно найти в статьях, [что такое риск](../identity-protection/concept-identity-protection-risks.md#sign-in-risk) и [как настроить и включить политики риска](../identity-protection/howto-identity-protection-configure-risk-policies.md).
 
+## <a name="user-risk"></a>Риск пользователя 
+
+Для клиентов, имеющих доступ к [защите идентификации](../identity-protection/overview-identity-protection.md), риск для пользователей можно оценить как часть политики условного доступа. Риск для пользователей представляет вероятность того, что заданный идентификатор или учетная запись скомпрометированы. Дополнительные сведения о риске для пользователей можно найти в статьях, [что такое риск](../identity-protection/concept-identity-protection-risks.md#user-risk) и [как настроить и включить политики риска](../identity-protection/howto-identity-protection-configure-risk-policies.md).
+
 ## <a name="device-platforms"></a>Платформы устройств
 
 Платформа устройства характеризуется операционной системой, работающей на устройстве. Azure AD определяет платформу, используя сведения, предоставляемые устройством, например строки агента пользователя. Так как строки агента пользователя можно изменять, эти сведения не проверяются. Платформа устройства должна использоваться совместно с Microsoft Intune политиками соответствия устройств или в составе оператора Block. Значение по умолчанию применяется ко всем платформам устройств.
@@ -42,10 +46,7 @@ ms.locfileid: "82160721"
 - iOS
 - Windows Phone
 - Windows
-- macOS
-
-> [!WARNING]
-> Корпорации Майкрософт известно о проблемах с политиками условного доступа и устройствами на основе macOS 10.15.4. Дополнительные сведения можно найти в записи блога, [известная ошибка: условный доступ неожиданно блокирует macOS 10.15.4 Native Mail Client/другие приложения](https://techcommunity.microsoft.com/t5/intune-customer-success/known-issue-conditional-access-unexpectedly-blocking-macos-10-15/ba-p/1322283).
+- MacOS
 
 Если вы блокируете устаревшую проверку подлинности с помощью условия **другие клиенты** , можно также задать условие платформы устройства.
 
@@ -59,7 +60,7 @@ ms.locfileid: "82160721"
 
 Дополнительные сведения о расположении можно найти в статье [как условие расположения в Azure Active Directory условном доступе](location-condition.md).
 
-## <a name="client-apps-preview"></a>Клиентские приложения (Предварительная версия)
+## <a name="client-apps-preview"></a>Клиентские приложения (предварительная версия)
 
 Политики условного доступа по умолчанию применяются к приложениям на основе браузера и приложениям, использующим современные протоколы проверки подлинности. Помимо этих приложений, администраторы могут включать клиентов Exchange ActiveSync и других клиентов, использующих устаревшие протоколы.
 
@@ -73,17 +74,17 @@ ms.locfileid: "82160721"
       - Когда политика блокирует использование Exchange ActiveSync, затронутый пользователь получит одно сообщение электронной почты в карантине. Это сообщение электронной почты с информацией о том, почему они заблокированы и содержат инструкции по исправлению, если это возможно.
    - Другие клиенты
       - Этот параметр включает клиенты, использующие стандартные или устаревшие протоколы проверки подлинности, которые не поддерживают современную проверку подлинности.
-         - SMTP, прошедший проверку подлинности, используется клиентом POP и IMAP для отправки сообщений электронной почты.
-         - Автообнаружение — используется клиентами Outlook и EAS для поиска почтовых ящиков в Exchange Online и подключения к ним.
-         - Exchange Online PowerShell — используется для подключения к Exchange Online с помощью удаленной PowerShell. Если вы блокируете обычную проверку подлинности для Exchange Online PowerShell, для подключения необходимо использовать модуль Exchange Online PowerShell. Инструкции см. [в статье подключение к Exchange Online PowerShell с использованием многофакторной проверки подлинности](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell).
-         - Веб-службы Exchange (EWS) — программный интерфейс, используемый Outlook, Outlook для Mac и сторонние приложения.
-         - IMAP4 — используется клиентами электронной почты IMAP.
-         - MAPI через HTTP (MAPI/HTTP) — используется в Outlook 2010 и более поздних версиях.
-         - Автономная адресная книга (OAB) — копия коллекций списков адресов, которые загружаются и используются в Outlook.
-         - Мобильный Outlook (RPC через HTTP) — используется Outlook 2016 и более ранних версий.
-         - Служба Outlook — используется приложением "почта и календарь" для Windows 10.
-         - POP3 — используется клиентами электронной почты POP.
-         - Веб-службы отчетов — используются для получения данных отчета в Exchange Online.
+         - SMTP с проверкой подлинности — используется клиентами POP и IMAP для отправки сообщений электронной почты.
+         - Автообнаружение — используется клиентами Outlook и EAS для поиска почтовых ящиков в Exchange Online и подключения к ним.
+         - PowerShell в Exchange Online — используется для подключения к Exchange Online с помощью удаленной оболочки PowerShell. Если вы заблокируете обычную аутентификацию для PowerShell в Exchange Online, для подключения понадобится использовать модуль PowerShell Exchange Online. Инструкции см. в статье [Подключение к PowerShell Exchange Online с помощью многофакторной проверки подлинности](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell).
+         - Веб-службы Exchange (EWS) — программный интерфейс, используемый Outlook, Outlook для Mac и сторонними приложениями.
+         - IMAP4 — используется клиентами электронной почты IMAP.
+         - MAPI через HTTP (MAPI/HTTP) — используется в Outlook 2010 и более поздних версиях.
+         - Автономная адресная книга (OAB) — копия коллекций списков адресов, которые скачиваются и используются в Outlook.
+         - Мобильный Outlook (протокол RPC через HTTP) — используется в Outlook 2016 и более ранних версиях.
+         - Служба Outlook — используется приложениями "Почта" и "Календарь" для Windows 10.
+         - POP3 — используется клиентами электронной почты POP.
+         - Веб-службы отчетов — используются для получения данных отчетов в Exchange Online.
 
 Эти условия обычно используются при использовании управляемого устройства, блокирования устаревшей проверки подлинности и блокирования веб-приложений, но позволяют использовать мобильные или классические приложения.
 
@@ -91,17 +92,17 @@ ms.locfileid: "82160721"
 
 Этот параметр работает со всеми браузерами. Но чтобы выполнить условия политики устройств, например требование соответствия, поддерживаются следующие операционные системы и браузеры:
 
-| OS | Браузеры |
+| Операционная система | Браузеры |
 | :-- | :-- |
-| Windows 10 | Microsoft ребро, Internet Explorer, Chrome |
+| быть под управлением ОС Windows 10; | Microsoft ребро, Internet Explorer, Chrome |
 | Windows 8, Windows 8.1 | Internet Explorer, Chrome |
 | Windows 7 | Internet Explorer, Chrome |
 | iOS | Microsoft ребро, Intune Managed Browser, Safari |
 | Android | Microsoft ребро, Intune Managed Browser, Chrome |
 | Windows Phone | Microsoft ребро, Internet Explorer |
-| Windows Server 2019 | Microsoft ребро, Internet Explorer, Chrome |
+| Windows Server 2019 | Microsoft ребро, Internet Explorer, Chrome |
 | Windows Server 2016 | Internet Explorer |
-| Windows Server 2012 R2 | Internet Explorer |
+| Windows Server 2012 R2 | Internet Explorer |
 | Windows Server 2008 R2 | Internet Explorer |
 | macOS | Chrome, Safari |
 
@@ -115,21 +116,17 @@ ms.locfileid: "82160721"
 
 Чтобы автоматически развернуть это расширение в браузере Chrome, создайте следующий раздел реестра:
 
-|    |    |
-| --- | --- |
-| путь | HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist |
-| name | 1 |
-| Type | REG_SZ (String) |
-| Данные | ппнбнпеолгкикжегкбкбжмхлидеопижи; HTTPS\://clients2.Google.com/Service/Update2/CRX |
+- Путь HKEY_LOCAL_MACHINE \Софтваре\полиЦиес\гугле\чроме\екстенсионинсталлфорцелист
+- Имя 1
+- Тип REG_SZ (строка)
+- Ппнбнпеолгкикжегкбкбжмхлидеопижи данных; HTTPS \: //clients2.Google.com/Service/Update2/CRX
 
 Для поддержки Chrome в **Windows 8.1 и Windows 7** создайте следующий раздел реестра:
 
-|    |    |
-| --- | --- |
-| путь | HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls |
-| name | 1 |
-| Type | REG_SZ (String) |
-| Данные | {"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}} |
+- Путь HKEY_LOCAL_MACHINE \Софтваре\полиЦиес\гугле\чроме\аутоселектцертификатефорурлс
+- Имя 1
+- Тип REG_SZ (строка)
+- Данные {"шаблон": " https://device.login.microsoftonline.com ", "фильтр": {"Issuer": {"CN": "MS-Организации-Access"}}}
 
 Эти браузеры поддерживают аутентификацию устройств, позволяя идентифицировать устройство и проверить, соответствует ли оно политике. Если браузер работает в частном режиме, проверка устройства завершается ошибкой.
 
@@ -142,11 +139,11 @@ ms.locfileid: "82160721"
 | Клиентские приложения | Целевая служба | Платформа |
 | --- | --- | --- |
 | Приложение Dynamics CRM | Dynamics CRM | Windows 10, Windows 8.1, iOS и Android |
-| Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Office 365 Exchange Online | Windows 10 |
+| Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Office 365 Exchange Online | быть под управлением ОС Windows 10; |
 | MFA и политика расположения для приложений Политики на основе устройств не поддерживаются.| Все службы приложения "Мои приложения" | Android и iOS |
 | Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент. | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
 | Приложения Office 2016, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | Office 365 SharePoint Online | Windows 8.1, Windows 7 |
-| Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | Office 365 SharePoint Online | Windows 10 |
+| Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | Office 365 SharePoint Online | быть под управлением ОС Windows 10; |
 | Office 2016 (только Word, Excel, PowerPoint, OneNote). | Office 365 SharePoint Online | macOS |
 | Office 2019| Office 365 SharePoint Online | Windows 10, macOS |
 | Мобильные приложения Office | Office 365 SharePoint Online | Android, iOS |
@@ -154,7 +151,7 @@ ms.locfileid: "82160721"
 | Outlook 2019 | Office 365 SharePoint Online | Windows 10, macOS |
 | Outlook 2016 (Office для macOS) | Office 365 Exchange Online | macOS |
 | Outlook 2016, Outlook 2013 (с современной проверкой подлинности), Skype для бизнеса (с современной проверкой подлинности) | Office 365 Exchange Online | Windows 8.1, Windows 7 |
-| Приложение Outlook Mobile | Office 365 Exchange Online | Android, iOS |
+| Мобильное приложение Outlook | Office 365 Exchange Online | Android, iOS |
 | Приложение Power BI | Служба Power BI | Windows 10, Windows 8.1, Windows 7, Android и iOS |
 | Skype для бизнеса | Office 365 Exchange Online| Android, iOS |
 | Приложение Visual Studio Team Services | Visual Studio Team Services | Windows 10, Windows 8.1, Windows 7, iOS и Android |
@@ -176,15 +173,15 @@ ms.locfileid: "82160721"
 
 Выберите вариант **Другие клиенты**, чтобы указать условие, которое влияет на приложения, использующие обычную проверку подлинности с протоколами электронной почты IMAP, MAPI, POP, SMTP, и приложения Office более ранних версий, которые не используют современные методы проверки подлинности.
 
-## <a name="device-state-preview"></a>Состояние устройства (Предварительная версия)
+## <a name="device-state-preview"></a>Состояние устройства (предварительная версия)
 
 Состояние устройства можно использовать для исключения устройств, присоединенных к гибридной службе Azure AD или устройств, помеченных как совместимые с политикой соответствия Microsoft Intune, из политик условного доступа Организации.
 
 Например, *все пользователи* , обращающиеся к облачному приложению *Microsoft Azure Management* , включая **все состояние устройства** , за исключением **гибридного устройства, присоединенного к Azure AD** , и **устройства, помеченные как соответствующие** и для *элементов управления доступом*, **блок**. 
    - В этом примере создается политика, которая разрешает доступ к управлению Microsoft Azure только с устройств, присоединенных к гибридной службе Azure AD или устройств, помеченных как соответствующие требованиям.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Условный доступ: предоставление](concept-conditional-access-grant.md)
 
-- [Общие политики условного доступа](concept-conditional-access-policy-common.md)
+- [Распространенные политики условного доступа](concept-conditional-access-policy-common.md)
