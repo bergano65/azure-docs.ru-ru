@@ -9,20 +9,20 @@ editor: cgronlun
 ms.assetid: 3a7ac351-ebd3-43a1-8c5d-18223903d08e
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/28/2017
-ms.openlocfilehash: aa8500e0e301de5f015d074646bf4da82e4de0a1
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
-ms.translationtype: HT
+ms.openlocfilehash: b844a18a5acbd7a631bfe3b650dfa155d0e064ba
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84192559"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86076663"
 ---
 # <a name="deploy-azure-machine-learning-studio-classic-web-services-that-use-data-import-and-data-export-modules"></a>Развертывание веб-служб Студии машинного обучения Azure (классическая), использующих модули импорта и экспорта данных
 
 При создании прогнозного эксперимента обычно добавляются вход и выход веб-службы. Если вы развернете эксперимент, то пользователи смогут отправлять и получать данные из веб-службы через входы и выходы. В некоторых приложениях данные пользователя могут быть доступны через веб-канал данных или уже находиться во внешнем источнике данных, таком как хранилище BLOB-объектов Azure. В этих случаях для чтения и записи данных им не требуются входы и выходы веб-службы. Вместо этого они могут использовать службу выполнения пакетов (BES) для чтения из источника данных с помощью модуля импорта данных, а записывать результаты оценки в другое расположение с помощью модуля экспорта данных.
 
-Модули импорта и экспорта данных могут выполнять чтение и запись в различные расположения данных, такие как URL-адрес с использованием протокола HTTP, запрос Hive, база данных SQL Azure, хранилище таблиц Azure, хранилище BLOB-объектов Azure, поставщик веб-канала данных или база данных SQL Server.
+Модули импорта данных и экспорта данных могут выполнять чтение и запись в различные расположения данных, такие как URL-адрес с помощью HTTP, запрос Hive, база данных в базе данных SQL Azure, хранилище таблиц Azure, хранилище BLOB-объектов Azure, предоставление потока данных или база данных SQL Server.
 
 В этом разделе используется пример "Sample 5: Train, Test, Evaluate for Binary Classification: Adult Dataset" и предполагается, что набор данных уже загружен в таблицу Azure SQL, которая называется censusdata.
 
@@ -41,8 +41,8 @@ ms.locfileid: "84192559"
 6. В полях **Имя сервера базы данных**, **Имя базы данных**, **Имя пользователя** и **Пароль** введите сведения, соответствующие базе данных.
 7. В поле запросов базы данных введите следующий запрос:
 
+    ```tsql
      select [age],
-
         [workclass],
         [fnlwgt],
         [education],
@@ -58,6 +58,7 @@ ms.locfileid: "84192559"
         [native-country],
         [income]
      from dbo.censusdata;
+    ```
 8. В нижней части холста эксперимента нажмите кнопку **Run**(Выполнить).
 
 ## <a name="create-the-predictive-experiment"></a>Создание прогнозного эксперимента
@@ -105,13 +106,15 @@ ms.locfileid: "84192559"
 8. Обновите значение переменной *apiKey* , заменив его на ключ API, сохраненный ранее.
 9. Найдите объявление запроса и обновите значения параметров веб-службы, которые передаются в модули *Импорт данных* и *Экспорт данных*. В этом случае используется исходный запрос, но определяется имя новой таблицы.
 
-        var request = new BatchExecutionRequest()
-        {
-            GlobalParameters = new Dictionary<string, string>() {
-                { "Query", @"select [age], [workclass], [fnlwgt], [education], [education-num], [marital-status], [occupation], [relationship], [race], [sex], [capital-gain], [capital-loss], [hours-per-week], [native-country], [income] from dbo.censusdata" },
-                { "Table", "dbo.ScoredTable2" },
-            }
-        };
+    ```csharp
+    var request = new BatchExecutionRequest()
+    {
+        GlobalParameters = new Dictionary<string, string>() {
+            { "Query", @"select [age], [workclass], [fnlwgt], [education], [education-num], [marital-status], [occupation], [relationship], [race], [sex], [capital-gain], [capital-loss], [hours-per-week], [native-country], [income] from dbo.censusdata" },
+            { "Table", "dbo.ScoredTable2" },
+        }
+    };
+    ```
 10. Запустите приложение.
 
 По завершении выполнения новая таблица добавляется в базу данных, содержащую результаты оценки.
@@ -133,15 +136,17 @@ ms.locfileid: "84192559"
 8. Обновите значение переменной *apiKey*, заменив его на **Первичный ключ**, указанный в разделе **Basic consumption info** (Основные сведения об использовании).
 9. Найдите объявление *scoreRequest* и обновите значения параметров веб-службы, которые передаются в модули *Импорт данных* и *Экспорт данных*. В этом случае используется исходный запрос, но определяется имя новой таблицы.
 
-        var scoreRequest = new
+    ```csharp
+    var scoreRequest = new
+    {
+        Inputs = new Dictionary<string, StringTable>()
         {
-            Inputs = new Dictionary<string, StringTable>()
-            {
-            },
-            GlobalParameters = new Dictionary<string, string>() {
-                { "Query", @"select [age], [workclass], [fnlwgt], [education], [education-num], [marital-status], [occupation], [relationship], [race], [sex], [capital-gain], [capital-loss], [hours-per-week], [native-country], [income] from dbo.censusdata" },
-                { "Table", "dbo.ScoredTable3" },
-            }
-        };
+        },
+        GlobalParameters = new Dictionary<string, string>() {
+            { "Query", @"select [age], [workclass], [fnlwgt], [education], [education-num], [marital-status], [occupation], [relationship], [race], [sex], [capital-gain], [capital-loss], [hours-per-week], [native-country], [income] from dbo.censusdata" },
+            { "Table", "dbo.ScoredTable3" },
+        }
+    };
+    ```
 10. Запустите приложение.
 

@@ -4,19 +4,23 @@ description: Узнайте, как добавить субъект-службу
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 07/07/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: fasttrack-edit
-ms.openlocfilehash: bc3e17ce5becf039703585167e1ef3aa825cf2ab
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 4ce23e9da84d01a288c1c37c6a6d884db2ed3969
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83697536"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86077564"
 ---
 # <a name="add-a-service-principal-to-the-server-administrator-role"></a>Добавление субъекта-службы к роли администратора сервера 
 
- Чтобы автоматизировать задачи PowerShell, выполняемые без участия пользователя, субъекту-службе должны быть предоставлены разрешения **администратора сервера** на управляемом сервере Analysis Services. В этой статье описывается, как добавить субъект-службу к роли администратора сервера на сервере Azure AS. Это можно выполнить с помощью SQL Server Management Studio или шаблона Resource Manager.
+ Чтобы автоматизировать задачи PowerShell, выполняемые без участия пользователя, субъекту-службе должны быть предоставлены разрешения **администратора сервера** на управляемом сервере Analysis Services. В этой статье описывается, как добавить субъект-службу к роли администратора сервера на сервере Azure AS. Это можно выполнить с помощью SQL Server Management Studio или шаблона Resource Manager. 
+
+> [!NOTE]
+> Субъекты-службы необходимо добавлять непосредственно к роли администратора сервера. Добавление субъекта-службы в группу безопасности, а затем Добавление этой группы безопасности к роли администратора сервера не поддерживается. 
 
 ## <a name="before-you-begin"></a>Перед началом
 Прежде чем приступить к этой задаче, нужно зарегистрировать субъект-службу в Azure Active Directory.

@@ -3,15 +3,23 @@ title: Использование политик безопасности Pod в
 description: Узнайте, как управлять допуском Pod с помощью Подсекуритиполици в службе Kubernetes Azure (AKS).
 services: container-service
 ms.topic: article
-ms.date: 04/08/2020
-ms.openlocfilehash: 9e3a17e4775150247ef7924dffec68cc86a0bcac
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/30/2020
+ms.openlocfilehash: eb2e7fca3a808a1e2c4f7d1f81b8dc1d64deeee7
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80998357"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86077632"
 ---
 # <a name="preview---secure-your-cluster-using-pod-security-policies-in-azure-kubernetes-service-aks"></a>Предварительная версия — защита кластера с помощью политик безопасности Pod в службе Kubernetes Azure (AKS)
+
+<!--
+> [!WARNING]
+> **The pod security policy feature on AKS is set for deprecation** in favor of [Azure Policy for AKS](use-pod-security-on-azure-policy.md). The feature described in this document is not moving to general availability and is set for removal in September 2020.
+> It is highly recommended to begin testing with the Azure Policy Add-on which offers unique policies which support scenarios captured by pod security policy.
+
+**This document and feature are set for deprecation.**
+-->
 
 Чтобы повысить безопасность кластера AKS, можно ограничить набор модулей, которые можно запланировать. Модули, которые запрашивают неразрешенные ресурсы, не могут выполняться в кластере AKS. Этот доступ определяется с помощью политик безопасности Pod. В этой статье показано, как использовать политики безопасности Pod для ограничения развертывания модулей AKS.
 
@@ -21,15 +29,15 @@ ms.locfileid: "80998357"
 > * [Политики поддержки AKS][aks-support-policies]
 > * [Часто задаваемые вопросы о поддержке Azure][aks-faq]
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
-Требуется Azure CLI версии 2.0.61 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Необходимо установить и настроить Azure CLI версии 2.0.61 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
 ### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки aks-preview
 
-Для использования политик безопасности Pod требуется расширение CLI *AKS-Preview* версии 0.4.1 или более поздней. Установите расширение Azure CLI *AKS-Preview* с помощью команды [AZ Extension Add][az-extension-add] , а затем проверьте наличие доступных обновлений с помощью команды [AZ Extension Update][az-extension-update] .
+Для использования политик безопасности Pod требуется расширение CLI *AKS-Preview* версии 0.4.1 или более поздней. Установите расширение Azure CLI *aks-preview* с помощью команды [az extension add][az-extension-add], а затем проверьте наличие доступных обновлений с помощью команды [az extension update][az-extension-update].
 
 ```azurecli-interactive
 # Install the aks-preview extension
@@ -42,9 +50,6 @@ az extension update --name aks-preview
 ### <a name="register-pod-security-policy-feature-provider"></a>Регистрация поставщика функций политики безопасности Pod
 
 Чтобы создать или обновить кластер AKS для использования политик безопасности Pod, сначала включите в подписке флаг функции. Чтобы зарегистрировать флаг функции *подсекуритиполиципревиев* , используйте команду [AZ Feature Register][az-feature-register] , как показано в следующем примере:
-
-> [!CAUTION]
-> Регистрация компонента в подписке в данный момент невозможна. После включения функций предварительной версии можно использовать значения по умолчанию для всех кластеров AKS, созданных в подписке. Не включайте предварительные версии функций в производственных подписках. Используйте отдельную подписку для тестирования функций предварительной версии и сбора отзывов.
 
 ```azurecli-interactive
 az feature register --name PodSecurityPolicyPreview --namespace Microsoft.ContainerService
@@ -109,7 +114,7 @@ privileged   true    *      RunAsAny   RunAsAny           RunAsAny    RunAsAny  
 kubectl get rolebindings default:privileged -n kube-system -o yaml
 ```
 
-Как показано в следующем сжатом выводе, параметр *PSP: Restricted* клустерроле назначается любой *системе: прошедшим проверку подлинности* пользователям. Эта возможность обеспечивает базовый уровень ограничений без определения собственных политик.
+Как показано в следующем сжатом выводе, параметр *PSP: privileged* клустерроле назначается любой *системе: прошедшим проверку подлинности* пользователям. Эта возможность обеспечивает базовый уровень привилегий без определения собственных политик.
 
 ```
 apiVersion: rbac.authorization.k8s.io/v1
@@ -167,7 +172,7 @@ alias kubectl-nonadminuser='kubectl --as=system:serviceaccount:psp-aks:nonadmin-
 
 ## <a name="test-the-creation-of-a-privileged-pod"></a>Тестирование создания привилегированного Pod
 
-Давайте сначала проверим, что происходит при планировании Pod с помощью контекста безопасности `privileged: true`. Этот контекст безопасности повышает привилегии Pod. В предыдущем разделе, в котором были показаны политики безопасности AKS Pod по умолчанию, политика *ограничения* должна отклонить этот запрос.
+Давайте сначала проверим, что происходит при планировании Pod с помощью контекста безопасности `privileged: true` . Этот контекст безопасности повышает привилегии Pod. В предыдущем разделе, в котором были показаны политики безопасности AKS Pod по умолчанию, политика *прав доступа* должна отклонить этот запрос.
 
 Создайте файл с именем `nginx-privileged.yaml` и вставьте следующий манифест YAML:
 
@@ -202,7 +207,7 @@ Error from server (Forbidden): error when creating "nginx-privileged.yaml": pods
 
 ## <a name="test-creation-of-an-unprivileged-pod"></a>Тестирование создания непривилегированного Pod
 
-В предыдущем примере спецификация Pod запросила привилегированное укрупнение. Этот запрос отклонен политикой безопасности Pod, заданной по умолчанию, поэтому не удалось запланировать *модуль Pod.* Давайте попробуем запустить этот же модуль NGINX без запроса на эскалацию привилегий.
+В предыдущем примере спецификация Pod запросила привилегированное укрупнение. Этот запрос отклонен политикой безопасности модуля *прав доступа* по умолчанию, поэтому не удалось запланировать модуль Pod. Давайте попробуем запустить этот же модуль NGINX без запроса на эскалацию привилегий.
 
 Создайте файл с именем `nginx-unprivileged.yaml` и вставьте следующий манифест YAML:
 
@@ -235,7 +240,7 @@ Error from server (Forbidden): error when creating "nginx-unprivileged.yaml": po
 
 ## <a name="test-creation-of-a-pod-with-a-specific-user-context"></a>Тестирование создания Pod с конкретным контекстом пользователя
 
-В предыдущем примере образ контейнера автоматически пытался использовать root для привязки NGINX к порту 80. Этот запрос был отклонен политикой безопасности Pod с *ограничением* по умолчанию, поэтому не удается запустить модуль Pod. Давайте попробуем запустить тот же модуль NGINX с конкретным контекстом пользователя, например `runAsUser: 2000`.
+В предыдущем примере образ контейнера автоматически пытался использовать root для привязки NGINX к порту 80. Этот запрос был отклонен политикой безопасности модуля *прав доступа* по умолчанию, поэтому не удается запустить Pod. Давайте попробуем запустить тот же модуль NGINX с конкретным контекстом пользователя, например `runAsUser: 2000` .
 
 Создайте файл с именем `nginx-unprivileged-nonroot.yaml` и вставьте следующий манифест YAML:
 
@@ -301,7 +306,7 @@ spec:
 kubectl apply -f psp-deny-privileged.yaml
 ```
 
-Чтобы просмотреть доступные политики, используйте команду [kubectl Get PSP][kubectl-get] , как показано в следующем примере. Сравните политику *PSP-Deny-Privileges* с политикой *ограничения* по умолчанию, которая была применена в предыдущих примерах для создания Pod. Только использование эскалации *Priv* запрещено политикой. Для политики *PSP-Deny-Privileges* не существует ограничений на пользователя или группу.
+Чтобы просмотреть доступные политики, используйте команду [kubectl Get PSP][kubectl-get] , как показано в следующем примере. Сравните политику *PSP-Deny-Privileges* с политикой *привилегий* по умолчанию, которая была применена в предыдущих примерах для создания Pod. Только использование эскалации *Priv* запрещено политикой. Для политики *PSP-Deny-Privileges* не существует ограничений на пользователя или группу.
 
 ```console
 $ kubectl get psp
@@ -420,7 +425,7 @@ kubectl delete -f psp-deny-privileged.yaml
 kubectl delete namespace psp-aks
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье показано, как создать политику безопасности Pod, чтобы предотвратить использование привилегированного доступа. Существует множество функций, которые может применять политика, например тип тома или пользователя запуска от имени. Дополнительные сведения о доступных параметрах см. в [справочнике по политикам безопасности Kubernetes Pod][kubernetes-policy-reference].
 

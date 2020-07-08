@@ -5,14 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/27/2019
-ms.openlocfilehash: 27ab13481525819eb1435f4c9ac256a21acd21fb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c8645ae9cb901b9fc95f00665d73e223a24fda63
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74687802"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86076459"
 ---
 # <a name="run-apache-hive-queries-using-the-data-lake-tools-for-visual-studio"></a>Выполнение запросов Apache Hive с использованием средств Data Lake для Visual Studio
 
@@ -144,7 +145,7 @@ ms.locfileid: "74687802"
 
 4. Чтобы убедиться, что задание создало таблицу, перейдите в раздел **Обозреватель сервера** и разверните узел **Azure**  >  **HDInsight**. Разверните свой кластер HDInsight, а затем разверните **базы данных Hive**  >  **по умолчанию**. Должны быть отображены таблицы **errorLogs** и **log4jLogs**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Как вы видите, средства HDInsight для Visual Studio упрощают работу с запросами Hive в HDInsight.
 

@@ -5,14 +5,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/01/2020
-ms.openlocfilehash: 5527a27ab94c350a345bb916206057069c3d16da
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 25bda7ed94eef20e22bcf717780d08a3ea5e6521
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82723172"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86077224"
 ---
 # <a name="how-to-monitor-cluster-availability-with-azure-monitor-logs-in-hdinsight"></a>Как отслеживать доступность кластера с помощью журналов Azure Monitor в HDInsight
 
@@ -38,7 +38,7 @@ ms.locfileid: "82723172"
 
 В журнале перечислены некоторые примеры запросов, например:
 
-| Имя запроса                      | Описание                                                               |
+| Имя запроса                      | Описание:                                                               |
 |---------------------------------|---------------------------------------------------------------------------|
 | Доступность компьютеров сегодня    | Диаграмма количество компьютеров, отправляющих журналы, каждый час                     |
 | Вывод списка пульсов                 | Перечислить все пакеты пульса компьютера за последний час                           |
@@ -120,7 +120,7 @@ ms.locfileid: "82723172"
 
 ![Log Analytics рабочей области уровень серьезности одно оповещение](media/cluster-availability-monitor-logs/portal-oms-alerts-sev1.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Доступность кластера — Apache Ambari](./hdinsight-cluster-availability.md)
 * [Использование журналов Azure Monitor](hdinsight-hadoop-oms-log-analytics-tutorial.md)

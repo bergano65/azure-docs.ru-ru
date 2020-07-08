@@ -15,11 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mikeray
 ms.custom: seo-lt-2019
-ms.openlocfilehash: f05e1d46485b337acbd9390441359e086067db74
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: b677821ae32d4d916b6235228ae2807397c9fc60
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84014827"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86078499"
 ---
 # <a name="configure-an-ilb-listener-for-availability-groups-on-azure-sql-server-vms"></a>Настройка прослушивателя внутреннего балансировщика нагрузки для виртуальных машин SQL Server в Azure
 > [!div class="op_single_selector"]
@@ -68,18 +69,26 @@ ms.locfileid: "84014827"
 
 7. Выполните следующую команду `Import-AzurePublishSettingsFile`, указав путь к скачанному файлу параметров публикации:
 
-        Import-AzurePublishSettingsFile -PublishSettingsFile <PublishSettingsFilePath>
+    ```powershell
+    Import-AzurePublishSettingsFile -PublishSettingsFile <PublishSettingsFilePath>
+    ```
 
     После импорта файла параметров публикации вы сможете управлять подпиской Azure в сеансе PowerShell.
 
 8. Для *балансировщика нагрузки* вам потребуется назначить статический IP-адрес. Изучите текущую конфигурацию виртуальной сети, выполнив следующую команду:
 
-        (Get-AzureVNetConfig).XMLConfiguration
+    ```powershell
+    (Get-AzureVNetConfig).XMLConfiguration
+    ```
+
 9. Обратите внимание на имя *Subnet* для подсети, содержащей виртуальные машины с репликами. Это имя присваивается параметру $SubnetName в скрипте.
 
 10. Обратите внимание на имя *VirtualNetworkSite* и начальный префикс подсети *AddressPrefix*, содержащей виртуальные машины с репликами. Определите доступные IP-адреса. Для этого передайте оба значения в команду `Test-AzureStaticVNetIP` и изучите значение *AvailableAddresses*. Например, если виртуальная сеть называется *MyVNet*, а диапазон адресов подсети начинается с *172.16.0.128*, следующая команда выведет список доступных адресов:
 
-        (Test-AzureStaticVNetIP -VNetName "MyVNet"-IPAddress 172.16.0.128).AvailableAddresses
+    ```powershell
+    (Test-AzureStaticVNetIP -VNetName "MyVNet"-IPAddress 172.16.0.128).AvailableAddresses
+    ```
+
 11. Выберите один из доступных адресов и используйте его в качестве значения параметра $ILBStaticIP в приведенном ниже скрипте.
 
 12. Скопируйте приведенный ниже скрипт PowerShell в текстовый редактор и задайте подходящие для среды значения переменных. Для некоторых параметров указаны значения по умолчанию.  
@@ -88,21 +97,23 @@ ms.locfileid: "84014827"
 
     Если ваша группа доступности охватывает несколько регионов Azure, приведенный сценарий нужно будет запустить в каждом центре данных для всех облачных служб и узлов, которые находятся в этом центре.
 
-        # Define variables
-        $ServiceName = "<MyCloudService>" # the name of the cloud service that contains the availability group nodes
-        $AGNodes = "<VM1>","<VM2>","<VM3>" # all availability group nodes containing replicas in the same cloud service, separated by commas
-        $SubnetName = "<MySubnetName>" # subnet name that the replicas use in the virtual network
-        $ILBStaticIP = "<MyILBStaticIPAddress>" # static IP address for the ILB in the subnet
-        $ILBName = "AGListenerLB" # customize the ILB name or use this default value
+    ```powershell
+    # Define variables
+    $ServiceName = "<MyCloudService>" # the name of the cloud service that contains the availability group nodes
+    $AGNodes = "<VM1>","<VM2>","<VM3>" # all availability group nodes containing replicas in the same cloud service, separated by commas
+    $SubnetName = "<MySubnetName>" # subnet name that the replicas use in the virtual network
+    $ILBStaticIP = "<MyILBStaticIPAddress>" # static IP address for the ILB in the subnet
+    $ILBName = "AGListenerLB" # customize the ILB name or use this default value
 
-        # Create the ILB
-        Add-AzureInternalLoadBalancer -InternalLoadBalancerName $ILBName -SubnetName $SubnetName -ServiceName $ServiceName -StaticVNetIPAddress $ILBStaticIP
+    # Create the ILB
+    Add-AzureInternalLoadBalancer -InternalLoadBalancerName $ILBName -SubnetName $SubnetName -ServiceName $ServiceName -StaticVNetIPAddress $ILBStaticIP
 
-        # Configure a load-balanced endpoint for each node in $AGNodes by using ILB
-        ForEach ($node in $AGNodes)
-        {
-            Get-AzureVM -ServiceName $ServiceName -Name $node | Add-AzureEndpoint -Name "ListenerEndpoint" -LBSetName "ListenerEndpointLB" -Protocol tcp -LocalPort 1433 -PublicPort 1433 -ProbePort 59999 -ProbeProtocol tcp -ProbeIntervalInSeconds 10 -InternalLoadBalancerName $ILBName -DirectServerReturn $true | Update-AzureVM
-        }
+    # Configure a load-balanced endpoint for each node in $AGNodes by using ILB
+    ForEach ($node in $AGNodes)
+    {
+        Get-AzureVM -ServiceName $ServiceName -Name $node | Add-AzureEndpoint -Name "ListenerEndpoint" -LBSetName "ListenerEndpointLB" -Protocol tcp -LocalPort 1433 -PublicPort 1433 -ProbePort 59999 -ProbeProtocol tcp -ProbeIntervalInSeconds 10 -InternalLoadBalancerName $ILBName -DirectServerReturn $true | Update-AzureVM
+    }
+    ```
 
 13. Присвоив значения переменным, скопируйте скрипт из текстового редактора в текущий сеанс PowerShell и выполните его. Если в командной строке отображается **>>** , нажмите клавишу ВВОД еще раз, чтобы начать выполнение скрипта.
 
@@ -122,33 +133,39 @@ ms.locfileid: "84014827"
 ### <a name="configure-the-cluster-resources-in-powershell"></a>Настройка кластерных ресурсов в PowerShell
 1. Чтобы использовать внутренний балансировщик нагрузки, вам потребуется указать IP-адрес ранее созданного внутреннего балансировщика нагрузки. Этот IP-адрес можно получить в PowerShell, выполнив следующий скрипт:
 
-        # Define variables
-        $ServiceName="<MyServiceName>" # the name of the cloud service that contains the AG nodes
-        (Get-AzureInternalLoadBalancer -ServiceName $ServiceName).IPAddress
+    ```powershell
+    # Define variables
+    $ServiceName="<MyServiceName>" # the name of the cloud service that contains the AG nodes
+    (Get-AzureInternalLoadBalancer -ServiceName $ServiceName).IPAddress
+    ```
 
 2. Войдите на одну из виртуальных машин и скопируйте скрипт PowerShell для операционной системы в текстовый редактор. Затем присвойте переменным записанные ранее значения.
 
     Для Windows Server 2012 или более поздней версии используйте следующий скрипт:
 
-        # Define variables
-        $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
-        $IPResourceName = "<IPResourceName>" # the IP address resource name
-        $ILBIP = "<X.X.X.X>" # the IP address of the ILB
+    ```powershell
+    # Define variables
+    $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
+    $IPResourceName = "<IPResourceName>" # the IP address resource name
+    $ILBIP = "<X.X.X.X>" # the IP address of the ILB
 
-        Import-Module FailoverClusters
+    Import-Module FailoverClusters
 
-        Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"="59999";"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
+    Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"="59999";"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
+    ```
 
     Для Windows Server 2008 R2 используйте следующий скрипт:
 
-        # Define variables
-        $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
-        $IPResourceName = "<IPResourceName>" # the IP address resource name
-        $ILBIP = "<X.X.X.X>" # the IP address of the ILB
+    ```powershell
+    # Define variables
+    $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
+    $IPResourceName = "<IPResourceName>" # the IP address resource name
+    $ILBIP = "<X.X.X.X>" # the IP address of the ILB
 
-        Import-Module FailoverClusters
+    Import-Module FailoverClusters
 
-        cluster res $IPResourceName /priv enabledhcp=0 address=$ILBIP probeport=59999  subnetmask=255.255.255.255
+    cluster res $IPResourceName /priv enabledhcp=0 address=$ILBIP probeport=59999  subnetmask=255.255.255.255
+    ```
 
 3. Присвоив значения переменным, откройте окно Windows PowerShell с повышенными правами. Вставьте скрипт из текстового редактора в текущий сеанс PowerShell и выполните скрипт. Если в командной строке отображается **>>** , нажмите клавишу ВВОД еще раз, чтобы начать выполнение скрипта.
 

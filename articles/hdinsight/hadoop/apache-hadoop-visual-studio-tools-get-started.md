@@ -7,14 +7,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/14/2020
-ms.openlocfilehash: 7504826f267d717f30c5e88621578412c744e5f9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5fce1a8e2f4dda8ea84cfd66aa9dc13768ab17e7
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81383510"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86077091"
 ---
 # <a name="use-data-lake-tools-for-visual-studio-to-connect-to-azure-hdinsight-and-run-apache-hive-queries"></a>Подключение к Azure HDInsight и выполнение запросов Apache Hive с помощью средств Data Lake для Visual Studio
 
@@ -26,7 +26,7 @@ ms.locfileid: "81383510"
 
 Средства Data Lake для Visual Studio можно использовать для доступа к Azure Data Lake Analytics и HDInsight. Дополнительные сведения см. в статье [Разработка скриптов U-SQL с помощью средств Data Lake для Visual Studio](../../data-lake-analytics/data-lake-analytics-data-lake-tools-get-started.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы завершить работу с этой статьей и использовать средства Data Lake для Visual Studio, вам потребуются следующие компоненты:
 
@@ -324,7 +324,7 @@ ms.locfileid: "81383510"
 
 * Скрипт HQL, создаваемый Visual Studio, кодируется в зависимости от настройки локальной области пользователя. Скрипт выполняется неправильно, если вы загружаете его в кластер как двоичный файл.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Из этой статьи вы узнали, как подключаться к кластерам HDInsight из Visual Studio, используя пакет средств Data Lake для Visual Studio, и выполнять запросы Hive. 
 

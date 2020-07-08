@@ -5,12 +5,12 @@ description: Узнайте, как обновить или сбросить у�
 services: container-service
 ms.topic: article
 ms.date: 03/11/2019
-ms.openlocfilehash: 914e043e2c0cf39c18480b5ca5e34332398806f4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7dcbd91063d4f36c4d78023b6548db0c968eda74
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84905380"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86077700"
 ---
 # <a name="update-or-rotate-the-credentials-for-azure-kubernetes-service-aks"></a>Обновление или смена учетных данных для службы Azure Kubernetes (AKS)
 
@@ -30,6 +30,16 @@ ms.locfileid: "84905380"
 
 * обновить учетные данные для существующей субъект-службы, которая используется в кластере, или
 * создать субъект-службу и обновить кластер для использования этих новых учетных данных.
+
+### <a name="check-the-expiration-date-of-your-service-principal"></a>Проверка даты окончания срока действия субъекта-службы
+
+Чтобы проверить дату окончания срока действия субъекта-службы, используйте команду [AZ AD SP Credential List][az-ad-sp-credential-list] . В следующем примере получается идентификатор субъекта-службы для кластера с именем *myAKSCluster* в группе ресурсов *myResourceGroup* с помощью команды [AZ AKS показывать][az-aks-show] . ИДЕНТИФИКАТОР субъекта-службы задается как переменная с именем *SP_ID* для использования в команде [AZ AD SP Credential List][az-ad-sp-credential-list] .
+
+```azurecli
+SP_ID=$(az aks show --resource-group myResourceGroup --name myAKSCluster \
+    --query servicePrincipalProfile.clientId -o tsv)
+az ad sp credential list --id $SP_ID --query "[].endDate" -o tsv
+```
 
 ### <a name="reset-existing-service-principal-credential"></a>Сбросить существующие учетные данные субъекта-службы
 
@@ -88,7 +98,7 @@ az aks update-credentials \
     --name myAKSCluster \
     --reset-service-principal \
     --service-principal $SP_ID \
-    --client-secret $SP_SECRET
+    --client-secret "$SP_SECRET"
 ```
 
 Обновление учетных данных субъект-службы в AKS займет всего несколько минут.
@@ -108,7 +118,7 @@ az aks update-credentials \
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье субъект-служба для самого кластера AKS и приложений интеграции AAD обновлен. Дополнительные сведения о том, как управлять удостоверениями для рабочих нагрузок в кластере, см. в статье [Рекомендации по аутентификации и авторизации в службе Azure Kubernetes (AKS)][best-practices-identity].
 
@@ -120,4 +130,5 @@ az aks update-credentials \
 [aad-integration]: azure-ad-integration.md
 [create-aad-app]: azure-ad-integration.md#create-the-server-application
 [az-ad-sp-create]: /cli/azure/ad/sp#az-ad-sp-create-for-rbac
+[az-ad-sp-credential-list]: /cli/azure/ad/sp/credential#az-ad-sp-credential-list
 [az-ad-sp-credential-reset]: /cli/azure/ad/sp/credential#az-ad-sp-credential-reset

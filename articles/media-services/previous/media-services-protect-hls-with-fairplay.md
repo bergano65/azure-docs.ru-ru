@@ -13,17 +13,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 873bc4ab5e435b91ff4400a39c92db0d0bb9baa8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3ad06d0e37b7cf464c311e28e546e1b7f1ebd183
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74968771"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86058254"
 ---
 # <a name="protect-your-hls-content-with-apple-fairplay-or-microsoft-playready"></a>Защита содержимого HLS с помощью Apple FairPlay или Microsoft PlayReady
 
 > [!NOTE]
-> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в статье [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
+> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 >
 
 Службы мультимедиа Azure позволяют использовать динамическое шифрование содержимого HTTP Live Streaming (HLS) в следующих форматах:  
@@ -127,7 +127,7 @@ ms.locfileid: "74968771"
 ## <a name="use-fairplay-key-delivery-by-player-apps"></a>Использование доставки ключей FairPlay приложениями проигрывателей
 С помощью пакета SDK можно разрабатывать приложения проигрывателя. Для воспроизведения содержимого FairPlay необходимо реализовать протокол обмена лицензиями. Этот протокол не указывается компанией Apple. Каждое приложение может само выбирать, как отправлять запросы доставки ключей. Служба доставки ключей FairPlay служб мультимедиа ожидает, что SPC поступит как сообщение публикации www-form-url в следующем формате:
 
-    spc=<Base64 encoded SPC>
+`spc=<Base64 encoded SPC>`
 
 > [!NOTE]
 > Проигрыватель мультимедиа Azure поддерживает воспроизведение FairPlay. Дополнительные сведения см. в [документации проигрывателя мультимедиа Azure](https://amp.azure.net/libs/amp/latest/docs/index.html).
@@ -149,7 +149,7 @@ ms.locfileid: "74968771"
 
 ## <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
 
-1. Настройте среду разработки и заполните файл App. config сведениями о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
+1. Настройте среду разработки и заполните файл app.config данными о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
 2. Добавьте следующие элементы в **appSettings**, определенные в файле app.config:
 
     ```xml
@@ -164,7 +164,7 @@ ms.locfileid: "74968771"
 Замените код в файле Program.cs кодом, приведенным в этом разделе.
 
 >[!NOTE]
->Действует ограничение в 1 000 000 записей для разных политик AMS (например, для политики Locator или ContentKeyAuthorizationPolicy). Следует указывать один и тот же идентификатор политики, если вы используете те же дни, разрешения доступа и т. д. Например, политики для указателей, которые должны оставаться на месте в течение длительного времени (не политики передачи). Дополнительные сведения см. в [этой](media-services-dotnet-manage-entities.md#limit-access-policies) статье.
+>Действует ограничение в 1 000 000 записей для разных политик AMS (например, для политики Locator или ContentKeyAuthorizationPolicy). Следует указывать один и тот же идентификатор политики, если вы используете те же дни, разрешения доступа и т. д. Например, политики для указателей, которые должны оставаться на месте в течение длительного времени (не политики передачи). Дополнительные сведения см. в [этой статье](media-services-dotnet-manage-entities.md#limit-access-policies).
 
 Обязательно обновите переменные, чтобы они указывали на папки, в которых находятся входные файлы.
 
@@ -555,12 +555,12 @@ namespace DynamicEncryptionWithFairPlay
 }
 ```
 
-## <a name="additional-notes"></a>Дополнительные сведения
+## <a name="additional-notes"></a>Дополнительные замечания
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="next-steps-media-services-learning-paths"></a>Дальнейшие действия: схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

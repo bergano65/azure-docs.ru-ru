@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 4a947c01d63e3842ead91481e480024a54380144
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5a09d672f44ce8835571277ab35f7545c7f5f33e
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "69015051"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86058288"
 ---
 # <a name="get-started-with-delivering-content-on-demand-by-using-the-azure-portal"></a>Доставка содержимого по запросу с помощью портала Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "69015051"
 
 В этом руководстве описано, как реализовать простую службу для доставки видео по запросу с помощью приложения служб мультимедиа Azure и портала Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом руководстве:
 
 * Учетная запись Azure. Дополнительные сведения см. в статье [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/). 
@@ -91,7 +91,7 @@ ms.locfileid: "69015051"
    Чтобы упростить управление ресурсами, вы можете изменить имена выходного ресурса и задания.
    
    ![Кодирование ресурсов](./media/media-services-portal-vod-get-started/media-services-encode1.png)
-5. Нажмите кнопку **создания**.
+5. Выберите **Создать**.
 
 ### <a name="monitor-encoding-job-progress"></a>Мониторинг хода выполнения задания кодирования
 Чтобы отслеживать выполнение задания кодирования, выберите **Параметры** в верхней части страницы и нажмите **Задания**.
@@ -106,19 +106,19 @@ ms.locfileid: "69015051"
 
 Чтобы создать URL-адрес потоковой передачи HLS, добавьте *(format=m3u8-aapl)* к URL-адресу:
 
-    {streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{file name}.ism/Manifest(format=m3u8-aapl)
+`{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{file name}.ism/Manifest(format=m3u8-aapl)`
 
 Чтобы создать URL-адрес потоковой передачи для воспроизведения ресурсов Smooth Streaming, используйте следующий формат:
 
-    {streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{file name}.ism/Manifest
+`{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{file name}.ism/Manifest`
 
 Чтобы создать URL-адрес для потоковой передачи в формате MPEG-DASH, добавьте к исходному адресу строку *(format=mpd-time-csf)*:
 
-    {streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{file name}.ism/Manifest(format=mpd-time-csf)
+`{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{file name}.ism/Manifest(format=mpd-time-csf)`
 
 Подписанный URL-адрес имеет следующий формат:
 
-    {blob container name}/{asset name}/{file name}/{shared access signature}
+`{blob container name}/{asset name}/{file name}/{shared access signature}`
 
 > [!NOTE]
 > Срок действия указателей, которые были созданы на портале Azure до марта 2015 г., — два года.  
@@ -157,5 +157,5 @@ URL-адрес будет добавлен в список **опубликов�
 ## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

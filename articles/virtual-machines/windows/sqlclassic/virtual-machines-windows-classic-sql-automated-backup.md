@@ -15,11 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 01/23/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: c792b217f49121b6d3d6eaf2d8f8380997683bd8
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: f62004f01e48a42702c93493e3b0dc1c11f6eb30
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84014678"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86078112"
 ---
 # <a name="automated-backup-for-sql-server-in-azure-virtual-machines-classic"></a>Автоматическая архивация SQL Server на виртуальных машинах Azure (классическая модель)
 > [!div class="op_single_selector"]
@@ -78,25 +79,29 @@ ms.locfileid: "84014678"
 ## <a name="configuration-with-powershell"></a>Настройка с помощью PowerShell
 В следующем примере с использованием PowerShell автоматическая архивация настраивается для существующей виртуальной машины SQL Server 2014. Команда **AzureVMSqlServerAutoBackupConfig** настраивает параметры автоматической архивации для хранения резервных копий в учетной записи хранения Azure, указанной в переменной $storageaccount. Эти резервные копии будут храниться в течение 10 дней. Команда **AzureVMSqlServerExtension** обновляет указанную виртуальную машину Azure в соответствии с заданными параметрами.
 
-    $storageaccount = "<storageaccountname>"
-    $storageaccountkey = (Get-AzureStorageKey -StorageAccountName $storageaccount).Primary
-    $storagecontext = New-AzureStorageContext -StorageAccountName $storageaccount -StorageAccountKey $storageaccountkey
-    $autobackupconfig = New-AzureVMSqlServerAutoBackupConfig -StorageContext $storagecontext -Enable -RetentionPeriod 10
+```azurepowershell
+$storageaccount = "<storageaccountname>"
+$storageaccountkey = (Get-AzureStorageKey -StorageAccountName $storageaccount).Primary
+$storagecontext = New-AzureStorageContext -StorageAccountName $storageaccount -StorageAccountKey $storageaccountkey
+$autobackupconfig = New-AzureVMSqlServerAutoBackupConfig -StorageContext $storagecontext -Enable -RetentionPeriod 10
 
-    Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension -AutoBackupSettings $autobackupconfig | Update-AzureVM
+Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension -AutoBackupSettings $autobackupconfig | Update-AzureVM
+```
 
 Установка и настройка агента SQL Server IaaS занимают несколько минут.
 
 Чтобы включить шифрование, измените предыдущий скрипт таким образом, чтобы он передавал параметр EnableEncryption вместе с паролем (защищенной строкой) для параметра CertificatePassword. Следующий скрипт активирует параметры автоматической архивации их предыдущего примера и добавляет шифрование.
 
-    $storageaccount = "<storageaccountname>"
-    $storageaccountkey = (Get-AzureStorageKey -StorageAccountName $storageaccount).Primary
-    $storagecontext = New-AzureStorageContext -StorageAccountName $storageaccount -StorageAccountKey $storageaccountkey
-    $password = "P@ssw0rd"
-    $encryptionpassword = $password | ConvertTo-SecureString -AsPlainText -Force  
-    $autobackupconfig = New-AzureVMSqlServerAutoBackupConfig -StorageContext $storagecontext -Enable -RetentionPeriod 10 -EnableEncryption -CertificatePassword $encryptionpassword
+```azurepowershell
+$storageaccount = "<storageaccountname>"
+$storageaccountkey = (Get-AzureStorageKey -StorageAccountName $storageaccount).Primary
+$storagecontext = New-AzureStorageContext -StorageAccountName $storageaccount -StorageAccountKey $storageaccountkey
+$password = "P@ssw0rd"
+$encryptionpassword = $password | ConvertTo-SecureString -AsPlainText -Force  
+$autobackupconfig = New-AzureVMSqlServerAutoBackupConfig -StorageContext $storagecontext -Enable -RetentionPeriod 10 -EnableEncryption -CertificatePassword $encryptionpassword
 
-    Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension -AutoBackupSettings $autobackupconfig | Update-AzureVM
+Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension -AutoBackupSettings $autobackupconfig | Update-AzureVM
+```
 
 Чтобы отключить автоматическую архивацию, выполните тот же сценарий без параметра **-Enable** в командлете **New-AzureVMSqlServerAutoBackupConfig**. Как и установка, отключение автоматической архивации занимает несколько минут.
 

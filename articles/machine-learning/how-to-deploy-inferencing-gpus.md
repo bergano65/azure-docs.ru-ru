@@ -11,12 +11,12 @@ author: csteegz
 ms.reviewer: larryfr
 ms.date: 06/17/2020
 ms.custom: tracking-python
-ms.openlocfilehash: c115b641ca5c22ebe227af5349d7ef133e198b44
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 344112e19adbfaa1b06eebab309f31ed4e070c7d
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84976750"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86077003"
 ---
 # <a name="deploy-a-deep-learning-model-for-inference-with-gpu"></a>Развертывание модели глубокого обучения для вывода с помощью GPU
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -162,6 +162,9 @@ channels:
 
 ## <a name="define-the-deployment-configuration"></a>Определение конфигурации развертывания
 
+> [!IMPORTANT]
+> AKS не позволяет использовать в модулях Pod общий доступ к GPU. можно использовать только столько реплик веб-службы с поддержкой GPU, сколько GPU в кластере.
+
 Конфигурация развертывания определяет среду службы Azure Kubernetes, используемую для запуска веб-службы:
 
 ```python
@@ -285,7 +288,7 @@ aks_service.delete()
 aks_target.delete()
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Развертывание модели на FPGA](how-to-deploy-fpga-web-service.md)
 * [Развертывание модели с помощью ONNX](concept-onnx.md#deploy-onnx-models-in-azure)

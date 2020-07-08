@@ -16,11 +16,12 @@ ms.author: mathoma
 ms.reviewer: jroth
 experimental: true
 experimental_id: d51f3cc6-753b-4e
-ms.openlocfilehash: 82c9f6f0797a4d863e04b45c918d649250157a72
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: a4b63735509c0d1c755eced8277d18b2a535457b
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84017657"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86078448"
 ---
 # <a name="connect-to-a-sql-server-virtual-machine-on-azure-classic-deployment"></a>Подключение к виртуальной машине SQL Server в Azure (классическое развертывание)
 > [!div class="op_single_selector"]
@@ -52,7 +53,9 @@ ms.locfileid: "84017657"
 
 В этом случае для подключения можно использовать **имя** виртуальной машины (которое также отображается как **имя компьютера** или **имя узла** на портале). Это имя, заданное при создании виртуальной машины. Например, если имя виртуальной машины SQL — **mysqlvm**, то клиентская виртуальная машины в той же облачной службе может использовать следующую строку подключения.
 
-    "Server=mysqlvm;Integrated Security=false;User ID=<login_name>;Password=<your_password>"
+```config
+"Server=mysqlvm;Integrated Security=false;User ID=<login_name>;Password=<your_password>"
+```
 
 ### <a name="connect-to-sql-server-over-the-internet"></a>Подключение к SQL Server через Интернет
 Если вы хотите подключиться к ядру СУБД SQL Server из Интернета, необходимо создать конечную точку виртуальной машины для входящих подключений TCP. На данном этапе настройки Azure направляет входящий трафик TCP-порта на TCP-порт, доступный для виртуальной машины.
@@ -61,7 +64,9 @@ ms.locfileid: "84017657"
 
 Например, рассмотрим классическую виртуальную машину **mysqlvm** с DNS-именем **mysqlvm7777.cloudapp.net** и конечной точкой **57500**. При условии, что подключение настроено правильно, для доступа к виртуальной машине из любого расположения в Интернете может использоваться следующая строка подключения.
 
-    "Server=mycloudservice.cloudapp.net,57500;Integrated Security=false;User ID=<login_name>;Password=<your_password>"
+```config
+"Server=mycloudservice.cloudapp.net,57500;Integrated Security=false;User ID=<login_name>;Password=<your_password>"
+```
 
 Хотя строка подключения обеспечивает подключение клиентов через Интернет, это не значит, что любой пользователь сможет подключиться к вашему серверу SQL Server. Внешние клиенты должны иметь правильные имя пользователя и пароль. Чтобы повысить уровень безопасности, не используйте известный порт 1433 для общедоступной конечной точки виртуальной машины. Если возможно, рассмотрите вариант добавления списка ACL в конечной точке, чтобы сделать трафик доступным только для определенных клиентов. Инструкции по использованию списков ACL в конечных точках см. в разделе [Управление ACL для конечной точки](/previous-versions/azure/virtual-machines/windows/classic/setup-endpoints#manage-the-acl-on-an-endpoint).
 
@@ -77,7 +82,9 @@ ms.locfileid: "84017657"
 
 Если вы собираетесь настроить среду домена и проверку подлинности Windows, не нужно настраивать общедоступную конечную точку, проверку подлинности SQL или имена для входа. В данном сценарии можно подключиться к экземпляру SQL Server, указав имя узла виртуальной машины SQL Server в строке подключения. В следующем примере предполагается, что проверка подлинности Windows настроена, а пользователю предоставлен доступ к экземпляру SQL Server.
 
-    "Server=mysqlvm;Integrated Security=true"
+```config
+"Server=mysqlvm;Integrated Security=true"
+```
 
 ## <a name="steps-for-configuring-sql-server-connectivity-in-an-azure-vm"></a>Действия по настройке подключения к SQL Server на виртуальной машине Azure
 Ниже показано, как подключиться к экземпляру SQL Server через Интернет с помощью SQL Server Management Studio (SSMS). Однако, чтобы сделать виртуальную машину SQL Server доступной для приложений, выполняющихся как локально, так и в среде Azure, необходимо выполнить те же действия.

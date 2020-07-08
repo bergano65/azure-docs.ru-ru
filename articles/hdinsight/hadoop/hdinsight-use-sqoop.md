@@ -5,13 +5,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/06/2019
-ms.openlocfilehash: 091ce1cc0b2540a02e62e1e85c5515f6aa62b93c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 165b7d00c3cf307e7996e84a35bb2a202f448cc0
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84018843"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86076884"
 ---
 # <a name="use-apache-sqoop-with-hadoop-in-hdinsight"></a>Использование Apache Sqoop с Hadoop в HDInsight
 
@@ -45,13 +46,13 @@ ms.locfileid: "84018843"
   
   | Поле | Тип данных |
   | --- | --- |
-  | clientid |string |
-  | querytime |string |
-  | market |string |
-  | deviceplatform |string |
-  | devicemake |string |
-  | devicemodel |string |
-  | state |string |
+  | clientid |строка |
+  | querytime |строка |
+  | market |строка |
+  | deviceplatform |строка |
+  | devicemake |строка |
+  | devicemodel |строка |
+  | state |строка |
   | country |строка |
   | querydwelltime |double |
   | sessionid |BIGINT |

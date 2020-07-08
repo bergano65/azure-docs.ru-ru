@@ -5,15 +5,15 @@ author: ashishthaps
 ms.author: ashishth
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/19/2019
-ms.openlocfilehash: c6d33158b581bf4394a0d1bac2b277830328e110
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b1830ddef44ef33d19c953622951779632e33e71
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75495937"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86076748"
 ---
 # <a name="set-up-backup-and-replication-for-apache-hbase-and-apache-phoenix-on-hdinsight"></a>Настройка резервного копирования и репликации Apache HBase и Apache Phoenix в HDInsight
 
@@ -36,19 +36,15 @@ Apache HBase поддерживает несколько способов защ
 
 HBase в HDInsight использует хранилище по умолчанию, выбранное при создании кластера. Это могут быть большие двоичные объекты службы хранилища Azure или Azure Data Lake Storage. В любом случае HBase хранит файлы данных и метаданных по следующему пути:
 
-    /hbase
+`/hbase`
 
 * В учетной записи службы хранилища Azure папка `hbase` находится в корне контейнера больших двоичных объектов:
 
-    ```
-    wasbs://<containername>@<accountname>.blob.core.windows.net/hbase
-    ```
+  `wasbs://<containername>@<accountname>.blob.core.windows.net/hbase`
 
-* В Azure Data Lake Storage `hbase` папка находится под корневым путем, указанным при подготовке кластера. Обычно этот путь к корневому каталогу имеет папку `clusters` с вложенной папкой, имя которой совпадает с кластером HDInsight:
+* В Azure Data Lake Storage папка находится `hbase` под корневым путем, указанным при подготовке кластера. Обычно этот путь к корневому каталогу имеет папку `clusters` с вложенной папкой, имя которой совпадает с кластером HDInsight:
 
-    ```
-    /clusters/<clusterName>/hbase
-    ```
+  `/clusters/<clusterName>/hbase`
 
 В любом случае папка `hbase` содержит все данные, записываемые HBase на диск. Однако в ней могут отсутствовать данные, размещенные в памяти. Чтобы можно было полагаться на эту папку как на точное представление данных HBase, необходимо завершить работу кластера.
 
@@ -62,33 +58,39 @@ HBase в HDInsight использует хранилище по умолчани
 
 В исходном кластере HDInsight используйте [программу экспорта](https://hbase.apache.org/book.html#export) (входит в состав HBase) для экспорта данных из исходной таблицы в подключенное по умолчанию хранилище. Затем экспортированную папку можно скопировать в целевое место хранения и запустить [программу импорта](https://hbase.apache.org/book.html#import) в целевом кластере HDInsight.
 
-Чтобы экспортировать данные таблицы, сначала подключитесь по протоколу SSH к головному узлу исходного кластера HDInsight, а `hbase` затем выполните следующую команду:
+Чтобы экспортировать данные таблицы, сначала подключитесь по протоколу SSH к головному узлу исходного кластера HDInsight, а затем выполните следующую `hbase` команду:
 
-    hbase org.apache.hadoop.hbase.mapreduce.Export "<tableName>" "/<path>/<to>/<export>"
+```console
+hbase org.apache.hadoop.hbase.mapreduce.Export "<tableName>" "/<path>/<to>/<export>"
+```
 
 Каталог экспорта уже не должен существовать. В имени таблицы учитывается регистр.
 
-Чтобы импортировать табличные данные, подключитесь к головному узлу целевого кластера HDInsight по протоколу SSH и `hbase` выполните следующую команду:
+Чтобы импортировать табличные данные, подключитесь к головному узлу целевого кластера HDInsight по протоколу SSH и выполните следующую `hbase` команду:
 
-    hbase org.apache.hadoop.hbase.mapreduce.Import "<tableName>" "/<path>/<to>/<export>"
+```console
+hbase org.apache.hadoop.hbase.mapreduce.Import "<tableName>" "/<path>/<to>/<export>"
+```
 
 Таблица уже должна существовать.
 
 Укажите полный путь экспорта в хранилище по умолчанию или любое подключенное хранилище. Например, в службе хранилища Azure:
 
-    wasbs://<containername>@<accountname>.blob.core.windows.net/<path>
+`wasbs://<containername>@<accountname>.blob.core.windows.net/<path>`
 
 В Azure Data Lake Storage 2-го поколения используется следующий синтаксис.
 
-    abfs://<containername>@<accountname>.dfs.core.windows.net/<path>
+`abfs://<containername>@<accountname>.dfs.core.windows.net/<path>`
 
 В Azure Data Lake Storage 1-го поколения используется следующий синтаксис.
 
-    adl://<accountName>.azuredatalakestore.net:443/<path>
+`adl://<accountName>.azuredatalakestore.net:443/<path>`
 
 Этот подход обеспечивает степень детализации на уровне таблицы. Кроме того, вы можете указать диапазон дат строк, которые нужно включить. Это позволит выполнить процесс пошагово. Каждая дата указывается в миллисекундах с момента начала эпохи Unix.
 
-    hbase org.apache.hadoop.hbase.mapreduce.Export "<tableName>" "/<path>/<to>/<export>" <numberOfVersions> <startTimeInMS> <endTimeInMS>
+```console
+hbase org.apache.hadoop.hbase.mapreduce.Export "<tableName>" "/<path>/<to>/<export>" <numberOfVersions> <startTimeInMS> <endTimeInMS>
+```
 
 Обратите внимание, что нужно указать количество версий каждой экспортируемой строки. Чтобы включить все версии в диапазон дат, задайте параметру `<numberOfVersions>` значение, превышающее максимально возможное число версий строк, например 100 000.
 
@@ -98,16 +100,19 @@ HBase в HDInsight использует хранилище по умолчани
 
 Чтобы использовать CopyTable в кластере, подключитесь к головному узлу исходного кластера HDInsight по протоколу SSH, а затем выполните следующую команду `hbase`:
 
-    hbase org.apache.hadoop.hbase.mapreduce.CopyTable --new.name=<destTableName> <srcTableName>
-
+```console
+hbase org.apache.hadoop.hbase.mapreduce.CopyTable --new.name=<destTableName> <srcTableName>
+```
 
 Чтобы скопировать таблицу в другой кластер с помощью CopyTable, добавьте параметр `peer` с адресом целевого кластера:
 
-    hbase org.apache.hadoop.hbase.mapreduce.CopyTable --new.name=<destTableName> --peer.adr=<destinationAddress> <srcTableName>
+```console
+hbase org.apache.hadoop.hbase.mapreduce.CopyTable --new.name=<destTableName> --peer.adr=<destinationAddress> <srcTableName>
+```
 
 Адрес назначения состоит из следующих трех частей:
 
-    <destinationAddress> = <ZooKeeperQuorum>:<Port>:<ZnodeParent>
+`<destinationAddress> = <ZooKeeperQuorum>:<Port>:<ZnodeParent>`
 
 * `<ZooKeeperQuorum>` — это список узлов Apache ZooKeeper, разделенный запятыми, например:
 
@@ -121,7 +126,9 @@ HBase в HDInsight использует хранилище по умолчани
 
 Служебная программа CopyTable также поддерживает параметры, которые позволяют указать диапазон времени копируемых строк и подмножество семейств столбцов в копируемой таблице. Чтобы просмотреть полный список поддерживаемых параметров, запустите CopyTable без параметров:
 
-    hbase org.apache.hadoop.hbase.mapreduce.CopyTable
+```console
+hbase org.apache.hadoop.hbase.mapreduce.CopyTable
+```
 
 CopyTable сканирует все содержимое исходной таблицы, которое нужно скопировать в целевую таблицу. Это может привести к снижению производительности кластера HBase.
 
@@ -134,29 +141,35 @@ CopyTable сканирует все содержимое исходной таб
 
 Чтобы получить имена узлов кворума, выполните следующую команду cURL:
 
-    curl -u admin:<password> -X GET -H "X-Requested-By: ambari" "https://<clusterName>.azurehdinsight.net/api/v1/clusters/<clusterName>/configurations?type=hbase-site&tag=TOPOLOGY_RESOLVED" | grep "hbase.zookeeper.quorum"
+```console
+curl -u admin:<password> -X GET -H "X-Requested-By: ambari" "https://<clusterName>.azurehdinsight.net/api/v1/clusters/<clusterName>/configurations?type=hbase-site&tag=TOPOLOGY_RESOLVED" | grep "hbase.zookeeper.quorum"
+```
 
 Эта команда cURL извлекает документ JSON с информацией о конфигурации HBase, а команда grep возвращает только запись hbase.zookeeper.quorum, например:
 
-    "hbase.zookeeper.quorum" : "zk0-hdizc2.54o2oqawzlwevlfxgay2500xtg.dx.internal.cloudapp.net,zk4-hdizc2.54o2oqawzlwevlfxgay2500xtg.dx.internal.cloudapp.net,zk3-hdizc2.54o2oqawzlwevlfxgay2500xtg.dx.internal.cloudapp.net"
+```output
+"hbase.zookeeper.quorum" : "zk0-hdizc2.54o2oqawzlwevlfxgay2500xtg.dx.internal.cloudapp.net,zk4-hdizc2.54o2oqawzlwevlfxgay2500xtg.dx.internal.cloudapp.net,zk3-hdizc2.54o2oqawzlwevlfxgay2500xtg.dx.internal.cloudapp.net"
+```
 
 Значение имен узлов кворума — это вся строка после двоеточия.
 
 Чтобы получить IP-адреса этих узлов, выполните следующую команду cURL в каждом узле из предыдущего списка:
 
-    curl -u admin:<password> -X GET -H "X-Requested-By: ambari" "https://<clusterName>.azurehdinsight.net/api/v1/clusters/<clusterName>/hosts/<zookeeperHostFullName>" | grep "ip"
+```console
+curl -u admin:<password> -X GET -H "X-Requested-By: ambari" "https://<clusterName>.azurehdinsight.net/api/v1/clusters/<clusterName>/hosts/<zookeeperHostFullName>" | grep "ip"
+```
 
 В этой команде cURL `<zookeeperHostFullName>` —это полное DNS-имя узла ZooKeeper, как показано в этом примере: `zk0-hdizc2.54o2oqawzlwevlfxgay2500xtg.dx.internal.cloudapp.net`. Выходные данные этой команды содержат IP-адрес указанного узла, например:
 
-    100    "ip" : "10.0.0.9",
+`100    "ip" : "10.0.0.9",`
 
 Собрав IP-адреса всех узлов ZooKeeper в кворуме, перестройте целевой адрес:
 
-    <destinationAddress>  = <Host_1_IP>,<Host_2_IP>,<Host_3_IP>:<Port>:<ZnodeParent>
+`<destinationAddress>  = <Host_1_IP>,<Host_2_IP>,<Host_3_IP>:<Port>:<ZnodeParent>`
 
 Пример.
 
-    <destinationAddress> = 10.0.0.9,10.0.0.8,10.0.0.12:2181:/hbase-unsecure
+`<destinationAddress> = 10.0.0.9,10.0.0.8,10.0.0.12:2181:/hbase-unsecure`
 
 ## <a name="snapshots"></a>Моментальные снимки
 
@@ -164,29 +177,41 @@ CopyTable сканирует все содержимое исходной таб
 
 Чтобы создать моментальный снимок, подключитесь к головному узлу кластера HDInsight HBase по протоколу SSH и запустите оболочку `hbase`:
 
-    hbase shell
+```console
+hbase shell
+```
 
 В оболочке hbase используйте команду создания моментального снимка, указав имена таблицы и этого моментального снимка:
 
-    snapshot '<tableName>', '<snapshotName>'
+```console
+snapshot '<tableName>', '<snapshotName>'
+```
 
 Чтобы в оболочке `hbase` восстановить моментальный снимок по имени, сначала отключите таблицу, а затем восстановите моментальный снимок и повторно включите таблицу:
 
-    disable '<tableName>'
-    restore_snapshot '<snapshotName>'
-    enable '<tableName>'
+```console
+disable '<tableName>'
+restore_snapshot '<snapshotName>'
+enable '<tableName>'
+```
 
 Чтобы восстановить моментальный снимок в новую таблицу, используйте команду clone_snapshot:
 
-    clone_snapshot '<snapshotName>', '<newTableName>'
+```console
+clone_snapshot '<snapshotName>', '<newTableName>'
+```
 
 Чтобы экспортировать моментальный снимок в HDFS, где его будет использовать другой кластер, сначала создайте моментальный снимок, как описано выше, и воспользуйтесь служебной программой ExportSnapshot. Запустите эту программу из сеанса SSH на головном узле, а не в оболочке `hbase`:
 
-     hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot -snapshot <snapshotName> -copy-to <hdfsHBaseLocation>
+```console
+hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot -snapshot <snapshotName> -copy-to <hdfsHBaseLocation>
+```
 
 В качестве значения параметра `<hdfsHBaseLocation>` можно указать любое место хранения, поддерживаемое исходным кластером. Кроме того, это значение должно указывать на папку hbase, используемую целевым кластером. Например, если к исходному кластеру подключена дополнительная учетная запись службы хранилища Azure и эта учетная запись предоставляет доступ к контейнеру, используемому по умолчанию хранилищем целевого кластера, используйте следующую команду:
 
-    hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot -snapshot 'Snapshot1' -copy-to 'wasbs://secondcluster@myaccount.blob.core.windows.net/hbase'
+```console
+hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot -snapshot 'Snapshot1' -copy-to 'wasbs://secondcluster@myaccount.blob.core.windows.net/hbase'
+```
 
 После экспорта моментального снимка подключитесь к головному узлу целевого кластера по протоколу SSH и восстановите этот моментальный снимок с помощью команды restore_snapshot, как описано выше.
 
@@ -211,7 +236,7 @@ CopyTable сканирует все содержимое исходной таб
 
 Чтобы включить репликацию в HDInsight, примените действие скрипта к выполняющемуся исходному кластеру HDInsight. Пошаговые инструкции по включению репликации в кластере или настройке репликации в образцах кластеров, созданных в виртуальных сетях с помощью шаблонов Azure Resource Manager, см. в статье о [Настройке репликации Apache HBase](apache-hbase-replication.md). Эта статья также содержит инструкции по включению репликации метаданных Phoenix.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Настройка репликации Apache HBase](apache-hbase-replication.md)
 * [Работа с программой импорта и экспорта HBase](https://blogs.msdn.microsoft.com/data_otaku/2016/12/21/working-with-the-hbase-import-and-export-utility/)

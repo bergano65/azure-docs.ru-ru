@@ -14,12 +14,12 @@ ms.date: 05/18/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
-ms.openlocfilehash: 155816a9cd171b42e1def5cafa09cb9e310d5ee7
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
-ms.translationtype: HT
+ms.openlocfilehash: a68c0248ce364be486610c406388586b69cbb3f4
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83771678"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86076952"
 ---
 # <a name="single-sign-on-saml-protocol"></a>Протокол единого входа SAML
 
@@ -46,10 +46,10 @@ xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
 </samlp:AuthnRequest>
 ```
 
-| Параметр |  | Описание |
+| Параметр | Тип | Описание |
 | --- | --- | --- |
-| ID | Обязательно | Azure AD использует этот атрибут для заполнения атрибута `InResponseTo` возвращенного ответа. Идентификатор не должен начинаться с цифры, поэтому общая стратегия предусматривает добавление такой строки, как id, в начало строкового представления GUID. Например, `id6c1c178c166d486687be4aaf5e482730` — допустимый идентификатор. |
-| Версия | Обязательно | Этот параметр должен иметь значение **2.0**. |
+| ID | Обязательное значение | Azure AD использует этот атрибут для заполнения атрибута `InResponseTo` возвращенного ответа. Идентификатор не должен начинаться с цифры, поэтому общая стратегия предусматривает добавление такой строки, как id, в начало строкового представления GUID. Например, `id6c1c178c166d486687be4aaf5e482730` — допустимый идентификатор. |
+| Версия | Обязательное значение | Этот параметр должен иметь значение **2.0**. |
 | IssueInstant | Обязательно | Это строка DateTime со значением в формате всемирного времени (UTC) и с [преобразованием без потери данных ("o")](https://msdn.microsoft.com/library/az4se3k1.aspx). Azure AD ожидает значение DateTime этого типа, но не оценивает и не использует его. |
 | AssertionConsumerServiceUrl | Необязательно | Если указан, то он должен соответствовать параметру `RedirectUri` облачной службы в Azure AD. |
 | ForceAuthn | Необязательно | Это логическое значение. Если задано значение true, то это означает, что пользователь должен будет повторно выполнить проверку подлинности, даже если время его сеанса в Azure AD еще не истекло. |
@@ -86,6 +86,8 @@ Azure AD также игнорирует элемент `Conditions` в `AuthnRe
 * `urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`: это значение позволяет Azure Active Directory выбирать формат утверждений. Azure Active Directory выдает NameID в качестве парного идентификатора.
 * `urn:oasis:names:tc:SAML:2.0:nameid-format:transient`: Azure Active Directory выдает случайным образом созданное значение утверждения NameID, которое является уникальным для текущей операции единого входа. Это означает, что значение является временным и не может использоваться для идентификации пользователя, выполняющего аутентификацию.
 
+Если `SPNameQualifier` указан параметр, Azure AD будет включать в ответ то же самое `SPNameQualifier` .
+
 Azure AD игнорирует атрибут `AllowCreate` .
 
 ### <a name="requestauthncontext"></a>RequestAuthnContext
@@ -97,9 +99,9 @@ Azure AD игнорирует атрибут `AllowCreate` .
 Если он указан, не включайте атрибут `ProxyCount`, а также элемент `IDPListOption` или `RequesterID`, так как они не поддерживаются.
 
 ### <a name="signature"></a>Сигнатура
-Не включайте элемент `Signature` в элементы `AuthnRequest`. Azure AD не проверяет подписанные запросы проверки подлинности. Проверка запрашивающей стороны предоставляется только в ответах для зарегистрированных URL-адресов службы обработчика утверждений.
+`Signature`Элемент в `AuthnRequest` элементах является необязательным. Azure AD не проверяет подписанные запросы проверки подлинности при наличии подписи. Проверка запрашивающей стороны предоставляется только в ответах для зарегистрированных URL-адресов службы обработчика утверждений.
 
-### <a name="subject"></a>Тема
+### <a name="subject"></a>Субъект
 Не включайте элемент `Subject`. Azure AD не поддерживает указание темы для запроса и возвращает ошибку, если она указана.
 
 ## <a name="response"></a>Ответ
@@ -157,7 +159,7 @@ Azure AD игнорирует атрибут `AllowCreate` .
 
 ### <a name="issuer"></a>Издатель
 
-Azure AD задает для элемента `Issuer` значение `https://sts.windows.net/<TenantIDGUID>/`, где \<TenantIDGUID> — это идентификатор клиента Azure AD.
+Azure AD устанавливает для элемента `Issuer` значение `https://sts.windows.net/<TenantIDGUID>/`, где \<TenantIDGUID> — это идентификатор клиента Azure AD.
 
 Например, ответ с элементом Issuer может выглядеть следующим образом:
 
@@ -192,7 +194,7 @@ Timestamp: 2013-03-18 08:49:24Z</samlp:StatusMessage>
 
 #### <a name="issuer"></a>Издатель
 
-Ему задается значение `https://sts.windows.net/<TenantIDGUID>/`, где \<TenantIDGUID> — это идентификатор клиента Azure AD.
+Ему задается значение `https://sts.windows.net/<TenantIDGUID>/`, где \<TenantIDGUID> — это идентификатор клиента Azure AD.
 
 ```
 <Issuer>https://sts.windows.net/82869000-6ad1-48f0-8171-272ed18796e9/</Issuer>

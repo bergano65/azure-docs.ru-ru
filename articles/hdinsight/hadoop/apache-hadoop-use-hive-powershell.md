@@ -5,14 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/24/2019
-ms.openlocfilehash: deaa934b257fab74830d75e308a283e7608dc590
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 653a481efeeaac83215b1e46309944efab924d2e
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75552599"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86076493"
 ---
 # <a name="run-apache-hive-queries-using-powershell"></a>Выполнение запросов Apache Hive с помощью PowerShell
 
@@ -98,7 +99,7 @@ Get-AzHDInsightJobOutput `
 
 Как можно видеть, Azure PowerShell позволяет с легкостью выполнять запросы Hive в кластере HDInsight, отслеживать состояние задания и получать выходные данные.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Общая информация о Hive в HDInsight:
 

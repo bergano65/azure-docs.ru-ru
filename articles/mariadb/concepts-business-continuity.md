@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 3/18/2020
-ms.openlocfilehash: c01e0df1f420c8489ca3445d9fa025b251a870f2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 7/7/2020
+ms.openlocfilehash: c1f4945cda9db0f99799ea072737d4524f04e481
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79532397"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86076578"
 ---
 # <a name="understand-business-continuity-in-azure-database-for-mariadb"></a>Сведения о непрерывности бизнес-процессов в базе данных Azure для MariaDB
 
@@ -48,11 +48,12 @@ ms.locfileid: "79532397"
 > [!IMPORTANT]
 > Геовосстановление возможно только в том случае, если сервер был подготовлен с геоизбыточным хранилищем резервных копий.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="cross-region-read-replicas"></a>Реплики чтения между регионами
 
-- Дополнительные сведения об автоматическом создании резервных копий см. в статье о [резервном копировании в службе "База данных Azure для MariaDB"](concepts-backup.md).
-- Сведения о восстановлении базы данных до точки во времени с помощью портала Azure см. в  [этой статье](howto-restore-server-portal.md).
+Для повышения непрерывности бизнес-процессов и планирования аварийного восстановления можно использовать реплики чтения в разных регионах. Реплики чтения обновляются асинхронно с помощью технологии репликации двоичных журналов MariaDB. Дополнительные сведения о репликах чтения, доступных регионах и отработки отказа см. в [статье основные понятия чтения реплик](concepts-read-replicas.md). 
 
-<!--
-- To restore to a point in time using Azure CLI, see [restore database to a point in time using CLI](howto-restore-server-cli.md). 
--->
+## <a name="next-steps"></a>Следующие шаги
+
+- Дополнительные сведения об [автоматической архивации в базе данных Azure для MariaDB](concepts-backup.md).
+- Дополнительные сведения см. в статьях [Как заархивировать и восстановить сервер в базе данных Azure для PostgreSQL с помощью портала Azure](howto-restore-server-portal.md) или [Как выполнить резервное копирование и восстановление сервера в базе данных Azure для PostgreSQL с помощью Azure CLI](howto-restore-server-cli.md).
+- Сведения о [репликах чтения в базе данных Azure для MariaDB](concepts-read-replicas.md).

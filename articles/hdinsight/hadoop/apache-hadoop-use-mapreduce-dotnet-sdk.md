@@ -5,14 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/15/2020
-ms.openlocfilehash: e50510f2420d69be37af584a2648a794e1561ee3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c165663e19037bd2ebac410adb6b6d05fcc162e6
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76157058"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86076357"
 ---
 # <a name="run-mapreduce-jobs-using-hdinsight-net-sdk"></a>Выполнение заданий MapReduce с использованием пакета SDK для HDInsight .NET
 
@@ -166,7 +167,7 @@ ms.locfileid: "76157058"
 
 После успешного завершения задания приложение выводит содержимое выходного файла `part-r-00000` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы ознакомились с несколькими способами создания кластера HDInsight. Дополнительные сведения см. в следующих статьях:
 

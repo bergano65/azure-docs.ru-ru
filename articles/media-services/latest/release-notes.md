@@ -11,11 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 06/03/2020
 ms.author: juliako
-ms.openlocfilehash: 6abb44012035f31f970a347687964afb0c715d29
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d09fba2130dc302378a59200349a569cc248234b
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84983375"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86075439"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -35,13 +36,23 @@ ms.locfileid: "84983375"
 >
 > Дополнительные сведения см. [в разделе ограничения портал Azure для служб мультимедиа v3](frequently-asked-questions.md#what-are-the-azure-portal-limitations-for-media-services-v3).
 
-## <a name="june-2020"></a>июнь 2020 г.
+## <a name="june-2020"></a>Июнь 2020 г.
 
 ### <a name="live-video-analytics-on-iot-edge-preview-release"></a>Интерактивная аналитика видео в предварительной версии IoT Edge
 
 Предварительная версия функции Live Video Analytics на IoT Edge стала общедоступной. Дополнительные сведения см. в разделе [заметки о выпуске](../live-video-analytics-edge/release-notes.md).
 
 Интерактивная аналитика видео на IoT Edge — это расширение семейства служб мультимедиа. Она позволяет анализировать видео в реальном времени с помощью моделей искусственного интеллекта на своих пограничных устройствах, а также при необходимости записывать и записывать это видео. Теперь вы можете создавать приложения с помощью анализа видео в реальном времени на границе, не беспокоясь о сложности создания и работы конвейера видео.
+
+### <a name="search-by-topics"></a>Поиск по темам
+
+Теперь можно использовать API поиска для поиска видео с конкретными разделами (только API).
+
+Разделы добавляются как часть `textScope` (необязательный параметр). Дополнительные сведения см. в разделе [API](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Search-Videos) .  
+
+### <a name="labels-enhancement"></a>Расширение меток
+
+Средство создания тегов меток Обновлено и теперь содержит больше визуальных меток, которые можно определить.
 
 ## <a name="may-2020"></a>Май 2020 г.
 

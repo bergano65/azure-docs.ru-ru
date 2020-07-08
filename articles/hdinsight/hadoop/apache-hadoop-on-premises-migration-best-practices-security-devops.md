@@ -5,14 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: ashishth
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/19/2019
-ms.openlocfilehash: 4ceefcbbbb53e3ae13f8ced930ae8417fb00965f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d190d3f133c4b12b58dade878dc66755c25e1ed8
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75974405"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86078380"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---security-and-devops-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по обеспечению безопасности и операциям DevOps
 
@@ -41,7 +42,7 @@ ms.locfileid: "75974405"
 
 - Разверните кластер HDInsight ESP, настроив следующие параметры:
 
-    |Параметр |Описание: |
+    |Параметр |Описание |
     |---|---|
     |Доменное имя|доменное имя, связанное с Azure AD DS.|
     |Имя пользователя домена|учетная запись службы в управляемом домене Azure AD DS в контроллере домена, созданная в предыдущем разделе, например `hdiadmin@contoso.onmicrosoft.com`. Этот пользователь домена станет администратором этого кластера HDInsight.|
@@ -121,6 +122,6 @@ ms.locfileid: "75974405"
 2. **Выполнение тестов**. Выполните функциональные тесты и тесты производительности в итеративном режиме.
 3. **Оптимизация**. Устраните любые проблемы с производительностью на основе вышеуказанных результатов тестов, а затем выполните повторное тестирование для подтверждения повышения производительности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 [Сведения об HDInsight 4.0](https://docs.microsoft.com/azure/hdinsight/hadoop/apache-hadoop-introduction).

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 01153317b49e4543f10faa517bce7bcc01ce22d4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c55d8201d00daedaf87f270f365573040d799fba
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79269735"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86058203"
 ---
 # <a name="use-aes-128-dynamic-encryption-and-the-key-delivery-service"></a>Использование динамического шифрования AES-128 и службы доставки ключей
 > [!div class="op_single_selector"]
@@ -29,7 +29,7 @@ ms.locfileid: "79269735"
 >  
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 Службы мультимедиа можно использовать для доставки содержимого HTTP Live Streaming (HLS) и Smooth Streaming, зашифрованного с помощью 128-битных ключей шифрования AES. Они также включают в себя службу доставки ключей, которая доставляет ключи шифрования авторизованным пользователям. Если нужно зашифровать ресурс-контейнер с помощью служб мультимедиа, то свяжите с ним ключ шифрования и настройте политики авторизации для ключа. Когда поток запрашивается проигрывателем, службы мультимедиа используют указанный ключ для динамического шифрования содержимого с помощью AES. Чтобы расшифровать поток, проигрыватель запросит ключ у службы доставки ключей. Чтобы определить, есть ли у пользователя право на получение ключа, служба оценивает политики авторизации, заданные для ключа.
 
@@ -159,30 +159,34 @@ ms.locfileid: "79269735"
 
 При использовании протокола HLS корневой манифест разбивается на файлы сегментов. 
 
-Например, корневой манифест: http:\//test001.Origin.mediaservices.Windows.NET/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ISM/MANIFEST (Format = m3u8-AAPL). Он содержит список имен файлов сегментов.
+Например, корневой манифест: http: \/ /test001.Origin.mediaservices.Windows.NET/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ISM/MANIFEST (Format = m3u8-AAPL). Он содержит список имен файлов сегментов.
 
-    . . . 
-    #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=630133,RESOLUTION=424x240,CODECS="avc1.4d4015,mp4a.40.2",AUDIO="audio"
-    QualityLevels(514369)/Manifest(video,format=m3u8-aapl)
-    #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=965441,RESOLUTION=636x356,CODECS="avc1.4d401e,mp4a.40.2",AUDIO="audio"
-    QualityLevels(842459)/Manifest(video,format=m3u8-aapl)
-    …
+```text
+. . . 
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=630133,RESOLUTION=424x240,CODECS="avc1.4d4015,mp4a.40.2",AUDIO="audio"
+QualityLevels(514369)/Manifest(video,format=m3u8-aapl)
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=965441,RESOLUTION=636x356,CODECS="avc1.4d401e,mp4a.40.2",AUDIO="audio"
+QualityLevels(842459)/Manifest(video,format=m3u8-aapl)
+…
+```
 
-Если вы откроете один из файлов сегментов в текстовом редакторе (например, http:\//test001.Origin.mediaservices.Windows.NET/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ISM/QualityLevels (514369)/MANIFEST (Video, Format = m3u8-AAPL), он содержит #EXT-X-Key, что означает, что файл зашифрован.
+Если вы откроете один из файлов сегментов в текстовом редакторе (например, http: \/ /test001.Origin.mediaservices.Windows.NET/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ISM/QualityLevels (514369)/MANIFEST (Video, Format = m3u8-AAPL), он содержит #EXT-X-Key, что означает, что файл зашифрован.
 
-    #EXTM3U
-    #EXT-X-VERSION:4
-    #EXT-X-ALLOW-CACHE:NO
-    #EXT-X-MEDIA-SEQUENCE:0
-    #EXT-X-TARGETDURATION:9
-    #EXT-X-KEY:METHOD=AES-128,
-    URI="https://wamsbayclus001kd-hs.cloudapp.net/HlsHandler.ashx?
-         kid=da3813af-55e6-48e7-aa9f-a4d6031f7b4d",
-            IV=0XD7D7D7D7D7D7D7D7D7D7D7D7D7D7D7D7
-    #EXT-X-PROGRAM-DATE-TIME:1970-01-01T00:00:00.000+00:00
-    #EXTINF:8.425708,no-desc
-    Fragments(video=0,format=m3u8-aapl)
-    #EXT-X-ENDLIST
+```text
+#EXTM3U
+#EXT-X-VERSION:4
+#EXT-X-ALLOW-CACHE:NO
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-TARGETDURATION:9
+#EXT-X-KEY:METHOD=AES-128,
+URI="https://wamsbayclus001kd-hs.cloudapp.net/HlsHandler.ashx?
+        kid=da3813af-55e6-48e7-aa9f-a4d6031f7b4d",
+        IV=0XD7D7D7D7D7D7D7D7D7D7D7D7D7D7D7D7
+#EXT-X-PROGRAM-DATE-TIME:1970-01-01T00:00:00.000+00:00
+#EXTINF:8.425708,no-desc
+Fragments(video=0,format=m3u8-aapl)
+#EXT-X-ENDLIST
+```
 
 >[!NOTE] 
 >Если вы планируете воспроизводить HLS с шифрованием AES в Safari, см. [этот блог](https://azure.microsoft.com/blog/how-to-make-token-authorized-aes-encrypted-hls-stream-working-in-safari/).
@@ -260,5 +264,5 @@ ms.locfileid: "79269735"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

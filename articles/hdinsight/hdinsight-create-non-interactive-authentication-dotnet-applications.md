@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/23/2019
-ms.openlocfilehash: 5e6a0586bc750f8972586920c15dbb297295aa20
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 48a5c192051d8e715deb7e354827ff4cd4152bcd
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79371279"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86077887"
 ---
 # <a name="create-a-non-interactive-authentication-net-hdinsight-application"></a>Создание приложения .NET HDInsight с неинтерактивной проверкой подлинности
 
@@ -21,11 +21,11 @@ ms.locfileid: "79371279"
 
 Из неинтерактивного приложения .NET, вам потребуется следующее:
 
-* Идентификатор клиента для подписки Azure (также называется *идентификатором каталога*). Дополнительные сведения см. в разделе [Получение идентификатора клиента](../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in).
-* Идентификатор клиента для приложения Azure Active Directory (Azure AD). См. статью [создание Azure Active Directory приложения](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application) и [Получение идентификатора приложения](../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in).
-* Секретный ключ приложения Azure AD. Дополнительные сведения см. в разделе [Получение идентификатора приложения и ключа проверки подлинности](../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in).
+* Идентификатор клиента для подписки Azure (также называется *идентификатором каталога*). Дополнительные сведения см. в разделе [Получение идентификатора клиента](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in).
+* Идентификатор клиента для приложения Azure Active Directory (Azure AD). См. статью [создание Azure Active Directory приложения](../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal) и [Получение идентификатора приложения](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in).
+* Секретный ключ приложения Azure AD. Дополнительные сведения см. в разделе [Получение идентификатора приложения и ключа проверки подлинности](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Кластер HDInsight. Дополнительные сведения см. в [руководстве по началу работы](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
@@ -44,12 +44,12 @@ ms.locfileid: "79371279"
 
 ## <a name="develop-an-hdinsight-client-application"></a>Разработка клиентского приложения HDInsight
 
-1. Создайте приложение командной строки на языке C#.
+1. Создайте консольное приложение C#.
 2. Добавьте следующие пакеты [NuGet](https://www.nuget.org/) :
 
-        Install-Package Microsoft.Azure.Common.Authentication -Pre
-        Install-Package Microsoft.Azure.Management.HDInsight -Pre
-        Install-Package Microsoft.Azure.Management.Resources -Pre
+    * `Install-Package Microsoft.Azure.Common.Authentication -Pre`
+    * `Install-Package Microsoft.Azure.Management.HDInsight -Pre`
+    * `Install-Package Microsoft.Azure.Management.Resources -Pre`
 
 3. Выполните следующий код:
 
@@ -119,7 +119,7 @@ ms.locfileid: "79371279"
     }
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание приложения Azure Active Directory и субъекта-службы на портале Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 * Узнайте, как [выполнять проверку подлинности субъекта-службы в Azure Resource Manager](../active-directory/develop/howto-authenticate-service-principal-powershell.md).

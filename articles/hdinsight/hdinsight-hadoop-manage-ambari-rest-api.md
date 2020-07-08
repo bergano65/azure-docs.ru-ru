@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/29/2020
-ms.openlocfilehash: 48602cb65430bcf6720b4d6f4ba05c771a7bd55b
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.openlocfilehash: 03ef1708f836eb016d8f2fce530b9588cc61cd35
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82559966"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86075711"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-rest-api"></a>Управление кластерами HDInsight с помощью Apache Ambari REST API
 
@@ -25,7 +25,7 @@ ms.locfileid: "82559966"
 
 Apache Ambari упрощает управление кластерами Hadoop и их мониторинг, предоставляя простой в использовании интерфейс веб-интерфейса, поддерживаемый его [интерфейсами API](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).  Ambari предоставляется по умолчанию с кластерами HDInsight на платформе Linux.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
@@ -37,13 +37,13 @@ Apache Ambari упрощает управление кластерами Hadoop 
 
 ## <a name="base-uniform-resource-identifier-for-ambari-rest-api"></a>Базовый универсальный идентификатор ресурса для Ambari API-интерфейса RESTful
 
- Базовый универсальный код ресурса (URI) для REST API Ambari в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME`, где `CLUSTERNAME` — это имя кластера.  В именах кластеров в URI **учитывается регистр**.  Хотя имя кластера в части URI (`CLUSTERNAME.azurehdinsight.net`) в полном доменном имени () не учитывает регистр, другие ВХОЖДЕНИЯ в URI учитывают регистр.
+ Базовый универсальный код ресурса (URI) для REST API Ambari в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME` , где `CLUSTERNAME` — это имя кластера.  В именах кластеров в URI **учитывается регистр**.  Хотя имя кластера в части URI () в полном доменном имени ( `CLUSTERNAME.azurehdinsight.net` ) не учитывает регистр, другие вхождения в URI учитывают регистр.
 
 ## <a name="authentication"></a>Аутентификация
 
 Подключение к Ambari в HDInsight выполняется по протоколу HTTPS. Используйте имя учетной записи администратора (по умолчанию — **admin**) и пароль, указанные при создании кластера.
 
-Для Корпоративный пакет безопасности кластеров вместо `admin`используйте полное имя пользователя, например. `username@domain.onmicrosoft.com`
+Для Корпоративный пакет безопасности кластеров вместо `admin` используйте полное имя пользователя, например `username@domain.onmicrosoft.com` .
 
 ## <a name="examples"></a>Примеры
 
@@ -52,7 +52,7 @@ Apache Ambari упрощает управление кластерами Hadoop 
 Сохраните свои учетные данные, чтобы избежать их повторного ввода для каждого примера.  Имя кластера будет сохранено на отдельном шаге.
 
 **A. bash**  
-Измените приведенный ниже сценарий, `PASSWORD` заменив его фактическим паролем.  Затем введите команду.
+Измените приведенный ниже сценарий, заменив его `PASSWORD` фактическим паролем.  Затем введите команду.
 
 ```bash
 export password='PASSWORD'
@@ -68,7 +68,7 @@ $creds = Get-Credential -UserName "admin" -Message "Enter the HDInsight login"
 
 Фактический регистр имени кластера может отличаться от предполагаемого.  В этих шагах будет показан фактический регистр, а затем сохранен в переменной для всех последующих примеров.
 
-Измените приведенные ниже сценарии, `CLUSTERNAME` чтобы они заменили имя кластера. Затем введите команду. (Имя кластера для FQDN не учитывает регистр.)
+Измените приведенные ниже сценарии, чтобы они заменили `CLUSTERNAME` имя кластера. Затем введите команду. (Имя кластера для FQDN не учитывает регистр.)
 
 ```bash
 export clusterName=$(curl -u admin:$password -sS -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters" | jq -r '.items[].Clusters.cluster_name')
@@ -307,8 +307,8 @@ $resp.Content
 1. Создайте `newconfig.json`.  
    Измените, а затем введите следующие команды:
 
-   * Замените `livy2-conf` на новый компонент.
-   * Замените `INITIAL` на фактическое значение, `tag` полученное для из параметра [получить все конфигурации](#get-all-configurations).
+   * Замените на `livy2-conf` новый компонент.
+   * Замените `INITIAL` на фактическое значение, полученное для `tag` из параметра [получить все конфигурации](#get-all-configurations).
 
      **A. bash**
 
@@ -364,11 +364,13 @@ $resp.Content
 2. Измените `newconfig.json`.  
    Откройте документ `newconfig.json` и измените или добавьте значения в объекте `properties`. Следующий пример изменяет значение `"livy.server.csrf_protection.enabled"` с `"true"` на `"false"`.
 
-        "livy.server.csrf_protection.enabled": "false",
+    ```json
+    "livy.server.csrf_protection.enabled": "false",
+    ```
 
     По завершении внесения изменений сохраните файл.
 
-3. Отправка `newconfig.json`.  
+3. Отправка `newconfig.json` .  
    Выполните следующие команды, чтобы отправить обновленную конфигурацию в Ambari:
 
     ```bash
@@ -385,7 +387,7 @@ $resp.Content
     $resp.Content
     ```  
 
-    Эти команды передают содержимое файла **документе newconfig. JSON** в кластер в качестве новой конфигурации. Запрос возвращает документ JSON. Элемент **versionTag** в этом документе должен совпадать с отправленной версией, а объект **configs** содержит запрошенные изменения конфигурации.
+    Эти команды отправляют содержимое **newconfig.jsв** файл в кластер в качестве новой конфигурации. Запрос возвращает документ JSON. Элемент **versionTag** в этом документе должен совпадать с отправленной версией, а объект **configs** содержит запрошенные изменения конфигурации.
 
 ### <a name="restart-a-service-component"></a>Перезапуск компонента службы
 
@@ -459,7 +461,7 @@ $resp.Content
     > Значение `href` , возвращенное этим универсальным кодом ресурса (URI), использует внутренний IP-адрес узла кластера. Чтобы использовать его вне кластера, замените `10.0.0.18:8080` часть с полным доменным именем кластера.  
 
 4. Проверьте запрос.  
-    Измените приведенную ниже команду, `29` заменив фактическим значением `id` , полученным на предыдущем шаге.  Например, следующие команды получают состояние запроса:
+    Измените приведенную ниже команду, заменив `29` фактическим значением, `id` полученным на предыдущем шаге.  Например, следующие команды получают состояние запроса:
 
     ```bash
     curl -u admin:$password -sS -H "X-Requested-By: ambari" \
@@ -511,6 +513,6 @@ $resp.Content
         -Body '{"RequestInfo": {"context": "turning off maintenance mode for SPARK2"},"Body": {"ServiceInfo": {"maintenance_state":"OFF"}}}'
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Полный справочник по REST API см. [здесь](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).  См. также [авторизация пользователей для представлений Apache Ambari](./hdinsight-authorize-users-to-ambari.md)

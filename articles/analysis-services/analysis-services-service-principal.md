@@ -4,15 +4,15 @@ description: Сведения о создании субъекта-службы 
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 05/26/2020
+ms.date: 07/07/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 638ba26c8c8aed9385e10242b86a7587c1d9a7c5
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
-ms.translationtype: HT
+ms.openlocfilehash: 28947d1fa4ece5d6285651ef07342cae06ad8bc8
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83871170"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86077377"
 ---
 # <a name="automation-with-service-principals"></a>Автоматизация с помощью субъектов-служб
 
@@ -20,7 +20,7 @@ ms.locfileid: "83871170"
 
 В Analysis Services субъекты-службы применяются для автоматизации типичных задач с использованием службы автоматизации Azure, автоматического режима PowerShell, настраиваемых клиентских приложений и веб-приложений. Например, подготовка серверов, развертывание моделей, обновление данных, увеличение и уменьшение масштаба, остановка и возобновление могут быть автоматизированы с помощью субъектов-служб. Разрешения присваиваются субъектам-службам через членство в ролях, так же как и в обычных учетных записях Azure AD UPN.
 
-Analysis Services также поддерживает операции, выполняемые управляемыми удостоверениями с помощью субъектов-служб. Дополнительные сведения см. в статьях [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md) и [Службы с поддержкой управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-analysis-services).  
+Analysis Services также поддерживает операции, выполняемые управляемыми удостоверениями с помощью субъектов-служб. Дополнительные сведения см. в статьях [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md) и [Службы с поддержкой управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-analysis-services).    
 
 ## <a name="create-service-principals"></a>Создание субъектов-служб
  
@@ -38,7 +38,7 @@ Analysis Services также поддерживает операции, выпо
 
 ## <a name="add-service-principals-to-server-admin-role"></a>Добавление субъектов-служб к роли администратора сервера
 
-Прежде чем выполнять операции управления сервером Analysis Services с помощью субъекта-службы, необходимо добавить его к роли администраторов серверов. Дополнительные сведения см. в статье [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md).
+Прежде чем выполнять операции управления сервером Analysis Services с помощью субъекта-службы, необходимо добавить его к роли администраторов серверов. Субъекты-службы необходимо добавлять непосредственно к роли администратора сервера. Добавление субъекта-службы в группу безопасности, а затем Добавление этой группы безопасности к роли администратора сервера не поддерживается. Дополнительные сведения см. в статье [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md).
 
 ## <a name="service-principals-in-connection-strings"></a>Субъекты-службы в строках подключения
 
@@ -48,7 +48,7 @@ Analysis Services также поддерживает операции, выпо
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-#### <a name="using-azanalysisservices-module"></a><a name="azmodule" />Использование модуля Az.AnalysisServices
+#### <a name="using-azanalysisservices-module"></a><a name="azmodule"></a>Использование модуля Az.AnalysisServices
 
 При выполнении операций управления ресурсами с модулем [Az.AnalysisServices](/powershell/module/az.analysisservices) с помощью субъекта-службы используйте командлет `Connect-AzAccount`. 
 
@@ -92,7 +92,7 @@ Invoke-ProcessTable -Server "asazure://westcentralus.asazure.windows.net/myserve
 
 ### <a name="amo-and-adomd"></a>Объекты AMO и ADOMD 
 
-При подключении к клиентским приложениям и веб-приложениям устанавливаемые пакеты от NuGet [клиентских библиотек AMO и ADOMD](analysis-services-data-providers.md) версии 15.0.2 и выше поддерживают субъекты-службы в строках подключения с помощью следующего синтаксиса: `app:AppID` и пароль или `cert:thumbprint`. 
+При подключении к клиентским приложениям и веб-приложениям устанавливаемые пакеты от NuGet [клиентских библиотек AMO и ADOMD](https://docs.microsoft.com/analysis-services/client-libraries?view=azure-analysis-services-current) версии 15.0.2 и выше поддерживают субъекты-службы в строках подключения с помощью следующего синтаксиса: `app:AppID` и пароль или `cert:thumbprint`. 
 
 В следующем примере `appID` и `password` используются для выполнения операции обновления шаблона базы данных:
 

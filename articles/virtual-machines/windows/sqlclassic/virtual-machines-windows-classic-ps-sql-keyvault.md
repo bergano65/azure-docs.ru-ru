@@ -16,11 +16,12 @@ ms.date: 02/17/2017
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 7439aa360395490f31a638ac690ed7e5cad1054b
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
+ms.openlocfilehash: eb6b678cad4de2039e252b7dd666d78b6c2549b6
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84195835"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86078244"
 ---
 # <a name="configure-azure-key-vault-integration-for-sql-server-on-azure-virtual-machines-classic"></a>Настройка интеграции хранилища ключей Azure для SQL Server на виртуальных машинах Azure (классическая модель)
 > [!div class="op_single_selector"]
@@ -63,18 +64,23 @@ ms.locfileid: "84195835"
 Командлет **New-AzureVMSqlServerKeyVaultCredentialConfig** создает объект конфигурации для интеграции хранилища ключей Azure. **Set-AzureVMSqlServerExtension** настраивает эту интеграцию с помощью параметра **KeyVaultCredentialSettings**. Ниже показано, как использовать эти команды.
 
 1. В Azure PowerShell сначала настройте входные параметры, указав необходимые значения, как описано в предыдущих разделах этой статьи. Следующий скрипт — это пример.
-   
-        $akvURL = "https:\//contosokeyvault.vault.azure.net/"
-        $spName = "fde2b411-33d5-4e11-af04eb07b669ccf2"
-        $spSecret = "9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM="
-        $credName = "mycred1"
-        $vmName = "myvmname"
-        $serviceName = "mycloudservicename"
+
+    ```azurepowershell
+    $akvURL = "https:\//contosokeyvault.vault.azure.net/"
+    $spName = "fde2b411-33d5-4e11-af04eb07b669ccf2"
+    $spSecret = "9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM="
+    $credName = "mycred1"
+    $vmName = "myvmname"
+    $serviceName = "mycloudservicename"
+    ```
+
 2. Выполните следующий сценарий для настройки и включения интеграции AKV.
-   
-        $secureakv =  $spSecret | ConvertTo-SecureString -AsPlainText -Force
-        $akvs = New-AzureVMSqlServerKeyVaultCredentialConfig -Enable -CredentialName $credname -AzureKeyVaultUrl $akvURL -ServicePrincipalName $spName -ServicePrincipalSecret $secureakv
-        Get-AzureVM -ServiceName $serviceName -Name $vmName | Set-AzureVMSqlServerExtension -KeyVaultCredentialSettings $akvs | Update-AzureVM
+
+    ```azurepowershell
+    $secureakv =  $spSecret | ConvertTo-SecureString -AsPlainText -Force
+    $akvs = New-AzureVMSqlServerKeyVaultCredentialConfig -Enable -CredentialName $credname -AzureKeyVaultUrl $akvURL -ServicePrincipalName $spName -ServicePrincipalSecret $secureakv
+    Get-AzureVM -ServiceName $serviceName -Name $vmName | Set-AzureVMSqlServerExtension -KeyVaultCredentialSettings $akvs | Update-AzureVM
+    ```
 
 Расширение агента SQL IaaS обновит виртуальную машину SQL до этой новой конфигурации.
 
