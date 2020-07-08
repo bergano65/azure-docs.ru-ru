@@ -7,10 +7,9 @@ author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
 ms.openlocfilehash: 2dace6968fbbe69f806c27fb7a46e60c63f78b4f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77670208"
 ---
 # <a name="joins-in-azure-monitor-log-queries"></a>Объединения в запросах журнала Azure Monitor
@@ -79,7 +78,7 @@ SecurityEvent
 ## <a name="join-kinds"></a>Типы объединения
 Укажите тип объединения с использованием аргумента _kind_. Каждый тип выполняет другое сопоставление между записями заданных таблиц, как описывается в следующей таблице.
 
-| Тип соединения | Описание |
+| Тип соединения | Описание: |
 |:---|:---|
 | innerunique | Это режим объединения по умолчанию. Сначала находятся значения соответствующего столбца в левой таблице, а повторяющиеся значения удаляются.  Затем набор уникальных значений сопоставляется с правой таблицей. |
 | Внутреннее | В результаты включаются только совпадающие записи в обеих таблицах. |
@@ -100,9 +99,9 @@ SecurityEvent
 ## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с дополнительными уроками об использовании запросов журнала Azure Monitor.
 
-- [Операции со строками](string-operations.md)
-- [Агрегатные функции](aggregations.md)
-- [Расширенные агрегатные функции](advanced-aggregations.md)
-- [JSON и структуры данных](json-data-structures.md)
+- [Работа со строками](string-operations.md)
+- [Статистические функции в запросах Log Analytics](aggregations.md)
+- [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
+- [Работа с JSON и структурами данных в запросах Log Analytics](json-data-structures.md)
 - [Составление расширенных запросов](advanced-query-writing.md)
-- [Диаграммы](charts.md)
+- [Создание графиков](charts.md)

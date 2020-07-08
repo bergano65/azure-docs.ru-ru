@@ -5,10 +5,9 @@ ms.topic: conceptual
 ms.date: 03/31/2017
 ms.subservice: alerts
 ms.openlocfilehash: c076b8dcea350f9ddd66977e89ce99b81f377b17
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77669052"
 ---
 # <a name="webhooks-for-azure-activity-log-alerts"></a>Веб-перехватчики для оповещений журнала действий Azure
@@ -277,7 +276,7 @@ ms.locfileid: "77669052"
 | eventDataId |Уникальный идентификатор события. |
 | eventSource |Имя инфраструктуры или службы Azure, которая создала событие. |
 | httpRequest |Обычно запрос содержит clientRequestId, clientIpAddress и method (метод HTTP, например PUT). |
-| level |Одно из таких значений: Critical, Error, Warning, Informational. |
+| уровень |Одно из таких значений: Critical, Error, Warning, Informational. |
 | operationId |Обычно события, относящиеся к одной операции, совместно используют один GUID. |
 | operationName |Имя операции. |
 | properties |Свойства события. |

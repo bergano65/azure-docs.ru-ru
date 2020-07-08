@@ -7,10 +7,9 @@ author: bwren
 ms.author: bwren
 ms.date: 11/07/2019
 ms.openlocfilehash: 0f5b2fbd13cb9658e255fde727e115df748aaed9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77654874"
 ---
 # <a name="azure-monitor-for-networks-preview"></a>Azure Monitor для сетей (Предварительная версия)
@@ -30,7 +29,7 @@ Azure Monitor для сети предоставляет исчерпывающ�
 
 Поле поиска можно использовать для поиска ресурсов и связанных с ними ресурсов. Например, общедоступный IP-адрес связан с шлюзом приложений. Поиск DNS-имени общедоступных IP-адресов будет обозначать как общедоступный, так и связанный шлюз приложений.
 
-![Система поиска](media/network-insights-overview/search.png)
+![Найти](media/network-insights-overview/search.png)
 
 
 ## <a name="resource-health-and-metric"></a>Работоспособность ресурсов и метрика

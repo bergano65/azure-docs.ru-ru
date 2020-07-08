@@ -8,10 +8,9 @@ ms.date: 12/13/2019
 ms.author: bwren
 ms.subservice: ''
 ms.openlocfilehash: a2569ca3f998030680bd7dbd872d71ccd372a25d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77672435"
 ---
 # <a name="create-diagnostic-setting-in-azure-using-a-resource-manager-template"></a>Создание параметра диагностики в Azure с помощью шаблона диспетчер ресурсов
@@ -21,7 +20,7 @@ ms.locfileid: "77672435"
 > Так как вы не можете [создать параметр диагностики](diagnostic-settings.md) для журнала действий Azure с помощью POWERSHELL или CLI, например параметров диагностики для других ресурсов Azure, создайте шаблон диспетчер ресурсов для журнала действий, используя сведения в этой статье, а затем разверните шаблон с помощью POWERSHELL или CLI.
 
 ## <a name="deployment-methods"></a>Методы развертывания
-Вы можете развернуть шаблоны диспетчер ресурсов с помощью любого допустимого метода, включая PowerShell и CLI. Параметры диагностики для журнала действий должны быть развернуты в подписке `az deployment create` с помощью для `New-AzDeployment` CLI или PowerShell. Параметры диагностики для журналов ресурсов должны быть развернуты в группе ресурсов с `az group deployment create` помощью for CLI `New-AzResourceGroupDeployment` или PowerShell.
+Вы можете развернуть шаблоны диспетчер ресурсов с помощью любого допустимого метода, включая PowerShell и CLI. Параметры диагностики для журнала действий должны быть развернуты в подписке с помощью `az deployment create` для CLI или `New-AzDeployment` PowerShell. Параметры диагностики для журналов ресурсов должны быть развернуты в группе ресурсов с помощью `az group deployment create` for CLI или `New-AzResourceGroupDeployment` PowerShell.
 
 Дополнительные сведения см. в статьях [развертывание ресурсов с помощью шаблонов диспетчер ресурсов и Azure PowerShell](../../azure-resource-manager/templates/deploy-powershell.md) и [развертывание ресурсов с помощью шаблонов диспетчер ресурсов и Azure CLI](../../azure-resource-manager/templates/deploy-cli.md) . 
 
@@ -144,7 +143,7 @@ ms.locfileid: "77672435"
 ```
 
 ## <a name="activity-log"></a>Журнал действий
-Для журнала действий Azure Добавьте ресурс типа `Microsoft.Insights/diagnosticSettings`. Доступные категории перечислены в списке [категории в журнале действий](activity-log-view.md#categories-in-the-activity-log). Ниже приведен шаблон, собирающий все категории журналов действий в Log Analytics рабочей области, учетной записи хранения и концентратора событий.
+Для журнала действий Azure Добавьте ресурс типа `Microsoft.Insights/diagnosticSettings` . Доступные категории перечислены в списке [категории в журнале действий](activity-log-view.md#categories-in-the-activity-log). Ниже приведен шаблон, собирающий все категории журналов действий в Log Analytics рабочей области, учетной записи хранения и концентратора событий.
 
 
 ```json

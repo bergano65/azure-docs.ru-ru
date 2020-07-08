@@ -5,10 +5,9 @@ ms.topic: conceptual
 ms.date: 01/19/2018
 ms.reviewer: sdash
 ms.openlocfilehash: 39c4c51a1bc84e06efac3674b1ee5b487f9e6729
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77671143"
 ---
 # <a name="unified-cross-component-transaction-diagnostics"></a>Единый интерфейс диагностики транзакций между компонентами
@@ -66,13 +65,13 @@ ms.locfileid: "77671143"
 
 [Application Insights Profiler](../../azure-monitor/app/profiler.md) и [Snapshot Debugger](snapshot-debugger.md) упрощают диагностику проблем производительности и ошибок на уровне кода. Эти средства позволяют легко просматривать трассировки профилировщика и моментальные снимки из любого компонента.
 
-Если вы не смогли получить доступ к профилировщику, обратитесь к **сервицепрофилерхелп\@Microsoft.com** .
+Если вы не смогли получить доступ к профилировщику, обратитесь к **сервицепрофилерхелп \@ Microsoft.com** .
 
-Если вам не удалось получить Snapshot Debugger, обратитесь в **снапшоселп\@Microsoft.com** .
+Если вам не удалось получить Snapshot Debugger, обратитесь в **снапшоселп \@ Microsoft.com** .
 
 ![Интеграция профилировщика](media/transaction-diagnostics/profilerTraces.png)
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 *На диаграмме отображается один компонент, а остальные показаны как внешние зависимости без каких-либо сведений о том, что с ними случилось.*
 

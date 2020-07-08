@@ -10,10 +10,9 @@ ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
 ms.openlocfilehash: cc2cde7932f783f63ee2783f0589ce4f88f248a2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77658108"
 ---
 # <a name="workbook-resource-parameters"></a>Параметры ресурса книги
@@ -61,7 +60,7 @@ ms.locfileid: "77658108"
 > [!NOTE]
 > Граф ресурсов Azure пока недоступен во всех облаках. Если выбран этот подход, убедитесь, что он поддерживается в целевом облаке.
 
-[Документация по графу ресурсов Azure](https://docs.microsoft.com/azure/governance/resource-graph/overview)
+[Документация по Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/overview)
 
 ## <a name="creating-a-resource-parameter--json-list"></a>Создание параметра ресурса (список JSON)
 1. Начните с пустой книги в режиме редактирования.
@@ -81,7 +80,7 @@ ms.locfileid: "77658108"
     ]
     ```
     2. Нажмите синюю кнопку _обновления_ .
-6. При необходимости задайте `Include only resource types` значение _Application Insights_
+6. При необходимости задайте значение `Include only resource types` _Application Insights_
 7. Нажмите кнопку "Сохранить" на панели инструментов, чтобы создать параметр.
 
 ## <a name="referencing-a-resource-parameter"></a>Ссылка на параметр ресурса
@@ -107,7 +106,7 @@ ms.locfileid: "77658108"
 | `{Applications:value}` | Значение выбранного ресурса | _"/Subscriptions/<>/resourceGroups/<ресурсов-Group>/providers/<Resource-Type>/акмеаусентикатион"_ |
 | `{Applications:name}` | Имя выбранного ресурса | `acmefrontend` |
 | `{Applications:resourceGroup}` | Группа ресурсов выбранного ресурса | `acmegroup` |
-| `{Applications:resourceType}` | Тип выбранного ресурса | _Microsoft. Insights/компоненты_ |
+| `{Applications:resourceType}` | Тип выбранного ресурса | _microsoft.insights/components_ |
 | `{Applications:subscription}` | Подписка выбранного ресурса |  |
 | `{Applications:grid}` | Сетка, показывающая свойства ресурса. Полезно для отображения в текстовом блоке во время отладки  |  |
 

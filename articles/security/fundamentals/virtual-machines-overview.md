@@ -17,10 +17,9 @@ ms.workload: na
 ms.date: 10/2/2019
 ms.author: terrylan
 ms.openlocfilehash: a1726e18ea8c1ba86d77d7b9ca3d50c444620361
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77657169"
 ---
 # <a name="azure-virtual-machines-security-overview"></a>Общие сведения о безопасности при использовании виртуальных машин Azure
@@ -57,14 +56,14 @@ Azure предлагает антивредоносное ПО таких пос
 
 Чтобы получить еще более мощные возможности защиты, рекомендуем использовать [расширенную защита от угроз (ATP) в Защитнике Windows](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/windows-defender-advanced-threat-protection). ATP в Защитнике Windows предоставляет следующие возможности:
 
-* [уменьшение поверхности атаки](/windows/security/threat-protection/windows-defender-atp/overview-attack-surface-reduction);  
+* [Уменьшение уязвимой зоны](/windows/security/threat-protection/windows-defender-atp/overview-attack-surface-reduction)  
 * [защита следующего поколения](/windows/security/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10);  
 * [защита конечных точек и реагирование](/windows/security/threat-protection/windows-defender-atp/overview-endpoint-detection-response);
 * [автоматическое исследование и исправление](/windows/security/threat-protection/windows-defender-atp/automated-investigations-windows-defender-advanced-threat-protection);
-* [Оценка безопасности](/windows/security/threat-protection/microsoft-defender-atp/configuration-score)
+* [оценка безопасности](/windows/security/threat-protection/microsoft-defender-atp/configuration-score);
 * [расширенный поиск](/windows/security/threat-protection/windows-defender-atp/overview-hunting-windows-defender-advanced-threat-protection);
 * [управление и API-интерфейсы](/windows/security/threat-protection/windows-defender-atp/management-apis);
-* [защита от угроз (Microsoft)](/windows/security/threat-protection/windows-defender-atp/threat-protection-integration);
+* [Защита от угроз (Майкрософт)](/windows/security/threat-protection/windows-defender-atp/threat-protection-integration)
 
 Дополнительные сведения:
 
@@ -147,7 +146,7 @@ Site Recovery выполняет следующие задачи.
 * [Центр безопасности Azure: часто задаваемые вопросы](/azure/security-center/security-center-faq)
 * [Руководство по планированию использования центра безопасности Azure и работе в нем](/azure/security-center/security-center-planning-and-operations-guide)
 
-## <a name="compliance"></a>Соответствие требованиям
+## <a name="compliance"></a>Соответствие нормативным требованиям
 
 Виртуальные машины Azure сертифицированы в соответствии со стандартами FISMA, FedRAMP, HIPAA, PCI DSS (уровень 1), а также другими ключевыми стандартами. Сертификация упрощает обеспечение соответствия для приложений, а также позволяет соблюдать многочисленные местные и международные нормативные требования.
 

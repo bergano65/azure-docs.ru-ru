@@ -8,10 +8,9 @@ ms.date: 02/25/2020
 ms.author: victorh
 ms.topic: conceptual
 ms.openlocfilehash: 6ed382e88700e4ecd7f8de20a2c8da7ed3c13566
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77925934"
 ---
 # <a name="web-application-firewall-waf-with-front-door-service-exclusion-lists"></a>Брандмауэр веб-приложения (WAF) с списками исключений службы Front дверь 
@@ -20,10 +19,10 @@ ms.locfileid: "77925934"
 ## <a name="configure-exclusion-lists-using-the-azure-portal"></a>Настройка списков исключений с помощью портал Azure
 **Управление исключениями** доступно на портале WAF в разделе **управляемые правила** .
 
-![Управление исключениями](../media/waf-front-door-exclusion/exclusion1.png)
-![управление exclusion_add](../media/waf-front-door-exclusion/exclusion2.png)
+![Управление исключениями ](../media/waf-front-door-exclusion/exclusion1.png)
+ ![ Управление exclusion_add](../media/waf-front-door-exclusion/exclusion2.png)
 
- Пример списка исключений: ![управление exclusion_define](../media/waf-front-door-exclusion/exclusion3.png)
+ Пример списка исключений: ![ управление exclusion_define](../media/waf-front-door-exclusion/exclusion3.png)
 
 Этот пример исключает значение в поле заголовка *пользователя* . Допустимый запрос может включать в себя поле *пользователя* , содержащее строку, которая активирует правило внедрения кода SQL. Вы можете исключить параметр *пользователя* в этом случае, чтобы правило WAF не вычислит что-либо в поле.
 

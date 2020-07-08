@@ -16,10 +16,9 @@ ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: ea448b87f9e6954abecead2934bfb7f4ed04a9c5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77920150"
 ---
 # <a name="detailed-troubleshooting-steps-for-remote-desktop-connection-issues-to-windows-vms-in-azure"></a>Подробное руководство по устранению неполадок с подключением к удаленному рабочему столу на виртуальной машине Windows в Azure
@@ -114,7 +113,7 @@ ms.locfileid: "77920150"
 ## <a name="source-4-network-security-groups"></a>Источник 4: группы безопасности сети
 Группы безопасности сети позволяют точнее настраивать параметры разрешенного входящего и исходящего трафика. Можно создавать правила, которые распространяются на подсети и облачные службы в виртуальной сети Azure.
 
-Используйте [проверку IP-потока](../../network-watcher/network-watcher-check-ip-flow-verify-portal.md) , чтобы проверить, блокирует ли правило в группе безопасности сети передачу трафика на виртуальную машину или из нее. Вы можете также просмотреть действующие правила группы безопасности и убедиться, что для порта RDP (3389 по умолчанию) существует и является приоритетным правило NSG, разрешающее входящий трафик. Дополнительные сведения см. [в статье Использование действующих правил безопасности для устранения неполадок потока трафика виртуальной машины](../../virtual-network/diagnose-network-traffic-filter-problem.md).
+Используйте [проверку потока для IP-адреса](../../network-watcher/network-watcher-check-ip-flow-verify-portal.md), чтобы определить, блокирует ли правило в группе безопасности сети входящий или исходящий трафик виртуальной машины. Вы можете также просмотреть действующие правила группы безопасности и убедиться, что для порта RDP (3389 по умолчанию) существует и является приоритетным правило NSG, разрешающее входящий трафик. Дополнительные сведения см. в разделе [Использование действующих правил безопасности для устранения проблем с потоком трафика в виртуальной машине](../../virtual-network/diagnose-network-traffic-filter-problem.md).
 
 ## <a name="source-5-windows-based-azure-vm"></a>Источник 5: виртуальная машина Azure под управлением Windows
 ![](./media/detailed-troubleshoot-rdp/tshootrdp_5.png)

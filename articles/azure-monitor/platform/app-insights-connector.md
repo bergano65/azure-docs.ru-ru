@@ -7,10 +7,9 @@ author: bwren
 ms.author: bwren
 ms.date: 02/13/2019
 ms.openlocfilehash: c143d8aa24d3479f4619ea2c220d4a0c593f9cb1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77665163"
 ---
 # <a name="application-insights-connector-management-solution-deprecated"></a>Решение по управлению Соединителем Application Insights (устарело)
@@ -55,7 +54,7 @@ ms.locfileid: "77665163"
 - Необходимо иметь хотя бы один настроенный ресурс Application Insights.
 - Необходимо быть владельцем или участником ресурса Application Insights.
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 1. Включите решение "Аналитика веб-приложений Azure" из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AppInsights?tab=Overview) или выполните инструкции по [добавлению решений Log Analytics из коллекции решений](../../azure-monitor/insights/solutions.md).
 2. Перейдите на [портал Azure](https://portal.azure.com). Выберите **Все службы**, чтобы открыть Application Insights. Затем выполните поиск по запросу "Application Insights". 
@@ -90,7 +89,7 @@ ms.locfileid: "77665163"
 Панель мониторинга содержит колонки, приведенные в таблице. В каждой колонке содержится максимум 10 элементов, соответствующих таким указанным критериям, как область действия и диапазон времени. Вы можете выполнить поиск по журналам, в результате которого возвращаются все записи, если щелкнуть заголовок колонки или **Показать все** в ее нижней части.
 
 
-| **Рубрик** | **Описание** |
+| **Столбец** | **Описание** |
 | --- | --- |
 | Applications — Number of applications | Указывает число приложений в ресурсах приложения. Кроме того, приводятся имена приложений и количество записей приложений в каждом из них. Щелкните количество, чтобы выполнить поиск по журналам: <code>ApplicationInsights &#124; summarize AggregatedValue = sum(SampledCount) by ApplicationName</code>. <br><br>  Щелкните имя приложения, чтобы выполнить поиск по журналам для приложения, в котором показаны записи приложения для каждого узла, записи по типам телеметрии и все данные по типам (в зависимости от последнего дня). |
 | Data Volume — Hosts sending data | Показывает число узлов компьютера, которые отправляют данные. Здесь также приводятся узлы компьютера и количество записей для каждого узла. Щелкните количество, чтобы выполнить поиск по журналам: <code>ApplicationInsights &#124; summarize AggregatedValue = sum(SampledCount) by Host</code>. <br><br> Щелкните имя компьютера, чтобы выполнить поиск по журналам для узла, в котором показаны записи приложения для каждого узла, записи по типам телеметрии и все данные по типам (в зависимости от последнего дня). |
@@ -174,7 +173,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ### <a name="generic-fields"></a>Универсальные поля
 
-| Свойство | Описание |
+| Свойство. | Описание |
 | --- | --- |
 | Type | ApplicationInsights |
 | ClientIP |   |
@@ -185,7 +184,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 | DeviceType | Устройство клиента |
 | ScreenResolution |   |
 | Continent | Континент, на котором создан запрос |
-| Country | Страна или регион, где был создан запрос |
+| Страна или регион | Страна или регион, где был создан запрос |
 | Province | Провинция, область или район, в котором создан запрос |
 | Город | Город, в котором создан запрос |
 | isSynthetic | Указывает, был ли запрос создан пользователем или автоматически. True = автоматизированный метод или False = пользователь создан |
@@ -200,7 +199,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ### <a name="availability-specific-fields"></a>Поля со сведениями о доступности
 
-| Свойство | Описание |
+| Свойство. | Описание: |
 | --- | --- |
 | TelemetryType | Доступность |
 | AvailabilityTestName | Имя веб-теста |
@@ -242,7 +241,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ### <a name="request-specific-fields"></a>Поля со сведениями о запросах
 
-| Свойство | Описание |
+| Свойство. | Описание |
 | --- | --- |
 | Type | ApplicationInsights |
 | TelemetryType | Запрос |

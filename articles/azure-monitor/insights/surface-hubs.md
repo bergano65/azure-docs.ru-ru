@@ -7,10 +7,9 @@ author: bwren
 ms.author: bwren
 ms.date: 01/16/2018
 ms.openlocfilehash: 7999735bf2d182b2811d01172adcfc89cba27dc8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77662507"
 ---
 # <a name="monitor-surface-hubs-with-azure-monitor-to-track-their-health"></a>Мониторинг устройств Surface Hub с помощью Azure Monitor для отслеживания работоспособности
@@ -40,7 +39,7 @@ ms.locfileid: "77662507"
 Intune — это продукт Microsoft, который позволяет централизованно управлять параметрами конфигурации рабочей области Log Analytics, применяемыми к одному или нескольким устройствам. Чтобы настроить устройства через Intune, выполните следующие действия:
 
 1. Войдите в Intune.
-2. Перейдите к разделу **Параметры** > **подключенные источники**.
+2. Перейдите к разделу **Параметры**  >  **подключенные источники**.
 3. Создайте или отредактируйте политику на основе шаблона Surface Hub.
 4. Перейдите к разделу политики "Оперативная аналитика Azure" и добавьте в нее *идентификатор рабочей области* и *ключ рабочей области* Log Analytics.
 5. Сохраните политику.

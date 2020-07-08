@@ -4,10 +4,9 @@ description: Начало мониторинга нового приложени
 ms.topic: conceptual
 ms.date: 07/11/2018
 ms.openlocfilehash: 395e8d667985318f4a084428c6fd4c395ee8b956
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77671449"
 ---
 # <a name="monitor-a-sharepoint-site-with-application-insights"></a>Мониторинг сайта SharePoint с помощью Application Insights
@@ -39,7 +38,7 @@ var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=wi
 </script>
 ```
 
-Вставьте сценарий непосредственно перед тегом &lt;/ХЕАД&gt; каждой страницы, которую требуется отвести от него. Если у веб-сайта есть эталонная страница, можно разместить сценарий там. Например, в проекте ASP.NET MVC скрипт следует разместить на странице View\Shared\_Layout.cshtml.
+Вставьте сценарий непосредственно перед &lt; &gt; тегом/ХЕАД каждой страницы, которую требуется отвести от него. Если у веб-сайта есть эталонная страница, можно разместить сценарий там. Например, в проекте ASP.NET MVC скрипт следует разместить на странице View\Shared\_Layout.cshtml.
 
 Сценарий содержит ключ инструментирования, который направляет данные телеметрии к ресурсу Application Insights.
 
@@ -51,7 +50,7 @@ var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=wi
 
 ![](./media/sharepoint/03-master.png)
 
-Добавьте код прямо перед тегом </head> . 
+Добавьте код непосредственно перед </head> тегами. 
 
 ![](./media/sharepoint/04-code.png)
 
@@ -132,7 +131,7 @@ function onRequestFail(sender, args) {
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 * [Использование веб-тестов](../../azure-monitor/app/monitor-web-app-availability.md) для мониторинга доступности сайта.
 * [Использование Application Insights](../../azure-monitor/app/app-insights-overview.md) для других типов приложений.
 

@@ -7,10 +7,9 @@ author: bwren
 ms.author: bwren
 ms.date: 12/04/2018
 ms.openlocfilehash: d7a37d51c411488231205fd036f9a287f5206ce5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77672452"
 ---
 # <a name="parse-text-data-in-azure-monitor-logs"></a>Анализ текстовых данных в журналах Azure Monitor
@@ -136,10 +135,10 @@ MyCustomCSVLog_CL
 ## <a name="parse-predefined-structures-in-a-query"></a>Выполнение анализа предопределенных структур в запросе
 Если ваши данные отформатированы в известной структуре, вы можете использовать одну из функций в [языке запросов Kusto](/azure/kusto/query/) для анализа предопределенных структур:
 
-- [ФОРМАТ](/azure/kusto/query/parsejsonfunction)
+- [JSON](/azure/kusto/query/parsejsonfunction)
 - [XML](/azure/kusto/query/parse-xmlfunction)
 - [IРv4](/azure/kusto/query/parse-ipv4function)
-- [URL-адрес](/azure/kusto/query/parseurlfunction)
+- [URL](/azure/kusto/query/parseurlfunction)
 - [Запрос URL-адреса](/azure/kusto/query/parseurlqueryfunction)
 - [Путь к файлу](/azure/kusto/query/parsepathfunction)
 - [Агент пользователя](/azure/kusto/query/parse-useragentfunction)

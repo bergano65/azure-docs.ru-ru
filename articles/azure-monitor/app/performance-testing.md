@@ -5,10 +5,9 @@ ms.topic: conceptual
 ms.date: 06/19/2019
 ms.reviewer: sdash
 ms.openlocfilehash: 0bfb60b876add70be6cbcd3d726fb3317a8dfcf9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77669868"
 ---
 # <a name="performance-testing"></a>Тестирование производительности
@@ -22,7 +21,7 @@ Application Insights позволяет создавать нагрузочны�
 
 Чтобы создать тест производительности, сначала необходимо создать ресурс Application Insights. Если вы уже создали ресурс, перейдите к следующему разделу.
 
-На портал Azure выберите **создать ресурс** > **средства для разработчиков** > **Application Insights** и создайте ресурс Application Insights.
+На портал Azure выберите **создать ресурс**  >  **средства для разработчиков**  >  **Application Insights** и создайте ресурс Application Insights.
 
 ## <a name="configure-performance-testing"></a>Настройка тестирования производительности
 

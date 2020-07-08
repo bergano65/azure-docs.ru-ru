@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: vturecek
 ms.openlocfilehash: fff8a19d5643f7ce866c9eb9c57486340b6f8a50
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77624134"
 ---
 # <a name="debug-your-service-fabric-application-by-using-visual-studio"></a>Отладка приложения Service Fabric с помощью Visual Studio
@@ -56,7 +55,7 @@ ms.locfileid: "77624134"
 ### <a name="running-a-script-as-part-of-debugging"></a>Запуск скрипта в процессе отладки
 В некоторых сценариях может потребоваться запустить сценарий в процессе запуска сеанса отладки (например, если службы по умолчанию не используются).
 
-В Visual Studio можно добавить файл с именем **старт-сервице. ps1** в папку **Scripts** проекта приложения Service Fabric (. sfproj). Этот скрипт будет вызываться после создания приложения в локальном кластере.
+В Visual Studio можно добавить файл с именем **Start-Service.ps1** в папку **Scripts** проекта приложения Service Fabric (. sfproj). Этот скрипт будет вызываться после создания приложения в локальном кластере.
 
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->

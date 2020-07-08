@@ -7,10 +7,9 @@ ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
 ms.openlocfilehash: ce952bd248640d03fcff43284707614577df8469
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77671653"
 ---
 # <a name="profile-production-applications-in-azure-with-application-insights"></a>Профилирование приложений в рабочей среде Azure с помощью Application Insights Profiler
@@ -20,8 +19,8 @@ Azure Application Insights Profiler предоставляет трассиро�
 
 Профилировщик работает с приложениями .NET, развернутыми в следующих службах Azure. Конкретные инструкции по включению Profiler для службы каждого типа вы найдете по приведенным ниже ссылкам.
 
-* [Служба приложений Azure](profiler.md?toc=/azure/azure-monitor/toc.json)
-* [Oблачныe службы Azure](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
+* [служба приложений Azure](profiler.md?toc=/azure/azure-monitor/toc.json);
+* [Oблачныe службы Azure2](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
 * [Azure Service Fabric](profiler-servicefabric.md?toc=/azure/azure-monitor/toc.json)
 * [Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с помощью Application Insights Profiler](profiler-vm.md?toc=/azure/azure-monitor/toc.json)
 * [**Предварительный просмотр** ASP.NET Core веб-приложений Azure для Linux](profiler-aspnetcore-linux.md?toc=/azure/azure-monitor/toc.json) 
@@ -93,7 +92,7 @@ Azure Application Insights Profiler предоставляет трассиро�
 
 Платформа .NET Framework выдает события ETW и передает идентификаторы действий между потоками, чтобы асинхронные вызовы могли быть отслеживанились в потоках. Неуправляемый код (машинный код) и некоторые устаревшие стили асинхронного кода не имеют этих событий и идентификаторов действий, поэтому профилировщик не может определить, какой поток и какие функции выполняются в потоке. Он помечен как "неуправляемый асинхронный" в стеке вызовов. Если вы скачиваете файл трассировки событий Windows, вы можете использовать [PerfView](https://github.com/Microsoft/perfview/blob/master/documentation/Downloading.md) , чтобы получить более подробные сведения о происходящих.
 
-### <a name="cpu-time"></a><a id="cpu"></a>Время ЦП
+### <a name="cpu-time"></a><a id="cpu"></a>время ЦП;
 
 ЦП занят выполнением инструкций.
 
@@ -122,7 +121,7 @@ Azure Application Insights Profiler предоставляет трассиро�
 ## <a name="next-steps"></a>Дальнейшие шаги
 Включение Application Insights Profiler для приложения Azure. См. также:
 * [Службы приложений](profiler.md?toc=/azure/azure-monitor/toc.json)
-* [Oблачныe службы Azure](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
+* [Oблачныe службы Azure2](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
 * [Azure Service Fabric](profiler-servicefabric.md?toc=/azure/azure-monitor/toc.json)
 * [Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с помощью Application Insights Profiler](profiler-vm.md?toc=/azure/azure-monitor/toc.json)
 

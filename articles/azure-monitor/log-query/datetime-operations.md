@@ -7,10 +7,9 @@ author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
 ms.openlocfilehash: ea7c98a1b5b4059c5fea0cf1e8ea2ff5ef08d9d1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77655384"
 ---
 # <a name="working-with-date-time-values-in-azure-monitor-log-queries"></a>Работа со значениями даты и времени в запросах журнала Azure Monitor
@@ -84,7 +83,7 @@ Event
 | extend timeAgo = now() - TimeGenerated 
 ```
 
-`timeAgo` Столбец содержит такие значения: "00:09:31.5118992", то есть они форматируются как чч: мм: СС. fffffff. Если вы хотите форматировать эти значения в `numver` минут с времени начала, укажите timeAgo/1m.
+`timeAgo`Столбец содержит такие значения: "00:09:31.5118992", то есть они форматируются как чч: мм: СС. fffffff. Если вы хотите форматировать эти значения в `numver` минут с времени начала, укажите timeAgo/1m.
 
 ```Kusto
 Event
@@ -157,10 +156,10 @@ Event
 ## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с другими статьями по использованию [языка запросов Kusto](/azure/kusto/query/) с данными журналов Azure Monitor.
 
-- [Операции со строками](string-operations.md)
-- [Агрегатные функции](aggregations.md)
-- [Расширенные агрегатные функции](advanced-aggregations.md)
-- [JSON и структуры данных](json-data-structures.md)
+- [Работа со строками](string-operations.md)
+- [Статистические функции в запросах Log Analytics](aggregations.md)
+- [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
+- [Работа с JSON и структурами данных в запросах Log Analytics](json-data-structures.md)
 - [Составление расширенных запросов](advanced-query-writing.md)
-- [Соединения](joins.md)
-- [Диаграммы](charts.md)
+- [Joins](joins.md)
+- [Создание графиков](charts.md)

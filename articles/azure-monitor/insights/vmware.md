@@ -7,10 +7,9 @@ author: bwren
 ms.author: bwren
 ms.date: 05/04/2018
 ms.openlocfilehash: c1622ef16155206d779c6d703fc7da568d233e7e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77664785"
 ---
 # <a name="vmware-monitoring-deprecated-solution-in-azure-monitor"></a>Мониторинг VMware (не рекомендуется) решение в Azure Monitor
@@ -40,10 +39,10 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
    ![Поток данных системных журналов](./media/vmware/diagram.png)
 
 ### <a name="configure-syslog-collection"></a>Настройка сбора системных журналов
-1. Настройте пересылку системных журналов для VSphere. Подробные сведения о настройке пересылки системных журналов в ESXi 5.0 и более поздних версиях см. [здесь](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2003322).  > Последовательно выберите **Конфигурация узла ESXi****программное обеспечение** > **Advanced Settings** > **syslog**.
+1. Настройте пересылку системных журналов для VSphere. Подробные сведения о настройке пересылки системных журналов в ESXi 5.0 и более поздних версиях см. [здесь](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2003322). Последовательно выберите **Конфигурация узла ESXi**  >  **программное обеспечение**  >  **Advanced Settings**  >  **syslog**.
    ![vsphereconfig](./media/vmware/vsphere1.png)  
 1. В поле *Syslog.global.logHost* укажите сервер Linux и номер порта *1514*. Например, `tcp://hostname:1514` или `tcp://123.456.789.101:1514`.
-1. Откройте брандмауэр узла ESXi для системного журнала. **Конфигурация** >  > узла ESXi**профиль безопасности****программного обеспечения** > **брандмауэр** и откройте **Свойства**.  
+1. Откройте брандмауэр узла ESXi для системного журнала. **Конфигурация**  >  узла ESXi **Программное обеспечение**  >  **Профиль безопасности**  >  **Брандмауэр** и открыть **свойства**.  
 
     ![vspherefw](./media/vmware/vsphere2.png)  
 
@@ -64,9 +63,9 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
     Connection to 123.456.789.101 1514 port [tcp/*] succeeded!
     ```
 
-1. В портал Azure выполните запрос журнала для `VMware_CL`. Когда Azure Monitor собирает данные системного журнала, он сохраняет формат системного журнала. На портале регистрируются некоторые поля, включая *Hostname* и *ProcessName*.  
+1. В портал Azure выполните запрос журнала для `VMware_CL` . Когда Azure Monitor собирает данные системного журнала, он сохраняет формат системного журнала. На портале регистрируются некоторые поля, включая *Hostname* и *ProcessName*.  
 
-    ![type](./media/vmware/type.png)  
+    ![тип](./media/vmware/type.png)  
 
     Если представление с результатами поиска по журналам похоже на изображенное выше, это значит, что панель мониторинга для соответствующего решения для мониторинга VMware настроена.  
 
@@ -105,7 +104,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 ## <a name="vmware-monitoring-solution-overview"></a>Обзор решения для мониторинга VMware
 Элемент "VMware" отображается в рабочей области Log Analytics. Решение отображает обобщенное представление ошибок. Щелкнув плитку, вы перейдете в представление панели мониторинга.
 
-![Плитка](./media/vmware/tile.png)
+![tile](./media/vmware/tile.png)
 
 #### <a name="navigate-the-dashboard-view"></a>Навигация в представлении панели мониторинга
 В представлении панели мониторинга **VMware** колонки упорядочены по следующим категориям:
@@ -188,7 +187,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
   1. Log Analytics ожидает передачи данных через порт 1514. Чтобы проверить, что он открыт, выполните следующую команду: `netstat -a | grep 1514`
   1. Вы увидите, что порт `1514/tcp` открыт. В противном случае проверьте, правильно ли установлен агент OMS. Если сведения о порте не отображаются, порт системного журнала не открыт на виртуальной машине.
 
-    a. Убедитесь, что агент Log Analytics запущен, с помощью `ps -ef | grep oms`. Если это не так, запустите его, выполнив команду `sudo /opt/microsoft/omsagent/bin/service_control start`
+    а. Убедитесь, что агент Log Analytics запущен, с помощью `ps -ef | grep oms`. Если это не так, запустите его, выполнив команду `sudo /opt/microsoft/omsagent/bin/service_control start`
 
      b. Откройте файл `/etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf` .
 

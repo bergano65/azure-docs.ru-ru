@@ -15,10 +15,9 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 11889bd6df0bcc9564c17fdaacc333df1d418660
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77918348"
 ---
 # <a name="use-azure-media-analytics-to-convert-text-content-in-video-files-into-digital-text"></a>Преобразование текстового содержимого в видеофайлах в цифровой текст с помощью медиа-аналитики Azure  
@@ -46,9 +45,9 @@ ms.locfileid: "77918348"
 >
 
 ### <a name="attribute-descriptions"></a>Описания атрибутов
-| Имя атрибута | Описание |
+| Имя атрибута | Описание: |
 | --- | --- |
-|AdvancedOutput| Если для атрибута AdvancedOutput задано значение true, выходные данные JSON будут содержать данные о положении для каждого отдельного слова (помимо фраз и регионов). Если вы не хотите видеть эти сведения, установите значение false. Значение по умолчанию — false. Дополнительные сведения см. в [этом блоге](https://azure.microsoft.com/blog/azure-media-ocr-simplified-output/).|
+|AdvancedOutput| Если для атрибута AdvancedOutput задано значение true, выходные данные JSON будут содержать данные о положении для каждого отдельного слова (помимо фраз и регионов). Если вы не хотите видеть эти сведения, установите значение false. Значение по умолчанию — false. Дополнительные сведения см. в [этой записи блога](https://azure.microsoft.com/blog/azure-media-ocr-simplified-output/).|
 | Язык |(необязательно) Описывает язык искомого текста. Возможные значения: AutoDetect (по умолчанию), Arabic, ChineseSimplified, ChineseTraditional, Czech Danish, Dutch, English, Finnish, French, German, Greek, Hungarian, Italian, Japanese, Korean, Norwegian, Polish, Portuguese, Romanian, Russian, SerbianCyrillic, SerbianLatin, Slovak, Spanish, Swedish, Turkish. |
 | TextOrientation |(необязательно) Описывает ориентацию искомого текста.  "Left" означает, что верхняя часть всех букв направлена влево.  По умолчанию текст (как, например, в книге) имеет ориентацию "Up", то есть буквы направлены вверх.  Возможные значения: AutoDetect (по умолчанию), Up, Right, Down, Left. |
 | TimeInterval |(необязательно) Описывает частоту выборки.  Значение по умолчанию — каждые полсекунды.<br/>Формат JSON — ЧЧ:мм:сс.ССС (по умолчанию — 00:00:00.500)<br/>Формат XML: минимальная длительность W3C XSD (по умолчанию — PT0.5). |
@@ -120,7 +119,7 @@ ms.locfileid: "77918348"
 | interval |Интервал каждого события в пределах данного фрагмента |
 | события |Массив, содержащий области |
 | region |Объект, представляющий обнаруженные слова или фразы |
-| Язык |Язык текста, обнаруженного в пределах области |
+| язык |Язык текста, обнаруженного в пределах области |
 | orientation |Ориентация текста, обнаруженного в пределах области |
 | lines |Массив строк текста, обнаруженного в пределах области |
 | text |Непосредственно текст |
@@ -193,7 +192,7 @@ ms.locfileid: "77918348"
    
 #### <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
 
-Настройте среду разработки и заполните файл App. config сведениями о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
+Настройте среду разработки и заполните файл app.config данными о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
 
 #### <a name="example"></a>Пример
 
@@ -369,7 +368,7 @@ namespace OCR
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки

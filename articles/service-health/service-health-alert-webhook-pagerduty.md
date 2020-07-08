@@ -4,10 +4,9 @@ description: Передача в экземпляр PagerDuty персонали
 ms.topic: conceptual
 ms.date: 06/10/2019
 ms.openlocfilehash: bb449a5279f3cea55e6aec2f72edfd11fb26227a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77654075"
 ---
 # <a name="send-azure-service-health-alerts-with-pagerduty-using-webhooks"></a>Отправка оповещений о работоспособности службы Azure в PagerDuty с помощью веб-перехватчиков
@@ -25,9 +24,9 @@ ms.locfileid: "77654075"
 
 1.  В разделе **Integration Settings** (Параметры интеграции) выберите следующее:
 
-    a. **Integration Type** (Тип интеграции): Microsoft Azure.
+    а. **Integration Type** (Тип интеграции): Microsoft Azure.
 
-    b. **Имя интеграции**: \<имя\>
+    b. **Имя интеграции**:\<Name\>
 
     ![Раздел параметров интеграции в PagerDuty](./media/webhook-alerts/pagerduty-integration-settings.png)
 
@@ -43,7 +42,7 @@ ms.locfileid: "77654075"
 
 1. В списке **Действия** определите следующие сведения.
 
-    a. **Тип действия: ** *Веб-перехватчик*.
+    а. **Тип действия: ** *Веб-перехватчик*.
 
     b. **Подробности**: **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
 
@@ -52,7 +51,7 @@ ms.locfileid: "77654075"
 1. Завершив создание оповещения, нажмите кнопку **Сохранить**.
 
 ### <a name="for-an-existing-action-group"></a>Для существующей группы действий сделайте следующее.
-1. На [портале Azure](https://portal.azure.com/) выберите **Монитор**.
+1. В [портал Azure](https://portal.azure.com/)выберите **мониторинг**.
 
 1. В разделе **Параметры** выберите **Группы действий**.
 
@@ -60,7 +59,7 @@ ms.locfileid: "77654075"
 
 1. В список **Действия** добавьте следующие сведения.
 
-    a. **Тип действия: ** *Веб-перехватчик*.
+    а. **Тип действия: ** *Веб-перехватчик*.
 
     b. **Подробности**: **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
 
@@ -87,5 +86,5 @@ ms.locfileid: "77654075"
 ## <a name="next-steps"></a>Дальнейшие шаги
 - Узнайте, как [настроить уведомления веб-перехватчика для существующих систем управления проблемами](service-health-alert-webhook-guide.md).
 - Ознакомьтесь со [схемой веб-перехватчика оповещений журнала действий](../azure-monitor/platform/activity-log-alerts-webhook.md). 
-- Сведения об [уведомлениях о работоспособности служб](../azure-monitor/platform/service-notifications.md).
-- Дополнительные сведения о [группах действий](../azure-monitor/platform/action-groups.md).
+- Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../azure-monitor/platform/service-notifications.md).
+- Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../azure-monitor/platform/action-groups.md).

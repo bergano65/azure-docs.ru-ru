@@ -4,10 +4,9 @@ description: Мониторинг приложений с помощью Azure A
 ms.topic: conceptual
 ms.date: 06/03/2019
 ms.openlocfilehash: e5188972d9058b85a9765c7d33f6209b37245d7e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77669902"
 ---
 # <a name="application-insights-overview-dashboard"></a>Обзорная панель мониторинга Application Insights
@@ -59,4 +58,4 @@ Application Insights всегда предоставляло сводную па
 
 - [Воронки](../../azure-monitor/app/usage-funnels.md)
 - [Сохранение](../../azure-monitor/app/usage-retention.md)
-- [Маршруты пользователей](../../azure-monitor/app/usage-flows.md)
+- [Средство "Маршруты пользователей"](../../azure-monitor/app/usage-flows.md)
