@@ -6,17 +6,17 @@ author: kevinvngo
 manager: craigg-msft
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
-ms.date: 04/30/2020
+ms.subservice: sql-dw
+ms.date: 06/26/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 17b8ce04cb5029d1bea11344617bf65718ca579c
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: e4564005e3b9cc9673cc20596d4114d102174b9e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83653032"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85482859"
 ---
 # <a name="synapse-sql-recommendations"></a>Рекомендации Synapse SQL
 
@@ -70,3 +70,7 @@ Synapse SQL предоставляет рекомендации, которые 
 ## <a name="tempdb-contention"></a>Состязание за tempdb
 
 Производительность запросов может снизиться при интенсивном состязании за tempdb.  Состязание за tempdb может происходить через определяемые пользователем временные таблицы или при большом объеме перемещений данных. В этом сценарии можно выполнить масштабирование для выделения дополнительных ресурсов tempdb и [настроить классы ресурсов и управление рабочей нагрузкой](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-workload-management), чтобы предоставить больше памяти для запросов. 
+
+## <a name="data-loading-misconfiguration"></a>Неудачная настройка загрузки данных
+
+Необходимо всегда загружать данные из учетной записи хранения в том же регионе, что и пул SQL, чтобы максимально сокращать задержку. Используйте [инструкцию Copy для приема данных с высокой пропускной способностью](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) и разделите промежуточные файлы в учетной записи хранения, чтобы повысить пропускную способность. Если вы не можете использовать инструкцию COPY, можно использовать API SqlBulkCopy или bcp с большим размером пакета для повышения пропускной способности. Дополнительные рекомендации по загрузке данных см. в следующей [документации](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/guidance-for-loading-data). 

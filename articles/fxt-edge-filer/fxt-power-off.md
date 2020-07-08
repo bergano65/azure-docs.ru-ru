@@ -3,15 +3,15 @@ title: Как завершить работу подразделения Microso
 description: Процедуры для запуска и безопасного завершения работы узла фильтр Azure ФКСТ ребра
 author: ekpgh
 ms.service: fxt-edge-filer
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/01/2019
 ms.author: rohogue
-ms.openlocfilehash: 91445c4219abaa67385105f52515f52c87e2cf06
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 92364de82bc3de8229eced4ee02997a27afbde45
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "72256003"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85506418"
 ---
 # <a name="how-to-safely-power-off-azure-fxt-edge-filer-hardware"></a>Как безопасно отключить оборудование Azure ФКСТ погранично фильтр
 
@@ -29,11 +29,11 @@ ms.locfileid: "72256003"
 Выполните следующие инструкции для безопасного отключения узла фильтр Azure ФКСТ.
 
 1. Войдите на панель управления кластера. (Инструкции по [открытию страниц параметров](fxt-cluster-create.md#open-the-settings-pages))
-1. Перейдите на вкладку **Параметры** и загрузите страницу **cluster** > **фкст Nodes** .
+1. Перейдите на вкладку **Параметры** и загрузите страницу **cluster**  >  **фкст Nodes** .
 1. В списке узлов кластера найдите тот, который требуется завершить. Нажмите кнопку **включения питания** в столбце **действия** . 
 1. Подождите несколько секунд. Узел завершит работу и выключится.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения о индикаторах состояния и других индикаторах см. в статье [мониторинг состояния оборудования Azure фкст пограничных устройств фильтр](fxt-monitor.md).
 * Дополнительные сведения о источниках питания Azure ФКСТ пограничных устройств фильтр см. в статье [Подключение кабелей питания](fxt-network-power.md#connect-power-cables).

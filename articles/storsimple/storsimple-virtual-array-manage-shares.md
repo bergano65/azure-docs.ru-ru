@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: 0a799c83-fde5-4f3f-af0e-67535d1882b6
 ms.service: storsimple
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2016
 ms.author: manuaery
-ms.openlocfilehash: 82a6cdb6c9a39a0d196049a7ba662681ea06b36a
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: 340b910319cabe3379bdb1bad1c09bc71c17f072
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "62116872"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85507540"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-manage-shares-on-the-storsimple-virtual-array"></a>Управление общими папками в виртуальном массиве StorSimple с помощью диспетчера устройств StorSimple
 
@@ -45,7 +45,7 @@ ms.locfileid: "62116872"
 | Минимальный размер многоуровневого общего файлового ресурса |500 ГБ |
 | Максимальный размер многоуровневого общего файлового ресурса |20 TБ |
 | Минимальный размер локально закрепленного общего файлового ресурса |50 ГБ |
-| Максимальный размер локально закрепленного общего файлового ресурса |2 ТБ |
+| Максимальный размер локально закрепленного общего файлового ресурса |2 ТБ |
 
 ## <a name="the-shares-blade"></a>Колонка "Общие папки"
 
@@ -142,6 +142,6 @@ ms.locfileid: "62116872"
 3. Проверьте состояние общей папки, которую требуется удалить. Если общая папка, которую вы хотите удалить, не находится в автономном режиме, сначала отключите ее. Следуйте указаниям по [отключению общей папки](#take-a-share-offline).
 4. При появлении запроса на подтверждение в колонке **Удалить** подтвердите операцию и щелкните **Удалить**. Общая папка будет удалена, и в колонке **Общие папки** появится обновленный список общих папок в виртуальном массиве.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте, как [клонировать общую папку StorSimple](storsimple-virtual-array-clone.md).
 

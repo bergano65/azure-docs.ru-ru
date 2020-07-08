@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 02/13/2019
 ms.author: ramamill
-ms.openlocfilehash: 0383a512dfb7c2bb1ae2422b9ade1e3c7387a70c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 26376c6b20816d2e7302403c8391195e16092fa3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80478306"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85504326"
 ---
 # <a name="troubleshoot-configuration-server-issues"></a>Устранение неполадок, связанных с сервером конфигурации
 
@@ -52,6 +52,8 @@ ms.locfileid: "80478306"
     b. Откройте файл Installation_Directory/Vx/bin/uninstall.sh и закомментируйте вызов функции **stop_services**.
     c. Откройте файл Installation_Directory/Fx/uninstall и закомментируйте весь раздел, который пытается остановить службу Fx.
     d. [Удалите](vmware-physical-manage-mobility-service.md#uninstall-mobility-service) агент Mobility Service. После успешного удаления перезагрузите систему и попробуйте установить агент мобильности.
+
+8. Убедитесь, что многофакторная проверка подлинности не включена для учетной записи пользователя. В данный момент Azure Site Recovery не поддерживает многофакторную проверку подлинности для учетной записи пользователя. Зарегистрируйте сервер конфигурации без учетной записи пользователя с включенной поддержкой многофакторной проверки подлинности.  
 
 ## <a name="installation-failure-failed-to-load-accounts"></a>Сбой установки: не удалось загрузить учетные записи
 
@@ -191,7 +193,7 @@ ms.locfileid: "80478306"
 Чтобы устранить эту проблему, войдите на портал Azure и выполните одно из следующих действий.
 
 - Запросите роль разработчика приложения в AAD. Дополнительные сведения о роли разработчика приложения см. в статье [Разрешения роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md).
-- Убедитесь, что в AAD параметр **User can create application** (Пользователь может создавать приложение) имеет значение *true*. Дополнительные сведения см. в разделе [как использовать портал для создания приложения Azure AD и субъекта-службы, которые могут получать доступ к ресурсам](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions).
+- Убедитесь, что в AAD параметр **User can create application** (Пользователь может создавать приложение) имеет значение *true*. Дополнительные сведения см. в разделе [как использовать портал для создания приложения Azure AD и субъекта-службы, которые могут получать доступ к ресурсам](../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app).
 
 ## <a name="process-servermaster-target-are-unable-to-communicate-with-the-configuration-server"></a>Сервер обработки и главный целевой объект не могут обмениваться данными с сервером конфигурации 
 
@@ -203,7 +205,7 @@ ms.locfileid: "80478306"
 
 Чтобы убедиться, что агент главного целевого объекта может создать сеанс TCP для IP-адреса сервера конфигурации, найдите в журналах агента главного целевого объекта трассировку, аналогичную следующей:
 
-TCP \<Replace IP with CS ip здесь>: \<52739 Replace IP with CS ip здесь>:443 SYN_SENT 
+TCP \<Replace IP with CS IP here>:52739 \<Replace IP with CS IP here>:443 SYN_SENT 
 
 TCP    192.168.1.40:52739     192.168.1.40:443      SYN_SENT  // В этой трассировке IP-адрес замените IP-адресом СК
 

@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: ''
 ms.service: storsimple
 ms.devlang: na
-ms.topic: article
+ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/09/2018
 ms.author: alkohli
-ms.openlocfilehash: 48bd909eefbaea15cf6ca2427e106ad9bc0ffbb4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d3e9aff1a38bbabc4f878a4d2e2fb96dafe59c92
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80298750"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85504463"
 ---
 # <a name="use-the-storsimple-diagnostics-tool-to-troubleshoot-8000-series-device-issues"></a>Устранение неполадок устройства серии 8000 с помощью средства диагностики StorSimple
 
@@ -414,10 +414,10 @@ Controller0>
 
 Ниже представлена таблица со сведениями о сопоставлении различных параметров Windows PowerShell в сведениях о системе. 
 
-| Параметр PowerShell    | Описание  |
+| Параметр PowerShell    | Описание:  |
 |-------------------------|------------------|
 | Идентификатор экземпляра             | С каждым контроллером связан уникальный идентификатор или GUID.|
-| Имя                    | Понятное имя устройства, настроенное на портале Azure во время развертывания устройства. В качестве понятного имени по умолчанию используется серийный номер устройства. |
+| name                    | Понятное имя устройства, настроенное на портале Azure во время развертывания устройства. В качестве понятного имени по умолчанию используется серийный номер устройства. |
 | Модель                   | Модель устройства StorSimple серии 8000 (8100 или 8600).|
 | SerialNumber            | Серийный номер устройства назначается на заводе и состоит из 15 знаков. Например, 8600-SHX0991003G44HT:<br> 8600 — это модель устройства;<br>SHX — это регион производства;<br> 0991003 — определенный продукт; <br> G44HT — последние 5 цифр увеличиваются для получения уникального серийного номера. Набор может быть неупорядоченным.|
 | TimeZone                | Часовой пояс устройства, настроенный на портале Azure во время развертывания устройства.|

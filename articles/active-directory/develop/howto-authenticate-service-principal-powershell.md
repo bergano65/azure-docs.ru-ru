@@ -8,17 +8,17 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.custom: aaddev
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: multiple
-ms.date: 10/10/2019
+ms.date: 06/26/2020
 ms.author: ryanwi
 ms.reviewer: tomfitz
-ms.openlocfilehash: 7bd8c3b25c23ba8586e38ec8eb7d1baefaa21633
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6204fcefa60d1a627e6e3d4e6b799efd3ee9298b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80884194"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85505874"
 ---
 # <a name="how-to-use-azure-powershell-to-create-a-service-principal-with-a-certificate"></a>Практическое руководство по использованию Azure PowerShell для создания субъекта-службы с сертификатом
 
@@ -40,7 +40,7 @@ ms.locfileid: "80884194"
 
 Для работы с этой статьей у вас должен быть достаточный уровень разрешений в подписках Azure AD и Azure. В частности, вы должны иметь право на создание приложения в Azure AD и назначение роли субъекту-службе.
 
-Проверить, есть ли у вас соответствующие разрешения, проще всего на портале. Ознакомьтесь с [проверкой наличия необходимых разрешений](howto-create-service-principal-portal.md#required-permissions).
+Проверить, есть ли у вас соответствующие разрешения, проще всего на портале. Ознакомьтесь с [проверкой наличия необходимых разрешений](howto-create-service-principal-portal.md#permissions-required-for-registering-an-app).
 
 ## <a name="assign-the-application-to-a-role"></a>Назначение приложению роли
 Чтобы обеспечить доступ к ресурсам в подписке, необходимо назначить приложению роль. Укажите, какая роль предоставляет приложению необходимые разрешения. Дополнительные сведения о доступных ролях см. в статье [RBAC: встроенные роли](/azure/role-based-access-control/built-in-roles).
@@ -220,7 +220,7 @@ Get-AzADApplication -DisplayName exampleapp | New-AzADAppCredential `
 
 * Ваша учетная запись **"не авторизована для выполнения действия 'Microsoft.Authorization/roleAssignments/write' с областью '/subscriptions/{guid}'."** Эта ошибка возникает, когда учетная запись не имеет достаточно разрешений для назначения роли удостоверению. Попросите администратора подписки назначить вам роль администратора доступа пользователей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Настройка субъекта-службы с паролем описана в статье [Создание субъекта-службы Azure с помощью Azure PowerShell](/powershell/azure/create-azure-service-principal-azureps).
 * Более подробное описание приложений и субъектов-служб см. в статье [Объекты приложений и объекты участников-служб](app-objects-and-service-principals.md).

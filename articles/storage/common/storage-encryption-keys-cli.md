@@ -8,14 +8,14 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 04/02/2020
 ms.author: tamram
-ms.reviewer: cbrooks
+ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 893c953562e0d150bd5e8110e5473fd24a2aff83
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d2390cbf41f9a93515f994040a287d69f0036168
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82176351"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85506211"
 ---
 # <a name="configure-customer-managed-keys-with-azure-key-vault-by-using-azure-cli"></a>Настройка ключей, управляемых клиентом, с помощью Azure Key Vault Azure CLI
 
@@ -86,13 +86,13 @@ az keyvault key create \
     --vault-name <key-vault>
 ```
 
-С шифрованием службы хранилища Azure поддерживаются только 2048-разрядные ключи RSA и RSA-HSM. Дополнительные сведения о ключах см. в разделе **Key Vault Keys** раздела [о Azure Key Vault ключах, секретах и сертификатах](../../key-vault/about-keys-secrets-and-certificates.md#key-vault-keys).
+Шифрование службы хранилища Azure поддерживает ключи RSA и RSA-HSM размером 2048, 3072 и 4096. Дополнительные сведения о ключах см. в разделе **Key Vault Keys** раздела [о Azure Key Vault ключах, секретах и сертификатах](../../key-vault/about-keys-secrets-and-certificates.md#key-vault-keys).
 
 ## <a name="configure-encryption-with-customer-managed-keys"></a>Настройка шифрования с помощью управляемых клиентом ключей
 
 По умолчанию шифрование службы хранилища Azure использует ключи, управляемые корпорацией Майкрософт. Настройте учетную запись хранения Azure для ключей, управляемых клиентом, и укажите ключ, связываемый с учетной записью хранения.
 
-Чтобы обновить параметры шифрования учетной записи хранения, вызовите команду [AZ Storage Account Update](/cli/azure/storage/account#az-storage-account-update), как показано в следующем примере. Включите `--encryption-key-source` параметр и установите его в `Microsoft.Keyvault` значение, чтобы включить управляемые клиентом ключи для учетной записи хранения. Пример также запрашивает универсальный код ресурса (URI) хранилища ключей и последнюю версию ключа. Эти значения необходимы для связывания ключа с учетной записью хранения. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями.
+Чтобы обновить параметры шифрования учетной записи хранения, вызовите команду [AZ Storage Account Update](/cli/azure/storage/account#az-storage-account-update), как показано в следующем примере. Включите `--encryption-key-source` параметр и установите его в значение, `Microsoft.Keyvault` чтобы включить управляемые клиентом ключи для учетной записи хранения. Пример также запрашивает универсальный код ресурса (URI) хранилища ключей и последнюю версию ключа. Эти значения необходимы для связывания ключа с учетной записью хранения. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями.
 
 ```azurecli-interactive
 key_vault_uri=$(az keyvault show \
@@ -134,7 +134,7 @@ az keyvault delete-policy \
 
 ## <a name="disable-customer-managed-keys"></a>Отключение ключей, управляемых клиентом
 
-При отключении управляемых пользователем ключей учетная запись хранения снова шифруется с помощью ключей, управляемых корпорацией Майкрософт. Чтобы отключить управляемые клиентом ключи, вызовите команду [AZ Storage Account Update](/cli/azure/storage/account#az-storage-account-update) и задайте `--encryption-key-source parameter` для `Microsoft.Storage`значение, как показано в следующем примере. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями и использовать переменные, определенные в предыдущих примерах.
+При отключении управляемых пользователем ключей учетная запись хранения снова шифруется с помощью ключей, управляемых корпорацией Майкрософт. Чтобы отключить управляемые клиентом ключи, вызовите команду [AZ Storage Account Update](/cli/azure/storage/account#az-storage-account-update) и задайте `--encryption-key-source parameter` для значение `Microsoft.Storage` , как показано в следующем примере. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями и использовать переменные, определенные в предыдущих примерах.
 
 ```azurecli-interactive
 az storage account update
@@ -143,7 +143,7 @@ az storage account update
     --encryption-key-source Microsoft.Storage
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Шифрование неактивных данных в службе хранилища Azure](storage-service-encryption.md) 
-- [Что такое Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)?
+- [Шифрование службы хранилища Azure для неактивных данных](storage-service-encryption.md) 
+- [Об Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)

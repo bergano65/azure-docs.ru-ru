@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
-ms.date: 03/30/2020
-ms.openlocfilehash: ed65d69c18f2dbcd53324fe3cc18af8c51c546b2
-ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
+ms.date: 06/26/2020
+ms.openlocfilehash: 8b0fa1402452d8e1f348cd353b00d0ef050d866c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82780119"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85483284"
 ---
 #  <a name="what-are-compute-targets-in-azure-machine-learning"></a>Что такое целевые показатели вычислений в Машинное обучение Azure? 
 
@@ -52,23 +52,25 @@ ms.locfileid: "82780119"
 * Студия машинного обучения Azure.
 * Портал Azure
 * Классы [компутеинстанце](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.computeinstance(class)?view=azure-ml-py) и [амлкомпуте](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute(class)?view=azure-ml-py) пакета SDK для Python
-* [Пакет SDK для R](https://azure.github.io/azureml-sdk-for-r/reference/index.html#section-compute-targets)
+* [Пакет SDK для R](https://azure.github.io/azureml-sdk-for-r/reference/index.html#section-compute-targets) (Предварительная версия)
 * Шаблон Resource Manager
-
-Вы также можете создавать кластеры вычислений с помощью [расширения машинного обучения для Azure CLI](tutorial-train-deploy-model-cli.md#create-the-compute-target-for-training).
+* Расширение машинного обучения [для Azure CLI](reference-azure-machine-learning-cli.md#resource-management).  
 
 При создании эти ресурсы вычислений автоматически являются частью рабочей области, в отличие от других типов целевых объектов вычислений.
 
-### <a name="compute-clusters"></a>Вычислительные кластеры
 
-Вы можете использовать Машинное обучение Azureные кластерные ресурсы для обучения и пакетной обработки результатов (Предварительная версия).  С этим ресурсом вычислений у вас есть:
+|Функция  |Вычислительный кластер  |Вычислительная операция  |
+|---------|---------|---------|
+|Кластер с одним или несколькими узлами     |    **&check;**       |         |
+|Автоматическое масштабирование при каждой отправке выполнения     |     **&check;**      |         |
+|Автоматическое управление кластерами и планирование заданий     |   **&check;**        |     **&check;**      |
+|поддерживает ресурсы ЦП и GPU;     |  **&check;**         |    **&check;**       |
 
-* Кластер с одним или несколькими узлами
-* Автомасштабирование при каждой отправке выполнения 
-* Автоматическое управление кластерами и планирование заданий 
-* поддерживает ресурсы ЦП и GPU;
 
-### <a name="supported-vm-series-and-sizes"></a>Поддерживаемые ряды и размеры виртуальных машин
+> [!NOTE]
+> Если кластер находится в состоянии бездействия, он автоматически масштабируется до 0 узлов, поэтому вы не платите, когда он не используется.  Однако вычислительный *экземпляр*всегда включен и не выполняет Автомасштабирование.  Следует [прерывать вычислительный экземпляр](tutorial-1st-experiment-sdk-train.md#stop-the-compute-instance) , если он не используется, чтобы избежать дополнительных затрат.
+
+### <a name="supported-vm-series-and-sizes"></a>Поддерживаемые размеры и серии виртуальных машин
 
 При выборе размера узла для управляемого ресурса вычислений в Машинное обучение Azure вы можете выбрать один из доступных размеров виртуальной машины в Azure. Azure предлагает ряд размеров для Linux и Windows для различных рабочих нагрузок. Дополнительные сведения о различных [типах и размерах виртуальных машин](https://docs.microsoft.com/azure/virtual-machines/linux/sizes)см. здесь.
 

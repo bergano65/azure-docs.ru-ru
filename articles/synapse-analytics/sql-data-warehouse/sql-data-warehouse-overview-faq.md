@@ -6,16 +6,16 @@ author: mlee3gsd
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: ef8196cebfbdda72f98fee0e9c75bcb80172a55e
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: b3ee3f729e1e2f03d7c72a72081ad2e3f0316cbb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82791465"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85482536"
 ---
 # <a name="azure-synapse-analytics-formerly-sql-dw-frequently-asked-questions"></a>Azure синапсе Analytics (ранее SQL DW) часто задаваемые вопросы
 
@@ -109,6 +109,6 @@ A. Поддержка драйвера для пула SQL синапсе мож
 
 О. HDI может использовать Azure Data Lake Store или WASB в качестве уровня HDFS. Если у вас есть уровень HDFS, вы можете загрузить эти данные в пул синапсе SQL. Тем не менее, создание вычислений со стековой памятью для экземпляра HDI невозможно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об Azure синапсе в целом см. на странице с [обзором](sql-data-warehouse-overview-faq.md) .

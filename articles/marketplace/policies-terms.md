@@ -5,14 +5,14 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 5/01/2020
+ms.date: 06/26/2020
 ms.author: dsindona
-ms.openlocfilehash: 130b519e69c422a5e80a7a580e90cd80137f6a9a
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: 093348d8eeb5d83831ec0bedd8c542f1a2d5a064
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82609085"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85482604"
 ---
 # <a name="commercial-marketplace-policies-and-terms"></a>Политики и условия коммерческой платформы
 
@@ -33,7 +33,7 @@ ms.locfileid: "82609085"
 
 * [Условия использования Azure Marketplace](https://docs.microsoft.com/legal/marketplace/terms)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Посетите страницу с [руководством по публикации коммерческого рынка](./marketplace-publishers-guide.md) .
 

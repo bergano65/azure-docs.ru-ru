@@ -5,15 +5,15 @@ services: storage
 author: alkohli
 ms.service: storage
 ms.subservice: blobs
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: fb49802adf6242f445b700d06622d7e6aa336b4d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9ffa35e158d34a1fc6945ee2730dcf136d13edb5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "67357043"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85504344"
 ---
 # <a name="solutions-for-periodic-data-transfer"></a>Решения для периодической передачи данных
  
@@ -45,14 +45,14 @@ ms.locfileid: "67357043"
 | Функция                  | AzCopy                                 | Интерфейсы REST API службы хранилища Azure       |
 |-----------------------------|----------------------------------------|-------------------------------|
 | Форм-фактор                 | Программа командной строки от Майкрософт       | Клиенты разрабатывают интерфейсы <br> REST API с использованием клиентских библиотек Azure |
-| Начальная однократная настройка     | Небольшие                                | Средние изменяемые трудозатраты в процессе разработки    |
+| Начальная однократная настройка     | Минимальный                                | Средние изменяемые трудозатраты в процессе разработки    |
 | Формат данных                 | Большие двоичные объекты Azure, Файлы Azure, Таблицы Azure | Большие двоичные объекты Azure, Файлы Azure, Таблицы Azure   |
 | Производительность                 | Уже оптимизирована                      | Оптимизация при разработке                  |
 | Цены                     | Бесплатно, с обычной оплатой исходящего трафика      | Бесплатно, с обычной оплатой исходящего трафика        |
 
 ### <a name="continuous-data-ingestion-over-network"></a>Непрерывный прием данных по сети
 
-| Функция                                       | Шлюз Data Box | Data Box Edge   | Фабрика данных Azure        |
+| Компонент                                       | Шлюз Data Box | Data Box Edge   | Фабрика данных Azure        |
 |----------------------------------|-----------------------------------------|--------------------------|---------------------------|
 | Форм-фактор                                   | Виртуальное устройство             | Физическое устройство          | Служба размещена на портале Azure, агент размещен локально                                                            |
 | Оборудование                                      | Ваша низкоуровневая оболочка            | Предоставляет Майкрософт    | Н/Д                                                            |
@@ -63,7 +63,7 @@ ms.locfileid: "67357043"
 | Перенос из других облаков                    | Нет                         | Нет                       | Да                                                           |
 | Цены                                       | [Цены](https://azure.microsoft.com/pricing/details/storage/databox/gateway/)                    | [Цены](https://azure.microsoft.com/pricing/details/storage/databox/edge/)                  | [Цены](https://azure.microsoft.com/pricing/details/data-factory/)                                                       |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Перенесите данные с помощью AzCopy](/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2ftables%2ftoc.json).
 - [Дополнительные сведения о передаче данных с помощью REST API службы хранилища](https://docs.microsoft.com/dotnet/api/overview/azure/storage?view=azure-dotnet)
