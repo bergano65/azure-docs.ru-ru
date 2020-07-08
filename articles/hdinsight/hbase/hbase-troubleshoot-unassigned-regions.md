@@ -8,11 +8,10 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/16/2019
 ms.openlocfilehash: 85aeafb2c4461b50d399e40d9abff2ac04b677c0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79272764"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84707656"
 ---
 # <a name="issues-with-region-servers-in-azure-hdinsight"></a>Проблемы с серверами регионов в Azure HDInsight
 
@@ -20,7 +19,7 @@ ms.locfileid: "79272764"
 
 ## <a name="scenario-unassigned-regions"></a>Сценарий: неназначенные регионы
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 При выполнении `hbase hbck` команды отображается сообщение об ошибке следующего вида:
 
@@ -34,7 +33,7 @@ multiple regions being unassigned or holes in the chain of regions
 
 Отверстия могут быть результатом автономных регионов.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Исправьте назначения. Выполните следующие действия, чтобы вернуть неназначенные регионы в нормальное состояние.
 
@@ -42,9 +41,9 @@ multiple regions being unassigned or holes in the chain of regions
 
 1. Выполните `hbase zkcli` команду, чтобы подключиться к оболочке ZooKeeper.
 
-1. Выполните `rmr /hbase/regions-in-transition` команду `rmr /hbase-unsecure/regions-in-transition` или.
+1. Выполните `rmr /hbase/regions-in-transition` `rmr /hbase-unsecure/regions-in-transition` команду или.
 
-1. Выйдите из оболочки Zookeeper `exit` с помощью команды.
+1. Выйдите из оболочки Zookeeper с помощью `exit` команды.
 
 1. Откройте пользовательский интерфейс Ambari Apache и перезапустите службу активного главного узла HBase.
 
@@ -54,7 +53,7 @@ multiple regions being unassigned or holes in the chain of regions
 
 ## <a name="scenario-dead-region-servers"></a>Сценарий: неработающие серверы регионов
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Не удается запустить серверы регионов.
 
@@ -62,17 +61,17 @@ multiple regions being unassigned or holes in the chain of regions
 
 Множественное разделение каталогов WAL.
 
-1. Получить список текущих Wal: `hadoop fs -ls -R /hbase/WALs/ > /tmp/wals.out`.
+1. Получить список текущих Wal: `hadoop fs -ls -R /hbase/WALs/ > /tmp/wals.out` .
 
 1. Проверьте `wals.out` файл. Если слишком много разделенных каталогов (начиная с *-разделение), возможно, сервер регионов не работает из-за этих каталогов.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 1. Отключите HBase на портале Ambari.
 
-1. Выполните `hadoop fs -ls -R /hbase/WALs/ > /tmp/wals.out` процедуру, чтобы получить актуальный список Wal.
+1. Выполните процедуру `hadoop fs -ls -R /hbase/WALs/ > /tmp/wals.out` , чтобы получить актуальный список Wal.
 
-1. Переместите *-разделение каталогов во временную папку `splitWAL`и удалите каталоги, разделенные на *.
+1. Переместите *-разделение каталогов во временную папку `splitWAL` и удалите каталоги, разделенные на *.
 
 1. Выполните `hbase zkcli` команду, чтобы подключиться к оболочке Zookeeper.
 
@@ -80,12 +79,12 @@ multiple regions being unassigned or holes in the chain of regions
 
 1. Перезапустите службу HBase.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
+* Получите ответы специалистов Azure на [сайте поддержки сообщества пользователей Azure](https://azure.microsoft.com/support/community/).
 
-* Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

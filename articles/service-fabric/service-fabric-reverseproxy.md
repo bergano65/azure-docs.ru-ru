@@ -5,12 +5,11 @@ author: BharatNarasimman
 ms.topic: conceptual
 ms.date: 11/03/2017
 ms.author: bharatn
-ms.openlocfilehash: 4fa4c6e46dd786b833087f892d995e85b5d2ea47
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 326075b947ea61384681fb2353c27d3e1450156d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79282228"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84735342"
 ---
 # <a name="reverse-proxy-in-azure-service-fabric"></a>Обратный прокси-сервер в Azure Service Fabric
 Обратный прокси-сервер, встроенный в Azure Service Fabric, помогает микрослужбам, работающим в кластере Service Fabric, обнаруживать другие службы с конечными точками HTTP и взаимодействовать с этими службами.
@@ -78,7 +77,7 @@ http(s)://<Cluster FQDN | internal IP>:Port/<ServiceInstanceName>/<Suffix path>?
 * **TargetReplicaSelector.** Данный параметр определяет, каким образом должна быть выбрана целевая реплика или экземпляр.
   * Если целевая служба является службой с отслеживанием состояния, то параметр TargetReplicaSelector может иметь значение PrimaryReplica, RandomSecondaryReplica или RandomReplica. Если этот параметр не указан, по умолчанию используется значение PrimaryReplica.
   * Если целевая служба является службой без отслеживания состояния, обратный прокси-сервер выбирает случайный экземпляр раздела службы, к которому направляется запрос.
-* **Timeout.** Время ожидания HTTP-запроса к службе, созданного обратным прокси-сервером от имени клиентского запроса. Значение по умолчанию — 60 секунд. Этот параметр является необязательным.
+* **Timeout.** Время ожидания HTTP-запроса к службе, созданного обратным прокси-сервером от имени клиентского запроса. Значение по умолчанию — 120 секунд. Этот параметр является необязательным.
 
 ### <a name="example-usage"></a>Пример использования
 Для примера рассмотрим службу *fabric:/MyApp/MyService*, которая открывает прослушиватель HTTP по приведенному ниже URL-адресу.
@@ -119,7 +118,7 @@ http://10.0.0.5:10592/3f0d39ad-924b-4233-b4a7-02617c6308a6-130834621071472715/
 
 * [System.Net.HttpListener;](https://msdn.microsoft.com/library/system.net.httplistener%28v=vs.110%29.aspx)
 * [ASP.NET Core WebListener;](https://docs.asp.net/latest/fundamentals/servers.html#weblistener)
-* [Katana.](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.OwinSelfHost/)
+* [Katana](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.OwinSelfHost/)
 
 В этом случае вполне вероятно, что веб-сервер доступен в хост-процессе и отвечает на запросы, но разрешенный экземпляр или реплика службы больше не доступна на узле. В этом случае шлюз получит от веб-сервера ответ "HTTP 404". Таким образом, ответ "HTTP 404" может иметь два различных значения:
 

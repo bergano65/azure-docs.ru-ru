@@ -5,19 +5,18 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 4/21/2020
-ms.openlocfilehash: 20d8e46d6fa6b031c809d629a6af41e8e682bcef
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 6/10/2020
+ms.openlocfilehash: 703879ab2dba59327b9224781eb93ee106ae10d8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82025090"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84707973"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-the-azure-portal"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для MariaDB с помощью портал Azure
 
 В этой статье вы узнаете, как создавать реплики чтения и управлять ими в службе "база данных Azure для MariaDB" с помощью портал Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-portal.md) , который будет использоваться в качестве главного сервера.
 
@@ -25,6 +24,9 @@ ms.locfileid: "82025090"
 > Функция чтения реплики доступна только для серверов базы данных Azure для MariaDB в общего назначения или ценовой категории, оптимизированные для памяти. Убедитесь, что главный сервер находится в одной из этих ценовых категорий.
 
 ## <a name="create-a-read-replica"></a>Создание реплики чтения
+
+> [!IMPORTANT]
+> При создании реплики для главного сервера, у которого отсутствуют реплики, этот сервер сначала перезапускается для подготовки к репликации. Это необходимо учесть, то есть выполнять такие операции в период низкой нагрузки.
 
 Чтобы создать сервер-реплику чтения, выполните следующие действия.
 
@@ -42,11 +44,11 @@ ms.locfileid: "82025090"
 
     ![База данных Azure для MariaDB — имя реплики](./media/howto-read-replica-portal/replica-name.png)
 
-6. Выберите расположение сервера реплики. Расположение по умолчанию совпадает с местоположением главного сервера.
+6. Укажите расположение сервера реплики. Расположение по умолчанию совпадает с местоположением главного сервера.
 
     ![База данных Azure для MariaDB — расположение реплики](./media/howto-read-replica-portal/replica-location.png)
 
-7. Нажмите кнопку **ОК** , чтобы подтвердить создание реплики.
+7. Нажмите кнопку **ОК**, чтобы подтвердить создание реплики.
 
 > [!NOTE]
 > Реплики чтения создаются с той же конфигурацией сервера, что и у главного сервера. Вы можете изменить созданную конфигурацию сервера-реплики. Чтобы сервер-реплика мог работать с главным сервером, рекомендуется, чтобы значения конфигурации сервера-реплики были равны или превосходили значения конфигурации главного сервера.
@@ -70,7 +72,7 @@ ms.locfileid: "82025090"
 
    ![База данных Azure для MariaDB — останавливает репликацию выбор сервера](./media/howto-read-replica-portal/stop-replication-select.png)
 
-4. Выберите пункт " **отменить репликацию**".
+4. Щелкните **Остановить репликацию**.
 
    ![База данных Azure для MariaDB — завершение репликации](./media/howto-read-replica-portal/stop-replication.png)
 
@@ -90,7 +92,7 @@ ms.locfileid: "82025090"
 
    ![База данных Azure для MariaDB — удаление реплики выбор сервера](./media/howto-read-replica-portal/delete-replica-select.png)
 
-4. Выбор **удаления реплики**
+4. Щелкните **Удалить реплику**.
 
    ![База данных Azure для MariaDB — удаление реплики](./media/howto-read-replica-portal/delete-replica.png)
 
@@ -133,6 +135,6 @@ ms.locfileid: "82025090"
 
    ![Выбор диапазона времени](./media/howto-read-replica-portal/monitor-replication-lag-time-range-thirty-mins.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [репликах чтения](concepts-read-replicas.md)

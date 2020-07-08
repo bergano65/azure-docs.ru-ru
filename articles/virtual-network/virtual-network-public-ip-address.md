@@ -11,17 +11,16 @@ ms.assetid: bb71abaf-b2d9-4147-b607-38067a10caf6
 ms.service: virtual-network
 ms.subservice: ip-services
 ms.devlang: NA
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/06/2019
 ms.author: kumud
-ms.openlocfilehash: de680e7cb542e7606b80ad46934f4ad7256bfb92
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 2f71a1d26543e7436dee039592d120b52d5c9fea
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82186073"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84710972"
 ---
 # <a name="create-change-or-delete-a-public-ip-address"></a>Создание, изменение и удаление общедоступного IP-адреса
 
@@ -55,7 +54,7 @@ ms.locfileid: "82186073"
    |---|---|---|
    |Версия IP-адреса|Да| Выберите IPv4 или IPv6 или оба варианта. При выборе обеих общедоступных IP-адресов создается 1 адрес IPv4 и 1 IPv6-адрес. Дополнительные сведения об [IPv6 в Azure виртуальных сетей](../virtual-network/ipv6-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).|
    |номер SKU|Да|До появления номеров SKU все общедоступные IP-адреса имеют номер SKU категории **Базовый**. Номер SKU нельзя изменить после создания общедоступного IP-адреса. Изолированные виртуальные машины, виртуальные машины в группе доступности или масштабируемые наборы виртуальных машин могут использовать номера SKU категории "Базовый" или "Стандартный". Смешивание номеров SKU между виртуальными машинами в группах доступности или масштабируемыми наборами или отдельными виртуальными машинами не допускается. Номер SKU **Базовый**. При создании общедоступного IP-адреса в регионе, который поддерживает зоны доступности, параметр **Availability zone** (Зона доступности) принимает значение *Нет* по умолчанию. Базовые общедоступные IP-адреса не поддерживают зоны доступности. Номер SKU **Стандартный**. Общедоступный IP-адрес стандартного номера SKU может быть связан с виртуальной машиной или интерфейсной частью подсистемы балансировки нагрузки. При создании общедоступного IP-адреса в регионе, который поддерживает зоны доступности, параметр **Availability zone** (Зона доступности) принимает значение *Избыточное между зонами* по умолчанию. Дополнительные сведения о зонах доступности см. в параметре **Зона доступности**. Стандартный номер SKU необходим при связывании адреса с подсистемой балансировки нагрузки категории "Стандартный". Дополнительные сведения о подсистемах балансировки нагрузки см. в статье [Azure Load Balancer Standard overview (Preview)](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) (Обзор Azure Load Balancer категории "Стандартный" (предварительная версия)). При назначении общедоступного IP-адреса стандартных SKU сетевому интерфейсу виртуальной машины необходимо явно разрешить предполагаемый трафик с помощью [группы безопасности сети](security-overview.md#network-security-groups). Обмен данными с ресурсом будет невозможен, пока вы не создадите и не свяжете группу безопасности сети и явно не разрешите нужный трафик.|
-   |Имя|Да|Имя должно быть уникальным в пределах выбранной группы ресурсов.|
+   |name|Да|Имя должно быть уникальным в пределах выбранной группы ресурсов.|
    |Назначение IP-адресов|Да|**Динамическое** — динамические адреса назначаются, только если общедоступный IP-адрес связан с ресурсом Azure, который запускается в первый раз. Динамические адреса, назначенные ресурсу (например, виртуальной машине), могут измениться после остановки (освобождения) и последующего перезапуска этой виртуальной машины. Если виртуальная машина перезагружается или остановлена (не освобождается), адрес не изменится. Динамические адреса освобождаются, когда удаляется связь ресурса общедоступного IP-адреса и связанного с ним ресурса. **Статическое** — статические адреса назначаются при создании общедоступного IP-адреса. Статические адреса не освобождаются, пока не будет удален ресурс общедоступного IP-адреса. Если адрес не связан с ресурсом, его метод назначения можно изменить после создания адреса. Если адрес связан с ресурсом, то его метод назначения невозможно изменить. При выборе *IPv6* для **версии IP**метод назначения должен быть *динамическим* для базового SKU.  Адреса стандартных номеров SKU *статичны* для IPv4 и IPv6. |
    |Время ожидания простоя (в минутах)|Нет|Время (в минутах), в течение которого подключение TCP или HTTP остается открытым без привязки к клиентам при отправке запросов для проверки активности. При выборе IPv6 в качестве **версии IP** это значение невозможно изменить. |
    |Метка имени DNS|Нет|Должна быть уникальной в пределах расположения Azure, в котором создается имя (для всех подписок и клиентов). Azure автоматически регистрирует имя и IP-адрес в своей DNS (вы можете подключаться к ресурсу, используя это имя). Azure добавляет подсеть по умолчанию, например *location.cloudapp.azure.com* (где location — это выбранное вами расположение) к имени, которое вы предоставили, для создания полного имени DNS. Если вы решили создать обе версии адресов, им назначается одинаковое имя DNS. Служба Azure DNS по умолчанию содержит обе записи имен IPv4 (A) и IPv6 (AAAA) и отвечает на поиск имени DNS, используя обе записи. Клиент выбирает, с каким адресом (IPv4 или IPv6) взаимодействовать. Вместо или в дополнение к использованию метки DNS-имени с суффиксом по умолчанию можно использовать службу Azure DNS для настройки DNS-имени с пользовательским суффиксом, которое преобразуется в общедоступный IP-адрес. Дополнительные сведения см. в разделе [Общедоступный IP-адрес](../dns/dns-custom-domain.md?toc=%2fazure%2fvirtual-network%2ftoc.json#public-ip-address).|
@@ -70,7 +69,7 @@ ms.locfileid: "82186073"
 
 Хотя на портале предоставляется возможность создания двух ресурсов общедоступных IP-адресов (IPv4 и IPv6), следующие команды PowerShell и интерфейса командной строки создают один ресурс с адресом для одной или другой версии IP. Если требуется два ресурса общедоступного IP-адреса, по одному для каждой версии IP, необходимо дважды выполнить команду, указав другие имена и IP-версии для ресурсов общедоступного IP-адреса.
 
-|Инструмент|Get-Help|
+|Средство|Get-Help|
 |---|---|
 |CLI|[az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-create)|
 |PowerShell|[New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress)|
@@ -89,7 +88,7 @@ ms.locfileid: "82186073"
 
 **Команды**
 
-|Инструмент|Get-Help|
+|Средство|Get-Help|
 |---|---|
 |CLI|Команда [az network public-ip list](/cli/azure/network/public-ip#az-network-public-ip-list) выводит список общедоступных IP-адресов, [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show) — отображает параметры, [az network public-ip update](/cli/azure/network/public-ip#az-network-public-ip-update) — обновляет IP-адрес, а [az network public-ip delete](/cli/azure/network/public-ip#az-network-public-ip-delete) — удаляет IP-адрес.|
 |PowerShell|[Get-азпублиЦипаддресс](/powershell/module/az.network/get-azpublicipaddress) для получения объекта общедоступного IP-адреса и просмотра его параметров, [Set-азпублиЦипаддресс](/powershell/module/az.network/set-azpublicipaddress) для обновления параметров; [Remove-азпублиЦипаддресс](/powershell/module/az.network/remove-azpublicipaddress) to delete|
@@ -99,7 +98,7 @@ ms.locfileid: "82186073"
 Узнайте, как назначать общедоступные IP-адреса следующим ресурсам:
 
 - виртуальной машине [Windows](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) при создании или [существующей виртуальной машине](virtual-network-network-interface-addresses.md#add-ip-addresses);
-- [службе Load Balancer, доступной в Интернете](../load-balancer/load-balancer-get-started-internet-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json);
+- [Load Balancer с выходом в Интернет](../load-balancer/load-balancer-get-started-internet-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - [Шлюз приложений Azure](../application-gateway/application-gateway-create-gateway-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - [подключения типа "сеть — сеть" с помощью VPN-шлюза Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json);
 - [масштабируемого набора виртуальных машин Azure](../virtual-machine-scale-sets/virtual-machine-scale-sets-portal-create.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
@@ -108,14 +107,14 @@ ms.locfileid: "82186073"
 
 Для выполнения задач с общедоступными IP-адресами учетной записи должна быть назначена роль [Участник сетей](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) роль, которой назначены соответствующие разрешения, перечисленные в таблице ниже.
 
-| Действие                                                             | Имя                                                           |
+| Действие                                                             | name                                                           |
 | ---------                                                          | -------------                                                  |
 | Microsoft.Network/publicIPAddresses/read                           | Чтение общедоступного IP-адреса.                                          |
 | Microsoft.Network/publicIPAddresses/write                          | Создание или обновление общедоступного IP-адреса.                           |
 | Microsoft.Network/publicIPAddresses/delete                         | Удаление общедоступного IP-адреса                                     |
 | Microsoft.Network/publicIPAddresses/join/action                    | Связывание общедоступного IP-адреса с ресурсом.                    |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Создайте общедоступный IP-адрес с помощью примеров сценариев [PowerShell](powershell-samples.md) или [Azure CLI](cli-samples.md) либо на основе [шаблонов Azure Resource Manager](template-samples.md).
 - Создание и назначение [определений политик Azure](policy-samples.md) для общедоступных IP-адресов

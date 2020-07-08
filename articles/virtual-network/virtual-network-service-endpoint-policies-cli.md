@@ -11,18 +11,17 @@ Customer intent: I want only specific Azure Storage account to be allowed access
 ms.assetid: ''
 ms.service: virtual-network
 ms.devlang: azurecli
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: rdhillon
 ms.custom: ''
-ms.openlocfilehash: e01af052a936403162115965f2dc5b3ad46dd9cf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 702ee5dd8d432582ce1df75ce71c220aa0507cba
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78271189"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84708218"
 ---
 # <a name="manage-data-exfiltration-to-azure-storage-accounts-with-virtual-network-service-endpoint-policies-using-the-azure-cli"></a>Управление данными утечка в учетные записи хранения Azure с помощью политик конечной точки службы виртуальной сети с использованием Azure CLI
 
@@ -114,7 +113,7 @@ az network nsg rule create \
   --destination-port-range "*"
 ```
 
-Каждая группа безопасности сети содержит несколько [правил безопасности по умолчанию](security-overview.md#default-security-rules). Следующее правило переопределяет правило безопасности по умолчанию, разрешающее исходящий доступ ко всем общедоступным IP-адресам. `destination-address-prefix "Internet"` Параметр запрещает исходящий доступ ко всем общедоступным IP-адресам. Предыдущее правило переопределяет это правило ввиду более высокого приоритета. Оно предоставляет доступ к общедоступным IP-адресам службы хранилища Azure.
+Каждая группа безопасности сети содержит несколько [правил безопасности по умолчанию](security-overview.md#default-security-rules). Следующее правило переопределяет правило безопасности по умолчанию, разрешающее исходящий доступ ко всем общедоступным IP-адресам. `destination-address-prefix "Internet"`Параметр запрещает исходящий доступ ко всем общедоступным IP-адресам. Предыдущее правило переопределяет это правило ввиду более высокого приоритета. Оно предоставляет доступ к общедоступным IP-адресам службы хранилища Azure.
 
 ```azurecli-interactive
 az network nsg rule create \
@@ -263,7 +262,7 @@ az network service-endpoint policy create \
   --location eastus
 ```
 
-Сохраните URI ресурса для разрешенной учетной записи хранения в переменной. Перед выполнением приведенной ниже команды замените * \<значение параметра-Subscription-ID>* фактическим значением идентификатора подписки.
+Сохраните URI ресурса для разрешенной учетной записи хранения в переменной. Перед выполнением приведенной ниже команды замените *\<your-subscription-id>* фактическим ЗНАЧЕНИЕМ идентификатора подписки.
 
 ```azurecli-interactive
 $serviceResourceId="/subscriptions/<your-subscription-id>/resourceGroups/myResourceGroup/providers/Microsoft.Storage/storageAccounts/allowedstorageacc"
@@ -313,7 +312,7 @@ az vm create \
 
 ### <a name="confirm-access-to-storage-account"></a>Подтверждение прав доступа к учетной записи хранения
 
-Подключитесь к виртуальной машине *myVmPrivate* по протоколу SSH. Замените * \<publicIpAddress>* общедоступным IP-адресом виртуальной машины *myVmPrivate* .
+Подключитесь к виртуальной машине *myVmPrivate* по протоколу SSH. Замените *\<publicIpAddress>* общедоступным IP-адресом виртуальной машины *myVmPrivate* .
 
 ```bash 
 ssh <publicIpAddress>
@@ -325,7 +324,7 @@ ssh <publicIpAddress>
 sudo mkdir /mnt/MyAzureFileShare1
 ```
 
-Подключите файловый ресурс Azure к созданному каталогу. Перед выполнением приведенной ниже команды замените * \<параметр Storage-Account-Key>* значением *AccountKey* из **$saConnectionString 1**.
+Подключите файловый ресурс Azure к созданному каталогу. Перед выполнением приведенной ниже команды замените *\<storage-account-key>* значением *AccountKey* с **$saConnectionString 1**.
 
 ```bash
 sudo mount --types cifs //allowedstorageacc.file.core.windows.net/my-file-share /mnt/MyAzureFileShare1 --options vers=3.0,username=allowedstorageacc,password=<storage-account-key>,dir_mode=0777,file_mode=0777,serverino
@@ -343,7 +342,7 @@ sudo mkdir /mnt/MyAzureFileShare2
 
 Попытайтесь подключить общую папку Azure из учетной записи хранения *ноталловедсторажеакк* к созданному каталогу. В этой статье предполагается, что вы развернули последнюю версию Ubuntu. При использовании более ранних версий Ubuntu обратитесь к разделу [Использование файлов Azure в Linux](../storage/files/storage-how-to-use-files-linux.md?toc=%2fazure%2fvirtual-network%2ftoc.json), чтобы получить дополнительные инструкции по подключению файловых ресурсов. 
 
-Перед выполнением приведенной ниже команды замените * \<параметр Storage-Account-Key>* значением *AccountKey* из **$saConnectionString 2**.
+Перед выполнением приведенной ниже команды замените *\<storage-account-key>* значением *AccountKey* из **$saConnectionString 2**.
 
 ```bash
 sudo mount --types cifs //notallowedstorageacc.file.core.windows.net/my-file-share /mnt/MyAzureFileShare2 --options vers=3.0,username=notallowedstorageacc,password=<storage-account-key>,dir_mode=0777,file_mode=0777,serverino

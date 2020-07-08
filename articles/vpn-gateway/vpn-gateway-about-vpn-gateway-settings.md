@@ -8,11 +8,10 @@ ms.topic: conceptual
 ms.date: 01/10/2020
 ms.author: cherylmc
 ms.openlocfilehash: d7a2040748d170b4e536df59947ea811f149d931
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79244866"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84708150"
 ---
 # <a name="about-vpn-gateway-configuration-settings"></a>Сведения о параметрах конфигурации VPN-шлюза
 
@@ -49,7 +48,7 @@ New-AzVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 -VpnType RouteBased
 ```
 
-## <a name="gateway-skus"></a><a name="gwsku"></a>SKU шлюза
+## <a name="gateway-skus"></a><a name="gwsku"></a>SKU шлюзов
 
 [!INCLUDE [vpn-gateway-gwsku-include](../../includes/vpn-gateway-gwsku-include.md)]
 
@@ -169,7 +168,7 @@ New-AzLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
 
 Дополнительные технические материалы и специальные требования к синтаксису, действующие при использовании интерфейсов REST API, командлетов PowerShell или Azure CLI для настройки конфигураций VPN-шлюзов, доступны на приведенных ниже страницах.
 
-| **Классические** | **Resource Manager** |
+| **Классический** | **Resource Manager** |
 | --- | --- |
 | [PowerShell](/powershell/module/az.network/#networking) |[PowerShell](/powershell/module/az.network#vpn) |
 | [REST API](https://msdn.microsoft.com/library/jj154113) |[REST API](/rest/api/network/virtualnetworkgateways) |

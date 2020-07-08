@@ -1,25 +1,18 @@
 ---
 title: Размеры виртуальных машин Azure — GPU | Документация Майкрософт
 description: Список различных размеров GPU, доступных для виртуальных машин в Azure. Сведения о количестве виртуальных ЦП, дисков данных и сетевых адаптеров, а также о пропускной способности хранилища и сети для размеров виртуальных машин этой серии.
-services: virtual-machines
-documentationcenter: ''
-author: vikancha
-manager: gwallace
-editor: ''
-tags: azure-resource-manager,azure-service-management
-ms.assetid: ''
+author: vikancha-MSFT
 ms.service: virtual-machines
-ms.devlang: na
+ms.subservice: sizes
 ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 02/03/2020
-ms.author: jonbeck
-ms.openlocfilehash: 5d36ba05d2138a06ebb2ef4e49aadb6032b62b92
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
-ms.translationtype: MT
+ms.author: jushiman
+ms.openlocfilehash: bbd81730ea822381f1d0f0e15011fb4ed0c29e64
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82627047"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84735920"
 ---
 # <a name="gpu-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для GPU
 
@@ -53,7 +46,7 @@ ms.locfileid: "82627047"
 
 - Если вы хотите развернуть большое количество виртуальных машин серии N, мы рекомендуем подписку с оплатой по мере использования или другие варианты покупки. Если вы используете [бесплатную учетную запись Azure](https://azure.microsoft.com/free/), вам доступно ограниченное количество вычислительных ядер Azure.
 
-- Возможно, вам потребуется увеличить квоту на использование ядер (для каждого региона) в подписке Azure и отдельную квоту для ядер серии NC, NCv2, NCv3, ND, NDv2, NV или NVv2. Чтобы запросить увеличение квоты, отправьте [запрос в службу поддержки клиентов](../azure-portal/supportability/how-to-create-azure-support-request.md) бесплатно. Ограничения по умолчанию отличаются в зависимости от категории подписки.
+- Возможно, вам потребуется увеличить квоту на использование ядер (для каждого региона) в подписке Azure и отдельную квоту для ядер серии NC, NCv2, NCv3, ND, NDv2, NV или NVv2. Чтобы увеличить квоту, [отправьте запрос в службу поддержки](../azure-portal/supportability/how-to-create-azure-support-request.md). Это бесплатная услуга. Ограничения по умолчанию отличаются в зависимости от категории подписки.
 
 ## <a name="other-sizes"></a>Остальные размеры
 

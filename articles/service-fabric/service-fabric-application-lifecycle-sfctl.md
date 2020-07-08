@@ -6,11 +6,10 @@ ms.topic: conceptual
 ms.date: 07/31/2018
 ms.author: bikang
 ms.openlocfilehash: 7d361d44c349bc7a6e3c041f78d00ad66182fa15
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79259075"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84711040"
 ---
 # <a name="manage-an-azure-service-fabric-application-by-using-azure-service-fabric-cli-sfctl"></a>Управление приложениями Azure Service Fabric с помощью интерфейса командной строки Azure Service Fabric (sfctl)
 

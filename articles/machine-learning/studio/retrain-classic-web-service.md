@@ -5,21 +5,18 @@ description: Узнайте, как переучить модель и обно�
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: conceptual
+ms.topic: how-to
 author: peterclu
 ms.author: peterlu
 ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 02/14/2019
-ms.openlocfilehash: 0639a525384e751ac4441da5d2c03532618b801a
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
-ms.translationtype: MT
+ms.openlocfilehash: 659011a13be310512ace68d2e020eaebff9a10ee
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82209457"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84706041"
 ---
 # <a name="retrain-and-deploy-a-classic-studio-classic-web-service"></a>Повторное обучение и развертывание классической веб-службы (классическая модель)
-
-[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 Повторное обучение моделей машинного обучения является одним из способов обеспечения точности и основывается на самых актуальных доступных данных. В этой статье показано, как переучить классическую веб-службу Studio (классической). Инструкции по переучению новой веб-службы Studio (классической) см [. в этой статье.](retrain-machine-learning-model.md)
 
@@ -137,4 +134,4 @@ ms.locfileid: "82209457"
 Дополнительные сведения о том, как управлять веб-службами или отслеживать несколько экспериментов, см. в следующих статьях:
 
 * [Обзор портала веб-служб](manage-new-webservice.md)
-* [Управление итерациями экспериментов](manage-experiment-iterations.md)
+* [Управление итерациями эксперимента](manage-experiment-iterations.md)

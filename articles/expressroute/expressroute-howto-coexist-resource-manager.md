@@ -4,16 +4,15 @@ description: Узнайте, как настроить параллельные 
 services: expressroute
 author: charwen
 ms.service: expressroute
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/11/2019
 ms.author: charwen
 ms.custom: seodec18
-ms.openlocfilehash: 5a7ac1b6a9f75655f7e07cc8af89b676ec611421
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 52105cf351a45a233a5fb96c9ac8df689c575527
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76905478"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84736294"
 ---
 # <a name="configure-expressroute-and-site-to-site-coexisting-connections-using-powershell"></a>Настройка параллельных подключений "сеть — сеть" и ExpressRoute с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -76,7 +75,7 @@ VPN-подключение типа "сеть-сеть" можно настро�
   
     Подключение между организациями прервется на время удаления и повторного создания шлюза. Но виртуальные машины и службы смогут по-прежнему осуществлять связь через подсистему балансировки нагрузки во время настройки шлюза, если они настроены соответствующим образом.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [updated-for-az](../../includes/hybrid-az-ps.md)]
 
@@ -263,5 +262,5 @@ VPN-подключение типа "сеть-сеть" можно настро�
 
 Дополнительные сведения см. в статье [Настройка подключения типа "точка — сеть" к виртуальной сети с помощью PowerShell](../vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
-Дополнительные сведения об ExpressRoute см. в статье [вопросы и ответы по expressroute](expressroute-faqs.md).
+## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

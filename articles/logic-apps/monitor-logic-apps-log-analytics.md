@@ -7,11 +7,10 @@ ms.reviewer: divswa, logicappspm
 ms.topic: article
 ms.date: 01/30/2020
 ms.openlocfilehash: 3e41f92f9e41f7a05102e8c0e1c2edb81fa50bf3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79270242"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84708048"
 ---
 # <a name="set-up-azure-monitor-logs-and-collect-diagnostics-data-for-azure-logic-apps"></a>Настройка журналов Azure Monitor и получение диагностических данных для Azure Logic Apps
 
@@ -21,7 +20,7 @@ ms.locfileid: "79270242"
 
 В этой статье показано, как включить Log Analytics при создании приложений логики, установке и настройке решения для управления Logic Apps, а также о настройке и создании запросов для журналов Azure Monitor.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед началом работы вам потребуется [Рабочая область log Analytics](../azure-monitor/platform/resource-logs-collect-workspace.md). Если у вас нет рабочей области, Узнайте, [как создать рабочую область log Analytics](../azure-monitor/learn/quick-create-workspace.md).
 
@@ -51,7 +50,7 @@ ms.locfileid: "79270242"
 
 Если вы включили Log Analytics при создании приложения логики, пропустите этот шаг. Решение для управления Logic Apps уже установлено в рабочей области Log Analytics.
 
-1. В поле поиска [портал Azure](https://portal.azure.com)введите `log analytics workspaces`, а затем выберите **log Analytics рабочие области**.
+1. В поле поиска [портал Azure](https://portal.azure.com)введите `log analytics workspaces` , а затем выберите **log Analytics рабочие области**.
 
    ![Выберите "Log Analytics рабочие области".](./media/monitor-logic-apps-log-analytics/find-select-log-analytics-workspaces.png)
 
@@ -59,7 +58,7 @@ ms.locfileid: "79270242"
 
    ![Выбор рабочей области Log Analytics](./media/monitor-logic-apps-log-analytics/select-log-analytics-workspace.png)
 
-1. В области **Обзор** в разделе Начало **работы с log Analytics** > **настроить решения мониторинга**выберите пункт **Просмотреть решения**.
+1. В области **Обзор** в разделе Начало **работы с log Analytics**  >  **настроить решения мониторинга**выберите пункт **Просмотреть решения**.
 
    ![На панели "Обзор" выберите "Просмотр решений".](./media/monitor-logic-apps-log-analytics/log-analytics-workspace.png)
 
@@ -67,7 +66,7 @@ ms.locfileid: "79270242"
 
    ![В области "Обзор" добавьте новое решение](./media/monitor-logic-apps-log-analytics/add-logic-apps-management-solution.png)
 
-1. После открытия **Marketplace** в поле поиска введите `logic apps management`и выберите **Logic Apps управления**.
+1. После открытия **Marketplace** в поле поиска введите `logic apps management` и выберите **Logic Apps управления**.
 
    ![В Marketplace выберите "Управление Logic Apps".](./media/monitor-logic-apps-log-analytics/select-logic-apps-management.png)
 
@@ -91,7 +90,7 @@ ms.locfileid: "79270242"
 
 1. На [портале Azure](https://portal.azure.com) найдите и выберите требуемое приложение логики.
 
-1. В меню приложения логики в разделе **мониторинг**выберите **Параметры** > диагностики**Добавить параметр диагностики**.
+1. В меню приложения логики в разделе **мониторинг**выберите **параметры диагностики**  >  **Добавить параметр диагностики**.
 
    ![В разделе "Мониторинг" выберите "параметры диагностики" > "добавить параметр диагностики".](./media/monitor-logic-apps-log-analytics/logic-app-diagnostics.png)
 
@@ -123,7 +122,7 @@ ms.locfileid: "79270242"
 
 1. В [портал Azure](https://portal.azure.com)найдите и откройте рабочую область log Analytics.
 
-1. В меню рабочей области выберите **Рабочая область Сводка** > **Logic Apps управление**.
+1. В меню рабочей области выберите **Рабочая область Сводка**  >  **Logic Apps управление**.
 
    ![Состояние выполнения приложения логики и счетчик](./media/monitor-logic-apps-log-analytics/logic-app-runs-summary.png)
 
@@ -192,11 +191,11 @@ ms.locfileid: "79270242"
 
 ## <a name="azure-monitor-diagnostics-events"></a>События диагностики Azure Monitor
 
-Каждое событие диагностики содержит подробные сведения о приложении логики и данном событии, например такие, как состояние, время начала, время окончания и т. д. Чтобы программно настроить мониторинг, отслеживание и ведение журнала, эти сведения можно использовать с [REST API для Azure Logic Apps](https://docs.microsoft.com/rest/api/logic) и [REST API для Azure Monitor](../azure-monitor/platform/metrics-supported.md#microsoftlogicworkflows). Можно также использовать свойства `clientTrackingId` и `trackedProperties` , которые отображаются в 
+Каждое событие диагностики содержит подробные сведения о приложении логики и данном событии, например такие, как состояние, время начала, время окончания и т. д. Чтобы программно настроить мониторинг, отслеживание и ведение журнала, эти сведения можно использовать с [REST API для Azure Logic Apps](https://docs.microsoft.com/rest/api/logic) и [REST API для Azure Monitor](../azure-monitor/platform/metrics-supported.md#microsoftlogicworkflows). Можно также использовать `clientTrackingId` `trackedProperties` Свойства и, которые отображаются в 
 
-* `clientTrackingId`. Если это свойство не указано, Azure автоматически создает этот идентификатор и сопоставляет события во время выполнения приложения логики, включая все вложенные рабочие процессы, вызываемые из приложения логики. Этот идентификатор можно указать вручную в триггере, передав `x-ms-client-tracking-id` заголовок со ЗНАЧЕНИЕМ пользовательского идентификатора в запросе триггера. Можно использовать триггер запроса, триггер HTTP или триггер веб-перехватчика.
+* `clientTrackingId`. Если это свойство не указано, Azure автоматически создает этот идентификатор и сопоставляет события во время выполнения приложения логики, включая все вложенные рабочие процессы, вызываемые из приложения логики. Этот идентификатор можно указать вручную в триггере, передав `x-ms-client-tracking-id` заголовок со значением ПОЛЬЗОВАТЕЛЬСКОГО идентификатора в запросе триггера. Можно использовать триггер запроса, триггер HTTP или триггер веб-перехватчика.
 
-* `trackedProperties`. Для трассировки входных и выходных данных в диагностических данные можно добавить `trackedProperties` раздел в действие с помощью конструктора приложений логики или непосредственно в определении JSON приложения логики. Отслеживаемые свойства позволяют отслеживать входные и выходные данные только одного действия. Однако можно использовать свойства `correlation` событий, чтобы сопоставлять действия в выполнении. Чтобы отвести отслеживание нескольких свойств (одно или несколько), `trackedProperties` добавьте раздел и свойства, необходимые для определения действия.
+* `trackedProperties`. Для трассировки входных и выходных данных в диагностических данные можно добавить `trackedProperties` раздел в действие с помощью конструктора приложений логики или непосредственно в определении JSON приложения логики. Отслеживаемые свойства позволяют отслеживать входные и выходные данные только одного действия. Однако можно использовать свойства `correlation` событий, чтобы сопоставлять действия в выполнении. Чтобы отвести отслеживание нескольких свойств (одно или несколько), добавьте `trackedProperties` раздел и свойства, необходимые для определения действия.
 
   Ниже приведен пример, демонстрирующий, как определение действия " **Инициализация переменной** " включает отслеживание свойств из входных данных действия, где входные данные являются массивом, а не записью.
 
@@ -243,7 +242,7 @@ ms.locfileid: "79270242"
   }
   ```
 
-В `ActionCompleted` этом примере показано, как событие включает `clientTrackingId` атрибуты `trackedProperties` и.
+В этом примере показано, как `ActionCompleted` событие включает `clientTrackingId` `trackedProperties` атрибуты и.
 
 ```json
 {
@@ -279,7 +278,7 @@ ms.locfileid: "79270242"
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание, мониторинг и отслеживание запросов](../logic-apps/create-monitoring-tracking-queries.md)
 * [Мониторинг сообщений B2B с помощью журналов Azure Monitor](../logic-apps/monitor-b2b-messages-log-analytics.md)

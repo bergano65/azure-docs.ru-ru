@@ -6,15 +6,14 @@ ms.author: andrela
 ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: conceptual
-ms.date: 4/1/2020
-ms.openlocfilehash: 3ba06ea592d51eedbe827e1ab6418f65722d579c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.date: 6/11/2020
+ms.openlocfilehash: fef5e6e3ea1a6f0ccc9213c13a129fab77af5274
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80632303"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84736158"
 ---
-# <a name="customize-server-configuration-parameters-by-using-azure-cli"></a>Настройка параметров конфигурации сервера с помощью Azure CLI
+# <a name="configure-server-parameters-in-azure-database-for-mariadb-using-the-azure-cli"></a>Настройка параметров сервера в базе данных Azure для MariaDB с помощью Azure CLI
 С помощью служебной программы командной строки (Azure CLI) можно вывести список параметров конфигурации для сервера Базы данных Azure для MariaDB, а также отобразить и обновить их. Только подмножество конфигураций ядра предоставляется на уровне сервера и может быть изменено.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -54,6 +53,14 @@ az mariadb server configuration set --name slow_query_log --resource-group myres
 ```
 
 Этот код выполняет сброс конфигурации **slow\_query\_log** к значению по умолчанию **OFF**. 
+
+## <a name="setting-parameters-not-listed"></a>Параметры настройки не указаны
+Если параметр сервера, который требуется обновить, не указан в портал Azure, можно при необходимости задать параметр на уровне соединения с помощью `init_connect` . Это задает параметры сервера для каждого клиента, подключающегося к серверу. 
+
+Обновите параметр конфигурации сервера **init \_ connect** сервера **mydemoserver.MariaDB.Database.Azure.com** в разделе **myresourcegroup** группы ресурсов, чтобы задать значения, такие как кодировка.
+```azurecli-interactive
+az mariadb server configuration set --name init_connect --resource-group myresourcegroup --server mydemoserver --value "SET character_set_client=utf8;SET character_set_database=utf8mb4;SET character_set_connection=latin1;SET character_set_results=latin1;"
+```
 
 ## <a name="working-with-the-time-zone-parameter"></a>Работа с параметром часового пояса
 

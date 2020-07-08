@@ -9,14 +9,13 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 03/18/2020
 ms.author: iainfou
-ms.openlocfilehash: bdfc7d37d99dc5511f47e33d1848c3f142a9693e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 99b61bdd4318bf7c77ae53cc9b77e66ebd6c098a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80654467"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84733404"
 ---
-# <a name="review-security-audit-events-in-azure-ad-domain-services-using-azure-monitor-workbooks"></a>Проверка событий аудита безопасности в доменных службах Azure AD с помощью Azure Monitor книг
+# <a name="review-security-audit-events-in-azure-active-directory-domain-services-using-azure-monitor-workbooks"></a>Проверка событий аудита безопасности в Azure Active Directory доменных служб с помощью Azure Monitor книг
 
 Чтобы узнать состояние управляемого домена Azure Active Directory доменных служб (Azure AD DS), можно включить события аудита безопасности. Эти события аудита безопасности можно просмотреть с помощью Azure Monitor книг, объединяющих текстовые, аналитические запросы и параметры в расширенные Интерактивные отчеты. AD DS Azure включает шаблоны книг для общих сведений о безопасности и действиях с учетными записями, которые позволяют изучить события аудита и управлять средой.
 
@@ -24,14 +23,14 @@ ms.locfileid: "80654467"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Для работы с этой статьей необходимы следующие ресурсы и привилегии:
+Для работы с этой статьей требуются следующие ресурсы и разрешения:
 
 * Активная подписка Azure.
     * Если у вас еще нет подписки Azure, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
 * Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
-    * При необходимости выполните инструкции из руководства по [созданию и настройке Azure Active Directory экземпляра доменных служб][create-azure-ad-ds-instance].
+    * При необходимости выполните инструкции из руководства по [созданию и настройке управляемого домена доменных служб Azure Active Directory][create-azure-ad-ds-instance].
 * События аудита безопасности, включенные для управляемого домена Azure Active Directory доменных служб, которые потокируют данные в Log Analytics рабочей области.
     * При необходимости [включите аудит безопасности для доменных служб Azure Active Directory][enable-security-audits].
 
@@ -102,7 +101,7 @@ AD DS Azure содержит два следующих шаблона книги
 
 Все диаграммы и таблицы в Azure Monitor книгах создаются с помощью запросов Kusto. Дополнительные сведения о создании собственных запросов см. в руководстве по [Azure Monitor журнала запросов][azure-monitor-queries] и [запросов Kusto][kusto-queries].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если необходимо настроить политики паролей и блокировки, см. статью [политики блокировки паролей и учетных записей в управляемых доменах][password-policy].
 

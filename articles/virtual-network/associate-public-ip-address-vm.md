@@ -8,17 +8,16 @@ author: asudbring
 ms.service: virtual-network
 ms.subservice: ip-services
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/21/2019
 ms.author: allensu
-ms.openlocfilehash: 2170a4d5f66cf6d1f699ae943f2a80b1b8127e39
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: cc09cec1e6df9ec671fa98ae35562a639dce4cd8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82146581"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84707622"
 ---
 # <a name="associate-a-public-ip-address-to-a-virtual-machine"></a>Связывание общедоступного IP-адреса с виртуальной машиной
 
@@ -62,10 +61,10 @@ ms.locfileid: "82146581"
 
 ## <a name="azure-cli"></a>Azure CLI
 
-Установите [Azure CLI](/cli/azure/install-azure-cli?toc=%2fazure%2fvirtual-network%2ftoc.json)или используйте Azure Cloud Shell. Azure Cloud Shell — это бесплатная оболочка Bash, которую можно запускать непосредственно на портале Azure. Она включает предварительно установленный интерфейс Azure CLI и настроена для использования с вашей учетной записью. Нажмите кнопку **попробовать** в следующих командах интерфейса командной строки. При нажатии кнопки " **попробовать** " вызывается Cloud Shell, который можно использовать для входа в учетную запись Azure с помощью.
+Установите [Azure CLI](/cli/azure/install-azure-cli?toc=%2fazure%2fvirtual-network%2ftoc.json) или используйте Azure Cloud Shell. Azure Cloud Shell — это бесплатная оболочка Bash, которую можно запускать непосредственно на портале Azure. Она включает предварительно установленный интерфейс Azure CLI и настроена для использования с вашей учетной записью. Нажмите кнопку **Попробовать** в следующих командах интерфейса командной строки. Кнопка **Попробовать** вызывает Cloud Shell, с помощью которого можно войти в учетную запись Azure.
 
-1. При локальном использовании интерфейса командной строки в Bash Войдите в Azure с помощью `az login`.
-2. Общедоступный IP-адрес связан с IP-конфигурацией сетевого интерфейса, подключенного к виртуальной машине. Используйте команду [AZ Network NIC-IP-config Update](/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-update) , чтобы связать общедоступный IP-адрес с IP-конфигурацией. В следующем примере существующий общедоступный IP-адрес, именуемый *myVMPublicIP* , связывается с IP-конфигурацией с именем *ипконфигмивм* существующего сетевого интерфейса с именем *myVMVMNic* , который существует в группе ресурсов с именем *myResourceGroup*.
+1. При локальном использовании интерфейса командной строки в Bash войдите в Azure с помощью `az login`.
+2. Общедоступный IP-адрес связан с конфигурацией IP сетевого интерфейса, подключенного к виртуальной машине. Используйте команду [AZ Network NIC-IP-config Update](/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-update) , чтобы связать общедоступный IP-адрес с IP-конфигурацией. В следующем примере существующий общедоступный IP-адрес, именуемый *myVMPublicIP* , связывается с IP-конфигурацией с именем *ипконфигмивм* существующего сетевого интерфейса с именем *myVMVMNic* , который существует в группе ресурсов с именем *myResourceGroup*.
   
    ```azurecli-interactive
    az network nic ip-config update \
@@ -84,21 +83,21 @@ ms.locfileid: "82146581"
      > [!NOTE]
      > Предыдущая команда создает общедоступный IP-адрес со значениями по умолчанию для нескольких параметров, которые можно настроить. Дополнительные сведения о параметрах общедоступного IP-адреса см. в разделе [Создание общедоступного IP-адреса](virtual-network-public-ip-address.md#create-a-public-ip-address). Адрес назначается из пула общедоступных IP-адресов, используемых для каждого региона Azure. Список пулов адресов, используемых в каждом регионе, см. в разделе [Microsoft Azure IP ranges Center](https://www.microsoft.com/download/details.aspx?id=41653).
 
-   - Если вы не знакомы с именем сетевого интерфейса, подключенного к виртуальной машине, используйте команду [AZ VM NIC List](/cli/azure/vm/nic?view=azure-cli-latest#az-vm-nic-list) , чтобы просмотреть их. Например, следующая команда выводит список имен сетевых интерфейсов, подключенных к виртуальной машине с именем *myVM* в группе ресурсов с именем *myResourceGroup*:
+   - Если вы не знаете имя сетевого интерфейса, подключенного к виртуальной машине, воспользуйтесь командой [az vm nic list](/cli/azure/vm/nic?view=azure-cli-latest#az-vm-nic-list). Например, следующая команда выводит список имен сетевых интерфейсов, подключенных к виртуальной машине *myVM* в группе ресурсов *myResourceGroup*:
 
      ```azurecli-interactive
      az vm nic list --vm-name myVM --resource-group myResourceGroup
      ```
 
-     Выходные данные включают одну или несколько строк, которые похожи на приведенный ниже пример.
+     Выходные данные включают одну или несколько строк, аналогично следующему примеру:
   
      ```
      "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/myVMVMNic",
      ```
 
-     В предыдущем примере *myVMVMNic* — это имя сетевого интерфейса.
+     В предыдущем примере *myVMVMNic* — это имя сетевого интерфейса.
 
-   - Если имя IP-конфигурации для сетевого интерфейса неизвестно, воспользуйтесь командой [AZ Network NIC IP-config list](/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-list) , чтобы получить их. Например, следующая команда выводит список имен IP-конфигураций для сетевого интерфейса с именем *myVMVMNic* в группе ресурсов с именем *myResourceGroup*:
+   - Если вы не знаете имя конфигурации IP для сетевого интерфейса, используйте команду [az network nic ip-config list](/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-list). Например, следующая команда выводит список имен конфигурации IP для сетевого интерфейса, подключенного к виртуальной машине *myVMVMNic* в группе ресурсов *myResourceGroup*:
 
      ```azurecli-interactive
      az network nic ip-config list --nic-name myVMVMNic --resource-group myResourceGroup --out table
@@ -117,10 +116,10 @@ ms.locfileid: "82146581"
 
 ## <a name="powershell"></a>PowerShell
 
-Установите [PowerShell](/powershell/azure/install-az-ps)или используйте Azure Cloud Shell. Azure Cloud Shell — это бесплатная оболочка, которую можно запускать непосредственно на портале Azure. Он включает предварительно установленный PowerShell и настроен для использования с вашей учетной записью. Нажмите кнопку **попробовать** в следующих командах PowerShell. При нажатии кнопки " **попробовать** " вызывается Cloud Shell, который можно использовать для входа в учетную запись Azure с помощью.
+Установите [PowerShell](/powershell/azure/install-az-ps) или используйте Azure Cloud Shell. Azure Cloud Shell — это бесплатная оболочка, которую можно запускать непосредственно на портале Azure. Он включает предварительно установленный PowerShell и настроен для использования с вашей учетной записью. Нажмите кнопку **Попробовать** в следующих командах PowerShell. Кнопка **Попробовать** вызывает Cloud Shell, с помощью которого можно войти в учетную запись Azure.
 
-1. Если вы используете PowerShell локально, войдите в Azure с `Connect-AzAccount`помощью.
-2. Общедоступный IP-адрес связан с IP-конфигурацией сетевого интерфейса, подключенного к виртуальной машине. Используйте команды [Get-азвиртуалнетворк](/powershell/module/Az.Network/Get-AzVirtualNetwork) и [Get-азвиртуалнетворксубнетконфиг](/powershell/module/Az.Network/Get-AzVirtualNetworkSubnetConfig) , чтобы получить виртуальную сеть и подсеть, в которой находится сетевой интерфейс. Затем используйте команду [Get-азнетворкинтерфаце](/powershell/module/Az.Network/Get-AzNetworkInterface) , чтобы получить сетевой интерфейс и команду [Get-азпублиЦипаддресс](/powershell/module/az.network/get-azpublicipaddress) , чтобы получить существующий общедоступный IP-адрес. Затем с помощью команды [Set-азнетворкинтерфацеипконфиг](/powershell/module/Az.Network/Set-AzNetworkInterfaceIpConfig) свяжите общедоступный IP-адрес с IP-конфигурацией и команду [Set-азнетворкинтерфаце](/powershell/module/Az.Network/Set-AzNetworkInterface) , чтобы записать новую IP-конфигурацию в сетевой интерфейс.
+1. Если вы используете PowerShell локально, войдите в Azure с помощью `Connect-AzAccount`.
+2. Общедоступный IP-адрес связан с конфигурацией IP сетевого интерфейса, подключенного к виртуальной машине. Используйте команды [Get-азвиртуалнетворк](/powershell/module/Az.Network/Get-AzVirtualNetwork) и [Get-азвиртуалнетворксубнетконфиг](/powershell/module/Az.Network/Get-AzVirtualNetworkSubnetConfig) , чтобы получить виртуальную сеть и подсеть, в которой находится сетевой интерфейс. Затем используйте команду [Get-азнетворкинтерфаце](/powershell/module/Az.Network/Get-AzNetworkInterface) , чтобы получить сетевой интерфейс и команду [Get-азпублиЦипаддресс](/powershell/module/az.network/get-azpublicipaddress) , чтобы получить существующий общедоступный IP-адрес. Затем с помощью команды [Set-азнетворкинтерфацеипконфиг](/powershell/module/Az.Network/Set-AzNetworkInterfaceIpConfig) свяжите общедоступный IP-адрес с IP-конфигурацией и команду [Set-азнетворкинтерфаце](/powershell/module/Az.Network/Set-AzNetworkInterface) , чтобы записать новую IP-конфигурацию в сетевой интерфейс.
 
    В следующем примере существующий общедоступный IP-адрес, именуемый *myVMPublicIP* , связывается с IP-конфигурацией с именем *ипконфигмивм* существующего сетевого интерфейса с именем *myVMVMNic* , который существует в подсети с именем *мивмсубнет* в виртуальной сети с именем *myVMVNet*. Все ресурсы находятся в группе ресурсов с именем *myResourceGroup*.
   
@@ -142,14 +141,14 @@ ms.locfileid: "82146581"
      > [!NOTE]
      > Предыдущая команда создает общедоступный IP-адрес со значениями по умолчанию для нескольких параметров, которые можно настроить. Дополнительные сведения о параметрах общедоступного IP-адреса см. в разделе [Создание общедоступного IP-адреса](virtual-network-public-ip-address.md#create-a-public-ip-address). Адрес назначается из пула общедоступных IP-адресов, используемых для каждого региона Azure. Список пулов адресов, используемых в каждом регионе, см. в разделе [Microsoft Azure IP ranges Center](https://www.microsoft.com/download/details.aspx?id=41653).
 
-   - Если вы не знакомы с именем сетевого интерфейса, подключенного к виртуальной машине, используйте команду [Get-AzVM](/powershell/module/Az.Compute/Get-AzVM) , чтобы просмотреть их. Например, следующая команда выводит список имен сетевых интерфейсов, подключенных к виртуальной машине с именем *myVM* в группе ресурсов с именем *myResourceGroup*:
+   - Если вы не знаете имя сетевого интерфейса, подключенного к виртуальной машине, воспользуйтесь командой [Get-AzVM](/powershell/module/Az.Compute/Get-AzVM). Например, следующая команда выводит список имен сетевых интерфейсов, подключенных к виртуальной машине *myVM* в группе ресурсов *myResourceGroup*:
 
      ```azurepowershell-interactive
      $vm = Get-AzVM -name myVM -ResourceGroupName myResourceGroup
      $vm.NetworkProfile
      ```
 
-     Выходные данные включают одну или несколько строк, которые похожи на приведенный ниже пример. В примере выходных данных *myVMVMNic* — это имя сетевого интерфейса.
+     Выходные данные включают одну или несколько строк, аналогично следующему примеру. В примере выходных данных *myVMVMNic* — это имя сетевого интерфейса.
   
      ```
      "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/myVMVMNic",
@@ -163,20 +162,20 @@ ms.locfileid: "82146581"
      $ipConfigs.Subnet | Select Id
      ```
 
-     Выходные данные включают одну или несколько строк, которые похожи на приведенный ниже пример. В примере выходных данных *myVMVNET* — это имя виртуальной сети, а *мивмсубнет* — имя подсети.
+     Выходные данные включают одну или несколько строк, аналогично следующему примеру. В примере выходных данных *myVMVNET* — это имя виртуальной сети, а *мивмсубнет* — имя подсети.
   
      ```
      "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVMVNET/subnets/myVMSubnet",
      ```
 
-   - Если имя IP-конфигурации для сетевого интерфейса неизвестно, используйте команду [Get-азнетворкинтерфаце](/powershell/module/Az.Network/Get-AzNetworkInterface) , чтобы получить их. Например, следующая команда выводит список имен IP-конфигураций для сетевого интерфейса с именем *myVMVMNic* в группе ресурсов с именем *myResourceGroup*:
+   - Если вы не знаете имя конфигурации IP для сетевого интерфейса, используйте команду [Get-AzNetworkInterface](/powershell/module/Az.Network/Get-AzNetworkInterface). Например, следующая команда выводит список имен конфигурации IP для сетевого интерфейса, подключенного к виртуальной машине *myVMVMNic* в группе ресурсов *myResourceGroup*:
 
      ```azurepowershell-interactive
      $nic = Get-AzNetworkInterface -Name myVMVMNic -ResourceGroupName myResourceGroup
      $nic.IPConfigurations
      ```
 
-     Выходные данные включают одну или несколько строк, которые похожи на приведенный ниже пример. В примере выходных данных *ипконфигмивм* — это имя IP-конфигурации.
+     Выходные данные включают одну или несколько строк, аналогично следующему примеру. В примере выходных данных *ipconfigmyVM* — это имя конфигурации IP.
   
      ```
      Id     : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/myVMVMNic/ipConfigurations/ipconfigmyVM
@@ -197,7 +196,7 @@ ms.locfileid: "82146581"
    $address | Select Id
    ```
 
-   Выходные данные включают одну или несколько строк, которые похожи на приведенный ниже пример. В примере выходных данных *myVMPublicIP* — это имя общедоступного IP-адреса, НАЗНАЧЕННОГО IP-конфигурации.
+   Выходные данные включают одну или несколько строк, аналогично следующему примеру. В примере выходных данных *myVMPublicIP* — это имя общедоступного IP-адреса, НАЗНАЧЕННОГО IP-конфигурации.
 
    ```
    "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/myVMPublicIP"
@@ -208,9 +207,9 @@ ms.locfileid: "82146581"
 
 4. [Разрешить сетевой трафик к виртуальной машине](#allow-network-traffic-to-the-vm) с помощью правил безопасности в группе безопасности сети.
 
-## <a name="allow-network-traffic-to-the-vm"></a>Разрешить сетевой трафик к виртуальной машине
+## <a name="allow-network-traffic-to-the-vm"></a>Разрешение сетевого трафика к виртуальной машине
 
-Прежде чем можно будет подключиться к общедоступному IP-адресу из Интернета, убедитесь, что в любой группе безопасности сети, связанной с сетевым интерфейсом, были открыты необходимые порты, подсеть, в которой находится сетевой интерфейс, или оба. Несмотря на то, что группы безопасности фильтруют трафик по частному IP-адресу сетевого интерфейса, после того, как входящий Интернет-трафик поступает по общедоступному, Azure преобразует общедоступный адрес в частный IP-адрес, поэтому если группа безопасности сети предотвращает поток трафика, связь с общедоступным IP-адресом завершается ошибкой. Вы можете просмотреть действующие правила безопасности для сетевого интерфейса и его подсети с помощью [портала](diagnose-network-traffic-filter-problem.md#diagnose-using-azure-portal), [интерфейса командной строки](diagnose-network-traffic-filter-problem.md#diagnose-using-azure-cli)или [PowerShell](diagnose-network-traffic-filter-problem.md#diagnose-using-powershell).
+Прежде чем подключиться к общедоступному IP-адресу из Интернета, убедитесь, что в каждой группе безопасности сети, связанной с сетевым интерфейсом, открыты необходимые порты, подсеть, в которой находится сетевой интерфейс, или оба. Несмотря на то, что группы безопасности фильтруют трафик по частному IP-адресу сетевого интерфейса, после того, как входящий Интернет-трафик поступает по общедоступному, Azure преобразует общедоступный адрес в частный IP-адрес, поэтому если группа безопасности сети предотвращает поток трафика, связь с общедоступным IP-адресом завершается ошибкой. Действующие правила безопасности для сетевого интерфейса и его подсети можно просмотреть с помощью [портала](diagnose-network-traffic-filter-problem.md#diagnose-using-azure-portal), [CLI](diagnose-network-traffic-filter-problem.md#diagnose-using-azure-cli) или [PowerShell](diagnose-network-traffic-filter-problem.md#diagnose-using-powershell).
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

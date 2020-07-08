@@ -4,16 +4,15 @@ description: В этой статье объясняется, как добав�
 services: expressroute
 author: charwen
 ms.service: expressroute
-ms.topic: article
+ms.topic: how-to
 ms.date: 02/21/2019
 ms.author: charwen
 ms.custom: seodec18
-ms.openlocfilehash: 6e6d79afa1126acb26cb8856c39ba486cce31a5e
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
-ms.translationtype: MT
+ms.openlocfilehash: 58d2949a18bfbf2800ae6ab4ac74b02b05b3eb07
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74037433"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84736396"
 ---
 # <a name="configure-a-virtual-network-gateway-for-expressroute-using-powershell"></a>Настройка шлюза виртуальной сети для ExpressRoute с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -38,5 +37,5 @@ ms.locfileid: "74037433"
 
 [!INCLUDE [expressroute-gateway-rm-ps](../../includes/expressroute-gateway-rm-ps-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 После создания шлюза виртуальной сети вы можете связать виртуальную сеть с каналом ExpressRoute. Ознакомьтесь со статьей [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md).

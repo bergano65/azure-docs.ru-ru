@@ -9,18 +9,15 @@ editor: cgronlun
 ms.assetid: c54d41e1-0300-46ef-bbfc-d6f7dca85086
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/15/2017
-ms.openlocfilehash: dc4a2f83f59ab94d1bff8a005b37124f2822c72b
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
-ms.translationtype: MT
+ms.openlocfilehash: 71516641ab5110511d58f7e453759271aff9885a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82209423"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84705837"
 ---
 # <a name="enable-logging-for-azure-machine-learning-studio-classic-web-services"></a>Включение ведения журнала для веб-служб Машинное обучение Azure Studio (классическая модель)
-
-[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 В этом документе содержатся сведения о возможности ведения журнала в веб-службах Машинное обучение Studio (классическая модель). Ведение журнала предоставляет дополнительные сведения, кроме номера ошибки и сообщения, которые могут помочь при устранении неполадок при вызове API-интерфейсов Машинное обучение Studio (классическая модель).  
 
@@ -28,7 +25,7 @@ ms.locfileid: "82209423"
 
 Ведение журнала включается на портале [веб-служб машинное обучение Azure Studio (классическая модель)](https://services.azureml.net) . 
 
-1. Войдите на портал веб-служб Машинное обучение Azure Studio (классическая модель) по [https://services.azureml.net](https://services.azureml.net)адресу. Для классической веб-службы можно также перейти на портал, нажав кнопку " **создать веб-службу** " на странице веб-служб машинное обучение Studio (классическая модель) в студии (классическая модель).
+1. Войдите на портал веб-служб Машинное обучение Azure Studio (классическая модель) по адресу [https://services.azureml.net](https://services.azureml.net) . Для классической веб-службы можно также перейти на портал, нажав кнопку " **создать веб-службу** " на странице веб-служб машинное обучение Studio (классическая модель) в студии (классическая модель).
 
    ![Ссылка New Web Services Experience (Новый интерфейс веб-служб)](./media/web-services-logging/new-web-services-experience-link.png)
 

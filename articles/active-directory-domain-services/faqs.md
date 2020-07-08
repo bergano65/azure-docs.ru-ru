@@ -9,20 +9,19 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/09/2020
+ms.date: 06/05/2020
 ms.author: iainfou
-ms.openlocfilehash: 92b3fd2453a4fb121c97f8f25f1d3ca129826092
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
-ms.translationtype: MT
+ms.openlocfilehash: 4a9081b3d3c1c925efb4cc80201e6154752dc628
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82926975"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84734781"
 ---
 # <a name="frequently-asked-questions-faqs"></a>Часто задаваемые вопросы (FAQ)
 
 На этой странице приведены ответы на часто задаваемые вопросы об Azure Active Directory доменных службах.
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 * [Можно ли создать несколько управляемых доменов для одного каталога Azure AD?](#can-i-create-multiple-managed-domains-for-a-single-azure-ad-directory)
 * [Можно ли включить доменные службы Azure AD в классической виртуальной сети?](#can-i-enable-azure-ad-domain-services-in-a-classic-virtual-network)
@@ -58,6 +57,8 @@ ms.locfileid: "82926975"
 ### <a name="can-i-enable-azure-ad-domain-services-in-a-federated-azure-ad-directory-i-do-not-synchronize-password-hashes-to-azure-ad-can-i-enable-azure-ad-domain-services-for-this-directory"></a>Можно ли включить доменные службы Azure AD в федеративном каталоге Azure AD? Хэши паролей не синхронизируются с Azure AD. Можно включить доменные службы Azure AD для этого каталога?
 Нет. Для проверки подлинности пользователей с помощью NTLM или Kerberos доменным службам Azure AD требуется доступ к хэшам паролей учетных записей пользователей. В Федеративной папке хэши паролей не хранятся в каталоге Azure AD. Поэтому доменные службы Azure AD не работают с такими каталогами Azure AD.
 
+Но если вы используете Azure AD Connect для синхронизации хэшей паролей, вы можете использовать доменные службы Azure AD, так как значения хэша пароля хранятся в Azure AD.
+
 ### <a name="can-i-make-azure-ad-domain-services-available-in-multiple-virtual-networks-within-my-subscription"></a>Можно ли сделать доменные службы AD Azure доступными в нескольких виртуальных сетях в рамках подписки?
 Сама служба не поддерживает этот сценарий напрямую. В определенный момент времени управляемый домен доступен только в одной виртуальной сети. Однако можно настроить подключение между несколькими виртуальными сетями, чтобы предоставить доменные службы Azure AD другим виртуальным сетям. Дополнительные сведения см. в статье [подключение виртуальных сетей в Azure с помощью VPN-шлюзов](../vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md) или [пиринга виртуальных сетей](../virtual-network/virtual-network-peering-overview.md).
 
@@ -74,7 +75,7 @@ ms.locfileid: "82926975"
 Нет. Гостевые пользователи, приглашенные в каталог Azure AD с помощью процесса [Azure AD B2B](../active-directory/active-directory-b2b-what-is-azure-ad-b2b.md), синхронизируются в управляемом домене доменных служб Azure AD. Однако пароли для этих пользователей не хранятся в каталоге Azure AD. Таким образом, доменные службы Azure AD не позволяют синхронизировать хэши NTLM и Kerberos для этих пользователей с управляемым доменом. Такие пользователи не могут выполнять вход или присоединять компьютеры к управляемому домену.
 
 ### <a name="can-i-move-an-existing-azure-ad-domain-services-managed-domain-to-a-different-subscription-resource-group-region-or-virtual-network"></a>Можно ли переместить существующий управляемый домен доменных служб Azure AD в другую подписку, группу ресурсов, регион или виртуальную сеть?
-Нет. После создания управляемого домена доменных служб Azure AD вы не сможете переместить экземпляр в другую группу ресурсов, виртуальную сеть, подписку и т. д. Выберите наиболее подходящую подписку, группу ресурсов, регион и виртуальную сеть при развертывании экземпляра AD DS Azure.
+Нет. После создания управляемого домена доменных служб Azure AD вы не сможете переместить управляемый домен в другую группу ресурсов, виртуальную сеть, подписку и т. д. Выбирайте наиболее подходящую подписку, группу ресурсов, регион и виртуальную сеть при развертывании управляемого домена.
 
 ### <a name="does-azure-ad-domain-services-include-high-availability-options"></a>Имеются ли в доменных службах Azure AD варианты высокой доступности?
 
@@ -97,7 +98,7 @@ ms.locfileid: "82926975"
 Нет. У вас нет разрешений на подключение к контроллерам домена для управляемого домена с помощью удаленный рабочий стол. Члены группы *администраторов контроллера домена AAD* могут администрировать управляемый домен с помощью средств администрирования AD, таких как центр администрирования Active Directory (ADAC) или AD PowerShell. Эти средства устанавливаются с помощью функции *средства удаленного администрирования сервера* на сервере Windows, присоединенном к управляемому домену. Дополнительные сведения см. [в статье Создание виртуальной машины управления для настройки и администрирования управляемого домена доменных служб Azure AD](tutorial-create-management-vm.md).
 
 ### <a name="ive-enabled-azure-ad-domain-services-what-user-account-do-i-use-to-domain-join-machines-to-this-domain"></a>Я включил доменные службы Azure AD. Какой учетной записью пользователя нужно воспользоваться для подключения компьютеров к этому домену?
-Любая учетная запись пользователя, входящая в управляемый домен AD DS Azure, может быть присоединена к виртуальной машине. Членам группы " *Администраторы контроллера домена AAD* " предоставляется удаленный доступ к рабочему столу для компьютеров, которые были присоединены к управляемому домену.
+Любая учетная запись пользователя, входящая в управляемый домен, может быть присоединена к виртуальной машине. Членам группы " *Администраторы контроллера домена AAD* " предоставляется удаленный доступ к рабочему столу для компьютеров, которые были присоединены к управляемому домену.
 
 ### <a name="do-i-have-domain-administrator-privileges-for-the-managed-domain-provided-by-azure-ad-domain-services"></a>Есть ли у меня привилегии администратора домена для управляемого домена, предоставляемого доменными службами AD Azure?
 Нет. Вы не предоставили права администратора в управляемом домене. Права администратора *домена* и *администратора предприятия* недоступны для использования в домене. Члены групп администраторов домена или администраторов предприятия в локальных Active Directory также не получают права администратора домена или предприятия в управляемом домене.
@@ -133,7 +134,7 @@ ms.locfileid: "82926975"
 * [В каких регионах Azure доступна служба?](#can-i-get-azure-ad-domain-services-as-part-of-enterprise-mobility-suite-ems-do-i-need-azure-ad-premium-to-use-azure-ad-domain-services)
 
 ### <a name="is-azure-ad-domain-services-a-paid-service"></a>Являются ли доменные службы Azure AD платной службой?
-Да. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/active-directory-ds/).
+Да. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/active-directory-ds/).
 
 ### <a name="is-there-a-free-trial-for-the-service"></a>Существует ли бесплатная пробная версия для службы?
 Доменные службы Azure AD входят в бесплатную пробную версию Azure. Вы можете зарегистрировать [бесплатную пробную версию Azure на один месяц](https://azure.microsoft.com/pricing/free-trial/).
@@ -154,8 +155,8 @@ ms.locfileid: "82926975"
 
 Ознакомьтесь с нашим [руководством по устранению неполадок](troubleshoot.md) для решения распространенных проблем при настройке или администрировании доменных служб Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о доменных службах Azure AD см. в статье [что такое Azure Active Directory доменных служб?](overview.md).
 
-Чтобы приступить к работе, см. раздел [Создание и настройка Azure Active Directory экземпляра доменных служб](tutorial-create-instance.md).
+Чтобы приступить к работе, см. раздел [Создание и настройка Azure Active Directory управляемого домена доменных служб](tutorial-create-instance.md).

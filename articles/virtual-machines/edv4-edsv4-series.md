@@ -1,27 +1,23 @@
 ---
-title: Виртуальные машины Azure серий Edv4 и Edsv4
+title: Серии Edv4 и Edsv4
 description: Спецификации для виртуальных машин серий Ev4, Edv4, Esv4 и Edsv4.
 author: brbell
 ms.author: brbell
-ms.reviewer: cynthn
+ms.reviewer: jushiman
 ms.custom: mimckitt
 ms.service: virtual-machines
+ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/04/2020
-ms.openlocfilehash: 795891f56985504a3584089d7377f753605ba4dd
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
-ms.translationtype: HT
+ms.openlocfilehash: 7a21fb1c8da365176c27921bd58a5dffae468d2c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84263046"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84735954"
 ---
 # <a name="edv4-and-edsv4-series"></a>Серии Edv4 и Edsv4
 
-Серии Edv4 и Edsv4 работают на процессорах Intel&reg; Xeon&reg; Platinum 8272CL (Cascade Lake) с технологией Hyper-Threading и отлично подходят для любых корпоративных приложений, требующих больших объемов памяти, предоставляя до 504 ГиБ ОЗУ, технологию [Intel&reg; Turbo Boost 2.0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [Intel&reg; Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и расширения [Intel&reg; Advanced Vector Extensions 512 (Intel&reg; AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html). Эти новые размеры виртуальных машин получат на 50 % больший объем локального хранилища, а также более высокий лимит на операции ввода-вывода в секунду для чтения и записи на локальном диске по сравнению с размерами [Ev3 и Esv3](https://docs.microsoft.com/azure/virtual-machines/ev3-esv3-series) для [виртуальных машин 2-го поколения](https://docs.microsoft.com/azure/virtual-machines/linux/generation-2).
-
-
-> [!IMPORTANT]
-> Если вы развертываете новую виртуальную машину на основе серии Edv4 или Edsv4 и планируете использовать образ Linux, нужно выбрать RHEL 8.x, CentOS 8.x, Oracle 7.x или более поздних версий. Если вы выберете RHEL 7.x, CentOS 7.x или Orcale 6.x, будет происходить ошибка Kernel Panic. Корпорация Майкрософт активно развертывает исправление. Это касается только RHEL, CentOS и Oracle.
+Серии Edv4 и Edsv4 работают на процессорах Intel&reg; Xeon&reg; Platinum 8272CL (Cascade Lake) с технологией Hyper-Threading и отлично подходят для любых корпоративных приложений, требующих больших объемов памяти, предоставляя до 504 ГиБ ОЗУ, технологию [Intel&reg; Turbo Boost 2.0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [Intel&reg; Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и расширения [Intel&reg; Advanced Vector Extensions 512 (Intel&reg; AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html). Они также поддерживают [ускорение Intel для &reg; глубокого обучения](https://software.intel.com/content/www/us/en/develop/topics/ai/deep-learning-boost.html). Эти новые размеры виртуальных машин получат на 50 % больший объем локального хранилища, а также более высокий лимит на операции ввода-вывода в секунду для чтения и записи на локальном диске по сравнению с размерами [Ev3 и Esv3](https://docs.microsoft.com/azure/virtual-machines/ev3-esv3-series) для [виртуальных машин 2-го поколения](https://docs.microsoft.com/azure/virtual-machines/linux/generation-2).
 
 ## <a name="edv4-series"></a>Серия Edv4
 
@@ -31,13 +27,13 @@ ACU: 195—210
 
 Хранилище класса "Премиум":  Не поддерживается
 
-Кэширование в хранилище класса Premium.  Не поддерживается
+Кэширование в хранилище класса Premium:  Не поддерживается
 
-Динамическая миграция. Поддерживается
+Динамическая миграция: Поддерживается
 
-Обновления с сохранением памяти. Поддерживается
+Обновления с сохранением памяти: Поддерживается
 
-| Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальное число дисков данных | Максимальная пропускная способность временного хранилища с кэшированием: операций ввода-вывода в секунду / МБит/с | Максимальное количество сетевых карт/ожидаемая пропускная способность сети (Мбит/с) |
+| Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальное число дисков данных | Максимальная пропускная способность временного хранилища с кэшированием: операций ввода-вывода в секунду / МБит/с | Максимальное количество сетевых адаптеров/ожидаемая пропускная способность сети (Мбит/с) |
 |---|---|---|---|---|---|---|
 | Standard_E2d_v4  | 2 | 16 | 75 | 4 | 19000/120 | 2/1000 |
 | Standard_E4d_v4  | 4 | 32 | 150 | 8 | 38500/242 | 2/2000 |
@@ -57,13 +53,13 @@ ACU: 195–210
 
 Хранилище класса "Премиум":  Поддерживается
 
-Кэширование в хранилище класса Premium.  Поддерживается
+Кэширование в хранилище класса Premium:  Поддерживается
 
-Динамическая миграция. Поддерживается
+Динамическая миграция: Поддерживается
 
-Обновления с сохранением памяти. Поддерживается
+Обновления с сохранением памяти: Поддерживается
 
-| Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальное число дисков данных | Максимальная пропускная способность временного хранилища с кэшированием: операций ввода-вывода в секунду / МБит/с | Максимальная пропускная способность дисков без кэширования: операций ввода-вывода в секунду / МБит/с | Максимальное количество сетевых карт/ожидаемая пропускная способность сети (Мбит/с) |
+| Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальное число дисков данных | Максимальная пропускная способность кэшированного и временного хранилища: операций ввода-вывода в секунду (размер кэша в гиб) | Максимальная пропускная способность дисков без кэширования: операций ввода-вывода в секунду / МБит/с | Максимальное количество сетевых карт/ожидаемая пропускная способность сети (Мбит/с) |
 |---|---|---|---|---|---|---|---|
 | Standard_E2ds_v4  | 2 | 16 | 75 | 4 | 19000/120(50) | 3200/48 | 2/1000 |
 | Standard_E4ds_v4  | 4 | 32 | 150 | 8 | 38500/242(100) | 6400/96 | 2/2000 |

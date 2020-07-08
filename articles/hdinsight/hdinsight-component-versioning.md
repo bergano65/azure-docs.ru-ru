@@ -7,13 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
-ms.date: 05/20/2020
-ms.openlocfilehash: 036548d61dbe6a6465ca28c72eacb48e61386577
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.date: 05/28/2020
+ms.openlocfilehash: 7a6a672cef42eb15cbd8f2f254207e0a9d96ee33
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83846228"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84736209"
 ---
 # <a name="apache-components-and-versions-available-for-azure-hdinsight"></a>Компоненты и версии Apache, доступные в Azure HDInsight
 
@@ -36,22 +35,22 @@ Azure HDInsight поддерживает несколько версий кла�
 | Apache Hive            | 3.1.0         | 1.2.1 (или 2.1.0 для ESP Interactive Query) |
 | Apache Tez Hive2       | -             | 0.8.4                       |
 | Apache Ranger          | 1.1.0         | 0.7.0                       |
-| Apache HBase           | 2.0.2         | 1.1.2                       |
+| Apache HBase           | 2.1.6         | 1.1.2                       |
 | Apache Sqoop           | 1.4.7         | 1.4.6                       |
 | Apache Oozie           | 4.3.1         | 4.2.0                       |
 | Apache Zookeeper       | 3.4.6         | 3.4.6                       |
 | Apache Storm           | -             | 1.1.0                       |
 | Apache Mahout          | -             | 0.9.0+                      |
 | Apache Phoenix         | 5             | 4.7.0                       |
-| Apache Spark           | 2.4           | 2.3.0, 2.2.0, 2.1.0         |
+| Apache Spark           | 2.4.4         | 2.3.2, 2.2.0, 2.1.0         |
 | Apache Livy            | 0,5           | 0.4, 0.4, 0.3               |
-| Apache Kafka           | 2.1           | 1,1                        |
+| Apache Kafka           | 2.1.1         | 1,1                        |
 | Apache Ambari          | 2.7.0         | 2.6.0                       |
 | Apache Zeppelin        | 0.8.0         | 0.7.3                       |
 | Mono                   | 4.2.1         | 4.2.1                       |
 
 > [!NOTE]
-> HDInsight 4.0: полностью поддерживаются Spark 2.4 и Kafka 2.1. Но Spark 2.3 и Kafka 1.1 не обслуживаются. HDInsight 3.6: полностью поддерживаются Spark 2.3 и Kafka 1.1.  
+> HDInsight 4.0: полностью поддерживаются Spark 2.4 и Kafka 2.1. Однако типы кластеров Spark 2,3 и Kafka 1,1 не обслуживаются. HDInsight 3.6: полностью поддерживаются Spark 2.3 и Kafka 1.1.  
 
 ## <a name="check-for-current-apache-component-version-information"></a>Проверка сведений о текущей версии компонентов Apache
 
@@ -80,10 +79,10 @@ Azure HDInsight поддерживает несколько версий кла�
 | HDInsight 4.0 |Ubuntu 16.0.4 LTS |24 сентября 2018 г. | | |Да |Да |
 | HDInsight 3.6 |Ubuntu 16.0.4 LTS |4 апреля 2017 г. | 31 декабря 2020 г. |31 декабря 2020 г. |Да |Да |
 
-Поддержка Spark 2.1, 2.2 и Kafka 1.0 прекращается 30 июня 2020 г.
+Срок действия поддержки кластера Spark 2,1, 2,2 и Kafka 1,0 истекает 30 июня 2020 г.
 
 > [!NOTE]
-> После прекращения поддержки эти версии могут быть недоступными на портале Azure. Но версии кластера по-прежнему можно будет использовать с помощью параметра **Version** в командлете Windows PowerShell [New-AzHDInsightCluster](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) и в пакетах SDK для .NET вплоть до даты прекращения использования.
+> После истечения срока поддержки версии кластера она может быть недоступна через портал Azure. В некоторых случаях версии кластера по-прежнему доступны с помощью параметра **Version** в команде Windows PowerShell [New-аздинсигхтклустер](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) и пакета SDK для .NET до даты выхода версии.
 
 ### <a name="retired-versions"></a>Устаревшие версии
 

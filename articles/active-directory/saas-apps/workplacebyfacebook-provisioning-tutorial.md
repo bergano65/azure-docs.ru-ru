@@ -15,34 +15,15 @@ ms.topic: article
 ms.date: 04/28/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99103c9994b240e2f45b66acf269b320c90e5135
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
-ms.translationtype: MT
+ms.openlocfilehash: 799206ee08dc3b1cdac46a0e4e79d2c929138c31
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82231736"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84718622"
 ---
 # <a name="tutorial-configure-workplace-by-facebook-for-automatic-user-provisioning"></a>Руководство по настройке Workplace by Facebook для автоматической подготовки пользователей
 
 В этом учебнике описываются действия, которые необходимо выполнить в Facebook и Azure Active Directory (Azure AD) для настройки автоматической подготовки пользователей. При настройке Azure AD автоматически подготавливает и отменяет подготовку пользователей и групп на [рабочем месте](https://work.workplace.com/) с помощью службы подготовки Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
-
-## <a name="migrating-to-the-new-workplace-by-facebook-application"></a>Переход на новое приложение Facebook на рабочем месте
-Если у вас есть интеграция с рабочей областью Facebook, ознакомьтесь с приведенными ниже разделами о внесенных изменениях. Если Рабочая область настраивается с помощью Facebook в первый раз, можно пропустить этот раздел и перейти к поддерживаемым возможностям. 
-
-#### <a name="whats-changing"></a>Изменения
-* Изменения на стороне Azure AD: метод авторизации для предоставления пользователям на рабочем месте, исторически длинный секретный токен. Вскоре вы увидите, что метод авторизации был изменен на предоставление авторизации OAuth. 
-* Изменения на стороне рабочего места. ранее приложение Azure AD было пользовательской интеграцией на рабочем месте в Facebook. Теперь вы увидите Azure AD в каталоге интеграции с рабочей областью как стороннее приложение. 
-
-#### <a name="what-do-i-need-to-do-to-migrate-my-existing-custom-integration-to-the-new-application"></a>Что нужно сделать для переноса существующей пользовательской интеграции в новое приложение?
-Если у вас есть интеграция на рабочем месте с действительным маркером, никаких действий не требуется. **На 04/28/2020 мы автоматически перенесли все приложения, которые не находятся в карантине, из-за недопустимых учетных данных.**
- 
-#### <a name="how-can-i-tell-if-my-application-has-been-migrated"></a>Как узнать, перенесено ли приложение? 
-* На портале Azure: при переносе приложения баннер в разделе Авторизация, посвященная предстоящим изменениям, будет удалена, а поле Секретный токен будет заменено синей кнопкой авторизовать. 
-* На портале службы Facebook на рабочем месте: Проверьте приложение Azure AD, чтобы убедиться, что оно утверждено.  
-
-#### <a name="the-admin-credentials-section-is-greyed-out-on-my-application-and-i-cant-save-why"></a>Раздел учетные данные администратора неактивен в моем приложении и не может быть сохранен. Почему?
-Мы заблокировали раздел учетных данных администратора для клиентов рабочей области, которые не были перенесены. Используйте следующий URL-адрес, если раздел учетные данные администратора неактивен и вам нужно авторизовать доступ снова. **? Microsoft_AAD_IAM_userProvisioningEnableCredentialsOverride = true** (https://portal.azure.com/?Microsoft_AAD_IAM_userProvisioningEnableCredentialsOverride=true)
-
 
 ## <a name="capabilities-supported"></a>Поддерживаемые возможности
 > [!div class="checklist"]
@@ -51,11 +32,11 @@ ms.locfileid: "82231736"
 > * Обеспечение синхронизации атрибутов пользователей между Azure AD и рабочей областью Facebook
 > * [Единый вход](https://docs.microsoft.com/azure/active-directory/saas-apps/workplacebyfacebook-tutorial) на рабочее место с помощью Facebook (рекомендуется)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-* [Клиент Azure AD;](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
+* [Клиент Azure AD.](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
 * Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор)
 * подписка Workplace by Facebook с поддержкой единого входа.
 
@@ -67,8 +48,8 @@ ms.locfileid: "82231736"
 - Не используйте рабочую среду без необходимости.
 - Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
 
-## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания подготовки
-1. Узнайте [, как работает служба подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
+## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания для подготовки
+1. Узнайте, [как работает служба подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
 2. Определите, кто будет находиться в [области подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
 3. Определите, какие данные должны [сопоставляться между Azure AD и рабочей](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes)областью Facebook.
 
@@ -84,15 +65,15 @@ ms.locfileid: "82231736"
 
 Добавьте рабочую область с помощью Facebook из коллекции приложений Azure AD, чтобы начать управление подготовкой на рабочее место с помощью Facebook. Если вы ранее настроили на рабочее место с помощью Facebook для единого входа, вы можете использовать то же приложение. Однако при первоначальном тестировании интеграции рекомендуется создать отдельное приложение. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app).
 
-## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Шаг 4. Определение пользователей, которые будут находиться в области подготовки 
+## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Шаг 4. Определение пользователей для включения в область подготовки 
 
-Служба подготовки Azure AD позволяет определить, кто будет подготовлен в соответствии с назначением приложения, или на основе атрибутов пользователя или группы. Если вы решили указать, кто будет подготовлен для приложения на основе назначения, можно выполнить следующие [действия](../manage-apps/assign-user-or-group-access-portal.md) , чтобы назначить пользователей и группы для приложения. Если выбрать область, для которой будет выполняться подготовка на основе только атрибутов пользователя или группы, можно использовать фильтр области, как описано [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
+Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, на основе назначения приложению и (или) атрибутов пользователя или группы. Если вы решили указать, кто именно будет подготовлен к работе в приложении, на основе назначения, можно выполнить следующие [действия](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили указать, кто именно будет подготовлен, на основе одних только атрибутов пользователя или группы, можете использовать фильтр задания области, как описано [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
 
-* При назначении пользователей и групп на рабочем месте с помощью Facebook необходимо выбрать роль, отличную от **доступа по умолчанию**. Пользователи с ролью доступа по умолчанию исключаются из подготовки и будут помечены как неэффективное в журналах подготовки. Если единственной ролью, доступной в приложении, является роль доступа по умолчанию, можно [обновить манифест приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps) , чтобы добавить дополнительные роли. 
+* При назначении пользователей и групп на рабочем месте с помощью Facebook необходимо выбрать роль, отличную от **доступа по умолчанию**. Пользователи с ролью "Доступ по умолчанию" исключаются из подготовки и будут помечены в журналах подготовки как не назначенные явно. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps), чтобы добавить дополнительные роли. 
 
-* Запуск Small. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если для параметра область подготовки задано значение назначенные пользователи и группы, это можно контролировать, назначив приложению одного или двух пользователей или групп. Если для параметра scope задано значение все пользователи и группы, можно указать [Фильтр области на основе атрибутов](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
+* Начните с малого. Протестируйте небольшой набор пользователей и групп, прежде чем выполнять развертывание для всех. Если в область подготовки включены назначенные пользователи и группы, проверьте этот механизм, назначив приложению одного или двух пользователей либо одну или две группы. Если в область включены все пользователи и группы, можно указать [фильтр области на основе атрибутов](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts). 
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **корпоративные приложения**, а затем выберите **все приложения**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -100,13 +81,13 @@ ms.locfileid: "82231736"
 
     ![Ссылка на Workplace by Facebook в списке "Приложения"](common/all-applications.png)
 
-3. Перейдите на вкладку **Подготовка** .
+3. Выберите вкладку **Подготовка**.
 
-    ![Вкладка "подготовка"](common/provisioning.png)
+    ![Вкладка "Подготовка"](common/provisioning.png)
 
-4. Установите для **режима подготовки** значение **автоматически**.
+4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Вкладка "подготовка"](common/provisioning-automatic.png)
+    ![Вкладка "Подготовка"](common/provisioning-automatic.png)
 
 5. В разделе **учетные данные администратора** щелкните **авторизовать**. Вы будете перенаправлены на страницу авторизации Facebook на рабочем месте. Введите имя вашего рабочего места в Facebook и нажмите кнопку **продолжить** . Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключаться к рабочему месту с помощью Facebook. В случае сбоя подключения убедитесь, что учетная запись вашего рабочего места имеет разрешения администратора, и повторите попытку.
 
@@ -114,7 +95,7 @@ ms.locfileid: "82231736"
 
     ![Авторизация](./media/workplacebyfacebook-provisioning-tutorial/workplacelogin.png)
 
-6. В поле **уведомление по электронной почте** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, и установите флажок **Отправить уведомление по электронной почте при возникновении сбоя** .
+6. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Отправить уведомление по электронной почте при сбое**.
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
@@ -128,17 +109,17 @@ ms.locfileid: "82231736"
    |---|---|
    |userName|Строка|
    |displayName|Строка|
-   |active|Логическое значение|
-   |title|Логическое значение|
+   |active|Логическое|
+   |title|Логическое|
    |emails[type eq "work"].value|Строка|
    |name.givenName|Строка|
    |name.familyName|Строка|
-   |Name. форматируются|Строка|
-   |адреса [Type EQ "Рабочая"]. форматированный|Строка|
+   |name.formatted|Строка|
+   |addresses[type eq "work"].formatted|Строка|
    |addresses[type eq "work"].streetAddress|Строка|
-   |адреса [Введите EQ "Рабочий"]. локальность|Строка|
-   |адреса [Type EQ "Рабочий"]. регион|Строка|
-   |адреса [Type EQ "Рабочая"]. Country|Строка|
+   |addresses[type eq "work"].locality|Строка|
+   |addresses[type eq "work"].region|Строка|
+   |addresses[type eq "work"].country|Строка|
    |addresses[type eq "work"].postalCode|Строка|
    |адреса [Введите EQ "Other"]. форматированный|Строка|
    |phoneNumbers[type eq "work"].value|Строка|
@@ -146,8 +127,8 @@ ms.locfileid: "82231736"
    |phoneNumbers[type eq "fax"].value|Строка|
    |externalId|Строка|
    |preferredLanguage|Строка|
-   |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: менеджер|Строка|
-   |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: Отдел|Строка|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Строка|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -163,14 +144,14 @@ ms.locfileid: "82231736"
 
     ![Сохранение конфигурации подготовки](common/provisioning-configuration-save.png)
 
-Эта операция запускает начальный цикл синхронизации всех пользователей и групп, определенных в **области** в разделе **параметров** . Выполнение начального цикла занимает больше времени, чем последующие циклы, что происходит примерно каждые 40 минут, пока выполняется служба подготовки Azure AD. 
+После этого начнется цикл начальной синхронизации всех пользователей и групп, определенных в поле **Область** в разделе **Параметры**. Начальный цикл занимает больше времени, чем последующие циклы. Пока служба подготовки Azure AD запущена, они выполняются примерно каждые 40 минут. 
 
 ## <a name="step-6-monitor-your-deployment"></a>Шаг 6. Мониторинг развертывания
-После настройки подготовки используйте следующие ресурсы для мониторинга развертывания:
+После настройки подготовки используйте следующие ресурсы для мониторинга развертывания.
 
-1. Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs) , чтобы определить, какие пользователи были подготовлены успешно или неудачно
-2. Просмотрите [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-when-will-provisioning-finish-specific-user) , чтобы просмотреть состояние цикла подготовки и его завершения
-3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о состояниях карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).
+1. Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
+2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
+3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 *  Если вы видите, что пользователь неудачно создал событие журнала аудита с кодом "1789003", это означает, что пользователь из непроверенного домена.
@@ -180,6 +161,6 @@ ms.locfileid: "82231736"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)

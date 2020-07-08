@@ -5,21 +5,18 @@ description: Узнайте, как обновить веб-службу для 
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: conceptual
+ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 02/14/2019
-ms.openlocfilehash: 218c1c98a2ed775ae86c1657156991879708cc7a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 601717ce487f8564ed2d431db9b31a3b43fcee75
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79217934"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84706092"
 ---
 # <a name="retrain-and-deploy-a-machine-learning-model"></a>Повторное обучение и развертывание модели машинного обучения
-
-[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 Повторное обучение — один из способов поддерживать точность моделей машинного обучения и учитывать самые актуальные доступные данные. В этой статье показано, как переучить и развернуть модель машинного обучения в качестве новой веб-службы в Studio (классической). Если вас интересует повторное обучение для классической веб-службы, [изучите это практическое руководство.](retrain-classic-web-service.md)
 
@@ -61,7 +58,7 @@ ms.locfileid: "79217934"
 
 Следуйте приведенным ниже инструкциям, чтобы вызвать API переобучения:
 
-1. Создание консольного приложения C# в Visual Studio: **Создание** > **проекта** > **Visual C#** > **классическое** > **консольное приложение Windows (.NET Framework)**.
+1. Создание консольного приложения C# в Visual Studio: **Создание**  >  **проекта**  >  **Visual C#**  >  **классическое**  >  **консольное приложение Windows (.NET Framework)**.
 1. Войдите на портал веб-служб Машинного обучения.
 1. Щелкните веб-службу, с которой работаете.
 1. Щелкните **Consume**(Использование).
@@ -195,4 +192,4 @@ ms.locfileid: "79217934"
 Дополнительные сведения о том, как управлять веб-службами или отслеживать несколько экспериментов, см. в следующих статьях:
 
 * [Обзор портала веб-служб](manage-new-webservice.md)
-* [Управление итерациями экспериментов](manage-experiment-iterations.md)
+* [Управление итерациями эксперимента](manage-experiment-iterations.md)

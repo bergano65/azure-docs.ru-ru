@@ -8,11 +8,10 @@ ms.date: 01/10/2020
 ms.topic: conceptual
 ms.author: sutalasi
 ms.openlocfilehash: d2dfaab3d01ea29b0f9ecba1e9d748415bed2edc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79257203"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84704392"
 ---
 # <a name="set-up-disaster-recovery-of-vmware-vms-to-azure-with-powershell"></a>Настройка аварийного восстановления виртуальных машин VMware в Azure с помощью PowerShell
 
@@ -33,11 +32,11 @@ ms.locfileid: "79257203"
 
 ## <a name="prerequisites"></a>Предварительные условия
 
-Перед началом:
+Перед началом работы
 
 - Вам должны быть понятны [архитектура и компоненты сценария](vmware-azure-architecture.md).
 - Ознакомьтесь с [требованиями к поддержке](site-recovery-support-matrix-to-azure.md) для всех компонентов.
-- У вас есть модуль `Az` Azure PowerShell. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
+- У вас есть `Az` модуль Azure PowerShell. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="log-into-azure"></a>Вход на портал Azure
 
@@ -105,7 +104,7 @@ Select-AzSubscription -SubscriptionName "ASR Test Subscription"
 Задайте контекст хранилища с помощью командлета Set-ASRVaultContext. После этого последующие операции Azure Site Recovery в сеансе PowerShell будут выполняться в контексте выбранного хранилища.
 
 > [!TIP]
-> Модуль Azure Site Recovery PowerShell (az. RecoveryServices Module) поставляется с простым использованием псевдонимов для большинства командлетов. Командлеты в модуле принимают форму * \<операции>-**азрековерисервицесаср**\<Object>* и имеют эквивалентные псевдонимы, которые принимают форму * \<>-**ASR**\<Object>*. Можно заменить псевдонимы командлетов для простоты использования.
+> Модуль Azure Site Recovery PowerShell (az. RecoveryServices Module) поставляется с простым использованием псевдонимов для большинства командлетов. Командлеты в модуле принимают форму * \<Operation> - **азрековерисервицесаср** \<Object> * и имеют эквивалентные псевдонимы, которые принимают форму * \<Operation> - **ASR** \<Object> *. Можно заменить псевдонимы командлетов для простоты использования.
 
 В следующем примере данные хранилища из переменной $vault используется для указания контекста хранилища для сеанса PowerShell.
 
@@ -353,9 +352,9 @@ $ReplicationStdStorageAccount= New-AzStorageAccount -ResourceGroupName "VMwareDR
 
 |Виртуальная машина  |Сервер обработки        |Учетная запись хранения              |Учетная запись хранения журналов  |Политика           |Учетная запись для установки службы Mobility Service|Целевая группа ресурсов  | Целевая виртуальная сеть  |Целевая подсеть  |
 |-----------------|----------------------|-----------------------------|---------------------|-----------------|-----------------------------------------|-----------------------|-------------------------|---------------|
-|CentOSVM1       |ConfigurationServer   |Недоступно| logstorageaccount1                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |
+|CentOSVM1       |ConfigurationServer   |Н/Д| logstorageaccount1                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |
 |Win2K12VM1       |ScaleOut-ProcessServer|premiumstorageaccount1       |logstorageaccount1   |ReplicationPolicy|WindowsAccount                           |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
-|CentOSVM2       |ConfigurationServer   |replicationstdstorageaccount1| Недоступно                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
+|CentOSVM2       |ConfigurationServer   |replicationstdstorageaccount1| Н/Д                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
 
 
 ```azurepowershell

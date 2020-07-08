@@ -5,13 +5,12 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 3/18/2020
-ms.openlocfilehash: 0aab6957f6078a59aafd0c9967b0d88e97e50cda
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.date: 6/10/2020
+ms.openlocfilehash: 17771cfa9ffa73d22d2e136836dcf0f19e68f8cb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83849439"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84707214"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-the-azure-portal"></a>Создание реплик чтения и управление ими в базе данных Azure для MySQL с помощью портала Azure
 
@@ -25,6 +24,9 @@ ms.locfileid: "83849439"
 > Функция создания реплики чтения доступна только для серверов базы данных Azure для MySQL в ценовой категории "Общее назначение" или "Оптимизированная для операций в памяти". Убедитесь, что главный сервер находится в одной из этих ценовых категорий.
 
 ## <a name="create-a-read-replica"></a>Создание реплики чтения
+
+> [!IMPORTANT]
+> При создании реплики для главного сервера, у которого отсутствуют реплики, этот сервер сначала перезапускается для подготовки к репликации. Это необходимо учесть, то есть выполнять такие операции в период низкой нагрузки.
 
 Чтобы создать сервер-реплику чтения, выполните следующие действия.
 

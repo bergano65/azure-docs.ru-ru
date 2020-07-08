@@ -10,17 +10,16 @@ tags: azure-resource-manager
 ms.assetid: a54feccf-0123-4e49-a743-eb8d0bdd1ebc
 ms.service: virtual-network
 ms.devlang: na
-ms.topic: article
+ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/29/2018
 ms.author: kumud
-ms.openlocfilehash: 6939ea2497a9f12321e1a6dfb9bf9fbb353bc7db
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 8d4e78a90c5b852177c88350422bdd6ce1e398cd
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80240777"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84704987"
 ---
 # <a name="diagnose-a-virtual-machine-network-traffic-filter-problem"></a>Диагностика проблемы с фильтрацией трафика на виртуальной машине
 
@@ -79,7 +78,7 @@ ms.locfileid: "80240777"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. При запуске PowerShell с компьютера необходим модуль Azure PowerShell версии 1.0.0 или более поздней. Выполните `Get-Module -ListAvailable Az` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если вы используете PowerShell локально, вам также потребуется выполнить `Connect-AzAccount` вход в Azure с учетной записью, имеющей [необходимые разрешения](virtual-network-network-interface.md#permissions)].
+Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. При запуске PowerShell с компьютера необходим модуль Azure PowerShell версии 1.0.0 или более поздней. Выполните `Get-Module -ListAvailable Az` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если вы используете PowerShell локально, вам также потребуется выполнить `Connect-AzAccount` Вход в Azure с учетной записью, имеющей [необходимые разрешения](virtual-network-network-interface.md#permissions)].
 
 Получите действующие правила безопасности для сетевого интерфейса с помощью [Get-азеффективенетворксекуритиграуп](/powershell/module/az.network/get-azeffectivenetworksecuritygroup). В следующем примере извлекаются действующие правила безопасности для сетевого интерфейса с именем *myVMVMNic*, который находится в группе ресурсов с именем *myResourceGroup*:
 
@@ -168,16 +167,16 @@ az vm show \
 
 При использовании как [портала](#diagnose-using-azure-portal) Azure, так и [PowerShell](#diagnose-using-powershell) или [Azure CLI](#diagnose-using-azure-cli) для диагностики проблемы, представленной в [сценарии](#scenario) этой статьи, решение будет одним. Нужно создать правило сетевой безопасности со следующими свойствами:
 
-| Свойство                | Значение                                                                              |
+| Свойство.                | Значение                                                                              |
 |---------                |---------                                                                           |
 | Источник                  | Любой                                                                                |
 | Диапазоны исходных портов      | Любой                                                                                |
-| Назначение             | IP-адрес виртуальной машины, диапазон IP-адресов или все адреса в подсети. |
+| Destination             | IP-адрес виртуальной машины, диапазон IP-адресов или все адреса в подсети. |
 | Диапазоны портов назначения | 80                                                                                 |
 | Протокол                | TCP                                                                                |
 | Действие                  | Allow                                                                              |
 | Приоритет                | 100                                                                                |
-| Имя                    | Allow-HTTP-All                                                                     |
+| name                    | Allow-HTTP-All                                                                     |
 
 Когда вы создадите правило, входящий трафик из Интернета через порт 80 будет разрешен, так как приоритет этого правила выше, чем приоритет правила безопасности по умолчанию с именем *DenyAllInBound*, запрещающего передачу трафика. Узнайте, как [создать правило безопасности](manage-network-security-group.md#create-a-security-rule). Если с сетевым интерфейсом и подсетью связаны разные группы NSG, создайте одинаковое правило в обеих NSG.
 
@@ -185,7 +184,7 @@ az vm show \
 
 Если у вас по-прежнему возникают проблемы связи, см. статью [рекомендации](#considerations) и дополнительная диагностика.
 
-## <a name="considerations"></a>Рекомендации
+## <a name="considerations"></a>Особенности
 
 При устранении проблем с подключением необходимо учитывать следующие аспекты:
 
