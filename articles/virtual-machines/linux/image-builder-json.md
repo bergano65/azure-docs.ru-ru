@@ -1,19 +1,19 @@
 ---
 title: Создание шаблона Конструктора образов виртуальных машин Azure (предварительная версия)
 description: Узнайте, как создать шаблон для использования с Конструктором образов виртуальных машин Azure.
-author: danis
+author: danielsollondon
 ms.author: danis
-ms.date: 03/24/2020
+ms.date: 06/23/2020
 ms.topic: article
 ms.service: virtual-machines-linux
 ms.subservice: imaging
 ms.reviewer: cynthn
-ms.openlocfilehash: f567114613f484f0765a6e007c3f0ba97480a968
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
-ms.translationtype: HT
+ms.openlocfilehash: 44cafd4ce7e36c34082ff3c5498c5bbc35282221
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83779349"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85263319"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Предварительный просмотр: Создание шаблона Конструктора образов виртуальных машин Azure 
 
@@ -29,7 +29,7 @@ ms.locfileid: "83779349"
     "tags": {
         "<name": "<value>",
         "<name>": "<value>"
-             }
+     },
     "identity":{},           
     "dependsOn": [], 
     "properties": { 
@@ -88,7 +88,7 @@ ms.locfileid: "83779349"
 
 ## <a name="osdisksizegb"></a>osDiskSizeGB
 
-По умолчанию Конструктор образов не будет изменять размер образа, а будет использовать размер из исходного образа. Вы можете увеличить размер диска ОС (Win и Linux), хотя это необязательно. Значение 0 означает, что сохраняется размер исходного образа. 
+По умолчанию Конструктор образов не будет изменять размер образа, а будет использовать размер из исходного образа. Можно увеличить **только** размер диска операционной системы (Win и Linux), это необязательный параметр, а значение 0 означает, что размер исходного образа не изменится. Размер диска ОС нельзя уменьшить до размера, меньшего, чем размер исходного образа.
 
 ```json
  {
@@ -521,7 +521,7 @@ az resource show \
  
 Свойства распространения:
 - **type** — managedImage. 
-- **imageId** — идентификатор ресурса целевого образа; ожидаемый формат: /subscriptions/\<ИДподписки>/resourceGroups/\<имяЦелевойГруппыРесурсов>/providers/Microsoft.Compute/images/\<имяОбраза>.
+- **имажеид** — идентификатор ресурса конечного образа, ожидаемый формат:/Subscriptions/ \<subscriptionId> /resourceGroups/ \<destinationResourceGroupName> /провидерс/Микрософт.компуте/имажес/\<imageName>
 - **location** — расположение управляемого образа.  
 - **runOutputName** — уникальное имя для идентификации распространения.  
 - **artifactTags** — необязательные задаваемые пользователем теги пар "ключ-значение".
@@ -561,7 +561,7 @@ az resource show \
 Свойства распространения для общих коллекций образов:
 
 - **type** — sharedImage.  
-- **galleryImageId** — идентификатор общей коллекции образов. Формат: /subscriptions/\<ИДподписки>/resourceGroups/\<имяГруппыРесурсов>/providers/Microsoft.Compute/galleries/\<имяОбщейКоллекцииОбразов>/images/\<имяКоллекцииОбразов>.
+- **galleryImageId** — идентификатор общей коллекции образов. Формат:/Subscriptions/ \<subscriptionId> /ResourceGroups/ \<resourceGroupName> /провидерс/Микрософт.компуте/галлериес/ \<sharedImageGalleryName> /Images/ \<imageGalleryName> .
 - **runOutputName** — уникальное имя для идентификации распространения.  
 - **artifactTags** — необязательные задаваемые пользователем теги пар "ключ-значение".
 - **replicationRegions** — массив регионов для репликации. Один из регионов должен быть регионом, в котором развернута коллекция.

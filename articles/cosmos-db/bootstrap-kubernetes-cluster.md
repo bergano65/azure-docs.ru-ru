@@ -3,15 +3,15 @@ title: Использование Azure Kubernetes с Azure Cosmos DB
 description: Сведения о начальной загрузке кластера Kubernetes в Azure, который использует Azure Cosmos DB (предварительная версия).
 author: SnehaGunda
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/06/2019
 ms.author: sngun
-ms.openlocfilehash: 9dbbc914580d8d80a3f9b7d730574e24b44827c1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e7e1480d00280fc567a69556f25db8ffab800f70
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "70093728"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85262639"
 ---
 # <a name="how-to-use-azure-kubernetes-with-azure-cosmos-db-preview"></a>Использование Azure Kubernetes с Azure Cosmos DB (предварительная версия)
 
@@ -25,9 +25,9 @@ API etcd в Azure Cosmos DB позволяет использовать Azure Co
 
 Дополнительные сведения об API etcd в Azure Cosmos DB см. в [этой обзорной статье](etcd-api-introduction.md). В этой статье содержатся сведения об использовании [Azure Kubernetes Engine](https://github.com/Azure/aks-engine/blob/master/docs/tutorials/quickstart.md) (aks-engine) для начальной загрузки кластера Kubernetes в Azure, который использует [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/) вместо локально установленного и настроенного хранилища etcd. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-1. Установите последнюю версию [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). Вы можете скачать и установить Azure CLI, соответствующий вашей операционной системе.
+1. Установите [последнюю версию](/cli/azure/install-azure-cli?view=azure-cli-latest) Azure CLI. Вы можете скачать и установить Azure CLI, соответствующий вашей операционной системе.
 
 1. Установите [последнюю версию](https://github.com/Azure/aks-engine/releases) Azure Kubernetes Engine. Инструкции по установке для различных операционных систем см. на странице [Azure Kubernetes Engine](https://github.com/Azure/aks-engine/blob/master/docs/tutorials/quickstart.md#install-aks-engine). Вам потребуются действия, описанные в разделе **Установка ядра AKS** в связанном документе. После загрузки Извлеките ZIP-файл.
 
@@ -179,7 +179,7 @@ INFO[0587] Finished ARM Deployment (aks-sg-test-546247491). Succeeded
 
 Имя учетной записи Azure Cosmos будет соответствовать указанному префиксу DNS с добавлением k8s. Вашей учетной записи Azure Cosmos будет автоматически предоставлена база данных **EtcdDB** и контейнер **EtcdData**. В контейнере будут храниться все данные, связанные с etcd. Контейнеру предоставляется определенное количество единиц запроса, и вы сможете [масштабировать (увеличивать/уменьшать) пропускную способность](scaling-throughput.md) на основе рабочей нагрузки. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь со сведениями о [работе с базами данных, контейнерами и элементами Azure Cosmos](databases-containers-items.md).
 * Ознакомьтесь со сведениями об [оптимизации затрат на подготовленную пропускную способность](optimize-cost-throughput.md).

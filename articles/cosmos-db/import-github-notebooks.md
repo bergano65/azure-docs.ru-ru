@@ -4,14 +4,14 @@ description: Узнайте, как подключиться к GitHub и имп
 author: deborahc
 ms.author: dech
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/19/2020
-ms.openlocfilehash: 9ce65d316b8236b83435388d2c1883cb9b89b03a
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
-ms.translationtype: HT
+ms.openlocfilehash: d85f020152fa3cadb1d437c125d327f5e895e14e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83690410"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85262894"
 ---
 # <a name="import-notebooks-from-a-github-repo-into-azure-cosmos-db"></a>Импорт записных книжек из репозитория GitHub в Azure Cosmos DB
 
@@ -29,7 +29,7 @@ ms.locfileid: "83690410"
 
 1. Откроется вкладка, где можно выбрать режим подключения: **Общедоступные репозитории** или **Общедоступные и частные репозитории**.  Выбрав нужный вариант, щелкните **Разрешить доступ**. Авторизация требуется для того, чтобы служба Azure Cosmos DB получила доступ к репозиториям в вашей учетной записи GitHub.
 
-   ![Авторизация Azure Cosmos DB на доступ к репозиториям GitHub](./media/import-github-notebooks/authorize-access-github.png)
+   :::image type="content" source="./media/import-github-notebooks/authorize-access-github.png" alt-text="Авторизация Azure Cosmos DB на доступ к репозиториям GitHub":::
 
 1. Вы будете перенаправлены на веб-страницу github.com, где можно подтвердить авторизацию. Нажмите кнопку **Разрешить AzureCosmosDBNotebooks** и введите пароль учетной записи GitHub в соответствующем приглашении.
 
@@ -37,7 +37,7 @@ ms.locfileid: "83690410"
 
 1. После выбора требуемого репозитория запись этого репозитория перемещается из раздела **Незакрепленные репозитории** в **Закрепленные репозитории**. При необходимости можно также выбрать конкретную ветвь репозитория, из которой будут импортированы записные книжки.
 
-   ![Выбор репозитория и ветви](./media/import-github-notebooks/choose-repo-branch.png)
+   :::image type="content" source="./media/import-github-notebooks/choose-repo-branch.png" alt-text="Выбор репозитория и ветви":::
 
 1. Чтобы завершить операцию импорта, щелкните **ОК**. Все записные книжки, доступные в выбранной ветви репозитория, будут импортированы в учетную запись Azure Cosmos.
 
@@ -53,7 +53,7 @@ ms.locfileid: "83690410"
 
 В обычном потоке GitHub после фиксации изменений выполняется принудительная отправка изменений в удаленный репозиторий. Но в этом случае "фиксация" обозначает следующий набор действий: подготовка, фиксация и передача обновлений в GitHub.
 
-![Изменение записных книжек и фиксация изменений в GitHub](./media/import-github-notebooks/commit-changes-github.png)
+:::image type="content" source="./media/import-github-notebooks/commit-changes-github.png" alt-text="Изменение записных книжек и фиксация изменений в GitHub":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

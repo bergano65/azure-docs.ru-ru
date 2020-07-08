@@ -3,16 +3,16 @@ title: Подключение к Azure Cosmos DB с помощью Robo 3T
 description: Сведения о подключении к Azure Cosmos DB с помощью Robo 3T и API Azure Cosmos DB для MongoDB
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/23/2020
 author: timsander1
 ms.author: tisande
-ms.openlocfilehash: 627849acb902a721c80b98adbd16103b4729591b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 657f3cf204411bd51541437f05ff13a3f9b929c0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81114190"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85263047"
 ---
 # <a name="use-robo-3t-with-azure-cosmos-dbs-api-for-mongodb"></a>Использование Robo 3T с API Azure Cosmos DB для MongoDB
 
@@ -30,24 +30,24 @@ ms.locfileid: "81114190"
 
 1. Получите сведения о подключении для учетной записи Cosmos, настроенной с помощью API Azure Cosmos DB для MongoDB, следуя инструкциям [здесь](connect-mongodb-account.md).
 
-    ![Снимок экрана колонки строки подключения](./media/mongodb-robomongo/connectionstringblade.png)
+    :::image type="content" source="./media/mongodb-robomongo/connectionstringblade.png" alt-text="Снимок экрана колонки строки подключения":::
 2. Запустите приложение *Robomongo* .
 
 3. Нажмите кнопку подключения под меню **File** (Файл) для управления подключениями. Щелкните **Create** (Создать) в окне **MongoDB Connections** (Подключения MongoDB). Откроется окно **Connection Settings** (Параметры подключения).
 
 4. В окне **Connection Settings** (Параметры подключения) выберите имя. Затем найдите **узел** и **порт**, указанные в сведениях о подключении, полученных на шаге 1, и введите их в полях **Address** (Адрес) и **Port** (Порт) соответственно.
 
-    ![Снимок экрана Robomongo управления подключениями](./media/mongodb-robomongo/manageconnections.png)
+    :::image type="content" source="./media/mongodb-robomongo/manageconnections.png" alt-text="Снимок экрана Robomongo управления подключениями":::
 5. На вкладке **Authentication** (Аутентификация) установите флажок **Perform authentication** (Выполнять аутентификацию). Затем введите базу данных (по умолчанию — *Admin*), **имя пользователя** и **пароль**.
 **Имя пользователя** и **пароль** можно найти в данных подключения, полученных на шаге 1.
 
-    ![Снимок экрана вкладки проверки подлинности Robomongo](./media/mongodb-robomongo/authentication.png)
+    :::image type="content" source="./media/mongodb-robomongo/authentication.png" alt-text="Снимок экрана вкладки проверки подлинности Robomongo":::
 6. На вкладке **SSL** установите флажок **Use SSL protocol** (Использовать протокол SSL), затем измените значение параметра **Authentication Method** (Метод аутентификации) на **Self-signed Certificate** (Самозаверяющий сертификат).
 
-    ![Снимок экрана вкладки Robomongo SSL](./media/mongodb-robomongo/SSL.png)
+    :::image type="content" source="./media/mongodb-robomongo/SSL.png" alt-text="Снимок экрана вкладки Robomongo SSL":::
 7. Наконец, нажмите кнопку **Test** (Проверить), чтобы проверить возможность подключения, затем нажмите кнопку **Save** (Сохранить).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [использовать Studio 3T](mongodb-mongochef.md) с API Azure Cosmos DB для MongoDB.
 - Ознакомьтесь с [примерами](mongodb-samples.md) MongoDB с API Azure Cosmos DB для MongoDB.

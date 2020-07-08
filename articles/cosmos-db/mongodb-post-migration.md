@@ -4,15 +4,15 @@ description: Этот документ содержит методики опт�
 author: LuisBosquez
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/20/2020
 ms.author: lbosq
-ms.openlocfilehash: ce33651aae64d0a90264dde6da64b4044c6ce132
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 055604c399aa1641e823f24af499102bfff3ed0e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80063613"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85263098"
 ---
 # <a name="post-migration-optimization-steps-when-using-azure-cosmos-dbs-api-for-mongodb"></a>Действия по оптимизации после миграции при использовании API Azure Cosmos DB для MongoDB
 
@@ -35,7 +35,7 @@ ms.locfileid: "80063613"
 2. В области слева в [портал Azure](https://www.portal.azure.com/)откройте меню **все ресурсы** и найдите учетную запись Azure Cosmos DB, в которую были перенесены данные.
 3. Откройте колонку **строка подключения** . На правой панели содержатся все сведения, необходимые для успешного подключения к учетной записи.
 4. Используйте сведения о подключении в конфигурации приложения (или в других соответствующих местах), чтобы отразить Azure Cosmos DB API для подключения к MongoDB в приложении.
-![Строка соединения](./media/mongodb-post-migration/connection-string.png)
+:::image type="content" source="./media/mongodb-post-migration/connection-string.png" alt-text="Строка соединения":::
 
 Дополнительные сведения см. на странице [Подключение приложения MongoDB к Azure Cosmos DB](connect-mongodb-account.md) .
 
@@ -68,4 +68,4 @@ Azure Cosmos DB предлагает 5 четко определенных [ур
 * [Завершение срока действия данных с помощью API Azure Cosmos DB для MongoDB](mongodb-time-to-live.md)
 * [Настраиваемые уровни согласованности данных в Azure Cosmos DB](consistency-levels.md)
 * [Индексирование в Azure Cosmos DB](index-overview.md)
-* [Единицы запроса в Azure Cosmos DB](request-units.md)
+* [Единицы запросов в Azure Cosmos DB](request-units.md)

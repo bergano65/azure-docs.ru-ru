@@ -3,16 +3,16 @@ title: Управление ресурсами Azure Cosmos DB с помощью
 description: Узнайте, как подключиться к Azure Cosmos DB и управлять своими ресурсами с помощью Обозревателя службы хранилища Azure.
 author: deborahc
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/23/2019
 ms.author: dech
 ms.custom: seodec18, has-adal-ref
-ms.openlocfilehash: 2cf1ab2b9ec7e1094a0afa34973db3441c22ee5b
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: a43e49ab29780e718139b677b780443e5e31e2ab
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82982774"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85262248"
 ---
 # <a name="work-with-data-using-azure-storage-explorer"></a>Работа с данными с помощью Обозревателя службы хранилища Azure
 
@@ -31,23 +31,23 @@ ms.locfileid: "82982774"
 
 1. После установки **Обозреватель службы хранилища Azure**щелкните значок **подключаемого модуля** слева, как показано на следующем рисунке:
 
-   ![Значок подключаемого модуля](./media/storage-explorer/plug-in-icon.png)
+   :::image type="content" source="./media/storage-explorer/plug-in-icon.png" alt-text="Значок подключаемого модуля":::
 
 2. Выберите **Добавить учетную запись Azure**, а затем щелкните **Войти**.
 
-   ![Подключение к подписке Azure](./media/storage-explorer/connect-to-azure-subscription.png)
+   :::image type="content" source="./media/storage-explorer/connect-to-azure-subscription.png" alt-text="Подключение к подписке Azure":::
 
 2. В диалоговом окне **Вход в Azure** выберите **Вход**и введите учетные данные Azure.
 
-    ![Вход](./media/storage-explorer/sign-in.png)
+    :::image type="content" source="./media/storage-explorer/sign-in.png" alt-text="Выполните вход.":::
 
 3. Выберите свою подписку и нажмите кнопку **Применить**.
 
-    ![Применить](./media/storage-explorer/apply-subscription.png)
+    :::image type="content" source="./media/storage-explorer/apply-subscription.png" alt-text="Применить":::
 
     На панели Обозревателя будут показаны учетные записи в выбранной подписке.
 
-    ![Список учетных записей](./media/storage-explorer/account-list.png)
+    :::image type="content" source="./media/storage-explorer/account-list.png" alt-text="Список учетных записей":::
 
     Вы успешно подключились к **учетной записи Cosmos DB** в подписке Azure.
 
@@ -57,11 +57,11 @@ ms.locfileid: "82982774"
 
 1. Найдите элемент **Local and Attached** (Локальные и присоединенные) в дереве слева, щелкните правой кнопкой мыши **Учетные записи Cosmos DB** и выберите **Connect to Cosmos DB** (Подключиться к Cosmos DB).
 
-    ![Подключение к Cosmos DB с помощью строки подключения](./media/storage-explorer/connect-to-db-by-connection-string.png)
+    :::image type="content" source="./media/storage-explorer/connect-to-db-by-connection-string.png" alt-text="Подключение к Cosmos DB с помощью строки подключения":::
 
 2. Сейчас поддерживаются только API SQL и API службы таблиц. Выберите API, вставьте **строку подключения**, введите **метку для учетной записи** и нажмите кнопку **Далее**. Теперь проверьте сводные данные и нажмите кнопку **Подключиться**, чтобы подключиться к учетной записи Azure Cosmos DB. Сведения о получении основной строки подключения см. в разделе [Получение строки подключения](manage-with-powershell.md#list-keys).
 
-    ![Строка подключения](./media/storage-explorer/connection-string.png)
+    :::image type="content" source="./media/storage-explorer/connection-string.png" alt-text="Строка соединения":::
 
 ## <a name="connect-to-azure-cosmos-db-by-using-local-emulator"></a>Подключение к Azure Cosmos DB с помощью локального эмулятора
 
@@ -71,11 +71,11 @@ ms.locfileid: "82982774"
 
 2. Найдите элемент **Local and Attached** (Локальные и присоединенные) в дереве слева, щелкните правой кнопкой мыши **Учетные записи Cosmos DB** и выберите **Connect to Cosmos DB Emulator** (Подключиться к эмулятору Cosmos DB).
 
-    ![Подключение к Cosmos DB с помощью эмулятора](./media/storage-explorer/emulator-entry.png)
+    :::image type="content" source="./media/storage-explorer/emulator-entry.png" alt-text="Подключение к Cosmos DB с помощью эмулятора":::
 
 3. Сейчас поддерживается только API SQL. Вставьте **строку подключения**, введите **метку для учетной записи** и нажмите кнопку **Далее**. Теперь проверьте сводные данные и нажмите кнопку **Подключиться**, чтобы подключиться к учетной записи Azure Cosmos DB. Сведения о получении основной строки подключения см. в разделе [Получение строки подключения](manage-with-powershell.md#list-keys).
 
-    ![Диалоговое окно подключения к Cosmos DB с помощью эмулятора](./media/storage-explorer/emulator-dialog.png)
+    :::image type="content" source="./media/storage-explorer/emulator-dialog.png" alt-text="Диалоговое окно подключения к Cosmos DB с помощью эмулятора":::
 
 
 ## <a name="azure-cosmos-db-resource-management"></a>Управление ресурсами Azure Cosmos DB
@@ -95,52 +95,52 @@ ms.locfileid: "82982774"
 
 * Щелкнув правой кнопкой мыши учетную запись Azure Cosmos DB или базу данных и выбрав **Открыть на портале**, вы сможете управлять этим ресурсом в браузере на портале Azure.
 
-     ![Открытие ресурса на портале](./media/storage-explorer/open-in-portal.png)
+     :::image type="content" source="./media/storage-explorer/open-in-portal.png" alt-text="Открытие ресурса на портале":::
 
 * Вы также можете добавить на панель **быстрого доступа** учетную запись Azure Cosmos DB, базу данных или коллекцию.
 * С помощью функции **Найти здесь** вы сможете выполнять поиск по ключевым словам по выбранному пути.
 
-    ![Найти здесь](./media/storage-explorer/search-from-here.png)
+    :::image type="content" source="./media/storage-explorer/search-from-here.png" alt-text="Найти здесь":::
 
 ### <a name="database-and-collection-management"></a>Управление базами данных и коллекциями
 #### <a name="create-a-database"></a>Создание базы данных
 -   Щелкните правой кнопкой мыши учетную запись Azure Cosmos DB, выберите **Создать базу данных**, введите имя базы данных и нажмите клавишу **ВВОД**.
 
-    ![Создание базы данных](./media/storage-explorer/create-database.png)
+    :::image type="content" source="./media/storage-explorer/create-database.png" alt-text="Создание базы данных":::
 
 #### <a name="delete-a-database"></a>удаление базы данных.
 - Щелкните правой кнопкой мыши базу данных, выберите **Удалить базу данных**и нажмите кнопку **Да** во всплывающем окне. После удаления узла базы данных учетная запись Azure Cosmos DB будет обновлена автоматически.
 
-    ![Удаление базы данных 1](./media/storage-explorer/delete-database1.png)
+    :::image type="content" source="./media/storage-explorer/delete-database1.png" alt-text="Удаление базы данных 1":::
 
-    ![Удаление базы данных 2](./media/storage-explorer/delete-database2.png)
+    :::image type="content" source="./media/storage-explorer/delete-database2.png" alt-text="Удаление базы данных 2":::
 
 #### <a name="create-a-collection"></a>Создание коллекции
 1. Щелкните правой кнопкой мыши базу данных, выберите пункт **создать коллекцию**, а затем укажите следующие сведения, такие как **идентификатор коллекции**, **емкость хранилища**и т. д. Нажмите кнопку **ОК** для завершения.
 
-    ![Создание коллекции 1](./media/storage-explorer/create-collection.png)
+    :::image type="content" source="./media/storage-explorer/create-collection.png" alt-text="Создание коллекции 1":::
 
-    ![Создание коллекции 2](./media/storage-explorer/create-collection2.png)
+    :::image type="content" source="./media/storage-explorer/create-collection2.png" alt-text="Создание коллекции 2":::
 
 2. Выберите **Без ограничений**, чтобы иметь возможность указать ключ раздела, а затем нажмите кнопку **ОК**.
 
     Если при создании коллекции использовался ключ секции, то после создания коллекции изменить значение этого ключа невозможно.
 
-    ![Ключ секции](./media/storage-explorer/partitionkey.png)
+    :::image type="content" source="./media/storage-explorer/partitionkey.png" alt-text="Ключ секции":::
 
 #### <a name="delete-a-collection"></a>Удаление коллекции
 - Щелкните коллекцию правой кнопкой мыши, выберите **Удалить коллекцию**, а затем нажмите кнопку **Да** во всплывающем окне.
 
     После удаления узла коллекции база данных будет обновлена автоматически.
 
-    ![Удаление коллекции](./media/storage-explorer/delete-collection.png)
+    :::image type="content" source="./media/storage-explorer/delete-collection.png" alt-text="Удаление коллекции":::
 
 ### <a name="document-management"></a>Управление документами
 
 #### <a name="create-and-modify-documents"></a>Создание и изменение документов
 - Чтобы создать новый документ, откройте раздел **Документы** в левом окне, щелкните **Новый документ**, измените содержимое документа на правой панели и нажмите кнопку **Сохранить**. Вы также можете изменить существующий документ, а затем нажмите кнопку **Сохранить**. Чтобы отменить изменения, нажмите кнопку **Отменить**.
 
-    ![Document](./media/storage-explorer/document.png)
+    :::image type="content" source="./media/storage-explorer/document.png" alt-text="Document":::
 
 #### <a name="delete-a-document"></a>Удаление документа
 - Нажмите кнопку **Удалить**, чтобы удалить выбранный документ.
@@ -148,7 +148,7 @@ ms.locfileid: "82982774"
 #### <a name="query-for-documents"></a>Запросы для документов
 - Измените фильтр документов, указав [SQL-запрос](how-to-sql-query.md), и нажмите кнопку **Применить**.
 
-    ![Фильтр документов](./media/storage-explorer/document-filter.png)
+    :::image type="content" source="./media/storage-explorer/document-filter.png" alt-text="Фильтр документов":::
 
 
 
@@ -158,7 +158,7 @@ ms.locfileid: "82982774"
 1. Чтобы создать новую вершину, откройте раздел **Graph** (Граф) в окне слева, выберите **New Vertex** (Создать вершину), отредактируйте содержимое, а затем нажмите кнопку **ОК**.
 2. Чтобы изменить существующую вершину, щелкните значок карандаша справа.
 
-    ![График](./media/storage-explorer/vertex.png)
+    :::image type="content" source="./media/storage-explorer/vertex.png" alt-text="Graph":::
 
 #### <a name="delete-a-graph"></a>Удаление графа
 - Чтобы удалить вершину, щелкните значок корзины рядом с именем вершины.
@@ -166,7 +166,7 @@ ms.locfileid: "82982774"
 #### <a name="filter-for-graph"></a>Фильтр графа
 - Чтобы изменить фильтр графа, укажите [запрос Gremlin](gremlin-support.md) и нажмите кнопку**Применить фильтр**.
 
-    ![Фильтр графа](./media/storage-explorer/graph-filter.png)
+    :::image type="content" source="./media/storage-explorer/graph-filter.png" alt-text="Фильтр графа":::
 
 ### <a name="table-management"></a>Управление таблицей
 
@@ -174,29 +174,29 @@ ms.locfileid: "82982774"
 1. Чтобы создать новую таблицу, откройте раздел **Сущности** слева, нажмите кнопку **Добавить** и измените содержимое в диалоговом окне **Добавление сущности**. Чтобы добавить свойство, нажмите кнопку **Добавить свойство**, а затем щелкните **Вставить**.
 2. Чтобы изменить таблицу, нажмите кнопку **Изменить**, измените содержимое, а затем щелкните **Обновить**.
 
-    ![Таблица](./media/storage-explorer/table.png)
+    :::image type="content" source="./media/storage-explorer/table.png" alt-text="Таблица":::
 
 #### <a name="import-and-export-table"></a>Импорт и экспорт таблицы
 1. Чтобы импортировать таблицу, нажмите кнопку **Импорт** и выберите существующую таблицу.
 2. Чтобы экспортировать таблицу, нажмите кнопку **Экспорт** и выберите место назначения.
 
-    ![Импорт и экспорт таблицы](./media/storage-explorer/table-import-export.png)
+    :::image type="content" source="./media/storage-explorer/table-import-export.png" alt-text="Импорт и экспорт таблицы":::
 
 #### <a name="delete-entities"></a>Удаление сущностей
 - Выберите сущности и нажмите кнопку **Удалить**.
 
-    ![Удаление таблицы](./media/storage-explorer/table-delete.png)
+    :::image type="content" source="./media/storage-explorer/table-delete.png" alt-text="Удаление таблицы":::
 
 #### <a name="query-table"></a>Запрос к таблице
 - Нажмите кнопку **Запрос**, введите условие для запроса, а затем нажмите кнопку **Выполнить запрос**. Закройте панель запросов, нажав кнопку **Закрыть запрос**.
 
-    ![Запрос к таблице](./media/storage-explorer/table-query.png)
+    :::image type="content" source="./media/storage-explorer/table-query.png" alt-text="Запрос таблицы":::
 
 ### <a name="manage-stored-procedures-triggers-and-udfs"></a>Управление хранимыми процедурами, триггерами и определяемыми пользователем функциями
 * Чтобы создать хранимую процедуру, щелкните раздел **Хранимая процедура** в дереве слева правой кнопкой мыши, выберите **Создать хранимую процедуру**, введите имя процедуры слева, скрипты для этой хранимой процедуры в окне справа и нажмите кнопку **Создать**.
 * Вы также можете изменять существующие хранимые процедуры. Для этого дважды щелкните хранимую процедуру, внесите изменения и нажмите кнопку **Обновить**, чтобы сохранить изменения, или кнопку **Отменить**, чтобы отменить изменения.
 
-    ![Хранимая процедура](./media/storage-explorer/stored-procedure.png)
+    :::image type="content" source="./media/storage-explorer/stored-procedure.png" alt-text="Хранимая процедура":::
 * Операции для **триггеров** и **определяемых пользователем функций** похожи на **хранимые процедуры**.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
@@ -228,7 +228,7 @@ ms.locfileid: "82982774"
 3. Выполните команду `s_client -showcerts -connect microsoft.com:443`.
 4. Найдите самозаверяющие сертификаты. Если вы не знаете, какие из сертификатов являются самозаверяющими, то найдите сертификаты, в которых субъект ("s:") и издатель ("i:") совпадают.
 5.  Найдя самозаверяющие сертификаты, скопируйте и вставьте все содержимое от **---BEGIN CERTIFICATE---** до **---END CERTIFICATE---** включительно в новый CER-файл для каждого из них.
-6.  Откройте обозреватель службы хранилища и перейдите к разделу **изменение** > **SSL-сертификатов** > **Импорт сертификатов**. Используя средство выбора файлов, найдите, выберите и откройте созданные CER-файлы.
+6.  Откройте обозреватель службы хранилища и перейдите к разделу **изменение**  >  **SSL-сертификатов**  >  **Импорт сертификатов**. Используя средство выбора файлов, найдите, выберите и откройте созданные CER-файлы.
 
 Если вам не удалось найти самозаверяющие сертификаты, используя приведенные выше действия, то для дополнительных сведений свяжитесь с нами.
 
@@ -246,7 +246,7 @@ ms.locfileid: "82982774"
   - extaccounts-файл.
 - При выполнении входа проверьте наличие сообщений об ошибках в консоли средств разработчика (F12).
 
-![console](./media/storage-explorer/console.png)
+:::image type="content" source="./media/storage-explorer/console.png" alt-text="Консоль":::
 
 #### <a name="unable-to-see-the-authentication-page"></a>Не отображается страница аутентификации
 
@@ -279,19 +279,19 @@ ms.locfileid: "82982774"
 
 Отсутствие ответа после нажатия узла "Development" (Разработка) в узле "Local and Attached" (Локальные и присоединенные) в левом дереве узлов.  Такое поведение ожидаемо. Локальный эмулятор Azure Cosmos DB будет поддерживаться в следующем выпуске.
 
-![Узел разработки](./media/storage-explorer/development.png)
+:::image type="content" source="./media/storage-explorer/development.png" alt-text="Узел разработки":::
 
 ### <a name="attaching-azure-cosmos-db-account-in-local-and-attached-node-error"></a>Ошибка при подключении учетной записи Azure Cosmos DB в узле "Local and Attached" (Локальные и присоединенные)
 
 Если после присоединения учетной записи Azure Cosmos DB в узле "Local and Attached" (Локальные и присоединенные) отображается приведенная ниже ошибка, проверьте, используется ли правильная строка подключения.
 
-![Ошибка при подключении Azure Cosmos DB в узле "Local and Attached" (Локальные и присоединенные)](./media/storage-explorer/attached-error.png)
+:::image type="content" source="./media/storage-explorer/attached-error.png" alt-text="Ошибка при подключении Azure Cosmos DB в узле "Local and Attached" (Локальные и присоединенные)":::
 
 ### <a name="expand-azure-cosmos-db-node-error"></a>Ошибка развертывания узла Azure Cosmos DB
 
 При попытке развернуть узлы дерева слева вы можете увидеть ошибку.
 
-![Ошибка развертывания](./media/storage-explorer/expand-error.png)
+:::image type="content" source="./media/storage-explorer/expand-error.png" alt-text="Ошибка развертывания":::
 
 Попробуйте использовать рекомендации, приведенные ниже.
 
@@ -300,9 +300,9 @@ ms.locfileid: "82982774"
 
 ## <a name="contact-us"></a>Свяжитесь с нами
 
-Если ни одно из решений не работает, отправьте сообщение электронной почты в службу Azure Cosmos DB разработчиков инструментария[cosmosdbtooling@microsoft.com](mailto:cosmosdbtooling@microsoft.com)() с подробными сведениями об этой неполадке, чтобы устранить неполадки.
+Если ни одно из решений не работает, отправьте сообщение электронной почты в службу Azure Cosmos DB разработчиков инструментария ( [cosmosdbtooling@microsoft.com](mailto:cosmosdbtooling@microsoft.com) ) с подробными сведениями об этой неполадке, чтобы устранить неполадки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Чтобы узнать, как использовать Azure Cosmos DB в Обозревателе службы хранилища Azure, просмотрите это видео: [Использование Azure Cosmos DB в Обозревателе службы хранилища Azure](https://www.youtube.com/watch?v=iNIbg1DLgWo&feature=youtu.be).
 * Дополнительные сведения об Обозревателе службы хранилища и подключении дополнительных служб см. в статье о [начале работы с Обозревателем службы хранилища](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer).

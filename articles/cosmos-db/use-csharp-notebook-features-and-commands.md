@@ -3,15 +3,16 @@ title: Использование встроенных команд и функ�
 description: Узнайте, как использовать встроенные команды и функции для выполнения стандартных операций с помощью встроенных записных книжек Azure Cosmos DB C#.
 author: deborahc
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/19/2020
 ms.author: dech
-ms.openlocfilehash: 94cb23b1795a93462a0356fb0af215601edb9d64
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.custom: tracking-python
+ms.openlocfilehash: d9d48e825adeecd54375ce13c612d4a0c6eaaa18
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83662472"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85263421"
 ---
 # <a name="use-built-in-notebook-commands-and-features-in-azure-cosmos-db-c-notebooks-preview"></a>Использование встроенных команд и функций записных книжек в Azure Cosmos DB C# (предварительная версия)
 
@@ -114,14 +115,14 @@ for (int i = 0; i < 5; i++) {
 
 Так, в примере *GetingStarted_Csharp.ipynb* можно вывести переменную с нашим результатом, ``telemetryEvents``. См. весь пример в разделе [GettingStarted_Csharp.ipynb notebook](https://github.com/Azure-Samples/cosmos-notebooks/blob/master/CSharp_quickstarts/GettingStarted_CSharp.ipynb). 
 
-![Ячейка запроса Csharp](media/use-notebook-features-and-commands/csharp-query-cell.png)
+:::image type="content" source="media/use-notebook-features-and-commands/csharp-query-cell.png" alt-text="Ячейка запроса Csharp":::
 
-![Обозреватель данных nteract](media/use-notebook-features-and-commands/csharp-nteract-built-in-chart.png)
+:::image type="content" source="media/use-notebook-features-and-commands/csharp-nteract-built-in-chart.png" alt-text="Обозреватель данных nteract":::
 
 ## <a name="use-built-in-dictionary-viewer"></a>Использование встроенного средства просмотра словарей
 Для просмотра переменной можно использовать встроенное средство просмотра словарей. В ячейке вставьте переменную, которую необходимо визуализировать, в последней строке, которая автоматически отображается при запуске ячейки.
 
-![Встроенное средство просмотра словарей](media/use-notebook-features-and-commands/csharp-built-in-dictionary-viewer.png)
+:::image type="content" source="media/use-notebook-features-and-commands/csharp-built-in-dictionary-viewer.png" alt-text="Встроенное средство просмотра словарей":::
 
 ## <a name="upload-json-items-to-a-container"></a>Отправка элементов JSON в контейнер
 Магическую команду ``%%upload`` можно использовать для передачи данных из JSON-файла в указанный контейнер Azure Cosmos. Используйте для отправки элементов следующую команду:
@@ -159,7 +160,7 @@ Total RUs consumed : 25022.58
 ## <a name="reset-notebooks-workspace"></a>Сброс рабочей области записных книжек
 Чтобы сбросить рабочую область записных книжек до значений по умолчанию, выберите **Сбросить рабочую область** на панели команд. При этом будут удалены все установленные пользовательские пакеты и перезапущен сервер Jupyter. Ваши записные книжки, файлы и ресурсы Azure Cosmos затронуты не будут.  
 
-![Сброс рабочей области записных книжек](media/use-notebook-features-and-commands/reset-workspace.png)
+:::image type="content" source="media/use-notebook-features-and-commands/reset-workspace.png" alt-text="Сброс рабочей области записных книжек":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

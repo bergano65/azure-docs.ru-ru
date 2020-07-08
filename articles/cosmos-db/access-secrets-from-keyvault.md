@@ -6,15 +6,15 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/23/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 225221635f978e3d70cec4ce7e9d78d6b100b4fd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 50a9d5e3d3bbb608160ee160c5f1aede8f70e530
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80618759"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85262673"
 ---
 # <a name="secure-azure-cosmos-keys-using-azure-key-vault"></a>Защита ключей Azure Cosmos с помощью Azure Key Vault 
 
@@ -51,7 +51,7 @@ ms.locfileid: "80618759"
    * Укажите **имя** для секрета.
    * Укажите строку подключения вашей учетной записи Cosmos DB в поле **Значение**. Затем нажмите кнопку **Создать**.
 
-   ![Создание секрета](./media/access-secrets-from-keyvault/create-a-secret.png)
+   :::image type="content" source="./media/access-secrets-from-keyvault/create-a-secret.png" alt-text="Создание секрета":::
 
 4. После того как секрет будет создан, откройте его и скопируйте **идентификатор секрета в следующем формате. Этот идентификатор понадобится вам в следующем разделе. 
 
@@ -70,11 +70,11 @@ ms.locfileid: "80618759"
 
 5. После этого приложение будет развернуто. На портале Azure перейдите к развернутому веб-приложению и включите **управляемое удостоверение службы** этого приложения.  
 
-   ![Управляемое удостоверение службы](./media/access-secrets-from-keyvault/turn-on-managed-service-identity.png)
+   :::image type="content" source="./media/access-secrets-from-keyvault/turn-on-managed-service-identity.png" alt-text="Управляемое удостоверение службы":::
 
 Если вы запустите приложение сейчас, отобразится следующая ошибка. Она возникает, потому что вы не предоставили этому приложению прав на использование Key Vault.
 
-![Приложение развернуто без доступа](./media/access-secrets-from-keyvault/app-deployed-without-access.png)
+:::image type="content" source="./media/access-secrets-from-keyvault/app-deployed-without-access.png" alt-text="Приложение развернуто без доступа":::
 
 ## <a name="register-the-application--grant-permissions-to-read-the-key-vault"></a>Регистрация приложения и предоставление ему разрешений на чтение из Key Vault
 
@@ -84,15 +84,15 @@ ms.locfileid: "80618759"
 
 2. Откройте **политики доступа**, выберите **+ Добавить**, найдите развернутое веб-приложение, выберите разрешения и нажмите кнопку **ОК**.  
 
-   ![Добавление политики доступа](./media/access-secrets-from-keyvault/add-access-policy.png)
+   :::image type="content" source="./media/access-secrets-from-keyvault/add-access-policy.png" alt-text="Добавление политики доступа":::
 
 Теперь, запустив приложение, вы сможете прочитать секрет из Key Vault.
 
-![Развернутое приложение, в котором отображается секрет](./media/access-secrets-from-keyvault/app-deployed-with-access.png)
+:::image type="content" source="./media/access-secrets-from-keyvault/app-deployed-with-access.png" alt-text="Развернутое приложение, в котором отображается секрет":::
  
 Аналогичным образом вы можете предоставить пользователю доступ к Key Vault. Вам нужно добавить себя в Key Vault. Для этого выберите **Политики доступа**, а затем предоставьте все необходимые разрешения для запуска приложения из Visual Studio. Если это приложение запускается с вашего рабочего стола, оно использует ваш идентификатор.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения о настройке брандмауэра для Azure Cosmos DB см. в статье [Поддержка брандмауэра](firewall-support.md) .
 * Чтобы настроить конечную точку службы для виртуальной сети, перейдите к статье [Безопасный доступ к учетной записи Azure Cosmos DB с использованием конечной точки службы для виртуальной сети Azure](vnet-service-endpoint.md).
