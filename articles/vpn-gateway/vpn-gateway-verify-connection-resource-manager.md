@@ -4,15 +4,14 @@ description: В этой статье показано, как проверит�
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 05/16/2017
 ms.author: cherylmc
-ms.openlocfilehash: 40417b078577424b1ba13ce60f4f773a1c8fd4dc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 93a7c0bb15c17b6939d6d53018e4fed84b1ae020
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75780153"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84984567"
 ---
 # <a name="verify-a-vpn-gateway-connection"></a>Проверка подключения VPN-шлюза
 
@@ -45,6 +44,6 @@ ms.locfileid: "75780153"
 
 [!INCLUDE [Classic PowerShell](../../includes/vpn-gateway-verify-connection-ps-classic-include.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * В виртуальные сети можно добавлять виртуальные машины. Инструкции см. в статье о [создании виртуальной машины](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

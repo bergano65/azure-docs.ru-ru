@@ -8,12 +8,11 @@ ms.custom: hdinsightactive
 ms.topic: troubleshooting
 ms.date: 08/15/2019
 ms.author: hrasheed
-ms.openlocfilehash: 2c153d818136c5d8804dae72004dfaf17fd1bf7a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: eec5de7521c98e8147a8439844fd2a2a6b1bd2bc
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73494523"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86037500"
 ---
 # <a name="known-issues-for-apache-spark-cluster-on-hdinsight"></a>Известные проблемы в работе кластера Apache Spark в HDInsight
 
@@ -30,13 +29,17 @@ ms.locfileid: "73494523"
 
 2. Выполните следующую команду, чтобы найти идентификаторы приложений для интерактивных заданий, запущенных из Livy:
 
-        yarn application –list
+   ```bash
+   yarn application –list
+   ```
 
     Если задания запущены с помощью интерактивного сеанса Livy без явно заданных имен, по умолчанию используются имена Livy. Для сеанса Livy, запущенного [Jupyter Notebook](https://jupyter.org/), имя задания начинается с `remotesparkmagics_*` .
 
 3. Чтобы аннулировать эти задания, выполните следующую команду:
 
-        yarn application –kill <Application ID>
+   ```bash
+   yarn application –kill <Application ID>
+   ```
 
 После этого начинают выполняться новые задания.
 
@@ -115,7 +118,7 @@ java.io.FileNotFoundException: /var/log/spark/sparkdriver_hdiuser.log (Permissio
 
 2. Перезапустите записную книжку, которую вы пытались запустить. Теперь ресурсов должно быть достаточно для создания сеанса.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Обзор: Spark в Azure HDInsight](apache-spark-overview.md)
 

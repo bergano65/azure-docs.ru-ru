@@ -6,10 +6,9 @@ author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
 ms.openlocfilehash: 9bb22b12a7b3e972ff144bd121db4288801e2488
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81732941"
 ---
 # <a name="troubleshooting-application-insights-agent-formerly-named-status-monitor-v2"></a>Устранение неполадок агента Application Insights (прежнее название — монитор состояния v2)
@@ -24,9 +23,9 @@ ms.locfileid: "81732941"
 
 Если какая-либо из этих библиотек DLL находится в каталоге bin, мониторинг может завершиться ошибкой:
 
-- Microsoft. ApplicationInsights. dll
-- Microsoft. AspNet. Телеметрикоррелатион. dll
-- System. Diagnostics. DiagnosticSource. dll
+- Microsoft.ApplicationInsights.dll
+- Microsoft.AspNet.TelemetryCorrelation.dll
+- System.Diagnostics.DiagnosticSource.dll
 
 Некоторые из этих библиотек DLL включены в шаблоны приложений Visual Studio по умолчанию, даже если приложение не использует их.
 Для просмотра признаком поведения можно использовать средства устранения неполадок.
@@ -42,7 +41,7 @@ ms.locfileid: "81732941"
     FormattedMessage="Found 'System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51' assembly, skipping attaching redfield binaries" 
     ```
 
-- Передача данных из IISReset и приложений (без телеметрии). Исследование с помощью Sysinternals (Handle. exe и ListDLLs. exe):
+- Передача данных из IISReset и приложений (без телеметрии). Исследование с помощью Sysinternals (Handle.exe и ListDLLs.exe):
     ```
     .\handle64.exe -p w3wp | findstr /I "InstrumentationEngine AI. ApplicationInsights"
     E54: File  (R-D)   C:\Program Files\WindowsPowerShell\Modules\Az.ApplicationMonitor\content\Runtime\Microsoft.ApplicationInsights.RedfieldIISModule.dll
@@ -60,7 +59,7 @@ ms.locfileid: "81732941"
 Выполните команду enable на каждом веб-сервере, чтобы установить библиотеку DLL в глобальный кэш сборок каждого сервера.
 
 После выполнения команды Enable выполните следующие действия.
-1. Перейдите к общему каталогу конфигурации и найдите файл applicationHost. config.
+1. Перейдите к общему каталогу конфигурации и найдите файл applicationHost.config.
 2. Добавьте эту строку в раздел modules вашей конфигурации:
     ```
     <modules>
@@ -86,7 +85,7 @@ ms.locfileid: "81732941"
 ### <a name="troubleshooting-powershell"></a>Устранение неполадок PowerShell
 
 #### <a name="determine-which-modules-are-available"></a>Определение доступных модулей
-Чтобы определить, какие `Get-Module -ListAvailable` модули установлены, можно использовать команду.
+`Get-Module -ListAvailable`Чтобы определить, какие модули установлены, можно использовать команду.
 
 #### <a name="import-a-module-into-the-current-session"></a>Импорт модуля в текущий сеанс
 Если модуль не был загружен в сеанс PowerShell, его можно загрузить вручную с помощью `Import-Module <path to psd1>` команды.
@@ -95,7 +94,7 @@ ms.locfileid: "81732941"
 ### <a name="troubleshooting-the-application-insights-agent-module"></a>Устранение неполадок модуля агента Application Insights
 
 #### <a name="list-the-commands-available-in-the-application-insights-agent-module"></a>Список команд, доступных в модуле агента Application Insights
-Выполните команду `Get-Command -Module Az.ApplicationMonitor` , чтобы получить доступные команды:
+Выполните команду, `Get-Command -Module Az.ApplicationMonitor` чтобы получить доступные команды:
 
 ```
 CommandType     Name                                               Version    Source
@@ -131,14 +130,14 @@ Cmdlet          Start-ApplicationInsightsMonitoringTrace           0.4.0      Az
 
 ### <a name="collect-etw-logs-by-using-perfview"></a>Получение журналов ETW с помощью PerfView
 
-#### <a name="setup"></a>Настройка
+#### <a name="setup"></a>Установка
 
-1. Скачайте PerfView. exe и PerfView64. exe с сайта [GitHub](https://github.com/Microsoft/perfview/releases).
-2. Запустите PerfView64. exe.
+1. Скачайте PerfView.exe и PerfView64.exe из [GitHub](https://github.com/Microsoft/perfview/releases).
+2. Запустите PerfView64.exe.
 3. Разверните **Дополнительные параметры**.
 4. Снимите эти флажки:
     - **Архиваци**
-    - **AutoMerge**
+    - **Объединить**
     - **Коллекция символов .NET**
 5. Задайте следующие **дополнительные поставщики**:`61f6ca3b-4b5f-5602-fa60-759a2a2d1fbd,323adc25-e39b-5c87-8658-2c1af1a92dc5,925fa42b-9ef6-5fa7-10b8-56449d7a2040,f7d60e07-e910-5aca-bdd2-9de45b46c560,7c739bb9-7861-412e-ba50-bf30d95eae36,61f6ca3b-4b5f-5602-fa60-759a2a2d1fbd,323adc25-e39b-5c87-8658-2c1af1a92dc5,252e28f4-43f9-5771-197a-e8c7e750a984`
 

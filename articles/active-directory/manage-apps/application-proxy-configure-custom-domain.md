@@ -3,25 +3,24 @@ title: Личные домены в прокси приложения Azure AD |
 description: Настройка личных доменов и управление ими в прокси приложения Azure AD.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/24/2019
-ms.author: mimart
-ms.reviewer: harshja
+ms.author: kenwith
+ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fda84a68921500e8ba40aa6d04bfb5939f79a1ef
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: 646a32509921709711b208c263ac6b077555eac5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83736489"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84764916"
 ---
 # <a name="configure-custom-domains-with-azure-ad-application-proxy"></a>Настройка личных доменов с помощью прокси приложения Azure AD.
 
@@ -138,7 +137,7 @@ ms.locfileid: "83736489"
 
 Все управление сертификатами осуществляется через страницы отдельных приложений. Перейдите на страницу **Прокси приложения** для доступа к полю **Сертификат**.
 
-Один и тот же сертификат можно использовать для нескольких приложений. Если отправленный сертификат работает с другим приложением, он будет применен автоматически. При добавлении или настройке этого приложения вам не будет предложено отправить его снова. 
+После отправки сертификата для приложения он также будет автоматически применен к **новым** приложениям, которые используют тот же сертификат. Необходимо будет повторно отправить сертификат для существующих приложений в клиенте.
 
 По истечении срока действия сертификата вы получите предупреждение о том, что необходимо передать другой сертификат. Если сертификат отозван, пользователи смогут увидеть предупреждение системы безопасности при получении доступа к приложению. Чтобы обновить сертификат для приложения, перейдите на страницу **Прокси приложения** для этого приложения, выберите **Сертификат** и отправьте новый сертификат. Если старый сертификат не используется другими приложениями, он будет автоматически удален. 
 

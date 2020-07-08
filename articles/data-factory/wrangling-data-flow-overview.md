@@ -7,16 +7,16 @@ ms.reviewer: gamal
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/01/2019
-ms.openlocfilehash: 3b8632eaf7662d705235adaad7cd03d2e7e4904b
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
-ms.translationtype: MT
+ms.openlocfilehash: 203e5fcaa99f7aebeda34e6968f636ed72851ec8
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82626877"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85921530"
 ---
 # <a name="what-are-wrangling-data-flows"></a>Что такое потоки данных структурирование?
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+
 
 Организациям необходимо выполнять подготовку данных и структурирование для точного анализа сложных данных, которые постоянно растут каждый день. Подготовка данных необходима, чтобы организации могли использовать данные в различных бизнес-процессах и сократить время на ценность.
 
@@ -25,6 +25,9 @@ ms.locfileid: "82626877"
 Поток данных структурирование преобразует M, созданный Power Query интерактивным гибридным редактором, в код Spark для выполнения масштабирования в облаке.
 
 Потоки данных структурирование особенно полезны для инженеров по работе с данными или "интеграторов данных".
+
+> [!NOTE]
+> Поток данных структурирование в настоящее время доступных в общедоступной предварительной версии
 
 ## <a name="use-cases"></a>Варианты использования
 
@@ -45,7 +48,7 @@ ms.locfileid: "82626877"
 | Соединитель | Формат данных | Authentication type (Тип проверки подлинности) |
 | -- | -- | --|
 | [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md) | CSV, Parquet | Ключ учетной записи |
-| [Хранилище Azure Data Lake Gen1](connector-azure-data-lake-store.md) | CSV | Субъект-служба |
+| [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md) | CSV | Субъект-служба |
 | [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | CSV, Parquet | Ключ учетной записи, субъект-служба |
 | [База данных SQL Azure](connector-azure-sql-database.md) | - | Проверка подлинности SQL |
 | [Azure Synapse Analytics](connector-azure-sql-data-warehouse.md) | - | Проверка подлинности SQL |
@@ -64,6 +67,6 @@ ms.locfileid: "82626877"
 
 В настоящее время поток данных структурирование поддерживает запись только в один приемник.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как [создать поток данных структурирование](wrangling-data-flow-tutorial.md).

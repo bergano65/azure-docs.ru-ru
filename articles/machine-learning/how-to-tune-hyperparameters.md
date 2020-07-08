@@ -8,15 +8,14 @@ ms.reviewer: sgilley
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/30/2020
-ms.custom: seodec18
-ms.openlocfilehash: a58ea58ebf6fdc7d8521d204ac42fcbadeca39a4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.custom: seodec18, tracking-python
+ms.openlocfilehash: 93418369724286e8b8c967754b2fb37135094008
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82189306"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86027596"
 ---
 # <a name="tune-hyperparameters-for-your-model-with-azure-machine-learning"></a>Настройка параметров для модели с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -109,6 +108,7 @@ ms.locfileid: "82189306"
 
 ```Python
 from azureml.train.hyperdrive import RandomParameterSampling
+from azureml.train.hyperdrive import normal, uniform, choice
 param_sampling = RandomParameterSampling( {
         "learning_rate": normal(10, 3),
         "keep_probability": uniform(0.05, 0.1),
@@ -123,6 +123,7 @@ param_sampling = RandomParameterSampling( {
 
 ```Python
 from azureml.train.hyperdrive import GridParameterSampling
+from azureml.train.hyperdrive import choice
 param_sampling = GridParameterSampling( {
         "num_hidden_layers": choice(1, 2, 3),
         "batch_size": choice(16, 32)
@@ -136,10 +137,11 @@ param_sampling = GridParameterSampling( {
 
 При использовании байесовской выборки количество одновременных запусков влияет на эффективность процесса настройки. Обычно меньшее число параллельных запусков улучшает конвергенцию выборки, так как низкая степень параллелизма увеличивает число запусков, оптимизированных по результатам прошлых запусков.
 
-Выборка Байеса поддерживает `choice` `uniform`только `quniform` распределения по области поиска.
+Выборка Байеса поддерживает `choice` только `uniform` `quniform` распределения по области поиска.
 
 ```Python
 from azureml.train.hyperdrive import BayesianParameterSampling
+from azureml.train.hyperdrive import uniform, choice
 param_sampling = BayesianParameterSampling( {
         "learning_rate": uniform(0.05, 0.1),
         "batch_size": choice(16, 32, 64, 128)
@@ -339,7 +341,7 @@ resume_child_run_2 = Run(experiment, "resume_child_run_ID_2")
 child_runs_to_resume = [resume_child_run_1, resume_child_run_2]
 ```
 
-Вы можете настроить эксперимент по настройке параметров в качестве горячего запуска из предыдущего эксперимента или возобновления отдельных запусков обучения с `resume_from` помощью `resume_child_runs` необязательных параметров и в конфигурации.
+Вы можете настроить эксперимент по настройке параметров в качестве горячего запуска из предыдущего эксперимента или возобновления отдельных запусков обучения с помощью необязательных параметров `resume_from` и `resume_child_runs` в конфигурации.
 
 ```Python
 from azureml.train.hyperdrive import HyperDriveConfig
@@ -400,6 +402,6 @@ print('\n batch size:',parameter_values[7])
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Руководство по отслеживанию эксперимента](how-to-track-experiments.md)
 * [Развертывание обученной модели](how-to-deploy-and-where.md)

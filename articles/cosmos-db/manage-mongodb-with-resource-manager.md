@@ -3,15 +3,14 @@ title: Шаблоны Resource Manager для API Azure Cosmos DB для MongoD
 description: Использование шаблонов Azure Resource Manager для создания и настройки API Azure Cosmos DB для MongoDB
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/19/2020
 ms.author: mjbrown
-ms.openlocfilehash: 1fe2c96e3c469e41e12d64f27a6a3b3d16a1174d
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
-ms.translationtype: HT
+ms.openlocfilehash: b0a6bf3dd6585b600ff7283f6fd47cb87b68feda
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83684775"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86028170"
 ---
 # <a name="manage-azure-cosmos-db-mongodb-api-resources-using-azure-resource-manager-templates"></a>Управление ресурсами API MongoDB Azure Cosmos DB с использованием шаблонов Azure Resource Manager
 
@@ -33,7 +32,7 @@ ms.locfileid: "83684775"
 
 Этот шаблон служит для создания учетной записи Azure Cosmos для API MongoDB (3.2 или 3.6) с двумя коллекциями, которые совместно используют пропускную способность автомасштабирования на уровне базы данных. Этот шаблон также доступен для развертывания одним щелчком из коллекции шаблонов быстрого запуска Azure.
 
-[![Развертывание в Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-cosmosdb-mongodb-autoscale%2Fazuredeploy.json)
+[:::image type="content" source="../media/template-deployments/deploy-to-azure.svg" alt-text="Развертывание в Azure":::](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-cosmosdb-mongodb-autoscale%2Fazuredeploy.json)
 
 :::code language="json" source="~/quickstart-templates/101-cosmosdb-mongodb-autoscale/azuredeploy.json":::
 
@@ -43,7 +42,7 @@ ms.locfileid: "83684775"
 
 Этот шаблон служит для создания учетной записи Azure Cosmos для API MongoDB (3.2 или 3.6) с двумя коллекциями, которые совместно используют стандартную пропускную способность 400 ЕЗ/с (вручную) на уровне базы данных. Этот шаблон также доступен для развертывания одним щелчком из коллекции шаблонов быстрого запуска Azure.
 
-[![Развертывание в Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-cosmosdb-mongodb%2Fazuredeploy.json)
+[:::image type="content" source="../media/template-deployments/deploy-to-azure.svg" alt-text="Развертывание в Azure":::](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-cosmosdb-mongodb%2Fazuredeploy.json)
 
 :::code language="json" source="~/quickstart-templates/101-cosmosdb-mongodb/azuredeploy.json":::
 

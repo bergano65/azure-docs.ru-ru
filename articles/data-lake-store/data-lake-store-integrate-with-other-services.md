@@ -6,12 +6,11 @@ ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: ae27aba9fb6dc1421d224dab0c36373753acd5a2
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
-ms.translationtype: MT
+ms.openlocfilehash: f56d3a364e38d13931f8e07d749d3a5958dcee67
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82690530"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85322515"
 ---
 # <a name="integrating-azure-data-lake-storage-gen1-with-other-azure-services"></a>Интеграция Azure Data Lake Storage 1-го поколения с другими службами Azure
 Azure Data Lake Storage 1-го поколения можно использовать вместе с другими службами Azure для охвата более широкого диапазона сценариев. В следующей статье перечислены службы, с которыми может интегрироваться Data Lake Storage 1-го поколения.
@@ -39,7 +38,7 @@ Azure Data Lake Storage 1-го поколения можно использов�
 Azure Data Lake Storage 1-го поколения предоставляет средство командной строки AdlCopy для копирования данных из хранилища больших двоичных объектов Azure в учетную запись Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Копирование данных из больших двоичных объектов хранилища Azure в Data Lake Storage 1-го поколения](data-lake-store-copy-data-azure-storage-blob.md).
 
 ## <a name="copy-data-between-azure-sql-database-and-data-lake-storage-gen1"></a>Копирования данных между базой данных SQL Azure и Data Lake Storage 1-го поколения
-Можно использовать Apache Sqoop для импорта и экспорта данных между базой данных SQL Azure и Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Копирование данных между Data Lake Storage 1-го поколения и базой данных SQL Azure с помощью Sqoop](data-lake-store-data-transfer-sql-sqoop.md).
+Можно использовать Apache Sqoop для импорта и экспорта данных между базой данных SQL Azure и Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [копирование данных между Data Lake Storage 1-го поколения и базой данных SQL Azure с помощью Sqoop](data-lake-store-data-transfer-sql-sqoop.md).
 
 ## <a name="use-data-lake-storage-gen1-with-stream-analytics"></a>Использование Data Lake Storage 1-го поколения со Stream Analytics
 Data Lake Storage 1-го поколения можно использовать для сохранения потока выходных данных с помощью Azure Stream Analytics. Дополнительные сведения см. в статье [Потоковая передача данных из Azure Storage Blob в Data Lake Storage 1-го поколения с помощью Azure Stream Analytics](data-lake-store-stream-analytics.md).
@@ -59,7 +58,7 @@ Power BI можно использовать, чтобы импортирова�
 ## <a name="use-data-lake-storage-gen1-with-azure-event-hubs"></a>Использование Data Lake Storage 1-го поколения с центрами событий Azure
 Azure Data Lake Storage 1-го поколения можно использовать для архивации и сбора данных, полученных центрами событий Azure. Дополнительные сведения см. в статье [Запись данных из центров событий с помощью Data Lake Storage 1-го поколения](data-lake-store-archive-eventhub-capture.md).
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 * [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)
 * [Начало работы с Data Lake Storage 1-го поколения с помощью портала Azure](data-lake-store-get-started-portal.md)
 * [Начало работы с Data Lake Storage 1-го поколения с помощью PowerShell](data-lake-store-get-started-powershell.md)  

@@ -11,12 +11,11 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 02/11/2020
 ms.custom: seodec18
-ms.openlocfilehash: c3c7f59ecb3a06d80012917e2da4425a899859d7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: dd7a74ff775e6e07d1c32ed198ff028765fce45d
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79254252"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86037296"
 ---
 # <a name="send-events-to-a-time-series-insights-environment-by-using-an-event-hub"></a>Отправка событий в среду службы "Аналитика временных рядов" с помощью концентратора событий
 
@@ -55,13 +54,13 @@ ms.locfileid: "79254252"
 
 ## <a name="add-a-time-series-insights-instance"></a>Добавление экземпляра службы "Аналитика временных рядов"
 
-При обновлении службы "Аналитика временных рядов" используются экземпляры для добавления контекстных данных ко входящим данным телеметрии. Данные объединяются во время выполнения запроса на основе **идентификатора временного ряда**. **Идентификатор временного ряда** для примера проекта Виндмиллс, который мы используем далее в этой статье, — `id`это. Чтобы получить дополнительные сведения о экземплярах Time Series Insights и **идентификаторах временных рядов**, ознакомьтесь с [моделями временных рядов](./time-series-insights-update-tsm.md).
+При обновлении службы "Аналитика временных рядов" используются экземпляры для добавления контекстных данных ко входящим данным телеметрии. Данные объединяются во время выполнения запроса на основе **идентификатора временного ряда**. **Идентификатор временного ряда** для примера проекта Виндмиллс, который мы используем далее в этой статье, — это `id` . Чтобы получить дополнительные сведения о экземплярах Time Series Insights и **идентификаторах временных рядов**, ознакомьтесь с [моделями временных рядов](./concepts-model-overview.md).
 
 ### <a name="create-a-time-series-insights-event-source"></a>Создание источника событий службы "Аналитика временных рядов"
 
 1. Если вы еще не создали источник событий, создайте его, [выполнив соответствующие шаги](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-how-to-add-an-event-source-eventhub).
 
-1. Задайте значение для `timeSeriesId`. Дополнительные сведения о **идентификаторах временных рядов**см. в статье [модели временных рядов](./time-series-insights-update-tsm.md).
+1. Задайте значение для `timeSeriesId`. Дополнительные сведения о **идентификаторах временных рядов**см. в статье [модели временных рядов](./concepts-model-overview.md).
 
 ### <a name="push-events-to-windmills-sample"></a>Пример принудительной отправки событий в Виндмиллс
 
@@ -69,11 +68,11 @@ ms.locfileid: "79254252"
 
 1. Выберите экземпляр концентратора событий.
 
-1. Перейдите в раздел >  **политики общего доступа****MySendPolicy**. Скопируйте значение для параметра **строка подключения — первичный ключ**.
+1. Перейдите в раздел **политики общего доступа**  >  **MySendPolicy**. Скопируйте значение для параметра **строка подключения — первичный ключ**.
 
     [![Копирование значения строки подключения первичного ключа](media/send-events/configure-sample-code-connection-string.png)](media/send-events/configure-sample-code-connection-string.png#lightbox)
 
-1. Перейдите в расположение https://tsiclientsample.azurewebsites.net/windFarmGen.html. URL-адрес создает и запускает имитацию устройств Виндмилл.
+1. Перейдите к https://tsiclientsample.azurewebsites.net/windFarmGen.html. URL-адрес создает и запускает имитацию устройств Виндмилл.
 1. В поле **строка подключения концентратора событий** на веб-странице вставьте строку подключения, скопированную в [поле ввода Виндмилл](#push-events-to-windmills-sample).
   
     [![Вставка строки подключения первичного ключа в поле Event Hub Connection String (Строка подключения концентратора событий)](media/send-events/configure-wind-mill-sim.png)](media/send-events/configure-wind-mill-sim.png#lightbox)

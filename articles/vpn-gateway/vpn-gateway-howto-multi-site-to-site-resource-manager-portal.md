@@ -5,16 +5,15 @@ services: vpn-gateway
 titleSuffix: Azure VPN Gateway
 author: cherylmc
 ms.service: vpn-gateway
-ms.topic: article
+ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 10/09/2019
 ms.author: cherylmc
-ms.openlocfilehash: 7b438f2b966dc43d41b91a138b39193d230d5546
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 5a74f1ca8d1055885561a35dbd18899193d3924d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75779694"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84984139"
 ---
 # <a name="add-a-site-to-site-connection-to-a-vnet-with-an-existing-vpn-gateway-connection"></a>Добавление подключения типа "сеть — сеть" к виртуальной сети с помощью существующего подключения VPN-шлюза
 
@@ -57,7 +56,7 @@ ms.locfileid: "75779694"
 5. На странице **Добавление подключения** заполните следующие поля.
    
    * **Имя.** Имя, назначаемое сайту, к которому создается подключение.
-   * **Тип подключения.** Выберите **Сеть — сеть (IPSec)**.
+   * **Тип подключения:** Выберите **"сеть — сеть" (IPSec)**.
      
      ![Страница "Добавление подключения"](./media/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/addconnectionblade.png "Страница "Добавление подключения"")<br>
 
@@ -86,6 +85,6 @@ ms.locfileid: "75779694"
 
 [!INCLUDE [vpn-gateway-verify-connection-ps-rm](../../includes/vpn-gateway-verify-connection-ps-rm-include.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительную информацию о виртуальных машинах см. в [схеме обучения](/learn/paths/deploy-a-website-with-azure-virtual-machines/).

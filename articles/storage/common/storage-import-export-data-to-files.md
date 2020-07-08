@@ -4,16 +4,15 @@ description: Сведения о создании заданий импорта 
 author: alkohli
 services: storage
 ms.service: storage
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/08/2019
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 201d0c0a545c5ba7ae1bb0b5e119f7acb1ae362f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: cbff2cbed37a4cff91116596f1c20dc3d170cae2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79268305"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85513482"
 ---
 # <a name="use-azure-importexport-service-to-import-data-to-azure-files"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в службу "Файлы Azure"
 
@@ -30,7 +29,7 @@ ms.locfileid: "79268305"
 - Соответствующее количество дисков [поддерживаемых типов](storage-import-export-requirements.md#supported-disks).
 - Система с ОС Windows [поддерживаемой версии](storage-import-export-requirements.md#supported-operating-systems).
 - [Скачать WAImportExport версии 2](https://aka.ms/waiev2) в систему Windows. Распакуйте содержимое в папку по умолчанию: `waimportexport`. Например, `C:\WaImportExport`.
-- Учетная запись FedEx или DHL. Если вы хотите использовать перевозчик, отличный от FedEx/DHL, обратитесь в службу поддержки Azure Data Box по `adbops@microsoft.com`адресу.  
+- Учетная запись FedEx или DHL. Если вы хотите использовать перевозчик, отличный от FedEx/DHL, обратитесь в службу поддержки Azure Data Box по адресу `adbops@microsoft.com` .  
     - Учетная запись должна быть действительной, иметь баланс и возможности возврата.
     - Создайте номер отслеживания для задания экспорта.
     - Каждое задание должно иметь отдельный номер отслеживания. Несколько заданий с одним и тем же номером отслеживания не поддерживаются.
@@ -145,7 +144,7 @@ ms.locfileid: "79268305"
 
 4. В разделе **Сведения о возврате** сделайте следующее:
 
-    - В раскрывающемся списке выберите перевозчика. Если вы хотите использовать перевозчика, отличный от FedEx/DHL, выберите существующий параметр из раскрывающегося списка. Свяжитесь `adbops@microsoft.com` с командой operations Azure Data Box с информацией о перевозчике, который планируется использовать.
+    - В раскрывающемся списке выберите перевозчика. Если вы хотите использовать перевозчика, отличный от FedEx/DHL, выберите существующий параметр из раскрывающегося списка. Свяжитесь с командой Operations Azure Data Box `adbops@microsoft.com` с информацией о перевозчике, который планируется использовать.
     - Введите допустимый номер учетной записи, созданный в системе этого перевозчика. Корпорация Майкрософт использует эту учетную запись для отправки дисков обратно после завершения задания импорта.
     - Укажите полное и допустимое имя контактного лица, телефон, адрес электронной почты, адрес, город, почтовый индекс, страну (провинцию) и страну (регион).
 

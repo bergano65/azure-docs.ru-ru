@@ -4,17 +4,16 @@ description: Настройте многоуровневую сетевую бе
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: conceptual
-ms.date: 01/21/2020
+ms.topic: how-to
+ms.date: 06/04/2020
 ms.author: tamram
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 4b72f94548a5222fcb950141e983007efde7fe4e
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
-ms.translationtype: HT
+ms.openlocfilehash: 75f2e20db6ad1155e62691b711d8084a1feb5bae
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83871194"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85513325"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -223,7 +222,7 @@ ms.locfileid: "83871194"
     ```
 
     > [!TIP]
-    > Чтобы добавить правило для подсети в виртуальной сети, принадлежащей другому клиенту Azure AD, используйте полный идентификатор подсети в форме "/подписки/\<ИД_подписки\>/группыРесурсов/\<Имя_группыРесурсов\>/поставщики/Microsoft.Network/виртуальныеСети/\<Имя_виртуальнойСети\>/подсети/\<имя_подсети\>".
+    > Чтобы добавить правило для подсети, принадлежащей другому клиенту Azure AD, используйте полный идентификатор подсети в формате "/Subscriptions/ \<subscription-ID\> /ResourceGroups/ \<resourceGroup-Name\> /провидерс/Микрософт.Нетворк/виртуалнетворкс/ \<vNet-name\> /субнетс/ \<subnet-name\> ".
     >
     > Чтобы получить идентификатор подсети для виртуальной сети, принадлежащей другому клиенту Azure AD, можно использовать параметр **subscription**.
 
@@ -374,14 +373,14 @@ ms.locfileid: "83871194"
 |:------------------------ |:-------------------------- |:---------------------------------- |
 | Azure Backup             | Microsoft.RecoveryServices | Резервное копирование и восстановление неуправляемых дисков в виртуальных машинах IAAS. (Не требуется для управляемых дисков.) [Подробнее](/azure/backup/backup-introduction-to-azure-backup). |
 | Azure Data Box           | Microsoft.DataBox          | Позволяет импортировать данные в Azure с помощью Data Box. [Подробнее](/azure/databox/data-box-overview). |
-| Azure DevTest Labs       | Microsoft.DevTestLab       | Создание пользовательских образов и установка артефактов. [Подробнее](/azure/devtest-lab/devtest-lab-overview). |
+| Azure DevTest Labs       | Microsoft.DevTestLab       | Создание пользовательских образов и установка артефактов. [Подробнее](../../devtest-labs/devtest-lab-overview.md). |
 | Сетка событий Azure         | Microsoft.EventGrid        | Включение публикации событий в хранилище BLOB-объектов и предоставление службе "Сетка событий" разрешения на публикацию в хранилище очередей. См. дополнительные сведения о [событиях хранилища BLOB-объектов](/azure/event-grid/event-sources) и [публикации в хранилище очередей](/azure/event-grid/event-handlers). |
 | Центры событий Azure         | Microsoft.EventHub         | Архивация данных с помощью функции "Сбор" в Центрах событий. [Подробнее](/azure/event-hubs/event-hubs-capture-overview) |
 | Служба синхронизации файлов Azure          | Microsoft.StorageSync      | Позволяет преобразовать локальный файловый сервер в кэш для общих папок Azure. Таким образом создается возможность многосайтовой синхронизации, быстрого аварийного восстановления и резервного копирования на стороне облака. [Дополнительные сведения](../files/storage-sync-files-planning.md) |
 | Azure HDInsight          | Microsoft.HDInsight        | Подготавливает начальное содержимое файловой системы по умолчанию для нового кластера HDInsight. [Подробнее](/azure/hdinsight/hdinsight-hadoop-use-blob-storage). |
 | Импорт и экспорт Azure      | Microsoft.ImportExport     | Импорт данных в Azure и экспорт данных из Azure с помощью службы импорта и экспорта. [Подробнее](/azure/storage/common/storage-import-export-service).  |
 | Azure Monitor            | Microsoft.Insights         | Позволяет записывать в защищенную учетную запись хранения данные мониторинга, в том числе журналы ресурсов, журналы входа и аудита Azure Active Directory, а также журналы Microsoft Intune. [Подробнее](/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security). |
-| Сеть Azure         | Microsoft.Network.          | Хранение и анализ журналов сетевого трафика. [Подробнее](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview). |
+| Сеть Azure         | Microsoft.Network.          | Хранение и анализ журналов сетевого трафика, в том числе с помощью наблюдателя за сетями и служб Аналитика трафика. [Подробнее](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview). |
 | Azure Site Recovery      | Microsoft.SiteRecovery     | Включение репликации для аварийного восстановления виртуальных машин IaaS Azure при использовании кэша, источника или целевых учетных записей хранения с поддержкой брандмауэра.  [Подробнее](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication). |
 
 Параметр **Разрешить доверенные службы Майкрософт...** также позволяет определенному экземпляру следующих служб получать доступ к учетной записи хранения, если вы явно [назначите роль RBAC](storage-auth-aad.md#assign-rbac-roles-for-access-rights) [управляемому удостоверению, назначаемому системой](../../active-directory/managed-identities-azure-resources/overview.md), для этого экземпляра ресурса. В таком случае область доступа для этого экземпляра соответствует роли RBAC, назначенной управляемому удостоверению.
