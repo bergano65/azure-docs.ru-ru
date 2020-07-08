@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 88e9cdfa8ea4554a44ddfc25cde2b0eb2aed7a57
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
-ms.translationtype: HT
+ms.openlocfilehash: a9528b31bfd1be40b478f3c47fd0a16047a7f6ff
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83682702"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86028119"
 ---
 # <a name="platforms-and-tools-for-data-science-projects"></a>Платформы и средства для проектов обработки и анализа данных
 
@@ -110,16 +110,18 @@ Hive позволяет включать пользовательские фун
 
 Если вы организуете процесс TDSP на **Windows**, вам потребуется **диспетчер учетных данных Git (GCM)** для обмена данными с репозиториями Git. Перед установкой GCM необходимо сначала установить **Chocolaty**. Чтобы установить Chocolaty и GCM, выполните следующие команды в Windows PowerShell **с правами администратора**.  
 
-    iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
-    choco install git-credential-manager-for-windows -y
-    
+```powershell
+iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
+choco install git-credential-manager-for-windows -y
+```  
 
 ### <a name="install-git-on-linux-centos-machines"></a>Установка Git на компьютерах Linux (CentOS)
 
 Выполните следующую команду в оболочке bash, чтобы установить Git на компьютере Linux (CentOS):
 
-    sudo yum install git
-
+```powershell
+sudo yum install git
+```
 
 ### <a name="generate-public-ssh-key-on-linux-centos-machines"></a>Создание открытого ключа SSH на компьютерах Linux (CentOS)
 

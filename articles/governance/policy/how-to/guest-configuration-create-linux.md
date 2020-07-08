@@ -3,12 +3,12 @@ title: Создание политик гостевой конфигурации
 description: Узнайте, как создать политику гостевой конфигурации в Политике Azure для Linux.
 ms.date: 03/20/2020
 ms.topic: how-to
-ms.openlocfilehash: a636b63c80799f8bfe3dfd3a0eb37d1367cdcf0d
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 5ce6dce034c9479924901e5a20b38c343dd8bac6
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83654862"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86026718"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-linux"></a>Создание политик гостевой конфигурации для Windows
 
@@ -81,7 +81,7 @@ ms.locfileid: "83654862"
 
 #### <a name="configuration-requirements"></a>Требования настройки
 
-Имя настраиваемой конфигурации должно быть одинаковым везде. Имя ZIP-файла для пакета содержимого, имя конфигурации в MOF-файле и имя назначения гостя в шаблоне Resource Manager должны совпадать.
+Имя настраиваемой конфигурации должно быть одинаковым везде. Имя ZIP-файла для пакета содержимого, имя конфигурации в MOF-файле и имя назначения гостя в шаблоне Azure Resource Manager (шаблон ARM) должны быть одинаковыми.
 
 ### <a name="custom-guest-configuration-configuration-on-linux"></a>Настраиваемая гостевая конфигурации в Linux
 
@@ -347,7 +347,7 @@ describe file(attr_path) do
 end
 ```
 
-Командлеты `New-GuestConfigurationPolicy` и `Test-GuestConfigurationPolicyPackage` включают параметр с именем **Parameters**. Этот параметр принимает хэш-таблицу, содержащую все сведения о каждом параметре, и автоматически создает все необходимые разделы файлов, используемых для создания каждого определения Политики Azure.
+Командлеты `New-GuestConfigurationPolicy` и `Test-GuestConfigurationPolicyPackage` включают параметр с именем **Parameter**. Этот параметр принимает хэш-таблицу, содержащую все сведения о каждом параметре, и автоматически создает все необходимые разделы файлов, используемых для создания каждого определения Политики Azure.
 
 В следующем примере создается определение политики для аудита пути к файлу, где пользователь предоставляет путь во время назначения политики.
 
@@ -371,7 +371,7 @@ New-GuestConfigurationPolicy
     -DisplayName 'Audit Linux file path.' `
     -Description 'Audit that a file path exists on a Linux machine.' `
     -Path './policies' `
-    -Parameters $PolicyParameterInfo `
+    -Parameter $PolicyParameterInfo `
     -Version 1.0.0
 ```
 

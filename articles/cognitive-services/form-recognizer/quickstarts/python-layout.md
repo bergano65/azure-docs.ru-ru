@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 05/27/2020
 ms.author: pafarley
 ms.custom: tracking-python
-ms.openlocfilehash: c84e36f668a9b5cd7fdb61103300d971fdf6c0fa
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: 62cbaec3e4eaffb9ff3b29e97516ed7e039b38ff
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85563079"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86028115"
 ---
 # <a name="quickstart-extract-text-and-layout-information-using-the-form-recognizer-rest-api-with-python"></a>Краткое руководство. Извлечение текста и сведений о макете с использованием Распознавателя документов и Python
 
@@ -30,7 +30,7 @@ ms.locfileid: "85563079"
 - Документ формы. Вы можете скачать образ из [примера набора данных](https://go.microsoft.com/fwlink/?linkid=2090451) для этого краткого руководства.
 
 > [!NOTE]
-> В этом кратком руководстве используется документ, сохраненный локально. Чтобы узнать, как использовать удаленные файлы, доступ к которым осуществляется по URL-адресу, см. [справочную документацию](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeLayoutAsync).
+> В этом кратком руководстве используется документ, сохраненный локально. Чтобы узнать, как использовать удаленные файлы, доступ к которым осуществляется по URL-адресу, см. [справочную документацию](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeLayoutAsync).
 
 
 ## <a name="create-a-form-recognizer-resource"></a>Создание ресурса Распознавателя документов
@@ -39,7 +39,7 @@ ms.locfileid: "85563079"
 
 ## <a name="analyze-the-form-layout"></a>Анализ макета формы
 
-Для начала анализа макета запустите API **[анализа макета](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeLayoutAsync)** , используя приведенный ниже скрипт Python. Перед выполнением сценария внесите следующие изменения:
+Для начала анализа макета запустите API **[анализа макета](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeLayoutAsync)** , используя приведенный ниже скрипт Python. Перед выполнением сценария внесите следующие изменения:
 
 1. Замените `<Endpoint>` конечной точкой, полученной из подписки Распознавателя документов.
 1. Замените `<path to your form>` на путь к документу локальной формы.
@@ -90,7 +90,7 @@ https://cognitiveservice/formrecognizer/v2.0/layout/operations/54f0b076-4e38-43e
 
 ## <a name="get-the-layout-results"></a>Получение результатов макета
 
-После вызова API **анализа макета** вызовите API **[получения результатов анализа макета](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/GetAnalyzeLayoutResult)** , чтобы получить состояние операции и извлеченных данных. Добавьте следующий код в нижнюю часть сценария Python. При этом в новом вызове API код использует значение идентификатора операции. Этот сценарий вызывает API с регулярными интервалами, пока не станут доступны результаты. Мы рекомендуем установить интервал одну секунду или более.
+После вызова API **анализа макета** вызовите API **[получения результатов анализа макета](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/GetAnalyzeLayoutResult)** , чтобы получить состояние операции и извлеченных данных. Добавьте следующий код в нижнюю часть сценария Python. При этом в новом вызове API код использует значение идентификатора операции. Этот сценарий вызывает API с регулярными интервалами, пока не станут доступны результаты. Мы рекомендуем установить интервал одну секунду или более.
 
 ```python
 n_tries = 10
@@ -283,4 +283,4 @@ while n_try < n_tries:
 В этом кратком руководстве для извлечения макета текста накладной вы использовали REST API Распознавателя документов и Python. Для более подробного изучения API Распознавателя документов см. справочную документацию.
 
 > [!div class="nextstepaction"]
-> [Справочная документация по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeLayoutAsync)
+> [Справочная документация по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeLayoutAsync)

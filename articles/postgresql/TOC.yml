@@ -112,6 +112,8 @@
               href: concepts-data-access-and-security-private-link.md
             - name: Шифрование данных
               href: concepts-data-encryption-postgresql.md
+            - name: Двойное шифрование инфраструктуры
+              href: concepts-infrastructure-double-encryption.md
             - name: Базовые средства безопасности
               href: security-baseline.md
         - name: Непрерывность бизнес-процессов
@@ -307,6 +309,10 @@
               href: howto-data-encryption-cli.md
             - name: Проверка шифрования данных
               href: howto-data-encryption-validation.md
+        - name: Двойное шифрование инфраструктуры
+          items:
+            - name: Настройка двойного шифрования инфраструктуры
+              href: howto-double-encryption.md
         - name: Перезапуск сервера
           items:
             - name: Портал Azure

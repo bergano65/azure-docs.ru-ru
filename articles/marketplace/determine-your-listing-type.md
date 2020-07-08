@@ -5,14 +5,14 @@ author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 04/14/2020
+ms.date: 06/22/2020
 ms.author: dsindona
-ms.openlocfilehash: 92a24a59038eb74a6a2f6a738005ff8aadf35ff0
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 457ff90c21fee2b569fa24d90fffc6ce80cdf969
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83658061"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86027109"
 ---
 # <a name="determine-your-publishing-option"></a>Выбор варианта публикации
 
@@ -56,7 +56,7 @@ ms.locfileid: "83658061"
 Приложения **Azure Marketplace** являются техническими "структурными элементами", созданными на основе или для Azure и предназначенными для ИТ-специалистов и разработчиков. Консультационные услуги в Azure Marketplace — предложения профессиональных услуг, которые помогают клиентам начать работу с Azure или повысить ее эффективность.
 
 >[!Note]
->Перекрестное размещение (только для приложений SaaS) означает, что если предложение или пробная версия соответствуют критериям для технической и бизнес-аудитории, оно появится в обоих онлайн-магазинах. Дополнительные сведения о вариантах публикации см. ниже.
+>"Перекрестное перечисление" (только для приложений SaaS). Если предложение SaaS предназначено для технической аудитории (Azure Marketplace) и бизнес-аудитории (AppSource), можно выбрать категорию и (или) подкатегорию, применимые к любой из витрин. Учитывать, что предложение "перекрестное перечисление" должно основываться на преимуществах, которые расширяют обе аудитории. Щелкните [здесь](./gtm-offer-listing-best-practices.md#categories) , чтобы просмотреть категории, применимые к каждому витрине.
 
 ## <a name="choose-a-publishing-option"></a>Выбор варианта публикации
 
