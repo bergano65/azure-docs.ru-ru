@@ -1,34 +1,37 @@
 ---
 title: Отслеживание экспериментов машинного обучения с помощью MLflow
 titleSuffix: Azure Machine Learning
-description: Настройте MLflow для Машинного обучения Azure, чтобы вести журнал метрик и артефактов из моделей машинного обучения, созданных в кластерах Databricks, локальной среде или среде виртуальных машин.
+description: Настройте Млфлов с Машинное обучение Azure для записи метрик и артефактов из моделей машинного обучения и развертывания моделей машинного обучения в качестве веб-службы.
 services: machine-learning
 author: rastala
 ms.author: roastala
 ms.service: machine-learning
 ms.subservice: core
 ms.reviewer: nibaccam
-ms.topic: conceptual
-ms.date: 02/03/2020
-ms.custom: seodec18
-ms.openlocfilehash: 95567a177635dc7d7ed03404487e62c76db8bdac
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
-ms.translationtype: HT
+ms.topic: how-to
+ms.date: 06/04/2020
+ms.custom: tracking-python
+ms.openlocfilehash: 6dd3efb3e8bbe902d3c8267aff714a8e7f77acc0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83779124"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84738844"
 ---
-# <a name="track-models-metrics-with-mlflow-and-azure-machine-learning-preview"></a>Отслеживание метрик моделей с помощью MLflow и Машинного обучения Azure (предварительная версия)
+# <a name="track-model-metrics-and-deploy-ml-models-with-mlflow-and-azure-machine-learning-preview"></a>Мониторинг метрик модели и развертывание моделей машинного обучения с помощью Млфлов и Машинное обучение Azure (Предварительная версия)
 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-В этой статье показано, как включить универсальный код ресурса (URI) отслеживания MLflow и API ведения журнала (также называемые [отслеживанием MLflow](https://mlflow.org/docs/latest/quickstart.html#using-the-tracking-api)), чтобы связать Машинное обучение Azure с экспериментами MLflow. Это позволит осуществлять мониторинг и ведение журнала метрик и артефактов экспериментов в [рабочей области Машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/concept-azure-machine-learning-architecture#workspaces). Если вы уже используете отслеживание MLflow для экспериментов, то эта рабочая область обеспечит централизованное, безопасное и масштабируемое расположение для хранения метрик и моделей обучения.
+В этой статье показано, как включить универсальный код ресурса (URI) отслеживания MLflow и API ведения журнала (также называемые [отслеживанием MLflow](https://mlflow.org/docs/latest/quickstart.html#using-the-tracking-api)), чтобы связать Машинное обучение Azure с экспериментами MLflow.  Это позволит вам,
 
-<!--
-+ Deploy your MLflow experiments as an Azure Machine Learning web service. By deploying as a web service, you can apply the Azure Machine Learning monitoring and data drift detection functionalities to your production models. 
--->
++ Мониторинг и запись метрик и артефактов экспериментов в [рабочей области машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/concept-azure-machine-learning-architecture#workspaces). Если вы уже используете отслеживание MLflow для экспериментов, то эта рабочая область обеспечит централизованное, безопасное и масштабируемое расположение для хранения метрик и моделей обучения.
+
++ Развертывание экспериментов Млфлов в качестве веб-службы Машинное обучение Azure. Развертывание в качестве веб-службы позволяет применять функции мониторинга Машинное обучение Azure и распознавания отклонения данных в рабочих моделях. 
 
 [MLflow](https://www.mlflow.org) — это библиотека с открытым кодом для управления жизненным циклом экспериментов машинного обучения. Отслеживание MLflow — это компонент MLflow, который осуществляет мониторинг и ведение журнала метрик и артефактов обучения независимо от среды эксперимента. Это может быть локальный компьютер, удаленный целевой объект вычислений, виртуальная машина или кластер Azure Databricks. 
+
+>[!NOTE]
+> Как библиотека с открытым исходным кодом, Млфлов часто меняются. Таким образом, функции, предоставляемые через Машинное обучение Azure и интеграцию с Млфлов, следует рассматривать как предварительную версию, а не полностью поддерживать корпорацией Майкрософт.
 
 На следующей схеме показано, как с помощью отслеживания MLflow можно следить за метриками выполнения эксперимента и сохранять артефакты модели в рабочей области Машинного обучения Azure.
 
@@ -44,7 +47,7 @@ ms.locfileid: "83779124"
  Отслеживание MLflow предлагает функции ведения журнала метрик и хранилища артефактов, которые также доступны только при использовании [пакета SDK Python для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
 
 
-| | Отслеживание&nbsp;MLflow <!--& Deployment--> | Пакет SDK Python для Машинного обучения Azure |  Интерфейс командной строки службы "Машинное обучение Azure" | Студия машинного обучения Azure.|
+| | &nbsp;Развертывание & отслеживания млфлов | Пакет SDK Python для Машинного обучения Azure |  Интерфейс командной строки службы "Машинное обучение Azure" | Студия машинного обучения Azure.|
 |---|---|---|---|---|
 | Управление рабочей областью |   | ✓ | ✓ | ✓ |
 | Использование хранилищ данных  |   | ✓ | ✓ | |
@@ -52,11 +55,10 @@ ms.locfileid: "83779124"
 | Передача артефактов | ✓ | ✓ |   | |
 | Просмотр метрик     | ✓ | ✓ | ✓ | ✓ |
 | Управление вычислительными ресурсами   |   | ✓ | ✓ | ✓ |
+| Развертывание моделей    | ✓ | ✓ | ✓ | ✓ |
+|Мониторинг производительности модели||✓|  |   |
+| Определение смещения данных |   | ✓ |   | ✓ |
 
-<!--| Deploy models    | ✓ | ✓ | ✓ | ✓ |
-|Monitor model performance||✓|  |   |
-| Detect data drift |   | ✓ |   | ✓ |
--->
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Установите MLflow.](https://mlflow.org/docs/latest/quickstart.html)
@@ -72,9 +74,6 @@ ms.locfileid: "83779124"
 ```shell
 pip install azureml-mlflow
 ```
-
->[!NOTE]
->Пространство имен azureml.contrib часто изменяется, так как мы работаем над улучшением службы. Поэтому все, что доступно в этом пространстве имен, считается предварительными версиями компонентов, поддержка которых корпорацией Майкрософт ограничена.
 
 Импортируйте классы `mlflow` и [`Workspace`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py), чтобы получить доступ к универсальному коду ресурса (URI) отслеживания MLflow и настроить рабочую область.
 
@@ -229,17 +228,17 @@ run.get_metrics()
 ws.get_details()
 ```
 
-<!-- ## Deploy MLflow models as a web service
+## <a name="deploy-mlflow-models-as-a-web-service"></a>Развертывание моделей Млфлов в качестве веб-службы
 
-Deploying your MLflow experiments as an Azure Machine Learning web service allows you to leverage the Azure Machine Learning model management and data drift detection capabilities and apply them to your production models.
+Развертывание экспериментов Млфлов в качестве веб-службы Машинное обучение Azure позволяет использовать возможности Машинное обучение Azure управления моделями и функции обнаружения и смещения данных, а также применять их к рабочим моделям.
 
-The following diagram demonstrates that with the MLflow deploy API you can deploy your existing MLflow models as an Azure Machine Learning web service, despite their frameworks--PyTorch, Tensorflow, scikit-learn, ONNX, etc., and manage your production models in your workspace.
+На следующей схеме показано, что с помощью API развертывания Млфлов можно развернуть существующие модели Млфлов в качестве веб-службы Машинное обучение Azure, несмотря на их платформы — PyTorch, Tensorflow, scikit-учиться, ONNX и т. д., а также управлять производственными моделями в рабочей области.
 
-![mlflow with azure machine learning diagram](./media/how-to-use-mlflow/mlflow-diagram-deploy.png)
+![Схема взаимодействия MLflow с Машинным обучением Azure](./media/how-to-use-mlflow/mlflow-diagram-deploy.png)
 
-### Log your model
+### <a name="log-your-model"></a>Регистрация модели
 
-Before you can deploy, be sure that your model is saved so you can reference it and its path location for deployment. In your training script, there should be code similar to the following [mlflow.sklearn.log_model()](https://www.mlflow.org/docs/latest/python_api/mlflow.sklearn.html) method, that saves your model to the specified outputs directory. 
+Перед развертыванием убедитесь, что модель сохранена, чтобы можно было ссылаться на нее и ее расположение для развертывания. В скрипте обучения должен быть указан код, аналогичный следующему методу [млфлов. sklearn. log_model ()](https://www.mlflow.org/docs/latest/python_api/mlflow.sklearn.html) , который сохраняет модель в заданном каталоге Outputs. 
 
 ```python
 # change sklearn to pytorch, tensorflow, etc. based on your experiment's framework 
@@ -249,11 +248,11 @@ import mlflow.sklearn
 mlflow.sklearn.log_model(regression_model, model_save_path)
 ```
 >[!NOTE]
-> Include the `conda_env` parameter to pass a dictionary representation of the dependencies and environment this model should be run in.
+> Включите `conda_env` параметр, чтобы передать представление словаря зависимостей и среды, в которых должна выполняться эта модель.
 
-### Retrieve model from previous run
+### <a name="retrieve-model-from-previous-run"></a>Получение модели из предыдущего запуска
 
-To retrieve the run, you need the run ID and the path in run history of where the model was saved. 
+Для получения выполнения требуется идентификатор запуска и путь в журнале выполнения, где была сохранена модель. 
 
 ```python
 # gets the list of runs for your experiment as an array
@@ -266,15 +265,15 @@ runid = runs[0].id
 model_save_path = 'model'
 ```
 
-### Deploy the model
+### <a name="deploy-the-model"></a>Развертывание модели
 
-Use the Azure Machine Learning SDK to deploy the model as a web service.
+Используйте пакет SDK для Машинное обучение Azure, чтобы развернуть модель как веб-службу.
 
-First, specify the deployment configuration. Azure Container Instance (ACI) is a suitable choice for a quick dev-test deployment, while Azure Kubernetes Service (AKS) is suitable for scalable production deployments.
+Сначала укажите конфигурацию развертывания. Экземпляр контейнера Azure (ACI) подходит для быстрого развертывания в режиме разработки и тестирования, а служба Azure Kubernetes (AKS) подходит для масштабируемых рабочих развертываний.
 
-#### Deploy to ACI
+#### <a name="deploy-to-aci"></a>Развертывание в ACI
 
-Set up your deployment configuration with the [deploy_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aciwebservice?view=azure-ml-py#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none-) method. You can also add tags and descriptions to help keep track of your web service.
+Настройте конфигурацию развертывания с помощью метода [deploy_configuration ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aciwebservice?view=azure-ml-py#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none-) . Кроме того, можно добавить теги и описания, которые помогут отследить веб-службу.
 
 ```python
 from azureml.core.webservice import AciWebservice, Webservice
@@ -287,7 +286,7 @@ aci_config = AciWebservice.deploy_configuration(cpu_cores=1,
                                                 location='eastus2')
 ```
 
-Then, register and deploy the model by using the Azure Machine Learning SDK [deploy](/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) method. 
+Затем зарегистрируйте и разверните модель с помощью метода [развертывания](/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) машинное обучение Azure SDK. 
 
 ```python
 (webservice,model) = mlflow.azureml.deploy( model_uri='runs:/{}/{}'.format(run.id, model_path),
@@ -299,9 +298,9 @@ Then, register and deploy the model by using the Azure Machine Learning SDK [dep
 
 webservice.wait_for_deployment(show_output=True)
 ```
-#### Deploy to AKS
+#### <a name="deploy-to-aks"></a>Развертывание в AKS
 
-To deploy to AKS, first create an AKS cluster. Create an AKS cluster using the [ComputeTarget.create()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.computetarget?view=azure-ml-py#create-workspace--name--provisioning-configuration-) method. It may take 20-25 minutes to create a new cluster.
+Чтобы выполнить развертывание в AKS, сначала создайте кластер AKS. Создайте кластер AKS с помощью метода [ComputeTarget. Create ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.computetarget?view=azure-ml-py#create-workspace--name--provisioning-configuration-) . Создание нового кластера может занять 20-25 минут.
 
 ```python
 from azureml.core.compute import AksCompute, ComputeTarget
@@ -321,7 +320,7 @@ aks_target.wait_for_completion(show_output = True)
 print(aks_target.provisioning_state)
 print(aks_target.provisioning_errors)
 ```
-Set up your deployment configuration with the [deploy_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aciwebservice?view=azure-ml-py#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none-) method. You can also add tags and descriptions to help keep track of your web service.
+Настройте конфигурацию развертывания с помощью метода [deploy_configuration ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aciwebservice?view=azure-ml-py#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none-) . Кроме того, можно добавить теги и описания, которые помогут отследить веб-службу.
 
 ```python
 from azureml.core.webservice import Webservice, AksWebservice
@@ -346,25 +345,23 @@ from azureml.core.webservice import AksWebservice, Webservice
 webservice.wait_for_deployment()
 ```
 
-The service deployment can take several minutes.
+Развертывание службы может занять несколько минут.
 
-## Clean up resources
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
-If you don't plan to use the logged metrics and artifacts in your workspace, the ability to delete them individually is currently unavailable. Instead, delete the resource group that contains the storage account and workspace, so you don't incur any charges:
+Если вы не планируете использовать зарегистрированные метрики и артефакты в рабочей области, возможность удалить их по отдельности в данный момент недоступна. Вместо этого удалите группу ресурсов, содержащую учетную запись хранения и рабочую область, чтобы не взиматься плата.
 
-1. In the Azure portal, select **Resource groups** on the far left.
+1. На портале Azure выберите **Группы ресурсов** в левой части окна.
 
-   ![Delete in the Azure portal](./media/how-to-use-mlflow/delete-resources.png)
+   ![Удаление ресурсов на портале Azure](./media/how-to-use-mlflow/delete-resources.png)
 
-1. From the list, select the resource group you created.
+1. В списке выберите созданную группу ресурсов.
 
-1. Select **Delete resource group**.
+1. Выберите **Удалить группу ресурсов**.
 
-1. Enter the resource group name. Then select **Delete**.
+1. Введите имя группы ресурсов. Теперь щелкните **Удалить**.
 
- -->
-
- ## <a name="example-notebooks"></a>Примеры записных книжек
+## <a name="example-notebooks"></a>Примеры записных книжек
 
 В примере использования [MLflow с записными книжками Машинного обучения Azure](https://aka.ms/azureml-mlflow-examples) демонстрируются и поясняются основные понятия, представленные в этой статье.
 

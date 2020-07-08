@@ -4,15 +4,15 @@ description: Из этой статьи вы узнаете, как подклю
 services: bastion
 author: cherylmc
 ms.service: bastion
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/24/2020
 ms.author: cherylmc
-ms.openlocfilehash: 381f45a51002188c72174cff83c26b829912a0b9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 98f1f3d02d8433dd88fed844a587a961ea9f8c82
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77596833"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84744295"
 ---
 # <a name="connect-using-ssh-to-a-linux-virtual-machine-using-azure-bastion"></a>Подключение по протоколу SSH к виртуальной машине Linux с помощью Azure бастиона
 
@@ -23,9 +23,9 @@ ms.locfileid: "77596833"
 * Закрытый ключ, который вы вводите вручную
 * Файл, содержащий сведения о закрытом ключе
 
-Закрытый ключ SSH должен иметь формат, который начинается с `"-----BEGIN RSA PRIVATE KEY-----"` и заканчивается на. `"-----END RSA PRIVATE KEY-----"`
+Закрытый ключ SSH должен иметь формат, который начинается с `"-----BEGIN RSA PRIVATE KEY-----"` и заканчивается на `"-----END RSA PRIVATE KEY-----"` .
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Убедитесь, что вы настроили узел бастиона Azure для виртуальной сети, в которой находится виртуальная машина. Дополнительные сведения см. в статье [Создание узла бастиона Azure](bastion-create-host-portal.md). После подготовки и развертывания службы бастиона в виртуальной сети ее можно использовать для подключения к любой виртуальной машине в этой виртуальной сети. 
 

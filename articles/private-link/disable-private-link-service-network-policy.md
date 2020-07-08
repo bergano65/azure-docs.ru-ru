@@ -4,19 +4,19 @@ description: Узнайте, как отключить политики сети
 services: private-link
 author: malopMSFT
 ms.service: private-link
-ms.topic: article
+ms.topic: how-to
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: 4c6bd64d141341e0b7fa5641e04320a95d7951bb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1062f126da8be6b37f6b52eee520425b3edcde16
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75453008"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84744346"
 ---
 # <a name="disable-network-policies-for-private-link-service-source-ip"></a>Отключить политики сети для исходного IP-адреса службы частной связи
 
-Чтобы выбрать исходный IP-адрес для службы частной связи, в подсети требуется явный параметр `privateLinkServiceNetworkPolicies` отключения. Этот параметр применим только к конкретному частному IP-адресу, выбранному в качестве исходного IP-адреса службы частной связи. Для других ресурсов в подсети управление доступом осуществляется на основе определения правил безопасности группы безопасности сети (NSG). 
+Чтобы выбрать исходный IP-адрес для службы частной связи, в подсети требуется явный параметр отключения `privateLinkServiceNetworkPolicies` . Этот параметр применим только к конкретному частному IP-адресу, выбранному в качестве исходного IP-адреса службы частной связи. Для других ресурсов в подсети управление доступом осуществляется на основе определения правил безопасности группы безопасности сети (NSG). 
  
 При использовании любого клиента Azure (PowerShell, CLI или шаблонов) для изменения этого свойства требуется дополнительный шаг. Вы можете отключить политику с помощью Cloud Shell из портал Azure или локальной установки Azure PowerShell, Azure CLI или использовать шаблоны Azure Resource Manager.  
  
@@ -24,13 +24,15 @@ ms.locfileid: "75453008"
 
 ## <a name="using-azure-powershell"></a>Использование Azure PowerShell
 В этом разделе описывается, как отключить политики частной конечной точки подсети с помощью Azure PowerShell.
+В коде замените "default" именем виртуальной подсети.
 
 ```azurepowershell
+$virtualSubnetName = "default"
 $virtualNetwork= Get-AzVirtualNetwork `
   -Name "myVirtualNetwork" ` 
-  -ResourceGroupName "myResourceGroup"  
+  -ResourceGroupName "myResourceGroup"
    
-($virtualNetwork | Select -ExpandProperty subnets | Where-Object  {$_.Name -eq 'default'} ).privateLinkServiceNetworkPolicies = "Disabled"  
+($virtualNetwork | Select -ExpandProperty subnets | Where-Object  {$_.Name -eq $virtualSubnetName} ).privateLinkServiceNetworkPolicies = "Disabled"  
  
 $virtualNetwork | Set-AzVirtualNetwork 
 ```
@@ -70,6 +72,6 @@ az network vnet subnet update \
 } 
  
 ```
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о [частной конечной точке Azure](private-endpoint-overview.md)
  

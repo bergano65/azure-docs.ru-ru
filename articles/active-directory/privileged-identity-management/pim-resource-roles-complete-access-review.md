@@ -7,7 +7,7 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
@@ -15,12 +15,12 @@ ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e45249245aaab97070b7e774d4b6bab6827bdc9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1601c9fc750df1f8e18bdaa072ede1b5ee164329
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74021983"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84743819"
 ---
 # <a name="complete-an-access-review-of-azure-resource-roles-in-privileged-identity-management"></a>Выполните проверку доступа к ролям ресурсов Azure в управление привилегированными пользователями
 
@@ -56,7 +56,7 @@ ms.locfileid: "74021983"
 
 После завершения проверки доступа нажмите кнопку **Применить** , чтобы реализовать результат проверки. Если в процессе проверки пользователю было отказано в доступе, то это приведет к удалению назначенной пользователю роли.  
 
-### <a name="delete"></a>DELETE
+### <a name="delete"></a>Удалить
 
 Если проверка вам больше не нужна, удалите ее. Выберите **Удалить** Yo удалить проверку из службы Управление привилегированными пользователями.
 
@@ -72,7 +72,7 @@ ms.locfileid: "74021983"
 
 ![Список страниц рецензентов и имя участника-пользователя](media/pim-resource-roles-complete-access-review/rbac-access-review-reviewers.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Запуск проверки доступа для ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-start-access-review.md)
 - [Выполните проверку доступа к моим ролям ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-perform-access-review.md)

@@ -7,18 +7,18 @@ author: curtand
 manager: daveba
 editor: ''
 ms.service: active-directory
-ms.topic: conceptual
+ms.topic: how-to
 ms.workload: identity
 ms.subservice: pim
 ms.date: 10/18/2019
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 474f2634e6f7ddc1840548c39ae86cb54c3bf08e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4d2ba5806e23aa87e5d7787be300512444f95b25
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78299692"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84742153"
 ---
 # <a name="troubleshoot-a-problem-with-privileged-identity-management"></a>Устранение неполадок с управление привилегированными пользователями
 
@@ -30,7 +30,7 @@ ms.locfileid: "78299692"
 
 Как активный владелец или администратор доступа пользователей для ресурса Azure вы можете увидеть ресурс в управление привилегированными пользователями но не можете выполнять какие-либо действия, такие как создание подходящего назначения или Просмотр списка назначений ролей на странице обзора ресурсов. Любое из этих действий приводит к ошибке авторизации.
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта проблема может возникать, когда роль администратора доступа пользователей для субъекта-службы PIM была случайно удалена из подписки. Для того чтобы служба управление привилегированными пользователями могла получить доступ к ресурсам Azure, субъекту-службе службы MS PIM всегда должна быть назначена [роль администратора доступа пользователей](../../role-based-access-control/built-in-roles.md#user-access-administrator) по подписке Azure.
 

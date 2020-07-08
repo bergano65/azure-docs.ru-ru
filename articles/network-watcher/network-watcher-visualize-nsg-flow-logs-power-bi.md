@@ -7,17 +7,17 @@ documentationcenter: na
 author: damendo
 ms.service: network-watcher
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 955e13b88037aa42b59707698549b1c980720990
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1ef2e32614b5a57208f91ac0fe5a4c17affa38e4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76840610"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84738555"
 ---
 # <a name="visualizing-network-security-group-flow-logs-with-power-bi"></a>Визуализация журналов потоков для групп безопасности сети с помощью Power BI
 
@@ -42,7 +42,7 @@ ms.locfileid: "76840610"
 
 Вы можете изменить предложенный шаблон, чтобы добавить в него новые данные и визуальные элементы или изменять запросы в соответствии со своими задачами.
 
-## <a name="setup"></a>Настройка
+## <a name="setup"></a>Установка
 
 Прежде чем мы начнем работу, вам необходимо включить журналы потоков для одной или нескольких групп безопасности сети в вашей учетной записи. Инструкции по включению журналов потоков для групп безопасности сети есть в статье [Introduction to flow logging for Network Security Groups](network-watcher-nsg-flow-logging-overview.md) (Введение в журналы потоков для групп безопасности сети).
 
@@ -119,7 +119,7 @@ ms.locfileid: "76840610"
 
 * Если у вас очень много журналов для анализа, мы рекомендуем использовать другое хранилище данных, например Data Lake или SQL Server.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как визуализировать журналы потоков для групп безопасности сети с помощью Elastick Stack, прочитав статью [Визуализация журнала потоков для групп безопасности сети Наблюдателя за сетями Azure с помощью инструментов с открытым кодом](network-watcher-visualize-nsg-flow-logs-open-source-tools.md).
 

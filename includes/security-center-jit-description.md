@@ -4,20 +4,18 @@ ms.author: memildin
 manager: rkarlin
 ms.date: 02/24/2020
 ms.topic: include
-ms.openlocfilehash: 78bf29a170152666d82ec26504ee8f61ed90636a
-ms.sourcegitcommit: acc558d79d665c8d6a5f9e1689211da623ded90a
+ms.openlocfilehash: 5efa8b845952c8ab5b66b781fb534c3754239b4e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82616033"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84677442"
 ---
 ## <a name="attack-scenario"></a>Сценарий атаки
 
 Целью атак методом подбора часто становятся порты управления как средство получения доступа к виртуальной машине. В случае успешной атаки злоумышленник может установить контроль над виртуальной машиной и закрепиться в вашей среде.
 
 Один из способов снижения вероятности атаки методом подбора — ограничить количество времени, в течение которого порт открыт. Порты управления не обязательно открывать в любое время. Они должны быть открыты только при подключении к виртуальной машине, например для выполнения задач по управлению или обслуживанию. Если включена JIT, центр безопасности использует [группу безопасности сети](../articles/virtual-network/security-overview.md#security-rules) (NSG) и правила брандмауэра Azure, которые ограничивают доступ к портам управления, чтобы они не могли быть направлены злоумышленниками.
-
-![Сценарий JIT-доступа](../articles/security-center/media/security-center-just-in-time/just-in-time-scenario.png)
 
 ## <a name="how-does-jit-access-work"></a>Как работает JIT-доступ?
 

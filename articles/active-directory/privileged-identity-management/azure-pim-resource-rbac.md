@@ -7,19 +7,19 @@ author: curtand
 manager: daveba
 editor: ''
 ms.service: active-directory
-ms.topic: article
+ms.topic: how-to
 ms.workload: identity
 ms.subservice: pim
 ms.date: 01/10/2020
 ms.author: curtand
 ms.reviewer: shaunliu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4bf65ad595fb1ab70eb6613b6d54ac2a4f69141e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 45144f64789a19390984c3f9f6a660e3c3300215
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78329648"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84743156"
 ---
 # <a name="view-activity-and-audit-history-for-azure-resource-roles-in-privileged-identity-management"></a>Просмотр журнала активности и аудита для ролей ресурсов Azure в управление привилегированными пользователями
 
@@ -34,7 +34,7 @@ ms.locfileid: "78329648"
 
 1. Откройте **Azure AD privileged Identity Management**.
 
-1. Щелкните **Ресурсы Azure**.
+1. Выберите **ресурсы Azure**.
 
 1. Выберите ресурс, для которого требуется просмотреть действия и активации.
 
@@ -56,11 +56,11 @@ ms.locfileid: "78329648"
 
 1. Откройте **Azure AD privileged Identity Management**.
 
-1. Щелкните **Ресурсы Azure**.
+1. Выберите **ресурсы Azure**.
 
 1. Выберите ресурс, для которого необходимо экспортировать назначения ролей, например подписку.
 
-1. Выберите **Элементы**.
+1. Выберите пункт **Участники**.
 
 1. Выберите **Экспорт** , чтобы открыть область экспорт членства.
 
@@ -76,7 +76,7 @@ ms.locfileid: "78329648"
 
 1. Откройте **Azure AD privileged Identity Management**.
 
-1. Щелкните **Ресурсы Azure**.
+1. Выберите **ресурсы Azure**.
 
 1. Выберите ресурс, для которого необходимо просмотреть журнал аудита.
 
@@ -88,7 +88,7 @@ ms.locfileid: "78329648"
 
 1. В раскрывающемся списке **Тип аудита** выберите **Activate (Assigned + Activated)** (Активировать (назначено + активировано)).
 
-    Список [![аудита ресурсов, отфильтрованный по активации](media/azure-pim-resource-rbac/rbac-audit-activity.png "Список аудита ресурсов, отфильтрованный по активации")](media/azure-pim-resource-rbac/rbac-audit-activity.png) ![список аудита ресурсов для типа аудита, отфильтрованный по типу "активировать аудит"](media/azure-pim-resource-rbac/rbac-audit-activity.png)
+    [![Список аудита ресурсов, отфильтрованный по типу](media/azure-pim-resource-rbac/rbac-audit-activity.png "Список аудита ресурсов, отфильтрованный по активации")](media/azure-pim-resource-rbac/rbac-audit-activity.png) ![ активации аудита Список аудита ресурсов, отфильтрованный по типу "активировать аудит"](media/azure-pim-resource-rbac/rbac-audit-activity.png)
 
 1. В разделе **Действие** щелкните **(действие)**, чтобы пользователь мог просмотреть сведения о своих действиях в ресурсах Azure.
 
@@ -100,7 +100,7 @@ ms.locfileid: "78329648"
 
 1. Откройте **Azure AD privileged Identity Management**.
 
-1. Щелкните **Ресурсы Azure**.
+1. Выберите **ресурсы Azure**.
 
 1. Выберите ресурс, для которого необходимо просмотреть журнал аудита.
 
@@ -116,7 +116,7 @@ ms.locfileid: "78329648"
 ## <a name="get-reason-approver-and-ticket-number-for-approval-events"></a>Получение причины, утверждающего и номера билета для событий утверждения
 
 1. Войдите в [портал Azure](https://aad.portal.azure.com) с разрешениями роли администратора привилегированных ролей и откройте Azure AD.
-1. Выберите **журналы аудита**.
+1. Выберите **Журналы аудита**.
 1. Используйте фильтр **службы** , чтобы отобразить только события аудита для службы привилегированного управления удостоверениями. На странице **журналы аудита** можно выполнить следующие действия.
 
     - См. причину события аудита в столбце **Причина состояния** .

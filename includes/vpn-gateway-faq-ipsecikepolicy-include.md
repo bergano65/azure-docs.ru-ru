@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/05/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: e17eee8de789b813e5aab726207233e8607ec97f
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
-ms.translationtype: HT
+ms.openlocfilehash: f7134d0e8087d17e78a13c958298006e321bd192
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84200417"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84346328"
 ---
 ### <a name="is-custom-ipsecike-policy-supported-on-all-azure-vpn-gateway-skus"></a>Поддерживается ли политика IPsec/IKE во всех номерах SKU VPN-шлюзов Azure?
 Пользовательская политика IPsec/IKE поддерживается во всех SKU Azure, за исключением SKU "Базовый".
@@ -104,7 +104,7 @@ ms.locfileid: "84200417"
 Нет. Политика IPsec/IKE работает только для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть" через VPN-шлюзы Azure.
 
 ### <a name="how-do-i-create-connections-with-ikev1-or-ikev2-protocol-type"></a>Как создавать подключения с типом протокола IKEv1 или IKEv2?
-Подключения IKEv1 можно создавать во всех SKU с VPN типа RouteBased, кроме SKU прежних версий. При создании подключения можно указать тип протокола IKEv1 или IKEv2. Если тип протокола не указан, по умолчанию используется тип IKEv2 (там, где это применимо). Дополнительные сведения см. в документации по [командлетам PowerShell](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworkgatewayconnection?). Сведения о типах SKU и поддержке протоколов IKEv1 и IKEv2 см. в статье о [подключении шлюзов к VPN-устройствам на базе политик](../articles/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md).
+Подключения IKEv1 могут создаваться для всех номеров SKU типа RouteBased VPN, кроме SKU "базовый", "Стандартный" и другого [номера](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-skus-legacy#gwsku)SKU. При создании подключения можно указать тип протокола IKEv1 или IKEv2. Если тип протокола не указан, по умолчанию используется тип IKEv2 (там, где это применимо). Дополнительные сведения см. в документации по [командлетам PowerShell](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworkgatewayconnection?). Сведения о типах SKU и поддержке протоколов IKEv1 и IKEv2 см. в статье о [подключении шлюзов к VPN-устройствам на базе политик](../articles/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md).
 
 ### <a name="is-transit-between-between-ikev1-and-ikev2-connections-allowed"></a>Можно ли перейти с подключения типа IKEv1 на IKEv2 и обратно?
 Да. Переход между типами подключений IKEv1 и IKEv2 поддерживается.

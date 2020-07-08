@@ -7,17 +7,17 @@ documentationcenter: na
 author: damendo
 ms.service: network-watcher
 ms.devlang: na
-ms.topic: article
+ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/19/2017
 ms.author: damendo
-ms.openlocfilehash: 199b4fc762919c2e3988f477c14d09fc23b0136b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: acb7ff5c0862ceff8c73eaca92cc7000220eca41
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76840695"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84738657"
 ---
 # <a name="introduction-to-resource-troubleshooting-in-azure-network-watcher"></a>Общие сведения об устранении неполадок ресурсов в Наблюдателе за сетями Azure
 
@@ -60,7 +60,7 @@ ms.locfileid: "76840695"
 | ConnectionsNotConnected | Подключения не установлены. Эта ошибка — всего лишь предупреждение.| Да|
 | GatewayCPUUsageExceeded | Текущий показатель использования ЦП для шлюза превышает 95 %. | Да |
 
-### <a name="connection"></a>Соединение
+### <a name="connection"></a>Подключение
 
 | Тип ошибки | Причина | Журнал|
 |---|---|---|
@@ -85,7 +85,7 @@ ms.locfileid: "76840695"
 |  |  |
 |---------|---------|
 |**Типы шлюзов**   |         |
-|Виртуальная частная сеть      | Поддерживается        |
+|VPN      | Поддерживается        |
 |ExpressRoute | Не поддерживается |
 |**Типы VPN** | |
 |На основе маршрутов | Поддерживается|
@@ -208,7 +208,7 @@ Elapsed Time            330 sec
 |        12    ikeext               ike_sa_management_c3307  7857a320-42ee-6e90-d5d9-3f414e3ea2d3|
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о диагностике проблемы со шлюзом или подключением к нему см. в статье о [диагностике проблем обмена данными между сетями](diagnose-communication-problem-between-networks.md).
 <!--Image references-->

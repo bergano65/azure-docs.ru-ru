@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: juliako
 ms.openlocfilehash: 5c7686d8501baf17a63a5317f0d136adb6ac7812
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "69014695"
 ---
 На форуме [User Voice](https://go.microsoft.com/fwlink/?linkid=698785&clcid=0x409) можно оставить свои отзывы о работе служб мультимедиа Azure или предложения по их улучшению. Вы также можете перейти непосредственно к одной из следующих категорий:
@@ -16,7 +16,7 @@ ms.locfileid: "69014695"
 * [Проигрыватель мультимедиа Azure](https://feedback.azure.com/forums/169396-media-services/category/109320-azure-media-player/)
 * [Клиентские библиотеки SDK](https://feedback.azure.com/forums/169396-media-services/category/144435-client-sdks/)
 * [Кодирование и обработка](https://feedback.azure.com/forums/169396-media-services/category/144411-encoding-and-processing/)
-* [Потоковая передача в реальном времени](https://feedback.azure.com/forums/169396-media-services/category/144414-live-streaming/)
+* [Потоковая трансляция](https://feedback.azure.com/forums/169396-media-services/category/144414-live-streaming/)
 * [Аналитика мультимедиа](https://feedback.azure.com/forums/169396-media-services/category/146181-media-analytics)
 * [Портал Azure](https://feedback.azure.com/forums/169396-media-services/category/144432-portal/)
 * [REST API и платформа](https://feedback.azure.com/forums/169396-media-services/category/144423-rest-api-and-platform/)

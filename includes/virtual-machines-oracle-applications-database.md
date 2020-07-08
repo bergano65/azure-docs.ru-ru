@@ -2,14 +2,14 @@
 author: dlepow
 ms.service: virtual-machines-linux
 ms.topic: include
-ms.date: 07/10/2019
+ms.date: 06/01/2020
 ms.author: danlep
-ms.openlocfilehash: 8106b1a77f11874b1b13f41bfc9e62ea800afc98
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: b9e275cbdaf264df3d0a40f032693fd93553e520
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "68361535"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84317590"
 ---
 ### <a name="database-tier"></a>Уровень базы данных
 
@@ -17,7 +17,7 @@ ms.locfileid: "68361535"
 
 Если выбрано использование Oracle DB, экземпляр базы данных можно развернуть в Azure с помощью образов Oracle DB, доступных в Azure Marketplace. Кроме того, вы можете использовать взаимодействие между Azure и OCI для развертывания Oracle DB в модели PaaS на OCI.
 
-Для Oracle RAC вы можете развернуть RAC Oracle на Клаудсимпле Azure в модели IaaS или в OCI в модели PaaS. Рекомендуется использовать систему RAC из двух узлов. 
+Для Oracle RAC можно использовать OCI в модели PaaS. Рекомендуется использовать систему RAC из двух узлов. Несмотря на то, что в модели IaaS можно развернуть Azure RAC на Клаудсимпле, эта конфигурация не поддерживается Oracle. Ознакомьтесь с [программами Oracle, подходящими для полномочных облачных сред](http://www.oracle.com/us/corporate/pricing/authorized-cloud-environments-3493562.pdf).
 
 Наконец, для систем Ексадата используйте соединение OCI и разверните систему Ексадата в OCI. На предыдущей схеме архитектуры выше показана система Ексадата, развернутая в OCI по двум подсетям.
 

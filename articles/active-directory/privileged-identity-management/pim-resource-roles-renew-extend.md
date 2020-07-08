@@ -10,18 +10,18 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: pim
 ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 577c028582bc3b23d13e71522bb83db558065ee2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0f0d22fc540aae448a3da731b709a3b4ea13a69d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74022911"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84742239"
 ---
 # <a name="extend-or-renew-azure-resource-role-assignments-in-privileged-identity-management"></a>Расширение или продление назначения ролей ресурсов Azure в управление привилегированными пользователями
 
@@ -130,7 +130,7 @@ Azure Active Directory (Azure AD) управление привилегиров�
 
 ![Ресурсы Azure. страница "участники" со списком просроченных ролей со ссылками для продления](media/pim-resource-roles-renew-extend/aadpim-rbac-renew-from-member-blade.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Утверждение или отклонение запросов ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-approval-workflow.md)
 - [Настройка параметров роли ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-configure-role-settings.md)

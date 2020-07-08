@@ -7,7 +7,7 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
@@ -15,12 +15,12 @@ ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e779f633efccf7b594c193e165a584d22b1d653b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 096da0547806680f62b569f7c7809a7bbb04cb86
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74021967"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84742085"
 ---
 # <a name="approve-or-deny-requests-for-azure-resource-roles-in-privileged-identity-management"></a>Утверждение или отклонение запросов ролей ресурсов Azure в управление привилегированными пользователями
 
@@ -50,7 +50,7 @@ ms.locfileid: "74021967"
 
 1. В поле **обоснование** введите коммерческое обоснование.
 
-1. Выберите **утвердить**. Вы получите уведомление Azure об утверждении.
+1. Щелкните **Утвердить**. Вы получите уведомление Azure об утверждении.
 
     ![Утверждение уведомления с отображением запроса утверждено](./media/pim-resource-roles-approval-workflow/resources-approve-notification.png)
 
@@ -76,7 +76,7 @@ ms.locfileid: "74021967"
 >[!Note]
 >Администратор ресурсов, который считает, что одобренный пользователь не должен быть активным, может удалить назначение активной роли в управление привилегированными пользователями. Хотя администраторы ресурсов не получают уведомления о ожидающих запросах, если они не являются утверждающими, они могут просматривать и отменять ожидающие запросы для всех пользователей, просматривая ожидающие запросы в управление привилегированными пользователями.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Расширение или продление ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-renew-extend.md)
 - [Уведомления по электронной почте в управление привилегированными пользователями](pim-email-notifications.md)
