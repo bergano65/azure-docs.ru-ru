@@ -49,16 +49,26 @@
               href: time-series-insights-parameterized-urls.md
     - name: Аналитика временных рядов Azure (предварительная версия)
       items:
-        - name: Планирование среды
-          href: time-series-insights-update-plan.md
-        - name: Хранилище данных и входящий трафик
-          href: time-series-insights-update-storage-ingress.md
         - name: Варианты использования
           href: time-series-insights-update-use-cases.md
+        - name: Планирование среды
+          href: time-series-insights-update-plan.md
+        - name: Общие сведения о приеме
+          href: concepts-ingestion-overview.md
+        - name: Поддерживаемые типы данных
+          href: concepts-supported-data-types.md
+        - name: Источники событий приема при потоковой передаче
+          href: concepts-streaming-ingestion-event-sources.md
+        - name: Правила преобразования данных JSON в плоскую структуру и их экранирования
+          href: concepts-json-flattening-escaping-rules.md
+        - name: Ограничения пропускной способности при потоковой передаче входящего трафика
+          href: concepts-streaming-throughput-limitations.md
+        - name: Память
+          href: concepts-storage.md
         - name: Модель временных рядов
-          href: time-series-insights-update-tsm.md
+          href: concepts-model-overview.md
         - name: Запрашивание временных рядов
-          href: time-series-insights-update-tsq.md
+          href: concepts-query-overview.md
         - name: Визуализация данных в обозревателе (предварительная версия)
           href: time-series-insights-update-explorer.md
         - name: Разработка

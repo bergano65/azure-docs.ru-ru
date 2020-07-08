@@ -12,12 +12,12 @@ metadata:
   author: KingdomOfEnds
   ms.author: v-adgera
   ms.date: 02/12/2020
-  ms.openlocfilehash: 34d7e9ad4f312576eb1e51961feb8364b99a967e
-  ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+  ms.openlocfilehash: 1119c4ec7c0b57f1b3707708ecb9227d737e2898
+  ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/24/2020
-  ms.locfileid: "77651327"
+  ms.lasthandoff: 07/07/2020
+  ms.locfileid: "86043127"
 landingContent:
 - title: Общие сведения об Аналитике временных рядов Azure
   linkLists:
@@ -34,7 +34,7 @@ landingContent:
     - text: Визуализация данных с помощью обозревателя Аналитики временных рядов Azure (предварительная версия)
       url: time-series-insights-update-explorer.md
     - text: Модель временных рядов
-      url: time-series-insights-update-tsm.md
+      url: concepts-model-overview.md
   - linkListType: video
     links:
     - text: Служба "Аналитика временных рядов" для приложений Интернета вещей. (13:31)
@@ -57,16 +57,14 @@ landingContent:
       url: time-series-insights-how-to-add-an-event-source-iothub.md
     - text: Планирование среды
       url: time-series-insights-update-plan.md
-    - text: Хранилище данных и входящий трафик
-      url: time-series-insights-update-storage-ingress.md
+    - text: Общие сведения о приеме данных
+      url: concepts-ingestion-overview.md
   - linkListType: how-to-guide
     links:
     - text: Подготовка и управление
       url: time-series-insights-update-how-to-manage.md
     - text: Предоставление доступа к данным
       url: time-series-insights-data-access.md
-    - text: Использование JSON для входящего трафика и запросов
-      url: time-series-insights-update-how-to-shape-events.md
 - title: Справочник по API
   linkLists:
   - linkListType: reference
