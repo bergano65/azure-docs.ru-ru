@@ -3,12 +3,12 @@ title: Просмотр журналов трассировки .NET в Applicat
 description: Поиск в журналах, созданных с помощью Trace, Log4Net или NLog.
 ms.topic: conceptual
 ms.date: 05/08/2019
-ms.openlocfilehash: bcd21286a547e0b0a6b5b93e8b05921e8e8cc1e2
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: d010fe4389e22c9909800f5329911b6b5619d7b6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83647907"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85829539"
 ---
 # <a name="explore-netnet-core-and-python-trace-logs-in-application-insights"></a>Просмотр журналов трассировки Python, .NET или .NET Core в Application Insights
 
@@ -73,11 +73,15 @@ ms.locfileid: "83647907"
 ## <a name="insert-diagnostic-log-calls"></a>Вставка вызовов журнала диагностики
 При использовании System.Diagnostics.Trace типичный вызов будет выглядеть следующим образом:
 
-    System.Diagnostics.Trace.TraceWarning("Slow response - database01");
+```csharp
+System.Diagnostics.Trace.TraceWarning("Slow response - database01");
+```
 
 Если вы предпочитаете log4net или NLog, используйте следующий код:
 
+```csharp
     logger.Warn("Slow response - database01");
+```
 
 ## <a name="use-eventsource-events"></a>Использование событий EventSource
 Можно настроить отправку событий [System.Diagnostics.Tracing.EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx) в Application Insights в виде трассировок. Сначала установите пакет NuGet `Microsoft.ApplicationInsights.EventSourceListener`. Затем измените раздел `TelemetryModules` файла [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md).
@@ -133,17 +137,21 @@ API трассировки в Application Insights можно вызывать �
 
 Пример:
 
-    var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
-    telemetry.TrackTrace("Slow response - database01");
+```csharp
+var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
+telemetry.TrackTrace("Slow response - database01");
+```
 
 Преимуществом TrackTrace является возможность добавления в сообщения относительно длинных данных, например данных POST.
 
 Вы также можете настроить для сообщения уровень серьезности. Как и для других данных телеметрии, вы можете добавлять значения свойства, используемые для фильтрации или поиска различных наборов трассировки. Пример:
 
-    var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
-    telemetry.TrackTrace("Slow database response",
-                   SeverityLevel.Warning,
-                   new Dictionary<string,string> { {"database", db.ID} });
+  ```csharp
+  var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
+  telemetry.TrackTrace("Slow database response",
+                 SeverityLevel.Warning,
+                 new Dictionary<string,string> { {"database", db.ID} });
+  ```
 
 Так вы сможете отфильтровать в колонке [Поиск][diagnostic] все сообщения с нужной степенью серьезности, относящиеся к определенной базе данных.
 

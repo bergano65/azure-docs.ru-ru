@@ -12,18 +12,18 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/18/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fcbeedddc65a916f869a778616779917a9571181
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 58bc154f4ffb234df52faf3c02b5ed7ecaf77c2e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80331980"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85830933"
 ---
 # <a name="manage-and-customize-active-directory-federation-services-by-using-azure-ad-connect"></a>Управление службами федерации Active Directory и их настройка с помощью Azure AD Connect
 В этой статье описывается управление службами федерации Active Directory (AD FS) и их настройка с помощью Azure Active Directory (Azure AD) Connect, а также рассматриваются другие стандартные задачи AD FS, которые может потребоваться выполнить для полной настройки фермы AD FS.
@@ -176,7 +176,7 @@ Azure AD Connect может проверить текущую работоспо
 
     Когда вы выберете домен, мастер предоставит соответствующие сведения о дальнейших действиях, которые будут выполнены мастером, а также о результатах настроек. В некоторых случаях при выборе домена, еще не проверенного в Azure AD, мастер предоставит сведения, которые помогут проверить домен. Дополнительные сведения см. в разделе [Добавление имени личного домена в Azure Active Directory](../active-directory-domains-add-azure-portal.md).
 
-5. Щелкните **Далее**. На странице **Готово к настройке** отображается список действий, которые выполнит Azure AD Connect. Чтобы завершить настройку, нажмите кнопку **Установить** .
+5. Нажмите кнопку **Далее**. На странице **Готово к настройке** отображается список действий, которые выполнит Azure AD Connect. Чтобы завершить настройку, нажмите кнопку **Установить** .
 
    ![Готово к настройке](./media/how-to-connect-fed-management/AdditionalDomain5.PNG)
 
@@ -192,7 +192,9 @@ Azure AD Connect может проверить текущую работоспо
 > [!NOTE]
 > Рекомендуемые размеры логотипа — 260 x 35 \@ 96 точек на дюйм. Размер файла не должен превышать 10 КБ.
 
-    Set-AdfsWebTheme -TargetName default -Logo @{path="c:\Contoso\logo.PNG"}
+```azurepowershell-interactive
+Set-AdfsWebTheme -TargetName default -Logo @{path="c:\Contoso\logo.PNG"}
+```
 
 > [!NOTE]
 > Параметр *TargetName* является обязательным. Стандартная тема для AD FS называется темой по умолчанию.
@@ -200,7 +202,9 @@ Azure AD Connect может проверить текущую работоспо
 ## <a name="add-a-sign-in-description"></a><a name="addsignindescription"></a>Добавление описания входа в систему 
 Чтобы добавить на **страницу входа**описание страницы входа, используйте следующий командлет Windows PowerShell и синтаксис.
 
-    Set-AdfsGlobalWebContent -SignInPageDescriptionText "<p>Sign-in to Contoso requires device registration. Click <A href='http://fs1.contoso.com/deviceregistration/'>here</A> for more information.</p>"
+```azurepowershell-interactive
+Set-AdfsGlobalWebContent -SignInPageDescriptionText "<p>Sign-in to Contoso requires device registration. Click <A href='http://fs1.contoso.com/deviceregistration/'>here</A> for more information.</p>"
+```
 
 ## <a name="modify-ad-fs-claim-rules"></a><a name="modclaims"></a>Изменение правил утверждений служб федерации Active Directory 
 Службы AD FS поддерживают обширный язык утверждений, с помощью которого можно создавать настраиваемые правила утверждений. Дополнительные сведения см. в разделе [Роль языка правил утверждений](https://technet.microsoft.com/library/dd807118.aspx).
@@ -214,8 +218,10 @@ Azure AD Connect позволяет указывать атрибут, испо�
 
 **Правило 1. Атрибуты запросов**
 
-    c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"]
-    => add(store = "Active Directory", types = ("http://contoso.com/ws/2016/02/identity/claims/objectguid", "http://contoso.com/ws/2016/02/identity/claims/msdsconsistencyguid"), query = "; objectGuid,ms-ds-consistencyguid;{0}", param = c.Value);
+```claim-rule-language
+c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"]
+=> add(store = "Active Directory", types = ("http://contoso.com/ws/2016/02/identity/claims/objectguid", "http://contoso.com/ws/2016/02/identity/claims/msdsconsistencyguid"), query = "; objectGuid,ms-ds-consistencyguid;{0}", param = c.Value);
+```
 
 В этом правиле запрашиваются значения **ms-ds-consistencyguid** и **objectGuid** для пользователя из Active Directory. Измените имя хранилища на имя соответствующего хранилища в развертывании AD FS. Также измените тип утверждений на соответствующий тип утверждений для Федерации, как определено для **objectGuid** и **MS-DS-consistencyguid**.
 
@@ -223,23 +229,29 @@ Azure AD Connect позволяет указывать атрибут, испо�
 
 **Правило 2. Проверка наличия ms-ds-consistencyguid для пользователя**
 
-    NOT EXISTS([Type == "http://contoso.com/ws/2016/02/identity/claims/msdsconsistencyguid"])
-    => add(Type = "urn:anandmsft:tmp/idflag", Value = "useguid");
+```claim-rule-language
+NOT EXISTS([Type == "http://contoso.com/ws/2016/02/identity/claims/msdsconsistencyguid"])
+=> add(Type = "urn:anandmsft:tmp/idflag", Value = "useguid");
+```
 
 Это правило определяет временный флаг с именем **idflag**, который получает значение **useguid**, если **ms-ds-concistencyguid** для пользователя не заполнен. Логика такого решения в том, что службы AD FS запрещают пустые утверждения. Поэтому при добавлении утверждений `http://contoso.com/ws/2016/02/identity/claims/objectguid` и `http://contoso.com/ws/2016/02/identity/claims/msdsconsistencyguid` в правило 1 вы получаете утверждение **msdsconsistencyguid**, только если значение для пользователя заполнено. Если оно не заполнено, службы AD FS определяют, что значение окажется пустым, и немедленно его опускают. **objectGuid**имеют все объекты, поэтому такое утверждение всегда будет присутствовать после выполнения правила 1.
 
 **Правило 3. Выдача ms-ds-consistencyguid в качестве неизменяемого идентификатора, если он присутствует**
 
-    c:[Type == "http://contoso.com/ws/2016/02/identity/claims/msdsconsistencyguid"]
-    => issue(Type = "http://schemas.microsoft.com/LiveID/Federation/2008/05/ImmutableID", Value = c.Value);
+```claim-rule-language
+c:[Type == "http://contoso.com/ws/2016/02/identity/claims/msdsconsistencyguid"]
+=> issue(Type = "http://schemas.microsoft.com/LiveID/Federation/2008/05/ImmutableID", Value = c.Value);
+```
 
 Это неявная проверка **Exist** . Если значение для утверждения существует, выполняется его выдача в качестве неизменяемого идентификатора. В предыдущем примере используется утверждение **nameidentifier** . Его потребуется заменить соответствующим типом утверждения для неизменяемого идентификатора в конкретной среде.
 
 **Правило 4. Выдача objectGuid в качестве неизменяемого идентификатора при отсутствии ms-ds-consistencyGuid**
 
-    c1:[Type == "urn:anandmsft:tmp/idflag", Value =~ "useguid"]
-    && c2:[Type == "http://contoso.com/ws/2016/02/identity/claims/objectguid"]
-    => issue(Type = "http://schemas.microsoft.com/LiveID/Federation/2008/05/ImmutableID", Value = c2.Value);
+```claim-rule-language
+c1:[Type == "urn:anandmsft:tmp/idflag", Value =~ "useguid"]
+&& c2:[Type == "http://contoso.com/ws/2016/02/identity/claims/objectguid"]
+=> issue(Type = "http://schemas.microsoft.com/LiveID/Federation/2008/05/ImmutableID", Value = c2.Value);
+```
 
 В этом правиле просто выполняется проверка временного флага **idflag**. На основе его значения определяется, следует ли выдавать утверждение.
 
