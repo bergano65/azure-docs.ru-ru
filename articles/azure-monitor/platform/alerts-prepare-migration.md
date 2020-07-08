@@ -7,10 +7,9 @@ ms.topic: conceptual
 ms.date: 03/19/2018
 ms.subservice: alerts
 ms.openlocfilehash: f31fcc07bed0287c2f86ca4fe52bf02a2a1d2a71
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81114408"
 ---
 # <a name="prepare-your-logic-apps-and-runbooks-for-migration-of-classic-alert-rules"></a>Prepare your logic apps and runbooks for migration of classic alert rules (Подготовка приложений логики и модулей runbook для миграции классических правил генерации оповещений)
@@ -24,15 +23,15 @@ ms.locfileid: "81114408"
 
 ## <a name="api-changes"></a>Изменения API
 
-Интерфейсы API, которые создают классические правила генерации оповещений`microsoft.insights/alertrules`и управляют ими (), отличаются от API-интерфейсов, которые`microsoft.insights/metricalerts`создают новые оповещения метрик () и управляют ими. Если вы программно создаете классические правила генерации оповещений и управляете ими уже сегодня, обновите сценарии развертывания для работы с новыми API.
+Интерфейсы API, которые создают классические правила генерации оповещений и управляют ими ( `microsoft.insights/alertrules` ), отличаются от API-интерфейсов, которые создают новые оповещения метрик () и управляют ими `microsoft.insights/metricalerts` . Если вы программно создаете классические правила генерации оповещений и управляете ими уже сегодня, обновите сценарии развертывания для работы с новыми API.
 
 В следующей таблице приведены ссылки на программные интерфейсы для классических и новых оповещений.
 
 |         |Классические оповещения  |Новые оповещения метрик |
 |---------|---------|---------|
-|REST API     | [Microsoft. Insights/alertrules](https://docs.microsoft.com/rest/api/monitor/alertrules)         | [Microsoft. Insights/метрикалертс](https://docs.microsoft.com/rest/api/monitor/metricalerts)       |
+|REST API     | [microsoft.insights/alertrules](https://docs.microsoft.com/rest/api/monitor/alertrules)         | [microsoft.insights/metricalerts](https://docs.microsoft.com/rest/api/monitor/metricalerts)       |
 |Azure CLI     | [AZ Monitor оповещение](https://docs.microsoft.com/cli/azure/monitor/alert?view=azure-cli-latest)        | [предупреждение о метриках монитора AZ](https://docs.microsoft.com/cli/azure/monitor/metrics/alert?view=azure-cli-latest)        |
-|PowerShell      | [Справочные материалы](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrule)       |  [Справочные материалы](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrulev2)    |
+|PowerShell      | [Ссылки](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrule)       |  [Ссылки](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrulev2)    |
 | Шаблон Azure Resource Manager | [Для классических оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-enable-template)|[Для новых оповещений метрик](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric-create-templates)|
 
 ## <a name="notification-payload-changes"></a>Изменения полезных данных уведомлений

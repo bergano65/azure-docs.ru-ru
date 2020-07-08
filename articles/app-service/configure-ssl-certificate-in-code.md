@@ -6,10 +6,9 @@ ms.date: 11/04/2019
 ms.reviewer: yutlin
 ms.custom: seodec18
 ms.openlocfilehash: d76bac60bae11f0843d81de523030154af62a373
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80811696"
 ---
 # <a name="use-a-tlsssl-certificate-in-your-code-in-azure-app-service"></a>Использование TLS/SSL-сертификата в коде в Службе приложений Azure
@@ -29,7 +28,7 @@ ms.locfileid: "80811696"
 
 ## <a name="find-the-thumbprint"></a>Найти отпечаток
 
-На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<имя_приложения>** .
+В <a href="https://portal.azure.com" target="_blank">портал Azure</a>в меню слева выберите **службы приложений**  >  **\<app-name>** .
 
 В левой области навигации приложения выберите **Параметры TLS/SSL**, а затем выберите **Сертификаты закрытого ключа (PFX)** или **Сертификаты открытого ключа (CER)**.
 
@@ -39,17 +38,17 @@ ms.locfileid: "80811696"
 
 ## <a name="make-the-certificate-accessible"></a>Предоставление доступа к сертификату
 
-Чтобы получить доступ к сертификату в коде приложения, добавьте его отпечаток в параметр `WEBSITE_LOAD_CERTIFICATES` приложения, выполнив следующую команду в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>:
+Чтобы получить доступ к сертификату в коде приложения, добавьте его отпечаток в `WEBSITE_LOAD_CERTIFICATES` параметр приложения, выполнив следующую команду в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>:
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings WEBSITE_LOAD_CERTIFICATES=<comma-separated-certificate-thumbprints>
 ```
 
-Чтобы сделать все сертификаты доступными, задайте значение `*`.
+Чтобы сделать все сертификаты доступными, задайте значение `*` .
 
 ## <a name="load-certificate-in-windows-apps"></a>Загрузка сертификата в приложениях Windows
 
-Параметр `WEBSITE_LOAD_CERTIFICATES` приложения делает указанные сертификаты доступными для размещенного в Windows приложения в хранилище сертификатов Windows, и расположение зависит от [ценовой](overview-hosting-plans.md)категории:
+`WEBSITE_LOAD_CERTIFICATES`Параметр приложения делает указанные сертификаты доступными для размещенного в Windows приложения в хранилище сертификатов Windows, и расположение зависит от [ценовой](overview-hosting-plans.md)категории:
 
 - **Изолированный** уровень в [локальной мачине\ми](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores). 
 - Все остальные уровни — в [текущем усер\ми](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores).
@@ -109,10 +108,10 @@ PrivateKey privKey = (PrivateKey) ks.getKey("<subject-cn>", ("<password>").toCha
 
 ## <a name="load-certificate-in-linux-apps"></a>Загрузка сертификата в приложениях Linux
 
-Параметры `WEBSITE_LOAD_CERTIFICATES` приложения делают указанные сертификаты доступными для размещенных в Linux приложений (включая пользовательские приложения-контейнеры) в виде файлов. Файлы находятся в следующих каталогах:
+`WEBSITE_LOAD_CERTIFICATES`Параметры приложения делают указанные сертификаты доступными для размещенных в Linux приложений (включая пользовательские приложения-контейнеры) в виде файлов. Файлы находятся в следующих каталогах:
 
 - Частные сертификаты `/var/ssl/private` ( `.p12` файлы)
-- Общедоступные `/var/ssl/certs` сертификаты `.der` — (файлы)
+- Общедоступные сертификаты — `/var/ssl/certs` ( `.der` файлы)
 
 Имена файлов сертификатов — это отпечатки сертификата. В следующем коде C# показано, как загрузить открытый сертификат в приложение Linux.
 
@@ -128,7 +127,7 @@ var cert = new X509Certificate2(bytes);
 // Use the loaded certificate
 ```
 
-Чтобы узнать, как загрузить сертификат TLS/SSL из файла в Node. js, PHP, Python, Java или Ruby, см. документацию по соответствующему языку или веб-платформе.
+Чтобы узнать, как загрузить сертификат TLS/SSL из файла в Node.js, PHP, Python, Java или Ruby, см. документацию по соответствующему языку или веб-платформе.
 
 ## <a name="load-certificate-from-file"></a>Загрузить сертификат из файла
 
@@ -157,7 +156,7 @@ var cert = new X509Certificate2(bytes);
 // Use the loaded certificate
 ```
 
-Чтобы узнать, как загрузить сертификат TLS/SSL из файла в Node. js, PHP, Python, Java или Ruby, см. документацию по соответствующему языку или веб-платформе.
+Чтобы узнать, как загрузить сертификат TLS/SSL из файла в Node.js, PHP, Python, Java или Ruby, см. документацию по соответствующему языку или веб-платформе.
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 

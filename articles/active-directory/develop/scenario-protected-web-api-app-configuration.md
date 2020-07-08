@@ -1,7 +1,7 @@
 ---
 title: Настройка защищенных веб-API приложений | Службы
 titleSuffix: Microsoft identity platform
-description: Узнайте, как создать защищенный веб-API и настроить код приложения.
+description: Узнайте, как создать защищенный веб-API и настроить код своего приложения.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -13,10 +13,9 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 073eca94ad93c69811b02abe2c8649940a394e8e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80882477"
 ---
 # <a name="protected-web-api-code-configuration"></a>Защищенный веб-API: конфигурация кода
@@ -134,7 +133,7 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 
 ## <a name="token-validation"></a>Проверка маркеров
 
-В предыдущем фрагменте по промежуточного слоя JwtBearer (например, по промежуточного слоя OpenID Connect Connect в веб-приложениях) проверяет маркер на основе `TokenValidationParameters`значения. Маркер расшифровывается по мере необходимости, извлекаются утверждения и проверяется подпись. По промежуточного слоя затем проверяет маркер, проверяя эти данные:
+В предыдущем фрагменте по промежуточного слоя JwtBearer (например, по промежуточного слоя OpenID Connect Connect в веб-приложениях) проверяет маркер на основе значения `TokenValidationParameters` . Маркер расшифровывается по мере необходимости, извлекаются утверждения и проверяется подпись. По промежуточного слоя затем проверяет маркер, проверяя эти данные:
 
 - Аудитория: маркер предназначен для веб-API.
 - IT: она была выдана для приложения, которому разрешено вызывать веб-API.
@@ -150,7 +149,7 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 
 В следующей таблице описаны проверяющие элементы управления.
 
-|  Validator | Описание |
+| Проверяющий элемент управления | Описание: |
 |---------|---------|
 | **валидатеаудиенце** | Гарантирует, что маркер предназначен для приложения, которое проверяет маркер. |
 | **ValidateIssuer** | Гарантирует, что маркер был выдан доверенной службой STS, то есть от доверенного лица. |
@@ -167,7 +166,7 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 
 Вы также можете проверить входящие маркеры доступа в функциях Azure. Примеры такой проверки можно найти в [Microsoft .NET](https://github.com/Azure-Samples/ms-identity-dotnet-webapi-azurefunctions), [NodeJS](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-azurefunctions)и [Python](https://github.com/Azure-Samples/ms-identity-python-webapi-azurefunctions).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Проверка областей и ролей приложений в коде](scenario-protected-web-api-verification-scope-app-roles.md)

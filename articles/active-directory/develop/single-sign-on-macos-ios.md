@@ -14,10 +14,9 @@ ms.author: marsma
 ms.reviewer: ''
 ms.custom: aaddev
 ms.openlocfilehash: 25389348476552298ddb947ccb59acb8b3d5bc57
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80881254"
 ---
 # <a name="how-to-configure-sso-on-macos-and-ios"></a>Как настроить единый вход для macOS и iOS
@@ -78,7 +77,7 @@ URI перенаправления App3: `msauth.com.contoso.mytestapp3://auth`
 
 Дополнительные сведения о включении общего доступа к цепочке ключей см. в статье [Добавление возможностей](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html) Apple. Важно то, что вы решаете, что нужно вызвать цепочку ключей, и добавляете эту возможность ко всем приложениям, которые будут задействованы в единый вход.
 
-После правильной настройки прав вы увидите в каталоге проекта `entitlements.plist` файл, который содержит примерно следующий пример:
+После правильной настройки прав вы увидите `entitlements.plist` в каталоге проекта файл, который содержит примерно следующий пример:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -145,7 +144,7 @@ MSAL обеспечивает поддержку проверки подлинн
 
 Чтобы включить единый вход с помощью брокера проверки подлинности для приложения, выполните следующие действия.
 
-1. Зарегистрируйте формат URI перенаправления, совместимого с брокером, для приложения в файле info. plist приложения. Формат URI для перенаправления, совместимый с брокером: `msauth.<app.bundle.id>://auth`. Замените "<app.bundle.id>" "ИДЕНТИФИКАТОРом пакета вашего приложения. Пример:
+1. Зарегистрируйте формат URI перенаправления, совместимого с брокером, для приложения в файле info. plist приложения. Формат URI для перенаправления, совместимый с брокером: `msauth.<app.bundle.id>://auth` . Замените "<app.bundle.id>" "ИДЕНТИФИКАТОРом пакета вашего приложения. Пример:
 
     ```xml
     <key>CFBundleURLSchemes</key>
@@ -154,7 +153,7 @@ MSAL обеспечивает поддержку проверки подлинн
     </array>
     ```
 
-1. Добавьте следующие схемы в сведения о приложении. plist в разделе `LSApplicationQueriesSchemes`:
+1. Добавьте следующие схемы в сведения о приложении. plist в разделе `LSApplicationQueriesSchemes` :
 
     ```xml
     <key>LSApplicationQueriesSchemes</key>

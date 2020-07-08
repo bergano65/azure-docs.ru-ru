@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 06/18/2019
 ms.author: mfussell
 ms.openlocfilehash: 56df6e28940eb15597a3d6bccca3f85e5f690f89
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80991660"
 ---
 # <a name="azure-service-fabric-application-design-best-practices"></a>Рекомендации по проектированию приложений Service Fabric Azure
@@ -32,7 +31,7 @@ ms.locfileid: "80991660"
 - [Управление API Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-api-management-overview), [интегрированное с Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-tutorial-deploy-api-management).
 - [Центр Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/) или [концентраторы событий Azure](https://docs.microsoft.com/azure/event-hubs/), использующие [Сервицефабрикпроцессор](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Microsoft.Azure.EventHubs.ServiceFabricProcessor) для чтения из разделов концентратора событий.
 - [Трæфик обратный прокси-сервер](https://blogs.msdn.microsoft.com/azureservicefabric/2018/04/05/intelligent-routing-on-service-fabric-with-traefik/)с помощью [поставщика Service Fabric Azure](https://docs.traefik.io/v1.6/configuration/backends/servicefabric/).
-- [Шлюз приложений Azure.](https://docs.microsoft.com/azure/application-gateway/)
+- [Шлюз приложений Azure](https://docs.microsoft.com/azure/application-gateway/).
 
    > [!NOTE] 
    > Шлюз приложений Azure не интегрируется напрямую с Service Fabric. Управление API Azure обычно является предпочтительным вариантом.
@@ -70,7 +69,7 @@ Service Fabric Reliable Actors позволяет легко создавать 
 - Из-за [параллелизма, основанной на поочередности](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction#concurrency), субъекты лучше использовать как независимые объекты. Не создавайте графы синхронных вызовов методов с несколькими субъектами (каждый из которых, скорее всего, станет отдельным сетевым вызовом) или создайте запросы с циклическими субъектами. Это значительно повлияет на производительность и масштабируемость.
 - Не смешивать код синхронизации с асинхронным кодом. Используйте асинхронный режим для предотвращения проблем с производительностью.
 - Не делайте долго выполняющихся вызовов в субъектах. Длительные вызовы будут блокировать другие вызовы одного и того же субъекта из-за параллелизма, основанной на последующей блокировке.
-- Если вы обмениваетесь данными с другими службами с помощью [Service Fabric удаленного взаимодействия](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication-remoting) и `ServiceProxyFactory`создаете, Создайте фабрику на уровне [службы субъекта](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-using) , а *не* на уровне субъекта.
+- Если вы обмениваетесь данными с другими службами с помощью [Service Fabric удаленного взаимодействия](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication-remoting) и создаете `ServiceProxyFactory` , Создайте фабрику на уровне [службы субъекта](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-using) , а *не* на уровне субъекта.
 
 
 ## <a name="application-diagnostics"></a>Диагностика приложения

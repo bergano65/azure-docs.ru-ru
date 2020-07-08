@@ -9,10 +9,9 @@ ms.topic: article
 ms.date: 07/05/2017
 ms.author: tagore
 ms.openlocfilehash: 80481bc11933b0404079221f23b5054024f00acb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80811356"
 ---
 # <a name="manage-cloud-services-in-the-azure-portal"></a>Управление облачными службами с помощью портала Azure
@@ -122,7 +121,7 @@ ms.locfileid: "80811356"
 ## <a name="next-steps"></a>Дальнейшие шаги
 * [Общая настройка облачной службы](cloud-services-how-to-configure-portal.md).
 * Узнайте, как [развернуть облачную службу](cloud-services-how-to-create-deploy-portal.md).
-* Настройка [пользовательского имени домена](cloud-services-custom-domain-name-portal.md).
+* Настройте [имя пользовательского домена](cloud-services-custom-domain-name-portal.md).
 * Настройте [сертификаты TLS/SSL](cloud-services-configure-ssl-certificate-portal.md).
 
 

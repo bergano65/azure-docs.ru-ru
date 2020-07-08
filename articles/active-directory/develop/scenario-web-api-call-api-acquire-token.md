@@ -13,10 +13,9 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 79f8eb9e804502a7c0e61c18e4998fa05db10278
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80885146"
 ---
 # <a name="a-web-api-that-calls-web-apis-acquire-a-token-for-the-app"></a>Веб-API, вызывающий веб-API: получение маркера для приложения
@@ -50,7 +49,7 @@ private async Task GetTodoList(bool isAppStarting)
 
 `BuildConfidentialClient()`аналогичен сценарию в [веб-API, который вызывает веб-API: Конфигурация приложения](scenario-web-api-call-api-app-configuration.md). `BuildConfidentialClient()`создает экземпляр `IConfidentialClientApplication` с кэшем, который содержит сведения только для одной учетной записи. Учетная запись предоставляется `GetAccountIdentifier` методом.
 
-`GetAccountIdentifier` Метод использует утверждения, связанные с идентификатором пользователя, для которого веб-API получил JSON Web Token (JWT):
+`GetAccountIdentifier`Метод использует утверждения, связанные с идентификатором пользователя, для которого веб-API получил JSON Web Token (JWT):
 
 ```csharp
 public static string GetMsalAccountId(this ClaimsPrincipal claimsPrincipal)
@@ -95,7 +94,7 @@ public class ApiController {
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Веб-API, вызывающий веб-API: вызов API](scenario-web-api-call-api-call-api.md)

@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 04/07/2020
 ms.author: alzam
 ms.openlocfilehash: 2d07a13c654f30e48c37d2e8d3e801166e26f4f4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80886591"
 ---
 # <a name="remote-work-using-azure-vpn-gateway-point-to-site"></a>Удаленная работа с использованием VPN-шлюза Azure "точка — сеть"
@@ -30,7 +29,7 @@ ms.locfileid: "80886591"
 
 В таблице ниже показаны клиентские операционные системы и доступные для них параметры проверки подлинности. Было бы полезно выбрать метод проверки подлинности на основе уже используемой клиентской ОС. Например, выберите Опенвпн с проверкой подлинности на основе сертификата, если у вас есть сочетание клиентских операционных систем, к которым необходимо подключиться. Кроме того, обратите внимание, что VPN типа "точка — сеть" поддерживается только для VPN-шлюзов на основе маршрутов.
 
-![точка-сеть](./media/working-remotely-support/ostable.png "OS")
+![точка-сеть](./media/working-remotely-support/ostable.png "Операционная система")
 
 ## <a name="scenario-1---users-need-access-to-resources-in-azure-only"></a><a name="scenario1"></a>Сценарий 1. пользователям требуется доступ к ресурсам только в Azure
 
@@ -75,7 +74,7 @@ ms.locfileid: "80886591"
 
 [!INCLUDE [vpn-gateway-point-to-site-faq-include](../../includes/vpn-gateway-faq-p2s-radius-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Настройка подключения P2S — проверка подлинности Azure AD](openvpn-azure-ad-tenant.md)
 

@@ -7,10 +7,9 @@ ms.topic: conceptual
 ms.date: 08/22/2017
 ms.author: yegu
 ms.openlocfilehash: 3f0de52782694e6cbc8fdb6b55d545191dbbb350
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81010313"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Настройка кэша Azure для Redis
@@ -39,15 +38,15 @@ ms.locfileid: "81010313"
     * [Ключи доступа](#access-keys)
     * [Дополнительные параметры](#advanced-settings)
     * [Помощник по кэшу Azure для Redis](#azure-cache-for-redis-advisor)
-    * [Масштабирование](#scale)
+    * [Масштаб](#scale)
     * [Размер кластера](#cluster-size)
     * [Сохраняемость данных](#redis-data-persistence)
     * [Планирование обновлений](#schedule-updates)
     * [Георепликация](#geo-replication)
     * [Виртуальная сеть](#virtual-network)
-    * [Брандмауэра](#firewall)
+    * [Брандмауэр](#firewall).
     * [Свойства](#properties)
-    * [Блокировки](#locks)
+    * [Намерен](#locks)
     * [Скрипт автоматизации](#automation-script)
 * Администрирование
     * [Импорт данных](#importexport)
@@ -58,8 +57,8 @@ ms.locfileid: "81010313"
     * [Правила генерации оповещений](#alert-rules)
     * [Диагностика](#diagnostics)
 * Настройки поддержки и устранения неполадок
-    * [Работоспособность ресурсов](#resource-health)
-    * [Новый запрос в службу поддержки](#new-support-request)
+    * [Работоспособность ресурса](#resource-health)
+    * [Новый запрос на техническую поддержку](#new-support-request)
 
 
 ## <a name="overview"></a>Обзор
@@ -74,7 +73,7 @@ ms.locfileid: "81010313"
 
 В разделе **Управление доступом (IAM)** обеспечивается поддержка управления доступом на основе ролей (RBAC) на портале Azure. Эта конфигурация помогает организациям просто и точно выполнять требования к управлению доступом. Дополнительные сведения см. в статье [Использование назначений ролей для управления доступом к ресурсам в подписке Azure](../role-based-access-control/role-assignments-portal.md).
 
-### <a name="tags"></a>Теги
+### <a name="tags"></a>Tags
 
 В разделе **Теги** вы можете упорядочить свои ресурсы. Дополнительные сведения см. в статье [Использование тегов для организации ресурсов в Azure](../azure-resource-manager/management/tag-resources.md).
 
@@ -85,21 +84,21 @@ ms.locfileid: "81010313"
 
 
 
-## <a name="settings"></a>"Настройки"
+## <a name="settings"></a>Параметры
 В разделе **Параметры** можно открыть и настроить следующие параметры кэша.
 
 * [Ключи доступа](#access-keys)
 * [Дополнительные параметры](#advanced-settings)
 * [Помощник по кэшу Azure для Redis](#azure-cache-for-redis-advisor)
-* [Масштабирование](#scale)
+* [Масштаб](#scale)
 * [Размер кластера](#cluster-size)
 * [Сохраняемость данных](#redis-data-persistence)
 * [Планирование обновлений](#schedule-updates)
 * [Георепликация](#geo-replication)
 * [Виртуальная сеть](#virtual-network)
-* [Брандмауэра](#firewall)
+* [Брандмауэр](#firewall).
 * [Свойства](#properties)
-* [Блокировки](#locks)
+* [Намерен](#locks)
 * [Скрипт автоматизации](#automation-script)
 
 
@@ -324,7 +323,7 @@ ms.locfileid: "81010313"
 >
 
 
-## <a name="monitoring"></a>Мониторинг
+## <a name="monitoring"></a>Наблюдение
 
 В разделе **Мониторинг** можно настроить диагностику и мониторинг для кэша Azure для Redis.
 Дополнительные сведения о мониторинге и диагностике кэша Azure для Redis см. в статье [How to monitor Azure Cache for Redis](cache-how-to-monitor.md) (Как отслеживать кэш Azure для Redis).
@@ -356,8 +355,8 @@ ms.locfileid: "81010313"
 
 ![Поддержка и устранение неполадок](./media/cache-configure/redis-cache-support-troubleshooting.png)
 
-* [Работоспособность ресурсов](#resource-health)
-* [Новый запрос в службу поддержки](#new-support-request)
+* [Работоспособность ресурса](#resource-health)
+* [Новый запрос на техническую поддержку](#new-support-request)
 
 ### <a name="resource-health"></a>Работоспособность ресурса
 Служба **работоспособности ресурсов** отслеживает ресурс и сообщает, работает ли он как ожидалось. Дополнительные сведения о службе работоспособности ресурсов Azure см. [здесь](../resource-health/resource-health-overview.md).
@@ -394,7 +393,7 @@ ms.locfileid: "81010313"
 | `maxmemory-samples` |3 |Для экономии памяти алгоритмы LRU и минимальный TTL являются не точными, а аппроксимированными алгоритмами. По умолчанию Redis проверяет три ключа и выбирает один, использовавшийся наиболее давно. |
 | `lua-time-limit` |5 000 |Максимальное время выполнения сценария Lua в миллисекундах. При достижении максимального времени выполнения Redis делает запись в журнале о нахождении данного сценария в процессе выполнения по истечении максимально допустимого времени и начинает отвечать на запросы ошибкой. |
 | `lua-event-limit` |500 |Максимальный размер очереди событий сценариев. |
-| `client-output-buffer-limit` `normalclient-output-buffer-limit` `pubsub` |0 0 032mb 8mb 60 |Ограничения буферов вывода клиентов можно использовать для принудительного отключения клиентов, по каким-либо причинам недостаточно быстро считывающим данные с сервера (распространенной причиной является неспособность клиента Pub/Sub поглощать сообщения так же быстро, как их производит издатель). Дополнительные сведения см. в [https://redis.io/topics/clients](https://redis.io/topics/clients)разделе. |
+| `client-output-buffer-limit` `normalclient-output-buffer-limit` `pubsub` |0 0 032mb 8mb 60 |Ограничения буферов вывода клиентов можно использовать для принудительного отключения клиентов, по каким-либо причинам недостаточно быстро считывающим данные с сервера (распространенной причиной является неспособность клиента Pub/Sub поглощать сообщения так же быстро, как их производит издатель). Дополнительные сведения см. на веб-сайте [https://redis.io/topics/clients](https://redis.io/topics/clients). |
 
 <a name="databases"></a>
 <sup>1</sup> Для различных ценовых категорий кэша Azure для Redis предельное значение `databases` будет разным. Его можно указать при создании кэша. Если при создании кэша значение `databases` не указано, то используется значение по умолчанию — 16.
@@ -461,14 +460,14 @@ ms.locfileid: "81010313"
 >
 >
 
-Дополнительные сведения о командах Redis см. [https://redis.io/commands](https://redis.io/commands)в разделе.
+Дополнительные сведения о командах Redis см. в разделе [https://redis.io/commands](https://redis.io/commands) .
 
 ## <a name="redis-console"></a>Консоль Redis
 В экземплярах кэша Azure для Redis можно безопасно выполнять команды с помощью **консоли Redis**, доступной на портале Azure для всех категорий кэшей.
 
 > [!IMPORTANT]
 > - Консоль Redis не работает с [VNET](cache-how-to-premium-vnet.md). Если кэш является частью виртуальной сети, то к нему могут обращаться только клиенты в этой виртуальной сети. Так как консоль Redis работает в локальном браузере вне виртуальной сети, она не может подключиться к кэшу.
-> - В кэше Azure для Redis поддерживаются не все команды Redis. Список команд Redis, отключенных в кэше Azure для Redis, см. в предыдущем разделе — [Команды Redis не поддерживаются в кэше Azure для Redis](#redis-commands-not-supported-in-azure-cache-for-redis). Дополнительные сведения о командах Redis см. [https://redis.io/commands](https://redis.io/commands)в разделе.
+> - В кэше Azure для Redis поддерживаются не все команды Redis. Список команд Redis, отключенных в кэше Azure для Redis, см. в предыдущем разделе — [Команды Redis не поддерживаются в кэше Azure для Redis](#redis-commands-not-supported-in-azure-cache-for-redis). Дополнительные сведения о командах Redis см. в разделе [https://redis.io/commands](https://redis.io/commands) .
 >
 >
 

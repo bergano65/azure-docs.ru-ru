@@ -9,10 +9,9 @@ ms.topic: article
 ms.date: 12/07/2016
 ms.author: tagore
 ms.openlocfilehash: e862818a4fe2471af574d153d43f0096af7847b8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80811413"
 ---
 # <a name="how-to-configure-cloud-services"></a>Настройка облачных служб
@@ -44,9 +43,9 @@ ms.locfileid: "80811413"
 >[!IMPORTANT]
 > В случае выбора конкретной версии ОС автоматические обновления операционной системы отключаются, а ответственность за установку исправлений ложится на вас. Вы должны обеспечить установку обновлений в экземплярах роли, иначе система безопасности вашего приложения будет уязвима.
 
-## <a name="monitoring"></a>Мониторинг
+## <a name="monitoring"></a>Наблюдение
 
-Вы можете включить оповещения в облачной службе. Щелкните **Параметры** >  > **правила генерации оповещений****Добавить оповещение**.
+Вы можете включить оповещения в облачной службе. Щелкните **Параметры**  >  **правила генерации оповещений**  >  **Добавить оповещение**.
 
 ![](./media/cloud-services-how-to-configure-portal/cs-alerts.png)
 
@@ -62,7 +61,7 @@ ms.locfileid: "80811413"
 
 ### <a name="configure-monitoring-from-a-metric-tile"></a>Настройка мониторинга с использованием плиток метрик
 
-Вместо использования **параметров** > **Правила оповещений**можно щелкнуть одну из плиток метрик в разделе **мониторинг** облачной службы.
+Вместо использования **параметров**  >  **Правила оповещений**можно щелкнуть одну из плиток метрик в разделе **мониторинг** облачной службы.
 
 ![Мониторинг облачной службы](./media/cloud-services-how-to-configure-portal/cs-monitoring.png)
 
@@ -101,7 +100,7 @@ ms.locfileid: "80811413"
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, как [развернуть облачную службу](cloud-services-how-to-create-deploy-portal.md).
-* Настройка [пользовательского имени домена](cloud-services-custom-domain-name-portal.md).
+* Настройте [имя пользовательского домена](cloud-services-custom-domain-name-portal.md).
 * [Управляйте облачной службой](cloud-services-how-to-manage-portal.md).
 * Настройте [сертификаты TLS/SSL](cloud-services-configure-ssl-certificate-portal.md).
 

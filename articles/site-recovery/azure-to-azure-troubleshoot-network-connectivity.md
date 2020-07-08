@@ -6,10 +6,9 @@ manager: rochakm
 ms.topic: how-to
 ms.date: 04/06/2020
 ms.openlocfilehash: d2cc4133e52e7cab812413d23948da6ac2660e77
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80884874"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-network-connectivity-issues"></a>Устранение неполадок с сетевым подключением Azure к виртуальной машине Azure
@@ -20,7 +19,7 @@ ms.locfileid: "80884874"
 
 | URL-адрес | Сведения |
 |---|---|
-| `*.blob.core.windows.net` | Это необходимо, чтобы данные можно было записать в учетную запись хранения кэша в исходном регионе из виртуальной машины. Если вы знакомы со всеми учетными записями хранения кэша для виртуальных машин, вы можете использовать список разрешений для конкретных URL-адресов учетных записей хранения. Например, `cache1.blob.core.windows.net` и `cache2.blob.core.windows.net` вместо. `*.blob.core.windows.net` |
+| `*.blob.core.windows.net` | Это необходимо, чтобы данные можно было записать в учетную запись хранения кэша в исходном регионе из виртуальной машины. Если вы знакомы со всеми учетными записями хранения кэша для виртуальных машин, вы можете использовать список разрешений для конкретных URL-адресов учетных записей хранения. Например, `cache1.blob.core.windows.net` и `cache2.blob.core.windows.net` вместо `*.blob.core.windows.net` . |
 | `login.microsoftonline.com` | Требуется для авторизации и проверки подлинности URL-адресов службы Site Recovery. |
 | `*.hypervrecoverymanager.windowsazure.com` | Требуется для обмена данными между службой Site Recovery и виртуальной машиной. Можно использовать соответствующий _IP-адрес Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
 | `*.servicebus.windows.net` | Необходимые для записи данные наблюдения и диагностики Site Recovery из виртуальной машины. Можно использовать соответствующий _IP-адрес мониторинга Site Recovery_ , если прокси-сервер брандмауэра поддерживает IP. |
@@ -51,7 +50,7 @@ ms.locfileid: "80884874"
 ### <a name="issue-2-site-recovery-configuration-failed-151196"></a>Проблема 2. Сбой при выполнении настройки Site Recovery (151196)
 
 > [!NOTE]
-> Если виртуальные машины находятся за **стандартным** внутренним подсистемой балансировки нагрузки, по умолчанию он не будет иметь доступ к IP `login.microsoftonline.com`-адресам Office 365, таким как. Либо измените его на **базовый** тип внутренней подсистемы балансировки нагрузки, либо создайте исходящий доступ, как упоминалось в статье [Настройка балансировки нагрузки и правил исходящего трафика в Load Balancer (цен. категория "Стандартный") с помощью Azure CLI](/azure/load-balancer/configure-load-balancer-outbound-cli).
+> Если виртуальные машины находятся за **стандартным** внутренним подсистемой балансировки нагрузки, по умолчанию он не будет иметь доступ к IP-адресам Office 365, таким как `login.microsoftonline.com` . Либо измените его на **базовый** тип внутренней подсистемы балансировки нагрузки, либо создайте исходящий доступ, как упоминалось в статье [Настройка балансировки нагрузки и правил исходящего трафика в Load Balancer (цен. категория "Стандартный") с помощью Azure CLI](/azure/load-balancer/configure-load-balancer-outbound-cli).
 
 #### <a name="possible-cause"></a>Возможная причина
 
@@ -124,7 +123,7 @@ ms.locfileid: "80884874"
 
 #### <a name="resolution"></a>Решение
 
-1. Агент службы Mobility Service обнаруживает параметры прокси-сервера из IE в Windows `/etc/environment` и Linux.
+1. Агент службы Mobility Service обнаруживает параметры прокси-сервера из IE в Windows и `/etc/environment` Linux.
 1. Если вы предпочитаете настроить прокси-сервер только для Azure Site Recovery службы Mobility Service, вы можете указать сведения о прокси-сервере в файле _проксинфо. conf_ , расположенном по адресу:
 
    - **Linux**:`/usr/local/InMage/config/`

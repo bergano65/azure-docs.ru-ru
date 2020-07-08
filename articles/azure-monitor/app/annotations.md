@@ -4,10 +4,9 @@ description: Добавление маркеров развертывания и
 ms.topic: conceptual
 ms.date: 07/01/2019
 ms.openlocfilehash: 0ad773ca6a7102ac718d43dfbbf6a4f834e681a0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81010743"
 ---
 # <a name="annotations-on-metric-charts-in-application-insights"></a>Заметки к диаграммам метрик в Application Insights
@@ -63,7 +62,7 @@ ms.locfileid: "81010743"
    
 1. В окне шаблон выпуска на вкладке **переменные** выберите **Добавить** , чтобы создать определение переменной для нового ключа API.
 
-1. В разделе **имя**введите `ApiKey`и в поле **значение**вставьте ключ API, скопированный на вкладке **доступ к API** .
+1. В разделе **имя**введите `ApiKey` и в поле **значение**вставьте ключ API, скопированный на вкладке **доступ к API** .
    
    ![На вкладке DevOps переменные Azure выберите Добавить, назовите переменную ApiKey и вставьте ключ API в поле значение.](./media/annotations/7-paste-api-key.png)
    
@@ -94,11 +93,11 @@ ms.locfileid: "81010743"
 ## <a name="create-custom-annotations-from-powershell"></a>Создание настраиваемых заметок в PowerShell
 Вы можете использовать сценарий PowerShell [креатерелеасеаннотатион](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1) из GitHub для создания заметок из любого процесса, не используя Azure DevOps. 
 
-1. Создайте локальную копию [креатерелеасеаннотатион. ps1](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1).
+1. Создайте локальную копию [CreateReleaseAnnotation.ps1](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1).
    
 1. Выполните действия, описанные в предыдущей процедуре, чтобы получить идентификатор Application Insights и создать ключ API на вкладке **доступ к api** Application Insights.
    
-1. Вызовите сценарий PowerShell с помощью следующего кода, заменив заполнители в угловых скобках значениями. `-releaseProperties` Являются необязательными. 
+1. Вызовите сценарий PowerShell с помощью следующего кода, заменив заполнители в угловых скобках значениями. `-releaseProperties`Являются необязательными. 
    
    ```powershell
    

@@ -12,10 +12,9 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 753892790a6f6b898b48d955e6806837967f3e92
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80882970"
 ---
 # <a name="desktop-app-that-calls-web-apis-call-a-web-api"></a>Классическое приложение, вызывающее веб-API: вызов веб-API
@@ -64,7 +63,7 @@ JSONObject responseObject = HttpClientHelper.processResponse(responseCode, respo
 
 ## <a name="call-a-web-api-in-msal-for-ios-and-macos"></a>Вызов веб-API в MSAL для iOS и macOS
 
-Методы получения маркеров возвращают `MSALResult` объект. `MSALResult`предоставляет `accessToken` свойство, которое можно использовать для вызова веб-API. Перед вызовом доступа к защищенному веб-API добавьте маркер доступа в заголовок авторизации HTTP.
+Методы получения маркеров возвращают объект `MSALResult`. `MSALResult`предоставляет `accessToken` свойство, которое можно использовать для вызова веб-API. Перед вызовом доступа к защищенному веб-API добавьте маркер доступа в заголовок авторизации HTTP.
 
 Objective-C.
 
@@ -94,7 +93,7 @@ task.resume()
 
 ## <a name="call-several-apis-incremental-consent-and-conditional-access"></a>Вызов нескольких API: последовательное согласие и условный доступ
 
-Чтобы вызвать несколько API для одного пользователя, после получения маркера для первого API вызовите `AcquireTokenSilent`. Вы получите маркер для других интерфейсов API в большинстве случаев.
+Чтобы вызвать несколько API для одного пользователя, после получения маркера для первого API вызовите `AcquireTokenSilent` . Вы получите маркер для других интерфейсов API в большинстве случаев.
 
 ```csharp
 var result = await app.AcquireTokenXX("scopeApi1")
@@ -104,9 +103,9 @@ result = await app.AcquireTokenSilent("scopeApi2")
                   .ExecuteAsync();
 ```
 
-Взаимодействие требуется, если:
+Взаимодействие необходимо, если:
 
-- Пользователь, которому предоставлен доступ к первому API, теперь должен предоставить согласие на дополнительные области. Этот тип разрешения известен как добавочное согласие.
+- Пользователь предоставил согласие для первого API, а теперь ему требуется согласие для других областей. Этот тип разрешения известен как добавочное согласие.
 - Первый API не требует многофакторной проверки подлинности, а следующий —.
 
 ```csharp

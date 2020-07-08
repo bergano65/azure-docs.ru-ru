@@ -8,10 +8,9 @@ ms.topic: how-to
 ms.date: 04/10/2020
 ms.author: ramamill
 ms.openlocfilehash: ec4d1cfbe0c76c8245c4beeaa7c044d76d917a7a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81259814"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Сведения о службе Mobility Service на виртуальных машинах и физических серверах VMware
@@ -130,11 +129,11 @@ ms.locfileid: "81259814"
 Параметр | Сведения
 --- | ---
 Синтаксис | `UnifiedAgent.exe /Role \<MS/MT> /InstallLocation \<Install Location> /Platform "VmWare" /Silent`
-журналы установки; | `%ProgramData%\ASRSetupLogs\ASRUnifiedAgentInstaller.log`
+Журналы установки | `%ProgramData%\ASRSetupLogs\ASRUnifiedAgentInstaller.log`
 `/Role` | Параметр, обязательный для установки. Указывает, следует ли устанавливать службу Mobility Service или главный целевой сервер.
 `/InstallLocation`| Необязательный параметр. Указывает расположение установки (любая папка).
 `/Platform` | Mandatory. Указывает платформу, на которой установлена служба Mobility Service: <br/> **VMware** для виртуальных машин VMware или физических серверов. <br/> **Azure** для виртуальных машин Azure.<br/><br/> Если виртуальные машины Azure разрабатывается как физические компьютеры, укажите **VMware**.
-`/Silent`| Необязательный параметр. Указывает, разрешен ли запуск установщика в автоматическом режиме.
+`/Silent`| Необязательный элемент. Указывает, разрешен ли запуск установщика в автоматическом режиме.
 
 #### <a name="registration-settings"></a>Параметры регистрации
 
@@ -172,9 +171,9 @@ ms.locfileid: "81259814"
 --- | ---
 Синтаксис | `./install -d \<Install Location> -r \<MS/MT> -v VmWare -q`
 `-r` | Параметр, обязательный для установки. Указывает, следует ли устанавливать службу Mobility Service или главный целевой сервер.
-`-d` | Необязательный параметр. Указывает расположение установки службы Mobility Service: `/usr/local/ASR`.
+`-d` | Необязательный параметр. Указывает расположение установки службы Mobility Service: `/usr/local/ASR` .
 `-v` | Mandatory. Указывает платформу, на которой установлена служба Mobility Service. <br/> **VMware** для виртуальных машин VMware или физических серверов. <br/> **Azure** для виртуальных машин Azure.
-`-q` | Необязательный параметр. Указывает, разрешен ли запуск установщика в автоматическом режиме.
+`-q` | Необязательный элемент. Указывает, разрешен ли запуск установщика в автоматическом режиме.
 
 #### <a name="registration-settings"></a>Параметры регистрации
 
@@ -200,7 +199,7 @@ ms.locfileid: "81259814"
 
 Файл установщика | Операционная система (только 64-разрядная версия)
 --- | ---
-`Microsoft-ASR_UA_version_Windows_GA_date_release.exe` | Windows Server 2016 </br> Windows Server 2012 R2 </br> Windows Server 2012 </br> Windows Server 2008 R2 с пакетом обновления 1 (SP1)
+`Microsoft-ASR_UA_version_Windows_GA_date_release.exe` | Windows Server 2016 </br> Windows Server 2012 R2 </br> Windows Server 2012 </br> Windows Server 2008 R2 с пакетом обновления 1 (SP1)
 `Microsoft-ASR_UA_version_RHEL6-64_GA_date_release.tar.gz` | Red Hat Enterprise Linux (RHEL) 6 </br> CentOS 6
 `Microsoft-ASR_UA_version_RHEL7-64_GA_date_release.tar.gz` | Red Hat Enterprise Linux (RHEL) 7 </br> CentOS 7
 `Microsoft-ASR_UA_version_SLES12-64_GA_date_release.tar.gz` | SUSE Linux Enterprise Server 12 SP1 </br> Включает пакет обновления 2 (SP2) и SP3.

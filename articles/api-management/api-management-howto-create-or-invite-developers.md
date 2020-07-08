@@ -13,10 +13,9 @@ ms.topic: article
 ms.date: 02/13/2018
 ms.author: apimpm
 ms.openlocfilehash: 672f145b638fa6b85f7139f2edb4fc41bb2855d9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81260978"
 ---
 # <a name="how-to-manage-user-accounts-in-azure-api-management"></a>Управление учетными записями пользователей в службе управления API Azure
@@ -42,7 +41,7 @@ ms.locfileid: "81260978"
 
     ![Добавление нового пользователя](./media/api-management-howto-create-or-invite-developers/api-management-create-developer.png)
 
-По умолчанию недавно созданные учетные записи разработчика являются **активными** и связаны с группой **Разработчики**. Учетные записи разработчика, которые находятся в **активном** состоянии, можно использовать для доступа ко всем интерфейсам API, на которые у них есть подписки. Процедуру связывания недавно созданного разработчика с дополнительными группами см. в разделе [Связывание групп с разработчиками][How to associate groups with developers].
+По умолчанию вновь созданные учетные записи разработчика **активны**и связаны с группой **разработчиков** . Учетные записи разработчиков, которые находятся в **активном** состоянии, могут использоваться для доступа ко всем интерфейсам API, для которых у них есть подписки. Процедуру связывания недавно созданного разработчика с дополнительными группами см. в разделе [Связывание групп с разработчиками][How to associate groups with developers].
 
 ## <a name="invite-a-developer"></a><a name="invite-developer"> </a>Приглашение разработчика
 Чтобы отправить приглашение разработчику, выполните инструкции в этом разделе:
@@ -70,7 +69,7 @@ ms.locfileid: "81260978"
 
 Сведения о программной работе с учетными записями пользователей см. в документации по сущности пользователя в справочнике по службе [управления API REST API](/rest/api/apimanagement/) . Чтобы сбросить пароль учетной записи пользователя до определенного значения, можно использовать операцию [обновления пользователя](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-user-entity#UpdateUser) и указать нужный пароль.
 
-## <a name="next-steps"></a><a name="next-steps"> </a>Дальнейшие шаги
+## <a name="next-steps"></a><a name="next-steps"> </a>Дальнейшие действия
 После создания учетной записи разработчика ее можно связать с ролями и подписать ее на продукты и интерфейсы API. Дополнительные сведения см. в статье [Как создавать и использовать группы для управления учетными записями разработчика в службе управления Azure API][How to create and use groups].
 
 [api-management-management-console]: ./media/api-management-howto-create-or-invite-developers/api-management-management-console.png

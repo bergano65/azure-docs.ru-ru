@@ -12,10 +12,9 @@ ms.date: 02/11/2020
 ms.author: nacanuma
 ms.custom: aaddev
 ms.openlocfilehash: f159105046231ba5fb4e458cdd70d930a411a920
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80882341"
 ---
 # <a name="single-page-application-code-configuration"></a>Одностраничное приложение: конфигурация кода
@@ -28,8 +27,8 @@ ms.locfileid: "80882341"
 
 | Библиотека MSAL | Описание |
 |--------------|--------------|
-| ![MSAL.js](media/sample-v2-code/logo_js.png) <br/> [MSAL. js](https://github.com/AzureAD/microsoft-authentication-library-for-js)  | Простая библиотека JavaScript для использования в любом веб-приложении на стороне клиента, созданном с помощью платформ JavaScript или SPA, таких как угловой, Vue. js и реагируют. js. |
-| ![MSALный угловой](media/sample-v2-code/logo_angular.png) <br/> [MSALный угловой](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/README.md) | Оболочка основной библиотеки MSAL. js для упрощения использования в одностраничных приложениях, созданных с помощью угловой платформы. |
+| ![MSAL.js](media/sample-v2-code/logo_js.png) <br/> [MSAL.js](https://github.com/AzureAD/microsoft-authentication-library-for-js)  | Простая библиотека JavaScript для использования в любом веб-приложении на стороне клиента, созданном с помощью платформ JavaScript или SPA, таких как угловой, Vue.js и React.js. |
+| ![MSALный угловой](media/sample-v2-code/logo_angular.png) <br/> [MSALный угловой](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/README.md) | Обертка основной библиотеки MSAL.js для упрощения использования в одностраничных приложениях, созданных с помощью угловой платформы. |
 
 ## <a name="application-code-configuration"></a>Конфигурация кода приложения
 
@@ -50,7 +49,7 @@ const config = {
 const userAgentApplication = new UserAgentApplication(config);
 ```
 
-Дополнительные сведения о настраиваемых параметрах см. в разделе [Инициализация приложения с помощью MSAL. js](msal-js-initializing-client-applications.md).
+Дополнительные сведения о настраиваемых параметрах см. в разделе [Инициализация приложения с помощью MSAL.js](msal-js-initializing-client-applications.md).
 
 # <a name="angular"></a>[Angular](#tab/angular)
 
@@ -73,7 +72,7 @@ export class AppModule { }
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Функции входа и выхода](scenario-spa-sign-in.md)

@@ -13,21 +13,20 @@ ms.date: 08/28/2019
 ms.author: marsma
 ms.custom: aaddev
 ms.openlocfilehash: 1507231c3ab395319d5ce95ec06dbb592c324aa6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80881083"
 ---
 # <a name="how-to-troubleshoot-msal-for-ios-and-macos-tlsssl-issues"></a>Как устранять неполадки MSAL для iOS и macOS TLS/SSL
 
 В этой статье содержатся сведения, помогающие устранить проблемы, которые могут возникнуть при использовании [библиотеки проверки подлинности Майкрософт (MSAL) для iOS и macOS](reference-v2-libraries.md)
 
-## <a name="network-issues"></a>Проблемы с сетью
+## <a name="network-issues"></a>проблемы с сетью.
 
 **Ошибка-1200**: "произошла ошибка SSL, не удается установить безопасное соединение с сервером".
 
-Эта ошибка означает, что соединение не защищено. Это происходит, когда сертификат недействителен. Дополнительные сведения, `NSURLErrorFailingURLErrorKey` в том числе о том, какой сервер не проходит проверку TLS, см. `userInfo` в словаре объекта ошибки.
+Эта ошибка означает, что соединение не защищено. Это происходит, когда сертификат недействителен. Дополнительные сведения, в том числе о том, какой сервер не проходит проверку TLS, см `NSURLErrorFailingURLErrorKey` `userInfo` . в словаре объекта ошибки.
 
 Эта ошибка связана с сетевой библиотекой Apple. Полный список кодов ошибок NSURL находится в Нсурлеррор. h в пакетах SDK для macOS и iOS. Дополнительные сведения об этой ошибке см. в разделе [URL-Загрузка кодов системных ошибок](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes?language=objc).
 
@@ -43,6 +42,6 @@ ms.locfileid: "80881083"
 
 Портал перезаписи предоставляет пользователю веб-страницу при первом доступе к сети Wi-Fi и еще не предоставил доступ к этой сети. Он перехватывает трафик Интернета до тех пор, пока пользователь не будет удовлетворять требованиям портала. Сетевые ошибки, так как пользователь не может подключиться к сетевым ресурсам, пока пользователь не подключится через портал.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о [порталах](https://en.wikipedia.org/wiki/Captive_portal) с пределом и новой функции [безопасности транспорта приложений Apple (ATS)](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW35) .

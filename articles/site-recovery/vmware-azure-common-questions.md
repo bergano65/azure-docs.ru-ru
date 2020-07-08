@@ -4,17 +4,16 @@ description: Получите ответы на часто задаваемые 
 ms.date: 11/14/2019
 ms.topic: conceptual
 ms.openlocfilehash: d551cef7037c0b6d7286cbb4b70d8f7a8f7f5cae
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81259516"
 ---
 # <a name="common-questions-about-vmware-to-azure-replication"></a>Часто задаваемые вопросы о репликации из VMware в Azure
 
 В этой статье содержатся ответы на распространенные вопросы, которые могут возникнуть при развертывании аварийного восстановления локальных виртуальных машин VMware в Azure.
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 
 ### <a name="what-do-i-need-for-vmware-vm-disaster-recovery"></a>Что нужно для аварийного восстановления виртуальных машин VMware?
 
@@ -198,7 +197,7 @@ Site Recovery соответствует модели поддержки N-4. Д
 
 ## <a name="do-i-need-to-reboot-source-machines-for-each-upgrade"></a>Нужно ли перезагружать исходные компьютеры для каждого обновления?
 
-Для каждого обновления рекомендуется использовать перезагрузку, но не обязательно. [Подробнее](https://aka.ms/asr_vmware_upgrades).
+Для каждого обновления рекомендуется использовать перезагрузку, но не обязательно. [Подробнее.](https://aka.ms/asr_vmware_upgrades)
 
 ## <a name="configuration-server"></a>Сервер конфигурации
 
@@ -282,7 +281,7 @@ Site Recovery соответствует модели поддержки N-4. Д
 
 ### <a name="where-can-i-download-vault-registration-keys"></a>Где можно загрузить ключи регистрации хранилища?
 
-В хранилище служб восстановления выберите **серверы конфигурации** в **Site Recovery инфраструктуре** > **Управление**. Затем в разделе **серверы**выберите **скачать ключ регистрации** , чтобы скачать файл учетных данных хранилища.
+В хранилище служб восстановления выберите **серверы конфигурации** в **Site Recovery инфраструктуре**  >  **Управление**. Затем в разделе **серверы**выберите **скачать ключ регистрации** , чтобы скачать файл учетных данных хранилища.
 
 ### <a name="can-a-single-configuration-server-be-used-to-protect-multiple-vcenter-instances"></a>Можно ли использовать один сервер конфигурации для защиты нескольких экземпляров vCenter?
 
@@ -326,7 +325,7 @@ Site Recovery соответствует модели поддержки N-4. Д
 
 ### <a name="how-do-i-access-azure-vms-after-failover"></a>Как получить доступ к виртуальным машина Azure после отработки отказа?
 
-После отработки отказа вы можете получить доступ к виртуальным машинам Azure через безопасное подключение к Интернету, через VPN типа "сеть — сеть" или через Azure ExpressRoute. Для подключения необходимо подготовить несколько вещей. [Подробнее](site-recovery-test-failover-to-azure.md#prepare-to-connect-to-azure-vms-after-failover).
+После отработки отказа вы можете получить доступ к виртуальным машинам Azure через безопасное подключение к Интернету, через VPN типа "сеть — сеть" или через Azure ExpressRoute. Для подключения необходимо подготовить несколько вещей. [Подробнее.](site-recovery-test-failover-to-azure.md#prepare-to-connect-to-azure-vms-after-failover)
 
 ### <a name="is-failed-over-data-resilient"></a>Отработка отказа данных отказоустойчива?
 
@@ -338,7 +337,7 @@ Site Recovery соответствует модели поддержки N-4. Д
 
 ### <a name="can-i-fail-back-to-a-different-location"></a>Можно ли выполнить восстановление размещения в другое расположение?
 
-Да. Если вы отработка отказа в Azure, вы можете восстановить размещение в другое расположение, если исходное хранилище недоступно. [Подробнее](concepts-types-of-failback.md#alternate-location-recovery-alr).
+Да. Если вы отработка отказа в Azure, вы можете восстановить размещение в другое расположение, если исходное хранилище недоступно. [Подробнее.](concepts-types-of-failback.md#alternate-location-recovery-alr)
 
 ### <a name="why-do-i-need-a-vpn-or-expressroute-with-private-peering-to-fail-back"></a>Зачем нужна виртуальная частная сеть или ExpressRoute с частным пирингом для отработки отказа?
 
@@ -349,13 +348,13 @@ Site Recovery соответствует модели поддержки N-4. Д
 
 ### <a name="can-i-set-up-replication-with-scripting"></a>Можно ли настроить репликацию с использованием скриптов?
 
-Да. Вы можете автоматизировать Site Recovery рабочие процессы с помощью API-интерфейса, PowerShell или пакета Azure SDK. [Подробнее](vmware-azure-disaster-recovery-powershell.md).
+Да. Вы можете автоматизировать Site Recovery рабочие процессы с помощью API-интерфейса, PowerShell или пакета Azure SDK. [Подробнее.](vmware-azure-disaster-recovery-powershell.md)
 
 ## <a name="performance-and-capacity"></a>Производительность и емкость
 
 ### <a name="can-i-throttle-replication-bandwidth"></a>Можно ли отрегулировать пропускную способность репликации?
 
-Да. [Подробнее](site-recovery-plan-capacity-vmware.md).
+Да. [Подробнее.](site-recovery-plan-capacity-vmware.md)
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

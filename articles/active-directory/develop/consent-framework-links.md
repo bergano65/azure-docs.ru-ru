@@ -12,10 +12,9 @@ ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: ryanwi
 ms.openlocfilehash: 86b592ecf5485654ab6860addbfde48cee4df077
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80885554"
 ---
 # <a name="how-application-consent-works"></a>Как действует согласие для приложения
@@ -29,5 +28,5 @@ ms.locfileid: "80885554"
 - Получите более подробные сведения об [использовании инфраструктуры согласия в мультитенантном приложении](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview), чтобы реализовать согласие пользователя и администратора, с поддержкой нескольких дополнительных шаблонов многоуровневого приложения.
 - Узнайте подробнее о том, [как согласие поддерживается на уровне протокола OAuth 2.0 во время предоставления кода авторизации.](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-oauth-code#request-an-authorization-code)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [StackOverflow в AzureAD](https://stackoverflow.com/questions/tagged/azure-active-directory)

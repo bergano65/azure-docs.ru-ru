@@ -7,10 +7,9 @@ ms.author: nimolnar
 ms.date: 09/17/2018
 ms.reviewer: mbullwin
 ms.openlocfilehash: 83575aa7f9b63615f453e00bd06b00a5540b9a9e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80892263"
 ---
 # <a name="what-is-distributed-tracing"></a>Что такое распределенная трассировка?
@@ -31,7 +30,7 @@ Azure Monitor также предлагает представление [схе
 
 ## <a name="enabling-via-application-insights-through-auto-instrumentation-or-sdks"></a>Включение через Application Insights через автоматическое инструментирование или пакеты SDK
 
-Application Insights агенты и (или) пакеты SDK для .NET, .NET Core, Java, Node. js и JavaScript поддерживают распределенную трассировку изначально. Инструкции по установке и настройке каждого пакета SDK Application Insights приведены ниже.
+Application Insights агенты и (или) пакеты SDK для .NET, .NET Core, Java, Node.js и JavaScript поддерживают распределенную трассировку изначально. Инструкции по установке и настройке каждого пакета SDK Application Insights приведены ниже.
 
 * [.NET](https://docs.microsoft.com/azure/application-insights/quick-monitor-portal)
 * [.NET Core](https://docs.microsoft.com/azure/application-insights/app-insights-dotnetcore-quick-start)
@@ -55,5 +54,5 @@ Application Insights агенты и (или) пакеты SDK для .NET, .NET
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Руководство по использованию OpenCensus для Python](https://opencensus.io/api/python/trace/usage.html)
-* [Схема приложения](./../../azure-monitor/app/app-map.md)
+* [Сопоставление приложений](./../../azure-monitor/app/app-map.md)
 * [Поиск и диагностика проблем производительности с помощью Azure Application Insights](./../../azure-monitor/learn/tutorial-performance.md)

@@ -5,10 +5,9 @@ ms.topic: conceptual
 ms.date: 05/19/2018
 ms.subservice: alerts
 ms.openlocfilehash: e9c269db870f582c176783a4654b5de251e24412
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81114504"
 ---
 # <a name="what-are-classic-alerts-in-microsoft-azure"></a>Что такое классические оповещения в Microsoft Azure?
@@ -94,5 +93,5 @@ ms.locfileid: "81114504"
 * Настройте [оповещения журнала действий на портале Azure](activity-log-alerts.md).
 * Настройте [оповещения журнала действий с помощью Resource Manager](alerts-activity-log.md).
 * Просмотрите [схему webhook оповещений журнала действий](activity-log-alerts-webhook.md).
-* Дополнительные сведения о [группах действий](action-groups.md).
+* Дополнительные сведения о [группах действий](action-groups.md)
 * Настройка [новых оповещений](alerts-metric.md)

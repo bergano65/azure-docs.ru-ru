@@ -7,10 +7,9 @@ ms.topic: article
 ms.date: 10/24/2019
 ms.custom: seodec18
 ms.openlocfilehash: d40f5db65ce9ca90ae978bac4491bdebccc2a328
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80811710"
 ---
 # <a name="manage-an-app-service-plan-in-azure"></a>Управлением планом службы приложений в Azure
@@ -24,11 +23,11 @@ ms.locfileid: "80811710"
 
 Можно создать пустой план службы приложений или создать его в процессе создания приложения.
 
-1. На [портале Azure](https://portal.azure.com) выберите **Создать ресурс**.
+1. В [портал Azure](https://portal.azure.com)выберите **создать ресурс**.
 
    ![Создайте ресурс в портал Azure.][createResource] 
 
-1. Выберите **новое** > **веб-приложение** или другое приложение службы приложений.
+1. Выберите **новое**  >  **веб-приложение** или другое приложение службы приложений.
 
    ![Создание приложения на портале Azure.][createWebApp] 
 
