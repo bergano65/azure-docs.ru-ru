@@ -5,12 +5,11 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: cshoe
-ms.openlocfilehash: e4f35495d8a01146068cffb9159c29c46c3c0d29
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: fe5efd2bf4c235688aad90ae37b54268d290540c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75561873"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84676137"
 ---
 # <a name="azure-functions-reliable-event-processing"></a>Обработка надежных событий в функциях Azure
 
@@ -55,7 +54,7 @@ ms.locfileid: "75561873"
 
 ## <a name="handling-exceptions"></a>Обработка исключений
 
-Как правило, каждая функция должна включать [блок try/catch](./functions-bindings-error-pages.md) на самом верхнем уровне кода. В `catch` частности, все функции, использующие события концентраторов событий, должны иметь блок. Таким образом, при возникновении исключения блок Catch обрабатывает ошибку перед выполнением указателя.
+Как правило, каждая функция должна включать [блок try/catch](./functions-bindings-error-pages.md) на самом верхнем уровне кода. В частности, все функции, использующие события концентраторов событий, должны иметь `catch` блок. Таким образом, при возникновении исключения блок Catch обрабатывает ошибку перед выполнением указателя.
 
 ### <a name="retry-mechanisms-and-policies"></a>Механизмы и политики повтора
 
@@ -91,7 +90,7 @@ ms.locfileid: "75561873"
 
 Сведения о реализации могут отличаться, но для общего доступа к состоянию между экземплярами необходим механизм хранения. Вы можете выбрать сохранение состояния в службе хранилища Azure, кэше Redis или любой другой учетной записи, доступной коллекции функций.
 
-[Azure Logic Apps](../logic-apps/logic-apps-overview.md) или [устойчивые сущности](./durable/durable-functions-overview.md) естественным образом подходят для управления рабочим процессом и состоянием цепи. Другие службы могут работать точно так же, но для этого примера используются приложения логики. С помощью приложений логики можно приостанавливать и перезапускать выполнение функции, предоставляя элемент управления, необходимый для реализации шаблона автоматического выключения.
+[Azure Logic Apps](../logic-apps/logic-apps-overview.md) или [устойчивые функции](./durable/durable-functions-overview.md) являются естественным соответствием управлению рабочим процессом и состоянием цепи. Другие службы могут работать точно так же, но для этого примера используются приложения логики. С помощью приложений логики можно приостанавливать и перезапускать выполнение функции, предоставляя элемент управления, необходимый для реализации шаблона автоматического выключения.
 
 ### <a name="define-a-failure-threshold-across-instances"></a>Определение порогового значения сбоя для экземпляров
 
@@ -123,9 +122,9 @@ Azure Logic Apps поставляется с встроенными соедин
 ## <a name="resources"></a>Ресурсы
 
 - [Примеры обработки надежных событий](https://github.com/jeffhollan/functions-csharp-eventhub-ordered-processing)
-- [Автоматическое выключение цепи Azure Устойчивые функции](https://github.com/jeffhollan/functions-durable-actor-circuitbreaker)
+- [Автоматическое выключение цепи Azure](https://github.com/jeffhollan/functions-durable-actor-circuitbreaker)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих ресурсах:
 

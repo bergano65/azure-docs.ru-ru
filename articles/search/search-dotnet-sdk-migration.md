@@ -9,12 +9,11 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: fcad05749892e3a652e110a7e351450bffaca6f2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 548cd488bc811ad16cd84950ce3819f2e1f3ddbb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "72792983"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85080712"
 ---
 # <a name="upgrade-to-azure-search-net-sdk-version-3"></a>Обновление до пакета SDK .NET для поиска Azure версии 3
 
@@ -25,7 +24,7 @@ Indexer execution result errors no longer have status
 the data source API will no longer return in the response of any REST operation, the connection string specified by the user.
 --->
 
-Если вы используете версию 2.0-preview [пакета SDK службы поиска Azure для .NET](https://aka.ms/search-sdk) или более раннюю, то эта статья поможет вам обновить приложение для использования версии 3.
+Если вы используете версию 2.0-preview [пакета SDK службы поиска Azure для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/search) или более раннюю, то эта статья поможет вам обновить приложение для использования версии 3.
 
 Более общее пошаговое руководство по пакету SDK, включая примеры, см. в разделе [Использование службы поиска Azure в приложении .NET](search-howto-dotnet-sdk.md).
 
@@ -41,7 +40,7 @@ the data source API will no longer return in the response of any REST operation,
 ## <a name="whats-new-in-version-3"></a>Новые возможности в версии 3
 Версия 3 пакета SDK службы поиска Azure для .NET предназначена для последней общедоступной версии интерфейса REST API службы поиска Azure, в частности версии 2016-09-01. Это дает возможность использовать различные новые функции службы поиска Azure из приложений для .NET, включая следующие:
 
-* [пользовательские анализаторы;](https://aka.ms/customanalyzers)
+* [пользовательские анализаторы;](index-add-custom-analyzers.md)
 * поддержка индексатора [хранилища BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md) и [хранилища таблиц Azure](search-howto-indexing-azure-tables.md);
 * настройка индексатора посредством [сопоставления полей](search-indexer-field-mappings.md)
 * поддержка тегов eTag, обеспечивающих безопасное одновременное обновление определений индекса, индексаторов и источников данных;

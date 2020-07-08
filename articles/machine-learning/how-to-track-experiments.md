@@ -9,15 +9,14 @@ ms.reviewer: sgilley
 ms.service: machine-learning
 ms.subservice: core
 ms.workload: data-services
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/12/2020
 ms.custom: seodec18
-ms.openlocfilehash: 9613b74b727d27bd47a05fadc1398bf898f667a5
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 426c79c19b599127e2235f61e8c917062ede3b79
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83835735"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84675208"
 ---
 # <a name="monitor-azure-ml-experiment-runs-and-metrics"></a>Отслеживание выполнения экспериментов с машинным обучением Azure и метрик
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -127,6 +126,8 @@ ms.locfileid: "83835735"
         run.log(name='Mean_Absolute_Error', value=dataframe1['Mean_Absolute_Error'])
 
         # Log the mean absolute error to the parent run to see the metric in the run details page.
+        # Note: 'run.parent.log()' should not be called multiple times because of performance issues.
+        # If repeated calls are necessary, cache 'run.parent' as a local variable and call 'log()' on that variable.
         run.parent.log(name='Mean_Absolute_Error', value=dataframe1['Mean_Absolute_Error'])
     
         return dataframe1,
@@ -207,9 +208,11 @@ ms.locfileid: "83835735"
 
 После завершения эксперимента можно просмотреть записи о выполнении в эксперименте. Доступ к журналу можно получить из [студии Машинного обучения Azure](https://ml.azure.com).
 
-Перейдите на вкладку "Эксперименты" и выберите нужный эксперимент. Вы попадете на панель мониторинга запуска эксперимента, где можно посмотреть метрики и диаграммы для каждого запуска. В этом случае мы регистрируем MSE и альфа-значения.
+Перейдите на вкладку "Эксперименты" и выберите нужный эксперимент. Вы попадете на панель мониторинга запуска эксперимента, где можно посмотреть метрики и диаграммы для каждого запуска. 
 
-  ![Сведения о запуске в студии Машинного обучения Azure](./media/how-to-track-experiments/experiment-dashboard.png)
+Можно изменить таблицу Run List, чтобы отображалось Последнее, минимальное или максимальное значение журнала для выполнения. Можно выбрать или отменить выбор нескольких запусков в списке Запуск, и выбранные запуски заполнят диаграммы данными. Можно также добавить новые диаграммы или изменить диаграммы, чтобы сравнить зарегистрированные метрики (минимальное, максимальное, Последнее или все значения) в нескольких запусках. Для более эффективного изучения данных можно также максимально увеличить объем диаграмм.
+
+:::image type="content" source="media/how-to-track-experiments/experimentation-tab.gif" alt-text="Сведения о запуске в студии Машинного обучения Azure":::
 
 Вы также можете в деталях просмотреть данные любого запуска, в том числе выходные данные или журналы выполнения, а также скачать моментальный снимок отправленного на запуск эксперимента, чтобы предоставить общий доступ к его папке.
 

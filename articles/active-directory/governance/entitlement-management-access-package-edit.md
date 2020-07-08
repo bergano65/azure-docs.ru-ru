@@ -10,18 +10,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 10/15/2019
+ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf410db5a483fc4f5d9efc1a6bd5c6202694ef4c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: da450a2dfc4351f5bd2c3c759b483cea0c110d9e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79262000"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85078790"
 ---
 # <a name="hide-or-delete-an-access-package-in-azure-ad-entitlement-management"></a>Скрытие или удаление пакета Access в управлении назначениями Azure AD
 
@@ -63,7 +62,7 @@ ms.locfileid: "79262000"
 
 1. В появившемся сообщении об удалении нажмите кнопку **Да**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Просмотр, Добавление и удаление назначений для пакета Access](entitlement-management-access-package-assignments.md)
 - [Просмотр отчетов и журналов](entitlement-management-reports.md)

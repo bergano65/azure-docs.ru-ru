@@ -10,28 +10,27 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 11/01/2019
+ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99de022b7259b33baab3aa825673a8f85e932bff
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 0d4de2ac3ee74d60eb532bd469b20523fa937db0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78968746"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85078569"
 ---
 # <a name="review-access-of-an-access-package-in-azure-ad-entitlement-management"></a>Проверка доступа к пакету Access в управлении назначениями Azure AD
 
 Управление назначением Azure AD упрощает управление доступом предприятия к группам, приложениям и сайтам SharePoint. В этой статье описывается, как выполнять проверки доступа для других пользователей, которым назначен пакет доступа, в качестве назначенного рецензента.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы проверить назначения пакетов Active Access для пользователей, необходимо выполнить необходимые условия для проверки доступа:
 - Azure AD Premium P2
-- Глобальный администратор
+- Глобальный администратор.
 - Назначенный администратор пользователей, владелец каталога или диспетчер пакетов Access
 
 Дополнительные сведения см. в статье [Лицензионные требования](entitlement-management-overview.md#license-requirements).
@@ -47,7 +46,7 @@ ms.locfileid: "78968746"
 
 1. Щелкните ссылку **проверить доступ пользователя** , чтобы открыть проверку доступа. 
 
-1. Если у вас нет электронного письма, вы можете найти незавершенные проверки доступа, перейдя https://myaccess.microsoft.comнепосредственно к.  (Для государственных организаций США используйте `https://myaccess.microsoft.us` вместо него.)
+1. Если у вас нет электронного письма, вы можете найти незавершенные проверки доступа, перейдя непосредственно к https://myaccess.microsoft.com .  (Для государственных организаций США используйте `https://myaccess.microsoft.us` вместо него.)
 
 1. Щелкните проверки **доступа** на левой панели навигации, чтобы просмотреть список незавершенных проверок доступа, назначенных вам.
     
@@ -101,6 +100,6 @@ ms.locfileid: "78968746"
 
 1.  Нажмите кнопку **Отправить** , чтобы принять рекомендации.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Самостоятельный обзор пакетов доступа](entitlement-management-access-reviews-self-review.md)

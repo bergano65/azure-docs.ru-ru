@@ -3,17 +3,16 @@ title: Аналитика в пакетной службе Azure
 description: Статьи по пакетной аналитике содержат справочные сведения о событиях и оповещениях, доступных для ресурсов пакетной службы.
 ms.topic: reference
 ms.date: 04/20/2017
-ms.openlocfilehash: b07d362c3cc2d3b086cf0a82325025604907a393
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
-ms.translationtype: HT
+ms.openlocfilehash: 9d0e5c90c7bade82d76c7dbdfd4276e9671c961c
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83726865"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85958112"
 ---
 # <a name="batch-analytics"></a>Пакетная аналитика
 Статьи по пакетной аналитике содержат справочные сведения о событиях и оповещениях, доступных для ресурсов пакетной службы.
 
-Статья [Ведение журналов диагностики пакетной службы Azure](https://azure.microsoft.com/documentation/articles/batch-diagnostics/) содержит дополнительные сведения о включении и использовании журналов диагностики пакетной службы.
+Статья [Ведение журналов диагностики пакетной службы Azure](./batch-diagnostics.md) содержит дополнительные сведения о включении и использовании журналов диагностики пакетной службы.
 
 ## <a name="diagnostic-logs"></a>Журналы диагностики
 

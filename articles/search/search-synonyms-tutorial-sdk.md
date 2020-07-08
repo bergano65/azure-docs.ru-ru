@@ -8,12 +8,11 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 8cc085fd27004928babd7df305a4452d1b068f6e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 6232ba859c985929c9df0fb5020fb932611bbb40
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "72794238"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85079434"
 ---
 # <a name="example-add-synonyms-for-azure-cognitive-search-in-c"></a>Пример. Добавление синонимов для Когнитивный поиск Azure в C #
 
@@ -32,13 +31,13 @@ ms.locfileid: "72794238"
 > [!NOTE]
 > Синонимы можно создавать программно, но не на портале. Если вы считаете, что нам следует добавить поддержку синонимов на портале Azure, оставьте свой отзыв на [UserVoice](https://feedback.azure.com/forums/263029-azure-search).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Ниже приведены предварительные требования, описанные в этом руководстве.
 
 * [Visual Studio](https://www.visualstudio.com/downloads/)
 * [Служба Когнитивный поиск Azure](search-create-service-portal.md)
-* [Библиотека Microsoft.Azure.Search .NET](https://aka.ms/search-sdk)
+* [Библиотека Microsoft.Azure.Search .NET](https://docs.microsoft.com/dotnet/api/overview/azure/search)
 * [Использование Когнитивный поиск Azure из приложения .NET](https://docs.microsoft.com/azure/search/search-howto-dotnet-sdk)
 
 ## <a name="overview"></a>Обзор
@@ -128,7 +127,7 @@ no document matched
 
     serviceClient.SynonymMaps.CreateOrUpdate(synonymMap);
    ```
-   Сопоставление синонимов должно соответствовать стандартному формату `solr` с открытым кодом. Этот формат объясняется в разделе `Apache Solr synonym format` [Синонимы в Azure когнитивный Поиск](search-synonyms.md) .
+   Сопоставление синонимов должно соответствовать стандартному формату `solr` с открытым кодом. Этот формат объясняется в разделе [Синонимы в Azure когнитивный Поиск](search-synonyms.md) `Apache Solr synonym format` .
 
 2. Настройте поля, поддерживающие поиск, чтобы использовать сопоставление синонимов в определении индекса. С помощью `EnableSynonymsInHotelsIndex` мы можем включить поиск синонимов для двух полей — `category` и `tags`. Для этого необходимо задать свойство `synonymMaps` для имени добавленного сопоставления синонимов.
    ```csharp
@@ -171,7 +170,7 @@ Name: Roach Motel       Category: Budget        Tags: [motel, budget]
 
 Самый быстрый способ очистки после примера заключается в удалении группы ресурсов, содержащей службу Когнитивный поиск Azure. Теперь можно удалить группу ресурсов вместе со всем ее содержимым без возможности восстановления. На портале имя группы ресурсов находится на странице "Обзор" службы "Когнитивный поиск Azure".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом примере демонстрируется функция синонимов в коде C# для создания и публикации правил сопоставления, а затем вызывается сопоставление синонимов для запроса. См. дополнительные сведения о [пакете SDK для .NET ](https://docs.microsoft.com/dotnet/api/microsoft.azure.search) и [REST API](https://docs.microsoft.com/rest/api/searchservice/).
 

@@ -8,12 +8,11 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: ddcd95356f9b70fec5a74f36f5b80e55ea56b477
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: 529e79abbd7fa8f9733254d207af570237044305
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83744012"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85080820"
 ---
 #   <a name="key-phrase-extraction-cognitive-skill"></a>Когнитивный навык извлечения ключевой фразы
 
@@ -24,7 +23,7 @@ ms.locfileid: "83744012"
 > [!NOTE]
 > По мере расширения области путем увеличения частоты обработки и добавления большего количества документов или дополнительных алгоритмов ИИ, вам нужно будет [присоединить оплачиваемый ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при распознавании документов в службе "Когнитивный поиск Azure". За извлечение текста из документов плата не взимается.
 >
-> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на службу "Когнитивный поиск Azure"](https://go.microsoft.com/fwlink/?linkid=2042400).
+> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на службу "Когнитивный поиск Azure"](https://azure.microsoft.com/pricing/details/search/).
 
 
 ## <a name="odatatype"></a>@odata.type  
@@ -39,24 +38,35 @@ Microsoft.Skills.Text.KeyPhraseExtractionSkill
 
 | Входные данные                | Описание |
 |---------------------|-------------|
-| defaultLanguageCode | (Необязательно.) Код языка применяется к документам, в которых не указан язык явным образом.  Если код языка по умолчанию не указан, английский (en) используется как язык по умолчанию. <br/> Ознакомьтесь с [полным списком поддерживаемых языков](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages). |
-| maxKeyPhraseCount   | (Необязательно.) Максимальное количество ключевых фраз для создания. |
+| `defaultLanguageCode` | (Необязательно.) Код языка применяется к документам, в которых не указан язык явным образом.  Если код языка по умолчанию не указан, английский (en) используется как язык по умолчанию. <br/> Ознакомьтесь с [полным списком поддерживаемых языков](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages). |
+| `maxKeyPhraseCount`   | (Необязательно.) Максимальное количество ключевых фраз для создания. |
 
 ## <a name="skill-inputs"></a>Входные данные навыков
 
 | Входные данные  | Описание |
 |--------------------|-------------|
-| text | Анализируемый текст.|
-| languageCode  |  Строка, указывающая язык записей. Если этот параметр не указан, для анализа записей будет использоваться код языка по умолчанию. <br/>Ознакомьтесь с [полным списком поддерживаемых языков](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages).|
+| `text` | Анализируемый текст.|
+| `languageCode`    |  Строка, указывающая язык записей. Если этот параметр не указан, для анализа записей будет использоваться код языка по умолчанию. <br/>Ознакомьтесь с [полным списком поддерживаемых языков](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages).|
 
 ## <a name="skill-outputs"></a>Выходные данные навыка
 
-| Выходные подключения  | Описание |
+| Выходные данные     | Описание: |
 |--------------------|-------------|
-| keyPhrases | Список ключевых фраз, извлеченных из вводимого текста. Ключевые фразы возвращаются в порядке важности. |
+| `keyPhrases` | Список ключевых фраз, извлеченных из вводимого текста. Ключевые фразы возвращаются в порядке важности. |
 
 
 ##  <a name="sample-definition"></a>Пример определения
+
+Рассмотрим запись SQL, которая содержит следующие поля:
+
+```json
+{
+    "content": "Glaciers are huge rivers of ice that ooze their way over land, powered by gravity and their own sheer weight. They accumulate ice from snowfall and lose it through melting. As global temperatures have risen, many of the world’s glaciers have already started to shrink and retreat. Continued warming could see many iconic landscapes – from the Canadian Rockies to the Mount Everest region of the Himalayas – lose almost all their glaciers by the end of the century.",
+    "language": "en"
+}
+```
+
+Затем определение навыка может выглядеть следующим образом:
 
 ```json
  {
@@ -68,7 +78,7 @@ Microsoft.Skills.Text.KeyPhraseExtractionSkill
       },
       {
         "name": "languageCode",
-        "source": "/document/languagecode" 
+        "source": "/document/language" 
       }
     ],
     "outputs": [
@@ -80,33 +90,12 @@ Microsoft.Skills.Text.KeyPhraseExtractionSkill
   }
 ```
 
-##  <a name="sample-input"></a>Пример ввода
-
-```json
-{
-    "values": [
-      {
-        "recordId": "1",
-        "data":
-           {
-             "text": "Glaciers are huge rivers of ice that ooze their way over land, powered by gravity and their own sheer weight. They accumulate ice from snowfall and lose it through melting. As global temperatures have risen, many of the world’s glaciers have already started to shrink and retreat. Continued warming could see many iconic landscapes – from the Canadian Rockies to the Mount Everest region of the Himalayas – lose almost all their glaciers by the end of the century.",
-             "language": "en"
-           }
-      }
-    ]
-```
-
-
 ##  <a name="sample-output"></a>Пример выходных данных
 
+В приведенном выше примере выходные данные вашего навыка будут записаны в новый узел в расширенном дереве с именем Document/Микэйфрасес, поскольку именно `targetName` мы указали. Если не указать, будет `targetName` использоваться значение Document/фраз.
+
+#### <a name="documentmykeyphrases"></a>Document/Микэйфрасес 
 ```json
-{
-    "values": [
-      {
-        "recordId": "1",
-        "data":
-           {
-            "keyPhrases": 
             [
               "world’s glaciers", 
               "huge rivers of ice", 
@@ -115,12 +104,9 @@ Microsoft.Skills.Text.KeyPhraseExtractionSkill
               "Mount Everest region",
               "Continued warming"
             ]
-           }
-      }
-    ]
-}
 ```
 
+Вы можете использовать "Document/Микэйфрасес" в качестве входных данных для других навыков или как источник [сопоставления полей вывода](cognitive-search-output-field-mapping.md).
 
 ## <a name="errors-and-warnings"></a>Ошибки и предупреждения
 Если указать неподдерживаемый код языка, сформируется сообщение об ошибке, а ключевые фразы не будут извлечены.
@@ -131,3 +117,4 @@ Microsoft.Skills.Text.KeyPhraseExtractionSkill
 
 + [Встроенные навыки](cognitive-search-predefined-skills.md)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [Определение сопоставлений полей выходных данных](cognitive-search-output-field-mapping.md)

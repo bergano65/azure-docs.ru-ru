@@ -3,15 +3,14 @@ title: Использование пакета SDK для .NET для Microsoft 
 description: Узнайте, как запускать задания диспетчера данных StorSimple с помощью пакета SDK для .NET
 author: alkohli
 ms.service: storsimple
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: b7cf1d3b9d4a9d751348c4792f904062b00ac104
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 316eddc98de78974bb2583f91ced635b148686c1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76270726"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85514898"
 ---
 # <a name="use-the-net-sdk-to-initiate-data-transformation"></a>Запуск преобразования данных с помощью пакета SDK для .NET
 
@@ -26,7 +25,7 @@ ms.locfileid: "76270726"
  
   В статье содержится подробная информация по созданию примера консольного приложения .NET для запуска задания преобразования данных и отслеживания его завершения. Дополнительные сведения о том, как запустить преобразование данных через службу автоматизации, можно узнать из статьи [Активация задания с помощью службы автоматизации Azure (закрытая предварительная версия)](storsimple-data-manager-job-using-automation.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед началом работы убедитесь, что у вас есть следующие компоненты:
 *   Компьютер с такими запущенными средами:
@@ -52,7 +51,7 @@ ms.locfileid: "76270726"
         Вы можете передать любые значения для ActiveDirectoryKey и AppName.
 
 2. Этот скрипт выводит следующие значения:
-    * ИД клиента
+    * Идентификатор клиента
     * Tenant ID
     * ключ Active Directory (совпадает с указанным выше);
     * Идентификатор подписки
@@ -68,7 +67,7 @@ ms.locfileid: "76270726"
     2. Выберите **Установленные > Шаблоны > Visual C# > Консольное приложение**.
     3. В поле **Имя** введите **DataTransformationApp**.
     4. В поле **Расположение** выберите **C:\DataTransformation**.
-    6. Нажмите кнопку **ОК**, чтобы создать проект.
+    6. Чтобы создать проект, нажмите кнопку **ОК** .
 
         ![Создание проекта 2](media/storsimple-data-manager-dotnet-jobs/create-new-project-1.png)
 
@@ -83,7 +82,7 @@ ms.locfileid: "76270726"
 
        ![Добавление библиотек DLL 2](media/storsimple-data-manager-dotnet-jobs/create-new-project-6.png)
 
-5. Добавьте следующие операторы **using** в исходный файл (Program.cs) в проекте.
+5. Добавьте следующие операторы **using** в файл исходного кода (Program.cs) в проекте.
 
     ```
     using System;
@@ -192,6 +191,6 @@ ms.locfileid: "76270726"
 
     ![Полный фрагмент кода для запуска задания .NET](media/storsimple-data-manager-dotnet-jobs/start-dotnet-job-code-snippet.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Используйте диспетчер данных StorSimple пользовательский интерфейс для преобразования данных](storsimple-data-manager-ui.md).

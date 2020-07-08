@@ -7,16 +7,15 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/12/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5c6956c38d15213d84b43b24784d2bb2b3a1963f
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: dac1d66242dc88c1b2d96c7af1930e36f225ff4e
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83638577"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86040509"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-active-directory-b2c-using-a-custom-policy"></a>Настройка потока учетных данных пароля владельца ресурса в Azure Active Directory B2C с помощью пользовательской политики
 
@@ -39,7 +38,7 @@ ms.locfileid: "83638577"
 1. Откройте файл *TrustFrameworkExtensions.xml*.
 2. Если он еще не существует, добавьте элемент **ClaimsSchema** и его дочерние элементы в качестве первого элемента в элементе **BuildingBlocks**.
 
-    ```XML
+    ```xml
     <ClaimsSchema>
       <ClaimType Id="logonIdentifier">
         <DisplayName>User name or email address that the user can use to sign in</DisplayName>
@@ -62,7 +61,7 @@ ms.locfileid: "83638577"
 
 3. После **ClaimsSchema** добавьте элемент **ClaimsTransformations** и его дочерние элементы в элемент **BuildingBlocks**.
 
-    ```XML
+    ```xml
     <ClaimsTransformations>
       <ClaimsTransformation Id="CreateSubjectClaimFromObjectID" TransformationMethod="CreateStringClaim">
         <InputParameters>
@@ -88,7 +87,7 @@ ms.locfileid: "83638577"
 
 4. Найдите элемент **ClaimsProvider**, у которого параметр **DisplayName** имеет значение `Local Account SignIn`, и добавьте следующий технической профиль.
 
-    ```XML
+    ```xml
     <TechnicalProfile Id="ResourceOwnerPasswordCredentials-OAUTH2">
       <DisplayName>Local Account SignIn</DisplayName>
       <Protocol Name="OpenIdConnect" />
@@ -110,8 +109,8 @@ ms.locfileid: "83638577"
         <InputClaim ClaimTypeReferenceId="grant_type" DefaultValue="password" />
         <InputClaim ClaimTypeReferenceId="scope" DefaultValue="openid" />
         <InputClaim ClaimTypeReferenceId="nca" PartnerClaimType="nca" DefaultValue="1" />
-        <InputClaim ClaimTypeReferenceId="client_id" DefaultValue="00000000-0000-0000-0000-000000000000" />
-        <InputClaim ClaimTypeReferenceId="resource_id" PartnerClaimType="resource" DefaultValue="00000000-0000-0000-0000-000000000000" />
+        <InputClaim ClaimTypeReferenceId="client_id" DefaultValue="ProxyIdentityExperienceFrameworkAppId" />
+        <InputClaim ClaimTypeReferenceId="resource_id" PartnerClaimType="resource" DefaultValue="IdentityExperienceFrameworkAppId" />
       </InputClaims>
       <OutputClaims>
         <OutputClaim ClaimTypeReferenceId="objectId" PartnerClaimType="oid" />
@@ -128,7 +127,7 @@ ms.locfileid: "83638577"
 
 5. Добавьте следующие элементы **ClaimsProvider** с техническими профилями в элемент **ClaimsProviders**.
 
-    ```XML
+    ```xml
     <ClaimsProvider>
       <DisplayName>Azure Active Directory</DisplayName>
       <TechnicalProfiles>
@@ -182,7 +181,7 @@ ms.locfileid: "83638577"
 
 6. Добавьте элемент **UserJourneys** и его дочерние элементы в элемент **TrustFrameworkPolicy**.
 
-    ```XML
+    ```xml
     <UserJourney Id="ResourceOwnerPasswordCredentials">
       <PreserveOriginalAssertion>false</PreserveOriginalAssertion>
       <OrchestrationSteps>
@@ -230,7 +229,7 @@ ms.locfileid: "83638577"
 3. Измените значение атрибута **ReferenceId** в **DefaultUserJourney** на `ResourceOwnerPasswordCredentials`.
 4. Измените элемент **OutputClaims**, чтобы он содержал только следующие утверждения.
 
-    ```XML
+    ```xml
     <OutputClaim ClaimTypeReferenceId="sub" />
     <OutputClaim ClaimTypeReferenceId="objectId" />
     <OutputClaim ClaimTypeReferenceId="displayName" DefaultValue="" />
@@ -267,7 +266,7 @@ ms.locfileid: "83638577"
 
 Фактический запрос POST выглядит так.
 
-```HTTPS
+```https
 POST /<tenant-name>.onmicrosoft.com/oauth2/v2.0/token?B2C_1_ROPC_Auth HTTP/1.1
 Host: <tenant-name>.b2clogin.com
 Content-Type: application/x-www-form-urlencoded
@@ -277,7 +276,7 @@ username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scop
 
 Успешный ответ с автономным доступом выглядит так:
 
-```JSON
+```json
 {
     "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik9YQjNhdTNScWhUQWN6R0RWZDM5djNpTmlyTWhqN2wxMjIySnh6TmgwRlki...",
     "token_type": "Bearer",
@@ -309,7 +308,7 @@ username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scop
 
 Успешный ответ выглядит примерно так:
 
-```JSON
+```json
 {
     "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhT...",
     "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQn...",

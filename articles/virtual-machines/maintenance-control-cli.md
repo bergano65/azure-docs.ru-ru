@@ -3,16 +3,15 @@ title: Управление обслуживанием виртуальных м
 description: Узнайте, как управлять применением обслуживания к виртуальным машинам Azure с помощью управления обслуживанием и интерфейса командной строки.
 author: cynthn
 ms.service: virtual-machines
-ms.topic: article
+ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 04/20/2020
 ms.author: cynthn
-ms.openlocfilehash: 4843b4769e31748fd5f624005792c604db18f11e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 56f9873828e2f93008498beed986827a01872bf1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82137507"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84675865"
 ---
 # <a name="control-updates-with-maintenance-control-and-the-azure-cli"></a>Управление обновлениями с помощью управления обслуживанием и Azure CLI
 
@@ -39,7 +38,7 @@ az maintenance configuration create \
 
 При попытке создать конфигурацию с тем же именем, но в другом расположении возникнет ошибка. Имена конфигураций должны быть уникальными для вашей подписки.
 
-Можно запросить доступные конфигурации обслуживания с помощью `az maintenance configuration list`.
+Можно запросить доступные конфигурации обслуживания с помощью `az maintenance configuration list` .
 
 ```azurecli-interactive
 az maintenance configuration list --query "[].{Name:name, ID:id}" -o table 
@@ -51,7 +50,7 @@ az maintenance configuration list --query "[].{Name:name, ID:id}" -o table
 
 ### <a name="isolated-vm"></a>Изолированная виртуальная машина
 
-Примените конфигурацию к виртуальной машине, используя идентификатор конфигурации. Укажите `--resource-type virtualMachines` и введите имя виртуальной машины для `--resource-name`, а также группу ресурсов для виртуальной машины в `--resource-group`и расположение виртуальной машины для. `--location` 
+Примените конфигурацию к виртуальной машине, используя идентификатор конфигурации. Укажите `--resource-type virtualMachines` и введите имя виртуальной машины для `--resource-name` , а также группу ресурсов для виртуальной машины в и `--resource-group` расположение виртуальной машины для `--location` . 
 
 ```azurecli-interactive
 az maintenance assignment create \
@@ -66,7 +65,7 @@ az maintenance assignment create \
 
 ### <a name="dedicated-host"></a>Выделенный узел
 
-Чтобы применить конфигурацию к выделенному узлу, необходимо включить `--resource-type hosts`, `--resource-parent-name` с именем группы узлов и. `--resource-parent-type hostGroups` 
+Чтобы применить конфигурацию к выделенному узлу, необходимо включить `--resource-type hosts` , `--resource-parent-name` с именем группы узлов и `--resource-parent-type hostGroups` . 
 
 Параметр `--resource-id` — это идентификатор узла. Чтобы получить идентификатор выделенного узла, можно использовать команду [AZ VM Host Get-instance-View](/cli/azure/vm/host#az-vm-host-get-instance-view) .
 
@@ -85,7 +84,7 @@ az maintenance assignment create \
 
 ## <a name="check-configuration"></a>Проверить конфигурацию
 
-Можно убедиться, что конфигурация применена правильно, или проверить, какая конфигурация используется в данный момент `az maintenance assignment list`.
+Можно убедиться, что конфигурация применена правильно, или проверить, какая конфигурация используется в данный момент `az maintenance assignment list` .
 
 ### <a name="isolated-vm"></a>Изолированная виртуальная машина
 
@@ -118,7 +117,7 @@ az maintenance assignment list \
 
 Используйте `az maintenance update list` , чтобы узнать, есть ли ожидающие обновления. Обновление — подписка на идентификатор подписки, содержащей виртуальную машину.
 
-Если обновления отсутствуют, команда возвратит сообщение об ошибке, которое будет содержать текст: `Resource not found...StatusCode: 404`.
+Если обновления отсутствуют, команда возвратит сообщение об ошибке, которое будет содержать текст: `Resource not found...StatusCode: 404` .
 
 При наличии обновлений будет возвращено только одно из них, даже если ожидается несколько обновлений. Данные для этого обновления будут возвращены в объект:
 
@@ -199,9 +198,9 @@ az maintenance applyupdate create \
 
 ## <a name="check-the-status-of-applying-updates"></a>Проверка состояния применения обновлений 
 
-Ход выполнения обновлений можно проверить с помощью `az maintenance applyupdate get`. 
+Ход выполнения обновлений можно проверить с помощью `az maintenance applyupdate get` . 
 
-Можно использовать `default` в качестве имени обновления, чтобы просмотреть результаты последнего обновления, или заменить `myUpdateName` именем обновления, которое было возвращено при выполнении. `az maintenance applyupdate create`
+Можно использовать `default` в качестве имени обновления, чтобы просмотреть результаты последнего обновления, или заменить `myUpdateName` именем обновления, которое было возвращено при выполнении `az maintenance applyupdate create` .
 
 ```text
 Status         : Completed

@@ -7,12 +7,11 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/23/2019
-ms.openlocfilehash: 523049ea3286445117f41147f3dd12a2c911d1ae
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 41fed622b14c10d3fbc7dfedca7ebc53a8efbc66
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "72755014"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85799349"
 ---
 # <a name="data-modeling-in-azure-cosmos-db"></a>Моделирование данных в Azure Cosmos DB
 
@@ -33,40 +32,44 @@ ms.locfileid: "72755014"
 
 Для сравнения, давайте сначала посмотрим, как можно моделировать данные в реляционной базе данных. В следующем примере показано, как можно сохранить в реляционной базе данных человека.
 
-![Модель реляционной базы данных](./media/sql-api-modeling-data/relational-data-model.png)
+:::image type="content" source="./media/sql-api-modeling-data/relational-data-model.png" alt-text="Модель реляционной базы данных" border="false":::
 
 При работе с реляционными базами данных стратегия заключается в нормализации всех данных. Нормализация данных обычно подразумевает получение сущности, например человека, и разбиение их на отдельные компоненты. В приведенном выше примере у пользователя может быть несколько записей контактных данных, а также несколько записей адресов. Контактные данные можно дополнительно разделить, извлекая общие поля, такие как тип. То же самое касается адреса, каждая запись может иметь тип *Home* или *Business*.
 
 Руководящий принцип при нормализации данных заключается в том, чтобы **избегать хранения избыточных данных** в каждой записи и использовать только ссылки на эти данные. В этом примере для чтения человека со всеми его контактными данными и адресами необходимо использовать объединения для эффективного создания (или денормализации) данных во время выполнения.
 
-    SELECT p.FirstName, p.LastName, a.City, cd.Detail
-    FROM Person p
-    JOIN ContactDetail cd ON cd.PersonId = p.Id
-    JOIN ContactDetailType cdt ON cdt.Id = cd.TypeId
-    JOIN Address a ON a.PersonId = p.Id
+```sql
+SELECT p.FirstName, p.LastName, a.City, cd.Detail
+FROM Person p
+JOIN ContactDetail cd ON cd.PersonId = p.Id
+JOIN ContactDetailType cdt ON cdt.Id = cd.TypeId
+JOIN Address a ON a.PersonId = p.Id
+```
 
 Чтобы обновить сведения о контактах и адреса для отдельного человека, требуется выполнить операции записи для множества отдельных таблиц.
 
 Теперь давайте посмотрим, как мы будем моделировать те же данные, что и автономная сущность в Azure Cosmos DB.
 
-    {
-        "id": "1",
-        "firstName": "Thomas",
-        "lastName": "Andersen",
-        "addresses": [
-            {
-                "line1": "100 Some Street",
-                "line2": "Unit 1",
-                "city": "Seattle",
-                "state": "WA",
-                "zip": 98012
-            }
-        ],
-        "contactDetails": [
-            {"email": "thomas@andersen.com"},
-            {"phone": "+1 555 555-5555", "extension": 5555}
-        ]
-    }
+```json
+{
+    "id": "1",
+    "firstName": "Thomas",
+    "lastName": "Andersen",
+    "addresses": [
+        {
+            "line1": "100 Some Street",
+            "line2": "Unit 1",
+            "city": "Seattle",
+            "state": "WA",
+            "zip": 98012
+        }
+    ],
+    "contactDetails": [
+        {"email": "thomas@andersen.com"},
+        {"phone": "+1 555 555-5555", "extension": 5555}
+    ]
+}
+```
 
 Используя описанный выше подход, мы **денормализовани** запись о лице, **внедрив** всю информацию, относящуюся к этому человеку, например контактные данные и адреса, в *один документ JSON* .
 Кроме того, отсутствие привязки к фиксированной схеме повышает гибкость работы, например, мы можем использовать сведения о контактах в самых разных формах.
@@ -94,21 +97,23 @@ ms.locfileid: "72755014"
 
 Рассмотрим этот фрагмент кода JSON.
 
-    {
-        "id": "1",
-        "name": "What's new in the coolest Cloud",
-        "summary": "A blog post by someone real famous",
-        "comments": [
-            {"id": 1, "author": "anon", "comment": "something useful, I'm sure"},
-            {"id": 2, "author": "bob", "comment": "wisdom from the interwebs"},
-            …
-            {"id": 100001, "author": "jane", "comment": "and on we go ..."},
-            …
-            {"id": 1000000001, "author": "angry", "comment": "blah angry blah angry"},
-            …
-            {"id": ∞ + 1, "author": "bored", "comment": "oh man, will this ever end?"},
-        ]
-    }
+```json
+{
+    "id": "1",
+    "name": "What's new in the coolest Cloud",
+    "summary": "A blog post by someone real famous",
+    "comments": [
+        {"id": 1, "author": "anon", "comment": "something useful, I'm sure"},
+        {"id": 2, "author": "bob", "comment": "wisdom from the interwebs"},
+        …
+        {"id": 100001, "author": "jane", "comment": "and on we go ..."},
+        …
+        {"id": 1000000001, "author": "angry", "comment": "blah angry blah angry"},
+        …
+        {"id": ∞ + 1, "author": "bored", "comment": "oh man, will this ever end?"},
+    ]
+}
+```
 
 Так могла бы выглядеть сущность публикации с внедренными комментариями, если бы мы моделировали обычный блог или систему CMS. Проблема с данным примером заключается в том, что массив комментариев является **неограниченным**, то есть не существует (фактического) предела для количества комментариев, которое может иметь отдельная публикация. Это может стать проблемой, так как размер элемента может увеличиваться бесконечно большим.
 
@@ -116,36 +121,38 @@ ms.locfileid: "72755014"
 
 В этом случае лучше рассмотреть следующую модель данных.
 
-    Post item:
-    {
-        "id": "1",
-        "name": "What's new in the coolest Cloud",
-        "summary": "A blog post by someone real famous",
-        "recentComments": [
-            {"id": 1, "author": "anon", "comment": "something useful, I'm sure"},
-            {"id": 2, "author": "bob", "comment": "wisdom from the interwebs"},
-            {"id": 3, "author": "jane", "comment": "....."}
-        ]
-    }
+```json
+Post item:
+{
+    "id": "1",
+    "name": "What's new in the coolest Cloud",
+    "summary": "A blog post by someone real famous",
+    "recentComments": [
+        {"id": 1, "author": "anon", "comment": "something useful, I'm sure"},
+        {"id": 2, "author": "bob", "comment": "wisdom from the interwebs"},
+        {"id": 3, "author": "jane", "comment": "....."}
+    ]
+}
 
-    Comment items:
-    {
-        "postId": "1"
-        "comments": [
-            {"id": 4, "author": "anon", "comment": "more goodness"},
-            {"id": 5, "author": "bob", "comment": "tails from the field"},
-            ...
-            {"id": 99, "author": "angry", "comment": "blah angry blah angry"}
-        ]
-    },
-    {
-        "postId": "1"
-        "comments": [
-            {"id": 100, "author": "anon", "comment": "yet more"},
-            ...
-            {"id": 199, "author": "bored", "comment": "will this ever end?"}
-        ]
-    }
+Comment items:
+{
+    "postId": "1"
+    "comments": [
+        {"id": 4, "author": "anon", "comment": "more goodness"},
+        {"id": 5, "author": "bob", "comment": "tails from the field"},
+        ...
+        {"id": 99, "author": "angry", "comment": "blah angry blah angry"}
+    ]
+},
+{
+    "postId": "1"
+    "comments": [
+        {"id": 100, "author": "anon", "comment": "yet more"},
+        ...
+        {"id": 199, "author": "bored", "comment": "will this ever end?"}
+    ]
+}
+```
 
 Эта модель содержит три последних комментария, внедренных в контейнер POST, который является массивом с фиксированным набором атрибутов. Другие комментарии группируются в пакетах 100 комментариев и хранятся в виде отдельных элементов. Размер пакета был выбран равным 100, поскольку наше условное приложение позволяет пользователю отправить 100 комментариев за один раз.  
 
@@ -153,21 +160,23 @@ ms.locfileid: "72755014"
 
 Рассмотрим этот фрагмент кода JSON.
 
-    {
-        "id": "1",
-        "firstName": "Thomas",
-        "lastName": "Andersen",
-        "holdings": [
-            {
-                "numberHeld": 100,
-                "stock": { "symbol": "zaza", "open": 1, "high": 2, "low": 0.5 }
-            },
-            {
-                "numberHeld": 50,
-                "stock": { "symbol": "xcxc", "open": 89, "high": 93.24, "low": 88.87 }
-            }
-        ]
-    }
+```json
+{
+    "id": "1",
+    "firstName": "Thomas",
+    "lastName": "Andersen",
+    "holdings": [
+        {
+            "numberHeld": 100,
+            "stock": { "symbol": "zaza", "open": 1, "high": 2, "low": 0.5 }
+        },
+        {
+            "numberHeld": 50,
+            "stock": { "symbol": "xcxc", "open": 89, "high": 93.24, "low": 88.87 }
+        }
+    ]
+}
+```
 
 Этот код может представлять биржевой портфель человека. Мы решили внедрить информацию об акциях в каждый документ портфеля. В среде, где связанные данные регулярно изменяются, например, в приложении биржевых торгов, внедрение часто изменяемых данных означает, что вы постоянно обновляете каждый документ портфеля при выполнении торговой операции с каждой акцией.
 
@@ -181,38 +190,40 @@ ms.locfileid: "72755014"
 
 В приведенном ниже коде JSON мы решили использовать использованный ранее пример биржевого портфеля, однако здесь мы не внедряем элемент акции в портфеле, а ссылаемся на него. Если элемент акции часто изменяется в течение дня, то обновлять требуется единственный документ акции.
 
-    Person document:
-    {
-        "id": "1",
-        "firstName": "Thomas",
-        "lastName": "Andersen",
-        "holdings": [
-            { "numberHeld":  100, "stockId": 1},
-            { "numberHeld":  50, "stockId": 2}
-        ]
-    }
+```json
+Person document:
+{
+    "id": "1",
+    "firstName": "Thomas",
+    "lastName": "Andersen",
+    "holdings": [
+        { "numberHeld":  100, "stockId": 1},
+        { "numberHeld":  50, "stockId": 2}
+    ]
+}
 
-    Stock documents:
-    {
-        "id": "1",
-        "symbol": "zaza",
-        "open": 1,
-        "high": 2,
-        "low": 0.5,
-        "vol": 11970000,
-        "mkt-cap": 42000000,
-        "pe": 5.89
-    },
-    {
-        "id": "2",
-        "symbol": "xcxc",
-        "open": 89,
-        "high": 93.24,
-        "low": 88.87,
-        "vol": 2970200,
-        "mkt-cap": 1005000,
-        "pe": 75.82
-    }
+Stock documents:
+{
+    "id": "1",
+    "symbol": "zaza",
+    "open": 1,
+    "high": 2,
+    "low": 0.5,
+    "vol": 11970000,
+    "mkt-cap": 42000000,
+    "pe": 5.89
+},
+{
+    "id": "2",
+    "symbol": "xcxc",
+    "open": 89,
+    "high": 93.24,
+    "low": 88.87,
+    "vol": 2970200,
+    "mkt-cap": 1005000,
+    "pe": 75.82
+}
+```
 
 Недостаток такого подхода проявляется, когда приложению нужно отобразить информацию о каждой имеющейся акции в портфеле человека; в этом случае потребуется выполнить множество обращений к базе данных, чтобы загрузить информацию для каждого документа акции. Здесь мы приняли решение повысить эффективность операций записи, которые часто выполняются в течение дня, однако это затруднило выполнение операций чтения, которые оказывают меньшее влияние на производительность всей данной системы.
 
@@ -241,40 +252,44 @@ ms.locfileid: "72755014"
 
 Давайте рассмотрим следующий код JSON, моделирующий издателей и книги.
 
-    Publisher document:
-    {
-        "id": "mspress",
-        "name": "Microsoft Press",
-        "books": [ 1, 2, 3, ..., 100, ..., 1000]
-    }
+```json
+Publisher document:
+{
+    "id": "mspress",
+    "name": "Microsoft Press",
+    "books": [ 1, 2, 3, ..., 100, ..., 1000]
+}
 
-    Book documents:
-    {"id": "1", "name": "Azure Cosmos DB 101" }
-    {"id": "2", "name": "Azure Cosmos DB for RDBMS Users" }
-    {"id": "3", "name": "Taking over the world one JSON doc at a time" }
-    ...
-    {"id": "100", "name": "Learn about Azure Cosmos DB" }
-    ...
-    {"id": "1000", "name": "Deep Dive into Azure Cosmos DB" }
+Book documents:
+{"id": "1", "name": "Azure Cosmos DB 101" }
+{"id": "2", "name": "Azure Cosmos DB for RDBMS Users" }
+{"id": "3", "name": "Taking over the world one JSON doc at a time" }
+...
+{"id": "100", "name": "Learn about Azure Cosmos DB" }
+...
+{"id": "1000", "name": "Deep Dive into Azure Cosmos DB" }
+```
 
 Если на издателя приходится небольшое число книг, а рост ограничен, то может оказаться удобным хранить ссылку на книгу в документе издателя. Однако если число книг на издателя не имеет ограничений, эта модель данных приведет к изменяемым и разрастающимся массивам, как в приведенном выше примере с документом издателя.
 
 Небольшая доработка помогает получить модель, которая все еще представляет те же данные, однако избавляется от крупных изменяемых коллекций.
 
-    Publisher document:
-    {
-        "id": "mspress",
-        "name": "Microsoft Press"
-    }
+```json
+Publisher document:
+{
+    "id": "mspress",
+    "name": "Microsoft Press"
+}
 
-    Book documents:
-    {"id": "1","name": "Azure Cosmos DB 101", "pub-id": "mspress"}
-    {"id": "2","name": "Azure Cosmos DB for RDBMS Users", "pub-id": "mspress"}
-    {"id": "3","name": "Taking over the world one JSON doc at a time"}
-    ...
-    {"id": "100","name": "Learn about Azure Cosmos DB", "pub-id": "mspress"}
-    ...
-    {"id": "1000","name": "Deep Dive into Azure Cosmos DB", "pub-id": "mspress"}
+Book documents:
+{"id": "1","name": "Azure Cosmos DB 101", "pub-id": "mspress"}
+{"id": "2","name": "Azure Cosmos DB for RDBMS Users", "pub-id": "mspress"}
+{"id": "3","name": "Taking over the world one JSON doc at a time"}
+...
+{"id": "100","name": "Learn about Azure Cosmos DB", "pub-id": "mspress"}
+...
+{"id": "1000","name": "Deep Dive into Azure Cosmos DB", "pub-id": "mspress"}
+```
 
 В приведенном выше примере мы помещали неограниченную коллекцию в документ издателя. Вместо этого мы просто воспользуемся ссылкой на издателя в каждом документе книги.
 
@@ -282,41 +297,46 @@ ms.locfileid: "72755014"
 
 В реляционной базе данных связи *многие ко многим* часто моделируются с помощью таблиц JOIN, которые просто соединяют вместе записи из других таблиц.
 
-![Объединенные таблицы](./media/sql-api-modeling-data/join-table.png)
+
+:::image type="content" source="./media/sql-api-modeling-data/join-table.png" alt-text="Объединенные таблицы" border="false":::
 
 У вас может возникнуть желание реплицировать это с помощью документов и создать модель данных, аналогичную приведенной ниже.
 
-    Author documents:
-    {"id": "a1", "name": "Thomas Andersen" }
-    {"id": "a2", "name": "William Wakefield" }
+```json
+Author documents:
+{"id": "a1", "name": "Thomas Andersen" }
+{"id": "a2", "name": "William Wakefield" }
 
-    Book documents:
-    {"id": "b1", "name": "Azure Cosmos DB 101" }
-    {"id": "b2", "name": "Azure Cosmos DB for RDBMS Users" }
-    {"id": "b3", "name": "Taking over the world one JSON doc at a time" }
-    {"id": "b4", "name": "Learn about Azure Cosmos DB" }
-    {"id": "b5", "name": "Deep Dive into Azure Cosmos DB" }
+Book documents:
+{"id": "b1", "name": "Azure Cosmos DB 101" }
+{"id": "b2", "name": "Azure Cosmos DB for RDBMS Users" }
+{"id": "b3", "name": "Taking over the world one JSON doc at a time" }
+{"id": "b4", "name": "Learn about Azure Cosmos DB" }
+{"id": "b5", "name": "Deep Dive into Azure Cosmos DB" }
 
-    Joining documents:
-    {"authorId": "a1", "bookId": "b1" }
-    {"authorId": "a2", "bookId": "b1" }
-    {"authorId": "a1", "bookId": "b2" }
-    {"authorId": "a1", "bookId": "b3" }
+Joining documents:
+{"authorId": "a1", "bookId": "b1" }
+{"authorId": "a2", "bookId": "b1" }
+{"authorId": "a1", "bookId": "b2" }
+{"authorId": "a1", "bookId": "b3" }
+```
 
 Такой подход будет работать. Однако при загрузке автора вместе с его книгами или книги вместе с ее автором всегда потребуется отправлять два дополнительных запроса в базу данных. Один запрос отправляется в документ присоединения, а другой — для получения самого присоединяемого документа.
 
 Если эта таблица JOIN всего лишь соединяет два элемента данных, почему бы просто не отказаться от нее?
 Давайте рассмотрим следующее.
 
-    Author documents:
-    {"id": "a1", "name": "Thomas Andersen", "books": ["b1, "b2", "b3"]}
-    {"id": "a2", "name": "William Wakefield", "books": ["b1", "b4"]}
+```json
+Author documents:
+{"id": "a1", "name": "Thomas Andersen", "books": ["b1, "b2", "b3"]}
+{"id": "a2", "name": "William Wakefield", "books": ["b1", "b4"]}
 
-    Book documents:
-    {"id": "b1", "name": "Azure Cosmos DB 101", "authors": ["a1", "a2"]}
-    {"id": "b2", "name": "Azure Cosmos DB for RDBMS Users", "authors": ["a1"]}
-    {"id": "b3", "name": "Learn about Azure Cosmos DB", "authors": ["a1"]}
-    {"id": "b4", "name": "Deep Dive into Azure Cosmos DB", "authors": ["a2"]}
+Book documents:
+{"id": "b1", "name": "Azure Cosmos DB 101", "authors": ["a1", "a2"]}
+{"id": "b2", "name": "Azure Cosmos DB for RDBMS Users", "authors": ["a1"]}
+{"id": "b3", "name": "Learn about Azure Cosmos DB", "authors": ["a1"]}
+{"id": "b4", "name": "Deep Dive into Azure Cosmos DB", "authors": ["a2"]}
+```
 
 Теперь, если у меня есть автор, я сразу же знал, какие книги были написаны, и наоборот, если у меня был загружен документ книги, я бы знал идентификаторы авторов. Это позволяет отказаться от промежуточного запроса к таблице JOIN и сократить количество круговых путей для вашего приложения.
 
@@ -330,50 +350,52 @@ ms.locfileid: "72755014"
 
 Давайте рассмотрим следующий код JSON.
 
-    Author documents:
-    {
-        "id": "a1",
-        "firstName": "Thomas",
-        "lastName": "Andersen",
-        "countOfBooks": 3,
-        "books": ["b1", "b2", "b3"],
-        "images": [
-            {"thumbnail": "https://....png"}
-            {"profile": "https://....png"}
-            {"large": "https://....png"}
-        ]
-    },
-    {
-        "id": "a2",
-        "firstName": "William",
-        "lastName": "Wakefield",
-        "countOfBooks": 1,
-        "books": ["b1"],
-        "images": [
-            {"thumbnail": "https://....png"}
-        ]
-    }
+```json
+Author documents:
+{
+    "id": "a1",
+    "firstName": "Thomas",
+    "lastName": "Andersen",
+    "countOfBooks": 3,
+    "books": ["b1", "b2", "b3"],
+    "images": [
+        {"thumbnail": "https://....png"}
+        {"profile": "https://....png"}
+        {"large": "https://....png"}
+    ]
+},
+{
+    "id": "a2",
+    "firstName": "William",
+    "lastName": "Wakefield",
+    "countOfBooks": 1,
+    "books": ["b1"],
+    "images": [
+        {"thumbnail": "https://....png"}
+    ]
+}
 
-    Book documents:
-    {
-        "id": "b1",
-        "name": "Azure Cosmos DB 101",
-        "authors": [
-            {"id": "a1", "name": "Thomas Andersen", "thumbnailUrl": "https://....png"},
-            {"id": "a2", "name": "William Wakefield", "thumbnailUrl": "https://....png"}
-        ]
-    },
-    {
-        "id": "b2",
-        "name": "Azure Cosmos DB for RDBMS Users",
-        "authors": [
-            {"id": "a1", "name": "Thomas Andersen", "thumbnailUrl": "https://....png"},
-        ]
-    }
+Book documents:
+{
+    "id": "b1",
+    "name": "Azure Cosmos DB 101",
+    "authors": [
+        {"id": "a1", "name": "Thomas Andersen", "thumbnailUrl": "https://....png"},
+        {"id": "a2", "name": "William Wakefield", "thumbnailUrl": "https://....png"}
+    ]
+},
+{
+    "id": "b2",
+    "name": "Azure Cosmos DB for RDBMS Users",
+    "authors": [
+        {"id": "a1", "name": "Thomas Andersen", "thumbnailUrl": "https://....png"},
+    ]
+}
+```
 
 Здесь мы в большей степени придерживались модели внедрения, где данные из других сущностей внедряются в документ верхнего уровня, однако для остальных данных используются ссылки.
 
-Если взглянуть на документ книги, можно заметить несколько интересных полей в массиве авторов. Поле, которое `id` используется для ссылки на авторский документ, является стандартным методом в нормализованной модели, но у нас также есть `name` и. `thumbnailUrl` Мы могли бы задержать `id` приложение и оставить в нем дополнительную информацию, необходимую в соответствующем документе автора, с помощью "Link", но поскольку наше приложение отображает имя автора и изображение эскиза с каждой книгой, мы можем сохранить круговой путь к серверу на каждую книгу в списке, выполнив нормализацию **данных автора** .
+Если взглянуть на документ книги, можно заметить несколько интересных полей в массиве авторов. Поле `id` , которое используется для ссылки на авторский документ, является стандартным методом в нормализованной модели, но у нас также есть `name` и `thumbnailUrl` . Мы могли бы задержать `id` приложение и оставить в нем дополнительную информацию, необходимую в соответствующем документе автора, с помощью "Link", но поскольку наше приложение отображает имя автора и изображение эскиза с каждой книгой, мы можем сохранить круговой путь к серверу на каждую книгу в списке, выполнив нормализацию данных автора. **some**
 
 Конечно, если имя автора изменилось или хотели бы обновить свою фотографию, нам пришлось бы перейти и обновить каждую книгу, опубликованную ранее, но для нашего приложения, исходя из предположения, что авторы не меняют имена часто, это приемлемое решение проекта.  
 
@@ -383,31 +405,33 @@ ms.locfileid: "72755014"
 
 ## <a name="distinguishing-between-different-document-types"></a>Различия между различными типами документов
 
-В некоторых случаях может потребоваться смешивать различные типы документов в одной коллекции. Обычно это происходит, когда требуется, чтобы несколько связанных документов находились в одном [разделе](partitioning-overview.md). Например, можно разместить книги и обзоры книг в одной и той же коллекции и секционировать их по `bookId`. В такой ситуации обычно требуется добавить в документы поле, определяющее их тип, чтобы отличать их.
+В некоторых случаях может потребоваться смешивать различные типы документов в одной коллекции. Обычно это происходит, когда требуется, чтобы несколько связанных документов находились в одном [разделе](partitioning-overview.md). Например, можно разместить книги и обзоры книг в одной и той же коллекции и секционировать их по `bookId` . В такой ситуации обычно требуется добавить в документы поле, определяющее их тип, чтобы отличать их.
 
-    Book documents:
-    {
-        "id": "b1",
-        "name": "Azure Cosmos DB 101",
-        "bookId": "b1",
-        "type": "book"
-    }
+```json
+Book documents:
+{
+    "id": "b1",
+    "name": "Azure Cosmos DB 101",
+    "bookId": "b1",
+    "type": "book"
+}
 
-    Review documents:
-    {
-        "id": "r1",
-        "content": "This book is awesome",
-        "bookId": "b1",
-        "type": "review"
-    },
-    {
-        "id": "r2",
-        "content": "Best book ever!",
-        "bookId": "b1",
-        "type": "review"
-    }
+Review documents:
+{
+    "id": "r1",
+    "content": "This book is awesome",
+    "bookId": "b1",
+    "type": "review"
+},
+{
+    "id": "r2",
+    "content": "Best book ever!",
+    "bookId": "b1",
+    "type": "review"
+}
+```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Основная идея этой статьи заключается в том, что моделирование данных без фиксированных схем не теряет своей актуальности.
 

@@ -5,12 +5,11 @@ author: dkkapur
 ms.topic: conceptual
 ms.date: 9/11/2018
 ms.author: dekapur
-ms.openlocfilehash: 6a00b7d1b72d594c08021982b2448de6275414c8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 495949d1a4ec927c601f174521c360f51034a2fb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75610069"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85079345"
 ---
 # <a name="plan-and-prepare-your-service-fabric-standalone-cluster-deployment"></a>Планирование и подготовка развертывания изолированного кластера Service Fabric
 
@@ -51,7 +50,7 @@ ms.locfileid: "75610069"
 
 ## <a name="prepare-the-machines-that-will-serve-as-nodes"></a>Подготовка компьютеров, которые будут работать в качестве узлов
 
-Ниже перечислены некоторые требования к каждому компьютеру, который требуется добавить в кластер.
+Ниже приведены рекомендуемые спецификации для компьютеров в кластере Service Fabric.
 
 * Не менее 16 ГБ ОЗУ.
 * Наличие не менее 40 ГБ свободного дискового пространства.
@@ -59,11 +58,13 @@ ms.locfileid: "75610069"
 * Подключение к защищенной сети или сетям для всех компьютеров.
 * Установлена ОС Windows Server (допустимые версии: 2012 R2, 2016, 1709 или 1803). Service Fabric версии 6.4.654.9590 и более поздних версий также поддерживает сервер 2019 и 1809.
 * [.NET Framework 4.5.1 или более поздней версии](https://www.microsoft.com/download/details.aspx?id=40773), полная установка
-* [Windows PowerShell 3,0](https://msdn.microsoft.com/powershell/scripting/install/installing-windows-powershell)
+* [Windows PowerShell 3.0](https://msdn.microsoft.com/powershell/scripting/install/installing-windows-powershell)
 * [Служба RemoteRegistry](https://technet.microsoft.com/library/cc754820) должна быть запущена на всех компьютерах.
-* Диск установки Service Fabric должен быть файловой системой NTFS
+* **Диск установки Service Fabric должен быть файловой системой NTFS**
+* ** *Журналы производительности служб Windows & оповещения* и *журнал событий Windows* должны [быть включены](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755249(v=ws.11))**.
 
-У администратора кластера, который развертывает и настраивает кластер, должны быть [привилегии администратора](https://social.technet.microsoft.com/wiki/contents/articles/13436.windows-server-2012-how-to-add-an-account-to-a-local-administrator-group.aspx) на всех компьютерах. Пакет Service Fabric нельзя установить на контроллере домена.
+> [!IMPORTANT]
+> У администратора кластера, который развертывает и настраивает кластер, должны быть [привилегии администратора](https://social.technet.microsoft.com/wiki/contents/articles/13436.windows-server-2012-how-to-add-an-account-to-a-local-administrator-group.aspx) на всех компьютерах. Пакет Service Fabric нельзя установить на контроллере домена.
 
 ## <a name="download-the-service-fabric-standalone-package-for-windows-server"></a>Скачивание изолированного пакета Service Fabric для Windows Server
 [Скачайте изолированный пакет Service Fabric для Windows Server](https://go.microsoft.com/fwlink/?LinkId=730690) и извлеките его содержимое на компьютер развертывания, который не является частью кластера, или на один из компьютеров, которые будут частью кластера.
@@ -159,5 +160,5 @@ Passed                     : True
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md)

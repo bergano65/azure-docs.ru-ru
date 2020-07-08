@@ -10,18 +10,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 07/23/2019
+ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 266234f2872cfe99509d564c9460bfba4a0e2bf2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 251ca1dc2b288d3448cdcda0f28335a92c54b431
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75932543"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85078864"
 ---
 # <a name="complete-an-access-review-of-groups-and-applications-in-azure-ad-access-reviews"></a>Выполнение проверки доступа для групп и приложений в проверках доступа Azure AD
 
@@ -29,7 +28,7 @@ ms.locfileid: "75932543"
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Azure AD Premium P2
 - Глобальный администратор, администратор пользователей, администратор безопасности или читатель безопасности
@@ -86,9 +85,9 @@ ms.locfileid: "75932543"
 
  По умолчанию удаленный пользователь будет оставаться удаленным в Azure AD в течение 30 дней, на протяжении которых его при необходимости может восстановить администратор.  По истечении 30 дней пользователь будет окончательно удален.  Кроме того, с помощью портала Azure Active Directory глобальный администратор может явно [навсегда удалить недавно удаленного пользователя](../fundamentals/active-directory-users-restore.md) до истечения этого периода времени.  Если пользователь удален навсегда, впоследствии данные об этом пользователе будут удалены из активных проверок доступа.  Сведения аудита об удаленных пользователях остаются в журнале аудита.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Управление пользовательским доступом с помощью проверок доступа Azure AD](manage-user-access-with-access-reviews.md)
 - [Управление гостевым доступом с помощью проверок доступа Azure AD](manage-guest-access-with-access-reviews.md)
-- [Создание проверки доступа для групп или приложений](create-access-review.md)
+- [Создание проверки доступа групп или приложений](create-access-review.md)
 - [Создание проверки доступа для пользователей в роли администратора Azure AD](../privileged-identity-management/pim-how-to-start-security-review.md)

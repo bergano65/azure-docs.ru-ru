@@ -10,18 +10,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 03/30/2020
+ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0eae4f53283c33f3d7372a606f8c0a3ac27d079
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 9ef2faf2a1d1a131dc5f2a01d3fa46cc61a06fb6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80655926"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85078819"
 ---
 # <a name="change-request-and-approval-settings-for-an-access-package-in-azure-ad-entitlement-management"></a>Изменение параметров запросов и утверждений для пакета Access в управлении назначениями Azure AD
 
@@ -94,7 +93,7 @@ ms.locfileid: "80655926"
 
 При изменении политики нажмите кнопку **Обновить**. При добавлении новой политики нажмите кнопку **создать**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Изменение параметров жизненного цикла пакета Access](entitlement-management-access-package-lifecycle-policy.md)
 - [Просмотр запросов для пакета Access](entitlement-management-access-package-requests.md)

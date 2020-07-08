@@ -1,18 +1,17 @@
 ---
 title: Виртуальные машины Azure серии Lsv2
 description: Спецификации виртуальных машин серии Lsv2.
-services: virtual-machines
 author: sasha-melamed
 ms.service: virtual-machines
+ms.subservice: sizes
 ms.topic: article
 ms.date: 02/03/2020
-ms.author: lahugh
-ms.openlocfilehash: bdb9e346b8deea71ef2af9f9f271ffa446be624e
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
-ms.translationtype: MT
+ms.author: jushiman
+ms.openlocfilehash: 9db5f391635505c18c7fe7c868431a0abc943730
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82594344"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84675984"
 ---
 # <a name="lsv2-series"></a>Серия Lsv2
 
@@ -33,9 +32,9 @@ ACU: 150-175
 
 Кэширование хранилища класса Premium: не поддерживается
 
-Динамическая миграция: не поддерживается
+Динамическая миграция: Не поддерживается
 
-Обновления с сохранением памяти: не поддерживается
+Обновления с сохранением памяти: Не поддерживается
 
 | Размер | vCPU | Память, ГиБ | Временный диск <sup>1</sup> (ГиБ) | Диски NVMe <sup>2</sup> | Пропускная способность диска NVMe<sup>3</sup> (операций чтения в секунду/Мбит/с) | Пропускная способность диска с некэшированными данными (операций ввода-вывода в секунду)<sup>4</sup> | Максимальная пропускная способность некэшированного диска данных (операций ввода-вывода в секунду/Мбит/с)<sup>5</sup>| Максимальное число дисков данных | Максимальное количество сетевых адаптеров / ожидаемая пропускная способность сети (Мбит/с) |
 |---|---|---|---|---|---|---|---|---|---|

@@ -6,18 +6,17 @@ author: XiaoyuMSFT
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: a431df1ff4ef0984d1197933e7ca78979fa23089
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 0f88b994104ed8a2d80fb3b16f125f8a087cbe3c
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81430985"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85958384"
 ---
-# <a name="using-stored-procedures-in-sql-pool"></a>Использование хранимых процедур в пуле SQL
+# <a name="use-stored-procedures-in-sql-pool"></a>Использование хранимых процедур в пуле SQL
 
 Советы по реализации хранимых процедур в пуле синапсе SQL (хранилище данных) для разработки решений.
 
@@ -68,7 +67,7 @@ EXEC prc_nesting
 ```
 
 > [!NOTE]
-> В настоящее время пул SQL не [поддерживает@NESTLEVEL@](/sql/t-sql/functions/nestlevel-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). Необходимо отслеживать уровень вложенности. Маловероятно, что вы превысите восемь уровней вложенности, но если вы это сделаете, вам нужно переписать свой код, чтобы он соответствовал уровням вложенности в этих пределах.
+> В настоящее время пул SQL не [поддерживает @NESTLEVEL @](/sql/t-sql/functions/nestlevel-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). Необходимо отслеживать уровень вложенности. Маловероятно, что вы превысите восемь уровней вложенности, но если вы это сделаете, вам нужно переписать свой код, чтобы он соответствовал уровням вложенности в этих пределах.
 
 ## <a name="insertexecute"></a>INSERT..EXECUTE
 
@@ -78,7 +77,7 @@ EXEC prc_nesting
 
 Существуют некоторые аспекты хранимых процедур Transact-SQL, которые не реализованы в пуле SQL.
 
-Они приведены ниже.
+К ним относятся:
 
 * временные хранимые процедуры;
 * нумерованные хранимые процедуры;
@@ -90,8 +89,8 @@ EXEC prc_nesting
 * параметры только для чтения;
 * параметры по умолчанию;
 * контекст выполнения;
-* инструкция Return.
+* Оператор return
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](develop-overview.md).
+Дополнительные советы по разработке приведены в [обзоре разработки](develop-overview.md).

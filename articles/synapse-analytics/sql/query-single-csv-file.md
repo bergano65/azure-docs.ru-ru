@@ -5,16 +5,15 @@ services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
 ms.topic: how-to
-ms.subservice: ''
+ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: f264a62428f919fe23797171926ddf63c585c42b
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
-ms.translationtype: HT
+ms.openlocfilehash: 628631fb7fddbc07dcb865e3d3badbfb608ad097
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84234127"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85214457"
 ---
 # <a name="query-csv-files"></a>Запрос CSV-файлов
 
@@ -179,6 +178,37 @@ WHERE
 
 > [!NOTE]
 > Этот запрос завершится ошибкой, если ESCAPECHAR не указан, так как запятая в "Slov,enia" будет рассматриваться как разделитель полей, а не как часть названия страны или региона. "Slov,enia" будет обработано как два столбца. Таким образом, в конкретной строке будет на один столбец больше, чем в других строках, и на один столбец больше, чем определено в условии WITH.
+
+### <a name="escaping-quoting-characters"></a>Экранирование символов в кавычках
+
+В следующем запросе показано, как считать файл со строкой заголовка с новой строкой в стиле UNIX, столбцами с разделителями-запятыми и символами двойной кавычки в значениях. Обратите внимание на другое расположение файла по сравнению с другими примерами.
+
+Предварительный просмотр файла:
+
+![В следующем запросе показано, как считать файл со строкой заголовка с новой строкой в стиле UNIX, столбцами с разделителями-запятыми и символами двойной кавычки в значениях.](./media/query-single-csv-file/population-unix-hdr-escape-quoted.png)
+
+```sql
+SELECT *
+FROM OPENROWSET(
+        BULK 'csv/population-unix-hdr-escape-quoted/population.csv',
+        DATA_SOURCE = 'SqlOnDemandDemo',
+        FORMAT = 'CSV', PARSER_VERSION = '2.0',
+        FIELDTERMINATOR =',',
+        ROWTERMINATOR = '0x0a',
+        FIRSTROW = 2
+    )
+    WITH (
+        [country_code] VARCHAR (5) COLLATE Latin1_General_BIN2,
+        [country_name] VARCHAR (100) COLLATE Latin1_General_BIN2,
+        [year] smallint,
+        [population] bigint
+    ) AS [r]
+WHERE
+    country_name = 'Slovenia';
+```
+
+> [!NOTE]
+> Символ кавычек нужно экранировать другим символом кавычек. Такой символ может использоваться в значении столбца только в том случае, если значение инкапсулировано с помощью символов кавычек.
 
 ## <a name="tab-delimited-files"></a>Файлы с разделителями-табуляциями
 

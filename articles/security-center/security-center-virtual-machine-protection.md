@@ -13,12 +13,11 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/11/2020
 ms.author: memildin
-ms.openlocfilehash: 93dde2e873a00303dcb8563caed4d56dbf11cc12
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 8faff37e127e80447e0f066ef17e2885d4bcb597
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80435633"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85799740"
 ---
 # <a name="protect-your-machines-and-applications"></a>Защитите свои компьютеры и приложения
 Когда центр безопасности Azure выявляет потенциальные уязвимости системы безопасности, он создает рекомендации по настройке необходимых элементов управления для защиты ресурсов.
@@ -127,7 +126,7 @@ ms.locfileid: "80435633"
 
 В разделе **Службы приложений** содержится список сред службы приложений и сводка работоспособности, основанная на оценке центра безопасности.
 
-![Службы приложений](./media/security-center-virtual-machine-recommendations/app-services.png)
+![Услуги для приложений](./media/security-center-virtual-machine-recommendations/app-services.png)
 
 Показаны три типа служб приложений:
 
@@ -163,15 +162,13 @@ ms.locfileid: "80435633"
 
 ![Узел контейнера](./media/security-center-virtual-machine-recommendations/icon-container-host-rec.png) Узлы контейнеров — виртуальные машины с DOCKER 
 
-![Служба Kubernetes](./media/security-center-virtual-machine-recommendations/icon-kubernetes-service-rec.png) Кластеры службы Azure Kubernetes Service (AKS)
+![Kubernetes службы ](./media/security-center-virtual-machine-recommendations/icon-kubernetes-service-rec.png) Azure Kubernetes Service (AKS). [Сведения о пакете AKS центра безопасности](azure-kubernetes-service-integration.md)
 
-![Реестр контейнеров](./media/security-center-virtual-machine-recommendations/icon-container-registry-rec.png) Реестры реестра контейнеров Azure (записи контроля доступа) отображаются только при использовании ценовой категории "Стандартный" и при включенном наборе реестра контейнеров Azure.
+![Реестр контейнеров реестра контейнеров ](./media/security-center-virtual-machine-recommendations/icon-container-registry-rec.png) Azure (записи контроля доступа). [Сведения о пакете записей контроля доступа центра безопасности](azure-container-registry-integration.md)
 
 Инструкции по использованию функций безопасности контейнеров см. в статье [мониторинг безопасности контейнеров](monitor-container-security.md).
 
-Преимущества пакета реестра контейнеров Azure описаны [здесь](azure-container-registry-integration.md) .
 
-Преимущества пакета Kubernetes Services описаны [здесь](azure-kubernetes-service-integration.md) .
 
 [![Вкладка "контейнеры"](./media/security-center-virtual-machine-recommendations/container-recommendations-all-types.png)](./media/security-center-virtual-machine-recommendations/container-recommendations-all-types.png#lightbox)
 
@@ -198,8 +195,8 @@ ms.locfileid: "80435633"
 ![Вкладка контейнера](./media/security-center-virtual-machine-recommendations/container-cis-benchmark.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
-Дополнительные сведения о рекомендациях, которые относятся к другим типам ресурсов Azure, см. в следующих статьях:
+## <a name="next-steps"></a>Дальнейшие действия
+Чтобы узнать больше о рекомендациях, применимых к другим типам ресурсов Azure, прочитайте следующие статьи:
 
 * [Полный список ссылок на рекомендации по безопасности центра безопасности Azure](recommendations-reference.md)
 * [Мониторинг идентификации и доступа в центре безопасности Azure (предварительная версия)](security-center-identity-access.md)

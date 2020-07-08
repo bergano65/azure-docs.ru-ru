@@ -10,18 +10,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 03/22/2020
+ms.date: 06/18/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee370bc9c381eb11ae7cae53b31d0c987c52733c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: d8928e7293f184e8eb366df6a29e50cbea6a7c93
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80128606"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85078202"
 ---
 # <a name="add-a-connected-organization-in-azure-ad-entitlement-management"></a>Добавление подключенной Организации в управление назначением Azure AD
 
@@ -42,7 +41,7 @@ ms.locfileid: "80128606"
 
 Способ проверки подлинности пользователей в каталоге или домене Azure AD зависит от типа аутентификации. Типы проверки подлинности для подключенных организаций:
 
-- Azure AD
+- Azure AD
 - [Прямая федерация](../b2b/direct-federation.md)
 - [Одноразовый пароль](../b2b/one-time-passcode.md) (домен)
 
@@ -132,7 +131,7 @@ ms.locfileid: "80128606"
 
     ![Кнопка удаления подключенной Организации](./media/entitlement-management-organization/organization-delete.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Управление доступом для внешних пользователей](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-external-users)
 - [Управление доступом пользователей, не наличныхся в вашем каталоге](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory)

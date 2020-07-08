@@ -3,19 +3,18 @@ title: Прием данных кэша HPC Azure — мсрсинк
 description: Как использовать мсрсинк для перемещения данных в целевое хранилище BLOB-объектов в кэше HPC Azure
 author: ekpgh
 ms.service: hpc-cache
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/30/2019
 ms.author: rohogue
-ms.openlocfilehash: 2e0442b6aa1404ae5f57445179979496faa09863
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 02933ab9eeb05dbaa65fdf0c66c4a7946c3b0de1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82194981"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85514806"
 ---
 # <a name="azure-hpc-cache-data-ingest---msrsync-method"></a>Метод приема данных кэша HPC Azure для мсрсинк
 
-В этой статье приводятся подробные инструкции ``msrsync`` по использованию программы для копирования данных в контейнер хранилища BLOB-объектов Azure для использования с кэшем HPC Azure.
+В этой статье приводятся подробные инструкции по использованию ``msrsync`` программы для копирования данных в контейнер хранилища BLOB-объектов Azure для использования с КЭШЕМ HPC Azure.
 
 Дополнительные сведения о перемещении данных в хранилище BLOB-объектов для кэша HPC Azure см. в статье [Перемещение данных в хранилище BLOB-объектов Azure](hpc-cache-ingest.md).
 
@@ -29,12 +28,12 @@ ms.locfileid: "82194981"
 
 Выполните следующие инструкции, чтобы ``msrsync`` заполнить хранилище BLOB-объектов Azure с помощью кэша HPC Azure:
 
-1. Установка ``msrsync`` и необходимые компоненты (``rsync`` а также Python 2,6 или более поздней версии)
+1. Установка ``msrsync`` и необходимые компоненты ( ``rsync`` а также Python 2,6 или более поздней версии)
 1. Определите общее число копируемых файлов и каталогов.
 
-   Например, используйте служебную программу ``prime.py`` с аргументами ```prime.py --directory /path/to/some/directory``` (доступны при <https://github.com/Azure/Avere/blob/master/src/clientapps/dataingestor/prime.py>скачивании).
+   Например, используйте служебную программу ``prime.py`` с аргументами ```prime.py --directory /path/to/some/directory``` (доступны при скачивании <https://github.com/Azure/Avere/blob/master/src/clientapps/dataingestor/prime.py> ).
 
-   Если не используется ``prime.py``, можно вычислить количество элементов с помощью средства GNU ``find`` следующим образом:
+   Если не используется ``prime.py`` , можно вычислить количество элементов с помощью средства GNU ``find`` следующим образом:
 
    ```bash
    find <path> -type f |wc -l         # (counts files)
@@ -44,7 +43,7 @@ ms.locfileid: "82194981"
 
 1. Разделите число элементов на 64, чтобы определить количество элементов для каждого процесса. Используйте это число с параметром ``-f``, чтобы задать размер групп при выполнении команды.
 
-1. Выполните команду ``msrsync`` , чтобы скопировать файлы:
+1. Выполните ``msrsync`` команду, чтобы скопировать файлы:
 
    ```bash
    msrsync -P --stats -p64 -f<ITEMS_DIV_64> --rsync "-ahv --inplace" <SOURCE_PATH> <DESTINATION_PATH>
