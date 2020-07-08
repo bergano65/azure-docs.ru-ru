@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: memildin
 ms.openlocfilehash: c218b5dc8ca3bfa0358a9b6a0d4867696762a8d4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77430947"
 ---
 # <a name="configure-a-security-policy-in-azure-policy-using-the-rest-api"></a>Настройка политики безопасности в политике Azure с помощью REST API
@@ -126,7 +125,7 @@ ms.locfileid: "77430947"
 |JIT-доступ к сети |Мониторинг возможных JIT-доступа к сети в центре безопасности Azure |jitNetworkAccessMonitoringEffect |
 |Адаптивные элементы управления приложениями |Мониторинг возможных списков разрешенных приложений в Центре безопасности Azure |adaptiveApplicationControlsMonitoringEffect|
 |Группы безопасности сети |Мониторинг нестрогого доступа к сети в Центре безопасности Azure |networkSecurityGroupsMonitoringEffect| 
-|Конфигурации системы безопасности |Мониторинг уязвимостей ОС в Центре безопасности Azure |systemConfigurationsMonitoringEffect| 
+|Конфигурации безопасности |Мониторинг уязвимостей ОС в Центре безопасности Azure |systemConfigurationsMonitoringEffect| 
 |Защита конечных точек |Мониторинг отсутствия Endpoint Protection в Центре безопасности Azure |endpointProtectionMonitoringEffect |
 |Шифрование дисков |Мониторинг незашифрованных дисков виртуальных машин в Центре безопасности Azure |diskEncryptionMonitoringEffect|
 |Оценка уязвимостей |Мониторинг уязвимостей виртуальных машин в Центре безопасности Azure |vulnerabilityAssessmentMonitoringEffect|
@@ -136,7 +135,7 @@ ms.locfileid: "77430947"
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-Другие связанные материалы см. в следующих статьях: 
+Другие материалы на эту тему см. в следующих статьях:. 
 
 - [Пользовательские политики безопасности](custom-security-policies.md)
 - [Общие сведения о политике безопасности](tutorial-security-policy.md)

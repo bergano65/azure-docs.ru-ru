@@ -14,10 +14,9 @@ ms.date: 05/25/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 041da4198b0bdd040a4916008a1135aa2e2a5f7d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77614521"
 ---
 # <a name="sap-hana-large-instances-architecture-on-azure"></a>Архитектура SAP HANA (крупные экземпляры) в Azure
@@ -60,5 +59,5 @@ ms.locfileid: "77614521"
 
 Сведения о доступных номерах SKU см. в статье [Available SKUs for HLII](hana-available-skus.md) (Доступные номера SKU для HLI).
 
-**Дальнейшие действия**
+**Следующие шаги**
 - См. статью о [сетевой архитектуре SAP HANA в Azure (крупные экземпляры)](hana-network-architecture.md).

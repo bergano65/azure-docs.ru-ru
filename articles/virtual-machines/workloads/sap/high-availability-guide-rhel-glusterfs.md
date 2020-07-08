@@ -15,10 +15,9 @@ ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: radeltch
 ms.openlocfilehash: 388a2db2c888be541d89c5f4274bd38b37e4ca28
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77591920"
 ---
 # <a name="glusterfs-on-azure-vms-on-red-hat-enterprise-linux-for-sap-netweaver"></a>GlusterFS в виртуальных машинах Azure с Red Hat Enterprise Linux для SAP NetWeaver
@@ -61,9 +60,9 @@ ms.locfileid: "77591920"
 * примечание к SAP [2243692], содержащее сведения о лицензировании SAP в Linux в Azure;
 * примечание к SAP [1999351], содержащее дополнительные сведения об устранении неполадок, связанных с расширением для расширенного мониторинга Azure для SAP;
 * [вики-сайт сообщества SAP](https://wiki.scn.sap.com/wiki/display/HOME/SAPonLinuxNotes), содержащий все необходимые примечания к SAP для Linux;
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
-* [Развертывание виртуальных машин Azure для SAP в Linux (Эта статья)][deployment-guide]
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по развертыванию СУБД][dbms-guide]
+* [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide];
+* [Развертывание программного обеспечения SAP на виртуальных машинах Linux в Azure][deployment-guide] (эта статья);
+* [SAP NetWeaver на виртуальных машинах Windows. Руководство по развертыванию СУБД][dbms-guide];
 * [Документация по хранилищу Red Hat Gluster](https://access.redhat.com/documentation/red_hat_gluster_storage/)
 * Общая документация по RHEL
   * [Общие сведения о надстройке для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_overview/index)
@@ -98,11 +97,11 @@ ms.locfileid: "77591920"
    4. Имя пользователя и пароль администратора или ключ SSH  
       Создается учетная запись пользователя, которую можно использовать для входа на компьютер.
    5. Идентификатор подсети  
-      Чтобы развернуть виртуальную машину в имеющейся виртуальной сети с определенной подсетью, необходимо указать идентификатор этой определенной подсети. Идентификатор обычно выглядит так:/Subscriptions/**&lt;Subscription ID&gt;**/resourceGroups/**&lt;имя&gt;группы ресурсов**/провидерс/Микрософт.Нетворк/виртуалнетворкс/**&lt;имя виртуальной сети&gt;**/субнетс/**&lt;имя&gt; подсети** .
+      Чтобы развернуть виртуальную машину в имеющейся виртуальной сети с определенной подсетью, необходимо указать идентификатор этой определенной подсети. Идентификатор обычно выглядит так:/Subscriptions/** &lt; Subscription ID &gt; **/ResourceGroups/** &lt; &gt; **** &lt; &gt; **имя группы ресурсов/провидерс/Микрософт.Нетворк/виртуалнетворкс/имя виртуальной сети/субнетс/** &lt; &gt; имя подсети** .
 
 ### <a name="deploy-linux-manually-via-azure-portal"></a>Развертывание Linux вручную с помощью портала Azure
 
-Сначала необходимо создать виртуальные машины для этого кластера. После этого следует создать подсистему балансировки нагрузки и использовать виртуальные машины во внутренних пулах. Рекомендуется использовать [стандартную подсистему балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview).  
+Сначала необходимо создать виртуальные машины для этого кластера. После этого следует создать подсистему балансировки нагрузки и использовать виртуальные машины во внутренних пулах. Мы рекомендуем [подсистему балансировки нагрузки ценовой категории "Стандартный"](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview).  
 
 1. Создание группы ресурсов
 1. Создайте виртуальную сеть
@@ -352,7 +351,7 @@ ms.locfileid: "77591920"
 
 * [Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure](high-availability-guide-rhel.md)
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
-* [Развертывание программного обеспечения SAP на виртуальных машинах Azure][deployment-guide]
-* [Развертывание СУБД виртуальных машин Azure для SAP][dbms-guide]
+* [Развертывание виртуальных машин Azure для SAP NetWeaver][deployment-guide]
+* [SAP NetWeaver на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server][dbms-guide]
 * Дополнительные сведения об обеспечении высокого уровня доступности и планировании аварийного восстановления SAP HANA в Azure (крупные экземпляры) см. в [этой статье](hana-overview-high-availability-disaster-recovery.md).
 * Дополнительные сведения об установке высокого уровня доступности и плана для аварийного восстановления SAP HANA на виртуальных машинах Azure см. в статье [Высокий уровень доступности SAP HANA на виртуальных машинах Azure][sap-hana-ha].

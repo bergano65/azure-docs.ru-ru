@@ -6,10 +6,9 @@ manager: rochakm
 ms.topic: how-to
 ms.date: 11/27/2018
 ms.openlocfilehash: 29acd1b00d23e4f1c2f241027dadbbb406e5e049
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77190800"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-sap-netweaver-app-deployment"></a>Настройка аварийного восстановления для многоуровневого развертывания приложения SAP NetWeaver
@@ -119,7 +118,7 @@ ms.locfileid: "77190800"
 
 ## <a name="networking-configuration"></a>Конфигурация сети
 
-Если используется статический IP-адрес, вы можете указать нужный IP-адрес для виртуальной машины. Чтобы задать IP-адрес, перейдите в раздел >  **Параметры вычислений и**сети**Сетевая карта**.
+Если используется статический IP-адрес, вы можете указать нужный IP-адрес для виртуальной машины. Чтобы задать IP-адрес, перейдите в раздел **Параметры вычислений и**сети  >  **Сетевая карта**.
 
 ![Снимок экрана, показывающий, как установить частный IP-адрес в области карты сетевого интерфейса Site Recovery](./media/site-recovery-sap/sap-static-ip.png)
 

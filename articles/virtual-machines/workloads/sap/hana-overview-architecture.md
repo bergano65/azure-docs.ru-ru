@@ -14,10 +14,9 @@ ms.date: 07/12/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 39fcf5d0fe2273c4debd3ae5ebe5fd1190ddc959
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77616956"
 ---
 #  <a name="what-is-sap-hana-on-azure-large-instances"></a>Что такое SAP HANA в Azure (большие экземпляры)?
@@ -57,5 +56,5 @@ SAP HANA в Azure (крупные экземпляры) — это уникал�
 - [Настройка высокого уровня доступности в SUSE с помощью STONITH](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/ha-setup-with-stonith)
 - [Резервное копирование и восстановление ОС для номеров SKU типа II для версий 3](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/os-backup-type-ii-skus)
 
-**Дальнейшие действия**
+**Следующие шаги**
 - См. раздел [Know the terms](hana-know-terms.md) (Определение терминов)

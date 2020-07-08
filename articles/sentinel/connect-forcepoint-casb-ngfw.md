@@ -13,10 +13,9 @@ ms.workload: na
 ms.date: 02/20/2020
 ms.author: yelevin
 ms.openlocfilehash: eb099a786a84f9b7d0a6f0dc6e6df9c3459af295
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77588235"
 ---
 # <a name="connect-your-forcepoint-products-to-azure-sentinel"></a>Подключение продуктов Forcepoint к Azure Sentinel
@@ -44,11 +43,11 @@ ms.locfileid: "77588235"
 
 2. Выполните поиск CommonSecurityLog, чтобы использовать соответствующую схему в Log Analytics с именем Девицевендор содержит "Forcepoint". 
 
-3. Перейдите к [шагу 3. Проверка подключения](connect-cef-verify.md).
+3. Перейдите к процедуре [Шаг 3. Проверка подключения](connect-cef-verify.md).
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали, как подключить продукты Forcepoint к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 
@@ -56,4 +55,4 @@ ms.locfileid: "77588235"
 
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
 
-- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+- [Используйте книги](tutorial-monitor-your-data.md) для мониторинга данных.

@@ -14,10 +14,9 @@ ms.date: 11/21/2017
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 4060dbe936af8ff1f9dd8c958f64834cb06525de
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77615087"
 ---
 # <a name="high-availability-set-up-in-suse-using-the-stonith"></a>Настройка высокого уровня доступности в SUSE с помощью STONITH
@@ -145,8 +144,8 @@ zypper in SAPHanaSR SAPHanaSR-doc
 
 Нажмите кнопку **продолжить** .
 
-Ожидаемое значение = число развернутых узлов (в данном случае ![2) яст-клустер-секурити](media/HowToHLI/HASetupWithStonith/yast-Cluster-Security.png) . **Next**
-![PNG нажмите кнопку Next](media/HowToHLI/HASetupWithStonith/yast-cluster-configure-csync2.png) YaST-Cluster-configure-csync2. png добавить имена узлов и нажмите кнопку "добавить предложенные файлы".
+Ожидаемое значение = число развернутых узлов (в данном случае 2) ![yast-Cluster-Security.png](media/HowToHLI/HASetupWithStonith/yast-Cluster-Security.png) нажмите кнопку **Далее** 
+ ![yast-cluster-configure-csync2.png](media/HowToHLI/HASetupWithStonith/yast-cluster-configure-csync2.png) Добавить имена узлов, а затем нажмите кнопку "добавить предложенные файлы".
 
 Щелкните Turn csync2 ON (Включить csync2).
 
@@ -160,8 +159,8 @@ zypper in SAPHanaSR SAPHanaSR-doc
 
 ![yast-cluster-conntrackd.png](media/HowToHLI/HASetupWithStonith/yast-cluster-conntrackd.png)
 
-Нажмите кнопку **Next**
-![яст-клустер-сервице. png.](media/HowToHLI/HASetupWithStonith/yast-cluster-service.png)
+Нажмите кнопку **Далее** 
+ ![yast-cluster-service.png](media/HowToHLI/HASetupWithStonith/yast-cluster-service.png)
 
 В параметрах по умолчанию загрузка была отключена, поэтому измените значение на "ВКЛ.", чтобы Pacemaker запускался во время загрузки. Выбор можно сделать на основе требований к установке.
 Щелкните **Далее** и настройка кластера будет завершена.
@@ -257,7 +256,7 @@ systemctl start pacemaker
 ```
 crm_mon
 ```
-![КРМ-Мон. png](media/HowToHLI/HASetupWithStonith/crm-mon.png) вы также можете войти в Hawk, чтобы проверить состояние кластера *https://\<узел IP>:7630*. Пользователь по умолчанию — hacluster, а пароль — linux. При необходимости можно изменить пароль с помощью команды *passwd*.
+![CRM-mon.png](media/HowToHLI/HASetupWithStonith/crm-mon.png)Кроме того, для проверки состояния кластера можно войти в Hawk *https://\<node IP>: 7630*. Пользователь по умолчанию — hacluster, а пароль — linux. При необходимости можно изменить пароль с помощью команды *passwd*.
 
 ## <a name="7-configure-cluster-properties-and-resources"></a>7. Настройка свойств и ресурсов кластера 
 В этом разделе описаны действия по настройке кластерных ресурсов.
@@ -322,7 +321,7 @@ crm configure load update crm-vip.txt
 При выполнении команды *crm_mon* отобразится два ресурса.
 ![crm_mon_command.png](media/HowToHLI/HASetupWithStonith/crm_mon_command.png)
 
-Кроме того, состояние можно увидеть на *узле HTTPS://\<IP Address>:7630/ЦИБ/Live/State.*
+Кроме того, появится сообщение о состоянии в *https://\<node IP address>:7630/cib/live/state*
 
 ![hawlk-status-page.png](media/HowToHLI/HASetupWithStonith/hawlk-status-page.png)
 
@@ -334,11 +333,11 @@ Service pacemaker stop
 Теперь остановите службу Pacemaker на узле **node2**. После этого произойдет отработка отказа ресурсов на узле **node1**.
 
 **Перед отработкой отказа**  
-![Бефоре-фаиловер. png](media/HowToHLI/HASetupWithStonith/Before-failover.png)  
+![Before-failover.png](media/HowToHLI/HASetupWithStonith/Before-failover.png)  
 
 **После отработки отказа**  
-![Афтер-фаиловер. png](media/HowToHLI/HASetupWithStonith/after-failover.png)  
-![КРМ-Мон-Афтер-фаиловер. png](media/HowToHLI/HASetupWithStonith/crm-mon-after-failover.png)  
+![after-failover.png](media/HowToHLI/HASetupWithStonith/after-failover.png)  
+![crm-mon-after-failover.png](media/HowToHLI/HASetupWithStonith/crm-mon-after-failover.png)  
 
 
 ## <a name="9-troubleshooting"></a>9. Устранение неполадок

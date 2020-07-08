@@ -8,10 +8,9 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 02/17/2020
 ms.openlocfilehash: 577bed7ce342be14a50077a3ffd841cd901b5b31
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77473016"
 ---
 # <a name="manage-disk-space-in-azure-hdinsight"></a>Управление дисковым пространством в Azure HDInsight
@@ -22,9 +21,9 @@ ms.locfileid: "77473016"
 
 1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — это имя вашего кластера.
 
-1. Последовательно выберите **Hive** > **Configs** > **Advanced**настройки > Hive дополнительно**Hive-log4j**. Проверьте следующие параметры:
+1. Последовательно выберите **Hive**  >  **настройки**Hive дополнительно  >  **Advanced**  >  **Hive-log4j**. Проверьте следующие параметры:
 
-    * `hive.root.logger=DEBUG,RFA`. Это значение по умолчанию. Измените [уровень ведения журнала](https://logging.apache.org/log4j/2.x/log4j-api/apidocs/org/apache/logging/log4j/Level.html) на `INFO` , чтобы напечатать меньше записей журналов.
+    * `hive.root.logger=DEBUG,RFA`. Это значение по умолчанию. Измените [уровень ведения журнала](https://logging.apache.org/log4j/2.x/log4j-api/apidocs/org/apache/logging/log4j/Level.html) на, `INFO` чтобы напечатать меньше записей журналов.
 
     * `log4jhive.log.maxfilesize=1024MB`. Это значение по умолчанию, при необходимости измените.
 
@@ -38,18 +37,18 @@ ms.locfileid: "77473016"
 
     1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — это имя вашего кластера.
 
-    1. Перейдите к **Hive** > **расширенным****Configs** >  > **Диспетчер ресурсов**config Hive. Убедитесь, что установлен флажок **включить объединение журналов** . Если отключено, узлы имен будут хранить журналы локально, а не объединять их в удаленном хранилище при завершении или прекращении работы приложения.
+    1. Перейдите к **Hive**  >  **Configs**  >  **расширенным**  >  **Диспетчер ресурсов**config Hive. Убедитесь, что установлен флажок **включить объединение журналов** . Если отключено, узлы имен будут хранить журналы локально, а не объединять их в удаленном хранилище при завершении или прекращении работы приложения.
 
 * Убедитесь, что размер кластера соответствует рабочей нагрузке. Возможно, Рабочая нагрузка изменилась недавно или размер кластера был изменен. Увеличьте [масштаб](../hdinsight-scaling-best-practices.md) кластера в соответствии с более высокой рабочей нагрузкой.
 
-* `/mnt/resource`могут быть заполнены потерянными файлами (как в случае перезапуска Resource Manager). При необходимости вручную очистите `/mnt/resource/hadoop/yarn/log` и. `/mnt/resource/hadoop/yarn/local`
+* `/mnt/resource`могут быть заполнены потерянными файлами (как в случае перезапуска Resource Manager). При необходимости вручную очистите `/mnt/resource/hadoop/yarn/log` и `/mnt/resource/hadoop/yarn/local` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
+* Получите ответы специалистов Azure на [сайте поддержки сообщества пользователей Azure](https://azure.microsoft.com/support/community/).
 
-* Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

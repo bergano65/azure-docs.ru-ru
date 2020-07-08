@@ -5,10 +5,9 @@ ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
 ms.openlocfilehash: d61600801286126ea6ffb9a97bc5655b6f233816
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77562196"
 ---
 # <a name="fan-outfan-in-scenario-in-durable-functions---cloud-backup-example"></a>Сценарии развертывания и объединения в устойчивых функциях. Пример резервного копирования в облако
@@ -57,7 +56,7 @@ ms.locfileid: "77562196"
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Функция использует стандартный *Function. JSON* для функций Orchestrator.
+Функция использует стандартный *function.js* для функций Orchestrator.
 
 [!code-json[Main](~/samples-durable-functions/samples/javascript/E2_BackupSiteContent/function.json)]
 
@@ -70,7 +69,7 @@ ms.locfileid: "77562196"
 > [!NOTE]
 > Несмотря на то что задачи концептуально похожи на обещания JavaScript, функции оркестратора должны использовать `context.df.Task.all` и `context.df.Task.any` вместо `Promise.all` и `Promise.race` для управления параллелизацией задач.
 
-После получения от `context.df.Task.all`, мы понимаем, что все вызовы функций завершены и возвращали значения обратно в нас. Каждый вызов `E2_CopyFileToBlob` возвращает число переданных байтов, поэтому, чтобы узнать сумму всех байтов, нужно сложить все возвращаемые значения.
+После получения от `context.df.Task.all` , мы понимаем, что все вызовы функций завершены и возвращали значения обратно в нас. Каждый вызов `E2_CopyFileToBlob` возвращает число переданных байтов, поэтому, чтобы узнать сумму всех байтов, нужно сложить все возвращаемые значения.
 
 ---
 
@@ -86,7 +85,7 @@ ms.locfileid: "77562196"
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Файл *Function. JSON* для `E2_GetFileList` выглядит следующим образом:
+*function.jsв* файле для `E2_GetFileList` выглядит следующим образом:
 
 [!code-json[Main](~/samples-durable-functions/samples/javascript/E2_GetFileList/function.json)]
 
@@ -108,7 +107,7 @@ ms.locfileid: "77562196"
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/BackupSiteContent.cs?range=56-81)]
 
 > [!NOTE]
-> Для запуска примера кода необходимо установить `Microsoft.Azure.WebJobs.Extensions.Storage` пакет NuGet.
+> Для `Microsoft.Azure.WebJobs.Extensions.Storage` запуска примера кода необходимо установить пакет NuGet.
 
 Функция использует некоторые дополнительные возможности привязок функций Azure (то есть использование [ `Binder` параметра](../functions-dotnet-class-library.md#binding-at-runtime)), но не нужно беспокоиться об этих деталях в целях этого пошагового руководства.
 

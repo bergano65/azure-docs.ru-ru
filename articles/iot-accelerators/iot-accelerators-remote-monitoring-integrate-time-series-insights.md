@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.openlocfilehash: 752529454a5b6293d9cbfdf8378b46947aed5a0e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77564650"
 ---
 # <a name="integrate-azure-time-series-insights-with-remote-monitoring"></a>Интеграция службы "Аналитика временных рядов Azure" с решением удаленного мониторинга
@@ -51,7 +50,7 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
-1. Выберите **создать ресурс** > **"Интернет вещей"** > "**аналитика временных рядов**".
+1. Выберите **создать ресурс**  >  **"Интернет вещей"**"  >  **аналитика временных рядов**".
 
     ![Новая среда "Аналитика временных рядов Azure"](./media/iot-accelerators-remote-monitoring-integrate-time-series-insights/new-time-series-insights.png)
 
@@ -96,7 +95,7 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
     | Имя политики Центра Интернета вещей | **iothubowner** гарантирует, что используется политика владельца. |
     | Ключ политики Центра Интернета вещей | Это поле заполняется автоматически. |
     | Группа потребителей Центра Интернета вещей | **timeseriesinsights** |
-    | Формат сериализации событий | **ФОРМАТ**     | 
+    | Формат сериализации событий | **JSON**     | 
     | Имя свойства для метки времени | Не указывайте |
 
     ![Создание источника событий](./media/iot-accelerators-remote-monitoring-integrate-time-series-insights/time-series-insights-event-source-create.png)
@@ -213,7 +212,7 @@ docker pull azureiotpcs/pcs-remote-monitoring-webui:1.0.2
 
 1. Найдите и выберите приложение **ContosoRM**.
 
-1. Перейдите в раздел **Параметры** > **ключи** и создайте новый ключ для приложения. Скопируйте значение ключа в безопасное место.
+1. Перейдите в **Settings**  >  **раздел Параметры ключи** и создайте новый ключ для приложения. Скопируйте значение ключа в безопасное место.
 
 1. Потяните о [последнем файле DOCKER YAML](https://github.com/Azure/pcs-cli/tree/5a9b4e0dbe313172eff19236e54a4d461d4f3e51/solutions/remotemonitoring/single-vm) из репозитория GitHub с помощью последнего тега. 
 

@@ -17,10 +17,9 @@ ms.date: 05/05/2017
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: a393c1ac09283f1570908cea72750ed5ae28f81e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77617333"
 ---
 # <a name="install-sap-netweaver-high-availability-on-a-windows-failover-cluster-and-file-share-for-sap-ascsscs-instances-on-azure"></a>Установка в Azure высокодоступной системы SAP NetWeaver в отказоустойчивом кластере Windows с файловым ресурсом для экземпляров SAP ASCS/SCS
@@ -231,13 +230,13 @@ ms.locfileid: "77617333"
 
 Создайте в кластере SOFS следующие том и файловый ресурс:
 
-* Структура файлов `C:\ClusterStorage\Volume1\usr\sap\<SID>\SYS\` SAP GLOBALHOST на общем томе кластера SOFS (CSV)
+* Структура файлов SAP GLOBALHOST `C:\ClusterStorage\Volume1\usr\sap\<SID>\SYS\` на общем томе кластера SOFS (CSV)
 
 * файловый ресурс SAPMNT;
 
 * установите параметры безопасности для файлового ресурса и папки SAPMNT, предоставив полные права следующим субъектам:
-    * группа пользователей \<ДОМЕН>\SAP_\<SID>_GlobalAdmin;
-    * объекты-компьютеры с узлами кластера SAP ASCS/SCS \<ДОМЕН>\ClusterNode1$ и \<ДОМЕН>\ClusterNode2$.
+    * \<DOMAIN> \<SID> Группа пользователей \ SAP_ _GlobalAdmin
+    * Объекты компьютеров узлов кластера SAP ASCS/SCS \<DOMAIN> \ClusterNode1 $ и \<DOMAIN> \ClusterNode2 $
 
 Чтобы создать том CSV с зеркальной устойчивостью, выполните следующий командлет PowerShell в одном из узлов кластера SOFS:
 
@@ -299,7 +298,7 @@ Set-Acl $UsrSAPFolder $Acl -Verbose
 
 Установите экземпляр SAP ASCS/SCS на первом узле кластера. Чтобы установить экземпляр, в программе установки SAP SWPM выберите следующие элементы:
 
-**\<Продукт>**  >  >  ** \<СУБД>**  >  **Installation**установки > **сервера приложений ABAP** (или **Java**) > кластер **с высоким уровнем доступности** > **первый узел кластера****ASCS/SCS**.
+**\<Product>** > **\<DBMS>** > **Установка**  >  **Сервер приложений ABAP** (или **Java**) > **высокодоступный**  >  **экземпляр System ASCS/SCS**  >  ,**первый узел кластера**.
 
 ### <a name="add-a-probe-port"></a>Добавление порта пробы
 
@@ -309,21 +308,21 @@ Set-Acl $UsrSAPFolder $Acl -Verbose
 
 Установите экземпляр SAP ASCS/SCS на втором узле кластера. Чтобы установить экземпляр, в программе установки SAP SWPM выберите следующие элементы:
 
-**\<Продукт>**  >  >  **СУБД \<>** >  **Installation** > **ASCS/SCS instance** **Java****установки сервера приложений ABAP** (или Java) > **высокодоступного экземпляра System**ASCS/SCS, который является**дополнительным узлом кластера.**  > 
+**\<Product>** > **\<DBMS>** > **Установка**  >  **Сервер приложений ABAP** (или **Java**) > **высокодоступный**  >  **экземпляр System ASCS/SCS**  >  ,**дополнительный узел кластера**.
 
 
 ## <a name="update-the-sap-ascsscs-instance-profile"></a>Изменение профиля экземпляра SAP ASCS/SCS
 
-Обновите параметры в профиле \<экземпляра SAP ASCS/SCS SID>_ASCS/\<SCS Nr>_ \<Host>.
+Обновите параметры в профиле экземпляра SAP ASCS/SCS \<SID> _ASCS/ \<Nr> SCS_ \<Host> .
 
 
 | Имя параметра | Значение параметра |
 | --- | --- |
-| gw/netstat_once | **0**; |
+| gw/netstat_once | **0** |
 | enque/encni/set_so_keepalive  | **true** |
 | service/ha_check_node | **1** |
 
-Перезапустите экземпляр SAP ASCS/SCS. Настройка `KeepAlive` параметров на УЗЛАХ кластера SAP ASCS/SCS следуйте инструкциям по [установке записей реестра на УЗЛАХ кластера экземпляра SAP ASCS/SCS][high-availability-guide]. 
+Перезапустите экземпляр SAP ASCS/SCS. Настройка `KeepAlive` параметров на узлах кластера SAP ASCS/SCS следуйте инструкциям по [установке записей реестра на узлах кластера экземпляра SAP ASCS/SCS][high-availability-guide]. 
 
 ## <a name="install-a-dbms-instance-and-sap-application-servers"></a>Установка экземпляра СУБД и серверов приложений SAP
 

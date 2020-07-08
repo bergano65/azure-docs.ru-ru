@@ -1,6 +1,6 @@
 ---
 title: Хранение и просмотр диагностических данных в службе хранилища Azure
-description: Узнайте, как получить данные диагностики Azure в учетной записи хранения Azure, чтобы их можно было просматривать с помощью одного из нескольких доступных средств.
+description: Узнайте, как организовать сбор данных диагностики Azure в учетной записи хранения Azure, чтобы их можно было просматривать с помощью одного из нескольких доступных средств.
 services: azure-monitor
 author: bwren
 ms.service: azure-monitor
@@ -9,10 +9,9 @@ ms.date: 08/01/2016
 ms.author: bwren
 ms.subservice: diagnostic-extension
 ms.openlocfilehash: 17430330d068fb55b45f073afecb8ba348286cb5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77472678"
 ---
 # <a name="store-and-view-diagnostic-data-in-azure-storage"></a>Хранение и просмотр диагностических данных в службе хранилища Azure
@@ -77,7 +76,7 @@ ms.locfileid: "77472678"
 * [Обозреватель службы хранилища Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) — это автономное приложение, которое упрощает работу с данными из службы хранилища Azure на платформе Windows, OSX и Linux.
 * [Azure Management Studio](https://www.cerebrata.com/products/azure-management-studio/introduction) содержит диспетчер диагностики Azure, который позволяет просматривать и скачивать данные диагностики, которые собирают выполняемые в Azure приложения, а также управлять этими данными.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 [Трассировка потока в приложении облачных служб с помощью системы диагностики Azure](../cloud-services/cloud-services-dotnet-diagnostics-trace-flow.md)
 
 

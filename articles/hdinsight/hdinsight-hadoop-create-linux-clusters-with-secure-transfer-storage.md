@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/18/2020
 ms.openlocfilehash: c1e5ca8b0bb828e5e8ce896bba6a5278266b118e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77560088"
 ---
 # <a name="apache-hadoop-clusters-with-secure-transfer-storage-accounts-in-azure-hdinsight"></a>Apache Hadoop кластеры с учетными записями хранения с безопасной переносю в Azure HDInsight
@@ -32,13 +31,13 @@ ms.locfileid: "77560088"
 
 ### <a name="powershell"></a>PowerShell
 
-Для командлета PowerShell [New-азсторажеаккаунт](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount)убедитесь, что `-EnableHttpsTrafficOnly` параметр имеет значение `1`.
+Для командлета PowerShell [New-азсторажеаккаунт](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount)убедитесь, что параметр `-EnableHttpsTrafficOnly` имеет значение `1` .
 
 Сведения об обновлении существующей учетной записи хранения с помощью PowerShell см. в статье [требование безопасной пересылки с помощью PowerShell](../storage/common/storage-require-secure-transfer.md#require-secure-transfer-with-powershell).
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Для команды Azure CLI [AZ Storage Account Create](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create), убедитесь, что `--https-only` параметр имеет значение `true`.
+Для команды Azure CLI [AZ Storage Account Create](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create), убедитесь, что параметр `--https-only` имеет значение `true` .
 
 Сведения об обновлении существующей учетной записи хранения с Azure CLI см. в разделе [Обязательное безопасное перемещение с помощью Azure CLI](../storage/common/storage-require-secure-transfer.md#require-secure-transfer-with-azure-cli).
 

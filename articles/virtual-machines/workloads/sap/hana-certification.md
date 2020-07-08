@@ -14,10 +14,9 @@ ms.date: 09/04/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 2a02f0e1b05b9de8105126d1c9e4e3f79057285f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77617230"
 ---
 # <a name="certification"></a>Сертификация
@@ -40,5 +39,5 @@ ms.locfileid: "77617230"
 - Помимо описанных выше решений вы можете установить другие компоненты в подписке Azure, которая подключена к SAP HANA в Azure (крупные экземпляры). Например, компоненты, обеспечивающие взаимодействие с базой данных SAP HANA, опосредованно или напрямую (серверы перехода, серверы RDP, SAP HANA Studio, SAP Data Services для сценариев бизнес-аналитики SAP или решения для мониторинга сети).
 - Как и в Azure, крупные экземпляры HANA предлагают дополнительные возможности для создания решения для высокой доступности и аварийного восстановления.
 
-**Дальнейшие действия**
+**Следующие шаги**
 - См. раздел [Available SKUs for HLI](hana-available-skus.md) (Доступные номера SKU для HLI) 

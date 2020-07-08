@@ -5,10 +5,9 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
 ms.openlocfilehash: ed92156df9d8e1e07b56cea4b1e64edee11d68d9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77562128"
 ---
 # <a name="monitor-scenario-in-durable-functions---weather-watcher-sample"></a>Сценарий монитора в устойчивых функциях — пример наблюдателя за погодой
@@ -38,7 +37,7 @@ ms.locfileid: "77562128"
 
 Этот пример включает в себя использование API Weather Underground для проверки текущих погодных условий для местоположения.
 
-Для начала потребуется учетная запись Weather Underground. Вы можете создать его бесплатно в [https://www.wunderground.com/signup](https://www.wunderground.com/signup). После этого нужно будет приобрести ключ API. Это можно сделать, посетив [https://www.wunderground.com/weather/api](https://www.wunderground.com/weather/api/?MR=1), а затем выбрав параметры ключа. Бесплатного плана Stratus Developer достаточно для запуска этого примера.
+Для начала потребуется учетная запись Weather Underground. Вы можете создать его бесплатно в [https://www.wunderground.com/signup](https://www.wunderground.com/signup) . После этого нужно будет приобрести ключ API. Это можно сделать [https://www.wunderground.com/weather/api](https://www.wunderground.com/weather/api/?MR=1) , посетив, а затем выбрав параметры ключа. Бесплатного плана Stratus Developer достаточно для запуска этого примера.
 
 Получив ключ API, добавьте следующие **параметры приложения** в приложение-функцию.
 
@@ -50,7 +49,7 @@ ms.locfileid: "77562128"
 
 В этой статье описаны следующие функции в примере приложения:
 
-* `E3_Monitor`: [Функция Orchestrator](durable-functions-bindings.md#orchestration-trigger) , которая периодически `E3_GetIsClear` вызывает. Она вызывает `E3_SendGoodWeatherAlert`, если `E3_GetIsClear` возвращает значение true.
+* `E3_Monitor`: [Функция Orchestrator](durable-functions-bindings.md#orchestration-trigger) , которая `E3_GetIsClear` периодически вызывает. Она вызывает `E3_SendGoodWeatherAlert`, если `E3_GetIsClear` возвращает значение true.
 * `E3_GetIsClear`: [Функция действия](durable-functions-bindings.md#activity-trigger) , которая проверяет текущие условия погоды для расположения.
 * `E3_SendGoodWeatherAlert`: функция действия, которая отправляет SMS-сообщение через Twilio.
 
@@ -114,7 +113,7 @@ Orchestrator требует расположения для отслеживан
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/Monitor.cs?range=87-96,140-205)]
 
 > [!NOTE]
-> Для запуска примера кода необходимо установить `Microsoft.Azure.WebJobs.Extensions.Twilio` пакет NuGet.
+> Для `Microsoft.Azure.WebJobs.Extensions.Twilio` запуска примера кода необходимо установить пакет NuGet.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 

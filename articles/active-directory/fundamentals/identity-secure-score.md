@@ -12,10 +12,9 @@ manager: daveba
 ms.reviewer: tilarso
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0f75dea2cffbe710bf2778ceab5eacc91ffcca9c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77523120"
 ---
 # <a name="what-is-the-identity-secure-score-in-azure-active-directory"></a>Общие сведения об оценке безопасности удостоверений в Azure Active Directory
@@ -48,7 +47,7 @@ ms.locfileid: "77523120"
 
 ## <a name="how-do-i-get-my-secure-score"></a>Как выполнить оценку безопасности
 
-Оценка безопасности идентификации доступна во всех выпусках Azure AD. Организации могут получить доступ к удостоверению безопасности идентификации из **портал Azure** > **Azure Active Directory** > **Security** > **оценки безопасного удостоверения**.
+Оценка безопасности идентификации доступна во всех выпусках Azure AD. Организации могут получить доступ к удостоверению безопасности идентификации из **портал Azure**  >  **Azure Active Directory**  >  **Security**  >  **оценки безопасного удостоверения**.
 
 ## <a name="how-does-it-work"></a>Как это работает?
 
@@ -114,6 +113,6 @@ ms.locfileid: "77523120"
 
 Оценка безопасного удостоверения представляет собой удостоверение, представляющее собой часть оценки безопасности Майкрософт. Такое перекрытие означает, что ваши рекомендации для оценки безопасности идентификации и оценки удостоверения в корпорации Майкрософт одинаковы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Узнайте больше о Microsoft Secure Score](https://docs.microsoft.com/office365/securitycompliance/microsoft-secure-score)

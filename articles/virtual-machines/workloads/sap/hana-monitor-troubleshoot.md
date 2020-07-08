@@ -14,10 +14,9 @@ ms.date: 09/10/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 047ea4d07f2b497ac8c7deb90c056d63976094f4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77617072"
 ---
 # <a name="monitoring-and-troubleshooting-from-hana-side"></a>Мониторинг и устранение неполадок со стороны HANA
@@ -93,10 +92,10 @@ ms.locfileid: "77617072"
 См. примечание [SAP Note #2081065 – Troubleshooting SAP HANA Network](https://launchpad.support.sap.com/#/notes/2081065) (Примечание SAP № 2081065. Устранение неполадок сети SAP HANA) и выполните действия по устранению неполадок сети, приведенные в этом примечании SAP.
 
 1. Анализ времени кругового пути между сервером и клиентом.
-  А) Запустите скрипт SQL [_HANA\_Network\_Clients_](https://launchpad.support.sap.com/#/notes/1969700)_._
+  A. Запустите скрипт SQL [_HANA\_Network\_Clients_](https://launchpad.support.sap.com/#/notes/1969700)_._
   
 2. Выполните анализ обмена данными между узлами.
-  А) Запустите скрипт SQL [_HANA\_Network\_Services_](https://launchpad.support.sap.com/#/notes/1969700)_._
+  A. Запустите скрипт SQL [_HANA\_Network\_Services_](https://launchpad.support.sap.com/#/notes/1969700)_._
 
 3. Выполните команду Linux **ifconfig** (в выходных данных показано, есть ли какие-либо потери пакетов).
 4. Выполните команду Linux **tcpdump**.
@@ -163,10 +162,10 @@ ms.locfileid: "77617072"
 
 ![HANA\_Configuration\_Overview\_Rev110 + для получения общих сведений об экземпляре SAP HANA](./media/troubleshooting-monitoring/image14-configuration-overview.png)
 
-**\_Параметры\_конфигурации\_Hana Rev70 +** для проверки параметров SAP HANA.
+**Hana \_ \_Параметры конфигурации \_ Rev70 +** для проверки параметров SAP HANA.
 
 ![HANA\_Configuration\_Parameters\_Rev70 + для проверки параметров SAP HANA](./media/troubleshooting-monitoring/image15-configuration-parameters.png)
 
-**Дальнейшие действия**
+**Следующие шаги**
 
 - См. статью о [настройке высокого уровня доступности в SUSE с помощью STONITH](ha-setup-with-stonith.md).

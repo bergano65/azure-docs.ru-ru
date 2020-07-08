@@ -4,10 +4,9 @@ description: Статья, в которой описывается, как ис
 ms.topic: conceptual
 ms.date: 11/08/2019
 ms.openlocfilehash: 1d423371788f87155328e8f5c9334e47349a68e8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77584274"
 ---
 # <a name="auto-enable-backup-on-vm-creation-using-azure-policy"></a>Автоматическое включение резервного копирования при создании виртуальной машины с использованием Политики Azure
@@ -54,6 +53,6 @@ ms.locfileid: "77584274"
 >
 > Рекомендуется, чтобы эта политика не была назначена более чем 200 виртуальным машинам за раз. Если политика назначена более чем 200 виртуальным машинам, это может привести к запуску резервного копирования через несколько часов позже, чем указано в расписании.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 [Дополнительные сведения о политике Azure](https://docs.microsoft.com/azure/governance/policy/overview)

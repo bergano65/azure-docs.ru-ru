@@ -7,10 +7,9 @@ ms.date: 12/03/2018
 ms.reviewer: dariac
 ms.custom: seodec18
 ms.openlocfilehash: 9f18eef607a5f655aecc0b6ebe1c85a239b34192
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77482978"
 ---
 # <a name="sync-content-from-a-cloud-folder-to-azure-app-service"></a>Синхронизация содержимого из папки в облаке со службами приложений Azure
@@ -22,7 +21,7 @@ ms.locfileid: "77482978"
 
 Чтобы включить синхронизацию содержимого, перейдите на страницу приложения службы приложений на [портале Azure](https://portal.azure.com).
 
-В меню слева щелкните **центр** > **развертывания OneDrive** или **Dropbox** > **авторизовать**. Следуйте инструкциям авторизации. 
+В меню слева щелкните **центр развертывания**  >  **OneDrive** или **Dropbox**  >  **авторизовать**. Следуйте инструкциям авторизации. 
 
 ![](media/app-service-deploy-content-sync/choose-source.png)
 
@@ -54,7 +53,7 @@ ms.locfileid: "77482978"
 
 Чтобы отключить синхронизацию содержимого, перейдите на страницу приложения службы приложений в [портале Azure](https://portal.azure.com).
 
-В меню слева щелкните **центр** > развертывания**Отключить**.
+В меню слева щелкните **центр развертывания**  >  **Отключить**.
 
 ![](media/app-service-deploy-content-sync/disable.png)
 

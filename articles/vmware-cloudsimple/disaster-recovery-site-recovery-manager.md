@@ -9,10 +9,9 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: fa8b2da683d68a337df38e13726f22c5af43540a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77565933"
 ---
 # <a name="set-up-private-cloud-as-a-disaster-recovery-target-with-vmware-site-recovery-manager"></a>Настройка частного облака в качестве цели аварийного восстановления с помощью VMware Site Recovery Manager
@@ -146,7 +145,7 @@ ms.locfileid: "77565933"
 
 Войдите в vCenter с помощью учетных данных пользователя клаудовнер после повышения привилегий на портале Клаудсимпле.
 
-Создайте нового пользователя `srm-soln-admin`в vCenter и добавьте его в группу администраторов в vCenter.
+Создайте нового пользователя `srm-soln-admin` в vCenter и добавьте его в группу администраторов в vCenter.
 Выйдите из vCenter в качестве пользователя клаудовнер и войдите в систему как пользователь *СРМ-солн-Admin* .
 
 #### <a name="cloudsimple-portal-configure-firewall-rules-for-vra"></a>Портал Клаудсимпле: Настройка правил брандмауэра для вра

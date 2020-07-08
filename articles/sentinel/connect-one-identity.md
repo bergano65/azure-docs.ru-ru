@@ -15,10 +15,9 @@ ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
 ms.openlocfilehash: 849087cbbe91be799c51929353b9f020859c85b8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77588150"
 ---
 # <a name="connect-one-identity-safeguard"></a>Подключить одну защиту идентификации
@@ -31,7 +30,7 @@ ms.locfileid: "77588150"
 
 ## <a name="connect-azure-sentinel-to-one-identity-safeguard"></a>Подключение Sentinel Azure к одной защите идентификации
 
-1. В портал Azure перейдите к**соединителям данных** **Azure Sentinel** > , а затем выберите **один соединитель защиты удостоверений** .
+1. В портал Azure перейдите к **Azure Sentinel**  >  **соединителям данных** Azure Sentinel, а затем выберите **один соединитель защиты удостоверений** .
 
 2. Выберите **открыть страницу соединителя**.
 
@@ -42,6 +41,6 @@ ms.locfileid: "77588150"
 В этом документе вы узнали, как подключить одну защиту идентификации к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
-- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+- [Используйте книги](tutorial-monitor-your-data.md) для мониторинга данных.
 
 

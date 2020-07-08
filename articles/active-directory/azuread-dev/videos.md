@@ -14,17 +14,16 @@ ms.custom: aaddev
 ms.reviewer: celested
 titleSuffix: Microsoft identity platform
 ms.openlocfilehash: e71f555f7a9cefef3aeada79031db3a07e3db49a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77202064"
 ---
 # <a name="azure-active-directory-developer-platform-videos"></a>Видео о платформе Azure Active Directory разработчиков
 
 Узнайте о новой платформе Microsoft Identity и о том, как перейти на нее с помощью платформы разработчика Azure Active Directory (Azure AD). Обычно видео — 1-2 минут.
 
-## <a name="migrate-from-v10-to-v20"></a>Миграция с версии 1.0 на v 2.0
+## <a name="migrate-from-v10-to-v20"></a>Переход с версии 1.0 на версию 2.0
 
 **Сведения о переходе на последнюю версию платформы Microsoft Identity**
 
@@ -44,7 +43,7 @@ ms.locfileid: "77202064"
 :::row-end:::
 :::row:::
     :::column:::
-        Конечные точки и преимущества перехода на v 2.0
+        Конечные точки и преимущества перехода на версию 2.0
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/qpdC45tZYDg]
@@ -58,13 +57,13 @@ ms.locfileid: "77202064"
 :::row-end:::
 :::row:::
     :::column:::
-        Зачем выполнять миграцию из ADAL в MSAL
+        Зачем переносить данные из ADAL в MSAL
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/qpdC45tZYDg]
     :::column-end:::
     :::column:::
-        Преимущества MSAL через ADAL
+        Преимущества MSAL перед ADAL
     :::column-end:::
     :::column:::
         > [!VIDEO https://www.youtube.com/embed/q-TDszj2O-4]

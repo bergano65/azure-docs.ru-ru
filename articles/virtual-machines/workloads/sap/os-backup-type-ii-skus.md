@@ -14,10 +14,9 @@ ms.date: 07/12/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 100e1b974e54d8c0065194bc7beb18f458011434
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77616864"
 ---
 # <a name="os-backup-and-restore-for-type-ii-skus-of-revision-3-stamps"></a>Резервное копирование и восстановление ОС для номеров SKU типа II для версий 3
@@ -31,7 +30,7 @@ ms.locfileid: "77616864"
 >[!NOTE]
 >Для сценариев резервного копирования операционной системы используется предварительно установленное на сервере программное обеспечение ReaR.  
 
-После завершения подготовки командой Майкрософт `Service Management` по умолчанию сервер настраивается с помощью двух расписаний резервного копирования, чтобы создать резервную копию операционной системы на уровне файловой системы. Вы можете проверить расписания заданий резервного копирования с помощью следующей команды:
+После завершения подготовки командой Майкрософт по `Service Management` умолчанию сервер настраивается с помощью двух расписаний резервного копирования, чтобы создать резервную копию операционной системы на уровне файловой системы. Вы можете проверить расписания заданий резервного копирования с помощью следующей команды:
 ```
 #crontab –l
 ```
@@ -99,4 +98,4 @@ EXCLUDE_VG=( vgHANA-data-HC2 vgHANA-data-HC3 vgHANA-log-HC2 vgHANA-log-HC3 vgHAN
 BACKUP_PROG_EXCLUDE=("${BACKUP_PROG_EXCLUDE[@]}" '/media' '/var/tmp/*' '/var/crash' '/hana' '/usr/sap'  ‘/proc’)
 ```
 
-На следующем снимке экрана показано восстановление полной резервной копии ![: РЕАРТУЛКОНФИГУРАТИОН. png.](media/HowToHLI/OSBackupTypeIISKUs/RearToolConfiguration.PNG)
+На следующем снимке экрана показано восстановление полной резервной копии: ![RearToolConfiguration.PNG](media/HowToHLI/OSBackupTypeIISKUs/RearToolConfiguration.PNG)

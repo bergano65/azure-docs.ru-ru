@@ -14,10 +14,9 @@ ms.date: 09/10/2018
 ms.author: hermannd
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 023f32fce01ffbd974b182fa89fd604e62332936
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77617210"
 ---
 # <a name="install-hana-on-sap-hana-on-azure-large-instances"></a>Установка HANA на сервере SAP HANA в Azure (крупные экземпляры)
@@ -39,7 +38,7 @@ ms.locfileid: "77617210"
 
 Необходим S-пользователь SAP или другой пользователь, который позволяет вам получить доступ к SAP Marketplace.
 
-1. Войдите и перейдите к [службе SAP Marketplace](https://support.sap.com/en/index.html). Выберите **загрузить установки программного обеспечения** > **и обновить** > **по алфавиту**. Затем выберите **в разделе H — SAP HANA Platform Edition** > **SAP HANA Platform Edition 2,0** > **установки**. Загрузите файлы, как показано на снимке экрана ниже:
+1. Войдите и перейдите к [службе SAP Marketplace](https://support.sap.com/en/index.html). Выберите **загрузить установки программного обеспечения**  >  **и обновить**  >  **по алфавиту**. Затем выберите **в разделе H — SAP HANA Platform Edition**  >  **SAP HANA Platform Edition 2,0**  >  **установки**. Загрузите файлы, как показано на снимке экрана ниже:
 
    ![Снимок экрана файлов для загрузки](./media/hana-installation/image16_download_hana.PNG)
 

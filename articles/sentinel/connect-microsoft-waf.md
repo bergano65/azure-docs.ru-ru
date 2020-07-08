@@ -10,10 +10,9 @@ ms.topic: conceptual
 ms.date: 09/23/2019
 ms.author: yelevin
 ms.openlocfilehash: a5cef16694fa2cfae036152d22cfa4473956fc72
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77588184"
 ---
 # <a name="connect-data-from-microsoft-web-application-firewall"></a>Подключение данных из брандмауэра веб-приложения Майкрософт
@@ -34,7 +33,7 @@ ms.locfileid: "77588184"
     
 1. На портале Sentinel Azure выберите **соединители данных**.
 1. На странице соединители данных выберите плитку **WAF** .
-1. Перейдите к [ресурсу шлюза приложений](https://ms.portal.azure.com/#blade/HubsExtension/BrowseAllResourcesBlade/resourceType/Microsoft.Network%2FapplicationGateways)и выберите свой WAF.
+1. Перейдите к [ресурсу шлюза приложений](https://ms.portal.azure.com/#blade/HubsExtension/BrowseAllResourcesBlade/resourceType/Microsoft.Network%2FapplicationGateways)   и выберите свой WAF.
     1. Выберите **Параметры диагностики**.
     1. Выберите **+ Добавить параметр диагностики** в таблице.
     1. На странице **параметры диагностики** введите **имя** и выберите **отправить в log Analytics**.

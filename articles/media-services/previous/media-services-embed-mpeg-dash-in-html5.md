@@ -15,10 +15,9 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: 6c1df14ba5a9f233f42750d4e6dea68a7d6ddc0e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77564862"
 ---
 # <a name="embedding-an-mpeg-dash-adaptive-streaming-video-in-an-html5-application-with-dashjs"></a>Встраивание адаптивного потокового видео MPEG-DASH в приложение HTML5 с помощью DASH.js  
@@ -55,7 +54,7 @@ Dash.js — это проигрыватель видео MPEG-DASH с откры
 ```
 
 ## <a name="adding-the-dashjs-player"></a>Добавление проигрывателя DASH.js
-Чтобы добавить в приложение эталонную реализацию типа "тире. js", необходимо взять файл тире. ALL. js из последней версии проекта в формате тире. js. Его необходимо сохранить в папку JavaScript вашего приложения. Этот файл создан для удобства и извлекает весь необходимый код dash.js в один файл. В репозитории dash.js содержатся отдельные файлы, тестовый код и многое другое, но если необходимо только использовать dash.js, то файл dash.all.js — то, что вам потребуется.
+Чтобы добавить в приложение эталонную реализацию dash.js, необходимо взять dash.all.js файл из последней версии dash.js проекта. Его необходимо сохранить в папку JavaScript вашего приложения. Этот файл создан для удобства и извлекает весь необходимый код dash.js в один файл. В репозитории dash.js содержатся отдельные файлы, тестовый код и многое другое, но если необходимо только использовать dash.js, то файл dash.all.js — то, что вам потребуется.
 
 Чтобы добавить проигрыватель dash.js в приложения, добавьте тег script в раздел head файла basicPlayer.html:
 
@@ -109,10 +108,10 @@ Dash.js — это проигрыватель видео MPEG-DASH с откры
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 
 [Репозиторий dash.js на GitHub](https://github.com/Dash-Industry-Forum/dash.js) 
 

@@ -6,10 +6,9 @@ ms.topic: reference
 ms.date: 02/20/2020
 ms.author: cshoe
 ms.openlocfilehash: 53d336aff3177a76c5e02266ffb8484bd9945119
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77530267"
 ---
 # <a name="signalr-service-input-binding-for-azure-functions"></a>Входная привязка службы SignalR для функций Azure
@@ -18,7 +17,7 @@ ms.locfileid: "77530267"
 
 Дополнительные сведения о том, как эта привязка используется для создания функции "Negotiate", которая может использоваться клиентским пакетом SDK для SignalR, см. в [статье о разработке и настройке функций Azure](../azure-signalr/signalr-concept-serverless-development-config.md) в документации по основным понятиям службы SignalR.
 
-Дополнительные сведения об установке и сведениях о конфигурации см. в [обзоре](functions-bindings-signalr-service.md).
+Сведения об установке и настройке см. в [этой обзорной статье](functions-bindings-signalr-service.md).
 
 ## <a name="example"></a>Пример
 
@@ -38,7 +37,7 @@ public static SignalRConnectionInfo Negotiate(
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-В следующем примере показана входная привязка SignalR в файле *Function. JSON* и [функция сценария C#](functions-reference-csharp.md) , которая использует привязку для возврата сведений о соединении.
+В следующем примере показана входная привязка SignalR в *function.jsдля* файла и [функция скрипта C#](functions-reference-csharp.md) , которая использует привязку для возврата сведений о соединении.
 
 Данные привязки в файле *function.json*:
 
@@ -94,7 +93,7 @@ module.exports = async function (context, req, connectionInfo) {
 
 # <a name="python"></a>[Python](#tab/python)
 
-В следующем примере показана входная привязка SignalR в файле *Function. JSON* и [функция Python](functions-reference-python.md) , которая использует привязку для возврата сведений о соединении.
+В следующем примере показана входная привязка SignalR в *function.jsдля* файла и [функция Python](functions-reference-python.md) , которая использует привязку для возврата сведений о соединении.
 
 Данные привязки в файле *function.json*:
 
@@ -151,7 +150,7 @@ public SignalRConnectionInfo negotiate(
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Можно задать для `UserId` свойства привязки значение из любого заголовка с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или. `{headers.x-ms-client-principal-name}`
+Можно задать `UserId` для свойства привязки значение из любого заголовка с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или `{headers.x-ms-client-principal-name}` .
 
 ```cs
 [FunctionName("negotiate")]
@@ -168,7 +167,7 @@ public static SignalRConnectionInfo Negotiate(
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Можно задать для `userId` свойства привязки значение из любого заголовка с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или. `{headers.x-ms-client-principal-name}`
+Можно задать `userId` для свойства привязки значение из любого заголовка с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или `{headers.x-ms-client-principal-name}` .
 
 Пример файла function.json:
 
@@ -199,7 +198,7 @@ public static SignalRConnectionInfo Run(HttpRequest req, SignalRConnectionInfo c
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Можно задать для `userId` свойства привязки значение из любого заголовка с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или. `{headers.x-ms-client-principal-name}`
+Можно задать `userId` для свойства привязки значение из любого заголовка с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или `{headers.x-ms-client-principal-name}` .
 
 Пример файла function.json:
 
@@ -226,7 +225,7 @@ module.exports = async function (context, req, connectionInfo) {
 
 # <a name="python"></a>[Python](#tab/python)
 
-Можно задать для `userId` свойства привязки значение из любого заголовка с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или. `{headers.x-ms-client-principal-name}`
+Можно задать `userId` для свойства привязки значение из любого заголовка с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или `{headers.x-ms-client-principal-name}` .
 
 Пример файла function.json:
 
@@ -258,7 +257,7 @@ def main(req: func.HttpRequest, connectionInfoJson: str) -> func.HttpResponse:
 
 # <a name="java"></a>[Java](#tab/java)
 
-Можно задать для `userId` свойства привязки значение из любого заголовка с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или. `{headers.x-ms-client-principal-name}`
+Можно задать `userId` для свойства привязки значение из любого заголовка с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или `{headers.x-ms-client-principal-name}` .
 
 ```java
 @FunctionName("negotiate")

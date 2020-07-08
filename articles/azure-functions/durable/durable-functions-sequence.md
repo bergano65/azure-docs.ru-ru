@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 11/29/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 8da4ce7801cc98f9ffb32eb7b506eaf1ccd877dd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77562073"
 ---
 # <a name="function-chaining-in-durable-functions---hello-sequence-sample"></a>Цепочки функций в устойчивых функциях — пример последовательности Hello
@@ -64,7 +63,7 @@ ms.locfileid: "77562073"
 2. Эта функция упаковывается в вызов к методу `orchestrator` модуля `durable-functions` (в нашем примере это `df`).
 3. Функции должны быть синхронными. Так как метод orchestrator обрабатывает вызов аргумента context.done, функция должна возвращать значение.
 
-`context` Объект содержит объект контекста `df` устойчивого оркестрации, который позволяет вызывать другие функции *действий* и передавать входные параметры с помощью `callActivity` метода. Этот код вызывает `E1_SayHello` три раза подряд с разными значениями параметров, указывая с помощью `yield`, что процесс выполнения должен ожидать возврата из асинхронных функций действий. Возвращаемое значение каждого вызова добавляется в `outputs` массив, который возвращается в конце функции.
+`context`Объект содержит `df` объект контекста устойчивого оркестрации, который позволяет вызывать другие функции *действий* и передавать входные параметры с помощью `callActivity` метода. Этот код вызывает `E1_SayHello` три раза подряд с разными значениями параметров, указывая с помощью `yield`, что процесс выполнения должен ожидать возврата из асинхронных функций действий. Возвращаемое значение каждого вызова добавляется в `outputs` массив, который возвращается в конце функции.
 
 ---
 
@@ -74,17 +73,17 @@ ms.locfileid: "77562073"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HelloSequence.cs?range=27-32)]
 
-Действия используют `ActivityTrigger` атрибут. Используйте предоставленные `IDurableActivityContext` для выполнения действий, связанных с действиями, например для доступа к `GetInput<T>`входному значению с помощью.
+Действия используют `ActivityTrigger` атрибут. Используйте предоставленные `IDurableActivityContext` для выполнения действий, связанных с действиями, например для доступа к входному значению с помощью `GetInput<T>` .
 
 Функция `E1_SayHello` реализует достаточно простую операцию форматирования строки.
 
-Вместо привязки к `IDurableActivityContext`можно выполнить прямую привязку к типу, который передается в функцию действия. Пример:
+Вместо привязки к можно `IDurableActivityContext` выполнить прямую привязку к типу, который передается в функцию действия. Пример:
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HelloSequence.cs?range=34-38)]
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-#### <a name="e1_sayhellofunctionjson"></a>E1_SayHello/функтион.жсон
+#### <a name="e1_sayhellofunctionjson"></a>E1_SayHello и function.jsна
 
 Файл *Function.json* для функции действия `E1_SayHello` будет таким же, как и для `E1_HelloSequence`, с одним исключением: в нем используется тип привязки `activityTrigger` вместо `orchestrationTrigger`.
 
@@ -95,7 +94,7 @@ ms.locfileid: "77562073"
 
 Функция `E1_SayHello` реализует достаточно простую операцию форматирования строки.
 
-#### <a name="e1_sayhelloindexjs"></a>E1_SayHello/индекс.ЖС
+#### <a name="e1_sayhelloindexjs"></a>E1_SayHello и index.js
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E1_SayHello/index.js)]
 
@@ -105,7 +104,7 @@ ms.locfileid: "77562073"
 
 ### <a name="httpstart-client-function"></a>Функция клиента HttpStart
 
-Вы можете запустить экземпляр функции Orchestrator с помощью клиентской функции. Для запуска экземпляров будет `HttpStart` использоваться функция, активируемая HTTP `E1_HelloSequence`.
+Вы можете запустить экземпляр функции Orchestrator с помощью клиентской функции. `HttpStart`Для запуска экземпляров будет использоваться функция, активируемая HTTP `E1_HelloSequence` .
 
 # <a name="c"></a>[C#](#tab/csharp)
 
@@ -115,13 +114,13 @@ ms.locfileid: "77562073"
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-#### <a name="httpstartfunctionjson"></a>HttpStart/Function. JSON
+#### <a name="httpstartfunctionjson"></a>HttpStart/function.jsна
 
 [!code-json[Main](~/samples-durable-functions/samples/javascript/HttpStart/function.json?highlight=16-20)]
 
 Для взаимодействия с оркестрации функция должна включать `durableClient` входную привязку.
 
-#### <a name="httpstartindexjs"></a>HttpStart/index. js
+#### <a name="httpstartindexjs"></a>HttpStart/index.js
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/HttpStart/index.js)]
 
@@ -131,7 +130,7 @@ ms.locfileid: "77562073"
 
 ## <a name="run-the-sample"></a>Запуск примера
 
-Чтобы выполнить `E1_HelloSequence` согласование, отправьте в `HttpStart` функцию следующий запрос HTTP POST.
+Чтобы выполнить `E1_HelloSequence` согласование, отправьте в функцию следующий запрос HTTP Post `HttpStart` .
 
 ```
 POST http://{host}/orchestrators/E1_HelloSequence
@@ -174,7 +173,7 @@ Content-Type: application/json; charset=utf-8
 > [!NOTE]
 > Вы можете использовать аналогичную логику запуска и для других типов триггеров, например `queueTrigger`, `eventHubTrigger` или `timerTrigger`.
 
-Просмотрите журналы выполнения функции. `E1_HelloSequence` Функция была запущена и выполнена несколько раз из-за поведения воспроизведения, описанного в разделе [надежность оркестрации](durable-functions-orchestrations.md#reliability) . С другой стороны, функция `E1_SayHello` выполнялась только три раза, поскольку для таких процессов логика повторов не применяется.
+Просмотрите журналы выполнения функции. `E1_HelloSequence`Функция была запущена и выполнена несколько раз из-за поведения воспроизведения, описанного в разделе [надежность оркестрации](durable-functions-orchestrations.md#reliability) . С другой стороны, функция `E1_SayHello` выполнялась только три раза, поскольку для таких процессов логика повторов не применяется.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

@@ -14,10 +14,9 @@ ms.workload: infrastructure-services
 ms.date: 01/31/2020
 ms.author: rdhillon
 ms.openlocfilehash: 1e5253d617c87d5869cebc817da6d265ebfdfa7e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77539473"
 ---
 # <a name="troubleshoot-azure-private-link-connectivity-problems"></a>Устранение проблем с подключением к Приватному каналу Azure
@@ -47,7 +46,7 @@ ms.locfileid: "77539473"
 
 1. Просмотрите конфигурацию частной связи, просмотрев ресурс.
 
-    a. Перейдите в раздел " **частный центр ссылок**".
+    а. Перейдите в раздел " **частный центр ссылок**".
 
       ![Частный центр ссылок](./media/private-link-tsg/private-link-center.png)
 
@@ -101,7 +100,7 @@ ms.locfileid: "77539473"
 
 1. Используйте [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) , чтобы узнать, передаются ли данные.
 
-    a. В ресурсе службы частной связи выберите **метрики**.
+    а. В ресурсе службы частной связи выберите **метрики**.
      - Выберите **байт в или в** **байтах**.
      - Проверьте, передаются ли данные при попытке подключения к службе частной связи. Задержка должна составлять примерно 10 минут.
 

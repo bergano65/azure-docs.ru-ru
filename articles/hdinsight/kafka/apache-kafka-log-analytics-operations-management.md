@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/17/2020
 ms.openlocfilehash: 3f8ff3cbc24f6e3a7e0eccf1b18e01941c9584b9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77471186"
 ---
 # <a name="analyze-logs-for-apache-kafka-on-hdinsight"></a>Анализ журналов для Apache Kafka в HDInsight
@@ -23,9 +22,9 @@ ms.locfileid: "77471186"
 
 ## <a name="logs-location"></a>Расположение журналов
 
-Журналы Apache Kafka в кластере находятся в `/var/log/kafka`папке. Журналы Kafka не сохраняются и не сохраняются в течение жизненного цикла кластера, независимо от того, используются ли управляемые диски. В следующей таблице показаны доступные журналы.
+Журналы Apache Kafka в кластере находятся в папке `/var/log/kafka` . Журналы Kafka не сохраняются и не сохраняются в течение жизненного цикла кластера, независимо от того, используются ли управляемые диски. В следующей таблице показаны доступные журналы.
 
-|Журнал |Описание |
+|Журнал |Описание: |
 |---|---|
 |Kafka. out|stdout и stderr процесса Kafka. В этом файле находятся журналы запуска и завершения работы Kafka.|
 |Server. log|Основной журнал сервера Kafka. Все журналы Kafka Broker находятся здесь.|
@@ -52,7 +51,7 @@ ms.locfileid: "77471186"
 
 2. В меню слева в разделе **Общие**выберите **журналы**. Здесь можно выполнять поиск данных, собранных из Kafka. Введите запрос в окне запроса и нажмите кнопку **выполнить**. Ниже приведены некоторые примеры поисковых запросов:
 
-* Использование дискового пространства: 
+* Использование диска:
 
     ```kusto
     Perf
@@ -84,7 +83,7 @@ ms.locfileid: "77471186"
     | summarize AggregatedValue = avg(kafka_BrokerTopicMetrics_BytesInPerSec_Count_value_d) by bin(TimeGenerated, 1h)
     ```
 
-* Исходящих байт в секунду: ( `your_kafka_cluster_name` замените именем кластера.)
+* Исходящих байт в секунду: (замените `your_kafka_cluster_name` именем кластера.)
 
     ```kusto
     metrics_kafka_CL 
@@ -94,7 +93,7 @@ ms.locfileid: "77471186"
 
     Кроме того, вы можете ввести `*` для поиска всех типов данных журнала. В настоящее время для запросов доступны следующие журналы:
 
-    | Тип журнала | Описание |
+    | Тип журнала | Описание: |
     | ---- | ---- |
     | log\_kafkaserver\_CL | Брокер Kafka, server.log |
     | log\_kafkacontroller\_CL | Брокер Kafka, controller.log |

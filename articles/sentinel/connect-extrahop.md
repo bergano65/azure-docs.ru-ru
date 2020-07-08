@@ -15,10 +15,9 @@ ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
 ms.openlocfilehash: 8d82d8c5a76c34875e9a4aae22c547aec897c18a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77588303"
 ---
 # <a name="connect-extrahop-revealx"></a>Подключение ExtraHop Reveal(x)
@@ -34,7 +33,7 @@ ms.locfileid: "77588303"
 
 ## <a name="connect-azure-sentinel-to-extrahop-revealx"></a>Подключение метки Azure к Екстрахоп раскрытия (x)
 
-1. В портал Azure перейдите к**соединителям данных** **Azure Sentinel** > и выберите соединитель **раскрытия (x) екстрахоп** .
+1. В портал Azure перейдите к **Azure Sentinel**  >  **соединителям данных** Azure Sentinel и выберите соединитель **раскрытия (x) екстрахоп** .
 
 2. Выберите **открыть страницу соединителя**.
 
@@ -44,6 +43,6 @@ ms.locfileid: "77588303"
 В этом документе вы узнали, как подключить Екстрахоп "обнаружить (x)" к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
-- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+- [Используйте книги](tutorial-monitor-your-data.md) для мониторинга данных.
 
 
