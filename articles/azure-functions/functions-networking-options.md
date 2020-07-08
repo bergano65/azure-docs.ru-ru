@@ -5,12 +5,12 @@ author: alexkarcher-msft
 ms.topic: conceptual
 ms.date: 4/11/2019
 ms.author: alkarche
-ms.openlocfilehash: a2c57ca6a1f7eb50c277543e9fbe27a13f839bac
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 03402828720272851f9b74000d5bcb79405885a5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83648826"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85117233"
 ---
 # <a name="azure-functions-networking-options"></a>Параметры сети для Функций Azure
 
@@ -28,13 +28,7 @@ ms.locfileid: "83648826"
 
 ## <a name="matrix-of-networking-features"></a>Таблица функций сети
 
-|                |[План потребления](functions-scale.md#consumption-plan)|[План категории "Премиум"](functions-scale.md#premium-plan)|[План обслуживания приложения](functions-scale.md#app-service-plan)|[Среда службы приложений](../app-service/environment/intro.md)|
-|----------------|-----------|----------------|---------|-----------------------|  
-|[Ограничения на входящие IP-адреса и частный доступ к сайту](#inbound-ip-restrictions)|✅Да|✅Да|✅Да|✅Да|
-|[Интеграция с виртуальной сетью](#virtual-network-integration)|❌Нет|✅Да (Региональный)|✅Да (Региональный и шлюз)|✅Да|
-|[Триггеры виртуальной сети (без HTTP)](#virtual-network-triggers-non-http)|❌Нет| ✅Да |✅Да|✅Да|
-|[Гибридные подключения](#hybrid-connections) (только для Windows)|❌Нет|✅Да|✅Да|✅Да|
-|[Ограничения исходящих IP-адресов](#outbound-ip-restrictions)|❌Нет| ✅Да|✅Да|✅Да|
+[!INCLUDE [functions-networking-features](../../includes/functions-networking-features.md)]
 
 ## <a name="inbound-ip-restrictions"></a>Ограничения входящих IP-адресов
 
@@ -139,6 +133,12 @@ az resource update -g <resource_group> -n <function_app_name>/config/web --set p
 Ограничения исходящих IP-адресов доступны в плане категории "Премиум", в плане службы приложений или Среде службы приложений. Вы можете настроить ограничения исходящего трафика для виртуальной сети, в которой развернута Среда службы приложений.
 
 При интеграции приложения-функции в плане категории "Премиум" или плане службы приложений с виртуальной сетью приложение по умолчанию может выполнять исходящие вызовы через Интернет. Добавив параметр приложения `WEBSITE_VNET_ROUTE_ALL=1`, вы принудительно передаете весь исходящий трафик в виртуальную сеть, где могут использоваться правила группы безопасности сети для ограничения трафика.
+
+## <a name="automation"></a>Автоматизация
+Следующие API позволяют программно управлять региональной интеграцией виртуальной сети.
+
++ **Azure CLI**. Используйте [`az functionapp vnet-integration`](/cli/azure/functionapp/vnet-integration) команды для добавления, перечисления или удаления региональных интеграций виртуальной сети.  
++ **Шаблоны ARM**. интеграция региональной виртуальной сети можно включить с помощью шаблона Azure Resource Manager. Полный пример см. в разделе [шаблон](https://azure.microsoft.com/resources/templates/101-function-premium-vnet-integration/)быстрого запуска функций.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

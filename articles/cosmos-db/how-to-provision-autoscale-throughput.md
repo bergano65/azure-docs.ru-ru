@@ -6,12 +6,12 @@ ms.author: dech
 ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 05/10/2020
-ms.openlocfilehash: 16fad7f57d3054c193da2571f1b33cfd77fdd51c
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 59feabce099087edb011df471561229bfa88a289
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83663402"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85118735"
 ---
 # <a name="provision-autoscale-throughput-on-database-or-container-in-azure-cosmos-db"></a>Узнайте, как подготовить автомасштабируемую пропускную способность для базы данных или контейнера в Azure Cosmos DB
 
@@ -26,7 +26,7 @@ ms.locfileid: "83663402"
 
 1. Выберите **Новый контейнер**. Введите имя базы данных, контейнера и ключа раздела. В разделе **Пропускная способность** выберите параметр **Автомасштабирование** и задайте значение [максимальной пропускной способности (единиц запросов в секунду)](provision-throughput-autoscale.md#how-autoscale-provisioned-throughput-works), которое будет использоваться для масштабирования базы данных или контейнера.
 
-   ![Создание контейнера и настройка пропускной способности, подготовленной с использованием автомасштабирования](./media/how-to-provision-autoscale-throughput/create-new-autoscale-container.png)
+   :::image type="content" source="./media/how-to-provision-autoscale-throughput/create-new-autoscale-container.png" alt-text="Создание контейнера и настройка пропускной способности, подготовленной с использованием автомасштабирования":::
 
 1. Щелкните **ОК**.
 
@@ -45,7 +45,7 @@ ms.locfileid: "83663402"
 
 1. В разделе **Масштаб** выберите параметр **Автомасштабирование** и нажмите **Сохранить**.
 
-   ![Включение автомасштабирования для существующего контейнера](./media/how-to-provision-autoscale-throughput/autoscale-scale-and-settings.png)
+   :::image type="content" source="./media/how-to-provision-autoscale-throughput/autoscale-scale-and-settings.png" alt-text="Включение автомасштабирования для существующего контейнера":::
 
 > [!NOTE]
 > При включении автомасштабирования для существующей базы данных или контейнера начальное значение максимального числа единиц запросов в секунду определяется системой с учетом текущих параметров пропускной способности и хранилища, подготовленных вручную. По завершении операции при необходимости можно изменить значение максимального числа единиц запросов в секунду. [Подробнее.](autoscale-faq.md#how-does-the-migration-between-autoscale-and-standard-manual-provisioned-throughput-work) 

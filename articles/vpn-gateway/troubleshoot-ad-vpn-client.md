@@ -4,15 +4,15 @@ description: Устранение неполадок VPN-шлюза P2S Azure AD
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 11/04/2019
 ms.author: cherylmc
-ms.openlocfilehash: 8871e92f0911c4d3cbcc1772bef1daeb5c70b5d7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 56a8514fc2531ba0b18925427814e5bfef7d64bf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74151969"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84988109"
 ---
 # <a name="troubleshoot-an-azure-ad-authentication-vpn-client"></a>Устранение неполадок VPN-клиента проверки подлинности Azure AD
 
@@ -35,7 +35,7 @@ ms.locfileid: "74151969"
 ![войти](./media/troubleshoot-ad-vpn-client/2.png)
 
 1. Выберите... рядом с профилем, который требуется устранить. Выберите **настроить-> очистить сохраненную учетную запись**.
-2. Щелкните **Сохранить**.
+2. Нажмите кнопку **Сохранить**.
 3. Попытайтесь подключиться.
 4. Если подключение по-прежнему не выполняется, перейдите к следующему разделу.
 
@@ -66,6 +66,6 @@ ms.locfileid: "74151969"
 
    ![Просмотреть файл](./media/troubleshoot-ad-vpn-client/5.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в статье [Создание клиента Azure Active Directory для P2S открытых VPN-подключений, использующих проверку подлинности Azure AD](openvpn-azure-ad-tenant.md).

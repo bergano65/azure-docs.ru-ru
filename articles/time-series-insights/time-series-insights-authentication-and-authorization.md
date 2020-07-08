@@ -4,29 +4,24 @@ description: В этой статье описывается настройка 
 ms.service: time-series-insights
 services: time-series-insights
 author: deepakpalled
-ms.author: dpalled
-manager: cshankar
+ms.author: shresha
+manager: dpalled
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 04/14/2020
+ms.date: 06/18/2020
 ms.custom: seodec18, has-adal-ref
-ms.openlocfilehash: bf959a7ac8c1038c4306a45ba4519374c5d85f29
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
-ms.translationtype: HT
+ms.openlocfilehash: 94fef951bf1c5c9d69a9b49cd9465d7d248c74a7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82612288"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85099222"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Проверка подлинности и авторизация для API Azure Time Series Insights
 
 В этом документе описывается порядок регистрации приложения в Azure Active Directory с помощью новой колонки Azure Active Directory. Приложения, зарегистрированные в Azure Active Directory, позволяют пользователям проходить проверку подлинности и иметь право использовать API Аналитики временных рядов Azure, связанный с средой Аналитики временных рядов.
-
-> [!IMPORTANT]
-> Аналитика временных рядов Azure поддерживает обе следующие библиотеки проверки подлинности:
-> * более актуальную [библиотеку проверки подлинности Майкрософт (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview);
-> * [библиотеку проверки подлинности Azure Active Directory (ADAL)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries).
 
 ## <a name="service-principal"></a>Субъект-служба
 
@@ -81,9 +76,9 @@ ms.locfileid: "82612288"
 
 ### <a name="client-app-initialization"></a>Инициализация клиентского приложения
 
-* Для проверки подлинности с помощью Аналитики временных рядов Azure разработчики могут использовать [библиотеку проверки подлинности Майкрософт (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview) или [библиотеку проверки подлинности Azure Active Directory (ADAL)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries).
+* Разработчики могут использовать [библиотеку проверки подлинности Майкрософт (MSAL) для проверки подлинности с помощью службы "аналитика временных рядов Azure".
 
-* Например, для проверки подлинности с помощью ADAL:
+* Проверка подлинности с помощью ADAL:
 
    1. Используйте **идентификатор приложения** и **секрет клиента** (ключ приложения) из раздела регистрации приложения Azure Active Directory, чтобы получить маркер от имени приложения.
 
@@ -93,7 +88,10 @@ ms.locfileid: "82612288"
 
    1. Затем маркер безопасности можно передать в заголовок `Authorization`, когда приложение вызывает API Time Series Insights.
 
-* Кроме того, разработчики могут использовать проверку подлинности с помощью MSAL. Узнайте подробнее о [переходе на MSAL](https://docs.microsoft.com/azure/active-directory/develop/msal-net-migration) и о том, как [управлять общедоступными эталонными данными для среды Аналитики временных рядов Azure с помощью C#](time-series-insights-manage-reference-data-csharp.md).
+> [!IMPORTANT]
+> Если вы используете [библиотеку Azure Active Directory для проверки подлинности (ADAL)](https://docs.microsoft.com/azure/active-directory/azuread-dev/active-directory-authentication-libraries) , см. статью о [миграции на MSAL](https://docs.microsoft.com/azure/active-directory/develop/msal-net-migration).
+
+    See our [Manage GA reference data for an Azure Time Series Insights environment using C#](time-series-insights-manage-reference-data-csharp.md) article to learn more.
 
 ## <a name="common-headers-and-parameters"></a>Общие заголовки и параметры
 
@@ -119,7 +117,7 @@ ms.locfileid: "82612288"
 
 > [!IMPORTANT]
 > Маркер должен быть выдан ресурсу `https://api.timeseries.azure.com/` (известному как "аудитория" маркера).
-> * Результирующий **AuthURL** [Postman](https://www.getpostman.com/) будет следующим: `https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/authorize?resource=https://api.timeseries.azure.com/`
+> * Результирующий **AuthURL** [Postman](https://www.getpostman.com/) будет следующим: `https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/authorize?scope=https://api.timeseries.azure.com/.default`
 > * `https://api.timeseries.azure.com/` является действительным адресом, а `https://api.timeseries.azure.com` — нет.
 
 Дополнительные заголовки запроса описаны ниже.
@@ -161,10 +159,10 @@ ms.locfileid: "82612288"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Пример кода, который вызывает API Аналитики временных рядов, см. в статье [Запрос данных с помощью C#](./time-series-insights-query-data-csharp.md).
+* Пример кода, который вызывает API Аналитики временных рядов, см. в статье [Запрос данных с помощью C#](./time-series-insights-query-data-csharp.md).
 
-- Примеры кода API Аналитики временных рядов Azure (предварительная версия) см. в статье [Данные предварительного просмотра запроса с помощью C#](./time-series-insights-update-query-data-csharp.md).
+* Примеры кода API Аналитики временных рядов Azure (предварительная версия) см. в статье [Данные предварительного просмотра запроса с помощью C#](./time-series-insights-update-query-data-csharp.md).
 
-- Справочные сведения об API см. в [справочной документации по API запроса](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api).
+* Справочные сведения об API см. в [справочной документации по API запроса](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api).
 
-- Узнайте подробнее о [создании субъекта-службы](../active-directory/develop/howto-create-service-principal-portal.md).
+* Узнайте подробнее о [создании субъекта-службы](../active-directory/develop/howto-create-service-principal-portal.md).

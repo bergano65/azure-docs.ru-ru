@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/19/2020
 ms.author: memildin
-ms.openlocfilehash: 19ca17f66f6818ed4c3ef532e2030cc03f0e73ce
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9b8d7f241f79b087f318c9c416dcadf92838b084
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80062952"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85126218"
 ---
 # <a name="security-alerts-schemas"></a>Схемы оповещений системы безопасности
 
@@ -140,18 +140,18 @@ ms.locfileid: "80062952"
 
 ### <a name="the-data-model-of-the-schema"></a>Модель данных схемы
 
-|Поле|Описание|
+|Поле|Описание:|
 |----|----|
 |**канала**|Constant, "Operation"|
 |**correlationId**|Идентификатор оповещения центра безопасности Azure|
-|**nописание**|Описание предупреждения|
+|**nописание**|Описание оповещения.|
 |**eventDataId**|См. correlationId|
 |**eventName**|Подполя Value и localizedValue содержат отображаемое имя предупреждения.|
 |**category**|Подполя Value и localizedValue являются константой "Security"|
 |**eventTimestamp**|Метка времени в формате UTC для момента создания предупреждения|
 |**идентификатор**|Полный идентификатор предупреждения|
-|**уровню**|Constant, "информационный"|
-|**Операции**|См. correlationId|
+|**уровень**|Constant, "информационный"|
+|**operationId**|См. correlationId|
 |**operationName**|Поле значения имеет значение Constant-"Microsoft. Security/Locations/Alerts/Activate/Action", а локализованное значение будет "активировать оповещение" (может быть локализовано как Национальная настройка пользователя)|
 |**resourceGroupName**|Будет включать имя группы ресурсов.|
 |**resourceProviderName**|Подполя Value и localizedValue являются константой "Microsoft. Security".|
@@ -160,7 +160,7 @@ ms.locfileid: "80062952"
 |**status**|Подполя Value и localizedValue являются константой "Active"|
 |**Подсостояние**|Подполя Value и localizedValue пусты|
 |**submissionTimestamp**|Метка времени в формате UTC для отправки события в журнал действий|
-|**Подписки**|Идентификатор подписки скомпрометированного ресурса|
+|**subscriptionId**|Идентификатор подписки скомпрометированного ресурса|
 |**properties**|Контейнер JSON дополнительных свойств, относящихся к предупреждению. Они могут переключиться с одного предупреждения на другое, однако следующие поля будут отображаться во всех оповещениях:<br>-Severity — серьезность атаки.<br>-Компромиседентити: имя скомпрометированного ресурса.<br>-Ремедиатионстепс: массив выполняемых действий по исправлению<br>-намерение: цель принудительной цепочки для предупреждения. Возможные варианты задокументированы в таблице « [намерения](alerts-reference.md#intentions) »|
 |**relatedEvents**|Константа-пустой массив|
 |||
@@ -171,7 +171,7 @@ ms.locfileid: "80062952"
 
 ### <a name="ms-graph-api"></a>[MS API Graph](#tab/schema-graphapi)
 
-Microsoft Graph — это шлюз для данных и аналитики в Microsoft 365. Она предоставляет унифицированную модель программирования, которую можно использовать для доступа к огромному объему данных в Office 365, Windows 10 и Enterprise Mobility + Security. Используйте множество данных в Microsoft Graph для создания приложений для организаций и потребителей, взаимодействующих с миллионами пользователей.
+Microsoft Graph — это шлюз для данных и аналитики в Microsoft 365. Она предоставляет унифицированную модель программирования, которую можно использовать для доступа к огромному объему данных в Microsoft 365, Windows 10 и Enterprise Mobility + Security. Используйте множество данных в Microsoft Graph для создания приложений для организаций и потребителей, взаимодействующих с миллионами пользователей.
 
 Схема и представление JSON для оповещений системы безопасности, отправляемых в MS Graph, доступны в [документации по Microsoft Graph](https://docs.microsoft.com/graph/api/resources/alert?view=graph-rest-1.0).
 

@@ -8,12 +8,12 @@ ms.custom: seodec18
 ms.author: memildin
 author: memildin
 manager: rkarlin
-ms.openlocfilehash: 0b37f9be5eb3313cc451e65f90d7f2713c68806d
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.openlocfilehash: 0affd1660a88421f6df24bc5ef2e00497dae32a5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83845990"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85119276"
 ---
 # <a name="advanced-threat-protection-for-azure-cosmos-db-preview"></a>Расширенная защита от угроз для Azure Cosmos DB (предварительная версия)
 
@@ -48,7 +48,7 @@ ms.locfileid: "83845990"
 
 2. В учетной записи Azure Cosmos DB в меню **Параметры** выберите пункт **Повышенная безопасность**.
 
-    ![Настройка Расширенной защиты от угроз](./media/cosmos-db-advanced-threat-protection/cosmos-db-atp.png)
+    :::image type="content" source="./media/cosmos-db-advanced-threat-protection/cosmos-db-atp.png" alt-text="Настройка Расширенной защиты от угроз":::
 
 3. В колонке настройки **Повышенная безопасность** выполните указанные ниже действия.
 
@@ -81,16 +81,16 @@ ms.locfileid: "83845990"
 
 1. В Azure откройте страницу **Политика — определения** и выполните поиск политики по запросу **Развертывание Расширенной защиты от угроз для Cosmos DB**.
 
-    ![Поиск политики](./media/cosmos-db-advanced-threat-protection/cosmos-db.png) 
+    :::image type="content" source="./media/cosmos-db-advanced-threat-protection/cosmos-db.png" alt-text="Поиск политики"::: 
 
 1. Выберите политику **Развертывание Расширенной защиты от угроз для CosmosDB** и щелкните **Назначить**.
 
-    ![Выбор подписки или группы](./media/cosmos-db-advanced-threat-protection/cosmos-db-atp-policy.png)
+    :::image type="content" source="./media/cosmos-db-advanced-threat-protection/cosmos-db-atp-policy.png" alt-text="Выбор подписки или группы":::
 
 
 1. В поле **Область** щелкните многоточие, выберите подписку Azure или группу ресурсов, а затем щелкните **Выбрать**.
 
-    ![Страница определений политик](./media/cosmos-db-advanced-threat-protection/cosmos-db-atp-details.png)
+    :::image type="content" source="./media/cosmos-db-advanced-threat-protection/cosmos-db-atp-details.png" alt-text="Страница определений политик":::
 
 
 1. Введите остальные параметры и нажмите кнопку **Назначить**.
@@ -104,11 +104,11 @@ ms.locfileid: "83845990"
 
  В Центре безопасности Azure можно просматривать текущие [оповещения системы безопасности ](../security-center/security-center-alerts-overview.md) и управлять ими.  Щелкните одно из оповещений в [Центре безопасности](https://ms.portal.azure.com/#blade/Microsoft_Azure_Security/SecurityMenuBlade/0), чтобы просмотреть возможные причины и рекомендуемые действия по поиску и устранению потенциальной угрозы. На приведенном ниже рисунке показан пример сведений оповещения в Центре безопасности.
 
- ![Сведения об угрозе](./media/cosmos-db-advanced-threat-protection/cosmos-db-alert-details.png)
+ :::image type="content" source="./media/cosmos-db-advanced-threat-protection/cosmos-db-alert-details.png" alt-text="Сведения об угрозе":::
 
 Кроме того, по электронной почте отправляется уведомление с подробными сведениями об оповещении и рекомендуемыми действиями. На рисунке ниже показан пример сообщения электронной почты с оповещением.
 
- ![Сведения об оповещении](./media/cosmos-db-advanced-threat-protection/cosmos-db-alert.png)
+ :::image type="content" source="./media/cosmos-db-advanced-threat-protection/cosmos-db-alert.png" alt-text="Сведения об оповещении":::
 
 ## <a name="cosmos-db-atp-alerts"></a>Оповещения ATP для Cosmos DB
 

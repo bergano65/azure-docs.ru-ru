@@ -11,13 +11,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 09/02/2019
-ms.openlocfilehash: 1d3772a17d0429d9b3a5bf95d2060f2dfbbbafe1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.date: 06/12/2020
+ms.openlocfilehash: 9544d0298a7aa62d5fd935e8670d02e470ac15e5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81418054"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84987551"
 ---
 # <a name="copy-data-from-sap-cloud-for-customer-c4c-using-azure-data-factory"></a>Копирование данных из SAP Cloud for Customer (C4C) с помощью фабрики данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -124,10 +124,11 @@ ms.locfileid: "81418054"
 |:--- |:--- |:--- |
 | type | Свойству type необходимо задать значение **SapCloudForCustomerSource**.  | Да |
 | query | Укажите пользовательский запрос OData для чтения данных. | Нет |
+| httpRequestTimeout | Время ожидания (значение **Временной диапазон**) ответа для HTTP-запроса. Это значение является интервалом времени для получения ответа, а не считывания данных ответа. Если не указано, значение по умолчанию — **00:30:00** (30 минут). | Нет |
 
 Образец запроса для получения данных за определенный день: `"query": "$filter=CreatedOn ge datetimeoffset'2017-07-31T10:02:06.4202620Z' and CreatedOn le datetimeoffset'2017-08-01T10:02:06.4202620Z'"`
 
-**Пример**.
+**Пример.**
 
 ```json
 "activities":[

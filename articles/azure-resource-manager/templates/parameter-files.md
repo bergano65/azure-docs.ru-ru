@@ -2,13 +2,13 @@
 title: Создание файла параметров
 description: Создание файла параметров для передачи значений во время развертывания шаблона Azure Resource Manager
 ms.topic: conceptual
-ms.date: 04/20/2020
-ms.openlocfilehash: a9845bbb9e14288a01fb7836db260a2baf484395
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
-ms.translationtype: HT
+ms.date: 06/19/2020
+ms.openlocfilehash: 7c03e161c7b3a18020de6a06d356720f5e4c31fd
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83873099"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85117511"
 ---
 # <a name="create-resource-manager-parameter-file"></a>Создание файла параметров Resource Manager
 
@@ -182,12 +182,18 @@ ms.locfileid: "83873099"
 }
 ```
 
+## <a name="deploy-template-with-parameter-file"></a>Развертывание шаблона с помощью файла параметров
+
+Пример
+
+- [Развертывание ресурсов с помощью шаблонов ARM и Azure CLI](./deploy-powershell.md#pass-parameter-values)
+- [Развертывание ресурсов с помощью шаблонов ARM и Azure PowerShell](./deploy-cli.md#parameters)
+
 ## <a name="file-name"></a>Имя файла
 
 Общее соглашение об именовании файла параметров заключается в добавлении **.parameters** к имени шаблона. Например, если шаблон имеет имя **azuredeploy.json**, файл параметров будет называться **azuredeploy.parameters.json**. Это соглашение об именовании помогает увидеть связь между шаблоном и параметрами.
 
 Для развертывания в разных средах создайте более одного файла параметров. При именовании файла параметров добавьте что-нибудь, указывающее на его предназначение. Например, используйте **azuredeploy.parameters-dev.json** и **azuredeploy.parameters-prod.json**
-
 
 ## <a name="parameter-precedence"></a>Приоритет параметров
 
@@ -198,6 +204,7 @@ ms.locfileid: "83873099"
 ## <a name="parameter-name-conflicts"></a>Конфликты параметров
 
 Если шаблон содержит параметр, имя которого совпадает с именем одного из параметров в команде PowerShell, параметр из шаблон отображается с постфиксом **FromTemplate**. Предположим, что параметр **ResourceGroupName** в шаблоне конфликтует с параметром **ResourceGroupName** в командлете [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment). Будет предложено указать значение для параметра **ResourceGroupNameFromTemplate**. Этой путаницы можно избежать, используя имена параметров, которые не используются для команд развертывания.
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

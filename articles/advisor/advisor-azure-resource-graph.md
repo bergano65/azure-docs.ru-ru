@@ -1,21 +1,21 @@
 ---
-title: Данные Advisor в графе ресурсов Azure
+title: Данные Помощника в Azure Resource Graph
 description: Создание запросов для данных Advisor в графе ресурсов Azure
 ms.topic: article
 ms.date: 03/12/2020
 ms.author: sagupt
-ms.openlocfilehash: f8ad8fd450bc004d9caa2699922717f38d38b482
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c0786d1d09ff61ddd9c375c68b7199521e319a4f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79502455"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85117841"
 ---
 # <a name="query-for-advisor-data-in-resource-graph-explorer-azure-resource-graph"></a>Запрос данных Advisor в обозревателе графа ресурсов (граф ресурсов Azure)
 
 Ресурсы Advisor теперь подключены к [графу ресурсов Azure](https://azure.microsoft.com/features/resource-graph/). Это размещает основу для многих масштабируемых сценариев клиентов для рекомендаций Advisor. В некоторых сценариях, которые раньше не выполнялись в масштабе, может быть достигнуто использование графа ресурсов:
 * Предоставляет возможность выполнять сложные запросы для всех подписок в портал Azure
-* Рекомендации, итоговые по типам категорий (например, высокая доступность, производительность) и типы влияния (высокий, средний, низкий)
+* Рекомендации, итоговые по типам категорий (например, надежности, производительности) и типам влияния (высокий, средний, низкий)
 * Все рекомендации для конкретного типа рекомендации
 * Количество затронутых ресурсов по категориям рекомендаций
 
@@ -36,9 +36,10 @@ ms.locfileid: "79502455"
 
 Дополнительные сведения о рекомендациях Помощника см. в следующих разделах.
 * [Общие сведения об Azure Advisor](advisor-overview.md)
-* [Начало работы с Помощником по Azure](advisor-get-started.md)
-* [Рекомендации Azure Advisor по затратам](advisor-cost-recommendations.md)
-* [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md)
-* [Рекомендации Azure Advisor по безопасности](advisor-security-recommendations.md)
+* [Начало работы с Помощником](advisor-get-started.md)
+* [Рекомендации по стоимости помощника](advisor-cost-recommendations.md)
+* [Рекомендации по обеспечению надежности Advisor](advisor-high-availability-recommendations.md)
+* [Рекомендации по повышению производительности помощника](advisor-performance-recommendations.md)
+* [Рекомендации по безопасности Advisor](advisor-security-recommendations.md)
 * [Рекомендации для оперативной работы Advisor](advisor-operational-excellence-recommendations.md)
 * [REST API Advisor](https://docs.microsoft.com/rest/api/advisor/)

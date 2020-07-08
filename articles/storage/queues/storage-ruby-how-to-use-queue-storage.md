@@ -20,7 +20,7 @@ ms.locfileid: "84805172"
 
 [!INCLUDE [storage-try-azure-tools-queues](../../../includes/storage-try-azure-tools-queues.md)]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Общие сведения
 В этом руководстве показано, как реализовать типичные сценарии с использованием службы хранилища очередей Microsoft Azure. Примеры написаны с помощью Ruby Azure API.
 Здесь описаны такие сценарии, как **вставка**, **просмотр**, **получение** и **удаление** сообщений очереди, а также **создание и удаление очередей**.
 
@@ -148,7 +148,7 @@ message_count, metadata = azure_queue_service.get_queue_metadata(
 azure_queue_service.delete_queue("test-queue")
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
 * Посетите [блог команды разработчиков хранилища Azure](https://blogs.msdn.com/b/windowsazurestorage/)

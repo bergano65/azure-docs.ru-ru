@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: ''
-ms.openlocfilehash: 65bb1a3915ece384974da12b4e7a1ad0c1e08133
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7656b60c31e7da7841f9afb723167eb061fe3401
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77655824"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85124551"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metrics-database-for-a-windows-virtual-machine-classic"></a>Отправка метрик гостевой ОС в базу данных метрик Azure Monitor для виртуальной машины Windows (классическая модель)
 
@@ -30,7 +30,7 @@ ms.locfileid: "77655824"
 
 - Вам необходимы права [администратора службы или соадминистратора](../../cost-management-billing/manage/add-change-subscription-administrator.md) в подписке Azure. 
 
-- Ваша подписка должна быть зарегистрирована в [Microsoft. Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
+- Подписку необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
 
 - Необходимо установить [Azure PowerShell](/powershell/azure) или [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
@@ -48,7 +48,7 @@ ms.locfileid: "77655824"
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
-Создайте субъект-службу в клиенте Azure Active Directory, используя инструкции из раздела [Создание субъекта-службы](../../active-directory/develop/howto-create-service-principal-portal.md). Выполняя это действие, обратите внимание на следующее. 
+Создайте субъект-службу в клиенте Azure Active Directory, выполнив инструкции в разделе [Создание субъекта-службы](../../active-directory/develop/howto-create-service-principal-portal.md). Выполняя это действие, обратите внимание на следующее. 
 - Создайте новый секрет клиента для этого приложения.
 - Сохраните ключ и идентификатор клиента, чтобы использовать их в дальнейшем.
 
@@ -202,6 +202,6 @@ ms.locfileid: "77655824"
    ![График метрик](./media/collect-custom-metrics-guestos-vm-classic/plot-metrics.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
 

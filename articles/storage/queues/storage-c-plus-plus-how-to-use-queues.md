@@ -20,7 +20,7 @@ ms.locfileid: "84809260"
 
 [!INCLUDE [storage-try-azure-tools-queues](../../../includes/storage-try-azure-tools-queues.md)]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Общие сведения
 В этом руководстве показано, как реализовать типичные сценарии с использованием службы хранения очередей Azure. Примеры написаны на C++ и используют [клиентскую библиотеку хранилища Azure для C++](https://github.com/Azure/azure-storage-cpp/blob/master/README.md). Здесь описаны такие сценарии, как **вставка**, **просмотр**, **получение** и **удаление** сообщений очереди, а также **создание и удаление очередей**.
 
 > [!NOTE]
@@ -260,7 +260,7 @@ azure::storage::cloud_queue queue = queue_client.get_queue_reference(U("my-sampl
 queue.delete_queue_if_exists();  
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы ознакомились с основными сведениями о хранилище очередей, используйте следующие ссылки для получения дополнительных сведений о хранилище Azure.
 
 * [Использование хранилища BLOB-объектов из C++](../blobs/storage-c-plus-plus-how-to-use-blobs.md)

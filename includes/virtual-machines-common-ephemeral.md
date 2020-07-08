@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/08/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: d848b92da5d4181832adff8499b3531d020c30c9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4e31560126919e4c61b176a6eaa62ee7f9b4a624
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78155485"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85112106"
 ---
 Временные диски ОС создаются в хранилище локальной виртуальной машины и не сохраняются в удаленном хранилище Azure. Диски с временными ОС хорошо подходят для рабочих нагрузок без отслеживания состояния, где приложения являются устойчивыми к сбоям отдельных виртуальных машин, но больше зависят от времени развертывания виртуальной машины или повторное создание образа отдельные экземпляры виртуальных машин. При использовании временного диска ОС вы получаете меньшую задержку при чтении и записи на диск ОС и ускоряете повторное создание образа виртуальной машины. 
  
@@ -32,7 +32,7 @@ ms.locfileid: "78155485"
 
 |                             | Диск постоянного ОС                          | Временный диск ОС                              |    |
 |-----------------------------|---------------------------------------------|------------------------------------------------|
-| Ограничение размера для диска ОС      | 2 ТиБ                                                                                        | Размер кэша для размера виртуальной машины или 2TiB, в зависимости от того, что меньше. **Размер кэша в гиб**см. в разделе [DS](../articles/virtual-machines/linux/sizes-general.md), [ES](../articles/virtual-machines/linux/sizes-memory.md), [M](../articles/virtual-machines/linux/sizes-memory.md), [FS](../articles/virtual-machines/linux/sizes-compute.md)и [GS](/azure/virtual-machines/linux/sizes-previous-gen#gs-series) .              |
+| Ограничение размера для диска ОС      | 2 ТиБ                                                                                        | Размер кэша для размера виртуальной машины или 2TiB, в зависимости от того, что меньше. **Размер кэша в гиб**см. в разделе [DS](../articles/virtual-machines/linux/sizes-general.md), [ES](../articles/virtual-machines/linux/sizes-memory.md), [M](../articles/virtual-machines/linux/sizes-memory.md), [FS](../articles/virtual-machines/linux/sizes-compute.md)и [GS](/azure/virtual-machines/linux/sizes-previous-gen#gs-series) .              |
 | Поддерживаемые размеры виртуальных машин          | Все                                                                                          | DSv1, DSv2, DSv3, Esv3, FS, серия fsv2, GS, M                                               |
 | Поддержка типов дисков           | Управляемый и неуправляемый диск ОС                                                                | Только управляемый диск ОС                                                               |
 | Поддержка регионов              | все регионы.                                                                                  | все регионы.                              |
@@ -44,19 +44,22 @@ ms.locfileid: "78155485"
 
 ## <a name="size-requirements"></a>Требования к размеру
 
-Образы виртуальных машин и экземпляров можно развернуть вплоть до размера кэша виртуальной машины. Например, к стандартным образам Windows Server из Marketplace соответствует 127 гиб. Это означает, что вам потребуется размер виртуальной машины с кэшем, превышающим 127 гиб. В этом случае [Standard_DS2_v2](~/articles/virtual-machines/dv2-dsv2-series.md) имеет размер кэша 86 гиб, который недостаточно велик. Standard_DS3_v2 имеет размер кэша 172 гиб, который достаточно большой. В этом случае Standard_DS3_v2 является наименьшим размером в серии DSv2, который можно использовать с этим изображением. Основные образы Linux в Marketplace и образах Windows Server, обозначенные `[smallsize]` с помощью, имеют около 30 гиб и могут использовать большинство доступных размеров виртуальных машин.
+Образы виртуальных машин и экземпляров можно развернуть вплоть до размера кэша виртуальной машины. Например, к стандартным образам Windows Server из Marketplace соответствует 127 гиб. Это означает, что вам потребуется размер виртуальной машины с кэшем, превышающим 127 гиб. В этом случае [Standard_DS2_v2](~/articles/virtual-machines/dv2-dsv2-series.md) имеет размер кэша 86 гиб, который недостаточно велик. Standard_DS3_v2 имеет размер кэша 172 гиб, который достаточно большой. В этом случае Standard_DS3_v2 является наименьшим размером в серии DSv2, который можно использовать с этим изображением. Основные образы Linux в Marketplace и образах Windows Server, обозначенные с помощью, имеют `[smallsize]` около 30 гиб и могут использовать большинство доступных размеров виртуальных машин.
 
 Для временных дисков также требуется, чтобы размер виртуальной машины поддерживал хранилище класса Premium. Обычно размеры (но не всегда) имеют `s` имя, например DSv2 и EsV3. Дополнительные сведения см. в статье [размеры виртуальных машин Azure](../articles/virtual-machines/linux/sizes.md) . Дополнительные сведения о том, какие размеры поддерживают хранилище класса Premium.
 
+## <a name="preview---ephemeral-os-disks-can-now-be-stored-on-temp-disks"></a>Предварительная версия. временные диски ОС теперь можно хранить на временных дисках.
+Диски с временными ОС теперь могут храниться на диске виртуальной машины или диска ресурсов в дополнение к кэшу виртуальной машины. Итак, теперь вы можете использовать временные диски ОС с виртуальной машиной, у которых нет кэша или не имеющей достаточного кэша, но имеющей диск TEMP или Resource для хранения временного диска ОС, например Dav3, Dav4, Eav4 и Eav3. Если у виртуальной машины достаточно места в кэше и временном пространстве, вы также сможете указать место хранения эфемерного диска ОС с помощью нового свойства с именем [диффдискплацемент](https://docs.microsoft.com/rest/api/compute/virtualmachines/list#diffdiskplacement). Сейчас эта функция доступна в предварительной версии. Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Чтобы начать работу, [запросите доступ](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR6cQw0fZJzdIsnbfbI13601URTBCRUZPMkQwWFlCOTRIMFBSNkM1NVpQQS4u).
+
 ## <a name="powershell"></a>PowerShell
 
-Чтобы использовать временный диск для развертывания виртуальной машины PowerShell, используйте [Set-азвмосдиск](/powershell/module/az.compute/set-azvmosdisk) в конфигурации виртуальной машины. Задайте `-DiffDiskSetting` для `Local` значение и `-Caching` равным `ReadOnly`.     
+Чтобы использовать временный диск для развертывания виртуальной машины PowerShell, используйте [Set-азвмосдиск](/powershell/module/az.compute/set-azvmosdisk) в конфигурации виртуальной машины. Задайте `-DiffDiskSetting` для значение `Local` и `-Caching` равным `ReadOnly` .     
 
 ```powershell
 Set-AzVMOSDisk -DiffDiskSetting Local -Caching ReadOnly
 ```
 
-Для развертываний масштабируемых наборов используйте командлет [Set-азвмсссторажепрофиле](/powershell/module/az.compute/set-azvmssstorageprofile) в конфигурации. Задайте `-DiffDiskSetting` для `Local` значение и `-Caching` равным `ReadOnly`.
+Для развертываний масштабируемых наборов используйте командлет [Set-азвмсссторажепрофиле](/powershell/module/az.compute/set-azvmssstorageprofile) в конфигурации. Задайте `-DiffDiskSetting` для значение `Local` и `-Caching` равным `ReadOnly` .
 
 
 ```powershell
@@ -65,7 +68,7 @@ Set-AzVmssStorageProfile -DiffDiskSetting Local -OsDiskCaching ReadOnly
 
 ## <a name="cli"></a>CLI
 
-Чтобы использовать временный диск для развертывания виртуальной машины CLI, присвойте `--ephemeral-os-disk` параметру команды [AZ VM Create](/cli/azure/vm#az-vm-create) значение `true` , а `--os-disk-caching` параметр — `ReadOnly`значение.
+Чтобы использовать временный диск для развертывания виртуальной машины CLI, присвойте `--ephemeral-os-disk` параметру команды [AZ VM Create](/cli/azure/vm#az-vm-create) значение, `true` а параметр — значение `--os-disk-caching` `ReadOnly` .
 
 ```azurecli-interactive
 az vm create \
@@ -78,7 +81,7 @@ az vm create \
   --generate-ssh-keys
 ```
 
-Для масштабируемых наборов используйте один и тот `--ephemeral-os-disk true` же параметр для команды [AZ-vmss-Create](/cli/azure/vmss#az-vmss-create) и `--os-disk-caching` задайте для `ReadOnly`параметра значение.
+Для масштабируемых наборов используйте один и тот же `--ephemeral-os-disk true` параметр для команды [AZ-vmss-Create](/cli/azure/vmss#az-vmss-create) и задайте `--os-disk-caching` для параметра значение `ReadOnly` .
 
 ## <a name="portal"></a>Портал   
 
@@ -93,7 +96,7 @@ az vm create \
 ![Снимок экрана, показывающий переключатель для выбора использования временного диска ОС для масштабируемого набора](./media/virtual-machines-common-ephemeral/scale-set.png)
 
 ## <a name="scale-set-template-deployment"></a>Развертывание шаблона масштабируемого набора  
-Процесс создания масштабируемого набора, использующего временный диск ОС, заключается в добавлении `diffDiskSettings` свойства в тип `Microsoft.Compute/virtualMachineScaleSets/virtualMachineProfile` ресурса в шаблоне. Кроме того, `ReadOnly` для политики кэширования необходимо задать значение для временного диска ОС. 
+Процесс создания масштабируемого набора, использующего временный диск ОС, заключается в добавлении свойства в `diffDiskSettings` `Microsoft.Compute/virtualMachineScaleSets/virtualMachineProfile` тип ресурса в шаблоне. Кроме того, для политики кэширования необходимо задать значение `ReadOnly` для временного диска ОС. 
 
 
 ```json
@@ -137,7 +140,7 @@ az vm create \
 ```
 
 ## <a name="vm-template-deployment"></a>Развертывание шаблона виртуальной машины 
-Вы можете развернуть виртуальную машину с временным диском ОС, используя шаблон. Процесс создания виртуальной машины, использующей временные диски ОС, заключается в добавлении `diffDiskSettings` свойства в тип ресурса Microsoft. COMPUTE/virtualMachines в шаблоне. Кроме того, `ReadOnly` для политики кэширования необходимо задать значение для временного диска ОС. 
+Вы можете развернуть виртуальную машину с временным диском ОС, используя шаблон. Процесс создания виртуальной машины, использующей временные диски ОС, заключается в добавлении свойства в `diffDiskSettings` тип ресурса Microsoft. COMPUTE/virtualMachines в шаблоне. Кроме того, для политики кэширования необходимо задать значение `ReadOnly` для временного диска ОС. 
 
 ```json
 { 
@@ -198,7 +201,24 @@ id}/resourceGroups/{rgName}/providers/Microsoft.Compute/VirtualMachines/{vmName}
 
 **Вопрос. будут ли поддерживаться все размеры виртуальных машин для временных дисков ОС?**
 
-Ответ. нет, поддерживаются все размеры виртуальных машин хранилища класса Premium (DS, ES, FS, GS и M), кроме размеров серии B, N и H.  
+Ответ. нет, поддерживаются большинство размеров виртуальных машин хранилища класса Premium (DS, ES, FS, GS, M и т. д.). Чтобы определить, поддерживает ли конкретный размер виртуальной машины временные диски ОС, можно:
+
+Вызов `Get-AzComputeResourceSku` командлета PowerShell
+```azurepowershell-interactive
+ 
+$vmSizes=Get-AzComputeResourceSku | where{$_.ResourceType -eq 'virtualMachines' -and $_.Locations.Contains('CentralUSEUAP')} 
+
+foreach($vmSize in $vmSizes)
+{
+   foreach($capability in $vmSize.capabilities)
+   {
+       if($capability.Name -eq 'EphemeralOSDiskSupported' -and $capability.Value -eq 'true')
+       {
+           $vmSize
+       }
+   }
+}
+```
  
 **Вопрос. можно ли применять временный диск ОС к существующим виртуальным машинам и масштабируемым наборам?**
 

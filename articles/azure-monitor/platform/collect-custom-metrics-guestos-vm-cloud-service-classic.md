@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 3b390ffa20cf3cf79b8fb6311ad05b2978bd5d24
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 46716cf5bd810225cbfc3b54d246917c9559f78f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77655806"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85124471"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-classic-cloud-services"></a>Отправка метрик гостевых ОС в хранилище метрик Azure Monitor для классических облачных служб 
 
@@ -30,7 +30,7 @@ ms.locfileid: "77655806"
 
 - Вам необходимы права [администратора службы или соадминистратора](../../cost-management-billing/manage/add-change-subscription-administrator.md) в подписке Azure. 
 
-- Ваша подписка должна быть зарегистрирована в [Microsoft. Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
+- Подписку необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
 
 - Необходимо установить [Azure PowerShell](/powershell/azure) или [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
@@ -46,7 +46,7 @@ ms.locfileid: "77655806"
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы 
 
-Создайте субъект-службу для своего клиента Azure Active Directory согласно инструкциям в статье о [создании приложения и субъекта-службы Azure Active Directory с правами доступа к ресурсам с помощью портала](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal). Выполняя это действие, обратите внимание на следующие моменты: 
+Создайте субъект-службу в клиенте Azure Active Directory, используя инструкции на [портале, чтобы создать Azure Active Directoryное приложение и субъект-службу, которые могут получать доступ к ресурсам](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal). Выполняя это действие, обратите внимание на следующие моменты: 
 
 - Вы можете указать любой URL-адрес для входа в систему.  
 - Создайте новый секрет клиента для этого приложения.  
@@ -189,7 +189,7 @@ Set-AzureServiceDiagnosticsExtension -ServiceName <classicCloudServiceName> -Sto
 
  ![Метрики портала Azure](./media/collect-custom-metrics-guestos-vm-cloud-service-classic/metrics-graph.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
 

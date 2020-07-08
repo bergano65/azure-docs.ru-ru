@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: srchi
-ms.openlocfilehash: f00acf3580130d85d6eaeaee4d52eb748d20aa7b
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: a6f486f15fb5967dfb14508115e2340e4953be81
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83656635"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85116032"
 ---
 # <a name="what-is-azure-cosmos-db-analytical-store-preview"></a>Что такое Аналитическое хранилище Azure Cosmos DB (предварительная версия)?
 
@@ -44,7 +44,7 @@ ms.locfileid: "83656635"
 
 Например, если рабочие таблицы имеют следующий формат:
 
-![Пример операционной таблицы](./media/analytical-store-introduction/sample-operational-data-table.png)
+:::image type="content" source="./media/analytical-store-introduction/sample-operational-data-table.png" alt-text="Пример операционной таблицы" border="false":::
 
 Хранилище строк сохраняет приведенные выше данные в сериализованном формате в строке на диске. Такой формат позволяет быстрее выполнять транзакционные операции чтения, записи и оперативные запросы, например "Вернуть сведения о product1". Однако по мере роста набора данных и необходимости выполнять сложные аналитические запросы к данным, такие запросы могут оказаться дорогостоящими. Например, если вы хотите получить тенденции продаж для продукта в категории "Оборудование"по разным подразделениям и месяцам, необходимо выполнить сложный запрос. Крупные проверки этого набора данных могут оказаться затратными в плане подготовленной пропускной способности и могут повлиять на производительность транзакционных рабочих нагрузок, обеспечивающих работу приложений и служб в режиме реального времени.
 
@@ -52,7 +52,7 @@ ms.locfileid: "83656635"
 
 На следующем рисунке показано хранилище транзакций и хранилище аналитических столбцов в Azure Cosmos DB:
 
-![Транзакционное хранилище строк и хранилище аналитических столбцов в Azure Cosmos DB](./media/analytical-store-introduction/transactional-analytical-data-stores.png)
+:::image type="content" source="./media/analytical-store-introduction/transactional-analytical-data-stores.png" alt-text="Транзакционное хранилище строк и хранилище аналитических столбцов в Azure Cosmos DB" border="false":::
 
 ### <a name="decoupled-performance-for-analytical-workloads"></a>Несвязанная производительность для аналитических рабочих нагрузок
 

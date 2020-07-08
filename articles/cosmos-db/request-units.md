@@ -6,12 +6,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/23/2019
-ms.openlocfilehash: a0058bf309e0ff4fbe687731d676e907d1c3fd82
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3378b442c80758c4a5dca02b33f92ba3823f33ed
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79246595"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85113657"
 ---
 # <a name="request-units-in-azure-cosmos-db"></a>Единицы запросов в базе данных Azure Cosmos DB
 
@@ -25,7 +25,7 @@ Azure Cosmos DB поддерживает многие интерфейсы API, 
 
 Обобщенная схема использования ЕЗ представлена на следующем изображении.
 
-![Операции с базой данных потребляют единицы запроса](./media/request-units/request-units.png)
+:::image type="content" source="./media/request-units/request-units.png" alt-text="Операции с базой данных потребляют единицы запроса" border="false":::
 
 Чтобы обеспечить планирование пропускной способности и управление ею, Azure Cosmos DB гарантирует, что количество ЕЗ для операции базы данных над определенным набором данных является детерминированным. Вы можете изучить заголовок ответа, чтобы отслеживать количество ЕЗ, потребляемых любой операцией базы данных. Если вы понимаете [факторы, влияющие на сборы за единицу](request-units.md#request-unit-considerations) и требования к пропускной способности вашего приложения, можно эффективно выполнять ваши приложения.
 
@@ -67,7 +67,7 @@ Azure Cosmos DB поддерживает многие интерфейсы API, 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 * Подробнее о [подготовке пропускной способности в контейнерах и базах данных Azure Cosmos](set-throughput.md).
-* Дополнительные сведения о [логических секциях](partition-data.md).
+* Подробнее о [логических секциях](partition-data.md).
 * Подробнее о [глобальном масштабировании подготовленной пропускной способности](scaling-throughput.md).
 * Подробнее о [подготовке пропускной способности для контейнера Azure Cosmos](how-to-provision-container-throughput.md).
 * Подробнее о [подготовке пропускной способности для базы данных Azure Cosmos](how-to-provision-database-throughput.md).

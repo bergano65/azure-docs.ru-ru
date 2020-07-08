@@ -4,21 +4,21 @@ description: В этой статье приведены инструкции п
 services: application-gateway
 author: caya
 ms.service: application-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: 1169ed0e9a2b970ee0e30d73ea20c87001b62786
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5e0533a44db269229b2f26fa8d2f2b4f84f4d0b4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80239451"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85125469"
 ---
 # <a name="autoscale-your-aks-pods-using-application-gateway-metrics-beta"></a>Автоматическое масштабирование модулей AKS с помощью метрик шлюза приложений (бета-версия)
 
 При увеличении входящего трафика становится крайне важным, чтобы масштабировать приложения в зависимости от спроса.
 
-В следующем руководстве объясняется, как можно использовать `AvgRequestCountPerHealthyHost` метрику шлюза приложений для масштабирования приложения. `AvgRequestCountPerHealthyHost`измеряет среднее число запросов, отправленных в определенный серверный пул и сочетание параметров HTTP серверной части.
+В следующем руководстве объясняется, как можно использовать метрику шлюза приложений `AvgRequestCountPerHealthyHost` для масштабирования приложения. `AvgRequestCountPerHealthyHost`измеряет среднее число запросов, отправленных в определенный серверный пул и сочетание параметров HTTP серверной части.
 
 Мы будем использовать следующие два компонента:
 
@@ -39,7 +39,7 @@ ms.locfileid: "80239451"
 
     ```bash
     kubectl create namespace custom-metrics
-    # use values from service principle created above to create secret
+    # use values from service principal created above to create secret
     kubectl create secret generic azure-k8s-metrics-adapter -n custom-metrics \
         --from-literal=azure-tenant-id=<tenantid> \
         --from-literal=azure-client-id=<clientid> \
@@ -47,7 +47,7 @@ ms.locfileid: "80239451"
     kubectl apply -f kubectl apply -f https://raw.githubusercontent.com/Azure/azure-k8s-metrics-adapter/master/deploy/adapter.yaml -n custom-metrics
     ```
 
-1. Мы создадим `ExternalMetric` ресурс с именем `appgw-request-count-metric`. Этот ресурс попросит адаптеру метрик предоставить `AvgRequestCountPerHealthyHost` метрику для `myApplicationGateway` ресурса в `myResourceGroup` группе ресурсов. Это `filter` поле можно использовать для назначения определенного внутреннего пула и параметра HTTP серверной части в шлюзе приложений.
+1. Мы создадим `ExternalMetric` ресурс с именем `appgw-request-count-metric` . Этот ресурс попросит адаптеру метрик предоставить `AvgRequestCountPerHealthyHost` метрику для `myApplicationGateway` ресурса в `myResourceGroup` группе ресурсов. Это поле можно использовать `filter` для назначения определенного внутреннего пула и параметра HTTP серверной части в шлюзе приложений.
 
     ```yaml
     apiVersion: azure.com/v1alpha2
@@ -92,9 +92,9 @@ kubectl get --raw "/apis/external.metrics.k8s.io/v1beta1/namespaces/default/appg
 
 ## <a name="using-the-new-metric-to-scale-up-the-deployment"></a>Использование новой метрики для увеличения масштаба развертывания
 
-После того как мы сможем предоставить `appgw-request-count-metric` доступ через сервер метрик, мы готовы к использованию [`Horizontal Pod Autoscaler`](https://docs.microsoft.com/azure/aks/concepts-scale#horizontal-pod-autoscaler) для масштабирования целевого развертывания.
+После того как мы сможем предоставить доступ `appgw-request-count-metric` через сервер метрик, мы готовы к использованию [`Horizontal Pod Autoscaler`](https://docs.microsoft.com/azure/aks/concepts-scale#horizontal-pod-autoscaler) для масштабирования целевого развертывания.
 
-В следующем примере мы будем ориентироваться на пример развертывания `aspnet`. Мы будем масштабировать модули Pod при `appgw-request-count-metric` > 200 на каждый модуль до максимального числа `10` модулей.
+В следующем примере мы будем ориентироваться на пример развертывания `aspnet` . Мы будем масштабировать модули Pod при `appgw-request-count-metric` > 200 на каждый модуль до максимального числа `10` модулей.
 
 Замените имя целевого развертывания и примените следующую конфигурацию автоматического масштабирования:
 ```yaml

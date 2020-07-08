@@ -8,12 +8,12 @@ ms.date: 04/22/2020
 ms.author: tisande
 ms.subservice: cosmosdb-sql
 ms.reviewer: sngun
-ms.openlocfilehash: 977b2fa40e2ce27a2711e5a44f5fb487433c9462
-ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
-ms.translationtype: HT
+ms.openlocfilehash: 80e966bf190dcbe4490269ef28a95babadda68d8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83714565"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85117919"
 ---
 # <a name="troubleshoot-query-issues-when-using-azure-cosmos-db"></a>Диагностика и устранение проблем с запросами при использовании Azure Cosmos DB
 
@@ -47,7 +47,7 @@ ms.locfileid: "83714565"
 
 При оптимизации запроса в Azure Cosmos DB первым шагом всегда является [получение метрик запроса](profile-sql-api-query.md) для запроса. Эти метрики доступны также на портале Azure. После выполнения запроса в обозреватель данных метрики запроса отображаются рядом с вкладкой **Результаты**:
 
-[ ![Получение метрик запроса](./media/troubleshoot-query-performance/obtain-query-metrics.png) ](./media/troubleshoot-query-performance/obtain-query-metrics.png#lightbox)
+:::image type="content" source="./media/troubleshoot-query-performance/obtain-query-metrics.png" alt-text="Получение метрик запроса" lightbox="./media/troubleshoot-query-performance/obtain-query-metrics.png":::
 
 Получив метрики запроса, сравните **Число полученных документов** с **Числом выходных документов** для запроса. Используйте это сравнение, чтобы определить соответствующие разделы для проверки в этой статье.
 

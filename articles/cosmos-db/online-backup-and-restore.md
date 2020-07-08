@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: f5cc4339d7d6dce6d49c8d3eb744fca7fa5774d9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8ed9e23b178b8eeefbd3c3a690491124e6901180
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80240436"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85112928"
 ---
 # <a name="online-backup-and-on-demand-data-restore-in-azure-cosmos-db"></a>Оперативное резервное копирование и восстановление данных по запросу в Azure Cosmos DB
 
@@ -34,7 +34,7 @@ Azure Cosmos DB обеспечивает высокую избыточность
 
 Ниже показано, как контейнер Azure Cosmos со всеми тремя основными физическими разделами в регионе "западная часть США" копируется в удаленную учетную запись хранилища BLOB-объектов Azure в регионе "западная часть США", а затем реплицируется в регион "восточная часть США".
 
-![Периодически выполняемая полная архивация всех сущностей Cosmos DB в геоизбыточное хранилище Azure](./media/online-backup-and-restore/automatic-backup.png)
+:::image type="content" source="./media/online-backup-and-restore/automatic-backup.png" alt-text="Периодически выполняемая полная архивация всех сущностей Cosmos DB в геоизбыточное хранилище Azure" border="false":::
 
 ## <a name="options-to-manage-your-own-backups"></a>Способы управления резервными копиями
 

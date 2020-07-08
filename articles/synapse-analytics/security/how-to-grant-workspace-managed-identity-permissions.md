@@ -4,15 +4,16 @@ description: Статья, в которой объясняется, как на
 author: RonyMSFT
 ms.service: synapse-analytics
 ms.topic: how-to
+ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 1f0644c25d0047f774fe8f99efa34a33e10d7b2b
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: 8e33bd127fca9ddce7b15d144fd287ec4a6bf0e2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82983301"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85193470"
 ---
 # <a name="grant-permissions-to-workspace-managed-identity-preview"></a>Предоставление разрешений управляемому удостоверению рабочей области (Предварительная версия)
 
@@ -73,13 +74,13 @@ Azure синапсе будет пытаться предоставить упр
 
 #### <a name="step-3-navigate-to-access-control"></a>Шаг 3. Переход к контролю доступа
 
-Выберите **Управление доступом (IAM)**.
+Выберите **Управление доступом (IAM)** .
 
 ![Управление доступом (IAM)](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-8.png)
 
 #### <a name="step-4-add-a-new-role-assignment"></a>Шаг 4. Добавление нового назначения роли
 
-Выберите **+ Добавить**.
+Щелкните **+ Добавить**.
 
 ![Добавить новое назначение роли](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-9.png)
 
@@ -116,6 +117,6 @@ Azure синапсе будет пытаться предоставить упр
 Управляемое удостоверение должно отображаться в разделе **участник данных BLOB-объекта хранилища** с назначенной ему ролью *участника данных BLOB-объекта хранилища* . 
 ![ADLS 2-го поколения выбор контейнера учетной записи хранения](./media/how-to-grant-workspace-managed-identity-permissions/configure-workspace-managed-identity-15.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об [управляемом удостоверении рабочей области](./synapse-workspace-managed-identity.md)

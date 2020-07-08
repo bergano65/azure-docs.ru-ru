@@ -4,15 +4,15 @@ description: Установка безопасного подключения т
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/10/2020
 ms.author: cherylmc
-ms.openlocfilehash: cb9a02532c3651aca544ed946f40bdcff9e9be83
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1bdaa2fd1e435e8bf7ff4b17c7f8a15d5bd249d5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80411770"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84987162"
 ---
 # <a name="configure-a-point-to-site-connection-to-a-vnet-using-radius-authentication-powershell"></a>Настройка подключения типа "точка — сеть" к виртуальной сети с использованием аутентификации RADIUS и PowerShell
 
@@ -80,7 +80,7 @@ VPN-подключение "точка — сеть" устанавливает
   * **Диапазон адресов подсети шлюза: 192.168.200.0/24.** 
 * **Пул адресов VPN-клиента: 172.16.201.0/24.**<br>VPN-клиенты, подключающиеся к виртуальной сети с помощью этого подключения типа "точка — сеть", получают IP-адреса из пула адресов VPN-клиента.
 * **Подписка**. Если у вас есть несколько подписок, убедитесь, что используется правильная.
-* **Группа ресурсов: TestRG**.
+* **Группа ресурсов: TestRG**
 * **Расположение: Восточная часть США**
 * **DNS-сервер: IP-адрес** DNS-сервера, который нужно использовать для разрешения имен в виртуальной сети. (необязательно).
 * **Имя шлюза: Vnet1GW**.
@@ -109,7 +109,7 @@ VPN-подключение "точка — сеть" устанавливает
   $GWIPconfName = "gwipconf"
   ```
 
-## <a name="2-create-the-resource-group-vnet-and-public-ip-address"></a>2. <a name="vnet"> </a>создайте группу ресурсов, виртуальную сеть и общедоступный IP-адрес.
+## <a name="2-create-the-resource-group-vnet-and-public-ip-address"></a>2. <a name="vnet"></a> Создайте группу ресурсов, виртуальную сеть и общедоступный IP-адрес.
 
 Выполните инструкции ниже, чтобы создать группу ресурсов и виртуальную сеть в группе ресурсов с тремя подсетями. При замене значений важно, чтобы вы назвали подсеть шлюза именем GatewaySubnet. Если вы используете другое имя, создание шлюза завершится сбоем.
 
@@ -143,7 +143,7 @@ VPN-подключение "точка — сеть" устанавливает
    $ipconf = New-AzVirtualNetworkGatewayIpConfig -Name "gwipconf" -Subnet $subnet -PublicIpAddress $pip
    ```
 
-## <a name="3-set-up-your-radius-server"></a>3. <a name="radius"> </a>Настройка сервера RADIUS
+## <a name="3-set-up-your-radius-server"></a>3. <a name="radius"></a> Настройка сервера RADIUS
 
 Прежде чем создавать и настраивать шлюз виртуальной сети, необходимо правильно настроить сервер RADIUS для аутентификации.
 
@@ -153,12 +153,12 @@ VPN-подключение "точка — сеть" устанавливает
 
 Статья [Сервер политики сети (NPS)](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top) содержит сведения о настройке сервера RADIUS (NPS) под управлением Windows для аутентификации домена AD.
 
-## <a name="4-create-the-vpn-gateway"></a>4. <a name="creategw"> </a>создание VPN-шлюза
+## <a name="4-create-the-vpn-gateway"></a>4. <a name="creategw"></a> Создание VPN-шлюза
 
 Настройте и создайте VPN-шлюз для своей виртуальной сети.
 
 * Для параметра -GatewayType должно быть установлено значение Vpn, а для параметра -VpnTyp — RouteBased.
-* Для выполнения VPN-шлюза может потребоваться до 45 минут в зависимости от выбранного  [номера SKU шлюза](vpn-gateway-about-vpn-gateway-settings.md#gwsku).
+* Для выполнения VPN-шлюза может потребоваться до 45 минут в зависимости от выбранного [номера SKU шлюза](vpn-gateway-about-vpn-gateway-settings.md#gwsku)   .
 
 ```azurepowershell-interactive
 New-AzVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
@@ -166,7 +166,7 @@ New-AzVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
 -VpnType RouteBased -EnableBgp $false -GatewaySku VpnGw1
 ```
 
-## <a name="5-add-the-radius-server-and-client-address-pool"></a>5. <a name="addradius"> </a>Добавление RADIUS-сервера и пула адресов клиента
+## <a name="5-add-the-radius-server-and-client-address-pool"></a>5. <a name="addradius"></a> Добавление RADIUS-сервера и пула адресов клиента
  
 * -RadiusServer можно указать с помощью имени или IP-адреса. Если вы укажете имя и сервер находится в локальной среде, VPN-шлюз может не разрешить имя. В таком случае рекомендуем указать IP-адрес сервера. 
 * Параметр -RadiusSecret должен соответствовать настроенному параметру на сервере RADIUS.
@@ -223,7 +223,7 @@ New-AzVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
     -RadiusServerAddress "10.51.0.15" -RadiusServerSecret $Secure_Secret
     ```
 
-## <a name="6-download-the-vpn-client-configuration-package-and-set-up-the-vpn-client"></a>6. <a name="vpnclient"> </a>Скачайте пакет конфигурации VPN-клиента и настройте VPN-клиент.
+## <a name="6-download-the-vpn-client-configuration-package-and-set-up-the-vpn-client"></a>6. <a name="vpnclient"></a> скачайте пакет конфигурации VPN-клиента и настройте VPN-клиент.
 
 Конфигурация VPN-клиента позволяет устройствам устанавливать с виртуальной сетью соединение типа "точка — сеть".Чтобы создать пакет конфигурации VPN-клиента и настроить VPN-клиент, см. инструкции в статье о [создании файла конфигурации VPN-клиента для аутентификации RADIUS](point-to-site-vpn-client-configuration-radius.md).
 
@@ -274,6 +274,6 @@ New-AzVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
 
 [!INCLUDE [Point-to-Site RADIUS FAQ](../../includes/vpn-gateway-faq-p2s-radius-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения о виртуальных машинах см. [здесь](https://docs.microsoft.com/azure/). Дополнительные сведения о сетях и виртуальных машинах см. в статье [Azure и Linux: обзор сетей виртуальных машин](../virtual-machines/linux/azure-vm-network-overview.md).

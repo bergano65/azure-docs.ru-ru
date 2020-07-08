@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/13/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 584fc48aad6a64f8df54088e6dbfd990e8e112e8
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 4325f75ac8181e088d64e53d3f65e085a09c0224
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83655303"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85119415"
 ---
 # <a name="change-feed-processor-in-azure-cosmos-db"></a>Обработчик канала изменений в Azure Cosmos DB
 
@@ -35,7 +35,7 @@ ms.locfileid: "83655303"
 
 Чтобы лучше разобраться, как взаимодействуют эти четыре элемента обработчика для канала изменений, давайте рассмотрим пример, приведенный на схеме ниже. Отслеживаемый контейнер хранит документы и использует City в качестве ключа секции. Мы видим, что значения ключа секции распределяются по диапазонам, содержащим элементы. Существует два экземпляра узла, и обработчик канала изменений назначает каждому экземпляру разные диапазоны значений ключа секции для максимального распределения вычислительных ресурсов. Каждый диапазон считывается параллельно, и его ход выполнения отделен от других диапазонов в контейнере аренды.
 
-![Пример обработчика канала изменений](./media/change-feed-processor/changefeedprocessor.png)
+:::image type="content" source="./media/change-feed-processor/changefeedprocessor.png" alt-text="Пример обработчика канала изменений" border="false":::
 
 ## <a name="implementing-the-change-feed-processor"></a>Реализация обработчика канала изменений
 

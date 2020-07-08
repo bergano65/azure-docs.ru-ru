@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/08/2020
 ms.reviewer: sngun
 ms.custom: seodec18
-ms.openlocfilehash: cb3f7f3d641f33e4b4deb1775600595cc382f68e
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
-ms.translationtype: HT
+ms.openlocfilehash: 223514e8e873d36f8551e18956aafc0a54243990
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83873975"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85119381"
 ---
 # <a name="change-feed-in-azure-cosmos-db"></a>Канал изменений в Azure Cosmos DB
 
@@ -67,7 +67,7 @@ ms.locfileid: "83873975"
 
 Канал изменений доступен для каждого ключа логических разделов в контейнере, и его можно распределить для одного или нескольких потребителей для параллельной обработки, как показано на следующем рисунке.
 
-![Распределенная обработка веб-канала изменений Azure Cosmos DB](./media/change-feed/changefeedvisual.png)
+:::image type="content" source="./media/change-feed/changefeedvisual.png" alt-text="Распределенная обработка веб-канала изменений Azure Cosmos DB" border="false":::
 
 ## <a name="features-of-change-feed"></a>Функции канала изменений
 

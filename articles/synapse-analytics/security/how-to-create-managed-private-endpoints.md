@@ -4,15 +4,16 @@ description: Из этой статьи вы узнаете, как создат
 author: RonyMSFT
 ms.service: synapse-analytics
 ms.topic: how-to
+ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: d6a0a84050cb8f1b3ad0c04aa66c5b3797282f2e
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: c6f0054364e5bbfb80fc4c1b9db6a4c15f365a81
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82983233"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85193895"
 ---
 # <a name="create-a-managed-private-endpoint-to-your-data-source-preview"></a>Создание управляемой частной конечной точки для источника данных (Предварительная версия)
 
@@ -30,12 +31,12 @@ ms.locfileid: "82983233"
 
 ## <a name="step-3-select-the-data-source-type"></a>Шаг 3. Выбор типа источника данных
 
-Выберите тип источника данных. В этом случае целевой источник данных является учетной записью ADLS 2-го поколения. Щелкните **Продолжить**.
+Выберите тип источника данных. В этом случае целевой источник данных является учетной записью ADLS 2-го поколения. Выберите **Continue** (Продолжить).
 ![Выберите целевой тип источника данных](./media/how-to-create-managed-private-endpoints/managed-private-endpoint-3.png)
 
 ## <a name="step-4-enter-information-about-the-data-source"></a>Шаг 4. Ввод сведений об источнике данных
 
-В следующем окне введите сведения об источнике данных. В этом примере мы создаем управляемую закрытую конечную точку для учетной записи ADLS 2-го поколения. Введите **имя** управляемой частной конечной точки. Укажите **подписку Azure** и **имя учетной записи хранения**. Щелкните **Создать**.
+В следующем окне введите сведения об источнике данных. В этом примере мы создаем управляемую закрытую конечную точку для учетной записи ADLS 2-го поколения. Введите **имя** управляемой частной конечной точки. Укажите **подписку Azure** и **имя учетной записи хранения**. Выберите **Создать**.
 ![Введите сведения о целевом источнике данных](./media/how-to-create-managed-private-endpoints/managed-private-endpoint-4.png)
 
 ## <a name="step-5-verify-that-your-managed-private-endpoint-was-successfully-created"></a>Шаг 5. Проверка успешного создания управляемой частной конечной точки
@@ -45,6 +46,6 @@ ms.locfileid: "82983233"
 Вы также можете увидеть, что *состояние утверждения* — *Ожидание*. Владелец целевого ресурса может утвердить или отклонить запрос на подключение частной конечной точки. Если владелец утверждает запрос на подключение к закрытой конечной точке, устанавливается частная ссылка. Если отказано, то частная ссылка не устанавливается.
 ![Состояние запроса на создание управляемой частной конечной точки](./media/how-to-create-managed-private-endpoints/managed-private-endpoint-5.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. дополнительные сведения об [управляемых частных конечных точках](./synapse-workspace-managed-private-endpoints.md) и статью

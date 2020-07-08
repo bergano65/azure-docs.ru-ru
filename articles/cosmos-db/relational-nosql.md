@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 12/16/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 1cd80fee51565f2a2c1afa38ed883c10f51a5ee3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d6be74e5748d364fd9f56f4af96bb3229ddb61c3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75896627"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85113695"
 ---
 # <a name="understanding-the-differences-between-nosql-and-relational-databases"></a>Основные сведения о различиях между NoSQL и реляционными базами данных
 
@@ -29,7 +29,7 @@ ms.locfileid: "75896627"
 
 Если транзакционные тома достигли экстремальных уровней, например, количество тысяч транзакций в секунду, следует рассмотреть распределенную базу данных NoSQL. Рассмотрите возможность Azure Cosmos DB для максимальной эффективности, простоты обслуживания и снижения совокупной стоимости владения.
 
-![Серверная часть](./media/relational-or-nosql/backend-scaled.png)
+:::image type="content" source="./media/relational-or-nosql/backend-scaled.png" alt-text="Фонов" border="false":::
 
 ## <a name="hierarchical-data"></a>Иерархические данные
 
@@ -39,7 +39,7 @@ ms.locfileid: "75896627"
 
 [Воссоздание объектно-ориентированного проектирования](https://en.wikipedia.org/wiki/Object-oriented_design)и [несоответствие](https://en.wikipedia.org/wiki/Object-relational_impedance_mismatch) , возникающее при объединении его с реляционными моделями, также выделяет относительный шаблон в реляционных базах данных для определенных вариантов использования. В результате могут возникнуть скрытые, но часто существенные затраты на обслуживание. Несмотря на то, что [подходы ORM](https://en.wikipedia.org/wiki/Object-relational_mapping) были изменены для частичного устранения этой проблемы, базы данных, ориентированные на документы,, тем не менее, гораздо лучше, чем объектно-ориентированные При таком подходе разработчики не будут вынуждены зафиксироваться в драйверах ORM или для [ооных ядер](https://en.wikipedia.org/wiki/Object_database), относящихся к конкретным языкам. Если данные содержат много связей типа «родители-потомки» и уровней иерархии, можно использовать базу данных документов NoSQL, например [API-интерфейс SQL Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction).
 
-![OrderDetails](./media/relational-or-nosql/order-orderdetails.jpg)
+:::image type="content" source="./media/relational-or-nosql/order-orderdetails.jpg" alt-text="OrderDetails":::
 
 ## <a name="complex-networks-and-relationships"></a>Сложные сети и отношения
 
@@ -49,7 +49,7 @@ ms.locfileid: "75896627"
 
 Если вы обслуживаете сложную сеть связей в базе данных, вам может потребоваться рассмотреть базу данных Graph, например [Azure Cosmos DB API Gremlin](https://docs.microsoft.com/azure/cosmos-db/graph-introduction) для управления этими данными.
 
-![Graph](./media/relational-or-nosql/graph.png)
+:::image type="content" source="./media/relational-or-nosql/graph.png" alt-text="Graph":::
 
 Azure Cosmos DB — это многомодельная служба базы данных, которая предоставляет проекцию API для всех основных типов моделей NoSQL; Семейство столбцов, документ, граф и ключ-значение. Уровни API документов [Gremlin (Graph)](https://docs.microsoft.com/azure/cosmos-db/gremlin-support) и SQL (Core) полностью совместимы. Это дает преимущества для переключения между различными моделями на уровне программирования. Хранилища графов можно запрашивать в виде как сложных обходов сети, так и транзакций, смоделированных как записи документов в одном хранилище.
 
@@ -76,7 +76,7 @@ Azure Cosmos DB — это многомодельная служба базы д
 
 Глядя на первую задачу, правило-of-Thumb в базах данных NoSQL обычно денормализацию, которая, как было написано ранее, создает более эффективные операции чтения в распределенной системе. Однако при таком подходе возникают некоторые проблемы проектирования. Возьмем пример продукта, который связан с одной категорией и несколькими тегами:
 
-![Соединения](./media/relational-or-nosql/many-joins.png)
+:::image type="content" source="./media/relational-or-nosql/many-joins.png" alt-text="Joins":::
 
 Лучшим подходом в базе данных документов NoSQL будет Денормализация имен категорий и тегов непосредственно в «документе продукта». Однако, чтобы обеспечить синхронизацию категорий, тегов и продуктов, параметры проектирования, облегчающие эту задачу, применяют сложность обслуживания, так как данные дублируются по нескольким записям в продукте, а не просто обновляются в связи «один ко многим» и соединение для получения данных. 
 
@@ -88,7 +88,7 @@ Azure Cosmos DB — это многомодельная служба базы д
 
 Опять же, Azure Cosmos DB предлагает больше гибкости, чем реляционные базы данных, для различных компромиссов, которые важны здесь, но для небольших реализаций такой подход может добавить дополнительные рекомендации по проектированию. Дополнительные сведения по этой теме см. в нашей статье о [согласованности, доступности и компромиссах производительности](https://docs.microsoft.com/azure/cosmos-db/consistency-levels-tradeoffs) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как управлять учетной записью Azure Cosmos и другими концепциями:
 

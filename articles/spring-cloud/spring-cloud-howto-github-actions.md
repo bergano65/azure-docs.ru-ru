@@ -6,12 +6,12 @@ ms.author: barbkess
 ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 01/15/2019
-ms.openlocfilehash: 559c894a2212466761de820de7486ae203337802
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e17fa3e99de9f429fa279ba2e5413b60e9084de8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77538470"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85125708"
 ---
 # <a name="azure-spring-cloud-cicd-with-github-actions"></a>Azure весны CI/CD в облаке с действиями GitHub
 
@@ -21,7 +21,7 @@ ms.locfileid: "77538470"
 Для этого примера требуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="set-up-github-repository-and-authenticate"></a>Настройка репозитория GitHub и проверка подлинности
-Для авторизации действия входа в Azure требуются учетные данные участника службы Azure. Чтобы получить учетные данные Azure, выполните следующие команды на локальном компьютере:
+Для авторизации действия входа в Azure требуются учетные данные субъекта-службы Azure. Чтобы получить учетные данные Azure, выполните следующие команды на локальном компьютере:
 ```
 az login
 az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID> --sdk-auth 
@@ -63,7 +63,7 @@ az spring-cloud config-server git set -n <service instance name> --uri https://g
 Рабочий процесс определяется с помощью следующих параметров.
 
 ### <a name="prepare-for-deployment-with-azure-cli"></a>Подготовка к развертыванию с помощью Azure CLI
-В настоящее `az spring-cloud app create` время команда не идемпотентными.  Этот рабочий процесс рекомендуется для существующих облачных приложений и экземпляров Azure весны.
+В `az spring-cloud app create` настоящее время команда не идемпотентными.  Этот рабочий процесс рекомендуется для существующих облачных приложений и экземпляров Azure весны.
 
 Для подготовки используйте следующие Azure CLI команды:
 ```
@@ -99,7 +99,7 @@ jobs:
     
     - name: maven build, clean
       run: |
-        mvn clean package -D skipTests
+        mvn clean package -DskipTests
     
     - name: Azure Login
       uses: azure/login@v1
@@ -118,7 +118,7 @@ jobs:
         az spring-cloud app deploy -n auth-service --jar-path ${{ github.workspace }}/auth-service/target/auth-service.jar
 ```
 ### <a name="deploy-with-azure-cli-action"></a>Развертывание с действием Azure CLI
-Команда AZ `run` будет использовать последнюю версию Azure CLI. При наличии критических изменений можно также использовать определенную версию Azure CLI с помощью Azure или CLI `action`. 
+Команда AZ `run` будет использовать последнюю версию Azure CLI. При наличии критических изменений можно также использовать определенную версию Azure CLI с помощью Azure или CLI `action` . 
 
 > [!Note] 
 > Эта команда будет выполняться в новом контейнере, поэтому `env` не будет работать, а доступ к файлам для кросс-действий может иметь дополнительные ограничения.
@@ -142,7 +142,7 @@ jobs:
     
     - name: maven build, clean
       run: |
-        mvn clean package -D skipTests
+        mvn clean package -DskipTests
         
     - name: Azure Login
       uses: azure/login@v1
@@ -183,7 +183,7 @@ jobs:
     
     - name: maven build, clean
       run: |
-        mvn clean package -D skipTests
+        mvn clean package -DskipTests
         
     # Maven plugin can cosume this authentication method automatically
     - name: Azure Login
@@ -211,4 +211,4 @@ jobs:
 ## <a name="next-steps"></a>Дальнейшие шаги
 * [Key Vault для действий в облаке GitHub](./spring-cloud-github-actions-key-vault.md)
 * [Субъекты-службы Azure Active Directory](https://docs.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac)
-* [Действия GitHub для Azure](https://github.com/Azure/actions/)
+* [GitHub Actions для Azure](https://github.com/Azure/actions/)

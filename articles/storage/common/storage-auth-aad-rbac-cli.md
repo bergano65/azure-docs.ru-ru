@@ -136,7 +136,7 @@ az role assignment create \
     --scope "/subscriptions/<subscription>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление доступом с помощью RBAC и Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
 - [Предоставление доступа к данным большого двоичного объекта и очереди Azure с помощью RBAC с использованием Azure PowerShell](storage-auth-aad-rbac-powershell.md)

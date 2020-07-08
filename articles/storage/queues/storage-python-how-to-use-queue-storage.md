@@ -27,7 +27,7 @@ ms.locfileid: "84805241"
 
 [!INCLUDE [storage-try-azure-tools-queues](../../../includes/storage-try-azure-tools-queues.md)]
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Общие сведения
 
 Примеры в этой статье написаны на языке Python и используют [пакет SDK для Служба хранилища Microsoft Azure для Python]. Дополнительные сведения об очередях см. в разделе [Дальнейшие действия](#next-steps).
 
@@ -149,7 +149,7 @@ count = metadata.approximate_message_count
 queue_service.delete_queue('taskqueue')
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали основные сведения о хранилище очередей, воспользуйтесь следующими ссылками для получения дополнительных сведений.
 

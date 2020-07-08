@@ -2,21 +2,21 @@
 title: Безопасная доставка веб-перехватчика с помощью Azure AD в службе "Сетка событий Azure"
 description: Описание доставки событий в конечные точки HTTPS, защищенные Azure Active Directory с помощью службы "Сетка событий Azure"
 services: event-grid
-author: banisadr
+author: femila
 ms.service: event-grid
 ms.topic: conceptual
 ms.date: 11/18/2019
-ms.author: babanisa
-ms.openlocfilehash: 86d647ebfcf6e4c1ea8d05f58dd1f559d6e30cfc
-ms.sourcegitcommit: 0fda81f271f1a668ed28c55dcc2d0ba2bb417edd
+ms.author: femila
+ms.openlocfilehash: 7caa5a99f2d4ebdbe858c78c6e36be17aeb003ba
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82900471"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85126082"
 ---
 # <a name="publish-events-to-azure-active-directory-protected-endpoints"></a>Публикация событий в защищенных конечных точках Azure Active Directory
 
-В этой статье описывается, как использовать преимущества Azure Active Directory для защиты подключения между подпиской на события и конечной точкой веб-перехватчика. Общие сведения о приложениях и субъектах-службах Azure AD см. в [статье Обзор платформы Microsoft Identity Platform (v 2.0)](https://docs.microsoft.com/azure/active-directory/develop/v2-overview).
+В этой статье описывается, как использовать преимущества Azure Active Directory для защиты подключения между подпиской на события и конечной точкой веб-перехватчика. Общие сведения о приложениях и субъектах-службах Azure AD см. в статье [Общие сведения о платформе удостоверений Майкрософт версии 2.0](https://docs.microsoft.com/azure/active-directory/develop/v2-overview).
 
 В этой статье используется портал Azure для демонстрации, однако эту функцию можно также включить с помощью интерфейса командной строки, PowerShell или пакетов SDK.
 
@@ -25,18 +25,18 @@ ms.locfileid: "82900471"
 ## <a name="create-an-azure-ad-application"></a>Создание приложения Azure AD
 
 Начните с создания приложения Azure AD для защищенной конечной точки. См. раздел https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-overview.
-    - Настройте защищенный API, который будет вызываться приложением демона.
+    - Настройте защищенный API, который будет вызываться приложением управляющей программы.
     
 ## <a name="enable-event-grid-to-use-your-azure-ad-application"></a>Включение использования приложения Azure AD в службе "Сетка событий"
 
-Используйте приведенный ниже сценарий PowerShell для создания роли и участника-службы в приложении Azure AD. Вам потребуется идентификатор клиента и идентификатор объекта из приложения Azure AD:
+Используйте приведенный ниже сценарий PowerShell, чтобы создать роль и субъект-службу в приложении Azure AD. Вам потребуется идентификатор клиента и идентификатор объекта из приложения Azure AD:
 
    > [!NOTE]
-   > Для выполнения этого скрипта необходимо быть членом [роли администратора приложения Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#available-roles) .
+   > Для выполнения этого сценария необходимо быть членом [роли администратора приложения Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#available-roles).
     
 1. Измените $myTenantId сценария PowerShell, чтобы использовать идентификатор клиента Azure AD.
 1. Измените $myAzureADApplicationObjectId сценария PowerShell, чтобы использовать идентификатор объекта приложения Azure AD.
-1. Запустите измененный скрипт.
+1. Запустите измененный сценарий.
 
 ```PowerShell
 # This is your Tenant Id. 
@@ -121,7 +121,7 @@ Write-Host $myApp.AppRoles
 * Скопируйте идентификатор клиента Azure AD из выходных данных скрипта и введите его в поле Идентификатор клиента AAD.
 * Скопируйте идентификатор приложения Azure AD из выходных данных скрипта и введите его в поле Application ID (идентификатор приложения AAD).
 
-    ![Действие "безопасный веб-перехватчик"](./media/secure-webhook-delivery/aad-configuration.png)
+    ![Безопасное действие веб-перехватчика](./media/secure-webhook-delivery/aad-configuration.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

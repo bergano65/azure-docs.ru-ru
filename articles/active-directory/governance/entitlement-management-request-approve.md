@@ -10,18 +10,18 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 10/27/2019
+ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 20ec63efe16f1120ca6e7d07c8917d8ad2b3a0e0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 78c3c177bfcd5ee969e1430306c7294f0a14b658
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79261727"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85078104"
 ---
 # <a name="approve-or-deny-access-requests-in-azure-ad-entitlement-management"></a>Утверждение или отклонение запросов на доступ в управлении назначениями Azure AD
 
@@ -43,7 +43,7 @@ ms.locfileid: "79261727"
 
 Если у вас нет электронного письма, вы можете найти запросы на доступ, ожидающие вашего утверждения, выполнив следующие действия.
 
-1. Войдите на портал доступа по адресу [https://myaccess.microsoft.com](https://myaccess.microsoft.com).  (Для государственных организаций США в качестве домена на портале "мой доступ" `myaccess.microsoft.us`будет использоваться домен.)
+1. Войдите на портал доступа по адресу [https://myaccess.microsoft.com](https://myaccess.microsoft.com) .  (Для государственных организаций США в качестве домена на портале "мой доступ" будет использоваться домен `myaccess.microsoft.us` .)
 
 1. В меню слева щелкните **утверждения** , чтобы просмотреть список запросов на доступ, ожидающих утверждения.
 
@@ -73,7 +73,7 @@ ms.locfileid: "79261727"
 
     Если ни один из настроенных утверждающих не может утвердить или отклонить запрос доступа, срок действия запроса истечет через настроенную длительность запроса. Пользователь получает оповещение о том, что срок действия запроса на доступ истек, и необходимо повторно отправить запрос на доступ.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Запрос доступа к пакету Access](entitlement-management-request-access.md)
 - [Обработка запросов и уведомления по электронной почте](entitlement-management-process.md)
