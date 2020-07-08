@@ -9,13 +9,12 @@ ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 05/15/2020
-ms.openlocfilehash: 44a95430ece9c55bb088ae5b968c33691f25b4c5
-ms.sourcegitcommit: 95269d1eae0f95d42d9de410f86e8e7b4fbbb049
-ms.translationtype: HT
+ms.date: 06/30/2020
+ms.openlocfilehash: b65b5b847712ce32c6723d725be9cf2ed1f99050
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83860834"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85801549"
 ---
 # <a name="visually-monitor-azure-data-factory"></a>Визуальный мониторинг фабрики данных Azure
 
@@ -191,6 +190,10 @@ ms.locfileid: "83860834"
     ![Поле для целевого критерия](media/monitor-visually/add-criteria-1.png)
 
     ![Список критериев](media/monitor-visually/add-criteria-2.png)
+
+    ![Список критериев](media/monitor-visually/add-criteria-3.png)
+
+    Вы можете создавать оповещения для различных метрик, в том числе для объектов ADF (количество и размер), активности, конвейера и триггеров, Integration Runtime (IR) загрузка ЦП, количество узлов и очередь, а также для выполнения пакетов служб SSIS и операций запуска и отмены служб SSIS.
 
 1.  Настройте логику оповещения. Можно создать оповещение для выбранной метрики для всех конвейеров и соответствующих действий. Можно также выбрать определенный тип действия, имя действия, имя конвейера или тип сбоя.
 

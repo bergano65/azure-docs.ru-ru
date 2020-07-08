@@ -12,12 +12,11 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 12/19/2019
 ms.author: tibasham
-ms.openlocfilehash: 5d6396efc9ab25baa0d32e7c33c7715863516249
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: f7e2b70b111cd195f688e236bf8f05b077acb000
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77371352"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84678772"
 ---
 # <a name="azure-windows-vm-shutdown-is-stuck-on-restarting-shutting-down-or-stopping-services"></a>Завершение работы виртуальной машины Windows в Azure зависает при "перезапуске", "выключении" или "остановке служб"
 
@@ -29,7 +28,7 @@ ms.locfileid: "77371352"
 
 ![Перезапуск, завершение работы и остановка экранов служб](./media/boot-error-troubleshooting-windows/restart-shut-down-stop-service.png)
  
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Windows использует процесс завершения работы для выполнения операций обслуживания системы и обработки изменений, таких как обновления, роли и компоненты. Не рекомендуется прерывать этот критический процесс до его завершения. Процесс может занять длительное время в зависимости от количества обновлений, изменений и размера виртуальной машины. Если процесс остановлен, ОС может стать поврежденной. Прерывать процесс следует только в том случае, если он занимает слишком много времени.
 
@@ -43,25 +42,25 @@ Windows использует процесс завершения работы д
 
 Используйте [последовательную консоль](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-windows) для выполнения следующих действий.
 
-1. Откройте административный PowerShell и проверьте службу, которая зависла при остановке.
+1. Откройте административную оболочку PowerShell и проверьте службу, которая перестает отвечать на запросы при остановке.
 
    ``
    Get-Service | Where-Object {$_.Status -eq "STOP_PENDING"}
    ``
 
-2. На административном CMD получите идентификатор зависла службы.
+2. На административном CMD получите идентификатор процесса неотвечающей службы.
 
    ``
    tasklist /svc | findstr /i <STOPING SERVICE>
    ``
 
-3. Получение образца дампа памяти из зависших процессов <STOPPING SERVICE>.
+3. Получите образец дампа памяти из процесса, не отвечающего на запросы <STOPPING SERVICE> .
 
    ``
    procdump.exe -s 5 -n 3 -ma <PID>
    ``
 
-4. Теперь прервать зависание процесса, чтобы разблокировать процесс завершения работы.
+4. Теперь завершите процесс, не отвечающий на запросы, чтобы разблокировать процесс завершения работы.
 
    ``
    taskkill /PID <PID> /t /f

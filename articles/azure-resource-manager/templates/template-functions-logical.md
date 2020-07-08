@@ -3,21 +3,20 @@ title: Функции шаблонов — логические
 description: Описываются функции, используемые в шаблоне Azure Resource Manager для определения логических значений.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: 0072593e7d7830e75e2386bcfdd2907a873c7a87
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 8fe1c00240fc24c3c1454b118f9e0d9a9d54fe4e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82192320"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84677395"
 ---
 # <a name="logical-functions-for-arm-templates"></a>Логические функции для шаблонов ARM
 
 Диспетчер ресурсов предоставляет несколько функций для выполнения сравнений в шаблонах Azure Resource Manager (ARM).
 
-* [и](#and)
+* [and](#and) (и);
 * [bool](#bool)
 * [if](#if)
-* [недостаточно](#not)
+* [not](#not) (не);
 * [или диспетчер конфигурации служб](#or)
 
 ## <a name="and"></a>и
@@ -28,11 +27,11 @@ ms.locfileid: "82192320"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |Логическое |Первое значение, которое необходимо проверить на соответствие истине. |
 | arg2 |Да |Логическое |Второе значение, которое необходимо проверить на соответствие истине. |
-| дополнительные аргументы |Нет |Логическое |Дополнительные аргументы для проверки соответствия истине. |
+| дополнительные аргументы |нет |Логическое |Дополнительные аргументы для проверки соответствия истине. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -44,7 +43,7 @@ ms.locfileid: "82192320"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "resources": [ ],
     "outputs": {
@@ -66,7 +65,7 @@ ms.locfileid: "82192320"
 
 Выходные данные из предыдущего примера:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | andExampleOutput | Bool | False |
 | orExampleOutput | Bool | True |
@@ -80,7 +79,7 @@ ms.locfileid: "82192320"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |строка или целое число |Значение, которое необходимо преобразовать в логическое. |
 
@@ -93,7 +92,7 @@ ms.locfileid: "82192320"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "resources": [],
     "outputs": {
@@ -119,7 +118,7 @@ ms.locfileid: "82192320"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | trueString | Bool | True |
 | falseString | Bool | False |
@@ -134,7 +133,7 @@ ms.locfileid: "82192320"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | condition |Да |Логическое |Значение для проверки истинности или ложности. |
 | trueValue |Да | строка, целое число, объект или массив |Возвращаемое значение, если условие выполняется. |
@@ -144,7 +143,7 @@ ms.locfileid: "82192320"
 
 Возвращает второй параметр, если первый параметр имеет значение **True** (Истина). В противном случае возвращает третий параметр.
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Если условие **истинно**, вычисляется только значение true. Если условие имеет значение **false**, вычисляется только значение false. С помощью функции **If** можно включить выражения, которые являются только условно допустимыми. Например, можно сослаться на ресурс, который существует по одному условию, но не под другим условием. Пример условной оценки выражений показан в следующем разделе.
 
@@ -154,7 +153,7 @@ ms.locfileid: "82192320"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "resources": [
     ],
@@ -177,17 +176,17 @@ ms.locfileid: "82192320"
 
 Выходные данные из предыдущего примера:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | yesOutput | Строка | да |
-| noOutput | Строка | нет |
+| noOutput | Строка | Нет |
 | objectOutput | Объект | { "test": "value1" } |
 
 В следующем [примере шаблона](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/conditionWithReference.json) показано, как использовать эту функцию с выражениями, которые являются только условно допустимыми.
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "vmName": {
@@ -239,7 +238,7 @@ ms.locfileid: "82192320"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |Логическое |Значение, которое необходимо преобразовать. |
 
@@ -253,7 +252,7 @@ ms.locfileid: "82192320"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "resources": [ ],
     "outputs": {
@@ -275,7 +274,7 @@ ms.locfileid: "82192320"
 
 Выходные данные из предыдущего примера:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | andExampleOutput | Bool | False |
 | orExampleOutput | Bool | True |
@@ -285,7 +284,7 @@ ms.locfileid: "82192320"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "resources": [
     ],
@@ -300,11 +299,11 @@ ms.locfileid: "82192320"
 
 Выходные данные из предыдущего примера:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | checkNotEquals | Bool | True |
 
-## <a name="or"></a>или диспетчер конфигурации служб
+## <a name="or"></a>или
 
 `or(arg1, arg2, ...)`
 
@@ -312,11 +311,11 @@ ms.locfileid: "82192320"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |Логическое |Первое значение, которое необходимо проверить на соответствие истине. |
 | arg2 |Да |Логическое |Второе значение, которое необходимо проверить на соответствие истине. |
-| дополнительные аргументы |Нет |Логическое |Дополнительные аргументы для проверки соответствия истине. |
+| дополнительные аргументы |нет |Логическое |Дополнительные аргументы для проверки соответствия истине. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -328,7 +327,7 @@ ms.locfileid: "82192320"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "resources": [ ],
     "outputs": {
@@ -350,13 +349,13 @@ ms.locfileid: "82192320"
 
 Выходные данные из предыдущего примера:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | andExampleOutput | Bool | False |
 | orExampleOutput | Bool | True |
 | notExampleOutput | Bool | False |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Описание разделов в шаблоне Azure Resource Manager см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).
 

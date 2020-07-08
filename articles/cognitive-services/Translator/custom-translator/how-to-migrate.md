@@ -9,12 +9,11 @@ ms.subservice: translator-text
 ms.date: 05/26/2020
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: face605d756d2107c04b3df0c072602ac91d147d
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
-ms.translationtype: MT
+ms.openlocfilehash: 02e6d776dbb47ee8e30409f6b8adc5a61fc5fe52
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83992912"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85958928"
 ---
 # <a name="migrate-hub-workspace-and-projects-to-custom-translator"></a>Перенос рабочей области и проектов центра в Custom Translator
 
@@ -43,7 +42,7 @@ ms.locfileid: "83992912"
 
 3. Сохраните идентификатор целевой рабочей области, чтобы использовать его во время переноса.
 
-## <a name="migrate-a-project"></a>Перенос проекта
+## <a name="migrate-a-project"></a>Миграция проекта
 
 Если необходимо перенести проекты выборочно, Microsoft Translator Hub предоставляет эту возможность.
 
@@ -80,7 +79,7 @@ ms.locfileid: "83992912"
 
 4. На следующей странице выберите любой из этих двух параметров:
 
-    a. Только развернутые учебные курсы: при выборе этого параметра будут перенесены только развернутые системы и связанные документы.
+    а. Только развернутые учебные курсы: при выборе этого параметра будут перенесены только развернутые системы и связанные документы.
 
     b. Все успешные учебные курсы: при выборе этого параметра будут перенесены все успешные учебные курсы и связанные документы.
 
@@ -141,9 +140,9 @@ ms.locfileid: "83992912"
 
 ## <a name="new-languages"></a>Новые языки
 
-Если вы являетесь сообществом или организацией, работающими над созданием новой языковой системы для Microsoft Translator, обращайтесь к [custommt@microsoft.com](mailto:custommt@microsoft.com) для получения дополнительных сведений.
+Если вы являетесь сообществом или организацией, работающими над созданием новой языковой системы для переводчика, обратитесь к [custommt@microsoft.com](mailto:custommt@microsoft.com) для получения дополнительных сведений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Обучение модели](how-to-train-model.md).
 - Приступите к работе с развернутой настраиваемой моделью преобразования через [Translator v3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).

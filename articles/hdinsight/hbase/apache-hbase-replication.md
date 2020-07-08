@@ -8,12 +8,11 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/06/2019
-ms.openlocfilehash: 1e6465584dd4e67f736b94d2939678c1a69163bf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: e05cd861f899b700e68c151fcbaa6778dc43eb3a
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75435665"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85959200"
 ---
 # <a name="set-up-apache-hbase-cluster-replication-in-azure-virtual-networks"></a>Настройка репликации кластера Apache HBase в виртуальных сетях Azure
 
@@ -38,7 +37,7 @@ ms.locfileid: "75435665"
 
 Кластеры можно реплицировать с помощью скриптов [действий сценария](../hdinsight-hadoop-customize-cluster-linux.md), которые можно найти на [GitHub](https://github.com/Azure/hbase-utils/tree/master/replication).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Прежде чем приступать к этой статье, необходимо иметь подписку Azure. См. страницу о [получении бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
 ## <a name="set-up-the-environments"></a>Настройка сред
@@ -66,7 +65,7 @@ ms.locfileid: "75435665"
 
 **VNet 1**
 
-| Свойство | Значение |
+| Свойство. | Значение |
 |----------|-------|
 | Расположение | западная часть США |
 | Имя виртуальной сети | &lt;префикс_имени_кластера>-vnet1 |
@@ -83,7 +82,7 @@ ms.locfileid: "75435665"
 
 **VNet 2**
 
-| Свойство | Значение |
+| Свойство. | Значение |
 |----------|-------|
 | Расположение | Восточная часть США |
 | Имя виртуальной сети | &lt;префикс_имени_кластера>-vnet2 |
@@ -123,7 +122,7 @@ ms.locfileid: "75435665"
     > [!NOTE]  
     > Есть несколько способов получить служебную программу `ssh`. В Linux, Unix и macOS она предоставляется как часть операционной системы. Если вы используете Windows, рассмотрите один из следующих вариантов:
     >
-    > * [Azure Cloud Shell](../../cloud-shell/quickstart.md)
+    > * [Azure Cloud Shell](../../cloud-shell/quickstart.md);
     > * [Bash на платформе Ubuntu в Windows 10](https://msdn.microsoft.com/commandline/wsl/about);
     > * [Git (https://git-scm.com/)](https://git-scm.com/);
     > * [OpenSSH (https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH).
@@ -180,7 +179,9 @@ ms.locfileid: "75435665"
 
     Эта команда возвращает значение следующего вида:
 
-        vnet1DNS.icb0d0thtw0ebifqt0g1jycdxd.ex.internal.cloudapp.net
+    ```output
+    vnet1DNS.icb0d0thtw0ebifqt0g1jycdxd.ex.internal.cloudapp.net
+    ```
 
     Текст `icb0d0thtw0ebifqt0g1jycdxd.ex.internal.cloudapp.net` — это __DNS-суффикс__ для виртуальной сети. Сохраните это значение, так как оно будет использовано позже.
 
@@ -227,7 +228,7 @@ ms.locfileid: "75435665"
 
     Ответ будет выглядеть следующим образом:
 
-    ```
+    ```output
     Server:         10.2.0.4
     Address:        10.2.0.4#53
     
@@ -296,18 +297,18 @@ sudo service bind9 status
    3. **Головной узел**. Выберите этот тип узла. Отмените выбор других типов узлов.
    4. **Параметры**: Параметры в следующем примере позволяют включить репликацию для всех существующих таблиц, а затем копировать все данные из исходного кластера в целевой.
 
-          -m hn1 -s <source hbase cluster name> -d <destination hbase cluster name> -sp <source cluster Ambari password> -dp <destination cluster Ambari password> -copydata
+    `-m hn1 -s <source hbase cluster name> -d <destination hbase cluster name> -sp <source cluster Ambari password> -dp <destination cluster Ambari password> -copydata`
     
       > [!NOTE]
       > Используйте имя узла вместо полного доменного имени (FQDN) для DNS-имени как исходного, так и целевого кластера.
       >
       > В этом пошаговом руководстве предполагается, что HN1 является активным головного узла. Проверьте кластер, чтобы определить активный головной узел.
 
-6. Нажмите кнопку **создания**. Выполнение скрипта может занять некоторое время, особенно при использовании аргумента **-copydata**.
+6. Выберите **Создать**. Выполнение скрипта может занять некоторое время, особенно при использовании аргумента **-copydata**.
 
 Ниже приведены обязательные аргументы.
 
-|Имя|Описание|
+|name|Описание:|
 |----|-----------|
 |-s, --src-cluster | Указывает DNS-имя исходного кластера HBase. например -s hbsrccluster, --src-cluster=hbsrccluster. |
 |-d, --dst-cluster | Указывает DNS-имя кластера назначения (реплики) HBase. например -s dsthbcluster, --src-cluster=dsthbcluster. |
@@ -316,7 +317,7 @@ sudo service bind9 status
 
 Необязательные аргументы для этой команды.
 
-|Имя|Описание|
+|name|Описание:|
 |----|-----------|
 |-su, --src-ambari-user | Указывает имя пользователя-администратора для Ambari в исходном кластере HBase. Значение по умолчанию — **admin**. |
 |-du, --dst-ambari-user | Указывает имя пользователя-администратора для Ambari в целевом кластере HBase. Значение по умолчанию — **admin**. |
@@ -336,19 +337,19 @@ sudo service bind9 status
 
 - **Включение репликации для всех таблиц между двумя кластерами.** В этом сценарии не требуется копирование или перенос существующих данных в таблицах и не используются таблицы Phoenix. Используйте следующие параметры:
 
-        -m hn1 -s <source hbase cluster name> -d <destination hbase cluster name> -sp <source cluster Ambari password> -dp <destination cluster Ambari password>  
+  `-m hn1 -s <source hbase cluster name> -d <destination hbase cluster name> -sp <source cluster Ambari password> -dp <destination cluster Ambari password>`
 
 - **Включение репликации для отдельных таблиц.** Чтобы включить репликацию для table1, table2 и table3, используйте следующие параметры:
 
-        -m hn1 -s <source hbase cluster name> -d <destination hbase cluster name> -sp <source cluster Ambari password> -dp <destination cluster Ambari password> -t "table1;table2;table3"
+  `-m hn1 -s <source hbase cluster name> -d <destination hbase cluster name> -sp <source cluster Ambari password> -dp <destination cluster Ambari password> -t "table1;table2;table3"`
 
 - **Включите репликацию для конкретных таблиц и скопируйте существующие данные**. Чтобы включить репликацию для table1, table2 и table3, используйте следующие параметры:
 
-        -m hn1 -s <source hbase cluster name> -d <destination hbase cluster name> -sp <source cluster Ambari password> -dp <destination cluster Ambari password> -t "table1;table2;table3" -copydata
+  `-m hn1 -s <source hbase cluster name> -d <destination hbase cluster name> -sp <source cluster Ambari password> -dp <destination cluster Ambari password> -t "table1;table2;table3" -copydata`
 
 - **Включение репликации для всех таблиц с репликацией метаданных Phoenix из источника в место назначения**. Репликация метаданных Phoenix работает не идеально. Ее следует использовать с осторожностью. Используйте следующие параметры:
 
-        -m hn1 -s <source hbase cluster name> -d <destination hbase cluster name> -sp <source cluster Ambari password> -dp <destination cluster Ambari password> -t "table1;table2;table3" -replicate-phoenix-meta
+  `-m hn1 -s <source hbase cluster name> -d <destination hbase cluster name> -sp <source cluster Ambari password> -dp <destination cluster Ambari password> -t "table1;table2;table3" -replicate-phoenix-meta`
 
 ## <a name="copy-and-migrate-data"></a>Копирование и перенос данных
 
@@ -360,7 +361,7 @@ sudo service bind9 status
 
 Выполните ту же процедуру, описанную в разделе [Включение репликации](#enable-replication) для вызова действия сценария. Используйте следующие параметры:
 
-    -m hn1 -t <table1:start_timestamp:end_timestamp;table2:start_timestamp:end_timestamp;...> -p <replication_peer> [-everythingTillNow]
+`-m hn1 -t <table1:start_timestamp:end_timestamp;table2:start_timestamp:end_timestamp;...> -p <replication_peer> [-everythingTillNow]`
 
 Раздел `print_usage()`[скрипта](https://github.com/Azure/hbase-utils/blob/master/replication/hdi_copy_table.sh) содержит подробное описание параметров.
 
@@ -368,22 +369,21 @@ sudo service bind9 status
 
 - **Копирование определенных таблиц (test1, test2 и test3) для всех строк, измененных до настоящего момента (текущая отметка времени):**
 
-        -m hn1 -t "test1::;test2::;test3::" -p "zk5-hbrpl2;zk1-hbrpl2;zk5-hbrpl2:2181:/hbase-unsecure" -everythingTillNow
+  `-m hn1 -t "test1::;test2::;test3::" -p "zk5-hbrpl2;zk1-hbrpl2;zk5-hbrpl2:2181:/hbase-unsecure" -everythingTillNow`
+
   Или сделайте так:
 
-        -m hn1 -t "test1::;test2::;test3::" --replication-peer="zk5-hbrpl2;zk1-hbrpl2;zk5-hbrpl2:2181:/hbase-unsecure" -everythingTillNow
-
+  `-m hn1 -t "test1::;test2::;test3::" --replication-peer="zk5-hbrpl2;zk1-hbrpl2;zk5-hbrpl2:2181:/hbase-unsecure" -everythingTillNow`
 
 - **Копирование определенных таблиц с указанным интервалом времени**:
 
-        -m hn1 -t "table1:0:452256397;table2:14141444:452256397" -p "zk5-hbrpl2;zk1-hbrpl2;zk5-hbrpl2:2181:/hbase-unsecure"
-
+  `-m hn1 -t "table1:0:452256397;table2:14141444:452256397" -p "zk5-hbrpl2;zk1-hbrpl2;zk5-hbrpl2:2181:/hbase-unsecure"`
 
 ## <a name="disable-replication"></a>Отключение репликации
 
 Чтобы отключить репликацию, используйте другой пример действия сценария из [GitHub](https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_disable_replication.sh). Выполните ту же процедуру, описанную в разделе [Включение репликации](#enable-replication) для вызова действия сценария. Используйте следующие параметры:
 
-    -m hn1 -s <source hbase cluster name> -sp <source cluster Ambari password> <-all|-t "table1;table2;...">  
+`-m hn1 -s <source hbase cluster name> -sp <source cluster Ambari password> <-all|-t "table1;table2;...">`
 
 Раздел `print_usage()`[скрипта](https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_disable_replication.sh) содержит подробное описание параметров.
 
@@ -391,20 +391,21 @@ sudo service bind9 status
 
 - **Отключение репликации для всех таблиц:**
 
-        -m hn1 -s <source hbase cluster name> -sp Mypassword\!789 -all
-  или диспетчер конфигурации служб
+  `-m hn1 -s <source hbase cluster name> -sp Mypassword\!789 -all`
 
-        --src-cluster=<source hbase cluster name> --dst-cluster=<destination hbase cluster name> --src-ambari-user=<source cluster Ambari user name> --src-ambari-password=<source cluster Ambari password>
+  или
+
+  `--src-cluster=<source hbase cluster name> --dst-cluster=<destination hbase cluster name> --src-ambari-user=<source cluster Ambari user name> --src-ambari-password=<source cluster Ambari password>`
 
 - **Отключение репликации для определенных таблиц (table1, table2 и table3):**
 
-        -m hn1 -s <source hbase cluster name> -sp <source cluster Ambari password> -t "table1;table2;table3"
+  `-m hn1 -s <source hbase cluster name> -sp <source cluster Ambari password> -t "table1;table2;table3"`
 
 > [!NOTE]
 > Если планируется удалить целевой кластер, убедитесь, что он удален из однорангового списка исходного кластера. Это можно сделать, выполнив команду remove_peer "1" в оболочке HBase в исходном кластере. Сбой в исходном кластере может работать неправильно.
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как настроить репликацию Apache HBase в виртуальной сети или между двумя виртуальными сетями. Дополнительные сведения об HDInsight и Apache HBase см.в следующих статьях:
 

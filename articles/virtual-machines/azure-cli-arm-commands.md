@@ -2,18 +2,16 @@
 title: Классические команды интерфейса командной строки Azure
 description: Команды интерфейса командной строки Azure (CLI) для управления ресурсами.
 author: cynthn
-manager: gwallace
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 04/18/2017
 ms.author: cynthn
-ms.openlocfilehash: ad213cc02f707609a837ea66b79e51c6f2a617f8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: a3e5fd1a6934d246463e3fd5ad24db7079ca088d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79250885"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84678432"
 ---
 # <a name="azure-classic-cli-commands"></a>Классические команды интерфейса командной строки Azure 
 
@@ -1679,7 +1677,7 @@ ms.locfileid: "79250885"
     storage table policy set [options] [table] [name]
     storage table policy delete [options] [table] [name]
 
-## <a name="tags"></a>Теги
+## <a name="tags"></a>Tags
 **Добавление тега**
 
     tag create [options] <name> <value>

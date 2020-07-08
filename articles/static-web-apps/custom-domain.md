@@ -7,12 +7,11 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: buhollan
-ms.openlocfilehash: 8425c2c1f653d874d24053a12d511c64a3b9ee9d
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 8e832f57053cb950f705875f2895a9197cc7c83e
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83655238"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85960305"
 ---
 # <a name="setup-a-custom-domain-in-azure-static-web-apps-preview"></a>Настройка личного домена в предварительной версии Статических веб-приложений Azure
 
@@ -29,11 +28,11 @@ ms.locfileid: "83655238"
 
 Существует несколько различных типов конфигураций DNS, доступных для приложения.
 
-| Если требуется                            | То                                                |
-| ----------------------------------------- | --------------------------------------------------- |
-| Включена поддержка `www.example.com`.                 | [Сопоставьте запись CNAME](#map-a-cname-record).           |
-| Включена поддержка `example.com`.                     | [Настройте корневой домен](#configure-a-root-domain) |
-| Направить все поддомены по адресу `www.example.com` | [Сопоставьте подстановочный знак](#map-a-wildcard-domain)                   |
+| Если требуется                                 | То                                                |
+| -----------------------------------------------| --------------------------------------------------- |
+| Поддержка `www.example.com` или`blog.example.net`| [Сопоставьте запись CNAME](#map-a-cname-record).           |
+| Включена поддержка `example.com`.                          | [Настройте корневой домен](#configure-a-root-domain) |
+| Направить все поддомены по адресу `www.example.com`      | [Сопоставьте подстановочный знак](#map-a-wildcard-domain)            |
 
 ## <a name="map-a-cname-record"></a>Сопоставление записи CNAME
 

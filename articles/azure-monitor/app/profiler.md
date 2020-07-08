@@ -6,12 +6,11 @@ author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: f0702c09d2803507f07f74d97767c781825bf34f
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
-ms.translationtype: HT
+ms.openlocfilehash: 9dffa4d32980a16377f33a4ddb23987b3c2f3dd5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83778559"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84678598"
 ---
 # <a name="profile-live-azure-app-service-apps-with-application-insights"></a>Профилирование динамических приложений службы приложений Azure с помощью Application Insights
 
@@ -25,9 +24,9 @@ ms.locfileid: "83778559"
 
 Application Insights Profiler устанавливается в составе среды выполнения служб приложений. Ниже показано, как включить его для своей Службы приложений. Выполните эти действия, даже если вы включили пакет SDK для App Insights в свое приложение во время сборки.
 
-1. Установите параметр "Всегда включена" для службы приложений. Этот параметр можно изменить на странице "Конфигурация службы приложений" в разделе "Общие параметры".
-1. Перейдите к панели **служб приложений** на портале Azure.
-1. Выберите **Параметры > Application Insights**.
+1. Перейдите на панель управления Azure для службы приложений.
+1. Установите параметр "Всегда включена" для службы приложений. Этот параметр можно найти в разделе **Параметры**, страница **конфигурации** (см. снимок экрана на следующем шаге) и перейдите на вкладку **Общие параметры** .
+1. Перейдите в раздел **параметры > Application Insights** странице.
 
    ![Включение Application Insights на портале служб приложений](./media/profiler/AppInsights-AppServices.png)
 
@@ -50,7 +49,7 @@ Application Insights Profiler можно включить, создав пара
 |DiagnosticServices_EXTENSION_VERSION | ~3 |
 
 
-Эти значения можно установить с помощью [шаблонов Azure Resource Manager](../../azure-monitor/app/azure-web-apps.md#app-service-application-settings-with-azure-resource-manager), [Azure Powershell](https://docs.microsoft.com/powershell/module/az.websites/set-azwebapp), [Azure CLI](https://docs.microsoft.com/cli/azure/webapp/config/appsettings?view=azure-cli-latest).
+Эти значения можно задать с помощью [шаблонов Azure Resource Manager](../../azure-monitor/app/azure-web-apps.md#app-service-application-settings-with-azure-resource-manager), [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.websites/set-azwebapp) [Azure CLI](https://docs.microsoft.com/cli/azure/webapp/config/appsettings?view=azure-cli-latest).
 
 ### <a name="enabling-profiler-for-other-clouds-manually"></a>Включение Profiler для других облаков вручную
 

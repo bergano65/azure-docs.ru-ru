@@ -1,23 +1,22 @@
 ---
-title: Python
+title: Выполнение скрипта Python в конструкторе
 titleSuffix: Azure Machine Learning
 description: Сведения об использовании Python в конструкторе Машинного обучения Azure для преобразования данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 author: peterclu
 ms.author: peterlu
 ms.date: 02/28/2020
-ms.custom: designer
-ms.openlocfilehash: e27844f9f534ea4db1aba53c12fb3947e7269846
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.custom: designer, tracking-python
+ms.openlocfilehash: 31028ba0417f312aa0caaf49cb4b2d432f89979f
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83644472"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86041019"
 ---
-# <a name="execute-python-code-in-azure-machine-learning-designer"></a>Выполнение кода Python в конструкторе Машинного обучения Azure
+# <a name="run-python-code-in-azure-machine-learning-designer"></a>Выполнение кода Python в конструкторе Машинное обучение Azure
 
 Из этой статьи вы узнаете, как использовать модуль [Выполнение сценария Python](algorithm-module-reference/execute-python-script.md) для добавления настраиваемой логики в конструктор Машинного обучения Azure. В следующем примере используется библиотека Pandas для простого проектирования признаков.
 

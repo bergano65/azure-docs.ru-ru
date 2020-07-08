@@ -3,22 +3,21 @@ title: Функции шаблонов — сравнение
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для сравнения значений.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: 15afc4d721c6577de9fe3e78483fdbfae5b493c6
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
-ms.translationtype: MT
+ms.openlocfilehash: 01d66f43cf73dcc9228118db5a9b6149b19ee66d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82203783"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84677837"
 ---
 # <a name="comparison-functions-for-arm-templates"></a>Функции сравнения для шаблонов ARM
 
 Диспетчер ресурсов предоставляет несколько функций для выполнения сравнений в шаблонах Azure Resource Manager (ARM).
 
-* [объединение](#coalesce)
+* [coalesce](#coalesce)
 * [equals](#equals)
 * [greater](#greater)
 * [greaterOrEquals](#greaterorequals)
-* [столь](#less)
+* [less](#less)
 * [lessOrEquals](#lessorequals)
 
 ## <a name="coalesce"></a>coalesce
@@ -29,7 +28,7 @@ ms.locfileid: "82203783"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |целое число, строка, массив или объект |Первое значение, которое проверяется на соответствие значению null. |
 | дополнительные аргументы |Нет |целое число, строка, массив или объект |Дополнительные значения, которые проверяются на соответствие значению null. |
@@ -44,7 +43,7 @@ ms.locfileid: "82203783"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "objectToTest": {
@@ -88,12 +87,12 @@ ms.locfileid: "82203783"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | stringOutput | Строка | default |
 | intOutput | Int | 1 |
 | objectOutput | Объект | {"first": "default"} |
-| arrayOutput | Массив | [1] |
+| arrayOutput | Массив |  [1] |
 | emptyOutput | Bool | True |
 
 ## <a name="equals"></a>equals (равно)
@@ -104,7 +103,7 @@ ms.locfileid: "82203783"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |целое число, строка, массив или объект |Первое значение, которое необходимо проверить на равенство. |
 | arg2 |Да |целое число, строка, массив или объект |Второе значение, которое необходимо проверить на равенство. |
@@ -113,7 +112,7 @@ ms.locfileid: "82203783"
 
 Возвращает результат **True**, если значения равны. В противном случае — **False**.
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Функция equals часто используется с элементом `condition`, чтобы проверить, развернут ли ресурс.
 
@@ -138,7 +137,7 @@ ms.locfileid: "82203783"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "firstInt": {
@@ -199,7 +198,7 @@ ms.locfileid: "82203783"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | checkInts | Bool | True |
 | checkStrings | Bool | True |
@@ -210,7 +209,7 @@ ms.locfileid: "82203783"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "resources": [
     ],
@@ -225,7 +224,7 @@ ms.locfileid: "82203783"
 
 Выходные данные из предыдущего примера:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | checkNotEquals | Bool | True |
 
@@ -237,7 +236,7 @@ ms.locfileid: "82203783"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |целое число или строка |Первое значение для сравнения (является ли большим). |
 | arg2 |Да |целое число или строка |Второе значение для сравнения (является ли большим). |
@@ -252,7 +251,7 @@ ms.locfileid: "82203783"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "firstInt": {
@@ -289,7 +288,7 @@ ms.locfileid: "82203783"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | checkInts | Bool | False |
 | checkStrings | Bool | True |
@@ -302,7 +301,7 @@ ms.locfileid: "82203783"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |целое число или строка |Первое значение для сравнения (является ли большим или равным). |
 | arg2 |Да |целое число или строка |Второе значение для сравнения (является ли большим или равным). |
@@ -317,7 +316,7 @@ ms.locfileid: "82203783"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "firstInt": {
@@ -354,7 +353,7 @@ ms.locfileid: "82203783"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | checkInts | Bool | False |
 | checkStrings | Bool | True |
@@ -367,7 +366,7 @@ ms.locfileid: "82203783"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |целое число или строка |Первое значение для сравнения (является ли меньшим). |
 | arg2 |Да |целое число или строка |Второе значение для сравнения (является ли меньшим). |
@@ -382,7 +381,7 @@ ms.locfileid: "82203783"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "firstInt": {
@@ -419,7 +418,7 @@ ms.locfileid: "82203783"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | checkInts | Bool | True |
 | checkStrings | Bool | False |
@@ -432,7 +431,7 @@ ms.locfileid: "82203783"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |целое число или строка |Первое значение для сравнения (является ли меньшим или равным). |
 | arg2 |Да |целое число или строка |Второе значение для сравнения (является ли меньшим или равным). |
@@ -447,7 +446,7 @@ ms.locfileid: "82203783"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "firstInt": {
@@ -484,7 +483,7 @@ ms.locfileid: "82203783"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | checkInts | Bool | True |
 | checkStrings | Bool | False |

@@ -3,12 +3,11 @@ title: Функции шаблонов — числовые
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для работы с числами.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: dc15ade453fc5ea4dc031ced0377892f4f8cf27d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 00b44d971a487a0bbec27f3fc2d0746cedd6f874
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82192354"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84677922"
 ---
 # <a name="numeric-functions-for-arm-templates"></a>Числовые функции для шаблонов ARM
 
@@ -20,10 +19,10 @@ ms.locfileid: "82192354"
 * [float](#float)
 * [int](#int)
 * [max](#max)
-* [минимум](#min)
-* [взят](#mod)
+* [min](#min)
+* [mod (модуль)](#mod)
 * [mul](#mul)
-* [Директор](#sub)
+* [sub](#sub)
 
 ## <a name="add"></a>add
 
@@ -33,7 +32,7 @@ ms.locfileid: "82192354"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 |операнд1 |Да |INT |Первое слагаемое. |
 |операнд2 |Да |INT |Второе слагаемое. |
@@ -48,7 +47,7 @@ ms.locfileid: "82192354"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "first": {
@@ -79,7 +78,7 @@ ms.locfileid: "82192354"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | addResult | Int | 8 |
 
@@ -91,12 +90,12 @@ ms.locfileid: "82192354"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | loopName | Нет | строка | Имя цикла для получения итерации. |
 | offset |Нет |INT |Число, добавляемое к отсчитываемому от нуля значению итерации. |
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Эта функция всегда используется с объектом **copy**. Если значение **offset** не указано, возвращается текущее значение итерации. Значение итерации начинается с нуля.
 
@@ -156,7 +155,7 @@ ms.locfileid: "82192354"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | операнд1 |Да |INT |Делимое. |
 | операнд2 |Да |INT |Делитель. Не может быть равно 0. |
@@ -171,7 +170,7 @@ ms.locfileid: "82192354"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "first": {
@@ -202,7 +201,7 @@ ms.locfileid: "82192354"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | divResult | Int | 2 |
 
@@ -214,7 +213,7 @@ ms.locfileid: "82192354"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |строка или целое число |Значение, которое необходимо преобразовать в число с плавающей запятой. |
 
@@ -248,7 +247,7 @@ ms.locfileid: "82192354"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | valueToConvert |Да |строка или целое число |Значение, которое необходимо преобразовать в целое число. |
 
@@ -262,7 +261,7 @@ ms.locfileid: "82192354"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "stringToConvert": {
@@ -283,7 +282,7 @@ ms.locfileid: "82192354"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | intResult | Int | 4 |
 
@@ -295,7 +294,7 @@ ms.locfileid: "82192354"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив целых чисел или разделенный запятыми список целых чисел |Коллекция, для которой необходимо получить максимальное значение. |
 
@@ -309,7 +308,7 @@ ms.locfileid: "82192354"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "arrayToTest": {
@@ -333,12 +332,12 @@ ms.locfileid: "82192354"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Int | 5 |
 | intOutput | Int | 5 |
 
-## <a name="min"></a>Min
+## <a name="min"></a>мин
 
 `min (arg1)`
 
@@ -346,7 +345,7 @@ ms.locfileid: "82192354"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив целых чисел или разделенный запятыми список целых чисел |Коллекция, для которой необходимо получить минимальное значение. |
 
@@ -360,7 +359,7 @@ ms.locfileid: "82192354"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "arrayToTest": {
@@ -384,7 +383,7 @@ ms.locfileid: "82192354"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Int | 0 |
 | intOutput | Int | 0 |
@@ -397,7 +396,7 @@ ms.locfileid: "82192354"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | операнд1 |Да |INT |Делимое. |
 | операнд2 |Да |INT |Число, используемое для деления, не может быть равно 0. |
@@ -412,7 +411,7 @@ ms.locfileid: "82192354"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "first": {
@@ -443,7 +442,7 @@ ms.locfileid: "82192354"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | modResult | Int | 1 |
 
@@ -455,7 +454,7 @@ ms.locfileid: "82192354"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | операнд1 |Да |INT |Первый множитель. |
 | операнд2 |Да |INT |Второй множитель. |
@@ -470,7 +469,7 @@ ms.locfileid: "82192354"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "first": {
@@ -501,7 +500,7 @@ ms.locfileid: "82192354"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | mulResult | Int | 15 |
 
@@ -513,7 +512,7 @@ ms.locfileid: "82192354"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | операнд1 |Да |INT |Уменьшаемое. |
 | операнд2 |Да |INT |Вычитаемое. |
@@ -528,7 +527,7 @@ ms.locfileid: "82192354"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "first": {
@@ -559,11 +558,11 @@ ms.locfileid: "82192354"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | subResult | Int | 4 |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Описание разделов в шаблоне Azure Resource Manager см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).
-* Чтобы выполнить итерацию указанного числа раз при создании типа ресурса, см. раздел [Создание нескольких экземпляров ресурсов в Azure Resource Manager](copy-resources.md).
+* Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](copy-resources.md).

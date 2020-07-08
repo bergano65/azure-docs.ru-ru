@@ -3,12 +3,11 @@ title: Key Vaultный секрет с помощью шаблона
 description: Демонстрирует передачу секретного кода из хранилища ключей в виде параметра при развертывании.
 ms.topic: conceptual
 ms.date: 01/06/2020
-ms.openlocfilehash: d21a7d727091b427fee59e22db6a77a495a4eab7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: eb57e680090a38a5be725daa7b3a118039aa35f6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81458272"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84677871"
 ---
 # <a name="use-azure-key-vault-to-pass-secure-parameter-value-during-deployment"></a>Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания
 
@@ -18,7 +17,7 @@ ms.locfileid: "81458272"
 
 ## <a name="deploy-key-vaults-and-secrets"></a>Развертывание хранилищ Key Vault и секретов
 
-Чтобы получить доступ к хранилищу ключей во время развертывания `enabledForTemplateDeployment` шаблона, задайте для хранилища `true`ключей значение.
+Чтобы получить доступ к хранилищу ключей во время развертывания шаблона, задайте для `enabledForTemplateDeployment` хранилища ключей значение `true` .
 
 Если у вас уже есть Key Vault, убедитесь, что он разрешает развертывание шаблонов.
 
@@ -92,14 +91,14 @@ Set-AzKeyVaultAccessPolicy `
 Дополнительные сведения о создании хранилищ ключей и добавлении секретов см. в следующих статьях:
 
 - [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью Azure CLI](../../key-vault/secrets/quick-create-cli.md)
-- [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью PowerShell](../../key-vault/secrets/quick-create-powershell.md)
+- [Установка и получение секрета с помощью PowerShell](../../key-vault/secrets/quick-create-powershell.md)
 - [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью портала Azure](../../key-vault/secrets/quick-create-portal.md)
 - [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения .NET](../../key-vault/secrets/quick-create-net.md)
 - [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения Node](../../key-vault/secrets/quick-create-node.md)
 
 ## <a name="grant-access-to-the-secrets"></a>Предоставление доступа к секретам
 
-Пользователь, который развертывает шаблон, должен иметь `Microsoft.KeyVault/vaults/deploy/action` разрешение на доступ к области группы ресурсов и хранилища ключей. Оно имеется у ролей [Владелец](../../role-based-access-control/built-in-roles.md#owner) и [Участник](../../role-based-access-control/built-in-roles.md#contributor). Если вы создали хранилище ключей, вы являетесь владельцем и имеете разрешение.
+Пользователь, который развертывает шаблон, должен иметь разрешение на `Microsoft.KeyVault/vaults/deploy/action` доступ к области группы ресурсов и хранилища ключей. Оно имеется у ролей [Владелец](../../role-based-access-control/built-in-roles.md#owner) и [Участник](../../role-based-access-control/built-in-roles.md#contributor). Если вы создали хранилище ключей, вы являетесь владельцем и имеете разрешение.
 
 Ниже показано, как создать роль с минимальным разрешением и назначить пользователя
 
@@ -163,7 +162,7 @@ Set-AzKeyVaultAccessPolicy `
 
 ```json
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "adminLogin": {
@@ -201,7 +200,7 @@ Set-AzKeyVaultAccessPolicy `
 
 ```json
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
       "adminLogin": {
@@ -267,7 +266,7 @@ New-AzResourceGroupDeployment `
 
 ```json
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
       "location": {
@@ -314,7 +313,7 @@ New-AzResourceGroupDeployment `
           "scope": "inner"
         },
         "template": {
-          "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "1.0.0.0",
           "parameters": {
             "adminLogin": {
@@ -373,7 +372,7 @@ New-AzResourceGroupDeployment `
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о хранилищах ключей см. в статье [Что такое хранилище ключей Azure?](../../key-vault/general/overview.md)
 - Полные примеры использования ссылок на секреты ключей приведены [здесь](https://github.com/rjmax/ArmExamples/tree/master/keyvaultexamples).

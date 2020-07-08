@@ -6,12 +6,11 @@ ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: brendm
-ms.openlocfilehash: 83b223ab2195516492d55ac85be6e7db0dffbd98
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 57850b45820ec259337a8ad5b67bfebfd6762c24
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82176793"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84790591"
 ---
 # <a name="analyze-logs-and-metrics-with-diagnostics-settings"></a>Анализ журналов и метрик с помощью параметров диагностики
 
@@ -28,7 +27,7 @@ ms.locfileid: "82176793"
 
 ## <a name="logs"></a>Журналы
 
-|Журнал | Описание |
+|Журнал | Описание: |
 |----|----|
 | **аппликатионконсоле** | Журнал консоли для всех приложений клиента. |
 | **системлогс** | В настоящее время в этой категории регистрируются только журналы [сервера конфигурации "Весна Cloud Configuration](https://cloud.spring.io/spring-cloud-config/reference/html/#_spring_cloud_config_server) ". |
@@ -44,12 +43,12 @@ ms.locfileid: "82176793"
 1. В портал Azure перейдите к своему экземпляру Azure весны в облаке.
 1. Выберите **параметры диагностики** и нажмите кнопку **Добавить параметр диагностики**.
 1. Введите имя параметра, а затем выберите место, куда нужно отправить журналы. Можно выбрать любое сочетание следующих трех параметров.
-    * **Архивация в учетную запись хранения**
-    * **Поток в концентратор событий**
-    * **Отправка в Log Analytics**
+    * **Архивировать в учетной записи хранения.**
+    * **Передать в концентратор событий.**
+    * **Отправить в Log Analytics.**
 
 1. Выберите категорию журнала и категорию метрик, которые требуется отслеживать, а затем укажите время хранения (в днях). Время хранения применяется только к учетной записи хранения.
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 > [!NOTE]
 > 1. Между созданием журналов и метрик и их появлением в учетной записи хранения, концентраторе событий или Log Analytics может существовать промежуток в течение 15 минут.
@@ -174,3 +173,31 @@ AppPlatformLogsforSpring
 ### <a name="learn-more-about-querying-application-logs"></a>Дополнительные сведения о запросах журналов приложений
 
 Azure Monitor предоставляет обширную поддержку для запросов журналов приложений с помощью Log Analytics. Дополнительные сведения об этой службе см. в разделе Начало [работы с запросами журналов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md). Дополнительные сведения о создании запросов для анализа журналов приложений см. в разделе [Обзор запросов журналов в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
+
+## <a name="frequently-asked-questions-faq"></a>Вопросы и ответы
+
+### <a name="how-to-convert-multi-line-java-stack-traces-into-a-single-line"></a>Как преобразовать многострочные трассировки стека Java в одну строку?
+
+Существует обходной путь для преобразования многострочных трассировок стека в одну строку. Вы можете изменить выходные данные журнала Java, чтобы переформатировать сообщения трассировки стека, заменив символы новой строки маркером. При использовании библиотеки Java Logback можно переформатировать сообщения трассировки стека, добавив `%replace(%ex){'[\r\n]+', '\\n'}%nopex` следующим образом:
+
+```xml
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                level: %level, message: "%logger{36}: %msg", exceptions: "%replace(%ex){'[\r\n]+', '\\n'}%nopex"%n
+            </pattern>
+        </encoder>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
+```
+После этого снова можно заменить маркер символами новой строки в Log Analytics, как показано ниже:
+
+```sql
+AppPlatformLogsforSpring
+| extend Log = array_strcat(split(Log, '\\n'), '\n')
+```
+Вы можете использовать ту же стратегию для других библиотек журналов Java.

@@ -9,12 +9,11 @@ ms.date: 05/01/2020
 ms.author: normesta
 ms.subservice: logs
 ms.custom: monitoring
-ms.openlocfilehash: 481406b02d7d864dd16ac42918ae1aa2dea0b145
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
-ms.translationtype: HT
+ms.openlocfilehash: 12df9566dd3ddfedd1f4553ad8877258d840858c
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84195224"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85960220"
 ---
 # <a name="azure-storage-monitoring-data-reference"></a>Справочные материалы по данным мониторинга службы хранилища Azure
 
@@ -32,11 +31,15 @@ ms.locfileid: "84195224"
 
 #### <a name="account-level"></a>На уровне учетной записи
 
+В этой таблице показаны [метрики уровня учетной записи](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftstoragestorageaccounts).
+
 | Метрика | Описание |
 | ------------------- | ----------------- |
 | UsedCapacity | Объем хранилища, используемый учетной записью хранения. Для стандартных учетных записей хранения это общая емкость, используемая большим двоичным объектом, таблицей, файлом или очередью. Для учетных записей хранения уровня "Премиум" и учетных записей хранения больших двоичных объектов эта емкость сопоставима с емкостью метрики BlobCapacity. <br/><br/> Единица измерения: Байты <br/> Тип агрегирования: Среднее <br/> Пример значения. 1024 |
 
 #### <a name="blob-storage"></a>Хранилище BLOB-объектов
+
+В этой таблице показаны [метрики хранилища BLOB-объектов](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftstoragestorageaccountsblobservices).
 
 | Метрика | Описание |
 | ------------------- | ----------------- |
@@ -47,6 +50,8 @@ ms.locfileid: "84195224"
 
 #### <a name="table-storage"></a>Хранилище таблиц
 
+В этой таблице показаны [метрики хранилища таблиц](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftstoragestorageaccountstableservices).
+
 | Метрика | Описание |
 | ------------------- | ----------------- |
 | TableCapacity | Объем хранилища таблиц, используемый учетной записью хранения. <br/><br/> Единица измерения: Байты <br/> Тип агрегирования: Среднее <br/> Пример значения. 1024 |
@@ -55,13 +60,17 @@ ms.locfileid: "84195224"
 
 #### <a name="queue-storage"></a>Хранилище очередей
 
+В этой таблице показаны [метрики хранилища очередей](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftstoragestorageaccountsfileservices).
+
 | Метрика | Описание |
 | ------------------- | ----------------- |
 | QueueCapacity | Объем хранилища очередей, используемый учетной записью хранения. <br/><br/> Единица измерения: Байты <br/> Тип агрегирования: Среднее <br/> Пример значения. 1024 |
 | QueueCount   | Количество очередей в учетной записи хранения. <br/><br/> Единица измерения: Count <br/> Тип агрегирования: Среднее <br/> Пример значения. 1024 |
-| QueueMessageCount | Количество действительных сообщений очереди в учетной записи хранения. <br/><br/>Единица измерения: Count <br/> Тип агрегирования: Среднее <br/> Пример значения. 1024 |
+| QueueMessageCount | Приблизительное количество сообщений очередей в службе очередей учетной записи хранения. <br/><br/>Единица измерения: Count <br/> Тип агрегирования: Среднее <br/> Пример значения. 1024 |
 
 #### <a name="file-storage"></a>Хранилище файлов
+
+В этой таблице показаны [метрики хранилища файлов](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftstoragestorageaccountsqueueservices).
 
 | Метрика | Описание |
 | ------------------- | ----------------- |
@@ -128,7 +137,7 @@ ms.locfileid: "84195224"
 }
 ```
 
-| Свойство | Описание |
+| Свойство. | Описание |
 |:--- |:---|
 |**time** | Время получения запроса хранилищем (время в формате UTC). Например: `2018/11/08 21:09:36.6900118`.|
 |**resourceId** | Идентификатор ресурса учетной записи хранения. Например: `/subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/`<br>`myresourcegroup/providers/Microsoft.Storage/storageAccounts/mystorageaccount/storageAccounts/blobServices/default`|

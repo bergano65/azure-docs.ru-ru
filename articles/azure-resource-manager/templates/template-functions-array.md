@@ -3,32 +3,31 @@ title: Функции шаблонов — массивы
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для работы с массивами.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: f34ba74847ac394e37e6ef33f859304128daacde
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
-ms.translationtype: MT
+ms.openlocfilehash: 4d4ee96888aee5421d88b5371ac25a69c0af4fd7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82203817"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84677854"
 ---
 # <a name="array-functions-for-arm-templates"></a>Функции массивов для шаблонов ARM
 
 Диспетчер ресурсов предоставляет несколько функций для работы с массивами в шаблоне Azure Resource Manager (ARM).
 
-* [inArray](#array)
-* [сцеплен](#concat)
-* [содержащих](#contains)
+* [array](#array).
+* [concat](#concat)
+* [contains](#contains)
 * [createArray](#createarray)
-* [пустых](#empty)
-* [началь](#first)
-* [крайне](#intersection)
-* [Последняя](#last)
+* [empty](#empty)
+* [first](#first)
+* [intersection](#intersection)
+* [last](#last)
 * [length](#length)
 * [max](#max)
-* [минимум](#min)
-* [разнообраз](#range)
-* [сразу](#skip)
-* [нимают](#take)
-* [наборов](#union)
+* [min](#min)
+* [range](#range)
+* [skip](#skip)
+* [take](#take)
+* [union](#union)
 
 Чтобы получить массив строковых значений, разделенных определенным значением, используйте [split](template-functions-string.md#split).
 
@@ -40,7 +39,7 @@ ms.locfileid: "82203817"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | convertToArray |Да |целое число, строка, массив или объект |Значение, которое необходимо преобразовать в массив. |
 
@@ -54,7 +53,7 @@ ms.locfileid: "82203817"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "intToConvert": {
@@ -91,9 +90,9 @@ ms.locfileid: "82203817"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
-| intOutput | Массив | [1] |
+| intOutput | Массив |  [1] |
 | stringOutput | Массив | ["efgh"] |
 | objectOutput | Массив | [{"a": "b", "c": "d"}] |
 
@@ -105,10 +104,10 @@ ms.locfileid: "82203817"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив или строка |Первый массив или строка для объединения. |
-| дополнительные аргументы |Нет |массив или строка |Дополнительные массивы или строки в последовательном порядке для объединения. |
+| дополнительные аргументы |нет |массив или строка |Дополнительные массивы или строки в последовательном порядке для объединения. |
 
 Эта функция может принимать любое количество аргументов, а также строки или массивы параметров. Однако нельзя указать как массивы, так и строки для параметров. Массивы объединяются только с другими массивами.
 
@@ -122,7 +121,7 @@ ms.locfileid: "82203817"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "firstArray": {
@@ -155,7 +154,7 @@ ms.locfileid: "82203817"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | return | Массив | ["1-1", "1-2", "1-3", "2-1", "2-2", "2-3"] |
 
@@ -163,7 +162,7 @@ ms.locfileid: "82203817"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "prefix": {
@@ -183,11 +182,11 @@ ms.locfileid: "82203817"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | concatOutput | Строка | prefix-5yj4yjf5mbg72 |
 
-## <a name="contains"></a>contains
+## <a name="contains"></a>содержит
 
 `contains(container, itemToFind)`
 
@@ -195,7 +194,7 @@ ms.locfileid: "82203817"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | контейнер |Да |массив, объект или строка |Значение, содержащее значение, которое необходимо найти. |
 | itemToFind |Да |строка или целое число |Значение, которое необходимо найти. |
@@ -210,7 +209,7 @@ ms.locfileid: "82203817"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "stringToTest": {
@@ -259,7 +258,7 @@ ms.locfileid: "82203817"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | stringTrue | Bool | True |
 | stringFalse | Bool | False |
@@ -276,10 +275,10 @@ ms.locfileid: "82203817"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |Строка, целое число, массив или объект |Первое значение в массиве. |
-| дополнительные аргументы |Нет |Строка, целое число, массив или объект |Дополнительные значения в массиве. |
+| дополнительные аргументы |нет |Строка, целое число, массив или объект |Дополнительные значения в массиве. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -291,7 +290,7 @@ ms.locfileid: "82203817"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "objectToTest": {
@@ -328,14 +327,14 @@ ms.locfileid: "82203817"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | stringArray | Массив | ["a", "b", "c"] |
 | intArray | Массив | [1, 2, 3] |
 | objectArray | Массив | [{"one": "a", "two": "b", "three": "c"}] |
 | arrayArray | Массив | [["one", "two", "three"]] |
 
-## <a name="empty"></a>пустых
+## <a name="empty"></a>empty
 
 `empty(itemToTest)`
 
@@ -343,7 +342,7 @@ ms.locfileid: "82203817"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | itemToTest |Да |массив, объект или строка |Значение, которое необходимо проверить на наличие содержимого. |
 
@@ -357,7 +356,7 @@ ms.locfileid: "82203817"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "testArray": {
@@ -394,7 +393,7 @@ ms.locfileid: "82203817"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayEmpty | Bool | True |
 | objectEmpty | Bool | True |
@@ -408,7 +407,7 @@ ms.locfileid: "82203817"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив или строка |Значение, из которого необходимо извлечь первый элемент или знак. |
 
@@ -422,7 +421,7 @@ ms.locfileid: "82203817"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "arrayToTest": {
@@ -447,7 +446,7 @@ ms.locfileid: "82203817"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Строка | one |
 | stringOutput | Строка | O |
@@ -460,11 +459,11 @@ ms.locfileid: "82203817"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив или объект |Первое значение для поиска общих элементов. |
 | arg2 |Да |массив или объект |Второе значение для поиска общих элементов. |
-| дополнительные аргументы |Нет |массив или объект |Дополнительные значения для поиска общих элементов. |
+| дополнительные аргументы |нет |массив или объект |Дополнительные значения для поиска общих элементов. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -476,7 +475,7 @@ ms.locfileid: "82203817"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "firstObject": {
@@ -513,7 +512,7 @@ ms.locfileid: "82203817"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | objectOutput | Объект | {"one": "a", "three": "c"} |
 | arrayOutput | Массив | ["two", "three"] |
@@ -526,7 +525,7 @@ ms.locfileid: "82203817"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив или строка |Значение, из которого необходимо извлечь последний элемент или знак. |
 
@@ -540,7 +539,7 @@ ms.locfileid: "82203817"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "arrayToTest": {
@@ -565,7 +564,7 @@ ms.locfileid: "82203817"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Строка | three |
 | stringOutput | Строка | Д. |
@@ -578,7 +577,7 @@ ms.locfileid: "82203817"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив, строка или объект |Массив, используемый для получения числа элементов, строки, используемой для получения числа символов, или объекта, используемого для получения числа свойств корневого уровня. |
 
@@ -592,7 +591,7 @@ ms.locfileid: "82203817"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "arrayToTest": {
@@ -640,7 +639,7 @@ ms.locfileid: "82203817"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayLength | Int | 3 |
 | stringLength | Int | 13 |
@@ -665,7 +664,7 @@ ms.locfileid: "82203817"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив целых чисел или разделенный запятыми список целых чисел |Коллекция, для которой необходимо получить максимальное значение. |
 
@@ -679,7 +678,7 @@ ms.locfileid: "82203817"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "arrayToTest": {
@@ -703,12 +702,12 @@ ms.locfileid: "82203817"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Int | 5 |
 | intOutput | Int | 5 |
 
-## <a name="min"></a>Min
+## <a name="min"></a>мин
 
 `min(arg1)`
 
@@ -716,7 +715,7 @@ ms.locfileid: "82203817"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив целых чисел или разделенный запятыми список целых чисел |Коллекция, для которой необходимо получить минимальное значение. |
 
@@ -730,7 +729,7 @@ ms.locfileid: "82203817"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "arrayToTest": {
@@ -754,7 +753,7 @@ ms.locfileid: "82203817"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Int | 0 |
 | intOutput | Int | 0 |
@@ -767,7 +766,7 @@ ms.locfileid: "82203817"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | startIndex |Да |INT |Первое целое число в массиве. Сумма значений startIndex и count не должна превышать 2147483647. |
 | count |Да |INT |Количество целых чисел в массиве. Значение должно быть неотрицательным целым числом до 10000. |
@@ -782,7 +781,7 @@ ms.locfileid: "82203817"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "startingInt": {
@@ -806,7 +805,7 @@ ms.locfileid: "82203817"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | rangeOutput | Массив | [5, 6, 7] |
 
@@ -818,7 +817,7 @@ ms.locfileid: "82203817"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | originalValue |Да |массив или строка |Массив или строка, используемые для пропуска. |
 | numberToSkip |Да |INT |Число элементов или знаков, которые необходимо пропустить. Если это значение меньше или равно 0, то возвращаются все элементы или знаки в значении. Если это значение превышает длину массива или строки, то возвращается пустой массив или пустая строка. |
@@ -833,7 +832,7 @@ ms.locfileid: "82203817"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "testArray": {
@@ -873,7 +872,7 @@ ms.locfileid: "82203817"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Массив | ["three"] |
 | stringOutput | Строка | two three |
@@ -886,7 +885,7 @@ ms.locfileid: "82203817"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | originalValue |Да |массив или строка |Массив или строка, из которых берутся элементы. |
 | numberToTake |Да |INT |Число элементов или знаков, которые необходимо взять. Если это значение меньше или равно 0, то возвращается пустой массив или строка. Если это значение превышает длину заданного массива или строки, то возвращаются все элементы в массиве или строке. |
@@ -901,7 +900,7 @@ ms.locfileid: "82203817"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "testArray": {
@@ -941,7 +940,7 @@ ms.locfileid: "82203817"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Массив | ["one", "two"] |
 | stringOutput | Строка | on |
@@ -954,11 +953,11 @@ ms.locfileid: "82203817"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив или объект |Первое значение для объединения элементов. |
 | arg2 |Да |массив или объект |Второе значение для объединения элементов. |
-| дополнительные аргументы |Нет |массив или объект |Дополнительные значения для объединения элементов. |
+| дополнительные аргументы |нет |массив или объект |Дополнительные значения для объединения элементов. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -970,7 +969,7 @@ ms.locfileid: "82203817"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "firstObject": {
@@ -1007,7 +1006,7 @@ ms.locfileid: "82203817"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | objectOutput | Объект | {"one": "a", "two": "b", "three": "c2", "four": "d", "five": "e"} |
 | arrayOutput | Массив | ["one", "two", "three", "four"] |

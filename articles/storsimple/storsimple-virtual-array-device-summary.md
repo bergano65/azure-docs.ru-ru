@@ -9,17 +9,16 @@ editor: ''
 ms.assetid: a13c1ea7-6428-4234-84a6-0ebf51670a85
 ms.service: storsimple
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/29/2016
 ms.author: manuaery
-ms.openlocfilehash: 9edc0b552f5c2f38e646bc4b44dd8df5c16b0457
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
-ms.translationtype: MT
+ms.openlocfilehash: 1ab72788c768568366f2627055015c74028330b5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "61408512"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85515231"
 ---
 # <a name="use-the-device-summary-blade-for-storsimple-device-manager-connected-to-storsimple-virtual-array"></a>Использование колонки сводных данных об устройстве в диспетчере устройств StorSimple, подключенному к виртуальному массиву StorSimple
 
@@ -51,7 +50,7 @@ ms.locfileid: "61408512"
 
 * Элемент **Общие файловые ресурсы** или **Тома** содержит сводные данные о количестве общих файловых ресурсов или томов на устройстве, сгруппированные по состоянию. Щелкните определенный элемент, чтобы открыть колонку со списком **общих файловых ресурсов** или **томов**, а затем выберите отдельный общий файловый ресурс или том, чтобы просмотреть или изменить его свойства. Дополнительные сведения см. в статье об [управлении общими файловыми ресурсами](storsimple-virtual-array-manage-shares.md) или [томами](storsimple-virtual-array-manage-volumes.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Вы узнаете, как выполнять следующие задачи:
 - [Управление общими файловыми ресурсами в виртуальном массиве StorSimple](storsimple-virtual-array-manage-shares.md)
     

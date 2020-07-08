@@ -3,12 +3,12 @@ title: Справочник разработчика Python. Функции Azur
 description: Сведения о разработке функций на языке Python
 ms.topic: article
 ms.date: 12/13/2019
-ms.openlocfilehash: 49577f5ac274b4e34fa07415e5495329ff650aa5
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
-ms.translationtype: HT
+ms.custom: tracking-python
+ms.openlocfilehash: 26da89628360783e4507c83c3aeaddfc2b0510b7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83676199"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84730753"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Справочник разработчика Python. Функции Azure
 
@@ -262,7 +262,7 @@ def main(req):
 
 ## <a name="http-trigger-and-bindings"></a>Триггеры и привязки HTTP
 
-Триггер HTTP определяется в файле function.jon. `name` привязки должен соответствовать именованному параметру в функции.
+Триггер HTTP определяется в function.jsфайла. `name` привязки должен соответствовать именованному параметру в функции.
 В предыдущих примерах используется имя привязки `req`. Этот параметр является объектом [HttpRequest], и возвращается объект [HttpResponse].
 
 Из объекта [HttpRequest] можно получить заголовки запроса, параметры запроса, параметры маршрута и текст сообщения.
@@ -629,6 +629,45 @@ from os import listdir
 
 Тесты рекомендуется хранить в папке, отдельной от папки проекта. Это позволяет не развертывать тестовый код в приложении.
 
+## <a name="preinstalled-libraries"></a>Предустановленные библиотеки
+
+Существует несколько библиотек со средой выполнения функций Python.
+
+### <a name="python-standard-library"></a>Стандартная библиотека Python
+
+Стандартная библиотека Python содержит список встроенных модулей Python, поставляемых вместе с каждым дистрибутивом Python. Большинство этих библиотек помогают получить доступ к функциональным возможностям системы, таким как файловый ввод-вывод. В системах Windows эти библиотеки устанавливаются с Python. В системах на базе UNIX они предоставляются коллекциями пакетов.
+
+Чтобы просмотреть полные сведения о списке этих библиотек, перейдите по ссылкам ниже:
+
+* [Стандартная библиотека Python 3,6](https://docs.python.org/3.6/library/)
+* [Стандартная библиотека Python 3,7](https://docs.python.org/3.7/library/)
+* [Стандартная библиотека Python 3,8](https://docs.python.org/3.8/library/)
+
+### <a name="azure-functions-python-worker-dependencies"></a>Зависимости рабочих ролей Python в функциях Azure
+
+Работнику функций Python требуется конкретный набор библиотек. Эти библиотеки также можно использовать в функциях, но они не являются частью стандарта Python. Если функции зависят от этих библиотек, они могут быть недоступны коду при выполнении вне функций Azure. Подробный список зависимостей можно найти в разделе **Установка \_ требуется** в файле [Setup.py](https://github.com/Azure/azure-functions-python-worker/blob/dev/setup.py#L282) .
+
+### <a name="azure-functions-python-library"></a>Библиотека Python для функций Azure
+
+Каждое обновление рабочей роли Python включает новую версию [библиотеки Python для функций Azure (Azure. functions)](https://github.com/Azure/azure-functions-python-library). Такой подход упрощает непрерывное обновление приложений-функций Python, так как каждое обновление имеет обратную совместимость. Список выпусков этой библиотеки можно найти в [Azure-функциях PyPi](https://pypi.org/project/azure-functions/#history).
+
+Версия библиотеки среды выполнения исправлена в Azure и не может быть переопределена requirements.txt. `azure-functions`Запись в requirements.txt относится только к linting и осведомленности клиентов. 
+
+Используйте следующий код для отслеживания фактической версии библиотеки функций Python в среде выполнения:
+
+```python
+getattr(azure.functions, '__version__', '< 1.2.1')
+```
+
+### <a name="runtime-system-libraries"></a>Системные библиотеки среды выполнения
+
+Список предустановленных системных библиотек в образах DOCKER Worker в Python см. по следующим ссылкам:
+
+|  Среда выполнения функций  | Версия Debian | Версии Python |
+|------------|------------|------------|
+| Версия 2.x | Stretch  | [Python 3.6](https://github.com/Azure/azure-functions-docker/blob/master/host/2.0/stretch/amd64/python/python36/python36.Dockerfile)<br/>[Python 3,7](https://github.com/Azure/azure-functions-docker/blob/master/host/2.0/stretch/amd64/python/python37/python37.Dockerfile) |
+| Версия 3.x | бустер | [Python 3.6](https://github.com/Azure/azure-functions-docker/blob/master/host/3.0/buster/amd64/python/python36/python36.Dockerfile)<br/>[Python 3,7](https://github.com/Azure/azure-functions-docker/blob/master/host/3.0/buster/amd64/python/python37/python37.Dockerfile)<br />[Python 3.8](https://github.com/Azure/azure-functions-docker/blob/master/host/3.0/buster/amd64/python/python38/python38.Dockerfile) |
+
 ## <a name="cross-origin-resource-sharing"></a>Предоставление общего доступа к ресурсам независимо от источника
 
 [!INCLUDE [functions-cors](../../includes/functions-cors.md)]
@@ -637,7 +676,7 @@ CORS полностью поддерживается для приложений
 
 ## <a name="known-issues-and-faq"></a>Известные проблемы и часто задаваемые вопросы
 
-Благодаря вашим ценным отзывам мы можем вести список руководств по устранению распространенных проблем.
+Ниже приведен список руководств по устранению распространенных проблем.
 
 * [ModuleNotFoundError и ImportError](recover-module-not-found.md)
 

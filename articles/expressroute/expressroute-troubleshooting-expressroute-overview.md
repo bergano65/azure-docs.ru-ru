@@ -4,16 +4,15 @@ description: В этой статье содержатся инструкции 
 services: expressroute
 author: rambk
 ms.service: expressroute
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 10/31/2019
 ms.author: rambala
 ms.custom: seodec18
-ms.openlocfilehash: 58ae39e8dfdf918ae14ca9bb8dac28405828999e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 827d68a5f0f35e42acae1fa225646eb509f69c89
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78330963"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84729325"
 ---
 # <a name="verifying-expressroute-connectivity"></a>Проверка подключения ExpressRoute
 Изучив сведения в этой статье, вы узнаете, как проверить и устранить неполадки с подключением ExpressRoute. ExpressRoute расширяет локальную сеть в облако Майкрософт по частному подключению, которое обычно упрощается поставщиком услуг подключения. Подключение ExpressRoute обычно включает три отдельные зоны сети, как показано ниже.
@@ -36,7 +35,7 @@ ms.locfileid: "78330963"
 
 ## <a name="overview"></a>Обзор
 На следующей схеме показано логическое подключение между клиентской сетью и сетью Майкрософт через ExpressRoute.
-[![одного]][1]
+[![1]][1]
 
 На предыдущей схеме цифры обозначают ключевые точки сети. Ссылки на эти точки сети можно указывать в этой статье в указанное число раз. В зависимости от модели подключения ExpressRoute — совместное размещение облачного Exchange, подключение типа "точка-точка" или "любой к любому" (IPVPN) — точки сети 3 и 4 могут быть коммутаторами (устройствам уровня 2) или маршрутизаторами (устройства уровня 3). В модели прямого подключения отсутствуют точки сети 3 и 4. Вместо этого CEs (2) напрямую подключаются к MSEE через темное волокно. Ниже приведены представленные на схеме ключевые точки сети.
 
@@ -288,10 +287,10 @@ ms.locfileid: "78330963"
     Get-AzExpressRouteCircuitRouteTable : The BGP Peering AzurePublicPeering with Service Key ********************* is not found.
     StatusCode: 400
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения доступны в следующих источниках:
 
-- [Служба технической поддержки Майкрософт][Support]
+- [Поддержка Microsoft][Support]
 - [Создание и изменение канала ExpressRoute][CreateCircuit]
 - [Создание и изменение маршрутизации для канала ExpressRoute][CreatePeering]
 

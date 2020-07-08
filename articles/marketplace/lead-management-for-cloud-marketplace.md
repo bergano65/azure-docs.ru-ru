@@ -7,12 +7,11 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: dsindona
-ms.openlocfilehash: f8b466dca9f3af55e3c11b39b3fbdac315af3675
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
-ms.translationtype: HT
+ms.openlocfilehash: 0d16a2fa91b498888ae5dafd1b254b51eca94ebc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83798589"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85801416"
 ---
 # <a name="lead-management-for-commercial-marketplace"></a>Управление потенциальными клиентами коммерческой платформы
 
@@ -91,7 +90,7 @@ ms.locfileid: "83798589"
 **Необходимо ли мне настроить назначение интереса, чтобы опубликовать предложение в Marketplace?**
 
 Да, если вы публикуете приложение SaaS для связи с вами или консультационные услуги.  
- 
+
 **Как убедиться в том, что конфигурация интереса правильна?**
 
 После настройки вашего предложения и назначения интереса опубликуйте свое предложение. На этапе проверки интерес Marketplace отправляет тестовый интерес в назначение интереса, настроенное в вашем предложении. 
@@ -100,9 +99,10 @@ ms.locfileid: "83798589"
 
 Найдите "MSFT_TEST" в назначении потенциального клиента. Ниже приведен пример данных тестового потенциального клиента: 
 
+```text
 company = MSFT_TEST_636573304831318844 
 
-country = US (США) 
+country = US 
 
 description = MSFT_TEST_636573304831318844 
 
@@ -116,64 +116,50 @@ first_name = MSFT_TEST_636573304831318844
 
 last_name = MSFT_TEST_636573304831318844 
 
-lead_source = MSFT_TEST_636573304831318844-MSFT_TEST_636573304831318844|\<Название предложения> 
+lead_source = MSFT_TEST_636573304831318844-MSFT_TEST_636573304831318844|\<Offer Name> 
 
 oid = 00Do0000000ZHog 
 
 phone = 1234567890 
 
 title = MSFT_TEST_636573304831318844 
+```
 
 **У меня есть действующее предложение, но я не вижу потенциальных клиентов**
 
-Каждый интерес будет передавать данные в поля выбранного назначения интереса. Интересы будут поступать в следующем формате: **источник — действие|предложение**. 
+Каждый интерес будет передавать данные в поля выбранного назначения интереса. Интересы будут поступать в следующем формате: **источник — действие|предложение**.
 
-  *Источники:*
+- *Источники:*
+  - азуремаркетплаце
+  - AzurePortal
+  - тестдриве  
+  - СПЗА (акроним для AppSource)
 
-    "AzureMarketplace", 
-    "AzurePortal", 
-    "TestDrive",  
-    "SPZA" (acronym for AppSource) 
+- *Действия:*
+  - «INS» — означает установку. Это действие происходит в Azure Marketplace или AppSource всякий раз, когда клиент нажимает кнопку, чтобы получить продукт.
+  - "ПЛТ" — означает пробную версию индикатора партнера. Это действие происходит в AppSource всякий раз, когда клиент нажимает кнопку "Свяжитесь со мной".
+  - "DNC" — означает отсутствие связи. Это действие происходит в AppSource, когда партнер, указанный на странице вашего приложения с помощью перекрестной ссылки, получает запрос "Свяжитесь со мной". Мы обмениваемся оповещениями о том, что клиент перешел по перекрестной ссылке на страницу вашего приложения, но не нажал кнопку "Свяжитесь со мной".
+  - "Создать" — это происходит только в портал Azure и является всякий раз, когда клиент приобретает ваше предложение в своей учетной записи.
+  - "Старттестдриве" — это только для тестовых дисков и при каждом запуске тестового диска клиентом.
 
-  *Действия:*
+- *Предложения:*
+  - "Checkpoint. Check-Point-R77-10SG-byol",
+  - "BitNami. опенедксципресс",
+  - "DocuSign. 3701c77e-1cfa-4c56-91e6-3ed0b622145a"
 
-    "INS" - Stands for Installation. This is on Azure Marketplace or AppSource whenever a customer hits the button to acquire your product. 
-    "PLT" - Stands for Partner Led Trial. This is on AppSource whenever a customer hits the Contact me button. 
+*Ниже приведен пример данных сведений о клиенте*
 
-    "DNC" - Stands for Do Not Contact. This is on AppSource whenever a Partner who was cross listed on your app page gets requested to be contacted. We are sharing the heads up that this customer was cross listed on your app, but they do not need to be contacted. 
-
-    "Create" - This is inside Azure portal only and is whenever a customer purchases your offer to their account. 
-
-    "StartTestDrive" - This is for Test Drives only and is whenever a customer starts their test drive. 
-
-
-  *Предложения:*
-
-    "checkpoint.check-point-r77-10sg-byol", 
-    "bitnami.openedxcypress", 
-    "docusign.3701c77e-1cfa-4c56-91e6-3ed0b622145a" 
-
- 
-
-  *Ниже приведен пример данных сведений о клиенте*
-
-    { 
-
-    "FirstName":"John", 
-
-    "LastName":"Smith", 
-
-    "Email":"jsmith@microsoft.com", 
-
-    "Phone":"1234567890", 
-
-    "Country":"US", 
-
-    "Company":"Microsoft", 
-
-    "Title":"CTO" 
-
-    } 
+```json
+{ 
+"FirstName":"John",
+"LastName":"Smith",
+"Email":"jsmith@microsoft.com",
+"Phone":"1234567890",
+"Country":"US",
+"Company":"Microsoft",
+"Title":"CTO"
+}
+```
 
 Дополнительные сведения см. в [Lead Info](./partner-center-portal/commercial-marketplace-get-customer-leads.md) (Информация по поводу интересов). 
 

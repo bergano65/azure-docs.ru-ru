@@ -13,15 +13,14 @@ ms.workload: iaas-sql-server
 ms.date: 10/21/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 49b669627507af0e3e7386f31e344082cc4686df
-ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
-ms.translationtype: HT
+ms.openlocfilehash: 58f2b1828bcc63ce11c234847bc20f90944aba18
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84219306"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85960390"
 ---
 # <a name="register-multiple-sql-virtual-machines-in-azure-with-the-sql-vm-resource-provider"></a>Регистрация нескольких виртуальных машин SQL в Azure с помощью поставщика ресурсов виртуальных машин SQL
-[!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)][!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
+[!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
 Эта статья содержит сведения о массовой регистрации виртуальных машин SQL Server в Azure с помощью поставщика ресурсов виртуальной машины SQL, используя командлет PowerShell `Register-SqlVMs`.
 
@@ -78,7 +77,7 @@ Register-SqlVMs -SubscriptionList SubscriptionId1,SubscriptionId2
 Выходные данные примера: 
 
 ```
-Number of Subscriptions registration failed for 
+Number of subscriptions registration failed for 
 because you do not have access or credentials are wrong: 1
 Total VMs Found: 10
 VMs Already registered: 1
@@ -155,7 +154,7 @@ Please find the detailed report in file RegisterSqlVMScriptReport1571314821.txt
 Please find the error details in file VMsNotRegisteredDueToError1571314821.log
 ```
 
-## <a name="register-specific-vms-in-single-resource-group"></a>Регистрация конкретных виртуальных машин в одной группе ресурсов
+## <a name="register-specific-vms-in-a-single-resource-group"></a>Регистрация конкретных виртуальных машин в одной группе ресурсов
 
 Используйте следующий командлет, чтобы зарегистрировать конкретные виртуальные машины SQL Server в одной группе ресурсов:
 

@@ -1,138 +1,174 @@
 ---
 title: Настройка Azure Red Hat OpenShift v4. x с Azure Monitor для контейнеров | Документация Майкрософт
-description: В этой статье описывается настройка мониторинга кластера Kubernetes с Azure Monitor, размещенных в Azure Red Hat OpenShift версии 4 и выше.
+description: В этой статье описывается настройка мониторинга для кластера Kubernetes с Azure Monitor, размещенной в Azure Red Hat OpenShift версии 4 или более поздней.
 ms.topic: conceptual
-ms.date: 04/22/2020
-ms.openlocfilehash: 4b827524845874dabaabe535163d99c408f77a60
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/30/2020
+ms.openlocfilehash: 49097d96ecf58d7c5bf7d1a60ff01fc7182587c6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82196300"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85801484"
 ---
 # <a name="configure-azure-red-hat-openshift-v4x-with-azure-monitor-for-containers"></a>Настройка Azure Red Hat OpenShift v4. x с Azure Monitor для контейнеров
 
-Azure Monitor для контейнеров предоставляет широкие возможности мониторинга для кластеров подсистемы Azure Kubernetes Service (AKS) и AKS. В этой статье описывается, как включить мониторинг кластеров Kubernetes, размещенных в [Azure Red Hat OpenShift](../../openshift/intro-openshift.md) версии 4. x, для обеспечения аналогичного процесса мониторинга.
+Azure Monitor для контейнеров предоставляет широкие возможности мониторинга для кластеров подсистемы Azure Kubernetes Service (AKS) и AKS. В этой статье описывается, как добиться аналогичного процесса мониторинга, включив мониторинг кластеров Kubernetes, размещенных в [Azure Red Hat OpenShift](../../openshift/intro-openshift.md) версии 4. x.
 
 >[!NOTE]
 >Поддержка Azure Red Hat OpenShift в настоящее время является функцией в общедоступной предварительной версии.
 >
 
-Azure Monitor для контейнеров можно включить для одного или нескольких существующих развертываний Azure Red Hat OpenShift v4. x, используя следующие поддерживаемые методы:
+Вы можете включить Azure Monitor для контейнеров для одного или нескольких существующих развертываний Azure Red Hat OpenShift v4. x, используя Поддерживаемые методы, описанные в этой статье.
 
-- Для существующего кластера с помощью предоставленного скрипта Bash и запуска в [Azure CLI](https://docs.microsoft.com/cli/azure/openshift?view=azure-cli-latest#az-openshift-create).
+Для существующего кластера запустите этот [скрипт Bash в Azure CLI](https://docs.microsoft.com/cli/azure/openshift?view=azure-cli-latest#az-openshift-create).
 
 ## <a name="supported-and-unsupported-features"></a>Поддерживаемые и неподдерживаемые функции
 
-Azure Monitor для контейнеров поддерживает мониторинг Azure Red Hat OpenShift v4. x, как описано в [обзорной](container-insights-overview.md) статье, за исключением следующих возможностей:
+Azure Monitor для контейнеров поддерживает мониторинг Azure Red Hat OpenShift v4. x, как описано в разделе [Общие сведения о Azure Monitor для контейнеров](container-insights-overview.md), за исключением следующих функций:
 
 - Данные в режиме реального времени (Предварительная версия)
-- [Получение метрик](container-insights-update-metrics.md) из узлов кластера и модулей Pod и их сохранение в базе данных метрик Azure Monitor
+- [Сбор метрик](container-insights-update-metrics.md) из узлов кластера и модулей Pod и их сохранение в базе данных метрик Azure Monitor
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-- Azure CLI версии 2.0.72 или выше
+- Azure CLI версии 2.0.72 или более поздней.  
 
-- [Helm 3](https://helm.sh/docs/intro/install/) Средство CLI
+- Средство CLI [Helm 3](https://helm.sh/docs/intro/install/)
 
 - [Bash версии 4](https://www.gnu.org/software/bash/)
 
 - Программа командной строки [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
-- Чтобы включить функции и получить доступ к ним в Azure Monitor для контейнеров, как минимум необходимо быть участником роли *участника* Azure в подписке Azure и членом роли [*участника log Analytics*](../platform/manage-access.md#manage-access-using-azure-permissions) log Analytics рабочей области, настроенной с Azure Monitor для контейнеров.
+- [Рабочая область Log Analytics](../platform/design-logs-deployment.md).
 
-- Для просмотра данных мониторинга вы являетесь членом разрешения роли [*log Analytics читатель*](../platform/manage-access.md#manage-access-using-azure-permissions) с рабочей областью log Analytics, настроенной с Azure Monitor для контейнеров.
+    Azure Monitor для контейнеров поддерживает рабочую область Log Analytics в регионах, перечисленных в списке [продуктов Azure по регионам](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=monitor). Чтобы создать собственную рабочую область, ее можно создать с помощью [Azure Resource Manager](../platform/template-workspace-configuration.md), [PowerShell](../scripts/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json)или в [портал Azure](../learn/quick-create-workspace.md).
 
-## <a name="enable-for-an-existing-cluster"></a>Включить для существующего кластера
+- Чтобы включить функции и получить доступ к ним в Azure Monitor для контейнеров, необходимо, как минимум, роль *участника* Azure в подписке Azure и роль [*участника log Analytics*](../platform/manage-access.md#manage-access-using-azure-permissions) в log Analytics рабочей области, настроенной с Azure Monitor для контейнеров.
 
-Выполните следующие действия, чтобы включить мониторинг кластера Azure Red Hat OpenShift версии 4 и более поздних версий, развернутого в Azure, с помощью предоставленного скрипта bash.
+- Для просмотра данных мониторинга необходимо иметь роль [*log Analytics читателя*](../platform/manage-access.md#manage-access-using-azure-permissions) в рабочей области log Analytics, настроенную с Azure Monitor для контейнеров.
 
-1. Вход в Azure
+## <a name="enable-monitoring-for-an-existing-cluster"></a>Включение мониторинга для существующего кластера
+
+Чтобы включить мониторинг для кластера Azure Red Hat OpenShift версии 4 или более поздней, который развернут в Azure с помощью предоставленного скрипта bash, выполните следующие действия.
+
+1. Войдите в Azure, выполнив следующую команду.
 
     ```azurecli
     az login
     ```
 
-2. Скачайте и сохраните скрипт в локальной папке, которая настраивает кластер с помощью надстройки мониторинга, используя следующие команды:
+1. Скачайте и сохраните в локальной папке скрипт, который настраивает кластер с помощью надстройки мониторинга, выполнив следующую команду:
 
-    `curl -LO https://raw.githubusercontent.com/microsoft/OMS-docker/ci_feature/docs/aroV4/onboarding_azuremonitor_for_containers.sh.`
+    `curl -o enable-monitoring.sh -L https://aka.ms/enable-monitoring-bash-script`
 
-3. Чтобы найти **KUBE-context** кластера, после успешного `oc login` завершения в кластере выполните команду `kubectl config current-context` и скопируйте значение.
+1. Чтобы узнать *кубеконтекст* кластера, выполните следующие команды:
+
+    ```
+    adminUserName=$(az aro list-credentials -g $clusterResourceGroup -n $clusterName --query 'kubeadminUsername' -o tsv)
+    adminPassword=$(az aro list-credentials -g $clusterResourceGroup -n $clusterName --query 'kubeadminPassword' -o tsv)
+    apiServer=$(az aro show -g $clusterResourceGroup -n $clusterName --query apiserverProfile.url -o tsv)
+    oc login $apiServer -u $adminUserName -p $adminPassword
+    # openshift project name for azure monitor for containers
+    openshiftProjectName="azure-monitor-for-containers"
+    oc new-project $openshiftProjectName
+    # get the kube config context
+    kubeContext=$(oc config current-context)
+    ```
+
+1. Скопируйте значение для последующего использования.
 
 ### <a name="integrate-with-an-existing-workspace"></a>Интеграция с существующей рабочей областью
 
-Следующий шаг включает мониторинг кластера с помощью скрипта bash, скачанного ранее. Чтобы выполнить интеграцию с существующей рабочей областью Log Analytics, выполните следующие действия, чтобы сначала указать полный идентификатор ресурса Log Analytics рабочей области, необходимой для `workspaceResourceId` параметра, а затем выполнить команду, чтобы включить надстройку мониторинга для указанной рабочей области. Если у вас нет рабочей области для указания, можно перейти к шагу 5 и позволить сценарию создать новую рабочую область.
+В этом разделе описано, как включить мониторинг кластера с помощью скрипта bash, скачанного ранее. Чтобы выполнить интеграцию с существующей рабочей областью Log Analytics, начните с определения полного идентификатора ресурса Log Analytics рабочей области, необходимой для `logAnalyticsWorkspaceResourceId` параметра, а затем выполните команду, чтобы включить надстройку мониторинга для указанной рабочей области.
 
-1. Перечислите все подписки, к которым у вас есть доступ, с помощью следующей команды:
+Если у вас нет рабочей области для указания, можно перейти к разделу [Интеграция с рабочей областью по умолчанию](#integrate-with-the-default-workspace) и позволить скрипту создать новую рабочую область.
+
+1. Перечислите все подписки, к которым у вас есть доступ, выполнив следующую команду:
 
     ```azurecli
     az account list --all -o table
     ```
 
-    Результат должен выглядеть так:
+    Выходные данные будут выглядеть следующим образом:
 
     ```azurecli
     Name                                  CloudName    SubscriptionId                        State    IsDefault
     ------------------------------------  -----------  ------------------------------------  -------  -----------
-    Microsoft Azure                       AzureCloud   68627f8c-91fO-4905-z48q-b032a81f8vy0  Enabled  True
+    Microsoft Azure                       AzureCloud   0fb60ef2-03cc-4290-b595-e71108e8f4ce  Enabled  True
     ```
 
-    Скопируйте значение для **SubscriptionId**.
+1. Скопируйте значение для **SubscriptionId**.
 
-2. Перейдите к подписке, в которой размещена рабочая область Log Analytics, с помощью следующей команды:
+1. Переключитесь на подписку, в которой размещена рабочая область Log Analytics, выполнив следующую команду:
 
     ```azurecli
     az account set -s <subscriptionId of the workspace>
     ```
 
-3. В следующем примере отображается список рабочих областей в подписках в формате JSON по умолчанию.
+1. Отобразите список рабочих областей в подписках в формате JSON по умолчанию, выполнив следующую команду:
 
     ```
     az resource list --resource-type Microsoft.OperationalInsights/workspaces -o json
     ```
 
-    В выходных данных найдите имя рабочей области, а затем скопируйте полный идентификатор ресурса этой Log Analytics рабочей области под **идентификатором**поля.
+1. В выходных данных найдите имя рабочей области, а затем скопируйте полный идентификатор ресурса этой Log Analytics рабочей области под **идентификатором**поля.
 
-4. Выполните следующую команду, чтобы включить мониторинг, заменив значение `workspaceResourceId` параметра: 
+1. Чтобы включить мониторинг, выполните следующую команду. Замените значения для `azureAroV4ClusterResourceId` `logAnalyticsWorkspaceResourceId` параметров, и `kubeContext` .
 
-    `bash onboarding_azuremonitor_for_containers.sh <kube-context> <azureAroV4ResourceId> <LogAnayticsWorkspaceResourceId>`
+    ```bash
+    export azureAroV4ClusterResourceId=“/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.RedHatOpenShift/OpenShiftClusters/<clusterName>”
+    export logAnalyticsWorkspaceResourceId=“/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/microsoft.operationalinsights/workspaces/<workspaceName>”
+    export kubeContext="<kubeContext name of your ARO v4 cluster>"  
+    ```
 
     Пример.
 
-    `bash onboarding_azuremonitor_for_containers.sh MyK8sTestCluster /subscriptions/57ac26cf-a9f0-4908-b300-9a4e9a0fb205/resourceGroups/test-aro-v4-rg/providers/Microsoft.RedHatOpenShift/OpenShiftClusters/test-aro-v4  /subscriptions/57ac26cf-a9f0-4908-b300-9a4e9a0fb205/resourcegroups/test-la-workspace-rg/providers/microsoft.operationalinsights/workspaces/test-la-workspace`
+    `bash enable-monitoring.sh --resource-id $azureAroV4ClusterResourceId --kube-context $kubeContext --workspace-id $logAnalyticsWorkspaceResourceId`
+
+После включения мониторинга для просмотра метрик работоспособности кластера может потребоваться около 15 минут.
+
+### <a name="integrate-with-the-default-workspace"></a>Интеграция с рабочей областью по умолчанию
+
+В этом разделе описано, как включить мониторинг кластера Azure Red Hat OpenShift v4. x с помощью скачанного скрипта bash.
+
+В этом примере вам не требуется предварительно создавать или указывать существующую рабочую область. Эта команда упрощает процесс, создавая рабочую область по умолчанию в группе ресурсов по умолчанию подписки на кластер, если она еще не существует в регионе.
+
+Созданная Рабочая область по умолчанию имеет формат *DefaultWorkspace- \<GUID> - \<Region> *.  
+
+Замените значения для `azureAroV4ClusterResourceId` `kubeContext` параметров и.
+
+```bash
+export azureAroV4ClusterResourceId=“/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.RedHatOpenShift/OpenShiftClusters/<clusterName>”
+export kubeContext="<kubeContext name of your ARO v4 cluster>"
+```
+
+Пример:
+
+`bash enable-monitoring.sh --resource-id $azureAroV4ClusterResourceId --kube-context $kubeContext`
 
 После включения мониторинга может пройти около 15 минут, прежде чем вы сможете просмотреть метрики работоспособности кластера.
 
-### <a name="integrate-with-default-workspace"></a>Интеграция с рабочей областью по умолчанию
+### <a name="enable-monitoring-from-the-azure-portal"></a>Включение мониторинга из портал Azure
 
-Следующий шаг включает мониторинг кластера Azure Red Hat OpenShift v4. x с помощью скачанного скрипта bash. В этом примере вы не обязаны предварительно создавать или указывать имеющуюся рабочую область. Эта команда упрощает процесс, создавая рабочую область по умолчанию в группе ресурсов по умолчанию подписки на кластер, если она еще не существует в регионе. Имя созданной рабочей области по умолчанию поддерживает формат *DefaultWorkspace-\<GUID>-\<Region>*.  
-
-    `bash onboarding_azuremonitor_for_containers.sh <kube-context> <azureAroV4ResourceId>`
-
-    For example:
-
-    `bash onboarding_azuremonitor_for_containers.sh MyK8sTestCluster /subscriptions/57ac26cf-a9f0-4908-b300-9a4e9a0fb205/resourceGroups/test-aro-v4-rg/providers/Microsoft.RedHatOpenShift/OpenShiftClusters/test-aro-v4`
-
-После включения мониторинга может пройти около 15 минут, прежде чем вы сможете просмотреть метрики работоспособности кластера.
-
-### <a name="from-the-azure-portal"></a>на портале Azure;
-
-В представлении с несколькими кластерами в Azure Monitor для контейнеров выделяются кластеры Azure Red Hat OpenShift, для которых не включена поддержка мониторинга на вкладке **Неотслеживаемые кластеры** . Параметр **включить** рядом с кластером не инициирует подключение мониторинга с портала. Вы будете перенаправлены к этой статье, чтобы включить наблюдение вручную, выполнив действия, описанные ранее в этой статье.
+В представлении с несколькими кластерами в Azure Monitor для контейнеров выделяются кластеры Azure Red Hat OpenShift, для которых не включена поддержка мониторинга на вкладке **Неотслеживаемые кластеры** . Параметр **Enable (включить** ) рядом с кластером не инициирует подключение мониторинга с портала. Вы будете перенаправлены к этой статье, чтобы включить мониторинг вручную, выполнив действия, описанные ранее в этой статье.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
-2. В меню портал Azure или на домашней странице выберите **Azure Monitor**. В разделе **Аналитика** выберите **Контейнеры**.
+1. На левой панели или на домашней странице выберите **Azure Monitor**.
 
-3. На странице **Контейнеры** выберите **Non-monitored clusters** (Неотслеживаемые кластеры).
+1. В разделе **аналитика** выберите **контейнеры**.
 
-4. В списке неотслеживаемых кластеров найдите кластер в списке и нажмите кнопку **включить**. Результаты в списке можно найти, выполнив поиск значения **АТО** в столбце **тип кластера**. После нажатия кнопки **включить**вы будете перенаправлены к этой статье.
+1. На странице **мониторинг — контейнеры** выберите **Неотслеживаемые кластеры**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+1. В списке неотслеживаемых кластеров выберите кластер, а затем щелкните **включить**.
 
-- С включенным наблюдением для получения сведений о работоспособности и использовании ресурсов для кластера RedHat OpenShift версии 4. x и рабочих нагрузок, выполняемых на них, Узнайте, [как использовать](container-insights-analyze.md) Azure Monitor для контейнеров.
+    Результаты в списке можно найти, выполнив поиск значения **АТО** в столбце **тип кластера** . После выбора **включить**вы будете перенаправлены к этой статье.
 
-- По умолчанию контейнерный агент собирает журналы контейнеров stdout/stderr всех контейнеров, работающих во всех пространствах имен, за исключением KUBE-System. Чтобы настроить сбор журналов контейнеров для конкретного пространства имен или пространств имен, ознакомьтесь с разрешениями [Конфигурация агента аналитики контейнеров](container-insights-agent-config.md) , чтобы настроить необходимые параметры сбора данных в файле конфигурации ConfigMap.
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Чтобы отбракировать и проанализировать метрики Prometheus из кластера, см. раздел [Настройка брака/отхода метрик Prometheus](container-insights-prometheus-integration.md)
+- Теперь, когда вы включили функцию мониторинга для получения сведений о работоспособности и использовании ресурсов в кластере RedHat OpenShift версии 4. x и рабочих нагрузках, которые выполняются на них, Узнайте, [как использовать](container-insights-analyze.md) Azure Monitor для контейнеров.
+
+- По умолчанию контейнерный агент собирает журналы контейнеров *stdout* и *stderr* всех контейнеров, которые выполняются во всех пространствах имен, за исключением KUBE-System. Чтобы настроить коллекцию журналов контейнеров, относящуюся к определенному пространству имен или пространству имен, ознакомьтесь с разделом [Конфигурация агента аналитики контейнеров](container-insights-agent-config.md) , чтобы настроить необходимые параметры сбора данных для файла конфигурации *ConfigMap* .
+
+- Чтобы отбракировать и проанализировать метрики Prometheus из кластера, см. раздел [Настройка брака Prometheus метрик](container-insights-prometheus-integration.md).
 
 - Сведения о том, как отключить мониторинг кластера с помощью Azure Monitor для контейнеров, см. в статье [как отключить мониторинг кластера Azure Red Hat OpenShift](container-insights-optout-openshift.md).

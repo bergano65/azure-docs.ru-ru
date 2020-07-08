@@ -2,13 +2,12 @@
 title: Функции шаблонов — ресурсы
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для получения значений ресурсов.
 ms.topic: conceptual
-ms.date: 05/21/2020
-ms.openlocfilehash: aea3f654551f66390afa207ac5ce682d23e5bfe9
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
-ms.translationtype: HT
+ms.date: 06/18/2020
+ms.openlocfilehash: f79fa3420420a2ff440c3228f227cc71436b4a1c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83780566"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85099254"
 ---
 # <a name="resource-functions-for-arm-templates"></a>Функции ресурсов для шаблонов ARM
 
@@ -83,7 +82,7 @@ Resource Manager предоставляет следующие функции д
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "lockName":{
@@ -101,14 +100,14 @@ Resource Manager предоставляет следующие функции д
 }
 ```
 
-<a id="listkeys" />
-<a id="list" />
+<a id="listkeys"></a>
+<a id="list"></a>
 
 ## <a name="list"></a>list*
 
 `list{Value}(resourceName or resourceIdentifier, apiVersion, functionValues)`
 
-Синтаксис для этой функции зависит от имени из списка операций. Каждая реализация возвращает значения для типа ресурса, который поддерживает операцию list. Имя операции должно начинаться с `list`. Наиболее распространенными вариантами применения являются `listKeys`, `listKeyValue` и `listSecrets`.
+Синтаксис для этой функции зависит от имени из списка операций. Каждая реализация возвращает значения для типа ресурса, который поддерживает операцию list. Имя операции должно начинаться с `list`. Некоторые распространенные случаи использования: `listKeys` , `listKeyValue` и `listSecrets` .
 
 ### <a name="parameters"></a>Параметры
 
@@ -120,7 +119,9 @@ Resource Manager предоставляет следующие функции д
 
 ### <a name="valid-uses"></a>Допустимые варианты использования
 
-Функции list можно использовать только в свойствах определения ресурса и в разделе выходных данных шаблона или развертывания. При использовании с [итерацией свойства](copy-properties.md) можно использовать функции list для `input`, так как выражение назначается свойству ресурса. Их нельзя использовать с `count`, так как count должен быть определен до разрешения функции list.
+Функции List можно использовать в свойствах определения ресурса. Не используйте функцию List, которая предоставляет конфиденциальную информацию в разделе Outputs шаблона. Выходные значения хранятся в журнале развертывания и могут быть получены злоумышленником.
+
+При использовании с [итерацией свойства](copy-properties.md) можно использовать функции list для `input`, так как выражение назначается свойству ресурса. Их нельзя использовать с `count`, так как count должен быть определен до разрешения функции list.
 
 ### <a name="implementations"></a>Варианты реализации решения
 
@@ -167,8 +168,8 @@ Resource Manager предоставляет следующие функции д
 | Microsoft.DocumentDB/databaseAccounts | [listKeys](/rest/api/cosmos-db-resource-provider/databaseaccounts/listkeys) |
 | Microsoft.DomainRegistration | [listDomainRecommendations](/rest/api/appservice/domains/listrecommendations) |
 | Microsoft.DomainRegistration/topLevelDomains | [listAgreements](/rest/api/appservice/topleveldomains/listagreements) |
-| Microsoft.EventGrid/domains | [listKeys](/rest/api/eventgrid/version2019-06-01/domains/listsharedaccesskeys) |
-| Microsoft.EventGrid/topics | [listKeys](/rest/api/eventgrid/version2019-06-01/topics/listsharedaccesskeys) |
+| Microsoft.EventGrid/domains | [listKeys](/rest/api/eventgrid/version2020-06-01/domains/listsharedaccesskeys) |
+| Microsoft.EventGrid/topics | [listKeys](/rest/api/eventgrid/version2020-06-01/topics/listsharedaccesskeys) |
 | Microsoft.EventHub/namespaces/authorizationRules | [listkeys](/rest/api/eventhub) |
 | Microsoft.EventHub/namespaces/disasterRecoveryConfigs/authorizationRules | [listkeys](/rest/api/eventhub) |
 | Microsoft.EventHub/namespaces/eventhubs/authorizationRules | [listkeys](/rest/api/eventhub) |
@@ -284,71 +285,31 @@ Resource Manager предоставляет следующие функции д
 
 ### <a name="list-example"></a>Пример функции list
 
-В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/listkeys.json) показано, как получить в разделе выходных данных первичный и вторичный ключи из учетной записи хранения. Он также возвращает маркер SAS для учетной записи хранения.
-
-Чтобы получить маркер SAS, передайте объект на время окончания срока действия. Время окончания срока действия должно быть в будущем. В этом примере показано, как использовать функции перечисления. Как правило, нужно использовать токен SAS в значении ресурса, а не возвращать его в качестве выходного значения. Выходные значения хранятся в истории развертывания и не являются безопасными.
+В следующем примере используется listKeys при задании значения для [скриптов развертывания](deployment-script-template.md).
 
 ```json
-{
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "storagename": {
-            "type": "string"
-        },
-        "location": {
-            "type": "string",
-            "defaultValue": "southcentralus"
-        },
-        "accountSasProperties": {
-            "type": "object",
-            "defaultValue": {
-                "signedServices": "b",
-                "signedPermission": "r",
-                "signedExpiry": "2018-08-20T11:00:00Z",
-                "signedResourceTypes": "s"
-            }
-        }
-    },
-    "resources": [
-        {
-            "apiVersion": "2018-02-01",
-            "name": "[parameters('storagename')]",
-            "location": "[parameters('location')]",
-            "type": "Microsoft.Storage/storageAccounts",
-            "sku": {
-                "name": "Standard_LRS"
-            },
-            "kind": "StorageV2",
-            "properties": {
-                "supportsHttpsTrafficOnly": false,
-                "accessTier": "Hot",
-                "encryption": {
-                    "services": {
-                        "blob": {
-                            "enabled": true
-                        },
-                        "file": {
-                            "enabled": true
-                        }
-                    },
-                    "keySource": "Microsoft.Storage"
-                }
-            },
-            "dependsOn": []
-        }
-    ],
-    "outputs": {
-        "keys": {
-            "type": "object",
-            "value": "[listKeys(parameters('storagename'), '2018-02-01')]"
-        },
-        "accountSAS": {
-            "type": "object",
-            "value": "[listAccountSas(parameters('storagename'), '2018-02-01', parameters('accountSasProperties'))]"
+"storageAccountSettings": {
+    "storageAccountName": "[variables('storageAccountName')]",
+    "storageAccountKey": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2019-06-01').keys[0].value]"
+}
+```
+
+В следующем примере показана функция List, которая принимает параметр. В этом случае функция — **листаккаунтсас**. Передайте объект для времени окончания срока действия. Время окончания срока действия должно быть в будущем.
+
+```json
+"parameters": {
+    "accountSasProperties": {
+        "type": "object",
+        "defaultValue": {
+            "signedServices": "b",
+            "signedPermission": "r",
+            "signedExpiry": "2020-08-20T11:00:00Z",
+            "signedResourceTypes": "s"
         }
     }
-}
+},
+...
+"sasToken": "[listAccountSas(parameters('storagename'), '2018-02-01', parameters('accountSasProperties')).accountSasToken]"
 ```
 
 Пример listKeyValue см. в разделе [Краткое руководство. Автоматизированное развертывание виртуальной машины с помощью службы "Конфигурация приложений" и шаблона Resource Manager](../../azure-app-configuration/quickstart-resource-manager.md#deploy-vm-using-stored-key-values).
@@ -386,7 +347,7 @@ Resource Manager предоставляет следующие функции д
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "providerNamespace": {
@@ -495,7 +456,7 @@ Resource Manager предоставляет следующие функции д
 
 Нельзя использовать функцию reference для задания значения свойства `count` в цикле копирования. Можно использовать для задания других свойств в цикле. Функция reference заблокирована для свойства count, так как это свойство должно быть определено до разрешения функции reference.
 
-Нельзя использовать функцию reference в выходных данных [вложенного шаблона](linked-templates.md#nested-template) для возврата ресурса, развернутого во вложенном шаблоне. Вместо этого используйте [связанный шаблон](linked-templates.md#linked-template).
+Чтобы использовать функцию Reference или любую функцию List * в разделе Outputs вложенного шаблона, необходимо задать для параметра значение, ```expressionEvaluationOptions``` чтобы использовать [внутреннюю оценку области](linked-templates.md#expression-evaluation-scope-in-nested-templates) , или использовать ссылку вместо вложенного шаблона.
 
 При использовании функции **reference** в ресурсе, который развернут условно, функция вычисляется, даже если ресурс не развернут.  Если функция **reference** ссылается на несуществующий ресурс, возникает ошибка. Используйте функцию **if**, чтобы убедиться, что функция вычисляется только при развернутом ресурсе. Пример шаблона, который использует функции if и reference с условно развернутым ресурсом, см. в описании [функции if](template-functions-logical.md#if).
 
@@ -537,10 +498,20 @@ Resource Manager предоставляет следующие функции д
 
 [Управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md) являются [типами ресурсов расширения](../management/extension-resource-types.md), которые создаются неявно для некоторых ресурсов. Так как управляемое удостоверение не определено явным образом в шаблоне, необходимо указать ссылку на ресурс, к которому применяется удостоверение. Используйте `Full`, чтобы получить все свойства, включая явно созданное удостоверение.
 
-Например, чтобы получить идентификатор клиента для управляемого удостоверения, применяемого к масштабируемому набору виртуальных машин, используйте следующий формат:
+Шаблон:
+
+`"[reference(resourceId(<resource-provider-namespace>, <resource-name>, <API-version>, 'Full').Identity.propertyName]"`
+
+Например, чтобы получить идентификатор субъекта для управляемого удостоверения, применяемого к виртуальной машине, используйте:
 
 ```json
-"tenantId": "[reference(resourceId('Microsoft.Compute/virtualMachineScaleSets',  variables('vmNodeType0Name')), '2019-03-01', 'Full').Identity.tenantId]"
+"[reference(resourceId('Microsoft.Compute/virtualMachines', variables('vmName')),'2019-12-01', 'Full').identity.principalId]",
+```
+
+Чтобы получить идентификатор клиента для управляемого удостоверения, применяемого к масштабируемому набору виртуальных машин, используйте:
+
+```json
+"[reference(resourceId('Microsoft.Compute/virtualMachineScaleSets',  variables('vmNodeType0Name')), 2019-12-01, 'Full').Identity.tenantId]"
 ```
 
 ### <a name="reference-example"></a>Пример ссылки
@@ -549,7 +520,7 @@ Resource Manager предоставляет следующие функции д
 
 ```json
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
       "storageAccountName": {
@@ -643,7 +614,7 @@ Resource Manager предоставляет следующие функции д
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "storageResourceGroup": {
@@ -715,7 +686,7 @@ Resource Manager предоставляет следующие функции д
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "resources": [],
     "outputs": {
@@ -753,9 +724,9 @@ Resource Manager предоставляет следующие функции д
 |:--- |:--- |:--- |:--- |
 | subscriptionId |Нет |строка (в формате GUID) |Значение по умолчанию — текущая подписка. Укажите это значение, если нужно получить ресурс из другой подписки. Это значение предоставляется только при развертывании в области действия группы ресурсов или подписки. |
 | имя_группы_ресурсов |Нет |строка |Значение по умолчанию — текущая группа ресурсов. Укажите это значение, если нужно получить ресурс из другой группы ресурсов. Это значение предоставляется только при развертывании в области действия группы ресурсов. |
-| тип_ресурса |Да |строка |Тип ресурса, включая пространство имен поставщика ресурсов. |
-| имя_ресурса1 |Да |строка |Имя ресурса. |
-| имя_ресурса2 |Нет |строка |Следующий сегмент имени ресурса, если он необходим. |
+| тип_ресурса |Да |string |Тип ресурса, включая пространство имен поставщика ресурсов. |
+| имя_ресурса1 |Да |string |Имя ресурса. |
+| имя_ресурса2 |нет |строка |Следующий сегмент имени ресурса, если он необходим. |
 
 Продолжайте добавлять имена ресурсов в качестве параметров, если тип ресурса включает больше сегментов.
 
@@ -785,7 +756,7 @@ Resource Manager предоставляет следующие функции д
 * [subscriptionResourceId](#subscriptionresourceid)
 * [tenantResourceId](#tenantresourceid)
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Количество предоставляемых параметров зависит от того, является ли ресурс родительским или дочерним, а также находится ли ресурс в той же подписке или группе ресурсов.
 
@@ -817,7 +788,7 @@ Resource Manager предоставляет следующие функции д
 
 ```json
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
       "virtualNetworkName": {
@@ -863,7 +834,7 @@ Resource Manager предоставляет следующие функции д
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "resources": [],
     "outputs": {
@@ -889,7 +860,7 @@ Resource Manager предоставляет следующие функции д
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | sameRGOutput | Строка | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
 | differentRGOutput | Строка | /subscriptions/{ИД_текущей_подписки}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
@@ -915,7 +886,7 @@ Resource Manager предоставляет следующие функции д
 }
 ```
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 При использовании вложенных шаблонов для развертывания в нескольких подписках можно указать область для вычисления функции subscription. Дополнительные сведения см. в разделе [Развертывание ресурсов Azure в нескольких подписках или группах ресурсов](cross-resource-group-deployment.md).
 
@@ -925,7 +896,7 @@ Resource Manager предоставляет следующие функции д
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "resources": [],
     "outputs": {
@@ -945,12 +916,12 @@ Resource Manager предоставляет следующие функции д
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | type | Описание |
 |:--- |:--- |:--- |:--- |
 | subscriptionId |Нет |строка (в формате GUID) |Значение по умолчанию — текущая подписка. Укажите это значение, если нужно получить ресурс из другой подписки. |
-| тип_ресурса |Да |строка |Тип ресурса, включая пространство имен поставщика ресурсов. |
-| имя_ресурса1 |Да |строка |Имя ресурса. |
-| имя_ресурса2 |Нет |строка |Следующий сегмент имени ресурса, если он необходим. |
+| тип_ресурса |Да |string |Тип ресурса, включая пространство имен поставщика ресурсов. |
+| имя_ресурса1 |Да |string |Имя ресурса. |
+| имя_ресурса2 |нет |строка |Следующий сегмент имени ресурса, если он необходим. |
 
 Продолжайте добавлять имена ресурсов в качестве параметров, если тип ресурса включает больше сегментов.
 
@@ -972,7 +943,7 @@ Resource Manager предоставляет следующие функции д
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "principalId": {
@@ -1027,11 +998,11 @@ Resource Manager предоставляет следующие функции д
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | type | Описание |
 |:--- |:--- |:--- |:--- |
-| тип_ресурса |Да |строка |Тип ресурса, включая пространство имен поставщика ресурсов. |
-| имя_ресурса1 |Да |строка |Имя ресурса. |
-| имя_ресурса2 |Нет |строка |Следующий сегмент имени ресурса, если он необходим. |
+| тип_ресурса |Да |string |Тип ресурса, включая пространство имен поставщика ресурсов. |
+| имя_ресурса1 |Да |string |Имя ресурса. |
+| имя_ресурса2 |нет |строка |Следующий сегмент имени ресурса, если он необходим. |
 
 Продолжайте добавлять имена ресурсов в качестве параметров, если тип ресурса включает больше сегментов.
 

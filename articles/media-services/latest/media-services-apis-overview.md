@@ -13,12 +13,11 @@ ms.topic: article
 ms.date: 10/21/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 5afa5b5620532865233e38ccb5889b37b2100854
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 7ea74c85af062ce00dbccf8a486ce39cbd524bb0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83648534"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85515071"
 ---
 # <a name="develop-with-media-services-v3-apis"></a>Разработка с помощью API Служб мультимедиа версии 3
 
@@ -41,7 +40,7 @@ API Служб мультимедиа требует, чтобы у пользо
 
 Если вы создаете приложение Azure AD и субъект-службу, это приложение должно размещаться в собственном клиенте. После создания приложения назначьте ему роль **участника** или **владельца** для учетной записи Служб мультимедиа.
 
-Если вы не уверены, что имеете достаточные полномочия для создания приложения Azure AD, изучите [описанные здесь требования](../../active-directory/develop/howto-create-service-principal-portal.md#required-permissions).
+Если вы не уверены, что имеете достаточные полномочия для создания приложения Azure AD, изучите [описанные здесь требования](../../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app).
 
 На следующем рисунке цифры обозначают поток запросов в хронологическом порядке.
 

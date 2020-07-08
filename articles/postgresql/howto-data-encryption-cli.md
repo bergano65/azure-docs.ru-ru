@@ -6,12 +6,11 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 03/30/2020
-ms.openlocfilehash: 77c464f51bd17921052b3ae1e9fefb49e777d6c2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: f7621867aad6baf517462983e35afb0b28223756
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82181911"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85341302"
 ---
 # <a name="data-encryption-for-azure-database-for-postgresql-single-server-by-using-the-azure-cli"></a>Шифрование данных для одного сервера базы данных Azure для PostgreSQL с помощью Azure CLI
 
@@ -54,16 +53,16 @@ ms.locfileid: "82181911"
 
 1. Существует два способа получения управляемого удостоверения для базы данных Azure для PostgreSQL одного сервера.
 
-    ### <a name="create-an-new-azure-database-for-mysql-server-with-a-managed-identity"></a>Создайте новый сервер базы данных Azure для MySQL с управляемым удостоверением.
+    ### <a name="create-an-new-azure-database-for-postgresql-server-with-a-managed-identity"></a>Создайте новый сервер базы данных Azure для PostgreSQL с управляемым удостоверением.
 
     ```azurecli-interactive
-    az postgres server create --name -g <resource_group> --location <locations> --storage-size <size>  -u <user>-p <pwd> --backup-retention <7> --sku-name <sku name> --geo-redundant-backup <Enabled/Disabled>  --assign-identity
+    az postgres server create --name <server_name> -g <resource_group> --location <location> --storage-size <size>  -u <user> -p <pwd> --backup-retention <7> --sku-name <sku name> --geo-redundant-backup <Enabled/Disabled> --assign-identity
     ```
 
-    ### <a name="update-an-existing-the-azure-database-for-mysql-server-to-get-a-managed-identity"></a>Обновите существующий сервер базы данных Azure для MySQL, чтобы получить управляемое удостоверение.
+    ### <a name="update-an-existing-the-azure-database-for-postgresql-server-to-get-a-managed-identity"></a>Обновите существующий сервер базы данных Azure для PostgreSQL, чтобы получить управляемое удостоверение.
 
     ```azurecli-interactive
-    az postgres server update –name <server name>  -g <resoure_group> --assign-identity
+    az postgres server update --resource-group <resource_group> --name <server_name> --assign-identity
     ```
 
 2. Задайте **разрешения ключа** (**Get**, **Wrap**, **Unwrap**) для **участника**, который представляет собой имя сервера PostgreSQL с одним сервером.
@@ -77,14 +76,14 @@ ms.locfileid: "82181911"
 1. Включите шифрование данных для одного сервера базы данных Azure для PostgreSQL с помощью ключа, созданного в Azure Key Vault.
 
     ```azurecli-interactive
-    az postgres server key create –name  <server name>  -g <resource_group> --kid <key url>
+    az postgres server key create --name <server_name> -g <resource_group> --kid <key_url>
     ```
 
     URL-адрес ключа:`https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901>`
 
 ## <a name="using-data-encryption-for-restore-or-replica-servers"></a>Использование шифрования данных для серверов восстановления или реплик
 
-После того как база данных Azure для PostgreSQL с одним сервером шифруется с помощью управляемого ключа клиента, хранящегося в Key Vault, все вновь созданные копии сервера также шифруются. Эту новую копию можно создать с помощью локальной или географической операции либо с помощью операции реплики (локальной или кросс-региона). Поэтому для зашифрованного сервера PostgreSQL с одним сервером можно выполнить следующие действия, чтобы создать зашифрованный восстановленный сервер.
+После шифрования отдельного сервера базы данных Azure для PostgreSQL с помощью управляемого ключа клиента, хранящегося в Key Vault, все создаваемые копии сервера также шифруются. Эту новую копию можно создать с помощью локальной или географической операции либо с помощью операции реплики (локальной или кросс-региона). Поэтому для зашифрованного сервера PostgreSQL с одним сервером можно выполнить следующие действия, чтобы создать зашифрованный восстановленный сервер.
 
 ### <a name="creating-a-restoredreplica-server"></a>Создание восстановленного или сервера-реплики
 
@@ -102,7 +101,7 @@ ms.locfileid: "82181911"
 ### <a name="get-the-key-used"></a>Получение ключа, используемого
 
     ```azurecli-interactive
-    az mysql server key show --name  <server name>  -g <resource_group> --kid <key url>
+    az postgres server key show --name <server name>  -g <resource_group> --kid <key url>
     ```
 
     Key url:  `https://YourVaultName.vault.azure.net/keys/YourKeyName/01234567890123456789012345678901>`
@@ -242,6 +241,6 @@ ms.locfileid: "82181911"
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
  Дополнительные сведения о шифровании данных см. в статье [Шифрование данных единого сервера в базе данных Azure для PostgreSQL с помощью ключа, управляемого клиентом](concepts-data-encryption-postgresql.md).
