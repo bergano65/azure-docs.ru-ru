@@ -5,16 +5,17 @@ description: Сведения о том, как экспортировать м�
 author: nibaccam
 ms.author: nibaccam
 ms.service: machine-learning
-ms.topic: conceptual
+ms.subservice: core
+ms.topic: how-to
 ms.date: 05/14/2020
-ms.openlocfilehash: 657b1dbb169d80a3e5563dd1a4fa52eac2278aae
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 80932ebbedeca3f5e0a1b4cc2e68d73ef5b0d63a
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83655761"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86025732"
 ---
-# <a name="create-and-explore-azure-machine-learning-dataset-with-labels"></a>Создание и изучение набора данных с метками в Машинном обучении Azure
+# <a name="create-and-explore-azure-machine-learning-dataset-with-labels-preview"></a>Создание и изучение набора данных Машинное обучение Azure с помощью меток (Предварительная версия)
 
 Из этой статьи вы узнаете, как экспортировать метки данных из проекта маркировки данных в Машинном обучении Azure и выгрузить их в популярные форматы, например в виде кадра данных Pandas для исследования или набора данных Torchvision для преобразования изображений. 
 
