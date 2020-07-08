@@ -9,19 +9,19 @@ editor: ''
 ms.assetid: 6b1a598f-89c0-4244-9b20-f4aaad5233cf
 ms.service: active-directory
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/01/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 309adfbebd4f4b615ac1f4061823ca01f3d3ee15
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4f5cf9487f6f10ce661009e5e504be51a098b7e6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79261077"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85357398"
 ---
 # <a name="azure-ad-connect-sync-scheduler"></a>Синхронизация Azure AD Connect: планировщик
 В этом разделе описывается встроенный планировщик в Azure AD Connect Sync (модуль синхронизации).
@@ -74,10 +74,10 @@ ms.locfileid: "79261077"
 Синтаксис: `Set-ADSyncScheduler -CustomizedSyncCycleInterval d.HH:mm:ss`  
  d — дни, HH — часы, mm — минуты, ss — секунды.
 
-Например, `Set-ADSyncScheduler -CustomizedSyncCycleInterval 03:00:00`.  
+Пример: `Set-ADSyncScheduler -CustomizedSyncCycleInterval 03:00:00`  
 Планировщик будет запускаться каждые 3 часа.
 
-Например, `Set-ADSyncScheduler -CustomizedSyncCycleInterval 1.0:0:0`.  
+Пример: `Set-ADSyncScheduler -CustomizedSyncCycleInterval 1.0:0:0`  
 Планировщик будет запускаться один раз в день.
 
 ### <a name="disable-the-scheduler"></a>Отключение планировщика  
@@ -109,7 +109,7 @@ ms.locfileid: "79261077"
 
 Если вам необходимо срочно синхронизировать какое-то изменение, цикл синхронизации можно запустить вручную. 
 
-Если необходимо запустить цикл синхронизации вручную, запустите PowerShell `Start-ADSyncSyncCycle -PolicyType Delta`.
+Если необходимо запустить цикл синхронизации вручную, запустите PowerShell `Start-ADSyncSyncCycle -PolicyType Delta` .
 
 Чтобы запустить цикл полной синхронизации, в командной строке PowerShell выполните командлет `Start-ADSyncSyncCycle -PolicyType Initial` .   
 
@@ -204,7 +204,7 @@ Get-ADSyncConnectorRunStatus
 ## <a name="scheduler-and-installation-wizard"></a>Планировщик и мастер установки
 При запуске мастера установки планировщик приостанавливается. Это связано с тем, что вы можете внести изменения в конфигурацию, а во время активной работы модуля синхронизации их нельзя будет применить. Пока мастер установки открыт, модуль синхронизации не выполняет никаких действий по синхронизации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
-Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

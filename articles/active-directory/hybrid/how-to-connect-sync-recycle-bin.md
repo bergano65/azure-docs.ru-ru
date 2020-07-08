@@ -12,17 +12,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/17/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5fe7d3ea7d4f6d648438efc1a484d5909ade2f23
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.openlocfilehash: ed71e53a8cedc2907ac06dd75f11f9c762a78772
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "60382901"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85357211"
 ---
 # <a name="azure-ad-connect-sync-enable-ad-recycle-bin"></a>Синхронизация Azure AD Connect: включение корзины AD
 Для локальных каталогов Active Directory, которые синхронизируются с Azure AD, рекомендуется включить функцию корзины AD. 
@@ -41,9 +41,9 @@ ms.locfileid: "60382901"
 > [!NOTE]
 > По умолчанию Azure AD хранит удаленные объекты пользователя Azure AD в состоянии обратимого удаления в течение 30 дней, прежде чем удалить их без возможности восстановления. Тем не менее, администраторы могут ускорить удаление таких объектов. После окончательного удаления объектов их больше невозможно восстановить, даже если в локальной службе AD включена функция корзины.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 **Обзорные статьи**
 
-* [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
+* [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
 
-* [Интеграция локальных удостоверений с Azure Active Directory.](whatis-hybrid-identity.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)

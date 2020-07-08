@@ -9,19 +9,19 @@ editor: ''
 ms.assetid: b29c1790-37a3-470f-ab69-3cee824d220d
 ms.service: active-directory
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/27/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc88640cdff4f716902a80bb149913b961d40ae3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 18c982b09aa8a28d520c709c9b8db2c9be4c7bb4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79261025"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85356956"
 ---
 # <a name="azure-ad-connect-staging-server-and-disaster-recovery"></a>Azure AD Connect: промежуточный сервер и аварийное восстановление
 Когда сервер работает в промежуточном режиме, вы можете вносить изменения в конфигурацию и просматривать их, прежде чем активировать сервер. Этот режим также позволяет запустить полный импорт и полную синхронизацию, чтобы проверить, все ли изменения имеют нужный вид, прежде чем вносить их в рабочую среду.
@@ -49,7 +49,7 @@ ms.locfileid: "79261025"
 ### <a name="verify-the-configuration-of-a-server"></a>Проверка конфигурации сервера
 Чтобы использовать этот метод, выполните следующие действия.
 
-1. [Обеспечьте](#prepare)
+1. [Подготовка.](#prepare)
 2. [Конфигурация](#configuration)
 3. [Импорт и синхронизация](#import-and-synchronize)
 4. [Проверка](#verify)
@@ -60,7 +60,7 @@ ms.locfileid: "79261025"
    ![ReadyToConfigure](./media/how-to-connect-sync-staging-server/readytoconfigure.png)
 2. Выйдите из системы и снова войдите в нее, а затем в меню "Пуск" выберите пункт **Служба синхронизации**.
 
-#### <a name="configuration"></a>Конфигурация
+#### <a name="configuration"></a>Параметр Configuration
 Если вы внесли какие-либо изменения на сервере-источнике и хотите сравнить конфигурацию с промежуточным сервером, то воспользуйтесь [средством документирования конфигураций Azure AD Connect](https://github.com/Microsoft/AADConnectConfigDocumenter).
 
 #### <a name="import-and-synchronize"></a>Импорт и синхронизация
@@ -115,7 +115,7 @@ ms.locfileid: "79261025"
 ### <a name="have-a-spare-standby-server---staging-mode"></a>Наличие запасного резервного сервера (промежуточный режим)
 В более сложной среде рекомендуется использовать один или несколько резервных серверов. Во время установки один из серверов можно перевести в **промежуточный режим**.
 
-Дополнительные сведения см. в разделе [Промежуточный режим](#staging-mode).
+Дополнительные сведения см. в разделе [промежуточный режим](#staging-mode).
 
 ### <a name="use-virtual-machines"></a>Использование виртуальных машин
 Также поддерживается распространенный метод, предусматривающий работу модуля синхронизации на виртуальной машине. Если на узле возникнут проблемы, образ сервера с модулем синхронизации можно будет перенести на другой сервер.
@@ -267,8 +267,8 @@ Write-Host Writing processedusers${outputfilecount}.csv -ForegroundColor Yellow
 $objOutputUsers | Export-Csv -path processedusers${outputfilecount}.csv -NoTypeInformation
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 **Обзорные статьи**  
 
-* [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)  
-* [Интеграция локальных удостоверений с Azure Active Directory.](whatis-hybrid-identity.md)  
+* [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)  
+* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)  

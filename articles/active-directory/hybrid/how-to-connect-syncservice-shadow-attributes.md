@@ -11,17 +11,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10a4078f49abbdf431f42c6cde7cf882112e5848
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.openlocfilehash: c57ab03f72f0f59dd18a873ddc7cd98d3c36ef9c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "60384721"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85356667"
 ---
 # <a name="azure-ad-connect-sync-service-shadow-attributes"></a>Теневые атрибуты службы синхронизации Azure AD Connect
 Большинство атрибутов представляется в Azure AD так же, как и в локальной службе Active Directory. Однако некоторые атрибуты требуют особого обращения, их значение в Azure AD может отличаться от того, что синхронизирует Azure AD Connect.
@@ -58,7 +58,7 @@ ms.locfileid: "60384721"
 | proxyAddresses для локальной среды | SMTP:abbie.spencer@fabrikamonline.com</br>smtp:abbie.spencer@fabrikam.com</br>smtp:abbie@fabrikamonline.com |
 | proxyAddresses для Exchange Online | SMTP:abbie.spencer@fabrikamonline.com</br>smtp:abbie@fabrikamonline.com</br>SIP:abbie.spencer@fabrikamonline.com |
 
-В этом случае **SMTP: аббие. spencer\@Fabrikam.com** был удален, так как этот домен не был проверен. Но Exchange также добавил **SIP: аббие. spencer\@fabrikamonline.com**. Fabrikam не использовал Lync или Skype локально, но Azure AD и Exchange Online готовы к этому.
+В этом случае **SMTP: аббие. spencer \@ Fabrikam.com** был удален, так как этот домен не был проверен. Но Exchange также добавил **SIP: аббие. spencer \@ fabrikamonline.com**. Fabrikam не использовал Lync или Skype локально, но Azure AD и Exchange Online готовы к этому.
 
 Эта логика proxyAddresses называется **ProxyCalc**. ProxyCalc вызывается при каждом изменении пользователя, когда:
 
@@ -74,6 +74,6 @@ ProxyCalc может потратить некоторое время на об�
 ### <a name="quarantined-attribute-values"></a>Значения атрибутов, помещенных в карантин
 Теневые атрибуты также используются при наличии повторяющихся значений атрибутов. Дополнительные сведения см. в разделе [Синхронизация удостоверений и устойчивость повторяющихся атрибутов](how-to-connect-syncservice-duplicate-attribute-resiliency.md).
 
-## <a name="see-also"></a>См. также
-* [Синхронизация Azure AD Connect](how-to-connect-sync-whatis.md)
+## <a name="see-also"></a>См. также раздел
+* [Службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

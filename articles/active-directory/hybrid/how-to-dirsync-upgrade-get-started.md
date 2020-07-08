@@ -11,22 +11,22 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f2d9a7c8cfbfc4fb56ff8fba3c65ae9a7925830
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.openlocfilehash: e31f5e6afb3b586cd8eb20db8d1ca34e95de86cf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "60348728"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85356803"
 ---
 # <a name="azure-ad-connect-upgrade-from-dirsync"></a>Azure AD Connect: обновление DirSync
 Azure AD Connect является преемником Microsoft Azure Active Directory Sync Tool (DirSync). В этой статье описано, как можно обновить DirSync. Следующие действия не подходят для обновления другого выпуска Azure AD Connect или Azure AD Sync.
 
-Перед установкой Azure AD Connect, [скачайте Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771) и выполните предварительные шаги, перечисленные в статье [Необходимые условия для Azure AD Connect](how-to-connect-install-prerequisites.md). В частности, ознакомьтесь со сведениями об указанных ниже областях, отличных от DirSync:
+Перед установкой Azure AD Connect [скачайте Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771) и выполните предварительные шаги, перечисленные в перечне [требований к оборудованию и программному обеспечению](how-to-connect-install-prerequisites.md). В частности, ознакомьтесь со сведениями об указанных ниже областях, отличных от DirSync:
 
 * Требуемая версия .NET и PowerShell. На сервере должны быть установлены более новые версии, чем требуется для DirSync.
 * Конфигурация прокси-сервера. Если для доступа в Интернет используется прокси-сервер, перед обновлением этот параметр необходимо настроить. В DirSync всегда используется прокси-сервер, настроенный для пользователя, выполняющего установку, но в Azure AD Connect вместо этого используются параметры компьютера.
@@ -101,7 +101,7 @@ Azure AD Connect является преемником Microsoft Azure Active Di
      ![Анализ завершен, все готово для обновления DirSync](./media/how-to-dirsync-upgrade-get-started/AnalysisReady.png)
    * При использовании полной версии SQL Server для DirSync вы увидите такую страницу:  
      ![Анализ завершен, все готово для обновления DirSync](./media/how-to-dirsync-upgrade-get-started/AnalysisReadyFullSQL.png)  
-      Здесь отображаются сведения о существующей базе данных SQL Server, используемой DirSync. При необходимости внесите соответствующие изменения. Нажмите кнопку **Далее** , чтобы продолжить установку.
+      Здесь отображаются сведения о существующей базе данных SQL Server, используемой DirSync. При необходимости внесите соответствующие изменения. Нажмите кнопку **Далее**, чтобы продолжить установку.
    * При наличии более 50 000 объектов отобразится следующий экран:  
      ![Анализ завершен, все готово для обновления DirSync](./media/how-to-dirsync-upgrade-get-started/AnalysisRecommendParallel.png)  
      Чтобы продолжить обновление на месте, установите флажок рядом с сообщением **Продолжить обновление DirSync на этом компьютере.**
@@ -160,9 +160,9 @@ Azure AD Connect является преемником Microsoft Azure Active Di
    * Учетная запись службы, используемая для подключения к SQL Server (если база данных SQL Server удаленная, эта учетная запись должна быть учетной записью службы домена).
      Следующие параметры можно увидеть на этом экране:   
      ![Введите учетные данные Azure AD.](./media/how-to-dirsync-upgrade-get-started/advancedsettings.png)
-7. Щелкните **Далее**.
+7. Нажмите кнопку **Далее**.
 8. Не снимайте флажок **Запустить синхронизацию сразу после завершения настройки** на странице **Готово к настройке**. Теперь сервер находится в [промежуточном режиме](how-to-connect-sync-staging-server.md), поэтому изменения не экспортируются в Azure AD.
-9. Щелкните **Install**(Установить).
+9. Нажмите кнопку **Установить**.
 10. После завершения установки выполните выход из Windows и снова войдите, прежде чем использовать диспетчер службы синхронизации или редактор правил синхронизации либо вносить в конфигурацию какие-либо другие изменения.
 
 > [!NOTE]
@@ -211,11 +211,11 @@ Azure AD Connect является преемником Microsoft Azure Active Di
 
 Azure AD Connect теперь является вашим активным сервером. Вам не следует переключаться обратно на существующий сервер DirSync.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 После установки Azure AD Connect можно [проверить установку и назначить лицензии](how-to-connect-post-installation.md).
 
 Подробные сведения о новых функциях, включенных при установке, см. в следующих статьях: [Azure AD Connect: автоматическое обновление](how-to-connect-install-automatic-upgrade.md), [Синхронизация Azure AD Connect: предотвращение случайного удаления](how-to-connect-sync-feature-prevent-accidental-deletes.md) и [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-sync.md).
 
 Дополнительные сведения см. в статье [Синхронизация Azure AD Connect: планировщик](how-to-connect-sync-feature-scheduler.md).
 
-Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

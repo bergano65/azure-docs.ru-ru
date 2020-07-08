@@ -7,17 +7,17 @@ manager: daveba
 editor: ''
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/20/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5501153a9c54d4509aa7dd948e03e011b30d79e
-ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
-ms.translationtype: HT
+ms.openlocfilehash: 7a2e8bb6da4cf126a9dbd955b082d77965772f6f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83713817"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85357585"
 ---
 # <a name="azure-ad-connect-sync-v2-endpoint-api-public-preview"></a>API конечной точки версии 2 для синхронизации Azure AD Connect (общедоступная предварительная версия) 
 Корпорация Майкрософт развернула новую конечную точку (API) для Azure AD Connect, которая повышает производительность операций службы синхронизации с Azure Active Directory. Используя новую конечную точку версии 2, вы получите заметное улучшение показателей при экспорте и импорте в Azure AD. Эта новая конечная точка поддерживает следующее:

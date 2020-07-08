@@ -9,19 +9,19 @@ editor: ''
 ms.assetid: 995ee876-4415-4bb0-a258-cca3cbb02193
 ms.service: active-directory
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/12/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80438319a6337dd6f28f9bdca8a428829b6cb0b9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3afec7c31488529af9ba15100c914899a0d1d808
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77917919"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85357466"
 ---
 # <a name="azure-ad-connect-sync-directory-extensions"></a>Синхронизация Azure AD Connect: расширения каталогов
 Расширения каталогов можно использовать для расширения схемы в Azure Active Directory (Azure AD) с помощью собственных атрибутов из локального каталога Active Directory. Эта функция позволяет создавать бизнес-приложения с помощью атрибутов, которыми вы по-прежнему можете управлять локально. Эти атрибуты можно использовать с помощью [расширений](https://docs.microsoft.com/graph/extensibility-overview
@@ -60,14 +60,14 @@ ms.locfileid: "77917919"
 
 Убедитесь, что выбраны **все приложения** для просмотра этого приложения.
 
-Атрибуты имеют префикс с **расширением \_{applicationId}\_**. ApplicationId имеет одинаковое значение для всех атрибутов в клиенте Azure AD. Это значение потребуется для всех других сценариев в этом разделе.
+Атрибуты имеют префикс с **расширением \_ {applicationId} \_ **. ApplicationId имеет одинаковое значение для всех атрибутов в клиенте Azure AD. Это значение потребуется для всех других сценариев в этом разделе.
 
 ## <a name="viewing-attributes-using-the-microsoft-graph-api"></a>Просмотр атрибутов с помощью API Microsoft Graph
 
 Теперь эти атрибуты доступны через Microsoft Graph API с помощью [обозревателя Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer#).
 
 >[!NOTE]
-> В Microsoft Graph API необходимо запросить возвращаемые атрибуты. Явно выберите атрибуты следующим образом: `https://graph.microsoft.com/beta/users/abbie.spencer@fabrikamonline.com?$select=extension_9d98ed114c4840d298fad781915f27e4_employeeID,extension_9d98ed114c4840d298fad781915f27e4_division`.
+> В Microsoft Graph API необходимо запросить возвращаемые атрибуты. Явно выберите атрибуты следующим образом: `https://graph.microsoft.com/beta/users/abbie.spencer@fabrikamonline.com?$select=extension_9d98ed114c4840d298fad781915f27e4_employeeID,extension_9d98ed114c4840d298fad781915f27e4_division` .
 >
 > Дополнительные сведения см. в разделе [Параметр select](https://developer.microsoft.com/graph/docs/concepts/query_parameters#select-parameter).
 
@@ -93,7 +93,7 @@ ms.locfileid: "77917919"
 
    ![Снимок экрана с элементами в динамической группе](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup4.png)  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
-Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

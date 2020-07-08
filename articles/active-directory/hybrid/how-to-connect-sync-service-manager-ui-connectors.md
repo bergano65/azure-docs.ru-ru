@@ -11,18 +11,18 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae932191c7b76590ea217386dfd729add5566f87
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a013af680ecc84a2a981341ba4bb95148adc799f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79261051"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85357262"
 ---
 # <a name="using-connectors-with-the-azure-ad-connect-sync-service-manager"></a>Использование соединителей с Synchronization Service Manager Azure AD Connect
 
@@ -31,11 +31,11 @@ ms.locfileid: "79261051"
 Вкладка "Соединители" используется для управления всеми системами, к которым подключен модуль синхронизации.
 
 ## <a name="connector-actions"></a>Действия соединителя
-| Действие | Добавление примечаний |
+| Действие | Комментировать |
 | --- | --- |
 | Создание |Не используйте. Для подключения к дополнительным лесам AD используйте мастер установки. |
-| Свойства |Используется для фильтрации доменов и подразделений. |
-| [Удаление](#delete) |Используется для удаления данных в пространстве соединителя или удаления подключения к лесу. |
+| Элемент Property |Используется для фильтрации доменов и подразделений. |
+| [Удалить](#delete) |Используется для удаления данных в пространстве соединителя или удаления подключения к лесу. |
 | [Настройка профилей выполнения](#configure-run-profiles) |Ничего настраивать не требуется, кроме фильтрации домена. Это действие можно использовать для просмотра уже настроенных профилей выполнения. |
 | Выполнить |Используется для одноразового запуска профиля. |
 | Остановить |Останавливает соединитель, на котором в настоящее время запущен профиль. |
@@ -45,7 +45,7 @@ ms.locfileid: "79261051"
 | Обновить схему |Обновляет кэшированную схему. Этот параметр рекомендуется использовать в мастере установки, так как он также обновляет правила синхронизации. |
 | [Пространство поиска соединителя](#search-connector-space) |Применяется для поиска объектов и отслеживания объекта и его данных в системе. |
 
-### <a name="delete"></a>DELETE
+### <a name="delete"></a>Удалить
 Действие удаления используется в двух разных целях.  
 ![Диспетчер службы синхронизации](./media/how-to-connect-sync-service-manager-ui-connectors/connectordelete.png)
 
@@ -93,7 +93,7 @@ ms.locfileid: "79261051"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
-Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
