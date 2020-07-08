@@ -3,12 +3,12 @@ title: Создание политик гостевой конфигурации
 description: Узнайте, как создать политику гостевой конфигурации в службе "Политика Azure" для Windows.
 ms.date: 03/20/2020
 ms.topic: how-to
-ms.openlocfilehash: a8231840cc20f03da44d489ae5226e7a0b4e0d48
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: b53c8ec8189516305de8b0b8c05b2be8ea49f7f2
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83835960"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86045133"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-windows"></a>Создание политик гостевой конфигурации для Windows
 
@@ -84,11 +84,14 @@ ms.locfileid: "83835960"
 
 ### <a name="how-guest-configuration-modules-differ-from-windows-powershell-dsc-modules"></a>Отличия модулей гостевой конфигурации от модулей Windows PowerShell DSC
 
-Гостевая конфигурация выполняет аудит компьютера в следующем порядке:
+Когда гостевая конфигурация выполняет аудит компьютера, последовательность событий отличается от последовательности в Windows PowerShell DSC.
 
 1. Сначала агент выполняет `Test-TargetResource`, чтобы определить, находится ли конфигурация в правильном состоянии.
 1. Логическое значение, возвращаемое этой функцией, определяет состояние соответствия для назначения гостя в Azure Resource Manager.
 1. Поставщик выполняет `Get-TargetResource` для получения текущего состояния каждого параметра, чтобы получить сведения о том, почему компьютер не соответствует требованиям, и убедиться, что текущее состояние соответствует требованиям.
+
+Параметры в политике Azure, которые передают значения для назначений гостевой конфигурации, должны иметь _строковый_ тип.
+Передача массивов через параметры невозможна, даже если ресурс DSC поддерживает массивы.
 
 ### <a name="get-targetresource-requirements"></a>Требования Get-TargetResource
 
@@ -138,7 +141,7 @@ class ResourceName : OMI_BaseResource
 
 ### <a name="configuration-requirements"></a>Требования настройки
 
-Имя настраиваемой конфигурации должно быть одинаковым везде. Имя ZIP-файла для пакета содержимого, имя конфигурации в MOF-файле и имя назначения гостя в шаблоне Resource Manager должны совпадать.
+Имя настраиваемой конфигурации должно быть одинаковым везде. Имя ZIP-файла для пакета содержимого, имя конфигурации в MOF-файле и имя назначения гостя в шаблоне Azure Resource Manager (шаблон ARM) должны быть одинаковыми.
 
 ### <a name="scaffolding-a-guest-configuration-project"></a>Формирование шаблонов для проекта гостевой конфигурации
 
@@ -163,7 +166,7 @@ class ResourceName : OMI_BaseResource
 ### <a name="storing-guest-configuration-artifacts"></a>Хранение артефактов гостевой конфигурации
 
 ZIP-пакет должен храниться в расположении, доступном для управляемых виртуальных машин.
-Это может быть репозиторий GitHub, репозиторий в Azure Repos или служба хранилища Azure. Если вы предпочитаете, чтобы этот пакет не был общедоступным, можно включить в URL-адрес [маркер SAS](../../../storage/common/storage-dotnet-shared-access-signature-part-1.md).
+Это может быть репозиторий GitHub, репозиторий в Azure Repos или служба хранилища Azure. Если вы предпочитаете, чтобы этот пакет не был общедоступным, можно включить в URL-адрес [маркер SAS](../../../storage/common/storage-sas-overview.md).
 Можно также реализовать [конечную точку службы](../../../storage/common/storage-network-security.md#grant-access-from-a-virtual-network) для компьютеров в частной сети. Хотя такая конфигурация применяется только для доступа к пакету, а не для взаимодействия с самой службой.
 
 ## <a name="step-by-step-creating-a-custom-guest-configuration-audit-policy-for-windows"></a>Пошаговые инструкции по созданию пользовательской политики аудита гостевой конфигурации для Windows
@@ -408,7 +411,7 @@ New-AzRoleDefinition -Role $role
 
 Гостевая конфигурация поддерживает переопределение свойств конфигурации во время выполнения. Эта возможность позволяет использовать в MOF-файле пакета не только статические значения. Переопределяемые значения предоставляются с помощью Политики Azure и не влияют на то, как создаются или компилируются конфигурации.
 
-Командлеты `New-GuestConfigurationPolicy` и `Test-GuestConfigurationPolicyPackage` поддерживают параметр с именем **Parameters**. Этот параметр принимает определение хэш-таблицы с подробными сведениями о каждом параметре и создает все необходимые разделы файлов, используемых для определения в службе "Политика Azure".
+Командлеты `New-GuestConfigurationPolicy` и `Test-GuestConfigurationPolicyPackage` включают параметр с именем **Parameter**. Этот параметр принимает определение хэш-таблицы с подробными сведениями о каждом параметре и создает все необходимые разделы файлов, используемых для определения в службе "Политика Azure".
 
 В следующем примере создается определение политики для аудита службы, для которого пользователь выбирает значение из списка во время назначения политики.
 
@@ -431,15 +434,15 @@ New-GuestConfigurationPolicy
     -DisplayName 'Audit Windows Service.' `
     -Description 'Audit if a Windows Service is not enabled on Windows machine.' `
     -Path '.\policyDefinitions' `
-    -Parameters $PolicyParameterInfo `
+    -Parameter $PolicyParameterInfo `
     -Version 1.0.0
 ```
 
 ## <a name="extending-guest-configuration-with-third-party-tools"></a>Расширение гостевой конфигурации с помощью средств сторонних разработчиков
 
 > [!Note]
-> Эта функция поддерживается в предварительной версии. Для работы с ней требуется модуль гостевой конфигурации версии 1.20.1, который можно установить с помощью `Install-Module GuestConfiguration -AllowPrerelease`.
-> В версии 1.20.1 эта функция доступна только для определений политик аудита компьютеров Windows.
+> Эта функция доступна в режиме предварительной версии и требует наличия модуля конфигурации гостя версии 1.20.3, который можно установить с помощью `Install-Module GuestConfiguration -AllowPrerelease` .
+> В версии 1.20.3 Эта функция доступна только для определений политик, которые подлежат аудиту компьютеров Windows.
 
 Пакеты артефактов для гостевой конфигурации можно расширить, включив средства сторонних разработчиков.
 Для расширения гостевой конфигурации требуется создать два компонента.
@@ -465,7 +468,14 @@ New-GuestConfigurationPolicy
 Установите обязательные модули в среде разработки.
 
 ```azurepowershell-interactive
-Install-Module GuestConfiguration, gcInSpec
+# Update PowerShellGet if needed to allow installing PreRelease versions of modules
+Install-Module PowerShellGet -Force
+
+# Install GuestConfiguration module prerelease version
+Install-Module GuestConfiguration -allowprerelease
+
+# Install commmunity supported gcInSpec module
+Install-Module gcInSpec
 ```
 
 Для начала создайте файл YaML, используемый InSpec. Этот файл содержит основные сведения о среде. Ниже вы видите пример.
@@ -482,7 +492,7 @@ supports:
   - os-family: windows
 ```
 
-Сохраните этот файл с именем `wmi_service` в каталоге проекта.
+Сохраните этот файл с именем `wmi_service.yml` в папке `wmi_service` в каталоге проекта.
 
 Затем создайте файл Ruby с абстракцией языка InSpec, используемой для аудита компьютера.
 
@@ -501,7 +511,7 @@ end
 
 ```
 
-Сохраните этот файл с именем `controls` в каталоге `wmi_service`.
+Сохраните этот файл `wmi_service.rb` в новой папке с именем в `controls` `wmi_service` каталоге.
 
 Наконец, создайте конфигурацию, импортируйте модуль ресурсов **GuestConfiguration** и используйте ресурс `gcInSpec`, чтобы настроить имя профиля InSpec.
 
@@ -509,7 +519,7 @@ end
 # Define the configuration and import GuestConfiguration
 Configuration wmi_service
 {
-    Import-DSCResource -Module @{ModuleName = 'gcInSpec'; ModuleVersion = '2.0.0'}
+    Import-DSCResource -Module @{ModuleName = 'gcInSpec'; ModuleVersion = '2.1.0'}
     node 'wmi_service'
     {
         gcInSpec wmi_service
@@ -552,7 +562,8 @@ wmi_service -out ./Config
 New-GuestConfigurationPackage `
   -Name 'wmi_service' `
   -Configuration './Config/wmi_service.mof' `
-  -FilesToInclude './wmi_service'
+  -FilesToInclude './wmi_service'  `
+  -Path './package' 
 ```
 
 ## <a name="policy-lifecycle"></a>Жизненный цикл политики

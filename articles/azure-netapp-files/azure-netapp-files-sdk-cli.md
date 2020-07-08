@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/28/2019
+ms.date: 07/06/2020
 ms.author: b-juche
-ms.openlocfilehash: 93d51681a703258477baa81cc8737fefd4955e82
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b0cb29d6db339a64a1d9b753acbfd2334364853a
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82731684"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86045473"
 ---
 # <a name="azure-netapp-files-sdks-and-cli-tools"></a>Пакеты SDK для Azure NetApp Files и средства CLI
 
@@ -49,12 +49,7 @@ ms.locfileid: "82731684"
 
 ## <a name="code-samples"></a>Примеры кода
 
-В таблице ниже приведены примеры кода для справки.   
+См. [примеры кода для Azure NetApp Files](https://docs.microsoft.com/samples/browse/?filter-products=netapp&products=azure-netapp-files).
 
-|    Язык и инструмент    |    Документация по образцу кода    |
-|------------------|--------------------------------------------|
-|    .NET   |    [Пример пакета SDK для Azure NetApp Files. NETCore](https://docs.microsoft.com/samples/azure-samples/netappfiles-dotnetcore-sdk-sample/azure-netappfiles-sdk-sample-for-net-core/) |    
-|    Python    |    [Пример пакета SDK для Azure NetApp Files для Python](https://docs.microsoft.com/samples/azure-samples/netappfiles-python-sdk-sample/azure-netappfiles-sdk-sample-for-python/)    |
-
-## <a name="next-steps"></a>Дальнейшие действия   
+## <a name="next-steps"></a>Дальнейшие шаги   
  [Скачать пакеты SDK для Azure](https://azure.microsoft.com/downloads/)

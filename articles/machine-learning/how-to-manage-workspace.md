@@ -1,23 +1,23 @@
 ---
-title: Создание Машинное обучение Azure рабочих областей на портале
+title: Создание рабочих областей на портале
 titleSuffix: Azure Machine Learning
 description: Узнайте, как создавать, просматривать и удалять рабочие области Машинное обучение Azure в портал Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.author: sgilley
 author: sdgilley
 ms.date: 12/27/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4b4b64bcca57e1dc98cdba10626597532ae1461c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 71bb85c5812a3e779570cdd87c5092e5b0de52f9
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81269740"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86045711"
 ---
-# <a name="create-and-manage-azure-machine-learning-workspaces-in-the-azure-portal"></a>Создание рабочих областей Машинное обучение Azure и управление ими в портал Azure
+# <a name="create-and-manage-azure-machine-learning-workspaces-in-the-azure-portal"></a>Создание рабочих областей Машинного обучения Azure и управление ими с помощью портала Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этой статье вы создадите, просмотрите и удалите [**машинное обучение Azure рабочие области**](concept-workspace.md) в портал Azure для [машинное обучение Azure](overview-what-is-azure-ml.md).  Портал — самый простой способ начать работу с рабочими областями, но по мере необходимости изменения или требования к автоматизации можно также создавать и удалять рабочие области [с помощью интерфейса командной строки](reference-azure-machine-learning-cli.md) [с кодом Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) или с [помощью расширения VS Code](tutorial-setup-vscode-extension.md).
@@ -40,9 +40,9 @@ ms.locfileid: "81269740"
 
 1. Укажите следующие сведения для настройки новой рабочей области:
 
-   Поле|Описание 
+   Поле|Описание: 
    ---|---
-   имя рабочей области. |Введите уникальное имя для идентификации рабочей области. В этом примере мы используем **docs-ws**. Имена должны быть уникальными в группе ресурсов. Используйте имя, которое позволит легко запомнить рабочую область и отличить ее от областей, созданных другими пользователями. Имя рабочей области не учитывает регистр.
+   имя рабочей области. |Введите уникальное имя для идентификации рабочей области. В этом примере мы используем **docs-ws**. Имена должны быть уникальными в группе ресурсов. Используйте имя, которое позволит легко запомнить рабочую область и отличить ее от областей, созданных другими пользователями. В имени рабочей области не учитывается регистр.
    Подписка |Выберите подписку Azure, которую нужно использовать.
    Группа ресурсов | Используйте группу ресурсов, которая уже есть в подписке, или введите имя, чтобы создать группу ресурсов. Группа ресурсов содержит связанные ресурсы для решения Azure. В этом примере мы используем **docs-aml**. 
    Расположение | Выберите ближайшее к пользователям и ресурсам данных расположение, чтобы создать рабочую область.
@@ -80,7 +80,7 @@ ms.locfileid: "81269740"
 
 1. Выберите **Подробнее** в правом верхнем углу страницы.
 
-   [![Обновление рабочей области](./media/how-to-manage-workspace/upgrade.png)](./media/how-to-manage-workspace/upgrade.png#lightbox)
+   [![Обновление рабочей области ](./media/how-to-manage-workspace/upgrade.png)](./media/how-to-manage-workspace/upgrade.png#lightbox)
 
 1. В появившемся окне выберите **Обновить** .
 
@@ -106,7 +106,7 @@ ms.locfileid: "81269740"
 
 В [портал Azure](https://portal.azure.com/)выберите **Удалить** в верхней части рабочей области, которую вы хотите удалить.
 
-:::image type="content" source="./media/how-to-manage-workspace/delete-workspace.png" alt-text="Удаление рабочей области Azure Log Analytics на портале Azure":::
+:::image type="content" source="./media/how-to-manage-workspace/delete-workspace.png" alt-text="Удалить рабочую область":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -121,15 +121,15 @@ ms.locfileid: "81269740"
 ### <a name="moving-the-workspace"></a>Перемещение рабочей области
 
 > [!WARNING]
-> Перемещение рабочей области Машинное обучение Azure в другую подписку или перемещение ответственной подписки на новый клиент не поддерживается. Это может привести к ошибкам.
+> Перемещение рабочей области Машинного обучения Azure в другую подписку или перемещение главной подписки на новый клиент не поддерживается. Это может привести к ошибкам.
 
-### <a name="deleting-the-azure-container-registry"></a>Удаление реестра контейнеров Azure
+### <a name="deleting-the-azure-container-registry"></a>Удаление Реестра контейнеров Azure
 
-Для некоторых операций в рабочей области Машинное обучение Azure используется реестр контейнеров Azure (запись контроля доступа). Он автоматически создает экземпляр записи контроля доступа, когда ему требуется первый.
+Для некоторых операций в рабочей области Машинного обучения Azure используется реестр контейнеров Azure (ACR) Он автоматически создает экземпляр ACR при необходимости.
 
 [!INCLUDE [machine-learning-delete-acr](../../includes/machine-learning-delete-acr.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с руководством по полной длине, чтобы узнать, как использовать рабочую область для создания, обучения и развертывания моделей с помощью Машинное обучение Azure.
 

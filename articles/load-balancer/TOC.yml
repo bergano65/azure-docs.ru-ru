@@ -66,6 +66,8 @@
       href: load-balancer-standard-availability-zones.md
     - name: Встроенные средства управления безопасностью
       href: load-balancer-security-controls.md
+    - name: Управление серверным пулом
+      href: backend-pool-management.md
 - name: Практическое руководство
   items:
     - name: Масштабируемые наборы виртуальных машин

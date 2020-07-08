@@ -5,14 +5,14 @@ author: su-jie
 ms.author: sujie
 ms.reviewer: mamccrea
 ms.service: stream-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/15/2019
-ms.openlocfilehash: 11e68aaa7c70d4f888c0009bc28d9bb90f431f3b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 56fb677ca80c047fb90c58a3e0aedb41e6d4a3f2
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75354447"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86045099"
 ---
 # <a name="use-the-azure-stream-analytics-cicd-nuget-package-for-integration-and-development"></a>Использование пакета NuGet Azure Stream Analytics CI/CD для интеграции и разработки 
 В этой статье описывается, как использовать пакет NuGet Azure Stream Analytics CI/CD для настройки процесса непрерывной интеграции и развертывания.
@@ -34,13 +34,17 @@ ms.locfileid: "75354447"
 
 При успешном выполнении сборки проекта Stream Analytics Visual Studio создаются два файла шаблона Azure Resource Manager в папке **bin/[Debug/Retail]/Deploy**: 
 
-*  файл шаблона Resource Manager;
+* файл шаблона Resource Manager;
 
-       [ProjectName].JobTemplate.json 
+   ```
+   [ProjectName].JobTemplate.json 
+   ```
 
-*  файл параметров Resource Manager.
-
-       [ProjectName].JobTemplate.parameters.json   
+* файл параметров Resource Manager.
+   
+   ```
+   [ProjectName].JobTemplate.parameters.json
+   ```
 
 Параметры по умолчанию в файле parameters.json на основе параметров в проекте Visual Studio. При необходимости развертывания в другой среде замените соответствующие параметры.
 
@@ -59,7 +63,7 @@ ms.locfileid: "75354447"
 
 ## <a name="command-line-tool"></a>Программа командной строки
 
-### <a name="build-the-project"></a>Построение проекта
+### <a name="build-the-project"></a>Сборка проекта
 В пакете NuGet есть служебная программа командной строки, которая называется **SA.exe**. Она поддерживает сборку проекта и локальное тестирование на произвольном компьютере, которое можно использовать в процессе непрерывной интеграции и непрерывной доставки. 
 
 Файлы развертывания по умолчанию помещаются в текущем каталоге. С помощью параметра -OutputPath можно указать выходной путь.
@@ -90,7 +94,7 @@ arm -JobTemplate <templateFilePath> -JobParameterFile <jobParameterFilePath> [-O
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Краткое руководство. Создание облачного задания Azure Stream Analytics в Visual Studio](stream-analytics-quick-create-vs.md)
 * [Локальное тестирование запросов Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools-local-run.md)

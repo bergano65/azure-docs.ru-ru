@@ -1,17 +1,17 @@
 ---
-title: Создание Azure HPC Cache
+title: Создание экземпляра кэша Azure HPC
 description: Создание экземпляра Azure HPC Cache
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: rohogue
-ms.openlocfilehash: aaa939051a1aeafdb0650119772fc7214506aa8d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: be09d8b903d63b9fb2b57f8b9b7486b02a60085c
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73582180"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86045813"
 ---
 # <a name="plan-the-aggregated-namespace"></a>Проектирование агрегированного пространства имен
 
@@ -29,14 +29,14 @@ ms.locfileid: "73582180"
 
 Данные шаблона хранятся в центре обработки данных, а сведения, необходимые для этого задания, хранятся в следующих подкаталогах:
 
-    /goldline/templates/acme2017/sku798
-    /goldline/templates/acme2017/sku980 
+* */goldline/templates/acme2017/sku798*
+* */goldline/templates/acme2017/sku980* 
 
 Система хранения данных центра обработки данных предоставляет следующие операции экспорта:
 
-    /
-    /goldline
-    /goldline/templates
+* */*
+* */голдлине*
+* */голдлине/темплатес*
 
 Анализируемые данные скопированы в контейнер хранилища BLOB-объектов Azure с именем "sourcecollection" с помощью [служебной программы клфслоад](hpc-cache-ingest.md#pre-load-data-in-blob-storage-with-clfsload).
 
@@ -57,8 +57,8 @@ ms.locfileid: "73582180"
 | *IP-адрес или имя узла* | /голдлине/темплатес  | acme2017/sku798   | /templates/sku798 |
 | *IP-адрес или имя узла* | /голдлине/темплатес  | acme2017/sku980   | /templates/sku980 |
 
-Клиентское приложение может подключить кэш и легко получить доступ к объединенным путям к ``/source``файлам пространства ``/templates/sku798``имен, ``/templates/sku980``и.
+Клиентское приложение может подключить кэш и легко получить доступ к объединенным путям к файлам пространства имен ``/source`` , ``/templates/sku798`` и ``/templates/sku980`` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После того как вы решили настроить виртуальную файловую систему, [Создайте целевые объекты хранилища](hpc-cache-add-storage.md) , чтобы связать серверное хранилище с путями к виртуальным файлам клиента.

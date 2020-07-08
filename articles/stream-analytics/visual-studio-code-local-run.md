@@ -5,19 +5,19 @@ ms.service: stream-analytics
 author: su-jie
 ms.author: sujie
 ms.date: 11/10/2019
-ms.topic: conceptual
-ms.openlocfilehash: c29d0d9ecd856ee9611df21d23b1b2b763e24652
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: how-to
+ms.openlocfilehash: a47b641f4f5049beb605490122a33d407ac3e222
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75486473"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86044368"
 ---
 # <a name="test-stream-analytics-queries-locally-with-sample-data-using-visual-studio-code"></a>Локальное тестирование запросов Stream Analytics с использованием примера данных и Visual Studio Code
 
 Вы можете использовать средства Azure Stream Analytics для Visual Studio Code для локального тестирования заданий Stream Analytics с помощью примеров данных. Результаты запроса можно найти в файлах JSON в папке **локалрунаутпутс** проекта.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Установите [пакет SDK для .NET Core](https://dotnet.microsoft.com/download) и перезапустите Visual Studio Code.
 
@@ -35,7 +35,7 @@ ms.locfileid: "75486473"
 
 ## <a name="define-a-local-input"></a>Определить локальный вход
 
-1. В проекте Stream Analytics щелкните **input. JSON** в папке входных данных. Затем выберите **Добавить локальный вход** в верхней строке.
+1. Щелкните **input.js** в разделе Папка входных данных в проекте Stream Analytics. Затем выберите **Добавить локальный вход** в верхней строке.
 
     ![Добавить локальный вход из проекта](./media/quick-create-vs-code/add-input-from-project.png)
 
@@ -55,7 +55,7 @@ ms.locfileid: "75486473"
 
     ![Добавление нового локального псевдонима ASA](./media/vscode-local-run/new-local-input-alias.png)
 
-5. В созданном файле **LocalInput_Input. JSON** введите путь к файлу, в котором находится локальный файл данных.
+5. В созданном **LocalInput_Input.jsв** файле введите путь к файлу, в котором находится локальный файл данных.
 
     ![Введите путь к локальному файлу в Visual Studio](./media/vscode-local-run/local-file-path.png)
 
@@ -79,7 +79,7 @@ ms.locfileid: "75486473"
 
 ![Просмотреть результат локального запуска](./media/vscode-local-run/run-locally-result.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Тестирование Azure Stream Analytics заданий локально с входными данными в режиме реального времени с помощью Visual Studio Code](visual-studio-code-local-run-live-input.md)
 

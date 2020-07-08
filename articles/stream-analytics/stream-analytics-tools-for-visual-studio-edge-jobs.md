@@ -5,21 +5,21 @@ author: su-jie
 ms.author: sujie
 ms.reviewer: mamccrea
 ms.service: stream-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 07f109b3d5539f7cd87a12fb42a36803573c2bdf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 44b84c03dd9c070fd7ca3764a0dc50e8caa9e1fc
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75354570"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86045167"
 ---
 # <a name="develop-stream-analytics-edge-jobs-using-visual-studio-tools"></a>Разработка заданий Edge Stream Analytics с помощью средств Visual Studio
 
 В этом руководстве описано, как использовать средства Stream Analytics для Visual Studio. Вы узнаете, как создавать, отлаживать и создавать задания Stream Analytics пограничных устройств. После создания и тестирования задания можно перейти на портал Azure, чтобы развернуть его на устройствах. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для работы с данным руководством вам потребуется:
 
@@ -29,7 +29,7 @@ ms.locfileid: "75354570"
  
 ## <a name="create-a-stream-analytics-edge-project"></a>Создание проекта Stream Analytics Edge 
 
-В Visual Studio выберите **файл** > **создать** > **проект**. Перейдите к списку **Шаблоны** слева, разверните **Azure Stream Analytics** > **Stream Analytics Edge** > **Azure Stream Analytics Edge Application** (Приложение Azure Stream Analytics Edge). Укажите имя, расположение и имя решения для вашего проекта, а затем нажмите кнопку **ОК**.
+В Visual Studio выберите **файл**  >  **создать**  >  **проект**. Перейдите к списку **Шаблоны** слева, разверните **Azure Stream Analytics** > **Stream Analytics Edge** > **Azure Stream Analytics Edge Application** (Приложение Azure Stream Analytics Edge). Укажите имя, расположение и имя решения для вашего проекта, а затем нажмите кнопку **ОК**.
 
 ![Новый проект Stream Analytics пограничных проектов в Visual Studio](./media/stream-analytics-tools-for-visual-studio-edge-jobs/new-stream-analytics-edge-project.png)
 
@@ -119,8 +119,8 @@ FROM EdgeInput
 
 ![Схема задания и другие параметры в Visual Studio](./media/stream-analytics-tools-for-visual-studio-edge-jobs/job-diagram-and-other-options.png) 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Дополнительные сведения об Azure IoT Edge](../iot-edge/about-iot-edge.md)
+* [Дополнительные сведения о Azure IoT Edge](../iot-edge/about-iot-edge.md)
 * [Deploy Azure Stream Analytics as an IoT Edge module - preview](../iot-edge/tutorial-deploy-stream-analytics.md) (Развертывание Azure Stream Analytics в качестве модуля IoT Edge (предварительная версия))
 * [Отправьте отзыв команде с помощью этого опроса](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2czagZ-i_9Cg6NhAZlH9ypUMjNEM0RDVU9CVTBQWDdYTlk0UDNTTFdUTC4u) 

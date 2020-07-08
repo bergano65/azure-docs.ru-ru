@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: python
 ms.custom: mvc, tracking-python
-ms.openlocfilehash: 0c54b862704905b282869c5f2e9c374a173897ab
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ms.openlocfilehash: 92e224448d26c24c073bd81b7f9e001fa8a09898
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84609919"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86044691"
 ---
 # <a name="quickstart-create-and-provision-a-simulated-x509-device-using-python-device-sdk-for-iot-hub-device-provisioning-service"></a>Краткое руководство. Создание и подготовка имитированного устройства X.509 с помощью пакета SDK службы устройства Python для службы подготовки устройств Центра Интернета вещей
 
@@ -87,19 +87,21 @@ ms.locfileid: "84609919"
 
 3. В окне вывода введите `i` (индивидуальная регистрация), когда появится запрос. В окне вывода отобразится локально созданный сертификат X.509 для имитированного устройства. 
     
-    Скопируйте первый сертификат в буфер обмена. Начните копировать с первой строки:
+    ```output
+    Copy the first certificate to clipboard. Begin with the first occurrence of:
     
         -----BEGIN CERTIFICATE----- 
         
-    И закончите копировать после первой встретившейся строки:
+    End you copying after the first occurrence of:
     
         -----END CERTIFICATE-----
         
-    Обязательно скопируйте и эти строки. 
+    Make sure to include both of those lines as well.
+    ``` 
 
     ![Приложение для регистрации устройства DICE](./media/python-quick-create-simulated-device-x509/dice-device-enrollment.png)
  
-4. На компьютере с ОС Windows создайте файл **_X509testcertificate.pem_** , откройте его в любом редакторе и скопируйте в него содержимое из буфера обмена. Сохраните файл. 
+4. На компьютере с ОС Windows создайте файл **_X509testcertificate.pem_**, откройте его в любом редакторе и скопируйте в него содержимое из буфера обмена. Сохраните файл. 
 
 5. Войдите на портал Azure, нажмите кнопку **Все ресурсы** в меню слева и откройте службу подготовки.
 

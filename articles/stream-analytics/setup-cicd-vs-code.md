@@ -6,14 +6,14 @@ author: mamccrea
 ms.author: mamccrea
 ms.reviewer: jasonh
 ms.service: stream-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/28/2020
-ms.openlocfilehash: deb6c2439cc84f196b7f42fd9f49d3ebfd057cbb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7a7fe3f7e1c39837106471d118a8b1bb770a524e
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76962227"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86045830"
 ---
 # <a name="deploy-an-azure-stream-analytics-job-using-cicd-npm-package"></a>Развертывание задания Azure Stream Analytics с помощью пакета CI/CD NPM 
 
@@ -25,9 +25,9 @@ ms.locfileid: "76962227"
 
 Вы можете включить непрерывную интеграцию и развертывание для Azure Stream Analytics заданий с помощью пакета **ASA-streamanalytics-cicd** NPM. Пакет NPM предоставляет средства для создания шаблонов Azure Resource Manager [Stream Analytics Visual Studio Code проектов](quick-create-vs-code.md). Его можно использовать в Windows, macOS и Linux без установки Visual Studio Code.
 
-Вы можете [скачать пакет](https://www.npmjs.com/package/azure-streamanalytics-cicd) напрямую или установить его [глобально](https://docs.npmjs.com/downloading-and-installing-packages-globally) с `npm install -g azure-streamanalytics-cicd` помощью команды. Это рекомендуемый подход, который также можно использовать в задаче "Скрипт" PowerShell или Azure CLI конвейера сборки в **Azure pipelines**.
+Вы можете [скачать пакет](https://www.npmjs.com/package/azure-streamanalytics-cicd) напрямую или установить его [глобально](https://docs.npmjs.com/downloading-and-installing-packages-globally) с помощью `npm install -g azure-streamanalytics-cicd` команды. Это рекомендуемый подход, который также можно использовать в задаче "Скрипт" PowerShell или Azure CLI конвейера сборки в **Azure pipelines**.
 
-После установки пакета используйте следующую команду для вывода шаблонов Azure Resource Manager. Аргумент **scriptPath** — это абсолютный путь к файлу **asaql** в проекте. Убедитесь, что файлы асапрож. JSON и Жобконфиг. JSON находятся в одной папке с файлом скрипта. Если **outputPath** не указан, шаблоны будут помещены в папку **deploy** в папке **bin** проекта.
+После установки пакета используйте следующую команду для вывода шаблонов Azure Resource Manager. Аргумент **scriptPath** — это абсолютный путь к файлу **asaql** в проекте. Убедитесь, что asaproj.jsи JobConfig.jsв файлах находятся в одной папке с файлом скрипта. Если **outputPath** не указан, шаблоны будут помещены в папку **deploy** в папке **bin** проекта.
 
 ```powershell
 azure-streamanalytics-cicd build -scriptPath <scriptFullPath> -outputPath <outputPath>
@@ -39,15 +39,19 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
 
 Когда проект Stream Analytics Visual Studio Code успешно строится, он создает следующие два файла шаблонов Azure Resource Manager в папке **bin/[Debug/Retail]/Deploy** : 
 
-*  файл шаблона Resource Manager;
+* файл шаблона Resource Manager;
 
-       [ProjectName].JobTemplate.json 
+   ```
+   [ProjectName].JobTemplate.json 
+   ```
 
-*  файл параметров Resource Manager.
+* файл параметров Resource Manager.
 
-       [ProjectName].JobTemplate.parameters.json   
+   ```
+   [ProjectName].JobTemplate.parameters.json
+   ```   
 
-Параметры по умолчанию в файле Parameters. JSON относятся к параметрам в проекте Visual Studio Code. При необходимости развертывания в другой среде замените соответствующие параметры.
+Параметры по умолчанию в parameters.jsдля файла зависят от параметров в проекте Visual Studio Code. При необходимости развертывания в другой среде замените соответствующие параметры.
 
 > [!NOTE]
 > Для всех учетных данных значения по умолчанию имеют значение NULL. Их **необходимо** установить перед развертыванием в облаке.
@@ -70,7 +74,7 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
 
 2. Выберите **использовать классический редактор** для создания конвейера без YAML.
 
-3. Выберите тип источника, командный проект и репозиторий. Затем нажмите **Продолжить**.
+3. Выберите тип источника, командный проект и репозиторий. Затем выберите **Continue** (Продолжить).
 
    ![Выбор проекта Azure Stream Analytics](./media/setup-cicd-vs-code/select-repo.png)
 
@@ -150,15 +154,15 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
    |Параметр|Значение|
    |-|-|
    |Отображаемое имя| *Развертывание Мясажоб*|
-   |Подписка Azure| Выберите свою подписку.|
+   |Подписка Azure.| Выберите свою подписку.|
    |Действие| *Создание или изменение группы ресурсов*|
    |Группа ресурсов| Выберите имя для тестовой группы ресурсов, которая будет содержать задание Stream Analytics.|
    |Расположение|Выберите расположение группы тестовых ресурсов.|
    |Расположение шаблона| *Связанный артефакт*|
-   |Шаблон| \Дроп\мясажоб.жобтемплате.жсон $ (Build. ArtifactStagingDirectory) |
-   |Параметры шаблона|($ (Build. ArtifactStagingDirectory) \Дроп\мясажоб.жобтемплате.параметерс.жсон|
+   |Шаблон| \drop\myASAJob.JobTemplate.js$ (Build. ArtifactStagingDirectory) на |
+   |Параметры шаблона|($ (Build. ArtifactStagingDirectory) \drop\myASAJob.JobTemplate.parameters.jsна|
    |Переопределение параметров шаблона|-Input_IoTHub1_iotHubNamespace $ (test_eventhubname)|
-   |Режим развертывания|Добавочное|
+   |Режим развертывания|Добавочный|
 
 3. В раскрывающемся списке задачи выберите **развернуть задание в рабочей среде**.
 
@@ -167,15 +171,15 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
    |Параметр|Значение|
    |-|-|
    |Отображаемое имя| *Развертывание Мясажоб*|
-   |Подписка Azure| Выберите свою подписку.|
+   |Подписка Azure.| Выберите свою подписку.|
    |Действие| *Создание или изменение группы ресурсов*|
    |Группа ресурсов| Выберите имя рабочей группы ресурсов, которая будет содержать задание Stream Analytics.|
    |Расположение|Выберите расположение рабочей группы ресурсов.|
    |Расположение шаблона| *Связанный артефакт*|
-   |Шаблон| \Дроп\мясажоб.жобтемплате.жсон $ (Build. ArtifactStagingDirectory) |
-   |Параметры шаблона|($ (Build. ArtifactStagingDirectory) \Дроп\мясажоб.жобтемплате.параметерс.жсон|
+   |Шаблон| \drop\myASAJob.JobTemplate.js$ (Build. ArtifactStagingDirectory) на |
+   |Параметры шаблона|($ (Build. ArtifactStagingDirectory) \drop\myASAJob.JobTemplate.parameters.jsна|
    |Переопределение параметров шаблона|-Input_IoTHub1_iotHubNamespace $ (eventhubname)|
-   |Режим развертывания|Добавочное|
+   |Режим развертывания|Добавочный|
 
 ### <a name="create-release"></a>Создать выпуск
 

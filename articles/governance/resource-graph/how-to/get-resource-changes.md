@@ -3,12 +3,12 @@ title: Получение данных об изменении ресурса
 description: Сведения о том, как узнать об изменении ресурса, как получить список измененных свойств и оценить различия.
 ms.date: 05/20/2020
 ms.topic: how-to
-ms.openlocfilehash: 9e233ebbdd1d70d483af44eacf12cc924deaafac
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
-ms.translationtype: HT
+ms.openlocfilehash: ace911361ccb96cab3d5c7557ba0e524dbf801d2
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84167168"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86044997"
 ---
 # <a name="get-resource-changes"></a>Получение данных об изменении ресурса
 
@@ -28,7 +28,7 @@ ms.locfileid: "84167168"
 В этой статье показано, как собирать эти сведения через пакет SDK для Resource Graph. Чтобы просмотреть эти сведения на портале Azure, воспользуйтесь [журналом изменений Политики Azure](../../policy/how-to/determine-non-compliance.md#change-history) или [журналом изменений для журнала действий Azure](../../../azure-monitor/platform/activity-log-view.md#azure-portal). Дополнительные сведения об изменениях в приложениях на уровне инфраструктуры вплоть до развертывания см. в статье [Использование анализа изменений в приложениях (предварительная версия) в Azure Monitor](../../../azure-monitor/app/change-analysis.md).
 
 > [!NOTE]
-> Сведения в Resource Graph приводятся для свойств Resource Manager. Сведения об отслеживании изменений в виртуальной машине см. в статьях [Общие сведения об отслеживании изменений и инвентаризации](../../../automation/automation-change-tracking.md) для службы автоматизации Azure и [Общие сведения о гостевой конфигурации для виртуальных машин](../../policy/concepts/guest-configuration.md).
+> Сведения в Resource Graph приводятся для свойств Resource Manager. Сведения об отслеживании изменений в виртуальной машине см. в статьях [Общие сведения об отслеживании изменений и инвентаризации](../../../automation/change-tracking.md) для службы автоматизации Azure и [Общие сведения о гостевой конфигурации для виртуальных машин](../../policy/concepts/guest-configuration.md).
 
 > [!IMPORTANT]
 > История изменений в Azure Resource Graph предоставляется в режиме предварительной версии.

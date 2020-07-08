@@ -5,15 +5,15 @@ author: mamccrea
 ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/19/2020
 ms.custom: seodec18
-ms.openlocfilehash: b33aeeee03fa57d87a60fd4c1904d5e4a86dd004
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3c7a9a4c31ad7282782f45a8e2a4457cd159ee77
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80067094"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86044453"
 ---
 # <a name="perform-sentiment-analysis-with-azure-stream-analytics-and-azure-machine-learning-studio-classic"></a>Выполнение анализа тональности с помощью Azure Stream Analytics и Машинное обучение Azure Studio (классическая модель)
 
@@ -185,7 +185,7 @@ ms.locfileid: "80067094"
    |Поле  |Значение  |
    |---------|---------|
    | **Псевдоним функции** | Используйте имя `sentiment` и выберите **Provide Azure Machine Learning function settings manually** (Указать параметры функции Машинного обучения Azure вручную). После этого введите URL-адрес и ключ.      |
-   | **URL-адрес**| Вставьте URL-адрес веб-службы.|
+   | **URL**| Вставьте URL-адрес веб-службы.|
    |**Key** | Вставьте ключ API. |
   
    ![Параметры добавления функции службы "Машинное обучение" в задание Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/add-machine-learning-function.png)  

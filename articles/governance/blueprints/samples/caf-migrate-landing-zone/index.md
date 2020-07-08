@@ -3,12 +3,12 @@ title: Краткое описание примера схемы зоны раз
 description: Обзор и описание архитектуры Cloud Adoption Framework (CAF) с примером схемы целевой зоны для службы "Миграция Azure".
 ms.date: 04/15/2020
 ms.topic: sample
-ms.openlocfilehash: c4720ec3e94ee928553cd62017831e5158ac9b97
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: 45479fd6fa3a49d2639e587d3dba2aaaf567d0b1
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81459871"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86044827"
 ---
 # <a name="overview-of-the-microsoft-cloud-adoption-framework-for-azure-migration-landing-zone-blueprint-sample"></a>Общие сведения об использовании Microsoft Cloud Adoption Framework с примером схемы зоны размещения для миграции в соответствии с CAF
 
@@ -28,7 +28,7 @@ ms.locfileid: "81459871"
 - развернутую службу [Log Analytics](../../../../azure-monitor/overview.md), которая обеспечивает регистрацию всех действий и служб в центральном расположении с момента запуска миграции;
 - развернутый [Центр безопасности Azure](../../../../security-center/security-center-intro.md) (стандартная версия), который обеспечивает защиту от угроз для перенесенных рабочих нагрузок;
 - развернутую [виртуальную сеть Azure](../../../../virtual-network/virtual-networks-overview.md), которая предоставляет изолированную сеть и подсети для виртуальной машины;
-- развернутый [проект Миграции Azure](../../../..//migrate/migrate-overview.md) для обнаружения и оценки. Мы добавляем средства для оценки серверов, миграции серверов, оценки баз данных и переноса баз данных.  
+- развернутый [проект Миграции Azure](../../../../migrate/migrate-services-overview.md) для обнаружения и оценки. Мы добавляем средства для оценки серверов, миграции серверов, оценки баз данных и переноса баз данных.  
 
 
 Все эти элементы соответствуют проверенным на практике рекомендациям, опубликованным в [Центре архитектуры Azure (эталонные архитектуры)](/azure/architecture/reference-architectures/).

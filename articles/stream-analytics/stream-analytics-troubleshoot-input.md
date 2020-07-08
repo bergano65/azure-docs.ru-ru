@@ -5,15 +5,15 @@ author: sidram
 ms.author: sidram
 ms.reviewer: mamccrea
 ms.service: stream-analytics
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 05/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: 9d8d87e0a2fb21603802f533a3566aa6743a9a79
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 3cac20e33ff865058ce41799ae8841a05716edc9
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83831897"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86045082"
 ---
 # <a name="troubleshoot-input-connections"></a>Устранение неполадок с входными подключениями
 
@@ -138,6 +138,28 @@ FROM data
 ### <a name="ensure-that-inputs-bind-to-different-consumer-groups"></a>Привязка входных данных к разным группам потребителей
 
 Создайте отдельные группы потребителей для запросов, в которых три или более наборов входных данных подключены к одной группе потребителей Центров событий. Для этого нужно создать дополнительные наборы входных данных Stream Analytics.
+
+### <a name="create-separate-inputs-with-different-consumer-groups"></a>Создание отдельных входных данных с разными группами потребителей
+
+Можно создать отдельные входные данные с разными группами потребителей для одного концентратора событий. Следующий запрос UNION является примером того, где *инпутоне* и *инпуттво* относятся к одному источнику концентратора событий. Любой запрос может иметь отдельные входные данные с разными группами потребителей. Запрос UNION — это только один пример.
+
+```sql
+WITH 
+DataOne AS 
+(
+SELECT * FROM InputOne 
+),
+
+DataTwo AS 
+(
+SELECT * FROM InputTwo 
+),
+
+SELECT foo FROM DataOne
+UNION 
+SELECT foo FROM DataTwo
+
+```
 
 ## <a name="get-help"></a>Получить справку
 
