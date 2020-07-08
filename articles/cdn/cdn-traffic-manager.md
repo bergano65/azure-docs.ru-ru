@@ -11,16 +11,16 @@ ms.service: azure-cdn
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/18/2019
 ms.author: allensu
 ms.custom: ''
-ms.openlocfilehash: 3d4f77a0fb9b8005729a6e9d35f254eb522b690e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d557637815036fa49e83f1d11a948f264d493321
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81259856"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84888659"
 ---
 # <a name="set-up-failover-across-multiple-azure-cdn-endpoints-with-azure-traffic-manager"></a>Настройка отработки отказа между несколькими конечными точками Azure CDN при помощи диспетчера трафика Azure
 
@@ -60,9 +60,9 @@ ms.locfileid: "81259856"
 
 1. Перейдите на веб-сайт поставщика домена для своего пользовательского домена, например GoDaddy, и создайте две записи DNS CNAME. 
 
-    a. Для первой записи CNAME подключите к конечной точке CDN пользовательский домен с поддоменом cdnverify. Эта запись нужна для регистрации пользовательского домена в конечной точке CDN, которая была добавлена в диспетчер трафика Azure в шаге 2.
+    а. Для первой записи CNAME подключите к конечной точке CDN пользовательский домен с поддоменом cdnverify. Эта запись нужна для регистрации пользовательского домена в конечной точке CDN, которая была добавлена в диспетчер трафика Azure в шаге 2.
 
-      Пример: 
+      Пример. 
 
       `cdnverify.cdndemo101.dustydogpetcare.online  CNAME  cdnverify.cdndemo101akamai.azureedge.net`  
 
