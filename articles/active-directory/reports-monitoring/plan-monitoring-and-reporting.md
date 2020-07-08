@@ -13,10 +13,9 @@ ms.author: baselden
 ms.reviewer: plenzke
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5ad84b8910e8d4f8af9845c33c22d128e317dedc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74232111"
 ---
 # <a name="plan-an-azure-active-directory-reporting-and-monitoring-deployment"></a>Планирование развертывания Azure Active Directory отчетов и мониторинга
@@ -71,13 +70,13 @@ ms.locfileid: "74232111"
 
 В этом проекте вы определите аудитории, которые будут потреблять и отслеживать отчеты, и определите архитектуру мониторинга Azure AD.
 
-### <a name="engage-the-right-stakeholders"></a>Привлечение нужных заинтересованных лиц
+### <a name="engage-the-right-stakeholders"></a>Привлечение соответствующих заинтересованных лиц
 
-При сбое технологических проектов они обычно делают это из-за несовпадения ожидания, результатов и обязанностей. Чтобы избежать этих ловушек, [Убедитесь, что вы подрабатываете нужные заинтересованные лица](https://aka.ms/deploymentplans). Также убедитесь, что роли заинтересованных лиц в проекте хорошо понятны, путем документирования заинтересованных лиц, а также их ввода и подотчетности.
+Причиной неудач технических проектов обычно являются неоправданные ожидания относительно влияния, результатов и обязанностей. Чтобы избежать этих ловушек, [Убедитесь, что вы подрабатываете нужные заинтересованные лица](https://aka.ms/deploymentplans). Также убедитесь, что роли заинтересованных лиц в проекте хорошо понятны, путем документирования заинтересованных лиц, а также их ввода и подотчетности.
 
-### <a name="plan-communications"></a>Планирование обмена данными
+### <a name="plan-communications"></a>Планирование информирования
 
-Связь важна для успеха любой новой службы. Заблаговременное взаимодействие с пользователями, как изменится их опыт, когда изменится, и как получить поддержку в случае возникновения проблем.
+Информирование важно для успеха любой новой службы. Заблаговременное сообщайте пользователям, как изменится их взаимодействие с системой, когда это произойдет и как получить поддержку в случае возникновения проблем.
 
 ### <a name="document-your-current-infrastructure-and-policies"></a>Документирование текущей инфраструктуры и политик
 
@@ -99,10 +98,10 @@ ms.locfileid: "74232111"
 * Приятно, чтобы удовлетворить потребности бизнеса
 * Неприменимо
 
-|Область |Описание |
+|Область |Описание: |
 |-|-|
 |Сохранение| **Срок хранения журнала более 30 дней**. Из-за юридических или бизнес-требований необходимо хранить журналы аудита и журналы входа Azure AD дольше 30 дней. |
-|Analytics| **Журналы должны иметь возможность поиска**. Сохраненные журналы должны поддерживать поиск с помощью аналитических средств. |
+|Аналитика| **Журналы должны иметь возможность поиска**. Сохраненные журналы должны поддерживать поиск с помощью аналитических средств. |
 | Operational Insights| **Аналитика для различных команд**. Необходимо предоставить доступ различным пользователям для получения оперативной аналитики, такой как использование приложения, ошибки входа, использование самообслуживания, тенденции и т. д. |
 | Аналитика безопасности| **Аналитика для различных команд**. Необходимо предоставить доступ различным пользователям для получения оперативной аналитики, такой как использование приложения, ошибки входа, использование самостоятельной службы, тенденции и т. д. |
 | Интеграция в SIEM Systems      | **Интеграция SIEM**. Необходимо интегрировать и выполнять потоковую передачу журналов входа и журналов аудита Azure AD в существующие системы SIEM. |
@@ -149,7 +148,7 @@ ms.locfileid: "74232111"
 
 * Читатель сведений о безопасности
 
-* Средство просмотра отчетов
+* Читатель отчетов
 
 Дополнительные сведения об [административных ролях Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles-azure-portal).
 
@@ -171,9 +170,9 @@ ms.locfileid: "74232111"
 
 [Отправка журналов в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
 
-[Установка и использование представлений log Analytics для Azure Active Directory](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-install-use-log-analytics-views)
+[Установка и использование представлений Log Analytics для Azure Active Directory](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-install-use-log-analytics-views)
 
-[Анализ журналов действий Azure AD с помощью журналов Azure Monitor (предварительная версия)](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-analyze-activity-logs-log-analytics)
+[Анализ журналов действий Azure AD с помощью журналов Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-analyze-activity-logs-log-analytics)
 
 * [Анализ схемы журналов аудита в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema)
 
@@ -189,7 +188,7 @@ ms.locfileid: "74232111"
 
  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Попробуйте реализовать [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) 
 

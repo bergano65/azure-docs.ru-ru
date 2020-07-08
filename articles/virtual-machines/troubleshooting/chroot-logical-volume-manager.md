@@ -15,10 +15,9 @@ ms.workload: infrastructure-services
 ms.date: 11/24/2019
 ms.author: vilibert
 ms.openlocfilehash: 20d710f717a9dff26f46ac7a201a9b694f3fbe84
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74684133"
 ---
 # <a name="troubleshooting-a-linux-vm-when-there-is-no-access-to-the-azure-serial-console-and-the-disk-layout-is-using-lvm-logical-volume-manager"></a>Устранение неполадок в виртуальной машине Linux при отсутствии доступа к последовательной консоли Azure и разметке диска с использованием LVM (Диспетчер логических томов)
@@ -143,7 +142,7 @@ mount  /dev/mapper/rootvg-usrlv /rescue/usr
 Команды можно использовать для установки, удаления и обновления программного обеспечения. Устраните неполадки виртуальных машин, чтобы устранить ошибки.
 
 
-Выполните команду лсблк, а/Рескуе — Now/,/Рескуе/Бут —/Boot ![чрутед](./media/chroot-logical-volume-manager/chrooted.png)
+Выполните команду лсблк, а/Рескуе — Now/,/Рескуе/Бут —/Boot ![ чрутед](./media/chroot-logical-volume-manager/chrooted.png)
 
 ## <a name="perform-fixes"></a>Выполнение исправлений
 
@@ -171,13 +170,13 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 Команда **grep** перечисляет ядра, о которых имеет значение **GRUB. cfg** .
 ![Ядра](./media/chroot-logical-volume-manager/kernels.png)
 
-**grub2-едитенв** отображает, какой ядро будет загружаться при следующей загрузке ![ядра по умолчанию](./media/chroot-logical-volume-manager/kernel-default.png)
+**grub2-едитенв** отображает, какой ядро будет загружаться при следующей загрузке ![ ядра по умолчанию](./media/chroot-logical-volume-manager/kernel-default.png)
 
-**grub2-Set-Default** используется для изменения другого набора grub2 ядра ![.](./media/chroot-logical-volume-manager/grub2-set-default.png)
+**grub2-Set-Default** используется для изменения другого ![ набора grub2 ядра.](./media/chroot-logical-volume-manager/grub2-set-default.png)
 
-**grub2-едитенв** отображает, какой ядро будет загружаться при следующей загрузке ![нового ядра.](./media/chroot-logical-volume-manager/kernel-new.png)
+**grub2-едитенв** отображает, какой ядро будет загружаться при следующей загрузке ![ нового ядра.](./media/chroot-logical-volume-manager/kernel-new.png)
 
-**grub2-mkconfig** перестраивает GRUB. cfg с использованием требуемых ![версий grub2 mkconfig](./media/chroot-logical-volume-manager/grub2-mkconfig.png)
+**grub2-mkconfig** перестраивает GRUB. cfg с использованием требуемых версий ![ grub2 mkconfig](./media/chroot-logical-volume-manager/grub2-mkconfig.png)
 
 
 
@@ -190,7 +189,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 Выйдите из среды **чрут** и подключите требуемую **LV**
 
-![Дополнительно](./media/chroot-logical-volume-manager/advanced.png)
+![Продвинутый уровень](./media/chroot-logical-volume-manager/advanced.png)
 
 Теперь снова получите доступ к среде **чрут** , выполнив
 
@@ -198,14 +197,14 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 Все LVs должны быть видимыми в виде подключенных секций.
 
-![Дополнительно](./media/chroot-logical-volume-manager/chroot-all-mounts.png)
+![Продвинутый уровень](./media/chroot-logical-volume-manager/chroot-all-mounts.png)
 
 Запрос установленного **ядра**
 
-![Дополнительно](./media/chroot-logical-volume-manager/rpm-kernel.png)
+![Продвинутый уровень](./media/chroot-logical-volume-manager/rpm-kernel.png)
 
-При необходимости удалите или обновите расширение **ядра**
-![.](./media/chroot-logical-volume-manager/rpm-remove-kernel.png)
+При необходимости удалите или обновите **kernel** 
+ ![ расширение ядра.](./media/chroot-logical-volume-manager/rpm-remove-kernel.png)
 
 
 ### <a name="example-3---enable-serial-console"></a>Пример 3. Включение последовательной консоли
@@ -252,15 +251,15 @@ umount /rescue
 
 Отключите диск от виртуальной машины и выполните переключение диска.
 
-Выберите виртуальную машину на **дисках** портала и выберите **отсоединить**
-![диск.](./media/chroot-logical-volume-manager/detach-disk.png) 
+Выберите виртуальную машину на **дисках** портала и выберите **отсоединить** 
+ ![ диск.](./media/chroot-logical-volume-manager/detach-disk.png) 
 
-Сохранить изменения ![сохранить отсоединение](./media/chroot-logical-volume-manager/save-detach.png) 
+Сохранить изменения ![ сохранить отсоединение](./media/chroot-logical-volume-manager/save-detach.png) 
 
 Теперь диск станет доступным и будет заменен исходным диском ОС затронутой виртуальной машины.
 
-Перейдите в портал Azure к виртуальной машине, на которой выполняется сбой, и выберите **диски** -> **Переключить**
-![диск подкачки ОС.](./media/chroot-logical-volume-manager/swap-disk.png) 
+Перейдите в портал Azure к виртуальной машине, на которой выполняется сбой, и выберите **диски**  ->  **Переключить**диск 
+ ![ подкачки ОС.](./media/chroot-logical-volume-manager/swap-disk.png) 
 
 Заполните поля **выберите диск** — это диск моментальных снимков, который просто отсоединился на предыдущем шаге. Также требуется имя виртуальной машины затронутой виртуальной машины, а затем нажмите кнопку **ОК** .
 
@@ -269,9 +268,9 @@ umount /rescue
 Если виртуальная машина работает, диск будет выключен, Перезагрузите виртуальную машину после завершения операции переключения диска.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Кроме того, вы можете узнать больше о:
 
- [Последовательная консоль Azure]( https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-linux)
+ [Серийная консоль Azure]( https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-linux)
 
 [Однопользовательский режим](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-grub-single-user-mode)

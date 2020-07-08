@@ -16,10 +16,9 @@ ms.date: 05/25/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: fb6f88fbfcbd539603e435b11661c428d54f3c34
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74224731"
 ---
 # <a name="connecting-azure-vms-to-hana-large-instances"></a>Подключение виртуальных машин Azure к крупным экземплярам HANA
@@ -146,6 +145,6 @@ ms.locfileid: "74224731"
 
 Можно также обратиться к последовательности подключения крупных экземпляров HANA, которая описана в документе [SAP HANA on Azure (Large Instances) Setup](https://azure.microsoft.com/resources/sap-hana-on-azure-large-instances-setup/) (Комплексная настройка крупных экземпляров SAP HANA). Многие из следующих действий демонстрируются в примере развертывания в этом документе. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - См. статью [Подключение виртуальной сети к крупным экземплярам HANA](hana-connect-vnet-express-route.md).

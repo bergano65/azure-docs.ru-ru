@@ -12,15 +12,14 @@ manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 08dbb81b91def2fd464ecc85c2d2eaf45ed189d5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74271778"
 ---
 # <a name="understand-user-tokens-in-azure-ad-b2b-collaboration"></a>Основные сведения о токенах пользователей в службе совместной работы Azure AD B2B
 
-Если вам необходимо знать, как выглядит токен для пользователя службы совместной работы B2B, ниже приведены сведения о токене носителя и содержимое токена для гостевого пользователя Azure Active Directory (Azure AD) и гостевого пользователя учетной записи Майкрософт в клиенте ресурса (для tenantid 04dcc6ab-388a-4559-b527-fbec656300ea). Чтобы просмотреть содержимое JSON Web Token (JWT), используйте [https://jwt.io/](https://jwt.io/) или. [https://jwt.ms/](https://jwt.ms/)
+Если вам необходимо знать, как выглядит токен для пользователя службы совместной работы B2B, ниже приведены сведения о токене носителя и содержимое токена для гостевого пользователя Azure Active Directory (Azure AD) и гостевого пользователя учетной записи Майкрософт в клиенте ресурса (для tenantid 04dcc6ab-388a-4559-b527-fbec656300ea). Чтобы просмотреть содержимое JSON Web Token (JWT), используйте [https://jwt.io/](https://jwt.io/) или [https://jwt.ms/](https://jwt.ms/) .
 
 ## <a name="azure-ad-guest-token"></a>Токен гостевого пользователя Azure AD
 ```

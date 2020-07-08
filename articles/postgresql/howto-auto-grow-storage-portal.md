@@ -7,10 +7,9 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/29/2019
 ms.openlocfilehash: 5e4f9d68d02edf456394d4ce10b7b6af5f8643d9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74769240"
 ---
 # <a name="auto-grow-storage-using-the-azure-portal-in-azure-database-for-postgresql---single-server"></a>Автоматическое расширение хранилища с помощью портал Azure в базе данных Azure для PostgreSQL — один сервер
@@ -18,7 +17,7 @@ ms.locfileid: "74769240"
 
 Когда сервер достигает предельного размера выделенного хранилища, сервер помечается как доступный только для чтения. Однако если включить автоматическое увеличение размера хранилища, серверное хранилище будет увеличиваться в соответствии с растущими данными. Для серверов с подготовленным хранилищем объемом менее 100 ГБ размер подготовленного хранилища увеличивается на 5 ГБ, как только объем свободного хранилища превысит 1 ГБ или 10% подготовленного хранилища. Для серверов с более чем 100 ГБ подготовленного хранилища размер подготовленного хранилища увеличивается на 5%, если объем свободного пространства превышает 5% от подготовленного объема хранилища. Максимальный объем хранилища, указанный [здесь](https://docs.microsoft.com/azure/postgresql/concepts-pricing-tiers#storage) , применим.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 - [сервер базы данных Azure для PostgreSQL](quickstart-create-server-database-portal.md);
 
@@ -40,6 +39,6 @@ ms.locfileid: "74769240"
 
     ![База данных Azure для PostgreSQL — успешное выполнение автоматического роста](./media/howto-auto-grow-storage-portal/5-auto-grow-successful.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте [, как создавать оповещения по метрикам](howto-alert-on-metric.md).

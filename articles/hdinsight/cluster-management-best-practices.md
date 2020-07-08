@@ -9,10 +9,9 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.openlocfilehash: 3010c1d597907e7d5c7f82c8b42721dc1f934f6f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74782025"
 ---
 # <a name="hdinsight-cluster-management-best-practices"></a>Рекомендации по управлению кластерами HDInsight
@@ -40,7 +39,7 @@ ms.locfileid: "74782025"
 
 | Параметр | Документы |
 |---|---|
-| Действия сценария | [Настройка кластеров Azure HDInsight с помощью действий сценария](./hdinsight-hadoop-customize-cluster-linux.md) |
+| Действия сценария | [Настройка кластеров Azure HDInsight с помощью действий сценариев](./hdinsight-hadoop-customize-cluster-linux.md) |
 | Начальная загрузка | [Настройка кластеров HDInsight с помощью начальной загрузки](./hdinsight-hadoop-customize-cluster-bootstrap.md) |
 | Внешние метахранилища | [Использование внешних хранилищ метаданных в Azure HDInsight](./hdinsight-use-external-metadata-stores.md) |
 | Пользовательская база данных Ambari DB | [Настройка кластеров HDInsight с помощью настраиваемой базы данных Ambari DB](./hdinsight-custom-ambari-db.md) |
@@ -61,7 +60,7 @@ ms.locfileid: "74782025"
 | Автомасштабирование | [Автоматическое масштабирование кластеров Azure HDInsight](./hdinsight-autoscale-clusters.md) |
 | Масштабирование вручную | [Масштабирование кластеров Azure HDInsight](./hdinsight-scaling-best-practices.md) |
 | Мониторинг с помощью Ambari| [Мониторинг производительности кластера в Azure HDInsight](./hdinsight-key-scenarios-to-monitor.md) |
-| Мониторинг с помощью журналов Azure Monitor | [Use Azure Monitor logs to monitor HDInsight clusters](./hdinsight-hadoop-oms-log-analytics-tutorial.md) (Мониторинг кластеров HDInsight с помощью журналов Azure Monitor) |
+| Мониторинг с помощью журналов Azure Monitor | [Мониторинг кластеров HDInsight с помощью журналов Azure Monitor](./hdinsight-hadoop-oms-log-analytics-tutorial.md) |
 
 ## <a name="how-do-i-check-on-deleted-hdinsight-clusters"></a>Разделы справки проверить удаленные кластеры HDInsight?
 
@@ -74,7 +73,7 @@ AzureActivity
 | where ResourceProvider == "Microsoft.HDInsight" and (OperationName == "Create or Update Cluster" or OperationName == "Delete Cluster") and ActivityStatus == "Succeeded"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Capacity planning for HDInsight clusters](./hdinsight-capacity-planning.md) (Планирование загрузки кластеров HDInsight)
-* [Каковы рекомендуемые конфигурации узла по умолчанию для Azure HDInsight?](./hdinsight-supported-node-configuration.md)
+* [Планирование загрузки кластеров HDInsight](./hdinsight-capacity-planning.md)
+* [Каковы используемые по умолчанию и рекомендуемые конфигурации узлов для Azure HDInsight?](./hdinsight-supported-node-configuration.md)

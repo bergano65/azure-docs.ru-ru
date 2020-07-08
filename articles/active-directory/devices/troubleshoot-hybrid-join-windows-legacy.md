@@ -12,10 +12,9 @@ manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e168deea1ba442d48f483264c1e97ce618040f18
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74379117"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-down-level-devices"></a>Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory 
@@ -25,8 +24,8 @@ ms.locfileid: "74379117"
 - Windows 7 
 - Windows 8.1 
 - Windows Server 2008 R2 
-- Windows Server 2012 
-- Windows Server 2012 R2 
+- Windows Server 2012 
+- Windows Server 2012 R2 
 
 Сведения об устройствах под управлением Windows 10 и Windows Server 2016 см. в статье [Troubleshooting hybrid Azure Active Directory joined Windows 10 and Windows Server 2016 devices](troubleshoot-hybrid-join-windows-current.md) (Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory).
 
@@ -73,7 +72,7 @@ ms.locfileid: "74379117"
    - Другой вариант — страница обнаружения домашней области (HRD) ожидает взаимодействия с пользователем, что предотвращает автоматическое запрашивание токена программой **Autoworkplace.exe**.
    - Возможно, URL-адреса AD FS и Azure AD отсутствуют в зоне интрасети IE на клиенте.
    - Проблемы с подключением к сети могут препятствовать **autoworkplace.exe** достигать URL-адреса AD FS или Azure AD. 
-   - Для работы программы автообслуживания **. exe** требуется, чтобы клиент имел прямую отправку информации от клиента к локальному контроллеру домена AD Организации. Это означает, что гибридное присоединение к Azure AD будет выполнено успешно, только если клиент подключен к интрасети организации.
+   - **Autoworkplace.exe** требует, чтобы клиент имел прямую информацию от клиента к локальному контроллеру домена AD Организации. Это означает, что гибридное присоединение к Azure AD будет выполнено успешно, только если клиент подключен к интрасети организации.
    - Ваша организация использует прозрачный единый вход Azure AD, `https://autologon.microsoftazuread-sso.com` или `https://aadg.windows.net.nsatc.net` нет в параметрах интрасети IE устройства, а параметр **Разрешить обновление строки состояния в сценарии** не включен в зоне интранета.
 - Вы не вошли в качестве пользователя домена
 
@@ -103,6 +102,6 @@ ms.locfileid: "74379117"
    - или, если ваш домен управляемый, то эффективный SSO не был настроен или не работает;
    - пользователь достиг предела подключенных устройств. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ответы на вопросы можно найти в статье [Azure Active Directory device management FAQ](faq.md) (Часто задаваемые вопросы по управлению устройствами Azure Active Directory).  

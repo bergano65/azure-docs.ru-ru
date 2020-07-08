@@ -13,10 +13,9 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: d153f8c316cbb76e063f07f7f823c8d9c4a21f87
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74703354"
 ---
 # <a name="transform-data-using-hive-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hive в фабрике данных Azure 
@@ -72,12 +71,12 @@ ms.locfileid: "74703354"
 }
 ```
 ## <a name="syntax-details"></a>Сведения о синтаксисе
-| Свойство | Описание | Обязательный |
+| Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | name |Имя действия. |Да |
 | description |Текст, описывающий, для чего используется действие |Нет |
 | type |HDInsightHive. |Да |
-| inputs |Входные данные, используемые действием Hive |Нет |
+| Ввод данных |Входные данные, используемые действием Hive |Нет |
 | outputs |Выходные данные, создаваемые действием Hive |Да |
 | linkedServiceName |Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. |Да |
 | скрипт |Указывается встроенный сценарий Hive. |Нет |
@@ -241,7 +240,7 @@ FROM HiveSampleIn Group by ProfileID
         SUM(Duration)
     FROM HiveSampleIn Group by ProfileID
     ```
-  ## <a name="see-also"></a>См. также:
+  ## <a name="see-also"></a>См. также
 * [Действие Pig](data-factory-pig-activity.md)
 * [Действие MapReduce](data-factory-map-reduce.md)
 * [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)

@@ -12,10 +12,9 @@ manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 28d02160163da4081ad8adbe233b27fee970a0df
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74868853"
 ---
 # <a name="azure-active-directory-b2b-collaboration-licensing-guidance"></a>Руководство по лицензированию службы совместной работы Azure Active Directory B2B
@@ -35,7 +34,7 @@ ms.locfileid: "74868853"
 - Вы хотите пригласить 100 гостевых пользователей в приложения или службы Azure AD и обеспечить управление доступом и подготовку. Для 50 этих гостевых пользователей необходимо также требовать MFA и условный доступ, поэтому для этих функций потребуется 10 Azure AD Premium P1 лицензий. Если вы планируете использовать для гостевых пользователей функции защиты идентификации, вам потребуются лицензии Azure AD Premium P2 в соотношении 1:5 для охвата гостевых пользователей.
 - Вы хотите пригласить 60 гостевых пользователей, всем из которых требуется MFA, поэтому у вас должно быть не менее 12 лицензий Azure AD Premium P1. У вас есть 10 сотрудников с лицензиями Azure AD Premium P1. Значит при соотношении лицензирования 1:5 в группе может быть до 50 гостевых пользователей. Необходимо также приобрести две дополнительные лицензии Premium P1, чтобы охватить 10 дополнительных гостевых пользователей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Другие ресурсы о службе совместной работы Azure AD B2B перечислены ниже.
 

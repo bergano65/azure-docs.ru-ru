@@ -14,10 +14,9 @@ ms.workload: na
 ms.date: 12/19/2018
 ms.author: memildin
 ms.openlocfilehash: 734876380d22f5d4d6dae0dd375b238fd5f6ffed
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74559348"
 ---
 # <a name="gain-tenant-wide-visibility-for-azure-security-center"></a>Получение видимости в пределах клиента в центре безопасности Azure
@@ -40,7 +39,7 @@ ms.locfileid: "74559348"
 
  
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. Выберите **все службы** > **группы управления**.
+2. Выберите **Все службы** > **Группы управления**.
 3. На главной странице выберите **New Management group** (Создать группу управления). 
 
     ![Главная группа](./media/security-center-management-groups/main.png) 
@@ -185,11 +184,11 @@ ms.locfileid: "74559348"
    > [!NOTE]
    > Группы управления могут содержать подписки и дочерние группы управления. Когда вы назначаете пользователю роль RBAC в родительской группе управления, подписки в дочерней группе управления наследуют доступ. То же самое касается и политик. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Работая с этой статьей, вы узнали, как получить видимость в пределах клиента в центре безопасности Azure. Дополнительные сведения о центре безопасности см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Мониторинг работоспособности системы безопасности в центре безопасности Azure](security-center-monitoring.md)
+> [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](security-center-monitoring.md)
 
 > [!div class="nextstepaction"]
 > [Управление оповещениями безопасности в центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md)
