@@ -1,24 +1,14 @@
 ---
 title: Доступность и согласованность в Центрах событий Azure | Документация Майкрософт
 description: Узнайте, как обеспечить максимальную доступность и согласованность в Центрах событий Azure с помощью секций.
-services: event-hubs
-documentationcenter: na
-author: ShubhaVijayasarathy
-editor: ''
-ms.assetid: 8f3637a1-bbd7-481e-be49-b3adf9510ba1
-ms.service: event-hubs
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 03/27/2020
-ms.author: shvija
-ms.openlocfilehash: 0546adb6131479a8f5d2e7e31819483200586839
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/23/2020
+ms.openlocfilehash: 497a6e7430c4e6f8e29f903294ca94a4cb23012b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80397335"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85315784"
 ---
 # <a name="availability-and-consistency-in-event-hubs"></a>Доступность и согласованность в Центрах событий
 
@@ -148,7 +138,7 @@ await producer.SendAsync(data);
 
 В этом примере событие отправляется в одну из доступных секций в концентраторе событий, и ему задается соответствующий порядковый номер из приложения. Для этого решения требуется, чтобы обрабатывающее приложение сохраняло состояние, но отправителям предоставлялась конечная точка, которая скорее всего будет доступна.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о Центрах событий см. в следующих источниках:
 
 * [Обзор службы Центров событий](event-hubs-what-is-event-hubs.md)

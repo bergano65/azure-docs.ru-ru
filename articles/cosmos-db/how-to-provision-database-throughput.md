@@ -3,15 +3,15 @@ title: Подготовка пропускной способности базы
 description: Узнайте, как подготавливать пропускную способность на уровне базы данных в Azure Cosmos DB с помощью портала Azure, CLI, PowerShell и других пакетов SDK.
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/28/2019
 ms.author: mjbrown
-ms.openlocfilehash: cc89c0052097ba9250370334386943ec4107140c
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 63f8d408d76cfce86c254ad3840c2f0eefb09fd4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83655329"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85263645"
 ---
 # <a name="provision-standard-manual-throughput-on-a-database-in-azure-cosmos-db"></a>Подготовка стандартной (масштабируемой вручную) пропускной способности в базе данных Azure Cosmos DB
 
@@ -32,7 +32,7 @@ ms.locfileid: "83655329"
    * Укажите пропускную способность (например, 1000 ЕЗ/с).
    * Щелкните **ОК**.
 
-    ![Снимок экрана: диалоговое окно "Новая база данных"](./media/how-to-provision-database-throughput/provision-database-throughput-portal-all-api.png)
+    :::image type="content" source="./media/how-to-provision-database-throughput/provision-database-throughput-portal-all-api.png" alt-text="Снимок экрана: диалоговое окно "Новая база данных"":::
 
 ## <a name="provision-throughput-using-azure-cli-or-powershell"></a>Подготовка пропускной способности с помощью портала Azure CLI или PowerShell
 

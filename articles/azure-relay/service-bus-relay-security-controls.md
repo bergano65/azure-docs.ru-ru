@@ -1,18 +1,14 @@
 ---
 title: Элементы управления безопасностью для Azure Relay
 description: В этой статье представлен контрольный список встроенных средств управления безопасностью для оценки Azure Relay.
-services: service-bus-relay
-ms.service: service-bus-relay
-author: spelluru
 ms.topic: conceptual
-ms.date: 01/21/2020
-ms.author: spelluru
-ms.openlocfilehash: f8165d994e998af4f15cd6aa2fd08b75191b8b64
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.date: 06/23/2020
+ms.openlocfilehash: 64abee031bb20e2bdb10bf1cc3cd77e135713550
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83211465"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85316620"
 ---
 # <a name="security-controls-for-azure-relay"></a>Элементы управления безопасностью для Azure Relay
 
@@ -60,6 +56,6 @@ ms.locfileid: "83211465"
 |---|---|--|--|
 | Поддержка управления конфигурацией (управление версиями конфигураций и т. д.)| Да | С помощью [Azure Resource Manager](../azure-resource-manager/index.yml).|   |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [встроенных средствах управления безопасностью в службах Azure](../security/fundamentals/security-controls.md).

@@ -1,25 +1,14 @@
 ---
 title: Параметры портов API ретранслятора Azure | Документация Майкрософт
 description: Эта статья содержит таблицу с описанием требуемой конфигурации для значений портов для Azure Relay.
-services: service-bus-relay
-documentationcenter: na
-author: spelluru
-manager: timlt
-editor: ''
-ms.assetid: ''
-ms.service: service-bus-relay
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/21/2020
-ms.author: spelluru
-ms.openlocfilehash: 532e3c297c42ea16b1f462a01699fc2fd71c6cce
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.date: 06/23/2020
+ms.openlocfilehash: 97640debe81041ff7e2b082c6a9ac606d6088664
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83211766"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85314270"
 ---
 # <a name="azure-relay-port-settings"></a>Параметры порта ретрансляции Azure
 
@@ -31,7 +20,7 @@ ms.locfileid: "83211766"
 
 ## <a name="wcf-relays"></a>Ретрансляторы WCF
   
-|Привязка|Безопасность транспорта|Порт|  
+|Привязка|Безопасность транспорта|Port|  
 |-------------|------------------------|----------|  
 |[Класс BasicHttpRelayBinding](/dotnet/api/microsoft.servicebus.basichttprelaybinding) (клиент)|Да|HTTPS| 
 |" |Нет|HTTP|  
@@ -50,7 +39,7 @@ ms.locfileid: "83211766"
 |" |Нет|HTTP|  
 |[Класс WS2007HttpRelayBinding](/dotnet/api/microsoft.servicebus.ws2007httprelaybinding) (служба)|Можно использовать|9351/HTTP|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о ретрансляторе Azure доступны по следующим ссылкам:
 * [Что такое ретранслятор Azure?](relay-what-is-it.md)
 * [Вопросы и ответы по ретранслятору](relay-faq.md)

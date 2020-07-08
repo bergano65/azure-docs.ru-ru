@@ -1,26 +1,14 @@
 ---
 title: Примеры кодов для Центров событий Azure | Документация Майкрософт
 description: В этой статье приведен список примеров кодов для Центров событий Azure, доступных на сайте GitHub.
-services: event-hubs
-documentationcenter: na
-author: ShubhaVijayasarathy
-manager: timlt
-editor: ''
-ms.assetid: ''
-ms.service: event-hubs
-ms.custom: seodec18
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/15/2020
-ms.author: shvija
-ms.openlocfilehash: da950c2219d3faf679953690d207372b64913ba8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/23/2020
+ms.openlocfilehash: 9529b11d15460c713a0ae14f3bccfa1c2684a3ad
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77162064"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85315518"
 ---
 # <a name="git-repositories-with-samples-for-azure-event-hubs"></a>Репозитории Git с примерами кодов для Центров событий Azure 
 Примеры концентраторов событий можно найти на [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples). В примерах продемонстрированы основные функции [Центров событий Azure](/azure/event-hubs/). В этой статье приведены категории примеров с описаниями и ссылками.
@@ -71,4 +59,4 @@ ms.locfileid: "77162064"
 
 - [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
 - [Функции Центров событий](event-hubs-features.md)
-- [Центры событий: часто задаваемые вопросы](event-hubs-faq.md)
+- [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)

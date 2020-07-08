@@ -1,18 +1,14 @@
 ---
 title: Интеграция Центров событий Azure со службой "Приватный канал Azure"
 description: Сведения об интеграции Центров событий Azure со службой "Приватный канал Azure"
-services: event-hubs
-author: spelluru
-ms.author: spelluru
-ms.date: 03/12/2020
-ms.service: event-hubs
+ms.date: 06/23/2020
 ms.topic: article
-ms.openlocfilehash: bb4c46ecd64958b1daf6c3f7fb5fe613dc9ba729
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: aa1eb4df425d83a37fbf4ac69e0e256c464dc5c9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83649893"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85312834"
 ---
 # <a name="integrate-azure-event-hubs-with-azure-private-link"></a>Интеграция Центров событий Azure с Приватным каналом Azure
 Приватный канал Azure обеспечивает доступ к службам Azure (например, к Центрам событий Azure, службе хранилища Azure и Azure Cosmos DB), а также к размещенным в Azure службам клиентов или партнеров через **частную конечную точку** виртуальной сети.
@@ -22,7 +18,7 @@ ms.locfileid: "83649893"
 Дополнительные сведения см. в статье [Что такое Приватный канал Azure](../private-link/private-link-overview.md).
 
 > [!IMPORTANT]
-> Эта функция поддерживается только с ценовой категорией **Выделенный**. Дополнительные сведения о категории "Выделенный" см. в разделе [Обзор Центров событий (цен. категория "Выделенный")](event-hubs-dedicated-overview.md). 
+> Эта функция поддерживается как для **стандартных** , так и для **выделенных** уровней. 
 
 >[!WARNING]
 > Включение частных конечных точек может препятствовать взаимодействию других служб Azure с Центрами событий.
@@ -62,7 +58,7 @@ ms.locfileid: "83649893"
 2. В строке поиска введите **центры событий**.
 3. Выберите **пространство имен** в списке, для которого необходимо добавить частную конечную точку.
 4. Выберите вкладку **Сеть** в разделе **Параметры**.
-5. Выберите вкладку **Подключения к частным конечным точкам** в верхней части страницы. Если вы не используете ценовую категорию "Выделенный" Центров событий, появится сообщение **Private endpoint connections on Event Hubs are only supported by namespaces created under a dedicated cluster** (Подключения к частным конечным точкам в Центрах событий поддерживаются только пространствами имен, созданными в выделенном кластере).
+5. Выберите вкладку **Подключения к частным конечным точкам** в верхней части страницы. 
 6. Нажмите кнопку **+ Частная конечная точка** в верхней части страницы.
 
     ![Образ —](./media/private-link-service/private-link-service-3.png)
@@ -218,7 +214,7 @@ foreach ($ipconfig in $networkInterface.properties.ipConfigurations) {
 2. Выберите **частную конечную точку**, которую вы хотите утвердить.
 3. Нажмите кнопку **Утвердить**.
 
-    ![Образ —](./media/private-link-service/approve-private-endpoint.png)
+    ![Изображение](./media/private-link-service/approve-private-endpoint.png)
 4. На странице **Утверждение подключения** добавьте комментарий (по желанию) и нажмите кнопку **Да**. Если выбрать **Нет**, ничего не произойдет. 
 5. Вы увидите, что состояние подключения к частной конечной точке в списке изменилось на **Утверждено**. 
 

@@ -6,16 +6,16 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 05/01/2017
-ms.openlocfilehash: 8083efe833ec80290713fc14d9cb89acd8263fa2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4854fabb3dccc276ec32a596a42263acd07ac276
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81010908"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85316082"
 ---
 # <a name="aspnet-session-state-provider-for-azure-cache-for-redis"></a>Поставщик состояний сеансов ASP.NET для кэша Azure для Redis
 
-Кэш Azure для Redis предоставляет поставщика состояний сеансов, который вы можете использовать для сохранения состояния сеанса в памяти с помощью кэша Azure для Redis вместо базы данных SQL Server. Для использования поставщика состояний сеансов с кэшированием сначала настройте кэш, а затем настройте приложение ASP.NET для кэша с помощью пакета кэша Azure для Redis NuGet для состояний сеансов.
+Кэш Azure для Redis предоставляет поставщика состояний сеансов, который вы можете использовать для сохранения состояния сеанса в памяти с помощью кэша Azure для Redis вместо базы данных SQL Server. Для использования поставщика состояний сеансов с кэшированием сначала настройте кэш, а затем настройте приложение ASP.NET для кэша с помощью пакета кэша Azure для Redis NuGet для состояний сеансов. Для ASP.NET Core приложений прочтите сведения об [управлении сеансами и состояниями в ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/app-state).
 
 Не хранить определенные виды состояний сеансов пользователя в реальном облачном приложении бывает нецелесообразно, но разные подходы по-разному влияют на производительность и масштабируемость. Если вам нужно хранить состояния, лучшим решением будет хранить небольшой объем состояний в файлах cookie. Если это невозможно, лучшей альтернативой будет использование состояний сеансов ASP.NET с помощью поставщика распределенного кэша в памяти. Худшее решение с точки зрения масштабируемости и производительности — использовать базу данных резервного поставщика состояний сеансов. Эта статья содержит указания по использованию поставщика состояний сеансов ASP.NET для кэша Azure для Redis. Сведения о других параметрах состояний сеансов см. в разделе [Параметры состояний сеансов ASP.NET](#aspnet-session-state-options).
 
@@ -94,7 +94,7 @@ Install-Package Microsoft.Web.RedisSessionStateProvider
 * **operationTimeoutInMilliseconds** — этот параметр позволяет переопределить параметр syncTimeout в клиенте StackExchange.Redis. Если для параметра syncTimeout значение не указано, по умолчанию используется значение 1000. Дополнительную информацию см. в статье [Модель конфигурации StackExchange.Redis](https://go.microsoft.com/fwlink/?LinkId=398705).
 * **redisSerializerType** — этот параметр позволяет задать пользовательскую сериализацию содержимого сеанса, отправляемого в Redis. Указанный тип должен реализовывать `Microsoft.Web.Redis.ISerializer` и объявить общедоступный конструктор без параметров. По умолчанию используется `System.Runtime.Serialization.Formatters.Binary.BinaryFormatter`.
 
-Дополнительные сведения об этих свойствах см. в записи блога [Объявление поставщика состояний сеансов ASP.NET для кэша Redis](https://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx).
+Дополнительные сведения об этих свойствах см. в записи блога [Объявление поставщика состояний сеансов ASP.NET для кэша Redis](https://devblogs.microsoft.com/aspnet/announcing-asp-net-session-state-provider-for-redis-preview-release/).
 
 Не забудьте закомментировать стандартный раздел поставщика состояний сеансов InProc в своем файле web.config.
 

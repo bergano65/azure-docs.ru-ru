@@ -9,12 +9,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 12/13/2018
 ms.author: akjosh
-ms.openlocfilehash: 4c34996cb47b1f09f47454f162674248820ce975
-ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
-ms.translationtype: HT
+ms.openlocfilehash: 824ba9e1f9b4325c1e0974ed1c22b465ec4b85a8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84118557"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85298962"
 ---
 # <a name="use-linux-diagnostic-extension-to-monitor-metrics-and-logs"></a>Отслеживание метрик и журналов с помощью диагностического расширения Linux
 
@@ -74,7 +74,12 @@ ms.locfileid: "84118557"
 
 ### <a name="sample-installation"></a>Пример установки
 
-Внесите правильные значения для переменных в первом разделе, прежде чем выполнять команду:
+> [!NOTE]
+> Для любого из примеров заполните правильные значения переменных в первом разделе перед выполнением. 
+
+Пример конфигурации, скачиваемый в этих примерах, собирает набор стандартных данных и отправляет их в хранилище таблиц. URL-адрес и содержимое примера конфигурации могут меняться. В большинстве случаев вам нужно скачать копию JSON-файла параметров портала и изменить его под свои потребности, а затем передать свою версию файла конфигурации в шаблоны или средства автоматизации, которые используются в вашей среде, а не скачивать его каждый раз по этому URL-адресу.
+
+#### <a name="azure-cli-sample"></a>Пример Azure CLI
 
 ```azurecli
 # Set your Azure VM diagnostic variables correctly below
@@ -103,8 +108,6 @@ my_lad_protected_settings="{'storageAccountName': '$my_diagnostic_storage_accoun
 # Finallly tell Azure to install and enable the extension
 az vm extension set --publisher Microsoft.Azure.Diagnostics --name LinuxDiagnostic --version 3.0 --resource-group $my_resource_group --vm-name $my_linux_vm --protected-settings "${my_lad_protected_settings}" --settings portal_public_settings.json
 ```
-
-Пример конфигурации, скачиваемый в этих примерах, собирает набор стандартных данных и отправляет их в хранилище таблиц. URL-адрес и содержимое примера конфигурации могут меняться. В большинстве случаев вам нужно скачать копию JSON-файла параметров портала и изменить его под свои потребности, а затем передать свою версию файла конфигурации в шаблоны или средства автоматизации, которые используются в вашей среде, а не скачивать его каждый раз по этому URL-адресу.
 
 #### <a name="powershell-sample"></a>Пример для PowerShell
 
@@ -439,6 +442,9 @@ sinks | Разделенный запятыми список имен допол
 
 Управляет записью файлов журналов. LAD собирает новые текстовые строки по мере их записи в файл и записывает их в строки таблицы и все указанные приемники (JsonBlob или EventHub).
 
+> [!NOTE]
+> Филелогс фиксируются подкомпонентом LAD с именем `omsagent` . Чтобы получить Филелогс, необходимо убедиться, что `omsagent` пользователь имеет разрешения на чтение для указанных файлов, а также разрешения на выполнение для всех каталогов в пути к этому файлу. Это можно проверить, запустив `sudo su omsagent -c 'cat /path/to/file'` после установки LAD.
+
 ```json
 "fileLogs": [
     {
@@ -451,7 +457,7 @@ sinks | Разделенный запятыми список имен допол
 
 Элемент | Значение
 ------- | -----
-файл | Полный путь к файлу журнала, подлежащему отслеживанию и записи, и его имя. Путь и имя должны указывать на один файл; они не могут указывать на каталог или содержать подстановочные знаки.
+файл | Полный путь к файлу журнала, подлежащему отслеживанию и записи, и его имя. Путь и имя должны указывать на один файл; они не могут указывать на каталог или содержать подстановочные знаки. Учетная запись пользователя "omsagent" должна иметь доступ на чтение к пути к файлу.
 table | Таблица службы хранилища Azure в назначенной учетной записи хранения (как указано в защищенной конфигурации), в которую записываются новые строки из заключительного фрагмента файла (необязательно).
 sinks | Разделенный запятыми список имен дополнительных приемников, в которые отправляются строки из журнала (необязательно).
 
@@ -564,23 +570,36 @@ WriteBytesPerSecond | Количество записанных байт за с
 
 Совокупные значения по всем дискам можно получить, задав `"condition": "IsAggregate=True"`. Чтобы получить сведения для определенного устройства (например, /dev/sdf1), задайте `"condition": "Name=\\"/dev/sdf1\\""`.
 
-## <a name="installing-and-configuring-lad-30-via-cli"></a>Установка и настройка LAD 3.0 с помощью интерфейса командной строки
+## <a name="installing-and-configuring-lad-30"></a>Установка и настройка LAD 3,0
 
-При условии, что защищенные параметры находятся в файле PrivateConfig.json, а сведения об общедоступной конфигурации — в файле PublicConfig.json, выполните следующую команду:
+### <a name="azure-cli"></a>Azure CLI
+
+Если защищенные параметры находятся в файле ProtectedSettings.jsи сведения о общедоступной конфигурации включены в PublicSettings.js, выполните следующую команду:
 
 ```azurecli
-az vm extension set *resource_group_name* *vm_name* LinuxDiagnostic Microsoft.Azure.Diagnostics '3.*' --private-config-path PrivateConfig.json --public-config-path PublicConfig.json
+az vm extension set --publisher Microsoft.Azure.Diagnostics --name LinuxDiagnostic --version 3.0 --resource-group <resource_group_name> --vm-name <vm_name> --protected-settings ProtectedSettings.json --settings PublicSettings.json
 ```
 
-Команда предполагает использование режима Azure Resource Management (arm) Azure CLI. Чтобы настроить LAD для виртуальных машин на основе классической модели развертывания (ASM), переключитесь в режим asm (`azure config mode asm`) и не указывайте в команде имя группы ресурсов. Дополнительные сведения см. в [документации по кроссплатформенному интерфейсу командной строки](https://docs.microsoft.com/azure/xplat-cli-connect).
+В команде предполагается, что используется режим управления ресурсами Azure (ARM) Azure CLI. Чтобы настроить LAD для виртуальных машин на основе классической модели развертывания (ASM), переключитесь в режим asm (`azure config mode asm`) и не указывайте в команде имя группы ресурсов. Дополнительные сведения см. в [документации по кроссплатформенному интерфейсу командной строки](https://docs.microsoft.com/azure/xplat-cli-connect).
+
+### <a name="powershell"></a>PowerShell
+
+Если защищенные параметры находятся в `$protectedSettings` переменной, а сведения об общедоступной конфигурации находятся в `$publicSettings` переменной, выполните следующую команду:
+
+```powershell
+Set-AzVMExtension -ResourceGroupName <resource_group_name> -VMName <vm_name> -Location <vm_location> -ExtensionType LinuxDiagnostic -Publisher Microsoft.Azure.Diagnostics -Name LinuxDiagnostic -SettingString $publicSettings -ProtectedSettingString $protectedSettings -TypeHandlerVersion 3.0
+```
 
 ## <a name="an-example-lad-30-configuration"></a>Пример конфигурации LAD 3.0
 
 С учетом предыдущих определений ниже приведен пример конфигурации расширения LAD 3.0 с некоторыми пояснениями. Чтобы применить этот пример к своему случаю, следует использовать собственное имя учетной записи хранения, токен SAS учетной записи и токены SAS EventHub.
 
-### <a name="privateconfigjson"></a>PrivateConfig.json
+> [!NOTE]
+> В зависимости от того, используется ли Azure CLI или PowerShell для установки LAD, метод предоставления общедоступных и защищенных параметров будет отличаться. При использовании Azure CLI сохраните следующие параметры в ProtectedSettings.jsи PublicSettings.jsв для использования с приведенной выше командой Sample. При использовании PowerShell сохраните параметры в `$protectedSettings` и `$publicSettings` , выполнив `$protectedSettings = '{ ... }'` .
 
-Эти закрытые параметры настраивают:
+### <a name="protected-settings"></a>Защищенные параметры
+
+Эти защищенные параметры настраивают:
 
 * учетную запись хранения;
 * соответствующий токен SAS учетной записи;
@@ -628,7 +647,7 @@ az vm extension set *resource_group_name* *vm_name* LinuxDiagnostic Microsoft.Az
 }
 ```
 
-### <a name="publicconfigjson"></a>PublicConfig.json
+### <a name="public-settings"></a>Общедоступные параметры
 
 Эти общедоступные параметры обеспечивают выполнение расширением LAD следующих действий:
 

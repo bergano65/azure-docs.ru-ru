@@ -6,20 +6,20 @@ ms.author: govindk
 ms.reviewer: sngun
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/24/2018
-ms.openlocfilehash: bef4ee14cb4a7d64d80dc5776d8ecea0f831881a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4848bdceef084d587c839f2af93d1ff5a43c850b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75887638"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85260581"
 ---
 # <a name="access-azure-cosmos-db-cassandra-api-from-spark-on-yarn-with-hdinsight"></a>Доступ к API Cassandra для Azure Cosmos DB из Spark в YARN с HDInsight
 
 В этой статье описывается, как обращаться к API Cassandra для Azure Cosmos DB из Spark в YARN с HDInsight, используя оболочку Spark. HDInsight — это платформа как услуга Hadoop Hortonworks в Azure корпорации Майкрософт, которая использует хранилище объектов для HDFS и поставляется в нескольких конфигурациях, включая решение [Spark](../hdinsight/spark/apache-spark-overview.md).  Хотя в этом документе описывается HDInsight Spark, он подходит для всех дистрибутивов Hadoop.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * [Подготовка API Cassandra для Azure Cosmos DB](create-cassandra-dotnet.md#create-a-database-account)
 
@@ -130,7 +130,7 @@ HDInsight Spark включает в себя службы Zeppelin и Jupyter No
 
 Для автоматизации процессов в рабочей среде программы Spark отправляются в кластер с помощью [spark-submit](https://spark.apache.org/docs/latest/submitting-applications.html).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Руководство. Создание приложения Scala Maven для Spark в HDInsight с помощью IntelliJ](../hdinsight/spark/apache-spark-create-standalone-application.md)
 

@@ -1,19 +1,14 @@
 ---
 title: Apache Kafkaное руководством для разработчиков концентраторов событий
 description: В этой статье приведены ссылки на статьи, в которых описано, как интегрировать приложения Kafka с концентраторами событий Azure.
-services: event-hubs
-author: spelluru
-manager: ''
-ms.author: spelluru
-ms.date: 03/31/2020
+ms.date: 06/23/2020
 ms.topic: article
-ms.service: event-hubs
-ms.openlocfilehash: b4d9dc51451a06b2c87ddce78547655b51c6fabd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bbd173a7f81042c0839cec81838172b21f80d5cd
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81729630"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85314243"
 ---
 # <a name="apache-kafka-developer-guide-for-azure-event-hubs"></a>Apache Kafka Guide для разработчиков концентраторов событий Azure
 В этой статье содержатся ссылки на статьи, в которых описывается интеграция приложений Apache Kafka с концентраторами событий Azure. 
@@ -27,7 +22,7 @@ ms.locfileid: "81729630"
 ### <a name="quickstarts-in-github"></a>Краткие руководства в GitHub
 См. следующие краткие руководства в репозитории **Azure-Event-Hub-for-Kafka** . 
 
-| Язык/платформа клиента | Описание | 
+| Язык/платформа клиента | Описание: | 
 | ------------------------- | ----------- | 
 | [.NET](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/quickstart/dotnet) | <p>В этом кратком руководстве показано, как создать и подключиться к конечной точке Kafka концентраторов событий с помощью примера производителя и потребителя, написанного на C# с помощью .NET Core 2,0.</p><p>Этот пример основан на [Apache Kafka клиента .NET](https://github.com/confluentinc/confluent-kafka-dotnet), измененном для использования с концентраторами событий для Kafka.</p> | 
 | [Java](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/quickstart/java) | В этом кратком руководстве показано, как создать и подключиться к конечной точке Kafka концентраторов событий с помощью примера производителя и потребителя, написанного на языке Java. |
@@ -47,15 +42,15 @@ ms.locfileid: "81729630"
 ### <a name="tutorials-in-github"></a>Учебники на GitHub
 Ознакомьтесь со следующими учебниками на GitHub:
 
-| Учебник | Описание | 
+| Учебник | Описание: | 
 | ------------------------- | ----------- | 
 | [Akka Streams](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/akka/java) | В этом руководстве показано, как подключить потоки Akka Streams к концентраторам событий с поддержкой Kafka, не изменяя Клиенты протокола или не запуская собственные кластеры. Существует два отдельных учебника, использующих языки программирования **Java** и **Scala** . | 
 | [Подключить](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/connect) | В этом документе вы узнаете, как интегрировать Kafka Connect с концентраторами событий Azure и развертывать базовые соединители Филестреамсаурце и Филестреамсинк. Хотя эти соединители не предназначены для использования в рабочей среде, они демонстрируют комплексный сценарий Kafka Connect, в котором концентраторы событий Azure маскируются в качестве брокера Kafka.| 
 | [филебеат](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/filebeat) | В этом документе приводится пошаговое руководство по интеграции Филебеат и концентраторов событий с помощью выходных данных Kafka Филебеат. | 
 | [флинк](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/flink) | В этом руководстве показано, как подключить Apache Флинк к концентраторам событий с поддержкой Kafka, не изменяя Клиенты протокола или не запуская собственные кластеры. | 
-| [FluentD](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/fluentd) | В этом документе приводится пошаговое руководство по интеграции концентраторов событий в `out_kafka` свободном центре с использованием выходного подключаемого модуля для свободно. |
+| [FluentD](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/fluentd) | В этом документе приводится пошаговое руководство по интеграции концентраторов событий в свободном центре с использованием `out_kafka` выходного подключаемого модуля для свободно. |
 | [Interop](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/interop) | В этом руководстве показано, как обмениваться событиями между потребителями и производителями с помощью разных протоколов. |
-| [Logstash](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/logstash) | В этом руководстве описано, как интегрировать Logstash с концентраторами событий с поддержкой Kafka с помощью Logstash Kafka Input/Output plugins. | 
+| [Logstash](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/logstash). | В этом руководстве описано, как интегрировать Logstash с концентраторами событий с поддержкой Kafka с помощью Logstash Kafka Input/Output plugins. | 
 | [MirrorMaker](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/mirror-maker) | В этом руководстве показано, как концентратор событий и Kafka MirrorMaker могут интегрировать существующий конвейер Kafka в Azure, выполнив зеркальное отображение входного потока Kafka в службе концентраторов событий. |
 | [NiFi](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/nifi) | В этом руководстве показано, как подключить Apache NiFi к пространству имен концентраторов событий. | 
 | [OAuth](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/oauth) | В кратком руководстве показано, как создать и подключиться к конечной точке Kafka концентраторов событий с помощью примера производителя и потребителя, написанного на языке программирования Go и Java. |
@@ -74,7 +69,7 @@ ms.locfileid: "81729630"
 | [Подключение Apache Spark к концентратору событий](event-hubs-kafka-spark-tutorial.md) | Пошаговое руководство по подключению приложения Spark к концентраторам событий для потоковой передачи в режиме реального времени. |
 | [Подключение Apache Flink к концентратору событий](event-hubs-kafka-flink-tutorial.md) | Показано, как подключить Apache Флинк к концентратору событий, не изменяя Клиенты протокола или не запуская собственные кластеры. |
 | [Интеграция Apache Kafka подключение к концентратору событий (Предварительная версия)](event-hubs-kafka-connect-tutorial.md) | Руководство по интеграции Kafka Connect с концентратором событий и развертыванию базовых соединителей Филестреамсаурце и Филестреамсинк. |
-| [Подключение Akka Streams к концентратору событий](event-hubs-kafka-akka-streams-tutorial.md) | Показано, как подключить потоки Akka Streams к концентратору событий, не изменяя Клиенты протокола или не запуская собственные кластеры. |
+| [Подключение потоков Akka Streams к концентратору событий](event-hubs-kafka-akka-streams-tutorial.md) | Показано, как подключить потоки Akka Streams к концентратору событий, не изменяя Клиенты протокола или не запуская собственные кластеры. |
 | [Использование начального Boot Starter для Apache Kafka с концентраторами событий Azure](/azure/developer/java/spring-framework/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub) | Демонстрируется настройка связывателя облачного потока весны на основе Java, созданного с помощью инициализатора пружинной загрузки, для использования Apache Kafka с концентраторами событий Azure. |
 
 ## <a name="next-steps"></a>Дальнейшие шаги

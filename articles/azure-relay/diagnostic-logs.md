@@ -1,22 +1,14 @@
 ---
 title: Журналы диагностики для гибридные подключения
 description: В этой статье содержится обзор всех журналов активности и диагностики, доступных для Azure Relay.
-services: service-bus-messaging
-author: spelluru
-editor: ''
-ms.assetid: ''
-ms.service: service-bus-relay
-ms.devlang: na
 ms.topic: how-to
-ms.tgt_pltfrm: na
-ms.date: 04/27/2020
-ms.author: spelluru
-ms.openlocfilehash: b7ac5f1da70352115bf05df1a61120f46a85ec5d
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.date: 06/23/2020
+ms.openlocfilehash: f79e4aa21fcb9e592f431e252981dc0e7c02817f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83211110"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85314909"
 ---
 # <a name="enable-diagnostics-logs-for-azure-relay-hybrid-connections"></a>Включение журналов диагностики для Azure Relay гибридные подключения
 Когда вы начинаете использовать Azure Relay гибридные подключения, вам может потребоваться отслеживать, как и когда прослушиватели и отправители открываются и закрываются, а также как создаются гибридные подключения и отправляются сообщения. В этой статье представлен обзор журналов активности и диагностики, предоставляемых службой Azure Relay. 
@@ -52,7 +44,7 @@ ms.locfileid: "83211110"
         3. Если вы выбрали **отправить log Analytics**, укажите, какой экземпляр log Analytics будет отправляться диагностика.  
 
         ![Примеры параметров диагностики](./media/diagnostic-logs/sample-diagnostic-settings.png)
-1. Нажмите кнопку **сохранить** на панели инструментов, чтобы сохранить параметры.
+1. На панели инструментов нажмите **Сохранить**, чтобы сохранить параметры.
 
 Новые параметры вступят в силу примерно через 10 минут. Журналы отображаются в настроенном целевом объекте архивации в области **журналы диагностики** . Дополнительные сведения о настройке параметров диагностики см. в [обзоре журналов системы диагностики Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
 
@@ -60,7 +52,7 @@ ms.locfileid: "83211110"
 ## <a name="schema-for-hybrid-connections-events"></a>Схема событий гибридных подключений
 Строки JSON журнала событий гибридных подключений включают элементы, перечисленные в следующей таблице.
 
-| Имя | Описание: |
+| name | Описание: |
 | ------- | ------- |
 | ResourceId | Идентификатор ресурса Azure Resource Manager |
 | ActivityId | Внутренний идентификатор, используемый для идентификации указанной операции. Также может называться "TrackingId" |
@@ -113,7 +105,7 @@ ms.locfileid: "83211110"
 | сендерсенсттпрекуест | Отправитель отправил HTTP-запрос. | 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о Azure Relay см. в следующих статьях:
 

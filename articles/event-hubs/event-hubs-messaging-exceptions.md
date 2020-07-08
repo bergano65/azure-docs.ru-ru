@@ -1,24 +1,14 @@
 ---
 title: Концентраторы событий Azure — исключения
 description: В этой статье приводится список исключений обмена сообщениями Центров событий и предлагаемые действия.
-services: event-hubs
-documentationcenter: na
-author: ShubhaVijayasarathy
-manager: timlt
-ms.service: event-hubs
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.custom: seodec18
-ms.date: 01/16/2020
-ms.author: shvija
-ms.openlocfilehash: d7f420b353361bdd4185958a1f66bfb68fd5decc
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.date: 06/23/2020
+ms.openlocfilehash: ce9e1bcd1f9e4d196d03d55374af8b1c86651851
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83125644"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85314609"
 ---
 # <a name="event-hubs-messaging-exceptions---net"></a>Исключения обмена сообщениями концентраторов событий .NET
 В этом разделе перечислены исключения .NET, созданные .NET Framework API. 
@@ -132,4 +122,4 @@ ExceptionId: 00000000000-00000-0000-a48a-9c908fbe84f6-ServerBusyException: The r
 
 * [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
 * [Создание концентратора событий](event-hubs-create.md)
-* [Центры событий: часто задаваемые вопросы](event-hubs-faq.md)
+* [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)

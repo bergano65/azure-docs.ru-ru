@@ -1,18 +1,14 @@
 ---
 title: Элементы управления безопасностью для концентраторов событий Azure
 description: В этой статье содержится контрольный список средств управления безопасностью для оценки концентраторов событий Azure (сеть, идентификация, защита данных и т. д.).
-services: event-hubs
-ms.service: event-hubs
-author: spelluru
 ms.topic: conceptual
-ms.date: 09/23/2019
-ms.author: spelluru
-ms.openlocfilehash: 0769e88eb72b5b347dd9ebf4b1634501ca54098e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/23/2020
+ms.openlocfilehash: da20778f1e24372e445d635e675df6484905f195
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76309512"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85315400"
 ---
 # <a name="security-controls-for-azure-event-hubs"></a>Элементы управления безопасностью для концентраторов событий Azure
 
@@ -41,7 +37,7 @@ ms.locfileid: "76309512"
 
 | Управление безопасностью | Да/нет | Примечания| Документация |
 |---|---|--|--|
-| Проверка подлинности| Да | | [Авторизация доступа к концентраторам событий Azure](authorize-access-event-hubs.md), [авторизация доступа к ресурсам концентраторов событий с помощью Azure Active Directory](authorize-access-azure-active-directory.md), [авторизация доступа к ресурсам концентраторов событий с помощью подписанных](authorize-access-shared-access-signature.md) URL |
+| Аутентификация| Да | | [Авторизация доступа к концентраторам событий Azure](authorize-access-event-hubs.md), [авторизация доступа к ресурсам концентраторов событий с помощью Azure Active Directory](authorize-access-azure-active-directory.md), [авторизация доступа к ресурсам концентраторов событий с помощью подписанных](authorize-access-shared-access-signature.md) URL |
 | Авторизация|  Да | | [Проверка подлинности управляемого удостоверения с Azure Active Directory для доступа к ресурсам концентраторов событий](authenticate-managed-identity.md), [Проверка подлинности приложения с Azure Active Directory для доступа к ресурсам концентраторов событий](authenticate-application.md), [Проверка подлинности доступа к ресурсам КОНЦЕНТРАТОРов событий с помощью подписанных URL-](authenticate-shared-access-signature.md) адресов |
 
 ## <a name="data-protection"></a>Защита данных
@@ -50,7 +46,7 @@ ms.locfileid: "76309512"
 |---|---|--|--|
 | Шифрование неактивных на стороне сервера: ключи, управляемые корпорацией Майкрософт |  Да | |  |
 | Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Да. Доступно для выделенных кластеров. | Управляемый клиентом ключ в Azure KeyVault можно использовать для шифрования неактивных данных в концентраторе событий. | [Настройка управляемых клиентом ключей для шифрования неактивных данных концентраторов событий Azure с помощью портал Azure](configure-customer-managed-key.md) |
-| Шифрование на уровне столбцов (службы данных Azure)| Недоступно | |  |
+| Шифрование на уровне столбцов (службы данных Azure)| Н/Д | |  |
 | Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Да | |  |
 | Вызовы API в зашифрованном виде| Да |  |  |
 

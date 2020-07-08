@@ -1,25 +1,14 @@
 ---
 title: Обзор API-интерфейсов Node для ретранслятора Azure | Документация Майкрософт
-description: В этой статье представлен обзор API Node. js для службы Azure Relay. В нем также показано, как использовать пакет узла HYCO-WS.
-services: service-bus-relay
-documentationcenter: na
-author: spelluru
-manager: timlt
-editor: ''
-ms.assetid: b7d6e822-7c32-4cb5-a4b8-df7d009bdc85
-ms.service: service-bus-relay
-ms.devlang: na
+description: В этой статье представлен обзор API Node.js для службы Azure Relay. В нем также показано, как использовать пакет узла HYCO-WS.
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/21/2020
-ms.author: spelluru
-ms.openlocfilehash: 2877284c419da4999e23490fc986e5da44e5d92e
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.date: 06/23/2020
+ms.openlocfilehash: 71faa2ee143488483aff4300152aab6d1e2b2a88
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83211844"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85316733"
 ---
 # <a name="relay-hybrid-connections-node-api-overview"></a>Общие сведения об API Node для гибридных подключений ретранслятора
 
@@ -143,7 +132,7 @@ function(headers)
 
 Событие `headers` возникает непосредственно перед тем, как принимается входящее подключение, позволяя изменять заголовки для отправки клиенту. 
 
-##### <a name="connection"></a>подключение
+##### <a name="connection"></a>соединение
 
 ```JavaScript
 function(socket)
@@ -208,7 +197,7 @@ WebSocket.relayedConnect(
 );
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о ретрансляторе Azure доступны по следующим ссылкам:
 * [Что такое ретранслятор Azure?](relay-what-is-it.md)
 * [Available Relay APIs](relay-api-overview.md) (Доступные API-интерфейсы ретранслятора)

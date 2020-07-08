@@ -6,17 +6,17 @@ author: mabasile-MSFT
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 03/27/2019
 ms.author: mabasile
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 23e3ccff11dc33858249565d3ad8396b19dd87c6
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
-ms.translationtype: HT
+ms.openlocfilehash: e529e398b90050bf654c702ec34686bdc173c9e5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83698888"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85299336"
 ---
 # <a name="azure-synapse-analytics-business-intelligence-partners"></a>Партнеры по бизнес-аналитике Azure Synapse Analytics
 
@@ -44,6 +44,6 @@ ms.locfileid: "83698888"
 <!--https://img.youtube.com/vi/0b8sPW2UHrU/0.jpg-->
 
 ## <a name="next-steps"></a>Next Steps
-Дополнительные сведения о некоторых других партнерах см. в статьях [Партнеры по интеграции данных хранилища данных SQL](sql-data-warehouse-partner-data-integration.md) и [Партнеры по управлению данными хранилища данных SQL](sql-data-warehouse-partner-data-management.md).
+Дополнительные сведения о некоторых других партнерах см. в статьях [партнеры по интеграции данных](sql-data-warehouse-partner-data-integration.md), [Управление данныминые партнеры](sql-data-warehouse-partner-data-management.md) и [партнеры машинное обучение и искусственного интеллекта](sql-data-warehouse-partner-machine-learning-ai.md).
 
  

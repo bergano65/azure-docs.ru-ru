@@ -1,25 +1,14 @@
 ---
 title: Гибридное локальное или облачное приложение ретранслятора Azure Windows Communication Foundation (WCF) | Документация Майкрософт
 description: Здесь вы узнаете, как предоставлять локальную службу WCF для веб-приложения в облаке с помощью Azure Relay
-services: service-bus-relay
-documentationcenter: .net
-author: spelluru
-manager: timlt
-editor: ''
-ms.assetid: 9ed02f7c-ebfb-4f39-9c97-b7dc15bcb4c1
-ms.service: service-bus-relay
-ms.workload: tbd
-ms.tgt_pltfrm: na
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 09/12/2019
-ms.author: spelluru
-ms.openlocfilehash: b86d535e4cbc275b3ee777d7c70146f7711c502c
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.date: 06/23/2020
+ms.openlocfilehash: 78d250eb2572f137df4bcfd40c5c85cee9fb61dc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83211597"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85314402"
 ---
 # <a name="expose-an-on-premises-wcf-service-to-a-web-application-in-the-cloud-by-using-azure-relay"></a>Предоставление локальной службы WCF для веб-приложения в облаке с помощью Azure Relay
 
@@ -224,7 +213,7 @@ ms.locfileid: "83211597"
     > [!NOTE]
     > Ошибка, вызванная, `transportClientEndpointBehavior` — это просто предупреждение, а не блокирующая проблема в этом примере.
 
-1. По-прежнему в *файле App. config*в `<appSettings>` элементе замените значение строки подключения на строку соединения, полученную ранее с портала.
+1. По-прежнему в *App.config*в `<appSettings>` элементе замените значение строки соединения строкой подключения, полученной ранее с портала.
 
     ```xml
     <appSettings>
@@ -410,7 +399,7 @@ ms.locfileid: "83211597"
    }
    ```
 
-1. В **Обозреватель решений**щелкните правой кнопкой мыши решение **ProductsPortal** . Не забудьте щелкнуть решение правой кнопкой мыши, а не проект. Выберите **Добавить**  >  **существующий проект**.
+1. В **Обозреватель решений**щелкните правой кнопкой мыши решение **ProductsPortal** . Не забудьте щелкнуть решение правой кнопкой мыши, а не проект. Выберите **Добавить** > **Существующий проект**.
 1. Перейдите к проекту **ProductsServer**, а затем дважды щелкните файл решения *ProductsServer.csproj*, чтобы добавить его.
 1. Чтобы отобразить данные в **ProductsPortal**, необходимо запустить **ProductsServer** . В **Обозреватель решений**щелкните правой кнопкой мыши решение **ProductsPortal** и выберите **Свойства** , чтобы отобразить **страницы свойств**.
 1. Выберите пункт **Общие свойства**  >  **запускаемый проект** и выберите **Несколько запускаемых проектов**. Убедитесь, что **ProductsServer** и **ProductsPortal** отображаются в указанном порядке и что **действие** для обоих них **запущено**.
@@ -457,10 +446,10 @@ ms.locfileid: "83211597"
 
     ![Начальный URL-адрес][27]
 
-1. Выберите **файл**  >  **сохранить все**.
+1. Нажмите **Файл** > **Сохранить все**.
 1. Выберите **Сборка**  >  **Перестроение решения**.
 
-## <a name="run-the-application"></a>Выполнение приложения
+## <a name="run-the-application"></a>Запуск приложения
 
 Нажмите клавишу F5, чтобы создать и запустить приложение. Сначала должен начаться локальный сервер, который является консольным приложением **ProductsServer** , а затем приложение **ProductsPortal** должно запускаться в окне браузера, как показано ниже:
 
