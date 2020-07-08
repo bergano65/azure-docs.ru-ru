@@ -2,23 +2,22 @@
 title: Использование отчета о действиях для перемещения AD FS приложений в Azure Active Directory | Документация Майкрософт "
 description: Отчет о действиях приложений службы федерации Active Directory (AD FS) (AD FS) позволяет быстро перенести приложения из AD FS в Azure Active Directory (Azure AD). Это средство миграции для AD FS определяет совместимость с Azure AD и предоставляет руководство по миграции.
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.topic: conceptual
+ms.topic: how-to
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.date: 01/14/2019
-ms.author: mimart
+ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 333e440fdd5f5062dda45fb12a83543c63e66c04
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 59502e01a96b603067bd80b92bcf49136f8cef4e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75978038"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85339167"
 ---
 # <a name="use-the-ad-fs-application-activity-report-preview-to-migrate-applications-to-azure-ad"></a>Использование отчета о действиях приложения (Предварительная версия) AD FS для переноса приложений в Azure AD
 
@@ -32,12 +31,13 @@ ms.locfileid: "75978038"
 
 Данные действия AD FS приложения доступны пользователям, которым назначены следующие роли администратора: глобальный администратор, читатель отчетов, читатель безопасности, администратор приложения или администратор облачных приложений.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * В настоящее время ваша организация должна использовать AD FS для доступа к приложениям.
 * Azure AD Connect Health должны быть включены в клиенте Azure AD.
+* Необходимо установить Azure AD Connect Health для агента AD FS.
    * [Дополнительные сведения о Azure AD Connect Health](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs)
-   * [Приступая к настройке Azure AD Connect Health](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-agent-install)
+   * [Приступая к работе с настройкой Azure AD Connect Health и установкой агента AD FS](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-agent-install)
 
 ## <a name="discover-ad-fs-applications-that-can-be-migrated"></a>Обнаружение AD FS приложений, которые можно перенести 
 
@@ -73,7 +73,7 @@ ms.locfileid: "75978038"
 
 В следующей таблице перечислены все тесты конфигурации, выполняемые в AD FS приложениях.
 
-|Результат  |Успех/предупреждение/сбой  |Описание  |
+|Результат  |Успех/предупреждение/сбой  |Описание:  |
 |---------|---------|---------|
 |Test-Адфсрпаддитионалаусентикатионрулес <br> Для Аддитионалаусентикатион обнаружено по крайней мере одно правило без миграции.       | Успех/предупреждение          | Проверяющая сторона имеет правила для запроса многофакторной проверки подлинности (MFA). Чтобы перейти в Azure AD, преобразовывать эти правила в политики условного доступа. Если вы используете локальный MFA, рекомендуется перейти на Azure MFA. Дополнительные [сведения об условном доступе](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks).        |
 |Test-Адфсрпаддитионалвсфедендпоинт <br> Аддитионалвсфедендпоинт проверяющей стороны имеет значение true.       | Успех или сбой.          | Проверяющая сторона в AD FS допускает несколько конечных точек утверждений WS-подач.В настоящее время Azure AD поддерживает только одну.Если у вас есть сценарий, в котором этот результат блокирует миграцию, [сообщите нам о](https://feedback.azure.com/forums/169401-azure-active-directory/suggestions/38695621-allow-multiple-ws-fed-assertion-endpoints)ней.     |
@@ -109,7 +109,7 @@ ms.locfileid: "75978038"
 
 В следующей таблице перечислены все тесты правил утверждений, которые выполняются в AD FS приложениях.
 
-|Свойство  |Описание  |
+|Свойство.  |Описание:  |
 |---------|---------|
 |UNSUPPORTED_CONDITION_PARAMETER      | Оператор Condition использует регулярные выражения для вычисления того, соответствует ли заявка определенному шаблону.Для достижения аналогичной функциональности в Azure AD можно использовать предварительно определенные преобразования, такие как Ифемпти (), Стартвис (), а также, помимо прочего, Contains (). Дополнительные сведения см. [в статье Настройка утверждений, выданных в токене SAML для корпоративных приложений](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-claims-customization).          |
 |UNSUPPORTED_CONDITION_CLASS      | Оператор Condition имеет несколько условий, которые необходимо вычислить перед выполнением инструкции выдачи.Azure AD может поддерживать эту функцию с помощью функций преобразования утверждения, где можно оценить несколько значений утверждений.Дополнительные сведения см. [в статье Настройка утверждений, выданных в токене SAML для корпоративных приложений](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-claims-customization).          |
@@ -122,7 +122,7 @@ ms.locfileid: "75978038"
 |UNSUPPORTED_ISSUANCE_TRANSFORMATION      | Инструкция выдачи использует регулярные выражения для преобразования значения утверждения, которое необходимо выдавать.Для обеспечения аналогичной функциональности в Azure AD можно использовать предварительно определенные преобразования, такие как Extract (), Trim (), ToLower и др. Дополнительные сведения см. [в статье Настройка утверждений, выданных в токене SAML для корпоративных приложений](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-claims-customization).          |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Видео. Использование отчета о действиях AD FS для переноса приложения](https://www.youtube.com/watch?v=OThlTA239lU)
 - [Управление приложениями с помощью Azure Active Directory](what-is-application-management.md)

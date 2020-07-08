@@ -12,16 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
 ms.subservice: compliance
-ms.date: 03/22/2020
+ms.date: 06/17/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ddd8e1c64f4db8221937abc54e88d9a884acf3e
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
-ms.translationtype: MT
+ms.openlocfilehash: 7494f8e65f0b92540fec3ddc1f07e59004227625
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82207250"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85338176"
 ---
 # <a name="troubleshoot-azure-ad-entitlement-management"></a>Устранение неполадок управления назначениями Azure AD
 
@@ -45,7 +44,7 @@ ms.locfileid: "82207250"
 
 * Если есть пользователи, которые уже назначены ресурсу, которым вы хотите управлять с помощью пакета для доступа, убедитесь, что пользователи назначены пакету с использованием соответствующей политики. Например, может потребоваться включить группу в пакет для доступа, в котором уже есть пользователи в группе. Если пользователям в группе требуется постоянный доступ, в их отношении должна действовать соответствующая политика для пакетов для доступа, чтобы они не утратили доступ к группе. Чтобы назначить пакет для доступа, можно уведомить пользователей о необходимости запросить пакет, содержащий этот ресурс, или напрямую назначить их пакету. Дополнительные сведения см. в разделе [изменение параметров запросов и утверждений для пакета Access](entitlement-management-access-package-request-policy.md).
 
-* Если удалить члена из команды, он также будет удален из группы Office 365. С удалением из чата команды может возникнуть задержка. Дополнительные сведения см. в разделе [членство в группе](https://docs.microsoft.com/microsoftteams/office-365-groups#group-membership).
+* При удалении члена команды они также удаляются из группы Microsoft 365. С удалением из чата команды может возникнуть задержка. Дополнительные сведения см. в разделе [членство в группе](https://docs.microsoft.com/microsoftteams/office-365-groups#group-membership).
 
 * Убедитесь, что каталог не настроен для работы в нескольких регионах. Сейчас для управления правами не поддерживаются несколько регионов для SharePoint Online. Чтобы можно было управлять правами для сайтов SharePoint Online, эти сайты должны принадлежать к географическому расположению по умолчанию. Дополнительные сведения см. [в статье поддержка нескольких географических возможностей в OneDrive и SharePoint Online](https://docs.microsoft.com/Office365/Enterprise/multi-geo-capabilities-in-onedrive-and-sharepoint-online-in-office-365).
 

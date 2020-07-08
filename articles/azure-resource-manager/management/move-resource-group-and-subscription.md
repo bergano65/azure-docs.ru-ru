@@ -3,12 +3,11 @@ title: Перемещение ресурсов в новую подписку и
 description: Перемещайте ресурсы в новую группу ресурсов или новую подписку с помощью Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 03/02/2020
-ms.openlocfilehash: ffb5f8be81d3628084d127db404ab994d4d5b938
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: 036def01ef8ae5732d372dd995ad8f425c36cad9
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80631504"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86057846"
 ---
 # <a name="move-resources-to-a-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -53,7 +52,7 @@ ms.locfileid: "80631504"
 
    Если идентификаторы клиентов исходных и целевых подписок не совпадают, используйте следующие методы для выверки идентификаторов клиентов:
 
-   * [Передача прав владения подпиской Azure другой учетной записи](../../billing/billing-subscription-transfer.md)
+   * [Передача прав владения подпиской Azure другой учетной записи](../../cost-management-billing/manage/billing-subscription-transfer.md)
    * [Как связать или добавить подписку Azure к Azure Active Directory](../../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md)
 
 1. Подписка назначения должна быть зарегистрирована для перемещаемого поставщика ресурсов. В противном случае отображается сообщение о том, что **подписка не зарегистрирована для типа ресурса**. Эта ошибка может возникнуть при перемещении ресурса в новую подписку, которая никогда не использовалась с этим типом ресурса.
@@ -277,6 +276,6 @@ POST https://management.azure.com/subscriptions/{source-subscription-id}/resourc
 
 Сейчас не все ресурсы в службе поддержки Azure перемещаются. Список ресурсов, поддерживающих перемещение, см. в разделе [Поддержка операций перемещения для ресурсов](move-support-resources.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Список ресурсов, которые поддерживают перемещение, см. в разделе [Поддержка операций перемещения для ресурсов](move-support-resources.md).

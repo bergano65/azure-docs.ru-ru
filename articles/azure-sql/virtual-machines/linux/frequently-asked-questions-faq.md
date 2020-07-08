@@ -1,10 +1,9 @@
 ---
-title: Часто задаваемые вопросы об SQL Server на виртуальных машинах Linux в Azure | Документация Майкрософт
-description: В этой статье содержатся ответы на часто задаваемые вопросы о выполнении SQL Server на виртуальных машинах Linux в Azure.
+title: 'SQL Server на Linuxные виртуальные машины: вопросы и ответы | Документация Майкрософт'
+description: В этой статье содержатся ответы на часто задаваемые вопросы о запуске SQL Server на Linux виртуальных машин.
 services: virtual-machines-linux
 documentationcenter: ''
 author: MashaMSFT
-manager: craigg
 tags: azure-service-management
 ms.service: virtual-machines-sql
 ms.topic: troubleshooting
@@ -12,21 +11,20 @@ ms.workload: iaas-sql-server
 ms.date: 12/13/2017
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: f5447e61936b55db353404aae7cb391377d78294
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
-ms.translationtype: HT
+ms.openlocfilehash: afd36eb079b6e5f29fa664050cded3c5ddd17d8e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84035345"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84669471"
 ---
-# <a name="frequently-asked-questions-for-sql-server-on-linux-azure-virtual-machines"></a>Часто задаваемые вопросы об SQL Server на виртуальных машинах Linux в Azure
+# <a name="frequently-asked-questions-for-sql-server-on-linux-virtual-machines"></a>Часто задаваемые вопросы о SQL Server на Linux виртуальных машинах
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
 > [!div class="op_single_selector"]
 > * [Windows](../windows/frequently-asked-questions-faq.md)
 > * [Linux](frequently-asked-questions-faq.md)
 
-В этой статье содержатся ответы на некоторые наиболее распространенные вопросы о выполнении [SQL Server на виртуальных машинах Linux в Azure](sql-server-on-linux-vm-what-is-iaas-overview.md).
+В этой статье содержатся ответы на некоторые наиболее распространенные вопросы о запуске [SQL Server на Linux виртуальных машин](sql-server-on-linux-vm-what-is-iaas-overview.md).
 
 [!INCLUDE [support-disclaimer](../../../../includes/support-disclaimer.md)]
 
@@ -34,15 +32,15 @@ ms.locfileid: "84035345"
 
 1. **Какие образы доступны в коллекции виртуальных машин SQL Server?**
 
-   В Azure доступны образы виртуальных машин для всех поддерживаемых основных выпусков SQL Server во всех выпусках Windows и Linux. Дополнительные сведения см. в полном списке образов виртуальных машин [Linux](sql-server-on-linux-vm-what-is-iaas-overview.md#create) и [Windows](../windows/sql-server-on-azure-vm-iaas-what-is-overview.md#payasyougo).
+   Azure поддерживает образы виртуальных машин для всех поддерживаемых основных выпусков SQL Server во всех выпусках для Linux и Windows. Дополнительные сведения см. в полном списке образов виртуальных машин [Linux](sql-server-on-linux-vm-what-is-iaas-overview.md#create) и [Windows](../windows/sql-server-on-azure-vm-iaas-what-is-overview.md#payasyougo).
 
 1. **Обновляются ли доступные образы в коллекции виртуальных машин SQL Server?**
 
-   Каждые два месяца образы SQL Server в коллекции виртуальных машин обновляются до последних версий Windows и Linux. Образы Linux содержат последние обновления системы. Образы Windows содержат все обновления, отмеченные как важные в Центре обновления Windows, в частности важные обновления системы безопасности и пакеты обновления SQL Server. Накопительные пакеты обновления SQL Server в Linux и Windows обрабатываются по-разному. Для Linux накопительные пакеты обновления SQL Server также включены в обновление. Но виртуальные машины Windows сейчас не поддерживают накопительные пакеты обновления для SQL Server или Windows Server.
+   Каждые два месяца образы SQL Server в коллекции виртуальных машин обновляются до последних версий Windows и Linux. Образы Linux содержат последние обновления системы. Для образов Windows сюда входят все обновления, которые помечены как важные в Центр обновления Windows, включая важные SQL Server обновления системы безопасности и пакеты обновления. Накопительные пакеты обновления SQL Server в Linux и Windows обрабатываются по-разному. Для Linux накопительные пакеты обновления SQL Server также включены в обновление. Но виртуальные машины Windows сейчас не поддерживают накопительные пакеты обновления для SQL Server или Windows Server.
 
 1. **Какие связанные пакеты SQL Server устанавливаются вместе с ним?**
 
-   Список пакетов SQL Server, по умолчанию установленных на виртуальных машинах SQL Server на базе Linux, вы найдете [здесь](sql-server-on-linux-vm-what-is-iaas-overview.md#packages).
+   Чтобы просмотреть пакеты SQL Server, которые установлены по умолчанию на SQL Server на Linux виртуальных машинах, см. раздел [установленные пакеты](sql-server-on-linux-vm-what-is-iaas-overview.md#packages).
 
 1. **Можно ли удалить образы виртуальных машин SQL Server из коллекции?**
 
@@ -50,9 +48,9 @@ ms.locfileid: "84035345"
 
 ## <a name="creation"></a>Создание
 
-1. **Как создать виртуальную машину Linux Azure с SQL Server?**
+1. **Разделы справки создать виртуальную машину Linux с SQL Server?**
 
-   Проще всего создать виртуальную машину Linux, которая уже включает SQL Server. Руководство по регистрации в Azure и созданию виртуальной машины SQL на портале см. в статье [Подготовка виртуальной машины SQL Server на базе Linux на портале Azure](sql-vm-create-portal-quickstart.md). Кроме того, вы можете вручную установить SQL Server на виртуальной машине, используя выпуск с бесплатной лицензией (Developer или Express) или предоставив существующую локальную лицензию. При использовании собственной лицензии у вас должно быть преимущество [Перемещение лицензий в рамках программы Software Assurance в Azure](https://azure.microsoft.com/pricing/license-mobility).
+   Самым простым решением является создание виртуальной машины Linux, которая включает SQL Server. Руководство по регистрации в Azure и созданию SQL Server виртуальной машины на портале см. в статье о [подготовке виртуальной машины Linux под управлением SQL Server в портал Azure](sql-vm-create-portal-quickstart.md). Кроме того, вы можете вручную установить SQL Server на виртуальной машине, используя выпуск с бесплатной лицензией (Developer или Express) или предоставив существующую локальную лицензию. При использовании собственной лицензии у вас должно быть преимущество [Перемещение лицензий в рамках программы Software Assurance в Azure](https://azure.microsoft.com/pricing/license-mobility).
 
 1. **Почему не удается подготовить виртуальную машину SQL Server RHEL или SLES с подпиской Azure, для которой установлена предельная сумма расходов?**
 
@@ -74,15 +72,15 @@ ms.locfileid: "84035345"
 
 ## <a name="administration"></a>Администрирование
 
-1. **Можно ли управлять виртуальной машиной SQL Server на базе Linux с помощью SQL Server Management Studio (SSMS)?**
+1. **Можно ли управлять виртуальной машиной Linux под управлением SQL Server с SQL Server Management Studio (SSMS)?**
 
-   Да. Но сейчас средства SSMS доступны только в ОС Windows. Чтобы использовать SSMS с виртуальными машинами SQL Server на базе Linux, необходимо установить удаленное подключение с компьютера с Windows. На компьютере с Linux большинство задач администрирования можно выполнять с помощью нового средства [mssql-conf](https://docs.microsoft.com/sql/linux/sql-server-linux-configure-mssql-conf). Сведения о кроссплатформенном средстве управления базой данных см. в статье об [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/what-is).
+   Да. Но сейчас средства SSMS доступны только в ОС Windows. Необходимо удаленно подключиться с компьютера Windows для использования SSMS с виртуальными машинами Linux под управлением SQL Server. На компьютере с Linux большинство задач администрирования можно выполнять с помощью нового средства [mssql-conf](https://docs.microsoft.com/sql/linux/sql-server-linux-configure-mssql-conf). Сведения о кроссплатформенном средстве управления базой данных см. в статье об [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/what-is).
 
-1. **Можно ли полностью удалить SQL Server с виртуальной машины SQL?**
+1. **Можно ли полностью удалить SQL Server с виртуальной машины SQL Server?**
 
-   Да, но с вас будет по-прежнему взиматься плата за виртуальную машину SQL, как описано в статье [Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure](../windows/pricing-guidance.md?toc=%2fazure%2fvirtual-machines%2flinux%2fsql%2ftoc.json). Если вам больше не нужен SQL Server, можно развернуть новую виртуальную машину и перенести туда данные и приложения. Затем виртуальную машину SQL Server можно удалить.
+   Да, но с вас будет по-прежнему взиматься плата за виртуальную машину SQL Server, как описано в статье [Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure](../windows/pricing-guidance.md?toc=%2fazure%2fvirtual-machines%2flinux%2fsql%2ftoc.json). Если вам больше не нужен SQL Server, можно развернуть новую виртуальную машину и перенести туда данные и приложения. Затем виртуальную машину SQL Server можно удалить.
 
-## <a name="updating-and-patching"></a>Установка обновлений и исправлений
+## <a name="updating-and-patching"></a>Обновление и установка исправлений
 
 1. **Как выполнить обновление до новой версии или выпуска SQL Server в виртуальной машине Azure?**
 
@@ -90,20 +88,20 @@ ms.locfileid: "84035345"
 
 ## <a name="general"></a>Общие сведения
 
-1. **Поддерживаются ли на виртуальных машинах Azure решения SQL Server для высокого уровня доступности?**
+1. **Поддерживаются SQL Server решений высокого уровня доступности на виртуальных машинах Azure?**
 
-   На данный момент нет. Группы доступности AlwaysOn и отказоустойчивая кластеризация работают только в кластерных решениях на базе Linux, таких как Pacemaker. Доступные дистрибутивы Linux для SQL Server не поддерживают надстройки высокого уровня доступности в облаке.
+   На данный момент нет. Для группы доступности Always On и отказоустойчивой кластеризации требуется решение кластеризации в Linux, например Pacemaker. Поддерживаемые дистрибутивы Linux для SQL Server не поддерживают свои надстройки высокой доступности в облаке.
 
 ## <a name="resources"></a>Ресурсы
 
 **Для виртуальных машин Linux**:
 
 * [Обзор SQL Server на виртуальных машинах Linux](sql-server-on-linux-vm-what-is-iaas-overview.md).
-* [Подготовка виртуальной машины SQL Server на базе Linux](sql-vm-create-portal-quickstart.md).
+* [Инициализация SQL Server на виртуальной машине Linux](sql-vm-create-portal-quickstart.md)
 * [Документация по SQL Server в Linux](https://docs.microsoft.com/sql/linux/sql-server-linux-overview).
 
 **Для виртуальных машин Windows**:
 
 * [Обзор SQL Server на виртуальных машинах Windows](../windows/sql-server-on-azure-vm-iaas-what-is-overview.md).
-* [Подготовка виртуальной машины SQL Server на базе Windows](../windows/sql-vm-create-portal-quickstart.md).
+* [Инициализация SQL Server на виртуальной машине Windows](../windows/sql-vm-create-portal-quickstart.md)
 * [Часто задаваемые вопросы (Windows)](../windows/frequently-asked-questions-faq.md).

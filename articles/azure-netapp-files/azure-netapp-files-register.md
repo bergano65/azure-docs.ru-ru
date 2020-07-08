@@ -11,15 +11,14 @@ ms.service: azure-netapp-files
 ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
-ms.date: 05/06/2019
+ms.topic: how-to
+ms.date: 06/09/2020
 ms.author: b-juche
-ms.openlocfilehash: 6f5d84dea2e835fd12a062b628181354295ed9f6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: cdb96f08f78e22dd0e46070ab62bf9327e2d72a3
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79274064"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85956310"
 ---
 # <a name="register-for-azure-netapp-files"></a>Регистрация в службе Azure NetApp Files
 
@@ -30,7 +29,7 @@ ms.locfileid: "79274064"
 
 ## <a name="submit-a-waitlist-request-for-accessing-the-service"></a><a name="waitlist"></a>Отправка запроса ваитлист для доступа к службе
 
-1. Отправьте запрос ваитлист для доступа к службе Azure NetApp Files на [странице отправки Azure NetApp Files ваитлист](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR8cq17Xv9yVBtRCSlcD_gdVUNUpUWEpLNERIM1NOVzA5MzczQ0dQR1ZTSS4u). 
+1. Отправьте запрос ваитлист для доступа к службе Azure NetApp Files на [странице отправки Azure NetApp Files ваитлист](https://aka.ms/azurenetappfiles). 
 
     Ваитлист регистрация не гарантирует немедленного доступа к службе. 
 
@@ -52,38 +51,50 @@ ms.locfileid: "79274064"
 
 2. Если у вас несколько подписок в учетной записи Azure, выберите ту, которая была добавлена в список разрешений для Azure NetApp Files:
     
-        az account set --subscription <subscriptionId>
+    ```azurepowershell
+    az account set --subscription <subscriptionId>
+    ```
 
 3. В консоли Azure Cloud Shell введите следующую команду, чтобы проверить добавление подписки в список разрешений:
     
-        az feature list | grep NetApp
+    ```azurepowershell
+    az feature list | grep NetApp
+    ```
 
    Результат команды выглядит следующим образом:
    
-       "id": "/subscriptions/<SubID>/providers/Microsoft.Features/providers/Microsoft.NetApp/features/ANFGA",  
-       "name": "Microsoft.NetApp/ANFGA" 
+    ```output
+    "id": "/subscriptions/<SubID>/providers/Microsoft.Features/providers/Microsoft.NetApp/features/ANFGA",  
+    "name": "Microsoft.NetApp/ANFGA" 
+    ```
        
    `<SubID>` является идентификатором подписки.
 
-    Если имя `Microsoft.NetApp/ANFGA`компонента не отображается, у вас нет доступа к службе. На этом шаге следует закончить работу. Следуйте инструкциям в разделе [Отправка запроса ваитлист](#waitlist) на доступ к службе, чтобы запросить доступ к службе, прежде чем продолжить. 
+    Если имя компонента не отображается `Microsoft.NetApp/ANFGA` , у вас нет доступа к службе. На этом шаге следует закончить работу. Следуйте инструкциям в разделе [Отправка запроса ваитлист](#waitlist) на доступ к службе, чтобы запросить доступ к службе, прежде чем продолжить. 
 
 4. В консоли Azure Cloud Shell введите следующую команду, чтобы зарегистрировать поставщика ресурсов Azure: 
     
-        az provider register --namespace Microsoft.NetApp --wait
+    ```azurepowershell
+    az provider register --namespace Microsoft.NetApp --wait
+    ```
 
    Параметр `--wait` указывает консоли ожидать завершения регистрации. Процесс регистрации может занять некоторое время.
 
 5. В консоли Azure Cloud Shell введите следующую команду, чтобы проверить, что поставщик ресурсов Azure был зарегистрирован: 
     
-        az provider show --namespace Microsoft.NetApp
+    ```azurepowershell
+    az provider show --namespace Microsoft.NetApp
+    ```
 
    Результат команды выглядит следующим образом:
    
-        {
-        "id": "/subscriptions/<SubID>/providers/Microsoft.NetApp",
-        "namespace": "Microsoft.NetApp", 
-        "registrationState": "Registered", 
-        "resourceTypes": […. 
+    ```output
+    {
+     "id": "/subscriptions/<SubID>/providers/Microsoft.NetApp",
+     "namespace": "Microsoft.NetApp", 
+     "registrationState": "Registered", 
+     "resourceTypes": […. 
+    ```
 
    `<SubID>` является идентификатором подписки.  Для параметра `state` задано значение `Registered`.
 

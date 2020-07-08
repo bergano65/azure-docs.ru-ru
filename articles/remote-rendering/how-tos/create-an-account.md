@@ -5,12 +5,11 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/11/2020
 ms.topic: how-to
-ms.openlocfilehash: 58757dba9a8956d97c19269c2ac913d801f73746
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.openlocfilehash: cf74322725c6e86ee455f83aadc4aade07000835
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83844511"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86057676"
 ---
 # <a name="create-an-azure-remote-rendering-account"></a>Создание учетной записи для Удаленной отрисовки Azure
 
@@ -28,20 +27,24 @@ ms.locfileid: "83844511"
     1. В поле "Имя ресурса" задайте имя учетной записи.
     1. При необходимости обновите данные в поле "Подписка".
     1. Укажите в поле "Группа ресурсов" любую группу ресурсов по своему выбору.
+    1. Выберите регион из раскрывающегося списка "расположение", в котором должен быть создан этот ресурс. См. раздел Примечания к [регионам учетной записи](create-an-account.md#account-regions) ниже.
 1. После создания учетной записи откройте ее и выполните следующие действия.
     1. На вкладке *Обзор* обратите внимание на ИД учетной записи.
     1. На вкладке *Параметры > Ключи доступа* обратите внимание на первичный ключ — это секретный ключ учетной записи.
+
+### <a name="account-regions"></a>Регионы учетной записи
+Расположение, указанное во время создания учетной записи, определяет, к какому региону назначен ресурс учетной записи. Его нельзя изменить после создания. Тем не менее учетную запись можно использовать для подключения к сеансу удаленной подготовки к просмотру в любом [поддерживаемом регионе](./../reference/regions.md)независимо от расположения учетной записи.
 
 ### <a name="retrieve-the-account-information"></a>Извлеките сведения об учетной записи.
 
 В примерах и руководствах требуется указать ИД учетной записи и ключ. Например, в файле **arrconfig.json**, используемом для примеров сценариев PowerShell:
 
 ```json
-    "accountSettings": {
-        "arrAccountId": "<fill in the account ID from the Azure portal>",
-        "arrAccountKey": "<fill in the account key from the Azure portal>",
-        "region": "<select from available regions>"
-    },
+"accountSettings": {
+    "arrAccountId": "<fill in the account ID from the Azure portal>",
+    "arrAccountKey": "<fill in the account key from the Azure portal>",
+    "region": "<select from available regions>"
+},
 ```
 
 См. раздел [Список доступных регионов](../reference/regions.md), чтобы узнать, как задать параметр *Регион*.
@@ -89,6 +92,7 @@ ms.locfileid: "83844511"
 > Если там нет вашей учетной записи удаленной отрисовки, см. этот [раздел по устранению неполадок](../resources/troubleshoot.md#cant-link-storage-account-to-arr-account).
 
 Повторите процедуру добавления новых ролей еще два раза для соответствующих выбранных в раскрывающемся списке **Роль** параметров:
+
 * **Участник учетной записи хранения**
 * **участник данных BLOB-объектов хранилища**;
 

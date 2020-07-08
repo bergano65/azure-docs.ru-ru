@@ -5,17 +5,16 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 02/14/2020
 ms.author: cshoe
-ms.custom: fasttrack-edit
-ms.openlocfilehash: 4df0faf3f74ef3423dcd42c2c76af8b39a889a92
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
-ms.translationtype: HT
+ms.custom: fasttrack-edit, tracking-python
+ms.openlocfilehash: 2eaa2202ac6c2f0fac0f53c6eeb2f5d08c764f1e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83773954"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85413354"
 ---
 # <a name="azure-event-grid-output-binding-for-azure-functions"></a>Выходная привязка Сетки событий Azure для функций Azure
 
-Используйте выходную привязку Сетки событий для записи событий в пользовательский раздел. Необходимо иметь допустимый [ключ доступа для пользовательского раздела](../event-grid/security-authentication.md#authenticate-publishing-clients-using-sas-or-key).
+Используйте выходную привязку Сетки событий для записи событий в пользовательский раздел. Необходимо иметь допустимый [ключ доступа для пользовательского раздела](../event-grid/security-authenticate-publishing-clients.md).
 
 Сведения об установке и настройке см. в [обзорной статье](./functions-bindings-event-grid.md).
 
@@ -162,7 +161,7 @@ module.exports = function(context) {
 
 # <a name="python"></a>[Python](#tab/python)
 
-В следующем примере показаны привязка триггера в файле *function.json* и [функция Python](functions-reference-python.md), использующая эту привязку. Затем событие отправляется в пользовательский раздел Сетки событий, как указано в `topicEndpointUri`.
+В следующем примере показаны привязка триггера в файле *function.json* и [функция Python](functions-reference-python.md), использующая эту привязку. Затем он отправляет событие в пользовательский раздел, как указано в `topicEndpointUri` .
 
 Данные привязки в файле *function.json*:
 
@@ -187,7 +186,7 @@ module.exports = function(context) {
 }
 ```
 
-Ниже приведен пример Python для отправки события в пользовательский раздел Сетки событий путем установки `EventGridOutputEvent`:
+Ниже приведен пример Python для отправки события в пользовательский раздел путем установки `EventGridOutputEvent` :
 
 ```python
 import logging

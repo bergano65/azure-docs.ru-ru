@@ -3,14 +3,13 @@ title: Управление модулями runbook в службе автом�
 description: В этой статье описывается управление последовательностями runbook в службе автоматизации Azure.
 services: automation
 ms.subservice: process-automation
-ms.date: 02/14/2019
+ms.date: 06/10/2020
 ms.topic: conceptual
-ms.openlocfilehash: 93b34af0baed89fd312948aeffe8ea4ac8ef806c
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 9202eae49175615c4fffcd0b006ddda6e8281292
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83834702"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84718314"
 ---
 # <a name="manage-runbooks-in-azure-automation"></a>Управление модулями runbook в службе автоматизации Azure
 
@@ -46,7 +45,7 @@ New-AzAutomationRunbook -AutomationAccountName MyAccount `
 
 ## <a name="import-a-runbook"></a>Импорт модуля Runbook
 
-Вы можете импортировать скрипт PowerShell или скрипт рабочего процесса PowerShell (**PS1**), графическую последовательность runbook (**GRAPHRUNBOOK**) или скрипт Python 2 (**PY**), чтобы создать собственную последовательность runbook.  При этом необходимо указать [тип модуля Runbook](automation-runbook-types.md), который создается во время импорта, с учетом следующих рекомендаций.
+Вы можете импортировать скрипт PowerShell или скрипт рабочего процесса PowerShell (**PS1**), графическую последовательность runbook (**GRAPHRUNBOOK**) или скрипт Python 2 (**PY**), чтобы создать собственную последовательность runbook. При этом необходимо указать [тип модуля Runbook](automation-runbook-types.md), который создается во время импорта, с учетом следующих рекомендаций.
 
 * Вы можете импортировать файл **PS1** без рабочего процесса либо в [последовательность runbook PowerShell](automation-runbook-types.md#powershell-runbooks), либо в [последовательность runbook рабочего процесса PowerShell](automation-runbook-types.md#powershell-workflow-runbooks). Если импортировать его в последовательность runbook рабочего процесса PowerShell, он преобразуется в рабочий процесс. В этом случае в runbook добавляются комментарии для описания внесенных изменений.
 
@@ -54,7 +53,7 @@ New-AzAutomationRunbook -AutomationAccountName MyAccount `
 
 * Не импортируйте файл **PS1**, содержащий рабочий процесс PowerShell, в [последовательность runbook PowerShell](automation-runbook-types.md#powershell-runbooks), так как обработчик скриптов PowerShell не сможет его распознать.
 
-* В новую [графическую последовательность runbook](automation-runbook-types.md#graphical-runbooks) следует импортировать только файл **GRAPHRUNBOOK**. 
+* В новую [графическую последовательность runbook](automation-runbook-types.md#graphical-runbooks) следует импортировать только файл **GRAPHRUNBOOK**.
 
 ### <a name="import-a-runbook-from-the-azure-portal"></a>Импорт последовательности runbook с портала Azure
 
@@ -161,7 +160,7 @@ $connection = Get-AutomationConnection -Name AzureRunAsConnection
 Connect-AzAccount -ServicePrincipal -Tenant $connection.TenantID `
 -ApplicationId $connection.ApplicationID -CertificateThumbprint $connection.CertificateThumbprint
 
-$AzContext = Select-AzSubscription -SubscriptionId $connection.SubscriptionID
+$AzureContext = Get-AzSubscription -SubscriptionId $connection.SubscriptionID
 
 # Check for already running or new runbooks
 $runbookName = "<RunbookName>"
@@ -192,7 +191,7 @@ If (($jobs.status -contains "Running" -And $runningCount -gt 1 ) -Or ($jobs.Stat
 
 ## <a name="work-with-multiple-subscriptions"></a>Использование нескольких подписок
 
-Последовательность runbook должна поддерживать работу с [подписками](automation-runbook-execution.md#subscriptions). Например, для работы с несколькими подписками последовательность runbook использует командлет [Disable-AzContextAutosave](https://docs.microsoft.com/powershell/module/Az.Accounts/Disable-AzContextAutosave?view=azps-3.5.0). Этот командлет гарантирует, что контекст проверки подлинности не будет получен из другой последовательности runbook, выполняющейся в той же песочнице. Последовательность runbook также использует в командлетах модуля Az параметр `AzContext` и передает ему правильный контекст.
+Последовательность runbook должна поддерживать работу с [подписками](automation-runbook-execution.md#subscriptions). Например, для работы с несколькими подписками последовательность runbook использует командлет [Disable-AzContextAutosave](https://docs.microsoft.com/powershell/module/Az.Accounts/Disable-AzContextAutosave?view=azps-3.5.0). Этот командлет гарантирует, что контекст проверки подлинности не будет получен из другой последовательности runbook, выполняющейся в той же песочнице. Модуль Runbook также использует `Get-AzContext` командлет, чтобы получить контекст текущего сеанса и присвоить его переменной `$AzureContext` .
 
 ```powershell
 # Ensures that you do not inherit an AzContext in your runbook
@@ -204,7 +203,7 @@ Connect-AzAccount -ServicePrincipal `
 -ApplicationId $Conn.ApplicationID `
 -CertificateThumbprint $Conn.CertificateThumbprint
 
-$context = Get-AzContext
+$AzureContext = Get-AzContext
 
 $ChildRunbookName = 'ChildRunbookDemo'
 $AutomationAccountName = 'myAutomationAccount'
@@ -214,7 +213,7 @@ Start-AzAutomationRunbook `
     -ResourceGroupName $ResourceGroupName `
     -AutomationAccountName $AutomationAccountName `
     -Name $ChildRunbookName `
-    -DefaultProfile $context
+    -DefaultProfile $AzureContext
 ```
 
 ## <a name="work-with-a-custom-script"></a>Работа с пользовательскими скриптами

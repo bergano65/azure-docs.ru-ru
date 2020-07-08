@@ -2,21 +2,20 @@
 title: Общие сведения о процессе подготовки в Azure AD | Документация Майкрософт
 description: Общие сведения о процессе подготовки в Azure AD
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 05/20/2020
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: 533e38206b9a85b449880d88c9ff969c051fac53
-ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
-ms.translationtype: HT
+ms.openlocfilehash: 38ddfad179a8ef459b5c10f84619a836193ee092
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83712236"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84781656"
 ---
 # <a name="how-provisioning-works"></a>Описание процесса подготовки
 
@@ -172,7 +171,7 @@ ms.locfileid: "83712236"
 
 Служба подготовки Azure AD обеспечивает синхронизацию исходной и целевой систем путем отзыва учетных записей, в результате которого пользователи лишаются права доступа. 
 
-Служба подготовки Azure AD будет обратимо удалять пользователя из приложения, если приложение поддерживает такое удаление (в запросе на обновление параметр active имеет значение false) и происходит любое из следующих событий.
+Служба подготовки Azure AD будет обратимо удалять пользователя в приложении, когда приложение поддерживает обратимое удаление (запрос на обновление с параметром Active = false) и происходит любое из следующих событий:
 
 * Учетная запись пользователя удалена в Azure AD.
 *   Назначение пользователя отменено из приложения.

@@ -6,17 +6,16 @@ author: kevinvngo
 manager: craigg-msft
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 04/09/2020
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 7c09e9d9f93ead6f894c954f647ebe33918cf41d
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 4dc054d26f0cb64a8f7faf2ffa4b2b688562f404
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83653016"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85213556"
 ---
 # <a name="monitoring-resource-utilization-and-query-activity-in-azure-synapse-analytics"></a>Мониторинг использования ресурсов и действий запросов в Azure Synapse Analytics
 
@@ -49,7 +48,7 @@ Azure Synapse Analytics предоставляет широкие возможн
 Факторы, которые следует учитывать при просмотре метрик и настройке оповещений.
 
 - Число использованных DWU дает только **общее представление** об использовании ресурсов в пуле SQL и не является исчерпывающим индикатором использования. Чтобы определить, следует ли увеличивать или уменьшать масштаб, нужно учесть все факторы, на которые может повлиять число DWU, такие как параллелизм, память, tempdb и емкость адаптивного кэша. Рекомендуется [выполнить рабочую нагрузку с разными параметрами DWU](sql-data-warehouse-manage-compute-overview.md#finding-the-right-size-of-data-warehouse-units), чтобы определить, что лучше соответствует вашим бизнес-целям.
-- Сведения об успешных и неудачных подключениях выводятся для конкретной базы данных или хранилища данных, а не для логического сервера.
+- Ошибки и успешные подключения выводятся для определенного хранилища данных, а не для самого сервера.
 - Процент использования памяти отражает использование, даже если хранилище данных находится в состоянии простоя. Эта метрика не отражает потребление памяти активной рабочей нагрузкой. Включите и отслеживайте эту метрику вместе с другими метриками (для tempdb и кэша 2-го поколения), чтобы принять комплексное решение о масштабировании и определить, увеличит ли дополнительная емкость кэша производительность рабочей нагрузки в соответствии с вашими требованиями.
 
 ## <a name="query-activity"></a>Действие запроса
