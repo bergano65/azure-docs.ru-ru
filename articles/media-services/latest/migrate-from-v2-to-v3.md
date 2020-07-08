@@ -16,15 +16,14 @@ ms.workload: media
 ms.date: 03/09/2020
 ms.author: juliako
 ms.openlocfilehash: 72d413c5d8bc982d885d889da35b29a3607410cc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79472073"
 ---
 # <a name="migration-guidance-for-moving-from-media-services-v2-to-v3"></a>Руководство по миграции из версии 2 в версию 3 Служб мультимедиа
 
->Получите уведомления о том, когда следует повторно посетить эту страницу для получения обновлений путем копирования и вставления `https://docs.microsoft.com/api/search/rss?search=%22Migrate+from+Azure+Media+Services+v2+to+v3%22&locale=en-us` этого URL-адреса в средство чтения канала RSS.
+>Получайте уведомления о том, когда следует повторно посетить эту страницу для обновлений, скопировав и вставив URL-адрес `https://docs.microsoft.com/api/search/rss?search=%22Migrate+from+Azure+Media+Services+v2+to+v3%22&locale=en-us` в средство чтения RSS-канала.
 
 В этой статье представлено руководство по миграции из служб мультимедиа версии 2 в v3.
 
@@ -45,7 +44,7 @@ ms.locfileid: "79472073"
 * Пакеты SDK для [.NET](https://aka.ms/ams-v3-dotnet-ref), .NET Core, [Node.js](/javascript/api/overview/azure/mediaservices/management), [Python](https://aka.ms/ams-v3-python-ref), [Java](https://aka.ms/ams-v3-java-ref), [Go](https://aka.ms/ams-v3-go-ref) и Ruby.
 * Интеграция [Azure CLI](https://aka.ms/ams-v3-cli-ref) для простых скриптов поддержки.
 
-### <a name="new-features"></a>Новые функции
+### <a name="new-features"></a>новые функции;
 
 * Для обработки задания на основе файла можно использовать URL-адрес HTTP в качестве входных данных.<br/>Вам не обязательно ни хранить содержимое в Azure, ни создавать ресурсы.
 * Для обработки задания на основе файла введено понятие [преобразования](transforms-jobs-concept.md). Преобразование можно использовать для создания повторно используемых конфигураций, создания шаблонов Azure Resource Manager и изолирования параметров обработки между несколькими пользователями или клиентами.

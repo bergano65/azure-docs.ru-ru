@@ -4,10 +4,9 @@ description: В этой статье вы узнаете, как выполня
 ms.topic: conceptual
 ms.date: 12/11/2019
 ms.openlocfilehash: 52c235c95cea73a0c51c62fcb55f7f711d2eff21
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79476463"
 ---
 # <a name="about-sap-hana-database-backup-in-azure-vms"></a>Сведения о SAP HANA резервного копирования базы данных на виртуальных машинах Azure
@@ -39,11 +38,11 @@ Azure Backup [backint) создание сертифицировано](https://
 * Чтобы [настроить резервное копирование](https://docs.microsoft.com/azure/backup/tutorial-backup-sap-hana-db#configure-backup) для обнаруженных баз данных, выберите необходимую политику архивации и включите резервное копирование.
 
 * После настройки резервного копирования Azure Backup служба настраивает следующие параметры Backint) создание на уровне базы данных на защищенном сервере SAP HANA.
-  * [catalog_backup_using_backint: true]
-  * [enable_accumulated_catalog_backup: false]
-  * [parallel_data_backup_backint_channels: 1]
-  * [log_backup_timeout_s: 900)]
-  * [backint_response_timeout: 7200]
+  *  [catalog_backup_using_backint:true];
+  *  [enable_accumulated_catalog_backup:false];
+  *  [parallel_data_backup_backint_channels:1];
+  *  [log_backup_timeout_s:900)];
+  *  [backint_response_timeout:7200].
 
 >[!NOTE]
 >Убедитесь, что эти параметры *отсутствуют* на уровне узла. Параметры уровня узла будут переопределять эти параметры и могут вызвать непредвиденное поведение.

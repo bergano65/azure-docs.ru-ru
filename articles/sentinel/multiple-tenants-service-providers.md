@@ -15,10 +15,9 @@ ms.workload: na
 ms.date: 09/23/2019
 ms.author: yelevin
 ms.openlocfilehash: fdb58686fcdd18a8e2861aab533717dbc91e8893
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79476021"
 ---
 # <a name="work-with-multiple-tenants-in-azure-sentinel"></a>Работа с несколькими клиентами в Azure Sentinel 
@@ -27,7 +26,7 @@ ms.locfileid: "79476021"
 
 ## <a name="prerequisites"></a>Предварительные условия
 - [Подключение Лигхсаусе Azure](../lighthouse/how-to/onboard-customer.md)
-- Для правильной работы клиент должен быть зарегистрирован в поставщике ресурсов Sentinel Azure по крайней мере в одной подписке. Если в вашем клиенте есть зарегистрированный Sentinel Azure, вы можете приступить к работе. В противном случае выберите **подписки** из портал Azure, а затем — **поставщики ресурсов**.  Затем на экране **поставщиков ресурсов SoC-Resource** найдите и выберите `Microsoft.OperationalInsights` и `Microsoft.SecurityInsights`, а затем нажмите кнопку **зарегистрировать**.
+- Для правильной работы клиент должен быть зарегистрирован в поставщике ресурсов Sentinel Azure по крайней мере в одной подписке. Если в вашем клиенте есть зарегистрированный Sentinel Azure, вы можете приступить к работе. В противном случае выберите **подписки** из портал Azure, а затем — **поставщики ресурсов**.  Затем на экране **поставщиков ресурсов SoC-Resource** найдите и выберите `Microsoft.OperationalInsights` и `Microsoft.SecurityInsights` , а затем нажмите кнопку **зарегистрировать**.
    ![Проверка поставщиков ресурсов](media/multiple-tenants-service-providers/check-resource-provider.png)
 ## <a name="how-to-access-azure-sentinel-from-other-tenants"></a>Как получить доступ к Azure Sentinel из других клиентов
 1. В разделе **Каталог + подписка**выберите делегированные каталоги и подписки, в которых находятся рабочие области Sentinel Azure вашего клиента.

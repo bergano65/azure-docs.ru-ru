@@ -12,10 +12,9 @@ ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
 ms.openlocfilehash: 1e5bd565be7a1cabf08ddf33c65eb12b5294249f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79471478"
 ---
 # <a name="url-rewrite-custom-forwarding-path"></a>Переопределение URL-адреса (пользовательский путь переадресации)
@@ -42,12 +41,12 @@ ms.locfileid: "79471478"
 
 | Входящий запрос       | Путь с наиболее конкретным соответствием | /          | /fwd/          | /foo/          | /foo/bar/          |
 |------------------------|--------------------------|------------|----------------|----------------|--------------------|
-| www\.contoso.com/            | /\*                      | /          | /fwd/          | /foo/          | /foo/bar/          |
-| подкаталог\.www**sub** contoso.com/     | /\*                      | /**Директор**   | /fwd/**sub**   | /foo/**sub**   | /foo/bar/**sub**   |
-| www\.contoso.com/**a/b/c**   | /\*                      | /**a/b/c** | /fwd/**a/b/c** | /foo/**a/b/c** | /foo/bar/**a/b/c** |
-| www\.contoso.com/foo         | /foo                     | /          | /fwd/          | /foo/          | /foo/bar/          |
-| www\.contoso.com/foo/        | /foo/\*                  | /          | /fwd/          | /foo/          | /foo/bar/          |
-| панель\.www**bar** contoso.com/foo/ | /foo/\*                  | /**панели**   | /fwd/**bar**   | **панель** /Фу/   | /foo/bar/**bar**   |
+| www \. contoso.com/            | /\*                      | /          | /fwd/          | /foo/          | /foo/bar/          |
+| \.**подкаталог** www contoso.com/     | /\*                      | /**Директор**   | /fwd/**sub**   | /foo/**sub**   | /foo/bar/**sub**   |
+| www \. contoso.com/**a/b/c**   | /\*                      | /**a/b/c** | /fwd/**a/b/c** | /foo/**a/b/c** | /foo/bar/**a/b/c** |
+| www \. contoso.com/foo         | /foo                     | /          | /fwd/          | /foo/          | /foo/bar/          |
+| www \. contoso.com/foo/        | /foo/\*                  | /          | /fwd/          | /foo/          | /foo/bar/          |
+| \.**панель** www contoso.com/foo/ | /foo/\*                  | /**панели**   | /fwd/**bar**   | **панель** /Фу/   | /foo/bar/**bar**   |
 
 
 ## <a name="optional-settings"></a>Необязательные параметры

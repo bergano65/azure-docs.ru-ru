@@ -9,10 +9,9 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 03a16ac065b585c499efa268500e0a8c81c07738
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80333820"
 ---
 # <a name="weather-services-in-azure-maps"></a>Службы погоды в Azure Maps
@@ -23,7 +22,7 @@ ms.locfileid: "80333820"
 
 Некоторые API-интерфейсы службы погоды позволяют пользователю указать, должны ли данные возвращаться в метрике или в германской единицах. Возвращаемые ответы для этих API включают единицах UnitType и числовое значение, которое можно использовать для переводов единиц. Чтобы интерпретировать эти значения, см. таблицу ниже.
 
-|Единицах UnitType|Описание         |
+|Единицах UnitType|Описание:         |
 |--------|--------------------|
 |0       |футах                |
 |1       |ражают              |
@@ -52,7 +51,7 @@ ms.locfileid: "80333820"
 
 ## <a name="weather-icons"></a>Значки погоды
 
-Некоторые API службы погоды возвращают `iconCode` в ответ. `iconCode` — Числовое значение, используемое для определения значка. Не следует напрямую связываться с этими изображениями из приложений, URL-адреса могут и изменяться.
+Некоторые API службы погоды возвращают `iconCode` в ответ. `iconCode`— Числовое значение, используемое для определения значка. Не следует напрямую связываться с этими изображениями из приложений, URL-адреса могут и изменяться.
 
 | Номер значка |Значок| День | Ночной | Text |
 |-------------|:----:|-----|-------|------|
@@ -84,7 +83,7 @@ ms.locfileid: "80333820"
 | 30           |![](./media/weather-services-concepts/hot-i.png)                       | Да |  Да   | Горячий|
 | 31           |![](./media/weather-services-concepts/cold-i.png)                      | Да |  Да   | Холодный|
 | 32           |![](./media/weather-services-concepts/windy-i.png)                     | Да |  Да   | Ветрено|
-| 33           |![](./media/weather-services-concepts/clear-night.png)                | Нет  |  Да   | Clear|
+| 33           |![](./media/weather-services-concepts/clear-night.png)                | Нет  |  Да   | Очистить|
 | 34           |![](./media/weather-services-concepts/mostly-clear-night.png)          | Нет  |  Да   | В основном ясно|
 | 35           |![](./media/weather-services-concepts/partly-cloudy-night.png)         | Нет  |  Да   | Частичное облако|
 | 36           |![](./media/weather-services-concepts/intermittent-clouds-Night.png)   | Нет  |  Да   | Временные облака|

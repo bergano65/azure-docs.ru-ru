@@ -7,10 +7,9 @@ ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: brendm
 ms.openlocfilehash: 2e29f6a75b303518ac34ecf9b570bd7638cf0c3a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79471036"
 ---
 # <a name="set-up-a-staging-environment-in-azure-spring-cloud"></a>Настройка промежуточной среды в облаке Azure весны
@@ -67,10 +66,10 @@ az extension add --name spring-cloud
 
 >[!TIP]
 > * Убедитесь, что конечная точка теста заканчивается косой чертой (/), чтобы убедиться, что CSS-файл загружен правильно.  
-> * Если в браузере для просмотра страницы требуется ввести учетные данные, используйте параметр [Декодировать в URL-адресе](https://www.urldecoder.org/) для декодирования тестовой конечной точки. При декодировании в URL-адресе возвращается URL-адрес в формате https://\<username>:\<password>@\<cluster-name>.test.azureapps.io/gateway/green.  Используйте эту форму для доступа к конечной точке.
+> * Если в браузере для просмотра страницы требуется ввести учетные данные, используйте параметр [Декодировать в URL-адресе](https://www.urldecoder.org/) для декодирования тестовой конечной точки. Декодирование URL-адреса возвращает URL-адрес в формате "https:// \<username> : \<password> @ \<cluster-name> . Test.azureapps.IO/Gateway/Green".  Используйте эту форму для доступа к конечной точке.
 
 >[!NOTE]    
-> Параметры сервера конфигурации применяются как к промежуточной, так и рабочей среде. Например, если задать`server.servlet.context-path`путь контекста () для шлюза приложений на сервере конфигурации как *сомепас*, то путь к зеленому развертыванию изменится на HTTPS://\<username>:\<пароль> @\<Cluster-Name>. Test.azureapps.IO/Gateway/Green/somepath/... ".
+> Параметры сервера конфигурации применяются как к промежуточной, так и рабочей среде. Например, если задать путь контекста ( `server.servlet.context-path` ) для шлюза приложений на сервере конфигурации в качестве *сомепас*, то путь к зеленому развертыванию изменится на "https:// \<username> : \<password> @ \<cluster-name> . Test.azureapps.IO/Gateway/Green/somepath/...".
  
  Если на этом этапе посетить общедоступный шлюз приложений, вы увидите старую страницу без новых изменений.
     

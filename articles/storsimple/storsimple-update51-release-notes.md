@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 03/05/2020
 ms.author: v-grpr
 ms.openlocfilehash: 27778ea232353dcaa6a38fa19abbd64b11c809e2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80657927"
 ---
 # <a name="storsimple-8000-series-update-51-release-notes"></a>Заметки о выпуске пакета StorSimple 8000 с обновлением 5,1
@@ -44,6 +43,6 @@ ms.locfileid: "80657927"
 
 Это обновление не может применяться к StorSimple Cloud Appliance (также известному как виртуальное устройство). Новые облачные устройства необходимо создавать с помощью образа обновления 5,1. Дополнительные сведения о создании облачного устройства StorSimple см. в статье [Развертывание и администрирование облачного устройства StorSimple в Azure (обновление 3 и более поздние версии)](storsimple-8000-cloud-appliance-u2.md).
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 Узнайте, как [установить обновление 5,1](storsimple-8000-install-update-51.md) на устройстве StorSimple.

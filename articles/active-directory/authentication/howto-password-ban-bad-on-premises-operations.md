@@ -12,10 +12,9 @@ manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4ee0f3d89d48b23db48e3bf4b78203b09fbcbdbd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80652637"
 ---
 # <a name="enable-on-premises-azure-active-directory-password-protection"></a>Включить локальную Azure Active Directory защиту паролем
@@ -32,7 +31,7 @@ ms.locfileid: "80652637"
 
 ## <a name="enable-on-premises-password-protection"></a>Включить локальную защиту паролей
 
-1. Войдите в [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory** > **Security** >  > **методы проверки подлинности**защиты**пароля**.
+1. Войдите в [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory**  >  **Security**  >  **методы проверки подлинности**защиты  >  **пароля**.
 1. Задайте для параметра **включить защиту паролем в Windows Server Active Directory** значение *Да*.
 
     Если для этого параметра установлено значение *нет*, все развернутые агенты контроллера домена для защиты ПАРОЛЕЙ Azure AD переходят в режим загружена, где все пароли принимаются как есть. Действия проверки не выполняются, и события аудита не создаются.
@@ -67,7 +66,7 @@ ms.locfileid: "80652637"
 > [!NOTE]
 > Защита паролем Azure AD не контролирует конкретное сообщение об ошибке, отображаемое клиентским компьютером при отклонении ненадежного пароля.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о настройке списка запрещенных паролей для организации см. в разделе [Настройка списка запрещенных паролей для защиты паролем Azure AD](tutorial-configure-custom-password-protection.md).
 
