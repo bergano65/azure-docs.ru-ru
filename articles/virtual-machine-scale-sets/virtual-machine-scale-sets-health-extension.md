@@ -9,12 +9,11 @@ ms.subservice: extensions
 ms.date: 05/06/2020
 ms.reviewer: mimckitt
 ms.custom: mimckitt
-ms.openlocfilehash: 4710d03c4d5b2f2679a0d6b65f38ec584f9a056c
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.openlocfilehash: a38a715b45ab4d0810862ef4d016e4187ea507ab
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83124114"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84783050"
 ---
 # <a name="using-application-health-extension-with-virtual-machine-scale-sets"></a>Использование расширения "Работоспособность приложения" с масштабируемыми наборами виртуальных машин
 Мониторинг работоспособности приложения предоставляет важные сведения, которые позволяют определить, когда требуется администрирование и обновление развертывания. Масштабируемые наборы виртуальных машин Azure поддерживают [последовательные обновления](virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model), включая [автоматические обновления образа ОС](virtual-machine-scale-sets-automatic-upgrade.md), которые зависят от мониторинга работоспособности отдельных экземпляров для обновления развертывания. Расширение работоспособности также можно использовать для отслеживания работоспособности приложений каждого экземпляра в масштабируемом наборе и выполнения восстановления экземпляров с помощью [автоматического восстановления экземпляров](virtual-machine-scale-sets-automatic-instance-repairs.md).
@@ -60,17 +59,17 @@ ms.locfileid: "83124114"
 | Имя | Значение и пример | Тип данных
 | ---- | ---- | ---- 
 | версия_API | `2018-10-01` | Дата |
-| publisher | `Microsoft.ManagedServices` | строка |
+| publisher | `Microsoft.ManagedServices` | string |
 | type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | строка |
 | typeHandlerVersion | `1.0` | INT |
 
-### <a name="settings"></a>"Настройки"
+### <a name="settings"></a>Настройки
 
 | Имя | Значение и пример | Тип данных
 | ---- | ---- | ----
-| protocol | `http`, `https` или `tcp` | строка |
+| protocol | `http`, `https` или `tcp` | string |
 | порт | Необязательно, если параметр Protocol имеет `http` или `https` , является обязательным, если используется протокол`tcp` | INT |
-| requestPath | Обязательно, если параметр Protocol имеет `http` или `https` , не разрешен, если используется протокол`tcp` | строка |
+| requestPath | Обязательно, если параметр Protocol имеет `http` или `https` , не разрешен, если используется протокол`tcp` | string |
 
 ## <a name="deploy-the-application-health-extension"></a>Развертывание расширение "Работоспособность приложения"
 Существует несколько способов развертывания расширения "Работоспособность приложения" в масштабируемые наборы, которые описаны в приведенных ниже примерах.
@@ -154,7 +153,7 @@ az vmss extension set \
   --vmss-name <myVMScaleSet> \
   --settings ./extension.json
 ```
-Содержимое файла Extension. JSON.
+extension.jsсодержимого файла.
 
 ```json
 {
@@ -165,7 +164,7 @@ az vmss extension set \
 ```
 
 
-## <a name="troubleshoot"></a>Диагностика
+## <a name="troubleshoot"></a>Устранение неполадок
 Выходные данные выполнения расширения регистрируются в файле, расположенном в следующих каталогах:
 
 ```Windows
@@ -173,7 +172,8 @@ C:\WindowsAzure\Logs\Plugins\Microsoft.ManagedServices.ApplicationHealthWindows\
 ```
 
 ```Linux
-/var/lib/waagent/apphealth
+/var/lib/waagent/Microsoft.ManagedServices.ApplicationHealthLinux-<extension_version>/status
+/var/log/azure/applicationhealth-extension
 ```
 
 Журналы также периодически записывают состояние работоспособности приложения.

@@ -2,21 +2,20 @@
 title: Использование Microsoft Graph API для настройки подготовки — Azure Active Directory | Документация Майкрософт
 description: Необходимо настроить подготовку для нескольких экземпляров приложения? Узнайте, как сэкономить время с помощью API-интерфейсов Microsoft Graph для автоматизации настройки автоматической подготовки.
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/15/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: 585cafc548b3458c6e9cc0ef91c44f163fb7fa2f
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
-ms.translationtype: MT
+ms.openlocfilehash: 01d4475e73fd436fd0cd2a8aca1e7a946cdd7562
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82593953"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84782064"
 ---
 # <a name="configure-provisioning-using-microsoft-graph-apis"></a>Настройка подготовки с помощью API-интерфейсов Microsoft Graph
 
@@ -27,28 +26,28 @@ ms.locfileid: "82593953"
 
 |Шаг  |Сведения  |
 |---------|---------|
-|[Шаг 1. Создание приложения коллекции](#step-1-create-the-gallery-application)     |Вход в клиент API <br> Получение шаблона приложения коллекции <br> Создание приложения коллекции         |
+|[Шаг 1. Создание приложения коллекции](#step-1-create-the-gallery-application)     |Вход в клиент API <br> Получение шаблона приложения коллекции <br> Создание приложения из коллекции         |
 |[Шаг 2. Создание задания подготовки на основе шаблона](#step-2-create-the-provisioning-job-based-on-the-template)     |Получение шаблона для соединителя подготовки <br> Создание задания подготовки         |
 |[Шаг 3. Авторизация доступа](#step-3-authorize-access)     |Проверка подключения к приложению <br> Сохранение учетных данных         |
 |[Шаг 4. Запуск задания подготовки](#step-4-start-the-provisioning-job)     |Запустите задание         |
 |[Шаг 5. Подготовка монитора](#step-5-monitor-provisioning)     |Проверка состояния задания подготовки <br> Получение журналов подготовки         |
 
 > [!NOTE]
-> Объекты ответа, приведенные в этой статье, могут быть сокращены для удобства чтения. Все свойства будут возвращены из фактического вызова.
+> Объекты ответа, приведенные в этой статье, могут быть сокращены для удобства чтения. В реальном вызове возвращаются все свойства.
 
-## <a name="step-1-create-the-gallery-application"></a>Шаг 1. Создание приложения коллекции
+## <a name="step-1-create-the-gallery-application"></a>Шаг 1. Создание приложения из коллекции
 
-### <a name="sign-in-to-microsoft-graph-explorer-recommended-postman-or-any-other-api-client-you-use"></a>Войдите в Microsoft Graph Explorer (рекомендуется), POST или любой другой клиент API, который вы используете.
+### <a name="sign-in-to-microsoft-graph-explorer-recommended-postman-or-any-other-api-client-you-use"></a>Войдите в Microsoft Graph Explorer (рекомендуется), Postman или любой другой клиент API на ваш выбор.
 
-1. Запуск [обозревателя Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer)
+1. Запустите [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 1. Нажмите кнопку "вход с помощью Microsoft" и выполните вход с помощью глобального администратора Azure AD или учетных данных администратора приложения.
 
     ![Выполнение входа в Graph](./media/application-provisioning-configure-api/wd_export_02.png)
 
-1. После успешного входа в систему вы увидите сведения об учетной записи пользователя на панели слева.
+1. После успешного входа вы увидите данные учетной записи пользователя на панели слева.
 
-### <a name="retrieve-the-gallery-application-template-identifier"></a>Получение идентификатора шаблона приложения коллекции
-У приложений в коллекции приложений Azure AD есть [шаблон приложения](https://docs.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-beta&tabs=http) , описывающий метаданные для этого приложения. С помощью этого шаблона можно создать экземпляр приложения и субъекта-службы в клиенте для управления.
+### <a name="retrieve-the-gallery-application-template-identifier"></a>Получение идентификатора шаблона для приложения в коллекции
+У каждого приложения в коллекции приложений Azure AD есть свой [шаблон](https://docs.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-beta&tabs=http), который описывает метаданные для этого приложения. По этому шаблону вы можете создать экземпляр приложения и субъект-службу в клиенте для управления им.
 
 #### <a name="request"></a>*Запрос*
 
@@ -98,7 +97,7 @@ Content-type: application/json
 }
 ```
 
-### <a name="create-the-gallery-application"></a>Создание приложения коллекции
+### <a name="create-the-gallery-application"></a>Создание приложения из коллекции
 
 Для [создания экземпляра](https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-beta&tabs=http) приложения и субъекта-службы в клиенте используйте идентификатор шаблона, полученный в приложении на предыдущем шаге.
 

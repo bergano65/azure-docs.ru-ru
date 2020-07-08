@@ -1,19 +1,13 @@
 ---
 title: Обзор регулирования служебной шины Azure | Документация Майкрософт
 description: Обзор регулирования служебной шины — уровня "Стандартный" и "Премиум".
-services: service-bus-messaging
-author: axisc
-editor: spelluru
-ms.service: service-bus-messaging
 ms.topic: article
-ms.date: 10/01/2019
-ms.author: aschhab
-ms.openlocfilehash: f852ad70b2eb97e2b8b3e40d086e98b3836c3592
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/23/2020
+ms.openlocfilehash: 436f9a40269f7eea4e31b55b9657d38849876eb4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77598295"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85340955"
 ---
 # <a name="throttling-operations-on-azure-service-bus"></a>Операции регулирования в служебной шине Azure
 
@@ -104,7 +98,7 @@ The request was terminated because the entity is being throttled. Error code: 50
 
 Увеличение или уменьшение масштаба можно выполнить, создав [модули Runbook](../automation/automation-create-alert-triggered-runbook.md) , которые могут быть активированы изменениями в указанных выше метриках.
 
-## <a name="faqs"></a>Частые вопросы
+## <a name="faqs"></a>Часто задаваемые вопросы
 
 ### <a name="how-does-throttling-affect-my-application"></a>Как регулирование влияет на мое приложение?
 

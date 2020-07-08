@@ -1,6 +1,6 @@
 ---
-title: Лицензирование&reg; пакета Microsoft Smooth Streaming Client Licensing Kit
-description: Сведения о лицензировании пакета Microsoft&reg; Smooth Streaming clienting Kit.
+title: Лицензирование &reg; пакета Microsoft Smooth Streaming Client Licensing Kit
+description: Сведения о лицензировании &reg; пакета Microsoft Smooth Streaming clienting Kit.
 services: media-services
 documentationcenter: ''
 author: xpouyat
@@ -14,14 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/21/2019
 ms.author: xpouyat
-ms.openlocfilehash: bd77c53a195a9549f6aaad9ee2928206f5324b0c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 7fce1fc529f3af71cac17d8011fe065c6381a419
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81686898"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84677174"
 ---
-# <a name="licensing-microsoftreg-smooth-streaming-client-porting-kit"></a>Лицензирование&reg; пакета Microsoft Smooth Streaming Client Licensing Kit 
+# <a name="licensing-microsoftreg-smooth-streaming-client-porting-kit"></a>Лицензирование &reg; пакета Microsoft Smooth Streaming Client Licensing Kit 
 ## <a name="overview"></a>Обзор
 Пакет для переноса клиента бесперебойной потоковой передачи Microsoft Smooth Streaming (далее для краткости называется **SSPK**) представляет собой реализацию клиента Smooth Streaming. Он оптимизирован так, чтобы помочь производителям встроенных устройств, операторам кабельной и мобильной связи, поставщикам служб содержимого, производителям мобильных устройств, независимым поставщикам программного обеспечения и поставщикам решений создавать продукты и услуги, которые поддерживают потоковую передачу адаптивного содержимого в формате Smooth Streaming. Клиент SSPK не зависит от оборудования и платформы. Лицензиат может легко перенести его на любое устройство и любую платформу. 
 
@@ -29,7 +28,7 @@ ms.locfileid: "81686898"
 
 ![SSPK](./media/media-services-sspk/sspk-arch.png)
 
-## <a name="description"></a>Описание
+## <a name="description"></a>Описание:
 Условия лицензирования SSPK повышают коммерческую ценность этого предложения. Лицензия SSPK предоставляет предприятиям отрасли следующие возможности.
 
 * Исходный код пакета для портирования Smooth Streaming на языке C++, в котором: 
@@ -71,11 +70,11 @@ ms.locfileid: "81686898"
 * Отсутствие отчислений за первые 10 000 устройств в течение каждого года. 
 
 ## <a name="licensing-procedure-and-sspk-access"></a>Процедура лицензирования и доступ к SSPK.
-Электронная [sspkinfo@microsoft.com](mailto:sspkinfo@microsoft.com) почта для всех запросов на лицензирование.
+Электронная почта [sspkinfo@microsoft.com](mailto:sspkinfo@microsoft.com) для всех запросов на лицензирование.
 
 Зарегистрированные обладатели лицензии на промежуточный продукт получают доступ к Порталу распространения SSPK .
 
-Промежуточные и окончательные лицензии SSPK могут отправлять технические вопросы [smoothpk@microsoft.com](mailto:smoothpk@microsoft.com)по.
+Промежуточные и окончательные лицензии SSPK могут отправлять технические вопросы по [smoothpk@microsoft.com](mailto:smoothpk@microsoft.com) .
 
 ## <a name="microsoft-smooth-streaming-client-interim-product-agreement-licensees"></a>Обладатели лицензий на промежуточный продукт пакета для портирования клиента Microsoft Smooth Streaming.
 
@@ -113,56 +112,46 @@ ms.locfileid: "81686898"
 ## <a name="microsoft-smooth-streaming-client-final-product-agreement-licensees"></a>Обладатели лицензий на конечный продукт пакета для портирования клиента Microsoft Smooth Streaming
 * Advanced Digital Broadcast SA
 * AirTies Kablosuz Iletism Sanayive Dis Ticaret A.S.
-* Albis Technologies Ltd.
-* Amazon Digital Services, Inc.
-* AmTRAN Technology Co., Ltd.
 * Arcadyan Technology Corporation
-* Arion Technology, Inc.
-* ATMACA ELEKTRONİK SAN. VE TİC. A.Ş
-* British Sky Broadcasting Limited
-* CastPal Technology Inc., Shenzhen
+* Арцелик A. S
 * Compal Electronics, Inc.
-* Dongguan Digital AV Technology Corp., Ltd.
-* EchoStar Purchasing Corporation
-* Enseo, Inc.
-* Филмфлекс фильмов
+* С ОГРАНИЧЕННЫМ ЧИСЛОМ ТЕХНОЛОГИЙ EXPRESS
 * Fluendo S.A.
 * ФУНАИ ЭЛЕКТРИЧЕСКИЙ CO, LTD
-* Gibson Innovations Limited
-* Haier Information Applicantion S.R.L
-* HANDAN BroadInfoCom Co., Ltd.
 * Hisense International Co., Ltd. 
-* Homecast Co., Ltd
-* Hon Hai Precision Industry Co., Ltd.
-* Infomir GMBH
+* Ограниченная корпорация ХКК
+* Гонконг, Конка Ltd
+* Корпорация иннолукс
+* Технологии иннопиа, Inc
 * Kaonmedia Co., Ltd.
 * KDDI Corporation
+* Мегасимволов славы электроника
+* Ограниченная электроника МИРК
 * Nintendo Co., Ltd.
-* Orange SA
-* Saffron Digital Limited
-* Sagemcom Broadband SAS
+* ОНЕПЛУС ЭЛЕКТРОНИКА (ШЕНЗЕН) CO., LTD.
+* Корпорация Майкрософт, Panasonic
+* Кингдао Хаиер Оптроникс Co., Ltd.
+* Шензен Атеко, Co., Ltd.
 * Шензен Чуангвеи — модель бытовой электроники по RGB, Ltd.
-* Shenzhen Coship Electronics CO., LTD
 * Shenzhen Jiuzhou Electric Co., Ltd
+* Шензен КТК технология Co., Ltd. 
+* Шензен Максмаде технология Co., Ltd
+* Шензен МТК Co., Ltd
 * Shenzhen Skyworth Digital Technology Co., Ltd
 * Sichuan Changhong Electric Co., Ltd.
 * Skardin Industrial Corp.
 * Sky Deutschland Fernsehen GmbH & Co. KG
-* SmarDTV S.A.
+* СМАРДТВ ГЛОБАЛЬНЫЙ SAS
 * SoftAtHome
 * Sony Corporation
 * Technicolor Delivery Technologies, SAS
-* Tongfang Global Ltd.
 * Top Victory Investments, Ltd.
-* Toshiba Lifestyle Products & Services Corporation
-* Universal Media Corporation /Slovakia/ s.r.o.
-* VIZIO, Inc.
-* Wistron Corporation
+* UMC Польша SP. z. о.о.
 * ZTE Corporation
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

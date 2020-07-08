@@ -10,18 +10,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 03/22/2020
+ms.date: 06/18/2020
 ms.author: barclayn
 ms.reviewer: jocastel
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 514f8e86d6bd28cc5212e0f0058f00e270f43e35
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 86f2d5202a9b5439fcacca549659e4e181ffeca4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80128421"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85078125"
 ---
 # <a name="view-reports-and-logs-in-azure-ad-entitlement-management"></a>Просмотр отчетов и журналов в управлении назначениями Azure AD
 
@@ -79,17 +78,17 @@ ms.locfileid: "80128421"
 
 ## <a name="determine-the-status-of-a-users-request"></a>Определение состояния запроса пользователя
 
-Чтобы получить дополнительные сведения о том, как пользователь запрашивает и получил доступ к пакету Access, можно использовать журнал аудита Azure AD. В частности, можно использовать записи журнала в категориях `EntitlementManagement` и `UserManagement` для получения дополнительных сведений о шагах обработки для каждого запроса.  
+Чтобы получить дополнительные сведения о том, как пользователь запрашивает и получил доступ к пакету Access, можно использовать журнал аудита Azure AD. В частности, можно использовать записи журнала в `EntitlementManagement` `UserManagement` категориях и для получения дополнительных сведений о шагах обработки для каждого запроса.  
 
 1. Щелкните **Azure Active Directory** и выберите **журналы аудита**.
 
-1. В верхней части измените **категорию** на `EntitlementManagement` или `UserManagement`, в зависимости от записи аудита, которую вы ищете.  
+1. В верхней части измените **категорию** на `EntitlementManagement` или, в зависимости от `UserManagement` записи аудита, которую вы ищете.  
 
 1. Нажмите кнопку **Применить**.
 
 1. Чтобы скачать журналы, нажмите кнопку **скачать**.
 
-Когда Azure AD получает новый запрос, он записывает запись аудита, в которой **Категория** является `EntitlementManagement` , а **действие** — обычно `User requests access package assignment`.  В случае прямого назначения, созданного в портал Azure, поле **действия** записи аудита имеет `Administrator directly assigns user to access package`значение, а пользователь, выполняющий назначение, идентифицируется с помощью **акторусерпринЦипалнаме**.
+Когда Azure AD получает новый запрос, он записывает запись аудита, в которой **Категория** является, `EntitlementManagement` а **действие** — обычно `User requests access package assignment` .  В случае прямого назначения, созданного в портал Azure, поле **действия** записи аудита имеет значение `Administrator directly assigns user to access package` , а пользователь, выполняющий назначение, идентифицируется с помощью **акторусерпринЦипалнаме**.
 
 Azure AD будет записывать дополнительные записи аудита во время выполнения запроса, в том числе:
 
@@ -101,13 +100,13 @@ Azure AD будет записывать дополнительные запис
 | `EntitlementManagement` | `Approve access package assignment request` | Запрос утвержден |
 | `EntitlementManagement` | `Ready to fulfill access package assignment request` |Запрос утвержден или не требует утверждения |
 
-Когда пользователю назначается доступ, Azure AD записывает запись аудита для `EntitlementManagement` категории с **действием** `Fulfill access package assignment`.  Пользователь, получивший доступ, идентифицируется по полю **акторусерпринЦипалнаме** .
+Когда пользователю назначается доступ, Azure AD записывает запись аудита для `EntitlementManagement` категории с **действием** `Fulfill access package assignment` .  Пользователь, получивший доступ, идентифицируется по полю **акторусерпринЦипалнаме** .
 
-Если доступ не был назначен, Azure AD `EntitlementManagement` записывает запись аудита для категории с **действием** либо `Deny access package assignment request`, если запрос был отклонен утверждающим, либо `Access package assignment request timed out (no approver action taken)`, если время ожидания запроса истекло до утверждения утверждающего.
+Если доступ не был назначен, Azure AD записывает запись аудита для `EntitlementManagement` категории с **действием** либо `Deny access package assignment request` , если запрос был отклонен утверждающим, либо `Access package assignment request timed out (no approver action taken)` , если время ожидания запроса истекло до утверждения утверждающего.
 
-По истечении срока действия назначения пакета доступа пользователем или после его удаления администратором Azure AD записывает запись аудита для `EntitlementManagement` категории с **действием** . `Remove access package assignment`
+По истечении срока действия назначения пакета доступа пользователем или после его удаления администратором Azure AD записывает запись аудита для `EntitlementManagement` категории с **действием** `Remove access package assignment` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Архивация отчетов и журналов](entitlement-management-logs-and-reporting.md)
 - [Устранение неполадок управления назначениями Azure AD](entitlement-management-troubleshoot.md)

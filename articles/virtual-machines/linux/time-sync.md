@@ -12,12 +12,11 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 7c93c1f525713a90abd71c30a21401b9d1cfcb9f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 25e8be28903d490a7a8c17e16d2beddc44c95c41
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81460908"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84782778"
 ---
 # <a name="time-sync-for-linux-vms-in-azure"></a>Синхронизация времени для виртуальных машин Linux в Azure
 
@@ -25,10 +24,10 @@ ms.locfileid: "81460908"
 
 Платформа Azure основана на инфраструктуре, работающей под управлением Windows Server 2016. В Windows Server 2016 реализованы улучшенные алгоритмы коррекции времени и синхронизации локальных часов с временем в формате UTC.  Функция "Точное время" в Windows Server 2016 значительно улучшила работу службы VMICTimeSync, которая регулирует точность времени в виртуальных машинах и на сервере. К числу улучшений относится более точное исходное время при запуске или восстановлении виртуальной машины, а также коррекция задержки при прерывании. 
 
->[!NOTE]
->Краткий обзор службы времени Windows см. в этом [видео](https://aka.ms/WS2016TimeVideo).
+> [!NOTE]
+> Краткий обзор службы времени Windows см. в этом [видео](https://aka.ms/WS2016TimeVideo).
 >
-> Дополнительные сведения см. в статье [Точное время в Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/accurate-time). 
+> Дополнительные сведения см. в статье [Точное время в Windows Server 2016](/windows-server/networking/windows-time-service/accurate-time). 
 
 ## <a name="overview"></a>Обзор
 
@@ -48,7 +47,7 @@ ms.locfileid: "81460908"
 
 
 
-## <a name="configuration-options"></a>Параметры конфигурации
+## <a name="configuration-options"></a>Варианты настройки
 
 В целом есть три способа настроить синхронизацию времени для виртуальных машин Linux, размещенных в Azure:
 
@@ -140,9 +139,9 @@ refclock PHC /dev/ptp0 poll 3 dpoll -2 offset 0
 
 Дополнительные сведения об Ubuntu и NTP см. в статье [Синхронизация времени](https://help.ubuntu.com/lts/serverguide/NTP.html).
 
-Дополнительные сведения о Red Hat и NTP см. в статье [Настройка NTP](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/s1-configure_ntp). 
+Дополнительные сведения о Red Hat и NTP см. в статье [Настройка NTP](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-configuring_ntp_using_ntpd#s1-Configure_NTP). 
 
-Дополнительные сведения о чрони см. [в разделе Использование чрони](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sect-using_chrony).
+Дополнительные сведения о чрони см. [в разделе Использование чрони](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-configuring_ntp_using_the_chrony_suite#sect-Using_chrony).
 
 Если источники чрони и Тимесинк включены одновременно, можно пометить один из них как **предпочтительный**, который задает другой источник в качестве резервной копии. Так как службы NTP корректируют часы через большие периоды времени, служба VMICTimeSync восстанавливает показания часов после приостановки виртуальных машин гораздо быстрее, чем средства на основе NTP, используемые отдельно.
 
@@ -164,6 +163,6 @@ systemctl restart chronyd
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-Дополнительные сведения см. в статье [Точное время в Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/accurate-time).
+Дополнительные сведения см. в статье [Точное время в Windows Server 2016](/windows-server/networking/windows-time-service/accurate-time).
 
 

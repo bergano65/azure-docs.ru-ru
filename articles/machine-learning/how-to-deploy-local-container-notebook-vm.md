@@ -1,21 +1,20 @@
 ---
-title: Развертывание моделей в экземплярах вычислений
+title: Хдеплой моделей в расчетные экземпляры
 titleSuffix: Azure Machine Learning
 description: Узнайте, как развертывать модели Машинное обучение Azure в качестве веб-службы с помощью экземпляров вычислений.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.author: mnark
 author: MrudulaN
 ms.reviewer: larryfr
 ms.date: 03/05/2020
-ms.openlocfilehash: 09164580b8bdb249fc12d14e827ad799d51cab34
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 07afeba8ab481da6a23862dee187c8c72df19f3b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80756578"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84429587"
 ---
 # <a name="deploy-a-model-to-azure-machine-learning-compute-instances"></a>Развертывание модели для Машинное обучение Azureных экземпляров вычислений
 
@@ -39,7 +38,7 @@ ms.locfileid: "80756578"
 
 1. В [машинное обучение Azure Studio](https://ml.azure.com)выберите машинное обучение Azureные экземпляры вычислений.
 
-1. `samples-*` Откройте подкаталог, а затем откройте `how-to-use-azureml/deploy-to-local/register-model-deploy-local.ipynb`. После открытия запустите записную книжку.
+1. Откройте `samples-*` подкаталог, а затем откройте `how-to-use-azureml/deploy-to-local/register-model-deploy-local.ipynb` . После открытия запустите записную книжку.
 
     ![Снимок экрана: выполняемая локальная служба в записной книжке](./media/how-to-deploy-local-container-notebook-vm/deploy-local-service.png)
 
@@ -48,10 +47,10 @@ ms.locfileid: "80756578"
     ![Снимок экрана с портом локальной службы](./media/how-to-deploy-local-container-notebook-vm/deploy-local-service-port.png)
 
 1. Чтобы протестировать службу из вычислительного экземпляра, используйте `https://localhost:<local_service.port>` URL-адрес. Для проверки с удаленного клиента получите общедоступный URL-адрес службы, выполняющейся на вычислительном экземпляре. Можно определить общедоступный URL-адрес, используя следующую формулу. 
-    * Виртуальная машина `https://<vm_name>-<local_service_port>.<azure_region_of_workspace>.notebooks.azureml.net/score`записной книжки:. 
-    * Вычислительный экземпляр `https://<vm_name>-<local_service_port>.<azure_region_of_workspace>.instances.azureml.net/score`:. 
+    * Виртуальная машина записной книжки: `https://<vm_name>-<local_service_port>.<azure_region_of_workspace>.notebooks.azureml.net/score` . 
+    * Вычислительный экземпляр: `https://<vm_name>-<local_service_port>.<azure_region_of_workspace>.instances.azureml.net/score` . 
 
-    Например, примененная к объекту директива 
+    Например, 
     * Виртуальная машина записной книжки:`https://vm-name-6789.northcentralus.notebooks.azureml.net/score` 
     * Вычислительный экземпляр:`https://vm-name-6789.northcentralus.instances.azureml.net/score`
 
@@ -60,7 +59,7 @@ ms.locfileid: "80756578"
 Чтобы отправить демонстрационные данные в работающую службу, используйте следующий код. Замените значение `service_url` на URL-адрес из предыдущего шага:
 
 > [!NOTE]
-> При проверке подлинности в развертывании на вычислительном экземпляре выполняется проверка подлинности с помощью Azure Active Directory. При вызове `interactive_auth.get_authentication_header()` в примере кода выполняется проверка подлинности с помощью AAD и возвращается заголовок, который затем можно использовать для проверки подлинности в службе на вычислительном экземпляре. Дополнительные сведения см. в разделе [Настройка проверки подлинности для машинное обучение Azure ресурсов и рабочих процессов](how-to-setup-authentication.md#interactive-authentication).
+> При проверке подлинности в развертывании на вычислительном экземпляре выполняется проверка подлинности с помощью Azure Active Directory. При вызове `interactive_auth.get_authentication_header()` в примере кода выполняется проверка подлинности с помощью AAD и возвращается заголовок, который затем можно использовать для проверки подлинности в службе на вычислительном экземпляре. Дополнительные сведения см. в статье [Настройка проверки подлинности ресурсов и рабочих процессов Машинного обучения Azure](how-to-setup-authentication.md#interactive-authentication).
 >
 > При проверке подлинности в развертывании в службе Kubernetes Azure или экземплярах контейнеров Azure используется другой метод проверки подлинности. Дополнительные сведения о см. в разделе [Настройка проверки подлинности для машинное обучение Azure ресурсов и рабочих процессов](how-to-setup-authentication.md#web-service-authentication).
 
@@ -96,7 +95,7 @@ print("prediction:", resp.text)
 
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)
-* [Использование TLS для защиты веб-службы с помощью Машинное обучение Azure](how-to-secure-web-service.md)
+* [Использование TLS для защиты веб-службы с помощью Машинного обучения Azure](how-to-secure-web-service.md).
 * [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md)
 * [Мониторинг моделей Машинное обучение Azure с помощью Application Insights](how-to-enable-app-insights.md)
 * [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md)
