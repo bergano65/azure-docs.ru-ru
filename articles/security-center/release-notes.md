@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/21/2020
+ms.date: 07/01/2020
 ms.author: memildin
-ms.openlocfilehash: 6909bcbc67680f9205af8a79782907d4671d668b
-ms.sourcegitcommit: 95269d1eae0f95d42d9de410f86e8e7b4fbbb049
-ms.translationtype: HT
+ms.openlocfilehash: 997b7b1442d29c4daa4e47c89a7f53d46c3b8c81
+ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83860721"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85969591"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -29,8 +29,148 @@ ms.locfileid: "83860721"
 
 Эта страница регулярно обновляется, поэтому рекомендуем часто просматривать ее. Если вам понадобятся материалы, которым более шести месяцев, см. [Архив сведений о новых возможностях Центра безопасности Azure](release-notes-archive.md).
 
+## <a name="july-2020"></a>Июль 2020 г.
 
-## <a name="may-2020"></a>Май 2020 г.
+Обновления в июле включают:
+- [Расширение защиты от угроз для службы хранилища Azure для включения файлов и Azure Data Lake Storage 2-го поколения Azure (Предварительная версия)](#threat-protection-for-azure-storage-expanded-to-include-azure-files-and-azure-data-lake-storage-gen2-preview)
+
+### <a name="threat-protection-for-azure-storage-expanded-to-include-azure-files-and-azure-data-lake-storage-gen2-preview"></a>Расширение защиты от угроз для службы хранилища Azure для включения файлов и Azure Data Lake Storage 2-го поколения Azure (Предварительная версия)
+
+Защита от угроз для службы хранилища Azure обнаруживает потенциально опасные действия в учетных записях хранения Azure. Центр безопасности отображает оповещения при обнаружении неудачных попыток доступа или использования учетных записей хранения. 
+
+Данные могут быть защищены независимо от того, хранятся ли они в виде контейнеров больших двоичных объектов, файловых ресурсов или озера данных. 
+
+Дополнительные сведения о [защите от угроз для службы хранилища Azure](threat-protection.md#threat-protection-for-azure-storage-).
+
+
+## <a name="june-2020"></a>июнь 2020 г.
+
+Обновления в июне включают:
+- [API оценки безопасности (Предварительная версия)](#secure-score-api-preview)
+- [Расширенная защита данных для компьютеров SQL (Azure, другие облака и локальные) (Предварительная версия)](#advanced-data-security-for-sql-machines-azure-other-clouds-and-on-prem-preview)
+- [Две новые рекомендации по развертыванию агента Log Analytics на компьютерах Arc Azure (Предварительная версия)](#two-new-recommendations-to-deploy-the-log-analytics-agent-to-azure-arc-machines-preview)
+- [Новые политики для создания непрерывного экспорта и конфигураций автоматизации рабочих процессов в масштабе](#new-policies-to-create-continuous-export-and-workflow-automation-configurations-at-scale)
+- [Новая рекомендация по использованию группы безопасности сети для защиты виртуальных машин, не подключенных к Интернету](#new-recommendation-for-using-nsgs-to-protect-non-internet-facing-virtual-machines)
+- [Новые политики для включения защиты от угроз и расширенной защиты данных](#new-policies-for-enabling-threat-protection-and-advanced-data-security)
+
+
+
+### <a name="secure-score-api-preview"></a>API оценки безопасности (Предварительная версия)
+
+Теперь вы можете получить доступ к рейтингу через [API оценки безопасности](https://docs.microsoft.com/rest/api/securitycenter/securescores/) (сейчас в предварительной версии). Методы API обеспечивают гибкость при выполнении запросов к данным и создают собственный механизм создания отчетов о безопасности с течением времени. Например, можно использовать API для **оценки безопасности** , чтобы получить оценку для конкретной подписки. Кроме того, можно использовать API **управления оценками** безопасности для перечисления элементов управления безопасностью и текущей оценки подписок.
+
+Примеры внешних средств, которые можно реализовать с помощью API оценки безопасности, см. [в области "Оценка безопасности" сообщества GitHub](https://github.com/Azure/Azure-Security-Center/tree/master/Secure%20Score).
+
+Дополнительные сведения об [элементах управления рейтингом и безопасностью в центре безопасности Azure](secure-score-security-controls.md).
+
+
+
+### <a name="advanced-data-security-for-sql-machines-azure-other-clouds-and-on-prem-preview"></a>Расширенная защита данных для компьютеров SQL (Azure, другие облака и локальные) (Предварительная версия)
+
+Расширенная защита данных в центре безопасности Azure для компьютеров SQL теперь защищает серверы SQL Server, размещенные в Azure, в других облачных средах и даже на локальных компьютерах. Это расширяет возможности защиты для собственных серверов SQL Azure, чтобы обеспечить полную поддержку гибридных сред.
+
+Расширенная защита данных обеспечивает оценку уязвимостей и расширенную защиту от угроз для компьютеров SQL везде, где они расположены.
+
+Программа установки состоит из двух этапов:
+
+1. Развертывание агента Log Analytics на компьютере размещения SQL Server для обеспечения подключения к учетной записи Azure.
+
+1. Включение дополнительного пакета на странице цен и параметров центра безопасности.
+
+Дополнительные сведения о [расширенной защите данных для компьютеров SQL](security-center-iaas-advanced-data.md).
+
+
+
+### <a name="two-new-recommendations-to-deploy-the-log-analytics-agent-to-azure-arc-machines-preview"></a>Две новые рекомендации по развертыванию агента Log Analytics на компьютерах Arc Azure (Предварительная версия)
+
+Добавлены две новые рекомендации, помогающие развернуть [агент log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent) на компьютерах Arc Azure и обеспечить их защиту с помощью центра безопасности Azure:
+
+- **Агент Log Analytics должен быть установлен на компьютерах Arc Azure на базе Windows (Предварительная версия).**
+- **Агент Log Analytics должен быть установлен на компьютерах Arc Azure на базе Linux (Предварительная версия).**
+
+Эти новые рекомендации будут отображаться в тех же четырех элементах управления безопасностью, что и существующая рекомендация, **Агент мониторинга должен быть установлен на компьютерах**: исправлять конфигурации безопасности, применять адаптивное управление приложениями, применять обновления системы и включать Endpoint Protection.
+
+В эти рекомендации также входит функция быстрого исправления, позволяющая ускорить процесс развертывания. 
+
+Дополнительные сведения об этих двух новых рекомендациях см. в таблице [рекомендации по вычислению и использованию приложений](recommendations-reference.md#recs-computeapp) .
+
+Дополнительные сведения об использовании агента в центре безопасности Azure см. в статье [что такое агент log Analytics?](https://docs.microsoft.com/azure/security-center/faq-data-collection-agents#what-is-the-log-analytics-agent).
+
+Узнайте больше о [расширениях для компьютеров ARC в Azure](https://docs.microsoft.com/azure/azure-arc/servers/manage-vm-extensions#enable-extensions-from-the-portal).
+
+
+
+### <a name="new-policies-to-create-continuous-export-and-workflow-automation-configurations-at-scale"></a>Новые политики для создания непрерывного экспорта и конфигураций автоматизации рабочих процессов в масштабе
+
+Автоматизация процессов отслеживания и реагирования на инциденты в Организации может значительно повысить время, затрачиваемое на изучение и устранение инцидентов безопасности.
+
+Для развертывания конфигураций автоматизации в Организации используйте встроенные политики Azure "Деплойифднотексист", чтобы создать и настроить [непрерывный экспорт](continuous-export.md) и процедуры [автоматизации рабочего процесса](workflow-automation.md) .
+
+Политики можно найти в политике Azure:
+
+
+|Цель  |Политика  |Идентификатор политики  |
+|---------|---------|---------|
+|Непрерывный экспорт в концентратор событий|[Развертывание экспортированных данных в концентраторе событий для оповещений и рекомендаций Центра безопасности Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fcdfcce10-4578-4ecd-9703-530938e4abcb)|cdfcce10-4578-4ecd-9703-530938e4abcb|
+|Непрерывный экспорт в Log Analytics рабочую область|[Развертывание экспортированных данных в рабочей области Log Analytics для оповещений и рекомендаций Центра безопасности Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fffb6f416-7bd2-4488-8828-56585fef2be9)|ffb6f416-7bd2-4488-8828-56585fef2be9|
+|Автоматизация рабочих процессов для оповещений системы безопасности|[Развертывание средств автоматизации рабочих процессов для оповещений Центра безопасности Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2ff1525828-9a90-4fcf-be48-268cdd02361e)|f1525828-9a90-4fcf-be48-268cdd02361e|
+|Автоматизация рабочих процессов для рекомендаций по безопасности|[Развертывание средств автоматизации рабочих процессов для рекомендаций Центра безопасности Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f73d6ab6c-2475-4850-afd6-43795f3492ef)|73d6ab6c-2475-4850-afd6-43795f3492ef|
+||||
+
+Приступая к работе с [шаблонами автоматизации рабочих процессов](https://github.com/Azure/Azure-Security-Center/tree/master/Workflow%20automation).
+
+Дополнительные сведения об использовании двух политик экспорта см. в статье [непрерывный экспорт оповещений и рекомендаций центра безопасности Azure с помощью политики](https://techcommunity.microsoft.com/t5/azure-security-center/continuously-export-azure-security-center-alerts-and/ba-p/1440745).
+
+
+### <a name="new-recommendation-for-using-nsgs-to-protect-non-internet-facing-virtual-machines"></a>Новая рекомендация по использованию группы безопасности сети для защиты виртуальных машин, не подключенных к Интернету
+
+Контроль безопасности "реализация рекомендаций по обеспечению безопасности" теперь включает следующие новые рекомендации:
+
+- **Виртуальные машины без выхода в Интернет должны быть защищены с помощью групп безопасности сети**
+
+Существующая рекомендация: **виртуальные машины, подключенные к Интернету, должны быть защищены с помощью групп безопасности сети**, не различают виртуальные машины, подключенные к Интернету и не подключенные к Интернету. В обоих случаях была создана рекомендация высокой серьезности, если виртуальная машина не была назначена группе безопасности сети. Эта новая рекомендация разделяет компьютеры, не подключенные к Интернету, чтобы сократить количество ложных срабатываний и избежать ненужных оповещений высокой серьезности.
+
+Дополнительные сведения см. в таблице [рекомендации по сети](recommendations-reference.md#recs-network) .
+
+
+
+
+### <a name="new-policies-for-enabling-threat-protection-and-advanced-data-security"></a>Новые политики для включения защиты от угроз и расширенной защиты данных
+
+Новые политики, приведенные ниже, были добавлены в инициативу ASC по умолчанию и предназначены для помощи в обеспечении защиты от угроз или расширенной безопасности данных для соответствующих типов ресурсов.
+
+Политики можно найти в политике Azure:
+
+
+| Политика                                                                                                                                                                                                                                                                | Идентификатор политики                            |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
+| [На серверах базы данных SQL Azure должна быть включена расширенная защита данных.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f7fe3b40f-802b-4cdd-8bd4-fd799c948cc2)     | 7fe3b40f-802b-4cdd-8bd4-fd799c948cc2 |
+| [На серверах SQL Server на компьютерах должна быть включена расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f6581d072-105e-4418-827f-bd446d56421b) | 6581d072-105e-4418-827f-bd446d56421b |
+| [В учетных записях хранения должна быть включена расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f308fbb08-4ab8-4e67-9b29-592e93fb94fa)           | 308fbb08-4ab8-4e67-9b29-592e93fb94fa |
+| [На Azure Key Vault хранилищах следует включить расширенную защиту угроз.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f0e6763cc-5078-4e64-889d-ff4d9a839047)           | 0e6763cc-5078-4e64-889d-ff4d9a839047 |
+| [В планах службы приложений должна быть включена расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f2913021d-f2fd-4f3d-b958-22354e2bdbcb)                | 2913021d-f2fd-4f3d-b958-22354e2bdbcb |
+| [В реестре контейнеров Azure должна быть включена расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fc25d9a16-bc35-4e15-a7e5-9db606bf9ed4)   | c25d9a16-bc35-4e15-a7e5-9db606bf9ed4 |
+| [В кластерах службы Kubernetes Azure должна быть включена расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f523b5cd1-3e23-492f-a539-13118b6d1e3a)   | 523b5cd1-3e23-492f-a539-13118b6d1e3a |
+| [На виртуальных машинах должна быть включена расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f4da35fc9-c9e7-4960-aec9-797fe7d9051d)           | 4da35fc9-c9e7-4960-aec9-797fe7d9051d |
+|                                                                                                                                                                                                                                                                       |                                      |
+
+Узнайте больше о [защите от угроз в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/threat-protection).
+
+
+
+
+
+## <a name="may-2020"></a>Май 2020 г.
+
+Обновления в могут включать:
+- [Правила подавления оповещений (предварительная версия)](#alert-suppression-rules-preview)
+- [Оценка уязвимостей виртуальных машин стала общедоступной](#virtual-machine-vulnerability-assessment-is-now-generally-available)
+- [Изменения в JIT-доступе на виртуальных машинах](#changes-to-just-in-time-jit-virtual-machine-vm-access)
+- [Настраиваемые рекомендации перемещены в отдельный элемент управления безопасностью](#custom-recommendations-have-been-moved-to-a-separate-security-control)
+- [Добавлен переключатель для просмотра рекомендаций в элементах управления или в виде простого списка](#toggle-added-to-view-recommendations-in-controls-or-as-a-flat-list)
+- [Расширенный элемент управления безопасностью "Внедрение рекомендаций по обеспечению безопасности"](#expanded-security-control-implement-security-best-practices)
+- [Настраиваемые политики с пользовательскими метаданными стали общедоступными](#custom-policies-with-custom-metadata-are-now-generally-available)
+- [Возможности анализа аварийного дампа перенесены в компонент обнаружения бесфайловых атак](#crash-dump-analysis-capabilities-migrating-to-fileless-attack-detection)
 
 
 ### <a name="alert-suppression-rules-preview"></a>Правила подавления оповещений (предварительная версия)
@@ -96,6 +236,7 @@ ms.locfileid: "83860721"
 
 Дополнительные сведения об элементах управления безопасностью см. в статье [Улучшенная оценка безопасности (предварительная версия) в Центре безопасности Azure](secure-score-security-controls.md).
 
+![Переключатель "Группировать по элементам управления" для рекомендаций](\media\secure-score-security-controls\recommendations-group-by-toggle.gif)
 
 ### <a name="expanded-security-control-implement-security-best-practices"></a>Расширенный элемент управления безопасностью "Внедрение рекомендаций по обеспечению безопасности" 
 
@@ -113,13 +254,14 @@ ms.locfileid: "83860721"
 
 Вот две новые рекомендации, которые были добавлены в элемент управления:
 
-- **[Предварительная версия] Должен быть установлен агент гостевой конфигурации**: использование [гостевой конфигурации политики Azure](https://docs.microsoft.com/azure/governance/policy/concepts/guest-configuration) обеспечивает видимость виртуальных машин для параметров серверов и приложений (только для Windows).
+- **Расширение гостевой настройки должно быть установлено на виртуальных машинах Windows (Предварительная версия)** . Использование [гостевой конфигурации политики Azure](https://docs.microsoft.com/azure/governance/policy/concepts/guest-configuration) обеспечивает видимость виртуальных машин для параметров сервера и приложения (только для Windows).
 
-- **[Предварительная версия] Должно быть включено средство Exploit Guard в Защитнике Windows**: Exploit Guard в Защитнике Windows использует агент гостевой конфигурации политики Azure. Exploit Guard состоит из четырех компонентов, которые предназначены для блокировки устройств с целью защиты от разнообразных векторов атак и блокируют поведение, которое присуще атакам с использованием вредоносных программ, позволяя организациям сбалансировать риски, связанные с угрозами безопасности, и требования к производительности (только для Windows).
+- **На компьютерах (Предварительная версия) должна быть включена защита от эксплойта защитника Windows** . в Защитнике Windows используется агент гостевой конфигурации политики Azure. Exploit Guard состоит из четырех компонентов, которые предназначены для блокировки устройств с целью защиты от разнообразных векторов атак и блокируют поведение, которое присуще атакам с использованием вредоносных программ, позволяя организациям сбалансировать риски, связанные с угрозами безопасности, и требования к производительности (только для Windows).
 
 Дополнительные сведения об Exploit Guard в Защитнике Windows см. в статье [Создание и развертывание политики Exploit Guard](https://docs.microsoft.com/mem/configmgr/protect/deploy-use/create-deploy-exploit-guard-policy).
 
-Дополнительные сведения об элементах управления безопасностью см. в статье [Улучшенная оценка безопасности (предварительная версия) в Центре безопасности Azure](secure-score-security-controls.md).
+Дополнительные сведения об элементах управления безопасностью см. в статье [повышенная безопасность (Предварительная версия)](secure-score-security-controls.md).
+
 
 
 ### <a name="custom-policies-with-custom-metadata-are-now-generally-available"></a>Настраиваемые политики с пользовательскими метаданными стали общедоступными
@@ -133,13 +275,14 @@ ms.locfileid: "83860721"
 См. статью об [усовершенствовании пользовательских рекомендаций с помощью дополнительных сведений](custom-security-policies.md#enhancing-your-custom-recommendations-with-detailed-information).
 
 
+
 ### <a name="crash-dump-analysis-capabilities-migrating-to-fileless-attack-detection"></a>Возможности анализа аварийного дампа перенесены в компонент обнаружения бесфайловых атак 
 
 Возможности анализа аварийного дампа Windows (CDA) интегрированы в компонент [обнаружения бесфайловых атак](https://docs.microsoft.com/azure/security-center/threat-protection#windows-fileless). Аналитика обнаружения бесфайловых атак обеспечивает улучшенные версии следующих оповещений системы безопасности для компьютеров с Windows: обнаружено внедрение кода, обнаружена маскировка под модуль Windows, обнаружен код оболочки, обнаружен подозрительный сегмент кода.
 
 Вот некоторые из преимуществ этого переноса:
 
-- **Упреждающее и своевременное обнаружение вредоносных программ**. При использовании подхода CDA приходилось ожидать аварийного завершения и лишь потом выполнять анализ для поиска активных вредоносных программ. Обнаружение бесфайловых атак обеспечивает упреждающее выявление угроз в памяти во время их работы. 
+- **Упреждающее и своевременное обнаружение вредоносных программ** — подход CDA, который участвовал в ожидании сбоя, а затем выполняет анализ для поиска вредоносных артефактов. Обнаружение бесфайловых атак обеспечивает упреждающее выявление угроз в памяти во время их работы. 
 
 - **Более информативные оповещения**. Оповещения системы безопасности, которые создает компонент обнаружения бесфайловых атак, содержат сведения, которых не предоставляет CDA, например информацию об активных сетевых подключениях. 
 
@@ -150,6 +293,11 @@ ms.locfileid: "83860721"
 
 
 ## <a name="april-2020"></a>Апрель 2020 г.
+
+Обновления в апреле включают:
+- [Динамические пакеты соответствия стали общедоступными](#dynamic-compliance-packages-are-now-generally-available)
+- [Рекомендации по удостоверениям теперь включены в уровень "Бесплатный" Центра безопасности Azure](#identity-recommendations-now-included-in-azure-security-center-free-tier)
+
 
 ### <a name="dynamic-compliance-packages-are-now-generally-available"></a>Динамические пакеты соответствия стали общедоступными
 
@@ -188,6 +336,14 @@ ms.locfileid: "83860721"
 
 
 ## <a name="march-2020"></a>Март 2020 г.
+
+Обновления в марте включают:
+- [Автоматизация рабочих процессов стала общедоступной](#workflow-automation-is-now-generally-available)
+- [Интеграция Центра безопасности Azure с Windows Admin Center](#integration-of-azure-security-center-with-windows-admin-center)
+- [Защита для Службы Azure Kubernetes](#protection-for-azure-kubernetes-service)
+- [Улучшенный интерфейс для JIT](#improved-just-in-time-experience)
+- [Две рекомендации по безопасности для веб-приложений устарели](#two-security-recommendations-for-web-applications-deprecated)
+
 
 ### <a name="workflow-automation-is-now-generally-available"></a>Автоматизация рабочих процессов стала общедоступной
 
@@ -266,13 +422,3 @@ Kubernetes — известная платформа с открытым код
 
 Чтобы обеспечить противодействие этой угрозе, в октябре 2018 г. в Центре безопасности Azure был представлен компонент обнаружения бесфайловых атак для Windows, а теперь эта возможность добавлена и для Linux. 
 
-
-## <a name="january-2020"></a>Январь 2020 г.
-
-### <a name="enhanced-secure-score-preview"></a>Улучшенная оценка безопасности (предварительная версия)
-
-Улучшенная оценка безопасности в Центре безопасности Azure теперь доступна в виде предварительной версии. В ней рекомендации сгруппированы в элементах управления безопасностью, которые лучше соответствуют областям, уязвимым для атак (например, ограничение доступа к портам управления).
-
-Ознакомьтесь с изменениями оценки безопасности в предварительной версии и определите другие исправления, которые помогут вам защитить среду еще лучше.
-
-См. дополнительные сведения об [улучшенной оценке безопасности (предварительная версия) в Центре безопасности Azure](secure-score-security-controls.md).

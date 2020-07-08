@@ -5,12 +5,12 @@ author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: how-to
-ms.openlocfilehash: fc779d6caba2b896b869440ad523291bc3c9a9b2
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
-ms.translationtype: HT
+ms.openlocfilehash: 850f4e3754af790e6b9bab5c68c9bd10849bba37
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83726440"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85965286"
 ---
 # <a name="rendering-using-azure"></a>Рендеринг с помощью Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "83726440"
 
 Наиболее распространенный сценарий включает уже существующую локальную ферму рендеринга, которой управляет специализированное приложение, например PipelineFX Qube, Royal Render или Thinkbox Deadline.  В этом сценарии ставится задача расширить емкость локальной фермы рендеринга за счет применения виртуальных машин Azure.
 
-Программное обеспечение для управления рендерингом должно иметь встроенную поддержку Azure или доступный подключаемый модуль для поддержки Azure. Дополнительные сведения о поддерживаемых диспетчеров рендеринга и доступных функциях вы найдете в статье об [использовании диспетчеров рендеринга](https://docs.microsoft.com/azure/batch/batch-rendering-render-managers).
+Программное обеспечение для управления рендерингом должно иметь встроенную поддержку Azure или доступный подключаемый модуль для поддержки Azure. Дополнительные сведения о поддерживаемых диспетчеров рендеринга и доступных функциях вы найдете в статье об [использовании диспетчеров рендеринга](./batch-rendering-render-managers.md).
 
 ### <a name="custom-rendering-workflow"></a>Пользовательский рабочий процесс рендеринга
 
@@ -77,9 +77,9 @@ ms.locfileid: "83726440"
 Существует несколько способов использовать пакетную службу Azure, каждый из которых применим к рендерингу в пакетной службе Azure.
 
 * Интерфейсы API:
-  * создавайте код на языках [REST](https://docs.microsoft.com/rest/api/batchservice), [.NET](https://docs.microsoft.com/dotnet/api/overview/azure/batch), [Python](https://docs.microsoft.com/python/api/overview/azure/batch), [Java](https://docs.microsoft.com/java/api/overview/azure/batch) или через другие поддерживаемые API-интерфейсы.  Разработчики могут интегрировать возможности пакетной службы Azure в существующие облачные и локальные приложения или рабочие процессы.  Например [подключаемый модуль для Autodesk Maya](https://github.com/Azure/azure-batch-maya) вызывает пакетную службу через API-интерфейс пакетной службы для Python, создавая пулы и управляя ими, назначая задачи и задания, отслеживая состояние выполнения.
+  * создавайте код на языках [REST](/rest/api/batchservice), [.NET](/dotnet/api/overview/azure/batch), [Python](/python/api/overview/azure/batch), [Java](/java/api/overview/azure/batch) или через другие поддерживаемые API-интерфейсы.  Разработчики могут интегрировать возможности пакетной службы Azure в существующие облачные и локальные приложения или рабочие процессы.  Например [подключаемый модуль для Autodesk Maya](https://github.com/Azure/azure-batch-maya) вызывает пакетную службу через API-интерфейс пакетной службы для Python, создавая пулы и управляя ими, назначая задачи и задания, отслеживая состояние выполнения.
 * Программы командной строки:
-  * использование пакетной службы можно закодировать в скрипты [командной строки Azure](https://docs.microsoft.com/cli/azure/) или [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview);
+  * использование пакетной службы можно закодировать в скрипты [командной строки Azure](/cli/azure/) или [Azure PowerShell](/powershell/azure/overview);
   * в частности, поддержка шаблонов CLI для пакетной службы значительно упрощает создание пулов и отправку заданий.
 * Пользовательские интерфейсы:
   * [Batch Explorer](https://github.com/Azure/BatchExplorer) — это кроссплатформенный клиентский инструмент, который поддерживает управление и мониторинг для учетных записей пакетной службы и предлагает более широкий ряд функций по сравнению с интерфейсом портала Azure.  Для каждого поддерживаемого приложения предоставляется набор шаблонов пулов и заданий, с помощью которых можно легко создавать пулы и отправлять задания.
@@ -95,9 +95,9 @@ ms.locfileid: "83726440"
 
 Изучите вводные руководства, чтобы потренироваться в использовании рендеринга пакетной службы Azure:
 
-* [Руководство. Преобразование для просмотра сцены Blender с помощью Batch Explorer](https://docs.microsoft.com/azure/batch/tutorial-rendering-batchexplorer-blender);
-* [Руководство по использованию CLI пакетной службы для рендеринга сцены, созданной в Autodesk 3ds Max](https://docs.microsoft.com/azure/batch/tutorial-rendering-cli).
+* [Руководство. Преобразование для просмотра сцены Blender с помощью Batch Explorer](./tutorial-rendering-batchexplorer-blender.md);
+* [Руководство по использованию CLI пакетной службы для рендеринга сцены, созданной в Autodesk 3ds Max](./tutorial-rendering-cli.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Список приложений рендеринга и версий в образах виртуальных машин, включенных в Azure Marketplace, вы найдете в [этой статье](https://docs.microsoft.com/azure/batch/batch-rendering-applications).
+Список приложений рендеринга и версий в образах виртуальных машин, включенных в Azure Marketplace, вы найдете в [этой статье](./batch-rendering-applications.md).
