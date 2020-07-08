@@ -4,16 +4,16 @@ description: Узнайте, как получить список больших
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: article
-ms.date: 03/30/2020
+ms.topic: how-to
+ms.date: 06/05/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 76142838d1ec138b75fb6c594414b2ff5d8cd939
-ms.sourcegitcommit: d815163a1359f0df6ebfbfe985566d4951e38135
-ms.translationtype: HT
+ms.openlocfilehash: ff7eac9e004a06925fbfa657278e6ec848a7d600
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82883300"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85851283"
 ---
 # <a name="list-blobs-with-net"></a>Получение списка больших двоичных объектов с помощью .NET
 
@@ -24,6 +24,15 @@ ms.locfileid: "82883300"
 ## <a name="understand-blob-listing-options"></a>Общие сведения о параметрах получения списка больших двоичных объектов
 
 Чтобы получить список больших двоичных объектов в учетной записи хранения, вызовите один из следующих методов:
+
+# <a name="net-v12-sdk"></a>[NET (пакет SDK версии 12)](#tab/dotnet).
+
+- [Блобконтаинерклиент. BLOB](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobs?view=azure-dotnet)
+- [Блобконтаинерклиент. Жетблобсасинк](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsasync?view=azure-dotnet)
+- [Блобконтаинерклиент. Жетблобсбихиерарчи](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsbyhierarchy?view=azure-dotnet)
+- [Блобконтаинерклиент. Жетблобсбихиерарчясинк](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsbyhierarchyasync?view=azure-dotnet)
+
+# <a name="net-v11-sdk"></a>[.NET (пакет SDK версии 11)](#tab/dotnet11).
 
 - [CloudBlobClient.ListBlobs](/dotnet/api/microsoft.azure.storage.blob.cloudblobclient.listblobs)
 - [CloudBlobClient.ListBlobsSegmented](/dotnet/api/microsoft.azure.storage.blob.cloudblobclient.listblobssegmented)
@@ -37,11 +46,13 @@ ms.locfileid: "82883300"
 
 Перегрузки для этих методов предоставляют дополнительные параметры для управления возвратом больших двоичных объектов операцией перечисления. Описание этих параметров приводится в следующих разделах.
 
+---
+
 ### <a name="manage-how-many-results-are-returned"></a>Управление количеством возвращаемых результатов
 
-По умолчанию операция перечисления возвращает до 5000 результатов за раз. Чтобы вернуть меньший набор результатов, укажите ненулевое значение для параметра `maxresults` при вызове одного из методов **ListBlobs**.
+По умолчанию операция перечисления возвращает до 5000 результатов за раз, но можно указать количество результатов, которое будет возвращено каждой операции перечисления. В примерах, приведенных в этой статье, показано, как это сделать.
 
-Если операция перечисления возвращает более 5000 больших двоичных объектов или указано такое значение для `maxresults`, что операция перечисления возвращает подмножество контейнеров в учетной записи хранения, служба хранилища Azure возвращает *маркер продолжения* со списком больших двоичных объектов. Маркер продолжения — это непрозрачное значение, которое можно использовать для получения следующего набора результатов из службы хранилища Azure.
+Если операция перечисления возвращает более 5000 больших двоичных объектов или число доступных больших двоичных объектов превышает указанное число, служба хранилища Azure возвращает *токен продолжения* со списком больших двоичных объектов. Маркер продолжения — это непрозрачное значение, которое можно использовать для получения следующего набора результатов из службы хранилища Azure.
 
 В коде проверьте значение маркера продолжения, чтобы определить, имеет ли он значение NULL. Если маркер продолжения имеет значение NULL, набор результатов будет полным. Если токен продолжения не равен NULL, вызовите операцию перечисления, передав маркер продолжения для получения следующего набора результатов, пока маркер продолжения не будет иметь значение NULL.
 
@@ -51,7 +62,11 @@ ms.locfileid: "82883300"
 
 ### <a name="return-metadata"></a>Возврат метаданных
 
-Чтобы получить метаданные большого двоичного объекта с результатами, укажите значение **Metadata** для операции перечисления [BlobListingDetails](/dotnet/api/microsoft.azure.storage.blob.bloblistingdetails). Служба хранилища Azure включает метаданные для каждого возвращенного большого двоичного объекта, поэтому вам не нужно вызывать один из методов **FetchAttributes** в этом контексте, чтобы получить метаданные большого двоичного объекта.
+Метаданные большого двоичного объекта можно вернуть с результатами. 
+
+- Если вы используете пакет SDK для .NET версии 12, укажите значение **метаданных** для перечисления [блобтраитс](https://docs.microsoft.com/dotnet/api/azure.storage.blobs.models.blobtraits?view=azure-dotnet) .
+
+- Если вы используете пакет SDK для .NET версии 11, укажите значение **метаданных** для перечисления [блоблистингдетаилс](/dotnet/api/microsoft.azure.storage.blob.bloblistingdetails) . Служба хранилища Azure включает метаданные для каждого возвращенного большого двоичного объекта, поэтому вам не нужно вызывать один из методов **FetchAttributes** в этом контексте, чтобы получить метаданные большого двоичного объекта.
 
 ### <a name="flat-listing-versus-hierarchical-listing"></a>Неструктурированный список и структурированный список
 
@@ -66,6 +81,14 @@ ms.locfileid: "82883300"
 По умолчанию операция перечисления возвращает большие двоичные объекты в виде неструктурированного списка. В неструктурированном списке большие двоичные объекты не упорядочиваются по виртуальным каталогам.
 
 В следующем примере выводится неструктурированный список больших двоичных объектов в указанном контейнере с указанным необязательным размером сегмента и записывается имя большого двоичного объекта в окно консоли.
+
+Если вы включили функцию иерархического пространства имен в учетной записи, каталоги не являются виртуальными. Вместо этого они являются конкретными, независимыми объектами. Поэтому каталоги отображаются в списке как большие двоичные объекты нулевой длины.
+
+# <a name="net-v12-sdk"></a>[NET (пакет SDK версии 12)](#tab/dotnet).
+
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/CRUD.cs" id="Snippet_ListBlobsFlatListing":::
+
+# <a name="net-v11-sdk"></a>[.NET (пакет SDK версии 11)](#tab/dotnet11).
 
 ```csharp
 private static async Task ListBlobsFlatListingAsync(CloudBlobContainer container, int? segmentSize)
@@ -85,7 +108,6 @@ private static async Task ListBlobsFlatListingAsync(CloudBlobContainer container
 
             foreach (var blobItem in resultSegment.Results)
             {
-                // A flat listing operation returns only blobs, not virtual directories.
                 blob = (CloudBlob)blobItem;
 
                 // Write out some blob properties.
@@ -108,6 +130,8 @@ private static async Task ListBlobsFlatListingAsync(CloudBlobContainer container
 }
 ```
 
+---
+
 Выходные данные аналогичны следующим:
 
 ```
@@ -125,6 +149,16 @@ Blob name: FolderA/FolderB/FolderC/blob3.txt
 ## <a name="use-a-hierarchical-listing"></a>Использование иерархического списка
 
 При вызове операции иерархического перечисления служба хранилища Azure возвращает виртуальные каталоги и большие двоичные объекты на первом уровне иерархии. Для каждого виртуального каталога задается свойство [Prefix](/dotnet/api/microsoft.azure.storage.blob.cloudblobdirectory.prefix), чтобы можно было передать префикс в рекурсивном вызове для получения следующего каталога.
+
+# <a name="net-v12-sdk"></a>[NET (пакет SDK версии 12)](#tab/dotnet).
+
+Чтобы составить список больших двоичных объектов в иерархическом порядке, вызовите метод [блобконтаинерклиент. жетблобсбихиерарчи](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsbyhierarchy?view=azure-dotnet)или [блобконтаинерклиент. жетблобсбихиерарчясинк](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsbyhierarchyasync?view=azure-dotnet) .
+
+В следующем примере перечисляются большие двоичные объекты в указанном контейнере с помощью иерархического перечисления с указанным необязательным размером сегмента и записывает имя большого двоичного объекта в окно консоли.
+
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/CRUD.cs" id="Snippet_ListBlobsHierarchicalListing":::
+
+# <a name="net-v11-sdk"></a>[.NET (пакет SDK версии 11)](#tab/dotnet11).
 
 Чтобы получить иерархический список больших двоичных объектов, задайте для параметра `useFlatBlobListing` метода перечисления значение **false**.
 
@@ -182,6 +216,8 @@ private static async Task ListBlobsHierarchicalListingAsync(CloudBlobContainer c
     }
 }
 ```
+
+---
 
 Выходные данные аналогичны следующим:
 

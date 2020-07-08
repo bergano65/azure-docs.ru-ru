@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 10/28/2019
-ms.openlocfilehash: 767d87efcf94d720159dcf3b9dc42981ec957ef0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 21ecf33291924097f076aa28088eb4eac652ce67
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81381399"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85849655"
 ---
 # <a name="availability-and-reliability-of-apache-hadoop-clusters-in-hdinsight"></a>Доступность и надежность кластеров Apache Hadoop в HDInsight
 
@@ -85,7 +85,7 @@ export clusterName="CLUSTERNAME"
 curl -u admin:$password "https://$clusterName.azurehdinsight.net/api/v1/clusters/$clusterName/configurations?type=oozie-site&tag=TOPOLOGY_RESOLVED" | grep oozie.base.url
 ```
 
-Эта команда возвращает значение, аналогичное приведенному ниже, которое содержит внутренний URL-адрес для использования `oozie` с командой:
+Эта команда возвращает значение, аналогичное приведенному ниже, которое содержит внутренний URL-адрес для использования с `oozie` командой:
 
 ```output
 "oozie.base.url": "http://<ACTIVE-HEADNODE-NAME>cx.internal.cloudapp.net:11000/oozie"
@@ -119,7 +119,7 @@ curl -u admin:$password "https://$clusterName.azurehdinsight.net/api/v1/clusters
 
 Следующие оповещения помогают отслеживать доступность кластера.
 
-| Имя предупреждения                               | Описание                                                                                                                                                                                  |
+| Имя предупреждения                               | Описание:                                                                                                                                                                                  |
 |------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Состояние мониторинга метрики                    | Это предупреждение указывает состояние процесса монитора метрик, определяемое сценарием состояния монитора.                                                                                   |
 | Пульс агента Ambari                   | Это оповещение активируется, если сервер потерял связь с агентом.                                                                                                                        |
@@ -139,7 +139,7 @@ curl -u admin:$password "https://$clusterName.azurehdinsight.net/api/v1/clusters
 | Состояние сервера Oozie                      | Это оповещение уровня узла активируется, если не удается определить сервер Oozie и отреагировать на запросы клиентов.                                                                      |
 | Процесс хранилище метаданных Hive                   | Это оповещение на уровне узла активируется, если не удается определить процесс хранилище метаданных Hive и прослушивать сеть.                                                                 |
 | Процесс HiveServer2                      | Это оповещение уровня узла активируется, если не удается определить HiveServer и отреагировать на запросы клиентов.                                                                        |
-| Состояние сервера WebHCat                    | Это оповещение уровня узла активируется, если состояние `templeton` сервера находится в неработоспособном состоянии.                                                                                                            |
+| Состояние сервера WebHCat                    | Это оповещение уровня узла активируется, если `templeton` состояние сервера находится в неработоспособном состоянии.                                                                                                            |
 | Процент доступных серверов ZooKeeper      | Это оповещение активируется, если число ZooKeeper серверов в кластере превышает заданное критическое пороговое значение. Он объединяет результаты проверок процесса ZooKeeper.     |
 | Spark2 Livy Server                       | Это оповещение уровня узла активируется, если не удается определить сервер Livy2.                                                                                                        |
 | Сервер журнала Spark2                    | Это оповещение уровня узла активируется, если не удается определить сервер журнала Spark2.                                                                                               |
@@ -245,8 +245,10 @@ curl -u admin:PASSWORD https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CL
 
 После подключения появится `sftp>` запрос. С помощью этой строки можно переходить в другие каталоги, отправлять и скачивать файлы. Например, следующие команды изменяют каталоги на каталог **/var/log/hadoop/hdfs** , а затем загружают все файлы в каталоге.
 
-    cd /var/log/hadoop/hdfs
-    get *
+```bash
+cd /var/log/hadoop/hdfs
+get *
+```
 
 Для просмотра списка доступных команд введите `help` в строке `sftp>`.
 
@@ -272,9 +274,9 @@ curl -u admin:PASSWORD https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CL
 
     ![Изображение мастера создания кластера с выбором размера узла](./media/hdinsight-high-availability-linux/azure-portal-cluster-configuration-pricing-hadoop.png)
 
-* **Azure CLI**. [`az hdinsight create`](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) при использовании команды можно задать размер головного, рабочего и ZooKeeper узлов, используя `--headnode-size`параметры, `--workernode-size`и. `--zookeepernode-size`
+* **Azure CLI**. при использовании [`az hdinsight create`](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) команды можно задать размер головного, рабочего и ZooKeeper узлов, используя `--headnode-size` `--workernode-size` Параметры, и `--zookeepernode-size` .
 
-* **Azure PowerShell**. при использовании командлета [New-аздинсигхтклустер](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) можно задать размер головного, рабочего и ZooKeeper узлов с помощью параметров `-HeadNodeSize`, `-WorkerNodeSize`и. `-ZookeeperNodeSize`
+* **Azure PowerShell**. при использовании командлета [New-аздинсигхтклустер](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) можно задать размер головного, рабочего и ZooKeeper узлов с помощью `-HeadNodeSize` `-WorkerNodeSize` параметров, и `-ZookeeperNodeSize` .
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

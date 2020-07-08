@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: apimpm
-ms.openlocfilehash: bf8d8a2c11962467300ae8d65fe5bbbe9a65cf92
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d4113205b47b4c6cab8b133d89c35520aa8505c1
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75708361"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85851212"
 ---
 # <a name="add-caching-to-improve-performance-in-azure-api-management"></a>Добавление кэширования для повышения производительности в службе управления API Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "75708361"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством сделайте следующее:
+Для работы с этим руководством вам понадобится следующее:
 
 + [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md)
 + [импортируйте и опубликуйте API.](import-and-publish.md)
@@ -62,15 +62,19 @@ ms.locfileid: "75708361"
 
 8. В элемент **inbound** добавьте следующую политику:
 
-        <cache-lookup vary-by-developer="false" vary-by-developer-groups="false">
-            <vary-by-header>Accept</vary-by-header>
-            <vary-by-header>Accept-Charset</vary-by-header>
-            <vary-by-header>Authorization</vary-by-header>
-        </cache-lookup>
+   ```
+   <cache-lookup vary-by-developer="false" vary-by-developer-groups="false">
+       <vary-by-header>Accept</vary-by-header>
+       <vary-by-header>Accept-Charset</vary-by-header>
+       <vary-by-header>Authorization</vary-by-header>
+   </cache-lookup>
+   ```
 
 9. В элемент **outbound** добавьте такую политику:
 
-        <cache-store duration="20" />
+   ```
+   <cache-store duration="20" />
+   ```
 
     **Длительность** указывает интервал срока действия кэшированных ответов. В этом примере интервал составляет **20** секунд.
 
@@ -87,7 +91,7 @@ ms.locfileid: "75708361"
 5. Перейдите на вкладку **Тестирование** в правом верхнем меню.
 6. Нажмите кнопку **Отправить**.
 
-## <a name="next-steps"></a><a name="next-steps"> </a>Следующие шаги
+## <a name="next-steps"></a><a name="next-steps"> </a>Дальнейшие действия
 * Дополнительные сведения о политиках кэширования см. в разделе [Политики кэширования][Caching policies][справочника по политикам управления API][API Management policy reference].
 * Сведения о кэшировании элементов по ключу с помощью выражений политики см. в статье [Пользовательское кэширование в службе управления API Azure](api-management-sample-cache-by-key.md).
 * Дополнительные сведения см. в статье об [использовании внешнего кэша Azure для Redis в службе Azure "Управление API"](api-management-howto-cache-external.md).

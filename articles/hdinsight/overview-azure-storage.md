@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: fc0af331dc6cb604847be9173c836e0b46ca40ef
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1bdec284ccdfca9e13ca227fe1109afe28da14b0
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82195185"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85851374"
 ---
 # <a name="azure-storage-overview-in-hdinsight"></a>Общие сведения о службе хранилища Azure в HDInsight
 
@@ -31,11 +31,11 @@ ms.locfileid: "82195185"
 
 HDInsight предоставляет доступ к распределенной файловой системе, которая локально присоединена к вычислительным узлам. Доступ к этой файловой системе может осуществляться с использованием полного универсального кода ресурса (URI), например:
 
-    hdfs://<namenodehost>/<path>
+`hdfs://<namenodehost>/<path>`
 
 С помощью HDInsight можно также получить доступ к данным в службе хранилища Azure. Синтаксис:
 
-    wasb://<containername>@<accountname>.blob.core.windows.net/<path>
+`wasb://<containername>@<accountname>.blob.core.windows.net/<path>`
 
 Рассмотрите некоторые рекомендации для использования учетной записи хранения Azure с кластерами HDInsight.
 
@@ -75,8 +75,8 @@ HDInsight предоставляет доступ к распределенно�
 > [!NOTE]  
 > Большинство команд HDFS (например, `ls`, `copyFromLocal` и `mkdir`) работают правильно в службе хранилища Azure. В службе хранилища Azure будет отличаться поведение только тех команд, которые относятся к стандартной реализации HDFS (под названием DFS), например `fschk` и `dfsadmin`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Общие сведения о хранилище Azure Data Lake Storage Gen2 (предварительная версия)](../storage/blobs/data-lake-storage-introduction.md)
+* [Общие сведения о хранилище Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-introduction.md)
 * [Введение в хранилище Azure](../storage/common/storage-introduction.md)
 * [Обзор Azure Data Lake Storage 1-го поколения](./overview-data-lake-storage-gen1.md)

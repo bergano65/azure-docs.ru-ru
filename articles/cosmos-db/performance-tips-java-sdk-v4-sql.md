@@ -4,15 +4,15 @@ description: Сведения о том, как повысить произво�
 author: anfeldma-ms
 ms.service: cosmos-db
 ms.devlang: java
-ms.topic: conceptual
-ms.date: 05/11/2020
+ms.topic: how-to
+ms.date: 06/11/2020
 ms.author: anfeldma
-ms.openlocfilehash: dca9babff198fc780e54df6e89149f2c4c8157bf
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
-ms.translationtype: HT
+ms.openlocfilehash: c6ff105a03181b588a9074675c97930696ac5e87
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83677702"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85850204"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-java-sdk-v4"></a>Советы по повышению производительности для пакета SDK для Java версии 4 в Azure Cosmos DB
 
@@ -20,7 +20,8 @@ ms.locfileid: "83677702"
 > * [Пакет SDK для Java версии 4](performance-tips-java-sdk-v4-sql.md)
 > * [Пакет SDK для Async Java версии 2](performance-tips-async-java.md)
 > * [Пакет SDK для Sync Java версии 2](performance-tips-java.md)
-> * [.NET](performance-tips.md)
+> * [Пакет SDK версии 3 для .NET](performance-tips-dotnet-sdk-v3-sql.md)
+> * [Пакет SDK для .NET версии 2](performance-tips.md)
 > 
 
 > [!IMPORTANT]  
@@ -90,7 +91,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
     Если это возможно, размещайте приложения, выполняющие вызовы к Azure Cosmos DB, в том же регионе, в котором находится база данных Azure Cosmos. Для приблизительного сравнения: вызовы к Azure Cosmos DB в пределах региона выполняются в течение 1–2 мс, но задержка между восточным и западным побережьем США превышает 50 мс. Значение задержки может отличаться в зависимости от выбранного маршрута при передаче запроса от клиента к границе центра обработки данных Azure. Минимальная возможная задержка достигается при размещении клиентского приложения в том же регионе Azure, в котором предоставляется конечная точка Azure Cosmos DB. Список доступных регионов см. на странице [Регионы Azure](https://azure.microsoft.com/regions/#services).
 
-    ![Пример политики подключения Azure Cosmos DB](./media/performance-tips/same-region.png)
+    :::image type="content" source="./media/performance-tips/same-region.png" alt-text="Пример политики подключения Azure Cosmos DB" border="false":::
 
     Приложение, взаимодействующее с учетной записью Azure Cosmos DB в нескольких регионах, должно настроить [предпочтительные расположения](tutorial-global-distribution-sql-api.md#preferred-locations), чтобы запросы направлялись в совмещенный регион.
 
@@ -137,33 +138,21 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
     В следующих фрагментах кода показано, как инициализировать клиент Azure Cosmos DB для операции с асинхронным API или синхронным API соответственно.
 
-    #### <a name="async"></a>[Асинхронный режим](#tab/api-async)
+    ### <a name="java-v4-sdk"></a><a id="override-default-consistency-javav4"></a> Пакет SDK для Java версии 4
 
-    ### <a name="java-sdk-v4-maven-comazureazure-cosmos-async-api"></a><a id="java4-async-client"></a>Асинхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
+    # <a name="async"></a>[Асинхронный режим](#tab/api-async)
 
-    ```java
-    CosmosAsyncClient client = new CosmosClientBuilder()
-        .setEndpoint(HOSTNAME)
-        .setKey(MASTERKEY)
-        .setConnectionPolicy(CONNECTIONPOLICY)
-        .setConsistencyLevel(CONSISTENCY)
-        .buildAsyncClient();
-    ```
+    Асинхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
 
-    #### <a name="sync"></a>[Синхронизация](#tab/api-sync)
- 
-    ### <a name="java-sdk-v4-maven-comazureazure-cosmos-sync-api"></a><a id="java4-sync-client"></a>Синхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
+    [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/async/SampleDocumentationSnippetsAsync.java?name=PerformanceClientAsync)]
 
-    ```java
-    CosmosClient client = new CosmosClientBuilder()
-        .setEndpoint(HOSTNAME)
-        .setKey(MASTERKEY)
-        .setConnectionPolicy(CONNECTIONPOLICY)
-        .setConsistencyLevel(CONSISTENCY)
-        .buildClient();
-    ```    
+    # <a name="sync"></a>[Синхронизация](#tab/api-sync)
 
-    ---
+    Синхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
+
+    [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/sync/SampleDocumentationSnippets.java?name=PerformanceClientSync)]
+
+    --- 
 
 * **Настройка ConnectionPolicy**
 
@@ -173,7 +162,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
     * ***Общие сведения о режиме прямого подключения***
 
-        ![Иллюстрация архитектуры режима прямого подключения](./media/performance-tips-async-java/rntbdtransportclient.png)
+        :::image type="content" source="./media/performance-tips-async-java/rntbdtransportclient.png" alt-text="Иллюстрация архитектуры режима прямого подключения" border="false":::
 
         Клиентская архитектура, применяемая в режиме прямого подключения, обеспечивает предсказуемое использование сети и мультиплексированный доступ к репликам Azure Cosmos DB. На схеме выше показано, как в режиме прямого подключения запросы клиентов направляются к репликам в серверной части Cosmos DB. Архитектура режима прямого подключения выделяет до 10 **каналов** на стороне клиента на каждую реплику базы данных. Канал представляет собой TCP-соединение, которому предшествует буфер запросов глубиной 30 запросов. Каналы, принадлежащие реплике, динамически распределяются по мере необходимости **конечной точкой службы** реплики. Когда пользователь отправляет запрос в режиме прямого подключения, **TransportClient** направляет запрос на соответствующую конечную точку службы на основе ключа раздела. **Очередь запросов** помещает запросы в буфер перед конечной точкой службы.
 
@@ -247,36 +236,13 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
     Например, следующий код выполняет рабочую нагрузку с интенсивной нагрузкой на ЦП в потоке цикла обработки событий ввода-вывода netty.
     ### <a name="java-sdk-v4-maven-comazureazure-cosmos-async-api"></a><a id="java4-noscheduler"></a>Асинхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
 
-    ```java
-    Mono<CosmosAsyncItemResponse<CustomPOJO>> createItemPub = asyncContainer.createItem(item);
-    createItemPub.subscribe(
-        itemResponse -> {
-            //this is executed on eventloop IO netty thread.
-            //the eventloop thread is shared and is meant to return back quickly.
-            //
-            // DON'T do this on eventloop IO netty thread.
-            veryCpuIntensiveWork();                
-        });
-    ```
+    [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/async/SampleDocumentationSnippetsAsync.java?name=PerformanceNeedsSchedulerAsync)]
 
-    Если необходимо выполнить обработку полученного результата с интенсивной нагрузкой на ЦП, этого нежелательно делать в потоке цикла обработки событий ввода-вывода netty. Вместо этого можно указать собственный планировщик, чтобы выполнить рабочую нагрузку, используя собственный поток, как показано ниже.
+    Если необходимо выполнить обработку полученного результата с интенсивной нагрузкой на ЦП, этого нежелательно делать в потоке цикла обработки событий ввода-вывода netty. Вместо этого можно предоставить собственный планировщик, чтобы предоставить собственный поток для выполнения работы, как показано ниже (требуется `import reactor.core.scheduler.Schedulers` ).
 
     ### <a name="java-sdk-v4-maven-comazureazure-cosmos-async-api"></a><a id="java4-scheduler"></a>Асинхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
 
-    ```java
-    import reactor.core.scheduler.Schedulers;
-    Mono<CosmosAsyncItemResponse<CustomPOJO>> createItemPub = asyncContainer.createItem(item);
-    createItemPub
-        .subscribeOn(Schedulers.elastic())
-        .subscribe(
-        itemResponse -> {
-            //this is executed on eventloop IO netty thread.
-            //the eventloop thread is shared and is meant to return back quickly.
-            //
-            // DON'T do this on eventloop IO netty thread.
-            veryCpuIntensiveWork();                
-        });
-    ```
+    [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/async/SampleDocumentationSnippetsAsync.java?name=PerformanceAddSchedulerAsync)]
 
     Следует использовать подходящий планировщик Reactor в зависимости от типа рабочей нагрузки. Дополнительные сведения см. здесь: [``Schedulers``](https://projectreactor.io/docs/core/release/api/reactor/core/scheduler/Schedulers.html).
 
@@ -324,43 +290,35 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
     Чтобы повысить производительность операций точечной записи, укажите ключ секции элемента в вызове API точечной записи, как показано ниже:
 
-    #### <a name="async"></a>[Асинхронный режим](#tab/api-async)
+    # <a name="async"></a>[Асинхронный режим](#tab/api-async)
 
-    ### <a name="java-sdk-v4-maven-comazureazure-cosmos-async-api"></a><a id="java4-createitem-good-async"></a>Асинхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
+    Асинхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
 
-    ```java
-    asyncContainer.createItem(item,new PartitionKey(pk),new CosmosItemRequestOptions()).block();
-    ```
+    [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/async/SampleDocumentationSnippetsAsync.java?name=PerformanceNoPKAsync)]
 
-    #### <a name="sync"></a>[Синхронизация](#tab/api-sync)
+    # <a name="sync"></a>[Синхронизация](#tab/api-sync)
 
-    ### <a name="java-sdk-v4-maven-comazureazure-cosmos-sync-api"></a><a id="java4-createitem-good-sync"></a>Синхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
+    Синхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
 
-    ```java
-    syncContainer.createItem(item,new PartitionKey(pk),new CosmosItemRequestOptions());
-    ```
+    [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/sync/SampleDocumentationSnippets.java?name=PerformanceNoPKSync)]
 
-    ---
+    --- 
 
     вместо того, чтобы предоставлять только экземпляр элемента, как показано ниже:
 
-    #### <a name="async"></a>[Асинхронный режим](#tab/api-async)
+    # <a name="async"></a>[Асинхронный режим](#tab/api-async)
 
-    ### <a name="java-sdk-v4-maven-comazureazure-cosmos-async-api"></a><a id="java4-createitem-bad-async"></a>Асинхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
+    Асинхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
 
-    ```java
-    asyncContainer.createItem(item).block();
-    ```
+    [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/async/SampleDocumentationSnippetsAsync.java?name=PerformanceAddPKAsync)]
 
-    #### <a name="sync"></a>[Синхронизация](#tab/api-sync)
+    # <a name="sync"></a>[Синхронизация](#tab/api-sync)
 
-    ### <a name="java-sdk-v4-maven-comazureazure-cosmos-sync-api"></a><a id="java4-createitem-bad-sync"></a>Синхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
+    Синхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
 
-    ```java
-    syncContainer.createItem(item);
-    ```
+    [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/sync/SampleDocumentationSnippets.java?name=PerformanceAddPKSync)]
 
-    ---
+    --- 
 
     Последний вариант поддерживается, но добавляет задержку в приложение; пакет SDK должен проанализировать элемент и извлечь ключ секции.
 
@@ -395,27 +353,19 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
     Чтобы оценить расходы на любую операцию (создание, обновление или удаление), проверьте значение заголовка [x-ms-request-charge](/rest/api/cosmos-db/common-cosmosdb-rest-request-headers). Это значение содержит число единиц запроса, потребляемых соответствующей операцией. Также можно проверить аналогичное свойство RequestCharge в ResourceResponse\<T> или FeedResponse\<T>.
 
-    #### <a name="async"></a>[Асинхронный режим](#tab/api-async)
+    # <a name="async"></a>[Асинхронный режим](#tab/api-async)
 
-    ### <a name="java-sdk-v4-maven-comazureazure-cosmos-async-api"></a><a id="java4-request-charge-async"></a>Асинхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
+    Асинхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
 
-    ```java
-    CosmosAsyncItemResponse<CustomPOJO> response = asyncContainer.createItem(item).block();
+    [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/async/SampleDocumentationSnippetsAsync.java?name=PerformanceRequestChargeAsync)]
 
-    response.getRequestCharge();
-    ```     
+    # <a name="sync"></a>[Синхронизация](#tab/api-sync)
 
-    #### <a name="sync"></a>[Синхронизация](#tab/api-sync)
+    Синхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
 
-    ### <a name="java-sdk-v4-maven-comazureazure-cosmos-sync-api"></a><a id="java4-request-charge-sync"></a>Синхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)    
+    [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/sync/SampleDocumentationSnippets.java?name=PerformanceRequestChargeSync)]
 
-    ```java
-    CosmosItemResponse<CustomPOJO> response = syncContainer.createItem(item);
-
-    response.getRequestCharge();
-    ```     
-
-    ---
+    --- 
 
     Стоимость запроса, указанная в этом заголовке, учитывается как часть подготовленной пропускной способности. Например, если вы предоставили 2000 единиц запроса в секунду, а приведенный выше запрос возвращает 1000 документов размером по 1 КБ каждый, затраты на операцию составят 1000 единиц. Таким образом, перед ограничением частоты выполнения последующих запросов сервер за одну секунду выполняет только два таких запроса. Чтобы узнать больше, ознакомьтесь с [единицами запроса](request-units.md) и [калькулятором единиц запроса](https://www.documentdb.com/capacityplanner).
 
@@ -424,9 +374,11 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
     Выполнение запроса, который превышает лимит зарезервированной пропускной способности для учетной записи, не приводит к снижению производительности сервера, так как пользователь не сможет превысить это зарезервированное значение. Сервер заранее завершит запрос с ошибкой RequestRateTooLarge (код состояния HTTP: 429) и вернет в заголовке [x-x-ms-retry-after-ms](/rest/api/cosmos-db/common-cosmosdb-rest-request-headers) время (в миллисекундах), спустя которое можно повторно выполнить этот запрос.
 
+    ```xml
         HTTP Status 429,
         Status Line: RequestRateTooLarge
         x-ms-retry-after-ms :100
+    ```
 
     Пакеты SDK перехватят этот ответ, обработают заголовок retry-after, указанный сервером, и отправят запрос повторно. Если к вашей учетной записи параллельно имеет доступ только один клиент, следующая попытка будет успешной.
 

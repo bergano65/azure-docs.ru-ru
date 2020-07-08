@@ -11,17 +11,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/13/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca425c7c5739785f3463086d89b4796f09bf45b4
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 3aad90a3894d3abc1a850ae21946e8895619a188
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82229822"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85849877"
 ---
 # <a name="azure-active-directory-pass-through-authentication-quickstart"></a>Azure Active Directory сквозной аутентификации: Краткое руководство
 
@@ -72,7 +72,7 @@ ms.locfileid: "82229822"
      | **8080** (необязательно) | Агенты аутентификации передают данные о своем состоянии каждые десять минут через порт 8080, если порт 443 недоступен. Это данные о состоянии отображаются на портале Azure AD. Порт 8080 _не_ используется для входа пользователей в систему. |
      
      Если брандмауэр применяет правила в соответствии с отправляющими трафик пользователями, откройте эти порты для трафика, поступающего от служб Windows, которые работают как сетевая служба.
-   - Если брандмауэр или прокси-сервер допускает список разрешений DNS, добавьте подключения к ** \*. msappproxy.NET** и ** \*. servicebus.Windows.NET**. Если нет, разрешите доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.
+   - Если брандмауэр или прокси-сервер допускает список разрешений DNS, добавьте подключения к ** \* . msappproxy.NET** и ** \* . servicebus.Windows.NET**. Если нет, разрешите доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.
    - Агентам аутентификации требуется доступ к адресам **login.windows.net** и **login.microsoftonline.com** для первоначальной регистрации. Откройте эти URL-адреса в брандмауэре.
    - Для проверки сертификатов разблокируйте следующие URL-адреса: **mscrl.microsoft.com:80**, **crl.microsoft.com:80**, **ocsp.msocsp.com:80** и **www\.microsoft.com:80**. Так как эти URL-адреса используются для проверки сертификатов в других продуктах Майкрософт, они уже могут быть разблокированы.
 
@@ -151,15 +151,19 @@ ms.locfileid: "82229822"
 Во-вторых, можно создать и запустить сценарий автоматического развертывания. Это удобно, если вы хотите одновременно развернуть несколько агентов аутентификации или установить агенты аутентификации на серверах Windows, на которых не включен пользовательский интерфейс или к которым невозможно получить доступ с помощью подключения к удаленному рабочему столу. Ниже приведены инструкции по этому способу.
 
 1. Выполните следующую команду, чтобы установить агент аутентификации: `AADConnectAuthAgentSetup.exe REGISTERCONNECTOR="false" /q`.
-2. Агент аутентификации можно зарегистрировать в службе с помощью Windows PowerShell. Создайте объект учетных данных PowerShell `$cred`, содержащий имя пользователя и пароль глобального администратора для вашего клиента. Выполните следующую команду, заменив * \<имя\> пользователя* и * \<пароль\>*:
+2. Агент аутентификации можно зарегистрировать в службе с помощью Windows PowerShell. Создайте объект учетных данных PowerShell `$cred`, содержащий имя пользователя и пароль глобального администратора для вашего клиента. Выполните следующую команду, заменив *\<username\>* и *\<password\>* :
 
-        $User = "<username>"
-        $PlainPassword = '<password>'
-        $SecurePassword = $PlainPassword | ConvertTo-SecureString -AsPlainText -Force
-        $cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $SecurePassword
+  ```powershell
+  $User = "<username>"
+  $PlainPassword = '<password>'
+  $SecurePassword = $PlainPassword | ConvertTo-SecureString -AsPlainText -Force
+  $cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $SecurePassword
+  ```
 3. Перейдите в каталог **C:\Program Files\Microsoft Azure AD Connect Authentication Agent** и запустите следующий сценарий с использованием созданного объекта `$cred`.
 
-        RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft Azure AD Connect Authentication Agent\Modules\" -moduleName "PassthroughAuthPSModule" -Authenticationmode Credentials -Usercredentials $cred -Feature PassthroughAuthentication
+  ```powershell
+  RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft Azure AD Connect Authentication Agent\Modules\" -moduleName "PassthroughAuthPSModule" -Authenticationmode Credentials -Usercredentials $cred -Feature PassthroughAuthentication
+  ```
 
 >[!IMPORTANT]
 >Если на виртуальной машине установлен агент проверки подлинности, вы не сможете клонировать виртуальную машину для настройки другого агента проверки подлинности. Этот метод не **поддерживается**.
@@ -168,7 +172,7 @@ ms.locfileid: "82229822"
 
 Смарт-блокировка помогает блокировать неправильные субъекты, которые пытаются угадать пароли пользователей или использовать методы подбора для получения. Настроив параметры Smart-блокировки в Azure AD и (или) соответствующие параметры блокировки в локальной Active Directory, атаки можно отфильтровывать, прежде чем они будут доступны Active Directory. Ознакомьтесь с [этой статьей](../authentication/howto-password-smart-lockout.md) , чтобы узнать больше о настройке параметров Smart-блокировки в клиенте для защиты учетных записей пользователей.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Migrate from AD FS to Pass-through Authentication](https://aka.ms/adfstoptadp) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.
 - [Интеллектуальная блокировка](../authentication/howto-password-smart-lockout.md). Узнайте, как настроить возможность интеллектуальной блокировки в клиенте для защиты учетных записей пользователей.
 - [Текущие ограничения](how-to-connect-pta-current-limitations.md). Узнайте о том, какие сценарии поддерживаются для сквозной аутентификации, а какие нет.

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 1/27/2020
 ms.author: raynew
-ms.openlocfilehash: fd10468e823201bfa67aaf7c570071bd075ec4ac
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: da2cc3dade843b1ea207eb4ec5bf33a41a289d7e
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80420830"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85851485"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Таблица поддержки аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -30,11 +30,15 @@ Hyper-V без Virtual Machine Manager | Вы можете выполнять а
 
 ## <a name="on-premises-servers"></a>Локальные серверы
 
-**Сервер** | **Requirements** | **Сведения**
+**Server** | **Требования** | **Сведения**
 --- | --- | ---
-Hyper-V (без Virtual Machine Manager) |  Windows Server 2019, Windows Server 2016 (включая установку Server Core), Windows Server 2012 R2 с последними обновлениями | Если вы уже настроили Windows Server 2012 R2 или SCVMM 2012 R2 с помощью Azure Site Recovery и планируете обновить операционную систему, следуйте указаниям в [документации.](upgrade-2012R2-to-2016.md) 
-Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2019, Virtual Machine Manager 2016, Virtual Machine Manager 2012 R2 | Если используется Virtual Machine Manager, узлы Windows Server 2019 должны управляться в Virtual Machine Manager 2019. Аналогичным образом узлы Windows Server 2016 должны управляться в Virtual Machine Manager 2016.<br/><br/> Примечание. Восстановление размещения в альтернативное расположение не поддерживается для узлов Windows Server 2019.
+Hyper-V (без Virtual Machine Manager) |  Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 с последними обновлениями (включая установку основных серверных компонентов для этих операционных систем, за исключением Windows Server 2019) | Если вы уже настроили Windows Server 2012 R2 или SCVMM 2012 R2 с помощью Azure Site Recovery и планируете обновить операционную систему, следуйте указаниям в [документации.](upgrade-2012R2-to-2016.md)
+Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2019, Virtual Machine Manager 2016, Virtual Machine Manager 2012 R2 (включая установку основных серверных компонентов для этих операционных систем, за исключением Virtual Machine Manager 2019) | Если используется Virtual Machine Manager, узлы Windows Server 2019 должны управляться в Virtual Machine Manager 2019. Аналогичным образом узлы Windows Server 2016 должны управляться в Virtual Machine Manager 2016.
 
+> [!NOTE]
+>
+> - Убедитесь, что на локальном сервере имеется .NET Framework 4.6.2 или более поздней версии.
+> - Отработка отказа и восстановление размещения в альтернативное расположение или исходное расположение, запущенное с Virtual Machine Manager или без него, не поддерживается для версии Windows Server 2019 Server Core.
 
 ## <a name="replicated-vms"></a>Реплицированные виртуальные машины
 
@@ -79,7 +83,7 @@ Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2019, Virtual Mac
 Azure ExpressRoute | Да | Да
 Внутренний балансировщик нагрузки | Да | Да
 Внешний балансировщик нагрузки | Да | Да
-Диспетчер трафика Azure | Да | Да
+Azure Traffic Manager | Да | Да
 Несколько сетевых адаптеров | Да | Да
 Зарезервированный IP-адрес | Да | Да
 IPv4 | Да | Да
@@ -90,7 +94,7 @@ IPv4 | Да | Да
 
 ## <a name="hyper-v-host-storage"></a>Хранилище узла Hyper-V
 
-**Хранилище** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
+**Память** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
 --- | --- | --- 
 NFS | Н/Д | Н/Д
 SMB 3.0 | Да | Да
@@ -99,7 +103,7 @@ SMB 3.0 | Да | Да
 
 ## <a name="hyper-v-vm-guest-storage"></a>Гостевое хранилище виртуальной машины Hyper-V
 
-**Хранилище** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
+**Память** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
 --- | --- | ---
 VMDK | Н/Д | Н/Д
 VHD (VHDX) | Да | Да
@@ -131,8 +135,9 @@ RDM | Н/Д | Н/Д
 "Горячее" хранилище| Нет | Нет
 Blob-блоки | Нет | Нет
 Шифрование неактивных данных (SSE)| Да | Да
-Шифрование неактивных (CMK) <br></br> (Только для отработки отказа на управляемые диски)| Да (с помощью PowerShell AZ 3.3.0 Module) | Да (с помощью PowerShell AZ 3.3.0 Module)
+Шифрование неактивных данных (CMK) <br></br> (Только для отработки отказа на управляемые диски)| Да (с помощью PowerShell AZ 3.3.0 Module) | Да (с помощью PowerShell AZ 3.3.0 Module)
 Хранилище уровня "Премиум" | Да | Да
+Хранилище уровня "Стандартный" | Да | Да
 Служба импорта и экспорта | Нет | Нет
 Учетные записи хранения Azure с включенным брандмауэром | Да. Для целевого хранилища и кэша. | Да. Для целевого хранилища и кэша.
 Изменение учетной записи хранилища | Нет. Невозможно изменить целевую учетную запись хранения Azure после включения репликации. Чтобы изменить, отключите и снова включите аварийное восстановление. | Нет
@@ -150,7 +155,7 @@ Blob-блоки | Нет | Нет
 
 Локальные виртуальные машины, которые вы реплицируете в Azure, должны соответствовать требованиям Azure, приведенным в этой таблице.
 
-**Компонент** | **Requirements** | **Сведения**
+**Компонент** | **Требования** | **Сведения**
 --- | --- | ---
 Операционная система на виртуальной машине | Служба Site Recovery поддерживает все операционные системы, [поддерживаемые Azure](https://technet.microsoft.com/library/cc794868%28v=ws.10%29.aspx).  | Если не поддерживается, проверка на соответствие обязательным требованиям завершается ошибкой.
 Архитектура операционной системы на виртуальной машине | 32-разрядная версия (Windows Server 2008)/64-bit | Если не поддерживается, проверка на соответствие обязательным требованиям завершается ошибкой.
@@ -164,7 +169,7 @@ Blob-блоки | Нет | Нет
 Формат жесткого диска | VHD  <br/><br/>  VHDX | Служба Site Recovery автоматически преобразует формат VHDX в VHD при отработке отказа в Azure. При восстановлении до локальной системы виртуальные машины продолжают использовать формат VHDX.
 BitLocker | Не поддерживается | Прежде чем включать репликацию для виртуальной машины, необходимо отключить BitLocker.
 имя виртуальной машины; | От 1 до 63 символов, при этом допустимы только буквы, цифры и дефисы Имя виртуальной машины должно начинаться и заканчиваться буквой или цифрой. | Обновите значение в свойствах виртуальной машины в службе Site Recovery.
-Тип виртуальной машины | Поколение 1<br/><br/> Поколение 2 — Windows | Поддерживаются виртуальные машины второго поколения с диском ОС типа "Базовый" (включая один или два тома данных в формате VHDX) и объемом менее 300 ГБ.<br></br>Виртуальные машины Linux второго поколения не поддерживаются. [Подробнее](https://azure.microsoft.com/blog/2015/04/28/disaster-recovery-to-azure-enhanced-and-were-listening/).|
+Тип виртуальной машины | Поколение 1<br/><br/> Поколение 2 — Windows | Поддерживаются виртуальные машины второго поколения с диском ОС типа "Базовый" (включая один или два тома данных в формате VHDX) и объемом менее 300 ГБ.<br></br>Виртуальные машины Linux второго поколения не поддерживаются. [Подробнее.](https://azure.microsoft.com/blog/2015/04/28/disaster-recovery-to-azure-enhanced-and-were-listening/)|
 
 ## <a name="recovery-services-vault-actions"></a>Действия хранилища служб восстановления
 
@@ -181,7 +186,7 @@ BitLocker | Не поддерживается | Прежде чем включа
 
 Чтобы обеспечить совместимость развертывания с параметрами, описанными в этой статье, используйте последние версии поставщика и агента.
 
-**Имя** | **Описание** | **Сведения**
+**имя**; | **Описание** | **Сведения**
 --- | --- | --- 
 Поставщик Azure Site Recovery | Координирует взаимодействие между локальными серверами и Azure <br/><br/> Hyper-V (с Virtual Machine Manager): устанавливается на серверах Virtual Machine Manager<br/><br/> Hyper-V (без Virtual Machine Manager): устанавливается на узлах Hyper-V| Последняя версия: 5.1.2700.1 (доступна на портале Azure)<br/><br/> [Новейшие функции и последние исправления](https://support.microsoft.com/help/4091311/update-rollup-23-for-azure-site-recovery)
 Агент служб восстановления Microsoft Azure | Координирует репликацию между виртуальными машинами Hyper-V и Azure.<br/><br/> Устанавливается на локальных серверах Hyper-V (с или без Virtual Machine Manager). | Последняя версия агента, доступная на портале

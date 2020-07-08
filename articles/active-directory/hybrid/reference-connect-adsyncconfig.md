@@ -10,12 +10,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.topic: reference
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8159ef45dee8a2f9ace69c2a5b66a29e4948d82c
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: 2a2126aceba8724b46de094d14db754d704500c6
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82982009"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85850966"
 ---
 # <a name="azure-ad-connect--adsyncconfig-powershell-reference"></a>Azure AD Connect: справочник по модулю PowerShell ADSyncConfig
 Приведенная ниже документация содержит справочные сведения о модуле PowerShell ADSyncConfig.psm1, который входит в состав Azure AD Connect.
@@ -1080,28 +1080,19 @@ Set-ADSyncRestrictedPermissions [-ADConnectorAccountDN] <String> [-Credential] <
 ### <a name="description"></a>DESCRIPTION
 Функция Set-ADSyncRestrictedPermissions ограничит доступ указанной учетной записи.
 Сужение разрешения включает следующие шаги:
-1.
-Отключение наследования для указанного объекта.
-2.
-Удаление всех элементов управления доступом в конкретном объекте, кроме элементов управления доступом, характерных для SELF.
+1. Отключение наследования для указанного объекта.
+2. Удаление всех элементов управления доступом в конкретном объекте, кроме элементов управления доступом, характерных для SELF.
 При работе с SELF нужно сохранять разрешения по умолчанию без изменений.
-3.
-Назначение указанных ниже специальных разрешений.
+3. Назначение указанных ниже специальных разрешений.
 
-        Type    Name                                        Access              Applies To
-        =============================================================================================
-        Allow   SYSTEM                                      Full Control        This object
-        Allow   Enterprise Admins                           Full Control        This object
-        Allow   Domain Admins                               Full Control        This object
-        Allow   Administrators                              Full Control        This object
-
-        Allow   Enterprise Domain Controllers               List Contents
-                                                            Read All Properties
-                                                            Read Permissions    This object
-
-        Allow   Authenticated Users                         List Contents
-                                                            Read All Properties
-                                                            Read Permissions    This object
+   | Тип | Имя | Доступ | Применяется к |
+   |------|------|--------|------------|
+   | Allow | SYSTEM | Полный доступ | этому объекту |
+   | Allow | Администраторы предприятия | Полный доступ | этому объекту |
+   | Allow | Администраторы домена | Полный доступ | этому объекту | 
+   | Allow | Администраторы | Полный доступ | этому объекту |
+   | Allow | Контроллеры домена предприятия | Вывод списка содержимого <br> Чтение всех свойств <br> Разрешения на чтение | этому объекту |
+   | Allow | Прошедшие проверку пользователи | Вывод списка содержимого <br> Чтение всех свойств <br> Разрешения на чтение | этому объекту |
 
 ### <a name="examples"></a>Примеры
 
