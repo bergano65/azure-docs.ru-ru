@@ -7,20 +7,19 @@ documentationcenter: na
 author: KumudD
 ms.service: virtual-network
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: 9a0dd56842174d89688c862397c373326ef50d1f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: eecfebc90c28b650af0cef4ee0e4ddc227af0e8c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80420542"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84711499"
 ---
 # <a name="reserve-public-ipv6-address-prefix"></a>Зарезервируйте префикс общедоступного IPv6-адреса
-IPv6 для виртуальной сети Azure (VNet) позволяет размещать приложения в Azure с подключением IPv6 и IPv4 как в виртуальной сети, так и в Интернете. Помимо резервирования отдельных IPv6-адресов, можно зарезервировать непрерывные диапазоны IPv6-адресов Azure (называемых префиксом IP) для использования. В этой статье описывается создание общедоступных IP-адресов IPv6 и диапазонов адресов с помощью Azure PowerShell и CLI.
+Протокол IPv6 для виртуальной сети Azure (VNet) позволяет размещать приложения на платформе Azure с поддержкой адресации IPv6 и IPv4 как в виртуальной сети, так и с доступом в Интернет и из него. Помимо резервирования отдельных IPv6-адресов, можно зарезервировать непрерывные диапазоны IPv6-адресов Azure (называемых префиксом IP) для использования. В этой статье описывается создание общедоступных IP-адресов IPv6 и диапазонов адресов с помощью Azure PowerShell и CLI.
 
 
 ## <a name="create-a-single-reserved-ipv6-public-ip"></a>Создание одного зарезервированного общедоступного IP-адреса IPv6
@@ -87,7 +86,7 @@ az network public-ip prefix create \
 
 ### <a name="using-azure-powershell"></a>Использование Azure PowerShell
 
- Вы создадите статический общедоступный IP-адрес IPv6 из зарезервированного `-PublicIpPrefix` префикса, добавив аргумент при создании общедоступного IP-адреса с помощью Azure PowerShell. В следующем примере предполагается, что префикс был создан и сохранен в переменной PowerShell с именем: *$MyOwnIPv 6prefix*.
+ Вы создадите статический общедоступный IP-адрес IPv6 из зарезервированного префикса, добавив `-PublicIpPrefix` аргумент при создании общедоступного IP-адреса с помощью Azure PowerShell. В следующем примере предполагается, что префикс был создан и сохранен в переменной PowerShell с именем: *$MyOwnIPv 6prefix*.
 
 ```azurepowershell:  
  $MyIPv6PublicIPFromMyReservedPrefix = New-AzPublicIpAddress \

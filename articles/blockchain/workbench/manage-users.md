@@ -2,14 +2,13 @@
 title: Управление пользователями в Azure Блокчейн Workbench
 description: Как управлять пользователями в Azure Blockchain Workbench.
 ms.date: 05/09/2019
-ms.topic: article
+ms.topic: how-to
 ms.reviewer: brendal
-ms.openlocfilehash: 573ec477a3e75beb91f90da0545fb7d4c0f9bf39
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 78841ca830ae56f6c07f796bdde85f6a6ba9c921
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79252185"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85212740"
 ---
 # <a name="manage-users-in-azure-blockchain-workbench"></a>Управление пользователями в Azure Blockchain Workbench
 
@@ -32,7 +31,7 @@ Azure Blockchain Workbench использует Azure Active Directory (Azure AD
 
     ![Новый пользователь](./media/manage-users/add-ad-user.png)
 
-5.  Заполните обязательные поля для нового пользователя. Щелкните **Создать**.
+5.  Заполните обязательные поля для нового пользователя. Выберите **Создать**.
 
 Дополнительные сведения о том, как управлять пользователями в Azure AD, см. в документации по [Azure AD](../../active-directory/fundamentals/add-users-azure-active-directory.md).
 

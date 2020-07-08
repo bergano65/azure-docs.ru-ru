@@ -3,25 +3,24 @@ title: Единый вход SAML для локальных приложений
 description: Узнайте, как обеспечить единый вход для локальных приложений, защищенных с помощью проверки подлинности SAML. Предоставление удаленного доступа к локальным приложениям с помощью прокси приложения.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/24/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3d2117e913f292e92f37f31d2e123587c70a189
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: f9b6753a0aa9e79624b9b972264611fd31f2bba8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80803303"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84764831"
 ---
 # <a name="saml-single-sign-on-for-on-premises-applications-with-application-proxy"></a>Единый вход SAML для локальных приложений с помощью прокси приложения
 
@@ -74,7 +73,7 @@ ms.locfileid: "80803303"
 
 2. На странице **Настройка единого входа с помощью SAML** перейдите к разделу **Базовая конфигурация SAML** и выберите его значок **редактирования** (карандаш). Убедитесь, что **внешний URL-адрес** , настроенный в прокси приложения, заполнен в полях **идентификатор**, **URL-адрес ответа**и **URL-адрес выхода** . Эти URL-адреса необходимы для правильной работы прокси приложения. 
 
-3. Измените **URL-адрес ответа** , настроенный ранее, чтобы его домен был доступен в Интернете через прокси приложения. Например, если **внешний URL-адрес** имеет `https://contosotravel-f128.msappproxy.net` значение, а **Исходный URL-адрес ответа** был `https://contosotravel.com/acs`, необходимо обновить исходный **URL-адрес ответа** на. `https://contosotravel-f128.msappproxy.net/acs`
+3. Измените **URL-адрес ответа** , настроенный ранее, чтобы его домен был доступен в Интернете через прокси приложения. Например, если **внешний URL-адрес** имеет значение `https://contosotravel-f128.msappproxy.net` , а исходный **URL-адрес ответа** был `https://contosotravel.com/acs` , необходимо обновить исходный **URL-адрес ответа** на `https://contosotravel-f128.msappproxy.net/acs` .
 
     ![Ввод основных данных конфигурации SAML](./media/application-proxy-configure-single-sign-on-on-premises-apps/basic-saml-configuration.png)
 
@@ -95,7 +94,7 @@ ms.locfileid: "80803303"
 1. Откройте браузер и перейдите по **внешнему URL-адресу** , созданному при публикации приложения. 
 1. Войдите с помощью тестовой учетной записи, назначенной приложению. Вы сможете загрузить приложение и использовать единый вход в приложение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Как прокси приложения Azure AD предоставляет единый вход?](application-proxy-single-sign-on.md)
 - [Устранение неполадок прокси-сервера приложений](application-proxy-troubleshoot.md)

@@ -4,7 +4,6 @@ description: 'Получите расширенную поддержку для 
 services: virtual-machines-windows
 documentationcenter: ''
 author: MashaMSFT
-manager: craigg
 tags: azure-service-management
 ms.service: virtual-machines-sql
 ms.topic: conceptual
@@ -14,12 +13,11 @@ ms.date: 04/08/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 62ed33b8344d0d5a79cd956274c5f7ddd62a714a
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
-ms.translationtype: HT
+ms.openlocfilehash: 48288ed3765fa939fc56a4469f64070315c4c6aa
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84034255"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84668752"
 ---
 # <a name="extend-support-for-sql-server-2008-and-sql-server-2008-r2-with-azure"></a>Расширенная поддержка SQL Server 2008 и SQL Server 2008 R2 с Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -61,7 +59,7 @@ ms.locfileid: "84034255"
 
 ### <a name="database-migration-service"></a>Database Migration Service
 
-[Database Migration Service](/azure/dms/dms-overview) — вариант миграции для клиентов из локальной среды на виртуальную машину Azure путем обновления SQL Server до версии 2012 или более поздней.
+[Azure Database Migration Service](/azure/dms/dms-overview) является вариантом для клиентов, если миграция выполняется из локальной среды в виртуальную машину Azure путем обновления SQL Server до версии 2012 или более поздней.
 
 ## <a name="disaster-recovery"></a>Аварийное восстановление
 
@@ -74,7 +72,7 @@ ms.locfileid: "84034255"
 ## <a name="security-patching"></a>Установка обновлений для системы безопасности
 Расширенные обновления системы безопасности для виртуальных машин SQL Server доставляются по каналам Центра обновления Майкрософт после регистрации виртуальной машины SQL Server у [поставщика ресурсов](sql-vm-resource-provider-register.md) виртуальных машин SQL. Исправления можно загружать вручную или автоматически.
 
-*Automated patching* включен по умолчанию. Автоматическая установка исправлений позволяет Azure автоматически исправлять SQL Server и операционную систему. Если у вас установлено расширение IaaS для SQL Server, вы можете указать день недели, время и длительность периода обслуживания. Azure устанавливает исправления в период обслуживания. Расписание периода обслуживания использует для определения времени региональные параметры VM.  Дополнительные сведения см. в статье об [автоматической установке исправлений SQL Server на виртуальных машинах Azure](automated-patching.md).
+*Automated patching* включен по умолчанию. Автоматическая установка исправлений позволяет Azure автоматически исправлять SQL Server и операционную систему. Если у вас установлено расширение IaaS для SQL Server, вы можете указать день недели, время и длительность периода обслуживания. Azure устанавливает исправления в период обслуживания. Расписание периода обслуживания использует для определения времени региональные параметры VM. Дополнительные сведения см. в статье об [автоматической установке исправлений SQL Server на виртуальных машинах Azure](automated-patching.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

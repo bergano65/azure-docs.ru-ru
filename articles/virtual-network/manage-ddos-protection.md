@@ -5,23 +5,22 @@ description: Сведения о том, как устранить атаку с
 services: virtual-network
 documentationcenter: na
 author: KumudD
-manager: twooley
+manager: mtillman
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-network
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/17/2019
 ms.author: kumud
-ms.openlocfilehash: f208119ce80d6b728030ea96f13d6c3d0375e74a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: ed311e9c8031f8586762d2adc4c104545e323bc0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82182945"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84711516"
 ---
 # <a name="manage-azure-ddos-protection-standard-using-the-azure-portal"></a>Управление защитой от атак DDoS Azure уровня "Стандартный" с помощью портала Azure
 
@@ -39,14 +38,14 @@ ms.locfileid: "82182945"
 
 1. Щелкните **Создать ресурс** в верхнем левом углу окна портала Azure.
 2. Выполните поиск *DDoS*. Когда в результатах поиска появится элемент **Планы защиты от атак DDoS**, щелкните его.
-3. Нажмите кнопку **создания**.
+3. Выберите **Создать**.
 4. Введите или выберите собственные значения либо введите или выберите значения из примера, а затем щелкните **Создать**.
 
     |Параметр        |Значение                                              |
     |---------      |---------                                          |
     |Имя           | myDdosProtectionPlan                              |
     |Подписка   | Выберите свою подписку.                         |
-    |Группа ресурсов | Выберите **Создать новую**, а затем введите *myResourceGroup*. |
+    |Группа ресурсов | Выберите **создать** и введите *myResourceGroup* . |
     |Расположение       | Восточная часть США                                           |
 
 ## <a name="enable-ddos-for-a-new-virtual-network"></a>Включение защиты от атак DDoS для новой виртуальной сети
@@ -59,7 +58,7 @@ ms.locfileid: "82182945"
     | ---------       | ---------                                                    |
     | Имя            | myVirtualNetwork                                             |
     | Подписка    | Выберите свою подписку.                                    |
-    | Группа ресурсов  | Выберите **использовать существующий**и выберите **myResourceGroup** . |
+    | Группа ресурсов  | Щелкните **Use existing** (Использовать существующую), а затем выберите **myResourceGroup**. |
     | Расположение        | Восточная часть США                                                      |
     | Защита от атак DDoS | Выберите **Стандартный**, затем в разделе **Защита от атак DDoS** выберите **myDdosProtectionPlan**. Выбираемый план не обязательно должен находиться в той же подписке, что и виртуальная сеть, но обе подписки должны быть связаны с одним клиентом Azure Active Directory.|
 
@@ -230,7 +229,7 @@ ms.locfileid: "82182945"
 
 Для работы с планами защиты от атак DDoS учетной записи должна быть назначена роль [Участник сетей](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) роль, которой назначены соответствующие разрешения, перечисленные в таблице ниже.
 
-| Действие                                            | Имя                                     |
+| Действие                                            | name                                     |
 | ---------                                         | -------------                            |
 | Microsoft.Network/ddosProtectionPlans/read        | Чтение плана защиты от атак DDoS.              |
 | Microsoft.Network/ddosProtectionPlans/write       | Создание или обновление плана защиты от атак DDoS.  |
@@ -239,6 +238,6 @@ ms.locfileid: "82182945"
 
 Чтобы включить защиту от атак DDoS для виртуальной сети, учетной записи также должны быть назначены соответствующие [действия для виртуальных сетей](manage-virtual-network.md#permissions).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Создание и назначение [политики Azure определения](policy-samples.md) для виртуальных сетей

@@ -15,12 +15,11 @@ ms.topic: article
 ms.date: 08/22/2019
 ms.author: allensu
 ms.custom: ''
-ms.openlocfilehash: a58fd7c6f50cd46ac3c34cd7e5bd329c0007e5f6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 7b98bb446fc400007e4061d09db8084960702943
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81260196"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84668293"
 ---
 # <a name="retrieve-the-current-pop-ip-list-for-azure-cdn"></a>Получение списка текущих IP-адресов POP для Azure CDN
 
@@ -39,7 +38,7 @@ ms.locfileid: "81260196"
 * Azure CDN из внутреннего IP-пространства IPv4 Майкрософт: 147.243.0.0/16
 * Azure CDN из внутреннего IP-адреса Microsoft IPv6:2a01:111:2050::/44
 
-Диапазоны IP-адресов и теги служб для служб Майкрософт можно найти [здесь](https://www.microsoft.com/download/details.aspx?id=56519) .
+Чтобы использовать теги службы с Azure CDN Майкрософт, используйте тег передней дверцы Azure. Диапазоны IP-адресов и теги служб для служб Майкрософт можно найти [здесь](https://www.microsoft.com/download/details.aspx?id=56519) .
 
 
 ## <a name="typical-use-case"></a>Типичный случай использования

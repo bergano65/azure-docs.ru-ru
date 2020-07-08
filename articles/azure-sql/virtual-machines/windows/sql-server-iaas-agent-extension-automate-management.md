@@ -4,7 +4,6 @@ description: В этой статье описывается управлени�
 services: virtual-machines-windows
 documentationcenter: ''
 author: MashaMSFT
-manager: jroth
 editor: ''
 tags: azure-resource-manager
 ms.assetid: effe4e2f-35b5-490a-b5ef-b06746083da4
@@ -17,12 +16,11 @@ ms.date: 08/30/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 08b9076ae81c8c8c071b03167d0242c1d933e619
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
-ms.translationtype: HT
+ms.openlocfilehash: 89210cda6390fd7c3cf4ca2877b8899559a41321
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84034235"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84668718"
 ---
 # <a name="automate-management-tasks-on-azure-virtual-machines-by-using-the-sql-server-iaas-agent-extension"></a>Автоматизация задач управления на виртуальных машинах Azure с помощью расширения агента IaaS для SQL Server
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -82,7 +80,7 @@ ms.locfileid: "84034235"
 
 
 ##  <a name="installation"></a>Установка
-Расширение IaaS для SQL Server будет установлено при регистрации виртуальной машины SQL Server с помощью [поставщика ресурсов виртуальной машины SQL](sql-vm-resource-provider-register.md). При необходимости можно установить агент IaaS для SQL Server вручную, выполнив следующую команду PowerShell: 
+Расширение SQL Server IaaS устанавливается при регистрации SQL Server виртуальной машины с помощью [поставщика ресурсов SQL Server виртуальной машины](sql-vm-resource-provider-register.md). При необходимости можно установить агент IaaS для SQL Server вручную, выполнив следующую команду PowerShell: 
 
   ```powershell-interactive
     Set-AzVMSqlServerExtension -VMName "sql2017" `

@@ -8,14 +8,13 @@ editor: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 01/16/2020
+ms.date: 07/06/2020
 ms.author: jingwang
-ms.openlocfilehash: d47450f3252074d3bae8df97766bf8858fca5972
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: 7c1de2b6ef59efdaaed64fcf687fed0c834683c0
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81416584"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86037602"
 ---
 # <a name="managed-identity-for-data-factory"></a>Управляемое удостоверение для Фабрики данных
 
@@ -163,7 +162,7 @@ client.Factories.CreateOrUpdate(resourceGroup, dataFactoryName, dataFactory);
 - Управляемый клиент удостоверений
 - Идентификатор приложения управляемого удостоверения
 
-Сведения об управляемом удостоверении также будут отображаться при создании связанной службы, которая поддерживает проверку подлинности управляемого удостоверения, например, большой двоичный объект Azure, Azure Data Lake Storage, Azure Key Vault и т. д.
+При создании связанной службы будут также отображаться сведения об управляемом удостоверении, поддерживающем проверку подлинности управляемого удостоверения, например, большой двоичный объект Azure, Azure Data Lake Storage, Azure Key Vault и т. д.
 
 При предоставлении разрешения используйте идентификатор объекта или имя фабрики данных (в качестве имени управляемого удостоверения), чтобы найти это удостоверение.
 
@@ -191,7 +190,62 @@ Id                    : 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc
 Type                  : ServicePrincipal
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+### <a name="retrieve-managed-identity-using-rest-api"></a>Получение управляемого удостоверения с помощью REST API
+
+Идентификатор управляемого участника удостоверений и идентификатор клиента будут возвращены при получении определенной фабрики данных, как показано ниже.
+
+Вызовите следующий API в запросе:
+
+```
+GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}?api-version=2018-06-01
+```
+
+**Ответ**. в следующем примере вы получите ответ, как показано ниже. Раздел "Identity" заполняется соответствующим образом.
+
+```json
+{
+    "name":"<dataFactoryName>",
+    "identity":{
+        "type":"SystemAssigned",
+        "principalId":"554cff9e-XXXX-XXXX-XXXX-90c7d9ff2ead",
+        "tenantId":"72f988bf-XXXX-XXXX-XXXX-2d7cd011db47"
+    },
+    "id":"/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.DataFactory/factories/<dataFactoryName>",
+    "type":"Microsoft.DataFactory/factories",
+    "properties":{
+        "provisioningState":"Succeeded",
+        "createTime":"2020-02-12T02:22:50.2384387Z",
+        "version":"2018-06-01",
+        "factoryStatistics":{
+            "totalResourceCount":0,
+            "maxAllowedResourceCount":0,
+            "factorySizeInGbUnits":0,
+            "maxAllowedFactorySizeInGbUnits":0
+        }
+    },
+    "eTag":"\"03006b40-XXXX-XXXX-XXXX-5e43617a0000\"",
+    "location":"<region>",
+    "tags":{
+
+    }
+}
+```
+
+> [!TIP] 
+> Чтобы получить управляемое удостоверение из шаблона ARM, добавьте раздел **Outputs** в JSON ARM:
+
+```json
+{
+    "outputs":{
+        "managedIdentityObjectId":{
+            "type":"string",
+            "value":"[reference(resourceId('Microsoft.DataFactory/factories', parameters('<dataFactoryName>')), '2018-06-01', 'Full').identity.principalId]"
+        }
+    }
+}
+```
+
+## <a name="next-steps"></a>Дальнейшие шаги
 В следующих разделах представлены сведения о том, когда и как использовать управляемое удостоверение фабрики данных.
 
 - [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md)

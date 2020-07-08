@@ -10,10 +10,9 @@ ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
 ms.openlocfilehash: 14af110b5cf50f167d0c4961e26454bc33c6ed7d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81759489"
 ---
 # <a name="deploy-openshift-container-platform-4x-in-azure"></a>Развертывание OpenShift контейнера платформы 4. x в Azure
@@ -32,7 +31,7 @@ ms.locfileid: "81759489"
 
 | Описание проблемы | Точка контакта |
 |-------------------|---------------|
-| Проблемы, связанные с Azure (AAD, SP, подписка Azure и т. д.)                              | Microsoft |
+| Проблемы, связанные с Azure (AAD, SP, подписка Azure и т. д.)                              | Майкрософт |
 | Проблемы, связанные с OpenShift (сбои при установке и ошибки, подписка Red Hat и т. д.) |  Red Hat  |
 
 

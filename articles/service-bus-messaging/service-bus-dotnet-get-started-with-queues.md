@@ -1,25 +1,14 @@
 ---
 title: Начало работы с очередями служебной шины Azure | Документация Майкрософт
 description: В этом руководстве вы создадите консольные приложения .NET Core для отправки сообщений в очередь служебной шины и получения сообщений из нее.
-services: service-bus-messaging
-documentationcenter: .net
-author: axisc
-manager: timlt
-editor: spelluru
-ms.assetid: 68a34c00-5600-43f6-bbcc-fea599d500da
-ms.service: service-bus-messaging
-ms.devlang: tbd
 ms.topic: conceptual
 ms.tgt_pltfrm: dotnet
-ms.workload: na
-ms.date: 01/24/2020
-ms.author: aschhab
-ms.openlocfilehash: 5718106aee0e60d111398efdb839945c2c7a8a06
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/23/2020
+ms.openlocfilehash: 477d9d5a23e50d9b303d560b5530cbc22104c5cb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77471743"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85337552"
 ---
 # <a name="get-started-with-service-bus-queues"></a>Начало работы с очередями служебной шины
 [!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
@@ -55,7 +44,7 @@ ms.locfileid: "77471743"
 
 ### <a name="write-code-to-send-messages-to-the-queue"></a>Написание кода для отправки сообщений в очередь
 
-1. В *Program.CS*добавьте следующие `using` инструкции в начале определения пространства имен перед объявлением класса:
+1. В *Program.CS*добавьте следующие инструкции в `using` начале определения пространства имен перед объявлением класса:
 
     ```csharp
     using System.Text;
@@ -94,7 +83,7 @@ ms.locfileid: "77471743"
         await queueClient.CloseAsync();
     }
     ```
-1. Сразу после `MainAsync()` метода добавьте следующий `SendMessagesAsync()` метод, который выполняет отправку числа сообщений, `numberOfMessagesToSend` указанных в (в данный момент установлено равным 10):
+1. Сразу после `MainAsync()` метода добавьте следующий `SendMessagesAsync()` метод, который выполняет отправку числа сообщений, указанных в `numberOfMessagesToSend` (в данный момент установлено равным 10):
 
     ```csharp
     static async Task SendMessagesAsync(int numberOfMessagesToSend)
@@ -201,7 +190,7 @@ namespace CoreSenderApp
 
 ### <a name="write-code-to-receive-messages-from-the-queue"></a>Написание кода для получения сообщений из очереди
 
-1. В *Program.CS*добавьте следующие `using` инструкции в начале определения пространства имен перед объявлением класса:
+1. В *Program.CS*добавьте следующие инструкции в `using` начале определения пространства имен перед объявлением класса:
 
     ```csharp
     using System;

@@ -9,18 +9,17 @@ editor: ''
 ms.assetid: e3cdcd9e-33b1-424d-82aa-b369d934067e
 ms.service: storsimple
 ms.devlang: NA
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/27/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a61dcca1f78b6ba444a2deefcf6b8bb4fd5c5087
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
-ms.translationtype: MT
+ms.openlocfilehash: 26bf018d8823495c00b09af3a40b39315dadb31c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "60581400"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85513673"
 ---
 # <a name="back-up-shares-or-volumes-on-your-storsimple-virtual-array"></a>Архивация общих ресурсов или томов на виртуальном массиве StorSimple
 
@@ -108,11 +107,11 @@ ms.locfileid: "60581400"
    
      ![Фильтрация резервных копий](./media/storsimple-virtual-array-backup/viewbackups2.png)
 
-3. Щелкните **Применить**. В колонке **Каталог архивов** отобразится отфильтрованный список резервных копий. Обратите внимание, что в определенный момент времени может отображаться только 100 резервных копий.
+3. Нажмите кнопку **Применить**. В колонке **Каталог архивов** отобразится отфильтрованный список резервных копий. Обратите внимание, что в определенный момент времени может отображаться только 100 резервных копий.
    
     ![Обновленный каталог резервных копий](./media/storsimple-virtual-array-backup/viewbackups3.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в статье [Использование пользовательского веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).
 

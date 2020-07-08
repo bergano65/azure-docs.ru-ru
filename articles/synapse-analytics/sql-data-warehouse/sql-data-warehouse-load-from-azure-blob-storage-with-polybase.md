@@ -6,17 +6,16 @@ author: kevinvngo
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 118653efc8829ac5ef6287bb36fb5595cff1147b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 90da35b76bbe6ec933b3a1fd200f0f5bad643759
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81416124"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85213318"
 ---
 # <a name="load-contoso-retail-data-to-synapse-sql"></a>Загрузка данных Contoso Retail в синапсе SQL 
 
@@ -28,7 +27,7 @@ ms.locfileid: "81416124"
 2. загружать общедоступные данные в базу данных;
 3. выполнять оптимизацию после завершения загрузки.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Для работы с этим руководством вам потребуется учетная запись Azure, у которой уже есть хранилище данных синапсе SQL. Если у вас нет подготовленного хранилища данных, см. раздел [Создание хранилища данных и настройка правила брандмауэра на уровне сервера](create-data-warehouse-portal.md).
 

@@ -1,5 +1,5 @@
 ---
-title: Создание внутренней подсистемы балансировки нагрузки уровня "Базовый" с помощью Azure CLI
+title: Создание внутренней Load Balancer Azure CLI
 titleSuffix: Azure Load Balancer
 description: Из этой статьи вы узнаете, как создать внутреннюю подсистему балансировки нагрузки с помощью Azure CLI
 services: load-balancer
@@ -7,18 +7,17 @@ documentationcenter: na
 author: asudbring
 ms.service: load-balancer
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 06/27/2018
+ms.date: 07/02/2020
 ms.author: allensu
-ms.openlocfilehash: 51df1936e5d8725b2243e7c0084973370139c540
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 2557ac6f3fb8e9091faad5c9c219db529838495d
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79457017"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85921715"
 ---
 # <a name="create-an-internal-load-balancer-to-load-balance-vms-using-azure-cli"></a>Создание внутренней подсистемы балансировки нагрузки с помощью Azure CLI для распределения нагрузки между виртуальными машинами
 
@@ -42,7 +41,7 @@ ms.locfileid: "79457017"
 
 ## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
-Создайте виртуальную сеть с именем *myVnet* с подсетью с именем *mySubnet* в *myResourceGroup* с помощью команды [AZ Network vnet Create](https://docs.microsoft.com/cli/azure/network/vnet).
+С помощью команды [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet) создайте виртуальную сеть с именем *myVnet*, содержащую подсеть *mySubnet*, в группе ресурсов *myResourceGroup*.
 
 ```azurecli-interactive
   az network vnet create \
@@ -52,7 +51,7 @@ ms.locfileid: "79457017"
     --subnet-name mySubnet
 ```
 
-## <a name="create-basic-load-balancer"></a>Создание подсистемы балансировки нагрузки уровня "Базовый"
+## <a name="create-standard-load-balancer"></a>Создание Load Balancer уровня "Стандартный"
 
 В этом разделе описано, как создать и настроить следующие компоненты подсистемы балансировки нагрузки:
   - интерфейсную конфигурацию IP-адресов, которая принимает входной трафик подсистемы балансировки нагрузки;
@@ -62,12 +61,15 @@ ms.locfileid: "79457017"
 
 ### <a name="create-the-load-balancer"></a>Создание подсистемы балансировки нагрузки
 
-Создайте внутренний Load Balancer с помощью команды [AZ Network фунтов Create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) с именем **myLoadBalancer** , которая включает внешнюю IP-конфигурацию с именем **myFrontEnd**, внутренний пул с именем **myBackEndPool** , связанный с частным IP-адресом * * 10.0.0.7.
+Создайте внутренний Load Balancer с помощью команды [AZ Network фунтов Create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) с именем **myLoadBalancer** , которая включает внешнюю IP-конфигурацию с именем **myFrontEnd**, внутренний пул с именем **myBackEndPool** , связанный с частным IP-адресом **10.0.0.7**. 
+
+Для создания Load Balancer уровня "Базовый" используйте `--sku basic`. Для производственных рабочих нагрузок корпорация Майкрософт рекомендует использовать номера SKU ценовой категории "Стандартный".
 
 ```azurecli-interactive
   az network lb create \
     --resource-group myResourceGroupILB \
     --name myLoadBalancer \
+    --sku standard \
     --frontend-ip-name myFrontEnd \
     --private-ip-address 10.0.0.7 \
     --backend-pool-name myBackEndPool \
@@ -77,7 +79,7 @@ ms.locfileid: "79457017"
 
 ### <a name="create-the-health-probe"></a>Создание зонда работоспособности
 
-Зонд работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут принимать трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте пробу работоспособности с помощью команды [AZ Network фунтов зонда Create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest) , чтобы отслеживать работоспособность виртуальных машин. 
+Зонд работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут принимать трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте зонд работоспособности с помощью команды [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest), чтобы отслеживать работоспособность виртуальных машин. 
 
 ```azurecli-interactive
   az network lb probe create \
@@ -85,7 +87,7 @@ ms.locfileid: "79457017"
     --lb-name myLoadBalancer \
     --name myHealthProbe \
     --protocol tcp \
-    --port 80   
+    --port 80
 ```
 
 ### <a name="create-the-load-balancer-rule"></a>Создание правила подсистемы балансировки нагрузки
@@ -103,6 +105,12 @@ ms.locfileid: "79457017"
     --frontend-ip-name myFrontEnd \
     --backend-pool-name myBackEndPool \
     --probe-name myHealthProbe  
+```
+
+Вы также можете создать правило подсистемы балансировки нагрузки [портов с высоким уровнем доступности](load-balancer-ha-ports-overview.md) , используя конфигурацию ниже с Load Balancer (цен. Категория "Стандартный").
+
+```azurecli-interactive
+az network lb rule create --resource-group myResourceGroupILB --lb-name myLoadBalancer --name haportsrule --protocol all --frontend-port 0 --backend-port 0 --frontend-ip-name myFrontEnd --backend-address-pool-name myBackEndPool
 ```
 
 ## <a name="create-servers-for-the-backend-address-pool"></a>Создание серверов для внутреннего пула IP-адресов
@@ -238,5 +246,5 @@ for i in `seq 1 2`; do
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы создали внутреннюю подсистему балансировки нагрузки уровня "Базовый", подключили к ней виртуальные машины, настроили правило трафика подсистемы балансировки нагрузки, зонд работоспособности, а также проверили работу подсистемы балансировки нагрузки. Дополнительные сведения о подсистемах балансировки нагрузки и связанных с ними ресурсах см. в статьях с инструкциями.

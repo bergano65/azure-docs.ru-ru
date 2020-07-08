@@ -6,13 +6,12 @@ ms.subservice: update-management
 ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
-ms.date: 05/22/2020
-ms.openlocfilehash: 1418b26a2a498c43ff61f42b2761c59cbca5d0f4
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.date: 06/09/2020
+ms.openlocfilehash: 6b26db522db246add48941da9af4784ed2942a0a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83837150"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84661034"
 ---
 # <a name="create-an-automation-account-using-an-azure-resource-manager-template"></a>Создание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager
 
@@ -35,8 +34,8 @@ ms.locfileid: "83837150"
 
 | Ресурс | Тип ресурса | Версия API |
 |:---|:---|:---|
-| Рабочая область | workspaces | 2017-03-15-preview |
-| Учетная запись службы автоматизации | служба автоматизации | 2015-10-31 | 
+| Рабочая область | workspaces | 2020-03-01 — предварительная версия |
+| Учетная запись службы автоматизации | служба автоматизации | 2018-06-30 | 
 
 ## <a name="before-you-use-the-template"></a>Перед использованием шаблона
 
@@ -48,14 +47,14 @@ ms.locfileid: "83837150"
 
 * имя рабочей области;
 * регион, в котором будет создана рабочая область;
-* имя учетной записи службы автоматизации;
-* регион, в котором будет создана учетная запись.
+* , Чтобы включить разрешения для ресурсов или рабочих областей.
+* Имя учетной записи службы автоматизации.
+* Регион для создания учетной записи службы автоматизации в.
 
 Для следующих параметров в шаблоне задано значение по умолчанию для рабочей области Log Analytics:
 
 * *sku* — по умолчанию используется ценовая категория с платой за гигабайт, выпущенная в апреле 2018 года.
 * *dataRetention* — по умолчанию задано 30 дней.
-* *capacityReservationLevel* — по умолчанию задано 100 ГБ.
 
 >[!WARNING]
 >Если вы хотите создать или настроить рабочую область Log Analytics в подписке, использующей модель ценообразования от апреля 2018 года, будет доступна только ценовая категория *PerGB2018*.
@@ -63,7 +62,7 @@ ms.locfileid: "83837150"
 
 Шаблон в формате JSON указывает значения по умолчанию для других параметров, которые, скорее всего, будут использоваться в качестве стандартной конфигурации в вашей среде. Шаблон можно хранить в учетной записи хранения Azure для общего доступа в организации. Дополнительную информацию о работе с шаблонами см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/templates/deploy-cli.md).
 
-Если вы не знакомы со службами автоматизации Azure и Azure Monitor, важно понимать следующие моменты, относящиеся к конфигурации. Они могут помочь избежать ошибок при создании, настройке и использовании рабочей области Log Analytics, связанной с новой учетной записью службы автоматизации. 
+Если вы не знакомы со службами автоматизации Azure и Azure Monitor, важно понимать следующие моменты, относящиеся к конфигурации. Они могут помочь избежать ошибок при создании, настройке и использовании рабочей области Log Analytics, связанной с новой учетной записью службы автоматизации.
 
 * Ознакомьтесь с [дополнительными сведениями](../azure-monitor/platform/template-workspace-configuration.md#create-a-log-analytics-workspace), чтобы полностью понять возможности конфигурации рабочей области, такие как режим управления доступом, ценовая категория, срок хранения и уровень резервирования мощности.
 
@@ -107,14 +106,7 @@ ms.locfileid: "83837150"
             "minValue": 7,
             "maxValue": 730,
             "metadata": {
-                "description": "Number of days of retention. Workspaces in the legacy Free pricing tier can have only 7 days."
-            }
-        },
-        "immediatePurgeDataOn30Days": {
-            "type": "bool",
-            "defaultValue": "[bool('false')]",
-            "metadata": {
-                "description": "If set to true when changing retention to 30 days, older data will be immediately deleted. Use this with extreme caution. This applies only when retention is being set to 30 days."
+                "description": "Number of days to retain data."
             }
         },
         "location": {
@@ -122,6 +114,12 @@ ms.locfileid: "83837150"
             "metadata": {
                 "description": "Specifies the location in which to create the workspace."
             }
+        },
+        "resourcePermissions": {
+              "type": "bool",
+              "metadata": {
+                "description": "true to use resource or workspace permissions. false to require workspace permissions."
+              }
         },
         "automationAccountName": {
             "type": "string",
@@ -176,13 +174,11 @@ ms.locfileid: "83837150"
         {
         "type": "Microsoft.OperationalInsights/workspaces",
             "name": "[parameters('workspaceName')]",
-            "apiVersion": "2017-03-15-preview",
+            "apiVersion": "2020-03-01-preview",
             "location": "[parameters('location')]",
             "properties": {
                 "sku": {
-                    "Name": "[parameters('sku')]",
-                    "name": "CapacityReservation",
-                    "capacityReservationLevel": 100
+                    "name": "[parameters('sku')]",
                 },
                 "retentionInDays": "[parameters('dataRetention')]",
                 "features": {
@@ -194,7 +190,7 @@ ms.locfileid: "83837150"
         "resources": [
         {
             "type": "Microsoft.Automation/automationAccounts",
-            "apiVersion": "2015-01-01-preview",
+            "apiVersion": "2018-06-30",
             "name": "[parameters('automationAccountName')]",
             "location": "[parameters('automationAccountLocation')]",
             "dependsOn": [
@@ -209,7 +205,7 @@ ms.locfileid: "83837150"
             "resources": [
                     {
                         "type": "runbooks",
-                        "apiVersion": "2015-01-01-preview",
+                        "apiVersion": "2018-06-30",
                         "name": "[parameters('sampleGraphicalRunbookName')]",
                         "location": "[parameters('automationAccountLocation')]",
                         "dependsOn": [
@@ -229,7 +225,7 @@ ms.locfileid: "83837150"
                     },
                     {
                         "type": "runbooks",
-                        "apiVersion": "2015-01-01-preview",
+                        "apiVersion": "2018-06-30",
                         "name": "[parameters('samplePowerShellRunbookName')]",
                         "location": "[parameters('automationAccountLocation')]",
                         "dependsOn": [
@@ -249,7 +245,7 @@ ms.locfileid: "83837150"
                     },
                     {
                         "type": "runbooks",
-                        "apiVersion": "2015-01-01-preview",
+                        "apiVersion": "2018-06-30",
                         "name": "[parameters('samplePython2RunbookName')]",
                         "location": "[parameters('automationAccountLocation')]",
                         "dependsOn": [
@@ -270,10 +266,10 @@ ms.locfileid: "83837150"
                 ]
         },
         {
-            "apiVersion": "2015-11-01-preview",
+            "apiVersion": "2020-03-01-preview",
             "type": "Microsoft.OperationalInsights/workspaces/linkedServices",
             "name": "[concat(parameters('workspaceName'), '/' , 'Automation')]",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('location')]",
             "dependsOn": [
                 "[concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]",
                 "[concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))]"

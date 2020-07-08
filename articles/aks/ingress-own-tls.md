@@ -4,13 +4,12 @@ titleSuffix: Azure Kubernetes Service
 description: Сведения об установке и настройке контроллера входящего трафика NGINX, который использует собственные сертификаты в кластере Службы Azure Kubernetes (AKS).
 services: container-service
 ms.topic: article
-ms.date: 04/27/2020
-ms.openlocfilehash: dce3cf4e7db45b00b29469524d7576f6065ebaf4
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
-ms.translationtype: MT
+ms.date: 07/02/2020
+ms.openlocfilehash: 4e87a4005a2f6428123b852c2ff505a30c7e36fd
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82561936"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85920322"
 ---
 # <a name="create-an-https-ingress-controller-and-use-your-own-tls-certificates-on-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика HTTPS и использование собственных сертификатов TLS в Службе Azure Kubernetes (AKS)
 
@@ -41,11 +40,14 @@ ms.locfileid: "82561936"
 > В следующем примере создается пространство имен Kubernetes для входящих ресурсов с именем входящие *-Basic*. При необходимости укажите пространство имен для своей среды. Если в кластере AKS не включен RBAC, добавьте `--set rbac.create=false` к командам Helm.
 
 > [!TIP]
-> Если вы хотите включить [Сохранение IP-адреса источника клиента][client-source-ip] для запросов к контейнерам в кластере, `--set controller.service.externalTrafficPolicy=Local` добавьте команду Helm install. Исходный IP-адрес клиента хранится в заголовке запроса в разделе *X-forwardd-for*. При использовании контроллера входящего трафика с включенным сохранением IP-адресов источника клиента передача TLS не будет работать.
+> Если вы хотите включить [Сохранение IP-адреса источника клиента][client-source-ip] для запросов к контейнерам в кластере, добавьте `--set controller.service.externalTrafficPolicy=Local` команду Helm install. Исходный IP-адрес клиента хранится в заголовке запроса в разделе *X-forwardd-for*. При использовании контроллера входящего трафика с включенным сохранением IP-адресов источника клиента передача TLS не будет работать.
 
 ```console
 # Create a namespace for your ingress resources
 kubectl create namespace ingress-basic
+
+# Add the official stable repository
+helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 
 # Use Helm to deploy an NGINX ingress controller
 helm install nginx-ingress stable/nginx-ingress \
@@ -57,7 +59,13 @@ helm install nginx-ingress stable/nginx-ingress \
 
 Во время установки для контроллера входящего трафика создается общедоступный IP-адрес Azure. Этот IP-адрес является статическим только на время жизненного цикла контроллера входящего трафика. При удалении контроллера входящего трафика этот общедоступный IP-адрес теряется. Если создать дополнительный контроллер входящего трафика, ему назначается новый общедоступный IP-адрес. Чтобы сохранить общедоступный IP-адрес, создайте вместо этого [контроллер со статическим общедоступным IP-адресом][aks-ingress-static-tls].
 
-Чтобы получить общедоступный IP-адрес, используйте команду `kubectl get service`. Назначение службе IP-адреса занимает несколько минут.
+Чтобы получить общедоступный IP-адрес, используйте команду `kubectl get service`.
+
+```console
+kubectl get service -l app=nginx-ingress --namespace ingress-basic
+```
+
+Назначение службе IP-адреса занимает несколько минут.
 
 ```
 $ kubectl get service -l app=nginx-ingress --namespace ingress-basic
@@ -181,7 +189,7 @@ spec:
     app: ingress-demo
 ```
 
-Запустите два демонстрационных приложения с `kubectl apply`помощью:
+Запустите два демонстрационных приложения с помощью `kubectl apply` :
 
 ```console
 kubectl apply -f aks-helloworld.yaml --namespace ingress-basic
@@ -230,6 +238,12 @@ spec:
 ```
 
 Создайте ресурс входящего трафика, используя команду `kubectl apply -f hello-world-ingress.yaml`.
+
+```console
+kubectl apply -f hello-world-ingress.yaml
+```
+
+В примере выходных данных показывается, что создается ресурс входящих данных.
 
 ```
 $ kubectl apply -f hello-world-ingress.yaml
@@ -300,7 +314,13 @@ kubectl delete namespace ingress-basic
 
 ### <a name="delete-resources-individually"></a>Удаление ресурсов по отдельности
 
-Кроме того, более детализированный подход заключается в удалении отдельных созданных ресурсов. Выведите список выпусков `helm list` Helm с помощью команды. Найдите диаграмму с именем *nginx-* Output, как показано в следующем примере выходных данных:
+Кроме того, более детализированный подход заключается в удалении отдельных созданных ресурсов. Выведите список выпусков Helm с помощью `helm list` команды. 
+
+```console
+helm list --namespace ingress-basic
+```
+
+Найдите диаграмму с именем *nginx-* Output, как показано в следующем примере выходных данных:
 
 ```
 $ helm list --namespace ingress-basic
@@ -309,7 +329,13 @@ NAME                    NAMESPACE       REVISION        UPDATED                 
 nginx-ingress           ingress-basic   1               2020-01-06 19:55:46.358275 -0600 CST    deployed        nginx-ingress-1.27.1    0.26.1 
 ```
 
-Удалите выпуски с `helm uninstall` помощью команды. В следующем примере удаляется NGINX входящее развертывание.
+Удалите выпуски с помощью `helm uninstall` команды. 
+
+```console
+helm uninstall nginx-ingress --namespace ingress-basic
+```
+
+В следующем примере удаляется NGINX входящее развертывание.
 
 ```
 $ helm uninstall nginx-ingress --namespace ingress-basic
@@ -342,7 +368,7 @@ kubectl delete secret aks-ingress-tls
 kubectl delete namespace ingress-basic
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В данной статье упоминаются некоторые внешние компоненты для AKS. Чтобы узнать больше об этих компонентах, см. следующие страницы проекта:
 

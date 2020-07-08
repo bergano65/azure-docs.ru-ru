@@ -9,18 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 04/30/2020
+ms.date: 06/17/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0de10534cb00c66ad914b2c64ac2547b0e3fe03b
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
-ms.translationtype: MT
+ms.openlocfilehash: 33d946c47a17bb537c7644937547ad479b4637e5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82611125"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85077922"
 ---
 # <a name="review-access-for-yourself-to-groups-or-applications-in-azure-ad-access-reviews"></a>Просмотр доступа к группам или приложениям в проверках доступа Azure AD
 
@@ -43,7 +42,7 @@ Azure Active Directory (Azure AD) упрощает управление дост
 
 Если у вас нет электронного письма, вы можете найти свои ожидающие проверки доступа, выполнив следующие действия.
 
-1. Войдите на портал "Мои приложения" по [https://myapps.microsoft.com](https://myapps.microsoft.com)адресу.
+1. Войдите на портал "Мои приложения" по адресу [https://myapps.microsoft.com](https://myapps.microsoft.com) .
 
     ![На портале "Мои приложения" перечислены приложения, к которым у вас есть разрешения](./media/review-your-access/myapps-access-panel.png)
 
@@ -88,7 +87,7 @@ Azure Active Directory (Azure AD) упрощает управление дост
 
 ### <a name="my-apps-portal"></a>Портал "Мои приложения"
 
-1. Войдите на портал "Мои приложения" по [https://myapps.microsoft.com](https://myapps.microsoft.com)адресу.
+1. Войдите на портал "Мои приложения" по адресу [https://myapps.microsoft.com](https://myapps.microsoft.com) .
 
     ![На портале "Мои приложения" перечислены приложения, к которым у вас есть разрешения](./media/review-your-access/myapps-access-panel.png)
 
@@ -103,7 +102,7 @@ Azure Active Directory (Azure AD) упрощает управление дост
 
 4. Продолжить в разделе **выполнение проверки доступа**
 
-### <a name="email"></a>Электронная почта
+### <a name="email"></a>Адрес электронной почты
 
 >[!IMPORTANT]
 > При получении сообщения электронной почты могут воздержаться задержки, а в некоторых случаях это может занять до 24 часов. Список разрешений azure-noreply@microsoft.com , чтобы убедиться, что вы получаете все сообщения электронной почты.
@@ -163,6 +162,6 @@ Azure Active Directory (Azure AD) упрощает управление дост
     > [!NOTE]
     > Если вы указали, что вам больше не нужен доступ, вы не удалите их немедленно. Вы удаляете после завершения проверки или после того, как администратор останавливает проверку.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Выполнение проверки доступа для групп или приложений](complete-access-review.md)

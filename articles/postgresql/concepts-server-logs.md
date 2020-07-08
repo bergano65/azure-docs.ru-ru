@@ -5,13 +5,12 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 10/25/2019
-ms.openlocfilehash: 70520b464bcb26ff8f1ea10f87bbf30537dc58a0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/25/2020
+ms.openlocfilehash: 506bd79a512a5d8d143f582ee84d292dff86d9df
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82131221"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85392817"
 ---
 # <a name="logs-in-azure-database-for-postgresql---single-server"></a>Журналы в базе данных Azure для PostgreSQL — один сервер
 
@@ -45,7 +44,7 @@ ms.locfileid: "82131221"
 
 Для долгосрочного хранения журналов и анализа журналов можно скачать файлы журнала и переместить их в службу стороннего производителя. Файлы можно загрузить с помощью [портал Azure](howto-configure-server-logs-in-portal.md) [Azure CLI](howto-configure-server-logs-using-cli.md). Кроме того, можно настроить Azure Monitor параметры диагностики, которые автоматически создают журналы (в формате JSON) в долгосрочные расположения. Дополнительные сведения об этом параметре см. в разделе ниже. 
 
-Вы можете отключить создание файлов журнала, установив для параметра `logging_collector` значение OFF. Если вы используете Azure Monitor параметры диагностики, рекомендуется отключить создание файла журнала. Такая конфигурация снизит влияние дополнительного ведения журнала на производительность.
+Вы можете отключить создание файлов журнала, установив для параметра значение `logging_collector` Off. Если вы используете Azure Monitor параметры диагностики, рекомендуется отключить создание файла журнала. Такая конфигурация снизит влияние дополнительного ведения журнала на производительность.
 
 ## <a name="resource-logs"></a>Журналы ресурсов
 
@@ -82,6 +81,7 @@ ms.locfileid: "82131221"
 ```
 AzureDiagnostics
 | where LogicalServerName_s == "myservername"
+| where Category == "PostgreSQLLogs"
 | where TimeGenerated > ago(1d) 
 ```
 
@@ -114,7 +114,7 @@ AzureDiagnostics
 | errorLevel | Уровень ведения журнала, например: LOG, ERROR, NOTICE |
 | Сообщение | Первичное сообщение журнала | 
 | Домен | Версия сервера, например: postgres 10 |
-| Описание | Второстепенное сообщение журнала (если применимо) |
+| Подробный сведения | Второстепенное сообщение журнала (если применимо) |
 | ColumnName | Имя столбца (если применимо) |
 | SchemaName | Имя схемы (если применимо) |
 | DatatypeName | Имя типа данных (если применимо) |

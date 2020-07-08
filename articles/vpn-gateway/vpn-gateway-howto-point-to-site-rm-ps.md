@@ -5,15 +5,14 @@ titleSuffix: Azure VPN Gateway
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/15/2020
 ms.author: cherylmc
-ms.openlocfilehash: 49fbdf4a4090350cc0a6a5a1b938621b3cb08632
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 3a17b56d3abed30ccb495fd9111ff1299165175c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76045084"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84988079"
 ---
 # <a name="configure-a-point-to-site-vpn-connection-to-a-vnet-using-native-azure-certificate-authentication-powershell"></a>Настройка VPN-подключения типа "точка — сеть" к виртуальной сети с помощью собственной аутентификации Azure на основе сертификата: PowerShell
 
@@ -56,7 +55,7 @@ ms.locfileid: "76045084"
   * **Диапазон адресов подсети шлюза: 192.168.200.0/24.** 
 * **Пул адресов VPN-клиента: 172.16.201.0/24.**<br>VPN-клиенты, подключающиеся к виртуальной сети с помощью этого подключения типа "точка — сеть", получают IP-адреса из пула адресов VPN-клиента.
 * **Подписка**. Если у вас есть несколько подписок, убедитесь, что используется правильная.
-* **Группа ресурсов: TestRG**.
+* **Группа ресурсов: TestRG**
 * **Расположение: Восточная часть США**
 * **DNS-сервер: IP-адрес** DNS-сервера, который нужно использовать для разрешения имен. (необязательно).
 * **Имя шлюза: Vnet1GW**.
@@ -408,7 +407,7 @@ Set-AzVirtualNetworkGateway -VirtualNetworkGateway $Gateway -VpnClientAddressPoo
 
 [!INCLUDE [Point-to-Site FAQ](../../includes/vpn-gateway-faq-p2s-azurecert-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения о виртуальных машинах см. [здесь](https://docs.microsoft.com/azure/). Дополнительные сведения о сетях и виртуальных машинах см. в статье [Azure и Linux: обзор сетей виртуальных машин](../virtual-machines/linux/azure-vm-network-overview.md).
 
 Дополнительные сведения об устранении неполадок подключения "точка — сеть" см. в руководстве [Устранение неполадок подключения типа "точка — сеть" Azure](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md).

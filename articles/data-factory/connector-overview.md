@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: jingwang
 ms.reviewer: craigg
-ms.openlocfilehash: 623ee15c5071fdc7a36677481e98872b8c2bd562
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: f9e6c8dc7438e05f960504b2cacee7fc987adf70
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81410411"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84022387"
 ---
 # <a name="azure-data-factory-connector-overview"></a>Обзор соединителя фабрики данных Azure
+
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Фабрика данных Azure поддерживает следующие хранилища данных и форматы посредством копирования, потока данных, поиска, получения метаданных и удаления действий. Щелкните каждое хранилище данных, чтобы узнать о поддерживаемых возможностях и соответствующих конфигурациях.
@@ -25,7 +25,7 @@ ms.locfileid: "81410411"
 
 [!INCLUDE [Connector overview](../../includes/data-factory-v2-connector-overview.md)]
 
-## <a name="supported-file-formats"></a>Поддерживаемые форматы файлов
+## <a name="supported-file-formats"></a>Поддерживаемые типы файлов
 
 [!INCLUDE [data-factory-v2-file-formats](../../includes/data-factory-v2-file-formats.md)]
 

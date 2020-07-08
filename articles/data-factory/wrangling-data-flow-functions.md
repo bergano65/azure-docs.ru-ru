@@ -7,18 +7,20 @@ ms.reviewer: gamal
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/01/2019
-ms.openlocfilehash: 0a0947a5e2b57f728023b0f923428814b3e439ec
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
-ms.translationtype: MT
+ms.openlocfilehash: e63c3f329cb9c1fd5ca91274540f5145c3ad098a
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82626706"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85921545"
 ---
 # <a name="transformation-functions-in-wrangling-data-flow"></a>Функции преобразования в потоке данных структурирование
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Поток данных структурирование в фабрике данных Azure позволяет выполнять динамическую подготовку данных и структурирование в масштабе облака. Поток данных структурирование интегрируется с [Power Query Online](https://docs.microsoft.com/powerquery-m/power-query-m-reference) и делает функции Power Query M доступными для структурирование данных с помощью выполнения Spark. 
+
+> [!NOTE]
+> Поток данных структурирование в настоящее время доступных в общедоступной предварительной версии
 
 В настоящее время не все функции Power Query M поддерживаются для структурирование данных, несмотря на то, что они доступны во время разработки. При построении потоков данных структурирование вам будет предложено следующее сообщение об ошибке, если функция не поддерживается:
 
@@ -39,7 +41,7 @@ ms.locfileid: "82626706"
 
 * Равенство и неравенство
 * Сравнения чисел, текста и дат (но не даты и времени)
-* Числовые данные, например [Number. четный](https://docs.microsoft.com/powerquery-m/number-iseven)/,[четные](https://docs.microsoft.com/powerquery-m/number-iseven)
+* Числовые данные, например [Number. четный](https://docs.microsoft.com/powerquery-m/number-iseven), / [четные](https://docs.microsoft.com/powerquery-m/number-iseven)
 * Текстовое вложение с использованием [Text. Contains](https://docs.microsoft.com/powerquery-m/text-contains), [Text. StartsWith](https://docs.microsoft.com/powerquery-m/text-startswith)или [Text. EndsWith](https://docs.microsoft.com/powerquery-m/text-endswith)
 * Диапазоны дат, включая все функции "Исин' [Date](https://docs.microsoft.com/powerquery-m/date-functions)". 
 * Сочетания этих операторов с операторами AND, OR и not
@@ -55,7 +57,7 @@ ms.locfileid: "82626706"
 * Большинство стандартных, научных и тригонометрических числовых функций (всех функций в рамках [операций](https://docs.microsoft.com/powerquery-m/number-functions#operations), [округления](https://docs.microsoft.com/powerquery-m/number-functions#rounding)и [тригонометрических](https://docs.microsoft.com/powerquery-m/number-functions#trigonometry) , *за исключением* Number. факториал, Number. перестановок и числа. сочетаний)
 * Замена (замещаемый[. реплацетекст](https://docs.microsoft.com/powerquery-m/replacer-replacetext), [Place. реплацевалуе](https://docs.microsoft.com/powerquery-m/replacer-replacevalue), [Text. Replace](https://docs.microsoft.com/powerquery-m/text-replace), [Text. Replace](https://docs.microsoft.com/powerquery-m/text-remove))
 * Извлечение позиционированного текста ([Text. поситионоф](https://docs.microsoft.com/powerquery-m/text-positionof), [Text. length](https://docs.microsoft.com/powerquery-m/text-length), [Text. Start](https://docs.microsoft.com/powerquery-m/text-start), [Text. end](https://docs.microsoft.com/powerquery-m/text-end), [Text. Ближний](https://docs.microsoft.com/powerquery-m/text-middle), [Text. реплацеранже](https://docs.microsoft.com/powerquery-m/text-replacerange), [Text. ремоверанже](https://docs.microsoft.com/powerquery-m/text-removerange))
-* Основное форматирование текста ([Text. Lower](https://docs.microsoft.com/powerquery-m/text-lower), [Text. Upper](https://docs.microsoft.com/powerquery-m/text-upper), [Text. Trim](https://docs.microsoft.com/powerquery-m/text-trim)/[Начало](https://docs.microsoft.com/powerquery-m/text-trimstart)/[,](https://docs.microsoft.com/powerquery-m/text-trimend) [Text. падстарт](https://docs.microsoft.com/powerquery-m/text-padstart)/[End](https://docs.microsoft.com/powerquery-m/text-padend), [Text. Reverse](https://docs.microsoft.com/powerquery-m/text-reverse))
+* Основное форматирование текста ([Text. Lower](https://docs.microsoft.com/powerquery-m/text-lower), [Text. Upper](https://docs.microsoft.com/powerquery-m/text-upper), [Text. Trim](https://docs.microsoft.com/powerquery-m/text-trim) / [Начало](https://docs.microsoft.com/powerquery-m/text-trimstart) / [End](https://docs.microsoft.com/powerquery-m/text-trimend), [Text. падстарт](https://docs.microsoft.com/powerquery-m/text-padstart) / [End](https://docs.microsoft.com/powerquery-m/text-padend), [Text. Reverse](https://docs.microsoft.com/powerquery-m/text-reverse))
 * Функции даты и времени ([Дата. день](https://docs.microsoft.com/powerquery-m/date-day), [Дата. месяц](https://docs.microsoft.com/powerquery-m/date-month), [Дата. год,](https://docs.microsoft.com/powerquery-m/date-year) [время. час](https://docs.microsoft.com/powerquery-m/time-hour), [время. минута](https://docs.microsoft.com/powerquery-m/time-minute), [время. секунд](https://docs.microsoft.com/powerquery-m/time-second), [Дата. DayOfWeek](https://docs.microsoft.com/powerquery-m/date-dayofweek), [Date. DayOfYear](https://docs.microsoft.com/powerquery-m/date-dayofyear), [Date. дайсинмонс](https://docs.microsoft.com/powerquery-m/date-daysinmonth))
 * Выражения if (но ветви должны иметь совпадающие типы)
 * Фильтры строк в качестве логического столбца

@@ -6,10 +6,9 @@ author: TimothyMothra
 ms.author: tilee
 ms.date: 09/16/2019
 ms.openlocfilehash: 626a8c96fdc247db174e2cbcd2e5c99cec43d2ea
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81770967"
 ---
 # <a name="deploy-azure-monitor-application-insights-agent-for-on-premises-servers"></a>Развертывание агента Application Insights Azure Monitor для локальных серверов
@@ -22,11 +21,11 @@ ms.locfileid: "81770967"
 Данные телеметрии отправляются в портал Azure, где можно [отслеживать](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) приложение.
 
 > [!NOTE]
-> Модуль в настоящее время поддерживает инструментирование без кодирования для веб-приложений .NET, размещенных в IIS. Используйте пакет SDK для инструментирования приложений ASP.NET Core, Java и Node. js.
+> Модуль в настоящее время поддерживает инструментирование без кодирования для веб-приложений .NET, размещенных в IIS. Используйте пакет SDK для инструментирования приложений ASP.NET Core, Java и Node.js.
 
 ## <a name="powershell-gallery"></a>Коллекция PowerShell
 
-Application Insights агент расположен здесь: https://www.powershellgallery.com/packages/Az.ApplicationMonitor.
+Application Insights агент расположен здесь: https://www.powershellgallery.com/packages/Az.ApplicationMonitor .
 
 ![Коллекция PowerShell](https://img.shields.io/powershellgallery/v/Az.ApplicationMonitor.svg?color=Blue&label=Current%20Version&logo=PowerShell&style=for-the-badge)
 
@@ -50,7 +49,7 @@ Application Insights агент расположен здесь: https://www.pow
 - [Известные проблемы](status-monitor-v2-troubleshoot.md#known-issues)
 
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 - Поддерживает ли агент Application Insights установку прокси-серверов?
 

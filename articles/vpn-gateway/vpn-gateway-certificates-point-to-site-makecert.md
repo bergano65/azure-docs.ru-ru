@@ -4,15 +4,14 @@ description: Создание самозаверяющего корневого 
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 09/05/2018
 ms.author: cherylmc
-ms.openlocfilehash: ad2ab31e6771efc54238d5747863fa2a9bb2f356
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: d7903dc7f614d16380626f27579363b1529665cc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75833973"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84988123"
 ---
 # <a name="generate-and-export-certificates-for-point-to-site-connections-using-makecert"></a>Создание и экспорт сертификатов для подключений типа "точка — сеть" с помощью MakeCert
 
@@ -27,7 +26,7 @@ ms.locfileid: "75833973"
 Ниже приведены инструкции по созданию самозаверяющего сертификата с помощью MakeCert. Они не зависят от модели развертывания. Они подходят как для модели с использованием диспетчера ресурсов, так и для классической модели.
 
 1. Скачайте и установите [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968(v=vs.85).aspx).
-2. После установки служебную программу makecert.exe обычно можно найти по такому пути: C:\Program Files (x86)\Windows Kits\10\bin\<arch>. Однако возможно, что она была установлена в другое место. Откройте командную строку от имени администратора и перейдите в расположение служебной программы MakeCert. Вы можете использовать следующий пример, чтобы указать правильное расположение:
+2. После установки можно найти служебную программу makecert.exe по указанному пути: "C:\Program Files (x86) \Windows Kits\10\bin \<arch> ". Однако возможно, что она была установлена в другое место. Откройте командную строку от имени администратора и перейдите в расположение служебной программы MakeCert. Вы можете использовать следующий пример, чтобы указать правильное расположение:
 
    ```cmd
    cd C:\Program Files (x86)\Windows Kits\10\bin\x64
@@ -77,7 +76,7 @@ ms.locfileid: "75833973"
 
 См. инструкции по [установке сертификата клиента](point-to-site-how-to-vpn-client-install-azure-cert.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Продолжайте настраивать параметры конфигурации типа "точка-сеть". 
 

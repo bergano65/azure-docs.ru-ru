@@ -5,12 +5,11 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/10/2020
 ms.topic: article
-ms.openlocfilehash: 2e843216bf973033868e75c027b11d27ddfe2e93
-ms.sourcegitcommit: 0690ef3bee0b97d4e2d6f237833e6373127707a7
-ms.translationtype: HT
+ms.openlocfilehash: 3207ffca6fd0fbc943f4a2873b8b6c9029d565af
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83757472"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84022800"
 ---
 # <a name="server-side-performance-queries"></a>Запросы данных о производительности на стороне сервера
 
@@ -18,7 +17,7 @@ ms.locfileid: "83757472"
 
 Наибольшее влияние на производительность отрисовки оказывают входные данные модели. Сведения о настройке входных данных см. в статье [Настройка преобразования модели](../../how-tos/conversion/configure-model-conversion.md).
 
-Производительность приложений на стороне клиента также может быть узким местом. Для подробного анализа производительности на стороне клиента рекомендуется ознакомиться со статьей [Создание трассировок производительности на стороне клиента](../../how-tos/performance-tracing.md).
+Производительность приложений на стороне клиента также может быть узким местом. Для глубокого анализа производительности на стороне клиента рекомендуется использовать [:::no-loc text="performance trace":::](../../how-tos/performance-tracing.md) .
 
 ## <a name="clientserver-timeline"></a>Временная шкала клиента и сервера
 

@@ -4,20 +4,18 @@ description: По этой схеме обучения приступайте к
 services: dns
 documentationcenter: na
 author: rohinkoul
-manager: KumudD
 ms.service: dns
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/29/2017
 ms.author: rohink
-ms.openlocfilehash: 073e84ece11f6817bfe2c5a94735ec6e16dac4fe
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 15396467e92b3e035add03d0d29888558571aa2f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76932371"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84711244"
 ---
 # <a name="configure-reverse-dns-for-services-hosted-in-azure"></a>Настройка обратного просмотра DNS для размещенных в Azure служб
 
@@ -212,7 +210,7 @@ Get-AzureService "contosoapp1"
 Set-AzureService –ServiceName "contosoapp1" –Description "App1 with Reverse DNS" –ReverseDnsFqdn ""
 ```
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 ### <a name="how-much-do-reverse-dns-records-cost"></a>Сколько стоит обратная зона DNS?
 

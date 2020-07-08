@@ -1,7 +1,7 @@
 ---
 title: Интеграция с клиентским приложением с использованием пакета SDK службы "Речь"
 titleSuffix: Azure Cognitive Services
-description: Из этой статьи вы узнаете, как выполнять запросы к опубликованному приложению настраиваемых команд из пакета Speech SDK, выполняемого в приложении UWP.
+description: как выполнять запросы к опубликованному приложению настраиваемых команд из пакета Speech SDK, выполняемого в приложении UWP.
 services: cognitive-services
 author: xiaojul
 manager: yetian
@@ -10,21 +10,20 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: 6aa63c49328848ca707e938dada6ce3af9f75694
-ms.sourcegitcommit: fdaad48994bdb9e35cdd445c31b4bac0dd006294
-ms.translationtype: MT
+ms.openlocfilehash: 1d84646fcb6769b7489cc0e03085e95fc47ef56c
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85414371"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86027636"
 ---
 # <a name="integrate-with-a-client-application-using-speech-sdk"></a>Интеграция с клиентским приложением с помощью речевого пакета SDK
 
-Из этой статьи вы узнаете, как выполнять запросы к опубликованному приложению настраиваемых команд из пакета Speech SDK, выполняемого в приложении UWP. Чтобы установить подключение к приложению с пользовательскими командами, выполните следующие действия.
+Из этой статьи вы узнаете, как выполнять запросы к опубликованному приложению настраиваемых команд из пакета Speech SDK, выполняемого в приложении UWP. Чтобы установить подключение к приложению настраиваемых команд, вам потребуется:
 
 - Публикация приложения настраиваемых команд и получение идентификатора приложения (идентификатор приложения)
 - Создание клиентского приложения универсальная платформа Windows (UWP) с помощью речевого пакета SDK, позволяющего взаимодействовать с приложением пользовательских команд.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для выполнения этой статьи требуется приложение с пользовательскими командами. Если вы еще не создали приложение с пользовательскими командами, это можно сделать, следуя кратким руководствам:
 > [!div class = "checklist"]
@@ -32,13 +31,19 @@ ms.locfileid: "85414371"
 
 Вам также потребуется:
 > [!div class = "checklist"]
-> * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
+> * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) или более поздней версии. Это руководством основано на Visual Studio 2019.
 > * Ключ подписки Azure для служб "Речь". [Получите его бесплатно](get-started.md) или создайте его на [портал Azure](https://portal.azure.com)
 > * [Включение устройства для разработки](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
 
 ## <a name="step-1-publish-custom-commands-application"></a>Шаг 1. Публикация приложения настраиваемых команд
 
-1. Откройте созданное ранее приложение пользовательских команд и выберите **опубликовать** .
+1. Откройте созданное ранее приложение пользовательских команд.
+1. Перейдите в раздел **Параметры**, выберите **ресурс Luis** .
+1. Если **ресурс прогноза** не назначен, выберите ключ прогнозирования запроса или создайте новый.
+
+    Перед публикацией приложения всегда требуется прогнозный ключ запроса. Дополнительные сведения о ресурсах LUIS см. в статье [Создание ресурса Luis](https://docs.microsoft.com/azure/cognitive-services/luis/luis-how-to-azure-subscription) .
+
+1. Вернитесь к командам редактирования, выберите **опубликовать** .
 
    > [!div class="mx-imgBorder"]
    > ![публикации приложения](media/custom-commands/setup-speech-sdk-publish-application.png)
@@ -131,11 +136,8 @@ ms.locfileid: "85414371"
    using Microsoft.CognitiveServices.Speech.Audio;
    using Microsoft.CognitiveServices.Speech.Dialog;
    using System;
-   using System.Diagnostics;
    using System.IO;
    using System.Text;
-   using Windows.Foundation;
-   using Windows.Storage.Streams;
    using Windows.UI.Xaml;
    using Windows.UI.Xaml.Controls;
    using Windows.UI.Xaml.Media;
@@ -324,7 +326,7 @@ ms.locfileid: "85414371"
    // speech recognition results, and other information.
    //
    // ActivityReceived is the main way your client will receive messages, audio, and events
-   connector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
+   connector.ActivityReceived += (sender, activityReceivedEventArgs) =>
    {
        NotifyUser(
            $"Activity received, hasAudio={activityReceivedEventArgs.HasAudio} activity={activityReceivedEventArgs.Activity}");
@@ -414,7 +416,7 @@ ms.locfileid: "85414371"
 
 1. Выберите **разговор**и говорите в микрофоне устройства фразу на английском языке или предложение. Ваша речь передастся в канал "Речь Direct Line" и преобразуется в текст, который появится в том же окне.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Пошаговое руководство. Отправка действия в клиентское приложение (Предварительная версия)](./how-to-custom-commands-send-activity-to-client.md)

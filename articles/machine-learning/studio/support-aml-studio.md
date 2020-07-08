@@ -5,16 +5,15 @@ description: Получение поддержки и обучение и пре
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: conceptual
+ms.topic: troubleshooting
 author: peterclu
 ms.author: peterlu
 ms.date: 01/18/2019
-ms.openlocfilehash: cd48e97f642402d1c7ff2ff71e7cee67be17f91d
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
-ms.translationtype: MT
+ms.openlocfilehash: 708f337ebc627f863f632a677a2186a9d7fe99f8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82209440"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85213182"
 ---
 # <a name="get-support-and-training-for-azure-machine-learning-studio-classic"></a>Техническая поддержка и обучение для Машинное обучение Azure Studio (классическая модель)
 
@@ -38,7 +37,7 @@ ms.locfileid: "82209440"
 
 + **Техническая поддержка для клиентов Azure**: [Отправка запросов на поддержку и управление ими](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) с помощью портал Azure.
 
-+ **Форум пользователей**: задавайте вопросы, ответьте на вопросы и подключайтесь к другим пользователям на [форуме поддержки машинное обучение Azure Studio (классическая модель) на сайте MSDN](https://aka.ms/aml-forum-studio).
++ **Форум пользователей**: задавать вопросы, отвечать на вопросы и подключаться к другим пользователям на [форуме поддержки машинное обучение Azure Studio (классическая модель)](https://docs.microsoft.com/answers/topics/azure-machine-learning.html).
 
 + **Stack Overflow.** Посетите на сайте [StackOverflow](https://stackoverflow.com/questions/tagged/azure-machine-learning) сообщество службы "Машинное обучение Azure", отмеченное тегом Azure-Machine-Learning.
 

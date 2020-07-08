@@ -10,18 +10,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 10/26/2019
+ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b1ccde2f1f92237978ab4e68acaa26393bbb9d8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: e744adeae55252ec70c8f766db1e29a3898886c7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79261753"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85078116"
 ---
 # <a name="request-access-to-an-access-package-in-azure-ad-entitlement-management"></a>Запрос доступа к пакету Access в управлении назначением Azure AD
 
@@ -35,7 +34,7 @@ ms.locfileid: "79261753"
 
 **Предварительная роль:** Запрашивающей стороны
 
-1. Найдите сообщение электронной почты или бизнес-менеджер, с которым вы работаете. Адрес электронной почты должен содержать ссылку на пакет доступа, к которому потребуется доступ. Ссылка начинается с `myaccess`, включает указание каталога и заканчивается идентификатором пакета доступа.  (Для государственных организаций США вместо этого может использоваться `https://myaccess.microsoft.us` домен.)
+1. Найдите сообщение электронной почты или бизнес-менеджер, с которым вы работаете. Адрес электронной почты должен содержать ссылку на пакет доступа, к которому потребуется доступ. Ссылка начинается с `myaccess` , включает указание каталога и заканчивается идентификатором пакета доступа.  (Для государственных организаций США вместо этого может использоваться домен `https://myaccess.microsoft.us` .)
  
     `https://myaccess.microsoft.com/@<directory_hint>#/access-packages/<access_package_id>`
 
@@ -121,7 +120,7 @@ ms.locfileid: "79261753"
 
 1. Щелкните **журнал запросов** , чтобы подтвердить отмену запроса.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Утверждение или отклонение запросов на доступ](entitlement-management-request-approve.md)
 - [Обработка запросов и уведомления по электронной почте](entitlement-management-process.md)
