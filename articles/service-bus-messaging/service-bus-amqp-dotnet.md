@@ -1,25 +1,14 @@
 ---
 title: Использование служебной шины Azure на платформе .NET с протоколом AMQP 1.0 | Документация Майкрософт
 description: В этой статье описывается, как использовать служебную шину Azure из приложения .NET с помощью AMQP (Улучшенный протокол очереди обмена сообщениями).
-services: service-bus-messaging
-documentationcenter: na
-author: axisc
-manager: timlt
-editor: spelluru
-ms.assetid: 332bcb13-e287-4715-99ee-3d7d97396487
-ms.service: service-bus-messaging
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/24/2020
-ms.author: aschhab
-ms.openlocfilehash: 8157efac5ff1fc135659a84b4f4825ff36307480
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/23/2020
+ms.openlocfilehash: d969607a28759af3b6ee36d79638bb27d0d53808
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80297656"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85340188"
 ---
 # <a name="use-service-bus-from-net-with-amqp-10"></a>Использование служебной шины на платформе .NET с протоколом AMQP 1.0
 
@@ -27,7 +16,7 @@ ms.locfileid: "80297656"
 
 ## <a name="configure-net-applications-to-use-amqp-10"></a>Настройка приложений .NET для использования протокола AMQP 1.0
 
-По умолчанию клиентская библиотеке служебной шины .NET взаимодействует со службой служебной шины, используя специализированный протокол на базе SOAP. Чтобы использовать протокол AMQP 1.0 вместо протокола по умолчанию, необходимо явно настроить строку подключения служебной шины, как описано в следующем разделе. Помимо этих изменений, код приложения остается без изменений при использовании AMQP 1.0.
+По умолчанию клиентская библиотека .NET служебной шины взаимодействует со службой служебной шины с помощью протокола AMQP. Можно также явно указать AMQP в качестве типа транспорта, как показано в следующем разделе. 
 
 Текущий выпуск содержит некоторые функции интерфейса API, не поддерживаемые при использовании AMQP. Эти неподдерживаемые функции перечислены в разделе [Различия в поведении](#behavioral-differences). Кроме того, при использовании AMQP отличается значение некоторых дополнительных параметров конфигурации.
 
@@ -76,17 +65,17 @@ ms.locfileid: "80297656"
 | double |double |Значение AMQP |
 | Decimal |decimal128 |Значение AMQP |
 | char |char |Значение AMQP |
-| DateTime |TIMESTAMP |Значение AMQP |
+| Дата и время |TIMESTAMP |Значение AMQP |
 | Guid |uuid |Значение AMQP |
 | byte[] |binary |Значение AMQP |
-| строка |строка |Значение AMQP |
+| string |string |Значение AMQP |
 | System.Collections.IList |list |Значение AMQP. В коллекции могут содержаться только элементы, которые определены в этой таблице. |
 | System.Array |массиве |Значение AMQP. В коллекции могут содержаться только элементы, которые определены в этой таблице. |
 | System.Collections.IDictionary |карта |Значение AMQP. В коллекции могут содержаться только элементы, которые определены в этой таблице. Примечание: поддерживаются только строковые ключи. |
 | URI |Описанный тип string (см. таблицу ниже) |Значение AMQP |
 | DateTimeOffset |Описанный тип long (см. таблицу ниже) |Значение AMQP |
 | TimeSpan |Описанный тип long (см. таблицу ниже) |Значение AMQP |
-| Поток |binary |Данные AMQP (может быть несколько). Разделы данных содержат необработанные байты из объекта Stream. |
+| STREAM |binary |Данные AMQP (может быть несколько). Разделы данных содержат необработанные байты из объекта Stream. |
 | Другой объект |binary |Данные AMQP (может быть несколько). Содержит сериализованные двоичные данные объекта, который использует DataContractSerializer или предоставленный приложением сериализатор. |
 
 | Тип .NET | Сопоставленный описанный тип AMQP | Примечания |
@@ -107,9 +96,9 @@ ms.locfileid: "80297656"
 
 [Интерфейсы API .NET](/dotnet/api/) предоставляют несколько параметров для управления поведением протокола AMQP:
 
-* **[MessageReceiver. PrefetchCount](/dotnet/api/microsoft.servicebus.messaging.messagereceiver.prefetchcount?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_MessageReceiver_PrefetchCount)**: управляет начальным кредитом, примененным к ссылке. Значение по умолчанию — 0.
+* **[MessageReceiver. PrefetchCount](/dotnet/api/microsoft.servicebus.messaging.messagereceiver.prefetchcount?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_MessageReceiver_PrefetchCount)**: управляет начальным кредитом, примененным к ссылке. Значение по умолчанию равно 0.
 * **[MessagingFactorySettings.AmqpTransportSettings.MaxFrameSize](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.maxframesize?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_Amqp_AmqpTransportSettings_MaxFrameSize)** определяет максимальный размер кадра AMQP, доступный во время согласования при открытии подключения. Значение по умолчанию: 65 536 байт.
-* **[MessagingFactorySettings. AmqpTransportSettings. BatchFlushInterval](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.batchflushinterval?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_Amqp_AmqpTransportSettings_BatchFlushInterval)**: если передачи являются пакетными, это значение определяет максимальную задержку отправки расстановки. По умолчанию наследуется отправителями и получателями. Отдельные отправители или получатели могут переопределить значение по умолчанию, составляющее 20 миллисекунд.
+* **[MessagingFactorySettings.AmqpTransportSettings.Batчфлушинтервал](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.batchflushinterval?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_Amqp_AmqpTransportSettings_BatchFlushInterval)**: если передачи являются пакетными, это значение определяет максимальную задержку отправки расстановки. По умолчанию наследуется отправителями и получателями. Отдельные отправители или получатели могут переопределить значение по умолчанию, составляющее 20 миллисекунд.
 * **[MessagingFactorySettings. AmqpTransportSettings. усесслстреамсекурити](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.usesslstreamsecurity?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_Amqp_AmqpTransportSettings_UseSslStreamSecurity)**: определяет, устанавливаются ли подключения AMQP через TLS-соединение. Значение по умолчанию — **true**.
 
 ## <a name="next-steps"></a>Дальнейшие шаги

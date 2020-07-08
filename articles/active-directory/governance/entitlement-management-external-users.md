@@ -10,18 +10,18 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 03/22/2020
+ms.date: 06/18/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af0f68ca9520c1715463212da80aaabed48f8269
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8576088069f419872db57b063163e8d9b1968b33
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80128700"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85338213"
 ---
 # <a name="govern-access-for-external-users-in-azure-ad-entitlement-management"></a>Управление доступом для внешних пользователей в управлении назначениями Azure AD
 
@@ -103,13 +103,13 @@ ms.locfileid: "80128700"
 
 - Убедитесь, что параметры уровня сайта обеспечивают гостевой доступ (те же параметры, что и в списке выше). Дополнительные сведения см. [в разделе Включение или отключение внешнего общего доступа для сайта](https://docs.microsoft.com/sharepoint/change-external-sharing-site).
 
-### <a name="review-your-office-365-group-sharing-settings"></a>Проверка параметров общего доступа к группе Office 365
+### <a name="review-your-microsoft-365-group-sharing-settings"></a>Проверка параметров общего доступа к группе Microsoft 365
 
-- Если вы хотите включить группы Office 365 в пакеты доступа для внешних пользователей, убедитесь, что для параметра **Разрешить пользователям добавлять новые гости в организацию** выбрано значение **включено** , чтобы разрешить гостевой доступ. Дополнительные сведения см. [в статье Управление гостевым доступом к группам Office 365](https://docs.microsoft.com/office365/admin/create-groups/manage-guest-access-in-groups?view=o365-worldwide#manage-groups-guest-access).
+- Если вы хотите включить группы Microsoft 365 в пакеты доступа для внешних пользователей, убедитесь, что для параметра **Разрешить пользователям добавлять новые гости в организацию** выбрано значение **включено** , чтобы разрешить гостевой доступ. Дополнительные сведения см. [в статье Управление гостевыми доступом к группам Microsoft 365](https://docs.microsoft.com/office365/admin/create-groups/manage-guest-access-in-groups?view=o365-worldwide#manage-groups-guest-access).
 
-- Если требуется, чтобы внешние пользователи могли получить доступ к сайту SharePoint Online и ресурсам, связанным с группой Office 365, убедитесь, что включен внешний общий доступ SharePoint Online. Дополнительные сведения см. [в разделе Включение или отключение внешнего общего доступа](https://docs.microsoft.com/sharepoint/turn-external-sharing-on-or-off#change-the-organization-level-external-sharing-setting).
+- Если требуется, чтобы внешние пользователи могли получить доступ к сайту SharePoint Online и ресурсам, связанным с группой Microsoft 365, убедитесь, что включен внешний общий доступ SharePoint Online. Дополнительные сведения см. [в разделе Включение или отключение внешнего общего доступа](https://docs.microsoft.com/sharepoint/turn-external-sharing-on-or-off#change-the-organization-level-external-sharing-setting).
 
-- Сведения о настройке гостевой политики для групп Office 365 на уровне каталога в PowerShell см. в статье [пример. Настройка гостевой политики для групп на уровне каталога](../users-groups-roles/groups-settings-cmdlets.md#example-configure-guest-policy-for-groups-at-the-directory-level).
+- Сведения о настройке гостевой политики для групп Microsoft 365 на уровне каталога в PowerShell см. в разделе [пример. Настройка гостевой политики для групп на уровне каталога](../users-groups-roles/groups-settings-cmdlets.md#example-configure-guest-policy-for-groups-at-the-directory-level).
 
 ### <a name="review-your-teams-sharing-settings"></a>Обзор параметров совместного использования команд
 
@@ -125,7 +125,7 @@ ms.locfileid: "80128700"
 
 1. В меню слева в разделе " **Управление** назначением" щелкните " **Параметры**".
 
-1. Щелкните **Правка**.
+1. Нажмите кнопку **Изменить**.
 
     ![Параметры для управления жизненным циклом внешних пользователей](./media/entitlement-management-external-users/settings-external-users.png)
 
@@ -149,4 +149,4 @@ ms.locfileid: "80128700"
 
 - [Добавление подключенной организации](entitlement-management-organization.md)
 - [Для пользователей, не наличныхся в вашем каталоге](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory)
-- [Устранение неполадок](entitlement-management-troubleshoot.md)
+- [Устранение проблем](entitlement-management-troubleshoot.md)

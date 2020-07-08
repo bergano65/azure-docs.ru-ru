@@ -1,25 +1,15 @@
 ---
 title: Библиотеки управления служебной шины Azure | Документация Майкрософт
 description: В этой статье объясняется, как использовать библиотеки управления служебной шины Azure для динамической инициализации пространств имен и сущностей служебной шины.
-services: service-bus-messaging
-documentationcenter: na
-author: axisc
-manager: timlt
-editor: spelluru
-ms.assetid: ''
-ms.service: service-bus-messaging
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 01/24/2020
-ms.author: aschhab
-ms.openlocfilehash: e1531d9b70860f498a3e38305f26eb862c9513f3
-ms.sourcegitcommit: 0fda81f271f1a668ed28c55dcc2d0ba2bb417edd
+ms.date: 06/23/2020
+ms.openlocfilehash: 042edcd1851f86dd2a660673bc87884b68410bfb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82901485"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85341721"
 ---
 # <a name="service-bus-management-libraries"></a>Библиотеки управления служебной шины
 
@@ -166,5 +156,5 @@ namespace SBusADApp
 > [!IMPORTANT]
 > Полный пример см. в [примере управления .NET на сайте GitHub](https://github.com/Azure-Samples/service-bus-dotnet-management/). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Справочник по API Microsoft.Azure.Management.ServiceBus](/dotnet/api/Microsoft.Azure.Management.ServiceBus)

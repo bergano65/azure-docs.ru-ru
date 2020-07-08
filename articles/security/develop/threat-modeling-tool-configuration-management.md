@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: 811feb26e492efeb505f43202bee484d3edfb8a5
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 391851927d03a557483afa2656e315b28c613956
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83658605"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85322633"
 ---
 # <a name="security-frame-configuration-management--mitigations"></a>Механизм безопасности. Управление конфигурацией | Устранение рисков 
 | Продукт или служба | Статья |
@@ -288,7 +288,7 @@ this.Response.Headers["X-Content-Type-Options"] = "nosniff";
 | **Этап SDL**               | Сборка |  
 | **Применимые технологии** | SQL Azure, локальные |
 | **Атрибуты**              | Отсутствуют, версия SQL: 12 |
-| **Справочные материалы**              | [Обзор правил брандмауэра базы данных SQL Azure](https://azure.microsoft.com/documentation/articles/sql-database-firewall-configure/), [Настройка брандмауэра Windows для доступа к компоненту Database Engine](https://msdn.microsoft.com/library/ms175043) |
+| **Справочные материалы**              | [Как настроить брандмауэр базы данных SQL Azure](https://azure.microsoft.com/documentation/articles/sql-database-firewall-configure/), [настроить брандмауэр Windows для доступа к ядро СУБД](https://msdn.microsoft.com/library/ms175043) |
 | **Шаги** | Системы брандмауэров предотвращают несанкционированный доступ к ресурсам компьютера. Чтобы получить доступ к экземпляру ядра СУБД SQL Server через брандмауэр, необходимо настроить брандмауэр на компьютере под управлением SQL Server. |
 
 ## <a name="ensure-that-only-trusted-origins-are-allowed-if-cors-is-enabled-on-aspnet-web-api"></a><a id="cors-api"></a>Настройте доступ к веб-API ASP.NET с включенной технологией CORS только из доверенных источников

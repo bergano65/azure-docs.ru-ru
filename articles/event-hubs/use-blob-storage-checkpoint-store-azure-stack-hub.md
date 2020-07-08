@@ -1,19 +1,14 @@
 ---
 title: Использование хранилища BLOB-объектов в качестве хранилища контрольных точек в концентраторе Azure Stack (Предварительная версия)
 description: В этой статье описывается, как использовать хранилище BLOB-объектов в качестве хранилища контрольных точек в концентраторах событий в концентраторе Azure Stack (Предварительная версия).
-services: event-hubs
-documentationcenter: na
-author: spelluru
-ms.service: event-hubs
 ms.topic: how-to
-ms.date: 03/18/2020
-ms.author: spelluru
-ms.openlocfilehash: 2938099383c32eac493e4b4bb620f03c76ca5c44
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/23/2020
+ms.openlocfilehash: 0990941191827c66cd51d70216c75e106d0448fd
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82023671"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85322364"
 ---
 # <a name="use-blob-storage-as-checkpoint-store---event-hubs-on-azure-stack-hub-preview"></a>Использование хранилища BLOB-объектов в качестве хранилища контрольных точек — концентраторов событий в концентраторе Azure Stack (Предварительная версия)
 Если вы используете хранилище BLOB-объектов Azure в качестве хранилища контрольных точек в среде, которая поддерживает другую версию пакета SDK для большого двоичного объекта хранилища, чем те, которые обычно доступны в Azure, необходимо использовать код, чтобы изменить версию API службы хранилища до определенной версии, поддерживаемой этой средой. Например, если вы используете [концентраторы событий в Azure Stack Hub версии 2002](https://docs.microsoft.com/azure-stack/user/event-hubs-overview), самая высокая доступная версия для службы хранилища — версия 2017-11-09. В этом случае необходимо использовать код для настройки API службы хранилища до версии 2017-11-09. Пример назначения конкретной версии API хранилища см. в следующих примерах на сайте GitHub: 
@@ -34,7 +29,7 @@ The value for one of the HTTP headers is not in the correct format
 
 
 ## <a name="sample-error-message-in-python"></a>Пример сообщения об ошибке в Python
-Для Python ошибка `azure.core.exceptions.HttpResponseError` передается обработчику `on_error(partition_context, error)` ошибок. `EventHubConsumerClient.receive()` Но метод `receive()` не вызывает исключение. `print(error)`выводит следующие сведения об исключении:
+Для Python ошибка `azure.core.exceptions.HttpResponseError` передается обработчику ошибок `on_error(partition_context, error)` `EventHubConsumerClient.receive()` . Но метод `receive()` не вызывает исключение. `print(error)`выводит следующие сведения об исключении:
 
 ```bash
 The value for one of the HTTP headers is not in the correct format.

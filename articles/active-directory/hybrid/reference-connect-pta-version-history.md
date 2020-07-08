@@ -12,12 +12,12 @@ ms.date: 04/14/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 75b127f8429650d46af9f171ed7ff03692f1499e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3e5e6afef70ee3d4f4d84cb6b867a916ae57da5a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81379907"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85356310"
 ---
 # <a name="azure-ad-pass-through-authentication-agent-version-release-history"></a>Агент сквозной аутентификации Azure AD: журнал выпусков версий 
  
@@ -30,7 +30,7 @@ ms.locfileid: "81379907"
 
 ## <a name="1517420"></a>1.5.1742.0
 ### <a name="release-status"></a>Состояние выпуска: 
-04/09/2020: выпущено для скачивания
+09.04.2020: выпущена версия для скачивания.
 
 ### <a name="new-features-and-improvements"></a>Новые функции и внесенные улучшения
 
@@ -84,6 +84,6 @@ ms.locfileid: "81379907"
 ### <a name="new-features-and-improvements"></a>Новые функции и внесенные улучшения 
 - Общедоступная версия агента сквозной аутентификации Azure AD 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Вход пользователей с помощью сквозной проверки подлинности Azure Active Directory](how-to-connect-pta.md)

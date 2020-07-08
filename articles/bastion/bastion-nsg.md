@@ -7,18 +7,18 @@ ms.service: bastion
 ms.topic: conceptual
 ms.date: 04/20/2020
 ms.author: charwen
-ms.openlocfilehash: 0188f9bc1c7c0e8d7fed9f590d078085b175614f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e4782213b38ad9e265cc66c3073dc5f357c50561
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81732193"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85321658"
 ---
 # <a name="working-with-nsg-access-and-azure-bastion"></a>Работа с NSG Access и Azure бастиона
 
-При работе с Azure бастиона можно использовать группы безопасности сети (группы безопасности сети). Дополнительные сведения см. в разделе [группы безопасности](../virtual-network/security-overview.md). 
+При работе с Azure бастиона можно использовать группы безопасности сети (группы безопасности сети). Дополнительные сведения см. в разделе [группы безопасности](../virtual-network/security-overview.md).
 
-![Architecture](./media/bastion-nsg/nsg-architecture.png)
+:::image type="content" source="./media/bastion-nsg/figure-1.png" alt-text="NSG":::
 
 На этой схеме:
 
@@ -32,7 +32,7 @@ ms.locfileid: "81732193"
 
 В этом разделе показан сетевой трафик между пользователем и Azure бастиона, а также для целевых виртуальных машин в виртуальной сети.
 
-### <a name="azurebastionsubnet"></a><a name="apply"></a>азуребастионсубнет
+### <a name="azurebastionsubnet"></a><a name="apply"></a>AzureBastionSubnet
 
 Azure бастиона развертывается специально для ***азуребастионсубнет***.
 

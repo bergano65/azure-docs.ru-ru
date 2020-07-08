@@ -1,24 +1,14 @@
 ---
 title: Что такое ретранслятор Azure? | Документы Майкрософт
 description: В этой статье представлен обзор службы Azure Relay, позволяющей разрабатывать облачные приложения, использующие локальные службы, которые работают в корпоративной сети, без необходимости открывать подключения брандмауэра или вносить значительные изменения в инфраструктуру сети.
-services: service-bus-relay
-author: spelluru
-manager: ''
-editor: ''
-ms.assetid: 1e3e971d-2a24-4f96-a88a-ce3ea2b1a1cd
-ms.service: service-bus-relay
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 11/13/2018
-ms.author: spelluru
-ms.openlocfilehash: 964a472a5c0a6350090f83755747a12e89a1650e
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.date: 06/23/2020
+ms.openlocfilehash: 0c9a67bcad47ad2e7284bcf6e70914d2ffb06a8c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83211636"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85322646"
 ---
 # <a name="what-is-azure-relay"></a>Что такое ретранслятор Azure?
 Служба Azure Relay позволяет безопасно предоставлять службы, выполняющиеся в корпоративной сети в общедоступном облаке. Для этого вам не нужно открывать порт брандмауэра или вносить значительные изменения в инфраструктуру корпоративной сети. 
@@ -40,7 +30,7 @@ ms.locfileid: "83211636"
 4. Затем служба ретрансляции *ретранслирует* данные в локальную службу через созданный двунаправленный сокет, выделенный клиенту. Клиенту не нужно настраивать прямое подключение к локальной службе. Ему не нужно знать расположение службы. При работе в локальной службе не нужно открывать в брандмауэре какие-либо входящие порты.
 
 
-## <a name="features"></a>Компоненты 
+## <a name="features"></a>Функции 
 Ретранслятор Azure предоставляет две функции:
 
 - [Гибридные подключения](#hybrid-connections) — использует открытые стандартные веб-сокеты, позволяющие использовать сценарии с несколькими платформами.
@@ -85,7 +75,7 @@ ms.locfileid: "83211636"
 8. Шлюз перенаправляет все сообщения от ожидающего клиента клиенту, отправляющему его. 
 9. Шлюз перенаправляет все сообщения от отправляющего клиента к прослушивающему клиенту.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Начало работы с WebSockets .NET](relay-hybrid-connections-dotnet-get-started.md)
 * [Начало работы с HTTP-запросами .NET](relay-hybrid-connections-http-requests-dotnet-get-started.md)
 * [Начало работы с соединениями WebSocket узлов](relay-hybrid-connections-node-get-started.md)

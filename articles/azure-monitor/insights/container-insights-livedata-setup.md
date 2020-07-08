@@ -3,12 +3,13 @@ title: Настройка Azure Monitor для динамических данн
 description: В этой статье описывается, как настроить представление журналов контейнеров (stdout/stderr) и событий в режиме реального времени без использования kubectl с Azure Monitor для контейнеров.
 ms.topic: conceptual
 ms.date: 02/14/2019
-ms.openlocfilehash: f19071ca642cd229cbd7d49b4eab90c970672eee
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: references_regions
+ms.openlocfilehash: 9d60836af350e9af99355db9a7cc140a949d1492
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79275377"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85337947"
 ---
 # <a name="how-to-set-up-the-live-data-preview-feature"></a>Настройка функции "Интерактивные данные (Предварительная версия)"
 
@@ -21,30 +22,27 @@ ms.locfileid: "79275377"
     - AKS, настроенный с привязкой к роли кластера ** [клустермониторингусер](https://docs.microsoft.com/rest/api/aks/managedclusters/listclustermonitoringusercredentials?view=azurermps-5.2.0)**
 - AKS с поддержкой единого входа Azure Active Directory (AD) на основе SAML
 
-Для этих инструкций требуется административный доступ к кластеру Kubernetes, а при настройке на использование Azure Active Directory (AD) для проверки подлинности пользователей — административный доступ к Azure AD.  
+Для этих инструкций требуется административный доступ к кластеру Kubernetes, а при настройке на использование Azure Active Directory (AD) для проверки подлинности пользователей — административный доступ к Azure AD.
 
 В этой статье объясняется, как настроить проверку подлинности для управления доступом к функции "Интерактивные данные (Предварительная версия)" из кластера.
 
 - Кластер AKS с включенным управлением доступом на основе ролей (RBAC)
-- Azure Active Directory интегрированный кластер AKS. 
+- Azure Active Directory интегрированный кластер AKS.
 
 >[!NOTE]
->Кластеры AKS, включенные в качестве [частных кластеров](https://azure.microsoft.com/updates/aks-private-cluster/) , не поддерживаются этой функцией. Эта функция зависит от прямого доступа к API Kubernetes через прокси-сервер из браузера. Включение сетевой безопасности для блокировки интерфейса API Kubernetes от этого прокси-сервера приведет к блокировке этого трафика. 
-
->[!NOTE]
->Эта функция доступна во всех регионах Azure, включая Azure для Китая. Сейчас она недоступна в Azure для государственных организаций США.
+>Кластеры AKS, включенные в качестве [частных кластеров](https://azure.microsoft.com/updates/aks-private-cluster/) , не поддерживаются этой функцией. Эта функция зависит от прямого доступа к API Kubernetes через прокси-сервер из браузера. Включение сетевой безопасности для блокировки интерфейса API Kubernetes от этого прокси-сервера приведет к блокировке этого трафика.
 
 ## <a name="authentication-model"></a>Модель проверки подлинности
 
-Функции интерактивных данных (Предварительная версия) используют API Kubernetes, идентичный средству `kubectl` командной строки. Конечные точки API Kubernetes используют самозаверяющий сертификат, который браузер не сможет проверить. Эта функция использует внутренний прокси-сервер для проверки сертификата со службой AKS, гарантируя, что трафик является доверенным.
+Функции интерактивных данных (Предварительная версия) используют API Kubernetes, идентичный `kubectl` средству командной строки. Конечные точки API Kubernetes используют самозаверяющий сертификат, который браузер не сможет проверить. Эта функция использует внутренний прокси-сервер для проверки сертификата со службой AKS, гарантируя, что трафик является доверенным.
 
-Портал Azure предложит проверить учетные данные входа для Azure Active Directory кластера и перенаправить вас на настройку регистрации клиента во время создания кластера (и повторно настроить в этой статье). Такое поведение аналогично процессу проверки подлинности, `kubectl`требуемому. 
+Портал Azure предложит проверить учетные данные входа для Azure Active Directory кластера и перенаправить вас на настройку регистрации клиента во время создания кластера (и повторно настроить в этой статье). Такое поведение аналогично процессу проверки подлинности, требуемому `kubectl` .
 
 >[!NOTE]
->Авторизация в кластере управляется Kubernetes и моделью безопасности, с помощью которой она настроена. Пользователям, обращающимся к этой функции, требуется разрешение на загрузку конфигурации Kubernetes (*kubeconfig*), `az aks get-credentials -n {your cluster name} -g {your resource group}`аналогичное запуску. Этот файл конфигурации содержит маркер авторизации и проверки подлинности для **роли пользователя кластера Azure Kubernetes Service**в случае кластеров с поддержкой RBAC и AKS без разрешения RBAC. Он содержит сведения об Azure AD и сведения о регистрации клиента, когда AKS включается с помощью единого входа на основе SAML Azure Active Directory (AD).
+>Авторизация в кластере управляется Kubernetes и моделью безопасности, с помощью которой она настроена. Пользователям, обращающимся к этой функции, требуется разрешение на загрузку конфигурации Kubernetes (*kubeconfig*), аналогичное запуску `az aks get-credentials -n {your cluster name} -g {your resource group}` . Этот файл конфигурации содержит маркер авторизации и проверки подлинности для **роли пользователя кластера Azure Kubernetes Service**в случае кластеров с поддержкой RBAC и AKS без разрешения RBAC. Он содержит сведения об Azure AD и сведения о регистрации клиента, когда AKS включается с помощью единого входа на основе SAML Azure Active Directory (AD).
 
 >[!IMPORTANT]
->Пользователям этих функций требуется [роль пользователя кластера Azure Kubernetes](../../azure/role-based-access-control/built-in-roles.md#azure-kubernetes-service-cluster-user-role permissions) в кластере, чтобы скачать `kubeconfig` и использовать эту функцию. Пользователям **не** требуется доступ участника к кластеру для использования этой функции. 
+>Пользователям этих функций требуется [роль пользователя кластера Azure Kubernetes](../../azure/role-based-access-control/built-in-roles.md#azure-kubernetes-service-cluster-user-role permissions) в кластере, чтобы скачать `kubeconfig` и использовать эту функцию. Пользователям **не** требуется доступ участника к кластеру для использования этой функции.
 
 ## <a name="using-clustermonitoringuser-with-rbac-enabled-clusters"></a>Использование Клустермониторингусер с кластерами с поддержкой RBAC
 
@@ -64,50 +62,50 @@ AKS выпустил эту новую привязку роли в январе
 
 Ниже приведены шаги по настройке привязки роли кластера на основе этого YAML-файла с шаблоном конфигурации.
 
-1. Скопируйте и вставьте YAML-файл, а затем сохраните его как LogReaderRBAC.yaml.  
+1. Скопируйте и вставьте YAML-файл, а затем сохраните его как LogReaderRBAC.yaml.
 
     ```
-    apiVersion: rbac.authorization.k8s.io/v1 
-    kind: ClusterRole 
-    metadata: 
-       name: containerHealth-log-reader 
-    rules: 
-        - apiGroups: ["", "metrics.k8s.io", "extensions", "apps"] 
-          resources: 
-             - "pods/log" 
-             - "events" 
-             - "nodes" 
-             - "pods" 
-             - "deployments" 
-             - "replicasets" 
-          verbs: ["get", "list"] 
-    --- 
-    apiVersion: rbac.authorization.k8s.io/v1 
-    kind: ClusterRoleBinding 
-    metadata: 
-       name: containerHealth-read-logs-global 
-    roleRef: 
-       kind: ClusterRole 
-       name: containerHealth-log-reader 
-       apiGroup: rbac.authorization.k8s.io 
-    subjects: 
-    - kind: User 
-      name: clusterUser 
-      apiGroup: rbac.authorization.k8s.io 
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRole
+    metadata:
+       name: containerHealth-log-reader
+    rules:
+        - apiGroups: ["", "metrics.k8s.io", "extensions", "apps"]
+          resources:
+             - "pods/log"
+             - "events"
+             - "nodes"
+             - "pods"
+             - "deployments"
+             - "replicasets"
+          verbs: ["get", "list"]
+    ---
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+    metadata:
+       name: containerHealth-read-logs-global
+    roleRef:
+       kind: ClusterRole
+       name: containerHealth-log-reader
+       apiGroup: rbac.authorization.k8s.io
+    subjects:
+    - kind: User
+      name: clusterUser
+      apiGroup: rbac.authorization.k8s.io
     ```
 
-2. Чтобы обновить конфигурацию, выполните следующую команду: `kubectl apply -f LogReaderRBAC.yaml`.
+2. Чтобы обновить конфигурацию, выполните следующую команду: `kubectl apply -f LogReaderRBAC.yaml` .
 
->[!NOTE] 
+>[!NOTE]
 > Если вы применили предыдущую версию `LogReaderRBAC.yaml` файла к кластеру, обновите ее, скопировав и вставляя новый код, показанный на шаге 1 выше, а затем выполните команду, показанную на шаге 2, чтобы применить ее к кластеру.
 
-## <a name="configure-ad-integrated-authentication"></a>Настройка встроенной проверки подлинности Active Directory 
+## <a name="configure-ad-integrated-authentication"></a>Настройка встроенной проверки подлинности Active Directory
 
 В кластере AKS, настроенном для использования Azure Active Directory (AD) для проверки подлинности пользователей, используются учетные данные для входа пользователя, обращающегося к этой функции. В этой конфигурации вы можете войти в кластер AKS с помощью токена проверки подлинности Azure AD.
 
-Чтобы разрешить портал Azure перенаправить страницы авторизации в качестве доверенного URL-адреса перенаправления, необходимо повторно настроить регистрацию клиента Azure AD. Пользователи из Azure AD получают доступ непосредственно к тем же конечным точкам API Kubernetes через **клустерролес** и **клустерролебиндингс**. 
+Чтобы разрешить портал Azure перенаправить страницы авторизации в качестве доверенного URL-адреса перенаправления, необходимо повторно настроить регистрацию клиента Azure AD. Пользователи из Azure AD получают доступ непосредственно к тем же конечным точкам API Kubernetes через **клустерролес** и **клустерролебиндингс**.
 
-Дополнительные сведения о настройке расширенной безопасности в Kubernetes см. в [документации по Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/rbac/). 
+Дополнительные сведения о настройке расширенной безопасности в Kubernetes см. в [документации по Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
 
 >[!NOTE]
 >Если вы создаете новый кластер с поддержкой RBAC, см. статью [интеграция Azure Active Directory со службой Kubernetes Azure](../../aks/azure-ad-integration.md) и выполните действия по настройке проверки подлинности Azure AD. В ходе действий по созданию клиентского приложения в этом разделе приводится описание двух URL-адресов перенаправления, которые необходимо создать для Azure Monitor для контейнеров, соответствующих указанным в шаге 3 ниже.
@@ -116,24 +114,24 @@ AKS выпустил эту новую привязку роли в январе
 
 1. Выберите регистрацию клиента для кластера Kubernetes в Azure AD в разделе **Azure Active Directory > регистрация приложений** в портал Azure.
 
-2. На панели слева выберите **Проверка подлинности** . 
+2. На панели слева выберите **Проверка подлинности** .
 
-3. Добавьте два URL-адреса перенаправления в этот список в качестве типов **веб-** приложений. Первый базовый URL-адрес должен иметь `https://afd.hosting.portal.azure.net/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html` значение, а второй базовый URL-адрес `https://monitoring.hosting.portal.azure.net/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html`должен иметь значение.
+3. Добавьте два URL-адреса перенаправления в этот список в качестве типов **веб-** приложений. Первый базовый URL-адрес должен иметь значение `https://afd.hosting.portal.azure.net/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html` , а второй базовый URL-адрес должен иметь значение `https://monitoring.hosting.portal.azure.net/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html` .
 
     >[!NOTE]
-    >Если вы используете эту функцию в Azure для Китая, то первым базовым URL-адресом должно быть `https://afd.hosting.azureportal.chinaloudapi.cn/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html` , а со вторым базовым URL-адресом должно быть. `https://monitoring.hosting.azureportal.chinaloudapi.cn/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html` 
-    
+    >Если вы используете эту функцию в Azure для Китая, то первым базовым URL-адресом должно быть, `https://afd.hosting.azureportal.chinaloudapi.cn/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html` а со вторым базовым URL-адресом должно быть `https://monitoring.hosting.azureportal.chinaloudapi.cn/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html` .
+
 4. После регистрации URL-адресов перенаправления в разделе **неявное предоставление**выберите параметры **маркеры доступа** и **маркеры идентификации** , а затем сохраните изменения.
 
 >[!NOTE]
 >Настройка проверки подлинности с помощью Azure Active Directory для единого входа может быть выполнена только во время первоначального развертывания нового кластера AKS. Настроить единый вход для кластера AKS, который уже развернут, невозможно.
-  
+
 >[!IMPORTANT]
 >Если вы настроили Azure AD для проверки подлинности пользователя с помощью обновленного URI, очистите кэш браузера, чтобы убедиться, что обновленный маркер проверки подлинности скачан и применен.
 
 ## <a name="grant-permission"></a>Предоставление разрешения
 
-Каждой учетной записи Azure AD должно быть предоставлено разрешение на доступ к соответствующим API-интерфейсам в Kubernetes для доступа к функции интерактивных данных (Предварительная версия). Действия по предоставлению учетной записи Azure Active Directory похожи на шаги, описанные в разделе [Проверка подлинности KUBERNETES RBAC](#configure-kubernetes-rbac-authorization) . Перед применением шаблона конфигурации YAML к кластеру замените **клустерусер** в **клустерролебиндинг** на нужного пользователя. 
+Каждой учетной записи Azure AD должно быть предоставлено разрешение на доступ к соответствующим API-интерфейсам в Kubernetes для доступа к функции интерактивных данных (Предварительная версия). Действия по предоставлению учетной записи Azure Active Directory похожи на шаги, описанные в разделе [Проверка подлинности KUBERNETES RBAC](#configure-kubernetes-rbac-authorization) . Перед применением шаблона конфигурации YAML к кластеру замените **клустерусер** в **клустерролебиндинг** на нужного пользователя.
 
 >[!IMPORTANT]
 >Если пользователь, которому вы предоставляете привязку RBAC для, находится в том же клиенте Azure AD, назначьте разрешения на основе userPrincipalName. Если пользователь находится в другом клиенте Azure AD, запросите и используйте свойство objectId.

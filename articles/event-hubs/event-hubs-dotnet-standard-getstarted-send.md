@@ -1,24 +1,14 @@
 ---
 title: Отправка и получение событий из концентраторов событий Azure с помощью .NET (старый)
 description: В этой статье представлено пошаговое руководство по созданию приложения .NET Core, которое отправляет и получает события в концентраторы событий Azure, используя старый пакет Microsoft. Azure. EventHubs.
-services: event-hubs
-documentationcenter: na
-author: spelluru
-editor: ''
-ms.assetid: ''
-ms.service: event-hubs
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 02/11/2020
-ms.author: spelluru
-ms.openlocfilehash: 2a3b14acad4990059a27201b7e1e6b9e93123194
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/23/2020
+ms.openlocfilehash: bd8476c89fea94a9d1b4a101841c11137d4dd5be
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82025175"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85320794"
 ---
 # <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-net-core-microsoftazureeventhubs"></a>Отправка событий или получение событий из концентраторов событий Azure с помощью .NET Core (Microsoft. Azure. EventHubs)
 В этом кратком руководстве показано, как отправлять события и получать события из концентратора событий с помощью библиотеки **Microsoft. Azure. EventHubs** .NET Core.
@@ -45,7 +35,7 @@ ms.locfileid: "82025175"
 
 ### <a name="create-a-console-application"></a>Создание консольного приложения
 
-Запустите среду Visual Studio. В меню **файл** выберите пункт **создать**, а затем выберите пункт **проект**. Создайте консольное приложение .NET Core.
+Запустите среду Visual Studio. В меню **Файл** последовательно выберите пункты **Создать** и **Проект**. Создайте консольное приложение .NET Core.
 
 ![Новый проект](./media/event-hubs-dotnet-standard-getstarted-send/netcoresnd.png)
 
@@ -201,13 +191,13 @@ ms.locfileid: "82025175"
 ## <a name="receive-events"></a>Получение событий
 В этом разделе показано, как создать консольное приложение .NET Core, которое получает сообщения из концентратора событий с помощью [узла обработчика событий](event-hubs-event-processor-host.md). [EventProcessorHost](event-hubs-event-processor-host.md) представляет собой класс .NET, который упрощает прием событий от концентраторов событий путем управления постоянными контрольными точками и одновременно принимает сообщения от этих концентраторов событий в параллельном режиме. С помощью класса EventProcessorHost можно разделить события между несколькими получателями даже в том случае, если они размещены в разных узлах. В этом примере показано, как использовать EventProcessorHost для одного получателя.
 > [!NOTE]
-> Вы можете скачать это краткое руководство в виде примера из [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleEphReceiver), заменить `EventHubConnectionString` строки `EventHubName`и `StorageAccountName`, `StorageAccountKey`, и `StorageContainerName` со значениями концентратора событий и запустить его. Или следуйте инструкциям из этого руководства, чтобы создать собственное решение.
+> Вы можете скачать это краткое руководство в виде примера из [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleEphReceiver), заменить `EventHubConnectionString` `EventHubName` строки и, `StorageAccountName` , `StorageAccountKey` и `StorageContainerName` со значениями концентратора событий и запустить его. Или следуйте инструкциям из этого руководства, чтобы создать собственное решение.
 
 [!INCLUDE [event-hubs-create-storage](../../includes/event-hubs-create-storage.md)]
 
 ### <a name="create-a-console-application"></a>Создание консольного приложения
 
-Запустите среду Visual Studio. В меню **файл** выберите пункт **создать**, а затем выберите пункт **проект**. Создайте консольное приложение .NET Core.
+Запустите среду Visual Studio. В меню **Файл** последовательно выберите пункты **Создать** и **Проект**. Создайте консольное приложение .NET Core.
 
 ![Новый проект](./media/event-hubs-dotnet-standard-getstarted-receive-eph/netcorercv.png)
 
@@ -231,7 +221,7 @@ ms.locfileid: "82025175"
     using System.Threading.Tasks;
     ```
 
-3. Реализуйте интерфейс `IEventProcessor`. Замените все содержимое класса `SimpleEventProcessor` следующим кодом:
+3. Реализовать интерфейс `IEventProcessor`. Замените все содержимое класса `SimpleEventProcessor` следующим кодом:
 
     ```csharp
     public class SimpleEventProcessor : IEventProcessor
@@ -375,7 +365,7 @@ ms.locfileid: "82025175"
     
     В этих примерах используется старая библиотека **Microsoft. Azure. EventHubs** , но вы можете легко обновить ее, используя последнюю библиотеку **Azure. Messaging. EventHubs** . Чтобы переместить пример из старой библиотеки в новую, ознакомьтесь с [руководством по миграции из Microsoft. Azure. EventHubs в Azure. Messaging. EventHubs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md).
 - [EventProcessorHost](event-hubs-event-processor-host.md)
-- [Функции и терминология в концентраторах событий Azure](event-hubs-features.md)
-- [Центры событий: часто задаваемые вопросы](event-hubs-faq.md)
+- [Функции и терминология в Центрах событий Azure](event-hubs-features.md)
+- [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
 
 

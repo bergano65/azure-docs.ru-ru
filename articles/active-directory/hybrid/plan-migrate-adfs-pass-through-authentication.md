@@ -7,17 +7,17 @@ manager: daveba
 ms.reviewer: martincoetzer
 ms.service: active-directory
 ms.workload: identity
-ms.topic: article
-ms.date: 05/31/2019
+ms.topic: conceptual
+ms.date: 05/29/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 13a5fc216abc890c19ce3a2d75335431fe2a6799
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 626bc12b01428b90de1cbafe28bd7493e7ed1743
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79528648"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85356650"
 ---
 # <a name="migrate-from-federation-to-pass-through-authentication-for-azure-active-directory"></a>Переход с федеративной на сквозную проверку подлинности для Azure Active Directory
 
@@ -25,6 +25,9 @@ ms.locfileid: "79528648"
 
 > [!NOTE]
 > Для изменения метода проверки подлинности требуется планирование, тестирование и потенциальное время простоя. [Промежуточное развертывание](how-to-connect-staged-rollout.md) предоставляет альтернативный способ тестирования и постепенного перехода с Федерации на облачную проверку подлинности с использованием сквозной проверки подлинности.
+> 
+> Если вы планируете использовать поэтапное развертывание, не забудьте отключить поэтапный выпуск после того, как вы закончите вырезание.  Дополнительные сведения см. [в статье переход к облачной проверке подлинности с помощью промежуточного развертывания](how-to-connect-staged-rollout.md) .
+
 
 ## <a name="prerequisites-for-migrating-to-pass-through-authentication"></a>Предварительные требования для перехода на сквозную проверку подлинности
 
@@ -125,7 +128,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Перед преобразованием федеративных удостоверений в управляемые внимательно изучите сведения о текущем использовании служб AD FS для Azure AD, Office 365 и других приложений (отношения доверия проверяющих сторон). В частности, рассмотрите описанные в приведенной ниже таблице сценарии.
 
-| Если | То |
+| If | Следующее действие |
 |-|-|
 | Вы планируете продолжить использование AD FS с другими приложениями (не считая Azure AD и Office 365). | После преобразования доменов вы будете использовать одновременно AD FS и Azure AD. Необходимо учитывать взаимодействие с пользователем. В некоторых случаях пользователям потребуется дважды пройти проверку подлинности: один раз — для входа в Azure AD (после чего они смогут использовать единый вход в другие приложения, такие как Office 365), а второй раз — для входа в приложение, которое сохраняет отношения доверия проверяющей стороны с AD FS. |
 | Экземпляр AD FS поддерживает большое количество настроек и использует параметры из файла onload.js (возможно, вы изменяли в нем параметры входа в систему, чтобы пользователи могли ввести имя пользователя только в формате **SamAccountName** вместо формата имени участника-пользователя; или ваша организация использует на странице входа фирменную символику и оформление). Файл onload.js невозможно дублировать в Azure AD. | Прежде чем продолжать работу, проверьте, можно ли в Azure AD обеспечить соответствие вашим текущим требованиям к настройке. Дополнительные сведения и рекомендации см. в разделах о фирменной символике AD FS и настройке параметров AD FS.|
@@ -157,7 +160,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Дополнительные сведения см. в статье [Практическое руководство. Планирование реализации гибридного присоединения к Azure Active Directory](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup).
 
-#### <a name="branding"></a>Фирменная символика
+#### <a name="branding"></a>Branding
 
 Если в вашей организации [настроены страницы входа AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/ad-fs-user-sign-in-customization) для отображения соответствующих сведений, рекомендуем аналогичным образом [настроить страницы входа Azure AD](https://docs.microsoft.com/azure/active-directory/customize-branding).
 
@@ -223,7 +226,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Чтобы устройства использовали эффективный единый вход, необходимо добавить URL-адрес Azure AD в параметры зоны интрасети пользователей с помощью групповой политики Active Directory.
 
-По умолчанию веб-браузеры автоматически вычисляют соответствующую зону (Интернет или интрасеть) по URL-адресу. Например, **HTTP\/\/: contoso/** сопоставляется с зоной интрасети и **http:\/\/Intranet.contoso.com** сопоставляется с зоной Интернета (так как URL-адрес содержит точку). Браузеры отправляют билеты Kerberos в облачную конечную точку (например, на URL-адрес Azure AD), только если ее URL-адрес добавлен явным образом в зону интрасети в браузере.
+По умолчанию веб-браузеры автоматически вычисляют соответствующую зону (Интернет или интрасеть) по URL-адресу. Например, **http: \/ \/ contoso/** сопоставляется с зоной интрасети и **http: \/ \/ Intranet.contoso.com** сопоставляется с зоной Интернета (так как URL-адрес содержит точку). Браузеры отправляют билеты Kerberos в облачную конечную точку (например, на URL-адрес Azure AD), только если ее URL-адрес добавлен явным образом в зону интрасети в браузере.
 
 Выполните соответствующие действия, чтобы [развернуть](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-sso-quick-start) необходимые изменения на устройствах.
 
@@ -269,7 +272,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Далее разверните дополнительные методы проверки подлинности.
 
-1. В портал Azure перейдите в раздел **Azure Active Directory** > **Azure AD Connect**, а затем выберите **сквозная проверка подлинности**.
+1. В портал Azure перейдите в раздел **Azure Active Directory**  >  **Azure AD Connect**, а затем выберите **сквозная проверка подлинности**.
 2. На странице **Сквозная проверка подлинности** нажмите кнопку **Скачать**.
 3. На странице **Скачивание агента** щелкните **Accept terms and download** (Принять условия и скачать).
 
@@ -331,7 +334,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Затем разверните дополнительные агенты проверки подлинности.
 
-1. В портал Azure перейдите в раздел **Azure Active Directory** > **Azure AD Connect**, а затем выберите **сквозная проверка подлинности**.
+1. В портал Azure перейдите в раздел **Azure Active Directory**  >  **Azure AD Connect**, а затем выберите **сквозная проверка подлинности**.
 2. На странице **Сквозная проверка подлинности** нажмите кнопку **Скачать**. 
 3. На странице **Скачивание агента** щелкните **Accept terms and download** (Принять условия и скачать).
  
@@ -359,7 +362,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
    Set-MsolDomainAuthentication -Authentication Managed -DomainName <domain name>
    ```
  
-3. На портале Azure AD выберите **Azure Active Directory** > **Azure AD Connect**.
+3. На портале Azure AD выберите **Azure Active Directory**  >  **Azure AD Connect**.
 4. Завершив преобразование всех федеративных доменов, проверьте следующие параметры:
    * Для параметра **Федерация** должно быть установлено значение **Отключено**.
    * Для параметра **Эффективный единый вход** должно быть установлено значение **Включено**.
@@ -378,7 +381,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 Чтобы проверить сквозную проверку подлинности, сделайте следующее.
 
 1. Откройте Internet Explorer в режиме InPrivate, чтобы служба эффективного единого входа не выполнила вход автоматически.
-2. Перейдите на страницу входа в Office 365 ([https://portal.office.com](https://portal.office.com/)).
+2. Перейдите на страницу входа в Office 365 ( [https://portal.office.com](https://portal.office.com/) ).
 3. Введите имя участника-пользователя и щелкните **Далее**. Это должно быть имя участника-пользователя того гибридного пользователя, который был синхронизирован с локального экземпляра Active Directory и ранее использовал федеративную проверку подлинности. Откроется страница для ввода имени пользователя и пароля:
 
    ![Снимок экрана со страницей входа для ввода имени пользователя](media/plan-migrate-adfs-pass-through-authentication/migrating-adfs-to-pta_image27.png)
@@ -442,7 +445,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Дополнительные сведения см. в разделе о [смене ключе расшифровки Kerberos компьютерной учетной записи AZUREADSSOACC](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-sso-faq).
 
-## <a name="monitoring-and-logging"></a>Мониторинг и ведение журнала
+## <a name="monitoring-and-logging"></a>Мониторинг и ведение журналов
 
 Отслеживайте работу серверов, на которых выполняются агенты проверки подлинности, чтобы поддерживать доступность решения. Помимо общих счетчиков производительности сервера, агенты проверки подлинности предоставляют объекты производительности, которые помогают изучать статистику и ошибки проверки подлинности.
 
@@ -452,7 +455,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Дополнительные сведения см. в статье об [устранении неполадок при сквозной проверке подлинности Azure Active Directory](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-troubleshoot-Pass-through-authentication).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Изучите [принципы проектирования для Azure AD Connect](plan-connect-design-concepts.md).
 * Выберите [подходящую проверку подлинности](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn).

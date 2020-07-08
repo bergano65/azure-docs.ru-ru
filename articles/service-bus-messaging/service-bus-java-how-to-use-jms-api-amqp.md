@@ -1,25 +1,15 @@
 ---
 title: Использование AMQP с API службы сообщений Java & служебной шины Azure
 description: Как использовать службу сообщений Java (JMS) со Служебной шиной Azure и Расширенным протоколом управления очередью сообщений (AMQP) 1.0.
-services: service-bus-messaging
-documentationcenter: java
-author: axisc
-editor: spelluru
-ms.assetid: be766f42-6fd1-410c-b275-8c400c811519
-ms.service: service-bus-messaging
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: Java
 ms.topic: article
-ms.date: 10/22/2019
-ms.author: aschhab
+ms.date: 06/23/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: cd06838abbb69af5684fdea18c42f6a8f95ffe2f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ccea6175d0baec56b609538d15c32892bb2edff0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77371253"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85341729"
 ---
 # <a name="use-the-java-message-service-jms-with-azure-service-bus-and-amqp-10"></a>Использование службы сообщений Java (JMS) с служебной шиной Azure и AMQP 1,0
 В этой статье объясняется, как использовать функции обмена сообщениями служебной шины Azure (очереди и разделы публикации и подписки) из приложений Java с помощью популярного стандарта API службы сообщений Java (JMS). Есть [сопутствующая статья](service-bus-amqp-dotnet.md) , в которой объясняется, как сделать то же самое с помощью API .NET служебной шины Azure. Эти два руководства можно использовать совместно для изучения обмена сообщениями между различными платформами с помощью AMQP 1.0.
@@ -29,7 +19,7 @@ AMQP 1.0 — это эффективный и надежный протокол 
 Поддержка AMQP 1,0 в служебной шине Azure означает, что вы можете использовать возможности обмена сообщениями в очереди и публикации/подписки через посредника из различных платформ с помощью эффективного двоичного протокола. Кроме того, можно создавать приложения, содержащие компоненты, созданные с использованием разнообразных языков, платформ и операционных систем.
 
 ## <a name="get-started-with-service-bus"></a>Приступая к работе со служебной шиной
-В этом учебнике предполагается, что у вас уже есть пространство имен служебной шины, содержащее очередь с именем `basicqueue`. Если этого не сделать, то можно [создать пространство имен и очередь](service-bus-create-namespace-portal.md) с помощью [портал Azure](https://portal.azure.com). Дополнительные сведения о создании пространства имен и очередей служебной шины см. в статье [Приступая к работе с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md).
+В этом учебнике предполагается, что у вас уже есть пространство имен служебной шины, содержащее очередь с именем `basicqueue` . Если этого не сделать, то можно [создать пространство имен и очередь](service-bus-create-namespace-portal.md) с помощью [портал Azure](https://portal.azure.com). Дополнительные сведения о создании пространства имен и очередей служебной шины см. в статье [Приступая к работе с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md).
 
 > [!NOTE]
 > Секционированные очереди и разделы также поддерживают AMQP. Дополнительные сведения см. в статьях [Секционированные сущности обмена сообщениями](service-bus-partitioning.md) и [Поддержка AMQP 1.0 для секционированных очередей и разделов служебной шины](service-bus-partitioned-queues-and-topics-amqp-overview.md).
@@ -37,7 +27,7 @@ AMQP 1.0 — это эффективный и надежный протокол 
 > 
 
 ## <a name="downloading-the-amqp-10-jms-client-library"></a>Загрузка клиентской библиотеки AMQP 1.0 JMS
-Сведения о том, где загрузить последнюю версию клиентской библиотеки Apache Qpid JMS AMQP 1,0, см. по [https://qpid.apache.org/download.html](https://qpid.apache.org/download.html)адресу.
+Сведения о том, где загрузить последнюю версию клиентской библиотеки Apache Qpid JMS AMQP 1,0, см. по адресу [https://qpid.apache.org/download.html](https://qpid.apache.org/download.html) .
 
 При построении и запуске приложений JMS с использованием служебной шины необходимо добавить следующие 4 JAR-файла из архива распространения Apache Qpid JMS AMQP 1.0 в Java CLASSPATH:
 
@@ -297,7 +287,7 @@ public class JmsQueueQuickstart {
 }
 ```
 
-### <a name="run-the-application"></a>Выполнение приложения
+### <a name="run-the-application"></a>Запуск приложения
 Передайте **Строку подключения** из политики совместного доступа для запуска приложения.
 Ниже приведены следующие данные запуска приложения.
 

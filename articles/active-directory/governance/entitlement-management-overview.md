@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44c8a46c844b9bc4b92702323df18addb207dd6c
-ms.sourcegitcommit: 971a3a63cf7da95f19808964ea9a2ccb60990f64
+ms.openlocfilehash: 2f05fa9f9f31011f04aee0d2bedbcd4c4dad5d39
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85078162"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85338201"
 ---
 # <a name="what-is-azure-ad-entitlement-management"></a>Что собой представляет управление правами Azure AD?
 
@@ -67,13 +67,13 @@ ms.locfileid: "85078162"
  Ниже перечислены типы ресурсов, доступом пользователей к которым можно управлять с помощью управления правами.
 
 - Членство в группах безопасности Azure AD
-- Членство в группах и командах Office 365
+- Членство в группах Microsoft 365 и командах
 - Назначение корпоративных приложений Azure AD, включая приложения SaaS и пользовательские интегрированные приложения, поддерживающие федерацию или единый вход и/или подготовку
 - Членство на сайтах SharePoint Online
 
-Вы также можете контролировать доступ к другим ресурсам, которые используют группы безопасности Azure AD или группы Office 365.  Пример:
+Вы также можете контролировать доступ к другим ресурсам, которые используют группы безопасности Azure AD или группы Microsoft 365.  Пример:
 
-- Вы можете предоставить пользователям лицензии на Microsoft Office 365 с помощью группы безопасности Azure AD в пакете для доступа и настройки [группового лицензирования](../users-groups-roles/licensing-groups-assign.md) для этой группы.
+- Вы можете предоставить лицензии пользователям для Microsoft 365 с помощью группы безопасности Azure AD в пакете доступа и настройки [лицензирования на основе групп](../users-groups-roles/licensing-groups-assign.md) для этой группы.
 - Вы можете предоставить пользователям доступ для управления ресурсами Azure с помощью группы безопасности Azure AD в пакете для доступа и путем создания [назначения роли Azure](../../role-based-access-control/role-assignments-portal.md) для этой группы.
 
 ## <a name="how-do-i-control-who-gets-access"></a>Как проконтролировать, кто получает доступ?
