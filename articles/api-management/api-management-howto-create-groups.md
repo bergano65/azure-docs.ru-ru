@@ -14,10 +14,9 @@ ms.topic: article
 ms.date: 02/13/2018
 ms.author: apimpm
 ms.openlocfilehash: 182f0ea93ddfb2ab64de1c15b36958537fa5431f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75430713"
 ---
 # <a name="how-to-create-and-use-groups-to-manage-developer-accounts-in-azure-api-management"></a>Как создавать и использовать группы для управления учетными записями разработчика в службе управления Azure API
@@ -38,7 +37,7 @@ ms.locfileid: "75430713"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Выполните задачи из статьи [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
 
@@ -85,7 +84,7 @@ ms.locfileid: "75430713"
 В этом разделе показано, как связать группы с их элементами.
 
 1. В левой части экрана выберите вкладку **Группы**.
-2. Выберите **Элементы**.
+2. Выберите пункт **Участники**.
 
     ![Добавление элементов](./media/api-management-howto-create-groups/groups005.png)
 3. Нажмите кнопку **+ Добавить** и выберите элемент.

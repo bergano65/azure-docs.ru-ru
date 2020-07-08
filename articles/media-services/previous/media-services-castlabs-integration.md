@@ -16,10 +16,9 @@ ms.date: 03/14/2019
 ms.author: Juliako
 ms.reviewer: willzhan
 ms.openlocfilehash: 29a344c739d8d99da2e5c81d41a11c601e48022e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74969146"
 ---
 # <a name="using-castlabs-to-deliver-widevine-licenses-to-azure-media-services"></a>Использование castLabs для доставки лицензий Widevine для служб мультимедиа Azure 
@@ -68,7 +67,7 @@ CastLabs и AMS поддерживают формат маркера JWT (веб
 
 В приведенной ниже таблице описан маркер JWT в castLabs. 
 
-| Имя | Описание |
+| name | Описание: |
 | --- | --- |
 | optData |Строка JSON со сведениями о вас. |
 | crt |Строка JSON со сведениями о файле, лицензии на него и правах на его воспроизведение. |
@@ -115,13 +114,13 @@ CastLabs и AMS поддерживают формат маркера JWT (веб
 7. Обновите проигрыватель.
 8. Видео должно воспроизводиться.
 
-## <a name="additional-notes"></a>Дополнительные сведения
+## <a name="additional-notes"></a>Дополнительные замечания
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

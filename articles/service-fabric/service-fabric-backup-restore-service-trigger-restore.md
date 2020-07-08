@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 10/30/2018
 ms.author: aagup
 ms.openlocfilehash: 1737102ee652cc2263bd0a908c1336bc93a6757b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75377911"
 ---
 # <a name="restoring-backup-in-azure-service-fabric"></a>Восстановление резервной копии в Azure Service Fabric
@@ -23,7 +22,7 @@ ms.locfileid: "75377911"
 - **Случай потери данных**: случайное удаление или повреждение службы. Например, администратор ошибочно удаляет службу.
 - **Повреждение данных**: ошибки в службе приводят к повреждению данных. Например, повреждение данных может произойти, когда после обновления кода служба записывает содержащие ошибки данные в надежную коллекцию. В этом случае может потребоваться восстановить код и данные до предыдущего состояния.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Чтобы активировать восстановление, для кластера должна быть включена _служба анализа сбоев (FAS)_.
 - _Служба резервного копирования и восстановления (BRS)_ создает резервную копию.
@@ -201,7 +200,7 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 
     ![Активировать общую папку для восстановления секции][3]
 
-### <a name="data-restore-for-_data-corruption__data-loss_"></a>Восстановление данных для_потери_ данных при _повреждении_/данных
+### <a name="data-restore-for-_data-corruption__data-loss_"></a>Восстановление данных для потери данных при _повреждении_ / _data loss_ данных
 
 В случае _потери_ или _повреждения_ данных можно восстановить секции надежной службы с отслеживанием состояния и Reliable Actors из любой выбранной резервной копии (если они были созданы).
 
@@ -209,7 +208,7 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 
 Выберите резервную копию из выходных данных [GetBackupAPI](service-fabric-backuprestoreservice-quickstart-azurecluster.md#list-backups). В этом сценарии резервная копия в прошлом была создана из того же кластера.
 
-Чтобы активировать восстановление, выберите резервную копию из списка. Для_повреждения данных_ _потери_/данных выберите следующую резервную копию:
+Чтобы активировать восстановление, выберите резервную копию из списка. Для _data loss_ / _повреждения данных_потери данных выберите следующую резервную копию:
 
 ```
 BackupId                : b0035075-b327-41a5-a58f-3ea94b68faa4
@@ -323,7 +322,7 @@ $restoreResponse | Format-List
 - [Справочник по RestorePartition API](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-restorepartition)
 - [Справочник по GetPartitionRestoreProgress API](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getpartitionrestoreprogress)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Основные сведения о настройке периодического резервного копирования](./service-fabric-backuprestoreservice-configure-periodic-backup.md)
 - [Backup restore REST API reference](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)
 

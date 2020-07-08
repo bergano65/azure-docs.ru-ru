@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 09/20/2017
 ms.author: vturecek
 ms.openlocfilehash: 0d59275f25931a11b2d551a2e9eb019838e4c1b3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75433886"
 ---
 # <a name="service-remoting-in-c-with-reliable-services"></a>Удаленное взаимодействие в Reliable Services с помощью C#
@@ -220,7 +219,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 Этот шаг гарантирует, что клиент будет использовать стек версии 2.
 Никаких изменений в проект или службу клиента вносить не требуется. Достаточно выполнить сборку проектов клиента с обновленной сборкой интерфейса.
 
-3. Этот шаг является необязательным. Используйте атрибут прослушивателя версии 2 и обновите службу версии 2.
+3. Это необязательный шаг. Используйте атрибут прослушивателя версии 2 и обновите службу версии 2.
 Этот шаг гарантирует, что служба будет ожидать передачу данных только от прослушивателя версии 2.
 
     ```csharp
@@ -313,7 +312,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 Чтобы обновить версию 1 до версии 2 (с совместимым интерфейсом, или версия 2_1), выполните двухэтапное обновление. Соблюдайте порядок действий в этой процедуре.
 
 > [!NOTE]
-> При обновлении с версии v1 на v2 убедитесь, `Remoting` что пространство имен Обновлено для использования версии 2. Пример: "Microsoft. ServiceFabric. Services. Remoting. v2. FabricTransport. Client"
+> При обновлении с версии v1 на v2 убедитесь, что `Remoting` пространство имен Обновлено для использования версии 2. Пример: "Microsoft. ServiceFabric. Services. Remoting. v2. FabricTransport. Client"
 >
 >
 
@@ -347,7 +346,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 Это гарантирует, что клиент будет использовать стек версии 2_1.
 Никаких изменений в проект или службу клиента вносить не требуется. Достаточно выполнить сборку проектов клиента с обновленной сборкой интерфейса.
 
-3. Этот шаг является необязательным. Удалите из атрибута прослушивателя версии 1 и обновите службу версии 2.
+3. Это необязательный шаг. Удалите из атрибута прослушивателя версии 1 и обновите службу версии 2.
 Этот шаг гарантирует, что служба будет ожидать передачу данных только от прослушивателя версии 2.
 
     ```csharp
@@ -547,7 +546,7 @@ string message = await helloWorldClient.HelloWorldAsync();
       });
       ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Веб-API с OWIN в модели Reliable Services](service-fabric-reliable-services-communication-webapi.md)
 * [WCF-based communication stack for Reliable Services](service-fabric-reliable-services-communication-wcf.md) (Стек взаимодействия для Reliable Services на основе WCF)

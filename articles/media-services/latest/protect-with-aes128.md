@@ -15,10 +15,9 @@ ms.topic: article
 ms.date: 04/21/2019
 ms.author: juliako
 ms.openlocfilehash: 126700e6290650221a9cb9711b22472301409fca
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74974178"
 ---
 # <a name="tutorial-encrypt-video-with-aes-128-and-use-the-key-delivery-service"></a>Учебник. шифрование видео с помощью AES-128 и использование службы доставки ключей
@@ -32,7 +31,7 @@ ms.locfileid: "74974178"
 
 Выходные данные примера этой статьи включают URL-адрес Проигрыватель мультимедиа Azure, URL-адрес манифеста и маркер AES, необходимый для воспроизведения содержимого. В примере задается срок действия маркера JSON Web Token (JWT) равным 1 часу. Можно открыть браузер и вставить полученный URL-адрес, чтобы запустить демонстрационную страницу Проигрывателя мультимедиа Azure с URL-адресом и токеном, который уже указан (в следующем формате: ```https://ampdemo.azureedge.net/?url= {dash Manifest URL} &aes=true&aestoken=Bearer%3D{ JWT Token here}```).
 
-В этом учебнике демонстрируется выполнение следующих действий:
+В этом учебнике описаны следующие процедуры.
 
 > [!div class="checklist"]
 > * Скачайте пример [енкриптвисаес](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithAES) , описанный в этой статье.
@@ -167,11 +166,11 @@ az group delete --name amsResourceGroup
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="additional-notes"></a>Дополнительные сведения
+## <a name="additional-notes"></a>Дополнительные замечания
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Защита с помощью DRM](protect-with-drm.md)

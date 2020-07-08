@@ -7,10 +7,9 @@ author: bwren
 ms.author: bwren
 ms.date: 08/21/2018
 ms.openlocfilehash: 6346055f1169bfa533d5dbfe441ecf27fb0d78a7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75397749"
 ---
 # <a name="splunk-to-azure-monitor-log-query"></a>Запрос журнала в Splunk и Azure Monitor
@@ -21,14 +20,14 @@ ms.locfileid: "75397749"
 
 В следующей таблице сравниваются основные понятия и структуры данных в журналах Splunk и Azure Monitor.
 
- | Концепция  | Splunk | Azure Monitor |  Добавление примечаний
+ | Концепция  | Splunk | Azure Monitor |  Комментировать
  | --- | --- | --- | ---
  | Единица развертывания  | cluster |  cluster |  В Azure Monitor можно выполнять произвольные межкластерные запросы. В Splunk — нет. |
  | Кэши данных |  контейнеры  |  Политики кэширования и хранения |  Определяет период и уровень кэширования данных. Этот параметр напрямую влияет на производительность запросов и затраты на развертывание. |
  | Логическое разделение данных  |  индекс  |  База данных  |  Обеспечивает логическое разделение данных. В обеих реализациях можно объединять и соединять разделы. |
- | Структурированные метаданные событий | Недоступно | table |  Splunk не поддерживает концепцию языка поиска в метаданных событий. Журналы Azure Monitor поддерживают концепцию таблицы со столбцами. Каждый экземпляр события сопоставляется со строкой. |
+ | Структурированные метаданные событий | Н/Д | table |  Splunk не поддерживает концепцию языка поиска в метаданных событий. Журналы Azure Monitor поддерживают концепцию таблицы со столбцами. Каждый экземпляр события сопоставляется со строкой. |
  | Запись данных | event | строка |  Отличается только терминология. |
- | Атрибут записи данных | поле |  столбец |  В Azure Monitor это часть структуры таблицы. В Splunk каждое событие имеет собственный набор полей. |
+ | Атрибут записи данных | поле |  гистограмма |  В Azure Monitor это часть структуры таблицы. В Splunk каждое событие имеет собственный набор полей. |
  | Типы | тип данных |  тип данных |  Типы данных Azure Monitor более явные, так как они задаются в столбцах. Как в Splunk, так и в Log Analytics можно динамически работать с типами данных и находятся примерно одинаковые наборы типов данных, включая поддержку JSON. |
  | Запрос и поиск  | поиск | query |  Основные понятия в Azure Monitor и Splunk практически идентичны. |
  | Время приема событий | Системное время | ingestion_time() |  В Splunk каждое событие получает метку времени индексирования события. В Azure Monitor можно определить политику под названием ingestion_time, предоставляющую системный столбец, на который можно ссылаться с помощью функции ingestion_time(). |
@@ -37,7 +36,7 @@ ms.locfileid: "75397749"
 
 В следующей таблице перечислены функции Azure Monitor, эквивалентные функциям Splunk.
 
-|Splunk | Azure Monitor |Добавление примечаний
+|Splunk | Azure Monitor |Комментировать
 |---|---|---
 |strcat | strcat()| (1) |
 |split  | split() | (1) |
@@ -65,12 +64,12 @@ ms.locfileid: "75397749"
 > [!NOTE]
 > В следующем примере поле Splunk _rule_ сопоставляется с таблицей в Azure Monitor, а метка времени по умолчанию в Splunk — со столбцом Log Analytics _ingestion_time()_.
 
-### <a name="search"></a>Поиск
+### <a name="search"></a>Найти
 В Splunk можно опустить ключевое слово `search` и указать строку без кавычек. В Azure Monitor каждый запрос должен начинаться с `find`, имя столбца должно быть строкой без кавычек, а значение подстановки — строкой в кавычках. 
 
 | |  | |
 |:---|:---|:---|
-| Splunk | **осуществлять** | <code>search Session.Id="c8894ffd-e684-43c9-9125-42adc25cd3fc" earliest=-24h</code> |
+| Splunk | **search** | <code>search Session.Id="c8894ffd-e684-43c9-9125-42adc25cd3fc" earliest=-24h</code> |
 | Azure Monitor | **find** | <code>find Session.Id=="c8894ffd-e684-43c9-9125-42adc25cd3fc" and ingestion_time()> ago(24h)</code> |
 | | |
 
@@ -79,7 +78,7 @@ ms.locfileid: "75397749"
 
 | |  | |
 |:---|:---|:---|
-| Splunk | **осуществлять** | <code>Event.Rule="330009.2" Session.Id="c8894ffd-e684-43c9-9125-42adc25cd3fc" _indextime>-24h</code> |
+| Splunk | **search** | <code>Event.Rule="330009.2" Session.Id="c8894ffd-e684-43c9-9125-42adc25cd3fc" _indextime>-24h</code> |
 | Azure Monitor | **where** | <code>Office_Hub_OHubBGTaskError<br>&#124; where Session_Id == "c8894ffd-e684-43c9-9125-42adc25cd3fc" and ingestion_time() > ago(24h)</code> |
 | | |
 
@@ -90,7 +89,7 @@ ms.locfileid: "75397749"
 | |  | |
 |:---|:---|:---|
 | Splunk | **Глава** | <code>Event.Rule=330009.2<br>&#124; head 100</code> |
-| Azure Monitor | **Размер** | <code>Office_Hub_OHubBGTaskError<br>&#124; limit 100</code> |
+| Azure Monitor | **limit** | <code>Office_Hub_OHubBGTaskError<br>&#124; limit 100</code> |
 | | |
 
 
@@ -101,7 +100,7 @@ ms.locfileid: "75397749"
 | |  | |
 |:---|:---|:---|
 | Splunk | **Глава** |  <code>Event.Rule="330009.2"<br>&#124; sort Event.Sequence<br>&#124; head 20</code> |
-| Azure Monitor | **Вверх** | <code>Office_Hub_OHubBGTaskError<br>&#124; top 20 by Event_Sequence</code> |
+| Azure Monitor | **В начало** | <code>Office_Hub_OHubBGTaskError<br>&#124; top 20 by Event_Sequence</code> |
 | | |
 
 
@@ -113,7 +112,7 @@ ms.locfileid: "75397749"
 | |  | |
 |:---|:---|:---|
 | Splunk | **испытаний** |  <code>Event.Rule=330009.2<br>&#124; eval state= if(Data.Exception = "0", "success", "error")</code> |
-| Azure Monitor | **расширений** | <code>Office_Hub_OHubBGTaskError<br>&#124; extend state = iif(Data_Exception == 0,"success" ,"error")</code> |
+| Azure Monitor | **extend** | <code>Office_Hub_OHubBGTaskError<br>&#124; extend state = iif(Data_Exception == 0,"success" ,"error")</code> |
 | | |
 
 
@@ -135,7 +134,7 @@ Azure Monitor использует `project-rename` оператор для пе
 | |  | |
 |:---|:---|:---|
 | Splunk | **table** |  <code>Event.Rule=330009.2<br>&#124; table rule, state</code> |
-| Azure Monitor | **проект**<br>**project-away** | <code>Office_Hub_OHubBGTaskError<br>&#124; project exception, state</code> |
+| Azure Monitor | **project**<br>**project-away** | <code>Office_Hub_OHubBGTaskError<br>&#124; project exception, state</code> |
 | | |
 
 
@@ -145,8 +144,8 @@ Azure Monitor использует `project-rename` оператор для пе
 
 | |  | |
 |:---|:---|:---|
-| Splunk | **Статистика** |  <code>search (Rule=120502.*)<br>&#124; stats count by OSEnv, Audience</code> |
-| Azure Monitor | **SUMMARIZE** | <code>Office_Hub_OHubBGTaskError<br>&#124; summarize count() by App_Platform, Release_Audience</code> |
+| Splunk | **stats** |  <code>search (Rule=120502.*)<br>&#124; stats count by OSEnv, Audience</code> |
+| Azure Monitor | **summarize** | <code>Office_Hub_OHubBGTaskError<br>&#124; summarize count() by App_Platform, Release_Audience</code> |
 | | |
 
 
@@ -191,7 +190,7 @@ Azure Monitor использует `project-rename` оператор для пе
 | |  | |
 |:---|:---|:---|
 | Splunk | **поля** |  <code>Event.Rule=330009.2<br>&#124; fields App.Version, App.Platform</code> |
-| Azure Monitor | **facets** | <code>Office_Excel_BI_PivotTableCreate<br>&#124; facet by App_Branch, App_Version</code> |
+| Azure Monitor | **аспекты** | <code>Office_Excel_BI_PivotTableCreate<br>&#124; facet by App_Branch, App_Version</code> |
 | | |
 
 
@@ -209,6 +208,6 @@ Azure Monitor использует `project-rename` оператор для пе
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Пройдите урок по [написанию запросов к журналу в Azure Monitor](get-started-queries.md).

@@ -15,16 +15,15 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 0c2a9612fab6c685cbc690aa9bbc12d1c7b7b746
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74978208"
 ---
 # <a name="configure-content-protection-policies-by-using-the-azure-portal"></a>Настройка политик защиты содержимого с помощью портала Azure
 
 > [!NOTE]
-> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в статье [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
+> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 >
 
  Службы мультимедиа Azure позволяют защитить данные мультимедиа, покидающие ваш компьютер, на этапах их хранения, обработки и доставки. С помощью служб мультимедиа Azure можно доставлять содержимое, динамически шифруемое с помощью алгоритма AES с 128-разрядным ключом шифрования. При использовании управления цифровыми правами (DRM) PlayReady и (или) Widevine и Apple FairPlay можно использовать шифрование CENC. 
@@ -38,7 +37,7 @@ ms.locfileid: "74978208"
 
 1. На [портале](https://portal.azure.com/) выберите свою учетную запись Служб мультимедиа.
 
-1. Выберите **Параметры** > **Защита содержимого**.
+1. Выберите **Параметры**  >  **Защита содержимого**.
 
     ![Защита содержимого](./media/media-services-portal-content-protection/media-services-content-protection001.png)
 
@@ -76,7 +75,7 @@ ms.locfileid: "74978208"
 ### <a name="basic"></a>Basic
 Если выбрать тип лицензии **Базовый**, то шаблон будет создан со всеми значениями по умолчанию.
 
-### <a name="advanced"></a>Дополнительно
+### <a name="advanced"></a>Продвинутый уровень
 Подробные сведения о шаблоне прав Widevine см. в статье [Общие сведения о шаблоне лицензии Widevine](media-services-widevine-license-template-overview.md).
 
 ![Расширенная защита содержимого](./media/media-services-portal-content-protection/media-services-content-protection005.png)
@@ -90,7 +89,7 @@ ms.locfileid: "74978208"
 Чтобы воспользоваться преимуществами динамического шифрования, необходимо закодировать исходный файл в набор MP4-файлов с переменной скоростью.
 
 ### <a name="select-an-asset-that-you-want-to-encrypt"></a>Выбор ресурса-контейнера для шифрования
-Чтобы просмотреть все ресурсы, выберите **Параметры** > **ресурсы**.
+Чтобы просмотреть все ресурсы, выберите **Параметры**  >  **ресурсы**.
 
 ![Параметр "Активы"](./media/media-services-portal-content-protection/media-services-content-protection007.png)
 
@@ -124,13 +123,13 @@ ms.locfileid: "74978208"
 >[!NOTE] 
 >Если вы планируете воспроизводить HLS-поток с шифрованием AES в Safari, см. [эту запись блога](https://azure.microsoft.com/blog/how-to-make-token-authorized-aes-encrypted-hls-stream-working-in-safari/).
 
-## <a name="additional-notes"></a>Дополнительные сведения
+## <a name="additional-notes"></a>Дополнительные замечания
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: vturecek
 ms.openlocfilehash: 9962d4333e458243670d1005ad2ccfbc0bb7c92a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75348918"
 ---
 # <a name="reliable-actors-state-management"></a>Управление состоянием субъектов Reliable Actors
@@ -116,7 +115,7 @@ class MyActorImpl extends FabricActor implements MyActor
  
 Если размер файла базы данных службы субъектов увеличился и стал больше ожидаемого размера, убедитесь, что соблюдены предыдущие инструкции. Если все условия инструкций соблюдены, однако возникают проблемы с размером файла базы данных, следует [открыть запрос в службу поддержки](service-fabric-support.md), чтобы получить помощь от группы разработчиков продукта.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Состояние, которое хранится в Reliable Actors, должно быть сериализовано перед записью на диск и реплицировано для обеспечения высокого уровня доступности. Узнайте больше о [сериализации типа субъекта](service-fabric-reliable-actors-notes-on-actor-type-serialization.md).
 

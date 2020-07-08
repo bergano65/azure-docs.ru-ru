@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 06/07/2017
 ms.author: bharatn
 ms.openlocfilehash: 7f3b3974893316a488270f755b8f8822080658d9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75433863"
 ---
 # <a name="wcf-based-communication-stack-for-reliable-services"></a>Коммуникационный стек WCF для надежных служб
@@ -114,7 +113,7 @@ var result = calculatorServiceCommunicationClient.InvokeWithRetryAsync(
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Удаленный вызов процедур с использованием удаленного взаимодействия Reliable Services](service-fabric-reliable-services-communication-remoting.md)
 * [Веб-API с OWIN в модели Reliable Services](service-fabric-reliable-services-communication-webapi.md)
 * [Защита обмена данными для Reliable Services](service-fabric-reliable-services-secure-communication-wcf.md)

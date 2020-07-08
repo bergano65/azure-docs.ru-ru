@@ -8,10 +8,9 @@ ms.date: 06/13/2017
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: 6c4838e3226b91cbb5d6f86b83266a986418c120
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75430513"
 ---
 # <a name="create-an-external-app-service-environment"></a>Создание внешней среды службы приложений
@@ -59,7 +58,7 @@ ms.locfileid: "75430513"
 
 Чтобы создать ASE при создании плана службы приложений, сделайте следующее:
 
-1. В [портал Azure](https://portal.azure.com/)выберите **создать ресурс** > **Интернет и мобильные устройства** > **веб-приложение**.
+1. В [портал Azure](https://portal.azure.com/)выберите **создать ресурс**  >  **Интернет и мобильные устройства**  >  **веб-приложение**.
 
     ![Создание веб-приложения][1]
 

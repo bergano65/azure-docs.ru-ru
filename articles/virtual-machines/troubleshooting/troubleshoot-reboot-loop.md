@@ -13,10 +13,9 @@ ms.workload: infrastructure
 ms.date: 10/15/2018
 ms.author: genli
 ms.openlocfilehash: 3fd0a8bf6bacfec5e2be6dfa52ca51e46c7025f7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75443585"
 ---
 # <a name="windows-reboot-loop-on-an-azure-vm"></a>Цикл перезагрузки Windows на виртуальной машине Azure
@@ -32,11 +31,11 @@ ms.locfileid: "75443585"
 
 Цикл перезагрузки возникает из-за перечисленных ниже причин.
 
-### <a name="cause-1"></a>Причина 1
+### <a name="cause-1"></a>Причина 1
 
 Имеется сторонняя служба, отмеченная как критически важная, и ее невозможно запустить. Это приводит к перезагрузке операционной системы.
 
-### <a name="cause-2"></a>Причина 2
+### <a name="cause-2"></a>Причина 2
 
 В операционную систему были внесены некоторые изменения. Как правило, они связаны с установкой обновления, установкой приложения или новой политикой. Для получения дополнительных сведений необходимо проверить следующие журналы:
 
@@ -44,7 +43,7 @@ ms.locfileid: "75443585"
 - CBS.logWindows;
 - Update.log.
 
-### <a name="cause-3"></a>Причина 3
+### <a name="cause-3"></a>Причина 3
 
 Причина может быть вызвана повреждением файловой системы. Тем не менее изменение, которое привело к повреждению операционной системы, трудно диагностировать и выявить.
 
@@ -62,7 +61,7 @@ ms.locfileid: "75443585"
 
 4. Откройте редактор реестра Windows (regedit) на виртуальной машине спасения.
 
-5. Выберите ключ **HKEY_LOCAL_MACHINE** , а затем в меню выберите **файл** > **Загрузить куст** .
+5. Выберите ключ **HKEY_LOCAL_MACHINE** , а затем в меню выберите **файл**  >  **Загрузить куст** .
 
 6. Перейдите к файлу системы в папке **\Windows\System32\config**.
 
@@ -86,7 +85,7 @@ ms.locfileid: "75443585"
     - `HKEY_LOCAL_MACHINE\BROKENSYSTEM\ControlSet00x\Services\AzureWLBackupInquirySvc\ErrorControl`
     - `HKEY_LOCAL_MACHINE\BROKENSYSTEM\ControlSet00x\Services\AzureWLBackupPluginSvc\ErrorControl`
 
-13. Выберите ключ **BROKENSYSTEM** , а затем в меню выберите **файл** > **Выгрузить куст Hive** .
+13. Выберите ключ **BROKENSYSTEM** , а затем в меню выберите **файл**  >  **Выгрузить куст Hive** .
 
 14. Отключите диск операционной системы от виртуальной машины для устранения неполадок.
 

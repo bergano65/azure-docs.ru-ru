@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 12/12/2019
 ms.openlocfilehash: 58f7d99af638c8d03bbce46b7fcf8204aaca11d9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75435749"
 ---
 # <a name="run-the-mapreduce-examples-included-in-hdinsight"></a>Выполнение примеров MapReduce, включенных в HDInsight
@@ -33,7 +32,7 @@ ms.locfileid: "75435749"
 
 В архиве содержатся следующие примеры:
 
-|Пример |Описание |
+|Образец |Описание |
 |---|---|
 |aggregatewordcount|Подсчитывает количество слов во входных файлах.|
 |aggregatewordhist|Выполняет вычисление гистограммы слов во входных файлах.|
@@ -206,7 +205,7 @@ GraySort — это измерение производительности со
     yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples.jar teravalidate -Dmapred.map.tasks=50 -Dmapred.reduce.tasks=25 /example/data/10GB-sort-output /example/data/10GB-sort-validate
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В данной статье рассмотрено выполнение примеров, поставляемых с кластерами HDInsight под управлением Linux. Учебники по использованию Pig, Hive и MapReduce в службе HDInsight см. в следующих статьях.
 

@@ -7,10 +7,9 @@ ms.date: 4/11/2019
 ms.author: alkarche
 ms.reviewer: glenga
 ms.openlocfilehash: acb1e942c1f342ce6fee7d8aeacafcc1d7b6fd91
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75409532"
 ---
 # <a name="frequently-asked-questions-about-networking-in-azure-functions"></a>Часто задаваемые вопросы о сети в службе "функции Azure"
@@ -59,12 +58,12 @@ ms.locfileid: "75409532"
 
 Сценарии, в которых необходим только односторонний доступ к ресурсам виртуальной сети или менее полные сетевые изоляции, см. в статье [Общие сведения о функциях сети](functions-networking-options.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о работе в сети и функциях: 
 
-* [Следуйте указаниям в руководстве по началу работы с интеграцией виртуальной сети.](./functions-create-vnet.md)
+* [Следуйте руководству по началу работы с интеграцией виртуальной сети](./functions-create-vnet.md)
 * [Дополнительные сведения о параметрах сети в функциях Azure](./functions-networking-options.md)
 * [Дополнительные сведения об интеграции виртуальной сети со службой приложений и функциями](../app-service/web-sites-integrate-with-vnet.md)
-* [Дополнительные сведения о виртуальных сетях в Azure](../virtual-network/virtual-networks-overview.md)
-* [Предоставление дополнительных сетевых функций и управление средами службы приложений](../app-service/environment/intro.md)
+* [Узнайте больше о виртуальных сетях в Azure](../virtual-network/virtual-networks-overview.md)
+* [Общие сведения о функциях сети и Средах службы приложений](../app-service/environment/intro.md)

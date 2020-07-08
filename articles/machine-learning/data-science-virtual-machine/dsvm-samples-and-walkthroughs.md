@@ -11,10 +11,9 @@ ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: d064e940997d13e51be4fd38e9f678b778ce31f4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74900046"
 ---
 # <a name="samples-on-azure-data-science-virtual-machines"></a>Примеры на виртуальных машинах Azure для обработки и анализа данных
@@ -23,12 +22,12 @@ ms.locfileid: "74900046"
 > [!NOTE]
 > Дополнительные сведения о том, как запускать записные книжки Jupyter на виртуальных машинах для обработки и анализа данных, см. в разделе [Access Jupyter](#access-jupyter) .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для выполнения этих примеров необходимо подготовить виртуальную машину для обработки и анализа данных. Ознакомьтесь с краткими руководствами для [Windows](./provision-vm.md) и [Ubuntu](./dsvm-ubuntu-intro.md).
 
 ## <a name="available-samples"></a>Доступные примеры
-| Категории примеров | Описание | Расположения |
+| Категории примеров | Описание: | Расположения |
 | ------------- | ------------- | ------------- |
 | Язык R  | Примеры иллюстрируют такие сценарии, как подключение к облачным хранилищам данных на основе Azure и сравнение кода R и Microsoft Machine Learning Server с открытым кодом. Они также объясняют, как эксплуатацию модели на Microsoft Machine Learning Server и SQL Server. <br/> [Язык R](#r-language) | <br/>`~notebooks` <br/> <br/> `~samples/MicrosoftR` <br/> <br/> `~samples/RSqlDemo` <br/> <br/> `~samples/SQLRServices`<br/> <br/>|
 | Язык Python  | Примеры иллюстрируют такие сценарии, как подключение к облачным хранилищам данных на основе Azure и работа с Машинное обучение Azure.  <br/> [Язык Python](#python-language) | <br/>`~notebooks` <br/><br/>|
@@ -70,7 +69,7 @@ ms.locfileid: "74900046"
 <br/>![Примеры для Julia](./media/julia-samples.png)<br/>
 
 ## <a name="azure-machine-learning"></a>Машинное обучение Azure 
-<br/>![Примеры Машинное обучение Azure](./media/azureml-samples.png)<br/>
+<br/>![Образцы Машинного обучения Azure](./media/azureml-samples.png)<br/>
 
 ## <a name="pytorch"></a>PyTorch
 <br/>![Примеры PyTorch](./media/pytorch-samples.png)<br/>

@@ -8,10 +8,9 @@ ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 10679ab02826fb606af65c72621f2afb609bc81b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74975539"
 ---
 # <a name="high-availability-in-azure-database-for-postgresql--hyperscale-citus"></a>Высокий уровень доступности в базе данных Azure для PostgreSQL — масштабирование (Цитус)
@@ -23,6 +22,6 @@ ms.locfileid: "74975539"
 Восстановление можно разделить на три этапа: обнаружение, отработка отказа и полное восстановление.  Масштабирование выполняет периодические проверки работоспособности на каждом узле, а после четырех неудачных проверок он определяет, что узел не работает. Затем масштабирование переводит состояние ожидания в первичный узел (отработка отказа) и подготавливает новую резервную копию.
 Начнется репликация потоковой передачи с новым узлом в актуальном состоянии.  После репликации всех данных узел достиг полного восстановления.
 
-### <a name="next-steps"></a>Дальнейшие действия
+### <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [включить высокий уровень доступности](howto-hyperscale-high-availability.md) в группе серверов с масштабированием.

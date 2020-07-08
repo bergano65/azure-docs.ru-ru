@@ -14,10 +14,9 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 90c890925378c30ce5688d2713990b4b2cdd20c5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75430676"
 ---
 # <a name="how-to-authorize-developer-accounts-using-oauth-20-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью протокола OAuth 2.0 в службе управления Azure API
@@ -27,7 +26,7 @@ ms.locfileid: "75430676"
 > [!IMPORTANT]
 > Авторизация OAuth 2,0 пока недоступна в интерактивной консоли нового портала разработчика.
 
-## <a name="prerequisites"></a><a name="prerequisites"> </a>Предварительные требования
+## <a name="prerequisites"></a><a name="prerequisites"> </a>Предварительные условия
 
 В этом руководстве описано, как настроить экземпляр службы API Management для авторизации учетных записей разработчиков по протоколу OAuth 2.0. В нем не рассматривается настройка поставщика OAuth 2.0. Настройка каждого поставщика OAuth 2.0 имеет свои особенности, хотя инструкции в целом схожи, а данные, необходимые для настройки этого протокола в экземпляре службы API Management, одинаковы. В примерах в этом разделе в качестве поставщика OAuth 2.0 используется служба Azure Active Directory.
 
@@ -58,7 +57,7 @@ ms.locfileid: "75430676"
 
     Установите нужные флажки в разделе **Типы предоставления авторизации**. **Authorization code** (Код авторизации).
 
-    Введите URL-адрес в поле **Authorization endpoint URL**. Для Azure Active Directory этот URL-адрес будет похож на следующий URL-адрес, `<tenant_id>` где заменяется идентификатором вашего клиента Azure AD.
+    Введите URL-адрес в поле **Authorization endpoint URL**. Для Azure Active Directory этот URL-адрес будет похож на следующий URL-адрес, где `<tenant_id>` заменяется идентификатором вашего клиента Azure AD.
 
     `https://login.microsoftonline.com/<tenant_id>/oauth2/authorize`
 
@@ -126,7 +125,7 @@ ms.locfileid: "75430676"
 
 Теперь вы можете настроить остальные параметры и отправить запрос.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Для получения дополнительных сведений об использовании OAuth 2.0 и службы управления API см. следующий видеоролик и эту [статью](api-management-howto-protect-backend-with-aad.md).
 

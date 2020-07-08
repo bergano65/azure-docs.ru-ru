@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: vturecek
 ms.openlocfilehash: 876c4f5f45ff6c81a53274cf32e8bebecc1acfce
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75349309"
 ---
 # <a name="notes-on-service-fabric-reliable-actors-type-serialization"></a>Примечания о сериализации типов надежных субъектов Service Fabric
@@ -136,7 +135,7 @@ public class VoicemailBox implements Serializable
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Жизненный цикл субъекта и сборка мусора](service-fabric-reliable-actors-lifecycle.md)
 * [Таймеры и напоминания субъекта](service-fabric-reliable-actors-timers-reminders.md)
 * [События субъекта](service-fabric-reliable-actors-events.md)

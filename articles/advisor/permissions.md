@@ -4,10 +4,9 @@ description: Разрешения Advisor и способ, которым они
 ms.topic: article
 ms.date: 04/03/2019
 ms.openlocfilehash: c850d757044066d5c4a793e076436906d715833c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75422314"
 ---
 # <a name="permissions-in-azure-advisor"></a>Разрешения в Azure Advisor
@@ -45,7 +44,7 @@ ms.locfileid: "75422314"
 
 Если при попытке отложить или закрыть рекомендацию появляется сообщение об ошибке, возможно, у вас недостаточно разрешений. Убедитесь, что у вас есть по крайней мере права участника на затронутый ресурс рекомендации, которую вы откладываете или отправим. Чтобы устранить эту проблему, Узнайте, как [предоставить пользователю доступ](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье приводятся общие сведения о том, как помощник использует RBAC для управления разрешениями пользователей и устранения распространенных проблем. Дополнительные сведения о Помощнике см. в таких разделах.
 

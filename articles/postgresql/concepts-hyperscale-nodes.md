@@ -8,10 +8,9 @@ ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.openlocfilehash: 04ebb4298f8a5398b0aa9921d740e3eaacfd8e11
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74974008"
 ---
 # <a name="nodes-in-azure-database-for-postgresql--hyperscale-citus"></a>Узлы в базе данных Azure для PostgreSQL — масштабирование (Цитус)
@@ -24,5 +23,5 @@ ms.locfileid: "74974008"
 
 Для каждого запроса координатор либо направляет его в один рабочий узел, либо параллелизуются его в несколько в зависимости от того, находятся ли необходимые данные на одном узле или нескольких. Координатор решает, что делать с помощью таблиц метаданных консалтинга. Эти таблицы следят за DNS-именами и работоспособностью рабочих узлов, а также распределением данных между узлами.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Сведения о том, как узлы хранят [распределенные данные](concepts-hyperscale-distributed-data.md)

@@ -13,10 +13,9 @@ ms.workload: infrastructure
 ms.date: 08/19/2019
 ms.author: genli
 ms.openlocfilehash: e45de5c12f0d93645a0b1253acf8300527cafdbc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75374647"
 ---
 # <a name="troubleshoot-a-linux-vm-by-attaching-the-os-disk-to-a-recovery-vm-using-the-azure-portal"></a>Устранение неполадок с виртуальной машиной Linux при присоединении диска операционной системы к виртуальной машине восстановления с помощью портала Azure
@@ -175,7 +174,7 @@ ms.locfileid: "75374647"
 1. Выберите новый диск, который вы восстановили, а затем введите имя виртуальной машины, чтобы подтвердить изменение. Если диск не отображается в списке, подождите 10 ~ 15 минут после отключения диска от виртуальной машины для устранения неполадок. Также убедитесь, что диск находится в том же расположении, что и виртуальная машина.
 1. Нажмите кнопку "ОК".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 При возникновении проблем с подключением к виртуальной машине см. статью [Устранение неполадок с SSH-подключением к виртуальной машине Azure Linux: сбой, ошибка или отклонение](troubleshoot-ssh-connection.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). Для решения проблем с доступом к приложениям, выполняющимся на виртуальной машине, см. статью [Устранение проблем с подключением к приложениям на виртуальных машинах Linux в Azure](../windows/troubleshoot-app-connection.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 Дополнительные сведения об использовании Resource Manager вы найдете в статье [Общие сведения об Azure Resource Manager](../../azure-resource-manager/management/overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).

@@ -8,10 +8,9 @@ ms.topic: article
 ms.date: 07/05/2017
 ms.author: tagore
 ms.openlocfilehash: fa48953e5e86ffa758fe556b7fb1072be9d74647
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75360316"
 ---
 # <a name="how-to-configure-and-run-startup-tasks-for-a-cloud-service"></a>Как настроить и выполнить задачи запуска для облачной службы
@@ -92,7 +91,7 @@ EXIT /B 0
 
 **executionContext** — задает уровень привилегий для задачи запуска. Уровень привилегий может быть ограничен или повышен:
 
-* **limited**  
+* **ограничены**  
    Задача запуска выполняется с теми же привилегиями, что и роль. Если атрибут **executionContext** элемента [Runtime] также имеет значение **limited**, то используются привилегии пользователя.
 * **elevated**  
    Задача запуска выполняется с привилегиями администратора. Это позволяет задачам запуска устанавливать программы, вносить изменения в конфигурацию IIS, вносить изменения в реестр и выполнять другие административные задачи без увеличения уровня привилегий самой роли.  
@@ -113,7 +112,7 @@ EXIT /B 0
   > 
   
     Чтобы убедиться, что пакетный файл завершается нулевым **errorlevel**, выполните команду `EXIT /B 0` в конце обработки пакетного файла.
-* **днем**  
+* **background**  
    Задачи выполняются асинхронно, параллельно с запуском роли.
 * **переднего плана**  
    Задачи выполняются асинхронно, параллельно с запуском роли. Основное различие между задачами **foreground** и **background** состоит в том, что задача **foreground** не разрешает перезапуск или завершение работы роли до завершения задачи. Задачи **background** не имеют этого ограничения.
@@ -148,7 +147,7 @@ EXIT /B 0
 </Startup>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте, как выполнять некоторые [стандартные задачи запуска](cloud-services-startup-tasks-common.md) с помощью облачной службы.
 
 [Упакуйте](cloud-services-model-and-package.md) облачную службу.  
@@ -158,7 +157,7 @@ EXIT /B 0
 [Запуск]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
 [Среда выполнения]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
 [Среда]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
-[Переменная]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
+[Перемен]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
 

@@ -15,10 +15,9 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 7a8c348340be143f7059ce7e64a1c66b66074a45
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75430788"
 ---
 # <a name="how-to-customize-the-azure-api-management-developer-portal-using-templates"></a>Настройка портала разработчика в службе управления API Azure с помощью шаблонов
@@ -185,7 +184,7 @@ ms.locfileid: "75430788"
 
 Затем необходимо опубликовать восстановленные шаблоны вместе или по отдельности, выполнив действия, описанные в разделе [Публикация шаблона](#to-publish-a-template).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Справочную информацию о шаблонах портала разработчика, строковых ресурсах, значках и элементах управления страницы см. в разделе [Azure API Management Templates](api-management-developer-portal-templates-reference.md) (Шаблоны в службе управления API).
 
 [modify-content-layout]: api-management-modify-content-layout.md

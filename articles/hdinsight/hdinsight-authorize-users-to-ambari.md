@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/27/2019
 ms.openlocfilehash: 3bb58334e96bf5378fb78b70125f9c7994a7c2fc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75435644"
 ---
 # <a name="authorize-users-for-apache-ambari-views"></a>Предоставление пользователям доступа к представлениям Apache Ambari
@@ -46,7 +45,7 @@ Active Directory пользователи могут входить на узл�
 
 ### <a name="add-users-through-powershell"></a>Добавление пользователей с помощью PowerShell
 
-Измените приведенные ниже переменные, `CLUSTERNAME`заменив `NEWUSER`, `PASSWORD` и соответствующими значениями.
+Измените приведенные ниже переменные, заменив `CLUSTERNAME` , `NEWUSER` и `PASSWORD` соответствующими значениями.
 
 ```powershell
 # Set-ExecutionPolicy Unrestricted
@@ -135,7 +134,7 @@ Write-Output $zookeeperHosts
 
 ### <a name="add-users-through-curl"></a>Добавление пользователей через фигуру
 
-Измените приведенные ниже переменные, `CLUSTERNAME`заменив, `ADMINPASSWORD` `NEWUSER`, `USERPASSWORD` и соответствующими значениями. Скрипт предназначен для выполнения с bash. Для командной строки Windows потребуются небольшие изменения.
+Измените приведенные ниже переменные, заменив `CLUSTERNAME` ,, `ADMINPASSWORD` `NEWUSER` и `USERPASSWORD` соответствующими значениями. Скрипт предназначен для выполнения с bash. Для командной строки Windows потребуются небольшие изменения.
 
 ```bash
 export clusterName="CLUSTERNAME"
@@ -266,7 +265,7 @@ curl -k -u $user:$userPassword -H "X-Requested-By: ambari" \
 
 ![Отображение панели мониторинга Apache Ambari](./media/hdinsight-authorize-users-to-ambari/user-cluster-user-role.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Настройка политик Apache Hive в кластере HDInsight с ESP](./domain-joined/apache-domain-joined-run-hive.md)
 * [Управление кластерами в HDInsight с ESP](./domain-joined/apache-domain-joined-manage.md)

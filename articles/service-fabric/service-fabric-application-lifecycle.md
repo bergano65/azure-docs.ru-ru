@@ -4,10 +4,9 @@ description: Описывает разработку, развертывание
 ms.topic: conceptual
 ms.date: 1/19/2018
 ms.openlocfilehash: beeb1f1512cf94582dd561fa768f2e8e6649d686
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75378010"
 ---
 # <a name="service-fabric-application-lifecycle"></a>Жизненный цикл приложения Service Fabric
@@ -31,7 +30,7 @@ ms.locfileid: "75378010"
 
 См. статьи [Приступая к работе с Reliable Actors](service-fabric-reliable-actors-get-started.md) и [Начало работы со службами Reliable Services в Service Fabric](service-fabric-reliable-services-quick-start.md), чтобы ознакомиться с примерами.
 
-## <a name="deploy"></a>Развертывание
+## <a name="deploy"></a>Развернуть
 1. *Администратор приложения* изменяет приложение определенного типа для конкретного приложения, которое будет развернуто в кластере Service Fabric путем указания соответствующих параметров элемента **ApplicationType** в манифесте приложения.
 2. *Оператор* загружает пакет приложения в хранилище образов кластера с помощью [метода **CopyApplicationPackage**](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient) или [командлета **Copy-ServiceFabricApplicationPackage**](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps). Пакет приложения содержит манифест приложения и коллекцию пакетов служб. Структура служб выполняет развертывание приложений из пакета приложений, размещенного в хранилище образов, который может представлять собой магазин больших двоичных объектов Azure или системную службу Service Fabric.
 3. *Оператор* затем выделяет тип приложения в целевом кластере из загруженного пакета приложения с помощью [метода **ProvisionApplicationAsync**](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient), [командлета **Register-ServiceFabricApplicationType**](https://docs.microsoft.com/powershell/module/servicefabric/register-servicefabricapplicationtype) или [операции REST **Provision an Application**](https://docs.microsoft.com/rest/api/servicefabric/provision-an-application).
@@ -48,7 +47,7 @@ ms.locfileid: "75378010"
 
 Дополнительные сведения см. в статье [Общие сведения о службе анализа сбоев](service-fabric-testability-overview.md).
 
-## <a name="upgrade"></a>Обновление
+## <a name="upgrade"></a>Upgrade
 1. *Разработчик службы* обновляет составляющие службы экземпляра приложения или устраняет ошибки кода и предоставляет новую версию манифеста служб.
 2. *Разработчик приложения* переопределяет и параметризует настройки конфигурации и развертывания и предоставляет новую версию манифеста приложения. Разработчик приложения затем включает новые версии манифестов служб в приложение и собирает новую версию приложения этого же типа в обновленном пакете приложения.
 3. *Администратор приложения* включает новую версию типа приложения в целевое приложение, обновляя соответствующие параметры.
@@ -77,7 +76,7 @@ ms.locfileid: "75378010"
 
 См. статью [Развертывание и удаление приложений с помощью PowerShell](service-fabric-deploy-remove-applications.md), чтобы ознакомиться с примерами.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о разработке и тестировании приложений Service Fabric и служб, а также об управлении ими см. в следующих разделах.
 
 * [Надежные субъекты](service-fabric-reliable-actors-introduction.md)
