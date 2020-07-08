@@ -9,10 +9,9 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 3262841efb9109b1de24fe501ea0a7bea0dd612d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77025135"
 ---
 # <a name="back-up-workload-vms-on-cloudsimple-private-cloud-using-veeam-br"></a>Резервное копирование виртуальных машин рабочей нагрузки в частном облаке Клаудсимпле с помощью Veeam B&R
@@ -36,7 +35,7 @@ ms.locfileid: "77025135"
 Прокси-серверы устанавливаются между сервером Backup и другими компонентами инфраструктуры резервного копирования. Они управляют следующими функциями:
 
 * Извлечение данных виртуальной машины из рабочего хранилища
-* сжатие;
+* Сжатие
 * Дедупликация
 * Шифрование
 * Передача данных в репозиторий резервных копий
@@ -98,7 +97,7 @@ ms.locfileid: "77025135"
 8. [Консоль Veeam: Настройка программного обеспечения для восстановления Veeam Backup &](#veeam-console-install-veeam-backup-and-recovery-software)
 9. [Портал Клаудсимпле: Настройте права доступа Veeam и разэскалации.](#cloudsimple-portal-set-up-veeam-access-and-de-escalate-privileges)
 
-### <a name="before-you-begin"></a>Подготовка к работе
+### <a name="before-you-begin"></a>Перед началом
 
 Перед началом развертывания Veeam необходимо выполнить следующие условия.
 
@@ -196,7 +195,7 @@ ms.locfileid: "77025135"
 
 1. Создайте учетную запись хранения общего назначения (GPv2) типа "Стандартный" и контейнер больших двоичных объектов, как описано в [видеоначало работы Майкрософт со службой хранилища Azure](https://azure.microsoft.com/resources/videos/get-started-with-azure-storage).
 2. Создайте контейнер службы хранилища Azure, как описано в справочнике по [созданию контейнера](https://docs.microsoft.com/rest/api/storageservices/create-container) .
-2. Скачайте служебную программу `azcopy` командной строки для Linux от Майкрософт. Вы можете использовать следующие команды в оболочке bash в CentOS 7,5.
+2. Скачайте `azcopy` служебную программу командной строки для Linux от Майкрософт. Вы можете использовать следующие команды в оболочке bash в CentOS 7,5.
 
     ```
     wget -O azcopy.tar.gz https://aka.ms/downloadazcopylinux64
@@ -291,7 +290,7 @@ ms.locfileid: "77025135"
 * [Создание виртуальной машины Linux на портале Azure](../virtual-machines/linux/quick-create-portal.md)
 * [Как подключить управляемый диск данных к виртуальной машине Windows на портале Azure](../virtual-machines/windows/attach-managed-disk-portal.md)
 * [Начало работы с хранилищем Azure — видео](https://azure.microsoft.com/resources/videos/get-started-with-azure-storage)
-* [Create Container](https://docs.microsoft.com/rest/api/storageservices/create-container)
+* [Create Container (Создание контейнера)](https://docs.microsoft.com/rest/api/storageservices/create-container)
 * [Перенос данных с помощью AzCopy для Linux](../storage/common/storage-use-azcopy-linux.md)
 
 ### <a name="vmware-references"></a>Ссылки на VMware

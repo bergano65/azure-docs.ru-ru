@@ -9,10 +9,9 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: a82ba1b433e62ed1c4b72b8e942d4ade29f26c4a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77025305"
 ---
 # <a name="expand-a-cloudsimple-private-cloud"></a>Развертывание частного облака Клаудсимпле
@@ -27,7 +26,7 @@ ms.locfileid: "77025305"
 
 Частное облако можно расширить несколько раз. Расширение можно выполнять только в том случае, если вы следите за общими ограничениями узлов. Каждый раз при развертывании частного облака вы добавляете в существующий кластер или создаете новый.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Прежде чем можно будет расширить частное облако, необходимо подготовить узлы.  Дополнительные сведения о подготовке узлов см. в статье [подготовка узлов для решения VMware с помощью клаудсимпле-Azure](create-nodes.md) .  Для создания нового кластера необходимо наличие по крайней мере трех доступных узлов одного номера SKU.
 
@@ -54,7 +53,7 @@ ms.locfileid: "77025305"
 
 5. Нажмите кнопку **Отправить** , чтобы развернуть частное облако.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование виртуальных машин VMware в Azure](quickstart-create-vmware-virtual-machine.md)
-* Дополнительные сведения о [частных облаках](cloudsimple-private-cloud.md)
+* Узнайте больше о [частных облаках](cloudsimple-private-cloud.md)

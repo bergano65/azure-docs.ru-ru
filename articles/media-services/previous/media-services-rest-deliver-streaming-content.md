@@ -15,10 +15,9 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 787336f00a83d9403e3069754787743b9be6c5b1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77050004"
 ---
 # <a name="publish-azure-media-services-content-using-rest"></a>Публикация содержимого служб мультимедиа Azure с помощью REST 
@@ -62,7 +61,7 @@ ms.locfileid: "77050004"
 ### <a name="create-an-access-policy"></a>Создание политики доступа
 
 >[!NOTE]
->Действует ограничение в 1 000 000 записей для разных политик AMS (например, для политики Locator или ContentKeyAuthorizationPolicy). Указывайте один и тот же идентификатор политики, если вы используете те же дни, разрешения доступа и т. д., например политики для указателей, которые должны оставаться на месте в течение длительного времени (политики запрета передачи). Дополнительные сведения см. в [этой](media-services-dotnet-manage-entities.md#limit-access-policies) статье.
+>Действует ограничение в 1 000 000 записей для разных политик AMS (например, для политики Locator или ContentKeyAuthorizationPolicy). Указывайте один и тот же идентификатор политики, если вы используете те же дни, разрешения доступа и т. д., например политики для указателей, которые должны оставаться на месте в течение длительного времени (политики запрета передачи). Дополнительные сведения см. в [этой статье](media-services-dotnet-manage-entities.md#limit-access-policies).
 
 Запрос:
 
@@ -190,7 +189,7 @@ URL: **Путь** + имя MP4-файла ресурса
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="see-also"></a>См. также

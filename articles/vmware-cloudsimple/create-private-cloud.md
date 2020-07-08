@@ -9,10 +9,9 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 4f700ac34b6c6e2a651366bee7dd1785c608064f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77024795"
 ---
 # <a name="create-a-cloudsimple-private-cloud"></a>Создание частного облака Клаудсимпле
@@ -31,7 +30,7 @@ ms.locfileid: "77024795"
 
 При создании частного облака вы получаете один кластер vSphere и все виртуальные машины управления, созданные в этом кластере.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Прежде чем можно будет создать частное облако, необходимо подготовить узлы. Дополнительные сведения о подготовке узлов см. в статье [подготовка узлов для решения VMware для Azure с помощью клаудсимпле](create-nodes.md).
 
@@ -43,7 +42,7 @@ ms.locfileid: "77024795"
 
 ## <a name="access-the-cloudsimple-portal"></a>Доступ к порталу CloudSimple
 
-Доступ к [порталу клаудсимпле](access-cloudsimple-portal.md).
+Доступ к [порталу CloudSimple](access-cloudsimple-portal.md).
 
 ## <a name="create-a-new-private-cloud"></a>Создание частного облака
 

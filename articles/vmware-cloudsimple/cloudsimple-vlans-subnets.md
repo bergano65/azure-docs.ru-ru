@@ -9,10 +9,9 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 2451fbb69636624db354006df2a7925ef9e75459
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77024897"
 ---
 # <a name="vlans-and-subnets-overview"></a>Общие сведения о виртуальных ЛС и подсетях
@@ -68,7 +67,7 @@ ms.locfileid: "77024897"
 
 указанный диапазон CIDR подсетей vSphere/vSAN делится на несколько подсетей.  В следующей таблице приведен пример распределения для разрешенных префиксов.  В примере используется 192.168.0.0 в качестве диапазона CIDR.
 
-Пример:
+Пример.
 
 | Указанные подсети vSphere/vSAN CIDR/prefix | 192.168.0.0/21 | 192.168.0.0/22 | 192.168.0.0/23 | 192.168.0.0/24 |
 |---------------------------------|----------------|----------------|----------------|----------------|

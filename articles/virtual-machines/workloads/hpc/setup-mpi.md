@@ -13,10 +13,9 @@ ms.topic: article
 ms.date: 05/15/2019
 ms.author: amverma
 ms.openlocfilehash: 469e926932ffa11ef9f2a262b78a587ba435549e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77023996"
 ---
 # <a name="set-up-message-passing-interface-for-hpc"></a>Настройка интерфейса передачи сообщений для HPC
@@ -120,7 +119,7 @@ sudo ./platform_mpi-09.01.04.03r-ce.bin
 
 [Загрузите Intel MPI](https://software.intel.com/mpi-library/choose-download).
 
-Измените переменную среды I_MPI_FABRICS в зависимости от версии. Для Intel MPI 2018 используйте `I_MPI_FABRICS=shm:ofa` , а для 2019 —. `I_MPI_FABRICS=shm:ofi`
+Измените переменную среды I_MPI_FABRICS в зависимости от версии. Для Intel MPI 2018 используйте, `I_MPI_FABRICS=shm:ofa` а для 2019 — `I_MPI_FABRICS=shm:ofi` .
 
 По умолчанию закрепление процессов работает правильно для 15, 30 и 60 ППН.
 

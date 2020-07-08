@@ -9,10 +9,9 @@ ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
 ms.openlocfilehash: a9ca8f219bef787de04b51600209bfd3a24dd166
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77122926"
 ---
 # <a name="supportability-of-adding-azure-vms-to-an-existing-availability-set"></a>Поддержка добавления виртуальных машин Azure в существующую группу доступности
@@ -24,11 +23,11 @@ ms.locfileid: "77122926"
 Серии и группа доступности|Вторая виртуальная машина|Объект|Av2|D|Dv2|Dv3|
 |---|---|---|---|---|---|---|
 |Первая виртуальная машина|||||||
-|Объект||OK|OK|OK|OK|OK|
-|Av2||OK|OK|OK|OK|OK|
-|D||OK|OK|OK|OK|OK|
-|Dv2||OK|OK|OK|OK|OK|
-|Dv3||OK|OK|OK|OK|OK|
+|Объект||ОК|ОК|ОК|ОК|ОК|
+|Av2||ОК|ОК|ОК|ОК|ОК|
+|D||ОК|ОК|ОК|ОК|ОК|
+|Dv2||ОК|ОК|ОК|ОК|ОК|
+|Dv3||ОК|ОК|ОК|ОК|ОК|
 
 Все остальные серии не могут находиться в одной и той же группе доступности, так как для них требуется определенное оборудование.
 

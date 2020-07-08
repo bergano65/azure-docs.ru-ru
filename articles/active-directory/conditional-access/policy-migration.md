@@ -12,10 +12,9 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 33b1f76dd1489e00115d0f805add8d754038df84
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77185906"
 ---
 # <a name="conditional-access-classic-policy-migration"></a>Миграция классической политики условного доступа
@@ -33,7 +32,7 @@ ms.locfileid: "77185906"
 
 ## <a name="classic-policies"></a>Классические политики
 
-В [портал Azure](https://portal.azure.com)политики условного доступа можно найти в разделе **Azure Active Directory** > **Безопасность** > **Условный доступ**. В организации также могут быть старые политики условного доступа, не созданные с помощью этой страницы. Эти политики называются *классическими политиками*. Классические политики — это политики условного доступа, созданные в:
+В [портал Azure](https://portal.azure.com)политики условного доступа можно найти в разделе **Azure Active Directory**  >  **Безопасность**  >  **Условный доступ**. В организации также могут быть старые политики условного доступа, не созданные с помощью этой страницы. Эти политики называются *классическими политиками*. Классические политики — это политики условного доступа, созданные в:
 
 - классического портала Azure;
 - классического портала Intune;
@@ -115,7 +114,7 @@ ms.locfileid: "77185906"
 
 ![Выбор платформ устройств условного доступа](./media/policy-migration/41.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Используйте режим "только отчет" для условного доступа, чтобы определить влияние новых политик.](concept-conditional-access-report-only.md)
 - Если вы хотите узнать, как настроить политику условного доступа, см. раздел [Общие политики условного доступа](concept-conditional-access-policy-common.md).

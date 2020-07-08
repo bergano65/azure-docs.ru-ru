@@ -8,10 +8,9 @@ ms.topic: article
 ms.date: 1/10/2020
 ms.author: sutalasi
 ms.openlocfilehash: deef7bfdbc28d744cb81da59d3ffc13a1abee54d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77048613"
 ---
 # <a name="set-up-disaster-recovery-of-hyper-v-vms-to-a-secondary-site-by-using-powershell-resource-manager"></a>Настройка аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт с помощью PowerShell (Resource Manager)
@@ -210,7 +209,7 @@ ms.locfileid: "77048613"
 
 ##  <a name="configure-network-mapping"></a>Настройка сетевого сопоставления
 
-1. Используйте эту команду, чтобы получить серверы для текущего хранилища. Команда сохраняет Site Recovery серверы в переменной `$Servers` массива.
+1. Используйте эту команду, чтобы получить серверы для текущего хранилища. Команда сохраняет Site Recovery серверы в `$Servers` переменной массива.
 
    ```azurepowershell
    $Servers = Get-AzRecoveryServicesAsrFabric
@@ -227,7 +226,7 @@ ms.locfileid: "77048613"
    > [!NOTE]
    > Исходный сервер Virtual Machine Manager может быть первым или вторым в массиве серверов. Проверьте имена серверов Virtual Machine Manager и получите сети соответствующим образом.
 
-1. Этот командлет создает сопоставление между основной сетью и сетью восстановления. Он указывает основную сеть в качестве первого элемента `$PrimaryNetworks`. В нем указывается сеть восстановления в качестве первого элемента `$RecoveryNetworks`.
+1. Этот командлет создает сопоставление между основной сетью и сетью восстановления. Он указывает основную сеть в качестве первого элемента `$PrimaryNetworks` . В нем указывается сеть восстановления в качестве первого элемента `$RecoveryNetworks` .
 
    ```azurepowershell
    New-AzRecoveryServicesAsrNetworkMapping -PrimaryNetwork $PrimaryNetworks[0] -RecoveryNetwork $RecoveryNetworks[0]
@@ -259,9 +258,9 @@ ms.locfileid: "77048613"
 > Если вы хотите выполнить репликацию на управляемые диски с поддержкой CMK в Azure, выполните следующие действия с помощью команды AZ PowerShell 3.3.0/назад:
 >
 > 1. Включение отработки отказа на управляемые диски путем обновления свойств виртуальной машины
-> 1. Используйте командлет `Get-AzRecoveryServicesAsrReplicationProtectedItem` , чтобы получить идентификатор диска для каждого диска защищенного элемента.
+> 1. Используйте `Get-AzRecoveryServicesAsrReplicationProtectedItem` командлет, чтобы получить идентификатор диска для каждого диска защищенного элемента.
 > 1. Создайте объект Dictionary с помощью `New-Object "System.Collections.Generic.Dictionary``2[System.String,System.String]"` командлета, который будет содержать сопоставление идентификатора диска с набором шифрования диска. Эти наборы шифрования дисков должны быть предварительно созданы в целевом регионе.
-> 1. Обновите свойства виртуальной машины `Set-AzRecoveryServicesAsrReplicationProtectedItem` с помощью командлета, передав объект Dictionary в параметре **дискидтодискенкриптионсетмап** .
+> 1. Обновите свойства виртуальной машины с помощью `Set-AzRecoveryServicesAsrReplicationProtectedItem` командлета, передав объект Dictionary в параметре **дискидтодискенкриптионсетмап** .
 
 ## <a name="run-a-test-failover"></a>Запуск тестовой отработки отказа
 

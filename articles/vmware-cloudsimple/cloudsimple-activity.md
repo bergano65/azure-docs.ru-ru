@@ -10,10 +10,9 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 985fcc0aa99723fde5e0c11babe3777c31cbd4c3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77025101"
 ---
 # <a name="activity-management-overview"></a>Общие сведения об управлении действиями
@@ -28,7 +27,7 @@ ms.locfileid: "77025101"
 
 Оповещения — это уведомления о любых значительных действиях в среде Клаудсимпле. События, влияющие на выставление счетов или доступ пользователей, отображаются как оповещения.  Вы можете подтвердить оповещения с портала Клаудсимпле.
 
-## <a name="tasks"></a>Задачи
+## <a name="tasks"></a>Задания
 
 Задачи отписывают все операции пользователя, выполнение которых занимает более 30 секунд. Ход выполнения задачи можно отслеживать на портале Клаудсимпле.  Для выполненных задач сведения включают в себя общее время завершения.
 

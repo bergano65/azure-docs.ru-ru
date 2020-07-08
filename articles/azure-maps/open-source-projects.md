@@ -10,10 +10,9 @@ services: azure-maps
 manager: cpendle
 ms.custom: ''
 ms.openlocfilehash: 5782f07167f72be2ea7b148ad1b0a61d8cb710e2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77048894"
 ---
 # <a name="azure-maps-community---open-source-projects"></a>Azure Maps сообщество — проекты с открытым исходным кодом
@@ -22,7 +21,7 @@ ms.locfileid: "77048894"
 
 Ниже перечислены некоторые из наиболее популярных Azure Maps проектов с открытым исходным кодом и примеров.
 
-| Имя проекта | Описание |
+| Имя проекта | Описание: |
 |-|-|
 | [Примеры кода Azure Maps](https://github.com/Azure-Samples/AzureMapsCodeSamples) | Коллекция примеров кода для использования Azure Maps в веб-приложениях. |
 | [Azure Maps примеры кода gov Cloud](https://github.com/Azure-Samples/AzureMapsCodeSamples) | Коллекция примеров кода для использования Azure Maps в облаке Azure для государственных организаций. |

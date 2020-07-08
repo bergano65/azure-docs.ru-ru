@@ -16,17 +16,16 @@ ms.date: 03/27/2019
 ms.author: arvinh
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c64c40d93f9b525ac6adeca276797df65f32ef3e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77061281"
 ---
 # <a name="tutorial-configure-pingboard-for-automatic-user-provisioning"></a>Руководство по настройке Pingboard для автоматической подготовки учетных записей пользователей
 
 Цель этого руководства — показать, как настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure Active Directory (Azure AD) в Pingboard.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -70,11 +69,11 @@ ms.locfileid: "77061281"
 
 1. В разделе **Учетные данные администратора** выполните следующие действия.
 
-    a. В поле **URL-адрес клиента** введите `https://your_domain.pingboard.com/scim/v2`, заменив ваш_домен фактическим именем домена.
+    а. В поле **URL-адрес клиента** введите `https://your_domain.pingboard.com/scim/v2`, заменив ваш_домен фактическим именем домена.
 
     b. Войдите в [Pingboard](https://pingboard.com/) с помощью учетной записи администратора.
 
-    c. Выберите **Add-Ons** > **Integrations**интеграции > надстроек**Azure Active Directory**.
+    c. Выберите **Add-Ons**  >  **интеграции**надстроек  >  **Azure Active Directory**.
 
     d. Перейдите на вкладку **Configure** (Настройка) и выберите **Enable user provisioning from Azure** (Включить подготовку пользователей из Azure).
 
@@ -100,6 +99,6 @@ ms.locfileid: "77061281"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Managing user account provisioning for enterprise apps in the Azure portal](../app-provisioning/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 * [Настройка единого входа](pingboard-tutorial.md)

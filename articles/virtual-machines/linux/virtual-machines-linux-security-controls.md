@@ -10,10 +10,9 @@ ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 300acaf4a9d2a11ef107e19df99452c909257d54
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77190568"
 ---
 # <a name="security-controls-for-linux-virtual-machines"></a>Элементы управления безопасностью для Виртуальные машины Linux
@@ -43,7 +42,7 @@ ms.locfileid: "77190568"
 
 | Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Проверка подлинности| Да |  |
+| Аутентификация| Да |  |
 | Авторизация| Да |  |
 
 ## <a name="data-protection"></a>Защита данных
@@ -53,7 +52,7 @@ ms.locfileid: "77190568"
 | Шифрование неактивных на стороне сервера: ключи, управляемые корпорацией Майкрософт | Да | См. раздел [Шифрование дисков Azure для виртуальных машин Linux](disk-encryption-overview.md). |
 | Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Да | Виртуальные машины Azure поддерживают шифрование [ExpressRoute](/azure/expressroute) и виртуальной сети. См. раздел [Шифрование транзитного пути в виртуальных машинах](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms). |
 | Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Да | Ключи, управляемые клиентом, являются поддерживаемым сценарием шифрования Azure. см. раздел [Общие сведения о шифровании Azure](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms).|
-| Шифрование на уровне столбцов (службы данных Azure)| Недоступно | |
+| Шифрование на уровне столбцов (службы данных Azure)| Н/Д | |
 | Вызовы API в зашифрованном виде| Да | Через HTTPS и TLS. |
 
 ## <a name="configuration-management"></a>Управление конфигурацией

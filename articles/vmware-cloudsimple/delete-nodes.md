@@ -9,17 +9,16 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 122e0636f54e066ae86ed2d19cefe5863b026293
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77024744"
 ---
 # <a name="delete-nodes-from-azure-vmware-solution-by-cloudsimple"></a>Удаление узлов из решения VMware Azure с помощью Клаудсимпле
 
 Узлы Клаудсимпле измеряются после их создания.  Чтобы отключить отслеживание узлов, необходимо удалить узлы.  Вы удаляете узлы, которые не используются из портал Azure.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Узел можно удалить только при следующих условиях:
 

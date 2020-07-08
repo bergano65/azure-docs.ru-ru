@@ -17,10 +17,9 @@ ms.date: 03/27/2019
 ms.author: zhchia
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9b7a6c2c9b7ecb0b160f7481d95f7682f3f7a109
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77064127"
 ---
 # <a name="tutorial-configuring-velpic-for-automatic-user-provisioning"></a>Учебник. Настройка Velpic для автоматической подготовки пользователей
@@ -30,7 +29,7 @@ ms.locfileid: "77064127"
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -67,11 +66,11 @@ ms.locfileid: "77064127"
 
 3. Выберите экземпляр Velpic, а затем перейдите на вкладку **Подготовка** .
 
-4. Установите для **режима подготовки** значение **автоматически**.
+4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
     ![Подготовка Velpic](./media/velpic-provisioning-tutorial/Velpic1.png)
 
-5. В разделе **учетные данные администратора** введите **URL-адрес клиента&маркер секрета** Velpic. (Эти значения можно найти в учетной записи Velpic: **Управление** > **Integration** > **подключаемым модулем** > интеграции**scim**).
+5. В разделе **учетные данные администратора** введите **URL-адрес клиента&маркер секрета** Velpic. (Эти значения можно найти в учетной записи Velpic: **Управление**  >  **Интеграция**  >  **Подключаемый модуль**  >  **Scim**)
 
     ![Значения авторизации](./media/velpic-provisioning-tutorial/Velpic2.png)
 
@@ -98,6 +97,6 @@ ms.locfileid: "77064127"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)

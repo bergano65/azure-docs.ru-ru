@@ -9,17 +9,16 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 18d9463bc512257034860e1188372879524924f7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77022670"
 ---
 # <a name="access-your-private-cloud-vcenter-portal"></a>Доступ к порталу для работы с частным облаком vCenter
 
 Вы можете запустить портал для частного облака vCenter на портале портал Azure или Клаудсимпле.  Портал vCenter позволяет управлять инфраструктурой VMware в частном облаке.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Необходимо установить сетевое подключение, а разрешение DNS-имен должно быть включено для доступа к порталу vCenter.  Вы можете установить сетевое подключение к частному облаку, используя любой из приведенных ниже вариантов.
 

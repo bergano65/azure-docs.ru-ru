@@ -4,10 +4,9 @@ description: Настройте Azure Load Balancer, чтобы открыть �
 ms.topic: conceptual
 ms.date: 12/06/2017
 ms.openlocfilehash: f4599b2e0174381ab7df04aeeb33db7e3ee60f26
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77025390"
 ---
 # <a name="open-ports-for-a-service-fabric-cluster"></a>Открытие портов для кластера Service Fabric
@@ -50,7 +49,7 @@ az network lb rule create --backend-port 40000 --frontend-port 39999 --protocol 
 
 В команде Azure CLI используется несколько параметров, которые описаны в следующей таблице.
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | --------- | ----------- |
 | `--backend-port`  | Порт, через который приложение Service Fabric ожидает передачи данных. |
 | `--frontend-port` | Порт, который подсистема балансировки нагрузки предоставляет для внешних подключений. |

@@ -8,10 +8,9 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/02/2020
 ms.openlocfilehash: ce58aae3b1db1f0f338d353025d4f277aeb6944f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77137492"
 ---
 # <a name="unify-multiple-azure-monitor-application-insights-resources"></a>Объединение нескольких ресурсов Azure Monitor Application Insights 
@@ -70,7 +69,7 @@ applicationsScoping
 | ApplicationTypeVersion | application_Version |
 | AvailabilityCount | itemCount |
 | AvailabilityDuration | длительность |
-| AvailabilityMessage | сообщение |
+| AvailabilityMessage | message |
 | AvailabilityRunLocation | location |
 | AvailabilityTestId | идентификатор |
 | AvailabilityTestName | name |
@@ -79,7 +78,7 @@ applicationsScoping
 | Город | client_city |
 | ClientIP | client_IP |
 | Компьютер | cloud_RoleInstance | 
-| Country | client_CountryOrRegion | 
+| Страна или регион | client_CountryOrRegion | 
 | CustomEventCount | itemCount | 
 | CustomEventDimensions | customDimensions |
 | CustomEventName | name | 
@@ -87,11 +86,11 @@ applicationsScoping
 | DeviceType | client_Type | 
 | ExceptionCount | itemCount | 
 | ExceptionHandledAt | handledAt |
-| ExceptionMessage | сообщение | 
-| ExceptionType | type |
+| ExceptionMessage | message | 
+| ExceptionType | тип |
 | OperationID | operation_id |
 | OperationName | operation_Name | 
-| ОС | client_OS | 
+| Операционная система | client_OS | 
 | PageViewCount | itemCount |
 | PageViewDuration | длительность | 
 | PageViewName | name | 
@@ -106,7 +105,7 @@ applicationsScoping
 | RoleInstance | cloud_RoleInstance |
 | SessionId | session_Id | 
 | SourceSystem | operation_SyntheticSource |
-| TelemetryTYpe | type |
+| TelemetryTYpe | тип |
 | URL-адрес | url |
 | UserAccountId | user_AccountId |
 
