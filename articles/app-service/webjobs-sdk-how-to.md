@@ -6,12 +6,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: e4a7ae00edd8ff86e27037df1a26828c400f6ccf
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
-ms.translationtype: HT
+ms.openlocfilehash: 97b17f7e80590b9b907b8dc25253e6d706117357
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83774242"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85807984"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs Azure для фоновой обработки на основе событий
 
@@ -750,7 +750,7 @@ public static async Task ProcessImage([BlobTrigger("images")] Stream image)
 Эти параметры можно использовать для обеспечения отдельного выполнения функции в одном экземпляре. Чтобы гарантировать, что запущен только один экземпляр функции, если веб-приложение масштабируется до нескольких экземпляров, примените блокировку Singleton для уровня прослушивателя в функции (`[Singleton(Mode = SingletonMode.Listener)]`). Блокировки прослушивателя инициируются при запуске узла JobHost. Если все три горизонтально масштабированные экземпляры запускаются одновременно, блокировки требует только один из экземпляров, а запускается только один прослушиватель.
 
 > [!NOTE]
-> Дополнительные сведения о работе SingletonMode.Function см. в этом [репозитории Github](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/SingletonMode.cs).
+> Дополнительные сведения о работе Синглетонмоде. function см. в этом [репозитории GitHub](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/SingletonMode.cs) .
 
 ### <a name="scope-values"></a>Значения области
 
@@ -959,7 +959,7 @@ static async Task Main()
 
 #### <a name="version-2x"></a>Версия 2.*x*
 
-В версии 2.*x* [`TelemetryClient`], созданный изнутри поставщиком Application Insights для пакета SDK для веб-заданий, использует [`ServerTelemetryChannel`](https://github.com/microsoft/ApplicationInsights-dotnet/tree/develop/.publicApi/Microsoft.AI.ServerTelemetryChannel.dll). Когда конечная точка Application Insights недоступна или регулирует входящие запросы, этот канал [сохраняет запросы в файловой системе веб-приложения и позже повторно отправляет их](https://apmtips.com/blog/2015/09/03/more-telemetry-channels).
+В версии 2.*x* [`TelemetryClient`], созданный изнутри поставщиком Application Insights для пакета SDK для веб-заданий, использует [`ServerTelemetryChannel`](https://github.com/microsoft/ApplicationInsights-dotnet/tree/develop/.publicApi/Microsoft.AI.ServerTelemetryChannel.dll). Когда конечная точка Application Insights недоступна или регулирует входящие запросы, этот канал [сохраняет запросы в файловой системе веб-приложения и позже повторно отправляет их](https://apmtips.com/posts/2015-09-03-more-telemetry-channels/).
 
 [`TelemetryClient`] создается классом, который реализует `ITelemetryClientFactory`. По умолчанию это [`DefaultTelemetryClientFactory`](https://github.com/Azure/azure-webjobs-sdk/blob/dev/src/Microsoft.Azure.WebJobs.Logging.ApplicationInsights/).
 

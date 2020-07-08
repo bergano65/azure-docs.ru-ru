@@ -1,27 +1,27 @@
 ---
 title: Версии книги Azure Блокчейн Service, установка исправлений, обновление &
-description: Обзор поддерживаемых версий книг в службе Блокчейн Azure, включая политики исправления систем, управления системой и управляемыми пользователями обновлениями.
-ms.date: 11/20/2019
+description: Обзор поддерживаемых версий книг в службе Блокчейн Azure. Включая политики для исправлений и обновления систем.
+ms.date: 06/30/2020
 ms.topic: conceptual
-ms.reviewer: janders
-ms.openlocfilehash: 8d4a77699dd80743acfadd4d72d6d75bc1939b3b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.reviewer: ravastra
+ms.openlocfilehash: ea7c54e229178320329204a3199ab2b4c44058fe
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74325188"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85807746"
 ---
 # <a name="supported-azure-blockchain-service-ledger-versions"></a>Поддерживаемые версии книги Azure Блокчейн Service
 
 Служба Блокчейн Azure использует книгу [кворума](https://www.goquorum.com/developers) на основе Ethereum, предназначенную для обработки частных транзакций в группе известных участников, идентифицированных в качестве консорциума в службе Azure блокчейн.
 
-Сейчас служба Блокчейн Azure поддерживает [кворум версии 2.2.3](https://github.com/jpmorganchase/quorum/releases/tag/v2.2.3) и [Тессера Transaction Manager](https://github.com/jpmorganchase/tessera).
+Сейчас служба Блокчейн Azure поддерживает [кворум версии 2.6.0](https://github.com/jpmorganchase/quorum/releases/tag/v2.6.0) и [Тессера Transaction Manager](https://github.com/jpmorganchase/tessera).
 
 ## <a name="managing-updates-and-upgrades"></a>Управление обновлениями
 
 Управление версиями в кворуме выполняется с помощью основных, вспомогательных выпусков и исправлений. Например, если версия кворума — 2.0.1, тип выпуска будет классифицироваться следующим образом:
 
-|Значительно | Minor.  | Обновление  |
+|Значительно | Дополнительный номер  | Обновление  |
 | :--- | :----- | :----- |
 | 2 | 0 | 1 | 
 
@@ -31,6 +31,43 @@ ms.locfileid: "74325188"
 
 Служба Azure Блокчейн предоставляет новейшие основные и дополнительные версии книги кворума в течение 60 дней, доступных у производителя кворума. Для консортиа предоставляется не более четырех вспомогательных выпусков при подготовке нового члена и консорциума. Обновление до основной или вспомогательной версии сейчас не поддерживается. Например, если вы используете версию 2. x, обновление до версии 3. x сейчас не поддерживается. Аналогично, если вы используете версию 2,2, обновление до версии 2,3 сейчас не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="how-to-check-quorum-ledger-version"></a>Проверка версии книги кворума
+
+Вы можете проверить версию кворума в члене службы Azure Блокчейн, присоединив ее к узлу с помощью жес или просмотрев журналы диагностики.
+
+### <a name="using-geth"></a>Использование жес
+
+Подключитесь к узлу службы Azure Блокчейн с помощью жес. Например, `geth attach https://myblockchainmember.blockchain.azure.com:3200/<Access key>`.
+
+После подключения узла жес сообщает о версии кворума, аналогичной приведенной ниже:
+
+``` text
+instance: Geth/v1.9.7-stable-9339be03(quorum-v2.6.0)/linux-amd64/go1.13.12
+```
+
+Дополнительные сведения об использовании жес см. в разделе [Краткое руководство. Использование жес для подключения к узлу транзакции службы Блокчейн Azure](connect-geth.md).
+
+### <a name="using-diagnostic-logs"></a>Использование журналов диагностики
+
+Если включены журналы диагностики, для узлов транзакций выводится версия кворума. Например, следующее сообщение журнала узла содержит версию кворума.
+
+``` text 
+{"NodeName":"transaction-node","Message":"INFO [06-22|05:31:45.156] Starting peer-to-peer node instance=Geth/v1.9.7-stable-9339be03(quorum-v2.6.0)/linux-amd64/go1.13.12\n"}
+{"NodeName":"transaction-node","Message":"[*] Starting Quorum node with QUORUM_VERSION=2.6.0, TESSERA_VERSION=0.10.5 and PRIVATE_CONFIG=/working-dir/c/tm.ipc\n"}
+111
+```
+
+Дополнительные сведения о журналах диагностики см. в статье [мониторинг службы Блокчейн Azure с помощью Azure Monitor](monitor-azure-blockchain-service.md#diagnostic-settings).
+
+## <a name="how-to-check-genesis-file-content"></a>Проверка содержимого файла женесис
+
+Чтобы проверить содержимое файла женесис узла блокчейн, можно использовать следующий Ethereum API JavaScript:
+
+``` bash
+admin.nodeInfo.protocols
+```
+API можно вызвать с помощью консоли жес или библиотеки Web3. Дополнительные сведения об использовании жес см. в разделе [Краткое руководство. Использование жес для подключения к узлу транзакции службы Блокчейн Azure](connect-geth.md).
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Ограничения в службе Блокчейн Azure](limits.md)

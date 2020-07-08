@@ -3,17 +3,17 @@ title: Мониторинг активного веб-приложения ASP.N
 description: Мониторинг производительности веб-сайта без необходимости его повторного развертывания. Работает с веб-приложениями ASP.NET, размещенными локально или в виртуальных машинах.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: ba17ee275a744b88f2c76e7e3f99a1ac9cc8e758
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2892cb40f0b00b468ef0b8a4ffe60c1158ad068a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81536834"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85807270"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Инструментирование веб-приложений во время выполнения с помощью Application Insights бескодового подключения
 
 > [!IMPORTANT]
-> Монитор состояния больше не рекомендуется использовать. Он был заменен агентом Azure Monitor Application Insights (прежнее название — монитор состояния v2). См. нашу документацию по [развертыванию локальных серверов](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview) , [виртуальным машинам Azure и развертываниям масштабируемых наборов виртуальных машин](https://docs.microsoft.com/azure/azure-monitor/app/azure-vm-vmss-apps).
+> Монитор состояния больше не рекомендуется использовать, и начиная с **1 июня 2021** эта версия монитора состояния не будет поддерживаться. Он был заменен агентом Azure Monitor Application Insights (прежнее название — монитор состояния v2). См. нашу документацию по [развертыванию локальных серверов](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview) , [виртуальным машинам Azure и развертываниям масштабируемых наборов виртуальных машин](https://docs.microsoft.com/azure/azure-monitor/app/azure-vm-vmss-apps).
 
 Действующее веб-приложение можно инструментировать с помощью Azure Application Insights, не прибегая к изменению или повторному развертыванию кода. Вам потребуется подписка [Microsoft Azure](https://azure.com) .
 
@@ -92,12 +92,12 @@ ms.locfileid: "81536834"
 
 - Убедитесь, что файл applicationinsights.config находится в целевом каталоге приложения и содержит ikey.
 
-- Если вы подозреваете, что данные отсутствуют, выполните простой запрос в [Analytics](../log-query/get-started-portal.md), чтобы перечислить все облачные роли, которые в данный момент отсылают данные телеметрии.
+- Если вы считаете, что данные отсутствуют, можно выполнить запрос в [аналитике](../log-query/get-started-portal.md) , чтобы получить список всех облачных ролей, отправляющих данные телеметрии.
   ```Kusto
   union * | summarize count() by cloud_RoleName, cloud_RoleInstance
   ```
 
-- Если вам нужно подтвердить, что Application Insights успешно подключен, вы можете запустить программу [Sysinternals Handle](https://docs.microsoft.com/sysinternals/downloads/handle) в командном окне, чтобы подтвердить, что файл applicationinsights.dll был загружен службами IIS.
+- Если необходимо подтвердить, что Application Insights успешно присоединена, можно запустить программу [Sysinternals Handle](https://docs.microsoft.com/sysinternals/downloads/handle) в окне командной строки, чтобы убедиться, что applicationinsights.dll ЗАГРУЖЕНЫ службами IIS.
   ```cmd
   handle.exe /p w3wp.exe
   ```
@@ -172,12 +172,12 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 
 * Ознакомьтесь с дополнительными [сведениями об устранении неполадок][qna].
 
-## <a name="system-requirements"></a>Системные требования
+## <a name="system-requirements"></a>Требования к системе
 Операционные системы, которые поддерживаются для монитора состояний Application Insights на сервере:
 
 * Windows Server 2008
 * Windows Server 2008 R2
-* Windows Server 2012
+* Windows Server 2012
 * Windows Server 2012 R2.
 * Windows Server 2016
 
@@ -298,9 +298,9 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
  * вызовы зависимостей (.NET 4.5) и возвращаемые значения в вызовах зависимостей (.NET 4.6);
  * значения трассировки стека исключений.
 
-[Дополнительные сведения](https://apmtips.com/blog/2016/11/18/how-application-insights-status-monitor-not-monitors-dependencies/)
+[Подробнее](https://apmtips.com/posts/2016-11-18-how-application-insights-status-monitor-not-monitors-dependencies/)
 
-## <a name="video"></a>Видеоролик
+## <a name="video"></a>Видео
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 

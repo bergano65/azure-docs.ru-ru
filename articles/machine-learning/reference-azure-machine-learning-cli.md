@@ -4,18 +4,18 @@ description: Узнайте, как установить и использова
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: reference
 ms.reviewer: jmartens
 ms.author: jordane
 author: jpe316
-ms.date: 03/05/2020
+ms.date: 06/22/2020
 ms.custom: seodec18
-ms.openlocfilehash: d401522ffc45e2e7ea20de70a59ed967dd7623ab
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 5a532ec11cdcd97bd1f72c40f603bce7cc4b12c1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83659787"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85611770"
 ---
 # <a name="install--use-the-cli-extension-for-azure-machine-learning"></a>Установка и использование расширения CLI для Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -158,6 +158,49 @@ az extension remove -n azure-cli-ml
 
     См. дополнительные сведения о команде [az ml computetarget create amlcompute](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute).
 
++ <a id="computeinstance"></a>Управление экземплярами вычислений.  Во всех приведенных ниже примерах имя вычислительного экземпляра — **CPU** .
+
+    + Создайте новый компутеинстанце.
+
+        ```azurecli-interactive
+        az ml computetarget create computeinstance  -n cpu -s "STANDARD_D3_V2" -v
+        ```
+    
+        Дополнительные сведения см. в разделе [AZ ML computetarget Create компутеинстанце](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-computeinstance).
+
+    + Останавливает компутеинстанце.
+    
+        ```azurecli-interactive
+        az ml computetarget stop computeinstance -n cpu -v
+        ```
+    
+        Дополнительные сведения см. в разделе [AZ ML computetarget останавливает компутеинстанце](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-computeinstance-stop).
+    
+    + Запустите компутеинстанце.
+    
+        ```azurecli-interactive
+        az ml computetarget start computeinstance -n cpu -v
+       ```
+    
+        Дополнительные сведения см. в статье [AZ ML computetarget Start компутеинстанце](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-computeinstance-start).
+    
+    + Перезапустите компутеинстанце.
+    
+        ```azurecli-interactive
+        az ml computetarget restart computeinstance -n cpu -v
+       ```
+    
+        Дополнительные сведения см. в статье [AZ ML computetarget Restart компутеинстанце](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-computeinstance-restart).
+    
+    + Удаление компутеинстанце.
+    
+        ```azurecli-interactive
+        az ml computetarget delete -n cpu -v
+       ```
+    
+        Дополнительные сведения см. в разделе [AZ ML computetarget Delete компутеинстанце](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-delete).
+
+
 ## <a name="run-experiments"></a><a id="experiments"></a>Запуск экспериментов
 
 * Запустите выполнение эксперимента. При использовании этой команды укажите имя файла runconfig (текст перед \*.runconfig в вашей файловой системе) в параметре -c.
@@ -195,23 +238,7 @@ az extension remove -n azure-cli-ml
 
     Для получения сведений о формате файла JSON, используемого для определения набора данных, используйте `az ml dataset register --show-template`.
 
-    См. дополнительные сведения о команде [az ml dataset register](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/dataset?view=azure-cli-latest#ext-azure-cli-ml-az-ml-dataset-archive).
-
-+ Архивируйте активный или нерекомендуемый набор данных:
-
-    ```azurecli-interactive
-    az ml dataset archive -n dataset-name
-    ```
-
-    См. дополнительные сведения о команде [az ml dataset archive](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/dataset?view=azure-cli-latest#ext-azure-cli-ml-az-ml-dataset-archive).
-
-+ Объявите набор данных нерекомендуемым:
-
-    ```azurecli-interactive
-    az ml dataset deprecate -d replacement-dataset-id -n dataset-to-deprecate
-    ```
-
-    См. дополнительные сведения о команде [az ml dataset deprecate](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/dataset?view=azure-cli-latest#ext-azure-cli-ml-az-ml-dataset-archive).
+    См. дополнительные сведения о команде [az ml dataset register](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/dataset?view=azure-cli-latest#ext-azure-cli-ml-az-ml-dataset-register).
 
 + Получите список всех наборов данных в рабочей области:
 
@@ -219,7 +246,7 @@ az extension remove -n azure-cli-ml
     az ml dataset list
     ```
 
-    См. дополнительные сведения о команде [az ml dataset list](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/dataset?view=azure-cli-latest#ext-azure-cli-ml-az-ml-dataset-archive).
+    См. дополнительные сведения о команде [az ml dataset list](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/dataset?view=azure-cli-latest#ext-azure-cli-ml-az-ml-dataset-list).
 
 + Получите сведения о наборе данных:
 
@@ -227,15 +254,7 @@ az extension remove -n azure-cli-ml
     az ml dataset show -n dataset-name
     ```
 
-    См. дополнительные сведения о команде [az ml dataset show](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/dataset?view=azure-cli-latest#ext-azure-cli-ml-az-ml-dataset-archive).
-
-+ Повторно активируйте архивный или нерекомендуемый набор данных:
-
-    ```azurecli-interactive
-    az ml dataset reactivate -n dataset-name
-    ```
-
-    См. дополнительные сведения о команде [az ml dataset reactivate](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/dataset?view=azure-cli-latest#ext-azure-cli-ml-az-ml-dataset-archive).
+    См. дополнительные сведения о команде [az ml dataset show](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/dataset?view=azure-cli-latest#ext-azure-cli-ml-az-ml-dataset-show).
 
 + Отмените регистрацию набора данных:
 

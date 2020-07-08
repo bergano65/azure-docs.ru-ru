@@ -4,12 +4,12 @@ description: Узнайте, как развернуть кластер Service 
 ms.topic: conceptual
 ms.date: 02/14/2019
 ms.custom: mvc
-ms.openlocfilehash: a9026e46f2fd386892af5a3d8f4ec8d7e0c9f649
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1d6edc086233d757269c12e323241bc4bf55249f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81411012"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85611702"
 ---
 # <a name="deploy-a-linux-service-fabric-cluster-into-an-azure-virtual-network"></a>Развертывание кластера Service Fabric на платформе Linux в виртуальной сети Azure
 
@@ -33,17 +33,17 @@ ms.locfileid: "81411012"
 
 Для Ubuntu 16,04 LTS:
 
-* [AzureDeploy. JSON][template]
-* [AzureDeploy. parameters. JSON][parameters]
+* [AzureDeploy.jsна][template]
+* [AzureDeploy.Parameters.jsна][parameters]
 
 Для Ubuntu 18,04 LTS:
 
-* [AzureDeploy. JSON][template2]
-* [AzureDeploy. parameters. JSON][parameters2]
+* [AzureDeploy.jsна][template2]
+* [AzureDeploy.Parameters.jsна][parameters2]
 
 Разница между двумя шаблонами — атрибут **вмимажеску** , для которого задано значение "18,04-LTS", а **typeHandlerVersion** каждого узла устанавливается в 1,1.
 
-Этот шаблон позволяет развернуть безопасный кластер семи виртуальных машин и трех типов узлов в виртуальную сеть.  Другие примеры шаблонов можно найти на сайте [GitHub](https://github.com/Azure-Samples/service-fabric-cluster-templates). [AzureDeploy. JSON][template] развертывает числовые ресурсы, включая следующие.
+Этот шаблон позволяет развернуть безопасный кластер семи виртуальных машин и трех типов узлов в виртуальную сеть.  Другие примеры шаблонов можно найти на сайте [GitHub](https://github.com/Azure-Samples/service-fabric-cluster-templates). [AzureDeploy.jsдля][template] развертывает числовые ресурсы, включая следующие.
 
 ### <a name="service-fabric-cluster"></a>Кластер Service Fabric
 
@@ -54,8 +54,8 @@ ms.locfileid: "81411012"
 * ОС: (Ubuntu 16,04 LTS/Ubuntu 18,04 LTS) (можно настроить в параметрах шаблона)
 * защищенный сертификат (можно настроить в параметрах шаблона);
 * [Служба DNS](service-fabric-dnsservice.md) включена
-* [Уровень устойчивости](service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster) бронзовой (настраиваемый в параметрах шаблона)
-* [Уровень надежности](service-fabric-cluster-capacity.md#the-reliability-characteristics-of-the-cluster) серебристого (можно настроить в параметрах шаблона)
+* [Уровень устойчивости](service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster) бронзовой (настраиваемый в параметрах шаблона)
+* [Уровень надежности](service-fabric-cluster-capacity.md#reliability-characteristics-of-the-cluster) серебристого (можно настроить в параметрах шаблона)
 * конечная точка подключения клиента: 19000 (можно настроить в параметрах шаблона);
 * конечная точка HTTP-шлюза: 19080 (можно настроить в параметрах шаблона).
 
