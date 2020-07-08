@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/11/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 10b3a6bb9592c955d16b070ae412374b8a1f4444
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 269cc52f1e96a6864de55f729fe39a5f609d35c9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83196966"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84902513"
 ---
 Высокопроизводительные диски Azure обеспечивают высокую пропускную способность, высокую скорость операций ввода-вывода и постоянную задержку на диске для виртуальных машин Azure IaaS. Это новое предложение обеспечивает первоклассную производительность с тем же уровнем доступности, что и имеющиеся предложения дисков. Одним из основных преимуществ использования Ultra Disks является возможность динамического изменения производительности SSD вместе с рабочими нагрузками без необходимости перезапуска виртуальных машин. Диски категории "Ультра" подходят для рабочих нагрузок, предполагающих интенсивную работу с данными, например SAP HANA, базы данных верхнего уровня и рабочие нагрузки с большим количеством транзакций.
 
@@ -30,11 +30,11 @@ ms.locfileid: "83196966"
 #### <a name="cli"></a>CLI
 
 ```azurecli
-$subscription = "<yourSubID>"
+subscription="<yourSubID>"
 # example value is southeastasia
-$region = "<yourLocation>"
+region="<yourLocation>"
 # example value is Standard_E64s_v3
-$vmSize = "<yourVMSize>"
+vmSize="<yourVMSize>"
 
 az vm list-skus --resource-type virtualMachines  --location $region --query "[?name=='$vmSize'].locationInfo[0].zoneDetails[0].Name" --subscription $subscription
 ```
@@ -65,10 +65,10 @@ $vmSize = "Standard_E64s_v3"
 В настоящее же отсутствие параметров избыточности, развернутых в западной части США, должно быть развернуто. Однако в этом регионе может находиться не каждый размер диска, поддерживающий Ultra Disks. Чтобы определить, какие из них в западной части США поддерживают Ultra Disks, можно использовать любой из следующих фрагментов кода. Обязательно замените `vmSize` `subscription` значения и первыми:
 
 ```azurecli
-$subscription = "<yourSubID>"
-$region = "westus"
+subscription="<yourSubID>"
+region="westus"
 # example value is Standard_E64s_v3
-$vmSize = "<yourVMSize>"
+vmSize="<yourVMSize>"
 
 az vm list-skus --resource-type virtualMachines  --location $region --query "[?name=='$vmSize'].capabilities" --subscription $subscription
 ```
@@ -132,12 +132,12 @@ UltraSSDAvailable                            True
 - Заполните оставшиеся записи, выбрав нужный вариант.
 - Выберите **Диски**.
 
-![креате-ултра-диск-енаблед-ВМ. png](media/virtual-machines-disks-getting-started-ultra-ssd/create-ultra-disk-enabled-vm.png)
+![create-ultra-disk-enabled-vm.png](media/virtual-machines-disks-getting-started-ultra-ssd/create-ultra-disk-enabled-vm.png)
 
 - В колонке диски выберите **Да** , чтобы **включить совместимость с Ultra Disk**.
 - Выберите **создать и подключите новый диск** , чтобы подключить к нему диск.
 
-![енабле-Анд-аттач-ултра-диск. png](media/virtual-machines-disks-getting-started-ultra-ssd/enable-and-attach-ultra-disk.png)
+![enable-and-attach-ultra-disk.png](media/virtual-machines-disks-getting-started-ultra-ssd/enable-and-attach-ultra-disk.png)
 
 - В колонке **Создание нового диска** введите имя, а затем выберите **изменить размер**.
 - Измените **тип учетной записи** на **Ultra Disk**.
@@ -145,7 +145,7 @@ UltraSSDAvailable                            True
 - Нажмите кнопку **ОК** в обоих колонках.
 - Продолжайте развертывание виртуальной машины, оно будет таким же, как и при развертывании любой другой виртуальной машины.
 
-![креате-ултра-диск. png](media/virtual-machines-disks-getting-started-ultra-ssd/create-ultra-disk.png)
+![create-ultra-disk.png](media/virtual-machines-disks-getting-started-ultra-ssd/create-ultra-disk.png)
 
 ## <a name="attach-an-ultra-disk-using-the-azure-portal"></a>Подключение Ultra Disk с помощью портал Azure
 
@@ -154,27 +154,27 @@ UltraSSDAvailable                            True
 - Перейдите к виртуальной машине и выберите **диски**.
 - Выберите команду **Изменить**.
 
-![оптионс-селектор-ултра-дискс. png](media/virtual-machines-disks-getting-started-ultra-ssd/options-selector-ultra-disks.png)
+![options-selector-ultra-disks.png](media/virtual-machines-disks-getting-started-ultra-ssd/options-selector-ultra-disks.png)
 
 - Выберите **Да** , чтобы **включить совместимость с Ultra Disk**.
 
-![ултра-оптионс-ЕС-енабле. png](media/virtual-machines-disks-getting-started-ultra-ssd/ultra-options-yes-enable.png)
+![ultra-options-yes-enable.png](media/virtual-machines-disks-getting-started-ultra-ssd/ultra-options-yes-enable.png)
 
-- Щелкните **Сохранить**.
+- Нажмите кнопку **Сохранить**.
 - Выберите **Добавить диск данных** , а затем в раскрывающемся списке **имя** выберите **создать диск**.
 
-![креате-Анд-аттач-Нев-ултра-диск. png](media/virtual-machines-disks-getting-started-ultra-ssd/create-and-attach-new-ultra-disk.png)
+![create-and-attach-new-ultra-disk.png](media/virtual-machines-disks-getting-started-ultra-ssd/create-and-attach-new-ultra-disk.png)
 
 - Введите имя нового диска, а затем выберите **изменить размер**.
 - Измените **тип учетной записи** на **Ultra Disk**.
 - Измените значения параметра **Пользовательский размер диска (гиб)**, **дисковые операции ввода-вывода**и **пропускную способность диска** на выбранные.
 - Нажмите кнопку **ОК** , а затем выберите **создать**.
 
-![макинг-а-Нев-ултра-диск. png](media/virtual-machines-disks-getting-started-ultra-ssd/making-a-new-ultra-disk.png)
+![making-a-new-ultra-disk.png](media/virtual-machines-disks-getting-started-ultra-ssd/making-a-new-ultra-disk.png)
 
 - После возврата в колонку диска нажмите кнопку **сохранить**.
 
-![савинг-Анд-аттачинг-Нев-ултра-диск. png](media/virtual-machines-disks-getting-started-ultra-ssd/saving-and-attaching-new-ultra-disk.png)
+![saving-and-attaching-new-ultra-disk.png](media/virtual-machines-disks-getting-started-ultra-ssd/saving-and-attaching-new-ultra-disk.png)
 
 ### <a name="adjust-the-performance-of-an-ultra-disk-using-the-azure-portal"></a>Настройка производительности Ultra Disk с помощью портал Azure
 
@@ -183,12 +183,12 @@ Ultra Disks предлагает уникальную возможность, п
 - Перейдите к виртуальной машине и выберите **диски**.
 - Выберите Ultra Disk, для которого требуется изменить производительность.
 
-![селектинг-ултра-диск-то-модифи. png](media/virtual-machines-disks-getting-started-ultra-ssd/selecting-ultra-disk-to-modify.png)
+![selecting-ultra-disk-to-modify.png](media/virtual-machines-disks-getting-started-ultra-ssd/selecting-ultra-disk-to-modify.png)
 
 - Выберите **Конфигурация** и внесите необходимые изменения.
-- Щелкните **Сохранить**.
+- Нажмите кнопку **Сохранить**.
 
-![конфигуринг-ултра-диск-перформанце-Анд-сизе. png](media/virtual-machines-disks-getting-started-ultra-ssd/configuring-ultra-disk-performance-and-size.png)
+![configuring-ultra-disk-performance-and-size.png](media/virtual-machines-disks-getting-started-ultra-ssd/configuring-ultra-disk-performance-and-size.png)
 
 ## <a name="deploy-an-ultra-disk-using-cli"></a>Развертывание Ultra Disk с помощью интерфейса командной строки
 
@@ -219,12 +219,12 @@ az vm start -n $vmName -g $rgName
 Теперь, когда у вас есть виртуальная машина, которая поддерживает подключение Ultra Disks, можно создать и подключить к ней Ultra Disk.
 
 ```azurecli-interactive
-$location="eastus2"
-$subscription="xxx"
-$rgname="ultraRG"
-$diskname="ssd1"
-$vmname="ultravm1"
-$zone=123
+location="eastus2"
+subscription="xxx"
+rgname="ultraRG"
+diskname="ssd1"
+vmname="ultravm1"
+zone=123
 
 #create an ultra disk
 az disk create `
@@ -244,10 +244,10 @@ az disk create `
 Кроме того, если существующая виртуальная машина находится в зоне региона или доступности, которая поддерживает использование Ultra Disks, можно использовать Ultra Disks без необходимости создавать новую виртуальную машину.
 
 ```azurecli
-$rgName = "<yourResourceGroupName>"
-$vmName = "<yourVMName>"
-$diskName = "<yourDiskName>"
-$subscriptionId = "<yourSubscriptionID>"
+rgName="<yourResourceGroupName>"
+vmName="<yourVMName>"
+diskName="<yourDiskName>"
+subscriptionId="<yourSubscriptionID>"
 
 az vm disk attach -g $rgName --vm-name $vmName --disk $diskName --subscription $subscriptionId
 ```

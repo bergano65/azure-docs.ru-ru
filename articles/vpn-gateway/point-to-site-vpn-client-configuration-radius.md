@@ -9,6 +9,7 @@ ms.date: 01/10/2020
 ms.author: cherylmc
 ms.openlocfilehash: 5f16a902980b8cf88fb3e8a7f888a0f58ed34355
 ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/02/2020
 ms.locfileid: "84986556"
@@ -278,7 +279,7 @@ Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" | fl
    
    Кроме того, папка **GenericDevice** содержит CER-файл с именем **VpnServerRoot**. В этом файле содержится корневой сертификат, который требуется для проверки VPN-шлюза Azure при установке подключения "точка — сеть". Установите сертификат на всех устройствах, которые будут подключаться к виртуальной сети Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Вернитесь к статье, чтобы [завершить настройку подключения типа "точка — сеть"](point-to-site-how-to-radius-ps.md).
 

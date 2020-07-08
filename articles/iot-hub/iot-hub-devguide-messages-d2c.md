@@ -10,6 +10,7 @@ ms.date: 05/15/2019
 ms.author: asrastog
 ms.openlocfilehash: 18a37731171be5894a1481fb35569c9c7cf307f2
 ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/02/2020
 ms.locfileid: "84790523"
@@ -146,7 +147,7 @@ public void ListBlobsInContainer(string containerName, string iothub)
 
 Используйте [руководство по устранению неполадок для маршрутизации](troubleshoot-message-routing.md) для получения дополнительных сведений и поддержки по устранению неполадок маршрутизации.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о создании маршрутов сообщений см. в статье [Руководство. Настройка маршрутизации сообщений с Центром Интернета вещей](tutorial-routing.md).
 

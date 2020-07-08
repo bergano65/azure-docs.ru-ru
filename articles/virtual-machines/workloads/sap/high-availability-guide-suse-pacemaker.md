@@ -12,14 +12,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 05/21/2020
+ms.date: 06/24/2020
 ms.author: radeltch
-ms.openlocfilehash: 1dc5cf055e6fee72cb6d73b3c4c5c76eefb037d6
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
-ms.translationtype: HT
+ms.openlocfilehash: ed754e3f69feaf6d5415db8f71cb5c1bb65632e0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83800181"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85368262"
 ---
 # <a name="setting-up-pacemaker-on-suse-linux-enterprise-server-in-azure"></a>Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure.
 
@@ -34,9 +34,9 @@ ms.locfileid: "83800181"
 
 Существуют два варианта настройки кластера Pacemaker в Azure. Вы можете использовать агент ограждения, который выполняет перезапуск неисправного узла через интерфейсы API Azure, или можете использовать устройство SBD.
 
-Для устройства SBD требуется по крайней мере одна дополнительная виртуальная машина, выступающая в роли сервера цели iSCSI и предоставляющая устройство SBD. Эти серверы цели iSCSI могут совместно использоваться другими кластерами Pacemaker. Преимуществом использования устройства SBD является ускоренная отработка отказа. Кроме того, при использовании устройств SBD в локальной среде не требуется изменять способ эксплуатации кластера Pacemaker. В кластере Pacemaker можно использовать до трех устройств SBD, чтобы устройство SBD можно было сделать недоступным, например, во время установки исправлений ОС на сервере цели iSCSI. Если вы хотите использовать несколько устройств SBD в Pacemaker, разверните несколько серверов цели iSCSI и подключите одно устройство SBD из каждого из этих серверов. Мы рекомендуем использовать одно устройство SBD или три. Pacemaker не сможет автоматически ограждать узел кластера, если вы настроите только два устройства SBD и одно из них будет недоступно. Если вы хотите иметь возможность ограждения, когда один целевой сервер iSCSI не работает, необходимо использовать три устройства SBD и, следовательно, три сервера цели iSCSI.
+Для устройства SBD требуется по крайней мере одна дополнительная виртуальная машина, выступающая в роли сервера цели iSCSI и предоставляющая устройство SBD. Эти серверы цели iSCSI могут совместно использоваться другими кластерами Pacemaker. Преимущество использования устройства SBD заключается в том, что если вы уже используете устройства SBD локально, не требует каких-либо изменений в работе кластера Pacemaker. В кластере Pacemaker можно использовать до трех устройств SBD, чтобы устройство SBD можно было сделать недоступным, например, во время установки исправлений ОС на сервере цели iSCSI. Если вы хотите использовать несколько устройств SBD в Pacemaker, разверните несколько серверов цели iSCSI и подключите одно устройство SBD из каждого из этих серверов. Мы рекомендуем использовать одно устройство SBD или три. Pacemaker не сможет автоматически ограждать узел кластера, если вы настроите только два устройства SBD и одно из них будет недоступно. Если вы хотите иметь возможность ограждения, когда один сервер цели iSCSI не работает, необходимо использовать три устройства SBD и, следовательно, три целевых сервера iSCSI, которые являются самой гибкой конфигурацией при использовании Сбдс.
 
-Если вы не хотите тратить средства на дополнительную виртуальную машину, можно также использовать агент ограждения Azure. Недостатком этого подхода является то, что отработка отказа может занять от 10 до 15 минут, если не удается выполнить остановку ресурсов или узлам кластера не удается связаться друг с другом.
+Агенту ограждения Azure не требуется развертывание дополнительных виртуальных машин.   
 
 ![Обзор кластера Pacemaker на SLES](./media/high-availability-guide-suse-pacemaker/pacemaker.png)
 
@@ -413,32 +413,36 @@ o- / ...........................................................................
    sudo vi /root/.ssh/authorized_keys
    </code></pre>
 
-1. **[A]** Установите агенты ограждения
+1. **[A]** установите пакет агентов ограждения, если используется устройство STONITH на основе агента ограждения Azure.  
    
    <pre><code>sudo zypper install fence-agents
    </code></pre>
 
    >[!IMPORTANT]
-   > При использовании SUSE Linux Enterprise Server для SAP 15 имейте в виду, что для использования агента ограждения Azure вам нужно активировать дополнительный модуль и установить дополнительный компонент. См. сведения о [модулях и расширениях SUSE](https://www.suse.com/documentation/sles-15/singlehtml/art_modules/art_modules.html). Следуйте инструкциям ниже, чтобы установить пакет SDK Azure для Python. 
+   > Установленная версия **ограждения** пакета. агенты должны быть по крайней мере **4.4.0** , чтобы воспользоваться преимуществами более быстрого перехода на другой ресурс с помощью агента ограждения Azure, если узлы кластера должны быть ограждены. Рекомендуется обновить пакет, если он работает под управлением более ранней версии.  
 
-   Следующие инструкции по установке пакета SDK Azure для Python применимы только для SUSE Enterprise Server для SAP **15**.  
 
-    - Если вы используете собственную подписку, следуйте этим инструкциям.  
+1. **[A]** установите пакет SDK для Azure Python. 
+   - В SLES 12 SP4 или SLES 12 SP5
+   <pre><code>
+    # You may need to activate the Public cloud extention first
+    SUSEConnect -p sle-module-public-cloud/12/x86_64
+    sudo zypper install python-azure-mgmt-compute
+   </code></pre> 
 
-    <pre><code>
-    #Activate module PackageHub/15/x86_64
-    sudo SUSEConnect -p PackageHub/15/x86_64
-    #Install Azure Python SDK
-    sudo zypper in python3-azure-sdk
-    </code></pre>
-
-     - Если вы используете подписку с оплатой по мере использования, следуйте этим инструкциям.  
-
-    <pre><code>#Activate module PackageHub/15/x86_64
-    zypper ar https://download.opensuse.org/repositories/openSUSE:/Backports:/SLE-15/standard/ SLE15-PackageHub
-    #Install Azure Python SDK
-    sudo zypper in python3-azure-sdk
-    </code></pre>
+   - На SLES 15 и более поздних версий 
+   <pre><code>
+    # You may need to activate the Public cloud extention first. In this example the SUSEConnect command is for SLES 15 SP1
+    SUSEConnect -p sle-module-public-cloud/15.1/x86_64
+    sudo zypper install python3-azure-mgmt-compute
+   </code></pre> 
+ 
+   >[!IMPORTANT]
+   >В зависимости от версии и типа образа может потребоваться активировать расширение общедоступного облака для выпуска ОС, прежде чем можно будет установить пакет SDK для Azure Python.
+   >Вы можете проверить расширение, запустив Сусеконнект---List-Extensions.  
+   >Чтобы ускорить отработку отказа с помощью агента ограждения Azure, сделайте следующее:
+   > - в SLES 12 SP4 или SLES 12 SP5 установка версии **4.6.2** или более поздней версии пакет Python-Azure-управление-вычисление  
+   > - в SLES 15 Install версии **4.6.2** или более поздней версии пакет Python**3**— Azure-управление — вычисление 
 
 1. **[A]** Установите разрешения имен.
 
@@ -457,7 +461,7 @@ o- / ...........................................................................
    </code></pre>
 
 1. **[1]** Установите кластер.
-
+- При использовании устройств SBD для ограждения
    <pre><code>sudo ha-cluster-init -u
    
    # ! NTP is not configured to start at system boot.
@@ -466,6 +470,19 @@ o- / ...........................................................................
    # Address for ring0 [10.0.0.6] <b>Press ENTER</b>
    # Port for ring0 [5405] <b>Press ENTER</b>
    # SBD is already configured to use /dev/disk/by-id/scsi-36001405639245768818458b930abdf69;/dev/disk/by-id/scsi-36001405afb0ba8d3a3c413b8cc2cca03;/dev/disk/by-id/scsi-36001405f88f30e7c9684678bc87fe7bf - overwrite (y/n)? <b>n</b>
+   # Do you wish to configure an administration IP (y/n)? <b>n</b>
+   </code></pre>
+
+- Если *не использовать* устройства SBD для ограждения
+   <pre><code>sudo ha-cluster-init -u
+   
+   # ! NTP is not configured to start at system boot.
+   # Do you want to continue anyway (y/n)? <b>y</b>
+   # /root/.ssh/id_rsa already exists - overwrite (y/n)? <b>n</b>
+   # Address for ring0 [10.0.0.6] <b>Press ENTER</b>
+   # Port for ring0 [5405] <b>Press ENTER</b>
+   # Do you wish to use SBD (y/n)? <b>n</b>
+   #WARNING: Not configuring SBD - STONITH will be disabled.
    # Do you wish to configure an administration IP (y/n)? <b>n</b>
    </code></pre>
 
@@ -528,8 +545,27 @@ o- / ...........................................................................
    <pre><code>sudo service corosync restart
    </code></pre>
 
+## <a name="default-pacemaker-configuration-for-sbd"></a>Конфигурация Pacemaker по умолчанию для SBD
+
+Конфигурация в этом разделе применима только при использовании SBD STONITH.  
+
+1. **[1]** Активируйте использование устройства STONITH и задайте задержку ограничения.
+
+<pre><code>sudo crm configure property stonith-timeout=144
+sudo crm configure property stonith-enabled=true
+
+# List the resources to find the name of the SBD device
+sudo crm resource list
+sudo crm resource stop stonith-sbd
+sudo crm configure delete <b>stonith-sbd</b>
+sudo crm configure primitive <b>stonith-sbd</b> stonith:external/sbd \
+   params pcmk_delay_max="15" \
+   op monitor interval="15" timeout="15"
+</code></pre>
+
 ## <a name="create-azure-fence-agent-stonith-device"></a>Создание устройства STONITH с ролью агента ограждения Azure
 
+Этот раздел документации применим только при использовании STONITH на основе агента ограждения Azure.
 Устройство STONITH использует субъект-службу для авторизации в Microsoft Azure. Чтобы создать субъект-службу, выполните следующее.
 
 1. Перейдите на сайт <https://portal.azure.com>.
@@ -553,22 +589,26 @@ o- / ...........................................................................
 
 ```json
 {
-  "Name": "Linux Fence Agent Role",
-  "Id": null,
-  "IsCustom": true,
-  "Description": "Allows to deallocate and start virtual machines",
-  "Actions": [
-    "Microsoft.Compute/*/read",
-    "Microsoft.Compute/virtualMachines/deallocate/action",
-    "Microsoft.Compute/virtualMachines/start/action", 
-    "Microsoft.Compute/virtualMachines/powerOff/action" 
-  ],
-  "NotActions": [
-  ],
-  "AssignableScopes": [
-    "/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e",
-    "/subscriptions/e91d47c4-76f3-4271-a796-21b4ecfe3624"
-  ]
+    "properties": {
+        "roleName": "Linux Fence Agent Role",
+        "description": "Allows to power-off and start virtual machines",
+        "assignableScopes": [
+            "/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e",
+            "/subscriptions/e91d47c4-76f3-4271-a796-21b4ecfe3624"
+        ],
+        "permissions": [
+            {
+                "actions": [
+                    "Microsoft.Compute/*/read",
+                    "Microsoft.Compute/virtualMachines/powerOff/action",
+                    "Microsoft.Compute/virtualMachines/start/action"
+                ],
+                "notActions": [],
+                "dataActions": [],
+                "notDataActions": []
+            }
+        ]
+    }
 }
 ```
 
@@ -591,32 +631,23 @@ o- / ...........................................................................
 
 После изменения разрешений для виртуальных машин можно настроить устройства STONITH в кластере.
 
-<pre><code># replace the bold string with your subscription ID, resource group, tenant ID, service principal ID and password
+<pre><code>sudo crm configure property stonith-enabled=true
+crm configure property concurrent-fencing=true
+# replace the bold string with your subscription ID, resource group, tenant ID, service principal ID and password
 sudo crm configure primitive rsc_st_azure stonith:fence_azure_arm \
-   params subscriptionId="<b>subscription ID</b>" resourceGroup="<b>resource group</b>" tenantId="<b>tenant ID</b>" login="<b>login ID</b>" passwd="<b>password</b>"
+  params subscriptionId="<b>subscription ID</b>" resourceGroup="<b>resource group</b>" tenantId="<b>tenant ID</b>" login="<b>login ID</b>" passwd="<b>password</b>" \
+  pcmk_monitor_retries=4 pcmk_action_limit=3 power_timeout=240 pcmk_reboot_timeout=900 \ 
+  op monitor interval=3600 timeout=120
 
 sudo crm configure property stonith-timeout=900
-sudo crm configure property stonith-enabled=true
+
 </code></pre>
+
+> [!IMPORTANT]
+> Операции мониторинга и ограждения десериализованы. В результате, если выполняется более длительная операция наблюдения и одновременное событие ограждения, задержка на отработку отказа кластера отсутствует из-за уже запущенной операции мониторинга.
 
 > [!TIP]
 >Для агента ограждения Azure требуется исходящее подключение к общедоступным конечным точкам. См. сведения об этом требовании и о возможных решениях в статье [Подключение к общедоступной конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. категория "Стандартный") в сценариях с SAP с высоким уровнем доступности](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-standard-load-balancer-outbound-connections).  
-
-## <a name="default-pacemaker-configuration-for-sbd"></a>Конфигурация Pacemaker по умолчанию для SBD
-
-1. **[1]** Активируйте использование устройства STONITH и задайте задержку ограничения.
-
-<pre><code>sudo crm configure property stonith-timeout=144
-sudo crm configure property stonith-enabled=true
-
-# List the resources to find the name of the SBD device
-sudo crm resource list
-sudo crm resource stop stonith-sbd
-sudo crm configure delete <b>stonith-sbd</b>
-sudo crm configure primitive <b>stonith-sbd</b> stonith:external/sbd \
-   params pcmk_delay_max="15" \
-   op monitor interval="15" timeout="15"
-</code></pre>
 
 ## <a name="pacemaker-configuration-for-azure-scheduled-events"></a>Конфигурация Pacemaker для запланированных событий Azure
 
@@ -651,7 +682,7 @@ sudo crm configure property maintenance-mode=false
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
-* [Развертывание виртуальных машин для SAP][deployment-guide]
+* [Развертывание виртуальных машин Azure для SAP NetWeaver][deployment-guide]
 * [Развертывание СУБД виртуальных машин Azure для SAP][dbms-guide]
 * [Обеспечение высокого уровня доступности NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server][sles-nfs-guide]
 * [Руководство по обеспечению высокого уровня доступности виртуальных машин Azure для SAP NetWeaver на SUSE Linux Enterprise Server для приложений SAP][sles-guide]

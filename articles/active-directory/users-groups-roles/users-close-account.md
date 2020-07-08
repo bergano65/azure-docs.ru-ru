@@ -6,23 +6,23 @@ author: rolyon
 manager: mtillman
 ms.service: active-directory
 ms.subservice: users-groups-roles
-ms.topic: article
+ms.topic: how-to
 ms.workload: identity
 ms.date: 05/20/2019
 ms.author: rolyon
 ms.reviewer: ''
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11c337f4838279771523a1f375b7349387d68f45
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.openlocfilehash: 1bbc1644294a471bbb704d10c5f684d7404eae95
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82582537"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85374582"
 ---
 # <a name="close-your-work-or-school-account-in-an-unmanaged-azure-ad-organization"></a>Закрытие рабочей или учебной учетной записи в неуправляемой Организации Azure AD
 
-Если вы являетесь пользователем в неуправляемой Организации Azure Active Directory (Azure AD) и вам больше не нужно использовать приложения из этой организации или не хотите поддерживать связь с ней, вы можете закрыть учетную запись в любое время. Неуправляемая организация не имеет глобального администратора. Пользователи в неуправляемой организации могут закрыть свои учетные записи самостоятельно, не обращаясь к администратору.
+Если вы являетесь пользователем в неуправляемой Организации Azure Active Directory (Azure AD) и вам больше не нужно использовать приложения из этой организации или не хотите поддерживать взаимосвязь с ней, вы можете закрыть учетную запись в любое время. Неуправляемая организация не имеет глобального администратора. Пользователи в неуправляемой организации могут закрыть свои учетные записи самостоятельно, не обращаясь к администратору.
 
 Пользователи в неуправляемой организации часто создаются во время самостоятельной регистрации. Примером может быть информационный работник в Организации, который подписывается на бесплатную службу. Дополнительные сведения о самостоятельной регистрации см. в разделе [что такое самостоятельная регистрация для Azure Active Directory?](directory-self-service-signup.md).
 
@@ -53,7 +53,7 @@ ms.locfileid: "82582537"
 
     ![Мои запросы к данным — подтвердить закрытие](./media/users-close-account/confirm-close.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Что такое самостоятельная регистрация для Azure Active Directory?](directory-self-service-signup.md)
 - [Удаление пользователя из неуправляемого клиента](https://docs.microsoft.com/flow/gdpr-dsr-delete#delete-the-user-from-unmanaged-tenant)

@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 394b242ab46da7821f77e8d008836753f4e358e2
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67185236"
 ---
 На этом шаге вручную создается прослушиватель группы доступности в диспетчере отказоустойчивости кластеров и службе SQL Server Management Studio.
@@ -19,7 +19,7 @@ ms.locfileid: "67185236"
 
 3. Разверните имя кластера и щелкните пункт **Роли**.
 
-4. На панели **роли** щелкните правой кнопкой мыши имя группы доступности и выберите **Добавить ресурс** > **точка доступа клиента**.
+4. На панели **роли** щелкните правой кнопкой мыши имя группы доступности и выберите **Добавить ресурс**  >  **точка доступа клиента**.
    
     ![Добавление точки доступа клиента для группы доступности](./media/virtual-machines-sql-server-configure-alwayson-availability-group-listener/IC678769.gif)
 

@@ -5,28 +5,28 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 4/13/2020
-ms.openlocfilehash: 506bf076c955beb5c5e57811bbdb42bfedb8cbe3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 6/24/2020
+ms.openlocfilehash: f05f26c54d9f3ea62180c598aada59d405c3c805
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81382967"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85362685"
 ---
 # <a name="configure-and-access-audit-logs-in-the-azure-portal"></a>Настройка и доступ к журналам аудита в портал Azure
 
 В портал Azure можно настроить [журналы аудита базы данных Azure для MariaDB](concepts-audit-logs.md) и параметры диагностики.
 
-> [!IMPORTANT]
-> Функции журнала аудита в настоящее время доступны в предварительной версии.
-
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 
 - [База данных Azure для сервера MariaDB](quickstart-create-mariadb-server-database-using-azure-portal.md)
 
 ## <a name="configure-audit-logging"></a>Настройка ведения журнала аудита
+
+>[!IMPORTANT]
+> Рекомендуется регистрировать только те типы событий и пользователей, которые необходимы для целей аудита, чтобы гарантировать, что производительность сервера не окажется сильной.
 
 Включение и Настройка ведения журнала аудита.
 
@@ -53,7 +53,7 @@ ms.locfileid: "81382967"
 
 1. В разделе **мониторинг** на боковой панели выберите **параметры диагностики**.
 
-1. Щелкните "+ добавить параметр диагностики" ![добавить параметр диагностики](./media/howto-configure-audit-logs-portal/add-diagnostic-setting.png)
+1. Щелкните "+ добавить параметр диагностики" ![ Добавить параметр диагностики](./media/howto-configure-audit-logs-portal/add-diagnostic-setting.png)
 
 1. Укажите имя параметра диагностики.
 

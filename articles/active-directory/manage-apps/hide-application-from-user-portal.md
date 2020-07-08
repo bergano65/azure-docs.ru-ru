@@ -1,25 +1,25 @@
 ---
-title: Скрыть приложение от взаимодействия с пользователем в Azure AD
-description: Как скрыть приложение от пользователей на панелях доступа Azure Active Directory или в средствах запуска Office 365.
+title: Скрытие корпоративного приложения от взаимодействия с пользователем в Azure AD
+description: Как скрыть сайтам предприятия приложение от взаимодействия с пользователем на панелях доступа Azure Active Directory или в программах запуска Office 365.
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/25/2020
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: kasimpso
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5718adf4fd76e2fbd0ff793dd2fa33ee08f7c0fe
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d21ba14fba24c9b8e0b460e56b93d0e5212bfb27
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80295052"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85367705"
 ---
-# <a name="hide-applications-from-end-users-in-azure-active-directory"></a>Скрытие приложений от пользователей в Azure Active Directory
+# <a name="hide-enterprise-applications-from-end-users-in-azure-active-directory"></a>Скрыть корпоративные приложения от конечных пользователей в Azure Active Directory
 
 Инструкции о том, как скрыть приложения на панели MyApps пользователей или в средстве запуска Office 365. Когда приложение скрыто, у пользователей по-прежнему есть к нему доступ. 
 
@@ -42,6 +42,9 @@ ms.locfileid: "80295052"
 7.  Для вопроса **Видно пользователям?** выберите **Нет**.
 8.  Нажмите кнопку **Сохранить**.
 
+> [!NOTE]
+> Эти инструкции относятся только к корпоративным приложениям.
+
 ## <a name="use-azure-ad-powershell-to-hide-an-application"></a>Использование Azure AD PowerShell для скрытия приложения
 
 Чтобы скрыть приложение на панели "MyApps", можно вручную добавить тег Хидеапп к субъекту-службе для приложения. Выполните следующие команды [PowerShell AzureAD](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#service_principals) , чтобы задать для приложения значение **нет**. для свойства **Visible** . 
@@ -62,12 +65,13 @@ Set-AzureADServicePrincipal -ObjectId $objectId -Tags $tags
 
 1.  Войдите на [портал Azure](https://portal.azure.com) как глобальный администратор каталога.
 2.  Выберите **Azure Active Directory**.
-3.  Выберите **Параметры пользователя**.
-4.  В разделе **корпоративных приложений** щелкните **Manage how end users launch and view their applications** (Управление запуском и просмотром приложений для пользователей).
-5.  Для параметра **Пользователи могут видеть приложения Office 365 только на портале Office 365** выберите **Да**.
-6.  Нажмите кнопку **Сохранить**.
+3.  Выберите **Пользователи**.
+4.  Выберите **Параметры пользователя**.
+5.  В разделе **корпоративных приложений** щелкните **Manage how end users launch and view their applications** (Управление запуском и просмотром приложений для пользователей).
+6.  Для параметра **Пользователи могут видеть приложения Office 365 только на портале Office 365** выберите **Да**.
+7.  Выберите команду **Сохранить**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Просмотр всех моих групп](../fundamentals/active-directory-groups-view-azure-portal.md)
 * [Назначение корпоративному приложению пользователя или группы](assign-user-or-group-access-portal.md)
 * [Удаление назначения пользователя или группы из корпоративного приложения](remove-user-or-group-access-portal.md)

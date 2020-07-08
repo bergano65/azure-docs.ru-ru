@@ -3,25 +3,25 @@ title: Ошибка "Can't Access this Corporate Application" (Нет досту
 description: Устранение распространенных проблем доступа в приложениях прокси приложения Azure AD.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 05/21/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bbb3743251f2818ab1e4255b3dc6e7f4f9cbbcba
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.openlocfilehash: 6eca304901e391c931aba892abf3cb2a19d4ae3b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83846738"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85367756"
 ---
 # <a name="cant-access-this-corporate-application-error-when-using-an-application-proxy-application"></a>Ошибка "Can't Access this Corporate Application" (Не удается обратиться к этому корпоративному приложению) при использовании приложения прокси приложения
 
@@ -71,7 +71,7 @@ ms.locfileid: "83846738"
 Убедитесь, что приложение назначено рабочей группе соединителей:
 
 1. Откройте приложение на портале, перейдя в **Azure Active Directory** и выбрав **Корпоративные приложения** и затем **Все приложения.** Откройте приложение, а затем выберите **Прокси приложения** в меню слева.
-1. Взгляните на поле "Группа соединителей". Если в группе нет активных соединителей, отображается предупреждение. Если предупреждения отсутствуют, переходите к проверки того, что [нужные порты](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectivity-ports-how-to) внесены в список разрешенных.
+1. Взгляните на поле "Группа соединителей". Если в группе нет активных соединителей, отображается предупреждение. Если предупреждения отсутствуют, переходите к проверки того, что [нужные порты](application-proxy-add-on-premises-application.md) внесены в список разрешенных.
 1. Если отображается неправильная группа соединителей, выберите подходящую группу с помощью раскрывающегося списка и убедитесь, что предупреждения больше не отображаются. Если это нужная группа соединителей, щелкните предупреждение, чтобы открыть страницу с функциями управления соединителями.
 1. Здесь работу можно продолжить несколькими способами:
 
@@ -83,7 +83,7 @@ ms.locfileid: "83846738"
 
 ## <a name="check-all-required-ports-are-open"></a>Проверка того, что нужные порты внесены в список разрешенных
 
-Чтобы убедиться, что открыты все необходимые порты, см. [документацию по открытию портов](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectivity-ports-how-to). Если все нужные порты открыты, перейдите к следующему разделу.
+Убедитесь, что все необходимые порты открыты. Необходимые порты см. в разделе "открытые порты" [руководства по добавлению локального приложения для удаленного доступа через прокси приложения в Azure Active Directory](application-proxy-add-on-premises-application.md). Если все нужные порты открыты, перейдите к следующему разделу.
 
 ## <a name="check-for-other-connector-errors"></a>Проверка других ошибок соединителя
 

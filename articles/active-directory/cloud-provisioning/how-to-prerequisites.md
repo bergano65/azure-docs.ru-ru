@@ -6,17 +6,17 @@ author: billmath
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/06/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 55f2167552e21973d304f98693be022683fdf661
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
-ms.translationtype: HT
+ms.openlocfilehash: b7eb632405ef17ef4100503f30168c1207179f48
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83870933"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85373868"
 ---
 # <a name="prerequisites-for-azure-ad-connect-cloud-provisioning"></a>Предварительные требования для облачной подготовки Azure AD Connect
 В этой статье описано, как выбрать и применить облачную подготовку Azure Active Directory (Azure AD) Connect в качестве решения для идентификации.
@@ -26,8 +26,8 @@ ms.locfileid: "83870933"
 ## <a name="cloud-provisioning-agent-requirements"></a>Требования к агенту облачной подготовки
 Для использования облачной подготовки Azure AD Connect вам потребуются следующие ресурсы.
     
-- Учетная запись глобального администратора для клиента Azure AD, не являющегося гостевым пользователем.
-- Локальный сервер для агента подготовки с Windows 2012 R2 или более поздней версии.
+- Учетная запись гибридного администратора удостоверений для клиента Azure AD, который не является гостевым пользователем.
+- Локальный сервер для агента подготовки с Windows 2012 R2 или более поздней версии.  Этот сервер должен быть сервером уровня 0 на основе [модели административного уровня Active Directory](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material).
 - Конфигурации для локального брандмауэра.
 
 >[!NOTE]
@@ -37,7 +37,7 @@ ms.locfileid: "83870933"
 
 ### <a name="in-the-azure-active-directory-admin-center"></a>В центре администрирования Azure Active Directory
 
-1. Создайте облачную учетную запись глобального администратора в клиенте Azure AD. Таким образом, вы сможете управлять конфигурацией клиента, если работа локальных служб завершится сбоем или они станут недоступными. Узнайте больше о том, как [добавить облачную учетную запись глобального администратора](../active-directory-users-create-azure-portal.md). Выполнение этого шага очень важно, чтобы не потерять доступ к клиенту.
+1. Создайте облачную учетную запись администратора гибридной идентификации в клиенте Azure AD. Таким образом, вы сможете управлять конфигурацией клиента, если работа локальных служб завершится сбоем или они станут недоступными. Узнайте [, как добавить облачную учетную запись администратора гибридной идентификации](../active-directory-users-create-azure-portal.md). Выполнение этого шага очень важно, чтобы не потерять доступ к клиенту.
 1. Добавьте одно [имя личного домена](../active-directory-domains-add-azure-portal.md) (или несколько) в клиент Azure AD. Пользователи могут выполнить вход с помощью одного из этих доменных имен.
 
 ### <a name="in-your-directory-in-active-directory"></a>В каталоге Active Directory

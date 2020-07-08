@@ -4,16 +4,16 @@ description: Автоматическое масштабирование узл�
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: f659a40cbb9e3ef2d0e7fe4e527518a76507d5ee
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: f94852a99f0bc430ac193b9951de607cdd7fa933
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83745713"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85362549"
 ---
 # <a name="scale-session-hosts-using-azure-automation"></a>Масштабирование узлов сеансов с помощью службы автоматизации Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "83745713"
 Средство масштабирования предоставляет недорогой вариант автоматизации для клиентов, желающих оптимизировать затраты на виртуальные машины узла сеансов.
 
 Средство масштабирования можно использовать для выполнения следующих задач.
- 
+
 - Планирование запуска и остановки виртуальных машин на основе пиковых и непиковых рабочих часов.
 - Увеличение масштаба виртуальных машин на основе числа сеансов на ядро ЦП.
 - Уменьшение масштаба виртуальных машин в часы наименьшей нагрузки с минимальным количеством запущенных виртуальных машин.
@@ -67,7 +67,7 @@ ms.locfileid: "83745713"
 - Виртуальные машины пула узлов сеансов, настроенные и зарегистрированные в службе Виртуального рабочего стола Windows.
 - Пользователь с правами [участника](../../role-based-access-control/role-assignments-portal.md) в подписке Azure.
 
-На компьютере для развертывания средства должны быть установлены следующие компоненты. 
+На компьютере для развертывания средства должны быть установлены следующие компоненты.
 
 - Windows PowerShell 5.1 или более поздней версии
 - Модуль PowerShell Microsoft AZ
@@ -106,7 +106,8 @@ ms.locfileid: "83745713"
 
 6. После настройки учетной записи службы автоматизации Azure войдите в свою подписку Azure и убедитесь, что ваша учетная запись службы автоматизации Azure и соответствующий модуль runbook появлялись в указанной группе ресурсов, как это показано на следующем рисунке.
 
-![Изображение страницы обзора Azure с созданной учетной записью службы автоматизации и модулем runbook.](../media/automation-account.png)
+> [!div class="mx-imgBorder"]
+> ![Изображение страницы обзора Azure с созданной учетной записью службы автоматизации и модулем runbook.](../media/automation-account.png)
 
   Чтобы проверить, что веб-перехватчик находится на своем месте, выберите имя модуля runbook. Затем перейдите к разделу ресурсов модуля runbook и выберите **Веб-перехватчики**.
 
@@ -180,21 +181,21 @@ New-RdsRoleAssignment -RoleDefinitionName "RDS Contributor" -ApplicationId <appl
 
      ```powershell
      $aadTenantId = (Get-AzContext).Tenant.Id
-     
+
      $azureSubscription = Get-AzSubscription | Out-GridView -PassThru -Title "Select your Azure Subscription"
      Select-AzSubscription -Subscription $azureSubscription.Id
      $subscriptionId = $azureSubscription.Id
-     
+
      $resourceGroup = Get-AzResourceGroup | Out-GridView -PassThru -Title "Select the resource group for the new Azure Logic App"
      $resourceGroupName = $resourceGroup.ResourceGroupName
      $location = $resourceGroup.Location
-     
+
      $wvdTenant = Get-RdsTenant | Out-GridView -PassThru -Title "Select your WVD tenant"
      $tenantName = $wvdTenant.TenantName
-     
+
      $wvdHostpool = Get-RdsHostPool -TenantName $wvdTenant.TenantName | Out-GridView -PassThru -Title "Select the host pool you'd like to scale"
      $hostPoolName = $wvdHostpool.HostPoolName
-     
+
      $recurrenceInterval = Read-Host -Prompt "Enter how often you'd like the job to run in minutes, e.g. '15'"
      $beginPeakTime = Read-Host -Prompt "Enter the start time for peak hours in local time, e.g. 9:00"
      $endPeakTime = Read-Host -Prompt "Enter the end time for peak hours in local time, e.g. 18:00"
@@ -204,12 +205,12 @@ New-RdsRoleAssignment -RoleDefinitionName "RDS Contributor" -ApplicationId <appl
      $limitSecondsToForceLogOffUser = Read-Host -Prompt "Enter the number of seconds to wait before automatically signing out users. If set to 0, users will be signed out immediately"
      $logOffMessageTitle = Read-Host -Prompt "Enter the title of the message sent to the user before they are forced to sign out"
      $logOffMessageBody = Read-Host -Prompt "Enter the body of the message sent to the user before they are forced to sign out"
-     
+
      $automationAccount = Get-AzAutomationAccount -ResourceGroupName $resourceGroup.ResourceGroupName | Out-GridView -PassThru
      $automationAccountName = $automationAccount.AutomationAccountName
      $automationAccountConnection = Get-AzAutomationConnection -ResourceGroupName $resourceGroup.ResourceGroupName -AutomationAccountName $automationAccount.AutomationAccountName | Out-GridView -PassThru -Title "Select the Azure RunAs connection asset"
      $connectionAssetName = $automationAccountConnection.Name
-     
+
      $webHookURI = Read-Host -Prompt "Enter the URI of the WebHook returned by when you created the Azure Automation Account"
      $maintenanceTagName = Read-Host -Prompt "Enter the name of the Tag associated with VMs you don't want to be managed by this scaling tool"
 
@@ -236,11 +237,13 @@ New-RdsRoleAssignment -RoleDefinitionName "RDS Contributor" -ApplicationId <appl
 
      После выполнения сценария приложение логики должно отобразиться в группе ресурсов, как показано на следующем рисунке.
 
-     ![Изображение страницы обзора для примера приложения логики Azure.](../media/logic-app.png)
+     > [!div class="mx-imgBorder"]
+     > ![Изображение страницы обзора для примера приложения логики Azure.](../media/logic-app.png)
 
 Чтобы внести изменения в расписание выполнения, например изменить интервал повторения или часовой пояс, перейдите к планировщику автомасштабирования и нажмите **Изменить**, чтобы перейти в конструктор Logic Apps.
 
-![Изображение конструктора Logic Apps. Открыты меню повторения и веб-перехватчика, которые позволяют пользователю изменять время повторения и файл веб-перехватчика.](../media/logic-apps-designer.png)
+> [!div class="mx-imgBorder"]
+> ![Изображение конструктора Logic Apps. Открыты меню повторения и веб-перехватчика, которые позволяют пользователю изменять время повторения и файл веб-перехватчика.](../media/logic-apps-designer.png)
 
 ## <a name="manage-your-scaling-tool"></a>Управление средством масштабирования
 
@@ -252,7 +255,8 @@ New-RdsRoleAssignment -RoleDefinitionName "RDS Contributor" -ApplicationId <appl
 
 В правой части выбранной учетной записи службы автоматизации в разделе "Статистика заданий" можно просмотреть список сводных данных всех заданий runbook. При открытии страницы **Задания** в левой части окна отображаются текущие состояния заданий, время запуска и время завершения.
 
-![Снимок экрана со страницей состояния заданий.](../media/jobs-status.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана со страницей состояния заданий.](../media/jobs-status.png)
 
 ### <a name="view-logs-and-scaling-tool-output"></a>Просмотр журналов и выходных данных средства масштабирования
 
@@ -260,5 +264,6 @@ New-RdsRoleAssignment -RoleDefinitionName "RDS Contributor" -ApplicationId <appl
 
 Перейдите к модулю runbook (имя по умолчанию — WVDAutoScaleRunbook) в группе ресурсов, в которой размещена учетная запись службы автоматизации Azure, и выберите **Обзор**. На странице обзора выберите задание в разделе недавних заданий, чтобы просмотреть его выходные данные для средства масштабирования, как показано на следующем рисунке.
 
-![Изображение окна вывода для средства масштабирования.](../media/tool-output.png)
+> [!div class="mx-imgBorder"]
+> ![Изображение окна вывода для средства масштабирования.](../media/tool-output.png)
 

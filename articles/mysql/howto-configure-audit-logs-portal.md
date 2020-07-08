@@ -5,28 +5,28 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 4/13/2020
-ms.openlocfilehash: fcd436f87b24d8cdc246d2f1d33a49311e72d46b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 6/24/2020
+ms.openlocfilehash: 1c48c16666305e9b9c342869e52aa04cfd4dac07
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81380305"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85362974"
 ---
 # <a name="configure-and-access-audit-logs-for-azure-database-for-mysql-in-the-azure-portal"></a>Настройка и доступ к журналам аудита для базы данных Azure для MySQL в портал Azure
 
 Вы можете настроить [журналы аудита базы данных Azure для MySQL](concepts-audit-logs.md) и параметры диагностики из портал Azure.
 
-> [!IMPORTANT]
-> Функции журнала аудита в настоящее время доступны в предварительной версии.
-
 ## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 
-- [Сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md)
+- [Сервер Базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md)
 
 ## <a name="configure-audit-logging"></a>Настройка ведения журнала аудита
+
+>[!IMPORTANT]
+> Рекомендуется регистрировать только те типы событий и пользователей, которые необходимы для целей аудита, чтобы гарантировать, что производительность сервера не окажется сильной.
 
 Включение и Настройка ведения журнала аудита.
 
@@ -53,7 +53,7 @@ ms.locfileid: "81380305"
 
 1. В разделе **мониторинг** на боковой панели выберите **параметры диагностики**.
 
-1. Щелкните "+ добавить параметр диагностики" ![добавить параметр диагностики](./media/howto-configure-audit-logs-portal/add-diagnostic-setting.png)
+1. Щелкните "+ добавить параметр диагностики" ![ Добавить параметр диагностики](./media/howto-configure-audit-logs-portal/add-diagnostic-setting.png)
 
 1. Укажите имя параметра диагностики.
 
@@ -67,7 +67,7 @@ ms.locfileid: "81380305"
 
 1. Получите доступ к журналам аудита, просмотрев их в настроенных приемниках данных. Для отображения журналов может потребоваться до 10 минут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [журналах аудита](concepts-audit-logs.md) в базе данных Azure для MySQL
 - Узнайте, как настроить журналы аудита в [Azure CLI](howto-configure-audit-logs-cli.md)

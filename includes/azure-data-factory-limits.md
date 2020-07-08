@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/08/2020
 ms.author: jingwang
 ms.custom: include file
-ms.openlocfilehash: 217e48ab21439f03e0b52c894c9aace5b51b1502
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 995339f91be37b71d73b409f3eaeafb3dd1777ab
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79086139"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84754641"
 ---
 Фабрика данных Azure — это многоклиентская служба, которая имеет следующие ограничения по умолчанию, чтобы гарантировать защиту подписок клиентов от рабочих нагрузок друг друга. Чтобы увеличить предел до максимального значения для подписки, обратитесь в службу поддержки.
 
@@ -46,7 +46,7 @@ ms.locfileid: "79086139"
 | Мониторинг запросов в минуту | 1000 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Операции CRUD с сущностями в минуту | 50 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Максимальное время сеанса отладки потока данных | 8 часов | 8 часов |
-| Число параллельных потоков данных на фабрику | 50 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
+| Количество одновременных потоков данных на среду выполнения интеграции | 50 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Число параллельных сеансов отладки потока данных на одного пользователя на фабрику | 3 | 3 |
 | Предельный срок жизни Azure IR потока данных | 4 часа | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 
