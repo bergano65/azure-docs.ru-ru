@@ -6,13 +6,14 @@ ms.author: hrasheed
 ms.reviewer: ashishth
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/15/2019
-ms.openlocfilehash: 2440b93629416ea73fcf211cbe7bf5a3b72ab2e7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b975ee8cebdac3855c3fca88b20c01145d11baeb
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74267324"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86080199"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---motivation-and-benefits"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — мотивация и преимущества
 
@@ -198,7 +199,7 @@ Azure HDInsight является облачным дистрибутивом к�
 |Нужно ли деконструировать рабочие нагрузки?|Заменить задания Hive заданиями Spark||
 |Нужно ли использовать ADF для оркестрации данных?|Нет||
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Прочитайте следующую статью в этом цикле:
 

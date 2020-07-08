@@ -5,14 +5,15 @@ author: ashishthaps
 ms.author: ashishth
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/01/2020
-ms.openlocfilehash: fa94b7461907a2337ba448a91d67fe93c5ab2f8f
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 93136286dc14a5c7c69fe8c17829eddabddbfacf
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85957568"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86080063"
 ---
 # <a name="apache-phoenix-query-server-rest-sdk"></a>Пакет REST SDK для Apache Phoenix Query Server
 
@@ -72,7 +73,7 @@ await client.ConnectionSyncRequestAsync(connId, connProperties, options);
 
 Ниже приведены некоторые важные свойства.
 
-| Свойство. | Описание: |
+| Свойство | Описание |
 | -- | -- |
 | AutoCommit | Логическое значение, обозначающее, включено ли свойство `autoCommit` для транзакций Phoenix. |
 | ReadOnly | Логическое значение, обозначающее, является ли подключение доступным только для чтения. |
@@ -83,7 +84,7 @@ await client.ConnectionSyncRequestAsync(connId, connProperties, options);
 
 Возможные значения `TransactionIsolation`:
 
-| Значение изоляции | Описание: |
+| Значение изоляции | Описание |
 | -- | -- |
 | 0 | Транзакции не поддерживаются. |
 | 1 | Могут возникать операции чтения "грязных" данных, а также неповторяемые и фантомные операции чтения. |
@@ -538,7 +539,7 @@ MH: 6
 FM: 5
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Apache Phoenix в HDInsight](../hdinsight-phoenix-in-hdinsight.md)
 * [Использование пакета REST SDK для Apache HBase](apache-hbase-rest-sdk.md)

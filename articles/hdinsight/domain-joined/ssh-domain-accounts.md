@@ -5,13 +5,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/14/2020
-ms.openlocfilehash: 5529989384df75b592afa8f5e4960eb9817fb2d7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5be992ef8375f98b3c5978d8b71dc92ce9f91123
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77472522"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86081508"
 ---
 # <a name="manage-ssh-access-for-domain-accounts-in-azure-hdinsight"></a>Управление доступом по протоколу SSH для учетных записей домена в Azure HDInsight
 
@@ -59,7 +60,7 @@ ms.locfileid: "77472522"
 
 Чтобы включить подробное ведение журнала, необходимо перезапустить `sshd` с `-d` параметром. Как и в `/usr/sbin/sshd -d` случае с `sshd` пользовательским портом (например, 2222), не нужно останавливаться на главном управляющей программе SSH. Можно также использовать `-v` параметр с клиентом SSH для получения дополнительных журналов (представление ошибок на стороне клиента).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Управление кластерами HDInsight с помощью корпоративного пакета безопасности](./apache-domain-joined-manage.md)
 * [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md).

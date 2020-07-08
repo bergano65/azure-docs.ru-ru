@@ -5,14 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/13/2020
-ms.openlocfilehash: ddf69a75a39911293277a4a4189cf4e79256e09d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4445bb5c73ca001813d529a3e65d1ea95e084616
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77186857"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86082460"
 ---
 # <a name="scp-programming-guide-for-apache-storm-in-azure-hdinsight"></a>Инструкции по программированию SCP для Apache Storm в Azure HDInsight
 
@@ -455,7 +456,7 @@ SCP.NET определяет следующие ключевые слова:
 
 SCP.NET также определяет следующие часто используемые параметры:
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
 | "plugin.name" |Имя EXE-файла подключаемого модуля C# |
 | "plugin.args" |Аргументы подключаемого модуля |
@@ -788,7 +789,7 @@ public void FinishBatch(Dictionary<string, Object> parms)
 
 Этот пример, по сути, аналогичен HelloWorld. Единственное отличие состоит в том, что код компилируется в виде библиотеки DLL, а топология отправляется с помощью SCPHost.exe. Более подробное описание см. в разделе режим узла SCP.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Примеры топологий Apache Storm, созданных с помощью SCP, см. в следующих статьях:
 

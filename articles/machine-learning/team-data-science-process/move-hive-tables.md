@@ -11,11 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: d5e44d6b34a16f03d4ca1f82453f1f6e9f074917
-ms.sourcegitcommit: 95269d1eae0f95d42d9de410f86e8e7b4fbbb049
+ms.openlocfilehash: 7cce0a927c2ffd69252a22ea4459f789d22721c2
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83860619"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86080743"
 ---
 # <a name="create-hive-tables-and-load-data-from-azure-blob-storage"></a>Создание таблиц Hive и загрузка данных из хранилища BLOB-объектов Azure
 
@@ -29,7 +30,7 @@ ms.locfileid: "83860619"
 * Включили удаленный доступ к кластеру, вошли в систему и открыли консоль командной строки Hadoop. Инструкции можно найти в статье об [управлении кластерами Apache Hadoop](../../hdinsight/hdinsight-administer-use-portal-linux.md).
 
 ## <a name="upload-data-to-azure-blob-storage"></a>Отправка данных в хранилище больших двоичных объектов Azure
-Если вы создали виртуальную машину Azure в соответствии с инструкциями в разделе [Настройка виртуальной машины Azure для расширенной аналитики](../../machine-learning/data-science-virtual-machine/overview.md), этот файл сценария должен быть загружен в каталог *C:\\Users\\\<имя пользователя\>\\Documents\\Data Science Scripts* на виртуальной машине. Чтобы подготовить запросы Hive к отправке, достаточно предоставить схему данных и конфигурацию хранилища BLOB-объектов Azure в соответствующих полях.
+Если вы создали виртуальную машину Azure, следуя инструкциям в статье [Настройка виртуальной машины Azure для расширенной аналитики](../../machine-learning/data-science-virtual-machine/overview.md), этот файл скрипта должен быть скачан в каталог *C: \\ Users \\ \<user name\> \\ Documenting \\ Scripts* Directory на виртуальной машине. Чтобы подготовить запросы Hive к отправке, достаточно предоставить схему данных и конфигурацию хранилища BLOB-объектов Azure в соответствующих полях.
 
 Предполагается, что формат данных для таблиц Hive — табличный формат **без сжатия** и что данные отправлены в контейнер по умолчанию (или дополнительный контейнер) учетной записи хранения, которую использует кластер Hadoop.
 
@@ -69,7 +70,9 @@ ms.locfileid: "83860619"
 #### <a name="submit-hive-queries-in-hql-files"></a>Отправка запросов Hive в HQL-файлах
 Если запрос Hive сложный и содержит несколько строк, редактировать запросы в командной строке или командной консоли Hive нецелесообразно. Вместо этого можно применить текстовый редактор на головном узле кластера Hadoop, чтобы сохранить запросы Hive в HQL-файле в локальном каталоге головного узла. Затем можно отправить запрос Hive в HQL-файле, используя аргумент `-f`:
 
-    hive -f "<path to the '.hql' file>"
+```console
+hive -f "<path to the '.hql' file>"
+```
 
 ![Запрос Hive в HQL-файле](./media/move-hive-tables/run-hive-queries-3.png)
 
@@ -77,8 +80,10 @@ ms.locfileid: "83860619"
 
 По умолчанию после отправки запроса Hive в командной строке Hadoop на экране отображается состояние хода выполнения задания Map/Reduce. Чтобы ход выполнения задания Map/Reduce не выводился на экран, можно указать в командной строке аргумент `-S` (S в верхнем регистре) как показано ниже:
 
-    hive -S -f "<path to the '.hql' file>"
-    hive -S -e "<Hive queries>"
+```console
+hive -S -f "<path to the '.hql' file>"
+hive -S -e "<Hive queries>"
+```
 
 #### <a name="submit-hive-queries-in-hive-command-console"></a>Отправка запросов Hive в командной консоли Hive
 Также можно сначала войти в консоль команд Hive, выполнив команду `hive` в командной строке Hadoop, и затем отправить запросы Hive в командной консоли Hive. Ниже приведен пример. В этом примере красными рамками обведены команды, с помощью которых вы вошли в командную консоль Hive, и запрос Hive, отправленный в командную консоль Hive. Зеленой рамкой выделены выходные данные запроса Hive.
@@ -90,7 +95,9 @@ ms.locfileid: "83860619"
 **Вывод результатов запроса Hive в локальный файл**
 Чтобы вывести результаты запроса Hive в локальный каталог на головном узле, следует отправить запрос Hive из командной строки Hadoop, как показано ниже:
 
-    hive -e "<hive query>" > <local path in the head node>
+```console
+hive -e "<hive query>" > <local path in the head node>
+```
 
 В следующем примере выходные данные запроса Hive записываются в файл `hivequeryoutput.txt` в каталоге `C:\apps\temp`.
 
@@ -100,7 +107,9 @@ ms.locfileid: "83860619"
 
 Результаты запроса Hive также можно выводить в большой двоичный объект Azure в используемом по умолчанию контейнере кластера Hadoop. Для этого используется следующий запрос Hive:
 
-    insert overwrite directory wasb:///<directory within the default container> <select clause from ...>
+```console
+insert overwrite directory wasb:///<directory within the default container> <select clause from ...>
+```
 
 В следующем примере выходные данные запроса Hive записываются в каталог большого двоичного объекта `queryoutputdir` в используемом по умолчанию контейнере кластера Hadoop. Здесь нужно указать только имя каталога, не указывая имя большого двоичного объекта. Если указать имя каталога и имя большого двоичного объекта, появится следующее сообщение об ошибке: `wasb:///queryoutputdir/queryoutput.txt`.
 
@@ -111,7 +120,7 @@ ms.locfileid: "83860619"
 ![Обозреватель службы хранилища Azure с выходными данными запроса Hive](./media/move-hive-tables/output-hive-results-3.png)
 
 ### <a name="submit-hive-queries-with-the-hive-editor"></a><a name="hive-editor"></a>Отправка запросов Hive с помощью редактора Hive
-Вы также можете использовать консоль запросов (редактор Hive). Для этого введите в веб-браузер URL-адрес в таком формате: *https:\//\<имя кластера Hadoop>.azurehdinsight.net/Home/HiveEditor*. Чтобы увидеть эту консоль, необходимо выполнить вход, а для этого вам потребуются ваши учетные данные для кластера Hadoop.
+Можно также использовать консоль запросов (редактор Hive), введя URL-адрес формы *https: \/ / \<Hadoop cluster name> . azurehdinsight.net/Home/HiveEditor* в веб-браузер. Чтобы увидеть эту консоль, необходимо выполнить вход, а для этого вам потребуются ваши учетные данные для кластера Hadoop.
 
 ### <a name="submit-hive-queries-with-azure-powershell-commands"></a><a name="ps"></a>Отправка запросов Hive с помощью команд Azure PowerShell
 Для отправки запросов Hive также можно использовать PowerShell. Инструкции см. в статье [Отправка заданий Hadoop в HDInsight](../../hdinsight/hadoop/apache-hadoop-use-hive-powershell.md).
@@ -121,34 +130,38 @@ ms.locfileid: "83860619"
 
 Ниже приведен запрос Hive, который создает таблицу Hive.
 
-    create database if not exists <database name>;
-    CREATE EXTERNAL TABLE if not exists <database name>.<table name>
-    (
-        field1 string,
-        field2 int,
-        field3 float,
-        field4 double,
-        ...,
-        fieldN string
-    )
-    ROW FORMAT DELIMITED FIELDS TERMINATED BY '<field separator>' lines terminated by '<line separator>'
-    STORED AS TEXTFILE LOCATION '<storage location>' TBLPROPERTIES("skip.header.line.count"="1");
+```hiveql
+create database if not exists <database name>;
+CREATE EXTERNAL TABLE if not exists <database name>.<table name>
+(
+    field1 string,
+    field2 int,
+    field3 float,
+    field4 double,
+    ...,
+    fieldN string
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '<field separator>' lines terminated by '<line separator>'
+STORED AS TEXTFILE LOCATION '<storage location>' TBLPROPERTIES("skip.header.line.count"="1");
+```
 
 Здесь приведены описания полей, необходимых для подключения, и прочие конфигурации.
 
-* **\<database name\>**  — имя создаваемой базы данных. Если вы хотите использовать базу данных по умолчанию, то запрос *create database...* можно пропустить.
-* **\<table name\>**  — имя таблицы, создаваемой в указанной базе данных. Если вы хотите использовать базу данных по умолчанию, то для обращения к таблице можно указать только *\<имя таблицы\>* без \<имени базы данных\>.
-* **\<field separator\>**  — разделитель полей в файле данных, который следует загрузить в таблицу Hive.
-* **\<line separator\>**  — разделитель строк в файле данных.
-* **\<storage location\>**  — расположение службы хранилища Azure для сохранения данных таблиц Hive. Если не указывать параметр *LOCATION \<storage location\>* , база данных и таблицы сохраняются в каталоге *hive/warehouse/* в контейнере по умолчанию для кластера Hive по умолчанию. Если вы хотите указать место хранения, то оно должно находиться в пределах контейнера по умолчанию для базы данных и таблиц. Это расположение необходимо указать относительно контейнера кластера по умолчанию в следующем формате *wasb:///\<каталог 1>/* или *wasb:///\<каталог 1>/\<каталог 2>/* и т. д. После выполнения запроса в контейнере по умолчанию создаются соответствующие каталоги.
+* **\<database name\>**— имя базы данных, которую необходимо создать. Если вы хотите использовать базу данных по умолчанию, то запрос *create database...* можно пропустить.
+* **\<table name\>**: имя таблицы, которую необходимо создать в указанной базе данных. Если вы хотите использовать базу данных по умолчанию, то на таблицу можно ссылаться напрямую, *\<table name\>* без \<database name\> .
+* **\<field separator\>**: разделитель, разделяющий поля в файле данных для отправки в таблицу Hive.
+* **\<line separator\>**: разделитель, разделяющий строки в файле данных.
+* **\<storage location\>**: место хранения данных в хранилище Azure, в котором сохраняются данные таблиц Hive. Если не указывать параметр *LOCATION \<storage location\>*, база данных и таблицы сохраняются в каталоге *hive/warehouse/* в контейнере по умолчанию для кластера Hive. Если вы хотите указать место хранения, то оно должно находиться в пределах контейнера по умолчанию для базы данных и таблиц. Это расположение должно называться расположением, связанным с контейнером кластера по умолчанию в формате *"wasb:/// \<directory 1> /"* или *"wasb:/// \<directory 1> / \<directory 2> /"*, и т. д. После выполнения запроса относительные каталоги создаются в контейнере по умолчанию.
 * **TBLPROPERTIES("skip.header.line.count"="1")** . Если файл данных содержит строку заголовка, необходимо добавить это свойство **в конец** запроса *create table*. В противном случае строка заголовка загружается в таблицу в качестве записи. Если в файле данных нет строки заголовка, в запросе эту конфигурацию можно пропустить.
 
 ## <a name="load-data-to-hive-tables"></a><a name="load-data"></a>Загрузка данных в таблицы Hive
 Ниже приведен запрос Hive, который загружает данные в таблицу Hive.
 
-    LOAD DATA INPATH '<path to blob data>' INTO TABLE <database name>.<table name>;
+```hiveql
+LOAD DATA INPATH '<path to blob data>' INTO TABLE <database name>.<table name>;
+```
 
-* **\<путь к данным BLOB-объекта\>**  — Если файл BLOB-объекта, который нужно передать в таблицу Hive, расположен в контейнере по умолчанию для кластера Hadoop в HDInsight, *\<путь к данным BLOB-объекта\>* следует указать в формате *wasb://\<каталог в контейнере>/\<имя файла BLOB-объекта>* . В дополнительном контейнере кластера Hadoop под управлением службы HDInsight также может быть файл большого двоичного объекта. В этом случае *\<путь к данным BLOB-объекта\>* следует указать в формате *wasb:/\<имя контейнера>\<имя учетной записи хранения>.blob.core.windows.net/\<имя файла BLOB-объекта>* .
+* **\<path to blob data\>**: Если файл большого двоичного объекта, который будет отправлен в таблицу Hive, находится в контейнере по умолчанию кластера HDInsight Hadoop, параметр *\<path to blob data\>* должен иметь формат *"wasb:// \<directory in this container> / \<blob file name> "*. В дополнительном контейнере кластера Hadoop под управлением службы HDInsight также может быть файл большого двоичного объекта. В этом случае *\<path to blob data\>* должно иметь формат *"wasb:// \<container name> @ \<storage account name> . BLOB.Core.Windows.NET/ \<blob file name> "*.
 
   > [!NOTE]
   > Данные большого двоичного объекта, которые необходимо отправить в таблицу Hive, должны находиться в контейнере по умолчанию или в дополнительном контейнере учетной записи хранения для кластера Hadoop. В противном случае запрос *LOAD DATA* завершается ошибкой доступа к данным.
@@ -163,69 +176,83 @@ ms.locfileid: "83860619"
 ### <a name="partitioned-table"></a>Секционированная таблица
 Ниже приведен запрос Hive, который создает секционированную таблицу и загружает в нее данные.
 
-    CREATE EXTERNAL TABLE IF NOT EXISTS <database name>.<table name>
-    (field1 string,
-    ...
-    fieldN string
-    )
-    PARTITIONED BY (<partitionfieldname> vartype) ROW FORMAT DELIMITED FIELDS TERMINATED BY '<field separator>'
-         lines terminated by '<line separator>' TBLPROPERTIES("skip.header.line.count"="1");
-    LOAD DATA INPATH '<path to the source file>' INTO TABLE <database name>.<partitioned table name>
-        PARTITION (<partitionfieldname>=<partitionfieldvalue>);
+```hiveql
+CREATE EXTERNAL TABLE IF NOT EXISTS <database name>.<table name>
+(field1 string,
+...
+fieldN string
+)
+PARTITIONED BY (<partitionfieldname> vartype) ROW FORMAT DELIMITED FIELDS TERMINATED BY '<field separator>'
+    lines terminated by '<line separator>' TBLPROPERTIES("skip.header.line.count"="1");
+LOAD DATA INPATH '<path to the source file>' INTO TABLE <database name>.<partitioned table name>
+    PARTITION (<partitionfieldname>=<partitionfieldvalue>);
+```
 
 При запросах к секционированным таблицам желательно указывать условие секционирования **в начале** предложения `where`. Этот прием позволяет повысить эффективность поиска.
 
-    select
-        field1, field2, ..., fieldN
-    from <database name>.<partitioned table name>
-    where <partitionfieldname>=<partitionfieldvalue> and ...;
+```hiveql
+select
+    field1, field2, ..., fieldN
+from <database name>.<partitioned table name>
+where <partitionfieldname>=<partitionfieldvalue> and ...;
+```
 
 ### <a name="store-hive-data-in-orc-format"></a><a name="orc"></a>Хранение данных Hive в формате ORC
 Вы не можете загружать данные непосредственно из хранилища BLOB-объектов в таблицы Hive в формате ORC. Ниже приведены действия, которые необходимо выполнить, чтобы загрузить данные из больших двоичных объектов Azure в таблицы Hive в формате ORC.
 
 Создайте внешнюю таблицу **В ВИДЕ ТЕКСТОВОГО ФАЙЛА** и загрузите в нее данные из хранилища больших двоичных объектов.
 
-        CREATE EXTERNAL TABLE IF NOT EXISTS <database name>.<external textfile table name>
-        (
-            field1 string,
-            field2 int,
-            ...
-            fieldN date
-        )
-        ROW FORMAT DELIMITED FIELDS TERMINATED BY '<field separator>'
-            lines terminated by '<line separator>' STORED AS TEXTFILE
-            LOCATION 'wasb:///<directory in Azure blob>' TBLPROPERTIES("skip.header.line.count"="1");
+```hiveql
+CREATE EXTERNAL TABLE IF NOT EXISTS <database name>.<external textfile table name>
+(
+    field1 string,
+    field2 int,
+    ...
+    fieldN date
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '<field separator>'
+    lines terminated by '<line separator>' STORED AS TEXTFILE
+    LOCATION 'wasb:///<directory in Azure blob>' TBLPROPERTIES("skip.header.line.count"="1");
 
-        LOAD DATA INPATH '<path to the source file>' INTO TABLE <database name>.<table name>;
+LOAD DATA INPATH '<path to the source file>' INTO TABLE <database name>.<table name>;
+```
 
 Создайте внутреннюю таблицу, используя ту же схему и тот же разделитель полей, что и во внешней таблице на шаге 1, и сохраните данные Hive в формате ORC.
 
-        CREATE TABLE IF NOT EXISTS <database name>.<ORC table name>
-        (
-            field1 string,
-            field2 int,
-            ...
-            fieldN date
-        )
-        ROW FORMAT DELIMITED FIELDS TERMINATED BY '<field separator>' STORED AS ORC;
+```hiveql
+CREATE TABLE IF NOT EXISTS <database name>.<ORC table name>
+(
+    field1 string,
+    field2 int,
+    ...
+    fieldN date
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '<field separator>' STORED AS ORC;
+```
 
 Выберите данные во внешней таблице на шаге 1 и вставьте их в таблицу в формате ORC.
 
-        INSERT OVERWRITE TABLE <database name>.<ORC table name>
-            SELECT * FROM <database name>.<external textfile table name>;
+```hiveql
+INSERT OVERWRITE TABLE <database name>.<ORC table name>
+    SELECT * FROM <database name>.<external textfile table name>;
+```
 
 > [!NOTE]
-> Если в таблице TEXTFILE *\<database name\>.\<external textfile table name\>* есть секции, команда `SELECT * FROM <database name>.<external textfile table name>`, выполняемая на шаге 3, выбирает переменную секции в качестве отдельного поля в возвращаемом наборе данных. При вставке этих данных в таблицу *\<database name\>.\<ORC table name\>* возникает ошибка, поскольку в *\<database name\>.\<ORC table name\>* не существует переменной секции в качестве поля в схеме таблицы. В этом случае необходимо указать поля, которые требуется вставить в таблицу *\<database name\>.\<ORC table name\>* , как указанно ниже. Когда все данные будут вставлены в таблицу *\<имя базы данных\>.\<имя таблицы ORC\>* , вы можете безопасно удалить *\<имя таблицы во внешнем текстовом файле\>* , используя следующий запрос. После выполнения этой процедуры у вас должна быть готовая к использованию таблица с данными в формате ORC. In this case, you need to specifically select the fields to be inserted to <bpt id="p1">*</bpt><ph id="ph1">\&lt;database name\&gt;</ph>.<ph id="ph2">\&lt;ORC table name\&gt;</ph><ept id="p1">*</ept> as follows:
+> Если таблица TEXTFILE * \<database name\> . \<external textfile table name\> * есть секции, команда `SELECT * FROM <database name>.<external textfile table name>`, выполняемая на шаге 3, позволяет сохранить переменную секции в отдельное поле в возвращаемом наборе данных. Его вставка в * \<database name\> . \<ORC table name\> * завершается с ошибкой * \<database name\> . \<ORC table name\> * не содержит переменной секции в виде поля в схеме таблицы. В этом случае необходимо специально выбрать поля для вставки * \<database name\> . \<ORC table name\> * следующим образом:
 >
 >
 
-        INSERT OVERWRITE TABLE <database name>.<ORC table name> PARTITION (<partition variable>=<partition value>)
-           SELECT field1, field2, ..., fieldN
-           FROM <database name>.<external textfile table name>
-           WHERE <partition variable>=<partition value>;
+```hiveql
+INSERT OVERWRITE TABLE <database name>.<ORC table name> PARTITION (<partition variable>=<partition value>)
+    SELECT field1, field2, ..., fieldN
+    FROM <database name>.<external textfile table name>
+    WHERE <partition variable>=<partition value>;
+```
 
-It is safe to drop the <bpt id="p1">*</bpt><ph id="ph1">\&lt;external text file table name\&gt;</ph><ept id="p1">*</ept> when using the following query after all data has been inserted into <bpt id="p2">*</bpt><ph id="ph2">\&lt;database name\&gt;</ph>.<ph id="ph3">\&lt;ORC table name\&gt;</ph><ept id="p2">*</ept>:
+Можно спокойно удалить *\<external text file table name\>* при использовании следующего запроса после вставки всех данных в * \<database name\> . \<ORC table name\> *:
 
-        DROP TABLE IF EXISTS <database name>.<external textfile table name>;
+```hiveql
+    DROP TABLE IF EXISTS <database name>.<external textfile table name>;
+```
 
-After following this procedure, you should have a table with data in the ORC format ready to use.  
+После выполнения этой процедуры у вас должна быть готовая к использованию таблица с данными в формате ORC.  

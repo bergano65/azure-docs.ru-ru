@@ -6,13 +6,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/31/2019
-ms.openlocfilehash: 1903c2faab865152d1f3666f3c9dadd745058b56
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3645b6752a49a0cf2544d170ac55a77cc8ae5e40
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75612297"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86082018"
 ---
 # <a name="develop-c-topologies-for-apache-storm-by-using-the-data-lake-tools-for-visual-studio"></a>Разработка топологий для Apache Storm на C# с помощью средств Data Lake для Visual Studio
 
@@ -738,7 +739,7 @@ scp sshuser@clustername-ssh.azurehdinsight.net:/var/log/hdinsight-scpwebapi/hdin
 * JDK не находится в пути в среде разработки. Убедитесь в том, что пакет JDK установлен в среде разработки, а `%JAVA_HOME%/bin` находится по требуемому пути.
 * У вас отсутствует зависимость Java. Убедитесь, что вы включаете все необходимые JAR-файлы в состав отправки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Пример обработки данных из Центров событий см. в статье [Обработка событий из Центров событий Azure с помощью Storm в HDInsight](apache-storm-develop-csharp-event-hub-topology.md).
 

@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 05/22/2019
-ms.openlocfilehash: 96b23696164514ad2f16de72f0f76aa237ffce2e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5403abab0f93edf14237dcc73f29ffb00a6581f0
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81415844"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86081321"
 ---
 # <a name="copy-data-from-sap-business-warehouse-by-using-azure-data-factory"></a>Копирование данных из SAP Business Warehouse с помощью фабрики данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -192,7 +192,7 @@ ms.locfileid: "81415844"
 
       3. Добавьте действие **создать BLOB-объект** . Для **пути к папке** и **имени большого двоичного объекта**используйте те же значения, которые вы настроили ранее в *хигхватермаркблобконтаинер + хигхватермаркблобдиректори* и *хигхватермаркблобнаме*.
 
-      4. Щелкните **Сохранить**. Затем скопируйте значение **URL-адреса HTTP POST** для использования в конвейере фабрики данных.
+      4. Нажмите кнопку **Сохранить**. Затем скопируйте значение **URL-адреса HTTP POST** для использования в конвейере фабрики данных.
 
 4. После ввода параметров конвейера фабрики данных выберите **Отладка**  >  **завершить** , чтобы вызвать запуск для проверки конфигурации. Или выберите **опубликовать** , чтобы опубликовать все изменения, а затем выберите **добавить триггер** для выполнения выполнения.
 
@@ -269,9 +269,9 @@ ms.locfileid: "81415844"
 
 Чтобы задать состояние разностного DTP для **выборки**, можно использовать следующий параметр, чтобы выполнить разностную DTP вручную:
 
-    *No Data Transfer; Delta Status in Source: Fetched*
+*Нет Передача данных; Состояние Дельта в источнике: получено*
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о поддержке соединителя SAP BW Open Hub:
 

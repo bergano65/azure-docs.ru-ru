@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 05/20/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge for advanced deployment flow so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: eb7bb7933303aaf16f320e219ad3673bf1efde72
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.openlocfilehash: 59983530d93885f28dfb1625ca6d58fe572609b8
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82564662"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86080487"
 ---
 # <a name="tutorial-transform-data-with-azure-stack-edge-for-advanced-deployment-flow"></a>Руководство по преобразованию данных с помощью Azure Stack Edge для процесса расширенного развертывания
 
@@ -22,7 +22,7 @@ ms.locfileid: "82564662"
 
 Вычисления можно настроить для процесса простого или расширенного развертывания в устройстве.
 
-|                  | Простое развертывание                                | Расширенное развертывание                   |
+| Критерии | Простое развертывание                                | Расширенное развертывание                   |
 |------------------|--------------------------------------------------|---------------------------------------|
 | Предполагаемое использование     | ИТ-администраторы                                | Разработчики                            |
 | Тип             | Использование службы Azure Stack Edge для развертывания модулей      | Использование службы Центр Интернета вещей для развертывания модулей |
@@ -215,9 +215,9 @@ ms.locfileid: "82564662"
 
         ![Добавление настраиваемого модуля](./media/azure-stack-edge-deploy-configure-compute-advanced/add-module-6.png)
  
-5.    В разделе **Укажите маршруты** настройте маршруты между модулями.  
-    
-    ![Указание маршрутов](./media/azure-stack-edge-deploy-configure-compute-advanced/add-module-7.png)
+5. В разделе **Укажите маршруты** настройте маршруты между модулями.  
+   
+   ![Указание маршрутов](./media/azure-stack-edge-deploy-configure-compute-advanced/add-module-7.png)
 
     *Маршрут* можно заменить следующей строкой маршрута, скопированной ранее. В этом случае введите имя локального общего ресурса, который будет отправлять данные в облачный общий ресурс. Замените `modulename` именем модуля. Выберите **Далее**.
         
@@ -227,9 +227,9 @@ ms.locfileid: "82564662"
 
     ![Раздел "Укажите маршруты"](./media/azure-stack-edge-deploy-configure-compute-advanced/add-module-8.png)
 
-6.    В разделе **Проверка развертывания** просмотрите все параметры, а затем выберите **Отправить**, чтобы отправить модуль для развертывания.
+6. В разделе **Проверка развертывания** просмотрите все параметры, а затем выберите **Отправить**, чтобы отправить модуль для развертывания.
 
-    ![Страница "Задание модулей"](./media/azure-stack-edge-deploy-configure-compute-advanced/add-module-9.png)
+   ![Страница "Задание модулей"](./media/azure-stack-edge-deploy-configure-compute-advanced/add-module-9.png)
  
     Это действие запускает развертывание модуля. После завершения развертывания **состояние среды выполнения** модуля изменится на **Запущен**.
 
@@ -241,13 +241,13 @@ ms.locfileid: "82564662"
 
 Для проверки преобразования и передачи данных в Azure сделайте следующее.
  
-1.    С помощью проводника подключитесь к локальным и облачным общим папкам Edge, созданным ранее.
+1. С помощью проводника подключитесь к локальным и облачным общим папкам Edge, созданным ранее.
 
-    ![Проверка преобразования данных](./media/azure-stack-edge-deploy-configure-compute-advanced/verify-data-2.png)
+   ![Проверка преобразования данных](./media/azure-stack-edge-deploy-configure-compute-advanced/verify-data-2.png)
  
-1.    Добавьте данные в локальную общую папку.
+1. Добавьте данные в локальную общую папку.
 
-    ![Проверка преобразования данных](./media/azure-stack-edge-deploy-configure-compute-advanced/verify-data-3.png)
+   ![Проверка преобразования данных](./media/azure-stack-edge-deploy-configure-compute-advanced/verify-data-3.png)
  
     Данные переносятся в облачную общую папку.
 

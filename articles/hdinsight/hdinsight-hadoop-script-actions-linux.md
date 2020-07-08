@@ -5,14 +5,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/28/2019
-ms.openlocfilehash: db37a56ffbf0cb64530f8f7af38841bac72c77d4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 08354e212b8ca3cae642b599f25ed318e79f581c
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81767548"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86082256"
 ---
 # <a name="script-action-development-with-hdinsight"></a>Разработка действий сценариев с помощью HDInsight
 
@@ -173,7 +173,7 @@ echo "Getting ready to install Foo"
 >&2 echo "An error occurred installing Foo"
 ```
 
-Информация, записываемая в STDOUT, перенаправляется STDERR (2). Дополнительные сведения о перенаправлении операций ввода-вывода см [https://www.tldp.org/LDP/abs/html/io-redirection.html](https://www.tldp.org/LDP/abs/html/io-redirection.html). в разделе.
+Информация, записываемая в STDOUT, перенаправляется STDERR (2). Дополнительные сведения о перенаправлении операций ввода-вывода см [https://www.tldp.org/LDP/abs/html/io-redirection.html](https://www.tldp.org/LDP/abs/html/io-redirection.html) . в разделе.
 
 Дополнительные сведения о просмотре сведений, регистрируемых действиями скрипта, см. в разделе [Устранение неполадок в сценариях](./troubleshoot-script-action.md).
 
@@ -235,7 +235,7 @@ wget -O /tmp/HDInsightUtilities-v01.sh -q https://hdiconfigactions.blob.core.win
 
 Эта команда открывает доступ к следующим вспомогательным приложениям, доступным для использования в сценарии:
 
-| Назначение вспомогательного приложения | Описание |
+| Назначение вспомогательного приложения | Описание: |
 | --- | --- |
 | `download_file SOURCEURL DESTFILEPATH [OVERWRITE]` |Скачивает файл из исходного универсального кода ресурса (URI) и сохраняет его в указанное расположение. По умолчанию существующий файл не перезаписывается. |
 | `untar_file TARFILE DESTDIR` |Извлекает TAR-файл (с помощью `-xf`) в папку назначения. |
@@ -264,11 +264,15 @@ wget -O /tmp/HDInsightUtilities-v01.sh -q https://hdiconfigactions.blob.core.win
 
 Настройка переменной среды выполняется следующим образом:
 
-    VARIABLENAME=value
+```bash
+VARIABLENAME=value
+```
 
 Где VARIABLENAME — имя переменной. Для доступа к переменной используйте `$VARIABLENAME`. Например, чтобы присвоить значение позиционного параметра переменной среды с именем PASSWORD, воспользуйтесь следующей инструкцией:
 
-    PASSWORD=$1
+```bash
+PASSWORD=$1
+```
 
 Для последующего доступа к данным используйте `$PASSWORD`.
 
@@ -328,7 +332,7 @@ echo "HADOOP_CONF_DIR=/etc/hadoop/conf" | sudo tee -a /etc/environment
 
 Ниже приведены ошибки, которые могут возникнуть при использовании разработанных скриптов.
 
-**Ошибка**: `$'\r': command not found`. Иногда дополняется фразой `syntax error: unexpected end of file`.
+**Ошибка**: `$'\r': command not found` . Иногда дополняется фразой `syntax error: unexpected end of file`.
 
 *Причина.* Эта ошибка возникает, когда для завершения строк в сценарии используется символ CRLF. В системах UNIX для завершения строк допускается только символ LF.
 
@@ -346,13 +350,15 @@ echo "HADOOP_CONF_DIR=/etc/hadoop/conf" | sudo tee -a /etc/environment
 | `perl -pi -e 's/\r\n/\n/g' INFILE` | Изменяет файл напрямую. |
 | ```sed 's/$'"/`echo \\\r`/" INFILE > OUTFILE``` |В файле OUTFILE для окончания строк будут использоваться только символы LF. |
 
-**Ошибка**: `line 1: #!/usr/bin/env: No such file or directory`.
+**Ошибка**: `line 1: #!/usr/bin/env: No such file or directory` .
 
 *Причина.* Эта ошибка возникает, если сценарий сохранен в кодировке UTF-8 с меткой порядка байтов (BOM).
 
 *Решение.* Сохраните файл в формате ASCII или UTF-8 без метки порядка байтов. Кроме того, для создания файла без метки порядка байтов в системе Linux или Unix вы можете использовать следующую команду:
 
-    awk 'NR==1{sub(/^\xef\xbb\xbf/,"")}{print}' INFILE > OUTFILE
+```bash
+awk 'NR==1{sub(/^\xef\xbb\xbf/,"")}{print}' INFILE > OUTFILE
+```
 
 Замените `INFILE` на файл с меткой порядка байтов. `OUTFILE` должно быть новым именем файла, который будет содержать сценарий без метки порядка байтов.
 

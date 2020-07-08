@@ -3,12 +3,12 @@ title: Создание определений политик гостевой �
 description: Узнайте, как преобразовать групповая политика из базового плана безопасности Windows Server 2019 в определение политики.
 ms.date: 06/05/2020
 ms.topic: how-to
-ms.openlocfilehash: 021e8cc4aa34a21f980363e71de1a4b9afbf3ec9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bbb634ed55acf8aa994045fbef6569fae031c841
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85268738"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86080675"
 ---
 # <a name="how-to-create-guest-configuration-policy-definitions-from-group-policy-baseline-for-windows"></a>Создание определений политик гостевой конфигурации из базового плана групповая политика для Windows
 
@@ -92,7 +92,7 @@ ms.locfileid: "85268738"
 1. Приведенный ниже скрипт содержит функцию, которую можно использовать для автоматизации этой задачи. Обратите внимание, что для команд, используемых в `publish` функции, требуется `Az.Storage` модуль.
 
    ```azurepowershell-interactive
-    function publish {
+    function Publish-Configuration {
         param(
         [Parameter(Mandatory=$true)]
         $resourceGroup,
@@ -147,25 +147,29 @@ ms.locfileid: "85268738"
 
 1. Используйте функцию публикации с назначенными параметрами для публикации пакета гостевой конфигурации в общедоступном хранилище BLOB-объектов.
 
-   ```azurepowershell-interactive
-   $uri = publish `
-    -resourceGroup $resourceGroup `
-    -storageAccountName $storageAccount `
-    -storageContainerName $storageContainer `
-    -filePath $path `
-    -blobName $blob
-    -FullUri
-    ```
 
+   ```azurepowershell-interactive
+   $PublishConfigurationSplat = @{
+       resourceGroup = $resourceGroup
+       storageAccountName = $storageAccount
+       storageContainerName = $storageContainer
+       filePath = $path
+       blobName = $blob
+       FullUri = $true
+   }
+   $uri = Publish-Configuration @PublishConfigurationSplat
+    ```
 1. После создания и отправки пакета настраиваемой политики гостевой конфигурации создайте определение политики гостевой конфигурации. Используйте `New-GuestConfigurationPolicy` командлет, чтобы создать конфигурацию гостя.
 
    ```azurepowershell-interactive
-   New-GuestConfigurationPolicy `
-    -ContentUri $Uri `
-    -DisplayName 'Server 2019 Configuration Baseline' `
-    -Description 'Validation of using a completely custom baseline configuration for Windows VMs' `
-    -Path C:\git\policyfiles\policy  `
-    -Platform Windows 
+    $NewGuestConfigurationPolicySplat = @{
+        ContentUri = $Uri 
+        DisplayName = 'Server 2019 Configuration Baseline' 
+        Description 'Validation of using a completely custom baseline configuration for Windows VMs' 
+        Path = 'C:\git\policyfiles\policy'  
+        Platform = Windows 
+        }
+   New-GuestConfigurationPolicy @NewGuestConfigurationPolicySplat
    ```
     
 1. Опубликуйте определения политик с помощью `Publish-GuestConfigurationPolicy` командлета. Этот командлет принимает только параметр **Path** с расположением JSON-файлов, созданных `New-GuestConfigurationPolicy`. Чтобы выполнить команду публикации, необходимо получить доступ к созданию определений политик в Azure. Требования к авторизации описаны на странице [Общие сведения о Политике Azure](../overview.md#getting-started). Наиболее подходящей встроенной ролью является **Участник политики ресурсов**.

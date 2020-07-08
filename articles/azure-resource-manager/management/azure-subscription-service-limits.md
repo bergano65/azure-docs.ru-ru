@@ -4,19 +4,19 @@ description: В этой статье приводится перечень на
 ms.topic: conceptual
 author: davidsmatlak
 ms.author: v-dasmat
-ms.date: 04/21/2020
-ms.openlocfilehash: 865c39ea9a48f9f5e0fbf04dea629b6886cf7ae4
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.date: 06/04/2020
+ms.openlocfilehash: 594e34a07cf2c370546e59ebe59df1de88eb2aa4
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82584065"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86080981"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами.
 
-Дополнительные сведения о ценах Azure см. в статье [Общие сведения о ценах на Azure](https://azure.microsoft.com/pricing/). Здесь вы можете оценить затраты с помощью [калькулятора цен](https://azure.microsoft.com/pricing/calculator/). Вы также можете посетить страницу сведений о ценах для конкретной службы, например [виртуальных машин Windows](https://azure.microsoft.com/pricing/details/virtual-machines/#Windows). Советы по управлению затратами приведены в статье [Предотвращение непредвиденных расходов с помощью функции выставления счетов и управления затратами в Azure](../../billing/billing-getting-started.md).
+Дополнительные сведения о ценах Azure см. в статье [Общие сведения о ценах на Azure](https://azure.microsoft.com/pricing/). Здесь вы можете оценить затраты с помощью [калькулятора цен](https://azure.microsoft.com/pricing/calculator/). Вы также можете посетить страницу сведений о ценах для конкретной службы, например [виртуальных машин Windows](https://azure.microsoft.com/pricing/details/virtual-machines/#Windows). Советы по управлению затратами приведены в статье [Предотвращение непредвиденных расходов с помощью функции выставления счетов и управления затратами в Azure](../../cost-management-billing/manage/getting-started.md).
 
 ## <a name="managing-limits"></a>Управление ограничениями
 
@@ -29,7 +29,7 @@ ms.locfileid: "82584065"
 >
 > Если вы хотите увеличить лимит или квоту выше предельного значения по умолчанию, отправьте [запрос в службу поддержки клиентов через Интернет](../templates/error-resource-quota.md)бесплатно.
 
-[Бесплатные пробные подписки](https://azure.microsoft.com/offers/ms-azr-0044p) не подходят для увеличения лимита или квоты. При наличии [бесплатной пробной версии подписки](https://azure.microsoft.com/offers/ms-azr-0044p) ее можно обновить до подписки [с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/). Дополнительные сведения см. в статье [Обновление бесплатной пробной подписки Azure до подписки с оплатой по мере использования](../../billing/billing-upgrade-azure-subscription.md) и [бесплатной пробной подписки](https://azure.microsoft.com/free/free-account-faq).
+[Бесплатные пробные подписки](https://azure.microsoft.com/offers/ms-azr-0044p) не подходят для увеличения лимита или квоты. При наличии [бесплатной пробной версии подписки](https://azure.microsoft.com/offers/ms-azr-0044p) ее можно обновить до подписки [с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/). Дополнительные сведения см. в статье [Обновление бесплатной пробной подписки Azure до подписки с оплатой по мере использования](../../cost-management-billing/manage/upgrade-azure-subscription.md) и [бесплатной пробной подписки](https://azure.microsoft.com/free/free-account-faq).
 
 Некоторые ограничения управляются на региональном уровне.
 
@@ -127,6 +127,8 @@ ms.locfileid: "82584065"
 
 [!INCLUDE [functions-limits](../../../includes/functions-limits.md)]
 
+Дополнительные сведения см. в разделе [функции сравнение планов размещения](../../azure-functions/functions-scale.md#hosting-plans-comparison).
+
 ## <a name="azure-kubernetes-service-limits"></a>Ограничения службы Kubernetes Azure
 
 [!INCLUDE [container-service-limits](../../../includes/container-service-limits.md)]
@@ -217,6 +219,13 @@ ms.locfileid: "82584065"
 
 [!INCLUDE [database-migration-service-limits](../../../includes/database-migration-service-limits.md)]
 
+## <a name="digital-twins-limits"></a>Ограничения цифровых двойников
+
+> [!NOTE]
+> Некоторые области этой службы имеют регулируемые ограничения, а другие — нет. Это представлено в приведенных ниже таблицах с *изменяемым* столбцом?. Если ограничение может быть скорректировано *, это значение равно* *Да*.
+
+[!INCLUDE [digital-twins-limits](../../../includes/digital-twins-limits.md)]
+
 ## <a name="event-grid-limits"></a>Ограничения сетки событий
 
 [!INCLUDE [event-grid-limits](../../../includes/event-grid-limits.md)]
@@ -250,7 +259,7 @@ ms.locfileid: "82584065"
 
 ### <a name="media-services-v2-legacy"></a>Службы мультимедиа версии 2 (прежняя версия)
 
-Ограничения, характерные для служб мультимедиа версии 2 (устаревшие), см. в разделе [службы мультимедиа версии 2 (устаревшие)](https://docs.microsoft.com/azure/media-services/previous/media-services-quotas-and-limitations) .
+Ограничения, характерные для служб мультимедиа версии 2 (устаревшие), см. в разделе [службы мультимедиа версии 2 (устаревшие)](../../media-services/previous/media-services-quotas-and-limitations.md) .
 
 ## <a name="mobile-services-limits"></a>Ограничения мобильных служб
 
@@ -323,11 +332,11 @@ ms.locfileid: "82584065"
 
 ## <a name="sql-database-limits"></a>Ограничения базы данных SQL
 
-Ограничения для базы данных SQL см. в разделе [ограничения ресурсов базы данных SQL для отдельных баз данных](../../sql-database/sql-database-vcore-resource-limits-single-databases.md), [ограничения ресурсов базы данных SQL для эластичных пулов и баз данных](../../sql-database/sql-database-vcore-resource-limits-elastic-pools.md)в составе пула, а [ограничения ресурсов базы данных SQL для управляемых экземпляров](../../sql-database/sql-database-managed-instance-resource-limits.md).
+Ограничения для базы данных SQL см. в разделе [ограничения ресурсов базы данных SQL для отдельных баз данных](../../azure-sql/database/resource-limits-vcore-single-databases.md), [ограничения ресурсов базы данных SQL для эластичных пулов и баз данных](../../azure-sql/database/resource-limits-vcore-elastic-pools.md)в составе пула и [ограничения ресурсов базы данных SQL для SQL управляемый экземпляр](../../azure-sql/managed-instance/resource-limits.md).
 
-## <a name="sql-data-warehouse-limits"></a>Ограничения хранилища данных SQL
+## <a name="azure-synapse-analytics-limits"></a>Ограничения Azure синапсе Analytics
 
-Ограничения для хранилища данных SQL см. в статье [ограничения ресурсов хранилища данных](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md)SQL.
+Ограничения Azure синапсе Analytics см. в статье [ограничения ресурсов Azure синапсе](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md).
 
 ## <a name="storage-limits"></a>Ограничения хранилища
 
@@ -401,17 +410,17 @@ ms.locfileid: "82584065"
 
 ### <a name="shared-image-gallery-limits"></a>Ограничения общей коллекции образов
 
-Существуют ограничения на подписку для развертывания ресурсов с помощью общих коллекций образов.
+В отношении развертывания ресурсов с использованием Общих коллекций ресурсов установлены следующие ограничения в расчете на подписку:
 
-- 100 коллекций общих образов на подписку для каждого региона
-- 1 000 определений образов для каждой подписки на регион
-- 10 000. версии образов на подписку на регион
+- 100 общих коллекций образов на одну подписку на один регион.
+- 1000 определений образов на одну подписку на один регион.
+- 10000 версий образов на одну подписку на один регион.
 
 ## <a name="virtual-machine-scale-sets-limits"></a>Ограничения для масштабируемых наборов виртуальных машин
 
 [!INCLUDE [virtual-machine-scale-sets-limits](../../../includes/azure-virtual-machine-scale-sets-limits.md)]
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>Дополнительно
 
 * [Общие сведения об ограничениях и росте Azure](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 * [Размеры виртуальных машин и облачных служб для Azure](../../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

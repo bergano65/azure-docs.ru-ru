@@ -11,11 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 48b51c40e5de8f10d9d1d16b02e2c70b045816b3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d462f146f3f094602835d88e48815d5537c58665
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84687452"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86078788"
 ---
 # <a name="scenarios-for-advanced-analytics-in-azure-machine-learning"></a>Сценарии для расширенной аналитики в Машинном обучении Azure
 В этой статье описаны различные источники примеров данных и типовые сценарии, в которых можно использовать [процесс обработки и анализа данных группы (TDSP)](overview.md). Процесс TDSP предоставляет систематический подход для совместной работы групп над созданием интеллектуальных приложений. В представленных сценариях продемонстрированы варианты рабочих процессов обработки данных на основе характеристик данных, исходных расположений и целевых репозиториев в Azure.
@@ -193,9 +194,7 @@ ms.locfileid: "84687452"
 1. Создайте кластер Azure HDInsight Hadoop.
 1. Предварительно обработайте и очистите данные (необязательно).
    
-   а.  Предварительно обработайте и очистите данные в IPython Notebook из Azure.
-   
-       blobs.
+   а.  Предварительно обработайте и очистите данные в IPython Notebook из больших двоичных объектов Azure.
    
    b.  При необходимости преобразуйте данные в очищенную табличную форму.
    
