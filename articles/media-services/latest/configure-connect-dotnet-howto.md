@@ -15,10 +15,9 @@ ms.date: 09/18/2019
 ms.author: juliako
 ms.custom: has-adal-ref
 ms.openlocfilehash: 6dc05f225e3585b83bd6a57ca47bd5adf97934ea
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83201119"
 ---
 # <a name="connect-to-media-services-v3-api---net"></a>Подключение к API служб мультимедиа v3 — .NET
@@ -35,7 +34,7 @@ ms.locfileid: "83201119"
 
 ## <a name="create-a-console-application"></a>Создание консольного приложения
 
-1. Запустите Visual Studio. 
+1. Запустите среду Visual Studio. 
 1. В меню **файл** выберите пункт **создать**  >  **проект**. 
 1. Создайте консольное приложение **.NET Core** .
 
@@ -56,19 +55,19 @@ ms.locfileid: "83201119"
 
 ## <a name="create-and-configure-the-app-settings-file"></a>Создание и Настройка файла параметров приложения
 
-### <a name="create-appsettingsjson"></a>Создание appSettings. JSON
+### <a name="create-appsettingsjson"></a>Создание appsettings.js
 
 1. Go Go **General**  >  **Text File**.
-1. Назовите его "appSettings. JSON".
+1. Присвойте ему имя "appsettings.jsв".
 1. Установите свойство "Копировать в выходной каталог" JSON-файла в значение "Копировать при более поздней версии" (чтобы приложение могло получить доступ к нему при публикации).
 
-### <a name="set-values-in-appsettingsjson"></a>Задание значений в appSettings. JSON
+### <a name="set-values-in-appsettingsjson"></a>Установка значений в appsettings.jsв
 
-Выполните `az ams account sp create` команду, как описано в разделе [API доступа](access-api-cli-how-to.md). Команда возвращает JSON, который необходимо скопировать в "appSettings. JSON".
+Выполните `az ams account sp create` команду, как описано в разделе [API доступа](access-api-cli-how-to.md). Команда возвращает JSON, который необходимо скопировать в "appsettings.js".
  
 ## <a name="add-configuration-file"></a>Добавление файла конфигурации
 
-Для удобства добавьте файл конфигурации, который отвечает за чтение значений из "appSettings. JSON".
+Для удобства добавьте файл конфигурации, который отвечает за чтение значений из "appsettings.jsна".
 
 1. Добавьте в проект новый класс CS. Назовите его `ConfigWrapper`. 
 1. Вставьте в этот файл следующий код (в этом примере предполагается, что у вас есть пространство имен `ConsoleApp1` ).
@@ -146,7 +145,7 @@ namespace ConsoleApp1
 
 Чтобы начать использование API Служб мультимедиа с .NET, создайте объект **AzureMediaServicesClient**. Чтобы создать объект, введите учетные данные, необходимые клиенту для подключения к Azure с помощью Azure AD. В приведенном ниже коде функция Жеткредентиалсасинк создает объект Сервицеклиенткредентиалс на основе учетных данных, указанных в локальном файле конфигурации.
 
-1. Откройте среду `Program.cs`.
+1. Откройте `Program.cs`.
 1. Вставьте следующий код:
 
 ```csharp
@@ -227,7 +226,7 @@ namespace ConsoleApp1
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Учебник. Отправка, кодирование и потоковая передача видео — .NET](stream-files-tutorial-with-api.md) 
 - [Руководство. потоковая передача в реальном времени с помощью служб мультимедиа v3 — .NET](stream-live-tutorial-with-api.md)
@@ -241,7 +240,7 @@ namespace ConsoleApp1
 - [Создание фильтров с помощью Служб мультимедиа для .NET](filters-dynamic-manifest-dotnet-howto.md)
 - [Дополнительные примеры видео по запросу с использованием Функций Azure версии 2 и Cлужб мультимедиа версии 3](https://aka.ms/ams3functions)
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Справочник по .NET](https://docs.microsoft.com/dotnet/api/overview/azure/mediaservices/management?view=azure-dotnet)
 * Дополнительные примеры кода см. в репозитории [примеров пакета SDK для .NET](https://github.com/Azure-Samples/media-services-v3-dotnet) .

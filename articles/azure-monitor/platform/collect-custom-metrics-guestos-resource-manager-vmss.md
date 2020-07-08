@@ -8,10 +8,9 @@ ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: metrics
 ms.openlocfilehash: 9a7aa512c636f700cf9c6d990814d9367007c942
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83125780"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-by-using-an-azure-resource-manager-template-for-a-windows-virtual-machine-scale-set"></a>Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Azure Resource Manager для масштабируемого набора виртуальных машин Windows
@@ -26,7 +25,7 @@ ms.locfileid: "83125780"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Ваша подписка должна быть зарегистрирована в [Microsoft. Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
+- Подписку необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
 
 - Требуется установить [Azure PowerShell](/powershell/azure) или использовать [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview). 
 
@@ -38,14 +37,14 @@ ms.locfileid: "83125780"
 ## <a name="author-a-resource-manager-template"></a>Создание шаблона Resource Manager 
 В этом примере можно использовать общедоступный [образец шаблона](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-autoscale):  
 
-- **Azuredeploy. JSON** — это предварительно настроенный шаблон диспетчер ресурсов для развертывания масштабируемого набора виртуальных машин.
+- **Azuredeploy.jsв** — это предварительно настроенный шаблон диспетчер ресурсов для развертывания масштабируемого набора виртуальных машин.
 
 - **Azuredeploy.Parameters.json** — это файл параметров, в котором хранятся сведения, такие как имя пользователя и пароль, которые вы хотите задать для виртуальной машины. Во время развертывания шаблона Resource Manager используются параметры, заданные в этом файле. 
 
 Скачайте и сохраните оба файла в локальном расположении. 
 
 ###  <a name="modify-azuredeployparametersjson"></a>Изменение файла azuredeploy.parameters.json
-Откройте файл **azuredeploy.parameters.json**.  
+Откройте **azuredeploy.parameters.jsв** файле:  
  
 - Укажите **vmSKU** для развертывания. Рекомендуемое значение — Standard_D2_v3. 
 - Укажите **windowsOSVersion** для масштабируемого набора виртуальных машин. Рекомендуемое значение — 2016-Datacenter. 
@@ -55,7 +54,7 @@ ms.locfileid: "83125780"
 
 
 ###  <a name="modify-azuredeployjson"></a>Изменение файла azuredeploy.json
-Откройте файл **azuredeploy.json**. 
+Откройте **azuredeploy.jsв** файле. 
 
 Добавьте переменную, в которой будут содержаться данные учетной записи хранения в шаблоне Resource Manager. Все журналы или счетчики производительности, указанные в файле конфигурации диагностики, записываются в хранилище метрик Azure Monitor и в указанную учетную запись хранения. 
 
@@ -266,7 +265,7 @@ ms.locfileid: "83125780"
 1. После успешного развертывания сведения о масштабируемом наборе виртуальных машин отобразятся на портале Azure. Он будет выдавать метрики в Azure Monitor. 
 
    > [!NOTE]  
-   > С выбранным параметром **vmSkuSize** могут возникнуть ошибки. В этом случае вернитесь к файлу **azuredeploy.json** и обновите значение по умолчанию для параметра **vmSkuSize**. Мы рекомендуем указать **Standard_DS1_v2**. 
+   > Вы можете столкнуться с ошибками вокруг выбранного **вмскусизе**. В этом случае вернитесь к файлу **azuredeploy.json** и обновите значение по умолчанию для параметра **vmSkuSize**. Мы рекомендуем указать **Standard_DS1_v2**. 
 
 
 ## <a name="chart-your-metrics"></a>Создание диаграммы метрик 
@@ -275,7 +274,7 @@ ms.locfileid: "83125780"
 
 1. В меню слева выберите **Монитор**. 
 
-1. На странице **Монитор** щелкните **Метрики**. 
+1. На странице **мониторинг** выберите **метрики**. 
 
    ![Монитор — страница метрик](media/collect-custom-metrics-guestos-resource-manager-vmss/metrics.png) 
 

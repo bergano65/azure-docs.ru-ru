@@ -10,10 +10,9 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: mqtt
 ms.openlocfilehash: 1b299cf21652c23451aed735b10597adb85dc3db
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82982734"
 ---
 # <a name="understand-how-azure-iot-edge-uses-certificates"></a>Сведения о том, как Azure IoT Edge использует сертификаты
@@ -99,8 +98,8 @@ IoT Edge сертификаты используются модулями и п�
 | Сертификат ЦС рабочей нагрузки     | iotedge workload ca                                                                                       |
 | Сертификат сервера центра IoT Edge | iotedgegw.local (соответствует значению свойства hostname в файле config.yaml)                                            |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Общие сведения о модулях Azure IoT Edge](iot-edge-modules.md)
 
-[Настройка устройства IoT Edge для работы в качестве прозрачного шлюза](how-to-create-transparent-gateway.md)
+[Настройка устройства IoT Edge для использования в качестве прозрачного шлюза](how-to-create-transparent-gateway.md)

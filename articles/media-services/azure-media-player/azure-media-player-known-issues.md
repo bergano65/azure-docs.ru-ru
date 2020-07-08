@@ -7,10 +7,9 @@ ms.service: media-services
 ms.topic: reference
 ms.date: 05/11/2020
 ms.openlocfilehash: 4d0d56dc4d6e7fa7765439e7387d67bb80a6ec9f
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83124641"
 ---
 # <a name="known-issues"></a>Известные проблемы #
@@ -75,7 +74,7 @@ ms.locfileid: "83124641"
 - На этой Конференции есть проблемы с субтитрами и субтитрами. Они могут быть доступны или недоступны для просмотра на этой Конференции.
 - Наличие ограниченной пропускной способности в техническом сценарии HLS/Html5 приводит к воспроизведению звука без видео.
 
-### <a name="microsoft"></a>Microsoft ###
+### <a name="microsoft"></a>Майкрософт ###
 
 - В настоящее время воспроизведение IE8 не работает из-за несовместимости с ECMAScript 5
 - В IE и некоторых версиях пограничных окон ее нельзя выбрать, перейдя на кнопку и выбрав ее или нажав клавишу F/f.

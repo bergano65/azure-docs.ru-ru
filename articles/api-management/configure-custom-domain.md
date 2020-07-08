@@ -13,15 +13,14 @@ ms.topic: article
 ms.date: 01/13/2020
 ms.author: apimpm
 ms.openlocfilehash: 380b61df8a774e69454577d201cebf1c495b4f74
-ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83004744"
 ---
 # <a name="configure-a-custom-domain-name"></a>Настройка имени личного домена
 
-При создании экземпляра службы управления API Azure Azure назначает ему поддомен `azure-api.net` (например, `apim-service-name.azure-api.net`). Тем не менее вы можете предоставлять конечные точки управления API, используя собственное доменное имя, например **contoso.com**. В этом руководстве показано, как сопоставлять существующее пользовательское DNS-имя с конечными точками, предоставляемыми экземпляром службы управления API.
+При создании экземпляра службы управления API Azure Azure назначает ему поддомен `azure-api.net` (например, `apim-service-name.azure-api.net` ). Тем не менее вы можете предоставлять конечные точки управления API, используя собственное доменное имя, например **contoso.com**. В этом руководстве показано, как сопоставлять существующее пользовательское DNS-имя с конечными точками, предоставляемыми экземпляром службы управления API.
 
 > [!IMPORTANT]
 > Управление API принимает только запросы со значениями [заголовка узла](https://tools.ietf.org/html/rfc2616#section-14.23) , совпадающими с именем домена по умолчанию или с любым из настроенных пользовательских доменных имен.
@@ -49,11 +48,11 @@ ms.locfileid: "83004744"
 
     Существует несколько конечных точек, которым можно назначить пользовательское доменное имя. Сейчас доступны следующие конечные точки:
 
-    - **Шлюз** (по умолчанию `<apim-service-name>.azure-api.net`:),
+    - **Шлюз** (по умолчанию: `<apim-service-name>.azure-api.net` ),
     - **Portal** (по умолчанию: `<apim-service-name>.portal.azure-api.net`),
     - **Management** (по умолчанию: `<apim-service-name>.management.azure-api.net`),
-    - **SCM** (по умолчанию `<apim-service-name>.scm.azure-api.net`:),
-    - **Невпортал** (по умолчанию `<apim-service-name>.developer.azure-api.net`:).
+    - **SCM** (по умолчанию: `<apim-service-name>.scm.azure-api.net` ),
+    - **Невпортал** (по умолчанию: `<apim-service-name>.developer.azure-api.net` ).
 
     > [!NOTE]
     > Для конфигурации в уровне потребления доступна только конечная точка **шлюза** .
@@ -68,7 +67,7 @@ ms.locfileid: "83004744"
     - В поле **сертификат**выберите сертификат из Key Vault. Также можно передать допустимый объект. PFX-файл и укажите **пароль**, если сертификат защищен паролем.
 
     > [!NOTE]
-    > Доменные имена с подстановочными `*.contoso.com` знаками, например, поддерживаются на всех уровнях, кроме уровня потребления.
+    > Доменные имена с подстановочными знаками, например, `*.contoso.com` поддерживаются на всех уровнях, кроме уровня потребления.
 
     > [!TIP]
     > Рекомендуется использовать [Azure Key Vault для управления сертификатами](https://docs.microsoft.com/azure/key-vault/certificates/about-certificates) и их настройки для автопродления.
@@ -95,6 +94,6 @@ ms.locfileid: "83004744"
 > [!NOTE]
 > Хотя IP-адрес экземпляра службы управления API является статическим, он может измениться в нескольких сценариях. Поэтому рекомендуется использовать CNAME при настройке пользовательского домена. Примите во внимание это при выборе метода конфигурации DNS. Дополнительные сведения см. в [статье документация по IP-адресу](api-management-howto-ip-addresses.md#changes-to-the-ip-addresses) и [вопросы и ответы по управлению API](api-management-faq.md#how-can-i-secure-the-connection-between-the-api-management-gateway-and-my-back-end-services).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Повышение категории и масштабирование службы](upgrade-and-scale.md)

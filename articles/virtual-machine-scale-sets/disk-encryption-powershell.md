@@ -10,10 +10,9 @@ ms.date: 10/15/2019
 ms.reviewer: mimckitt
 ms.custom: mimckitt
 ms.openlocfilehash: a20abec6ab9925408dd769c5238186af9b7c3d1c
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83195890"
 ---
 # <a name="encrypt-os-and-attached-data-disks-in-a-virtual-machine-scale-set-with-azure-powershell"></a>Зашифруйте ОС и подключенные диски данных в масштабируемом наборе виртуальных машин с помощью Azure PowerShell
@@ -89,9 +88,9 @@ Set-AzVmssDiskEncryptionExtension -ResourceGroupName $rgName -VMScaleSetName $vm
 
 В ответ на запрос введите *y*, чтобы подтвердить продолжение процесса шифрования диска для экземпляров масштабируемого набора виртуальных машин.
 
-### <a name="enable-encryption-using-kek-to-wrap-the-key"></a>Включение шифрования с помощью KEK для переноса ключа
+### <a name="enable-encryption-using-kek-to-wrap-the-key"></a>Включение шифрования с использованием ключа шифрования ключа для переноса ключа
 
-Ключ шифрования ключа можно также использовать для повышения безопасности при шифровании масштабируемого набора виртуальных машин.
+Ключ шифрования ключа (KEK) можно также использовать для повышения безопасности при шифровании масштабируемого набора виртуальных машин.
 
 ```azurepowershell-interactive
 $diskEncryptionKeyVaultUrl=(Get-AzKeyVault -ResourceGroupName $rgName -Name $vaultName).VaultUri
@@ -104,10 +103,10 @@ Set-AzVmssDiskEncryptionExtension -ResourceGroupName $rgName -VMScaleSetName $vm
 ```
 
 > [!NOTE]
->  Синтаксис значения параметра Disk-Encryption-keyvault — это строка полного идентификатора:</br>
-/Subscriptions/[Subscription-ID-GUID]/resourceGroups/[ресурс-группа-имя]/providers/Microsoft.KeyVault/vaults/[KeyVault-name]</br></br>
-> Синтаксис значения параметра key-Encryption-key — это полный универсальный код ресурса (URI) для KEK, как в:</br>
-HTTPS://[keyvault]. Vault. Azure. NET/ключи/[кекнаме]/[KEK-Unique-ID]
+>  Синтаксис значения параметра disk-encryption-keyvault — это строка полного идентификатора:</br>
+/subscriptions/[guid_подписки]/resourceGroups/[имя_группы_ресурсов]/providers/Microsoft.KeyVault/vaults/[имя_хранилища_ключей]</br></br>
+> Синтаксис значения параметра key-encryption-key — это полный универсальный код ресурса (URI) для KEK:</br>
+https://[имя_хранилища_ключей].vault.azure.net/keys/[имя_kek]/[уникальный_идентификатор_kek]
 
 ## <a name="check-encryption-progress"></a>Проверка хода выполнения шифрования
 
@@ -147,7 +146,7 @@ EncryptionExtensionInstalled : True
 Disable-AzVmssDiskEncryption -ResourceGroupName $rgName -VMScaleSetName $vmssName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - В этой статье вы зашифровали масштабируемый набор виртуальных машин с помощью Azure PowerShell. Можно также использовать шаблоны [Azure CLI](disk-encryption-cli.md) или [Azure Resource Manager](disk-encryption-azure-resource-manager.md).
-- Если вы хотите, чтобы шифрование дисков Azure применялось после подготовки другого расширения, можно использовать [виртуализацию расширения](virtual-machine-scale-sets-extension-sequencing.md).
+- Если вы хотите, чтобы шифрование дисков Azure применялось после подготовки другого расширения, можно использовать [последовательность расширения](virtual-machine-scale-sets-extension-sequencing.md).

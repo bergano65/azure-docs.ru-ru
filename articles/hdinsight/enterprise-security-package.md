@@ -8,10 +8,9 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.openlocfilehash: 07210350826001bd3e0be6e04be211c9de43695a
-ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82997260"
 ---
 # <a name="enterprise-security-package-for-azure-hdinsight"></a>Корпоративный пакет безопасности для Azure HDInsight
@@ -22,7 +21,7 @@ ms.locfileid: "82997260"
 
     В прошлом вы создали кластеры HDInsight с локальным пользователем-администратором и локальным пользователем SSH. Локальный администратор может получить доступ ко всем файлам, папкам, таблицам и столбцам.  С Корпоративный пакет безопасности вы включаете контроль доступа на основе ролей, интегрируя HDInsight с Active Directory. В том числе локальные Active Directory, Azure Active Directory доменных служб. Или Active Directory на виртуальной машине IaaS. Администратор домена в кластере может предоставить пользователям возможность использовать собственное доменное имя пользователя и пароль.
 
-    Дополнительные сведения можно найти в разделе 
+    Дополнительные сведения можно найти в разделе
 
     * [Общие сведения об обеспечении безопасности Apache Hadoop с помощью Корпоративного пакета безопасности](./domain-joined/hdinsight-security-overview.md)
 

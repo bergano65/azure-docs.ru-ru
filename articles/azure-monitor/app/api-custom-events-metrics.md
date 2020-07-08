@@ -4,10 +4,9 @@ description: Вставьте несколько строк кода в свое
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.openlocfilehash: ae96609446818802b70cab9c31f6527264046eb9
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83115665"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
@@ -50,7 +49,7 @@ ms.locfileid: "83115665"
 
     *Java:*`import com.microsoft.applicationinsights.TelemetryClient;`
 
-    *Node. js:*`var applicationInsights = require("applicationinsights");`
+    *Node.js:*`var applicationInsights = require("applicationinsights");`
 
 ## <a name="get-a-telemetryclient-instance"></a>Получение экземпляра TelemetryClient
 
@@ -488,7 +487,7 @@ trackTrace(message: string, properties?: {[string]:string}, severityLevel?: Seve
 
 Зарегистрируйте событие диагностики, например вход в метод или выход из него.
 
- Параметр | Описание
+ Параметр | Описание:
 ---|---
 `message` | Диагностические данные Могут содержать не только имя.
 `properties` | Преобразование строки в строку: дополнительные данные, используемые для [фильтрации исключений](https://azure.microsoft.com/documentation/articles/app-insights-api-custom-events-metrics/#properties) на портале. Значение по умолчанию: empty.
@@ -497,7 +496,7 @@ trackTrace(message: string, properties?: {[string]:string}, severityLevel?: Seve
 Вы можете выполнять поиск содержимого сообщения, но (в отличие от значений свойств) не можете фильтровать его.
 
 Ограничения по размеру `message` гораздо выше, чем ограничение для свойств.
-Преимуществом TrackTrace является возможность добавления в сообщения относительно длинных данных,  например данных POST.  
+Преимуществом TrackTrace является возможность добавления в сообщения относительно длинных данных, например данных POST.  
 
 Кроме того, вы можете настроить для сообщения уровень серьезности. Как и для других данных телеметрии, вы можете добавлять значения свойства, используемые для фильтрации или поиска различных наборов трассировки. Пример:
 
@@ -931,7 +930,7 @@ gameTelemetry.TrackEvent({name: "WinGame"});
 
 [Выборка](../../azure-monitor/app/api-filtering-sampling.md) представляет собой упакованное решение для сокращения объема данных, отправляемых из приложения на портал. На отображаемые метрики выборка не влияет. Возможность диагностировать проблемы путем перехода между связанными элементами, такими как исключения, запросы и просмотры страниц, также не затрагивается.
 
-[Подробнее](../../azure-monitor/app/api-filtering-sampling.md).
+[Подробнее.](../../azure-monitor/app/api-filtering-sampling.md)
 
 ## <a name="disabling-telemetry"></a>Отключение телеметрии
 
@@ -951,7 +950,7 @@ TelemetryConfiguration.Active.DisableTelemetry = true;
 telemetry.getConfiguration().setTrackingDisabled(true);
 ```
 
-Чтобы *Отключить выбранные стандартные собирающие*, например счетчики производительности, HTTP-запросы или зависимости, удалите или закомментируйте соответствующие строки в [ApplicationInsights. config](../../azure-monitor/app/configuration-with-applicationinsights-config.md). Это можно сделать, например, если вы хотите отправить собственные данные TrackRequest.
+Чтобы *Отключить выбранные стандартные*компоненты, например счетчики производительности, HTTP-запросы или зависимости, удалите или закомментируйте соответствующие строки в [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md). Это можно сделать, например, если вы хотите отправить собственные данные TrackRequest.
 
 *Node.js*
 
@@ -991,7 +990,7 @@ TelemetryConfiguration.Active.TelemetryChannel.DeveloperMode = True
 
 *Node.js*
 
-Для Node. js можно включить режим разработчика, включив внутреннее ведение журнала с помощью `setInternalLogging` и установив значение `maxBatchSize` 0, что приводит к отправке данных телеметрии сразу после сбора.
+Для Node.js можно включить режим разработчика, включив внутреннее ведение журнала с помощью `setInternalLogging` и установив значение `maxBatchSize` 0, что приводит к отправке данных телеметрии сразу после сбора.
 
 ```js
 applicationInsights.setup("ikey")
@@ -1098,10 +1097,10 @@ telemetry.Context.Operation.Name = "MyOperationName";
 
 ## <a name="sdk-code"></a>Код пакета SDK
 
-* [Базовый пакет SDK для ASP.NET](https://github.com/Microsoft/ApplicationInsights-dotnet)
+* [Пакет SDK для ASP.NET Core](https://github.com/Microsoft/ApplicationInsights-dotnet)
 * [ASP.NET](https://github.com/Microsoft/ApplicationInsights-dotnet)
 * [Пакеты Windows Server](https://github.com/Microsoft/ApplicationInsights-dotnet)
-* [Пакет SDK для Java](https://github.com/Microsoft/ApplicationInsights-Java)
+* [пакет SDK для Java](https://github.com/Microsoft/ApplicationInsights-Java)
 * [Пакет SDK для Node.js](https://github.com/Microsoft/ApplicationInsights-Node.js)
 * [Пакет SDK для JavaScript](https://github.com/Microsoft/ApplicationInsights-JS)
 
@@ -1109,7 +1108,7 @@ telemetry.Context.Operation.Name = "MyOperationName";
 
 * *Какие исключения могут создаваться при вызовах Track_()?*
 
-    Нет. Вам не нужно помещать их в предложения try-catch. Если пакет SDK сталкивается с проблемами, он добавляет в журнал сообщения, которые отображаются в консоли отладки и, если сообщения проходят, — в поиске по журналу диагностики.
+    Отсутствует. Вам не нужно помещать их в предложения try-catch. Если пакет SDK сталкивается с проблемами, он добавляет в журнал сообщения, которые отображаются в консоли отладки и, если сообщения проходят, — в поиске по журналу диагностики.
 * *Существует ли REST API для получения данных из портала?*
 
     Да, [API доступа к данным](https://dev.applicationinsights.io/). К другим способам извлечения данных относятся [экспорт из Analytics в Power BI](../../azure-monitor/app/export-power-bi.md ) и [непрерывный экспорт](../../azure-monitor/app/export-telemetry.md).

@@ -4,10 +4,9 @@ description: Узнайте, как использовать PowerShell для �
 ms.topic: conceptual
 ms.date: 1/27/2020
 ms.openlocfilehash: 6ee5fb92e4a66a9d6db66514f966c3650d3a4f13
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83201963"
 ---
 # <a name="manage-azure-file-share-backups-with-powershell"></a>Управление резервными копиями файловых ресурсов Azure с помощью PowerShell
@@ -107,6 +106,6 @@ WorkloadName     Operation            Status         StartTime                 E
 afsfileshare     DeleteBackupData     Completed      1/26/2020 2:50:57 PM      1/26/2020 2:51:39 PM      b1a61c0b-548a-4687-9d15-9db1cc5bcc85
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Дополнительные сведения об](manage-afs-backup.md) управлении резервными копиями файловых ресурсов Azure см. в портал Azure.

@@ -15,10 +15,9 @@ ms.topic: troubleshooting
 ms.date: 09/09/2016
 ms.author: daberry
 ms.openlocfilehash: f85389d8fc2269b346df22854bb7ddce08844a88
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83118232"
 ---
 # <a name="troubleshoot-resource-manager-deployment-issues-with-creating-a-new-linux-virtual-machine-in-azure"></a>Устранение неполадок в развертывании Resource Manager при создании виртуальной машины Linux в Azure
@@ -69,7 +68,7 @@ ms.locfileid: "83118232"
 
 **Причина 1**. Этот кластер не поддерживает запрошенный размер виртуальной машины.
 
-**Решение 1**.
+**Решение 1.**
 
 * Повторите запрос с указанием меньшего размера виртуальной машины.
 * Если нельзя изменить размер запрошенной виртуальной машины,
@@ -80,13 +79,13 @@ ms.locfileid: "83118232"
 
 **Причина 2**. Кластер не располагает свободными ресурсами.
 
-**Решение 2**.
+**Решение 2.**
 
 * Повторите запрос позже.
 * Если новая виртуальная машина должна быть частью другой группы доступности:
   * создайте новую виртуальную машину в другой группе доступности (в том же регионе);
   * добавьте новую виртуальную машину в ту же виртуальную сеть.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 При возникновении проблем во время запуска остановленной виртуальной машины Linux или в случае изменения размера существующей виртуальной машины Linux в Azure см. раздел [Устранение неполадок в развертывании Resource Manager при перезагрузке или изменении размера существующей виртуальной машины Linux в Azure](../linux/restart-resize-error-troubleshooting.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 

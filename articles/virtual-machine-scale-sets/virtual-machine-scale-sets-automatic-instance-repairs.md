@@ -10,13 +10,12 @@ ms.date: 02/28/2020
 ms.reviewer: jushiman
 ms.custom: avverma
 ms.openlocfilehash: 9e2b15eceff9bca4cee960fa462eb5148e3716dd
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83197038"
 ---
-# <a name="automatic-instance-repairs-for-azure-virtual-machine-scale-sets"></a>Автоматическое восстановление экземпляра для масштабируемых наборов виртуальных машин Azure
+# <a name="automatic-instance-repairs-for-azure-virtual-machine-scale-sets"></a>Автоматическое исправление экземпляра для масштабируемых наборов виртуальных машин Azure
 
 Включение автоматического восстановления экземпляров для масштабируемых наборов виртуальных машин Azure обеспечивает высокий уровень доступности для приложений за счет поддержания набора работоспособных экземпляров. Если экземпляр в масштабируемом наборе находится в состоянии неработоспособности, о котором сообщает [расширение работоспособности приложения](./virtual-machine-scale-sets-health-extension.md) или [проверки работоспособности балансировщика нагрузки](../load-balancer/load-balancer-custom-probe-overview.md), эта функция автоматически выполняет восстановление экземпляра, удаляя неработоспособный экземпляр и создавая новый, чтобы заменить его.
 
@@ -297,7 +296,7 @@ Set-AzVmssOrchestrationServiceState `
     -Action "Suspend"
 ```
 
-## <a name="troubleshoot"></a>Диагностика
+## <a name="troubleshoot"></a>Устранение неполадок
 
 **Не удалось включить политику автоматического восстановления**
 
@@ -313,6 +312,6 @@ Set-AzVmssOrchestrationServiceState `
 
 В портал Azure также можно просмотреть состояние работоспособности. Перейдите к существующему масштабируемому набору, выберите **экземпляры** в меню слева и просмотрите столбец **состояние работоспособности** для состояния работоспособности каждого экземпляра масштабируемого набора. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как настроить [расширение работоспособности приложения](./virtual-machine-scale-sets-health-extension.md) или [пробы работоспособности подсистемы балансировки нагрузки](../load-balancer/load-balancer-custom-probe-overview.md) для масштабируемых наборов.

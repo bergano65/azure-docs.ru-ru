@@ -4,10 +4,9 @@ description: В этой статье описывается, как испол�
 ms.topic: conceptual
 ms.date: 07/25/2019
 ms.openlocfilehash: c48be8945326f0f11ded7c5700cd70043830e4db
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83197760"
 ---
 # <a name="central-secrets-store-in-azure-service-fabric"></a>Центральное хранилище секретов в Azure Service Fabric 
@@ -73,7 +72,7 @@ Invoke-WebRequest -CertificateThumbprint <ClusterCertThumbprint> -Method POST -U
 
 Выполните следующие действия, чтобы использовать секрет в приложении Service Fabric.
 
-1. Добавьте раздел в файл **Settings. XML** с помощью следующего фрагмента кода. Обратите внимание, что значение имеет формат { `secretname:version` }.
+1. Добавьте раздел в файл **settings.xml** с помощью следующего фрагмента кода. Обратите внимание, что значение имеет формат { `secretname:version` }.
 
    ```xml
      <Section Name="testsecrets">
@@ -81,7 +80,7 @@ Invoke-WebRequest -CertificateThumbprint <ClusterCertThumbprint> -Method POST -U
      </Section>
    ```
 
-1. Импортируйте раздел в **ApplicationManifest. XML**.
+1. Импортируйте раздел в **ApplicationManifest.xml**.
    ```xml
      <ServiceManifestImport>
        <ServiceManifestRef ServiceManifestName="testservicePkg" ServiceManifestVersion="1.0.0" />
@@ -99,7 +98,7 @@ Invoke-WebRequest -CertificateThumbprint <ClusterCertThumbprint> -Method POST -U
    secretValue = IO.ReadFile(Path.Join(Environment.GetEnvironmentVariable("SecretPath"),  "TopSecret"))
    ```
 1. Подключите секреты к контейнеру. Единственное изменение, необходимое для того, чтобы сделать секреты доступными внутри контейнера, — это `specify` точка подключения в `<ConfigPackage>` .
-Следующий фрагмент кода является модифицированным **ApplicationManifest. XML**.  
+Следующий фрагмент кода является измененным **ApplicationManifest.xml**.  
 
    ```xml
    <ServiceManifestImport>
@@ -117,7 +116,7 @@ Invoke-WebRequest -CertificateThumbprint <ClusterCertThumbprint> -Method POST -U
    ```
    Секреты доступны в точке подключения внутри контейнера.
 
-1. Можно привязать секрет к переменной среды процесса, указав `Type='SecretsStoreRef` . В следующем фрагменте кода приведен пример привязки `supersecret` версии `ver1` к переменной среды `MySuperSecret` в **ServiceManifest. XML**.
+1. Можно привязать секрет к переменной среды процесса, указав `Type='SecretsStoreRef` . В следующем фрагменте кода приведен пример привязки `supersecret` версии `ver1` к переменной среды `MySuperSecret` в **ServiceManifest.xml**.
 
    ```xml
    <EnvironmentVariables>
@@ -125,5 +124,5 @@ Invoke-WebRequest -CertificateThumbprint <ClusterCertThumbprint> -Method POST -U
    </EnvironmentVariables>
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о [безопасности приложений и служб](service-fabric-application-and-service-security.md).

@@ -14,10 +14,9 @@ ms.date: 01/16/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 4db072cf881c936db6721845e7823082388515b0
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83117127"
 ---
 # <a name="how-to-install-and-configure-sap-hana-large-instances-on-azure"></a>Как установить и настроить SAP HANA в Azure (крупные экземпляры)
@@ -33,7 +32,7 @@ ms.locfileid: "83117127"
 
 Перед началом установки HANA проверьте следующее:
 - [единицы HLI](#validate-the-hana-large-instance-units);
-- [конфигурация операционной системы;](#operating-system)
+- [Конфигурация операционной системы](#operating-system)
 - [Сетевая конфигурация](#networking)
 - [Конфигурация хранилища](#storage)
 
@@ -124,7 +123,7 @@ ms.locfileid: "83117127"
 В результате потребуется отдельный сервер времени, который будут использовать серверы приложений SAP, работающие на виртуальных машинах Azure, и экземпляры баз данных SAP HANA, работающие на HANA (крупные экземпляры). Для инфраструктуры хранения в стеках крупных экземпляров время синхронизируется с серверами NTP.
 
 
-## <a name="networking"></a>Сеть
+## <a name="networking"></a>Сети
 В этом разделе предполагается, что вы следовали рекомендациям по проектированию виртуальных сетей Azure и их подключению к крупным экземплярам HANA, приведенным в следующих документах:
 
 - [Обзор и архитектура SAP HANA (крупные экземпляры) в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture)
@@ -144,8 +143,8 @@ ms.locfileid: "83117127"
 
 | Использование хранилища | Имя подключения | Имя тома | 
 | --- | --- | ---|
-| Данные HANA | /hana/data/SID/mnt0000 \< m> | IP хранилища: /hana_data_SID_mnt00001_tenant_vol |
-| Журнал HANA | /hana/log/SID/mnt0000 \< m> | IP хранилища: /hana_log_SID_mnt00001_tenant_vol |
+| Данные HANA | /hana/data/SID/mnt0000\<m> | IP хранилища: /hana_data_SID_mnt00001_tenant_vol |
+| Журнал HANA | /hana/log/SID/mnt0000\<m> | IP хранилища: /hana_log_SID_mnt00001_tenant_vol |
 | Резервная копия журнала HANA | /hana/log/backups | IP хранилища: /hana_log_backups_SID_mnt00001_tenant_vol |
 | Общий HANA | /hana/shared/SID | IP хранилища: /hana_shared_SID_mnt00001_tenant_vol/shared |
 | usr/sap | /usr/sap/SID | IP хранилища: /hana_shared_SID_mnt00001_tenant_vol/usr_sap |
@@ -198,7 +197,7 @@ HANA usr/sap предоставляет общий доступ к тому. В 
 Хранилище, используемое в крупных экземплярах HANA, имеет ограничение на размер файла. [Ограничение по размеру составляет 16 ТБ](https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-vsmg%2FGUID-AA1419CF-50AB-41FF-A73C-C401741C847C.html) на файл. В отличие от ограничений на размер файлов в файловых системах EXT3, HANA не учитывает неявное ограничение хранилища, принудительно используемое хранилищем крупных экземпляров HANA. В результате HANA не будет автоматически создавать новый файл данных при достижении предельного размера файла 16TB. Так как HANA пытается увеличить размер файла за пределами 16 ТБ, HANA сообщит об ошибках, и сервер индекса завершится сбоем в конце.
 
 > [!IMPORTANT]
-> Чтобы предотвратить попытку HANA расширить файлы данных по сравнению с ограничением размера файлов размером в 16 ТБ хранилища крупных экземпляров HANA, необходимо задать следующие параметры в файле конфигурации SAP HANA Global. ini.
+> Чтобы предотвратить попытку HANA расширить файлы данных по сравнению с ограничением размера файлов размером в 16 ТБ хранилища крупных экземпляров HANA, необходимо задать следующие параметры в файле конфигурации SAP HANA global.ini
 > 
 > - datavolume_striping = true
 > - datavolume_striping_size_gb = 15000

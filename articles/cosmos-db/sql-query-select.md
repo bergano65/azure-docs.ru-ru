@@ -7,15 +7,14 @@ ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: tisande
 ms.openlocfilehash: f33cf20b76655a893fe7eebd9e6e6569d35de98f
-ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83005956"
 ---
 # <a name="select-clause-in-azure-cosmos-db"></a>Предложение SELECT в Azure Cosmos DB
 
-Каждый запрос состоит из `SELECT` предложения и необязательных предложений [from](sql-query-from.md) и [WHERE](sql-query-where.md) для стандартов ANSI SQL. Как правило, источник в `FROM` предложении перечисляется, а `WHERE` предложение применяет фильтр к источнику для получения подмножества элементов JSON. Затем `SELECT` предложение проецирует запрошенные значения JSON в списке выбора.
+Каждый запрос состоит из `SELECT` предложения и необязательных предложений [from](sql-query-from.md) и [WHERE](sql-query-where.md) для стандартов ANSI SQL. Как правило, источник в `FROM` предложении перечисляется, а `WHERE` предложение применяет фильтр к источнику для получения подмножества элементов JSON. `SELECT`Затем предложение проецирует запрошенные значения JSON в списке выбора.
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -57,7 +56,7 @@ SELECT <select_specification>
 
   Выражение, представляющее вычисляемое значение. Дополнительные сведения см. в разделе [Скалярные выражения](sql-query-scalar-expressions.md).  
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
 Если предложение FROM объявило один псевдоним, действителен только синтаксис `SELECT *`. Синтаксис `SELECT *` обеспечивает проекцию удостоверения, что может пригодиться, если проекция не требуется. Кроме того, это * единственный действительный синтаксис, если в предложении FROM указан один источник входных данных.  
   
@@ -77,7 +76,7 @@ SELECT <select_specification>
   
 ## <a name="examples"></a>Примеры
 
-Следующий пример запроса SELECT `address` возвращает из `Families` , чьи `id` соответствия `AndersenFamily`:
+Следующий пример запроса SELECT возвращает `address` из `Families` , чьи `id` соответствия `AndersenFamily` :
 
 ```sql
     SELECT f.address
@@ -99,6 +98,6 @@ SELECT <select_specification>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Приступая к работе](sql-query-getting-started.md)
+- [Начало работы](sql-query-getting-started.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
 - [Предложение WHERE](sql-query-where.md)

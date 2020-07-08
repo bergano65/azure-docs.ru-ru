@@ -17,10 +17,9 @@ ms.date: 05/05/2017
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 2ccaf662488203e346065cfee082018128f37d95
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83201668"
 ---
 # <a name="prepare-azure-infrastructure-for-sap-high-availability-by-using-a-windows-failover-cluster-and-file-share-for-sap-ascsscs-instances"></a>Подготовка высокодоступной инфраструктуры Azure для SAP с помощью отказоустойчивого кластера Windows и файлового ресурса для экземпляров SAP ASCS/SCS
@@ -209,7 +208,7 @@ ms.locfileid: "83201668"
 
 В этой статье документе описываются шаги по подготовке инфраструктуры Azure, необходимые для установки и настройки высокодоступных систем SAP в отказоустойчивом кластере Windows (WSFC) с использованием масштабируемого файлового ресурса для кластеризации экземпляров SAP ASCS/SCS.
 
-## <a name="prerequisite"></a>Предварительные требования
+## <a name="prerequisite"></a>Предварительное требование
 
 Прежде чем начать установку, ознакомьтесь со следующей статьей:
 
@@ -228,7 +227,7 @@ ms.locfileid: "83201668"
 
 **Таблица 1**. Кластер ASCS/SCS
 
-| \<SID> SAP | Количество экземпляров SAP ASCS/SCS |
+| ПРОТОКОЛА\<SID> | Количество экземпляров SAP ASCS/SCS |
 | --- | --- |
 | PR1 | 00 |
 
@@ -258,7 +257,7 @@ ms.locfileid: "83201668"
 
 * [Задайте статические IP-адреса для виртуальных машин SAP][sap-ascs-high-availability-multi-sid-wsfc-set-static-ip].
 
-* [Настройте статические IP-адреса для внутренней подсистемы балансировки нагрузки Azure][sap-high-availability-infrastructure-wsfc-shared-disk-set-static-ip-ilb].
+* [Задайте статический IP-адрес для внутреннего балансировщика нагрузки Azure][sap-high-availability-infrastructure-wsfc-shared-disk-set-static-ip-ilb].
 
 * [Задайте правила балансировки нагрузки ASCS/SCS по умолчанию для внутренней подсистемы балансировки нагрузки Azure][sap-high-availability-infrastructure-wsfc-shared-disk-default-ascs-ilb-rules].
 
@@ -346,12 +345,12 @@ _**Рис. 2**. экран пользовательского интерфейс
 
 После успешной установки кластера Windows масштабируемый файловый сервер необходимо адаптировать пороговые значения времени ожидания для обнаружения отработки отказа в условиях Azure. Параметры, которые необходимо изменить, описаны в записи блога [Tuning Failover Cluster Network Thresholds][tuning-failover-cluster-network-thresholds] (Настройка пороговых значений сети отказоустойчивого кластера). При условии, что кластеризованные виртуальные машины находятся в одной подсети, измените следующие параметры на следующие значения:
 
-- Самесубнетделай = 2000
+- SameSubNetDelay = 2000
 - SameSubNetThreshold = 15
 - Раутехисториленгс = 30
 
 Эти параметры были протестированы у клиентов, они обеспечивают удачный компромисс. Они достаточно устойчивы, но они также обеспечивают достаточную отработку отказа в реальных условиях возникновения ошибок или сбоя виртуальной машины.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Установка высокодоступной системы SAP NetWeaver в отказоустойчивом кластере Windows с файловым ресурсом для экземпляров SAP ASCS/SCS][sap-high-availability-installation-wsfc-file-share]

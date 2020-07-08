@@ -16,10 +16,9 @@ ms.topic: article
 ms.date: 01/08/2019
 ms.author: willzhan
 ms.openlocfilehash: 0e65bf39db00f1277635d600da87346f19a881a6
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83197171"
 ---
 # <a name="offline-fairplay-streaming-for-ios-with-media-services-v3"></a>Автономная потоковая передача FairPlay для iOS с помощью служб мультимедиа v3
@@ -46,7 +45,7 @@ ms.locfileid: "83197171"
 > [!NOTE]
 > В автономной системе DRM оплачивается только один запрос на лицензию при скачивании содержимого. Плата за любые ошибки не взимается.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед реализацией автономного DRM для FairPlay на устройстве iOS 10+ вам нужно:
 
@@ -206,6 +205,6 @@ func requestApplicationCertificate() throws -> Data {
 
 См. [часто задаваемые вопросы по устранению неполадок](frequently-asked-questions.md#why-does-only-audio-play-but-not-video-during-offline-mode).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте о возможностях [использования динамического шифрования AES-128 и службы доставки ключей](protect-with-aes128.md).
