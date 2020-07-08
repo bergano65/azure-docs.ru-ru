@@ -5,12 +5,11 @@ author: Sharmistha-Rai
 manager: gaggupta
 ms.topic: how-to
 ms.date: 05/25/2020
-ms.openlocfilehash: 204ac3be46ac7ba0e1ea96e50379ca417b1299ce
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.openlocfilehash: 9fabf6cf4c8a3afc2d119fca2c8cdc2526ddbebb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83847639"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84415871"
 ---
 # <a name="replicate-azure-virtual-machines-running-in-proximity-placement-groups-to-another-region"></a>Репликация виртуальных машин Azure, выполняемых в группах размещения близкого взаимодействия, в другой регион
 
@@ -27,6 +26,9 @@ ms.locfileid: "83847639"
 - Лучше всего организовать отработку отказа/восстановление виртуальных машин в группе размещения близкого взаимодействия. Однако если восстановить виртуальную машину внутри групп размещения близкого взаимодействия в процессе отработки отказа не удастся, отработка отказа все равно произойдет, но виртуальные машины будут созданы вне группы размещения.
 -  Если группа доступности закреплена в группе размещения близкого взаимодействия и во время отработки отказа/восстановления виртуальных машин в группе доступности действует ограничение на распределение, виртуальные машины будут созданы за пределами группы доступности и группы размещения близкого взаимодействия.
 -  Site Recovery для групп размещения близкого взаимодействия не поддерживается для неуправляемых дисков.
+
+> [!Note]
+> Azure Site Recovery не поддерживает восстановление размещения с управляемых дисков для сценариев Hyper-V в Azure. Следовательно, восстановление размещения из группы размещения в Azure на Hyper-V не поддерживается.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -58,7 +60,7 @@ $OSdiskId = $vm.StorageProfile.OsDisk.ManagedDisk.Id
 $RecoveryOSDiskAccountType = $vm.StorageProfile.OsDisk.ManagedDisk.StorageAccountType
 $RecoveryReplicaDiskAccountType = $vm.StorageProfile.OsDisk.ManagedDisk.StorageAccountType
 
-$OSDiskReplicationConfig = New-AzRecoveryServicesAsrAzureToAzureDiskReplicationConfig -ManagedDisk -LogStorageAccountId $EastUSCacheStorageAccount.Id ` -DiskId $OSdiskId -RecoveryResourceGroupId  $RecoveryRG.ResourceId -RecoveryReplicaDiskAccountType  $RecoveryReplicaDiskAccountType ` -RecoveryTargetDiskAccountType $RecoveryOSDiskAccountType -RecoveryProximityPlacementGroupId $recPpg.Id
+$OSDiskReplicationConfig = New-AzRecoveryServicesAsrAzureToAzureDiskReplicationConfig -ManagedDisk -LogStorageAccountId $EastUSCacheStorageAccount.Id ` -DiskId $OSdiskId -RecoveryResourceGroupId  $RecoveryRG.ResourceId -RecoveryReplicaDiskAccountType  $RecoveryReplicaDiskAccountType ` -RecoveryTargetDiskAccountType $RecoveryOSDiskAccountType
 
 # Data disk
 $datadiskId1 = $vm.StorageProfile.DataDisks[0].ManagedDisk.Id
