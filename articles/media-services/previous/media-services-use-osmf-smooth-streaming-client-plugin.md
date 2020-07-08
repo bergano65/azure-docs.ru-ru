@@ -14,12 +14,11 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 71d28a19316bf1b618ec9008a5e96a503687b202
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: bec5e68b334cada7f83c5dbeb9ba50203835d770
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81681965"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84265324"
 ---
 # <a name="how-to-use-the-microsoft-smooth-streaming-plugin-for-the-adobe-open-source-media-framework"></a>Использование подключаемого модуля Smooth Streaming Майкрософт для платформы Adobe Open Source Media Framework  
 ## <a name="overview"></a>Обзор
@@ -328,10 +327,10 @@ package
 }
 
 ## <a name="strobe-media--playback-with-the-ss-odmf-dynamic-plugin"></a>Воспроизведение Strobe Media с помощью динамического подключаемого модуля SS ODMF
-Динамический подключаемый модуль Smooth Streaming для OSMF совместим с проигрывателем [Strobe Media Playback (SMP)](http://osmf.org/strobe_mediaplayback.html). Подключаемый модуль SS для OSMF можно использовать для поддержки воспроизведения контента в SMP. Для этого скопируйте "MSAdaptiveStreamingPlugin-v1.0.3-osmf2.0.swf" на веб-сервер, чтобы выполнять загрузку по протоколу HTTP, и выполните следующие действия:
+Динамический подключаемый модуль Smooth Streaming для OSMF совместим с проигрывателем [Strobe Media Playback (SMP)](https://sourceforge.net/adobe/smp/home/Strobe%20Media%20Playback/). Подключаемый модуль SS для OSMF можно использовать для поддержки воспроизведения контента в SMP. Для этого скопируйте "MSAdaptiveStreamingPlugin-v1.0.3-osmf2.0.swf" на веб-сервер, чтобы выполнять загрузку по протоколу HTTP, и выполните следующие действия:
 
 1. Откройте [страницу настройки Strobe Media Playback](http://osmf.org/dev/2.0gm/setup.html). 
-2. Задайте для src источник Smooth Streaming (например, http:/devplatem.vo.msecnd.net/Sintel/Sintel_H264.ism/manifest)\/. 
+2. Задайте для src источник Smooth Streaming (например, http: \/ /devplatem.VO.msecnd.NET/Sintel/Sintel_H264.ISM/manifest). 
 3. Внесите требуемые изменения и нажмите кнопку "Предварительный просмотр и обновление".
    
    **Примечание.** На веб-сервере должен размещаться допустимый файл crossdomain.xml. 
@@ -388,9 +387,9 @@ package
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 [Адаптивный подключаемый модуль Майкрософт для потоковой передачи для обновления OSMF](https://azure.microsoft.com/blog/2014/10/27/microsoft-adaptive-streaming-plugin-for-osmf-update/) 
 

@@ -11,12 +11,11 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: previous-author=fboylu, previous-ms.author=fboylu
-ms.openlocfilehash: 301e2be0c8b971a0236de6a8b5c8bd5f278c3aee
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 2961ffb21a1f34ca677e0aede5170689f4e38dca
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81686749"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84267971"
 ---
 # <a name="azure-ai-guide-for-predictive-maintenance-solutions"></a>Руководство по искусственному интеллекту Azure для решений прогнозного обслуживания
 
@@ -231,7 +230,7 @@ ms.locfileid: "81686749"
 
 Предложенные усилия по подготовке данных должны привести к упорядочению данных, как показано ниже. Данные для обучения, тестирования и проверки должны соответствовать следующей логической схеме (в этом примере время измеряется в днях).
 
-| Идентификатор актива | Время | \<Столбцы компонентов> | Метка |
+| Идентификатор актива | Время | \<Feature Columns> | Метка |
 | ---- | ---- | --- | --- |
 | A123 |День 1 | . . . | . |
 | A123 |День 2 | . . . | . |
@@ -427,12 +426,11 @@ ms.locfileid: "81686749"
 |--:|:------|-------------|
 | 2 | [Шаблон решения для прогнозного обслуживания Azure](https://github.com/Azure/AI-PredictiveMaintenance) | Шаблон решения с открытым исходным кодом, демонстрирующий моделирование машинного обучения Azure и полную инфраструктуру Azure, способную поддерживать сценарии прогнозного обслуживания в контексте удаленного мониторинга IoT. |
 | 3 | [Глубокое обучение по прогнозному обслуживанию](https://github.com/Azure/MachineLearningSamples-DeepLearningforPredictiveMaintenance) | Azure Notebook с демонстрационным решением по использованию сетей LSTM (класс рекуррентных нейронных сетей) для прогнозного обслуживания с [записью блога об этом образце](https://azure.microsoft.com/blog/deep-learning-for-predictive-maintenance).|
-| 4 | [Руководство по моделированию прогнозного обслуживания на R](https://gallery.azure.ai/Notebook/Predictive-Maintenance-Modelling-Guide-R-Notebook-1) | Руководство по моделированию прогнозного обслуживания с помощью сценариев на R.|
-| 5 | [Прогнозное обслуживание Azure для авиакосмической отрасли](https://gallery.azure.ai/Solution/Predictive-Maintenance-for-Aerospace-1) | Один из первых шаблонов решений PdM на основе Машинного обучения Azure версии 1.0 для обслуживания воздушных судов. Это руководство было создано на основе этого проекта. |
-| 6 | [Набор средств для работы с искусственным интеллектом для Azure IoT Edge](https://github.com/Azure/ai-toolkit-iot-edge) | AI в IoT Edge с помощью TensorFlow; в пакетах набора средств глубокие модели обучения в Azure IoT Edge-совместимых контейнерах DOCKER и предоставляют эти модели в качестве интерфейсов API.
-| 7 | [Прогнозное обслуживание Интернета вещей Azure](https://github.com/Azure/azure-iot-predictive-maintenance) | Azure IoT Suite PCS. Предварительно настроенное решение. Шаблон PdM с IoT Suite для обслуживания самолетов. [Еще один документ](https://docs.microsoft.com/azure/iot-suite/iot-suite-predictive-overview) и [пошаговое руководство](https://docs.microsoft.com/azure/iot-suite/iot-suite-predictive-walkthrough), связанное с тем же проектом. |
-| 8 | [Шаблон прогнозного обслуживания, использующий SQL Server R Services](https://gallery.azure.ai/Tutorial/Predictive-Maintenance-Template-with-SQL-Server-R-Services-1) | Демонстрационный сценарий оставшегося срока полезного использования на основе служб R. |
-| 9 | [Predictive Maintenance Modelling Guide](https://gallery.azure.ai/Collection/Predictive-Maintenance-Modelling-Guide-1) (Руководство по моделированию прогнозного обслуживания) | Признаки набора данных для обслуживания самолетов, созданные с использованием R с [экспериментами](https://gallery.azure.ai/Experiment/Predictive-Maintenance-Modelling-Guide-Experiment-1) и [наборами данных](https://gallery.azure.ai/Experiment/Predictive-Maintenance-Modelling-Guide-Data-Sets-1), а также с использованием [N](https://gallery.azure.ai/Notebook/Predictive-Maintenance-Modelling-Guide-R-Notebook-1) с [экспериментами](https://gallery.azure.ai/Experiment/Predictive-Maintenance-Step-1-of-3-data-preparation-and-feature-engineering-2) в службе "Машинное обучение Azure" версии 1.0.|
+| 4 | [Прогнозное обслуживание Azure для авиакосмической отрасли](https://gallery.azure.ai/Solution/Predictive-Maintenance-for-Aerospace-1) | Один из первых шаблонов решений PdM на основе Машинного обучения Azure версии 1.0 для обслуживания воздушных судов. Это руководство было создано на основе этого проекта. |
+| 5 | [Набор средств для работы с искусственным интеллектом для Azure IoT Edge](https://github.com/Azure/ai-toolkit-iot-edge) | AI в IoT Edge с помощью TensorFlow; в пакетах набора средств глубокие модели обучения в Azure IoT Edge-совместимых контейнерах DOCKER и предоставляют эти модели в качестве интерфейсов API.
+| 6 | [Прогнозное обслуживание Интернета вещей Azure](https://github.com/Azure/azure-iot-predictive-maintenance) | Azure IoT Suite PCS. Предварительно настроенное решение. Шаблон PdM с IoT Suite для обслуживания самолетов. [Еще один документ](https://docs.microsoft.com/azure/iot-suite/iot-suite-predictive-overview) и [пошаговое руководство](https://docs.microsoft.com/azure/iot-suite/iot-suite-predictive-walkthrough), связанное с тем же проектом. |
+| 7 | [Шаблон прогнозного обслуживания, использующий SQL Server R Services](https://gallery.azure.ai/Tutorial/Predictive-Maintenance-Template-with-SQL-Server-R-Services-1) | Демонстрационный сценарий оставшегося срока полезного использования на основе служб R. |
+| 8 | [Predictive Maintenance Modelling Guide](https://gallery.azure.ai/Collection/Predictive-Maintenance-Modelling-Guide-1) (Руководство по моделированию прогнозного обслуживания) | Признаки набора данных для обслуживания самолетов, созданные с использованием R с [экспериментами](https://gallery.azure.ai/Experiment/Predictive-Maintenance-Modelling-Guide-Experiment-1) и [наборами данных](https://gallery.azure.ai/Experiment/Predictive-Maintenance-Modelling-Guide-Data-Sets-1), а также с использованием N с [экспериментами](https://gallery.azure.ai/Experiment/Predictive-Maintenance-Step-1-of-3-data-preparation-and-feature-engineering-2) в службе "Машинное обучение Azure" версии 1.0.|
 
 ## <a name="training-resources-for-predictive-maintenance"></a>Сборник тренировочных заданий для прогнозного обслуживания
 
@@ -440,14 +438,14 @@ ms.locfileid: "81686749"
 
 | Ресурсы для обучения  | Доступность |
 |:-------------------|--------------|
-| [Схема обучения PdM с помощью деревьев и случайного леса](https://aischool.microsoft.com/learning-paths/1H5vH5wAYcAy88CoQWQcA8) | Открытый | 
-| [Схема обучения PdM с помощью глубинного обучения](https://aischool.microsoft.com/learning-paths/FSIXxYkOGcauo0eUO8qAS) | Открытый |
-| [Разработка искусственного интеллекта в Azure](https://azure.microsoft.com/training/learning-paths/azure-ai-developer) | Открытый |
-| [Курсы по изучению искусственного интеллекта Майкрософт](https://aischool.microsoft.com/learning-paths) | Открытый |
-| [Обучение работе с ИИ Azure на GitHub](https://github.com/Azure/connectthedots/blob/master/readme.md) | Открытый |
-| [LinkedIn Learning](https://www.linkedin.com/learning) | Открытый |
-| [Интерактивные семинары по Microsoft AI YouTube](https://www.youtube.com/watch?v=NvrH7_KKzoM&t=4s) | Открытый |
-| [Канал об искусственном интеллекте Майкрософт](https://channel9.msdn.com/Shows/AI-Show) | Открытый |
+| [Схема обучения PdM с помощью деревьев и случайного леса](https://aischool.microsoft.com/learning-paths/1H5vH5wAYcAy88CoQWQcA8) | Общие | 
+| [Схема обучения PdM с помощью глубинного обучения](https://aischool.microsoft.com/learning-paths/FSIXxYkOGcauo0eUO8qAS) | Общие |
+| [Разработка искусственного интеллекта в Azure](https://azure.microsoft.com/training/learning-paths/azure-ai-developer) | Общие |
+| [Курсы по изучению искусственного интеллекта Майкрософт](https://aischool.microsoft.com/learning-paths) | Общие |
+| [Обучение работе с ИИ Azure на GitHub](https://github.com/Azure/connectthedots/blob/master/readme.md) | Общие |
+| [LinkedIn Learning](https://www.linkedin.com/learning) | Общие |
+| [Интерактивные семинары по Microsoft AI YouTube](https://www.youtube.com/watch?v=NvrH7_KKzoM&t=4s) | Общие |
+| [Канал об искусственном интеллекте Майкрософт](https://channel9.msdn.com/Shows/AI-Show) | Общие |
 | [LearnAI@MS](https://learnanalytics.microsoft.com) | Участники |
 | [Microsoft Partner Network](https://partner.microsoft.com/training/training-center) | Участники |
 

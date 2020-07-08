@@ -11,15 +11,14 @@ ms.service: virtual-machines
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 05/12/2020
+ms.date: 06/01/2020
 ms.author: borisb
 ms.custom: ''
-ms.openlocfilehash: 077fd70f0908dcef3af0c1e037fe137d636a4ac4
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 9fc14a6a8211308ef9f1cd98cd4b831070a99e22
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83660566"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84299882"
 ---
 # <a name="oracle-application-solutions-integrating-microsoft-azure-and-oracle-cloud-infrastructure"></a>Решения для приложений Oracle с интеграцией Microsoft Azure и Oracle Cloud Infrastructure
 
@@ -35,10 +34,7 @@ ms.locfileid: "83660566"
 
 Возможность подключения между облаками позволяет вам выполнять лучшие в отрасли приложения Oracle и собственные приложения на виртуальных машинах Azure, сохраняя все преимущества размещенных служб баз данных на платформе OCI. 
 
-> [!IMPORTANT]
-> К маю 2020 года следующие приложения будут сертифицированы Oracle для запуска в Azure c поддержкой соединения между облаками Azure и Oracle Cloud.
-
-Вот приложения, которые можно выполнять в конфигурации со связью между облаками:
+Начиная с мая 2020 в конфигурации между облаками сертифицированы следующие приложения:
 
 * E-Business Suite;
 * JD Edwards EnterpriseOne;

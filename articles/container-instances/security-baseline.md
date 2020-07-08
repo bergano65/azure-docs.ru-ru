@@ -1,0 +1,1206 @@
+---
+title: Базовые показатели безопасности Azure для экземпляров контейнеров
+description: Базовые показатели безопасности Azure для экземпляров контейнеров
+author: msmbaldwin
+ms.service: security
+ms.topic: conceptual
+ms.date: 05/27/2020
+ms.author: mbaldwin
+ms.custom: security-benchmark
+ms.openlocfilehash: 3897ef75be34d4413e06dc5459739baec3afdcec
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84268000"
+---
+# <a name="azure-security-baseline-for-container-instances"></a>Базовые показатели безопасности Azure для экземпляров контейнеров
+
+Базовый план безопасности Azure для экземпляров контейнеров содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
+
+Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](https://docs.microsoft.com/azure/security/benchmarks/overview), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+
+Дополнительные сведения см. в статье [Базовые показатели безопасности для Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+
+## <a name="network-security"></a>Безопасность сети
+
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](https://docs.microsoft.com/azure/security/benchmarks/security-control-network-security).*
+
+### <a name="11-protect-resources-using-network-security-groups-or-azure-firewall-on-your-virtual-network"></a>1.1. Защита ресурсов в виртуальной сети с помощью групп безопасности сети или Брандмауэра Azure
+
+**Руководство**. Виртуальная сеть Azure предоставляет защищенные частные сети для Azure и локальных ресурсов. Интегрируйте группы контейнеров в службе "экземпляры контейнеров Azure" с помощью виртуальной сети Azure. 
+
+* [Сценарии и ресурсы виртуальной сети — экземпляры контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-virtual-network-concepts)
+
+* [Развертывание экземпляров контейнеров в виртуальной сети Azure](https://docs.microsoft.com/azure/container-instances/container-instances-vnet)
+
+* [Создание NSG с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+
+* [Развертывание и настройка брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal)
+
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="12-monitor-and-log-the-configuration-and-traffic-of-vnets-subnets-and-nics"></a>1.2. Мониторинг и запись конфигурации и трафика виртуальных сетей, подсетей и сетевых карт
+
+**Руководство**. Использование центра безопасности Azure и устранение рекомендаций по защите сети для защиты сетевых ресурсов в Azure. Включите журналы потоков NSG и отправьте журналы в учетную запись хранения для аудита трафика.
+
+* [Включение журналов потоков NSG](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal)
+
+* [Защита сетевых ресурсов](https://docs.microsoft.com/azure/security-center/security-center-network-recommendations)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="13-protect-critical-web-applications"></a>1.3. Защита критических веб-приложений
+
+**Руководство**. развертывание брандмауэра веб-приложения Azure (WAF) перед критически важными веб-приложениями, размещенными в службе "экземпляры контейнеров Azure", для дополнительной проверки входящего трафика. Включите параметр диагностики для WAF и приема журналов в учетную запись хранения, концентратор событий или рабочую область Log Analytics.
+
+* [Развертывание WAF Azure](https://docs.microsoft.com/azure/web-application-firewall/ag/create-waf-policy-ag)
+
+
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1.4. Запрет взаимодействия с известными опасными IP-адресами
+
+**Рекомендации**. Включите стандартную защиту от атак DDoS в виртуальных сетях Azure, чтобы защититься от атак от атак DDoS. Используйте интегрированную аналитику угроз центра безопасности Azure, чтобы запретить обмен данными с известными вредоносными IP-адресами. Разверните брандмауэр Azure на всех границах сети Организации с включенной логикой "предупреждения и отказ" для вредоносного сетевого трафика. Используйте центр безопасности Azure JIT-доступ к сети, чтобы настроить группы безопасности сети, чтобы ограничить раскрытие конечных точек с утвержденными IP адресами в течение ограниченного периода времени. Используйте адаптивную защиту сети в центре безопасности Azure, чтобы рекомендовать NSG конфигурации, ограничивающие порты и исходные IP-адреса на основе фактического трафика и аналитики угроз. 
+
+* [Развертывание брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal)
+
+* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer)
+
+* [Общие сведения о адаптивной защите сети в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-adaptive-network-hardening)
+
+* [Центр безопасности Azure JIT — контроль доступа к сети](https://docs.microsoft.com/azure/security-center/security-center-just-in-time)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="15-record-network-packets-and-flow-logs"></a>1.5. Запись сетевых пакетов и журналов потоков
+
+**Рекомендации**. Если вы используете группы безопасности сети (группы безопасности сети) с реализацией виртуальной сети, включите журналы потоков NSG для NSG, подключенных к подсети, делегированной в службу "экземпляры контейнеров Azure". Запишите журналы потоков NSG в учетную запись хранения Azure, чтобы создать записи о потоках. Если требуется для изучения аномальных действий, включите запись пакетов наблюдателя за сетями Azure.
+
+* [Включение журналов потоков NSG](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal)
+
+* [Как включить Наблюдатель за сетями](https://docs.microsoft.com/azure/network-watcher/network-watcher-create)
+
+**Мониторинг Центра безопасности Azure**. Да
+
+**Ответственность**: Customer
+
+### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1.6. Развертывание сетевых систем обнаружения и предотвращения вторжений (IDS/IPS)
+
+**Руководство**. Выберите предложение из Azure Marketplace, которое поддерживает функции идентификаторов и IP-адресов с возможностью проверки полезной нагрузки. Если система обнаружения или предотвращения вторжений на основе проверки атакующего кода не является обязательной, можно использовать Брандмауэр Azure с аналитикой угроз. Фильтрация Брандмауэра Azure на основе аналитики угроз может создавать оповещения и запрещать трафик, поступающий с известных вредоносных IP-адресов и доменов, а также передающий на них. IP-адреса и домены также передаются из канала Microsoft Threat Intelligence.
+
+Разверните выбранное решение брандмауэра на каждом из границ сети вашей организации, чтобы обнаружить и/или отклонить вредоносный трафик.
+
+* [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/?term=Firewall)
+
+* [Развертывание брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal)
+
+* [Настройка оповещений с помощью брандмауэра Azure](https://docs.microsoft.com/azure/firewall/threat-intel)
+
+* [Развертывание в виртуальной сети с помощью экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-vnet) 
+
+
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="17-manage-traffic-to-web-applications"></a>1.7. Управление трафиком к веб-приложениям
+
+**Руководство**. Развертывание шлюза приложений Azure для веб-приложений с ВКЛЮЧЕНным протоколом HTTPS/SSL для доверенных сертификатов.
+
+* [Развертывание шлюза приложений](https://docs.microsoft.com/azure/application-gateway/quick-create-portal)
+
+* [Настройка шлюза приложений для использования протокола HTTPS](https://docs.microsoft.com/azure/application-gateway/create-ssl-portal) 
+
+* [Общие сведения о балансировке нагрузки уровня 7 с помощью шлюзов веб-приложений Azure](https://docs.microsoft.com/azure/application-gateway/overview)
+
+* [Предоставление статического IP-адреса для группы контейнеров](https://docs.microsoft.com/azure/container-instances/container-instances-application-gateway)
+
+* [Развертывание в виртуальной сети с помощью экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-vnet)
+
+
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1.8. Уменьшение сложности и дополнительных затрат на администрирование в правилах безопасности сети
+
+**Руководство**. Использование тегов службы виртуальной сети для определения элементов управления доступом к сети для групп безопасности сети или брандмауэра Azure. Теги служб можно использовать вместо определенных IP-адресов при создании правил безопасности. Указав имя тега службы (например, ApiManagement) в соответствующем исходном поле или поле назначения правила, можно разрешить или запретить трафик для соответствующей службы. Корпорация Майкрософт управляет префиксами адресов, входящих в тег службы, и автоматически обновляет этот тег при изменении адресов. 
+
+Группы безопасности приложений также можно использовать для упрощения сложной настройки безопасности. Группы безопасности приложений позволяют настроить сетевую безопасность как естественное расширение в структуре приложения. Это позволяет группировать виртуальные машины и определять политики безопасности сети на основе таких групп. 
+
+* [Общие сведения и использование тегов служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview) 
+
+* [Общие сведения и использование групп безопасности приложений](https://docs.microsoft.com/azure/virtual-network/security-overview#application-security-groups)
+
+* [Развертывание в виртуальной сети с помощью экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-vnet)
+
+
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1.9. Поддержание стандартных конфигураций безопасности для сетевых устройств
+
+**Руководство**. Вы также можете использовать схемы Azure для упрощения крупномасштабных развертываний Azure с помощью ключевых артефактов среды пакетов, таких как шаблоны диспетчера ресурсов Azure, элементы управления RBAC и политики, в одном определении схемы. Вы можете применить схему к новым подпискам, а также настроить управление и управление с помощью управления версиями. 
+
+* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+* [Примеры политик Azure для работы в сети](https://docs.microsoft.com/azure/governance/policy/samples/#network)
+
+* [Создание схемы Azure](https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal)
+
+
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="110-document-traffic-configuration-rules"></a>1.10. Документация по правилам конфигурации трафика
+
+**Руководство**. Использование тегов для группы безопасности сети и других ресурсов, относящихся к сетевой безопасности и потоку трафика. Для отдельных правил NSG используйте поле "Описание", чтобы указать бизнес-потребности и длительность (и т. д.) любых правил, которые разрешают трафик в сеть и из нее.
+
+Используйте любое из встроенных определений политик Azure, связанных с тегами, например "требовать тег и его значение", чтобы убедиться, что все ресурсы созданы с помощью тегов и уведомлять вас о существующих ресурсах без тегов.
+
+Вы можете использовать Azure PowerShell или Azure CLI для поиска или выполнения действий с ресурсами на основе их тегов.
+
+* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+
+* [Развертывание в виртуальной сети с помощью экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-vnet)
+
+* [Создание группы безопасности сети с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11. Использование автоматизированных средств для мониторинга конфигураций сетевых ресурсов и обнаружения изменений
+
+**Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых ресурсов, связанных с вашими экземплярами контейнера. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
+
+* [Как просматривать и извлекать события журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view)
+
+* [Как создать оповещения в службе Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
+
+*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](https://docs.microsoft.com/azure/security/benchmarks/security-control-logging-monitoring).*
+
+### <a name="21-use-approved-time-synchronization-sources"></a>2.1. Использование утвержденных источников синхронизации времени
+
+**Руководство**. Корпорация Майкрософт поддерживает источники времени для ресурсов Azure. Однако вы можете управлять параметрами синхронизации времени для вычислительных ресурсов. Например, выполните команду синхронизации времени в работающем контейнере.
+
+* [Настройка синхронизации времени для ресурсов вычислений Azure](https://docs.microsoft.com/azure/virtual-machines/windows/time-sync)
+
+* [Выполнение команды в экземпляре контейнера Azure](https://docs.microsoft.com/azure/container-instances/container-instances-exec)
+
+
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Microsoft
+
+### <a name="22-configure-central-security-log-management"></a>2.2. Настройка централизованного управления журналами безопасности
+
+**Руководство**. прием журналов с помощью Azure Monitor для агрегирования данных безопасности, создаваемых группой контейнеров Azure. В Azure Monitor используйте рабочие области Log Analytics для запроса и выполнения анализа, а учетные записи хранения Azure — для долгосрочного и архивного хранения.
+
+* [Ведение журнала группы контейнеров и экземпляра с Azure Monitor журналами](https://docs.microsoft.com/azure/container-instances/container-instances-log-analytics)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="23-enable-audit-logging-for-azure-resources"></a>2.3. Включение журналов аудита для ресурсов Azure
+
+**Руководство**. Azure Monitor собирает журналы ресурсов (ранее называемые журналами диагностики) для событий, управляемых пользователем, в реестре. Служба "экземпляры контейнеров Azure" включает встроенную поддержку отправки журналов групп контейнеров и данных событий, а также журналов контейнеров для Azure Monitor журналов.
+
+* [Ведение журнала группы контейнеров и экземпляра с Azure Monitor журналами](https://docs.microsoft.com/azure/container-registry/container-registry-diagnostics-audit-logs)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="24-collect-security-logs-from-operating-systems"></a>2.4. Сбор журналов безопасности из операционных систем
+
+**Руководство**. Неприменимо. Это руководство предназначено для вычислений с ресурсами IaaS.
+
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Неприменимо
+
+### <a name="25-configure-security-log-storage-retention"></a>2.5. Настройка хранения журнала безопасности
+
+**Руководство**. В Azure Monitor задайте период хранения для рабочей области Log Analytics согласно нормативным требованиям вашей организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
+
+* [Как задать параметры хранения журнала для рабочих областей Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="26-monitor-and-review-logs"></a>2.6. Мониторинг и просмотр журналов
+
+**Руководство**. анализ и мониторинг журналов для аномального поведения и регулярная проверка результатов. Используйте рабочую область Log Analytics Azure Monitor, чтобы просматривать журналы и выполнять запросы к данным журнала. 
+
+* [Ведение журнала группы контейнеров и экземпляра с Azure Monitor журналами](https://docs.microsoft.com/azure/container-instances/container-instances-log-analytics)
+
+* [Общие сведения о рабочей области Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal)
+
+* [Выполнение пользовательских запросов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="27-enable-alerts-for-anomalous-activity"></a>2.7. Включение оповещений об аномальных действиях
+
+**Руководство**. Использование рабочей области log Analytics для мониторинга и оповещения о аномальных действиях, обнаруженных в журналах и событиях безопасности. 
+
+* [Ведение журнала группы контейнеров и экземпляра с Azure Monitor журналами](https://docs.microsoft.com/azure/container-instances/container-instances-log-analytics)
+
+* [Как оповещать данные журнала Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="28-centralize-anti-malware-logging"></a>2.8. Централизованное ведение журнала защиты от вредоносных программ
+
+**Рекомендации**. Предоставьте собственное решение для защиты от вредоносных программ и коллекцию событий, если это необходимо для запуска в контейнере. 
+
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="29-enable-dns-query-logging"></a>2.9. Включение ведения журнала запросов DNS
+
+**Руководство**. при необходимости для запроса журналов DNS в контейнере необходимо указать собственное решение.
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="210-enable-command-line-audit-logging"></a>2.10. Включение ведения журнала аудита для командной строки
+
+**Рекомендации**. при необходимости настройте ведение журнала консоли в работающем экземпляре контейнера.
+
+* [Выполнение команды в экземпляре контейнера Azure](https://docs.microsoft.com/azure/container-instances/container-instances-exec)
+
+
+
+**Мониторинг центра безопасности Azure**: неприменимо
+
+**Ответственность**: Customer
+
+## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
+
+*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](https://docs.microsoft.com/azure/security/benchmarks/security-control-identity-access-control).*
+
+### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1. Инвентаризация учетных записей администраторов
+
+**Руководство**. Azure Active Directory (Azure AD) содержит встроенные роли, которые должны быть явно назначены и доступны для запросов. Используйте модуль Azure AD PowerShell для выполнения нерегламентированных запросов для обнаружения учетных записей, входящих в группы администраторов.
+
+Если вы используете реестр контейнеров Azure с экземплярами контейнеров Azure, для каждого реестра контейнеров Azure Следите за тем, включена или отключена встроенная учетная запись администратора. Отключите учетную запись, когда она не используется.
+
+* [Как получить роль каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+
+* [Как получить членов роли каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+
+* [Учетная запись администратора реестра контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-authentication#admin-account)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="32-change-default-passwords-where-applicable"></a>3.2. Изменение паролей по умолчанию, где применимо
+
+**Руководство**. Azure Active Directory (Azure AD) не имеет концепции паролей по умолчанию. Другие ресурсы Azure, требующие пароля, требуют создания пароля с требованиями к сложности и минимальной длиной пароля, которая зависит от службы. Вы несете ответственность за сторонние приложения и службы Marketplace, которые могут использовать пароли по умолчанию.
+
+Если вы используете реестр контейнеров Azure с экземплярами контейнеров Azure, если включена учетная запись администратора по умолчанию для реестра контейнеров Azure, сложные пароли создаются автоматически и их следует поворачивать. Отключите учетную запись, когда она не используется.
+
+* [Учетная запись администратора реестра контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-authentication#admin-account)
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="33-use-dedicated-administrative-accounts"></a>3.3. Применение выделенных административных учетных записей
+
+**Руководство**. Создайте стандартные операционные процедуры для использования выделенных административных учетных записей. Используйте учетную запись Центра безопасности Azure и управление доступом для мониторинга количества административных учетных записей.
+
+Если вы используете реестр контейнеров Azure с экземплярами контейнеров Azure, создайте процедуры для включения встроенной учетной записи администратора реестра контейнеров. Отключите учетную запись, когда она не используется.
+
+* [Общие сведения об удостоверениях и доступе центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+
+* [Учетная запись администратора реестра контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-authentication#admin-account)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**. Customer
+
+### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3.4. Использование единого входа с Azure Active Directory
+
+**Рекомендации**. везде, где это возможно, используйте Azure Active Directory SSO вместо настройки отдельных автономных учетных данных для каждой службы. Используйте рекомендации по управлению удостоверениями и доступом в центре безопасности Azure.
+
+* [Общие сведения об использовании единого входа в Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
+
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3.5. Использование многофакторной проверки подлинности для любого доступа на основе Azure Active Directory
+
+**Руководство**. Включение многофакторной идентификации (MFA) для Azure Active Directory (Azure AD) и следование рекомендациям по управлению удостоверениями и доступом в центре безопасности Azure.
+
+* [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+
+* [Мониторинг идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3.6. Используйте выделенные компьютеры (рабочие станции с привилегированным доступом) для всех административных задач
+
+**Руководство**. Используйте рабочие станции привилегированного доступа (PAW) с настроенной многофакторной проверкой подлинности для входа в ресурсы Azure и их настройки.
+
+* [Рабочие станции с привилегированным доступом](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+
+* [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3.7. Ведение журнала и создание оповещений по подозрительным действиям учетных записей администраторов
+
+**Руководство**. Использование отчетов по безопасности Azure Active Directory (Azure AD) для создания журналов и оповещений при возникновении подозрительных или ненадежных действий в среде. Используйте Центр безопасности Azure для мониторинга действий идентификации и доступа.
+
+* [Как определить пользователей Azure AD, помеченных для события риска](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-user-at-risk)
+
+* [Мониторинг пользовательских действий идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+
+**Мониторинг Центра безопасности Azure**. Да
+
+**Ответственность**: Customer
+
+### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3.8. Управление ресурсами Azure только из утвержденных расположений
+
+**Руководство**. Используйте именованные расположения с условным доступом, чтобы разрешить доступ только из конкретных логических групп диапазонов IP-адресов или стран и регионов.
+
+* [Как настроить именованные расположения](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
+
+**Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей.
+
+* [Создание и настройка экземпляра Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
+
+**Мониторинг Центра безопасности Azure**. Да
+
+**Ответственность**: Customer
+
+### <a name="310-regularly-review-and-reconcile-user-access"></a>3.10. Регулярная проверка и согласование доступа пользователей
+
+**Руководство**. Azure Active Directory (Azure AD) предоставляет журналы для облегчения поиска устаревших учетных записей. Кроме того, используйте проверку доступа удостоверений Azure, чтобы эффективно управлять членством в группах, доступом к корпоративным приложениям и назначениями ролей. Доступ пользователей можно проверять на регулярной основе, чтобы только у авторизованных пользователей был постоянный доступ.
+
+* [Общие сведения об отчетах Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/)
+
+* [Использование проверок доступа для идентификации Azure](https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview)
+
+**Мониторинг Центра безопасности Azure**. Да
+
+**Ответственность**: Customer
+
+### <a name="311-monitor-attempts-to-access-deactivated-accounts"></a>3.11. Отслеживание попыток доступа к отключенным учетным записям
+
+**Руководство**. у вас есть доступ к Azure Active Directory (Azure AD) действиям входа в систему, источникам журналов событий аудита и риска, которые позволяют интегрироваться с любым средством/мониторинг данных о безопасности и управления событиями (SIEM).
+
+Этот процесс можно упростить, создав параметры диагностики для учетных записей пользователей Azure Active Directory и отправив журналы аудита и журналы входа в рабочую область Log Analytics. Вы можете настроить необходимые оповещения в рабочей области Log Analytics.
+
+* [Как интегрировать журналы действий Azure в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="312-alert-on-account-login-behavior-deviation"></a>3.12. Предупреждение при подозрительном входе в учетную запись
+
+**Руководство**. Использование Azure Active Directory (Azure AD) рисков и средств защиты идентификации для настройки автоматических ответов на обнаруженные подозрительные действия, связанные с удостоверениями пользователей.
+
+* [Просмотр рискованных входов в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+
+* [Как настроить и включить политики рисков с помощью защиты идентификации](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3.13. Предоставление корпорации Майкрософт доступа к соответствующим данным клиентов в рамках сценариев поддержки
+
+**Руководство**: Сейчас недоступно; Защищенное хранилище в настоящее время не поддерживается для экземпляров контейнеров Azure.
+
+* [Список поддерживаемых защищенное хранилище служб](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Неприменимо
+
+## <a name="data-protection"></a>Защита данных
+
+*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-protection).*
+
+### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4.1. Инвентаризация конфиденциальных данных
+
+**Руководство**. Использование тегов ресурсов для отслеживания экземпляров контейнеров Azure, в которых хранятся или обрабатываются конфиденциальные данные. 
+
+Образы контейнеров тегов и версий, помогающие отслеживать изображения, хранящие или обрабатывающие конфиденциальные данные.
+
+* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+
+* [Рекомендации по отстановке тегов и управления версиями для образов контейнеров](https://docs.microsoft.com/azure/container-registry/container-registry-image-tag-version)
+
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
+
+**Руководство**. Реализация отдельных подписок и (или) групп управления для разработки, тестирования и производства. Ресурсы должны быть разделены виртуальной сетью или подсетью, помечены соответствующим образом и защищены брандмауэром NSG или Azure. Ресурсы, которые хранят или обрабатывают конфиденциальные данные, должны быть достаточно изолированы.
+
+* [Выполнение команды в экземпляре контейнера Azure](https://docs.microsoft.com/azure/container-instances/container-instances-exec)
+
+* [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+
+* [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+
+* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+
+* [Развертывание в виртуальной сети с помощью экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-vnet) 
+* [Создание NSG с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+
+* [Развертывание брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal)
+
+* [Как настроить оповещение или оповещение и запретить с помощью брандмауэра Azure](https://docs.microsoft.com/azure/firewall/threat-intel)
+
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4.3. Мониторинг и блокирование несанкционированной передачи конфиденциальной информации
+
+**Руководство**. Развертывание автоматизированного инструмента на периметре сети, который отслеживает несанкционированную передачу конфиденциальной информации и блокирует такие передачи при оповещении специалистов по информационной безопасности. Отслеживайте и блокируйте несанкционированную пересылку данных из файловых ресурсов Azure и других томов, подключенных к экземплярам контейнеров.
+
+Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и предпринимает все возможные усилия для защиты клиентов от потери данных и раскрытия информации. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
+
+* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+
+* [Развертывание в виртуальной сети с помощью экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-vnet) 
+
+* [Mount an Azure file share in Azure Container Instances](https://docs.microsoft.com/azure/container-instances/container-instances-volume-azure-files) (Подключение файлового ресурса Azure с помощью службы "Экземпляры контейнеров Azure")
+
+
+**Мониторинг центра безопасности Azure**: Сейчас это недоступно
+
+**Ответственность**: Совмещаемая блокировка
+
+### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4.4: Шифрование любой конфиденциальной информации при передаче
+
+**Руководство**. Убедитесь, что все клиенты, подключающиеся к группам контейнеров Azure, могут согласовать TLS 1,2 или более поздней версии. По умолчанию Microsoft Azureные ресурсы согласовывают TLS 1,2.
+
+Следуйте рекомендациям центра безопасности Azure для шифрования неактивных данных и шифрования при передаче, где это применимо.
+
+* [Общие сведения о шифровании при передаче с помощью Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-overview#encryption-of-data-in-transit)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Совмещаемая блокировка
+
+### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4.5. Использование средства активного обнаружения для распознавания конфиденциальных данных
+
+**Руководство**. функции для идентификации данных, классификации и предотвращения потерь в настоящее время недоступны для экземпляров контейнеров Azure. Пометьте группы контейнеров, которые могут обрабатывать конфиденциальные сведения, и реализуют сторонние решения, если это необходимо для обеспечения соответствия.
+
+Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и предпринимает все возможные усилия для защиты клиентов от потери данных и раскрытия информации. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
+
+* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**: Совмещаемая блокировка
+
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
+
+**Руководство**. Использование Azure AD RBAC для управления доступом к данным и ресурсам службы "экземпляры контейнеров Azure". 
+
+* [Настройка RBAC в Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
+
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7. Использование защиты от потери данных на основе узла для обеспечения контроля доступа
+
+**Руководство**: неприменимо; Эта рекомендация предназначена для вычислений с ресурсами IaaS.
+
+Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и предпринимает все возможные усилия для защиты клиентов от потери данных и раскрытия информации. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
+
+* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Совмещаемая блокировка
+
+### <a name="48-encrypt-sensitive-information-at-rest"></a>4.8. Шифрование конфиденциальной информации при хранении
+
+**Руководство**. по умолчанию все данные развертывания в службе "экземпляры контейнеров Azure" шифруются с помощью ключей, управляемых корпорацией Майкрософт. При необходимости можно управлять шифрованием с помощью собственного ключа (ключа, управляемого клиентом).
+
+* [Общие сведения о шифровании неактивных в Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest)
+
+* [Шифрование данных развертывания с помощью службы "экземпляры контейнеров Azure"](https://docs.microsoft.com/azure/container-instances/container-instances-encrypt-data)
+
+
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4.9. Включение в журнал и создание оповещений по изменениям критических ресурсов Azure
+
+**Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в группах контейнеров и экземплярах контейнеров. 
+
+* [Как создать оповещения для событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+## <a name="vulnerability-management"></a>управление уязвимостями;
+
+*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](https://docs.microsoft.com/azure/security/benchmarks/security-control-vulnerability-management).*
+
+### <a name="51-run-automated-vulnerability-scanning-tools"></a>5.1. Выполнение автоматизированных средства анализа уязвимостей
+
+**Руководство**. Реализация решений для сканирования образов контейнеров в частном реестре и выявления потенциальных уязвимостей. Следуйте рекомендациям центра безопасности Azure по выполнению оценки уязвимостей в образах контейнеров, хранящихся в реестре контейнеров Azure. При необходимости можно развернуть сторонние решения из Azure Marketplace для оценки уязвимостей образов.
+
+* [Вопросы безопасности для экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-image-security)
+
+* [Интеграция реестра контейнеров Azure с центром безопасности](https://docs.microsoft.com/azure/security-center/azure-container-registry-integration)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5.2. Развертывание автоматизированного решения для управления исправлениями операционной системы
+
+**Руководство**. Корпорация Майкрософт выполняет управление исправлениями в базовых системах, поддерживающих работающие контейнеры.
+
+Используйте пользовательское или стороннее решение для исправления образов контейнеров. Если вы храните образы контейнеров в реестре контейнеров Azure, запустите задачи реестра контейнеров Azure, чтобы автоматизировать обновление образов приложений в реестре контейнеров на основе исправлений безопасности или других обновлений в базовых образах ОС.
+
+* [Вопросы безопасности для экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-image-security)
+
+* [Сведения об обновлениях базовых образов для задач реестра контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-tasks-base-images)
+
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Совмещаемая блокировка
+
+### <a name="53-deploy-automated-third-party-software-patch-management-solution"></a>5.3. Развертывание автоматизированного решения для управления исправлениями ПО сторонних производителей
+
+**Руководство**. Использование пользовательского или стороннего решения для исправления образов контейнеров. Если вы храните образы контейнеров в реестре контейнеров Azure, запустите задачи реестра контейнеров Azure, чтобы автоматизировать обновление образов приложений в реестре контейнеров на основе исправлений безопасности или других обновлений в базовых образах ОС.
+
+* [Вопросы безопасности для экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-image-security)
+
+* [Основные сведения об обновлениях базовых образов для задач контроля доступа](https://docs.microsoft.com/azure/container-registry/container-registry-tasks-base-images)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="54-compare-back-to-back-vulnerability-scans"></a>5.4. Сравнение проверок смежных уязвимостей
+
+**Руководство**. Экспорт результатов сканирования изображений с одинаковыми интервалами и сравнение результатов для проверки того, что уязвимости исправлены. Если вы храните образы контейнеров в реестре контейнеров Azure, интегрируйте реестр с центром безопасности Azure, чтобы включить периодическое сканирование образов контейнеров на наличие уязвимостей. При необходимости можно развернуть сторонние решения из Azure Marketplace, чтобы выполнять периодические проверки уязвимостей образов.
+
+* [Вопросы безопасности для экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-image-security)
+
+* [Интеграция реестра контейнеров Azure с центром безопасности](https://docs.microsoft.com/azure/security-center/azure-container-registry-integration)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="55-use-a-risk-rating-process-to-prioritize-the-remediation-of-discovered-vulnerabilities"></a>5.5. Использование процесса оценки рисков для определения приоритета в устранении обнаруженных уязвимостей
+
+**Руководство**. Если вы храните образы контейнеров в реестре контейнеров Azure, интегрируйте реестр с центром безопасности Azure, чтобы включить периодическое сканирование образов контейнеров на наличие уязвимостей и классификацию рисков. При необходимости можно развернуть сторонние решения из Azure Marketplace, чтобы выполнять периодические проверки уязвимостей образов и классификацию рисков.
+
+* [Вопросы безопасности для экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-image-security)
+
+* [Интеграция реестра контейнеров Azure с центром безопасности](https://docs.microsoft.com/azure/security-center/azure-container-registry-integration)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
+
+*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](https://docs.microsoft.com/azure/security/benchmarks/security-control-inventory-asset-management).*
+
+### <a name="61-use-azure-asset-discovery"></a>6.1. Использование обнаружения ресурсов Azure
+
+**Руководство**. Используйте Azure Resource Graph для запроса и обнаружения всех ресурсов (например, вычислений, хранилища, сети, портов, протоколов и т. д.) в ваших подписках. Убедитесь в том, что в вашем клиенте есть соответствующие разрешения (на чтение) и вы можете перечислить все подписки Azure, а также ресурсы в ваших подписках.
+
+Хотя классические ресурсы Azure можно обнаружить через Resource Graph, настоятельно рекомендуется в дальнейшем создавать и использовать ресурсы Azure Resource Manager.
+
+* [Как создавать запросы с помощью Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+
+* [Как просматривать подписки Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+
+* [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="62-maintain-asset-metadata"></a>6.2. Ведение метаданных активов
+
+**Руководство**. применение тегов к экземплярам контейнеров Azure и связанным ресурсам предоставление метаданных для логической организации их в таксономию.
+
+* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="63-delete-unauthorized-azure-resources"></a>6.3. Удаление неавторизованных ресурсов Azure
+
+**Руководство**. Использование тегов, групп управления и отдельных подписок (при необходимости) для Организации и мониторинга ресурсов. Регулярно сверяйте ресурсы, чтобы своевременно удалять неавторизованные ресурсы из подписки.
+
+* [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+
+* [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+
+* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="64-maintain-an-inventory-of-approved-azure-resources-and-software-titles"></a>6.4. Ведение каталога утвержденных ресурсов Azure и наименований программного обеспечения
+
+**Руководство**. вам потребуется создать инвентаризацию утвержденных ресурсов Azure в соответствии с потребностями Организации.
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5. Отслеживание неутвержденных ресурсов Azure
+
+**Руководство**. Использование политики Azure для ограничения типа ресурсов, которые могут быть созданы в ваших подписках.
+
+Используйте Azure Resource Graph для запроса или обнаружения ресурсов в подписках. Убедитесь в том, что все ресурсы Azure, представленные в среде, утверждены.
+
+* [Аудит соответствия реестров контейнеров Azure с помощью политики Azure](https://docs.microsoft.com/azure/container-registry/container-registry-azure-policy)
+
+* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+* [Как создавать запросы с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6.6. Отслеживание неутвержденных программных приложений в рамках ресурсов вычислений
+
+**Руководство**. реализация собственного решения или решения стороннего производителя для инвентаризации программного обеспечения для утвержденных контейнерных приложений. 
+
+Реализуйте решения для сканирования образов контейнеров в частном реестре и выявления потенциальных уязвимостей. Следуйте рекомендациям центра безопасности Azure, чтобы выполнять оценку уязвимостей в образах контейнеров, хранящихся в реестре контейнеров Azure. При необходимости можно развернуть сторонние решения из Azure Marketplace для оценки уязвимостей образов.
+
+Отслеживайте журналы экземпляров контейнеров Azure на предмет аномального поведения и регулярно проверяйте результаты. Используйте рабочую область Log Analytics Azure Monitor, чтобы просматривать журналы и выполнять запросы к данным журнала.
+
+* [Ведение журнала группы контейнеров и экземпляра с Azure Monitor журналами](https://docs.microsoft.com/azure/container-instances/container-instances-log-analytics)
+
+* [Общие сведения о рабочей области Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal)
+
+* [Выполнение пользовательских запросов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
+
+* [Вопросы безопасности для экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-image-security)
+* [Интеграция реестра контейнеров Azure с центром безопасности](https://docs.microsoft.com/azure/security-center/azure-container-registry-integration)
+
+
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6.7. Удаление неутвержденных ресурсов Azure и программных приложений
+
+**Руководство**. служба автоматизации Azure обеспечивает полный контроль во время развертывания, эксплуатации и списания рабочих нагрузок и ресурсов. Вы можете реализовать собственное решение для удаления неавторизованных ресурсов Azure и программных приложений.
+
+* [Общие сведения о службе автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-intro)
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="68-use-only-approved-applications"></a>6.8. Использование только утвержденных приложений
+
+**Руководство**. образы контейнеров тегов и версий для отслеживания образов, которые запускают утвержденные приложения.
+* [Рекомендации по отстановке тегов и управления версиями для образов контейнеров](https://docs.microsoft.com/azure/container-registry/container-registry-image-tag-version)
+
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Неприменимо
+
+### <a name="69-use-only-approved-azure-services"></a>6.9: Использование только утвержденных служб Azure
+
+**Руководство**. Использование политики Azure для ограничения служб, которые можно подготавливать в вашей среде.
+
+* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+* [Как отказаться от определенного типа ресурса с помощью Политики Azure](https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="610-implement-approved-application-list"></a>6.10. Реализация списка утвержденных приложений
+
+**Руководство**. образы контейнеров тегов и версий для отслеживания образов, которые запускают утвержденные приложения.
+* [Рекомендации по отстановке тегов и управления версиями для образов контейнеров](https://docs.microsoft.com/azure/container-registry/container-registry-image-tag-version)
+
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Неприменимо
+
+### <a name="611-divlimit-users-ability-to-interact-with-azure-resource-manager-via-scriptsbrdiv"></a>6.11. <div>Ограничение возможности пользователей взаимодействовать с Azure Resource Manager с помощью сценариев<br></div>
+
+**Руководство**. Использование условного доступа Azure для ограничения возможности пользователей взаимодействовать с диспетчером ресурсов Azure путем настройки "блокировать доступ" для приложения "Microsoft Azure управления". 
+
+* [Настройка условного доступа для блокировки доступа к диспетчеру ресурсов Azure](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management)
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="612-limit-users-ability-to-execute-scripts-within-compute-resources"></a>6.12. Ограничение возможности пользователей выполнять сценарии в ресурсах вычислений
+
+**Руководство**. все пользователи с доступом к службе "экземпляры контейнеров Azure" могут выполнять сценарии в контейнерах.
+
+Управление доступом к ресурсам экземпляров контейнеров Azure и их проверка с помощью различных подписок Azure или групп управления, а также изоляция ресурсов с помощью виртуальных сетей, группы безопасности сети или брандмауэра Azure.
+
+* [Выполнение команды в экземпляре контейнера Azure](https://docs.microsoft.com/azure/container-instances/container-instances-exec)
+
+* [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+
+* [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+
+* [Развертывание в виртуальной сети с помощью экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-vnet)
+
+* [Создание NSG с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+
+* [Развертывание брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal)
+
+
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6.13. Физическое или логическое разделение приложений с высоким риском
+
+**Руководство**. программное обеспечение, необходимое для бизнес-операций, но может повысить риск для Организации, должно быть изолировано в собственной виртуальной сети и полностью защищено с помощью брандмауэра Azure или группы безопасности сети.
+
+* [Развертывание в виртуальной сети с помощью экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-vnet) 
+
+* [Создание NSG с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**: Customer
+
+## <a name="secure-configuration"></a>Безопасная конфигурация
+
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](https://docs.microsoft.com/azure/security/benchmarks/security-control-secure-configuration).*
+
+### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7.1. Установка безопасных конфигураций для всех ресурсов Azure
+
+**Руководство**. Обслуживание утвержденной конфигурации группы контейнеров с помощью шаблона Azure Resource Manager или экспорт в файл YAML. Используйте политику Azure, чтобы поддерживать конфигурации безопасности для связанных ресурсов Azure.
+
+* [Группы контейнеров в службе "Экземпляры контейнеров Azure"](container-instances-container-groups.md#deployment)
+
+* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="72-establish-secure-operating-system-configurations"></a>7.2. Сохранение безопасных конфигураций для операционных систем
+
+**Руководство**. Использование пользовательского или стороннего решения для исправления образов контейнеров. Если вы храните образы контейнеров в реестре контейнеров Azure, запустите задачи реестра контейнеров Azure, чтобы автоматизировать обновление образов приложений в реестре контейнеров на основе исправлений безопасности или других обновлений в базовых образах ОС. 
+
+* [Сведения об обновлениях базовых образов для задач реестра контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-tasks-base-images)
+
+
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="73-maintain-secure-azure-resource-configurations"></a>7.3. Сохранение безопасных конфигураций для ресурсов Azure
+
+**Руководство**. Использование политики Azure [Deny] и [развертывание если не существует] для обеспечения безопасности параметров в ресурсах Azure.
+
+* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+* [Общие сведения о влиянии политики Azure](https://docs.microsoft.com/azure/governance/policy/concepts/effects)
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="74-maintain-secure-operating-system-configurations"></a>7.4. Сохранение безопасных конфигураций для операционных систем
+
+**Руководство**. Реализация решений для сканирования образов контейнеров в частном реестре и выявления потенциальных уязвимостей в конфигурациях ОС. Следуйте рекомендациям центра безопасности Azure, чтобы выполнять оценку уязвимостей в образах контейнеров, хранящихся в реестре контейнеров Azure. При необходимости можно развернуть сторонние решения из Azure Marketplace для оценки уязвимостей образов.
+
+Используйте пользовательское или стороннее решение для исправления образов контейнеров. Если вы храните образы контейнеров в реестре контейнеров Azure, запустите задачи реестра контейнеров Azure, чтобы автоматизировать обновление образов приложений в реестре контейнеров на основе исправлений безопасности или других обновлений в базовых образах ОС. 
+
+* [Мониторинг и проверка рекомендаций по безопасности для экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-image-security)
+
+* [Интеграция реестра контейнеров Azure с центром безопасности](https://docs.microsoft.com/azure/security-center/azure-container-registry-integration)
+* [Сведения об обновлениях базовых образов для задач реестра контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-tasks-base-images)
+
+
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="75-securely-store-configuration-of-azure-resources"></a>7.5. Безопасное хранение конфигурации ресурсов Azure
+
+**Руководство**. Хранение шаблонов ARM, файлов YAML и пользовательских определений политик Azure в системе управления версиями и управление ими.
+
+* [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
+
+* [Документация по Azure Repos](https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops)
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="76-securely-store-custom-operating-system-images"></a>7.6. Безопасное хранение пользовательских образов операционной системы
+
+**Руководство**. Хранение образов контейнеров в реестре контейнеров Azure и использование RBAC для предоставления доступа к образам только полномочным пользователям.
+
+* [Общие сведения о RBAC в Azure](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles)
+
+* [Общие сведения о RBAC для реестра контейнеров](https://docs.microsoft.com/azure/container-registry/container-registry-roles)
+
+* [Настройка RBAC в Azure](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal)
+
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="77-deploy-system-configuration-management-tools"></a>7.7. Развертывание инструментов управления конфигурацией системы
+
+**Руководство**. Использование политики Azure для оповещения, аудита и принудительного применения конфигураций системы. Кроме того, разрабатывайте процесс и конвейер для управления исключениями политик.
+
+* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="78-deploy-system-configuration-management-tools-for-operating-systems"></a>7.8. Развертывание средств управления конфигурацией системы для операционных систем
+
+**Руководство**: неприменимо; Это руководство предназначено для вычислений с ресурсами IaaS.
+
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Неприменимо
+
+### <a name="79-implement-automated-configuration-monitoring-for-azure-services"></a>7.9: Реализация автоматизированного мониторинга конфигурации для служб Azure
+
+**Руководство**. Использование центра безопасности Azure для выполнения проверок базовых показателей ресурсов Azure.
+
+Используйте политику Azure, чтобы ограничить тип ресурсов, которые могут быть созданы в ваших подписках.
+
+* [Как исправить рекомендации в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-remediate-recommendations)
+
+* [Аудит соответствия реестров контейнеров Azure с помощью политики Azure](https://docs.microsoft.com/azure/container-registry/container-registry-azure-policy)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7.10. Реализация автоматизированного мониторинга конфигурации для операционных систем
+
+**Руководство**. Если вы используете реестр контейнеров Azure для хранения образов контейнеров, используйте центр безопасности Azure для выполнения проверок базовых параметров ОС и DOCKER для контейнеров.
+
+* [Общие сведения о рекомендациях центра безопасности Azure в отношении контейнеров](https://docs.microsoft.com/azure/security-center/security-center-container-recommendations)
+
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="711-manage-azure-secrets-securely"></a>7.11. Безопасное управление секретами Azure
+
+**Рекомендации**. Используйте управляемое удостоверение службы в сочетании с Azure Key Vault, чтобы упростить и защитить управление секретами для облачных приложений.
+
+* [Интеграция с управляемыми удостоверениями Azure](https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity)
+
+* [Создание Key Vault](https://docs.microsoft.com/azure/key-vault/quick-create-portal)
+
+* [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](https://docs.microsoft.com/azure/key-vault/managed-identity)
+
+* [Использование управляемых удостоверений для службы "Экземпляры контейнеров Azure"](https://docs.microsoft.com/azure/container-instances/container-instances-managed-identity)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="712-manage-identities-securely-and-automatically"></a>7.12. Безопасное и автоматическое управление удостоверениями
+
+**Руководство**. Использование управляемых удостоверений для предоставления служб Azure с автоматически управляемым удостоверением в Azure AD. Управляемые удостоверения позволяют проходить проверку подлинности в любой службе, поддерживающей проверку подлинности Azure AD, включая Key Vault без каких бы то ни было учетных данных в коде.
+
+* [Настройка управляемых удостоверений](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm)
+
+* [Использование управляемых удостоверений для службы "Экземпляры контейнеров Azure"](https://docs.microsoft.com/azure/container-instances/container-instances-managed-identity)
+
+
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="713-eliminate-unintended-credential-exposure"></a>7.13. Устранение непреднамеренного раскрытия учетных данных
+
+**Руководство**. Реализуйте сканер учетных данных для обнаружения учетных данных в коде. Сканер учетных данных также рекомендует перемещать обнаруженные учетные данные в более безопасные расположения, такие как Azure Key Vault.
+
+* [Как настроить сканер учетных данных](https://secdevtools.azurewebsites.net/helpcredscan.html)
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+## <a name="malware-defense"></a>Защита от вредоносных программ
+
+*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](https://docs.microsoft.com/azure/security/benchmarks/security-control-malware-defense).*
+
+### <a name="81-use-centrally-managed-anti-malware-software"></a>8.1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
+
+**Руководство**: неприменимо; Это руководство предназначено для вычислений с ресурсами IaaS.
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Неприменимо
+
+### <a name="82-pre-scan-files-to-be-uploaded-to-non-compute-azure-resources"></a>8.2. Предварительная проверка файлов для отправки в ресурсы Azure, не являющиеся вычислительными
+
+**Руководство**. антивредоносное по Майкрософт включено на базовом узле, поддерживающем службы Azure (например, в службе "экземпляры контейнеров Azure"), но не выполняется в содержимом клиента.
+
+Предварительно проверять все файлы, передаваемые в Нерасчетные ресурсы Azure, такие как служба приложений, Data Lake Storage, хранилище BLOB-объектов и т. д. 
+
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="83-ensure-anti-malware-software-and-signatures-are-updated"></a>8.3. Своевременное обновление программного обеспечения для защиты от вредоносных программ и подписей
+
+**Руководство**: неприменимо; Эта рекомендация предназначена для вычислений с ресурсами IaaS.
+
+Защита от вредоносных программ Майкрософт включена на базовом узле, поддерживающем службы Azure (например, в службе "экземпляры контейнеров Azure"), но не выполняется в содержимом клиента.
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Неприменимо
+
+## <a name="data-recovery"></a>Восстановление данных
+
+*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-recovery).*
+
+### <a name="91-ensure-regular-automated-back-ups"></a>9.1. Обеспечение регулярного автоматического резервного копирования
+
+**Рекомендации**. Включите Azure Backup и настройте источник резервного копирования (например, общую папку, подключенную к группам контейнеров), а также желаемую частоту и срок хранения. 
+
+* [Включение Azure Backup](https://docs.microsoft.com/azure/backup/)
+
+* [Mount an Azure file share in Azure Container Instances](https://docs.microsoft.com/azure/container-instances/container-instances-volume-azure-files) (Подключение файлового ресурса Azure с помощью службы "Экземпляры контейнеров Azure")
+
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9.2. Выполнение полного резервного копирования системы и любых ключей, управляемых клиентом
+
+**Руководство**. Резервное копирование ключей, управляемых клиентом, в Azure Key Vault с помощью средств командной строки Azure или пакетов SDK.
+
+При необходимости создайте резервную копию образов контейнеров, импортировав их из одного реестра в другой.
+* [Как создать резервную копию ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
+
+* [Импорт образов контейнеров в реестр контейнеров](https://docs.microsoft.com/azure/container-registry/container-registry-import-images)
+
+
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="93-validate-all-backups-including-customer-managed-keys"></a>9.3. Проверка всех резервных копий, включая управляемые клиентом ключи
+
+**Руководство**. Тестирование восстановления резервных копий ключей, управляемых клиентом, в Azure Key Vault с помощью средств командной строки Azure или пакетов SDK.
+
+* [Восстановление ключей Azure Key Vault в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+
+* [Шифрование данных развертывания — экземпляры контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-encrypt-data)
+
+
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9.4. Обеспечение защиты резервных копий и управляемых клиентом ключей
+
+**Рекомендации**. обратимое удаление можно включить в Azure Key Vault, чтобы защитить ключи от случайного или вредоносного удаления.
+
+* [Как включить обратимое удаление в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+## <a name="incident-response"></a>Реагирование на инциденты
+
+*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](https://docs.microsoft.com/azure/security/benchmarks/security-control-incident-response).*
+
+### <a name="101-create-an-incident-response-guide"></a>10.1. Создание руководства по реагированию на инциденты
+
+**Руководство**. Создайте руководство по реагированию на инциденты для вашей организации. Убедитесь в том, что имеются письменные планы реагирования на инциденты, которые определяют все действия персонала, а также этапы обработки инцидентов и управления ими для проверки после инцидента.
+
+Клиент также может воспользоваться руководством по обработке инцидентов безопасности компьютера NIST, чтобы помочь в создании собственного плана реагирования на инциденты.
+
+* [Как настроить автоматизацию рабочих процессов в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide)
+
+* [Руководство по созданию собственного процесса реагирования на инциденты безопасности](https://msrc-blog.microsoft.com/2019/07/01/inside-the-msrc-building-your-own-security-incident-response-process/)
+
+* [Анатомия инцидента Центра Майкрософт по реагированию на угрозы](https://msrc-blog.microsoft.com/2019/07/01/inside-the-msrc-building-your-own-security-incident-response-process/)
+
+* [Руководство Национального института стандартов и технологий по реагированию на инциденты информационной безопасности](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2. Создание процедуры оценки инцидента и определения приоритетов
+
+**Руководство**. Центр безопасности Azure назначает серьезность каждому оповещению, чтобы определить, какие оповещения следует изучить первыми. Серьезность основывается на том, насколько уверен Центр безопасности в исследовании или аналитике, используемой для оповещения, а также на уровне достоверности злонамеренности события, приведшего к оповещению.
+
+Кроме того, четко помечать подписки (например, Рабочая, нерабочая) и создайте систему именования, чтобы четко определить и классифицировать ресурсы Azure.
+
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="103-test-security-response-procedures"></a>10.3. Проверка процедур реагирования на угрозы
+
+**Руководство**. проведение упражнений по тестированию возможностей реагирования на инциденты систем на регулярной ритмичности. Выявите слабые точки и пробелы и пересмотрите план по мере необходимости.
+
+* [См. публикацию NIST: руководство по тестированию, обучению и выполнению программ для ИТ-планов и возможностей](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10.4. Предоставление контактных сведений и настройка уведомлений по инцидентам безопасности
+
+**Рекомендации**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим пользовательским данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться, что проблемы устранены.
+
+* [Как задать контакт безопасности центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10.5. Включение оповещений системы безопасности в систему реагирования на инциденты
+
+**Рекомендации**. Экспортируйте оповещения и рекомендации центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Можно использовать соединитель данных Центра безопасности Azure для потоковой передачи оповещений Sentinel.
+
+* [Как настроить непрерывный экспорт данных](https://docs.microsoft.com/azure/security-center/continuous-export)
+
+* [Как выполнить потоковую передачу оповещений в Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-security-center)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+### <a name="106-automate-the-response-to-security-alerts"></a>10.6. Автоматизация реагирования на оповещения системы безопасности
+
+**Руководство**. Используйте функцию автоматизации рабочих процессов в Центре безопасности Azure для автоматического запуска реагирования с помощью Logic Apps в оповещениях и рекомендациях системы безопасности.
+
+* [Как настроить автоматизацию рабочего процесса и Logic Apps](https://docs.microsoft.com/azure/security-center/workflow-automation)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Customer
+
+## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
+
+*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](https://docs.microsoft.com/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
+
+### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings-within-60-days"></a>11.1. Регулярное тестирование на проникновение ресурсов Azure и отслеживание исправлений всех критических точек безопасности в течение 60 дней
+
+**Руководство**. соблюдение правил корпорации Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
+
+* [Правила тестирования уязвимости Задействований](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
+
+* [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Совмещаемая блокировка
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).

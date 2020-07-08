@@ -2,37 +2,36 @@
 title: Запрос журналов из Azure Monitor для контейнеров | Документация Майкрософт
 description: Azure Monitor для контейнеров собирает метрики и данные журнала. в этой статье описываются записи и примеры запросов.
 ms.topic: conceptual
-ms.date: 03/26/2020
-ms.openlocfilehash: ff7cbff708b794847d8be69ca8f829e622d7c7ab
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/01/2020
+ms.openlocfilehash: 392aac8f81ac3894fca8b6f70570834a5af16ade
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80333480"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84298309"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-containers"></a>Запрос журналов из Azure Monitor для контейнеров
 
-Azure Monitor для контейнеров собирает метрики производительности, данные инвентаризации и сведения о состоянии работоспособности из узлов контейнеров и контейнеров и пересылает их в рабочую область Log Analytics в Azure Monitor. Эти данные собираются каждые три минуты. Эти данные доступны для [запроса](../../azure-monitor/log-query/log-query-overview.md) в Azure Monitor. Эти данные используются в различных сценариях, таких как планирование миграции, анализ емкости, обнаружение и устранение проблем с производительностью по требованию.
+Azure Monitor для контейнеров собирает метрики производительности, данные инвентаризации и сведения о состоянии работоспособности из узлов контейнеров и контейнеров. Данные собираются каждые три минуты и пересылаются в рабочую область Log Analytics в Azure Monitor. Эти данные доступны для [запроса](../../azure-monitor/log-query/log-query-overview.md) в Azure Monitor. Эти данные используются в различных сценариях, таких как планирование миграции, анализ емкости, обнаружение и устранение проблем с производительностью по требованию.
 
 ## <a name="container-records"></a>Записи контейнеров
 
-В таблице ниже приведены примеры записей, собранных Azure Monitor для контейнеров, и типов данных, которые отображаются в результатах поиска по журналам.
+В следующей таблице представлены сведения о записях, собираемых Azure Monitor для контейнеров. 
 
-| Тип данных | Тип данных, используемый для поиска в журналах | Поля |
-| --- | --- | --- |
-| Производительность узлов и контейнеров | `Perf` | Computer, ObjectName, CounterName &#40;%Processor Time, Disk Reads MB, Disk Writes MB, Memory Usage MB, Network Receive Bytes, Network Send Bytes, Processor Usage sec, Network&#41;, CounterValue, TimeGenerated, CounterPath, SourceSystem |
-| Список контейнеров | `ContainerInventory` | TimeGenerated, Computer, container name, ContainerHostname, Image, ImageTag, ContainerState, ExitCode, EnvironmentVar, Command, CreatedTime, StartedTime, FinishedTime, SourceSystem, ContainerID, ImageID |
-| Журнал контейнеров | `ContainerLog` | TimeGenerated, Computer, image ID, container name, LogEntrySource, LogEntry, SourceSystem, ContainerID |
-| Список узлов контейнеров | `ContainerNodeInventory`| TimeGenerated, Computer, ClassName_s, DockerVersion_s, OperatingSystem_s, Volume_s, Network_s, NodeRole_s, OrchestratorType_s, InstanceID_g, SourceSystem|
-| Список модулей pod в кластере Kubernetes | `KubePodInventory` | TimeGenerated, Computer, ClusterId, Контаинеркреатионтиместамп, Подуид, Подкреатионтиместамп, Контаинеррестарткаунт, Подрестарткаунт, PodStartTime, ContainerStartTime, ServiceName, ControllerKind, ControllerName, ContainerStatus, ContainerStatusReason, ContainerID, ContainerName, Name, PodLabel, Namespace, PodStatus, имя_кластера, модуля, Sourcesystem имеет значение |
-| Список узлов кластера Kubernetes | `KubeNodeInventory` | TimeGenerated, Computer, ClusterName, ClusterId, LastTransitionTimeReady, Labels, Status, KubeletVersion, KubeProxyVersion, CreationTimeStamp, SourceSystem | 
-| События Kubernetes. | `KubeEvents` | TimeGenerated, Computer, ClusterId_s, FirstSeen_t, LastSeen_t, Count_d, ObjectKind_s, Namespace_s, Name_s, Reason_s, Type_s, TimeGenerated_s, SourceComponent_s, ClusterName_s, Message,  SourceSystem | 
-| Службы в кластере Kubernetes | `KubeServices` | TimeGenerated, ServiceName_s, Namespace_s, SelectorLabels_s, ClusterId_s, ClusterName_s, ClusterIP_s, ServiceType_s, SourceSystem | 
-| Метрики производительности для узлов кластера Kubernetes | &#124; производительности, где ObjectName = = "K8SNode" | Computer, ObjectName, CounterName &#40;Кпуаллокатаблебитес, Меморяллокатаблебитес, КпукапаЦитинанокорес, МеморикапаЦитибитес, memoryRssBytes, cpuUsageNanoCores, memoryWorkingsetBytes, restartTimeEpoch&#41;, CounterValue, TimeGenerated, CounterPath, Sourcesystem имеет значение | 
-| Метрики производительности контейнеров кластера Kubernetes | &#124; производительности, где ObjectName = = "K8SContainer" | CounterName &#40; Кпурекуестнанокорес, Меморирекуестбитес, Кпулимитнанокорес, Мемориворкингсетбитес, restartTimeEpoch, cpuUsageNanoCores, memoryRssBytes&#41;, CounterValue, TimeGenerated, CounterPath, Sourcesystem имеет значение | 
-| Пользовательские метрики |`InsightsMetrics` | Компьютер, имя, пространство имен, источник, Sourcesystem имеет значение, теги<sup>1</sup>, timegenerated, тип, ва, _ResourceId | 
+| Данные | Источник данных | Тип данных | Поля |
+|------|-------------|-----------|--------|
+| Производительность узлов и контейнеров | Метрики использования получены от cAdvisor и от ограничений API KUBE. | `Perf` | Computer, ObjectName, CounterName &#40;%Processor Time, Disk Reads MB, Disk Writes MB, Memory Usage MB, Network Receive Bytes, Network Send Bytes, Processor Usage sec, Network&#41;, CounterValue, TimeGenerated, CounterPath, SourceSystem |
+| Список контейнеров | Docker | `ContainerInventory` | TimeGenerated, Computer, container name, ContainerHostname, Image, ImageTag, ContainerState, ExitCode, EnvironmentVar, Command, CreatedTime, StartedTime, FinishedTime, SourceSystem, ContainerID, ImageID |
+| Журнал контейнеров | Docker | `ContainerLog` | TimeGenerated, Computer, image ID, container name, LogEntrySource, LogEntry, SourceSystem, ContainerID |
+| Список узлов контейнеров | API KUBE | `ContainerNodeInventory`| TimeGenerated, Computer, ClassName_s, DockerVersion_s, OperatingSystem_s, Volume_s, Network_s, NodeRole_s, OrchestratorType_s, InstanceID_g, SourceSystem|
+| Список модулей pod в кластере Kubernetes | API KUBE | `KubePodInventory` | TimeGenerated, Computer, ClusterId, Контаинеркреатионтиместамп, Подуид, Подкреатионтиместамп, Контаинеррестарткаунт, Подрестарткаунт, PodStartTime, ContainerStartTime, ServiceName, ControllerKind, ControllerName, ContainerStatus, ContainerStatusReason, ContainerID, ContainerName, Name, PodLabel, Namespace, PodStatus, имя_кластера, модуля, Sourcesystem имеет значение |
+| Список узлов кластера Kubernetes | API KUBE | `KubeNodeInventory` | TimeGenerated, Computer, ClusterName, ClusterId, LastTransitionTimeReady, Labels, Status, KubeletVersion, KubeProxyVersion, CreationTimeStamp, SourceSystem | 
+| События Kubernetes. | API KUBE | `KubeEvents` | TimeGenerated, Computer, ClusterId_s, FirstSeen_t, LastSeen_t, Count_d, ObjectKind_s, Namespace_s, Name_s, Reason_s, Type_s, TimeGenerated_s, SourceComponent_s, ClusterName_s, Message,  SourceSystem | 
+| Службы в кластере Kubernetes | API KUBE | `KubeServices` | TimeGenerated, ServiceName_s, Namespace_s, SelectorLabels_s, ClusterId_s, ClusterName_s, ClusterIP_s, ServiceType_s, SourceSystem | 
+| Метрики производительности для узлов кластера Kubernetes || &#124; производительности, где ObjectName = = "K8SNode" | Computer, ObjectName, CounterName &#40;Кпуаллокатаблебитес, Меморяллокатаблебитес, КпукапаЦитинанокорес, МеморикапаЦитибитес, memoryRssBytes, cpuUsageNanoCores, memoryWorkingsetBytes, restartTimeEpoch&#41;, CounterValue, TimeGenerated, CounterPath, Sourcesystem имеет значение | 
+| Метрики производительности контейнеров кластера Kubernetes || &#124; производительности, где ObjectName = = "K8SContainer" | CounterName &#40; Кпурекуестнанокорес, Меморирекуестбитес, Кпулимитнанокорес, Мемориворкингсетбитес, restartTimeEpoch, cpuUsageNanoCores, memoryRssBytes&#41;, CounterValue, TimeGenerated, CounterPath, Sourcesystem имеет значение | 
+| Пользовательские метрики ||`InsightsMetrics` | Компьютер, имя, пространство имен, источник, Sourcesystem имеет значение, теги<sup>1</sup>, timegenerated, тип, ва, _ResourceId | 
 
-<sup>1</sup> свойство *Tags* представляет [несколько измерений](../platform/data-platform-metrics.md#multi-dimensional-metrics) для соответствующей метрики. Дополнительные сведения о метриках, собираемых и хранимых в `InsightsMetrics` таблице, а также описание свойств записи см. в разделе [инсигхтсметрикс Overview](https://github.com/microsoft/OMS-docker/blob/vishwa/june19agentrel/docs/InsightsMetrics.md).
+<sup>1</sup> свойство *Tags* представляет [несколько измерений](../platform/data-platform-metrics.md#multi-dimensional-metrics) для соответствующей метрики. Дополнительные сведения о метриках, собираемых и хранящихся в `InsightsMetrics` таблице, а также описание свойств записи см. в разделе [инсигхтсметрикс Overview](https://github.com/microsoft/OMS-docker/blob/vishwa/june19agentrel/docs/InsightsMetrics.md).
 
 ## <a name="search-logs-to-analyze-data"></a>Поиск по журналам для анализа данных
 
@@ -48,14 +47,14 @@ Azure Monitor для контейнеров собирает метрики пр
 
 При создании запросов часто бывает полезно начать с одного-двух примеров, внося затем в них изменения в соответствии со своими требованиями. Можно поэкспериментировать с приведенными ниже примерами запросов, чтобы научиться создавать более сложные запросы.
 
-| query | Описание | 
+| Запрос | Описание | 
 |-------|-------------|
 | ContainerInventory<br> &#124; project Computer, Name, Image, ImageTag, ContainerState, CreatedTime, StartedTime, FinishedTime<br> &#124; render table | Вывод всех сведений о жизненном цикле контейнера| 
 | KubeEvents_CL<br> &#124; where not(isempty(Namespace_s))<br> &#124; sort by TimeGenerated desc<br> &#124; render table | События Kubernetes|
 | ContainerImageInventory<br> &#124; summarize AggregatedValue = count() by Image, ImageTag, Running | Инвентаризация образа | 
 | **Выберите вариант отображения графика**.<br> Perf<br> &#124; where ObjectName == "K8SContainer" and CounterName == "cpuUsageNanoCores" &#124; summarize AvgCPUUsageNanoCores = avg(CounterValue) by bin(TimeGenerated, 30m), InstanceName | Ресурсы ЦП контейнера. | 
 | **Выберите вариант отображения графика**.<br> Perf<br> &#124; where ObjectName == "K8SContainer" and CounterName == "memoryRssBytes" &#124; summarize AvgUsedRssMemoryBytes = avg(CounterValue) by bin(TimeGenerated, 30m), InstanceName | Память контейнера |
-| инсигхтсметрикс<br> &#124;, где name = = "requests_count"<br> &#124; суммировать Val = Any (Val) по TimeGenerated = bin (TimeGenerated, 1м)<br> &#124; Сортировать по TimeGenerated ASC<br> &#124; проекта Рекуестсперминуте = Val-prev (Val), TimeGenerated <br> &#124; Render барчарт  | Количество запросов в минуту с пользовательскими метриками |
+| InsightsMetrics<br> &#124;, где name = = "requests_count"<br> &#124; суммировать Val = Any (Val) по TimeGenerated = bin (TimeGenerated, 1м)<br> &#124; Сортировать по TimeGenerated ASC<br> &#124; проекта Рекуестсперминуте = Val-prev (Val), TimeGenerated <br> &#124; Render барчарт  | Количество запросов в минуту с пользовательскими метриками |
 
 ## <a name="query-prometheus-metrics-data"></a>Запрос данных метрик Prometheus
 
@@ -80,7 +79,7 @@ InsightsMetrics
 
 ```
 
-Чтобы просмотреть метрики Prometheus, которые Azure Monitor отфильтрованы по пространству имен, укажите "Prometheus". Ниже приведен пример запроса для просмотра метрик Prometheus из пространства имен `default` kubernetes.
+Чтобы просмотреть метрики Prometheus, которые Azure Monitor отфильтрованы по пространству имен, укажите "Prometheus". Ниже приведен пример запроса для просмотра метрик Prometheus из `default` пространства имен kubernetes.
 
 ```
 InsightsMetrics 
@@ -105,7 +104,7 @@ InsightsMetrics
 KubeMonAgentEvents | where Level != "Info" 
 ```
 
-В выходных данных отобразятся результаты, аналогичные приведенным ниже.
+В выходных данных отобразятся результаты, аналогичные приведенным в следующем примере:
 
 ![Регистрация результатов запроса информационных событий от агента](./media/container-insights-log-search/log-query-example-kubeagent-events.png)
 

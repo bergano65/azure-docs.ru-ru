@@ -5,12 +5,11 @@ ms.date: 01/28/2020
 ms.topic: conceptual
 description: Найдите ответы на некоторые распространенные вопросы о Azure Dev Spaces
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: b5a380f20640b9bc328aa30289ff7f915cc0b73c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 6328515232b257e01b9b453de4ca0aca820c4038
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81414317"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84267500"
 ---
 # <a name="frequently-asked-questions-about-azure-dev-spaces"></a>Часто задаваемые вопросы о Azure Dev Spaces
 
@@ -30,7 +29,7 @@ Azure Dev Spaces поддерживает все [текущие версии Ku
 
 ## <a name="can-i-use-azure-dev-spaces-with-existing-dockerfiles-or-helm-charts"></a>Можно ли использовать Azure Dev Spaces с существующими диаграммами файлы dockerfile или Helm?
 
-Да, если проект уже содержит диаграмму Dockerfile или Helm, вы можете использовать эти файлы с Azure Dev Spaces. При запуске `azds prep`используйте `--chart` параметр и укажите расположение диаграммы. Azure Dev Spaces будет по-прежнему создавать файл *аздс. YAML* и *Dockerfile. Разработка* , но он не заменит или не изменит существующую диаграмму Dockerfile или Helm. Может потребоваться изменить *аздс. YAML* и *Dockerfile. Разработка* файлов, чтобы все работало правильно с существующим приложением при запуске `azds up`.
+Да, если проект уже содержит диаграмму Dockerfile или Helm, вы можете использовать эти файлы с Azure Dev Spaces. При запуске `azds prep` Используйте `--chart` параметр и укажите расположение диаграммы. Azure Dev Spaces будет по-прежнему создавать файл *аздс. YAML* и *Dockerfile. Разработка* , но он не заменит или не изменит существующую диаграмму Dockerfile или Helm. Может потребоваться изменить *аздс. YAML* и *Dockerfile. Разработка* файлов, чтобы все работало правильно с существующим приложением при запуске `azds up` .
 
 При использовании собственной диаграммы Dockerfile или Helm существуют следующие ограничения.
 * Если используется только один Dockerfile, он должен включать все необходимое для реализации сценариев разработки, таких как языковой пакет SDK не только для среды выполнения. При использовании отдельного Dockerfile для Azure Dev Spaces, например Dockerfile. Development, все, что необходимо для включения сценариев разработки, должно быть включено в этот Dockerfile.
@@ -99,7 +98,6 @@ Azure Dev Spaces поддерживает все [текущие версии Ku
 
 [aks-auth-range]: ../aks/api-server-authorized-ip-ranges.md
 [aks-auth-range-create]: ../aks/api-server-authorized-ip-ranges.md#create-an-aks-cluster-with-api-server-authorized-ip-ranges-enabled
-[aks-auth-range-ranges]: https://github.com/Azure/dev-spaces/tree/master/public-ips
 [aks-auth-range-update]: ../aks/api-server-authorized-ip-ranges.md#update-a-clusters-api-server-authorized-ip-ranges
 [aks-migration]: ../aks/aks-migration.md
 [aks-pod-managed-id]: ../aks/developer-best-practices-pod-security.md#use-pod-managed-identities

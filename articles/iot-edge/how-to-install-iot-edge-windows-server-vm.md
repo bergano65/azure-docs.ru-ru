@@ -9,12 +9,11 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.author: philmea
-ms.openlocfilehash: 5f88a21efd04c9dd24fe31e925a3b911b5ec9df2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 380e354beb2f58b958e3c88d9f93ad0bda655971
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77045894"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84266480"
 ---
 # <a name="run-azure-iot-edge-on-windows-server-virtual-machines"></a>Запуск Azure IoT Edge на виртуальных машинах Windows Server
 
@@ -22,11 +21,11 @@ ms.locfileid: "77045894"
 
 Дополнительные сведения о работе среды выполнения IoT Edge и ее компонентах см. в статье [Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре](iot-edge-runtime.md).
 
-В этой статье перечислены действия по запуску среды выполнения Azure IoT Edge на виртуальной машине Windows Server 2019 с помощью предложения [Windows Server](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview) Azure Marketplace. Следуйте инструкциям в статье [Установка среды выполнения Azure IOT Edge](how-to-install-iot-edge-windows.md) в Windows для использования с другими версиями.
+В этой статье перечислены действия по запуску среды выполнения Azure IoT Edge на виртуальной машине Windows Server 2019 с помощью предложения [Windows Server](https://www.microsoft.com/cloud-platform/windows-server-pricing) Azure Marketplace. Следуйте инструкциям в статье [Установка среды выполнения Azure IOT Edge](how-to-install-iot-edge-windows.md) в Windows для использования с другими версиями.
 
 ## <a name="deploy-from-the-azure-marketplace"></a>Развертывание из Azure Marketplace
 
-1. Перейдите к предложению [Windows Server](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview) Azure Marketplace или найдите "Windows Server" в [Azure Marketplace](https://azuremarketplace.microsoft.com/) .
+1. Перейдите к предложению [Windows Server](https://www.microsoft.com/cloud-platform/windows-server-pricing) Azure Marketplace или найдите "Windows Server" в [Azure Marketplace](https://azuremarketplace.microsoft.com/) .
 2. Выберите **получить сейчас**
 3. В **плане программного обеспечения**найдите пункт "Windows Server 2019 Datacenter Server Core с контейнерами" и нажмите кнопку **продолжить** в следующем диалоговом окне.
     * Эти инструкции также можно использовать для других версий Windows Server с контейнерами
@@ -87,8 +86,8 @@ ms.locfileid: "77045894"
    az vm create -g IoTEdgeResources -n EdgeVM --image MicrosoftWindowsServer:WindowsServer:2019-Datacenter-Core-with-Containers:latest  --admin-username azureuser --generate-ssh-keys --size Standard_DS1_v2
    ```
 
-   * Эта команда выводит запрос на ввод пароля, но вы можете добавить параметр `--admin-password` , чтобы сделать его более простым в сценарии.
-   * Образ Windows Server Core поддерживает командную строку только с помощью удаленного рабочего стола, поэтому, если вы хотите работать с полным рабочим столом `MicrosoftWindowsServer:WindowsServer:2019-Datacenter-with-Containers:latest` , укажите в качестве образа.
+   * Эта команда выводит запрос на ввод пароля, но вы можете добавить параметр, `--admin-password` чтобы сделать его более простым в сценарии.
+   * Образ Windows Server Core поддерживает командную строку только с помощью удаленного рабочего стола, поэтому, если вы хотите работать с полным рабочим столом, укажите в `MicrosoftWindowsServer:WindowsServer:2019-Datacenter-with-Containers:latest` качестве образа.
 
 1. Задайте строку подключения устройства (если вы не знакомы с этим процессом, можно следовать процедуре [получения строки подключения с Azure CLIной](how-to-register-device.md#retrieve-the-connection-string-with-the-azure-cli) процедурой):
 

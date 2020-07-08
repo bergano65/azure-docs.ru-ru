@@ -3,12 +3,11 @@ title: Примеры шаблонов Azure Resource Manager
 description: Поиск образцов шаблонов Azure Resource Manager для развертывания экземпляров контейнеров Azure в различных конфигурациях
 ms.topic: article
 ms.date: 03/07/2019
-ms.openlocfilehash: a8f3c81c539562a3c56e4822cf6e4df77d04928f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 7208e1b4b67879979507cc451d40a188a84373de
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75981648"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84299763"
 ---
 # <a name="azure-resource-manager-templates-for-azure-container-instances"></a>Шаблоны Azure Resource Manager для службы "Экземпляры контейнеров Azure"
 
@@ -27,11 +26,11 @@ ms.locfileid: "75981648"
 | [emptyDir][vol-emptydir] | Развертывает два контейнера Linux, совместно использующих том emptyDir. |
 | [gitRepo][vol-gitrepo] | Развертывает контейнер Linux, который клонирует репозиторий GitHub и подключает его в качестве тома. |
 | [владел][vol-secret] | Развертывает контейнер Linux с использованием сертификата PFX, подключенного в качестве секретного тома. |
-| **Сетевое взаимодействие** ||
+| **Сеть** ||
 | [Контейнер с доступом к UDP][net-udp] | Развертывает контейнер Windows или Linux, который обеспечивает доступ к UDP-порту. |
 | [Контейнер Linux с общедоступным IP-адресом][net-publicip] | Развертывает один контейнер Linux, доступный через общедоступный IP-адрес. |
-| [Развертывание группы контейнеров с виртуальной сетью (Предварительная версия)][net-vnet] | Развертывает новую виртуальную сеть, подсеть, сетевой профиль и группу контейнеров. |
-| **ресурсов Azure** ||
+| [Развертывание группы контейнеров с виртуальной сетью][net-vnet] | Развертывает новую виртуальную сеть, подсеть, сетевой профиль и группу контейнеров. |
+| **Ресурсы Azure** ||
 | [Создание учетной записи хранения Azure и общей папки][az-files] | Создает учетную запись хранения и общую папку Azure в экземпляре контейнера с помощью Azure CLI.
 
 ## <a name="deployment"></a>Развертывание

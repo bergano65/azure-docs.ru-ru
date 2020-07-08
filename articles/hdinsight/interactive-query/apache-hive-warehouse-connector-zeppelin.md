@@ -6,13 +6,12 @@ ms.author: nisgoel
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 05/22/2020
-ms.openlocfilehash: 1f9d2d9bd2a58fa4c6f14db8ffd067bb39fc1553
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.date: 05/28/2020
+ms.openlocfilehash: fa90c3579e241fd6b7dc53c9df7d996402fc78a5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83853716"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84296901"
 ---
 # <a name="integrate-apache-zeppelin-with-hive-warehouse-connector-in-azure-hdinsight"></a>Интеграция Apache Zeppelin с Hive Warehouse Connector в Azure HDInsight
 
@@ -91,10 +90,17 @@ ms.locfileid: "83853716"
 
     | Конфигурация| Значение|
     |---|---|
-    | livy.spark.sql.hive.hiveserver2.jdbc.url.principal | `hive/<headnode-FQDN>@<AAD-Domain>` |
+    | livy.spark.sql.hive.hiveserver2.jdbc.url.principal | `hive/<llap-headnode>@<AAD-Domain>` |
 
-    Замените `<headnode-FQDN>` полным доменным именем головного узла в кластере Interactive Query.
-    Замените `<AAD-DOMAIN>` именем домена Azure Active Directory (AAD), к которому присоединен кластер. Используйте строку в верхнем регистре для значения `<AAD-DOMAIN>`. В противном случае учетные данные не будут найдены. При необходимости проверьте `/etc/krb5.conf` на наличие имен областей определения приложения.
+    * В веб-браузере перейдите в `https://CLUSTERNAME.azurehdinsight.net/#/main/services/HIVE/summary` папку, где имя_кластера — имя кластера интерактивных запросов. Щелкните **HiveServer2 Interactive (интерактивный**). Вы увидите полное доменное имя (FQDN) головного узла, на котором работает LLAP, как показано на снимке экрана. Замените `<llap-headnode>` на это значение.
+
+        ![Головной узел соединителя хранилища Hive](./media/apache-hive-warehouse-connector/head-node-hive-server-interactive.png)
+
+    * Используйте [команду SSH](../hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру интерактивных запросов. Найдите `default_realm` параметр в `/etc/krb5.conf` файле. Замените `<AAD-DOMAIN>` на это значение строкой в верхнем регистре, в противном случае не будут найдены учетные данные.
+
+        ![соединитель хранилища Hive домен AAD](./media/apache-hive-warehouse-connector/aad-domain.png)
+
+    * Например, `hive/hn0-ng36ll.mjry42ikpruuxgs2qy2kpg4q5e.cx.internal.cloudapp.net@PKRSRVUQVMAE6J85.D2.INTERNAL.CLOUDAPP.NET` .
 
 1. Сохраните изменения и перезапустите интерпретатор Livy.
 

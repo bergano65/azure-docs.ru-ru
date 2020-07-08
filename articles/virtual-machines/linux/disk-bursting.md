@@ -3,16 +3,15 @@ title: Ускорение операций управляемого диска
 description: Узнайте больше об ускорении операций для дисков Azure и ускорении дисков для виртуальных машин Azure.
 author: albecker1
 ms.author: albecker
-ms.date: 04/27/2020
+ms.date: 06/02/2020
 ms.topic: conceptual
 ms.service: virtual-machines
 ms.subservice: disks
-ms.openlocfilehash: baabad550f5e6b0ae39936fc182e6d9789d189d8
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: f92fae38d49c51dfe87a68b023ba779e89b0e0bc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83650940"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84295462"
 ---
 # <a name="disk-bursting"></a>Всплеск активности диска
 [!INCLUDE [managed-disks-bursting](../../../includes/managed-disks-bursting.md)]
@@ -24,9 +23,6 @@ ms.locfileid: "83650940"
 Ускорение операций включено по умолчанию для виртуальных машин, которые поддерживают его.
 
 ## <a name="disk-level-bursting"></a>Ускорение операций на уровне дисков
-Ускорение операций также доступно для наших [дисков SSD цен. категории "Премиум"](disks-types.md#premium-ssd) с размером вплоть до P20 во всех регионах общедоступного облака Azure, облака для государственных учреждений и облака для Китая. Ускорение дисковых операций включено по умолчанию в новых развертываниях для дисков любых размеров, которые поддерживают эту функцию. Для имеющихся размеров дисков можно включить ускорение операций (если они поддерживают его) с помощью одного из таких методов: 
-- **Перезапустите виртуальную машину.** 
-- **Отсоедините и повторно присоедините диск.**
-
+Ускорение операций также доступно для наших [дисков SSD цен. категории "Премиум"](disks-types.md#premium-ssd) с размером вплоть до P20 во всех регионах общедоступного облака Azure, облака для государственных учреждений и облака для Китая. По умолчанию для всех новых и существующих развертываний размеров дисков, поддерживающих эту возможность, включена Ускоренная работа диска. 
 
 [!INCLUDE [managed-disks-bursting](../../../includes/managed-disks-bursting-2.md)]

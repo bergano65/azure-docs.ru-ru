@@ -9,20 +9,19 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 01/15/2020
+ms.date: 05/28/2020
 ms.author: curtand
-ms.openlocfilehash: 9606bf0108186cd73adbdb38aef3ac428da229d6
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 58ec2c00e75b12d6010b106ca7daed0da234bf1d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83828412"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84266123"
 ---
 # <a name="reset-your-work-or-school-password-using-security-info"></a>Сброс пароля к рабочей или учебной учетной записи с использованием сведений для защиты
 
 Если вы забыли пароль рабочей или учебной учетной записи, никогда не получали его от службы поддержки своей компании или ваша учетная запись была заблокирована, используйте сведения для защиты и мобильное устройство, чтобы сбросить пароль рабочей или учебной учетной записи. Администратор должен включить эту возможность, чтобы вы могли указать нужные сведения и [сбросить пароль](https://docs.microsoft.com/azure/active-directory/user-help/active-directory-passwords-reset-register).
 
-Если вы знаете свой пароль, но хотите его изменить, перейдите к разделу [Изменение пароля](https://docs.microsoft.com/azure/active-directory/user-help/active-directory-passwords-update-your-own-password#how-to-change-your-password) в этой статье.
+Если вы знакомы с паролем и хотите изменить его, ознакомьтесь с разделом [изменение действий с паролем](https://docs.microsoft.com/azure/active-directory/user-help/active-directory-passwords-update-your-own-password#how-to-change-your-password) в этой статье.
 
 >[!Important]
 >Эта статья предназначена для пользователей, которым нужно сбросить пароль к рабочей или учебной учетной записи. Если вы администратор и ищете сведения о том, как включить самостоятельный сброс пароля для сотрудников или других пользователей, см. [статью о развертывании самостоятельного сброса пароля в AAD и другие статьи](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-deployment).
@@ -103,7 +102,7 @@ ms.locfileid: "83828412"
 
      Если войти по-прежнему не получается, обратитесь за помощью к администратору вашей организации.
 
-После сброса пароля вы, возможно, получите сообщение по электронной почте, в качестве отправителя которого будет указана "Корпорация Майкрософт от имени \<*название_вашей_организации*>" или что-то похожее. Если вы получили такое сообщение по электронной почте, но перед этим не выполняли сброс пароля, немедленно обратитесь к администратору своей организации.
+После сброса пароля вы можете получить сообщение электронной почты с подтверждением, которое поступает из учетной записи, например "Майкрософт от имени \<*your_organization*> ". Если вы получили такое сообщение по электронной почте, но перед этим не выполняли сброс пароля, немедленно обратитесь к администратору своей организации.
 
 ## <a name="how-to-change-your-password"></a>Изменение пароля
 

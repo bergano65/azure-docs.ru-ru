@@ -8,12 +8,11 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 03/13/2020
 ms.author: memildin
-ms.openlocfilehash: 19fdcc7b590c6ad6873c7808ae26d218bbda7f5b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: c30fef5c82f831365a11bcb14559b0914a9eda4c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80158981"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84299950"
 ---
 # <a name="export-security-alerts-and-recommendations"></a>Экспорт оповещений о безопасности и рекомендаций
 
@@ -28,6 +27,21 @@ ms.locfileid: "80158981"
 * Экспорт в CSV-файл (один раз)
 
 
+
+
+## <a name="availability"></a>Доступность
+
+- Состояние выпуска: **Общедоступная версия**
+- Необходимые роли и разрешения:
+    - **Читатель** в подписке, содержащей конфигурацию экспорта
+    - **Роль администратора безопасности** для группы ресурсов (или **владельца**)
+    - Также должны иметь разрешения на запись для целевого ресурса.
+- Облако. 
+    - ✔ коммерческие облака;
+    - ✔ US Gov
+    - ✘ Китая gov, другие gov
+
+
 ## <a name="setting-up-a-continuous-export"></a>Настройка непрерывного экспорта
 
 Приведенные ниже действия необходимы, если вы настраиваете непрерывный экспорт в Log Analytics рабочую область или концентраторы событий Azure.
@@ -38,7 +52,7 @@ ms.locfileid: "80158981"
     
 1. На боковой панели страницы параметры для этой подписки выберите **непрерывный экспорт**.
 
-    [Параметры экспорта в центре безопасности Azure ![](media/continuous-export/continuous-export-options-page.png)](media/continuous-export/continuous-export-options-page.png#lightbox) Здесь вы увидите параметры экспорта. Для каждого доступного целевого объекта экспорта имеется вкладка. 
+    [ ![ Параметры экспорта в центре безопасности Azure](media/continuous-export/continuous-export-options-page.png)](media/continuous-export/continuous-export-options-page.png#lightbox) здесь отображаются варианты экспорта. Для каждого доступного целевого объекта экспорта имеется вкладка. 
 
 1. Выберите тип данных, который необходимо экспортировать, и выберите один из фильтров для каждого типа (например, "экспортировать только предупреждения с высоким уровнем серьезности").
 

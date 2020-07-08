@@ -7,12 +7,11 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/15/2019
 ms.author: raynew
-ms.openlocfilehash: 0b3f5963572368cb9c884984418140b4bbc0dea3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 0cf0ed943dd2135a3e8d545b76eda35285dae24d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82131192"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84300796"
 ---
 # <a name="monitor-site-recovery-with-azure-monitor-logs"></a>Мониторинг Site Recovery с помощью журналов Azure Monitor
 
@@ -36,20 +35,20 @@ ms.locfileid: "82131192"
 
 - По крайней мере один компьютер, защищенный в хранилище служб восстановления.
 - Рабочая область Log Analytics для хранения журналов Site Recovery. [Сведения о](../azure-monitor/learn/quick-create-workspace.md) настройке рабочей области.
-- Основные сведения о том, как писать, выполнять и анализировать запросы журналов в Log Analytics. [Подробнее](../azure-monitor/log-query/get-started-portal.md).
+- Основные сведения о том, как писать, выполнять и анализировать запросы журналов в Log Analytics. [Подробнее.](../azure-monitor/log-query/get-started-portal.md)
 
 Перед началом работы рекомендуется ознакомиться с [общими вопросами мониторинга](monitoring-common-questions.md) .
 
 ## <a name="configure-site-recovery-to-send-logs"></a>Настройка Site Recovery для отправки журналов
 
-1. В хранилище щелкните **Параметры** > диагностики**Добавить параметр диагностики**.
+1. В хранилище щелкните **параметры диагностики**  >  **Добавить параметр диагностики**.
 
     ![Выбор журнала ресурсов](./media/monitoring-log-analytics/add-diagnostic.png)
 
 2. В окне **параметры диагностики**укажите имя и установите флажок **отправить на log Analytics**.
 3. Выберите подписку на Azure Monitor журналы и рабочую область Log Analytics.
 4. Выберите **система диагностики Azure** в переключателе.
-5. В списке Журнал выберите все журналы с префиксом **азуреситерековери**. После этого щелкните **OK**.
+5. В списке Журнал выберите все журналы с префиксом **азуреситерековери**. Нажмите кнопку **ОК**.
 
     ![Выбор рабочей области](./media/monitoring-log-analytics/select-workspace.png)
 
@@ -252,7 +251,7 @@ AzureDiagnostics 
 
 ## <a name="set-up-alerts---examples"></a>Настройка оповещений — примеры
 
-Вы можете настроить Site Recovery оповещения на основе Azure Monitor данных. Дополнительные [сведения](../azure-monitor/platform/alerts-log.md#managing-log-alerts-from-the-azure-portal) о настройке оповещений журнала. 
+Вы можете настроить Site Recovery оповещения на основе Azure Monitor данных. Дополнительные [сведения](../azure-monitor/platform/alerts-log.md#create-a-log-alert-rule-with-the-azure-portal) о настройке оповещений журнала. 
 
 > [!NOTE]
 > В некоторых примерах используется **replicationProviderName_s** задано значение **A2A**. Этот параметр задает оповещения для виртуальных машин Azure, которые реплицируются в дополнительный регион Azure. В этих примерах можно заменить **A2A** на **InMageAzureV2** , если вы хотите настроить оповещения для локальных виртуальных машин VMware или физических серверов, реплицированных в Azure.
