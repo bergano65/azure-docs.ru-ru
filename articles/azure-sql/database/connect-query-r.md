@@ -14,12 +14,12 @@ ms.reviewer: davidph, carlrab
 manager: cgronlun
 ms.date: 05/29/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 7bfc00566ef24fb6d6851a7cdee402598fe15951
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: adc3cbd7b98d915a0b598227b459891cb0e0bfff
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84052621"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86042515"
 ---
 # <a name="quickstart-use-r-with-azure-sql-database-machine-learning-services-preview-to-query-a-database"></a>Краткое руководство. Использование языка R с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия) для выполнения запросов к базе данных 
 
@@ -85,4 +85,3 @@ ms.locfileid: "84052621"
 - [Учебник. Проектирование реляционной базы данных в службе "База данных SQL Azure" с помощью SSMS](design-first-database-tutorial.md)
 - [Machine Learning Services (with R) in Azure SQL Database (preview)](machine-learning-services-overview.md) (Службы машинного обучения (с использованием R) в Базе данных SQL Azure (предварительная версия))
 - [Создание и выполнение простых сценариев R в Службах машинного обучения в Базе данных SQL Azure (предварительная версия)](r-script-create-quickstart.md)
-- [Запись расширенных функций R в Базу данных SQL Azure с помощью Служб машинного обучения (предварительная версия)](machine-learning-services-functions.md)

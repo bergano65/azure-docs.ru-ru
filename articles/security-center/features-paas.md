@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/01/2020
 ms.author: memildin
-ms.openlocfilehash: 85460724071347a768a924f34290a75d2383b4c0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 539b663366cd2820eec62a18d1fc2989c6b3c9b0
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78209367"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86042362"
 ---
 # <a name="feature-coverage-for-azure-paas-services"></a>Покрытие компонентов для служб Azure PaaS<a name="paas-services"></a>
 
@@ -41,14 +41,15 @@ ms.locfileid: "78209367"
 |База данных Azure для PostgreSQL *|✔|✔|-|
 |Пространство имен концентраторов событий Azure|✔|-|-|
 |Приложение Функции Azure|✔|-|-|
-|Azure Key Vault|✔|✔ *|-|
+|Хранилище ключей Azure;|✔|✔ *|-|
 |Служба Azure Kubernetes|✔|✔|-|
 |Azure Load Balancer|✔|-|-|
 |Azure Logic Apps|✔|-|-|
-|Базы данных SQL Azure|✔|✔|✔|
+|База данных SQL Azure|✔|✔|✔|
+|Управляемый экземпляр SQL Azure|✔|✔|✔|
 |Пространство имен служебной шины Azure|✔|-|-|
 |Учетная запись Service Fabric Azure|✔|-|-|
-|Учетные записи хранения Azure|✔|-|-|
+|Учетные записи службы хранилища Azure|✔|-|-|
 |Azure Stream Analytics|✔|-|-|
 |Подписка Azure|✔ **|✔|-|
 |Виртуальная сеть Azure</br> (включая подсети, сетевые карты и группы безопасности сети)|✔|-|-|

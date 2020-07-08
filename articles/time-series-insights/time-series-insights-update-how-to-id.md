@@ -1,21 +1,21 @@
 ---
 title: Рекомендации по выбору идентификатора временных рядов (Azure Time Series Insights) | Документация Майкрософт
 description: Ознакомьтесь с рекомендациями по выбору идентификатора временного ряда в предварительной версии службы "аналитика временных рядов Azure".
-author: deepakpalled
-ms.author: dpalled
-manager: cshankar
+author: shipramishra
+ms.author: shmishr
+manager: diviso
 ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 05/05/2020
+ms.date: 05/11/2020
 ms.custom: seodec18
-ms.openlocfilehash: faf98d4fc5bf6c7028cf7d20bdf8df89fb3d533b
-ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
+ms.openlocfilehash: 312bb9bac93ea30d01e1c3138709325ee1aa6173
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82838728"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86042175"
 ---
 # <a name="best-practices-for-choosing-a-time-series-id"></a>Лучшие методики при выборе идентификатора временного ряда
 
@@ -37,9 +37,10 @@ ms.locfileid: "82838728"
 Ниже приведены основные рекомендации.
 
 * Выберите ключ секции с множеством различных значений (например, сотни или тысячи). Во многих случаях это может быть идентификатор устройства, идентификатор датчика или идентификатор тега в JSON.
-* Идентификатор временного ряда должен быть уникальным на уровне листового узла вашей [модели временных рядов](./time-series-insights-update-tsm.md).
+* Идентификатор временного ряда должен быть уникальным на уровне листового узла вашей [модели временных рядов](./concepts-model-overview.md).
 * Ограничение по символам для строки имени свойства идентификатора временного ряда — 128. Для значения свойства идентификатора временных рядов ограничение составляет 1 024 символов.
 * Если отсутствует уникальное значение свойства для идентификатора временных рядов, оно обрабатывается как значение NULL и соответствует тому же правилу ограничения уникальности.
+* Если идентификатор временных рядов вложен в сложный объект JSON, необходимо следовать [правилам](./concepts-json-flattening-escaping-rules.md) преобразования входящих данных при предоставлении имени свойства. Ознакомьтесь с примером [б](concepts-json-flattening-escaping-rules.md#example-b). 
 * Можно также выбрать до *трех* ключевых свойств в качестве идентификатора временного ряда. Их сочетание будет составным ключом, представляющим идентификатор временных рядов.  
   > [!NOTE]
   > Три ключевых свойства должны быть строками.
@@ -75,12 +76,10 @@ ms.locfileid: "82838728"
 
 В портал Azure можно ввести составной ключ следующим образом:
 
-```JSON
-[{"name":"sensorId","type":"String"},{"name":"flrRm","type":"String"},{"name":"location","type":"string"}]
-```
+[![Настройка идентификатора временных рядов для среды.](media/v2-how-to-tsid/configure-environment-key.png)](media/v2-how-to-tsid/configure-environment-key.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Узнайте больше о [моделировании данных](./time-series-insights-update-tsm.md).
+* Ознакомьтесь с [правилами преобразования и экранирования JSON](./concepts-json-flattening-escaping-rules.md) , чтобы понять, как будут храниться события.
 
 * Спланируйте [среду предварительной версии службы "аналитика временных рядов Azure](./time-series-insights-update-plan.md)".
