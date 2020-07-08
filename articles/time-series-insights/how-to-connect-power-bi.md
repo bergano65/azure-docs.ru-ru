@@ -7,19 +7,18 @@ manager: cshankar
 services: time-series-insights
 ms.service: time-series-insights
 ms.topic: conceptual
-ms.date: 01/07/2020
-ms.openlocfilehash: 22053bdc3a9836b76aa92303234a095cac6448ef
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/01/2020
+ms.openlocfilehash: ea46f37b0c09ca655b29ac3cfa2f168e18c85590
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75863848"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85052449"
 ---
 # <a name="visualize-data-from-time-series-insights-in-power-bi"></a>Визуализация данных из Аналитики временных рядов в Power BI
 
 Служба "аналитика временных рядов Azure" — это платформа для хранения, управления, запроса и визуализации данных временных рядов в облаке. [Power BI](https://powerbi.microsoft.com) — это средство бизнес-аналитики с богатыми возможностями визуализации, которое позволяет обмениваться ценными сведениями и результатами в Организации. Обе службы теперь можно интегрировать, чтобы получить лучшее из встроенных функций визуализации временных рядов, а также Power BI.
 
-Вы узнаете, как:
+Вы научитесь:
 
 * Подключение Time Series Insights к Power BI с помощью облачного соединителя
 * Создание визуальных элементов с помощью данных в Power BI
@@ -29,7 +28,7 @@ ms.locfileid: "75863848"
 
 Обязательно подпишитесь на [бесплатную подписку Azure](https://azure.microsoft.com/free/) , если у вас ее еще нет.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Скачайте и установите последнюю версию [Power BI Desktop](https://powerbi.microsoft.com/downloads/)
 * Создание [экземпляра предварительной версии службы "аналитика временных рядов Azure](time-series-insights-update-how-to-manage.md) "
@@ -67,7 +66,7 @@ ms.locfileid: "75863848"
        > [!NOTE]
        > Для данных на уровне необработанных событий существует ограничение в 100 КБ.
 
-       [![Подключение](media/how-to-connect-power-bi/connect-to-power-bi.png)](media/how-to-connect-power-bi/connect-to-power-bi.png#lightbox)
+       [![Соединиться](media/how-to-connect-power-bi/connect-to-power-bi.png)](media/how-to-connect-power-bi/connect-to-power-bi.png#lightbox)
 
    1. Если вы не настроили экземпляр "аналитика временных рядов" для " **горячего" хранилища**, вы получите предупреждение.
 
@@ -111,8 +110,10 @@ ms.locfileid: "75863848"
     [![Выбор представления отчетов](media/how-to-connect-power-bi/select-the-report-view.png)](media/how-to-connect-power-bi/select-the-report-view.png#lightbox)
 
 1.  В столбце **визуализации** выберите нужный визуальный элемент. Например, выберите **график**. В холст будет добавлена пустая графика.
- 
-1.  В списке **поля** выберите **timestamp** и перетащите его в поле **ось** , чтобы отобразить элементы вдоль оси X.
+
+1.  В списке **поля** выберите **_Timestamp** и перетащите его в поле **ось** , чтобы отобразить элементы вдоль оси X. Не забудьте переключиться на **_Timestamp** в качестве значения для **оси** (по умолчанию — **иерархия дат**).
+
+    [![Выбор представления отчетов](media/how-to-connect-power-bi/select-timestamp.png)](media/how-to-connect-power-bi/select-timestamp.png#lightbox)
 
 1.  Опять же, в списке **поля** выберите **тимесериесид** и перетащите его в поле **значения** , чтобы отобразить элементы вдоль оси Y.
 
@@ -140,7 +141,7 @@ ms.locfileid: "75863848"
 
 Теперь интерфейс будет отражать примененные необходимые изменения.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте о [концепциях соединителей Power BI](https://docs.microsoft.com/power-bi/desktop-query-overview) для Azure Time Series Insights.
 

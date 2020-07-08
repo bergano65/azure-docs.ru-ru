@@ -7,18 +7,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/16/2020
 ms.author: dsindona
-ms.openlocfilehash: fe18ca41942ff58b8d9eefef3122c90980029766
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: aac3f87c642559b0dfa13c38da448e425df3ffa2
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81684607"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85957806"
 ---
 # <a name="how-to-get-featured-in-appsource-and-azure-marketplace"></a>Как разместить предложение в AppSource и Microsoft Azure Marketplace
 
 В Microsoft Azure Marketplace и AppSource есть разделы **рекомендуемых приложений**, в которых можно разместить приложения:
 
-* Во-первых, если у вас есть ПРОБная версия или предложение по транзакции, вы можете использовать преимущества "повышения категории" через [преимущества коммерческого рынка](https://docs.microsoft.com/azure/marketplace/gtm-your-marketplace-benefits).
+* Во-первых, если у вас есть ПРОБная версия или предложение по транзакции, вы можете использовать преимущества "повышения категории" через [преимущества коммерческого рынка](gtm-your-marketplace-benefits.md).
 * Во-вторых, просмотрите список лучших методик и критерии ниже, чтобы получить место.
 
 Алгоритм выбора популярных приложений создает оценку для приложения корпорацией Майкрософт, точно так же, как кредитный балл пользователя в США.  Еженедельный выбор рекомендуемых приложений будет основываться на вычислении производительности службы и приложения.
@@ -31,7 +30,7 @@ ms.locfileid: "81684607"
 2. *Приложения Microsoft Azure Marketplace: увеличивайте потребление ресурсов Azure месяц за месяцем.* Если вы можете достичь 1000 часов использования Azure в месяц, вы значительно увеличите вероятность размещения в списке.
 3. *Приложения AppSource: увеличьте приобретения, поступающие на ваше предложение.* Если вы можете достичь 10 приобретений в месяц, вы значительно увеличите вероятность размещения в списке. 
 4. *Получите статус готовности для совместной продажи*: выполните требования относительно готовности к совместной продаже.
-5. *Улучшите качество своего предложения*: сведения о том, как изменить предложение, см. в разделе [рекомендаций по публикации в Azure Marketplace](https://docs.microsoft.com/azure/marketplace/marketplace-criteria-content-validation).
+5. *Улучшите качество своего предложения*: сведения о том, как изменить предложение, см. в разделе [рекомендаций по публикации в Azure Marketplace](marketplace-criteria-content-validation.md).
 6. Опубликуйте несколько предложений в Microsoft Azure Marketplace: все основные приложения и службы уже в списке? У вас есть пробная версия?
 7. Рекомендуйте своим заказчикам писать отзывы.
 
@@ -42,10 +41,10 @@ ms.locfileid: "81684607"
 
 Служба поддержки GTM также содержит полную библиотеку шаблонов самостоятельного устранения неполадок, веб-содержимое, обучающие материалы и средства для дальнейшего продвижения ваших публикаций и бизнеса.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте больше о [преимуществах коммерческого рынка](https://docs.microsoft.com/azure/marketplace/gtm-your-marketplace-benefits).
+Узнайте больше о преимуществах [коммерческой платформы](gtm-your-marketplace-benefits.md).
 
-Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) , чтобы создать и настроить предложение.
+Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership), чтобы создать и настроить предложение.
 
 ---

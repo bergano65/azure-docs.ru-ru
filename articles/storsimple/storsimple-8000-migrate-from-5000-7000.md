@@ -8,17 +8,16 @@ manager: twooley
 ms.assetid: ''
 ms.service: storsimple
 ms.devlang: NA
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/23/2018
 ms.author: alkohli
-ms.openlocfilehash: 967c03f3c4201bdcf1529fdda93717b6eb74e771
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
-ms.translationtype: MT
+ms.openlocfilehash: c05b62b254320bd56a6f0591f1edbe32d5362e56
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "60631691"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85514729"
 ---
 # <a name="migrate-data-from-storsimple-5000-7000-series-to-8000-series-device"></a>Перенос данных с устройства StorSimple серий 5000–7000 на устройство серии 8000
 
@@ -59,7 +58,7 @@ ms.locfileid: "60631691"
 
 В этой статье основное внимание уделяется функции миграции с устройства 5000/7000 на устройство серии 8000. Дополнительные сведения о миграции на стороне узла см. в этом [документе](https://download.microsoft.com/download/9/4/A/94AB8165-CCC4-430B-801B-9FD40C8DA340/Migrating%20Data%20to%20StorSimple%20Volumes_09-02-15.pdf).
 
-## <a name="migration-prerequisites"></a>Предварительные требования к миграции
+## <a name="migration-prerequisites"></a>Предварительные требования для миграции
 
 Ниже перечислены требования к миграции с устаревшего устройства серии 5000/7000 на устройство StorSimple серии 8000.
 
@@ -149,5 +148,5 @@ ms.locfileid: "60631691"
 5.  Отобразится пользовательский интерфейс средства миграции StorSimple.
   
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 Скачайте пошаговые инструкции о том, как [перенести данные с устройства StorSimple серии 5000–7000 на устройство серии 8000](https://gallery.technet.microsoft.com/Azure-StorSimple-50007000-c1a0460b).

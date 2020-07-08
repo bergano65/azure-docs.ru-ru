@@ -5,17 +5,16 @@ description: Узнайте, как создавать и развертыват
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: conceptual
+ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 11/29/2017
-ms.openlocfilehash: 5fb628b1730f0811debf0ff8a6cd517b96f8ef53
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
-ms.translationtype: MT
+ms.openlocfilehash: 389290b01848d598ada9ca49bee932a764854088
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82208437"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85957330"
 ---
 # <a name="define-custom-r-modules-for-azure-machine-learning-studio-classic"></a>Определение пользовательских модулей R для Машинное обучение Azure Studio (классическая модель)
 
@@ -39,53 +38,56 @@ ms.locfileid: "82208437"
 ## <a name="the-source-file"></a>Исходный файл
 Рассмотрим пример модуля **Custom Add Rows** (Добавление пользовательских строк), который изменяет стандартную реализацию модуля **Add Rows** (Добавление строк), используемого для объединения строк (наблюдений) из двух наборов данных (кадров данных). Стандартный модуль **Add Rows** (Добавление строк) добавляет строки второго входного набора данных в конец первого входного набора данных, используя алгоритм `rbind`. Настраиваемая функция `CustomAddRows` подобным образом принимает в качестве входных данных два набора данных, а также дополнительный логический параметр переноса значений. Если для параметра переноса задано значение **FALSE**, она возвращает тот же набор данных, что и при стандартной реализации. Если же для параметра переноса задано значение **TRUE**, функция добавляет строки из первого входного набора данных в конец второго набора данных. Файл CustomAddRows.R, содержащий реализацию функции R `CustomAddRows` , предоставляемой модулем **Добавление пользовательских строк** , содержит следующий код на языке R.
 
-    CustomAddRows <- function(dataset1, dataset2, swap=FALSE) 
+```r
+CustomAddRows <- function(dataset1, dataset2, swap=FALSE) 
+{
+    if (swap)
     {
-        if (swap)
-        {
-            return (rbind(dataset2, dataset1));
-        }
-        else
-        {
-            return (rbind(dataset1, dataset2));
-        } 
+        return (rbind(dataset2, dataset1));
+    }
+    else
+    {
+        return (rbind(dataset1, dataset2));
     } 
+} 
+```
 
 ### <a name="the-xml-definition-file"></a>XML-файл определения
 Чтобы предоставить эту `CustomAddRows` функцию в качестве модуля машинное обучение Azure Studio (классическая модель), необходимо создать XML-файл определения, чтобы указать, как должен выглядеть и работать модуль **пользовательского добавления строк** . 
 
-    <!-- Defined a module using an R Script -->
-    <Module name="Custom Add Rows">
-        <Owner>Microsoft Corporation</Owner>
-        <Description>Appends one dataset to another. Dataset 2 is concatenated to Dataset 1 when Swap is FALSE, and vice versa when Swap is TRUE.</Description>
+```xml
+<!-- Defined a module using an R Script -->
+<Module name="Custom Add Rows">
+    <Owner>Microsoft Corporation</Owner>
+    <Description>Appends one dataset to another. Dataset 2 is concatenated to Dataset 1 when Swap is FALSE, and vice versa when Swap is TRUE.</Description>
 
-    <!-- Specify the base language, script file and R function to use for this module. -->        
-        <Language name="R" 
-         sourceFile="CustomAddRows.R" 
-         entryPoint="CustomAddRows" />  
+<!-- Specify the base language, script file and R function to use for this module. -->        
+    <Language name="R" 
+        sourceFile="CustomAddRows.R" 
+        entryPoint="CustomAddRows" />  
 
-    <!-- Define module input and output ports -->
-    <!-- Note: The values of the id attributes in the Input and Arg elements must match the parameter names in the R Function CustomAddRows defined in CustomAddRows.R. -->
-        <Ports>
-            <Input id="dataset1" name="Dataset 1" type="DataTable">
-                <Description>First input dataset</Description>
-            </Input>
-            <Input id="dataset2" name="Dataset 2" type="DataTable">
-                <Description>Second input dataset</Description>
-            </Input>
-            <Output id="dataset" name="Dataset" type="DataTable">
-                <Description>The combined dataset</Description>
-            </Output>
-        </Ports>
+<!-- Define module input and output ports -->
+<!-- Note: The values of the id attributes in the Input and Arg elements must match the parameter names in the R Function CustomAddRows defined in CustomAddRows.R. -->
+    <Ports>
+        <Input id="dataset1" name="Dataset 1" type="DataTable">
+            <Description>First input dataset</Description>
+        </Input>
+        <Input id="dataset2" name="Dataset 2" type="DataTable">
+            <Description>Second input dataset</Description>
+        </Input>
+        <Output id="dataset" name="Dataset" type="DataTable">
+            <Description>The combined dataset</Description>
+        </Output>
+    </Ports>
 
-    <!-- Define module parameters -->
-        <Arguments>
-            <Arg id="swap" name="Swap" type="bool" >
-                <Description>Swap input datasets.</Description>
-            </Arg>
-        </Arguments>
-    </Module>
-
+<!-- Define module parameters -->
+    <Arguments>
+        <Arg id="swap" name="Swap" type="bool" >
+            <Description>Swap input datasets.</Description>
+        </Arg>
+    </Arguments>
+</Module>
+```
 
 Обратите внимание, что значение атрибутов **id** элементов **Input** и **Arg** в XML-файле должно ПОЛНОСТЬЮ совпадать с именами параметров функций кода R в файле CustomAddRows.R (в данном примере это *dataset1*, *dataset2* и *swap*). Аналогичным образом значение атрибута **entryPoint** элемента **Language** должно ПОЛНОСТЬЮ соответствовать имени функции в R-скрипте (в данном примере это *CustomAddRows*). 
 
@@ -104,10 +106,11 @@ ms.locfileid: "82208437"
 ### <a name="module-elements"></a>Элементы «Модуль»
 Элемент **Модуль** используется для определения пользовательского модуля в XML-файле. С помощью нескольких элементов **модуль** в одном XML-файле можно определить несколько модулей. Каждый модуль в рабочей области должен иметь уникальное имя. Если зарегистрировать пользовательский модуль с таким же именем, как у имеющегося пользовательского модуля, существующий модуль заменится на новый. Однако пользовательские модули могут быть зарегистрированы с тем же именем, что и у существующего модуля Машинное обучение Azure Studio (классическая модель). Он появится в категории **пользовательских** на палитре модулей.
 
-    <Module name="Custom Add Rows" isDeterministic="false"> 
-        <Owner>Microsoft Corporation</Owner>
-        <Description>Appends one dataset to another...</Description>/> 
-
+```xml
+<Module name="Custom Add Rows" isDeterministic="false"> 
+    <Owner>Microsoft Corporation</Owner>
+    <Description>Appends one dataset to another...</Description>/> 
+```
 
 В элементе **Module** можно указать два дополнительных необязательных элемента:
 
@@ -127,8 +130,9 @@ ms.locfileid: "82208437"
 ### <a name="language-definition"></a>Определение языка
 Элемент **Language** в XML-файле определения используется для указания языка пользовательского модуля. В настоящее время R — единственный поддерживаемый язык. Значением атрибута **sourceFile** должно быть имя R-файла, который содержит функции вызова при выполнении модуля. Этот файл должен быть в составе ZIP-пакета. Значением атрибута **entryPoint** является имя вызываемой функции. Оно должно совпадать с допустимой функцией, определенной в исходном файле.
 
-    <Language name="R" sourceFile="CustomAddRows.R" entryPoint="CustomAddRows" />
-
+```xml
+<Language name="R" sourceFile="CustomAddRows.R" entryPoint="CustomAddRows" />
+```
 
 ### <a name="ports"></a>Порты
 Входные и выходные порты для пользовательского модуля указываются в дочерних элементах раздела **Порты** в XML-файле определения. От того, в каком порядке заданы эти элементы, зависит структура (UX), которая будет отображаться для пользователей. Первым дочерним **входом** или **выходом** в элементе **Ports** XML-файла будет крайний слева порт входа в интерфейсе машинного обучения.
@@ -143,18 +147,22 @@ ms.locfileid: "82208437"
 
 **DataTable:** этот тип передается R-функции в формате data.frame. Фактически все типы (например, CSV-файлы или ARFF-файлы), которые поддерживаются машинным обучением и которые совместимы с **DataTable** , автоматически преобразуются в формат data.frame. 
 
-        <Input id="dataset1" name="Input 1" type="DataTable" isOptional="false">
-            <Description>Input Dataset 1</Description>
-           </Input>
+```xml
+<Input id="dataset1" name="Input 1" type="DataTable" isOptional="false">
+    <Description>Input Dataset 1</Description>
+</Input>
+```
 
 Атрибут **id**, привязанный к каждому порту входа **DataTable**, должен иметь уникальное значение, которое должно совпадать с соответствующим именем параметра в функции R.
 Необязательные порты **DataTable**, которые не передаются в качестве входных в эксперименте, имеют значение **null**, передаваемое в функцию R, а необязательные ZIP-порты игнорируются, если вход не подключен. Атрибут **isOptional** необязательный для типов **DataTable** и **Zip**, и для него по умолчанию задано значение *false*.
 
 **Zip** — пользовательские модули могут принимать в качестве входных данных ZIP-файл. Эти входные данные распаковываются в рабочий каталог функции.
 
-        <Input id="zippedData" name="Zip Input" type="Zip" IsOptional="false">
-            <Description>Zip files to be extracted to the R working directory.</Description>
-           </Input>
+```xml
+<Input id="zippedData" name="Zip Input" type="Zip" IsOptional="false">
+    <Description>Zip files to be extracted to the R working directory.</Description>
+</Input>
+```
 
 Для пользовательских модулей R идентификатор ZIP-порта не должен соответствовать параметрам функции R. Это связано с тем, что ZIP-файл автоматически извлекается в рабочий каталог R.
 
@@ -170,47 +178,54 @@ ms.locfileid: "82208437"
 ### <a name="output-elements"></a>Выходные элементы
 **Стандартные выходные порты** сопоставляются со значениями, выдаваемыми функцией R, что потом может использоваться последующими модулями. *DataTable* — пока единственный поддерживаемый стандартный выходной порт. (Поддержка для *изучения* и *преобразований* является предустановленной.) Выходные данные *DataTable* определены следующим образом:
 
-    <Output id="dataset" name="Dataset" type="DataTable">
-        <Description>Combined dataset</Description>
-    </Output>
+```xml
+<Output id="dataset" name="Dataset" type="DataTable">
+    <Description>Combined dataset</Description>
+</Output>
+```
 
 Что касается выходов в пользовательских модулях R, значение атрибута **id** не обязательно должно соответствовать скрипту R, но оно должно быть уникальным. Что касается выхода одного модуля, значение, выдаваемое функцией R, должно быть *data.frame*. Для вывода нескольких объектов поддерживаемого типа данных необходимо указать соответствующие порты в XML-файле определения, а объекты необходимо возвратить в виде списка. Выходные объекты назначаются портам вывода слева направо, в том порядке, в котором объекты размещены в возвращенном списке.
 
 Например, если требуется изменить модуль **Custom Add Rows** (Добавление пользовательских строк) для вывода двух оригинальных наборов данных *dataset1* и *dataset2* в дополнение к новым присоединенным наборам данных *dataset* (слева направо: *dataset*, *dataset1*, *dataset2*), то необходимо определить выходные порты в файле CustomAddRows.xml следующим образом:
 
-    <Ports> 
-        <Output id="dataset" name="Dataset Out" type="DataTable"> 
-            <Description>New Dataset</Description> 
-        </Output> 
-        <Output id="dataset1_out" name="Dataset 1 Out" type="DataTable"> 
-            <Description>First Dataset</Description> 
-        </Output> 
-        <Output id="dataset2_out" name="Dataset 2 Out" type="DataTable"> 
-            <Description>Second Dataset</Description> 
-        </Output> 
-        <Input id="dataset1" name="Dataset 1" type="DataTable"> 
-            <Description>First Input Table</Description>
-        </Input> 
-        <Input id="dataset2" name="Dataset 2" type="DataTable"> 
-            <Description>Second Input Table</Description> 
-        </Input> 
-    </Ports> 
-
+```xml
+<Ports> 
+    <Output id="dataset" name="Dataset Out" type="DataTable"> 
+        <Description>New Dataset</Description> 
+    </Output> 
+    <Output id="dataset1_out" name="Dataset 1 Out" type="DataTable"> 
+        <Description>First Dataset</Description> 
+    </Output> 
+    <Output id="dataset2_out" name="Dataset 2 Out" type="DataTable"> 
+        <Description>Second Dataset</Description> 
+    </Output> 
+    <Input id="dataset1" name="Dataset 1" type="DataTable"> 
+        <Description>First Input Table</Description>
+    </Input> 
+    <Input id="dataset2" name="Dataset 2" type="DataTable"> 
+        <Description>Second Input Table</Description> 
+    </Input> 
+</Ports> 
+```
 
 И возвращают список объектов в списке в правильном порядке в "CustomAddRows. R":
 
-    CustomAddRows <- function(dataset1, dataset2, swap=FALSE) { 
-        if (swap) { dataset <- rbind(dataset2, dataset1)) } 
-        else { dataset <- rbind(dataset1, dataset2)) 
-        } 
-    return (list(dataset, dataset1, dataset2)) 
+```r
+CustomAddRows <- function(dataset1, dataset2, swap=FALSE) { 
+    if (swap) { dataset <- rbind(dataset2, dataset1)) } 
+    else { dataset <- rbind(dataset1, dataset2)) 
     } 
+    return (list(dataset, dataset1, dataset2)) 
+} 
+```
 
 **Выход визуализации.** Вы можете также указать выходной порт типа *Визуализация*, отображающий выходные данные от графического устройства и консоли выходных данных R. Этот порт не является частью выходных данных функции R и не влияет на порядок других типов выходных портов. Для добавления порта визуализации в пользовательские модули добавьте элемент **Output** со значением *Visualization* для его атрибута **type**:
 
-    <Output id="deviceOutput" name="View Port" type="Visualization">
-      <Description>View the R console graphics device output.</Description>
-    </Output>
+```xml
+<Output id="deviceOutput" name="View Port" type="Visualization">
+    <Description>View the R console graphics device output.</Description>
+</Output>
+```
 
 **Правила выходных данных:**
 
@@ -229,51 +244,56 @@ ms.locfileid: "82208437"
 
 **int** — параметр целочисленного типа (32-разрядная версия).
 
-    <Arg id="intValue1" name="Int Param" type="int">
-        <Properties min="0" max="100" default="0" />
-        <Description>Integer Parameter</Description>
-    </Arg>
-
+```xml
+<Arg id="intValue1" name="Int Param" type="int">
+    <Properties min="0" max="100" default="0" />
+    <Description>Integer Parameter</Description>
+</Arg>
+```
 
 * *Необязательные свойства*: **min**, **max**, **default** и **isOptional**.
 
 **double** — параметр типа double.
 
-    <Arg id="doubleValue1" name="Double Param" type="double">
-        <Properties min="0.000" max="0.999" default="0.3" />
-        <Description>Double Parameter</Description>
-    </Arg>
-
+```xml
+<Arg id="doubleValue1" name="Double Param" type="double">
+    <Properties min="0.000" max="0.999" default="0.3" />
+    <Description>Double Parameter</Description>
+</Arg>
+```
 
 * *Необязательные свойства*: **min**, **max**, **default** и **isOptional**.
 
 **bool** — логический параметр, который представлен в UX в виде флажка.
 
-    <Arg id="boolValue1" name="Boolean Param" type="bool">
-        <Properties default="true" />
-        <Description>Boolean Parameter</Description>
-    </Arg>
-
-
+```xml
+<Arg id="boolValue1" name="Boolean Param" type="bool">
+    <Properties default="true" />
+    <Description>Boolean Parameter</Description>
+</Arg>
+```
 
 * *Необязательные свойства*: **по умолчанию** — значение false (если не задано).
 
 **string**— стандартная строка
 
-    <Arg id="stringValue1" name="My string Param" type="string">
-        <Properties isOptional="true" />
-        <Description>String Parameter 1</Description>
-    </Arg>    
+```xml
+<Arg id="stringValue1" name="My string Param" type="string">
+    <Properties isOptional="true" />
+    <Description>String Parameter 1</Description>
+</Arg>    
+```
 
 * *Необязательные свойства*: **default** и **isOptional**.
 
 **ColumnPicker** — параметр выбора столбца. Этот тип воспроизводится в UX в виде средства выбора столбца. Элемент **Property** используется здесь для указания идентификатора порта, из которого выбираются столбцы, где тип целевого порта должен быть *DataTable*. Результат выбора столбца передается функции R в виде списка строк, содержащих имена выбранных столбцов. 
 
-        <Arg id="colset" name="Column set" type="ColumnPicker">      
-          <Properties portId="datasetIn1" allowedTypes="Numeric" default="NumericAll"/>
-          <Description>Column set</Description>
-        </Arg>
-
+```xml
+<Arg id="colset" name="Column set" type="ColumnPicker">      
+    <Properties portId="datasetIn1" allowedTypes="Numeric" default="NumericAll"/>
+    <Description>Column set</Description>
+</Arg>
+```
 
 * *Обязательные свойства*: **PORTID** — соответствует идентификатору входного элемента с типом *DataTable*.
 * *Необязательные свойства*:
@@ -281,7 +301,7 @@ ms.locfileid: "82208437"
   * **allowedTypes** фильтрует типы столбцов для выбора. Допустимые значения: 
     
     * Числовой
-    * Логическое значение
+    * Логический
     * категориальные;
     * Строка
     * Метка
@@ -290,7 +310,7 @@ ms.locfileid: "82208437"
     * Все
   * **по умолчанию** — варианты выбора по умолчанию, допустимые для выбора столбца: 
     
-    * Нет
+    * Отсутствуют
     * NumericFeature
     * NumericLabel
     * NumericScore
@@ -314,14 +334,16 @@ ms.locfileid: "82208437"
 
 **DropDown**— указанный пользователем пронумерованный (раскрывающийся) список. Раскрывающийся список элементов, заданных в элементе **Properties** с помощью элемента **Item**. Элемент **id** для каждого параметра **Item** должен быть уникальной и допустимой переменной R. Значение элемента **name** параметра **Item** выступает в качестве отображаемого текста и значения, передаваемого в функцию R.
 
-    <Arg id="color" name="Color" type="DropDown">
-      <Properties default="red">
+```xml
+<Arg id="color" name="Color" type="DropDown">
+    <Properties default="red">
         <Item id="red" name="Red Value"/>
         <Item id="green" name="Green Value"/>
         <Item id="blue" name="Blue Value"/>
-      </Properties>
-      <Description>Select a color.</Description>
-    </Arg>    
+    </Properties>
+    <Description>Select a color.</Description>
+</Arg>    
+```
 
 * *Необязательные свойства*:
   * **Default** — значение свойства по умолчанию должно соответствовать значению идентификатора одного из элементов **Item** .
@@ -336,27 +358,32 @@ ms.locfileid: "82208437"
 
 Например, предположим, что нужно удалить из набора данных все строки с помощью NAs, а также удалить все дублирующиеся строки, прежде чем поместить их в CustomAddRows, и вы уже написали функцию R, которая делает это в файле RemoveDupNARows. R:
 
-    RemoveDupNARows <- function(dataFrame) {
-        #Remove Duplicate Rows:
-        dataFrame <- unique(dataFrame)
-        #Remove Rows with NAs:
-        finalDataFrame <- dataFrame[complete.cases(dataFrame),]
-        return(finalDataFrame)
-    }
+```r
+RemoveDupNARows <- function(dataFrame) {
+    #Remove Duplicate Rows:
+    dataFrame <- unique(dataFrame)
+    #Remove Rows with NAs:
+    finalDataFrame <- dataFrame[complete.cases(dataFrame),]
+    return(finalDataFrame)
+}
+```
+
 Вы можете вызвать вспомогательный файл RemoveDupNARows.R из функции CustomAddRows:
 
-    CustomAddRows <- function(dataset1, dataset2, swap=FALSE) {
-        source("src/RemoveDupNARows.R")
-            if (swap) { 
-                dataset <- rbind(dataset2, dataset1))
-             } else { 
-                  dataset <- rbind(dataset1, dataset2)) 
-             } 
-        dataset <- removeDupNARows(dataset)
-        return (dataset)
-    }
+```r
+CustomAddRows <- function(dataset1, dataset2, swap=FALSE) {
+    source("src/RemoveDupNARows.R")
+        if (swap) { 
+            dataset <- rbind(dataset2, dataset1))
+        } else { 
+            dataset <- rbind(dataset1, dataset2)) 
+        } 
+    dataset <- removeDupNARows(dataset)
+    return (dataset)
+}
+```
 
-Затем отправьте ZIP-файл, содержащий "CustomAddRows. R", "CustomAddRows. XML" и "RemoveDupNARows. R", в качестве пользовательского модуля R.
+Затем отправьте ZIP-файл, содержащий "CustomAddRows. R", "CustomAddRows.xml" и "RemoveDupNARows. R" в качестве пользовательского модуля R.
 
 ## <a name="execution-environment"></a>Среда выполнения
 В среде выполнения R-скрипта используется та же версия R, что и в модуле **Выполнение R-скрипта** , и могут использоваться те же пакеты по умолчанию. В пользовательский модуль также можно добавить дополнительные пакеты R, включая их в ZIP-пакет. Просто загрузите их в R-скрипт так же, как в среду R. 

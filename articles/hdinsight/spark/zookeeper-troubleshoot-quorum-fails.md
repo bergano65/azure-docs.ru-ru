@@ -7,12 +7,11 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 05/20/2020
-ms.openlocfilehash: dc93121d7565b95b9bd604160028659f3a741b0c
-ms.sourcegitcommit: 95269d1eae0f95d42d9de410f86e8e7b4fbbb049
-ms.translationtype: HT
+ms.openlocfilehash: 9038630a2623a8b20ddfcf98899ce9a89f16bdc1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83860500"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84673366"
 ---
 # <a name="apache-zookeeper-server-fails-to-form-a-quorum-in-azure-hdinsight"></a>Серверу Apache ZooKeeper не удается сформировать кворум в Azure HDInsight
 
@@ -27,7 +26,7 @@ ms.locfileid: "83860500"
 
 ## <a name="sample-log"></a>Пример журнала
 
-Может появиться следующее сообщение об ошибке:
+В журналах Yarn (/Вар/лог/хадуп-ярн/ярн/ярн-ярн *. log на головных узлах) может появиться сообщение об ошибке следующего вида:
 
 ```output
 2020-05-05 03:17:18.3916720|Lost contact with Zookeeper. Transitioning to standby in 10000 ms if connection is not reestablished.
@@ -116,6 +115,7 @@ Node count: 133212
 
 ## <a name="cancelledkeyexception-in-the-zookeeper-server-log-doesnt-require-snapshot-cleanup"></a>CancelledKeyException в журнале сервера Zookeeper не требует удаления моментальных снимков.
 
+* Это исключение будет отображаться на серверах Zookeeper (файлы/Вар/лог/зукипер/зукипер-зукипер-* или/Вар/лог/хдинсигхт-зукипер/зукипер *)
 * Это исключение обычно означает, что клиент больше не активен и серверу не удается отправить сообщение.
 * Это исключение также указывает, что клиент Zookeeper завершает сеансы преждевременно.
 * Определите, имеются ли другие симптомы, описанные в этом документе.

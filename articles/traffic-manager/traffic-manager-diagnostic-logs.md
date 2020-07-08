@@ -3,20 +3,18 @@ title: Включение ведения журнала ресурсов в ди
 description: Узнайте, как включить ведение журнала ресурсов для профиля диспетчера трафика и получить доступ к файлам журнала, созданным в результате.
 services: traffic-manager
 author: rohinkoul
-manager: twooley
 ms.service: traffic-manager
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/25/2019
 ms.author: rohink
-ms.openlocfilehash: d0ffcffd7d4a4f2072b640ace03ec819aa416d47
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: d84c4a9af366e9032604aef5531742eb790bb571
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82133899"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84711686"
 ---
 # <a name="enable-resource-logging-in-azure-traffic-manager"></a>Включение ведения журнала ресурсов в диспетчере трафика Azure
 
@@ -73,7 +71,7 @@ ms.locfileid: "82133899"
 |----|----|---|---|
 |**Имя поля**|**Тип поля**|**Определение**|**Пример**|
 |EndpointName|Строка|Имя конечной точки диспетчера трафика, для которой выполняется запись состояния работоспособности.|*myPrimaryEndpoint*|
-|Состояние|Строка|Состояние работоспособности проверенной конечной точки диспетчера трафика. Состояние может иметь значение **Работает** или **Не работает**.|**Вверх**|
+|Состояние|Строка|Состояние работоспособности проверенной конечной точки диспетчера трафика. Состояние может иметь значение **Работает** или **Не работает**.|**Up**|
 |||||
 
 ## <a name="next-steps"></a>Дальнейшие шаги

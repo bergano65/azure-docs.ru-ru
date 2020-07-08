@@ -14,21 +14,20 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/09/2018
 ms.author: allensu
-ms.openlocfilehash: 57a3bab06e4c0a1e4fd8df5d0794a89904a88954
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: f9768d4d20380e8e0c4ca6f7c71fddd68bb93d5c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83747656"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84340680"
 ---
 # <a name="http-variables-for-azure-cdn-rules-engine"></a>Переменные HTTP для обработчика правил Azure CDN
 Переменные HTTP предоставляют средство, с помощью которого можно получить метаданные запросов и ответов HTTP. Эти метаданные можно использовать, чтобы динамически изменить запрос или ответ. Использование переменных HTTP ограничивается следующими функциями обработчика правил:
 
-- [Перезапись ключа кэша](cdn-verizon-premium-rules-engine-reference-features.md#cache-key-rewrite)
-- [Заголовок запроса Modify Client](cdn-verizon-premium-rules-engine-reference-features.md#modify-client-request-header)
-- [Заголовок ответа Modify Client](cdn-verizon-premium-rules-engine-reference-features.md#modify-client-response-header)
-- [Перенаправление URL-адреса](cdn-verizon-premium-rules-engine-reference-features.md#url-redirect)
-- [Переопределение URL-адреса](cdn-verizon-premium-rules-engine-reference-features.md#url-rewrite)
+- [Перезапись ключа кэша](https://docs.vdms.com/cdn/Content/HRE/F/Cache-Key-Rewrite.htm)
+- [Заголовок запроса Modify Client](https://docs.vdms.com/cdn/Content/HRE/F/Modify-Client-Request-Header.htm)
+- [Заголовок ответа Modify Client](https://docs.vdms.com/cdn/Content/HRE/F/Modify-Client-Response-Header.htm)
+- [Перенаправление URL-адреса](https://docs.vdms.com/cdn/Content/HRE/F/URL-Redirect.htm)
+- [Переопределение URL-адреса](https://docs.vdms.com/cdn/Content/HRE/F/URL-Rewrite.htm)
 
 ## <a name="definitions"></a>Определения
 В следующей таблице описываются поддерживаемые переменные HTTP. Если метаданные геообъекта (например, почтовый индекс) недоступны для конкретного запроса, возвращается пустое значение.

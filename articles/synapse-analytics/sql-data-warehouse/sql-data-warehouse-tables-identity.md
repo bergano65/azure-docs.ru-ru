@@ -6,21 +6,20 @@ author: XiaoyuMSFT
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 04/30/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: e681e8ad655c31d5078b56b8f1a49cfd7c664533
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 60f2e3f949a4f627839a07137ebaf77518db87a4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80742640"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85213981"
 ---
 # <a name="using-identity-to-create-surrogate-keys-in-synapse-sql-pool"></a>Использование удостоверения для создания суррогатных ключей в пуле синапсе SQL
 
-Рекомендации и примеры использования свойства IDENTITY для создания суррогатных ключей в таблицах в пуле синапсе SQL.
+В этой статье вы найдете рекомендации и примеры использования свойства IDENTITY для создания суррогатных ключей в таблицах в пуле синапсе SQL.
 
 ## <a name="what-is-a-surrogate-key"></a>Что такое суррогатный ключ
 
@@ -241,6 +240,6 @@ AND     tb.name = 'T1'
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Обзор таблицы](sql-data-warehouse-tables-overview.md)
+- [Общие сведения о таблицах](sql-data-warehouse-tables-overview.md)
 - [CREATE TABLE (Transact-SQL) IDENTITY (Свойство)](/sql/t-sql/statements/create-table-transact-sql-identity-property?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [DBCC ЧЕККИНДЕНТ](/sql/t-sql/database-console-commands/dbcc-checkident-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)

@@ -9,14 +9,13 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
-ms.date: 02/10/2020
+ms.date: 07/06/2020
 ms.author: iainfou
-ms.openlocfilehash: ce910b553e14d09eefa35efc5f2973337dfa1309
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: c86f98fb20af2cd5ac969867cabfdc5dcb62db54
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80654663"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86039897"
 ---
 # <a name="enable-security-audits-for-azure-active-directory-domain-services"></a>Включение аудита безопасности для доменных служб Azure Active Directory
 
@@ -25,11 +24,11 @@ ms.locfileid: "80654663"
 Вы можете архивировать события в службе хранилища Azure и потоковых событиях в программном обеспечении и службе управления событиями (SIEM), используя концентраторы событий Azure, или выполнить собственный анализ и использовать Log Analytics рабочих областей Azure из портал Azure.
 
 > [!IMPORTANT]
-> Аудит безопасности AD DS Azure доступен только для экземпляров на основе Azure Resource Manager. Сведения о том, как выполнить миграцию, см. в статье [миграция AD DS Azure из классической модели виртуальной сети в Диспетчер ресурсов][migrate-azure-adds].
+> Аудит безопасности AD DS Azure доступен только для управляемых доменов на основе Azure Resource Manager. Сведения о том, как выполнить миграцию, см. в статье [миграция AD DS Azure из классической модели виртуальной сети в Диспетчер ресурсов][migrate-azure-adds].
 
 ## <a name="security-audit-destinations"></a>Назначения аудита безопасности
 
-Вы можете использовать службу хранилища Azure, концентраторы событий Azure или рабочие области Azure Log Analytics в качестве целевого ресурса для аудита AD DS безопасности Azure. Эти назначения можно объединять. Например, вы можете использовать службу хранилища Azure для архивации событий аудита безопасности, но рабочую область Azure Log Analytics для анализа и получения сведений в краткосрочной.
+Вы можете использовать службу хранилища Azure, концентраторы событий Azure или рабочие области Azure Log Analytics в качестве целевого ресурса для аудита AD DS безопасности Azure. Эти назначения можно объединять. Например, вы можете использовать службу хранилища Azure для архивации событий аудита безопасности, но рабочую область Azure Log Analytics для анализа и получения сведений в течение короткого срока.
 
 В следующей таблице описаны сценарии для каждого типа ресурса назначения.
 
@@ -62,7 +61,7 @@ ms.locfileid: "80654663"
 
     ![Включение отслеживания необходимого назначения и типа событий аудита](./media/security-audit-events/diagnostic-settings-page.png)
 
-    * **Хранилище Azure**
+    * **Служба хранилища Azure**
         * Выберите **архивировать в учетной записи хранения**, а затем щелкните **настроить**.
         * Выберите **подписку** и **учетную запись хранения** , которые вы хотите использовать для архивации событий аудита безопасности.
         * Когда все будет готово, нажмите кнопку **ОК**.
@@ -94,13 +93,13 @@ ms.locfileid: "80654663"
 
 1. Создайте целевой ресурс для событий аудита безопасности.
 
-    * **Служба хранилища** - Azure[создает учетную запись хранения с помощью Azure PowerShell](../storage/common/storage-account-create.md?tabs=azure-powershell)
-    * **Концентраторы** - событий Azure[создают концентратор событий с помощью Azure PowerShell](../event-hubs/event-hubs-quickstart-powershell.md). Также может потребоваться использовать командлет [New-азевенсубаусоризатионруле](/powershell/module/az.eventhub/new-azeventhubauthorizationrule) , чтобы создать правило авторизации, которое предоставляет Azure AD DS разрешения для *пространства имен*концентратора событий. Правило авторизации должно включать права на **Управление**, **прослушивание**и **отправку** .
+    * Служба **хранилища Azure**  -  [Создание учетной записи хранения с помощью Azure PowerShell](../storage/common/storage-account-create.md?tabs=azure-powershell)
+    * **Концентраторы**  -  событий Azure [Создайте концентратор событий с помощью Azure PowerShell](../event-hubs/event-hubs-quickstart-powershell.md). Также может потребоваться использовать командлет [New-азевенсубаусоризатионруле](/powershell/module/az.eventhub/new-azeventhubauthorizationrule) , чтобы создать правило авторизации, которое предоставляет Azure AD DS разрешения для *пространства имен*концентратора событий. Правило авторизации должно включать права на **Управление**, **прослушивание**и **отправку** .
 
         > [!IMPORTANT]
         > Убедитесь, что правило авторизации задано для пространства имен концентратора событий, а не самого концентратора событий.
 
-    * **Рабочие области** - аналитики журналов Azure[создают рабочую область log Analytics с Azure PowerShell](../azure-monitor/learn/quick-create-workspace-posh.md).
+    * **Рабочие области**  -  аналитики журналов Azure [Создайте рабочую область log Analytics с Azure PowerShell](../azure-monitor/learn/quick-create-workspace-posh.md).
 
 1. Получите идентификатор ресурса для управляемого домена Azure AD DS с помощью командлета [Get-азресаурце](/powershell/module/Az.Resources/Get-AzResource) . Создайте переменную с именем *$aadds. ResourceId* для хранения значения:
 
@@ -141,7 +140,7 @@ ms.locfileid: "80654663"
 Аналитические рабочие области журналов позволяют просматривать и анализировать события аудита безопасности с помощью Azure Monitor и языка запросов Kusto. Этот язык запросов предназначен для использования только для чтения, может похвастаться возможности Power Analytics с простым и удобочитаемым синтаксисом. Дополнительные сведения о том, как приступить к работе с языками запросов Kusto, см. в следующих статьях:
 
 * [Документация по Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/)
-* [Начало работы со службой Log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md)
+* [Log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md);
 * [Начало работы с запросами к журналам Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 * Узнайте, как [создавать панели мониторинга данных Log Analytics и предоставлять к ним общий доступ](../azure-monitor/learn/tutorial-logs-dashboards.md).
 
@@ -159,11 +158,11 @@ AADDomainServicesAccountManagement
 
 ### <a name="sample-query-2"></a>Образец запроса 2
 
-Просмотр всех событий блокировки учетной записи (*4740*) с 3 февраля 2020 в 9:00 и 10 февраля 2020 полночь, отсортированные по возрастанию на дату и время:
+Просмотр всех событий блокировки учетной записи (*4740*) с 3 июня 2020 в 9:00 и 10 июня 2020 полночь, отсортированные по возрастанию на дату и время:
 
 ```Kusto
 AADDomainServicesAccountManagement
-| where TimeGenerated >= datetime(2020-02-03 09:00) and TimeGenerated <= datetime(2020-02-10)
+| where TimeGenerated >= datetime(2020-06-03 09:00) and TimeGenerated <= datetime(2020-06-10)
 | where OperationName has "4740"
 | sort by TimeGenerated asc
 ```
@@ -217,7 +216,7 @@ AADDomainServicesAccountLogon
 
 Доступны следующие категории событий аудита:
 
-| Имя категории аудита | Описание |
+| Имя категории аудита | Описание: |
 |:---|:---|
 | Вход в учетную запись|Аудит пытается проверить подлинность данных учетной записи на контроллере домена или в локальном диспетчере учетных записей безопасности (SAM).</p>Параметры и события политики входа и выхода из системы следят за попытками доступа к определенному компьютеру. Параметры и события в этой категории сосредоточены на используемой базе данных учетных записей. Эта категория включает следующие подкатегории:<ul><li>[Аудит проверки учетных данных](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-credential-validation)</li><li>[Аудит службы проверки подлинности Kerberos](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-kerberos-authentication-service)</li><li>[Аудит операций с билетами службы Kerberos](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-kerberos-service-ticket-operations)</li><li>[Аудит других событий входа и выхода](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-logonlogoff-events)</li></ul>|
 | Управление учетными записями|Аудит изменений учетных записей и групп пользователей и компьютеров. Эта категория включает следующие подкатегории:<ul><li>[Аудит управления группами приложений](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-application-group-management)</li><li>[Аудит управления учетными записями компьютеров](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-computer-account-management)</li><li>[Аудит управления группами распространения](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-distribution-group-management)</li><li>[Аудит управления другими учетными записями](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-other-account-management-events)</li><li>[Аудит управления группами безопасности](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-security-group-management)</li><li>[Аудит управления учетными записями пользователей](https://docs.microsoft.com/windows/security/threat-protection/auditing/audit-user-account-management)</li></ul>|
@@ -237,15 +236,15 @@ AADDomainServicesAccountLogon
 |:---|:---|
 |Безопасность входа в учетную запись|4767, 4774, 4775, 4776, 4777|
 |Безопасность управления учетными записями|4720, 4722, 4723, 4724, 4725, 4726, 4727, 4728, 4729, 4730, 4731, 4732, 4733, 4734, 4735, 4737, 4738, 4740, 4741, 4742, 4743, 4754, 4755, 4756, 4757, 4758, 4764, 4765, 4766, 4780, 4781|
-|Безопасность отслеживания сведений|None|
+|Безопасность отслеживания сведений|Отсутствуют|
 |Безопасность доступа к DS|5136, 5137, 5138, 5139, 5141|
 |Безопасность входа в систему|4624, 4625, 4634, 4647, 4648, 4672, 4675, 4964|
-|Безопасность доступа к объектам|None|
+|Безопасность доступа к объектам|Отсутствуют|
 |Безопасность изменения политики|4670, 4703, 4704, 4705, 4706, 4707, 4713, 4715, 4716, 4717, 4718, 4719, 4739, 4864, 4865, 4866, 4867, 4904, 4906, 4911, 4912|
 |Безопасность использование привилегий|4985|
 |Безопасность системы|4612, 4621|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Конкретные сведения о Kusto см. в следующих статьях:
 

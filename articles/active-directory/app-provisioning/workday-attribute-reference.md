@@ -2,21 +2,20 @@
 title: Справочник по атрибутам Workday
 description: Сведения о том, какие атрибуты SuccessFactors поддерживаются при подготовке c помощью решения по управлению персоналом SuccessFactors.
 services: active-directory
-author: cmmdesai
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-provisioning
-ms.topic: conceptual
+ms.topic: reference
 ms.workload: identity
-ms.date: 05/21/2020
-ms.author: chmutali
+ms.date: 05/25/2020
+ms.author: kenwith
 ms.reviewer: celested
-ms.openlocfilehash: 1ac45d88c0af33114106f36798fd56473d18ea28
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
-ms.translationtype: HT
+ms.openlocfilehash: 8c508e65ef2c6d62716454af151feb0a1c80bba0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83798057"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84781114"
 ---
 # <a name="workday-attribute-reference"></a>Справочник по атрибутам Workday
 
@@ -30,7 +29,7 @@ ms.locfileid: "83798057"
 :::image type="content" source="../saas-apps/media/workday-inbound-tutorial/workday-url-no-version-info.png" alt-text="Нет сведений о версии Workday":::
 
 
-| \# | Имя                                  | Выражение API Workday                                                                                                                                                                                                                                                                                                                                                                                       |
+| \# | Имя атрибута Workday                                  | Выражение XPATH в API Workday                                                                                                                                                                                                                                                                                                                                                                                       |
 |----|---------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1  | Активна                                | wd:Worker/wd:Worker\_Data/wd:Employment\_Data/wd:Worker\_Status\_Data/wd:Active/text\(\)                                                                                                                                                                                                                                                                                                                     |
 | 2  | AddressLine2Data                      | wd:Worker/wd:Worker\_Data/wd:Employment\_Data/wd:Position\_Data/wd:Business\_Site\_Summary\_Data/wd:Address\_Data/wd:Address\_Line\_Data\[@wd:Type='ADDRESS\_LINE\_2'\]/text\(\)                                                                                                                                                                                                                             |
@@ -125,7 +124,7 @@ ms.locfileid: "83798057"
 Сведения о том, как настроить дополнительные XPATH см. в [руководстве по управлению конфигурацией](../saas-apps/workday-inbound-tutorial.md#managing-your-configuration). 
 
 
-| \# | Имя                                  | Выражение XPATH в API Workday                                                                                                                                                                                                                                                                                                                                                |
+| \# | Имя атрибута Workday                                  | Выражение XPATH в API Workday                                                                                                                                                                                                                                                                                                                                                |
 |----|---------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1  | Активна                                | wd:Worker/wd:Worker\_Data/wd:Employment\_Data/wd:Worker\_Status\_Data/wd:Active/text\(\)                                                                                                                                                                                                                                                                                               |
 | 2  | AddressLine2Data                      | wd:Worker/wd:Worker\_Data/wd:Employment\_Data/wd:Worker\_Job\_Data\[@wd:Primary_Job=1]/wd:Position\_Data/wd:Business\_Site\_Summary\_Data/wd:Address\_Data/wd:Address\_Line\_Data\[@wd:Type='ADDRESS\_LINE\_2'\]/text\(\)                                                                                                                                                            |
@@ -208,4 +207,44 @@ ms.locfileid: "83798057"
 | 79 | WorkerType                            | wd:Worker/wd:Worker\_Data/wd:Employment\_Data/wd:Worker\_Job\_Data\[@wd:Primary_Job=1]/wd:Position\_Data/wd:Worker\_Type\_Reference/wd:ID\[@wd:type="Employee\_Type\_ID"\]/text\(\)                                                                                                                                                                                                 |
 | 80 | WorkSpaceReference                    | wd:Worker/wd:Worker\_Data/wd:Employment\_Data/wd:Worker\_Job\_Data\[@wd:Primary_Job=1]/wd:Position\_Data/wd:Work\_Space\_\_Reference/@wd:Descriptor                                                                                                                                                                                                                                  |
 
+## <a name="custom-xpath-values"></a>Пользовательские значения XPATH
+В таблице ниже приведен список других часто используемых выражений API XPATH при подготовке рабочих ролей из Workday к Active Directory или Azure AD. Протестируйте выражения API XPATH, приведенные здесь, с версией Workday, ссылающейся на инструкции, приведенные в разделе [учебник. Управление конфигурацией](../saas-apps/workday-inbound-tutorial.md#managing-your-configuration).
+
+Чтобы добавить дополнительные атрибуты в таблицу XPATH [, чтобы воспользоваться](https://docs.microsoft.com/contribute) преимуществами клиентов, реализующих эту интеграцию, оставьте комментарий ниже или непосредственно приведите к статье. 
+
+> [!div class="mx-tdBreakAll"]
+> | \# | Имя атрибута Workday  | Версия API Workday | Выражение XPATH в API Workday   |
+> |----|-------------------------|---------------------|--------------------------------|
+> | 1  | Универсальный идентификатор  | v 30,0 +   | WD: Worker/WD: Worker_Data/WD: Universal_ID/Text ()      |
+> | 2  | Имя пользователя     | v 30,0 +   | WD: Worker/WD: Worker_Data/WD: User_Account_Data/WD: User_Name/Text () |
+> | 3  | Идентификатор уровня управления  | v 30,0 +  | WD: Worker/WD: Worker_Data/WD: Employment_Data/WD: Worker_Job_Data [ @wd:Primary_Job = 1]/WD: Position_Data/WD: Job_Profile_Summary_Data/WD: Management_Level_Reference/WD: ID [ @wd:type = "Management_Level_ID"]/text ()  |
+> | 4 | Сотрудник отменил работу | v 30,0 + | WD: Worker/WD: Worker_Data/WD: Employment_Data/WD: Worker_Status_Data/WD: Hire_Rescinded/Text () |
+> | 5 | Назначенная группа подготовки | v 21.1 + | WD: Worker/WD: Worker_Data/WD: Account_Provisioning_Data/WD: Provisioning_Group_Assignment_Data [WD: Status = "Assigned"]/WD: Provisioning_Group/Text () | 
+
+
+## <a name="supported-xpath-functions"></a>Поддерживаемые функции XPATH
+Ниже приведен список функций XPATH, поддерживаемых [Microsoft .NET библиотекой XPath](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256138(v=vs.100)) , которые можно использовать при создании выражения API XPath. 
+
+* name
+* last
+* position
+* string
+* substring
+* concat
+* substring-after
+* начинается с
+* string-length
+* содержит
+* translate
+* normalize-space
+* substring-before
+* Логическое
+* true
+* not
+* false
+* number
+* ceiling
+* Sum
+* round
+* floor
 

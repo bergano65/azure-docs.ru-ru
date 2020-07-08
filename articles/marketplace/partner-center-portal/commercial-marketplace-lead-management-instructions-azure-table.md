@@ -7,12 +7,11 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: dsindona
-ms.openlocfilehash: c115859c24b2c26ab2c221c4fdc35cb442d652b1
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.openlocfilehash: fb53b0fe28f48f5f240e470aa5256ac1c277686e
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83848026"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85957347"
 ---
 # <a name="use-azure-table-storage-to-manage-commercial-marketplace-leads"></a>Использование хранилища таблиц Azure для управления потенциальными клиентами на Marketplace для коммерческих клиентов
 
@@ -26,11 +25,11 @@ ms.locfileid: "83848026"
 
     1. В меню слева выберите **+ Создать ресурс**. Справа появится панель **Новый**.
     1. На панели **Новый** выберите **Хранилище**. Справа отображается список **Рекомендуемое**.
-    1. Выберите **Учетная запись хранения**, чтобы приступить к созданию учетной записи. Следуйте [инструкциям](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal) по созданию учетной записи хранения.
+    1. Выберите **Учетная запись хранения**, чтобы приступить к созданию учетной записи. Следуйте [инструкциям](../../storage/common/storage-quickstart-create-account.md?tabs=azure-portal) по созданию учетной записи хранения.
 
         ![Шаги по созданию учетной записи хранения Azure](./media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-create.png)
 
-        Дополнительные сведения об учетных записях хранения см. в [кратком руководстве](https://docs.microsoft.com/azure/storage/). Дополнительные сведения о ценах на службу хранилища см. на странице [Обзор цен на хранилище Azure](https://azure.microsoft.com/pricing/details/storage/).
+        Дополнительные сведения об учетных записях хранения см. в [кратком руководстве](../../storage/index.yml). Дополнительные сведения о ценах на службу хранилища см. на странице [Обзор цен на хранилище Azure](https://azure.microsoft.com/pricing/details/storage/).
 
 1. Дождитесь подготовки вашей учетной записи хранения. Этот процесс займет несколько минут. 
 
@@ -107,7 +106,7 @@ ms.locfileid: "83848026"
 
    После выбора команды **Создать** отображается окно **Получение сущностей**. Здесь нужно выбрать **Показать расширенные параметры** и указать сведения в следующих полях.
 
-   * **Таблица**. Выберите имя таблицы (в разделе [Создание таблицы](#create-a-table-in-your-storage-account)). На следующем рисунке показан запрос, когда для этого примера выбрана таблица marketplaceleads.
+   * **Таблица**. Выберите имя таблицы (в разделе [Создание таблицы](#create-a-table-in-your-storage-account)). На следующем рисунке показан запрос, когда `marketplaceleads` для этого примера выбрана таблица.
 
      ![Окно «Получение сущностей»](./media/commercial-marketplace-lead-management-instructions-azure-table/azure-table-get-entities.png)
 

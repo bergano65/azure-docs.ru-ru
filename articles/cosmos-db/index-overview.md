@@ -6,12 +6,11 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/21/2020
 ms.author: tisande
-ms.openlocfilehash: df9135c39c1ff27abe8915c221185fca517a5614
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.openlocfilehash: 44a51972e459f64f44a791ef1cf40825dddedf91
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83849796"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85798159"
 ---
 # <a name="indexing-in-azure-cosmos-db---overview"></a>Индексирование в Azure Cosmos DB — обзор
 
@@ -41,7 +40,7 @@ Azure Cosmos DB — это база данных без использовани
 
 Он будет представлен в виде следующего дерева:
 
-![Предыдущий элемент, представленный в виде дерева](./media/index-overview/item-as-tree.png)
+:::image type="content" source="./media/index-overview/item-as-tree.png" alt-text="Предыдущий элемент, представленный в виде дерева" border="false":::
 
 Обратите внимание, как массивы кодируются в дереве: каждая запись в массиве получает промежуточный узел с меткой индекса этой записи в массиве (0, 1 и т. д.).
 
@@ -51,14 +50,14 @@ Azure Cosmos DB — это база данных без использовани
 
 Ниже приведены пути для каждого свойства из примера элемента, описанного выше.
 
-    /locations/0/country: "Germany"
-    /locations/0/city: "Berlin"
-    /locations/1/country: "France"
-    /locations/1/city: "Paris"
-    /headquarters/country: "Belgium"
-    /headquarters/employees: 250
-    /exports/0/city: "Moscow"
-    /exports/1/city: "Athens"
+- /Locations/0/Country: "Германия"
+- /Locations/0/City: "Берлин"
+- /Locations/1/Country: "Франция"
+- /Locations/1/City: "Париж"
+- /хеадкуартерс/Каунтри: "Бельгия"
+- /хеадкуартерс/емплойис: 250
+- /EXPORTS/0/City: Москва
+- /EXPORTS/1/City: «Афины»
 
 При записи элемента Azure Cosmos DB эффективно индексирует путь каждого свойства и соответствующее ему значение.
 
@@ -181,7 +180,7 @@ Azure Cosmos DB — это база данных без использовани
 
 Например, рассмотрим следующий запрос: `SELECT location FROM location IN company.locations WHERE location.country = 'France'`. Предикат запроса (фильтрация по элементам, где любое расположение имеет значение "France" в качестве страны или региона) соответствует пути, выделенному красным цветом:
 
-![Сопоставление определенного пути в дереве](./media/index-overview/matching-path.png)
+:::image type="content" source="./media/index-overview/matching-path.png" alt-text="Сопоставление определенного пути в дереве" border="false":::
 
 > [!NOTE]
 > Предложение `ORDER BY`, которое упорядочивается по одному свойству, *всегда* требует индекс диапазона, и если у пути, на который оно ссылается, его нет, оно завершится ошибкой. Аналогичным образом запросу `ORDER BY`, который упорядочивается по нескольким свойствам, *всегда* требуется составной индекс.

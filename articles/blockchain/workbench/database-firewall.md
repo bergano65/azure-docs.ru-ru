@@ -2,14 +2,13 @@
 title: Настройка брандмауэра базы данных Azure Блокчейн Workbench
 description: Узнайте, как настроить брандмауэр базы данных Azure Блокчейн Workbench Preview, чтобы разрешить подключение внешних клиентов и приложений.
 ms.date: 09/09/2019
-ms.topic: article
+ms.topic: how-to
 ms.reviewer: mmercuri
-ms.openlocfilehash: e6739b7ead9299f020465d3c50ed01826334ca76
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: dc7a1dc7e4a083ef8f5f7650f29ed1430b32e88b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74326006"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85214202"
 ---
 # <a name="configure-the-azure-blockchain-workbench-database-firewall"></a>Настройка брандмауэра базы данных Azure Blockchain Workbench
 
@@ -50,7 +49,7 @@ ms.locfileid: "74326006"
 1. Чтобы сохранить конфигурацию брандмауэра, щелкните **Сохранить**.
 2. Проверьте диапазон IP-адресов, настроенных для базы данных, подключившись с помощью приложения или средства. Например, SQL Server Management Studio.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Database views in Azure Blockchain Workbench](database-views.md) (Представления базы данных в Azure Blockchain Workbench)

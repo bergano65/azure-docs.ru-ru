@@ -8,12 +8,11 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/01/2020
-ms.openlocfilehash: 84c2bad1004029fe61dcfc19321957a170284587
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: fa94b7461907a2337ba448a91d67fe93c5ab2f8f
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75612263"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85957568"
 ---
 # <a name="apache-phoenix-query-server-rest-sdk"></a>Пакет REST SDK для Apache Phoenix Query Server
 
@@ -27,7 +26,9 @@ ms.locfileid: "75612263"
 
 Драйвер Microsoft .NET для Apache Phoenix Query Server предоставляется в виде пакета NuGet, который можно установить из **консоли диспетчера пакетов NuGet** в Visual Studio с помощью следующей команды:
 
-    Install-Package Microsoft.Phoenix.Client
+```console
+Install-Package Microsoft.Phoenix.Client
+```
 
 ## <a name="instantiate-new-phoenixclient-object"></a>Создание экземпляра объекта PhoenixClient
 
@@ -71,7 +72,7 @@ await client.ConnectionSyncRequestAsync(connId, connProperties, options);
 
 Ниже приведены некоторые важные свойства.
 
-| Свойство | Описание |
+| Свойство. | Описание: |
 | -- | -- |
 | AutoCommit | Логическое значение, обозначающее, включено ли свойство `autoCommit` для транзакций Phoenix. |
 | ReadOnly | Логическое значение, обозначающее, является ли подключение доступным только для чтения. |
@@ -82,7 +83,7 @@ await client.ConnectionSyncRequestAsync(connId, connProperties, options);
 
 Возможные значения `TransactionIsolation`:
 
-| Значение изоляции | Описание |
+| Значение изоляции | Описание: |
 | -- | -- |
 | 0 | Транзакции не поддерживаются. |
 | 1 | Могут возникать операции чтения "грязных" данных, а также неповторяемые и фантомные операции чтения. |
@@ -170,7 +171,7 @@ finally
 var states = new List<string> { "AL", "AK", "AS", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FM", "FL", "GA", "GU", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MH", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "MP", "OH", "OK", "OR", "PW", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VI", "VA", "WA", "WV", "WI", "WY" };
 ```
 
-Значение `StateProvince` столбца таблицы будет использоваться в более поздней операции выбора.
+`StateProvince`Значение столбца таблицы будет использоваться в более поздней операции выбора.
 
 ```csharp
 string connId = Guid.NewGuid().ToString();
@@ -494,7 +495,7 @@ finally
 
 Выходные данные инструкций `select` должны выглядеть примерно так:
 
-```
+```output
 id0 first0
 id1 first1
 id10 first10
@@ -537,7 +538,7 @@ MH: 6
 FM: 5
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Apache Phoenix в HDInsight](../hdinsight-phoenix-in-hdinsight.md)
 * [Использование пакета REST SDK для Apache HBase](apache-hbase-rest-sdk.md)

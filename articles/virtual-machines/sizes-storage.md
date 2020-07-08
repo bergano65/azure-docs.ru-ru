@@ -1,25 +1,19 @@
 ---
 title: Размеры виртуальных машин Azure — хранилище | Документация Майкрософт
-description: Список различных размеров, оптимизированных для хранилища, доступных для виртуальных машин в Azure. Выводит сведения о количестве виртуальных ЦП, дисков данных и сетевых карт, а также пропускную способность хранилища и пропускную способность сети для размеров в этой серии.
-services: virtual-machines
+description: Список различных размеров, оптимизированных для хранилища, доступных для виртуальных машин в Azure. Сведения о количестве виртуальных ЦП, дисков данных и сетевых адаптеров, а также о пропускной способности хранилища и сети для размеров виртуальных машин этой серии.
+ms.subservice: sizes
 documentationcenter: ''
 author: sasha-melamed
-manager: gwallace
-editor: ''
-tags: azure-resource-manager,azure-service-management
-ms.assetid: ''
 ms.service: virtual-machines
-ms.devlang: na
 ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 02/03/2020
-ms.author: jonbeck
-ms.openlocfilehash: 5a611dc288fc18a14f6000689f9f9b49d4b3feb8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.author: jushiman
+ms.openlocfilehash: 028de173c5cda1e95de9dd64d6ccd2a6b0ad7eb2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77913342"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84674319"
 ---
 # <a name="storage-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для операций в хранилище
 
@@ -36,7 +30,7 @@ ms.locfileid: "77913342"
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.
 

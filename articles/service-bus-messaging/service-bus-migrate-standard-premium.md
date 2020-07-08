@@ -1,23 +1,13 @@
 ---
 title: Перенос пространств имен служебной шины Azure с уровня "Стандартный" на "Премиум"
 description: Инструкции по разрешению переноса существующих стандартных пространств имен служебной шины Azure в Premium
-services: service-bus-messaging
-documentationcenter: ''
-author: axisc
-editor: spelluru
-ms.service: service-bus-messaging
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 05/18/2019
-ms.author: aschhab
-ms.openlocfilehash: 27e3260b91bebee14ff12188a7dbd6c7cf76355c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/23/2020
+ms.openlocfilehash: 1ed09a077f086390c658e6650171c552b361008d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80385033"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85340741"
 ---
 # <a name="migrate-existing-azure-service-bus-standard-namespaces-to-the-premium-tier"></a>Перенос существующих стандартных пространств имен служебной шины Azure на уровень "Премиум"
 
@@ -146,7 +136,7 @@ ms.locfileid: "80385033"
 
    Если шаблон ARM устанавливает для "enablePartitioning" значение "true" для определенной очереди или раздела, он будет проигнорирован брокером.
 
-## <a name="faqs"></a>Частые вопросы
+## <a name="faqs"></a>Часто задаваемые вопросы
 
 ### <a name="what-happens-when-the-migration-is-committed"></a>Что происходит при фиксации миграции?
 
@@ -177,7 +167,7 @@ ms.locfileid: "80385033"
 
 ### <a name="what-happens-when-i-abort-the-migration"></a>Что происходит при прерывании миграции?
 
-Миграцию можно прервать либо с помощью `Abort` команды, либо с помощью портал Azure.
+Миграцию можно прервать либо с помощью команды, `Abort` либо с помощью портал Azure.
 
 #### <a name="azure-cli"></a>Azure CLI
 
@@ -187,8 +177,8 @@ az servicebus migration abort --resource-group $resourceGroup --name $standardNa
 
 #### <a name="azure-portal"></a>Портал Azure
 
-![Прервать синхронизацию][]
-![потока прерывание прервано — прерывание завершено][]
+![Прервать синхронизацию потока прерывание ][]
+ ![ прервано — прерывание завершено][]
 
 Когда процесс миграции прерывается, процесс копирования сущностей (разделов, подписок и фильтров) из стандарта в пространство имен уровня "Премиум" и разбиение на них прекращается.
 

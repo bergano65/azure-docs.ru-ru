@@ -1,24 +1,13 @@
 ---
 title: Общие сведения об обработке транзакций в служебной шине Azure
 description: В этой статье приводятся общие сведения об обработке транзакций и функции отправки через служебную шину Azure.
-services: service-bus-messaging
-documentationcenter: .net
-author: axisc
-editor: spelluru
-ms.assetid: 64449247-1026-44ba-b15a-9610f9385ed8
-ms.service: service-bus-messaging
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/27/2020
-ms.author: aschhab
-ms.openlocfilehash: 22744ecbced40b3195f4d047227b1e2a37228102
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/23/2020
+ms.openlocfilehash: 90ee3e4f7cd6465d6297406d1d28d4ea34f88ac4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79260908"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85340514"
 ---
 # <a name="overview-of-service-bus-transaction-processing"></a>Обзор обработки транзакций в служебной шине
 
@@ -36,8 +25,8 @@ ms.locfileid: "79260908"
 
 Далее приведены операции, которые могут выполняться в области транзакций.
 
-* **[QueueClient](/dotnet/api/microsoft.azure.servicebus.queueclient), [MessageSender](/dotnet/api/microsoft.azure.servicebus.core.messagesender), [TopicClient](/dotnet/api/microsoft.azure.servicebus.topicclient)**: Send, SendAsync, SendBatch, SendBatchAsync 
-* **[BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage)**: Complete, CompleteAsync, Abandon, AbandonAsync, Deadletter, DeadletterAsync, Defer, DeferAsync, RenewLock, RenewLockAsync 
+* ** [QueueClient](/dotnet/api/microsoft.azure.servicebus.queueclient), [MessageSender](/dotnet/api/microsoft.azure.servicebus.core.messagesender), [TopicClient](/dotnet/api/microsoft.azure.servicebus.topicclient)**: `Send` , `SendAsync` , `SendBatch` ,`SendBatchAsync`
+* **[BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage)**: `Complete` , `CompleteAsync` , `Abandon` , `AbandonAsync` , `Deadletter` , `DeadletterAsync` , `Defer` , `DeferAsync` , `RenewLock` ,`RenewLockAsync` 
 
 Операции получения не указаны, так как предполагается, что приложение получает сообщения с помощью режима [ReceiveMode.PeekLock](/dotnet/api/microsoft.azure.servicebus.receivemode), внутри некоторого цикла получения или с помощью с обратного вызова [OnMessage](/dotnet/api/microsoft.servicebus.messaging.queueclient.onmessage) и только затем открывает область транзакций для обработки сообщения.
 
@@ -45,7 +34,7 @@ ms.locfileid: "79260908"
 
 ## <a name="transfers-and-send-via"></a>Передачи и функция "отправить через"
 
-Чтобы обеспечить транзакционное перемещение в данных из очереди в обработчик, а затем в другую очередь, служебная шина поддерживает *передачи*. При выполнении операции передачи отправитель сначала отправляет сообщение в *очередь передачи*, а очередь передачи немедленно перемещает сообщение в предполагаемую очередь назначения, используя ту же надежную реализацию передачи, которую использует функция автоматической переадресации. Сообщение никогда не фиксируется в журнале очереди передачи так, чтобы стать видимым для получателей очереди передачи.
+Чтобы обеспечить транзакционное перемещение в данных из очереди в обработчик, а затем в другую очередь, служебная шина поддерживает *передачи*. При выполнении операции передачи отправитель сначала отправляет сообщение в *очередь передачи*, а очередь передачи немедленно перемещает сообщение в предполагаемую очередь назначения, используя ту же надежную реализацию передачи, которую использует функция перемотки. Сообщение никогда не фиксируется в журнале очереди передачи так, чтобы стать видимым для получателей очереди передачи.
 
 Эффективность этой возможности становится очевидной, когда сама очередь передачи является источником для входных сообщений отправителя. Другими словами, служебная шина может передавать сообщения в очередь назначения "через" очередь передачи, при этом делая входное сообщение завершенным (либо отложенным или недоставленным) в рамках одной атомарной операции. 
 
@@ -97,13 +86,16 @@ using (var ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="timeout"></a>Время ожидания
+Время ожидания транзакции истекло через 2 минуты. Таймер транзакции запускается, когда начинается первая операция в транзакции. 
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об очередях служебной шины см. в следующих статьях:
 
 * [Как использовать очереди служебной шины](service-bus-dotnet-get-started-with-queues.md)
-* [Связывание сущностей служебной шины с автоматической пересылкой](service-bus-auto-forwarding.md)
-* [Пример автоматической пересылки](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/AutoForward)
+* [Объединение в цепочки сущностей служебной шины с помощью автоматической переадресации](service-bus-auto-forwarding.md)
+* [Пример с пересылкой](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/AutoForward)
 * [Пример выполнения атомарных транзакций с помощью служебной шины](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/AtomicTransactions)
 * [Сравнение службы очередей Azure и службы очередей служебной шины](service-bus-azure-and-service-bus-queues-compared-contrasted.md)
 

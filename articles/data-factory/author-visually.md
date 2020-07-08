@@ -10,12 +10,11 @@ ms.author: daperlov
 ms.reviewer: ''
 manager: anandsub
 ms.date: 05/15/2020
-ms.openlocfilehash: 79b89c6a6a7598dd3fbdfc5030fd59fe1aab6625
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: ac51fd63adcc0328ff67f5fbe13dbfdb768f4bfe
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83832792"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84343125"
 ---
 # <a name="visual-authoring-in-azure-data-factory"></a>Визуальная разработка в фабрике данных Azure
 
@@ -42,6 +41,12 @@ ms.locfileid: "83832792"
 ![Холст разработки](media/author-visually/properties-pane.png)
 
 Панель свойств открывается по умолчанию только при создании ресурса. Чтобы изменить его, щелкните значок панели свойств в правом верхнем углу холста.
+
+## <a name="management-hub"></a>Центр управления
+
+Центр управления, доступ к которому осуществляется с помощью вкладки *Управление* в службе "Фабрика данных Azure", представляет собой портал, в котором размещаются глобальные действия по управлению для фабрики данных. Здесь можно управлять соединениями с хранилищами данных и внешними средами вычислений, конфигурацией системы управления версиями и параметрами триггеров. Дополнительные сведения см. в статье сведения о возможностях [центра управления](author-management-hub.md).
+
+![Управление связанными службами](media/author-management-hub/management-hub-linked-services.png)
 
 ## <a name="expressions-and-functions"></a>Выражения и функции
 

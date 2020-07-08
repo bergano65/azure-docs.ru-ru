@@ -2,13 +2,12 @@
 title: Подготовка службы "Миграция Azure" к работе с помощью средств ISV/Movere
 description: В этой статье описывается порядок подготовки службы "Миграция Azure" к работе с помощью средства ISV или Movere, а также то, как начать работу с этим средством.
 ms.topic: how-to
-ms.date: 05/07/2020
-ms.openlocfilehash: 9513e783d4f9d7be83f1434d4dd9011844af8993
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
-ms.translationtype: HT
+ms.date: 06/10/2020
+ms.openlocfilehash: d414c3db92315f7ca1b60bf43fa35b7880c34ccf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83682643"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84770379"
 ---
 # <a name="prepare-to-work-with-an-isv-tool-or-movere"></a>Подготовка к работе с помощью средств ISV или Movere
 
@@ -37,7 +36,19 @@ ms.locfileid: "83682643"
 2. Выберите соответствующую подписку. Если она не отображается, выберите**фильтр глобальных подписок**. 
 3. Выберите **Мои разрешения**. Затем выберите ссылку **Щелкните здесь, чтобы просмотреть полные сведения о доступе для этой подписки**.
 4. В разделе **Назначение ролей** > **Просмотр** установите флажки для соответствующих разрешений. Если у вашей учетной записи нет разрешений, обратитесь к администратору подписки с просьбой добавить вас в роль [Администратор доступа пользователей](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) или роль [Владелец](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner).
- 
+
+## <a name="allow-access-to-urls"></a>Разрешение доступа к URL-адресам
+
+Для средств ISV и Помощник по миграции базы данных Azure разрешите доступ к URL-адресам общедоступного облака, изложенным в таблице. Если вы используете прокси-сервер на основе URL-адресов для подключения к Интернету, убедитесь, что он разрешает все записи CNAME, полученные при поиске URL-адресов. 
+
+**URL-адрес** | **Сведения**
+--- | ---
+*.portal.azure.com  | Перейдите на портал Azure. 
+*.windows.net<br/> *.msftauth.net<br/> *.msauth.net <br/> *.microsoft.com<br/> *.live.com   | Войдите в свою подписку Azure. 
+*.microsoftonline.com<br/> *.microsoftonline-p.com | Создание приложений Azure Active Directory (AD) для взаимодействия устройства с Миграцией Azure. 
+management.azure.com | Сделайте Azure Resource Manager вызовы к проекту службы "миграция Azure".
+*.servicebus.windows.net | Обмен данными между устройством и EventHub для отправки сообщений.
+
 
 ## <a name="start-using-the-tool"></a>Начало работы со средством
 

@@ -9,16 +9,15 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/31/2020
+ms.date: 07/06/2020
 ms.author: iainfou
-ms.openlocfilehash: 581963c94129c36acbd8761d93e369281797fa9f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 6c5e0779ce0dfe2730a60873316c66184e038a35
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80654717"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86039880"
 ---
-# <a name="disable-weak-ciphers-and-password-hash-synchronization-to-secure-an-azure-ad-domain-services-managed-domain"></a>Отключение слабых шифров и синхронизации хэшей паролей для защиты управляемого домена доменных служб Azure AD
+# <a name="disable-weak-ciphers-and-password-hash-synchronization-to-secure-an-azure-active-directory-domain-services-managed-domain"></a>Отключение слабых шифров и синхронизации хэшей паролей для обеспечения безопасности управляемого домена доменных служб Azure Active Directory
 
 По умолчанию доменные службы Azure Active Directory (Azure AD DS) позволяют использовать такие шифры, как NTLM v1 и TLS V1. Эти шифры могут потребоваться для некоторых устаревших приложений, но считаются ненадежными и могут быть отключены, если они вам не нужны. При наличии локального гибридного подключения с помощью Azure AD Connect можно также отключить синхронизацию хэшей паролей NTLM.
 
@@ -33,12 +32,12 @@ ms.locfileid: "80654717"
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
 * Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
-    * Если потребуется, [создайте и настройте экземпляр доменных служб Azure Active Directory][create-azure-ad-ds-instance].
+    * При необходимости [создайте и настройте управляемый домен доменных служб Azure Active Directory][create-azure-ad-ds-instance].
 * Установите и настройте Azure PowerShell.
-    * Если необходимо, выполните инструкции по [установке модуля Azure PowerShell и его подключению к подписке Azure](/powershell/azure/install-az-ps).
+    * При необходимости выполните инструкции по [установке модуля Azure PowerShell и его подключению к подписке Azure](/powershell/azure/install-az-ps).
     * Войдите в подписку Azure с помощью командлета [Connect-AzAccount][Connect-AzAccount].
 * Установите и настройте Azure AD PowerShell.
-    * Если необходимо, выполните инструкции по [установке модуля Azure AD PowerShell и подключению к Azure AD](/powershell/azure/active-directory/install-adv2).
+    * При необходимости выполните инструкции по [установке модуля Azure AD PowerShell и подключению к Azure AD](/powershell/azure/active-directory/install-adv2).
     * Войдите в клиент Azure AD с помощью командлета [Connect-AzureAD][Connect-AzureAD].
 
 ## <a name="disable-weak-ciphers-and-ntlm-password-hash-sync"></a>Отключение слабых шифров и синхронизация хэша паролей NTLM
@@ -67,17 +66,17 @@ $DomainServicesResource = Get-AzResource -ResourceType "Microsoft.AAD/DomainServ
 $securitySettings = @{"DomainSecuritySettings"=@{"NtlmV1"="Disabled";"SyncNtlmPasswords"="Disabled";"TlsV1"="Disabled"}}
 ```
 
-Наконец, примените определенные параметры безопасности к управляемому домену Azure AD DS с помощью командлета [Set-азресаурце][Set-AzResource] . Укажите ресурс Azure AD DS, начиная с первого шага, и параметры безопасности, описанные на предыдущем шаге.
+Наконец, примените определенные параметры безопасности к управляемому домену с помощью командлета [Set-азресаурце][Set-AzResource] . Укажите ресурс Azure AD DS, начиная с первого шага, и параметры безопасности, описанные на предыдущем шаге.
 
 ```powershell
 Set-AzResource -Id $DomainServicesResource.ResourceId -Properties $securitySettings -Verbose -Force
 ```
 
-Применение параметров безопасности к управляемому домену Azure AD DS займет несколько секунд.
+Применение параметров безопасности к управляемому домену займет несколько секунд.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Дополнительные сведения о процессе синхронизации см. в статье [как синхронизировать объекты и учетные данные в управляемом домене Azure AD DS][synchronization].
+Дополнительные сведения о процессе синхронизации см. в статье [как синхронизировать объекты и учетные данные в управляемом домене][synchronization].
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: ../active-directory/fundamentals/sign-up-organization.md

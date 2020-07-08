@@ -7,12 +7,11 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: dsindona
-ms.openlocfilehash: 17cbfe92744ad96f2b5651b7e2f47a6443337068
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: e2fff55fd9161aa41411dcb1abbf8ae0c1bae49c
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83658044"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85957840"
 ---
 # <a name="integrate-your-commercial-marketplace-listing-with-azure-active-directory"></a>Интеграция коммерческого профиля marketplace с Azure Active Directory
 
@@ -29,30 +28,29 @@ ms.locfileid: "83658044"
 
 ## <a name="offers-that-require-azure-ad"></a>Предложения, для которых может понадобиться Azure AD
 
-При внедрении службы Azure AD требования для различных [вариантов профилей и типов предложений](https://docs.microsoft.com/azure/marketplace/determine-your-listing-type) отличаются. Дополнительные сведения см. в таблице, приведенной ниже.
+При внедрении службы Azure AD требования для различных [вариантов профилей и типов предложений](determine-your-listing-type.md) отличаются. Дополнительные сведения см. в таблице, приведенной ниже.
 
-| **Тип предложения**    | **Требования к единому входу в Azure AD**  |  |   |  |
+| Тип предложения    | Для связи со мной требуется единый вход Azure AD?  | Требуется единый вход Azure AD для пробной версии? | Для тестового диска требуется единый вход Azure AD?  | Для Transact требуется единый вход Azure AD |
 | :------------------- | :-------------------|:-------------------|:-------------------|:-------------------|
-|  | Связь со мной | Пробная версия | Тестовый выпуск | "Транзакция" |
 | Виртуальная машина | Недоступно | Нет | Нет | Нет |
-| Приложения Azure (шаблон решения)  | Недоступно | Недоступно | Недоступно | Недоступно |
-| Управляемые приложения  | Недоступно | Недоступно | Недоступно | Нет |
+| Приложения Azure (шаблон решения)  | Н/Д | Недоступно | Недоступно | Недоступно |
+| Управляемые приложения  | Н/Д | Недоступно | Недоступно | Нет |
 | SaaS  | Нет | Да | Да | Да |
-| Контейнеры  | Недоступно | Недоступно | Недоступно | Нет |
-| Консультационные услуги  | Нет | Недоступно | Недоступно | Недоступно |
+| Контейнеры  | Н/Д | Недоступно | Недоступно | Нет |
+| Консультационные услуги  | Нет | Н/Д | Недоступно | Недоступно |
 
-Дополнительные сведения о технических требованиях к SaaS см. в статье [Руководство по публикации SaaS-приложений](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide).
+Дополнительные сведения о технических требованиях к SaaS см. в статье [Руководство по публикации SaaS-приложений](marketplace-saas-applications-technical-publishing-guide.md).
 
 ## <a name="azure-ad-integration"></a>Интеграция с Azure AD
 
-- Дополнительны сведения о включении единого входа с помощью интеграции Azure AD со списком см. в статье [Платформа удостоверений Майкрософт (Azure Active Directory для разработчиков)]( https://docs.microsoft.com/azure/active-directory/develop/).
-- Дополнительные сведения о едином входе в Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on).
+- Дополнительны сведения о включении единого входа с помощью интеграции Azure AD со списком см. в статье [Платформа удостоверений Майкрософт (Azure Active Directory для разработчиков)](../active-directory/develop/index.yml).
+- Дополнительные сведения о едином входе в Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../active-directory/manage-apps/what-is-single-sign-on.md).
 
 ## <a name="enable-a-trial-listing"></a>Включение типа приложения пробной версии
 
 Автоматизация настройки клиента может увеличить вероятность преобразования. Когда клиент выбирает тип приложения пробную версию и перенаправляется в пробную среду, вы можете выполнять настройку для клиента напрямую, не требуя дополнительных шагов входа.
 
-Во время процесса проверки подлинности Azure AD отправляет маркер приложению или предложению. Сведения о пользователе, предоставляемые маркером, используются для создания учетной записи пользователя в приложении или предложении. Дополнительные сведения см. в статье [Маркеры идентификации](https://docs.microsoft.com/azure/active-directory/develop/active-directory-token-and-claims).
+Во время процесса проверки подлинности Azure AD отправляет маркер приложению или предложению. Сведения о пользователе, предоставляемые маркером, используются для создания учетной записи пользователя в приложении или предложении. Дополнительные сведения см. в статье [Маркеры идентификации](../active-directory/develop/id-tokens.md).
 
 Использование Azure AD для включения аутентификации одним щелчком в приложении или в типе приложения пробной версии дает следующе преимущества.
 
@@ -67,20 +65,20 @@ ms.locfileid: "83658044"
 
 Используйте Azure AD для поддержки следующих действий.
 
-- Зарегистрируйте свое приложение в одном из онлайн-магазинов Marketplace. Чтобы получить дополнительные сведения, см. статью [Краткое руководство. Регистрация приложения в конечной точке Azure Active Directory версии 1.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications) или [Как получить сертификат AppSource для Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-appsource-certified).
+- Зарегистрируйте свое приложение в одном из онлайн-магазинов Marketplace. Чтобы получить дополнительные сведения, см. статью [Краткое руководство. Регистрация приложения в конечной точке Azure Active Directory версии 1.0](../active-directory/develop/quickstart-register-app.md) или [Как получить сертификат AppSource для Azure Active Directory](../active-directory/azuread-dev/howto-get-appsource-certified.md).
 - Включите функцию поддержки мультитенантности в Azure AD, чтобы получить пробную версию одним щелчком.
 
 Если вы не использовали федеративный единый вход в Azure AD, выполните следующие действия:
 
 1. Зарегистрируйте свое приложение в Marketplace.
-1. Настройте единый вход в Azure AD с помощью [OAuth 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-oauth-code) или [OpenID Connect](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-openid-connect-code).
+1. Настройте единый вход в Azure AD с помощью [OAuth 2.0](../active-directory/azuread-dev/v1-protocols-oauth-code.md) или [OpenID Connect](../active-directory/azuread-dev/v1-protocols-openid-connect-code.md).
 1. Включите функцию поддержки мультитенантности в Azure AD, чтобы предоставить пробную версию одним щелчком.
 
 ### <a name="single-tenant-solutions"></a>Решения для приложений с одним клиентом
 
 Используйте Azure AD для поддержки одного из следующих действий.
 
-- Добавление гостевых пользователей с помощью [Azure AD B2B](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b).
+- Добавление гостевых пользователей с помощью [Azure AD B2B](../active-directory/b2b/what-is-b2b.md).
 - Ручная настройка бесплатной пробной версии для клиентов с помощью параметра публикации **Свяжитесь со мной**.
 - Разработайте тестовый выпуск для одного клиента.
 - Создайте демонстрационное мультитенантное приложение, использующее единый вход.

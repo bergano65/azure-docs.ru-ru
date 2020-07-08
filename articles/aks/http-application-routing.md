@@ -6,12 +6,11 @@ author: lachie83
 ms.topic: article
 ms.date: 08/06/2019
 ms.author: laevenso
-ms.openlocfilehash: 6ffc9daaf1b87fc9fb6ebbb0f2787f07282afe5e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 041767474fbc56ee7a53bcbd54f27873d17dab77
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80632409"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85413643"
 ---
 # <a name="http-application-routing"></a>Маршрутизация приложений HTTP
 
@@ -46,16 +45,17 @@ az aks create --resource-group myResourceGroup --name myAKSCluster --enable-addo
 az aks enable-addons --resource-group myResourceGroup --name myAKSCluster --addons http_application_routing
 ```
 
-После развертывания или обновления кластера получите имя зоны DNS с помощью команды [az aks show][az-aks-show]. Оно потребуется, чтобы развертывать приложения в кластер службы AKS.
+После развертывания или обновления кластера получите имя зоны DNS с помощью команды [az aks show][az-aks-show]. 
 
 ```azurecli
 az aks show --resource-group myResourceGroup --name myAKSCluster --query addonProfiles.httpApplicationRouting.config.HTTPApplicationRoutingZoneName -o table
 ```
 
-Результат
+Это имя необходимо для развертывания приложений в кластере AKS и показано в следующем примере выходных данных:
 
+```console
 9f9c1fe7-21a1-416d-99cd-3543bb92e4c3.eastus.aksapp.io
-
+```
 
 ## <a name="deploy-http-routing-portal"></a>Развертывание маршрутизации HTTP-трафика: портал
 
@@ -67,6 +67,22 @@ az aks show --resource-group myResourceGroup --name myAKSCluster --query addonPr
 
 ![Получение имени зоны DNS](media/http-routing/dns.png)
 
+## <a name="connect-to-your-aks-cluster"></a>Подключение к кластеру AKS
+
+Для подключения к кластеру Kubernetes с локального компьютера используйте средство [kubectl][kubectl] (клиент командной строки Kubernetes).
+
+Если вы используете Azure Cloud Shell, `kubectl` уже установлен. Его также можно установить локально с помощью команды [az aks install-cli][]:
+
+```azurecli
+az aks install-cli
+```
+
+Чтобы настроить `kubectl` на подключение к кластеру Kubernetes, выполните команду [az aks get-credentials][]. Следующий пример получает учетные данные для кластера AKS с именем *MyAKSCluster* в *MyResourceGroup*:
+
+```azurecli
+az aks get-credentials --resource-group MyResourceGroup --name MyAKSCluster
+```
+
 ## <a name="use-http-routing"></a>Использование маршрутизации HTTP-трафика
 
 Решение маршрутизации приложений HTTP можно активировать только в ресурсах входящего трафика помеченных следующим образом.
@@ -77,7 +93,6 @@ annotations:
 ```
 
 Создайте файл с именем **samples-http-application-routing.yaml** и скопируйте его в следующий YAML. В строке 43 обновите `<CLUSTER_SPECIFIC_DNS_ZONE>`, указав имя зоны DNS, полученное на предыдущем шаге этой статьи.
-
 
 ```yaml
 apiVersion: extensions/v1beta1
@@ -136,6 +151,12 @@ spec:
 ```
 
 Выполните команду [kubectl apply][kubectl-apply], чтобы создать ресурсы.
+
+```bash
+kubectl apply -f samples-http-application-routing.yaml
+```
+
+В следующем примере показаны созданные ресурсы:
 
 ```bash
 $ kubectl apply -f samples-http-application-routing.yaml
@@ -262,7 +283,13 @@ I0426 21:51:58.042932       9 controller.go:179] ingress backend successfully re
 
 ## <a name="clean-up"></a>Очистка
 
-Удалите связанные объекты Kubernetes, созданные в этой статье.
+Удалите связанные объекты Kubernetes, созданные в этой статье, с помощью `kubectl delete` .
+
+```bash
+kubectl delete -f samples-http-application-routing.yaml
+```
+
+В выходных данных примера показаны объекты Kubernetes, которые были удалены.
 
 ```bash
 $ kubectl delete -f samples-http-application-routing.yaml
@@ -281,11 +308,13 @@ ingress "party-clippy" deleted
 [az-aks-show]: /cli/azure/aks?view=azure-cli-latest#az-aks-show
 [ingress-https]: ./ingress-tls.md
 [az-aks-enable-addons]: /cli/azure/aks#az-aks-enable-addons
-
+[az aks install-cli]: /cli/azure/aks#az-aks-install-cli
+[az aks get-credentials]: /cli/azure/aks#az-aks-get-credentials
 
 <!-- LINKS - external -->
 [dns-pricing]: https://azure.microsoft.com/pricing/details/dns/
 [external-dns]: https://github.com/kubernetes-incubator/external-dns
+[kubectl]: https://kubernetes.io/docs/user-guide/kubectl/
 [kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
 [kubectl-delete]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete

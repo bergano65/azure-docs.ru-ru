@@ -5,14 +5,13 @@ author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 05/08/2020
+ms.date: 06/08/2020
 ms.author: dsindona
-ms.openlocfilehash: da2588125b455deaf18110687d54adc04a7dd4c0
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
-ms.translationtype: HT
+ms.openlocfilehash: 1267225f6b8557efc7ce36a973daef0a46aaba2d
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83799860"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85957994"
 ---
 # <a name="consulting-service-offers"></a>Предложения консультационных услуг
 
@@ -22,20 +21,11 @@ ms.locfileid: "83799860"
 
 ## <a name="compare-consulting-services"></a>Сравнение консультационных услуг
 
-Онлайн-магазины на коммерческой платформе — Microsoft AppSource и Azure Marketplace — связаны с целевой аудиторией и облачными продуктами Майкрософт, которые помогают клиентам найти то, что им нужно. Каждый онлайн-магазин предлагает разные варианты публикаций, чтобы вы могли извлечь максимальную выгоду из инвестиций в публикации. Эти варианты обобщены в следующей таблице.
-
-|         |Azure Marketplace  |Microsoft AppSource |
-|---------|---------|---------|
-|Аудитория      |IT-специалисты и разработчики облачных решений|Бизнес-пользователи и люди, принимающие бизнес-решения|
-|Релевантность решений      |Технические приложения, созданные для (или в) Azure|Бизнес-приложения, использующие или расширяющие возможности Dynamics 365, Power BI, Office 365, Azure (надстройка или дополнение к готовым приложениям)|
-|Варианты публикации      |Свяжитесь со мной, Пробная версия, Транзакция или Консультационные услуги для Azure|Свяжитесь со мной, Пробная версия или службы Dynamics 365 и Power BI|
-|Работа в продукте      |Портал Azure|Клиентские приложения Dynamics 365, Office 365, Office| 
-|Другие      |Локальная публикация с помощью Azure Stack, консультационные службы для Azure, управляемые службы для Azure|Консультационные услуги для Dynamics 365 и Power BI|
-||
+Онлайн-магазины на коммерческой платформе — Microsoft AppSource и Azure Marketplace — связаны с целевой аудиторией и облачными продуктами Майкрософт, которые помогают клиентам найти то, что им нужно. Каждый онлайн-магазин предлагает разные варианты публикаций, чтобы вы могли извлечь максимальную выгоду из инвестиций в публикации. Дополнительные сведения о разнице между двумя витринами см. в статье [сравнение Microsoft AppSource и Azure Marketplace](comparing-appsource-azure-marketplace.md).
 
 Предложения о предоставлении услуг на базе Dynamics 365, Power Apps, и Power BI могут размещаться в AppSource. Дополнительные сведения см. в документе [с рекомендациями по размещению консультационных услуг в Microsoft AppSource](https://go.microsoft.com/fwlink/?LinkId=828734&clcid=0x409).
 
-Предложения консультационных услуг и управляемых служб, основанные на Microsoft Azure, могут быть указаны в Azure Marketplace. Дополнительные сведения см. в статьях [Как опубликовать консультационную услугу Azure](./partner-center-portal/create-consulting-service-offer.md) и [Как опубликовать предложения управляемых служб в Azure Marketplace](https://docs.microsoft.com/azure/lighthouse/how-to/publish-managed-services-offers).
+Предложения консультационных услуг и управляемых служб, основанные на Microsoft Azure, могут быть указаны в Azure Marketplace. Дополнительные сведения см. в статьях [Как опубликовать консультационную услугу Azure](./partner-center-portal/create-consulting-service-offer.md) и [Как опубликовать предложения управляемых служб в Azure Marketplace](../lighthouse/how-to/publish-managed-services-offers.md).
 
 > [!Note]
 > Консультационные услуги в Azure Marketplace должны ориентироваться на предложения для технических специалистов и содержать технические решения и службы Azure.
@@ -79,21 +69,20 @@ ms.locfileid: "83799860"
 
 Дополнительные сведения о компетенциях см на странице [Microsoft Partner Network](https://partner.microsoft.com/membership/competencies).
 
-Системные интеграторы-партнеры могут отправлять предложения консультационных услуг в следующие 21 страну/регион:
+Партнеры по интегратору систем могут отправлять консультации-Услуги для следующих 20 стран или регионов:
 
-|   |   |   |   |
+| Страны  | (продолжение...)   | (продолжение...)  | (продолжение...)  |
 |---------|----------|----------|----------|
 | Австралия | Бельгия | Canada | Дания |
 | Финляндия  | Франция | Германия  | Индия   |
 | Италия    | Япония  |  Мексика  |  Нидерланды  |
 |  Новая Зеландия  |  Норвегия  |  Польша  | ЮАР |
-|  Испания  | Швеция  | Швейцария  |  США  |
-| United Kingdom  |
+|  Швеция  | Швейцария  |  США  | United Kingdom  |
 ||
 
 ## <a name="register-for-consulting-services-in-the-commercial-marketplace"></a>Регистрация на предоставление консультационных услуг на коммерческой платформе
 
-Прежде всего следует [зарегистрировать](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) сведения о компании в Marketplace. Полный контрольный список требований к регистрации можно найти в статье [Become a Publisher in the Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher) (Как стать издателем в Marketplace). 
+Прежде всего следует [зарегистрировать](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) сведения о компании в Marketplace. Полный контрольный список требований к регистрации можно найти в статье [Become a Publisher in the Marketplace](become-publisher.md) (Как стать издателем в Marketplace). 
 
 ## <a name="prepare-your-publishing-artifacts"></a>Подготовка материалов для публикации
 Еще до регистрации вы можете начать сбор и подготовку содержимого, которое поможет объяснить клиентам суть и ценность ваших услуг и (или) решений. 
