@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/21/2020
-ms.openlocfilehash: d892c58413803ff65fbd8ca8b25a61bc5ffeb26f
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.openlocfilehash: 469b402c694bcfae5a826c03ea35dbef2c365148
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83847367"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84945415"
 ---
 # <a name="explore-azure-monitor-for-azure-cache-for-redis-preview"></a>Узнайте об Azure Monitor для Кэша Azure для Redis (предварительная версия)
 
@@ -179,6 +179,10 @@ Azure Monitor для Кэша Azure для Redis (предварительная
 После сохранения пользовательской книги перейдите в коллекцию книг и откройте эту книгу.
 
 ![Панель команд с выделенным элементом "Коллекция"](./media/cosmosdb-insights-overview/gallery.png)
+
+## <a name="troubleshooting"></a>Устранение неполадок
+
+Инструкции по устранению неполадок см. в соответствующей [статье по устранению неполадок](troubleshoot-workbooks.md)на основе книги.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

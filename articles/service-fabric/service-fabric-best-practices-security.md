@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: fa8bb41684271c7d4ebe90e31ce8019994fc1f41
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9f6049a69b88c85f4e1bdf1c2400866739a6718d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80478741"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84944327"
 ---
 # <a name="azure-service-fabric-security"></a>Безопасность Azure Service Fabric 
 
@@ -87,7 +87,7 @@ ms.locfileid: "80478741"
 > [!NOTE]
 > Кластеры Service Fabric будут использовать первый действительный сертификат, найденный в хранилище сертификатов узла. В Windows это будет сертификат с последней датой истечения срока действия, соответствующий общему имени и отпечатку издателя.
 
-Домены Azure, такие как *\<ВАШ ПОДДОМЕН\>.cloudapp.azure.com или \<ВАШ ПОДДОМЕН\>.trafficmanager.net принадлежат корпорации Майкрософт. Центры сертификации не будут выдавать сертификаты для доменов неавторизованным пользователям. Большинству пользователей потребуется приобрести домен у регистратора или быть авторизованным администратором домена, чтобы центр сертификации выдал сертификат с этим общим именем.
+Домены Azure, такие как * \<YOUR SUBDOMAIN\> . cloudapp.Azure.com или \<YOUR SUBDOMAIN\> . trafficmanager.NET, принадлежат корпорации Майкрософт. Центры сертификации не будут выдавать сертификаты для доменов неавторизованным пользователям. Большинству пользователей потребуется приобрести домен у регистратора или быть авторизованным администратором домена, чтобы центр сертификации выдал сертификат с этим общим именем.
 
 Дополнительные сведения о настройке службы DNS для преобразования домена в IP-адрес Майкрософт см. в [этой статье](https://docs.microsoft.com/azure/dns/dns-delegate-domain-azure-dns).
 
@@ -157,7 +157,7 @@ user@linux:$ openssl smime -encrypt -in plaintext_UTF-16.txt -binary -outform de
 ```
 ## <a name="authenticate-service-fabric-applications-to-azure-resources-using-managed-service-identity-msi"></a>Аутентификация приложений Service Fabric в ресурсах Azure с помощью Управляемого удостоверения службы (MSI)
 
-Дополнительные сведения об управляемых удостоверениях в ресурсах Azure см. в разделе [Принцип работы управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md#how-does-the-managed-identities-for-azure-resources-work).
+Дополнительные сведения об управляемых удостоверениях в ресурсах Azure см. в разделе [Принцип работы управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md).
 Кластеры Azure Service Fabric размещаются в масштабируемых наборах виртуальных машин, которые поддерживают [Управляемое удостоверение службы](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-msi#azure-services-that-support-managed-identities-for-azure-resources).
 Список служб, для аутентификации которых можно использовать MSI, см. в разделе [Службы Azure, поддерживающие аутентификацию Azure AD](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-msi#azure-services-that-support-azure-ad-authentication).
 
@@ -217,7 +217,12 @@ cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBS
 Эти правила брандмауэра дополняют разрешенные исходящие группы безопасности сети, которые включают ServiceFabric и хранилище в качестве разрешенных целевых объектов из виртуальной сети.
 
 ## <a name="tls-12"></a>TLS 1.2
-[тсг](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides/blob/master/Security/TLS%20Configuration.md)
+
+Microsoft [Azure рекомендует](https://azure.microsoft.com/updates/azuretls12/) всем клиентам выполнить миграцию для решений, ПОДДЕРЖИВАЮЩИХ протокол TLS 1,2, и убедиться, что по умолчанию используется TLS 1,2.
+
+Службы Azure, в том числе [Service Fabric](https://techcommunity.microsoft.com/t5/azure-service-fabric/microsoft-azure-service-fabric-6-3-refresh-release-cu1-notes/ba-p/791493), выполнили инженерную работу по удалению зависимостей от протоколов TLS 1.0/1.1 и обеспечивают полную поддержку для клиентов, которые хотят настроить рабочие нагрузки для принятия и инициации только подключений TLS 1,2.
+
+Клиенты должны настроить рабочие нагрузки, размещенные в Azure, и локальные приложения, взаимодействующие со службами Azure, чтобы использовать TLS 1,2 по умолчанию. Ниже описано, как [настроить узлы кластера Service Fabric и приложения](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides/blob/master/Security/TLS%20Configuration.md) для использования определенной версии TLS.
 
 ## <a name="windows-defender"></a>Защитник Windows 
 

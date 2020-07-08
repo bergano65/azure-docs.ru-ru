@@ -4,12 +4,12 @@ description: Узнайте, как настроить готовый конте
 ms.devlang: php
 ms.topic: article
 ms.date: 03/28/2019
-ms.openlocfilehash: 9933205095587d9e8e0d8a5641d213f159512450
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
-ms.translationtype: HT
+ms.openlocfilehash: 9e4237f1eecb9f6542aac946525ff4583e478c2e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84234939"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84905703"
 ---
 # <a name="configure-a-linux-php-app-for-azure-app-service"></a>Настройка приложения PHP в Linux для Службы приложений Azure
 
@@ -109,7 +109,7 @@ if (isset($_SERVER['X-Forwarded-Proto']) && $_SERVER['X-Forwarded-Proto'] === 'h
 Если вам необходимо внести изменения в установку PHP, вы можете изменить любые [директивы php.ini](https://www.php.net/manual/ini.list.php), выполнив следующие инструкции.
 
 > [!NOTE]
-> Оптимальный способ для просмотра версии PHP и текущей конфигурации *php.ini* — это вызов [phpinfo()](https://www.php.net/manual/function.phpinfo.php) в приложении.
+> Оптимальный способ для просмотра версии PHP и текущей конфигурации *php.ini* — это вызов [phpinfo()](https://php.net/manual/function.phpinfo.php) в приложении.
 >
 
 ### <a name="customize-non-php_ini_system-directives"></a><a name="Customize-non-PHP_INI_SYSTEM directives"></a>Настройка не относящихся к PHP_INI_SYSTEM директив
@@ -187,7 +187,7 @@ zend_extension=/home/site/wwwroot/bin/xdebug.so
 
 ## <a name="access-diagnostic-logs"></a>Доступ к журналам диагностики
 
-[!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-no-h.md)]
+[!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-linux-no-h.md)]
 
 ## <a name="open-ssh-session-in-browser"></a>Открытие сеанса SSH в браузере
 
@@ -198,7 +198,7 @@ zend_extension=/home/site/wwwroot/bin/xdebug.so
 Если рабочее приложение PHP в Службе приложений ведет себя иначе или сообщает об ошибках, попробуйте сделать следующее:
 
 - [Получите доступ к потоку журнала](#access-diagnostic-logs).
-- Протестируйте приложение локально в рабочем режиме. Служба приложений запускает приложения Node.js в рабочем режиме, поэтому вам необходимо убедиться в том, что проект работает надлежащим образом локально в рабочем режиме. Пример:
+- Протестируйте приложение локально в рабочем режиме. Служба приложений запускает приложение в рабочем режиме, поэтому необходимо убедиться, что проект работает в режиме рабочей среды локально. Пример:
     - В зависимости от содержимого файла *composer.json* для рабочего режима могут быть установлены разные пакеты (`require` или `require-dev`).
     - Некоторые веб-платформы в рабочем режиме могут выполнять другие операции при развертывании статических файлов.
     - Некоторые веб-платформы могут использовать специальные скрипты запуска в рабочем режиме.

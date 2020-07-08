@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 04/13/2019
-ms.openlocfilehash: 542861afe49d03a179a9740d5a58b9d27e0d7f20
-ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
-ms.translationtype: HT
+ms.openlocfilehash: 97bea90e67b9449a8f5fd7b333b9ac149abef2f8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84302496"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84945466"
 ---
 # <a name="monitoring-your-key-vault-service-with-azure-monitor-for-key-vault-preview"></a>Мониторинг службы Key Vault с помощью Azure Monitor для Key Vault (предварительная версия)
 Azure Monitor для Key Vault (предварительная версия) обеспечивает комплексный мониторинг хранилищ ключей в едином представлении запросов Key Vault, производительности, сбоев и задержки.
@@ -158,55 +158,51 @@ Azure Monitor для Key Vault объединяет журналы и метри
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
+Общие рекомендации по устранению неполадок см. в соответствующей [статье об устранении неполадок](troubleshoot-workbooks.md)на основе книги.
+
 Сведения, приведенные в этом разделе, помогут вам диагностировать и устранять некоторые распространенные неполадки, которые могут возникнуть при использовании Azure Monitor для Key Vault (предварительная версия). Чтобы найти информацию о конкретной проблеме, просмотрите список ниже.
 
 ### <a name="resolving-performance-issues-or-failures"></a>Устранение проблем с производительностью или сбоев
 
 Информацию об устранении любых проблем с хранилищем ключей, обнаруженных с помощью Azure Monitor для Key Vault (предварительная версия), см. в [документации по Azure Key Vault](https://docs.microsoft.com/azure/key-vault/).
 
-### <a name="why-can-i-only-see-200-key-vaults"></a>Почему отображаются только 200 хранилищ ключей?
+### <a name="why-can-i-only-see-200-key-vaults"></a>Почему можно видеть только хранилище ключей 200
 
 Выбирать и просматривать можно не больше 200 хранилищ ключей. Независимо от количества выбранных подписок выбрать больше 200 хранилищ ключей невозможно.
 
-### <a name="what-will-happen-when-a-pinned-item-is-clicked"></a>Что происходит при щелчке по закрепленному элементу?
-
-При щелчке по закрепленному элементу на панели мониторинга открывается одно из двух.
-* Если аналитика была сохранена, откроется экземпляр аналитики, который был закреплен.
-* Если аналитика не сохранялась, откроется новый экземпляр аналитики по умолчанию.
-
-### <a name="why-dont-i-see-all-my-subscriptions-in-the-subscription-picker"></a>Почему в средстве выбора подписки не отображаются все мои подписки?
+### <a name="why-dont-i-see-all-my-subscriptions-in-the-subscription-picker"></a>Почему в средстве выбора подписки не отображаются все подписки
 
 Мы видим только те подписки, которые содержат хранилища ключей, выбранные в фильтре подписок, который был выбран в разделе "Каталог + подписка" в заголовке портала Azure.
 
 ![Снимок экрана с фильтром подписок](./media/key-vaults-insights-overview/Subscriptions.png)
 
-### <a name="i-am-getting-an-error-message-that-the-query-exceeds-the-maximum-number-of-workspacesregions-allowed-what-to-do-now"></a>Я получаю сообщение об ошибке "запрос превышает максимально допустимое число рабочих областей или регионов". Что делать?
+### <a name="i-am-getting-an-error-message-that-the-query-exceeds-the-maximum-number-of-workspacesregions-allowed-what-to-do-now"></a>Я получаю сообщение об ошибке "запрос превышает максимально допустимое число рабочих областей и регионов", что делать сейчас
 
 В настоящее время существует ограничение в 25 регионов и 200 рабочих областей; для просмотра данных необходимо уменьшить число подписок и (или) групп ресурсов.
 
-### <a name="i-want-to-make-changes-or-add-additional-visualizations-to-key-vault-insights-how-do-i-do-so"></a>Я хочу внести изменения или добавить визуализации для аналитики Key Vault. Как это сделать?
+### <a name="i-want-to-make-changes-or-add-additional-visualizations-to-key-vault-insights-how-do-i-do-so"></a>Я хочу внести изменения или добавить дополнительные визуализации для Key Vault Insights, как это сделать.
 
 Чтобы внести изменения, выберите режим редактирования и внесите изменения в книгу, после чего вы сможете сохранить измененную книгу как новую книгу, привязанную к определенной подписке и группе ресурсов.
 
-### <a name="what-is-the-time-grain-once-we-pin-any-part-of-the-workbooks"></a>Какой временной интервал используется после закрепления какой-либо части книг?
+### <a name="what-is-the-time-grain-once-we-pin-any-part-of-the-workbooks"></a>Что такое промежуток времени после закрепления любой части книг
 
 Мы используем автоматический временной интервал, поэтому он зависит от выбранного диапазона времени.
 
-### <a name="what-is-the-time-range-when-any-part-of-the-workbook-is-pinned"></a>Какой диапазон времени используется при закреплении какой-либо части книг?
+### <a name="what-is-the-time-range-when-any-part-of-the-workbook-is-pinned"></a>Каков диапазон времени, когда какая-либо часть книги закреплена
 
 Диапазон времени будет зависеть от параметров панели мониторинга.
 
-### <a name="why-do-i-not-see-any-data-for-my-key-vault-under-the-operations--latency-sections"></a>Почему в разделах книги "Операции и задержка" не отображаются данные моего хранилища ключей?
+### <a name="why-do-i-not-see-any-data-for-my-key-vault-under-the-operations--latency-sections"></a>Почему я не вижу никаких данных для моей Key Vault в разделах "операции & задержка"
 
 Для просмотра данных на основе журналов необходимо включить ведение журналов для каждого хранилища ключей, которое вы хотите отслеживать. Это можно сделать в параметрах диагностики для каждого хранилища ключей. Вам нужно будет отправлять данные в назначенную рабочую область Log Analytics.
 
-### <a name="i-have-already-enabled-logs-for-my-key-vault-why-am-i-still-unable-to-see-my-data-under-operations--latency"></a>Ведение журналов для Key Vault уже включено, почему мои данные все еще не отображаются в разделах книги "Операции и задержка"?
+### <a name="i-have-already-enabled-logs-for-my-key-vault-why-am-i-still-unable-to-see-my-data-under-operations--latency"></a>Я уже включил журналы для Key Vault, почему я по-прежнему не вижу данных в разделе Operations & задержка
 
 Журналы диагностики пока не поддерживают включение задним числом, поэтому данные начнут отображаться только после того, как с вашими хранилищами ключей будут проделаны какие-либо действия. В зависимости от того, насколько активно ваше хранилище ключей, данные могут начать отображаться как через несколько часов, так и через несколько дней.
 
 Кроме того, если выбрано большое количество хранилищ ключей и подписок, просмотр данных может быть недоступен из-за ограничений на запросы. Чтобы просмотреть данные, может потребоваться сократить количество выбранных подписок или хранилищ ключей. 
 
-### <a name="what-if-i-want-to-see-other-data-or-make-my-own-visualizations-how-can-i-make-changes-to-the-key-vault-insights"></a>Что делать, если нужно просмотреть другие данные или создать собственные визуализации? Как внести изменения в аналитику Key Vault?
+### <a name="what-if-i-want-to-see-other-data-or-make-my-own-visualizations-how-can-i-make-changes-to-the-key-vault-insights"></a>Что делать, если нужно просмотреть другие данные или создать собственные визуализации? Как внести изменения в Key Vault Insights
 
 Вы можете внести изменения в существующую книгу, используя режим редактирования, а затем сохранить измененную книгу как новую книгу, содержащую все изменения.
 

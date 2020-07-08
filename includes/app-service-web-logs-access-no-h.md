@@ -8,23 +8,25 @@ ms.topic: include
 ms.date: 03/27/2019
 ms.author: cephalin
 ms.custom: include file
-ms.openlocfilehash: 0dd6618bdee8e6810d414d4b04b16a1e0a9c90ed
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
-ms.translationtype: HT
+ms.openlocfilehash: e6c4b07d01a4992e22107cb7d524646f439c37c6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67185763"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84905873"
 ---
-Можно получить доступ к журналам консоли, которые были созданы в контейнере. Сначала выполните приведенную ниже команду в Cloud Shell для включения ведения журнала контейнера.
+Чтобы получить доступ к журналам консоли, созданным внутри кода приложения в службе приложений, включите ведение журнала диагностики, выполнив следующую команду в [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
-az webapp log config --name <app-name> --resource-group myResourceGroup --docker-container-logging filesystem
+az webapp log config --resource-group <resource-group-name> --name <app-name> --application-logging true --level Verbose
 ```
 
-После включения ведения журнала контейнера, выполните следующую команду, чтобы просмотреть поток данных журнала.
+Возможные значения для `--level` : `Error` , `Warning` , `Info` и `Verbose` . Каждый последующий уровень включает предыдущий уровень. Например: `Error` включает только сообщения об ошибках и `Verbose` включает все сообщения.
+
+После включения ведения журнала диагностики выполните следующую команду, чтобы просмотреть поток журнала:
 
 ```azurecli-interactive
-az webapp log tail --name <app-name> --resource-group myResourceGroup
+az webapp log tail --resource-group <resource-group-name> --name <app-name>
 ```
 
 Если журналы консоли не отображаются, проверьте еще раз через 30 секунд.

@@ -9,10 +9,10 @@ ms.date: 03/23/2020
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: b8073240bdda38757a5e4feee66c9f54746966c4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80632045"
 ---
 ### <a name="portal"></a>Портал
@@ -24,7 +24,7 @@ ms.locfileid: "80632045"
 1. Войдите на [портал Azure](https://portal.azure.com/).
 1. Найдите и выберите **хранилища ключей**.
 
-    [![ССЕ-Кэй-Ваулт-портал-СЕАРЧ. png](media/virtual-machines-disk-encryption-portal/sse-key-vault-portal-search.png)](media/virtual-machines-disk-encryption-portal/sse-key-vault-portal-search-expanded.png#lightbox)
+    [![sse-key-vault-portal-search.png](media/virtual-machines-disk-encryption-portal/sse-key-vault-portal-search.png)](media/virtual-machines-disk-encryption-portal/sse-key-vault-portal-search-expanded.png#lightbox)
 
     > [!IMPORTANT]
     > Для успешности развертывания хранилище ключей Azure, набор шифрования диска, виртуальная машина, диски и моментальные снимки должны находиться в одном регионе и подписке.

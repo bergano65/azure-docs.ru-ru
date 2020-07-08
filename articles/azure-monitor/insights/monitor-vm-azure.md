@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/05/2020
-ms.openlocfilehash: ebb25d49250b71ab8d948833ac982ef244225539
-ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
-ms.translationtype: HT
+ms.openlocfilehash: e38ae07aa032e4a828c9188fd78b112f4ff0d397
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84216444"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84945398"
 ---
 # <a name="monitoring-azure-virtual-machines-with-azure-monitor"></a>Мониторинг виртуальных машин Azure с помощью Azure Monitor
 В этой статье описывается, как использовать Azure Monitor для сбора и анализа данных мониторинга с виртуальных машин Azure для поддержания их работоспособности. С помощью Azure Monitor можно отслеживать доступность и производительность виртуальных машин так же, как аналогичные параметры любых [других ресурсов Azure](monitor-azure-resource.md). Однако они отличаются от других ресурсов тем, что, помимо прочего, необходимо отслеживать операционную систему на виртуальной машине и выполняющиеся на ней рабочие нагрузки. 
@@ -105,9 +105,9 @@ ms.locfileid: "84216444"
 Подробные сведения о настройке агентов Telegraf на виртуальных машинах Linux см. в разделе [Установка и настройка Telegraf](../platform/collect-custom-metrics-linux-telegraf.md#install-and-configure-telegraf). Пункт меню **Параметры диагностики** доступен для Linux, но позволяет передавать данные только в службу хранилища Azure.
 
 ### <a name="collect-platform-metrics-and-activity-log"></a>Сбор метрик платформы и журнала действий
-Метрики платформы и журнал действий, собранные для каждого компьютера виртуальной машины, можно просмотреть на портале Azure. Собирайте эти данные в рабочую область Log Analytics, которую использует Azure Monitor для виртуальных машин, чтобы анализировать их вместе с другими данными мониторинга, собранными для виртуальной машины. Сбор настраивается с помощью [параметра диагностики](../platform/diagnostic-settings.md). Для сбора журнала действий используется [параметр диагностики для подписки](../platform/diagnostic-settings.md#create-diagnostic-settings-in-azure-portal).
+Метрики платформы и журнал действий, собранные для каждого компьютера виртуальной машины, можно просмотреть на портале Azure. Собирайте эти данные в рабочую область Log Analytics, которую использует Azure Monitor для виртуальных машин, чтобы анализировать их вместе с другими данными мониторинга, собранными для виртуальной машины. Сбор настраивается с помощью [параметра диагностики](../platform/diagnostic-settings.md). Для сбора журнала действий используется [параметр диагностики для подписки](../platform/diagnostic-settings.md#create-in-azure-portal).
 
-Для сбора метрик платформы используется параметр диагностики для виртуальной машины. В отличие от других ресурсов Azure, вы не можете создать параметр диагностики для виртуальной машины на портале Azure. Для этого следует использовать [другой метод](../platform/diagnostic-settings.md#create-diagnostic-settings-using-powershell). Ниже приведены примеры сбора метрик для виртуальной машины с помощью PowerShell и CLI.
+Для сбора метрик платформы используется параметр диагностики для виртуальной машины. В отличие от других ресурсов Azure, вы не можете создать параметр диагностики для виртуальной машины на портале Azure. Для этого следует использовать [другой метод](../platform/diagnostic-settings.md#create-using-powershell). Ниже приведены примеры сбора метрик для виртуальной машины с помощью PowerShell и CLI.
 
 ```powershell
 Set-AzDiagnosticSetting -Name vm-diagnostics -ResourceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/my-resource-group/providers/Microsoft.Compute/virtualMachines/my-vm" -Enabled $true -MetricCategory AllMetrics -workspaceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/my-resource-group/providers/microsoft.operationalinsights/workspaces/my-workspace"

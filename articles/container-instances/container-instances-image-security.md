@@ -1,15 +1,15 @@
 ---
-title: Безопасность для экземпляров контейнеров
+title: Вопросы безопасности для экземпляров контейнеров
 description: Рекомендации по защите образов и секретов для экземпляров контейнеров Azure, а также общие вопросы безопасности для любой платформы контейнеров
 ms.topic: article
 ms.date: 01/10/2020
 ms.custom: ''
-ms.openlocfilehash: 87fa28cf9bdb546a5f108284023a9f787645a1fd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d339683c8864b85f7ccb1ac3c982f03aa7abf103
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81458000"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84907029"
 ---
 # <a name="security-considerations-for-azure-container-instances"></a>Вопросы безопасности для экземпляров контейнеров Azure
 
@@ -18,6 +18,9 @@ ms.locfileid: "81458000"
 > [!div class="checklist"]
 > * **Рекомендации по безопасности** для управления образами и секретами для экземпляров контейнеров Azure
 > * **Рекомендации для экосистемы** контейнеров в течение жизненного цикла контейнера для любой платформы контейнеров
+
+Полные рекомендации, которые помогут повысить уровень безопасности развертывания, см. в статье [основы безопасности Azure для экземпляров контейнеров](security-baseline.md).
+
 
 ## <a name="security-recommendations-for-azure-container-instances"></a>Рекомендации по безопасности для службы "экземпляры контейнеров Azure"
 
@@ -140,6 +143,8 @@ ms.locfileid: "81458000"
 * Журналы ресурсов для [экземпляров контейнеров Azure](container-instances-log-analytics.md) и [реестра контейнеров Azure](../container-registry/container-registry-diagnostics-audit-logs.md)
 
 ## <a name="next-steps"></a>Дальнейшие шаги
+
+* Подробные рекомендации, которые помогут повысить безопасность развертывания, см. в разделе [основы безопасности Azure для экземпляров контейнеров](security-baseline.md) .
 
 * Узнайте больше об использовании [центра безопасности Azure](../security-center/container-security.md) для обнаружения угроз в режиме реального времени в контейнерных средах.
 

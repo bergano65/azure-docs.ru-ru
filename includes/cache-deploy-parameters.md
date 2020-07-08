@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 04/02/2019
 ms.author: wesmc
 ms.openlocfilehash: 498a7ee28b9404d0733e4615f4df635a8c904b51
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67185096"
 ---
 ### <a name="cacheskuname"></a>Параметр cacheSKUName
@@ -83,10 +83,10 @@ ms.locfileid: "67185096"
 
 | Значение | Базовый и Стандартный<br>Размер кэша | Premium<br>Размер кэша |
 | :---: | :------------------------------: | :-------------------: |
-| 0     | 250 МБ (по умолчанию)                 | Недоступно                   |
+| 0     | 250 МБ (по умолчанию)                 | н/д                   |
 | 1     | 1 ГБ                             | 6 ГБ (по умолчанию)        |
 | 2     | 2,5 ГБ                           | 13 ГБ                 |
 | 3     | 6 ГБ                             | 26 ГБ                 |
 | 4     | 13 ГБ                            | 53 ГБ                 |
 | 5     | 26 ГБ                            | 120 ГБ                |
-| 6     | 53 ГБ                            | Недоступно                   |
+| 6     | 53 ГБ                            | Н/Д                   |

@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: storage
 author: tamram
@@ -9,10 +9,10 @@ ms.date: 01/15/2020
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: a0a4a10797109cb3363027e2445259d06d9aa071
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76118074"
 ---
 ## <a name="about-the-user-delegation-sas"></a>Сведения о SAS для делегирования пользователей
@@ -24,4 +24,4 @@ ms.locfileid: "76118074"
 > [!CAUTION]
 > Любой клиент, обладающий действительным SAS, может получить доступ к данным в вашей учетной записи хранения, как это разрешено этим SAS. Важно защитить SAS от вредоносного или непреднамеренного использования. Используйте осторожность при распространении SAS и воспользуйтесь планом для отзыва скомпрометированного SAS.
 
-Дополнительные сведения о подписанных URL-адресах см. [в статье предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL (SAS)](../articles/storage/common/storage-sas-overview.md).
+Дополнительные сведения о подписанных URL-адресах см. в статье об [использование подписанных URL-адресов SAS в службе хранилища Azure](../articles/storage/common/storage-sas-overview.md).

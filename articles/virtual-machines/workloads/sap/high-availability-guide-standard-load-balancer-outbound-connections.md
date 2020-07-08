@@ -13,14 +13,14 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 05/12/2020
+ms.date: 06/16/2020
 ms.author: radeltch
-ms.openlocfilehash: a89c848f5c6e57aba01c7156cdc61f9e69c30d0b
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 9419ed320089ff85722e0d9c0582e92491377ab1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83660175"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84907471"
 ---
 # <a name="public-endpoint-connectivity-for-virtual-machines-using-azure-standard-load-balancer-in-sap-high-availability-scenarios"></a>Подключение к общедоступной конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. категория "Стандартный") в сценариях обеспечения высокого уровня доступности SAP
 
@@ -222,7 +222,10 @@ ms.locfileid: "83660175"
 
 ## <a name="other-solutions"></a>Другие решения
 
-Если исходящий трафик маршрутизируется через сторонний брандмауэр, убедитесь, что конфигурация брандмауэра допускает исходящее подключение к API управления Azure: `https://management.azure.com` и `https://login.microsoftonline.com`.  
+Если исходящий трафик направляется через брандмауэр стороннего производителя:
+
+- При использовании агента ограждения Azure убедитесь, что конфигурация брандмауэра разрешает исходящее подключение к API управления Azure `https://management.azure.com` .`https://login.microsoftonline.com`   
+- Если вы используете инфраструктуру обновления общедоступного облака Azure SUSE для применения обновлений и исправлений, см. раздел [инфраструктура общедоступного облачного обновления azure 101](https://suse.com/c/azure-public-cloud-update-infrastructure-101/) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

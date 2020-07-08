@@ -5,12 +5,12 @@ ms.subservice: metrics
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.custom: has-adal-ref
-ms.openlocfilehash: 1de3afc380c5c3c82a869de0ff2319b013e26438
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: 602d11b20e50ec5ba56d0d9c1762292c07d0b67b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82610893"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84945347"
 ---
 # <a name="azure-monitoring-rest-api-walkthrough"></a>Пошаговое руководство по REST API Azure Monitor
 
@@ -95,7 +95,7 @@ $authHeader = @{
 
 **Метод**: GET
 
-**URI запроса**: https:\/\/Management.Azure.com/Subscriptions/*{SubscriptionId}*/resourceGroups/*{resourceGroupName}*/providers/*{resourceProviderNamespace}*/*{ResourceType}*/*{resourceName}*/providers/Microsoft.Insights/metricDefinitions? API-Version =*{apiVersion}*
+**URI запроса**: https: \/ \/ Management.Azure.com/Subscriptions/*{SubscriptionId}*/resourceGroups/*{resourceGroupName}*/providers/*{resourceProviderNamespace}* / *{ResourceType}* / *{resourceName}*/providers/Microsoft.Insights/metricDefinitions? API-Version =*{apiVersion}*
 
 Например, запрос на получение определений метрик для учетной записи хранения Azure будет выглядеть следующим образом:
 
@@ -239,7 +239,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**URI запроса**: HTTPS\://Management.Azure.com/Subscriptions/*{Subscription-ID}*/resourceGroups/*{ресурс-Group-Name}*/providers/*{ресурс-поставщик-пространство имен}*/*{ресурс-тип}*/*{Resource-Name}*/providers/Microsoft.Insights/Metrics? metricnames =*{Метрика}*&TimeSpan =*{StartTime/EndTime}*&$Filter =*{Filter}*&resultType = метаданные&API-Version =*{apiVersion}*
+**URI запроса**: HTTPS \: //Management.Azure.com/Subscriptions/*{Subscription-ID}*/resourceGroups/*{ресурс-Group-Name}*/providers/*{ресурс-поставщик-пространство имен}* / *{ресурс-тип}* / *{Resource-Name}*/providers/Microsoft.Insights/Metrics? metricnames =*{Метрика}*&TimeSpan =*{StartTime/EndTime}*&$Filter =*{Filter}*&resultType = метаданные&API-Version =*{apiVersion}*
 
 Например, чтобы получить список значений измерений, которые были созданы для параметра "API Name dimension" (Измерение имени API) метрики "Транзакции", где измерение GeoType = "Primary" в течение указанного интервала времени, используйте следующий запрос:
 
@@ -312,7 +312,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**URI запроса**: https:\//Management.Azure.com/Subscriptions/*{Subscription-ID}*/resourceGroups/*{ресурс-Group-Name}*/providers/*{ресурс-поставщик-пространство имен}*/*{Resource-Type}*/*{Resource-Name}*/providers/Microsoft.Insights/Metrics? metricnames =*{Метрика}*&TimeSpan =*{StartTime/EndTime}*&$Filter =*{Filter}*&интервал =*{timeGrain}*&агрегат =*{агрегирование}*&API-Version =*{apiVersion}*
+**URI запроса**: https: \/ /Management.Azure.com/Subscriptions/*{Subscription-ID}*/resourceGroups/*{ресурс-Group-Name}*/providers/*{ресурс-поставщик-пространство имен}* / *{Resource-Type}* / *{Resource-Name}*/providers/Microsoft.Insights/Metrics? metricnames =*{Метрика}*&TimeSpan =*{StartTime/EndTime}*&$Filter =*{Filter}*&интервал =*{timeGrain}*&агрегат =*{агрегирование}*&API-Version =*{apiVersion}*
 
 Например, чтобы вывести первые 3 API-интерфейса в убывающем порядке по величине показателя "Транзакции" в течение 5-минутного диапазона, где для GeoType установлено значение "Primary", используйте следующий запрос:
 
@@ -391,7 +391,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**URI запроса**: https:\/\/Management.Azure.com/Subscriptions/*{SubscriptionId}*/resourceGroups/*{resourceGroupName}*/providers/*{resourceProviderNamespace}*/*{ResourceType}*/*{resourceName}*/providers/Microsoft.Insights/metricDefinitions? API-Version =*{apiVersion}*
+**URI запроса**: https: \/ \/ Management.Azure.com/Subscriptions/*{SubscriptionId}*/resourceGroups/*{resourceGroupName}*/providers/*{resourceProviderNamespace}* / *{ResourceType}* / *{resourceName}*/providers/Microsoft.Insights/metricDefinitions? API-Version =*{apiVersion}*
 
 Например, чтобы получить определения метрик для приложения логики Azure, запрос будет выглядеть следующим образом:
 
@@ -705,16 +705,30 @@ az storage account show -g azmon-rest-api-walkthrough -n contosotweets2017
 
 ## <a name="retrieve-activity-log-data"></a>Получение данных журнала действий
 
-Помимо определений метрик и связанных значений можно также использовать REST API Azure Monitor, чтобы получить дополнительные интересные сведения, связанные с ресурсами Azure. Например, можно запросить данные [журнала действий](https://msdn.microsoft.com/library/azure/dn931934.aspx) . В приведенном ниже примере показано использование REST API Azure Monitor для запроса данных журнала действий для подписки Azure в определенном диапазоне дат.
+Помимо определений метрик и связанных значений можно также использовать REST API Azure Monitor, чтобы получить дополнительные интересные сведения, связанные с ресурсами Azure. Например, можно запросить данные [журнала действий](https://msdn.microsoft.com/library/azure/dn931934.aspx) . В следующих примерах запросов используется REST API Azure Monitor для запроса журнала действий.
 
-```powershell
-$apiVersion = "2015-04-01"
-$filter = "eventTimestamp ge '2017-08-18' and eventTimestamp le '2017-08-19'and eventChannels eq 'Admin, Operation'"
-$request = "https://management.azure.com/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/microsoft.insights/eventtypes/management/values?api-version=${apiVersion}&`$filter=${filter}"
-Invoke-RestMethod -Uri $request `
-    -Headers $authHeader `
-    -Method Get `
-    -Verbose
+Получение журналов действий с фильтром.
+
+``` HTTP
+GET https://management.azure.com/subscriptions/089bd33f-d4ec-47fe-8ba5-0753aa5c5b33/providers/microsoft.insights/eventtypes/management/values?api-version=2015-04-01&$filter=eventTimestamp ge '2018-01-21T20:00:00Z' and eventTimestamp le '2018-01-23T20:00:00Z' and resourceGroupName eq 'MSSupportGroup'
+```
+
+Получение журналов действий с фильтром и выбором.
+
+```HTTP
+GET https://management.azure.com/subscriptions/089bd33f-d4ec-47fe-8ba5-0753aa5c5b33/providers/microsoft.insights/eventtypes/management/values?api-version=2015-04-01&$filter=eventTimestamp ge '2015-01-21T20:00:00Z' and eventTimestamp le '2015-01-23T20:00:00Z' and resourceGroupName eq 'MSSupportGroup'&$select=eventName,id,resourceGroupName,resourceProviderName,operationName,status,eventTimestamp,correlationId,submissionTimestamp,level
+```
+
+Получение журналов действий с выбором.
+
+```HTTP
+GET https://management.azure.com/subscriptions/089bd33f-d4ec-47fe-8ba5-0753aa5c5b33/providers/microsoft.insights/eventtypes/management/values?api-version=2015-04-01&$select=eventName,id,resourceGroupName,resourceProviderName,operationName,status,eventTimestamp,correlationId,submissionTimestamp,level
+```
+
+Получение журналов действий без фильтра и выбора.
+
+```HTTP
+GET https://management.azure.com/subscriptions/089bd33f-d4ec-47fe-8ba5-0753aa5c5b33/providers/microsoft.insights/eventtypes/management/values?api-version=2015-04-01
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

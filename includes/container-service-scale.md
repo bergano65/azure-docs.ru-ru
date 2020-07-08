@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: danlep
 ms.openlocfilehash: a4af53e035929a44f74a95b8e9897cb1dc0c6d8e
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "66814814"
 ---
 [!INCLUDE [ACS deprecation](container-service-deprecation.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "66814814"
 
 ## <a name="scale-with-the-azure-cli"></a>Масштабирование с помощью Azure CLI
 
-[Установите Azure CLI](/cli/azure/install-azure-cli) и войдите в учетную запись Azure с помощью `az login`.
+[Установите Azure CLI](/cli/azure/install-azure-cli) и войдите в учетную запись Azure с помощью `az login` .
 
 ### <a name="see-the-current-agent-count"></a>Просмотр текущего числа агентов
 Чтобы просмотреть количество агентов, входящих в кластер на текущий момент, запустите команду `az acs show`. Эта команда показывает конфигурацию кластера. Например, следующая команда отображает конфигурацию службы контейнеров с именем `containerservice-myACSName` в группе ресурсов `myResourceGroup`:

@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 06/18/2018
+ms.date: 06/17/2020
 ms.author: yexu
-ms.openlocfilehash: df078673aed60086a88961ff64f9bfa596d96346
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: a10f7c3dda4d16a264cf52f9fddcf2bf0ed93348
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81414089"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84907519"
 ---
 # <a name="copy-data-tool-in-azure-data-factory"></a>Инструмент копирования данных в фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "81414089"
 
 Чтобы запустить инструмент копирования данных, на домашней странице фабрики данных щелкните плитку **Копировать данные**.
 
-![Страница "Начало работы". Ссылка на инструмент копирования данных](./media/copy-data-tool/get-started-page.png)
+![Страница "Начало работы". Ссылка на инструмент копирования данных](./media/doc-common-process/get-started-page.png)
 
 
 ## <a name="intuitive-flow-for-loading-data-into-a-data-lake"></a>Интуитивная процедура загрузки данных в озеро данных

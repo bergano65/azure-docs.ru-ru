@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: storage
 author: tamram
@@ -9,10 +9,10 @@ ms.date: 12/20/2019
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: aec1faa4de1149f08fb6fbc1cc5bf3aa2ab6becd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75371788"
 ---
 Подпись общего доступа (SAS) позволяет предоставить ограниченный доступ к контейнерам и BLOB-объектам в вашей учетной записи хранения. При создании SAS необходимо указать его ограничения, в том числе ресурсы службы хранилища Azure, к которым разрешен доступ клиенту, какие разрешения они имеют на эти ресурсы, а также срок действия SAS.
