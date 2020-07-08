@@ -9,10 +9,10 @@ ms.date: 03/05/2020
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: 726fc9cc0e4eb5a8f9bed5cca8dd4d3df588ac7c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79371564"
 ---
 Служба хранилища Azure предлагает несколько типов учетных записей хранения. Каждый тип поддерживает различные возможности, и у каждого из них своя модель ценообразования. Прежде чем создавать учетную запись хранения, рассмотрите эти различия, чтобы определить подходящий для ваших приложений тип учетной записи. Типы учетных записей хранения:
@@ -27,11 +27,11 @@ ms.locfileid: "79371564"
 
 | Тип учетной записи хранения | Поддерживаемые службы                       | Поддерживаемые уровни производительности      | Поддерживаемые уровни доступа         | Варианты репликации               | Модель развертывания<div role="complementary" aria-labelledby="deployment-model"><sup>1</sup></div> | Шифрование<div role="complementary" aria-labelledby="encryption"><sup>2</sup></div> |
 |----------------------|------------------------------------------|-----------------------------|--------------------------------|-----------------------------------|------------------------------|------------------------|
-| Общего назначения версии 2   | Большой двоичный объект, файл, очередь, таблица, диск и Data Lake Gen2<div role="complementary" aria-labelledby="data-lake-gen2"><sup>6</sup></div>      | "Стандартный", "Премиум"<div role="complementary" aria-labelledby="premium-performance"><sup>5</sup></div> | Горячий, холодное, архивная<div role="complementary" aria-labelledby="archive"><sup>3</sup></div> | LRS, GRS, RA-GRS, ZRS, ГЗРС (Предварительная версия), RA-ГЗРС (Предварительная версия)<div role="complementary" aria-labelledby="zone-redundant-storage"><sup>4</sup></div> | Resource Manager             | зашифрованные;              |
-| Общего назначения версии 1   | Большой двоичный объект, файл, очередь, таблица и диск       | "Стандартный", "Премиум"<div role="complementary" aria-labelledby="premium-performance"><sup>5</sup></div> | Недоступно                            | LRS, GRS, RA-GRS                  | Resource Manager, классическая    | зашифрованные;              |
-| блоккблобстораже   | Большой двоичный объект (блочные и добавочные BLOB-объекты) | Premium                       | Недоступно                            | LRS, ZRS<div role="complementary" aria-labelledby="zone-redundant-storage"><sup>4</sup></div>                               | Resource Manager             | зашифрованные;              |
-| филестораже   | Только файл | Premium                       | Недоступно                            | LRS, ZRS<div role="complementary" aria-labelledby="zone-redundant-storage"><sup>4</sup></div>                               | Resource Manager             | зашифрованные;              |
-| BlobStorage         | Большой двоичный объект (блочные и добавочные BLOB-объекты) | Standard                      | Горячий, холодное, архивная<div role="complementary" aria-labelledby="archive"><sup>3</sup></div> | LRS, GRS, RA-GRS                  | Resource Manager             | зашифрованные;              |
+| Общего назначения версии 2   | Большой двоичный объект, файл, очередь, таблица, диск и Data Lake Gen2<div role="complementary" aria-labelledby="data-lake-gen2"><sup>6</sup></div>      | "Стандартный", "Премиум"<div role="complementary" aria-labelledby="premium-performance"><sup>5</sup></div> | Горячий, холодный или архивный<div role="complementary" aria-labelledby="archive"><sup>3</sup></div> | LRS, GRS, RA-GRS, ZRS, ГЗРС (Предварительная версия), RA-ГЗРС (Предварительная версия)<div role="complementary" aria-labelledby="zone-redundant-storage"><sup>4</sup></div> | Resource Manager             | С шифрованием              |
+| Общего назначения версии 1   | Большой двоичный объект, файл, очередь, таблица и диск       | "Стандартный", "Премиум"<div role="complementary" aria-labelledby="premium-performance"><sup>5</sup></div> | Н/Д                            | LRS, GRS, RA-GRS                  | Resource Manager, классическая    | С шифрованием              |
+| блоккблобстораже   | Большой двоичный объект (блочные и добавочные BLOB-объекты) | Premium                       | Недоступно                            | LRS, ZRS<div role="complementary" aria-labelledby="zone-redundant-storage"><sup>4</sup></div>                               | Resource Manager             | С шифрованием              |
+| FileStorage   | Только файл | Premium                       | Недоступно                            | LRS, ZRS<div role="complementary" aria-labelledby="zone-redundant-storage"><sup>4</sup></div>                               | Resource Manager             | С шифрованием              |
+| BlobStorage         | Большой двоичный объект (блочные и добавочные BLOB-объекты) | Стандартный                      | Горячий, холодный или архивный<div role="complementary" aria-labelledby="archive"><sup>3</sup></div> | LRS, GRS, RA-GRS                  | Resource Manager             | С шифрованием              |
 
 <div id="deployment-model"><sup>1</sup> Рекомендуется использовать модель развертывания с помощью Azure Resource Manager. Учетные записи хранения, в которых используется классическая модель развертывания, по-прежнему можно создавать в некоторых расположениях, а имеющиеся классические учетные записи по-прежнему поддерживаются. Дополнительные сведения см. в статье <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-model">Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов</a>.</div><br/>
 

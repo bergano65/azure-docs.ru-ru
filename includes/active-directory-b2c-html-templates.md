@@ -6,10 +6,10 @@ ms.topic: include
 ms.date: 02/12/2020
 ms.author: mimart
 ms.openlocfilehash: d43b879057001d62ea72bd2e011ad52957d47470
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78189037"
 ---
 ## <a name="sample-templates"></a>Примеры шаблонов
@@ -25,9 +25,9 @@ git clone https://github.com/Azure-Samples/Azure-AD-B2C-page-templates
 
 Чтобы использовать пример, выполните следующие действия.
 
-1. Клонировать репозиторий на локальном компьютере. Выберите папку `/ocean_blue` шаблона или `/slate_gray`.
+1. Клонировать репозиторий на локальном компьютере. Выберите папку шаблона `/ocean_blue` или `/slate_gray` .
 1. Отправьте все файлы в папке шаблона и `/assets` папке в хранилище BLOB-объектов, как описано в предыдущих разделах.
-1. Затем откройте каждый `\*.html` файл в корневой папке `/ocean_blue` или `/slate_gray`, замените все экземпляры относительных URL-адресов файлами CSS, изображениями и шрифтами, отправленными на шаге 2. Пример:
+1. Затем откройте каждый `\*.html` файл в корневой папке `/ocean_blue` или `/slate_gray` , замените все экземпляры относительных URL-адресов файлами CSS, изображениями и шрифтами, отправленными на шаге 2. Пример:
     ```html
     <link href="./css/assets.css" rel="stylesheet" type="text/css" />
     ```
@@ -38,4 +38,4 @@ git clone https://github.com/Azure-Samples/Azure-AD-B2C-page-templates
     ```
 1. Сохраните `\*.html` файлы и отправьте их в хранилище BLOB-объектов.
 1. Теперь измените политику, указав HTML-файл, как упоминалось ранее.
-1. Если вы видите отсутствующие шрифты, изображения или CSS, проверьте ссылки в политике расширения и \*HTML-файлах.
+1. Если вы видите отсутствующие шрифты, изображения или CSS, проверьте ссылки в политике расширения и \* HTML-файлах.

@@ -9,10 +9,10 @@ ms.date: 03/19/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: e978a5e7e76c8ddc9b7e6b80ec7170c45baa2cae
-ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82784118"
 ---
 ### <a name="azure-regions-within-a-geopolitical-region"></a>Регионы Azure в гео-неадминистративной области
@@ -28,19 +28,19 @@ ms.locfileid: "82784118"
 | Индия | Западная Индия, Центральная Индия, Южная Индия |
 | Япония  | Западная Япония, Восточная Япония |
 | Океания | Восточная Австралия, Юго-Восточная Австралия |
-| ЮАР | Южно-Африканская Республика, Юго-Восточная Африка |
+| Южно-Африканская Республика | Южно-Африканская Республика, Юго-Восточная Африка |
 | Южная Америка |Южная Бразилия |
 | Южная Корея | Республика Корея, центральный регион, Республика Корея, южный регион |
 | ОАЭ | Северная ОАЭ, Центральная ОАЭ |
 
 
 
-### <a name="azure-regions-and-geopolitical-boundaries-for-national-clouds"></a>Регионы Azure и неизменяемые границы для национальных облаков
+### <a name="azure-regions-and-geopolitical-boundaries-for-national-clouds"></a>Регионы Azure и геополитические границы для национальных облаков
 
 Виртуальная глобальная сеть доступна в следующих регионах:
 
 |Геополитический регион | Регионы Azure|
 |---|---|
-| Облако US Gov  | US Gov (Аризона), US Gov (Айова), US Gov (Техас), US Gov (Вирджиния), центральный регион US DoD, восточный регион US DoD |
+| Облако US Gov | US Gov (Аризона), US Gov (Айова), US Gov (Техас), US Gov (Вирджиния), центральный регион US DoD, восточный регион US DoD |
 | Восточный Китай | Восточная Китая|
 | Северный Китай | North2 Китая |

@@ -5,34 +5,34 @@ ms.topic: include
 ms.date: 03/16/2020
 ms.author: larryfr
 ms.openlocfilehash: c71f35a06d904b45cb014d5199197220b57cf230
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79486061"
 ---
 Записи в `deploymentconfig.json` документе соответствуют параметрам для [аксвебсервице. deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aks.aksservicedeploymentconfiguration?view=azure-ml-py). В следующей таблице описывается сопоставление между сущностями в документе JSON и параметрами метода.
 
 | Сущность JSON | Параметр метода | Описание |
 | ----- | ----- | ----- |
-| `computeType` | Н/Д | Целевой объект вычисления. Для AKS значение должно быть `aks`. |
+| `computeType` | Н/Д | Целевой объект вычисления. Для AKS значение должно быть `aks` . |
 | `autoScaler` | Н/Д | Содержит элементы конфигурации для автомасштабирования. См. таблицу автомасштабирования. |
-| &emsp;&emsp;`autoscaleEnabled` | `autoscale_enabled` | Включить ли автоматическое масштабирование для веб-службы. `numReplicas`  = Если `0`, `True`; в противном случае — `False`. |
-| &emsp;&emsp;`minReplicas` | `autoscale_min_replicas` | Минимальное число контейнеров, используемых при автомасштабировании этой веб-службы. По умолчанию, `1`. |
-| &emsp;&emsp;`maxReplicas` | `autoscale_max_replicas` | Максимальное число контейнеров, используемых при автомасштабировании этой веб-службы. По умолчанию, `10`. |
-| &emsp;&emsp;`refreshPeriodInSeconds` | `autoscale_refresh_seconds` | Частота, с которой Автомасштабирование пытается масштабировать эту веб-службу. По умолчанию, `1`. |
-| &emsp;&emsp;`targetUtilization` | `autoscale_target_utilization` | Целевая Загрузка (в процентах от 100), которую должен поддерживать Автомасштабирование для этой веб-службы. По умолчанию, `70`. |
+| &emsp;&emsp;`autoscaleEnabled` | `autoscale_enabled` | Включить ли автоматическое масштабирование для веб-службы. `numReplicas`  =  `0` Значение, если, `True` ; в противном случае `False` . |
+| &emsp;&emsp;`minReplicas` | `autoscale_min_replicas` | Минимальное число контейнеров, используемых при автомасштабировании этой веб-службы. По умолчанию, `1` . |
+| &emsp;&emsp;`maxReplicas` | `autoscale_max_replicas` | Максимальное число контейнеров, используемых при автомасштабировании этой веб-службы. По умолчанию, `10` . |
+| &emsp;&emsp;`refreshPeriodInSeconds` | `autoscale_refresh_seconds` | Частота, с которой Автомасштабирование пытается масштабировать эту веб-службу. По умолчанию, `1` . |
+| &emsp;&emsp;`targetUtilization` | `autoscale_target_utilization` | Целевая Загрузка (в процентах от 100), которую должен поддерживать Автомасштабирование для этой веб-службы. По умолчанию, `70` . |
 | `dataCollection` | Н/Д | Содержит элементы конфигурации для сбора данных. |
-| &emsp;&emsp;`storageEnabled` | `collect_model_data` | Указывает, следует ли включить сбор данных модели для веб-службы. По умолчанию, `False`. |
-| `authEnabled` | `auth_enabled` | Следует ли включить проверку подлинности ключа для веб-службы. `tokenAuthEnabled` И `authEnabled` не могут иметь `True`. По умолчанию, `True`. |
-| `tokenAuthEnabled` | `token_auth_enabled` | Указывает, следует ли включить проверку подлинности на маркер для веб-службы. `tokenAuthEnabled` И `authEnabled` не могут иметь `True`. По умолчанию, `False`. |
+| &emsp;&emsp;`storageEnabled` | `collect_model_data` | Указывает, следует ли включить сбор данных модели для веб-службы. По умолчанию, `False` . |
+| `authEnabled` | `auth_enabled` | Следует ли включить проверку подлинности ключа для веб-службы. `tokenAuthEnabled`И `authEnabled` не могут иметь `True` . По умолчанию, `True` . |
+| `tokenAuthEnabled` | `token_auth_enabled` | Указывает, следует ли включить проверку подлинности на маркер для веб-службы. `tokenAuthEnabled`И `authEnabled` не могут иметь `True` . По умолчанию, `False` . |
 | `containerResourceRequirements` | Н/Д | Контейнер для сущностей ЦП и памяти. |
 | &emsp;&emsp;`cpu` | `cpu_cores` | Количество ядер ЦП, выделяемых для этой веб-службы. Значения по умолчанию`0.1` |
 | &emsp;&emsp;`memoryInGB` | `memory_gb` | Объем памяти (в ГБ), выделяемой для данной веб-службы. Параметры`0.5` |
-| `appInsightsEnabled` | `enable_app_insights` | Следует ли включить ведение журнала Application Insights для веб-службы. По умолчанию, `False`. |
-| `scoringTimeoutMs` | `scoring_timeout_ms` | Время ожидания принудительного выполнения для вызовов оценки веб-службы. По умолчанию, `60000`. |
-| `maxConcurrentRequestsPerContainer` | `replica_max_concurrent_requests` | Максимальное число одновременных запросов на узел для этой веб-службы. По умолчанию, `1`. |
-| `maxQueueWaitMs` | `max_request_wait_time` | Максимальное время, в течение которого запрос будет оставаться в очереди три (в миллисекундах), прежде чем будет возвращена ошибка 503. По умолчанию, `500`. |
+| `appInsightsEnabled` | `enable_app_insights` | Следует ли включить ведение журнала Application Insights для веб-службы. По умолчанию, `False` . |
+| `scoringTimeoutMs` | `scoring_timeout_ms` | Время ожидания принудительного выполнения для вызовов оценки веб-службы. По умолчанию, `60000` . |
+| `maxConcurrentRequestsPerContainer` | `replica_max_concurrent_requests` | Максимальное число одновременных запросов на узел для этой веб-службы. По умолчанию, `1` . |
+| `maxQueueWaitMs` | `max_request_wait_time` | Максимальное время, в течение которого запрос будет оставаться в очереди три (в миллисекундах), прежде чем будет возвращена ошибка 503. По умолчанию, `500` . |
 | `numReplicas` | `num_replicas` | Число контейнеров, выделяемых для этой веб-службы. Нет значения по умолчанию. Если этот параметр не задан, автомасштабирование включено по умолчанию. |
 | `keys` | Н/Д | Содержит элементы конфигурации для ключей. |
 | &emsp;&emsp;`primaryKey` | `primary_key` | Первичный ключ проверки подлинности, используемый для этой WebService |

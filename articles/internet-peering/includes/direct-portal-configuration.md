@@ -9,10 +9,10 @@ ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: fda22346a44388248e37473bc7891b8a130569c4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81681066"
 ---
 1. На странице **Создание пиринга** на вкладке **Конфигурация** заполните поля, как показано здесь.
@@ -67,7 +67,7 @@ ms.locfileid: "81681066"
     > [!div class="mx-imgBorder"]
     > ![Отправка пиринга](../media/setup-direct-review-tab-submit.png)
 
-1. После отправки запроса дождитесь завершения развертывания. Если развертывание завершается неудачно, обратитесь в службу [пиринга Майкрософт](mailto:peering@microsoft.com). Успешное развертывание отображается, как показано здесь.
+1. После отправки запроса дождитесь завершения развертывания. Если при развертывании произойдет сбой, обратитесь в [Пиринг Майкрософт](mailto:peering@microsoft.com). Успешное развертывание отображается, как показано здесь.
 
     > [!div class="mx-imgBorder"]
     > ![Пиринг успешно выполнен](../media/setup-direct-success.png)
