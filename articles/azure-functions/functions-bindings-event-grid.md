@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/14/2020
 ms.author: cshoe
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 21654a3b325e8b8f0a3e49ee64b7624c8540d0d5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1dc1198ab9c546ef1defa1891777c4c8081171e9
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77461085"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85957185"
 ---
 # <a name="azure-event-grid-bindings-for-azure-functions"></a>Привязки службы "Сетка событий Azure" для функций Azure
 
@@ -32,13 +32,13 @@ ms.locfileid: "77461085"
 
 ## <a name="add-to-your-functions-app"></a>Добавление в приложение функций
 
-### <a name="functions-2x-and-higher"></a>Функции 2. x и более поздних версий
+### <a name="functions-2x-and-higher"></a>Функции 2.x и более поздних версий
 
 Для работы с триггером и привязками требуется ссылка на соответствующий пакет. Пакет NuGet используется для библиотек классов .NET, в то время как набор расширений используется для всех других типов приложений.
 
-| Язык                                        | Добавить по...                                   | Remarks 
+| Язык                                        | Добавить по...                                   | Комментарии 
 |-------------------------------------------------|---------------------------------------------|-------------|
-| C#                                              | Установка [пакета NuGet], версия 3. x | |
+| C#                                              | Установка [пакета NuGet]версии 2. x | |
 | Скрипт C#, Java, JavaScript, Python, PowerShell | Регистрация [пакета расширений]          | [Расширение "инструменты Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack) " рекомендуется использовать с Visual Studio Code. |
 | Скрипт C# (только в сети портал Azure)         | Добавление привязки                            | Чтобы обновить существующие расширения привязки без повторной публикации приложения функции, см. статью [Обновление расширений]. |
 
@@ -54,4 +54,4 @@ ms.locfileid: "77461085"
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 * [Выполнение функции при диспетчеризации события сетки событий](./functions-bindings-event-grid-trigger.md)
-* [Отправка события сетки событий](./functions-bindings-event-grid-trigger.md)
+* [Отправка события Сетки событий](./functions-bindings-event-grid-trigger.md)

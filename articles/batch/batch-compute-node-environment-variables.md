@@ -3,22 +3,22 @@ title: Переменные среды выполнения задания
 description: Справочник по переменным среды выполнения задания и справочник по пакетной аналитики Azure.
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.openlocfilehash: 0b3f00bcae50b0913432b122c85a3725a489679a
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
-ms.translationtype: HT
+ms.openlocfilehash: 6b8ade312146802ede6e12181a082a8fcd3842fe
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83745331"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85960917"
 ---
 # <a name="azure-batch-runtime-environment-variables"></a>Переменные среды выполнения пакетной службы Azure
 
 [Пакетная служба Azure](https://azure.microsoft.com/services/batch/) задает на вычислительных узлах указанные ниже переменные среды. Вы можете ссылаться на них в командных строках задач, а также в программах и сценариях, запускаемых этими командными строками.
 
-Подробные сведения об использовании переменных среды в пакетной службе см. в статье [Параметры среды для задач](https://docs.microsoft.com/azure/batch/batch-api-basics#environment-settings-for-tasks).
+Подробные сведения об использовании переменных среды в пакетной службе см. в статье [Параметры среды для задач](./jobs-and-tasks.md#environment-settings-for-tasks).
 
 ## <a name="environment-variable-visibility"></a>Видимость переменных среды
 
-Эти переменные среды видимы только в контексте **пользователя задачи** — учетной записи пользователя на узле, с помощью которой выполняется задача. Вы *не* увидите их, если [удаленно подключитесь](https://azure.microsoft.com/documentation/articles/batch-api-basics/#connecting-to-compute-nodes) к вычислительному узлу через протокол удаленного рабочего стола (RDP) или Secure Shell (SSH) и отобразите список переменных среды. Это вызвано тем, что учетная запись, используемая для удаленного подключения, отличается от учетной записи, используемой задачей.
+Эти переменные среды видимы только в контексте **пользователя задачи** — учетной записи пользователя на узле, с помощью которой выполняется задача. Вы *не* увидите их, если [удаленно подключитесь](./error-handling.md#connect-to-compute-nodes) к вычислительному узлу через протокол удаленного рабочего стола (RDP) или Secure Shell (SSH) и отобразите список переменных среды. Это вызвано тем, что учетная запись, используемая для удаленного подключения, отличается от учетной записи, используемой задачей.
 
 Чтобы получить текущее значение переменной среды, запустите `cmd.exe` на вычислительном узле Windows или `/bin/sh` на узле Linux:
 
@@ -40,8 +40,8 @@ ms.locfileid: "83745331"
 |-----------------------------------|--------------------------------------------------------------------------|--------------|---------|
 | AZ_BATCH_ACCOUNT_NAME           | Имя учетной записи пакетной службы, к которой относится задача.                  | Все задачи.   | mybatchaccount |
 | AZ_BATCH_ACCOUNT_URL            | URL-адрес учетной записи пакетной службы. | Все задачи. | `https://myaccount.westus.batch.azure.com` |
-| AZ_BATCH_APP_PACKAGE            | Префикс всех переменных среды пакета приложения. Например, если приложение "Foo" версии "1" установлено в пуле, переменная окружения будет AZ_BATCH_APP_PACKAGE_FOO_1 (в Linux) или AZ_BATCH_APP_PACKAGE_FOO#1 (в Windows). AZ_BATCH_APP_PACKAGE_FOO_1 указывает на местоположение, в которое был загружен пакет (папка). При использовании версии пакета приложения по умолчанию используйте переменную среды AZ_BATCH_APP_PACKAGE без номеров версий. В Linux, если имя пакета приложения — "Agent-Linux-x64", а версия — "1.1.46.0", фактическое имя среды будет следующим: AZ_BATCH_APP_PACKAGE_agent_linux_x64_1_1_46_0 (с символами подчеркивания и буквами в нижнем регистре). Подробнее см. [здесь](https://docs.microsoft.com/azure/batch/batch-application-packages#execute-the-installed-applications). | Любую задачу с помощью пакета связанного приложения. Доступно также для всех задач, если сам узел имеет пакеты приложений. | AZ_BATCH_APP_PACKAGE_FOO_1 (Linux) или AZ_BATCH_APP_PACKAGE_FOO#1 (Windows) |
-| AZ_BATCH_AUTHENTICATION_TOKEN   | Маркер проверки подлинности, который предоставляет доступ к ограниченному набору операций пакетной службы. Эта переменная среды присутствует, только если [authenticationTokenSettings](/rest/api/batchservice/task/add#authenticationtokensettings) устанавливается при [добавлении задачи](/rest/api/batchservice/task/add#request-body). В API пакетной службы, например в [API BatchClient.Open() для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.batchclient.open#Microsoft_Azure_Batch_BatchClient_Open_Microsoft_Azure_Batch_Auth_BatchTokenCredentials_), значение маркера используется в качестве учетных данных для создания клиента пакетной службы. | Все задачи. | Маркер доступа OAuth2 |
+| AZ_BATCH_APP_PACKAGE            | Префикс всех переменных среды пакета приложения. Например, если приложение "Foo" версии "1" установлено в пуле, переменная окружения будет AZ_BATCH_APP_PACKAGE_FOO_1 (в Linux) или AZ_BATCH_APP_PACKAGE_FOO#1 (в Windows). AZ_BATCH_APP_PACKAGE_FOO_1 указывает на местоположение, в которое был загружен пакет (папка). При использовании версии пакета приложения по умолчанию используйте переменную среды AZ_BATCH_APP_PACKAGE без номеров версий. В Linux, если имя пакета приложения — "Agent-Linux-x64", а версия — "1.1.46.0", фактическое имя среды будет следующим: AZ_BATCH_APP_PACKAGE_agent_linux_x64_1_1_46_0 (с символами подчеркивания и буквами в нижнем регистре). Подробнее см. [здесь](./batch-application-packages.md#execute-the-installed-applications). | Любую задачу с помощью пакета связанного приложения. Доступно также для всех задач, если сам узел имеет пакеты приложений. | AZ_BATCH_APP_PACKAGE_FOO_1 (Linux) или AZ_BATCH_APP_PACKAGE_FOO#1 (Windows) |
+| AZ_BATCH_AUTHENTICATION_TOKEN   | Маркер проверки подлинности, который предоставляет доступ к ограниченному набору операций пакетной службы. Эта переменная среды присутствует, только если [authenticationTokenSettings](/rest/api/batchservice/task/add#authenticationtokensettings) устанавливается при [добавлении задачи](/rest/api/batchservice/task/add#request-body). В API пакетной службы, например в [API BatchClient.Open() для .NET](/dotnet/api/microsoft.azure.batch.batchclient.open#Microsoft_Azure_Batch_BatchClient_Open_Microsoft_Azure_Batch_Auth_BatchTokenCredentials_), значение маркера используется в качестве учетных данных для создания клиента пакетной службы. | Все задачи. | Маркер доступа OAuth2 |
 | AZ_BATCH_CERTIFICATES_DIR       | Каталог в [рабочем каталоге задачи][files_dirs], где хранятся сертификаты для вычислительных узлов Linux. Эта переменная среды не применяется к вычислительным узлам Windows.                                                  | Все задачи.   |  /mnt/batch/tasks/workitems/batchjob001/job-1/task001/certs |
 | AZ_BATCH_HOST_LIST              | Список узлов, выделяемых для [задачи с несколькими экземплярами][multi_instance], в формате `nodeIP,nodeIP`. | Основные задачи и подзадачи с несколькими экземплярами. | `10.0.0.4,10.0.0.5` |
 | AZ_BATCH_IS_CURRENT_NODE_MASTER | Указывает, является ли текущий узел главным для [задачи с несколькими экземплярами][multi_instance]. Возможные значения: `true` и `false`.| Основные задачи и подзадачи с несколькими экземплярами. | `true` |
@@ -63,7 +63,7 @@ ms.locfileid: "83745331"
 | AZ_BATCH_TASK_WORKING_DIR       | Полный путь к [рабочему каталогу задачи][files_dirs] на узле. Выполняемая задача имеет доступ на чтение и запись для этого каталога. | Все задачи. | C:\user\tasks\workitems\batchjob001\job-1\task001\wd |
 | CCP_NODES                       | Список узлов и число ядер на узел, выделяемых для [задачи с несколькими экземплярами][multi_instance]. Узлы и ядра указаны в формате `numNodes<space>node1IP<space>node1Cores<space>`<br/>`node2IP<space>node2Cores<space> ...`, где за числом узлов следует один или несколько IP-адресов узла, а также число ядер для каждого узла. |  Основные задачи и подзадачи с несколькими экземплярами. |`2 10.0.0.4 1 10.0.0.5 1` |
 
-[files_dirs]: https://azure.microsoft.com/documentation/articles/batch-api-basics/#files-and-directories
-[multi_instance]: https://azure.microsoft.com/documentation/articles/batch-mpi/
-[coord_cmd]: https://azure.microsoft.com/documentation/articles/batch-mpi/#coordination-command
-[app_cmd]: https://azure.microsoft.com/documentation/articles/batch-mpi/#application-command
+[files_dirs]: ./files-and-directories.md
+[multi_instance]: ./batch-mpi.md
+[coord_cmd]: ./batch-mpi.md#coordination-command
+[app_cmd]: ./batch-mpi.md#application-command

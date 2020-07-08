@@ -8,12 +8,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: dsindona
-ms.openlocfilehash: a01c8658ff4929d07cd185dcea45393cfe3b2a17
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: e0f0f0fdb75961f3ea9ed90e1684ff5ecd2a792d
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82858310"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85961546"
 ---
 # <a name="publishing-guide-for-virtual-machine-offers"></a>Рекомендации по публикации для предложений виртуальных машин
 
@@ -31,7 +31,7 @@ ms.locfileid: "82858310"
 
 Чтобы приступить к работе, свяжитесь с нами по электронной почте на сайте [amp-тестдриве](mailto:amp-testdrive@microsoft.com). 
 
-|Requirements (Требования)  |Подробности |
+|Требования  |Сведения |
 |---------|---------|
 | У вас есть приложение Azure Marketplace   |  Одна или несколько виртуальных машин, развернутых через приложения IaaS или SaaS.      |
 
@@ -54,16 +54,16 @@ ms.locfileid: "82858310"
 | Требование | Сведения |  
 |:--- |:--- | 
 | Выставление счетов и ценообразование | Ваша виртуальная машина должна поддерживать ежемесячное выставление счетов BYOL или с оплатой по мере использования. |  
-| Совместимый с Azure виртуальный жесткий диск (VHD) | Виртуальные машины должны быть созданы на платформе Windows или Linux. Дополнительные сведения о создании виртуального жесткого диска см. в следующих статьях: <ul> <li>[Дистрибутивы Linux, одобренные в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros) (для виртуальных жестких дисков Linux).</li> <li>[Создайте VHD-совместимый с Azure виртуальный жесткий диск](./partner-center-portal/azure-vm-create-offer.md) (для виртуальных жестких дисков Windows).</li> </ul> |  
+| Совместимый с Azure виртуальный жесткий диск (VHD) | Виртуальные машины должны быть созданы на платформе Windows или Linux. Дополнительные сведения о создании виртуального жесткого диска см. в следующих статьях: <ul> <li>[Дистрибутивы Linux, одобренные в Azure](../virtual-machines/linux/endorsed-distros.md) (для виртуальных жестких дисков Linux).</li> <li>[Создайте VHD-совместимый с Azure виртуальный жесткий диск](./partner-center-portal/azure-vm-create-offer.md) (для виртуальных жестких дисков Windows).</li> </ul> |  
 
 >[!Note]
 >Теперь вы можете получить доступ к партнерским каналам поставщика облачных решений (CSP). Дополнительные сведения о маркетинге вашего предложения с помощью партнерских каналов Microsoft CSP см. в статье [поставщики облачных решений](./cloud-solution-providers.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы еще не сделали этого, Узнайте, как [расширить свой облачный бизнес с помощью Azure Marketplace](https://azuremarketplace.microsoft.com/sell).
+Если вы еще не сделали этого, ознакомьтесь со статьей [Расширение облачного бизнеса с помощью Azure Marketplace](https://azuremarketplace.microsoft.com/sell).
 
-Чтобы зарегистрироваться и начать работу в центре партнеров, выполните следующие действия.
+Чтобы зарегистрироваться и начать работу в Центре партнеров, выполните следующие действия.
 
-- [Войдите в центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) , чтобы создать или завершить свое предложение.
+- [Войдите в Центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership), чтобы создать или завершить свое предложение.
 - Дополнительные сведения см. [в разделе Создание предложения виртуальной машины](./partner-center-portal/azure-vm-create-offer.md) .

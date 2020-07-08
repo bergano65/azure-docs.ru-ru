@@ -3,12 +3,12 @@ title: Обеспечение безопасного доступа к Key Vault
 description: Сведения о программном доступе к учетным данным в Key Vault с помощью пакетной службы Azure.
 ms.topic: how-to
 ms.date: 02/13/2020
-ms.openlocfilehash: 3d0b2128bef1434f073700eb83e5935d74d8bb7a
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
-ms.translationtype: HT
+ms.openlocfilehash: 6ea248dd51ae6786b0e987dc31ca83b29277cd16
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83725726"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85961512"
 ---
 # <a name="securely-access-key-vault-with-batch"></a>Обеспечение безопасного доступа к Key Vault с помощью пакетной службы
 
@@ -37,7 +37,7 @@ cd C:\Program Files (x86)\Windows Kits\10\bin\x64
 makecert -sv batchcertificate.pvk -n "cn=batch.cert.mydomain.org" batchcertificate.cer -b 09/23/2019 -e 09/23/2019 -r -pe -a sha256 -len 2048
 ```
 
-Для пакетной службы требуется файл `.pfx`. С помощью средства [pvk2pfx](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx) преобразуйте файлы `.cer` и `.pvk`, созданные `makecert`, в единый файл `.pfx`.
+Для пакетной службы требуется файл `.pfx`. С помощью средства [pvk2pfx](/windows-hardware/drivers/devtest/pvk2pfx) преобразуйте файлы `.cer` и `.pvk`, созданные `makecert`, в единый файл `.pfx`.
 
 ```console
 pvk2pfx -pvk batchcertificate.pvk -spc batchcertificate.cer -pfx batchcertificate.pfx -po

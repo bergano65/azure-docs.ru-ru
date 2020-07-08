@@ -7,12 +7,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 05/01/2020
 ms.author: dsindona
-ms.openlocfilehash: 9ac7640dd8b63c72bac83c98e07cf861fb26c870
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.openlocfilehash: 471675de58161fc0c0110e2968089da062c6da87
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83845801"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85960568"
 ---
 # <a name="use-azure-blob-storage-to-manage-commercial-marketplace-leads"></a>Использование хранилища BLOB-объектов Azure для управления потенциальными клиентами на коммерческом рынке
 
@@ -33,11 +33,11 @@ ms.locfileid: "83845801"
 3. На портале Azure создайте учетную запись хранения, выполнив указанные ниже действия.  
     1. В меню слева выберите **+Создать ресурс**.  Справа появится панель **Новый** (колонка).
     2. На панели **Новый** выберите **Хранилище**.  Справа отобразится список **Подборка**.
-    3. Выберите **Учетная запись хранения**, чтобы приступить к созданию учетной записи.  Следуйте [инструкциям](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal) по созданию учетной записи хранения.
+    3. Выберите **Учетная запись хранения**, чтобы приступить к созданию учетной записи.  Следуйте [инструкциям](../../storage/common/storage-quickstart-create-account.md?tabs=azure-portal) по созданию учетной записи хранения.
 
     ![Шаги по созданию учетной записи хранения Azure](./media/commercial-marketplace-lead-management-instructions-azure-blob/azure-storage-create.png)
 
-    Дополнительные сведения об учетных записях хранения см. в [кратком руководстве](https://docs.microsoft.com/azure/storage/).  Дополнительные сведения о ценах на службу хранилища см. на странице [Обзор цен на хранилище Azure](https://azure.microsoft.com/pricing/details/storage/).
+    Дополнительные сведения об учетных записях хранения см. в этом [кратком руководстве](../../storage/blobs/storage-quickstart-blobs-portal.md).  Дополнительные сведения о ценах на службу хранилища см. на странице [Обзор цен на хранилище Azure](https://azure.microsoft.com/pricing/details/storage/).
 
 4. Дождитесь завершения процесса подготовки учетной записи хранения к работе. Обычно это занимает несколько минут.  Затем откройте учетную запись хранения на странице **Главная** портала Azure, щелкнув ссылку **Просмотреть все ресурсы** или выбрав **Все ресурсы** в строке навигации слева на портале Azure.
 

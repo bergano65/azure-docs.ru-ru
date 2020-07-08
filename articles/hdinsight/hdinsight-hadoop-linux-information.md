@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,seoapr2020
 ms.topic: conceptual
 ms.date: 04/29/2020
-ms.openlocfilehash: 252467a22ba37352cee4c3e7bffcf1ff910c86ba
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 55ffd563ea0a99d32608bd90bd53d7dc88eb4cf2
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83835450"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85961818"
 ---
 # <a name="information-about-using-hdinsight-on-linux"></a>Сведения об использовании HDInsight в Linux
 
@@ -40,13 +40,17 @@ ms.locfileid: "83835450"
 
 На внутреннем уровне каждый узел в кластере имеет имя, назначаемое при конфигурации кластера. Имена кластеров вы найдете на странице **Hosts** (Узлы) в веб-интерфейсе Ambari. Список узлов можно также получить через интерфейс REST API Ambari следующим образом:
 
-    curl -u admin -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/hosts" | jq '.items[].Hosts.host_name'
+```console
+curl -u admin -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/hosts" | jq '.items[].Hosts.host_name'
+```
 
 Замените `CLUSTERNAME` именем кластера. При появлении запроса введите пароль для учетной записи администратора. Эта команда возвращает документ JSON, который содержит список узлов в кластере. Программа [jq](https://stedolan.github.io/jq/) извлекает значение элемента `host_name` для каждого узла.
 
 Если требуется найти имя узла для конкретной службы, можно запросить Ambari для этого компонента. Например, чтобы найти узлы для узла имен HDFS, выполните следующую команду:
 
-    curl -u admin -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/services/HDFS/components/NAMENODE" | jq '.host_components[].HostRoles.host_name'
+```console
+curl -u admin -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/services/HDFS/components/NAMENODE" | jq '.host_components[].HostRoles.host_name'
+```
 
 Эта команда возвращает документ JSON с описанием службы, а затем программа [jq](https://stedolan.github.io/jq/) извлекает только значение `host_name` для узлов.
 
@@ -107,7 +111,9 @@ ms.locfileid: "83835450"
 
 Если вы используете службу хранилища Azure или Data Lake Storage, для доступа к данным не требуется никаких специальных действий в HDInsight. Например, следующая команда отображает список файлов в папке `/example/data` независимо от того, хранится ли она в службе хранилища Azure или в Data Lake Storage:
 
-    hdfs dfs -ls /example/data
+```console
+hdfs dfs -ls /example/data
+```
 
 В HDInsight ресурсы хранилища данных (хранилище BLOB-объектов Azure и Azure Data Lake Storage) отделены от вычислительных ресурсов. Кластеры HDInsight можно создавать для выполнения необходимых вычислений и удалять их после завершения работы. При этом файлы данных будут храниться в облачном хранилище столько, сколько потребуется.
 

@@ -4,12 +4,12 @@ description: Включение автоматического масштаби�
 ms.topic: how-to
 ms.date: 10/24/2019
 ms.custom: H1Hack27Feb2017,fasttrack-edit
-ms.openlocfilehash: ad1bf47cd2b9d8db950154b5a36786c294549566
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
-ms.translationtype: HT
+ms.openlocfilehash: cb40ea72dad2313618fb3c38bf73bf822f4b4433
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83780249"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85960849"
 ---
 # <a name="create-an-automatic-formula-for-scaling-compute-nodes-in-a-batch-pool"></a>Создание формулы для автоматизации масштабирования вычислительных узлов в пуле пакетной службы
 
@@ -126,6 +126,9 @@ $NodeDeallocationOption = taskcompletion;
 | $CurrentDedicatedNodes |Текущее количество выделенных вычислительных узлов. |
 | $CurrentLowPriorityNodes |Текущее количество вычислительных узлов с низким приоритетом, включая все замещенные узлы. |
 | $PreemptedNodeCount | Количество узлов в пуле, которые находятся в замещенном состоянии. |
+
+> [!IMPORTANT]
+> Задачи выпуска заданий в настоящее время не включены в приведенные выше переменные, которые предоставляют счетчики задач, такие как $ActiveTasks и $PendingTasks. В зависимости от формулы автоматического масштабирования это может привести к удалению узлов и отсутствии доступных узлов для выполнения задач выпуска задания.
 
 > [!TIP]
 > Приведенные в предыдущей таблице определяемые службой переменные только для чтения — это *объекты*, предоставляющие различные методы доступа к данным, связанным с каждым объектом. Дополнительные сведения см. в разделе [Получение выборки данных](#getsampledata) далее в этой статье.
@@ -372,17 +375,17 @@ $TargetDedicatedNodes = min(400, $totalDedicatedNodes)
 
 ## <a name="create-an-autoscale-enabled-pool-with-batch-sdks"></a>Создание пула с поддержкой автомасштабирования с помощью пакетов SDK пакетной службы
 
-Настройки автомасштабирования можно указать с помощью любых [пакетов SDK пакетной службы](batch-apis-tools.md#azure-accounts-for-batch-development), [REST API пакетной службы](https://docs.microsoft.com/rest/api/batchservice/), [командлетов PowerShell пакетной службы](batch-powershell-cmdlets-get-started.md) или [интерфейса командной строки пакетной службы](batch-cli-get-started.md). В этом разделе представлены примеры для .NET и Python.
+Настройки автомасштабирования можно указать с помощью любых [пакетов SDK пакетной службы](batch-apis-tools.md#azure-accounts-for-batch-development), [REST API пакетной службы](/rest/api/batchservice/), [командлетов PowerShell пакетной службы](batch-powershell-cmdlets-get-started.md) или [интерфейса командной строки пакетной службы](batch-cli-get-started.md). В этом разделе представлены примеры для .NET и Python.
 
 ### <a name="net"></a>.NET
 
 Чтобы создать пул с поддержкой автомасштабирования в .NET, выполните указанные ниже действия.
 
-1. Создайте пул с помощью метода [BatchClient.PoolOperations.CreatePool](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.pooloperations.createpool).
-1. Задайте для свойства [CloudPool.AutoScaleEnabled](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.autoscaleenabled) значение `true`.
-1. Задайте свойство [CloudPool.AutoScaleFormula](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.autoscaleformula) с помощью формулы автомасштабирования.
-1. (Необязательно.) Задайте свойство [CloudPool.AutoScaleEvaluationInterval](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.autoscaleevaluationinterval) (значение по умолчанию — 15 минут).
-1. Зафиксируйте пул с помощью метода [CloudPool.Commit](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.commit) или [CommitAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.commitasync).
+1. Создайте пул с помощью метода [BatchClient.PoolOperations.CreatePool](/dotnet/api/microsoft.azure.batch.pooloperations.createpool).
+1. Задайте для свойства [CloudPool.AutoScaleEnabled](/dotnet/api/microsoft.azure.batch.cloudpool.autoscaleenabled) значение `true`.
+1. Задайте свойство [CloudPool.AutoScaleFormula](/dotnet/api/microsoft.azure.batch.cloudpool.autoscaleformula) с помощью формулы автомасштабирования.
+1. (Необязательно.) Задайте свойство [CloudPool.AutoScaleEvaluationInterval](/dotnet/api/microsoft.azure.batch.cloudpool.autoscaleevaluationinterval) (значение по умолчанию — 15 минут).
+1. Зафиксируйте пул с помощью метода [CloudPool.Commit](/dotnet/api/microsoft.azure.batch.cloudpool.commit) или [CommitAsync](/dotnet/api/microsoft.azure.batch.cloudpool.commitasync).
 
 В следующем фрагменте кода создается пул с поддержкой автомасштабирования в .NET. Формула автомасштабирования пула устанавливает целевое количество выделенных узлов равным 5 по понедельникам и равным 1 в остальные дни недели. [Интервал автомасштабирования](#automatic-scaling-interval) составляет 30 минут. В этом и других фрагментах кода C#, приведенных в этой статье, `myBatchClient` представляет собой правильно инициализированный экземпляр класса [BatchClient][net_batchclient].
 
@@ -519,11 +522,11 @@ await myBatchClient.PoolOperations.EnableAutoScaleAsync(
 
 Чтобы вычислить формулу автомасштабирования, сначала необходимо включить автомасштабирование в пуле с помощью допустимой формулы. Чтобы протестировать формулу в пуле, в котором еще не включено автомасштабирование, используйте формулу с одной строкой `$TargetDedicatedNodes = 0` при первом включении автомасштабирования. Затем для оценки формулы, которую требуется протестировать, выполните одно из следующих действий:
 
-* Вызовите метод [BatchClient.PoolOperations.EvaluateAutoScale](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.pooloperations.evaluateautoscale) или [EvaluateAutoScaleAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.pooloperations.evaluateautoscaleasync).
+* Вызовите метод [BatchClient.PoolOperations.EvaluateAutoScale](/dotnet/api/microsoft.azure.batch.pooloperations.evaluateautoscale) или [EvaluateAutoScaleAsync](/dotnet/api/microsoft.azure.batch.pooloperations.evaluateautoscaleasync).
 
     Для выполнения оценки этим методам .NET пакетной службы требуется идентификатор имеющегося пула и строка, содержащая формулу автомасштабирования.
 
-* [Оцените формулу автомасштабирования.](https://docs.microsoft.com/rest/api/batchservice/evaluate-an-automatic-scaling-formula)
+* [Оцените формулу автомасштабирования.](/rest/api/batchservice/evaluate-an-automatic-scaling-formula)
 
     В этом запросе REST API укажите идентификатор пула в универсальном коде ресурса и формулу автомасштабирования в элементе *autoScaleFormula* текста запроса. Ответ операции содержит все сведения об ошибках, которые могут быть связаны с формулой.
 
@@ -609,13 +612,13 @@ AutoScaleRun.Results:
 
 Чтобы убедиться в том, что формула работает правильно, мы рекомендуем периодически проверять результаты автомасштабирования, которое пакетная служба выполняет в пуле. Чтобы сделать это, получите (или обновите) ссылку на пул и проверьте свойства последнего выполнения автомасштабирования в этом пуле.
 
-В .NET пакетной службы свойство [CloudPool.AutoScaleRun](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.autoscalerun) обладает несколькими свойствами, которые предоставляют сведения о последнем выполнении автомасштабирования в пуле.
+В .NET пакетной службы свойство [CloudPool.AutoScaleRun](/dotnet/api/microsoft.azure.batch.cloudpool.autoscalerun) обладает несколькими свойствами, которые предоставляют сведения о последнем выполнении автомасштабирования в пуле.
 
-* [AutoScaleRun.Timestamp.](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.autoscalerun.timestamp)
-* [AutoScaleRun.Results;](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.autoscalerun.results)
-* [AutoScaleRun.Error;](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.autoscalerun.error)
+* [AutoScaleRun.Timestamp.](/dotnet/api/microsoft.azure.batch.autoscalerun.timestamp)
+* [AutoScaleRun.Results;](/dotnet/api/microsoft.azure.batch.autoscalerun.results)
+* [AutoScaleRun.Error;](/dotnet/api/microsoft.azure.batch.autoscalerun.error)
 
-В REST API запрос [Получение сведений о пуле](https://docs.microsoft.com/rest/api/batchservice/get-information-about-a-pool) возвращает сведения о пуле, в том числе результаты последнего выполнения автомасштабирования, в свойстве [autoScaleRun](https://docs.microsoft.com/rest/api/batchservice/get-information-about-a-pool).
+В REST API запрос [Получение сведений о пуле](/rest/api/batchservice/get-information-about-a-pool) возвращает сведения о пуле, в том числе результаты последнего выполнения автомасштабирования, в свойстве [autoScaleRun](/rest/api/batchservice/get-information-about-a-pool).
 
 В следующем фрагменте кода C# для вывода сведений о последнем выполнении автомасштабирования в пуле _myPool_ используется библиотека .NET пакетной службы:
 
@@ -732,15 +735,15 @@ string formula = string.Format(@"
 * [Повышение эффективности вычислительных ресурсов в пакетной службе Azure благодаря параллельному выполнению задач на узлах](batch-parallel-node-tasks.md) содержит сведения о том, как можно одновременно выполнять несколько задач на вычислительных узлах пула. Помимо автоматического масштабирования, эта функция позволяет уменьшить длительность выполнения заданий для некоторых рабочих нагрузок, тем самым обеспечивая сокращение затрат.
 * Еще одна возможность повысить эффективность — гарантировать, что приложение пакетной службы отправляет запросы в пакетную службу наиболее оптимальным способом. Чтобы узнать, как ограничить объем данных, передаваемых по сети при потенциальном запросе состояния тысяч вычислительных узлов или задач, см. статью [Эффективные запросы к пакетной службе Azure](batch-efficient-list-queries.md).
 
-[net_api]: https://docs.microsoft.com/dotnet/api/microsoft.azure.batch
-[net_batchclient]: https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.batchclient
-[net_cloudpool_autoscaleformula]: https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.autoscaleformula
-[net_cloudpool_autoscaleevalinterval]: https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.autoscaleevaluationinterval
-[net_enableautoscaleasync]: https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.pooloperations.enableautoscaleasync
-[net_maxtasks]: https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.maxtaskspercomputenode
-[net_poolops_resizepoolasync]: https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.pooloperations.resizepoolasync
+[net_api]: /dotnet/api/microsoft.azure.batch
+[net_batchclient]: /dotnet/api/microsoft.azure.batch.batchclient
+[net_cloudpool_autoscaleformula]: /dotnet/api/microsoft.azure.batch.cloudpool.autoscaleformula
+[net_cloudpool_autoscaleevalinterval]: /dotnet/api/microsoft.azure.batch.cloudpool.autoscaleevaluationinterval
+[net_enableautoscaleasync]: /dotnet/api/microsoft.azure.batch.pooloperations.enableautoscaleasync
+[net_maxtasks]: /dotnet/api/microsoft.azure.batch.cloudpool.maxtaskspercomputenode
+[net_poolops_resizepoolasync]: /dotnet/api/microsoft.azure.batch.pooloperations.resizepoolasync
 
-[rest_api]: https://docs.microsoft.com/rest/api/batchservice/
-[rest_autoscaleformula]: https://docs.microsoft.com/rest/api/batchservice/enable-automatic-scaling-on-a-pool
-[rest_autoscaleinterval]: https://docs.microsoft.com/rest/api/batchservice/enable-automatic-scaling-on-a-pool
-[rest_enableautoscale]: https://docs.microsoft.com/rest/api/batchservice/enable-automatic-scaling-on-a-pool
+[rest_api]: /rest/api/batchservice/
+[rest_autoscaleformula]: /rest/api/batchservice/enable-automatic-scaling-on-a-pool
+[rest_autoscaleinterval]: /rest/api/batchservice/enable-automatic-scaling-on-a-pool
+[rest_enableautoscale]: /rest/api/batchservice/enable-automatic-scaling-on-a-pool

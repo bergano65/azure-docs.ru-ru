@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: 5608d71c4a91c9b46b8ed7de13c9d4c06a3f195f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: cb99a0690e1d07f058572b188ae0b76995f48504
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82194607"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85961801"
 ---
 # <a name="azure-signalr-service-authentication"></a>Аутентификация в Службе Azure SignalR
 
@@ -67,8 +67,10 @@ ms.locfileid: "82194607"
 
 4. После завершения регистрации нового приложения OAuth добавьте *Идентификатор клиента* и *Секрет клиента* в менеджер секретов с помощью следующих команд. Замените *Your_GitHub_Client_Id* и *Your_GitHub_Client_Secret* на значения из собственного приложения OAuth.
 
-        dotnet user-secrets set GitHubClientId Your_GitHub_Client_Id
-        dotnet user-secrets set GitHubClientSecret Your_GitHub_Client_Secret
+    ```dotnetcli
+    dotnet user-secrets set GitHubClientId Your_GitHub_Client_Id
+    dotnet user-secrets set GitHubClientSecret Your_GitHub_Client_Secret
+    ```
 
 ## <a name="implement-the-oauth-flow"></a>Реализация потока OAuth
 
@@ -76,9 +78,11 @@ ms.locfileid: "82194607"
 
 1. Добавьте ссылку на последние пакеты *Microsoft.AspNetCore.Authentication.Cookies* и *AspNet.Security.OAuth.GitHub* восстановите все пакеты.
 
-        dotnet add package Microsoft.AspNetCore.Authentication.Cookies -v 2.1.0-rc1-30656
-        dotnet add package AspNet.Security.OAuth.GitHub -v 2.0.0-rc2-final
-        dotnet restore
+    ```dotnetcli
+    dotnet add package Microsoft.AspNetCore.Authentication.Cookies -v 2.1.0-rc1-30656
+    dotnet add package AspNet.Security.OAuth.GitHub -v 2.0.0-rc2-final
+    dotnet restore
+    ```
 
 1. Откройте файл *Startup.cs* и добавьте инструкцию `using` для следующего пространства имен:
 
@@ -345,19 +349,25 @@ ms.locfileid: "82194607"
 
 2. Создавайте приложение с помощью .NET Core CLI, выполните следующую команду в оболочке командной строки:
 
-        dotnet build
+    ```dotnetcli
+    dotnet build
+    ```
 
 3. После того как создание завершится, чтобы запустить веб-приложение локально, выполните следующую команду:
 
-        dotnet run
+    ```dotnetcli
+    dotnet run
+    ```
 
     По умолчанию приложение будет размещаться локально, используя порт 5000.
 
-        E:\Testing\chattest>dotnet run
-        Hosting environment: Production
-        Content root path: E:\Testing\chattest
-        Now listening on: http://localhost:5000
-        Application started. Press Ctrl+C to shut down.
+    ```output
+    E:\Testing\chattest>dotnet run
+    Hosting environment: Production
+    Content root path: E:\Testing\chattest
+    Now listening on: http://localhost:5000
+                    Application started. Press Ctrl+C to shut down.
+    ```
 
 4. Запустите окно браузера и перейдите к `http://localhost:5000`. Чтобы войти с помощью GitHub, щелкните **эту** ссылку вверху.
 

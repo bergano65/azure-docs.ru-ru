@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: 9ff961638aa170948d51793a21e86d18dd7e1d80
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: 65e1fa07d2af15e9ccb5f85ce4645e3e6c287952
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "69016789"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85960373"
 ---
 # <a name="how-to-build-a-smooth-streaming-windows-store-application"></a>Создание приложения для магазина Windows с бесперебойной потоковой передачей  
 
@@ -85,7 +85,7 @@ ms.locfileid: "69016789"
     | name | Значение |
     | --- | --- |
     | Ссылочная группа |Windows/Расширения |
-    | Справочник |Выберите клиентский пакет SDK бесперебойной потоковой передачи Microsoft для Windows 8 и пакет среды выполнения Microsoft Visual C++ |
+    | Справка |Выберите клиентский пакет SDK бесперебойной потоковой передачи Microsoft для Windows 8 и пакет среды выполнения Microsoft Visual C++ |
 
 1. Нажмите кнопку **ОК**. 
 
@@ -94,7 +94,7 @@ ms.locfileid: "69016789"
 ### <a name="to-design-the-player-user-interface"></a>Создание пользовательского интерфейса проигрывателя
 
 1. В обозревателе решений дважды щелкните **MainPage.xaml** , чтобы открыть его в режиме конструктора.
-2. Выделите ** &lt;сетку&gt; ** и ** &lt;/Grid&gt; ** теги в файле XAML и вставьте следующий код между двумя тегами:
+2. Выделите ** &lt; сетку &gt; ** и ** &lt; /Grid &gt; ** теги в файле XAML и вставьте следующий код между двумя тегами:
 
    ```xml
          <Grid.RowDefinitions>
@@ -151,15 +151,24 @@ ms.locfileid: "69016789"
 
 1. В обозревателе решений щелкните правой кнопкой мыши файл **MainPage.xaml** и выберите команду **Просмотреть код**.
 2. Добавьте следующую инструкцию using в начало файла:
-   
+
+    ```csharp
         using Windows.Media;
+    ```
+
 3. В начале класса **MainPage** добавьте следующие члены данных:
-   
-         private MediaExtensionManager extensions = new MediaExtensionManager();
+
+    ```csharp
+        private MediaExtensionManager extensions = new MediaExtensionManager();
+    ```
+
 4. В конце конструктора **MainPage** добавьте следующие две строки:
-   
+
+    ```csharp
         extensions.RegisterByteStreamHandler("Microsoft.Media.AdaptiveStreaming.SmoothByteStreamHandler", ".ism", "text/xml");
         extensions.RegisterByteStreamHandler("Microsoft.Media.AdaptiveStreaming.SmoothByteStreamHandler", ".ism", "application/vnd.ms-sstr+xml");
+    ```
+
 5. Добавьте в конце класса **MainPage** следующий код:
    ```csharp
          # region UI Button Click Events
@@ -1027,7 +1036,7 @@ ms.locfileid: "69016789"
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="other-resources"></a>Другие ресурсы:
