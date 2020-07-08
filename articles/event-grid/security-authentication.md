@@ -1,92 +1,37 @@
 ---
-title: 'Сетка событий Azure: безопасность и проверка подлинности'
-description: В этой статье описаны разные способы проверки подлинности для доступа к ресурсам службы "Сетка событий" (веб-перехватчик, подписки, пользовательские разделы).
+title: Проверка подлинности доставки событий в обработчики событий (сетка событий Azure)
+description: В этой статье описываются различные способы проверки подлинности доставки в обработчики событий в службе "Сетка событий Azure".
 services: event-grid
-author: banisadr
-manager: timlt
+author: spelluru
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 03/06/2020
-ms.author: babanisa
-ms.openlocfilehash: bca450022322db7a7569fa1dc7ce80ec75a9ce69
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
-ms.translationtype: HT
+ms.date: 06/25/2020
+ms.author: spelluru
+ms.openlocfilehash: 46b1aa500f00046dd4d6e318b270982e8b747a79
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83774309"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85412827"
 ---
-# <a name="authenticating-access-to-azure-event-grid-resources"></a>Проверка подлинности для доступа к ресурсам службы "Сетка событий Azure"
-В этой статье приведены сведения о следующих сценариях:  
+# <a name="authenticate-event-delivery-to-event-handlers-azure-event-grid"></a>Проверка подлинности доставки событий в обработчики событий (сетка событий Azure)
+Эта статья содержит сведения о проверке подлинности доставки событий в обработчики событий. Также показано, как защитить конечные точки веб-перехватчика, используемые для получения событий из службы "Сетка событий", с помощью Azure Active Directory (Azure AD) или общего секрета.
 
-- проверка подлинности клиентов, публикующих события в службе "Сетка событий Azure" с помощью подписанного URL-адреса (SAS) или ключа; 
-- Защитите конечную точку веб-перехватчика, которая используется для получения событий из службы "Сетка событий Azure" с помощью Azure Active Directory (Azure AD) или общего секрета.
+## <a name="use-system-assigned-identities-for-event-delivery"></a>Использовать назначенные системой удостоверения для доставки событий
+Вы можете включить управляемое системой удостоверение для раздела или домена и использовать удостоверение для пересылки событий в поддерживаемые места назначения, такие как очереди и разделы служебной шины, концентраторы событий и учетные записи хранения.
 
-## <a name="authenticate-publishing-clients-using-sas-or-key"></a>Проверка подлинности клиентов при публикации с помощью SAS или ключа
-Для пользовательских разделов используется либо подписанный URL-адрес (SAS), либо аутентификация с помощью ключа. Рекомендуется использовать SAS, но проверка подлинности с использованием ключа обеспечивает простое программирование, а также совместима со множеством существующих издателей веб-перехватчиков.
+Ниже приводятся шаги: 
 
-Значение проверки подлинности следует включить в заголовок HTTP. Для SAS в качестве значения заголовка используйте **aeg-sas-token**. Для подлинности с использованием ключа в качестве значения заголовка следует использовать **aeg-sas-key**.
+1. Создайте раздел или домен с назначенным системой удостоверением или обновите существующий раздел или домен, чтобы включить удостоверение. 
+1. Добавьте удостоверение в соответствующую роль (например, отправитель данных служебной шины) в целевом расположении (например, в очередь служебной шины).
+1. При создании подписок на события включите использование удостоверения для доставки событий в назначение. 
 
-### <a name="key-authentication"></a>Проверка подлинности с использованием ключа
+Подробные пошаговые инструкции см. в разделе [Доставка событий с помощью управляемого удостоверения](managed-service-identity.md).
 
-Проверка подлинности с использованием ключа — самая простая форма проверки подлинности. Используйте формат: `aeg-sas-key: <your key>` в заголовке сообщения.
-
-Например, для передачи ключа можно использовать следующую команду:
-
-```
-aeg-sas-key: XXXXXXXX53249XX8XXXXX0GXXX/nDT4hgdEj9DpBeRr38arnnm5OFg==
-```
-
-Можно также указать `aeg-sas-key` в качестве параметра запроса. 
-
-```
-https://<yourtopic>.<region>.eventgrid.azure.net/eventGrid/api/events?api-version=2019-06-01&&aeg-sas-key=XXXXXXXX53249XX8XXXXX0GXXX/nDT4hgdEj9DpBeRr38arnnm5OFg==
-```
-
-### <a name="sas-tokens"></a>Маркеры SAS
-
-Маркеры SAS для сетки события включают ресурс, срок его действия и подпись. Маркер SAS имеет следующий формат: `r={resource}&e={expiration}&s={signature}`.
-
-Ресурс — это путь для раздела сетки событий, в который вы отправляете события. Вот пример допустимого пути к ресурсу: `https://<yourtopic>.<region>.eventgrid.azure.net/eventGrid/api/events?api-version=2019-06-01`. Сведения о поддерживаемых версиях API см. в статье [Типы ресурсов Microsoft.EventGrid](https://docs.microsoft.com/azure/templates/microsoft.eventgrid/allversions). 
-
-Вы создаете подпись на основе ключа.
-
-Например, допустимое значение **aeg-sas-token** выглядит следующим образом:
-
-```http
-aeg-sas-token: r=https%3a%2f%2fmytopic.eventgrid.azure.net%2feventGrid%2fapi%2fevent&e=6%2f15%2f2017+6%3a20%3a15+PM&s=a4oNHpRZygINC%2fBPjdDLOrc6THPy3tDcGHw1zP4OajQ%3d
-```
-
-В следующем примере создается маркер SAS для использования с сеткой событий:
-
-```cs
-static string BuildSharedAccessSignature(string resource, DateTime expirationUtc, string key)
-{
-    const char Resource = 'r';
-    const char Expiration = 'e';
-    const char Signature = 's';
-
-    string encodedResource = HttpUtility.UrlEncode(resource);
-    var culture = CultureInfo.CreateSpecificCulture("en-US");
-    var encodedExpirationUtc = HttpUtility.UrlEncode(expirationUtc.ToString(culture));
-
-    string unsignedSas = $"{Resource}={encodedResource}&{Expiration}={encodedExpirationUtc}";
-    using (var hmac = new HMACSHA256(Convert.FromBase64String(key)))
-    {
-        string signature = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(unsignedSas)));
-        string encodedSignature = HttpUtility.UrlEncode(signature);
-        string signedSas = $"{unsignedSas}&{Signature}={encodedSignature}";
-
-        return signedSas;
-    }
-}
-```
-
-### <a name="encryption-at-rest"></a>Шифрование при хранении
-
-События и данные, записываемые на диск службой "Сетка событий", шифруются при хранении с помощью ключа, которым управляет корпорация Майкрософт. Кроме того, максимальный период, в течение которого хранятся события или данные, составляет 24 часа согласно [политике повтора службы "Сетка событий"](delivery-and-retry.md). Служба "Сетка событий" автоматически удалит все события или данные через 24 часа или по прошествии срока жизни события в зависимости того, что наступит раньше.
 
 ## <a name="authenticate-event-delivery-to-webhook-endpoints"></a>Проверка подлинности для доставки событий в конечные точки веб-перехватчика
 В следующих разделах описана проверка подлинности для доставки событий в конечные точки веб-перехватчика. Вам нужно использовать механизм подтверждения для проверки независимо от используемого метода. Дополнительные сведения см. в статье [Доставка событий веб-перехватчика](webhook-event-delivery.md). 
+
 
 ### <a name="using-azure-active-directory-azure-ad"></a>Использование Azure Active Directory (Azure AD)
 Вы можете защитить конечную точку веб-перехватчика, которая используется для получения событий из службы "Сетка событий Azure", с помощью Azure AD. Для использования приложения Azure AD вам нужно создать приложение Azure AD, а также роль и субъект-службу в приложении, которое будет выполнять авторизацию службы "Сетка событий". Затем потребуется настроить подписку на события. Узнайте, как [Настроить Azure Active Directory для работы со службой "Сетка событий"](secure-webhook-delivery.md).
@@ -101,6 +46,6 @@ static string BuildSharedAccessSignature(string resource, DateTime expirationUtc
 > [!IMPORTANT]
 Служба "Сетка событий Azure" поддерживает только конечные точки веб-перехватчиков **HTTPS**. 
 
-## <a name="next-steps"></a>Дальнейшие действия
 
-- Общие сведения о сетке событий см. в статье [Сведения о сетке событий](overview.md)
+## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные сведения о проверке подлинности клиентов при публикации событий в разделах или доменах см. в разделе [Аутентификация клиентов публикации](security-authenticate-publishing-clients.md) . 

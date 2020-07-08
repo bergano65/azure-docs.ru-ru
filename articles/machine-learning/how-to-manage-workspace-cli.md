@@ -5,16 +5,16 @@ description: Сведения о том, как применить Azure CLI д
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.author: larryfr
 author: Blackmist
-ms.date: 03/05/2020
-ms.openlocfilehash: 9a7d0b75140c50df61ff63f350e5b312a6a684c7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.date: 06/25/2020
+ms.openlocfilehash: 64963bfc28921d195d9ed0f96b2673a9c9e4aa2b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81617778"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85392715"
 ---
 # <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Создание рабочей области для Машинного обучения Azure с помощью Azure CLI
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -59,7 +59,7 @@ az extension add -n azure-cli-ml
 Рабочая область Машинного обучения Azure использует следующие службы или сущности Azure:
 
 > [!IMPORTANT]
-> Если вы не укажете существующую службу Azure, она будет создана автоматически во время создания рабочей области. Обязательно укажите группу ресурсов.
+> Если вы не укажете существующую службу Azure, она будет создана автоматически во время создания рабочей области. Обязательно укажите группу ресурсов. При присоединении собственной учетной записи хранения убедитесь, что в ней включены как BLOB-объекты Azure, так и возможности файлов Azure, и что это иерархическое пространство имен (ADLS Gen 2) отключено. Вы всегда можете присоединить свою учетную запись хранения позже, после создания рабочей области в качестве хранилища данных.
 
 | Служба | Параметр для указания существующего экземпляра |
 | ---- | ---- |
@@ -317,7 +317,7 @@ az ml workspace share -w <workspace-name> -g <resource-group-name> --user <user>
 
 ## <a name="sync-keys-for-dependent-resources"></a>Ключи синхронизации для зависимых ресурсов
 
-При изменении ключей доступа для одного из ресурсов, используемых рабочей областью, выполните следующую команду, чтобы синхронизировать новые ключи с рабочей областью:
+Если изменить ключи доступа для одного из ресурсов, используемых рабочей областью, для синхронизации рабочей области с новым ключом потребуется около часа. Чтобы принудительно синхронизировать новые ключи в рабочей области, используйте следующую команду:
 
 ```azurecli-interactive
 az ml workspace sync-keys -w <workspace-name> -g <resource-group-name>
