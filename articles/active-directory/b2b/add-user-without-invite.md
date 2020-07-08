@@ -5,19 +5,19 @@ documentationcenter: ''
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/12/2019
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: elisol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 42c9caaf581fab37e2e55cbe408db6d6d846622a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cab29fbe9e33cc12336fa1b81ed4aa37f91a7f5f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80050904"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85387309"
 ---
 # <a name="add-b2b-collaboration-guest-users-without-an-invitation-link-or-email"></a>Добавление гостевых пользователей службы совместной работы B2B без ссылки на приглашение или сообщения электронной почты
 
@@ -33,7 +33,7 @@ ms.locfileid: "80050904"
 
 Если вы пригласили пользователя в каталог, гостевому пользователю необходимо напрямую перейти по URL-адресу определенного клиента ресурса на портале Azure (например, https://portal.azure.com/*клиент_ресурса*.onmicrosoft.com), чтобы он мог просмотреть и принять условия конфиденциальности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 - [Активация приглашения службы совместной работы B2B](redemption-experience.md)

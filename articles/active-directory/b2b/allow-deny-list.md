@@ -4,7 +4,7 @@ description: Эта статья содержит сведения о том, к
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/15/2018
 ms.author: mimart
 author: msmimart
@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: sasubram
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b5100c4406cfd4a8395dfa177dc3cd5e911decb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: aa2ac203f92d401095194bb3f1b5f3ef3c52093b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74273428"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85387292"
 ---
 # <a name="allow-or-block-invitations-to-b2b-users-from-specific-organizations"></a>Предоставление или отзыв приглашений пользователям B2B из отдельных организаций
 
@@ -42,7 +42,7 @@ ms.locfileid: "74273428"
 Чтобы добавить список запрещенных, сделайте следующее:
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. Выберите **Azure Active Directory** > **Пользователи** > **Параметры пользователя**.
+2. Выберите **Azure Active Directory**  >  **Пользователи**  >  **Параметры пользователя**.
 3. В разделе **внешние пользователи**выберите **Управление внешними параметрами совместной работы**.
 4. В разделе **Collaboration restrictions** (Ограничения сотрудничества) выберите **Deny invitations to the specified domains** (Запретить отправлять приглашения указанным доменам).
 5. В разделе **Целевые домены** введите имя одного из доменов, который следует заблокировать. Если нужно заблокировать несколько доменов, вводите каждый из них в новой строке. Пример:
@@ -63,7 +63,7 @@ ms.locfileid: "74273428"
 Чтобы добавить список разрешений, сделайте вот что:
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. Выберите **Azure Active Directory** > **Пользователи** > **Параметры пользователя**.
+2. Выберите **Azure Active Directory**  >  **Пользователи**  >  **Параметры пользователя**.
 3. В разделе **внешние пользователи**выберите **Управление внешними параметрами совместной работы**.
 4. В разделе **Ограничения взаимодействия** выберите **Разрешить отправку приглашений только в указанные домены (максимальное ограничение)**.
 5. В разделе **Целевые домены** введите имя одного из доменов, который следует разрешить. Если нужно заблокировать несколько доменов, вводите каждый из них в новой строке. Пример:
@@ -80,7 +80,7 @@ ms.locfileid: "74273428"
 
 ## <a name="set-the-allow-or-deny-list-policy-using-powershell"></a>Настройка списка разрешенных или запрещенных с помощью PowerShell
 
-### <a name="prerequisite"></a>Предварительные требования
+### <a name="prerequisite"></a>Предварительное требование
 
 > [!Note]
 > Модуль AzureADPreview не является полностью поддерживаемым модулем, так как он находится на этапе предварительной версии. 

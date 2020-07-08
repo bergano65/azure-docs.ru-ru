@@ -7,16 +7,17 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
-ms.date: 09/26/2019
+ms.topic: reference
+ms.date: 06/06/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 3df0f581d0d2a1e5ca02202b4eeaede5a1dd5362
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: references_regions
+ms.openlocfilehash: bb9c6dbf9984ec81fbd4b93a61552211928d0f0e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78188857"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85388720"
 ---
 # <a name="azure-active-directory-b2c-region-availability--data-residency"></a>Azure Active Directory B2C: доступность в регионах и местонахождение данных
 
@@ -40,7 +41,7 @@ Azure AD B2C сохраняет данные пользователя в США,
 
 Местонахождение данных определяется страной или регионом, выбранными при [создании клиента Azure AD B2C](tutorial-create-tenant.md).
 
-![Снимок экрана с предварительным просмотром клиента](./media/data-residency/data-residency-b2c-tenant.png)
+![Снимок экрана: форма создания клиента, выбор страны или региона.](./media/data-residency/data-residency-b2c-tenant.png)
 
 Данные находятся в **США** для следующих стран и регионов:
 
@@ -68,4 +69,4 @@ Azure AD B2C сохраняет данные пользователя в США,
 
 Существуют известные проблемы при удалении клиента предварительной версии B2C и создании производственно-масштабируемого клиента B2C с тем же именем домена. *Необходимо создать производственный масштабируемый клиент B2C с другим доменным именем*.
 
-![Снимок экрана с предварительным просмотром клиента](./media/data-residency/preview-b2c-tenant.png)
+![Снимок экрана типа клиента в качестве предварительной версии клиента.](./media/data-residency/preview-b2c-tenant.png)

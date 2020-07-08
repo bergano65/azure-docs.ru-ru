@@ -5,12 +5,12 @@ services: container-service
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.custom: references_regions
-ms.openlocfilehash: e27a920aea18affd78f840d3063b8082f716745b
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
-ms.translationtype: HT
+ms.openlocfilehash: 6706d9c1c683cdf46fe42822cad67a49a69843a9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84193953"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85389825"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-in-the-azure-portal"></a>Создание и настройка кластера Службы Azure Kubernetes (AKS) для использования виртуальных узлов на портале Azure
 
@@ -59,7 +59,7 @@ az provider register --namespace Microsoft.ContainerInstance
 * Западная часть США 2 (westus2).
 
 ## <a name="known-limitations"></a>Известные ограничения
-Функциональные возможности виртуальных узлов сильно зависят от набора функций ACI. Ниже приведены сценарии, которые пока не поддерживаются виртуальными узлами.
+Функциональные возможности виртуальных узлов сильно зависят от набора функций ACI. В дополнение к [квотам и ограничениям для экземпляров контейнеров Azure](../container-instances/container-instances-quotas.md)следующие сценарии пока не поддерживаются виртуальными узлами:
 
 * Использование субъекта-службы для извлечения образов ACR. [Обходной путь](https://github.com/virtual-kubelet/azure-aci/blob/master/README.md#private-registry) — использование [секретов Kubernetes](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#create-a-secret-by-providing-credentials-on-the-command-line).
 * [Ограничения виртуальной сети](../container-instances/container-instances-vnet.md), включая пиринг виртуальных сетей, политики сети Kubernetes и передача исходящего трафика в Интернет при использовании групп безопасности сети.
@@ -67,7 +67,7 @@ az provider register --namespace Microsoft.ContainerInstance
 * [Псевдонимы узлов](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/).
 * [Аргументы](../container-instances/container-instances-exec.md#restrictions) для exec в ACI.
 * [DaemonSet](concepts-clusters-workloads.md#statefulsets-and-daemonsets) не будет выполнять развертывание контейнеров pod на виртуальном узле.
-* Виртуальные узлы поддерживают планирование контейнеров pod для Linux. Чтобы запланировать контейнеры Windows Server в ACI, можно вручную установить поставщик [Virtual Kubelet ACI](https://github.com/virtual-kubelet/azure-aci) с открытым кодом. 
+* Виртуальные узлы поддерживают планирование контейнеров pod для Linux. Чтобы запланировать контейнеры Windows Server в ACI, можно вручную установить поставщик [Virtual Kubelet ACI](https://github.com/virtual-kubelet/azure-aci) с открытым кодом.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 

@@ -5,22 +5,23 @@ description: Сведения о том, как с помощью Azure CLI со
 services: container-service
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.openlocfilehash: 826c7f98b9540d84ac151e05cd81f2cc6042776c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: references_regions
+ms.openlocfilehash: 8ff78934005b3c0fd5fbd2b9c4d289c7b3668824
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82128915"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85389927"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-using-the-azure-cli"></a>Создание и настройка кластера Службы Azure Kubernetes (AKS) для использования виртуальных узлов с помощью Azure CLI
 
-Чтобы быстро масштабировать рабочие нагрузки приложения в кластере Службы Azure Kubernetes (AKS), вы можете применить виртуальные узлы. Виртуальные узлы дают возможность быстро подготовить pod и оплачивать только время их выполнения (посекундно). Вам не придется ждать, пока средство автомасштабирования кластера Kubernetes развернет вычислительные узлы для виртуальных машин, на которых можно будет запустить дополнительные pod. Виртуальные узлы поддерживаются только с помощью модулей и узлов Linux.
+Чтобы быстро масштабировать рабочие нагрузки приложения в кластере Службы Azure Kubernetes (AKS), вы можете применить виртуальные узлы. Виртуальные узлы дают возможность быстро подготовить pod и оплачивать только время их выполнения (посекундно). Вам не придется ждать, пока средство автомасштабирования кластера Kubernetes развернет вычислительные узлы для виртуальных машин, на которых можно будет запустить дополнительные pod. Виртуальные узлы поддерживаются только для контейнеров pod и узлов Linux.
 
 В этой статье показано, как создать и настроить ресурсы виртуальной сети и кластер AKS, а также включить виртуальные узлы.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
-Виртуальные узлы обеспечивают сетевой обмен данными между модулями Pod, которые выполняются в службе "экземпляры контейнеров Azure" (ACI) и кластере AKS. Для обеспечения этого взаимодействия создается подсеть виртуальной сети и назначаются делегированные разрешения. Виртуальные узлы работают только с кластерами AKS, созданными с помощью сетевого взаимодействия уровня *Расширенный*. По умолчанию кластеры AKS создаются с помощью сетевого взаимодействия уровня *Базовый*. В этой статье показано, как создать виртуальную сеть и подсети, а затем развернуть кластер AKS, использующий сетевое взаимодействие уровня "Расширенный".
+Виртуальные узлы обеспечивают сетевое взаимодействие контейнеров pod, которые выполняются в Экземплярах контейнеров Azure (ACI) и кластере AKS. Для обеспечения этого взаимодействия создается подсеть виртуальной сети и назначаются делегированные разрешения. Виртуальные узлы работают только с кластерами AKS, созданными с помощью сетевого взаимодействия уровня *Расширенный*. По умолчанию кластеры AKS создаются с помощью сетевого взаимодействия уровня *Базовый*. В этой статье показано, как создать виртуальную сеть и подсети, а затем развернуть кластер AKS, использующий сетевое взаимодействие уровня "Расширенный".
 
 Если вы не использовали ACI ранее, зарегистрируйте поставщик служб в подписке. Вы можете проверить состояние регистрации поставщика ACI с помощью команды [az provider list][az-provider-list], как показано в следующем примере.
 
@@ -36,7 +37,7 @@ Namespace                    RegistrationState    RegistrationPolicy
 Microsoft.ContainerInstance  Registered           RegistrationRequired
 ```
 
-Если поставщик имеет состояние *NotRegistered*, зарегистрируйте поставщик с помощью команды [az provider register][az-provider-register], как показано в следующем примере.
+Если поставщик имеет состояние *NotRegistered*, зарегистрируйте этот поставщик с помощью команды [az provider register][az-provider-register], как показано в следующем примере.
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerInstance
@@ -44,30 +45,30 @@ az provider register --namespace Microsoft.ContainerInstance
 
 ## <a name="regional-availability"></a>Доступность по регионам
 
-Для развертываний виртуальных узлов поддерживаются следующие регионы:
+Развертывание виртуальных узлов поддерживается в следующих регионах:
 
-* Восточная Австралия (australiaeast)
-* Центральная американская (centralus)
+* восточная Австралия (australiaeast);
+* центральная часть США (centralus);
 * Восточная часть США (eastus).
-* Восточная часть США 2 (eastus2)
-* Восточная Япония (жапанеаст)
+* восточная часть США 2 (eastus2);
+* Восточная Япония (japaneast);
 * Северная Европа (northeurope)
-* Юго-Восточная Азия (SoutheastAsia)
-* Западная Центральная часть США (westcentralus)
+* Юго-Восточная Азия (southeastasia);
+* центрально-западная часть США (westcentralus);
 * Западная Европа (westeurope).
 * Западная часть США (westus).
 * Западная часть США 2 (westus2).
 
 ## <a name="known-limitations"></a>Известные ограничения
-Функциональность виртуальных узлов сильно зависит от набора функций ACI. Следующие сценарии пока не поддерживаются виртуальными узлами.
+Функциональные возможности виртуальных узлов сильно зависят от набора функций ACI. В дополнение к [квотам и ограничениям для экземпляров контейнеров Azure](../container-instances/container-instances-quotas.md)следующие сценарии пока не поддерживаются виртуальными узлами:
 
-* Использование субъекта-службы для извлечения образов записи контроля доступа. [Обходной путь](https://github.com/virtual-kubelet/azure-aci/blob/master/README.md#private-registry) — использовать [секреты Kubernetes](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#create-a-secret-by-providing-credentials-on-the-command-line)
-* [Ограничения виртуальной сети](../container-instances/container-instances-vnet.md) , включая пиринг виртуальных сетей, политики сети Kubernetes и исходящий трафик в Интернете с группами безопасности сети.
-* Инициализировать контейнеры
-* [Псевдонимы узлов](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/)
-* [Аргументы](../container-instances/container-instances-exec.md#restrictions) для Exec в ACI
-* [Daemonset](concepts-clusters-workloads.md#statefulsets-and-daemonsets) не будет выполнять развертывание модулей Pod на виртуальном узле
-* Виртуальные узлы поддерживают планирование модулей Pod для Linux. Можно вручную установить поставщик [виртуальных KUBELET ACI](https://github.com/virtual-kubelet/azure-aci) с открытым исходным кодом, чтобы запланировать ACI контейнеров Windows Server. 
+* Использование субъекта-службы для извлечения образов ACR. [Обходной путь](https://github.com/virtual-kubelet/azure-aci/blob/master/README.md#private-registry) — использование [секретов Kubernetes](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#create-a-secret-by-providing-credentials-on-the-command-line).
+* [Ограничения виртуальной сети](../container-instances/container-instances-vnet.md), включая пиринг виртуальных сетей, политики сети Kubernetes и передача исходящего трафика в Интернет при использовании групп безопасности сети.
+* Контейнеры инициализации.
+* [Псевдонимы узлов](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/).
+* [Аргументы](../container-instances/container-instances-exec.md#restrictions) для exec в ACI.
+* [DaemonSet](concepts-clusters-workloads.md#statefulsets-and-daemonsets) не будет выполнять развертывание контейнеров pod на виртуальном узле.
+* Виртуальные узлы поддерживают планирование контейнеров pod для Linux. Чтобы запланировать контейнеры Windows Server в ACI, можно вручную установить поставщик [Virtual Kubelet ACI](https://github.com/virtual-kubelet/azure-aci) с открытым кодом.
 
 ## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
 
@@ -110,7 +111,7 @@ az network vnet subnet create \
 
 ## <a name="create-a-service-principal-or-use-a-managed-identity"></a>Создание субъекта-службы или использование управляемого удостоверения
 
-Для взаимодействия с API-интерфейсами Azure кластеру AKS требуется субъект-служба Azure Active Directory. Этот субъект-служба может быть автоматически создан с помощью интерфейса командной строки или портала Azure либо вы можете сами предварительно создать этот компонент и назначить дополнительные разрешения. Кроме того, вместо субъекта-службы можно использовать управляемое удостоверение для разрешений. Дополнительные сведения см. в статье о том, [как использовать управляемые удостоверения](use-managed-identity.md).
+Для взаимодействия с API-интерфейсами Azure кластеру AKS требуется субъект-служба Azure Active Directory. Этот субъект-служба может быть автоматически создан с помощью интерфейса командной строки или портала Azure либо вы можете сами предварительно создать этот компонент и назначить дополнительные разрешения. Кроме того, для разрешений можно использовать управляемое удостоверение вместо субъекта-службы. Дополнительные сведения см. в статье о том, [как использовать управляемые удостоверения](use-managed-identity.md).
 
 Создайте субъект-службу с помощью команды [az ad sp create-for-rbac][az-ad-sp-create-for-rbac]. Параметр `--skip-assignment` ограничивает назначение дополнительных разрешений.
 
@@ -156,7 +157,7 @@ az role assignment create --assignee <appId> --scope <vnetId> --role Contributor
 az network vnet subnet show --resource-group myResourceGroup --vnet-name myVnet --name myAKSSubnet --query id -o tsv
 ```
 
-Используйте команду [az aks create][az-aks-create], чтобы создать кластер AKS. В следующем примере создается кластер *myAKSCluster* с одним узлом. Замените `<subnetId>` на идентификатор, полученный на предыдущем шаге, а затем `<appId>` `<password>` на значения, собранные в предыдущем разделе.
+Используйте команду [az aks create][az-aks-create], чтобы создать кластер AKS. В следующем примере создается кластер *myAKSCluster* с одним узлом. Замените на `<subnetId>` идентификатор, полученный на предыдущем шаге, а затем `<appId>` на `<password>` значения, собранные в предыдущем разделе.
 
 ```azurecli-interactive
 az aks create \
@@ -210,7 +211,7 @@ aks-agentpool-14693408-0      Ready     agent     32m       v1.11.2
 
 ## <a name="deploy-a-sample-app"></a>Развертывание примера приложения
 
-Создайте файл `virtual-node.yaml` и скопируйте в него следующий код YAML. Чтобы назначить контейнер на узел, определите параметры [nodeSelector][node-selector] и [toleration][toleration].
+Создайте файл `virtual-node.yaml` и скопируйте в него следующий код YAML. Чтобы назначить контейнер для узла, определите параметры [nodeSelector][node-selector] и [toleration][toleration].
 
 ```yaml
 apiVersion: apps/v1
@@ -249,7 +250,7 @@ spec:
 kubectl apply -f virtual-node.yaml
 ```
 
-Чтобы вывести список групп pod и назначенный узел, выполните команду [kubectl get pods][kubectl-get] с аргументом `-o wide`. Обратите внимание, что pod `aci-helloworld` был назначен на узел `virtual-node-aci-linux`.
+Чтобы вывести список pod и назначенный узел, выполните команду [kubectl get pods][kubectl-get] с аргументом `-o wide`. Обратите внимание, что pod `aci-helloworld` был назначен на узел `virtual-node-aci-linux`.
 
 ```console
 kubectl get pods -o wide
@@ -263,7 +264,7 @@ aci-helloworld-9b55975f-bnmfl   1/1       Running   0          4m        10.241.
 Группа pod получает внутренний IP-адрес из подсети виртуальной сети Azure, которая делегирована для использования с виртуальными узлами.
 
 > [!NOTE]
-> При использовании образов, хранящихся в Реестре контейнеров Azure, [настройте и используйте секрет Kubernetes][acr-aks-secrets]. Текущее ограничение виртуальных узлов заключается в том, что вы не можете использовать встроенную проверку подлинности субъекта-службы Azure AD. Если вы не используете секрет, модули pod, запланированные на виртуальные узлы, не будут запускаться и сообщат об ошибке `HTTP response status code 400 error code "InaccessibleImage"`.
+> При использовании образов, хранящихся в Реестре контейнеров Azure, [настройте и используйте секрет Kubernetes][acr-aks-secrets]. Текущее ограничение виртуальных узлов заключается в том, что невозможно использовать встроенную аутентификацию субъекта-службы Azure AD. Если вы не используете секрет, модули pod, запланированные на виртуальные узлы, не будут запускаться и сообщат об ошибке `HTTP response status code 400 error code "InaccessibleImage"`.
 
 ## <a name="test-the-virtual-node-pod"></a>Тестирование группы pod на виртуальном узле
 
@@ -279,7 +280,7 @@ kubectl run --generator=run-pod/v1 -it --rm testvk --image=debian
 apt-get update && apt-get install -y curl
 ```
 
-Теперь получите доступ к адресу Pod с `curl`помощью, например *http://10.241.0.4*. Укажите внутренний IP-адрес, который вы получили от предыдущей команды `kubectl get pods`.
+Теперь откройте адрес этой группы pod с помощью `curl`, например, *http://10.241.0.4* . Укажите внутренний IP-адрес, который вы получили от предыдущей команды `kubectl get pods`.
 
 ```console
 curl -L http://10.241.0.4
@@ -301,7 +302,7 @@ curl -L http://10.241.0.4
 
 Если вы больше не хотите использовать виртуальные узлы, их можно отключить с помощью команды [az aks disable-addons][az aks disable-addons]. 
 
-При необходимости перейдите в раздел [https://shell.azure.com](https://shell.azure.com) , чтобы открыть Azure Cloud Shell в браузере.
+При необходимости перейдите в раздел, [https://shell.azure.com](https://shell.azure.com) чтобы открыть Azure Cloud Shell в браузере.
 
 Сначала удалите `aci-helloworld` модуль Pod, выполняющийся на виртуальном узле:
 
@@ -337,7 +338,7 @@ az network profile delete --id $NETWORK_PROFILE_ID -y
 az network vnet subnet update --resource-group $RES_GROUP --vnet-name $AKS_VNET --name $AKS_SUBNET --remove delegations 0
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье мы назначили выполнение группы pod в виртуальном узле и присвоили частный внутренний IP-адрес. В качестве альтернативы вы можете создать развертывание службы и направлять трафик в группу pod через подсистему балансировки нагрузки или контроллер входящего трафика. Дополнительные сведения см. в статье [Создание контроллера входящего трафика в Службе Azure Kubernetes (AKS)][aks-basic-ingress].
 
@@ -345,8 +346,8 @@ az network vnet subnet update --resource-group $RES_GROUP --vnet-name $AKS_VNET 
 
 - [Масштабирование приложений в Службе Azure Kubernetes (AKS)][aks-hpa]
 - [Автомасштабирование кластера с помощью службы Azure Kubernetes (AKS)][aks-cluster-autoscaler]
-- [Ознакомьтесь с примером автомасштабирования для виртуальных узлов][virtual-node-autoscale]
-- [Подробнее о библиотеке виртуальных Kubelet с открытым исходным кодом][virtual-kubelet-repo]
+- [Пример автомасштабирования для виртуальных узлов][virtual-node-autoscale]
+- [Дополнительные сведения о библиотеке Virtual Kubelet с открытым кодом][virtual-kubelet-repo]
 
 <!-- LINKS - external -->
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get

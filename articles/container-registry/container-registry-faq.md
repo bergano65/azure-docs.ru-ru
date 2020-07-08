@@ -5,12 +5,12 @@ author: sajayantony
 ms.topic: article
 ms.date: 03/18/2020
 ms.author: sajaya
-ms.openlocfilehash: 005c035468a4225f96e8ef69b2ef31a82bf7eedb
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
-ms.translationtype: HT
+ms.openlocfilehash: f160910024d9d64d22028c72825b98d93f66f15d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83682825"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85390369"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о Реестре контейнеров Azure
 
@@ -220,7 +220,7 @@ ACR поддерживает [пользовательские роли](contain
   az role assignment create --scope resource_id --role AcrPull --assignee user@example.com
   ```
 
-  Можно также назначить роль субъекту-службе, определяемому идентификатором приложения:
+  Или назначьте роль субъекту-службе, определяемому ИДЕНТИФИКАТОРом приложения:
 
   ```azurecli
   az role assignment create --scope resource_id --role AcrPull --assignee 00000000-0000-0000-0000-000000000000
@@ -269,6 +269,7 @@ ACR поддерживает [пользовательские роли](contain
 - [Почему на портале Azure отображаются не все мои репозитории или теги?](#why-does-the-azure-portal-not-list-all-my-repositories-or-tags)
 - [Почему порталу Azure не удается получить репозитории или теги?](#why-does-the-azure-portal-fail-to-fetch-repositories-or-tags)
 - [Почему не удается выполнить запрос на вытягивание или отправку из-за неразрешенной операции?](#why-does-my-pull-or-push-request-fail-with-disallowed-operation)
+- [Формат репозитория является недопустимым или не поддерживается](#repository-format-is-invalid-or-unsupported)
 - [Как собрать данные трассировки HTTP в Windows?](#how-do-i-collect-http-traces-on-windows)
 
 ### <a name="check-health-with-az-acr-check-health"></a>Проверка работоспособности с помощью `az acr check-health`
@@ -438,6 +439,13 @@ curl $redirect_url
 * Классические реестры больше не поддерживаются. Выполните обновление до поддерживаемого [уровня служб](https://aka.ms/acr/skus) с помощью команды [az acr update](https://docs.microsoft.com/cli/azure/acr?view=azure-cli-latest#az-acr-update) или на портале Azure.
 * Образ или репозиторий может быть заблокирован, поэтому его нельзя удалить или обновить. Для просмотра текущих атрибутов можно воспользоваться командой [az acr show repository](https://docs.microsoft.com/azure/container-registry/container-registry-image-lock).
 * Некоторые операции запрещены, если образ находится на карантине. Дополнительные сведения о [карантине](https://github.com/Azure/acr/tree/master/docs/preview/quarantine).
+* Возможно, ваш реестр достиг [предельного размера хранилища](container-registry-skus.md#service-tier-features-and-limits).
+
+### <a name="repository-format-is-invalid-or-unsupported"></a>Формат репозитория является недопустимым или не поддерживается
+
+Если отображается сообщение об ошибке, например "неподдерживаемый формат репозитория", "Недопустимый формат" или "запрошенные данные не существуют", при указании имени репозитория в операциях репозитория Проверьте правильность написания имени и регистра. Допустимые имена репозитория могут содержать только буквы в нижнем регистре, точки, тире, символы подчеркивания и символы косой черты. 
+
+Полные правила именования репозитория см. в статье [Спецификация распространения в рамках инициативы Open Container](https://github.com/docker/distribution/blob/master/docs/spec/api.md#overview).
 
 ### <a name="how-do-i-collect-http-traces-on-windows"></a>Как собрать данные трассировки HTTP в Windows?
 

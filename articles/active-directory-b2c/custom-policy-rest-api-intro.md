@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/18/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 0a62cd4ad6d992d8994fbd3e66bd0b90e45aa213
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: fe328de9460efb743037f697c7f564e2c628278d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83636985"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85388941"
 ---
 # <a name="integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-custom-policy"></a>Интеграция обмена утверждениями REST API в пользовательскую политику Azure AD B2C
 
@@ -32,6 +32,9 @@ Azure AD B2C позволяет добавлять собственную биз
 - **Запускать пользовательскую бизнес-логику**. Вы можете отправлять push-уведомления, обновлять корпоративные базы данных, запускать процесс переноса пользователей, управлять разрешениями, производить аудит баз данных и выполнять любые другие рабочие процессы.
 
 ![Схема обмена утверждениями службы RESTful](media/custom-policy-rest-api-intro/restful-service-claims-exchange.png)
+
+> [!NOTE]
+> Если в Azure AD B2C службе RESTFUL возникла задержка или нет ответа, время ожидания составляет 30 секунд, а число повторов — 2 раза (это означает, что всего три попытки). Параметры времени ожидания и числа повторных попыток сейчас не настраиваются.
 
 ## <a name="calling-a-restful-service"></a>Вызов службы RESTful
 
@@ -142,7 +145,7 @@ Azure AD B2C позволяет добавлять собственную биз
 ## <a name="localize-the-rest-api"></a>Локализация REST API
 В техническом профиле RESTful может требоваться отправлять языки и языковой стандарт текущего сеанса, а также при необходимости выдавать локализованное сообщение об ошибке. С помощью [сопоставителя утверждений](claim-resolver-overview.md) можно отправить контекстное утверждение, например язык пользователя. В следующем примере показан технический профиль RESTful, демонстрирующий этот сценарий.
 
-```XML
+```xml
 <TechnicalProfile Id="REST-ValidateUserData">
   <DisplayName>Validate user input data</DisplayName>
   <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
@@ -162,7 +165,7 @@ Azure AD B2C позволяет добавлять собственную биз
 
 ## <a name="handling-error-messages"></a>Обработка сообщений об ошибке
 
-REST API может возвращать сообщения об ошибках, например The user was not found in the CRM system (Пользователь не найден в системе CRM). Если происходит ошибка, REST API возвращает сообщение об ошибке HTTP 409 (код ответа "Конфликт"). Дополнительные сведения см. в [описании технического профиля RESTful](restful-technical-profile.md#returning-error-message).
+REST API может возвращать сообщения об ошибках, например The user was not found in the CRM system (Пользователь не найден в системе CRM). Если происходит ошибка, REST API возвращает сообщение об ошибке HTTP 409 (код ответа "Конфликт"). Дополнительные сведения см. в [описании технического профиля RESTful](restful-technical-profile.md#returning-validation-error-message).
 
 Это можно сделать только путем вызова технического профиля REST API из технического профиля проверки. Это позволяет пользователю исправить данные на странице и повторно выполнить проверку после отправки страницы.
 

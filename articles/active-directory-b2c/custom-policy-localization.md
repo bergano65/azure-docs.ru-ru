@@ -6,16 +6,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: reference
+ms.topic: how-to
 ms.date: 05/12/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 090fecea44c7881920fcd087304f33f935a5e907
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 8939d4546657b049b61eb31c08844dac07c67ae2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83636264"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85389094"
 ---
 # <a name="localize-the-user-interface-of-your-application-using-a-custom-policy-in-azure-active-directory-b2c"></a>Локализация пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C
 
@@ -33,7 +33,7 @@ ms.locfileid: "83636264"
 1. Добавьте элемент `Localization` с поддерживаемыми языками: английским (по умолчанию) и испанским.  
 
 
-```XML
+```xml
 <Localization Enabled="true">
   <SupportedLanguages DefaultLanguage="en" MergeBehavior="ReplaceAll">
     <SupportedLanguage>en</SupportedLanguage>
@@ -51,7 +51,7 @@ ms.locfileid: "83636264"
 > [!NOTE]
 > В следующем примере мы добавили символ решетки `#` в начало каждой строки, чтобы вы могли легко найти локализованные метки на экране.
 
-```XML
+```xml
 <!--Local account sign-up or sign-in page English-->
 <LocalizedResources Id="api.signuporsignin.en">
   <LocalizedStrings>
@@ -218,7 +218,7 @@ ms.locfileid: "83636264"
 
 В следующем примере для страницы регистрации или входа добавляются пользовательские строки на английском (en) и испанском (es) языках, включая страницу регистрации локальной учетной записи. Элемент **LocalizedResourcesReferenceId** для каждого **LocalizedResourcesReference** совпадает с именем языкового стандарта, но в качестве идентификатора можно использовать любую строку. Для каждой комбинации языка и страницы укажите соответствующие элементы **LocalizedResources**, созданные ранее.
 
-```XML
+```xml
 <ContentDefinitions>
   <ContentDefinition Id="api.signuporsignin">
     <LocalizedResourcesReferences MergeBehavior="Prepend">
