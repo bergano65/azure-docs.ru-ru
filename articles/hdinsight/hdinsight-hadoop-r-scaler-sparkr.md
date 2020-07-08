@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/26/2019
 ms.openlocfilehash: 5989692aeb59c7394299b4cb2474b244818895b2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75500081"
 ---
 # <a name="combine-scaler-and-sparkr-in-hdinsight"></a>Совместное использование ScaleR и SparkR в HDInsight
@@ -29,7 +28,7 @@ ms.locfileid: "75500081"
 
 ## <a name="the-airline-and-weather-datasets"></a>Наборы данных об авиакомпаниях и погоде
 
-Данные о полетах взяты из [архива правительства США](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236). Он также доступен в виде ZIP-файла из [AirOnTimeCSV. zip](https://packages.revolutionanalytics.com/datasets/AirOnTime87to12/AirOnTimeCSV.zip).
+Данные о полетах взяты из [архива правительства США](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236). Он также доступен в виде ZIP-файла [AirOnTimeCSV.zip](https://packages.revolutionanalytics.com/datasets/AirOnTime87to12/AirOnTimeCSV.zip).
 
 Данные о погоде можно скачать как ZIP-файлы в необработанном виде по месяцам из [репозитория Национального управления океанических и атмосферных исследований](https://www.ncdc.noaa.gov/orders/qclcd/). Для этого примера загрузите данные за период с мая 2007 г. по декабрь 2012 г. Используйте почасовые файлы данных и файл `YYYYMMMstation.txt` внутри каждого из ZIP-архивов.
 

@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 2/23/2018
 ms.author: atsenthi
 ms.openlocfilehash: ba1fa92559d39a481008d1dd18036e4232be1bfa
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75639808"
 ---
 # <a name="service-fabric-container-networking-modes"></a>Сетевые режимы контейнеров Service Fabric
@@ -193,10 +192,10 @@ ms.locfileid: "75639808"
 
    |Параметр |Значение | |
    | --- | --- | --- |
-   |Priority |2000 | |
-   |Имя |Custom_Dns  | |
+   |Приоритет |2000 | |
+   |name |Custom_Dns  | |
    |Источник |Виртуальная сеть | |
-   |Назначение | Виртуальная сеть | |
+   |Destination | Виртуальная сеть | |
    |Служба | DNS (UDP/53) | |
    |Действие | Allow  | |
    | | |
@@ -262,7 +261,7 @@ ms.locfileid: "75639808"
             ],          
  ``` 
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Моделирование приложения в Service Fabric](service-fabric-application-model.md)
 * [Указание ресурсов в манифесте службы](https://docs.microsoft.com/azure/service-fabric/service-fabric-service-manifest-resources) для Service Fabric
 * [Развертывание контейнера Windows в Service Fabric на платформе Windows Server 2016](service-fabric-get-started-containers.md)

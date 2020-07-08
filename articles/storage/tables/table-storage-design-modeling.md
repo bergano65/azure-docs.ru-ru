@@ -9,10 +9,9 @@ ms.date: 04/23/2018
 ms.author: sngun
 ms.subservice: tables
 ms.openlocfilehash: 25082c107fbc0feeb533aa2b4fc56cff960e778d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75457562"
 ---
 # <a name="modeling-relationships"></a>Моделирование отношений
@@ -42,7 +41,7 @@ ms.locfileid: "75457562"
 
 <table>
 <tr>
-<th>Метод</th>
+<th>Подход</th>
 <th>Плюсы</th>
 <th>Минусы</th>
 </tr>
@@ -100,7 +99,7 @@ ms.locfileid: "75457562"
 
 Есть также ряд аспектов, которые могут привести к реализации отношений "один-к-одному" в службе таблиц.  
 
-* Обработка сущностей большого размера (дополнительные сведения см. в статье [Шаблон для сущностей больших размеров](table-storage-design-patterns.md#large-entities-pattern)).  
+* Обработка больших сущностей (Дополнительные сведения см. в разделе [шаблон крупных сущностей](table-storage-design-patterns.md#large-entities-pattern)).  
 * Внедрение средств управления доступом (см. раздел "Управление доступом с помощью подписей общего доступа").  
 
 ## <a name="join-in-the-client"></a>Присоединение клиента
@@ -120,9 +119,9 @@ ms.locfileid: "75457562"
 Дополнительные сведения о работе с несколькими типами сущностей в одной таблице в клиентском коде см. в разделе "Работа с разными типами сущностей" в этом руководстве. Там приводятся примеры определения типа сущности в клиентском коде.  
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Шаблоны для разработки таблиц](table-storage-design-patterns.md)
+- [Шаблоны проектирования таблиц](table-storage-design-patterns.md)
 - [Разработка для запросов](table-storage-design-for-query.md)
 - [Шифрование данных таблиц](table-storage-design-encrypt-data.md)
 - [Разработка для изменения данных](table-storage-design-for-modification.md)

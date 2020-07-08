@@ -1,24 +1,23 @@
 ---
 title: Артефакт CreateUiDefinition
-description: Здесь показано, как создать артефакт createUiDefinition для управляемого приложения Azure. Файл называется createUiDefinition. JSON.
+description: Здесь показано, как создать артефакт createUiDefinition для управляемого приложения Azure. Файл называется createUiDefinition.jsв.
 ms.topic: conceptual
 ms.author: lazinnat
 author: lazinnat
 ms.date: 07/11/2019
 ms.openlocfilehash: 9be1cb02c419314a33b9487bf183ef3659b2b549
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75651492"
 ---
 # <a name="reference-user-interface-elements-artifact"></a>Ссылка: артефакт элементов пользовательского интерфейса
 
-Эта статья представляет собой справочник по артефакту *createUiDefinition. JSON* в управляемых приложениях Azure. Дополнительные сведения о создании элементов пользовательского интерфейса см. в разделе [Создание элементов пользовательского интерфейса](create-uidefinition-elements.md).
+Эта статья содержит справочник по *createUiDefinition.js* артефакту в управляемых приложениях Azure. Дополнительные сведения о создании элементов пользовательского интерфейса см. в разделе [Создание элементов пользовательского интерфейса](create-uidefinition-elements.md).
 
 ## <a name="user-interface-elements"></a>Элементы пользовательского интерфейса
 
-В следующем JSON показан пример файла *createUiDefinition. JSON* для управляемых приложений Azure:
+В следующем примере JSON показан пример *createUiDefinition.js* файла для управляемых приложений Azure:
 
 ```json
 {
@@ -79,7 +78,7 @@ ms.locfileid: "75651492"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Учебник. Создание управляемого приложения с настраиваемыми действиями и ресурсами](tutorial-create-managed-app-with-custom-provider.md)
 - [Ссылка: артефакт шаблона развертывания](reference-main-template-artifact.md)

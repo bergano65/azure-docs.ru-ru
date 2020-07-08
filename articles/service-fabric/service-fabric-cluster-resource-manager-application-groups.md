@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 988c7ce52125800c16aa785d5b1458604a927ecd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75452152"
 ---
 # <a name="introduction-to-application-groups"></a>Введение в группы приложений
@@ -35,7 +34,7 @@ ms.locfileid: "75452152"
 
 Такое поведение управляется параметром MaximumNodes. Этот параметр можно задать при создании приложения или изменить для уже выполняющегося экземпляра приложения.
 
-PowerShell.
+PowerShell
 
 ``` posh
 New-ServiceFabricApplication -ApplicationName fabric:/AppName -ApplicationTypeName AppType1 -ApplicationTypeVersion 1.0.0.0 -MaximumNodes 3
@@ -121,7 +120,7 @@ await fc.ApplicationManager.CreateApplicationAsync(ad);
 - для приложения определена метрика со следующими значениями:
   - NodeReservationCapacity = 20;
 
-PowerShell.
+PowerShell
 
  ``` posh
  New-ServiceFabricApplication -ApplicationName fabric:/AppName -ApplicationTypeName AppType1 -ApplicationTypeVersion 1.0.0.0 -MinimumNodes 2 -Metrics @("MetricName:Metric1,NodeReservationCapacity:20")
@@ -201,7 +200,7 @@ Update-ServiceFabricApplication –Name fabric:/MyApplication1 –RemoveApplicat
 - Не пытайтесь с помощью групп приложений сделать так, чтобы приложение выполнялось на _определенном_ подмножестве узлов. Другими словами, вы можете указать, что для приложения нельзя использовать больше пяти узлов, но не можете выбрать, какие именно это будут узлы в кластере. Чтобы прикрепить приложение к конкретным узлам, используйте ограничения на размещение для служб.
 - Не пытайтесь с помощью емкости приложения разместить две службы одного приложения на одном узле. Вместо этого используйте [сходство](service-fabric-cluster-resource-manager-advanced-placement-rules-affinity.md) или [ограничения размещения](service-fabric-cluster-resource-manager-cluster-description.md#node-properties-and-placement-constraints).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о настройке служб см. в разделе [Настройка параметров Cluster Resource Manager для служб Service Fabric](service-fabric-cluster-resource-manager-configure-services.md).
 - Чтобы узнать, как диспетчер кластерных ресурсов управляет нагрузкой кластера и балансирует ее, ознакомьтесь со статьей о [балансировке нагрузки](service-fabric-cluster-resource-manager-balancing.md)
 - Начните с самого начала, [изучив общие сведения о диспетчере кластерных ресурсов Service Fabric](service-fabric-cluster-resource-manager-introduction.md)

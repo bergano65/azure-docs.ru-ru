@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 07/10/2019
 ms.author: vturecek
 ms.openlocfilehash: a6e4fb48653572139463738c82de632ff7d55074
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75466250"
 ---
 # <a name="getting-started-with-reliable-actors"></a>Приступая к работе с Reliable Actors
@@ -19,7 +18,7 @@ ms.locfileid: "75466250"
 
 В этой статье описывается создание и отладка простого приложения Reliable Actor в Visual Studio. Дополнительные сведения о Reliable Actors см. в статье [Общие сведения о надежных субъектах Service Fabric](service-fabric-reliable-actors-introduction.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Приступая к работе, убедитесь, что на вашем компьютере установлена и настроена среда разработки Service Fabric, включая Visual Studio. Дополнительные сведения см. в разделе [Подготовка среды разработки в Linux](service-fabric-get-started.md).
 
@@ -86,7 +85,7 @@ internal class HelloWorld : Actor, IHelloWorld
 
 Создайте простое консольное приложение для вызова службы субъекта.
 
-1. Щелкните решение правой кнопкой мыши в Обозреватель решений > **Добавить** > **Новый проект..**..
+1. Щелкните решение правой кнопкой мыши в Обозреватель решений > **Добавить**  >  **Новый проект..**..
 
 2. В разделе типов проектов **.NET Core** выберите **Консольное приложение (.NET Core)**.  Назовите проект *ActorClient*.
     
@@ -99,7 +98,7 @@ internal class HelloWorld : Actor, IHelloWorld
     
     ![Свойства сборки][8]
 
-4. Для проекта клиента требуется пакет NuGet для Reliable Actors.  Щелкните **Сервис** > диспетчер**пакетов** > NuGet**консоль диспетчера пакетов**.  В консоли диспетчера пакетов введите следующую команду.
+4. Для проекта клиента требуется пакет NuGet для Reliable Actors.  Щелкните **Сервис**диспетчер  >  **пакетов NuGet**  >  **консоль диспетчера пакетов**.  В консоли диспетчера пакетов введите следующую команду.
     
     ```powershell
     Install-Package Microsoft.ServiceFabric.Actors -IncludePrerelease -ProjectName ActorClient
@@ -148,7 +147,7 @@ internal class HelloWorld : Actor, IHelloWorld
 > [!TIP]
 > В среде выполнения субъектов Service Fabric предусмотрены некоторые [события и счетчики производительности, связанные с методами субъекта](service-fabric-reliable-actors-diagnostics.md#actor-method-events-and-performance-counters). Они полезны при диагностике и мониторинге производительности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте больше о том, [как Reliable Actors использует платформу Service Fabric](service-fabric-reliable-actors-platform.md).
 
 

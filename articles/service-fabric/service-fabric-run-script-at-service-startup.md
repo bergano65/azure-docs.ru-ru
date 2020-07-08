@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 03/21/2018
 ms.author: atsenthi
 ms.openlocfilehash: a25f16f08ab8ae9564363f179d19d4b30c5315fa
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75464283"
 ---
 # <a name="run-a-service-startup-script-as-a-local-user-or-system-account"></a>Выполнение скрипта при запуске службы от имени локального пользователя или системной учетной записи
@@ -136,9 +135,9 @@ ms.locfileid: "75464283"
 ## <a name="run-a-script-from-the-setup-entry-point"></a>Запуск скрипта из точки входа установки
 Теперь добавьте в проект скрипт запуска, который будет выполняться с правами администратора. 
 
-В Visual Studio щелкните правой кнопкой мыши проект службы и добавьте новый файл с именем *MySetup. bat*.
+В Visual Studio щелкните правой кнопкой мыши проект службы и добавьте новый файл с именем *MySetup.bat*.
 
-Затем убедитесь, что файл *MySetup. bat* включен в пакет службы. По умолчанию он не включен. Щелкните файл правой кнопкой мыши, чтобы открыть контекстное меню, и выберите **Свойства**. Убедитесь, что в диалоговом окне "Свойства" параметр **Копировать в выходной каталог** имеет значение **Копировать, если новее**. Экран должен выглядеть следующим образом.
+Затем убедитесь, что файл *MySetup.bat* включен в пакет службы. По умолчанию он не включен. Щелкните файл правой кнопкой мыши, чтобы открыть контекстное меню, и выберите **Свойства**. Убедитесь, что в диалоговом окне "Свойства" параметр **Копировать в выходной каталог** имеет значение **Копировать, если новее**. Экран должен выглядеть следующим образом.
 
 ![Свойство CopyToOutput в Visual Studio для пакетного файла SetupEntryPoint][image1]
 
@@ -154,7 +153,7 @@ REM To delete this system variable us
 REM REG delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v TestVariable /f
 ```
 
-Затем скомпилируйте и разверните решение в кластере локальной разработки. После запуска службы, как показано в [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md), можно увидеть, что файл MySetup. bat был успешным двумя способами. Откройте командную строку PowerShell и введите следующую команду.
+Затем скомпилируйте и разверните решение в кластере локальной разработки. После запуска службы, как показано в [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md), можно увидеть, что MySetup.bat файл был успешным двумя способами. Откройте командную строку PowerShell и введите следующую команду.
 
 ```
 PS C:\ [Environment]::GetEnvironmentVariable("TestVariable","Machine")
@@ -168,7 +167,7 @@ C:\SfDevCluster\Data\_App\Node.2\MyApplicationType_App\work\out.txt
 ```
 
 ## <a name="run-powershell-commands-from-a-setup-entry-point"></a>Запуск команд PowerShell из точки входа установки
-Чтобы запустить PowerShell из точки **SetupEntryPoint** , можно запустить **PowerShell. exe** в пакетном файле, который указывает на файл PowerShell. Сначала добавьте файл PowerShell в проект службы, например с именем **MySetup.ps1**. Не забудьте указать свойство *Копировать, если новее* , чтобы включить этот файл в состав пакета службы. В следующем примере показан пакетный файл для запуска файла PowerShell с именем MySetup.ps1, который задает системную переменную среды с именем **TestVariable**.
+Чтобы запустить PowerShell из точки **SetupEntryPoint** , можно запустить **PowerShell.exe** в пакетном файле, который указывает на файл PowerShell. Сначала добавьте файл PowerShell в проект службы, например с именем **MySetup.ps1**. Не забудьте указать свойство *Копировать, если новее* , чтобы включить этот файл в состав пакета службы. В следующем примере показан пакетный файл для запуска файла PowerShell с именем MySetup.ps1, который задает системную переменную среды с именем **TestVariable**.
 
 Файл MySetup.bat для запуска файла PowerShell.
 
@@ -229,7 +228,7 @@ Echo "Test console redirection which writes to the application log folder on the
 
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Ознакомьтесь с информацией о [безопасности приложений и служб](service-fabric-application-and-service-security.md).
 * [Сведения о модели приложения](service-fabric-application-model.md)
 * [Указание ресурсов в манифесте службы](service-fabric-service-manifest-resources.md)

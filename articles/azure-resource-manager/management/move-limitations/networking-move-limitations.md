@@ -4,10 +4,9 @@ description: Используйте Azure Resource Manager для перемещ
 ms.topic: conceptual
 ms.date: 10/16/2019
 ms.openlocfilehash: 0cd6887d3489f2ffede0f5e3d63533a33a6ccc04
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75485238"
 ---
 # <a name="move-guidance-for-networking-resources"></a>Руководство по перемещению сетевых ресурсов
@@ -22,7 +21,7 @@ ms.locfileid: "75485238"
 
 Дополнительные сведения см. в разделе [сценарий перемещения по подпискам](../move-resource-group-and-subscription.md#scenario-for-move-across-subscriptions).
 
-## <a name="peered-virtual-network"></a>Одноранговая виртуальная сеть
+## <a name="peered-virtual-network"></a>пиринговая виртуальная сеть;
 
 Чтобы переместить виртуальную сеть с пиринговым подключением, сначала нужно отключить это подключение. После отключения виртуальную сеть можно переместить. После перемещения установите пиринговое подключение виртуальной сети заново.
 

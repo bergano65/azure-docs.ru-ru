@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: vturecek
 ms.openlocfilehash: 87b922cb9655588a22c739d26c9ce9e49d35781a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75465548"
 ---
 # <a name="service-fabric-testability-scenarios-service-communication"></a>Сценарии тестирования платформы Service Fabric: обмен данными между службами
@@ -81,7 +80,7 @@ PS > Invoke-ServiceFabricPartitionQuorumLoss -ServiceName fabric:/Myapplication/
 
 В этом примере мы задаем для параметра `QuorumLossMode` значение `QuorumReplicas`, чтобы указать, что нам нужно вызвать потерю кворума без отключения всех реплик. Таким образом выполнение операций чтения по-прежнему возможно. Чтобы протестировать сценарий, при котором недоступен весь раздел, для этого параметра можно задать значение `AllReplicas`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Дополнительные сведения о действиях, доступных благодаря подсистеме тестирования](service-fabric-testability-actions.md)
 
 [Дополнительные сведения о сценариях подсистемы тестирования](service-fabric-testability-scenarios.md)

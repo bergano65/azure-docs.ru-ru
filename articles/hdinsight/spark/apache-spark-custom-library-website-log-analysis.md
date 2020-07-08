@@ -9,10 +9,9 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/27/2019
 ms.openlocfilehash: c6bf26d8f3a73db6ee69b2aa0de73872911893bf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75552718"
 ---
 # <a name="analyze-website-logs-using-a-custom-python-library-with-apache-spark-cluster-on-hdinsight"></a>Анализ журналов веб-сайтов с помощью пользовательской библиотеки Python и кластера Apache Spark в HDInsight
@@ -46,7 +45,7 @@ ms.locfileid: "75552718"
     from pyspark.sql.types import *
     ```
 
-1. Создайте RDD, используя пример данных журнала, уже доступных в кластере. Доступ к данным в учетной записи хранения по умолчанию, связанной с кластером, можно получить по адресу `\HdiSamples\HdiSamples\WebsiteLogSampleData\SampleLog\909f2b.log`. Выполните следующий код.
+1. Создайте RDD, используя пример данных журнала, уже доступных в кластере. Доступ к данным в учетной записи хранения по умолчанию, связанной с кластером, можно получить по адресу `\HdiSamples\HdiSamples\WebsiteLogSampleData\SampleLog\909f2b.log` . Выполните следующий код.
 
     ```pyspark
     logs = sc.textFile('wasbs:///HdiSamples/HdiSamples/WebsiteLogSampleData/SampleLog/909f2b.log')
@@ -70,9 +69,9 @@ ms.locfileid: "75552718"
 
 ## <a name="analyze-log-data-using-a-custom-python-library"></a>Анализ данных журнала с помощью пользовательской библиотеки Python
 
-1. В приведенном выше примере выходных данных первые несколько строк содержат сведения о заголовке, а все последующие строки соответствуют схеме, описанной в этом заголовке. Анализ таких журналов может быть сложным, поэтому мы используем настраиваемую библиотеку Python (**iislogparser.py**), которая делает эту задачу намного проще. По умолчанию эта библиотека входит в кластер Spark в HDInsight по адресу `/HdiSamples/HdiSamples/WebsiteLogSampleData/iislogparser.py`.
+1. В приведенном выше примере выходных данных первые несколько строк содержат сведения о заголовке, а все последующие строки соответствуют схеме, описанной в этом заголовке. Анализ таких журналов может быть сложным, поэтому мы используем настраиваемую библиотеку Python (**iislogparser.py**), которая делает эту задачу намного проще. По умолчанию эта библиотека входит в кластер Spark в HDInsight по адресу `/HdiSamples/HdiSamples/WebsiteLogSampleData/iislogparser.py` .
 
-    Однако эта библиотека отсутствует в, `PYTHONPATH` поэтому мы не можем использовать ее с помощью оператора import, например `import iislogparser`. Чтобы использовать эту библиотеку, необходимо распространить ее на все рабочие узлы. Выполните следующий фрагмент кода.
+    Однако эта библиотека отсутствует в, `PYTHONPATH` поэтому мы не можем использовать ее с помощью оператора import, например `import iislogparser` . Чтобы использовать эту библиотеку, необходимо распространить ее на все рабочие узлы. Выполните следующий фрагмент кода.
 
     ```pyspark
     sc.addPyFile('wasbs:///HdiSamples/HdiSamples/WebsiteLogSampleData/iislogparser.py')
@@ -110,7 +109,7 @@ ms.locfileid: "75552718"
     errors.map(lambda p: str(p)).saveAsTextFile('wasbs:///HdiSamples/HdiSamples/WebsiteLogSampleData/SampleLog/909f2b-2.log')
     ```
 
-    Выходные данные должны иметь `There are 30 errors and 646 log entries`состояние.
+    Выходные данные должны иметь состояние `There are 30 errors and 646 log entries` .
 
 1. Кроме того, для визуализации данных вы можете использовать **Matplotlib** . Например, если вы хотите установить причину длительного выполнения некоторых запросов, найдите файлы с наибольшим средним временем обработки. Код в представленном ниже фрагменте выдает первые 25 ресурсов с максимальным временем обработки запросов.
 
@@ -198,10 +197,10 @@ ms.locfileid: "75552718"
 
 1. Завершив работу с приложением, следует закрыть записную книжку, чтобы освободить ресурсы. Для этого в меню **File** (Файл) записной книжки выберите пункт **Close and Halt** (Закрыть и остановить). Это действие приведет к завершению работы и закрытию записной книжки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Изучите следующие статьи:
 
-* [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
+* [Обзор: Spark в Azure HDInsight](apache-spark-overview.md)
 * [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](apache-spark-jupyter-notebook-install-locally.md)

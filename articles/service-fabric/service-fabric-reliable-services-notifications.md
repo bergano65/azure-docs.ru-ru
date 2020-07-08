@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 6/29/2017
 ms.author: mcoskun
 ms.openlocfilehash: 1f3239ea1da252ccd84c6572b562756c8fd1677d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75639570"
 ---
 # <a name="reliable-services-notifications"></a>Уведомления Reliable Services
@@ -28,7 +27,7 @@ ms.locfileid: "75639570"
 * Транзакция
   * Commit
 * Диспетчер состояний:
-  * Перестроить
+  * Перестроение
   * добавление надежного состояния;
   * удаление надежного состояния.
 
@@ -206,7 +205,7 @@ public void OnDictionaryChangedHandler(object sender, NotifyDictionaryChangedEve
 * Для транзакций, которые содержат несколько операций, эти операции будут применены в порядке, в котором они были получены от пользователя в первичной реплике.
 * При обработке хода выполнения с результатом false некоторые операции могут быть отменены. Для таких операций отмены будут создаваться уведомления и выполнен откат состояния реплики до стабильный точки. Одно важное отличие уведомлений об отмене — события с повторяющимися ключами агрегируются. Например, если упомянутая выше транзакция T1 отменяется, то пользователь увидит одно уведомление для операции Delete(X).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Надежные коллекции](service-fabric-work-with-reliable-collections.md)
 * [Быстрый запуск Reliable Services](service-fabric-reliable-services-quick-start.md)
 * [Архивация и восстановление (аварийное восстановление) надежных служб](service-fabric-reliable-services-backup-restore.md)

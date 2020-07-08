@@ -4,10 +4,9 @@ description: Узнайте, как установить удаленное по
 ms.topic: conceptual
 ms.date: 03/23/2018
 ms.openlocfilehash: c7ca4f0d5dce1b19837a44d5c9749f3e1293c6b8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75458316"
 ---
 # <a name="remote-connect-to-a-virtual-machine-scale-set-instance-or-a-cluster-node"></a>Удаленное подключение к экземпляру масштабируемого набора виртуальных машин или узлу кластера
@@ -19,7 +18,7 @@ ms.locfileid: "75458316"
 
     Обычно у каждого типа узла, определенного в кластере, есть собственные виртуальные IP-адреса и выделенная подсистема балансировки нагрузки. По умолчанию имя подсистемы балансировки нагрузки для типа узла имеет следующий формат: *LB-{имя кластера}-{тип узла}*. Например, *LB-mycluster-FrontEnd*. 
     
-    На странице подсистемы балансировки нагрузки в портал Azure выберите **Параметры** > **правила NAT для входящего трафика**. 
+    На странице подсистемы балансировки нагрузки в портал Azure выберите **Параметры**  >  **правила NAT для входящего трафика**. 
 
     ![Правила NAT для входящих подключений подсистемы балансировки нагрузки](./media/service-fabric-cluster-remote-connect-to-azure-cluster-node/lb-window.png)
 

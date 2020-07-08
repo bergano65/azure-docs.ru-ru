@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 10/04/2018
 ms.author: tomfitz
 ms.openlocfilehash: afe78dd00ecebdc54b6d73c4c8324729e117d95b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75651752"
 ---
 # <a name="monitor-a-deployed-instance-of-a-managed-application"></a>Мониторинг развернутого экземпляра управляемого приложения
@@ -22,7 +21,7 @@ ms.locfileid: "75651752"
 
    ![Выбор управляемого приложения](./media/monitor-managed-application-portal/select-managed-application.png)
 
-1. Выберите **Работоспособность ресурсов**.
+1. Выберите **работоспособность ресурсов**.
 
    ![Выбор работоспособности ресурсов](./media/monitor-managed-application-portal/select-resource-health.png)
 
@@ -32,7 +31,7 @@ ms.locfileid: "75651752"
 
 ## <a name="view-alerts"></a>Просмотр оповещений
 
-1. Выберите **оповещения**.
+1. Выберите **Оповещения**.
 
    ![Выбор оповещений](./media/monitor-managed-application-portal/select-alerts.png)
 
@@ -46,7 +45,7 @@ ms.locfileid: "75651752"
 
 В управляемом приложении, для его экземпляра или ресурсов можно создать оповещения. Сведения о создании оповещений см. в статье [Обзор оповещений в Microsoft Azure](../../azure-monitor/platform/alerts-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. дополнительные сведения о [примерах проектов для управляемых приложений Azure](sample-projects.md).
 * Сведения о том, как развернуть экземпляр управляемого приложения, см. в статье [Развертывание приложения из каталога служб с помощью портала Azure](deploy-service-catalog-quickstart.md).

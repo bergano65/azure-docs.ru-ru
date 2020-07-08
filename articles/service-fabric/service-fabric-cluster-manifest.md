@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 11/12/2018
 ms.author: dekapur
 ms.openlocfilehash: 0f9b625dfbe9c39bea7771dcc5fd58805ce19811
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75458377"
 ---
 # <a name="configuration-settings-for-a-standalone-windows-cluster"></a>Параметры конфигурации для изолированного кластера Windows
@@ -19,9 +18,9 @@ ms.locfileid: "75458377"
 
 * В примерах ClusterConfig.Unsecure.DevCluster.json и ClusterConfig.Unsecure.MultiMachine.json показано, как создать незащищенный тестовый или рабочий кластер соответственно.
 
-* ClusterConfig. Windows. DevCluster. JSON и ClusterConfig. Windows. remachine. JSON демонстрируют создание тестовых или рабочих кластеров, защищенных с помощью [системы безопасности Windows](service-fabric-windows-cluster-windows-security.md).
+* ClusterConfig.Windows.DevCluster.jsв и ClusterConfig.Windows.MultiMachine.jsо том, как создавать тестовые или рабочие кластеры, защищенные с помощью [системы безопасности Windows](service-fabric-windows-cluster-windows-security.md).
 
-* ClusterConfig. X509. DevCluster. JSON и ClusterConfig. X509. remachine. JSON демонстрируют создание тестовых или рабочих кластеров, защищенных с помощью [безопасности на основе сертификата X509](service-fabric-windows-cluster-x509-security.md).
+* ClusterConfig.X509.DevCluster.jsв и ClusterConfig.X509.MultiMachine.jsПокажите, как создавать тестовые или рабочие кластеры, защищенные с помощью [безопасности на основе сертификата X509](service-fabric-windows-cluster-x509-security.md).
 
 Теперь рассмотрим различные разделы файла ClusterConfig.json.
 
@@ -198,8 +197,8 @@ name — понятное имя этого конкретного типа уз
 ### <a name="container-support"></a>Поддержка контейнеров
 Чтобы включить в изолированных кластерах поддержку контейнеров для контейнеров Windows Server и Hyper-V, необходимо включить компонент надстройки DnsService.
 
-## <a name="next-steps"></a>Дальнейшие действия
-После создания полного файла *ClusterConfig. JSON* , настроенного в соответствии с настройками автономного кластера, можно развернуть кластер. Следуйте инструкциям в статье [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md), 
+## <a name="next-steps"></a>Дальнейшие шаги
+После создания полной *ClusterConfig.js* файла, настроенного в соответствии с настройками автономного кластера, можно развернуть кластер. Следуйте инструкциям в статье [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md), 
 
 Если у вас развернут изолированный кластер, вы также можете [обновить его конфигурацию](service-fabric-cluster-config-upgrade-windows-server.md). 
 

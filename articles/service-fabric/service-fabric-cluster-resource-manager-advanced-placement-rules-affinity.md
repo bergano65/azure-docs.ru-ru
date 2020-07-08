@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 7bfd261802fbf891b8f45079255783cb1e8ac7d4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75551749"
 ---
 # <a name="configuring-and-using-service-affinity-in-service-fabric"></a>Настройка и использование сходства служб в Service Fabric
@@ -73,7 +72,7 @@ await fabricClient.ServiceManager.CreateServiceAsync(serviceDescription);
 ### <a name="partitioning-support"></a>Поддержка секционирования
 И, наконец, отношения сопоставления не поддерживаются, если родительский элемент секционирован. Возможно, со временем секционированные родительские службы будут поддерживаться, но на данный момент эта возможность отсутствует.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о настройке служб см. в разделе [Настройка параметров Cluster Resource Manager для служб Service Fabric](service-fabric-cluster-resource-manager-configure-services.md).
 - О том, как ограничить выполнение служб небольшим набором компьютеров или объединить нагрузку служб, рассказывается в разделе [Введение в группы приложений](service-fabric-cluster-resource-manager-application-groups.md).
 

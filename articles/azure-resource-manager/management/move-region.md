@@ -7,10 +7,9 @@ ms.topic: conceptual
 ms.date: 11/21/2019
 ms.author: raynew
 ms.openlocfilehash: 22d8bcee96b4ac52641d4f0841267195f44fe15a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75485212"
 ---
 # <a name="moving-azure-resources-across-regions"></a>Перемещение ресурсов Azure в разных регионах
@@ -25,7 +24,7 @@ ms.locfileid: "75485212"
 - **Выровняйте для служб и компонентов**: Переместите ресурсы, чтобы воспользоваться преимуществами служб или функций, доступных в определенном регионе.
 - **Реагирование на развитие бизнес-процессов**: перемещение ресурсов в регион в ответ на изменения бизнеса, такие как слияние или приобретение.
 - **Выровняйте по сходству**: Перенесите ресурсы в регион, который является локальным для вашего бизнеса.
-- **Соответствие требованиям к данным**: перемещение ресурсов для соответствия требованиям местонахождение данных или требованиям классификации данных. [Подробнее](https://azure.microsoft.com/mediahandler/files/resourcefiles/achieving-compliant-data-residency-and-security-with-azure/Achieving_Compliant_Data_Residency_and_Security_with_Azure.pdf).
+- **Соответствие требованиям к данным**: перемещение ресурсов для соответствия требованиям местонахождение данных или требованиям классификации данных. [Подробнее.](https://azure.microsoft.com/mediahandler/files/resourcefiles/achieving-compliant-data-residency-and-security-with-azure/Achieving_Compliant_Data_Residency_and_Security_with_Azure.pdf)
 - **Реагирование на требования к развертыванию**: перемещение ресурсов, которые были развернуты с ошибкой, или переход в соответствии с потребностями в емкости. 
 - **Ответ на списание**: перемещение ресурсов из-за списания регионов.
 
@@ -43,6 +42,6 @@ ms.locfileid: "75485212"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Список ресурсов, поддерживающих перемещение по регионам, см. в разделе [Поддержка операций перемещения для ресурсов](region-move-support.md).

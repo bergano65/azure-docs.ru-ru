@@ -13,10 +13,9 @@ ms.workload: infrastructure
 ms.date: 10/31/2019
 ms.author: vaaga
 ms.openlocfilehash: e049a2b914cbf9c4f0ca0f3a1dd0281d58f881b2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75486824"
 ---
 # <a name="troubleshoot-virtual-machine-deployment-due-to-detached-disks"></a>Устранение неполадок развертывания виртуальной машины из-за отключенных дисков
@@ -83,7 +82,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 ### <a name="step-2-set-the-flag-for-failing-disks-to-true"></a>Шаг 2. Установите флаг для неудачных дисков в значение "true".
 
-Установите флаг **тобедетачед** для параметра сбой диска в значение true в полезных данных, возвращенных на шаге 1. Примечание. версия API, указанная для вызовов Get и постановки, `2019-03-01` должна быть или выше.
+Установите флаг **тобедетачед** для параметра сбой диска в значение true в полезных данных, возвращенных на шаге 1. Примечание. версия API, указанная для вызовов Get и постановки, должна быть `2019-03-01` или выше.
 
 **Пример текста запроса**
 
@@ -230,7 +229,7 @@ PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 При возникновении проблем с подключением к виртуальной машине ознакомьтесь со статьей [Устранение неполадок с подключением к удаленному рабочему столу на виртуальной машине Azure под управлением Windows](troubleshoot-rdp-connection.md).
 

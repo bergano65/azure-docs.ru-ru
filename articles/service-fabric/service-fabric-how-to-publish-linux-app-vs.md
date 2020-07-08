@@ -6,10 +6,9 @@ ms.topic: troubleshooting
 ms.date: 5/20/2019
 ms.author: pepogors
 ms.openlocfilehash: c30eedb6782e4172d677f16e27441f28c78cdd89
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75614355"
 ---
 # <a name="use-visual-studio-to-create-and-publish-net-core-applications-targeting-a-remote-linux-service-fabric-cluster"></a>Создание и публикация приложений .Net Core, предназначенных для удаленного кластера Service Fabric Linux, с помощью Visual Studio
@@ -26,7 +25,7 @@ ms.locfileid: "75614355"
 ![Создание приложения]
 4. Присвойте приложению имя и нажмите кнопку **ОК**.
 5. На странице **новая Service Fabric служба** выберите тип службы, которую вы хотите создать, в **разделе .NET Core**.
-![Create-Service]
+![Создание службы]
 
 ## <a name="deploy-to-a-remote-linux-cluster"></a>Развертывание в удаленном кластере Linux
 1. В обозревателе решений щелкните приложение правой кнопкой мыши и выберите пункт **Сборка**.
@@ -38,7 +37,7 @@ ms.locfileid: "75614355"
     <UpdateServiceFabricManifestEnabled>False</UpdateServiceFabricManifestEnabled>
 ```
 > [!Note]
-> Если для параметра Упдатесервицефабрикманифестенаблед задать значение false, то при сборке будет отключено обновление файла ServiceManifest. XML. Любые изменения, такие как добавление, удаление или переименование в службу, не будут отражены в ServiceManifest. XML. При внесении каких-либо изменений необходимо либо обновить ServiceManifest вручную, либо временно установить Упдатесервицефабрикманифестенаблед в значение true, а затем выполнить сборку службы, которая обновит файл ServiceManifest. XML, а затем вернуть значение false.
+> При установке для Упдатесервицефабрикманифестенаблед значения false обновления ServiceManifest.xml будут отключены во время сборки. Любое изменение, например добавление, удаление или переименование в службу, не будет отражено в ServiceManifest.xml. При внесении любых изменений необходимо либо обновить ServiceManifest вручную, либо временно установить Упдатесервицефабрикманифестенаблед в значение true, а затем создать службу, которая обновит ServiceManifest.xml, а затем вернуть ее к значению false.
 >
 
 4. Обновите Рунтимеиндетифиер с Win7-x64 на целевую платформу в проекте службы.
@@ -59,10 +58,10 @@ ms.locfileid: "75614355"
 
 <!--Image references-->
 [Создание приложения]:./media/service-fabric-how-to-vs-remote-linux-cluster/create-application-remote-linux.png
-[Create-Service]:./media/service-fabric-how-to-vs-remote-linux-cluster/create-service-remote-linux.png
+[Создание службы]:./media/service-fabric-how-to-vs-remote-linux-cluster/create-service-remote-linux.png
 [Сборка — приложение]:./media/service-fabric-how-to-vs-remote-linux-cluster/build-application-remote-linux.png
 [Edit-CSPROJ]:./media/service-fabric-how-to-vs-remote-linux-cluster/edit-csproj-remote-linux.png
 [Публикация — приложение]:./media/service-fabric-how-to-vs-remote-linux-cluster/publish-remote-linux.png
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте [, как приступить к работе с Service Fabric с .NET Core](https://azure.microsoft.com/resources/samples/service-fabric-dotnet-core-getting-started/)

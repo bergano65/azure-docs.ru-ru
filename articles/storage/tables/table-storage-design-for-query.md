@@ -9,10 +9,9 @@ ms.date: 04/23/2018
 ms.author: sngun
 ms.subservice: tables
 ms.openlocfilehash: 41a588ddc0c1be8014a84d8fe181013d8566f68d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75457642"
 ---
 # <a name="design-for-querying"></a>Разработка для запросов
@@ -35,13 +34,13 @@ ms.locfileid: "75457642"
 ## <a name="how-your-choice-of-partitionkey-and-rowkey-impacts-query-performance"></a>Влияние выбора свойств PartitionKey и RowKey на производительность запросов
 В следующих примерах предполагается, что сущности сотрудников хранятся в службе таблиц согласно приведенной далее структуре (для большей ясности во многих примерах свойство **Timestamp** опущено).  
 
-| *Имя столбца* | *Тип данных* |
+| *Имя столбца* | *Data type* |
 | --- | --- |
 | **PartitionKey** (Название отдела) |Строка |
 | **RowKey** (ИД сотрудника) |Строка |
-| **Фамилия** |Строка |
+| **FirstName** |Строка |
 | **LastName** |Строка |
-| **Интервал** |Целое число |
+| **Возраст** |Целое число |
 | **EmailAddress** |Строка |
 
 В статье [Общие сведения о Хранилище таблиц Azure](table-storage-overview.md) описываются некоторые ключевые особенности службы таблиц Azure, оказывающие прямое влияние на процесс разработки запросов. С их учетом были сформулированы следующие общие рекомендации по разработке запросов службы таблиц. Обратите внимание, что синтаксис фильтрации, используемый в приведенных ниже примерах, взят из REST API службы таблиц. Дополнительные сведения см. в статье о [сущностях запроса](https://docs.microsoft.com/rest/api/storageservices/Query-Entities).  
@@ -96,9 +95,9 @@ ms.locfileid: "75457642"
 * [Шаблон вторичного индекса в разных разделах](table-storage-design-patterns.md#inter-partition-secondary-index-pattern) — хранение нескольких копий каждой сущности с помощью различных значений RowKey в отдельных разделах или отдельных таблицах для выполнения быстрых и эффективных операций поиска и активации альтернативных порядков сортировки с помощью различных значений RowKey.
 * [Шаблон для заключительного фрагмента журнала](table-storage-design-patterns.md#log-tail-pattern) — извлечение *n* сущностей, недавно добавленных в раздел, с помощью значения **RowKey** , выполняющего сортировку по дате и времени в обратном порядке.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Шаблоны для разработки таблиц](table-storage-design-patterns.md)
+- [Шаблоны проектирования таблиц](table-storage-design-patterns.md)
 - [Моделирование отношений](table-storage-design-modeling.md)
 - [Шифрование данных таблиц](table-storage-design-encrypt-data.md)
 - [Разработка для изменения данных](table-storage-design-for-modification.md)

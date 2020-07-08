@@ -13,13 +13,12 @@ ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c2ad7b769dc890917e5364fe57582acdfe16acac
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75482131"
 ---
-# <a name="get-all-application-proxy-apps-with-a-token-lifetime-policy"></a>Получение всех приложений прокси приложения с помощью политики времени жизни маркеров
+# <a name="get-all-application-proxy-apps-with-a-token-lifetime-policy"></a>Получение всех приложений прокси приложения с политикой срока действия маркеров
 
 В этом примере сценария PowerShell перечислены все приложения прокси приложения Azure Active Directory (Azure AD), которые имеют политику времени существования маркера, и перечислены сведения о политике.
 
@@ -45,7 +44,7 @@ ms.locfileid: "75482131"
 |[Get-AzureADServicePrincipalPolicy](https://docs.microsoft.com/powershell/module/azuread/get-azureadserviceprincipalpolicy?view=azureadps-2.0-preview) | Возвращает политику субъекта-службы в Azure AD. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о модуле Azure AD PowerShell см. в статье [Общие сведения о модуле Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-2.0).
 

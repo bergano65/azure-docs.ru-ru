@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: pepogors
 ms.openlocfilehash: af03223e8b007cbd2a00d54c3076056cd110ecc9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75551822"
 ---
 # <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика
@@ -36,7 +35,7 @@ ms.locfileid: "75551822"
 
 Как правило, модуль наблюдения является отдельной службой, которая может отслеживать работоспособность и нагрузку в службах, проверять связь с конечными точками и сообщать о непредвиденных событиях работоспособности в кластере. Он позволяет предотвратить ошибки, которые невозможно обнаружить только на основе производительности отдельной службы. Модули наблюдения также удобны для размещения кода, выполняющего корректирующие действия, не требующие участия пользователя (например, очистку файлов журнала в хранилище через определенные интервалы времени). Пример реализации службы наблюдения см. в статье [Azure Service Fabric watchdog sample](https://github.com/Azure-Samples/service-fabric-watchdog-service) (Пример службы наблюдения Azure Service Fabric).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Приступите к работе с инструментированием приложений: [события уровня приложения и создание журнала](service-fabric-diagnostics-event-generation-app.md).
 * Выполните процедуру настройки Application Insights для приложения, следуя указаниям в разделе [Руководство. Мониторинг и диагностика приложения ASP.NET Core в Service Fabric](service-fabric-tutorial-monitoring-aspnet.md).

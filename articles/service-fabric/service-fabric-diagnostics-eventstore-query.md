@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: srrengar
 ms.openlocfilehash: 48350caef6bdaafda9aff7ac776d67b314aeaf8c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75614406"
 ---
 # <a name="query-eventstore-apis-for-cluster-events"></a>Выполнение запросов к интерфейсам API EventStore для получения событий кластера
@@ -169,7 +168,7 @@ var clstrEvents = sfhttpClient.EventsStore.GetClusterEventListAsync(
 
 Вот несколько примеров того, как можно вызвать интерфейсы REST API хранилища событий для получения представления о состоянии кластера.
 
-*Обновления кластера*
+*Обновления кластера:*
 
 Чтобы узнать время последнего успешного обновления или попытки обновления кластера на прошлой неделе, можно отправить запрос к API и получить данные о недавно завершенных обновлениях кластера. Для этого нужно запросить события ClusterUpgradeCompleted в EventStore: `https://mycluster.cloudapp.azure.com:19080/EventsStore/Cluster/Events?api-version=6.4&starttimeutc=2017-04-22T17:01:51Z&endtimeutc=2018-04-29T17:02:51Z&EventsTypesFilter=ClusterUpgradeCompleted`.
 

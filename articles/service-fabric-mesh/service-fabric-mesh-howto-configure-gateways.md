@@ -7,10 +7,9 @@ ms.date: 11/28/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
 ms.openlocfilehash: ec408403d4baa0f211c6bfe867a15c96513693cb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75461954"
 ---
 # <a name="configure-a-gateway-resource-to-route-requests"></a>Настройка шлюза для маршрутизации запросов
@@ -219,8 +218,8 @@ ms.locfileid: "75461954"
 ```
 
 Для этого шлюза настраивается приложение Linux "meshAppLinux", содержащее по меньшей мере две службы, helloWorldService и counterService, которые прослушивают порт 80. В зависимости от структуры URL-адреса входящего запроса этот шлюз перенаправит запрос к одной из этих служб. 
-* "\<IPAddress>:80/helloWorld/\<Request\>" приведет к тому, что запрос будет направлен в "хелловорлдлистенер" в helloWorldService. 
-* "\<IPAddress>:80/Counter/\<Request\>" приведет к тому, что запрос будет направлен в "каунтерлистенер" в каунтерсервице. 
+* " \<IPAddress> : 80/helloWorld/" приведет к тому, что \<request\> запрос будет направлен в "хелловорлдлистенер" в helloWorldService. 
+* " \<IPAddress> : 80/Counter/" приведет к тому, что \<request\> запрос будет направлен в "каунтерлистенер" в каунтерсервице. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 * Разверните [пример для входящих данных](https://github.com/Azure-Samples/service-fabric-mesh/tree/2018-09-01-preview/templates/ingress), чтобы увидеть шлюзы в действии.
