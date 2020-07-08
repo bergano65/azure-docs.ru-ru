@@ -3,12 +3,12 @@ title: Экспорт шаблона в портал Azure
 description: Используйте портал Azure, чтобы экспортировать шаблон Azure Resource Manager из ресурсов в подписке.
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: 8cdba58a7a2ba998bac7fc0225ff957047cd69b0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: dbdcaa6e6db4a7a4a958f1be2e9977a14e092663
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79273739"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86057710"
 ---
 # <a name="single-and-multi-resource-export-to-a-template-in-azure-portal"></a>Экспорт одного и нескольких ресурсов в шаблон в портал Azure
 
@@ -105,11 +105,11 @@ ms.locfileid: "79273739"
 
 1. Выберите группу ресурсов, которую необходимо экспортировать.
 
-1. Выберите ссылку в разделе **развертывания**.
+1. Щелкните ссылку в разделе **Развертывания**.
 
    ![Выбор журнала развертывания](./media/export-template-portal/select-deployment-history.png)
 
-1. Выберите одно из развертываний из журнала развертывания.
+1. Выберите нужное развертывание из журнала развертывания.
 
    ![Выбор развертывания](./media/export-template-portal/select-details.png)
 
@@ -117,9 +117,9 @@ ms.locfileid: "79273739"
 
    ![Выбор шаблона](./media/export-template-portal/show-template-from-history.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как экспортировать шаблоны с помощью [Azure CLI](../management/manage-resource-groups-cli.md#export-resource-groups-to-templates), [Azure PowerShell](../management/manage-resource-groups-powershell.md#export-resource-groups-to-templates)или [REST API](/rest/api/resources/resourcegroups/exporttemplate).
 - Сведения о синтаксисе шаблона диспетчер ресурсов см. в разделе [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](template-syntax.md).
-- Дополнительные сведения о разработке шаблонов см. в пошаговых [руководствах](/azure/azure-resource-manager/).
+- Дополнительные сведения о разработке шаблонов см. в пошаговых [руководствах](../index.yml).
 - Сведения о том, как просмотреть схемы шаблонов Azure Resource Manager, см. в разделе [Справочник по шаблонам](/azure/templates/).

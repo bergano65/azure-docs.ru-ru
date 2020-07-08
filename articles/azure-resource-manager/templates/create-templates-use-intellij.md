@@ -4,12 +4,12 @@ description: Сведения о создании и развертывании 
 ms.devlang: java
 ms.date: 08/01/2019
 ms.topic: conceptual
-ms.openlocfilehash: a5015a018f905b4353afd6bf25a48a2d942b3b97
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fa09fbe8d239bbe10c0762d3aad7e19df23a9044
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80153358"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86057455"
 ---
 # <a name="create-and-deploy-arm-templates-by-using-the-intellij-idea"></a>Создание и развертывание шаблонов ARM с помощью IntelliJ идеи
 
@@ -78,7 +78,7 @@ ms.locfileid: "80153358"
 > [!NOTE]
 > Обратите внимание, что удаление развертывания никоим образом не повлияет на ресурсы, созданные при развертывании. Если соответствующая группа ресурсов или определенные ресурсы вам больше не нужны, удалите их.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Основная задача этой статьи — использовать IntelliJную идею для развертывания существующего шаблона из шаблонов быстрого запуска Azure. Кроме того, в нем содержатся сведения о просмотре и обновлении имеющегося развертывания в Azure. Шаблоны быстрого запуска Azure могут не обеспечить вас всем необходимым. Дополнительные сведения о разработке шаблонов см. в новой серии
 
@@ -86,4 +86,4 @@ ms.locfileid: "80153358"
 > [руководств для начинающих](./template-tutorial-create-first-template.md).
 
 > [!div class="nextstepaction"]
-> [Azure для разработчиков облачных решений Java](https://docs.microsoft.com/azure/java)
+> [Azure для разработчиков облачных решений Java](/azure/java)

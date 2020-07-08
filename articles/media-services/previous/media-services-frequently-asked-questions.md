@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 67c7955316d4c9670509affb478813df0768f261
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
-ms.translationtype: HT
+ms.openlocfilehash: 73b24de0e66ca8fbe2097f7da39b64aaea8b1ac4
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83832560"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86057999"
 ---
 # <a name="media-services-v2-frequently-asked-questions"></a>Часто задаваемые вопросы о Службах мультимедиа Azure версии 2
 
@@ -66,18 +66,20 @@ A. Сведения о подключении к API AMS см. в разделе
 
 A. [Стандартный кодировщик служб мультимедиа](media-services-dotnet-encode-with-media-encoder-standard.md) поддерживает поворот на 90, 180 и 270 градусов. По умолчанию задается значение Auto, при котором система пытается обнаружить метаданные поворота во входящем файле MP4/MOV и обеспечить соответствующую компенсацию. Включите следующий элемент **Sources** в одну из предустановок JSON, определенных [здесь](media-services-mes-presets-overview.md):
 
-    "Version": 1.0,
-    "Sources": [
-    {
-      "Streams": [],
-      "Filters": {
-        "Rotation": "90"
-      }
-    }
-    ],
-    "Codecs": [
+```json
+"Version": 1.0,
+"Sources": [
+{
+  "Streams": [],
+  "Filters": {
+    "Rotation": "90"
+  }
+}
+],
+"Codecs": [
 
-    ...
+...
+```
 
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа

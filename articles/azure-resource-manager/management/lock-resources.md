@@ -2,19 +2,19 @@
 title: Блокировка ресурсов для предотвращения изменений
 description: Запрет на обновление или удаление критических ресурсов Azure для пользователей путем применения блокировки для всех пользователей и ролей.
 ms.topic: conceptual
-ms.date: 05/19/2020
-ms.openlocfilehash: 2060a7ed2de4956eb15bc85fb1a905705e21f813
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
-ms.translationtype: HT
+ms.date: 06/17/2020
+ms.openlocfilehash: 7fe735cf523758f51fd9d6751de8507b2af46737
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83847673"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86057591"
 ---
 # <a name="lock-resources-to-prevent-unexpected-changes"></a>Блокировка ресурсов для предотвращения непредвиденных изменений
 
 Администратору иногда требуется заблокировать подписку, ресурс или группу ресурсов, чтобы другие пользователи в организации не могли случайно удалить или изменить критически важные ресурсы. Можно установить уровень блокировки **CanNotDelete** или **ReadOnly**. На портале блокировки называются **Удаление** и **Только для чтения**, соответственно.
 
-* **CanNotDelete** означает, что авторизованные пользователи смогут читать и изменять ресурс, но не смогут его удалить. 
+* **CanNotDelete** означает, что авторизованные пользователи смогут читать и изменять ресурс, но не смогут его удалить.
 * **ReadOnly** означает, что авторизованные пользователи смогут читать ресурс, но не смогут его удалить или обновить. Применение этой блокировки подобно ограничению авторизованных пользователей с помощью разрешений, предоставляемых для роли **Читатель**.
 
 ## <a name="how-locks-are-applied"></a>Применение блокировок
@@ -35,9 +35,11 @@ ms.locfileid: "83847673"
 
 * Блокировка "только для чтения" **группы ресурсов**, которая содержит **виртуальную машину**, не позволяет пользователям запускать или перезапускать виртуальную машину. Для этих операций требуется запрос POST.
 
-* Блокировка "только для чтения" в **подписке** не позволяет **Azure Advisor** работать корректно. Advisor не удается сохранять результаты запросов.
+* Блокировка "не удается удалить" в **группе ресурсов** не Azure Resource Manager [Автоматическое удаление развертываний](../templates/deployment-history-deletions.md) в журнале. Если вы достигли 800 развертываний в журнале, произойдет сбой развертывания.
 
 * Блокировка "не удается удалить" в **группе ресурсов**, созданной **службой Azure Backup**, приводит к сбою резервного копирования. Служба поддерживает не более 18 точек восстановления. При наличии блокировки служба резервного копирования не может удалять точки восстановления. Более подробные сведения см. в разделе [Часто задаваемые вопросы о резервном копировании виртуальных машин Azure](../../backup/backup-azure-vm-backup-faq.md).
+
+* Блокировка "только для чтения" в **подписке** не позволяет **Azure Advisor** работать корректно. Advisor не удается сохранять результаты запросов.
 
 ## <a name="who-can-create-or-delete-locks"></a>Кто может создавать или удалять блокировки
 
@@ -85,62 +87,63 @@ ms.locfileid: "83847673"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "hostingPlanName": {
-            "type": "string"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "hostingPlanName": {
+      "type": "string"
+    }
+  },
+  "variables": {
+    "siteName": "[concat('ExampleSite', uniqueString(resourceGroup().id))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Web/serverfarms",
+      "apiVersion": "2019-08-01",
+      "name": "[parameters('hostingPlanName')]",
+      "location": "[resourceGroup().location]",
+      "sku": {
+        "tier": "Free",
+        "name": "f1",
+        "capacity": 0
+      },
+      "properties": {
+        "targetWorkerCount": 1
+      }
     },
-    "variables": {
-        "siteName": "[concat('ExampleSite', uniqueString(resourceGroup().id))]"
+    {
+      "type": "Microsoft.Web/sites",
+      "apiVersion": "2019-08-01",
+      "name": "[variables('siteName')]",
+      "location": "[resourceGroup().location]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
+      ],
+      "properties": {
+        "serverFarmId": "[parameters('hostingPlanName')]"
+      }
     },
-    "resources": [
-        {
-            "apiVersion": "2016-09-01",
-            "type": "Microsoft.Web/serverfarms",
-            "name": "[parameters('hostingPlanName')]",
-            "location": "[resourceGroup().location]",
-            "sku": {
-                "tier": "Free",
-                "name": "f1",
-                "capacity": 0
-            },
-            "properties": {
-                "targetWorkerCount": 1
-            }
-        },
-        {
-            "apiVersion": "2016-08-01",
-            "name": "[variables('siteName')]",
-            "type": "Microsoft.Web/sites",
-            "location": "[resourceGroup().location]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
-            ],
-            "properties": {
-                "serverFarmId": "[parameters('hostingPlanName')]"
-            }
-        },
-        {
-            "type": "Microsoft.Web/sites/providers/locks",
-            "apiVersion": "2016-09-01",
-            "name": "[concat(variables('siteName'), '/Microsoft.Authorization/siteLock')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', variables('siteName'))]"
-            ],
-            "properties": {
-                "level": "CanNotDelete",
-                "notes": "Site should not be deleted."
-            }
-        }
-    ]
+    {
+      "type": "Microsoft.Web/sites/providers/locks",
+      "apiVersion": "2016-09-01",
+      "name": "[concat(variables('siteName'), '/Microsoft.Authorization/siteLock')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('siteName'))]"
+      ],
+      "properties": {
+        "level": "CanNotDelete",
+        "notes": "Site should not be deleted."
+      }
+    }
+  ]
 }
 ```
 
-Пример настройки блокировки для группы ресурсов см. в разделе [Создание и блокировка группы ресурсов](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments/create-rg-lock-role-assignment).
+Пример настройки блокировки для группы ресурсов см. в разделе [Создание и блокировка группы ресурсов](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-deployments/create-rg-lock-role-assignment).
 
 ## <a name="powershell"></a>PowerShell
+
 Вы можете заблокировать развернутые ресурсы с помощью Azure PowerShell, выполнив команду [New-AzResourceLock](/powershell/module/az.resources/new-azresourcelock).
 
 Чтобы заблокировать ресурс, укажите имя и тип ресурса, а также имя группы ресурсов.
@@ -222,25 +225,30 @@ az lock delete --ids $lockid
 ```
 
 ## <a name="rest-api"></a>REST API
-Вы можете заблокировать развернутые ресурсы с помощью [REST API для блокировок управления](https://docs.microsoft.com/rest/api/resources/managementlocks). REST API позволяет создавать и удалять блокировки и получать информацию о существующих блокировках.
+
+Вы можете заблокировать развернутые ресурсы с помощью [REST API для блокировок управления](/rest/api/resources/managementlocks). REST API позволяет создавать и удалять блокировки и получать информацию о существующих блокировках.
 
 Чтобы создать блокировку, выполните следующую команду:
 
-    PUT https://management.azure.com/{scope}/providers/Microsoft.Authorization/locks/{lock-name}?api-version={api-version}
+```http
+PUT https://management.azure.com/{scope}/providers/Microsoft.Authorization/locks/{lock-name}?api-version={api-version}
+```
 
 Областью может быть подписка, группа ресурсов или ресурс. Вы можете назначить блокировке любое имя. В качестве версии API используйте **2016-09-01**.
 
 В запросе включите объект JSON, который задает свойства блокировки.
 
-    {
-      "properties": {
-        "level": "CanNotDelete",
-        "notes": "Optional text notes."
-      }
-    } 
+```json
+{
+  "properties": {
+  "level": "CanNotDelete",
+  "notes": "Optional text notes."
+  }
+}
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 * Сведения о том, как логично упорядочить свои ресурсы, см. в разделе [Использование тегов для организации ресурсов](tag-resources.md).
 * Ограничения и соглашения можно применять внутри подписки с помощью настраиваемых политик. Дополнительные сведения см. в статье [Что такое служба "Политика Azure"](../../governance/policy/overview.md).
 * Инструкции по использованию Resource Manager для эффективного управления подписками в организациях см. в статье [Корпоративный каркас Azure: рекомендуемая система управления подписками](/azure/architecture/cloud-adoption-guide/subscription-governance).
-
