@@ -3,15 +3,15 @@ title: Обход параметров брандмауэра хранилища
 description: Параметр сетевого брандмауэра учетной записи хранения может вызвать сбой при создании целевого объекта хранилища BLOB-объектов Azure в кэше HPC Azure. Эта статья содержит обходное решение для ограничения до тех пор, пока не будет установлено исправление программного обеспечения.
 author: ekpgh
 ms.service: hpc-cache
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 11/7/2019
 ms.author: rohogue
-ms.openlocfilehash: 6643662d498db8cbcffcb120a9ceabc46cfc04cb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 11e57e5d101e35c55dbaa39615dfe48511a8b87c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74174412"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85513820"
 ---
 # <a name="work-around-blob-storage-account-firewall-settings"></a>Обход параметров брандмауэра для учетной записи хранения больших двоичных объектов
 

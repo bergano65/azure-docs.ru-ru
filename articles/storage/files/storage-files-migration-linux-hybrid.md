@@ -3,16 +3,16 @@ title: Переход с Linux на Синхронизация файлов Azur
 description: Узнайте, как перенести файлы из расположения на сервере Linux в гибридное облачное развертывание с помощью Синхронизация файлов Azure и файловых ресурсов Azure.
 author: fauhse
 ms.service: storage
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/19/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 3131d6a7e3675027968eadd5f3e3ca8a7f2449c3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fd2e4f5c81427413e3f3f3eceaa0cc41a3b9e318
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82143610"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85510380"
 ---
 # <a name="migrate-from-linux-to-a-hybrid-cloud-deployment-with-azure-file-sync"></a>Переход с Linux на гибридное облачное развертывание с помощью Синхронизация файлов Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "82143610"
 
 Цель заключается в том, чтобы переместить общие папки на сервер Linux Samba в экземпляр Windows Server. Затем используйте Синхронизация файлов Azure для гибридного облачного развертывания. Эту миграцию необходимо выполнить таким образом, чтобы гарантировать целостность рабочих данных, а также доступность во время миграции. Последний требует, чтобы время простоя не превышало минимального, так что оно может поместиться в или только немного больше, чем обычные периоды обслуживания.
 
-## <a name="migration-overview"></a>Общие сведения о переносе
+## <a name="migration-overview"></a>Общие сведения о миграции
 
 Как упоминалось в [статье Обзор миграции](storage-files-migration-overview.md)файлов Azure, важно использовать правильное средство копирования и подход. Сервер Linux Samba предоставляет общие ресурсы SMB непосредственно в локальной сети. Средство Robocopy, встроенное в Windows Server, является лучшим способом перемещения файлов в этом сценарии миграции.
 
@@ -118,7 +118,7 @@ Robocopy /MT:32 /UNILOG:<file name> /TEE /B /MIR /COPYALL /DCOPY:DAT <SourcePath
 :::row-end:::
 :::row:::
    :::column span="1":::
-      /УНИЛОГ:\<имя файла\>
+      /УНИЛОГ:\<file name\>
    :::column-end:::
    :::column span="1":::
       Выводит состояние в файл журнала в формате Юникод (перезаписывает существующий журнал).

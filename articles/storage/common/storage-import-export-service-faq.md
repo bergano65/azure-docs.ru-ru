@@ -4,16 +4,16 @@ description: Ответы на часто задаваемые вопросы о
 author: alkohli
 services: storage
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/06/2020
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 0c8af4cafb2c7ab4d39a591f5972803161c2aa0f
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: f3a41fbd3cbd5b7c8eccfbea8833fdfedee97510
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83120391"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85512395"
 ---
 # <a name="azure-importexport-service-frequently-asked-questions"></a>Служба "Импорт и экспорт Azure". Часто задаваемые вопросы
 
@@ -155,6 +155,6 @@ ms.locfileid: "83120391"
 
 Да. Служба импорта и экспорта Azure использует шифрование BitLocker AES-256.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Что такое служба "Импорт и экспорт Azure"?](storage-import-export-service.md)

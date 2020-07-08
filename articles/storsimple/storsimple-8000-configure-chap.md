@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: ''
 ms.service: storsimple
 ms.devlang: NA
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: TBD
 ms.date: 05/09/2018
 ms.author: alkohli
-ms.openlocfilehash: efc116c278bfe72419800603a3b365f461fe0a28
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5f0c022de69823aedbbb34eb369de350b4999c69
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79267967"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85514358"
 ---
 # <a name="configure-chap-for-your-storsimple-device"></a>Настроить CHAP для устройства StorSimple.
 
@@ -72,7 +72,7 @@ CHAP лучше всего использовать для повышения б
 3. в диалоговом окне **Обнаружить целевой портал**:
    
    1. Укажите IP-адрес устройства.
-   2. Щелкните **Дополнительно**.
+   2. Нажмите кнопку **Дополнительно**.
       
        ![Обнаружение целевого портала](./media/storsimple-configure-chap/IC740945.png)
 4. В диалоговом окне **Дополнительные параметры**:

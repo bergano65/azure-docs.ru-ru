@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: ''
 ms.service: storsimple
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/27/2017
 ms.author: alkohli
-ms.openlocfilehash: 3cf136c5ddec8f4998d15c597914e1f806453945
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: 1d5d57cab9906c04c5c207fa7df2d2fae6f749e7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "60631589"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85514608"
 ---
 # <a name="modify-the-data-0-network-interface-settings-on-your-storsimple-8000-series-device"></a>Изменение параметров сетевого интерфейса DATA 0 на устройстве StorSimple серии 8000
 
@@ -39,7 +39,7 @@ ms.locfileid: "60631589"
 
 #### <a name="to-modify-data-0-network-settings-through-setup-wizard"></a>Изменение сетевых параметров DATA 0 с помощью мастера установки
 1. В меню последовательной консоли выберите параметр 1 **Войти с полным доступом**. При появлении запроса укажите **пароль администратора устройства**. Пароль по умолчанию: `Password1`.
-2. В командной строке введите:
+2. В командной строке введите следующее:
    
     `Invoke-HcsSetupWizard`
 3. Отобразится мастер установки, который поможет настроить интерфейс DATA 0 устройства. Введите новые значения для IP-адреса, шлюза и маски подсети.
@@ -52,13 +52,13 @@ ms.locfileid: "60631589"
 
 #### <a name="to-modify-data-0-network-settings-through-the-set-hcsnetinterface-cmdlet"></a>Изменение сетевых параметров DATA 0 с помощью командлета Set-HcsNetInterface
 1. В меню последовательной консоли выберите параметр 1 **Войти с полным доступом**. При выводе запроса введите пароль администратора устройства. Пароль по умолчанию: `Password1`.
-2. В командной строке введите:
+2. В командной строке введите следующее:
    
     `Set-HCSNetInterface -InterfaceAlias Data0 -IPv4Address <> -IPv4Netmask <> -IPv4Gateway <> -Controller0IPv4Address <> -Controller1IPv4Address <> -IsiScsiEnabled 1 -IsCloudEnabled 1`
    
     В угловых скобках введите следующие значения для DATA 0:
    
-   * IPv4-адреса;
+   * IPv4-адрес
    * шлюза IPv4;
    * маски подсети IPv4;
    * фиксированного IPv4-адреса для контроллера 0;
@@ -66,7 +66,7 @@ ms.locfileid: "60631589"
      
      Дополнительные сведения об использовании этого командлета см. в [справочнике по командлетам Windows PowerShell для StorSimple](https://technet.microsoft.com/library/dn688161.aspx).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 * Сетевые интерфейсы, отличные от DATA 0, можно [настроить на портале Azure](storsimple-8000-modify-device-config.md). 
 * Если у вас возникли проблемы при настройке сетевых интерфейсов, см. статью [Устранение неполадок в развертывании устройства StorSimple](storsimple-troubleshoot-deployment.md).
 

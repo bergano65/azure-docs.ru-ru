@@ -4,16 +4,16 @@ description: Узнайте о некоторых распространенны
 author: twooley
 services: storage
 ms.service: storage
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 01/15/2017
 ms.author: twooley
 ms.subservice: common
-ms.openlocfilehash: 4eeeb538bcd39eed40a92dd45e7ba7bed25558e2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bc9d338579385001d33669ed06ff71e590571502
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75978401"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85514154"
 ---
 # <a name="troubleshooting-the-azure-importexport-tool"></a>Устранение неполадок со средством импорта и экспорта Azure
 В случае возникновения проблем инструмент импорта и экспорта Microsoft Azure возвращает сообщения об ошибках. В этом разделе приведены некоторые распространенные проблемы, с которыми могут столкнуться пользователи.  
@@ -31,10 +31,10 @@ ms.locfileid: "75978401"
 ## <a name="i-lost-the-journal-file-can-i-still-create-the-job"></a>Файл журнала утерян, могу ли я по-прежнему создать задание?  
  Файл журнала для диска содержит полную информацию о копировании данных на этот диск. Он необходим для добавления дополнительных файлов на диск и будет использоваться для создания задания импорта. Если файл журнала утерян, то необходимо повторить все сеансы копирования для диска.  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Настройка средства импорта и экспорта Azure](../storage-import-export-tool-setup-v1.md)   
 * [Подготовка жестких дисков для задания импорта](../storage-import-export-tool-preparing-hard-drives-import-v1.md)   
 * [Просмотр состояния задания с помощью файлов журнала копирования](../storage-import-export-tool-reviewing-job-status-v1.md)   
-* [Восстановление задания импорта](../storage-import-export-tool-repairing-an-import-job-v1.md)   
-* [Исправление задания экспорта](../storage-import-export-tool-repairing-an-export-job-v1.md)
+* [Подготовка задания импорта](../storage-import-export-tool-repairing-an-import-job-v1.md)   
+* [Подготовка задания экспорта](../storage-import-export-tool-repairing-an-export-job-v1.md)

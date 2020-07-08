@@ -8,35 +8,35 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 03/19/2020
 ms.author: tamram
-ms.reviewer: cbrooks
+ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 192e58b101b824ca0cc0c732e02647838be6dc35
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4af70a4e2a698bd280c8c41018bc5aaa1bfa27f8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81456487"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85512548"
 ---
 # <a name="configure-customer-managed-keys-with-azure-key-vault-by-using-the-azure-portal"></a>Настройка ключей, управляемых клиентом, с помощью Azure Key Vault портал Azure
 
 [!INCLUDE [storage-encryption-configure-keys-include](../../../includes/storage-encryption-configure-keys-include.md)]
 
-В этой статье показано, как настроить Azure Key Vault с управляемыми клиентом ключами с помощью [портал Azure](https://portal.azure.com/). Сведения о создании хранилища ключей с помощью портал Azure см. в разделе [Краткое руководство. Установка и извлечение секрета из Azure Key Vault с помощью портал Azure](../../key-vault/secrets/quick-create-portal.md).
+В этой статье показано, как настроить Azure Key Vault с управляемыми клиентом ключами с помощью [портал Azure](https://portal.azure.com/). Сведения о создании Key Vault с помощью портала Azure см. в статье [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью портала Azure](../../key-vault/secrets/quick-create-portal.md).
 
 ## <a name="configure-azure-key-vault"></a>Настройка Azure Key Vault
 
 Для использования управляемых клиентом ключей с шифрованием службы хранилища Azure необходимо, чтобы в хранилище ключей были установлены два свойства: **обратимое удаление** и **не очищать**. Эти свойства не включены по умолчанию, но их можно включить с помощью PowerShell или Azure CLI в новом или существующем хранилище ключей.
 
-Сведения о том, как включить эти свойства в существующем хранилище ключей, см. в разделах с названием **Включение обратимого удаления** и **Включение защиты от очистки** в одной из следующих статей:
+Чтобы узнать, как включить эти свойства в имеющемся хранилище ключей, см. разделы **Включение обратимого удаления** и **Включение защиты от очистки** в одной из следующих статей:
 
-- [Использование обратимого удаления с помощью PowerShell](../../key-vault/general/soft-delete-powershell.md).
-- [Использование обратимого удаления с помощью интерфейса командной строки](../../key-vault/general/soft-delete-cli.md).
+- [Как использовать обратимое удаление в Key Vault с помощью PowerShell](../../key-vault/general/soft-delete-powershell.md).
+- [Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки](../../key-vault/general/soft-delete-cli.md).
 
-С шифрованием службы хранилища Azure поддерживаются только 2048-разрядные ключи RSA и RSA-HSM. Дополнительные сведения о ключах см. в разделе **Key Vault Keys** раздела [о Azure Key Vault ключах, секретах и сертификатах](../../key-vault/about-keys-secrets-and-certificates.md#key-vault-keys).
+Шифрование службы хранилища Azure поддерживает ключи RSA и RSA-HSM размером 2048, 3072 и 4096. Дополнительные сведения о ключах см. в разделе **Key Vault Keys** раздела [о Azure Key Vault ключах, секретах и сертификатах](../../key-vault/about-keys-secrets-and-certificates.md#key-vault-keys).
 
-## <a name="enable-customer-managed-keys"></a>Включить управляемые клиентом ключи
+## <a name="enable-customer-managed-keys"></a>Активация управляемых клиентом ключей
 
-Чтобы включить управляемые клиентом ключи в портал Azure, выполните следующие действия.
+Чтобы включить управляемый клиентом ключ на портале Azure, выполните следующие действия.
 
 1. Войдите в свою учетную запись хранения.
 1. В колоне **параметров** для учетной записи хранения выберите **Шифрование**. Выберите параметр **управляемые ключи клиента** , как показано на следующем рисунке.
@@ -101,5 +101,5 @@ ms.locfileid: "81456487"
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Шифрование неактивных данных в службе хранилища Azure](storage-service-encryption.md)
-- [Что такое Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)?
+- [Шифрование службы хранилища Azure для неактивных данных](storage-service-encryption.md)
+- [Об Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)

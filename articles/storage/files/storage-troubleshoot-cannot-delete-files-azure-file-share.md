@@ -7,15 +7,15 @@ ms.author: kartup
 manager: dcscontentpm
 ms.date: 10/25/2019
 ms.service: storage
-ms.subservice: common
+ms.subservice: files
 services: storage
 tags: ''
-ms.openlocfilehash: d3a3763a8964810626bcdc47da230a9ee406f1f8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1c50f54491e0284005c4b762b0c4b35a8460f5ff
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74196479"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85511980"
 ---
 # <a name="azure-file-share--failed-to-delete-files-from-azure-file-share"></a>Azure file share – failed to delete files from Azure file share (Общая папка Azure — сбой удаления файлов)
 
@@ -36,11 +36,11 @@ ms.locfileid: "74196479"
 
 Ошибка 1816 возникает при достижении верхнего предела одновременных открытых дескрипторов, разрешенных для файла, на компьютере, на котором размонтируется общая папка. Дополнительные сведения см. в статье [Контрольный список производительности и масштабируемости службы хранилища Azure](https://docs.microsoft.com/azure/storage/blobs/storage-performance-checklist).
 
-## <a name="resolution"></a>Разрешение
+## <a name="resolution"></a>Решение
 
 Сократите число параллельно открытых дескрипторов, закрыв некоторые дескрипторы.
 
-## <a name="prerequisite"></a>Предварительные требования
+## <a name="prerequisite"></a>Предварительное требование
 
 ### <a name="install-the-latest-azure-powershell-module"></a>Установите последнюю версию модуля Azure PowerShell
 
@@ -77,8 +77,8 @@ $Context = New-AzStorageContext -StorageAccountName "StorageAccountName" -Storag
 |259101229083|---|10.222.10.123|62758|2019-10-05|12:16:50Z|0|0|9507758546259807489|
 |259101229131|---|10.222.10.123|62758|2019-10-05|12:36:20Z|0|0|9507758546259807489|
 |259101229137|---|10.222.10.123|62758|2019-10-05|12:36:53Z|0|0|9507758546259807489|
-|259101229136|Создать папку/Test. zip|10.222.10.123|62758|2019-10-05|12:36:29Z|13835132822072852480|9223446803645464576|9507758546259807489|
-|259101229135|Test. zip|37.222.22.143|62758|2019-10-05|12:36:24Z|11529250230440558592|0|9507758546259807489|
+|259101229136|Новая папка/test.zip|10.222.10.123|62758|2019-10-05|12:36:29Z|13835132822072852480|9223446803645464576|9507758546259807489|
+|259101229135|test.zip|37.222.22.143|62758|2019-10-05|12:36:24Z|11529250230440558592|0|9507758546259807489|
 
 ### <a name="close-an-open-handle"></a>Закройте открытый маркер:
 
@@ -88,7 +88,7 @@ $Context = New-AzStorageContext -StorageAccountName "StorageAccountName" -Storag
 # Close-AzStorageFileHandle -Context $Context -ShareName "FileShareName" -Path 'New folder/test.zip' -CloseAll
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Устранение неполадок службы файлов Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md)
 * [Устранение неполадок службы файлов Azure в Linux](storage-troubleshoot-linux-file-connection-problems.md)

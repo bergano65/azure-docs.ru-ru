@@ -3,17 +3,17 @@ title: Включение обратимого удаления — общие 
 description: Узнайте, как включить обратимое удаление (предварительная версия) в общих папках Azure для восстановления данных и предотвращения случайного удаления.
 author: roygara
 ms.service: storage
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/28/2020
 ms.author: rogarana
 ms.subservice: files
 services: storage
-ms.openlocfilehash: 582a3603ad80ec1312429ed7cbd140d4310fadcb
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
-ms.translationtype: HT
+ms.openlocfilehash: 84da8993bd1b0a61ef885d03f7c2bc80b92d47cb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84196194"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85510812"
 ---
 # <a name="enable-soft-delete-on-azure-file-shares"></a>Включение обратимого удаления — общие папки Azure
 

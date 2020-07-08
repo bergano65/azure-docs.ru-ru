@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: ''
 ms.service: storsimple
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/19/2017
 ms.author: alkohli
-ms.openlocfilehash: 956cf45eb9e246f2e1f917f2bf487ac14deba90e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 62c052f2293c670b43f1c77363c8bbbcc03d0de2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "65204247"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85514286"
 ---
 # <a name="configure-web-proxy-for-your-storsimple-device"></a>Настройка веб-прокси для устройства StorSimple
 
@@ -87,7 +87,7 @@ ms.locfileid: "65204247"
 
 #### <a name="to-configure-web-proxy-via-cmdlets"></a>Для настройки веб-прокси с помощью командлетов выполните следующие действия.
 1. В меню последовательной консоли выберите параметр 1 **Войти с полным доступом**. При выводе запроса введите **пароль администратора устройства**. Пароль по умолчанию: `Password1`.
-2. В командной строке введите:
+2. В командной строке введите следующее:
    
     `Set-HcsWebProxy -Authentication NTLM -ConnectionURI "<http://<IP address or FQDN of web proxy server>:<TCP port number>" -Username "<Username for web proxy server>"`
    
@@ -109,7 +109,7 @@ ms.locfileid: "65204247"
 
 #### <a name="to-enable-web-proxy"></a>Для включения веб-прокси выполните следующие действия.
 1. В меню последовательной консоли выберите параметр 1 **Войти с полным доступом**. При выводе запроса введите **пароль администратора устройства**. Пароль по умолчанию: `Password1`.
-2. В командной строке введите:
+2. В командной строке введите следующее:
    
     `Enable-HcsWebProxy`
    
@@ -153,7 +153,7 @@ ms.locfileid: "65204247"
 > * Приведенный выше список сообщений об ошибках не является исчерпывающим.
 > * Ошибки, связанные с параметрами веб-прокси, не будут отображаться на портале Azure в службе диспетчера устройств StorSimple. Если после завершения настройки возникнет проблема с веб-прокси, состояние устройства на классическом портале Azure изменится на **Не в сети** .|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Если возникают проблемы при развертывании устройства или настройке параметров веб-прокси, см. статью [Устранение неполадок в развертывании устройства StorSimple](storsimple-troubleshoot-deployment.md).
 * Дополнительные сведения об использовании службы диспетчера устройств StorSimple см. в статье [Использование службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

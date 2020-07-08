@@ -3,19 +3,19 @@ title: Настройка производительности Azure Data Lake S
 description: Рекомендации по настройке производительности для MapReduce в Azure Data Lake Storage 1-го поколения
 author: stewu
 ms.service: data-lake-store
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/19/2016
 ms.author: stewu
-ms.openlocfilehash: a645049665bc1d51efa94a879b9d2e4e5529282f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 27dadb7ef5b93f5d6b674116ca8bba1d6e2597fc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73904594"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85510913"
 ---
 # <a name="performance-tuning-guidance-for-mapreduce-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для MapReduce в HDInsight и Azure Data Lake Storage 1-го поколения
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Azure Data Lake Storage 1-го поколения**. Инструкции по ее созданию см. в статье [Приступая к работе с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md)
@@ -27,7 +27,7 @@ ms.locfileid: "73904594"
 
 Ниже перечислены наиболее важные параметры, которые можно настроить, чтобы оптимизировать производительность Data Lake Storage 1-го поколения при выполнении заданий MapReduce.
 
-|Параметр      | Описание  |
+|Параметр      | Описание:  |
 |---------|---------|
 |`Mapreduce.map.memory.mb`  |  Объем памяти, выделяемой для каждого модуля сопоставления.  |
 |`Mapreduce.job.maps`     |  Число задач Map на задание.  |

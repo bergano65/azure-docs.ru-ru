@@ -11,18 +11,19 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 05/26/2020
-ms.openlocfilehash: bfae651dabab9c3ecebc10bbdb553b1d52e3a79a
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
-ms.translationtype: HT
+ms.openlocfilehash: 4bf0acdc774bc41d0bc80c944560f41789584c03
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83872956"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85513902"
 ---
-# <a name="copy-and-transform-data-in-azure-synapse-analytics-formerly-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование и преобразование данных в Azure Synapse Analytics (ранее — хранилище данных SQL Azure) с помощью Фабрики данных Azure 
+# <a name="copy-and-transform-data-in-azure-synapse-analytics-formerly-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование и преобразование данных в Azure Synapse Analytics (ранее — хранилище данных SQL Azure) с помощью Фабрики данных Azure
 
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
-> * [Версия 1](v1/data-factory-azure-sql-data-warehouse-connector.md)
-> * [Текущая версия](connector-azure-sql-data-warehouse.md)
+>
+> - [Версия 1](v1/data-factory-azure-sql-data-warehouse-connector.md)
+> - [Текущая версия](connector-azure-sql-data-warehouse.md)
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
@@ -41,11 +42,11 @@ ms.locfileid: "83872956"
 
 - копирование данных с использованием аутентификации SQL и аутентификации на основе маркеров приложения Azure Active Directory (Azure AD) с субъектом-службой или управляемыми удостоверениями ресурсов Azure;
 - извлечение данных с использованием SQL-запроса или хранимой процедуры (в качестве источника);
-- загрузку данных с помощью технологии [PolyBase](#use-polybase-to-load-data-into-azure-sql-data-warehouse), [инструкции COPY](#use-copy-statement) (предварительная версия) или массовой вставки (в качестве приемника). Для повышения производительности копирования рекомендуется использовать PolyBase или инструкцию COPY (предварительная версия).
+- загрузку данных с помощью технологии [PolyBase](#use-polybase-to-load-data-into-azure-sql-data-warehouse), [инструкции COPY](#use-copy-statement) (предварительная версия) или массовой вставки (в качестве приемника). Для повышения производительности копирования рекомендуется использовать PolyBase или инструкцию COPY (предварительная версия). Соединитель также поддерживает автоматическое создание целевой таблицы, если она не существует на основе исходной схемы.
 
 > [!IMPORTANT]
-> При копировании данных с использованием среды выполнения интеграции фабрики данных Azure настройте [брандмауэр Azure SQL Server](https://msdn.microsoft.com/library/azure/ee621782.aspx#ConnectingFromAzure) таким образом, чтобы он разрешал службам Azure получать доступ к серверу.
-> При копировании данных с помощью локальной среды выполнения интеграции настройте брандмауэр Azure SQL Server, чтобы разрешить соответствующий диапазон IP-адресов. В этот диапазон входит IP-адрес компьютера, который используется для подключения к Azure Synapse Analytics.
+> При копировании данных с помощью Integration Runtime фабрики данных Azure настройте [правило брандмауэра на уровне сервера](../azure-sql/database/firewall-configure.md) , чтобы службы Azure могли получить доступ к [ЛОГИЧЕСКОМу серверу SQL](../azure-sql/database/logical-servers.md)Server.
+> При копировании данных с помощью локальной среды выполнения интеграции настройте брандмауэр таким образом, чтобы он разрешал соответствующий диапазон IP-адресов. В этот диапазон входит IP-адрес компьютера, который используется для подключения к Azure Synapse Analytics.
 
 ## <a name="get-started"></a>Начало работы
 
@@ -60,7 +61,7 @@ ms.locfileid: "83872956"
 
 Для связанной службы Azure Synapse Analytics поддерживаются следующие свойства.
 
-| Свойство            | Описание                                                  | Обязательно                                                     |
+| Свойство.            | Описание                                                  | Обязательно                                                     |
 | :------------------ | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | type                | Для свойства type необходимо задать значение **AzureSqlDW**.             | Да                                                          |
 | connectionString    | В свойстве **connectionString** указываются сведения, необходимые для подключения к экземпляру Azure Synapse Analytics. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы также можете поместить ключ субъекта-службы и пароль в Azure Key Vault и в случае аутентификации SQL получить конфигурацию `password` из строки подключения. Ознакомьтесь с примером JSON под таблицей и с подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да                                                          |
@@ -107,13 +108,13 @@ ms.locfileid: "83872956"
         "type": "AzureSqlDW",
         "typeProperties": {
             "connectionString": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;User ID=<username>@<servername>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30",
-            "password": { 
-                "type": "AzureKeyVaultSecret", 
-                "store": { 
-                    "referenceName": "<Azure Key Vault linked service name>", 
-                    "type": "LinkedServiceReference" 
-                }, 
-                "secretName": "<secretName>" 
+            "password": {
+                "type": "AzureKeyVaultSecret",
+                "store": {
+                    "referenceName": "<Azure Key Vault linked service name>",
+                    "type": "LinkedServiceReference"
+                },
+                "secretName": "<secretName>"
             }
         },
         "connectVia": {
@@ -128,15 +129,15 @@ ms.locfileid: "83872956"
 
 Чтобы использовать проверку подлинности по маркеру приложения Azure AD на основе субъекта-службы, выполните следующие действия:
 
-1. **[Создайте приложение Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application)** на портале Azure. Запишите имя приложения и следующие значения, которые используются для определения связанной службы:
+1. **[Создайте приложение Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal)** на портале Azure. Запишите имя приложения и следующие значения, которые используются для определения связанной службы:
 
-    - Идентификатор приложения
-    - Ключ приложения
-    - Tenant ID
+   - Идентификатор приложения
+   - Ключ приложения
+   - Tenant ID
 
-2. **[Подготовьте администратора Azure Active Directory](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server)** для своего сервера SQL Azure на портале Microsoft Azure, если вы еще этого не сделали. Администратор Azure AD может быть пользователем Azure AD или группой Azure AD. Если вы предоставляете группе с управляемым удостоверением роль администратора, пропустите шаги 3 и 4. Администратор будет иметь полный доступ к базе данных.
+2. **[Предоставьте администратору Azure Active Directory](../azure-sql/database/authentication-aad-configure.md#provision-azure-ad-admin-sql-database)** для сервера в портал Azure, если вы еще этого не сделали. Администратор Azure AD может быть пользователем Azure AD или группой Azure AD. Если вы предоставляете группе с управляемым удостоверением роль администратора, пропустите шаги 3 и 4. Администратор будет иметь полный доступ к базе данных.
 
-3. **[Создайте пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities)** для субъекта-службы. Подключитесь к хранилищу данных, из которого или в которое требуется скопировать данные с помощью таких средств, как среда SSMS, используя удостоверение Azure AD, у которого есть хотя бы разрешение ALTER ANY USER. Выполните следующий код T-SQL:
+3. **[Создайте пользователей автономной базы данных](../azure-sql/database/authentication-aad-configure.md#create-contained-users-mapped-to-azure-ad-identities)** для субъекта-службы. Подключитесь к хранилищу данных, из которого или в которое требуется скопировать данные с помощью таких средств, как среда SSMS, используя удостоверение Azure AD, у которого есть хотя бы разрешение ALTER ANY USER. Выполните следующий код T-SQL:
   
     ```sql
     CREATE USER [your application name] FROM EXTERNAL PROVIDER;
@@ -149,7 +150,6 @@ ms.locfileid: "83872956"
     ```
 
 5. **Настройте связанную службу Azure Synapse Analytics** в Фабрике данных Azure.
-
 
 #### <a name="linked-service-example-that-uses-service-principal-authentication"></a>Пример использования аутентификации на основе субъекта-службы в связанной службе
 
@@ -181,9 +181,9 @@ ms.locfileid: "83872956"
 
 Для использования проверки подлинности по управляемому удостоверению выполните следующие действия.
 
-1. **[Подготовьте администратора Azure Active Directory](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server)** для своего сервера SQL Azure на портале Microsoft Azure, если вы еще этого не сделали. Администратор Azure AD может быть пользователем Azure AD или группой Azure AD. Если вы предоставляете группе с управляемым удостоверением роль администратора, пропустите шаги 3 и 4. Администратор будет иметь полный доступ к базе данных.
+1. **[Предоставьте администратору Azure Active Directory](../azure-sql/database/authentication-aad-configure.md#provision-azure-ad-admin-sql-database)** для сервера на портал Azure, если вы еще этого не сделали. Администратор Azure AD может быть пользователем Azure AD или группой Azure AD. Если вы предоставляете группе с управляемым удостоверением роль администратора, пропустите шаги 3 и 4. Администратор будет иметь полный доступ к базе данных.
 
-2. **[Создайте пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities)** для управляемого удостоверения Фабрики данных. Подключитесь к хранилищу данных, из которого или в которое требуется скопировать данные с помощью таких средств, как среда SSMS, используя удостоверение Azure AD, у которого есть хотя бы разрешение ALTER ANY USER. Выполните следующую инструкцию T-SQL. 
+2. **[Создайте пользователей автономной базы данных](../azure-sql/database/authentication-aad-configure.md#create-contained-users-mapped-to-azure-ad-identities)** для управляемого удостоверения Фабрики данных. Подключитесь к хранилищу данных, из которого или в которое требуется скопировать данные с помощью таких средств, как среда SSMS, используя удостоверение Azure AD, у которого есть хотя бы разрешение ALTER ANY USER. Выполните следующую инструкцию T-SQL.
   
     ```sql
     CREATE USER [your Data Factory name] FROM EXTERNAL PROVIDER;
@@ -195,7 +195,7 @@ ms.locfileid: "83872956"
     EXEC sp_addrolemember db_owner, [your Data Factory name];
     ```
 
-5. **Настройте связанную службу Azure Synapse Analytics** в Фабрике данных Azure.
+4. **Настройте связанную службу Azure Synapse Analytics** в Фабрике данных Azure.
 
 **Пример**.
 
@@ -217,7 +217,7 @@ ms.locfileid: "83872956"
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
-Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). 
+Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md).
 
 Для набора данных Azure Synapse Analytics поддерживаются следующие свойства.
 
@@ -228,7 +228,7 @@ ms.locfileid: "83872956"
 | table | Имя таблицы или представления. |"Нет" для источника, "Да" для приемника  |
 | tableName | Имя таблицы или представления со схемой. Это свойство поддерживается только для обеспечения обратной совместимости. Для новой рабочей нагрузки используйте `schema` и `table`. | "Нет" для источника, "Да" для приемника |
 
-#### <a name="dataset-properties-example"></a>Пример свойств набора данных
+### <a name="dataset-properties-example"></a>Пример свойств набора данных
 
 ```json
 {
@@ -257,13 +257,13 @@ ms.locfileid: "83872956"
 
 Чтобы скопировать данные из Azure Synapse Analytics, задайте для свойства **type** в источнике действия копирования значение **SqlDWSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство                     | Описание                                                  | Обязательно |
+| Свойство.                     | Описание                                                  | Обязательно |
 | :--------------------------- | :----------------------------------------------------------- | :------- |
 | type                         | Свойство **type** источника действия копирования должно иметь значение **SqlDWSource**. | Да      |
-| sqlReaderQuery               | Используйте пользовательский SQL-запрос для чтения данных. Например, `select * from MyTable`. | нет       |
-| sqlReaderStoredProcedureName | Имя хранимой процедуры, которая считывает данные из исходной таблицы. Последней инструкцией SQL должна быть инструкция SELECT в хранимой процедуре. | нет       |
-| storedProcedureParameters    | Параметры для хранимой процедуры.<br/>Допустимые значения: пары имен или значений. Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. | нет       |
-| isolationLevel | Задает режим блокировки транзакций для источника данных SQL. Допустимые значения: **ReadCommitted** (по умолчанию), **ReadUncommitted**, **RepeatableRead**, **Serializable**, **Snapshot**. Дополнительные сведения см. в [этом документе](https://docs.microsoft.com/dotnet/api/system.data.isolationlevel). | нет |
+| sqlReaderQuery               | Используйте пользовательский SQL-запрос для чтения данных. Например, `select * from MyTable`. | Нет       |
+| sqlReaderStoredProcedureName | Имя хранимой процедуры, которая считывает данные из исходной таблицы. Последней инструкцией SQL должна быть инструкция SELECT в хранимой процедуре. | Нет       |
+| storedProcedureParameters    | Параметры для хранимой процедуры.<br/>Допустимые значения: пары имен или значений. Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. | Нет       |
+| isolationLevel | Задает режим блокировки транзакций для источника данных SQL. Допустимые значения: **ReadCommitted** (по умолчанию), **ReadUncommitted**, **RepeatableRead**, **Serializable**, **Snapshot**. Дополнительные сведения см. в [этом документе](https://docs.microsoft.com/dotnet/api/system.data.isolationlevel). | Нет |
 
 **Пример. Использование SQL-запроса**
 
@@ -358,7 +358,7 @@ GO
 
 ![Параметры копирования приемника хранилища данных SQL](./media/connector-azure-sql-data-warehouse/sql-dw-sink-copy-options.png)
 
-- [Использование PolyBase](#use-polybase-to-load-data-into-azure-sql-data-warehouse) 
+- [Использование PolyBase](#use-polybase-to-load-data-into-azure-sql-data-warehouse)
 - [Использование инструкции COPY (предварительная версия)](#use-copy-statement)
 - Использование массовой вставки
 
@@ -375,7 +375,7 @@ GO
 | copyCommandSettings | Группа свойств, которые можно задать, если свойство `allowCopyCommand` имеет значение TRUE. | Нет.<br/>Применяется при использовании инструкции COPY. |
 | writeBatchSize    | Число строк для вставки в таблицу SQL **в одном пакете**.<br/><br/>Допустимое значение: **целое число** (количество строк). По умолчанию Фабрика данных динамически определяет соответствующий размер пакета в зависимости от размера строки. | Нет.<br/>Применяется при использовании массовой вставки.     |
 | writeBatchTimeout | Время ожидания до выполнения операции пакетной вставки, пока не закончится срок ее действия.<br/><br/>Допустимое значение — **timespan**. Пример "00:30:00" (30 минут). | Нет.<br/>Применяется при использовании массовой вставки.        |
-| preCopyScript     | Укажите SQL-запрос для действия копирования, выполняемый перед записью данных в хранилище данных SQL Azure при каждом выполнении. Это свойство используется для очистки предварительно загруженных данных. | нет                                            |
+| preCopyScript     | Укажите SQL-запрос для действия копирования, выполняемый перед записью данных в хранилище данных SQL Azure при каждом выполнении. Это свойство используется для очистки предварительно загруженных данных. | Нет                                            |
 | tableOption | Указывает, следует ли автоматически создавать таблицу приемника, если она не существует, на основе исходной схемы. Автоматическое создание таблицы не поддерживается, если в действии копирования настроено промежуточное копирование. Допустимые значения: `none` (по умолчанию), `autoCreate`. |нет |
 | disableMetricsCollection | Фабрика данных собирает такие метрики, как DWU хранилища данных SQL, для оптимизации производительности копирования и предоставления рекомендаций. Если вас не устраивает такое поведение, укажите `true`, чтобы отключить его. | Нет (значение по умолчанию — `false`) |
 
@@ -399,18 +399,18 @@ GO
 
 Применение [PolyBase](https://docs.microsoft.com/sql/relational-databases/polybase/polybase-guide) — это эффективный способ загрузки большого объема данных в Azure Synapse Analytics с высокой пропускной способностью. Используя PolyBase вместо стандартного механизма BULKINSERT, можно значительно увеличить пропускную способность. Пошаговое руководство и пример использования см. в статье [Загрузка 1 ТБ в Azure Synapse Analytics](v1/data-factory-load-sql-data-warehouse.md).
 
-* Если исходные данные находятся в **BLOB-объекте Azure, Azure Data Lake Storage 1-го поколения или Azure Data Lake Storage 2-го поколения**, а **формат совместим с Polybase**, можно использовать действие копирования для непосредственного вызова PolyBase, чтобы хранилище данных SQL Azure могло извлечь данные из источника. Дополнительные сведения см. в разделе **[Прямое копирование с помощью PolyBase](#direct-copy-by-using-polybase)** .
-* Если хранилище и формат исходных данных изначально не поддерживаются PolyBase, то можно использовать функцию **[промежуточного копирования с помощью PolyBase](#staged-copy-by-using-polybase)** . Промежуточное копирование также обеспечивает лучшую пропускную способность. Оно автоматически преобразует данные в формат, совместимый с PolyBase, сохраняет данные в хранилище BLOB-объектов Azure, а затем вызывает PolyBase для загрузки данных в хранилище данных SQL.
+- Если исходные данные находятся в **BLOB-объекте Azure, Azure Data Lake Storage 1-го поколения или Azure Data Lake Storage 2-го поколения**, а **формат совместим с Polybase**, можно использовать действие копирования для непосредственного вызова PolyBase, чтобы хранилище данных SQL Azure могло извлечь данные из источника. Дополнительные сведения см. в разделе **[Прямое копирование с помощью PolyBase](#direct-copy-by-using-polybase)** .
+- Если хранилище и формат исходных данных изначально не поддерживаются PolyBase, то можно использовать функцию **[промежуточного копирования с помощью PolyBase](#staged-copy-by-using-polybase)** . Промежуточное копирование также обеспечивает лучшую пропускную способность. Оно автоматически преобразует данные в формат, совместимый с PolyBase, сохраняет данные в хранилище BLOB-объектов Azure, а затем вызывает PolyBase для загрузки данных в хранилище данных SQL.
 
->[!TIP]
->Дополнительные сведения см. в разделе [Рекомендации по использованию PolyBase](#best-practices-for-using-polybase).
+> [!TIP]
+> Дополнительные сведения см. в разделе [Рекомендации по использованию PolyBase](#best-practices-for-using-polybase).
 
 В разделе `polyBaseSettings` действия копирования поддерживаются следующие параметры PolyBase.
 
 | Свойство          | Описание                                                  | Обязательно                                      |
 | :---------------- | :----------------------------------------------------------- | :-------------------------------------------- |
-| rejectValue       | Указывает количество или процент строк, которые могут быть отклонены, прежде чем запрос завершится с ошибкой.<br/><br/>Дополнительные сведения о параметрах отклонения PolyBase см. в подразделе "Аргументы" раздела [CREATE EXTERNAL TABLE (Transact-SQL)](https://msdn.microsoft.com/library/dn935021.aspx). <br/><br/>Допустимые значения: 0 (по умолчанию), 1, 2 и. т. д. | нет                                            |
-| rejectType        | Указывает, является ли параметр **rejectValue** литеральным или процентным.<br/><br/>Допустимые значения: **Значение** (по умолчанию) и **Процент**. | нет                                            |
+| rejectValue       | Указывает количество или процент строк, которые могут быть отклонены, прежде чем запрос завершится с ошибкой.<br/><br/>Дополнительные сведения о параметрах отклонения PolyBase см. в подразделе "Аргументы" раздела [CREATE EXTERNAL TABLE (Transact-SQL)](https://msdn.microsoft.com/library/dn935021.aspx). <br/><br/>Допустимые значения: 0 (по умолчанию), 1, 2 и. т. д. | Нет                                            |
+| rejectType        | Указывает, является ли параметр **rejectValue** литеральным или процентным.<br/><br/>Допустимые значения: **Значение** (по умолчанию) и **Процент**. | Нет                                            |
 | rejectSampleValue | Определяет количество строк, которое PolyBase следует получить до повторного вычисления процента отклоненных строк.<br/><br/>Допустимые значения: 1, 2, … | Да, если **rejectType** имеет значение **percentage**. |
 | useTypeDefault    | Указывает способ обработки отсутствующих значений в текстовых файлах с разделителями, когда PolyBase извлекает данные из текстового файла.<br/><br/>Дополнительные сведения об этом свойстве см. в подразделе "Аргументы" раздела [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](https://msdn.microsoft.com/library/dn935026.aspx).<br/><br/>Допустимые значения: **true** и **false** (по умолчанию).<br><br> | нет                                            |
 
@@ -432,7 +432,7 @@ PolyBase хранилища данных SQL напрямую поддержив
     | [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | Проверка подлинности на основе ключа учетной записи, проверка подлинности по управляемому удостоверению |
 
     >[!IMPORTANT]
-    >Если в службе хранилища Azure настроена конечная точка службы виртуальной сети, необходимо использовать проверку подлинности по управляемому удостоверению — см. раздел [Влияние использования конечных точек службы виртуальной сети со службой хранилища Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). Сведения о необходимых конфигурациях в Фабрике данных см. в разделах [Большой двоичный объект Azure — проверка подлинности по управляемому удостоверению](connector-azure-blob-storage.md#managed-identity) и [Azure Data Lake Storage 2-го поколения — проверка подлинности по управляемому удостоверению](connector-azure-data-lake-storage.md#managed-identity) соответственно.
+    >Если в службе хранилища Azure настроена конечная точка службы виртуальной сети, необходимо использовать проверку подлинности по управляемому удостоверению — см. раздел [Влияние использования конечных точек службы виртуальной сети со службой хранилища Azure](../azure-sql/database/vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). Сведения о необходимых конфигурациях в Фабрике данных см. в разделах [Большой двоичный объект Azure — проверка подлинности по управляемому удостоверению](connector-azure-blob-storage.md#managed-identity) и [Azure Data Lake Storage 2-го поколения — проверка подлинности по управляемому удостоверению](connector-azure-data-lake-storage.md#managed-identity) соответственно.
 
 2. **Формат исходных данных** — **Parquet**, **ORC** или **текстовый файл с разделителями** со следующими конфигурациями.
 
@@ -492,7 +492,7 @@ PolyBase хранилища данных SQL напрямую поддержив
 Чтобы использовать эту функцию, создайте [связанную службу хранилища BLOB-объектов Azure](connector-azure-blob-storage.md#linked-service-properties), которая ссылается на учетную запись хранения Azure с промежуточным хранилищем BLOB-объектов. Затем укажите свойства `enableStaging` и `stagingSettings` для действия копирования, как показано в следующем коде.
 
 >[!IMPORTANT]
->Если в промежуточной службе хранилища Azure настроена конечная точка службы виртуальной сети, необходимо использовать проверку подлинности по управляемому удостоверению — см. раздел [Влияние использования конечных точек службы виртуальной сети со службой хранилища Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). Изучите необходимые конфигурации в Фабрике данных, приведенные в разделе [Большой двоичный объект Azure — проверка подлинности по управляемому удостоверению](connector-azure-blob-storage.md#managed-identity).
+>Если в промежуточной службе хранилища Azure настроена конечная точка службы виртуальной сети, необходимо использовать проверку подлинности по управляемому удостоверению — см. раздел [Влияние использования конечных точек службы виртуальной сети со службой хранилища Azure](../azure-sql/database/vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). Изучите необходимые конфигурации в Фабрике данных, приведенные в разделе [Большой двоичный объект Azure — проверка подлинности по управляемому удостоверению](connector-azure-blob-storage.md#managed-identity).
 
 ```json
 "activities":[
@@ -562,7 +562,7 @@ ErrorCode=FailedDbOperation, ......HadoopSqlException: Error converting data typ
 ```
 
 Решение заключается в том, чтобы снять флажок "**Использовать тип по умолчанию**" (т. е. установить для этого параметра значение false) в разделе "Параметры PolyBase" приемника действия копирования. "[USE_TYPE_DEFAULT](https://docs.microsoft.com/sql/t-sql/statements/create-external-file-format-transact-sql?view=azure-sqldw-latest#arguments
-)" — собственная конфигурация PolyBase, которая указывает способ обработки отсутствующих значений в текстовых файлах с разделителями, когда PolyBase извлекает данные из текстового файла. 
+)" — собственная конфигурация PolyBase, которая указывает способ обработки отсутствующих значений в текстовых файлах с разделителями, когда PolyBase извлекает данные из текстового файла.
 
 Свойство **`tableName` в Azure Synapse Analytics**
 
@@ -610,7 +610,7 @@ All columns of the table must be specified in the INSERT BULK statement.
     | [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | [Текст с разделителями](format-delimited-text.md)<br/>[Parquet](format-parquet.md)<br/>[ORC](format-orc.md) | Проверка подлинности на основе ключа учетной записи, проверка подлинности на основе субъекта-службы, проверка подлинности по управляемому удостоверению |
 
     >[!IMPORTANT]
-    >Если в службе хранилища Azure настроена конечная точка службы виртуальной сети, необходимо использовать проверку подлинности по управляемому удостоверению — см. раздел [Влияние использования конечных точек службы виртуальной сети со службой хранилища Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). Сведения о необходимых конфигурациях в Фабрике данных см. в разделах [Большой двоичный объект Azure — проверка подлинности по управляемому удостоверению](connector-azure-blob-storage.md#managed-identity) и [Azure Data Lake Storage 2-го поколения — проверка подлинности по управляемому удостоверению](connector-azure-data-lake-storage.md#managed-identity) соответственно.
+    >Если в службе хранилища Azure настроена конечная точка службы виртуальной сети, необходимо использовать проверку подлинности по управляемому удостоверению — см. раздел [Влияние использования конечных точек службы виртуальной сети со службой хранилища Azure](../azure-sql/database/vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). Сведения о необходимых конфигурациях в Фабрике данных см. в разделах [Большой двоичный объект Azure — проверка подлинности по управляемому удостоверению](connector-azure-blob-storage.md#managed-identity) и [Azure Data Lake Storage 2-го поколения — проверка подлинности по управляемому удостоверению](connector-azure-data-lake-storage.md#managed-identity) соответственно.
 
 2. Параметры формата могут быть следующие.
 
@@ -624,7 +624,7 @@ All columns of the table must be specified in the INSERT BULK statement.
       5. В параметре `skipLineCount` может быть оставлено значение по умолчанию или задано значение 0.
       6. В параметре `compression` может быть задано **без сжатия** или **Snappy**.
 
-3. Если источником является папка, параметр `recursive` в действии копирования должен иметь значение true, а в параметре `wildcardFilename` должен быть задан подстановочный знак `*`. Инструкция COPY извлекает все файлы из папки и всех ее вложенных папок, но игнорирует скрытые папки и файлы, которые начинаются с подчеркивания (_) или точки (.), если они явно не указаны в пути. 
+3. Если источником является папка, параметр `recursive` в действии копирования должен иметь значение true, а в параметре `wildcardFilename` должен быть задан подстановочный знак `*`. 
 
 4. Параметры `wildcardFolderPath`, `wildcardFilename` (отличный от `*`), `modifiedDateTimeStart`, `modifiedDateTimeEnd` и `additionalColumns` не указываются.
 
@@ -662,17 +662,17 @@ All columns of the table must be specified in the INSERT BULK statement.
             },
             "sink": {
                 "type": "SqlDWSink",
-                "allowCopyCommand": true, 
+                "allowCopyCommand": true,
                 "copyCommandSettings": {
-                    "defaultValues": [ 
-                        { 
-                            "columnName": "col_string", 
-                            "defaultValue": "DefaultStringValue" 
+                    "defaultValues": [
+                        {
+                            "columnName": "col_string",
+                            "defaultValue": "DefaultStringValue"
                         }
                     ],
-                    "additionalOptions": { 
-                        "MAXERRORS": "10000", 
-                        "DATEFORMAT": "'ymd'" 
+                    "additionalOptions": {
+                        "MAXERRORS": "10000",
+                        "DATEFORMAT": "'ymd'"
                     }
                 }
             },
@@ -682,39 +682,28 @@ All columns of the table must be specified in the INSERT BULK statement.
 ]
 ```
 
-
-## <a name="lookup-activity-properties"></a>Свойства действия поиска
-
-Подробные сведения об этих свойствах см. в разделе [Действие поиска](control-flow-lookup-activity.md).
-
-## <a name="getmetadata-activity-properties"></a>Свойства действия GetMetadata
-
-Подробные сведения об этих свойствах см. в разделе [Действие GetMetadata](control-flow-get-metadata-activity.md). 
-
-## <a name="data-type-mapping-for-azure-sql-data-warehouse"></a>Сопоставление типов данных для хранилища данных SQL Azure
-
 ## <a name="mapping-data-flow-properties"></a>Свойства потока данных для сопоставления
 
 При преобразовании данных в потоке данных для сопоставления можно выполнять операции чтения и записи в таблицах из Azure Synapse Analytics. Дополнительные сведения см. в описаниях [преобразования источника](data-flow-source.md) и [преобразования приемника](data-flow-sink.md) в разделе, посвященном потокам данных для сопоставления.
 
 ### <a name="source-transformation"></a>Преобразование источника
 
-Параметры, относящиеся к Azure Synapse Analytics, находятся на вкладке **Параметры источника** преобразования источника. 
+Параметры, относящиеся к Azure Synapse Analytics, находятся на вкладке **Параметры источника** преобразования источника.
 
 **Входные данные**. Выберите, будете ли вы указывать источник в таблице (аналогично инструкции ```Select * from <table-name>```) или вводить пользовательский SQL-запрос.
 
-**Запрос.** Если в поле входных данных вы выбрали запрос, введите здесь SQL-запрос для источника. Этот параметр переопределяет любую таблицу, выбранную в наборе данных. Предложения **Order By** здесь не поддерживаются, но можно задать полную инструкцию SELECT FROM. Кроме того, можно использовать табличные функции, определяемые пользователем. Пример использования такой функции в SQL — инструкция **select * from udfGetData()** , возвращающая таблицу. Этот запрос создаст исходную таблицу, которую можно использовать в потоке данных. Использование запросов — также отличный способ сокращения количества строк для тестирования или поиска. 
+**Запрос.** Если в поле входных данных вы выбрали запрос, введите здесь SQL-запрос для источника. Этот параметр переопределяет любую таблицу, выбранную в наборе данных. Предложения **Order By** здесь не поддерживаются, но можно задать полную инструкцию SELECT FROM. Кроме того, можно использовать табличные функции, определяемые пользователем. Пример использования такой функции в SQL — инструкция **select * from udfGetData()** , возвращающая таблицу. Этот запрос создаст исходную таблицу, которую можно использовать в потоке данных. Использование запросов — также отличный способ сокращения количества строк для тестирования или поиска.
 
-* Пример SQL: ```Select * from MyTable where customerId > 1000 and customerId < 2000```
+Пример SQL: ```Select * from MyTable where customerId > 1000 and customerId < 2000```
 
 **Размер пакета.** Введите размер пакета для разделения больших наборов данных на блоки для чтения. В потоках данных ADF будет использовать этот параметр для установки кэширования Spark по столбцам. Это необязательный параметр; если он не задан, будут использоваться параметры Spark по умолчанию.
 
 **Уровень изоляции**. Значение по умолчанию для источников SQL в потоке данных для сопоставления — Read Uncommitted (чтение незафиксированных данных). Здесь можно изменить уровень изоляции на одно из следующих значений.
-* Read Committed (чтение зафиксированных данных)
-* Read Uncommitted (чтение незафиксированных данных)
-* Повторяющаяся операция чтения
-* Упорядочиваемый уровень изоляции
-* None (игнорировать уровень изоляции)
+
+- Read Committed (чтение зафиксированных данных)
+- Read Uncommitted (чтение незафиксированных данных)
+- Повторяющаяся операция чтения
+- Serializable *-None (игнорировать уровень изоляции)
 
 ![Уровень изоляции](media/data-flow/isolationlevel.png "Уровень изоляции")
 
@@ -725,9 +714,10 @@ All columns of the table must be specified in the INSERT BULK statement.
 **Метод обновления**. Определяет, какие операции разрешены в назначении базы данных. По умолчанию разрешены только операции вставки. Для выполнения обновления (update), обновления или вставки (upsert) или удаления (delete) строк требуется преобразование alter-row строк, отмеченных для этих действий. Для выполнения обновления (update), обновления или вставки (upsert) или удаления (delete) должен быть установлен ключевой столбец (или столбцы), позволяющий определить строки для изменения.
 
 **Действие таблицы**. Определяет, следует ли повторно создавать или удалять все строки в целевой таблице перед записью.
-* None (нет): никакие действия над таблицей не выполняются.
-* Recreate (создать повторно): таблица будет удалена и создана повторно. Это действие необходимо, если новая таблица создается динамически.
-* Truncate (усечь): все строки из целевой таблицы будут удалены.
+
+- None (нет): никакие действия над таблицей не выполняются.
+- Recreate (создать повторно): таблица будет удалена и создана повторно. Это действие необходимо, если новая таблица создается динамически.
+- Truncate (усечь): все строки из целевой таблицы будут удалены.
 
 **Включить промежуточный процесс**. Определяет, следует ли использовать [PolyBase](https://docs.microsoft.com/sql/relational-databases/polybase/polybase-guide?view=sql-server-ver15) при записи в Azure Synapse Analytics
 
@@ -736,6 +726,14 @@ All columns of the table must be specified in the INSERT BULK statement.
 **Скрипты SQL предобработки и постобработки**. Введите многострочные скрипты SQL, которые будут выполняться до (предобработка) и после (постобработка) записи данных в базу данных-приемник.
 
 ![Скрипты SQL предобработки и постобработки](media/data-flow/prepost1.png "Скрипты обработки SQL")
+
+## <a name="lookup-activity-properties"></a>Свойства действия поиска
+
+Подробные сведения об этих свойствах см. в разделе [Действие поиска](control-flow-lookup-activity.md).
+
+## <a name="getmetadata-activity-properties"></a>Свойства действия GetMetadata
+
+Подробные сведения об этих свойствах см. в разделе [Действие GetMetadata](control-flow-get-metadata-activity.md)
 
 ## <a name="data-type-mapping-for-azure-synapse-analytics"></a>Сопоставление типов данных для Azure Synapse Analytics
 
@@ -775,4 +773,5 @@ All columns of the table must be specified in the INSERT BULK statement.
 | varchar                               | String, Char[]                 |
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 В таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

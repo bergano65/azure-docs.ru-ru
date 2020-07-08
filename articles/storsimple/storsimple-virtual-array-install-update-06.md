@@ -16,6 +16,7 @@ ms.date: 05/18/2017
 ms.author: alkohli
 ms.openlocfilehash: 02b85cb90948f35cb6f6c855cfbe81fd58301de0
 ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/02/2020
 ms.locfileid: "85513579"
@@ -123,7 +124,7 @@ ms.locfileid: "85513579"
 
 7. Повторите шаги 2–4 для установки исправлений системы безопасности Windows с помощью файлов `windows8.1-kb4012213-x64`, `windows8.1-kb3205400-x64` и `windows8.1-kb4019213-x64`. Виртуальный массив перезапускается после каждой установки, и вам потребуется войти в локальной веб-интерфейс.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в статье [Использование пользовательского веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).
 

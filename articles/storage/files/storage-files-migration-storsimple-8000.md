@@ -3,16 +3,16 @@ title: Миграция рядов StorSimple 8000 в Синхронизация
 description: Узнайте, как перенести устройство StorSimple 8100 или 8600 в Синхронизация файлов Azure.
 author: fauhse
 ms.service: storage
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/09/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 9091d3bd6b57f14bd12083319595cb855a0d42ee
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: d6ad132513c2ec61dd5a290da1a88e50f0ad6eb0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82858711"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85510365"
 ---
 # <a name="storsimple-8100-and-8600-migration-to-azure-file-sync"></a>Миграция StorSimple 8100 и 8600 на Синхронизация файлов Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "82858711"
 ## <a name="azure-file-sync"></a>Служба синхронизации файлов Azure
 
 > [!IMPORTANT]
-> Корпорация Майкрософт стремится помочь клиентам в их миграции. Электронная AzureFiles@microsoft.com почта для настраиваемого плана миграции, а также помощь во время миграции.
+> Корпорация Майкрософт стремится помочь клиентам в их миграции. Email AzureFilesMigration@microsoft . com для настраиваемого плана миграции, а также помощь во время миграции.
 
 Синхронизация файлов Azure — это облачная служба Майкрософт, основанная на двух основных компонентах:
 

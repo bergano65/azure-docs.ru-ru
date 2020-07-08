@@ -3,21 +3,37 @@ title: Предварительные требования для кэша HPC A
 description: Необходимые условия для использования кэша HPC для Azure
 author: ekpgh
 ms.service: hpc-cache
-ms.topic: conceptual
-ms.date: 04/03/2020
-ms.author: rohogue
-ms.openlocfilehash: 4508ef7583760a7ef7503f8a6f37202af2684d81
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: how-to
+ms.date: 06/01/2020
+ms.author: v-erkel
+ms.openlocfilehash: d7a5bfe56a17ecc2377be7b59dcbe3254d813a0d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82106514"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85513251"
 ---
 # <a name="prerequisites-for-azure-hpc-cache"></a>Необходимые условия для кэша HPC для Azure
 
 Прежде чем использовать портал Azure для создания нового кэша Azure HPC, убедитесь, что среда соответствует этим требованиям.
 
-## <a name="azure-subscription"></a>Подписка Azure
+## <a name="video-overviews"></a>Обзоры видео
+
+Просмотрите эти видеоролики, чтобы получить краткий обзор компонентов системы и то, что им необходимо для совместной работы.
+
+(Щелкните изображение видео или ссылку для просмотра.)
+
+* [Как это работает](https://azure.microsoft.com/resources/videos/how-hpc-cache-works/) — объясняет, как кэш Azure HPC взаимодействует с хранилищем и клиентами.
+
+  [![изображение эскиза видео: кэш Azure HPC: как он работает (щелкните, чтобы посетить страницу видео)](media/video-2-components.png)](https://azure.microsoft.com/resources/videos/how-hpc-cache-works/)  
+
+* [Необходимые условия](https://azure.microsoft.com/resources/videos/hpc-cache-prerequisites/) . описание требований к хранилищу NAS, хранилищу BLOB-объектов Azure, доступу к сети и доступу клиентов
+
+  [![изображение эскиза видео: кэш Azure HPC: предварительные требования (щелкните, чтобы посетить страницу видео)](media/video-3-prerequisites.png)](https://azure.microsoft.com/resources/videos/hpc-cache-prerequisites/)
+
+Для получения конкретных рекомендаций прочитайте оставшуюся часть этой статьи.
+
+## <a name="azure-subscription"></a>Подписка Azure.
 
 Рекомендуется использовать платную подписку.
 
@@ -78,9 +94,9 @@ ms.locfileid: "82106514"
 
 Чтобы создать совместимую учетную запись хранения, используйте следующие параметры:
 
-* Производительность: **Стандартная**.
+* Производительность: **стандартный**
 * Тип учетной записи: **StorageV2 (общее назначение версии 2)**
-* Репликация: **Локально избыточное хранилище (LRS)**.
+* Репликация: **локально избыточное хранилище (LRS)**
 * Уровень доступа (по умолчанию): **горячий**
 
 Рекомендуется использовать учетную запись хранения в том же расположении, что и кэш.
@@ -115,7 +131,7 @@ ms.locfileid: "82106514"
 
   * Если вы не можете использовать `rpcinfo` команду, убедитесь, что эти часто используемые порты разрешают входящий и исходящий трафик:
 
-    | Протокол | Порт  | Служба  |
+    | Протокол | Port  | Служба  |
     |----------|-------|----------|
     | TCP/UDP  | 111   | rpcbind  |
     | TCP/UDP  | 2049  | NFS      |
