@@ -1,17 +1,16 @@
 ---
 title: API-интерфейсы выполнения SaaS в коммерческом магазине Майкрософт
 description: Введение в интерфейсы API выполнения, которые позволяют интегрировать предложения SaaS в Microsoft AppSource и Azure Marketplace.
-author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 05/18/2020
-ms.author: dsindona
-ms.openlocfilehash: 70515ca04e870fa435f8e9f46122a8e0dcb9b588
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 218a0624f7e4adc1aa188dbd62db217bf79202f8
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84691362"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86109303"
 ---
 # <a name="saas-fulfillment-apis-in-microsoft-commercial-marketplace"></a>API-интерфейсы выполнения SaaS в коммерческом магазине Майкрософт
 
@@ -54,6 +53,6 @@ API-интерфейсы выполнения SaaS позволяют издат
 >[!Note]
 >API-интерфейсы выполнения SaaS предназначены только для вызова из серверной службы издателя. Интеграция с интерфейсами API непосредственно с веб-страницы издателя не поддерживается. Следует использовать только поток проверки подлинности "служба-служба".
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы еще не сделали этого, зарегистрируйте приложение SaaS в [портал Azure](https://ms.portal.azure.com) , как описано в разделах [Регистрация приложения Azure AD](./pc-saas-registration.md).  Затем используйте самую последнюю версию этого интерфейса для разработки: [API выполнения SaaS версии 2](./pc-saas-fulfillment-api-v2.md).

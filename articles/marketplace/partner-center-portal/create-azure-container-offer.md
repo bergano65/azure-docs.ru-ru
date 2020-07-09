@@ -1,18 +1,18 @@
 ---
 title: Создание предложения контейнера Azure — Azure Marketplace
 description: Сведения о создании и публикации предложения контейнера в Azure Marketplace.
-author: mingshen
-ms.author: mingshen
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
+author: mingshen
+ms.author: mingshen
 ms.date: 06/17/2020
-ms.openlocfilehash: c3cd5ed952ddb40157ee16246d4d1669d47ed6b9
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: cea4a43724629793123098084098299e3915be7c
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85984509"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86109695"
 ---
 # <a name="create-an-azure-container-offer-in-azure-marketplace"></a>Создание предложения контейнера Azure в Azure Marketplace
 

@@ -6,11 +6,12 @@ ms.author: manishku
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 6/8/2020
-ms.openlocfilehash: 3f0df02b58835ce4b43d6ba172e79f872a9fae1e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d082417fc5b4df7540973d5f6e146030aaad5380
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84608389"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86107195"
 ---
 # <a name="connectivity-architecture-in-azure-database-for-mariadb"></a>Архитектура подключения в базе данных Azure для MariaDB
 В этой статье описывается архитектура подключения к базе данных Azure для MariaDB, а также сведения о том, как трафик направляется в базу данных Azure для экземпляра MariaDB от клиентов как внутри, так и за пределами Azure.
@@ -42,7 +43,7 @@ ms.locfileid: "84608389"
 | Северный Китай | 139.219.15.17    |
 | Северный Китай 2 | 40.73.50.0     |
 | Восточная Азия | 191.234.2.139, 52.175.33.150, 13.75.33.20, 13.75.33.21     |
-| Восточная часть США | 40.121.158.30, 191.238.6.43  |
+| Восточная часть США | 40.121.158.30, 191.238.6.43, 40.71.8.203, 40.71.83.113   |
 | восточная часть США 2 |40.79.84.180, 191.239.224.107, 52.177.185.181, 40.70.144.38, 52.167.105.38  |
 | Центральная Франция | 40.79.137.0, 40.79.129.1  |
 | Южная Франция | 40.79.177.0     |
@@ -82,7 +83,7 @@ ms.locfileid: "84608389"
 > [!IMPORTANT]
 > Поддержка перенаправления в расширении PHP [mysqlnd_azure](https://github.com/microsoft/mysqlnd_azure) в настоящее время доступна в предварительной версии.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание правил брандмауэра MariaDB в Базе данных Azure для MariaDB и управление ими на портале Azure](./howto-manage-firewall-portal.md)
 * [Создание правил брандмауэра Базы данных Azure для MariaDB и управление ими с помощью Azure CLI](./howto-manage-firewall-cli.md)

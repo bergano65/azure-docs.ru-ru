@@ -8,11 +8,12 @@ ms.topic: how-to
 ms.date: 12/06/2018
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 602053f7a52b9a46fa797bd1146cf63c02bb60d2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4930d99c4175126ffba65598bd6b33e973ba1c44
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84465360"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86109507"
 ---
 # <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-azure-data-lake-storage-gen2"></a>Использование средства DistCp для копирования данных между Azure Storage Blob и Azure Data Lake Storage 2-го поколения
 
@@ -36,25 +37,33 @@ DistCp предоставляет различные параметры кома
 
 2. Проверьте, можно ли получить доступ к существующей учетной записи общего назначения версии 2 (без включенного иерархического пространства имен).
 
-        hdfs dfs –ls wasbs://<container-name>@<storage-account-name>.blob.core.windows.net/
+    ```bash
+    hdfs dfs –ls wasbs://<container-name>@<storage-account-name>.blob.core.windows.net/
+    ```
 
    Эта команда должна вывести список содержимого в контейнере.
 
 3. Аналогичным образом проверьте, доступна ли учетная запись хранения с включенным иерархическим пространством имен из кластера. Выполните следующую команду:
 
-        hdfs dfs -ls abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/
+    ```bash
+    hdfs dfs -ls abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/
+    ```
 
     Она должна вывести список файлов и папок в учетной записи хранилища Azure Data Lake.
 
 4. Используйте DistCp для копирования данных из WASB в учетную запись хранилища Azure Data Lake.
 
-        hadoop distcp wasbs://<container-name>@<storage-account-name>.blob.core.windows.net/example/data/gutenberg abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/myfolder
+    ```bash
+    hadoop distcp wasbs://<container-name>@<storage-account-name>.blob.core.windows.net/example/data/gutenberg abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/myfolder
+    ```
 
     Эта команда копирует содержимое папки **/example/data/gutenberg/** , расположенной в хранилище BLOB-объектов, в папку **/myfolder**, расположенную в учетной записи хранилища Azure Data Lake.
 
 5. Аналогичным образом используйте DistCp для копирования данных из учетной записи хранилища Azure Data Lake в хранилище BLOB-объектов (WASB).
 
-        hadoop distcp abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/myfolder wasbs://<container-name>@<storage-account-name>.blob.core.windows.net/example/data/gutenberg
+    ```bash
+    hadoop distcp abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/myfolder wasbs://<container-name>@<storage-account-name>.blob.core.windows.net/example/data/gutenberg
+    ```
 
     Эта команда копирует содержимое папки **/myfolder** в учетной записи Data Lake Store в папку **/example/data/gutenberg/** в WASB.
 
@@ -64,7 +73,9 @@ DistCp предоставляет различные параметры кома
 
 **Пример**
 
-    hadoop distcp -m 100 wasbs://<container-name>@<storage-account-name>.blob.core.windows.net/example/data/gutenberg abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/myfolder
+```bash
+hadoop distcp -m 100 wasbs://<container-name>@<storage-account-name>.blob.core.windows.net/example/data/gutenberg abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/myfolder
+```
 
 ### <a name="how-do-i-determine-the-number-of-mappers-to-use"></a>Как определить количество модулей сопоставления, которые следует использовать?
 
@@ -74,7 +85,7 @@ DistCp предоставляет различные параметры кома
 
 * **Шаг 2. Расчет количества модулей сопоставления.** Чтобы узнать значение **m**, разделите целую часть общего объема памяти YARN на размер контейнера YARN. Сведения о размере контейнера YARN также доступны на портале Ambari. Перейдите к YARN и откройте вкладку конфигураций. Размер контейнера YARN отобразится в этом окне. Уравнение для получения количества модулей сопоставления (**m**):
 
-        m = (number of nodes * YARN memory for each node) / YARN container size
+    m = (число узлов * память YARN для каждого узла)/размер контейнера YARN
 
 **Пример**
 
@@ -82,11 +93,11 @@ DistCp предоставляет различные параметры кома
 
 * **Общий объем памяти YARN**. На портале Ambari вы узнали, что объем памяти YARN составляет 96 ГБ для узла D14. Таким образом, общий объем памяти YARN для кластера из четырех узлов равен: 
 
-        YARN memory = 4 * 96GB = 384GB
+    Память YARN = 4 * 96 ГБ = 384GB
 
 * **Число модулей сопоставления**. На портале Ambari вы узнали, что размер контейнера YARN равен 3072 МБ для узла кластера D14. Таким образом, число модулей сопоставления равно:
 
-        m = (4 nodes * 96GB) / 3072MB = 128 mappers
+    m = (4 узла * 96 ГБ)/3072MB = модули сопоставления 128
 
 Если другие приложения используют память, то для DistCp можно использовать только часть памяти YARN кластера.
 

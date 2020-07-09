@@ -1,18 +1,16 @@
 ---
 title: Оплата с оплатой с использованием службы измерения Marketplace | Azure Marketplace
 description: Эта документация представляет собой руководство для независимых продавцов по публикации предложений SaaS с гибкими моделями выставления счетов.
-author: dsindona
-ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 05/08/2020
-ms.openlocfilehash: 19854f0c91ea7c7548a01e930748757ce041f0c1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 09d9ed5e008acd5354cc673e39365f59ab7f64e8
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84887947"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86109184"
 ---
 # <a name="metered-billing-using-the-marketplace-metering-service"></a>Расчет с оплатой с использованием службы измерения Marketplace
 
@@ -157,6 +155,6 @@ ms.locfileid: "84887947"
 
 Следуйте инструкциям в [технической поддержке программы коммерческого рынка в центре партнеров](./support.md) , чтобы ознакомиться с вариантами поддержки издателя и открыть запрос в службу поддержки корпорации Майкрософт.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье [API-интерфейсы службы измерения Marketplace](./marketplace-metering-service-apis.md) .

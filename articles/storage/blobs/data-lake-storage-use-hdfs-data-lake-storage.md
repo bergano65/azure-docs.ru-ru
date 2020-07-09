@@ -9,11 +9,12 @@ ms.date: 12/06/2018
 ms.author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: artek
-ms.openlocfilehash: 9c5b1d38e32ff0a0d0954064c8a2511d898d16e2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 36e6b39aaf481abaabe4fb5a4a71a527d1e74749
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84462929"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86109456"
 ---
 # <a name="using-the-hdfs-cli-with-data-lake-storage-gen2"></a>Использование HDFS CLI в Data Lake Storage Gen2
 
@@ -45,7 +46,7 @@ hdfs dfs -mkdir /samplefolder
 
 ## <a name="create-a-container"></a>Создание контейнера
 
-    hdfs dfs -D "fs.azure.createRemoteFileSystemDuringInitialization=true" -ls abfs://<container-name>@<storage-account-name>.dfs.core.windows.net/
+`hdfs dfs -D "fs.azure.createRemoteFileSystemDuringInitialization=true" -ls abfs://<container-name>@<storage-account-name>.dfs.core.windows.net/`
 
 * Замените заполнитель `<container-name>` именем, которое хотите присвоить своему контейнеру.
 
@@ -53,7 +54,7 @@ hdfs dfs -mkdir /samplefolder
 
 ## <a name="get-a-list-of-files-or-directories"></a>Получение списка файлов или каталогов
 
-    hdfs dfs -ls <path>
+`hdfs dfs -ls <path>`
 
 Замените `<path>` заполнитель URI контейнера или папки контейнера.
 
@@ -61,7 +62,7 @@ hdfs dfs -mkdir /samplefolder
 
 ## <a name="create-a-directory"></a>Создание каталога
 
-    hdfs dfs -mkdir [-p] <path>
+`hdfs dfs -mkdir [-p] <path>`
 
 Замените `<path>` заполнитель именем корневого контейнера или папкой в контейнере.
 
@@ -69,7 +70,7 @@ hdfs dfs -mkdir /samplefolder
 
 ## <a name="delete-a-file-or-directory"></a>Удаление файла или каталога
 
-    hdfs dfs -rm <path>
+`hdfs dfs -rm <path>`
 
 Замените заполнитель `<path>` на URI файла или папки, которые нужно удалить.
 
@@ -77,7 +78,7 @@ hdfs dfs -mkdir /samplefolder
 
 ## <a name="display-the-access-control-lists-acls-of-files-and-directories"></a>Отображение списков управления доступом (ACL) файлов и каталогов
 
-    hdfs dfs -getfacl [-R] <path>
+`hdfs dfs -getfacl [-R] <path>`
 
 Пример.
 
@@ -87,7 +88,7 @@ hdfs dfs -mkdir /samplefolder
 
 ## <a name="set-acls-of-files-and-directories"></a>Настройка ACL файлов и каталогов
 
-    hdfs dfs -setfacl [-R] [-b|-k -m|-x <acl_spec> <path>]|[--set <acl_spec> <path>]
+`hdfs dfs -setfacl [-R] [-b|-k -m|-x <acl_spec> <path>]|[--set <acl_spec> <path>]`
 
 Пример.
 
@@ -97,25 +98,25 @@ hdfs dfs -mkdir /samplefolder
 
 ## <a name="change-the-owner-of-files"></a>Изменение владельца файлов
 
-    hdfs dfs -chown [-R] <new_owner>:<users_group> <URI>
+`hdfs dfs -chown [-R] <new_owner>:<users_group> <URI>`
 
 См. [chown](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html#chown)
 
 ## <a name="change-group-association-of-files"></a>Изменение связи группы файлов
 
-    hdfs dfs -chgrp [-R] <group> <URI>
+`hdfs dfs -chgrp [-R] <group> <URI>`
 
 См. [chgrp](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html#chgrp)
 
 ## <a name="change-the-permissions-of-files"></a>Изменение разрешений файлов
 
-    hdfs dfs -chmod [-R] <mode> <URI>
+`hdfs dfs -chmod [-R] <mode> <URI>`
 
 См. [chmod](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html#chmod)
 
 Полный список команд можно просмотреть на веб-сайте [Apache Hadoop 2.4.1 File System Guide](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure](./data-lake-storage-quickstart-create-databricks-account.md)
 

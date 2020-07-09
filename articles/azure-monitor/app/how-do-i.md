@@ -3,11 +3,12 @@ title: Выполнение заданий в Azure Application Insights | До�
 description: Вопросы и ответы об Application Insights
 ms.topic: conceptual
 ms.date: 04/04/2017
-ms.openlocfilehash: 9ca5900bc9172b1f4ef9b1a7a660c6936ac38095
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 665d98378fc52e972986111847872ae30701f631
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83701941"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86110238"
 ---
 # <a name="how-do-i--in-application-insights"></a>Как работать с Application Insights
 ## <a name="get-an-email-when-"></a>Получать уведомление по электронной почте, если...
@@ -32,17 +33,23 @@ ms.locfileid: "83701941"
 
 Оповещения можно настроить для [пользовательских метрик](../../azure-monitor/app/api-custom-events-metrics.md#trackmetric), но не для пользовательских событий. Напишите код, который будет увеличивать метрику при возникновении соответствующего события:
 
-    telemetry.TrackMetric("Alarm", 10);
+```csharp
+telemetry.TrackMetric("Alarm", 10);
+```
 
 или:
 
-    var measurements = new Dictionary<string,double>();
-    measurements ["Alarm"] = 10;
-    telemetry.TrackEvent("status", null, measurements);
+```csharp
+var measurements = new Dictionary<string,double>();
+measurements ["Alarm"] = 10;
+telemetry.TrackEvent("status", null, measurements);
+```
 
 Так как оповещения имеют два состояния, отправьте минимальное значение, при котором оповещение должно быть отменено:
 
-    telemetry.TrackMetric("Alarm", 0.5);
+```csharp
+telemetry.TrackMetric("Alarm", 0.5);
+```
 
 Создайте диаграмму в [обозревателе метрик](../../azure-monitor/platform/metrics-charts.md) , чтобы увидеть оповещение:
 
@@ -130,9 +137,9 @@ ms.locfileid: "83701941"
 ### <a name="aspnet-classic-applications"></a>Классические приложения ASP.NET
 
 ```csharp
-    using  Microsoft.ApplicationInsights.Extensibility;
+using  Microsoft.ApplicationInsights.Extensibility;
 
-    TelemetryConfiguration.Active.DisableTelemetry = true;
+TelemetryConfiguration.Active.DisableTelemetry = true;
 ```
 
 ### <a name="other-applications"></a>Другие приложения

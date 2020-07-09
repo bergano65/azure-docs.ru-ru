@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: rajosh
-ms.openlocfilehash: 9dd6dba9b517c26277cc7f7e3c87df81b1c95648
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c06365531a4977b6b792e136e515b5b56c2c930
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85567967"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86110034"
 ---
 # <a name="create-an-azure-vmware-solution-avs-assessment"></a>Создание оценки решения Azure VMware (AVS)
 
@@ -23,7 +23,7 @@ ms.locfileid: "85567967"
 
 - Убедитесь, что вы [создали](how-to-add-tool-first-time.md) проект "миграция Azure".
 - Если вы уже создали проект, убедитесь, что вы [добавили](how-to-assess.md) средство Azure Migrate: Server для оценки серверов.
-- Чтобы создать оценку, необходимо настроить устройство "миграция Azure" для [VMware](how-to-set-up-appliance-vmware.md), которое обнаруживает локальные компьютеры и отправляет метаданные и данные производительности в службу "миграция Azure": Оценка сервера. [Подробнее.](migrate-appliance.md)
+- Чтобы создать оценку, необходимо настроить устройство "миграция Azure" для [VMware](how-to-set-up-appliance-vmware.md), которое обнаруживает локальные компьютеры и отправляет метаданные и данные производительности в службу "миграция Azure": Оценка сервера. [Подробнее](migrate-appliance.md).
 - Кроме того, можно [импортировать метаданные сервера](tutorial-assess-import.md) в формате значений с разделителями-запятыми (CSV).
 
 
@@ -34,7 +34,7 @@ ms.locfileid: "85567967"
 **Тип оценки** | **Сведения**
 --- | --- 
 **Azure** | Оценки для переноса локальных серверов на виртуальные машины Azure. <br/><br/> Вы можете оценить локальные [виртуальные машины VMware](how-to-set-up-appliance-vmware.md), [виртуальные машины Hyper-V](how-to-set-up-appliance-hyper-v.md)и [физические серверы](how-to-set-up-appliance-physical.md) для миграции в Azure с помощью этого типа оценки. Дополнительные [сведения](concepts-assessment-calculation.md)
-**Решение Azure VMware (AVS)** | Оценки для переноса локальных серверов в [решение VMware для Azure (AVS)](https://docs.microsoft.com/azure/azure-vmware/introduction). <br/><br/> Вы можете оценить локальные [виртуальные машины VMware](how-to-set-up-appliance-vmware.md) для миграции в решение Azure VMware (AVS) с помощью этого типа оценки. Дополнительные [сведения](concepts-azure-vmware-solution-assessment-calculation.md)
+**Решение Azure VMware (AVS)** | Оценки для переноса локальных серверов в [решение VMware для Azure (AVS)](../azure-vmware/introduction.md). <br/><br/> Вы можете оценить локальные [виртуальные машины VMware](how-to-set-up-appliance-vmware.md) для миграции в решение Azure VMware (AVS) с помощью этого типа оценки. Дополнительные [сведения](concepts-azure-vmware-solution-assessment-calculation.md)
 
 > [!NOTE]
 > Оценка решения Azure VMware (AVS) сейчас доступна в предварительной версии и может быть создана только для виртуальных машин VMware.
@@ -110,7 +110,7 @@ ms.locfileid: "85567967"
     - **Неизвестная готовность**: службе миграции Azure не удалось определить готовность компьютера из-за недостатка метаданных, собранных из локальной среды.
 
 3. Ознакомьтесь с предлагаемым средством.
-    - **VMware хккс или Enterprise**: для виртуальных машин VMware — это рекомендуемое средство миграции, которое позволяет перенести локальную рабочую нагрузку в частное облако решения Azure VMware (AVS). [Подробнее](https://docs.microsoft.com/azure/azure-vmware/hybrid-cloud-extension-installation)
+    - **VMware хккс или Enterprise**: для виртуальных машин VMware — это рекомендуемое средство миграции, которое позволяет перенести локальную рабочую нагрузку в частное облако решения Azure VMware (AVS). [Подробнее](../azure-vmware/hybrid-cloud-extension-installation.md)
     - **Неизвестно**. для компьютеров, импортированных с помощью CSV-файла, средство миграции по умолчанию неизвестно. Однако для компьютеров VMware рекомендуется использовать решение гибридного облака VMWare (ХККС). 
 
 4. Щелкните состояние **готовности AVS** . Вы можете просмотреть сведения о готовности виртуальной машины и сведения о самой виртуальной машине, включая вычисления, хранилище и параметры сети.
@@ -158,7 +158,7 @@ ms.locfileid: "85567967"
 Дополнительные [сведения](concepts-azure-vmware-solution-assessment-calculation.md) о данных производительности 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как использовать [сопоставление зависимостей](how-to-create-group-machine-dependencies.md) для создания групп с высокой степенью достоверности.
 - [Узнайте больше](concepts-azure-vmware-solution-assessment-calculation.md) о том, как рассчитываются оценки AVS.

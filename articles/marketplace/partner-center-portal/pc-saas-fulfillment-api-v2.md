@@ -1,18 +1,16 @@
 ---
 title: API-интерфейсы выполнения SaaS версии 2 в коммерческом магазине Майкрософт
 description: Узнайте, как создать предложение SaaS и управлять им в Microsoft AppSource и Azure Marketplace с помощью API-интерфейсов выполнения версии 2.
-author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
 ms.date: 06/10/2020
-ms.author: dsindona
-ms.openlocfilehash: 1a833f86a0d8de3f5b8c83e899a58fa83f3153c4
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: f501e84e988d340ba710e49d30caddbe56006c8a
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85963773"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86109422"
 ---
 # <a name="saas-fulfillment-apis-version-2-in-microsoft-commercial-marketplace"></a>API-интерфейсы выполнения SaaS версии 2 в коммерческом магазине Майкрософт
 
@@ -974,7 +972,7 @@ Response body:
 Варианты поддержки издателя см. [в разделе Поддержка программы коммерческого рынка в центре партнеров](support.md) .
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные возможности для предложений SaaS в Marketplace см. в статье [API-интерфейсы службы измерения](marketplace-metering-service-apis.md) Marketplace.
 

@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 4c7eb5e4f22cb432a9d17e6eafa653e62e1f9129
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d3b65558a12fb6b20f449f5386c0ce7e598433b6
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79529906"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86110306"
 ---
 # <a name="choose-the-right-mariadb-server-option-in-azure"></a>Выбор правильного сервера MariaDB в Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "79529906"
 
 Основные различия между этими вариантами показаны в приведенной ниже таблице.
 
-|            | База данных Azure для MariaDB | MariaDB на виртуальных машинах Azure    |
+| attribute          | База данных Azure для MariaDB | MariaDB на виртуальных машинах Azure    |
 |:-------------------|:-----------------------------|:--------------------|
 | Соглашение об уровне обслуживания (SLA)                | Предлагает соглашение об уровне обслуживания для уровня доступности 99,99%| До 99,95% доступности с двумя или более экземплярами в одной группе доступности.<br/><br/>доступность на 99,9% для виртуальной машины с одним экземпляром, использующей хранилище класса Premium.<br/><br/>99,99% использования Зоны доступности с несколькими экземплярами в нескольких группах доступности.<br/><br/>Ознакомьтесь с [соглашением об уровне обслуживания виртуальных машин](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/). |
 | Установка исправлений операционной системы        | Автоматически  | Управляется клиентами |

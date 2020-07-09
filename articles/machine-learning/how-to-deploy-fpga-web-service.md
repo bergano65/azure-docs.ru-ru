@@ -11,11 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.date: 06/03/2020
 ms.custom: seodec18, contperfq4, tracking-python
-ms.openlocfilehash: fabdbfbb90a14aa0f66e3d8a4eb5f6a428c6a0a1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 636d16c4fbbd662d6fccb811fb4a88b2d862b533
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84557362"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86107331"
 ---
 # <a name="what-are-field-programmable-gate-arrays-fpga-and-how-to-deploy"></a>Что такое программируемые массивы вентиля (FPGA) и как развернуть
 
@@ -25,7 +26,7 @@ ms.locfileid: "84557362"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure.  Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
+- Подписка Azure. Если у вас ее нет, вам нужно будет создать учетную запись с [оплатой по мере](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) использования (свободные учетные записи Azure не подходят для квоты FPGA).
 - [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
 - Квота FPGA. Используйте Azure CLI, чтобы проверить, есть ли у вас квота:
 
@@ -64,7 +65,7 @@ ms.locfileid: "84557362"
 
 ![Схема сравнения Машинное обучение Azure FPGA](./media/how-to-deploy-fpga-web-service/azure-machine-learning-fpga-comparison.png)
 
-|Процессор||Описание:|
+|Процессор||Описание|
 |---|:-------:|------|
 |Микросхемы приложений|ASIC|Пользовательские микросхемы, такие как процессор TensorFlow (TPU) от Google, предоставляют повышенную эффективность. Их нельзя настраивать повторно в случае изменения требований.|
 |Программируемые пользователем вентильные матрицы|FPGA|ППВМ (например те, что доступны в Azure) обеспечивают производительность, близкую к микросхемам ASIC. Они также гибкие и поддерживают перенастройку для реализации новой логики.|
@@ -410,7 +411,7 @@ converted_model.delete()
 
 Сведения о защите веб-служб FPGA см. в документе [Защита веб-служб](how-to-secure-web-service.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с этими записными книжками, видео и блогами:
 

@@ -4,14 +4,14 @@ description: В этой статье описывается, как можно 
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/08/2020
-ms.openlocfilehash: a46437ae14ae644fb9d63d76a64075cc3ba2e25e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 95a0459dd21eaf69bf0ee2d8f4cd1482d07313bb
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84739665"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86107930"
 ---
 # <a name="restart-azure-database-for-postgresql-server-using-powershell"></a>Перезапуск базы данных Azure для сервера PostgreSQL с помощью PowerShell
 
@@ -21,7 +21,7 @@ ms.locfileid: "84739665"
 
 Количество времени, необходимое для выполнения перезагрузки, зависит от процесса восстановления PostgreSQL. Чтобы сократить время перезапуска, рекомендуется свести к минимальному объему действий, происходящих на сервере, до перезапуска.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -44,7 +44,7 @@ ms.locfileid: "84739665"
 Restart-AzPostgreSqlServer -Name mydemoserver -ResourceGroupName myresourcegroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание сервера базы данных Azure для PostgreSQL с помощью PowerShell](quickstart-create-postgresql-server-database-using-azure-powershell.md)

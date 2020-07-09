@@ -3,11 +3,12 @@ title: Настройка устройства "миграция Azure" для H
 description: Узнайте, как настроить устройство миграции Azure для оценки и миграции виртуальных машин Hyper-V.
 ms.topic: article
 ms.date: 03/23/2020
-ms.openlocfilehash: 77c13a3a8c87d116bd0863324d28669185c53c84
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 56b034709309a3afe9d18df7af9ababc74a24cee
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81538296"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86109711"
 ---
 # <a name="set-up-an-appliance-for-hyper-v-vms"></a>Настройка устройства для виртуальных машин Hyper-V
 
@@ -49,7 +50,7 @@ ms.locfileid: "81538296"
 2. Выполните следующую команду, чтобы создать хэш VHD-файла.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
     - Пример использования: ```C:\>CertUtil -HashFile C:\AzureMigrate\AzureMigrate.vhd SHA256```
-3.  Для устройства версии 2.19.11.12 созданный хэш должен соответствовать этим [параметрам](https://docs.microsoft.com/azure/migrate/tutorial-assess-hyper-v#verify-security).
+3.  Для устройства версии 2.19.11.12 созданный хэш должен соответствовать этим [параметрам](./tutorial-assess-hyper-v.md#verify-security).
 
 
 
@@ -147,6 +148,6 @@ ms.locfileid: "81538296"
 2. На странице **Azure Migrate — Servers** > **Azure Migrate: Server Assessment** (Миграция Azure — серверы > Миграция Azure: оценка сервера) щелкните значок, отображающий количество **обнаруженных серверов**.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Испытайте оценку [Hyper-V](tutorial-assess-hyper-v.md) с помощью службы "Миграция серверов Azure".

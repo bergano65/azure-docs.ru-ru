@@ -57,7 +57,11 @@
             - name: Динамическое маскирование данных
               href: database/dynamic-data-masking-overview.md
             - name: Оценка уязвимостей SQL
-              href: database/sql-vulnerability-assessment.md
+              items:
+                - name: Оценка уязвимостей SQL
+                  href: database/sql-vulnerability-assessment.md
+                - name: Правила оценки уязвимостей
+                  href: database/sql-database-vulnerability-assessment-rules.md
             - name: 'Имена для входа, учетные записи пользователей, роли и разрешения'
               href: database/logins-create-manage.md
             - name: Аутентификация Azure AD
@@ -606,6 +610,9 @@
           href: database/powershell-script-content-guide.md?tabs=single-database
         - name: Azure Resource Manager
           href: database/arm-templates-content-guide.md?tabs=single-database
+        - name: Встроенные компоненты Политики Azure
+          displayName: 'samples, policies, definitions'
+          href: ./database/policy-samples.md
         - name: Примеры кода
           href: 'https://azure.microsoft.com/resources/samples/?service=sql-database'
 - name: Управляемый экземпляр SQL (SQL MI)
@@ -833,6 +840,9 @@
           href: database/powershell-script-content-guide.md?tabs=managed-instance
         - name: Azure Resource Manager
           href: database/arm-templates-content-guide.md?tabs=managed-instance
+        - name: Встроенные компоненты Политики Azure
+          displayName: 'samples, policies, definitions'
+          href: ./database/policy-samples.md
         - name: Примеры кода
           href: 'https://azure.microsoft.com/resources/samples/?service=sql-database'
 - name: "SQL\_Server на виртуальной машине Azure"
@@ -974,8 +984,6 @@
                       items:
                         - name: Создание DNN для FCI
                           href: virtual-machines/windows/hadr-distributed-network-name-dnn-configure.md
-                        - name: Взаимодействие функций с DNN
-                          href: virtual-machines/windows/failover-cluster-instance-dnn-interoperability.md
                         - name: "Функции DNN и SQL\_Server для FCI"
                           href: virtual-machines/windows/failover-cluster-instance-dnn-interoperability.md
                 - name: Настройка подключения

@@ -3,22 +3,23 @@ title: Настройка устройства "миграция Azure" в Azure
 description: Узнайте, как настроить устройство для миграции Azure в Azure для государственных организаций.
 ms.topic: article
 ms.date: 04/16/2020
-ms.openlocfilehash: c8bcecd7cca78a24d9dbf18e185c9362ed712b43
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f0ebc882646b5ff3f62ddddf91cffc85cb5e0da6
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85052476"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86109983"
 ---
 # <a name="set-up-an-appliance-in-azure-government"></a>Настройка устройства в Azure для государственных организаций 
 
-Выполните инструкции из этой статьи, чтобы развернуть [устройство миграции Azure](deploy-appliance.md) для виртуальных машин VMware, виртуальных машин Hyper-V и физических серверов в облаке Azure для государственных организаций. Запустите сценарий для создания устройства и убедитесь, что он может подключиться к Azure. Если вы хотите настроить устройство в общедоступном облаке, выполните инструкции из [этой статьи](deploy-appliance-script.md).
+Выполните инструкции из этой статьи, чтобы развернуть [устройство миграции Azure](./migrate-appliance-architecture.md) для виртуальных машин VMware, виртуальных машин Hyper-V и физических серверов в облаке Azure для государственных организаций. Запустите сценарий для создания устройства и убедитесь, что он может подключиться к Azure. Если вы хотите настроить устройство в общедоступном облаке, выполните инструкции из [этой статьи](deploy-appliance-script.md).
 
 
 > [!NOTE]
 > Возможность развертывания устройства с помощью шаблона (для виртуальных машин VMware и виртуальных машин Hyper-V) не поддерживается в Azure для государственных организаций.
 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Этот сценарий настраивает устройство миграции Azure на существующем физическом компьютере или виртуальной машине.
 
@@ -44,7 +45,7 @@ ms.locfileid: "85052476"
 1. На компьютере, на который был скачан файл, откройте командное окно с правами администратора.
 2. Выполните следующую команду, чтобы создать хэш ZIP-файла.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - Пример: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-VMWare-USGov.zip SHA256```
+    - Например, ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-VMWare-USGov.zip SHA256```.
 
 3. Проверьте последнюю версию и хэш-значение устройства:
 
@@ -59,7 +60,7 @@ ms.locfileid: "85052476"
 
 - Устанавливает агенты и веб-приложение.
 - Устанавливает роли Windows, включая службу активации Windows, IIS и интегрированную среду сценариев PowerShell.
-- Скачивает и устанавливает перезаписываемый модуль IIS. [Подробнее.](https://www.microsoft.com/download/details.aspx?id=7435)
+- Скачивает и устанавливает перезаписываемый модуль IIS. [Подробнее](https://www.microsoft.com/download/details.aspx?id=7435).
 - Обновляет раздел реестра (HKLM) с постоянными параметрами для службы "миграция Azure".
 - Создает файлы журналов и конфигурации следующим образом:
     - **Файлы конфигурации**:%програмдата%\микрософт азуре\конфиг
@@ -96,7 +97,7 @@ ms.locfileid: "85052476"
 1. На компьютере, на который был скачан файл, откройте командное окно с правами администратора.
 2. Выполните следующую команду, чтобы создать хэш ZIP-файла.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - Пример: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-HyperV-USGov.zip SHA256```
+    - Например, ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-HyperV-USGov.zip SHA256```.
 
 3. Проверьте последнюю версию и хэш-значение устройства:
 
@@ -112,7 +113,7 @@ ms.locfileid: "85052476"
 
 - Устанавливает агенты и веб-приложение.
 - Устанавливает роли Windows, включая службу активации Windows, IIS и интегрированную среду сценариев PowerShell.
-- Скачивает и устанавливает перезаписываемый модуль IIS. [Подробнее.](https://www.microsoft.com/download/details.aspx?id=7435)
+- Скачивает и устанавливает перезаписываемый модуль IIS. [Подробнее](https://www.microsoft.com/download/details.aspx?id=7435).
 - Обновляет раздел реестра (HKLM) с постоянными параметрами для службы "миграция Azure".
 - Создает файлы журналов и конфигурации следующим образом:
     - **Файлы конфигурации**:%програмдата%\микрософт азуре\конфиг
@@ -149,7 +150,7 @@ ms.locfileid: "85052476"
 1. На компьютере, на который был скачан файл, откройте командное окно с правами администратора.
 2. Выполните следующую команду, чтобы создать хэш ZIP-файла.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - Пример: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-USGov.zip SHA256```
+    - Например, ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-USGov.zip SHA256```.
 
 3. Проверьте последнюю версию и хэш-значение устройства:
 
@@ -164,7 +165,7 @@ ms.locfileid: "85052476"
 
 - Устанавливает агенты и веб-приложение.
 - Устанавливает роли Windows, включая службу активации Windows, IIS и интегрированную среду сценариев PowerShell.
-- Скачивает и устанавливает перезаписываемый модуль IIS. [Подробнее.](https://www.microsoft.com/download/details.aspx?id=7435)
+- Скачивает и устанавливает перезаписываемый модуль IIS. [Подробнее](https://www.microsoft.com/download/details.aspx?id=7435).
 - Обновляет раздел реестра (HKLM) с постоянными параметрами для службы "миграция Azure".
 - Создает файлы журналов и конфигурации следующим образом:
     - **Файлы конфигурации**:%програмдата%\микрософт азуре\конфиг
@@ -182,7 +183,7 @@ ms.locfileid: "85052476"
 
 Убедитесь, что устройство может подключаться к URL-адресам Azure для [государственных облаков](migrate-appliance.md#government-cloud-urls).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После развертывания устройства необходимо настроить его в первый раз и зарегистрировать в проекте службы "миграция Azure".
 

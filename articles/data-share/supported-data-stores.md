@@ -6,11 +6,12 @@ author: joannapea
 ms.author: joanpo
 ms.topic: conceptual
 ms.date: 10/30/2019
-ms.openlocfilehash: e0daa2b02c16d8d5a65b5e7e0f983a4f47181d40
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8263e2b2d3d8d029cd28f6c8ea6c556fb9fe23be
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84635974"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86108300"
 ---
 # <a name="supported-data-stores-in-azure-data-share"></a>Поддерживаемые хранилища данных в общей папке данных Azure
 
@@ -37,7 +38,7 @@ ms.locfileid: "84635974"
 
 В таблице ниже приведены различные сочетания и варианты, которые пользователи данных имеют при принятии и настройке общей папки данных. Дополнительные сведения о настройке сопоставлений наборов данных см. в разделе [Настройка сопоставлений наборов данных](how-to-configure-mapping.md).
 
-|  | хранилище BLOB-объектов Azure | Хранилище Azure Data Lake Storage 1-го поколения | Azure Data Lake Storage 2-го поколения | База данных SQL Azure | Azure Synapse Analytics | Azure Data Explorer
+| Хранилище данных | хранилище BLOB-объектов Azure | Хранилище Azure Data Lake Storage 1-го поколения | Azure Data Lake Storage 2-го поколения | База данных SQL Azure | Azure Synapse Analytics | Azure Data Explorer
 |:--- |:--- |:--- |:--- |:--- |:--- |:--- |
 | Хранилище BLOB-объектов Azure | ✓ || ✓ ||
 | Хранилище Azure Data Lake Storage 1-го поколения | ✓ | | ✓ ||

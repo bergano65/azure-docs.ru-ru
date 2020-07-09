@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 06/21/2020
 ms.author: rajosh
-ms.openlocfilehash: a7d22a6a2f7100826c865beec0d1cff09fc39660
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: e80ec71bef8c34331fac076b7b08be48a9571c2e
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86043246"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86107705"
 ---
 # <a name="build-migration-plan-with-azure-migrate"></a>Создание плана миграции с помощью службы "Миграция Azure"
 
@@ -24,7 +24,7 @@ ms.locfileid: "86043246"
 
 ## <a name="define-the-goals-of-cloud-migration"></a>Определение целей миграции в облако
 
-Прежде чем приступать к созданию плана миграции, важно понять и оценить [мотивацию](https://docs.microsoft.com/azure/cloud-adoption-framework/strategy/motivations) для перехода в облако, которое может помочь в создании более успешных результатов бизнеса. Так как [платформа внедрения облачных технологий для Azure](https://docs.microsoft.com/azure/cloud-adoption-framework) объясняет, для вашего бизнеса могут применяться различные триггеры и подходы к миграции:  
+Прежде чем приступать к созданию плана миграции, важно понять и оценить [мотивацию](/azure/cloud-adoption-framework/strategy/motivations) для перехода в облако, которое может помочь в создании более успешных результатов бизнеса. Так как [платформа внедрения облачных технологий для Azure](/azure/cloud-adoption-framework) объясняет, для вашего бизнеса могут применяться различные триггеры и подходы к миграции:  
 
 **критические бизнес-события;** | **Результат миграции**
 --- | ---
@@ -147,7 +147,7 @@ ms.locfileid: "86043246"
 
 - Ознакомьтесь с рекомендуемыми разрешениями Azure, а также ролями доступа к серверу и базе данных и модели разрешений, необходимым для миграции.
 
-- Подготовьте свою организацию и обеспечьте выравнивание сотрудников по цифровому преобразованию. Для успешного организационного изменения важна твердая учебная база. Ознакомьтесь с бесплатными материалами по [Microsoft Learn](https://docs.microsoft.com/learn/azure/?ocid=CM_Discovery_Checklist_PDF), включая курсы по основам Azure, архитектуре решений и безопасности. Поощряйте свою команду на изучение [сертификации Azure](https://www.microsoft.com/learning/certification-overview.aspx?ocid=CM_Discovery_Checklist_PDF)   .  
+- Подготовьте свою организацию и обеспечьте выравнивание сотрудников по цифровому преобразованию. Для успешного организационного изменения важна твердая учебная база. Ознакомьтесь с бесплатными материалами по [Microsoft Learn](/learn/azure/?ocid=CM_Discovery_Checklist_PDF), включая курсы по основам Azure, архитектуре решений и безопасности. Поощряйте свою команду на изучение [сертификации Azure](https://www.microsoft.com/learning/certification-overview.aspx?ocid=CM_Discovery_Checklist_PDF)   .  
 
 - При необходимости получите поддержку для вашей реализации. Во многих организациях для поддержки миграции в облако требуется внешняя помощь. Чтобы быстро и уверенно перейти в Azure с помощью персонализированной помощи, рассмотрим [управляемый поставщик службы "специалист по Azure](https://www.microsoft.com/solution-providers/search?cacheId=9c2fed4f-f9e2-42fb-8966-4c565f08f11e&ocid=CM_Discovery_Checklist_PDF)"   или [FastTrack for Azure](https://azure.microsoft.com/programs/azure-fasttrack/?ocid=CM_Discovery_Checklist_PDF).  
 
@@ -162,8 +162,8 @@ ms.locfileid: "86043246"
 > [!NOTE]
 > Для виртуальных машин VMware при оценке серверов используется операционная система, указанная для виртуальной машины в vCenter Server для обработки анализа гостевой ОС. В настоящее время для виртуальных машин Linux, работающих в VMware, не определена точная версия ядра гостевой ОС.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Проанализируйте процесс [миграции в облако](https://docs.microsoft.com/azure/architecture/cloud-adoption/getting-started/migrate)   в инфраструктуре внедрения облачных технологий Azure.
+- Проанализируйте процесс [миграции в облако](/azure/architecture/cloud-adoption/getting-started/migrate)   в инфраструктуре внедрения облачных технологий Azure.
 - Приступая к [работе](https://youtu.be/wFfq3YPxYHE) с миграцией Azure.
 - Создайте оценку виртуальных машин [VMware](tutorial-assess-vmware.md) или [виртуальных машин Hyper-V](tutorial-assess-hyper-v.md).

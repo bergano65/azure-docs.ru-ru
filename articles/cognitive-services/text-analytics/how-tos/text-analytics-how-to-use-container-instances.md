@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 04/01/2020
+ms.date: 07/07/2020
 ms.author: aahi
-ms.openlocfilehash: e4b61c6fe2f62745d0f5268221cbb5c84803eb10
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 1dde59456126ce1221bdb71f09957c0fd3609427
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80876461"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86108721"
 ---
 # <a name="deploy-a-text-analytics-container-to-azure-container-instances"></a>Развертывание контейнера Анализ текста в службе "экземпляры контейнеров Azure"
 
@@ -29,21 +29,25 @@ ms.locfileid: "80876461"
 
 [!INCLUDE [Create a Text Analytics Containers on Azure Container Instances](../../containers/includes/create-container-instances-resource.md)]
 
-#### <a name="key-phrase-extraction"></a>[извлечение ключевых фраз](#tab/keyphrase)
+#### <a name="key-phrase-extraction"></a>[извлечение ключевых фраз](#tab/keyphrase);
 
 [!INCLUDE [Verify the Key Phrase Extraction container instance](../includes/verify-key-phrase-extraction-container.md)]
 
-#### <a name="language-detection"></a>[распознавание языка](#tab/language)
+#### <a name="language-detection"></a>[распознавание языка](#tab/language);
 
 [!INCLUDE [Verify the Language Detection container instance](../includes/verify-language-detection-container.md)]
 
-#### <a name="sentiment-analysis"></a>[Анализ тональности](#tab/sentiment).
+#### <a name="sentiment-analysis"></a>[анализ тональности](#tab/sentiment);
 
 [!INCLUDE [Verify the Sentiment Analysis container instance](../includes/verify-sentiment-analysis-container.md)]
 
+#### <a name="text-analytics-for-health"></a>[Анализ текста для работоспособности](#tab/health)
+
+[!INCLUDE [Verify the health container instance](../includes/verify-health-container.md)]
+
 ***
 
-## <a name="next-steps"></a>Следующие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 * Использование большего числа [контейнеров Cognitive Services](../../cognitive-services-container-support.md)
 * Использование [подключенной службы анализ текста](../vs-text-connected-service.md)

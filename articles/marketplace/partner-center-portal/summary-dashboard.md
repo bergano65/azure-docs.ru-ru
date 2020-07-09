@@ -1,17 +1,16 @@
 ---
 title: Панель мониторинга "Сводка" для аналитики коммерческой платформы в Центре партнеров
 description: Сведения о том, как получить доступ к графикам, трендам и значениям статистических данных, суммирующих действия на платформе marketplace, с панели мониторинга "Сводка" в Центре партнеров.
-author: dsindona
-ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: c7f1700cb386a197b33427e2ea615de019284d96
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 39b963fe40d26d498e69b8fc9bbb62ce514bef39
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83738325"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86109150"
 ---
 # <a name="summary-dashboard-in-commercial-marketplace-analytics"></a>Сводная панель мониторинга в аналитике коммерческой платформы
 
