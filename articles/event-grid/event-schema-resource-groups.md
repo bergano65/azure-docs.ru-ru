@@ -1,18 +1,14 @@
 ---
 title: Группа ресурсов Azure в качестве источника службы "Сетка событий"
 description: Описание свойств для событий группы ресурсов, используемых со службой "Сетка событий Azure"
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 04/09/2020
-ms.author: spelluru
-ms.openlocfilehash: fb52b54eb32a119a463b59e4d4f2ab30096886fa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: ed01bfdb67d9b8a3dd5875ec3fd8c6edf8922520
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81393250"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105920"
 ---
 # <a name="azure-resource-group-as-an-event-grid-source"></a>Группа ресурсов Azure в качестве источника службы "Сетка событий"
 
@@ -250,10 +246,10 @@ ms.locfileid: "81393250"
 
 | Свойство | Тип | Описание |
 | -------- | ---- | ----------- |
-| авторизация | объект | Запрошенная авторизация для операции. |
-| claims | объект | Свойства утверждений. Дополнительные сведения см. в [спецификациях JWT](https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html). |
+| авторизация | object | Запрошенная авторизация для операции. |
+| claims | object | Свойства утверждений. Дополнительные сведения см. в [спецификациях JWT](https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html). |
 | correlationId | строка | Идентификатор операции для устранения неполадок. |
-| httpRequest | объект | Подробные сведения об операции. Этот объект включается только при обновлении существующего ресурса или при удалении ресурса. |
+| httpRequest | object | Подробные сведения об операции. Этот объект включается только при обновлении существующего ресурса или при удалении ресурса. |
 | resourceProvider | строка | Поставщик ресурсов для операции. |
 | resourceUri | строка | URI ресурса в операции. |
 | operationName | строка | Выполненная операция. |

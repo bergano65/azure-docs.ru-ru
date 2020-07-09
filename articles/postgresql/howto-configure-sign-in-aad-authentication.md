@@ -4,16 +4,16 @@ description: Узнайте, как настроить аутентификац�
 author: lfittl
 ms.author: lufittl
 ms.service: postgresql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/04/2019
-ms.openlocfilehash: 7df9c40980d7a35c1eab0f892c3aca0a30938f57
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e813459ddf516b170e7f429646dad38452188335
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85194116"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86102384"
 ---
-# <a name="use-azure-active-directory-for-authenticating-with-postgresql"></a>Использование аутентификации Azure Active Directory с PostgreSQL
+# <a name="use-azure-active-directory-for-authentication-with-postgresql"></a>Использование Azure Active Directory для проверки подлинности с помощью PostgreSQL
 
 Эта статья поможет вам настроить доступ Azure Active Directory к Базе данных Azure для PostgreSQL и выполнить подключение с помощью маркера Azure AD.
 
@@ -54,7 +54,7 @@ ms.locfileid: "85194116"
 
 Ниже приведены шаги, которые пользователь или приложение должны будут выполнить для аутентификации в Azure AD.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Вы можете следовать указаниям в Azure Cloud Shell, виртуальной машине Azure или на локальном компьютере. Убедитесь, что у вас [установлен Azure CLI](/cli/azure/install-azure-cli).
 

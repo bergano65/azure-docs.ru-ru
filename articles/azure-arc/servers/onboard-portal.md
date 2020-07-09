@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 05/18/2020
 ms.topic: conceptual
 ms.custom: references_regions
-ms.openlocfilehash: c1801c1b26742661987ea822a3cb1479f40ec059
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 459360e72c2d35cafedb0291642bf081bfcad96c
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84751273"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86103999"
 ---
 # <a name="connect-hybrid-machines-to-azure-from-the-azure-portal"></a>Подключение гибридных компьютеров к Azure на портале Azure
 
@@ -67,7 +67,7 @@ ms.locfileid: "84751273"
 
 Если компьютеру необходимо взаимодействовать через прокси-сервер со службой, после установки агента необходимо выполнить команду, описанную далее в этой статье. Она задает переменную системной среды для прокси-сервера `https_proxy`.
 
-Если вы не работали с параметрами командной строки для пакетов установщика Windows, ознакомьтесь со [стандартными параметрами командной строки Msiexec](https://docs.microsoft.com/windows/win32/msi/standard-installer-command-line-options) и [параметрами командной строки Msiexec](https://docs.microsoft.com/windows/win32/msi/command-line-options).
+Если вы не работали с параметрами командной строки для пакетов установщика Windows, ознакомьтесь со [стандартными параметрами командной строки Msiexec](/windows/win32/msi/standard-installer-command-line-options) и [параметрами командной строки Msiexec](/windows/win32/msi/command-line-options).
 
 Например, запустите программу установки с параметром `/?`, чтобы ознакомиться с параметром справки и краткого справочника. 
 

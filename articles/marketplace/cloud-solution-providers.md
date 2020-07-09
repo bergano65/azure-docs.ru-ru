@@ -1,18 +1,18 @@
 ---
 title: Поставщик облачных решений — коммерческая платформа Майкрософт
 description: Узнайте, как правильно продавать свои предложения на коммерческой платформе через партнерский канал программы "Поставщик облачных решений" (CSP) от Майкрософт.
-author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
+author: keferna
+ms.author: keferna
 ms.date: 04/16/2020
-ms.author: dsindona
-ms.openlocfilehash: 633656af72790c7dfebeee567713875ce0d609b4
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: d6c3af312717627a1719c5f1029ae638e7d4f827
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85964215"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86104441"
 ---
 # <a name="cloud-solution-provider-program"></a>Программа "Поставщик облачных решений"
 

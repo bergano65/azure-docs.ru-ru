@@ -8,11 +8,12 @@ author: mgoedtel
 ms.author: magoedte
 ms.date: 05/18/2020
 ms.topic: conceptual
-ms.openlocfilehash: 965e59f9c51cc41d4e5a8e8931b5c2f62c260599
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 086491484592c8015bdb519bb498e73da3836f6f
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83648107"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86103914"
 ---
 # <a name="managing-and-maintaining-the-connected-machine-agent"></a>Обслуживание агента Connected Machine и управление им
 
@@ -45,7 +46,7 @@ ms.locfileid: "83648107"
 > * Чтобы обновить агент, необходимы разрешения *Администратора*.
 > * Чтобы обновить вручную, сначала необходимо скачать и скопировать пакет установщика в папку на целевом сервере или сделать это из общей сетевой папки. 
 
-Если вы не работали с параметрами командной строки для пакетов установщика Windows, ознакомьтесь со [стандартными параметрами командной строки Msiexec](https://docs.microsoft.com/windows/win32/msi/standard-installer-command-line-options) и [параметрами командной строки Msiexec](https://docs.microsoft.com/windows/win32/msi/command-line-options).
+Если вы не работали с параметрами командной строки для пакетов установщика Windows, ознакомьтесь со [стандартными параметрами командной строки Msiexec](/windows/win32/msi/standard-installer-command-line-options) и [параметрами командной строки Msiexec](/windows/win32/msi/command-line-options).
 
 #### <a name="to-upgrade-using-the-setup-wizard"></a>Обновление с помощью мастера установки
 

@@ -1,21 +1,14 @@
 ---
 title: Службы мультимедиа Azure в качестве источника "Сетка событий"
 description: В этой статье приведены свойства событий Служб мультимедиа, используемых со службой "Сетка событий Azure".
-services: media-services
-documentationcenter: ''
-author: spelluru
-editor: ''
-ms.service: event-grid
-ms.workload: ''
 ms.topic: conceptual
-ms.date: 02/25/2020
-ms.author: spelluru
-ms.openlocfilehash: d5d50bbde927efd4aee0cedd69486a52ab8c328b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: c1c5953cae7364131eefcec97d3375404c85e963
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81394336"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105937"
 ---
 # <a name="azure-media-services-as-an-event-grid-source"></a>Службы мультимедиа Azure в качестве источника "Сетка событий"
 
@@ -203,7 +196,7 @@ ms.locfileid: "81394336"
 
 | Свойство | Тип | Описание |
 | -------- | ---- | ----------- |
-| outputs | Array | Получить выходные данные задания.|
+| outputs | Массив | Получить выходные данные задания.|
 
 ### <a name="joboutputstatechange"></a>JobOutputStateChange
 

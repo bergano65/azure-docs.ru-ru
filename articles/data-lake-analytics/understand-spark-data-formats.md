@@ -5,14 +5,15 @@ author: guyhay
 ms.author: guyhay
 ms.reviewer: jasonh
 ms.service: data-lake-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: understand-apache-spark-data-formats
 ms.date: 01/31/2019
-ms.openlocfilehash: 36f39503ca32f1ee4b422ae7b1cf9abf48716f07
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ed929b9dd6d262d63554ef3df59d3e3806dd28dc
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73648445"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86106430"
 ---
 # <a name="understand-differences-between-u-sql-and-spark-data-formats"></a>Общие сведения о различиях между форматами данных U-SQL и Spark
 
@@ -45,7 +46,7 @@ ms.locfileid: "73648445"
 - Организация данных (секционирование). таблицы U-SQL предоставляют два уровня секционирования. Внешний уровень ( `PARTITIONED BY` ) представляет собой значение и сопоставляет преимущественно с схемой секционирования Hive/Spark с помощью иерархий папок. Необходимо убедиться, что значения NULL сопоставлены с правой папкой. Внутренний уровень ( `DISTRIBUTED BY` ) в U-SQL предлагает 4 схемы распределения: циклический перебор, диапазон, хэш и прямой хэш.
     Таблицы Hive/Spark поддерживают секционирование значений или хэш-секционирование, используя другую хэш-функцию, отличную от U-SQL. При выводе данных из таблицы U-SQL вы, вероятно, сможете сопоставляться только с секционированием значений для Spark и может потребоваться дополнительная настройка макета данных в зависимости от ваших заключительных запросов Spark.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Основные сведения о концепциях кода Spark для разработчиков U-SQL](understand-spark-code-concepts.md)
 - [Обновление решений для аналитики больших данных с Azure Data Lake Storage 1-го поколения до Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-upgrade.md)

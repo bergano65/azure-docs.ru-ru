@@ -5,13 +5,14 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.devlang: azurepowershell
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 4/29/2020
-ms.openlocfilehash: 6c91f1494e56e9176f8bbf79387144aea5942787
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8f21b4daff6f5e30fdbb109e683ad7a3e75c8ad6
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84725194"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86101636"
 ---
 # <a name="configure-server-parameters-in-azure-database-for-mysql-using-powershell"></a>Настройка параметров сервера в базе данных Azure для MySQL с помощью PowerShell
 
@@ -64,7 +65,7 @@ Get-AzMySqlConfiguration -Name slow_query_log -ResourceGroupName myresourcegroup
 Update-AzMySqlConfiguration -Name slow_query_log -ResourceGroupName myresourcegroup -ServerName mydemoserver -Value On
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Автоматическое увеличение объема хранилища в базе данных Azure для сервера MySQL с помощью PowerShell](howto-auto-grow-storage-powershell.md).

@@ -1,17 +1,14 @@
 ---
 title: Веб-перехватчики в качестве обработчиков событий для событий службы "Сетка событий Azure"
 description: В статье показано, как использовать веб-перехватчики в качестве обработчиков событий службы "Сетка событий Azure". Модули runbook службы автоматизации Azure и приложения логики поддерживаются в виде обработчиков событий через веб-перехватчики.
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 05/11/2020
-ms.author: spelluru
-ms.openlocfilehash: d29cf1819d844a8ba5446feeeb725307523fce1b
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.date: 07/07/2020
+ms.openlocfilehash: 3dc75b15c55c82b6164e77f0ac93a87bced94a64
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83800542"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105614"
 ---
 # <a name="webhooks-automation-runbooks-logic-apps-as-event-handlers-for-azure-event-grid-events"></a>Веб-перехватчики, модули runbook автоматизации, Logic Apps в качестве обработчиков событий для событий службы "Сетка событий Azure"
 Обработчик событий — это место, куда отправляются события. Обработчик выполняет последующую обработку полученного события. Некоторые службы Azure автоматически настроены для обработки событий. Также для этого можно использовать любой веб-перехватчик. Для обработки событий, веб-перехватчик не обязательно размещать в Azure. Сетка событий поддерживает только конечные точки HTTPS веб-перехватчиков.

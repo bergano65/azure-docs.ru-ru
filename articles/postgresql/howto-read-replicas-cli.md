@@ -4,13 +4,14 @@ description: Узнайте, как управлять репликами чте
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/09/2020
-ms.openlocfilehash: e9be14548704557b4bdd39119294671852040348
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b8da326ea48133d2029f385fc55450c00aecf656
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84636586"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86106617"
 ---
 # <a name="create-and-manage-read-replicas-from-the-azure-cli-rest-api"></a>Создание реплик чтения и управление ими из Azure CLI REST API
 
@@ -30,7 +31,7 @@ ms.locfileid: "84636586"
 ## <a name="azure-cli"></a>Azure CLI
 Вы можете создавать реплики чтения и управлять ими с помощью Azure CLI.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 - [Установите Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 - [Сервер службы "База данных Azure для PostgreSQL"](quickstart-create-server-up-azure-cli.md) в качестве главного.
@@ -205,6 +206,6 @@ PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups
 DELETE https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/servers/{serverName}?api-version=2017-12-01
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * См. дополнительные сведения о [репликах чтения в Базе данных Azure для PostgreSQL](concepts-read-replicas.md).
 * Дополнительные сведения см. в статье [Создание реплик чтения и управление ими с помощью портала Azure](howto-read-replicas-portal.md).

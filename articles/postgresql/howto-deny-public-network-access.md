@@ -4,19 +4,20 @@ description: Узнайте, как настроить запрет доступ
 author: kummanish
 ms.author: manishku
 ms.service: postgresql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/10/2020
-ms.openlocfilehash: 4dff2321414721dbd415b468e59aea0ab4b3acee
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b51a79027ce834190a4fae5d893e47f2be16abf7
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79375126"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86102197"
 ---
 # <a name="deny-public-network-access-in-azure-database-for-postgresql-single-server-using-azure-portal"></a>Запрет доступа к общедоступной сети в базе данных Azure для PostgreSQL с помощью портал Azure
 
 В этой статье описывается, как настроить односерверную базу данных Azure для PostgreSQL, чтобы запретить все общедоступные конфигурации и разрешить подключения только через частные конечные точки для дальнейшего повышения безопасности сети.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -40,6 +41,6 @@ ms.locfileid: "79375126"
 
     ![Служба "база данных Azure для PostgreSQL" запрещает доступ к сети](./media/howto-deny-public-network-access/deny-public-network-access-success.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте [, как создавать оповещения по метрикам](howto-alert-on-metric.md).

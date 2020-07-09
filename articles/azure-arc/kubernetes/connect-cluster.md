@@ -9,12 +9,12 @@ ms.author: mlearned
 description: Подключение к Azure Arc кластера Kubernetes, который поддерживает Azure Arc
 keywords: Kubernetes, Arc, Azure, K8s, контейнеры
 ms.custom: references_regions
-ms.openlocfilehash: ec77609e5ee30cd3451c52635e530eb7153bc9a0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1a186ac3bf2297de5ffc7ff478ba9b4350dae4c8
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85341387"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86104287"
 ---
 # <a name="connect-an-azure-arc-enabled-kubernetes-cluster-preview"></a>Подключение кластера Kubernetes с поддержкой Azure Arc (предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "85341387"
 * Вам потребуется файл kubeconfig для доступа к кластеру и роли администратора кластера в кластере для развертывания с помощью Arc с включенными агентами Kubernetes.
 * Пользователь или субъект-служба, которые будут указаны в командах `az login` и `az connectedk8s connect`, имеют разрешения на чтение и запись для типа ресурса Microsoft.Kubernetes/connectedclusters. Для назначения ролей пользователю или субъекту-службе для подключения через Azure CLI можно применить роль "Azure Arc for Kubernetes Onboarding", у которой есть все нужные разрешения.
 * Helm 3 требуется для адаптации кластера с помощью расширения connectedk8s. [Установите последнюю версию Helm 3](https://helm.sh/docs/intro/install) для удовлетворения этого требования.
-* Azure CLI версии 2.3 + требуется для установки расширений CLI с включенной службой ARC для Kubernetes. [Установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) или обновите последнюю версию, чтобы убедиться в наличии Azure CLI версии 2.3 и выше.
+* Azure CLI версии 2.3 + требуется для установки расширений CLI с включенной службой ARC для Kubernetes. [Установите Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) или обновите последнюю версию, чтобы убедиться в наличии Azure CLI версии 2.3 и выше.
 * Установите расширения CLI Kubernetes с поддержкой ARC:
   
   Установите расширение `connectedk8s`, которое поможет подключить кластеры Kubernetes к Azure.

@@ -9,12 +9,12 @@ ms.date: 10/20/2017
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 93a142ddca360b3d85519a0531a221794ad3a892
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 26592b94ce13f73192890601811d22b2fd06fbe2
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84808821"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105019"
 ---
 # <a name="client-side-encryption-and-azure-key-vault-for-microsoft-azure-storage"></a>Шифрование на стороне клиента для службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-client-side-encryption-include](../../../includes/storage-selector-client-side-encryption-include.md)]
@@ -72,7 +72,9 @@ ms.locfileid: "84808821"
 
 Во время шифрования клиентская библиотека создает случайный ключ IV размером 16 байт, случайный ключ CEK размером 32 байта и выполняет конвертное шифрование текста сообщения очереди, используя полученную информацию. Зашифрованный ключ CEK и дополнительные метаданные шифрования добавляются в зашифрованное сообщение очереди. Это измененное сообщение (показано ниже) сохраняется в службе.
 
-    <MessageText>{"EncryptedMessageContents":"6kOu8Rq1C3+M1QO4alKLmWthWXSmHV3mEfxBAgP9QGTU++MKn2uPq3t2UjF1DO6w","EncryptionData":{…}}</MessageText>
+```xml
+<MessageText>{"EncryptedMessageContents":"6kOu8Rq1C3+M1QO4alKLmWthWXSmHV3mEfxBAgP9QGTU++MKn2uPq3t2UjF1DO6w","EncryptionData":{…}}</MessageText>
+```
 
 Во время расшифровки зашифрованный ключ извлекается из сообщения очереди и расшифровывается. Ключ IV также извлекается из сообщения очереди и используется вместе с расшифрованным ключом для расшифровки данных сообщения очереди. Обратите внимание, что размер метаданных шифрования очень мал (не более 500 байт), поэтому, хотя этот их размер учитывается при подсчете максимального размера в 64 КБ для сообщения очереди, этим размером данных можно пренебречь.
 
@@ -241,7 +243,7 @@ ms.locfileid: "84808821"
 ## <a name="encryption-and-performance"></a>Шифрование и производительность
 Обратите внимание, что шифрование результатов анализа данных хранилища отрицательно влияет на производительность. Ключ содержимого и вектор инициализации необходимо создать, само содержимое — зашифровать, а дополнительные метаданные — отформатировать и передать. Эти издержки зависят от объема шифруемых данных. Мы рекомендуем клиентам всегда тестировать свои приложения для повышения производительности во время разработки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Шифрование и расшифровка BLOB-объектов в хранилище Microsoft Azure с помощью хранилища ключей Azure](../blobs/storage-encrypt-decrypt-blobs-key-vault.md)
 * Скачайте [Azure Storage Client Library for .NET NuGet package](https://www.nuget.org/packages/WindowsAzure.Storage)
 * Скачайте пакеты NuGet [Core](https://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](https://www.nuget.org/packages/Microsoft.Azure.KeyVault/) и [Extensions](https://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) для хранилища ключей Azure.  

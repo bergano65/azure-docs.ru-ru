@@ -1,17 +1,14 @@
 ---
 title: Хранилище очередей как обработчик событий службы "Сетка событий Azure"
 description: В статье показано, как Хранилище очередей Azure можно использовать в качестве обработчиков событий службы "Сетка событий Azure".
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 05/11/2020
-ms.author: spelluru
-ms.openlocfilehash: f62f2b5bc01518af29bd1deb17a38e9fe105a4ed
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.date: 07/07/2020
+ms.openlocfilehash: 502b44f276253be69362424c9de0fd516d20ad9a
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83800555"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105648"
 ---
 # <a name="storage-queue-as-an-event-handler-for-azure-event-grid-events"></a>Хранилище очередей как обработчик событий службы "Сетка событий Azure"
 Обработчик событий — это место, куда отправляются события. Обработчик выполняет последующую обработку полученного события. Некоторые службы Azure автоматически настроены для обработки событий. Одна из них — это **Хранилище очередей Azure**. 

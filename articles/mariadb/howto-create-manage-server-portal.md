@@ -4,19 +4,19 @@ description: Узнайте, как управлять сервером базы
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 43004f8c52bbec17f78ed4be024cf75224dbd179
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 196b1dda17de1c9430ab048ac90d1d10b6a595b4
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79530246"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86104696"
 ---
 # <a name="manage-an-azure-database-for-mariadb-server-using-the-azure-portal"></a>Управление базой данных Azure для сервера MariaDB с помощью портал Azure
 В этой статье показано, как управлять базой данных Azure для серверов MariaDB. Задачи управления включают в себя вычисление и масштабирование хранилища, сброс пароля администратора и Просмотр сведений о сервере.
 
-## <a name="sign-in"></a>Вход
+## <a name="sign-in"></a>Войти
 Войдите на [портал Azure](https://portal.azure.com).
 
 ## <a name="create-a-server"></a>Создание сервера

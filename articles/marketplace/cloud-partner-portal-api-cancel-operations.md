@@ -1,18 +1,18 @@
 ---
 title: API операции отмены — коммерческий рынок Майкрософт
 description: API для отмены операции, выполняемой в данный момент для предложения
-author: anbene
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
-ms.date: 06/16/2020
+author: anbene
 ms.author: mingshen
-ms.openlocfilehash: 99a6cebd22c88388c68ceff3873ea8f8782b1c87
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 06/16/2020
+ms.openlocfilehash: e65f0a8ee0a5dfafab681010006fe190cb5bad70
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85516105"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86102758"
 ---
 # <a name="cancel-operation"></a>Отмена операции
 
@@ -37,7 +37,7 @@ ms.locfileid: "85516105"
 ## <a name="header"></a>Заголовок
 ------
 
-|  **Name**              |  **Значение**         |
+|  **имя**;              |  **Значение**         |
 |  ---------             |  ----------        |
 |  Content-Type          |  приложение/json  |
 |  Авторизация         |  Маркер носителя YOUR TOKEN |
@@ -75,7 +75,7 @@ ms.locfileid: "85516105"
 
 ### <a name="response-header"></a>Заголовок ответа
 
-|  **Name**             |    **Значение**                       |
+|  **имя**;             |    **Значение**                       |
 |  ---------            |    ----------                      |
 | Расположение    | Относительный путь для получения состояния этой операции. |
 |  |  |

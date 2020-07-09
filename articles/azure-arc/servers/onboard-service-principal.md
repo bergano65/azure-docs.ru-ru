@@ -8,11 +8,12 @@ author: mgoedtel
 ms.author: magoedte
 ms.date: 02/04/2020
 ms.topic: conceptual
-ms.openlocfilehash: 45a61b5bc6f1082b84bf94db7e8ad5ce49ec068f
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: ac6a00efa7db848e4c05703c81ba835fbf5f77e3
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83648059"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86103795"
 ---
 # <a name="connect-hybrid-machines-to-azure-at-scale"></a>Подключение гибридных компьютеров к Azure в большом масштабе
 
@@ -85,7 +86,7 @@ ms.locfileid: "83648059"
 * `location` : Ознакомьтесь с [поддерживаемыми регионами Azure](overview.md#supported-regions). Это расположение может совпадать или не совпадать с расположением группы ресурсов.
 * `resource-name` : (*Необязательно*.) Используется для представления ресурсов Azure на локальном компьютере. Если это значение не указано, будет использовано имя узла компьютера.
 
-Вы можете узнать больше о программе командной строки `azcmagent`, изучив [справочные материалы по Azcmagent](azcmagent-reference.md).
+Вы можете узнать больше о программе командной строки `azcmagent`, изучив [справочные материалы по Azcmagent](./manage-agent.md).
 
 ### <a name="windows-installation-script"></a>Сценарий установки для Windows
 

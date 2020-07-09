@@ -4,20 +4,21 @@ description: Узнайте, как управлять репликами чте
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/09/2020
-ms.openlocfilehash: c7d55a7b10f0c874fd84f32db1dcf21fb60c231f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8e148a3dac8435a08c0f1735cd35d06c700e1e84
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84636659"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86106634"
 ---
 # <a name="create-and-manage-read-replicas-in-azure-database-for-postgresql---single-server-from-the-azure-portal"></a>Создание реплик чтения и управление ими в базе данных Azure для PostgreSQL — один сервер из портал Azure
 
 В этой статье описано, как создавать реплики чтения и управлять ими в службе "База данных Azure для PostgreSQL" с помощью портала Azure. Дополнительные сведения о репликах чтения см. в [этой статье](concepts-read-replicas.md).
 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 [Сервер службы "База данных Azure для PostgreSQL"](quickstart-create-server-database-portal.md) в качестве главного.
 
 ## <a name="azure-replication-support"></a>Поддержка репликации Azure
@@ -38,7 +39,7 @@ ms.locfileid: "84636659"
 
 2. В меню сервера выберите **репликация**. Если для службы репликации Azure задана по крайней мере **реплика**, можно создать реплики чтения. 
 
-3. Если для службы репликации Azure не задана хотя бы **реплика**, установите ее. Нажмите кнопку **Сохранить**.
+3. Если для службы репликации Azure не задана хотя бы **реплика**, установите ее. Щелкните **Сохранить**.
 
    ![База данных Azure для PostgreSQL — репликация — установка реплики и сохранение](./media/howto-read-replicas-portal/set-replica-save.png)
 
@@ -183,6 +184,6 @@ ms.locfileid: "84636659"
  
 3. Для параметра **агрегирования** установите значение **Макс.** 
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * См. дополнительные сведения о [репликах чтения в Базе данных Azure для PostgreSQL](concepts-read-replicas.md).
 * Узнайте, как [создавать реплики чтения и управлять ими в Azure CLI и REST API](howto-read-replicas-cli.md).

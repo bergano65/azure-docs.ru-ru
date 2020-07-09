@@ -324,7 +324,7 @@
           href: how-to-use-secrets-in-runs.md
         - name: Обучение с подкреплением
           href: how-to-use-reinforcement-learning.md
-    - name: Автоматизация машинного обучения
+    - name: Автоматическое машинное обучение
       displayName: 'automl, auto ml'
       items:
         - name: Использование автоматического машинного обучения (Python)

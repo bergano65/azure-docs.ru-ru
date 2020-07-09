@@ -4,20 +4,20 @@ description: Узнайте, как настроить и управлять д�
 author: kummanish
 ms.author: manishku
 ms.service: postgresql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/30/2020
-ms.openlocfilehash: 2eb1c196e73644eeefa77d66562dc2a55d6f221a
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 6612fe38adcd3c8002dd4a11122b5bb2e797a4dd
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86034945"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86102180"
 ---
 # <a name="infrastructure-double-encryption-for-azure-database-for-postgresql"></a>Двойное шифрование инфраструктуры для базы данных Azure для PostgreSQL
 
 Узнайте, как использовать двойное шифрование инфраструктуры для базы данных Azure для PostgreSQL и управлять им.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure и права администратора для нее.
 
@@ -58,7 +58,7 @@ az group create --name myresourcegroup --location westus
 az postgres server create --resource-group myresourcegroup --name mydemoserver  --location westus --admin-user myadmin --admin-password <server_admin_password> --sku-name GP_Gen4_2 --version 11 --infrastructure-encryption >Enabled/Disabled>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о шифровании данных см. в статье шифрование данных в [базе данных Azure для PostgreSQL](concepts-Infrastructure-double-encryption.md).
 

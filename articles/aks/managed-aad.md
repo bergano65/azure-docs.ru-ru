@@ -7,19 +7,25 @@ author: mlearned
 ms.topic: article
 ms.date: 06/25/2020
 ms.author: mlearned
-ms.openlocfilehash: bf635d37559d09e887a67be27c412bff7899127b
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: f22b79cb8a730fb9c28dd1a208ab672473218b79
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86023403"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105954"
 ---
-# <a name="integrate-aks-managed-azure-ad-preview"></a>Интеграция Azure AD под управлением AKS (Предварительная версия)
+# <a name="aks-managed-azure-active-directory-integration-preview"></a>AKS-управляемая интеграция Azure Active Directory (Предварительная версия)
 
-> [!Note]
+> [!NOTE]
 > На существующие кластеры AKS (Azure Kubernetes Service) с интеграцией Azure Active Directory (Azure AD) не влияют новые возможности Azure AD, управляемые AKS.
 
-Интеграция Azure AD с AKS Azure AD разработана для упрощения процесса интеграции Azure AD, где пользователям ранее требовалось создавать клиентское приложение, серверное приложение и требовалось клиент Azure AD для предоставления разрешений на чтение каталога. В новой версии поставщик ресурсов AKS управляет клиентскими и серверными приложениями.
+Интеграция Azure AD с AKS разработана для упрощения процесса интеграции Azure AD, где пользователям ранее требовалось было создавать клиентское приложение, серверное приложение и требовалось клиент Azure AD для предоставления разрешений на чтение каталога. В новой версии поставщик ресурсов AKS управляет клиентскими и серверными приложениями.
+
+## <a name="azure-ad-authentication-overview"></a>Обзор аутентификации Azure AD
+
+Администраторы кластера могут настроить Kubernetes управления доступом на основе ролей (RBAC) на основе удостоверения пользователя или членства в группе каталогов. Кластеры AKS проходят аутентификацию Azure AD с помощью OpenID Connect. OpenID Connect представляет собой уровень идентификации на основе протокола OAuth 2.0. Дополнительные сведения о OpenID Connect Connect см. в [документации по Open ID Connect][open-id-connect].
+
+Дополнительные сведения о потоке интеграции AAD см. в [документации по основным понятиям интеграции Azure Active Directory](concepts-identity.md#azure-active-directory-integration).
 
 ## <a name="limitations"></a>Ограничения
 
@@ -80,30 +86,6 @@ az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/A
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerService
 ```
-## <a name="azure-ad-authentication-overview"></a>Обзор аутентификации Azure AD
-
-Администраторы кластера могут настроить Kubernetes управления доступом на основе ролей (RBAC) на основе удостоверения пользователя или членства в группе каталогов. Кластеры AKS проходят аутентификацию Azure AD с помощью OpenID Connect. OpenID Connect представляет собой уровень идентификации на основе протокола OAuth 2.0. Дополнительные сведения о OpenID Connect Connect см. в [документации по Open ID Connect][open-id-connect].
-
-Внутри кластера Kubernetes проверка подлинности на основе маркера веб-перехватчика используется для проверки маркеров проверки подлинности. Настройка такой проверка подлинности и ее управление являются частью кластера AKS.
-
-## <a name="webhook-and-api-server"></a>Веб-перехватчик и сервер API
-
-:::image type="content" source="media/aad-integration/auth-flow.png" alt-text="Поток проверки подлинности веб-перехватчика и сервера API":::
-
-Как показано на рисунке выше, сервер API вызывает сервер веб-перехватчика AKS и выполняет следующие действия:
-
-1. Клиентское приложение Azure AD используется kubectl для входа пользователей с помощью [потока предоставления авторизации устройства OAuth 2,0](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-device-code).
-2. Azure AD предоставляет access_token, id_token и refresh_token.
-3. Пользователь выполняет запрос к kubectl с помощью access_token из kubeconfig.
-4. Kubectl отправляет access_token в Аписервер.
-5. Сервер API настроен с сервером веб-перехватчика проверки подлинности для выполнения проверки.
-6. Сервер веб-перехватчика проверки подлинности подтверждает правильность подписи JSON Web Token, проверив открытый ключ подписывания Azure AD.
-7. Серверное приложение использует предоставленные пользователем учетные данные для запроса членства пользователя, вошедшего в систему, из MS API Graph.
-8. Ответ отправляется в Аписервер со сведениями о пользователе, такими как утверждение имени участника-пользователя (UPN) маркера доступа, и членство пользователя в группе на основе идентификатора объекта.
-9. API выполняет авторизацию на основе роли Kubernetes/Ролебиндинг.
-10. После авторизации сервер API вернет ответ в kubectl.
-11. Kubectl предоставляет пользователю отзыв.
-
 
 ## <a name="create-an-aks-cluster-with-azure-ad-enabled"></a>Создание кластера AKS с включенной службой Azure AD
 
@@ -139,7 +121,7 @@ az aks create -g MyResourceGroup -n MyManagedCluster --enable-aad [--aad-admin-g
 
 Успешное создание кластера Azure AD, управляемого AKS, содержит следующий раздел в тексте ответа.
 ```
-"Azure ADProfile": {
+"AADProfile": {
     "adminGroupObjectIds": null,
     "clientAppId": null,
     "managed": true,
@@ -187,14 +169,16 @@ aks-nodepool1-15306047-2   Ready    agent   102m   v1.15.10
 az aks get-credentials --resource-group myResourceGroup --name MyManagedCluster --admin
 ```
 
-## <a name="non-interactive-login-with-kubelogin"></a>Неинтерактивный вход с помощью кубелогин
+## <a name="non-interactive-sign-in-with-kubelogin"></a>Неинтерактивный вход с помощью кубелогин
 
-Существуют некоторые неинтерактивные сценарии, например конвейеры непрерывной интеграции, которые в настоящее время недоступны в kubectl. [Кубелогин](https://github.com/Azure/kubelogin) можно использовать для доступа к кластеру с неинтерактивным именем входа субъекта-службы.
+Существуют некоторые неинтерактивные сценарии, например конвейеры непрерывной интеграции, которые в настоящее время недоступны в kubectl. Вы можете использовать [`kubelogin`](https://github.com/Azure/kubelogin) для доступа к кластеру с неинтерактивным входом субъекта-службы.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения об [управлении доступом на основе ролей в Azure AD][azure-ad-rbac].
+* Сведения об [интеграции с Azure RBAC для авторизации Kubernetes][azure-rbac-integration]
+* Сведения об [интеграции Azure AD с KUBERNETES RBAC][azure-ad-rbac].
 * Используйте [кубелогин](https://github.com/Azure/kubelogin) для доступа к функциям для проверки подлинности Azure, которые недоступны в kubectl.
+* Узнайте больше о [концепциях идентификации AKS и Kubernetes][aks-concepts-identity].
 * Используйте [шаблоны Azure Resource Manager (ARM)][aks-arm-template] для создания кластеров с поддержкой Azure AD, управляемых AKS.
 
 <!-- LINKS - external -->
@@ -203,6 +187,8 @@ az aks get-credentials --resource-group myResourceGroup --name MyManagedCluster 
 [aks-arm-template]: https://docs.microsoft.com/azure/templates/microsoft.containerservice/managedclusters
 
 <!-- LINKS - Internal -->
+[azure-rbac-integration]: manage-azure-rbac.md
+[aks-concepts-identity]: concepts-identity.md
 [azure-ad-rbac]: azure-ad-rbac.md
 [az-aks-create]: /cli/azure/aks?view=azure-cli-latest#az-aks-create
 [az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials

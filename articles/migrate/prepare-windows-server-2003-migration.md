@@ -3,11 +3,12 @@ title: Подготовка серверов Windows Server 2003 для мигр
 description: Узнайте, как подготовить серверы Windows Server 2003 для миграции с помощью службы "миграция Azure".
 ms.topic: how-to
 ms.date: 05/27/2020
-ms.openlocfilehash: 33519764b138c7711e6c03a85aa33ec6f936a748
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5e33742d59972d491c1efb8d0f1453c1226d4625
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84172129"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86103948"
 ---
 # <a name="prepare-windows-server-2003-machines-for-migration"></a>Подготовка компьютеров Windows Server 2003 к миграции
 
@@ -24,7 +25,7 @@ ms.locfileid: "84172129"
 
 Перед миграцией проверьте, установлен ли Hyper-V Integration Services, а затем установите его при необходимости.
 
-1. Выполните [эти инструкции](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#turn-an-integration-service-on-or-off-using-hyper-v-manager) , чтобы проверить, установлены ли они.
+1. Выполните [эти инструкции](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#turn-an-integration-service-on-or-off-using-hyper-v-manager) , чтобы проверить, установлены ли они.
 2. Если она не установлена, войдите на компьютер под управлением Windows Server 2012 R2/Windows Server 2012 с ролью Hyper-V.
 3. Перейдите к файлу установки по адресу **C:\Windows\System32\vmguest.ISO**и подключите его.
 2. Скопируйте папку установки на компьютер с Windows Server 2003 и установите Integration Services.
@@ -43,7 +44,7 @@ ms.locfileid: "84172129"
 9. После выполнения скрипта и установки Hyper-V Integration Services на виртуальной машине Azure можно удалить скрипт из запуска.
 10. После установки можно оставить параметры по умолчанию в Integration Services. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с требованиями к миграции для виртуальных машин [VMware](migrate-support-matrix-vmware-migration.md) и [Hyper-V](migrate-support-matrix-hyper-v-migration.md) .
 - Перенос виртуальных машин [VMware](server-migrate-overview.md) и [Hyper-V](tutorial-migrate-hyper-v.md) .

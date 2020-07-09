@@ -1,19 +1,16 @@
 ---
-title: Состояние асинхронных операций
-description: Описание действий по отслеживанию асинхронных операций в Azure. Приводятся значения для получения состояния длительной операции.
-services: event-grid
-author: spelluru
-ms.service: event-grid
+title: Состояние асинхронных операций в сетке событий
+description: Описывает, как отслеживанию асинхронных операций в службе "Сетка событий" в Azure. Приводятся значения для получения состояния длительной операции.
 ms.topic: conceptual
-ms.date: 04/30/2020
-ms.author: spelluru
-ms.openlocfilehash: fb3479271733ee218da8a842956f3a8996e07f61
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: 621490a9f56e88baaf343c1c2a072ab84aa7d3ef
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82892021"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86103336"
 ---
-# <a name="track-asynchronous-azure-operations"></a>Отслеживание асинхронных операций Azure
+# <a name="track-event-grid-asynchronous-azure-operations"></a>Мониторинг асинхронных операций Azure в службе "Сетка событий"
 Некоторые операции REST выполняются в Azure асинхронно, поскольку не могут быть быстро завершены. Из этой статьи вы узнаете, как отслеживать состояние асинхронных операций, используя возвращаемые в ответе значения.  
 
 ## <a name="status-codes-for-asynchronous-operations"></a>Коды состояния для асинхронных операций
@@ -185,7 +182,7 @@ https://management.azure.com/subscriptions/{subscription-id}/providers/Microsoft
 
 Если запрос все еще выполняется, вы получите код состояния 202. Если запрос завершен, вы получите код состояния 200, а в тексте ответа будут указаны свойства созданной учетной записи хранения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Документацию по каждой операции REST см. в [справочнике по REST API](/rest/api/).
 * Сведения о развертывании шаблонов с помощью REST API диспетчер ресурсов см. в статье [развертывание ресурсов с помощью шаблонов диспетчер ресурсов и диспетчер ресурсов REST API](../azure-resource-manager/templates/deploy-rest.md).

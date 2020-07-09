@@ -8,17 +8,18 @@ author: mgoedtel
 ms.author: magoedte
 ms.date: 03/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 1fb64463b0372202adb04c2deb304c389c7773b8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f3dee468764f27d930081b5a3cd415c48bb79c0d
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79164687"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86104016"
 ---
 # <a name="how-to-install-the-connected-machine-agent-using-windows-powershell-dsc"></a>Установка агента подключенного компьютера с помощью Windows PowerShell DSC
 
-С помощью [настройки требуемого состояния Windows PowerShell](https://docs.microsoft.com/powershell/scripting/dsc/getting-started/winGettingStarted?view=powershell-7) (DSC) можно автоматизировать установку и настройку программного обеспечения для компьютера Windows. В этой статье описывается, как с помощью DSC установить дугу Azure для подключенных к серверам агентов компьютера на гибридных компьютерах Windows.
+С помощью [настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/getting-started/winGettingStarted?view=powershell-7) (DSC) можно автоматизировать установку и настройку программного обеспечения для компьютера Windows. В этой статье описывается, как с помощью DSC установить дугу Azure для подключенных к серверам агентов компьютера на гибридных компьютерах Windows.
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
 - Windows PowerShell версии 4,0 или более поздней
 
@@ -72,7 +73,7 @@ ms.locfileid: "79164687"
 
 1. В консоли PowerShell перейдите к папке, в которую был сохранен `.ps1` файл.
 
-2. Выполните следующие команды PowerShell для компиляции документа MOF (дополнительные сведения о компиляции конфигураций DSC см. в разделе [Конфигурации DSC](https://docs.microsoft.com/powershell/scripting/dsc/configurations/configurations?view=powershell-7)).
+2. Выполните следующие команды PowerShell для компиляции документа MOF (дополнительные сведения о компиляции конфигураций DSC см. в разделе [Конфигурации DSC](/powershell/scripting/dsc/configurations/configurations?view=powershell-7)).
 
     ```powershell
     .\`AzureConnectedMachineAgent.ps1 -TenantId <TenantId GUID> -SubscriptionId <SubscriptionId GUID> -ResourceGroup '<ResourceGroupName>' -Location '<LocationName>' -Tags '<Tag>' -Credential <psCredential>
@@ -86,7 +87,7 @@ ms.locfileid: "79164687"
 
 Этот ресурс можно добавить в существующие конфигурации DSC, чтобы представить комплексную конфигурацию для компьютера. Например, может потребоваться добавить этот ресурс в конфигурацию, которая задает параметры безопасности операционной системы.
 
-Модуль [компситересаурце](https://www.powershellgallery.com/packages/compositeresource/0.4.0) из коллекция PowerShell можно использовать для создания [составного ресурса](https://docs.microsoft.com/powershell/scripting/dsc/resources/authoringResourceComposite?view=powershell-7) в примере конфигурации для дальнейшего упрощения объединения конфигураций.
+Модуль [компситересаурце](https://www.powershellgallery.com/packages/compositeresource/0.4.0) из коллекция PowerShell можно использовать для создания [составного ресурса](/powershell/scripting/dsc/resources/authoringResourceComposite?view=powershell-7) в примере конфигурации для дальнейшего упрощения объединения конфигураций.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

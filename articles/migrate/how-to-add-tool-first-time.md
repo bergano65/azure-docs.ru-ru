@@ -3,15 +3,16 @@ title: Добавление средства оценки и миграции в
 description: Описание процесса создания проекта службы "миграция Azure" и добавления средства оценки и миграции.
 ms.topic: how-to
 ms.date: 04/16/2020
-ms.openlocfilehash: 1294831162df973e1f87052c1520d5d95990cf8f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a94e3cc18f46c457d6ed54ef88c62adefb07c5b9
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82901197"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86102537"
 ---
 # <a name="add-an-assessmentmigration-tool-for-the-first-time"></a>Добавление средства оценки и миграции в первый раз
 
-В этой статье описывается, как добавить средство оценки или миграции в проект службы " [Миграция Azure](migrate-overview.md) " в первый раз.  
+В этой статье описывается, как добавить средство оценки или миграции в проект службы " [Миграция Azure](./migrate-services-overview.md) " в первый раз.  
 Служба "миграция Azure" предоставляет центральный концентратор для наблюдения за обнаружением, оценкой и миграцией локальных приложений и рабочих нагрузок, а также виртуальных машин частного или общедоступного облака в Azure. Центр предоставляет средства миграции Azure для оценки и миграции, а также другие средства и независимые поставщики программного обеспечения ( [ISV).](migrate-services-overview.md#isv-integration) 
 
 ## <a name="check-permissions-to-create-project"></a>Проверка разрешений для создания проекта
@@ -72,7 +73,7 @@ ms.locfileid: "82901197"
 3. В разделе **Параметры**выберите **щелкните здесь, чтобы создать новый проект**.
 4. Создайте новый проект и добавьте новое средство, как описано в предыдущей процедуре.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Начало работы с [миграцией Azure: Оценка сервера](migrate-services-overview.md#azure-migrate-server-assessment-tool)или [Миграция в Azure: миграция сервера](migrate-services-overview.md#azure-migrate-server-migration-tool).
 - Если вы добавили средство ISV или перенесете его, [Ознакомьтесь с инструкциями](prepare-isv-movere.md) по подготовке к связыванию средства с Azure Migrate.

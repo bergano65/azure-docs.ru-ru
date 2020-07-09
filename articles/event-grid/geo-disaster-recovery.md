@@ -1,18 +1,14 @@
 ---
 title: Географическое аварийное восстановление в службе "Сетка событий Azure" | Документация Майкрософт
 description: Описывает, как служба "Сетка событий Azure" поддерживает географическое аварийное восстановление (GeoDR) автоматически.
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 05/24/2019
-ms.author: spelluru
-ms.openlocfilehash: 5b5c973a8daa8776efb0909092c569ea46902265
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: ccb16971020a65932daa8f9adf4b7cd9008a9253
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "66307322"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105852"
 ---
 # <a name="server-side-geo-disaster-recovery-in-azure-event-grid"></a>Географическое аварийное восстановление на стороне сервера в службе "Сетка событий Azure"
 Теперь служба "Сетка событий" имеет автоматическое географическое аварийное восстановление (GeoDR) только для новых, но всех существующих доменов, разделов и подписок на события. Если весь регион Azure выходит из строя, в службе "Сетка событий" уже все метаданные инфраструктуры, связанные с событиями, будут синхронизированы с парным регионом. Новые события начнут поступать снова, без вмешательства пользователя. 

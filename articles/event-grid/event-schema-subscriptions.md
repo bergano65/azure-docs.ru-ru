@@ -1,18 +1,14 @@
 ---
 title: Подписка Azure как источник службы "Сетка событий"
 description: Описание свойств для событий подписки, используемых со службой "Сетка событий Azure"
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: reference
-ms.date: 04/09/2020
-ms.author: spelluru
-ms.openlocfilehash: fa88fe4e05ac968588a65d67a2f075bcae48ba7a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: 72b1a73bf418b417cd29f88063781e7b45979998
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81393232"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105903"
 ---
 # <a name="azure-subscription-as-an-event-grid-source"></a>Подписка Azure в качестве источника службы "Сетка событий"
 
@@ -250,10 +246,10 @@ ms.locfileid: "81393232"
 
 | Свойство | Тип | Описание |
 | -------- | ---- | ----------- |
-| авторизация | объект | Запрошенная авторизация для операции. |
-| claims | объект | Свойства утверждений. Дополнительные сведения см. в [спецификациях JWT](https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html). |
+| авторизация | object | Запрошенная авторизация для операции. |
+| claims | object | Свойства утверждений. Дополнительные сведения см. в [спецификациях JWT](https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html). |
 | correlationId | строка | Идентификатор операции для устранения неполадок. |
-| httpRequest | объект | Подробные сведения об операции. Этот объект включается только при обновлении существующего ресурса или при удалении ресурса. |
+| httpRequest | object | Подробные сведения об операции. Этот объект включается только при обновлении существующего ресурса или при удалении ресурса. |
 | resourceProvider | строка | Поставщик ресурсов для операции. |
 | resourceUri | строка | URI ресурса в операции. |
 | operationName | строка | Выполненная операция. |

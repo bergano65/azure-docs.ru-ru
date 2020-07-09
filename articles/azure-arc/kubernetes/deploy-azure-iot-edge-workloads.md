@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Развертывание рабочих нагрузок Azure IoT Edge
 keywords: Kubernetes, Arc, Azure, K8s, контейнеры
-ms.openlocfilehash: 2a688a221b2f4865d51bca2ebf4aaa0b1f714290
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bfaa43a03ddd98616b22fc3fc7b4dccb4c38f44c
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85193793"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86103982"
 ---
 # <a name="deploy-azure-iot-edge-workloads-preview"></a>Развертывание рабочих нагрузок Azure IoT Edge (предварительная версия)
 
@@ -25,7 +25,7 @@ Azure Arc и Azure IoT Edge дополняют возможности друг �
 
 ## <a name="pre-requisites"></a>Предварительные требования
 
-* [Зарегистрируйте устройства IoT Edge ](https://docs.microsoft.com/azure/iot-edge/quickstart-linux#register-an-iot-edge-device) и [разверните имитируемый модуль датчика температуры](https://docs.microsoft.com/azure/iot-edge/quickstart-linux#deploy-a-module). Обязательно запишите строку подключения устройства.
+* [Зарегистрируйте устройства IoT Edge ](../../iot-edge/quickstart-linux.md#register-an-iot-edge-device) и [разверните имитируемый модуль датчика температуры](../../iot-edge/quickstart-linux.md#deploy-a-module). Обязательно запишите строку подключения устройства.
 
 * Для развертывания Kubernetes с помощью оператора Flux в Azure Arc используйте [поддержку IoT Edge](https://aka.ms/edgek8sdoc).
 

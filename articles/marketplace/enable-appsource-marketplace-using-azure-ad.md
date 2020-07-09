@@ -1,17 +1,18 @@
 ---
 title: Интеграция предложения marketplace коммерческой платформы Майкрософт с Azure Active Directory
 description: Использование Azure Active Directory для аутентификации предложений Microsoft AppSource и Azure Marketplace.
-author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
+author: keferna
+ms.author: keferna
 ms.date: 04/15/2020
-ms.author: dsindona
-ms.openlocfilehash: e2fff55fd9161aa41411dcb1abbf8ae0c1bae49c
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: eab7b556dc45d03bf440a3bc63aa6bf2d799face
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85957840"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86103629"
 ---
 # <a name="integrate-your-commercial-marketplace-listing-with-azure-active-directory"></a>Интеграция коммерческого профиля marketplace с Azure Active Directory
 
@@ -32,11 +33,11 @@ ms.locfileid: "85957840"
 
 | Тип предложения    | Для связи со мной требуется единый вход Azure AD?  | Требуется единый вход Azure AD для пробной версии? | Для тестового диска требуется единый вход Azure AD?  | Для Transact требуется единый вход Azure AD |
 | :------------------- | :-------------------|:-------------------|:-------------------|:-------------------|
-| Виртуальная машина | Недоступно | Нет | Нет | Нет |
+| Виртуальная машина | Недоступно | нет | Нет | Нет |
 | Приложения Azure (шаблон решения)  | Н/Д | Недоступно | Недоступно | Недоступно |
-| Управляемые приложения  | Н/Д | Недоступно | Недоступно | Нет |
-| SaaS  | Нет | Да | Да | Да |
-| Контейнеры  | Н/Д | Недоступно | Недоступно | Нет |
+| Управляемые приложения  | Н/Д | Недоступно | Недоступно | нет |
+| SaaS  | нет | Да | Да | Да |
+| Контейнеры  | Н/Д | Недоступно | Недоступно | нет |
 | Консультационные услуги  | Нет | Н/Д | Недоступно | Недоступно |
 
 Дополнительные сведения о технических требованиях к SaaS см. в статье [Руководство по публикации SaaS-приложений](marketplace-saas-applications-technical-publishing-guide.md).

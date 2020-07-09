@@ -1,18 +1,18 @@
 ---
 title: Мониторинг изменений делегирования в управляющем клиенте
 description: Узнайте, как отслеживать действия делегирования от клиентов клиентов до управляющего клиента.
-ms.date: 03/30/2020
+ms.date: 07/07/2020
 ms.topic: how-to
-ms.openlocfilehash: 9a772cc577392558f050211b7f767928ecbb707b
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: b30cbc025f97ab76be55f0f83e15603b40092ce3
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85919134"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105172"
 ---
 # <a name="monitor-delegation-changes-in-your-managing-tenant"></a>Мониторинг изменений делегирования в управляющем клиенте
 
-Как поставщик услуг, вы можете захотеть знать, когда клиентские подписки или группы ресурсов делегируются клиенту через [Управление делегированными ресурсами Azure](../concepts/azure-delegated-resource-management.md)или когда удаляются ранее делегированные ресурсы.
+Как поставщик услуг, вы можете захотеть знать, когда клиентские подписки или группы ресурсов делегируются клиенту через [Azure лигхсаусе](../overview.md)или когда удаляются ранее делегированные ресурсы.
 
 В управлении клиентом [Журнал действий Azure](../../azure-monitor/platform/platform-logs-overview.md) отслеживает действия делегирования на уровне клиента. Это зарегистрированное действие включает все добавленные или удаленные делегирования из всех клиентов.
 
@@ -156,7 +156,7 @@ else
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте, как подключить клиентов к [управлению делегированными ресурсами Azure](../concepts/azure-delegated-resource-management.md).
+- Узнайте, как подключить клиентов к [Azure лигхсаусе](../concepts/azure-delegated-resource-management.md).
 - Сведения о [Azure Monitor](../../azure-monitor/index.yml) и [журнале действий Azure](../../azure-monitor/platform/platform-logs-overview.md).

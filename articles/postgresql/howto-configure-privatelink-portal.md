@@ -4,14 +4,14 @@ description: Узнайте, как настроить частную ссылк
 author: kummanish
 ms.author: manishku
 ms.service: postgresql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/09/2020
-ms.openlocfilehash: 40e30d4011a52342c6fb610b19f70c8523a0331f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6986d5882e4d62ffc2e25b7ea998f46f41c67330
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84736719"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86102469"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-using-portal"></a>Создание и управление частной связью для базы данных Azure для PostgreSQL — один сервер с помощью портала
 
@@ -250,7 +250,7 @@ ms.locfileid: "84736719"
 2. Выберите **Удалить группу ресурсов**.
 3. Введите myResourceGroup **в поле введите имя группы ресурсов** и выберите **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом пошаговом режиме вы создали виртуальную машину в виртуальной сети, базу данных Azure для PostgreSQL-Single Server и закрытую конечную точку для закрытого доступа. Вы подключились к одной виртуальной машине из Интернета и безопасно взаимодействовали с сервером PostgreSQL, используя закрытую ссылку. Дополнительные сведения о частных конечных точках см. в статье [что такое частная конечная точка Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-overview).
 

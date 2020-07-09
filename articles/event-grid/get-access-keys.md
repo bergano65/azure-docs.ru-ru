@@ -1,17 +1,14 @@
 ---
 title: Получение ключа доступа для ресурса сетки событий
 description: В этой статье описывается получение ключа доступа для раздела или домена сетки событий.
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: how-to
-ms.date: 06/25/2020
-ms.author: spelluru
-ms.openlocfilehash: 75ab09de40a4305ebd215985f2f9f181bfd69a24
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: e5694fe0b5f22f7f76285c344627005ea727ae3c
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85414862"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105869"
 ---
 # <a name="get-access-keys-for-event-grid-resources-topics-or-domains"></a>Получение ключей доступа для ресурсов сетки событий (разделы или домены)
 Ключи доступа используются для проверки подлинности событий публикации приложения в ресурсах службы "Сетка событий Azure" (разделы и домены). Рекомендуется регулярно создавать ключи и хранить их в безопасном месте. Вы предоставляете два ключа доступа, которые позволяют поддерживать подключения с помощью одного ключа при повторном создании другого.
@@ -49,5 +46,5 @@ az eventgrid topic key list --resource-group <RESOURCE GROUP NAME> --name <TOPIC
 az eventgrid domain key list --resource-group <RESOURCE GROUP NAME> --name <DOMAIN NAME>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующую статью: [Проверка подлинности клиентов публикации](security-authenticate-publishing-clients.md). 

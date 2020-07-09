@@ -8,18 +8,35 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 06/03/2020
+ms.date: 07/07/2020
 ms.author: aahi
-ms.openlocfilehash: 7ab886b65e665bdd38e2461e49fa051213602f0e
-ms.sourcegitcommit: 813f7126ed140a0dff7658553a80b266249d302f
+ms.openlocfilehash: 3d9fb7f3fa01c06cc778e4062dd1d136e9c6e342
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84462806"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86103404"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
 API анализа текста обновляется на постоянной основе. В этой статье содержатся сведения о новых выпусках и функциях, чтобы оставаться в курсе последних нововведений.
+
+## <a name="july-2020"></a>Июль 2020 г.
+
+### <a name="text-analytics-for-health-container-public-gated-preview"></a>Анализ текста для общедоступной предварительной версии контейнера работоспособности
+
+Анализ текста для контейнера работоспособности теперь находится в общедоступной предварительной версии, которая позволяет извлекать сведения из неструктурированного текста на английском языке в клинической практике документах, таких как формы пациента принимать, заметки Doctor, справочные материалы и сводки о разрядах. В настоящее время не взимается плата за Анализ текста для использования контейнеров работоспособности. 
+
+Контейнер предоставляет следующие возможности:
+
+* Распознавание именованных сущностей
+* Извлечение связей
+* Связывание сущностей
+* Отрицание
+
+
+> [!div class="nextstepaction"]
+> [Дополнительные сведения о Анализ текста контейнере работоспособности](how-tos/text-analytics-for-health.md)
 
 ## <a name="may-2020"></a>Май 2020 г.
 
@@ -61,9 +78,6 @@ API анализа текста v3 теперь общедоступен со с
 ### <a name="text-analytics-api-v31-public-preview"></a>Общедоступная Предварительная версия API анализа текста версии 3.1
    * Новое анализ тональности функции — [интеллектуальный анализ данных](how-tos/text-analytics-how-to-sentiment-analysis.md#opinion-mining)
    * Новый [личный `PII` фильтр домена ()](how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features) для защищенных сведений о работоспособности ( `PHI` ).
-   * Новые категории личных ( `PII` ):
-      * Международная классификация заболеваниях (ICD-9-CM)
-      * Международная классификация заболеваниях (ICD-10-CM)
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о предварительной версии API анализа текста v 3.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-1/operations/Languages)
@@ -75,7 +89,7 @@ API анализа текста v3 теперь общедоступен со с
 В рамках [единой версии пакета SDK для Azure](https://techcommunity.microsoft.com/t5/azure-sdk/january-2020-unified-azure-sdk-release/ba-p/1097290)пакет sdk для API анализа текста v3 теперь доступен в виде общедоступной предварительной версии для следующих языков программирования:
    * [C#](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk?tabs=version-3&pivots=programming-language-csharp)
    * [Python](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk?tabs=version-3&pivots=programming-language-python)
-   * [JavaScript (Node. js)](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk?tabs=version-3&pivots=programming-language-javascript)
+   * [JavaScript (Node.js)](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk?tabs=version-3&pivots=programming-language-javascript)
    * [Java](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk?tabs=version-3&pivots=programming-language-java)
    
    > [!div class="nextstepaction"]
@@ -94,7 +108,7 @@ API анализа текста v3 теперь общедоступен со с
 
 * Распознавание следующих типов сущностей личных сведений (только на английском языке):
     * Модель Person
-    * Организация
+    * План
     * Возраст в качестве подтипа по количеству
     * Дата в качестве подтипа в разделе DateTime
     * Адрес электронной почты 
@@ -116,7 +130,7 @@ API анализа текста v3 теперь общедоступен со с
 * [Версия модели](concepts/model-versioning.md) `2019-10-01` , которая включает в себя:
     * Расширенное обнаружение и классификация сущностей, найденных в тексте. 
     * Распознавание следующих новых типов сущностей:
-        * Номер телефона
+        * номер телефона.
         * IP-адрес
 
 Связывание сущностей поддерживает английский и испанский языки. Языковая поддержка NER зависит от типа сущности.
@@ -137,7 +151,7 @@ API анализа текста v3 теперь общедоступен со с
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Что такое API анализа текста?](overview.md)  
+* [Что такое API "Анализ текста"?](overview.md)  
 * [Примеры пользовательских сценариев](text-analytics-user-scenarios.md)
 * [Пример. Как определить тональность с помощью Анализа текста](how-tos/text-analytics-how-to-sentiment-analysis.md)
 * [Пример. Как определить язык с помощью Анализа текста](how-tos/text-analytics-how-to-language-detection.md)

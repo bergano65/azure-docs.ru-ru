@@ -1,17 +1,14 @@
 ---
 title: Очереди и разделы служебной шины в качестве обработчиков событий для событий службы "Сетка событий Azure"
 description: В статье показано, как использовать очереди и разделы служебной шины в качестве обработчиков событий для событий службы "Сетка событий Azure".
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 05/11/2020
-ms.author: spelluru
-ms.openlocfilehash: c9e1c9aa664065371595ed34a3af28330bd7e0db
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.date: 07/07/2020
+ms.openlocfilehash: c573f7ee088fe1d88f832623891377d4fd50bd4b
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83798881"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105699"
 ---
 # <a name="service-bus-queues-and-topics-as-event-handlers-for-azure-event-grid-events"></a>Очереди и разделы служебной шины в качестве обработчиков событий для событий службы "Сетка событий Azure"
 Обработчик событий — это место, куда отправляются события. Обработчик выполняет последующую обработку полученного события. Некоторые службы Azure автоматически настроены для обработки событий. Одна из них — это **Служебная шина Azure**. 
