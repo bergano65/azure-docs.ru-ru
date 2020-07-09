@@ -6,11 +6,12 @@ manager: rochakm
 ms.date: 12/10/2019
 ms.author: mayg
 ms.topic: conceptual
-ms.openlocfilehash: cd54da5ee01206e576157435135065189bfb8035
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c4842172ff181b5cdbe7f6fecf69da8755ae43fa
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75495368"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86129870"
 ---
 # <a name="exclude-disks-from-vmware-vm-replication-to-azure"></a>Исключение дисков из репликации виртуальных машин VMware в Azure
 
@@ -41,12 +42,12 @@ ms.locfileid: "75495368"
 
 ## <a name="exclude-disks-from-replication"></a>Исключение дисков из репликации
 
-1. При [включении репликации](site-recovery-hyper-v-site-to-azure.md) для виртуальной машины VMware после выбора виртуальных машин, которые необходимо реплицировать, на странице Включение свойств **репликации**  >  **Свойства**  >  **Настройка** проверьте столбец **диски для репликации** . По умолчанию для репликации выбраны все диски.
+1. При [включении репликации](./hyper-v-azure-tutorial.md) для виртуальной машины VMware после выбора виртуальных машин, которые необходимо реплицировать, на странице Включение свойств **репликации**  >  **Свойства**  >  **Настройка** проверьте столбец **диски для репликации** . По умолчанию для репликации выбраны все диски.
 2. Если вы не хотите реплицировать конкретный диск, в поле **диски для репликации** очистите выбор всех дисков, которые требуется исключить. 
 
     ![Исключение дисков из репликации](./media/vmware-azure-exclude-disk/enable-replication-exclude-disk1.png)
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Настроив и запустив развертывание, вы можете ознакомиться с [дополнительными сведениями](failover-failback-overview.md) о различных типах обработки отказа.

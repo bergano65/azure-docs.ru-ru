@@ -1,18 +1,16 @@
 ---
 title: Создание предложения SaaS для коммерческой платформы Майкрософт
 description: Как создать предложение SaaS (программное обеспечение как услуга) для публикации или продажи в Microsoft AppSource, Azure Marketplace или с помощью программы поставщика облачных решений (CSP), используя программу коммерческой платформы в Центре партнеров Майкрософт.
-author: dsindona
-ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: 3393fb6e33cbf80db68c49ac31edb54de35bae64
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: a233f3594ace74a6bfeca90ffccfbcb233e5d890
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85980602"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121897"
 ---
 # <a name="create-a-new-saas-offer-in-the-commercial-marketplace"></a>Создание предложения SaaS для коммерческой платформы
 

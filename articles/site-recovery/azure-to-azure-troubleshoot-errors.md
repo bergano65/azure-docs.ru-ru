@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/07/2020
 ms.author: rochakm
-ms.openlocfilehash: bbb2ddaa1fb84590f9dec1c84ac4bc87a8e03022
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 91aaedba13dfd9c0a3ea06b3460beaa8ead20233
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82738122"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86130451"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-replication-errors"></a>Устранение ошибок репликации виртуальных машин Azure в Azure
 
@@ -36,7 +36,7 @@ Replication couldn't be enabled for the virtual machine <VmName>.
 
 ### <a name="fix-the-problem"></a>Устранение проблемы
 
-Обратитесь в [службу поддержки выставления счетов Azure](/azure/azure-portal/supportability/resource-manager-core-quotas-request) , чтобы позволить вашей подписке создавать виртуальные машины требуемых размеров в целевом расположении. Затем повторите невыполненную операцию.
+Обратитесь в [службу поддержки выставления счетов Azure](../azure-portal/supportability/resource-manager-core-quotas-request.md) , чтобы позволить вашей подписке создавать виртуальные машины требуемых размеров в целевом расположении. Затем повторите невыполненную операцию.
 
 Если целевое расположение имеет ограничение емкости, отключите репликацию в этом расположении. Затем включите репликацию в другое расположение, в котором ваша подписка имеет достаточную квоту для создания виртуальных машин требуемого размера.
 
@@ -202,7 +202,7 @@ Site Recovery configuration failed.
 #### <a name="fix-the-problem"></a>Устранение проблемы
 
 Azure Site Recovery требуется доступ к диапазонам IP-адресов Office 365 для проверки подлинности.
-Если вы используете правила и прокси-сервер брандмауэра Azure Network Security Group (NSG) для управления исходящими сетевыми подключениями на виртуальной машине, убедитесь, что вы используете правило NSG на основе [тегов службы Azure Active Directory (AAD)](/azure/virtual-network/security-overview#service-tags) для разрешения доступа к AAD. Мы больше не поддерживаем правила NSG на основе IP-адресов.
+Если вы используете правила и прокси-сервер брандмауэра Azure Network Security Group (NSG) для управления исходящими сетевыми подключениями на виртуальной машине, убедитесь, что вы используете правило NSG на основе [тегов службы Azure Active Directory (AAD)](../virtual-network/security-overview.md#service-tags) для разрешения доступа к AAD. Мы больше не поддерживаем правила NSG на основе IP-адресов.
 
 ### <a name="issue-3-site-recovery-configuration-failed-151197"></a>Проблема 3. Сбой при выполнении настройки Site Recovery (151197)
 
@@ -260,8 +260,8 @@ Azure data disk <DiskName> <DiskURI> with logical unit number <LUN> <LUNValue> w
 
 Убедитесь, что диски данных инициализированы, и повторите операцию.
 
-- **Windows**: [Присоединение и инициализация нового диска](/azure/virtual-machines/windows/attach-managed-disk-portal).
-- **Linux**: [Инициализируйте новый диск данных в Linux](/azure/virtual-machines/linux/add-disk).
+- **Windows**: [Присоединение и инициализация нового диска](../virtual-machines/windows/attach-managed-disk-portal.md).
+- **Linux**: [Инициализируйте новый диск данных в Linux](../virtual-machines/linux/add-disk.md).
 
 Если проблема не исчезнет, обратитесь в службу поддержки.
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/22/2020
 ms.author: sedusch
-ms.openlocfilehash: 758e79109d6cf0d41e5e5981168b0eed9f9928d6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b6a284d13d0d737eca65b2593813b3d1b999cfdf
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85361393"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86133155"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>Развертывание виртуальных машин Azure для SAP NetWeaver
 
@@ -211,6 +211,7 @@ ms.locfileid: "85361393"
 [planning-guide-5.4.2]:planning-guide.md#9789b076-2011-4afa-b2fe-b07a8aba58a1 (Копирование дисков между учетными записями хранения Azure)
 [planning-guide-5.5.1]:planning-guide.md#4efec401-91e0-40c0-8e64-f2dceadff646 (Структура виртуальной машины и VHD для развертываний SAP)
 [planning-guide-5.5.3]:planning-guide.md#17e0d543-7e8c-4160-a7da-dd7117a1ad9d (Настройка автоподключения для подключенных дисков)
+[planning-guide-9.1]:planning-guide.md#6f0a47f3-a289-4090-a053-2521618a28c3 (Решение для мониторинга в Azure для SAP)
 [planning-guide-figure-100]:media/virtual-machines-shared-sap-planning-guide/100-single-vm-in-azure.png
 [planning-guide-figure-1300]:media/virtual-machines-shared-sap-planning-guide/1300-ref-config-iaas-for-sap.png
 [planning-guide-figure-1400]:media/virtual-machines-shared-sap-planning-guide/1400-attach-detach-disks.png
@@ -913,7 +914,7 @@ az --version
 > Общая инструкция по поддержке. всегда открывайте инцидент с SAP на компоненте BC-OP-NT-AZR для Windows или BC-OP-LNX-AZR, если требуется поддержка расширения Azure для SAP.
 > В системе поддержки SAP есть выделенные инженеры службы поддержки, которые помогут нашим совместным клиентам.
 
-После подготовки виртуальной машины, как описано в разделе [Сценарии развертывания ПО SAP на виртуальных машинах Azure][deployment-guide-3], агент виртуальной машины устанавливается на виртуальной машине. Теперь необходимо развернуть расширение Azure для SAP, доступное в репозитории расширений Azure в глобальных центрах обработки данных Azure. Дополнительные сведения см. в статье [планирование и реализация виртуальных машин Azure для SAP NetWeaver] [Planning-Guide-9,1].
+После подготовки виртуальной машины, как описано в разделе [Сценарии развертывания ПО SAP на виртуальных машинах Azure][deployment-guide-3], агент виртуальной машины устанавливается на виртуальной машине. Теперь необходимо развернуть расширение Azure для SAP, доступное в репозитории расширений Azure в глобальных центрах обработки данных Azure. Дополнительные сведения см. в [руководстве по планированию и внедрению SAP NetWeaver на виртуальных машинах][planning-guide-9.1].
 
 Мы работаем над выпуском новой версии расширения Azure для SAP. Новое расширение использует идентификатор виртуальной машины, назначенный системой, для получения сведений о подключенных дисках, сетевых интерфейсах и самой виртуальной машине. Чтобы получить доступ к этим ресурсам, системному удостоверению виртуальной машины требуется разрешение читателя для виртуальной машины, диска ОС, дисков данных и сетевых интерфейсов. В настоящее время рекомендуется устанавливать новое расширение только в следующих сценариях:
 

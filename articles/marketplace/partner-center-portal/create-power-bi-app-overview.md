@@ -1,18 +1,18 @@
 ---
 title: Общие сведения о создании приложения Power BI — Microsoft AppSource
 description: В этой статье описаны общие действия по публикации Power BI приложения для Microsoft AppSource. Также предоставляются технические и бизнес-требования, которым должно соответствовать приложение Power BI для публикации в коммерческом магазине.
-author: anbene
-ms.author: mingshen
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
+author: anbene
+ms.author: mingshen
 ms.date: 04/02/2020
-ms.openlocfilehash: 82e131b0e6209089b658c622b415e997b40e9e4b
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 9bf02fe6552b47070d4f79c4c497830ac2bfad84
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85964657"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121781"
 ---
 # <a name="power-bi-app-creation-overview"></a>Общие сведения о создании приложения Power BI
 
@@ -50,7 +50,7 @@ ms.locfileid: "85964657"
 - [Советы по разработке приложения Power BI](https://docs.microsoft.com/power-bi/service-template-apps-tips)
 - [Примеры](https://docs.microsoft.com/power-bi/service-template-apps-samples)
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
 Для публикации в коммерческом магазине предложение Power BI приложения должно соответствовать следующим техническим и бизнес-требованиям.
 

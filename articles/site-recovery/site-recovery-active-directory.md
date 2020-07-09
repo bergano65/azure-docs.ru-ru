@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: mayg
-ms.openlocfilehash: 2cf4f22be2a4407d73fcc7bb340fad647c8aa145
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 528a24bb64aa8d323b5d63a27af0a52ccdf1abb6
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80546518"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86132323"
 ---
 # <a name="set-up-disaster-recovery-for-active-directory-and-dns"></a>Настройка аварийного восстановления для Active Directory и DNS
 
@@ -25,7 +25,7 @@ ms.locfileid: "80546518"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Если выполняется репликация в Azure, [подготовьте ресурсы Azure](tutorial-prepare-azure.md), включая подписку, виртуальную сеть Azure, учетную запись хранения и хранилище служб восстановления.
-- Ознакомьтесь с [требованиями к поддержке](site-recovery-support-matrix-to-azure.md) для всех компонентов.
+- Ознакомьтесь с [требованиями к поддержке](./vmware-physical-azure-support-matrix.md) для всех компонентов.
 
 ## <a name="replicate-the-domain-controller"></a>Репликация контроллера домена
 

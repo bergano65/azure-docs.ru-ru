@@ -7,17 +7,18 @@ ms.service: site-recovery
 ms.date: 01/10/2020
 ms.topic: conceptual
 ms.author: sutalasi
-ms.openlocfilehash: d2dfaab3d01ea29b0f9ecba1e9d748415bed2edc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: de25a3f9df04b09a7337dc889a688a171d98db28
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84704392"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86129908"
 ---
 # <a name="set-up-disaster-recovery-of-vmware-vms-to-azure-with-powershell"></a>Настройка аварийного восстановления виртуальных машин VMware в Azure с помощью PowerShell
 
 В этой статье описывается репликация и отработка отказа виртуальных машин VMware в Azure с помощью Azure PowerShell.
 
-Вы научитесь:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > - Создание служб восстановления и указание контекста хранилища.
@@ -30,12 +31,12 @@ ms.locfileid: "84704392"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы
 
 - Вам должны быть понятны [архитектура и компоненты сценария](vmware-azure-architecture.md).
-- Ознакомьтесь с [требованиями к поддержке](site-recovery-support-matrix-to-azure.md) для всех компонентов.
+- Ознакомьтесь с [требованиями к поддержке](./vmware-physical-azure-support-matrix.md) для всех компонентов.
 - У вас есть `Az` модуль Azure PowerShell. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="log-into-azure"></a>Вход на портал Azure
@@ -495,5 +496,5 @@ Errors           : {}
 
 2. После успешной отработки отказа можно зафиксировать эту операцию и настроить обратную репликацию из Azure в локальное расположение VMware.
 
-## <a name="next-steps"></a>Дальнейшие шаги
-Узнайте, как автоматизировать дополнительные задачи с помощью [справочника по Azure Site Recovery PowerShell](https://docs.microsoft.com/powershell/module/Az.RecoveryServices).
+## <a name="next-steps"></a>Дальнейшие действия
+Узнайте, как автоматизировать дополнительные задачи с помощью [справочника по Azure Site Recovery PowerShell](/powershell/module/Az.RecoveryServices).

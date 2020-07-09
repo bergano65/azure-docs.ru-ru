@@ -7,11 +7,12 @@ manager: rochakm
 ms.topic: article
 ms.date: 1/10/2020
 ms.author: sutalasi
-ms.openlocfilehash: deef7bfdbc28d744cb81da59d3ffc13a1abee54d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d7a2d21dcd8c9474bdf068d7940e497333f35115
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77048613"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86130217"
 ---
 # <a name="set-up-disaster-recovery-of-hyper-v-vms-to-a-secondary-site-by-using-powershell-resource-manager"></a>Настройка аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт с помощью PowerShell (Resource Manager)
 
@@ -19,12 +20,12 @@ ms.locfileid: "77048613"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Ознакомьтесь с [архитектурой и компонентами сценария](hyper-v-vmm-architecture.md).
-- Ознакомьтесь с [требованиями к поддержке](site-recovery-support-matrix-to-sec-site.md) для всех компонентов.
-- Убедитесь, что серверы Virtual Machine Manager и узлы Hyper-V соответствуют [требованиям поддержки](site-recovery-support-matrix-to-sec-site.md).
-- Убедитесь, что виртуальные машины, которые следует реплицировать, соответствуют [требованиям поддержки реплицируемых машин](site-recovery-support-matrix-to-sec-site.md).
+- Ознакомьтесь с [требованиями к поддержке](./vmware-physical-secondary-support-matrix.md) для всех компонентов.
+- Убедитесь, что серверы Virtual Machine Manager и узлы Hyper-V соответствуют [требованиям поддержки](./vmware-physical-secondary-support-matrix.md).
+- Убедитесь, что виртуальные машины, которые следует реплицировать, соответствуют [требованиям поддержки реплицируемых машин](./vmware-physical-secondary-support-matrix.md).
 
 ## <a name="prepare-for-network-mapping"></a>Подготовка к сопоставлению сетей
 
@@ -36,10 +37,10 @@ ms.locfileid: "77048613"
 
 Подготовьте Virtual Machine Manager следующим образом:
 
-- Убедитесь, что на исходном и целевом серверах Virtual Machine Manager имеются [логические сети Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/network-logical).
+- Убедитесь, что на исходном и целевом серверах Virtual Machine Manager имеются [логические сети Virtual Machine Manager](/system-center/vmm/network-logical).
   - Логическая сеть на исходном сервере должна быть связана с исходным облаком, в котором находятся узлы Hyper-V.
   - Логическая сеть на целевом сервере должна быть связана с целевым облаком.
-- Убедитесь, что на исходном и целевом серверах Virtual Machine Manager имеются [виртуальные сети виртуальной машины](https://docs.microsoft.com/system-center/vmm/network-virtual). Сети виртуальных машин должны быть связаны с логической сетью в каждом расположении.
+- Убедитесь, что на исходном и целевом серверах Virtual Machine Manager имеются [виртуальные сети виртуальной машины](/system-center/vmm/network-virtual). Сети виртуальных машин должны быть связаны с логической сетью в каждом расположении.
 - Подключите виртуальные машины на исходных узлах Hyper-V к исходной сети виртуальных машин.
 
 ## <a name="prepare-for-powershell"></a>Подготовка для работы с PowerShell
@@ -358,6 +359,6 @@ if($isJobLeftForProcessing)
 }While($isJobLeftForProcessing)
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Узнайте больше](/powershell/module/az.recoveryservices) об использовании командлетов PowerShell Resource Manager для службы Site Recovery.

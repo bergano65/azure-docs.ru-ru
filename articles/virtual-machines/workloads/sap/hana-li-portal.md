@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 07/15/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3c14ff9c4f6d2bc2b1a62d1874d01950d09491c0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8512675381f6163e66b6b838e8262dd7d2b12374
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "70099816"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86130874"
 ---
 # <a name="azure-hana-large-instances-control-through-azure-portal"></a>Управление крупными экземплярами HANA в Azure с помощью портала Azure
 В этом документе рассматривается способ представления [крупных экземпляров Hana](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture) в [портал Azure](https://portal.azure.com) и действия, выполняемые с помощью портал Azure с развернутыми единицами крупных экземпляров Hana. Видимость крупных экземпляров HANA в портал Azure предоставляется через поставщик ресурсов Azure для крупных экземпляров HANA, которые в настоящее время доступны в общедоступной предварительной версии.
@@ -31,7 +31,9 @@ ms.locfileid: "70099816"
 ### <a name="register-through-cli-interface"></a>Регистрация через интерфейс CLI
 Необходимо войти в подписку Azure, используемую для развертывания крупных экземпляров HANA с помощью интерфейса Azure CLI. Вы можете (повторно) зарегистрировать поставщик крупных экземпляров HANA с помощью следующей команды:
     
-    az provider register --namespace Microsoft.HanaOnAzure
+```azurecli
+az provider register --namespace Microsoft.HanaOnAzure
+```
 
 Дополнительные сведения см. в статье [поставщики и типы ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services#azure-cli) .
 

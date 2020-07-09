@@ -8,22 +8,23 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 07/03/2019
 ms.author: ramamill
-ms.openlocfilehash: 902c14211e91a1500c6b50cd790b347e337c4f70
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d2cc3627222bcd8de5a5cb1b5c83b04c5d4ef880
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84699929"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86130193"
 ---
 # <a name="set-up-the-configuration-server-for-disaster-recovery-of-physical-servers-to-azure"></a>Настройка сервера конфигурации для аварийного восстановления физических серверов в Azure
 
 В этой статье приведены сведения о настройке локальной среды для запуска репликации физических серверов под управлением Windows или Linux в Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что у вас уже имеется:
 - Хранилище служб восстановления в [портал Azure](https://portal.azure.com "Портал Azure").
 - Физический компьютер для установки сервера конфигурации.
-- Если вы отключили TLS 1,0 на компьютере, на котором устанавливается сервер конфигурации, убедитесь, что TLs 1,2 включен и что на компьютере установлен .NET Framework версии 4,6 или более поздней (с включенной стойким шифрованием). [Подробнее.](https://support.microsoft.com/help/4033999/how-to-resolve-azure-site-recovery-agent-issues-after-disabling-tls-1)
+- Если вы отключили TLS 1,0 на компьютере, на котором устанавливается сервер конфигурации, убедитесь, что TLs 1,2 включен и что на компьютере установлен .NET Framework версии 4,6 или более поздней (с включенной стойким шифрованием). [Подробнее](https://support.microsoft.com/help/4033999/how-to-resolve-azure-site-recovery-agent-issues-after-disabling-tls-1).
 
 ### <a name="configuration-server-minimum-requirements"></a>Минимальные требования к серверу конфигурации
 В следующей таблице перечислены минимальные требования к оборудованию, программному обеспечению и сети сервера конфигурации.
@@ -57,12 +58,12 @@ ms.locfileid: "84699929"
 #### <a name="run-azure-site-recovery-unified-setup"></a>Выполнение единой установки Azure Site Recovery
 
 > [!TIP]
-> Если системное время на компьютере отличается от местного более чем на 5 минут, то регистрация сервера конфигурации завершится сбоем. Синхронизируйте системные часы с [сервером времени](https://technet.microsoft.com/windows-server-docs/identity/ad-ds/get-started/windows-time-service/windows-time-service) перед началом установки.
+> Если системное время на компьютере отличается от местного более чем на 5 минут, то регистрация сервера конфигурации завершится сбоем. Синхронизируйте системные часы с [сервером времени](/windows-server/networking/windows-time-service/windows-time-service-top) перед началом установки.
 
 [!INCLUDE [site-recovery-add-configuration-server](../../includes/site-recovery-add-configuration-server.md)]
 
 > [!NOTE]
-> Сервер конфигурации можно установить с помощью командной строки. [Подробнее.](physical-manage-configuration-server.md#install-from-the-command-line)
+> Сервер конфигурации можно установить с помощью командной строки. [Подробнее](physical-manage-configuration-server.md#install-from-the-command-line).
 
 
 ## <a name="common-issues"></a>Распространенные проблемы
@@ -70,6 +71,6 @@ ms.locfileid: "84699929"
 [!INCLUDE [site-recovery-vmware-to-azure-install-register-issues](../../includes/site-recovery-vmware-to-azure-install-register-issues.md)]
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следующий этап заключается в [настройке целевой среды](physical-azure-set-up-target.md) в Azure.

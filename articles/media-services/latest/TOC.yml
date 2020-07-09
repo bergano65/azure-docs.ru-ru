@@ -1,7 +1,5 @@
 - name: Документация по Службам мультимедиа
   href: ./index.yml
-- name: Переход к документации по Аналитике видеотрансляции в IoT Edge
-  href: ../live-video-analytics-edge/overview.md
 - name: Обзор
   items:
     - name: Сведения о Службах мультимедиа

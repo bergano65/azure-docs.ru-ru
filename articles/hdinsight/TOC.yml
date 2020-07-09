@@ -428,8 +428,6 @@
               href: ./spark/apache-spark-troubleshoot-job-fails-noclassdeffounderror.md
             - name: "Не удается выполнить задание Apache Spark\_— InvalidClassException"
               href: ./spark/apache-spark-troubleshoot-job-fails-invalidclassexception.md
-            - name: "Медленное выполнение заданий Apache Spark\_— listStatus"
-              href: ./spark/apache-spark-troubleshoot-job-slowness-liststatus.md
             - name: "Медленное выполнение заданий Apache Spark\_— контейнер хранилища"
               href: ./spark/apache-spark-troubleshoot-job-slowness-container.md
             - name: Исключение IllegalArgumentException
@@ -723,8 +721,6 @@
               href: ./hbase/hbase-troubleshoot-pegged-cpu-region-server.md
             - name: Истечение времени ожидания при выполнении команды hbase hbck
               href: ./hbase/hbase-troubleshoot-timeouts-hbase-hbck.md
-            - name: Устранение неполадок с Apache HBase
-              href: ./hbase/apache-troubleshoot-hbase.md
             - name: "REST API для отправки запросов в Apache\_HBase"
               href: ./hbase/troubleshoot-rest-api.md
 - name: Интерактивный запрос

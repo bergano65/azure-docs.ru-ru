@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 02/28/2019
 ms.author: mayg
-ms.openlocfilehash: eb7e891c031be5ac01295905d5c3304dc6818737
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ff612b7c052ead5658ea4bbfafd7aace51ba3c02
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80478961"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86132494"
 ---
 # <a name="manage-the-configuration-server-for-physical-server-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления физических серверов
 
@@ -31,12 +31,12 @@ ms.locfileid: "80478961"
 | Количество дисков | 3 (диск ОС, диск кэша сервера обработки, диск хранения (для восстановления размещения)) |
 | Свободное место на диске (кэш сервера обработки) | 600 ГБ
 | Свободное место на диске (диск хранения) | 600 ГБ|
-| Операционная система  | Windows Server 2012 R2 <br> Windows Server 2016 |
+| Операционная система  | Windows Server 2012 R2 <br> Windows Server 2016 |
 | Язык операционной системы | Английский (США)|
 | Версия VMware vSphere PowerCLI | Не требуется|
 | Роли Windows Server | Не включайте эти роли: <br> — доменные службы Active Directory; <br>— службы IIS; <br> — Hyper-V. |
-| Групповые политики| Не включать эти групповые политики: <br> — запрет на использование командной строки; <br> — запрет на использование инструментов редактирования реестра; <br> — логика доверия для вложенных файлов; <br> — включение выполнения сценариев; <br> [Дополнительные сведения](https://technet.microsoft.com/library/gg176671(v=ws.10).aspx)|
-| IIS | — Должен отсутствовать предварительно созданный веб-сайт по умолчанию. <br> — Включить [анонимную проверку подлинности](https://technet.microsoft.com/library/cc731244(v=ws.10).aspx) <br> — включите параметр [FastCGI](https://technet.microsoft.com/library/cc753077(v=ws.10).aspx);  <br> — Должен отсутствовать предварительно созданный веб-сайт или приложение, ожидающее передачи данных на порте 443.<br>|
+| Групповые политики| Не включать эти групповые политики: <br> — запрет на использование командной строки; <br> — запрет на использование инструментов редактирования реестра; <br> — логика доверия для вложенных файлов; <br> — включение выполнения сценариев; <br> [Подробнее](/previous-versions/windows/it-pro/windows-7/gg176671(v=ws.10))|
+| IIS | — Должен отсутствовать предварительно созданный веб-сайт по умолчанию. <br> — Включить [анонимную проверку подлинности](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731244(v=ws.10)) <br> — включите параметр [FastCGI](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753077(v=ws.10));  <br> — Должен отсутствовать предварительно созданный веб-сайт или приложение, ожидающее передачи данных на порте 443.<br>|
 | Тип сетевой карты | VMXNET3 (при развертывании в качестве виртуальной машины VMware) |
 | Тип IP-адреса | Статические |
 | Доступ к Интернету | Сервер должен иметь доступ к этим URL-адресам: <br> - \*.accesscontrol.windows.net<br> - \*.backup.windowsazure.com <br>- \*.store.core.windows.net<br> - \*.blob.core.windows.net<br> - \*.hypervrecoverymanager.windowsazure.com <br> - `https://management.azure.com` <br> - *.services.visualstudio.com <br> - https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-5.7.20.0.msi (не требуется для серверов обработки горизонтального масштабирования) <br> time.nist.gov <br> time.windows.com |
@@ -267,7 +267,7 @@ ProxyPassword="Password"
 
 ## <a name="delete-or-unregister-a-configuration-server-powershell"></a>Отмена регистрации или удаление сервера конфигурации (PowerShell)
 
-1. [Установка](https://docs.microsoft.com/powershell/azure/install-Az-ps) Модуль Azure PowerShell
+1. [Установка](/powershell/azure/install-Az-ps) Модуль Azure PowerShell
 2. Войдите в свою учетную запись Azure с помощью следующей команды.
     
     `Connect-AzAccount`
@@ -315,5 +315,4 @@ ProxyPassword="Password"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Ознакомьтесь с руководствами по настройке аварийного восстановления [физических серверов](tutorial-physical-to-azure.md) в Azure.
-
+Ознакомьтесь с руководствами по настройке аварийного восстановления [физических серверов](./physical-azure-disaster-recovery.md) в Azure.

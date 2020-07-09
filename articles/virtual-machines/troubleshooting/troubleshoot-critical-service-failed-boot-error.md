@@ -12,11 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/08/2018
 ms.author: genli
-ms.openlocfilehash: 54ba87b681a055bb46b81ca81d2bcdd103491f27
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c3e76f1a7edffefc8773dfa548773ec0932fae6
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77921459"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86129866"
 ---
 # <a name="windows-shows-critical-service-failed-on-blue-screen-when-booting-an-azure-vm"></a>Windows отображает ошибку "Сбой критически важной службы" на синем экране при загрузке виртуальной машины Azure
 В этой статье описывается ошибка "Сбой критически важной службы", которая может возникнуть при загрузке виртуальной машины Windows в Microsoft Azure. Здесь приведены действия по устранению неполадок. 
@@ -29,7 +30,7 @@ ms.locfileid: "77921459"
 - "На вашем ПК возникла проблема, и его необходимо перезагрузить. Вы можете выполнить перезапуск. Дополнительные сведения о данной проблеме и возможных исправлениях см. по адресу https://windows.com/stopcode. Если вы вызываете специалиста службы поддержки, предоставьте ему следующие сведения: "Код остановки: сбой критически важной службы". 
 - "На вашем ПК возникла проблема, и его необходимо перезагрузить. Мы лишь собираем некоторые сведения об ошибке, а затем выполним перезагрузку. Если вы хотите узнать больше, можете позже поискать в Интернете сведения об этой ошибке: CRITICAL_SERVICE_FAILED".
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Существуют различные причины возникновения STOP-ошибок. Ниже перечислены наиболее распространенные из них.
 - Проблема с драйвером.
@@ -83,11 +84,15 @@ ms.locfileid: "77921459"
 
 1. На виртуальной машине восстановления выполните следующую команду в командной строке с повышенными привилегиями. Эта команда настраивает запуск поврежденного диска ОС в безопасном режиме при следующей загрузке :
 
-        bcdedit /store <OS DISK you attached>:\boot\bcd /set {default} safeboot minimal
+    ```console
+    bcdedit /store <OS DISK you attached>:\boot\bcd /set {default} safeboot minimal
+    ```
 
     Например, если присоединенный диск ОС является диском F, выполните следующую команду:
 
-        bcdedit /store F: boot\bcd /set {default} safeboot minimal
+    ```console
+    bcdedit /store F: boot\bcd /set {default} safeboot minimal
+    ```
 
 2. [Отключите диск операционной системы, а затем повторно подключите диск операционной системы к затронутой виртуальной машине](troubleshoot-recovery-disks-portal-windows.md). Виртуальная машина загрузится в безопасном режиме. Если ошибка по-прежнему возникает, перейдите к дополнительному шагу.
 3. Откройте поле **Выполнить** и запустите **средство проверки**, чтобы запустить диспетчер проверки драйверов.
@@ -97,7 +102,10 @@ ms.locfileid: "77921459"
 
 7. Удалите параметры безопасной загрузки:
 
-        bcdedit /store <OS DISK LETTER>:\boot\bcd /deletevalue {default} safeboot
+    ```console
+    bcdedit /store <OS DISK LETTER>:\boot\bcd /deletevalue {default} safeboot
+    ```
+
 8.  Перезапустите виртуальную машину. 
 
 ### <a name="optional-analyze-the-dump-logs-in-dump-crash-mode"></a>Анализ журналов дампа в режиме аварийного завершения дампа (необязательно)

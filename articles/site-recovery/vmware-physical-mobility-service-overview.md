@@ -7,11 +7,12 @@ ms.service: site-recovery
 ms.topic: how-to
 ms.date: 04/10/2020
 ms.author: ramamill
-ms.openlocfilehash: ec4d1cfbe0c76c8245c4beeaa7c044d76d917a7a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d73e2776d0d9c86fe0331f9804bfeade3f1de676
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81259814"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86131789"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Сведения о службе Mobility Service на виртуальных машинах и физических серверах VMware
 
@@ -32,7 +33,7 @@ ms.locfileid: "81259814"
 
 Принудительная установка является неотъемлемой частью задания, которое запускается из портал Azure для [включения репликации](vmware-azure-enable-replication.md#enable-replication). После выбора набора виртуальных машин, которые требуется защитить, и включения репликации сервер конфигурации отправляет агент службы Mobility Service на серверы, устанавливает агент и завершает регистрацию агента на сервере конфигурации.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 - Убедитесь, что выполнены все [необходимые условия](vmware-azure-install-mobility-service.md) для принудительной установки.
 - Убедитесь, что все конфигурации сервера соответствуют критериям в [матрице поддержки для аварийного восстановления виртуальных машин VMware и физических серверов в Azure](vmware-physical-azure-support-matrix.md).
@@ -67,7 +68,7 @@ ms.locfileid: "81259814"
 
 ## <a name="install-the-mobility-service-using-ui"></a>Установка службы Mobility Service с помощью пользовательского интерфейса
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 - Убедитесь, что все конфигурации сервера соответствуют критериям в [матрице поддержки для аварийного восстановления виртуальных машин VMware и физических серверов в Azure](vmware-physical-azure-support-matrix.md).
 - [Поиск установщика](#locate-installer-files) для операционной системы сервера.
@@ -95,7 +96,7 @@ ms.locfileid: "81259814"
 
 ## <a name="install-the-mobility-service-using-command-prompt"></a>Установка службы Mobility Service с помощью командной строки
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 - Убедитесь, что все конфигурации сервера соответствуют критериям в [матрице поддержки для аварийного восстановления виртуальных машин VMware и физических серверов в Azure](vmware-physical-azure-support-matrix.md).
 - [Поиск установщика](#locate-installer-files) для операционной системы сервера.
@@ -185,8 +186,8 @@ ms.locfileid: "81259814"
 
 ## <a name="azure-virtual-machine-agent"></a>Агент виртуальной машины Azure
 
-- **Виртуальные машины Windows**. Начиная с версии 9.7.0.0 Mobility Service, [агент виртуальной машины Azure](/azure/virtual-machines/extensions/features-windows#azure-vm-agent) устанавливает установщик Mobility Service. Это гарантирует, что при отработки отказа компьютера в Azure виртуальная машина Azure будет соответствовать необходимым условиям установки агента для использования любого расширения виртуальной машины.
-- **Виртуальные машины Linux**. [WALinuxAgent](/azure/virtual-machines/extensions/update-linux-agent) следует установить вручную на виртуальной машине Azure после отработки отказа.
+- **Виртуальные машины Windows**. Начиная с версии 9.7.0.0 Mobility Service, [агент виртуальной машины Azure](../virtual-machines/extensions/features-windows.md#azure-vm-agent) устанавливает установщик Mobility Service. Это гарантирует, что при отработки отказа компьютера в Azure виртуальная машина Azure будет соответствовать необходимым условиям установки агента для использования любого расширения виртуальной машины.
+- **Виртуальные машины Linux**. [WALinuxAgent](../virtual-machines/extensions/update-linux-agent.md) следует установить вручную на виртуальной машине Azure после отработки отказа.
 
 ## <a name="locate-installer-files"></a>Обнаружение файлов установщика
 
@@ -211,6 +212,6 @@ ms.locfileid: "81259814"
 `Microsoft-ASR_UA_version_DEBIAN7-64_GA_date_release.tar.gz` | Debian 7
 `Microsoft-ASR_UA_version_DEBIAN8-64_GA_date_release.tar.gz` | Debian 8
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Установка службы Mobility Service для аварийного восстановления виртуальных машин VMware и физических серверов](vmware-azure-install-mobility-service.md)

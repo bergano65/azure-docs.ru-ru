@@ -5,11 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 04/06/2020
-ms.openlocfilehash: d2cc4133e52e7cab812413d23948da6ac2660e77
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 71176c87ee805eb4a634dd6c2f344922fc13c4f3
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80884874"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86132711"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-network-connectivity-issues"></a>Устранение неполадок с сетевым подключением Azure к виртуальной машине Azure
 
@@ -50,7 +51,7 @@ ms.locfileid: "80884874"
 ### <a name="issue-2-site-recovery-configuration-failed-151196"></a>Проблема 2. Сбой при выполнении настройки Site Recovery (151196)
 
 > [!NOTE]
-> Если виртуальные машины находятся за **стандартным** внутренним подсистемой балансировки нагрузки, по умолчанию он не будет иметь доступ к IP-адресам Office 365, таким как `login.microsoftonline.com` . Либо измените его на **базовый** тип внутренней подсистемы балансировки нагрузки, либо создайте исходящий доступ, как упоминалось в статье [Настройка балансировки нагрузки и правил исходящего трафика в Load Balancer (цен. категория "Стандартный") с помощью Azure CLI](/azure/load-balancer/configure-load-balancer-outbound-cli).
+> Если виртуальные машины находятся за **стандартным** внутренним подсистемой балансировки нагрузки, по умолчанию он не будет иметь доступ к IP-адресам Office 365, таким как `login.microsoftonline.com` . Либо измените его на **базовый** тип внутренней подсистемы балансировки нагрузки, либо создайте исходящий доступ, как упоминалось в статье [Настройка балансировки нагрузки и правил исходящего трафика в Load Balancer (цен. категория "Стандартный") с помощью Azure CLI](../load-balancer/configure-load-balancer-outbound-cli.md).
 
 #### <a name="possible-cause"></a>Возможная причина
 
@@ -59,7 +60,7 @@ ms.locfileid: "80884874"
 #### <a name="resolution"></a>Решение
 
 - Azure Site Recovery требуется доступ к диапазонам IP-адресов Office 365 для проверки подлинности.
-- Если вы используете правила и прокси-сервер брандмауэра Azure Network Security Group (NSG) для управления исходящими сетевыми подключениями на виртуальной машине, убедитесь, что вы разрешите подключение к диапазонам IP-адресов Office 365. Создайте правило NSG на основе [тега службы Azure Active Directory (Azure AD)](/azure/virtual-network/security-overview#service-tags) , которое разрешает доступ ко всем IP-адресам, СООТВЕТСТВУЮЩИМ Azure AD.
+- Если вы используете правила и прокси-сервер брандмауэра Azure Network Security Group (NSG) для управления исходящими сетевыми подключениями на виртуальной машине, убедитесь, что вы разрешите подключение к диапазонам IP-адресов Office 365. Создайте правило NSG на основе [тега службы Azure Active Directory (Azure AD)](../virtual-network/security-overview.md#service-tags) , которое разрешает доступ ко всем IP-адресам, СООТВЕТСТВУЮЩИМ Azure AD.
 - Если в будущем в Azure AD добавляются новые адреса, необходимо создать новые правила NSG.
 
 ### <a name="example-nsg-configuration"></a>Конфигурация примера группы безопасности сети
@@ -142,8 +143,8 @@ ms.locfileid: "80884874"
 
 ### <a name="fix-the-problem"></a>Устранение проблемы
 
-Чтобы разрешить [необходимые URL-адреса](azure-to-azure-about-networking.md#outbound-connectivity-for-urls) или [диапазоны IP-](azure-to-azure-about-networking.md#outbound-connectivity-using-service-tags)адресов, выполните действия, описанные в [документе Руководство](site-recovery-azure-to-azure-networking-guidance.md)по работе с сетями.
+Чтобы разрешить [необходимые URL-адреса](azure-to-azure-about-networking.md#outbound-connectivity-for-urls) или [диапазоны IP-](azure-to-azure-about-networking.md#outbound-connectivity-using-service-tags)адресов, выполните действия, описанные в [документе Руководство](./azure-to-azure-about-networking.md)по работе с сетями.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Репликация виртуальных машин Azure в другой регион Azure](azure-to-azure-how-to-enable-replication.md)

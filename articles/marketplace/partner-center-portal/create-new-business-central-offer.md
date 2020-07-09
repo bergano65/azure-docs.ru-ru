@@ -1,18 +1,18 @@
 ---
 title: 'Создание предложения Dynamics 365 Business Central: коммерческая платформа Майкрософт'
 description: Изучите шаги и рекомендации по созданию нового предложения Dynamics 365 Business Central на портале коммерческой платформы в Центре партнеров. Вы можете публиковать или продавать предложение в Azure Marketplace или в рамках программы поставщика облачных решений (CSP).
-author: dsindona
-ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
+author: navits09
+ms.author: navits
 ms.date: 06/17/2020
-ms.openlocfilehash: 498b5935d1170fdce7da76ca475c816f1fb8d136
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 456764ae2b08b9852e56b2ab3f7cd9238b540b58
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85984248"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121951"
 ---
 # <a name="create-a-dynamics-365-business-central-offer"></a>Создание предложения Dynamics 365 Business Central
 
@@ -131,7 +131,7 @@ ms.locfileid: "85984248"
 6. Политика конфиденциальности
 7. Название предложения
 8. Сводка
-9. Описание:
+9. Описание
 10. Снимки экрана и видео
 
 ### <a name="name"></a>Имя

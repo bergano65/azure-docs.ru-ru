@@ -1,18 +1,16 @@
 ---
 title: Создание предложения приложения Azure — коммерческая платформа Майкрософт
 description: Изучите шаги и рекомендации по созданию нового предложения приложения Azure на портале коммерческой платформы в Центре партнеров. Вы можете опубликовывать или продавать предложения приложений Azure в Azure Marketplace или с помощью программы поставщика облачных решений (CSP).
-author: qianw211
-ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: cf44e50f7d8cc0dbf94c5313373bbd8080baa176
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: c5371b2d9379ca861addac07de50d7cdf9c34c8b
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85984379"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121982"
 ---
 # <a name="create-an-azure-application-offer"></a>Создание предложения приложения Azure
 
@@ -188,7 +186,7 @@ ms.locfileid: "85984379"
 5. Адрес политики конфиденциальности (ссылка)
 6. Название предложения
 7. Сводка
-8. Описание:
+8. Описание
 9. Снимки экрана и видео
 
 <br>Ниже приведен пример того, как отображаются сведения о предложении в портал Azure:

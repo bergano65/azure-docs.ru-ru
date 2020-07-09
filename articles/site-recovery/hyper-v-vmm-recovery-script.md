@@ -7,17 +7,18 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: rajanaki
-ms.openlocfilehash: 14c2a9a2ad818cc358535a91f9a6813ec7b91a6f
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: fb690dfb90c0f7b8216368cb6b26a9af7d895d18
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83826287"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86130136"
 ---
 # <a name="add-a-vmm-script-to-a-recovery-plan"></a>Добавление скрипта VMM в план восстановления
 
 В этой статье описывается, как создать скрипт System Center Virtual Machine Manager (VMM) и добавить его в план восстановления в [Azure Site Recovery](site-recovery-overview.md).
 
-Комментарии или вопросы можно добавить в конце этой статьи или на [странице вопросов и ответов по службам восстановления Azure](https://docs.microsoft.com/answers/topics/azure-site-recovery.html).
+Комментарии или вопросы можно добавить в конце этой статьи или на [странице вопросов и ответов по службам восстановления Azure](/answers/topics/azure-site-recovery.html).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -37,7 +38,7 @@ ms.locfileid: "83826287"
 
     `Import-Module -Name virtualmachinemanager`
 
-    Дополнительные сведения см. в статье [Приступая к работе с Windows PowerShell и VMM](https://technet.microsoft.com/library/hh875013.aspx).
+    Дополнительные сведения см. в статье [Приступая к работе с Windows PowerShell и VMM](/previous-versions/system-center/system-center-2012-R2/hh875013(v=sc.12)).
 * Убедитесь в наличии хотя бы одного сервера библиотеки в развертывании VMM. По умолчанию общая папка библиотеки для сервера VMM размещается на сервере VMM. Имя папки — MSCVMMLibrary.
 
   Если ваша общая папка библиотеки находится на удаленном сервере (или расположена локально, но не совпадает с папкой MSCVMMLibrary), настройте общую папку, как описано ниже (\\\libserver2.contoso.com\share\ используется в качестве примера).
@@ -50,7 +51,7 @@ ms.locfileid: "83826287"
 
      а. Откройте консоль **PowerShell 64-разрядной версии Windows** с правами администратора.
      
-     b. Введите **Set-executionpolicy bypass**. Дополнительные сведения см. в статье [Библиотека технической информации для Windows Server](https://technet.microsoft.com/library/ee176961.aspx).
+     b. Введите **Set-executionpolicy bypass**. Дополнительные сведения см. в статье [Библиотека технической информации для Windows Server](/previous-versions/windows/it-pro/windows-powershell-1.0/ee176961(v=technet.10)).
 
      > [!IMPORTANT]
      > Задайте командлет **Set-executionpolicy bypass** только для 64-разрядной консоли PowerShell. Если задать его для 32-разрядной консоли PowerShell, скрипты не выполняются.
@@ -59,9 +60,9 @@ ms.locfileid: "83826287"
 
 При наличии исходного сайта VMM можно создать скрипт на сервере VMM. Затем включите этот скрипт в план восстановления.
 
-1. Создайте новую папку в общей папке библиотеки. Например, \<имя сервера VMM>\MSSCVMMLibrary\RPScripts. Разместите ее на исходном и целевом серверах VMM.
+1. Создайте новую папку в общей папке библиотеки. Например, \<VMM server name> \мссквммлибрари\рпскриптс. Разместите ее на исходном и целевом серверах VMM.
 1. Создайте скрипт. Назовите его RPScript. Убедитесь, что скрипт выполняется правильно.
-1. Поместите скрипт в папку \<имя сервера VMM>\MSSCVMMLibrary на исходном и целевом серверах VMM.
+1. Поместите сценарий в \<VMM server name> папку \мссквммлибрари на исходном и целевом серверах VMM.
 
 ## <a name="add-the-script-to-a-recovery-plan"></a>Добавление сценария в план восстановления
 
