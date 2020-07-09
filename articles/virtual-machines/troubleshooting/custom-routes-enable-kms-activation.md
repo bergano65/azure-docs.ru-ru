@@ -13,11 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 12/20/2018
 ms.author: genli
-ms.openlocfilehash: 90034a56fcf5211059d37270e12391249f7a16b5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 085647c392bb6cec51fba8b6e42cb8f03707223c
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77920167"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134592"
 ---
 # <a name="windows-activation-fails-in-forced-tunneling-scenario"></a>Активация Windows завершается ошибкой в случае принудительного туннелирования
 
@@ -27,7 +28,7 @@ ms.locfileid: "77920167"
 
 Вы включаете [принудительное туннелирование](../../vpn-gateway/vpn-gateway-forced-tunneling-rm.md) в подсетях виртуальной сети Azure, чтобы направить весь интернет-трафик обратно в локальную сеть. В этом случае виртуальные машины Azure, на которых выполняется Windows, не смогут активировать Windows.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Виртуальные машины Windows Azure должны подключиться к серверу управления ключами Azure для активации Windows. Для активации требуется, чтобы запрос на активацию поступал с общедоступного IP-адреса Azure. В случае принудительного туннелирования активация будет завершаться ошибкой, так как запрос на активацию поступает из вашей локальной сети вместо общедоступного IP-адреса Azure.
 
@@ -78,7 +79,9 @@ IP-адрес сервера управления ключами для глоб
     ```
 3. Перейдите на виртуальную машину, на которой возникла проблема с активацией. Используйте команду [PsPing](https://docs.microsoft.com/sysinternals/downloads/psping), чтобы проверить возможность доступа к серверу управления ключами.
 
-        psping kms.core.windows.net:1688
+    ```console
+    psping kms.core.windows.net:1688
+    ```
 
 4. Попробуйте активировать Windows, чтобы увидеть, устранена ли проблема.
 
@@ -106,11 +109,13 @@ IP-адрес сервера управления ключами для глоб
 
 3. Перейдите на виртуальную машину, на которой возникла проблема с активацией. Используйте команду [PsPing](https://docs.microsoft.com/sysinternals/downloads/psping), чтобы проверить возможность доступа к серверу управления ключами.
 
-        psping kms.core.windows.net:1688
+    ```console
+    psping kms.core.windows.net:1688
+    ```
 
 4. Попробуйте активировать Windows, чтобы увидеть, устранена ли проблема.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Ключи установки клиента KMS](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys
 )

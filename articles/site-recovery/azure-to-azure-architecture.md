@@ -8,11 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 3/13/2020
 ms.author: raynew
-ms.openlocfilehash: d941f3e13e99accadc59c5836d88a824182329b9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5d0808b93d0c9c7b49d1fd394d2b776c008bc594
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84629696"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135859"
 ---
 # <a name="azure-to-azure-disaster-recovery-architecture"></a>Архитектура аварийного восстановления из Azure в Azure
 
@@ -166,11 +167,11 @@ Allow HTTPS outbound: port 443 | Разрешить диапазоны, соот
 
 #### <a name="control-access-with-nsg-rules"></a>Управление доступом с помощью правил группы безопасности сети
 
-Если для управления подключениями виртуальной машины используется фильтрация входящего и исходящего сетевого трафика сетей или подсетей Azure на основе [правил NSG](https://docs.microsoft.com/azure/virtual-network/security-overview), учитывайте следующие требования.
+Если для управления подключениями виртуальной машины используется фильтрация входящего и исходящего сетевого трафика сетей или подсетей Azure на основе [правил NSG](../virtual-network/security-overview.md), учитывайте следующие требования.
 
 - Правила NSG для исходного региона Azure должны всегда разрешать исходящий трафик репликации.
 - Мы рекомендуем создать правила в тестовой среде, прежде чем применять их к рабочей среде.
-- Используйте [теги служб](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags) вместо конкретных отдельных IP-адресов.
+- Используйте [теги служб](../virtual-network/security-overview.md#service-tags) вместо конкретных отдельных IP-адресов.
     - Теги служб обозначают группы префиксов IP-адресов, что позволяет упростить создание правил безопасности.
     - Корпорация Майкрософт автоматически обновляет теги служб по мере необходимости. 
  
@@ -192,6 +193,6 @@ Allow HTTPS outbound: port 443 | Разрешить диапазоны, соот
 
 ![Процесс отработки отказа](./media/concepts-azure-to-azure-architecture/failover-v2.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с [кратким руководством по репликации](azure-to-azure-quickstart.md) виртуальных машин Azure в дополнительный регион.

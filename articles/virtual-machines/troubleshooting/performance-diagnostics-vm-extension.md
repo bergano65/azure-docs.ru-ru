@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 6f104fc6513874bfef5f4bf9fe7f536c3e3d69cf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 763e948f58dfc76c3aa7ba67f461438fc752c689
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "71057545"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135274"
 ---
 # <a name="azure-performance-diagnostics-vm-extension-for-windows"></a>Расширение виртуальной машины для диагностики производительности Azure для Windows
 
@@ -66,7 +66,7 @@ ms.locfileid: "71057545"
 
 ### <a name="property-values"></a>Значения свойств
 
-|   **Name**   |**Значение и пример**|       **Описание**      |
+|   **имя**;   |**Значение и пример**|       **Описание**      |
 |--------------|-------------------|----------------------------|
 |версия_API|2015-06-15|Версия API.
 |publisher|Microsoft.Azure.Performance.Diagnostics|Пространство имен издателя для расширения.
@@ -253,6 +253,6 @@ Set-AzVMExtension -ExtensionName "AzurePerformanceDiagnostics" `
     Эту проблему можно спокойно проигнорировать, если состояние расширения указывает, что подготовка расширения успешно завершена.
 - Некоторые проблемы во время установки можно устранить с помощью журналов расширений. Выходные данные выполнения расширения регистрируются в файле, расположенном в следующем каталоге:
 
-        C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Performance.Diagnostics.AzurePerformanceDiagnostics\<version>
+    `C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Performance.Diagnostics.AzurePerformanceDiagnostics\<version>`
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/)и выберите **получить поддержку**. Сведения об использовании службы поддержки Azure см. в статье [часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).

@@ -1,5 +1,5 @@
 ---
-title: Настройка частной связи Azure
+title: Настройка частной конечной точки (Предварительная версия)
 titleSuffix: Azure Machine Learning
 description: Используйте частную ссылку Azure для безопасного доступа к рабочей области Машинное обучение Azure из виртуальной сети.
 services: machine-learning
@@ -10,11 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 03/13/2020
-ms.openlocfilehash: 49565624cee70e40141ca7e8b57b2c26b950d20b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ed3b59b9e6aecb91f4ecb9d569b989b6b2396c48
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84666935"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134866"
 ---
 # <a name="configure-azure-private-link-for-an-azure-machine-learning-workspace-preview"></a>Настройка частной ссылки Azure для Машинное обучение Azure рабочей области (Предварительная версия)
 
@@ -1160,6 +1161,6 @@ az group deployment create \
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о защите рабочей области Машинное обучение Azure см. в статье [Корпоративная безопасность](concept-enterprise-security.md) .

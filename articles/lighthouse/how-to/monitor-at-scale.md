@@ -1,17 +1,18 @@
 ---
 title: Мониторинг делегированных ресурсов в масштабе
 description: Узнайте, как эффективно использовать журналы Azure Monitor в масштабируемом способе между клиентами клиентов, которыми вы управляете.
-ms.date: 02/03/2020
+ms.date: 07/07/2020
 ms.topic: how-to
-ms.openlocfilehash: bdd91cec650d6810d1d62230219f840a172141d9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3be7494f929fc91e2b01bde0b4f26f7c2e4b907b
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84634121"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86133485"
 ---
 # <a name="monitor-delegated-resources-at-scale"></a>Мониторинг делегированных ресурсов в масштабе
 
-Как поставщик услуг вы можете подключить несколько клиентов для системы делегированного управления ресурсами Azure. [Azure Lighthouse](../overview.md) позволяет поставщикам служб выполнять операции одновременно в нескольких клиентах, что делает задачи управления более эффективными.
+Как поставщик услуг, вы могли подключить несколько клиентов клиента к [Azure лигхсаусе](../overview.md). Azure Lighthouse позволяет поставщикам служб выполнять операции одновременно в нескольких клиентах, что делает задачи управления более эффективными.
 
 В этом разделе показано, как использовать [журналы Azure Monitor](../../azure-monitor/platform/data-platform-logs.md) в масштабируемом способе между клиентами клиентов, которыми вы управляете.
 
@@ -21,7 +22,7 @@ ms.locfileid: "84634121"
 
 Рекомендуется создавать эти рабочие области непосредственно в клиентских клиентах. Таким образом их данные остаются в своих клиентах, а не экспортируются в. Это также позволяет осуществлять централизованный мониторинг любых ресурсов или служб, поддерживаемых Log Analytics, обеспечивая большую гибкость при мониторинге типов данных.
 
-Рабочую область Log Analytics можно создать с помощью [портал Azure](../../azure-monitor/learn/quick-create-workspace.md), с помощью [Azure CLI](../../azure-monitor/learn/quick-create-workspace-cli.md)или с помощью [Azure PowerShell](../../azure-monitor/learn/quick-create-workspace-posh.md).
+Рабочую область Log Analytics можно создать с помощью [портал Azure](../../azure-monitor/learn/quick-create-workspace.md), с помощью [Azure CLI](../../azure-monitor/learn/quick-create-workspace-cli.md)или с помощью [Azure PowerShell](../../azure-monitor/platform/powershell-workspace-configuration.md).
 
 ## <a name="deploy-policies-that-log-data"></a>Развертывание политик, которые заменяют данные журнала
 
@@ -35,7 +36,7 @@ ms.locfileid: "84634121"
 
 После развертывания политик данные будут регистрироваться в Log Analytics рабочих областях, созданных в каждом клиенте клиента. Для получения подробных сведений обо всех управляемых клиентах можно использовать такие средства, как [Azure Monitor книги](../../azure-monitor/platform/workbooks-overview.md) , для сбора и анализа информации из нескольких источников данных.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об [Azure Monitor](../../azure-monitor/index.yml).
 - Сведения о [журналах Azure Monitor](../../azure-monitor/platform/data-platform-logs.md).

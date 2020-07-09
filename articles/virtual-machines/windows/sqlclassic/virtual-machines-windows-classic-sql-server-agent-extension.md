@@ -15,11 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 07/12/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: fe899eebb0139dffabef96da32ab1641c983f726
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bd913b597e52f81c19b9c6bb20e83be23e5b35bd
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84338413"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134711"
 ---
 # <a name="automate-management-tasks-on-azure-virtual-machines-with-the-sql-server-agent-extension-classic"></a>Автоматизация задач управления на виртуальных машинах Azure с помощью расширения агента SQL Server (классическая модель)
 > [!div class="op_single_selector"]
@@ -60,20 +61,28 @@ ms.locfileid: "84338413"
 
 Запустите оболочку Windows PowerShell и подключите ее к своей подписке Azure с помощью команды **Add-AzureAccount** .
 
-    Add-AzureAccount
+```azurepowershell
+Add-AzureAccount
+```
 
 Если у вас несколько подписок, воспользуйтесь командой **Select-AzureSubscription** , чтобы выбрать подписку, которая содержит целевую виртуальную машину, развернутую с помощью классической модели.
 
-    Select-AzureSubscription -SubscriptionName <subscriptionname>
+```azurepowershell
+Select-AzureSubscription -SubscriptionName <subscriptionname>
+```
 
 На этом этапе вы можете получить список классических виртуальных машин и имена связанных служб с помощью команды **Get-AzureVM** .
 
-    Get-AzureVM
+```azurepowershell
+Get-AzureVM
+```
 
 ## <a name="installation"></a>Установка
 Для установки расширения агента IaaS SQL Server и настройки связанных служб на классических виртуальных машинах используется PowerShell. Установите расширение с помощью командлета PowerShell **Set-AzureVMSqlServerExtension** . Например, следующая команда устанавливает расширение на виртуальную машину Windows Server (классической модели) и присваивает ему имя SQLIaaSExtension.
 
-    Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension -ReferenceName "SQLIaasExtension" -Version "1.2" | Update-AzureVM
+```azurepowershell
+Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension -ReferenceName "SQLIaasExtension" -Version "1.2" | Update-AzureVM
+```
 
 После обновления расширения агента IaaS SQL до последней версии виртуальную машину необходимо перезапустить.
 
@@ -90,7 +99,9 @@ ms.locfileid: "84338413"
 
 Можно также использовать командлет Azure PowerShell **Get-AzureVMSqlServerExtension** .
 
-    Get-AzureVM –ServiceName "service" –Name "vmname" | Get-AzureVMSqlServerExtension
+```azurepowershell
+Get-AzureVM –ServiceName "service" –Name "vmname" | Get-AzureVMSqlServerExtension
+```
 
 ## <a name="removal"></a>Удаление
 Чтобы удалить расширение на портале Azure, в колонке **Расширения** в свойствах виртуальной машины щелкните многоточие. Щелкните **Удалить**.
@@ -99,7 +110,9 @@ ms.locfileid: "84338413"
 
 Вы также можете использовать командлет PowerShell **Remove-AzureVMSqlServerExtension** .
 
-    Get-AzureVM –ServiceName "service" –Name "vmname" | Remove-AzureVMSqlServerExtension | Update-AzureVM
+```azurepowershell
+Get-AzureVM –ServiceName "service" –Name "vmname" | Remove-AzureVMSqlServerExtension | Update-AzureVM
+```
 
 ## <a name="next-steps"></a>Next Steps
 Начните работать с одной из служб, поддерживаемых расширением. Дополнительные сведения см. в разделе [Поддерживаемые службы](#supported-services) этой статьи.

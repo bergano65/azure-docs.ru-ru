@@ -5,11 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: troubleshooting
 ms.date: 11/27/2018
-ms.openlocfilehash: a780a42179a0bacf0e4a12ba1e75ae84943539b4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 913f1f2a7a03c1abb83d8daa6d4b0c3f6e77e309
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77190723"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86133756"
 ---
 # <a name="troubleshoot-azure-vm-extension-issues"></a>Устранение проблем с расширением виртуальной машины Azure
 
@@ -68,14 +69,14 @@ ms.locfileid: "77190723"
 1. Убедитесь, что служба гостевого агента Windows Azure отображается в списке службы.
 1. Перезапустите задание защиты.
 
-Кроме того, убедитесь, что [Microsoft .NET 4.5 установлен](https://docs.microsoft.com/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) на виртуальной машине. Для взаимодействия агента виртуальной машины со службой требуется .NET 4,5.
+Кроме того, убедитесь, что [Microsoft .NET 4.5 установлен](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) на виртуальной машине. Для взаимодействия агента виртуальной машины со службой требуется .NET 4,5.
 
 ### <a name="the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms"></a>Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)
 
 #### <a name="solution"></a>Решение
 Большая часть неполадок, связанных с агентом или расширением на виртуальных машинах Linux, вызваны проблемами с устаревшим агентом виртуальной машины. Чтобы устранить эту проблему, следуйте приведенным ниже общим рекомендациям.
 
-1. Выполните указания по [обновлению агента виртуальной машины Linux ](../virtual-machines/linux/update-agent.md).
+1. Выполните указания по [обновлению агента виртуальной машины Linux ](../virtual-machines/extensions/update-linux-agent.md).
 
    > [!NOTE]
    > Мы *настоятельно рекомендуем* обновлять агент только посредством репозитория дистрибутивов. Не рекомендуется скачивать код агента непосредственно из GitHub и обновлять его. Если последняя версия агента для дистрибутива недоступна, обратитесь в службу поддержки распространения за инструкциями по ее установке. Чтобы проверить наличие последней версии агента, перейдите на страницу [агента Linux для Microsoft Azure](https://github.com/Azure/WALinuxAgent/releases) в репозитории GitHub.
@@ -106,6 +107,6 @@ ms.locfileid: "77190723"
 1. Выберите **Расширение Site Recovery**.
 1. Выберите **Удалить**.
 
-Если на виртуальной машине Linux расширение VMSnapshot не отображается в портал Azure, [Обновите агент Linux для Azure](../virtual-machines/linux/update-agent.md). Затем запустите защиту.
+Если на виртуальной машине Linux расширение VMSnapshot не отображается в портал Azure, [Обновите агент Linux для Azure](../virtual-machines/extensions/update-linux-agent.md). Затем запустите защиту.
 
 После выполнения этих действий расширение будет переустановлено во время защиты.

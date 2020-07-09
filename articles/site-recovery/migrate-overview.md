@@ -8,19 +8,19 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: raynew
-ms.openlocfilehash: a7107eae5c798deb78d4d35eccdf4adcf5273335
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f42942d0e112aad147f78d62b5f5b43587eca9b3
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80388905"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135608"
 ---
 # <a name="about-migration"></a>Общие сведения о миграции
 
 В статье описано, как [Azure Site Recovery](site-recovery-overview.md) поможет выполнить миграцию виртуальных машин. 
 
 > [!TIP]
-> Теперь службу "миграция Azure" можно использовать для переноса виртуальных машин и серверов в Azure вместо службы Azure Site Recovery. [Подробнее.](../migrate/migrate-services-overview.md)
+> Теперь службу "миграция Azure" можно использовать для переноса виртуальных машин и серверов в Azure вместо службы Azure Site Recovery. [Подробнее](../migrate/migrate-services-overview.md).
 
 
 Вот что можно сделать с помощью Site Recovery:
@@ -30,7 +30,7 @@ ms.locfileid: "80388905"
 - **Перенести AWS в Azure**: миграция экземпляров AWS под управлением Windows на виртуальные машины IaaS Azure. 
 
 > [!NOTE]
-> Теперь вы можете выполнить миграцию из локальной среды в Azure с помощью службы "Миграция Azure". [Подробнее.](../migrate/migrate-overview.md)
+> Теперь вы можете выполнить миграцию из локальной среды в Azure с помощью службы "Миграция Azure". [Подробнее](../migrate/migrate-services-overview.md).
 
 ## <a name="what-do-we-mean-by-migration"></a>Что подразумевает собой перенос?
 

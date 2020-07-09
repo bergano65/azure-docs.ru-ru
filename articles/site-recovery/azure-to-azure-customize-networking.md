@@ -8,11 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 10/21/2019
 ms.author: rajanaki
-ms.openlocfilehash: ce3bfd85656972cb93b74a85a1bd6d469837ce22
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 848234417099c0a31bd0c9e84722b6221aec3aa9
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84236297"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135827"
 ---
 # <a name="customize-networking-configurations-of-the-target-azure-vm"></a>Настройка сетевых конфигураций целевой виртуальной машины Azure
 
@@ -26,11 +27,11 @@ ms.locfileid: "84236297"
 
 При репликации виртуальных машин Azure можно предоставить следующие основные конфигурации ресурсов для отработки отказа виртуальной машины:
 
-- [Внутренняя подсистема балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview)
+- [Внутренняя подсистема балансировки нагрузки](../load-balancer/load-balancer-overview.md)
 - [Общедоступный IP-адрес](../virtual-network/public-ip-addresses.md)
-- [Группа безопасности сети](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group) как для подсети, так и для сетевой карты
+- [Группа безопасности сети](../virtual-network/manage-network-security-group.md) как для подсети, так и для сетевой карты
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Убедитесь, что конфигурация на стороне восстановления планируется заранее.
 - Создайте сетевые ресурсы заранее. Укажите его в качестве входных данных, чтобы служба Azure Site Recovery могла принять эти параметры и убедиться, что виртуальная машина отработки отказа соответствует этим параметрам.

@@ -7,11 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
-ms.openlocfilehash: 3e81e353d2912f56a932ce118a0424e45e758df7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fbd11c279708cd828693baab3f9f6df91515bc48
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74133010"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86133906"
 ---
 # <a name="architecture---hyper-v-replication-to-a-secondary-site"></a>Архитектура: репликация Hyper-V на дополнительный сайт
 
@@ -35,7 +36,7 @@ ms.locfileid: "74133010"
 
 ## <a name="replication-process"></a>Процесс репликации
 
-1. При запуске начальной репликации создается [моментальный снимок виртуальной машины Hyper-V](https://technet.microsoft.com/library/dd560637.aspx).
+1. При запуске начальной репликации создается [моментальный снимок виртуальной машины Hyper-V](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560637(v=ws.10)).
 2. Виртуальные жесткие диски на виртуальной машине по одному реплицируются в дополнительное расположение.
 3. В случае возникновения изменений на диске при выполнении начальной репликации модуль отслеживания репликации реплики Hyper-V регистрирует их в журналах репликации Hyper-V (HRL), которые находятся в одной папке с дисками. С каждым диском связан HRL-файл, который отправляется в дополнительное расположение. При начальной репликации файлы моментальных снимков и журналов потребляют ресурсы диска.
 4. После завершения начальной репликации моментальный снимок виртуальной машины удаляется и начинается разностная репликация данных.
@@ -55,7 +56,7 @@ ms.locfileid: "74133010"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 
 Следуйте указаниям [этого руководства](hyper-v-vmm-disaster-recovery.md), чтобы включить репликацию Hyper-V между облаками VMM.

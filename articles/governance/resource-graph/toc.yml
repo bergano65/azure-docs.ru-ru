@@ -65,6 +65,10 @@
     - name: Руководство по регулируемым запросам
       displayName: 'pagination, batching, throttling, parallel'
       href: ./concepts/guidance-for-throttled-requests.md
+    - name: Безопасность
+      items:
+        - name: 'Базовые показатели безопасности, учитываемые решением для оценки безопасности Azure'
+          href: ./concepts/azure-security-benchmark-baseline.md
 - name: Практические руководства
   items:
     - name: Получение данных об изменении ресурса

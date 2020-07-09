@@ -7,11 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.author: ramamill
 ms.date: 04/03/2020
-ms.openlocfilehash: 1afd931249d4dbeda2b4b25f822837e2a564f959
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 04b4feb1219f6a51a1f0a7ac0d19fc3fd70029c6
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80656321"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86133531"
 ---
 # <a name="troubleshoot-mobility-service-push-installation"></a>Устранение неполадок при принудительной установке службы Mobility Service
 
@@ -147,7 +148,7 @@ ms.locfileid: "80656321"
 
      Чтобы отключить параметр групповая политика и разрешить пользователю предоставлять общий доступ к файлам, выберите значение **отключено**.
 
-  1. Нажмите кнопку **ОК** , чтобы сохранить изменения.
+  1. Нажмите кнопку **OK**, чтобы сохранить изменения.
 
   Дополнительные сведения см. в разделе [Включение или отключение общего доступа к файлам с помощью групповая политика](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754359(v=ws.10)).
 
@@ -169,7 +170,7 @@ ms.locfileid: "80656321"
 
 Дополнительные сведения об устранении неполадок WMI:
 
-* [Базовое тестирование WMI](https://blogs.technet.microsoft.com/askperf/2007/06/22/basic-wmi-testing/)
+* [Базовое тестирование WMI](https://techcommunity.microsoft.com/t5/ask-the-performance-team/bg-p/AskPerf)
 * [Устранение неполадок WMI](/windows/win32/wmisdk/wmi-troubleshooting)
 * [Устранение неполадок со сценариями WMI и службами WMI](/previous-versions/tn-archive/ff406382(v=msdn.10))
 
@@ -391,6 +392,6 @@ COM+ was unable to talk to the Microsoft Distributed Transaction Coordinator (Ex
 
 1. Переустановите все отсутствующие драйверы.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные [сведения](vmware-azure-tutorial.md) о настройке аварийного восстановления для виртуальных машин VMware.

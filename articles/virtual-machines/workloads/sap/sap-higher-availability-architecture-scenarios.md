@@ -16,11 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 86094fd7ff9550946e1b1c13e0773f025a0e977c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f43ba78bc9c48b003d4718945dc47b0a076a048f
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77623818"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134540"
 ---
 # <a name="utilize-azure-infrastructure-vm-restart-to-achieve-higher-availability-of-an-sap-system"></a>Использование перезапуска виртуальной машины в инфраструктуре Azure для косвенного повышения доступности системы SAP
 
@@ -266,7 +267,7 @@ ms.locfileid: "77623818"
 
 В типичной ситуации, когда на каждой виртуальной машине работает один экземпляр сервера приложений SAP и перезапускается только одна виртуальная машина, функция автозапуска не будет критически ухудшать ситуацию. Ее можно включить, добавив в профиль запуска экземпляра Advanced Business Application Programming (ABAP) или экземпляра Java следующий параметр:
 
-      Autostart = 1
+`Autostart = 1`
 
 
   > [!NOTE]
@@ -279,6 +280,6 @@ ms.locfileid: "77623818"
   * [Start/Stop SAP along with your Unix Server Start/Stop](https://scn.sap.com/community/unix/blog/2012/08/07/startstop-sap-along-with-your-unix-server-startstop) (Запуск и остановка SAP одновременно с запуском и остановкой сервера UNIX)
   * [Запуск и остановка агентов управления SAP NetWeaver](https://help.sap.com/saphelp_nwpi711/helpdata/en/49/9a15525b20423ee10000000a421938/content.htm)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Информацию обо всех возможностях по повышению доступности для SAP NetWeaver с учетом приложений см. в разделе [Высокая доступность приложений SAP в Azure IaaS][sap-high-availability-architecture-scenarios-sap-app-ha].

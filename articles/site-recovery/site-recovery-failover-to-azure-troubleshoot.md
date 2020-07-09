@@ -9,12 +9,12 @@ ms.topic: article
 ms.workload: storage-backup-recovery
 ms.date: 01/08/2020
 ms.author: mayg
-ms.openlocfilehash: 7b43105d23de516b994521ad46bb45737798717c
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: 09a4700ce794458ee4dcad2291a93e0b13ca5feb
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85971085"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86133776"
 ---
 # <a name="troubleshoot-errors-when-failing-over-vmware-vm-or-physical-machine-to-azure"></a>Устранение ошибок при отработке отказа виртуальной машины VMware или физического компьютера в Azure
 
@@ -90,7 +90,7 @@ ms.locfileid: "85971085"
 
 ## <a name="unable-to-connectrdpssh---vm-connect-button-available"></a>Невозможно подключиться по протоколу RDP или SSH. На виртуальной машине активна кнопка "Подключиться"
 
-Если кнопка **Подключиться**на виртуальной машине, для которой выполнена отработка отказа, активна, тогда проведите **диагностику загрузки** на виртуальной машине и проверьте ее на наличие ошибок, как указано в [этой статье](../virtual-machines/windows/boot-diagnostics.md).
+Если кнопка **Подключиться**на виртуальной машине, для которой выполнена отработка отказа, активна, тогда проведите **диагностику загрузки** на виртуальной машине и проверьте ее на наличие ошибок, как указано в [этой статье](../virtual-machines/troubleshooting/boot-diagnostics.md).
 
 1. Если виртуальная машина не запустилась, попробуйте выполнить отработку отказа до предыдущей точки восстановления.
 2. Если работа приложения на виртуальной машине не восстановится, попробуйте выполнить отработку отказа до согласованной с приложениями точки восстановления.
@@ -174,7 +174,7 @@ RegisterHostStaticInfo encountered exception config/talwrapper.cpp(107)[post] Cu
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Устранение неполадок [с подключением к виртуальной машине Windows через удаленный рабочий стол](../virtual-machines/windows/troubleshoot-rdp-connection.md)
-- Устранение неполадок [с SSH-подключением к виртуальной машине Linux](../virtual-machines/linux/detailed-troubleshoot-ssh-connection.md)
+- Устранение неполадок [с подключением к виртуальной машине Windows через удаленный рабочий стол](../virtual-machines/troubleshooting/troubleshoot-rdp-connection.md)
+- Устранение неполадок [с SSH-подключением к виртуальной машине Linux](../virtual-machines/troubleshooting/detailed-troubleshoot-ssh-connection.md)
 
-Если вам нужна дополнительная помощь, разместите свой запрос на [странице с вопросами о Site Recovery (раздел вопросов и ответов на сайте Майкрософт)](https://docs.microsoft.com/answers/topics/azure-site-recovery.html) или оставьте комментарий в конце этого документа. У нас есть активное сообщество, где вам смогут помочь.
+Если вам нужна дополнительная помощь, разместите свой запрос на [странице с вопросами о Site Recovery (раздел вопросов и ответов на сайте Майкрософт)](/answers/topics/azure-site-recovery.html) или оставьте комментарий в конце этого документа. У нас есть активное сообщество, где вам смогут помочь.

@@ -15,11 +15,12 @@ ms.workload: infrastructure
 ms.date: 09/26/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 011904d7ce14f346b678c753c10a8f3258730ee1
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: 9f41e1d8843783addf601becfda87607253e0a18
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84014525"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135905"
 ---
 # <a name="sql-server-azure-virtual-machines-dbms-deployment-for-sap-netweaver"></a>SAP NetWeaver на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server
 
@@ -458,7 +459,9 @@ SQL Server 2014 и более поздних версий открывает в�
 
 Правильный результат должен выглядеть следующим образом:
 
-    Latin1-General, binary code point comparison sort for Unicode Data, SQL Server Sort Order 40 on Code Page 850 for non-Unicode Data
+```output
+Latin1-General, binary code point comparison sort for Unicode Data, SQL Server Sort Order 40 on Code Page 850 for non-Unicode Data
+```
 
 Если результат выглядит иначе, ОСТАНОВИТЕ развертывание SAP и выясните, почему команда установки сработала не так, как ожидалось. Развертывание приложений SAP NetWeaver в экземпляре SQL Server с кодовыми страницами SQL Server, отличающимися от упомянутой выше, **НЕ** поддерживается.
 

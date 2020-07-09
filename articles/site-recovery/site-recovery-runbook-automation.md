@@ -7,11 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 09/18/2019
 ms.author: rajanaki
-ms.openlocfilehash: 123ef7de338bfe872948db60c68c0c5743f5cda1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 25290a66da3d5c8325513b2bea6d27d12ca7da70
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84345144"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134804"
 ---
 # <a name="add-azure-automation-runbooks-to-recovery-plans"></a>Добавление модулей Runbook службы автоматизации Azure в планы восстановления
 
@@ -114,7 +115,7 @@ $vmMap = $RecoveryPlanContext.VmMap
 ## <a name="customize-the-recovery-plan"></a>Настройка плана восстановления
 
 1. В хранилище выберите **планы восстановления (Site Recovery)** .
-2. Чтобы создать план восстановления, щелкните **+ план восстановления**. [Подробнее.](site-recovery-create-recovery-plans.md) Если у вас уже есть план восстановления, выберите его, чтобы открыть.
+2. Чтобы создать план восстановления, щелкните **+ план восстановления**. [Подробнее](site-recovery-create-recovery-plans.md). Если у вас уже есть план восстановления, выберите его, чтобы открыть.
 3. На странице план восстановления нажмите кнопку **настроить**.
 
     ![Нажмите кнопку "Настроить"](media/site-recovery-runbook-automation-new/custom-rp.png)
@@ -128,7 +129,7 @@ $vmMap = $RecoveryPlanContext.VmMap
 
 С помощью внешних переменных можно использовать один скрипт Runbook в нескольких планах восстановления. 
 
-- [Переменные службы автоматизации Azure](../automation/automation-variables.md) используются для хранения параметров для запуска плана восстановления.
+- [Переменные службы автоматизации Azure](../automation/shared-resources/variables.md) используются для хранения параметров для запуска плана восстановления.
 - Если перед именем переменной вы укажете имя плана восстановления, для каждого плана восстановления будут созданы собственные переменные, которые можно использовать в качестве параметров.
 - Эти параметры можно изменять, чтобы управлять работой скрипта, не изменяя его содержимое, однако принцип работы сценария будет изменен.
 
@@ -198,7 +199,7 @@ $vmMap = $RecoveryPlanContext.VmMap
 - Например, точка восстановления SharePoint имеет два внешних интерфейса, а простые бизнес-приложения — только один.
 - В этом сценарии нельзя создавать отдельные переменные для каждого плана восстановления.
 
-В следующем примере мы создадим [сложную переменную](https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azureautomationvariable) в учетной записи службы автоматизации Azure.
+В следующем примере мы создадим [сложную переменную](/powershell/module/servicemanagement/azure/set-azureautomationvariable) в учетной записи службы автоматизации Azure.
 
 Для этого нужно указать несколько значений с помощью Azure PowerShell.
 
@@ -261,11 +262,8 @@ $vmMap = $RecoveryPlanContext.VmMap
 > [!VIDEO https://channel9.msdn.com/Series/Azure-Site-Recovery/One-click-failover-of-a-2-tier-WordPress-application-using-Azure-Site-Recovery/player]
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Сведения об [учетной записи запуска от имени службы автоматизации Azure](../automation/automation-create-runas-account.md)
+- Сведения об [учетной записи запуска от имени службы автоматизации Azure](../automation/manage-runas-account.md)
 - Ознакомьтесь с [примерами сценариев службы автоматизации Azure](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=User&f%5B0%5D.Value=SC%20Automation%20Product%20Team&f%5B0%5D.Text=SC%20Automation%20Product%20Team).
 - Дополнительные [сведения](site-recovery-failover.md) о выполнении отработки отказа.
-
-
-

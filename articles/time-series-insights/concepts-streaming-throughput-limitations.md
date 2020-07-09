@@ -10,19 +10,19 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 06/03/2020
 ms.custom: seodec18
-ms.openlocfilehash: d5a82aa3aca55622308cae5816c95df9766048da
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: baa132589f5242ab480c9caa55ca793e0652ad6e
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86050073"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135003"
 ---
 # <a name="streaming-ingestion-throughput-limits"></a>Ограничения пропускной способности приема потоковой передачи
 
 Ниже описаны ограничения для потоковой передачи данных службы "аналитика временных рядов Azure".
 
 > [!TIP]
-> Полный список всех ограничений предварительной версии см. в статье о [планировании среды](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-plan#review-preview-limits). **TODO** удалить слово "Preview" (Предварительная версия) после обновления заголовка статьи.
+> Полный список всех ограничений предварительной версии см. в статье о [планировании среды](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-plan#review-preview-limits).
 
 ## <a name="per-environment-limitations"></a>Ограничения на среду
 
@@ -96,6 +96,6 @@ ms.locfileid: "86050073"
 * [Масштаб Центра событий](https://docs.microsoft.com/azure/event-hubs/event-hubs-scalability#throughput-units)
 * [Секции Центра событий](https://docs.microsoft.com/azure/event-hubs/event-hubs-features#partitions)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [хранении](concepts-storage.md) данных

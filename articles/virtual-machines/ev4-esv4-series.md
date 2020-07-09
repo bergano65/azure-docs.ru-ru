@@ -9,12 +9,12 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 6/8/2020
-ms.openlocfilehash: 967df2022166936df71b30fbe9d49798663ce962
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ccb6bbcddaa5ce76e9dbb04d737830fbaf5c2d9f
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84783533"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134335"
 ---
 # <a name="ev4-and-esv4-series"></a>Серии Ev4 и Esv4
 
@@ -30,7 +30,7 @@ ms.locfileid: "84783533"
 Удаление хранилища данных диска оплачивается отдельно от виртуальных машин. Чтобы использовать диски хранилища класса Premium, используйте размеры Esv4. Показатели ценообразования и выставления счетов для размеров Esv4 совпадают с серией Ev4.
 
 > [!IMPORTANT]
-> Эти новые размеры в настоящее время доступны только в общедоступной предварительной версии. Вы можете зарегистрироваться для dv4 и Dsv4-Series [здесь](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_Y3toRKxchLjARedqtguBRURE1ZSkdDUzg1VzJDN0cwWUlKTkcyUlo5Mi4u). 
+> Эти новые размеры в настоящее время доступны только в общедоступной предварительной версии. Вы можете зарегистрироваться для Ev4 и Esv4-Series [здесь](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_Y3toRKxchLjARedqtguBRURE1ZSkdDUzg1VzJDN0cwWUlKTkcyUlo5Mi4u). 
 
 ACU: 195—210
 
@@ -59,7 +59,7 @@ ACU: 195—210
 Размеры серии Esv4 работают на Intel &reg; Xeon &reg; Platinum 8272CL (Cascade Lake). Экземпляры серии Esv4 идеально подходят для корпоративных приложений с большим объемом памяти. Виртуальные машины серии Evs4 — &reg; технология Intel Hyper-Threading. Удаление хранилища данных диска оплачивается отдельно от виртуальных машин.
 
 > [!IMPORTANT]
-> Эти новые размеры в настоящее время доступны только в общедоступной предварительной версии. Вы можете зарегистрироваться для dv4 и Dsv4-Series [здесь](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_Y3toRKxchLjARedqtguBRURE1ZSkdDUzg1VzJDN0cwWUlKTkcyUlo5Mi4u). 
+> Эти новые размеры в настоящее время доступны только в общедоступной предварительной версии. Вы можете зарегистрироваться для Ev4 и Esv4-Series [здесь](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_Y3toRKxchLjARedqtguBRURE1ZSkdDUzg1VzJDN0cwWUlKTkcyUlo5Mi4u). 
 
 ACU: 195-210
 

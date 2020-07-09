@@ -5,14 +5,14 @@ services: azure-resource-manager
 author: mumian
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 06/25/2020
+ms.date: 07/08/2020
 ms.author: jgao
-ms.openlocfilehash: b3de286bbf4513d252b42304cdc667877c72f6da
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 8906ac7a00a349e2312eb80f5e25e32292a089ab
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86057421"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134559"
 ---
 # <a name="use-deployment-scripts-in-templates-preview"></a>Использование сценариев развертывания в шаблонах (предварительная версия)
 
@@ -161,7 +161,7 @@ ms.locfileid: "86057421"
 - **supportingScriptUris**. Укажите массив общедоступных URL-адресов для вспомогательных файлов, которые вызываются посредством `ScriptContent` либо `PrimaryScriptUri`.
 - **timeout**. Укажите максимально допустимое время выполнения скрипта в [формате ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). Значение по умолчанию — **P1D**.
 - **cleanupPreference**. Укажите параметры очистки ресурсов развертывания после перехода сценария в состояние завершения. Значение по умолчанию — **Always**, что означает удаление ресурсов независимо от состояния завершения (Succeeded, Failed, Canceled). Дополнительные сведения в разделе об [очистке ресурсов скриптов развертывания](#clean-up-deployment-script-resources).
-- **retentionInterval**. Укажите интервал, в течение которого служба будет хранить ресурсы сценария развертывания после того, как выполнение сценария будет завершено. По истечении этого времени ресурсы сценария развертывания будут удалены. Длительность основывается на [методике ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). Значение по умолчанию — **P1D**, что означает семь дней. Это свойство используется, если для параметра cleanupPreference установлено значение *OnExpiration*. Свойство *OnExpiration* сейчас не включено. Дополнительные сведения в разделе об [очистке ресурсов скриптов развертывания](#clean-up-deployment-script-resources).
+- **retentionInterval**. Укажите интервал, в течение которого служба будет хранить ресурсы сценария развертывания после того, как выполнение сценария будет завершено. По истечении этого времени ресурсы сценария развертывания будут удалены. Длительность основывается на [методике ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). Значение по умолчанию — **P1D**, что означает один день. Это свойство используется, если для параметра cleanupPreference установлено значение *OnExpiration*. Свойство *OnExpiration* сейчас не включено. Дополнительные сведения в разделе об [очистке ресурсов скриптов развертывания](#clean-up-deployment-script-resources).
 
 ### <a name="additional-samples"></a>Дополнительные примеры
 

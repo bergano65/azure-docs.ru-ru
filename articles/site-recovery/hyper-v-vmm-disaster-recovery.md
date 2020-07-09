@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: how-to
 ms.date: 11/14/2019
 ms.author: raynew
-ms.openlocfilehash: f7de3c28463a86852cba03713ca4c500e7ca0339
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 482a3808065bb2ec565bad7e760b9337b3db7007
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80437509"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134010"
 ---
 # <a name="set-up-disaster-recovery-for-hyper-v-vms-to-a-secondary-on-premises-site"></a>Настройка аварийного восстановления для виртуальных машин Hyper-V на дополнительный локальный сайт
 
@@ -48,10 +48,10 @@ ms.locfileid: "80437509"
 
 Подготовьте VMM следующим образом.
 
-1. Убедитесь, что на исходном и целевом серверах VMM имеются [логические сети VMM](https://docs.microsoft.com/system-center/vmm/network-logical).
+1. Убедитесь, что на исходном и целевом серверах VMM имеются [логические сети VMM](/system-center/vmm/network-logical).
     - Логическая сеть на исходном сервере должна быть связана с исходным облаком, в котором находятся узлы Hyper-V.
     - Логическая сеть на целевом сервере должна быть связана с целевым облаком.
-1. Убедитесь, что на исходном и целевом серверах VMM имеются [виртуальные сети VMM](https://docs.microsoft.com/system-center/vmm/network-virtual). Сети виртуальных машин должны быть связаны с логической сетью в каждом расположении.
+1. Убедитесь, что на исходном и целевом серверах VMM имеются [виртуальные сети VMM](/system-center/vmm/network-virtual). Сети виртуальных машин должны быть связаны с логической сетью в каждом расположении.
 2. Подключите виртуальные машины на исходных узлах Hyper-V к исходной сети виртуальных машин. 
 
 

@@ -8,11 +8,12 @@ ms.topic: article
 ms.service: site-recovery
 ms.date: 6/4/2020
 ms.author: dapatil
-ms.openlocfilehash: 74b02da51603366f5ec18aa4733117bc2c59faf7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: feb4f6a24653aca8da825af90341c8016255e8b6
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84417860"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86133804"
 ---
 # <a name="azure-site-recovery-deployment-planner-version-history"></a>Журнал версий Планировщик развертывания Azure Site Recovery
 
@@ -168,7 +169,7 @@ ms.locfileid: "84417860"
 
 **Известные ограничения:**
 
-- Поддерживается только для сценариев аварийного восстановления из VMware в Azure. Для сценариев аварийного восстановления из Hyper-V в Azure используйте [планировщик ресурсов Hyper-v](./site-recovery-capacity-planning-for-hyper-v-replication.md).
+- Поддерживается только для сценариев аварийного восстановления из VMware в Azure. Для сценариев аварийного восстановления из Hyper-V в Azure используйте [планировщик ресурсов Hyper-v](./hyper-v-deployment-planner-overview.md).
 - Не поддерживает операцию пропускной способности для государственных организаций США и Китая Microsoft Azure регионах.
 - Средство канн'т пропрофилировать виртуальные машины, если на сервере vCenter имеется несколько виртуальных машин с одинаковым именем или IP-адресом на различных узлах ESXi.
 В этой версии программа пропускает профилирование виртуальных машин, имена или IP-адреса которых заданы в качестве значения параметра VMListFile несколько раз. Возможное решение — выполнить профилирование виртуальных машин на узле ESXi, а не на сервере vCenter Server. Убедитесь, что для каждого узла ESXi выполняется один экземпляр.

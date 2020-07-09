@@ -7,11 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 08/2/2019
 ms.author: mayg
-ms.openlocfilehash: 1db32d506cc455b020fc6c0f2bba10361e961324
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e9e66cbb024aa64e8c4cb5db9fc1c172fdc573fc
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84197044"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135358"
 ---
 # <a name="troubleshoot-replication-issues-for-vmware-vms-and-physical-servers"></a>Устранение неполадок с репликацией виртуальных машин VMware и физических серверов
 
@@ -94,16 +95,16 @@ Site Recovery использует [сервер обработки](vmware-phys
    - служба приложений InMage Scout;
 4. На исходном компьютере изучите журналы, чтобы получить сведения об ошибках:
 
-       C:\Program Files (X86)\Microsoft Azure Site Recovery\agent\svagents*log
+    *C:\Program Files (x86) \Microsoft Azure site Рековери\ажент\сважентс \* . log*
 
 ### <a name="process-server-with-no-heartbeat-error-806"></a>Сервер обработки не имеет пульса (ошибка 806)
 Если не поступают сигналы пульса от сервера обработки, проверьте следующее:
 1. Виртуальная машина сервера обработки запущена и работает.
 2. Проверьте следующие журналы на сервере обработки на предмет следующих ошибок:
 
-       C:\ProgramData\ASR\home\svsystems\eventmanager*.log
-       and
-       C:\ProgramData\ASR\home\svsystems\monitor_protection*.log
+    *К:\програмдата\аср\хоме\свсистемс\евентманажер \* . log*\
+    перетаскивани
+    *К:\програмдата\аср\хоме\свсистемс\ monitor_protection \* . log*
 
 ### <a name="master-target-server-with-no-heartbeat-error-78022"></a>Основной целевой сервер не имеет пульса (ошибка 78022)
 
@@ -116,7 +117,7 @@ Site Recovery использует [сервер обработки](vmware-phys
     - Убедитесь, что служба svagents запущена. Если служба работает, перезапустите ее.
     - Проверьте журналы в следующем расположении, чтобы получить сведения об ошибке:
 
-          C:\Program Files (X86)\Microsoft Azure Site Recovery\agent\svagents*log
+        *C:\Program Files (x86) \Microsoft Azure site Рековери\ажент\сважентс \* . log*
 3. Чтобы зарегистрировать главный целевой сервер на сервере конфигурации, перейдите в папку **%PROGRAMDATA%\ASR\Agent**и выполните следующую команду в командной строке:
    ```
    cmd
@@ -146,25 +147,25 @@ Site Recovery использует [сервер обработки](vmware-phys
 **Как исправить.** См. [статью базы знаний](https://support.microsoft.com/help/4493364/fix-error-occurs-when-you-back-up-a-virtual-machine-with-non-component).
 
 #### <a name="cause-4-app-consistency-not-enabled-on-linux-servers"></a>Причина 4. согласованность приложений не включена на серверах Linux
-**Как исправить** : Azure Site Recovery для операционной системы Linux поддерживает пользовательские сценарии для обеспечения согласованности приложений. Пользовательский скрипт с параметрами pre и POST будет использоваться агентом мобильности Azure Site Recovery для согласованности приложений. [Ниже](https://docs.microsoft.com/azure/site-recovery/site-recovery-faq#replication) приведены действия по его включению.
+**Как исправить** : Azure Site Recovery для операционной системы Linux поддерживает пользовательские сценарии для обеспечения согласованности приложений. Пользовательский скрипт с параметрами pre и POST будет использоваться агентом мобильности Azure Site Recovery для согласованности приложений. [Ниже](./site-recovery-faq.md#replication) приведены действия по его включению.
 
 ### <a name="more-causes-due-to-vss-related-issues"></a>Другие причины, связанные с проблемами VSS
 
 Для дальнейшего устранения неполадок проверьте файлы на исходном компьютере, чтобы получить точный код ошибки:
 
-    C:\Program Files (x86)\Microsoft Azure Site Recovery\agent\Application Data\ApplicationPolicyLogs\vacp.log
+*C:\Program Files (x86) \Microsoft Azure site Рековери\ажент\аппликатион Дата\аппликатионполицилогс\вакп.лог*
 
 Как найти ошибки в файле?
 Выполните поиск по строке "vacpError", открыв файл vacp.log в редакторе.
 
-    Ex: vacpError:220#Following disks are in FilteringStopped state [\\.\PHYSICALDRIVE1=5, ]#220|^|224#FAILED: CheckWriterStatus().#2147754994|^|226#FAILED to revoke tags.FAILED: CheckWriterStatus().#2147754994|^|
+`Ex: `**`vacpError`**`:220#Following disks are in FilteringStopped state [\\.\PHYSICALDRIVE1=5, ]#220|^|224#FAILED: CheckWriterStatus().#2147754994|^|226#FAILED to revoke tags.FAILED: CheckWriterStatus().#2147754994|^|`
 
 В приведенном выше примере найдена ошибка с кодом **2147754994**, информацию о которой вы видите ниже.
 
 #### <a name="vss-writer-is-not-installed---error-2147221164"></a>Модуль записи VSS не установлен — ошибка 2147221164
 
 *Как исправить.* Чтобы создать тег согласованности приложений, Azure Site Recovery использует службу теневого копирования томов (VSS) Майкрософт. Она в свою очередь устанавливает поставщик VSS, чтобы получать моментальные снимки согласованности приложений. Поставщик VSS устанавливается как служба. Если служба поставщика VSS не установлена, создание моментального снимка согласованности приложений завершается ошибкой с ИДЕНТИФИКАТОРом ошибки 0x80040154 "класс не зарегистрирован". </br>
-Воспользуйтесь статьей по [устранению неполадок при установке модуля записи VSS](https://docs.microsoft.com/azure/site-recovery/vmware-azure-troubleshoot-push-install#vss-installation-failures).
+Воспользуйтесь статьей по [устранению неполадок при установке модуля записи VSS](./vmware-azure-troubleshoot-push-install.md#vss-installation-failures).
 
 #### <a name="vss-writer-is-disabled---error-2147943458"></a>Модуль записи VSS отключен — ошибка 2147943458
 
@@ -194,4 +195,4 @@ Site Recovery использует [сервер обработки](vmware-phys
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вам потребуется дополнительная помощь, опубликуйте свой вопрос на [странице вопросов и ответов по Azure Site Recovery на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-site-recovery.html). У нас активное сообщество, и один из наших инженеров сможет помочь вам.
+Если вам потребуется дополнительная помощь, опубликуйте свой вопрос на [странице вопросов и ответов по Azure Site Recovery на сайте Майкрософт](/answers/topics/azure-site-recovery.html). У нас активное сообщество, и один из наших инженеров сможет помочь вам.

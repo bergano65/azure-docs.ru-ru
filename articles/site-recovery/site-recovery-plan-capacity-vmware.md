@@ -7,11 +7,12 @@ ms.service: site-recovery
 ms.date: 4/9/2019
 ms.topic: conceptual
 ms.author: ramamill
-ms.openlocfilehash: 467c70a722b8a243be6ac2826188a4ba3459aa06
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a74d9347d0050a2970e698ae616eb09fe32bdc5b
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84710717"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135444"
 ---
 # <a name="plan-capacity-and-scaling-for-vmware-disaster-recovery-to-azure"></a>Планирование ресурсов и масштабирования для аварийного восстановления из VMware в Azure
 
@@ -91,11 +92,13 @@ ms.locfileid: "84710717"
 
     ![Снимок экрана с диалоговым окном свойств службы Azure Backup](./media/site-recovery-vmware-to-azure/throttle2.png)
 
-Чтобы настроить регулирование, можно также использовать командлет [Set-OBMachineSetting](https://technet.microsoft.com/library/hh770409.aspx) . Ниже приведен пример:
+Чтобы настроить регулирование, можно также использовать командлет [Set-OBMachineSetting](/previous-versions/windows/powershell-scripting/hh770409(v=wps.640)) . Ниже приведен пример:
 
-    $mon = [System.DayOfWeek]::Monday
-    $tue = [System.DayOfWeek]::Tuesday
-    Set-OBMachineSetting -WorkDay $mon, $tue -StartWorkHour "9:00:00" -EndWorkHour "18:00:00" -WorkHourBandwidth  (512*1024) -NonWorkHourBandwidth (2048*1024)
+```azurepowershell-interactive
+$mon = [System.DayOfWeek]::Monday
+$tue = [System.DayOfWeek]::Tuesday
+Set-OBMachineSetting -WorkDay $mon, $tue -StartWorkHour "9:00:00" -EndWorkHour "18:00:00" -WorkHourBandwidth  (512*1024) -NonWorkHourBandwidth (2048*1024)
+```
 
 **Set-OBMachineSetting -NoThrottle** указывает, что регулирование не требуется.
 
@@ -167,6 +170,6 @@ ms.locfileid: "84710717"
  > [!NOTE]
  > Загрузите последнюю версию [унифицированной программы установки главного целевого сервера для Windows](https://aka.ms/latestmobsvc).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте и запустите [Планировщик ресурсов Site Recovery](https://aka.ms/asr-deployment-planner).

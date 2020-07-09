@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 5c42d65b5e2c46fcdbe1b0725f2ebce881722db3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 88c8ea458aade44f5a3d789a15369718bc38ea35
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "72299990"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134524"
 ---
 # <a name="getting-started-with-azure-table-storage-and-visual-studio-connected-services-cloud-services-projects"></a>Начало работы с табличным хранилищем Azure и подключенными службами Visual Studio (проектами облачных служб)
 [!INCLUDE [storage-try-azure-tools-tables](../../includes/storage-try-azure-tools-tables.md)]
@@ -42,154 +42,176 @@ ms.locfileid: "72299990"
 
 1. Убедитесь, что объявления пространств имен в верхней части файла C# содержат указанные ниже выражения **using** .
    
-        using Microsoft.Framework.Configuration;
-        using Microsoft.WindowsAzure.Storage;
-        using Microsoft.WindowsAzure.Storage.Table;
-        using System.Threading.Tasks;
-        using LogLevel = Microsoft.Framework.Logging.LogLevel;
+    ```csharp
+    using Microsoft.Framework.Configuration;
+    using Microsoft.WindowsAzure.Storage;
+    using Microsoft.WindowsAzure.Storage.Table;
+    using System.Threading.Tasks;
+    using LogLevel = Microsoft.Framework.Logging.LogLevel;
+    ```
 2. Получите объект **CloudStorageAccount** , представляющий данные учетной записи хранения. Используйте следующий код, чтобы получить строку подключения и сведения об учетной записи хранения из конфигурации службы Azure.
    
-         CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-           CloudConfigurationManager.GetSetting("<storage account name>
-         _AzureStorageConnectionString"));
+    ```csharp
+    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+    CloudConfigurationManager.GetSetting("<storage account name>
+    _AzureStorageConnectionString"));
+    ```
    > [!NOTE]
    > Вставьте весь код, представленный выше, перед кодом в следующих примерах.
    > 
    > 
 3. Получите объект **CloudTableClient** , чтобы указать ссылку на объекты таблицы в своей учетной записи хранения.
    
-         // Create the table client.
-         CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
+    ```csharp
+    // Create the table client.
+    CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
+    ```
 4. Получите объект ссылки **CloudTable** для указания ссылки на определенную таблицу и сущности.
    
-        // Get a reference to a table named "peopleTable".
-        CloudTable peopleTable = tableClient.GetTableReference("peopleTable");
+    ```csharp
+    // Get a reference to a table named "peopleTable".
+    CloudTable peopleTable = tableClient.GetTableReference("peopleTable");
+    ```
 
 ## <a name="create-a-table-in-code"></a>Создание таблицы в коде
 Чтобы создать таблицу Azure, просто добавьте вызов **CreateIfNotExistsAsync** после получения объекта **CloudTable**, как описано в разделе "Доступ к таблицам в коде".
 
-    // Create the CloudTable if it does not exist.
-    await peopleTable.CreateIfNotExistsAsync();
+```csharp
+// Create the CloudTable if it does not exist.
+await peopleTable.CreateIfNotExistsAsync();
+```
 
 ## <a name="add-an-entity-to-a-table"></a>Добавление сущности в таблицу
 Чтобы добавить сущность в таблицу, создайте класс, который определяет свойства сущности. Следующий код определяет класс сущностей с именем **CustomerEntity** , который использует имя клиента как ключ строки, а фамилию клиента — как ключ раздела.
 
-    public class CustomerEntity : TableEntity
+```csharp
+public class CustomerEntity : TableEntity
+{
+    public CustomerEntity(string lastName, string firstName)
     {
-        public CustomerEntity(string lastName, string firstName)
-        {
-            this.PartitionKey = lastName;
-            this.RowKey = firstName;
-        }
-
-        public CustomerEntity() { }
-
-        public string Email { get; set; }
-
-        public string PhoneNumber { get; set; }
+        this.PartitionKey = lastName;
+        this.RowKey = firstName;
     }
+
+    public CustomerEntity() { }
+
+    public string Email { get; set; }
+
+    public string PhoneNumber { get; set; }
+}
+```
 
 Табличные операции с участием сущностей выполняются с использованием объекта **CloudTable** , ранее созданного в разделе «Доступ к таблицам в коде». Объект **TableOperation** представляет операции, которые необходимо выполнить. В следующем примере кода показано создание объектов **CloudTable** и **CustomerEntity**. Чтобы подготовить операцию, создается **TableOperation** для вставки сущности customer в таблицу. Наконец, эта операция выполняется с помощью вызова **CloudTable.ExecuteAsync**.
 
-    // Create a new customer entity.
-    CustomerEntity customer1 = new CustomerEntity("Harp", "Walter");
-    customer1.Email = "Walter@contoso.com";
-    customer1.PhoneNumber = "425-555-0101";
+```csharp
+// Create a new customer entity.
+CustomerEntity customer1 = new CustomerEntity("Harp", "Walter");
+customer1.Email = "Walter@contoso.com";
+customer1.PhoneNumber = "425-555-0101";
 
-    // Create the TableOperation that inserts the customer entity.
-    TableOperation insertOperation = TableOperation.Insert(customer1);
+// Create the TableOperation that inserts the customer entity.
+TableOperation insertOperation = TableOperation.Insert(customer1);
 
-    // Execute the insert operation.
-    await peopleTable.ExecuteAsync(insertOperation);
+// Execute the insert operation.
+await peopleTable.ExecuteAsync(insertOperation);
+```
 
 
 ## <a name="insert-a-batch-of-entities"></a>Вставка пакета сущностей
 В таблицу можно вставить несколько сущностей с помощью одной операции записи. Указанный ниже пример кода создает два объекта сущностей (Jeff Smith и Ben Smith), добавляет их в объект **TableBatchOperation** с помощью метода Insert и запускает операцию с помощью вызова **CloudTable.ExecuteBatchAsync**.
 
-    // Create the batch operation.
-    TableBatchOperation batchOperation = new TableBatchOperation();
+```csharp
+// Create the batch operation.
+TableBatchOperation batchOperation = new TableBatchOperation();
 
-    // Create a customer entity and add it to the table.
-    CustomerEntity customer1 = new CustomerEntity("Smith", "Jeff");
-    customer1.Email = "Jeff@contoso.com";
-    customer1.PhoneNumber = "425-555-0104";
+// Create a customer entity and add it to the table.
+CustomerEntity customer1 = new CustomerEntity("Smith", "Jeff");
+customer1.Email = "Jeff@contoso.com";
+customer1.PhoneNumber = "425-555-0104";
 
-    // Create another customer entity and add it to the table.
-    CustomerEntity customer2 = new CustomerEntity("Smith", "Ben");
-    customer2.Email = "Ben@contoso.com";
-    customer2.PhoneNumber = "425-555-0102";
+// Create another customer entity and add it to the table.
+CustomerEntity customer2 = new CustomerEntity("Smith", "Ben");
+customer2.Email = "Ben@contoso.com";
+customer2.PhoneNumber = "425-555-0102";
 
-    // Add both customer entities to the batch insert operation.
-    batchOperation.Insert(customer1);
-    batchOperation.Insert(customer2);
+// Add both customer entities to the batch insert operation.
+batchOperation.Insert(customer1);
+batchOperation.Insert(customer2);
 
-    // Execute the batch operation.
-    await peopleTable.ExecuteBatchAsync(batchOperation);
+// Execute the batch operation.
+await peopleTable.ExecuteBatchAsync(batchOperation);
+```
 
 ## <a name="get-all-of-the-entities-in-a-partition"></a>Получение всех сущностей в разделе
 Чтобы запросить все сущности из таблицы, используйте объект **TableQuery** . Следующий пример кода задает фильтр для сущностей с ключом раздела Smith. Этот пример выводит на консоль поля каждой сущности в результатах запроса.
 
-    // Construct the query operation for all customer entities where PartitionKey="Smith".
-    TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>()
-        .Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Smith"));
+```csharp
+// Construct the query operation for all customer entities where PartitionKey="Smith".
+TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>()
+    .Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Smith"));
 
-    // Print the fields for each customer.
-    TableContinuationToken token = null;
-    do
+// Print the fields for each customer.
+TableContinuationToken token = null;
+do
+{
+    TableQuerySegment<CustomerEntity> resultSegment = await peopleTable.ExecuteQuerySegmentedAsync(query, token);
+    token = resultSegment.ContinuationToken;
+
+    foreach (CustomerEntity entity in resultSegment.Results)
     {
-        TableQuerySegment<CustomerEntity> resultSegment = await peopleTable.ExecuteQuerySegmentedAsync(query, token);
-        token = resultSegment.ContinuationToken;
+        Console.WriteLine("{0}, {1}\t{2}\t{3}", entity.PartitionKey, entity.RowKey,
+        entity.Email, entity.PhoneNumber);
+    }
+} while (token != null);
 
-        foreach (CustomerEntity entity in resultSegment.Results)
-        {
-            Console.WriteLine("{0}, {1}\t{2}\t{3}", entity.PartitionKey, entity.RowKey,
-            entity.Email, entity.PhoneNumber);
-        }
-    } while (token != null);
-
-    return View();
+return View();
+```
 
 
 ## <a name="get-a-single-entity"></a>Получение одной сущности
 Можно написать запрос для получения отдельной сущности. Следующий пример кода использует **TableOperation** для указания клиента "Ben Smith". Этот метод возвращает только одну сущность, а не коллекцию, а возвращаемое значение в **TableResult. Result** является объектом **CustomerEntity** . Указание ключей разделов и строк в запросе — самый быстрый способ извлечь одну сущность из службы **таблиц** .
 
-    // Create a retrieve operation that takes a customer entity.
-    TableOperation retrieveOperation = TableOperation.Retrieve<CustomerEntity>("Smith", "Ben");
+```csharp
+// Create a retrieve operation that takes a customer entity.
+TableOperation retrieveOperation = TableOperation.Retrieve<CustomerEntity>("Smith", "Ben");
 
-    // Execute the retrieve operation.
-    TableResult retrievedResult = await peopleTable.ExecuteAsync(retrieveOperation);
+// Execute the retrieve operation.
+TableResult retrievedResult = await peopleTable.ExecuteAsync(retrieveOperation);
 
-    // Print the phone number of the result.
-    if (retrievedResult.Result != null)
-       Console.WriteLine(((CustomerEntity)retrievedResult.Result).PhoneNumber);
-    else
-       Console.WriteLine("The phone number could not be retrieved.");
+// Print the phone number of the result.
+if (retrievedResult.Result != null)
+    Console.WriteLine(((CustomerEntity)retrievedResult.Result).PhoneNumber);
+else
+    Console.WriteLine("The phone number could not be retrieved.");
+```
 
 ## <a name="delete-an-entity"></a>Удаление сущности
 После нахождения сущности ее можно удалить. В следующем примере код выполняет поиск сущности с именем "Ben Smith" и при нахождении удаляет ее.
 
-    // Create a retrieve operation that expects a customer entity.
-    TableOperation retrieveOperation = TableOperation.Retrieve<CustomerEntity>("Smith", "Ben");
+```csharp
+// Create a retrieve operation that expects a customer entity.
+TableOperation retrieveOperation = TableOperation.Retrieve<CustomerEntity>("Smith", "Ben");
+
+// Execute the operation.
+TableResult retrievedResult = peopleTable.Execute(retrieveOperation);
+
+// Assign the result to a CustomerEntity object.
+CustomerEntity deleteEntity = (CustomerEntity)retrievedResult.Result;
+
+// Create the Delete TableOperation and then execute it.
+if (deleteEntity != null)
+{
+    TableOperation deleteOperation = TableOperation.Delete(deleteEntity);
 
     // Execute the operation.
-    TableResult retrievedResult = peopleTable.Execute(retrieveOperation);
+    await peopleTable.ExecuteAsync(deleteOperation);
 
-    // Assign the result to a CustomerEntity object.
-    CustomerEntity deleteEntity = (CustomerEntity)retrievedResult.Result;
+    Console.WriteLine("Entity deleted.");
+}
 
-    // Create the Delete TableOperation and then execute it.
-    if (deleteEntity != null)
-    {
-       TableOperation deleteOperation = TableOperation.Delete(deleteEntity);
-
-       // Execute the operation.
-       await peopleTable.ExecuteAsync(deleteOperation);
-
-       Console.WriteLine("Entity deleted.");
-    }
-
-    else
-       Console.WriteLine("Couldn't delete the entity.");
+else
+    Console.WriteLine("Couldn't delete the entity.");
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [vs-storage-dotnet-tables-next-steps](../../includes/vs-storage-dotnet-tables-next-steps.md)]

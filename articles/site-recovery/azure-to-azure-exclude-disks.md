@@ -5,11 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 02/18/2019
-ms.openlocfilehash: 7355233bb7241571e3f3820aafac6952af245654
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a21460279420c46b11c43615ae5ecc7bfa81de4d
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75973682"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135813"
 ---
 # <a name="exclude-disks-from-powershell-replication-of-azure-vms"></a>Исключение дисков из репликации PowerShell для виртуальных машин Azure
 
@@ -18,20 +19,20 @@ ms.locfileid: "75973682"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы
 
 - Убедитесь, что вы понимаете [архитектуру аварийного восстановления и компоненты](azure-to-azure-architecture.md).
 - Ознакомьтесь с [требованиями к поддержке](azure-to-azure-support-matrix.md) для всех компонентов.
-- Убедитесь, что у вас есть модуль AzureRm PowerShell "AZ". Сведения об установке или обновлении PowerShell см. в разделе [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+- Убедитесь, что у вас есть модуль AzureRm PowerShell "AZ". Сведения об установке или обновлении PowerShell см. в разделе [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps).
 - Убедитесь, что хранилище служб восстановления и защищенные виртуальные машины созданы по крайней мере один раз. Если вы еще не сделали этого, выполните процедуру [настройки аварийного восстановления для виртуальных машин Azure с помощью Azure PowerShell](azure-to-azure-powershell.md).
 - Если вы ищете сведения о добавлении дисков на виртуальную машину Azure, для которой включена репликация, [Ознакомьтесь с этой статьей](azure-to-azure-enable-replication-added-disk.md).
 
 ## <a name="why-exclude-disks-from-replication"></a>Зачем исключать диски из репликации
 Возможно, потребуется исключить диски из репликации по следующим причинам:
 
-- Виртуальная машина достигла [Azure Site Recovery ограничений для репликации скорости изменения данных](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-support-matrix).
+- Виртуальная машина достигла [Azure Site Recovery ограничений для репликации скорости изменения данных](./azure-to-azure-support-matrix.md).
 
 - Данные, обработанные на исключенном диске, не важны или их не нужно реплицировать.
 
@@ -133,6 +134,6 @@ $TempASRJob = New-ASRReplicationProtectedItem -AzureToAzure -AzureVmId $VM.Id -N
 
 После завершения начальной репликации репликация переходит на фазу разностной синхронизации. На этом этапе виртуальная машина защищена. Выберите защищенную виртуальную машину, чтобы проверить, не исключены ли какие либо диски.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [выполнении тестовой отработки отказа](site-recovery-test-failover-to-azure.md).

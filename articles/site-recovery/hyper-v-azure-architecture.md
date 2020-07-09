@@ -7,11 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/14/2019
 ms.author: raynew
-ms.openlocfilehash: 022d6edad1e907173dfde3481e60d2523be087a1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e0fd3a6bc62feeb3728fa88b4aad56c8713bce11
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74082663"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134925"
 ---
 # <a name="hyper-v-to-azure-disaster-recovery-architecture"></a>Архитектура аварийного восстановления из Hyper-V в Azure
 
@@ -35,7 +36,7 @@ ms.locfileid: "74082663"
 
 **Архитектура: из Hyper-V в Azure (без VMM)**
 
-![Architecture](./media/hyper-v-azure-architecture/arch-onprem-azure-hypervsite.png)
+![Архитектура](./media/hyper-v-azure-architecture/arch-onprem-azure-hypervsite.png)
 
 
 ## <a name="architectural-components---hyper-v-with-vmm"></a>Компоненты архитектуры — Hyper-V с VMM
@@ -66,14 +67,14 @@ ms.locfileid: "74082663"
 ### <a name="enable-protection"></a>Включить защиту
 
 1. После включения защиты для виртуальных машин Hyper-V на портале Azure или локально запустится рабочий процесс **Включение защиты**.
-2. Это задание проверяет, соответствует ли компьютер необходимым требованиям перед вызовом метода [CreateReplicationRelationship](https://msdn.microsoft.com/library/hh850036.aspx), который настраивает репликацию, используя определенные вами параметры.
-3. Задание запускает начальную репликацию, вызывая метод [StartReplication](https://msdn.microsoft.com/library/hh850303.aspx), чтобы инициализировать полную репликацию виртуальной машины и отправить ее виртуальные диски в Azure.
+2. Это задание проверяет, соответствует ли компьютер необходимым требованиям перед вызовом метода [CreateReplicationRelationship](/windows/win32/hyperv_v2/createreplicationrelationship-msvm-replicationservice), который настраивает репликацию, используя определенные вами параметры.
+3. Задание запускает начальную репликацию, вызывая метод [StartReplication](/windows/win32/hyperv_v2/startreplication-msvm-replicationservice), чтобы инициализировать полную репликацию виртуальной машины и отправить ее виртуальные диски в Azure.
 4. Вы можете отслеживать задание на вкладке **задания** .      ![ ](media/hyper-v-azure-architecture/image1.png) Список ![ заданий Включить детализацию защиты](media/hyper-v-azure-architecture/image2.png)
 
 
 ### <a name="initial-data-replication"></a>Начальная репликация данных
 
-1. При запуске начальной репликации создается [моментальный снимок виртуальной машины Hyper-V](https://technet.microsoft.com/library/dd560637.aspx).
+1. При запуске начальной репликации создается [моментальный снимок виртуальной машины Hyper-V](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560637(v=ws.10)).
 2. Виртуальные жесткие диски на виртуальной машине реплицируются по одному, пока все они не будут скопированы в Azure. В зависимости от размера виртуальной машины и пропускной способности сети это может занять некоторое время. [Дополнительные сведения](https://support.microsoft.com/kb/3056159) о том, как увеличить пропускную способность сети.
 3. В случае возникновения изменений на диске при выполнении начальной репликации модуль отслеживания репликации реплики Hyper-V регистрирует их в журналах репликации Hyper-V (HRL), которые находятся в одной папке с дисками. С каждым диском связан HRL-файл, который отправляется в дополнительное хранилище. При начальной репликации файлы моментальных снимков и журналов потребляют ресурсы диска.
 4. После завершения начальной репликации моментальный снимок виртуальной машины удаляется.
@@ -139,7 +140,7 @@ ms.locfileid: "74082663"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 
 Выполните инструкции [этого руководства](tutorial-prepare-azure.md), чтобы начать работу с Hyper-V для репликации в Azure.

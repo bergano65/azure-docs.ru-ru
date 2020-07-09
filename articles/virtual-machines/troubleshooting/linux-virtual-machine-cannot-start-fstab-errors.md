@@ -14,11 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.date: 10/09/2019
 ms.author: v-six
-ms.openlocfilehash: f68221666f370f87af7539d9302aaa3ed472d5e8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: daf3e3aaa95734c79e513c16e5d41aeb0bf894dc
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82883147"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135262"
 ---
 # <a name="troubleshoot-linux-vm-starting-issues-due-to-fstab-errors"></a>Устранение проблем с запуском виртуальных машин Linux из-за ошибок fstab
 
@@ -191,16 +192,16 @@ Give root password for maintenance
 
 2. После подключения системного диска в качестве диска данных на виртуальной машине восстановления создайте резервную копию файла fstab перед внесением изменений, а затем выполните следующие действия, чтобы исправить файл fstab.
 
-3.    Найдите ошибку, указывающую на то, что диск не был подключен. В следующем примере система представила попытку подключить диск, который больше не находился:
+3. Найдите ошибку, указывающую на то, что диск не был подключен. В следующем примере система представила попытку подключить диск, который больше не находился:
 
-    ```
-    [DEPEND] Dependency failed for /datadisk1.
-    [DEPEND] Dependency failed for Local File Systems.
-    [DEPEND] Dependency failed for Relabel all filesystems, if necessary.
-    [DEPEND] Dependency failed for Migrate local... structure to the new structure.
-    Welcome to emergency mode! After logging in, type "journalctl -xb" to view system logs, "systemctl reboot" to reboot, "systemctl default" or ^D to try again to boot into default mode.
-    Give root password for maintenance (or type Control-D to continue):
-    ```
+   ```output
+   [DEPEND] Dependency failed for /datadisk1.
+   [DEPEND] Dependency failed for Local File Systems.
+   [DEPEND] Dependency failed for Relabel all filesystems, if necessary.
+   [DEPEND] Dependency failed for Migrate local... structure to the new structure.
+   Welcome to emergency mode! After logging in, type "journalctl -xb" to view system logs, "systemctl reboot" to reboot, "systemctl default" or ^D to try again to boot into default mode.
+   Give root password for maintenance (or type Control-D to continue):
+   ```
 
 4. Подключитесь к виртуальной машине с помощью пароля root (виртуальных машин на основе Red Hat).
 
@@ -237,7 +238,7 @@ Give root password for maintenance
     * Протестируйте все изменения fstab, прежде чем перезапускать виртуальную машину. Для этого используйте следующую команду:``$ sudo mount -a``
     * Создайте дополнительную копию исправленного файла fstab для использования в будущих сценариях восстановления.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок виртуальной машины Linux путем подключения диска ОС к виртуальной машине восстановления с помощью Azure CLI 2.0](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-troubleshoot-recovery-disks)
 * [Устранение неполадок с виртуальной машиной Linux при присоединении диска операционной системы к виртуальной машине восстановления с помощью портала Azure](https://docs.microsoft.com/azure/virtual-machines/linux/troubleshoot-recovery-disks-portal)

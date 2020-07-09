@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 03/18/2020
 ms.author: sideeksh
-ms.openlocfilehash: 3d33b5a89a718a41e5c547551f6e7eb4f7033a63
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 429ffcab147142ae2e96de13b7c9e1e5ee1ac7ba
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79503131"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86133221"
 ---
 # <a name="configure-mobility-service-proxy-settings-for-azure-to-azure-disaster-recovery"></a>Настройка параметров прокси-сервера службы Mobility Service для аварийного восстановления из Azure в Azure
 
@@ -54,5 +54,5 @@ ms.locfileid: "79503131"
 Проксинфо. conf содержит следующий шаблон [proxy] address = http://1.2.3.4 порт = 5678 бипасслист = хиперврековериманажер. WindowsAzure. com, Login. микрософтонлине. com, BLOB. Core. Windows. NET. Бипасслист не поддерживает подстановочные знаки, такие как "*. windows.net", но предоставление windows.net достаточно хорошо для обхода. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Прочтите [Сети для репликации "Azure — Azure"](site-recovery-azure-to-azure-networking-guidance.md).
-- Разверните аварийное восстановления, изучив статью [Репликации виртуальной машины Azure в другой регион Azure](site-recovery-azure-to-azure.md).
+- Прочтите [Сети для репликации "Azure — Azure"](./azure-to-azure-about-networking.md).
+- Разверните аварийное восстановления, изучив статью [Репликации виртуальной машины Azure в другой регион Azure](./azure-to-azure-quickstart.md).

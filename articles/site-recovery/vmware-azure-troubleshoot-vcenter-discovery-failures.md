@@ -7,11 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/29/2019
 ms.author: mayg
-ms.openlocfilehash: f00c7b12accde9df9a5708a2b8b378d70428318d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d333972ea5f74d1676e5e4b4e1417c6bf5d87b79
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74091251"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135355"
 ---
 # <a name="troubleshoot-vcenter-server-discovery-failures"></a>Устранение ошибок обнаружения vCenter Server
 
@@ -23,12 +24,14 @@ ms.locfileid: "74091251"
 
 Эта проблема определяется по ИДЕНТИФИКАТОРу ошибки 95126.
 
-    ERROR :: Hit an exception while fetching the required informationfrom vCenter/vSphere.Exception details:
-    System.FormatException: Input string was not in a correct format.
-       at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
-       at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
-       at VMware.VSphere.Management.InfraContracts.VirtualMachineInfo.get_MaxSnapshots()
-    
+```output
+ERROR :: Hit an exception while fetching the required informationfrom vCenter/vSphere.Exception details:
+System.FormatException: Input string was not in a correct format.
+    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+    at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+    at VMware.VSphere.Management.InfraContracts.VirtualMachineInfo.get_MaxSnapshots()
+```
+
 Чтобы устранить проблему:
 
 - Укажите виртуальную машину и присвойте ей числовое значение (параметры изменения виртуальной машины в vCenter).
@@ -76,6 +79,6 @@ ms.locfileid: "74091251"
 
 4. Перезапустите службу поставщика DRA.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Управление сервером конфигурации для аварийного восстановления виртуальных машин VMware](https://docs.microsoft.com/azure/site-recovery/vmware-azure-manage-configuration-server#refresh-configuration-server) 
+[Управление сервером конфигурации для аварийного восстановления виртуальных машин VMware](./vmware-azure-manage-configuration-server.md#refresh-configuration-server) 

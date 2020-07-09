@@ -8,11 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 02/25/2020
 ms.author: rajanaki
-ms.openlocfilehash: 208177d10e9002fafe2495710da229541a11a43e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 501cf161a22aaa1ec37abda2b750106b6eaf3dc4
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77661676"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135210"
 ---
 # <a name="deprecation-of-disaster-recovery-between-customer-managed-sites-with-vmm-using-azure-site-recovery"></a>Нерекомендуемое аварийное восстановление между управляемыми клиентом сайтами (с VMM) с помощью Azure Site Recovery
 
@@ -38,7 +39,7 @@ ms.locfileid: "77661676"
 - Вариант 1 (рекомендуется). Выберите, чтобы [начать использовать Azure в качестве цели аварийного восстановления](hyper-v-vmm-azure-tutorial.md).
 
 
-- Вариант 2. Выберите продолжение репликации "сеть — сеть" с помощью базового [решения реплики Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica), но вы не сможете управлять КОНФИГУРАЦИЯми аварийного восстановления с помощью Azure Site Recovery в портал Azure. 
+- Вариант 2. Выберите продолжение репликации "сеть — сеть" с помощью базового [решения реплики Hyper-V](/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica), но вы не сможете управлять КОНФИГУРАЦИЯми аварийного восстановления с помощью Azure Site Recovery в портал Azure. 
 
 
 ## <a name="remediation-steps"></a>Действия по исправлению
@@ -61,6 +62,6 @@ ms.locfileid: "77661676"
 
     Он позволяет удалить реплицированный элемент из Azure Site Recovery (выставление счетов останавливается). Конфигурация репликации на локальной виртуальной машине **не будет** очищена. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Запланируйте нерекомендуемость и выберите альтернативный вариант, который лучше всего подходит для вашей инфраструктуры и бизнеса. Если у вас есть какие бы то ни было запросы, можно обратиться к служба поддержки Майкрософт
 

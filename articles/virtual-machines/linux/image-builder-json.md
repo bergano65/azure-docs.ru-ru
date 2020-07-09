@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: virtual-machines-linux
 ms.subservice: imaging
 ms.reviewer: cynthn
-ms.openlocfilehash: 44cafd4ce7e36c34082ff3c5498c5bbc35282221
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 975d6842110ffa864a534e09cf35d0d33612d7d5
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85263319"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135081"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Предварительный просмотр: Создание шаблона Конструктора образов виртуальных машин Azure 
 
@@ -391,7 +391,8 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
 
 ### <a name="windows-update-customizer"></a>Настройщик WindowsUpdate
 Этот настройщик построен на [средстве подготовки Центра обновления Windows](https://packer.io/docs/provisioners/community-supported.html) для Packer. Это проект с открытым исходным кодом, поддерживаемый сообществом Packer. Корпорация Майкрософт тестирует и проверяет это средство подготовки с помощью службы "Конструктор образов", а также будет поддерживать исследования проблем этого средства и работу по их устранению, однако этот проект с открытым исходным кодом официально не поддерживается Майкрософт. Подробную документацию и справку по этому средству подготовки Центра обновления Windows см. в репозитории проекта.
- 
+
+```json
      "customize": [
             {
                 "type": "WindowsUpdate",
@@ -403,7 +404,8 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
                 "updateLimit": 20
             }
                ], 
-Поддержка ОС: Windows
+OS support: Windows
+```
 
 Свойства раздела customize:
 - **type** — WindowsUpdate.

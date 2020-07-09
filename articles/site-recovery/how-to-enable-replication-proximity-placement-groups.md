@@ -5,17 +5,18 @@ author: Sharmistha-Rai
 manager: gaggupta
 ms.topic: how-to
 ms.date: 05/25/2020
-ms.openlocfilehash: 9fabf6cf4c8a3afc2d119fca2c8cdc2526ddbebb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c125f11400a75d221a62aa62020001104e05d167
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84415871"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134896"
 ---
 # <a name="replicate-azure-virtual-machines-running-in-proximity-placement-groups-to-another-region"></a>Репликация виртуальных машин Azure, выполняемых в группах размещения близкого взаимодействия, в другой регион
 
 В этой статье описывается репликация, отработка отказа и восстановление виртуальных машин, выполняемых в группах размещения близкого взаимодействия, в дополнительном регионе.
 
-[Группы размещения близкого взаимодействия](https://docs.microsoft.com/azure/virtual-machines/windows/proximity-placement-groups-portal) — это реализованная в виртуальных машинах Azure возможность логической группировки, благодаря которой можно сократить сетевую задержку приложений при обмене данными между виртуальными машинами. Если виртуальные машины развернуты в одной группе размещения близкого взаимодействия, они физически расположены как можно ближе друг к другу. Группы размещения близкого взаимодействия особенно полезны при выполнении рабочих нагрузок, чувствительных к величине задержки.
+[Группы размещения близкого взаимодействия](../virtual-machines/windows/proximity-placement-groups-portal.md) — это реализованная в виртуальных машинах Azure возможность логической группировки, благодаря которой можно сократить сетевую задержку приложений при обмене данными между виртуальными машинами. Если виртуальные машины развернуты в одной группе размещения близкого взаимодействия, они физически расположены как можно ближе друг к другу. Группы размещения близкого взаимодействия особенно полезны при выполнении рабочих нагрузок, чувствительных к величине задержки.
 
 ## <a name="disaster-recovery-with-proximity-placement-groups"></a>Аварийное восстановление с использованием групп размещения близкого взаимодействия
 
@@ -32,21 +33,21 @@ ms.locfileid: "84415871"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-1. Убедитесь в наличии модуля Azure PowerShell Az. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+1. Убедитесь в наличии модуля Azure PowerShell Az. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="set-up-site-recovery-for-virtual-machines-in-proximity-placement-group"></a>Настройка Site Recovery для виртуальных машин в группе размещения близкого взаимодействия
 
 ### <a name="azure-to-azure"></a>Из Azure в Azure
 
-1. [Войдите](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-powershell#sign-in-to-your-microsoft-azure-subscription) в свою учетную запись и настройте подписку.
-2. Получите сведения о виртуальной машине, которую вы планируете реплицировать, как указано [здесь](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-powershell#get-details-of-the-virtual-machine-to-be-replicated).
-3. [Создайте](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-powershell#create-a-recovery-services-vault) хранилище служб восстановления и [задайте](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-powershell#set-the-vault-context) контекст хранилища.
-4. Подготовьте хранилище к запуску виртуальной машины репликации. Это включает создание [объекта фабрики службы](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-powershell#create-a-site-recovery-fabric-object-to-represent-the-primary-source-region) для основного региона и региона восстановления.
-5. [Создайте](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-powershell#create-a-site-recovery-protection-container-in-the-primary-fabric) защитный контейнер Site Recovery для основной фабрики и фабрики восстановления.
-6. [Создайте](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-powershell#create-a-replication-policy) политику репликации.
-7. Создайте сопоставление защитных контейнеров (основного контейнера и контейнера восстановления), выполнив [эти](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-powershell#create-a-protection-container-mapping-between-the-primary-and-recovery-protection-container) шаги, а также сопоставление защитных контейнеров для восстановления, следуя инструкциям [здесь](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-powershell#create-a-protection-container-mapping-for-failback-reverse-replication-after-a-failover).
-8. Создайте учетную запись хранения кэша, выполнив [следующие](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-powershell#create-cache-storage-account-and-target-storage-account) действия.
-9. Создайте необходимые сетевые сопоставления, как указано [здесь](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-powershell#create-network-mappings).
+1. [Войдите](./azure-to-azure-powershell.md#sign-in-to-your-microsoft-azure-subscription) в свою учетную запись и настройте подписку.
+2. Получите сведения о виртуальной машине, которую вы планируете реплицировать, как указано [здесь](./azure-to-azure-powershell.md#get-details-of-the-virtual-machine-to-be-replicated).
+3. [Создайте](./azure-to-azure-powershell.md#create-a-recovery-services-vault) хранилище служб восстановления и [задайте](./azure-to-azure-powershell.md#set-the-vault-context) контекст хранилища.
+4. Подготовьте хранилище к запуску виртуальной машины репликации. Это включает создание [объекта фабрики службы](./azure-to-azure-powershell.md#create-a-site-recovery-fabric-object-to-represent-the-primary-source-region) для основного региона и региона восстановления.
+5. [Создайте](./azure-to-azure-powershell.md#create-a-site-recovery-protection-container-in-the-primary-fabric) защитный контейнер Site Recovery для основной фабрики и фабрики восстановления.
+6. [Создайте](./azure-to-azure-powershell.md#create-a-replication-policy) политику репликации.
+7. Создайте сопоставление защитных контейнеров (основного контейнера и контейнера восстановления), выполнив [эти](./azure-to-azure-powershell.md#create-a-protection-container-mapping-between-the-primary-and-recovery-protection-container) шаги, а также сопоставление защитных контейнеров для восстановления, следуя инструкциям [здесь](./azure-to-azure-powershell.md#create-a-protection-container-mapping-for-failback-reverse-replication-after-a-failover).
+8. Создайте учетную запись хранения кэша, выполнив [следующие](./azure-to-azure-powershell.md#create-cache-storage-account-and-target-storage-account) действия.
+9. Создайте необходимые сетевые сопоставления, как указано [здесь](./azure-to-azure-powershell.md#create-network-mappings).
 10. Для репликации виртуальной машины Azure с управляемыми дисками используйте командлет PowerShell ниже. 
 
 ```azurepowershell
@@ -90,8 +91,8 @@ $TempASRJob = New-AzRecoveryServicesAsrReplicationProtectedItem -AzureToAzure -A
 Get-AzRecoveryServicesAsrReplicationProtectedItem -ProtectionContainer $PrimaryProtContainer | Select FriendlyName, ProtectionState, ReplicationHealth
 ```
 
-11. Чтобы выполнить тестовую отработку отказа, проверить и очистить данные после тестовой отработки, выполните [эти](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-powershell#do-a-test-failover-validate-and-cleanup-test-failover) действия.
-12. Для отработки отказа выполните действия [здесь](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-powershell#fail-over-to-azure).
+11. Чтобы выполнить тестовую отработку отказа, проверить и очистить данные после тестовой отработки, выполните [эти](./azure-to-azure-powershell.md#do-a-test-failover-validate-and-cleanup-test-failover) действия.
+12. Для отработки отказа выполните действия [здесь](./azure-to-azure-powershell.md#fail-over-to-azure).
 13. Для защиты и восстановления исходного региона используйте следующий командлет PowerShell:
 
 ```azurepowershell
@@ -102,16 +103,16 @@ $WestUSCacheStorageAccount = New-AzStorageAccount -Name "a2acachestoragewestus" 
 #Use the recovery protection container, new cache storage account in West US and the source region VM resource group 
 Update-AzRecoveryServicesAsrProtectionDirection -ReplicationProtectedItem $ReplicationProtectedItem -AzureToAzure -ProtectionContainerMapping $WusToEusPCMapping -LogStorageAccountId $WestUSCacheStorageAccount.Id -RecoveryResourceGroupID $sourceVMResourcegroup.ResourceId -RecoveryProximityPlacementGroupId $vm.ProximityPlacementGroup.Id
 ```
-14. Для отключения репликации выполните описанные [здесь](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-powershell#disable-replication) действия.
+14. Для отключения репликации выполните описанные [здесь](./azure-to-azure-powershell.md#disable-replication) действия.
 
 ### <a name="vmware-to-azure"></a>VMware — Azure
 
-1. Убедитесь, что для аварийного восстановления в Azure [подготовлены локальные серверы VMware](https://docs.microsoft.com/azure/site-recovery/vmware-azure-tutorial-prepare-on-premises).
-2. Войдите в свою учетную запись и настройте подписку, как указано [здесь](https://docs.microsoft.com/azure/site-recovery/vmware-azure-disaster-recovery-powershell#log-into-azure).
-3. [Настройте](https://docs.microsoft.com/azure/site-recovery/vmware-azure-disaster-recovery-powershell#set-up-a-recovery-services-vault) хранилище служб восстановления и [задайте контекст восстановления](https://docs.microsoft.com/azure/site-recovery/vmware-azure-disaster-recovery-powershell#set-the-vault-context).
-4. [Подтвердите](https://docs.microsoft.com/azure/site-recovery/vmware-azure-disaster-recovery-powershell#validate-vault-registration) регистрацию хранилища.
-5. [Создайте](https://docs.microsoft.com/azure/site-recovery/vmware-azure-disaster-recovery-powershell#create-a-replication-policy) политику репликации.
-6. [Добавьте](https://docs.microsoft.com/azure/site-recovery/vmware-azure-disaster-recovery-powershell#add-a-vcenter-server-and-discover-vms) сервер vCenter, обнаруживайте виртуальные машины и [создавайте](https://docs.microsoft.com/azure/site-recovery/vmware-azure-disaster-recovery-powershell#create-storage-accounts-for-replication) учетные записи хранения для репликации.
+1. Убедитесь, что для аварийного восстановления в Azure [подготовлены локальные серверы VMware](./vmware-azure-tutorial-prepare-on-premises.md).
+2. Войдите в свою учетную запись и настройте подписку, как указано [здесь](./vmware-azure-disaster-recovery-powershell.md#log-into-azure).
+3. [Настройте](./vmware-azure-disaster-recovery-powershell.md#set-up-a-recovery-services-vault) хранилище служб восстановления и [задайте контекст восстановления](./vmware-azure-disaster-recovery-powershell.md#set-the-vault-context).
+4. [Подтвердите](./vmware-azure-disaster-recovery-powershell.md#validate-vault-registration) регистрацию хранилища.
+5. [Создайте](./vmware-azure-disaster-recovery-powershell.md#create-a-replication-policy) политику репликации.
+6. [Добавьте](./vmware-azure-disaster-recovery-powershell.md#add-a-vcenter-server-and-discover-vms) сервер vCenter, обнаруживайте виртуальные машины и [создавайте](./vmware-azure-disaster-recovery-powershell.md#create-storage-accounts-for-replication) учетные записи хранения для репликации.
 7. Сведения о репликации виртуальных машин VMware доступны здесь. Кроме того, необходимо выполнить следующий командлет PowerShell:
 
 ```azurepowershell
@@ -136,18 +137,18 @@ $Job_EnableReplication1 = New-AzRecoveryServicesAsrReplicationProtectedItem -VMw
 ```azurepowershell
 Get-AzRecoveryServicesAsrReplicationProtectedItem -ProtectionContainer $ProtectionContainer | Select FriendlyName, ProtectionState, ReplicationHealth
 ```
-9. Настройте параметры отработки отказа, выполняя описанные [здесь](https://docs.microsoft.com/azure/site-recovery/vmware-azure-disaster-recovery-powershell#configure-failover-settings) действия.
-10. [Выполните](https://docs.microsoft.com/azure/site-recovery/vmware-azure-disaster-recovery-powershell#run-a-test-failover) тестовую отработку отказа. 
-11. Выполните отработку отказа в Azure, следуя инструкциям [здесь](https://docs.microsoft.com/azure/site-recovery/vmware-azure-disaster-recovery-powershell#fail-over-to-azure).
+9. Настройте параметры отработки отказа, выполняя описанные [здесь](./vmware-azure-disaster-recovery-powershell.md#configure-failover-settings) действия.
+10. [Выполните](./vmware-azure-disaster-recovery-powershell.md#run-a-test-failover) тестовую отработку отказа. 
+11. Выполните отработку отказа в Azure, следуя инструкциям [здесь](./vmware-azure-disaster-recovery-powershell.md#fail-over-to-azure).
 
 ### <a name="hyper-v-to-azure"></a>Hyper-V в Azure
 
-1. Убедитесь, что для аварийного восстановления в Azure [подготовлены локальные серверы Hyper-V](https://docs.microsoft.com/azure/site-recovery/hyper-v-prepare-on-premises-tutorial).
-2. [Выполните вход](https://docs.microsoft.com/azure/site-recovery/hyper-v-azure-powershell-resource-manager#step-1-sign-in-to-your-azure-account) в Azure.
-3. [Настройте](https://docs.microsoft.com/azure/site-recovery/hyper-v-azure-powershell-resource-manager#step-2-set-up-the-vault) хранилище и [задайте](https://docs.microsoft.com/azure/site-recovery/hyper-v-azure-powershell-resource-manager#step-3-set-the-recovery-services-vault-context) контекст хранилища служб восстановления.
-4. [Создайте](https://docs.microsoft.com/azure/site-recovery/hyper-v-azure-powershell-resource-manager#step-4-create-a-hyper-v-site) сайт Hyper-V.
-5. [Установите](https://docs.microsoft.com/azure/site-recovery/hyper-v-azure-powershell-resource-manager#step-5-install-the-provider-and-agent) поставщик и агент.
-6. [Создайте](https://docs.microsoft.com/azure/site-recovery/hyper-v-azure-powershell-resource-manager#step-6-create-a-replication-policy) политику репликации.
+1. Убедитесь, что для аварийного восстановления в Azure [подготовлены локальные серверы Hyper-V](./hyper-v-prepare-on-premises-tutorial.md).
+2. [Выполните вход](./hyper-v-azure-powershell-resource-manager.md#step-1-sign-in-to-your-azure-account) в Azure.
+3. [Настройте](./hyper-v-azure-powershell-resource-manager.md#step-2-set-up-the-vault) хранилище и [задайте](./hyper-v-azure-powershell-resource-manager.md#step-3-set-the-recovery-services-vault-context) контекст хранилища служб восстановления.
+4. [Создайте](./hyper-v-azure-powershell-resource-manager.md#step-4-create-a-hyper-v-site) сайт Hyper-V.
+5. [Установите](./hyper-v-azure-powershell-resource-manager.md#step-5-install-the-provider-and-agent) поставщик и агент.
+6. [Создайте](./hyper-v-azure-powershell-resource-manager.md#step-6-create-a-replication-policy) политику репликации.
 7. Включите репликацию, выполнив инструкции ниже. 
     
     а. Получите защищаемый элемент, соответствующий виртуальной машине, которую необходимо защитить, выполнив следующую команду:
@@ -187,13 +188,13 @@ Get-AzRecoveryServicesAsrReplicationProtectedItem -ProtectionContainer $Protecti
 
     Get-AzRecoveryServicesAsrJob -Job $job | Select-Object -ExpandProperty state
     ```
-8. Выполните тестовую [отработку отказа](https://docs.microsoft.com/azure/site-recovery/hyper-v-azure-powershell-resource-manager#step-8-run-a-test-failover).
+8. Выполните тестовую [отработку отказа](./hyper-v-azure-powershell-resource-manager.md#step-8-run-a-test-failover).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Для повторной защиты и отработки отказа VMware в Azure выполните описанные [здесь](https://docs.microsoft.com/azure/site-recovery/vmware-azure-prepare-failback) действия.
+Для повторной защиты и отработки отказа VMware в Azure выполните описанные [здесь](./vmware-azure-prepare-failback.md) действия.
 
-Чтобы выполнить отработку отказа для Hyper-V в Azure, выполните действия, описанные [здесь](https://docs.microsoft.com/azure/site-recovery/site-recovery-failover), а чтобы выполнить восстановление, выполните действия, описанные [здесь](https://docs.microsoft.com/azure/site-recovery/hyper-v-azure-failback).
+Чтобы выполнить отработку отказа для Hyper-V в Azure, выполните действия, описанные [здесь](./site-recovery-failover.md), а чтобы выполнить восстановление, выполните действия, описанные [здесь](./hyper-v-azure-failback.md).
 
 Дополнительные сведения см. в статье [Отработка отказа в Site Recovery](site-recovery-failover.md).

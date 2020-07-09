@@ -13,11 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 5/1/2019
 ms.author: alsin
-ms.openlocfilehash: c555b058e6d0b8c110a3273525b5a8c58baaff61
-ms.sourcegitcommit: 69156ae3c1e22cc570dda7f7234145c8226cc162
+ms.openlocfilehash: 0fd2bcfb32524c6911a70157f58cea1e48b7bea9
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84309787"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135240"
 ---
 # <a name="azure-serial-console-for-windows"></a>Серийная консоль Azure для Windows
 
@@ -101,15 +102,15 @@ ms.locfileid: "84309787"
 
     ![Подключение к SAC](./media/virtual-machines-serial-console/virtual-machine-windows-serial-console-connect-sac.png)
 
-1.    Введите `cmd`, чтобы создать канала с экземпляром командной строки.
+1. Введите `cmd`, чтобы создать канала с экземпляром командной строки.
 
-1.    Введите `ch -si 1` или нажмите сочетание клавиш `<esc>+<tab>`, чтобы переключиться на этот канал, в котором выполняется экземпляр командной строки.
+1. Введите `ch -si 1` или нажмите сочетание клавиш `<esc>+<tab>`, чтобы переключиться на этот канал, в котором выполняется экземпляр командной строки.
 
-1.    Нажмите клавишу **ВВОД**, а затем введите учетные данные для входа с привилегиями администратора.
+1. Нажмите клавишу **ВВОД**, а затем введите учетные данные для входа с привилегиями администратора.
 
-1.    После ввода действительных учетных данных открывается экземпляр командной строки.
+1. После ввода действительных учетных данных открывается экземпляр командной строки.
 
-1.    Чтобы запустить экземпляр PowerShell, введите `PowerShell` в экземпляре командной строки и нажмите клавишу **ВВОД**.
+1. Чтобы запустить экземпляр PowerShell, введите `PowerShell` в экземпляре командной строки и нажмите клавишу **ВВОД**.
 
     ![Открытие экземпляра PowerShell](./media/virtual-machines-serial-console/virtual-machine-windows-serial-console-powershell.png)
 

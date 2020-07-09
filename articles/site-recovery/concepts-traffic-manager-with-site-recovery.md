@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: mayg
-ms.openlocfilehash: 6c77cd43231d4596535c11564313a0fe90633cdb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bb112e0b2d1c64e65ecaf6749a25707d8632c0cb
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "60947804"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134963"
 ---
 # <a name="azure-traffic-manager-with-azure-site-recovery"></a>Диспетчер трафика Microsoft Azure и Azure Site Recovery
 
@@ -30,7 +30,7 @@ ms.locfileid: "60947804"
 **Компания А** запускает приложения с общедоступными конечными точками и хочет эффективно перенаправлять трафик в Azure в случае сбоя. Метод маршрутизации трафика [по приоритету](../traffic-manager/traffic-manager-configure-priority-routing-method.md) в диспетчере трафика Azure позволяет компании А легко реализовать эту схему отработки отказа.
 
 Конфигурация выглядит следующим образом:
-- **Компания А** создает [профиль диспетчера трафика](../traffic-manager/traffic-manager-create-profile.md).
+- **Компания А** создает [профиль диспетчера трафика](../traffic-manager/quickstart-create-traffic-manager-profile.md).
 - Используя метод маршрутизации **по приоритету**, **компания А** создает две конечные точки — **первичную** для внутреннего пользования и **отказоустойчивую** для Azure. **Первичной** присваивается приоритет 1, а **отказоустойчивой** — приоритет 2.
 - Так как **первичная** конечная точка размещена за пределами Azure, она создается как [внешняя](../traffic-manager/traffic-manager-endpoint-types.md#external-endpoints).
 - При использовании Azure Site Recovery на сайте Azure не работают виртуальные машины или приложения до отработки отказа. Таким образом, **отказоустойчивая** конечная точка также создается как **внешняя**.
@@ -65,7 +65,7 @@ ms.locfileid: "60947804"
 **Компания В** запускает приложения с общедоступными конечными точками и хочет эффективно перенаправлять трафик в другой регион Azure в случае сбоя. Метод маршрутизации трафика [по приоритету](../traffic-manager/traffic-manager-configure-priority-routing-method.md) позволяет **компании В** легко реализовать эту схему отработки отказа.
 
 Конфигурация выглядит следующим образом:
-- **Компания В** создает [профиль диспетчера трафика](../traffic-manager/traffic-manager-create-profile.md).
+- **Компания В** создает [профиль диспетчера трафика](../traffic-manager/quickstart-create-traffic-manager-profile.md).
 - Используя метод маршрутизации **по приоритету**, **компания В** создает две конечные точки — **первичную** для исходного региона Azure (Восточная Азия) и **отказоустойчивую** для региона восстановления Azure (Юго-Восточная Азия). **Первичной** присваивается приоритет 1, а **отказоустойчивой** — приоритет 2.
 - Так как **первичная** конечная точка размещается в Azure, она может использоваться как конечная точка [Azure](../traffic-manager/traffic-manager-endpoint-types.md#azure-endpoints).
 - При использовании Azure Site Recovery на сайте восстановления Azure не работают виртуальные машины или приложения до отработки отказа. Таким образом, **отказоустойчивую** конечную точку можно создать как [внешнюю](../traffic-manager/traffic-manager-endpoint-types.md#external-endpoints).

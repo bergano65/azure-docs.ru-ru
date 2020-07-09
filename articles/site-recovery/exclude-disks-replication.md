@@ -3,11 +3,12 @@ title: Исключение дисков из репликации с помощ
 description: Как исключить диски из репликации в Azure с помощью Azure Site Recovery.
 ms.topic: conceptual
 ms.date: 12/17/2019
-ms.openlocfilehash: aa2e3ef3906a03be649a1978c1d662056c4d0f25
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 5a8d52bd0cc40b45f92039c537a1b3b63f0bec61
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83740524"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135695"
 ---
 # <a name="exclude-disks-from-disaster-recovery"></a>Исключение дисков из аварийного восстановления
 
@@ -259,7 +260,6 @@ DB-Disk3 | Диск 3 | F:\ | Пользовательские данные 2
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о рекомендациях для диска временного хранилища
-    - [Сведения](https://blogs.technet.microsoft.com/dataplatforminsider/2014/09/25/using-ssds-in-azure-vms-to-store-sql-server-tempdb-and-buffer-pool-extensions/) об использовании SSD на виртуальных машинах Azure для хранения базы данных TempDB SQL Server и расширений буферного пула.
-    - [Просмотрите](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-performance) рекомендации по оптимизации производительности SQL Server на виртуальных машинах Azure.
+    - [Сведения](https://cloudblogs.microsoft.com/sqlserver/2014/09/25/using-ssds-in-azure-vms-to-store-sql-server-tempdb-and-buffer-pool-extensions/) об использовании SSD на виртуальных машинах Azure для хранения базы данных TempDB SQL Server и расширений буферного пула.
+    - [Просмотрите](../azure-sql/virtual-machines/windows/performance-guidelines-best-practices.md) рекомендации по оптимизации производительности SQL Server на виртуальных машинах Azure.
 - Настроив и запустив развертывание, вы можете ознакомиться с [дополнительными сведениями](failover-failback-overview.md) о различных типах обработки отказа.
-
