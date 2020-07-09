@@ -5,14 +5,14 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.devlang: azurepowershell
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/08/2020
-ms.openlocfilehash: 2a2c16f681b7b1a5f8e0dac82401d1c485632d8f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c4c2e997df77a5dd854c3a1b266f390f1693afea
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84739775"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86117106"
 ---
 # <a name="customize-azure-database-for-postgresql-server-parameters-using-powershell"></a>Настройка параметров сервера базы данных Azure для PostgreSQL с помощью PowerShell
 
@@ -65,7 +65,7 @@ Get-AzPostgreSqlConfiguration -Name slow_query_log -ResourceGroupName myresource
 Update-AzPostgreSqlConfiguration -Name slow_query_log -ResourceGroupName myresourcegroup -ServerName mydemoserver -Value On
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Автоматическое увеличение размера хранилища в базе данных Azure для PostgreSQL с помощью PowerShell](howto-auto-grow-storage-powershell.md).

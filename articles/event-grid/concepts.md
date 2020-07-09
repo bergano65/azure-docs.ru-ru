@@ -1,17 +1,14 @@
 ---
 title: Основные понятия службы "Сетка событий Azure"
 description: В статье описываются служба "Сетка событий Azure" и ее основные понятия. Также приводятся определения нескольких ключевых компонентов этой службы.
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 08/03/2018
-ms.author: spelluru
-ms.openlocfilehash: a1464acf2b4a620bf0e2dc91f362cc1739737176
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: 003139374a056da6ddc22dd1453d28761ff58871
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84659171"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86116494"
 ---
 # <a name="concepts-in-azure-event-grid"></a>Основные понятия в службе "Сетка событий Azure"
 

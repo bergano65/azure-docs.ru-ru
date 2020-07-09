@@ -1,17 +1,14 @@
 ---
 title: Обработчики событий службы "Сетка событий Azure"
 description: В статье описаны обработчики событий, поддерживаемые в службе "Сетка событий Azure". Служба автоматизации Azure, Функции Azure, Центры событий Azure, гибридные подключения, Logic Apps, Служебная шина Azure, Хранилище очередей, веб-перехватчики.
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 01/21/2020
-ms.author: spelluru
-ms.openlocfilehash: c29526bdee5ad70b3acb23117ee003877f52a55e
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.date: 07/07/2020
+ms.openlocfilehash: 76f7fff3e0a3e1c0c554e452987bf944503358b8
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83592463"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86117021"
 ---
 # <a name="event-handlers-in-azure-event-grid"></a>Обработчики событий в службе "Сетка событий Azure"
 Обработчик событий — это место, куда отправляются события. Обработчик выполняет последующую обработку полученного события. Некоторые службы Azure автоматически настроены для обработки событий. Также для этого можно использовать любой веб-перехватчик. Для обработки событий, веб-перехватчик не обязательно размещать в Azure. Сетка событий поддерживает только конечные точки веб-перехватчиков HTTPS.

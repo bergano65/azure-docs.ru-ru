@@ -222,12 +222,6 @@
         - name: Использование проверки работоспособности в диспетчере развертывания
           displayName: adm
           href: deployment-manager-tutorial-health-check.md
-- name: Примеры
-  items:
-    - name: Шаблоны быстрого запуска Azure
-      href: 'https://azure.microsoft.com/resources/templates/'
-    - name: Примеры шаблона
-      href: template-samples.md
 - name: Основные понятия
   items:
     - name: Рекомендации по работе с шаблоном
@@ -299,16 +293,6 @@
             - name: Выходные данные
               displayName: 'iteration,copy'
               href: copy-outputs.md
-    - name: Использование средств разработки
-      items:
-        - name: VS Code
-          href: use-vs-code-to-create-template.md
-        - name: Visual Studio
-          href: create-visual-studio-deployment-project.md
-        - name: Обновление скрипта развертывания VS для использования модуля Az
-          href: update-visual-studio-deployment-script.md
-        - name: IntelliJ IDEA
-          href: create-templates-use-intellij.md
     - name: Обнаружение свойств шаблона
       items:
         - name: Экспорт шаблона
@@ -344,6 +328,8 @@
           href: rollback-on-error.md
         - name: Обеспечение защиты шаблона с помощью маркера SAS
           href: secure-template-with-sas-token.md
+        - name: Просмотр журнала развертывания
+          href: deployment-history.md
     - name: Развертывание в области
       items:
         - name: Подписка
@@ -367,8 +353,14 @@
           href: add-template-to-azure-pipelines.md
         - name: "Развертывание\_— GitHub Actions"
           href: deploy-github-actions.md
-    - name: Просмотр журнала развертывания
-      href: deployment-history.md
+    - name: Использование средств разработки
+      items:
+        - name: Visual Studio
+          href: create-visual-studio-deployment-project.md
+        - name: Обновление скрипта развертывания VS для использования модуля Az
+          href: update-visual-studio-deployment-script.md
+        - name: IntelliJ IDEA
+          href: create-templates-use-intellij.md
     - name: Устранение неполадок развертываний
       items:
         - name: Устранение ошибок развертывания
@@ -441,6 +433,8 @@
       href: /python/api/overview/azure/resources?view=azure-python
 - name: Ресурсы
   items:
+    - name: Шаблоны быстрого запуска Azure
+      href: 'https://azure.microsoft.com/resources/templates/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=monitoring-management'
     - name: Калькулятор цен

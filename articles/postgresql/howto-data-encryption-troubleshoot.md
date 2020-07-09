@@ -4,19 +4,20 @@ description: Узнайте, как устранить неполадки шиф
 author: kummanish
 ms.author: manishku
 ms.service: postgresql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/13/2020
-ms.openlocfilehash: 2902ff17ac14a48f1a11259339c2ab1bc4595980
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ee0a1ebe483dd4719fd1a84fec37906329116eba
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79299266"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86117905"
 ---
 # <a name="troubleshoot-data-encryption-in-azure-database-for-postgresql---single-server"></a>Устранение неполадок шифрования данных в базе данных Azure для PostgreSQL — один сервер
 
 Эта статья поможет вам определить и устранить распространенные проблемы, которые могут возникнуть в развертывании базы данных Azure для PostgreSQL с одним сервером при настройке шифрования данных с помощью управляемого клиентом ключа.
 
-## <a name="introduction"></a>Вступление
+## <a name="introduction"></a>Введение
 
 При настройке шифрования данных для использования управляемого клиентом ключа в Azure Key Vault серверу требуется постоянный доступ к ключу. Если сервер теряет доступ к ключу, управляемому клиентом, в Azure Key Vault, он блокирует все подключения, возвращает соответствующее сообщение об ошибке и изменяет его состояние на ***недоступное*** в портал Azure.
 
@@ -56,6 +57,6 @@ ms.locfileid: "79299266"
 - Определите хранилище ключей и перейдите к нему на портале Azure.
 - Убедитесь, что URI ключа определяет имеющийся ключ.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Использование портал Azure для настройки шифрования данных с помощью управляемого клиентом ключа в базе данных Azure для PostgreSQL](howto-data-encryption-portal.md)

@@ -1,17 +1,14 @@
 ---
 title: Проверка подлинности клиентов Публикация событий в пользовательских разделах или доменах сетки событий
 description: В этой статье описываются различные способы проверки подлинности клиентов при публикации событий в пользовательских разделах сетки событий.
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 06/25/2020
-ms.author: spelluru
-ms.openlocfilehash: 7805c9b9096cb52fcef3dad8eb0bdd9509cbce47
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: 1e147830a4b37a8603df8e4ce29953acab2345bd
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85414854"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86115882"
 ---
 # <a name="authenticate-publishing-clients-azure-event-grid"></a>Проверка подлинности клиентов публикации (сетка событий Azure)
 Эта статья содержит сведения о проверке подлинности клиентов, публикующих события в разделах или доменах службы "Сетка событий Azure" с помощью **ключа доступа** или токена **подписанного URL-адрес (SAS)** . Рекомендуется использовать маркер SAS, но ключ проверки подлинности обеспечивает простое программирование и совместим с множеством существующих издателей веб-перехватчиков.  
@@ -82,5 +79,5 @@ aeg-sas-token: r=https%3a%2f%2fmytopic.eventgrid.azure.net%2feventGrid%2fapi%2fe
 Authorization: SharedAccessSignature r=https%3a%2f%2fmytopic.eventgrid.azure.net%2feventGrid%2fapi%2fevent&e=6%2f15%2f2017+6%3a20%3a15+PM&s=XXXXXXXXXXXXX%2fBPjdDLOrc6THPy3tDcGHw1zP4OajQ%3d
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о проверке подлинности с помощью обработчиков событий для доставки событий см. в разделе [Проверка подлинности доставки событий](security-authentication.md) . 

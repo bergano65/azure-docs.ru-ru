@@ -3,11 +3,12 @@ title: Обнаружение приложений, ролей и функций
 description: Узнайте, как обнаруживать приложения, роли и функции на локальных серверах с помощью функции "Миграция серверов Azure".
 ms.topic: article
 ms.date: 06/10/2020
-ms.openlocfilehash: ae00e390bb49f3a54f7f7ce7d6491cf7ee882491
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 535c8ae8c2d6e5d9d175e663a58d47dc76aa0529
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84770515"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86118653"
 ---
 # <a name="discover-machine-apps-roles-and-features"></a>Обнаружение приложений, ролей и компонентов компьютера
 
@@ -76,7 +77,7 @@ ms.locfileid: "84770515"
 
 Инвентаризация приложений экспортируется и загружается в формате Excel. На листе **Инвентаризация приложения** отображаются все приложения, обнаруженные на всех компьютерах.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание оценки](how-to-create-assessment.md) для обнаруженных серверов.
-- Оценка SQL Server баз данных с помощью службы ["миграция Azure": Оценка базы данных](https://docs.microsoft.com/sql/dma/dma-assess-sql-data-estate-to-sqldb?view=sql-server-2017).
+- Оценка SQL Server баз данных с помощью службы ["миграция Azure": Оценка базы данных](/sql/dma/dma-assess-sql-data-estate-to-sqldb?view=sql-server-2017).

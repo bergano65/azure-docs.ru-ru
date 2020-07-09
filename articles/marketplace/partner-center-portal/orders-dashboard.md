@@ -1,17 +1,16 @@
 ---
 title: Панель мониторинга заказов Центра партнеров в коммерческой аналитике Marketplace
 description: Узнайте, как получать доступ к аналитическим отчетам о своих заказах предложений коммерческой платформы в графическом и загружаемом формате.
-author: dsindona
-ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: 3b4159d81ce1d202dd1a302e863e5392f51a9868
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 4f5e18a2cebc309475c4fbcf84d7baaa28c6e61d
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83747793"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86118364"
 ---
 # <a name="orders-dashboard-in-commercial-marketplace-analytics"></a>Панель мониторинга заказов в коммерческой аналитике Marketplace
 

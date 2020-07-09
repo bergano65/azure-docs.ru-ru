@@ -4,14 +4,14 @@ description: В этой статье описывается, как включ�
 author: ambhatna
 ms.author: ambhatna
 ms.service: postgresql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/08/2020
-ms.openlocfilehash: 00fee745c8a12f02d7066d504ffce02e0ec1469f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d8ea8a03a0ce6f5819bb603c9d0ad7b4d65d5c32
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84739675"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86118126"
 ---
 # <a name="auto-grow-storage-in-azure-database-for-postgresql-server-using-powershell"></a>Автоматическое увеличение объема хранилища в базе данных Azure для сервера PostgreSQL с помощью PowerShell
 
@@ -22,7 +22,7 @@ ms.locfileid: "84739675"
 > [!IMPORTANT]
 > Помните, что хранилище можно масштабировать только вверх, а не вниз.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -50,7 +50,7 @@ $Password = Read-Host -Prompt 'Please enter your password' -AsSecureString
 New-AzPostgreSqlServer -Name mydemoserver -ResourceGroupName myresourcegroup -Sku GP_Gen5_2 -StorageAutogrow Enabled -Location westus -AdministratorUsername myadmin -AdministratorLoginPassword $Password
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Как создавать реплики чтения и управлять ими в базе данных Azure для PostgreSQL с помощью PowerShell](howto-read-replicas-powershell.md).

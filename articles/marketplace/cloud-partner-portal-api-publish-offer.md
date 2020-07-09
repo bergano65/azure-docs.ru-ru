@@ -1,18 +1,16 @@
 ---
 title: Публикация предложения в Azure Marketplace
 description: API для публикации указанного предложения.
-author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
 ms.date: 04/08/2020
-ms.author: dsindona
-ms.openlocfilehash: ada8725a8963fc14fd326c244dcf3d5bb3dd372f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e3bc420a60c514e704a6caa38acee155b4981552
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85516085"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86115593"
 ---
 # <a name="publish-an-offer"></a>Публикация предложения
 
@@ -36,7 +34,7 @@ ms.locfileid: "85516085"
 ## <a name="header"></a>Заголовок
 ------
 
-|  **Name**        |    **Значение**          |
+|  **имя**;        |    **Значение**          |
 |  --------        |    ---------          |
 |  Content-Type    | `application/json`    |
 |  Авторизация   |  `Bearer YOUR_TOKEN`  |
@@ -78,7 +76,7 @@ ms.locfileid: "85516085"
 
 ### <a name="response-header"></a>Заголовок ответа
 
-|  **Name**             |    **Значение**                                                                 |
+|  **имя**;             |    **Значение**                                                                 |
 |  -------------------- | ---------------------------------------------------------------------------- |
 | Расположение    | Относительный путь для получения состояния этой операции     |
 |  |  |

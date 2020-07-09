@@ -5,13 +5,14 @@ author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
 ms.subservice: hyperscale-citus
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 1/8/2019
-ms.openlocfilehash: b8d47d1036473af1b367cc0266aae3ea1bceeada
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 85366b8b3e3ba7d612373e6b754aa9805d00f8f5
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84343937"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86116970"
 ---
 # <a name="create-users-in-azure-database-for-postgresql---hyperscale-citus"></a>Создание пользователей в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 
@@ -80,7 +81,7 @@ GRANT SELECT ON ALL TABLES IN SCHEMA public TO db_user;
 
 `citus`Роль является привилегированной и не может быть удалена.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы разрешить им подключение: [Создание правил брандмауэра Цитус и управление ими с помощью портал Azure](howto-hyperscale-manage-firewall-using-portal.md).
 

@@ -1,17 +1,18 @@
 ---
 title: Общие сведения о сводках по выплатам — Azure Marketplace
 description: В сводке по выплатам отображаются сведения о денежных средствах, полученных вами за свое предложение. Кроме того, с ее помощью можно узнать, когда вы будете получать платежи и сколько вы получите.
-author: mingshen
-ms.author: mingshen
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
+author: mingshen
+ms.author: mingshen
 ms.date: 04/24/2020
-ms.openlocfilehash: a872331238946de0d57e6d42164f1ce7fb1c7357
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 29a8eb72814d865cb02bd632e084cec0cc06a1ff
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83746206"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86118483"
 ---
 # <a name="payout-summary-overview"></a>Общие сведения о сводках по выплатам
 

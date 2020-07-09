@@ -5,13 +5,14 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.devlang: azurecli
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 5/6/2019
-ms.openlocfilehash: 4af0fb288961689fb051bab8091c838f793cfcc3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9b2c1021f88eab15a1f8803a4439dc0cb9b6ed97
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74765653"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86117650"
 ---
 # <a name="create-and-manage-firewall-rules-in-azure-database-for-postgresql---single-server-using-azure-cli"></a>Создание правил брандмауэра в базе данных Azure для PostgreSQL-Single Server и управление ими с помощью Azure CLI
 Правила брандмауэра уровня сервера можно использовать для управления доступом к серверу базы данных Azure для PostgreSQL с определенного IP-адреса или диапазона IP-адресов. С помощью удобных команд Azure CLI можно создавать, обновлять, удалять, выводить список и отображать правила брандмауэра для управления сервером. Общие сведения о правилах брандмауэра базы данных Azure для PostgreSQL см. в статье [правила брандмауэра сервера базы данных Azure для PostgreSQL](concepts-firewall-rules.md).
@@ -77,7 +78,7 @@ az postgres server firewall-rule delete --resource-group myresourcegroup --serve
 ```
 При успешном выполнении выходные данные отсутствуют. В случае сбоя возвращается сообщение об ошибке.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Аналогичным образом можно использовать веб-браузер, чтобы [создать правила брандмауэра базы данных Azure для PostgreSQL и управлять ими с помощью портала Azure](howto-manage-firewall-using-portal.md).
 - Узнайте больше о [правилах брандмауэра сервера базы данных Azure для PostgreSQL](concepts-firewall-rules.md).
 - Более безопасный доступ к серверу путем [создания конечных точек и правил службы виртуальной сети и управления ими с помощью Azure CLI](howto-manage-vnet-using-cli.md).

@@ -1,17 +1,16 @@
 ---
 title: Необходимые условия для API — Azure Marketplace
 description: Необходимые условия для использования API-интерфейсов Портал Cloud Partner.
-author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/08/2020
-ms.author: dsindona
-ms.openlocfilehash: c435e171c7e3cabea4007c7b78cf60727bf55efd
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: c932db1b86cecae4d90b0d6acffc4a0cde49e369
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85958235"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86115746"
 ---
 <a name="api-prerequisites"></a>Предварительные требования для API
 ================

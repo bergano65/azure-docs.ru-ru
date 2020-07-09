@@ -4,20 +4,20 @@ description: Узнайте, как настроить и управлять д�
 author: kummanish
 ms.author: manishku
 ms.service: mysql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/30/2020
-ms.openlocfilehash: 4623791e19ec83446b2978105286b71e6ff1eb1c
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: d3076f2591718931bdab4dba9510d25fe07b2d02
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86034904"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86118766"
 ---
 # <a name="infrastructure-double-encryption-for-azure-database-for-mysql"></a>Двойное шифрование инфраструктуры для базы данных Azure для MySQL
 
 Узнайте, как использовать двойное шифрование инфраструктуры для базы данных Azure для MySQL и управлять им.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure и права администратора для нее.
 
@@ -58,6 +58,6 @@ az group create --name myresourcegroup --location westus
 az mysql server create --resource-group myresourcegroup --name mydemoserver  --location westus --admin-user myadmin --admin-password <server_admin_password> --sku-name GP_Gen5_2 --version 5.7 --infrastructure-encryption <Enabled/Disabled>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
  Дополнительные сведения о шифровании данных см. в статье [двойное шифрование инфраструктуры данных в базе данных Azure для MySQL](concepts-Infrastructure-double-encryption.md).

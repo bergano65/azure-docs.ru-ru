@@ -1,17 +1,14 @@
 ---
 title: Партнерские разделы Сетки событий Azure
 description: Отправляйте события от сторонних партнеров SaaS и PaaS с Сеткой событий напрямую в службы Azure с помощью Сетки событий Azure.
-services: event-grid
-author: femila
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 05/18/2020
-ms.author: femila
-ms.openlocfilehash: 5327efea8af734c723ba76d1a00b72c08f5c88b9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: 97829f262a00e2353624b2a3fa9df210518ad3a0
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84560272"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86116001"
 ---
 # <a name="partner-topics-in-azure-event-grid-preview"></a>Разделы партнеров в службе "Сетка событий Azure" (Предварительная версия)
 Используя разделы партнеров, вы можете подключать сторонние источники событий непосредственно к службе "Сетка событий Azure". Благодаря этому виду интеграции вы можете подписаться на события от партнеров так же, как вы подписываетесь на события, поступающие из служб Azure. 
