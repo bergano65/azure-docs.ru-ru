@@ -1,17 +1,18 @@
 ---
 title: Подготовка технических ресурсов модуля IoT Edge в Azure Marketplace
 description: Узнайте о требованиях к технической и конфигурации, которые должны соответствовать техническим ресурсам модуля "Интернет вещей" (IoT), прежде чем их можно будет опубликовать в Azure Marketplace.
-author: anbene
-ms.author: mingshen
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
+author: anbene
+ms.author: mingshen
 ms.date: 04/03/2020
-ms.openlocfilehash: 36b56cdf5a2aaa57cc452db9054380528fa8c68b
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 685ac2a383bcc0b85121112b9b5df4aa7650ab59
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85958588"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86101177"
 ---
 # <a name="prepare-your-iot-edge-module-technical-assets"></a>Подготовка технических ресурсов для модуля IoT Edge
 
@@ -140,6 +141,6 @@ ServerIPAddress = <MY_SERVER_IP_ADDRESS>
 
 Чтобы отправить модуль IoT Edge в Azure Marketplace, сначала необходимо разместить его в [реестре контейнеров Azure](https://azure.microsoft.com/services/container-registry/) (запись контроля доступа). Модуль должен включать все теги, которые необходимо опубликовать, включая теги изображений, на которые ссылается тег манифеста. Дополнительные сведения см. в руководстве по [созданию реестра контейнеров Azure и отправке образа контейнера](../../container-instances/container-instances-tutorial-prepare-acr.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание предложения модуля IoT Edge](azure-iot-edge-module-creation.md)
