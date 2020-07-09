@@ -4,14 +4,14 @@ description: В этой статье описывается, как настр�
 author: ajlam
 ms.author: andrela
 ms.service: mysql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 6/24/2020
-ms.openlocfilehash: 1c48c16666305e9b9c342869e52aa04cfd4dac07
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 508e2d229c067ac84d4c8d6338e658df8d3fa932
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85362974"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86113213"
 ---
 # <a name="configure-and-access-audit-logs-for-azure-database-for-mysql-in-the-azure-portal"></a>Настройка и доступ к журналам аудита для базы данных Azure для MySQL в портал Azure
 
@@ -67,7 +67,7 @@ ms.locfileid: "85362974"
 
 1. Получите доступ к журналам аудита, просмотрев их в настроенных приемниках данных. Для отображения журналов может потребоваться до 10 минут.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [журналах аудита](concepts-audit-logs.md) в базе данных Azure для MySQL
 - Узнайте, как настроить журналы аудита в [Azure CLI](howto-configure-audit-logs-cli.md)

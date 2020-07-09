@@ -6,14 +6,14 @@ ms.service: data-lake-analytics
 author: saveenr
 ms.author: saveenr
 ms.reviewer: jasonwhowell
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/20/2017
-ms.openlocfilehash: 170135061ff3107899bedac02ea0a52808d49a15
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 40e79202f68a377597fbe144843edbbf38fd77c7
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85555613"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86110510"
 ---
 # <a name="extend-u-sql-scripts-with-r-code-in-azure-data-lake-analytics"></a>Расширение возможностей сценариев U-SQL c кодом R в Azure Data Lake Analytics
 
@@ -210,7 +210,7 @@ USING new Extension.R.Reducer(command:@myRScript, rReturnType:"charactermatrix")
 OUTPUT @RScriptOutput TO @OutputFileModelSummary USING Outputters.Tsv();
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Разработка сценариев U-SQL с помощью средств озера данных для Visual Studio.](data-lake-analytics-data-lake-tools-get-started.md)

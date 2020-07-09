@@ -6,17 +6,18 @@ ms.assetid: daedacf0-6546-4355-a65c-50873e74f66b
 ms.topic: reference
 ms.date: 02/19/2020
 ms.author: cshoe
-ms.openlocfilehash: 44e4114b328701d5de363e91f5562f1daad351c6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 46660a0c8d20ab82c994a62b1c781108ea1070c1
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84697176"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86111207"
 ---
 # <a name="azure-service-bus-bindings-for-azure-functions"></a>Привязки служебной шины Azure для службы "Функции Azure"
 
 Функции Azure интегрируются с [служебной шиной Azure](https://azure.microsoft.com/services/service-bus) через [триггеры и привязки](./functions-triggers-bindings.md). Интеграция с служебной шиной позволяет создавать функции, реагирующие на и отправляющие сообщения очереди или раздела.
 
-| Действие | Type |
+| Действие | Тип |
 |---------|---------|
 | Выполнение функции при создании сообщения очереди или раздела служебной шины | [Триггер](./functions-bindings-service-bus-trigger.md) |
 | Отправка сообщений служебной шины Azure |[Выходная привязка](./functions-bindings-service-bus-output.md) |
@@ -27,7 +28,7 @@ ms.locfileid: "84697176"
 
 Для работы с триггером и привязками требуется ссылка на соответствующий пакет. Пакет NuGet используется для библиотек классов .NET, в то время как набор расширений используется для всех других типов приложений.
 
-| Язык                                        | Добавить по...                                   | Комментарии 
+| Язык                                        | Добавить по...                                   | Remarks 
 |-------------------------------------------------|---------------------------------------------|-------------|
 | C#                                              | Установка [пакета NuGet], версия 4. x | |
 | Скрипт C#, Java, JavaScript, Python, PowerShell | Регистрация [пакета расширений]          | [Расширение "инструменты Azure] " рекомендуется использовать с Visual Studio Code. |
@@ -43,7 +44,7 @@ ms.locfileid: "84697176"
 
 Функции 1. x автоматически имеют ссылку на пакет NuGet [Microsoft. Azure. веб-задания](https://www.nuget.org/packages/Microsoft.Azure.WebJobs) , версия 2. x.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Выполнение функции при создании сообщения очереди или раздела служебной шины (триггер)](./functions-bindings-service-bus-trigger.md)
 - [Отправка сообщений служебной шины Azure из функций Azure (Выходная привязка)](./functions-bindings-service-bus-output.md)

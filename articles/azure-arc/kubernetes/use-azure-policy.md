@@ -8,11 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Использование Политики Azure для применения конфигураций кластера в требуемом масштабе
 keywords: Kubernetes, Arc, Azure, K8s, контейнеры
-ms.openlocfilehash: 4c013fe562d89bff4d1ce9c9f3e832e1b51c70f1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 26b291e2a957047361d4f52eeff58cbe8aa8c633
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85341371"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86111275"
 ---
 # <a name="use-azure-policy-to-apply-cluster-configurations-at-scale-preview"></a>Использование Политики Azure для применения конфигураций кластера в требуемом масштабе (предварительная версия)
 
@@ -34,7 +35,7 @@ ms.locfileid: "85341371"
 8. Задайте значения параметров, которые будут использоваться при создании `sourceControlConfiguration`.
 9. Выберите **Далее**.
 10. Включите параметр **Создание задачи исправления**.
-11. Убедитесь в том, что установлен флажок **Создать управляемое удостоверение** и что удостоверение будет иметь разрешения **участника**. Дополнительные сведения о необходимых разрешениях см. в [этом документе](https://docs.microsoft.com/azure/governance/policy/assign-policy-portal) и [комментарии в этом документе](https://docs.microsoft.com/azure/governance/policy/how-to/remediate-resources).
+11. Убедитесь в том, что установлен флажок **Создать управляемое удостоверение** и что удостоверение будет иметь разрешения **участника**. Дополнительные сведения о необходимых разрешениях см. в [этом документе](../../governance/policy/assign-policy-portal.md) и [комментарии в этом документе](../../governance/policy/how-to/remediate-resources.md).
 12. Выберите **Review + create** (Просмотреть и создать).
 
 После создания назначения политики конфигурация `sourceControlConfiguration` будет применяться к каждому новому ресурсу `connectedCluster` (или ресурсу `managedCluster` с установленными агентами GitOps), который находится в области назначения. Для существующих кластеров необходимо вручную запустить задачу исправления. Как правило, назначение политики вступает в силу в течение 10–20 минут.
@@ -50,4 +51,4 @@ ms.locfileid: "85341371"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Настройка Azure Monitor для контейнеров с кластерами Kubernetes с поддержкой Arc](./deploy-azure-monitor-for-containers.md)
+* [Настройка Azure Monitor для контейнеров с кластерами Kubernetes с поддержкой Arc](../../azure-monitor/insights/container-insights-enable-arc-enabled-clusters.md)

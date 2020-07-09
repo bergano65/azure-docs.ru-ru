@@ -1,18 +1,14 @@
 ---
 title: Настройка частных конечных точек для разделов и доменов службы "Сетка событий Azure"
 description: В этой статье описывается, как настроить частные конечные точки для разделов или доменов службы "Сетка событий Azure".
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: how-to
-ms.date: 04/22/2020
-ms.author: spelluru
-ms.openlocfilehash: 816d1f762698deeed38afe01899916b491809db2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: ace3f7f59e4f26388652d7bda1a5ee28800a414b
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85390471"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86115341"
 ---
 # <a name="configure-private-endpoints-for-azure-event-grid-topics-or-domains"></a>Настройка частных конечных точек для разделов и доменов службы "Сетка событий Azure"
 [Частные конечные точки](../private-link/private-endpoint-overview.md) можно использовать, чтобы разрешить прием событий непосредственно из виртуальной сети в разделы и домены, защищенные по [частной ссылке](../private-link/private-link-overview.md) , без использования общедоступного Интернета. Частная конечная точка использует IP-адрес из адресного пространства виртуальной сети для вашего раздела или домена. Дополнительные сведения см. в разделе [Сетевая безопасность](network-security.md).
@@ -154,7 +150,7 @@ az network private-endpoint delete --resource-group <RESOURECE GROUP NAME> --nam
 
 
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 Обновите расширение службы "Сетка событий Azure" для интерфейса командной строки, выполнив следующую команду: 
 
 ```azurecli-interactive
@@ -483,6 +479,6 @@ Invoke-RestMethod -Method 'Get'
 
 Вы можете одобрить подключение даже после его отклонения через API. При использовании портал Azure нельзя утвердить конечную точку, которая была отклонена. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о настройке параметров брандмауэра IP см. в разделе [Настройка брандмауэра IP для разделов и доменов службы "Сетка событий Azure](configure-firewall.md)".
 * Сведения об устранении неполадок с сетевым подключением см. в разделе [Устранение неполадок с сетевым подключением](troubleshoot-network-connectivity.md)

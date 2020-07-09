@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
 ms.subservice: common
-ms.openlocfilehash: 1d8275d11b845df43238dce82beabe89d6464799
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f0272d53c5fc4c565baf5d7105bd6e1b4a0ef535
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84944701"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86114607"
 ---
 # <a name="frequently-asked-questions-about-azure-storage-migration"></a>Часто задаваемые вопросы о миграции службы хранилища Azure
 
@@ -26,9 +26,11 @@ ms.locfileid: "84944701"
 
 Для копирования файлов между контейнерами можно использовать AzCopy. См. следующий пример.
 
-    AzCopy /Source:https://xxx.blob.core.windows.net/xxx
-    /Dest:https://xxx.blob.core.windows.net/xxx /SourceKey:xxx /DestKey:xxx
-    /S
+```azurepowershell-interactive
+AzCopy /Source:https://xxx.blob.core.windows.net/xxx
+/Dest:https://xxx.blob.core.windows.net/xxx /SourceKey:xxx /DestKey:xxx
+/S
+```
 
 AzCopy использует [API копирования больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/copy-blob) для копирования каждого файла в контейнере.  
 
@@ -54,11 +56,15 @@ AzCopy использует [API копирования больших двои�
 
 - Скачивание одного большого двоичного объекта:
 
-      azure storage blob download -k "<Account Key>" -a "<Storage Account Name>" --container "<Blob Container Name>" -b "<Remote File Name>" -d "<Local path where the file will be downloaded to>"
+    ```azurecli-interactive
+    azure storage blob download -k "<Account Key>" -a "<Storage Account Name>" --container "<Blob Container Name>" -b "<Remote File Name>" -d "<Local path where the file will be downloaded to>"
+    ```
 
 - Отправка одного большого двоичного объекта:
 
-      azure storage blob upload -k "<Account Key>" -a "<Storage Account Name>" --container "<Blob Container Name>" -f "<Local File Name>"
+    ```azurecli-interactive
+    azure storage blob upload -k "<Account Key>" -a "<Storage Account Name>" --container "<Blob Container Name>" -f "<Local File Name>"
+    ```
 
 **Как перенести большие двоичные объекты из одной учетной записи хранения в другую?**
 
@@ -160,15 +166,19 @@ AzCopy использует [API копирования больших двои�
 
     Чтобы скопировать все диски в учетную запись хранения:
 
-        AzCopy /Source:https://sourceaccount.blob.core.windows.net/mycontainer1
-        /Dest:https://destaccount.blob.core.windows.net/mycontainer2
-        /SourceKey:key1 /DestKey:key2 /S
+    ```azurepowershell-interactive
+    AzCopy /Source:https://sourceaccount.blob.core.windows.net/mycontainer1
+    /Dest:https://destaccount.blob.core.windows.net/mycontainer2
+    /SourceKey:key1 /DestKey:key2 /S
+    ```
 
     Чтобы скопировать только один диск, введите имя диска в поле **Шаблон**:
 
-        AzCopy /Source:https://sourceaccount.blob.core.windows.net/mycontainer1
-        /Dest:https://destaccount.blob.core.windows.net/mycontainer2
-        /SourceKey:key1 /DestKey:key2 /Pattern:abc.vhd
+    ```azurepowershell-interactive
+    AzCopy /Source:https://sourceaccount.blob.core.windows.net/mycontainer1
+    /Dest:https://destaccount.blob.core.windows.net/mycontainer2
+    /SourceKey:key1 /DestKey:key2 /Pattern:abc.vhd
+    ```
 
 Для завершения операции может потребоваться несколько часов.
 
@@ -190,9 +200,11 @@ AzCopy использует [API копирования больших двои�
 
 3.  Затем выполните следующую команду, чтобы переместить контейнер. Замените текст фактическими значениями.   
 
-            AzCopy /Source:https://sourceaccount.blob.core.windows.net/mycontainer1
-            /Dest:https://destaccount.blob.core.windows.net/mycontainer2
-            /SourceKey:key1 /DestKey:key2 /S
+    ```azurepowershell-interactive
+    AzCopy /Source:https://sourceaccount.blob.core.windows.net/mycontainer1
+    /Dest:https://destaccount.blob.core.windows.net/mycontainer2
+    /SourceKey:key1 /DestKey:key2 /S
+    ```
 
     - `/Source`: укажите URI для исходной учетной записи хранения (к контейнеру).  
     - `/Dest`: укажите URI для целевой учетной записи хранения (к контейнеру).  

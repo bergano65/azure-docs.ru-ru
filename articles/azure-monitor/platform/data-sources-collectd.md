@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/27/2018
-ms.openlocfilehash: 7f3b928e657b5c061e624281e1d5a8805283a657
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 488f273336da05738609333f911fe3a90ba59496
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82186430"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86111989"
 ---
 # <a name="collect-data-from-collectd-on-linux-agents-in-azure-monitor"></a>Сбор данных CollectD с помощью агентов Linux в Azure Monitor
 [CollectD](https://collectd.org/) — управляющая программа Linux с открытым исходным кодом, которая периодически собирает метрики производительности приложений и системные данные. К примерам таких приложений относятся виртуальная машина Java (JVM), сервер MySQL и Nginx. В этой статье приводятся сведения о сборе данных производительности CollectD в Azure Monitor.
@@ -24,26 +24,30 @@ ms.locfileid: "82186430"
 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
 
-    LoadPlugin write_http
+```xml
+LoadPlugin write_http
 
-    <Plugin write_http>
-         <Node "oms">
-         URL "127.0.0.1:26000/oms.collectd"
-         Format "JSON"
-         StoreRates true
-         </Node>
-    </Plugin>
+<Plugin write_http>
+   <Node "oms">
+      URL "127.0.0.1:26000/oms.collectd"
+      Format "JSON"
+      StoreRates true
+   </Node>
+</Plugin>
+```
 
 Если используется CollectD версии 5.5 или более ранней версии, используйте следующую конфигурацию вместо указанной.
 
-    LoadPlugin write_http
+```xml
+LoadPlugin write_http
 
-    <Plugin write_http>
-       <URL "127.0.0.1:26000/oms.collectd">
-        Format "JSON"
-         StoreRates true
-       </URL>
-    </Plugin>
+<Plugin write_http>
+   <URL "127.0.0.1:26000/oms.collectd">
+      Format "JSON"
+      StoreRates true
+   </URL>
+</Plugin>
+```
 
 В конфигурации CollectD для отправки данных производительности агенту Log Analytics для Linux через порт 26000 по умолчанию используется подключаемый модуль `write_http`. 
 
@@ -52,15 +56,17 @@ ms.locfileid: "82186430"
 
 Агент Log Analytics для Linux также ожидает передачи данных с порта 26000 для сбора метрик CollectD, а затем преобразует эти метрики в метрики схемы Azure Monitor. Ниже приведена конфигурация агента Log Analytics для Linux `collectd.conf`.
 
-    <source>
-      type http
-      port 26000
-      bind 127.0.0.1
-    </source>
+```xml
+<source>
+   type http
+   port 26000
+   bind 127.0.0.1
+</source>
 
-    <filter oms.collectd>
-      type filter_collectd
-    </filter>
+<filter oms.collectd>
+   type filter_collectd
+</filter>
+```
 
 > [!NOTE]
 > Значение по умолчанию — чтение значений с [интервалом](https://collectd.org/wiki/index.php/Interval)10 секунд. Так как это напрямую влияет на объем данных, отправляемых в журналы Azure Monitor, может потребоваться настроить этот интервал в собранной конфигурации, чтобы подвести хороший баланс между требованиями к мониторингу и связанными затратами и использованием журналов Azure Monitor.
@@ -83,11 +89,15 @@ ms.locfileid: "82186430"
 
     Если конфигурационные файлы CollectD находятся в папке /etc/collectd.d/:
 
-        sudo cp /etc/opt/microsoft/omsagent/sysconf/omsagent.d/oms.conf /etc/collectd.d/oms.conf
+    ```console
+    sudo cp /etc/opt/microsoft/omsagent/sysconf/omsagent.d/oms.conf /etc/collectd.d/oms.conf
+    ```
 
     Если конфигурационные файлы CollectD находятся в папке /etc/collectd/collectd.conf.d/:
 
-        sudo cp /etc/opt/microsoft/omsagent/sysconf/omsagent.d/oms.conf /etc/collectd/collectd.conf.d/oms.conf
+    ```console
+    sudo cp /etc/opt/microsoft/omsagent/sysconf/omsagent.d/oms.conf /etc/collectd/collectd.conf.d/oms.conf
+    ```
 
     >[!NOTE]
     >Если используется CollectD версии 5.5 или более ранней версии, потребуется изменить теги в `oms.conf`, как показано выше.
@@ -95,13 +105,17 @@ ms.locfileid: "82186430"
 
 2. Скопируйте файл collectd.conf в конфигурационный каталог omsagent в соответствующей рабочей области.
 
-        sudo cp /etc/opt/microsoft/omsagent/sysconf/omsagent.d/collectd.conf /etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.d/
-        sudo chown omsagent:omiusers /etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.d/collectd.conf
+    ```console
+    sudo cp /etc/opt/microsoft/omsagent/sysconf/omsagent.d/collectd.conf /etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.d/
+    sudo chown omsagent:omiusers /etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.d/collectd.conf
+    ```
 
 3. Перезапустите CollectD и агент Log Analytics для Linux, выполнив следующие команды.
 
-        sudo service collectd restart
-        sudo /opt/microsoft/omsagent/bin/service_control restart
+    ```console
+    sudo service collectd restart
+    sudo /opt/microsoft/omsagent/bin/service_control restart
+    ```
 
 ## <a name="collectd-metrics-to-azure-monitor-schema-conversion"></a>Метрики CollectD для преобразования в метрики схемы Azure Monitor
 Для сохранения знакомой модели между метриками инфраструктуры, уже собранными агентом Log Analytics для Linux, и новыми метриками, собранными CollectD, используется следующая схема сопоставления.

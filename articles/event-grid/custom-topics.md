@@ -1,18 +1,14 @@
 ---
 title: Пользовательские разделы в службе "Сетка событий Azure"
 description: Описание пользовательских разделов в службе "Сетка событий Azure".
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 03/16/2020
-ms.author: spelluru
-ms.openlocfilehash: 166a48d74d32c8b0a3a59310e693ea96ada29116
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: 8f48824989c8ec51b766385188ad99e9e59cf621
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81394362"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86113791"
 ---
 # <a name="custom-topics-in-azure-event-grid"></a>Пользовательские разделы в службе "Сетка событий Azure"
 В разделе сетки событий представлена конечная точка, в которой источник отправляет события. Издатель создает раздел сетки событий и решает, сколько разделов нужно источнику событий: один или несколько. Раздел используется для коллекции связанных событий. Чтобы реагировать на события определенных типов, подписчикам следует решить, на какие из разделов подписаться.

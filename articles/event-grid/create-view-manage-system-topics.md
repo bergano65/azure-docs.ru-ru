@@ -1,17 +1,14 @@
 ---
 title: Создание, Просмотр разделов системы и управление ими в службе "Сетка событий Azure" (портал)
 description: В этой статье показано, как просмотреть существующий системный раздел, создать разделы службы "Сетка событий Azure" с помощью портал Azure.
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 06/02/2020
-ms.author: spelluru
-ms.openlocfilehash: 23b87812492485fc2336b8d2d35bf0426ede4772
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: 2dbb0893668d72cfebf2d64e6515ff6ab6fed9bc
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84457241"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86115117"
 ---
 # <a name="create-view-and-manage-event-grid-system-topics-in-the-azure-portal"></a>Создание, Просмотр разделов системы сетки событий и управление ими в портал Azure
 В этой статье показано, как создавать системные разделы и управлять ими с помощью портал Azure. Общие сведения о системных разделах см. в разделе [системные разделы](system-topics.md).
@@ -90,5 +87,5 @@ ms.locfileid: "84457241"
 
     ![Системный раздел — Создание подписки на события](./media/create-view-manage-system-topics/create-event-subscription.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о системных разделах и типах разделов, поддерживаемых службой "Сетка событий Azure", см. в разделе [системные разделы в службе "Сетка событий Azure](system-topics.md) ". 

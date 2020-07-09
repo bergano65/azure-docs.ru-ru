@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/28/2018
-ms.openlocfilehash: 49eb3fa22bc9afffb9e93f3152cdc00323b76d41
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 407257dbe9fbfa560153d5044263fc4c947cb05c
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77662167"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86111938"
 ---
 # <a name="collecting-custom-json-data-sources-with-the-log-analytics-agent-for-linux-in-azure-monitor"></a>Сбор данных из пользовательских источников данных JSON с помощью агента Log Analytics для Linux в службу Azure Monitor
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
@@ -29,7 +30,7 @@ ms.locfileid: "77662167"
 
 Например, ниже приведен отдельный файл конфигурации `exec-json.conf` в `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.d/`.  В нем используется подключаемый модуль FluentD `exec` для запуска команды curl каждые 30 секунд.  Выходные данные этой команды собираются с помощью выходного подключаемого модуля JSON.
 
-```
+```xml
 <source>
   type exec
   command 'curl localhost/json.output'
@@ -51,6 +52,7 @@ ms.locfileid: "77662167"
   retry_wait 30s
 </match>
 ```
+
 Для файла конфигурации, добавленного в разделе `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.d/`, необходимо изменить владельца, выполнив следующую команду.
 
 `sudo chown omsagent:omiusers /etc/opt/microsoft/omsagent/conf/omsagent.d/exec-json.conf`
@@ -58,7 +60,7 @@ ms.locfileid: "77662167"
 ### <a name="configure-output-plugin"></a>Настройка выходного подключаемого модуля 
 Добавьте следующую конфигурацию выходного подключаемого модуля в раздел `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.conf` основной конфигурации или в отдельный файл конфигурации в каталоге `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.d/`.
 
-```
+```xml
 <match oms.api.**>
   type out_oms_api
   log_level info
@@ -76,18 +78,22 @@ ms.locfileid: "77662167"
 ### <a name="restart-log-analytics-agent-for-linux"></a>Перезапуск агента Log Analytics для Linux
 Перезапустите службу агента Log Analytics для Linux, выполнив следующую команду.
 
-    sudo /opt/microsoft/omsagent/bin/service_control restart 
+```console
+sudo /opt/microsoft/omsagent/bin/service_control restart 
+```
 
 ## <a name="output"></a>Выходные данные
 Данные, собираемые в Azure Monitor, будут иметь тип записи `<FLUENTD_TAG>_CL`.
 
 Например, пользовательский тег `tag oms.api.tomcat` в Azure Monitor будет иметь тип записи `tomcat_CL`.  Для получения всех записей этого типа выполните следующий запрос журнала.
 
-    Type=tomcat_CL
+```console
+Type=tomcat_CL
+```
 
 Поддерживаются вложенные источники данных JSON, но они индексируются не на основе родительского поля. Например, в результате выполнения запроса журнала `tag_s : "[{ "a":"1", "b":"2" }]` будут возвращены следующие данные JSON.
 
-```
+```json
 {
     "tag": [{
         "a":"1",
@@ -97,5 +103,5 @@ ms.locfileid: "77662167"
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 

@@ -4,14 +4,14 @@ description: В этой статье описывается, как настр�
 author: ajlam
 ms.author: andrela
 ms.service: mysql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 6/24/2020
-ms.openlocfilehash: 813e86e8446932d1618fff1853cee8972570f43f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1a26f3c1b57fd750cbb59f32ddc8bd0ea85293ca
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85363025"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86112771"
 ---
 # <a name="configure-and-access-audit-logs-in-the-azure-cli"></a>Настройка и доступ к журналам аудита в Azure CLI
 
@@ -55,6 +55,6 @@ ms.locfileid: "85363025"
     az mysql server configuration set --name audit_log_include_users --resource-group myresourcegroup --server mydemoserver --value "sampleuser"
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [журналах аудита](concepts-audit-logs.md) в базе данных Azure для MySQL
 - Узнайте, как настроить журналы аудита в [портал Azure](howto-configure-audit-logs-portal.md)

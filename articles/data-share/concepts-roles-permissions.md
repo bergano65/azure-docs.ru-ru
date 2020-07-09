@@ -6,12 +6,12 @@ ms.author: joanpo
 ms.service: data-share
 ms.topic: conceptual
 ms.date: 07/10/2019
-ms.openlocfilehash: 85b680aafd822b80edf543ca39787848129f1930
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 229d4fd6647a8a1b756fedee2a864d00b9c7de62
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85322045"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86111003"
 ---
 # <a name="roles-and-requirements-for-azure-data-share"></a>Роли и требования для Azure Data Share 
 
@@ -30,9 +30,8 @@ ms.locfileid: "85322045"
 
 Ниже приведена сводка ролей, назначенных управляемому удостоверению ресурса общего доступа к данным:
 
-| |  |  |
-|---|---|---|
 |**Тип хранилища данных**|**Хранилище данных источника поставщика данных**|**Целевое хранилище данных потребителя данных**|
+|---|---|---|
 |хранилище BLOB-объектов Azure| Читатель данных больших двоичных объектов хранилища | Участник данных BLOB-объектов хранилища
 |Azure Data Lake 1-го поколения | Владелец | Не поддерживается
 |Azure Data Lake 2-го поколения | Читатель данных больших двоичных объектов хранилища | Участник данных BLOB-объектов хранилища
@@ -42,9 +41,8 @@ ms.locfileid: "85322045"
 
 Для совместного использования на основе SQL пользователь SQL должен быть создан из внешнего поставщика в базе данных SQL Azure с тем же именем, что и ресурс общего ресурса данных Azure. Ниже приведена сводка разрешений, необходимых пользователю SQL.
 
-| |  |  |
-|---|---|---|
 |**Тип базы данных SQL**|**Разрешение пользователя SQL для поставщика данных**|**Разрешение пользователя SQL для потребителя данных**|
+|---|---|---|
 |База данных SQL Azure | db_datareader; | db_datareader, db_datawriter db_ddladmin
 |Azure Synapse Analytics (ранее — Хранилище данных SQL) | db_datareader; | db_datareader, db_datawriter db_ddladmin
 |
@@ -103,4 +101,3 @@ ms.locfileid: "85322045"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о ролях в Azure см. в статье [Определения ролей](../role-based-access-control/role-definitions.md).
-

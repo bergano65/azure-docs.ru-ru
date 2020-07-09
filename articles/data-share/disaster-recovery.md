@@ -4,13 +4,14 @@ description: Аварийное восстановление для общей �
 author: joannapea
 ms.author: joanpo
 ms.service: data-share
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/18/2019
-ms.openlocfilehash: a736e3ddfcf785f9ce27140eed58374a0732c1f1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c53450094801825b86b74505fbe34dc8defe4f6
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75483184"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86110971"
 ---
 # <a name="disaster-recovery-for-azure-data-share"></a>Аварийное восстановление для общей папки данных Azure
 

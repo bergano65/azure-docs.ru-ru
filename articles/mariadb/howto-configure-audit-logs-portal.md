@@ -4,14 +4,14 @@ description: В этой статье описывается, как настр�
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 6/24/2020
-ms.openlocfilehash: f05f26c54d9f3ea62180c598aada59d405c3c805
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 30ca62305c325943e17ee574873cfbbbaee97f77
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85362685"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86113043"
 ---
 # <a name="configure-and-access-audit-logs-in-the-azure-portal"></a>Настройка и доступ к журналам аудита в портал Azure
 
@@ -67,7 +67,7 @@ ms.locfileid: "85362685"
 
 1. Получите доступ к журналам аудита, просмотрев их в настроенных приемниках данных. Для отображения журналов может потребоваться до 10 минут.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [журналах аудита](concepts-audit-logs.md) в базе данных Azure для MariaDB
 - Узнайте, как настроить журналы аудита в [Azure CLI](howto-configure-audit-logs-cli.md)

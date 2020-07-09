@@ -4,14 +4,14 @@ description: В этой статье описывается, как включ�
 author: ajlam
 ms.author: andrela
 ms.service: mysql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 4/28/2020
-ms.openlocfilehash: c8a19fe338af14f97e0eb191d7b57e840c71e400
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 28dd9296eb0b2b2a014de9aeccf82baad5ef6e2c
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82612730"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86112567"
 ---
 # <a name="auto-grow-storage-in-azure-database-for-mysql-server-using-powershell"></a>Автоматическое увеличение объема хранилища в базе данных Azure для сервера MySQL с помощью PowerShell
 

@@ -4,14 +4,14 @@ description: В этой статье описывается, как включ�
 author: ambhatna
 ms.author: ambhatna
 ms.service: mysql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 44ce852aaf2ed5839650132c6eae95728c27dc5b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fd7b9a809421aa33b83902960da2f02d4deabf9a
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80062633"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86113272"
 ---
 # <a name="auto-grow-azure-database-for-mysql-storage-using-the-azure-cli"></a>Автоматическое увеличение базы данных Azure для хранилища MySQL с помощью Azure CLI
 В этой статье описывается, как можно настроить расширение хранилища базы данных Azure для MySQL, не влияя на рабочую нагрузку.

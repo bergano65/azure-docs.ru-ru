@@ -6,11 +6,12 @@ author: cweining
 ms.author: cweining
 ms.date: 02/23/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: d845e245a242a88d16a2597f0144a0ae4a727cb0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b91abe282c25b161db72616d7123d7a2bf5dbc9f
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81640970"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86111071"
 ---
 # <a name="profile-aspnet-core-azure-linux-web-apps-with-application-insights-profiler"></a>Профилирование веб-приложений ASP.NET Core в Azure для Linux с помощью Application Insights Profiler
 
@@ -22,7 +23,7 @@ ms.locfileid: "81640970"
 
 ![Трассировки профилировщика](./media/profiler-aspnetcore-linux/profiler-traces.png)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Приведенные ниже инструкции применяются ко всем средам разработки для Windows, Linux и Mac:
 
 * Установите [пакет SDK для .NET Core 2.1.2 или более поздней версии](https://dotnet.microsoft.com/download/archives).
@@ -34,17 +35,17 @@ ms.locfileid: "81640970"
 
 1. Создайте веб-приложение MVC для ASP.NET Core.
 
-    ```
-    dotnet new mvc -n LinuxProfilerTest
-    ```
+   ```console
+   dotnet new mvc -n LinuxProfilerTest
+   ```
 
 1. Измените рабочую папку на корневую папку для проекта.
 
 1. Добавьте пакет NuGet для сбора трассировок профилировщика.
 
-    ```shell
-    dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore
-    ```
+   ```console
+   dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore
+   ```
 
 1. Включить Application Insights в Program.cs:
 
@@ -54,7 +55,7 @@ ms.locfileid: "81640970"
             .UseApplicationInsights() // Add this line of code to Enable Application Insights
             .UseStartup<Startup>();
     ```
-    
+
 1. Включить профилировщик в Startup.cs:
 
     ```csharp
@@ -68,24 +69,24 @@ ms.locfileid: "81640970"
 1. Добавьте строку кода в раздел **HomeController.cs** для случайной задержки на несколько секунд.
 
     ```csharp
-        using System.Threading;
-        ...
+    using System.Threading;
+    ...
 
-        public IActionResult About()
-            {
-                Random r = new Random();
-                int delay = r.Next(5000, 10000);
-                Thread.Sleep(delay);
-                return View();
-            }
+    public IActionResult About()
+        {
+            Random r = new Random();
+            int delay = r.Next(5000, 10000);
+            Thread.Sleep(delay);
+            return View();
+        }
     ```
 
 1. Сохраните и зафиксируйте внесенные изменения в локальном репозитории.
 
-    ```
-        git init
-        git add .
-        git commit -m "first commit"
+    ```console
+    git init
+    git add .
+    git commit -m "first commit"
     ```
 
 ## <a name="create-the-linux-web-app-to-host-your-project"></a>Создание веб-приложения в Linux для размещения проекта
@@ -111,7 +112,7 @@ ms.locfileid: "81640970"
 
 1. В окне командной строки перейдите в корневую папку проекта. Добавьте удаленный репозиторий Git, чтобы он указывал на репозиторий в службе приложений.
 
-    ```
+    ```console
     git remote add azure https://<username>@<app_name>.scm.azurewebsites.net:443/<app_name>.git
     ```
 
@@ -120,13 +121,13 @@ ms.locfileid: "81640970"
 
 2. Разверните проект, применив изменения в Azure с помощью команды push:
 
-    ```
+    ```console
     git push azure master
     ```
 
-Выходные данные должны соответствовать следующему примеру.
+    Выходные данные должны соответствовать следующему примеру.
 
-    ```
+    ```output
     Counting objects: 9, done.
     Delta compression using up to 8 threads.
     Compressing objects: 100% (8/8), done.
@@ -143,8 +144,7 @@ ms.locfileid: "81640970"
     remote: .
     remote:   Installing Newtonsoft.Json 10.0.3.
     remote:   Installing Microsoft.ApplicationInsights.Profiler.Core 1.1.0-LKG
-    …
-
+    ...
     ```
 
 ## <a name="add-application-insights-to-monitor-your-web-apps"></a>Добавление Application Insights для мониторинга веб-приложений
@@ -153,9 +153,7 @@ ms.locfileid: "81640970"
 
 2. Скопируйте значение **iKey** ресурса Application Insights и задайте следующие параметры в веб-приложениях.
 
-    ```
-    APPINSIGHTS_INSTRUMENTATIONKEY: [YOUR_APPINSIGHTS_KEY]
-    ```
+    `APPINSIGHTS_INSTRUMENTATIONKEY: [YOUR_APPINSIGHTS_KEY]`
 
     После изменения параметров приложения выполняется автоматический перезапуск сайта. Когда новые параметры будут применены, профилировщик немедленно запустится на две минуты. Затем он будет запускаться на две минуты каждый час.
 
@@ -169,7 +167,7 @@ ms.locfileid: "81640970"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Если вы используете пользовательские контейнеры, размещенные в Службе приложений Azure, чтобы включить Application Insights Profiler, следуйте инструкциям из статьи [Enable Service Profiler for containerized ASP.NET Core application](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/tree/master/examples/EnableServiceProfilerForContainerApp) (Включение профилировщика службы для контейнерного приложения ASP.NET Core).
 
 О каких-либо проблемах или предложениях сообщайте в репозиторий Github: [ApplicationInsights-Profiler-AspNetCore: Issues](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/issues) (ApplicationInsights-Profiler-AspNetCore: вопросы)

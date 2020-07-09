@@ -4,11 +4,12 @@ description: REST API оповещение Log Analytics позволяет со
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 07/29/2018
-ms.openlocfilehash: a85dad2ba638505233e5df769e55fa5bd7b8dafd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4ab2a1369fc4902afec7d62e44ef8e947864167f
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77665006"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86112057"
 ---
 # <a name="create-and-manage-alert-rules-in-log-analytics-with-rest-api"></a>Создание правил генерации оповещений и управление ими в Log Analytics с помощью REST API 
 
@@ -19,14 +20,14 @@ REST API оповещений Log Analytics позволяет создават�
 
 Для поиска в службе Log Analytics используется REST API категории RESTful — к нему можно получить доступ с помощью REST API Azure Resource Manager. В этом документе вы найдете примеры, когда доступ к API из командной строки PowerShell осуществляется через [ARMClient](https://github.com/projectkudu/ARMClient) — программу командной строки с открытым кодом, которая упрощает вызов API Azure Resource Manager. Использование ARMClient и PowerShell — это один из множества вариантов получения доступа к API поиска по службе Log Analytics. С помощью этих инструментов можно использовать API Azure Resource Manager категории RESTful для осуществления вызовов рабочих областей Log Analytics и выполнения команд поиска в них. API будет выдавать результаты поиска в формате JSON, позволяя программно использовать результаты поиска различными способами.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 В настоящее время оповещения могут создаваться только с помощью сохраненного поиска в службе Log Analytics.  Дополнительные сведения см. в статье [REST API поиска в журналах](../../azure-monitor/log-query/log-query-overview.md).
 
 ## <a name="schedules"></a>Расписания
 Сохраненный поиск может включать одно расписание или несколько. Расписание определяет, как часто выполняется поиск, а также интервал времени для определения условий.
 У расписаний есть свойства, приведенные в таблице ниже.
 
-| Свойство. | Описание: |
+| Свойство | Описание |
 |:--- |:--- |
 | Интервал |Насколько часто выполняется поиск. Измеряется в минутах. |
 | QueryTimeSpan |Интервал времени для вычисления условий. Значение должно быть больше или равно значению свойства Interval. Измеряется в минутах. |
@@ -37,25 +38,29 @@ REST API оповещений Log Analytics позволяет создават�
 ### <a name="retrieving-schedules"></a>Получение расписаний
 Используйте метод Get для получения всех расписаний для сохраненного поиска.
 
-    armclient get /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search  ID}/schedules?api-version=2015-03-20
+```powershell
+armclient get /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search  ID}/schedules?api-version=2015-03-20
+```
 
 Чтобы получить конкретное расписание для сохраненного поискового запроса, используйте метод Get с идентификатором расписания.
 
-    armclient get /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Subscription ID}/schedules/{Schedule ID}?api-version=2015-03-20
+```powershell
+armclient get /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Subscription ID}/schedules/{Schedule ID}?api-version=2015-03-20
+```
 
 Ниже приведен пример ответа для расписания.
 
 ```json
 {
-    "value": [{
-        "id": "subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/sampleRG/providers/Microsoft.OperationalInsights/workspaces/MyWorkspace/savedSearches/0f0f4853-17f8-4ed1-9a03-8e888b0d16ec/schedules/a17b53ef-bd70-4ca4-9ead-83b00f2024a8",
-        "etag": "W/\"datetime'2016-02-25T20%3A54%3A49.8074679Z'\"",
-        "properties": {
-            "Interval": 15,
-            "QueryTimeSpan": 15,
-            "Enabled": true,
-        }
-    }]
+   "value": [{
+      "id": "subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/sampleRG/providers/Microsoft.OperationalInsights/workspaces/MyWorkspace/savedSearches/0f0f4853-17f8-4ed1-9a03-8e888b0d16ec/schedules/a17b53ef-bd70-4ca4-9ead-83b00f2024a8",
+      "etag": "W/\"datetime'2016-02-25T20%3A54%3A49.8074679Z'\"",
+      "properties": {
+         "Interval": 15,
+         "QueryTimeSpan": 15,
+         "Enabled": true,
+      }
+   }]
 }
 ```
 
@@ -65,28 +70,32 @@ REST API оповещений Log Analytics позволяет создават�
 > [!NOTE]
 > Имена всех сохраненных поисковых запросов, отчетов и действий, создаваемых с помощью API Log Analytics, должны быть в нижнем регистре.
 
-    $scheduleJson = "{'properties': { 'Interval': 15, 'QueryTimeSpan':15, 'Enabled':'true' } }"
-    armclient put /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/mynewschedule?api-version=2015-03-20 $scheduleJson
+```powershell
+$scheduleJson = "{'properties': { 'Interval': 15, 'QueryTimeSpan':15, 'Enabled':'true' } }"
+armclient put /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/mynewschedule?api-version=2015-03-20 $scheduleJson
+```
 
 ### <a name="editing-a-schedule"></a>Изменение расписания
 Чтобы изменить расписание, используйте метод Put с идентификатором имеющегося расписания для того же сохраненного поискового запроса (в примере ниже расписание отключено). Текст запроса должен включать *ETag* расписания.
 
-      $scheduleJson = "{'etag': 'W/\"datetime'2016-02-25T20%3A54%3A49.8074679Z'\""','properties': { 'Interval': 15, 'QueryTimeSpan':15, 'Enabled':'false' } }"
-      armclient put /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/mynewschedule?api-version=2015-03-20 $scheduleJson
-
+```powershell
+$scheduleJson = "{'etag': 'W/\"datetime'2016-02-25T20%3A54%3A49.8074679Z'\""','properties': { 'Interval': 15, 'QueryTimeSpan':15, 'Enabled':'false' } }"
+armclient put /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/mynewschedule?api-version=2015-03-20 $scheduleJson
+```
 
 ### <a name="deleting-schedules"></a>Удаление расписаний
 Чтобы удалить расписание, используйте метод Delete с идентификатором расписания.
 
-    armclient delete /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Subscription ID}/schedules/{Schedule ID}?api-version=2015-03-20
-
+```powershell
+armclient delete /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Subscription ID}/schedules/{Schedule ID}?api-version=2015-03-20
+```
 
 ## <a name="actions"></a>Действия
 Расписание может включать несколько действий. Действие может определять один выполняемый процесс или несколько (например, отправку почты или запуск модуля Runbook) или задавать пороговое значение, определяющее, когда результаты поиска отвечают некоторым условиям.  Некоторые действия будут определять оба элемента так, чтобы процессы выполнялись при достижении порогового значения.
 
 У всех действий есть свойства, приведенные в таблице ниже.  Разные типы оповещений имеют различные дополнительные свойства, которые описаны ниже.
 
-| Свойство. | Описание: |
+| Свойство | Описание |
 |:--- |:--- |
 | `Type` |Тип действия.  Сейчас возможными значениями являются Alert и Webhook. |
 | `Name` |Отображаемое имя оповещения. |
@@ -96,11 +105,15 @@ REST API оповещений Log Analytics позволяет создават�
 
 Используйте метод Get для получения всех действий для расписания.
 
-    armclient get /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search  ID}/schedules/{Schedule ID}/actions?api-version=2015-03-20
+```powershell
+armclient get /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search  ID}/schedules/{Schedule ID}/actions?api-version=2015-03-20
+```
 
 Используйте метод Get с идентификатором действия для получения конкретного действия для расписания.
 
-    armclient get /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Subscription ID}/schedules/{Schedule ID}/actions/{Action ID}?api-version=2015-03-20
+```powershell
+armclient get /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Subscription ID}/schedules/{Schedule ID}/actions/{Action ID}?api-version=2015-03-20
+```
 
 ### <a name="creating-or-editing-actions"></a>Создание или изменение действий
 Чтобы создать действие, используйте метод Put с идентификатором действия, уникальным для расписания.  При создании действия в консоли Log Analytics для идентификатора действия отображается GUID.
@@ -116,7 +129,9 @@ REST API оповещений Log Analytics позволяет создават�
 
 Для удаления действия используйте метод Delete с идентификатором действия.
 
-    armclient delete /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Subscription ID}/schedules/{Schedule ID}/Actions/{Action ID}?api-version=2015-03-20
+```powershell
+armclient delete /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Subscription ID}/schedules/{Schedule ID}/Actions/{Action ID}?api-version=2015-03-20
+```
 
 ### <a name="alert-actions"></a>Действия оповещений
 Расписание должно включать одно-единственное действие оповещения.  Действия оповещений включают один или несколько разделов в таблице ниже.  Они более подробно описаны далее.
@@ -134,7 +149,7 @@ REST API оповещений Log Analytics позволяет создават�
 
 У пороговых значений есть свойства, приведенные в таблице ниже.
 
-| Свойство. | Описание: |
+| Свойство | Описание |
 |:--- |:--- |
 | `Operator` |Оператор для сравнения порогового значения. <br> gt — больше <br>  lt = меньше чем |
 | `Value` |Пороговое значение. |
@@ -143,26 +158,32 @@ REST API оповещений Log Analytics позволяет создават�
 
 Ниже приведен пример ответа для действия, содержащего только пороговое значение.  
 
-    "etag": "W/\"datetime'2016-02-25T20%3A54%3A20.1302566Z'\"",
-    "properties": {
-        "Type": "Alert",
-        "Name": "My threshold action",
-        "Threshold": {
-            "Operator": "gt",
-            "Value": 10
-        },
-        "Version": 1
-    }
+```json
+"etag": "W/\"datetime'2016-02-25T20%3A54%3A20.1302566Z'\"",
+"properties": {
+   "Type": "Alert",
+   "Name": "My threshold action",
+   "Threshold": {
+      "Operator": "gt",
+      "Value": 10
+   },
+   "Version": 1
+}
+```
 
 Чтобы создать действие с пороговым значением для расписания, используйте метод Put с уникальным идентификатором действия.  
 
-    $thresholdJson = "{'properties': { 'Name': 'My Threshold', 'Version':'1', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 10 } } }"
-    armclient put /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/mythreshold?api-version=2015-03-20 $thresholdJson
+```powershell
+$thresholdJson = "{'properties': { 'Name': 'My Threshold', 'Version':'1', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 10 } } }"
+armclient put /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/mythreshold?api-version=2015-03-20 $thresholdJson
+```
 
 Чтобы изменить действие с пороговым значением для расписания, используйте метод Put с идентификатором существующего действия.  Текст запроса должен содержать Etag действия.
 
-    $thresholdJson = "{'etag': 'W/\"datetime'2016-02-25T20%3A54%3A20.1302566Z'\"','properties': { 'Name': 'My Threshold', 'Version':'1', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 10 } } }"
-    armclient put /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/mythreshold?api-version=2015-03-20 $thresholdJson
+```powershell
+$thresholdJson = "{'etag': 'W/\"datetime'2016-02-25T20%3A54%3A20.1302566Z'\"','properties': { 'Name': 'My Threshold', 'Version':'1', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 10 } } }"
+armclient put /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/mythreshold?api-version=2015-03-20 $thresholdJson
+```
 
 #### <a name="severity"></a>Серьезность
 Log Analytics позволяет классифицировать оповещения по категориям, чтобы упростить управление и рассмотрение. По уровню серьезности оповещение может быть информационным, предупреждающим и критическим. Эти уровни соответствуют нормализованной шкале серьезности оповещений Azure следующим образом.
@@ -175,26 +196,33 @@ Log Analytics позволяет классифицировать оповеще
 
 Ниже приведен пример ответа для действия, содержащего только пороговое значение и серьезность. 
 
-    "etag": "W/\"datetime'2016-02-25T20%3A54%3A20.1302566Z'\"",
-    "properties": {
-        "Type": "Alert",
-        "Name": "My threshold action",
-        "Threshold": {
-            "Operator": "gt",
-            "Value": 10
-        },
-        "Severity": "critical",
-        "Version": 1    }
+```json
+"etag": "W/\"datetime'2016-02-25T20%3A54%3A20.1302566Z'\"",
+"properties": {
+   "Type": "Alert",
+   "Name": "My threshold action",
+   "Threshold": {
+      "Operator": "gt",
+      "Value": 10
+   },
+   "Severity": "critical",
+   "Version": 1
+}
+```
 
 Чтобы создать действие для расписания с указанием серьезности, используйте метод Put с уникальным идентификатором действия.  
 
-    $thresholdWithSevJson = "{'properties': { 'Name': 'My Threshold', 'Version':'1','Severity': 'critical', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 10 } } }"
-    armclient put /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/mythreshold?api-version=2015-03-20 $thresholdWithSevJson
+```powershell
+$thresholdWithSevJson = "{'properties': { 'Name': 'My Threshold', 'Version':'1','Severity': 'critical', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 10 } } }"
+armclient put /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/mythreshold?api-version=2015-03-20 $thresholdWithSevJson
+```
 
 Чтобы изменить действие серьезности для расписания, используйте метод Put с идентификатором существующего действия.  Текст запроса должен содержать Etag действия.
 
-    $thresholdWithSevJson = "{'etag': 'W/\"datetime'2016-02-25T20%3A54%3A20.1302566Z'\"','properties': { 'Name': 'My Threshold', 'Version':'1','Severity': 'critical', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 10 } } }"
-    armclient put /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/mythreshold?api-version=2015-03-20 $thresholdWithSevJson
+```powershell
+$thresholdWithSevJson = "{'etag': 'W/\"datetime'2016-02-25T20%3A54%3A20.1302566Z'\"','properties': { 'Name': 'My Threshold', 'Version':'1','Severity': 'critical', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 10 } } }"
+armclient put /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/mythreshold?api-version=2015-03-20 $thresholdWithSevJson
+```
 
 #### <a name="suppress"></a>Подавление
 Предупреждения о запросах на основе Log Analytics будут срабатывать каждый раз, когда пороговое значение будет достигнуто или превышено. Основываясь на логике, подразумеваемой в запросе, это может привести к тому, что оповещение будет запущено в течение нескольких интервалов, и, следовательно, будут постоянно отправляться уведомления. Чтобы предотвратить такой сценарий, пользователь может установить опцию "Подавление" в Log Analytics, чтобы некоторое время ожидать получение уведомления во второй раз с целью предупреждения. Поэтому, если подавление установлено на 30 минут, то оповещение будет срабатывать в первый раз и отправлять настроенные уведомления. Прежде чем снова использовать уведомления для правила генерации оповещений, подождите 30 минут. В промежуточный период правило предупреждения будет продолжать выполняться. Уведомление подавляется Log Analytics за указанное время независимо от того, сколько раз срабатывало правило предупреждения в этот период.
@@ -203,29 +231,36 @@ Log Analytics позволяет классифицировать оповеще
 
 Ниже приведен пример ответа для действия, содержащего только пороговое значение, серьезность и свойство подавления.
 
-    "etag": "W/\"datetime'2016-02-25T20%3A54%3A20.1302566Z'\"",
-    "properties": {
-        "Type": "Alert",
-        "Name": "My threshold action",
-        "Threshold": {
-            "Operator": "gt",
-            "Value": 10
-        },
-        "Throttling": {
-          "DurationInMinutes": 30
-        },
-        "Severity": "critical",
-        "Version": 1    }
+```json
+"etag": "W/\"datetime'2016-02-25T20%3A54%3A20.1302566Z'\"",
+"properties": {
+   "Type": "Alert",
+   "Name": "My threshold action",
+   "Threshold": {
+      "Operator": "gt",
+      "Value": 10
+   },
+   "Throttling": {
+   "DurationInMinutes": 30
+   },
+   "Severity": "critical",
+   "Version": 1
+}
+```
 
 Чтобы создать действие для расписания с указанием серьезности, используйте метод Put с уникальным идентификатором действия.  
 
-    $AlertSuppressJson = "{'properties': { 'Name': 'My Threshold', 'Version':'1','Severity': 'critical', 'Type':'Alert', 'Throttling': { 'DurationInMinutes': 30 },'Threshold': { 'Operator': 'gt', 'Value': 10 } } }"
-    armclient put /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myalert?api-version=2015-03-20 $AlertSuppressJson
+```powershell
+$AlertSuppressJson = "{'properties': { 'Name': 'My Threshold', 'Version':'1','Severity': 'critical', 'Type':'Alert', 'Throttling': { 'DurationInMinutes': 30 },'Threshold': { 'Operator': 'gt', 'Value': 10 } } }"
+armclient put /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myalert?api-version=2015-03-20 $AlertSuppressJson
+```
 
 Чтобы изменить действие серьезности для расписания, используйте метод Put с идентификатором существующего действия.  Текст запроса должен содержать Etag действия.
 
-    $AlertSuppressJson = "{'etag': 'W/\"datetime'2016-02-25T20%3A54%3A20.1302566Z'\"','properties': { 'Name': 'My Threshold', 'Version':'1','Severity': 'critical', 'Type':'Alert', 'Throttling': { 'DurationInMinutes': 30 },'Threshold': { 'Operator': 'gt', 'Value': 10 } } }"
-    armclient put /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myalert?api-version=2015-03-20 $AlertSuppressJson
+```powershell
+$AlertSuppressJson = "{'etag': 'W/\"datetime'2016-02-25T20%3A54%3A20.1302566Z'\"','properties': { 'Name': 'My Threshold', 'Version':'1','Severity': 'critical', 'Type':'Alert', 'Throttling': { 'DurationInMinutes': 30 },'Threshold': { 'Operator': 'gt', 'Value': 10 } } }"
+armclient put /subscriptions/{Subscription ID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myalert?api-version=2015-03-20 $AlertSuppressJson
+```
 
 #### <a name="action-groups"></a>Группы действий
 Все оповещения в Azure используют группу действий в качестве механизма обработки действий по умолчанию. С помощью группы действий можно указать действия один раз, а затем связать группу действий для несколькими оповещениями в Azure. Это избавляет от необходимости повторно объявить одни и те же действия снова и снова. Группы действий поддерживает несколько действий, включая сообщения электронной почты, текстовые сообщения, голосовые вызовы, подключения ITSM, runbook службы автоматизации, универсальный код ресурса (URI) веб-перехватчика и многое другое. 
@@ -234,33 +269,39 @@ Log Analytics позволяет классифицировать оповеще
 
 Чтобы добавить связь группы действий с оповещением, укажите уникальный идентификатор Azure Resource Manager группы действий в определении оповещения. Ниже приведен наглядный пример.
 
-     "etag": "W/\"datetime'2017-12-13T10%3A52%3A21.1697364Z'\"",
-      "properties": {
-        "Type": "Alert",
-        "Name": "test-alert",
-        "Description": "I need to put a description here",
-        "Threshold": {
-          "Operator": "gt",
-          "Value": 12
-        },
-        "AzNsNotification": {
-          "GroupIds": [
-            "/subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup"
-          ]
-        },
-        "Severity": "critical",
-        "Version": 1
-      },
+```json
+"etag": "W/\"datetime'2017-12-13T10%3A52%3A21.1697364Z'\"",
+"properties": {
+   "Type": "Alert",
+   "Name": "test-alert",
+   "Description": "I need to put a description here",
+   "Threshold": {
+      "Operator": "gt",
+      "Value": 12
+   },
+   "AzNsNotification": {
+      "GroupIds": [
+         "/subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup"
+      ]
+   },
+   "Severity": "critical",
+   "Version": 1
+}
+```
 
 Используйте метод Put с уникальным идентификатором действия, чтобы привязать уже существующую группу действий к расписанию.  Ниже приведен пример использования.
 
-    $AzNsJson = "{'properties': { 'Name': 'test-alert', 'Version':'1', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 12 },'Severity': 'critical', 'AzNsNotification': {'GroupIds': ['subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup']} } }"
-    armclient put /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myAzNsaction?api-version=2015-03-20 $AzNsJson
+```powershell
+$AzNsJson = "{'properties': { 'Name': 'test-alert', 'Version':'1', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 12 },'Severity': 'critical', 'AzNsNotification': {'GroupIds': ['subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup']} } }"
+armclient put /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myAzNsaction?api-version=2015-03-20 $AzNsJson
+```
 
 Чтобы изменить группу действий, связанную с расписанием, используйте метод Put с идентификатором существующего действия.  Текст запроса должен содержать Etag действия.
 
-    $AzNsJson = "{'etag': 'datetime'2017-12-13T10%3A52%3A21.1697364Z'\"', 'properties': { 'Name': 'test-alert', 'Version':'1', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 12 },'Severity': 'critical', 'AzNsNotification': { 'GroupIds': ['subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup'] } } }"
-    armclient put /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myAzNsaction?api-version=2015-03-20 $AzNsJson
+```powershell
+$AzNsJson = "{'etag': 'datetime'2017-12-13T10%3A52%3A21.1697364Z'\"', 'properties': { 'Name': 'test-alert', 'Version':'1', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 12 },'Severity': 'critical', 'AzNsNotification': { 'GroupIds': ['subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup'] } } }"
+armclient put /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myAzNsaction?api-version=2015-03-20 $AzNsJson
+```
 
 #### <a name="customize-actions"></a>Настройка действий
 По умолчанию действия используют стандартные шаблон и формат для уведомлений. Однако пользователь может настроить некоторые действия, даже если ими управляют группы действий. В настоящее время можно настроить тему сообщения электронной почты и полезные данные веб-перехватчика.
@@ -268,72 +309,83 @@ Log Analytics позволяет классифицировать оповеще
 ##### <a name="customize-e-mail-subject-for-action-group"></a>Настройка темы сообщения электронной почты для группы действий
 По умолчанию в качестве темы для оповещений используется сообщение: уведомление о предупреждении `<AlertName>` `<WorkspaceName>` . Однако ее можно настроить, указав определенные слова или теги, чтобы вы могли легко применять правила фильтрации в папке "Входящие". Сведения о пользовательском заголовке электронного сообщения необходимо отправлять вместе с данными ActionGroup, как показано в следующем примере.
 
-     "etag": "W/\"datetime'2017-12-13T10%3A52%3A21.1697364Z'\"",
-      "properties": {
-        "Type": "Alert",
-        "Name": "test-alert",
-        "Description": "I need to put a description here",
-        "Threshold": {
-          "Operator": "gt",
-          "Value": 12
-        },
-        "AzNsNotification": {
-          "GroupIds": [
-            "/subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup"
-          ],
-          "CustomEmailSubject": "Azure Alert fired"
-        },
-        "Severity": "critical",
-        "Version": 1
-      },
+```json
+"etag": "W/\"datetime'2017-12-13T10%3A52%3A21.1697364Z'\"",
+"properties": {
+   "Type": "Alert",
+   "Name": "test-alert",
+   "Description": "I need to put a description here",
+   "Threshold": {
+      "Operator": "gt",
+      "Value": 12
+   },
+   "AzNsNotification": {
+      "GroupIds": [
+         "/subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup"
+      ],
+      "CustomEmailSubject": "Azure Alert fired"
+   },
+   "Severity": "critical",
+   "Version": 1
+}
+```
 
 Используйте метод Put с уникальным идентификатором действия, чтобы привязать уже существующую группу действий с измененными параметрами к расписанию.  Ниже приведен пример использования.
 
-    $AzNsJson = "{'properties': { 'Name': 'test-alert', 'Version':'1', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 12 },'Severity': 'critical', 'AzNsNotification': {'GroupIds': ['subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup'], 'CustomEmailSubject': 'Azure Alert fired'} } }"
-    armclient put /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myAzNsaction?api-version=2015-03-20 $AzNsJson
+```powershell
+$AzNsJson = "{'properties': { 'Name': 'test-alert', 'Version':'1', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 12 },'Severity': 'critical', 'AzNsNotification': {'GroupIds': ['subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup'], 'CustomEmailSubject': 'Azure Alert fired'} } }"
+armclient put /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myAzNsaction?api-version=2015-03-20 $AzNsJson
+```
 
 Чтобы изменить группу действий, связанную с расписанием, используйте метод Put с идентификатором существующего действия.  Текст запроса должен содержать Etag действия.
 
-    $AzNsJson = "{'etag': 'datetime'2017-12-13T10%3A52%3A21.1697364Z'\"', 'properties': { 'Name': 'test-alert', 'Version':'1', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 12 },'Severity': 'critical', 'AzNsNotification': {'GroupIds': ['subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup']}, 'CustomEmailSubject': 'Azure Alert fired' } }"
-    armclient put /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myAzNsaction?api-version=2015-03-20 $AzNsJson
+```powershell
+$AzNsJson = "{'etag': 'datetime'2017-12-13T10%3A52%3A21.1697364Z'\"', 'properties': { 'Name': 'test-alert', 'Version':'1', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 12 },'Severity': 'critical', 'AzNsNotification': {'GroupIds': ['subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup']}, 'CustomEmailSubject': 'Azure Alert fired' } }"
+armclient put /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myAzNsaction?api-version=2015-03-20 $AzNsJson
+```
 
 ##### <a name="customize-webhook-payload-for-action-group"></a>Настройка полезных данных веб-перехватчика для группы действий
 По умолчанию веб-перехватчик, отправляемый группой действий в Log Analytics, имеет фиксированную структуру. Но с помощью специальных поддерживаемых переменных можно настроить полезные данные JSON, чтобы соблюсти требования конечной точки веб-перехватчика. Дополнительные сведения см. в статье [Действия веб-перехватчика для правил оповещений журнала](../../azure-monitor/platform/alerts-log-webhook.md). 
 
 Сведения о пользовательском веб-перехватчике необходимо отправлять вместе с данными ActionGroup. Они будут применены для всех универсальных кодов ресурса (URI) веб-перехватчиков, указанных в группе действий, как показано в следующем примере.
 
-     "etag": "W/\"datetime'2017-12-13T10%3A52%3A21.1697364Z'\"",
-      "properties": {
-        "Type": "Alert",
-        "Name": "test-alert",
-        "Description": "I need to put a description here",
-        "Threshold": {
-          "Operator": "gt",
-          "Value": 12
-        },
-        "AzNsNotification": {
-          "GroupIds": [
-            "/subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup"
-          ],
-          "CustomWebhookPayload": "{\"field1\":\"value1\",\"field2\":\"value2\"}",
-          "CustomEmailSubject": "Azure Alert fired"
-        },
-        "Severity": "critical",
-        "Version": 1
-      },
+```json
+"etag": "W/\"datetime'2017-12-13T10%3A52%3A21.1697364Z'\"",
+"properties": {
+   "Type": "Alert",
+   "Name": "test-alert",
+   "Description": "I need to put a description here",
+   "Threshold": {
+      "Operator": "gt",
+      "Value": 12
+   },
+   "AzNsNotification": {
+      "GroupIds": [
+         "/subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup"
+      ],
+   "CustomWebhookPayload": "{\"field1\":\"value1\",\"field2\":\"value2\"}",
+   "CustomEmailSubject": "Azure Alert fired"
+   },
+   "Severity": "critical",
+   "Version": 1
+},
+```
 
 Используйте метод Put с уникальным идентификатором действия, чтобы привязать уже существующую группу действий с измененными параметрами к расписанию.  Ниже приведен пример использования.
 
-    $AzNsJson = "{'properties': { 'Name': 'test-alert', 'Version':'1', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 12 },'Severity': 'critical', 'AzNsNotification': {'GroupIds': ['subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup'], 'CustomEmailSubject': 'Azure Alert fired','CustomWebhookPayload': '{\"field1\":\"value1\",\"field2\":\"value2\"}'} } }"
-    armclient put /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myAzNsaction?api-version=2015-03-20 $AzNsJson
+```powershell
+$AzNsJson = "{'properties': { 'Name': 'test-alert', 'Version':'1', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 12 },'Severity': 'critical', 'AzNsNotification': {'GroupIds': ['subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup'], 'CustomEmailSubject': 'Azure Alert fired','CustomWebhookPayload': '{\"field1\":\"value1\",\"field2\":\"value2\"}'} } }"
+armclient put /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myAzNsaction?api-version=2015-03-20 $AzNsJson
+```
 
 Чтобы изменить группу действий, связанную с расписанием, используйте метод Put с идентификатором существующего действия.  Текст запроса должен содержать Etag действия.
 
-    $AzNsJson = "{'etag': 'datetime'2017-12-13T10%3A52%3A21.1697364Z'\"', 'properties': { 'Name': 'test-alert', 'Version':'1', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 12 },'Severity': 'critical', 'AzNsNotification': {'GroupIds': ['subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup']}, 'CustomEmailSubject': 'Azure Alert fired','CustomWebhookPayload': '{\"field1\":\"value1\",\"field2\":\"value2\"}' } }"
-    armclient put /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myAzNsaction?api-version=2015-03-20 $AzNsJson
+```powershell
+$AzNsJson = "{'etag': 'datetime'2017-12-13T10%3A52%3A21.1697364Z'\"', 'properties': { 'Name': 'test-alert', 'Version':'1', 'Type':'Alert', 'Threshold': { 'Operator': 'gt', 'Value': 12 },'Severity': 'critical', 'AzNsNotification': {'GroupIds': ['subscriptions/1234a45-123d-4321-12aa-123b12a5678/resourcegroups/my-resource-group/providers/microsoft.insights/actiongroups/test-actiongroup']}, 'CustomEmailSubject': 'Azure Alert fired','CustomWebhookPayload': '{\"field1\":\"value1\",\"field2\":\"value2\"}' } }"
+armclient put /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/Microsoft.OperationalInsights/workspaces/{Workspace Name}/savedSearches/{Search ID}/schedules/{Schedule ID}/actions/myAzNsaction?api-version=2015-03-20 $AzNsJson
+```
 
-
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Используйте [REST API для выполнения поиска в журналах](../../azure-monitor/log-query/log-query-overview.md) в службе Log Analytics.
 * Сведения об [оповещениях журнала в Azure Monitor](../../azure-monitor/platform/alerts-unified-log.md)

@@ -6,11 +6,12 @@ author: DaleKoetke
 ms.author: dalek
 ms.date: 5/7/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: 82ea6a27d5bd75c180928f6a8b5c9742c54ea5a1
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: ac1129db05c7b492e209478446f69fe48ea9fffd
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83834430"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86111122"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Управление использованием и затратами для Application Insights
 
@@ -248,9 +249,11 @@ union (AppAvailabilityResults),
 
 Чтобы узнать фактическую частоту выборки (где бы она ни применялась), выполните [запрос Analytics](analytics.md). Этот запрос выглядит следующим образом.
 
-    requests | where timestamp > ago(1d)
-    | summarize 100/avg(itemCount) by bin(timestamp, 1h)
-    | render areachart
+```kusto
+requests | where timestamp > ago(1d)
+| summarize 100/avg(itemCount) by bin(timestamp, 1h)
+| render areachart
+```
 
 Для каждой сохранившейся записи `itemCount` обозначает число исходных записей, которые эта запись представляет. Эта величина равна 1 + число предыдущих удаленных записей.
 

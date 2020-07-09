@@ -4,13 +4,14 @@ description: Узнайте, как настроить частную ссылк
 author: kummanish
 ms.author: manishku
 ms.service: mariadb
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/09/2020
-ms.openlocfilehash: b8c649a232baeafeaf1f53753af6653bf9edd9c1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: db2fa377cc10759fc57c3e4a27bd7815a5724bd7
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84736192"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86114743"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mariadb-using-portal"></a>Создание и управление частной ссылкой для базы данных Azure для MariaDB с помощью портала
 
@@ -248,7 +249,7 @@ ms.locfileid: "84736192"
 2. Выберите **Удалить группу ресурсов**.
 3. Введите myResourceGroup **в поле введите имя группы ресурсов** и выберите **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом пошаговом режиме вы создали виртуальную машину в виртуальной сети, базу данных Azure для MariaDB и закрытую конечную точку для закрытого доступа. Вы подключились к одной виртуальной машине из Интернета и безопасно взаимодействовали с сервером MariaDB, используя закрытую ссылку. Дополнительные сведения о частных конечных точках см. в статье [что такое частная конечная точка Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-overview).
 

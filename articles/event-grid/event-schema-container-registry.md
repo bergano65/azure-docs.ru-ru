@@ -1,19 +1,14 @@
 ---
 title: Реестр контейнеров Azure как источник службы "Сетка событий"
 description: Описание свойств, предоставляемых для событий реестра контейнеров с помощью службы "Сетка событий Azure"
-services: event-grid
-author: spelluru
-manager: timlt
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 04/09/2020
-ms.author: spelluru
-ms.openlocfilehash: 7e33feb04edf42f1e2a32b9b8c8e2fd214692f31
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: d216fe88ee6aaad33fbbe3b93b8c4f8a6e952a71
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81393364"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86113723"
 ---
 # <a name="azure-container-registry-as-an-event-grid-source"></a>Реестр контейнеров Azure в качестве источника службы "Сетка событий"
 
@@ -175,8 +170,8 @@ ms.locfileid: "81393364"
 | идентификатор | строка | Идентификатор события. |
 | TIMESTAMP | строка | Время возникновения события. |
 | action | строка | Действие, которое включает в себя указанное событие. |
-| target | объект | Целевой объект события. |
-| запрос | объект | Запрос, который создал событие. |
+| target | object | Целевой объект события. |
+| запрос | object | Запрос, который создал событие. |
 
 Целевой объект имеет следующие свойства:
 

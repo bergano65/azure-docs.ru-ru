@@ -1,17 +1,14 @@
 ---
 title: Домены событий в службе "Сетка событий Azure"
 description: В этой статье описывается, как использовать домены событий для управления потоком настраиваемых событий для различных бизнес-организаций, клиентов или приложений.
-services: event-grid
-author: femila
-ms.service: event-grid
-ms.author: femila
 ms.topic: conceptual
-ms.date: 01/21/2020
-ms.openlocfilehash: 11ecf5c2a7bea8a9ef2047bdabcbfd4d844c5a3a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: 02529ba770e636021cf9cec4ed555247e1c63d8c
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84559507"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86114369"
 ---
 # <a name="understand-event-domains-for-managing-event-grid-topics"></a>Общие сведения о доменах событий, используемых для управления разделами службы "Сетка событий Azure"
 
@@ -111,6 +108,6 @@ RBAC в доменах событий работает так же, как [уп
 
 Операции работают в доменах событий точно так же, как и в настраиваемых разделах. Каждое поступление события в домене событий является операцией, и каждая попытка отправки события также является операцией.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о настройке доменов событий, создании разделов, создании подписок на события и публикации событий см. в разделе [Управление доменами событий](./how-to-event-domains.md).

@@ -1,17 +1,14 @@
 ---
 title: Доставка и повторные попытки доставки сетки событий Azure
 description: В статье описывается, как сетка событий Azure передает события и обрабатывает недоставленные сообщения.
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 02/27/2020
-ms.author: spelluru
-ms.openlocfilehash: dda2fd98c4c0d330059156a5ec00baa97ffaf627
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: e565bbc8592dc2818e3573672e6e3035c3c8983a
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77921068"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86113842"
 ---
 # <a name="event-grid-message-delivery-and-retry"></a>Доставка и повторные попытки доставки сообщений сетки событий
 
@@ -59,7 +56,7 @@ az eventgrid event-subscription create \
 
 - 10 с
 - 30 секунд
-- 1 минута
+- 1 минута
 - 5 мин
 - 10 минут.
 - 30 минут
@@ -124,7 +121,7 @@ az eventgrid event-subscription create \
 | Все остальные | Повторная попытка через 10 секунд или более |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о том, как просмотреть состояние доставки событий, см. в статье [Мониторинг доставки сообщений Сетки событий](monitor-event-delivery.md).
 * Чтобы настроить параметры доставки событий, см. в разделе [Недоставленные сообщения и политики повтора](manage-event-delivery.md).

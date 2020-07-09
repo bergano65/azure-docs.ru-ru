@@ -1,18 +1,14 @@
 ---
 title: Создание и Просмотр разделов службы "Сетка событий Azure", а также управление ими с помощью интерфейса командной строки
 description: В этой статье показано, как использовать Azure CLI для создания, просмотра и удаления системных разделов.
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 06/15/2020
-ms.author: spelluru
-ms.openlocfilehash: d9ba83d12e73b3ebceaee3167cdcf7f27922b686
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: 354afb89b145e288f525e40ad700e8f8a67c6dad
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84885243"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86115049"
 ---
 # <a name="create-view-and-manage-event-grid-system-topics-using-azure-cli"></a>Создание, просмотр и управление системными разделами сетки событий с помощью Azure CLI
 В этой статье показано, как создавать системные разделы и управлять ими с помощью Azure CLI. Общие сведения о системных разделах см. в разделе [системные разделы](system-topics.md).
@@ -100,5 +96,5 @@ ms.locfileid: "84885243"
     az eventgrid system-topic delete -g <AZURE RESOURCE GROUP NAME> --name <SYSTEM TOPIC NAME>   
      ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о системных разделах и типах разделов, поддерживаемых службой "Сетка событий Azure", см. в разделе [системные разделы в службе "Сетка событий Azure](system-topics.md) ". 

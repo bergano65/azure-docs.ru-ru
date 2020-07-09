@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: vinynigam
 ms.author: vinigam
 ms.date: 10/12/2018
-ms.openlocfilehash: 4c672caaedd3e5cc591659f24c73f54f399c73de
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 191c6d411418229d40b10704ea14d5a536c0d5f7
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85194009"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86110629"
 ---
 # <a name="network-performance-monitor-solution-faq"></a>Вопросы и ответы по решению "Монитор производительности сети"
 
@@ -100,38 +100,50 @@ NPM ограничивает количество IP-адресов до 5000 I
 ### <a name="what-are-the-default-log-analytics-queries-for-alerts"></a>Что такое Log Analytics запросы по умолчанию для оповещений
 Запрос системного монитора
 
-    NetworkMonitoring 
-     | where (SubType == "SubNetwork" or SubType == "NetworkPath") 
-     | where (LossHealthState == "Unhealthy" or LatencyHealthState == "Unhealthy") and RuleName == "<<your rule name>>"
-    
+```kusto
+NetworkMonitoring
+ | where (SubType == "SubNetwork" or SubType == "NetworkPath") 
+ | where (LossHealthState == "Unhealthy" or LatencyHealthState == "Unhealthy") and RuleName == "<<your rule name>>"
+```
+
 Запрос монитора подключения службы
 
-    NetworkMonitoring                 
-     | where (SubType == "EndpointHealth" or SubType == "EndpointPath")
-     | where (LossHealthState == "Unhealthy" or LatencyHealthState == "Unhealthy" or ServiceResponseHealthState == "Unhealthy" or LatencyHealthState == "Unhealthy") and TestName == "<<your test name>>"
-    
+```kusto
+NetworkMonitoring
+ | where (SubType == "EndpointHealth" or SubType == "EndpointPath")
+ | where (LossHealthState == "Unhealthy" or LatencyHealthState == "Unhealthy" or ServiceResponseHealthState == "Unhealthy" or LatencyHealthState == "Unhealthy") and TestName == "<<your test name>>"
+```
+
 Запросы монитора ExpressRoute: запрос каналов
 
-    NetworkMonitoring
-    | where (SubType == "ERCircuitTotalUtilization") and (UtilizationHealthState == "Unhealthy") and CircuitResourceId == "<<your circuit resource ID>>"
+```kusto
+NetworkMonitoring
+ | where (SubType == "ERCircuitTotalUtilization") and (UtilizationHealthState == "Unhealthy") and CircuitResourceId == "<<your circuit resource ID>>"
+```
 
 Частный пиринг
 
-    NetworkMonitoring 
-     | where (SubType == "ExpressRoutePeering" or SubType == "ERVNetConnectionUtilization" or SubType == "ExpressRoutePath")   
-    | where (LossHealthState == "Unhealthy" or LatencyHealthState == "Unhealthy" or UtilizationHealthState == "Unhealthy") and CircuitName == "<<your circuit name>>" and VirtualNetwork == "<<vnet name>>"
+```kusto
+NetworkMonitoring
+ | where (SubType == "ExpressRoutePeering" or SubType == "ERVNetConnectionUtilization" or SubType == "ExpressRoutePath")   
+ | where (LossHealthState == "Unhealthy" or LatencyHealthState == "Unhealthy" or UtilizationHealthState == "Unhealthy") and CircuitName == "<<your circuit name>>" and VirtualNetwork == "<<vnet name>>"
+```
 
 Пиринг Майкрософт
 
-    NetworkMonitoring 
-     | where (SubType == "ExpressRoutePeering" or SubType == "ERMSPeeringUtilization" or SubType == "ExpressRoutePath")
-    | where (LossHealthState == "Unhealthy" or LatencyHealthState == "Unhealthy" or UtilizationHealthState == "Unhealthy") and CircuitName == ""<<your circuit name>>" and PeeringType == "MicrosoftPeering"
+```kusto
+NetworkMonitoring
+ | where (SubType == "ExpressRoutePeering" or SubType == "ERMSPeeringUtilization" or SubType == "ExpressRoutePath")
+ | where (LossHealthState == "Unhealthy" or LatencyHealthState == "Unhealthy" or UtilizationHealthState == "Unhealthy") and CircuitName == ""<<your circuit name>>" and PeeringType == "MicrosoftPeering"
+```
 
-Общий запрос   
+Общий запрос
 
-    NetworkMonitoring
-    | where (SubType == "ExpressRoutePeering" or SubType == "ERVNetConnectionUtilization" or SubType == "ERMSPeeringUtilization" or SubType == "ExpressRoutePath")
-    | where (LossHealthState == "Unhealthy" or LatencyHealthState == "Unhealthy" or UtilizationHealthState == "Unhealthy") 
+```kusto
+NetworkMonitoring
+ | where (SubType == "ExpressRoutePeering" or SubType == "ERVNetConnectionUtilization" or SubType == "ERMSPeeringUtilization" or SubType == "ExpressRoutePath")
+ | where (LossHealthState == "Unhealthy" or LatencyHealthState == "Unhealthy" or UtilizationHealthState == "Unhealthy")
+```
 
 ### <a name="can-npm-monitor-routers-and-servers-as-individual-devices"></a>Может ли решение "Монитор производительности сети" отслеживать маршрутизаторы и серверы как отдельные устройства?
 Решение "Монитор производительности сети" определяет IP-адреса и имена узлов для всех сетевых прыжков (коммутаторы, маршрутизаторы, серверы и др.) между IP-адресами источника и назначения. Также он вычисляет задержку между обнаруженными прыжками. Но мониторинг на уровне каждого прыжка не выполняется.
@@ -147,21 +159,27 @@ NPM ограничивает количество IP-адресов до 5000 I
 
 Для получения сведений об уровне пиринга MS используйте приведенный ниже запрос в поиске по журналам.
 
-    NetworkMonitoring 
-     | where SubType == "ERMSPeeringUtilization"
-     | project  CircuitName,PeeringName,BitsInPerSecond,BitsOutPerSecond 
-    
+```kusto
+NetworkMonitoring
+ | where SubType == "ERMSPeeringUtilization"
+ | project CircuitName,PeeringName,BitsInPerSecond,BitsOutPerSecond 
+```
+
 Чтобы получить сведения об частном одноранговом уровне, используйте приведенный ниже запрос в поиске по журналам.
 
-    NetworkMonitoring 
-     | where SubType == "ERVNetConnectionUtilization"
-     | project  CircuitName,PeeringName,BitsInPerSecond,BitsOutPerSecond
-  
+```kusto
+NetworkMonitoring
+ | where SubType == "ERVNetConnectionUtilization"
+ | project CircuitName,PeeringName,BitsInPerSecond,BitsOutPerSecond
+```
+
 Для получения сведений об уровне канала используйте приведенный ниже запрос в поиске по журналам.
 
-    NetworkMonitoring 
-        | where SubType == "ERCircuitTotalUtilization"
-        | project CircuitName, BitsInPerSecond, BitsOutPerSecond
+```kusto
+NetworkMonitoring
+ | where SubType == "ERCircuitTotalUtilization"
+ | project CircuitName, BitsInPerSecond, BitsOutPerSecond
+```
 
 ### <a name="which-regions-are-supported-for-npms-performance-monitor"></a>Какие регионы поддерживаются для монитора производительности, входящего в решение "Монитор производительности сети"?
 Решение "Монитор производительности сети" может отслеживать подключение между сетями, расположенными в любых частях мира, если он размещен в рабочей области в одном из [поддерживаемых регионов](../../azure-monitor/insights/network-performance-monitor.md#supported-regions).
@@ -190,10 +208,12 @@ NPM создает оповещение, если сквозная задерж�
 
 Образец запроса для поиска — это неработоспособный путь:
 
-    NetworkMonitoring 
-    | where ( SubType == "ExpressRoutePath")
-    | where (LossHealthState == "Unhealthy" or LatencyHealthState == "Unhealthy" or UtilizationHealthState == "Unhealthy") and          CircuitResourceID =="<your ER circuit ID>" and ConnectionResourceId == "<your ER connection resource id>"
-    | project SubType, LossHealthState, LatencyHealthState, MedianLatency 
+```kusto
+NetworkMonitoring
+ | where ( SubType == "ExpressRoutePath")
+ | where (LossHealthState == "Unhealthy" or LatencyHealthState == "Unhealthy" or UtilizationHealthState == "Unhealthy") and CircuitResourceID =="<your ER circuit ID>" and ConnectionResourceId == "<your ER connection resource id>"
+ | project SubType, LossHealthState, LatencyHealthState, MedianLatency
+```
 
 ### <a name="why-does-my-test-show-unhealthy-but-the-topology-does-not"></a>Почему тест отображается в неработоспособном состоянии, но топология не 
 NPM отслеживает сквозные потери, задержки и топологию с разными интервалами. Потери и задержка измеряются каждые 5 секунд и суммируются каждые три минуты (для монитора производительности и монитора Express Route), а топология вычисляется с помощью Traceroute один раз каждые 10 минут. Например, между 3:44 и 4:04 топология может обновляться три раза (3:44, 3:54, 4:04), но потери и задержки обновляются примерно семь раз (3:44, 3:47, 3:50, 3:53, 3:56, 3:59, 4:02). Топология, созданная в 3:54, будет подготовлена к отсчету потерь и задержки, которая вычисляется в 3:56, 3:59 и 4:02. Предположим, вы получаете предупреждение о том, что канал аварийного восстановления был неработоспособен на 3:59. Войдите в NPM и попытайтесь задать время топологии равным 3:59. NPM будет отображать топологию, созданную в 3:54. Чтобы понять последнюю известную топологию сети, сравните поля Тимепроцессед (время, когда были вычислены потери и задержка) и Трацераутекомплетедтиме (время, когда была вычислена топология). 
@@ -277,6 +297,6 @@ E2EMedianLatency — задержка, обновляемая каждые тр�
 ### <a name="can-npm-report-latency-numbers-in-microseconds"></a>Можно ли в решении "Монитор производительности сети" узнать значения задержки в микросекундах?
 Решение "Монитор производительности сети" округляет показатели задержки в пользовательском интерфейсе до миллисекунд. Но эти данные хранятся с большей точностью (иногда до четырех десятичных разрядов).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о решении "Монитор производительности сети" в Azure вы можете получить [в этой статье](../../azure-monitor/insights/network-performance-monitor.md).
