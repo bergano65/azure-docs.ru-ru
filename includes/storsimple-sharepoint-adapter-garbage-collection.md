@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 00d292b3ba2d1b6c7c425d4c9f89188e660ac80d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9c734ff03b1cf277c7e0967d8b76b1941434f414
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73182275"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86050287"
 ---
 В этой процедуре будут выполнены следующие действия.
 
@@ -31,20 +31,21 @@ ms.locfileid: "73182275"
 
 #### <a name="to-prepare-the-content-database-and-recycle-bin-to-immediately-delete-orphaned-blobs"></a>Подготовка базы данных содержимого и корзины для немедленного удаления потерянных больших двоичных объектов
 1. На SQL Server в SQL Management Studio выполните следующие запросы на обновление для целевой базы данных содержимого: 
-   
-       `use WSS_Content`
-   
-       `exec mssqlrbs.rbs_sp_set_config_value ‘garbage_collection_time_window’ , ’time 00:00:00’`
-   
-       `exec mssqlrbs.rbs_sp_set_config_value ‘delete_scan_period’ , ’time 00:00:00’`
-2. На интерфейсном веб-сервере в разделе **Центр администрирования** измените **общие параметры веб-приложения** для необходимой базы данных содержимого, чтобы временно отключить корзину. Это действие также очистит корзину для всех связанных коллекций веб-сайтов. Для этого щелкните **центр администрирования** -> **Управление** -> приложениями**веб-приложения (Управление веб-приложениями)** -> **SharePoint-80** -> **Общие параметры приложения**. Для параметра **Состояние корзины задайте** значение **Выкл.**
+
+    `use WSS_Content`
+
+    `exec mssqlrbs.rbs_sp_set_config_value ‘garbage_collection_time_window’ , ’time 00:00:00’`
+
+    `exec mssqlrbs.rbs_sp_set_config_value ‘delete_scan_period’ , ’time 00:00:00’`
+
+2. На интерфейсном веб-сервере в разделе **Центр администрирования** измените **общие параметры веб-приложения** для необходимой базы данных содержимого, чтобы временно отключить корзину. Это действие также очистит корзину для всех связанных коллекций веб-сайтов. Для этого щелкните **центр администрирования**  ->  **Управление**приложениями  ->  **веб-приложения (Управление веб-приложениями)**  ->  **SharePoint-80**  ->  **Общие параметры приложения**. Для параметра **Состояние корзины задайте** значение **Выкл.**
    
     ![Общие параметры веб-приложения](./media/storsimple-sharepoint-adapter-garbage-collection/HCS_WebApplicationGeneralSettings-include.png)
 
 #### <a name="to-run-the-maintainer"></a>Запуск программы обслуживания
 * На интерфейсном веб-сервере в консоли управления SharePoint 2013 запустите программу обслуживания следующим образом:
   
-      `Microsoft.Data.SqlRemoteBlobs.Maintainer.exe -ConnectionStringName RBSMaintainerConnectionWSSContent -Operation GarbageCollection -GarbageCollectionPhases rdo`
+    `Microsoft.Data.SqlRemoteBlobs.Maintainer.exe -ConnectionStringName RBSMaintainerConnectionWSSContent -Operation GarbageCollection -GarbageCollectionPhases rdo`
   
   > [!NOTE]
   > В данный момент для StorSimple поддерживается только операция `GarbageCollection`. Также обратите внимание, что параметры для Microsoft.Data.SqlRemoteBlobs.Maintainer.exe чувствительны к регистру. 
@@ -61,5 +62,5 @@ ms.locfileid: "73182275"
       `exec mssqlrbs.rbs_sp_set_config_value ‘delete_scan_period’ , ’days 30’`
    
       `exec mssqlrbs.rbs_sp_set_config_value ‘orphan_scan_period’ , ’days 30’`
-2. На интерфейсном веб-сервере в разделе **Центр администрирования** измените **общие параметры веб-приложения** для необходимой базы данных содержимого, чтобы снова включить корзину. Для этого щелкните **центр администрирования** -> **Управление** -> приложениями**веб-приложения (Управление веб-приложениями)** -> **SharePoint-80** -> **Общие параметры приложения**. Для параметра «Состояние корзины» задайте значение **ВКЛ**.
+2. На интерфейсном веб-сервере в разделе **Центр администрирования** измените **общие параметры веб-приложения** для необходимой базы данных содержимого, чтобы снова включить корзину. Для этого щелкните **центр администрирования**  ->  **Управление**приложениями  ->  **веб-приложения (Управление веб-приложениями)**  ->  **SharePoint-80**  ->  **Общие параметры приложения**. Для параметра «Состояние корзины» задайте значение **ВКЛ**.
 
