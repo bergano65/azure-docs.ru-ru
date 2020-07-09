@@ -4,14 +4,14 @@ description: В этой статье описывается, как можно 
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: f5572611b99245fd62b4e0a9d73e6ed728e42f5b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2c26412c37efbfcce340ce90753d0860307a08e3
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79530654"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121152"
 ---
 # <a name="restart-azure-database-for-mariadb-server-using-the-azure-cli"></a>Перезапустите базу данных Azure для сервера MariaDB с помощью Azure CLI
 В этой статье объясняется, как перезапустить сервер Базы данных Azure для MariaDB. Возможно, вам потребуется перезапустить сервер в целях обслуживания, что приводит к кратковременному отключению во время выполнения операции.

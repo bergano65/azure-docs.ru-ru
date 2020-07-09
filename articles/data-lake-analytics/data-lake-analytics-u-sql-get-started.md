@@ -7,14 +7,14 @@ ms.author: saveenr
 ms.reviewer: jasonwhowell
 ms.assetid: 57143396-ab86-47dd-b6f8-613ba28c28d2
 ms.service: data-lake-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/23/2017
-ms.openlocfilehash: df217f302cd9f989fbabce009f00996d17fe284c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e80ecac68c3352c7f067fcbfcedb9a07aed729a8
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85555691"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120863"
 ---
 # <a name="get-started-with-u-sql-in-azure-data-lake-analytics"></a>Начало работы с языком U-SQL в Azure Data Lake Analytics
 
@@ -26,7 +26,7 @@ U-SQL — это язык, который объединяет декларат
 * Дополнительные сведения о **синтаксисе языка U-SQL** см. в [справочнике по языку U-SQL](https://docs.microsoft.com/u-sql/).
 * Чтобы понять **принципы разработки на U-SQL**, см. запись блога Visual Studio, посвященную [использованию языка U-SQL для простой обработки больших данных](https://blogs.msdn.microsoft.com/visualstudio/2015/09/28/introducing-u-sql-a-language-that-makes-big-data-processing-easy/).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем переходить к примерам в этом документе, ознакомьтесь с [руководством по разработке скриптов U-SQL с помощью средств Data Lake для Visual Studio](data-lake-analytics-data-lake-tools-get-started.md). Это руководство описывает механизм использования U-SQL с помощью средств Azure Data Lake для Visual Studio.
 
@@ -227,7 +227,7 @@ OUTPUT @res
 
 Сведения о расширенных сценариях агрегирования см. в справочной документации по [статистическим, аналитическим и ссылочным функциям](/u-sql/built-in-functions) в U-SQL
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Разработка скриптов U-SQL с помощью средств Data Lake для Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)

@@ -4,14 +4,14 @@ description: Узнайте, как отозвать подписку на об�
 author: joannapea
 ms.author: joanpo
 ms.service: data-share
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/10/2019
-ms.openlocfilehash: 97f672b266c2df6956282aea6dec8d5207944943
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c1c049d467cdf07962719f0dc257acbf47631aaf
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73476377"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119690"
 ---
 # <a name="how-to-revoke-a-consumers-share-subscription-in-azure-data-share"></a>Отзыв общей подписки потребителя в общей папке данных Azure
 

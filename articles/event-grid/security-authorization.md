@@ -1,18 +1,14 @@
 ---
 title: 'Сетка событий Azure: безопасность и проверка подлинности'
 description: В статье описываются служба "Сетка событий Azure" и ее основные понятия.
-services: event-grid
-author: femila
-manager: timlt
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 05/22/2019
-ms.author: femila
-ms.openlocfilehash: 87d436024dae21b0122bf6b861b8a3ae4299db73
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: 09317b310a5934d27b82d265ec7f9b276135f882
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84559010"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119095"
 ---
 # <a name="authorizing-access-to-event-grid-resources"></a>Авторизация доступа к ресурсам сетки событий
 Сетка событий Azure позволяет контролировать уровень доступа, предоставленного разным пользователям для выполнения различных операций управления, таких как создание списка подписок на события, создание новых подписок и генерирование ключей. В службе "Сетка событий" используется управление доступом на основе ролей Azure (RBAC).

@@ -1,17 +1,18 @@
 ---
 title: Управление потенциальными клиентами в Dynamics 365 Customer Engagement — коммерческая платформа Майкрософт
 description: Узнайте, как настроить Dynamics 365 Customer Engagement для управления потенциальными клиентами из Microsoft AppSource и Azure Marketplace.
-author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
+author: keferna
+ms.author: keferna
 ms.date: 03/30/2020
-ms.author: dsindona
-ms.openlocfilehash: 555002284b2665a357a28319a400710d66be4604
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 92f4bde31af2a7bb4c658141964f238a8c077eef
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85957245"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120386"
 ---
 # <a name="configure-lead-management-for-dynamics-365-customer-engagement"></a>Настройка управления потенциальными клиентами в Dynamics 365 Customer Engagement
 

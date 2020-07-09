@@ -5,19 +5,20 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.devlang: azurepowershell
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/26/2020
-ms.openlocfilehash: c16c18a7056b2d23b64caeca4a88905b3dd2557c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1fc4c0497095c2ab4e1210ab71bc5597713499b7
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84026685"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120472"
 ---
 # <a name="how-to-back-up-and-restore-an-azure-database-for-mariadb-server-using-powershell"></a>Как создать резервную копию сервера Базы данных Azure для MariaDB и восстановить сервер с помощью PowerShell
 
 Периодически создается резервная копия базы данных Azure для серверов MariaDB, чтобы включить функции восстановления. С помощью этой функции можно восстановить сервер и все его базы данных до более ранней точки во времени на новом сервере.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -76,7 +77,7 @@ Get-AzMariaDbServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 | Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
 | ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
-| name | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
+| Имя | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
 | ресторепоинтинтиме | 2020-03-13T13:59:00Z | Выберите точку во времени для восстановления. Значения даты и времени должны находиться в пределах срока хранения резервной копии исходного сервера. Используйте формат даты и времени ISO8601. Например, можно использовать собственный местный часовой пояс, например **2020-03-13T05:59:00-08:00**. Можно также использовать формат UTC Zulu, например **2018-03-13T13:59:00Z**. |
 | усепоинтинтимересторе | `<SwitchParameter>` | Используйте режим "на момент времени" для восстановления. |
 
@@ -118,7 +119,7 @@ Get-AzMariaDbServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 | Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
 |ResourceGroupName | myresourcegroup | Имя группы ресурсов, к которой принадлежит новый сервер.|
-|name | mydemoserver-georestored | Имя нового сервера. |
+|Имя | mydemoserver-georestored | Имя нового сервера. |
 |Расположение | eastus | Расположение нового сервера. |
 |усежеоресторе | `<SwitchParameter>` | Используйте географический режим для восстановления. |
 

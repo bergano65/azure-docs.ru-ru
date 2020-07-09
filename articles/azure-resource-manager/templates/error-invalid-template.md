@@ -3,11 +3,12 @@ title: Ошибки, связанные с недопустимым шаблон
 description: Статья о том, как устранять ошибки, связанные с недопустимым шаблоном, при развертывании шаблонов Azure Resource Manager.
 ms.topic: troubleshooting
 ms.date: 05/22/2020
-ms.openlocfilehash: 2902a6d82c32192bb241697825a31d759d5c7b75
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a3589f42f707240272a411a985adefd5e6c5539c
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84324068"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86118891"
 ---
 # <a name="resolve-errors-for-invalid-template"></a>Устранение ошибок, связанных с недопустимым шаблоном
 
@@ -47,7 +48,7 @@ Message=Deployment template validation failed
 
 Если вы не укажете соответствующий синтаксис, шаблон создаст значение, которое не будет соответствовать ожидаемому.
 
-При получении сообщения об ошибке такого типа тщательно проверьте синтаксис выражения. Рекомендуется использовать редактор JSON, например [Visual Studio](create-visual-studio-deployment-project.md) или [Visual Studio Code](use-vs-code-to-create-template.md), в котором отображаются предупреждения о синтаксических ошибках.
+При получении сообщения об ошибке такого типа тщательно проверьте синтаксис выражения. Рекомендуется использовать редактор JSON, например [Visual Studio](create-visual-studio-deployment-project.md) или [Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md), в котором отображаются предупреждения о синтаксических ошибках.
 
 <a id="incorrect-segment-lengths"></a>
 

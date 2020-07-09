@@ -6,20 +6,19 @@ author: joannapea
 ms.author: joanpo
 ms.topic: conceptual
 ms.date: 07/06/2019
-ms.openlocfilehash: c2593c4c03f48624b8b9e3b9d72a3558f5f581be
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cd7604e33a9f98d9104eecabb20369fe2fcee8a7
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73499299"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119639"
 ---
 # <a name="azure-powershell-samples-for-azure-data-share"></a>Примеры Azure PowerShell для общей папки данных Azure
 
 В следующей таблице приведены ссылки на примеры сценариев Azure PowerShell для общего ресурса данных Azure.
 
-| |  |
+|Примеры для PowerShell|Описание|
 |---|---|
-|**Примеры для PowerShell**||
 |[Создать новую учетную запись общей папки данных](scripts/powershell/create-new-share-account-powershell.md)| Этот сценарий PowerShell создает новую учетную запись для общей папки данных. |
 |[Создание новой общей папки данных](scripts/powershell/create-new-share-powershell.md)| Этот сценарий PowerShell создает новую общую папку данных. |
 |[Добавление наборов данных в общую папку](scripts/powershell/add-datasets-powershell.md)| Этот сценарий PowerShell добавляет набор данных большого двоичного объекта в существующую учетную запись общей папки данных. |

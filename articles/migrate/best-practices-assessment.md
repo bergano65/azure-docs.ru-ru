@@ -6,16 +6,16 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: raynew
-ms.openlocfilehash: 1a3735180d72496d58cdd22d0aa34c8a6f88a6a3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 648ec2d9fea3e4e112e65cec44a0518b653ddbea
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85559849"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119979"
 ---
 # <a name="best-practices-for-creating-assessments"></a>Рекомендации по созданию оценок
 
-Служба [Миграция Azure](migrate-overview.md) объединяет в себе инструменты, которые используются для поиска, оценки и переноса приложений, инфраструктуры и рабочих нагрузок в Microsoft Azure. Она включает в себя инструменты Миграции Azure и предложения независимых поставщиков программного обеспечения.
+Служба [Миграция Azure](./migrate-services-overview.md) объединяет в себе инструменты, которые используются для поиска, оценки и переноса приложений, инфраструктуры и рабочих нагрузок в Microsoft Azure. Она включает в себя инструменты Миграции Azure и предложения независимых поставщиков программного обеспечения.
 
 В этой статье приводятся рекомендации по созданию оценок с помощью средства Azure Migrate Server для оценки.
 
@@ -26,7 +26,7 @@ ms.locfileid: "85559849"
 **Тип оценки** | **Сведения**
 --- | --- 
 **Azure** | Оценки для переноса локальных серверов на виртуальные машины Azure. <br/><br/> Вы можете оценить локальные [виртуальные машины VMware](how-to-set-up-appliance-vmware.md), [виртуальные машины Hyper-V](how-to-set-up-appliance-hyper-v.md)и [физические серверы](how-to-set-up-appliance-physical.md) для миграции в Azure с помощью этого типа оценки. [Подробнее](concepts-assessment-calculation.md)
-**Решение Azure VMware (AVS)** | Оценки для переноса локальных серверов в [решение VMware для Azure (AVS)](https://docs.microsoft.com/azure/azure-vmware/introduction). <br/><br/> Вы можете оценить локальные [виртуальные машины VMware](how-to-set-up-appliance-vmware.md) для миграции в решение Azure VMware (AVS) с помощью этого типа оценки. [Подробнее](concepts-azure-vmware-solution-assessment-calculation.md)
+**Решение Azure VMware (AVS)** | Оценки для переноса локальных серверов в [решение VMware для Azure (AVS)](../azure-vmware/introduction.md). <br/><br/> Вы можете оценить локальные [виртуальные машины VMware](how-to-set-up-appliance-vmware.md) для миграции в решение Azure VMware (AVS) с помощью этого типа оценки. [Подробнее](concepts-azure-vmware-solution-assessment-calculation.md)
 
 
 ### <a name="sizing-criteria"></a>Критерии размера
@@ -132,11 +132,11 @@ ms.locfileid: "85559849"
 ### <a name="migration-tool-guidance-for-avs-assessments"></a>Руководство по средствам миграции для оценки AVS
 
 В отчете о готовности Azure для оценки решения Azure VMware (AVS) можно просмотреть следующие предлагаемые инструменты: 
-- **VMware хккс или Enterprise**: для виртуальных машин VMware — это рекомендуемое средство миграции, которое позволяет перенести локальную рабочую нагрузку в частное облако решения Azure VMware (AVS). [Подробнее](https://docs.microsoft.com/azure/azure-vmware/hybrid-cloud-extension-installation)
+- **VMware хккс или Enterprise**: для виртуальных машин VMware — это рекомендуемое средство миграции, которое позволяет перенести локальную рабочую нагрузку в частное облако решения Azure VMware (AVS). [Подробнее](../azure-vmware/hybrid-cloud-extension-installation.md)
 - **Неизвестно**. для компьютеров, импортированных с помощью CSV-файла, средство миграции по умолчанию неизвестно. Однако для компьютеров VMware рекомендуется использовать решение гибридного облака VMWare (ХККС).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Узнайте](concepts-assessment-calculation.md) , как рассчитываются оценки.
 - [Узнайте](how-to-modify-assessment.md) , как настроить оценку.

@@ -1,17 +1,16 @@
 ---
 title: Аналитика Marketplace — коммерческая платформа Майкрософт
 description: Получите доступ к сводной веб-аналитике Marketplace, которая позволяет измерять вовлеченность клиентов в Microsoft AppSource и Azure Marketplace.
-author: dsindona
-ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/16/2019
-ms.openlocfilehash: 2d9691279b987f9d45f755ab340ff70671d350c0
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 8b5f90449f27007febe93f1193c6d2245b076e7e
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83745653"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120404"
 ---
 # <a name="marketplace-insights-dashboard-in-partner-center"></a>Панель мониторинга "Аналитика Marketplace" в Центре партнеров
 

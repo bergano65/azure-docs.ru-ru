@@ -3,12 +3,12 @@ title: Обзор шаблонов
 description: Описание преимуществ использования шаблонов Azure Resource Manager для развертывания ресурсов.
 ms.topic: conceptual
 ms.date: 06/22/2020
-ms.openlocfilehash: 4cdd0751feea6a3ade7183311831c7ed2b0f1b70
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b1c61d5eac012f2b807c0121460804c46b12c8d0
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85210224"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119367"
 ---
 # <a name="what-are-arm-templates"></a>Что такое шаблоны ARM?
 
@@ -54,7 +54,7 @@ ms.locfileid: "85210224"
 
 * **Экспортируемый код**. можно получить шаблон для существующей группы ресурсов, экспортировав текущее состояние группы ресурсов или просмотрев шаблон, используемый для конкретного развертывания. Чтобы лучше понять синтаксис шаблона, изучите [экспортированный шаблон](export-template-portal.md).
 
-* **Средства разработки**. шаблоны можно создавать с помощью [Visual Studio Code](use-vs-code-to-create-template.md) и расширения "средство шаблонов". Вы получаете IntelliSense, выделение синтаксиса, встроенную справку и многие другие языковые функции. В дополнение к Visual Studio Code можно также использовать [Visual Studio](create-visual-studio-deployment-project.md).
+* **Средства разработки**. шаблоны можно создавать с помощью [Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md) и расширения "средство шаблонов". Вы получаете IntelliSense, выделение синтаксиса, встроенную справку и многие другие языковые функции. В дополнение к Visual Studio Code можно также использовать [Visual Studio](create-visual-studio-deployment-project.md).
 
 ## <a name="template-file"></a>Файл шаблона
 

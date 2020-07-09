@@ -7,14 +7,14 @@ author: saveenr
 ms.author: saveenr
 ms.reviewer: jasonwhowell
 ms.assetid: e5189e4e-9438-46d1-8686-ed4836bf3356
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/05/2016
-ms.openlocfilehash: 9ff20235834fdd2fafc43383c1ea3f0dd7288fce
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 771590a145d4da0a3a81050e6bbe8a9a4d528b30
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85555703"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121220"
 ---
 # <a name="develop-u-sql-user-defined-operators-udos"></a>Разработка определяемых пользователем операторов U-SQLU (UDO)
 В этой статье описано, как разрабатывать определяемые пользователем операторы для обработки данных в задании U-SQL.
@@ -126,7 +126,7 @@ ms.locfileid: "85555703"
 
 2. Разверните узлы «Примеры» и «Выходные данные», а затем дважды щелкните **Drivers.csv**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Extending U-SQL Expressions with User-Code](/u-sql/concepts/extending-u-sql-expressions-with-user-code) (Расширение выражений U-SQL с помощью пользовательского кода)
 * [Использование инструментов озера данных для Visual Studio для разработки приложений U-SQL](data-lake-analytics-data-lake-tools-get-started.md)

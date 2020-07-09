@@ -1,17 +1,18 @@
 ---
 title: Публикация руководств по типу предложения — коммерческий магазин Майкрософт
 description: В этой статье описываются типы предложений, доступные в коммерческом магазине Майкрософт.
-author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
+author: keferna
+ms.author: keferna
 ms.date: 04/14/2020
-ms.author: dsindona
-ms.openlocfilehash: 6e889fef16d8ad80d52810207f0328a765ca9cfe
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 72acd5c3c5fbab08b2e97421689b4f562b2ae2e8
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85958503"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119724"
 ---
 # <a name="publishing-guide-by-offer-type"></a>Руководство по публикации разных типов предложений
 
@@ -41,7 +42,7 @@ ms.locfileid: "85958503"
 
 Сведения о требованиях единого входа путем перечисления параметров и типов предложений см. в статье [**требования к Azure AD**](./enable-appsource-marketplace-using-azure-ad.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с требованиями к допустимости в соответствующей статье для вашего типа предложения (в следующих разделах), чтобы завершить выбор и настройку предложения.
 - Просмотрите шаблоны публикации для каждого онлайн-магазина, чтобы на их примере понять, как решение сопоставляется с типом предложения и конфигурацией.

@@ -1,18 +1,16 @@
 ---
 title: Техническая конфигурация тестового диска, Microsoft для коммерческого рынка
 description: Сведения о тестовых дисках. Тестовые диски позволяют новым клиентам тестировать ваше предложение перед принятием покупки.
-author: dsindona
-ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 08/13/2019
-ms.openlocfilehash: 4750c167ff236b535aaa1ed1dc3c2aa3918e6dad
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 9c4bd4fb5fc6a25027c2f01466a0d5afc1694b03
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85964963"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121492"
 ---
 # <a name="test-drive-technical-configuration"></a>Техническая конфигурация тестового выпуска
 

@@ -6,14 +6,15 @@ ms.service: data-lake-analytics
 author: jejiang
 ms.author: jejiang
 ms.reviewer: jasonwhowell
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/22/2017
 ms.custom: tracking-python
-ms.openlocfilehash: b88ff6e1a58690d1781989a32607d490d791a690
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a9686cefbbdf04d8425de673827f31cbfecb873c
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84555448"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121237"
 ---
 # <a name="develop-u-sql-with-python-r-and-c-for-azure-data-lake-analytics-in-visual-studio-code"></a>Разработка U-SQL с помощью Python, R, и C# для Azure Data Lake Analytics в Visual Studio Code
 Сведения об использовании Visual Studio Code (VSCode) для записи кода программной части Python, R и C# с помощью U-SQL и отправки заданий в службу Azure Data Lake. Дополнительные сведения об использовании Средств Azure Data Lake для VSCode см. в статье [Использование средств Azure Data Lake для Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md).
@@ -178,7 +179,7 @@ ms.locfileid: "84555448"
     ```
 5. Для выполнения задания щелкните файл **USQL** правой кнопкой мыши и выберите **Compile Script** (Компиляции сценария) или **Отправить задание**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Использование средств Azure Data Lake для Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md)
 * [Локальный запуск и локальная отладка U-SQL в Visual Studio Code](data-lake-tools-for-vscode-local-run-and-debug.md)
 * [Приступая к работе с аналитикой озера данных с помощью PowerShell](data-lake-analytics-get-started-powershell.md)

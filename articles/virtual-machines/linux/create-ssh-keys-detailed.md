@@ -6,11 +6,12 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 12/06/2019
 ms.author: cynthn
-ms.openlocfilehash: 44923a124b864083b1badfc617ce0303be66a10e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c826f5e0e36d693dd3ba98640bceae228ba34e8
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84985350"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119214"
 ---
 # <a name="detailed-steps-create-and-manage-ssh-keys-for-authentication-to-a-linux-vm-in-azure"></a>Подробные инструкции. Создание ключей SSH для аутентификации на виртуальной машине Linux в Azure и управление этими ключами 
 С помощью пары ключей Secure Shell (SSH) в Azure можно создать виртуальную машину Linux, по умолчанию использующую эти ключи для аутентификации, что позволяет обойтись без паролей для входа. Виртуальные машины, созданные с помощью портала Azure, Azure CLI, шаблонов Resource Manager или других инструментов, при развертывании могут включать в себя собственный открытый ключ SSH, который используется для настройки аутентификации на основе ключей SSH для SSH-подключений. 
@@ -40,7 +41,7 @@ ms.locfileid: "84985350"
 
 ### <a name="basic-example"></a>Простой пример
 
-Приведенная ниже команда `ssh-keygen` создает файлы 2048-разрядных открытого и закрытого ключей SSH RSA в каталоге `~/.ssh` по умолчанию. Если в текущем каталоге существует пара ключей SSH, они будут перезаписаны.
+Следующая `ssh-keygen` команда создает в каталоге 4096-разрядные файлы открытого и закрытого ключей SSH RSA по умолчанию `~/.ssh` . Если в текущем каталоге существует пара ключей SSH, они будут перезаписаны.
 
 ```bash
 ssh-keygen -m PEM -t rsa -b 4096

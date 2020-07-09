@@ -6,13 +6,14 @@ author: MikeRys
 ms.author: mrys
 ms.reviewer: jasonwhowell
 ms.service: data-lake-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/03/2019
-ms.openlocfilehash: f9b22e6b806f76189134ec63c83d48f48bf95587
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ba231c4a68d92b3f6f35542d739ad9daedd65776
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73889765"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121407"
 ---
 # <a name="disaster-recovery-guidance-for-azure-data-lake-analytics"></a>Руководство по аварийному восстановлению Azure Data Lake Analytics
 
@@ -42,6 +43,6 @@ Azure Data Lake Analytics — это служба обработки задан�
 
 Во время сбоя необходимо обновить скрипты, чтобы входные пути указывали на вторичную конечную точку. Затем пользователи отправляют свои задания в учетную запись ADLA в дополнительном регионе. Выходные данные задания будут записаны в учетную запись ADLA и ADLS в дополнительном регионе.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Руководство по аварийному восстановлению данных в Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-disaster-recovery-guidance.md)

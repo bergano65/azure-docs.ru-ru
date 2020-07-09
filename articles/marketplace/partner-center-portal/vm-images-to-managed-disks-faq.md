@@ -1,18 +1,16 @@
 ---
 title: Идет перемещение образов виртуальных машин в хранилище управляемых дисков в Azure Marketplace.
 description: Чтобы обеспечить более быстрое, надежное хранение и поддержку новых функций и возможностей Marketplace, мы перемещаем образы виртуальных машин Marketplace в управляемый дисковый накопитель.
-author: dsindona
-ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/22/2019
-ms.openlocfilehash: 17b418ab82cc88b4368efe247b06c0c8bbb27453
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3d64bb176f79a0c15c15e425df18a22c9c4f423e
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80285118"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120625"
 ---
 # <a name="were-moving-virtual-machine-vm-images-on-azure-marketplace-to-managed-disk-storage"></a>Вы перемещаете образы виртуальных машин в Azure Marketplace в управляемый дисковый накопитель
 

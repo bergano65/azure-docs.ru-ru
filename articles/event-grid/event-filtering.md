@@ -1,17 +1,14 @@
 ---
 title: Фильтрация событий для службы "Сетка событий Azure"
 description: В статье описывается, как фильтровать события при создании подписки на службу "Сетка событий Azure".
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 04/28/2020
-ms.author: spelluru
-ms.openlocfilehash: afe97fd1736fbaa6858adb2fc658b4ab34546f84
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: 837209d4197c271598155776b8d171a705e1f454
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84456852"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120098"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Общие сведения о фильтрации событий для подписок на службу "Сетка событий Azure"
 
@@ -120,7 +117,7 @@ ms.locfileid: "84456852"
 
 Все сравнения строк **не** учитывают регистр.
 
-### <a name="key"></a>Key
+### <a name="key"></a>Ключ
 
 Для событий в схеме "Сетка событий" используются следующие значения для ключа:
 
@@ -146,7 +143,7 @@ ms.locfileid: "84456852"
 Допустимые значения:
 
 * number
-* string
+* строка
 * Логическое
 * массиве
 
@@ -310,7 +307,7 @@ ms.locfileid: "84456852"
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о фильтрации событий для Сетки событий с помощью [PowerShell и Azure CLI](how-to-filter-events.md).
 * Сведения о том, как быстро приступить к использованию службы "Сетка событий", см. в разделе [Создание и перенаправление пользовательского события со службой "Сетка событий Azure"](custom-event-quickstart.md).

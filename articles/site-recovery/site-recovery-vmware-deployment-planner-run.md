@@ -7,11 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 4/15/2019
 ms.author: mayg
-ms.openlocfilehash: 044e5c5df8e0af67e4717b864de1e31fc2520408
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 308958f00a3658196f124ac911d4d0195ebeb228
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73953282"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119843"
 ---
 # <a name="run-the-deployment-planner-for-vmware-disaster-recovery"></a>Запуск Планировщик развертывания аварийного восстановления VMware
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
@@ -39,18 +40,24 @@ ms.locfileid: "73953282"
 2. Откройте консоль VMware vSphere PowerCLI.
 3. Проверьте, включена ли политика выполнения скрипта. Если отключена, запустите консоль VMware vSphere PowerCLI в режиме администратора и включите ее, выполнив следующую команду:
 
-            Set-ExecutionPolicy –ExecutionPolicy AllSigned
+    ```powershell
+    Set-ExecutionPolicy –ExecutionPolicy AllSigned
+    ```
 
 4. Если Connect-VIServer не распознается как имя командлета, вам может потребоваться выполнить следующую команду:
 
-            Add-PSSnapin VMware.VimAutomation.Core
+    ```powershell
+    Add-PSSnapin VMware.VimAutomation.Core
+    ```
 
 5. Чтобы получить список всех имен виртуальных машин на сервере vCenter Server или узле vSphere ESXi и сохранить их в TXT-файле, выполните приведенные ниже команды.
 Замените значения &lsaquo;имени сервера&rsaquo;, &lsaquo;имени пользователя&rsaquo;, &lsaquo;пароля&rsaquo; и &lsaquo;выходного TXT-файла&rsaquo; собственными.
 
-            Connect-VIServer -Server <server name> -User <user name> -Password <password>
+    ```powershell
+    Connect-VIServer -Server <server name> -User <user name> -Password <password>
 
-            Get-VM |  Select Name | Sort-Object -Property Name >  <outputfile.txt>
+    Get-VM |  Select Name | Sort-Object -Property Name >  <outputfile.txt>
+    ```
 
 6. Откройте выходной файл в Блокноте. Скопируйте имена виртуальных машин, профилирование которых необходимо выполнить, в другой файл (например, в файл ProfileVMList.txt) по одному на строку. Этот файл используется в качестве входного значения параметра *-VMListFile* в программе командной строки.
 
@@ -289,5 +296,5 @@ ASRDeploymentPlanner.exe -Operation GetThroughput -Directory  E:\vCenter1_Profil
 >
 >  4. Измените параметры Site Recovery на сервере обработки, чтобы [увеличить объем пропускной способности сети, необходимой для репликации](./site-recovery-plan-capacity-vmware.md#control-network-bandwidth).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Анализ созданного отчета](site-recovery-vmware-deployment-planner-analyze-report.md).

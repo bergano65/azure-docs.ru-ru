@@ -4,19 +4,19 @@ description: Узнайте, как управлять сервером базы
 author: ajlam
 ms.author: andrela
 ms.service: mysql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: c0bee0b628a49746a19545d14b8b8761d0e880d2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d2fba3666e4e35c4f8492b0017f859c0bb80a160
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80062404"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120608"
 ---
 # <a name="manage-an-azure-database-for-mysql-server-using-the-azure-portal"></a>Управление базой данных Azure для сервера MySQL с помощью портал Azure
 В этой статье показано, как управлять базой данных Azure для серверов MySQL. Задачи управления включают в себя вычисление и масштабирование хранилища, сброс пароля администратора и Просмотр сведений о сервере.
 
-## <a name="sign-in"></a>Вход
+## <a name="sign-in"></a>Войти
 Войдите на [портал Azure](https://portal.azure.com).
 
 ## <a name="create-a-server"></a>Создание сервера

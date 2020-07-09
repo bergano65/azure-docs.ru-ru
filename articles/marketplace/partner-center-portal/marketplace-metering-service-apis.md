@@ -1,18 +1,16 @@
 ---
 title: API службы контроля потребления (коммерческая платформа Майкрософт)
 description: API событий потребления позволяет создавать события потребления для предложений SaaS в Microsoft AppSource и Azure Marketplace.
-author: dsindona
-ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 05/26/2020
-ms.openlocfilehash: 7bc5dc0e21bc9218c0e67b4e8e96299d73628e97
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 8a6636b0fc6c3e67ec171d738efb3fd8a93de30c
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85963178"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120778"
 ---
 # <a name="marketplace-metered-billing-apis"></a>API для выставления счетов с оплатой в Marketplace
 
@@ -275,6 +273,6 @@ API событий использования пакетной службы по
 
 Следуйте инструкциям в [технической поддержке программы коммерческого рынка в центре партнеров](./support.md) , чтобы узнать о вариантах поддержки издателя и отправить запрос в службу поддержки корпорации Майкрософт.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об API-интерфейсах службы измерения см. в статье [вопросы и ответы по API службы измерения Marketplace](./marketplace-metering-service-apis-faq.md).

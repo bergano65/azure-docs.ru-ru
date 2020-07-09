@@ -5,14 +5,14 @@ services: data-lake-analytics
 ms.service: data-lake-analytics
 author: jasonwhowell
 ms.author: jasonh
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/12/2018
-ms.openlocfilehash: ba0311da88f1fe0cbc0bf885197785db10b1bac2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9d389c433cb8a049671668cb58b3d80691ff0d16
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85564842"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121441"
 ---
 # <a name="accessing-diagnostic-logs-for-azure-data-lake-analytics"></a>Доступ к журналам диагностики для Azure Data Lake Analytics
 
@@ -128,7 +128,7 @@ ms.locfileid: "85564842"
 
 #### <a name="request-log-schema"></a>Схема журнала запросов
 
-| Имя | Type | Описание: |
+| Имя | Тип | Описание |
 | --- | --- | --- |
 | time |Строка |Метка времени журнала (в формате UTC). |
 | resourceId |Строка |Идентификатор ресурса, с которым была выполнена операция |
@@ -142,10 +142,10 @@ ms.locfileid: "85564842"
 
 #### <a name="request-log-properties-schema"></a>Схема свойств журнала запросов
 
-| Имя | Type | Описание: |
+| Имя | Тип | Описание |
 | --- | --- | --- |
 | HttpMethod |Строка |Метод HTTP, использованный для операции. Например, GET. |
-| Path |Строка |Путь выполнения операции. |
+| Путь |Строка |Путь выполнения операции. |
 | RequestContentLength |INT |Длина содержимого HTTP-запроса. |
 | ClientRequestId |Строка |Идентификатор, однозначно определяющий данный запрос. |
 | StartTime |Строка |Время получения запроса сервером. |
@@ -178,7 +178,7 @@ ms.locfileid: "85564842"
 
 #### <a name="audit-log-schema"></a>Схема журнала аудита
 
-| Имя | Type | Описание: |
+| Имя | Тип | Описание |
 | --- | --- | --- |
 | time |Строка |Метка времени журнала (в формате UTC). |
 | resourceId |Строка |Идентификатор ресурса, с которым была выполнена операция |
@@ -196,7 +196,7 @@ ms.locfileid: "85564842"
 
 #### <a name="audit-log-properties-schema"></a>Схема свойств журнала аудита
 
-| Имя | Type | Описание: |
+| Имя | Тип | Описание |
 | --- | --- | --- |
 | JobId |Строка |Идентификатор, присвоенный заданию. |
 | JobName |Строка |Имя, указанное для задания. |
@@ -213,6 +213,6 @@ ms.locfileid: "85564842"
 
 В Azure Data Lake Analytics есть пример обработки и анализа данных журнала. Пример можно найти по адресу [https://github.com/Azure/AzureDataLake/tree/master/Samples/AzureDiagnosticsSample](https://github.com/Azure/AzureDataLake/tree/master/Samples/AzureDiagnosticsSample) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)

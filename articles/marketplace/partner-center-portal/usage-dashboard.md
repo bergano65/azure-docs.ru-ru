@@ -1,17 +1,16 @@
 ---
 title: Панель мониторинга использования в аналитике коммерческой платформы Майкрософт
 description: Узнайте, как получить доступ ко всем метрикам использования виртуальных машин и измеренным метрикам выставления счетов. Перейдите на панель мониторинга использования в Центре партнеров в разделе "Коммерческий Marketplace".
-author: dsindona
-ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: b60475c56b18e81b082e7552fec789b06adeff27
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 8747ff98cd2b53773d9e0a95436d90fef74fda55
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83746662"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120676"
 ---
 # <a name="usage-dashboard-in-microsoft-commercial-marketplace-analytics"></a>Панель мониторинга использования в аналитике коммерческой платформы Майкрософт
 

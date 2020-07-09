@@ -1,18 +1,16 @@
 ---
 title: Вопросы и ответы по API службы контроля использования — коммерческий магазин Майкрософт
 description: Часто задаваемые вопросы о API службы измерения для предложений SaaS в Microsoft AppSource и Azure Marketplace.
-author: dsindona
-ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: 361e35aea90a9817e365d66014faf5f23433c1dc
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: bdd540ad6c7ef1954936e4fb74bade2458e50927
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85964793"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120795"
 ---
 # <a name="marketplace-metered-billing-apis---faq"></a>API тарифного счета в Marketplace — часто задаваемые вопросы
 
@@ -86,6 +84,6 @@ ms.locfileid: "85964793"
 
 Когда клиент покупает и активирует подписку 6 января, в этом дне будет учитываться электронная почта 1000, включенная в фиксированную ставку. Таким образом, если до 5 февраля (конец первого месяца подписки) отправляются только сообщения электронной почты 900, клиент оплачивает фиксированную ставку только за первый месяц этой подписки, и на издателе не будут выдаваться события чрезмерного использования. 6 февраля подписка будет автоматически продлена, а отсчет начнется снова. Если до 15 февраля клиент достиг 1000 сообщений электронной почты, остальная часть сообщений электронной почты, отправленная до 5 марта, будет оплачена как избыточная ($1 на адрес электронной почты) на основе событий превышения использования, созданных издателем.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в разделе [API-интерфейсы службы измерения Marketplace](./marketplace-metering-service-apis.md).

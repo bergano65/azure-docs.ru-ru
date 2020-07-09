@@ -7,13 +7,14 @@ author: saveenr
 ms.author: saveenr
 ms.reviewer: jasonwhowell
 ms.assetid: 9de1bcf4-b15b-4d0b-9284-8889ecf0c438
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/05/2016
-ms.openlocfilehash: 21d59f6543df7fe9d1fad47a006260bff9c93e2b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f821f8f8fddfafbdba060fd3f9940ce32c138755
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76988062"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121356"
 ---
 # <a name="manage-azure-data-lake-analytics-using-azure-sdk-for-nodejs"></a>Управление аналитикой озера данных Azure с помощью пакета SDK Azure для Node.js
 [!INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
@@ -26,7 +27,7 @@ ms.locfileid: "76988062"
 * **версию REST API для каталога: 2015-10-01-preview**
 * **версию REST API для задания: 2016-03-20-preview**
 
-## <a name="features"></a>Функции
+## <a name="features"></a>Компоненты
 * Управление учетными записями: создание, получение, получение списков, обновление и удаление.
 * Управление заданиями: отправка, получение, перечисление и отмена.
 * Управление каталогами: получение и перечисление.
@@ -128,5 +129,5 @@ catalogClient.catalog.listDatabases(accountName, function (err, result, request,
 });
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 * [Пакет Microsoft Azure SDK для Node.js](https://github.com/azure/azure-sdk-for-node)

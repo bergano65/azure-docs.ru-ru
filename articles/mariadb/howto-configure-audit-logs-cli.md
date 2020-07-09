@@ -4,16 +4,16 @@ description: В этой статье описывается, как настр�
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 6/24/2020
-ms.openlocfilehash: 1dcad61ed94926aa2aa2237ea735287cd9c9f137
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d0f5f71ed636cc67e742198436b48a09d291e798
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85362702"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120064"
 ---
-# <a name="configure-and-access-audit-logs-in-the-azure-cli"></a>Настройка и доступ к журналам аудита в Azure CLI
+# <a name="configure-and-access-azure-database-for-maria-db-audit-logs-in-the-azure-cli"></a>Настройка и доступ к журналам аудита базы данных Azure для Марии в Azure CLI
 
 Вы можете настроить [журналы аудита базы данных Azure для MariaDB](concepts-audit-logs.md) из Azure CLI.
 
@@ -55,7 +55,7 @@ ms.locfileid: "85362702"
     az mariadb server configuration set --name audit_log_include_users --resource-group myresourcegroup --server mydemoserver --value "sampleuser"
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [журналах аудита](concepts-audit-logs.md) в базе данных Azure для MariaDB
 - Узнайте, как настроить журналы аудита в [портал Azure](howto-configure-audit-logs-portal.md)

@@ -1,18 +1,18 @@
 ---
 title: Рабочие учетные записи компании и центр партнеров
 description: Как проверить, настроена ли в вашей компании Рабочая учетная запись Майкрософт, создать новую рабочую учетную запись или настроить несколько рабочих учетных записей для использования с центром партнеров.
-author: dsindona
-ms.author: parthp
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
+author: parthpandyaMSFT
+ms.author: parthp
 ms.date: 05/30/2019
-ms.openlocfilehash: 27a51a1203b0c25474bdb292c467a40b67309757
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 6fca3429ab96a63b01eaa7e9d1f0ae83dc46e9c7
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85964436"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119758"
 ---
 # <a name="company-work-accounts-and-partner-center"></a>Рабочие учетные записи компании и центр партнеров
 
@@ -52,6 +52,6 @@ ms.locfileid: "85964436"
 
 ![Схема для устранения неполадок при входе в рабочую учетную запись](./media/onboarding-aad-flow.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление учетной записью коммерческой платформы в Центре партнеров](./manage-account.md) 

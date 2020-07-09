@@ -4,13 +4,14 @@ description: В этой статье описывается, как настр�
 author: ajlam
 ms.author: andrela
 ms.service: mysql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 6/11/2020
-ms.openlocfilehash: ba473942eea35ebcd5991b9b0dee4138d4963e16
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ce8a651fcdda657a1fffa523837181031e0bbc75
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85099141"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119809"
 ---
 # <a name="configure-server-parameters-in-azure-database-for-mysql-using-the-azure-portal"></a>Настройка параметров сервера в базе данных Azure для MySQL с помощью портал Azure
 
@@ -77,6 +78,6 @@ SET time_zone = 'US/Pacific';
 
 Описание [функций даты и времени](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_convert-tz) можно прочитать в документации по MySQL.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Библиотеки подключений для базы данных Azure для MySQL](concepts-connection-libraries.md).

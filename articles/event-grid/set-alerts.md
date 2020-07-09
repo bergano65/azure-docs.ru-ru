@@ -1,17 +1,14 @@
 ---
 title: Настройка оповещений для метрик службы "Сетка событий Azure" и операций с журналом действий
 description: В этой статье описывается создание оповещений в метриках сетки событий Azure и операциях с журналом действий.
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 06/25/2020
-ms.author: spelluru
-ms.openlocfilehash: 1a2eacb5fa03ea2a5a8ba2d38d9b3e7dea315890
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: 615ebef749be49822a09470eb0d47d8eb31b9a5a
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85412844"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119146"
 ---
 # <a name="set-alerts-on-azure-event-grid-metrics-and-activity-logs"></a>Настройка оповещений для метрик службы "Сетка событий Azure" и журналов действий
 В этой статье описывается создание оповещений в метриках сетки событий Azure и операциях с журналом действий. Вы можете создавать оповещения как в метриках публикации, так и в отношении доставки ресурсов службы "Сетка событий Azure" (разделы и домены). Для системных разделов [создайте оповещения на странице **метрики** ](#create-alerts-using-the-metrics-page).
@@ -76,7 +73,7 @@ ms.locfileid: "85412844"
 > [!NOTE]
 > В этой статье не рассматриваются все действия и сочетания, которые можно использовать для создания оповещения. Общие сведения об оповещениях см. в разделе [Общие сведения об оповещениях](../azure-monitor/platform/alerts-metric.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о [доставке сообщений и повторных попытках в Сетке событий](delivery-and-retry.md).
 * Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).

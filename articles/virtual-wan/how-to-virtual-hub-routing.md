@@ -6,14 +6,14 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: how-to
-ms.date: 06/29/2020
+ms.date: 07/07/2020
 ms.author: cherylmc
-ms.openlocfilehash: f9f05eb73c2fa12c9625c8e26d1c86431bcb8f6a
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: e9891e3ac12de3f8735407c603ff59b61f4eb05d
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/08/2020
-ms.locfileid: "86087067"
+ms.locfileid: "86118976"
 ---
 # <a name="how-to-configure-virtual-hub-routing"></a>Настройка маршрутизации для виртуального концентратора
 
@@ -22,7 +22,9 @@ ms.locfileid: "86087067"
 Дополнительные сведения см. в статье [о маршрутизации виртуальных концентраторов](about-virtual-hub-routing.md).
 
 > [!NOTE]
-> Некоторые из этих возможностей по-прежнему могут быть сведены и ожидать завершения в 3 августа.
+> Некоторые из этих возможностей по-прежнему можно развернуть. Если развертывание еще не произошло в вашем регионе, выполните действия, описанные в этих версиях статей.
+>* [портал Azure статья](virtual-wan-route-table-nva-portal.md)
+>* [Статья о PowerShell](virtual-wan-route-table-nva.md)
 >
 
 ## <a name="create-a-route-table"></a><a name="create-table"></a>Создание таблицы маршрутов
@@ -36,7 +38,7 @@ ms.locfileid: "86087067"
 
    :::image type="content" source="./media/how-to-virtual-hub-routing/basics.png" alt-text="Вкладка "Основные сведения"":::
 
-   * **Name**
+   * **имя**;
    * **Маршруты**
    * **Имя маршрута**
    * **Конечный тип**
@@ -88,7 +90,7 @@ ms.locfileid: "86087067"
 
 :::image type="content" source="./media/how-to-virtual-hub-routing/routing-configuration.png" alt-text="Настройка конфигурации маршрутизации" lightbox="./media/how-to-virtual-hub-routing/routing-configuration-expand.png":::
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о маршрутизации виртуальных концентраторов см. в статье [о маршрутизации виртуальных концентраторов](about-virtual-hub-routing.md).
 Дополнительные сведения о виртуальной глобальной сети см. в статье, содержащей [Часто задаваемые вопросы](virtual-wan-faq.md) о ней.

@@ -4,13 +4,14 @@ description: Узнайте, как настраивать реплики чте
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 6/10/2020
-ms.openlocfilehash: 0280d69dc552b776457ff28d19968f6494a846ee
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2e8d250d20126198b3f267b44af98bed811ad8dd
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84707954"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121186"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-powershell"></a>Создание реплик чтения и управление ими в базе данных Azure для MariaDB с помощью PowerShell
 
@@ -20,7 +21,7 @@ ms.locfileid: "84707954"
 
 Вы можете создавать реплики чтения и управлять ими с помощью PowerShell.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -55,7 +56,7 @@ Get-AzMariaDbServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 | Параметр | Пример значения | Описание  |
 | --- | --- | --- |
 | ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой создается сервер реплики.  |
-| name | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
+| Имя | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
 
 Чтобы создать реплику чтения между регионами, используйте параметр **Location** . В следующем примере создается реплика в регионе " **Западная часть США** ".
 
@@ -105,7 +106,7 @@ Remove-AzMariaDbServer -Name mydemoreplicaserver -ResourceGroupName myresourcegr
 Remove-AzMariaDbServer -Name mydemoserver -ResourceGroupName myresourcegroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Перезапуск базы данных Azure для сервера MariaDB с помощью PowerShell](howto-restart-server-powershell.md)

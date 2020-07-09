@@ -1,18 +1,14 @@
 ---
 title: Разделы о системе в службе "Сетка событий Azure"
 description: Описание системных разделов в службе "Сетка событий Azure".
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 06/15/2020
-ms.author: spelluru
-ms.openlocfilehash: 190c6ccb13a0853913c96ac5d2d3f5faf4594433
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/07/2020
+ms.openlocfilehash: 655ec5f0ad23b3902c1c99ba75eef2ef428911eb
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84887907"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119928"
 ---
 # <a name="system-topics-in-azure-event-grid"></a>Разделы о системе в службе "Сетка событий Azure"
 Системный раздел в службе "Сетка событий" представляет одно или несколько событий, опубликованных службами Azure, такими как служба хранилища Azure и концентраторы событий Azure. Например, системный раздел может представлять **все события больших двоичных объектов** или только **созданные BLOB** -объекты, а также события, которые были **удалены** , опубликованные для **конкретной учетной записи хранения**. В этом примере при передаче большого двоичного объекта в учетную запись хранения служба хранилища Azure публикует событие **создания большого двоичного объекта** в системном разделе в службе "Сетка событий", который затем перенаправляет события [подписчикам](event-handlers.md) раздела, которые получают и обрабатывают событие. 

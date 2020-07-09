@@ -6,14 +6,14 @@ author: saveenr
 ms.author: saveenr
 ms.reviewer: jasonwhowell
 ms.assetid: b7066d81-3142-474f-8a34-32b0b39656dc
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 12/05/2016
-ms.openlocfilehash: cab647f6102187b094806db0b17c6f781ea27484
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 08e14765b2b70f1e2567bd6a9cd2d67ee9aed83b
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85564745"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121288"
 ---
 # <a name="monitor-jobs-in-azure-data-lake-analytics-using-the-azure-portal"></a>Мониторинг заданий в Azure Data Lake Analytics с помощью портала Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "85564745"
 
 8. Щелкните **Отправить задание**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор аналитики озера данных Azure](data-lake-analytics-overview.md)
 * [Начало работы с аналитикой озера данных Azure с помощью Azure PowerShell](data-lake-analytics-get-started-powershell.md)

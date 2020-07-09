@@ -7,15 +7,15 @@ ms.author: yanacai
 ms.reviewer: jasonwhowell
 ms.assetid: 66dd58b1-0b28-46d1-aaae-43ee2739ae0a
 ms.service: data-lake-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.workload: big-data
 ms.date: 09/14/2018
-ms.openlocfilehash: 782933550dbde51dcf6fd9fa42d7a4ac086f643f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cd696539cda5b24d801da692822b13de143249dd
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85564927"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121526"
 ---
 # <a name="how-to-set-up-a-cicd-pipeline-for-azure-data-lake-analytics"></a>Настройка конвейера CI/CD для Azure Data Lake Analytics  
 
@@ -453,7 +453,7 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 
 #### <a name="common-parameters"></a>Общие параметры
 
-| Параметр | Описание | Значение по умолчанию | Обязательное значение |
+| Параметр | Описание | Значение по умолчанию | Обязательно |
 |---------|-----------|-------------|--------|
 |Пакет|Путь к развертываемому пакету развертывания базы данных U-SQL.|null|true|
 |База данных|Имя развертываемой или создаваемой базы данных.|master|false|
@@ -462,13 +462,13 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 
 #### <a name="parameter-for-local-deployment"></a>Параметр для локального развертывания
 
-|Параметр|Описание|Значение по умолчанию|Обязательное значение|
+|Параметр|Описание|Значение по умолчанию|Обязательно|
 |---------|-----------|-------------|--------|
 |DataRoot|Локальный путь к корневой папке данных.|null|true|
 
 #### <a name="parameters-for-azure-data-lake-analytics-deployment"></a>Параметры для развертывания Azure Data Lake Analytics
 
-|Параметр|Описание|Значение по умолчанию|Обязательное значение|
+|Параметр|Описание|Значение по умолчанию|Обязательно|
 |---------|-----------|-------------|--------|
 |Учетная запись|Определяет имя учетной записи Azure Data Lake Analytics, в которую выполняется развертывание.|null|true|
 |ResourceGroup|Имя группы ресурсов Azure для учетной записи Azure Data Lake Analytics.|null|true|
@@ -482,7 +482,7 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 |CertFile|В этом файле хранится сертификат X.509 для неинтерактивной аутентификации. По умолчанию используется аутентификация с помощью секрета клиента.|null|false|
 | JobPrefix | Префикс для развертывания базы данных в задании DDL U-SQL. | Deploy_ + DateTime.Now | false |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Тестирование кода Azure Data Lake Analytics](data-lake-analytics-cicd-test.md).
 - [Выполните скрипт U-SQL на локальном компьютере](data-lake-analytics-data-lake-tools-local-run.md).

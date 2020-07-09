@@ -4,13 +4,14 @@ description: В этой статье описывается, как можно 
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 5/26/2020
-ms.openlocfilehash: ff7a7b7d83089f575df1ac169556c2762dd674a7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1cf5cf3f34f2986bbc18b5293dad4862c24f47a2
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84039405"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121084"
 ---
 # <a name="restart-azure-database-for-mariadb-server-using-powershell"></a>Перезапуск базы данных Azure для сервера MariaDB с помощью PowerShell
 
@@ -20,7 +21,7 @@ ms.locfileid: "84039405"
 
 Количество времени, необходимое для выполнения перезагрузки, зависит от процесса восстановления MariaDB. Чтобы сократить время перезапуска, рекомендуется свести к минимальному объему действий, происходящих на сервере, до перезапуска.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -43,7 +44,7 @@ ms.locfileid: "84039405"
 Restart-AzMariaDbServer -Name mydemoserver -ResourceGroupName myresourcegroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание сервера базы данных Azure для MariaDB с помощью PowerShell](quickstart-create-mariadb-server-database-using-azure-powershell.md)

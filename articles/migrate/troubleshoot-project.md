@@ -6,12 +6,12 @@ author: musa-57
 ms.manager: abhemraj
 ms.author: hamusa
 ms.date: 01/01/2020
-ms.openlocfilehash: b1fc4bce988b13a9ff76fd961d524ce945876054
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b56244fccce623827367d504831ca8db517c108d
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81535406"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121645"
 ---
 # <a name="troubleshoot-azure-migrate-projects"></a>Устранение неполадок с проектами Миграции Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "81535406"
 - Если появляется сообщение об ошибке "запросы должны содержать заголовки удостоверений пользователей", это может означать, что у вас нет доступа к клиенту Azure Active Directory (Azure AD) Организации. В данном случае:
     - Когда вы впервые добавите в клиент Azure AD, вы получите по электронной почте приглашение присоединиться к клиенту.
     - Примите приглашение для добавления в клиент.
-    - Если вы не видите сообщение электронной почты, обратитесь к пользователю с правами доступа к клиенту и попросите его [повторно отправить приглашение](https://docs.microsoft.com/azure/active-directory/b2b/add-users-administrator#resend-invitations-to-guest-users) .
+    - Если вы не видите сообщение электронной почты, обратитесь к пользователю с правами доступа к клиенту и попросите его [повторно отправить приглашение](../active-directory/b2b/add-users-administrator.md#resend-invitations-to-guest-users) .
     - После получения приглашения по электронной почте откройте его и щелкните ссылку, чтобы принять приглашение. Затем выйдите из портал Azure и войдите снова. (обновление браузера не будет работать.) После этого можно приступить к созданию проекта миграции.
 
 ## <a name="how-do-i-delete-a-project"></a>Разделы справки удалить проект

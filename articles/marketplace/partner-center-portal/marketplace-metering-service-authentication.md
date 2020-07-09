@@ -1,18 +1,16 @@
 ---
 title: Стратегии проверки подлинности службы контроля Marketplace | Azure Marketplace
 description: Стратегии проверки подлинности службы контроля, поддерживаемые в Azure Marketplace.
-author: qianw211
-ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 05/21/2020
-ms.openlocfilehash: 0f8078c52945b52a27144c1f73ea4a136bf536d8
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: e24dcdc2de94fe73f6bb83dcc03bbd1139503784
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85963161"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120761"
 ---
 # <a name="marketplace-metering-service-authentication-strategies"></a>Стратегии проверки подлинности службы контроля Marketplace
 

@@ -5,19 +5,20 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.devlang: azurecli
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/25/2019
-ms.openlocfilehash: f0ea24133d7b6acdc4b099ee21a8711a2d99095d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7df870d76fa62d341821cfc2d7d30b4a7694ad82
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74775710"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119775"
 ---
 # <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-postgresql---single-server-using-the-azure-cli"></a>Как создать резервную копию и восстановить сервер в базе данных Azure для PostgreSQL — один сервер с помощью Azure CLI
 
 Чтобы обеспечить возможность восстановления, для серверов службы "База данных Azure для PostgreSQL" периодически выполняется резервное копирование. С помощью этой функции можно восстановить сервер и все его базы данных до более ранней точки во времени на новом сервере.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 - [Сервер базы данных Azure для PostgreSQL и база данных](quickstart-create-server-database-azure-cli.md)
 
@@ -121,7 +122,7 @@ az postgres server georestore --resource-group newresourcegroup --name mydemoser
 
 На новом сервере, созданном во время восстановления, нет правил брандмауэра или конечных точек службы виртуальной сети, которые настроены на сервере-источнике. Для этого нового сервера правила нужно настроить отдельно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [резервных копиях](concepts-backup.md) службы
 - Дополнительные сведения о [репликах](concepts-read-replicas.md)
 - Дополнительные сведения о возможностях обеспечения [непрерывности бизнес-процессов](concepts-business-continuity.md)

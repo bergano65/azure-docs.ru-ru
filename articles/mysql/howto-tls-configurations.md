@@ -4,13 +4,14 @@ description: Узнайте, как настроить конфигурацию 
 author: kummanish
 ms.author: manishku
 ms.service: mysql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/02/2020
-ms.openlocfilehash: bdf2d2756db8e24c158c5571277986ac2a590048
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 46eaa6a3b97967da9c4743d0cf1f6edc8f90b1ce
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84418444"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119790"
 ---
 # <a name="configuring-tls-settings-in-azure-database-for-mysql-using-azure-portal"></a>Настройка параметров TLS в базе данных Azure для MySQL с помощью портал Azure
 
@@ -18,7 +19,7 @@ ms.locfileid: "84418444"
 
 Вы можете применить версию TLS для подключения к своей базе данных Azure для MySQL. Теперь у клиентов есть возможность задать минимальную версию TLS для сервера базы данных. Например, если установить для минимальной версии TLS значение 1,0, вы должны разрешить клиентам подключаться с помощью TLS 1.0, 1.1 и 1,2. Кроме того, если задать для этого параметра значение 1,2, то разрешить только клиенты, подключающиеся по протоколу TLS 1.2 +, а все входящие подключения с TLS 1,0 и TLS 1,1 будут отклонены.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -42,6 +43,6 @@ ms.locfileid: "84418444"
 
     ![Настройка TLS для базы данных Azure для MySQL](./media/howto-tls-configurations/setting-tls-value-success.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [создании оповещений о метриках](howto-alert-on-metric.md)
