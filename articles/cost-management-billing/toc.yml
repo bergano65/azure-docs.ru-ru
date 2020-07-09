@@ -1,0 +1,468 @@
+- name: Документация по службе Управления затратами и выставления счетов Azure
+  href: index.yml
+  items:
+    - name: Обзор
+      items:
+        - name: Что собой представляет служба Управления затратами и выставления счетов?
+          href: cost-management-billing-overview.md
+    - name: Краткие руководства
+      items:
+        - name: Начало анализа затрат
+          href: costs/quick-acm-cost-analysis.md
+        - name: "Создание бюджета\_— шаблон ARM"
+          href: costs/quick-create-budget-template.md
+          displayName: 'ARM template, resource manager template'
+    - name: Учебники
+      items:
+        - name: Просмотр отдельного счета для учетной записи
+          href: understand/review-individual-bill.md
+        - name: Просмотр счета в рамках Соглашения Enterprise
+          href: understand/review-enterprise-agreement-bill.md
+        - name: Просмотр счета в рамках Клиентского соглашения Майкрософт
+          href: understand/review-customer-agreement-bill.md
+        - name: Просмотр счета в рамках Соглашения с партнером Майкрософт
+          href: understand/review-partner-agreement-bill.md
+        - name: Создание бюджетов и управление ими
+          href: costs/tutorial-acm-create-budgets.md
+        - name: Экспорт данных
+          href: costs/tutorial-export-acm-data.md
+        - name: Выполнение действий на основе рекомендаций
+          href: costs/tutorial-acm-opt-recommendations.md
+    - name: Основные понятия
+      items:
+        - name: Управление затратами
+          items:
+            - name: Рекомендации для Управления затратами Azure
+              href: costs/cost-mgt-best-practices.md
+            - name: Интерпретация данных службы "Управление затратами"
+              href: costs/understand-cost-mgt-data.md
+            - name: Общие сведения об областях и работа с ними
+              href: costs/understand-work-scopes.md
+            - name: Параметры группирования и фильтрации
+              href: costs/group-filter.md
+            - name: Автоматизация управления затратами
+              href: costs/manage-automation.md
+            - name: Управление затратами для партнеров
+              href: costs/get-started-partners.md
+            - name: Выбор между службой "Управление затратами" и Cloudyn
+              href: costs/choose-between-azure-cost-management-cloudyn.md
+        - name: Резервирование
+          items:
+            - name: Общие сведения о резервированиях в Azure
+              href: reservations/save-compute-costs-reservations.md
+            - name: Создание рекомендаций по резервированию
+              href: reservations/reserved-instance-purchase-recommendations.md
+            - name: Способ применения скидки
+              items:
+                - name: Применение скидки на резервирование Azure
+                  href: reservations/reservation-discount-application.md
+                - name: Служба приложений
+                  href: reservations/reservation-discount-app-service-isolated-stamp.md
+                - name: Кэш Redis для Azure
+                  href: reservations/understand-azure-cache-for-redis-reservation-charges.md
+                - name: Cosmos DB
+                  href: reservations/understand-cosmosdb-reservation-charges.md
+                - name: База данных Azure для MariaDB
+                  href: reservations/understand-reservation-charges-mariadb.md
+                - name: База данных Azure для MySQL
+                  href: reservations/understand-reservation-charges-mysql.md
+                - name: База данных Azure для PostgreSQL
+                  href: reservations/understand-reservation-charges-postgresql.md
+                - name: Databricks
+                  href: reservations/reservation-discount-databricks.md
+                - name: Обозреватель данных
+                  href: reservations/understand-azure-data-explorer-reservation-charges.md
+                - name: Выделенные узлы
+                  href: reservations/billing-understand-dedicated-hosts-reservation-charges.md
+                - name: Хранилище дисков
+                  href: reservations/understand-disk-reservations.md
+                - name: Red Hat Enterprise Linux
+                  href: reservations/understand-rhel-reservation-charges.md
+                - name: Планы программного обеспечения
+                  href: reservations/understand-suse-reservation-charges.md
+                - name: Память
+                  href: reservations/understand-storage-charges.md
+                - name: База данных SQL
+                  href: reservations/understand-reservation-charges.md
+                - name: Azure Synapse Analytics
+                  href: reservations/reservation-discount-azure-sql-dw.md
+                - name: Виртуальные машины
+                  href: manage/understand-vm-reservation-charges.md
+            - name: Затраты на Windows и SQL не входят в стоимость
+              href: reservations/reserved-instance-windows-software-costs.md
+            - name: Данные об использовании для отдельных подписок
+              href: reservations/understand-reserved-instance-usage.md
+            - name: Данные об использовании для корпоративных клиентов
+              href: reservations/understand-reserved-instance-usage-ea.md
+        - name: Терминология выставления счетов
+          items:
+            - name: Условия использования отдельных подписок
+              href: understand/understand-usage.md
+            - name: Условия выставления счетов для отдельных подписок
+              href: understand/understand-invoice.md
+            - name: Условия использования в рамках Клиентского соглашения Майкрософт
+              href: understand/mca-understand-your-usage.md
+            - name: Условия выставления счетов в рамках Клиентского соглашения Майкрософт
+              href: understand/mca-understand-your-invoice.md
+            - name: 'Условия, касающиеся прейскурантов, в рамках Клиентского соглашения Майкрософт'
+              href: manage/mca-understand-pricesheet.md
+            - name: Условия выставления счетов в рамках Соглашения с партнером Майкрософт
+              href: understand/mpa-invoice-terms.md
+            - name: Учетные записи выставления счетов для клиентского соглашения Майкрософт
+              href: understand/mca-overview.md
+            - name: Учетные записи выставления счетов для партнерского соглашения Майкрософт
+              href: understand/mpa-overview.md
+    - name: Практические руководства
+      items:
+        - name: Настройка службы Управления затратами и выставления счетов
+          items:
+            - name: Администрирование учетных записей
+              items:
+                - name: Задачи администратора учетной записи
+                  href: manage/account-admin-tasks.md
+                - name: Изменение профиля
+                  href: manage/change-azure-account-profile.md
+                - name: Решение проблемы просроченных платежей
+                  href: manage/resolve-past-due-balance.md
+                - name: Доступ к данным для выставления счетов
+                  href: manage/manage-billing-access.md
+                - name: Роли для клиентского соглашения Майкрософт в Azure
+                  href: manage/understand-mca-roles.md
+                - name: Привязка идентификатора партнера
+                  href: manage/link-partner-id.md
+            - name: Администрирование подписок
+              items:
+                - name: Назначение доступа к данным службы управления затратами
+                  href: costs/assign-access-acm-data.md
+                - name: Состояния подписки
+                  href: manage/subscription-states.md
+                - name: Повторная активация подписки
+                  href: manage/subscription-disabled.md
+                - name: Повторная активация подписки Azure для учащихся
+                  href: manage/azurestudents-subscription-disabled.md
+                - name: Передача владения
+                  href: manage/billing-subscription-transfer.md
+                - name: Запрос прав владения для Клиентского соглашения Майкрософт
+                  href: manage/mca-request-billing-ownership.md
+                - name: Запрос прав владения для Соглашения с партнером Майкрософт
+                  href: manage/mpa-request-ownership.md
+                - name: Установка и настройка интеграции AWS
+                  href: costs/aws-integration-set-up-configure.md
+        - name: Выполнение основных задач администрирования выставления счетов
+          items:
+            - name: Управление учетными записями
+              items:
+                - name: Просмотр учетных записей выставления счетов
+                  href: manage/view-all-accounts.md
+                - name: Упорядочение затрат с помощью разделов счетов
+                  href: manage/mca-section-invoice.md
+                - name: Настройка учетной записи выставления счетов для Клиентского соглашения Майкрософт
+                  href: manage/mca-setup-account.md
+                - name: "Регистрация с помощью учетной записи Microsoft\_365"
+                  href: manage/microsoft-365-account-for-azure-subscription.md
+                - name: "Регистрация подписки Microsoft\_365 с помощью учетной записи Azure"
+                  href: manage/azure-account-for-microsoft-365-subscription.md
+                - name: Оплата с проведением строгой проверки подлинности клиентов
+                  href: manage/open-banking-strong-customer-authentication.md
+            - name: Управление подписками
+              items:
+                - name: Оплата по счету
+                  href: manage/pay-by-invoice.md
+                - name: Создание дополнительных подписок
+                  href: manage/create-subscription.md
+                - name: Экспорт сведений о подписке
+                  href: manage/export-subscriptions.md
+                - name: Изменение кредитной карты
+                  href: manage/change-credit-card.md
+                - name: Изменение администратора
+                  href: manage/add-change-subscription-administrator.md
+                - name: Изменение предложения подписки
+                  href: manage/switch-azure-offer.md
+                - name: Передача подписок CSP
+                  href: manage/transfer-subscriptions-subscribers-csp.md
+                - name: Отмена подписки
+                  href: manage/cancel-azure-subscription.md
+            - name: Управление подписками в рамках Соглашения Enterprise
+              items:
+                - name: Начало работы на портале Azure EA
+                  href: manage/ea-portal-get-started.md
+                - name: Роли EA в Azure
+                  href: manage/understand-ea-roles.md
+                - name: Администрирование на портале Azure EA
+                  href: manage/ea-portal-administration.md
+                - name: Администрирование на Azure EA Portal для партнеров
+                  href: manage/ea-partner-portal-administration.md
+                - name: Операции переноса в рамках Azure Enterprise
+                  href: manage/ea-transfers.md
+                - name: Задачи EA в клиентском соглашении Майкрософт
+                  href: manage/mca-enterprise-operations.md
+                - name: Соглашения и изменения для Azure EA
+                  href: manage/ea-portal-agreements.md
+                - name: Счета на корпоративную регистрацию
+                  href: manage/ea-portal-enrollment-invoices.md
+                - name: Цены в рамках Azure EA
+                  href: manage/ea-pricing-overview.md
+                - name: REST API Azure Enterprise
+                  href: manage/ea-portal-rest-apis.md
+                - name: Зарезервированные экземпляры виртуальной машины Azure EA
+                  href: manage/ea-portal-vm-reservations.md
+                - name: Azure Marketplace
+                  href: manage/ea-azure-marketplace.md
+            - name: Скачивание данных для выставления счетов и данных о затратах
+              items:
+                - name: Оплата счета
+                  href: understand/pay-bill.md
+                - name: Просмотр и скачивание счета Azure
+                  href: understand/download-azure-invoice.md
+                - name: Просмотр и скачивание сведений об использовании и расходах Azure
+                  href: understand/download-azure-daily-usage.md
+                - name: Скачивание счета и сведений о ежедневном использовании
+                  href: manage/download-azure-invoice-daily-usage-date.md
+                - name: Просмотр и скачивание налоговых документов
+                  href: understand/mca-download-tax-document.md
+                - name: Просмотр сведений о расходах на внешние службы Azure
+                  href: understand/understand-azure-marketplace-charges.md
+                - name: Просмотр и скачивание сведений о ценах для вашей организации
+                  href: manage/ea-pricing.md
+            - name: Бесплатная учетная запись
+              items:
+                - name: Создание бесплатных служб
+                  href: manage/create-free-services.md
+                - name: Предотвращение расходов
+                  href: manage/avoid-charges-free-account.md
+                - name: Проверка использования
+                  href: manage/check-free-service-usage.md
+                - name: Обновление бесплатной учетной записи
+                  href: manage/upgrade-azure-subscription.md
+        - name: Выполнение основных задач управления затратами
+          items:
+            - name: Предотвращение непредвиденных расходов
+              href: manage/getting-started.md
+            - name: Расчет цены
+              href: 'https://azure.microsoft.com/pricing/calculator/'
+            - name: Выполнение распространенных задач с помощью анализа затрат
+              href: costs/cost-analysis-common-uses.md
+            - name: Автоматизация операций с бюджетами
+              href: manage/cost-management-budget-scenario.md
+            - name: Использование оповещений о затратах
+              href: costs/cost-mgt-alerts-monitor-usage-spending.md
+            - name: Подключение с помощью Power BI Desktop
+              href: /power-bi/desktop-connect-azure-cost-management
+            - name: "Анализ затрат на Azure с помощью шаблона приложения для Power\_BI"
+              href: costs/analyze-cost-data-azure-cost-management-power-bi-template-app.md
+            - name: Управление затратами и использованием AWS
+              href: costs/aws-integration-manage.md
+            - name: Общие сведения о предельной сумме расходов
+              href: manage/spending-limit.md
+            - name: Отслеживание остатка на счете для клиентского соглашения Майкрософт
+              href: manage/mca-check-azure-credits-balance.md
+            - name: Миграция из EA в API MCA
+              href: costs/migrate-cost-management-api.md
+        - name: Приобретение и администрирование резервирований
+          items:
+            - name: Выбор приобретаемых ресурсов
+              items:
+                - name: Выбор приобретаемого резервирования
+                  href: reservations/determine-reservation-purchase.md
+            - name: Приобретение резервирований
+              items:
+                - name: Приобретение резервирования Azure
+                  href: reservations/prepare-buy-reservation.md
+                - name: Служба приложений
+                  href: reservations/prepay-app-service-isolated-stamp.md
+                - name: Резервирование Azure Redis Cache
+                  href: ../azure-cache-for-redis/cache-reserved-pricing.md?toc=/azure/cost-management-billing/toc.json
+                - name: Cosmos DB
+                  href: ../cosmos-db/cosmos-db-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
+                - name: Databricks
+                  href: reservations/prepay-databricks-reserved-capacity.md
+                - name: Обозреватель данных
+                  href: /dataexplorer-docs/data-explorer/pricing-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
+                - name: Хранилище дисков
+                  href: ../virtual-machines/linux/disks-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
+                - name: Выделенный узел
+                  href: ../virtual-machines/prepay-dedicated-hosts-reserved-instances.md?toc=/azure/cost-management-billing/toc.json
+                - name: Планы программного обеспечения
+                  href: ../virtual-machines/linux/prepay-suse-software-charges.md?toc=/azure/cost-management-billing/toc.json
+                - name: Хранилище Azure
+                  href: ../storage/blobs/storage-blob-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
+                - name: База данных Azure для PostgreSQL
+                  href: ../postgresql/concept-reserved-pricing.md?toc=/azure/cost-management-billing/toc.json
+                - name: База данных Azure для MySQL
+                  href: ../mysql/concept-reserved-pricing.md?toc=/azure/cost-management-billing/toc.json
+                - name: База данных Azure для MariaDB
+                  href: ../mariadb/concept-reserved-pricing.md?toc=/azure/cost-management-billing/toc.json
+                - name: База данных SQL
+                  href: ../sql-database/sql-database-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
+                - name: Azure Synapse Analytics
+                  href: reservations/prepay-sql-data-warehouse-charges.md
+                - name: Виртуальные машины
+                  href: ../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/cost-management-billing/toc.json
+            - name: 'Просмотр, управление и оптимизация после покупки'
+              items:
+                - name: Просмотр резервирований и показателей использования
+                  href: reservations/view-reservations.md
+                - name: Управление резервированиями
+                  href: reservations/manage-reserved-vm-instance.md
+                - name: Обмена и возврат резервирований
+                  href: reservations/exchange-and-refund-azure-reservations.md
+            - name: Отчет о затратах
+              items:
+                - name: Просмотр транзакций резервирования
+                  href: reservations/view-purchase-refunds.md
+                - name: Возврат средств за резервирование
+                  href: reservations/charge-back-usage.md
+            - name: Возобновление резервирований
+              items:
+                - name: Возобновление резервирования
+                  href: reservations/reservation-renew.md
+        - name: Диагностика
+          items:
+            - name: Подписки не найдены
+              href: manage/no-subscriptions-found.md
+            - name: Проблемы с оплатой
+              href: manage/billing-troubleshoot-azure-payment-issues.md
+            - name: Карта не принимается
+              href: manage/troubleshoot-declined-card.md
+            - name: Проблемы при регистрации учетной записи Azure
+              href: manage/troubleshoot-azure-sign-up.md
+            - name: Проблемы со входом в подписку
+              href: manage/troubleshoot-sign-in-issue.md
+            - name: Просмотр стоимости Enterprise отключен
+              href: manage/enterprise-mgmt-grp-troubleshoot-cost-view.md
+            - name: Устранение неполадок с доступом к порталу Azure EA
+              href: manage/ea-portal-troubleshoot.md
+            - name: Обращение в службу поддержки
+              href: ../azure-portal/supportability/how-to-create-azure-support-request.md
+    - name: Справочник
+      items:
+        - name: "REST\_API Управления затратами Azure"
+          href: 'https://docs.microsoft.com/rest/api/cost-management'
+        - name: REST API потребления Azure
+          href: 'https://docs.microsoft.com/rest/api/consumption'
+        - name: Шаблон Resource Manager
+          href: /azure/templates/microsoft.consumption/budgets
+        - name: "Примеры REST\_API службы \"Управление затратами\""
+          href: 'https://github.com/Azure-Samples/Cost-Management-Samples'
+        - name: Сценарии автоматизации выставления счетов
+          href: manage/cost-management-automation-scenarios.md
+        - name: Общие сведения об API выставления счетов Azure
+          href: manage/usage-rate-card-overview.md
+        - name: REST API выставления счетов Azure
+          href: 'https://docs.microsoft.com/rest/api/billing'
+        - name: Общие сведения об API потребления ресурсов Azure
+          href: manage/consumption-api-overview.md
+        - name: REST API потребления Azure
+          href: 'https://docs.microsoft.com/rest/api/consumption'
+        - name: REST API RateCard
+          href: 'https://msdn.microsoft.com/library/azure/mt219005.aspx'
+        - name: REST API использования ресурсов
+          href: 'https://msdn.microsoft.com/library/azure/mt219003.aspx'
+        - name: Общие сведения о корпоративной отчетности
+          href: manage/enterprise-api.md
+        - name: REST API для корпоративной отчетности
+          href: 'https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-balance-summary'
+        - name: Резервирование
+          items:
+            - name: "Резервирования\_— REST API"
+              href: reservations/reservation-apis.md
+            - name: "Резервирования\_— Azure PowerShell"
+              href: /powershell/module/azurerm.reservations
+            - name: "Резервирования\_— CLI"
+              href: /cli/azure/reservations/reservation
+            - name: "Управление затратами\_— REST API сведений о потреблении"
+              href: /rest/api/consumption/usagedetails
+            - name: "Управление затратами\_— REST API сведений о резервировании"
+              href: /rest/api/consumption/reservationsdetails
+    - name: Ресурсы
+      items:
+        - name: Развитие навыков с помощью Microsoft Learn
+          href: /learn/browse/?products=azure-cost-management
+        - name: Форум обратной связи по Управлению затратами
+          href: 'https://feedback.azure.com/forums/906772-cost-management'
+        - name: Стратегия развития Azure
+          href: 'https://azure.microsoft.com/roadmap/'
+        - name: Цены
+          href: 'https://azure.microsoft.com/pricing/details/cost-management'
+        - name: Доступность по регионам
+          href: 'https://azure.microsoft.com/regions/services/'
+    - name: Примеры
+      items:
+        - name: REST API
+          items:
+            - name: Просмотр корпоративных затрат
+              href: manage/review-enterprise-billing.md
+            - name: Просмотр данных об использовании подписки
+              href: manage/review-subscription-billing.md
+            - name: Просмотр данных использования ресурсов
+              href: manage/review-service-usage-api.md
+        - name: Примеры для .NET
+          items:
+            - name: Пример кода API счетов
+              href: 'https://github.com/Azure-Samples/billing-dotnet-core-invoice-download'
+            - name: Пример кода API использования ресурсов
+              href: 'https://github.com/Azure-Samples/billing-dotnet-usage-api'
+            - name: Пример кода API RateCard
+              href: 'https://github.com/Azure-Samples/billing-dotnet-ratecard-api'
+    - name: Cloudyn
+      items:
+        - name: Обзор
+          items:
+            - name: Что такое Cloudyn?
+              href: cloudyn/overview.md
+        - name: Краткие руководства
+          items:
+            - name: Просмотр данных о затратах
+              href: cloudyn/quick-register-azure-sub.md
+            - name: "Просмотр данных о затратах\_— EA"
+              href: cloudyn/quick-register-ea.md
+            - name: "Просмотр данных о затратах\_— CSP"
+              href: cloudyn/quick-register-csp.md
+        - name: Учебники
+          items:
+            - name: Просмотр сведений об использовании и затратах
+              href: cloudyn/tutorial-review-usage.md
+            - name: Прогнозирование расходов
+              href: cloudyn/tutorial-forecast-spending.md
+            - name: Управление затратами
+              href: cloudyn/tutorial-manage-costs.md
+            - name: оптимизации зарезервированных экземпляров
+              href: cloudyn/tutorial-optimize-reserved-instances.md
+            - name: Управление доступом к данным
+              href: cloudyn/tutorial-user-access.md
+        - name: Основные понятия
+          items:
+            - name: Интерпретация отчетов о затратах
+              href: cloudyn/understanding-cost-reports.md
+        - name: Практические руководства
+          items:
+            - name: Активация подписок и учетных записей Azure
+              href: cloudyn/activate-subs-accounts.md
+            - name: Добавление расширенных метрик для виртуальных машин
+              href: cloudyn/azure-vm-extended-metrics.md
+            - name: Подключение учетной записи Google
+              href: cloudyn/connect-google-account.md
+            - name: Подключение учетной записи AWS
+              href: cloudyn/connect-aws-account.md
+            - name: Настройка учетных записей хранения
+              href: cloudyn/storage-accounts.md
+            - name: Использование отчетов Cloudyn
+              href: cloudyn/use-reports.md
+            - name: Использование панелей мониторинга
+              href: cloudyn/dashboards.md
+            - name: Управление бюджетами
+              href: cloudyn/manage-budgets.md
+        - name: Ресурсы
+          items:
+            - name: Видео о Cloudyn
+              href: cloudyn/ref-videos.md
+            - name: Стратегия развития Azure
+              href: 'https://azure.microsoft.com/roadmap/'
+            - name: Цены на Cloudyn
+              href: 'https://azure.microsoft.com/pricing/details/cost-management'
+            - name: Доступность Cloudyn по регионам
+              href: 'https://azure.microsoft.com/regions/services/'
+            - name: 'Cloudyn: вопросы и ответы'
+              href: cloudyn/cost-mgt-faq.md
+            - name: Обращение в службу поддержки Cloudyn
+              href: /cloudyn/open-support-request.md

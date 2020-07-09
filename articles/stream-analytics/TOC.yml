@@ -88,7 +88,7 @@
           href: stream-analytics-edge-csharp-udf-methods.md
         - name: Определяемая пользователем функция в машинном обучении
           href: machine-learning-udf.md
-        - name: Отладка UDF и обновлений
+        - name: Отладка определяемых пользователем функций
           href: debug-user-defined-functions.md
     - name: Оптимизация задания Stream Analytics
       items:

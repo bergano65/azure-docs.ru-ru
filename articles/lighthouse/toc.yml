@@ -41,7 +41,7 @@
       href: ./concepts/managed-applications.md
 - name: Практические руководства
   items:
-    - name: Подключение клиента к системе делегированного управления ресурсами Azure
+    - name: Подключение клиента к Azure Lighthouse
       displayName: resource management
       href: ./how-to/onboard-customer.md
     - name: Публикация предложений управляемых служб в Azure Marketplace

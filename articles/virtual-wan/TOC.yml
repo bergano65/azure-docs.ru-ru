@@ -116,6 +116,12 @@
           href: how-to-virtual-hub-routing.md
         - name: Просмотр фактических маршрутов виртуального концентратора
           href: effective-routes-virtual-hub.md
+        - name: Маршрутизация трафика из виртуального концентратора в виртуальный сетевой модуль (прежние версии)
+          items:
+            - name: Портал Azure
+              href: virtual-wan-route-table-nva-portal.md
+            - name: Azure PowerShell
+              href: virtual-wan-route-table-nva.md
     - name: Безопасность
       items:
         - name: Установка Брандмауэра Azure в концентраторе

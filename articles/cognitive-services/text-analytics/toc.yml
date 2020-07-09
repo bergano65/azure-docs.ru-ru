@@ -68,6 +68,8 @@
       href: How-tos/text-analytics-how-to-keyword-extraction.md
     - name: Распознавание именованных сущностей
       href: How-tos/text-analytics-how-to-entity-linking.md
+    - name: Анализ текста для сферы здравоохранения
+      href: How-tos/text-analytics-for-health.md
     - name: Использование контейнеров
       items:
         - name: Установка и запуск контейнеров

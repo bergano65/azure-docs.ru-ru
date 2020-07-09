@@ -520,6 +520,8 @@
         - name: Настройка контейнеров службы "Речь"
           displayName: 'containers,configure containers,container config,configuration'
           href: speech-container-configuration.md
+        - name: Пакетная обработка с помощью контейнеров службы "Речь"
+          href: speech-container-batch-processing.md
         - name: Использование контейнеров службы "Речь" с Kubernetes и Helm
           displayName: 'containers,kubernetes,k8s,helm,orchestration,on-prem,on-premises'
           href: speech-container-howto-on-premises.md

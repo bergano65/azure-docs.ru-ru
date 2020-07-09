@@ -2,19 +2,19 @@
 title: Примеры и шаблоны Azure Lighthouse
 description: В этих примерах и шаблонах Azure Resource Manager показано, как подключить клиентов для делегированного управления ресурсами Azure и поддержки сценариев Azure Lighthouse.
 ms.topic: sample
-ms.date: 03/30/2020
-ms.openlocfilehash: 9e0ba8175931e277357e5b65e7e9ebded908a675
-ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
+ms.date: 07/07/2020
+ms.openlocfilehash: 9a90923b43fa5afe59f6385e3f227cdc722b27f5
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80421151"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86111677"
 ---
 # <a name="azure-lighthouse-samples"></a>Примеры Azure Lighthouse
 
 В приведенной ниже таблице представлены ссылки на шаблоны Azure Resource Manager для Azure Lighthouse. Эти файлы и многое другое также можно найти в [репозитории примеров для Azure Lighthouse](https://github.com/Azure/Azure-Lighthouse-samples/).
 
-## <a name="onboarding-customers-to-azure-delegated-resource-management"></a>Подключение клиентов к системе делегированного управления ресурсами Azure
+## <a name="onboarding-customers-to-azure-lighthouse"></a>Подключение клиентов к Azure Lighthouse
 
 [!INCLUDE [azure-lighthouse-samples-onboarding](../../../includes/azure-lighthouse-samples-onboarding.md)]
 

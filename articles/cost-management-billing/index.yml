@@ -1,152 +1,161 @@
-### YamlMime:Hub
+### YamlMime:Landing
 title: Документация по службе Управления затратами и выставления счетов Azure
-summary: Служба "Управление затратами Azure" и функция выставления счетов помогут составить представление о механизме выставления счетов в Azure, управлять учетной записью и подписками, а также отслеживать и контролировать расходы в Azure и оптимизировать использование ресурсов. Узнайте, как анализировать затраты, создавать бюджеты и управлять ими, экспортировать данные, а также просматривать рекомендации и принимать меры на их основе.
+summary: Служба Управления затратами и выставления счетов Azure поможет составить представление о механизме выставления счетов в Azure, управлять учетной записью и подписками, а также отслеживать и контролировать расходы в Azure и оптимизировать использование ресурсов. Узнайте, как анализировать затраты, создавать бюджеты и управлять ими, экспортировать данные, а также просматривать рекомендации и принимать меры на их основе.
 metadata:
+  title: Управление затратами и выставление счетов Azure
+  description: Служба Управления затратами и выставления счетов Azure поможет составить представление о механизме выставления счетов в Azure, управлять учетной записью и подписками, а также отслеживать и контролировать расходы в Azure и оптимизировать использование ресурсов. Узнайте, как анализировать затраты, создавать бюджеты и управлять ими, экспортировать данные, а также просматривать рекомендации и принимать меры на их основе.
   ms.service: cost-management-billing
-  description: Служба "Управление затратами Azure" и функция выставления счетов помогут составить представление о механизме выставления счетов в Azure, управлять учетной записью и подписками, а также отслеживать и контролировать расходы в Azure и оптимизировать использование ресурсов. Узнайте, как анализировать затраты, создавать бюджеты и управлять ими, экспортировать данные, а также просматривать рекомендации и принимать меры на их основе.
-  ms.topic: hub-page
+  ms.topic: landing-page
+  ms.collection: collection
   author: bandersmsft
   ms.author: banders
-  ms.date: 01/24/2019
-  ms.openlocfilehash: c1fbce7ba94ad097f948a36f93b1f997225c7086
-  ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+  ms.date: 06/01/2020
+  ms.openlocfilehash: 04b52a6aff1a8a24f2aa9988afec60c69c88c138
+  ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/25/2020
-  ms.locfileid: "83833608"
-highlightedContent:
-  items:
-  - title: Что собой представляет служба Управления затратами и выставления счетов?
-    itemType: overview
-    url: cost-management-billing-overview.md
-  - title: Анализ затрат и создание бюджетов
-    itemType: learn
-    url: https://docs.microsoft.com/learn/modules/analyze-costs-create-budgets-azure-cost-management/?WT.mc_id=costmanagementcontent_docsazurebilling_-inproduct-learn
-  - title: Рекомендации по работе с Управлением затратами
-    itemType: concept
-    url: ./costs/cost-mgt-best-practices.md
-conceptualContent:
-  items:
-  - title: Начало работы с выставлением счетов Azure
+  ms.lasthandoff: 07/08/2020
+  ms.locfileid: "86113400"
+landingContent:
+- title: Анализ затрат
+  linkLists:
+  - linkListType: overview
     links:
-    - url: ./understand/review-individual-bill.md
-      itemType: tutorial
-      text: Просмотр отдельного счета
-    - url: ./understand/review-customer-agreement-bill.md
-      itemType: tutorial
-      text: Просмотр счета в рамках Клиентского соглашения
-    - url: ./understand/review-partner-agreement-bill.md
-      itemType: tutorial
-      text: Просмотр счета в рамках Соглашения с партнером
-    - url: ./understand/review-enterprise-agreement-bill.md
-      itemType: tutorial
-      text: Просмотр счета в рамках Соглашения Enterprise
-    footerLink:
-      text: Подробнее
-      url: ./understand/index.yml
-  - title: Бесплатная учетная запись
+    - text: Что собой представляет служба Управления затратами и выставления счетов?
+      url: cost-management-billing-overview.md
+  - linkListType: get-started
     links:
-    - url: ./manage/create-free-services.md
-      itemType: concept
-      text: Создание бесплатных служб
-    - url: ./manage/avoid-charges-free-account.md
-      itemType: concept
-      text: Предотвращение расходов
-    - url: ./manage/check-free-service-usage.md
-      itemType: concept
-      text: Проверка использования
-    - url: ./manage/upgrade-azure-subscription.md
-      itemType: concept
-      text: Обновление подписки
-  - title: Управление затратами и использованием в Azure
+    - text: Изучайте в своем темпе
+      url: https://aka.ms/costmgmt/learn
+    - text: Видео о службе "Управление затратами Azure"
+      url: https://www.youtube.com/c/AzureCostManagement
+    - text: Начало анализа затрат
+      url: costs/quick-acm-cost-analysis.md
+  - linkListType: how-to-guide
     links:
-    - url: ./costs/quick-acm-cost-analysis.md
-      itemType: quickstart
-      text: Начало анализа затрат
-    - url: ./costs/tutorial-acm-create-budgets.md
-      itemType: tutorial
-      text: Создание бюджетов и управление ими
-    - url: ./costs/tutorial-export-acm-data.md
-      itemType: tutorial
-      text: Экспорт данных о затратах и использовании
-    - url: ./costs/tutorial-acm-opt-recommendations.md
-      itemType: tutorial
-      text: Рекомендации по экономному расходованию средств
-    - url: ./costs/cost-analysis-common-uses.md
-      itemType: how-to-guide
-      text: Выполнение распространенных задач с помощью анализа затрат
-    footerLink:
-      text: Подробнее
-      url: ./costs/index.yml
-  - title: Управление учетными записями и подписками Azure
+    - text: Выполнение распространенных задач с помощью анализа затрат
+      url: costs/cost-analysis-common-uses.md
+    - text: Анализ затрат с помощью приложения-шаблона Power BI
+      url: https://docs.microsoft/azure/cost-management-billing/costs/analyze-cost-data-azure-cost-management-power-bi-template-app
+    - text: Подключение с помощью Power BI Desktop
+      url: /power-bi/desktop-connect-azure-cost-management
+  - linkListType: tutorial
     links:
-    - url: ./manage/manage-billing-access.md
-      itemType: how-to-guide
-      text: Доступ к данным для выставления счетов
-    - url: ./manage/change-azure-account-profile.md
-      itemType: how-to-guide
-      text: Изменение профиля
-    - url: ./manage/resolve-past-due-balance.md
-      itemType: how-to-guide
-      text: Решение проблемы просроченных платежей
-    - url: ./manage/subscription-disabled.md
-      itemType: how-to-guide
-      text: Повторная активация подписки
-    - url: ./manage/billing-subscription-transfer.md
-      itemType: how-to-guide
-      text: Передача владения
-    - url: ./manage/cancel-azure-subscription.md
-      itemType: how-to-guide
-      text: Отмена подписки
-    - url: ./manage/change-credit-card.md
-      itemType: how-to-guide
-      text: Изменение кредитной карты
-    - url: ./manage/add-change-subscription-administrator.md
-      itemType: how-to-guide
-      text: Изменение администратора
-    - url: ./manage/create-subscription.md
-      itemType: how-to-guide
-      text: Создание дополнительных подписок
-    footerLink:
-      text: Подробнее
-      url: ./manage/index.yml
-  - title: Экономия средств за счет использования резервирований Azure
+    - text: Просмотр отдельного счета для учетной записи
+      url: understand/review-individual-bill.md
+    - text: Просмотр счета в рамках Клиентского соглашения Майкрософт
+      url: understand/review-customer-agreement-bill.md
+    - text: Просмотр счета в рамках Соглашения Enterprise
+      url: understand/review-enterprise-agreement-bill.md
+- title: Управление затратами
+  linkLists:
+  - linkListType: tutorial
     links:
-    - url: ./reservations/save-compute-costs-reservations.md
-      itemType: concept
-      text: Основные сведения о резервировании в Azure
-    - url: ./reservations/manage-reserved-vm-instance.md
-      itemType: how-to-guide
-      text: Управление резервированиями Azure
-    - url: ./reservations/monthly-payments-reservations.md
-      itemType: how-to-guide
-      text: Приобретение резервирования с ежемесячными платежами
-    - url: ./reservations/reservation-renew.md
-      itemType: how-to-guide
-      text: Возобновление резервирований
-    - url: ./reservations/exchange-and-refund-azure-reservations.md
-      itemType: how-to-guide
-      text: Обмен и возмещение средств за резервирование
-    footerLink:
-      text: Подробнее
-      url: ./reservations/index.yml
-  - title: Участие
+    - text: Создание бюджетов и управление ими
+      url: costs/tutorial-acm-create-budgets.md
+    - text: Экспорт данных о затратах и использовании
+      url: costs/tutorial-export-acm-data.md
+  - linkListType: concept
     links:
-    - url: https://feedback.azure.com/forums/906772-cost-management
-      itemType: how-to-guide
-      text: Отзывы о службе "Управление затратами"
-    - url: https://twitter.com/azurecostmgmt
-      itemType: how-to-guide
-      text: Служба "Управление затратами" в Twitter
-    - url: https://techcommunity.microsoft.com/t5/forums/searchpage/tab/message?filter=location&q=%22cost%20management%22&location=category:Azure&collapse_discussion=true
-      itemType: how-to-guide
-      text: Техническое сообщество службы "Управление затратами Azure"
-    - url: https://feedback.azure.com/forums/170030-signup-and-billing
-      itemType: how-to-guide
-      text: Запрос на добавление функции службы выставления счетов
-    - url: https://techcommunity.microsoft.com/t5/forums/searchpage/tab/message?filter=location&q=%22billing%22&noSynonym=false&location=category:Azure&collapse_discussion=true
-      itemType: how-to-guide
-      text: Техническое сообщество службы выставления счетов Azure
-    - url: https://docs.microsoft.com/answers/topics/azure-cost-management.html
-      itemType: how-to-guide
-      text: Задайте вопрос на форуме службы Управления затратами и выставления счетов
+    - text: Автоматизация управления затратами
+      url: https://docs.microsoft/azure/cost-management-billing/costs/manage-automation
+    - text: Сведения об условиях использования
+      url: understand/understand-usage.md
+    - text: Сведения о счетах
+      url: understand/understand-invoice.md
+    - text: Условия использования в рамках Клиентского соглашения Майкрософт
+      url: understand/mca-understand-your-usage.md
+    - text: Условия выставления счетов в рамках Клиентского соглашения Майкрософт
+      url: understand/mca-understand-your-invoice.md
+  - linkListType: how-to-guide
+    links:
+    - text: Использование оповещений о затратах
+      url: costs/cost-mgt-alerts-monitor-usage-spending.md
+    - text: Просмотр и скачивание счета Azure
+      url: understand/download-azure-invoice.md
+    - text: Просмотр и скачивание сведений об использовании и расходах Azure
+      url: understand/download-azure-daily-usage.md
+    - text: Просмотр сведений о расходах на внешние службы
+      url: understand/understand-azure-marketplace-charges.md
+- title: Оптимизация затрат
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Рекомендации для Управления затратами Azure
+      url: costs/cost-mgt-best-practices.md
+    - text: Экономия средств за счет использования резервирований в Azure
+      url: reservations/save-compute-costs-reservations.md
+  - linkListType: tutorial
+    links:
+    - text: Выполнение действий на основе рекомендаций
+      url: costs/tutorial-acm-opt-recommendations.md
+  - linkListType: how-to-guide
+    links:
+    - text: Предотвращение непредвиденных расходов
+      url: manage/getting-started.md
+  - linkListType: learn
+    links:
+    - text: Начните оптимизировать затраты уже сегодня
+      url: https://azure.microsoft/overview/cost-optimization/
+    - text: Прогнозирование затрат и оптимизация расходов на Azure
+      url: https://docs.microsoft/learn/modules/predict-costs-and-optimize-spending/
+    - text: Платформа Microsoft Azure с продуманной архитектурой — оптимизация затрат
+      url: https://docs.microsoft/learn/modules/azure-well-architected-cost-optimization/
+- title: Настройка службы Управления затратами и выставления счетов
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Общие сведения об областях и работа с ними
+      url: costs/understand-work-scopes.md
+    - text: Интерпретация данных службы "Управление затратами"
+      url: costs/understand-cost-mgt-data.md
+    - text: Роли EA в Azure
+      url: manage/understand-ea-roles.md
+    - text: Роли для Клиентского соглашения Майкрософт в Azure
+      url: manage/understand-mca-roles.md
+  - linkListType: how-to-guide
+    links:
+    - text: Назначение доступа к данным службы управления затратами
+      url: costs/assign-access-acm-data.md
+    - text: Просмотр учетных записей выставления счетов
+      url: manage/view-all-accounts.md
+    - text: Создание дополнительной подписки
+      url: manage/create-subscription.md
+    - text: Изменение кредитной карты
+      url: manage/change-credit-card.md
+    - text: Изменение администратора
+      url: manage/add-change-subscription-administrator.md
+    - text: Оплата по счету
+      url: manage/pay-by-invoice.md
+- title: Просмотр сведений об учетных записях в рамках Клиентского соглашения Майкрософт
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Учетные записи выставления счетов для клиентского соглашения Майкрософт
+      url: understand/mca-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Просмотр и скачивание налоговых документов
+      url: understand/mca-download-tax-document.md
+    - text: Оплата счета в рамках Клиентского соглашения Майкрософт
+      url: understand/pay-bill.md
+- title: Приобретение резервирований
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Выбор приобретаемого резервирования
+      url: reservations/determine-reservation-purchase.md
+    - text: Обмен и возмещение средств за резервирование
+      url: reservations/exchange-and-refund-azure-reservations.md
+  - linkListType: how-to-guide
+    links:
+    - text: Покупка резервирования
+      url: reservations/prepare-buy-reservation.md
+    - text: Управление резервированиями
+      url: reservations/manage-reserved-vm-instance.md
+    - text: Просмотр покупок резервирований
+      url: reservations/view-purchase-refunds.md
+    - text: Возврат средств за резервирование
+      url: reservations/charge-back-usage.md
+    - text: Возобновление резервирований
+      url: reservations/reservation-renew.md
