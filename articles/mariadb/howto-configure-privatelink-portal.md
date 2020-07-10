@@ -6,18 +6,18 @@ ms.author: manishku
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 01/09/2020
-ms.openlocfilehash: db2fa377cc10759fc57c3e4a27bd7815a5724bd7
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 08e146ebde34c6d85e258c93a1ed1780bb97727b
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86114743"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206454"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mariadb-using-portal"></a>Создание и управление частной ссылкой для базы данных Azure для MariaDB с помощью портала
 
 Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки.  В этой статье вы узнаете, как использовать портал Azure для создания виртуальной машины в виртуальной сети Azure и сервера базы данных Azure для MariaDB с частной конечной точкой Azure.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 > [!NOTE]
 > Эта функция доступна во всех регионах Azure, где база данных Azure для MariaDB поддерживает общего назначения и ценовые категории, оптимизированные для памяти.
@@ -37,7 +37,7 @@ ms.locfileid: "86114743"
 
     | Параметр | Значение |
     | ------- | ----- |
-    | Имя | Введите *MyVirtualNetwork*. |
+    | Name (Имя) | Введите *MyVirtualNetwork*. |
     | Пространство адресов | Введите *10.1.0.0/16*. |
     | Подписка | Выберите свою подписку.|
     | Группа ресурсов | Выберите **Создать**, а затем введите *myResourceGroup* и нажмите кнопку **ОК**. |
@@ -209,7 +209,7 @@ ms.locfileid: "86114743"
 
 ## <a name="access-the-mariadb-server-privately-from-the-vm"></a>Доступ к серверу MariaDB в частном порядке с виртуальной машины
 
-1. На удаленном рабочем столе  *myVm* откройте PowerShell.
+1. Откройте PowerShell на удаленном рабочем столе *myVm*.
 
 2. Введите `nslookup mydemomserver.privatelink.mariadb.database.azure.com`. 
 
@@ -246,7 +246,7 @@ ms.locfileid: "86114743"
 Завершив использование частной конечной точки, сервера MariaDB и виртуальной машины, удалите группу ресурсов и все содержащиеся в ней ресурсы.
 
 1. Введите *myResourceGroup*   в поле **поиска** в верхней части портала и выберите *myResourceGroup*в   результатах поиска.
-2. Выберите **Удалить группу ресурсов**.
+2. Выберите команду **Удалить группу ресурсов**.
 3. Введите myResourceGroup **в поле введите имя группы ресурсов** и выберите **Удалить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -8,20 +8,24 @@ author: msmbaldwin
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0348461e2a58bd8e71b8dff10667c512125d7b03
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 9160ab530037da1f24a2f07903b949b42ecbb34b
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83656703"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207080"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption"></a>Создание и настройка хранилища ключей для службы "Шифрование дисков Azure"
 
 Служба "Шифрование дисков Azure" использует Azure Key Vault, чтобы управлять секретами и ключами шифрования дисков и контролировать их использование.  Дополнительные сведения о хранилищах ключей см. в статье [Приступая к работе с Azure Key Vault](../../key-vault/key-vault-get-started.md) и [Защита хранилища ключей](../../key-vault/general/secure-your-key-vault.md). 
 
 > [!WARNING]
-> - Если вы уже использовали службу "Шифрование дисков Azure" c Azure AD для шифрования виртуальной машины, применяйте этот способ шифрования виртуальной машины и далее. Дополнительные сведения см. в статье [Создание и настройка хранилища ключей для службы "Шифрование дисков Azure" c Azure AD (предыдущий выпуск)](disk-encryption-key-vault-aad.md).
+> - Если вы уже использовали службу "Шифрование дисков Azure" c Azure AD для шифрования виртуальной машины, применяйте этот способ шифрования виртуальной машины и далее. Дополнительные сведения см. в статье [Создание и настройка хранилища ключей для службы "Шифрование дисков Azure" c Azure AD (предыдущий выпуск)](disk-encryption-key-vault-aad.md).
 
 Создание и настройка хранилища ключей для использования со службой "Шифрование дисков Azure" состоит из трех этапов.
+
+> [!Note]
+> Необходимо выбрать параметр в параметрах политики доступа Azure Key Vault, чтобы разрешить доступ к шифрованию дисков Azure для шифрования тома.
 
 1. Создание группы ресурсов при необходимости.
 2. Создание хранилища ключей. 
@@ -45,7 +49,7 @@ ms.locfileid: "83656703"
 
 ### <a name="connect-to-your-azure-account"></a>Подключение к учетной записи Azure
 
-Перед использованием Azure CLI или Azure PowerShell нужно установить подключение к подписке Azure. Для этого войдите в систему [с помощью Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest), [Azure PowerShell](/powershell/azure/authenticate-azureps?view=azps-2.5.0) или укажите учетные данные на портале Azure при появлении соответствующего запроса.
+Перед использованием Azure CLI или Azure PowerShell нужно установить подключение к подписке Azure. Для этого войдите в систему [с помощью Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest), [Azure PowerShell](/powershell/azure/authenticate-azureps?view=azps-2.5.0) или укажите учетные данные на портале Azure при появлении соответствующего запроса.
 
 ```azurecli-interactive
 az login

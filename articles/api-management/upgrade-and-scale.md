@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 04/20/2020
 ms.author: apimpm
-ms.openlocfilehash: 6edb639cacc48e8b59c458bcf0ac9c9c5e07b030
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 93c686fb2688a7a8ae71d8156e6e5c7915d6c604
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82203576"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86205765"
 ---
 # <a name="upgrade-and-scale-an-azure-api-management-instance"></a>Обновление и масштабирование экземпляра управления API Azure  
 
@@ -74,7 +74,7 @@ ms.locfileid: "82203576"
 1. Перейдите к службе управления API в [портал Azure](https://portal.azure.com/).
 2. Щелкните **ценовую** категорию в меню.
 3. Выберите нужный уровень службы из раскрывающегося списка. Используйте ползунок, чтобы указать масштаб службы управления API после изменения.
-4. Выберите команду **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
 ## <a name="downtime-during-scaling-up-and-down"></a>Время простоя при масштабировании вверх и вниз
 При масштабировании от или до уровня разработчика будет просто. В противном случае время простоя отсутствует. 
@@ -84,3 +84,4 @@ ms.locfileid: "82203576"
 
 - [Развертывание экземпляра службы управления Azure API в различных регионах Azure](api-management-howto-deploy-multi-region.md)
 - [Автоматическое масштабирование экземпляра службы управления API Azure](api-management-howto-autoscale.md)
+- [Оптимизируйте и сохраняйте расходы на облачные технологии](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)

@@ -1,0 +1,125 @@
+- name: Документация по резервированию Azure
+  href: index.yml?toc=/azure/cost-management-billing/reservations/toc.json
+- name: Обзор
+  expanded: true
+  items:
+    - name: Общие сведения о резервированиях в Azure
+      href: save-compute-costs-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
+- name: Практические руководства
+  items:
+    - name: Выбор приобретаемых ресурсов
+      items:
+        - name: Выбор приобретаемого резервирования
+          href: determine-reservation-purchase.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - name: Приобретение резервирований
+      items:
+        - name: Приобретение резервирования Azure
+          href: prepare-buy-reservation.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Служба приложений
+          href: prepay-app-service-isolated-stamp.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Резервирование Azure Redis Cache
+          href: ../../azure-cache-for-redis/cache-reserved-pricing.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Cosmos DB
+          href: ../../cosmos-db/cosmos-db-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Databricks
+          href: prepay-databricks-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Обозреватель данных
+          href: /azure/data-explorer/pricing-reserved-capacity?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Хранилище дисков
+          href: ../../virtual-machines/linux/disks-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Выделенный узел
+          href: ../../virtual-machines/prepay-dedicated-hosts-reserved-instances.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Планы программного обеспечения
+          href: ../../virtual-machines/linux/prepay-suse-software-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Хранилище Azure
+          href: ../../storage/blobs/storage-blob-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: База данных SQL
+          href: ../../sql-database/sql-database-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: База данных Azure для PostgreSQL
+          href: ../../postgresql/concept-reserved-pricing.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: База данных Azure для MySQL
+          href: ../../mysql/concept-reserved-pricing.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: База данных Azure для MariaDB
+          href: ../../mariadb/concept-reserved-pricing.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Azure Synapse Analytics
+          href: prepay-sql-data-warehouse-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Виртуальные машины
+          href: ../../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - name: 'Просмотр, управление и оптимизация после покупки'
+      items:
+        - name: Просмотр резервирований и показателей использования
+          href: view-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Управление резервированиями
+          href: manage-reserved-vm-instance.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Изменение параметра оптимизации
+          href: manage-reserved-vm-instance.md#change-optimize-setting-for-reserved-vm-instances
+        - name: Обмена и возврат резервирований
+          href: exchange-and-refund-azure-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - name: Отчет о затратах
+      items:
+        - name: Просмотр транзакций резервирования
+          href: view-purchase-refunds.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Возврат средств за резервирование
+          href: charge-back-usage.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - name: Возобновление резервирований
+      items:
+        - name: Возобновление резервирования
+          href: reservation-renew.md?toc=/azure/cost-management-billing/reservations/toc.json
+- name: Основные понятия
+  items:
+    - name: Создание рекомендаций по резервированию
+      href: reserved-instance-purchase-recommendations.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - name: Способ применения скидки
+      items:
+        - name: Применение скидки на резервирование Azure
+          href: reservation-discount-application.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Служба приложений
+          href: reservation-discount-app-service-isolated-stamp.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Кэш Redis для Azure
+          href: understand-azure-cache-for-redis-reservation-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Cosmos DB
+          href: understand-cosmosdb-reservation-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: База данных Azure для MariaDB
+          href: understand-reservation-charges-mariadb.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: База данных Azure для MySQL
+          href: understand-reservation-charges-mysql.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: База данных Azure для PostgreSQL
+          href: understand-reservation-charges-postgresql.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Databricks
+          href: reservation-discount-databricks.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Обозреватель данных
+          href: understand-azure-data-explorer-reservation-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Выделенные узлы
+          href: billing-understand-dedicated-hosts-reservation-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Хранилище дисков
+          href: understand-disk-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Red Hat Enterprise Linux
+          href: understand-rhel-reservation-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Планы программного обеспечения
+          href: understand-suse-reservation-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Память
+          href: understand-storage-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: База данных SQL
+          href: understand-reservation-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Azure Synapse Analytics
+          href: reservation-discount-azure-sql-dw.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Виртуальные машины
+          href: ../manage/understand-vm-reservation-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - name: Затраты на Windows и SQL не входят в стоимость
+      href: reserved-instance-windows-software-costs.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - name: Данные об использовании для отдельных подписок
+      href: understand-reserved-instance-usage.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - name: Данные об использовании для корпоративных клиентов
+      href: understand-reserved-instance-usage-ea.md?toc=/azure/cost-management-billing/reservations/toc.json
+- name: Справочник
+  items:
+    - name: "Резервирования\_— REST API"
+      href: reservation-apis.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - name: "Резервирования\_— Azure PowerShell"
+      href: /powershell/module/azurerm.reservations
+    - name: "Резервирования\_— CLI"
+      href: /cli/azure/reservations/reservation
+    - name: "Управление затратами\_— REST API сведений о потреблении"
+      href: /rest/api/consumption/usagedetails
+    - name: "Управление затратами\_— REST API сведений о резервировании"
+      href: /rest/api/consumption/reservationsdetails

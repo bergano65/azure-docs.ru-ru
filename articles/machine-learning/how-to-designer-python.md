@@ -1,7 +1,7 @@
 ---
-title: Выполнение скрипта Python в конструкторе
+title: Выполнение скрипта Python в конструкторе (Предварительная версия)
 titleSuffix: Azure Machine Learning
-description: Сведения об использовании Python в конструкторе Машинного обучения Azure для преобразования данных.
+description: Узнайте, как использовать Python в конструкторе Машинное обучение Azure (Предварительная версия) для преобразования данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,11 +10,12 @@ author: peterclu
 ms.author: peterlu
 ms.date: 02/28/2020
 ms.custom: designer, tracking-python
-ms.openlocfilehash: 31028ba0417f312aa0caaf49cb4b2d432f89979f
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 61086bf8c215a09e457e931ffed157559b339a9b
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86041019"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206796"
 ---
 # <a name="run-python-code-in-azure-machine-learning-designer"></a>Выполнение кода Python в конструкторе Машинное обучение Azure
 

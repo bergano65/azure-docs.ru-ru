@@ -19,11 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 64f15bf3d262249cdda2760c7ddf768be2590419
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dfe438f6940d3ccd5632a47be1389a30748716b0
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74113100"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206883"
 ---
 # <a name="odata-select-syntax-in-azure-cognitive-search"></a>Синтаксис $select OData в Azure Когнитивный поиск
 
@@ -62,7 +63,9 @@ field_path ::= identifier('/'identifier)*
 
 Включите `HotelId` поля, `HotelName` и `Rating` верхнего уровня в результаты, а также `City` вспомогательное поле `Address` :
 
+```odata-filter-expr
     $select=HotelId, HotelName, Rating, Address/City
+```
 
 Пример результата может выглядеть следующим образом:
 
@@ -79,7 +82,9 @@ field_path ::= identifier('/'identifier)*
 
 Включите `HotelName` поле верхнего уровня в результаты, а также все вложенные поля `Address` , и `Type` `BaseRate` вложенные поля и для каждого объекта в `Rooms` коллекции:
 
+```odata-filter-expr
     $select=HotelName, Address, Rooms/Type, Rooms/BaseRate
+```
 
 Пример результата может выглядеть следующим образом:
 

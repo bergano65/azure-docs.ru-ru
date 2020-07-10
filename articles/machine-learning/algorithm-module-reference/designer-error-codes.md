@@ -1,7 +1,7 @@
 ---
-title: Устранение ошибок модуля
+title: Устранение ошибок модуля конструктора (Предварительная версия)
 titleSuffix: Azure Machine Learning
-description: Устранение исключений модуля в конструкторе Машинного обучения Azure с помощью кодов ошибок
+description: Устранение неполадок с кодами ошибок модуля в Машинное обучение Azure конструкторе (Предварительная версия)
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,11 +9,12 @@ ms.topic: troubleshooting
 author: likebupt
 ms.author: keli19
 ms.date: 04/16/2020
-ms.openlocfilehash: 2e84d2f7c1a45f1ef18e5dc32b58d75bb17e2516
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9b477fbf0744304b28b3f4ef06271ce7728800bf
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85213760"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206987"
 ---
 # <a name="exceptions-and-error-codes-for-the-designer-preview"></a>Исключения и коды ошибок для конструктора (предварительная версия)
 

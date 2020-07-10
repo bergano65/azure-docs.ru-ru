@@ -1,22 +1,23 @@
 ---
-title: Развертывание зашифрованной службы для операций вывода
+title: Развертывание зашифрованной службы для размещения (Предварительная версия)
 titleSuffix: Azure Machine Learning
 description: Узнайте, как использовать Microsoft SEAL для развертывания зашифрованной службы прогнозирования для классификации изображений
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 05/18/2020
+ms.date: 07/09/2020
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: how-to
 ms.custom: tracking-python
-ms.openlocfilehash: b92293973ac9b5027a9f1a10c2d19fd164c41e3f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c67ddf2d82a1cebaaa43a90111f4a42edb20058e
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84560185"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206788"
 ---
-# <a name="how-to-deploy-an-encrypted-inferencing-web-service"></a>Развертывание зашифрованной веб-службы для операций вывода
+# <a name="how-to-deploy-an-encrypted-inferencing-web-service-preview"></a>Развертывание зашифрованной веб-службы для последующего просмотра (Предварительная версия)
 
 Узнайте, как развернуть модель классификации изображений в виде зашифрованной веб-службы для операций вывода с помощью [Экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/) (ACI). Веб-служба представляет собой образ контейнера Docker, который содержит модель и логику оценки.
 

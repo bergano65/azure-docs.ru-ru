@@ -7,11 +7,12 @@ ms.subservice: sizes
 ms.topic: article
 ms.date: 02/20/2020
 ms.author: jushiman
-ms.openlocfilehash: e5a4c9d1afcc4caa0f9ac0db8b59274006ab3097
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 88aaa10bf84d0195cc22d11d7fa1cfdcd639d475
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84676562"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207428"
 ---
 # <a name="dcsv2-series"></a>Серия DCsv2
 
@@ -40,7 +41,7 @@ ms.locfileid: "84676562"
 | Standard_DC8_v2  | 8   | 32          | 400                    | 8              | 16000/128                                                                                         | 2   | 168                                         |
 
 - Виртуальные машины серии DCsv2 [являются ВМ 2-го поколения](./linux/generation-2.md#creating-a-generation-2-vm) и поддерживают только образы `Gen2`.
-- В настоящее время доступны только в южной части Соединенного Королевства, Канаде и восточной части США.
+- В настоящее время доступно в регионах, перечисленных [здесь](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines&regions=all).
 - Предыдущее поколение виртуальных машин для конфиденциальных вычислений: [Серия DC](sizes-previous-gen.md#preview-dc-series)
 - Создание виртуальных машин DCsv2 с помощью [портала Azure](./linux/quick-create-portal.md) или [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-azure-compute.acc-virtual-machine-v2?tab=overview)
 

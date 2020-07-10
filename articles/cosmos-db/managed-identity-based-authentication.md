@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 03/20/2020
 ms.author: justipat
 ms.reviewer: sngun
-ms.openlocfilehash: 2555719e13b0cba38150d3bce7a18f043158d5b5
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: dfce18674f382cb683fa74a1bed964e9f86d72c2
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85970966"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206106"
 ---
 # <a name="use-system-assigned-managed-identities-to-access-azure-cosmos-db-data"></a>Использование управляемых системой удостоверений для доступа к данным Azure Cosmos DB
 
@@ -53,6 +53,8 @@ ms.locfileid: "85970966"
 
 В этом сценарии приложение-функция будет считывать температуру акуариум, а затем записывать эти данные в контейнер в Azure Cosmos DB. Так как приложение-функция должно записать данные, необходимо назначить роль **участника учетной записи DocumentDB** . 
 
+### <a name="assign-the-role-using-azure-portal"></a>Назначение роли с помощью портал Azure
+
 1. Войдите в портал Azure и перейдите к учетной записи Azure Cosmos DB. Откройте панель **управления доступом (IAM)** и перейдите на вкладку **назначения ролей** :
 
    :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab.png" alt-text="Снимок экрана, показывающий панель управления доступом и вкладку назначения ролей.":::
@@ -70,6 +72,18 @@ ms.locfileid: "85970966"
       :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane-filled.png" alt-text="Снимок экрана, на котором отображается панель "Добавление назначения ролей", заполненная примерами.":::
 
 1. После выбора приложения функции нажмите кнопку **сохранить**.
+
+### <a name="assign-the-role-using-azure-cli"></a>Назначение роли с помощью Azure CLI
+
+Чтобы назначить роль с помощью Azure CLI, используйте следующие команды:
+
+```azurecli-interactive
+$scope = az cosmosdb show --name '<Your_Azure_Cosmos_account_name>' --resource-group '<CosmosDB_Resource_Group>' --query id
+
+$principalId = az webapp identity show -n '<Your_Azure_Function_name>' -g '<Azure_Function_Resource_Group>' --query principalId
+
+az role assignment create --assignee $principalId --role "DocumentDB Account Contributor" --scope $scope
+```
 
 ## <a name="programmatically-access-the-azure-cosmos-db-keys"></a>Программный доступ к ключам Azure Cosmos DB
 
@@ -198,7 +212,7 @@ namespace Monitor
 
 Теперь вы готовы к [развертыванию приложения функции](../azure-functions/functions-create-first-function-vs-code.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Проверка подлинности на основе сертификатов с помощью Azure Cosmos DB и Azure Active Directory](certificate-based-authentication.md)
 * [Защита ключей Azure Cosmos DB с помощью Azure Key Vault](access-secrets-from-keyvault.md)

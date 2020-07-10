@@ -13,12 +13,12 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: 744b186b32927f81be21ff067c9195bddb33c416
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c4c7f82b729355e59ff05d5513e22fa143d53a5e
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85362097"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206855"
 ---
 # <a name="configure-and-customize-the-build-tasks"></a>Настройка и настройка задач сборки
 
@@ -64,9 +64,11 @@ ms.locfileid: "85362097"
     - Спецификации каталогов всегда должны оканчиваться на \\ *.
     - Примеры:
 
+```binskim-targets
            *.dll;*.exe
            $(BUILD_STAGINGDIRECTORY)\*
            $(BUILD_STAGINGDIRECTORY)\*.dll;$(BUILD_STAGINGDIRECTORY)\*.exe;
+```
 
 - Если в списке **тип** выбрать пункт **Командная строка** , необходимо запустить binskim.exe:
      - Убедитесь, что первые аргументы для binskim.exe являются командой **Analyze** , за которой следует одна или несколько спецификаций пути. Каждый путь может быть либо полным путем, либо путем относительно исходного каталога.
@@ -74,11 +76,13 @@ ms.locfileid: "85362097"
      - Параметр **/o** или **/Output** можно опустить. Выходное значение добавляется для вас или заменено.
      - Ниже приведены стандартные конфигурации командной строки.
 
+```binskim-line-args
            analyze $(Build.StagingDirectory)\* --recurse --verbose
            analyze *.dll *.exe --recurse --verbose
+```
 
-          > [!NOTE]
-          > \\При указании каталогов для целевого объекта * важно использовать символ *.
+> [!NOTE]
+> \\При указании каталогов для целевого объекта * важно использовать символ *.
 
 Дополнительные сведения об аргументах командной строки Бинским, правилах по ИДЕНТИФИКАТОРу или кодах выхода см. в разделе [Бинским User Guide](https://github.com/Microsoft/binskim/blob/master/docs/UserGuide.md).
 
@@ -191,7 +195,7 @@ ms.locfileid: "85362097"
 
 Дополнительные сведения о настройке YAML для этой задачи см. в статье [параметры после анализа YAML](yaml-configuration.md#post-analysis-task) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения о конфигурации на основе YAML см. в нашем [руководстве по настройке YAML](yaml-configuration.md).
 

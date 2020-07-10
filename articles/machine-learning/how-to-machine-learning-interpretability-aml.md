@@ -1,5 +1,5 @@
 ---
-title: Анализ & объяснения моделей машинного обучения в Python
+title: Анализ & объяснения моделей машинного обучения в Python (Предварительная версия)
 titleSuffix: Azure Machine Learning
 description: Узнайте, как получить объяснения о том, как модель машинного обучения определяет важность функций и делает прогнозы при использовании пакета SDK для Машинное обучение Azure.
 services: machine-learning
@@ -9,15 +9,16 @@ ms.topic: how-to
 ms.author: mesameki
 author: mesameki
 ms.reviewer: Luis.Quintanilla
-ms.date: 04/12/2020
+ms.date: 07/09/2020
 ms.custom: tracking-python
-ms.openlocfilehash: 32b33eed6b4dba303993f4c16fbd2ad42b3902f9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3830f65a3435c1db0291811c6306ea579bf1d896
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84560208"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207142"
 ---
-# <a name="use-the-interpretability-package-to-explain-ml-models--predictions-in-python"></a>Использование пакета интерпретации для объяснения моделей машинного обучения & прогнозах в Python
+# <a name="use-the-interpretability-package-to-explain-ml-models--predictions-in-python-preview"></a>Использование пакета интерпретации для объяснения моделей машинного обучения & прогнозах в Python (Предварительная версия)
 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
@@ -85,7 +86,7 @@ ms.locfileid: "84560208"
                                  classes=classes)
     ```
 
-    или
+    или диспетчер конфигурации служб
 
     ```python
 
@@ -111,7 +112,7 @@ ms.locfileid: "84560208"
                                classes=classes)
     ```
 
-    или
+    или диспетчер конфигурации служб
 
     ```python
     from interpret.ext.blackbox import PFIExplainer
@@ -243,7 +244,7 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1],
     pip install azureml-interpret
     pip install azureml-contrib-interpret
     ```
-1. Создайте сценарий обучения в локальной записной книжке Jupyter. Например, `train_explain.py`.
+1. Создайте сценарий обучения в локальной записной книжке Jupyter. Пример: `train_explain.py`.
 
     ```python
     from azureml.contrib.interpret.explanation.explanation_client import ExplanationClient
@@ -303,7 +304,7 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1],
 
 На следующих диаграммах представлено общее представление обученной модели, а также ее прогнозов и объяснений.
 
-|Графическое представления|Описание:|
+|Графическое представления|Описание|
 |----|-----------|
 |Исследование данных| Отображает общие сведения о наборе данных вместе со значениями прогноза.|
 |Глобальная важность|Выполняет статистическую обработку значений важности для отдельных точек данных, чтобы отобразить общие основные функции K (с возможностью настройки K) для модели. Помогает понять общее поведение базовой модели.|
@@ -317,7 +318,7 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1],
 
 Можно загрузить график важности отдельных компонентов для любой точки данных, щелкнув любую из отдельных точек данных в любой из общих графиков.
 
-|Графическое представления|Описание:|
+|Графическое представления|Описание|
 |----|-----------|
 |Локальная важность|Показывает первые K (с возможностью настройки K) важные функции для отдельного прогноза. Помогает проиллюстрировать локальное поведение базовой модели на определенной точке данных.|
 |Исследование пертурбатион (анализ гипотетических)|Позволяет изменять значения компонентов выбранной точки данных и отслеживать итоговые изменения в прогнозируемом значении.|
@@ -566,7 +567,7 @@ ExplanationDashboard(global_explanation, model, x_test)
 
    Для удаления развернутой веб-службы используйте `service.delete()`.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о интерпретируемости модели](how-to-machine-learning-interpretability.md)
 

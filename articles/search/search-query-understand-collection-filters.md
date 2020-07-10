@@ -19,11 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: f6e8ed5baef9b8594bb1fe03942e831fd8264a56
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 861e011c4bd368a274998859170e78cf444400a8
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74113074"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206177"
 ---
 # <a name="understanding-odata-collection-filters-in-azure-cognitive-search"></a>Основные сведения о фильтрах коллекции OData в Azure Когнитивный поиск
 
@@ -49,13 +50,17 @@ ms.locfileid: "74113074"
 
 При применении нескольких условий фильтра к коллекции сложных объектов эти **критерии сопоставляются, так как** они применяются к *каждому объекту в коллекции*. Например, следующий фильтр возвратит Гостиницы, у которых есть хотя бы одна комната Deluxe с частотой менее 100:
 
+```odata-filter-expr
     Rooms/any(room: room/Type eq 'Deluxe Room' and room/BaseRate lt 100)
+```
 
 Если фильтрация была *некоррелированной*, то приведенный выше фильтр может вернуть Гостиницы, где одна комната — Deluxe, а другая комната будет иметь базовый уровень менее 100. Это не имеет смысла, так как оба предложения лямбда-выражения применяются к одной и той же переменной диапазона, а именно `room` . Именно поэтому такие фильтры связаны.
 
 Однако для полнотекстового поиска не существует способа ссылаться на определенную переменную диапазона. Если вы используете поиск с полями для выполнения [полного запроса Lucene](query-lucene-syntax.md) , подобного этому:
 
+```odata-filter-expr
     Rooms/Type:deluxe AND Rooms/Description:"city view"
+```
 
 Вы можете получить Гостиницы, где одна комната — Deluxe, а другая комната упоминается в описании. Например, следующий документ `Id` `1` должен соответствовать запросу:
 
@@ -148,19 +153,27 @@ ms.locfileid: "74113074"
 
 Основываясь на равенстве, далее мы рассмотрим, как можно объединить несколько проверок равенства для одной и той же переменной диапазона с `or` . Он работает с благодарностью и [свойством дистрибутиве кванторов](https://en.wikipedia.org/wiki/Existential_quantification#Negation). Следующее выражение:
 
+```odata-filter-expr
     seasons/any(s: s eq 'winter' or s eq 'fall')
+```
 
 эквивалентно правилу
 
+```odata-filter-expr
     seasons/any(s: s eq 'winter') or seasons/any(s: s eq 'fall')
+```
 
 и каждое из двух `any` подвыражений может эффективно выполняться с использованием инвертированного индекса. Кроме того, благодаря [закону отрицания](https://en.wikipedia.org/wiki/Existential_quantification#Negation), приведенному ниже, это выражение:
 
+```odata-filter-expr
     seasons/all(s: s ne 'winter' and s ne 'fall')
+```
 
 эквивалентно правилу
 
+```odata-filter-expr
     not seasons/any(s: s eq 'winter' or s eq 'fall')
+```
 
 Именно поэтому можно использовать `all` с `ne` и `and` .
 
@@ -185,7 +198,7 @@ ms.locfileid: "74113074"
 
 Конкретные примеры того, какие виды фильтров разрешены, а какие нет, см. [в разделе как записать допустимые фильтры коллекции](search-query-troubleshoot-collection-filters.md#bkmk_examples).
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Устранение неполадок фильтров коллекции OData в Azure Когнитивный поиск](search-query-troubleshoot-collection-filters.md)
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)

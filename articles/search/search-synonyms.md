@@ -8,12 +8,12 @@ ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/28/2020
-ms.openlocfilehash: 23c7913fbe9b3943559d36f5cbf2a21d7ed63dbe
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0a53122b324c0a6dc43619eb2e9c704873f87b69
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85563448"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207309"
 ---
 # <a name="synonyms-in-azure-cognitive-search"></a>Синонимы в Azure Когнитивный поиск
 
@@ -51,6 +51,7 @@ Synonyms представляет собой поисковые системы, 
 
 Карту синонимов можно создать с помощью запроса HTTP POST, как показано в следующем примере.
 
+```synonym-map
     POST https://[servicename].search.windows.net/synonymmaps?api-version=2020-06-30
     api-key: [admin key]
 
@@ -61,9 +62,11 @@ Synonyms представляет собой поисковые системы, 
           USA, United States, United States of America\n
           Washington, Wash., WA => WA\n"
     }
+```
 
 Кроме того, можно использовать запрос PUT и указать имя карты синонимов в универсальном коде ресурса (URI). Если такой карты синонимов не существует, она будет создана.
 
+```synonym-map
     PUT https://[servicename].search.windows.net/synonymmaps/mysynonymmap?api-version=2020-06-30
     api-key: [admin key]
 
@@ -73,10 +76,12 @@ Synonyms представляет собой поисковые системы, 
           USA, United States, United States of America\n
           Washington, Wash., WA => WA\n"
     }
+```
 
 ##### <a name="apache-solr-synonym-format"></a>Формат синонимов Apache Solr
 
 Формат Solr поддерживает эквивалентные и явные сопоставления синонимов. Правила сопоставления соответствуют спецификации фильтра синонимов с открытым исходным кодом в Apache Solr, описанном в этом документе: [синонимфилтер](https://cwiki.apache.org/confluence/display/solr/Filter+Descriptions#FilterDescriptions-SynonymFilter). Ниже приведен пример правила для эквивалентных синонимов.
+
 ```
 USA, United States, United States of America
 ```
@@ -84,29 +89,37 @@ USA, United States, United States of America
 При использовании этого правила поисковый запрос "США" будет расширен до следующего запроса: "США" ИЛИ "Соединенные Штаты" ИЛИ "Соединенные Штаты Америки".
 
 Явное сопоставление обозначается стрелкой "=>". Если этот параметр задан, то последовательность условий поискового запроса, которая соответствует левой части "=>", будет заменена альтернативными вариантами в правой части. Согласно приведенному ниже правилу, поисковые запросы "Санкт-Петербург", "Питер" или "СПБ" будут перезаписаны запросом "СПБ". Явное сопоставление применяется только в указанном направлении, и в этом случае запрос "СПБ" не будет перезаписан запросом "Санкт-Петербург".
+
 ```
 Washington, Wash., WA => WA
 ```
 
 #### <a name="list-synonym-maps-under-your-service"></a>Вывод карт синонимов в службе.
 
+```synonym-map
     GET https://[servicename].search.windows.net/synonymmaps?api-version=2020-06-30
     api-key: [admin key]
+```
 
 #### <a name="get-a-synonym-map-under-your-service"></a>Получение карты синонимов в службе.
 
+```synonym-map
     GET https://[servicename].search.windows.net/synonymmaps/mysynonymmap?api-version=2020-06-30
     api-key: [admin key]
+```
 
 #### <a name="delete-a-synonyms-map-under-your-service"></a>Удаление карты синонимов в службе.
 
+```synonym-map
     DELETE https://[servicename].search.windows.net/synonymmaps/mysynonymmap?api-version=2020-06-30
     api-key: [admin key]
+```
 
 ### <a name="configure-a-searchable-field-to-use-the-synonym-map-in-the-index-definition"></a>Настройка поля, поддерживающего поиск, для использования карты синонимов в определении индекса.
 
 Новое свойство поля **synonymMaps** можно использовать для указания карты синонимов для поля, поддерживающего поиск. Карты синонимов — это ресурсы уровня службы, и на них может ссылаться любое поле индекса в службе.
 
+```synonym-map
     POST https://[servicename].search.windows.net/indexes?api-version=2020-06-30
     api-key: [admin key]
 
@@ -138,6 +151,7 @@ Washington, Wash., WA => WA
           }
        ]
     }
+```
 
 Свойство **synonymMaps** можно указать полей, поддерживающих поиск, типа Edm.String или Collection(Edm.String).
 
@@ -156,7 +170,7 @@ Washington, Wash., WA => WA
 
 Если у вас есть индекс в среде разработки (не в рабочей среде), поэкспериментируйте с небольшим словарем, чтобы узнать, как добавление синонимов изменяет результаты поиска, включая влияние на профили повышения, выделение совпадений и предложения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание схемы синонимов](https://docs.microsoft.com/rest/api/searchservice/create-synonym-map)

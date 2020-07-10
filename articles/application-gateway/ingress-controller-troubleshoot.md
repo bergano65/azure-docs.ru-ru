@@ -7,18 +7,18 @@ ms.service: application-gateway
 ms.topic: troubleshooting
 ms.date: 06/18/2020
 ms.author: caya
-ms.openlocfilehash: 29f8a7823207f5571acc345bc6234a318342b173
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0fdfa6265b81140fa6536082fe7ad4c5fa687fc4
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85207861"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207153"
 ---
 # <a name="troubleshoot-common-questions-or-issues-with-ingress-controller"></a>Устранение распространенных вопросов и проблем с контроллером входящего трафика
 
 [Azure Cloud Shell](https://shell.azure.com/) — это наиболее удобный способ устранения проблем с установкой AKS и агик. Запустите оболочку из [Shell.Azure.com](https://shell.azure.com/) или щелкните ссылку:
 
-[![Внедрение запуска](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
+[![Внедрение запуска](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
 
 
 ## <a name="test-with-a-simple-kubernetes-app"></a>Тестирование с помощью простого приложения Kubernetes
@@ -26,7 +26,7 @@ ms.locfileid: "85207861"
 Ниже предполагается, что выполняются следующие действия.
   - У вас есть кластер AKS с включенной поддержкой расширенных сетей
   - АГИК установлен в кластере AKS
-  - Вы уже закончите шлюз приложений в виртуальной сети, совместно используемой кластером AKS.
+  - У вас уже есть шлюз приложений в виртуальной сети, совместно используемой с кластером AKS
 
 Чтобы убедиться, что установка шлюза приложений + AKS + АГИК правильно настроена, разверните простейшее возможное приложение:
 
@@ -118,7 +118,7 @@ I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
 Наконец, можно использовать `cURL` команду из [Cloud Shell](https://shell.azure.com/) , чтобы установить HTTP-подключение к только что развернутому приложению:
 
 1. Использование `kubectl get ingress` для получения общедоступного IP-адреса шлюза приложений
-2. Используйте `curl -I -H 'test.agic.contoso.com' <publitc-ip-address-from-previous-command>`.
+2. Использование команды `curl -I -H 'test.agic.contoso.com' <publitc-ip-address-from-previous-command>`
 
 ![обыкновен](./media/application-gateway-ingress-controller-troubleshooting/tsg--curl.png)
 
@@ -236,7 +236,7 @@ I0927 22:34:51.282342       1 process.go:171] END AppGateway deployment
 Сообщество Kubernetes установило 9 уровней ведения журнала для средства [kubectl](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-output-verbosity-and-debugging) . В этом репозитории используется три из этих трех вариантов с аналогичной семантикой:
 
 
-| Уровень детализации | Описание: |
+| Уровень детализации | Описание |
 |-----------|-------------|
 |  1        | Уровень ведения журнала по умолчанию; отображаются сведения о запуске, предупреждения и ошибки |
 |  3        | Расширенные сведения о событиях и изменениях; списки созданных объектов |

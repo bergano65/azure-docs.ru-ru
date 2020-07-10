@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3fbbeaeafd8de5a38489034a13738ca3a9b934d5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b55707612c34cb3c95eafd95780955bf991c409c
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85601397"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206162"
 ---
 # <a name="azure-disk-encryption-scenarios-on-linux-vms"></a>Сценарии шифрования дисков Azure для виртуальных машин Linux
 
@@ -413,6 +413,8 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 - Виртуальная машина с "вложенными точками подключения"; то есть несколько точек подключения находятся по одному пути (например, "/1stmountpoint/Data/2stmountpoint").
 - Виртуальная машина с диском данных, подключенным поверх папки ОС.
 - Виртуальные машины серии M с Ускоритель записиными дисками.
+- Применение [шифрования на стороне сервера с ключами, управляемыми клиентом](disk-encryption.md) , к виртуальным машинам, зашифрованным с помощью ade, и наоборот.
+- Миграция виртуальной машины, зашифрованной с помощью ADE, в [Шифрование на стороне сервера с помощью управляемых клиентом ключей](disk-encryption.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

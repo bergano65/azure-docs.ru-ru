@@ -4,12 +4,12 @@ ms.service: app-service-mobile
 ms.topic: include
 ms.date: 08/23/2018
 ms.author: crdun
-ms.openlocfilehash: 6e4168dbfd2963558166ee841e3d9075e82bc6ad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bae7d03f6e4551f2d30db038bf8236a0dad0bf35
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "67185965"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206146"
 ---
 > [!div class="op_single_selector"]
 > * [Azure Active Directory](../articles/app-service/configure-authentication-provider-aad.md)
@@ -17,6 +17,7 @@ ms.locfileid: "67185965"
 > * [Google](../articles/app-service/configure-authentication-provider-google.md)
 > * [учетная запись Майкрософт](../articles/app-service/configure-authentication-provider-microsoft.md)
 > * [Twitter](../articles/app-service/configure-authentication-provider-twitter.md)
+> * [Поставщик OpenID Connect Connect (Предварительная версия)](../articles/app-service/configure-authentication-provider-openid-connect.md)
 > 
 > 
 

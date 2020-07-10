@@ -6,18 +6,18 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 01/09/2020
-ms.openlocfilehash: 6986d5882e4d62ffc2e25b7ea998f46f41c67330
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: f05b70c8197283d9fa576d6ea464aa08554dd773
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86102469"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206771"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-using-portal"></a>Создание и управление частной связью для базы данных Azure для PostgreSQL — один сервер с помощью портала
 
 Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки.  В этой статье вы узнаете, как использовать портал Azure для создания виртуальной машины в виртуальной сети Azure и базы данных Azure для PostgreSQL с помощью частной конечной точки Azure.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 > [!NOTE]
 > Эта функция доступна во всех регионах Azure, где база данных Azure для PostgreSQL поддерживает общего назначения и ценовые категории, оптимизированные для памяти.
@@ -37,7 +37,7 @@ ms.locfileid: "86102469"
 
     | Параметр | Значение |
     | ------- | ----- |
-    | Имя | Введите *MyVirtualNetwork*. |
+    | Name (Имя) | Введите *MyVirtualNetwork*. |
     | Пространство адресов | Введите *10.1.0.0/16*. |
     | Подписка | Выберите свою подписку.|
     | Группа ресурсов | Выберите **Создать**, а затем введите *myResourceGroup* и нажмите кнопку **ОК**. |
@@ -164,7 +164,7 @@ ms.locfileid: "86102469"
     | ------- | ----- |
     |**СЕТИ**| |
     | Виртуальная сеть| Выберите *MyVirtualNetwork*. |
-    | Подсеть | Выберите *mySubnet*. |
+    | Подсеть | Выберите *mySubnet*. |
     |**ЧАСТНАЯ ИНТЕГРАЦИЯ DNS**||
     |Интеграция с частной зоной DNS |Выберите **Да**. |
     |Частная зона DNS |Выберите *(создать) привателинк. postgres. Database. Azure. com* |
@@ -209,7 +209,7 @@ ms.locfileid: "86102469"
 
 ## <a name="access-the-postgresql-server-privately-from-the-vm"></a>Доступ к серверу PostgreSQL в частном порядке с виртуальной машины
 
-1. На удаленном рабочем столе  *myVm* откройте PowerShell.
+1. Откройте PowerShell на удаленном рабочем столе *myVm*.
 
 2. Введите `nslookup mydemopostgresserver.privatelink.postgres.database.azure.com`. 
 
@@ -246,8 +246,8 @@ ms.locfileid: "86102469"
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Завершив использование частной конечной точки, сервера PostgreSQL и виртуальной машины, удалите группу ресурсов и все содержащиеся в ней ресурсы.
 
-1. Введите *myResourceGroup*   в поле **поиска** в верхней части портала и выберите *myResourceGroup*в   результатах поиска.
-2. Выберите **Удалить группу ресурсов**.
+1. Введите *myResourceGroup* в поле **поиска** в верхней части портала и выберите *myResourceGroup*в   результатах поиска.
+2. Выберите команду **Удалить группу ресурсов**.
 3. Введите myResourceGroup **в поле введите имя группы ресурсов** и выберите **Удалить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия

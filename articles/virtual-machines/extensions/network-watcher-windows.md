@@ -14,11 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 02/14/2017
 ms.author: mimckitt
-ms.openlocfilehash: f226e240a59b33c2913919495410b1a4923b4902
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e78a18055d85e2105ea604d568c154c889ab0655
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81261675"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206020"
 ---
 # <a name="network-watcher-agent-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины агента Наблюдателя за сетями для Windows
 
@@ -33,7 +34,7 @@ ms.locfileid: "81261675"
 
 ### <a name="operating-system"></a>Операционная система
 
-Расширение агента Наблюдателя за сетями для Windows может выполняться в выпусках Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 и Windows Server 2016. Nano Server в данный момент не поддерживается.
+Расширение агента наблюдателя за сетями для Windows можно запускать в выпусках Windows Server 2008 R2, 2012, 2012 R2, 2016 и 2019. Nano Server в данный момент не поддерживается.
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 

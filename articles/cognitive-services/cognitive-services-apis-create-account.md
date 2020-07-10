@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: aahi
-ms.openlocfilehash: 4a73ff517347baa2cf589432be025bd922597ed3
-ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
+ms.openlocfilehash: f76b444f737c4deb0fc61953c839c8826f379d5e
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85611396"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207258"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-portal"></a>Создание Cognitive Services ресурса с помощью портал Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "85611396"
 
 ## <a name="create-a-new-azure-cognitive-services-resource"></a>Создание нового ресурса Azure Cognitive Services
 
-1. Создает ресурса.
+1. Создание ресурса.
 
     #### <a name="multi-service-resource"></a>[Ресурс для нескольких служб](#tab/multiservice)
 
@@ -37,11 +37,17 @@ ms.locfileid: "85611396"
 
     В настоящее время ресурс с несколькими службами обеспечивает доступ к следующим Cognitive Services:
 
-    |                  |                                                      |                    |                               |                  |
-    |------------------|------------------------------------------------------|--------------------|-------------------------------|------------------|
-    | API Компьютерного зрения  | Content Moderator                                    | Распознавание лиц               | Распознавание речи (LUIS) | Анализ текста   |
-    | API перевода  | Поиск Bing версии 7 <br>(Веб, изображение, Новости, видео, визуальный элемент) | Пользовательский поиск Bing | API Поиска сущностей Bing            | API Автозаполнения Bing |
-    | API Проверки орфографии Bing |                                                      |                    |                               |                  |
+    - API Компьютерного зрения
+    - Content Moderator
+    - Распознавание лиц
+    - Распознавание речи (LUIS)
+    - Анализ текста
+    - API перевода
+    - Поиск Bing версии 7 <br>(Веб, изображение, Новости, видео, визуальный элемент)
+    - Пользовательский поиск Bing
+    - API Поиска сущностей Bing
+    - API Автозаполнения Bing
+    - API Проверки орфографии Bing
 
     #### <a name="single-service-resource"></a>[Ресурс с одной службой](#tab/singleservice)
 
@@ -62,7 +68,7 @@ ms.locfileid: "85611396"
 
     |    |    |
     |--|--|
-    | **имя**; | Описательное имя для ресурса Cognitive Services. Например, *микогнитивесервицесресаурце*. |
+    | **Имя** | Описательное имя для ресурса Cognitive Services. Например, *микогнитивесервицесресаурце*. |
     | **Подписка** | Выберите одну из доступных подписок Azure. |
     | **Расположение** | Расположение экземпляра Cognitive Service. Разные расположения могут увеличивать задержку, но не влияют на доступность среды выполнения ресурса. |
     | **Ценовая категория** | Затраты на учетную запись Cognitive Services зависят от выбранных параметров и использования. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/cognitive-services/) API-интерфейсов.
@@ -70,13 +76,13 @@ ms.locfileid: "85611396"
 
     ![Снимок экрана создания ресурса](media/cognitive-services-apis-create-account/resource_create_screen-multi.png)
 
-    Нажмите кнопку **Создать**.
+    Щелкните **Создать**.
 
     #### <a name="single-service-resource"></a>[Ресурс с одной службой](#tab/singleservice)
 
     |    |    |
     |--|--|
-    | **имя**; | Описательное имя для ресурса Cognitive Services. Например, *текстаналитиксресаурце*. |
+    | **Имя** | Описательное имя для ресурса Cognitive Services. Например, *текстаналитиксресаурце*. |
     | **Подписка** | Выберите одну из доступных подписок Azure. |
     | **Расположение** | Расположение экземпляра Cognitive Service. Разные расположения могут увеличивать задержку, но не влияют на доступность среды выполнения ресурса. |
     | **Ценовая категория** | Затраты на учетную запись Cognitive Services зависят от выбранных параметров и использования. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/cognitive-services/) API-интерфейсов.
@@ -84,7 +90,7 @@ ms.locfileid: "85611396"
 
     ![Снимок экрана создания ресурса](media/cognitive-services-apis-create-account/resource_create_screen.png)
 
-    Нажмите кнопку **Создать**.
+    Щелкните **Создать**.
 
     ***
 
@@ -109,7 +115,7 @@ ms.locfileid: "85611396"
 2. Найдите группу ресурсов, содержащую ресурс, который необходимо удалить.
 3. Щелкните правой кнопкой мыши список групп ресурсов. Выберите **Удалить группу ресурсов** и подтвердите выбор.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Проверка подлинности запросов к Azure Cognitive Services](authentication.md)
 * [Общие сведения об Azure Cognitive Services](Welcome.md)

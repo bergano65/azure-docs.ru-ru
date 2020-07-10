@@ -19,21 +19,26 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: b43c46599cbacaf40bc9583e364d088fa27a3ac9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1748a334c024401d845145947ecd55519f61e5e3
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74113120"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206923"
 ---
 # <a name="odata-searchin-function-in-azure-cognitive-search"></a>`search.in`Функция OData в Azure когнитивный Поиск
 
 Распространенным сценарием в [выражениях фильтра OData](query-odata-filter-orderby-syntax.md) является проверка того, что одно поле в каждом документе равно одному из множества возможных значений. Например, некоторые приложения реализуют [фильтрацию безопасности](search-security-trimming-for-azure-search.md) , проверяя поле, содержащее один или несколько идентификаторов субъектов, по списку идентификаторов субъектов, представляющих пользователя, выполняющего запрос. Один из способов написать запрос, подобный этому, заключается в [`eq`](search-query-odata-comparison-operators.md) использовании [`or`](search-query-odata-logical-operators.md) операторов и:
 
+```odata-filter-expr
     group_ids/any(g: g eq '123' or g eq '456' or g eq '789')
+```
 
 Однако существует более короткий способ записи, с помощью `search.in` функции:
 
+```odata-filter-expr
     group_ids/any(g: search.in(g, '123, 456, 789'))
+```
 
 > [!IMPORTANT]
 > Помимо более короткого и простого чтения, использование `search.in` также обеспечивает [преимущества производительности](#bkmk_performance) и предотвращает определенные [ограничения на размер фильтров](search-query-odata-filter.md#bkmk_limits) , если в фильтре содержится сотни или даже тысячи значений. По этой причине мы настоятельно рекомендуем использовать `search.in` вместо более сложного отсоединения выражений равенства.
@@ -69,7 +74,7 @@ search_in_call ::=
 
 Параметры определены в следующей таблице.
 
-| Имя параметра | Type | Описание: |
+| Имя параметра | Тип | Описание |
 | --- | --- | --- |
 | `variable` | `Edm.String` | Ссылка на строковое поле (или переменная диапазона для поля коллекции строк в случае, когда `search.in` используется в `any` `all` выражении или). |
 | `valueList` | `Edm.String` | Строка, содержащая список значений с разделителями для сопоставления с `variable` параметром. Если `delimiters` параметр не указан, разделителями по умолчанию являются пробел и запятая. |
@@ -85,25 +90,35 @@ search_in_call ::=
 
 Найти все гостиницы с именем, равным "Sea View Motel" или "Budget Гостиницы". Фразы содержат пробелы, которые являются разделителем по умолчанию. В качестве третьего строкового параметра можно указать альтернативный разделитель в одинарных кавычках:  
 
+```odata-filter-expr
     search.in(HotelName, 'Sea View motel,Budget hotel', ',')
+```
 
 Найти все гостиницы с именем, равным "Sea View Motel" или "Budget Гостиницы", разделенными "|"):
 
+```odata-filter-expr
     search.in(HotelName, 'Sea View motel|Budget hotel', '|')
+```
 
 Найти все гостиницы с комнатами с тегом "Wi" или "купание":
 
+```odata-filter-expr
     Rooms/any(room: room/Tags/any(tag: search.in(tag, 'wifi, tub')))
+```
 
 Найти совпадение по фразам в коллекции, например "нагревани Товел стоек" или "хаирдрер включен" в тегах.
 
+```odata-filter-expr
     Rooms/any(room: room/Tags/any(tag: search.in(tag, 'heated towel racks,hairdryer included', ','))
+```
 
 Найти все гостиницы без тега "Motel" или "кабин':
 
+```odata-filter-expr
     Tags/all(tag: not search.in(tag, 'motel, cabin'))
+```
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)

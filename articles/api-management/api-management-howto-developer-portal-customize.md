@@ -12,17 +12,18 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/05/2020
 ms.author: apimpm
-ms.openlocfilehash: af7c995c11322a538dd9e27a905f1ddbc723e8ab
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 345b4950e25f48eb1a48c5e583908d0f771771ba
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79244099"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206249"
 ---
 # <a name="access-and-customize-developer-portal"></a>Доступ и Настройка портала разработчика
 
 Портал разработчика — это автоматически создаваемый, полностью настраиваемый веб-сайт с документацией по API. Именно здесь пользователи API могут обнаружить ваши API, узнать, как их использовать и запросить доступ.
 
-В этом руководстве вы узнаете, как:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Доступ к управляемой версии портала разработчика
@@ -129,7 +130,8 @@ ms.locfileid: "79244099"
 
 Необходимо включить CORS (общий доступ к ресурсам между источниками) в API, чтобы посетители портала протестируют API через встроенную интерактивную консоль. Дополнительные сведения см. в [этой статье документации](api-management-howto-developer-portal.md#cors) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
+- [Оптимизируйте и сохраняйте расходы на облачные технологии](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
 
 Дополнительные сведения о портале разработчика:
 

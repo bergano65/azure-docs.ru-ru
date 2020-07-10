@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/19/2017
 ms.author: damendo
-ms.openlocfilehash: acb7ff5c0862ceff8c73eaca92cc7000220eca41
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 675038189fdc9c9626fee409a90e17341cf9b6cd
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84738657"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207358"
 ---
 # <a name="introduction-to-resource-troubleshooting-in-azure-network-watcher"></a>Общие сведения об устранении неполадок ресурсов в Наблюдателе за сетями Azure
 
@@ -73,7 +73,7 @@ ms.locfileid: "84738657"
 | ConnectionIsMarkedDisconnected | Подключение отмечено как "разъединенное" |Нет|
 | ConnectionNotConfiguredOnGateway | Для базовой службы не настроено подключение. | Да |
 | ConnectionMarkedStandby | Базовая служба помечена как ждущая.| Да|
-| Аутентификация | Несоответствие предварительного ключа | Да|
+| Проверка подлинности | Несоответствие предварительного ключа | Да|
 | PeerReachability | Одноранговый шлюз недоступен. | Да|
 | IkePolicyMismatch | У однорангового шлюза имеются политики IKE, которые не поддерживаются в Azure. | Да|
 | WfpParse Error | Ошибка при анализе журнала WFP. |Да|
@@ -82,21 +82,21 @@ ms.locfileid: "84738657"
 
 В следующей таблице показано, какие шлюзы и подключения поддерживаются при устранении неполадок с помощью службы "Наблюдатель за сетями":
 
-|  |  |
+| Шлюз или подключение | Поддерживается  |
 |---------|---------|
 |**Типы шлюзов**   |         |
-|VPN      | Поддерживается        |
+|Виртуальная частная сеть      | Поддерживается        |
 |ExpressRoute | Не поддерживается |
 |**Типы VPN** | |
 |На основе маршрутов | Поддерживается|
 |На основе политик | Не поддерживается|
 |**Типы подключений**||
-|IPsec| Поддерживается|
+|IPsec;| Поддерживается|
 |Vnet2Vnet| Поддерживается|
 |ExpressRoute| Не поддерживается|
 |VPNClient| Не поддерживается|
 
-## <a name="log-files"></a>Файлы журнала
+## <a name="log-files"></a>файлы журналов.
 
 После того, как устранение неполадок ресурсов завершено, файлы журнала устранения неполадок ресурсов сохраняются в учетной записи хранения. На следующем рисунке приведен пример содержимого вызова, который завершается ошибкой.
 
@@ -208,7 +208,7 @@ Elapsed Time            330 sec
 |        12    ikeext               ike_sa_management_c3307  7857a320-42ee-6e90-d5d9-3f414e3ea2d3|
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о диагностике проблемы со шлюзом или подключением к нему см. в статье о [диагностике проблем обмена данными между сетями](diagnose-communication-problem-between-networks.md).
 <!--Image references-->
