@@ -5,12 +5,12 @@ ms.assetid: 501722c3-f2f7-4224-a220-6d59da08a320
 ms.topic: conceptual
 ms.date: 04/04/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 578e1580bdaafb1b309a7af44353602cc31cb5a5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5560d24601b8aef0d8a4058cc2c04e27e9c86362
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85207013"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170417"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -537,7 +537,7 @@ namespace functionapp0915
 
 ## <a name="log-custom-telemetry-in-javascript-functions"></a>Добавление пользовательской телеметрии в функциях JavaScript
 
-Ниже приведены примеры фрагментов кода, которые отправляют пользовательские данные телеметрии с помощью [пакета SDK Application Insights для Node.js](https://github.com/microsoft/applicationinsights-node.js).
+Ниже приведены примеры фрагментов кода, которые отправляют пользовательские данные телеметрии с помощью [пакета SDK для Application Insights Node.js](https://github.com/microsoft/applicationinsights-node.js).
 
 ### <a name="version-2x-and-later"></a>Версия 2.x и более поздние
 
@@ -626,7 +626,7 @@ module.exports = function (context, req) {
 
 ## <a name="streaming-logs"></a>Журналы потоковой передачи
 
-При разработке приложения часто требуется знать, какие записи заносятся в журналы почти в реальном времени при работе в Azure.
+При разработке приложения часто требуется узнать, какие записи записываются в журналы практически в реальном времени при работе в Azure.
 
 Существует два способа просмотра потока файлов журнала, создаваемых при выполнении функций.
 
@@ -688,27 +688,41 @@ Get-AzSubscription -SubscriptionName "<subscription name>" | Select-AzSubscripti
 Get-AzWebSiteLog -Name <FUNCTION_APP_NAME> -Tail
 ```
 
-## <a name="scale-controller-logs"></a>Журналы контроллера масштабирования
+## <a name="scale-controller-logs-preview"></a>Журналы контроллера масштабирования (Предварительная версия)
 
-[Контроллер масштабирования функций Azure](./functions-scale.md#runtime-scaling) отслеживает экземпляры узлов функций, которые запускают приложение, и принимает решения о добавлении или удалении экземпляров узлов функций. Если необходимо разобраться с решениями, которые контроллер масштабирования делает в приложении, можно настроить его для отправки журналов в Application Insights или в хранилище BLOB-объектов.
+Эта функция предоставляется в предварительной версии. 
 
-> [!WARNING]
-> Эта функция предоставляется в предварительной версии. Мы не рекомендуем включать эту функцию неограниченно долго, поэтому следует включить ее, если вам нужна собранная информация, а затем отключить ее.
+[Контроллер масштабирования функций Azure](./functions-scale.md#runtime-scaling) наблюдает за экземплярами узла функций Azure, на котором выполняется приложение. Этот контроллер принимает решения о том, когда следует добавлять или удалять экземпляры на основе текущей производительности. Чтобы лучше понять, какие решения выполняет контроллер масштабирования для приложения-функции, можно подать журналы контроллера масштабирования как Application Insights или в хранилище BLOB-объектов.
 
-Чтобы включить эту функцию, добавьте новый параметр приложения с именем `SCALE_CONTROLLER_LOGGING_ENABLED` . Значение этого параметра должно быть в формате `{Destination}:{Verbosity}` , где:
-* `{Destination}`Указывает назначение для отправляемых журналов и должно иметь значение `AppInsights` или `Blob` .
-* `{Verbosity}`Указывает требуемый уровень ведения журнала и должен быть одним из `None` , `Warning` или `Verbose` .
+Чтобы включить эту функцию, добавьте новый параметр приложения с именем `SCALE_CONTROLLER_LOGGING_ENABLED` . Значение этого параметра должно иметь формат в `<DESTINATION>:<VERBOSITY>` зависимости от следующих значений:
 
-Например, чтобы заносить подробные сведения из контроллера масштабирования в Application Insights, используйте значение `AppInsights:Verbose` .
+[!INCLUDE [functions-scale-controller-logging](../../includes/functions-scale-controller-logging.md)]
 
-> [!NOTE]
-> При включении `AppInsights` типа назначения необходимо обеспечить настройку [Application Insights для приложения функции](#enable-application-insights-integration).
+Например, следующая команда Azure CLI включает подробное ведение журнала из контроллера масштабирования для Application Insights:
 
-Если задать для назначения значение `Blob` , журналы будут созданы в контейнере больших двоичных объектов с именем в `azure-functions-scale-controller` учетной записи хранения, заданной в `AzureWebJobsStorage` параметре приложения.
+```azurecli-interactive
+az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
+--resource-group <RESOURCE_GROUP_NAME> \
+--settings SCALE_CONTROLLER_LOGGING_ENABLED=AppInsights:Verbose
+```
 
-Если задать уровень детализации `Verbose` , контроллер масштабирования будет регистрировать причину каждого изменения в количестве рабочих ролей, а также сведения о триггерах, участвующих в принятии решений контроллера масштабирования. Например, в журналах будут содержаться предупреждения о триггерах и хэши, используемые триггерами до и после запуска контроллера масштабирования.
+В этом примере замените `<FUNCTION_APP_NAME>` и `<RESOURCE_GROUP_NAME>` именем приложения функции и именем группы ресурсов соответственно. 
 
-Чтобы отключить ведение журнала масштабируемого контроллера, установите для параметра `{Verbosity}` значение `None` или удалите `SCALE_CONTROLLER_LOGGING_ENABLED` параметр приложения.
+Следующая команда Azure CLI отключает ведение журнала, устанавливая уровень детализации `None` :
+
+```azurecli-interactive
+az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
+--resource-group <RESOURCE_GROUP_NAME> \
+--settings SCALE_CONTROLLER_LOGGING_ENABLED=AppInsights:None
+```
+
+Можно также отключить ведение журнала, удалив `SCALE_CONTROLLER_LOGGING_ENABLED` параметр с помощью следующей команды Azure CLI:
+
+```azurecli-interactive
+az functionapp config appsettings delete --name <FUNCTION_APP_NAME> \
+--resource-group <RESOURCE_GROUP_NAME> \
+--setting-names SCALE_CONTROLLER_LOGGING_ENABLED
+```
 
 ## <a name="disable-built-in-logging"></a>Отключение встроенного ведения журнала
 

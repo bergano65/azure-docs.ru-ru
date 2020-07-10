@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 07/05/2020
-ms.openlocfilehash: aab0de11972f7d1abaaa0140da002f838e319fdf
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 4fb593f303eea0f4866dc248412af2f261993e92
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134620"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170349"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Ключ Azure Monitor, управляемый клиентом 
 
@@ -23,7 +23,7 @@ ms.locfileid: "86134620"
 
 [Шифрование неактивных данных](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest) является стандартным требованием к конфиденциальности и безопасности в организациях. Вы можете позволить Azure полностью управлять шифрованием неактивных данных, при этом имея различные варианты для непосредственного управления шифрованием или ключами шифрования.
 
-Azure Monitor гарантирует, что все неактивные данные будут шифроваться с помощью ключей, управляемых Azure. Azure Monitor также предоставляет возможность шифрования данных с помощью собственного ключа, хранящегося в  [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview) , доступ к которому осуществляется через хранилище с использованием назначенной системой проверки подлинности на основе  [управляемого удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) . Этот ключ может быть  [защищенным либо с помощью программного обеспечения, либо с помощью оборудования HSM](https://docs.microsoft.com/azure/key-vault/key-vault-overview).
+Azure Monitor гарантирует, что все данные и сохраненные запросы шифруются при хранении с помощью ключей, управляемых корпорацией Майкрософт (ММК). Azure Monitor также предоставляет возможность шифрования с помощью собственного ключа, хранящегося в [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview) и доступного для хранилища, с помощью [управляемой системой идентификации](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) с проверкой подлинности. Этот ключ (CMK) может быть как [программным, так и аппаратным — защищенным HSM](https://docs.microsoft.com/azure/key-vault/key-vault-overview).
 
 Использование шифрования в Azure Monitor идентично использованию  [шифрования в службе хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-service-encryption#about-azure-storage-encryption) .
 

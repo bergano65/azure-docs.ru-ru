@@ -9,11 +9,12 @@ ms.author: snmuvva
 ms.date: 01/11/2020
 ms.topic: conceptual
 manager: kmadnani
-ms.openlocfilehash: 1cb70109657343f41a1b3a19f3426377d97e261e
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 7d59ca60c7f90c227885927086511bd1f8ac7ca1
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83830129"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185846"
 ---
 # <a name="encryption-of-secure-assets-in-azure-automation"></a>Шифрование защищенных ресурсов в Службе автоматизации Azure
 
@@ -51,12 +52,12 @@ ms.locfileid: "83830129"
 
  - Управляемый клиентом ключ хранится в Azure Key Vault. 
  - В хранилище ключей включите оба свойства: **Обратимое удаление** и **Не очищать**. Эти функции необходимы для восстановления ключей в результате случайного удаления.
- - Для шифрования служба автоматизации Azure поддерживает только ключи RSA. Дополнительные сведения о ключах см. в статье [Сведения о ключах Azure Key Vault, секретах и сертификатах](../key-vault/about-keys-secrets-and-certificates.md#key-vault-keys).
+ - Для шифрования служба автоматизации Azure поддерживает только ключи RSA. Дополнительные сведения о ключах см. в статье [Сведения о ключах Azure Key Vault, секретах и сертификатах](../key-vault/general/about-keys-secrets-certificates.md).
 - Учетная запись службы автоматизации и хранилище ключей могут находиться в разных подписках, но должны находиться в одном клиенте Azure Active Directory.
 
 ### <a name="assignment-of-an-identity-to-the-automation-account"></a>Назначение удостоверения учетной записи службы автоматизации Azure
 
-Чтобы использовать управляемые клиентом ключи с учетной записью службы автоматизации Azure, последней необходимо пройти проверку подлинности в хранилище ключей, в котором хранятся управляемые клиентом ключи. Служба автоматизации Azure использует управляемые удостоверения, назначенные системой, для проверки подлинности учетной записи в Azure Key Vault. Дополнительные сведения об управляемых удостоверениях см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)
+Чтобы использовать управляемые клиентом ключи с учетной записью службы автоматизации Azure, последней необходимо пройти проверку подлинности в хранилище ключей, в котором хранятся управляемые клиентом ключи. Служба автоматизации Azure использует управляемые удостоверения, назначенные системой, для проверки подлинности учетной записи в Azure Key Vault. Дополнительные сведения об управляемых удостоверениях см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md)
 
 Настройте управляемое удостоверение, назначенное системой для учетной записи службы автоматизации Azure, используя следующий вызов REST API.
 
@@ -184,7 +185,7 @@ PATCH https://management.azure.com/subscriptions/00000000-0000-0000-0000-0000000
 
 ## <a name="revocation-of-access-to-a-customer-managed-key"></a>Отзыв доступа к управляемому клиентом ключу
 
-Чтобы отозвать доступ к управляемым клиентом ключам, используйте PowerShell или Azure CLI. Дополнительные сведения см. в разделе [Azure Key Vault PowerShell](https://docs.microsoft.com/powershell/module/az.keyvault/) или [Azure Key Vault CLI](https://docs.microsoft.com/cli/azure/keyvault). Отзыв доступа фактически блокирует доступ ко всем данным в учетной записи хранения, поскольку ключ шифрования становится недоступен для службы хранилища Azure.
+Чтобы отозвать доступ к управляемым клиентом ключам, используйте PowerShell или Azure CLI. Дополнительные сведения см. в разделе [Azure Key Vault PowerShell](/powershell/module/az.keyvault/) или [Azure Key Vault CLI](/cli/azure/keyvault). Отзыв доступа фактически блокирует доступ ко всем данным в учетной записи хранения, поскольку ключ шифрования становится недоступен для службы хранилища Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

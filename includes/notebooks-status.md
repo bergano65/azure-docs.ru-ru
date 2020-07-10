@@ -4,15 +4,15 @@ ms.author: joshuapa
 ms.service: azure-notebooks
 ms.topic: include
 ms.date: 07/01/2020
-ms.openlocfilehash: c866ebac9701f31dbdafab87cdda6fc26edcf88c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5011a5d265c61cf26520f6c012037a67a8afacae
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85830317"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86181507"
 ---
 > [!IMPORTANT]
-> 29 сентября, общедоступная Предварительная версия сайта записных книжек Azure будет снята с учета и заменена интегрированными службами из Visual Studio, Azure и GitHub.
+> 9 октября 2020. Общедоступная Предварительная версия сайта записных книжек Azure будет снята с учета и заменена интегрированными службами из Visual Studio, Azure и GitHub.
 > [Узнайте больше](https://aka.ms/aznb-notebooks-at-msft/) о возможностях и других записных книжках корпорации Майкрософт.
 >
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
