@@ -4,11 +4,12 @@ description: Пакетная служба поддерживает Azure AD д�
 ms.topic: how-to
 ms.date: 01/28/2020
 ms.custom: has-adal-ref
-ms.openlocfilehash: ed2bfb8e0fbaff0b7ad0ded734e33512c82a4040
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: a8601c69c37e973118a7ec9521070864caffb101
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85958214"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170315"
 ---
 # <a name="authenticate-batch-service-solutions-with-active-directory"></a>Аутентификация решений пакетной службы с помощью Active Directory
 
@@ -62,7 +63,7 @@ ms.locfileid: "85958214"
 
 ![Регистрация приложения пакетной службы в Azure AD](./media/batch-aad-auth/app-registration-data-plane.png)
 
-Дополнительные сведения о регистрации приложения в Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory](../active-directory/develop/authentication-scenarios.md).
+Дополнительные сведения о регистрации приложения в Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory](../active-directory/develop/authentication-vs-authorization.md).
 
 ## <a name="get-the-tenant-id-for-your-active-directory"></a>Получение идентификатора клиента для Active Directory
 
@@ -426,8 +427,8 @@ credentials = ServicePrincipalCredentials(
 
 - Пример Python для создания клиента пакетной службы, подлинность которого проверяется с помощью маркера Azure AD, см. в примере [Deploying Azure Batch Custom Image with a Python Script](https://github.com/azurebigcompute/recipes/blob/master/Azure%20Batch/CustomImages/CustomImagePython.md) (Развертывание пользовательского образа пакетной службы Azure с помощью скрипта Python).
 
-[aad_about]:../active-directory/fundamentals/active-directory-whatis.md "Что такое Microsoft Azure Active Directory?"
-[aad_adal]: ../active-directory/active-directory-authentication-libraries.md
-[aad_auth_scenarios]: ../active-directory/active-directory-authentication-scenarios.md "Сценарии аутентификации в Azure Active Directory"
-[aad_integrate]: ../active-directory/active-directory-integrating-applications.md "Интеграция приложений с Azure Active Directory"
+[aad_about]: ../active-directory/fundamentals/active-directory-whatis.md "Что такое Microsoft Azure Active Directory?"
+[aad_adal]: ../active-directory/azuread-dev/active-directory-authentication-libraries.md
+[aad_auth_scenarios]: ../active-directory/develop/authentication-vs-authorization.md "Сценарии аутентификации в Azure Active Directory"
+[aad_integrate]: ../active-directory/develop/quickstart-register-app.md "Интеграция приложений с Azure Active Directory"
 [azure_portal]: https://portal.azure.com
