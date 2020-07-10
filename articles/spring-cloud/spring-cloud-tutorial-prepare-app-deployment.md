@@ -1,17 +1,17 @@
 ---
-title: Практическое руководство. Подготовка приложения Java Spring для развертывания в Azure Spring Cloud
-description: В этой статье рассказывается, как подготовить приложение Java Spring к развертыванию в Azure Spring Cloud.
+title: Как подготовить пружинное приложение Java для развертывания в Azure Веснного облака
+description: Узнайте, как подготовить пружинное приложение Java для развертывания в Azure Веснного облака.
 author: bmitchell287
 ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 02/03/2020
 ms.author: brendm
-ms.openlocfilehash: 0cbe91de889b787d6f417afbe74720b40c3026e3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1840979fc1380f1e0d14f3a0a74eef5fa6df6538
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85833389"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141857"
 ---
 # <a name="prepare-a-java-spring-application-for-deployment-in-azure-spring-cloud"></a>подготовке приложения Java Spring для развертывания в Azure Spring Cloud
 
@@ -253,7 +253,7 @@ public class GatewayApplication {
 </dependency>
 ```
 
- Также вам нужно включить экземпляр Azure Application Insights для работы с экземпляром службы Azure Spring Cloud. В [этом руководстве](spring-cloud-tutorial-distributed-tracing.md) вы узнаете, как использовать Application Insights в Azure Spring Cloud.
+ Также вам нужно включить экземпляр Azure Application Insights для работы с экземпляром службы Azure Spring Cloud. Сведения об использовании Application Insights с Azure Веснным облаком см. в [документации по распределенной трассировке](spring-cloud-tutorial-distributed-tracing.md).
 
 ## <a name="see-also"></a>См. также раздел
 * [Анализ журналов и метрик приложений](https://docs.microsoft.com/azure/spring-cloud/diagnostic-services)
@@ -264,9 +264,6 @@ public class GatewayApplication {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этой статьи вы узнали, как настроить приложение Java Spring для развертывания в Azure Spring Cloud. Сведения о том, как настроить экземпляр сервера конфигурации, можно найти в следующей статье.
-
-> [!div class="nextstepaction"]
-> [Сведения о настройке экземпляра сервера конфигурации](spring-cloud-tutorial-config-server.md).
+Из этой статьи вы узнали, как настроить приложение Java Spring для развертывания в Azure Spring Cloud. Сведения о настройке экземпляра сервера конфигурации см. в разделе [Настройка экземпляра сервера конфигурации](spring-cloud-tutorial-config-server.md).
 
 Дополнительные примеры доступны на GitHub: [Примеры для Azure Spring Cloud](https://github.com/Azure-Samples/Azure-Spring-Cloud-Samples).

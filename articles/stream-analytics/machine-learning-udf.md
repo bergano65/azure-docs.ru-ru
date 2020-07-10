@@ -7,11 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/19/2020
-ms.openlocfilehash: b138d93b400c16837c250ede1e264b54a851327c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 50d6bebd1e38149096b865ad3654a9604d685f5d
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84488755"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141949"
 ---
 # <a name="integrate-azure-stream-analytics-with-azure-machine-learning-preview"></a>Интеграция Azure Stream Analytics со службой "Машинное обучение Azure" (предварительная версия)
 
@@ -27,7 +28,7 @@ ms.locfileid: "84488755"
 
 3. Убедитесь, что веб-служба принимает и возвращает сериализованные данные JSON.
 
-4. Для крупномасштабных развертываний в рабочей среде подходит [Служба Azure Kubernetes](../machine-learning/how-to-deploy-and-where.md#choose-a-compute-target), разверните свою модель в ней. Если веб-служба не справляется с количеством запросов, поступивших от задания, производительность задания Stream Analytics будет снижена, что влияет на задержку. Модели, развернутые в Экземплярах контейнеров Azure, поддерживаются только при использовании портала Azure.
+4. Для крупномасштабных развертываний в рабочей среде подходит [Служба Azure Kubernetes](../machine-learning/how-to-deploy-and-where.md#choose-a-compute-target), разверните свою модель в ней. Если веб-служба не справляется с количеством запросов, поступивших от задания, производительность задания Stream Analytics будет снижена, что влияет на задержку. Модели, развернутые в Экземплярах контейнеров Azure, поддерживаются только при использовании портала Azure. Модели, созданные с помощью [конструктора машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/concept-designer) , пока не поддерживаются в Stream Analytics.
 
 ## <a name="add-a-machine-learning-model-to-your-job"></a>Добавление модели машинного обучения к заданию
 
