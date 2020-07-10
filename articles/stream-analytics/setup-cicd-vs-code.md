@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 01/28/2020
-ms.openlocfilehash: 7a7fe3f7e1c39837106471d118a8b1bb770a524e
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 75db20bdb746e7d15bef56ce7ac0a064993d3f3a
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045830"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187767"
 ---
 # <a name="deploy-an-azure-stream-analytics-job-using-cicd-npm-package"></a>Развертывание задания Azure Stream Analytics с помощью пакета CI/CD NPM 
 
@@ -41,15 +41,11 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
 
 * файл шаблона Resource Manager;
 
-   ```
-   [ProjectName].JobTemplate.json 
-   ```
+   `[ProjectName].JobTemplate.json`
 
 * файл параметров Resource Manager.
 
-   ```
-   [ProjectName].JobTemplate.parameters.json
-   ```   
+   `[ProjectName].JobTemplate.parameters.json`   
 
 Параметры по умолчанию в parameters.jsдля файла зависят от параметров в проекте Visual Studio Code. При необходимости развертывания в другой среде замените соответствующие параметры.
 
@@ -154,7 +150,7 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
    |Параметр|Значение|
    |-|-|
    |Отображаемое имя| *Развертывание Мясажоб*|
-   |Подписка Azure.| Выберите свою подписку.|
+   |Подписка Azure| Выберите свою подписку.|
    |Действие| *Создание или изменение группы ресурсов*|
    |Группа ресурсов| Выберите имя для тестовой группы ресурсов, которая будет содержать задание Stream Analytics.|
    |Расположение|Выберите расположение группы тестовых ресурсов.|
@@ -162,7 +158,7 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
    |Шаблон| \drop\myASAJob.JobTemplate.js$ (Build. ArtifactStagingDirectory) на |
    |Параметры шаблона|($ (Build. ArtifactStagingDirectory) \drop\myASAJob.JobTemplate.parameters.jsна|
    |Переопределение параметров шаблона|-Input_IoTHub1_iotHubNamespace $ (test_eventhubname)|
-   |Режим развертывания|Добавочный|
+   |Режим развертывания|Приращение|
 
 3. В раскрывающемся списке задачи выберите **развернуть задание в рабочей среде**.
 
@@ -171,7 +167,7 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
    |Параметр|Значение|
    |-|-|
    |Отображаемое имя| *Развертывание Мясажоб*|
-   |Подписка Azure.| Выберите свою подписку.|
+   |Подписка Azure| Выберите свою подписку.|
    |Действие| *Создание или изменение группы ресурсов*|
    |Группа ресурсов| Выберите имя рабочей группы ресурсов, которая будет содержать задание Stream Analytics.|
    |Расположение|Выберите расположение рабочей группы ресурсов.|
@@ -179,7 +175,7 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
    |Шаблон| \drop\myASAJob.JobTemplate.js$ (Build. ArtifactStagingDirectory) на |
    |Параметры шаблона|($ (Build. ArtifactStagingDirectory) \drop\myASAJob.JobTemplate.parameters.jsна|
    |Переопределение параметров шаблона|-Input_IoTHub1_iotHubNamespace $ (eventhubname)|
-   |Режим развертывания|Добавочный|
+   |Режим развертывания|Приращение|
 
 ### <a name="create-release"></a>Создать выпуск
 
@@ -192,7 +188,7 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
 Чтобы в качестве приемника выходных данных использовать управляемое удостоверение для Azure Data Lake Storage 1-го поколения, предоставите доступ субъекту-службе с помощью PowerShell перед развертыванием в Azure. Дополнительные сведения см. в разделе о [развертывании ADLS 1-го поколения с управляемым удостоверением с помощью шаблона Resource Manager](stream-analytics-managed-identities-adls.md#resource-manager-template-deployment).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство. Создание Azure Stream Analytics облачного задания в Visual Studio Code (Предварительная версия)](quick-create-vs-code.md)
 * [Тестирование Stream Analytics запросов локально с Visual Studio Code (Предварительная версия)](visual-studio-code-local-run.md)

@@ -4,12 +4,12 @@ description: Узнайте, как можно использовать Azure Ba
 ms.reviewer: saurse
 ms.topic: conceptual
 ms.date: 05/17/2018
-ms.openlocfilehash: 5611b5a6fc9ba8bbff11e35449caf0dd9d33fa21
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e5761f56106989084f12b80620ffc417b781965d
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85373308"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187835"
 ---
 # <a name="offline-backup-workflow-in-azure-backup"></a>Автономное резервное копирование в Azure Backup
 
@@ -42,7 +42,7 @@ ms.locfileid: "85373308"
 
 [!INCLUDE [backup-upgrade-mars-agent.md](../../includes/backup-upgrade-mars-agent.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
   > [!NOTE]
   > Следующие предварительные требования и рабочий процесс применяются только к автономному резервному копированию файлов и папок с помощью [последнего агента служб восстановления Azure](https://aka.ms/azurebackup_agent). Сведения о выполнении автономного резервного копирования для рабочих нагрузок с помощью System Center DPM или Azure Backup Server см. в разделе [Рабочий процесс автономного резервного копирования для DPM и Azure Backup Server](backup-azure-backup-server-import-export.md).
@@ -136,7 +136,7 @@ ms.locfileid: "85373308"
     | Параметр | Описание: |
     | --- | --- |
     | s:&lt;*Staging Location Path*&gt; (Путь к расположению промежуточного хранения) |Этот обязательный ввод используется для указания пути к промежуточному расположению, введенному в рабочем процессе в разделе "Запуск автономной архивации". |
-    | p:&lt;*Path to PublishSettingsFile*&gt; (Путь к PublishSettingsFile) |Этот необязательный ввод используется для указания пути к файлу параметров публикации Azure, введенному в рабочем процессе в разделе "Запуск автономной архивации". |
+    | p:&lt;*Path to PublishSettingsFile*&gt; (Путь к PublishSettingsFile) |Этот необязательный ввод используется для предоставления пути к файлу параметров публикации Azure.  |
 
     При выполнении команды программа запрашивает выбор задания импорта Azure, которое соответствует дискам, которые необходимо подготовить. Если с указанным промежуточным расположением связано только одно задание импорта, отобразится страница, подобная этой.
 
@@ -216,6 +216,6 @@ ms.locfileid: "85373308"
 
 После завершения начальной архивации можно безопасно удалить данные, импортированные в контейнер хранилища Azure, и данные резервных копий в промежуточном расположении.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Вопросы о рабочем процессе службы импорта и экспорта Azure см. в статье [Использование службы импорт и экспорт Microsoft Azure для перемещения данных в хранилище BLOB-объектов](../storage/common/storage-import-export-service.md).

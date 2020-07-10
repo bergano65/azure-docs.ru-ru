@@ -3,19 +3,19 @@ title: Мониторинг &сбора файлов журналов конве
 titleSuffix: Azure Machine Learning
 description: Добавьте ведение журнала в конвейеры обучения и пакетной оценки и просмотрите записанные результаты в Application Insights.
 services: machine-learning
-author: sanpil
-ms.author: sanpil
+author: NilsPohlmann
+ms.author: nilsp
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: how-to
 ms.date: 01/16/2020
 ms.custom: seodec18, tracking-python
-ms.openlocfilehash: a87ceb5a216b05f3fae6d570bbfed1c4a622c911
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 6a4a32db18b881b702aacf7bb669ffa14f9d103e
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86055721"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86201247"
 ---
 # <a name="collect-machine-learning-pipeline-log-files-in-application-insights-for-alerts-and-debugging"></a>Получение файлов журнала конвейера машинного обучения в Application Insights для предупреждений и отладки
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "86055721"
 
 Если журналы будут находиться в однократном месте, будет представлена история исключений и сообщений об ошибках. Поскольку Application Insights интегрируется с оповещениями Azure, можно также создавать оповещения на основе запросов Application Insights.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Выполните действия, чтобы создать рабочую область [машинное обучение Azure](./how-to-manage-workspace.md) и [создать первый конвейер](./how-to-create-your-first-pipeline.md) .
 * [Настройте среду разработки](./how-to-configure-environment.md) для установки пакета SDK для Машинного обучения Azure.
@@ -34,7 +34,7 @@ ms.locfileid: "86055721"
   ```
 * Создание [экземпляра Application Insights](../azure-monitor/app/opencensus-python.md) (этот документ также содержит сведения о получении строки подключения для ресурса).
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 В этом разделе представлены общие сведения об использовании Опенценсус из конвейера Машинное обучение Azure. Подробное руководство см. в разделе [опенценсус Azure Monitor EXPORTS](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-azure) .
 
@@ -162,7 +162,7 @@ logger.info("I will be sent to Application Insights with Custom Dimensions", cus
 | Регистрировать результаты с ошибкой Северитилевел за последние семь дней              | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.Level == 'ERROR'                     |
 | Число результатов журнала с Северитилевел ошибкой за последние семь дней     | <pre>traces \| <br>where timestamp > ago(7d) <br>and customDimensions.Level == 'ERROR' \| <br>summarize count()</pre> |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 После получения журналов в экземпляре Application Insights их можно использовать для установки [предупреждений Azure Monitor](../azure-monitor/platform/alerts-overview.md#what-you-can-alert-on) на основе результатов запроса.
 

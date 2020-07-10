@@ -5,11 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 05/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: f05e705f351d75fdf772d3197b94fcece40d43fb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 246fcdb27737e99bb677e23216f0305037f54526
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85100378"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187461"
 ---
 # <a name="manage-pre-scripts-and-post-scripts"></a>Управление сценариями предварительного и последующего выполнения
 
@@ -146,7 +147,7 @@ foreach($summary in $finalStatus)
 * учетная запись запуска от имени;
 * модуль runbook, который вам нужно выполнить.
 
-Для взаимодействия с виртуальными машинами Azure следует применять командлет [Invoke-AzVMRunCommand](https://docs.microsoft.com/powershell/module/az.compute/invoke-azvmruncommand?view=azps-3.7.0). Такое взаимодействие описано в примере модуля runbook [Управление обновлениями — запуск сценария командой Run](https://gallery.technet.microsoft.com/Update-Management-Run-40f470dc).
+Для взаимодействия с виртуальными машинами Azure следует применять командлет [Invoke-AzVMRunCommand](/powershell/module/az.compute/invoke-azvmruncommand?view=azps-3.7.0). Такое взаимодействие описано в примере модуля runbook [Управление обновлениями — запуск сценария командой Run](https://gallery.technet.microsoft.com/Update-Management-Run-40f470dc).
 
 ### <a name="interact-with-non-azure-machines"></a>Взаимодействие с компьютерами, не связанными с Azure
 
@@ -157,7 +158,7 @@ foreach($summary in $finalStatus)
 * модуль Runbook, который будет запускаться локально;
 * родительский модуль runbook.
 
-Для взаимодействия с компьютерами, не связанными с Azure, в контексте Azure выполняется родительский модуль runbook. Он вызывает дочерний модуль runbook с помощью командлета [Start-AzAutomationRunbook](https://docs.microsoft.com/powershell/module/Az.Automation/Start-AzAutomationRunbook?view=azps-3.7.0). Ему нужно передать параметр `RunOn` и имя гибридной рабочей роли Runbook, которая будет выполнять сценарий. Пример такого модуля runbook см. в статье [Управление обновлениями — локальный запуск сценария](https://gallery.technet.microsoft.com/Update-Management-Run-6949cc44)
+Для взаимодействия с компьютерами, не связанными с Azure, в контексте Azure выполняется родительский модуль runbook. Он вызывает дочерний модуль runbook с помощью командлета [Start-AzAutomationRunbook](/powershell/module/Az.Automation/Start-AzAutomationRunbook?view=azps-3.7.0). Ему нужно передать параметр `RunOn` и имя гибридной рабочей роли Runbook, которая будет выполнять сценарий. Пример такого модуля runbook см. в статье [Управление обновлениями — локальный запуск сценария](https://gallery.technet.microsoft.com/Update-Management-Run-6949cc44)
 
 ## <a name="abort-patch-deployment"></a>Отмена развертывания обновлений
 
@@ -242,7 +243,7 @@ $variable = Get-AutomationVariable -Name $runId
 ```
 
 > [!NOTE]
-> Для неграфических runbook PowerShell `Add-AzAccount` и `Add-AzureRMAccount` являются псевдонимами для [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0). Вы можете использовать эти командлеты или [обновить модули](automation-update-azure-modules.md) в учетной записи службы автоматизации до последних версий. Обновление модулей может потребоваться, даже если учетная запись службы автоматизации только что создана.
+> Для неграфических runbook PowerShell `Add-AzAccount` и `Add-AzureRMAccount` являются псевдонимами для [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0). Вы можете использовать эти командлеты или [обновить модули](automation-update-azure-modules.md) в учетной записи службы автоматизации до последних версий. Обновление модулей может потребоваться, даже если учетная запись службы автоматизации только что создана.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

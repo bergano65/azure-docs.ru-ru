@@ -5,11 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 02/14/2019
 ms.topic: conceptual
-ms.openlocfilehash: c996c51583d81905e7853323166407e38ae79225
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 13691fe05ca42af3a9d5b09ea36eb58bcdf1df08
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83830044"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187478"
 ---
 # <a name="configure-runbook-input-parameters"></a>Настройка входных параметров runbook
 
@@ -69,12 +70,12 @@ Param
 
 ### <a name="configure-input-parameters-in-graphical-runbooks"></a>Настройка входных параметров в графических модулях Runbook
 
-Чтобы продемонстрировать настройку входных параметров графической последовательности runbook, создадим последовательность runbook, которая выводит сведения об одной или всех виртуальных машинах в группе ресурсов. Дополнительные сведения см. в учебнике по [созданию графической последовательности runbook](automation-first-runbook-graphical.md).
+Чтобы продемонстрировать настройку входных параметров графической последовательности runbook, создадим последовательность runbook, которая выводит сведения об одной или всех виртуальных машинах в группе ресурсов. Дополнительные сведения см. в учебнике по [созданию графической последовательности runbook](./learn/automation-tutorial-runbook-graphical.md).
 
 В графической последовательности runbook используются следующие основные действия runbook:
 
 * настройка учетной записи запуска от имени Azure для проверки подлинности в Azure; 
-* определение командлета [Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm?view=azps-3.5.0) для получения свойств виртуальной машины;
+* определение командлета [Get-AzVM](/powershell/module/az.compute/get-azvm?view=azps-3.5.0) для получения свойств виртуальной машины;
 * использование действия [Write-Output](/powershell/module/microsoft.powershell.utility/write-output) для вывода имен виртуальных машин. 
 
 Действие `Get-AzVM` определяет два входных значения: имя виртуальной машины и имя группы ресурсов. Так как эти имена могут отличаться при каждом запуске последовательности runbook, необходимо добавить входные параметры, чтоб она их принимала. См. статью [Графическая разработка в службе автоматизации Azure](automation-graphical-authoring-intro.md).
@@ -111,7 +112,7 @@ Param
 
 В отличие от последовательностей runbook PowerShell и рабочих процессов PowerShell, а также графических последовательностей runbook, последовательности runbook Python не принимают именованные параметры. Редактор runbook анализирует все входные параметры как массив значений аргументов. Для доступа к массиву можно импортировать модуль `sys` в свой скрипт Python, а затем используйте массив `sys.argv`. Обратите внимание, что первый элемент массива (`sys.argv[0]`) является именем скрипта. Поэтому фактически первым входным параметром является `sys.argv[1]`.
 
-Пример использования входных параметров в модуле Runbook Python см. в статье [Мой первый модуль Runbook Python в службе автоматизации Azure](automation-first-runbook-textual-python2.md).
+Пример использования входных параметров в модуле Runbook Python см. в статье [Мой первый модуль Runbook Python в службе автоматизации Azure](./learn/automation-tutorial-runbook-textual-python2.md).
 
 ## <a name="assign-values-to-input-parameters-in-runbooks"></a>Назначение значений входным параметрам в модулях Runbook
 
@@ -139,8 +140,7 @@ Param
 
 #### <a name="start-a-published-runbook-using-powershell-cmdlets-and-assign-parameters"></a>Запуск опубликованной последовательности runbook с помощью командлетов PowerShell и назначение параметров
 
-* **Командлеты Azure Resource Manager.** Последовательность runbook службы автоматизации, созданную в группе ресурсов, вы можете запустить с помощью командлета [Start-AzAutomationRunbook](https://docs.microsoft.com/powershell/module/Az.Automation/Start-AzAutomationRunbook?view=azps-3.5.0
-).
+* **Командлеты Azure Resource Manager.** Последовательность runbook службы автоматизации, созданную в группе ресурсов, вы можете запустить с помощью командлета [Start-AzAutomationRunbook](/powershell/module/Az.Automation/Start-AzAutomationRunbook?view=azps-3.5.0).
 
    ```powershell
      $params = @{"VMName"="WSVMClassic";"resourceGroupeName"="WSVMClassicSG"}
@@ -248,13 +248,13 @@ Param
 
 ### <a name="test-a-runbook-and-assign-parameters"></a>Тестирование Runbook и назначение параметров
 
-При [тестировании черновой версии runbook](automation-testing-runbook.md) с помощью параметра тестирования откроется страница "Тест". Эта страница используется для настройки значений созданных вами параметров.
+При [тестировании черновой версии runbook](./manage-runbooks.md) с помощью параметра тестирования откроется страница "Тест". Эта страница используется для настройки значений созданных вами параметров.
 
 ![Тестирование и назначение параметров](media/automation-runbook-input-parameters/automation-06-testandassignparameters.png)
 
 ### <a name="link-a-schedule-to-a-runbook-and-assign-parameters"></a>Связывание Runbook с расписанием и назначение параметров
 
-Вы можете [связать расписание](automation-schedules.md) с модулем Runbook, чтобы он запускался в определенное время. При создании расписания вы назначаете входные параметры, значения которых модуль runbook использует во время запуска по расписанию. Расписание нельзя сохранить, если не указаны значения для всех обязательных параметров.
+Вы можете [связать расписание](./shared-resources/schedules.md) с модулем Runbook, чтобы он запускался в определенное время. При создании расписания вы назначаете входные параметры, значения которых модуль runbook использует во время запуска по расписанию. Расписание нельзя сохранить, если не указаны значения для всех обязательных параметров.
 
 ![Создание расписания и назначение параметров](media/automation-runbook-input-parameters/automation-07-scheduleandassignparameters.png)
 
@@ -272,7 +272,7 @@ Param
 
 Иногда может быть полезным хранить данные, которые необходимо передать в модуль runbook, в файле JSON. Например, можно создать файл JSON, который содержит все параметры, которые необходимо передать в runbook. Чтобы сделать это, необходимо преобразовать код JSON в строку, а затем преобразовать строку в объект PowerShell перед его передачей в последовательность runbook.
 
-В этом разделе используется пример, в котором скрипт PowerShell вызывает [Start-AzAutomationRunbook](https://docs.microsoft.com/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.5.0) для запуска runbook PowerShell, передавая содержимое файла JSON в runbook. Последовательность runbook PowerShell запускает виртуальную машину Azure, получая параметры для нее из объекта JSON.
+В этом разделе используется пример, в котором скрипт PowerShell вызывает [Start-AzAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.5.0) для запуска runbook PowerShell, передавая содержимое файла JSON в runbook. Последовательность runbook PowerShell запускает виртуальную машину Azure, получая параметры для нее из объекта JSON.
 
 ### <a name="create-the-json-file"></a>Создание файла JSON
 
@@ -287,7 +287,7 @@ Param
 
 ### <a name="create-the-runbook"></a>Создание модуля runbook
 
-Создайте новую последовательность runbook PowerShell с именем **Test-Json** в службе автоматизации Azure. Дополнительные сведения см. в учебнике по [созданию последовательности runbook PowerShell](automation-first-runbook-textual-powershell.md).
+Создайте новую последовательность runbook PowerShell с именем **Test-Json** в службе автоматизации Azure. Дополнительные сведения см. в учебнике по [созданию последовательности runbook PowerShell](./learn/automation-tutorial-runbook-textual-powershell.md).
 
 Чтобы принять данные JSON, модуль runbook должен принять объект в качестве входного параметра. Последовательность runbook может использовать свойства, определенные в файле JSON.
 

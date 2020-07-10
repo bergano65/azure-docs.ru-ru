@@ -9,11 +9,12 @@ ms.author: magoedte
 ms.date: 05/14/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 28f69d3ef8301e00b470ce09353be6ae3259bbe3
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 9658175b0d42db9acfc94d39e4ab226bfe2cfc4b
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83744960"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187325"
 ---
 # <a name="manage-variables-in-azure-automation"></a>Управление переменными в службе автоматизации Azure
 
@@ -44,14 +45,14 @@ ms.locfileid: "83744960"
 * Логическое
 * NULL
 
-Переменная не ограничена указанным типом данных. Если значение должно иметь другой тип, следует задать его с помощью Windows PowerShell. Если указать `Not defined`, значение переменной будет задано равным NULL. Значение задается с помощью командлета [Set-AzAutomationVariable](https://docs.microsoft.com/powershell/module/az.automation/set-azautomationvariable?view=azps-3.5.0) или внутреннего командлета `Set-AutomationVariable`.
+Переменная не ограничена указанным типом данных. Если значение должно иметь другой тип, следует задать его с помощью Windows PowerShell. Если указать `Not defined`, значение переменной будет задано равным NULL. Значение задается с помощью командлета [Set-AzAutomationVariable](/powershell/module/az.automation/set-azautomationvariable?view=azps-3.5.0) или внутреннего командлета `Set-AutomationVariable`.
 
 Создать или изменить значение сложной переменной на портале Azure невозможно. Однако с помощью Windows PowerShell можно указать значение любого типа. Сложные типы возвращаются в виде [PSCustomObject](/dotnet/api/system.management.automation.pscustomobject).
 
 Можно сохранить несколько значений в отдельной переменной, создав массив или хэш-таблицу и сохранив ее в переменную.
 
 >[!NOTE]
->Длина значения переменной с именем виртуальной машины не может превышать 80 символов. Длина значения переменной с именем группы ресурсов не может превышать 90 символов. См. статью [Правила и ограничения именования для ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-name-rules).
+>Длина значения переменной с именем виртуальной машины не может превышать 80 символов. Длина значения переменной с именем группы ресурсов не может превышать 90 символов. См. статью [Правила и ограничения именования для ресурсов Azure](../../azure-resource-manager/management/resource-name-rules.md).
 
 ## <a name="powershell-cmdlets-to-access-variables"></a>Командлеты PowerShell для доступа к переменным
 
@@ -59,10 +60,10 @@ ms.locfileid: "83744960"
 
 | Командлет | Описание |
 |:---|:---|
-|[Get-AzAutomationVariable](https://docs.microsoft.com/powershell/module/az.automation/get-azautomationvariable?view=azps-3.5.0) | Получает значение существующей переменной. Если значение простого типа, возвращается тот же тип. Если это сложный тип, возвращается тип `PSCustomObject`. <br>**Примечание.**  Этот командлет нельзя использовать для получения значения зашифрованной переменной. Единственный способ получить такое значение — использовать внутренний командлет `Get-AutomationVariable` в модуле runbook или конфигурации DSC. См. раздел [Внутренние командлеты для доступа к переменным](#internal-cmdlets-to-access-variables). |
-|[New-AzAutomationVariable](https://docs.microsoft.com/powershell/module/az.automation/new-azautomationvariable?view=azps-3.5.0) | Создает новую переменную и устанавливает ее значение.|
-|[Remove-AzAutomationVariable](https://docs.microsoft.com/powershell/module/az.automation/remove-azautomationvariable?view=azps-3.5.0)| Удаляет существующую переменную.|
-|[Set-AzAutomationVariable](https://docs.microsoft.com/powershell/module/az.automation/set-azautomationvariable?view=azps-3.5.0)| Получает значение существующей переменной. |
+|[Get-AzAutomationVariable](/powershell/module/az.automation/get-azautomationvariable?view=azps-3.5.0) | Получает значение существующей переменной. Если значение простого типа, возвращается тот же тип. Если это сложный тип, возвращается тип `PSCustomObject`. <br>**Примечание.**  Этот командлет нельзя использовать для получения значения зашифрованной переменной. Единственный способ получить такое значение — использовать внутренний командлет `Get-AutomationVariable` в модуле runbook или конфигурации DSC. См. раздел [Внутренние командлеты для доступа к переменным](#internal-cmdlets-to-access-variables). |
+|[New-AzAutomationVariable](/powershell/module/az.automation/new-azautomationvariable?view=azps-3.5.0) | Создает новую переменную и устанавливает ее значение.|
+|[Remove-AzAutomationVariable](/powershell/module/az.automation/remove-azautomationvariable?view=azps-3.5.0)| Удаляет существующую переменную.|
+|[Set-AzAutomationVariable](/powershell/module/az.automation/set-azautomationvariable?view=azps-3.5.0)| Получает значение существующей переменной. |
 
 ## <a name="internal-cmdlets-to-access-variables"></a>Внутренние командлеты для доступа к переменным
 
@@ -126,7 +127,7 @@ $string = (Get-AzAutomationVariable -ResourceGroupName "ResourceGroup01" `
 –AutomationAccountName "MyAutomationAccount" –Name 'MyStringVariable').Value
 ```
 
-В приведенном ниже примере показано, как создать переменную сложного типа и вернуть ее свойства. В данном случае используется объект виртуальной машины из [Get-AzVM](https://docs.microsoft.com/powershell/module/Az.Compute/Get-AzVM?view=azps-3.5.0).
+В приведенном ниже примере показано, как создать переменную сложного типа и вернуть ее свойства. В данном случае используется объект виртуальной машины из [Get-AzVM](/powershell/module/Az.Compute/Get-AzVM?view=azps-3.5.0).
 
 ```powershell
 $vm = Get-AzVM -ResourceGroupName "ResourceGroup01" –Name "VM01"

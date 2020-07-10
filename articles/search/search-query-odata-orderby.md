@@ -19,11 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 99ec639b88f3334530243242aadfa0ab52a40df0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 68e6ec0af0b24771b21dac35c944fc7fa098b404
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74113147"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86203112"
 ---
 # <a name="odata-orderby-syntax-in-azure-cognitive-search"></a>Синтаксис $orderby OData в Azure Когнитивный поиск
 
@@ -63,21 +64,29 @@ sortable_function ::= geo_distance_call | 'search.score()'
 
 Сортировать отели по возрастанию базового тарифа:
 
+```odata-filter-expr
     $orderby=BaseRate asc
+```
 
 Сортировать отели по убыванию рейтинга, а затем по возрастанию базового тарифа (помните, что по умолчанию сортировка происходит по возрастанию):
 
+```odata-filter-expr
     $orderby=Rating desc,BaseRate
+```
 
 Сортировка гостиниц по убыванию по рейтингу, затем по возрастанию по расстоянию от заданных координат:
 
+```odata-filter-expr
     $orderby=Rating desc,geo.distance(Location, geography'POINT(-122.131577 47.678581)') asc
+```
 
 Сортировка гостиниц в порядке убывания по поиску. Оценка и оценка, а затем в порядке возрастания по расстоянию от заданных координат. Между двумя гостиницами с одинаковыми показателями релевантности и рейтингами в первую очередь указывается ближайшее значение:
 
+```odata-filter-expr
     $orderby=search.score() desc,Rating desc,geo.distance(Location, geography'POINT(-122.131577 47.678581)') asc
+```
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Работа с результатами поиска в Azure Когнитивный поиск](search-pagination-page-layout.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)

@@ -5,11 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 12/10/2019
 ms.topic: conceptual
-ms.openlocfilehash: 3cc75fb34f0a828eccfed3951e84a1c463d4cfb7
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 37df5ae8e88bf7832fbbeae37555d60943fca446
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83828888"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187308"
 ---
 # <a name="use-source-control-integration"></a>Использование интеграции системы управления версиями
 
@@ -72,8 +73,7 @@ ms.locfileid: "83828888"
 
 ### <a name="configure-source-control-in-powershell"></a>Настройка системы управления версиями в PowerShell
 
-Для настройки системы управления версиями в службе автоматизации Azure можно также использовать PowerShell. Чтобы использовать командлеты PowerShell для этой операции, необходим личный маркер доступа (PAT). Используйте командлет [New-AzAutomationSourceControl](https://docs.microsoft.com/powershell/module/az.automation/new-azautomationsourcecontrol?view=azps-3.5.0
-), чтобы создать подключение к системе управления версиями. Этот командлет требует защищенной строки для PAT. Сведения о создании защищенной строки см. в [ConvertTo-SecureString](/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-6).
+Для настройки системы управления версиями в службе автоматизации Azure можно также использовать PowerShell. Чтобы использовать командлеты PowerShell для этой операции, необходим личный маркер доступа (PAT). Используйте командлет [New-AzAutomationSourceControl](/powershell/module/az.automation/new-azautomationsourcecontrol?view=azps-3.5.0), чтобы создать подключение к системе управления версиями. Этот командлет требует защищенной строки для PAT. Сведения о создании защищенной строки см. в [ConvertTo-SecureString](/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-6).
 
 В следующих подразделах показано создание в PowerShell подключения к системе управления версиями для GitHub, Azure Repos (Git) и Azure Repos (TFVC). 
 
@@ -122,7 +122,7 @@ New-AzAutomationSourceControl -Name SCReposTFVC -RepoUrl https://dev.azure.com/<
 
 ##### <a name="minimum-pat-permissions-for-azure-repos"></a>Минимальные разрешения личных маркеров доступа для Azure Repos
 
-В следующем списке представлены минимальные разрешения личных маркеров доступа, необходимые для Azure Repos. Дополнительные сведения о создании PAT в Azure Repos см. в разделе [Проверка подлинности доступа с помощью личных маркеров доступа](https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page).
+В следующем списке представлены минимальные разрешения личных маркеров доступа, необходимые для Azure Repos. Дополнительные сведения о создании PAT в Azure Repos см. в разделе [Проверка подлинности доступа с помощью личных маркеров доступа](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page).
 
 | Область  |  Тип доступа  |
 |---------| ----------|
@@ -195,14 +195,14 @@ New-AzAutomationSourceControl -Name SCReposTFVC -RepoUrl https://dev.azure.com/<
 
 ## <a name="handle-encoding-issues"></a>Решение проблем кодирования
 
-Если несколько пользователей редактируют модули runbook в репозитории системы управления версиями с помощью различных редакторов, могут возникнуть проблемы с кодированием. Дополнительные сведения об этой ситуации см. в разделе [Распространенные причины проблем кодирования](https://docs.microsoft.com/powershell/scripting/components/vscode/understanding-file-encoding?view=powershell-7#common-causes-of-encoding-issues).
+Если несколько пользователей редактируют модули runbook в репозитории системы управления версиями с помощью различных редакторов, могут возникнуть проблемы с кодированием. Дополнительные сведения об этой ситуации см. в разделе [Распространенные причины проблем кодирования](/powershell/scripting/components/vscode/understanding-file-encoding?view=powershell-7#common-causes-of-encoding-issues).
 
 ## <a name="update-the-pat"></a>Обновление личного маркера доступа
 
 В настоящее время портал Azure нельзя использовать для обновления личного маркера доступа в системе управления версиями. После истечения срока действия маркера доступа или его отзыва систему управления версиями можно обновить, добавив новый маркер доступа одним из следующих способов.
 
-* Используя [REST API](https://docs.microsoft.com/rest/api/automation/sourcecontrol/update).
-* Используя командлет [Update-AzAutomationSourceControl](https://docs.microsoft.com//powershell/module/az.automation/update-azautomationsourcecontrol).
+* Используя [REST API](/rest/api/automation/sourcecontrol/update).
+* Используя командлет [Update-AzAutomationSourceControl](//powershell/module/az.automation/update-azautomationsourcecontrol).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

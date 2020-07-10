@@ -8,11 +8,12 @@ ms.date: 03/12/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 5b87a98ed38e3af315789adffc11824f2522b802
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: c6bdc09d37cf29458346eaea360b4cd9e0d1226f
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83680886"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187172"
 ---
 # <a name="troubleshoot-shared-resource-issues"></a>Устранение проблем с общими ресурсами
 
@@ -32,7 +33,7 @@ ms.locfileid: "83680886"
 
 #### <a name="resolution"></a>Решение
 
-Чтобы устранить эту проблему, необходимо удалить зависший модуль с помощью командлета [Remove-AzAutomationModule](https://docs.microsoft.com/powershell/module/Az.Automation/Remove-AzAutomationModule?view=azps-3.7.0). Затем можно повторить импорт модуля.
+Чтобы устранить эту проблему, необходимо удалить зависший модуль с помощью командлета [Remove-AzAutomationModule](/powershell/module/Az.Automation/Remove-AzAutomationModule?view=azps-3.7.0). Затем можно повторить импорт модуля.
 
 ```azurepowershell-interactive
 Remove-AzAutomationModule -Name ModuleName -ResourceGroupName ExampleResourceGroup -AutomationAccountName ExampleAutomationAccount -Force
@@ -69,7 +70,7 @@ Azure modules are being updated
 * Структура не соответствует той, которая требуется для службы автоматизации.
 * Модуль зависит от другого модуля, который не был развернут в учетной записи службы автоматизации.
 * В папке отсутствуют зависимости модуля.
-* Командлет [New-AzAutomationModule](https://docs.microsoft.com/powershell/module/Az.Automation/New-AzAutomationModule?view=azps-3.7.0) используется для передачи модуля, при этом полный путь для хранения не указан или модуль не загружен с помощью общедоступного URL-адреса.
+* Командлет [New-AzAutomationModule](/powershell/module/Az.Automation/New-AzAutomationModule?view=azps-3.7.0) используется для передачи модуля, при этом полный путь для хранения не указан или модуль не загружен с помощью общедоступного URL-адреса.
 
 #### <a name="resolution"></a>Решение
 

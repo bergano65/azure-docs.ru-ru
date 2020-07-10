@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 03/04/2020
-ms.openlocfilehash: 13b6753d7c04951839852b3090e99fd8cde1fe2d
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 0d76bf29efeb40f9f29f80b6e3e6414f5e9b6fc8
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86079808"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86203269"
 ---
 # <a name="connect-hdinsight-to-your-on-premises-network"></a>Подключение HDInsight к локальной сети
 
@@ -81,7 +81,7 @@ ms.locfileid: "86079808"
     |Регион | Выберите тот же регион, что и для созданной ранее виртуальной сети.  Не во всех регионах доступны виртуальные машины всех размеров.  |
     |Параметры доступности |  Выберите нужный уровень доступности.  Azure предлагает широкий набор параметров для управления доступностью и устойчивостью для приложений.  Сконструируйте свое решение для использования реплицированных виртуальных машин в зонах доступности или группах доступности, чтобы защитить приложения и данные от сбоев центра обработки данных и мероприятий по обслуживанию. В этом примере используется параметр **Избыточность инфраструктуры не требуется**. |
     |Изображение | Оставьте в **Ubuntu Server 18,04 LTS**. |
-    |Authentication type (Тип проверки подлинности) | __Пароль__ или __открытый ключ SSH__— метод проверки подлинности для учетной записи SSH. Рекомендуется использовать открытые ключи, так как они более безопасны. В этом примере используется **пароль**.  Дополнительные сведения см.в статье [Как создать и использовать пару из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure](../virtual-machines/linux/mac-create-ssh-keys.md).|
+    |Тип проверки подлинности | __Пароль__ или __открытый ключ SSH__— метод проверки подлинности для учетной записи SSH. Рекомендуется использовать открытые ключи, так как они более безопасны. В этом примере используется **пароль**.  Дополнительные сведения см.в статье [Как создать и использовать пару из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure](../virtual-machines/linux/mac-create-ssh-keys.md).|
     |Имя пользователя |Введите имя пользователя администратора для виртуальной машины.  В этом примере используется **sshuser**.|
     |Пароль или открытый ключ SSH | Соответствующее поле определяется выбранным **типом проверки подлинности**.  Введите соответствующее значение.|
     |Общедоступные входящие порты|Выберите **Разрешить выбранные порты**. Затем выберите **SSH (22)** в раскрывающемся списке **выберите входящие порты** .|
@@ -131,29 +131,31 @@ ms.locfileid: "86079808"
 
 3. Чтобы настроить привязку для перенаправления запросов на разрешение имен на локальный DNS-сервер, используйте следующий текст в качестве содержимого `/etc/bind/named.conf.options` файла:
 
-        acl goodclients {
-            10.0.0.0/16; # Replace with the IP address range of the virtual network
-            10.1.0.0/16; # Replace with the IP address range of the on-premises network
-            localhost;
-            localnets;
-        };
+    ```DNS Zone file
+    acl goodclients {
+        10.0.0.0/16; # Replace with the IP address range of the virtual network
+        10.1.0.0/16; # Replace with the IP address range of the on-premises network
+        localhost;
+        localnets;
+    };
 
-        options {
-                directory "/var/cache/bind";
+    options {
+            directory "/var/cache/bind";
 
-                recursion yes;
+            recursion yes;
 
-                allow-query { goodclients; };
+            allow-query { goodclients; };
 
-                forwarders {
-                192.168.0.1; # Replace with the IP address of the on-premises DNS server
-                };
+            forwarders {
+            192.168.0.1; # Replace with the IP address of the on-premises DNS server
+            };
 
-                dnssec-validation auto;
+            dnssec-validation auto;
 
-                auth-nxdomain no;    # conform to RFC1035
-                listen-on { any; };
-        };
+            auth-nxdomain no;    # conform to RFC1035
+            listen-on { any; };
+    };
+    ```
 
     > [!IMPORTANT]  
     > Замените значения в разделе `goodclients` следующим диапазоном IP-адресов виртуальной и локальной сети. Этот раздел определяет адреса, по которым этот DNS-сервер принимает запросы.
@@ -184,11 +186,13 @@ ms.locfileid: "86079808"
 
 5. Чтобы настроить Bind для разрешения DNS-имен ресурсов в виртуальной сети, в качестве содержимого файла `/etc/bind/named.conf.local` добавьте следующий текст:
 
-        // Replace the following with the DNS suffix for your virtual network
-        zone "icb0d0thtw0ebifqt0g1jycdxd.ex.internal.cloudapp.net" {
-            type forward;
-            forwarders {168.63.129.16;}; # The Azure recursive resolver
-        };
+    ```DNS Zone file
+    // Replace the following with the DNS suffix for your virtual network
+    zone "icb0d0thtw0ebifqt0g1jycdxd.ex.internal.cloudapp.net" {
+        type forward;
+        forwarders {168.63.129.16;}; # The Azure recursive resolver
+    };
+    ```
 
     > [!IMPORTANT]  
     > Текст `icb0d0thtw0ebifqt0g1jycdxd.ex.internal.cloudapp.net` нужно заменить DNS-суффиксом, полученным ранее.
@@ -242,7 +246,7 @@ ms.locfileid: "86079808"
 
 4. Выберите __Пользовательский__ и введите **ЧАСТНЫЙ IP-АДРЕС** пользовательского DNS-сервера.
 
-5. Нажмите кнопку __Сохранить__.  <br />  
+5. Щелкните __Сохранить__.  <br />  
 
     ![Задание пользовательского DNS-сервера для сети](./media/connect-on-premises-network/configure-custom-dns.png)
 
@@ -256,10 +260,12 @@ ms.locfileid: "86079808"
 
 Далее представлен пример конфигурации сервера условной пересылки для программного обеспечения DNS **Bind**:
 
-    zone "icb0d0thtw0ebifqt0g1jycdxd.ex.internal.cloudapp.net" {
-        type forward;
-        forwarders {10.0.0.4;}; # The custom DNS server's internal IP address
-    };
+```DNS Zone file
+zone "icb0d0thtw0ebifqt0g1jycdxd.ex.internal.cloudapp.net" {
+    type forward;
+    forwarders {10.0.0.4;}; # The custom DNS server's internal IP address
+};
+```
 
 Дополнительные сведения об использовании DNS в **Windows Server 2016** см. в документации по [Add-DnsServerConditionalForwarderZone](https://technet.microsoft.com/itpro/powershell/windows/dnsserver/add-dnsserverconditionalforwarderzone).
 
@@ -335,7 +341,7 @@ nslookup dnsproxy.icb0d0thtw0ebifqt0g1jycdxd.ex.internal.cloudapp.net 196.168.0.
     >
     > Например, Apache Ambari одновременно активен только на одном головном узле. Если при попытке доступа к Ambari на одном головном узле он возвращает ошибку 404, значит он выполняется на другом головном узле.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об использовании HDInsight в виртуальной сети см. в статье [Планирование развертывания виртуальной сети для кластеров Azure HDInsight](./hdinsight-plan-virtual-network-deployment.md).
 

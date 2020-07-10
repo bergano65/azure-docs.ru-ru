@@ -9,11 +9,12 @@ ms.topic: conceptual
 ms.service: automation
 manager: carmonm
 ms.custom: has-adal-ref
-ms.openlocfilehash: 5de4b6f16f52d7cab7088ab39aa70267110eed88
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e0665a6aa55b998d54d076013a25e2efadaa2b06
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84606893"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187189"
 ---
 # <a name="troubleshoot-runbook-issues"></a>Устранение неполадок с последовательностями runbook
 
@@ -203,7 +204,7 @@ The subscription named <subscription name> cannot be found.
 Выполните следующие действия, чтобы определить, пройдена ли проверка подлинности в Azure и есть ли доступ к подписке, которую вы пытаетесь выбрать.
 
 1. Проверьте скрипт вне службы автоматизации Azure и убедитесь, что он может работать автономно.
-1. Убедитесь, что скрипт запускает командлет [Connect-AzAccount](https://docs.microsoft.com/powershell/module/Az.Accounts/Connect-AzAccount?view=azps-3.7.0) перед запуском командлета `Select-*`.
+1. Убедитесь, что скрипт запускает командлет [Connect-AzAccount](/powershell/module/Az.Accounts/Connect-AzAccount?view=azps-3.7.0) перед запуском командлета `Select-*`.
 1. К началу вашего модуля runbook добавьте `Disable-AzContextAutosave –Scope Process`. Этот командлет обеспечит применение любых учетных данных только к выполнению текущего модуля runbook.
 1. Если это сообщение об ошибке не исчезло, измените код, добавив параметр `AzContext` для `Connect-AzAccount`, а затем выполните код.
 
@@ -400,7 +401,7 @@ Object reference not set to an instance of an object
 
 ### <a name="resolution"></a>Решение
 
-Реализуйте логику опроса и используйте для получения выходных данных командлет [Get-AzAutomationJobOutput](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationJobOutput?view=azps-3.7.0). Пример этой логики определяется здесь:
+Реализуйте логику опроса и используйте для получения выходных данных командлет [Get-AzAutomationJobOutput](/powershell/module/Az.Automation/Get-AzAutomationJobOutput?view=azps-3.7.0). Пример этой логики определяется здесь:
 
 ```powershell
 $automationAccountName = "ContosoAutomationAccount"
@@ -485,7 +486,7 @@ Cannot convert the <ParameterType> value of type Deserialized <ParameterType> to
 Чтобы устранить эту ошибку, выполните одно из следующих действий.
 
 * изменить модуль Runbook и сократить число создаваемых потоков заданий;
-* уменьшите количество потоков, полученных при выполнении командлета. Для этого можно задать значение параметра `Stream` для командлета [Get-AzAutomationJobOutput](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationJobOutput?view=azps-3.7.0), чтобы получить только потоки вывода. 
+* уменьшите количество потоков, полученных при выполнении командлета. Для этого можно задать значение параметра `Stream` для командлета [Get-AzAutomationJobOutput](/powershell/module/Az.Automation/Get-AzAutomationJobOutput?view=azps-3.7.0), чтобы получить только потоки вывода. 
 
 ## <a name="scenario-runbook-job-fails-because-allocated-quota-was-exceeded"></a><a name="quota-exceeded"></a>Сценарий. Не удается выполнить задание runbook из-за превышения выделенной квоты
 
@@ -558,7 +559,7 @@ Exception was thrown - Cannot invoke method. Method invocation is supported only
 
 Эту проблему можно решить двумя способами:
 
-* Вместо [Start-Job](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-7) используйте [Start-AzAutomationRunbook](https://docs.microsoft.com/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.7.0) для запуска runbook.
+* Вместо [Start-Job](/powershell/module/microsoft.powershell.core/start-job?view=powershell-7) используйте [Start-AzAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.7.0) для запуска runbook.
 * Попытайтесь запустить runbook с использованием гибридной рабочей роли Runbook.
 
 Дополнительные сведения об этом и других видах поведения последовательностей runbook службы автоматизации Azure см. в статье [о выполнении runbook в службе автоматизации Azure](../automation-runbook-execution.md).
@@ -587,8 +588,8 @@ The job was evicted and subsequently reached a Stopped state. The job cannot con
 
 Командлеты PowerShell для реализации дочерних runbook:
 
-* [Start-AzAutomationRunbook](https://docs.microsoft.com/powershell/module/Az.Automation/Start-AzAutomationRunbook?view=azps-3.7.0). Этот командлет позволяет запустить runbook и передать в него параметры.
-* [Get-AzAutomationJob](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationJob?view=azps-3.7.0). Если есть операции, которые нужно выполнить после выполнения дочерней последовательности runbook, этот командлет позволяет проверить состояние задания для каждой дочерней последовательности.
+* [Start-AzAutomationRunbook](/powershell/module/Az.Automation/Start-AzAutomationRunbook?view=azps-3.7.0). Этот командлет позволяет запустить runbook и передать в него параметры.
+* [Get-AzAutomationJob](/powershell/module/Az.Automation/Get-AzAutomationJob?view=azps-3.7.0). Если есть операции, которые нужно выполнить после выполнения дочерней последовательности runbook, этот командлет позволяет проверить состояние задания для каждой дочерней последовательности.
 
 ## <a name="scenario-error-in-job-streams-about-the-get_serializationsettings-method"></a><a name="get-serializationsettings"></a>Сценарий. Ошибка в потоках заданий из-за метода get_SerializationSettings
 
@@ -651,7 +652,7 @@ Operation returned an invalid status code 'Forbidden'
 
 #### <a name="not-using-a-run-as-account"></a>Не используется учетная запись запуска от имени
 
-Выполните шаг 5 [Добавление проверки подлинности для управления ресурсами Azure](../automation-first-runbook-textual-powershell.md#add-authentication-to-manage-azure-resources) и убедитесь, что для доступа к Key Vault используется учетная запись запуска от имени.
+Выполните шаг 5 [Добавление проверки подлинности для управления ресурсами Azure](../learn/automation-tutorial-runbook-textual-powershell.md#step-5---add-authentication-to-manage-azure-resources) и убедитесь, что для доступа к Key Vault используется учетная запись запуска от имени.
 
 #### <a name="insufficient-permissions"></a>Недостаточные разрешения
 
@@ -660,7 +661,7 @@ Operation returned an invalid status code 'Forbidden'
 ## <a name="recommended-documents"></a>Рекомендуемые документы
 
 * [Выполнение модуля Runbook в службе автоматизации Azure](../automation-runbook-execution.md)
-* [Запуск модуля Runbook в службе автоматизации Azure](../automation-starting-a-runbook.md)
+* [Запуск модуля Runbook в службе автоматизации Azure](../start-runbooks.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,5 +1,5 @@
 ---
-title: Интерпретируемость модели в Машинное обучение Azure
+title: Интерпретируемость модели в Машинное обучение Azure (Предварительная версия)
 titleSuffix: Azure Machine Learning
 description: Узнайте, как объяснить, почему модель выполняет прогнозы с помощью пакета SDK для Машинное обучение Azure. Его можно использовать во время обучения и вывода, чтобы понять, как модель выполняет прогнозы.
 services: machine-learning
@@ -9,15 +9,15 @@ ms.topic: how-to
 ms.author: mesameki
 author: mesameki
 ms.reviewer: Luis.Quintanilla
-ms.date: 06/30/2020
-ms.openlocfilehash: 97401b2bdbcc2dc1379505f8dade443a4f1eb318
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/09/2020
+ms.openlocfilehash: 83fc13362a373686ee027fd642f03003b411cd63
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85601689"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86201443"
 ---
-# <a name="model-interpretability-in-azure-machine-learning"></a>Интерпретируемость модели в Машинное обучение Azure
+# <a name="model-interpretability-in-azure-machine-learning-preview"></a>Интерпретируемость модели в Машинное обучение Azure (Предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 ## <a name="overview-of-model-interpretability"></a>Общие сведения о интерпретируемости модели
@@ -70,7 +70,7 @@ ms.locfileid: "85601689"
 
  `azureml-interpret`использует методики интерпретации, разработанные в [интерпретированном сообществе](https://github.com/interpretml/interpret-community/), пакет Python с открытым исходным кодом для обучения интерпретируемых моделей и помогая объяснить блаккбокс AI-системы. [Интерпретатор-сообщество](https://github.com/interpretml/interpret-community/) выступает в качестве узла для поддерживаемых объяснений SDK и в настоящее время поддерживает следующие методы интерпретации:
 
-|Методика интерпретации|Описание|Type|
+|Методика интерпретации|Описание|Тип|
 |--|--|--------------------|
 |Пояснение к дереву ШАП| Пояснение к дереву [ШАП](https://github.com/slundberg/shap), в котором основное внимание уделяется алгоритму оценки скорости быстрого ШАП значений времени, характерному для **деревьев и это совокупности деревьев**.|Зависящие от модели|
 |Глубокое пояснение ШАП| Основываясь на пояснениях от ШАП, глубокая пояснения — алгоритм аппроксимации с высокой скоростью для ШАП значений в моделях глубокого обучения, который строится на связи с Диплифт, описанным в [документе ШАП НИПС](https://papers.nips.cc/paper/7062-a-unified-approach-to-interpreting-model-predictions). Модели **TensorFlow** и модели **keras** с использованием серверной части TensorFlow поддерживаются (также доступна предварительная поддержка PyTorch).|Зависящие от модели|
@@ -116,7 +116,7 @@ ms.locfileid: "85601689"
 Вы можете запустить объяснение удаленно на Машинное обучение Azure вычислить и записать пояснения в службу журнала выполнения Машинное обучение Azure. После записи этих сведений отчеты и визуализации из описания можно легко найти в Машинное обучение Azure Studio для анализа пользователей.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. [инструкции](how-to-machine-learning-interpretability-aml.md) по включению интерпретации для моделей, как локально, так и на машинное обучение Azure удаленных ресурсов вычислений. 
 - Дополнительные сценарии см. в [примерах записных книжек](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model) . 

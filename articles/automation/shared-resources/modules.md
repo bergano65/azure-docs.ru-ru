@@ -8,18 +8,19 @@ ms.author: magoedte
 ms.date: 01/31/2020
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 82bec23ac35f4f0e6c65720d0c3a36355fa4224d
-ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
+ms.openlocfilehash: 2bf3dda6e3d99b5ed67298343f5238d304df7e2b
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83713487"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187376"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Администрирование модулей в службе автоматизации Azure
 
 Служба автоматизации Azure использует несколько модулей PowerShell для включения командлетов в последовательностях runbook и ресурсов DSC в конфигурациях DSC. Поддерживаются следующие модули:
 
 * [Azure PowerShell Az.Automation](/powershell/azure/new-azureps-module-az?view=azps-1.1.0);
-* [Azure PowerShell AzureRM.Automation](https://docs.microsoft.com/powershell/module/azurerm.automation/?view=azurermps-6.13.0);
+* [Azure PowerShell AzureRM.Automation](/powershell/module/azurerm.automation/?view=azurermps-6.13.0);
 * другие модули PowerShell;
 * внутренний модуль `Orchestrator.AssetManagement.Cmdlets`;
 * модули Python 2;
@@ -105,7 +106,7 @@ ms.locfileid: "83713487"
 
 ## <a name="migrate-to-az-modules"></a>Миграция в модули Az
 
-В этом разделе описывается миграция в модули Az в службе автоматизации. Дополнительные сведения см. в статье [Перенос Azure PowerShell с AzureRM на Az](https://docs.microsoft.com/powershell/azure/migrate-from-azurerm-to-az?view=azps-3.7.0). 
+В этом разделе описывается миграция в модули Az в службе автоматизации. Дополнительные сведения см. в статье [Перенос Azure PowerShell с AzureRM на Az](/powershell/azure/migrate-from-azurerm-to-az?view=azps-3.7.0). 
 
 Мы не рекомендуем использовать модули AzureRM и Az в одной учетной записи службы автоматизации. Если вам непременно необходимо выполнить миграцию с AzureRM на Az, лучше перенести весь модуль полностью. Служба автоматизации часто повторно использует песочницы в учетной записи службы автоматизации, чтобы сократить время запуска. Если вы не перенесете модуль полностью и при этом сначала запустите задание, использующее только модули AzureRM, а затем — другое задание, использующее только модули Az, вскоре произойдет сбой песочницы и появится сообщение об ошибке из-за несовместимости модулей. Это приведет к возникновению случайных сбоев для продольных runbook и конфигураций. 
 
@@ -120,18 +121,18 @@ ms.locfileid: "83713487"
 
 Чтобы имеющиеся runbook или конфигурации DSC, использующие модули AzureRM, не запускались, необходимо остановить их все и отменить их выполнение по расписанию. Сначала проверьте отдельно каждую последовательность runbook и конфигурацию DSC, а также их расписания и убедитесь, что вы сможете при необходимости перепланировать элемент в будущем. 
 
-Когда будете готовы удалить расписания, можно использовать портал Azure или командлет [Remove-AzureRmAutomationSchedule](https://docs.microsoft.com/powershell/module/azurerm.automation/remove-azurermautomationschedule?view=azurermps-6.13.0). См. раздел [Удаление расписания](schedules.md#remove-a-schedule).
+Когда будете готовы удалить расписания, можно использовать портал Azure или командлет [Remove-AzureRmAutomationSchedule](/powershell/module/azurerm.automation/remove-azurermautomationschedule?view=azurermps-6.13.0). См. раздел [Удаление расписания](schedules.md#remove-a-schedule).
 
 ### <a name="remove-azurerm-modules"></a>Удаление модулей AzureRM
 
-Перед импортом модулей Az можно удалить модули AzureRM. Однако в этом случае синхронизация системы управления исходным кодом может прерваться, что приведет к сбою всех скриптов, выполнение которых еще запланировано. Если вы решили удалить эти модули, ознакомьтесь с разделом [Удаление AzureRM](https://docs.microsoft.com/powershell/azure/migrate-from-azurerm-to-az?view=azps-3.8.0#uninstall-azurerm).
+Перед импортом модулей Az можно удалить модули AzureRM. Однако в этом случае синхронизация системы управления исходным кодом может прерваться, что приведет к сбою всех скриптов, выполнение которых еще запланировано. Если вы решили удалить эти модули, ознакомьтесь с разделом [Удаление AzureRM](/powershell/azure/migrate-from-azurerm-to-az?view=azps-3.8.0#uninstall-azurerm).
 
 ### <a name="import-az-modules"></a>Импорт модулей Az
 
 При импорте модуля Az в учетную запись службы автоматизации он не импортируется автоматически в сеанс PowerShell, используемый последовательностями runbook. Модули импортируются в сеанс PowerShell в следующих ситуациях:
 
 * если runbook вызывает командлет из модуля;
-* если runbook импортирует модуль явным образом с помощью командлета [Import-Module](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7);
+* если runbook импортирует модуль явным образом с помощью командлета [Import-Module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-7);
 * если runbook импортирует другой зависимый модуль.
 
 Модули Az можно импортировать на портал Azure. Не забудьте, что импортировать следует только необходимые модули Az, а не весь модуль Az.Automation. Поскольку от модуля [Az.Accounts](https://www.powershellgallery.com/packages/Az.Accounts/1.1.0) зависят другие модули Az, обязательно импортируйте его перед остальными.
@@ -155,7 +156,7 @@ ms.locfileid: "83713487"
 
 При создании пользовательского модуля PowerShell для использования в службе автоматизации Azure рекомендуем следовать рекомендациям, приведенным в данном разделе. Чтобы подготовить модуль к импорту, необходимо создать по крайней мере **DLL**-файл модуля psd1, psm1 или PowerShell с тем же именем, что и у папки модуля. Затем заархивируйте папку модуля, чтобы служба автоматизации Azure могла импортировать ее как один файл. Пакет **ZIP** должен иметь то же имя, что и вложенная папка модуля. 
 
-Дополнительные сведения о создании модуля PowerShell см. в статье [Как написать модуль сценария PowerShell](https://docs.microsoft.com/powershell/scripting/developer/module/how-to-write-a-powershell-script-module?view=powershell-7).
+Дополнительные сведения о создании модуля PowerShell см. в статье [Как написать модуль сценария PowerShell](/powershell/scripting/developer/module/how-to-write-a-powershell-script-module?view=powershell-7).
 
 ### <a name="version-folder"></a>Папка версии
 
@@ -314,7 +315,7 @@ myModule
 
 ### <a name="import-modules-by-using-powershell"></a>Импорт модулей с помощью PowerShell
 
-Для импорта модуля в учетную запись службы автоматизации можно использовать командлет [New-AzAutomationModule](https://docs.microsoft.com/powershell/module/az.automation/new-azautomationmodule?view=azps-3.7.0). Командлет принимает URL-адрес для пакета ZIP модуля.
+Для импорта модуля в учетную запись службы автоматизации можно использовать командлет [New-AzAutomationModule](/powershell/module/az.automation/new-azautomationmodule?view=azps-3.7.0). Командлет принимает URL-адрес для пакета ZIP модуля.
 
 ```azurepowershell-interactive
 New-AzAutomationModule -Name <ModuleName> -ContentLinkUri <ModuleUri> -ResourceGroupName <ResourceGroupName> -AutomationAccountName <AutomationAccountName>
@@ -371,5 +372,5 @@ Remove-AzAutomationModule -Name <moduleName> -AutomationAccountName <automationA
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Getting started with Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps?view=azps-3.7.0) (Приступая к работе с Azure PowerShell)
-* [Написание модуля Windows PowerShell](https://docs.microsoft.com/powershell/scripting/developer/module/writing-a-windows-powershell-module?view=powershell-7)
+* Дополнительные сведения об использовании модулей Azure PowerShell см. в статье [Приступая к работе с Azure PowerShell](/powershell/azure/get-started-azureps?view=azps-3.7.0).
+* Дополнительные сведения о создании модулей PowerShell см. в разделе [написание модуля Windows PowerShell](/powershell/scripting/developer/module/writing-a-windows-powershell-module?view=powershell-7).

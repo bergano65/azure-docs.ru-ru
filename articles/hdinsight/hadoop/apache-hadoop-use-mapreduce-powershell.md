@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/08/2020
-ms.openlocfilehash: 2eb5817a3339494417bb426bfdccb09ae3ac7230
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: bd6d02ce1cd60a6d54047139f06fa59f359f9da9
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86087781"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86202414"
 ---
 # <a name="run-mapreduce-jobs-with-apache-hadoop-on-hdinsight-using-powershell"></a>Выполнение заданий MapReduce с помощью PowerShell и Apache Hadoop в HDInsight
 
@@ -49,21 +49,25 @@ Azure PowerShell предоставляет *командлеты* , позво�
 
 2. Откройте новую командную строку **Azure PowerShell** . Перейдите к расположению файла **mapreducejob.ps1** , а затем используйте следующую команду для запуска сценария:
 
-        .\mapreducejob.ps1
+    ```azurepowershell
+    .\mapreducejob.ps1
+    ```
 
     При запуске скрипта будет предложено ввести имя кластера HDInsight и имя входа в кластер. Вам также может быть предложено аутентифицироваться в подписке Azure.
 
 3. По завершении задания выходные данные будут иметь примерно следующий вид.
 
-        Cluster         : CLUSTERNAME
-        ExitCode        : 0
-        Name            : wordcount
-        PercentComplete : map 100% reduce 100%
-        Query           :
-        State           : Completed
-        StatusDirectory : f1ed2028-afe8-402f-a24b-13cc17858097
-        SubmissionTime  : 12/5/2014 8:34:09 PM
-        JobId           : job_1415949758166_0071
+    ```output
+    Cluster         : CLUSTERNAME
+    ExitCode        : 0
+    Name            : wordcount
+    PercentComplete : map 100% reduce 100%
+    Query           :
+    State           : Completed
+    StatusDirectory : f1ed2028-afe8-402f-a24b-13cc17858097
+    SubmissionTime  : 12/5/2014 8:34:09 PM
+    JobId           : job_1415949758166_0071
+    ```
 
     Такие выходные данные означают, что задание завершено успешно.
 

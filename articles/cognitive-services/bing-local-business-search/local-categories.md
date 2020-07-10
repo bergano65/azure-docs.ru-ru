@@ -10,12 +10,12 @@ ms.subservice: bing-local-business
 ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: rosh
-ms.openlocfilehash: 56b94d66eb0929d2fd0ca74a1a631d229330adfa
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: f469196f96b97903f69e29d1a38900369653e02f
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "69906394"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86200511"
 ---
 # <a name="search-categories-for-the-bing-local-business-search-api"></a>Поиск категорий для API Bing Local Business Search
 
@@ -36,49 +36,17 @@ API Bing Local Business Search позволяет искать сущности 
 ## <a name="sub-categories"></a>Подкатегории
 Подкатегории проходят тот же путь, что и `localCategories`. Подкатегории — это более конкретные категории. Они подчинены в том смысле, что если вы укажете категорию C и одну из ее подкатегорий S в том же списке с разделителями-запятыми, вы получите те же результаты, что указали для C.
 
-### <a name="eat-drink"></a>EatDrink 
-|  |  |  |  |
-| - | - | - | - |
-| BreweriesAndBrewPubs | CocktailLounges | AfricanRestaurants |
-| AmericanRestaurants | Bagels | BarbecueRestaurants |
-| Taverns | SportsBars | Bars |
-| BarsGrillsAndPubs | BuffetRestaurants| BelgianRestaurants | 
-| BritishRestaurants | CafeRestaurants | CaribbeanRestaurants |
-| ChineseRestaurants | CoffeeAndTea | Delicatessens | 
-| DeliveryService | Diners | DiscountStores | 
-| Donuts | FastFood | FrenchRestaurants | 
-| FrozenYogurt | GermanRestaurants | Supermarkets | 
-| GreekRestaurants | Grocers | HawaiianRestaurants | 
-| HungarianRestaurants | IceCreamAndFrozenDesserts | IndianRestaurants | 
-| ItalianRestaurants | JapaneseRestaurants | Juices | 
-| KoreanRestaurants | LiquorStores | MexicanRestaurants |
-| MiddleEasternRestaurants | Pizza | PolishRestaurants | 
-| PortugueseRestaurants | Pretzels | Restaurants | 
-| RussianAndUkrainianRestaurants | Sandwiches | SeafoodRestaurants | 
-| SpanishRestaurants | SteakHouseRestaurants | SushiRestaurants | 
-| TakeAway | ThaiRestaurants | TurkishRestaurants | 
-| VegetarianAndVeganRestaurants | VietnameseRestaurants|  |
- 
-### <a name="see-do"></a>SeeDo 
-|  |  |  |
-| -- | -- | -- |
-| AmusementParks | Attractions | Carnivals |
-| Casinos | LandmarksAndHistoricalSites | MiniatureGolfCourses |
-| MovieTheaters | Museums | Parks |
-| SightseeingTours | TouristInformation | Zoos |
- 
-### <a name="shop"></a>Shop 
-|  |  |  |
-| -- | -- | -- |
-| AntiqueStores | Bookstores | CDAndRecordStores |
-| ChildrensClothingStores | CigarAndTobaccoShops | ComicBookStores |
-| DepartmentStores | DiscountStores | FleaMarketsAndBazaars |
-| FurnitureStores | HomeImprovementStores | JewelryAndWatchesStores |
-| KitchenwareStores | LiquorStores | MallsAndShoppingCenters |
-| MensClothingStores | MusicStores | OutletStores |
-| PetShops | PetSupplyStores | SchoolAndOfficeSupplyStores |
-| ShoeStores | SportingGoodsStores | ToyAndGameStores |
-| VitaminAndSupplementStores | WomensClothingStores |  |
+### <a name="eat-drink"></a>EatDrink
+
+> Бревериесандбревпубс, Кокктаиллаунжес, Африканрестаурантс, Американрестаурантс, Бажелс, BarbecueRestaurants, Taverns, SportsBars, линейчатые, BarsGrillsAndPubs, BuffetRestaurants | Белгианрестаурантс, Бритишрестаурантс, Каферестаурантс, Кариббеанрестаурантс, Чинесерестаурантс, CoffeeAndTea, delicatessens, DeliveryService, столик, DiscountStores, кольца, FastFood, FrenchRestaurants, FrozenYogurt, GermanRestaurants, Supermarkets, GreekRestaurants, grocers, HawaiianRestaurants, HungarianRestaurants, IceCreamAndFrozenDesserts, IndianRestaurants, ItalianRestaurants, JapaneseRestaurants, Juices, KoreanRestaurants, LiquorStores, MexicanRestaurants, MiddleEasternRestaurants, пицц, PolishRestaurants, PortugueseRestaurants, pretzels, рестораны, RussianAndUkrainianRestaurants, бутерброды, SeafoodRestaurants, SpanishRestaurants, SteakHouseRestaurants
+
+### <a name="see-do"></a>SeeDo
+
+> Амусементпаркс, Аттрактионс, Карнивалс, Касинос, Ландмарксандхисторикалситес, Миниатуреголфкаурсес, MovieTheaters, музеи, парки, SightseeingTours, TouristInformation, зоопарках
+
+### <a name="shop"></a>Shop
+
+> Антикуесторес, Bookstore, Кдандрекордсторес, Чилдренсклосингсторес, Цигарандтобаккошопс, Комикбуксторес, DepartmentStores, DiscountStores, FleaMarketsAndBazaars, FurnitureStores, HomeImprovementStores, JewelryAndWatchesStores, KitchenwareStores, LiquorStores, MallsAndShoppingCenters, MensClothingStores, MusicStores, OutletStores, PetShops, PetSupplyStores, SchoolAndOfficeSupplyStores, ShoeStores, SportingGoodsStores, ToyAndGameStores, VitaminAndSupplementStores, WomensClothingStores
 
 
 ## <a name="examples-of-local-categories-search"></a>Examples of Local Categories search
@@ -216,7 +184,7 @@ X-MSEdge-Ref: Ref A: 68AFB51807C6485CAB8AAF20E232EFFF Ref B: CO1EDGE0108 Ref C: 
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Use geographic boundaries to filter results from the Bing Local Business Search API](specify-geographic-search.md) (Использование географических границ для фильтрации результатов API Bing Local Business Search)
 - [Sending and using Bing Local Business Search API queries and responses](local-search-query-response.md) (Отправление и использование запросов и ответов API Bing Local Business Search)
 - [Quickstart: Send a query to the Bing Local Business Search API in C#](quickstarts/local-quickstart.md) (Краткое руководство. Отправление запроса API Bing Local Business Search в C#)

@@ -9,11 +9,12 @@ ms.author: magoedte
 ms.date: 11/25/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 28b6b09c679e37ca4ecd901371e65bffb27ecba4
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 2149fd68cdf5f2991d6035f245f70515e920045c
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83681007"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187206"
 ---
 # <a name="troubleshoot-hybrid-runbook-worker-issues"></a>Устранение неполадок с гибридной рабочей ролью runbook
 
@@ -57,7 +58,7 @@ ms.locfileid: "83681007"
 
 #### <a name="issue"></a>Проблема
 
-Гибридная рабочая роль Runbook получает событие 15011, указывающее, что результат запроса недействителен. Приведенная ниже ошибка возникает, когда рабочая роль пытается открыть подключение к [серверу SignalR](https://docs.microsoft.com/aspnet/core/signalr/introduction?view=aspnetcore-3.1).
+Гибридная рабочая роль Runbook получает событие 15011, указывающее, что результат запроса недействителен. Приведенная ниже ошибка возникает, когда рабочая роль пытается открыть подключение к [серверу SignalR](/aspnet/core/signalr/introduction?view=aspnetcore-3.1).
 
 ```error
 [AccountId={c7d22bd3-47b2-4144-bf88-97940102f6ca}]
@@ -237,7 +238,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 #### <a name="issue"></a>Проблема
 
-Сценарий, выполняющийся в гибридной рабочей роли Runbook для Windows, не может ожидаемым образом подключиться к Office 365 в песочнице Orchestrator. Для подключения сценарий использует [Connect-MsolService](https://docs.microsoft.com/powershell/module/msonline/connect-msolservice?view=azureadps-1.0). 
+Сценарий, выполняющийся в гибридной рабочей роли Runbook для Windows, не может ожидаемым образом подключиться к Office 365 в песочнице Orchestrator. Для подключения сценарий использует [Connect-MsolService](/powershell/module/msonline/connect-msolservice?view=azureadps-1.0). 
 
 При настройке **Orchestrator.Sandbox.exe.config** для задания прокси-сервера и списка обхода песочница по-прежнему не подключается должным образом. Файл **Powershell_ise.exe.config** с теми же параметрами прокси-сервера и списка обхода работает ожидаемым образом. Журналы Service Management Automation (SMA) и журналы PowerShell не предоставляют никаких сведений о прокси-сервере.
 
@@ -247,9 +248,9 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 #### <a name="resolution"></a>Решение
 
-Вы можете устранить проблему в песочнице Orchestrator, перенеся сценарий, чтобы использовать модули Azure Active Directory вместо модуля MSOnline для командлетов PowerShell. Дополнительные сведения см. в разделе [Миграция из Orchestrator в службу автоматизации Azure (бета-версия)](https://docs.microsoft.com/azure/automation/automation-orchestrator-migration).
+Вы можете устранить проблему в песочнице Orchestrator, перенеся сценарий, чтобы использовать модули Azure Active Directory вместо модуля MSOnline для командлетов PowerShell. Дополнительные сведения см. в разделе [Миграция из Orchestrator в службу автоматизации Azure (бета-версия)](../automation-orchestrator-migration.md).
 
-Если вы хотите продолжить использовать командлеты модуля MSOnline, измените сценарий так, чтобы он использовал [Invoke-Command](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7). Укажите значения параметров `ComputerName` и `Credential`. 
+Если вы хотите продолжить использовать командлеты модуля MSOnline, измените сценарий так, чтобы он использовал [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7). Укажите значения параметров `ComputerName` и `Credential`. 
 
 ```powershell
 $Credential = Get-AutomationPSCredential -Name MyProxyAccessibleCredential

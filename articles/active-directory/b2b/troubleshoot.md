@@ -14,12 +14,12 @@ ms.custom:
 - it-pro
 - seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f8bafb04d0a5d9c6d25a7ed7e155888d492e9fc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a835872d4a4fedfb5ef72a1cb9499e4f969adcd3
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80050782"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86202116"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Устранение неполадок службы совместной работы Azure Active Directory B2B
 
@@ -87,7 +87,9 @@ ms.locfileid: "80050782"
 
 Пользователь с гостевой учетной записью не может войти в систему и получает следующее сообщение об ошибке:
 
+```plaintext
     AADSTS65005: Using application 'AppName' is currently not supported for your organization contoso.com because it is in an unmanaged state. An administrator needs to claim ownership of the company by DNS validation of contoso.com before the application AppName can be provisioned.
+```
 
 Пользователь имеет учетную запись пользователя Azure и является вирусным клиентом, который был отменен или неуправляем. Кроме того, в клиенте нет глобальных или корпоративных администраторов.
 

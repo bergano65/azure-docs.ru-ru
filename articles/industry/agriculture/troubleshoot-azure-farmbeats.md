@@ -5,11 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: b82d415d5e0cf18250123f3483e196aa040285dd
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 6527ee8be64d57b42d7753c266a5c416ceeef589
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83656820"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187716"
 ---
 # <a name="troubleshoot"></a>Диагностика
 
@@ -109,7 +110,7 @@ ms.locfileid: "83656820"
 > [!NOTE]
 > Идентификатор партнера, предоставляющего данные датчика.
 
-3. Вернитесь к API партнера и выберите **Get/\<ID>** (Получить/<ИД>).
+3. Вернитесь к API-партнеру и выберите **Get/ \<ID> **.
 4. Укажите идентификатор партнера из шага 3, а затем выберите **Execute** (Выполнить).
 
    Ответ API должен содержать строку подключения Центров событий Azure.
@@ -249,7 +250,7 @@ ms.locfileid: "83656820"
 
 ### <a name="sentinel-maximum-number-of-connections-reached"></a>Sentinel: достигнуто максимальное количество подключений
 
-**Сообщение об ошибке задания**. "Для пользователя '\<имя_пользователя>' достигнуто максимальное количество двух одновременных потоков".
+**Сообщение об ошибке задания**: "максимальное число одновременных потоков, достигнутых пользователем" \<username> ".
 
 **Значение**. Если задание завершается сбоем из-за достижения максимального количества подключений, это означает, что одна и та же учетная запись Sentinel используется в нескольких заданиях.
 
@@ -313,3 +314,39 @@ ms.locfileid: "83656820"
 1. Перейдите в группу ресурсов FarmBeats Datahub.
 2. Выберите **Службу приложений Azure**.  
 3. Перейдите на [страницу расценок на Службу приложений,](https://azure.microsoft.com/pricing/details/app-service/windows/), а затем выберите соответствующую ценовую категорию.
+
+## <a name="weather-data-job-failures"></a>Сбои заданий с данными о погоде
+
+**Ошибка**: вы запускаете задания для получения данных о погоде, но задание завершается ошибкой
+
+### <a name="collect-logs-to-troubleshoot-weather-data-job-failures"></a>Получение журналов для устранения ошибок заданий в погодных данных
+
+1. Перейдите к группе ресурсов Фармбеатс в портал Azure.
+2. Щелкните службу фабрики данных, которая является частью группы ресурсов. У службы будет тег "SKU: Датахуб"
+
+> [!NOTE]
+> Чтобы просмотреть теги служб в группе ресурсов, щелкните "изменить столбцы" и добавьте "Теги" в представление группы ресурсов.
+
+:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-1.png" alt-text="Проект FarmBeats":::
+
+3. На странице "Обзор" фабрики данных щелкните " **создать и отслеживать**". В браузере откроется новая вкладка. Щелкните **монитор**
+
+:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-2.png" alt-text="Проект FarmBeats":::
+
+4. Вы увидите список запусков конвейеров, которые являются частью выполнения задания weather. Щелкните задание, для которого требуется получить журналы.
+ 
+:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-3.png" alt-text="Проект FarmBeats":::
+
+5. На странице Обзор конвейера вы увидите список запусков действий. Запишите идентификаторы запуска действий, для которых необходимо вести журнал.
+ 
+:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-4.png" alt-text="Проект FarmBeats":::
+
+6. Вернитесь в группу ресурсов Фармбеатс в портал Azure и щелкните учетную запись хранения с именем **датахублогс-XXXX** .
+ 
+:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-5.png" alt-text="Проект FarmBeats":::
+
+7. Щелкните **контейнеры**  ->  **adfjobs**. В поле поиска введите идентификатор запуска задания, записанный на шаге 5 выше.
+ 
+:::image type="content" source="./media/troubleshoot-Azure-farmbeats/weather-log-6.png" alt-text="Проект FarmBeats":::
+
+8. Результат поиска будет содержать папку с журналами, относящимися к заданию. Скачайте журналы и отправьте их farmbeatssupport@microsoft.com для получения помощи в отладке проблемы.

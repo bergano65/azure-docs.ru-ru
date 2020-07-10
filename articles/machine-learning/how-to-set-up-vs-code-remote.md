@@ -1,5 +1,5 @@
 ---
-title: 'Интерактивная отладка: VS Code &ных экземпляров машинного обучения ML'
+title: 'Интерактивная отладка: VS Code &ных экземпляров машинного обучения (Предварительная версия)'
 titleSuffix: Azure Machine Learning
 description: Настройка VS Code удаленного для интерактивной отладки кода с помощью Машинное обучение Azure.
 services: machine-learning
@@ -8,14 +8,15 @@ ms.subservice: core
 ms.topic: how-to
 ms.author: jmartens
 author: j-martens
-ms.date: 12/09/2019
-ms.openlocfilehash: 19d4b6e7994450eacacab51e9a01cbf58eab803a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/09/2020
+ms.openlocfilehash: 46aefa62ab00c0b3bc2b90467a9fafd61439a10e
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84433138"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86203457"
 ---
-# <a name="debug-interactively-on-an-azure-machine-learning-compute-instance-with-vs-code-remote"></a>Отладка в интерактивном режиме на Машинное обучение Azure вычислительного экземпляра с VS Code удаленно
+# <a name="debug-interactively-on-an-azure-machine-learning-compute-instance-with-vs-code-remote-preview"></a>Отладка в интерактивном режиме на Машинное обучение Azure вычислительного экземпляра с VS Code удаленно (Предварительная версия)
 
 В этой статье вы узнаете, как настроить Visual Studio Code удаленно на Машинное обучение Azure вычислительного экземпляра, чтобы можно было выполнять **интерактивную отладку кода** из VS Code. 
 
@@ -85,11 +86,11 @@ Host azmlci1
 
 Ниже приведены некоторые сведения о полях. 
 
-|Поле|Описание:|
+|Поле|Описание|
 |----|---------|
 |Узел|Использование любой краткой формы для вычислительного экземпляра |
 |HostName|Это IP-адрес вычислительного экземпляра |
-|Port|Это порт, показанный в диалоговом окне SSH выше |
+|Порт|Это порт, показанный в диалоговом окне SSH выше |
 |Пользователь|Это должно быть `azureuser` |
 |идентитифиле|Должен указывать на файл, в который был сохранен закрытый ключ |
 
@@ -109,7 +110,7 @@ Host azmlci1
 
 С этого момента вы полностью работаете с вычислительным экземпляром, и теперь можете редактировать, отлаживать, использовать Git, использовать расширения и т. д., как и в случае с локальными Visual Studio Code. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы настроили Visual Studio Code удаленно, вы можете использовать вычислительный экземпляр в качестве удаленного вычислений от Visual Studio Code для интерактивной отладки кода. 
 

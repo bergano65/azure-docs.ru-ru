@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 06eb29f2f3245d3f4fd047fb86b2b57fb1f0989e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 837237be636e67f37f5c744cd4863f1eb159652a
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "72793347"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86201396"
 ---
 # <a name="odata-full-text-search-functions-in-azure-cognitive-search---searchismatch-and-searchismatchscoring"></a>Функции полнотекстового поиска OData в Azure Когнитивный поиск — `search.ismatch` и`search.ismatchscoring`
 
@@ -98,25 +98,35 @@ search_mode ::= "'any'" | "'all'"
 
 Найти документы со словом waterfront. Этот запрос фильтрации идентичен [поисковому запросу](https://docs.microsoft.com/rest/api/searchservice/search-documents) с `search=waterfront`:
 
+```odata-filter-expr
     search.ismatchscoring('waterfront')
+```
 
 Найти документы со словом hostel и рейтингом, большим или равным 4, или документы со словом motel и рейтингом 5. Обратите внимание, что этот запрос невозможно составить без функции `search.ismatchscoring`.
 
+```odata-filter-expr
     search.ismatchscoring('hostel') and Rating ge 4 or search.ismatchscoring('motel') and Rating eq 5
+```
 
 Найти документы без слова luxury.
 
+```odata-filter-expr
     not search.ismatch('luxury')
+```
 
 Найти документы с фразой "ocean view" или рейтингом 5. Запрос `search.ismatchscoring` будет выполняться только по отношению к полям `HotelName` и `Rooms/Description`.
 
 Документы, которые совпали только с вторым предложением дизъюнкции, будут возвращены — Гостиницы со значением, `Rating` равным 5. Чтобы сделать так, чтобы эти документы не соответствовали ни одной из оцененных частей выражения, они будут возвращены с оценками, равными нулю.
 
+```odata-filter-expr
     search.ismatchscoring('"ocean view"', 'Rooms/Description,HotelName') or Rating eq 5
+```
 
 Поиск документов, в которых термины «Гостиница» и «аэропорт» находятся в пределах 5 слов друг от друга в описании отеля, а Курение не разрешены по крайней мере в некоторых комнатах. В этом запросе используется [полный язык запросов Lucene](query-lucene-syntax.md).
 
+```odata-filter-expr
     search.ismatch('"hotel airport"~5', 'Description', 'full', 'any') and Rooms/any(room: not room/SmokingAllowed)
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия  
 

@@ -11,12 +11,12 @@ ms.topic: troubleshooting
 ms.date: 04/28/2020
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: e5c0b00873cd97b255eff7e001f8b54cf0397462
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: ac5b1f72e4c70e15ccb12ea41e5f080ca0b8a505
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86024576"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86203028"
 ---
 # <a name="application-provisioning-in-quarantine-status"></a>Подготовка приложений в карантинном состоянии
 
@@ -36,7 +36,9 @@ ms.locfileid: "86024576"
 
 - Используйте Microsoft Graph запрос [Get синчронизатионжоб](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-beta&tabs=http) , чтобы программно получить состояние задания подготовки:
 
-        `GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs/{jobId}/`
+```microsoft-graph
+        GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs/{jobId}/
+```
 
 - Проверьте электронную почту. Когда приложение помещается в карантин, отправляется одноразовое уведомление по электронной почте. При изменении причины карантина отправляется обновленное сообщение электронной почты с новой причиной помещения в карантин. Если вы не видите сообщение электронной почты, сделайте следующее:
 
@@ -46,7 +48,7 @@ ms.locfileid: "86024576"
 
 ## <a name="why-is-my-application-in-quarantine"></a>Почему мое приложение находится в карантине?
 
-|Описание:|Рекомендуемое действие|
+|Описание|Рекомендуемое действие|
 |---|---|
 |**Проблемы с соответствием scim:** Возвращен ответ HTTP/404 не найден, а не ожидаемый ответ HTTP/200 OK. В этом случае служба подготовки Azure AD выполнила запрос к целевому приложению и получил непредвиденный ответ.|Проверьте раздел учетные данные администратора, чтобы узнать, требуется ли приложению указать URL-адрес клиента и убедиться в правильности URL-адреса. Если вы не видите проблемы, обратитесь к разработчику приложения, чтобы убедиться, что его служба соответствует SCIM. https://tools.ietf.org/html/rfc7644#section-3.4.2 |
 |**Недопустимые учетные данные:** При попытке авторизовать доступ к целевому приложению получен ответ от целевого приложения, указывающий на то, что указанные учетные данные недопустимы.|Перейдите к разделу учетные данные администратора в пользовательском интерфейсе конфигурации подготовки и снова Авторизуйте доступ с действительными учетными данными. Если приложение находится в коллекции, ознакомьтесь с руководством по настройке приложения, чтобы выполнить необходимые дополнительные действия.|
@@ -74,7 +76,9 @@ ms.locfileid: "86024576"
 
 - Используйте Microsoft Graph, чтобы [перезапустить задание подготовки](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta&tabs=http). Вы получите полный контроль над перезапусками. Вы можете снять флажки (чтобы перезапустить счетчик депонирования, который начисляется в сторону состояния карантина), Очистить карантин (чтобы удалить приложение из карантина) или снять пределы. Используйте следующий запрос:
  
-       `POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/restart`
-       
+```microsoft-graph
+        POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/restart
+```
+
 Замените "{ID}" значением идентификатора приложения и замените "{jobId}" [идентификатором задания синхронизации](https://docs.microsoft.com/graph/api/resources/synchronization-configure-with-directory-extension-attributes?view=graph-rest-beta&tabs=http#list-synchronization-jobs-in-the-context-of-the-service-principal). 
 

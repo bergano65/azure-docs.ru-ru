@@ -11,11 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5949fdce9d591a9c02c5c6c4fb2f1dde94c45d2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9dac17c8592530c06dd761914e7f556b35c3674b
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80654018"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86202984"
 ---
 # <a name="securing-cloud-resources-with-azure-multi-factor-authentication-and-ad-fs"></a>Защита облачных ресурсов с помощью Многофакторной идентификации Azure и AD FS
 
@@ -72,12 +73,15 @@ ms.locfileid: "80654018"
 11. В поле "Имя правила утверждения" введите *Не затрагивать пользователей, вошедших в систему*.
 12. В поле "Настраиваемое правило " введите следующее:
 
+```ad-fs-claim-rule
         c:[Type == "http://schemas.microsoft.com/2014/03/psso"]
             => issue(claim = c);
-    ![Создание настраиваемого утверждения для предотвращения входа пользователей](./media/howto-mfa-adfs/trustedip5.png)
+    ![Create custom claim to keep users signed in](./media/howto-mfa-adfs/trustedip5.png)
+```
+
 13. Нажмите кнопку **Готово**.
 14. Нажмите кнопку **Применить**.
-15. Нажмите кнопку **ОК**.
+15. Нажмите кнопку **Ок**.
 16. Откройте оснастку управления AD FS.
 
 ### <a name="configure-azure-multi-factor-authentication-trusted-ips-with-federated-users"></a>Настройка Многофакторной идентификации с доверенными IP-адресами в Azure для федеративных пользователей

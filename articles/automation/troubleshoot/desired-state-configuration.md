@@ -9,11 +9,12 @@ ms.author: magoedte
 ms.date: 04/16/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 6e057f5c9525f3b4ca373897c865990eb29835c0
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 8043369ebfef23ed84ccff8e7428fbd2048e10b0
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83681373"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187223"
 ---
 # <a name="troubleshoot-azure-automation-state-configuration-issues"></a>Устранение проблем с настройкой состояния службы автоматизации Azure
 
@@ -25,7 +26,7 @@ ms.locfileid: "83681373"
 
 ### <a name="1-ensure-that-your-configuration-compiles-successfully-on-the-local-machine"></a>1. Убедитесь, что конфигурация успешно компилируется на локальном компьютере
 
-Настройка состояния службы автоматизации Azure основана на настройке требуемого состояния (DSC) PowerShell. Документацию по языку DSC и синтаксису можно найти в разделе [Документация DSC PowerShell](https://docs.microsoft.com/powershell/scripting/overview).
+Настройка состояния службы автоматизации Azure основана на настройке требуемого состояния (DSC) PowerShell. Документацию по языку DSC и синтаксису можно найти в разделе [Документация DSC PowerShell](/powershell/scripting/overview).
 
 Компилируя конфигурацию DSC на локальном компьютере, можно обнаруживать и устранять распространенные ошибки:
 
@@ -41,7 +42,7 @@ ms.locfileid: "83681373"
 
 Можно установить модуль `xDscDiagnostics` на локальном компьютере, выполнив инструкции из статьи [Установка модуля стабильной версии](https://github.com/PowerShell/xDscDiagnostics#install-the-stable-version-module).
 
-Чтобы установить модуль `xDscDiagnostics` на компьютере Azure, используйте команду [Invoke-AzVMRunCommand](https://docs.microsoft.com/powershell/module/az.compute/invoke-azvmruncommand?view=azps-3.7.0). Кроме того, можно воспользоваться функцией **Выполнить команду** на портале Microsoft Azure. Для этого выполните инструкции в статье [Запуск сценариев PowerShell на виртуальной машине с Windows с помощью функции «Выполнить команду»](../../virtual-machines/windows/run-command.md).
+Чтобы установить модуль `xDscDiagnostics` на компьютере Azure, используйте команду [Invoke-AzVMRunCommand](/powershell/module/az.compute/invoke-azvmruncommand?view=azps-3.7.0). Кроме того, можно воспользоваться функцией **Выполнить команду** на портале Microsoft Azure. Для этого выполните инструкции в статье [Запуск сценариев PowerShell на виртуальной машине с Windows с помощью функции «Выполнить команду»](../../virtual-machines/windows/run-command.md).
 
 Сведения об использовании командлета **xDscDiagnostics** см. в статье [Использование xDscDiagnostics для анализа журналов DSC](/powershell/scripting/dsc/troubleshooting/troubleshooting#using-xdscdiagnostics-to-analyze-dsc-logs). См. также статью [Командлеты xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics#cmdlets).
 
@@ -65,13 +66,13 @@ An error occurred while deleting the DSC configuration '<name>'.  Error-details:
 
 ### <a name="resolution"></a>Решение
 
-Используйте командлет [Remove-AzAutomationDscConfiguration] (командлет https://docs.microsoft.com/powershell/module/Az.Automation/Remove-AzAutomationDscConfiguration?view=azps-3.7.0 для удаления конфигурации).
+Удалите конфигурацию с помощью командлета [Remove-азаутоматиондскконфигуратион](/powershell/module/Az.Automation/Remove-AzAutomationDscConfiguration?view=azps-3.7.0) .
 
 ## <a name="scenario-failed-to-register-the-dsc-agent"></a><a name="failed-to-register-agent"></a>Сценарий. Не удалось зарегистрировать агент DSC
 
 ### <a name="issue"></a>Проблема
 
-При использовании [Set-DscLocalConfigurationManager](https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/set-dsclocalconfigurationmanager?view=powershell-5.1) или другого командлета DSC отображается ошибка:
+При использовании [Set-DscLocalConfigurationManager](/powershell/module/psdesiredstateconfiguration/set-dsclocalconfigurationmanager?view=powershell-5.1) или другого командлета DSC отображается ошибка:
 
 ```error
 Registration of the Dsc Agent with the server
@@ -176,7 +177,7 @@ The attempt to get the action from server https://<url>//accounts/<account-id>/N
 * Конфигурацию узла можно назначить узлу с помощью портала Azure или с помощью командлета PowerShell.
 
   * На портале Azure откройте **Главная** > **Учетные записи службы автоматизации** > (ваша учетная запись службы автоматизации) > **Настройка состояния (DSC)** . Затем выберите узел и щелкните **Назначить конфигурацию узла**.
-  * Используйте командлет [Set-AzAutomationDscNode](https://docs.microsoft.com/powershell/module/Az.Automation/Set-AzAutomationDscNode?view=azps-3.7.0).
+  * Используйте командлет [Set-AzAutomationDscNode](/powershell/module/Az.Automation/Set-AzAutomationDscNode?view=azps-3.7.0).
 
 ## <a name="scenario-no-node-configurations-mof-files-were-produced-when-a-configuration-was-compiled"></a><a name="no-mof-files"></a>Сценарий. При компиляции конфигурации не были созданы файлы конфигурации узла (MOF-файлы)
 
@@ -215,7 +216,7 @@ No instance found with given property values
 
 ### <a name="resolution"></a>Решение
 
-Выполните инструкции из статьи [Известные проблемы и ограничения настройки требуемого состояния (DSC)](https://docs.microsoft.com/powershell/scripting/wmf/known-issues/known-issues-dsc).
+Выполните инструкции из статьи [Известные проблемы и ограничения настройки требуемого состояния (DSC)](/powershell/scripting/wmf/known-issues/known-issues-dsc).
 
 ## <a name="scenario-unable-to-use-a-credential-in-a-dsc-configuration"></a><a name="issue-using-credential"></a>Сценарий. Не удается использовать учетные данные в конфигурации DSC
 
@@ -258,7 +259,7 @@ VM has reported a failure when processing extension 'Microsoft.Powershell.DSC'. 
 
 ### <a name="issue"></a>Проблема
 
-При регистрации узла с использованием командлета [Register-AzAutomationDSCNode](https://docs.microsoft.com/powershell/module/az.automation/register-azautomationdscnode?view=azps-3.7.0) или [Register-AzureRMAutomationDSCNode](https://docs.microsoft.com/powershell/module/azurerm.automation/register-azurermautomationdscnode?view=azurermps-6.13.0) отображается следующая ошибка.
+При регистрации узла с использованием командлета [Register-AzAutomationDSCNode](/powershell/module/az.automation/register-azautomationdscnode?view=azps-3.7.0) или [Register-AzureRMAutomationDSCNode](/powershell/module/azurerm.automation/register-azurermautomationdscnode?view=azurermps-6.13.0) отображается следующая ошибка.
 
 ```error
 One or more errors occurred.
@@ -337,7 +338,7 @@ This event indicates that failure happens when LCM is processing the configurati
 
 ### <a name="resolution"></a>Решение
 
-Можно ускорить синтаксический анализ настроек DSC, явно включив параметры `ModuleName` для любых вызовов [Import-DSCResource](https://docs.microsoft.com/powershell/scripting/dsc/configurations/import-dscresource?view=powershell-5.1).
+Можно ускорить синтаксический анализ настроек DSC, явно включив параметры `ModuleName` для любых вызовов [Import-DSCResource](/powershell/scripting/dsc/configurations/import-dscresource?view=powershell-5.1).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

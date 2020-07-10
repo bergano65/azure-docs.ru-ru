@@ -8,12 +8,12 @@ ms.topic: article
 ms.workload: infrastructure
 ms.date: 02/22/2019
 ms.author: cynthn
-ms.openlocfilehash: ec6fcfbc171b7227c79741c00adbc16be4c7ce87
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 194610845d9625139ff826711fc361bd9670a426
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85445531"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86202658"
 ---
 # <a name="how-to-use-packer-to-create-windows-virtual-machine-images-in-azure"></a>Использование Packer для создания образов виртуальных машин Windows в Azure
 Каждая виртуальная машина в Azure создается из образа, который определяет дистрибутив Windows и версию операционной системы. Образы могут содержать предварительно установленные приложения и конфигурации. Azure Marketplace предоставляет большое количество образов Майкрософт и сторонних разработчиков для наиболее распространенных операционных систем и приложений. Кроме того, вы можете создать собственные настраиваемые образы, отвечающие конкретным потребностям. В этой статье описывается определение и создание пользовательских образов в Azure с использованием инструмента с открытым кодом [Packer](https://www.packer.io/).
@@ -111,6 +111,9 @@ Get-AzSubscription
     "type": "powershell",
     "inline": [
       "Add-WindowsFeature Web-Server",
+      "while ((Get-Service RdAgent).Status -ne 'Running') { Start-Sleep -s 5 }",
+      "while ((Get-Service WindowsAzureTelemetryService).Status -ne 'Running') { Start-Sleep -s 5 }",
+      "while ((Get-Service WindowsAzureGuestAgent).Status -ne 'Running') { Start-Sleep -s 5 }",
       "& $env:SystemRoot\\System32\\Sysprep\\Sysprep.exe /oobe /generalize /quiet /quit",
       "while($true) { $imageState = Get-ItemProperty HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Setup\\State | Select ImageState; if($imageState.ImageState -ne 'IMAGE_STATE_GENERALIZE_RESEAL_TO_OOBE') { Write-Output $imageState.ImageState; Start-Sleep -s 10  } else { break } }"
     ]
@@ -119,6 +122,8 @@ Get-AzSubscription
 ```
 
 Этот шаблон создает виртуальную машину Windows Server 2016, устанавливает службы IIS, а затем подготавливает виртуальную машину с помощью средства Sysprep. Установка IIS показывает, как можно использовать средство подготовки PowerShell для выполнения дополнительных команд. В этом случае окончательный образ Packer включает в себя также установочные файлы и параметры необходимого программного обеспечения.
+
+Гостевой агент Windows участвует в процессе Sysprep. Чтобы виртуальную машину можно было сиспреп'ед, необходимо полностью установить агент. Чтобы убедиться, что это верно, перед выполнением sysprep.exe необходимо запустить все службы агента. В предыдущем фрагменте кода JSON показан один из способов сделать это в подокне подготовки PowerShell. Этот фрагмент необходим только в том случае, если виртуальная машина настроена для установки агента, что является значением по умолчанию.
 
 
 ## <a name="build-packer-image"></a>Создание образа Packer

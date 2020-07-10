@@ -9,11 +9,12 @@ ms.topic: conceptual
 ms.service: automation
 ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: ff996227e23836bf85cc3885d9184ae6d7d6c61d
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 92020313fccf1b8be0add58a7bafab62b5daa4d5
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83680829"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187138"
 ---
 # <a name="troubleshoot-windows-update-agent-issues"></a>Устранение неполадок с агентом обновления Windows
 
@@ -109,7 +110,7 @@ ms.locfileid: "83680829"
 
 ## <a name="troubleshoot-offline"></a><a name="troubleshoot-offline"></a>Автономное устранение неполадок
 
-Средство устранения неполадок можно использовать в гибридной рабочей роли в автономном режиме, запустив скрипт локально. Получите следующий сценарий из коллекции PowerShell: [Troubleshoot-WindowsUpdateAgentRegistration](https://www.powershellgallery.com/packages/Troubleshoot-WindowsUpdateAgentRegistration). Чтобы запустить сценарий, необходимо установить WMF версии 4.0 или более поздней версии. Сведения о загрузке последней версии PowerShell см. в статье [Установка разных версий PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell).
+Средство устранения неполадок можно использовать в гибридной рабочей роли в автономном режиме, запустив скрипт локально. Получите следующий сценарий из коллекции PowerShell: [Troubleshoot-WindowsUpdateAgentRegistration](https://www.powershellgallery.com/packages/Troubleshoot-WindowsUpdateAgentRegistration). Чтобы запустить сценарий, необходимо установить WMF версии 4.0 или более поздней версии. Сведения о загрузке последней версии PowerShell см. в статье [Установка разных версий PowerShell](/powershell/scripting/install/installing-powershell).
 
 Выходные данные этого скрипта выглядят так:
 

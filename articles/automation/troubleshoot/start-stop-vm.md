@@ -9,11 +9,12 @@ ms.author: magoedte
 ms.date: 04/04/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 53a7e113d64ea4cf7018d51a44f9488342f1470f
-ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
+ms.openlocfilehash: bb8fa53fa07d666693ae545c193faaf3d6d0a30c
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83715636"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187155"
 ---
 # <a name="troubleshoot-startstop-vms-during-off-hours-issues"></a>Устранение неполадок с запуском и остановкой виртуальных машин в нерабочее время
 
@@ -98,7 +99,7 @@ Start-AzureRmVm : Run Login-AzureRmAccount to login
 
 Ниже приведены возможные решения проблемы.
 
-* Проверьте правильность настройки расписания для компонента "Запуск и остановка виртуальных машин в нерабочее время". Сведения о настройке расписания см. в статье [Расписания](../automation-schedules.md).
+* Проверьте правильность настройки расписания для компонента "Запуск и остановка виртуальных машин в нерабочее время". Сведения о настройке расписания см. в статье [Расписания](../shared-resources/schedules.md).
 
 * Проверьте [потоки заданий](../automation-runbook-execution.md#job-statuses) на наличие ошибок. Найдите задания одного из следующих модулей Runbook:
 

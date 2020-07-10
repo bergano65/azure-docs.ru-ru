@@ -5,11 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 12/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: e550489f34d84946d0a9e3df641a1484b85a60f0
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: f1e4e288b5b95f355221188a45f1e6c764fde77c
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83828939"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187342"
 ---
 # <a name="use-source-control-integration-in-azure-automation---legacy"></a>Использование интеграции системы управления версиями в службе автоматизации Azure — старая версия
 
@@ -55,7 +56,7 @@ ms.locfileid: "83828939"
 5. Когда вы нажмете кнопку **ОК**, интеграция системы управления версиями будет настроена для вашей учетной записи службы автоматизации. Также должны быть обновлены сведения из учетной записи GitHub. Щелкните эту область, чтобы просмотреть весь журнал заданий синхронизации системы управления версиями.  
 
     ![Значения для текущей настроенной конфигурации системы управления версиями](media/source-control-integration-legacy/automation-RepoValues.png)
-6. После настройки системы управления версиями в учетной записи службы автоматизации создаются два [переменных ресурса](automation-variables.md). Кроме того, в учетную запись GitHub добавляется разрешенное приложение.
+6. После настройки системы управления версиями в учетной записи службы автоматизации создаются два [переменных ресурса](./shared-resources/variables.md). Кроме того, в учетную запись GitHub добавляется разрешенное приложение.
 
    * Переменная **Microsoft.Azure.Automation.SourceControl.Connection** содержит значения строки подключения, как показано ниже.  
 
@@ -63,7 +64,7 @@ ms.locfileid: "83828939"
      |:--- |:--- |
      | `Name`  |Microsoft.Azure.Automation.SourceControl.Connection |
      | `Type`  |Строка |
-     | `Value` |{"Branch":\<*имя ветви*>,"RunbookFolderPath":\<*путь к папке с модулями Runbook*>,"ProviderType":\<*для GitHub значение равно 1*>,"Repository":\<*имя репозитория*>,"Username":\<*имя пользователя GitHub*>} |
+     | `Value` |{"Branch": \<*Your branch name*> , "рунбукфолдерпас": \<*Runbook folder path*> , "ProviderType": \<*has a value 1 for GitHub*> , "репозиторий": \<*Name of your repository*> , "Username": \<*Your GitHub user name*> } |
 
    * Переменная **Microsoft.Azure.Automation.SourceControl.OAuthToken**содержит надежно зашифрованное значение OAuthToken.  
 
@@ -83,7 +84,7 @@ ms.locfileid: "83828939"
 
 Возврат модуля Runbook позволяет перенести изменения, внесенные в модуль Runbook в службе автоматизации Azure, в репозиторий системы управления версиями. Для возврата модуля Runbook сделайте следующее:
 
-1. Находясь в своей учетной записи службы автоматизации, [создайте текстовый модуль runbook](automation-first-runbook-textual.md) или [измените существующий](automation-edit-textual-runbook.md). Этот модуль может быть модулем Runbook рабочего процесса PowerShell или сценария PowerShell.  
+1. Находясь в своей учетной записи службы автоматизации, [создайте текстовый модуль runbook](./learn/automation-tutorial-runbook-textual.md) или [измените существующий](automation-edit-textual-runbook.md). Этот модуль может быть модулем Runbook рабочего процесса PowerShell или сценария PowerShell.  
 2. Завершив изменение модуля runbook, сохраните его и щелкните **Возврат** на странице правки.  
 
     ![Окно, отображающее кнопку возврата в GitHub.](media/source-control-integration-legacy/automation-CheckinButton.png)

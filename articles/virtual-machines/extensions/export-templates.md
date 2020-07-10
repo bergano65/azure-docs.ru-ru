@@ -14,11 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 12/05/2016
 ms.author: akjosh
-ms.openlocfilehash: 79991dad96742109817d579b951082d1a30e3951
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4919ce9ecaa3dc4f621aa5658b44aa53fad0bbf3
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84704001"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86201021"
 ---
 # <a name="exporting-resource-groups-that-contain-vm-extensions"></a>Экспорт групп ресурсов, которые содержат расширения виртуальной машины
 
@@ -32,18 +33,7 @@ ms.locfileid: "84704001"
 
 Скрипт службы автоматизации поддерживает следующие расширения.
 
-| Расширение ||||
-|---|---|---|---|
-| Резервное копирование Acronis | Агент Datadog для Windows | Исправления для ОС Linux | Моментальные снимки виртуальной машины Linux
-| Резервное копирование Acronis для Linux | Расширение Docker | Агент Puppet |
-| Сведения о BG | Расширение DSC | Site 24x7 для Apm Insight |
-| Агент BMC CTM для Linux | Dynatrace для Linux | Site 24x7 для сервера Linux |
-| Агент BMC CTM для Windows | Dynatrace для Windows | Site 24x7 для сервера Windows Server |
-| Клиент Chef | Защитник приложений HPE Security | Trend Micro DSA |
-| Пользовательский скрипт | Защита от вредоносных программ IaaS | Trend Micro DSA для Linux |
-| Расширение пользовательских сценариев | Диагностика IaaS | VM Access для Linux |
-| Custom Script для Linux | Клиент Chef для Linux | VM Access для Linux |
-| Агент Datadog для Linux | Диагностика Linux | Моментальный снимок виртуальной машины |
+> Резервное копирование Acronis, Acronis Backup Linux, BG сведения, BMC CTM для Agent Linux BMC CTM для Agent Windows, клиент Chef, Пользовательский скрипт, расширение пользовательских сценариев, Пользовательский скрипт для Linux, Datadog Linux Agent, Datadog агент Windows, расширение DOCKER, расширение DSC, dynaTrace Linux, dynaTrace Windows, защитник приложения HPE Security, средство защиты от вредоносных программ IaaS, система диагностики для Linux, Chef Agent, сайт Круглосуточная аналитика APM , Сайт Круглосуточная сервер Linux, сайт Круглосуточная Windows Server, Trend Micro DSA, тенденция Micro DSA Linux, доступ к ВИРТУАЛЬНОЙ машине для Linux, виртуальная машина для Linux, моментальный снимок виртуальной машины, моментальный снимок ВМ Linux
 
 ## <a name="export-the-resource-group"></a>Экспорт группы ресурсов
 

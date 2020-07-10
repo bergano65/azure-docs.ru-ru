@@ -9,11 +9,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 2620795d8c4fc8adf11fc0795048ff9999d6ef83
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 568f4189c55b49aa6f3e2d4e86582165a4a89cdd
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84783361"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86201106"
 ---
 # <a name="sizes-for-linux-virtual-machines-in-azure"></a>Размеры виртуальных машин Linux в Azure
 
@@ -48,6 +49,10 @@ ms.locfileid: "84783361"
 ## <a name="benchmark-scores"></a>Результаты теста производительности
 
 Узнайте больше о вычислительной мощности виртуальных машин Linux с помощью [результатов теста производительности CoreMark](compute-benchmark-scores.md).
+
+## <a name="manage-costs"></a>Управление затратами
+
+[!INCLUDE [cost-management-horizontal](../../../includes/cost-management-horizontal.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -9,11 +9,12 @@ ms.author: magoedte
 ms.date: 04/04/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 557dc3ad48f8f21d8898e2beb5d940d66058e90c
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 8bd988029b8d78a29de38e995c36ee1860d8cda9
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83744970"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187359"
 ---
 # <a name="manage-schedules-in-azure-automation"></a>Управление расписаниями в службе автоматизации Azure
 
@@ -31,13 +32,13 @@ ms.locfileid: "83744970"
 
 | Командлеты | Описание |
 |:--- |:--- |
-| [Get-AzAutomationSchedule](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationSchedule?view=azps-3.7.0) |Получает расписание. |
-| [Get-AzAutomationScheduledRunbook](https://docs.microsoft.com/powershell/module/az.automation/get-azautomationscheduledrunbook?view=azps-3.7.0) |Получает расписание модулей Runbook. |
-| [New-AzAutomationSchedule](https://docs.microsoft.com/powershell/module/Az.Automation/New-AzAutomationSchedule?view=azps-3.7.0) |Создает новое расписание. |
-| [Register-AzAutomationScheduledRunbook](https://docs.microsoft.com/powershell/module/Az.Automation/Register-AzAutomationScheduledRunbook?view=azps-3.7.0) |Связывает Runbook с расписанием. |
-| [Remove-AzAutomationSchedule](https://docs.microsoft.com/powershell/module/Az.Automation/Remove-AzAutomationSchedule?view=azps-3.7.0) |Удаляет расписание. |
-| [Set-AzAutomationSchedule](https://docs.microsoft.com/powershell/module/Az.Automation/Set-AzAutomationSchedule?view=azps-3.7.0) |Задает свойства для существующего расписания. |
-| [Unregister-AzAutomationScheduledRunbook](https://docs.microsoft.com/powershell/module/Az.Automation/Unregister-AzAutomationScheduledRunbook?view=azps-3.7.0) |Отменяет связь Runbook с расписанием. |
+| [Get-AzAutomationSchedule](/powershell/module/Az.Automation/Get-AzAutomationSchedule?view=azps-3.7.0) |Получает расписание. |
+| [Get-AzAutomationScheduledRunbook](/powershell/module/az.automation/get-azautomationscheduledrunbook?view=azps-3.7.0) |Получает расписание модулей Runbook. |
+| [New-AzAutomationSchedule](/powershell/module/Az.Automation/New-AzAutomationSchedule?view=azps-3.7.0) |Создает новое расписание. |
+| [Register-AzAutomationScheduledRunbook](/powershell/module/Az.Automation/Register-AzAutomationScheduledRunbook?view=azps-3.7.0) |Связывает Runbook с расписанием. |
+| [Remove-AzAutomationSchedule](/powershell/module/Az.Automation/Remove-AzAutomationSchedule?view=azps-3.7.0) |Удаляет расписание. |
+| [Set-AzAutomationSchedule](/powershell/module/Az.Automation/Set-AzAutomationSchedule?view=azps-3.7.0) |Задает свойства для существующего расписания. |
+| [Unregister-AzAutomationScheduledRunbook](/powershell/module/Az.Automation/Unregister-AzAutomationScheduledRunbook?view=azps-3.7.0) |Отменяет связь Runbook с расписанием. |
 
 ## <a name="create-a-schedule"></a>Создание расписания
 
@@ -64,7 +65,7 @@ ms.locfileid: "83744970"
 
 ### <a name="create-a-new-schedule-with-powershell"></a>Создание расписания с помощью PowerShell
 
-Используйте командлет [New-AzAutomationSchedule](https://docs.microsoft.com/powershell/module/Az.Automation/New-AzAutomationSchedule?view=azps-3.7.0) для создания расписаний. Укажите для расписания время начала и частоту выполнения. В следующих примерах показано, как создать множество различных сценариев расписания.
+Используйте командлет [New-AzAutomationSchedule](/powershell/module/Az.Automation/New-AzAutomationSchedule?view=azps-3.7.0) для создания расписаний. Укажите для расписания время начала и частоту выполнения. В следующих примерах показано, как создать множество различных сценариев расписания.
 
 #### <a name="create-a-one-time-schedule"></a>Создание разового расписания
 
@@ -127,7 +128,7 @@ New-AzAutomationSchedule -AutomationAccountName "TestAzureAuto" -Name "1st, 15th
 
 ### <a name="link-a-schedule-to-a-runbook-with-powershell"></a>Связывание расписания с модулем runbook с помощью PowerShell
 
-Вы можете использовать командлет [Register-AzAutomationScheduledRunbook](https://docs.microsoft.com/powershell/module/Az.Automation/Register-AzAutomationScheduledRunbook?view=azps-3.7.0), чтобы связать расписание. С помощью параметра "Параметры" можно указать значения параметров для модуля Runbook. Дополнительные сведения об указании значений параметров см. в статье [Запуск модуля runbook в службе автоматизации Azure](../automation-starting-a-runbook.md).
+Вы можете использовать командлет [Register-AzAutomationScheduledRunbook](/powershell/module/Az.Automation/Register-AzAutomationScheduledRunbook?view=azps-3.7.0), чтобы связать расписание. С помощью параметра "Параметры" можно указать значения параметров для модуля Runbook. Дополнительные сведения об указании значений параметров см. в статье [Запуск модуля runbook в службе автоматизации Azure](../start-runbooks.md).
 Приведенные ниже примеры демонстрируют, как связать расписание с модулем runbook, используя командлет управления службами Azure с параметрами.
 
 ```azurepowershell-interactive
@@ -163,7 +164,7 @@ Register-AzAutomationScheduledRunbook –AutomationAccountName $automationAccoun
 
 ### <a name="disable-a-schedule-with-powershell"></a>Отключение расписания с помощью PowerShell
 
-Вы можете использовать командлет [Set-AzAutomationSchedule](https://docs.microsoft.com/powershell/module/Az.Automation/Set-AzAutomationSchedule?view=azps-3.7.0), чтобы изменить свойства имеющегося расписания. Чтобы отключить расписание, укажите значение false для параметра `IsEnabled`.
+Вы можете использовать командлет [Set-AzAutomationSchedule](/powershell/module/Az.Automation/Set-AzAutomationSchedule?view=azps-3.7.0), чтобы изменить свойства имеющегося расписания. Чтобы отключить расписание, укажите значение false для параметра `IsEnabled`.
 
 В следующем примере показано, как отключить расписание для runbook, используя командлет Azure Resource Manager.
 

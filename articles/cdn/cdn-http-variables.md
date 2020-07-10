@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/09/2018
 ms.author: allensu
-ms.openlocfilehash: f9768d4d20380e8e0c4ca6f7c71fddd68bb93d5c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6e601e3e06965faf8ec0fd238c54115570150b61
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84340680"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86203566"
 ---
 # <a name="http-variables-for-azure-cdn-rules-engine"></a>Переменные HTTP для обработчика правил Azure CDN
 Переменные HTTP предоставляют средство, с помощью которого можно получить метаданные запросов и ответов HTTP. Эти метаданные можно использовать, чтобы динамически изменить запрос или ответ. Использование переменных HTTP ограничивается следующими функциями обработчика правил:
@@ -186,7 +187,7 @@ https:\//www.mydomain.com/mobile/marketing/proposal.htm
 
 В следующей таблице показано, как работает этот синтаксис.
 
-| Пример синтаксиса | Результаты | |
+| Пример синтаксиса | Результаты | Описание |
 | ------------- | ------- | --- |
 | %{request_uri#/800001}/customerorigin | /customerorigin/myorigin/marketing/product.html?language=en-US | Так как переменная начинается с шаблона, он был заменен. |
 | %{request_uri%html}htm | /800001/myorigin/marketing/product.html?language=en-US | Так как переменная не заканчивается шаблоном, изменения не вносились.|

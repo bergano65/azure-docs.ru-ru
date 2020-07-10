@@ -9,11 +9,12 @@ ms.author: magoedte
 ms.date: 01/31/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 3fe28ba0871009785b1bb8b263b42f453c2918be
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: ddd41756f0e373e3bf627a88f441512fe0db91b7
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83684866"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187240"
 ---
 # <a name="troubleshoot-change-tracking-and-inventory-issues"></a>Устранение неполадок с Отслеживанием изменений и инвентаризации
 
@@ -99,11 +100,11 @@ Heartbeat
 | summarize by Computer, Solutions
 ```
 
-Если компьютер не отображается в результатах запроса, он давно не синхронизировался. Вероятно, существует ошибка локальной конфигурации и необходимо переустановить агент. Сведения об установке и настройке см. в статье [Сбор данных журнала с помощью агента Службы анализа журналов](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent).
+Если компьютер не отображается в результатах запроса, он давно не синхронизировался. Вероятно, существует ошибка локальной конфигурации и необходимо переустановить агент. Сведения об установке и настройке см. в статье [Сбор данных журнала с помощью агента Службы анализа журналов](../../azure-monitor/platform/log-analytics-agent.md).
 
-Если компьютер отображается в результатах запроса, проверьте конфигурацию области. См. [Определение решений мониторинга в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/insights/solution-targeting).
+Если компьютер отображается в результатах запроса, проверьте конфигурацию области. См. [Определение решений мониторинга в Azure Monitor](../../azure-monitor/insights/solution-targeting.md).
 
-Дополнительные сведения об устранении этой проблемы см. в разделе [Проблема: не отображаются данные Linux](https://docs.microsoft.com/azure/azure-monitor/platform/agent-linux-troubleshoot#issue-you-are-not-seeing-any-linux-data).
+Дополнительные сведения об устранении этой проблемы см. в разделе [Проблема: не отображаются данные Linux](../../azure-monitor/platform/agent-linux-troubleshoot.md#issue-you-are-not-seeing-any-linux-data).
 
 ##### <a name="log-analytics-agent-for-linux-not-configured-correctly"></a>Агент Службы анализа журналов для Linux неправильно настроен
 

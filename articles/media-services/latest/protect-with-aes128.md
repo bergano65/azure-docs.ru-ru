@@ -12,13 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/21/2019
+ms.date: 07/09/2020
 ms.author: juliako
-ms.openlocfilehash: 126700e6290650221a9cb9711b22472301409fca
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1e5f1e38461b7f229f9eb7559aeb6203563fceb6
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74974178"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86200201"
 ---
 # <a name="tutorial-encrypt-video-with-aes-128-and-use-the-key-delivery-service"></a>Учебник. шифрование видео с помощью AES-128 и использование службы доставки ключей
 
@@ -148,7 +149,7 @@ ms.locfileid: "74974178"
 
 ## <a name="clean-up-resources-in-your-media-services-account"></a>Очистка ресурсов в учетной записи Служб мультимедиа
 
-Как правило, следует очищать все, кроме объектов, которые планируется повторно использовать (как правило, используются преобразования, указатели потоковой передачи и т. д.). Если учетную запись требуется очистить после эксперимента, удалите ресурсы, которые не планируется использовать повторно. Например, следующий код удаляет задания.
+Как правило, следует очищать все, кроме объектов, которые планируется повторно использовать (как правило, используются преобразования, указатели потоковой передачи и т. д.). Если учетную запись требуется очистить после эксперимента, удалите ресурсы, которые не планируется использовать повторно. Например, следующий код удаляет задание, созданные ресурсы и политику ключа содержимого:
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/EncryptWithAES/Program.cs#CleanUp)]
 
@@ -170,7 +171,7 @@ az group delete --name amsResourceGroup
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Защита с помощью DRM](protect-with-drm.md)

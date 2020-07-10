@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: annaba
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 9c3ea7596e589431412489bea4ac9a23fa604540
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ca19ccb925721126f7e7d8495addd0794766f376
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82610655"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86202881"
 ---
 # <a name="get-started-with-certificate-based-authentication-in-azure-active-directory"></a>Приступая к работе с аутентификацией на основе сертификата в Azure Active Directory
 
@@ -69,6 +69,7 @@ ms.locfileid: "82610655"
 
 Схема для центра сертификации выглядит следующим образом:
 
+```csharp
     class TrustedCAsForPasswordlessAuth
     {
        CertificateAuthorityInformation[] certificateAuthorities;
@@ -90,13 +91,16 @@ ms.locfileid: "82610655"
         RootAuthority = 0,
         IntermediateAuthority = 1
     }
+```
 
 Для настройки можно использовать [Azure Active Directory PowerShell версии 2](/powershell/azure/install-adv2?view=azureadps-2.0):
 
 1. Запустите Windows PowerShell с правами администратора.
 2. Установите модуль Azure AD версии [2.0.0.33](https://www.powershellgallery.com/packages/AzureAD/2.0.0.33) или более поздней.
 
-        Install-Module -Name AzureAD –RequiredVersion 2.0.0.33
+```powershell
+    Install-Module -Name AzureAD –RequiredVersion 2.0.0.33
+```
 
 В качестве первого шага настройки необходимо установить подключение к клиенту. Когда будет установлено подключение к клиенту, вы сможете просмотреть, добавить, удалить или изменить доверенные центры сертификации, определенные в каталоге.
 
@@ -104,39 +108,49 @@ ms.locfileid: "82610655"
 
 Чтобы установить подключение к клиенту, используйте командлет [Connect-AzureAD](/powershell/module/azuread/connect-azuread?view=azureadps-2.0):
 
+```azurepowershell
     Connect-AzureAD
+```
 
 ### <a name="retrieve"></a>Получение
 
 Чтобы получить доверенные центры сертификации, определенные в каталоге, используйте командлет [Get-AzureADTrustedCertificateAuthority](/powershell/module/azuread/get-azureadtrustedcertificateauthority?view=azureadps-2.0):
 
+```azurepowershell
     Get-AzureADTrustedCertificateAuthority
+```
 
 ### <a name="add"></a>Add
 
-Чтобы создать доверенный центр сертификации, используйте командлет [New-AzureADTrustedCertificateAuthority](/powershell/module/azuread/new-azureadtrustedcertificateauthority?view=azureadps-2.0) и задайте правильное значение атрибута **crlDistributionPoint**.
+Чтобы создать доверенный центр сертификации, используйте командлет [New-AzureADTrustedCertificateAuthority](/azurepowershell/module/azuread/new-azureadtrustedcertificateauthority?view=azureadps-2.0) и задайте правильное значение атрибута **crlDistributionPoint**.
 
+```azurepowershell
     $cert=Get-Content -Encoding byte "[LOCATION OF THE CER FILE]"
     $new_ca=New-Object -TypeName Microsoft.Open.AzureAD.Model.CertificateAuthorityInformation
     $new_ca.AuthorityType=0
     $new_ca.TrustedCertificate=$cert
     $new_ca.crlDistributionPoint="<CRL Distribution URL>"
     New-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $new_ca
+```
 
 ### <a name="remove"></a>Удалить
 
 Чтобы удалить доверенный центр сертификации, используйте командлет [Remove-AzureADTrustedCertificateAuthority](/powershell/module/azuread/remove-azureadtrustedcertificateauthority?view=azureadps-2.0):
 
+```azurepowershell
     $c=Get-AzureADTrustedCertificateAuthority
     Remove-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[2]
+```
 
 ### <a name="modify"></a>Изменить
 
 Чтобы изменить доверенный центр сертификации, используйте командлет [Set-AzureADTrustedCertificateAuthority](/powershell/module/azuread/set-azureadtrustedcertificateauthority?view=azureadps-2.0):
 
+```azurepowershell
     $c=Get-AzureADTrustedCertificateAuthority
     $c[0].AuthorityType=1
     Set-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[0]
+```
 
 ## <a name="step-3-configure-revocation"></a>Шаг 3. Настройка отзыва
 
@@ -152,17 +166,23 @@ ms.locfileid: "82610655"
 
 1. Используя учетные данные администратора, подключитесь к службе MSOL:
 
+```powershell
         $msolcred = get-credential
         connect-msolservice -credential $msolcred
+```
 
 2. Получите текущее значение StsRefreshTokensValidFrom для пользователя:
 
+```powershell
         $user = Get-MsolUser -UserPrincipalName test@yourdomain.com`
         $user.StsRefreshTokensValidFrom
+```
 
 3. Настройте новое значение StsRefreshTokensValidFrom для пользователя, равное текущей метке времени:
 
+```powershell
         Set-MsolUser -UserPrincipalName test@yourdomain.com -StsRefreshTokensValidFrom ("03/05/2016")
+```
 
 Задаваемая дата должна быть в будущем. Если дата не в будущем, свойство **StsRefreshTokensValidFrom** не будет задано. Если дата в будущем, для **StsRefreshTokensValidFrom** задается актуальное время (не дата, указанная командой Set-MsolUser).
 

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 05/21/2019
 ms.author: ramkris
-ms.openlocfilehash: f576da01a7d80559419376f1629c0765074065da
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ef2691f63d7bb8c468d065b82c9726e8f7740c20
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85262231"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86203166"
 ---
 # <a name="accelerate-big-data-analytics-by-using-the-apache-spark-to-azure-cosmos-db-connector"></a>Ускорение аналитики больших данных с помощью соединителя Apache Spark для Azure Cosmos DB
 
@@ -233,7 +233,7 @@ df
 Создайте библиотеку с помощью рабочей области "сведения о модулях", следуя указаниям в руководстве по Azure Databricks > [использовании соединителя Azure Cosmos DB Spark](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/cosmosdb-connector.html) .
 
 > [!NOTE]
-> Обратите внимание, что в настоящее время страница **Использование соединителя Azure Cosmos DB Spark** сейчас не является актуальной. Вместо того чтобы загружать шесть отдельных JAR в шесть разных библиотек, можно скачать JAR-файл Uber из Maven по адресу https://search.maven.org/artifact/com.microsoft.azure/azure-cosmosdb-spark_2.4.0_2.11/1.4.0/jar) и установить этот файл JAR/Library.
+> **Использование страницы соединителя Azure Cosmos DB Spark** в настоящее время устарело. Вместо того чтобы загружать шесть отдельных JAR в шесть разных библиотек, можно скачать JAR-файл Uber из Maven в [Azure-cosmosdb spark_lkg_version](https://aka.ms/CosmosDB_OLTP_Spark_2.4_LKG) и установить этот JAR-файл или библиотеку.
 > 
 
 ### <a name="using-spark-cli"></a>Использование Spark-CLI
@@ -309,11 +309,11 @@ mvn clean package
 * [Демонстрации веб-канала изменений](https://github.com/Azure/azure-cosmosdb-spark/wiki/Change-Feed-demos)
 * [Демонстрации структурированного потока](https://github.com/Azure/azure-cosmosdb-spark/wiki/Structured-Stream-demos)
 
-### <a name="monitoring"></a>Наблюдение
+### <a name="monitoring"></a>Мониторинг
 
 * [Мониторинг заданий Spark с помощью Application Insights](https://github.com/Azure/azure-cosmosdb-spark/tree/2.3/samples/monitoring)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас еще нет соединителя Spark для Azure Cosmos DB, скачайте его из репозитория GitHub [azure-cosmosdb-spark](https://github.com/Azure/azure-cosmosdb-spark). Изучите следующие дополнительные ресурсы в репозитории:
 

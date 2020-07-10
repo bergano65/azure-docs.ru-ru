@@ -809,32 +809,6 @@
               href: ../data-factory/create-azure-integration-runtime.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Локальная среда выполнения интеграции
               href: ../data-factory/create-self-hosted-integration-runtime.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-        - name: Запуск пакетов служб Integration Services в Azure
-          items:
-            - name: Запуск пакетов Integration Services с помощью действия выполнения пакета Integration Services
-              href: ../data-factory/how-to-invoke-ssis-package-ssis-activity.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Запуск пакетов Integration Services с помощью действия хранимой процедуры
-              href: ../data-factory/how-to-invoke-ssis-package-stored-procedure-activity.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Планирование Azure-SSIS Integration Runtime
-              href: ../data-factory/how-to-schedule-azure-ssis-integration-runtime.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Присоединение Azure-SSIS IR к виртуальной сети
-              href: ../data-factory/join-azure-ssis-integration-runtime-virtual-network.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Настройка локальной среды IR в качестве прокси-сервера для среды Azure-SSIS IR
-              href: ../data-factory/self-hosted-integration-runtime-proxy-ssis.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Включение аутентификации Azure AD для Azure-SSIS IR
-              href: ../data-factory/enable-aad-authentication-azure-ssis-ir.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Настройка выпуска Enterprise Edition для Azure-SSIS IR
-              href: ../data-factory/how-to-configure-azure-ssis-ir-enterprise-edition.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Настройка Azure-SSIS IR
-              href: ../data-factory/how-to-configure-azure-ssis-ir-custom-setup.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Установка лицензированных компонентов для Azure-SSIS IR
-              href: ../data-factory/how-to-develop-azure-ssis-ir-licensed-components.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Настройка высокой производительности Azure-SSIS IR
-              href: ../data-factory/configure-azure-ssis-integration-runtime-performance.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Настройка аварийного восстановления для Azure-SSIS IR
-              href: ../data-factory/configure-bcdr-azure-ssis-integration-runtime.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Очистка журналов SSISDB с помощью заданий обработки эластичных баз данных
-              href: ../data-factory/how-to-clean-up-ssisdb-logs-with-elastic-jobs.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Создание триггеров
           items:
             - name: Создание триггера на основе событий
@@ -851,10 +825,6 @@
               href: ../data-factory/data-factory-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Устранение неполадок соединителя
               href: ../data-factory/connector-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Устранение неполадок с управлением Azure-SSIS IR
-              href: ../data-factory/ssis-integration-runtime-management-troubleshoot.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: "Устранение неполадок с выполнением пакетов в Azure-SSIS\_IR"
-              href: ../data-factory/ssis-integration-runtime-ssis-activity-faq.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
     - name: Подключение средств к Synapse Analytics
       items:
         - name: Synapse SQL

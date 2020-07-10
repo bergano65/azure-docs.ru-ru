@@ -9,15 +9,16 @@ ms.author: magoedte
 ms.date: 04/02/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: ebd4bf0ff91342229edb4295489f0cbd0970699a
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 918e34114faa7a57e54ec45c1cca8036462a8fa1
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83745029"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187393"
 ---
 # <a name="manage-certificates-in-azure-automation"></a>Управление сертификатами в службе автоматизации Azure
 
-Служба автоматизации Azure безопасно хранит сертификаты для доступа к ресурсам Azure Resource Manager из runbook или конфигураций DSC с помощью командлета [Get-AzureRmAutomationCertificate](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationCertificate?view=azps-3.7.0). Безопасное хранилище сертификатов позволяет создавать runbook и конфигурации DSC, которые используют эти сертификаты для аутентификации, или добавлять их в ресурсы Azure либо сторонних производителей.
+Служба автоматизации Azure безопасно хранит сертификаты для доступа к ресурсам Azure Resource Manager из runbook или конфигураций DSC с помощью командлета [Get-AzureRmAutomationCertificate](/powershell/module/Az.Automation/Get-AzAutomationCertificate?view=azps-3.7.0). Безопасное хранилище сертификатов позволяет создавать runbook и конфигурации DSC, которые используют эти сертификаты для аутентификации, или добавлять их в ресурсы Azure либо сторонних производителей.
 
 >[!NOTE]
 >Безопасные средства в службе автоматизации Azure включают учетные данные, сертификаты, подключения и зашифрованные переменные. Эти ресурсы шифруются и сохраняются в службе автоматизации Azure с использованием уникального ключа, который создается для каждой учетной записи службы автоматизации. Служба автоматизации Azure хранит ключ в управляемой системой службе Azure Key Vault. Перед сохранением защищенного ресурса служба автоматизации Azure загружает ключ из Key Vault, а затем использует его для шифрования ресурса. 
@@ -28,10 +29,10 @@ ms.locfileid: "83745029"
 
 |Командлет |Описание|
 | --- | ---|
-|[Get-AzAutomationCertificate](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationCertificate?view=azps-3.7.0)|Извлекает сведения о сертификате для использования в модуле Runbook или в конфигурации DSC. Сам сертификат можно извлечь только с помощью внутреннего командлета `Get-AutomationCertificate`.|
-|[New-AzAutomationCertificate](https://docs.microsoft.com/powershell/module/Az.Automation/New-AzAutomationCertificate?view=azps-3.7.0)|Создает новый сертификат в службе автоматизации Azure.|
-|[Remove-AzAutomationCertificate](https://docs.microsoft.com/powershell/module/Az.Automation/Remove-AzAutomationCertificate?view=azps-3.7.0)|Удаляет сертификат из службы автоматизации Azure.|
-|[Set-AzAutomationCertificate](https://docs.microsoft.com/powershell/module/Az.Automation/Set-AzAutomationCertificate?view=azps-3.7.0)|Задает свойства для существующего сертификата, включая отправку файла сертификата и задание пароля для **PFX-файла**.|
+|[Get-AzAutomationCertificate](/powershell/module/Az.Automation/Get-AzAutomationCertificate?view=azps-3.7.0)|Извлекает сведения о сертификате для использования в модуле Runbook или в конфигурации DSC. Сам сертификат можно извлечь только с помощью внутреннего командлета `Get-AutomationCertificate`.|
+|[New-AzAutomationCertificate](/powershell/module/Az.Automation/New-AzAutomationCertificate?view=azps-3.7.0)|Создает новый сертификат в службе автоматизации Azure.|
+|[Remove-AzAutomationCertificate](/powershell/module/Az.Automation/Remove-AzAutomationCertificate?view=azps-3.7.0)|Удаляет сертификат из службы автоматизации Azure.|
+|[Set-AzAutomationCertificate](/powershell/module/Az.Automation/Set-AzAutomationCertificate?view=azps-3.7.0)|Задает свойства для существующего сертификата, включая отправку файла сертификата и задание пароля для **PFX-файла**.|
 
 Командлет [Add-AzureCertificate](/powershell/module/servicemanagement/azure/add-azurecertificate) также можно использовать для отправки сертификата указанной облачной службы.
 
@@ -126,7 +127,7 @@ New-AzResourceGroupDeployment -Name NewCert -ResourceGroupName TestAzureAuto -Te
 
 ## <a name="get-a-certificate"></a>Получение сертификата
 
-Чтобы получить сертификат, используйте внутренний командлет `Get-AutomationCertificate`. Вы не сможете использовать командлет [Get-AzureAutomationCertificate](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationCertificate?view=azps-3.7.0), так как он возвращает сведения о ресурсе сертификата, но не сам сертификат.
+Чтобы получить сертификат, используйте внутренний командлет `Get-AutomationCertificate`. Вы не сможете использовать командлет [Get-AzureAutomationCertificate](/powershell/module/Az.Automation/Get-AzAutomationCertificate?view=azps-3.7.0), так как он возвращает сведения о ресурсе сертификата, но не сам сертификат.
 
 ### <a name="textual-runbook-example"></a>Пример текстового runbook
 

@@ -10,16 +10,17 @@ author: swinarko
 ms.author: sawinark
 manager: mflasko
 ms.custom: seo-lt-2019
-ms.date: 5/14/2019
-ms.openlocfilehash: eb167f121027272330399f8345c90602d93ecbaf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/09/2020
+ms.openlocfilehash: fd9433c2482c4ddd907f7e30c0028dc2a15faed2
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84113861"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187682"
 ---
 # <a name="enable-azure-active-directory-authentication-for-azure-ssis-integration-runtime"></a>Включение аутентификации Azure Active Directory для среды выполнения интеграции Azure-SSIS
 
-[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этой статье показано, как включить проверку подлинности Azure Active Directory (Azure AD) с помощью управляемого удостоверения для фабрики данных Azure (ADF) и использовать его вместо обычных методов проверки подлинности (например, проверки подлинности SQL) в следующих целях:
 
@@ -200,7 +201,7 @@ SQL Управляемый экземпляр поддерживает созд�
 
 1.  Установите модуль [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/tag/v5.5.0-March2018)   .
 
-2.  Не задавайте в скрипте параметр `CatalogAdminCredential`. Пример:
+2.  Не задавайте в скрипте параметр `CatalogAdminCredential`. Пример.
 
     ```powershell
     Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `

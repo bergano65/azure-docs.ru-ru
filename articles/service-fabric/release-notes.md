@@ -5,19 +5,20 @@ ms.date: 06/10/2019
 ms.topic: conceptual
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: 28870a197af07e964a50a06ffeef08f3b71451f4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a6bf0010ddc7be2cb9e250f8b1beba28e0494ee1
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82891728"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187750"
 ---
 # <a name="service-fabric-releases"></a>Service Fabric выпуски
 
-| Руководства по устранению <a href="https://github.com/Azure/Service-Fabric-Troubleshooting-Guides" target="blank">неполадок</a>  
-|  <a href="https://github.com/Azure/service-fabric-issues" target="blank">Отслеживание проблем</a>  
-|  <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-support" target="blank">Варианты поддержки</a>  
-|  <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-versions" target="blank">Поддерживаемые версии</a>  
-|  <a href="https://azure.microsoft.com/resources/samples/?service=service-fabric&sort=0" target="blank">Примеры кода</a>
+- <a href="https://github.com/Azure/Service-Fabric-Troubleshooting-Guides" target="blank">Руководства по устранению неполадок</a> 
+- <a href="https://github.com/Azure/service-fabric-issues" target="blank">Отслеживание проблем</a> 
+- <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-support" target="blank">Варианты поддержки</a> 
+- <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-versions" target="blank">Поддерживаемые версии</a> 
+- <a href="https://azure.microsoft.com/resources/samples/?service=service-fabric&sort=0" target="blank">Примеры кода</a>
 
 В этой статье содержатся дополнительные сведения о последних выпусках и обновлениях для среды выполнения Service Fabric и пакетов SDK.
 
@@ -149,7 +150,7 @@ Azure Service Fabric 7,0 теперь доступна! Вы сможете вы
 | 14 октября 2019 г. | [Обновление выпуска Azure Service Fabric 6,5](https://techcommunity.microsoft.com/t5/Azure-Service-Fabric/Azure-Service-Fabric-6-5-Fifth-Refresh-Release/ba-p/913296)  | [Заметки о выпуске] (https://github.com/microsoft/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_65CU5.md  |
 
 
-## <a name="previous-versions"></a>Предыдущие версии
+## <a name="previous-versions"></a>предыдущих версий
 
 ### <a name="service-fabric-64-releases"></a>Выпуски Service Fabric 6,4
 

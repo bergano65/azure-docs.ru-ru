@@ -3,7 +3,7 @@ title: Добавление ролей приложения и получени�
 titleSuffix: Microsoft identity platform
 description: Сведения о добавлении ролей приложения в приложение, зарегистрированное в Azure Active Directory, назначении ролей для пользователей и групп и их получение в утверждении `roles` в токене.
 services: active-directory
-author: kkrishna
+author: kalyankrishna1
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
@@ -13,12 +13,12 @@ ms.date: 09/24/2018
 ms.author: kkrishna
 ms.reviewer: kkrishna, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: aedf5d710b82185cb634fcd92e6981a2c358ad52
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 940ef671ab58074aaded49acb70db68a4971c1f2
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85477895"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187036"
 ---
 # <a name="how-to-add-app-roles-in-your-application-and-receive-them-in-the-token"></a>Руководство. Добавление ролей приложения в приложение, зарегистрированное в Azure Active Directory, и их получение в токене
 
@@ -122,7 +122,7 @@ ms.locfileid: "85477895"
 ## <a name="more-information"></a>Дополнительные сведения
 
 - [Добавление авторизации с помощью ролей приложения и утверждения ролей в веб-приложение ASP.NET Core](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/5-WebApp-AuthZ/5-1-Roles)
-- [August 9: Using application roles and security groups in your apps (Video)](https://www.youtube.com/watch?v=V8VUPixLSiM) (9 августа. Использование ролей приложения и групп безопасности в приложениях (видео))
+- [Реализация авторизации в приложениях с помощью платформы идентификации Майкрософт (видео)](https://www.youtube.com/watch?v=LRoc-na27l0)
 - [Azure Active Directory, now with Group Claims and Application Roles](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Azure-Active-Directory-now-with-Group-Claims-and-Application/ba-p/243862) (Azure Active Directory с утверждениями групп и ролями приложения)
 - [Манифест приложения Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest)
 - [Маркеры доступа AAD](access-tokens.md)

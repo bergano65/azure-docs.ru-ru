@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: how-to
 ms.date: 05/20/2020
 ms.custom: seodec18, tracking-python
-ms.openlocfilehash: 519d9f25276ea54fbfd49970ba3c288245ce9653
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 528696daf4bddd1f448266243b511e600351606a
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85833695"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86202594"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка экспериментов автоматизированного машинного обучения на Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -129,7 +129,7 @@ automl_config = AutoMLConfig(task = "classification")
 
 ### <a name="custom-validation-dataset"></a>Настраиваемый проверочный набор данных
 
-Используйте настраиваемый проверочный набор данных, если случайное разделение недопустимо (как правило, данные временных рядов или несбалансированные данные). Можно указать собственный проверочный набор данных. Модель будет анализироваться с использованием проверочного набора данных, указанного вместо случайного набора данных.
+Используйте настраиваемый проверочный набор данных, если случайное разделение недопустимо (как правило, данные временных рядов или несбалансированные данные). Можно указать собственный проверочный набор данных. Модель будет анализироваться с использованием проверочного набора данных, указанного вместо случайного набора данных. Дополнительные сведения о [настройке пользовательского набора проверки с помощью пакета SDK](how-to-configure-cross-validation-data-splits.md#provide-validation-data).
 
 ## <a name="compute-to-run-experiment"></a>Объект вычислений для выполнения эксперимента
 
@@ -433,7 +433,7 @@ best_run, fitted_model = automl_run.get_output()
    |Преобразования|Список преобразований, применяемых к входным признакам для создания сконструированных признаков.|
 ### <a name="scalingnormalization-and-algorithm-with-hyperparameter-values"></a>Масштабирование, нормализация и применение алгоритма со значениями гиперпараметров:
 
-Чтобы получить представление о масштабировании, нормализации и значениях гиперпараметров алгоритма для конвейера, используйте fitted_model.steps. [Дополнительные сведения о масштабировании и нормализации](). Пример выходных данных:
+Чтобы получить представление о масштабировании, нормализации и значениях гиперпараметров алгоритма для конвейера, используйте fitted_model.steps. [Дополнительные сведения о масштабировании и нормализации](how-to-configure-auto-features.md). Пример выходных данных:
 
 ```
 [('RobustScaler', RobustScaler(copy=True, quantile_range=[10, 90], with_centering=True, with_scaling=True)), ('LogisticRegression', LogisticRegression(C=0.18420699693267145, class_weight='balanced', dual=False, fit_intercept=True, intercept_scaling=1, max_iter=100, multi_class='multinomial', n_jobs=1, penalty='l2', random_state=None, solver='newton-cg', tol=0.0001, verbose=0, warm_start=False))

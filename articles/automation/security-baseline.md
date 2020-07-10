@@ -7,24 +7,24 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 718be8599db5b30aa6c98bf4dfbd3663250b9d9c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 88f06bd30c97f857cd5a81068322a95c480a7b34
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85255892"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187427"
 ---
 # <a name="azure-security-baseline-for-automation"></a>Базовый уровень безопасности Azure для автоматизации
 
 Базовый план безопасности Azure для автоматизации содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](https://docs.microsoft.com/azure/security/benchmarks/overview), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
-Дополнительные сведения см. в статье [Базовые показатели безопасности для Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+Дополнительные сведения см. в статье [Базовые показатели безопасности для Azure](../security/benchmarks/security-baselines-overview.md).
 
 ## <a name="network-security"></a>Безопасность сети
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](https://docs.microsoft.com/azure/security/benchmarks/security-control-network-security).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](../security/benchmarks/security-control-network-security.md).*
 
 ### <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: защита ресурсов Azure в виртуальных сетях
 
@@ -34,15 +34,15 @@ ms.locfileid: "85255892"
 
 Кроме того, при наличии определенного требования можно использовать брандмауэр Azure для его удовлетворения.
 
-* [Виртуальные сети и виртуальные машины в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/network-overview)
+* [Виртуальные сети и виртуальные машины в Azure](../virtual-machines/windows/network-overview.md)
 
-* [Создание виртуальной сети](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+* [Создание виртуальной сети](../virtual-network/quick-create-portal.md)
 
-* [Создание группы безопасности сети с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+* [Создание группы безопасности сети с конфигурацией безопасности](../virtual-network/tutorial-filter-network-traffic.md)
 
-* [Развертывание и настройка брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal)
+* [Развертывание и настройка брандмауэра Azure](../firewall/tutorial-firewall-deploy-portal.md)
 
-* [Среда выполнения runbook](https://docs.microsoft.com/azure/automation/automation-runbook-execution#runbook-execution-environment)
+* [Среда выполнения runbook](./automation-runbook-execution.md#runbook-execution-environment)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -56,9 +56,9 @@ ms.locfileid: "85255892"
 
 Хотя правила NSG и определяемые пользователем маршруты не применяются к частной конечной точке, журналы потоков NSG и данные мониторинга для исходящих соединений по-прежнему поддерживаются и могут использоваться.
 
-* [Как включить журналы потоков NSG](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal)
+* [Как включить журналы потоков NSG](../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 
-* [Как включать и использовать Аналитику трафика](https://docs.microsoft.com/azure/network-watcher/traffic-analytics)
+* [Как включать и использовать Аналитику трафика](../network-watcher/traffic-analytics.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -80,15 +80,15 @@ ms.locfileid: "85255892"
 
 Вы можете использовать безопасный сетевой доступ центра безопасности Azure, чтобы ограничить раскрытие виртуальных машин Windows разрешенными IP-адресами в течение ограниченного периода времени. Кроме того, используйте адаптивные рекомендации по усилению защиты сети в центре безопасности Azure для конфигураций NSG, чтобы ограничить порты и исходные IP-адреса, исходя из фактического трафика и аналитики угроз.
 
-* [Настройка защиты от атак DDoS](https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection)
+* [Настройка защиты от атак DDoS](../virtual-network/manage-ddos-protection.md)
 
-* [Развертывание брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal)
+* [Развертывание брандмауэра Azure](../firewall/tutorial-firewall-deploy-portal.md)
 
-* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer)
+* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../security-center/threat-protection.md)
 
-* [Общие сведения о адаптивной защите сети в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-adaptive-network-hardening)
+* [Общие сведения о адаптивной защите сети в центре безопасности Azure](../security-center/security-center-adaptive-network-hardening.md)
 
-* [Общие сведения об управлении доступом к сети в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-just-in-time)
+* [Общие сведения об управлении доступом к сети в центре безопасности Azure](../security-center/security-center-just-in-time.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -100,9 +100,9 @@ ms.locfileid: "85255892"
 
 Если вы используете гибридные рабочие роли Runbook, поддерживаемые виртуальными машинами Azure, вы можете записать журналы потоков NSG в учетную запись хранения, чтобы создать записи нефиксированного формата для виртуальных машин Azure, которые работают как рабочие роли Runbook. При исследовании аномальных действий можно включить запись пакетов наблюдателя за сетями, чтобы сетевой трафик можно было проверить на наличие необычных и непредвиденных действий.
 
-* [Как включить журналы потоков NSG](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal)
+* [Как включить журналы потоков NSG](../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 
-* [Как включить Наблюдатель за сетями](https://docs.microsoft.com/azure/network-watcher/network-watcher-create)
+* [Как включить Наблюдатель за сетями](../network-watcher/network-watcher-create.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -114,11 +114,11 @@ ms.locfileid: "85255892"
 
 Если вы используете гибридные рабочие роли Runbook, размещенные на виртуальных машинах Azure, можно объединять записи пакетов, предоставляемые наблюдателем за сетями, и средства с открытым кодом для выявления широкого спектра угроз для этих рабочих компьютеров. Кроме того, вы можете развернуть брандмауэр Azure в сегментах виртуальной сети с включенной аналитикой угроз и настроить ее на "предупреждение и запретить" для вредоносного сетевого трафика.
 
-* [Обнаружение сетевого вторжения с помощью Наблюдателя за сетями Azure и средств с открытым исходным кодом](https://docs.microsoft.com/azure/network-watcher/network-watcher-intrusion-detection-open-source-tools)
+* [Обнаружение сетевого вторжения с помощью Наблюдателя за сетями Azure и средств с открытым исходным кодом](../network-watcher/network-watcher-intrusion-detection-open-source-tools.md)
 
-* [Развертывание брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal)
+* [Развертывание брандмауэра Azure](../firewall/tutorial-firewall-deploy-portal.md)
 
-* [Настройка оповещений с помощью брандмауэра Azure](https://docs.microsoft.com/azure/firewall/threat-intel)
+* [Настройка оповещений с помощью брандмауэра Azure](../firewall/threat-intel.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -136,7 +136,7 @@ ms.locfileid: "85255892"
 
 **Руководство**. Использование тегов службы виртуальной сети для определения элементов управления доступом к сети для групп безопасности сети или брандмауэра Azure, настроенных в Azure, которым требуется доступ к ресурсам службы автоматизации. Теги служб можно использовать вместо определенных IP-адресов при создании правил безопасности. Указав имя тега службы (например, Гуестандхибридманажемент) в соответствующем поле источника или назначения правила, можно разрешить или запретить трафик для соответствующей службы. Корпорация Майкрософт управляет префиксами адресов, входящих в тег службы, и автоматически обновляет этот тег при изменении адресов.
 
-* [Общие сведения и использование тегов служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview)
+* [Общие сведения и использование тегов служб](../virtual-network/service-tags-overview.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -148,11 +148,11 @@ ms.locfileid: "85255892"
 
 Вы также можете использовать схемы Azure для упрощения крупномасштабных развертываний Azure с помощью ключевых артефактов среды пакетов, таких как шаблоны диспетчера ресурсов Azure, элементы управления RBAC и политики, в одном определении схемы. Вы можете применить схему к новым подпискам, а также настроить управление и управление с помощью управления версиями.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Примеры политик Azure для работы в сети](https://docs.microsoft.com/azure/governance/policy/samples/#network)
+* [Примеры политик Azure для работы в сети](/azure/governance/policy/samples/#network)
 
-* [Создание схемы Azure](https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal)
+* [Создание схемы Azure](../governance/blueprints/create-blueprint-portal.md)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -166,11 +166,11 @@ ms.locfileid: "85255892"
 
 Вы можете использовать Azure PowerShell или Azure CLI для поиска или выполнения действий с ресурсами на основе их тегов.
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-* [Создание виртуальной сети](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+* [Создание виртуальной сети](../virtual-network/quick-create-portal.md)
 
-* [Создание группы безопасности сети с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+* [Создание группы безопасности сети с конфигурацией безопасности](../virtual-network/tutorial-filter-network-traffic.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -180,9 +180,9 @@ ms.locfileid: "85255892"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций ресурсов и обнаружения изменений в сетевых ресурсах. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических ресурсов.
 
-* [Как просматривать и извлекать события журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
-* [Как создать оповещения в службе Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+* [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -190,13 +190,13 @@ ms.locfileid: "85255892"
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
-*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](https://docs.microsoft.com/azure/security/benchmarks/security-control-logging-monitoring).*
+*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](../security/benchmarks/security-control-logging-monitoring.md).*
 
 ### <a name="21-use-approved-time-synchronization-sources"></a>2.1. Использование утвержденных источников синхронизации времени
 
 **Руководство**. Майкрософт поддерживает источники времени для ресурсов Azure. Однако вы можете управлять параметрами синхронизации времени для всех гибридных рабочих ролей Runbook, выполняющихся на виртуальных машинах Windows.
 
-* [Настройка синхронизации времени для ресурсов вычислений Azure](https://docs.microsoft.com/azure/virtual-machines/windows/time-sync)
+* [Настройка синхронизации времени для ресурсов вычислений Azure](../virtual-machines/windows/time-sync.md)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -208,19 +208,19 @@ ms.locfileid: "85255892"
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-* [Как получить журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings)
+* [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
 
 * [Начало работы с Azure Monitor и интеграция SIEM стороннего производителя](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
-* [Пересылка данных задания службы автоматизации Azure в журналы Azure Monitor](https://docs.microsoft.com/azure/automation/automation-manage-send-joblogs-log-analytics)
+* [Пересылка данных задания службы автоматизации Azure в журналы Azure Monitor](./automation-manage-send-joblogs-log-analytics.md)
 
-* [Интеграция DSC с журналами Azure Monitor](https://docs.microsoft.com/azure/automation/automation-dsc-diagnostics)
+* [Интеграция DSC с журналами Azure Monitor](./automation-dsc-diagnostics.md)
 
-* [Регионы, в которых поддерживается связанная рабочая область Log Analytics](https://docs.microsoft.com/azure/automation/how-to/region-mappings)
+* [Регионы, в которых поддерживается связанная рабочая область Log Analytics](./how-to/region-mappings.md)
 
-* [Запрос журналов Управление обновлениями](https://docs.microsoft.com/azure/automation/automation-update-management-query-logs)
+* [Запрос журналов Управление обновлениями](./automation-update-management-query-logs.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -230,9 +230,9 @@ ms.locfileid: "85255892"
 
 **Руководство**. Включение Azure Monitor для доступа к журналам аудита и действий, включая источник событий, дату, пользователя, метку времени, исходные адреса, адреса назначения и другие полезные элементы.
 
-* [Как получить журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings)
+* [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
 
-* [Просмотр и извлечение событий из журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view)
+* [Просмотр и извлечение событий из журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -244,7 +244,7 @@ ms.locfileid: "85255892"
 
 При использовании функции гибридной рабочей роли Runbook центр безопасности Azure обеспечивает мониторинг журнала событий безопасности для виртуальных машин Windows. Если ваша организация хочет сохранить данные журнала событий безопасности, она может храниться на уровне сбора данных, после чего их можно запросить в Log Analytics. Существуют разные уровни: минимальные, общие и все, которые подробно описаны в следующей ссылке.
 
-* [Настройка уровня сбора данных в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection#data-collection-tier)
+* [Настройка уровня сбора данных в центре безопасности Azure](../security-center/security-center-enable-data-collection.md#data-collection-tier)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -254,9 +254,9 @@ ms.locfileid: "85255892"
 
 **Рекомендации**. в пределах Azure Monitor задайте срок хранения log Analytics рабочей области в соответствии с нормативными требованиями Организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
 
-* [Изменение срока хранения данных в Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+* [Изменение срока хранения данных в Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
 
-* [Сведения о хранении данных для учетных записей службы автоматизации](https://docs.microsoft.com/azure/automation/automation-managing-data#data-retention)
+* [Сведения о хранении данных для учетных записей службы автоматизации](./automation-managing-data.md#data-retention)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -268,11 +268,11 @@ ms.locfileid: "85255892"
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-* [Общие сведения о запросах журналов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal)
+* [Общие сведения о запросах журналов в Azure Monitor](../azure-monitor/log-query/get-started-portal.md)
 
-* [Выполнение пользовательских запросов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
+* [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -284,11 +284,11 @@ ms.locfileid: "85255892"
 
 Кроме того, вы можете включить и подключить данные в Azure Sentinel.
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-* [Управление оповещениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts)
+* [Управление оповещениями в центре безопасности Azure](../security-center/security-center-managing-and-responding-alerts.md)
 
-* [Как оповещать данные журнала Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response)
+* [Как оповещать данные журнала Azure Monitor](../azure-monitor/learn/tutorial-response.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -300,9 +300,9 @@ ms.locfileid: "85255892"
 
 Однако при использовании функции гибридной рабочей роли Runbook вы можете использовать антивредоносное по Майкрософт для облачных служб и виртуальных машин Azure. Настройте виртуальные машины для записи событий в учетную запись хранения Azure. Настройте рабочую область Log Analytics для приема событий из учетных записей хранения и создавайте предупреждения там, где это необходимо. Следуйте рекомендациям в центре безопасности Azure: "вычисление &amp; приложений".
 
-* [Настройка защиты от вредоносных программ Майкрософт для облачных служб и виртуальных машин](https://docs.microsoft.com/azure/security/fundamentals/antimalware)
+* [Настройка защиты от вредоносных программ Майкрософт для облачных служб и виртуальных машин](../security/fundamentals/antimalware.md)
 
-* [Включение мониторинга на уровне гостя для виртуальных машин](https://docs.microsoft.com/azure/cost-management/azure-vm-extended-metrics)
+* [Включение мониторинга на уровне гостя для виртуальных машин](../cost-management-billing/cloudyn/azure-vm-extended-metrics.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -322,7 +322,7 @@ ms.locfileid: "85255892"
 
 Однако при использовании функции гибридной рабочей роли Runbook центр безопасности Azure обеспечивает мониторинг журнала событий безопасности для виртуальных машин Azure. Центр безопасности подготавливает агент Log Analytics на всех поддерживаемых виртуальных машинах Azure, а также все новые, созданные, если включена автоматическая подготовка. Также можно установить агент вручную. Агент включает событие создания процесса 4688 и поле командной строки в событии 4688. Новые процессы, созданные на виртуальной машине, записываются в журнал событий и отслеживаются службами обнаружения центра безопасности.
 
-* [Сбор данных в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection#data-collection-tier)
+* [Сбор данных в центре безопасности Azure](../security-center/security-center-enable-data-collection.md#data-collection-tier)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -330,19 +330,19 @@ ms.locfileid: "85255892"
 
 ## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
 
-*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](https://docs.microsoft.com/azure/security/benchmarks/security-control-identity-access-control).*
+*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](../security/benchmarks/security-control-identity-access-control.md).*
 
 ### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1. Инвентаризация учетных записей администраторов
 
 **Рекомендации**. Используйте Azure Active Directory встроенные роли администратора, которые могут быть явно назначены и доступны для запроса. Используйте модуль Azure AD PowerShell для выполнения нерегламентированных запросов для обнаружения учетных записей, входящих в группы администраторов. При каждом использовании учетных записей запуска от имени учетной записи службы автоматизации для модулей Runbook убедитесь, что эти субъекты-службы также отправляются в инвентаризацию, так как они часто имеют более высокий уровень разрешений. Удалите все неиспользуемые учетные записи запуска от имени, чтобы избежать уязвимой уязвимости.
 
-* [Как получить роль каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+* [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
 
-* [Как получить членов роли каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+* [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
 
-* [Удаление учетной записи запуска от имени или классической учетной записи запуска от имени](https://docs.microsoft.com/azure/automation/manage-runas-account#delete-a-run-as-or-classic-run-as-account)
+* [Удаление учетной записи запуска от имени или классической учетной записи запуска от имени](./manage-runas-account.md#delete-a-run-as-or-classic-run-as-account)
 
-* [Управление учетной записью запуска от имени службы автоматизации Azure](https://docs.microsoft.com/azure/automation/manage-runas-account)
+* [Управление учетной записью запуска от имени службы автоматизации Azure](./manage-runas-account.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -362,11 +362,11 @@ ms.locfileid: "85255892"
 
 Вы также можете включить JIT-доступ и достаточное время, используя Azure AD Privileged Identity Management привилегированные роли для служб Майкрософт и Azure Resource Manager.
 
-* [Дополнительные сведения о управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/)
+* [Дополнительные сведения о управление привилегированными пользователями](../active-directory/privileged-identity-management/index.yml)
 
-* [Удаление учетной записи запуска от имени или классической учетной записи запуска от имени](https://docs.microsoft.com/azure/automation/manage-runas-account#delete-a-run-as-or-classic-run-as-account)
+* [Удаление учетной записи запуска от имени или классической учетной записи запуска от имени](./manage-runas-account.md#delete-a-run-as-or-classic-run-as-account)
 
-* [Управление учетной записью запуска от имени службы автоматизации Azure](https://docs.microsoft.com/azure/automation/manage-runas-account)
+* [Управление учетной записью запуска от имени службы автоматизации Azure](./manage-runas-account.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -376,11 +376,11 @@ ms.locfileid: "85255892"
 
 **Рекомендации**. везде, где это возможно, используйте единый вход с Azure Active Directory вместо настройки отдельных автономных учетных данных для каждой службы. Используйте рекомендации по управлению удостоверениями и доступом в центре безопасности Azure.
 
-* [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
+* [Единый вход в приложениях в Azure Active Directory](../active-directory/manage-apps/what-is-single-sign-on.md)
 
-* [Мониторинг идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+* [Мониторинг идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
-* [Аутентификация в Azure с помощью Azure AD](https://docs.microsoft.com/azure/automation/automation-use-azure-ad)
+* [Аутентификация в Azure с помощью Azure AD](./automation-use-azure-ad.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -390,9 +390,9 @@ ms.locfileid: "85255892"
 
 **Рекомендации**. Включите многофакторную идентификацию Azure AD (MFA) и следуйте рекомендациям по управлению удостоверениями и доступом в центре безопасности Azure.
 
-* [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+* [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
-* [Мониторинг идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+* [Мониторинг идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -402,9 +402,9 @@ ms.locfileid: "85255892"
 
 **Руководство**. Использование лапы с многофакторной проверкой подлинности для входа и настройки ресурсов учетной записи службы автоматизации Azure в рабочих средах.
 
-* [Использование рабочих станций с привилегированным доступом](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+* [Использование рабочих станций с привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
 
-* [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+* [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -414,11 +414,11 @@ ms.locfileid: "85255892"
 
 **Руководство**. Использование обнаружения рисков Azure AD для просмотра предупреждений и отчетов о небезопасном поведении пользователей. Кроме того, клиент может пересылать оповещения об обнаружении рисков центра безопасности Azure, чтобы Azure Monitor и настраивать пользовательские оповещения и уведомления с помощью групп действий.
 
-* [Основные сведения об обнаружении рисков в центре безопасности Azure (подозрительные действия)](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events)
+* [Основные сведения об обнаружении рисков в центре безопасности Azure (подозрительные действия)](../active-directory/identity-protection/overview-identity-protection.md)
 
-* [Как интегрировать журналы действий Azure в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+* [Как интегрировать журналы действий Azure в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-* [Настройка групп действий для настраиваемых оповещений и уведомлений](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups)
+* [Настройка групп действий для настраиваемых оповещений и уведомлений](../azure-monitor/platform/action-groups.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -428,7 +428,7 @@ ms.locfileid: "85255892"
 
 **Рекомендации**. рекомендуется использовать условный доступ с именованными расположениями, чтобы разрешить доступ только из конкретных логических групп диапазонов IP-адресов или стран и регионов.
 
-* [Настройка именованных расположений в Azure](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
+* [Настройка именованных расположений в Azure](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -438,9 +438,9 @@ ms.locfileid: "85255892"
 
 **Руководство**. Использование Azure AD в качестве централизованной системы проверки подлинности и авторизации. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей. При использовании гибридных рабочих ролей Runbook вы можете использовать управляемые удостоверения вместо учетных записей запуска от имени, чтобы обеспечить более гладкие безопасные разрешения.
 
-* [Создание и настройка экземпляра Azure AD](https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-create-instance)
+* [Создание и настройка экземпляра Azure AD](../active-directory-domain-services/tutorial-create-instance.md)
 
-* [Использование проверки подлинности Runbook с управляемыми удостоверениями](https://docs.microsoft.com/azure/automation/automation-hrw-run-runbooks#runbook-auth-managed-identities)
+* [Использование проверки подлинности Runbook с управляемыми удостоверениями](./automation-hrw-run-runbooks.md#runbook-auth-managed-identities)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -450,13 +450,13 @@ ms.locfileid: "85255892"
 
 **Руководство**. Azure AD предоставляет журналы для облегчения поиска устаревших учетных записей. Кроме того, используйте проверку доступа удостоверений Azure для эффективного управления членством в группах, доступа к корпоративным приложениям и назначения ролей. Доступ пользователей можно проверить регулярно, чтобы убедиться, что доступ к ним имеют только нужные пользователи. При каждом использовании учетных записей запуска от имени учетной записи службы автоматизации для модулей Runbook эти субъекты-службы также отправляются в инвентаризацию, так как они часто имеют более высокий уровень разрешений. Удалите все неиспользуемые учетные записи запуска от имени, чтобы избежать уязвимой уязвимости.
 
-* [Общие сведения об отчетах Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/)
+* [Общие сведения об отчетах Azure AD](../active-directory/reports-monitoring/index.yml)
 
-* [Использование проверок доступа для идентификации Azure](https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview)
+* [Использование проверок доступа для идентификации Azure](../active-directory/governance/access-reviews-overview.md)
 
-* [Удаление учетной записи запуска от имени или классической учетной записи запуска от имени](https://docs.microsoft.com/azure/automation/manage-runas-account#delete-a-run-as-or-classic-run-as-account)
+* [Удаление учетной записи запуска от имени или классической учетной записи запуска от имени](./manage-runas-account.md#delete-a-run-as-or-classic-run-as-account)
 
-* [Управление учетной записью запуска от имени службы автоматизации Azure](https://docs.microsoft.com/azure/automation/manage-runas-account)
+* [Управление учетной записью запуска от имени службы автоматизации Azure](./manage-runas-account.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -468,7 +468,7 @@ ms.locfileid: "85255892"
 
 Этот процесс можно упростить, создав параметры диагностики для учетных записей пользователей Azure Active Directory и отправив журналы аудита и журналы входа в рабочую область Log Analytics. Вы можете настроить необходимые оповещения в рабочей области Log Analytics.
 
-* [Как интегрировать журналы действий Azure в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+* [Как интегрировать журналы действий Azure в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -478,11 +478,11 @@ ms.locfileid: "85255892"
 
 **Руководство**. Использование функций защиты учетных записей и рисков Azure AD для настройки автоматических ответов на обнаруженные подозрительные действия, связанные с удостоверениями пользователей для вашего сетевого ресурса. Вы также можете включить данные в Azure Sentinel для дальнейшего изучения.
 
-* [Просмотр рискованных входов в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+* [Просмотр рискованных входов в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
-* [Как настроить и включить политики рисков с помощью защиты идентификации](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies)
+* [Как настроить и включить политики рисков с помощью защиты идентификации](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**. Сейчас это недоступно.
 
@@ -494,7 +494,7 @@ ms.locfileid: "85255892"
 
 Однако при использовании гибридных рабочих ролей Runbook, предоставляемых виртуальными машинами Azure, и необходимости доступа к данным клиента (например, во время запроса на поддержку), используйте защищенное хранилище (Предварительная версия) для виртуальных машин Azure, чтобы просмотреть и утвердить или отклонить запросы на доступ к данным клиента.
 
-* [Основные сведения о защищенное хранилище](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview)
+* [Основные сведения о защищенное хранилище](../security/fundamentals/customer-lockbox-overview.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -502,13 +502,13 @@ ms.locfileid: "85255892"
 
 ## <a name="data-protection"></a>Защита данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-protection).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](../security/benchmarks/security-control-data-protection.md).*
 
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4.1. Инвентаризация конфиденциальных данных
 
 **Руководство**. Использование тегов для отслеживания ресурсов службы автоматизации Azure, которые хранят или обрабатывают конфиденциальную информацию.
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -518,19 +518,19 @@ ms.locfileid: "85255892"
 
 **Руководство**. Реализуйте отдельные подписки и группы управления для разработки, тестирования и производства. Изолируйте среды с помощью отдельных ресурсов учетной записи службы автоматизации. Такие ресурсы, как гибридные рабочие роли Runbook, должны быть разделены виртуальной сетью или подсетью, помечены соответствующим образом и защищены в рамках группы безопасности сети (NSG) или брандмауэра Azure. Для виртуальных машин, которые хранят или обрабатывают конфиденциальные данные, реализуйте политику и процедуры, чтобы отключить их, когда они не используются.
 
-* [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+* [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+* [Создание групп управления](../governance/management-groups/create.md)
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-* [Создание виртуальной сети](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+* [Создание виртуальной сети](../virtual-network/quick-create-portal.md)
 
-* [Создание группы безопасности сети с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+* [Создание группы безопасности сети с конфигурацией безопасности](../virtual-network/tutorial-filter-network-traffic.md)
 
-* [Развертывание брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal)
+* [Развертывание брандмауэра Azure](../firewall/tutorial-firewall-deploy-portal.md)
 
-* [Как настроить оповещение или оповещение и запретить с помощью брандмауэра Azure](https://docs.microsoft.com/azure/firewall/threat-intel)
+* [Как настроить оповещение или оповещение и запретить с помощью брандмауэра Azure](../firewall/threat-intel.md)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -542,7 +542,7 @@ ms.locfileid: "85255892"
 
 Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и защищенным от потери и раскрытия данных клиента. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
 
-* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+* [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**. Да
 
@@ -554,7 +554,7 @@ ms.locfileid: "85255892"
 
 Следуйте рекомендациям центра безопасности Azure для шифрования неактивных данных и шифрования при передаче, где это применимо.
 
-* [Общие сведения о шифровании при передаче с помощью Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-overview#encryption-of-data-in-transit)
+* [Общие сведения о шифровании при передаче с помощью Azure](../security/fundamentals/encryption-overview.md#encryption-of-data-in-transit)
 
 * [Принудительное применение Azure Automation TLS 1,2](https://azure.microsoft.com/updates/azure-automation-tls12-enforcement/)
 
@@ -574,11 +574,11 @@ ms.locfileid: "85255892"
 
 **Руководство**. Использование RBAC для Azure AD для управления доступом к ресурсам службы автоматизации Azure с помощью встроенных определений ролей, назначение доступа пользователям, обращающимся к ресурсам службы автоматизации, по крайней мере привилегированной или достаточно простой модели доступа. При использовании гибридных рабочих ролей Runbook используйте управляемые удостоверения для этих виртуальных машин, чтобы не использовать субъекты-службы. при использовании нескольких клиентов или гибридных рабочих ролей Runbook обязательно примените правильно заданную область разрешений RBAC для удостоверения рабочих ролей Runbook.
 
-* [Настройка RBAC в Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
+* [Настройка RBAC в Azure](../role-based-access-control/role-assignments-portal.md)
 
-* [Разрешения runbook для гибридной рабочей роли Runbook](https://docs.microsoft.com/azure/automation/automation-hybrid-runbook-worker#runbook-permissions-for-a-hybrid-runbook-worker)
+* [Разрешения runbook для гибридной рабочей роли Runbook](./automation-hybrid-runbook-worker.md#runbook-permissions-for-a-hybrid-runbook-worker)
 
-* [Управление разрешениями ролей и безопасностью](https://docs.microsoft.com/azure/automation/automation-role-based-access-control)
+* [Управление разрешениями ролей и безопасностью](./automation-role-based-access-control.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -600,13 +600,13 @@ ms.locfileid: "85255892"
 
 При использовании гибридных рабочих ролей Runbook виртуальные диски на виртуальных машинах шифруются при помощи шифрования на стороне сервера или с помощью шифрования дисков Azure (ADE). Шифрование дисков Azure использует функцию BitLocker Windows для шифрования управляемых дисков с помощью управляемых клиентом ключей в гостевой виртуальной машине. Шифрование на стороне сервера с использованием управляемых клиентом ключей улучшает работу шифрования дисков Azure, позволяя использовать любые типы ОС и образы для виртуальных машин путем шифрования данных в службе хранилища.
 
-* [Шифрование на стороне сервера для управляемых дисков Azure](https://docs.microsoft.com/azure/virtual-machines/windows/disk-encryption)
+* [Шифрование на стороне сервера для управляемых дисков Azure](../virtual-machines/windows/disk-encryption.md)
 
-* [Шифрование дисков Azure для виртуальных машин Windows](https://docs.microsoft.com/azure/virtual-machines/windows/disk-encryption-overview)
+* [Шифрование дисков Azure для виртуальных машин Windows](../virtual-machines/windows/disk-encryption-overview.md)
 
-* [Использование управляемых клиентом ключей для учетной записи службы автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-secure-asset-encryption#use-of-customer-managed-keys-for-an-automation-account)
+* [Использование управляемых клиентом ключей для учетной записи службы автоматизации Azure](./automation-secure-asset-encryption.md#use-of-customer-managed-keys-for-an-automation-account)
 
-* [Управляемые переменные в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/shared-resources/variables)
+* [Управляемые переменные в службе автоматизации Azure](./shared-resources/variables.md)
 
 **Мониторинг Центра безопасности Azure**. Да
 
@@ -616,9 +616,9 @@ ms.locfileid: "85255892"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются с важными ресурсами Azure, такими как сетевые компоненты, учетные записи службы автоматизации Azure и модули Runbook.
 
-* [Журнал ведения диагностики для группы безопасности сети](https://docs.microsoft.com/azure/private-link/private-link-overview#logging-and-monitoring)
+* [Журнал ведения диагностики для группы безопасности сети](../private-link/private-link-overview.md#logging-and-monitoring)
 
-* [Создание оповещений для событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+* [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -626,15 +626,15 @@ ms.locfileid: "85255892"
 
 ## <a name="vulnerability-management"></a>управление уязвимостями;
 
-*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](https://docs.microsoft.com/azure/security/benchmarks/security-control-vulnerability-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](../security/benchmarks/security-control-vulnerability-management.md).*
 
 ### <a name="51-run-automated-vulnerability-scanning-tools"></a>5.1. Выполнение автоматизированных средства анализа уязвимостей
 
 **Руководство**. Следуйте рекомендациям центра безопасности Azure по оценке уязвимостей в ресурсах Azure.
 
-* [Рекомендации по безопасности в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-recommendations)
+* [Рекомендации по безопасности в Центре безопасности Azure](../security-center/security-center-recommendations.md)
 
-* [Справочник по рекомендациям центра безопасности](https://docs.microsoft.com/azure/security-center/recommendations-reference)
+* [Справочник по рекомендациям центра безопасности](../security-center/recommendations-reference.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -646,9 +646,9 @@ ms.locfileid: "85255892"
 
 Если вы используете гибридные рабочие роли Runbook, которые поддерживают виртуальные машины Azure, используйте Управление обновлениями Azure для управления обновлениями и исправлениями для виртуальных машин. Управление обновлениями использует локально настроенный репозиторий обновлений для обновления поддерживаемых систем Windows. Такие средства, как System Center Updates Publisher (Updates Publisher), позволяют публиковать пользовательские обновления в Windows Server Update Services (WSUS). Этот сценарий позволяет Управление обновлениями исправлять компьютеры, использующие Configuration Manager в качестве репозитория обновлений программного обеспечения стороннего производителя.
 
-* [Управление обновлениями в Azure](https://docs.microsoft.com/azure/automation/automation-update-management)
+* [Управление обновлениями в Azure](./automation-update-management.md)
 
-* [Управление обновлениями и исправлениями для виртуальных машин Azure](https://docs.microsoft.com/azure/automation/automation-tutorial-update-management)
+* [Управление обновлениями и исправлениями для виртуальных машин Azure](./automation-tutorial-update-management.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -660,9 +660,9 @@ ms.locfileid: "85255892"
 
 Если вы используете гибридные рабочие роли Runbook, которые поддерживают виртуальные машины Azure, вы можете использовать Управление обновлениями Azure для управления обновлениями и исправлениями для виртуальных машин. Управление обновлениями использует локально настроенный репозиторий обновлений для обновления поддерживаемых систем Windows. Такие средства, как System Center Updates Publisher (Updates Publisher), позволяют публиковать пользовательские обновления в Windows Server Update Services (WSUS). Этот сценарий позволяет Управление обновлениями исправлять компьютеры, использующие Configuration Manager в качестве репозитория обновлений программного обеспечения стороннего производителя.
 
-* [Решение для управления обновлениями в Azure](https://docs.microsoft.com/azure/automation/automation-update-management)
+* [Решение для управления обновлениями в Azure](./automation-update-management.md)
 
-* [Управление обновлениями и исправлениями для виртуальных машин Azure](https://docs.microsoft.com/azure/automation/automation-tutorial-update-management)
+* [Управление обновлениями и исправлениями для виртуальных машин Azure](./automation-tutorial-update-management.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -680,7 +680,7 @@ ms.locfileid: "85255892"
 
 **Руководство**. Используйте рейтинги рисков по умолчанию (Оценка безопасности), предоставляемые центром безопасности Azure, чтобы определить приоритет устранения обнаруженных уязвимостей.
 
-* [Оценка безопасности центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-secure-score)
+* [Оценка безопасности центра безопасности Azure](../security-center/secure-score-security-controls.md)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -688,17 +688,17 @@ ms.locfileid: "85255892"
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
-*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](https://docs.microsoft.com/azure/security/benchmarks/security-control-inventory-asset-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](../security/benchmarks/security-control-inventory-asset-management.md).*
 
 ### <a name="61-use-automated-asset-discovery-solution"></a>6,1. Использование автоматизированного решения для обнаружения ресурсов
 
 **Руководство**. Использование графа ресурсов Azure для запроса и обнаружения всех ресурсов службы автоматизации Azure в ваших подписках. Убедитесь, что у вас есть соответствующие разрешения (на чтение) в клиенте и вы можете перечислить все подписки Azure, а также ресурсы в ваших подписках.
 
-* [Как создавать запросы с помощью Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+* [Как создавать запросы с помощью Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
-* [Как просматривать подписки Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+* [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
-* [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
+* [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -708,7 +708,7 @@ ms.locfileid: "85255892"
 
 **Руководство**. Применяйте к ресурсам Azure теги, чтобы логически классифицировать их на основе метаданных.
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -718,15 +718,15 @@ ms.locfileid: "85255892"
 
 **Руководство**. Использование тегов, групп управления и отдельных подписок (при необходимости) для Организации и мониторинга ресурсов службы автоматизации Azure. Регулярно сверяйте ресурсы, чтобы своевременно удалять неавторизованные ресурсы из подписки. Удалите все неиспользуемые учетные записи запуска от имени, чтобы избежать уязвимой уязвимости.
 
-* [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+* [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+* [Создание групп управления](../governance/management-groups/create.md)
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-* [Удаление учетной записи запуска от имени или классической учетной записи запуска от имени](https://docs.microsoft.com/azure/automation/manage-runas-account#delete-a-run-as-or-classic-run-as-account)
+* [Удаление учетной записи запуска от имени или классической учетной записи запуска от имени](./manage-runas-account.md#delete-a-run-as-or-classic-run-as-account)
 
-* [Управление учетной записью запуска от имени службы автоматизации Azure](https://docs.microsoft.com/azure/automation/manage-runas-account)
+* [Управление учетной записью запуска от имени службы автоматизации Azure](./manage-runas-account.md)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -748,11 +748,11 @@ ms.locfileid: "85255892"
 
 Кроме того, используйте граф ресурсов Azure для запроса или обнаружения ресурсов в подписках. Это может помочь в средах с высоким уровнем безопасности, например с учетными записями хранения.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Как создавать запросы с помощью Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+* [Как создавать запросы с помощью Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
-* [Пример политики Azure, встроенный в службу автоматизации Azure](https://docs.microsoft.com/azure/automation/policy-samples)
+* [Пример политики Azure, встроенный в службу автоматизации Azure](./policy-samples.md)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -764,11 +764,11 @@ ms.locfileid: "85255892"
 
 Если вы используете гибридные рабочие роли Runbook, поддерживаемые виртуальными машинами Azure, служба автоматизации Azure обеспечивает полный контроль во время развертывания, эксплуатации и списания рабочих нагрузок и ресурсов. Используйте инвентаризацию виртуальных машин Azure, чтобы автоматизировать сбор сведений обо всех программах на виртуальных машинах. Имя программного обеспечения, версия, издатель и время обновления доступны на портал Azure. Чтобы получить доступ к дате установки и другим сведениям, клиент должен включить диагностику на уровне гостя и перенести журналы событий Windows в рабочую область Log Analytics.
 
-* [Общие сведения о службе автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-intro)
+* [Общие сведения о службе автоматизации Azure](./automation-intro.md)
 
-* [Как включить инвентаризацию виртуальных машин Azure](https://docs.microsoft.com/azure/automation/automation-tutorial-installed-software)
+* [Как включить инвентаризацию виртуальных машин Azure](./automation-tutorial-installed-software.md)
 
-* [Управление модулем в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/shared-resources/modules)
+* [Управление модулем в службе автоматизации Azure](./shared-resources/modules.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -778,9 +778,9 @@ ms.locfileid: "85255892"
 
 **Руководство**. Клиент может предотвратить создание или использование ресурсов с помощью политики Azure согласно требованиям компании клиента. Вы можете реализовать собственный процесс для удаления несанкционированных ресурсов. В рамках предложения службы автоматизации Azure можно устанавливать, удалять и управлять модулями PowerShell или Python, к которым модули Runbook могут обращаться через портал или командлеты. Неодобренный или старый модуль должен быть удален или обновлен для модулей Runbook.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Управление модулем в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/shared-resources/modules)
+* [Управление модулем в службе автоматизации Azure](./shared-resources/modules.md)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -790,7 +790,7 @@ ms.locfileid: "85255892"
 
 **Руководство**. при использовании функции гибридной рабочей роли Runbook вы можете использовать адаптивные элементы управления приложениями в центре безопасности Azure, чтобы гарантировать выполнение только авторизованного программного обеспечения и блокирование выполнения всех несанкционированных программ на виртуальных машинах Azure.
 
-* [Как использовать адаптивные элементы управления приложениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application)
+* [Как использовать адаптивные элементы управления приложениями в центре безопасности Azure](../security-center/security-center-adaptive-application.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -802,9 +802,9 @@ ms.locfileid: "85255892"
 - Недопустимые типы ресурсов
 - Допустимые типы ресурсов
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Как отказаться от определенного типа ресурса с помощью Политики Azure](https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types)
+* [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/index.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -816,7 +816,7 @@ ms.locfileid: "85255892"
 
 Адаптивное управление приложениями — это интеллектуальное, автоматизированное комплексное решение из центра безопасности Azure, которое помогает контролировать, какие приложения могут работать на компьютерах с Azure и без Azure (Windows и Linux). Реализуйте сторонние решения, если это не соответствует требованиям вашей организации.
 
-* [Как использовать адаптивные элементы управления приложениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application)
+* [Как использовать адаптивные элементы управления приложениями в центре безопасности Azure](../security-center/security-center-adaptive-application.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -826,7 +826,7 @@ ms.locfileid: "85255892"
 
 **Руководство**. Использование политик условного доступа Azure для ограничения возможности пользователей взаимодействовать с Azure Resource Manager путем настройки "блокировать доступ" для приложения "Управление Microsoft Azure" из незащищенных или неутвержденных расположений или устройств.
 
-* [Как настроить условный доступ для блокировки доступа к Azure Resource Manager](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management)
+* [Как настроить условный доступ для блокировки доступа к Azure Resource Manager](../role-based-access-control/conditional-access-azure-management.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -836,9 +836,9 @@ ms.locfileid: "85255892"
 
 **Руководство**. при использовании функции гибридной рабочей роли Runbook и в зависимости от типа сценариев вы можете использовать конфигурации операционной системы или сторонние ресурсы, чтобы ограничить возможность пользователей выполнять сценарии в ресурсах вычислений Azure. Можно также использовать адаптивные элементы управления приложениями центра безопасности Azure, чтобы гарантировать выполнение только авторизованного программного обеспечения и блокирование выполнения всех несанкционированных программ на виртуальных машинах Azure.
 
-* [Управление выполнением скриптов PowerShell в средах Windows](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6)
+* [Управление выполнением скриптов PowerShell в средах Windows](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6)
 
-* [Как использовать адаптивные элементы управления приложениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application)
+* [Как использовать адаптивные элементы управления приложениями в центре безопасности Azure](../security-center/security-center-adaptive-application.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -848,19 +848,19 @@ ms.locfileid: "85255892"
 
 **Руководство**. приложения с высоким риском, развернутые в среде Azure, могут быть изолированы с помощью отдельных сетевых контейнеров и контейнеров ресурсов с помощью таких конструкций, как виртуальные сети, подсеть, подписки, группы управления, они могут быть достаточно защищены с помощью брандмауэра Azure, брандмауэра веб-приложения (WAF) или группы безопасности сети (NSG).
 
-* [Виртуальные сети и виртуальные машины в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/network-overview)
+* [Виртуальные сети и виртуальные машины в Azure](../virtual-machines/windows/network-overview.md)
 
-* [Общие сведения о брандмауэре Azure](https://docs.microsoft.com/azure/firewall/overview)
+* [Общие сведения о брандмауэре Azure](../firewall/overview.md)
 
-* [Обзор брандмауэра веб-приложения Azure](https://docs.microsoft.com/azure/web-application-firewall/overview)
+* [Обзор брандмауэра веб-приложения Azure](../web-application-firewall/overview.md)
 
-* [Группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview)
+* [Группы безопасности сети](../virtual-network/security-overview.md)
 
-* [Обзор виртуальной сети Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)
+* [Обзор виртуальной сети Azure](../virtual-network/virtual-networks-overview.md)
 
-* [Упорядочение ресурсов с помощью групп управления Azure](https://docs.microsoft.com/azure/governance/management-groups/overview)
+* [Упорядочение ресурсов с помощью групп управления Azure](../governance/management-groups/overview.md)
 
-* [Руководство по выбору модели подписки](https://docs.microsoft.com/azure/cloud-adoption-framework/decision-guides/subscriptions/)
+* [Руководство по выбору модели подписки](/azure/cloud-adoption-framework/decision-guides/subscriptions/)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -868,7 +868,7 @@ ms.locfileid: "85255892"
 
 ## <a name="secure-configuration"></a>Безопасная конфигурация
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](https://docs.microsoft.com/azure/security/benchmarks/security-control-secure-configuration).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](../security/benchmarks/security-control-secure-configuration.md).*
 
 ### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7.1. Установка безопасных конфигураций для всех ресурсов Azure
 
@@ -878,15 +878,15 @@ ms.locfileid: "85255892"
 
 Вы также можете использовать рекомендации из центра безопасности Azure в качестве защищенного шаблона базовой конфигурации для ресурсов Azure.
 
-* [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+* [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
 
-* [Руководство по Создание политик и управление ими для обеспечения соответствия требованиям](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Руководство по Создание политик и управление ими для обеспечения соответствия требованиям](../governance/policy/tutorials/create-and-manage.md)
 
-* [Пример политики Azure, встроенный в службу автоматизации Azure](https://docs.microsoft.com/azure/automation/policy-samples)
+* [Пример политики Azure, встроенный в службу автоматизации Azure](./policy-samples.md)
 
-* [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](https://docs.microsoft.com/azure/azure-resource-manager/templates/export-template-portal)
+* [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](../azure-resource-manager/templates/export-template-portal.md)
 
-* [Рекомендации по безопасности — справочное руководство](https://docs.microsoft.com/azure/security-center/recommendations-reference)
+* [Рекомендации по безопасности — справочное руководство](../security-center/recommendations-reference.md)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -898,9 +898,9 @@ ms.locfileid: "85255892"
 
 При использовании функции гибридной рабочей роли Runbook используйте рекомендацию центра безопасности Azure [исправьте уязвимости в конфигурациях безопасности на виртуальных машинах], чтобы сохранить конфигурации безопасности на виртуальных машинах.
 
-* [Как отслеживать рекомендации центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-recommendations)
+* [Как отслеживать рекомендации центра безопасности Azure](../security-center/security-center-recommendations.md)
 
-* [Как исправлять рекомендации центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-remediate-recommendations)
+* [Как исправлять рекомендации центра безопасности Azure](../security-center/security-center-remediate-recommendations.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -910,17 +910,17 @@ ms.locfileid: "85255892"
 
 **Руководство**. использование шаблонов Azure Resource Manager и политики Azure для безопасной настройки ресурсов Azure, связанных с автоматизацией Azure. Azure Resource Manager шаблоны — это файлы на основе JSON, которые используются для развертывания ресурсов Azure, а пользовательские шаблоны должны храниться и поддерживаться в репозитории кода в безопасном режиме. Используйте функцию интеграции системы управления версиями, чтобы синхронизировать модули Runbook в учетной записи службы автоматизации с сценариями в репозитории системы управления версиями. Используйте политику Azure [Deny] и [развернуть, если не существует], чтобы обеспечить безопасность параметров в ресурсах Azure.
 
-* [Использование интеграции системы управления версиями](https://docs.microsoft.com/azure/automation/source-control-integration)
+* [Использование интеграции системы управления версиями](./source-control-integration.md)
 
-* [Сведения о создании шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/templates/quickstart-create-templates-use-the-portal)
+* [Сведения о создании шаблонов Azure Resource Manager](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md)
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Действия политик Azure](https://docs.microsoft.com/azure/governance/policy/concepts/effects)
+* [Действия политик Azure](../governance/policy/concepts/effects.md)
 
-* [Развертывание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager](https://docs.microsoft.com/azure/automation/automation-create-account-template#deploy-the-template)
+* [Развертывание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager](./automation-create-account-template.md#deploy-the-template)
 
-* [Пример политики Azure, встроенный в службу автоматизации Azure](https://docs.microsoft.com/azure/automation/policy-samples)
+* [Пример политики Azure, встроенный в службу автоматизации Azure](./policy-samples.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -938,11 +938,11 @@ ms.locfileid: "85255892"
 
 В большинстве случаев шаблоны базовых виртуальных машин Майкрософт в сочетании с конфигурацией состояния службы автоматизации Azure могут помочь в собрании и обслуживании требований безопасности.
 
-* [Сведения о том, как скачать шаблон виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/windows/download-template)
+* [Сведения о том, как скачать шаблон виртуальной машины](../virtual-machines/windows/download-template.md)
 
-* [Сведения о создании шаблонов ARM](https://docs.microsoft.com/azure/virtual-machines/windows/ps-template)
+* [Сведения о создании шаблонов ARM](../virtual-machines/windows/ps-template.md)
 
-* [Как отправить пользовательский виртуальный жесткий диск виртуальной машины в Azure](https://docs.microsoft.com/azure-stack/operator/azure-stack-add-vm-image?view=azs-1910)
+* [Как отправить пользовательский виртуальный жесткий диск виртуальной машины в Azure](/azure-stack/operator/azure-stack-add-vm-image?view=azs-1910)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -952,11 +952,11 @@ ms.locfileid: "85255892"
 
 **Руководство**. Использование Azure DevOps для безопасного хранения и управления кодом, например пользовательскими политиками Azure, Azure Resource Manager шаблонами и скриптами настройки требуемого состояния. Чтобы получить доступ к ресурсам, которыми вы управляете в Azure DevOps, вы можете предоставить или отклонить разрешения для определенных пользователей, встроенных групп безопасности или групп, определенных в Azure Active Directory, если они интегрированы с Azure DevOps или Active Directory при интеграции с TFS. Используйте функцию интеграции системы управления версиями, чтобы синхронизировать модули Runbook в учетной записи службы автоматизации с сценариями в репозитории системы управления версиями.
 
-* [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
+* [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
 
-* [О разрешениях и группах в Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/security/about-permissions)
+* [О разрешениях и группах в Azure DevOps](/azure/devops/organizations/security/about-permissions)
 
-* [Использование интеграции системы управления версиями](https://docs.microsoft.com/azure/automation/source-control-integration)
+* [Использование интеграции системы управления версиями](./source-control-integration.md)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -968,9 +968,9 @@ ms.locfileid: "85255892"
 
 При использовании функции гибридной рабочей роли Runbook убедитесь, что вы должным образом ограничиваете доступ к пользовательскому образу ОС, находящемуся в вашей учетной записи хранения, чтобы доступ к образу мог получить только полномочные пользователи.
 
-* [Общие сведения о RBAC в Azure](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles)
+* [Общие сведения о RBAC в Azure](../role-based-access-control/rbac-and-directory-admin-roles.md)
 
-* [Настройка RBAC в Azure](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal)
+* [Настройка RBAC в Azure](../role-based-access-control/quickstart-assign-role-user-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -980,11 +980,11 @@ ms.locfileid: "85255892"
 
 **Руководство**. Определение и реализация стандартных конфигураций безопасности для ресурсов Azure с помощью политики Azure. Используйте псевдонимы политик Azure для создания настраиваемых политик для аудита или принудительного применения конфигурации сети ресурсов Azure. Вы также можете использовать встроенные определения политик, связанные с конкретными ресурсами.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Использование псевдонимов](https://docs.microsoft.com/azure/governance/policy/concepts/definition-structure#aliases)
+* [Использование псевдонимов](../governance/policy/concepts/definition-structure.md#aliases)
 
-* [Пример политики Azure, встроенный в службу автоматизации Azure](https://docs.microsoft.com/azure/automation/policy-samples)
+* [Пример политики Azure, встроенный в службу автоматизации Azure](./policy-samples.md)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -996,7 +996,7 @@ ms.locfileid: "85255892"
 
 При использовании функции гибридной рабочей роли Runbook используйте настройку состояния службы автоматизации Azure для рабочих ролей Runbook, которые являются службой управления конфигурацией для узлов DSC в любом облачном или локальном центре обработки данных. Она обеспечивает быструю и простую масштабируемость тысяч компьютеров из безопасного центрального расположения. Вы можете легко переносить компьютеры в облачную среду, присваивать им декларативные конфигурации, а также просматривать отчеты, отражающие соответствие каждого компьютера требуемому состоянию.
 
-* [Подключение компьютеров для управления с помощью службы "Настройка состояния службы автоматизации Azure"](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding)
+* [Подключение компьютеров для управления с помощью службы "Настройка состояния службы автоматизации Azure"](./automation-dsc-onboarding.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1008,13 +1008,13 @@ ms.locfileid: "85255892"
 
 При использовании функции гибридной рабочей роли Runbook используйте центр безопасности Azure для выполнения проверок базовых показателей для виртуальных машин Azure. Дополнительные методы автоматической настройки включают в себя настройку состояния службы автоматизации Azure.
 
-* [Как исправить рекомендации в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-remediate-recommendations)
+* [Как исправить рекомендации в центре безопасности Azure](../security-center/security-center-remediate-recommendations.md)
 
-* [Начало работы со службой "Настройка состояния службы автоматизации Azure"](https://docs.microsoft.com/azure/automation/automation-dsc-getting-started)
+* [Начало работы со службой "Настройка состояния службы автоматизации Azure"](./automation-dsc-getting-started.md)
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Пример политики Azure, встроенный в службу автоматизации Azure](https://docs.microsoft.com/azure/automation/policy-samples)
+* [Пример политики Azure, встроенный в службу автоматизации Azure](./policy-samples.md)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -1026,7 +1026,7 @@ ms.locfileid: "85255892"
 
 При использовании функции гибридной рабочей роли Runbook используйте настройку состояния службы автоматизации Azure для рабочих ролей Runbook, которые являются службой управления конфигурацией для узлов DSC в любом облачном или локальном центре обработки данных. Она обеспечивает быструю и простую масштабируемость тысяч компьютеров из безопасного центрального расположения. Вы можете легко переносить компьютеры в облачную среду, присваивать им декларативные конфигурации, а также просматривать отчеты, отражающие соответствие каждого компьютера требуемому состоянию.
 
-* [Подключение компьютеров для управления с помощью службы "Настройка состояния службы автоматизации Azure"](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding)
+* [Подключение компьютеров для управления с помощью службы "Настройка состояния службы автоматизации Azure"](./automation-dsc-onboarding.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1036,13 +1036,13 @@ ms.locfileid: "85255892"
 
 **Рекомендации**. Используйте управляемое удостоверение службы в сочетании с Azure Key Vault, чтобы упростить и защитить управление секретами для облачных приложений.
 
-* [Использование управляемых клиентом ключей для учетной записи службы автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-secure-asset-encryption#use-of-customer-managed-keys-for-an-automation-account)
+* [Использование управляемых клиентом ключей для учетной записи службы автоматизации Azure](./automation-secure-asset-encryption.md#use-of-customer-managed-keys-for-an-automation-account)
 
-* [Использование проверки подлинности Runbook с управляемыми удостоверениями](https://docs.microsoft.com/azure/automation/automation-hrw-run-runbooks#runbook-auth-managed-identities)
+* [Использование проверки подлинности Runbook с управляемыми удостоверениями](./automation-hrw-run-runbooks.md#runbook-auth-managed-identities)
 
-* [Создание Key Vault](https://docs.microsoft.com/azure/key-vault/quick-create-portal)
+* [Создание Key Vault](../key-vault/secrets/quick-create-portal.md)
 
-* [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](https://docs.microsoft.com/azure/key-vault/managed-identity)
+* [Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения](../key-vault/general/managed-identity.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1052,9 +1052,9 @@ ms.locfileid: "85255892"
 
 **Руководство**. Использование управляемых удостоверений для предоставления служб Azure с автоматически управляемым удостоверением в Azure AD. Управляемое удостоверение можно использовать для проверки подлинности в любой службе, которая поддерживает проверку подлинности Azure AD, включая Key Vault, при этом не сохраняя каких-либо учетных данных в коде.
 
-* [Настройка управляемых удостоверений](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm)
+* [Настройка управляемых удостоверений](../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md)
 
-* [Использование управляемых клиентом ключей для учетной записи службы автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-secure-asset-encryption#use-of-customer-managed-keys-for-an-automation-account)
+* [Использование управляемых клиентом ключей для учетной записи службы автоматизации Azure](./automation-secure-asset-encryption.md#use-of-customer-managed-keys-for-an-automation-account)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1072,7 +1072,7 @@ ms.locfileid: "85255892"
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](https://docs.microsoft.com/azure/security/benchmarks/security-control-malware-defense).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](../security/benchmarks/security-control-malware-defense.md).*
 
 ### <a name="81-use-centrally-managed-anti-malware-software"></a>8.1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
 
@@ -1080,7 +1080,7 @@ ms.locfileid: "85255892"
 
 При использовании функции гибридной рабочей роли Runbook используйте антивредоносное по Майкрософт для виртуальных машин Windows Azure, чтобы постоянно отслеживать и защищать рабочие ресурсы Runbook.
 
-* [Настройка защиты от вредоносных программ Майкрософт для облачных служб и виртуальных машин](https://docs.microsoft.com/azure/security/fundamentals/antimalware)
+* [Настройка защиты от вредоносных программ Майкрософт для облачных служб и виртуальных машин](../security/fundamentals/antimalware.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1090,7 +1090,7 @@ ms.locfileid: "85255892"
 
 **Руководство**: неприменимо; Служба автоматизации Azure в качестве службы не хранит файлы. Антивредоносное по Майкрософт включено на базовом узле, который поддерживает службы Azure (например, служба автоматизации Azure), но не выполняется в вашем содержимом.
 
-* [Сведения о антивредоносном по Майкрософт для облачных служб и виртуальных машин Azure](https://docs.microsoft.com/azure/security/fundamentals/antimalware)
+* [Сведения о антивредоносном по Майкрософт для облачных служб и виртуальных машин Azure](../security/fundamentals/antimalware.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1102,9 +1102,9 @@ ms.locfileid: "85255892"
 
 При использовании гибридной функции Runbook Worker используйте антивредоносное по Майкрософт для Azure, чтобы автоматически установить последние обновления сигнатур, платформы и подсистемы по умолчанию в рабочую роль Runbook. Следуйте рекомендациям в центре безопасности Azure: "вычисление &amp; приложений", чтобы обеспечить актуальность всех конечных точек с последними сигнатурами. ОС Windows может быть дополнительно защищена с помощью дополнительной защиты, чтобы ограничить риск атак на антивирусную или вредоносную программу с помощью службы Microsoft Защитник Advanced Threat Protection, которая интегрируется с центром безопасности Azure.
 
-* [Развертывание антивредоносного по Майкрософт для облачных служб и виртуальных машин Azure](https://docs.microsoft.com/azure/security/fundamentals/antimalware)
+* [Развертывание антивредоносного по Майкрософт для облачных служб и виртуальных машин Azure](../security/fundamentals/antimalware.md)
 
-* [Advanced Threat Protection в Microsoft Defender](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/onboard-configure)
+* [Advanced Threat Protection в Microsoft Defender](/windows/security/threat-protection/microsoft-defender-atp/onboard-configure)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1112,7 +1112,7 @@ ms.locfileid: "85255892"
 
 ## <a name="data-recovery"></a>Восстановление данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-recovery).*
+*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](../security/benchmarks/security-control-data-recovery.md).*
 
 ### <a name="91-ensure-regular-automated-back-ups"></a>9.1. Обеспечение регулярного автоматического резервного копирования
 
@@ -1120,23 +1120,23 @@ ms.locfileid: "85255892"
 
 Используйте функцию интеграции системы управления версиями, чтобы синхронизировать модули Runbook в учетной записи службы автоматизации с сценариями в репозитории системы управления версиями.
 
-* [Общие сведения об Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/overview)
+* [Общие сведения об Azure Resource Manager](../azure-resource-manager/management/overview.md)
 
-* [Справочник по шаблону Azure Resource Manager для ресурсов службы автоматизации Azure](https://docs.microsoft.com/azure/templates/microsoft.automation/allversions)
+* [Справочник по шаблону Azure Resource Manager для ресурсов службы автоматизации Azure](/azure/templates/microsoft.automation/allversions)
 
-* [Создание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager](https://docs.microsoft.com/azure/automation/automation-create-account-template)
+* [Создание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager](./automation-create-account-template.md)
 
-* [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](https://docs.microsoft.com/azure/azure-resource-manager/templates/export-template-portal)
+* [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](../azure-resource-manager/templates/export-template-portal.md)
 
-* [Группы ресурсов — Экспорт шаблона](https://docs.microsoft.com/rest/api/resources/resourcegroups/exporttemplate)
+* [Группы ресурсов — Экспорт шаблона](/rest/api/resources/resourcegroups/exporttemplate)
 
-* [Введение в службу автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-intro)
+* [Введение в службу автоматизации Azure](./automation-intro.md)
 
-* [Как создать резервную копию ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
+* [Как создать резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
 
-* [Использование управляемых клиентом ключей для учетной записи службы автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-secure-asset-encryption#use-of-customer-managed-keys-for-an-automation-account)
+* [Использование управляемых клиентом ключей для учетной записи службы автоматизации Azure](./automation-secure-asset-encryption.md#use-of-customer-managed-keys-for-an-automation-account)
 
-* [Использование интеграции системы управления версиями](https://docs.microsoft.com/azure/automation/source-control-integration)
+* [Использование интеграции системы управления версиями](./source-control-integration.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -1146,23 +1146,23 @@ ms.locfileid: "85255892"
 
 **Руководство**. Использование Azure Resource Manager для развертывания учетных записей службы автоматизации Azure и связанных ресурсов. Azure Resource Manager предоставляет возможность экспорта шаблонов, которые можно использовать в качестве резервных копий для восстановления учетных записей службы автоматизации Azure и связанных ресурсов. Используйте службу автоматизации Azure для регулярного вызова API-интерфейса экспорта шаблона Azure Resource Manager. Резервное копирование ключей, управляемых клиентом, в Azure Key Vault. Модули Runbook можно экспортировать в файлы скриптов с помощью портал Azure или PowerShell.
 
-* [Общие сведения об Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/overview)
+* [Общие сведения об Azure Resource Manager](../azure-resource-manager/management/overview.md)
 
-* [Справочник по шаблону Azure Resource Manager для ресурсов службы автоматизации Azure](https://docs.microsoft.com/azure/templates/microsoft.automation/allversions)
+* [Справочник по шаблону Azure Resource Manager для ресурсов службы автоматизации Azure](/azure/templates/microsoft.automation/allversions)
 
-* [Создание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager](https://docs.microsoft.com/azure/automation/automation-create-account-template)
+* [Создание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager](./automation-create-account-template.md)
 
-* [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](https://docs.microsoft.com/azure/azure-resource-manager/templates/export-template-portal)
+* [Экспорт одного и нескольких ресурсов в шаблон в портал Azure](../azure-resource-manager/templates/export-template-portal.md)
 
-* [Группы ресурсов — Экспорт шаблона](https://docs.microsoft.com/rest/api/resources/resourcegroups/exporttemplate)
+* [Группы ресурсов — Экспорт шаблона](/rest/api/resources/resourcegroups/exporttemplate)
 
-* [Введение в службу автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-intro)
+* [Введение в службу автоматизации Azure](./automation-intro.md)
 
-* [Как создать резервную копию ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
+* [Как создать резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
 
-* [Использование управляемых клиентом ключей для учетной записи службы автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-secure-asset-encryption#use-of-customer-managed-keys-for-an-automation-account)
+* [Использование управляемых клиентом ключей для учетной записи службы автоматизации Azure](./automation-secure-asset-encryption.md#use-of-customer-managed-keys-for-an-automation-account)
 
-* [Резервное копирование данных Azure для учетных записей службы автоматизации](https://docs.microsoft.com/azure/automation/automation-managing-data#data-backup)
+* [Резервное копирование данных Azure для учетных записей службы автоматизации](./automation-managing-data.md#data-backup)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1172,11 +1172,11 @@ ms.locfileid: "85255892"
 
 **Руководство**. при необходимости обеспечить возможность регулярного развертывания шаблонов Azure Resource Manager в изолированной подписке. Проверка восстановления резервных копий ключей, управляемых клиентом.
 
-* [Развертывание ресурсов с помощью шаблонов ARM и портал Azure](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-portal)
+* [Развертывание ресурсов с помощью шаблонов ARM и портал Azure](../azure-resource-manager/templates/deploy-portal.md)
 
-* [Как восстановить резервную копию ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+* [Как восстановить резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 
-* [Использование управляемых клиентом ключей для учетной записи службы автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-secure-asset-encryption#use-of-customer-managed-keys-for-an-automation-account)
+* [Использование управляемых клиентом ключей для учетной записи службы автоматизации Azure](./automation-secure-asset-encryption.md#use-of-customer-managed-keys-for-an-automation-account)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1188,11 +1188,11 @@ ms.locfileid: "85255892"
 
 Используйте функцию интеграции системы управления версиями, чтобы синхронизировать модули Runbook в учетной записи службы автоматизации с сценариями в репозитории системы управления версиями.
 
-* [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
+* [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
 
-* [О разрешениях и группах в Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/security/about-permissions)
+* [О разрешениях и группах в Azure DevOps](/azure/devops/organizations/security/about-permissions)
 
-* [Использование интеграции системы управления версиями](https://docs.microsoft.com/azure/automation/source-control-integration)
+* [Использование интеграции системы управления версиями](./source-control-integration.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1200,7 +1200,7 @@ ms.locfileid: "85255892"
 
 ## <a name="incident-response"></a>Реагирование на инциденты
 
-*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](https://docs.microsoft.com/azure/security/benchmarks/security-control-incident-response).*
+*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](../security/benchmarks/security-control-incident-response.md).*
 
 ### <a name="101-create-an-incident-response-guide"></a>10.1. Создание руководства по реагированию на инциденты
 
@@ -1222,9 +1222,9 @@ ms.locfileid: "85255892"
 
 Кроме того, четко помечайте подписки тегами (например, рабочие, нерабочие) и создайте систему именования, чтобы четко определить и классифицировать ресурсы Azure, особенно обрабатывающие конфиденциальные данные. Вы несете ответственность за назначение приоритета оповещениям, требующим действий по исправлению, в зависимости от важности ресурсов Azure и среды, в которой произошел инцидент.
 
-* [Оповещения безопасности в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-overview)
+* [Оповещения безопасности в Центре безопасности Azure](../security-center/security-center-alerts-overview.md)
 
-* [использование тегов для упорядочения ресурсов в Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [использование тегов для упорядочения ресурсов в Azure](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1244,7 +1244,7 @@ ms.locfileid: "85255892"
 
 **Руководство**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться в том, что проблемы устранены.
 
-* [Как задать контакт безопасности Центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details)
+* [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1254,9 +1254,9 @@ ms.locfileid: "85255892"
 
 **Руководство**. Экспортируйте оповещения и рекомендации Центра безопасности Azure с помощью функции непрерывного экспорта с целью выявления рисков для ресурсов Azure. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных Центра безопасности Azure для потоковой передачи оповещений в Azure Sentinel.
 
-* [Настройка непрерывного экспорта данных](https://docs.microsoft.com/azure/security-center/continuous-export)
+* [Настройка непрерывного экспорта данных](../security-center/continuous-export.md)
 
-* [Как выполнить потоковую передачу оповещений в Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-security-center)
+* [Как выполнить потоковую передачу оповещений в Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -1266,7 +1266,7 @@ ms.locfileid: "85255892"
 
 **Руководство**. Использование функции автоматизации рабочих процессов в центре безопасности Azure для автоматического запуска ответов с помощью "Logic Apps" в оповещениях системы безопасности и рекомендациях по защите ресурсов Azure.
 
-* [Как настроить автоматизацию рабочего процесса и Logic Apps](https://docs.microsoft.com/azure/security-center/workflow-automation)
+* [Как настроить автоматизацию рабочего процесса и Logic Apps](../security-center/workflow-automation.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -1274,7 +1274,7 @@ ms.locfileid: "85255892"
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
-*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](https://docs.microsoft.com/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
+*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](../security/benchmarks/security-control-penetration-tests-red-team-exercises.md).*
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических результатов безопасности.
 
@@ -1290,5 +1290,5 @@ ms.locfileid: "85255892"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

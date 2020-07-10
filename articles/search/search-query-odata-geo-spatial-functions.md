@@ -19,11 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 902996c1813931638012c78f81bd65c400bee7a1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 09e492ae950003f97ed86355257c97777cd71c1a
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74113176"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86202004"
 ---
 # <a name="odata-geo-spatial-functions-in-azure-cognitive-search---geodistance-and-geointersects"></a>Геопространственные функции OData в Azure Когнитивный поиск `geo.distance` и`geo.intersects`
 
@@ -104,23 +105,31 @@ lon_lat_list ::= lon_lat(',' lon_lat)*
 
 Найти все гостиницы в 10 километрах заданной контрольной точки (где Location является полем типа `Edm.GeographyPoint` ):
 
+```odata-filter-expr
     geo.distance(location, geography'POINT(-122.131577 47.678581)') le 10
+```
 
 Найти все гостиницы в заданном окне просмотра, описанные в виде многоугольника (где Location — поле типа `Edm.GeographyPoint` ). Обратите внимание, что многоугольник замкнут (первая и последняя точки должны совпадать, и [точки должны быть нанесены в порядке против часовой стрелки](https://docs.microsoft.com/rest/api/searchservice/supported-data-types#Anchor_1)).
 
+```odata-filter-expr
     geo.intersects(location, geography'POLYGON((-122.031577 47.578581, -122.031577 47.678581, -122.131577 47.678581, -122.031577 47.578581))')
+```
 
 ### <a name="order-by-examples"></a>Примеры выражений упорядочивания
 
 Сортировка гостиниц по убыванию `rating` , затем по возрастанию по расстоянию от заданных координат:
 
+```odata-filter-expr
     rating desc,geo.distance(location, geography'POINT(-122.131577 47.678581)') asc
+```
 
 Сортировать Гостиницы в убывающем порядке по `search.score` и `rating` , а затем в возрастающем порядке по расстоянию от заданных координат, чтобы между двумя гостиницами с одинаковыми рейтингами первым был указан ближайший вариант:
 
+```odata-filter-expr
     search.score() desc,rating desc,geo.distance(location, geography'POINT(-122.131577 47.678581)') asc
+```
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)

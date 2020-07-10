@@ -1,5 +1,5 @@
 ---
-title: Ответственное машинное обучение (ML)
+title: Ответственная Машинное обучение (ML) Preview
 titleSuffix: Azure Machine Learning
 description: Сведения о концепции ответственного машинного обучения и возможностях его применения в Машинном обучении Azure
 services: machine-learning
@@ -8,14 +8,15 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: luquinta
 author: luisquintanilla
-ms.date: 05/08/2020
-ms.openlocfilehash: 09bb7710df19482e9625c1834d2646f70368fc1d
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.date: 07/09/2020
+ms.openlocfilehash: 4f14d4a9207b3bd0ba242973443b8e756527fd70
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85920363"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86201934"
 ---
-# <a name="responsible-machine-learning-ml"></a>Ответственное машинное обучение (ML)
+# <a name="responsible-machine-learning-ml-preview"></a>Ответственная Машинное обучение (ML) Preview
 
 Из этой статьи вы узнаете о том, что представляет собой ответственное машинное обучение и как применить его на практике в Машинном обучении Azure.
 

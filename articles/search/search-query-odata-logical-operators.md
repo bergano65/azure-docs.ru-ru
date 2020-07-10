@@ -19,11 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 2d3952f7d2adc26892cbebcd962f2ea25b86de7d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 741bf9e2aba6f893f670e86fb8bf5cd6c8b9d803
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74113187"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86201995"
 ---
 # <a name="odata-logical-operators-in-azure-cognitive-search---and-or-not"></a>Логические операторы OData в Azure Когнитивный поиск — `and` , `or` ,`not`
 
@@ -71,7 +72,7 @@ logical_expression ::=
 
 Большинство логических выражений, таких как функции и сравнения, не могут формировать `null` значения, а логические операторы не могут применяться к `null` литералу напрямую (например, `x and null` не допускается). Однако логические поля могут быть `null` , поэтому необходимо знать, как `and` `or` работают операторы, и при `not` наличии значения NULL. Это приводится в следующей таблице, где `b` — поле типа `Edm.Boolean` :
 
-| Expression | Результат `b` , если имеет значение`null` |
+| Выражение | Результат `b` , если имеет значение`null` |
 | --- | --- |
 | `b` | `false` |
 | `not b` | `true` |
@@ -92,21 +93,29 @@ logical_expression ::=
 
 Сопоставление документов, в которых `rating` поле находится в диапазоне от 3 до 5 включительно:
 
+```odata-filter-expr
     rating ge 3 and rating le 5
+```
 
 Сопоставление документов, в которых все элементы `ratings` поля имеют значение меньше 3 или больше 5:
 
+```odata-filter-expr
     ratings/all(r: r lt 3 or r gt 5)
+```
 
 Сопоставление документов, в которых `location` поле находится внутри заданного многоугольника, и документ не содержит термин "общедоступный".
 
+```odata-filter-expr
     geo.intersects(location, geography'POLYGON((-122.031577 47.578581, -122.031577 47.678581, -122.131577 47.678581, -122.031577 47.578581))') and not search.ismatch('public')
+```
 
 Сопоставьте документы для гостиниц в Vancouver, Канаде, где имеется комната Deluxe с базовой частотой менее 160:
 
+```odata-filter-expr
     Address/City eq 'Vancouver' and Address/Country eq 'Canada' and Rooms/any(room: room/Type eq 'Deluxe Room' and room/BaseRate lt 160)
+```
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)
