@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 06/16/2020
 ms.custom: dpalled
-ms.openlocfilehash: ebb62b67b56134902f2752b43dd25fb0a7c6ccd4
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: a0b53749a32e79d690cf4412fdac82b18dfe2f2e
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045779"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86183636"
 ---
 # <a name="adding-support-for-long-data-type"></a>Добавление поддержки для типа данных Long
 
@@ -63,39 +63,43 @@ ms.locfileid: "86045779"
 
 *Предыдущее определение переменной:*
 
-    "PropertyValueVariable": {
+```tsx
+"PropertyValueVariable": {
 
-        "kind": "numeric",
+    "kind": "numeric",
 
-        "value": {
+    "value": {
 
-            "tsx": "$event.propertyValue.Double"
+        "tsx": "$event.propertyValue.Double"
 
-        },
+    },
 
-        "filter": null,
+    "filter": null,
 
-        "aggregation": {
+    "aggregation": {
 
-            "tsx": "avg($value)"
+        "tsx": "avg($value)"
+```
 
 *Новое определение переменной:*
 
-    "PropertyValueVariable ": {
+```tsx
+"PropertyValueVariable ": {
 
-        "kind": "numeric",
+    "kind": "numeric",
 
-        "value": {
+    "value": {
 
-            "tsx": "coalesce($event.propertyValue.Long, toLong($event.propertyValue.Double))"
+        "tsx": "coalesce($event.propertyValue.Long, toLong($event.propertyValue.Double))"
 
-        },
+    },
 
-        "filter": null,
+    "filter": null,
 
-        "aggregation": {
+    "aggregation": {
 
-            "tsx": "avg($value)"
+        "tsx": "avg($value)"
+```
 
 В качестве пользовательского [выражения временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax) также можно использовать *"объединения ($Event. PropertyValue. Double, toDouble ($Event. PropertyValue. Long))"* .
 
@@ -124,77 +128,81 @@ ms.locfileid: "86045779"
 
 *Предыдущее определение переменной:*
 
-    "PropertyValueVariable_Long": {
+```tsx
+"PropertyValueVariable_Long": {
 
-        "kind": "categorical",
+    "kind": "categorical",
 
-        "value": {
+    "value": {
 
-            "tsx": "tolong($event.propertyValue.Double)"
+        "tsx": "tolong($event.propertyValue.Double)"
 
-        },
+    },
 
-        "categories": [
+    "categories": [
 
-        {
-            "label": "Good",
+    {
+        "label": "Good",
 
-            "values": [0, 1, 2 ]
+        "values": [0, 1, 2 ]
 
-        },
+    },
 
-        {
+    {
 
-            "label": "Bad",
+        "label": "Bad",
 
-            "values": [ 3, 4 ]
+        "values": [ 3, 4 ]
 
-        } ],
+    } ],
 
-        "defaultCategory": {
+    "defaultCategory": {
 
-            "label": "Unknown"
-
-        }
+        "label": "Unknown"
 
     }
+
+}
+```
 
 *Новое определение переменной:*
 
-    "PropertyValueVariable_Long": {
+```tsx
+"PropertyValueVariable_Long": {
 
-        "kind": "categorical",
+    "kind": "categorical",
 
-        "value": {
+    "value": {
 
-            "tsx": "coalesce($event.propertyValue.Long, tolong($event.propertyValue.Double))"
+        "tsx": "coalesce($event.propertyValue.Long, tolong($event.propertyValue.Double))"
 
-        },
+    },
 
-        "categories": [
+    "categories": [
 
-        {
-            "label": "Good",
+    {
+        "label": "Good",
 
-            "values": [0, 1, 2 ]
+        "values": [0, 1, 2 ]
 
-        },
+    },
 
-        {
+    {
 
-            "label": "Bad",
+        "label": "Bad",
 
-            "values": [ 3, 4 ]
+        "values": [ 3, 4 ]
 
-        } ],
+    } ],
 
-        "defaultCategory": {
+    "defaultCategory": {
 
-            "label": "Unknown"
-
-        }
+        "label": "Unknown"
 
     }
+
+}
+```
 
 Переменная категории по-прежнему требует, чтобы значение было целочисленным типом. Тип данных всех аргументов объединения () должен быть типа long в пользовательском [выражении временных рядов.](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)
 
@@ -209,6 +217,6 @@ ms.locfileid: "86045779"
 
 Если вы являетесь пользователем горячего магазина с большим количеством свойств и считаете, что это изменение приведет к принудительной отправке среды через ограничение имени свойства 1 000 WS, отправьте запрос в службу поддержки через портал Azure и сообщите об этом взаимодействии.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Полный список поддерживаемых типов данных см. в [этой](concepts-supported-data-types.md) статье.

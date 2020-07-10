@@ -11,12 +11,12 @@ ms.date: 03/19/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 8328750849f5466c8754499694a41615776ff3da
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 036cb15cf16b5f90dc17ccdce378a073a398d403
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85201707"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86181341"
 ---
 # <a name="design-guidance-for-using-replicated-tables-in-synapse-sql-pool"></a>Руководство по проектированию для использования реплицированных таблиц в пуле Synapse SQL
 
@@ -149,9 +149,9 @@ WHERE d.FiscalYear = 2004
 
 Например, ниже представлен шаблон загрузки данных из четырех источников и запуска четырех операций перестроения.
 
-        Load from source 1.
+- Загрузка из источника 1.
 - Инструкция SELECT вызывает перестроение 1.
-        Загрузка из источника 2.
+- Загрузка из источника 2.
 - Инструкция SELECT вызывает перестроение 2.
 - Загрузка из источника 3.
 - Инструкция SELECT вызывает перестроение 3.

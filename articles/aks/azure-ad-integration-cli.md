@@ -2,14 +2,16 @@
 title: rbИнтеграция Azure Active Directory со службой Azure Kubernetes
 description: Узнайте, как использовать Azure CLI для создания кластера Azure Kubernetes Service (AKS) с поддержкой Azure Active Directory.
 services: container-service
+author: TomGeske
 ms.topic: article
-ms.date: 04/16/2019
-ms.openlocfilehash: 85441b53b22b4d33ee2ff967d777cc3267e171da
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.date: 07/08/2020
+ms.author: thomasge
+ms.openlocfilehash: 0465c54df2095cff7647e974765e61fa9b9ff3e1
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86106107"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169465"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli"></a>Интеграция Azure Active Directory со службой Azure Kubernetes с помощью Azure CLI
 
@@ -19,9 +21,9 @@ ms.locfileid: "86106107"
 
 Полный пример скрипта, используемый в этой статье, см. в разделе [Azure CLI Samples AKS Integration by Azure AD][complete-script].
 
-Действительны следующие ограничения.
+## <a name="the-following-limitations-apply"></a>Действительны следующие ограничения.
 
-- Azure Active Directory можно включить только при создании нового кластера с поддержкой RBAC. Вы не можете включить эту службу в существующем кластере AKS.
+- Azure AD можно включить только в кластере с поддержкой RBAC.
 
 ## <a name="before-you-begin"></a>Перед началом
 

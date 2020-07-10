@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/20/2020
-ms.openlocfilehash: 0c9982fd4aa6459cdcbd715077f08092075a9776
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 05eb92e2fb887b5c64e2c73576fe85a4543ac1b7
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84610072"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86184503"
 ---
 # <a name="customer-owned-storage-accounts-for-log-ingestion-in-azure-monitor"></a>Учетные записи хранения, принадлежащие клиенту, для приема данных журнала в Azure Monitor
 
@@ -39,7 +40,7 @@ Azure Monitor использует учетные записи хранения 
 
 - быть доступной для ресурсов в вашей виртуальной сети, которая записывает журналы в хранилище;
 - находиться в том же регионе, что и рабочая область, с которой она связан;
-- явно разрешать Log Analytics считывать данные журналов в учетной записи хранилища с помощью нажатия кнопки *Allow trusted MS services to access this storage account* (Разрешить доверенным службам MS доступ к этой учетной записи хранилища).
+- Разрешить Azure Monitor доступ. Если вы решили ограничить доступ к учетной записи хранения для выбора сетей, обязательно разрешите это исключение: *разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения*.
 
 ## <a name="process-to-configure-customer-owned-storage"></a>Процесс настройки хранилища, принадлежащего клиенту
 Базовый процесс использования собственной учетной записи хранения для приема выглядит следующим образом:
@@ -50,7 +51,12 @@ Azure Monitor использует учетные записи хранения 
 
 Использование REST API — это единственный метод, доступный для создания и удаления ссылок. Сведения об определенном запросе API для каждого процесса приведены в следующих разделах.
 
-## <a name="api-request-values"></a>Значения запроса API
+## <a name="command-line-and-rest-api"></a>Командная строка и REST API
+
+### <a name="command-line"></a>Командная строка
+Чтобы создать связанные учетные записи хранения и управлять ими, используйте команду [AZ Monitor журнала-Analytics Workspace Link-Storage](https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/linked-storage). Эта команда может связывать учетные записи хранения и отменять связи между ними из рабочей области и перечислять связанные учетные записи хранения.
+
+### <a name="request-and-cli-values"></a>Значения запроса и CLI
 
 #### <a name="datasourcetype"></a>dataSourceType 
 
@@ -72,37 +78,7 @@ subscriptions/{subscriptionId}/resourcesGroups/{resourceGroupName}/providers/Mic
 ```
 
 
-
-## <a name="get-current-links"></a>Получение текущих ссылок
-
-### <a name="get-linked-storage-accounts-for-a-specific-data-source-type"></a>Получение связанных учетных записей хранения для определенного типа источника данных
-
-#### <a name="api-request"></a>Запрос API
-
-```
-GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/linkedStorageAccounts/{dataSourceType}?api-version=2019-08-01-preview  
-```
-
-#### <a name="response"></a>Ответ 
-
-```json
-{
-    "properties":
-    {
-        "dataSourceType": "CustomLogs",
-        "storageAccountIds  ": 
-        [  
-            "<storage_account_resource_id_1>",
-            "<storage_account_resource_id_2>"
-        ],
-    },
-    "id":"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/microsoft. operationalinsights/workspaces/{resourceName}/linkedStorageAccounts/CustomLogs",
-    "name": "CustomLogs",
-    "type": "Microsoft.OperationalInsights/workspaces/linkedStorageAccounts"
-}
-```
-
-### <a name="get-all-linked-storage-accounts"></a>Получение всех связанных учетных записей хранения
+### <a name="get-linked-storage-accounts-for-all-data-source-types"></a>Получить связанные учетные записи хранения для всех типов источников данных
 
 #### <a name="api-request"></a>Запрос API
 
@@ -144,6 +120,34 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
             "type": "Microsoft.OperationalInsights/workspaces/linkedStorageAccounts"
         }
     ]
+}
+```
+
+
+### <a name="get-linked-storage-accounts-for-a-specific-data-source-type"></a>Получение связанных учетных записей хранения для определенного типа источника данных
+
+#### <a name="api-request"></a>Запрос API
+
+```
+GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/linkedStorageAccounts/{dataSourceType}?api-version=2019-08-01-preview  
+```
+
+#### <a name="response"></a>Реагирование 
+
+```json
+{
+    "properties":
+    {
+        "dataSourceType": "CustomLogs",
+        "storageAccountIds  ": 
+        [  
+            "<storage_account_resource_id_1>",
+            "<storage_account_resource_id_2>"
+        ],
+    },
+    "id":"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/microsoft. operationalinsights/workspaces/{resourceName}/linkedStorageAccounts/CustomLogs",
+    "name": "CustomLogs",
+    "type": "Microsoft.OperationalInsights/workspaces/linkedStorageAccounts"
 }
 ```
 

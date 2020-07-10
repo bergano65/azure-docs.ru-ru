@@ -3,12 +3,12 @@ title: Мониторинг производительности служб пр
 description: Мониторинг производительности приложений для служб приложений Azure. Загрузка диаграммы и время отклика, сведения о зависимостях и Настройка оповещений о производительности.
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: 0f4d4dedab30839db56cb47ac7ac103413f2d4be
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 574aefa4d554be7b0027c921289d8d15cffb8e49
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82733470"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169941"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Мониторинг производительности Службы приложений Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "82733470"
  
  Ниже приведена сводка данных, собираемых для каждого маршрута.
         
-|  | Коллекция .NET Basic | Рекомендуемая коллекция для .NET |
+| Данные | Коллекция .NET Basic | Рекомендуемая коллекция для .NET |
 | --- | --- | --- |
 | Добавляет тенденции использования ЦП, памяти и операций ввода-вывода. |Да |Да |
 | Собирает тенденции использования и обеспечивает сопоставление от результатов доступности до транзакций. | Да |Да |
@@ -376,7 +376,7 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 В таблице ниже приведено более подробное описание этих значений, их основных причин и Рекомендуемые исправления.
 
-|Значение проблемы|Объяснение|Fix
+|Значение проблемы|Пояснение|Исправление
 |---- |----|---|
 | `AppAlreadyInstrumented:true` | Это значение указывает, что расширение обнаружило, что некоторые аспекты пакета SDK уже имеются в приложении и будут отключаться. Это может быть вызвано ссылкой на `System.Diagnostics.DiagnosticSource` , `Microsoft.AspNet.TelemetryCorrelation` или`Microsoft.ApplicationInsights`  | Удалите ссылки. Некоторые из этих ссылок добавляются по умолчанию из определенных шаблонов Visual Studio, а в более ранних версиях Visual Studio могут быть добавлены ссылки на `Microsoft.ApplicationInsights` .
 |`AppAlreadyInstrumented:true` | Если приложение предназначено для .NET Core 2,1 или 2,2, а ссылается на [Microsoft. AspNetCore. ALL](https://www.nuget.org/packages/Microsoft.AspNetCore.All) meta-Package, то оно переносится в Application Insights, а расширение будет отключаться. | Клиентам в .NET Core 2.1, 2.2 [рекомендуется](https://github.com/aspnet/Announcements/issues/287) использовать вместо него мета-пакет Microsoft. AspNetCore. app.|

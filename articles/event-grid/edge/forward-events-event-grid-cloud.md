@@ -5,15 +5,14 @@ author: VidyaKukke
 manager: rajarv
 ms.author: vkukke
 ms.reviewer: spelluru
-ms.date: 10/29/2019
+ms.date: 07/08/2020
 ms.topic: article
-ms.service: event-grid
-services: event-grid
-ms.openlocfilehash: 7184fb5c45ce41de2bd63b55fb67cbd9ba6361e3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bfe150a45c70bc5bed18f8e929c9567905cd38f5
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76844723"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86171607"
 ---
 # <a name="tutorial-forward-events-to-event-grid-cloud"></a>Учебник. Пересылка событий в облако сетки событий
 
@@ -24,7 +23,7 @@ ms.locfileid: "76844723"
 
  Для работы с этим руководством необходимо иметь представление о концепциях службы "Сетка событий" в [пограничных](concepts.md) и [Azure](../concepts.md). Дополнительные типы назначения см. в разделе [обработчики событий](event-handlers.md). 
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 Для выполнения шагов, описанных в данном учебнике, потребуется следующее.
 
 * **Подписка Azure** . Создайте [бесплатную учетную запись](https://azure.microsoft.com/free) , если она еще не создана. 
@@ -194,7 +193,7 @@ ms.locfileid: "76844723"
 
 * Удалите раздел и подписки, созданные в облаке (сетка событий Azure).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы опубликовали событие в службе "Сетка событий" в облаке Azure. Теперь, когда вы знакомы с основными шагами для пересылки в сетку событий в облаке, сделайте следующее:
 

@@ -5,15 +5,16 @@ services: automation
 ms.subservice: update-management
 ms.date: 03/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: d08afc6e501fd76167e0939633442213958f0d49
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: a2d16bdca18b7fc0afab2a3deb325d1a75be3bb8
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83834634"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185183"
 ---
 # <a name="manage-updates-for-multiple-vms"></a>Управление обновлениями для нескольких виртуальных машин
 
-С помощью управления обновлениями службы автоматизации Azure вы можете управлять обновлениями и исправлениями виртуальных машин Windows и Linux. В учетной записи [службы автоматизации Azure](automation-offering-get-started.md) вы можете сделать следующее:
+С помощью управления обновлениями службы автоматизации Azure вы можете управлять обновлениями и исправлениями виртуальных машин Windows и Linux. В учетной записи [службы автоматизации Azure](./index.yml) вы можете сделать следующее:
 
 - подключить виртуальные машины к управлению обновлениями;
 - оценить состояние доступных обновлений;

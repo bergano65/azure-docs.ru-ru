@@ -3,11 +3,12 @@ title: Индекс примеров схем
 description: Индексы соответствия и стандартные примеры для развертывания сред, политик и базовых решений Cloud Adoption Framework с помощью Azure Blueprints.
 ms.date: 07/01/2020
 ms.topic: sample
-ms.openlocfilehash: 7e45cbbbf7cf6c2e267156dbb0087a19d8288aa2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ef85ef0615fa0817a574240e65b7670daeaff33b
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85832327"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86181562"
 ---
 # <a name="azure-blueprints-samples"></a>Примеры для Azure Blueprints
 
@@ -15,7 +16,7 @@ ms.locfileid: "85832327"
 
 ## <a name="standards-based-blueprint-samples"></a>Примеры схем на основе стандартов
 
-|  |  |
+| Образец | Описание |
 |---------|---------|
 | [Australian Government ISM PROTECTED](./ism-protected/control-mapping.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям Australian Government ISM PROTECTED. |
 | [Общие сведения о Тесте производительности системы безопасности Azure](./azure-security-benchmark.md) | В этом документе описаны ограничения для обеспечения соответствия требованиям [тестов производительности системы безопасности Azure](../../../security/benchmarks/overview.md). |

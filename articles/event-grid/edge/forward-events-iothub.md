@@ -5,15 +5,14 @@ author: VidyaKukke
 manager: rajarv
 ms.author: vkukke
 ms.reviewer: spelluru
-ms.date: 10/29/2019
+ms.date: 07/08/2020
 ms.topic: article
-ms.service: event-grid
-services: event-grid
-ms.openlocfilehash: d0034810ff86de2a40e275ca54a2f0f9cbc856c2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 36dc7d098892fb2be7c2ba3d75de7c7adef1a4f1
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76844706"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86171556"
 ---
 # <a name="tutorial-forward-events-to-iothub"></a>Учебник. Пересылка событий в IoTHub
 
@@ -27,7 +26,7 @@ ms.locfileid: "76844706"
 - [Основные понятия сетки событий](concepts.md)
 - [Концентратор IoT Edge](../../iot-edge/module-composition.md) 
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 Для выполнения шагов, описанных в данном учебнике, потребуется следующее.
 
 * **Подписка Azure** . Создайте [бесплатную учетную запись](https://azure.microsoft.com/free) , если она еще не создана. 
@@ -134,7 +133,7 @@ ms.locfileid: "76844706"
 
 Обновите маршрут концентратора ребра, чтобы переслать события подписки на события, перенаправляемые в IoTHub, следующим образом:
 
-1. Войдите на [портал Azure](https://ms.portal.azure.com)
+1. Войдите на [портал Azure](https://ms.portal.azure.com).
 1. Перейдите в **центр Интернета вещей**.
 1. Выберите **IOT Edge** в меню.
 1. Выберите идентификатор целевого устройства в списке устройств.
@@ -204,7 +203,7 @@ ms.locfileid: "76844706"
     ```
 * Удалите все ресурсы, созданные при настройке маршрутизации IoTHub в облаке.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы создали раздел "Сетка событий", подписку на концентратор ребра и опубликованные события. Теперь, когда вы знакомы с основными шагами для пересылки в центр ребра, ознакомьтесь со следующими статьями:
 

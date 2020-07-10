@@ -8,11 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 4d2ee2bccf94dca933981c3070323b659eab6cfa
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: f7bf1c8f3f1ecbb21207776a99bba99d123ea891
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836096"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86171947"
 ---
 # <a name="how-to-implement-faceted-navigation-in-azure-cognitive-search"></a>Как реализовать фасетную навигацию в службе Когнитивный поиск Azure
 
@@ -283,10 +284,12 @@ if (businessTitleFacet != "")
 
 Фасеты позволяют отобразить в результатах поиска документы, соответствующие определенному фасету. В следующем примере результаты поиска фразы *cloud computing* (облачные вычисления) включают 254 элемента с типом содержимого *internal specification* (внутренняя спецификация). Элементы не обязательно взаимно исключают друг друга. Если элемент соответствует условиям обоих фильтров, он учитывается в каждом из них. Это дублирование возможно при фасетном поиске в полях `Collection(Edm.String)`, которые часто используются для обозначения документов тегами.
 
-        Search term: "cloud computing"
-        Content type
-           Internal specification (254)
-           Video (10) 
+```output
+Search term: "cloud computing"
+Content type
+   Internal specification (254)
+   Video (10)
+```
 
 Как правило, если вам кажется, что при использовании фасета вы получаете слишком много результатов, мы рекомендуем добавить фильтры, чтобы пользователи могли сузить область поиска.
 
@@ -344,7 +347,7 @@ if (businessTitleFacet != "")
 
 Чтобы указать диапазон значений фасета, как показано на предыдущем снимке экрана, используйте список значений:
 
-    facet=listPrice,values:10|25|100|500|1000|2500
+> `facet=listPrice,values:10|25|100|500|1000|2500`
 
 Каждый диапазон создается с использованием отправной точки 0 и конечной точки, равной значению из списка. Затем из всего диапазона удаляется предыдущий диапазон, что позволяет создавать дискретные интервалы. Служба когнитивного поиска Azure выполняет эти действия в рамках фасетной навигации. Для создания каждого интервала не нужно писать код.
 

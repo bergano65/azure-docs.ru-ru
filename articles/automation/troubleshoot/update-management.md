@@ -5,11 +5,12 @@ services: automation
 ms.date: 06/30/2020
 ms.topic: conceptual
 ms.service: automation
-ms.openlocfilehash: 95e3fc12a77124c32e220d700a112f52cbad08fb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 74250a54d7b835ceb37614450de07e9e3baefd83
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85801892"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86183161"
 ---
 # <a name="troubleshoot-update-management-issues"></a>Устранение неполадок с Управлением обновлениями
 
@@ -52,9 +53,9 @@ Error details: Failed to enable the Update solution
 
 ### <a name="issue"></a>Проблемы
 
-Старые обновления отображаются для учетной записи службы автоматизации как отсутствующие, даже если они были заменены. Заменяемое обновление не надо устанавливать, так как доступно более позднее обновление, устраняющее ту же уязвимость. Управление обновлениями игнорирует заменяемое обновление и делает его неприменимым. Вместо него используется заменяющее обновление. Сведения о связанных проблемах см. в разделе о [замененном обновлении](https://docs.microsoft.com/windows/deployment/update/windows-update-troubleshooting#the-update-is-not-applicable-to-your-computer).
+Старые обновления отображаются для учетной записи службы автоматизации как отсутствующие, даже если они были заменены. Заменяемое обновление не надо устанавливать, так как доступно более позднее обновление, устраняющее ту же уязвимость. Управление обновлениями игнорирует заменяемое обновление и делает его неприменимым. Вместо него используется заменяющее обновление. Сведения о связанных проблемах см. в разделе о [замененном обновлении](/windows/deployment/update/windows-update-troubleshooting#the-update-is-not-applicable-to-your-computer).
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Заменяемые обновления не были правильно отмечены как отклоненные, чтобы их можно было считать неприменимыми.
 
@@ -90,7 +91,7 @@ Error details: Failed to enable the Update solution
 
 * У вас есть компьютеры, которые имеют состояние `Not assessed` в разделе **Соответствие**. Однако в журналах Azure Monitor отображаются данные пульса для гибридной рабочей роли Runbook, но не для Управления обновлениями.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта проблема может быть вызвана проблемами с локальной конфигурацией или неправильно настроенной конфигурацией области. Возможные причины:
 
@@ -139,7 +140,7 @@ Error details: Failed to enable the Update solution
 Error details: Unable to register Automation Resource Provider for subscriptions
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Поставщик ресурсов службы автоматизации не зарегистрирован в подписке.
 
@@ -155,7 +156,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 4. В списке поставщиков ресурсов убедитесь в том, что поставщик ресурсов Microsoft.Automation зарегистрирован.
 
-5. Если он отсутствует в списке, зарегистрируйте поставщик Microsoft.Automation, выполнив действия из статьи [Устранение ошибок регистрации поставщика ресурсов](/azure/azure-resource-manager/resource-manager-register-provider-errors).
+5. Если он отсутствует в списке, зарегистрируйте поставщик Microsoft.Automation, выполнив действия из статьи [Устранение ошибок регистрации поставщика ресурсов](../../azure-resource-manager/templates/error-register-resource-provider.md).
 
 ## <a name="scenario-scheduled-update-with-a-dynamic-schedule-missed-some-machines"></a><a name="scheduled-update-missed-machines"></a>Сценарий. В запланированном обновлении с динамическим расписанием отсутствуют некоторые компьютеры
 
@@ -177,7 +178,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 Если ваша подписка не настроена для поставщика ресурсов службы автоматизации, вы не сможете запрашивать или получать сведения на компьютерах в этой подписке. Чтобы проверить регистрацию подписки, выполните следующие действия.
 
-1. На [портале Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types#azure-portal) перейдите к списку служб Azure.
+1. На [портале Azure](../../azure-resource-manager/management/resource-providers-and-types.md#azure-portal) перейдите к списку служб Azure.
 
 2. Щелкните **Все службы**, а затем в общей группе служб выберите **Подписки**. 
 
@@ -187,7 +188,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 5. Убедитесь в том, что поставщик ресурсов Microsoft.Automation зарегистрирован.
 
-6. Если он отсутствует в списке, зарегистрируйте поставщик Microsoft.Automation, выполнив действия из статьи [Устранение ошибок регистрации поставщика ресурсов](/azure/azure-resource-manager/resource-manager-register-provider-errors).
+6. Если он отсутствует в списке, зарегистрируйте поставщик Microsoft.Automation, выполнив действия из статьи [Устранение ошибок регистрации поставщика ресурсов](../../azure-resource-manager/templates/error-register-resource-provider.md).
 
 #### <a name="machines-not-available-or-not-tagged-correctly-when-schedule-executed"></a>Компьютеры недоступны или неправильно помечены тегами при выполнении расписания
 
@@ -195,9 +196,9 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 1. На портале Azure откройте учетную запись службы автоматизации и выберите **Управление обновлениями**.
 
-2. Проверьте [журнал Управления обновлениями](https://docs.microsoft.com/azure/automation/manage-update-multi#view-results-of-an-update-deployment), чтобы определить точное время, когда было запущено развертывание обновления. 
+2. Проверьте [журнал Управления обновлениями](../manage-update-multi.md#view-results-of-an-update-deployment), чтобы определить точное время, когда было запущено развертывание обновления. 
 
-3. Чтобы [найти изменения на компьютерах](https://docs.microsoft.com/azure/governance/resource-graph/how-to/get-resource-changes#find-detected-change-events-and-view-change-details), которые (как вы подозреваете) были пропущены Управлением обновлениями, используйте Azure Resource Graph (ARG). 
+3. Чтобы [найти изменения на компьютерах](../../governance/resource-graph/how-to/get-resource-changes.md#find-detected-change-events-and-view-change-details), которые (как вы подозреваете) были пропущены Управлением обновлениями, используйте Azure Resource Graph (ARG). 
 
 4. Ищите изменения за продолжительный период, например за один день до запуска развертывания обновления.
 
@@ -213,7 +214,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 Виртуальные машины для выбранных областей динамической группы не отображаются в списке предварительного просмотра на портале Azure. В этом списке находятся все компьютеры, полученные через запрос ARG для выбранных областей. Области фильтруются для компьютеров, на которых установлены гибридные рабочие роли Runbook, к которым у вас есть право доступа. 
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
  
 Возможные причины этой проблемы:
 
@@ -225,13 +226,13 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 #### <a name="incorrect-access-on-selected-scopes"></a>Неверный доступ к выбранным областям
 
-На портале Azure отображаются только те компьютеры, к которым у вас есть доступ на запись в заданной области. Если у вас нет нужного уровня доступа к выбранным областям, ознакомьтесь со статьей. [Руководство. Предоставление доступа пользователю с помощью RBAC и портала Azure](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal).
+На портале Azure отображаются только те компьютеры, к которым у вас есть доступ на запись в заданной области. Если у вас нет нужного уровня доступа к выбранным областям, ознакомьтесь со статьей. [Руководство. Предоставление доступа пользователю с помощью RBAC и портала Azure](../../role-based-access-control/quickstart-assign-role-user-portal.md).
 
 #### <a name="arg-query-doesnt-return-expected-machines"></a>Запрос ARG не извлекает ожидаемые компьютеры
 
 Выполните следующие действия, чтобы выяснить, правильно ли работают запросы.
 
-1. Выполните запрос ARG, чтобы его формат соответствовал показанному ниже в колонке обозревателя Resource Graph на портале Azure. Этот запрос имитирует фильтры, выбранные при создании динамической группы в Управлении обновлениями. Ознакомьтесь со статьей [Использование динамических групп с Управлением обновлениями](https://docs.microsoft.com/azure/automation/automation-update-management-groups). 
+1. Выполните запрос ARG, чтобы его формат соответствовал показанному ниже в колонке обозревателя Resource Graph на портале Azure. Этот запрос имитирует фильтры, выбранные при создании динамической группы в Управлении обновлениями. Ознакомьтесь со статьей [Использование динамических групп с Управлением обновлениями](../automation-update-management-groups.md). 
 
     ```kusto
     where (subscriptionId in~ ("<subscriptionId1>", "<subscriptionId2>") and type =~ "microsoft.compute/virtualmachines" and properties.storageProfile.osDisk.osType == "<Windows/Linux>" and resourceGroup in~ ("<resourceGroupName1>","<resourceGroupName2>") and location in~ ("<location1>","<location2>") )
@@ -266,7 +267,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 4. Проверьте наличие гибридной рабочей роли для этого компьютера.
 
-5. Если компьютер не настроен в качестве гибридной рабочей роли, внесите изменения, используя инструкции по [автоматизации ресурсов в центре обработки данных или облаке с помощью гибридной рабочей роли Runbook](https://docs.microsoft.com/azure/automation/automation-hybrid-runbook-worker).
+5. Если компьютер не настроен в качестве гибридной рабочей роли, внесите изменения, используя инструкции по [автоматизации ресурсов в центре обработки данных или облаке с помощью гибридной рабочей роли Runbook](../automation-hybrid-runbook-worker.md).
 
 6. Присоедините компьютер к группе гибридных рабочих ролей Runbook.
 
@@ -282,7 +283,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 The components for the 'Update Management' solution have been enabled, and now this virtual machine is being configured. Please be patient, as this can sometimes take up to 15 minutes.
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта ошибка может возникать по следующим причинам.
 
@@ -336,13 +337,13 @@ Update
 The client has permission to perform action 'Microsoft.Compute/virtualMachines/write' on scope '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroupName/providers/Microsoft.Automation/automationAccounts/automationAccountName/softwareUpdateConfigurations/updateDeploymentName', however the current tenant '00000000-0000-0000-0000-000000000000' is not authorized to access linked subscription '00000000-0000-0000-0000-000000000000'.
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта ошибка возникает при создании развертывания обновлений с виртуальными машинами Azure, расположенными в другом клиенте.
 
 ### <a name="resolution"></a>Решение
 
-Используйте обходной путь, чтобы запланировать обновление этих элементов. Чтобы создать расписание, можно использовать командлет [New-AzAutomationSchedule](https://docs.microsoft.com/powershell/module/az.automation/new-azautomationschedule?view=azps-3.7.0) с параметром `ForUpdateConfiguration`. Затем примените командлет [New-AzAutomationSoftwareUpdateConfiguration](https://docs.microsoft.com/powershell/module/Az.Automation/New-AzAutomationSoftwareUpdateConfiguration?view=azps-3.7.0), передав ему параметр `NonAzureComputer` со списком компьютеров в другом клиенте. В приведенном ниже примере показано, как это сделать.
+Используйте обходной путь, чтобы запланировать обновление этих элементов. Чтобы создать расписание, можно использовать командлет [New-AzAutomationSchedule](/powershell/module/az.automation/new-azautomationschedule?view=azps-3.7.0) с параметром `ForUpdateConfiguration`. Затем примените командлет [New-AzAutomationSoftwareUpdateConfiguration](/powershell/module/Az.Automation/New-AzAutomationSoftwareUpdateConfiguration?view=azps-3.7.0), передав ему параметр `NonAzureComputer` со списком компьютеров в другом клиенте. В приведенном ниже примере показано, как это сделать.
 
 ```azurepowershell-interactive
 $nonAzurecomputers = @("server-01", "server-02")
@@ -360,7 +361,7 @@ New-AzAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -AutomationA
 
 Несмотря на то, что для параметра **управления перезагрузкой** установлено значение **Никогда не перезагружать**, компьютеры по-прежнему перезагружаются после установки обновлений.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 В Центр обновления Windows могли внести изменения, используя некоторые разделы реестра, с помощью которых можно изменить поведение при перезагрузке.
 
@@ -410,7 +411,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 
 При регистрации компьютера Windows в Управлении обновлениями отобразятся обновления, установленные без развертывания.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Обновления устанавливаются в Windows автоматически, как только они становятся доступными. Такое поведение может вызвать путаницу, если вы не планировали развертывание обновления на компьютере.
 
@@ -420,7 +421,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 
 Для клиентов Управления обновлениями рекомендуется задать для этого раздела значение 3: `auto download but do not auto install`.
 
-Ознакомьтесь с дополнительными сведениями о [настройке автоматических обновлений](https://docs.microsoft.com/windows/deployment/update/waas-wu-settings#configure-automatic-updates).
+Ознакомьтесь с дополнительными сведениями о [настройке автоматических обновлений](/windows/deployment/update/waas-wu-settings#configure-automatic-updates).
 
 ## <a name="scenario-machine-is-already-registered-to-a-different-account"></a><a name="machine-already-registered"></a>Сценарий. Компьютер уже зарегистрирован в другой учетной записи
 
@@ -432,7 +433,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 Unable to Register Machine for Patch Management, Registration Failed with Exception System.InvalidOperationException: {"Message":"Machine is already registered to a different account."}
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Компьютер уже развернут в другой рабочей области для Управления обновлениями.
 
@@ -463,7 +464,7 @@ The certificate presented by the service <wsid>.oms.opinsights.azure.com was not
 Access is denied. (Exception form HRESULT: 0x80070005(E_ACCESSDENIED))
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Возможно, прокси-сервер, шлюз или брандмауэр блокируют сетевую связь. 
 
@@ -481,7 +482,7 @@ Access is denied. (Exception form HRESULT: 0x80070005(E_ACCESSDENIED))
 Unable to Register Machine for Patch Management, Registration Failed with Exception AgentService.HybridRegistration. PowerShell.Certificates.CertificateCreationException: Failed to create a self-signed certificate. ---> System.UnauthorizedAccessException: Access is denied.
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Гибридной рабочей роли Runbook не удалось создать самозаверяющий сертификат.
 
@@ -508,7 +509,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 * У вас есть компьютеры, которые отображаются как `Not assessed` в разделе **Совместимость**, а ниже появляется сообщение об ошибке.
 * На портале отобразится код ошибки HRESULT.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Агент обновления (агент Центра обновления Windows для Windows; диспетчер пакетов для дистрибутива Linux) настроен неправильно. Управление обновлениями зависит от агента обновления на компьютере для предоставления необходимых обновлений, состояния исправления и результатов развернутых исправлений. Без этой информации Управление обновлениями не сможет должным образом предоставлять отчеты об исправлениях, которые требуется установить или которые уже установлены.
 
@@ -574,9 +575,9 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ### <a name="machines-dont-install-updates"></a>Обновления не устанавливаются на компьютеры
 
-Попробуйте выполнить обновление непосредственно на компьютере. Если не удается обновить программное обеспечение на компьютере, см. [список возможных ошибок в руководстве по устранению неполадок](https://docs.microsoft.com/azure/automation/troubleshoot/update-management#hresult).
+Попробуйте выполнить обновление непосредственно на компьютере. Если не удается обновить программное обеспечение на компьютере, см. [список возможных ошибок в руководстве по устранению неполадок](#hresult).
 
-Если обновления выполняются локально, попробуйте удалить и переустановить агент на компьютере, следуя инструкциям из статьи [Удаление виртуальной машины для Управления обновлениями](https://docs.microsoft.com/azure/automation/automation-onboard-solutions-from-browse#clean-up-resources).
+Если обновления выполняются локально, попробуйте удалить и переустановить агент на компьютере, следуя инструкциям из статьи [Удаление виртуальной машины для Управления обновлениями](../automation-remove-vms-from-update-management.md).
 
 ### <a name="i-know-updates-are-available-but-they-dont-show-as-available-on-my-machines"></a>Я знаю, что обновления доступны, но установить их на компьютерах не предлагается
 
@@ -592,11 +593,11 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ### <a name="updates-show-as-installed-but-i-cant-find-them-on-my-machine"></a>Обновления отображаются как установленные, но найти их на компьютере не удается
 
-Обновления часто заменяются другими обновлениями. Дополнительные сведения см. в описании причины [Обновление заменено](https://docs.microsoft.com/windows/deployment/update/windows-update-troubleshooting#the-update-is-not-applicable-to-your-computer) в руководстве по устранению неполадок Центра обновлений Windows.
+Обновления часто заменяются другими обновлениями. Дополнительные сведения см. в описании причины [Обновление заменено](/windows/deployment/update/windows-update-troubleshooting#the-update-is-not-applicable-to-your-computer) в руководстве по устранению неполадок Центра обновлений Windows.
 
 ### <a name="installing-updates-by-classification-on-linux"></a>Установка обновлений с учетом классификации на платформе Linux
 
-При развертывании обновлений на Linux с учетом классификации (критические обновления и обновления системы безопасности) следует учитывать некоторые важные ограничения, особенно для CentOS. Эти ограничения описаны на [странице с общими сведениями об Управлении обновлениями](https://docs.microsoft.com/azure/automation/automation-update-management#linux-2).
+При развертывании обновлений на Linux с учетом классификации (критические обновления и обновления системы безопасности) следует учитывать некоторые важные ограничения, особенно для CentOS. Эти ограничения описаны на [странице с общими сведениями об Управлении обновлениями](../automation-update-management.md#linux).
 
 ### <a name="kb2267602-is-consistently-missing"></a>Статья базы знаний № 2267602 постоянно отсутствует
 

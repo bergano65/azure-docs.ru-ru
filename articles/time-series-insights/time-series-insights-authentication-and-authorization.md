@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.custom: seodec18, has-adal-ref
-ms.openlocfilehash: 94fef951bf1c5c9d69a9b49cd9465d7d248c74a7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9668307047771304c2d3785dc7ff3f760171a43f
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85099222"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86182004"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Проверка подлинности и авторизация для API Azure Time Series Insights
 
@@ -91,7 +91,7 @@ ms.locfileid: "85099222"
 > [!IMPORTANT]
 > Если вы используете [библиотеку Azure Active Directory для проверки подлинности (ADAL)](https://docs.microsoft.com/azure/active-directory/azuread-dev/active-directory-authentication-libraries) , см. статью о [миграции на MSAL](https://docs.microsoft.com/azure/active-directory/develop/msal-net-migration).
 
-    See our [Manage GA reference data for an Azure Time Series Insights environment using C#](time-series-insights-manage-reference-data-csharp.md) article to learn more.
+   Дополнительные сведения см. в статье Управление общедоступными [справочными данными для среды службы "аналитика временных рядов Azure" с помощью C#](time-series-insights-manage-reference-data-csharp.md) .
 
 ## <a name="common-headers-and-parameters"></a>Общие заголовки и параметры
 

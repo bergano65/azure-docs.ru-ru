@@ -11,22 +11,22 @@ ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 04/17/2018
+ms.date: 07/09/2020
 ms.author: sawinark
-ms.openlocfilehash: 95f29331c723e584cdecdd27a714f22377dfd26d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e7729318e6121b0072546b8e111a8b782e95906d
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85253585"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86183432"
 ---
 # <a name="run-an-ssis-package-with-the-stored-procedure-activity-in-azure-data-factory"></a>Запуск в Фабрике данных Azure пакета SQL Server Integration Services с помощью действия хранимой процедуры
 
-[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этой статье описывается, как запустить пакет SQL Server Integration Services (SSIS) в конвейере Фабрики данных Azure с помощью действия хранимой процедуры. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 ### <a name="azure-sql-database"></a>База данных SQL Azure 
 В этом руководстве для размещения каталога служб SSIS используется база данных SQL Azure. Вы также можете использовать Управляемый экземпляр Azure SQL.
@@ -97,7 +97,7 @@ ms.locfileid: "85253585"
         ![Связанная служба "База данных SQL Azure"](./media/how-to-invoke-ssis-package-stored-procedure-activity/azure-sql-database-linked-service-settings.png)
 5. В окне Свойства перейдите на вкладку **хранимая процедура** на вкладке **учетная запись SQL** и выполните следующие действия. 
 
-    1. Выберите команду **Изменить**. 
+    1. Нажмите кнопку **Изменить**. 
     2. В поле **имя хранимой процедуры** введите `sp_executesql` . 
     3. Нажмите кнопку **+ Создать** в разделе **Параметры хранимой процедуры**. 
     4. В поле для **имени** параметра введите **stmt**. 
@@ -116,7 +116,7 @@ ms.locfileid: "85253585"
     ![Проверка конвейера](./media/how-to-invoke-ssis-package-stored-procedure-activity/validate-pipeline.png)
 7. Опубликуйте конвейер в фабрике данных, нажав кнопку **Опубликовать все**. 
 
-    ![Публикация](./media/how-to-invoke-ssis-package-stored-procedure-activity/publish-all-button.png)    
+    ![Опубликовать](./media/how-to-invoke-ssis-package-stored-procedure-activity/publish-all-button.png)    
 
 ### <a name="run-and-monitor-the-pipeline"></a>Запуск и мониторинг конвейера
 В этом разделе вы активируете выполнение конвейера, а затем будете отслеживать его. 
@@ -360,5 +360,5 @@ while ($True) {
     ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Вы также можете отслеживать конвейер с помощью портала Azure. Пошаговые инструкции см. в разделе [Мониторинг конвейера](quickstart-create-data-factory-resource-manager-template.md#monitor-the-pipeline).

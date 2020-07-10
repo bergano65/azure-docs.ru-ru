@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 04/29/2019
-ms.openlocfilehash: f0fba815cdc8425f016b74be7df36e5b28dfee3d
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: 9a6ee4f5b18c6747796f33bc433d1d40982205a3
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85856961"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185013"
 ---
 # <a name="azure-cache-for-redis-faq"></a>Вопросы и ответы по кэшу Redis для Azure
 Ответы на часто задаваемые вопросы, шаблоны и рекомендации по поводу кэша Azure для Redis.
@@ -41,6 +41,7 @@ ms.locfileid: "85856961"
 * [Какое предложение и размер кэша Azure для Redis мне следует использовать?](#what-azure-cache-for-redis-offering-and-size-should-i-use)
 * [Производительность кэша Azure для Redis](#azure-cache-for-redis-performance)
 * [В каком регионе следует размещать мой кэш?](#in-what-region-should-i-locate-my-cache)
+* [Где находятся кэшированные данные?](#where-do-my-cached-data-reside)
 * [Как выставляются счета за использование кэша Azure для Redis?](#how-am-i-billed-for-azure-cache-for-redis)
 * [Могу ли я использовать кэш Azure для Redis с облаком Azure для государственных организаций, Microsoft Azure для Китая или Microsoft Azure – Германия?](#can-i-use-azure-cache-for-redis-with-azure-government-cloud-azure-china-cloud-or-microsoft-azure-germany)
 
@@ -149,6 +150,13 @@ ms.locfileid: "85856961"
 ### <a name="in-what-region-should-i-locate-my-cache"></a>В каком регионе следует размещать мой кэш?
 Для лучшей производительности и минимальной задержки размещайте свой кэш Azure для Redis в одном регионе с вашим кэшируемым клиентским приложением.
 
+### <a name="where-do-my-cached-data-reside"></a>Где находятся кэшированные данные?
+Кэш Azure для Redis хранит данные вашего приложения в ОЗУ виртуальной машины или виртуальных машинах в зависимости от уровня, на котором размещается кэш. Ваши данные находятся строго в регионе Azure, выбранном по умолчанию. Существует два случая, когда данные могут покинуть регион:
+  1. При включении сохраняемости в кэше Azure Cache для Redis будет выполнять резервное копирование данных в собственную учетную запись хранения Azure. Если учетная запись хранения, которую вы задасте, находится в другом регионе, копия данных будет находиться в таком случае.
+  1. Если вы настроили георепликацию, а вторичный кэш находится в другом регионе, в обычном случае данные будут реплицированы в этот регион.
+
+Чтобы использовать эти функции, необходимо явно настроить кэш Azure для Redis. Кроме того, у вас есть полный контроль над регионом, в котором находится учетная запись хранения или дополнительный кэш.
+
 <a name="cache-billing"></a>
 
 ### <a name="how-am-i-billed-for-azure-cache-for-redis"></a>Как выставляются счета за использование кэша Azure для Redis?
@@ -215,20 +223,20 @@ StackExchange.Redis имеет много параметров. В этом ра
 
 ```csharp
 private static Lazy<ConnectionMultiplexer>
-      lazyConnection = new Lazy<ConnectionMultiplexer>
-    (() =>
+    lazyConnection = new Lazy<ConnectionMultiplexer> (() =>
     {
-        // Connect to a locally running instance of Redis to simulate a local cache emulator experience.
+        // Connect to a locally running instance of Redis to simulate
+        // a local cache emulator experience.
         return ConnectionMultiplexer.Connect("127.0.0.1:6379");
     });
 
-    public static ConnectionMultiplexer Connection
+public static ConnectionMultiplexer Connection
+{
+    get
     {
-        get
-        {
-            return lazyConnection.Value;
-        }
+        return lazyConnection.Value;
     }
+}
 ```
 
 При необходимости можно настроить файл [redis.conf](https://redis.io/topics/config) для более точного соответствия [параметрам кэша по умолчанию](cache-configure.md#default-redis-server-configuration) для подключенного к сети кэша Azure для Redis.
@@ -367,11 +375,11 @@ private static Lazy<ConnectionMultiplexer>
 
 Если взглянуть на пример сообщения об ошибке от StackExchange.Redis (сборка 1.0.450 или более поздней версии), вы увидите, что теперь оно содержит статистику ThreadPool (подробности о рабочих потоках и потоках IOCP см. ниже).
 
-```output
-    System.TimeoutException: Timeout performing GET MyKey, inst: 2, mgr: Inactive,
-    queue: 6, qu: 0, qs: 6, qc: 0, wr: 0, wq: 0, in: 0, ar: 0,
-    IOCP: (Busy=6,Free=994,Min=4,Max=1000),
-    WORKER: (Busy=3,Free=997,Min=4,Max=1000)
+```
+System.TimeoutException: Timeout performing GET MyKey, inst: 2, mgr: Inactive,
+queue: 6, qu: 0, qs: 6, qc: 0, wr: 0, wq: 0, in: 0, ar: 0,
+IOCP: (Busy=6,Free=994,Min=4,Max=1000),
+WORKER: (Busy=3,Free=997,Min=4,Max=1000)
 ```
 
 В предыдущем примере можно увидеть, что для потока IOCP существует шесть занятых потоков, а минимальное количество потоков — четыре. В этом случае клиент, скорее всего, столкнется с двумя задержками по 500 мс, так как 6 больше 4.
@@ -386,20 +394,20 @@ private static Lazy<ConnectionMultiplexer>
 
 * Рекомендуется изменить этот параметр программно с помощью метода [ThreadPool.SetMinThreads (...)](/dotnet/api/system.threading.threadpool.setminthreads#System_Threading_ThreadPool_SetMinThreads_System_Int32_System_Int32_) в `global.asax.cs`. Пример:
 
-```cs
-private readonly int minThreads = 200;
-void Application_Start(object sender, EventArgs e)
-{
-    // Code that runs on application startup
-    AreaRegistration.RegisterAllAreas();
-    RouteConfig.RegisterRoutes(RouteTable.Routes);
-    BundleConfig.RegisterBundles(BundleTable.Bundles);
-    ThreadPool.SetMinThreads(minThreads, minThreads);
-}
-```
+    ```csharp
+    private readonly int minThreads = 200;
+    void Application_Start(object sender, EventArgs e)
+    {
+        // Code that runs on application startup
+        AreaRegistration.RegisterAllAreas();
+        RouteConfig.RegisterRoutes(RouteTable.Routes);
+        BundleConfig.RegisterBundles(BundleTable.Bundles);
+        ThreadPool.SetMinThreads(minThreads, minThreads);
+    }
+    ```
 
-  > [!NOTE]
-  > Значение, указанное в этом методе, — это глобальный параметр, который влияет на весь домен приложения. Например, если у вас 4-ядерный компьютер и вам нужно установить для параметров *minWorkerThreads* и *minIOThreads* значение 50 на ЦП во время выполнения, используется **ThreadPool.SetMinThreads (200, 200)** .
+    > [!NOTE]
+    > Значение, указанное в этом методе, — это глобальный параметр, который влияет на весь домен приложения. Например, если у вас 4-ядерный компьютер и вам нужно установить для параметров *minWorkerThreads* и *minIOThreads* значение 50 на ЦП во время выполнения, используется **ThreadPool.SetMinThreads (200, 200)** .
 
 * Кроме того, можно указать минимальное число потоков с помощью [параметра конфигурации *minIoThreads* или *minWorkerThreads*](https://msdn.microsoft.com/library/vstudio/7w2sway1(v=vs.100).aspx) в элементе конфигурации `<processModel>` в `Machine.config`, обычно расположенном в `%SystemRoot%\Microsoft.NET\Framework\[versionNumber]\CONFIG\`. **Установка минимального числа потоков таким способом обычно не рекомендуется, так как это параметр на уровне системы.**
 
@@ -455,7 +463,7 @@ void Application_Start(object sender, EventArgs e)
   * Было достигнуто предельное пороговое значение пропускной способности.
   * Выполнение операций, связанных с ЦП, заняло слишком много времени.
 * Причины на стороне сервера
-  * В предложении кэша уровня "Стандартный" служба кэша Azure для Redis инициировала отработку отказа с переходом с основного узла на вторичный узел.
+  * В стандартном предложении кэша служба кэша Azure для Redis инициировала отработку отказа с основного узла на узел реплики.
   * В Azure было выполнено исправление экземпляра, в котором был развернут кэш.
     * Это могли быть обновления сервера Redis или обычное обслуживание ВМ.
 
