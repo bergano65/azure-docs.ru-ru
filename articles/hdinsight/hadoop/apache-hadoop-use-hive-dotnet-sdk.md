@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/24/2019
-ms.openlocfilehash: 12d3762889253e2e3d359c6bf44bd166482c69f3
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: f1927d44daf49d938d2c43ce9de02cb1dbfb735f
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86076544"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207755"
 ---
 # <a name="run-apache-hive-queries-using-hdinsight-net-sdk"></a>Выполнение запросов Apache Hive с использованием пакета SDK .NET для HDInsight
 
@@ -43,7 +43,9 @@ ms.locfileid: "86076544"
 
 1. Введите следующую команду в окне консоли диспетчера пакетов NuGet:
 
-        Install-Package Microsoft.Azure.Management.HDInsight.Job
+    ```console
+    Install-Package Microsoft.Azure.Management.HDInsight.Job
+    ```
 
 1. Измените приведенный ниже код, чтобы инициализировать значения переменных: `ExistingClusterName, ExistingClusterUsername, ExistingClusterPassword,DefaultStorageAccountName,DefaultStorageAccountKey,DefaultStorageContainerName` . Затем используйте измененный код в качестве всего содержимого **Program.CS** в Visual Studio.
 
@@ -138,7 +140,7 @@ ms.locfileid: "86076544"
 
 ![Выходные данные задания Hadoop Hive в HDInsight](./media/apache-hadoop-use-hive-dotnet-sdk/hdinsight-hadoop-use-hive-net-sdk-output.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как отправлять запросы Apache Hive с помощью пакета SDK для HDInsight .NET. Дополнительные сведения см. в следующих статьях:
 

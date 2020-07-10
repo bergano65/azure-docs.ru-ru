@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: 6490292ef898e00c7677c829be41f3b06c638164
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: cc04a891bb32ede6c7bb72a339b728642cf343ed
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86076612"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207828"
 ---
 # <a name="use-apache-ambari-hive-view-with-apache-hadoop-in-hdinsight"></a>Использование представления Hive Apache Ambari с Apache Hadoop в HDInsight
 
@@ -21,7 +21,7 @@ ms.locfileid: "86076612"
 
 Узнайте, как выполнять запросы Hive с использованием представления Hive Apache Ambari. Представление Hive позволяет создавать, оптимизировать и выполнять запросы Hive из веб-браузера.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 
@@ -60,7 +60,7 @@ ms.locfileid: "86076612"
 
     Эти инструкции выполняют следующие действия:
 
-    |. | Описание: |
+    |. | Описание |
     |---|---|
     |DROP TABLE|удаляет таблицу и файл данных, если таблица уже существует.|
     |CREATE EXTERNAL TABLE|создает "внешнюю" таблицу в Hive. Внешние таблицы хранят только определение таблицы в Hive. Данные остаются в исходном расположении.|
@@ -75,8 +75,10 @@ ms.locfileid: "86076612"
 
 1. Когда запрос будет выполнен, на вкладке **Результаты** появятся результаты этой операции. Вот пример результата запроса:
 
-        loglevel       count
-        [ERROR]        3
+    ```output
+    loglevel       count
+    [ERROR]        3
+    ```
 
     Для просмотра сведений журнала, созданных заданием, можно использовать вкладку **Журнал** .
 
@@ -146,7 +148,7 @@ add jar /myudfs.jar;
 create temporary function myawesomeudf as 'com.myudfs.Awesome';
 ```
 
-Затем вы можете использовать эту функцию в своем запросе. Например, `SELECT myawesomeudf(name) FROM people;`.
+Затем вы можете использовать эту функцию в своем запросе. Пример: `SELECT myawesomeudf(name) FROM people;`.
 
 Дополнительные сведения об использовании определяемых пользователем функций с Hive в HDInsight см. в следующих статьях:
 
@@ -157,7 +159,7 @@ create temporary function myawesomeudf as 'com.myudfs.Awesome';
 
 Вы можете изменять различные настройки Hive. Например, для изменения механизма выполнения для Hive с Tez (значение по умолчанию) на MapReduce.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общая информация о Hive в HDInsight:
 
