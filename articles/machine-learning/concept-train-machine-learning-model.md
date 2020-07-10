@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/13/2020
 ms.custom: tracking-python
-ms.openlocfilehash: a8c70254c7ba7a9525b843240230ac158e29a338
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: da437f830a452a57ea1290b3d85a3faa92895bcd
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85985741"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86147047"
 ---
 # <a name="train-models-with-azure-machine-learning"></a>Обучение моделей с помощью Машинного обучения Azure
 
@@ -131,6 +131,10 @@ ms.locfileid: "85985741"
 
 * [Использование расширения CLI для Машинного обучения Azure](reference-azure-machine-learning-cli.md)
 * [MLOps в Azure](https://github.com/microsoft/MLOps)
+
+## <a name="vs-code"></a>VS Code
+
+Вы можете использовать расширение VS Code для запуска заданий обучения и управления ими. Дополнительные сведения см. в разделе [руководство по управлению ресурсами VS Code](how-to-manage-resources-vscode.md#experiments) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

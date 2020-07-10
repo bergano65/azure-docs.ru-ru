@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 5/1/2019
 ms.author: alsin
-ms.openlocfilehash: 0fd2bcfb32524c6911a70157f58cea1e48b7bea9
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 4f02d92e6264a05ed2cb4021adb5ae6312f58a85
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/08/2020
-ms.locfileid: "86135240"
+ms.locfileid: "86146639"
 ---
 # <a name="azure-serial-console-for-windows"></a>Серийная консоль Azure для Windows
 
@@ -100,11 +100,10 @@ ms.locfileid: "86135240"
 
 1. Подключение к последовательной консоли Если подключение выполнено успешно, в командной строке отображается приглашение **SAC>** :
 
-    ![Подключение к SAC](./media/virtual-machines-serial-console/virtual-machine-windows-serial-console-connect-sac.png)
-
+   ![Подключение к SAC](./media/virtual-machines-serial-console/virtual-machine-windows-serial-console-connect-sac.png)
 1. Введите `cmd`, чтобы создать канала с экземпляром командной строки.
 
-1. Введите `ch -si 1` или нажмите сочетание клавиш `<esc>+<tab>`, чтобы переключиться на этот канал, в котором выполняется экземпляр командной строки.
+1. Введите `ch -si 1` или нажмите сочетание клавиш, `<esc>+<tab>` чтобы перейти к каналу, на котором работает экземпляр Cmd.
 
 1. Нажмите клавишу **ВВОД**, а затем введите учетные данные для входа с привилегиями администратора.
 
@@ -112,7 +111,7 @@ ms.locfileid: "86135240"
 
 1. Чтобы запустить экземпляр PowerShell, введите `PowerShell` в экземпляре командной строки и нажмите клавишу **ВВОД**.
 
-    ![Открытие экземпляра PowerShell](./media/virtual-machines-serial-console/virtual-machine-windows-serial-console-powershell.png)
+   ![Открытие экземпляра PowerShell](./media/virtual-machines-serial-console/virtual-machine-windows-serial-console-powershell.png)
 
 ### <a name="use-the-serial-console-for-nmi-calls"></a>Использование последовательной консоли для вызовов немаскируемого прерывания
 Немаскируемое прерывание (NMI) предназначено для создания сигнала, который программное обеспечение на виртуальной машине не будет игнорировать. Раньше немаскируемые прерывания использовались для мониторинга аппаратных проблем в системах, требующих определенного времени отклика. Сегодня программисты и системные администраторы часто используют Node Managed Identity в качестве механизма для отладки или устранения неполадок в неотвечающих системах.

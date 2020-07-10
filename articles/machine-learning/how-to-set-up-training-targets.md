@@ -9,14 +9,14 @@ ms.reviewer: sgilley
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: how-to
-ms.date: 06/11/2020
+ms.date: 07/08/2020
 ms.custom: seodec18, tracking-python
-ms.openlocfilehash: 253d2c80f5a6ff96ba9249eddd127abb74f79a33
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c87812e665617f3ccfe48db3a0cca2ceac67f0bc
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85515811"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86147444"
 ---
 # <a name="set-up-and-use-compute-targets-for-model-training"></a>Настройка и использование целевых объектов вычислений для обучения моделей 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -389,7 +389,7 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 
 ## <a name="set-up-with-vs-code"></a>Настройка с помощью VS Code
 
-Чтобы получить доступ к целевым объектам вычислений, которые связаны с вашей рабочей областью, а также создать их и управлять ими, можно использовать [расширение VS Code](tutorial-train-deploy-image-classification-model-vscode.md#configure-compute-targets) для Машинного обучения Azure.
+Чтобы получить доступ к целевым объектам вычислений, которые связаны с вашей рабочей областью, а также создать их и управлять ими, можно использовать [расширение VS Code](how-to-manage-resources-vscode.md#compute-clusters) для Машинного обучения Azure.
 
 ## <a name="submit-training-run-using-azure-machine-learning-sdk"></a><a id="submit"></a>Отправка запроса на запуск выполнения обучения с помощью пакета SDK для Машинного обучения Azure
 

@@ -9,14 +9,14 @@ ms.topic: how-to
 ms.author: sihhu
 author: MayMSFT
 ms.reviewer: nibaccam
-ms.date: 03/24/2020
+ms.date: 07/08/2020
 ms.custom: seodec18, tracking-python
-ms.openlocfilehash: cb52935b731a507d2408d174a5aa571fb2bfc973
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d6b1d5c66c1dd15fa12638dd451d1ce2fa8fa79f
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85609271"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146727"
 ---
 # <a name="connect-to-azure-storage-services"></a>Подключение к службам хранилища Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -52,16 +52,16 @@ ms.locfileid: "85609271"
 
 В настоящее время хранилища данных поддерживают хранение сведений о подключении к службам хранилищ, указанных в следующей таблице.
 
-| Тип&nbsp;хранилища | Тип&nbsp;проверки подлинности | [Студия&nbsp;машинного&nbsp;обучения Azure](https://ml.azure.com/) | [Пакет SDK для&nbsp;машинного&nbsp;обучения Azure для&nbsp;Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) |  [CLI&nbsp;машинного&nbsp;обучения Azure](reference-azure-machine-learning-cli.md) | [Rest API&nbsp;машинного&nbsp;обучения&nbsp;Azure](https://docs.microsoft.com/rest/api/azureml/)
----|---|---|---|---|---
-[Хранилище&nbsp;BLOB-объектов&nbsp;Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview)| Ключ учетной записи <br> Маркер SAS | ✓ | ✓ | ✓ |✓
-[Общая&nbsp;папка&nbsp;Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction)| Ключ учетной записи <br> Маркер SAS | ✓ | ✓ | ✓ |✓
-[Azure&nbsp;Data Lake&nbsp;Storage 1-го&nbsp;поколения](https://docs.microsoft.com/azure/data-lake-store/)| Субъект-служба| ✓ | ✓ | ✓ |✓
-[Azure&nbsp;Data Lake&nbsp;Storage 2-го&nbsp;поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction)| Субъект-служба| ✓ | ✓ | ✓ |✓
-[База данных&nbsp;SQL&nbsp;Azure](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview)| Проверка подлинности SQL <br>Субъект-служба| ✓ | ✓ | ✓ |✓
-[Azure&nbsp;PostgreSQL](https://docs.microsoft.com/azure/postgresql/overview) | Проверка подлинности SQL| ✓ | ✓ | ✓ |✓
-[База данных&nbsp;Azure&nbsp;для&nbsp;MySQL](https://docs.microsoft.com/azure/mysql/overview) | Проверка подлинности SQL|  | ✓* | ✓* |✓*
-[Файловая&nbsp;система&nbsp;Databricks](https://docs.microsoft.com/azure/databricks/data/databricks-file-system)| без аутентификации; | | ✓** | ✓ ** |✓** 
+| Тип&nbsp;хранилища | Тип&nbsp;проверки подлинности | [Студия&nbsp;машинного&nbsp;обучения Azure](https://ml.azure.com/) | [Пакет SDK для&nbsp;машинного&nbsp;обучения Azure для&nbsp;Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) |  [CLI&nbsp;машинного&nbsp;обучения Azure](reference-azure-machine-learning-cli.md) | [Rest API&nbsp;машинного&nbsp;обучения&nbsp;Azure](https://docs.microsoft.com/rest/api/azureml/) | VS Code
+---|---|---|---|---|---|---
+[Хранилище&nbsp;BLOB-объектов&nbsp;Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview)| Ключ учетной записи <br> Маркер SAS | ✓ | ✓ | ✓ |✓ |✓
+[Общая&nbsp;папка&nbsp;Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction)| Ключ учетной записи <br> Маркер SAS | ✓ | ✓ | ✓ |✓|✓
+[Azure&nbsp;Data Lake&nbsp;Storage 1-го&nbsp;поколения](https://docs.microsoft.com/azure/data-lake-store/)| Субъект-служба| ✓ | ✓ | ✓ |✓|
+[Azure&nbsp;Data Lake&nbsp;Storage 2-го&nbsp;поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction)| Субъект-служба| ✓ | ✓ | ✓ |✓|
+[База данных&nbsp;SQL&nbsp;Azure](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview)| Проверка подлинности SQL <br>Субъект-служба| ✓ | ✓ | ✓ |✓|
+[Azure&nbsp;PostgreSQL](https://docs.microsoft.com/azure/postgresql/overview) | Проверка подлинности SQL| ✓ | ✓ | ✓ |✓|
+[База данных&nbsp;Azure&nbsp;для&nbsp;MySQL](https://docs.microsoft.com/azure/mysql/overview) | Проверка подлинности SQL|  | ✓* | ✓* |✓*|
+[Файловая&nbsp;система&nbsp;Databricks](https://docs.microsoft.com/azure/databricks/data/databricks-file-system)| без аутентификации; | | ✓** | ✓ ** |✓** |
 
 * MySQL поддерживается только для класса [DataTransferStep](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.datatransferstep?view=azure-ml-py) конвейера. <br>
 ** Databricks поддерживаются только для класса [DatabricksStep](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.databricks_step.databricksstep?view=azure-ml-py) конвейера.
@@ -205,6 +205,9 @@ adlsgen2_datastore = Datastore.register_azure_data_lake_gen2(workspace=ws,
     
 ![Форма для нового хранилища данных.](media/how-to-access-data/new-datastore-form.png)
 
+### <a name="vs-code"></a>VS Code
+
+Вы можете создавать хранилища данных и управлять ими с помощью расширения Машинное обучение Azure VS Code. Дополнительные сведения см. в [VS Code руководства по управлению ресурсами](how-to-manage-resources-vscode.md#datastores) .
 
 <a name="get"></a>
 

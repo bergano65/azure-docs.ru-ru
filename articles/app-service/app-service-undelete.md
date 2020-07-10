@@ -5,11 +5,12 @@ author: btardif
 ms.author: byvinyal
 ms.date: 9/23/2019
 ms.topic: article
-ms.openlocfilehash: d147c87e8fb0fa9e01ba2dbaf732adaae082bcd7
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+ms.openlocfilehash: 94a5fd3ae1de0708f0e5550547f7ab2fc9f881cb
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84167797"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146226"
 ---
 # <a name="restore-deleted-app-service-app-using-powershell"></a>Восстановление удаленного приложения Службы приложений с помощью PowerShell
 
@@ -17,6 +18,10 @@ ms.locfileid: "84167797"
 
 > [!NOTE]
 > Удаленные приложения очищаются из системы через 30 дней после первоначального удаления. После очистки приложение нельзя восстановить.
+>
+
+> [!NOTE]
+> Функция отмены удаления не поддерживается для плана потребления.
 >
 
 ## <a name="re-register-app-service-resource-provider"></a>Повторная регистрация поставщика ресурсов Службы приложений

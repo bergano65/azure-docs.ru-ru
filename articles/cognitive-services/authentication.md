@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 11/22/2019
 ms.author: erhopf
-ms.openlocfilehash: 7c2484892f3de3c8eca3f766793be83bc7a29dc8
-ms.sourcegitcommit: 74ba70139781ed854d3ad898a9c65ef70c0ba99b
+ms.openlocfilehash: a56e815e3a4ac04d20b29163139ab40332c4bec4
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85445548"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146957"
 ---
 # <a name="authenticate-requests-to-azure-cognitive-services"></a>Проверка подлинности запросов к Azure Cognitive Services
 
@@ -28,7 +28,7 @@ ms.locfileid: "85445548"
 
 Чтобы выполнять запрос, вам нужно иметь учетную запись Azure и подписку Azure Cognitive Services. Если у вас есть учетная запись, пропустите этот раздел и перейдите к следующему. Если у вас нет учетной записи, у вас есть руководство по настройке в течение нескольких минут: [Создайте учетную запись Cognitive Services для Azure](cognitive-services-apis-create-account.md).
 
-Ключ подписки можно получить из [портал Azure](cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) после создания учетной записи или активации [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/my-apis).
+Вы можете получить ключ подписки из [портал Azure](cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) после [создания учетной записи](https://azure.microsoft.com/free/cognitive-services/).
 
 ## <a name="authentication-headers"></a>Заголовки проверки подлинности
 
@@ -75,7 +75,7 @@ curl -X POST 'https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 ### <a name="supported-regions"></a>Поддерживаемые регионы
 
-Если вы используете ключ подписки для нескольких служб в запросе к `api.cognitive.microsoft.com`, необходимо указать регион в URL-адресе. Например, `westus.api.cognitive.microsoft.com`.
+Если вы используете ключ подписки для нескольких служб в запросе к `api.cognitive.microsoft.com`, необходимо указать регион в URL-адресе. Например, так: `westus.api.cognitive.microsoft.com`.
 
 При использовании ключа подписки с несколькими службами в службе переводчика необходимо указать регион подписки с `Ocp-Apim-Subscription-Region` заголовком.
 
@@ -160,7 +160,7 @@ curl -X POST 'https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 [!INCLUDE [](../../includes/cognitive-services-azure-active-directory-authentication.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Что такое Cognitive Services?](welcome.md)
 * [Цены на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/)
