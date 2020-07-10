@@ -7,13 +7,14 @@ ms.reviewer: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 06/10/2020
+ms.date: 07/08/2020
 ms.author: jingwang
-ms.openlocfilehash: 8b4876377501209e19ac496d605d228208d2323d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 46108ed06659d234907c6eaa6841dc18022c73bf
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84670847"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86144131"
 ---
 # <a name="excel-format-in-azure-data-factory"></a>Формат Excel в фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -96,7 +97,55 @@ ms.locfileid: "84670847"
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="mapping-data-flow-properties"></a>Свойства потока данных для сопоставления
+
+В статье сопоставление потоков данных можно прочитать формат Excel в следующих хранилищах данных: [хранилище BLOB-объектов Azure](connector-azure-blob-storage.md#mapping-data-flow-properties), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md#mapping-data-flow-properties)и [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md#mapping-data-flow-properties). Можно указывать на файлы Excel либо с помощью набора данных Excel, либо с помощью [встроенного набора данных](data-flow-source.md#inline-datasets).
+
+### <a name="source-properties"></a>Свойства источника
+
+В таблице ниже перечислены свойства, поддерживаемые источником Excel. Эти свойства можно изменить на вкладке **Параметры источника** . При использовании встроенного набора данных вы увидите дополнительные параметры файла, которые совпадают со свойствами, описанными в разделе [Свойства набора данных](#dataset-properties) .
+
+| Имя                      | Описание                                                  | Обязательно | Допустимые значения                                            | Свойство сценария потока данных         |
+| ------------------------- | ------------------------------------------------------------ | -------- | --------------------------------------------------------- | --------------------------------- |
+| Подстановочные пути           | Будут обработаны все файлы, соответствующие пути с подстановочными знаками. Переопределяет папку и путь к файлу, заданные в наборе данных. | Нет       | String[]                                                  | вилдкардпасс                     |
+| Корневой путь раздела       | Для секционированных файловых данных можно ввести корневой путь к разделу, чтобы считывать секционированные папки в виде столбцов. | Нет       | Строковый                                                    | партитионрутпас                 |
+| Список файлов             | Указывает, указан ли источник на текстовый файл, в котором перечислены обрабатываемые файлы | Нет       | `true` или `false`                                         | fileList                          |
+| Столбец для хранения имени файла | Создать новый столбец с именем и путем к исходному файлу       | Нет       | Строковый                                                    | ровурлколумн                      |
+| После завершения          | Удалите или переместите файлы после обработки. Путь к файлу начинается с корня контейнера | Нет       | Delete: `true` или`false` <br> Поместить`['<from>', '<to>']` | пуржефилес <br> мовефилес         |
+| Фильтровать по дате последнего изменения   | Выберите фильтр файлов в зависимости от времени последнего изменения | Нет       | Метка времени                                                 | modifiedAfter <br> modifiedBefore |
+
+### <a name="source-example"></a>Пример исходного кода
+
+Ниже приведен пример исходной конфигурации Excel в сопоставлении потоков данных с помощью режима набора данных.
+
+![Источник Excel](media/data-flow/excel-source.png)
+
+Связанный сценарий потока данных:
+
+```
+source(allowSchemaDrift: true,
+    validateSchema: false,
+    wildcardPaths:['*.xls']) ~> ExcelSource
+```
+
+При использовании встроенного набора данных в поле сопоставление потока данных отображаются следующие параметры источника.
+
+![Исходный встроенный набор данных Excel](media/data-flow/excel-source-inline-dataset.png)
+
+Связанный сценарий потока данных:
+
+```
+source(allowSchemaDrift: true,
+    validateSchema: false,
+    format: 'excel',
+    fileSystem: 'container',
+    folderPath: 'path',
+    fileName: 'sample.xls',
+    sheetName: 'worksheet',
+    firstRowAsHeader: true) ~> ExcelSourceInlineDataset
+```
+
+## <a name="next-steps"></a>Следующие шаги
 
 - [Действие копирования в фабрике данных Azure](copy-activity-overview.md)
 - [Действие поиска](control-flow-lookup-activity.md)

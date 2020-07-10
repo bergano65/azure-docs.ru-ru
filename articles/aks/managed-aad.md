@@ -3,16 +3,16 @@ title: Использование Azure AD в службе Kubernetes Azure
 description: Узнайте, как использовать Azure AD в службе Kubernetes Azure (AKS).
 services: container-service
 manager: gwallace
-author: mlearned
+author: TomGeske
 ms.topic: article
-ms.date: 06/25/2020
-ms.author: mlearned
-ms.openlocfilehash: f22b79cb8a730fb9c28dd1a208ab672473218b79
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.date: 07/08/2020
+ms.author: thomasge
+ms.openlocfilehash: 9cacd2454dc987f7d507bb4b677e742f0be0d391
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86105954"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86166507"
 ---
 # <a name="aks-managed-azure-active-directory-integration-preview"></a>AKS-управляемая интеграция Azure Active Directory (Предварительная версия)
 
@@ -26,10 +26,6 @@ ms.locfileid: "86105954"
 Администраторы кластера могут настроить Kubernetes управления доступом на основе ролей (RBAC) на основе удостоверения пользователя или членства в группе каталогов. Кластеры AKS проходят аутентификацию Azure AD с помощью OpenID Connect. OpenID Connect представляет собой уровень идентификации на основе протокола OAuth 2.0. Дополнительные сведения о OpenID Connect Connect см. в [документации по Open ID Connect][open-id-connect].
 
 Дополнительные сведения о потоке интеграции AAD см. в [документации по основным понятиям интеграции Azure Active Directory](concepts-identity.md#azure-active-directory-integration).
-
-## <a name="limitations"></a>Ограничения
-
-* Сейчас вы не можете обновить существующий интегрированный кластер AKS Azure AD до нового интерфейса Azure AD, управляемого AKS.
 
 > [!IMPORTANT]
 > Функции предварительной версии AKS доступны на уровне самообслуживания. Предварительные версии предоставляются "как есть" и "как есть" и исключаются из соглашений об уровне обслуживания и ограниченной гарантии. Предварительные версии AKS частично охвачены службой поддержки клиентов. Таким образом, эти функции не предназначены для использования в рабочей среде. Дополнительные сведения доступны в следующих статьях поддержки.

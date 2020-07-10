@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: prgomata
 ms.reviewer: euang
-ms.openlocfilehash: 515fd9bfedc5bc5d3cefda2a357c351f515fb5f5
-ms.sourcegitcommit: 3988965cc52a30fc5fed0794a89db15212ab23d7
+ms.openlocfilehash: ebf948fdb1df76cb7bcb03ee5d85f581d856524f
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85194677"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918726"
 ---
 # <a name="introduction"></a>Введение
 
@@ -30,7 +30,7 @@ ms.locfileid: "85194677"
 
 ## <a name="authentication-in-azure-synapse-analytics"></a>Проверка подлинности в Azure Synapse Analytics
 
-Проверка подлинности между системами упрощена в Azure Synapse Analytics. Служба токенов подключается к Azure Active Directory (AAD), чтобы получить маркеры безопасности, используемые при доступе к учетной записи хранения или к серверу хранилища данных. 
+Проверка подлинности между системами упрощена в Azure Synapse Analytics. Служба токенов подключается к Azure Active Directory (AAD), чтобы получить маркеры безопасности, используемые при доступе к учетной записи хранения или к серверу хранилища данных.
 
 По этой причине нет необходимости создавать учетные данные или указывать их в API соединителя, если проверка подлинности AAD настроена для учетной записи хранения и сервера хранилища данных. В противном случае можно указать проверку подлинности SQL. Дополнительные сведения см. в разделе [Использование](#usage).
 
@@ -40,19 +40,27 @@ ms.locfileid: "85194677"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Наличие роли **db_exporter** в базе данных или пуле SQL, между которыми необходимо передавать данные.
+- Наличие роли **db_exporter** в базе данных и пуле SQL, между которыми будут передаваться данные.
+- Наличие роли "Участник данных BLOB-объектов хранилища" в учетной записи хранения по умолчанию.
 
-Чтобы создать пользователей, подключитесь к базе данных и выполните действия, указанные в следующих примерах:
+Чтобы создать пользователей, подключитесь к базе данных пула SQL и используйте следующие примеры:
 
 ```sql
+--SQL User
 CREATE USER Mary FROM LOGIN Mary;
+
+--Azure Active Directory User
 CREATE USER [mike@contoso.com] FROM EXTERNAL PROVIDER;
 ```
 
 Чтобы назначить роль, выполните следующий код:
 
 ```sql
+--SQL User
 EXEC sp_addrolemember 'db_exporter', 'Mary';
+
+--Azure Active Directory User
+EXEC sp_addrolemember 'db_exporter',[mike@contoso.com]
 ```
 
 ## <a name="usage"></a>Использование
@@ -72,7 +80,7 @@ EXEC sp_addrolemember 'db_exporter', 'Mary';
 #### <a name="read-api"></a>API чтения
 
 ```scala
-val df = spark.read.sqlanalytics("[DBName].[Schema].[TableName]")
+val df = spark.read.sqlanalytics("<DBName>.<Schema>.<TableName>")
 ```
 
 Указанный выше API будет работать как для внутренних (управляемых), так и для внешних таблиц в пуле SQL.
@@ -80,17 +88,51 @@ val df = spark.read.sqlanalytics("[DBName].[Schema].[TableName]")
 #### <a name="write-api"></a>API записи
 
 ```scala
-df.write.sqlanalytics("[DBName].[Schema].[TableName]", [TableType])
+df.write.sqlanalytics("<DBName>.<Schema>.<TableName>", <TableType>)
 ```
 
-где TableType может быть Constants.INTERNAL или Constants.EXTERNAL:
+API записи создает таблицу в пуле SQL, а затем вызывает Polybase для загрузки данных.  Таблица не должна существовать в пуле SQL, или будет возвращена ошибка с информацией о том, что объект с определенным именем уже существует.
+
+Значения TableType
+
+- Constants.INTERNAL — управляемая таблица в пуле SQL
+- Constants.EXTERNAL — внешняя таблица в пуле SQL
+
+Управляемая таблица пула SQL
 
 ```scala
-df.write.sqlanalytics("[DBName].[Schema].[TableName]", Constants.INTERNAL)
-df.write.sqlanalytics("[DBName].[Schema].[TableName]", Constants.EXTERNAL)
+df.write.sqlanalytics("<DBName>.<Schema>.<TableName>", Constants.INTERNAL)
 ```
 
-Проверка подлинности для хранилища и SQL Server установлена.
+Внешняя таблица пула SQL
+
+Для записи во внешнюю таблицу пула SQL в пуле SQL должны существовать EXTERNAL DATA SOURCE и EXTERNAL FILE FORMAT.  См. дополнительные сведения о [создании внешнего источника данных](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и о [форматах внешних файлов](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) в пуле SQL.  Ниже приведены примеры создания внешнего источника данных и форматов внешних файлов в пуле SQL.
+
+```sql
+--For an external table, you need to pre-create the data source and file format in SQL pool using SQL queries:
+CREATE EXTERNAL DATA SOURCE <DataSourceName>
+WITH
+  ( LOCATION = 'abfss://...' ,
+    TYPE = HADOOP
+  ) ;
+
+CREATE EXTERNAL FILE FORMAT <FileFormatName>
+WITH (  
+    FORMAT_TYPE = PARQUET,  
+    DATA_COMPRESSION = 'org.apache.hadoop.io.compress.SnappyCodec'  
+);
+```
+
+Объект EXTERNAL CREDENTIAL не требуется при использовании сквозной аутентификации Azure Active Directory в учетной записи хранения.  Убедитесь, что у вас есть роль "Участник данных BLOB-объектов хранилища" в учетной записи хранения.
+
+```scala
+
+df.write.
+    option(Constants.DATA_SOURCE, <DataSourceName>).
+    option(Constants.FILE_FORMAT, <FileFormatName>).
+    sqlanalytics("<DBName>.<Schema>.<TableName>", Constants.EXTERNAL)
+
+```
 
 ### <a name="if-you-are-transferring-data-to-or-from-a-sql-pool-or-database-outside-the-workspace"></a>Передача данных в пул SQL или базу данных вне рабочей области и из них
 
@@ -114,8 +156,8 @@ sqlanalytics("<DBName>.<Schema>.<TableName>")
 
 ```scala
 df.write.
-option(Constants.SERVER, "[samplews].[database.windows.net]").
-sqlanalytics("[DBName].[Schema].[TableName]", [TableType])
+option(Constants.SERVER, "samplews.database.windows.net").
+sqlanalytics("<DBName>.<Schema>.<TableName>", <TableType>)
 ```
 
 ### <a name="using-sql-auth-instead-of-aad"></a>Использование проверки подлинности SQL вместо AAD
@@ -127,8 +169,8 @@ sqlanalytics("[DBName].[Schema].[TableName]", [TableType])
 ```scala
 val df = spark.read.
 option(Constants.SERVER, "samplews.database.windows.net").
-option(Constants.USER, [SQLServer Login UserName]).
-option(Constants.PASSWORD, [SQLServer Login Password]).
+option(Constants.USER, <SQLServer Login UserName>).
+option(Constants.PASSWORD, <SQLServer Login Password>).
 sqlanalytics("<DBName>.<Schema>.<TableName>")
 ```
 
@@ -136,10 +178,10 @@ sqlanalytics("<DBName>.<Schema>.<TableName>")
 
 ```scala
 df.write.
-option(Constants.SERVER, "[samplews].[database.windows.net]").
-option(Constants.USER, [SQLServer Login UserName]).
-option(Constants.PASSWORD, [SQLServer Login Password]).
-sqlanalytics("[DBName].[Schema].[TableName]", [TableType])
+option(Constants.SERVER, "samplews.database.windows.net").
+option(Constants.USER, <SQLServer Login UserName>).
+option(Constants.PASSWORD, <SQLServer Login Password>).
+sqlanalytics("<DBName>.<Schema>.<TableName>", <TableType>)
 ```
 
 ### <a name="using-the-pyspark-connector"></a>Использование соединителя PySpark
@@ -166,7 +208,7 @@ pysparkdftemptable.write.sqlanalytics("sqlpool.dbo.PySparkTable", Constants.INTE
 
 Аналогично в сценарии для чтения выполните считывание данных с помощью Scala и запишите их во временную таблицу. Используйте Spark SQL в PySpark, чтобы запросить перенос временной таблицы в кадр данных.
 
-## <a name="allowing-other-users-to-use-the-dw-connector-in-your-workspace"></a>Предоставление другим пользователям возможности использовать соединитель хранилища данных, размещенного в вашей рабочей области
+## <a name="allowing-other-users-to-use-the-azure-synapse-apache-spark-to-synapse-sql-connector-in-your-workspace"></a>Предоставление другим пользователям возможности использовать соединитель между Azure Synapse Apache Spark и Synapse SQL в вашей рабочей области
 
 Чтобы изменить отсутствующие разрешения для других пользователей, необходимо быть владельцем данных для BLOB-объекта хранилища в учетной записи хранения ADLS 2-го поколения, подключенной к рабочей области. Убедитесь, что у пользователя есть доступ к этой рабочей области и разрешения на запуск записных книжек.
 
@@ -178,7 +220,7 @@ pysparkdftemptable.write.sqlanalytics("sqlpool.dbo.PySparkTable", Constants.INTE
 
 - Укажите следующие списки управления доступом для структуры папок.
 
-| Папка | / | synapse | workspaces  | <workspacename> | sparkpools | <sparkpoolname>  | sparkpoolinstances  |
+| Папка | / | synapse | workspaces  | \<workspacename> | sparkpools | \<sparkpoolname>  | sparkpoolinstances  |
 |--|--|--|--|--|--|--|--|
 | Права доступа | --X | --X | --X | --X | --X | --X | -WX |
 | Разрешения по умолчанию | ---| ---| ---| ---| ---| ---| ---|

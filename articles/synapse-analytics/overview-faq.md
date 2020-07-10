@@ -5,16 +5,16 @@ services: synapse-analytics
 author: ArnoMicrosoft
 ms.service: synapse-analytics
 ms.topic: overview
-ms.subservice: ''
+ms.subservice: overview
 ms.date: 04/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2c470483cee8b621475fa70dd09c80aa126173be
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ms.openlocfilehash: 43f0dfa5fd413d201eb8c63aa752a6fd8db68f6c
+ms.sourcegitcommit: 374d1533ea2f2d9d3f8b6e6a8e65c6a5cd4aea47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84609154"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85807882"
 ---
 # <a name="azure-synapse-analytics-workspaces-preview-frequently-asked-questions"></a>Вопросы и ответы по Azure Synapse Analytics (предварительная версия рабочих областей)
 
@@ -48,6 +48,10 @@ A. Решение Azure Synapse обеспечивает следующие во
 A. Azure Synapse Analytics как платформа аналитики создана на основе Хранилища данных SQL Azure и включает пул SQL в качестве решения для хранения данных. Эта платформа сочетает в себе уровни исследования данных, приема, преобразования, подготовки и аналитики обслуживания.
 
 ## <a name="use-cases"></a>Варианты использования
+
+### <a name="q-how-do-i-rename-a-published-artifact-dataset-notebook-sql-script-and-so-on-in-azure-synapse"></a>Вопрос. Как переименовать опубликованный артефакт (набор данных, записную книжку, скрипт SQL и пр.) в Azure Synapse?
+
+A. Чтобы переименовать опубликованный файл артефакта, сначала создайте его копию и переименуйте новый файл, присвоив ему имя. Вам нужно вручную обновить все ссылки артефакта, указав новое имя файла и удалить старое.
 
 ### <a name="q-what-is-a-good-use-case-for-synapse-sql-pool"></a>Вопрос. Как правильно применять пул SQL Synapse?
 

@@ -10,18 +10,18 @@ ms.custom: tracking-python
 author: likebupt
 ms.author: keli19
 ms.date: 06/16/2020
-ms.openlocfilehash: f64c79a970ec54c07c2934a92a9ca349ea56ca40
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2115a0bae8b26113fc10648db2584210809441de
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84907556"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86147251"
 ---
 # <a name="execute-python-script-module"></a>Выполнить модуль скрипта Python
 
 В этой статье описывается модуль выполнение скрипта Python в Машинное обучение Azure Designer (Предварительная версия).
 
-Используйте этот модуль для выполнения кода Python. Дополнительные сведения об архитектуре и принципах проектирования Python см. в [этой статье](https://docs.microsoft.com/azure/machine-learning/machine-learning-execute-python-scripts).
+Используйте этот модуль для выполнения кода Python. Дополнительные сведения об архитектуре и принципах проектирования Python см. [в статье выполнение кода Python в конструкторе машинное обучение Azure](../how-to-designer-python.md).
 
 С помощью Python можно выполнять задачи, которые не поддерживаются существующими модулями, например:
 

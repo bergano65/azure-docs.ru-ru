@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: e0a711b9239e1a76774d8e75f035e6c862218c82
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d6670966b4cf74510df5dd26c994e0c53b219ba9
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85563129"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86145240"
 ---
 # <a name="how-to-index-tables-from-azure-table-storage-with-azure-cognitive-search"></a>Как индексировать таблицы из хранилища таблиц Azure с помощью Azure Когнитивный поиск
 
@@ -49,6 +49,7 @@ ms.locfileid: "85563129"
 
 Создание источника данных:
 
+```http
     POST https://[service name].search.windows.net/datasources?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
@@ -59,6 +60,7 @@ ms.locfileid: "85563129"
         "credentials" : { "connectionString" : "DefaultEndpointsProtocol=https;AccountName=<account name>;AccountKey=<account key>;" },
         "container" : { "name" : "my-table", "query" : "PartitionKey eq '123'" }
     }   
+```
 
 Дополнительные сведения об API создания источника данных см. в статье [Создание источника данных](https://docs.microsoft.com/rest/api/searchservice/create-data-source).
 
@@ -81,6 +83,7 @@ ms.locfileid: "85563129"
 
 Создание индекса:
 
+```http
     POST https://[service name].search.windows.net/indexes?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
@@ -92,6 +95,7 @@ ms.locfileid: "85563129"
             { "name": "SomeColumnInMyTable", "type": "Edm.String", "searchable": true }
           ]
     }
+```
 
 Дополнительные сведения о создании индексов см. в статье [Создание индекса](https://docs.microsoft.com/rest/api/searchservice/create-index).
 
@@ -100,6 +104,7 @@ ms.locfileid: "85563129"
 
 После создания индекса и источника данных можно создать индексатор:
 
+```http
     POST https://[service name].search.windows.net/indexers?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
@@ -110,6 +115,7 @@ ms.locfileid: "85563129"
       "targetIndexName" : "my-target-index",
       "schedule" : { "interval" : "PT2H" }
     }
+```
 
 Этот индексатор выполняется каждые два часа. (Для интервала расписания задано значение "PT2H".) Чтобы запустить индексатор каждые 30 минут, задайте для интервала значение "PT30M". Самый короткий интервал, который можно задать, составляет пять минут. Расписание является необязательным. Если оно не указано, то индексатор выполняется только один раз при его создании. Однако индексатор можно запустить по запросу в любое время.   
 
@@ -135,6 +141,7 @@ ms.locfileid: "85563129"
 
 Чтобы указать, что определенные документы необходимо удалить из индекса, можно использовать стратегию обратимого удаления. Вместо удаления строки добавьте свойство, чтобы указать, что она удалена, и настройте политику обнаружения обратимого удаления в источнике данных. Например, следующая политика считает строку удаленной, если строка имеет свойство `IsDeleted` со значением `"true"`:
 
+```http
     PUT https://[service name].search.windows.net/datasources?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
@@ -146,9 +153,10 @@ ms.locfileid: "85563129"
         "container" : { "name" : "table name", "query" : "<query>" },
         "dataDeletionDetectionPolicy" : { "@odata.type" : "#Microsoft.Azure.Search.SoftDeleteColumnDeletionDetectionPolicy", "softDeleteColumnName" : "IsDeleted", "softDeleteMarkerValue" : "true" }
     }   
+```
 
 <a name="Performance"></a>
-## <a name="performance-considerations"></a>Особенности производительности
+## <a name="performance-considerations"></a>Рекомендации по производительности
 
 По умолчанию Когнитивный поиск Azure использует следующий фильтр запросов: `Timestamp >= HighWaterMarkValue` . Поскольку в таблицах Azure отсутствует вторичный индекс в поле `Timestamp`, запрос такого типа требует просмотра всей таблицы и поэтому выполняется медленно для больших таблиц.
 

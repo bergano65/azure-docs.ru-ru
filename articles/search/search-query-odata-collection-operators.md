@@ -19,11 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 54ddc8222816831b5b436297bbb1b40d03230f0c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 47e7e09bae082141efd872d3a90ecc30a3be04e5
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74113233"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146055"
 ---
 # <a name="odata-collection-operators-in-azure-cognitive-search---any-and-all"></a>Операторы коллекции OData в Azure Когнитивный поиск `any` и`all`
 
@@ -65,23 +66,33 @@ lambda_expression ::= identifier ':' boolean_expression
 
 Сопоставить документы, `tags` поле которых содержит только строку "Wi-Fi":
 
-    tags/any(t: t eq 'wifi')
+```text
+tags/any(t: t eq 'wifi')
+```
 
 Сопоставление документов, в которых каждый элемент `ratings` поля находится в диапазоне от 3 до 5 включительно:
 
-    ratings/all(r: r ge 3 and r le 5)
+```text
+ratings/all(r: r ge 3 and r le 5)
+```
 
 Сопоставление документов, где любая из географических координат в `locations` поле находится в пределах заданного многоугольника:
 
-    locations/any(loc: geo.intersects(loc, geography'POLYGON((-122.031577 47.578581, -122.031577 47.678581, -122.131577 47.678581, -122.031577 47.578581))'))
+```text
+locations/any(loc: geo.intersects(loc, geography'POLYGON((-122.031577 47.578581, -122.031577 47.678581, -122.131577 47.678581, -122.031577 47.578581))'))
+```
 
 Сопоставить документы, в которых `rooms` поле пусто:
 
-    not rooms/any()
+```text
+not rooms/any()
+```
 
 Искать документы, где для всех помещений `rooms/amenities` поле содержит "TV" и `rooms/baseRate` меньше 100:
 
-    rooms/all(room: room/amenities/any(a: a eq 'tv') and room/baseRate lt 100.0)
+```text
+rooms/all(room: room/amenities/any(a: a eq 'tv') and room/baseRate lt 100.0)
+```
 
 ## <a name="limitations"></a>Ограничения
 
@@ -91,7 +102,7 @@ lambda_expression ::= identifier ':' boolean_expression
 
 Дополнительные сведения об этих ограничениях, а также примеры см. [в разделе Устранение неполадок фильтров сбора в Azure когнитивный Поиск](search-query-troubleshoot-collection-filters.md). Более подробные сведения о том, почему эти ограничения существуют, см. в разделе [Основные сведения о фильтрах коллекций в когнитивный Поиск Azure](search-query-understand-collection-filters.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Следующие шаги  
 
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)

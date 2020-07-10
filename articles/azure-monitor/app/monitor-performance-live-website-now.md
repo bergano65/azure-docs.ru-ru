@@ -3,12 +3,12 @@ title: Мониторинг активного веб-приложения ASP.N
 description: Мониторинг производительности веб-сайта без необходимости его повторного развертывания. Работает с веб-приложениями ASP.NET, размещенными локально или в виртуальных машинах.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: e30700deaa0121fbe473580d868a79d75a899a1d
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: f4ce01ea8fc7b6bf1f294071f04e2bebce3e1d27
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86107484"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86166388"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Инструментирование веб-приложений во время выполнения с помощью Application Insights бескодового подключения
 
@@ -39,14 +39,14 @@ ms.locfileid: "86107484"
 
 |  | Во время сборки | Во время выполнения |
 | --- | --- | --- |
-| Запросы и исключения |Да |Да |
-| [Более подробные исключения](../../azure-monitor/app/asp-net-exceptions.md) | |Да |
-| [Диагностика зависимостей](../../azure-monitor/app/asp-net-dependencies.md) |На платформе .NET 4.6 или более поздней, неполные сведения |Да, полные сведения: коды результатов, текст команд SQL, HTTP-команда|
-| [Счетчики производительности системы](../../azure-monitor/app/performance-counters.md) |Да |Да |
-| [API для пользовательской телеметрии][api] |Да |нет |
-| [Интеграция журнала трассировки](../../azure-monitor/app/asp-net-trace-logs.md) |Да |нет |
-| [Просмотр страницы и пользовательские данные](../../azure-monitor/app/javascript.md) |Да |нет |
-| Требуется повторная сборка кода |Да | нет |
+| **Запросы, & исключения** |Да |Да |
+| **[Более подробные исключения](../../azure-monitor/app/asp-net-exceptions.md)** | |Да |
+| **[Диагностика зависимостей](../../azure-monitor/app/asp-net-dependencies.md)** |На платформе .NET 4.6 или более поздней, неполные сведения |Да, полные сведения: коды результатов, текст команд SQL, HTTP-команда|
+| **[Счетчики производительности системы](../../azure-monitor/app/performance-counters.md)** |Да |Да |
+| **[API для пользовательской телеметрии][api]** |Да |Нет |
+| **[Интеграция журнала трассировки](../../azure-monitor/app/asp-net-trace-logs.md)** |Да |Нет |
+| **[Просмотр страницы & данных пользователя](../../azure-monitor/app/javascript.md)** |Да |Нет |
+| **Требуется повторная сборка кода** |Да | Нет |
 
 
 
@@ -303,7 +303,7 @@ Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\Po
  * вызовы зависимостей (.NET 4.5) и возвращаемые значения в вызовах зависимостей (.NET 4.6);
  * значения трассировки стека исключений.
 
-[Подробнее](https://apmtips.com/posts/2016-11-18-how-application-insights-status-monitor-not-monitors-dependencies/)
+[Дополнительные сведения](https://apmtips.com/posts/2016-11-18-how-application-insights-status-monitor-not-monitors-dependencies/)
 
 ## <a name="video"></a>Видео
 

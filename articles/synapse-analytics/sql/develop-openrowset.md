@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2c5f65993909e142de6017b07591529cd7cb7b86
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: 786f277c1a46213b43f81b5cfa563303b3d7ddf9
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85200585"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85921307"
 ---
 # <a name="how-to-use-openrowset-with-sql-on-demand-preview"></a>Как использовать OPENROWSET в службе SQL по запросу (предварительная версия)
 
@@ -115,9 +115,11 @@ WITH ( {'column_name' 'column_type' [ 'column_ordinal'] })
 
 | Внешний источник данных       | Prefix | Путь к учетной записи хранения                                 |
 | -------------------------- | ------ | ---------------------------------------------------- |
-| хранилище BLOB-объектов Azure         | HTTPS  | \<storage_account>.blob.core.windows.net             |
+| хранилище BLOB-объектов Azure         | HTTPS  | \<storage_account>.blob.core.windows.net/path/file   |
+| хранилище BLOB-объектов Azure         | wasb   | \<container>@\<storage_account>.blob.core.windows.net/path/file |
 | Azure Data Lake Store 1-го поколения | HTTPS  | \<storage_account>.azuredatalakestore.net/webhdfs/v1 |
-| Azure Data Lake Store 2-го поколения | HTTPS  | \<storage_account>.dfs.core.windows.net              |
+| Azure Data Lake Store 2-го поколения | HTTPS  | \<storage_account>.dfs.core.windows.net /path/file   |
+| Azure Data Lake Store 2-го поколения | abfss  | [\<file_system>@\<account_name>.dfs.core.windows.net/path/file](../../storage/blobs/data-lake-storage-introduction-abfs-uri.md#uri-syntax)              |
 ||||
 
 '\<storage_path>'

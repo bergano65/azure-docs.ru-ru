@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: f6794559c2296b02ef61d0e280d29456904ae607
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6e2a3e6c7fd5ecd305d00278668ad0bfb9a66001
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85609305"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86142441"
 ---
 # <a name="understand-event-data"></a>Общие сведения о событиях
 
@@ -99,11 +99,11 @@ ms.locfileid: "85609305"
 * Создается цифровой двойника
 * Удален цифровой двойника
 
-#### <a name="properties"></a>Элемент Property
+#### <a name="properties"></a>Properties (Свойства)
 
 Ниже приведены поля в тексте уведомления о жизненном цикле.
 
-| name | Значение |
+| Имя | Значение |
 | --- | --- |
 | `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id`уникален для каждого отдельного события. |
 | `source` | Имя центра Интернета вещей или экземпляра Azure Digital двойников, например *myhub.Azure-Devices.NET* или *mydigitaltwins.westus2.azuredigitaltwins.NET* |
@@ -125,6 +125,7 @@ ms.locfileid: "85609305"
 ```json
 {
   "$dtId": "device-digitaltwin-01",
+  "$etag": "W/\"e59ce8f5-03c0-4356-aea9-249ecbdc07f9\"",
   "thermostat": {
     "temperature": 80,
     "humidity": 45,
@@ -157,6 +158,7 @@ ms.locfileid: "85609305"
 ```json
 {
   "$dtId": "logical-digitaltwin-01",
+  "$etag": "W/\"e59ce8f5-03c0-4356-aea9-249ecbdc07f9\"",
   "avgTemperature": 70,
   "comfortIndex": 85,
   "$metadata": {
@@ -183,11 +185,11 @@ ms.locfileid: "85609305"
 
 **Уведомления об изменении связей** активируются при создании, обновлении или удалении любой связи цифрового двойника. 
 
-#### <a name="properties"></a>Элемент Property
+#### <a name="properties"></a>Properties (Свойства)
 
 Ниже приведены поля в тексте уведомления об изменении ребра.
 
-| name    | Значение |
+| Имя    | Значение |
 | --- | --- |
 | `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id`уникален для каждого отдельного события |
 | `source` | Имя экземпляра Azure Digital двойников, например *mydigitaltwins.westus2.azuredigitaltwins.NET* |
@@ -239,11 +241,11 @@ ms.locfileid: "85609305"
 * При изменении значений свойств или метаданных.
 * При изменении метаданных в цифровом двойника или компоненте. Примером такого сценария является изменение модели цифрового двойника.
 
-#### <a name="properties"></a>Элемент Property
+#### <a name="properties"></a>Properties (Свойства)
 
 Ниже приведены поля в тексте уведомления об изменении цифрового двойника.
 
-| name    | Значение |
+| Имя    | Значение |
 | --- | --- |
 | `id` | Идентификатор уведомления, например UUID или счетчик, поддерживаемый службой. `source` + `id`уникален для каждого отдельного события |
 | `source` | Имя центра Интернета вещей или экземпляра Azure Digital двойников, например *myhub.Azure-Devices.NET* или *mydigitaltwins.westus2.azuredigitaltwins.NET*
@@ -295,7 +297,7 @@ ms.locfileid: "85609305"
   }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 См. раздел Создание конечных точек и маршрутов для доставки событий.
 * [Руководство. Управление конечными точками и маршрутами](how-to-manage-routes.md)

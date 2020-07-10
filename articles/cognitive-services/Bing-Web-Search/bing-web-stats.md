@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: scottwhi
 ms.custom: seodec2018
-ms.openlocfilehash: d459222327ef3535202e82f640f5b513f0426d54
-ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
+ms.openlocfilehash: ad2ac118908f1c1f77ea204ae2400913ac0807cb
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85609475"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86147414"
 ---
 # <a name="add-analytics-to-the-bing-search-apis"></a>Добавление аналитики в API-интерфейсы поиска Bing
 
@@ -53,7 +53,7 @@ ms.locfileid: "85609475"
 - **Интервал времени**. Отчетный период. Можно указать:
   - **Все**: включает данные до 13 месяцев.  
   - **За последние 24 часа**: включает аналитику за последние 24 часа  
-  - **Прошлая неделя**: включает аналитику за предыдущие семь дней.  
+  - **Прошлая неделя**: включает аналитику за предыдущие семь дней  
   - **Последний месяц**: включает аналитику за предыдущие 30 дней  
   - **Настраиваемый диапазон дат**: включает аналитику из указанного диапазона дат, если это возможно.  
 
@@ -100,7 +100,7 @@ For example, if you don't include the User-Agent header in your calls, the dashb
 
 - **Response Server Distribution** (Распределение по ответам сервера). Сервер приложений, который обслуживал ваши запросы API. Возможные значения: Bing.com (для трафика, полученного с настольных и переносных устройств) и Bing.com-mobile (для трафика, полученного с мобильных устройств). Сервер определяется с помощью значения заголовка User-Agent в запросе. Если запрос не содержит заголовок User-Agent, Bing пытается получить сервер из других сигналов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Что такое API-интерфейсы Поиска Bing?](bing-api-comparison.md)
 * [Требования к использованию и отображению API-интерфейсов Поиска Bing](use-display-requirements.md)

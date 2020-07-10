@@ -19,11 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 62c8c93e07326e776cbe089042abc481544794bc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 572b653a49833ae06ee57b1718000e8555239de7
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74113221"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146029"
 ---
 # <a name="odata-comparison-operators-in-azure-cognitive-search---eq-ne-gt-lt-ge-and-le"></a>Операторы сравнения OData в Azure когнитивный поиск- `eq` , `ne` ,,, `gt` `lt` `ge` и`le`
 
@@ -135,25 +136,35 @@ comparison_operator ::= 'gt' | 'lt' | 'ge' | 'le' | 'eq' | 'ne'
 
 Сопоставление документов, в которых `Rating` поле находится в диапазоне от 3 до 5 включительно:
 
-    Rating ge 3 and Rating le 5
+```text
+Rating ge 3 and Rating le 5
+```
 
 Сопоставление документов, в которых `Location` поле меньше 2 километров от заданной широты и долготы:
 
-    geo.distance(Location, geography'POINT(-122.031577 47.578581)') lt 2.0
+```text
+geo.distance(Location, geography'POINT(-122.031577 47.578581)') lt 2.0
+```
 
 Сопоставлять документы, в которых `LastRenovationDate` поле больше или равно 1 января 2015, полночь UTC:
 
-    LastRenovationDate ge 2015-01-01T00:00:00.000Z
+```text
+LastRenovationDate ge 2015-01-01T00:00:00.000Z
+```
 
 Сопоставлять документы, для которых `Details/Sku` поле не имеет значение `null` :
 
-    Details/Sku ne null
+```text
+Details/Sku ne null
+```
 
 Сопоставление документов для гостиниц, где по меньшей мере одна комната имеет тип "зал комната", где строка `Rooms/Type` поля соответствует фильтру.
 
-    Rooms/any(room: room/Type eq 'Deluxe Room')
+```text
+Rooms/any(room: room/Type eq 'Deluxe Room')
+```
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Следующие шаги  
 
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)

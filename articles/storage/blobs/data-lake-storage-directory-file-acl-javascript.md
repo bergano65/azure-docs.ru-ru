@@ -8,11 +8,12 @@ ms.author: normesta
 ms.topic: how-to
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
-ms.openlocfilehash: 9a95af730e8250539e8b33af4bd5a90dc3a604a2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c774d3f56eaf666a31ff73f433a3b4a5a363ce2f
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84466074"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86142498"
 ---
 # <a name="use-javascript-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование JavaScript для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
 
@@ -89,11 +90,11 @@ function GetDataLakeServiceClientAD(accountName, clientID, clientSecret, tenantI
 > [!NOTE]
 > Дополнительные примеры см. в документации по [клиентской библиотеке удостоверений Azure для JS](https://www.npmjs.com/package/@azure/identity) .
 
-## <a name="create-a-file-system"></a>Создание файловой системы
+## <a name="create-a-container"></a>Создание контейнера
 
-Файловая система выступает в качестве контейнера для файлов. Его можно создать, получив экземпляр **филесистемклиент** , а затем вызвав метод **филесистемклиент. Create** .
+Контейнер выступает в качестве файловой системы для файлов. Его можно создать, получив экземпляр **филесистемклиент** , а затем вызвав метод **филесистемклиент. Create** .
 
-В этом примере создается файловая система с именем `my-file-system`. 
+В этом примере создается контейнер с именем `my-file-system` . 
 
 ```javascript
 async function CreateFileSystem(datalakeServiceClient) {
@@ -111,7 +112,7 @@ async function CreateFileSystem(datalakeServiceClient) {
 
 Создайте ссылку на каталог, получив экземпляр **директориклиент** , а затем вызвав метод **директориклиент. Create** .
 
-В этом примере в файловую систему добавляется каталог с именем `my-directory` . 
+В этом примере в контейнер добавляется каталог с именем `my-directory` . 
 
 ```javascript
 async function CreateDirectory(fileSystemClient) {

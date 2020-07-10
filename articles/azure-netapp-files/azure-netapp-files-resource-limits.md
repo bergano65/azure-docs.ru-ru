@@ -12,13 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/08/2020
+ms.date: 07/08/2020
 ms.author: b-juche
-ms.openlocfilehash: 8b417559a17dc05a07467a28d37fec9b9a7c12cb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a0d672f782cb9f476fa81d28ee369072caf8509b
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84553473"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86147208"
 ---
 # <a name="resource-limits-for-azure-netapp-files"></a>Ограничения ресурсов для службы Azure NetApp Files
 
@@ -60,7 +61,7 @@ Azure NetApp Files тома имеют ограничение с именем *M
 |    >= 3 Тиб, но < 4 тиб    |    80 000 000     |
 |    >= 4 тиб                |    100 млн    |
 
-Для любого размера тома можно отправить [запрос в службу поддержки](#limit_increase) , чтобы увеличить ограничение maxsize свыше 100 000 000.
+Если вы уже выделили по крайней мере 4 Тиб квоты для тома, вы можете отправить [запрос в службу поддержки](#limit_increase) , чтобы увеличить ограничение maxsize свыше 100 000 000.
 
 ## <a name="request-limit-increase"></a>Увеличение лимита запросов<a name="limit_increase"></a> 
 
@@ -90,7 +91,7 @@ Azure NetApp Files тома имеют ограничение с именем *M
     3. Чтобы создать запрос, нажмите кнопку **Далее: Проверка + создать** . 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Общие сведения об иерархии хранилища Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md)
 - [Модель затрат для Azure NetApp Files](azure-netapp-files-cost-model.md)

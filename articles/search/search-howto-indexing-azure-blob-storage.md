@@ -10,12 +10,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 6c7e1fcaebd415fcacfffcef62ca25cccde3e476
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7e3a35d95e7d2a339bf33620c9d1a140fb6a0a1d
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85563169"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86143745"
 ---
 # <a name="how-to-index-documents-in-azure-blob-storage-with-azure-cognitive-search"></a>Индексирование документов в хранилище BLOB-объектов Azure с помощью Azure Когнитивный поиск
 
@@ -53,6 +53,7 @@ ms.locfileid: "85563169"
 
 Создание источника данных
 
+```http
     POST https://[service name].search.windows.net/datasources?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
@@ -63,6 +64,7 @@ ms.locfileid: "85563169"
         "credentials" : { "connectionString" : "DefaultEndpointsProtocol=https;AccountName=<account name>;AccountKey=<account key>;" },
         "container" : { "name" : "my-container", "query" : "<optional-virtual-directory-name>" }
     }   
+```
 
 Чтобы больше узнать об API создания источника данных, ознакомьтесь с [созданием источника данных](https://docs.microsoft.com/rest/api/searchservice/create-data-source).
 
@@ -85,6 +87,7 @@ ms.locfileid: "85563169"
 
 Ниже описан процесс создания индекса с доступным для поиска полем `content` для хранения текста, извлеченного из больших двоичных объектов:   
 
+```http
     POST https://[service name].search.windows.net/indexes?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
@@ -96,6 +99,7 @@ ms.locfileid: "85563169"
             { "name": "content", "type": "Edm.String", "searchable": true, "filterable": false, "sortable": false, "facetable": false }
           ]
     }
+```
 
 Дополнительные сведения о создании индексов см. в статье [Create Index](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индекса).
 
@@ -104,6 +108,7 @@ ms.locfileid: "85563169"
 
 Когда индекс и источник данных уже созданы, можно создать индексатор:
 
+```http
     POST https://[service name].search.windows.net/indexers?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
@@ -114,6 +119,7 @@ ms.locfileid: "85563169"
       "targetIndexName" : "my-target-index",
       "schedule" : { "interval" : "PT2H" }
     }
+```
 
 Этот индексатор будет выполняться каждые два часа (интервал расписания имеет значение "PT2H"). Чтобы запускать индексатор каждые 30 минут, задайте интервал "PT30M". Самый короткий интервал, который можно задать, составляет 5 минут. Расписание является необязательным. Если оно не указано, то индексатор выполняется только один раз при его создании. Однако индексатор можно запустить по запросу в любое время.   
 
@@ -142,7 +148,7 @@ ms.locfileid: "85563169"
 
   * **metadata\_storage\_name** (Edm.String) — имя файла большого двоичного объекта. Например, для большого двоичного объекта /my-container/my-folder/subfolder/resume.pdf значение этого поля — `resume.pdf`.
   * **metadata\_storage\_path** (Edm.String) — полный универсальный код ресурса (URI) большого двоичного объекта, включая учетную запись хранения. Например: `https://myaccount.blob.core.windows.net/my-container/my-folder/subfolder/resume.pdf`
-  * **metadata\_storage\_content\_type** (Edm.String) — тип содержимого, указанный в коде для отправки большого двоичного объекта. Например, `application/octet-stream`.
+  * **metadata\_storage\_content\_type** (Edm.String) — тип содержимого, указанный в коде для отправки большого двоичного объекта. Пример: `application/octet-stream`.
   * **metadata\_storage\_last\_modified** (Edm.DateTimeOffset) — последняя измененная метка времени для большого двоичного объекта. Когнитивный поиск Azure использует эту метку времени для обнаружения измененных больших двоичных объектов, чтобы избежать повторного индексирования всех объектов после первоначального индексирования.
   * **metadata\_storage\_size** (Edm.Int64) — размер большого двоичного объекта в байтах.
   * **metadata\_storage\_content\_metadatastoragecontentmd5** (Edm.String) — хэш MD5 содержимого большого двоичного объекта, если он доступен.
@@ -174,13 +180,16 @@ ms.locfileid: "85563169"
 
 В этом примере мы выберем поле `metadata_storage_name` в качестве ключа документа. Предположим, что индекс содержит поле ключа с именем `key` и поле `fileSize` для хранения данных о размере документа. Чтобы правильно связать все компоненты при создании или обновлении индексатора, укажите следующие сопоставления полей:
 
+```http
     "fieldMappings" : [
       { "sourceFieldName" : "metadata_storage_name", "targetFieldName" : "key", "mappingFunction" : { "name" : "base64Encode" } },
       { "sourceFieldName" : "metadata_storage_size", "targetFieldName" : "fileSize" }
     ]
+```
 
 Чтобы объединить все компоненты, можно добавить сопоставления полей и активировать кодировку ключей base-64 для существующего индексатора:
 
+```http
     PUT https://[service name].search.windows.net/indexers/blob-indexer?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
@@ -194,6 +203,7 @@ ms.locfileid: "85563169"
         { "sourceFieldName" : "metadata_storage_size", "targetFieldName" : "fileSize" }
       ]
     }
+```
 
 > [!NOTE]
 > Дополнительные сведения о сопоставлении полей см. в [этой статье](search-indexer-field-mappings.md).
@@ -207,6 +217,7 @@ ms.locfileid: "85563169"
 ### <a name="index-only-the-blobs-with-specific-file-extensions"></a>Индексация только BLOB-объектов с определенными расширениями файлов
 Параметр конфигурации индексатора `indexedFileNameExtensions` позволяет индексировать большие двоичные объекты только с указанными расширениями имен файлов. Значение представлено строкой, содержащей разделенный запятыми список расширений файлов (с предшествующей точкой). Например, чтобы индексировать только большие двоичные объекты PDF и DOCX, выполните следующую команду:
 
+```http
     PUT https://[service name].search.windows.net/indexers/[indexer name]?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
@@ -215,10 +226,12 @@ ms.locfileid: "85563169"
       ... other parts of indexer definition
       "parameters" : { "configuration" : { "indexedFileNameExtensions" : ".pdf,.docx" } }
     }
+```
 
 ### <a name="exclude-blobs-with-specific-file-extensions"></a>Исключение больших двоичных объектов с определенными расширениями файлов
 Большие двоичные объекты с определенными расширениями файлов можно исключить из индексации с помощью параметра конфигурации `excludedFileNameExtensions`. Значение представлено строкой, содержащей разделенный запятыми список расширений файлов (с предшествующей точкой). Например, для индексации всех больших двоичных объектов, кроме объектов с расширениями PNG и JPEG, выполните следующую команду:
 
+```http
     PUT https://[service name].search.windows.net/indexers/[indexer name]?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
@@ -227,6 +240,7 @@ ms.locfileid: "85563169"
       ... other parts of indexer definition
       "parameters" : { "configuration" : { "excludedFileNameExtensions" : ".png,.jpeg" } }
     }
+```
 
 Если `indexedFileNameExtensions` существуют оба `excludedFileNameExtensions` параметра и, Azure когнитивный поиск сначала просматривает `indexedFileNameExtensions` , а затем по адресу `excludedFileNameExtensions` . Это означает, что если одно расширение файла присутствует в обоих списках, объект будет исключен из индексации.
 
@@ -241,6 +255,7 @@ ms.locfileid: "85563169"
 
 Например, чтобы индексировать только метаданные хранилища, используйте следующую команду:
 
+```http
     PUT https://[service name].search.windows.net/indexers/[indexer name]?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
@@ -249,12 +264,13 @@ ms.locfileid: "85563169"
       ... other parts of indexer definition
       "parameters" : { "configuration" : { "dataToExtract" : "storageMetadata" } }
     }
+```
 
 ### <a name="using-blob-metadata-to-control-how-blobs-are-indexed"></a>Использование метаданных большого двоичного объекта для определения способа индексирования больших двоичных объектов
 
 Описанные выше параметры конфигурации применяются ко всем большим двоичным объектам. В некоторых случаях вам может потребоваться определять способ индексирования *отдельных больших двоичных объектов*. Это можно сделать, добавив следующие свойства и значения метаданных большого двоичного объекта.
 
-| Имя свойства | Значение свойства | Объяснение |
+| Имя свойства | Значение свойства | Пояснение |
 | --- | --- | --- |
 | AzureSearch_Skip |True |Указывает индексатору больших двоичных объектов пропустить весь большой двоичный объект. Не извлекаются ни метаданные, ни содержимое. Это полезно, когда обработка определенного большого двоичного объекта постоянно завершается сбоем и индексирование прерывается. |
 | AzureSearch_SkipContent |True |Это эквивалент параметра `"dataToExtract" : "allMetadata"`, описанного [выше](#PartsOfBlobToIndex), относящегося к определенному большому двоичному объекту. |
@@ -264,6 +280,7 @@ ms.locfileid: "85563169"
 
 По умолчанию индексатор больших двоичных объектов останавливается, как только обнаружит большой двоичный объект с неподдерживаемым типом содержимого (например, изображение). Чтобы пропустить определенные типы содержимого, можно воспользоваться параметром `excludedFileNameExtensions`. Тем не менее может потребоваться индексировать большие двоичные объекты, не зная все возможные типы их содержимого. Чтобы продолжить индексирование при обнаружении неподдерживаемого типа содержимого, задайте для параметра конфигурации `failOnUnsupportedContentType` значение `false`:
 
+```http
     PUT https://[service name].search.windows.net/indexers/[indexer name]?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
@@ -272,21 +289,28 @@ ms.locfileid: "85563169"
       ... other parts of indexer definition
       "parameters" : { "configuration" : { "failOnUnsupportedContentType" : false } }
     }
+```
 
 Для некоторых больших двоичных объектов Azure Когнитивный поиск не может определить тип содержимого или обработать документ из другого типа содержимого, поддерживаемого другим способом. Чтобы пропустить этот сбой, задайте для `failOnUnprocessableDocument` параметра конфигурации значение False:
 
+```http
       "parameters" : { "configuration" : { "failOnUnprocessableDocument" : false } }
+```
 
 Azure Когнитивный поиск ограничивает размер индексируемых больших двоичных объектов. Эти ограничения описаны в статье [ограничения службы в Azure когнитивный Поиск](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity). Большие двоичные объекты слишком большого размера по умолчанию считаются ошибками. Но вы все равно можете индексировать метаданные хранилища больших двоичных объектов слишком большого размера, если для параметра конфигурации `indexStorageMetadataOnlyForOversizedDocuments` задать значение true: 
 
+```http
     "parameters" : { "configuration" : { "indexStorageMetadataOnlyForOversizedDocuments" : true } }
+```
 
 Вы также можете продолжить индексирование, если ошибки возникают в какой-либо момент обработки — при анализе больших двоичных объектов или при добавлении документов в индекс. Чтобы пропустить определенное количество ошибок, задайте для параметров конфигурации `maxFailedItems` и `maxFailedItemsPerBatch` нужные значения. Пример:
 
+```http
     {
       ... other parts of indexer definition
       "parameters" : { "maxFailedItems" : 10, "maxFailedItemsPerBatch" : 10 }
     }
+```
 
 ## <a name="incremental-indexing-and-deletion-detection"></a>Добавочное индексирование и обнаружение удаления 
 
@@ -309,9 +333,9 @@ Azure Когнитивный поиск ограничивает размер и
 
 В этом методе будет использоваться [собственная функция обратимого удаления больших двоичных объектов](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete) , предоставляемая хранилищем BLOB-объектов Azure. Если в вашей учетной записи хранения включено встроенное обратимое удаление BLOB-объектов, то в источнике данных будет установлена собственная политика обратимого удаления, и индексатор обнаружит большой двоичный объект, который был перенесен в обратимо Удаленное состояние, индексатор удалит этот документ из индекса. Политика обратимого удаления больших двоичных объектов не поддерживается при индексировании больших двоичных объектов из Azure Data Lake Storage 2-го поколения.
 
-Выполните следующие шаги.
+Выполните указанные ниже действия.
 1. Включите [встроенное обратимое удаление для хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete). Рекомендуется задать для политики хранения значение, превышающее расписание интервала индексатора. Таким образом, если возникла проблема с индексатором или если имеется большое количество документов для индексирования, то в конечном итоге индексатор будет обрабатывать обратимо удаленные большие двоичные объекты. Индексаторы Когнитивный поиск Azure удаляют документ из индекса, только если он обрабатывает большой двоичный объект, когда он находится в обратимо удаленном состоянии.
-1. Настройте собственную политику обнаружения обратимого удаления больших двоичных объектов в источнике данных. Ниже приведен пример такого файла. Так как эта функция находится на этапе предварительной версии, необходимо использовать предварительную версию REST API.
+1. Настройте собственную политику обнаружения обратимого удаления больших двоичных объектов в источнике данных. Ниже приведен соответствующий пример. Так как эта функция находится на этапе предварительной версии, необходимо использовать предварительную версию REST API.
 1. Запустите индексатор или задайте выполнение индексатора по расписанию. Когда индексатор запускается и обрабатывает большой двоичный объект, документ будет удален из индекса.
 
     ```
@@ -337,14 +361,15 @@ Azure Когнитивный поиск ограничивает размер и
 
 В этом методе вы будете использовать метаданные большого двоичного объекта, чтобы указать, когда документ должен быть удален из индекса поиска.
 
-Выполните следующие шаги.
+Выполните указанные ниже действия.
 
 1. Добавьте пару "ключ — значение" пользовательских метаданных в большой двоичный объект, чтобы указать Когнитивный поиск Azure логически удалена.
-1. Настройте политику обнаружения столбцов обратимого удаления в источнике данных. Ниже приведен пример такого файла.
+1. Настройте политику обнаружения столбцов обратимого удаления в источнике данных. Ниже приведен соответствующий пример.
 1. После того как индексатор обработал большой двоичный объект и удалил документ из индекса, можно удалить большой двоичный объект для хранилища BLOB-объектов Azure.
 
 Например, в соответствии с приведенной ниже политикой большой двоичный объект считается удаленным, если у него есть свойство метаданных `IsDeleted` со значением `true`.
 
+```http
     PUT https://[service name].search.windows.net/datasources/blob-datasource?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
@@ -360,6 +385,7 @@ Azure Когнитивный поиск ограничивает размер и
             "softDeleteMarkerValue" : "true"
         }
     }
+```
 
 #### <a name="reindexing-undeleted-blobs"></a>Повторное индексирование неудаленных больших двоичных объектов
 
@@ -396,6 +422,7 @@ Azure Когнитивный поиск ограничивает размер и
 
 Если все BLOB-объекты содержат обычный текст в одной и той же кодировке, можно существенно повысить производительность индексирования, используя **текстовый режим анализа**. Чтобы использовать текстовый режим анализа, задайте для свойства конфигурации `parsingMode` значение `text`:
 
+```http
     PUT https://[service name].search.windows.net/indexers/[indexer name]?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
@@ -404,14 +431,16 @@ Azure Когнитивный поиск ограничивает размер и
       ... other parts of indexer definition
       "parameters" : { "configuration" : { "parsingMode" : "text" } }
     }
+```
 
 По умолчанию предполагается кодировка `UTF-8`. Чтобы указать другую кодировку, используйте свойство конфигурации `encoding`: 
 
+```http
     {
       ... other parts of indexer definition
       "parameters" : { "configuration" : { "parsingMode" : "text", "encoding" : "windows-1252" } }
     }
-
+```
 
 <a name="ContentSpecificMetadata"></a>
 ## <a name="content-type-specific-metadata-properties"></a>Свойства метаданных определенного типа содержимого

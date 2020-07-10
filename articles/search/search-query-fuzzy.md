@@ -8,11 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/08/2020
-ms.openlocfilehash: 32ad34bcfb42bf8fc45ba7fdb7fba5e797ee6106
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 03d4c2e0685ea165cbad524360a3db6e6c809733
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81262440"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146132"
 ---
 # <a name="fuzzy-search-to-correct-misspellings-and-typos"></a>Нечеткий поиск для исправления ошибок и опечаток
 
@@ -85,37 +86,49 @@ Azure Когнитивный поиск поддерживает нечетки�
 
 Начните с нечеткого поиска по слову "Special" и добавьте выделение при попадании в поле "Описание":
 
-    search=special~&highlight=Description
+```console
+search=special~&highlight=Description
+```
 
 В ответе, так как вы добавили выделение совпадений, форматирование применяется к "специальным" в качестве соответствующего термина.
 
-    "@search.highlights": {
-        "Description": [
-            "Test queries with <em>special</em> characters, plus strings for MSFT, SQL and Java."
-        ]
+```output
+"@search.highlights": {
+    "Description": [
+        "Test queries with <em>special</em> characters, plus strings for MSFT, SQL and Java."
+    ]
+```
 
 Повторите запрос, указав "Специальный", выполнив несколько букв ("PE"):
 
-    search=scial~&highlight=Description
+```console
+search=scial~&highlight=Description
+```
 
 Пока нет изменений в ответе. При использовании значения по умолчанию, равном 2 градусам, удаление двух символов "PE" из "специального" по-прежнему обеспечивает успешное совпадение в этом термине.
 
-    "@search.highlights": {
-        "Description": [
-            "Test queries with <em>special</em> characters, plus strings for MSFT, SQL and Java."
-        ]
+```output
+"@search.highlights": {
+    "Description": [
+        "Test queries with <em>special</em> characters, plus strings for MSFT, SQL and Java."
+    ]
+```
 
 Еще один запрос, дальнейшее изменение условия поиска путем получения одного последнего символа для всего трех операций удаления (от "Special" до "масштабируемости"):
 
-    search=scal~&highlight=Description
+```console
+search=scal~&highlight=Description
+```
 
 Обратите внимание, что возвращается тот же ответ, но теперь вместо "специального" нечеткое соответствие имеет значение "SQL".
 
-            "@search.score": 0.4232868,
-            "@search.highlights": {
-                "Description": [
-                    "Mix of special characters, plus strings for MSFT, <em>SQL</em>, 2019, Linux, Java."
-                ]
+```output
+        "@search.score": 0.4232868,
+        "@search.highlights": {
+            "Description": [
+                "Mix of special characters, plus strings for MSFT, <em>SQL</em>, 2019, Linux, Java."
+            ]
+```
 
 В этом развернутом примере видно, что выделение попаданий может привести к неоднозначным результатам. Во всех случаях возвращается один и тот же документ. Если вы использовали идентификаторы документов для проверки совпадения, вы могли пропустить смену из "специального" на "SQL".
 

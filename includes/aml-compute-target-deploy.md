@@ -25,7 +25,7 @@ ms.locfileid: "85378502"
 | [вычислительные кластеры Машинного обучения Azure;](../articles/machine-learning/how-to-use-parallel-run-step.md) | &nbsp;Вывод пакета | [Да](../articles/machine-learning/how-to-use-parallel-run-step.md) (конвейер машинного обучения) | &nbsp;  | Выполнение пакетной оценки на бессерверных вычислениях. Поддерживает виртуальные машины с обычным и низким приоритетными уровнями. |
 | [Функции Azure](../articles/machine-learning/how-to-deploy-functions.md) | Образца Вывод в режиме реального времени | &nbsp; | &nbsp; | &nbsp; |
 | [Azure IoT Edge](../articles/machine-learning/how-to-deploy-and-where.md#iotedge) | Образца &nbsp;Модуль IOT |  &nbsp; | &nbsp; | Развертывание и обслуживание моделей машинного обучения на устройствах IoT. |
-| [Что представляет собой Azure Data Box Edge (ознакомительная версия)?](../articles/databox-online/azure-stack-edge-overview.md)   | Via IoT Edge |  &nbsp; | Да | Развертывание и обслуживание моделей машинного обучения на устройствах IoT. |
+| [Azure Data Box Edge](../articles/databox-online/azure-stack-edge-overview.md)   | Via IoT Edge |  &nbsp; | Да | Развертывание и обслуживание моделей машинного обучения на устройствах IoT. |
 
 > [!NOTE]
 > Хотя целевые объекты вычислений, например локальные, Машинное обучение Azure вычислительных кластеров и Машинное обучение Azure вычислительных кластерах, поддерживают GPU для обучения и экспериментирования, использование GPU для вывода __при развертывании в качестве веб-службы__ поддерживается только в службе Azure Kubernetes.

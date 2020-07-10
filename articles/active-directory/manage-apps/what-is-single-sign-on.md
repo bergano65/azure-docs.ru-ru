@@ -1,5 +1,5 @@
 ---
-title: Единый вход в приложения в Azure Active Directory | Документация Майкрософт
+title: Что такое единый вход Azure (SSO)?
 description: Узнайте, как выбрать способ единого входа при настройке приложений в Azure Active Directory (Azure AD). Используйте единый вход, чтобы пользователям не приходилось запоминать пароли для каждого приложения, а также чтобы упростить администрирование управления учетными записями.
 services: active-directory
 author: kenwith
@@ -12,14 +12,14 @@ ms.date: 12/03/2019
 ms.author: kenwith
 ms.reviewer: arvindh, japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd8b20d7d285f30eb0aa9ba5ac22739b57856d6c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a50f2cf6fc00189c8cc764a132b550153b80b52e
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85479714"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86144600"
 ---
-# <a name="single-sign-on-to-applications-in-azure-active-directory"></a>Единый вход в приложениях в Azure Active Directory
+# <a name="what-is-single-sign-on-sso"></a>Что собой представляет единый вход?
 
 Единый вход обеспечивает безопасность и удобство при входе пользователей в приложения в Azure Active Directory (Azure AD). В этой статье описываются способы единого входа и представлены рекомендации, которые помогут выбрать наиболее подходящий метод единого входа при настройке приложений.
 
@@ -54,7 +54,7 @@ ms.locfileid: "85479714"
 
 При разработке новых приложений используйте современные протоколы, такие как OpenID Connect и OAuth, чтобы оптимально использовать единый вход для своего приложения на различных платформах устройств. OAuth позволяет пользователям или администраторам [предоставлять согласие](configure-user-consent.md) на доступ к защищенным ресурсам, таким как [Microsoft Graph](/graph/overview). Мы предоставляем легкое внедрение [пакетов SDK](../develop/reference-v2-libraries.md) для приложения, а приложение будет готово к использованию [Microsoft Graph](/graph/overview).
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения см. в следующих источниках.
 
 - [OAuth 2.0](../develop/v2-oauth2-auth-code-flow.md)
 - [OpenID Connect 1.0](../develop/v2-protocols-oidc.md)
@@ -99,8 +99,8 @@ ms.locfileid: "85479714"
 - Microsoft Edge в Windows 10 Anniversary Edition или более поздней версии;
 - Microsoft ребро для iOS и Android
 - Управляемый браузер Intune
-- Chrome в Windows 7 или более поздней версии и в Mac OS X;
-- Firefox 26.0 или более поздней версии в Windows XP с пакетом обновления 2 (SP2) или более поздней версии и в Mac OS X 10.6 или более поздней версии.
+- Chrome в Windows 7 или более поздней версии, а также на macOS X или более поздней версии
+- Firefox 26,0 или более поздней версии в Windows XP SP2 или более поздней версии, а также на macOS X 10,6 или более поздней версии
 
 Чтобы настроить облачное приложение для единого входа на основе пароля, см. статью [Настройка единого входа по паролю](configure-password-single-sign-on-non-gallery-applications.md).
 

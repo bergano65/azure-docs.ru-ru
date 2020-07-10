@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: trbye
 author: trevorbye
-ms.date: 03/18/2020
-ms.openlocfilehash: 50ddbffd00e0cbbd0641089613aaa40d03658c9e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/08/2020
+ms.openlocfilehash: 437db3e1ad367a75d6c8d3a77b138bce79b5f61e
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80064194"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86147135"
 ---
 # <a name="what-are-azure-machine-learning-environments"></a>Что такое Машинное обучение Azure среды?
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -48,6 +48,7 @@ ms.locfileid: "80064194"
 * Использование существующих `Environment` объектов из рабочей области. Такой подход обеспечивает согласованность и воспроизводимость с зависимостями.
 * Импорт из существующего определения среды Anaconda.
 * Использование интерфейса командной строки Машинное обучение Azure
+* [Использование расширения VS Code](how-to-manage-resources-vscode.md#create-environment)
 
 Конкретные примеры кода см. в разделе "Создание среды" статьи [повторное использование сред для обучения и развертывания](how-to-use-environments.md#create-an-environment). Кроме того, в рабочей области можно легко управлять средами. В их число входят следующие функциональные возможности.
 
@@ -100,7 +101,7 @@ ms.locfileid: "80064194"
 > [!WARNING]
 >  Метод [Environment. Build](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#build-workspace--image-build-compute-none-) выполнит перестроение кэшированного образа с возможным побочным действием обновления незакрепленных пакетов и разрушением воспроизводимость для всех определений среды, соответствующих этому кэшированному изображению.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте, как [создавать и использовать среды](how-to-use-environments.md) в машинное обучение Azure.
 * См. справочную документацию по пакету SDK для Python для [класса Environment](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment(class)?view=azure-ml-py).

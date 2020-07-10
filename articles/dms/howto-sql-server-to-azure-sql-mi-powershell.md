@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019,fasttrack-edit
 ms.topic: article
 ms.date: 02/20/2020
-ms.openlocfilehash: 35e6690726750e6c9e6dfb0cb62a6732603c3610
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: eb8ec09646fa3f3c226edbe957e19d079fd2607c
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/08/2020
-ms.locfileid: "86083667"
+ms.locfileid: "86147430"
 ---
 # <a name="migrate-sql-server-to-sql-managed-instance-with-powershell--azure-database-migration-service"></a>Миграция SQL Server в Управляемый экземпляр SQL с помощью & PowerShell Azure Database Migration Service
 
@@ -27,7 +27,7 @@ ms.locfileid: "86083667"
 > [!div class="checklist"]
 >
 > * Создайте группу ресурсов.
-> * создание экземпляра Azure Database Migration Service;
+> * Создайте экземпляр Azure Database Migration Service.
 > * Создайте проект миграции в экземпляре Azure Database Migration Service.
 > * выполнение миграции.
 
@@ -35,7 +35,7 @@ ms.locfileid: "86083667"
 
 Эта статья содержит подробные сведения о том, как выполнять оперативную и автономную миграцию.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Для выполнения этих действий вам потребуется следующее:
 
@@ -110,7 +110,7 @@ $service = New-AzDms -ResourceGroupName myResourceGroup `
 * *ServerType*. Тип запрошенного подключения к базе данных, например SQL, Oracle или MySQL. Используйте SQL для SQL Server и SQL Azure.
 * *Источник данных*. Имя или IP-адрес экземпляра SQL Server или экземпляра базы данных SQL Azure.
 * *AuthType*. Тип проверки подлинности для подключения. Это может быть SqlAuthentication или WindowsAuthentication.
-* *TrustServerCertificate*. Этот параметр задает значение, указывающее, шифруется ли канал при прохождении обхода цепочки сертификатов для проверки доверия. Значение может быть `$true` или `$false` .
+* *TrustServerCertificate*. Этот параметр задает значение, указывающее, шифруется ли канал при прохождении обхода цепочки сертификатов для проверки доверия. Значением может быть `$true` или `$false`.
 
 В следующем примере создается объект сведений о соединении для источника SQL Server с именем *мисаурцесклсервер* с использованием проверки подлинности SQL:
 
@@ -121,13 +121,11 @@ $sourceConnInfo = New-AzDmsConnInfo -ServerType SQL `
   -TrustServerCertificate:$true
 ```
 
-В следующем примере показано создание сведений о подключении для Управляемый экземпляр Azure SQL с именем "targetmanagedinstance.database.windows.net" с использованием проверки подлинности SQL:
+В следующем примере показано создание сведений о подключении для Управляемый экземпляр Azure SQL с именем "таржетманажединстанце":
 
 ```powershell
-$targetConnInfo = New-AzDmsConnInfo -ServerType SQL `
-  -DataSource "targetmanagedinstance.database.windows.net" `
-  -AuthType SqlAuthentication `
-  -TrustServerCertificate:$false
+$targetResourceId = (Get-AzSqlInstance -Name "targetmanagedinstance").Id
+$targetConnInfo = New-AzDmsConnInfo -ServerType SQLMI -MiResourceId $targetResourceId
 ```
 
 ### <a name="provide-databases-for-the-migration-project"></a>Указание баз данных для проекта миграции
@@ -422,6 +420,6 @@ Remove-AzDms -ResourceGroupName myResourceGroup -ServiceName MyDMS
 
 Дополнительные сведения о дополнительных сценариях миграции (пары "источник — Целевая версия") см. в разделе [руководств по миграции баз данных](https://datamigration.microsoft.com/)Майкрософт.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о Azure Database Migration Service в статье [что такое Azure Database Migration Service?](https://docs.microsoft.com/azure/dms/dms-overview).

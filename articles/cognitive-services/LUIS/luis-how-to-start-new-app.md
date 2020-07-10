@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/18/2020
 ms.author: diberry
-ms.openlocfilehash: 3d6b2b5896242ff85c6fb96071b747083893b03a
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.openlocfilehash: 304e76a2bf8bae3e6ee2120b892ef97d89c3decc
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84343172"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86144397"
 ---
 # <a name="create-a-new-luis-app-in-the-luis-portal"></a>Создание приложения LUIS на портале LUIS
 Создать приложение LUIS можно двумя способами: на портале LUIS или с помощью [API-интерфейсов](developer-reference-resource.md) разработки LUIS.
@@ -45,7 +45,7 @@ ms.locfileid: "84343172"
 
 ## <a name="create-new-app-in-luis"></a>Создание приложения в LUIS
 
-1. На странице **Мои приложения** выберите **подписку**и создайте **ресурс** , а затем — **создать**. Если вы используете ключ бесплатной пробной версии, Узнайте, как [создать ресурс для разработки](luis-how-to-azure-subscription.md#create-resources-in-the-azure-portal).
+1. На странице **Мои приложения** выберите **подписку**и создайте **ресурс** , а затем — **создать**. 
 
 > [!div class="mx-imgBorder"]
 > ![Список приложений LUIS](./media/create-app-in-portal.png)

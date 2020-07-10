@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/01/2020
-ms.openlocfilehash: 15d2a7a2ad00f7f9b5db59d3d4803f60508b7b2c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fd102706d1fa6c33d8962a5d1caf5aa3e41b231d
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85561586"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146180"
 ---
 # <a name="how-to-work-with-search-results-in-azure-cognitive-search"></a>Работа с результатами поиска в Azure Когнитивный поиск
 
@@ -55,20 +55,26 @@ POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
  
 Ниже приведен пример того, как можно получить дубликаты. Предположим, что индекс имеет четыре документа:
 
-    { "id": "1", "rating": 5 }
-    { "id": "2", "rating": 3 }
-    { "id": "3", "rating": 2 }
-    { "id": "4", "rating": 1 }
+```text
+{ "id": "1", "rating": 5 }
+{ "id": "2", "rating": 3 }
+{ "id": "3", "rating": 2 }
+{ "id": "4", "rating": 1 }
+```
  
 Теперь предположим, что вы хотите, чтобы результаты возвращались два раза в один раз, упорядоченные по рейтингу. Этот запрос будет выполнен для получения первой страницы результатов: `$top=2&$skip=0&$orderby=rating desc` , что приведет к следующим результатам:
 
-    { "id": "1", "rating": 5 }
-    { "id": "2", "rating": 3 }
+```text
+{ "id": "1", "rating": 5 }
+{ "id": "2", "rating": 3 }
+```
  
 В службе Предположим, что в индекс между вызовами запроса добавляется пятый документ: `{ "id": "5", "rating": 4 }` .  Вскоре после этого вы выполните запрос для получения второй страницы: `$top=2&$skip=2&$orderby=rating desc` и получите следующие результаты:
 
-    { "id": "2", "rating": 3 }
-    { "id": "3", "rating": 2 }
+```text
+{ "id": "2", "rating": 3 }
+{ "id": "3", "rating": 2 }
+```
  
 Обратите внимание, что документ 2 извлекается дважды. Это связано с тем, что новый документ 5 имеет большее значение для оценки, поэтому он сортирует перед документом 2 и на первой странице. Хотя такое поведение может быть неожиданным, обычно это характерно для поведения поисковой системы.
 

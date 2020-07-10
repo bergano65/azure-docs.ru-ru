@@ -8,12 +8,13 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
-ms.date: 12/27/2019
-ms.openlocfilehash: 03bc49c24e3c2d32e97f3e5e03bd39da63428a6e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/08/2020
+ms.openlocfilehash: 415c624153971e88afac3b18920a3ba3a8f2cfae
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77505580"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86147027"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Что такое рабочая область Машинного обучения Azure?
 
@@ -52,6 +53,7 @@ ms.locfileid: "77505580"
 + В любой среде Python с [пакетом SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
 + В любой среде R с [машинное обучение Azureным пакетом SDK для r](https://azure.github.io/azureml-sdk-for-r/reference/index.html).
 + В командной строке с помощью [расширения CLI](https://docs.microsoft.com/azure/machine-learning/reference-azure-machine-learning-cli) машинное обучение Azure
++ [Расширение Машинное обучение Azure VS Code](how-to-manage-resources-vscode.md#workspaces)
 
 ## <a name="machine-learning-with-a-workspace"></a>Машинное обучение с рабочей областью
 
@@ -69,13 +71,13 @@ ms.locfileid: "77505580"
 
 Вы также можете выполнять следующие задачи по управлению рабочими областями:
 
-| Задача управления рабочей областью   | Портал              | Студия | Пакет SDK для Python или пакет SDK для R       | CLI        |
-|---------------------------|---------|---------|------------|------------|
-| Создание рабочей области        | **&check;**     | | **&check;** | **&check;** |
-| Управление доступом к рабочей области    | **&check;**   || |  **&check;**    |
-| Обновление до выпуска Enterprise Edition    | **&check;** | **&check;**  | |     |
-| Создание ресурсов вычислений и управление ими    | **&check;**   | **&check;** | **&check;** |  **&check;**   |
-| Создание виртуальной машины записной книжки |   | **&check;** | |     |
+| Задача управления рабочей областью   | Портал              | Студия | Пакет SDK для Python или пакет SDK для R       | CLI        | VS Code
+|---------------------------|---------|---------|------------|------------|------------|
+| Создание рабочей области        | **&check;**     | | **&check;** | **&check;** | **&check;** |
+| Управление доступом к рабочей области    | **&check;**   || |  **&check;**    ||
+| Обновление до выпуска Enterprise Edition    | **&check;** | **&check;**  | |     ||
+| Создание ресурсов вычислений и управление ими    | **&check;**   | **&check;** | **&check;** |  **&check;**   ||
+| Создание виртуальной машины записной книжки |   | **&check;** | |     ||
 
 > [!WARNING]
 > Перемещение рабочей области Машинного обучения Azure в другую подписку или перемещение главной подписки на новый клиент не поддерживается. Это может привести к ошибкам.
@@ -89,7 +91,7 @@ ms.locfileid: "77505580"
 * Используйте [портал Azure](how-to-manage-workspace.md) для интерфейса «точка-и щелчок», чтобы проанализировать каждый шаг.
 * Использование [пакета SDK машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py#workspace) для создания рабочей области на лету из сценариев Python и записных книжек Юпитер
 * Используйте [шаблон Azure Resource Manager](how-to-create-workspace-template.md) или интерфейс [командной строки машинное обучение Azure](reference-azure-machine-learning-cli.md) , если необходимо автоматизировать или настроить создание с использованием корпоративных стандартов безопасности.
-* При работе в Visual Studio Code используйте [расширение VS Code](tutorial-setup-vscode-extension.md).
+* При работе в Visual Studio Code используйте [расширение VS Code](how-to-manage-resources-vscode.md#create-a-workspace).
 
 > [!NOTE]
 > В имени рабочей области не учитывается регистр.

@@ -8,12 +8,12 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 07/07/2020
 ms.author: cherylmc
-ms.openlocfilehash: e9891e3ac12de3f8735407c603ff59b61f4eb05d
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 6d14094edc7ae21ca0d56b544fb9c2b19f1f0582
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/08/2020
-ms.locfileid: "86118976"
+ms.locfileid: "86145000"
 ---
 # <a name="how-to-configure-virtual-hub-routing"></a>Настройка маршрутизации для виртуального концентратора
 
@@ -22,9 +22,7 @@ ms.locfileid: "86118976"
 Дополнительные сведения см. в статье [о маршрутизации виртуальных концентраторов](about-virtual-hub-routing.md).
 
 > [!NOTE]
-> Некоторые из этих возможностей по-прежнему можно развернуть. Если развертывание еще не произошло в вашем регионе, выполните действия, описанные в этих версиях статей.
->* [портал Azure статья](virtual-wan-route-table-nva-portal.md)
->* [Статья о PowerShell](virtual-wan-route-table-nva.md)
+> Некоторые из этих возможностей по-прежнему можно развернуть. Это должно быть завершено 3 августа.
 >
 
 ## <a name="create-a-route-table"></a><a name="create-table"></a>Создание таблицы маршрутов
@@ -38,7 +36,7 @@ ms.locfileid: "86118976"
 
    :::image type="content" source="./media/how-to-virtual-hub-routing/basics.png" alt-text="Вкладка "Основные сведения"":::
 
-   * **имя**;
+   * **Имя**
    * **Маршруты**
    * **Имя маршрута**
    * **Конечный тип**
@@ -90,7 +88,7 @@ ms.locfileid: "86118976"
 
 :::image type="content" source="./media/how-to-virtual-hub-routing/routing-configuration.png" alt-text="Настройка конфигурации маршрутизации" lightbox="./media/how-to-virtual-hub-routing/routing-configuration-expand.png":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о маршрутизации виртуальных концентраторов см. в статье [о маршрутизации виртуальных концентраторов](about-virtual-hub-routing.md).
 Дополнительные сведения о виртуальной глобальной сети см. в статье, содержащей [Часто задаваемые вопросы](virtual-wan-faq.md) о ней.

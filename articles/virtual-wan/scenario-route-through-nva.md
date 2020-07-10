@@ -8,16 +8,22 @@ ms.service: virtual-wan
 ms.topic: conceptual
 ms.date: 06/29/2020
 ms.author: cherylmc
-ms.openlocfilehash: 0716ca8f0457ca801098c97dd7a5e68751822d4d
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: ed64b9d281cfbbf8202a99335ea2759b27a6fc42
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85848088"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86142969"
 ---
 # <a name="scenario-route-traffic-through-an-nva"></a>Сценарий: маршрутизация трафика через NVA
 
 При работе с маршрутизацией виртуальных сетей виртуальной глобальной сети существует несколько доступных сценариев. В этом сценарии NVA цель заключается в маршрутизации трафика через NVA (сетевой виртуальный модуль) для ветвления в VNet и VNet to Branch. Дополнительные сведения о маршрутизации виртуальных концентраторов см. в статье [о маршрутизации виртуальных концентраторов](about-virtual-hub-routing.md).
+
+> [!NOTE]
+> Некоторые возможности маршрутизации по-прежнему могут быть сведены. Если развертывание еще не произошло в вашем регионе, выполните действия, описанные в этих версиях статей.
+>* [портал Azure статья](virtual-wan-route-table-nva-portal.md)
+>* [Статья о PowerShell](virtual-wan-route-table-nva.md)
+>
 
 ## <a name="scenario-architecture"></a><a name="architecture"></a>Архитектура сценария
 

@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.reviewer: willzhan; johndeu
-ms.openlocfilehash: a693eb374365670da3fe8c4b2bb8ce664a024217
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8b4980ee8ea252b4ce13601501e4bf1f7af97d1b
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80295439"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86166371"
 ---
 # <a name="use-azure-ad-authentication-to-access-the-media-services-api-with-rest"></a>Использование аутентификации Azure AD для доступа к API Служб мультимедиа с помощью REST
 
@@ -137,8 +137,10 @@ ms.locfileid: "80295439"
 
     Кроме того, можно щелкнуть ссылку **Массовое изменение** в окне Postman справа и вставить следующий код.
 
-        Content-Type:application/x-www-form-urlencoded
-        Keep-Alive:true
+    ```javascript
+    Content-Type:application/x-www-form-urlencoded
+    Keep-Alive:true
+    ```
 
 6. Перейдите на вкладку **Body** (Текст).
 7. Введите сведения с помощью сетки данных "ключ— значение" (замените значения идентификатора и секрета клиента). 
@@ -147,10 +149,12 @@ ms.locfileid: "80295439"
 
     Кроме того, можно нажать **Bulk Edit** (Массовое изменение) в окне Postman справа и вставить следующий текст (замените значения идентификатора и секрета клиента):
 
-        grant_type:client_credentials
-        client_id:{Your Client ID that you got from your Azure AD Application}
-        client_secret:{Your client secret that you got from your Azure AD Application's Keys}
-        resource:https://rest.media.azure.net
+    ```javascript
+    grant_type:client_credentials
+    client_id:{Your Client ID that you got from your Azure AD Application}
+    client_secret:{Your client secret that you got from your Azure AD Application's Keys}
+    resource:https://rest.media.azure.net
+    ```
 
 8. Нажмите кнопку **Отправить**.
 
@@ -180,17 +184,19 @@ ms.locfileid: "80295439"
 5. В окне Postman справа щелкните ссылку **Bulk Edit** (Массовое изменение).
 6. Вставьте следующие заголовки.
 
-        x-ms-version:2.19
-        Accept:application/json
-        Content-Type:application/json
-        DataServiceVersion:3.0
-        MaxDataServiceVersion:3.0
+    ```javascript
+    x-ms-version:2.19
+    Accept:application/json
+    Content-Type:application/json
+    DataServiceVersion:3.0
+    MaxDataServiceVersion:3.0
+    ```
 
 7. Нажмите кнопку **Отправить**.
 
 Возвращенный ответ содержит ресурсы, которые находятся в вашей учетной записи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Пример кода доступен в разделе [Azure AD Authentication for Azure Media Services Access: Both via REST API](https://github.com/willzhan/WAMSRESTSoln) (Аутентификация Azure AD для доступа к службам мультимедиа Azure с помощью REST API)
 * [Передача файлов в учетную запись служб мультимедиа с помощью .NET](media-services-dotnet-upload-files.md)

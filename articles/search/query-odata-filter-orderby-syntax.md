@@ -19,11 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: f3a1be435e297ab4a9ba7f8bfbd5f3ce3451d8a8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 07f3e270e799753a582227abe53223bd05755eb5
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77153882"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86165215"
 ---
 # <a name="odata-language-overview-for-filter-orderby-and-select-in-azure-cognitive-search"></a>Общие сведения о языке OData для `$filter` , `$orderby` и `$select` в Azure когнитивный Поиск
 
@@ -69,7 +70,7 @@ identifier ::= [a-zA-Z_][a-zA-Z_0-9]*
 
 Примеры путей к полям приведены в следующей таблице.
 
-| Путь к полю | Описание: |
+| Путь к полю | Описание |
 | --- | --- |
 | `HotelName` | Ссылается на поле индекса верхнего уровня |
 | `Address/City` | Ссылается на `City` вспомогательное поле сложного поля в индексе; `Address` тип `Edm.ComplexType` в этом примере |
@@ -82,7 +83,9 @@ identifier ::= [a-zA-Z_][a-zA-Z_0-9]*
 
 Рассмотрим путь к полю `Address/City` . В фильтре это относится к одному городу для текущего документа, например "Сан-Франциско". Напротив, `Rooms/Type` относится ко `Type` вспомогательному полю для многих комнат (например, "Стандартный" для первой комнаты, "Deluxe" для второй комнаты и т. д.). Поскольку `Rooms/Type` не ссылается на *единственный экземпляр* подполя `Type` , его нельзя использовать непосредственно в фильтре. Вместо этого для фильтрации по типу комнаты можно использовать [лямбда-выражение](search-query-odata-collection-operators.md) с переменной диапазона, например:
 
-    Rooms/any(room: room/Type eq 'deluxe')
+```odata
+Rooms/any(room: room/Type eq 'deluxe')
+```
 
 В этом примере переменная Range `room` отображается в `room/Type` пути к полю. Таким образом, `room/Type` ссылается на тип текущей комнаты в текущем документе. Это единственный экземпляр `Type` вспомогательного поля, поэтому его можно использовать непосредственно в фильтре.
 
@@ -92,7 +95,7 @@ identifier ::= [a-zA-Z_][a-zA-Z_0-9]*
 
 | API | Имя параметра | Ограничения |
 | --- | --- | --- |
-| [Создать](https://docs.microsoft.com/rest/api/searchservice/create-index) или [Обновить](https://docs.microsoft.com/rest/api/searchservice/update-index) индекс | `suggesters/sourceFields` | Отсутствуют |
+| [Создать](https://docs.microsoft.com/rest/api/searchservice/create-index) или [Обновить](https://docs.microsoft.com/rest/api/searchservice/update-index) индекс | `suggesters/sourceFields` | Нет |
 | [Создать](https://docs.microsoft.com/rest/api/searchservice/create-index) или [Обновить](https://docs.microsoft.com/rest/api/searchservice/update-index) индекс | `scoringProfiles/text/weights` | Может ссылаться только на поля с **возможностью поиска** |
 | [Создать](https://docs.microsoft.com/rest/api/searchservice/create-index) или [Обновить](https://docs.microsoft.com/rest/api/searchservice/update-index) индекс | `scoringProfiles/functions/fieldName` | Может ссылаться только на **фильтруемые** поля |
 | [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `search`Когда `queryType` имеет`full` | Может ссылаться только на поля с **возможностью поиска** |

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/20/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 03fe40cea5891e87f42f0d6a50eedee80a68f25e
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: efcc5e8f629c8b6ccc903478473b54989c0e9fd6
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83200524"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85959489"
 ---
 ::: zone target="docs"
 
@@ -46,7 +46,7 @@ ms.locfileid: "83200524"
 Перед тем как начать, убедитесь в следующем:
 
 - Вы ознакомились со статьей [Руководство. Копирование данных в Azure Data Box через SMB](data-box-deploy-copy-data.md). 
-- Задания копирования выполнены. Подготовка к отправке недоступна, если задания копирования не завершены.
+- Задания копирования завершены, и на странице **Подключение и копирование** ошибок нет. Подготовка к отправке недоступна, если задания копирования не завершены или если на странице **Подключение и копирование** есть ошибки.
 
 ## <a name="prepare-to-ship"></a>Подготовка к отправке
 

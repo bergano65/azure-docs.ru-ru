@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 4f9b8f3edc475ec50eaf11080020aa9f62a0d2c1
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: b02455c153c6205b87a64a388d5588c3c431e0c9
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83700883"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85963518"
 ---
 # <a name="quickstart-use-a-device-capability-model-to-create-an-iot-plug-and-play-preview-device-windows"></a>Краткое руководство. Создание устройства IoT Plug and Play (предварительная версия) в Windows с помощью модели возможностей устройства
 
@@ -78,7 +78,7 @@ az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
 1. Установите Vcpkg для пакета SDK для устройств Azure IoT для C.
 
     ```cmd
-    .\vcpkg.exe install azure-iot-sdk-c[public-preview,use_prov_client]
+    .\vcpkg.exe install azure-iot-sdk-c[public-preview,use-prov-client]
     ```
 
 ## <a name="author-your-model"></a>Создание модели
@@ -87,7 +87,7 @@ az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
 
 1. На локальном диске создайте папку `pnp_app`. Эта папка используется для файлов модели устройства и заглушки кода устройства.
 
-1. Скачайте [модель возможностей устройства, файлы примеров интерфейса](https://github.com/Azure/IoTPlugandPlay/blob/master/samples/SampleDevice.model.json) и [пример интерфейса](https://github.com/Azure/IoTPlugandPlay/blob/master/samples/EnvironmentalSensor.interface.json) в папку `pnp_app`.
+1. Скачайте [модель возможностей устройства](https://github.com/Azure/opendigitaltwins-dtdl/blob/9004219bff1e958b7cd6ff2a52209f4b7ae19396/samples/SampleDevice.capabilitymodel.json) и файлы [примеров интерфейса](https://github.com/Azure/opendigitaltwins-dtdl/blob/9004219bff1e958b7cd6ff2a52209f4b7ae19396/samples/EnvironmentalSensor.interface.json) в папку `pnp_app`.
 
     > [!TIP]
     > Чтобы скачать файл с сайта GitHub, перейдите к файлу, щелкните правой кнопкой мыши **Необработанный**, а затем выберите **Сохранить ссылку как**.

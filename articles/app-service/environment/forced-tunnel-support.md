@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 05/29/2018
 ms.author: ccompy
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 3334a19b1ba0e3949ab2670c5d2f70d3bcd02fe8
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: 6dc002b0ed9e68ea15eaa58c226249837c7df32d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80983916"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85830865"
 ---
 # <a name="configure-your-app-service-environment-with-forced-tunneling"></a>Настройка принудительного туннелирования в среде службы приложений
 
@@ -95,35 +95,39 @@ ms.locfileid: "80983916"
 
 3. Получите адреса, которые будут использоваться для всего исходящего трафика из среды службы приложений в Интернет. Если вы выполняете маршрутизацию трафика локально, эти адреса будут выполнять роль NAT или IP-адреса шлюза. Если вы хотите перенаправить исходящий трафик среды службы приложений через виртуальный сетевой модуль, то адресом исходящего трафика будет общедоступный IP-адрес виртуального сетевого модуля.
 
-4. _Чтобы настроить адрес исходящего трафика в существующей Среде службы приложений,_ откройте сайт resources.azure.com и выберите Subscription/\<ИД подписки>/resourceGroups/\<группа ресурсов ase>/providers/Microsoft.Web/hostingEnvironments/\<имя ase>. Затем вы сможете просмотреть код JSON, в котором описана ваша среда службы приложений. Убедитесь, что вверху отображается строка **read/write**. Выберите команду **Изменить**. Прокрутите вниз. Измените значение **userWhitelistedIpRanges** с **null** на строку, приведенную ниже. Используйте адреса, которые нужно задать в качестве диапазона адресов исходящего трафика. 
+4. _Чтобы настроить адрес исходящего трафика в существующей Среде службы приложений,_ Перейдите на сайт resource.azure.com в раздел Subscription/\<subscription id>/resourceGroups/\<ase resource group>/providers/Microsoft.Web/hostingEnvironments/\<ase name>. Затем вы сможете просмотреть код JSON, в котором описана ваша среда службы приложений. Убедитесь, что вверху отображается строка **read/write**. Выберите команду **Изменить**. Прокрутите вниз. Измените значение **userWhitelistedIpRanges** с **null** на строку, приведенную ниже. Используйте адреса, которые нужно задать в качестве диапазона адресов исходящего трафика. 
 
-        "userWhitelistedIpRanges": ["11.22.33.44/32", "55.66.77.0/24"] 
+    ```json
+    "userWhitelistedIpRanges": ["11.22.33.44/32", "55.66.77.0/24"]
+    ```
 
    Щелкните **PUT** в верху. Этот параметр запускает операцию масштабирования в среде службы приложений и настраивает брандмауэр.
 
 _Чтобы создать ASE с адресами для исходящего трафика,_ следуйте инструкциям по [созданию Среды службы приложений с помощью шаблона][template] и извлеките соответствующий шаблон.  Отредактируйте раздел resources файла azuredeploy.json, но не в блоке properties, и включите строку для **userWhitelistedIpRanges** со своими значениями.
 
-    "resources": [
-      {
+```json
+"resources": [
+    {
         "apiVersion": "2015-08-01",
         "type": "Microsoft.Web/hostingEnvironments",
         "name": "[parameters('aseName')]",
         "kind": "ASEV2",
         "location": "[parameters('aseLocation')]",
         "properties": {
-          "name": "[parameters('aseName')]",
-          "location": "[parameters('aseLocation')]",
-          "ipSslAddressCount": 0,
-          "internalLoadBalancingMode": "[parameters('internalLoadBalancingMode')]",
-          "dnsSuffix" : "[parameters('dnsSuffix')]",
-          "virtualNetwork": {
-            "Id": "[parameters('existingVnetResourceId')]",
-            "Subnet": "[parameters('subnetName')]"
-          },
-        "userWhitelistedIpRanges":  ["11.22.33.44/32", "55.66.77.0/30"]
+            "name": "[parameters('aseName')]",
+            "location": "[parameters('aseLocation')]",
+            "ipSslAddressCount": 0,
+            "internalLoadBalancingMode": "[parameters('internalLoadBalancingMode')]",
+            "dnsSuffix" : "[parameters('dnsSuffix')]",
+            "virtualNetwork": {
+                "Id": "[parameters('existingVnetResourceId')]",
+                "Subnet": "[parameters('subnetName')]"
+            },
+            "userWhitelistedIpRanges":  ["11.22.33.44/32", "55.66.77.0/30"]
         }
-      }
-    ]
+    }
+]
+```
 
 После внесения этих изменений трафик отправляется из ASE непосредственно в службу хранилища Azure и разрешается доступ к Azure SQL дополнительным адресам, кроме виртуального IP-адреса ASE.
 

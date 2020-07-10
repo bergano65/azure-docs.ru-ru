@@ -8,16 +8,16 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: jrasnick
 ms.date: 06/09/2020
-ms.openlocfilehash: 766a41b61f32804c7d7f59c946530f8e1a7b869a
-ms.sourcegitcommit: 4042aa8c67afd72823fc412f19c356f2ba0ab554
+ms.openlocfilehash: 3f84cd92a4c4f96831d39cac783df6710c5ea5f4
+ms.sourcegitcommit: 374e47efb65f0ae510ad6c24a82e8abb5b57029e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85296276"
+ms.lasthandoff: 06/28/2020
+ms.locfileid: "85513416"
 ---
 # <a name="quickstart-create-an-azure-synapse-analytics-sql-pool-by-using-an-arm-template"></a>Краткое руководство. Создание пула SQL Azure Synapse Analytics с помощью шаблона ARM
 
-Этот шаблон создает пул SQL Azure Synapse Analytics с включенным прозрачным шифрованием данных. Название "пул SQL Synapse" относится к функциям хранения корпоративных данных, которые стали общедоступны в Azure Synapse.
+Этот шаблон Azure Resource Manager (шаблон ARM) создает пул SQL Azure Synapse Analytics с включенным прозрачным шифрованием данных. Название "пул SQL Synapse" относится к функциям хранения корпоративных данных, которые стали общедоступны в Azure Synapse.
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
@@ -41,7 +41,7 @@ ms.locfileid: "85296276"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Этот шаблон создает пул SQL Synapse.
+1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Этот шаблон создает пул Synapse SQL.
    
    [![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-sql-data-warehouse-transparent-encryption-create%2Fazuredeploy.json)
 
@@ -107,8 +107,8 @@ Write-Host "Press [ENTER] to continue..."
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве показано, как создать пул SQL Azure Synapse Analytics с помощью шаблона Azure Resource Manager и проверить развертывание. Дополнительные сведения об Azure Synapse Analytics и Azure Resource Manager см. в статьях ниже.
+В этом кратком руководстве показано, как создать пул SQL Azure Synapse Analytics с помощью шаблона ARM и проверить развертывание. Дополнительные сведения об Azure Synapse Analytics и Azure Resource Manager см. в статьях ниже.
 
 - См. статью [Сведения об Azure Synapse Analytics](sql-data-warehouse-overview-what-is.md)
 - Сведения об [Azure Resource Manager](../../azure-resource-manager/management/overview.md)
-- [Создание и развертывание первого шаблона Azure Resource Manager](../../azure-resource-manager/templates/template-tutorial-create-first-template.md)
+- [Создание и развертывание первого шаблона ARM](../../azure-resource-manager/templates/template-tutorial-create-first-template.md)

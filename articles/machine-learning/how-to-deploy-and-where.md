@@ -9,14 +9,14 @@ ms.topic: how-to
 ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
-ms.date: 06/12/2020
+ms.date: 07/08/2020
 ms.custom: seoapril2019, tracking-python
-ms.openlocfilehash: aa961cb94816b50aa515532e69454fce9b370c54
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 57e1ecb080d816898b862951846b15a4b5709e38
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/08/2020
-ms.locfileid: "86083087"
+ms.locfileid: "86146559"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -25,7 +25,7 @@ ms.locfileid: "86083087"
 
 Рабочий процесс аналогичен независимо от [того, где развертывается](#target) модель:
 
-1. Регистрация модели.
+1. регистрация модели;
 1. подготовка к развертыванию (настройка ресурсов, потребления, целевого объекта вычислений);
 1. развертывание модели в целевом объекте вычислений;
 1. Протестируйте развернутую модель, также называемую веб-службой.
@@ -59,7 +59,7 @@ ms.locfileid: "86083087"
 
 + **Использование Visual Studio Code**
 
-   При использовании Visual Studio Code рабочую область можно выбрать с помощью графического интерфейса. Дополнительные сведения см. в разделе [Развертывание моделей и управление ими](tutorial-train-deploy-image-classification-model-vscode.md#deploy-the-model) в документации по расширению Visual Studio Code.
+   При использовании Visual Studio Code рабочую область можно выбрать с помощью графического интерфейса. Дополнительные сведения см. в разделе [Развертывание моделей и управление ими](how-to-manage-resources-vscode.md#endpoints) в документации по расширению Visual Studio Code.
 
 ## <a name="register-your-model"></a><a id="registermodel"></a>Регистрация модели
 
@@ -560,7 +560,7 @@ az ml model profile -g <resource-group-name> -w <workspace-name> --inference-con
 | Целевой объект вычисления | Пример конфигурации развертывания |
 | ----- | ----- |
 | Local | `deployment_config = LocalWebservice.deploy_configuration(port=8890)` |
-| Экземпляры контейнеров Azure | `deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
+| Экземпляры контейнеров Azure; | `deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
 | Служба Azure Kubernetes | `deployment_config = AksWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
 
 Классы для локальных объектов, экземпляров контейнеров Azure и веб-служб AKS можно импортировать из `azureml.core.webservice` :
@@ -613,7 +613,7 @@ az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.
 | Переход | Служба находится в процессе развертывания. | Нет |
 | Unhealthy; | Служба была развернута, но сейчас недоступна.  | Нет |
 | Непланируемый | В настоящее время служба не может быть развернута из-за нехватки ресурсов. | Нет |
-| Ошибка | Не удалось выполнить развертывание службы из-за ошибки или сбоя. | Да |
+| Сбой | Не удалось выполнить развертывание службы из-за ошибки или сбоя. | Да |
 | Healthy | Служба работоспособна, и доступна конечная точка. | Да |
 
 ### <a name="compute-instance-web-service-devtest"></a><a id="notebookvm"></a>Веб-служба вычислительных экземпляров (разработка и тестирование)
@@ -998,7 +998,7 @@ package = Model.package(ws, [model], inference_config)
 package.wait_for_creation(show_output=True)
 ```
 
-После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Пример: 
+После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Вот несколько примеров: 
 
 `Status: Downloaded newer image for myworkspacef78fd10.azurecr.io/package:20190822181338`. 
 
@@ -1222,12 +1222,12 @@ def run(request):
 > Машинное обучение Azure будет маршрутизировать только запросы POST и GET к контейнерам, запускающим службу оценки. Это может вызвать ошибки из-за браузеров, использующих запросы параметров для предварительного рейса запросов CORS.
 > 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)
 * [Использование TLS для защиты веб-службы с помощью Машинного обучения Azure](how-to-secure-web-service.md).
-* [Использование Машинное обучение Azureной модели, развернутой в качестве веб-службы](how-to-consume-web-service.md)
+* [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md)
 * [Мониторинг моделей Машинное обучение Azure с помощью Application Insights](how-to-enable-app-insights.md)
 * [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md)
 * [Создание предупреждений и триггеров событий для развертываний моделей](how-to-use-event-grid.md)

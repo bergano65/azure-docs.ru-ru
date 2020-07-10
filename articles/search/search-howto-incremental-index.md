@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.date: 01/06/2020
-ms.openlocfilehash: 75b533368a01b2e98bece0751f45b12f36796658
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6af9db5ed76ecb79f8891895eab52ff71bcab048
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85556272"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146874"
 ---
 # <a name="how-to-configure-caching-for-incremental-enrichment-in-azure-cognitive-search"></a>Настройка кэширования для добавочного дополнения в Azure Когнитивный поиск
 
@@ -103,11 +103,13 @@ api-key: [YOUR-ADMIN-KEY]
 
 Если теперь вы выдаете другой запрос GET для индексатора, ответ службы будет включать `ID` свойство в объект Cache. К имени контейнера, содержащего все кэшированные результаты и промежуточное состояние каждого документа, обрабатываемого этим индексатором, добавляется буквенно-цифровая строка. Идентификатор будет использоваться для уникального имени кэша в хранилище BLOB-объектов.
 
+```http
     "cache": {
         "ID": "<ALPHA-NUMERIC STRING>",
         "enableReprocessing": true,
         "storageConnectionString": "DefaultEndpointsProtocol=https;AccountName=<YOUR-STORAGE-ACCOUNT>;AccountKey=<YOUR-STORAGE-KEY>;EndpointSuffix=core.windows.net"
     }
+```
 
 ### <a name="step-5-run-the-indexer"></a>Шаг 5. Запуск индексатора
 
@@ -176,7 +178,7 @@ api-key: [YOUR-ADMIN-KEY]
 
 Дополнительные сведения об управлении тем, что происходит с кэшем, см. в разделе [Управление кэшем](cognitive-search-incremental-indexing-conceptual.md#cache-management).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Добавочное углубление применяется к индексаторам, содержащим навыков. В качестве следующего шага посетите документацию по набору навыков, чтобы понять концепцию и композицию. 
 
