@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 81ac76ef5eeebd278dc10e03d661bb21469c8f4f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b423cc4cd933f84fccae5c2116be7abbdc288c67
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85610577"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86203679"
 ---
 # <a name="azure-disk-encryption-scenarios-on-windows-vms"></a>Сценарии шифрования дисков Azure для виртуальных машин Windows
 
@@ -238,6 +238,9 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 - Виртуальные машины Gen2 (см. раздел [Поддержка виртуальных машин поколения 2 в Azure](generation-2.md#generation-1-vs-generation-2-capabilities)).
 - Виртуальные машины серии Lsv2 (см. [серии Lsv2](../lsv2-series.md))
 - Виртуальные машины серии M с Ускоритель записиными дисками.
+- Применение [шифрования на стороне сервера с ключами, управляемыми клиентом](disk-encryption.md) , к виртуальным машинам, зашифрованным с помощью ade, и наоборот.
+- Миграция виртуальной машины, зашифрованной с помощью ADE, в [Шифрование на стороне сервера с помощью управляемых клиентом ключей](disk-encryption.md).
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

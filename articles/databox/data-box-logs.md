@@ -1,26 +1,27 @@
 ---
-title: Мониторинг и Azure Data Box журналов, Azure Data Box Heavy событий | Документация Майкрософт
-description: Описание процесса трассировки и регистрации событий на различных этапах Azure Data Box и Azure Data Box Heavy порядке.
+title: Отслеживание и Azure Data Box журналов, Azure Data Box Heavy событий для порядка импорта | Документация Майкрософт
+description: Описание процесса трассировки и регистрации событий на различных стадиях Azure Data Box и Azure Data Box Heavy порядке импорта.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 08/08/2019
+ms.date: 07/10/2020
 ms.author: alkohli
-ms.openlocfilehash: 74d38af4a64a184b26bd6ba1105db0d2530d8ba6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b65d9579686cdf53f1cac35ba47bc5850b45c8e2
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81676411"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86204297"
 ---
-# <a name="tracking-and-event-logging-for-your-azure-data-box-and-azure-data-box-heavy"></a>Отслеживание и ведение журнала событий для Azure Data Box и Azure Data Box Heavy
+# <a name="tracking-and-event-logging-for-your-azure-data-box-and-azure-data-box-heavy-import-order"></a>Отслеживание и регистрация событий для Azure Data Box и Azure Data Box Heavy порядок импорта
 
-Порядок Data Box или Data Box Heavy проходит следующие шаги: порядок, Настройка, копирование данных, возврат, отправка в Azure и проверка и очистки данных. В соответствии с каждым шагом в заказе можно выполнить несколько действий по управлению доступом к заказу, аудиту событий, отслеживанию порядка и интерпретации различных формируемых журналов.
+Порядок импорта Data Box или Data Box Heavy проходит следующие шаги: порядок, Настройка, копирование данных, возврат, отправка в Azure и проверка и очистки данных. В соответствии с каждым шагом в заказе можно выполнить несколько действий по управлению доступом к заказу, аудиту событий, отслеживанию порядка и интерпретации различных формируемых журналов.
 
-В следующей таблице приведена сводка шагов Data Box или Data Box Heavy порядка, а также средства, доступные для трассировки и аудита заказа во время каждого шага.
+В следующей таблице приведена сводка шагов порядка импорта Data Box или Data Box Heavy и средства, доступные для трассировки и аудита порядка на каждом шаге.
 
-| Стадия заказа Data Box       | Средство для мониторинга и аудита                                                                        |
+| Стадия порядка импорта Data Box       | Средство для мониторинга и аудита                                                                        |
 |----------------------------|------------------------------------------------------------------------------------------------|
 | Создание заказа               | [Настройка контроля доступа в порядке через RBAC](#set-up-access-control-on-the-order)                                                    |
 | Порядок обработки            | [Отслеживание порядка](#track-the-order) по <ul><li> Портал Azure </li><li> Веб-сайт перевозчика для доставки </li><li>Уведомления по электронной почте</ul> |
@@ -30,7 +31,7 @@ ms.locfileid: "81676411"
 | Отправка данных в Azure       | [Просмотрите журналы копирования](#review-copy-log-during-upload-to-azure) для ошибок при отправке данных в центре Azure                         |
 | Очистки данных с устройства   | [Просмотр цепочки журналов поставок](#get-chain-of-custody-logs-after-data-erasure) , включая журналы аудита и журнал заказов                |
 
-В этой статье подробно описаны различные механизмы и средства, доступные для контроля и аудита Data Box или Data Box Heavy порядке. Сведения в этой статье применимы как к, так Data Box и Data Box Heavy. В последующих разделах все ссылки на Data Box также применяются к Data Box Heavy.
+В этой статье подробно описаны различные механизмы и средства, доступные для контроля и аудита Data Box или Data Box Heavy порядка импорта. Сведения в этой статье применимы как к, так Data Box и Data Box Heavy импорта заказов. В последующих разделах все ссылки на Data Box также применяются к Data Box Heavy.
 
 ## <a name="set-up-access-control-on-the-order"></a>Настройка контроля доступа в заказе
 
@@ -410,6 +411,6 @@ Audit Logs Path      : azuredatabox-chainofcustodylogs\<GUID>\<Device-serial-no>
 BOM Files Path       : azuredatabox-chainofcustodylogs\<GUID>\<Device-serial-no>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [устранять неполадки Data Box и Data Box Heavy](data-box-troubleshoot.md).

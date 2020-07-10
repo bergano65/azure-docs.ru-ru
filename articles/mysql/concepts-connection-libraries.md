@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 5f83f937b8d9ec50ec7dc6ec781bff1f435eb45a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5520072ba16b117c33c2ad172030807e51c7cf7a
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79537199"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86203895"
 ---
 # <a name="connection-libraries-for-azure-database-for-mysql"></a>Библиотеки подключений для базы данных Azure для MySQL
 В этой статье приведены все библиотеки и драйверы, с помощью которых клиентские программы могут подключиться к базе данных Azure для MySQL.
@@ -35,5 +35,11 @@ MySQL предлагает возможность подключения к ба
 ## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с этими краткими руководствами по подключению к базе данных Azure для MySQL и выполнению запросов к ней, выбрав язык по своему усмотрению.
 
-[PHP](./connect-php.md)  |  [Java](./connect-java.md)  |   [.NET (C#)](./connect-csharp.md)  |  [Python](./connect-python.md)  |  [Node.JS](./connect-nodejs.md)  |  [Ruby](./connect-ruby.md)  |  [C++](connect-cpp.md)  |  [Go](./connect-go.md)
-
+- [PHP](./connect-php.md)
+- [Java](./connect-java.md)
+- [.NET (C#)](./connect-csharp.md)
+- [Python](./connect-python.md)
+- [Node.JS](./connect-nodejs.md)
+- [Ruby](./connect-ruby.md)
+- [C++](connect-cpp.md)
+- [GO](./connect-go.md)
