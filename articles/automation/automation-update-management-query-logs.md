@@ -5,11 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 04/06/2020
 ms.topic: conceptual
-ms.openlocfilehash: b40357e71275d835a200f3bc08c618b6713001d8
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 146cf01d99ccc00a972c98128d8e93e1ed5fb690
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83830775"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185710"
 ---
 # <a name="query-update-management-logs"></a>Запрос на получение журналов Управления обновлениями
 
@@ -193,7 +194,7 @@ Heartbeat
 1. На панели управления откройте **Microsoft Monitoring Agent**. На вкладке **Служба анализа журналов Azure** агент отображает следующее сообщение: **The Microsoft Monitoring Agent has successfully connected to Log Analytics** (Microsoft Monitoring Agent успешно подключен к Log Analytics).
 2. Откройте журнал событий Windows. Перейдите к **журналам приложения и служб или Operations Manager** и выполните поиск идентификатора события 3000 или 5002 в исходном **соединителе службы**. Эти события указывают, что компьютер был зарегистрирован для рабочей области Log Analytics и получает конфигурации.
 
-Если агент не может взаимодействовать с журналами Azure Monitor и настроен на взаимодействие с Интернетом через брандмауэр или прокси-сервер, подтвердите корректную настройку брандмауэра или прокси-сервера. Чтобы узнать, как проверить это, ознакомьтесь со статьей [Подключение компьютеров Windows к службе Log Analytics в Azure](../azure-monitor/platform/agent-windows.md) или [Настройка агента Log Analytics для компьютеров Linux в гибридной среде](../log-analytics/log-analytics-agent-linux.md).
+Если агент не может взаимодействовать с журналами Azure Monitor и настроен на взаимодействие с Интернетом через брандмауэр или прокси-сервер, подтвердите корректную настройку брандмауэра или прокси-сервера. Чтобы узнать, как проверить это, ознакомьтесь со статьей [Подключение компьютеров Windows к службе Log Analytics в Azure](../azure-monitor/platform/agent-windows.md) или [Настройка агента Log Analytics для компьютеров Linux в гибридной среде](../azure-monitor/learn/quick-collect-linux-computer.md).
 
 > [!NOTE]
 > Если при включении Управления обновлениями системы Linux настроены для взаимодействия с прокси-сервером или шлюзом Log Analytics, обновите разрешения `proxy.conf`, чтобы предоставить группе omiuser разрешение на чтение файла. Для этого выполните следующие команды.
@@ -408,5 +409,5 @@ Update
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о журналах Azure Monitor см. в статье [Журналы Azure Monitor](../log-analytics/log-analytics-log-searches.md).
+* Дополнительные сведения о журналах Azure Monitor см. в статье [Журналы Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
 * Справку по оповещениям см. в статье [Настройка оповещений](automation-tutorial-update-management.md#configure-alerts).

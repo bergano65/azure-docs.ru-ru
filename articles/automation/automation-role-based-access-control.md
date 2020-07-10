@@ -6,11 +6,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 05/17/2018
 ms.topic: conceptual
-ms.openlocfilehash: ac05d5b4eb8dd9d7a39f56ec6efae4831f00c623
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9e997f80ceee54a1454128c1308032fefa603f5d
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85100002"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186152"
 ---
 # <a name="manage-role-permissions-and-security"></a>Управление разрешениями ролей и безопасностью
 
@@ -310,7 +311,7 @@ ms.locfileid: "85100002"
 
 Доступ к учетной записи службы автоматизации на основе ролей можно также настроить с помощью указанных ниже [командлетов Azure PowerShell](../role-based-access-control/role-assignments-powershell.md).
 
-Командлет [Get-AzRoleDefinition](https://docs.microsoft.com/powershell/module/Az.Resources/Get-AzRoleDefinition?view=azps-3.7.0) выводит список всех ролей RBAC, доступных в Azure Active Directory. При использовании с параметром `Name` этот командлет возвращает список всех действий, которые может выполнить определенная роль.
+Командлет [Get-AzRoleDefinition](/powershell/module/Az.Resources/Get-AzRoleDefinition?view=azps-3.7.0) выводит список всех ролей RBAC, доступных в Azure Active Directory. При использовании с параметром `Name` этот командлет возвращает список всех действий, которые может выполнить определенная роль.
 
 ```azurepowershell-interactive
 Get-AzRoleDefinition -Name 'Automation Operator'
@@ -329,7 +330,7 @@ NotActions       : {}
 AssignableScopes : {/}
 ```
 
-Командлет [Get-AzRoleAssignment](https://docs.microsoft.com/powershell/module/az.resources/get-azroleassignment?view=azps-3.7.0) выводит список назначений ролей RBAC Azure AD в указанной области. Без параметров этот командлет возвращает все назначения ролей, выполненные в подписке. Указав параметр `ExpandPrincipalGroups`, вы получите список назначений доступа для указанного пользователя и всех групп, в состав которых он входит.
+Командлет [Get-AzRoleAssignment](/powershell/module/az.resources/get-azroleassignment?view=azps-3.7.0) выводит список назначений ролей RBAC Azure AD в указанной области. Без параметров этот командлет возвращает все назначения ролей, выполненные в подписке. Указав параметр `ExpandPrincipalGroups`, вы получите список назначений доступа для указанного пользователя и всех групп, в состав которых он входит.
 
 **Пример**. Следующий командлет выводит список всех пользователей в учетной записи службы автоматизации с указанием их ролей.
 
@@ -351,7 +352,7 @@ ObjectId           : 15f26a47-812d-489a-8197-3d4853558347
 ObjectType         : User
 ```
 
-Используйте командлет [New-AzRoleAssignment](https://docs.microsoft.com/powershell/module/Az.Resources/New-AzRoleAssignment?view=azps-3.7.0), чтобы присвоить права доступа к определенной области пользователям, группам и приложениям.
+Используйте командлет [New-AzRoleAssignment](/powershell/module/Az.Resources/New-AzRoleAssignment?view=azps-3.7.0), чтобы присвоить права доступа к определенной области пользователям, группам и приложениям.
     
 **Пример**. Следующая команда назначает роль оператора службы автоматизации пользователю в области учетной записи службы автоматизации.
 
@@ -373,7 +374,7 @@ ObjectId           : f5ecbe87-1181-43d2-88d5-a8f5e9d8014e
 ObjectType         : User
 ```
 
-Командлет [Remove-AzRoleAssignment](https://docs.microsoft.com/powershell/module/Az.Resources/Remove-AzRoleAssignment?view=azps-3.7.0) удаляет права доступа к определенной области для указанного пользователя, группы или приложения.
+Командлет [Remove-AzRoleAssignment](/powershell/module/Az.Resources/Remove-AzRoleAssignment?view=azps-3.7.0) удаляет права доступа к определенной области для указанного пользователя, группы или приложения.
 
 **Пример**. Следующая команда удаляет пользователя из роли оператора службы автоматизации в области учетной записи службы автоматизации.
 

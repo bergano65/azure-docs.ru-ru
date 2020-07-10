@@ -5,11 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 11/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: c440862f1379983d4644fe99f33207456f747d23
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 25a306b3281079e8476a67ee70c2ca2cfffdd30c
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83830945"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185744"
 ---
 # <a name="use-dynamic-groups-with-update-management"></a>Использование динамических групп с Управлением обновлениями
 
@@ -20,7 +21,7 @@ ms.locfileid: "83830945"
 
 Вы можете определить динамические группы для компьютеров Azure или не связанных с Azure компьютеров в разделе **Управление обновлениями** на портале Azure. См. статью [Управление обновлениями для нескольких виртуальных машин Azure](manage-update-multi.md).
 
-Динамическая группа определяется запросом, который служба автоматизации Azure оценивает во время развертывания. Даже если запрос к динамической группе извлекает большое количество компьютеров, служба автоматизации Azure может одновременно обрабатывать не более 1000 компьютеров. Ознакомьтесь со статьей [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#update-management). 
+Динамическая группа определяется запросом, который служба автоматизации Azure оценивает во время развертывания. Даже если запрос к динамической группе извлекает большое количество компьютеров, служба автоматизации Azure может одновременно обрабатывать не более 1000 компьютеров. Ознакомьтесь со статьей [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md#update-management). 
 
 > [!NOTE]
 > Если предполагается обновление более 1000 компьютеров, рекомендуется распределить обновления по нескольким расписаниям обновления. 

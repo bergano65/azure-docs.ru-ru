@@ -4,15 +4,16 @@ description: В этой статье рассказывается, как в с
 services: automation
 ms.date: 03/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: 017341fd72329d0538a3cf2a6ec20d03ee6152cc
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 9c81e3389f2cc96f2581b8edee5f528237cb9eca
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83830571"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185676"
 ---
 # <a name="use-azure-ad-to-authenticate-to-azure"></a>Аутентификация в Azure с помощью Azure AD
 
-Служба [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis) позволяет выполнять целый ряд административных задач, таких как управление пользователями, управление доменами или настройка единого входа. В этой статье описывается, как в службе автоматизации Azure использовать Azure AD в качестве поставщика аутентификации в Azure. 
+Служба [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) позволяет выполнять целый ряд административных задач, таких как управление пользователями, управление доменами или настройка единого входа. В этой статье описывается, как в службе автоматизации Azure использовать Azure AD в качестве поставщика аутентификации в Azure. 
 
 ## <a name="install-azure-ad-modules"></a>Установка модулей Azure AD
 
@@ -38,14 +39,14 @@ ms.locfileid: "83830571"
 >[!NOTE]
 >Для работы с этими модулями нужно использовать PowerShell 5.1 или более поздней версии на 64-разрядной версии Windows. 
 
-1. Установите Windows Management Framework (WMF) 5.1. Подробные сведения см. в статье [Установка и настройка WMF 5.1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure?view=powershell-7).
+1. Установите Windows Management Framework (WMF) 5.1. Подробные сведения см. в статье [Установка и настройка WMF 5.1](/powershell/scripting/wmf/setup/install-configure?view=powershell-7).
 
-2. Установите AzureRM и (или) Az, следуя инструкциям из статьи [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-6.13.0).
+2. Установите AzureRM и (или) Az, следуя инструкциям из статьи [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-6.13.0).
 
 ### <a name="install-the-msonline-module"></a>Установка модуля MSOnline
 
 >[!NOTE]
->Чтобы установить модуль MSOnline, нужно иметь роль администратора Office 365. Сведения о ролях администраторов см. [здесь](https://docs.microsoft.com/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide).
+>Чтобы установить модуль MSOnline, нужно иметь роль администратора Office 365. Сведения о ролях администраторов см. [здесь](/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide).
 
 1. Убедитесь, что на вашем компьютере включен компонент Microsoft .NET Framework 3.5.x. Вероятно, что на компьютере уже установлена более новая версия, но обратная совместимость платформы .NET Framework с более старыми версиями может быть включена или отключена. 
 
@@ -61,7 +62,7 @@ ms.locfileid: "83830571"
 
 ### <a name="install-support-for-pscredential"></a>Установка поддержки для PSCredential
 
-Служба автоматизации Azure использует класс [PSCredential](https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential?view=pscore-6.2.0) для представления ресурса учетных данных. Ваши скрипты извлекают объекты `PSCredential` через командлет `Get-AutomationPSCredential`. См. дополнительные сведения в статье [Управление учетными данными в службе автоматизации Azure](shared-resources/credentials.md).
+Служба автоматизации Azure использует класс [PSCredential](/dotnet/api/system.management.automation.pscredential?view=pscore-6.2.0) для представления ресурса учетных данных. Ваши скрипты извлекают объекты `PSCredential` через командлет `Get-AutomationPSCredential`. См. дополнительные сведения в статье [Управление учетными данными в службе автоматизации Azure](shared-resources/credentials.md).
 
 ## <a name="assign-a-subscription-administrator"></a>Назначение администратора подписки
 
@@ -79,7 +80,7 @@ ms.locfileid: "83830571"
 
 ## <a name="configure-azure-automation-to-manage-the-azure-subscription"></a>Настройка управления подпиской Azure в службе автоматизации Azure
 
-Чтобы служба автоматизации Azure могла взаимодействовать с Azure AD, нужно получить учетные данные, связанные с подключением Azure к Azure AD. В качестве учетных данных могут использоваться идентификатор клиента, идентификатор подписки и т. п. Дополнительные сведения о подключении между Azure и Azure AD см. в статье [Подключение вашей организации к Azure Active Directory](https://docs.microsoft.com/azure/devops/organizations/accounts/connect-organization-to-azure-ad?view=azure-devops).
+Чтобы служба автоматизации Azure могла взаимодействовать с Azure AD, нужно получить учетные данные, связанные с подключением Azure к Azure AD. В качестве учетных данных могут использоваться идентификатор клиента, идентификатор подписки и т. п. Дополнительные сведения о подключении между Azure и Azure AD см. в статье [Подключение вашей организации к Azure Active Directory](/azure/devops/organizations/accounts/connect-organization-to-azure-ad?view=azure-devops).
 
 ## <a name="create-a-credential-asset"></a>Создание ресурса учетных данных
 
@@ -91,11 +92,11 @@ ms.locfileid: "83830571"
 
 ### <a name="create-the-credential-asset-with-windows-powershell"></a>Создание ресурса учетных данных с помощью Windows PowerShell
 
-Чтобы подготовить новый ресурс учетных данных в Windows PowerShell, скрипт первым делом создает объект `PSCredential` с назначенным именем пользователя и паролем. Затем скрипт использует этот объект для создания ресурса, вызывая командлет [New-AzureAutomationCredential](https://docs.microsoft.com/powershell/module/servicemanagement/azure/new-azureautomationcredential?view=azuresmps-4.0.0). Вместо этого скрипт может использовать командлет [Get-Credential](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential?view=powershell-7), чтобы предложить пользователю ввести имя и пароль. Подробные сведения см. в статье [Управление учетными данными в службе автоматизации Azure](shared-resources/credentials.md). 
+Чтобы подготовить новый ресурс учетных данных в Windows PowerShell, скрипт первым делом создает объект `PSCredential` с назначенным именем пользователя и паролем. Затем скрипт использует этот объект для создания ресурса, вызывая командлет [New-AzureAutomationCredential](/powershell/module/servicemanagement/azure/new-azureautomationcredential?view=azuresmps-4.0.0). Вместо этого скрипт может использовать командлет [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential?view=powershell-7), чтобы предложить пользователю ввести имя и пароль. Подробные сведения см. в статье [Управление учетными данными в службе автоматизации Azure](shared-resources/credentials.md). 
 
 ## <a name="manage-azure-resources-from-an-azure-automation-runbook"></a>Управление ресурсами Azure из runbook службы автоматизации Azure
 
-Вы можете управлять ресурсами Azure из runbook службы автоматизации Azure, используя ресурс учетных данных. Ниже приведен пример runbook PowerShell, который собирает ресурс учетных данных и применяет его для остановки и запуска виртуальных машин в подписке Azure. Этот runbook сначала вызывает `Get-AutomationPSCredential` для получения учетных данных для аутентификации в Azure. Затем он вызывает командлет [Connect AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-3.6.1), чтобы подключиться к Azure с использованием полученных учетных данных. Затем скрипт вызывает командлет [Select-AzureSubscription](https://docs.microsoft.com/powershell/module/servicemanagement/azure/select-azuresubscription?view=azuresmps-4.0.0), который позволяет выбрать подписку для работы. 
+Вы можете управлять ресурсами Azure из runbook службы автоматизации Azure, используя ресурс учетных данных. Ниже приведен пример runbook PowerShell, который собирает ресурс учетных данных и применяет его для остановки и запуска виртуальных машин в подписке Azure. Этот runbook сначала вызывает `Get-AutomationPSCredential` для получения учетных данных для аутентификации в Azure. Затем он вызывает командлет [Connect AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-3.6.1), чтобы подключиться к Azure с использованием полученных учетных данных. Затем скрипт вызывает командлет [Select-AzureSubscription](/powershell/module/servicemanagement/azure/select-azuresubscription?view=azuresmps-4.0.0), который позволяет выбрать подписку для работы. 
 
 ```azurepowershell
 Workflow Stop-Start-AzureVM 
@@ -161,4 +162,4 @@ Workflow Stop-Start-AzureVM
 * Подробные сведения об использовании учетных данных см. в статье [Управление учетными данными в службе автоматизации Azure](shared-resources/credentials.md).
 * Дополнительные сведения о модулях можно найти в статье [Администрирование модулей в службе автоматизации Azure](shared-resources/modules.md).
 * При необходимости см. статью [Запуск runbook в службе автоматизации Azure](start-runbooks.md).
-* Дополнительные сведения о PowerShell см. в [документации по PowerShell](https://docs.microsoft.com/powershell/scripting/overview).
+* Дополнительные сведения о PowerShell см. в [документации по PowerShell](/powershell/scripting/overview).

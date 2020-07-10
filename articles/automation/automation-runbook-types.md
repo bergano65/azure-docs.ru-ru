@@ -5,11 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 184e65c929d43e7a5d4ca3be8bd93770c55cd2a5
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 24d0123eecc56b56573e94d831283d8d360cd16e
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836572"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185931"
 ---
 # <a name="azure-automation-runbook-types"></a>Типы модулей Runbook в службе автоматизации Azure
 
@@ -67,15 +68,15 @@ ms.locfileid: "83836572"
 * Необходимо знание скриптов PowerShell.
 * Нельзя использовать [параллельную обработку](automation-powershell-workflow.md#use-parallel-processing) для одновременного выполнения нескольких действий.
 * Модули runbook не могут использовать [контрольные точки](automation-powershell-workflow.md#use-checkpoints-in-a-workflow) для возобновления в случае ошибки.
-* Модули runbook рабочих процессов PowerShell и графические модули runbook можно включать в качестве дочерних модулей с помощью командлета [Start-AzureAutomationRunbook](https://docs.microsoft.com/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.7.0), который создает новое задание.
+* Модули runbook рабочих процессов PowerShell и графические модули runbook можно включать в качестве дочерних модулей с помощью командлета [Start-AzureAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.7.0), который создает новое задание.
 
 ### <a name="known-issues"></a>Известные проблемы
 
 Ниже перечислены проблемы с модулями runbook PowerShell, известные на данный момент.
 
-* Модули runbook PowerShell не могут извлечь незашифрованный [ресурс-контейнер переменной](automation-variables.md) со значением NULL.
+* Модули runbook PowerShell не могут извлечь незашифрованный [ресурс-контейнер переменной](./shared-resources/variables.md) со значением NULL.
 * Модули runbook PowerShell не имеют возможности извлекать ресурс-контейнер переменной, в имени которого есть символ `*~*`.
-* Операция [Get-Process](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-process?view=powershell-7) в цикле в модуле runbook PowerShell может аварийно завершить работу после примерно 80 итераций.
+* Операция [Get-Process](/powershell/module/microsoft.powershell.management/get-process?view=powershell-7) в цикле в модуле runbook PowerShell может аварийно завершить работу после примерно 80 итераций.
 * В работе модуля runbook PowerShell может произойти сбой, если он попытается записать слишком большой объем данных в поток вывода за один раз. Обычно эту проблему можно обойти, настроив модуль runbook так, чтобы при работе с большими объектами он выводил только необходимые данные. Например, вместо использования `Get-Process` без ограничений можно сделать так, чтобы командлет выводил только необходимые параметры, например `Get-Process | Select ProcessName, CPU`.
 
 ## <a name="powershell-workflow-runbooks"></a>Модули Runbook рабочих процессов PowerShell

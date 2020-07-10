@@ -3,11 +3,12 @@ title: Переопределить точку входа в экземпляр�
 description: Задание командной строки для переопределения точки входа в образе контейнера при развертывании экземпляра контейнера Azure
 ms.topic: article
 ms.date: 04/15/2019
-ms.openlocfilehash: d9554603f78a07fa44af51d8f39a91e1b3c39f70
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 23221de3dc91c37c2e6fb96489539d3954efcd87
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84693062"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169635"
 ---
 # <a name="set-the-command-line-in-a-container-instance-to-override-the-default-command-line-operation"></a>Установка командной строки в экземпляре контейнера для переопределения операции командной строки по умолчанию
 
@@ -53,8 +54,8 @@ ms.locfileid: "84693062"
 
 |    |  Azure CLI   | Портал | Шаблон | 
 | ---- | ---- | --- | --- |
-| Одна команда | `--command-line "python myscript.py arg1 arg2"` | **Переопределение команды**:`python, myscript.py, arg1, arg2` | `"command": ["python", "myscript.py", "arg1", "arg2"]` |
-| Несколько команд | `--command-line "/bin/bash -c 'mkdir test; touch test/myfile; tail -f /dev/null'"` |**Переопределение команды**:`/bin/bash, -c, mkdir test; touch test/myfile; tail -f /dev/null` | `"command": ["/bin/bash", "-c", "mkdir test; touch test/myfile; tail -f /dev/null"]` |
+| **Одна команда** | `--command-line "python myscript.py arg1 arg2"` | **Переопределение команды**:`python, myscript.py, arg1, arg2` | `"command": ["python", "myscript.py", "arg1", "arg2"]` |
+| **Несколько команд** | `--command-line "/bin/bash -c 'mkdir test; touch test/myfile; tail -f /dev/null'"` |**Переопределение команды**:`/bin/bash, -c, mkdir test; touch test/myfile; tail -f /dev/null` | `"command": ["/bin/bash", "-c", "mkdir test; touch test/myfile; tail -f /dev/null"]` |
 
 ## <a name="azure-cli-example"></a>Пример для Azure CLI
 
@@ -109,7 +110,7 @@ az container logs --resource-group myResourceGroup --name mycontainer2
 [('ROMEO', 177), ('JULIET', 134), ('CAPULET', 119)]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Сценарии, основанные на задачах, такие как пакетная обработка большого набора данных с несколькими контейнерами, могут использовать преимущества настраиваемых командных строк во время выполнения. Дополнительные сведения о выполнении контейнеров на основе задач см. [в статье выполнение контейнерных задач с помощью политик перезапуска](container-instances-restart-policy.md).
 

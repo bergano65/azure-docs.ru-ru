@@ -5,15 +5,16 @@ services: automation
 ms.date: 03/04/2020
 ms.topic: conceptual
 ms.custom: mvc
-ms.openlocfilehash: 72065b388f348da1d268f875a10d5b13d2f8cf3b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8770762fa2d2ae6bc0584d75397829298a62e8c0
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84117404"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185897"
 ---
 # <a name="limit-update-management-deployment-scope"></a>Ограничение области развертывания Управление обновлениями
 
-В этой статье описывается работа с конфигурациями областей при использовании функции [Управление обновлениями](automation-update-management.md) для развертывания обновлений и исправлений на виртуальных машинах. Дополнительные сведения см. [в разделе нацеленность на решения мониторинга в Azure Monitor (Предварительная версия)](https://docs.microsoft.com/azure/azure-monitor/insights/solution-targeting). 
+В этой статье описывается работа с конфигурациями областей при использовании функции [Управление обновлениями](automation-update-management.md) для развертывания обновлений и исправлений на виртуальных машинах. Дополнительные сведения см. [в разделе нацеленность на решения мониторинга в Azure Monitor (Предварительная версия)](../azure-monitor/insights/solution-targeting.md). 
 
 ## <a name="about-scope-configurations"></a>Сведения о конфигурациях областей
 

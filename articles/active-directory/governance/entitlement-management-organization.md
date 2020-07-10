@@ -16,11 +16,12 @@ ms.date: 06/18/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8928e7293f184e8eb366df6a29e50cbea6a7c93
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 272dd95b97c65ecc52dd73909f1ed87d5e5ae3ca
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85078202"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170502"
 ---
 # <a name="add-a-connected-organization-in-azure-ad-entitlement-management"></a>Добавление подключенной Организации в управление назначением Azure AD
 
@@ -53,7 +54,7 @@ ms.locfileid: "85078202"
 
 Чтобы добавить внешний каталог или домен Azure AD в качестве подключенной Организации, следуйте инструкциям в этом разделе.
 
-**Предварительная роль**: *глобальный администратор*, *администратор пользователей*или *приглашенный гость*
+**Предварительная роль**: *глобальный администратор* или *администратор пользователей*
 
 1. В портал Azure выберите **Azure Active Directory**, а затем выберите **Управление удостоверениями**.
 
@@ -131,7 +132,7 @@ ms.locfileid: "85078202"
 
     ![Кнопка удаления подключенной Организации](./media/entitlement-management-organization/organization-delete.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление доступом для внешних пользователей](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-external-users)
 - [Управление доступом пользователей, не наличныхся в вашем каталоге](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory)

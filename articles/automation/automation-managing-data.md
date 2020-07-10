@@ -5,11 +5,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 06/03/2020
 ms.topic: conceptual
-ms.openlocfilehash: 2dbaebac2228c11aef5fb33af4588f75ea15677a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cc96f2dd81b618b4170acd4b415a09248adbb7d5
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84343060"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186169"
 ---
 # <a name="management-of-azure-automation-data"></a>Управление данными службы автоматизации Azure
 
@@ -36,9 +37,9 @@ ms.locfileid: "84343060"
 |Платформа или язык | Поддержка | Дополнительные сведения |
 | --- | --- | --- |
 |Linux | Как правило, дистрибутивы Linux для поддержки протокола TLS 1.2 используют [OpenSSL](https://www.openssl.org).  | Убедитесь, что ваша версия OpenSSL поддерживается, проверив [журнал изменений OpenSSL](https://www.openssl.org/news/changelog.html).|
-| Windows 8.0–10 | Поддерживается и включена по умолчанию. | Убедитесь, что вы все еще используете [параметры по умолчанию](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings).  |
-| Windows Server 2012–2016 | Поддерживается и включена по умолчанию. | Проверка того, что все еще используются [параметры по умолчанию](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings) |
-| Windows 7 с пакетом обновления 1 и Windows Server 2008 R2 с пакетом обновления 1 | Поддерживается, но не включена по умолчанию. | Информацию о том, как ее включить, см. на странице [Transport Layer Security (TLS) registry settings](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings) (Параметры реестра TLS).  |
+| Windows 8.0–10 | Поддерживается и включена по умолчанию. | Убедитесь, что вы все еще используете [параметры по умолчанию](/windows-server/security/tls/tls-registry-settings).  |
+| Windows Server 2012–2016 | Поддерживается и включена по умолчанию. | Проверка того, что все еще используются [параметры по умолчанию](/windows-server/security/tls/tls-registry-settings) |
+| Windows 7 с пакетом обновления 1 и Windows Server 2008 R2 с пакетом обновления 1 | Поддерживается, но не включена по умолчанию. | Информацию о том, как ее включить, см. на странице [Transport Layer Security (TLS) registry settings](/windows-server/security/tls/tls-registry-settings) (Параметры реестра TLS).  |
 
 ## <a name="data-retention"></a>Хранение данных
 
@@ -50,7 +51,7 @@ ms.locfileid: "84343060"
 |:--- |:--- |
 | Учетные записи |Учетная запись окончательно удаляется через 30 дней после удаления пользователем. |
 | Активы |Актив окончательно удаляется через 30 дней после удаления пользователем или через 30 дней после удаления пользователем учетной записи, которая содержала этот актив. |
-| Узлы DSC |Узел DSC окончательно удаляется через 30 дней после отмены регистрации в учетной записи службы автоматизации на портале Azure или с помощью командлета [Unregister-AzAutomationDscNode](https://docs.microsoft.com/powershell/module/az.automation/unregister-azautomationdscnode?view=azps-3.7.0) в Windows PowerShell. Также узел окончательно удаляется через 30 дней после удаления пользователем учетной записи, которая содержала этот узел. |
+| Узлы DSC |Узел DSC окончательно удаляется через 30 дней после отмены регистрации в учетной записи службы автоматизации на портале Azure или с помощью командлета [Unregister-AzAutomationDscNode](/powershell/module/az.automation/unregister-azautomationdscnode?view=azps-3.7.0) в Windows PowerShell. Также узел окончательно удаляется через 30 дней после удаления пользователем учетной записи, которая содержала этот узел. |
 | Задания |Задание удаляется окончательно через 30 дней после изменения его состояния, например после его завершения, остановки или приостановки. |
 | Модули |Модуль окончательно удаляется через 30 дней после удаления пользователем или через 30 дней после удаления пользователем учетной записи, которая содержала этот модуль. |
 | Конфигурации узлов и MOF-файлы |Старая конфигурация узла окончательно удаляется через 30 дней после создания новой конфигурации узла. |
@@ -65,7 +66,7 @@ ms.locfileid: "84343060"
 
 ### <a name="runbooks"></a>Модули runbook
 
-Модули Runbook можно экспортировать в файлы сценариев с помощью портала Azure или командлета [Get-AzureAutomationRunbookDefinition](https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azureautomationrunbookdefinition) в Windows PowerShell. Чтобы импортировать файлы скрипта в другую учетную запись службы автоматизации, воспользуйтесь руководством [Управление модулями runbook в службе автоматизации Azure](manage-runbooks.md).
+Модули Runbook можно экспортировать в файлы сценариев с помощью портала Azure или командлета [Get-AzureAutomationRunbookDefinition](/powershell/module/servicemanagement/azure/get-azureautomationrunbookdefinition) в Windows PowerShell. Чтобы импортировать файлы скрипта в другую учетную запись службы автоматизации, воспользуйтесь руководством [Управление модулями runbook в службе автоматизации Azure](manage-runbooks.md).
 
 ### <a name="integration-modules"></a>Модули интеграции
 
@@ -79,8 +80,7 @@ ms.locfileid: "84343060"
 
 ### <a name="dsc-configurations"></a>Конфигурации DSC
 
-Конфигурации DSC можно экспортировать в файлы скриптов с помощью портала Azure или командлета [Export-AzAutomationDscConfiguration](https://docs.microsoft.com/powershell/module/az.automation/export-azautomationdscconfiguration?view=azps-3.7.0
-) в Windows PowerShell. Вы можете импортировать эти конфигурации и применить их в другой учетной записи службы автоматизации.
+Конфигурации DSC можно экспортировать в файлы скриптов с помощью портала Azure или командлета [Export-AzAutomationDscConfiguration](/powershell/module/az.automation/export-azautomationdscconfiguration?view=azps-3.7.0) в Windows PowerShell. Вы можете импортировать эти конфигурации и применить их в другой учетной записи службы автоматизации.
 
 ## <a name="geo-replication-in-azure-automation"></a>Георепликация в службе автоматизации Azure
 
@@ -102,4 +102,4 @@ ms.locfileid: "84343060"
 
 * Сведения о защите активов в службе автоматизации см. в статье [Шифрование защищенных ресурсов в службе автоматизации Azure](automation-secure-asset-encryption.md).
 
-* Подробные сведения о георепликации см. в статье [Создание и использование активной георепликации](../sql-database/sql-database-active-geo-replication.md).
+* Подробные сведения о георепликации см. в статье [Создание и использование активной георепликации](../azure-sql/database/active-geo-replication-overview.md).

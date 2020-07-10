@@ -2,14 +2,14 @@
 title: Развертывание группы контейнеров в виртуальной сети Azure
 description: Узнайте, как развернуть группу контейнеров в новой или существующей виртуальной сети Azure с помощью интерфейса командной строки Azure.
 ms.topic: article
-ms.date: 04/29/2020
+ms.date: 07/02/2020
 ms.author: danlep
-ms.openlocfilehash: 7e54690efc7955eaaa88ca87a6f7a086dd3e19a4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c5a0e15b2e65be45e7f77e401b912ef7b784519b
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82583640"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169601"
 ---
 # <a name="deploy-container-instances-into-an-azure-virtual-network"></a>Развертывание экземпляров контейнеров в виртуальной сети Azure
 
@@ -142,7 +142,7 @@ az network profile list --resource-group myResourceGroup \
 Получив идентификатор сетевого профиля, скопируйте следующий код YAML в новый файл с именем *vnet-deploy-aci.yaml*. В разделе `networkProfile` замените значение `id` только что полученным идентификатором, затем сохраните файл. Этот код YAML создает группу контейнеров с именем *appcontaineryaml* в виртуальной сети.
 
 ```YAML
-apiVersion: '2018-10-01'
+apiVersion: '2019-12-01'
 location: westus
 name: appcontaineryaml
 properties:
@@ -222,7 +222,7 @@ az network profile delete --id $NETWORK_PROFILE_ID -y
 az network vnet delete --resource-group $RES_GROUP --name aci-vnet
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы развернуть новую виртуальную сеть, подсеть, сетевой профиль и группу контейнеров с помощью шаблона Resource Manager, см. страницу [создания группы контейнеров Azure с виртуальной сетью](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-vnet
 ).

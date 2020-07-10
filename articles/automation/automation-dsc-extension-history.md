@@ -9,11 +9,12 @@ services: automation
 ms.service: automation
 ms.subservice: dsc
 ms.topic: conceptual
-ms.openlocfilehash: b55280dd8ed5ea82cf861e300306db5a787c31e8
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 0bb82ce92a151bd8e955c136751d8e7f307bbf1b
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836929"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186424"
 ---
 # <a name="work-with-azure-desired-state-configuration-extension-version-history"></a>Работа с журналом версий расширения Desired State Configuration в Azure
 
@@ -98,7 +99,7 @@ ms.locfileid: "83836929"
 - **Среда**. Azure
 - **Примечания:** В этой версии расширение DSC используется в составе Windows Server 2016. Для других операционных систем Windows устанавливается среда [Windows Management Framework 5.1](https://devblogs.microsoft.com/powershell/wmf-5-1-releasing-january-2017/) (для установки WMF требуется перезагрузка). В случае Nano Server роль DSC устанавливается на виртуальной машине.
 - **Новые функции:**
-  - Исправления ошибок и улучшения, упрощающие использование с DSC в службе автоматизации Azure с помощью пользовательского интерфейса портала и шаблона Resource Manager. Дополнительные сведения см. в разделе о [скрипте конфигурации по умолчанию](/azure/virtual-machines/extensions/dsc-overview) в документации по расширению DSC.
+  - Исправления ошибок и улучшения, упрощающие использование с DSC в службе автоматизации Azure с помощью пользовательского интерфейса портала и шаблона Resource Manager. Дополнительные сведения см. в разделе о [скрипте конфигурации по умолчанию](../virtual-machines/extensions/dsc-overview.md) в документации по расширению DSC.
 
 ### <a name="version-226"></a>Версия 2.26
 
@@ -249,6 +250,6 @@ ms.locfileid: "83836929"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о PowerShell DSC см. в [центре документации по PowerShell](/powershell/scripting/dsc/overview/overview).
-- Изучите [шаблон Resource Manager для расширения DSC](/azure/virtual-machines/extensions/dsc-template).
+- Изучите [шаблон Resource Manager для расширения DSC](../virtual-machines/extensions/dsc-template.md).
 - Дополнительные функциональные возможности и ресурсы, которыми можно управлять с помощью PowerShell DSC, можно найти в [коллекции PowerShell](https://www.powershellgallery.com/packages?q=DscResource&x=0&y=0).
-- Сведения о передаче конфиденциальных параметров в конфигурации см. в статье о [безопасном управлении учетными данными с помощью обработчика расширения DSC](/azure/virtual-machines/extensions/dsc-credentials).
+- Сведения о передаче конфиденциальных параметров в конфигурации см. в статье о [безопасном управлении учетными данными с помощью обработчика расширения DSC](../virtual-machines/extensions/dsc-credentials.md).

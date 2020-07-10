@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1fa270907c96cb341f6ce2cbaeb91dfa323c4431
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: c01e329e4e4ab403c8966f096239abffee1c1fc5
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85855218"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185863"
 ---
 # <a name="send-an-email-from-a-runbook"></a>Отправка сообщения электронной почты из runbook
 
@@ -19,16 +19,16 @@ ms.locfileid: "85855218"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас ее нет, [активируйте преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [зарегистрируйте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Учетная запись SendGrid](/azure/sendgrid-dotnet-how-to-send-email#create-a-sendgrid-account).
-* [Учетная запись службы автоматизации](automation-offering-get-started.md) с модулями **Az**.
-* [Учетная запись запуска от имени](automation-create-runas-account.md) для хранения и выполнения runbook.
+* [Учетная запись SendGrid](../sendgrid-dotnet-how-to-send-email.md#create-a-sendgrid-account).
+* [Учетная запись службы автоматизации](./index.yml) с модулями **Az**.
+* [Учетная запись запуска от имени](./manage-runas-account.md) для хранения и выполнения runbook.
 
 ## <a name="create-an-azure-key-vault"></a>создать Azure Key Vault;
 
 Экземпляр Azure Key Vault можно создать, используя описанный ниже скрипт PowerShell. Замените значения переменной, выделенные курсивом, значениями для конкретной среды. Используйте внедренный компонент Azure Cloud Shell с помощью кнопки **Попробуйте!** , расположенной в правом верхнем углу блока кода. Также код можно скопировать и запустить локально на компьютере, где установлены [модули Az](/powershell/azure/install-az-ps).
 
 > [!NOTE]
-> Чтобы получить ключ API, выполните действия из статьи [Как найти ключ API SendGrid](/azure/sendgrid-dotnet-how-to-send-email#to-find-your-sendgrid-api-key).
+> Чтобы получить ключ API, выполните действия из статьи [Как найти ключ API SendGrid](../sendgrid-dotnet-how-to-send-email.md#to-find-your-sendgrid-api-key).
 
 ```azurepowershell-interactive
 $SubscriptionId  =  "<subscription ID>"
@@ -61,7 +61,7 @@ $appID = $connection.FieldDefinitionValues.ApplicationId
 Set-AzKeyVaultAccessPolicy -VaultName $VaultName -ServicePrincipalName $appID -PermissionsToSecrets Set, Get
 ```
 
-Другие способы создания хранилища ключей в Azure Key Vault и сохранения секрета см. в [кратких руководствах по Key Vault](/azure/key-vault/).
+Другие способы создания хранилища ключей в Azure Key Vault и сохранения секрета см. в [кратких руководствах по Key Vault](../key-vault/index.yml).
 
 ## <a name="import-required-modules-into-your-automation-account"></a>Импорт необходимых модулей в учетную запись службы автоматизации
 
@@ -74,7 +74,7 @@ Set-AzKeyVaultAccessPolicy -VaultName $VaultName -ServicePrincipalName $appID -P
 
 ## <a name="create-the-runbook-to-send-an-email"></a>Создание модуля Runbook для отправки электронной почты
 
-После того, как вы создали хранилище ключей и сохранили свой ключ API `SendGrid`, необходимо создать runbook для извлечения этого ключа API и отправки электронного письма. Наш runbook будет использовать `AzureRunAsConnection` в качестве [учетной записи запуска от имени](automation-create-runas-account.md) для аутентификации в Azure, чтобы получить секрет из Azure Key Vault. Мы присвоим этому runbook имя **Send-GridMailMessage**. Вы можете изменить скрипт PowerShell из этого примера и использовать его для других сценариев.
+После того, как вы создали хранилище ключей и сохранили свой ключ API `SendGrid`, необходимо создать runbook для извлечения этого ключа API и отправки электронного письма. Наш runbook будет использовать `AzureRunAsConnection` в качестве [учетной записи запуска от имени](./manage-runas-account.md) для аутентификации в Azure, чтобы получить секрет из Azure Key Vault. Мы присвоим этому runbook имя **Send-GridMailMessage**. Вы можете изменить скрипт PowerShell из этого примера и использовать его для других сценариев.
 
 1. Перейдите к своей учетной записи службы автоматизации Azure.
 2. В разделе **Автоматизация процессов** щелкните **Модули Runbook**.
@@ -142,7 +142,7 @@ Set-AzKeyVaultAccessPolicy -VaultName $VaultName -ServicePrincipalName $appID -P
 
 1. Для этого выберите ненужный runbook в списке и щелкните **Удалить**.
 
-2. Удалите Key Vault с помощью командлета [Remove-AzKeyVault](https://docs.microsoft.com/powershell/module/az.keyvault/remove-azkeyvault?view=azps-3.7.0).
+2. Удалите Key Vault с помощью командлета [Remove-AzKeyVault](/powershell/module/az.keyvault/remove-azkeyvault?view=azps-3.7.0).
 
 ```azurepowershell-interactive
 $VaultName = "<your KeyVault name>"

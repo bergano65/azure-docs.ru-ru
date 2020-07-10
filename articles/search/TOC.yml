@@ -72,6 +72,8 @@
           href: cognitive-search-tutorial-blob-python.md
     - name: Отладка набора навыков
       href: cognitive-search-tutorial-debug-sessions.md
+    - name: Добавление пользовательского анализатора
+      href: tutorial-create-custom-analyzer.md
     - name: Подача запросов из Power Apps
       href: search-howto-powerapps.md
 - name: Примеры

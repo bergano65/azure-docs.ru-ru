@@ -5,11 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 05/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: ba498fe9f70664a801172a6ff3705ac41a6371ef
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 0c8863615446f8b14043cd7bd13e529b7efa1e46
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83835259"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186203"
 ---
 # <a name="forward-azure-automation-job-data-to-azure-monitor-logs"></a>Пересылка данных задания службы автоматизации Azure в журналы Azure Monitor
 
@@ -27,8 +28,8 @@ ms.locfileid: "83835259"
 
 Чтобы начать отправку журналов службы автоматизации в журналы Azure Monitor, необходимо следующее:
 
-* Последний выпуск [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs/).
-* Рабочая область Log Analytics. Дополнительные сведения см. в статье [Начало работы с журналами Azure Monitor](../log-analytics/log-analytics-get-started.md).
+* Последний выпуск [Azure PowerShell](/powershell/azureps-cmdlets-docs/).
+* Рабочая область Log Analytics. Дополнительные сведения см. в статье [Начало работы с журналами Azure Monitor](../azure-monitor/overview.md).
 * Идентификатор ресурса для учетной записи службы автоматизации Azure.
 
 Выполните следующую команду, чтобы получить идентификатор ресурса для учетной записи службы автоматизации Azure:
@@ -185,8 +186,8 @@ Remove-AzDiagnosticSetting -ResourceId $automationAccountId
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Чтобы узнать, как создавать поисковые запросы и просматривать журналы заданий службы автоматизации на платформе журналов Azure Monitor, ознакомьтесь со статьей [Поиск в журналах Azure Monitor](../log-analytics/log-analytics-log-searches.md).
+* Чтобы узнать, как создавать поисковые запросы и просматривать журналы заданий службы автоматизации на платформе журналов Azure Monitor, ознакомьтесь со статьей [Поиск в журналах Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
 * Чтобы узнать больше о создании и получении выходных данных и сообщений об ошибках для runbook, см. статью [Отслеживание выходных данных runbook](automation-runbook-output-and-messages.md).
 * Дополнительные сведения о выполнении runbook, отслеживании заданий runbook и другие технические подробности см. в статье [Выполнение runbook в службе автоматизации Azure](automation-runbook-execution.md).
-* Чтобы узнать больше о журналах Azure Monitor и источниках сбора данных, см. статью [Общие сведения о сборе данных службы хранилища Azure на платформе журналов Azure Monitor](../azure-monitor/platform/collect-azure-metrics-logs.md).
+* Чтобы узнать больше о журналах Azure Monitor и источниках сбора данных, см. статью [Общие сведения о сборе данных службы хранилища Azure на платформе журналов Azure Monitor](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace).
 * В устранении неполадок с Log Analytics вам может помочь раздел [Почему Log Analytics больше не собирает данные](../azure-monitor/platform/manage-cost-storage.md#troubleshooting-why-log-analytics-is-no-longer-collecting-data).

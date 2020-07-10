@@ -9,11 +9,12 @@ ms.author: migreene
 ms.topic: conceptual
 ms.date: 07/17/2019
 manager: nirb
-ms.openlocfilehash: ff785bf3ace7c65f83fe8e505f0544edd24776d8
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 4430b8cdfe9414ddbfd7aad3c3fe7827adbc8705
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836861"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186373"
 ---
 # <a name="remediate-noncompliant-azure-automation-state-configuration-servers"></a>Исправление несоответствующих требованиям серверов State Configuration службы автоматизации Azure
 
@@ -24,7 +25,7 @@ ms.locfileid: "83836861"
 
 ## <a name="correct-drift-of-windows-virtual-machines-using-powershell"></a>Корректировка изменения конфигурации для виртуальных машин Windows с помощью PowerShell
 
-Вы можете скорректировать изменение конфигурации для виртуальных машин Windows с помощью команды `Run`. См. статью [Выполнение сценариев PowerShell в виртуальной машине Windows с помощью функции выполнения команд](/azure/virtual-machines/windows/run-command).
+Вы можете скорректировать изменение конфигурации для виртуальных машин Windows с помощью команды `Run`. См. статью [Выполнение сценариев PowerShell в виртуальной машине Windows с помощью функции выполнения команд](../virtual-machines/windows/run-command.md).
 
 Чтобы принудительно загрузить и применить самую свежую конфигурацию на узле State Configuration службы автоматизации Azure, используйте командлет [Update-DscConfiguration](/powershell/module/psdesiredstateconfiguration/update-dscconfiguration).
 
@@ -42,5 +43,5 @@ Update-DscConfiguration -Wait -Verbose
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation).
+- Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).
 - Пример использования службы State Configuration в службе автоматизации Azure в конвейере непрерывного развертывания см. в разделе [Настройка непрерывного развертывания с помощью Chocolatey](automation-dsc-cd-chocolatey.md).

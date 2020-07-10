@@ -10,11 +10,12 @@ ms.author: migreene
 ms.date: 08/08/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: d1b05f9e77d3530f3e883aa3f9d98de09c8f54c2
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 113a6a259f0c69bdcc3b1684803af54ed7ecbddf
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836997"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186492"
 ---
 # <a name="configure-data-based-on-stig"></a>Настройка данных на основе STIG
 
@@ -35,8 +36,8 @@ ms.locfileid: "83836997"
 Многим организациям приходится [документировать исключения](https://github.com/microsoft/powerstig#powerstigdata) из существующих правилам и управлять этими данными в большом масштабе.
 PowerSTIG решает эту проблему, предоставляя [составные ресурсы](https://github.com/microsoft/powerstig#powerstigdsc) для каждого из аспектов конфигурации, вместо того чтобы собирать весь набор параметров в одном большом файле.
 
-Созданные конфигурации можно применить в [скриптах конфигурации DSC](/powershell/scripting/dsc/configurations/configurations), чтобы создать MOF-файлы и [передать их в службу автоматизации Azure](/azure/automation/tutorial-configure-servers-desired-state#create-and-upload-a-configuration-to-azure-automation).
-Затем вы сможете зарегистрировать серверы [локально](/azure/automation/automation-dsc-onboarding#onboarding-physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure-including-aws-ec2-instances) или [в Azure](/azure/automation/automation-dsc-onboarding#onboarding-azure-vms) для получения этих конфигураций.
+Созданные конфигурации можно применить в [скриптах конфигурации DSC](/powershell/scripting/dsc/configurations/configurations), чтобы создать MOF-файлы и [передать их в службу автоматизации Azure](./tutorial-configure-servers-desired-state.md#create-and-upload-a-configuration-to-azure-automation).
+Затем вы сможете зарегистрировать серверы [локально](./automation-dsc-onboarding.md#enable-physicalvirtual-linux-machines) или [в Azure](./automation-dsc-onboarding.md#enable-azure-vms) для получения этих конфигураций.
 
 Чтобы поработать с PowerSTIG, откройте [коллекцию PowerShell](https://www.powershellgallery.com) и скачайте решение или щелкните ссылку "Сайт проекта" для просмотра [документации](https://github.com/microsoft/powerstig).
 

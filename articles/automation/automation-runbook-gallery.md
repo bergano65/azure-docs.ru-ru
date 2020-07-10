@@ -5,11 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: bf2a60e1387ccdfb24ff5c5e166780c00506bac8
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: f2bf058ddce81ab9f04e97787a4dc93e44036b1b
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83832305"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186118"
 ---
 # <a name="use-runbooks-and-modules-in-powershell-gallery"></a>Поиск последовательностей runbook и модулей в коллекции PowerShell
 
@@ -100,12 +101,11 @@ ms.locfileid: "83832305"
 
 ## <a name="request-a-runbook-or-module"></a>Запрос модуля runbook или другого модуля
 
-Свой запрос можно отправить на сайте [User Voice](https://feedback.azure.com/forums/246290-azure-automation/).  Если вам нужна помощь в написании модуля runbook или освоении PowerShell, опубликуйте вопрос на нашей [странице вопросов и ответов Майкрософт](https://docs.microsoft.com/answers/topics/azure-automation.html).
+Свой запрос можно отправить на сайте [User Voice](https://feedback.azure.com/forums/246290-azure-automation/).  Если вам нужна помощь в написании модуля runbook или освоении PowerShell, опубликуйте вопрос на нашей [странице вопросов и ответов Майкрософт](/answers/topics/azure-automation.html).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы начать работу с модулем runbook PowerShell, изучите документ [Руководство. Создание модуля runbook PowerShell](learn/automation-tutorial-runbook-textual-powershell.md).
 * Сведения о работе с модулями runbook см. в статье [Управление модулями runbook в службе автоматизации Azure](manage-runbooks.md).
-* Дополнительные сведения о PowerShell см. в [документации PowerShell](https://docs.microsoft.com/powershell/scripting/overview).
-* * Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
-).
+* Дополнительные сведения о PowerShell см. в [документации PowerShell](/powershell/scripting/overview).
+* * Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).

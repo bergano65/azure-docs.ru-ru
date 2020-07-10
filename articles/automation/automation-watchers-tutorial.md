@@ -5,11 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.topic: conceptual
 ms.date: 10/30/2018
-ms.openlocfilehash: 3369a807410e9e959e8091d5b16c8480803d26bb
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 38963a8e1bfdbde50439ed871aa33e9aaa830d35
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83830588"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185659"
 ---
 # <a name="track-updated-files-with-a-watcher-task"></a>Отслеживание обновленных файлов с помощью задачи наблюдателя
 
@@ -19,7 +20,7 @@ ms.locfileid: "83830588"
 > Задачи наблюдателя не поддерживаются в Azure для Китая (21Vianet).
 
 > [!IMPORTANT]
-> Начиная с мая 2020 года слежение за событиями, планирование повторяющихся задач и запуск действий поддерживается с помощью Azure Logic Apps. См. статью [Планирование и выполнение повторяющихся автоматизированных задач, процессов и рабочих процессов с помощью Azure Logic Apps](https://docs.microsoft.com/azure/logic-apps/concepts-schedule-automated-recurring-tasks-workflows).
+> Начиная с мая 2020 года слежение за событиями, планирование повторяющихся задач и запуск действий поддерживается с помощью Azure Logic Apps. См. статью [Планирование и выполнение повторяющихся автоматизированных задач, процессов и рабочих процессов с помощью Azure Logic Apps](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md).
 
 В этом руководстве пошагово описывается создание задачи службы "Наблюдатель" для отслеживания добавления новых файлов в каталог. Вы узнаете, как выполнять следующие задачи:
 
@@ -36,7 +37,7 @@ ms.locfileid: "83830588"
 Ниже перечислены необходимые условия для выполнения инструкций из этого руководства.
 
 * Подписка Azure. Если у вас ее нет, [активируйте преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [зарегистрируйте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Учетная запись службы автоматизации](automation-offering-get-started.md) для хранения runbook наблюдателя, runbook действия и задачи наблюдателя.
+* [Учетная запись службы автоматизации](./index.yml) для хранения runbook наблюдателя, runbook действия и задачи наблюдателя.
 * [Гибридная рабочая роль runbook](automation-hybrid-runbook-worker.md), в которой выполняется задача наблюдателя.
 * Модули runbook PowerShell. Модули runbook рабочего процесса PowerShell не поддерживаются задачами наблюдателя.
 
@@ -60,7 +61,7 @@ ms.locfileid: "83830588"
 
 ## <a name="create-an-automation-variable"></a>Создание переменной службы автоматизации
 
-[Переменная службы автоматизации](automation-variables.md) используется для хранения меток времени, которые приведенный выше runbook считывает из каждого файла и сохраняет.
+[Переменная службы автоматизации](./shared-resources/variables.md) используется для хранения меток времени, которые приведенный выше runbook считывает из каждого файла и сохраняет.
 
 1. Выберите **Переменные** в разделе **Общие ресурсы**, затем щелкните **+ Добавить переменную**.
 1. Введите имя "Watch-NewFileTimestamp".

@@ -12,12 +12,12 @@ ms.devlang: ruby
 ms.topic: article
 ms.date: 11/25/2014
 ms.author: gwallace
-ms.openlocfilehash: 4822e6feb29f5a17c653a60937b895ec584e0ee4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 19372b30a5e56738230216777897c08b07a0a86a
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "69637196"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170706"
 ---
 # <a name="how-to-use-twilio-for-voice-and-sms-capabilities-in-ruby"></a>Использование Twilio для поддержки голосовых возможностей и SMS в Ruby
 В этом руководстве показано, как выполнять типовые задачи программирования с помощью службы Twilio API в Azure. Здесь описываются такие сценарии, как телефонный звонок и отправка SMS-сообщения. Дополнительные сведения о Twilio и использовании голосовых функций и SMS в приложениях см. в разделе [Дальнейшие действия](#NextSteps).
@@ -38,10 +38,12 @@ TwiML — это набор инструкций на основе XML, кото
 
 Например, следующие инструкции TwiML преобразуют текст **Hello World** в речь.
 
-    <?xml version="1.0" encoding="UTF-8" ?>
-    <Response>
-       <Say>Hello World</Say>
-    </Response>
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<Response>
+    <Say>Hello World</Say>
+</Response>
+```
 
 Во всех документах TwiML элемент `<Response>` является корневым. Вы будете использовать команды Twilio для определения поведения приложения.
 
@@ -82,28 +84,36 @@ TwiML — это набор инструкций на основе XML, кото
 
 Войдите на новую виртуальную машину по протоколу SSH и создайте каталог для нового приложения. В этом каталоге создайте файл с именем Gemfile и скопируйте в него следующий код:
 
-    source 'https://rubygems.org'
-    gem 'sinatra'
-    gem 'thin'
+```bash
+source 'https://rubygems.org'
+gem 'sinatra'
+gem 'thin'
+```
 
 В командной строке запустите `bundle install`. Эта команда установит описанные выше зависимости. Затем создайте файл с именем `web.rb`. В нем будет размещен код веб-приложения. Вставьте в него следующий код:
 
-    require 'sinatra'
+```ruby
+require 'sinatra'
 
-    get '/' do
-        "Hello Monkey!"
-    end
+get '/' do
+    "Hello Monkey!"
+end
+```
 
 На этом этапе можно будет выполнить команду `ruby web.rb -p 5000`. Она настроит небольшой веб-сервер с портом 5000. Вы сможете просмотреть приложение в браузере, перейдя по URL-адресу, настроенному для виртуальной машины Azure. После открытия веб-приложения в браузере вы готовы к созданию приложения Twilio.
 
 ## <a name="configure-your-application-to-use-twilio"></a><a id="configure_app"></a>Настройка приложения для использования Twilio
 Можно настроить веб-приложение для использования библиотеки Twilio, добавив к `Gemfile` следующую строку:
 
-    gem 'twilio-ruby'
+```bash
+gem 'twilio-ruby'
+```
 
 В командной строке запустите `bundle install`. Теперь откройте `web.rb` и следующую строку в начале:
 
-    require 'twilio-ruby'
+```ruby
+require 'twilio-ruby'
+```
 
 Теперь вы готовы к использованию вспомогательной библиотеки Twilio для Ruby в веб-приложении.
 
@@ -112,33 +122,35 @@ TwiML — это набор инструкций на основе XML, кото
 
 Добавьте эту функцию в `web.md`:
 
-    # Set your account ID and authentication token.
-    sid = "your_twilio_account_sid";
-    token = "your_twilio_authentication_token";
+```ruby
+# Set your account ID and authentication token.
+sid = "your_twilio_account_sid";
+token = "your_twilio_authentication_token";
 
-    # The number of the phone initiating the call.
-    # This should either be a Twilio number or a number that you've verified
-    from = "NNNNNNNNNNN";
+# The number of the phone initiating the call.
+# This should either be a Twilio number or a number that you've verified
+from = "NNNNNNNNNNN";
 
-    # The number of the phone receiving call.
-    to = "NNNNNNNNNNN";
+# The number of the phone receiving call.
+to = "NNNNNNNNNNN";
 
-    # Use the Twilio-provided site for the TwiML response.
-    url = "http://yourdomain.cloudapp.net/voice_url";
+# Use the Twilio-provided site for the TwiML response.
+url = "http://yourdomain.cloudapp.net/voice_url";
 
-    get '/make_call' do
-      # Create the call client.
-      client = Twilio::REST::Client.new(sid, token);
+get '/make_call' do
+    # Create the call client.
+    client = Twilio::REST::Client.new(sid, token);
 
-      # Make the call
-      client.account.calls.create(to: to, from: from, url: url)
-    end
+    # Make the call
+    client.account.calls.create(to: to, from: from, url: url)
+end
 
-    post '/voice_url' do
-      "<Response>
-         <Say>Hello Monkey!</Say>
-       </Response>"
-    end
+post '/voice_url' do
+    "<Response>
+        <Say>Hello Monkey!</Say>
+    </Response>"
+end
+```
 
 Если открыть `http://yourdomain.cloudapp.net/make_call` в браузере, вы активируете вызов API Twilio для осуществления звонка. Первые два параметра в `client.account.calls.create` говорят сами за себя: номер вызова `from` и номер вызова `to`. 
 
@@ -151,11 +163,13 @@ TwiML — это набор инструкций на основе XML, кото
 
 Мы хотели бы обработать входящие SMS-сообщения, поэтому изменим URL-адрес на `http://yourdomain.cloudapp.net/sms_url`. Нажмите кнопку "Сохранить изменения" в нижней части страницы. Теперь вернемся к `web.rb` и напишем код, чтобы наше приложение могло обработать это:
 
-    post '/sms_url' do
-      "<Response>
-         <Message>Hey, thanks for the ping! Twilio and Azure rock!</Message>
-       </Response>"
-    end
+```ruby
+post '/sms_url' do
+    "<Response>
+        <Message>Hey, thanks for the ping! Twilio and Azure rock!</Message>
+    </Response>"
+end
+```
 
 После внесения изменений перезапустите веб-приложение. Теперь возьмите телефон и отправьте SMS на ваш номер Twilio. Вы должны быстро получить ответ: "Hey, thanks for the ping! Twilio and Azure rock!" (Спасибо за сообщение. Twilio и Azure лучше всех!).
 

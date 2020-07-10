@@ -6,12 +6,12 @@ ms.subservice: update-management
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.custom: mvc
-ms.openlocfilehash: 79cffa7aedd0fc04dd4a747ef28bc67cacf37905
-ms.sourcegitcommit: 0fa52a34a6274dc872832560cd690be58ae3d0ca
+ms.openlocfilehash: a701a5a9fd77bd801bb535fe1f26bfa17c97757b
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84204894"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185795"
 ---
 # <a name="manage-updates-and-patches-for-your-azure-vms"></a>Управление обновлениями и исправлениями для виртуальных машин Azure
 
@@ -206,7 +206,7 @@ ms.locfileid: "84204894"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, [как ограничить область развертывания Управления обновлениями](automation-scope-configurations-update-management.md).
-* Прочитайте статью [Поиск по журналам Azure Monitor](../log-analytics/log-analytics-log-searches.md) и узнайте, как искать информацию в журналах, хранящихся в рабочей области Log Analytics.
+* Прочитайте статью [Поиск по журналам Azure Monitor](../azure-monitor/log-query/log-query-overview.md) и узнайте, как искать информацию в журналах, хранящихся в рабочей области Log Analytics.
 * Если вы закончили работу с развертываниями, прочитайте, [как удалить связь между рабочей областью и учетной записью службы автоматизации для Управления обновлениями](automation-unlink-workspace-update-management.md).
 * Узнайте, [как удалить из Управления обновлениями виртуальные машины](automation-remove-vms-from-update-management.md).
 * Сведения об устранении общих ошибок Управления обновлениями см. в [этой статье](troubleshoot/update-management.md).

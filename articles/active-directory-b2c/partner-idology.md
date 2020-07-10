@@ -11,18 +11,18 @@ ms.topic: how-to
 ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d34bb14dd0f474ff9350fec513c02fbb470d6738
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7567302be8d717cda3627af303128bfb704bd014
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85385660"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170145"
 ---
 # <a name="tutorial-for-configuring-idology-with-azure-active-directory-b2c"></a>Руководство по настройке Идологи с помощью Azure Active Directory B2C 
 
 В этом примере учебника мы предоставляем рекомендации по интеграции Azure AD B2C с [идологи](https://www.idology.com/solutions/). Идологи — это поставщик проверки и проверки личности с несколькими решениями. В этом примере мы рассмотрим Експектид решение с помощью Идологи.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы приступить к работе, вам потребуется:
 
@@ -41,7 +41,7 @@ ms.locfileid: "85385660"
 
 ![Схема архитектуры Идологи](media/partner-idology/idology-architecture-diagram.png)
 
-|      |      |
+| Шаг | Описание |
 |------|------|
 |1     | Пользователь поступает на страницу входа. |
 |2     | Пользователь выбирает вариант регистрации для создания новой учетной записи и ввода данных на странице. Azure AD B2C собирает атрибуты пользователя. |
@@ -139,7 +139,7 @@ ms.locfileid: "85385660"
 
 7. После ввода **продолжения**появится головоломка идологи.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих статьях:
 

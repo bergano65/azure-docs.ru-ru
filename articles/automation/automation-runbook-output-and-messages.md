@@ -5,18 +5,18 @@ services: automation
 ms.subservice: process-automation
 ms.date: 12/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 387e100a05cb51eb034f737b259bad4e5812465c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e4be7934002730253b77b1c129165ad9f19f23b7
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85557885"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185982"
 ---
 # <a name="monitor-runbook-output"></a>Мониторинг выходных данных runbook
 
 В большинстве модулей runbook в службе автоматизации Azure используются выходные данные определенного типа. Это сообщение об ошибке для пользователя или составной объект, предназначенный для использования с другой последовательностью runbook. Windows PowerShell предоставляет [несколько потоков](/powershell/module/microsoft.powershell.core/about/about_redirection) для отправки выходных данных из сценария или рабочего процесса. Служба автоматизации Azure работает с каждым из этих потоков по-разному. При создании runbook необходимо следовать рекомендациям по использованию потоков.
 
-В следующей таблице приводится краткое описание каждого потока с указанием его поведения на портале Azure при работе с опубликованными последовательностями runbook и при их [тестировании](automation-testing-runbook.md). Поток вывода — это основной поток, используемый для обмена данными между последовательностями runbook. Остальные потоки классифицируются как потоки сообщений, предназначенные для передачи информации пользователю. 
+В следующей таблице приводится краткое описание каждого потока с указанием его поведения на портале Azure при работе с опубликованными последовательностями runbook и при их [тестировании](./manage-runbooks.md). Поток вывода — это основной поток, используемый для обмена данными между последовательностями runbook. Остальные потоки классифицируются как потоки сообщений, предназначенные для передачи информации пользователю. 
 
 | STREAM | Описание | Опубликован | Тест |
 |:--- |:--- |:--- |:--- |
@@ -33,7 +33,7 @@ ms.locfileid: "85557885"
 
 Последовательность runbook использует поток вывода для передачи общей информации клиенту, только если она никогда не вызывалась другой runbook. Однако в обычном случае для передачи информации пользователю рекомендуется, чтобы последовательность runbook использовала [подробный поток](#monitor-verbose-stream).
 
-Последовательность runbook должна записать данные в поток вывода с помощью [Write-Output](https://technet.microsoft.com/library/hh849921.aspx). Кроме того, можно поместить объект в отдельную строку скрипта.
+Последовательность runbook должна записать данные в поток вывода с помощью [Write-Output](/powershell/module/microsoft.powershell.utility/write-output). Кроме того, можно поместить объект в отдельную строку скрипта.
 
 ```powershell
 #The following lines both write an object to the output stream.
@@ -133,7 +133,7 @@ Workflow Test-Runbook
 
 По умолчанию выполнение runbook продолжается после предупреждения или ошибки. Можно указать, что runbook следует приостанавливать при предупреждении или ошибке. Для этого в runbook перед созданием сообщения должна быть задана [привилегированная переменная](#work-with-preference-variables). Например, чтобы приостанавливать runbook при ошибке, как при исключении, присвойте переменной `ErrorActionPreference` значение Stop.
 
-Создайте предупреждение или сообщение об ошибке с помощью командлета [Write-Warning](https://technet.microsoft.com/library/hh849931.aspx) или [Write-Error](https://technet.microsoft.com/library/hh849962.aspx). Действия также могут записывать в потоки предупреждений и ошибок.
+Создайте предупреждение или сообщение об ошибке с помощью командлета [Write-Warning](/powershell/module/microsoft.powershell.utility/write-warning) или [Write-Error](/powershell/module/microsoft.powershell.utility/write-error). Действия также могут записывать в потоки предупреждений и ошибок.
 
 ```powershell
 #The following lines create a warning message and then an error message that will suspend the runbook.
@@ -153,9 +153,9 @@ Write-Error –Message "This is an error message that will stop the runbook beca
 
 По умолчанию подробные сообщения от опубликованных runbook не хранятся в журнале заданий по соображениям производительности. Для хранения подробных сообщений на портале Azure перейдите на вкладку **Настройка** и выберите параметр **Вести подробный журнал**, чтобы опубликованные последовательности runbook записывали в журнал подробные сообщения. Включайте этот параметр только для устранения неполадок и отладки Runbook. В большинстве случаев для runbook следует оставить значение по умолчанию, при котором подробные записи в журнал не добавляются.
 
-При [тестировании модуля runbook](automation-testing-runbook.md) подробные сообщения не отображаются, даже если для runbook настроено добавление подробных записей в журнал. Для отображения подробных сообщений [при тестировании runbook](automation-testing-runbook.md) необходимо задать для переменной `VerbosePreference` значение Continue. После этого подробные сообщения будут отображаться в области вывода теста на портале Azure.
+При [тестировании модуля runbook](./manage-runbooks.md) подробные сообщения не отображаются, даже если для runbook настроено добавление подробных записей в журнал. Для отображения подробных сообщений [при тестировании runbook](./manage-runbooks.md) необходимо задать для переменной `VerbosePreference` значение Continue. После этого подробные сообщения будут отображаться в области вывода теста на портале Azure.
 
-Приведенный ниже код создает подробное сообщение, используя командлет [Write-Verbose](https://technet.microsoft.com/library/hh849951.aspx).
+Приведенный ниже код создает подробное сообщение, используя командлет [Write-Verbose](/powershell/module/microsoft.powershell.utility/write-verbose).
 
 ```powershell
 #The following line creates a verbose message.
@@ -170,11 +170,11 @@ Write-Verbose –Message "This is a verbose message."
 Если включить ведение журнала записей о ходе выполнения, runbook будет добавлять в журнал заданий запись до и после выполнения каждого действия. При тестировании последовательности runbook сообщения о ходе выполнения не отображаются, даже если для нее настроено добавление записей о ходе выполнения в журнал.
 
 >[!NOTE]
->Командлет [Write-Progress](https://technet.microsoft.com/library/hh849902.aspx) недействителен в runbook, так как предназначен для использования интерактивным пользователем.
+>Командлет [Write-Progress](/powershell/module/microsoft.powershell.utility/write-progress) недействителен в runbook, так как предназначен для использования интерактивным пользователем.
 
 ## <a name="work-with-preference-variables"></a>Использование привилегированных переменных
 
-В последовательностях runbook можно задать определенные [привилегированные переменные](https://technet.microsoft.com/library/hh847796.aspx) Windows PowerShell для управления ответом на данные, отправляемые в различные потоки вывода. В следующей таблице перечислены привилегированные переменные, которые могут использоваться в последовательностях runbook, а также их значения по умолчанию и допустимые значения. При использовании в Windows PowerShell за пределами службы автоматизации Azure поддерживаются дополнительные значения привилегированных переменных.
+В последовательностях runbook можно задать определенные [привилегированные переменные](/powershell/module/microsoft.powershell.core/about/about_preference_variables) Windows PowerShell для управления ответом на данные, отправляемые в различные потоки вывода. В следующей таблице перечислены привилегированные переменные, которые могут использоваться в последовательностях runbook, а также их значения по умолчанию и допустимые значения. При использовании в Windows PowerShell за пределами службы автоматизации Azure поддерживаются дополнительные значения привилегированных переменных.
 
 | Переменная | Значение по умолчанию | Допустимые значения |
 |:--- |:--- |:--- |
@@ -198,7 +198,7 @@ Write-Verbose –Message "This is a verbose message."
 
 ### <a name="retrieve-runbook-output-and-messages-in-windows-powershell"></a>Извлечение выходных данных и сообщений runbook в Windows PowerShell
 
-В Windows PowerShell выходные данные и сообщения из runbook можно извлечь с помощью командлета [Get-AzAutomationJobOutput](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationJobOutput?view=azps-3.5.0). Для этого командлета требуется идентификатор задания. У него также есть параметр `Stream`, с помощью которого можно указать извлекаемый поток. Указав значение Any для этого параметра, можно получить все потоки для задания.
+В Windows PowerShell выходные данные и сообщения из runbook можно извлечь с помощью командлета [Get-AzAutomationJobOutput](/powershell/module/Az.Automation/Get-AzAutomationJobOutput?view=azps-3.5.0). Для этого командлета требуется идентификатор задания. У него также есть параметр `Stream`, с помощью которого можно указать извлекаемый поток. Указав значение Any для этого параметра, можно получить все потоки для задания.
 
 В следующем примере запускается пример Runbook и ожидается его завершение. После завершения выполнения runbook скрипт собирает данные потока вывода runbook из задания.
 
@@ -260,6 +260,5 @@ Get-AzAutomationJobOutput -ResourceGroupName "ResourceGroup01" `
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о работе с последовательностями runbook см. в статье [Управление последовательностями runbook в службе автоматизации Azure](manage-runbooks.md).
-* Дополнительные сведения о PowerShell см. в [документации PowerShell](https://docs.microsoft.com/powershell/scripting/overview).
-* * Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
-).
+* Дополнительные сведения о PowerShell см. в [документации PowerShell](/powershell/scripting/overview).
+* * Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).

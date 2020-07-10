@@ -5,11 +5,12 @@ services: automation
 ms.subservice: dsc
 ms.date: 04/06/2020
 ms.topic: conceptual
-ms.openlocfilehash: de46f4e2fd53b888981076256fda28a2a14995af
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 3bb42886c653afbdf8975b532bd2e1e1c3c63ce9
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83837048"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186543"
 ---
 # <a name="compile-dsc-configurations-in-azure-automation-state-configuration"></a>Компилирование конфигураций DSC в службе настройки состояния службы автоматизации Azure
 
@@ -26,7 +27,7 @@ ms.locfileid: "83837048"
   - Работа с данными узла и с данными, отличными от данных узла, в большом масштабе
   - Значительное повышение производительности
 
-Вы также можете использовать шаблоны Azure Resource Manager с расширением DSC Azure для принудительной отправки конфигураций на виртуальные машины Azure. Расширение DSC Azure использует платформу агента Azure, чтобы доставлять и применять конфигурации DSC виртуальных машин Azure, а также сообщать об этих конфигурациях. Сведения о компиляции с помощью шаблонов Azure Resource Manager см. в разделе [Расширение Desired State Configuration (DSC) с использованием шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/virtual-machines/extensions/dsc-template#details). 
+Вы также можете использовать шаблоны Azure Resource Manager с расширением DSC Azure для принудительной отправки конфигураций на виртуальные машины Azure. Расширение DSC Azure использует платформу агента Azure, чтобы доставлять и применять конфигурации DSC виртуальных машин Azure, а также сообщать об этих конфигурациях. Сведения о компиляции с помощью шаблонов Azure Resource Manager см. в разделе [Расширение Desired State Configuration (DSC) с использованием шаблонов Azure Resource Manager](../virtual-machines/extensions/dsc-template.md#details). 
 
 ## <a name="compile-a-dsc-configuration-in-azure-state-configuration"></a>Компиляция конфигурации DSC в Azure State Configuration
 
@@ -62,7 +63,7 @@ $CompilationJob | Get-AzAutomationDscCompilationJobOutput –Stream Any
 
 ### <a name="declare-basic-parameters"></a>Объявление базовых параметров
 
-Объявление параметров, в том числе типов и свойств параметров, в конфигурациях DSC выполняется так же, как и в модулях Runbook службы автоматизации Azure. Дополнительные сведения о параметрах модуля Runbook см. в статье [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).
+Объявление параметров, в том числе типов и свойств параметров, в конфигурациях DSC выполняется так же, как и в модулях Runbook службы автоматизации Azure. Дополнительные сведения о параметрах модуля Runbook см. в статье [Запуск модуля Runbook в службе автоматизации Azure](./start-runbooks.md).
 
 Чтобы определить значения свойств в конфигурации узла **ParametersExample.sample**, созданной во время компилирования, в следующем примере используются параметры `FeatureName` и `IsPresent`.
 
@@ -122,7 +123,7 @@ Start-AzAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -Automa
 Функция **Составные ресурсы** позволяют использовать конфигурации DSC в качестве вложенных ресурсов в рамках конфигурации. Эта функция обеспечивает применение нескольких конфигураций к одному ресурсу. См. статью [Composite resources: использование конфигурации DSC как ресурса](/powershell/scripting/dsc/resources/authoringresourcecomposite), чтобы узнать подробнее о составных ресурсах.
 
 > [!NOTE]
-> Для правильной компиляции конфигураций, содержащих составные ресурсы, необходимо сначала импортировать в службу автоматизации Azure все ресурсы DSC, от которых зависят такие составные ресурсы. Добавление составного ресурса DSC не отличается от добавления модуля PowerShell в службу автоматизации Azure. Этот процесс описан в статье [Администрирование модулей в службе автоматизации Azure](/azure/automation/shared-resources/modules).
+> Для правильной компиляции конфигураций, содержащих составные ресурсы, необходимо сначала импортировать в службу автоматизации Azure все ресурсы DSC, от которых зависят такие составные ресурсы. Добавление составного ресурса DSC не отличается от добавления модуля PowerShell в службу автоматизации Azure. Этот процесс описан в статье [Администрирование модулей в службе автоматизации Azure](./shared-resources/modules.md).
 
 ### <a name="manage-configurationdata-when-compiling-configurations-in-azure-automation"></a>Управление ConfigurationData при компиляции конфигураций в службе автоматизации Azure
 
@@ -183,10 +184,10 @@ Start-AzAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -Automa
 
 Ссылки на ресурсы одинаковы в конфигурациях и модулях Runbook службы настройки состояния службы автоматизации Azure. Дополнительные сведения см. в следующих разделах:
 
-- [Сертификаты](automation-certificates.md)
+- [Сертификаты](./shared-resources/certificates.md)
 - [Соединения](automation-connections.md)
-- [Учетные данные](automation-credentials.md)
-- [Переменные](automation-variables.md)
+- [Учетные данные](./shared-resources/credentials.md)
+- [Переменные](./shared-resources/variables.md)
 
 #### <a name="credential-assets"></a>Активы учетных данных
 
@@ -277,7 +278,6 @@ Import-AzAutomationDscNodeConfiguration -AutomationAccountName 'MyAutomationAcco
 
 - Чтобы приступить к работе со службой настройки состояния службы автоматизации Azure, см. сведения в [этой статье](automation-dsc-getting-started.md).
 - Сведения о компилировании конфигураций DSC, которые затем можно назначить целевым узлам, см. в статье [Компилирование конфигураций DSC в службе настройки состояния службы автоматизации Azure](automation-dsc-compile.md).
-- Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
-).
+- Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).
 - Сведения о ценах см. на странице [с расценками для службы настройки состояния службы автоматизации Azure](https://azure.microsoft.com/pricing/details/automation/).
 - Пример использования службы настройки состояния в конвейере непрерывного развертывания см. в разделе [Настройка непрерывного развертывания с помощью Chocolatey](automation-dsc-cd-chocolatey.md).

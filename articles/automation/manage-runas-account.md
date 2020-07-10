@@ -5,12 +5,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 06/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: 66fb5741a5ed1af9e7edf002485c959f9f2fc82f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 84f2ef1fc318e53914b1510870d0399cfbfa87e9
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85507268"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185285"
 ---
 # <a name="manage-an-azure-automation-run-as-account"></a>Управление учетной записью запуска от имени службы автоматизации Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "85507268"
 * классическая учетная запись запуска от имени Azure.
 
 >[!NOTE]
->Подписки Поставщика облачных речений Azure (CSP) поддерживают только модель Azure Resource Manager. Службы, не являющиеся частью Azure Resource Manager, недоступны в программе. При использовании подписки CSP создается не классическая учетная запись запуска от имени Azure, а учетная запись запуска от имени Azure. Дополнительные сведения о подписках CSP см. в разделе [Доступные службы в подписках CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services).
+>Подписки Поставщика облачных речений Azure (CSP) поддерживают только модель Azure Resource Manager. Службы, не являющиеся частью Azure Resource Manager, недоступны в программе. При использовании подписки CSP создается не классическая учетная запись запуска от имени Azure, а учетная запись запуска от имени Azure. Дополнительные сведения о подписках CSP см. в разделе [Доступные службы в подписках CSP](/azure/cloud-solution-provider/overview/azure-csp-available-services).
 
 У субъекта-службы для учетной записи запуска от имени по умолчанию нет разрешений на чтение данных из Azure AD. Если вы хотите добавить разрешения для чтения данных из Azure AD или управления ими, необходимо предоставить субъекту-службе разрешения в разделе **Разрешения API**. Дополнительные сведения см. в разделе [Добавление разрешений для доступа к веб-API](../active-directory/develop/quickstart-configure-app-access-web-apis.md#add-permissions-to-access-web-apis).
 
@@ -63,12 +63,12 @@ ms.locfileid: "85507268"
 
 |Задача|Командлет  |Минимальные разрешения  |Где необходимо установить разрешения|
 |---|---------|---------|---|
-|Создание приложения Azure AD|[New-AzADApplication](https://docs.microsoft.com/powershell/module/az.resources/new-azadapplication)     | Роль разработчика приложения<sup>1</sup>        |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app)</br>"Главная" > "Azure AD" > "Регистрация приложений" |
-|Добавление учетных данных приложения|[New-AzADAppCredential](https://docs.microsoft.com/powershell/module/az.resources/new-azadappcredential)     | Администратор приложений или глобальный администратор<sup>1</sup>         |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app)</br>"Главная" > "Azure AD" > "Регистрация приложений"|
-|Создание или получение субъекта-службы Azure AD|[New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/az.resources/new-azadserviceprincipal)</br>[Get-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/az.resources/get-azadserviceprincipal)     | Администратор приложений или глобальный администратор<sup>1</sup>        |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app)</br>"Главная" > "Azure AD" > "Регистрация приложений"|
-|Назначение или получение роли RBAC для указанного субъекта|[New-AzRoleAssignment](https://docs.microsoft.com/powershell/module/az.resources/new-azroleassignment)</br>[Get-AzRoleAssignment](https://docs.microsoft.com/powershell/module/Az.Resources/Get-AzRoleAssignment)      | Администратор доступа пользователей, владелец или пользователь со следующими разрешениями:</br></br><code>Microsoft.Authorization/Operations/read</br>Microsoft.Authorization/permissions/read</br>Microsoft.Authorization/roleDefinitions/read</br>Microsoft.Authorization/roleAssignments/write</br>Microsoft.Authorization/roleAssignments/read</br>Microsoft.Authorization/roleAssignments/delete</code></br></br> | [Подписка](../role-based-access-control/role-assignments-portal.md)</br>Подписки главной > > \<subscription name\> — Управление доступом (IAM)|
-|Создание или удаление сертификата службы автоматизации|[New-AzAutomationCertificate](https://docs.microsoft.com/powershell/module/Az.Automation/New-AzAutomationCertificate)</br>[Remove-AzAutomationCertificate](https://docs.microsoft.com/powershell/module/az.automation/remove-azautomationcertificate)     | Участник группы ресурсов         |Группа ресурсов учетной записи службы автоматизации|
-|Создание или удаление подключения службы автоматизации|[New-AzAutomationConnection](https://docs.microsoft.com/powershell/module/az.automation/new-azautomationconnection)</br>[Remove-AzAutomationConnection](https://docs.microsoft.com/powershell/module/az.automation/remove-azautomationconnection)|Участник группы ресурсов |Группа ресурсов учетной записи службы автоматизации|
+|Создание приложения Azure AD|[New-AzADApplication](/powershell/module/az.resources/new-azadapplication)     | Роль разработчика приложения<sup>1</sup>        |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app)</br>"Главная" > "Azure AD" > "Регистрация приложений" |
+|Добавление учетных данных приложения|[New-AzADAppCredential](/powershell/module/az.resources/new-azadappcredential)     | Администратор приложений или глобальный администратор<sup>1</sup>         |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app)</br>"Главная" > "Azure AD" > "Регистрация приложений"|
+|Создание или получение субъекта-службы Azure AD|[New-AzADServicePrincipal](/powershell/module/az.resources/new-azadserviceprincipal)</br>[Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal)     | Администратор приложений или глобальный администратор<sup>1</sup>        |[Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app)</br>"Главная" > "Azure AD" > "Регистрация приложений"|
+|Назначение или получение роли RBAC для указанного субъекта|[New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment)</br>[Get-AzRoleAssignment](/powershell/module/Az.Resources/Get-AzRoleAssignment)      | Администратор доступа пользователей, владелец или пользователь со следующими разрешениями:</br></br><code>Microsoft.Authorization/Operations/read</br>Microsoft.Authorization/permissions/read</br>Microsoft.Authorization/roleDefinitions/read</br>Microsoft.Authorization/roleAssignments/write</br>Microsoft.Authorization/roleAssignments/read</br>Microsoft.Authorization/roleAssignments/delete</code></br></br> | [Подписка](../role-based-access-control/role-assignments-portal.md)</br>Подписки главной > > \<subscription name\> — Управление доступом (IAM)|
+|Создание или удаление сертификата службы автоматизации|[New-AzAutomationCertificate](/powershell/module/Az.Automation/New-AzAutomationCertificate)</br>[Remove-AzAutomationCertificate](/powershell/module/az.automation/remove-azautomationcertificate)     | Участник группы ресурсов         |Группа ресурсов учетной записи службы автоматизации|
+|Создание или удаление подключения службы автоматизации|[New-AzAutomationConnection](/powershell/module/az.automation/new-azautomationconnection)</br>[Remove-AzAutomationConnection](/powershell/module/az.automation/remove-azautomationconnection)|Участник группы ресурсов |Группа ресурсов учетной записи службы автоматизации|
 
 <sup>1</sup> Пользователи без прав администратора в арендаторе Azure AD могут [регистрировать приложения AD](../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app), если в этом арендаторе для параметра **Пользователи могут регистрировать приложения** на странице параметров пользователя установлено значение **Да**. Если для этого параметра задано значение **Нет**, то пользователь, выполняющий данное действие, должен соответствовать требованиям в этой таблице.
 
@@ -155,7 +155,7 @@ ms.locfileid: "85507268"
 
 ## <a name="limit-run-as-account-permissions"></a>Ограничение разрешений учетной записи запуска от имени
 
-Чтобы управлять доступом службы автоматизации к ресурсам в Azure, можно запустить сценарий [Update-AutomationRunAsAccountRoleAssignments.ps1](https://aka.ms/AA5hug8). Этот сценарий изменяет существующий субъект-службу учетной записи запуска от имени, чтобы создать и использовать пользовательское определение роли. Это роль с разрешениями для всех ресурсов, кроме [Key Vault](https://docs.microsoft.com/azure/key-vault/).
+Чтобы управлять доступом службы автоматизации к ресурсам в Azure, можно запустить сценарий [Update-AutomationRunAsAccountRoleAssignments.ps1](https://aka.ms/AA5hug8). Этот сценарий изменяет существующий субъект-службу учетной записи запуска от имени, чтобы создать и использовать пользовательское определение роли. Это роль с разрешениями для всех ресурсов, кроме [Key Vault](../key-vault/index.yml).
 
 >[!IMPORTANT]
 >После запуска сценария **Update-AutomationRunAsAccountRoleAssignments.ps1** модули runbook, которые обращаются к Key Vault с помощью учетных записей запуска от имени, больше не будут работать. Перед выполнением сценария необходимо проверить модули runbook в вашей учетной записи на наличие вызовов к Azure Key Vault. Чтобы разрешить доступ к Key Vault из модулей runbook службы автоматизации Azure, необходимо [добавить учетную запись запуска от имени в разрешения Key Vault](#add-permissions-to-key-vault).

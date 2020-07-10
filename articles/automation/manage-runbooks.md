@@ -5,11 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 06/10/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9202eae49175615c4fffcd0b006ddda6e8281292
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: eb5eb18351f6411a8049e962deed35e5d8f181d9
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84718314"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185251"
 ---
 # <a name="manage-runbooks-in-azure-automation"></a>Управление модулями runbook в службе автоматизации Azure
 
@@ -34,7 +35,7 @@ ms.locfileid: "84718314"
 
 ### <a name="create-a-runbook-with-powershell"></a>Создание модуля Runbook с помощью PowerShell
 
-Используйте командлет [New-AzAutomationRunbook](https://docs.microsoft.com/powershell/module/az.automation/new-azautomationrunbook?view=azps-3.5.0), чтобы создать пустую последовательность runbook. Используйте параметр `Type`, чтобы задать один из четырех типов Runbook, определенных для `New-AzAutomationRunbook`.
+Используйте командлет [New-AzAutomationRunbook](/powershell/module/az.automation/new-azautomationrunbook?view=azps-3.5.0), чтобы создать пустую последовательность runbook. Используйте параметр `Type`, чтобы задать один из четырех типов Runbook, определенных для `New-AzAutomationRunbook`.
 
 В приведенном ниже примере показано, как создать пустую последовательность runbook.
 
@@ -76,7 +77,7 @@ New-AzAutomationRunbook -AutomationAccountName MyAccount `
 
 ### <a name="import-a-runbook-with-windows-powershell"></a>Импорт последовательности runbook с помощью Windows PowerShell
 
-Чтобы импортировать файл скрипта как черновик runbook, воспользуйтесь командлетом [Import-AzAutomationRunbook](https://docs.microsoft.com/powershell/module/az.automation/import-azautomationrunbook?view=azps-3.5.0). Если runbook уже существует, импорт завершится ошибкой. Чтобы этого не произошло, используйте командлет с параметром `Force`.
+Чтобы импортировать файл скрипта как черновик runbook, воспользуйтесь командлетом [Import-AzAutomationRunbook](/powershell/module/az.automation/import-azautomationrunbook?view=azps-3.5.0). Если runbook уже существует, импорт завершится ошибкой. Чтобы этого не произошло, используйте командлет с параметром `Force`.
 
 В приведенных ниже примерах показано, как импортировать файл сценария в последовательность runbook.
 
@@ -191,7 +192,7 @@ If (($jobs.status -contains "Running" -And $runningCount -gt 1 ) -Or ($jobs.Stat
 
 ## <a name="work-with-multiple-subscriptions"></a>Использование нескольких подписок
 
-Последовательность runbook должна поддерживать работу с [подписками](automation-runbook-execution.md#subscriptions). Например, для работы с несколькими подписками последовательность runbook использует командлет [Disable-AzContextAutosave](https://docs.microsoft.com/powershell/module/Az.Accounts/Disable-AzContextAutosave?view=azps-3.5.0). Этот командлет гарантирует, что контекст проверки подлинности не будет получен из другой последовательности runbook, выполняющейся в той же песочнице. Модуль Runbook также использует `Get-AzContext` командлет, чтобы получить контекст текущего сеанса и присвоить его переменной `$AzureContext` .
+Последовательность runbook должна поддерживать работу с [подписками](automation-runbook-execution.md#subscriptions). Например, для работы с несколькими подписками последовательность runbook использует командлет [Disable-AzContextAutosave](/powershell/module/Az.Accounts/Disable-AzContextAutosave?view=azps-3.5.0). Этот командлет гарантирует, что контекст проверки подлинности не будет получен из другой последовательности runbook, выполняющейся в той же песочнице. Модуль Runbook также использует `Get-AzContext` командлет, чтобы получить контекст текущего сеанса и присвоить его переменной `$AzureContext` .
 
 ```powershell
 # Ensures that you do not inherit an AzContext in your runbook
@@ -256,7 +257,7 @@ Start-AzAutomationRunbook `
 
 ### <a name="publish-a-runbook-using-powershell"></a>Публикация runbook с помощью PowerShell
 
-Для публикации runbook используйте командлет [Publish-AzAutomationRunbook](https://docs.microsoft.com/powershell/module/Az.Automation/Publish-AzAutomationRunbook?view=azps-3.5.0). 
+Для публикации runbook используйте командлет [Publish-AzAutomationRunbook](/powershell/module/Az.Automation/Publish-AzAutomationRunbook?view=azps-3.5.0). 
 
 ```azurepowershell-interactive
 $automationAccountName =  "AutomationAccount"
@@ -304,7 +305,7 @@ Publish-AzAutomationRunbook -AutomationAccountName $automationAccountName `
 
 ### <a name="retrieve-job-statuses-using-powershell"></a>Получение данных о состоянии заданий с помощью PowerShell
 
-Чтобы получить список созданных заданий для последовательности runbook и сведения о конкретном задании, воспользуйтесь командлетом [Get-AzAutomationJob](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationJob?view=azps-3.7.0). Если вы запускаете последовательность runbook с помощью `Start-AzAutomationRunbook`, возвращается результирующее задание. Для получения выходных данных задания используйте командлет [Get-AzAutomationJobOutput](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationJobOutput?view=azps-3.5.0).
+Чтобы получить список созданных заданий для последовательности runbook и сведения о конкретном задании, воспользуйтесь командлетом [Get-AzAutomationJob](/powershell/module/Az.Automation/Get-AzAutomationJob?view=azps-3.7.0). Если вы запускаете последовательность runbook с помощью `Start-AzAutomationRunbook`, возвращается результирующее задание. Для получения выходных данных задания используйте командлет [Get-AzAutomationJobOutput](/powershell/module/Az.Automation/Get-AzAutomationJobOutput?view=azps-3.5.0).
 
 В приведенном ниже примере извлекаются сведения о последнем задании для примера runbook и отображаются данные о его состоянии, значения, заданные для параметров runbook, а также выходные данные этого задания.
 

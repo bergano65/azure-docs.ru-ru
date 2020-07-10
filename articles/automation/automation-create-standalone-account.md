@@ -5,11 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 3739f8691a144f183e72af19233f776a24066cbc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ea0970a672ac8fb15c2e7c6bbb65edf33bd25f04
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84118796"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186594"
 ---
 # <a name="create-a-standalone-azure-automation-account"></a>Создание автономной учетной записи службы автоматизации Azure
 
@@ -104,5 +105,4 @@ ms.locfileid: "84118796"
 * Чтобы начать работу с модулями runbook PowerShell, изучите документ [Руководство. Создание модуля runbook PowerShell](learn/automation-tutorial-runbook-textual-powershell.md).
 * Чтобы начать работу с модулями runbook рабочих процессов PowerShell, изучите документ [Руководство. Создание модуля runbook рабочего процесса PowerShell](learn/automation-tutorial-runbook-textual.md).
 * Чтобы начать работу с модулями runbook Python 2, изучите документ [Руководство. Создание модуля runbook в Python 2](learn/automation-tutorial-runbook-textual-python2.md).
-* Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
-).
+* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).

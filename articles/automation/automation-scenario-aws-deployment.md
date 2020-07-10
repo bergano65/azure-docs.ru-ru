@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: d67e2639c2d4b168babeb7c29ef977d39d9e11cb
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: 456a7e4f07b2416e1d2037205574f2e7149e70e2
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85855309"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185948"
 ---
 # <a name="deploy-an-amazon-web-services-vm-with-a-runbook"></a>Развертывание виртуальных машин Amazon Web Services с помощью модуля runbook
 
@@ -101,7 +101,6 @@ ms.locfileid: "85855309"
  
 * Чтобы узнать, какие модули runbook поддерживаются, см. статью [Типы runbook службы автоматизации Azure](automation-runbook-types.md).
 * Сведения о работе с модулями runbook см. в статье [Управление модулями runbook в службе автоматизации Azure](manage-runbooks.md).
-* Дополнительные сведения о PowerShell см. в [документации PowerShell](https://docs.microsoft.com/powershell/scripting/overview).
+* Дополнительные сведения о PowerShell см. в [документации PowerShell](/powershell/scripting/overview).
 * Сведения о поддержке сценариев см. в [Встроенная поддержка скриптов PowerShell в службе автоматизации Azure](https://azure.microsoft.com/blog/announcing-powershell-script-support-azure-automation-2/).
-* Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
-).
+* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).

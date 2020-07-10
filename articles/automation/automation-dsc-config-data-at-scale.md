@@ -10,11 +10,12 @@ ms.author: migreene
 ms.date: 08/08/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: fbd721bc54ce2de6b7923b0f582c53ffc7da1a73
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: bc55a4c5ab20cac041a00a0f924b207eb256ae8b
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83837031"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186526"
 ---
 # <a name="configure-data-at-scale-for-azure-automation-state-configuration"></a>Упорядочение данных в большом масштабе для State Configuration службы автоматизации Azure
 
@@ -43,8 +44,8 @@ ms.locfileid: "83837031"
 Все эти сведения можно упорядочить в удобном для вас формате файлов (JSON, YAML или PSD1).
 Предоставляются командлеты, которые создают файлы конфигурации путем [объединения сведений](https://github.com/gaelcolas/Datum#datum-tree) из каждого файла в единое представление для сервера или роли сервера.
 
-После создания файлов данных их можно применить в [скриптах конфигурации DSC](/powershell/scripting/dsc/configurations/write-compile-apply-configuration) для создания MOF-файлов и [передачи MOF-файлов в службу автоматизации Azure](/azure/automation/tutorial-configure-servers-desired-state#create-and-upload-a-configuration-to-azure-automation).
-Затем зарегистрируйте серверы [локально](/azure/automation/automation-dsc-onboarding#onboarding-physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure-including-aws-ec2-instances) или [в Azure](/azure/automation/automation-dsc-onboarding#onboarding-azure-vms) для получения конфигураций.
+После создания файлов данных их можно применить в [скриптах конфигурации DSC](/powershell/scripting/dsc/configurations/write-compile-apply-configuration) для создания MOF-файлов и [передачи MOF-файлов в службу автоматизации Azure](./tutorial-configure-servers-desired-state.md#create-and-upload-a-configuration-to-azure-automation).
+Затем зарегистрируйте серверы [локально](./automation-dsc-onboarding.md#enable-physicalvirtual-linux-machines) или [в Azure](./automation-dsc-onboarding.md#enable-azure-vms) для получения конфигураций.
 
 Чтобы испытать Datum в работе, откройте [коллекцию PowerShell](https://www.powershellgallery.com/packages/datum/) и скачайте решение или щелкните ссылку "Project Site" (Сайт проекта) для перехода к [документации](https://github.com/gaelcolas/Datum#2-getting-started--concepts).
 

@@ -5,11 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 12/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: 741569740713fef72f714f7cbce38a3c6f075684
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: f175e495af8e925c0d5a6c61669a5e2f44f73ae7
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836691"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186012"
 ---
 # <a name="learn-powershell-workflow-for-azure-automation"></a>Рабочий процесс PowerShell для службы автоматизации Azure
 
@@ -20,7 +21,7 @@ ms.locfileid: "83836691"
 > [!NOTE]
 > Скрипт рабочего процесса PowerShell очень похож на скрипт Windows PowerShell, но имеет ряд существенных отличий, которые могут запутать нового пользователя. Поэтому рекомендуется создавать модули runbook с помощью рабочего процесса PowerShell только в том случае, если необходимо использовать [контрольные точки](#use-checkpoints-in-a-workflow). 
 
-Дополнительные сведения по темам, рассмотренным в этой статье, см. на странице [Общие сведения о рабочем процессе Windows PowerShell](https://technet.microsoft.com/library/jj134242.aspx).
+Дополнительные сведения по темам, рассмотренным в этой статье, см. на странице [Общие сведения о рабочем процессе Windows PowerShell](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134242(v=ws.11)).
 
 ## <a name="use-workflow-keyword"></a>Использование ключевого слова Workflow
 
@@ -45,9 +46,9 @@ Workflow Test-Workflow
 
 Действие — это конкретная задача в рабочем процессе, которая выполняется в свою очередь. Рабочий процесс Windows PowerShell автоматически преобразует множество командлетов Windows PowerShell в действия при выполнении рабочего процесса. Если указать один из этих командлетов в модуле runbook, соответствующее действие запускается в Windows Workflow Foundation. 
 
-Если у командлета нет соответствующего действия, рабочий процесс Windows PowerShell автоматически запускает командлет в действии [InlineScript](#use-inlinescript). Некоторые командлеты исключаются и не могут использоваться в рабочем процессе, если они явно не включены в блок InlineScript. Дополнительные сведения см. в статье [Использование действий в рабочих процессах сценариев](https://technet.microsoft.com/library/jj574194.aspx).
+Если у командлета нет соответствующего действия, рабочий процесс Windows PowerShell автоматически запускает командлет в действии [InlineScript](#use-inlinescript). Некоторые командлеты исключаются и не могут использоваться в рабочем процессе, если они явно не включены в блок InlineScript. Дополнительные сведения см. в статье [Использование действий в рабочих процессах сценариев](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574194(v=ws.11)).
 
-Действия рабочих процессов совместно используют набор общих параметров для настройки их работы. См. раздел [about_WorkflowCommonParameters](https://technet.microsoft.com/library/jj129719.aspx).
+Действия рабочих процессов совместно используют набор общих параметров для настройки их работы. См. раздел [about_WorkflowCommonParameters](/powershell/module/psworkflow/about/about_workflowcommonparameters).
 
 ### <a name="positional-parameters"></a>Позиционные параметры
 
@@ -150,7 +151,7 @@ Workflow Stop-MyService
 * [Параллельное выполнение](#use-parallel-processing) в блоке InlineScript не используется.
 * InlineScript влияет на масштабируемость рабочего процесса, поскольку содержит сеанс Windows PowerShell для всей продолжительности блока InlineScript.
 
-Дополнительные сведения об использовании InlineScript см. в статьях [Выполнение команд Windows PowerShell в рабочем процессе](https://technet.microsoft.com/library/jj574197.aspx) и [about_InlineScript](https://technet.microsoft.com/library/jj649082.aspx).
+Дополнительные сведения об использовании InlineScript см. в статьях [Выполнение команд Windows PowerShell в рабочем процессе](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574197(v=ws.11)) и [about_InlineScript](/powershell/module/psworkflow/about/about_inlinescript).
 
 ## <a name="use-parallel-processing"></a>Использование параллельной обработки
 
@@ -260,7 +261,7 @@ Workflow Copy-Files
 }
 ```
 
-Учетные данные пользователя не сохраняются после вызова действия [Suspend-Workflow](https://technet.microsoft.com/library/jj733586.aspx) или последней контрольной точки. Поэтому для учетных данных необходимо указать значение NULL, а затем извлечь их снова из хранилища ресурсов после вызова `Suspend-Workflow` или контрольной точки.  Иначе можно получить сообщение об ошибке `The workflow job cannot be resumed, either because persistence data could not be saved completely, or saved persistence data has been corrupted. You must restart the workflow.`.
+Учетные данные пользователя не сохраняются после вызова действия [Suspend-Workflow](/powershell/module/psworkflow/about/about_suspend-workflow) или последней контрольной точки. Поэтому для учетных данных необходимо указать значение NULL, а затем извлечь их снова из хранилища ресурсов после вызова `Suspend-Workflow` или контрольной точки.  Иначе можно получить сообщение об ошибке `The workflow job cannot be resumed, either because persistence data could not be saved completely, or saved persistence data has been corrupted. You must restart the workflow.`.
 
 Приведенный ниже код показывает, как это сделать в модулях runbook рабочих процессов PowerShell.
 
@@ -289,9 +290,9 @@ workflow CreateTestVms
 ```
 
 > [!NOTE]
-> Для неграфических модулей runbook PowerShell `Add-AzAccount` и `Add-AzureRMAccount` являются псевдонимами для [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0). Вы можете использовать эти командлеты или [обновить модули](automation-update-azure-modules.md) в учетной записи службы автоматизации до последних версий. Обновление модулей может потребоваться, даже если учетная запись службы автоматизации только что создана. Использовать эти командлеты необязательно, если вы проходите проверку подлинности с помощью учетной записи запуска от имени, настроенной с помощью субъекта-службы.
+> Для неграфических модулей runbook PowerShell `Add-AzAccount` и `Add-AzureRMAccount` являются псевдонимами для [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0). Вы можете использовать эти командлеты или [обновить модули](automation-update-azure-modules.md) в учетной записи службы автоматизации до последних версий. Обновление модулей может потребоваться, даже если учетная запись службы автоматизации только что создана. Использовать эти командлеты необязательно, если вы проходите проверку подлинности с помощью учетной записи запуска от имени, настроенной с помощью субъекта-службы.
 
-Дополнительные сведения о контрольных точках см. в статье [Добавление контрольных точек в рабочий процесс сценария](https://technet.microsoft.com/library/jj574114.aspx).
+Дополнительные сведения о контрольных точках см. в статье [Добавление контрольных точек в рабочий процесс сценария](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574114(v=ws.11)).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

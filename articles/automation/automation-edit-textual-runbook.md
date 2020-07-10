@@ -9,11 +9,12 @@ ms.author: magoedte
 ms.date: 08/01/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: d388162738930030ba311a04a0dce1db15590c79
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: c51ef23e27cd63d3706c104d1e39a14bf61c258e
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836844"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186356"
 ---
 # <a name="edit-textual-runbooks-in-azure-automation"></a>Изменение текстовых последовательностей runbook в службе автоматизации Azure
 
@@ -56,7 +57,7 @@ ms.locfileid: "83836844"
 1. На холсте текстового редактора установите курсор в то место, куда нужно вставить код для дочерней последовательности runbook.
 2. Разверните узел **Ресурс-контейнеры** в элементе управления «Библиотека».
 3. Разверните узел для нужного типа ресурса.
-4. Щелкните правой кнопкой мыши имя ресурса, который нужно вставить, и выберите **Добавить на холст**. Для [ресурсов-контейнеров переменных](automation-variables.md) выберите **Добавить "Получить переменную" на холст** или **Добавить "Установить переменную" на холст** в зависимости от того, нужно ли вам получить или задать переменную.
+4. Щелкните правой кнопкой мыши имя ресурса, который нужно вставить, и выберите **Добавить на холст**. Для [ресурсов-контейнеров переменных](./shared-resources/variables.md) выберите **Добавить "Получить переменную" на холст** или **Добавить "Установить переменную" на холст** в зависимости от того, нужно ли вам получить или задать переменную.
 5. Обратите внимание, что код для ресурса вставляется в последовательность runbook.
 
 ## <a name="edit-an-azure-automation-runbook-using-windows-powershell"></a>Изменение последовательности runbook в службе автоматизации Azure с помощью Windows PowerShell
@@ -95,9 +96,9 @@ Publish-AzAutomationRunbook -Name $runbookName -AutomationAccountName $automatio
 * [Управление последовательностями runbook в службе автоматизации Azure.](manage-runbooks.md)
 * [Изучение рабочего процесса PowerShell.](automation-powershell-workflow.md)
 * [Графическая разработка в службе автоматизации Azure.](automation-graphical-authoring-intro.md)
-* [Сертификаты.](automation-certificates.md)
+* [Сертификаты.](./shared-resources/certificates.md)
 * [Соединения](automation-connections.md).
-* [Учетные данные](automation-credentials.md).
-* [Расписания](automation-schedules.md).
-* [Переменные](automation-variables.md).
-* [Справочник по командлетам PowerShell.](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation)
+* [Учетные данные](./shared-resources/credentials.md).
+* [Расписания](./shared-resources/schedules.md).
+* [Переменные](./shared-resources/variables.md).
+* [Справочник по командлетам PowerShell.](/powershell/module/az.automation/?view=azps-3.7.0#automation)

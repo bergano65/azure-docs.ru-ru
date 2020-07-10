@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 06/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: e1262aedda95f3feb7cf5604644d938bf4d00a53
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: 6913ae8cbd8c73bd2763bd89172280feee9df973
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85854917"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185625"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Windows
 
@@ -18,7 +18,7 @@ ms.locfileid: "85854917"
 
 После успешного развертывания рабочей роли Runbook ознакомьтесь с [запуском модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md), чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать, убедитесь, что у вас есть следующее.
 
@@ -206,9 +206,9 @@ Add-HybridRunbookWorker –GroupName <String> -Url <Url> -Key <String>
 
 Модули Runbook могут использовать любые из действий и командлетов, которые определены в модулях, установленных в вашей среде службы автоматизации Azure. Так как эти модули не развертываются автоматически на локальных компьютерах, их необходимо установить вручную. Исключением является модуль Azure. Этот модуль устанавливается по умолчанию и предоставляет доступ к командлетам для всех служб и действий службы автоматизации Azure.
 
-Так как главной целью гибридной рабочей роли Runbook является управление локальными ресурсами, вам с большой вероятностью потребуются модули, которые поддерживают эти ресурсы (в частности, модуль `PowerShellGet`). Сведения об установке модулей Windows PowerShell см. в [этой статье](https://docs.microsoft.com/powershell/scripting/developer/windows-powershell).
+Так как главной целью гибридной рабочей роли Runbook является управление локальными ресурсами, вам с большой вероятностью потребуются модули, которые поддерживают эти ресурсы (в частности, модуль `PowerShellGet`). Сведения об установке модулей Windows PowerShell см. в [этой статье](/powershell/scripting/developer/windows-powershell).
 
-Устанавливаемые модули должны находиться в расположении, указанном в переменной среды `PSModulePath`, чтобы гибридная рабочая роль автоматически импортировала их. Дополнительные сведения см. в разделе [Установка модулей в PSModulePath](https://docs.microsoft.com/powershell/scripting/developer/module/installing-a-powershell-module?view=powershell-7).
+Устанавливаемые модули должны находиться в расположении, указанном в переменной среды `PSModulePath`, чтобы гибридная рабочая роль автоматически импортировала их. Дополнительные сведения см. в разделе [Установка модулей в PSModulePath](/powershell/scripting/developer/module/installing-a-powershell-module?view=powershell-7).
 
 ## <a name="remove-the-hybrid-runbook-worker-from-an-on-premises-windows-machine"></a><a name="remove-windows-hybrid-runbook-worker"></a>Удаление гибридной рабочей роли Runbook с локального компьютера Windows
 

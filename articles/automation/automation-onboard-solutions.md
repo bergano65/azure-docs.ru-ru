@@ -5,12 +5,12 @@ services: automation
 ms.topic: conceptual
 ms.date: 05/10/2018
 ms.custom: mvc
-ms.openlocfilehash: 95370a45b9fce69e5c1d06ac9bb987e1bfcfba4f
-ms.sourcegitcommit: 0fa52a34a6274dc872832560cd690be58ae3d0ca
+ms.openlocfilehash: d55a47e4eb921c71ff3539d34b6db514684da073
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84204078"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186135"
 ---
 # <a name="enable-update-management-from-a-runbook"></a>Включение Управления обновлениями в последовательности runbook
 
@@ -22,7 +22,7 @@ ms.locfileid: "84204078"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас ее нет, [активируйте преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [зарегистрируйте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Учетная запись службы автоматизации](automation-offering-get-started.md) для управления компьютерами.
+* [Учетная запись службы автоматизации](./index.yml) для управления компьютерами.
 * [Виртуальная машина](../virtual-machines/windows/quick-create-portal.md).
 
 ## <a name="enable-update-management"></a>Включение управления обновлениями
@@ -50,7 +50,7 @@ ms.locfileid: "84204078"
 
 ## <a name="install-and-update-modules"></a>установка и обновление модулей;
 
-Нужно обновить модули Azure до последних версий и импортировать модуль [Az.OperationalInsights](https://docs.microsoft.com/powershell/module/az.operationalinsights/?view=azps-3.7.0), чтобы включить Управление обновлениями для виртуальных машин.
+Нужно обновить модули Azure до последних версий и импортировать модуль [Az.OperationalInsights](/powershell/module/az.operationalinsights/?view=azps-3.7.0), чтобы включить Управление обновлениями для виртуальных машин.
 
 1. В учетной записи службы автоматизации выберите элемент **Модули** в области **Общие ресурсы**. 
 2. Выберите **Обновить модули Azure**, чтобы обновить модули Azure до последней версии. 

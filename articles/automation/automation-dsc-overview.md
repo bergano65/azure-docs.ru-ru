@@ -10,12 +10,12 @@ ms.author: magoedte
 ms.date: 06/22/2020
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: bdb387739be65b761c773ca13b7a407d7aebf738
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6a1c6bb39e743a96ad110a60e41cc59306e7a2ae
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85206892"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186390"
 ---
 # <a name="azure-automation-state-configuration-overview"></a>Обзор службы State Configuration службы автоматизации Azure
 
@@ -53,7 +53,7 @@ State Configuration службы автоматизации Azure — это с
 
 Узлы, управление которыми осуществляется с помощью "Настройка состояния службы автоматизации Azure", отправляют подробные отчеты с данными о состоянии на встроенный опрашивающий сервер. В службе "Настройка состояния службы автоматизации Azure" можно настроить отправку этих данных в рабочую область Log Analytics. См. раздел [Пересылка данных отчетов службы State Configuration службы автоматизации Azure в журналах Azure Monitor](automation-dsc-diagnostics.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования:
 
 При использовании службы State Configuration службы автоматизации Azure учитывайте требования, описанные в этом разделе.
 
@@ -77,7 +77,7 @@ State Configuration службы автоматизации Azure — это с
 
 ### <a name="dsc-requirements"></a>Требования DSC
 
-Для всех узлов Windows, работающих в Azure, [WMF 5.1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure) устанавливается при включении компьютеров. Для узлов, работающих под управлением Windows Server 2012 и Windows 7, включен [WinRM](https://docs.microsoft.com/powershell/scripting/dsc/troubleshooting/troubleshooting#winrm-dependency).
+Для всех узлов Windows, работающих в Azure, [WMF 5.1](/powershell/scripting/wmf/setup/install-configure) устанавливается при включении компьютеров. Для узлов, работающих под управлением Windows Server 2012 и Windows 7, включен [WinRM](/powershell/scripting/dsc/troubleshooting/troubleshooting#winrm-dependency).
 
 Для всех узлов Linux, работающих в Azure, [PowerShell DSC для Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux) устанавливается при включении компьютеров.
 
@@ -90,7 +90,7 @@ State Configuration службы автоматизации Azure — это с
 * Глобальный URL-адрес US Gov (Вирджиния): * **.azure automation.us**
 * Служба агента: **https:// \<workspaceId\> . agentsvc.Azure-Automation.NET**
 
-При использовании ресурсов DSC, взаимодействующих между узлами, например [ресурсов WaitFor*](https://docs.microsoft.com/powershell/scripting/dsc/reference/resources/windows/waitForAllResource), необходимо также разрешить трафик между узлами. Сведения об этих требованиях к сети см. в документации по каждому ресурсу DSC.
+При использовании ресурсов DSC, взаимодействующих между узлами, например [ресурсов WaitFor*](/powershell/scripting/dsc/reference/resources/windows/waitForAllResource), необходимо также разрешить трафик между узлами. Сведения об этих требованиях к сети см. в документации по каждому ресурсу DSC.
 
 Сведения о требованиях клиента к TLS 1,2 см. в разделе [Принудительная поддержка tls 1,2 для службы автоматизации Azure](automation-managing-data.md#tls-12-enforcement-for-azure-automation).
 
@@ -114,5 +114,4 @@ State Configuration службы автоматизации Azure — это с
 - Сведения о компилировании конфигураций DSC, которые затем можно назначить целевым узлам, см. в статье [Компилирование конфигураций DSC в службе State Configuration службы автоматизации Azure](automation-dsc-compile.md).
 - Пример использования службы State Configuration в службе автоматизации Azure в конвейере непрерывного развертывания см. в статье [Настройка непрерывного развертывания с помощью Chocolatey](automation-dsc-cd-chocolatey.md).
 - Сведения о ценах см. на странице [с ценами на использование State Configuration службы автоматизации Azure](https://azure.microsoft.com/pricing/details/automation/).
-- Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
-).
+- Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).

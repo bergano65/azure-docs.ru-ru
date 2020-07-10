@@ -7,11 +7,12 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 02/25/2020
-ms.openlocfilehash: 1cd20e28d1b36167154059adf728a9cfdf8102bc
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 76c8d09ef2ef0130ddac856a1f37f8b68d977494
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836623"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186237"
 ---
 # <a name="azure-automation-frequently-asked-questions"></a>Часто задаваемые вопросы о службе автоматизации Azure
 
@@ -37,7 +38,7 @@ ms.locfileid: "83836623"
 
 ### <a name="can-i-deploy-updates-across-azure-tenants"></a>Можно ли развертывать обновления в другом клиенте Azure?
 
-Если у вас есть в другом клиенте Azure компьютеры для обновления, которые подключены к функции "Управление обновлениями", для включения их в график обновлений вы можете применить следующее обходное решение. Выполните командлет [New-AzAutomationSchedule](https://docs.microsoft.com/powershell/module/Az.Automation/New-AzAutomationSchedule?view=azps-3.7.0) с параметром `ForUpdateConfiguration`, чтобы создать расписание. Можете также применить командлет [New-AzAutomationSoftwareUpdateConfiguration](https://docs.microsoft.com/powershell/module/Az.Automation/New-AzAutomationSoftwareUpdateConfiguration?view=azps-3.7.0), передав ему параметр `NonAzureComputer` со списком компьютеров в другом клиенте. В приведенном ниже примере показано, как это сделать.
+Если у вас есть в другом клиенте Azure компьютеры для обновления, которые подключены к функции "Управление обновлениями", для включения их в график обновлений вы можете применить следующее обходное решение. Выполните командлет [New-AzAutomationSchedule](/powershell/module/Az.Automation/New-AzAutomationSchedule?view=azps-3.7.0) с параметром `ForUpdateConfiguration`, чтобы создать расписание. Можете также применить командлет [New-AzAutomationSoftwareUpdateConfiguration](/powershell/module/Az.Automation/New-AzAutomationSoftwareUpdateConfiguration?view=azps-3.7.0), передав ему параметр `NonAzureComputer` со списком компьютеров в другом клиенте. В приведенном ниже примере показано, как это сделать.
 
 ```azurepowershell-interactive
 $nonAzurecomputers = @("server-01", "server-02")
@@ -53,5 +54,5 @@ New-AzAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -AutomationA
 
 Если в этой статье нет ответа на ваш вопрос, обратитесь к следующим источникам информации.
 
-- [Служба автоматизации Azure](https://docs.microsoft.com/answers/topics/azure-automation.html)
+- [Служба автоматизации Azure](/answers/topics/azure-automation.html)
 - [Форум отзывов и предложений](https://feedback.azure.com/forums/905242-update-management)

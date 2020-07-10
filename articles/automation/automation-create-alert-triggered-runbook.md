@@ -5,11 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/29/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1feadeaf2a905abee396c09829dab5e06c46d99c
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: acf31af6d3ba3d78a6435210fa17562aaddac0a3
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83837116"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186611"
 ---
 # <a name="use-an-alert-to-trigger-an-azure-automation-runbook"></a>Использование оповещения для активации runbook службы автоматизации Azure
 
@@ -44,7 +45,7 @@ ms.locfileid: "83837116"
 
 В этом примере используется оповещение из виртуальной машины. Он извлекает данные виртуальной машины из полезных данных и использует эту информацию для остановки виртуальной машины. Подключение должно быть настроено в учетной записи службы автоматизации, в которой выполняется runbook. При использовании оповещений для активации модулей runbook очень важно проверять состояние оповещения в активируемом модуле. Модуль runbook будет активирован каждый раз, когда состояние оповещения меняется. Оповещения имеют несколько состояний, из которых два наиболее распространенных — "Активировано" и "Разрешено". Проверьте состояние в логике модуля runbook, чтобы убедиться, что модуль runbook выполняется не более одного раза. Пример в этой статье показывает, как выполнять поиск только оповещений с состоянием "Активировано".
 
-Модуль runbook будет использовать [учетную запись запуска от имени](automation-create-runas-account.md) `AzureRunAsConnection` для проверки подлинности в Azure, чтобы выполнить действие управления с виртуальной машиной.
+Модуль runbook будет использовать [учетную запись запуска от имени](./manage-runas-account.md) `AzureRunAsConnection` для проверки подлинности в Azure, чтобы выполнить действие управления с виртуальной машиной.
 
 Используйте этот пример для создания runbook **Stop-AzureVmInResponsetoVMAlert**. Можно изменить сценарий PowerShell и использовать его для множества разных ресурсов.
 
@@ -191,7 +192,7 @@ ms.locfileid: "83837116"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о том, как запустить модуль runbook с помощью веб-перехватчика, см. в разделе [Запуск модуля runbook с помощью веб-перехватчика](automation-webhooks.md).
-* Сведения о различных способах запуска модуля runbook см. разделе [Запуск модуля runbook](automation-starting-a-runbook.md).
+* Сведения о различных способах запуска модуля runbook см. разделе [Запуск модуля runbook](./start-runbooks.md).
 * Сведения о создании оповещения журнала действий см. в разделе [Создание оповещений журнала действий](../azure-monitor/platform/activity-log-alerts.md?toc=%2fazure%2fautomation%2ftoc.json).
 * Дополнительные сведения о том, как создать оповещение почти в реальном времени, см. в разделе [Создание правила оповещения с помощью портала Azure](../azure-monitor/platform/alerts-metric.md?toc=/azure/azure-monitor/toc.json).
-* Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation).
+* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).

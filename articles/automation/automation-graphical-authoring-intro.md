@@ -5,11 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: fa1be31f90bd14c1f22d9e389132487094ecb4ff
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.openlocfilehash: c5d611ddffedc2f69cfc4f2b5600a158b0be9680
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83849762"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186339"
 ---
 # <a name="author-graphical-runbooks-in-azure-automation"></a>Создание графических модулей Runbook в службе автоматизации Azure
 
@@ -60,7 +61,7 @@ ms.locfileid: "83849762"
 
 Набор параметров определяет обязательные и необязательные параметры, которые принимают значения для определенного командлета. У каждого командлета имеется по крайней мере один набор параметров, а у некоторых их несколько. Если у командлета несколько наборов параметров, перед настройкой параметров необходимо выбрать, какой из них использовать. Можно изменить набор параметров, используемый действием, щелкнув **Набор параметров** и выбрав другой набор. В этом случае все уже настроенные значения параметров будут потеряны.
 
-В следующем примере у командлета [Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm?view=azps-3.5.0) три набора параметров. В этом примере используется один набор **ListVirtualMachineInResourceGroupParamSet** для возврата всех виртуальных машин в группе ресурсов. В набор входит один необязательный параметр. В примере также используется набор параметров **GetVirtualMachineInResourceGroupParamSet** для указания возвращаемой виртуальной машины. Этот набор содержит два обязательных параметра и один необязательный параметр.
+В следующем примере у командлета [Get-AzVM](/powershell/module/az.compute/get-azvm?view=azps-3.5.0) три набора параметров. В этом примере используется один набор **ListVirtualMachineInResourceGroupParamSet** для возврата всех виртуальных машин в группе ресурсов. В набор входит один необязательный параметр. В примере также используется набор параметров **GetVirtualMachineInResourceGroupParamSet** для указания возвращаемой виртуальной машины. Этот набор содержит два обязательных параметра и один необязательный параметр.
 
 ![Набор параметров](media/automation-graphical-authoring-intro/get-azvm-parameter-sets.png)
 
@@ -263,11 +264,11 @@ $ActivityOutput['Activity Label'].PropertyName
 
 ## <a name="handle-runbook-output"></a>Обработка выходных данных Runbook
 
-Графическая разработка сохраняет в [выходных данных модуля Runbook](https://docs.microsoft.com/azure/automation/automation-runbook-output-and-messages) данные, созданные каким-либо действием,которые не имеют исходящей связи. Выходные данные сохраняются заданием Runbook и доступны родительскому модулю Runbook, если Runbook используется как дочерний.
+Графическая разработка сохраняет в [выходных данных модуля Runbook](./automation-runbook-output-and-messages.md) данные, созданные каким-либо действием,которые не имеют исходящей связи. Выходные данные сохраняются заданием Runbook и доступны родительскому модулю Runbook, если Runbook используется как дочерний.
 
 ## <a name="work-with-powershell-expressions"></a>Работа с выражениями PowerShell
 
-Одним из преимуществ графической разработки является возможность создавать модули Runbook, располагая минимальными знаниями о PowerShell. В настоящее время необходимо знать лишь некоторые общие принципы работы с PowerShell для заполнения определенных [значений параметров](#use-activities) и настройки [условий связи](#use-links-for-workflow). В этом разделе содержатся краткие сведения о выражениях PowerShell. Полные сведения о PowerShell можно найти в статье [Создание сценариев с помощью Windows PowerShell](https://docs.microsoft.com/powershell/scripting/overview).
+Одним из преимуществ графической разработки является возможность создавать модули Runbook, располагая минимальными знаниями о PowerShell. В настоящее время необходимо знать лишь некоторые общие принципы работы с PowerShell для заполнения определенных [значений параметров](#use-activities) и настройки [условий связи](#use-links-for-workflow). В этом разделе содержатся краткие сведения о выражениях PowerShell. Полные сведения о PowerShell можно найти в статье [Создание сценариев с помощью Windows PowerShell](/powershell/scripting/overview).
 
 ### <a name="use-a-powershell-expression-as-a-data-source"></a>Использование выражения PowerShell в качестве источника данных
 
@@ -322,7 +323,7 @@ $ActivityOutput['Get-AzureVM']
 
 ### <a name="compare-values"></a>Сравнение значений
 
-Используйте [операторы сравнения](https://technet.microsoft.com/library/hh847759.aspx) для сравнения значений или определения того, соответствует ли значение указанному шаблону. Оператор сравнения возвращает значение True или False.
+Используйте [операторы сравнения](/powershell/module/microsoft.powershell.core/about/about_comparison_operators) для сравнения значений или определения того, соответствует ли значение указанному шаблону. Оператор сравнения возвращает значение True или False.
 
 Например, следующее условие определяет, остановлена ли виртуальная машина из действия `Get-AzureVM` в данный момент.
 
@@ -336,7 +337,7 @@ $ActivityOutput["Get-AzureVM"].PowerState –eq "Stopped"
 $ActivityOutput["Get-AzureVM"].PowerState –ne "Stopped"
 ```
 
-В модуле Runbook можно объединить несколько условий с помощью [логического оператора](https://technet.microsoft.com/library/hh847789.aspx), например `-and` или `-or`. Например, следующее условие проверяет, находится ли виртуальная машина из предыдущего примера в состоянии "Остановлена" или "Останавливается".
+В модуле Runbook можно объединить несколько условий с помощью [логического оператора](/powershell/module/microsoft.powershell.core/about/about_logical_operators), например `-and` или `-or`. Например, следующее условие проверяет, находится ли виртуальная машина из предыдущего примера в состоянии "Остановлена" или "Останавливается".
 
 ```powershell-interactive
 ($ActivityOutput["Get-AzureVM"].PowerState –eq "Stopped") -or ($ActivityOutput["Get-AzureVM"].PowerState –eq "Stopping")
@@ -344,7 +345,7 @@ $ActivityOutput["Get-AzureVM"].PowerState –ne "Stopped"
 
 ### <a name="use-hashtables"></a>Использование хэш-таблиц
 
-[Хэш-таблицы](https://technet.microsoft.com/library/hh847780.aspx) представляют собой пары "имя-значение", которые удобны для получения набора значений. Иногда хэш-таблицу называют словарем. Свойства для определенных действий ожидают хэш-таблицу вместо простого значения.
+[Хэш-таблицы](/powershell/module/microsoft.powershell.core/about/about_hash_tables) представляют собой пары "имя-значение", которые удобны для получения набора значений. Иногда хэш-таблицу называют словарем. Свойства для определенных действий ожидают хэш-таблицу вместо простого значения.
 
 Хэш-таблицу можно создать, используя следующий синтаксис. Она содержит любое количество записей, каждая из которых определяется именем и значением.
 
@@ -372,7 +373,7 @@ $h
 
 ## <a name="authenticate-to-azure-resources"></a>Проверка подлинности в ресурсах Azure
 
-В службе автоматизации Azure для модулей runbook, которые управляют ресурсами Azure, требуется проверка подлинности. Для доступа к ресурсам Azure Resource Manager в подписке с помощью модулей Runbook службы автоматизации по умолчанию используется [учетная запись запуска от имени](automation-create-runas-account.md) (также называемая субъектом-службой). Эту функцию можно включить в графический модуль Runbook, добавив ресурс-контейнер подключения `AzureRunAsConnection`, который использует для работы с холстом командлет PowerShell [Get-AutomationConnection](https://technet.microsoft.com/library/dn919922%28v=sc.16%29.aspx). Можно также добавить командлет [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). Этот сценарий показан в примере ниже.
+В службе автоматизации Azure для модулей runbook, которые управляют ресурсами Azure, требуется проверка подлинности. Для доступа к ресурсам Azure Resource Manager в подписке с помощью модулей Runbook службы автоматизации по умолчанию используется [учетная запись запуска от имени](./manage-runas-account.md) (также называемая субъектом-службой). Эту функцию можно включить в графический модуль Runbook, добавив ресурс-контейнер подключения `AzureRunAsConnection`, который использует для работы с холстом командлет PowerShell [Get-AutomationConnection](/system-center/sma/manage-global-assets). Можно также добавить командлет [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). Этот сценарий показан в примере ниже.
 
 ![Действия аутентификации запуска от имени](media/automation-graphical-authoring-intro/authenticate-run-as-account.png)
 
@@ -389,7 +390,7 @@ $h
 
 Для полей параметров **APPLICATIONID**, **CERTIFICATETHUMBPRINT** и **TENANTID** укажите имя свойства для пути к полю, так как действие выводит объект с несколькими свойствами. Иначе при выполнении модуля Runbook попытка выполнения проверки подлинности завершится ошибкой. Это минимальные требования для проверки подлинности модуля Runbook с использованием учетной записи запуска от имени.
 
-Некоторые подписчики создают учетную запись службы автоматизации с помощью [учетной записи пользователя Azure AD](automation-create-aduser-account.md) для управления классическим развертыванием Azure или для ресурсов Azure Resource Manager. В целях обеспечения обратной совместимости для этих подписчиков в модуле Runbook применяется следующий механизм проверки подлинности: командлет `Add-AzureAccount` с [ ресурсом-контейнером учетных данных](automation-credentials.md). Ресурс представляет пользователя Active Directory с доступом к учетной записи Azure.
+Некоторые подписчики создают учетную запись службы автоматизации с помощью [учетной записи пользователя Azure AD](./shared-resources/credentials.md) для управления классическим развертыванием Azure или для ресурсов Azure Resource Manager. В целях обеспечения обратной совместимости для этих подписчиков в модуле Runbook применяется следующий механизм проверки подлинности: командлет `Add-AzureAccount` с [ ресурсом-контейнером учетных данных](./shared-resources/credentials.md). Ресурс представляет пользователя Active Directory с доступом к учетной записи Azure.
 
 Чтобы включить эту возможность для графического модуля Runbook, добавьте на холст ресурс-контейнер учетных данных, а затем — действие `Add-AzureAccount`, которое использует этот ресурс в качестве своих входных данных. См. указанный ниже пример.
 
@@ -434,4 +435,4 @@ $h
 * Чтобы начать работу с графическими модулями Runbook, см. инструкции в статье [Учебник. Создание графического модуля Runbook](learn/automation-tutorial-runbook-graphical.md).
 * См. сведения о типах runbook, их преимуществах и ограничениях в описании [типов последовательностей runbook в службе автоматизации Azure](automation-runbook-types.md)
 * Сведения о том, как выполнять аутентификацию с помощью учетной записи запуска от имени службы автоматизации см. в [этой статье](automation-security-overview.md#run-as-account).
-* Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation).
+* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).

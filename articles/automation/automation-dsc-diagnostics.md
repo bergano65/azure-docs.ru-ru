@@ -9,11 +9,12 @@ ms.author: magoedte
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: f7e24e1b4546c76348e61e3c2736fcfe4b66410d
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 0560d9a5156f06f7ae7473f63359d9d17926b7ab
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836946"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186458"
 ---
 # <a name="integrate-with-azure-monitor-logs"></a>Интеграция с журналами Azure Monitor
 
@@ -35,7 +36,7 @@ ms.locfileid: "83836946"
 
 - Выпуск за ноябрь 2016 года или более поздний выпуск [Azure PowerShell](/powershell/azure/overview) (вер. 2.3.0).
 - Учетная запись службы автоматизации Azure. Дополнительные сведения см. в статье [Общие сведения о службе автоматизации Azure](automation-intro.md).
-- Рабочая область Log Analytics с предложением службы "Автоматизация и управление". Дополнительные сведения см. в статье [Начало работы с Log Analytics в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal).
+- Рабочая область Log Analytics с предложением службы "Автоматизация и управление". Дополнительные сведения см. в статье [Начало работы с Log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md).
 - Как минимум один узел службы "Настройка состояния службы автоматизации Azure". Дополнительные сведения см. в статье [Подключение компьютеров для управления с помощью State Configuration службы автоматизации Azure](automation-dsc-onboarding.md).
 - Модуль [xDscDiagnostics](https://www.powershellgallery.com/packages/xDscDiagnostics/2.7.0.0), версия 2.7.0.0 или более поздняя. Инструкции по установке см. в разделе [Устранение неполадок с Desired State Configuration службы автоматизации Azure](./troubleshoot/desired-state-configuration.md).
 
@@ -43,7 +44,7 @@ ms.locfileid: "83836946"
 
 Чтобы начать импорт данных из State Configuration службы автоматизации Azure в журналы Azure Monitor, выполните следующие действия.
 
-1. Войдите в свою учетную запись Azure в PowerShell. См. [Вход с помощью Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps).
+1. Войдите в свою учетную запись Azure в PowerShell. См. [Вход с помощью Azure PowerShell](/powershell/azure/authenticate-azureps).
 1. Получите идентификатор ресурса учетной записи службы автоматизации, выполнив следующий командлет PowerShell. Если у вас есть несколько учетных записей службы автоматизации, выберите идентификатор ресурса для учетной записи, которую требуется настроить.
 
    ```powershell
@@ -90,7 +91,7 @@ ms.locfileid: "83836946"
 * Выполните фильтрацию по `DscResourceStatusData`, чтобы вернуть операции для каждого ресурса DSC, который вызывается в конфигурации узла, примененной к этому ресурсу. 
 * Выполните фильтрацию по `DscResourceStatusData`, чтобы получить сведения об ошибке для всех ресурсов DSC, которые не удалось выполнить.
 
-Дополнительные сведения о создании запросов журналов для поиска данных см. в разделе [Обзор запросов журналов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview).
+Дополнительные сведения о создании запросов журналов для поиска данных см. в разделе [Обзор запросов журналов в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
 
 ### <a name="send-an-email-when-a-state-configuration-compliance-check-fails"></a>Отправка сообщения электронной почты при сбое проверки соответствия State Configuration
 
@@ -104,7 +105,7 @@ ms.locfileid: "83836946"
    Если вы настроили для рабочей области журналы из более чем одной учетной записи службы автоматизации или подписки, то можете группировать оповещения по подписке или учетной записи службы автоматизации. Создайте имя учетной записи службы автоматизации из поля `Resource` в поиске записей `DscNodeStatusData`.
 1. Чтобы открыть экран **Создать правило**, щелкните **+ Новое правило генерации оповещений** в верхней части страницы. 
 
-Дополнительные сведения о параметрах для настройки оповещения см. в статье [Создание правила генерации оповещений](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md).
+Дополнительные сведения о параметрах для настройки оповещения см. в статье [Создание правила генерации оповещений](../azure-monitor/platform/alerts-metric.md).
 
 ### <a name="find-failed-dsc-resources-across-all-nodes"></a>Поиск ресурсов DSC со сбоями по всем узлам
 
@@ -195,9 +196,8 @@ ms.locfileid: "83836946"
 - Общие сведения см. в статье [Обзор State Configuration службы автоматизации Azure](automation-dsc-overview.md).
 - Чтобы приступить к работе со службой State Configuration службы автоматизации Azure, см. сведения в [этой статье](automation-dsc-getting-started.md).
 - Сведения о компилировании конфигураций DSC, которые затем можно назначить целевым узлам, см. в статье [Компилирование конфигураций DSC в службе State Configuration службы автоматизации Azure](automation-dsc-compile.md).
-- Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
-).
+- Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).
 - Сведения о ценах см. на странице [с расценками для службы State Configuration службы автоматизации Azure](https://azure.microsoft.com/pricing/details/automation/).
 - Пример использования службы State Configuration в службе автоматизации Azure в конвейере непрерывного развертывания см. в разделе [Настройка непрерывного развертывания с помощью Chocolatey](automation-dsc-cd-chocolatey.md).
-- Чтобы узнать больше о том, как создавать различные поисковые запросы и просматривать журналы заданий State Configuration службы автоматизации с помощью журналов Azure Monitor, ознакомьтесь со статьей [Основные сведения о поисках по журналам Azure Monitor](../log-analytics/log-analytics-log-searches.md).
-- Чтобы узнать больше о журналах Azure Monitor и источниках сбора данных, ознакомьтесь с разделом [Обзор сбора данных о службе хранилища Azure в журналах Azure Monitor](../azure-monitor/platform/collect-azure-metrics-logs.md).
+- Чтобы узнать больше о том, как создавать различные поисковые запросы и просматривать журналы заданий State Configuration службы автоматизации с помощью журналов Azure Monitor, ознакомьтесь со статьей [Основные сведения о поисках по журналам Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
+- Чтобы узнать больше о журналах Azure Monitor и источниках сбора данных, ознакомьтесь с разделом [Обзор сбора данных о службе хранилища Azure в журналах Azure Monitor](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace).

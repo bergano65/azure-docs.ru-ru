@@ -5,11 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 01/29/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8ea32b2e393a13f1725ff7a83f4b4f2191b59ddb
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 22ab982abe9f73aa77cb9bb2c8d3eaa383bc42fb
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83835314"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186220"
 ---
 # <a name="run-runbooks-on-a-hybrid-runbook-worker"></a>Запуск модулей Runbook в гибридной рабочей роли Runbook
 
@@ -21,7 +22,7 @@ Runbook, которые выполняются в [гибридной рабоч
 
 Служба автоматизации Azure обрабатывает задания в гибридных рабочих ролях Runbook несколько иначе, чем задания, выполняемые в песочницах Azure. Если ваш runbook будет выполняться долго, обеспечьте ему устойчивость к возможному перезапуску. Дополнительные сведения о поведении задания см. в разделе [Задания гибридной рабочей роли Runbook](automation-hybrid-runbook-worker.md#hybrid-runbook-worker-jobs).
 
-Не забывайте, что задания для гибридной рабочей роли Runbook выполняются от имени локальной учетной записи **System** в Windows или учетной записи **nxautomation** в Linux. В ОС Linux убедитесь, что учетная запись **nxautomation** имеет доступ к расположению, в котором хранятся последовательности runbook. При использовании командлета [Install-Module](/powershell/module/powershellget/install-module) обязательно укажите значение AllUsers для параметра `Scope`, чтобы предоставить необходимый доступ для учетной записи **nxautomation**. Дополнительные сведения об использовании PowerShell в среде Linux см. в разделе [Известные проблемы с PowerShell на платформах, отличных от Windows](https://docs.microsoft.com/powershell/scripting/whats-new/known-issues-ps6?view=powershell-6#known-issues-for-powershell-on-non-windows-platforms).
+Не забывайте, что задания для гибридной рабочей роли Runbook выполняются от имени локальной учетной записи **System** в Windows или учетной записи **nxautomation** в Linux. В ОС Linux убедитесь, что учетная запись **nxautomation** имеет доступ к расположению, в котором хранятся последовательности runbook. При использовании командлета [Install-Module](/powershell/module/powershellget/install-module) обязательно укажите значение AllUsers для параметра `Scope`, чтобы предоставить необходимый доступ для учетной записи **nxautomation**. Дополнительные сведения об использовании PowerShell в среде Linux см. в разделе [Известные проблемы с PowerShell на платформах, отличных от Windows](/powershell/scripting/whats-new/known-issues-ps6?view=powershell-6#known-issues-for-powershell-on-non-windows-platforms).
 
 ## <a name="set-up-runbook-permissions"></a>Настройка разрешений для runbook
 
@@ -33,7 +34,7 @@ Runbook, которые выполняются в [гибридной рабоч
 
 ## <a name="use-runbook-authentication-to-local-resources"></a>Использование аутентификации runbook для доступа к локальным ресурсам
 
-Для подготовки runbook, который самостоятельно выполняет аутентификацию для доступа к ресурсам, включите в этот runbook [учетные данные](automation-credentials.md) и [сертификат](automation-certificates.md) для нужных ресурсов. Существует несколько командлетов, которые поддерживают работу с учетными данными, что позволяет выполнять аутентификацию для доступа к разным ресурсам. В следующем примере показана часть модуля Runbook, предназначенная для перезапуска компьютера. Он извлекает учетные данные из ресурса учетных данных, а также получает имя компьютера из ресурса переменной, после чего использует эти значения в командлете `Restart-Computer`.
+Для подготовки runbook, который самостоятельно выполняет аутентификацию для доступа к ресурсам, включите в этот runbook [учетные данные](./shared-resources/credentials.md) и [сертификат](./shared-resources/certificates.md) для нужных ресурсов. Существует несколько командлетов, которые поддерживают работу с учетными данными, что позволяет выполнять аутентификацию для доступа к разным ресурсам. В следующем примере показана часть модуля Runbook, предназначенная для перезапуска компьютера. Он извлекает учетные данные из ресурса учетных данных, а также получает имя компьютера из ресурса переменной, после чего использует эти значения в командлете `Restart-Computer`.
 
 ```powershell
 $Cred = Get-AutomationPSCredential -Name "MyCredential"
@@ -58,7 +59,7 @@ Restart-Computer -ComputerName $Computer -Credential $Cred
 2. Настройте управляемые удостоверения для ресурсов Azure на этой виртуальной машине. Подробнее см. в разделе [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портала Azure](../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#enable-system-assigned-managed-identity-on-an-existing-vm).
 3. Предоставьте виртуальной машине доступ к группе ресурсов в Resource Manager. См. раздел [Использование назначаемого системой управляемого удостоверения на виртуальной машине Windows для доступа к Resource Manager](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#grant-your-vm-access-to-a-resource-group-in-resource-manager).
 4. Установите на виртуальной машине гибридную рабочую роль Runbook. Подробнее см. в статьях [Развертывание гибридной рабочей роли Runbook для Windows](automation-windows-hrw-install.md) и [Развертывание гибридной рабочей роли Runbook для Linux](automation-linux-hrw-install.md).
-5. Обновите runbook, чтобы он использовал командлет [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0) с параметром `Identity` для аутентификации при доступе к ресурсам Azure. Такая конфигурация сокращает потребность использовать учетную запись запуска от имени и управлять сертификатом для нее.
+5. Обновите runbook, чтобы он использовал командлет [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0) с параметром `Identity` для аутентификации при доступе к ресурсам Azure. Такая конфигурация сокращает потребность использовать учетную запись запуска от имени и управлять сертификатом для нее.
 
     ```powershell
     # Connect to Azure using the managed identities for Azure resources identity configured on the Azure VM that is hosting the hybrid runbook worker
@@ -73,7 +74,7 @@ Restart-Computer -ComputerName $Computer -Credential $Cred
 
 ## <a name="use-runbook-authentication-with-run-as-account"></a>Аутентификация runbook с помощью учетной записи запуска от имени
 
-Вы можете не настраивать в runbook собственную аутентификацию для доступа к локальным ресурсам, а указать для группы гибридных рабочих ролей Runbook учетную запись запуска от имени. Для этого создайте [ресурс учетных данных](automation-credentials.md) с доступом к локальным ресурсам. К этим ресурсам относятся хранилища сертификатов и все runbook, которые выполняются с этими учетными данными в гибридных рабочих ролях Runbook, входящих в эту группу.
+Вы можете не настраивать в runbook собственную аутентификацию для доступа к локальным ресурсам, а указать для группы гибридных рабочих ролей Runbook учетную запись запуска от имени. Для этого создайте [ресурс учетных данных](./shared-resources/credentials.md) с доступом к локальным ресурсам. К этим ресурсам относятся хранилища сертификатов и все runbook, которые выполняются с этими учетными данными в гибридных рабочих ролях Runbook, входящих в эту группу.
 
 Имя пользователя для учетных данных должно быть представлено в одном из следующих форматов:
 
@@ -83,7 +84,7 @@ Restart-Computer -ComputerName $Computer -Credential $Cred
 
 Чтобы указать учетную запись запуска от имени для гибридной рабочей роли Runbook, выполните следующую процедуру:
 
-1. Создайте [ресурс учетных данных](automation-credentials.md) с доступом к локальным ресурсам.
+1. Создайте [ресурс учетных данных](./shared-resources/credentials.md) с доступом к локальным ресурсам.
 2. На портале Azure откройте учетную запись службы автоматизации.
 3. Щелкните **Группы гибридных рабочих ролей** и выберите нужную группу.
 4. Щелкните **Все параметры**, а затем — **Настройки группы гибридных рабочих ролей**.
@@ -298,7 +299,7 @@ gpg –-clear-sign <runbook name>
 
 При запуске runbook на портале Azure вы увидите вариант действия **Выполнить в**, для которого можно выбрать значения **Azure** или **Гибридная рабочая роль**. При выборе значения **Гибридная рабочая роль** можно выбрать группу ролей из раскрывающегося списка.
 
-При запуске runbook с помощью PowerShell используйте параметр `RunOn` с командлетом [Start-AzAutomationRunbook](https://docs.microsoft.com/powershell/module/Az.Automation/Start-AzAutomationRunbook?view=azps-3.7.0). Следующий пример применяет Windows PowerShell для запуска runbook с именем **Test-Runbook** в группе гибридных рабочих ролей Runbook с именем MyHybridGroup.
+При запуске runbook с помощью PowerShell используйте параметр `RunOn` с командлетом [Start-AzAutomationRunbook](/powershell/module/Az.Automation/Start-AzAutomationRunbook?view=azps-3.7.0). Следующий пример применяет Windows PowerShell для запуска runbook с именем **Test-Runbook** в группе гибридных рабочих ролей Runbook с именем MyHybridGroup.
 
 ```azurepowershell-interactive
 Start-AzAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" -RunOn "MyHybridGroup"
@@ -307,5 +308,5 @@ Start-AzAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Если последовательности runbook выполняются с ошибками, см. [руководство по устранению неполадок при выполнении runbook](troubleshoot/hybrid-runbook-worker.md#runbook-execution-fails).
-* Дополнительные сведения о PowerShell, включая справочник по языку и обучающие модули, вы найдете в [этой документации](https://docs.microsoft.com/powershell/scripting/overview).
-* Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation).
+* Дополнительные сведения о PowerShell, включая справочник по языку и обучающие модули, вы найдете в [этой документации](/powershell/scripting/overview).
+* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).

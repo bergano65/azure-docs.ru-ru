@@ -5,15 +5,16 @@ services: automation
 ms.subservice: update-management
 ms.date: 05/04/2020
 ms.topic: conceptual
-ms.openlocfilehash: ea05e75c0d1db1ef27ae2e8e9364327528a7c8ed
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: e30d1606a3928f421d2155e2d1abac0c8a6872aa
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83837167"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186645"
 ---
 # <a name="configure-windows-update-settings-for-azure-automation-update-management"></a>Настройка Центра обновления Windows для Управления обновлениями службы автоматизации Azure
 
-Управление обновлениями службы автоматизации Azure использует [клиент Центра обновления Windows](https://docs.microsoft.com//windows/deployment/update/windows-update-overview) для загрузки и установки обновлений Windows. Существуют определенные параметры, которые клиент Центра обновления Windows использует при подключении к Windows Server Update Services (WSUS) или Центру обновления Windows. Большинство их этих параметров можно контролировать с помощью следующих средств:
+Управление обновлениями службы автоматизации Azure использует [клиент Центра обновления Windows](/windows/deployment/update/windows-update-overview) для загрузки и установки обновлений Windows. Существуют определенные параметры, которые клиент Центра обновления Windows использует при подключении к Windows Server Update Services (WSUS) или Центру обновления Windows. Большинство их этих параметров можно контролировать с помощью следующих средств:
 
 - Редактор локальных групповых политик
 - Групповая политика
@@ -22,7 +23,7 @@ ms.locfileid: "83837167"
 
 Управление обновлениями учитывает многие параметры, заданные для управления клиентом Центра обновления Windows. Если вы настроите параметры для установки обновлений, отличающихся от Windows, Управление обновлениями будет также обрабатывать такие обновления. Если вы настроите скачивание обновлений перед развертыванием обновлений, развертывание обновлений будет выполняться быстрее, эффективнее и с меньшей вероятностью превышения периода обслуживания.
 
-Дополнительные рекомендации по настройке WSUS в подписке Azure и безопасному обновлению виртуальных машин Windows см. в статье [Планирование развертывания для обновления Виртуальных машин Windows в Azure](https://docs.microsoft.com/azure/architecture/example-scenario/wsus/).
+Дополнительные рекомендации по настройке WSUS в подписке Azure и безопасному обновлению виртуальных машин Windows см. в статье [Планирование развертывания для обновления Виртуальных машин Windows в Azure](/azure/architecture/example-scenario/wsus/).
 
 ## <a name="pre-download-updates"></a>Предварительная загрузка обновлений
 
@@ -57,7 +58,7 @@ $ServiceManager.AddService2($ServiceId,7,"")
 
 Управление обновлениями поддерживает параметры WSUS. Вы можете указать источники для сканирования и скачивания обновлений с помощью инструкций, указанных в статье [Управление дополнительными параметрами Центра обновления Windows](/windows/deployment/update/waas-wu-settings#specify-intranet-microsoft-update-service-location). По умолчанию клиент Центра обновления Windows скачивает обновления только из Центра обновления Windows. Если вы укажете сервер WSUS в качестве источника для своих компьютеров, развертывание будет завершаться сбоем, если обновления не утверждены в WSUS. 
 
-Чтобы компьютеры использовали только внутреннюю службу обновления, настройте параметр [Не подключаться к расположениям Центра обновления Windows в Интернете](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates#do-not-connect-to-any-windows-update-internet-locations). 
+Чтобы компьютеры использовали только внутреннюю службу обновления, настройте параметр [Не подключаться к расположениям Центра обновления Windows в Интернете](/windows-server/administration/windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates#do-not-connect-to-any-windows-update-internet-locations). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

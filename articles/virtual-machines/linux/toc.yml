@@ -511,6 +511,8 @@
                       href: ../vm-specialized-image-version-powershell.md
                 - name: Обновление ресурсов образа
                   href: ../update-image-resources-powershell.md
+                - name: Регистрация приложения для совместного использования
+                  href: ../windows/share-images-across-tenants.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: Портал
               items:
                 - name: 'Создание коллекции, образа и виртуальной машины'
@@ -947,8 +949,6 @@
           items:
             - name: Миграция в хранилище ценовой категории "Премиум" с помощью Azure Site Recovery
               href: migrate-to-premium-storage-using-azure-site-recovery.md
-            - name: Преобразование для шифрования на стороне сервера
-              href: disks-ade-sse-conversion-cli.md
             - name: Преобразование виртуальной машины для использования Управляемых дисков
               href: convert-unmanaged-to-managed-disks.md
             - name: Переход между хранилищами ценовых категорий "Стандартный" и "Премиум" для дисков

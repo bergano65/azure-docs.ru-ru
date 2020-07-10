@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: d5b84a9d216457720e9bd4e17b002d6ab9490f9d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fa7dca62ed51c52b704c199ca04eadb6306be4df
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73888600"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170791"
 ---
 # <a name="upload-files-into-a-media-services-account-using-rest"></a>Передача файлов в учетную запись служб мультимедиа с помощью REST  
 > [!div class="op_single_selector"]
@@ -47,7 +48,7 @@ ms.locfileid: "73888600"
 - Кроме того, дополнительные сведения см. в статье [использование аутентификации Azure AD для доступа к API служб мультимедиа с помощью функции RESTful](https://docs.microsoft.com/azure/media-services/previous/media-services-rest-connect-with-aad) .
 - Настройте **Postman**, как описано в статье [Configure Postman for Media Services REST API calls](media-rest-apis-with-postman.md) (Настройка Postman для вызовов к API REST служб мультимедиа).
 
-## <a name="considerations"></a>Особенности
+## <a name="considerations"></a>Рекомендации
 
 При работе с REST API служб мультимедиа соблюдайте следующие рекомендации.
  
@@ -149,9 +150,9 @@ ms.locfileid: "73888600"
 
 Ниже приведен формат URL-адреса SAS:
 
-    {https://myaccount.blob.core.windows.net}/{asset name}/{video file name}?{SAS signature}
+`{https://myaccount.blob.core.windows.net}/{asset name}/{video file name}?{SAS signature}`
 
-### <a name="considerations"></a>Особенности
+### <a name="considerations"></a>Рекомендации
 
 Важные особенности
 
@@ -212,16 +213,18 @@ ms.locfileid: "73888600"
 
 Например, следующая операция **GET** возвращает данные о файле ресурса (в нашем примере это файл BigBuckBunny.mp4). В запросе используются установленные ранее [переменные среды](postman-environment.md).
 
-    {{RESTAPIEndpoint}}/Assets('{{LastAssetId}}')/Files
+`{{RESTAPIEndpoint}}/Assets('{{LastAssetId}}')/Files`
 
 Ответ будет содержать размер, имя и другие сведения.
 
-    "Id": "nb:cid:UUID:69e72ede-2886-4f2a-8d36-80a59da09913",
-    "Name": "BigBuckBunny.mp4",
-    "ContentFileSize": "3186542",
-    "ParentAssetId": "nb:cid:UUID:0b8f3b04-72fb-4f38-8e7b-d7dd78888938",
-            
-## <a name="next-steps"></a>Дальнейшие шаги
+```console
+"Id": "nb:cid:UUID:69e72ede-2886-4f2a-8d36-80a59da09913",
+"Name": "BigBuckBunny.mp4",
+"ContentFileSize": "3186542",
+"ParentAssetId": "nb:cid:UUID:0b8f3b04-72fb-4f38-8e7b-d7dd78888938",
+```
+  
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь можно закодировать отправленные ресурсы. Дополнительную информацию см. в статье, посвященной [кодированию ресурсов](media-services-portal-encode.md).
 

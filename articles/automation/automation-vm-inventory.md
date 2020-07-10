@@ -6,12 +6,12 @@ ms.subservice: change-inventory-management
 keywords: данные инвентаризации, автоматизация, отслеживание
 ms.date: 06/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: 73f5105240b8b6475bb9ebed48baadd501aec87d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 32d3c17a5f3d152f32b19ffbfd5c9793a7a34b80
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85603117"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185727"
 ---
 # <a name="manage-inventory-collection-from-vms"></a>Управление сбором данных инвентаризации из виртуальных машин
 
@@ -131,5 +131,5 @@ ms.locfileid: "85603117"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о работе с этой возможностью см. в статье [Управление решением для Отслеживания изменений и инвентаризации](change-tracking-file-contents.md).
-* Дополнительные сведения об отслеживании изменений в ПО см. в статье [Общие сведения об Отслеживании изменений и инвентаризации](../log-analytics/log-analytics-change-tracking.md).
+* Дополнительные сведения об отслеживании изменений в ПО см. в статье [Общие сведения об Отслеживании изменений и инвентаризации](./change-tracking.md).
 * Сведения об устранении общих проблем в работе этой функции см. в статье [Устранение неполадок с Отслеживанием изменений и инвентаризацией](troubleshoot/change-tracking.md).

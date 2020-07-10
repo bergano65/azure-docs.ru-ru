@@ -5,11 +5,12 @@ services: automation
 ms.topic: conceptual
 ms.date: 05/10/2018
 ms.custom: mvc
-ms.openlocfilehash: 2728964d5bbf83b42251068ffbdea223ff6bd85e
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+ms.openlocfilehash: 92149289c6c422179ddb3562274020acf779f10b
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84171095"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186288"
 ---
 # <a name="enable-change-tracking-and-inventory-from-a-runbook"></a>Включение Отслеживания изменений и инвентаризации в последовательности runbook
 
@@ -21,7 +22,7 @@ ms.locfileid: "84171095"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас ее нет, [активируйте преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [зарегистрируйте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Учетная запись службы автоматизации](automation-offering-get-started.md) для управления компьютерами.
+* [Учетная запись службы автоматизации](./index.yml) для управления компьютерами.
 * [Виртуальная машина](../virtual-machines/windows/quick-create-portal.md).
 
 ## <a name="enable-change-tracking-and-inventory"></a>Включение решения для отслеживания изменений и инвентаризации 
@@ -50,7 +51,7 @@ ms.locfileid: "84171095"
 
 ## <a name="install-and-update-modules"></a>установка и обновление модулей;
 
-Нужно обновить модули Azure до последних версий и импортировать модуль [Az.OperationalInsights](https://docs.microsoft.com/powershell/module/az.operationalinsights/?view=azps-3.7.0), чтобы включить Отслеживание изменений и инвентаризацию для виртуальной машины.
+Нужно обновить модули Azure до последних версий и импортировать модуль [Az.OperationalInsights](/powershell/module/az.operationalinsights/?view=azps-3.7.0), чтобы включить Отслеживание изменений и инвентаризацию для виртуальной машины.
 
 1. В учетной записи службы автоматизации выберите элемент **Модули** в области **Общие ресурсы**. 
 2. Выберите **Обновить модули Azure**, чтобы обновить модули Azure до последней версии. 
