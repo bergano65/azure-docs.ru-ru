@@ -3,12 +3,12 @@ title: Узлы и пулы в пакетной службе Azure
 description: Сведения о вычислительных узлах и пулах, а также о том, как они используются в рабочем процессе пакетной службы Azure с точки зрения разработки.
 ms.topic: conceptual
 ms.date: 06/16/2020
-ms.openlocfilehash: f71be75c0358dbc7f76a61680df2c54f44bc4173
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 5707d834a7d99e147a81ee2b39952863a63ed695
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85964048"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86144921"
 ---
 # <a name="nodes-and-pools-in-azure-batch"></a>Узлы и пулы в пакетной службе Azure
 
@@ -111,7 +111,7 @@ ms.locfileid: "85964048"
 
 ## <a name="node-size"></a>Размер узла
 
-При создании пула пакетной службы Azure вы можете использовать любые семейства и размеры виртуальной машины, доступные в Azure. Azure предлагает ряд размеров виртуальных машин для разных рабочих нагрузок, включая специализированные размеры [HPC](../virtual-machines/linux/sizes-hpc.md) или размеры с поддержкой [GPU](../virtual-machines/linux/sizes-gpu.md). 
+При создании пула пакетной службы Azure вы можете использовать любые семейства и размеры виртуальной машины, доступные в Azure. Azure предлагает ряд размеров виртуальных машин для разных рабочих нагрузок, включая специализированные размеры [HPC](../virtual-machines/sizes-hpc.md) или размеры с поддержкой [GPU](../virtual-machines/sizes-gpu.md). 
 
 Дополнительные сведения см. в статье [Выбор размера виртуальной машины для вычислительных узлов в пуле пакетной службы Azure](batch-pool-vm-sizes.md).
 

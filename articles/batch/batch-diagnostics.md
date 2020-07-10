@@ -4,11 +4,12 @@ description: Запись и анализ событий журнала диаг
 ms.topic: how-to
 ms.date: 05/29/2020
 ms.custom: seodec18
-ms.openlocfilehash: 6e10a4fc6cd13854682f094274c975931b056365
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: abf9ef53d3f2e3ffeffabfe9b7c77dc5c5debec3
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85960730"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86145100"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Метрики, оповещения и журналы пакетной службы для диагностики и мониторинга
  
@@ -86,8 +87,8 @@ ms.locfileid: "85960730"
 
 Кроме того, можно:
 
-- Потоковая передача событий журнала диагностики пакетной службы в [концентратор событий Azure](../event-hubs/event-hubs-what-is-event-hubs.md). Центры событий способны принимать миллионы событий в секунду, позволяя преобразовать и сохранять их с помощью любого поставщика аналитики в реальном времени. 
-- Отправьте журналы диагностики в [журналы Azure Monitor](../log-analytics/log-analytics-overview.md), где вы сможете проанализировать их или экспортировать для анализа в Power BI или Excel.
+- Потоковая передача событий журнала диагностики пакетной службы в [концентратор событий Azure](../event-hubs/event-hubs-about.md). Центры событий способны принимать миллионы событий в секунду, позволяя преобразовать и сохранять их с помощью любого поставщика аналитики в реальном времени. 
+- Отправьте журналы диагностики в [журналы Azure Monitor](../azure-monitor/log-query/log-query-overview.md), где вы сможете проанализировать их или экспортировать для анализа в Power BI или Excel.
 
 > [!NOTE]
 > Хранение и (или) обработка данных журнала диагностики в службах Azure может повлечь дополнительные расходы. 
@@ -118,7 +119,7 @@ m={two-digit numeric month}/d={two-digit numeric day}/
 h={two-digit 24-hour clock hour}/m=00/PT1H.json
 ```
 
-Пример:
+Пример.
 
 ```json
 insights-metrics-pt1m/resourceId=/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/
@@ -134,7 +135,7 @@ BATCHACCOUNTS/MYBATCHACCOUNT/y=2018/m=03/d=05/h=22/m=00/PT1H.json
 { "Tenant": "65298bc2729a4c93b11c00ad7e660501", "time": "2019-08-22T20:59:13.5698778Z", "resourceId": "/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.BATCH/BATCHACCOUNTS/MYBATCHACCOUNT/", "category": "ServiceLog", "operationName": "PoolResizeCompleteEvent", "operationVersion": "2017-06-01", "properties": {"id":"MYPOOLID","nodeDeallocationOption":"Requeue","currentDedicatedNodes":10,"targetDedicatedNodes":100,"currentLowPriorityNodes":0,"targetLowPriorityNodes":0,"enableAutoScale":false,"isAutoPool":false,"startTime":"2019-08-22 20:50:59.522","endTime":"2019-08-22 20:59:12.489","resultCode":"Success","resultMessage":"The operation succeeded"}}
 ```
 
-Дополнительные сведения о схеме журналов диагностики в учетной записи хранения см. в статье [Архивация журналов ресурсов Azure в учетную запись хранения](../azure-monitor/platform/resource-logs-collect-storage.md#schema-of-platform-logs-in-storage-account). Для программного доступа к журналам в учетной записи хранения используйте API-интерфейсы хранилища.
+Дополнительные сведения о схеме журналов диагностики в учетной записи хранения см. в статье [Архивация журналов ресурсов Azure в учетную запись хранения](../azure-monitor/platform/resource-logs.md#send-to-azure-storage). Для программного доступа к журналам в учетной записи хранения используйте API-интерфейсы хранилища.
 
 ### <a name="service-log-events"></a>События журнала службы
 
@@ -177,4 +178,3 @@ BATCHACCOUNTS/MYBATCHACCOUNT/y=2018/m=03/d=05/h=22/m=00/PT1H.json
 
 - См. дополнительные сведения об [API-интерфейсах и средствах пакетной службы](batch-apis-tools.md) для сборки решений пакетной службы.
 - См. дополнительные сведения о [мониторинге решений пакетной службы](monitoring-overview.md).
-

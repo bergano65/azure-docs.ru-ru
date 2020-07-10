@@ -3,11 +3,12 @@ title: Подключение виртуальной файловой систе
 description: Узнайте, как подключить виртуальную файловую систему в пуле пакетной службы.
 ms.topic: how-to
 ms.date: 08/13/2019
-ms.openlocfilehash: 80acf5df0cf5262249b2eac584152744a4224a35
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 3f948f8441208f4a8741949e65afc8032f0a5080
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85954678"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86144410"
 ---
 # <a name="mount-a-virtual-file-system-on-a-batch-pool"></a>Подключение виртуальной файловой системы в пуле пакетной службы
 
@@ -76,7 +77,7 @@ new PoolAddParameter
 
 ### <a name="azure-blob-file-system"></a>Azure Blob file system
 
-Другой вариант — использовать хранилище BLOB-объектов Azure через [blobfuse](../storage/blobs/storage-how-to-mount-container-linux.md). Для подключения файловой системы больших двоичных объектов требуется иметь `AccountKey` или `SasKey` учетной записи хранения. Дополнительные сведения о получении этих ключей см. в статьях [Управление ключами доступа к учетной записи хранения](../storage/common/storage-account-keys-manage.md) и [Использование подписанных URL-адресов SAS в службе хранилища Azure](../storage/common/storage-dotnet-shared-access-signature-part-1.md). Дополнительные сведения об использовании blobfuse см. в статье [Вопросы и ответы об устранении неполадок](https://github.com/Azure/azure-storage-fuse/wiki/3.-Troubleshoot-FAQ). Чтобы получить доступ по умолчанию к подключенному каталогу blobfuse, запустите задачу от имени **администратора**. Blobfuse подключает каталог в пространстве пользователя. При создании пула он подключается в качестве корневого каталога. В Linux все задачи **администратора** являются корневыми. Все параметры для модуля FUSE описаны на странице [справочника по FUSE](https://manpages.ubuntu.com/manpages/xenial/man8/mount.fuse.8.html).
+Другой вариант — использовать хранилище BLOB-объектов Azure через [blobfuse](../storage/blobs/storage-how-to-mount-container-linux.md). Для подключения файловой системы больших двоичных объектов требуется иметь `AccountKey` или `SasKey` учетной записи хранения. Дополнительные сведения о получении этих ключей см. в статьях [Управление ключами доступа к учетной записи хранения](../storage/common/storage-account-keys-manage.md) и [Использование подписанных URL-адресов SAS в службе хранилища Azure](../storage/common/storage-sas-overview.md). Дополнительные сведения об использовании blobfuse см. в статье [Вопросы и ответы об устранении неполадок](https://github.com/Azure/azure-storage-fuse/wiki/3.-Troubleshoot-FAQ). Чтобы получить доступ по умолчанию к подключенному каталогу blobfuse, запустите задачу от имени **администратора**. Blobfuse подключает каталог в пространстве пользователя. При создании пула он подключается в качестве корневого каталога. В Linux все задачи **администратора** являются корневыми. Все параметры для модуля FUSE описаны на странице [справочника по FUSE](https://manpages.ubuntu.com/manpages/xenial/man8/mount.fuse.8.html).
 
 В дополнение к руководству по устранению неполадок раздел с описанием проблем на GitHub в репозитории blobfuse содержит полезную информацию для проверки текущих проблем и решений blobfuse. Дополнительные сведения см. в статье о [проблемах blobfuse](https://github.com/Azure/azure-storage-fuse/issues).
 

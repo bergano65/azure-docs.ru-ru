@@ -4,12 +4,12 @@ description: Как создать в виртуальной сети Azure пу
 ms.topic: how-to
 ms.date: 06/26/2020
 ms.custom: seodec18
-ms.openlocfilehash: 22344b5466b0388921a481b1adf41495d66dbfe0
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: cb5cda16cd9405f0cbe91a3f88be7dc3f582d21b
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/08/2020
-ms.locfileid: "86115417"
+ms.locfileid: "86142757"
 ---
 # <a name="create-an-azure-batch-pool-in-a-virtual-network"></a>Создание пула пакетной службы Azure в виртуальной сети
 
@@ -27,7 +27,7 @@ ms.locfileid: "86115417"
 
 - **Виртуальная сеть Azure**. Требования к виртуальной сети и конфигурация приведены в следующем разделе. Чтобы заранее подготовить виртуальную сеть с одной или несколькими подсетями, вы можете использовать портал Azure, Azure PowerShell, интерфейс командной строки Azure (CLI) или другие методы.
   - Чтобы создать виртуальную сеть на основе Azure Resource Manager, изучите раздел [Create a virtual network](../virtual-network/manage-virtual-network.md#create-a-virtual-network) (Создание виртуальной сети). Для новых развертываний рекомендуется использовать виртуальную сеть на основе диспетчер ресурсов. она поддерживается только для пулов, использующих конфигурацию виртуальной машины.
-  - Чтобы создать классическую виртуальную сеть, см. статью [Создание (классической) виртуальной сети с несколькими подсетями](../virtual-network/create-virtual-network-classic.md). Классическая виртуальная сеть поддерживается только для пулов, использующих конфигурацию облачных служб.
+  - Чтобы создать классическую виртуальную сеть, см. статью [Создание (классической) виртуальной сети с несколькими подсетями](/previous-versions/azure/virtual-network/create-virtual-network-classic). Классическая виртуальная сеть поддерживается только для пулов, использующих конфигурацию облачных служб.
 
 ## <a name="vnet-requirements"></a>Требования к виртуальной сети
 

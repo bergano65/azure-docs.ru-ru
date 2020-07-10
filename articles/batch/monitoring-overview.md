@@ -3,25 +3,26 @@ title: Мониторинг пакетной службы Azure
 description: Сведения о службах, метриках, журналах диагностики и других функциях мониторинга для пакетной службы Azure.
 ms.topic: how-to
 ms.date: 04/05/2018
-ms.openlocfilehash: 09ac9c676dc1e95cbece6fa500b4f2cf554f8526
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.openlocfilehash: 9387d4894dbf06445fd43722353ca7ae98607359
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83723533"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86144934"
 ---
 # <a name="monitor-batch-solutions"></a>Мониторинг решений пакетной службы
 
 Azure и пакетная служба предоставляют широкий набор служб, инструментов и API-интерфейсов для мониторинга решений пакетной службы. Эта обзорная статья поможет вам выбрать правильный подход к мониторингу в соответствии с вашими требованиями.
 
-Обзор компонентов и служб Azure, доступных для мониторинга ресурсов Azure, см. в статье [Мониторинг приложений и ресурсов в Azure](../monitoring-and-diagnostics/monitoring-overview.md).
+Обзор компонентов и служб Azure, доступных для мониторинга ресурсов Azure, см. в статье [Мониторинг приложений и ресурсов в Azure](../azure-monitor/overview.md).
 
 ## <a name="subscription-level-monitoring"></a>Мониторинг на уровне подписки
 
-На уровне подписки, в том числе для учетных записей пакетной службы, [журнал действий Azure](../azure-monitor/platform/platform-logs-overview.md) позволяет собирать операционные данные о событиях по [нескольким категориям](../azure-monitor/platform/activity-log-view.md#categories-in-the-activity-log).
+На уровне подписки, в том числе для учетных записей пакетной службы, [журнал действий Azure](../azure-monitor/platform/platform-logs-overview.md) позволяет собирать операционные данные о событиях по [нескольким категориям](../azure-monitor/platform/activity-log.md#view-the-activity-log).
 
 В частности, для учетных записей пакетной службы в журнал действий собираются данные о создании и удалении учетных записей, а также об управлении ключами.
 
-Для получения событий из журнала действий можно использовать портал Azure. На портале щелкните **Все службы** > **Журнал действий**. Также можно создать запрос сведений о событиях с помощью Azure CLI, командлетов PowerShell или REST API Azure Monitor. Есть возможность экспортировать журнал действий или настроить [оповещения журнала действий](../monitoring-and-diagnostics/monitoring-activity-log-alerts-new-experience.md).
+Для получения событий из журнала действий можно использовать портал Azure. На портале щелкните **Все службы** > **Журнал действий**. Также можно создать запрос сведений о событиях с помощью Azure CLI, командлетов PowerShell или REST API Azure Monitor. Есть возможность экспортировать журнал действий или настроить [оповещения журнала действий](../azure-monitor/platform/alerts-activity-log.md).
 
 ## <a name="batch-account-level-monitoring"></a>Мониторинг на уровне учетной записи пакетной службы
 
