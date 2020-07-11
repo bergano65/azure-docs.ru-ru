@@ -9,11 +9,12 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 454ed810f950924d3dd790a2442fe29816bf940d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: caa8e928a10deb3d6d97e601c607074c09e0572e
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82838473"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86223522"
 ---
 # <a name="preview-create-an-image-from-a-vm"></a>Предварительная версия: создание образа из виртуальной машины
 
@@ -135,6 +136,8 @@ $job.State
 > Вы также можете сохранить образ в хранилище класса Premium, добавив `-StorageAccountType Premium_LRS`, или [хранилище, избыточное между зонами](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs), добавив `-StorageAccountType Standard_ZRS` при создании версии образа.
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Убедившись, что новая версия образа работает правильно, можно создать виртуальную машину. Создайте виртуальную машину на основе [специализированной версии образа](vm-specialized-image-version-powershell.md) или [обобщенной версии образа](vm-generalized-image-version-powershell.md).
+
+Сведения о том, как предоставить сведения о плане покупки, см. в разделе [предоставление сведений о плане покупки Azure Marketplace при создании образов](marketplace-images.md).

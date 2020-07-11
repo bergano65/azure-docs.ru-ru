@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 07/01/2020
 ms.author: rolyon
-ms.openlocfilehash: f169cf45702d4a5051f9f6908b77c645c7a0018f
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: db1b030aed34498ade91a195d5ca68725b579ba3
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86042396"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86230848"
 ---
 # <a name="transfer-an-azure-subscription-to-a-different-azure-ad-directory-preview"></a>Перенос подписки Azure в другой каталог Azure AD (Предварительная версия)
 
@@ -70,20 +70,20 @@ ms.locfileid: "86042396"
 | Пользовательские роли | Да | Да | [Вывод списка настраиваемых ролей](#save-custom-roles) | Все пользовательские роли удаляются без возможности восстановления. Необходимо повторно создать пользовательские роли и назначения ролей. |
 | Управляемые удостоверения, назначенные системой | Да | Да | [Перечисление управляемых удостоверений](#list-role-assignments-for-managed-identities) | Необходимо отключить и повторно включить управляемые удостоверения. Необходимо повторно создать назначения ролей. |
 | Управляемые удостоверения, назначаемые пользователем | Да | Да | [Перечисление управляемых удостоверений](#list-role-assignments-for-managed-identities) | Необходимо удалить, повторно создать и присоединить управляемые удостоверения к соответствующему ресурсу. Необходимо повторно создать назначения ролей. |
-| Хранилище ключей Azure; | Да | Да | [Перечисление политик доступа Key Vault](#list-other-known-resources) | Необходимо обновить идентификатор клиента, связанный с хранилищами ключей. Необходимо удалить и добавить новые политики доступа. |
+| Azure Key Vault | Да | Да | [Перечисление политик доступа Key Vault](#list-other-known-resources) | Необходимо обновить идентификатор клиента, связанный с хранилищами ключей. Необходимо удалить и добавить новые политики доступа. |
 | Базы данных SQL Azure с проверкой подлинности Azure AD | Да | Нет | [Проверка баз данных SQL Azure с помощью аутентификации Azure AD](#list-other-known-resources) |  |  |
 | Служба хранилища Azure и Azure Data Lake Storage 2-го поколения | Да | Да |  | Необходимо повторно создать все списки ACL. |
 | Хранилище Azure Data Lake Storage 1-го поколения | Да |  |  | Необходимо повторно создать все списки ACL. |
 | Файлы Azure | Да | Да |  | Необходимо повторно создать все списки ACL. |
-| Служба синхронизации файлов Azure | Да | Да |  |  |
-| Управляемые диски Azure | Да | Н/Д |  |  |
+| Синхронизация файлов Azure | Да | Да |  |  |
+| управляемые диски Azure. | Да | Н/Д |  |  |
 | Службы контейнеров Azure для Kubernetes | Да | Да |  |  |
 | Доменные службы Azure Active Directory | Да | Нет |  |  |
 | Регистрация приложений | Да | Да |  |  |
 
 Если для ресурса, например учетной записи хранения или базы данных SQL, используется шифрование неактивных ресурсов, которое зависит от хранилища ключей, которое не находится в той же подписке, которое передается, это может привести к неустранимому сценарию. В этом случае следует предпринять действия по использованию другого хранилища ключей или временно отключить ключи, управляемые клиентом, чтобы избежать такого неисправимого сценария.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Для выполнения этих действий потребуется:
 
@@ -189,7 +189,7 @@ ms.locfileid: "86042396"
 
 1. Просмотрите [список служб Azure, поддерживающих управляемые удостоверения](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md) , чтобы узнать, где можно использовать управляемые удостоверения.
 
-1. Используйте команду [AZ AD SP List](/azure/ad/sp#az-ad-sp-list) , чтобы получить список назначенных системой и назначенных пользователю управляемых удостоверений.
+1. Используйте команду [AZ AD SP List](/cli/azure/identity?view=azure-cli-latest#az-identity-list) , чтобы получить список назначенных системой и назначенных пользователю управляемых удостоверений.
 
     ```azurecli
     az ad sp list --all --filter "servicePrincipalType eq 'ManagedIdentity'"
@@ -313,7 +313,7 @@ ms.locfileid: "86042396"
     | --- | --- |
     | Виртуальные машины | [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью Azure CLI](../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md#system-assigned-managed-identity) |
     | Масштабируемые наборы виртуальных машин | [Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью Azure CLI](../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vmss.md#system-assigned-managed-identity) |
-    | Другие службы | [Службы с поддержкой управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md) |
+    | другие службы. | [Службы с поддержкой управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md) |
 
 1. Чтобы создать назначения ролей для управляемых удостоверений, назначенных системой, используйте команду [AZ Role назначение Create](https://docs.microsoft.com/cli/azure/role/assignment#az-role-assignment-create) . Дополнительные сведения см. в статье [назначение управляемому удостоверению доступа к ресурсу с помощью Azure CLI](../active-directory/managed-identities-azure-resources/howto-assign-access-cli.md).
 
@@ -329,7 +329,7 @@ ms.locfileid: "86042396"
     | --- | --- |
     | Виртуальные машины | [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью Azure CLI](../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md#user-assigned-managed-identity) |
     | Масштабируемые наборы виртуальных машин | [Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью Azure CLI](../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vmss.md#user-assigned-managed-identity) |
-    | Другие службы | [Службы с поддержкой управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md)<br/>[Создание и удаление управляемых удостоверений, назначаемых пользователем, а также получение их списка с помощью Azure CLI](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md) |
+    | другие службы. | [Службы с поддержкой управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md)<br/>[Создание и удаление управляемых удостоверений, назначаемых пользователем, а также получение их списка с помощью Azure CLI](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md) |
 
 1. Используйте команду [AZ Role Identity Create](https://docs.microsoft.com/cli/azure/role/assignment#az-role-assignment-create) , чтобы создать назначения ролей для назначаемых пользователем управляемых удостоверений. Дополнительные сведения см. в статье [назначение управляемому удостоверению доступа к ресурсу с помощью Azure CLI](../active-directory/managed-identities-azure-resources/howto-assign-access-cli.md).
 
@@ -373,7 +373,7 @@ ms.locfileid: "86042396"
 
 1. Для ресурсов, использующих сертификаты, обновите сертификат.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Передача прав владения на выставление счетов для подписки Azure другой учетной записи](../cost-management-billing/manage/billing-subscription-transfer.md)
 - [Перенос подписок Azure между подписчиками и CSP](../cost-management-billing/manage/transfer-subscriptions-subscribers-csp.md)

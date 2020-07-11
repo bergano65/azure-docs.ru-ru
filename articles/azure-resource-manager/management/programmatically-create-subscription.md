@@ -1,17 +1,17 @@
 ---
 title: Создание подписок Azure программными средствами
 description: Узнайте, как программным способом создать дополнительные подписки Azure.
-author: amberbhargava
+author: anuragdalmia
 ms.topic: conceptual
-ms.date: 06/26/2020
+ms.date: 07/09/2020
 ms.reviewer: andalmia
 ms.author: banders
-ms.openlocfilehash: b53c81a52c06780378e45b2141cbef452b4d363a
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 7fac201de2fd623058eb5771e194ae697f879ee8
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170638"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224168"
 ---
 # <a name="programmatically-create-azure-subscriptions-preview"></a>Создание подписок Azure программными средствами (Предварительная версия)
 
@@ -156,7 +156,7 @@ POST https://management.azure.com/providers/Microsoft.Billing/enrollmentAccounts
 | `offerType`   | Да      | Строковый | Предложение подписки. Доступны два варианта предложения EA: [MS-AZR-0017P](https://azure.microsoft.com/pricing/enterprise-agreement/) (для использования в рабочей среде) и [MS-AZR-0148P](https://azure.microsoft.com/offers/ms-azr-0148p/) (для разработки и тестирования, должен быть [включен с помощью портала EA](https://ea.azure.com/helpdocs/DevOrTestOffer)).                |
 | `owners`      | нет       | Строка | Идентификатор объекта любого пользователя, которого вы хотите добавить в качестве владельца RBAC для подписки при ее создании.  |
 
-В ответе вы получаете `Location` URL-адрес для мониторинга. По завершении создания подписки `Location` URL-адрес Get On возвратит `subscriptionLink` объект с идентификатором подписки. Дополнительные сведения см. в [документации по API подписки](https://docs.microsoft.com/rest/api/subscription/) .
+В ответе, как часть заголовка `Location` , вы получаете URL-адрес, по которому можно запросить состояние операции создания подписки. По завершении создания подписки `Location` URL-адрес Get On возвратит `subscriptionLink` объект с идентификатором подписки. Дополнительные сведения см. в [документации по API подписки](https://docs.microsoft.com/rest/api/subscription/) .
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 

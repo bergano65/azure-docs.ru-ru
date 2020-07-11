@@ -3,21 +3,22 @@ title: Архитектуры для развертывания приложен
 description: Архитектуры приложений для развертывания приложений Oracle, включая E-Business Suite, JD Edwards EnterpriseOne и PeopleSoft на Microsoft Azure виртуальных машинах с базами данных в Azure или в облачной инфраструктуре Oracle (OCI).
 services: virtual-machines-linux
 documentationcenter: ''
-author: BorisB2015
-manager: gwallace
+author: rgardler
+manager: ''
 tags: ''
 ms.service: virtual-machines
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/18/2019
-ms.author: borisb
+ms.author: rogardle
 ms.custom: ''
-ms.openlocfilehash: f36dfe0092e3447053871ee0e5b4d659bb443779
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9fe6886f368d053af919b326fabf1ad4c3066717
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81687488"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224542"
 ---
 # <a name="architectures-to-deploy-oracle-applications-on-azure"></a>Архитектуры для развертывания приложений Oracle в Azure
 
@@ -188,7 +189,7 @@ JD Edwards EnterpriseOne Oracle — это интегрированный наб
 
 [!INCLUDE [virtual-machines-oracle-applications-identity](../../../../includes/virtual-machines-oracle-applications-identity.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте [сценарии terraform](https://github.com/microsoft/azure-oracle) , чтобы настроить приложения Oracle в Azure и установить подключение между облаками с OCI.
 

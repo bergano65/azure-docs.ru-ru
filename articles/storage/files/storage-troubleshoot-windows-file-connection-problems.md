@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 05/31/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 89a5fa0be104c3a7b7e035f82d2fed80d4781701
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8a8fff374edab7e307cd6dc8fb9aa4a4f974d09c
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85511991"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224695"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows"></a>Устранение неполадок службы файлов Azure в Windows
 
@@ -70,27 +70,31 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 Чтобы использовать `Test-NetConnection` командлет, необходимо установить модуль Azure PowerShell. Дополнительные сведения см. в разделе [Установка Azure PowerShell module](/powershell/azure/install-Az-ps) . Не забудьте заменить `<your-storage-account-name>` и `<your-resource-group-name>` соответствующими именами для вашей учетной записи хранения.
 
    
-    $resourceGroupName = "<your-resource-group-name>"
-    $storageAccountName = "<your-storage-account-name>"
+```azurepowershell
+$resourceGroupName = "<your-resource-group-name>"
+$storageAccountName = "<your-storage-account-name>"
 
-    # This command requires you to be logged into your Azure account, run Login-AzAccount if you haven't
-    # already logged in.
-    $storageAccount = Get-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccountName
+# This command requires you to be logged into your Azure account, run Login-AzAccount if you haven't
+# already logged in.
+$storageAccount = Get-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccountName
 
-    # The ComputerName, or host, is <storage-account>.file.core.windows.net for Azure Public Regions.
-    # $storageAccount.Context.FileEndpoint is used because non-Public Azure regions, such as sovereign clouds
-    # or Azure Stack deployments, will have different hosts for Azure file shares (and other storage resources).
-    Test-NetConnection -ComputerName ([System.Uri]::new($storageAccount.Context.FileEndPoint).Host) -Port 445
+# The ComputerName, or host, is <storage-account>.file.core.windows.net for Azure Public Regions.
+# $storageAccount.Context.FileEndpoint is used because non-Public Azure regions, such as sovereign clouds
+# or Azure Stack deployments, will have different hosts for Azure file shares (and other storage resources).
+Test-NetConnection -ComputerName ([System.Uri]::new($storageAccount.Context.FileEndPoint).Host) -Port 445
+```
     
 Если установка прошла успешно, отобразятся следующие выходные данные.
     
   
-    ComputerName     : <your-storage-account-name>
-    RemoteAddress    : <storage-account-ip-address>
-    RemotePort       : 445
-    InterfaceAlias   : <your-network-interface>
-    SourceAddress    : <your-ip-address>
-    TcpTestSucceeded : True
+```azurepowershell
+ComputerName     : <your-storage-account-name>
+RemoteAddress    : <storage-account-ip-address>
+RemotePort       : 445
+InterfaceAlias   : <your-network-interface>
+SourceAddress    : <your-ip-address>
+TcpTestSucceeded : True
+```
  
 
 > [!Note]  
@@ -127,11 +131,11 @@ Windows 8, Windows Server 2012 или более поздние версии э�
   **HKLM\SYSTEM\CurrentControlSet\Control\Lsa**
 
 <a id="error1816"></a>
-## <a name="error-1816-not-enough-quota-is-available-to-process-this-command-when-you-copy-to-an-azure-file-share"></a>Ошибка 1816 "Недостаточно квот для обработки команды" при копировании в файловый ресурс Azure
+## <a name="error-1816---not-enough-quota-is-available-to-process-this-command"></a>Ошибка 1816-недостаточно квоты для обработки этой команды
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
-Ошибка 1816 возникает, когда достигнуто максимальное количество одновременно открытых дескрипторов для файла на компьютере, к которому подключается файловый ресурс.
+Ошибка 1816 возникает при достижении верхнего предела параллельных открытых дескрипторов, разрешенных для файла или каталога в общем файловом ресурсе Azure. Дополнительные сведения см. в разделе [Целевые показатели масштабируемости службы файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-scale-targets#azure-files-scale-targets).
 
 ### <a name="solution"></a>Решение
 
@@ -169,7 +173,7 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 
 Указанный ресурс помечен для удаления клиентом SMB.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 Эта проблема обычно возникает, если файл или каталог имеет открытый обработчик. 
 
 ### <a name="solution"></a>Решение
@@ -214,7 +218,7 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 
 Если вы сопоставили файловый ресурс Azure от имени администратора с помощью команды net use, то может показаться, что он отсутствует.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 По умолчанию проводник не запускается от имени администратора. При выполнении команды net use из командной строки администрирования пользователь подключает сетевой диск от имени администратора. Подключенные диски ориентированы на пользователя. Если для их подключения использовалась одна учетная запись, а пользователь вошел в систему с помощью другой, то диски отображаться не будут.
 
@@ -224,7 +228,7 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 <a id="netuse"></a>
 ## <a name="net-use-command-fails-if-the-storage-account-contains-a-forward-slash"></a>Если учетная запись хранения содержит косую черту (/), то выполнение команды net use завершается сбоем
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Команда net use интерпретирует косую черту (/) как параметр командной строки. Если имя учетной записи пользователя начинается с косой черты, то сопоставление диска завершится сбоем.
 
@@ -245,7 +249,7 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 <a id="cannotaccess"></a>
 ## <a name="application-or-service-cannot-access-a-mounted-azure-files-drive"></a>Приложение или служба не может получить доступ к подключенному диску службы файлов Azure
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Диски подключаются для каждого пользователя. Если приложение или служба выполняется не под той учетной записью, к которой относится подключенный диск, то приложение не увидит этот диск.
 
@@ -269,7 +273,7 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 
 Когда файл копируется по сети, он расшифровывается на исходном компьютере, передается в виде обычного текста и повторно шифруется в месте назначения. Тем не менее при попытке скопировать зашифрованный файл может появиться следующее сообщение об ошибке: "Вы копируете файл в место, которое не поддерживает шифрование".
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 Эта проблема может возникнуть при использовании шифрованной файловой системы (EFS). Файлы с шифрованием BitLocker нельзя копировать в службу файлов Azure. Однако эта служба не поддерживает шифрованную файловую систему (EFS) NTFS.
 
 ### <a name="workaround"></a>Обходной путь
@@ -286,7 +290,7 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 
 ## <a name="slow-enumeration-of-files-and-folders"></a>Медленное перечисление файлов и папок
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта проблема может возникнуть, если на клиентском компьютере для больших каталогов недостаточно кэша.
 
@@ -303,7 +307,7 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 
 ## <a name="error-aaddstenantnotfound-in-enabling-azure-active-directory-domain-service-aad-ds-authentication-for-azure-files-unable-to-locate-active-tenants-with-tenant-id-aad-tenant-id"></a>Ошибка Ааддстенантнотфаунд при включении проверки подлинности службы домена Azure Active Directory (AAD DS) для файлов Azure "не удается нахождение активных клиентов с идентификатором клиента AAD-клиент-ID"
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Ошибка Ааддстенантнотфаунд возникает при попытке [включить проверку подлинности Azure Active Directory доменных служб (Azure AD DS) в службе файлов Azure](storage-files-identity-auth-active-directory-domain-service-enable.md) в учетной записи хранения, где [Служба домена AAD (AAD DS)](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) не создана в клиенте AAD связанной подписки.  
 
@@ -315,7 +319,7 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 
 ## <a name="error-system-error-1359-has-occurred-an-internal-error-received-over-smb-access-to-file-shares-with-azure-active-directory-domain-service-aad-ds-authentication-enabled"></a>Произошла ошибка "системная ошибка 1359. Внутренняя ошибка "полученный через SMB доступ к общим папкам с включенной аутентификацией службы домена Azure Active Directory (AAD DS)
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Произошла ошибка "системная ошибка 1359. Произошла внутренняя ошибка "при попытке подключения к файловому ресурсу с использованием проверки подлинности AAD DS в доменных СЛУЖБах AAD с DNS-именем домена, начинающимся с числового символа. Например, если DNS-имя домена доменных служб AAD — "1domain", эта ошибка возникает при попытке подключения общей папки с помощью учетных данных AAD. 
 

@@ -9,11 +9,12 @@ ms.date: 06/15/2020
 ms.author: tamram
 ms.reviewer: wielriac
 ms.subservice: blobs
-ms.openlocfilehash: f54adb54ca842ea389b0d3ea203d747df0071ee5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2338c523c13b16b4a63ee9de0d966182e26c3286
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84792036"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86223301"
 ---
 # <a name="overview-of-azure-page-blobs"></a>Общие сведения о страничных BLOB-объектах Azure
 
@@ -122,7 +123,7 @@ pageBlob.WritePages(dataStream, startingOffset);
 
 На схеме ниже показано 2 отдельных операции записи:
 
-![](./media/storage-blob-pageblob-overview/storage-blob-pageblob-overview-figure2.png)
+![Диаграмма, на которой показаны два отдельных параметра записи.](./media/storage-blob-pageblob-overview/storage-blob-pageblob-overview-figure2.png)
 
 1.  Операция записи, начинающаяся со смещения 0 длиной 1024 байт 
 2.  Операция записи, начинающаяся со смещения 4096 длиной 1024 байт 
@@ -150,7 +151,7 @@ pageBlob.DownloadRangeToByteArray(buffer, bufferOffset, pageBlobOffset, rangeSiz
 
 На следующем рисунке показана операция чтения со смещением 256 и размером диапазона 4352. Возвращенные данные выделены оранжевым цветом. Для страниц NUL возвращаются нули.
 
-![](./media/storage-blob-pageblob-overview/storage-blob-pageblob-overview-figure3.png)
+![Схема, показывающая операцию чтения со смещением 256 и размером диапазона 4352](./media/storage-blob-pageblob-overview/storage-blob-pageblob-overview-figure3.png)
 
 Если большой двоичный объект является фрагментарным, возможно, потребуется загружать только значимые области страницы. Это позволит не оплачивать передачу нулевых байтов и сократить задержку при загрузке.  
 

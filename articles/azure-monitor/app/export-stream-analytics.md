@@ -3,12 +3,12 @@ title: Экспорт из Azure Application Insights с помощью Stream A
 description: Stream Analytics может непрерывно преобразовывать, фильтровать и маршрутизировать данные, экспортируемые из Application Insights.
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.openlocfilehash: 400c727b44d3794dc9a17c59959dc5c75cea71fe
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 71b19f0b49dec8f7176a53eeb656519c65f9c1d0
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86110493"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224525"
 ---
 # <a name="use-stream-analytics-to-process-exported-data-from-application-insights"></a>Обработка данных, экспортированных из Application Insights, при помощи Stream Analytics
 [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) — идеальное средство для обработки данных, [экспортированных из Application Insights](export-telemetry.md). Stream Analytics может извлекать данные из различных источников. Это средство может преобразовывать и фильтровать данные и затем отправлять их в различные приемники.
@@ -60,7 +60,7 @@ ms.locfileid: "86110493"
     Данные также будут экспортированы в хранилище. 
 2. Проверьте экспортированные данные. В Visual Studio откройте меню **"Вид" или "Обозреватель облака"** и выберите элемент "Azure" или "Хранилище". Если эти пункты меню не отображаются, установите пакет SDK для Azure. Откройте диалоговое окно "Новый проект" и выберите Visual C# / Cloud / Get Microsoft Azure SDK for .NET. (Visual C# / Облако / Получить пакет Microsoft Azure SDK для .NET.)
    
-    ![](./media/export-stream-analytics/04-data.png)
+    ![Снимок экрана, показывающий, как задать типы событий, которые требуется просмотреть.](./media/export-stream-analytics/04-data.png)
    
     Запишите общую часть имени пути, которое образовано от имени приложения и ключа инструментирования. 
 
@@ -69,21 +69,21 @@ ms.locfileid: "86110493"
 ## <a name="create-an-azure-stream-analytics-instance"></a>Создание экземпляра Azure Stream Analytics
 На [портале Azure](https://portal.azure.com/) выберите службу Azure Stream Analytics и создайте новое задание Stream Analytics:
 
-![](./media/export-stream-analytics/SA001.png)
+![Снимок экрана, на котором показана Главная страница для создания Stream Analytics задания в портал Azure.](./media/export-stream-analytics/SA001.png)
 
-![](./media/export-stream-analytics/SA002.png)
+![Снимок экрана, на котором отображаются сведения, необходимые при создании нового задания Stream Analytics.](./media/export-stream-analytics/SA002.png)
 
 Создав новое задание, выберите **Перейти к ресурсу**.
 
-![](./media/export-stream-analytics/SA003.png)
+![Снимок экрана, на котором показано сообщение, полученное при успешном развертывании нового задания Stream Analytics.](./media/export-stream-analytics/SA003.png)
 
 ### <a name="add-a-new-input"></a>Добавление новых входных данных
 
-![](./media/export-stream-analytics/SA004.png)
+![Снимок экрана, показывающий, как добавить входные данные в задание Stream Analytics.](./media/export-stream-analytics/SA004.png)
 
 Задайте расположение для приема входных данных из большого двоичного объекта непрерывного экспорта:
 
-![](./media/export-stream-analytics/SA0005.png)
+![Снимок экрана, показывающий настройку задания Stream Analytics для получения входных данных из большого двоичного объекта непрерывного экспорта.](./media/export-stream-analytics/SA0005.png)
 
 Теперь потребуется первичный ключ доступа из вашей учетной записи хранения, указанной ранее. Задайте его в качестве ключа учетной записи хранения.
 
@@ -109,7 +109,7 @@ ms.locfileid: "86110493"
 ## <a name="add-new-output"></a>Добавление новых выходных данных
 Теперь выберите свое задание и последовательно нажмите элементы **Выходные данные** > **Добавить**.
 
-![](./media/export-stream-analytics/SA006.png)
+![Снимок экрана, на котором показано, как выбрать Stream Analytics задание для добавления новых выходных данных.](./media/export-stream-analytics/SA006.png)
 
 
 ![Выбор нового канала и элементов "Выходные данные", "Добавить", "Power BI".](./media/export-stream-analytics/SA010.png)

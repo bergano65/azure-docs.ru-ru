@@ -7,22 +7,22 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 06/30/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 4959d530e1f7a3c777aa3db21fe577c853fbca13
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: 58c5fdcfef5e866d0c69d65412582c0ed649f7c6
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85855999"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86230831"
 ---
 # <a name="key-vault-versions"></a>Версии Key Vault
 
 Вот именно новые Azure Key Vault. Новые функции и улучшения также объявляются в [канале обновлений Azure Key Vault](https://azure.microsoft.com/updates/?category=security&query=Key%20vault).
 
-## <a name="june-2020"></a>июнь 2020 г.
+## <a name="june-2020"></a>Июнь 2020 г.
 
 Azure Monitor для Key Vault теперь находится на этапе предварительной версии.  Azure Monitor обеспечивает полный мониторинг хранилищ ключей, обеспечивая единое представление запросов Key Vault, производительности, сбоев и задержки. Дополнительные сведения см. в разделе [Azure Monitor for key Vault (Предварительная версия).](../../azure-monitor/insights/key-vault-insights-overview.md)
 
-## <a name="may-2020"></a>Май 2020 г.
+## <a name="may-2020"></a>Май 2020 г.
 
 Key Vault "использовать собственный ключ" (BYOK) теперь общедоступен. Ознакомьтесь со [спецификацией Azure Key Vault BYOK](../keys/byok-specification.md)и Узнайте, как [импортировать ключи с защитой HSM в Key Vault (BYOK)](../keys/hsm-protected-keys-byok.md).
 
@@ -58,13 +58,13 @@ Key Vault "использовать собственный ключ" (BYOK) те
 - Управление сертификатами. Добавлена как функция в общедоступную версию 2015-06-01 от 26 сентября 2016 г.
 
 Общая доступность (версия 2015-06-01) была объявлена 24 июня 2015 г. В этот выпуск внесены следующие изменения. 
-- Удаление ключа. Удалено поле use.
-- Получение сведений о ключе. Удалено поле use.
-- Импорт ключа в хранилище. Удалено поле use.
-- Восстановление ключа. Удалено поле use.     
-- Был изменен алгоритм RSA (RSA_OAEP). См. [раздел о ключах, секретах и сертификатах](about-keys-secrets-certificates.md).    
+- Удаление поля ключа-"использование" удалено.
+- Получение сведений об удаленном поле "использование" ключа.
+- Импорт ключа в поле "use" хранилища удалено.
+- Восстановить удаленное поле "использование" ключа.     
+- Для алгоритмов RSA изменено "RSA_OAEP" на "RSA-OAEP". См. [раздел о ключах, секретах и сертификатах](about-keys-secrets-certificates.md).    
  
-Вторая Предварительная версия (версия 2015-02-01-Preview) была объявлена 20 апреля 2015. Дополнительные сведения см. в записи блога [REST API Update](https://blogs.technet.com/b/kv/archive/2015/04/20/empty-3.aspx) (Обновление REST API). Были обновлены следующие задачи:
+Вторая Предварительная версия (версия 2015-02-01-Preview) была объявлена 20 апреля 2015. Дополнительные сведения см. в записи блога [REST API Update](https://docs.microsoft.com/archive/blogs/kv/rest-api-update) (Обновление REST API). Были обновлены следующие задачи:
  
 - Составление списка ключей в хранилище. Добавлена поддержка разбиения на страницы для выполнения операции.
 - Составление списка версий ключа. Добавлена операция перечисления версий ключа.  
@@ -82,7 +82,7 @@ Key Vault "использовать собственный ключ" (BYOK) те
  
 Первая предварительная версия (версия 2014-12-08-Preview) была объявлена 8 января 2015.  
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Сведения о ключах, секретах и сертификатах](about-keys-secrets-certificates.md)
 - [Ключи](../keys/index.yml)

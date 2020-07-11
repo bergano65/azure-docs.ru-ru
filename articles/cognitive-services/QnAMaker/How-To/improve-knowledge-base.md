@@ -3,12 +3,12 @@ title: Расширение базы знаний в QnA Maker
 description: Улучшите качество базы знаний с помощью активного обучения. Просмотр, принятие или отклонение, добавление без удаления или изменения существующих вопросов.
 ms.topic: conceptual
 ms.date: 04/06/2020
-ms.openlocfilehash: 2e074716e4342a8748de4fb4e217548f1cb731f6
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 88ccbc52e0eb3447d0b99cac9ba41761e292a6fd
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83650772"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86231783"
 ---
 # <a name="accept-active-learning-suggested-questions-in-the-knowledge-base"></a>Принять предлагаемые активные обучающие вопросы в базе знаний
 
@@ -127,7 +127,7 @@ Content-Type: application/json
 {"feedbackRecords": [{"userId": "1","userQuestion": "<question-text>","qnaId": 1}]}
 ```
 
-|Свойство HTTP-запроса|Имя|Type|Назначение|
+|Свойство HTTP-запроса|Имя|Тип|Назначение|
 |--|--|--|--|
 |Параметр URL-маршрута|Идентификатор базы знаний|строка|Идентификатор GUID для базы знаний.|
 |Пользовательский поддомен|Имя ресурса QnAMaker|строка|Имя ресурса используется в качестве пользовательского поддомена для QnA Maker. Это можно найти на странице параметры после публикации базы знаний. Он указан как `host` .|
@@ -137,12 +137,12 @@ Content-Type: application/json
 
 Тело JSON имеет несколько параметров:
 
-|Свойство тела JSON|Type|Назначение|
+|Свойство тела JSON|Тип|Назначение|
 |--|--|--|--|
-|`feedbackRecords`|array|Список отзывов.|
+|`feedbackRecords`|массиве|Список отзывов.|
 |`userId`|строка|Идентификатор пользователя, который принимает предлагаемые вопросы. Пользователь должен иметь формат идентификатора пользователя. Например, адрес электронной почты может быть допустимым ИДЕНТИФИКАТОРом пользователя в вашей архитектуре. Необязательный элемент.|
 |`userQuestion`|строка|Точный текст запроса пользователя. Обязательный.|
-|`qnaID`|число|Идентификатор вопроса, найденный в [ответе женератеансвер](metadata-generateanswer-usage.md#generateanswer-response-properties). |
+|`qnaID`|number|Идентификатор вопроса, найденный в [ответе женератеансвер](metadata-generateanswer-usage.md#generateanswer-response-properties). |
 
 Пример текста JSON выглядит следующим образом:
 
@@ -199,7 +199,7 @@ Content-Type: application/json
 * Определение необходимости использования запроса для активного обучения
 * Отправить запрос в API обучения QnA Maker для активного обучения
 
-В [примере Azure Bot](https://aka.ms/activelearningsamplebot)были запрограммированы оба действия.
+В [примере Azure Bot](https://github.com/microsoft/BotBuilder-Samples)были запрограммированы оба действия.
 
 ### <a name="example-c-code-for-train-api-with-bot-framework-4x"></a>Пример кода C# для обучения API с помощью Bot Framework 4. x
 
@@ -264,7 +264,7 @@ public async static void CallTrain(string endpoint, FeedbackRecords feedbackReco
 }
 ```
 
-### <a name="example-nodejs-code-for-train-api-with-bot-framework-4x"></a>Пример кода Node. js для обучения API с помощью Bot Framework 4. x
+### <a name="example-nodejs-code-for-train-api-with-bot-framework-4x"></a>Пример Node.js кода для обучения API с помощью Bot Framework 4. x
 
 В следующем примере кода показано, как отправить сведения обратно в QnA Maker с помощью API обучения.
 
@@ -338,7 +338,7 @@ async callTrain(stepContext){
 
 Рекомендации по использованию активного обучения см. в статье [Рекомендации по использованию базы знаний QnA Maker](../Concepts/best-practices.md#active-learning).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Использование метаданных с помощью API GenerateAnswer](metadata-generateanswer-usage.md)

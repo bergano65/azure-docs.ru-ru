@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 6f49ece874ea52227e6531193fc53b3bea525702
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7b671bb63934eec129e992c369ba8516c191c589
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82796607"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86223573"
 ---
 # <a name="migrate-from-a-managed-image-to-an-image-version-using-the-azure-cli"></a>Миграция из управляемого образа в версию образа с помощью Azure CLI
 Если у вас есть управляемый образ, который вы хотите перенести в коллекцию общих образов, можно создать образ из коллекции общих образов непосредственно из управляемого образа. После тестирования нового образа можно удалить исходный управляемый образ. Вы также можете выполнить миграцию из управляемого образа в общую коллекцию образов с помощью [PowerShell](image-version-managed-image-powershell.md).
@@ -24,7 +24,7 @@ ms.locfileid: "82796607"
 - **Версия образа** — это то, что используется для создания виртуальной машины при использовании общей коллекции образов. В зависимости от требований для вашей среды, у вас может быть несколько версий образа. При создании виртуальной машины используется версия образа для создания новых дисков для виртуальной машины. Версии образов можно использовать несколько раз.
 
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Для работы с этой статьей необходимо иметь существующую [коллекцию общих образов](shared-images-cli.md). 
 
@@ -98,3 +98,5 @@ az sig image-version create \
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Создайте виртуальную машину из [обобщенной версии образа](vm-generalized-image-version-cli.md).
+
+Сведения о том, как предоставить сведения о плане покупки, см. в разделе [предоставление сведений о плане покупки Azure Marketplace при создании образов](marketplace-images.md).

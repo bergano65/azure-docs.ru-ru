@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 01/31/2020
 ms.author: trbye
-ms.openlocfilehash: 083580435c467a7d4b6a4cede0a821a2c271962f
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 72fecbdc173a6174e54a28e48f983965f397ba6a
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83589658"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224593"
 ---
 # <a name="improve-synthesis-with-the-audio-content-creation-tool"></a>Улучшение синтеза с помощью средства создания звукового содержимого
 
@@ -23,11 +23,13 @@ ms.locfileid: "83589658"
 
 Средство создания аудио-содержимого основано на [языке разметки речи (SSML)](speech-synthesis-markup.md). Для упрощения настройки и настройки создание звукового содержимого позволяет визуально проверять выходные данные текста в речь в режиме реального времени.
 
-## <a name="how-does-it-work"></a>Принципы работы
+См. [видео руководство](https://www.youtube.com/watch?v=O1wIJ7mts_w) по созданию звукового содержимого.
+
+## <a name="how-does-it-work"></a>Как это работает?
 
 На этой схеме показаны шаги, необходимые для точной настройки вывода текста в речь. Используйте приведенные ниже ссылки для получения дополнительных сведений о каждом шаге.
 
-![](media/audio-content-creation/audio-content-creation-diagram.jpg)
+![Схема действий, которую требуется выполнить для точной настройки вывода текста в речь.](media/audio-content-creation/audio-content-creation-diagram.jpg)
 
 1. [Настройте учетную запись Azure и ресурс речи](#set-up-your-azure-account-and-speech-resource) , чтобы приступить к работе.
 2. [Создайте файл настройки звука](#create-an-audio-tuning-file) с помощью обычного текста или сценариев SSML.

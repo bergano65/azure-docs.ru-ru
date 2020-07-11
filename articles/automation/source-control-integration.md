@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 12/10/2019
 ms.topic: conceptual
-ms.openlocfilehash: 37df5ae8e88bf7832fbbeae37555d60943fca446
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: eea4de106fe566b55ae30330d4c9d101f7126bbf
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86187308"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86229624"
 ---
 # <a name="use-source-control-integration"></a>Использование интеграции системы управления версиями
 
@@ -202,7 +202,7 @@ New-AzAutomationSourceControl -Name SCReposTFVC -RepoUrl https://dev.azure.com/<
 В настоящее время портал Azure нельзя использовать для обновления личного маркера доступа в системе управления версиями. После истечения срока действия маркера доступа или его отзыва систему управления версиями можно обновить, добавив новый маркер доступа одним из следующих способов.
 
 * Используя [REST API](/rest/api/automation/sourcecontrol/update).
-* Используя командлет [Update-AzAutomationSourceControl](//powershell/module/az.automation/update-azautomationsourcecontrol).
+* Используя командлет [Update-AzAutomationSourceControl](/powershell/module/az.automation/update-azautomationsourcecontrol).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

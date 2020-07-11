@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.date: 07/08/2020
 ms.author: jingwang
 ms.reviewer: craigg
-ms.openlocfilehash: d7a872121ca6560b8ede86abc35294ab8c9b0c1b
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: f22b4bec17abe95be2a17d3e0e3c41fab3483fe0
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86142008"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224827"
 ---
 # <a name="azure-data-factory-connector-overview"></a>Обзор соединителя фабрики данных Azure
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-Фабрика данных Azure поддерживает следующие хранилища данных и форматы с помощью операций копирования, потока данных, поиска, получения метаданных и удаления. Щелкните каждое хранилище данных, чтобы узнать о поддерживаемых возможностях и соответствующих конфигурациях.
+Фабрика данных Azure поддерживает следующие хранилища данных и форматы посредством копирования, потока данных, поиска, получения метаданных и удаления действий. Щелкните каждое хранилище данных, чтобы узнать о поддерживаемых возможностях и соответствующих конфигурациях.
 
 ## <a name="supported-data-stores"></a>Поддерживаемые хранилища данных
 
@@ -34,6 +34,7 @@ ms.locfileid: "86142008"
 - [Двоичный формат](format-binary.md)
 - [Формат Common Data Model](format-common-data-model.md)
 - [Формат текста с разделителями](format-delimited-text.md)
+- [Разностный формат](format-delta.md)
 - [Формат Excel](format-excel.md)
 - [Формат JSON](format-json.md)
 - [Формат ORC](format-orc.md)

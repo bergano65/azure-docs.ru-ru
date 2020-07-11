@@ -4,19 +4,19 @@ description: Список служб, которые поддерживают у
 services: active-directory
 author: MarkusVi
 ms.author: markvi
-ms.date: 06/11/2020
+ms.date: 07/09/2020
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: msi
 manager: markvi
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: 0dc8b77f75cffdd0b2017d8a9b0f7c168fb796cb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5bf397cac26d3cc46e11f8ac60110629a528cd62
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85193776"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86229828"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -134,7 +134,7 @@ ms.locfileid: "85193776"
 
 
 
-### <a name="azure-event-grid"></a>Сетка событий Azure 
+### <a name="azure-event-grid"></a>Сетка событий Azure. 
 
 Тип управляемого удостоверения |Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
@@ -174,7 +174,7 @@ ms.locfileid: "85193776"
 
 - [Портал Azure](../../iot-hub/virtual-network-support.md#turn-on-managed-identity-for-iot-hub)
 
-### <a name="azure-importexport"></a>Служба импорта и экспорта Azure
+### <a name="azure-importexport"></a>Импорт и экспорт Microsoft Azure
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | --- | --- | --- | --- |
@@ -185,8 +185,8 @@ ms.locfileid: "85193776"
 
 | Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Назначено системой | ![Доступно][check] | - | - | - | 
-| Назначено пользователем | ![Доступно][check] | - | - | - |
+| Назначено системой | ![Доступно][check] | ![Доступно][check] | Недоступно | ![Доступно][check] | 
+| Назначено пользователем | ![Доступно][check] | ![Доступно][check] | Недоступно | ![Доступно][check] |
 
 
 Дополнительные сведения см. в статье [Использование управляемых удостоверений в службе Kubernetes Azure](https://docs.microsoft.com/azure/aks/use-managed-identity).
@@ -287,7 +287,7 @@ ms.locfileid: "85193776"
 | Назначено пользователем | [Доступно в поддерживаемых регионах](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder-overview#regions) | Недоступно | Недоступно | Недоступно |
 
 Сведения о настройке управляемого удостоверения для построителя образов виртуальных машин Azure (в регионах, где это возможно) см. в разделе [Общие сведения о построителе образов](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder-overview#permissions).
-### <a name="azure-signalr-service"></a>Служба SignalR Azure
+### <a name="azure-signalr-service"></a>Служба Azure SignalR
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |

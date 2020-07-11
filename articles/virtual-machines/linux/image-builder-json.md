@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: virtual-machines-linux
 ms.subservice: imaging
 ms.reviewer: cynthn
-ms.openlocfilehash: 975d6842110ffa864a534e09cf35d0d33612d7d5
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 191f0468a01c98ec60b85ea7aca6333807bf4b80
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86135081"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86221210"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Предварительный просмотр: Создание шаблона Конструктора образов виртуальных машин Azure 
 
@@ -150,6 +150,9 @@ ms.locfileid: "86135081"
 - PlatformImage — указывает, что источником является образ Marketplace;
 - ManagedImage — используется при запуске из обычного управляемого образа;
 - SharedImageVersion —указывается, когда в качестве источника используется версия образа из Общей коллекции образов.
+
+> [!NOTE]
+> При использовании существующих пользовательских образов Windows можно выполнить команду Sysprep до 8 раз в одном образе Windows. Дополнительные сведения см. в документации по [Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation#limits-on-how-many-times-you-can-run-sysprep) .
 
 ### <a name="iso-source"></a>ISO source
 Эта функциональная возможность в Конструкторе образов объявлена нерекомендуемой, так как теперь имеются [образы BYOS RHEL](https://docs.microsoft.com/azure/virtual-machines/workloads/redhat/byos). Ознакомьтесь со следующими сроками:
@@ -468,7 +471,10 @@ Write-Output '>>> Sysprep complete ...'
 - **sharedImage** — Общая коллекция образов;
 - **VHD** — VHD в учетной записи хранения.
 
-Вы можете распространить образ в оба типа целевого объекта в рамках одной конфигурации (см. [примеры](https://github.com/danielsollondon/azvmimagebuilder/blob/7f3d8c01eb3bf960d8b6df20ecd5c244988d13b6/armTemplates/azplatform_image_deploy_sigmdi.json#L80)).
+Вы можете распространить изображение на оба типа целевого объекта в той же конфигурации.
+
+> [!NOTE]
+> Команда Sysprep по умолчанию AIB не включает "/Mode: VM", но это может быть необходимо при создании образов, на которых будет установлена роль HyperV. Если необходимо добавить этот аргумент команды, необходимо переопределить команду Sysprep.
 
 Так как у вас может быть несколько целевых объектов для распространения образа, Конструктор образов поддерживает состояние для каждого целевого объекта распространения, которое можно получить, запросив `runOutputName`.  `runOutputName` — объект, который можно запросить после распространения, чтобы получить сведения об этом распространении. Например, можно запросить расположение VHD, регионы, в которые была реплицирована версия образа, или версию созданного образа SIG. Это свойство имеет каждый целевой объект распространения. Имя `runOutputName` должно быть уникальным для каждого целевого объекта распространения. Ниже приведен пример, в котором запрашивается распространение Общей коллекции образов.
 

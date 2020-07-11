@@ -5,11 +5,12 @@ ms.topic: article
 ms.date: 08/14/2019
 ms.reviewer: byvinyal
 ms.custom: seodec18
-ms.openlocfilehash: c6f7c2422e043da6df498fe81da938576687b916
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 45d2ec6cf4b2a54b899036d932bc310caede3c29
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83649120"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86223862"
 ---
 # <a name="configure-deployment-credentials-for-azure-app-service"></a>Настройка учетных данных развертывания службы приложений Azure
 [Служба приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714) поддерживает два типа учетных данных для [развертывания локальной системы Git](deploy-local-git.md) и [развертывания FTP(S)](deploy-ftp.md). Эти учетные данные не совпадают с учетными данными подписки Azure.
@@ -22,7 +23,7 @@ ms.locfileid: "83649120"
 
 ### <a name="in-the-cloud-shell"></a>В Cloud Shell
 
-Чтобы настроить пользователя развертывания, выполните в [Cloud Shell](https://shell.azure.com) команду [az webapp deployment user set](/cli/azure/webapp/deployment/user?view=azure-cli-latest#az-webapp-deployment-user-set). Вместо \<username> и \<password> укажите имя пользователя и пароль развертывания. 
+Чтобы настроить пользователя развертывания, выполните в [Cloud Shell](https://shell.azure.com) команду [az webapp deployment user set](/cli/azure/webapp/deployment/user?view=azure-cli-latest#az-webapp-deployment-user-set). Замените \<username> и \<password> именем пользователя и паролем развертывания. 
 
 - Имя пользователя должно быть уникальным в Azure. Кроме того, чтобы отправка в локальный репозиторий Git работала, имя пользователя не должно содержать символ @. 
 - Пароль должен содержать не менее восьми символов и включать два из трех следующих элементов: буквы, цифры и символы. 
@@ -37,19 +38,19 @@ az webapp deployment user set --user-name <username> --password <password>
 
 Чтобы можно было открыть страницу учетных данных развертывания, на портале Azure должно существовать хотя бы одно приложение. Чтобы настроить учетные данные на уровне пользователя, выполните следующие действия.
 
-1. На [портале Azure](https://portal.azure.com) в меню слева последовательно выберите **Службы приложений** >  **\<любое_приложение>**  > **Центр развертывания** > **FTP** > **Информационная панель**.
+1. В [портал Azure](https://portal.azure.com)в меню слева выберите панель мониторинга **службы приложений**  >  **\<any_app>**  >  **центр развертывания**  >  **FTP**  >  **Dashboard**.
 
-    ![](./media/app-service-deployment-credentials/access-no-git.png)
+    ![Здесь показано, как можно выбрать панель мониторинга FTP в центре развертывания в службах приложений Azure.](./media/app-service-deployment-credentials/access-no-git.png)
 
     Если вы уже настроили развертывание Git, выберите **Службы приложений** >  **&lt;any_app >**  > **Центр развертывания** > **FTP/Учетные данные**.
 
-    ![](./media/app-service-deployment-credentials/access-with-git.png)
+    ![Здесь показано, как можно выбрать панель мониторинга FTP в центре развертывания в службах приложений Azure для настроенного развертывания Git.](./media/app-service-deployment-credentials/access-with-git.png)
 
 2. Выберите **Учетные данные пользователя**, укажите имя пользователя и пароль, а затем нажмите кнопку **Сохранить учетные данные**.
 
 Когда вы настроите учетные данные развертывания, имя пользователя для развертывания *Git* можно будет найти на странице **Обзор** приложения.
 
-![](./media/app-service-deployment-credentials/deployment_credentials_overview.png)
+![Здесь показано, как найти имя пользователя развертывания Git на странице обзора приложения.](./media/app-service-deployment-credentials/deployment_credentials_overview.png)
 
 Если развертывание Git настроено, на странице отображается **имя пользователя Git или развертывания**; в противном случае **имя пользователя FTP или развертывания**.
 

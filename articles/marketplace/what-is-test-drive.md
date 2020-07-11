@@ -7,12 +7,12 @@ ms.topic: article
 author: keferna
 ms.author: keferna
 ms.date: 06/19/2020
-ms.openlocfilehash: 95ca527d8f7912e2c455f94036fe61828b220257
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: abad72145b095b4da77ec499f936c6912fd970a6
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86121475"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86229454"
 ---
 # <a name="what-is-a-test-drive"></a>Что такое тестовый выпуск?
 
@@ -74,7 +74,7 @@ ms.locfileid: "86121475"
 
 ## <a name="generate-leads-from-your-test-drive"></a>Создание интересов на основе тестового диска
 
-Тестовый накопитель для коммерческого рынка — это отличный инструмент для рынков. Мы рекомендуем включить его в ваши усилия при запуске, чтобы создать больше интересов для вашего бизнеса. Подробные инструкции см. в статье [клиентские интересы из предложения коммерческого рынка](https://github.com/partner-center-portal/commercial-marketplace-get-customer-leads.md).
+Тестовый накопитель для коммерческого рынка — это отличный инструмент для рынков. Мы рекомендуем включить его в ваши усилия при запуске, чтобы создать больше интересов для вашего бизнеса. Подробные инструкции см. в статье [клиентские интересы из предложения коммерческого рынка](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/marketplace/partner-center-portal/commercial-marketplace-get-customer-leads.md).
 
 Если вы закроете свой ведущий тестовый выпуск, обязательно зарегистрируйте его в [партнерской продаже Microsoft Partner Connect](https://support.microsoft.com/help/3155788/getting-started-with-microsoft-partner-sales-connect). Кроме того, мы будем рады услышать ваше мнение о клиенте, где проигрывается тестовый диск.
 
@@ -85,6 +85,6 @@ ms.locfileid: "86121475"
 - [Технические рекомендации](https://github.com/Azure/AzureTestDrive/wiki/Test-Drive-Best-Practices)
 - [Обзор](https://assetsprod.microsoft.com/mpn/azure-marketplace-appsource-test-drives.pdf) (PDF; убедитесь, что блокирование всплывающих окон отключено)
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Следующий этап
 
 - [Техническая конфигурация тестового выпуска](test-drive-technical-configuration.md)

@@ -6,6 +6,8 @@
   href: sample-v1-code.md
 - name: Основные понятия
   items:
+    - name: Развитие платформы удостоверений Майкрософт
+      href: about-microsoft-identity-platform.md
     - name: "Преимущества обновления до версии\_2.0"
       href: azure-ad-endpoint-comparison.md
     - name: Типы приложений

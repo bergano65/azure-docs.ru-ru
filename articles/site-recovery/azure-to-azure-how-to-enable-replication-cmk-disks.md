@@ -5,14 +5,14 @@ author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 01/10/2020
+ms.date: 07/10/2020
 ms.author: mayg
-ms.openlocfilehash: 1e4dcd8847d7d79d816d80b453a37f58c45417fd
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 92b35284fd7bbb3d4f1196ee0d9bae4ce42d7c9e
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86135748"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224117"
 ---
 # <a name="replicate-machines-with-customer-managed-keys-cmk-enabled-disks"></a>Репликация компьютеров с помощью дисков с поддержкой ключей, управляемых клиентом (CMK)
 
@@ -81,3 +81,8 @@ ms.locfileid: "86135748"
 * Я добавил к реплицированному элементу новый диск с поддержкой CMK. Как можно реплицировать этот диск с помощью Azure Site Recovery?
 
     Добавление нового диска с поддержкой CMK к существующему реплицированному элементу не поддерживается. Отключите репликацию и снова включите репликацию для виртуальной машины.
+
+* Я включил управляемые ключи для платформы и клиента, как защитить мои диски?
+
+    Включение двойного шифрования с управляемыми ключами платформы и клиентами супппртедся с Site Recovery. Чтобы защитить компьютер, следуйте инструкциям в этой статье. Необходимо заранее создать двойное шифрование DES в целевом регионе. Во время включения репликации для такой виртуальной машины можно указать этот алгоритм DES для Site Recovery.
+

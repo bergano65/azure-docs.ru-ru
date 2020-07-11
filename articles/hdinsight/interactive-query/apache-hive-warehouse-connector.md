@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 05/28/2020
-ms.openlocfilehash: 3efccc44255067b7e47c468c9a35853def2fce69
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: c2590a2c745969313ae73521dbcd110fbf3b7551
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86085860"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86221023"
 ---
 # <a name="integrate-apache-spark-and-apache-hive-with-hive-warehouse-connector-in-azure-hdinsight"></a>Интеграция Apache Spark и Apache Hive с помощью Hive Warehouse Connector в Azure HDInsight
 
@@ -37,6 +37,9 @@ Apache Spark имеет API структурированной потоково�
 * запись кадра данных или потока Spark в Hive с помощью HiveStreaming.
 
 ## <a name="hive-warehouse-connector-setup"></a>Настройка Hive Warehouse Connector
+
+> [!IMPORTANT]
+> Интерактивный экземпляр HiveServer2, установленный на кластерах Spark 2,4 Корпоративный пакет безопасности, не поддерживается для использования с соединителем хранилища Hive. Вместо этого необходимо настроить отдельный интерактивный кластер HiveServer2 для размещения интерактивных рабочих нагрузок HiveServer2. Конфигурация соединителя хранилища Hive, использующая один кластер Spark 2,4, не поддерживается.
 
 Для Hive Warehouse Connector требуются отдельные кластеры для рабочих нагрузок Spark и Interactive Query. Выполните следующие действия, чтобы настроить эти кластеры в Azure HDInsight.
 

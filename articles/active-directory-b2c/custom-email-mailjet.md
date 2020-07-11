@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 06/25/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 2b66ef1a28faf97759045d40ea0f649282b2d837
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 91360776c50ce514985ad36242606223becbd933
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85398022"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86230882"
 ---
 # <a name="custom-email-verification-with-mailjet"></a>Пользовательская проверка электронной почты с помощью Маилжет
 
@@ -57,7 +57,7 @@ ms.locfileid: "85398022"
 
 ## <a name="create-a-mailjet-template"></a>Создание шаблона Маилжет
 
-После создания учетной записи Маилжет и ключа API Маилжет, хранящегося в ключе политики Azure AD B2C, создайте [динамический шаблон транзакций](https://Mailjet.com/docs/ui/sending-email/how-to-send-an-email-with-dynamic-transactional-templates/)маилжет.
+После создания учетной записи Маилжет и ключа API Маилжет, хранящегося в ключе политики Azure AD B2C, создайте [динамический шаблон транзакций](https://sendgrid.com/docs/ui/sending-email/how-to-send-an-email-with-dynamic-transactional-templates/)маилжет.
 
 1. На сайте Маилжет откройте страницу [шаблоны транзакций](https://app.mailjet.com/templates/transactional) и выберите **создать новый шаблон**.
 1. Выберите **его, записав в HTML**, а затем выберите **код с нуля**.
@@ -162,7 +162,7 @@ ms.locfileid: "85398022"
     1. В поле **Тема**введите значение по умолчанию для параметра тема. Маилжет использует это значение, если API не содержит параметр subject.
     1. В поле **имя**введите название вашей компании.
     1. В поле **адрес**выберите свой адрес электронной почты.
-    1. Нажмите кнопку **Сохранить**.
+    1. Нажмите **Сохранить**.
 1. В правом верхнем углу выберите **сохранить & опубликовать**, а затем **Да, опубликовать изменения**
 1. Запишите **идентификатор шаблона** , созданного для использования на более позднем шаге. Этот идентификатор указывается при [добавлении преобразования «утверждения](#add-the-claims-transformation)».
 
@@ -499,7 +499,7 @@ ms.locfileid: "85398022"
     </InputClaimsTransformations>
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Пример пользовательской политики проверки электронной почты можно найти на сайте GitHub:
 

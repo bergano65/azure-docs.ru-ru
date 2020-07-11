@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/23/2020
 ms.author: memildin
-ms.openlocfilehash: b395931d11c7bc7119be0122531908ed680fc3b9
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: a7ff8a0cf23bf0701a7cc35cb137ec0965f295ec
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86145982"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86223981"
 ---
 # <a name="prevent-dangling-dns-entries-and-avoid-subdomain-takeover"></a>Предотвращение висячих записей DNS и избежание поддоменного перенаправление
 
@@ -117,8 +117,8 @@ ms.locfileid: "86145982"
 
     - Регулярно просматривайте свои записи DNS, чтобы убедиться, что поддомены сопоставлены с ресурсами Azure, которые:
 
-        - **Существует** . запросите зоны DNS для ресурсов, указывающих на поддомены Azure, такие как *. azurewebsites.NET или *. cloudapp.Azure.com (см. [этот список ссылок](azure-domains.md)).
-        - **Вы сами** подтверждаете, что являетесь владельцем всех ресурсов, на которые нацелены поддомены DNS.
+        - Существует. запросите зоны DNS для ресурсов, указывающих на поддомены Azure, такие как *. azurewebsites.net или *. cloudapp.azure.com (см. [этот список ссылок](azure-domains.md)).
+        - Вы сами подтверждаете, что являетесь владельцем всех ресурсов, на которые нацелены поддомены DNS.
 
     - Настройте каталог услуг конечных точек полного доменного имени (FQDN) Azure и владельцев приложений. Чтобы создать каталог услуг, выполните следующий запрос графа ресурсов Azure (ARG) с параметрами из следующей таблицы:
     
@@ -127,29 +127,18 @@ ms.locfileid: "86145982"
         >
         > **Ограничения** . в графе ресурсов Azure есть ограничения на регулирование и разбиение на страницы, которые следует учитывать при наличии крупной среды Azure. Дополнительные [сведения](https://docs.microsoft.com/azure/governance/resource-graph/concepts/work-with-data) о работе с большими наборами данных ресурсов Azure.  
 
-        ```
-        Search-AzGraph -Query "resources | where type == '[ResourceType]' | project tenantId, subscriptionId, type, resourceGroup, name, endpoint = [FQDNproperty]"
+        ```powershell
+        Search-AzGraph -Query "resources | where type == '<ResourceType>' | 
+        project tenantId, subscriptionId, type, resourceGroup, name, 
+        endpoint = <FQDNproperty>"
         ``` 
-        
-        Например, этот запрос возвращает ресурсы из службы приложений Azure:
-
-        ```
-        Search-AzGraph -Query "resources | where type == 'microsoft.web/sites' | project tenantId, subscriptionId, type, resourceGroup, name, endpoint = properties.defaultHostName"
-        ```
-        
-        Можно также сочетать несколько типов ресурсов. Этот пример запроса возвращает ресурсы из службы приложений Azure **и** слотов службы приложений Azure:
-
-        ```azurepowershell
-        Search-AzGraph -Query "resources | where type in ('microsoft.web/sites', 'microsoft.web/sites/slots') | project tenantId, subscriptionId, type, resourceGroup, name, endpoint = properties.defaultHostName"
-        ```
-
 
         Параметры каждой службы для запроса ARG:
 
-        |Имя ресурса  |[тип_ресурса]  | [Фкднпроперти]  |
+        |Имя ресурса  | `<ResourceType>`  | `<FQDNproperty>`  |
         |---------|---------|---------|
         |Azure Front Door.|microsoft.network/frontdoors|Properties. cName|
-        |Хранилище BLOB-объектов Azure|microsoft.storage/storageaccounts|Properties. первичных. BLOB|
+        |хранилище BLOB-объектов Azure|microsoft.storage/storageaccounts|Properties. первичных. BLOB|
         |Azure CDN|microsoft.cdn/profiles/endpoints|Свойства. имя узла|
         |Общедоступные IP-адреса|microsoft.network/publicipaddresses|Properties. dnsSettings. FQDN|
         |Диспетчер трафика Azure|microsoft.network/trafficmanagerprofiles|Properties. dnsConfig. FQDN|
@@ -158,6 +147,23 @@ ms.locfileid: "86145982"
         |Служба приложений Azure|microsoft.web/sites|Properties. параметром DefaultHostName|
         |Служба приложений Azure — слоты|microsoft.web/sites/slots|Properties. параметром DefaultHostName|
 
+        
+        **Пример 1** . Этот запрос возвращает ресурсы из службы приложений Azure: 
+
+        ```powershell
+        Search-AzGraph -Query "resources | where type == 'microsoft.web/sites' | 
+        project tenantId, subscriptionId, type, resourceGroup, name, 
+        endpoint = properties.defaultHostName"
+        ```
+        
+        **Пример 2** . Этот запрос объединяет несколько типов ресурсов для возврата ресурсов из службы приложений Azure **и** из слотов службы приложений Azure:
+
+        ```powershell
+        Search-AzGraph -Query "resources | where type in ('microsoft.web/sites', 
+        'microsoft.web/sites/slots') | project tenantId, subscriptionId, type, 
+        resourceGroup, name, endpoint = properties.defaultHostName"
+        ```
+
 
 - **Создание процедур для исправления:**
     - При обнаружении висячих DNS-записей команде необходимо выяснить, не произошло ли нарушение безопасности.
@@ -165,7 +171,7 @@ ms.locfileid: "86145982"
     - Удалите запись DNS, если она больше не используется, или укажите правильный ресурс Azure (FQDN), принадлежащий вашей организации.
  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о связанных службах и функциях Azure, которые можно использовать для защиты от перенаправление поддоменов, см. на следующих страницах.
 
@@ -173,4 +179,4 @@ ms.locfileid: "86145982"
 
 - [Использовать идентификатор проверки домена при добавлении пользовательских доменов в службе приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain#get-domain-verification-id) 
 
--    [Краткое руководство. Выполните первый запрос графика ресурсов с помощью Azure PowerShell](https://docs.microsoft.com/azure/governance/resource-graph/first-query-powershell)
+- [Краткое руководство. Выполните первый запрос графика ресурсов с помощью Azure PowerShell](https://docs.microsoft.com/azure/governance/resource-graph/first-query-powershell)

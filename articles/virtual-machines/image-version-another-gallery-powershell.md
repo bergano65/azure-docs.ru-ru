@@ -1,5 +1,5 @@
 ---
-title: Копирование изображения из другой коллекции
+title: Копирование изображения из другой коллекции с помощью PowerShell
 description: Копирование изображения из другой коллекции с помощью Azure PowerShell.
 author: cynthn
 ms.service: virtual-machines
@@ -9,19 +9,19 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 10cd8514b529f29f68ea3df14cdc208dd8fdd556
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1fe26a880979a431e456d9a1819dfd1b18d25f77
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82796932"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86221227"
 ---
-# <a name="copy-an-image-from-another-gallery"></a>Копирование изображения из другой коллекции
+# <a name="copy-an-image-from-another-gallery-using-powershell"></a>Копирование изображения из другой коллекции с помощью PowerShell
 
 При наличии нескольких коллекций в Организации можно создавать образы из образов, хранящихся в других галереях. Например, у вас может быть коллекция разработки и тестирования для создания и тестирования новых образов. Когда они готовы к использованию в рабочей среде, их можно скопировать в рабочую коллекцию, используя этот пример. Вы также можете создать образ из изображения в другой коллекции, используя [Azure CLI](image-version-another-gallery-cli.md).
 
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Для работы с этой статьей необходимо наличие существующей коллекции источников, определения образа и версии образа. Кроме того, у вас должна быть конечная коллекция. 
 
@@ -70,7 +70,7 @@ Get-AzGalleryImageDefinition `
 ```
 
 
-Результат должен выглядеть следующим образом.
+Результат будет выглядеть примерно следующим образом:
 
 ```output
 {
@@ -165,3 +165,5 @@ $job.State
 Создайте виртуальную машину на основе [обобщенной](vm-generalized-image-version-powershell.md) или [специализированной](vm-specialized-image-version-powershell.md) версии образа.
 
 С помощью [построителя образов Azure (Предварительная версия)](./linux/image-builder-overview.md) можно автоматизировать создание версий изображений, а также использовать его для обновления и [создания новой версии образа из существующей версии образа](./linux/image-builder-gallery-update-image-version.md). 
+
+Сведения о том, как предоставить сведения о плане покупки, см. в разделе [предоставление сведений о плане покупки Azure Marketplace при создании образов](marketplace-images.md).

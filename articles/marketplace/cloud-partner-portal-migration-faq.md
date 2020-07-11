@@ -7,12 +7,12 @@ ms.topic: article
 author: anbene
 ms.author: mingshen
 ms.date: 06/29/2020
-ms.openlocfilehash: 2192b3757281bf6796fbf93f83cab6e71deb29f6
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: e708d9a32d63c306a2d1ee8d06b044652f108dde
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86120560"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86231885"
 ---
 # <a name="frequently-asked-questions-about-transitioning-from-the-cloud-partner-portal-to-partner-center"></a>Часто задаваемые вопросы о переходе от Портал Cloud Partner в центр партнеров
 
@@ -30,7 +30,7 @@ ms.locfileid: "86120560"
 | Новые покупки и развертывания | Без изменений. Ваши клиенты могут продолжать покупать и развертывать предложения без перерывов. |
 | выплаты; | Все покупки и развертывания будут по своему счету использоваться как обычные. Узнайте больше о том [, как получить оплату в коммерческом магазине](partner-center-portal/get-paid.md). |
 | Интеграция API с существующими [API Портала Cloud Partner](cloud-partner-portal-api-overview.md) | Существующие API Портал Cloud Partner по-прежнему поддерживаются, и существующие интеграции по-прежнему работают. Дополнительные сведения см [. в разделе Поддержка API-интерфейсов портал Cloud Partner RESTful.](#are-the-cloud-partner-portal-rest-apis-still-supported) |
-| Аналитика | Вы можете продолжить мониторинг продаж, оценить производительность и оптимизировать предложения в коммерческом магазине, просмотрев аналитику в центре партнеров. Дополнительные сведения см. в статье [доступ к аналитическим отчетам для коммерческого рынка в центре партнеров](partner-center-portal/analytics.md). |
+| Analytics | Вы можете продолжить мониторинг продаж, оценить производительность и оптимизировать предложения в коммерческом магазине, просмотрев аналитику в центре партнеров. Дополнительные сведения см. в статье [доступ к аналитическим отчетам для коммерческого рынка в центре партнеров](partner-center-portal/analytics.md). |
 |||
 
 ## <a name="do-i-need-to-create-a-new-account-to-manage-my-offers-in-partner-center"></a>Нужно ли создавать новую учетную запись для управления моими предложениями в центре партнеров?
@@ -75,8 +75,8 @@ ms.locfileid: "86120560"
 | Контейнер | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [Создание предложения контейнера Azure](partner-center-portal/create-azure-container-offer.md). |
 | Консультационная услуга | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [Создание предложения службы консультационных услуг](partner-center-portal/create-consulting-service-offer.md). |
 | Управляемая служба | Да | Войдите в центр партнеров, чтобы создать новые предложения и управлять предложениями, созданными в Портал Cloud Partner. Дополнительные сведения см. в статье [Создание предложения управляемой службы](partner-center-portal/create-new-managed-service-offer.md). |
-| Управляемая служба Dynamics NAV | нет | Корпорация Майкрософт изменила управляемую службу Dynamics NAV на [dynamics 365 Business Central](https://docs.microsoft.com/dynamics365/business-central/), поэтому мы не перечисленными предложениями динамической службы Dynamics NAV из AppSource. Эти предложения больше не обнаруживаются клиентами и не были перемещены в центр партнеров. Чтобы сделать ваши предложения доступными в AppSource, адаптируйте их к предложениям Dynamics 365 Business Central и отправьте их в [Центр партнеров](https://partner.microsoft.com/). Дополнительные сведения см. в статье [Создание предложения Dynamics 365 Business Central](partner-center-portal/create-new-business-central-offer.md). |
-| Cortana Intelligence | нет | Корпорация Майкрософт изменила карту «Road» для Cortana Intelligence, так что мы не перечисленными Cortana Intelligence прямых предложений из AppSource. Эти предложения больше не обнаруживаются клиентами и не были перемещены в центр партнеров. Чтобы сделать ваши предложения доступными в коммерческом магазине, адаптируйте предложения к программному обеспечению как услуга (SaaS) и отправьте их в [Центр партнеров](hhttps://partner.microsoft.com/). Дополнительные сведения см. [в контрольном списке создания предложений SaaS в центре партнеров](partner-center-portal/offer-creation-checklist.md). |
+| Управляемая служба Dynamics NAV | Нет | Корпорация Майкрософт изменила управляемую службу Dynamics NAV на [dynamics 365 Business Central](https://docs.microsoft.com/dynamics365/business-central/), поэтому мы не перечисленными предложениями динамической службы Dynamics NAV из AppSource. Эти предложения больше не обнаруживаются клиентами и не были перемещены в центр партнеров. Чтобы сделать ваши предложения доступными в AppSource, адаптируйте их к предложениям Dynamics 365 Business Central и отправьте их в [Центр партнеров](https://partner.microsoft.com/). Дополнительные сведения см. в статье [Создание предложения Dynamics 365 Business Central](partner-center-portal/create-new-business-central-offer.md). |
+| Cortana Intelligence | Нет | Корпорация Майкрософт изменила карту «Road» для Cortana Intelligence, так что мы не перечисленными Cortana Intelligence прямых предложений из AppSource. Эти предложения больше не обнаруживаются клиентами и не были перемещены в центр партнеров. Чтобы сделать ваши предложения доступными в коммерческом магазине, адаптируйте предложения к программному обеспечению как услуга (SaaS) и отправьте их в [Центр партнеров](https://partner.microsoft.com/). Дополнительные сведения см. [в контрольном списке создания предложений SaaS в центре партнеров](partner-center-portal/offer-creation-checklist.md). |
 
 ## <a name="i-cant-find-my-cloud-partner-portal-offers-in-partner-center"></a>Мне не удается найти мои предложения Портал Cloud Partner в центре партнеров
 

@@ -5,11 +5,12 @@ ms.topic: conceptual
 author: MSNev
 ms.author: newylie
 ms.date: 06/05/2020
-ms.openlocfilehash: 50a7e9520730159ad2df3ec3e0b75fcfa0c5ce0a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dae6b40e7ec8a2bb6f635a6ffca4886ed09c1364
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84450588"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86229539"
 ---
 # <a name="troubleshooting-sdk-load-failure-for-javascript-web-apps"></a>Устранение неполадок при загрузке пакета SDK для веб-приложений JavaScript
 
@@ -28,7 +29,7 @@ Editor Note: This link name above "SDK Load Failure" has a direct references by 
 
 Сведения о стеке включают основные сведения с URL-адресами, используемыми конечным пользователем.
 
-| name                      | Описание:                                                                                                  |
+| Имя                      | Описание                                                                                                  |
 |---------------------------|--------------------------------------------------------------------------------------------------------------|
 | &lt;&nbsp;Конечная точка CDN&gt; | URL-адрес, который был использован (и не пройден) для загрузки пакета SDK.                                                      |
 | &lt;Ссылка на справку &nbsp;&gt;    | URL-адрес, ссылающийся на документацию по устранению неполадок (на этой странице).                                              |
@@ -75,11 +76,11 @@ Editor Note: This link name above "SDK Load Failure" has a direct references by 
 Так как фрагмент и его конфигурация возвращаются приложением как часть каждой создаваемой страницы, можно изменить конфигурацию фрагмента, `src` чтобы использовать другой URL-адрес для пакета SDK. Используя этот подход, можно обойти проблему заблокированной сети CDN, так как новый URL-адрес не должен блокироваться.
 
 Текущие Application Insights конечных точек CDN пакета SDK для JavaScript
-- https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js
-- https://js.monitor.azure.com/scripts/b/ai.2.min.js
+- `https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js`
+- `https://js.monitor.azure.com/scripts/b/ai.2.min.js`
 
 > [!NOTE]
-> https://js.monitor.azure.com/Конечная точка — это псевдоним, позволяющий переключаться между поставщиками CDN в течение приблизительно 5 минут без необходимости изменять конфигурацию. Это позволит нам быстрее устранять обнаруженные проблемы, связанные с CDN, если поставщик CDN имеет свои региональные или глобальные проблемы, не требуя от пользователя настраивать параметры.
+> `https://js.monitor.azure.com/`Конечная точка — это псевдоним, позволяющий переключаться между поставщиками CDN в течение приблизительно 5 минут без необходимости изменять конфигурацию. Это позволит нам быстрее устранять обнаруженные проблемы, связанные с CDN, если поставщик CDN имеет свои региональные или глобальные проблемы, не требуя от пользователя настраивать параметры.
 
 ## <a name="sdk-failed-to-initialize-after-loading-the-script"></a>Не удалось инициализировать пакет SDK после загрузки скрипта
 
@@ -205,6 +206,6 @@ Editor Note: This link name above "SDK Load Failure" has a direct references by 
 Как и в случае с фрагментом, также возможно, что ваши собственные скрипты (с использованием пакетов SDK NPM или без них) могут быть затронуты теми же проблемами блокировки, которые перечислены здесь, поэтому в зависимости от приложения, пользователей и вашей инфраструктуры может потребоваться реализовать нечто вроде логики в фрагменте для обнаружения и сообщения этих проблем.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 - [Получение дополнительной справки за счет регистрации проблемы на GitHub](https://github.com/Microsoft/ApplicationInsights-JS/issues)
 - [Отслеживать использование веб-страниц](javascript.md)

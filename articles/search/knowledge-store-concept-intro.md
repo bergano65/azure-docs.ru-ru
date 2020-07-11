@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 75ecfcca24aa801c2ec277e810f60dbc0a9167fc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 78a8e0a46fd60f14ea3bae7485c737aa4fe3c60e
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85565276"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86230780"
 ---
 # <a name="knowledge-store-in-azure-cognitive-search"></a>Хранилище знаний в Azure Когнитивный поиск
 
@@ -138,8 +138,8 @@ REST API — это один из механизмов, с помощью кот
 
 Версия REST API `2020-06-30` предоставляет хранилище знаний через дополнительные определения в наборе навыков. Дополнительные сведения о способах вызова API также см. в разделе [Создание хранилища знаний с помощью Postman](knowledge-store-create-rest.md).
 
-+ [Создание набора навыков (API-Version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/2020-06-30/create-skillset)
-+ [Обновить набор навыков (API-Version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/2020-06-30/update-skillset)
++ [Создание набора навыков (API-Version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
++ [Обновить набор навыков (API-Version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/update-skillset)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

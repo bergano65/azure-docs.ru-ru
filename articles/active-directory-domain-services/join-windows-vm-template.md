@@ -9,13 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/31/2020
+ms.date: 07/09/2020
 ms.author: iainfou
-ms.openlocfilehash: 1e725fb483afed0f126248737c2e9121ce823a45
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fdef11fec93d4ba6254957ad14e0612e2fd05580
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84734696"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86221363"
 ---
 # <a name="join-a-windows-server-virtual-machine-to-an-azure-active-directory-domain-services-managed-domain-using-a-resource-manager-template"></a>Присоединение виртуальной машины Windows Server к управляемому домену доменных служб Azure Active Directory с помощью шаблона диспетчер ресурсов
 
@@ -134,7 +135,7 @@ ms.locfileid: "84734696"
 
 Для успешного завершения развертывания потребуется несколько секунд. По завершении указанные виртуальные машины Windows присоединяются к управляемому домену и могут управляться или входить с помощью учетных записей домена.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы использовали портал Azure для настройки и развертывания ресурсов с помощью шаблонов. Вы также можете развертывать ресурсы с помощью шаблонов диспетчер ресурсов, используя [Azure PowerShell][deploy-powershell] или [Azure CLI][deploy-cli].
 

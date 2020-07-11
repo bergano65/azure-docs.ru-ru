@@ -10,12 +10,12 @@ ms.date: 02/05/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 7e47440a54d733d0b5d849123633bf7e067fcd81
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bf7d72e6f16605827b55e3a460a9b28010842d2f
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84805702"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86220836"
 ---
 # <a name="create-an-account-that-supports-customer-managed-keys-for-tables-and-queues"></a>Создание учетной записи, поддерживающей управляемые клиентом ключи для таблиц и очередей
 
@@ -61,7 +61,7 @@ az feature register --namespace Microsoft.Storage \
 
 # <a name="template"></a>[Шаблон](#tab/template)
 
-Н/Д
+Недоступно
 
 ---
 
@@ -93,7 +93,7 @@ az feature show --namespace Microsoft.Storage \
 
 # <a name="template"></a>[Шаблон](#tab/template)
 
-Н/Д
+Недоступно
 
 ---
 
@@ -119,7 +119,7 @@ az provider register --namespace 'Microsoft.Storage'
 
 # <a name="template"></a>[Шаблон](#tab/template)
 
-Н/Д
+Недоступно
 
 ---
 
@@ -237,7 +237,7 @@ $account.Encryption.Services.Table
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Чтобы убедиться, что служба в учетной записи хранения использует ключ шифрования учетной записи, вызовите команду [AZ Storage Account](/cli/azure/storage/account#az-storage-account-show) . Эта команда возвращает набор свойств учетной записи хранения и их значений. Найдите `keyType` поле для каждой службы в свойстве encryption и убедитесь, что оно имеет значение `Account` .
+Чтобы убедиться, что служба в учетной записи хранения использует ключ шифрования учетной записи, вызовите команду [AZ Storage Accounting](/cli/azure/storage/account#az-storage-account-show) . Эта команда возвращает набор свойств учетной записи хранения и их значений. Найдите `keyType` поле для каждой службы в свойстве encryption и убедитесь, что оно имеет значение `Account` .
 
 ```azurecli
 az storage account show /

@@ -11,20 +11,29 @@ ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 01/06/2020
-ms.openlocfilehash: 43b2a02acc04a5c81b9e7bfbe3bfb1551b48ed52
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 9f41cb11960dbe9487231f14b005376261075a83
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85964623"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86231511"
 ---
 # <a name="documentation-changes-for-sql-server-on-azure-virtual-machines"></a>Изменения в документации по SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
 Azure позволяет развертывать виртуальные машины со встроенным образом SQL Server. В этой статье перечислены изменения в документации, связанные с новыми функциями и улучшениями в последних выпусках [SQL Server на виртуальных машинах Azure](https://azure.microsoft.com/services/virtual-machines/sql-server/). 
 
+## <a name="july-2020"></a>Июль 2020 г.
 
-## <a name="june-2020"></a>июнь 2020 г.
+
+| Изменения | Сведения |
+| --- | --- |
+| **Перенос журнала на диск Ultra** | Узнайте, как можно [перенести файл журнала на диск Ultra](storage-migrate-to-ultradisk.md) , чтобы использовать высокую производительность и низкую задержку. | 
+
+
+
+
+## <a name="june-2020"></a>Июнь 2020 г.
 
 
 | Изменения | Сведения |
@@ -35,7 +44,7 @@ Azure позволяет развертывать виртуальные маш�
 | &nbsp; | &nbsp; |
 
 
-## <a name="may-2020"></a>Май 2020 г. 
+## <a name="may-2020"></a>Май 2020 г. 
 
 | Изменения | Сведения |
 | --- | --- |

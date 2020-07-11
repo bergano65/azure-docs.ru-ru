@@ -5,15 +5,15 @@ services: virtual-desktop
 author: HeidiLohr
 ms.service: virtual-desktop
 ms.topic: how-to
-ms.date: 04/30/2020
+ms.date: 07/09/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 158ac92a930b53e02ee81570c62711ca27dc4ae8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bfe428b9eba1f83f3e1bb05c3941c4c56317c9bc
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85200398"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86223114"
 ---
 # <a name="configure-the-personal-desktop-host-pool-assignment-type"></a>Настройка типа назначения пула узлов персонального рабочего стола
 
@@ -28,7 +28,7 @@ ms.locfileid: "85200398"
 >[!NOTE]
 > Инструкции в этой статье применимы только к пулам узлов персональных рабочих столов, а не к общим пулам узлов, поскольку пользователи в общих пулах узлов не назначены никаким определенным узлам сеансов.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 В этой статье предполагается, что вы уже скачали и установили модуль PowerShell для виртуальных рабочих столов Windows. Если вы этого не сделали, следуйте инструкциям в разделе [Настройка модуля PowerShell](powershell-module.md).
 
@@ -71,6 +71,21 @@ New-AzRoleAssignment -SignInName <userupn> -RoleDefinitionName "Desktop Virtuali
 ```powershell
 Update-AzWvdSessionHost -HostPoolName <hostpoolname> -Name <sessionhostname> -ResourceGroupName <resourcegroupname> -AssignedUser <userupn>
 ```
+
+Чтобы напрямую назначить пользователя узлу сеансов в портал Azure:
+
+1. Войдите на портал Azure по адресу <https://portal.azure.com>.
+2. В строке поиска введите **Windows Virtual Desktop** .
+3. В разделе " **службы**" выберите **Windows виртуальный рабочий стол**.
+4. На странице виртуальный рабочий стол Windows перейдите в меню в левой части окна и выберите **Пулы узлов**.
+5. Выберите имя пула узлов, который требуется обновить.
+6. Затем перейдите в меню в левой части окна и выберите **группы приложений**.
+7. Выберите имя группы приложений для настольных систем, которую требуется изменить, а затем в меню в левой части окна выберите **назначения** .
+8. Нажмите кнопку **+ Добавить**, а затем выберите пользователей или группы пользователей, которым требуется опубликовать эту группу приложений рабочей среды.
+9. Выберите **назначить виртуальную машину** на панели информации, чтобы назначить пользователю узел сеанса.
+10. Выберите узел сеанса, который нужно назначить пользователю, а затем щелкните **назначить**.
+11. Выберите пользователя, которому нужно назначить узел сеанса, из списка доступных пользователей.
+12. Когда все будет готово, нажмите **кнопку Выбрать**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

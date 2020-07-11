@@ -14,12 +14,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: a36fdbb985711887baa04320bb75e1a85cab84fe
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0819f5196fffca25a840dc16d1df04cdd0a55029
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85253874"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86223318"
 ---
 # <a name="register-the-current-user-for-push-notifications-by-using-aspnet"></a>Регистрация текущего пользователя для push-уведомлений с помощью ASP.NET
 
@@ -44,11 +44,11 @@ ms.locfileid: "85253874"
 
      На этом этапе раскадровка выглядит следующим образом:
 
-     ![][0]
+     ![Снимок экрана приложения MainStoryboard_iPhone. Storyboard с добавленными компонентами.][0]
 
 2. Во вспомогательном редакторе создайте выходы для всех коммутируемых элементов управления и вызовите их, соедините текстовые поля с контроллером представления (делегируйте) и создайте **Действие** для кнопки **Вход**.
 
-    ![][1]
+    ![Снимок экрана редактора помощника в приложении MainStoryboard_iPhone. Storyboard][1]
 
     Теперь файл BreakingNewsViewController.h должен содержать следующий код:
 

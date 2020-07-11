@@ -4,8 +4,6 @@
   items:
     - name: Сведения о платформе удостоверений Майкрософт
       href: v2-overview.md
-    - name: Развитие платформы удостоверений Майкрософт
-      href: about-microsoft-identity-platform.md
 - name: Краткие руководства
   expanded: true
   items:

@@ -1,28 +1,26 @@
 ---
-title: Выбор образов виртуальных машин Windows в Azure
+title: Поиск и использование образов Azure Marketplace
 description: Вы можете использовать Azure PowerShell для определения издателя, предложения, номера SKU и версии для образов виртуальных машин из Marketplace.
 author: cynthn
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.subservice: imaging
 ms.topic: article
-ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 01/25/2019
 ms.author: cynthn
-ms.openlocfilehash: 46a2badbbe957f6a8a6af7f5a40633ea24cadcd4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e1ddc354e95185b6b2ba8bcb821fcabd5721c442
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82083371"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224253"
 ---
-# <a name="find-windows-vm-images-in-the-azure-marketplace-with-azure-powershell"></a>Поиск образов виртуальных машин Windows в Azure Marketplace с помощью Azure PowerShell
+# <a name="find-and-use-vm-images-in-the-azure-marketplace-with-azure-powershell"></a>Поиск и использование образов виртуальных машин в Azure Marketplace с помощью Azure PowerShell
 
-В этой статье описывается, как с помощью Azure PowerShell находить образы виртуальных машин в Azure Marketplace. При создании виртуальной машины программными средствами с помощью PowerShell, шаблонов Resource Manager или других средств вы можете указать образ в Marketplace.
+В этой статье описывается, как с помощью Azure PowerShell находить образы виртуальных машин в Azure Marketplace. После этого можно указать образ Marketplace при создании виртуальной машины.
 
 Вы также можете просмотреть доступные образы и предложения в онлайн-магазине [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/), на [портале Azure](https://portal.azure.com) или с помощью [Azure CLI](../linux/cli-ps-findimage.md). 
 
- 
 
 [!INCLUDE [virtual-machines-common-image-terms](../../../includes/virtual-machines-common-image-terms.md)]
 
@@ -41,8 +39,8 @@ ms.locfileid: "82083371"
 | MicrosoftWindowsServer |WindowsServer |2012-R2-Datacenter |
 | MicrosoftWindowsServer |WindowsServer |2012-Datacenter |
 | MicrosoftSharePoint |MicrosoftSharePointServer |2019 |
-| MicrosoftSQLServer |SQL2019 WS2016 |Enterprise |
-| MicrosoftRServer |RServer-WS2016 |Enterprise |
+| MicrosoftSQLServer |SQL2019 WS2016 |Корпоративная публикация |
+| MicrosoftRServer |RServer-WS2016 |Корпоративная публикация |
 
 ## <a name="navigate-the-images"></a>Переход к образам
 
@@ -318,7 +316,6 @@ $vmConfig = Set-AzVMSourceImage -VM $vmConfig -PublisherName $publisherName -Off
 
 Инструкции по быстрому созданию виртуальной машины с помощью командлета `New-AzVM` на основе полученных данных образа см. в статье [Создание виртуальной машины Windows с помощью PowerShell](quick-create-powershell.md).
 
-
-См. пример сценария PowerShell для [создания полностью настроенной виртуальной машины](../scripts/virtual-machines-windows-powershell-sample-create-vm.md).
+Дополнительные сведения об использовании образов Azure Marketplace для создания пользовательских образов в общей коллекции образов см. в статье [предоставление сведений о плане покупки Azure Marketplace при создании образов](../marketplace-images.md).
 
 

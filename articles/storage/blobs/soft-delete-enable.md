@@ -9,11 +9,12 @@ ms.topic: how-to
 ms.date: 05/15/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 970a6dfc167a6bef7984598c60e7ce89c6e4b34c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2914dfed14360c114476025c74f3dc0c03d82e25
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84463728"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224899"
 ---
 # <a name="enable-and-manage-soft-delete-for-blobs"></a>Включение и контроль обратимого удаления для BLOB-объектов
 
@@ -39,31 +40,31 @@ ms.locfileid: "84463728"
 
 5. Нажмите кнопку **Сохранить**, чтобы подтвердить свои параметры защиты данных.
 
-![](media/soft-delete-enable/storage-blob-soft-delete-portal-configuration.png)
+![Снимок экрана портала Azure с выбранной службой BLOB-объектов защиты данных.](media/soft-delete-enable/storage-blob-soft-delete-portal-configuration.png)
 
 Чтобы просмотреть обратимо удаленные большие двоичные объекты, установите флажок **Show deleted blobs** (Показать удаленные большие двоичные объекты).
 
-![](media/soft-delete-enable/storage-blob-soft-delete-portal-view-soft-deleted.png)
+![Снимок экрана со страницей службы BLOB-объектов для защиты данных с выделенным параметром "Показывать удаленные большие двоичные объекты".](media/soft-delete-enable/storage-blob-soft-delete-portal-view-soft-deleted.png)
 
 Чтобы просмотреть обратимо удаленные моментальные снимки для данного большого двоичного объекта, выберите большой двоичный объект, а затем щелкните **Просмотреть моментальные снимки**.
 
-![](media/soft-delete-enable/storage-blob-soft-delete-portal-view-soft-deleted-snapshots.png)
+![Снимок экрана со страницей службы BLOB-объектов для защиты данных с выделенным параметром "просмотреть моментальные снимки".](media/soft-delete-enable/storage-blob-soft-delete-portal-view-soft-deleted-snapshots.png)
 
 Установите флажок **Показать удаленные моментальные снимки**.
 
-![](media/soft-delete-enable/storage-blob-soft-delete-portal-view-soft-deleted-snapshots-check.png)
+![Снимок экрана страницы "Просмотр моментальных снимков" с выделенным параметром "Показать удаленные BLOB-объекты".](media/soft-delete-enable/storage-blob-soft-delete-portal-view-soft-deleted-snapshots-check.png)
 
 Щелкнув обратимо удаленный большой двоичный объект или моментальный снимок, обратите внимание на новые свойства большого двоичного объекта. Они указывают, когда объект был удален и количество дней, оставшихся до полного удаления большого двоичного объекта или моментального снимка. Если обратимо удаленный объект не является моментальным снимком, его удаление можно отменить.
 
-![](media/soft-delete-enable/storage-blob-soft-delete-portal-properties.png)
+![Снимок экрана с подробными сведениями об обратимо удаленном объекте.](media/soft-delete-enable/storage-blob-soft-delete-portal-properties.png)
 
 Помните, что отмена удаления большого двоичного объекта также отменит удаление всех связанных с ним моментальных снимков. Чтобы обратимо удалить моментальные снимки активного большого двоичного объекта, щелкните его и выберите **Undelete all snapshots** (Отменить удаление всех моментальных снимков).
 
-![](media/soft-delete-enable/storage-blob-soft-delete-portal-undelete-all-snapshots.png)
+![Снимок экрана со сведениями об обратимо удаленном большом двоичном объекте.](media/soft-delete-enable/storage-blob-soft-delete-portal-undelete-all-snapshots.png)
 
 После отмены удаления моментальных снимков большого двоичного объекта можно щелкнуть **Повысить уровень**, чтобы скопировать моментальный снимок в корневой большой двоичный объект, тем самым восстановив большой двоичный объект в моментальный снимок.
 
-![](media/soft-delete-enable/storage-blob-soft-delete-portal-promote-snapshot.png)
+![Снимок экрана страницы "Просмотр моментальных снимков" с выделенным параметром "повысить уровень".](media/soft-delete-enable/storage-blob-soft-delete-portal-promote-snapshot.png)
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 

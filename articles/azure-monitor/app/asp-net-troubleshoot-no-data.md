@@ -3,11 +3,12 @@ title: Устранение неполадок, связанных с тем, ч
 description: Не отображаются данные в Azure Application Insights? Попробуйте здесь.
 ms.topic: conceptual
 ms.date: 05/21/2020
-ms.openlocfilehash: 59543adaf01a8e19f0e3eefd167234f6c5d18deb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3f1c4a741bf092ab89638fdca130a52d96318157
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84485170"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86221040"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-netnet-core"></a>Устранение неполадок, связанных с тем, что в Application Insights для .NET/.NET Core не отображаются данные
 
@@ -123,7 +124,7 @@ ms.locfileid: "84485170"
 *После запуска приложения и открытия службы Application Insights в Microsoft Azure на всех диаграммах отображаются сообщения "Сведения о сборе…" или "Не настроено".* Или отображаются *только представление страницы и пользовательские данные, но нет данных сервера.*
 
 * Запустите приложение в режиме отладки в Visual Studio (F5). Используйте приложение таким образом, чтобы создать данные телеметрии. Проверьте, можете ли вы просматривать события, зарегистрированные в окне вывода Visual Studio.  
-  ![](./media/asp-net-troubleshoot-no-data/output-window.png)
+  ![Снимок экрана, показывающий запуск приложения в режиме отладки в Visual Studio.](./media/asp-net-troubleshoot-no-data/output-window.png)
 * На портале Application Insights откройте колонку [Diagnostic Search](../../azure-monitor/app/diagnostic-search.md)(Поиск по журналу диагностики). Как правило, сначала данные отображаются здесь.
 * Нажмите кнопку «Обновить». Колонка периодически обновляется, однако ее можно обновить и вручную. При значительных значениях временного диапазона интервал обновления увеличивается.
 * Проверьте соответствие ключей инструментирования. В основной колонке приложения на портале Application Insights в раскрывающемся списке **Основные компоненты** найдите **ключ инструментирования**. Затем в Visual Studio в своем проекте откройте файл ApplicationInsights.config и найдите `<instrumentationkey>`. Ключи должны совпадать. В противном случае выполните одно из таких действий:  

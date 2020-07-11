@@ -8,12 +8,12 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 8e014e7a1c564377582e4503218c4129619daa91
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6f34ffcf836eddedfb3962471ef3c777ba7880c5
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80410739"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224224"
 ---
 # <a name="key-vault-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Key Vault для Windows
 
@@ -58,8 +58,12 @@ ms.locfileid: "80410739"
           "certificateStoreLocation": <certificate store location, currently it works locally only e.g.: "LocalMachine">,
           "requireInitialSync": <initial synchronization of certificates e..g: true>,
           "observedCertificates": <list of KeyVault URIs representing monitored certificates, e.g.: "https://myvault.vault.azure.net/secrets/mycertificate"
-        }      
-      }
+        },
+        "authenticationSettings": {
+                "msiEndpoint":  <Optional MSI endpoint e.g.: "http://169.254.169.254/metadata/identity">,
+                "msiClientId":  <Optional MSI identity e.g.: "c7373ae5-91c2-4165-8ab6-7381d6e75619">
+        }
+       }
       }
     }
 ```
@@ -68,6 +72,11 @@ ms.locfileid: "80410739"
 > Наблюдаемые URL-адреса сертификатов должны иметь формат `https://myVaultName.vault.azure.net/secrets/myCertName`.
 > 
 > Это связано с тем, что путь `/secrets` возвращает полный сертификат, включая закрытый ключ, а путь `/certificates` — нет. Дополнительные сведения о сертификатах можно найти в статье [Сертификаты Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates#key-vault-certificates).
+
+> [!NOTE]
+> Свойство "authenticationSettings" необязательно для сценариев, если у виртуальной машины несколько назначенных удостоверений.
+> Это позволяет использовать задающего удостоверения для проверки подлинности в Key Vault.
+
 
 ### <a name="property-values"></a>Значения свойств
 
@@ -83,6 +92,8 @@ ms.locfileid: "80410739"
 | certificateStoreLocation  | LocalMachine | строка |
 | requiredInitialSync | Да | Логическое |
 | observedCertificates  | ["https://myvault.vault.azure.net/secrets/mycertificate"] | массив строк
+| мсиендпоинт | http://169.254.169.254/metadata/identity | строка |
+| msiClientId | c7373ae5-91c2-4165-8ab6-7381d6e75619 | строка |
 
 
 ## <a name="template-deployment"></a>Развертывание шаблона

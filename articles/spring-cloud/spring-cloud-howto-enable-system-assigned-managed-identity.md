@@ -6,18 +6,19 @@ ms.author: brendm
 ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 05/13/2020
-ms.openlocfilehash: d113d20e87d58bad007a35fce47d597a67849a6e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2aadc5806f0c5c610dc28b32039ca944af87ab13
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85445208"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86231732"
 ---
 # <a name="how-to-enable-system-assigned-managed-identity-for-azure-spring-cloud-application"></a>Как включить управляемое системой удостоверение для приложения Azure весны в облаке
 Управляемые удостоверения для ресурсов Azure предоставляют автоматически управляемое удостоверение в Azure Active Directory к ресурсу Azure, например к облачному приложению Azure весны. Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде.
 
 В этой статье показано, как включить и отключить назначенные системой управляемые удостоверения для облачного приложения Azure весны с помощью портал Azure и CLI (доступно в версии 0.2.4).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Если вы не знакомы с управляемыми удостоверениями для ресурсов Azure, см. [раздел Обзор](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
 Вам потребуется развернутый экземпляр облака Azure весны. Следуйте инструкциям [краткого руководства, чтобы выполнить развертывание с помощью Azure CLI](spring-cloud-quickstart-launch-app-cli.md).
 
@@ -78,8 +79,8 @@ Azure Веснное облако использует одну и ту же к�
 az spring-cloud app identity remove -n app_name -s service_name -g resource_group_name
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Использование управляемых удостоверений с пакетом SDK для Java](https://github.com/Azure-Samples/Azure-Spring-Cloud-Samples)
-* [Доступ к Azure Key Vault с управляемыми удостоверениями в пружинной заначальной загрузке](https://github.com/microsoft/azure-spring-boot/blob/master/azure-spring-boot-starters/azure-keyvault-secrets-spring-boot-starter/README.md#use-msi--managed-identities)
+* [Доступ к Azure Key Vault с управляемыми удостоверениями в пружинной заначальной загрузке](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/spring/azure-spring-boot-starter-keyvault-secrets/README.md#use-msi--managed-identities)
 * [Дополнительные сведения об управляемых удостоверениях для ресурсов Azure](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/managed-identities-azure-resources/overview.md)
 

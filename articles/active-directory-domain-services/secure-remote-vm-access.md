@@ -8,13 +8,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/30/2020
+ms.date: 07/09/2020
 ms.author: iainfou
-ms.openlocfilehash: 8a9382af630d80480e5bec50d629451ebe49bf73
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7ba64ac6d33f96979a05de383ffc02dd757fc906
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84734475"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86223420"
 ---
 # <a name="secure-remote-access-to-virtual-machines-in-azure-active-directory-domain-services"></a>Безопасный удаленный доступ к виртуальным машинам в доменных службах Azure Active Directory
 
@@ -98,7 +99,7 @@ ms.locfileid: "84734475"
 
 Теперь пользователям предлагается дополнительный фактор проверки подлинности при входе в систему, например текстовое сообщение или запрос в Microsoft Authenticator приложении.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о повышении устойчивости развертывания см. в разделе [службы удаленных рабочих столов-высокий уровень доступности][rds-high-availability].
 

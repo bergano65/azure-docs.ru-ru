@@ -15,11 +15,12 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.reviewer: milanga
-ms.openlocfilehash: a79e718c04f81b1552d63ab98b6dcd6bb428fb50
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1b85cffe497ad0b374edb18a1089412da839cdf8
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77918343"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86231851"
 ---
 # <a name="use-azure-media-video-thumbnails-to-create-a-video-summarization"></a>Использование Azure Media Video Thumbnail для формирования сводных данных видео  
 
@@ -58,7 +59,7 @@ ms.locfileid: "77918343"
 
 В ней можно изменить следующие параметры.
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
 | outputAudio |Указывает, есть ли в итоговом видео аудио. <br/>Допустимые значения: True или False. Значение по умолчанию — True. |
 | fadeInFadeOut |Указывает, используются ли плавные переходы при перемещении отдельных эскизов.  <br/>Допустимые значения: True или False.  Значение по умолчанию — True. |
@@ -66,10 +67,10 @@ ms.locfileid: "77918343"
 
 Следующая таблица содержит продолжительность по умолчанию, когда параметр **maxMotionThumbnailInSecs** не используется.
 
-|  |  |  |
+|  | Small | Увеличения |
 | --- | --- | --- |
-| Продолжительность видео |видео < 3 мин |3 мин < видео < 15 мин |
-| Продолжительность эскиза |15 с (2–3 сцены) |30 с (3–5 сцен) |
+| **Продолжительность видео** |видео < 3 мин |3 мин < видео < 15 мин |
+| **Продолжительность эскиза** |15 с (2–3 сцены) |30 с (3–5 сцен) |
 
 Следующий объект JSON задает доступные параметры.
 
