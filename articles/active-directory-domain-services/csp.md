@@ -8,13 +8,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 03/31/2020
+ms.date: 07/09/2020
 ms.author: iainfou
-ms.openlocfilehash: c8cdb75c821f45fe7fcf0f455145beb2b9be2a55
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2760f0d91f7ed1066b0020c4aedc7572af095cfb
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84734866"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86220326"
 ---
 # <a name="azure-active-directory-domain-services-deployment-and-management-for-azure-cloud-solution-providers"></a>Azure Active Directory развертывания и управления доменными службами для поставщиков облачных решений Azure
 
@@ -92,6 +93,6 @@ Azure AD DS поддерживает подписки Azure CSP. Вы может
     
     Чтобы партнер CSP выполнял эти задачи в управляемом домене, необходимо создать учетную запись пользователя в клиенте Azure AD клиента. Учетные данные для этой учетной записи должны совместно использоваться агентами администрирования партнера CSP. Кроме того, эту учетную запись пользователя необходимо добавить в группу *администраторов контроллера домена AAD* , чтобы разрешить выполнение задач настройки в управляемом домене с использованием этой учетной записи пользователя.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе, [Зарегистрируйтесь в программе Azure CSP](/partner-center/enrolling-in-the-csp-program). Затем можно включить доменные службы Azure AD с помощью [портал Azure](tutorial-create-instance.md) или [Azure PowerShell](powershell-create-instance.md).

@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
-ms.date: 2/10/2020
-ms.openlocfilehash: 39329eb9ea2c396f8b5f04287f3e933bb6242f85
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.date: 07/09/2020
+ms.openlocfilehash: a4624d16f29834e8948a7bbc7ef882041727a823
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85983012"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86171879"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -239,7 +239,7 @@ ms.locfileid: "85983012"
 
 ### <a name="creating-a-failover-group-between-managed-instances-in-different-subscriptions"></a>Создание группы отработки отказа между управляемыми экземплярами в разных подписках
 
-Группу отработки отказа можно создать между управляемыми экземплярами SQL в двух разных подписках. При использовании API PowerShell можно сделать это, указав `PartnerSubscriptionId` параметр для вторичного управляемый экземпляр SQL. При использовании REST API каждый идентификатор экземпляра, входящий в `properties.managedInstancePairs` параметр, может иметь собственное значение subscriptionID.
+Группу отработки отказа можно создать между управляемыми экземплярами SQL в двух разных подписках при условии, что подписки связаны с одним и тем же [клиентом Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis#terminology). При использовании API PowerShell можно сделать это, указав `PartnerSubscriptionId` параметр для вторичного управляемый экземпляр SQL. При использовании REST API каждый идентификатор экземпляра, входящий в `properties.managedInstancePairs` параметр, может иметь собственное значение subscriptionID.
   
 > [!IMPORTANT]
 > Портал Azure не поддерживает создание групп отработки отказа в разных подписках. Кроме того, для существующих групп отработки отказа в разных подписках или группах ресурсов отработка отказа не может быть инициирована вручную с помощью портала из основного Управляемый экземпляр SQL. Запустите его из экземпляра Geo-Secondary.
@@ -415,7 +415,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-| Get-Help | Описание |
+| Команда | Описание |
 | --- | --- |
 | [az sql failover-group create](/cli/azure/sql/failover-group#az-sql-failover-group-create) |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
 | [AZ SQL Failover — групповое удаление](/cli/azure/sql/failover-group#az-sql-failover-group-delete) | Удаляет группу отработки отказа с сервера |
@@ -442,7 +442,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-| Командлет | Описание: |
+| Командлет | Описание |
 | --- | --- |
 | [New-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/new-azsqldatabaseinstancefailovergroup) |Эта команда создает группу отработки отказа и регистрирует ее на первичном и вторичном экземплярах.|
 | [Set-Азсклдатабасеинстанцефаиловерграуп](/powershell/module/az.sql/set-azsqldatabaseinstancefailovergroup) |Изменяет конфигурацию группы отработки отказа|
@@ -453,7 +453,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-| Get-Help | Описание |
+| Команда | Описание |
 | --- | --- |
 | [az sql failover-group create](/cli/azure/sql/failover-group#az-sql-failover-group-create) |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
 | [AZ SQL Failover — групповое удаление](/cli/azure/sql/failover-group#az-sql-failover-group-delete) | Удаляет группу отработки отказа с сервера |
@@ -474,7 +474,7 @@ CREATE LOGIN foo WITH PASSWORD = '<enterStrongPasswordHere>', SID = <login_sid>;
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Подробные руководства см. в разделе
   - [Добавление базы данных SQL в группу отработки отказа](failover-group-add-single-database-tutorial.md)

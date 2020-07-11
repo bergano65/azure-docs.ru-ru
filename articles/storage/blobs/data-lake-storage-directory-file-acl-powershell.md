@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 04/21/2020
 ms.author: normesta
 ms.reviewer: prishet
-ms.openlocfilehash: 67aa9fcb51742432dcd629073f15a65d14bf3597
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: d22b83e1f3464f6d87d2bc3821682b25e05d947b
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85961206"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86142546"
 ---
 # <a name="use-powershell-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование PowerShell для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
 
@@ -81,11 +81,11 @@ $storageAccount = Get-AzStorageAccount -ResourceGroupName "<resource-group-name>
 $ctx = $storageAccount.Context
 ```
 
-## <a name="create-a-file-system"></a>Создание файловой системы
+## <a name="create-a-container"></a>Создание контейнера
 
-Файловая система выступает в качестве контейнера для файлов. Его можно создать с помощью `New-AzStorageContainer` командлета. 
+Контейнер выступает в качестве файловой системы для файлов. Его можно создать с помощью `New-AzStorageContainer` командлета. 
 
-В этом примере создается файловая система с именем `my-file-system`.
+В этом примере создается контейнер с именем `my-file-system` .
 
 ```powershell
 $filesystemName = "my-file-system"
@@ -96,7 +96,7 @@ New-AzStorageContainer -Context $ctx -Name $filesystemName
 
 Создайте ссылку на каталог с помощью `New-AzDataLakeGen2Item` командлета. 
 
-В этом примере в файловую систему добавляется каталог с именем `my-directory` .
+В этом примере в контейнер добавляется каталог с именем `my-directory` .
 
 ```powershell
 $filesystemName = "my-file-system"
@@ -202,7 +202,7 @@ $properties.Group
 $properties.Owner
 ```
 
-Чтобы получить список содержимого файловой системы, не указывайте `-Path` параметр команды.
+Чтобы получить список содержимого контейнера, опустите `-Path` параметр команды.
 
 ## <a name="upload-a-file-to-a-directory"></a>Отправка файла в каталог
 
@@ -270,7 +270,7 @@ Remove-AzDataLakeGen2Item  -Context $ctx -FileSystem $filesystemName -Path $file
 
 Получите список ACL для каталога или файла с помощью `Get-AzDataLakeGen2Item` командлета.
 
-Этот пример возвращает список ACL корневого каталога **файловой системы** , а затем ВЫВОДИТ список ACL на консоль.
+Этот пример возвращает список ACL корневого каталога **контейнера** , а затем ВЫВОДИТ список ACL на консоль.
 
 ```powershell
 $filesystemName = "my-file-system"
@@ -305,7 +305,7 @@ $file.ACL
 
 Используйте `set-AzDataLakeGen2ItemAclObject` командлет, чтобы создать список ACL для пользователя-владельца, группы-владельца или других пользователей. Затем используйте `Update-AzDataLakeGen2Item` командлет для фиксации ACL.
 
-Этот пример задает список ACL для корневого каталога **файловой системы** пользователя-владельца, группы-владельца или других пользователей, а затем ВЫВОДИТ список ACL на консоль.
+Этот пример задает список управления доступом для корневого каталога **контейнера** для пользователя-владельца, группы-владельца или других пользователей, а затем ВЫВОДИТ список ACL на консоль.
 
 ```powershell
 $filesystemName = "my-file-system"
@@ -349,9 +349,9 @@ $file.ACL
 В этом примере владелец и группа-владелец имеют разрешения только на чтение и запись. У всех остальных пользователей есть разрешения на запись и выполнение. Дополнительные сведения о списках управления доступом в Azure Data Lake Storage 2-го поколения см. на [этой странице](data-lake-storage-access-control.md).
 
 
-### <a name="set-acls-on-all-items-in-a-file-system"></a>Установка списков управления доступом для всех элементов в файловой системе
+### <a name="set-acls-on-all-items-in-a-container"></a>Установка списков управления доступом для всех элементов в контейнере
 
-Параметр и можно использовать `Get-AzDataLakeGen2Item` `-Recurse` вместе с `Update-AzDataLakeGen2Item` командлетом для рекурсивного задания ACL для каталогов и файлов в файловой системе. 
+Параметр и можно использовать `Get-AzDataLakeGen2Item` `-Recurse` вместе с `Update-AzDataLakeGen2Item` командлетом для рекурсивного задания ACL для каталогов и файлов в контейнере. 
 
 ```powershell
 $filesystemName = "my-file-system"

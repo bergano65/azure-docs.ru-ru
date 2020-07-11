@@ -3,11 +3,12 @@ title: Примеры шаблонов Azure Resource Manager
 description: Поиск образцов шаблонов Azure Resource Manager для развертывания экземпляров контейнеров Azure в различных конфигурациях
 ms.topic: article
 ms.date: 03/07/2019
-ms.openlocfilehash: 7208e1b4b67879979507cc451d40a188a84373de
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6c487087b39244178643fd81364150ceb3ac4a63
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84299763"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169652"
 ---
 # <a name="azure-resource-manager-templates-for-azure-container-instances"></a>Шаблоны Azure Resource Manager для службы "Экземпляры контейнеров Azure"
 
@@ -17,7 +18,7 @@ ms.locfileid: "84299763"
 
 ## <a name="sample-templates"></a>Примеры шаблонов
 
-| | |
+| Шаблон | Описание |
 |-|-|
 | **Приложения** ||
 | [WordPress][app-wp] | Создает веб-сайт WordPress и его базу данных MySQL в группе контейнеров. Содержимое сайта WordPress и база данных MySQL сохраняются в общей папке Azure. Также создает шлюз приложений для предоставления доступа к общедоступной сети WordPress. |

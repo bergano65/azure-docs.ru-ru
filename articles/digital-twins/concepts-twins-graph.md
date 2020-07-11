@@ -7,11 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 6b6da2a15441564ef0b67e76ee5a0e0c85839a63
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 248725c7281c8c63e4ca5c0c70428b4fc997d350
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85609322"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86142416"
 ---
 # <a name="understand-digital-twins-and-their-twin-graph"></a>Знакомство с цифровыми двойников и двойника диаграммой
 
@@ -97,6 +98,7 @@ try
 | Имя поля | Описание |
 | --- | --- |
 | `$dtId` | Предоставляемая пользователем строка, представляющая идентификатор цифрового двойника |
+| `$etag` | Стандартное поле HTTP, назначенное веб-сервером |
 | `$conformance` | Перечисление, содержащее состояние соответствия этой цифровой*двойника (несоответствие* *несогласованности*, *неизвестно*) |
 | `{propertyName}` | Значение свойства в JSON ( `string` , тип числа или объект) |
 | `$relationships` | URL-адрес пути к коллекции связей. Это поле отсутствует, если у цифрового двойника нет границ исходящего отношения. |
@@ -115,6 +117,7 @@ try
 ```json
 {
   "$dtId": "Cafe",
+  "$etag": "W/\"e59ce8f5-03c0-4356-aea9-249ecbdc07f9\"",
   "Temperature": 72,
   "Location": {
     "x": 101,
@@ -162,6 +165,7 @@ try
 | Имя поля | Описание |
 | --- | --- |
 | `$relationshipId` | Предоставляемая пользователем строка, представляющая идентификатор этой связи. Эта строка уникальна в контексте исходного цифрового двойника, что также означает `sourceId`  +  `relationshipId` уникальность в контексте экземпляра Digital двойников для Azure. |
+| `$etag` | Стандартное поле HTTP, назначенное веб-сервером |
 | `$sourceId` | Идентификатор исходного цифрового двойника |
 | `$targetId` | Идентификатор целевого цифрового двойника |
 | `$relationshipName` | Имя связи |
@@ -180,7 +184,7 @@ try
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как управлять элементами графа с помощью API-интерфейсов Azure Digital двойника.
 * [Практические руководства. Управление цифровыми двойников](how-to-manage-twin.md)

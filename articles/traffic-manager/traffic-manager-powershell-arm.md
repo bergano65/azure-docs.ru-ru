@@ -11,11 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: rohink
-ms.openlocfilehash: de637bc30420ce494e553100a9f1126e88027bd2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: af19586807bf676f1f449f7402b364a054721eec
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84704154"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187597"
 ---
 # <a name="using-powershell-to-manage-traffic-manager"></a>Использование PowerShell для управления диспетчером трафика
 
@@ -29,7 +30,7 @@ Azure Resource Manager представляет собой предпочтит�
 
 Каждый профиль диспетчера трафика представлен ресурсом типа TrafficManagerProfiles. На уровне API REST каждый профиль имеет следующий URI:
 
-    https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/trafficManagerProfiles/{profile-name}?api-version={api-version}
+`https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/trafficManagerProfiles/{profile-name}?api-version={api-version}`
 
 ## <a name="setting-up-azure-powershell"></a>Настройка Azure PowerShell
 
@@ -58,9 +59,9 @@ $TmProfile = New-AzTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG
 
 В следующей таблице описаны параметры.
 
-| Параметр | Описание: |
+| Параметр | Описание |
 | --- | --- |
-| name |Имя ресурса профиля диспетчера трафика. У профилей в одной группе ресурсов должны быть уникальные имена. Это имя отличается от имени DNS, которое используется в запросах DNS. |
+| Имя |Имя ресурса профиля диспетчера трафика. У профилей в одной группе ресурсов должны быть уникальные имена. Это имя отличается от имени DNS, которое используется в запросах DNS. |
 | ResourceGroupName |Имя группы ресурсов, которая содержит ресурс профиля. |
 | TrafficRoutingMethod |Задает метод маршрутизации трафика, который определяет конечную точку, возвращаемую в ответ на запрос DNS. Возможные значения: Performance (производительность), Weighted (взвешенный) и Priority (приоритетный). |
 | RelativeDnsName |Задает часть DNS-имени с именем узла, которое предоставляется этим профилем диспетчера трафика. Это значение объединяется с DNS-именем домена, с помощью которого диспетчер трафика Azure формирует полное доменное имя профиля. Например, если задать значение contoso, полное доменное имя будет contoso.trafficmanager.net. |
@@ -320,7 +321,7 @@ Remove-AzTrafficManagerProfile -TrafficManagerProfile $TmProfile [-Force]
 Get-AzTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG | Remove-AzTrafficManagerProfile [-Force]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Мониторинг диспетчера трафика](traffic-manager-monitoring.md)
 

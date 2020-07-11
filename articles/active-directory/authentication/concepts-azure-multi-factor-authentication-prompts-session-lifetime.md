@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b77f2e78fa3df6c7ac6a422a03335f93d2a19d99
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4834cccff11a70249140f49b498b8f7891787c72
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85255868"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169346"
 ---
 # <a name="optimize-reauthentication-prompts-and-understand-session-lifetime-for-azure-multi-factor-authentication"></a>Оптимизация запросов на повторное аутентификацию и изучение времени существования сеанса для многофакторной идентификации Azure
 
@@ -122,11 +122,11 @@ Azure Active Directory (Azure AD) имеет несколько параметр
 
 В следующей таблице перечислены рекомендации, основанные на лицензиях.
 
-|                              | Приложения Azure AD Free и Office 365 | Azure AD Premium |
+|              | Приложения Azure AD Free и Office 365 | Azure AD Premium |
 |------------------------------|-----------------------------------|------------------|
-| Единый вход                          | [Присоединение к Azure AD](../devices/concept-azure-ad-join.md) или [гибридное присоединение к Azure AD](../devices/concept-azure-ad-join-hybrid.md)или [простой единый вход](../hybrid/how-to-connect-sso.md) для неуправляемых устройств. | присоединение к Azure AD;<br />гибридное присоединение к Azure AD; |
-| Параметры перепроверки подлинности    | Продолжить вход                  | Использование политик условного доступа для частоты входа и постоянного сеанса браузера |
+| **Единый вход**                      | [Присоединение к Azure AD](../devices/concept-azure-ad-join.md) или [гибридное присоединение к Azure AD](../devices/concept-azure-ad-join-hybrid.md)или [простой единый вход](../hybrid/how-to-connect-sso.md) для неуправляемых устройств. | присоединение к Azure AD;<br />гибридное присоединение к Azure AD; |
+| **Параметры перепроверки подлинности** | Продолжить вход                  | Использование политик условного доступа для частоты входа и постоянного сеанса браузера |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе, ознакомьтесь с руководством по [защите событий входа пользователей с помощью многофакторной идентификации Azure или с](tutorial-enable-azure-mfa.md) [помощью обнаружения рисков для входа пользователей в систему для активации многофакторной идентификации Azure](tutorial-risk-based-sspr-mfa.md).

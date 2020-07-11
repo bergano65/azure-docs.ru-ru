@@ -7,12 +7,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 06/12/2019
 ms.author: alkohli
-ms.openlocfilehash: c9978be9182bbb2923fa5db0b4e5ada422ef0da9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 05a67ab33c12e9f2bdbc0cd0098c39252db37e8e
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85511598"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187087"
 ---
 # <a name="configure-mpio-on-a-storsimple-host-running-centos"></a>Настройка MPIO на узле StorSimple под управлением CentOS
 В этой статье описаны этапы настройки многоканального ввода-вывода (MPIO) на сервере узла под управлением CentOS 6.6. Сервер узла подключен к устройству Microsoft Azure StorSimple через инициаторы iSCSI для обеспечения высокой доступности. Здесь также подробно описано автоматическое обнаружение устройств с поддержкой нескольких каналов ввода-вывода и приведены настройки для томов StorSimple.
@@ -60,7 +60,7 @@ ms.locfileid: "85511598"
 
 Далее рассматривается настройка многоканального ввода-вывода. Предполагается, что устройство StorSimple имеет два сетевых интерфейса и подключено к узлу с двумя сетевыми интерфейсами.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 В этом разделе подробно описываются предварительные требования для настройки сервера CentOS и устройства StorSimple.
 
 ### <a name="on-centos-host"></a>Узел CentOS
@@ -70,35 +70,37 @@ ms.locfileid: "85511598"
    
     В следующем примере показан результат выполнения команды при наличии на узле двух сетевых интерфейсов (`eth0` и `eth1`).
    
-        [root@centosSS ~]# ifconfig
-        eth0  Link encap:Ethernet  HWaddr 00:15:5D:A2:33:41  
-          inet addr:10.126.162.65  Bcast:10.126.163.255  Mask:255.255.252.0
-          inet6 addr: 2001:4898:4010:3012:215:5dff:fea2:3341/64 Scope:Global
-          inet6 addr: fe80::215:5dff:fea2:3341/64 Scope:Link
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-         RX packets:36536 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:6312 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000
-          RX bytes:13994127 (13.3 MiB)  TX bytes:645654 (630.5 KiB)
-   
-        eth1  Link encap:Ethernet  HWaddr 00:15:5D:A2:33:42  
-          inet addr:10.126.162.66  Bcast:10.126.163.255  Mask:255.255.252.0
-          inet6 addr: 2001:4898:4010:3012:215:5dff:fea2:3342/64 Scope:Global
-          inet6 addr: fe80::215:5dff:fea2:3342/64 Scope:Link
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:25962 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:11 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000
-          RX bytes:2597350 (2.4 MiB)  TX bytes:754 (754.0 b)
-   
-        loLink encap:Local Loopback  
-          inet addr:127.0.0.1  Mask:255.0.0.0
-          inet6 addr: ::1/128 Scope:Host
-          UP LOOPBACK RUNNING  MTU:65536  Metric:1
-          RX packets:12 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:12 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:0
-          RX bytes:720 (720.0 b)  TX bytes:720 (720.0 b)
+    ```output
+    [root@centosSS ~]# ifconfig
+    eth0  Link encap:Ethernet  HWaddr 00:15:5D:A2:33:41  
+        inet addr:10.126.162.65  Bcast:10.126.163.255  Mask:255.255.252.0
+        inet6 addr: 2001:4898:4010:3012:215:5dff:fea2:3341/64 Scope:Global
+        inet6 addr: fe80::215:5dff:fea2:3341/64 Scope:Link
+        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+        RX packets:36536 errors:0 dropped:0 overruns:0 frame:0
+        TX packets:6312 errors:0 dropped:0 overruns:0 carrier:0
+        collisions:0 txqueuelen:1000
+        RX bytes:13994127 (13.3 MiB)  TX bytes:645654 (630.5 KiB)
+
+    eth1  Link encap:Ethernet  HWaddr 00:15:5D:A2:33:42  
+        inet addr:10.126.162.66  Bcast:10.126.163.255  Mask:255.255.252.0
+        inet6 addr: 2001:4898:4010:3012:215:5dff:fea2:3342/64 Scope:Global
+        inet6 addr: fe80::215:5dff:fea2:3342/64 Scope:Link
+        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+        RX packets:25962 errors:0 dropped:0 overruns:0 frame:0
+        TX packets:11 errors:0 dropped:0 overruns:0 carrier:0
+        collisions:0 txqueuelen:1000
+        RX bytes:2597350 (2.4 MiB)  TX bytes:754 (754.0 b)
+
+    loLink encap:Local Loopback  
+        inet addr:127.0.0.1  Mask:255.0.0.0
+        inet6 addr: ::1/128 Scope:Host
+        UP LOOPBACK RUNNING  MTU:65536  Metric:1
+        RX packets:12 errors:0 dropped:0 overruns:0 frame:0
+        TX packets:12 errors:0 dropped:0 overruns:0 carrier:0
+        collisions:0 txqueuelen:0
+        RX bytes:720 (720.0 b)  TX bytes:720 (720.0 b)
+    ```
 1. Установите *iSCSI-initiator-utils* на сервер CentOS. Чтобы установить *iSCSI-initiator-utils*, сделайте следующее.
    
    1. Войдите на узел CentOS как `root` .
@@ -119,8 +121,10 @@ ms.locfileid: "85511598"
       
        Результат выполнения команды показан ниже.
       
-           iscsi   0:off   1:off   2:on3:on4:on5:on6:off
-           iscsid  0:off   1:off   2:on3:on4:on5:on6:off
+        ```output
+        iscsi   0:off   1:off   2:on3:on4:on5:on6:off
+        iscsid  0:off   1:off   2:on3:on4:on5:on6:off
+        ```
       
        Из приведенного выше примера видно, что среда iSCSI будет запускаться во время загрузки на уровнях выполнения 2, 3, 4 и 5.
 1. Установите *device-mapper-multipath*. Тип:
@@ -149,9 +153,11 @@ ms.locfileid: "85511598"
 * Интерфейсы iSCSI на устройстве StorSimple должны быть доступны с сервера CentOS.
       Чтобы проверить это, укажите IP-адреса сетевых интерфейсов iSCSI своего устройства StorSimple на сервере узла. Используемые команды и результаты их выполнения для DATA2 (10.126.162.25) и DATA3 (10.126.162.26) приведены ниже.
   
-        [root@centosSS ~]# iscsiadm -m discovery -t sendtargets -p 10.126.162.25:3260
-        10.126.162.25:3260,1 iqn.1991-05.com.microsoft:storsimple8100-shx0991003g44mt-target
-        10.126.162.26:3260,1 iqn.1991-05.com.microsoft:storsimple8100-shx0991003g44mt-target
+    ```console
+    [root@centosSS ~]# iscsiadm -m discovery -t sendtargets -p 10.126.162.25:3260
+    10.126.162.25:3260,1 iqn.1991-05.com.microsoft:storsimple8100-shx0991003g44mt-target
+    10.126.162.26:3260,1 iqn.1991-05.com.microsoft:storsimple8100-shx0991003g44mt-target
+    ```
 
 ### <a name="hardware-configuration"></a>Конфигурация оборудования
 Мы рекомендуем подключать два сетевых интерфейса iSCSI к отдельным каналам для обеспечения избыточности. На рисунке ниже изображена рекомендуемая конфигурация оборудования для реализации многоканального ввода-вывода с высокой доступностью и балансировкой нагрузки для сервера CentOS и устройства StorSimple.
@@ -197,11 +203,13 @@ ms.locfileid: "85511598"
    
     Раздел defaults в файле `multipath.conf` будет изменен следующим образом.
    
-        defaults {
-        find_multipaths yes
-        user_friendly_names yes
-        path_grouping_policy multibus
-        }
+    ```config
+    defaults {
+    find_multipaths yes
+    user_friendly_names yes
+    path_grouping_policy multibus
+    }
+    ```
 
 ### <a name="step-2-configure-multipathing-for-storsimple-volumes"></a>Этап 2. Настройка многоканального ввода-вывода для томов StorSimple
 По умолчанию все устройства внесены в список запрещенных устройств (в файле multipath.conf), которые будут игнорироваться. Чтобы разрешить многоканальный ввод-вывод для томов устройств StorSimple, нужно создать исключения.
@@ -211,16 +219,18 @@ ms.locfileid: "85511598"
     `vi /etc/multipath.conf`
 1. Найдите в файле multipath.conf раздел blacklist_exceptions. В этот список исключений нужно добавить ваше устройство StorSimple. Раскомментируйте соответствующие строки в этом файле, как показано ниже (укажите только свою модель устройства).
    
-        blacklist_exceptions {
-            device {
-                       vendor  "MSFT"
-                       product "STORSIMPLE 8100*"
-            }
-            device {
-                       vendor  "MSFT"
-                       product "STORSIMPLE 8600*"
-            }
-           }
+    ```config
+    blacklist_exceptions {
+        device {
+                    vendor  "MSFT"
+                    product "STORSIMPLE 8100*"
+        }
+        device {
+                    vendor  "MSFT"
+                    product "STORSIMPLE 8600*"
+        }
+    }
+    ```
 
 ### <a name="step-3-configure-round-robin-multipathing"></a>Этап 3. Настройка циклического многоканального ввода-вывода
 Этот алгоритм балансировки нагрузки циклически и сбалансировано использует все доступные каналы к активному контроллеру.
@@ -230,10 +240,12 @@ ms.locfileid: "85511598"
     `vi /etc/multipath.conf`
 1. В разделе `defaults` задайте для параметра `path_grouping_policy` значение `multibus`. Параметр `path_grouping_policy` указывает стандартную политику группировки каналов, которая будет применяться к неопределенным каналам. Раздел defaults будет выглядеть следующим образом.
    
-        defaults {
-                user_friendly_names yes
-                path_grouping_policy multibus
-        }
+    ```config
+    defaults {
+            user_friendly_names yes
+            path_grouping_policy multibus
+    }
+    ```
 
 > [!NOTE]
 > Вот наиболее распространенные значения параметра `path_grouping_policy`:
@@ -249,36 +261,34 @@ ms.locfileid: "85511598"
     `service multipathd restart`
 1. Результат выполнения команды будет таким:
    
-        [root@centosSS ~]# service multipathd start
-        Starting multipathd daemon:  [OK]
+    ```output
+    [root@centosSS ~]# service multipathd start
+    Starting multipathd daemon:  [OK]
+    ```
 
 ### <a name="step-5-verify-multipathing"></a>Этап 5. Проверка работы многоканального ввода-вывода
 1. Сначала убедитесь, что соединение iSCSI с устройством StorSimple установлено.
    
-   а. Обнаружьте устройство StorSimple. Тип:
+   А. Обнаружьте устройство StorSimple. Тип:
       
-    ```
-    iscsiadm -m discovery -t sendtargets -p  <IP address of network interface on the device>:<iSCSI port on StorSimple device>
-    ```
+    `iscsiadm -m discovery -t sendtargets -p  <IP address of network interface on the device>:<iSCSI port on StorSimple device>`
     
     Если на устройстве StorSimple интерфейс DATA0 имеет IP-адрес 10.126.162.25 и порт 3260, а также открыт для исходящего трафика iSCSI, результат выполнения команды будет таким:
     
-    ```
+    ```output
     10.126.162.25:3260,1 iqn.1991-05.com.microsoft:storsimple8100-shx0991003g00dv-target
     10.126.162.26:3260,1 iqn.1991-05.com.microsoft:storsimple8100-shx0991003g00dv-target
     ```
 
     Скопируйте IQN устройства StorSimple, `iqn.1991-05.com.microsoft:storsimple8100-shx0991003g00dv-target` (см. результат выше).
 
-   b. Подключитесь к устройству с помощью IQN целевого объекта. StorSimple здесь является целевым объектом iSCSI. Тип:
+   Б. Подключитесь к устройству с помощью IQN целевого объекта. StorSimple здесь является целевым объектом iSCSI. Тип:
 
-    ```
-    iscsiadm -m node --login -T <IQN of iSCSI target>
-    ```
+      `iscsiadm -m node --login -T <IQN of iSCSI target>`
 
     В следующем примере показан результат с IQN целевого объекта ( `iqn.1991-05.com.microsoft:storsimple8100-shx0991003g00dv-target`). Результат показывает, что вы успешно подключились к двум сетевым интерфейсам с поддержкой iSCSI на своем устройстве.
 
-    ```
+    ```output
     Logging in to [iface: eth0, target: iqn.1991-05.com.microsoft:storsimple8100-shx0991003g00dv-target, portal: 10.126.162.25,3260] (multiple)
     Logging in to [iface: eth1, target: iqn.1991-05.com.microsoft:storsimple8100-shx0991003g00dv-target, portal: 10.126.162.25,3260] (multiple)
     Logging in to [iface: eth0, target: iqn.1991-05.com.microsoft:storsimple8100-shx0991003g00dv-target, portal: 10.126.162.26,3260] (multiple)
@@ -295,33 +305,31 @@ ms.locfileid: "85511598"
 
 1. Проверьте доступные пути. Тип:
 
-      ```
-      multipath -l
-      ```
+    `multipath -l`
 
       В следующем примере приведен результат выполнения команды для двух сетевых интерфейсов устройства StorSimple, которое подключено к одному сетевому интерфейсу узла с двумя доступными каналами.
 
-        ```
-        mpathb (36486fd20cc081f8dcd3fccb992d45a68) dm-3 MSFT,STORSIMPLE 8100
-        size=100G features='0' hwhandler='0' wp=rw
-        `-+- policy='round-robin 0' prio=0 status=active
-        |- 7:0:0:1 sdc 8:32 active undef running
-        `- 6:0:0:1 sdd 8:48 active undef running
-        ```
+    ```output
+    mpathb (36486fd20cc081f8dcd3fccb992d45a68) dm-3 MSFT,STORSIMPLE 8100
+    size=100G features='0' hwhandler='0' wp=rw
+    `-+- policy='round-robin 0' prio=0 status=active
+    |- 7:0:0:1 sdc 8:32 active undef running
+    `- 6:0:0:1 sdd 8:48 active undef running
+    ```
 
-        The following example shows the output for two network interfaces on a StorSimple device connected to two host network interfaces with four available paths.
+    В следующем примере приведен результат выполнения команды для двух сетевых интерфейсов устройства StorSimple, которое подключено к двум сетевым интерфейсам узла с четырьмя доступными каналами.
 
-        ```
-        mpathb (36486fd27a23feba1b096226f11420f6b) dm-2 MSFT,STORSIMPLE 8100
-        size=100G features='0' hwhandler='0' wp=rw
-        `-+- policy='round-robin 0' prio=0 status=active
-        |- 17:0:0:0 sdb 8:16 active undef running
-        |- 15:0:0:0 sdd 8:48 active undef running
-        |- 14:0:0:0 sdc 8:32 active undef running
-        `- 16:0:0:0 sde 8:64 active undef running
-        ```
+    ```output
+    mpathb (36486fd27a23feba1b096226f11420f6b) dm-2 MSFT,STORSIMPLE 8100
+    size=100G features='0' hwhandler='0' wp=rw
+    `-+- policy='round-robin 0' prio=0 status=active
+    |- 17:0:0:0 sdb 8:16 active undef running
+    |- 15:0:0:0 sdd 8:48 active undef running
+    |- 14:0:0:0 sdc 8:32 active undef running
+    `- 16:0:0:0 sde 8:64 active undef running
+    ```
 
-        After the paths are configured, refer to the specific instructions on your host operating system (Centos 6.6) to mount and format this volume.
+    После настройки каналов см. инструкции к операционной системе узла (CentOS 6.6), чтобы подключить и отформатировать этот том.
 
 ## <a name="troubleshoot-multipathing"></a>Устранение неполадок многоканального ввода-вывода
 В этом разделе приведены некоторые полезные советы, которые помогут вам при возникновении проблем во время настройки многоканального ввода-вывода.
@@ -330,7 +338,7 @@ ms.locfileid: "85511598"
 
 A. Если в файл `multipath.conf` внесены изменения, необходимо перезапустить службу многоканального ввода-вывода. Введите следующую команду:
 
-    service multipathd restart
+`service multipathd restart`
 
 У. У меня активировано два сетевых интерфейса на устройстве StorSimple и два — на узле. Когда я вывожу список доступных каналов, отображаются только два канала, тогда как их должно быть четыре.
 
@@ -349,7 +357,7 @@ A. Как правило, отсутствие многопутевых путе
   
     `$ dmesg | grep sd*`
      
-     либо
+     Или
   
     `$ fdisk -l`
   
@@ -362,58 +370,60 @@ A. Как правило, отсутствие многопутевых путе
 
 Менее вероятной, но также возможной причиной может быть устаревший идентификатор процесса iscsid. Чтобы выйти из сеансов iSCSI, используйте такую команду:
 
-    iscsiadm -m node --logout -p <Target_IP>
+`iscsiadm -m node --logout -p <Target_IP>`
 
 Повторите эту команду для всех подключенных сетевых интерфейсов на целевом объекте iSCSI, который является вашим устройством StorSimple. После выхода из всех сеансов iSCSI используйте IQN целевого объекта iSCSI, чтобы восстановить сеанс iSCSI. Введите следующую команду:
 
-    iscsiadm -m node --login -T <TARGET_IQN>
+`iscsiadm -m node --login -T <TARGET_IQN>`
 
 
 У. Я не уверен, включено ли мое устройство в список разрешенных устройств.
 
 A. Чтобы проверить, включено ли устройство в список разрешенных устройств, воспользуйтесь следующей интерактивной командой для устранения неполадок:
 
-    multipathd -k
-    multipathd> show devices
-    available block devices:
-    ram0 devnode blacklisted, unmonitored
-    ram1 devnode blacklisted, unmonitored
-    ram2 devnode blacklisted, unmonitored
-    ram3 devnode blacklisted, unmonitored
-    ram4 devnode blacklisted, unmonitored
-    ram5 devnode blacklisted, unmonitored
-    ram6 devnode blacklisted, unmonitored
-    ram7 devnode blacklisted, unmonitored
-    ram8 devnode blacklisted, unmonitored
-    ram9 devnode blacklisted, unmonitored
-    ram10 devnode blacklisted, unmonitored
-    ram11 devnode blacklisted, unmonitored
-    ram12 devnode blacklisted, unmonitored
-    ram13 devnode blacklisted, unmonitored
-    ram14 devnode blacklisted, unmonitored
-    ram15 devnode blacklisted, unmonitored
-    loop0 devnode blacklisted, unmonitored
-    loop1 devnode blacklisted, unmonitored
-    loop2 devnode blacklisted, unmonitored
-    loop3 devnode blacklisted, unmonitored
-    loop4 devnode blacklisted, unmonitored
-    loop5 devnode blacklisted, unmonitored
-    loop6 devnode blacklisted, unmonitored
-    loop7 devnode blacklisted, unmonitored
-    sr0 devnode blacklisted, unmonitored
-    sda devnode whitelisted, monitored
-    dm-0 devnode blacklisted, unmonitored
-    dm-1 devnode blacklisted, unmonitored
-    dm-2 devnode blacklisted, unmonitored
-    sdb devnode whitelisted, monitored
-    sdc devnode whitelisted, monitored
-    dm-3 devnode blacklisted, unmonitored
+```console
+multipathd -k
+multipathd> show devices
+available block devices:
+ram0 devnode blacklisted, unmonitored
+ram1 devnode blacklisted, unmonitored
+ram2 devnode blacklisted, unmonitored
+ram3 devnode blacklisted, unmonitored
+ram4 devnode blacklisted, unmonitored
+ram5 devnode blacklisted, unmonitored
+ram6 devnode blacklisted, unmonitored
+ram7 devnode blacklisted, unmonitored
+ram8 devnode blacklisted, unmonitored
+ram9 devnode blacklisted, unmonitored
+ram10 devnode blacklisted, unmonitored
+ram11 devnode blacklisted, unmonitored
+ram12 devnode blacklisted, unmonitored
+ram13 devnode blacklisted, unmonitored
+ram14 devnode blacklisted, unmonitored
+ram15 devnode blacklisted, unmonitored
+loop0 devnode blacklisted, unmonitored
+loop1 devnode blacklisted, unmonitored
+loop2 devnode blacklisted, unmonitored
+loop3 devnode blacklisted, unmonitored
+loop4 devnode blacklisted, unmonitored
+loop5 devnode blacklisted, unmonitored
+loop6 devnode blacklisted, unmonitored
+loop7 devnode blacklisted, unmonitored
+sr0 devnode blacklisted, unmonitored
+sda devnode whitelisted, monitored
+dm-0 devnode blacklisted, unmonitored
+dm-1 devnode blacklisted, unmonitored
+dm-2 devnode blacklisted, unmonitored
+sdb devnode whitelisted, monitored
+sdc devnode whitelisted, monitored
+dm-3 devnode blacklisted, unmonitored
+```
 
 
 Дополнительные сведения см. в [статье Устранение неполадок для Multipath](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/dm_multipath/mpio_admin-troubleshoot).
 
 ## <a name="list-of-useful-commands"></a>Список полезных команд
-| Type | Get-Help | Описание |
+| Тип | Команда | Описание |
 | --- | --- | --- |
 | **iSCSI** |`service iscsid start` |Запуск службы iSCSI |
 | &nbsp; |`service iscsid stop` |Остановка службы iSCSI |
@@ -434,7 +444,7 @@ A. Чтобы проверить, включено ли устройство в 
 | &nbsp; |`mpathconf --enable` |Создание примера файла mulitpath.conf в `/etc/mulitpath.conf` |
 |  | | |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Во время настройки MPIO на узле Linux вам могут пригодиться следующие документы по CentOS 6.6.
 
 * [Настройка MPIO на CentOS](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/dm_multipath/index)

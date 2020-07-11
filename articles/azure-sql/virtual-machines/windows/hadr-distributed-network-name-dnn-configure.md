@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: ae9b6bf41d90b0a9111414302b2eafea3c8332d3
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 7c40f4d9f86f27af34c1bc649483810f6756c41d
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85965628"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169822"
 ---
 # <a name="configure-a-distributed-network-name-for-an-fci"></a>Настройка имени распределенной сети для FCI 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -80,6 +80,10 @@ Set-ClusterParameter -Name DnsName -Value FCIDNN
 ```
 
 `FCIDNN`После подключения к SQL Server FCI клиенты будут вводить в строку подключения. 
+
+   > [!WARNING]
+   > Не удаляйте текущее имя виртуальной сети (VNN), так как оно является необходимым компонентом инфраструктуры FCI. 
+
 
 ### <a name="rename-the-vnn"></a>Переименование VNN 
 
@@ -159,7 +163,7 @@ Start-ClusterResource -Name dnn-demo
 - В настоящее время DNN поддерживается только для экземпляров отказоустойчивого кластера с SQL Server на виртуальных машинах Azure. Используйте имя виртуальной сети с Azure Load Balancer для прослушивателей групп доступности.
 - При работе с другими функциями SQL Server и FCI с DNN могут возникнуть дополнительные соображения. Дополнительные сведения см. в разделе [FCI with DNN, взаимодействие](failover-cluster-instance-dnn-interoperability.md). 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о SQL Serverии функций HADR в Azure см. в разделе [группы доступности](availability-group-overview.md) и [экземпляр отказоустойчивого кластера](failover-cluster-instance-overview.md). Вы также [можете ознакомиться с рекомендациями](hadr-cluster-best-practices.md) по настройке среды для обеспечения высокого уровня доступности и аварийного восстановления. 
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/27/2020
 ms.author: memildin
-ms.openlocfilehash: 4d048bb348b8093db7d3bf92ef0fc93aead35055
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 060db99cf0163876b68eeee2cff8ef2d03e2b5b9
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84762298"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187019"
 ---
 # <a name="feature-coverage-for-machines"></a>Покрытие компонентов для компьютеров
 
@@ -39,17 +39,16 @@ ms.locfileid: "84762298"
 |[Собственная оценка уязвимостей](built-in-vulnerability-assessment.md)|✔|-|-|Стандартный|
 |[Мониторинг целостности файлов](security-center-file-integrity-monitoring.md)|✔|✔|✔|Стандартный|
 |[Адаптивные элементы управления приложениями](security-center-adaptive-application.md)|✔|-|✔|Стандартный|
-|[Карта сети](security-center-network-recommendations.md#network-map)|✔|✔|-|Стандартный|
-|[Адаптивная защита сети](security-center-adaptive-network-hardening.md)|✔|-|-|Стандартный|
-|Адаптивные элементы управления сетью|✔|✔|-|Стандартный|
+|[Сетевая схема](security-center-network-recommendations.md#network-map)|✔|✔|-|Стандартный|
+|[Адаптивное усиление защиты сети](security-center-adaptive-network-hardening.md)|✔|-|-|Стандартный|
 |[& отчетов панели мониторинга соответствия нормативным требованиям](security-center-compliance-dashboard.md)|✔|✔|✔|Стандартный|
 |Рекомендации и защита от угроз в контейнерах IaaS, размещенных в DOCKER|-|-|-|Стандартный|
-|Оценка отсутствующих исправлений ОС|✔|✔|✔|Free|
-|Оценка ненастроек безопасности|✔|✔|✔|Free|
-|[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|✔|✔|✔|Free|
-|Оценка шифрования диска|✔|✔|-|Free|
-|Оценка уязвимостей сторонних производителей|✔|-|-|Free|
-|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Free|
+|Оценка отсутствующих исправлений ОС|✔|✔|✔|Служба предоставляется бесплатно.|
+|Оценка ненастроек безопасности|✔|✔|✔|Служба предоставляется бесплатно.|
+|[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|✔|✔|✔|Служба предоставляется бесплатно.|
+|Оценка шифрования диска|✔|✔|-|Служба предоставляется бесплатно.|
+|Оценка уязвимостей сторонних производителей|✔|-|-|Служба предоставляется бесплатно.|
+|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Служба предоставляется бесплатно.|
 
 
 ### <a name="linux-machines"></a>[Компьютеры Linux](#tab/features-linux)
@@ -65,17 +64,17 @@ ms.locfileid: "84762298"
 |[Собственная оценка уязвимостей](built-in-vulnerability-assessment.md)|✔|-|-|Стандартный|
 |[Мониторинг целостности файлов](security-center-file-integrity-monitoring.md)|✔|✔|✔|Стандартный|
 |[Адаптивные элементы управления приложениями](security-center-adaptive-application.md)|✔|-|✔|Стандартный|
-|[Карта сети](security-center-network-recommendations.md#network-map)|✔|✔|-|Стандартный|
-|[Адаптивная защита сети](security-center-adaptive-network-hardening.md)|✔|-|-|Стандартный|
+|[Сетевая схема](security-center-network-recommendations.md#network-map)|✔|✔|-|Стандартный|
+|[Адаптивное усиление защиты сети](security-center-adaptive-network-hardening.md)|✔|-|-|Стандартный|
 |Адаптивные элементы управления сетью|✔|✔|-|Стандартный|
 |[& отчетов панели мониторинга соответствия нормативным требованиям](security-center-compliance-dashboard.md)|✔|✔|✔|Стандартный|
 |Рекомендации и защита от угроз в контейнерах IaaS, размещенных в DOCKER|✔|✔|✔|Стандартный|
-|Оценка отсутствующих исправлений ОС|✔|✔|✔|Free|
-|Оценка ненастроек безопасности|✔|✔|✔|Free|
-|[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|-|-|-|Free|
-|Оценка шифрования диска|✔|✔|-|Free|
-|Оценка уязвимостей сторонних производителей|✔|-|-|Free|
-|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Free|
+|Оценка отсутствующих исправлений ОС|✔|✔|✔|Служба предоставляется бесплатно.|
+|Оценка ненастроек безопасности|✔|✔|✔|Служба предоставляется бесплатно.|
+|[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|-|-|-|Служба предоставляется бесплатно.|
+|Оценка шифрования диска|✔|✔|-|Служба предоставляется бесплатно.|
+|Оценка уязвимостей сторонних производителей|✔|-|-|Служба предоставляется бесплатно.|
+|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Служба предоставляется бесплатно.|
 
 --- 
 
@@ -109,7 +108,7 @@ ms.locfileid: "84762298"
 > При обнаружении System Center Endpoint Protection (SCEP) на виртуальной машине Windows Server 2008 R2 необходимо установить SCEP после PowerShell (версия 3.0 или более поздняя).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [Центр безопасности собирает данные и агент log Analytics](security-center-enable-data-collection.md).
 - Узнайте [, как центр безопасности управляет и защищает данные](security-center-data-security.md).

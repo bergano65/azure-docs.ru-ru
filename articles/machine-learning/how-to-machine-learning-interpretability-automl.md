@@ -1,5 +1,5 @@
 ---
-title: Объяснение в автоматизированном ML
+title: Объяснение в автоматизированном ML (Предварительная версия)
 titleSuffix: Azure Machine Learning
 description: Узнайте, как получить объяснения о том, как автоматизированная модель ML определяет важность функций и делает прогнозы при использовании пакета SDK для Машинное обучение Azure.
 services: machine-learning
@@ -8,14 +8,15 @@ ms.subservice: core
 ms.topic: how-to
 ms.author: mesameki
 author: mesameki
-ms.date: 03/11/2020
-ms.openlocfilehash: 6fcebb34f82565fcf83a9535e8c036231c5b3cf7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/09/2020
+ms.openlocfilehash: af3fe7bffbf985936a1648088daaf1a294a69905
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84430531"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206605"
 ---
-# <a name="interpretability-model-explanations-in-automated-machine-learning"></a>Интерпретируемость: пояснения к модели в автоматизированном машинном обучении
+# <a name="interpretability-model-explanations-in-automated-machine-learning-preview"></a>Интерпретируемость: пояснения к модели в автоматизированном машинном обучении (Предварительная версия)
 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
@@ -29,7 +30,7 @@ ms.locfileid: "84430531"
 - Включите визуализации, чтобы видеть закономерности в данных и объяснениях.
 - Реализуйте интерпретируемость во время вывода или оценки.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 - Функции интерпретации. Выполните команду `pip install azureml-interpret azureml-contrib-interpret` , чтобы получить необходимые пакеты.
 - Знание создания автоматических экспериментов ML. Дополнительные сведения об использовании пакета SDK для Машинное обучение Azure см. в руководстве по [модели регрессии](tutorial-auto-train-models.md) или о [настройке автоматизированных экспериментов ML](how-to-configure-auto-train.md).
@@ -211,6 +212,6 @@ if service.state == 'Healthy':
 
 [![Архитектура интерпретации Машинное обучение](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png)](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как включить пояснения к модели и важность признаков в областях пакета SDK Машинное обучение Azure, отличного от автоматизированного машинного обучения, см. в [статье о концепции, посвященной возможностям интерпретации](how-to-machine-learning-interpretability.md).

@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 05/15/2019
-ms.openlocfilehash: 56fb677ca80c047fb90c58a3e0aedb41e6d4a3f2
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 175abe54ce5476bece309bbfaf7858cd2e214f52
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045099"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187665"
 ---
 # <a name="use-the-azure-stream-analytics-cicd-nuget-package-for-integration-and-development"></a>Использование пакета NuGet Azure Stream Analytics CI/CD для интеграции и разработки 
 В этой статье описывается, как использовать пакет NuGet Azure Stream Analytics CI/CD для настройки процесса непрерывной интеграции и развертывания.
@@ -36,15 +36,11 @@ ms.locfileid: "86045099"
 
 * файл шаблона Resource Manager;
 
-   ```
-   [ProjectName].JobTemplate.json 
-   ```
+   `[ProjectName].JobTemplate.json`
 
 * файл параметров Resource Manager.
    
-   ```
-   [ProjectName].JobTemplate.parameters.json
-   ```
+   `[ProjectName].JobTemplate.parameters.json`
 
 Параметры по умолчанию в файле parameters.json на основе параметров в проекте Visual Studio. При необходимости развертывания в другой среде замените соответствующие параметры.
 
@@ -87,14 +83,14 @@ localrun -Project [ProjectFullPath]
 ```powershell
 arm -JobTemplate <templateFilePath> -JobParameterFile <jobParameterFilePath> [-OutputFile <asaArmFilePath>]
 ```
-Пример.
+Пример:
 ```powershell
 ./tools/SA.exe arm -JobTemplate "ProjectA.JobTemplate.json" -JobParameterFile "ProjectA.JobTemplate.parameters.json" -OutputFile "JobDefinition.json" 
 ```
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство. Создание облачного задания Azure Stream Analytics в Visual Studio](stream-analytics-quick-create-vs.md)
 * [Локальное тестирование запросов Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools-local-run.md)

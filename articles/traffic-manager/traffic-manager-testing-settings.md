@@ -10,11 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: rohink
-ms.openlocfilehash: b2ac056ef9140b4187eeb1850e56ba09b9755abb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 894f01244fef94e9f5a60823ba06ff38c01288a1
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84704035"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187002"
 ---
 # <a name="verify-traffic-manager-settings"></a>Проверка параметров диспетчера трафика
 
@@ -34,7 +35,9 @@ ms.locfileid: "84704035"
 2. Введите `ipconfig /flushdns` для записи кэша сопоставителя DNS на диск.
 3. Введите `nslookup <your Traffic Manager domain name>`. Например, следующая команда проверяет доменное имя с префиксом *myapp.contoso*.
 
-        nslookup myapp.contoso.trafficmanager.net
+    ```powershell
+    nslookup myapp.contoso.trafficmanager.net
+    ```
 
     Типичный результат содержит следующие сведения:
 
@@ -65,7 +68,7 @@ ms.locfileid: "84704035"
 
 Кроме того, есть бесплатные веб-службы поиска и проверки DNS. Некоторые из этих инструментов предоставляют возможность проверить разрешение DNS-имен из различных расположений по всему миру. Например, выполните поиск по запросу "поиск DNS". Сторонние службы типа Gomez или Keynote можно использовать, чтобы убедиться в том, что ваши профили распределяют трафик надлежащим образом.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [О методах маршрутизации трафика в диспетчере трафика](traffic-manager-routing-methods.md)
 * [Рекомендации по безопасности для диспетчера трафика](traffic-manager-performance-considerations.md)

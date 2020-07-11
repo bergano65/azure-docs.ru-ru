@@ -12,11 +12,12 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 11/25/2014
 ms.author: gwallace
-ms.openlocfilehash: 168ec65cfd0ff4e87c33324daa353b554111c8aa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 571fecde9a02dc667e89da1d3245e4d153500014
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73838557"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169516"
 ---
 # <a name="how-to-make-a-phone-call-using-twilio-in-a-java-application-on-azure"></a>Осуществление телефонных звонков с использованием Twilio в Java-приложении Azure
 В следующем примере показано, как выполнить звонок с веб-страницы, размещенной в Azure, с помощью службы Twilio. Полученное приложение запрашивает у пользователя значения телефонного звонка, как показано на следующем снимке экрана.
@@ -37,133 +38,137 @@ ms.locfileid: "73838557"
 ## <a name="create-a-web-form-for-making-a-call"></a>Создание веб-формы для выполнения звонка
 В следующем коде показано, как создать веб-форму, позволяющую извлечь данные пользователя для выполнения звонка. В этом примере создается динамический веб-проект **TwilioCloud**, в который в качестве JSP-файла добавляется файл **callform.jsp**.
 
-    <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-        pageEncoding="ISO-8859-1" %>
-    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
-    <html>
+```jsp
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html>
     <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Automated call form</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <title>Automated call form</title>
     </head>
     <body>
-     <p>Fill in all fields and click <b>Make this call</b>.</p>
-     <br/>
-      <form action="makecall.jsp" method="post">
-       <table>
-         <tr>
-           <td>To:</td>
-           <td><input type="text" size=50 name="callTo" value="" />
-           </td>
-         </tr>
-         <tr>
-           <td>From:</td>
-           <td><input type="text" size=50 name="callFrom" value="" />
-           </td>
-         </tr>
-         <tr>
-           <td>Call message:</td>
-           <td><input type="text" size=400 name="callText" value="Hello. This is the call text. Good bye." />
-           </td>
-         </tr>
-         <tr>
-           <td colspan=2><input type="submit" value="Make this call" />
-           </td>
-         </tr>
-       </table>
-     </form>
-     <br/>
+        <p>Fill in all fields and click <b>Make this call</b>.</p>
+        <br/>
+        <form action="makecall.jsp" method="post">
+            <table>
+                <tr>
+                    <td>To:</td>
+                    <td><input type="text" size=50 name="callTo" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>From:</td>
+                    <td><input type="text" size=50 name="callFrom" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Call message:</td>
+                    <td><input type="text" size=400 name="callText" value="Hello. This is the call text. Good bye." />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=2><input type="submit" value="Make this call" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <br/>
     </body>
-    </html>
+</html>
+```
 
 ## <a name="create-the-code-to-make-the-call"></a>Создание кода для выполнения звонка
 Следующий код вызывается после заполнения формы пользователем, отображаемой файлом callform.jsp, создает сообщение звонка, а затем сам звонок. В этом примере JSP-файлу присваивается имя **makecall.jsp**, после чего он добавляется в проект **TwilioCloud**. (Вместо заполнителей **accountSID** и **authToken** в приведенном ниже коде следует указать вашу учетную запись Twilio и маркер проверки подлинности.)
 
-    <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    import="java.util.*"
-    import="com.twilio.*"
-    import="com.twilio.sdk.*"
-    import="com.twilio.sdk.resource.factory.*"
-    import="com.twilio.sdk.resource.instance.*"
-    pageEncoding="ISO-8859-1" %>
-    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
-    <html>
+```jsp
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+import="java.util.*"
+import="com.twilio.*"
+import="com.twilio.sdk.*"
+import="com.twilio.sdk.resource.factory.*"
+import="com.twilio.sdk.resource.instance.*"
+pageEncoding="ISO-8859-1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html>
     <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Call processing happens here</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <title>Call processing happens here</title>
     </head>
     <body>
         <b>This is my make call page.</b><p/>
-     <%
-    try 
-    {
-         // Use your account SID and authentication token instead
-         // of the placeholders shown here.
-         String accountSID = "your_twilio_account";
-         String authToken = "your_twilio_authentication_token";
+<%
+try 
+{
+    // Use your account SID and authentication token instead
+    // of the placeholders shown here.
+    String accountSID = "your_twilio_account";
+    String authToken = "your_twilio_authentication_token";
 
-         // Instantiate an instance of the Twilio client.     
-         TwilioRestClient client;
-         client = new TwilioRestClient(accountSID, authToken);
+    // Instantiate an instance of the Twilio client.     
+    TwilioRestClient client;
+    client = new TwilioRestClient(accountSID, authToken);
 
-         // Retrieve the account, used later to retrieve the CallFactory.
-         Account account = client.getAccount();
+    // Retrieve the account, used later to retrieve the CallFactory.
+    Account account = client.getAccount();
 
-         // Display the client endpoint. 
-         out.println("<p>Using Twilio endpoint " + client.getEndpoint() + ".</p>");
+    // Display the client endpoint. 
+    out.println("<p>Using Twilio endpoint " + client.getEndpoint() + ".</p>");
 
-         // Display the API version.
-         String APIVERSION = TwilioRestClient.DEFAULT_VERSION;
-         out.println("<p>Twilio client API version is " + APIVERSION + ".</p>");
+    // Display the API version.
+    String APIVERSION = TwilioRestClient.DEFAULT_VERSION;
+    out.println("<p>Twilio client API version is " + APIVERSION + ".</p>");
 
-         // Retrieve the values entered by the user.
-         String callTo = request.getParameter("callTo");  
-         // The Outgoing Caller ID, used for the From parameter,
-         // must have previously been verified with Twilio.
-         String callFrom = request.getParameter("callFrom");
-         String userText = request.getParameter("callText");
+    // Retrieve the values entered by the user.
+    String callTo = request.getParameter("callTo");  
+    // The Outgoing Caller ID, used for the From parameter,
+    // must have previously been verified with Twilio.
+    String callFrom = request.getParameter("callFrom");
+    String userText = request.getParameter("callText");
 
-         // Replace spaces in the user's text with '%20', 
-         // to make the text suitable for a URL.
-         userText = userText.replace(" ", "%20");
+    // Replace spaces in the user's text with '%20', 
+    // to make the text suitable for a URL.
+    userText = userText.replace(" ", "%20");
 
-         // Create a URL using the Twilio message and the user-entered text.
-         String Url="https://twimlets.com/message";
-         Url = Url + "?Message%5B0%5D=" + userText;
+    // Create a URL using the Twilio message and the user-entered text.
+    String Url="https://twimlets.com/message";
+    Url = Url + "?Message%5B0%5D=" + userText;
 
-         // Display the message URL.
-         out.println("<p>");
-         out.println("The URL is " + Url);
-         out.println("</p>");
+    // Display the message URL.
+    out.println("<p>");
+    out.println("The URL is " + Url);
+    out.println("</p>");
 
-         // Place the call From, To and URL values into a hash map. 
-         HashMap<String, String> params = new HashMap<String, String>();
-         params.put("From", callFrom);
-         params.put("To", callTo);
-         params.put("Url", Url);
+    // Place the call From, To and URL values into a hash map. 
+    HashMap<String, String> params = new HashMap<String, String>();
+    params.put("From", callFrom);
+    params.put("To", callTo);
+    params.put("Url", Url);
 
-         CallFactory callFactory = account.getCallFactory();
-         Call call = callFactory.create(params);
-         out.println("<p>Call status: " + call.getStatus()  + "</p>"); 
-    } 
-    catch (TwilioRestException e) 
-    {
-        out.println("<p>TwilioRestException encountered: " + e.getMessage() + "</p>");
-        out.println("<p>StackTrace: " + e.getStackTrace().toString() + "</p>");
-    }
-    catch (Exception e) 
-    {
-        out.println("<p>Exception encountered: " + e.getMessage() + "");
-        out.println("<p>StackTrace: " + e.getStackTrace().toString() + "</p>");
-    }
-    %>
+    CallFactory callFactory = account.getCallFactory();
+    Call call = callFactory.create(params);
+    out.println("<p>Call status: " + call.getStatus()  + "</p>"); 
+} 
+catch (TwilioRestException e) 
+{
+    out.println("<p>TwilioRestException encountered: " + e.getMessage() + "</p>");
+    out.println("<p>StackTrace: " + e.getStackTrace().toString() + "</p>");
+}
+catch (Exception e) 
+{
+    out.println("<p>Exception encountered: " + e.getMessage() + "");
+    out.println("<p>StackTrace: " + e.getStackTrace().toString() + "</p>");
+}
+%>
     </body>
-    </html>
+</html>
+```
 
 Помимо звонка makecall.jsp отображает конечную точку Twilio, версию API-интерфейса и сведения о состоянии звонка. Пример приведен на следующем снимке экрана:
 
 ![Ответ на звонок Azure с помощью Twilio и Java][twilio_java_response]
 
-## <a name="run-the-application"></a>Запуск приложения
+## <a name="run-the-application"></a>Выполнение приложения
 Ниже приводятся общие указания по запуску приложения. Подробное описание этих шагов см. в статье [Создание приложения Hello World для Azure в Eclipse][azure_java_eclipse_hello_world].
 
 1. Экспортируйте WAR-файл TwilioCloud в папку **approot** Azure. 
@@ -175,8 +180,8 @@ ms.locfileid: "73838557"
 
 Завершив подготовку к развертыванию в Azure, выполните повторную компиляцию для развертывания в облаке, далее выполните развертывание в Azure и запустите http://*your_hosted_name*.cloudapp.net/TwilioCloud/callform.jsp в браузере (замените атрибут *именем_вашего_размещенного_приложения*).
 
-## <a name="next-steps"></a>Дальнейшие шаги
-В этом коде демонстрируются базовые функциональные возможности службы Twilio в Java в Azure. Возможно, перед развертыванием в рабочей среде Azure потребуется добавить в него дополнительные обработчики ошибок и другие функции. Пример:
+## <a name="next-steps"></a>Дальнейшие действия
+В этом коде демонстрируются базовые функциональные возможности службы Twilio в Java в Azure. Возможно, перед развертыванием в рабочей среде Azure потребуется добавить в него дополнительные обработчики ошибок и другие функции. Вот несколько примеров:
 
 * Вместо использования веб-формы для хранения телефонных номеров и текста вызова можно применить большие двоичные объекты хранилища Azure или SQL Database. Дополнительные сведения об использовании больших двоичных объектов службы хранилища Azure в Java см. в разделе [Как использовать службу хранилища BLOB-объектов из Java][howto_blob_storage_java]. 
 * Вы можете использовать **RoleEnvironment.getConfigurationSettings** для получения идентификатора учетной записи Twilio и маркера проверки подлинности из параметров конфигурации вашего развертывания вместо того, чтобы жестко программировать значения в файле makecall.jsp. Сведения о классе **RoleEnvironment** см. в разделе [Использование библиотеки среды выполнения службы Azure в JSP][azure_runtime_jsp].

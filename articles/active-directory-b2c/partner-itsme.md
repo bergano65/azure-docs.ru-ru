@@ -11,18 +11,18 @@ ms.topic: how-to
 ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d8229864acc80a27994ae3c795213dc2a65d22db
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 85dd58398021ef61e425eb58797e818b233c491b
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85385575"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170128"
 ---
 # <a name="configure-itsme-openid-connect-oidc-with-azure-active-directory-b2c"></a>Настройка итсме OpenID Connect Connect (OIDC) с помощью Azure Active Directory B2C
 
 Приложение Digital ID итсме позволяет безопасно выполнять вход без устройств чтения карт, паролей, двухфакторной проверки подлинности или нескольких ПИН-кодов. Приложение итсме обеспечивает надежную проверку подлинности клиента с проверенным удостоверением. Из этой статьи вы узнаете, как интегрировать проверку подлинности Azure AD B2C с итсме OpenID Connect Connect (OIDC) с помощью политики потока пользователя секрета клиента.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы приступить к работе, вам потребуется:
 
@@ -40,7 +40,7 @@ ms.locfileid: "85385575"
 Please clarify step 1 in the description below - we don't have steps in this tutorial for "adapting in the Azure AD B2C Custom Policy- User Journeys" - should this be added somewhere?
 -->
 
-|   |   |
+| Шаг | Описание |
 |------|------|
 |1     | На веб-сайте или в приложении включите **Вход с помощью кнопки итсме** , адаптируя в потоке пользователя Azure AD B2C. Поток взаимодействия запускается, когда пользователь нажимает эту кнопку.  |
 |2     | Azure AD B2C запускает поток подключения OpenID Connect, отправляя запрос авторизации в API секрета клиента итсме. Доступна хорошо известная конечная точка (OpenID Connect), содержащая сведения о конечных точках.  |
@@ -80,7 +80,7 @@ Please clarify step 1 in the description below - we don't have steps in this tut
 
 4. Заполните форму следующими сведениями:
 
-   |Свойство. | Значение |
+   |Свойство | Значение |
    |------------ |------- |
    | Имя | itsme |
    | URL-адрес метаданных | `https://oidc.<environment>.itsme.services/clientsecret-oidc/csapi/v0.1/.well-known/openid-configuration` <br>где `<environment>` — это либо `e2e` (тестовая среда), либо `prd` (Рабочая)  |
@@ -94,9 +94,9 @@ Please clarify step 1 in the description below - we don't have steps in this tut
    |Отображаемое имя | name |
    |Имя | given_name |
    |Surname | family_name |
-   |Адрес электронной почты | email|
+   |Электронная почта | email|
 
-5. Нажмите кнопку **Сохранить**.
+5. Нажмите **Сохранить**.
 
 ### <a name="configure-a-user-flow"></a>Настройка потока пользователя
 
@@ -110,7 +110,7 @@ Please clarify step 1 in the description below - we don't have steps in this tut
 
 5. В разделе **поставщики удостоверений** выберите **итсме**.
 
-6. Выберите **Создать**.
+6. Нажмите кнопку **Создать**.
 
 7. Откройте только что созданный поток пользователя, выбрав имя потока пользователя.
 
@@ -127,11 +127,11 @@ Please clarify step 1 in the description below - we don't have steps in this tut
 
 3. Убедитесь, что многофакторная проверка подлинности **отключена**.
 
-4. Выберите **Зарегистрировать**.
+4. Нажмите **Зарегистрировать**.
 
-   а. В целях тестирования выберите **Проверка подлинности**и в разделе **неявное предоставление**установите флажки **токены доступа** и **маркеры идентификации** .  
+   А. В целях тестирования выберите **Проверка подлинности**и в разделе **неявное предоставление**установите флажки **токены доступа** и **маркеры идентификации** .  
 
-   b. Нажмите кнопку **Сохранить**.
+   Б. Нажмите **Сохранить**.
 
 ## <a name="test-the-user-flow"></a>Тестирование потока пользователя
 
@@ -141,9 +141,9 @@ Please clarify step 1 in the description below - we don't have steps in this tut
 
 3. Выберите **Выполнить поток пользователя**.
 
-   а. **Приложение**: *выберите зарегистрированное приложение* .
+   А. **Приложение**: *выберите зарегистрированное приложение* .
 
-   b. **URL-адрес ответа**: *выберите URL-адрес перенаправления*
+   Б. **URL-адрес ответа**: *выберите URL-адрес перенаправления*
 
 4. Откроется страница итсме **Identify (идентификация** пользователя).  
 
@@ -151,7 +151,7 @@ Please clarify step 1 in the description below - we don't have steps in this tut
 
 6. Подтвердите действие в приложении итсме.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях:
 

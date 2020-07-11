@@ -19,11 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: b966e9cfa3ef40666dbbd62135f8f964e5eb2023
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 959adec9f74a8cda7fde941ccea7db75e981a650
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84692807"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86201540"
 ---
 # <a name="odata-filter-syntax-in-azure-cognitive-search"></a>Синтаксис $filter OData в Azure Когнитивный поиск
 
@@ -83,20 +84,28 @@ variable ::= identifier | field_path
 
 Оператор, наявляющийся выше в приведенной выше таблице, будет "более тесно" привязан к операндам по сравнению с другими операторами. Например, `and` имеет более высокий приоритет, чем `or` , а операторы сравнения имеют более высокий приоритет, чем любой из них, поэтому следующие два выражения эквивалентны:
 
+```odata-filter-expr
     Rating gt 0 and Rating lt 3 or Rating gt 7 and Rating lt 10
     ((Rating gt 0) and (Rating lt 3)) or ((Rating gt 7) and (Rating lt 10))
+```
 
 `not`Оператор имеет наивысший приоритет всех--даже выше, чем операторы сравнения. Вот почему, если вы попытаетесь написать фильтр следующим образом:
 
+```odata-filter-expr
     not Rating gt 5
+```
 
 Вы получите следующее сообщение об ошибке:
 
+```text
     Invalid expression: A unary operator with an incompatible type was detected. Found operand type 'Edm.Int32' for operator kind 'Not'.
+```
 
 Эта ошибка возникает потому, что оператор связан только с `Rating` полем, имеющим тип `Edm.Int32` , а не со всем выражением сравнения. Исправление заключается в том, чтобы поставить операнд `not` в круглые скобки:
 
+```odata-filter-expr
     not (Rating gt 5)
+```
 
 <a name="bkmk_limits"></a>
 
@@ -111,89 +120,131 @@ variable ::= identifier | field_path
 
 Найти все гостиницы, по крайней мере, с одной комнатой с базовой ставкой менее $200, которые оцениваются по 4 или выше.
 
+```odata-filter-expr
     $filter=Rooms/any(room: room/BaseRate lt 200.0) and Rating ge 4
+```
 
 Найти все гостиницы, отличные от "Sea View Motel", которые были отремонтированных с 2010:
 
+```odata-filter-expr
     $filter=HotelName ne 'Sea View Motel' and LastRenovationDate ge 2010-01-01T00:00:00Z
+```
 
 Найти все гостиницы, которые были отремонтированных в 2010 или более поздней версии. Литерал DateTime включает сведения о часовом поясе для тихоокеанского стандартного времени:  
 
+```odata-filter-expr
     $filter=LastRenovationDate ge 2010-01-01T00:00:00-08:00
+```
 
 Найти все гостиницы, в которых включена стоянка, и все комнаты не Курение:
 
+```odata-filter-expr
     $filter=ParkingIncluded and Rooms/all(room: not room/SmokingAllowed)
+```
 
  \- OR -  
 
+```odata-filter-expr
     $filter=ParkingIncluded eq true and Rooms/all(room: room/SmokingAllowed eq false)
+```
 
 Найти все отели класса люкс или отели с рейтингом 5, в которых есть парковка:  
 
+```odata-filter-expr
     $filter=(Category eq 'Luxury' or ParkingIncluded eq true) and Rating eq 5
+```
 
 Найдите все гостиницы с тегом "WiFi" хотя бы в одном помещении (где каждая комната содержит теги, хранящиеся в `Collection(Edm.String)` поле):  
 
+```odata-filter-expr
     $filter=Rooms/any(room: room/Tags/any(tag: tag eq 'wifi'))
+```
 
 Найти все гостиницы с любыми комнатами:  
 
+```odata-filter-expr
     $filter=Rooms/any()
+```
 
 Найти все гостиницы, у которых нет комнат:
 
+```odata-filter-expr
     $filter=not Rooms/any()
+```
 
 Найти все гостиницы в 10 километрах заданной контрольной точки (где `Location` является полем типа `Edm.GeographyPoint` ):
 
+```odata-filter-expr
     $filter=geo.distance(Location, geography'POINT(-122.131577 47.678581)') le 10
+```
 
 Найти все гостиницы в заданном окне просмотра, описанные в виде многоугольника (где `Location` является полем типа EDM. GeographyPoint). Многоугольник должен быть замкнутым, то есть первый и последний наборы точек должны быть одинаковыми. Кроме того, [точки должны быть указаны в порядке против часовой стрелки](https://docs.microsoft.com/rest/api/searchservice/supported-data-types#Anchor_1).
 
+```odata-filter-expr
     $filter=geo.intersects(Location, geography'POLYGON((-122.031577 47.578581, -122.031577 47.678581, -122.131577 47.678581, -122.031577 47.578581))')
+```
 
 Найти все гостиницы, в которых поле "Описание" имеет значение null. Поле будет иметь значение null, если оно не было задано, или если оно было явно задано как NULL:  
 
+```odata-filter-expr
     $filter=Description eq null
+```
 
 Найти все гостиницы с именем, равным "Sea View Motel" или "Budget Гостиницы". Эти фразы содержат пробелы, а пробел — разделитель по умолчанию. В качестве третьего строкового параметра можно указать альтернативный разделитель в одинарных кавычках:  
 
+```odata-filter-expr
     $filter=search.in(HotelName, 'Sea View motel,Budget hotel', ',')
+```
 
 Найти все гостиницы с именем, равным "Sea View Motel" или "Budget Гостиницы", разделенными "|"):  
 
+```odata-filter-expr
     $filter=search.in(HotelName, 'Sea View motel|Budget hotel', '|')
+```
 
 Найти все гостиницы, в которых все комнаты имеют тег "Wi" или "купание":
 
+```odata-filter-expr
     $filter=Rooms/any(room: room/Tags/any(tag: search.in(tag, 'wifi, tub'))
+```
 
 Найти совпадение по фразам в коллекции, например "нагревани Товел стоек" или "хаирдрер включен" в тегах.
 
+```odata-filter-expr
     $filter=Rooms/any(room: room/Tags/any(tag: search.in(tag, 'heated towel racks,hairdryer included', ','))
+```
 
 Найти документы со словом waterfront. Этот запрос фильтрации идентичен [поисковому запросу](https://docs.microsoft.com/rest/api/searchservice/search-documents) с `search=waterfront`:
 
+```odata-filter-expr
     $filter=search.ismatchscoring('waterfront')
+```
 
 Найти документы со словом hostel и рейтингом, большим или равным 4, или документы со словом motel и рейтингом 5. Этот запрос не может быть выражен без `search.ismatchscoring` функции, так как он сочетает полнотекстовый поиск с операциями фильтрации с помощью `or` .
 
+```odata-filter-expr
     $filter=search.ismatchscoring('hostel') and rating ge 4 or search.ismatchscoring('motel') and rating eq 5
+```
 
 Найти документы без слова luxury.
 
+```odata-filter-expr
     $filter=not search.ismatch('luxury')
+```
 
 Найти документы с фразой "ocean view" или рейтингом 5. Запрос `search.ismatchscoring` будет выполняться только по отношению к полям `HotelName` и `Description`. Документы, которые совпали только с вторым предложением дизъюнкции, будут возвращены — Гостиницы со значением, `Rating` равным 5. Эти документы будут возвращены с оценками, равными нулю, чтобы ясно, что они не соответствуют ни одной из оцененных частей выражения.
 
+```odata-filter-expr
     $filter=search.ismatchscoring('"ocean view"', 'Description,HotelName') or Rating eq 5
+```
 
 Поиск гостиниц, в которых слова "Гостиница" и "Аэропорт" имеют не более пяти слов, разделенных на описание, и там, где все комнаты не курение. В этом запросе используется [полный язык запросов Lucene](query-lucene-syntax.md).
 
+```odata-filter-expr
     $filter=search.ismatch('"hotel airport"~5', 'Description', 'full', 'any') and not Rooms/any(room: room/SmokingAllowed)
+```
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)

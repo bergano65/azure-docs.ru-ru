@@ -8,12 +8,12 @@ ms.author: jlembicz
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 344b3bb30c9a92046a5fbd13c35b0efc7e6f3a23
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 54def7f03e28acb201d613ab5a13d9077cff121b
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85560842"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146768"
 ---
 # <a name="how-to-create-an-index-for-multiple-languages-in-azure-cognitive-search"></a>Создание индекса для нескольких языков в Azure Когнитивный поиск
 
@@ -52,6 +52,7 @@ Azure Когнитивный поиск предлагает широкий вы
 
 Если язык агента, отправившего запрос, неизвестен, запрос можно применить ко всем полям одновременно. При необходимости можно сделать какой-то язык предпочтительным, воспользовавшись [профилями оценки](index-add-scoring-profiles.md). В следующем примере совпадения, найденные в описании на английском языке, получат более высокую оценку, чем совпадения на польском или французском языках:
 
+```http
     "scoringProfiles": [
       {
         "name": "englishFirst",
@@ -60,9 +61,10 @@ Azure Когнитивный поиск предлагает широкий вы
         }
       }
     ]
+```
 
 `https://[service name].search.windows.net/indexes/[index name]/docs?search=Microsoft&scoringProfile=englishFirst&api-version=2020-06-30`
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы являетесь разработчиком .NET, обратите внимание, что вы можете настроить языковые анализаторы с помощью [пакета SDK Azure когнитивный Поиск .NET](https://www.nuget.org/packages/Microsoft.Azure.Search) и свойства [анализатора](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.analyzer?view=azure-dotnet) . 

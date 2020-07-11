@@ -1,18 +1,18 @@
 ---
 title: Отладка определяемых пользователем функций в Azure Stream Analytics
 description: В этой статье описывается, как выполнять отладку определяемых пользователем функций в Azure Stream Analytics.
-author: mamccrea
-ms.author: mamccrea
+author: jenssuessmeyer
+ms.author: jenss
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/24/2020
-ms.openlocfilehash: a6c2e390af39b496a871ae9b5799288ea3609bca
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 46aa9879af4bda1cd4a5e06894ea2d964f838f32
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85981509"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86181358"
 ---
 # <a name="debug-user-defined-functions-in-azure-stream-analytics"></a>Отладка определяемых пользователем функций в Azure Stream Analytics 
 
@@ -48,7 +48,7 @@ JavaScript — это еще один вариант для создания ф�
 
 В следующем примере показано, как выполнить отладку определяемых пользователем функций JavaScript с некоторыми ограничениями в интегрированной среде выполнения в [Visual Studio Code](quick-create-vs-code.md).
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Обязательные условия
 
 Прежде чем начать, убедитесь, что проект Azure Stream Analytics содержит следующие элементы:
 
@@ -126,7 +126,7 @@ exports.data = methods;
 > ![Stream Analytics запуска и отладки UDA](./media/debug-user-defined-functions/run-debug-uda.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Разработка и отладка заданий Azure Stream Analytics локально](develop-locally.md)
 * [Отладка запросов Azure Stream Analytics локально с помощью схемы заданий в Visual Studio](debug-locally-using-job-diagram.md)

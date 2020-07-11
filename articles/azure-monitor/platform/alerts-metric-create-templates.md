@@ -5,13 +5,14 @@ author: harelbr
 ms.author: harelbr
 services: azure-monitor
 ms.topic: conceptual
-ms.date: 6/2/2020
+ms.date: 7/9/2020
 ms.subservice: alerts
-ms.openlocfilehash: e9a1980eccb42342ebc5cb739b2c1f5a539e9f18
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4d8ec0c76259a8567906e9ac415864e2cd37a9cd
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84299355"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187580"
 ---
 # <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения метрики с помощью шаблона Resource Manager
 
@@ -1520,7 +1521,9 @@ az group deployment create \
 
 > [!NOTE]
 >
-> В правиле оповещения метрики, отслеживающем несколько ресурсов, допускается только одно условие.
+> В правиле оповещения метрик, которое отслеживает несколько ресурсов, применяются следующие ограничения.
+> - Область действия правила генерации оповещений должна содержать по крайней мере один ресурс выбранного типа ресурса.
+> - Правило оповещения может содержать только одно условие.
 
 ### <a name="static-threshold-alert-on-all-virtual-machines-in-one-or-more-resource-groups"></a>Оповещение со статическим пороговым значением на всех виртуальных машинах в одной или нескольких группах ресурсов
 
@@ -3620,7 +3623,7 @@ az group deployment create \
     --parameters @availabilityalert.parameters.json
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об [оповещениях в Azure](alerts-overview.md)
 - Сведения о [создании группы действий с помощью шаблона Resource Manager](action-groups-create-resource-manager-template.md)

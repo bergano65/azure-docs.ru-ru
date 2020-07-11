@@ -14,11 +14,12 @@ ms.workload: identity
 ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 46aea9ab113a0c75ed24497ee39793d08c4f7165
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9b0df4337a5e5faff3427222fb66caf8e02184a3
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84790897"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146662"
 ---
 # <a name="add-or-remove-azure-role-assignments-using-azure-powershell"></a>Добавление и удаление назначений ролей Azure с помощью Azure PowerShell
 
@@ -26,7 +27,7 @@ ms.locfileid: "84790897"
 
 [!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Для добавления или удаления назначений ролей необходимо иметь следующее:
 
@@ -55,7 +56,7 @@ Get-AzADGroup -SearchString <group_name_in_quotes>
 (Get-AzADGroup -DisplayName <group_name_in_quotes>).id
 ```
 
-### <a name="application"></a>Приложение
+### <a name="application"></a>Приложения
 
 Чтобы получить идентификатор объекта для субъекта-службы Azure AD (удостоверения, используемого приложением), можно использовать [Get-азадсервицепринЦипал](/powershell/module/az.resources/get-azadserviceprincipal). Для субъекта-службы используйте идентификатор объекта, а **не** идентификатор приложения.
 
@@ -108,7 +109,7 @@ CanDelegate        : False
 Чтобы добавить назначение ролей с помощью уникального идентификатора роли вместо имени роли, используйте [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment).
 
 ```azurepowershell
-New-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionId <role_id> -ResourceGroupName <resource_group_name>
+New-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionId <role_id> -Scope <resource_group_name/resource/management groups>
 ```
 
 В следующем примере роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) назначается пользователю *(Alain \@ example.com* в области группы ресурсов *Pharma-Sales* . Чтобы получить уникальный идентификатор роли, можно использовать [Get-азроледефинитион](/powershell/module/az.resources/get-azroledefinition) или ознакомиться со [встроенными ролями Azure](built-in-roles.md).
@@ -226,7 +227,7 @@ Remove-AzRoleAssignment -ObjectId <object_id> -RoleDefinitionName <role_name> -S
 
 При появление сообщения об ошибке "предоставленные сведения не сопоставляются с назначением ролей" убедитесь, что также указаны `-Scope` `-ResourceGroupName` Параметры или. Дополнительные сведения см. в разделе [Устранение неполадок в Azure RBAC](troubleshooting.md#role-assignments-with-identity-not-found).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Вывод списка назначений ролей Azure с помощью Azure PowerShell](role-assignments-list-powershell.md)
 - [Руководство по Предоставление доступа группам к ресурсам Azure с помощью Azure PowerShell](tutorial-role-assignments-group-powershell.md)
