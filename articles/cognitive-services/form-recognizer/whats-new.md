@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: pafarley
-ms.openlocfilehash: bbf098feccaf760718b97b1afb2d24bc55eef9ad
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 09eba483a258c1e88b15a5795d32b3b4a029a175
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027041"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232718"
 ---
 # <a name="whats-new-in-form-recognizer"></a>Новые возможности Распознавателя документов
 
@@ -26,17 +26,17 @@ ms.locfileid: "86027041"
 ## <a name="july-2020"></a>Июль 2020 г.
 
 ### <a name="new-features"></a>новые функции;
-* **доступна ссылка на версии 2.0** Ознакомьтесь со [справочником по API версии 2.0](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm) и обновленными пакетами SDK для [.NET](https://docs.microsoft.com/dotnet/api/overview/azure/formrecognizer), [Python](https://docs.microsoft.com/python/api/overview/azure/formrecognizer), [Java](https://docs.microsoft.com/java/api/overview/azure/formrecognizer)и [JavaScript](https://docs.microsoft.com/javascript/api/overview/azure/formrecognizer).
+* **доступна ссылка на версии 2.0** Ознакомьтесь со [справочником по API версии 2.0](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm) и обновленными пакетами SDK для [.NET](https://docs.microsoft.com/dotnet/api/overview/azure/ai.formrecognizer-readme-pre), [Python](https://docs.microsoft.com/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer), [Java](https://docs.microsoft.com/java/api/overview/azure/formrecognizer)и [JavaScript](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/).
 * Улучшения **таблиц и улучшений извлечения** включают улучшения точности и улучшения извлечения таблиц, в частности, возможность изучения заголовков и структур таблиц в пользовательском обучении без меток. 
 * **Поддержка валюты** Обнаружение и извлечение символов глобальной валюты.
 * **Azure gov** Средство распознавания форм теперь также доступно в Azure gov.
-*   **Улучшенные функции безопасности**: 
-    *   **Приведите свой собственный ключ**  Средство распознавания форм автоматически шифрует ваши данные при сохранении в облаке, чтобы защитить их и обеспечить соответствие требованиям к безопасности и соответствию Организации. По умолчанию в подписке используются ключи шифрования, управляемые корпорацией Майкрософт. Теперь вы можете управлять подпиской с помощью собственных ключей шифрования. [Ключи, управляемые клиентом (CMK), также известные как собственный ключ (BYOK)](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/form-recognizer-encryption-of-data-at-rest
+*    **Улучшенные функции безопасности**: 
+    *    **Приведите свой собственный ключ**  Средство распознавания форм автоматически шифрует ваши данные при сохранении в облаке, чтобы защитить их и обеспечить соответствие требованиям к безопасности и соответствию Организации. По умолчанию в подписке используются ключи шифрования, управляемые корпорацией Майкрософт. Теперь вы можете управлять подпиской с помощью собственных ключей шифрования. [Ключи, управляемые клиентом (CMK), также известные как собственный ключ (BYOK)](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/form-recognizer-encryption-of-data-at-rest
 ), обеспечивают большую гибкость при создании, повороте, отключении и отмене контроля доступа. Кроме того, можно выполнять аудит ключей шифрования, используемых для защиты данных.  
-    *   **Частные конечные точки** — позволяет использовать виртуальную сеть для [безопасного доступа к данным по частной ссылке.](https://docs.microsoft.com/azure/private-link/private-link-overview)
+    *    **Частные конечные точки** — позволяет использовать виртуальную сеть для [безопасного доступа к данным по частной ссылке.](https://docs.microsoft.com/azure/private-link/private-link-overview)
 
 
-## <a name="june-2020"></a>июнь 2020 г.
+## <a name="june-2020"></a>Июнь 2020 г.
 
 ### <a name="new-features"></a>новые функции;
 * **API копимодел добавлен в пакеты SDK клиента** Теперь клиентские пакеты SDK можно использовать для копирования моделей из одной подписки в другую. Общие сведения об этой функции см. в разделе [резервное копирование и восстановление моделей](./disaster-recovery.md) .
@@ -51,10 +51,10 @@ ms.locfileid: "86027041"
 
 ### <a name="new-features"></a>новые функции;
 * **Поддержка пакета SDK для API распознавателя форм (общедоступная Предварительная версия 2.0** ) В этом месяце мы расширили поддержку службы, включив в нее предварительную версию пакета SDK для выпуска распознавателя версии 2.0 (Предварительная версия). Воспользуйтесь приведенными ниже ссылками, чтобы начать работу с выбранным языком: 
-   * [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/formrecognizer)
+   * [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/ai.formrecognizer-readme-pre)
    * [пакет SDK для Java](https://docs.microsoft.com/java/api/overview/azure/formrecognizer)
-   * [Пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/formrecognizer)
-   * [Пакет SDK для JavaScript](https://docs.microsoft.com/javascript/api/overview/azure/formrecognizer)
+   * [Пакет SDK для Python](https://docs.microsoft.com/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer)
+   * [Пакет SDK для JavaScript](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/)
 
   Новый пакет SDK поддерживает все функции REST API версии 2.0 для распознавателя форм. Например, можно обучить модель с метками или без них, а также извлечь текст, пары "ключ-значение" и таблицы из форм, извлечь данные из чеков с помощью предварительно построенной службы получения и извлечь текст и таблицы со службой макета из документов. Вы можете поделиться своими отзывами о [пакетах SDK в форме отзывов SDK](https://aka.ms/FR_SDK_v1_feedback).
  
