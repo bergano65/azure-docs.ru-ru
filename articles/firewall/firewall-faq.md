@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 07/10/2020
 ms.author: victorh
-ms.openlocfilehash: 27cdff24672f70407e8f8f89c6c49a8c2de87d0a
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 3174576201f0068191c2918b47fbd99eaa1ec182
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86078431"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232089"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
@@ -223,3 +223,7 @@ Set-AzFirewall -AzureFirewall $fw
 ## <a name="can-i-deploy-azure-firewall-without-a-public-ip-address"></a>Можно ли развернуть брандмауэр Azure без общедоступного IP-адреса?
 
 Нет, в настоящее время необходимо развернуть брандмауэр Azure с общедоступным IP-адресом.
+
+## <a name="where-does-azure-firewall-store-customer-data"></a>Где в брандмауэре Azure хранятся данные о клиентах?
+
+Брандмауэр Azure не может переместить или сохранить данные клиента вне региона, в котором он развернут.

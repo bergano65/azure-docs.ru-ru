@@ -14,18 +14,18 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 05/24/2017
 ms.author: gwallace
-ms.openlocfilehash: ca6ac145db0536d3cf7e5bcc72a58d72101ab12a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 98b72dbb9f3b62fd5985f6245e52293ec31fc682
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81459123"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232548"
 ---
 # <a name="azure-powershell-samples-for-networking"></a>Примеры Azure PowerShell для работы с сетями
 
 В таблице ниже приведены ссылки на скрипты, созданные с помощью Azure PowerShell.
 
-| | |
+| Сценарий | Описание |
 |-|-|
 |**Подключение между ресурсами Azure**||
 | [Создание виртуальной сети для многоуровневых приложений](./scripts/virtual-network-powershell-sample-multi-tier-application.md?toc=%2fazure%2fnetworking%2ftoc.json) | Создание виртуальной сети с интерфейсной и внутренней подсетями. Трафик к интерфейсной подсети принимается по протоколу HTTP, в то время как трафик к внутренней подсети принимается только от SQL через порт 1433. |

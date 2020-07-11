@@ -5,11 +5,12 @@ ms.topic: article
 ms.date: 01/17/2020
 author: dkkapur
 ms.author: dekapur
-ms.openlocfilehash: ad232c5d9df9f6bfae3a79dbd72e2c68143be949
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2f9aff2ea88c2334ab30c9819f68fd6cbb9124c5
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79080366"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232446"
 ---
 # <a name="encrypt-deployment-data"></a>Шифрование данных развертывания
 
@@ -25,10 +26,10 @@ ms.locfileid: "79080366"
 
 |    |    Ключи, управляемые Майкрософт     |     Ключи, управляемые клиентом     |
 |----|----|----|
-|    Операции шифрования и расшифровки    |    Azure    |    Azure    |
-|    Хранилище ключей    |    Хранилище ключей (Майкрософт)    |    Azure Key Vault    |
-|    Ответственность за смену ключей    |    Microsoft    |    Customer    |
-|    Доступ к ключам    |    Только Майкрософт    |    Майкрософт, клиент    |
+|    **Операции шифрования и расшифровки**    |    Azure    |    Azure    |
+|    **Хранилище ключей**    |    Хранилище ключей (Майкрософт)    |    Azure Key Vault    |
+|    **Ответственность за смену ключей**    |    пиринг Майкрософт.    |    Customer    |
+|    **Доступ к ключам**    |    Только Майкрософт    |    Майкрософт, клиент    |
 
 Оставшаяся часть документа описывает шаги, необходимые для шифрования данных развертывания ACI с помощью ключа (управляемого клиентом ключа). 
 

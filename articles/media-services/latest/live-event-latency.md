@@ -13,11 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 04/22/2019
 ms.author: juliako
-ms.openlocfilehash: a82a0644fac099b568ab86ea213b98cd8e7d5c22
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 720931cf9f955f63075e3881b6b9f2e884bd3a76
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78199654"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232463"
 ---
 # <a name="live-event-low-latency-settings"></a>Параметры низкой задержки в динамических событиях
 
@@ -61,20 +62,20 @@ LiveEvent liveEvent = new LiveEvent(
 
 ||Включена двухсекундная GOP с малой задержкой|Включена односекундная GOP с малой задержкой|
 |---|---|---|
-|DASH в AMP|10 с|8 с|
-|HLS на собственном проигрывателе iOS|14 с|10 с|
+|**DASH в AMP**|10 с|8 с|
+|**HLS на собственном проигрывателе iOS**|14 с|10 с|
 
 ### <a name="live-encoding"></a>Кодирование в реальном времени
 
 ||Включена двухсекундная GOP с малой задержкой|Включена односекундная GOP с малой задержкой|
 |---|---|---|
-|DASH в AMP|14 с|10 с|
-|HLS на собственном проигрывателе iOS|18 с|13 с|
+|**DASH в AMP**|14 с|10 с|
+|**HLS на собственном проигрывателе iOS**|18 с|13 с|
 
 > [!NOTE]
 > Значение сквозной задержки может зависеть от условий локальной сети или наличия уровня кэширования CDN. Следует протестировать используемые конфигурации.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о потоковой трансляции](live-streaming-overview.md)
 - [Руководство по потоковой трансляции](stream-live-tutorial-with-api.md)

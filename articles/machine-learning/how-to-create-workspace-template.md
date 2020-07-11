@@ -8,13 +8,14 @@ ms.subservice: core
 ms.topic: how-to
 ms.author: larryfr
 author: Blackmist
-ms.date: 05/19/2020
+ms.date: 07/09/2020
 ms.custom: seoapril2019
-ms.openlocfilehash: 39c694f4e2afbf5d781a8fde43a7db9c4a255466
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4ba48e5beb8ce4b4ae126dd23acbe0dec650f655
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85392678"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232157"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Создание рабочей области для Машинного обучения Azure с помощью шаблона Azure Resource Manager
 
@@ -31,15 +32,12 @@ ms.locfileid: "85392678"
 
 * Чтобы использовать шаблон из командной строки, вам потребуется [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azps-1.2.0) или [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-## <a name="resource-manager-template"></a>Шаблон Resource Manager
+## <a name="workspace-resource-manager-template"></a>Шаблон диспетчер ресурсов рабочей области
 
-Чтобы создать рабочую область Машинного обучения Azure и связанные ресурсы Azure, примените следующий шаблон Azure Resource Manager.
-
-[!code-json[create-azure-machine-learning-service-workspace](~/quickstart-templates/101-machine-learning-create/azuredeploy.json)]
+Шаблон Azure Resource Manager, используемый в этом документе, можно найти в каталоге [201-Machine-Learning-Advanced](https://github.com/Azure/azure-quickstart-templates/blob/master/201-machine-learning-advanced/azuredeploy.json) статьи шаблоны быстрого запуска Azure в репозитории GitHub.
 
 Этот шаблон создает следующие ресурсы Azure:
 
-* группа ресурсов Azure.
 * Учетная запись хранения Azure
 * Azure Key Vault
 * Azure Application Insights
@@ -48,13 +46,13 @@ ms.locfileid: "85392678"
 
 Группа ресурсов выполняет функции контейнера, который содержит службы. Для рабочего пространства Службы машинного обучения Azure нужно несколько служб.
 
-Наш пример шаблона принимает два параметра.
+Пример шаблона имеет два **обязательных** параметра:
 
-* **Расположение** указывает, где будут созданы группа ресурсов и службы.
+* **Расположение** , в котором будут создаваться ресурсы.
 
     Этот шаблон будет использовать выбранное расположение для большинства ресурсов. Исключением является служба Application Insights, которая доступна не во всех тех расположениях, в которых доступны другие службы. Если вы выберете расположение, где эта служба не доступна, ее экземпляр будет создан в регионе "центрально-южная часть США".
 
-* **Имя рабочего пространства** Службы машинного обучения Azure в удобном для пользователя формате.
+* **WorkspaceName**— понятное имя рабочей области машинное обучение Azure.
 
     > [!NOTE]
     > В имени рабочей области не учитывается регистр.
@@ -74,7 +72,82 @@ ms.locfileid: "85392678"
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/templates/deploy-powershell.md)
 * [Типы ресурсов Microsoft.MachineLearningServices](https://docs.microsoft.com/azure/templates/microsoft.machinelearningservices/allversions)
 
-### <a name="advanced-template"></a>Расширенный шаблон
+## <a name="deploy-template"></a>Развертывание шаблона
+
+Чтобы развернуть шаблон, необходимо создать группу ресурсов.
+
+Если вы предпочитаете использовать графический пользовательский интерфейс, ознакомьтесь с разделом [портал Azure](#use-the-azure-portal) .
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+```azurecli
+az group create --name "examplegroup" --location "eastus"
+```
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+
+```azurepowershell
+New-AzResourceGroup -Name "examplegroup" -Location "eastus"
+```
+
+---
+
+После успешного создания группы ресурсов разверните шаблон с помощью следующей команды:
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+```azurecli
+az deployment group create \
+    --name "exampledeployment" \
+    --resource-group "examplegroup" \
+    --template-uri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" \
+    --parameters workspaceName="exampleworkspace" location="eastus"
+```
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name "exampledeployment" `
+  -ResourceGroupName "examplegroup" `
+  -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" `
+  -workspaceName "exampleworkspace" `
+  -location "eastus"
+```
+
+---
+
+По умолчанию все ресурсы, созданные как часть шаблона, являются новыми. Однако у вас также есть возможность использовать существующие ресурсы. Предоставляя дополнительные параметры для шаблона, можно использовать существующие ресурсы. Например, если вы хотите использовать существующую учетную запись хранения, задайте для параметра **сторажеаккаунтоптион** значение **existing** и укажите имя учетной записи хранения в параметре **storageAccountName** .
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+```azurecli
+az deployment group create \
+    --name "exampledeployment" \
+    --resource-group "examplegroup" \
+    --template-uri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" \
+    --parameters workspaceName="exampleworkspace" \
+      location="eastus" \
+      storageAccountOption="existing" \
+      storageAccountName="existingstorageaccountname"
+```
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name "exampledeployment" `
+  -ResourceGroupName "examplegroup" `
+  -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" `
+  -workspaceName "exampleworkspace" `
+  -location "eastus" `
+  -storageAccountOption "existing" `
+  -storageAccountName "existingstorageaccountname"
+```
+
+---
+
+## <a name="deploy-an-encrypted-workspace"></a>Развертывание зашифрованной рабочей области
 
 Создание рабочей области с тремя параметрами показано в следующем примере шаблона:
 
@@ -86,6 +159,7 @@ ms.locfileid: "85392678"
 
 > [!IMPORTANT]
 > Чтобы использовать этот шаблон, ваша подписка должна соответствовать некоторым дополнительным требованиям.
+>
 > * Приложение __Машинное обучение Azure__ должно быть __участником__ для подписки Azure.
 > * Должен существовать хранилище Azure Key Vault с ключом шифрования.
 > * Должна существовать политика доступа к Azure Key Vault, которая предоставляет права на __получение__, __упаковку__ и __распаковку__ приложению __Azure Cosmos DB__.
@@ -93,110 +167,482 @@ ms.locfileid: "85392678"
 
 Чтобы __добавить приложение Машинного обучения Azure в качестве участника__, используйте следующие команды:
 
-1. Чтобы выполнить проверку подлинности в Azure, выполните следующую команду в интерфейсе командной строки:
+1. Войдите в учетную запись Azure и получите идентификатор подписки. Эта подписка должна быть той же, которая содержит рабочую область Машинного обучения Azure.  
 
-    ```azurecli-interactive
-    az login
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+    ```azurecli
+    az account list --query '[].[name,id]' --output tsv
     ```
-    
-    [!INCLUDE [subscription-login](../../includes/machine-learning-cli-subscription.md)]
+
+    > [!TIP]
+    > Чтобы выбрать другую подписку, укажите имя или идентификатор этой подписки с помощью команды `az account set -s <subscription name or ID>`. См. дополнительные сведения о [выборе нужной подписки при использовании нескольких подписок Azure](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). 
+
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+
+    ```azurepowershell
+    Get-AzSubscription
+    ```
+
+    > [!TIP]
+    > Чтобы выбрать другую подписку, укажите имя или идентификатор этой подписки с помощью команды `Az-SetContext -SubscriptionId <subscription ID>`. См. дополнительные сведения о [выборе нужной подписки при использовании нескольких подписок Azure](https://docs.microsoft.com/powershell/azure/manage-subscriptions-azureps?view=azps-4.3.0).
+
+    ---
 
 1. Чтобы получить идентификатор объекта для приложения Машинного обучения Azure, выполните приведенную ниже команду. Это значение может быть разным для каждой подписки Azure.
 
-    ```azurecli-interactive
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+    ```azurecli
     az ad sp list --display-name "Azure Machine Learning" --query '[].[appDisplayName,objectId]' --output tsv
     ```
 
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+
+    ```azurepowershell
+    Get-AzADServicePrincipal --DisplayName "Azure Machine Learning" | select-object DisplayName, Id
+    ```
+
+    ---
     Эта команда возвращает глобально уникальный идентификатор объекта.
 
-1. Чтобы добавить идентификатор объекта в подписку в качестве участника, используйте приведенную ниже команду. Замените `<object-ID>` значением GUID из предыдущего шага. Замените `<subscription-ID>` именем или идентификатором подписки Azure.
+1. Чтобы добавить идентификатор объекта в подписку в качестве участника, используйте приведенную ниже команду. Замените на `<object-ID>` идентификатор объекта субъекта-службы. Замените `<subscription-ID>` именем или идентификатором подписки Azure.
 
-    ```azurecli-interactive
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+    ```azurecli
     az role assignment create --role 'Contributor' --assignee-object-id <object-ID> --subscription <subscription-ID>
     ```
 
-__Чтобы добавить ключ в Azure Key Vault__, используйте процедуру из раздела [Добавление ключа, секрета или сертификата в хранилище ключей](../key-vault/general/manage-with-cli2.md#adding-a-key-secret-or-certificate-to-the-key-vault) статьи __Управление Key Vault с помощью интерфейса командной строки Azure__.
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+
+    ```azurepowershell
+    New-AzRoleAssignment --ObjectId <object-ID> --RoleDefinitionName "Contributor" -Scope /subscriptions/<subscription-ID>
+    ```
+
+    ---
+
+1. Чтобы создать ключ в существующем Azure Key Vault, используйте одну из следующих команд. Замените `<keyvault-name>` именем хранилища ключей. Замените на `<key-name>` имя, используемое для ключа:
+
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+    ```azurecli
+    az keyvault key create --vault-name <keyvault-name> --name <key-name> --protection software
+    ```
+
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+
+    ```azurepowershell
+    Add-AzKeyVaultKey -VaultName <keyvault-name> -Name <key-name> -Destination 'Software'
+    ```
+    --- 
 
 __Чтобы добавить политику доступа к хранилищу ключей, выполните следующие команды:__
 
 1. Чтобы получить идентификатор объекта для приложения Azure Cosmos DB, выполните приведенную ниже команду. Это значение может быть разным для каждой подписки Azure.
 
-    ```azurecli-interactive
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+    ```azurecli
     az ad sp list --display-name "Azure Cosmos DB" --query '[].[appDisplayName,objectId]' --output tsv
     ```
-    
-    Эта команда возвращает глобально уникальный идентификатор объекта.
+
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+
+    ```azurepowershell
+    Get-AzADServicePrincipal --DisplayName "Azure Cosmos DB" | select-object DisplayName, Id
+    ```
+    ---
+
+    Эта команда возвращает глобально уникальный идентификатор объекта. Сохранить его для последующего использования
 
 1. Чтобы установить политику, используйте приведенную ниже команду. Замените `<keyvault-name>` именем в существующего хранилища Azure Key Vault. Замените `<object-ID>` значением GUID из предыдущего шага.
 
-    ```azurecli-interactive
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+    ```azurecli
     az keyvault set-policy --name <keyvault-name> --object-id <object-ID> --key-permissions get unwrapKey wrapKey
     ```
+
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+    
+    ```azurepowershell
+    Set-AzKeyVaultAccessPolicy -VaultName <keyvault-name> -ObjectId <object-ID> -PermissionsToKeys get, unwrapKey, wrapKey
+    ```
+    ---    
 
 __Чтобы получить значения__ для параметров `cmk_keyvault` (идентификатор Key Vault) и `resource_cmk_uri` (URI ключа), которые нужны в этом шаблоне, выполните следующие действия.
 
 1. Чтобы получить идентификатор Key Vault, используйте следующую команду:
 
-    ```azurecli-interactive
-    az keyvault show --name mykeyvault --resource-group myresourcegroup --query "id"
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+    ```azurecli
+    az keyvault show --name <keyvault-name> --query 'id' --output tsv
     ```
 
-    Эта команда возвращает значение следующего вида: `/subscriptions/{subscription-guid}/resourceGroups/myresourcegroup/providers/Microsoft.KeyVault/vaults/mykeyvault`.
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+
+    ```azurepowershell
+    Get-AzureRMKeyVault -VaultName '<keyvault-name>'
+    ```
+    ---
+
+    Эта команда возвращает значение следующего вида: `/subscriptions/{subscription-guid}/resourceGroups/<resource-group-name>/providers/Microsoft.KeyVault/vaults/<keyvault-name>`.
 
 1. Чтобы получить значение URI для управляемого клиентом ключа, используйте следующую команду:
 
-    ```azurecli-interactive
-    az keyvault key show --vault-name mykeyvault --name mykey --query "key.kid"
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+    ```azurecli
+    az keyvault key show --vault-name <keyvault-name> --name <key-name> --query 'key.kid' --output tsv
     ```
 
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+
+    ```azurepowershell
+    Get-AzureKeyVaultKey -VaultName '<keyvault-name>' -KeyName '<key-name>'
+    ```
+    ---
+
     Эта команда возвращает значение следующего вида: `https://mykeyvault.vault.azure.net/keys/mykey/{guid}`.
-
-__Пример шаблона__
-
-:::code language="json" source="~/quickstart-templates/201-machine-learning-encrypted-workspace/azuredeploy.json":::
 
 > [!IMPORTANT]
 > После создания рабочей области вы не сможете изменить параметры для конфиденциальных данных, шифрования, идентификатора хранилища ключей или идентификаторов ключей. Чтобы изменить эти значения, придется создать новую рабочую область с новыми значениями.
 
+После успешного выполнения описанных выше действий разверните шаблон, как обычно. Чтобы включить использование управляемых пользователем ключей, задайте следующие параметры:
+
+* **Encryption_status** **включить**.
+* **cmk_keyvault** значение, `cmk_keyvault` полученное на предыдущих шагах.
+* **resource_cmk_uri** значение, `resource_cmk_uri` полученное на предыдущих шагах.
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+```azurecli
+az deployment group create \
+    --name "exampledeployment" \
+    --resource-group "examplegroup" \
+    --template-uri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" \
+    --parameters workspaceName="exampleworkspace" \
+      location="eastus" \
+      encryption_status="Enabled" \
+      cmk_keyvault="/subscriptions/{subscription-guid}/resourceGroups/<resource-group-name>/providers/Microsoft.KeyVault/vaults/<keyvault-name>" \
+      resource_cmk_uri="https://mykeyvault.vault.azure.net/keys/mykey/{guid}" \
+```
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name "exampledeployment" `
+  -ResourceGroupName "examplegroup" `
+  -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" `
+  -workspaceName "exampleworkspace" `
+  -location "eastus" `
+  -encryption_status "Enabled" `
+  -cmk_keyvault "/subscriptions/{subscription-guid}/resourceGroups/<resource-group-name>/providers/Microsoft.KeyVault/vaults/<keyvault-name>" `
+  -resource_cmk_uri "https://mykeyvault.vault.azure.net/keys/mykey/{guid}"
+```
+---
+
+При использовании ключа, управляемого клиентом, Машинное обучение Azure создает вторичную группу ресурсов, которая содержит экземпляр Cosmos DB. Дополнительные сведения см. [в разделе Шифрование неактивных данных Cosmos DB](concept-enterprise-security.md#encryption-at-rest).
+
+Дополнительной конфигурацией, которую можно предоставить для данных, является установка параметра **confidential_data** в **значение true**. Это делает следующее:
+
+* Запускает шифрование локального временного диска для Машинное обучение Azureных кластерных ресурсов, предоставляя не созданные ранее кластеры в подписке. Если вы ранее создали кластер в подписке, отправьте запрос в службу поддержки, чтобы обеспечить шифрование временного диска для ваших кластеров.
+* Очищает локальный рабочий диск между запусками.
+* Безопасно передает учетные данные для учетной записи хранения, реестра контейнеров и учетной записи SSH из уровня выполнения в вычислительные кластеры с помощью хранилища ключей.
+* Включает фильтрацию IP-адресов для того, чтобы базовые пулы пакетов не можно было вызывать из внешних служб, отличных от Азуремачинелеарнингсервице.
+
+  Дополнительные сведения см. [в разделе Шифрование неактивных](concept-enterprise-security.md#encryption-at-rest)данных.
+
+## <a name="deploy-workspace-behind-a-virtual-network"></a>Развертывание рабочей области за виртуальной сетью
+
+`vnetOption`Если задать для параметра значение `new` или `existing` , вы сможете создать ресурсы, используемые рабочей областью, которая находится за виртуальной сетью.
+
+> [!IMPORTANT]
+> Для реестра контейнеров поддерживается только SKU "Премиум".
+
+> [!IMPORTANT]
+> Application Insights не поддерживает развертывание за пределами виртуальной сети.
+
+### <a name="only-deploy-workspace-behind-private-endpoint"></a>Развертывать только рабочую область за частной конечной точкой
+
+Если связанные ресурсы не находятся за виртуальной сетью, можно задать для параметра **приватиндпоинттипе** значение `AutoAproval` или, `ManualApproval` чтобы развернуть рабочую область за частной конечной точкой.
+
+> [!IMPORTANT]
+> Развертывание допустимо только в регионах, поддерживающих частные конечные точки.
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+```azurecli
+az deployment group create \
+    --name "exampledeployment" \
+    --resource-group "examplegroup" \
+    --template-uri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" \
+    --parameters workspaceName="exampleworkspace" \
+      location="eastus" \
+      privateEndpointType="AutoApproval"
+```
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name "exampledeployment" `
+  -ResourceGroupName "examplegroup" `
+  -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" `
+  -workspaceName "exampleworkspace" `
+  -location "eastus" `
+  -privateEndpointType "AutoApproval"
+```
+
+---
+
+### <a name="use-a-new-virtual-network"></a>Использовать новую виртуальную сеть
+
+Чтобы развернуть ресурс за новой виртуальной сетью, задайте для параметра **внетоптион** значение **New** вместе с параметрами виртуальной сети для соответствующего ресурса. В развертывании ниже показано, как развернуть рабочую область с ресурсом учетной записи хранения за новой виртуальной сетью.
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+```azurecli
+az deployment group create \
+    --name "exampledeployment" \
+    --resource-group "examplegroup" \
+    --template-uri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" \
+    --parameters workspaceName="exampleworkspace" \
+      location="eastus" \
+      vnetOption="new" \
+      vnetName="examplevnet" \
+      storageAccountBehindVNet="true"
+      privateEndpointType="AutoApproval"
+```
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name "exampledeployment" `
+  -ResourceGroupName "examplegroup" `
+  -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" `
+  -workspaceName "exampleworkspace" `
+  -location "eastus" `
+  -vnetOption "new" `
+  -vnetName "examplevnet" `
+  -storageAccountBehindVNet "true"
+  -privateEndpointType "AutoApproval"
+```
+
+---
+
+Кроме того, можно развернуть несколько или все зависимые ресурсы за пределами виртуальной сети.
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+```azurecli
+az deployment group create \
+    --name "exampledeployment" \
+    --resource-group "examplegroup" \
+    --template-uri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" \
+    --parameters workspaceName="exampleworkspace" \
+      location="eastus" \
+      vnetOption="new" \
+      vnetName="examplevnet" \
+      storageAccountBehindVNet="true" \
+      keyVaultBehindVNet="true" \
+      containerRegistryBehindVNet="true" \
+      containerRegistryOption="new" \
+      containerRegistrySku="Premium"
+      privateEndpointType="AutoApproval"
+```
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name "exampledeployment" `
+  -ResourceGroupName "examplegroup" `
+  -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" `
+  -workspaceName "exampleworkspace" `
+  -location "eastus" `
+  -vnetOption "new" `
+  -vnetName "examplevnet" `
+  -storageAccountBehindVNet "true"
+  -keyVaultBehindVNet "true" `
+  -containerRegistryBehindVNet "true" `
+  -containerRegistryOption "new" `
+  -containerRegistrySku "Premium"
+  -privateEndpointType "AutoApproval"
+```
+
+---
+
+<!-- Workspaces need a private endpoint when associated resources are behind a virtual network to work properly. To set up a private endpoint for the workspace with a new virtual network:
+
+> [!IMPORTANT]
+> The deployment is only valid in regions which support private endpoints.
+
+# [Azure CLI](#tab/azcli)
+
+```azurecli
+az deployment group create \
+    --name "exampledeployment" \
+    --resource-group "examplegroup" \
+    --template-uri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" \
+    --parameters workspaceName="exampleworkspace" \
+      location="eastus" \
+      vnetOption="new" \
+      vnetName="examplevnet" \
+      privateEndpointType="AutoApproval"
+```
+
+# [Azure PowerShell](#tab/azpowershell)
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name "exampledeployment" `
+  -ResourceGroupName "examplegroup" `
+  -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" `
+  -workspaceName "exampleworkspace" `
+  -location "eastus" `
+  -vnetOption "new" `
+  -vnetName "examplevnet" `
+  -privateEndpointType "AutoApproval"
+```
+
+--- -->
+
+### <a name="use-an-existing-virtual-network--resources"></a>Использование существующих ресурсов виртуальной сети &
+
+Чтобы развернуть рабочую область с существующими связанными ресурсами, необходимо задать для параметра **внетоптион** значение **existing** вместе с параметрами подсети. Однако **перед** развертыванием необходимо создать конечные точки службы в виртуальной сети для каждого из ресурсов. Как и в случае с новыми развертываниями виртуальной сети, у вас может быть один или несколько ресурсов, расположенных за виртуальной сетью.
+
+> [!IMPORTANT]
+> Подсеть должна иметь `Microsoft.Storage` конечную точку службы
+
+> [!IMPORTANT]
+> Подсети не допускают создание частных конечных точек. Отключите закрытую конечную точку, чтобы включить подсеть.
+
+1. Включите конечные точки службы для ресурсов.
+
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+    ```azurecli
+    az network vnet subnet update --resource-group "examplegroup" --vnet-name "examplevnet" --name "examplesubnet" --service-endpoints "Microsoft.Storage"
+    az network vnet subnet update --resource-group "examplegroup" --vnet-name "examplevnet" --name "examplesubnet" --service-endpoints "Microsoft.KeyVault"
+    az network vnet subnet update --resource-group "examplegroup" --vnet-name "examplevnet" --name "examplesubnet" --service-endpoints "Microsoft.ContainerRegistry"
+    ```
+
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+
+    ```azurepowershell
+    Get-AzVirtualNetwork -ResourceGroupName "examplegroup" -Name "examplevnet" | Set-AzVirtualNetworkSubnetConfig -Name "examplesubnet" -AddressPrefix "<subnet prefix>" -ServiceEndpoint "Microsoft.Storage" | Set-AzVirtualNetwork
+    Get-AzVirtualNetwork -ResourceGroupName "examplegroup" -Name "examplevnet" | Set-AzVirtualNetworkSubnetConfig -Name "examplesubnet" -AddressPrefix "<subnet prefix>" -ServiceEndpoint "Microsoft.KeyVault" | Set-AzVirtualNetwork
+    Get-AzVirtualNetwork -ResourceGroupName "examplegroup" -Name "examplevnet" | Set-AzVirtualNetworkSubnetConfig -Name "examplesubnet" -AddressPrefix "<subnet prefix>" -ServiceEndpoint "Microsoft.ContainerRegistry" | Set-AzVirtualNetwork
+    ```
+
+    ---
+
+1. Развертывание рабочей области
+
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+    ```azurecli
+    az deployment group create \
+    --name "exampledeployment" \
+    --resource-group "examplegroup" \
+    --template-uri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" \
+    --parameters workspaceName="exampleworkspace" \
+      location="eastus" \
+      vnetOption="existing" \
+      vnetName="examplevnet" \
+      vnetResourceGroupName="examplegroup" \
+      storageAccountBehindVNet="true" \
+      keyVaultBehindVNet="true" \
+      containerRegistryBehindVNet="true" \
+      containerRegistryOption="new" \
+      containerRegistrySku="Premium" \
+      subnetName="examplesubnet" \
+      subnetOption="existing"
+      privateEndpointType="AutoApproval"
+    ```
+
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+    ```azurepowershell
+    New-AzResourceGroupDeployment `
+      -Name "exampledeployment" `
+      -ResourceGroupName "examplegroup" `
+      -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" `
+      -workspaceName "exampleworkspace" `
+      -location "eastus" `
+      -vnetOption "existing" `
+      -vnetName "examplevnet" `
+      -vnetResourceGroupName "examplegroup" `
+      -storageAccountBehindVNet "true"
+      -keyVaultBehindVNet "true" `
+      -containerRegistryBehindVNet "true" `
+      -containerRegistryOption "new" `
+      -containerRegistrySku "Premium" `
+      -subnetName "examplesubnet" `
+      -subnetOption "existing"
+      -privateEndpointType "AutoApproval"
+    ```
+    ---
+
+<!-- Workspaces need a private endpoint when associated resources are behind a virtual network to work properly. To set up a private endpoint for the workspace with an existing virtual network:
+
+> [!IMPORTANT]
+> The deployment is only valid in regions which support private endpoints.
+
+# [Azure CLI](#tab/azcli)
+
+```azurecli
+az deployment group create \
+    --name "exampledeployment" \
+    --resource-group "examplegroup" \
+    --template-uri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" \
+    --parameters workspaceName="exampleworkspace" \
+      location="eastus" \
+      vnetOption="existing" \
+      vnetName="examplevnet" \
+      vnetResourceGroupName="rg" \
+      privateEndpointType="AutoApproval" \
+      subnetName="subnet" \
+      subnetOption="existing"
+```
+
+# [Azure PowerShell](#tab/azpowershell)
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name "exampledeployment" `
+  -ResourceGroupName "examplegroup" `
+  -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" `
+  -workspaceName "exampleworkspace" `
+  -location "eastus" `
+  -vnetOption "existing" `
+  -vnetName "examplevnet" `
+  -vnetResourceGroupName "rg"
+  -privateEndpointType "AutoApproval"
+  -subnetName "subnet"
+  -subnetOption "existing"
+```
+
+--- -->
+
 ## <a name="use-the-azure-portal"></a>Использование портала Azure
 
-1. Выполните инструкции из раздела [Развертывание ресурсов с помощью настраиваемого шаблона](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy-portal#deploy-resources-from-custom-template). Дойдя до экрана __Изменить шаблон__, вставьте шаблон, настроенный при изучении этого раздела.
-1. Щелкните __Сохранить__, чтобы применить этот шаблон. Укажите описанные ниже сведения и подтвердите согласие с предложенными условиями.
+1. Выполните инструкции из раздела [Развертывание ресурсов с помощью настраиваемого шаблона](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy-portal#deploy-resources-from-custom-template). Когда вы поступите на экран __Выбор шаблона__ , выберите шаблон **201-Machine-Learning-Advanced** из раскрывающегося списка.
+1. Щелкните __выбрать шаблон__ , чтобы использовать шаблон. Укажите следующие необходимые сведения и другие параметры в зависимости от сценария развертывания.
 
    * Подписка: Выберите подписку Azure, которую нужно использовать для этих ресурсов.
    * Группа ресурсов: Выберите или создайте группу ресурсов, которая будет содержать службы.
+   * Регион: Выберите регион Azure, в котором будут создаваться ресурсы.
    * Имя рабочей области: Это имя, которое будет присвоено созданному рабочему пространству Службы машинного обучения Azure. Для имени рабочего пространства допускается длина от 3 до 33 символов. Имя может содержать только буквы, цифры и дефис ("-").
    * Расположение. Выберите расположение, в котором будут созданы ресурсы.
+1. Выберите __Проверить и создать__.
+1. На экране " __Проверка и создание__ " примите указанные выше условия и нажмите кнопку __создать__.
 
 Дополнительные сведения см. в разделе [Развертывание ресурсов с помощью настраиваемого шаблона](../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template).
-
-## <a name="use-azure-powershell"></a>Использование Azure PowerShell
-
-В этом примере предполагается, что вы сохранили шаблон в файл с именем `azuredeploy.json` в текущем каталоге.
-
-```powershell
-New-AzResourceGroup -Name examplegroup -Location "East US"
-new-azresourcegroupdeployment -name exampledeployment `
-  -resourcegroupname examplegroup -location "East US" `
-  -templatefile .\azuredeploy.json -workspaceName "exampleworkspace" -sku "basic"
-```
-
-Дополнительные сведения см. в статьях [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md) и [Развертывание частного шаблона Resource Manager с использованием токена SAS и Azure PowerShell](../azure-resource-manager/templates/secure-template-with-sas-token.md).
-
-## <a name="use-the-azure-cli"></a>Использование Azure CLI
-
-В этом примере предполагается, что вы сохранили шаблон в файл с именем `azuredeploy.json` в текущем каталоге.
-
-```azurecli-interactive
-az group create --name examplegroup --location "East US"
-az group deployment create \
-  --name exampledeployment \
-  --resource-group examplegroup \
-  --template-file azuredeploy.json \
-  --parameters workspaceName=exampleworkspace location=eastus sku=basic
-```
-
-Дополнительные сведения см. в статьях [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/templates/deploy-cli.md) и [Развертывание частного шаблона Resource Manager с использованием токена SAS и Azure CLI](../azure-resource-manager/templates/secure-template-with-sas-token.md).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
@@ -216,7 +662,7 @@ az group deployment create \
 
 * Изучите политики доступа к Key Vault, а затем примените их для настройки свойства `accessPolicies` в шаблоне. Для просмотра политик доступа можно выполнить следующую команду Azure CLI.
 
-    ```azurecli-interactive
+    ```azurecli
     az keyvault show --name mykeyvault --resource-group myresourcegroup --query properties.accessPolicies
     ```
 
@@ -287,7 +733,7 @@ az group deployment create \
 
     Чтобы получить идентификатор Key Vault, можно указать ссылку на выходные данные от выполнения исходного шаблона или применить Azure CLI. Следующая команда является примером использования Azure CLI для получения идентификатора ресурса Key Vault.
 
-    ```azurecli-interactive
+    ```azurecli
     az keyvault show --name mykeyvault --resource-group myresourcegroup --query id
     ```
 

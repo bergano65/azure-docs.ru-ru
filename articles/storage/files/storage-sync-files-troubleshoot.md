@@ -7,11 +7,12 @@ ms.topic: troubleshooting
 ms.date: 6/12/2020
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: ec7469210bcfae53407a157a325c749aee2c2b08
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 17c8f846201553d3cfa9a2d68b8b4a7ab655c378
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85512060"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232384"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Устранение неполадок службы "Синхронизация файлов Azure"
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -689,7 +690,9 @@ PerItemErrorCount: 1006.
 | **HRESULT (десятичное число)** | -1906441711 |
 | **Строка ошибки** | JET_errLogDiskFull |
 | **Требуются действия по исправлению** | Да |
+
 | | |
+|-|-|
 | **HRESULT** | 0x80c8031a |
 | **HRESULT (десятичное число)** | -2134375654 |
 | **Строка ошибки** | ECS_E_NOT_ENOUGH_LOCAL_STORAGE |
@@ -716,12 +719,16 @@ PerItemErrorCount: 1006.
 | **HRESULT (десятичное число)** | -2134375877 |
 | **Строка ошибки** | ECS_E_SYNC_METADATA_KNOWLEDGE_SOFT_LIMIT_REACHED |
 | **Требуются действия по исправлению** | Да |
+
 | | |
+|-|-|
 | **HRESULT** | 0x80c8021c |
 | **HRESULT (десятичное число)** | -2134375908 |
 | **Строка ошибки** | ECS_E_SYNC_METADATA_KNOWLEDGE_LIMIT_REACHED |
 | **Требуются действия по исправлению** | Да |
+
 | | |
+|-|-|
 | **HRESULT** | 0x80c80253 |
 | **HRESULT (десятичное число)** | -2134375853 |
 | **Строка ошибки** | ECS_E_TOO_MANY_PER_ITEM_ERRORS |

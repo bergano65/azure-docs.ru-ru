@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 3a24f6c7c8339ee5e63fea4c0cd4d7edc9da2a17
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ffd73e9dff06df4b5acdd004dddcfca5ff03ede0
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85512012"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232276"
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Устранение неполадок службы файлов Azure в Linux
 
@@ -22,7 +22,7 @@ ms.locfileid: "85512012"
 
 ## <a name="cannot-connect-to-or-mount-an-azure-file-share"></a>Не удается подключиться к файловому ресурсу Azure или подключить ее
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Ниже приведены распространенные причины этой проблемы:
 
@@ -30,12 +30,12 @@ ms.locfileid: "85512012"
 
 |   | SMB 2.1 <br>(подключение на виртуальных машинах в том же регионе Azure) | SMB 3.0 <br>(подключение из локальной среды и между регионами) |
 | --- | :---: | :---: |
-| Сервер Ubuntu | 14.04 или более поздней версии | 16.04+ |
-| RHEL | 7 или выше | 7.5 или выше |
-| CentOS | 7 или выше |  7.5 или выше |
-| Debian | 8+ |   |
-| openSUSE | 13.2 или выше | 42.3 или выше |
-| SUSE Linux Enterprise Server | 12 | 12 SP3 или выше |
+| **Сервер Ubuntu** | 14.04 или более поздней версии | 16.04+ |
+| **RHEL** | 7 или выше | 7.5 или выше |
+| **CentOS** | 7 или выше |  7.5 или выше |
+| **Debian** | 8+ |   |
+| **openSUSE** | 13.2 или выше | 42.3 или выше |
+| **SUSE Linux Enterprise Server** | 12 | 12 SP3 или выше |
 
 - Программы CIFS (CIFS-utils) не установлены на клиенте.
 - На клиенте не установлена минимальная необходимая версия SMB или CIFS 2.1.
@@ -82,11 +82,11 @@ ms.locfileid: "85512012"
 
 **\<filename>[отказано в разрешении] Превышена квота диска**
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
-Достигнуто максимально допустимое число открытых дескрипторов, разрешенных для файла.
+Достигнут верхний предел параллельно открытых дескрипторов, допустимых для файла или каталога.
 
-Установлена квота в 2000 открытых дескрипторов на один файл. По достижении этого ограничения вы увидите соответствующую ошибку.
+В одном файле или каталоге имеется квота 2 000 открытых дескрипторов. По достижении этого ограничения вы увидите соответствующую ошибку.
 
 ### <a name="solution"></a>Решение
 
@@ -120,7 +120,7 @@ ms.locfileid: "85512012"
 <a id="error115"></a>
 ## <a name="mount-error115-operation-now-in-progress-when-you-mount-azure-files-by-using-smb-30"></a>Отображается ошибка "Mount error(115): Operation now in progress" (Ошибка подключения (115). Идет выполнение операции) при подключении службы файлов Azure с помощью SMB 3.0
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Сейчас некоторые дистрибутивы Linux не поддерживают функции шифрования в SMB 3.0. Из-за этого при попытке подключения службы файлов Azure с помощью SMB 3.0 пользователь может получить сообщение об ошибке 115. Сейчас SMB 3.0 с полным шифрованием поддерживается только в Ubuntu 16.04 или более поздней версии.
 
@@ -152,7 +152,7 @@ ms.locfileid: "85512012"
 <a id="open-handles"></a>
 ## <a name="unable-to-delete-a-file-or-directory-in-an-azure-file-share"></a>Не удалось удалить файл или каталог в общей папке Azure
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 Эта проблема обычно возникает, если файл или каталог имеет открытый обработчик. 
 
 ### <a name="solution"></a>Решение
@@ -204,7 +204,7 @@ ms.locfileid: "85512012"
 
 На платформах Linux и Unix команда **cp -p** завершается сбоем, если файл 1 и файл 2 принадлежат разным пользователям.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Флаг force **f** в COPYFILE приводит к выполнению **CP-p-f** в UNIX. Этой команде также не удается сохранить метку времени файла, который вам не принадлежит.
 
@@ -234,7 +234,7 @@ ms.locfileid: "85512012"
 
 ## <a name="cannot-create-symbolic-links---ln-failed-to-create-symbolic-link-t-operation-not-supported"></a>Не удается создать символьные ссылки — ln: failed to create symbolic link 't': Operation not supported (ln: не удалось создать символьную ссылку "t". Операция не поддерживается)
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 По умолчанию при подключении файловых ресурсов Azure в Linux с помощью CIFS не поддерживается использование символьных ссылок (symlink). Ошибка будет выглядеть примерно так:
 ```
 ln -s linked -n t
@@ -264,7 +264,7 @@ sudo mount -t cifs //<storage-account-name>.file.core.windows.net/<share-name> <
 
 Ошибка подключения (112) возникает в клиенте Linux, если он бездействует в течение длительного времени. Когда клиент долгое время бездействует, он отключается, и время ожидания его подключения истекает.  
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Подключение может бездействовать по следующим причинам:
 
@@ -290,7 +290,7 @@ sudo mount -t cifs //<storage-account-name>.file.core.windows.net/<share-name> <
 
 ## <a name="cifs-vfs-error--22-on-ioctl-to-get-interface-list-when-you-mount-an-azure-file-share-by-using-smb-30"></a>"CIFS VFS: Error-22 on IOCTL для получения списка интерфейсов при подключении файлового ресурса Azure с помощью SMB 3,0
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 Эта ошибка регистрируется, так как служба файлов Azure [в настоящее время не поддерживает многоканальный протокол SMB](https://docs.microsoft.com/rest/api/storageservices/features-not-supported-by-the-azure-file-service).
 
 ### <a name="solution"></a>Решение

@@ -14,18 +14,18 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 04/25/2017
 ms.author: kumud
-ms.openlocfilehash: 84754a61bfe9537e928759aefbcb5dcddce33089
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 397f2999821e97a1f12362e2aa2fa20b20e78596
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81457966"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232412"
 ---
 # <a name="azure-cli-samples-for-networking"></a>Примеры Azure CLI для работы с сетью
 
 В следующей таблице содержатся ссылки на скрипты Bash, созданные с помощью Azure CLI.
 
-| | |
+| Сценарий | Описание |
 |-|-|
 |**Подключение между ресурсами Azure**||
 | [Создание виртуальной сети для многоуровневых приложений](./scripts/virtual-network-cli-sample-multi-tier-application.md?toc=%2fazure%2fnetworking%2ftoc.json) | Создание виртуальной сети с интерфейсной и внутренней подсетями. Трафик к интерфейсной подсети принимается по протоколам HTTP и SSH, в то время как трафик к внутренней подсети принимается только от MySQL по порту 3306. |
