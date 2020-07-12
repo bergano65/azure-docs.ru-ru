@@ -6,12 +6,12 @@ ms.topic: article
 ms.author: jpalma
 ms.date: 06/29/2020
 author: palma21
-ms.openlocfilehash: 6aed6c84439e65646c15367cdad3bf13c5573256
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9d06852e9d3d61b3e3d368a1d1c6f4107aff1442
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85831739"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86251320"
 ---
 # <a name="control-egress-traffic-for-cluster-nodes-in-azure-kubernetes-service-aks"></a>Управление исходящим трафиком для узлов кластера в службе Azure Kubernetes (AKS)
 
@@ -48,8 +48,8 @@ ms.locfileid: "85831739"
 
 | Целевая конечная точка                                                             | Протокол | Порт    | Использование  |
 |----------------------------------------------------------------------------------|----------|---------|------|
-| **`*:1194`** <br/> *Ни* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:1194`** <br/> *Ни* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:1194`** <br/> *Ни* <br/> **`APIServerIP:1194`** `(only known after cluster creation)`  | UDP           | 1194      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
-| **`*:9000`** <br/> *Ни* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:9000`** <br/> *Ни* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:9000`** <br/> *Ни* <br/> **`APIServerIP:9000`** `(only known after cluster creation)`  | TCP           | 9000      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
+| **`*:1194`** <br/> *Или* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:1194`** <br/> *Или* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:1194`** <br/> *Или* <br/> **`APIServerIP:1194`** `(only known after cluster creation)`  | UDP           | 1194      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
+| **`*:9000`** <br/> *Или* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:9000`** <br/> *Или* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:9000`** <br/> *Или* <br/> **`APIServerIP:9000`** `(only known after cluster creation)`  | TCP           | 9000      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
 | **`*:123`** или **`ntp.ubuntu.com:123`** (при использовании сетевых правил брандмауэра Azure)  | UDP      | 123     | Требуется для синхронизации времени по протоколу NTP на узлах Linux.                 |
 | **`CustomDNSIP:53`** `(if using custom DNS servers)`                             | UDP      | 53      | Если вы используете пользовательские DNS-серверы, необходимо убедиться, что они доступны для узлов кластера. |
 | **`APIServerIP:443`** `(if running pods/deployments that access the API Server)` | TCP      | 443     | Требуется при запуске модулей Pod или развертываний, обращающихся к серверу API, эти модули и развертывания будут использовать IP-адрес API.  |
@@ -75,9 +75,9 @@ ms.locfileid: "85831739"
 
 | Целевая конечная точка                                                             | Протокол | Порт    | Использование  |
 |----------------------------------------------------------------------------------|----------|---------|------|
-| **`*:1194`** <br/> *Ни* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.Region:1194`** <br/> *Ни* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:1194`** <br/> *Ни* <br/> **`APIServerIP:1194`** `(only known after cluster creation)`  | UDP           | 1194      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
-| **`*:9000`** <br/> *Ни* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:9000`** <br/> *Ни* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:9000`** <br/> *Ни* <br/> **`APIServerIP:9000`** `(only known after cluster creation)`  | TCP           | 9000      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
-| **`*:22`** <br/> *Ни* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:22`** <br/> *Ни* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:22`** <br/> *Ни* <br/> **`APIServerIP:22`** `(only known after cluster creation)`  | TCP           | 22      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
+| **`*:1194`** <br/> *Или* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.Region:1194`** <br/> *Или* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:1194`** <br/> *Или* <br/> **`APIServerIP:1194`** `(only known after cluster creation)`  | UDP           | 1194      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
+| **`*:9000`** <br/> *Или* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:9000`** <br/> *Или* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:9000`** <br/> *Или* <br/> **`APIServerIP:9000`** `(only known after cluster creation)`  | TCP           | 9000      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
+| **`*:22`** <br/> *Или* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:22`** <br/> *Или* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:22`** <br/> *Или* <br/> **`APIServerIP:22`** `(only known after cluster creation)`  | TCP           | 22      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
 | **`*:123`** или **`ntp.ubuntu.com:123`** (при использовании сетевых правил брандмауэра Azure)  | UDP      | 123     | Требуется для синхронизации времени по протоколу NTP на узлах Linux.                 |
 | **`CustomDNSIP:53`** `(if using custom DNS servers)`                             | UDP      | 53      | Если вы используете пользовательские DNS-серверы, необходимо убедиться, что они доступны для узлов кластера. |
 | **`APIServerIP:443`** `(if running pods/deployments that access the API Server)` | TCP      | 443     | Требуется при запуске модулей Pod или развертываний, обращающихся к серверу API, эти модули и развертывания будут использовать IP-адрес API.  |
@@ -104,8 +104,8 @@ ms.locfileid: "85831739"
 
 | Целевая конечная точка                                                             | Протокол | Порт    | Использование  |
 |----------------------------------------------------------------------------------|----------|---------|------|
-| **`*:1194`** <br/> *Ни* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:1194`** <br/> *Ни* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:1194`** <br/> *Ни* <br/> **`APIServerIP:1194`** `(only known after cluster creation)`  | UDP           | 1194      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
-| **`*:9000`** <br/> *Ни* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:9000`** <br/> *Ни* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:9000`** <br/> *Ни* <br/> **`APIServerIP:9000`** `(only known after cluster creation)`  | TCP           | 9000      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
+| **`*:1194`** <br/> *Или* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:1194`** <br/> *Или* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:1194`** <br/> *Или* <br/> **`APIServerIP:1194`** `(only known after cluster creation)`  | UDP           | 1194      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
+| **`*:9000`** <br/> *Или* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:9000`** <br/> *Или* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:9000`** <br/> *Или* <br/> **`APIServerIP:9000`** `(only known after cluster creation)`  | TCP           | 9000      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
 | **`*:123`** или **`ntp.ubuntu.com:123`** (при использовании сетевых правил брандмауэра Azure)  | UDP      | 123     | Требуется для синхронизации времени по протоколу NTP на узлах Linux.                 |
 | **`CustomDNSIP:53`** `(if using custom DNS servers)`                             | UDP      | 53      | Если вы используете пользовательские DNS-серверы, необходимо убедиться, что они доступны для узлов кластера. |
 | **`APIServerIP:443`** `(if running pods/deployments that access the API Server)` | TCP      | 443     | Требуется при запуске модулей Pod или развертываний, обращающихся к серверу API, эти модули и развертывания будут использовать IP-адрес API.  |
@@ -168,7 +168,7 @@ ms.locfileid: "85831739"
 
 Приведенные ниже FQDN и правила приложения являются обязательными.
 
-| Целевая конечная точка                                                             | Протокол | Port    | Использование  |
+| Целевая конечная точка                                                             | Протокол | Порт    | Использование  |
 |----------------------------------------------------------------------------------|----------|---------|------|
 | [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureMonitor:443`**  | TCP           | 443      | Эта конечная точка используется для отправки данных и журналов метрик в Azure Monitor и Log Analytics. |
 
@@ -189,7 +189,7 @@ ms.locfileid: "85831739"
 
 #### <a name="required-network-rules"></a>Требуемые сетевые правила
 
-| Целевая конечная точка                                                             | Протокол | Port    | Использование  |
+| Целевая конечная точка                                                             | Протокол | Порт    | Использование  |
 |----------------------------------------------------------------------------------|----------|---------|------|
 | [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureDevSpaces`**  | TCP           | 443      | Эта конечная точка используется для отправки данных и журналов метрик в Azure Monitor и Log Analytics. |
 
@@ -239,7 +239,7 @@ ms.locfileid: "85831739"
   * Запросы от узлов агента AKS следуют по UDR, который был помещен в подсеть, где развернут кластер AKS
   * Брандмауэр Azure направляет исходящий трафик из виртуальной сети с клиентского компонента общедоступного IP-адреса
   * Доступ к общедоступному Интернету или другим службам Azure осуществляется через IP-адрес клиентского компонента брандмауэра
-  * Кроме того, доступ к плоскости управления AKS обеспечивается с помощью [IP-диапазонов разрешенного сервера API](https://docs.microsoft.com/azure/aks/api-server-authorized-ip-ranges), который включает общедоступный ИНТЕРФЕЙСНЫЙ IP-адрес брандмауэра.
+  * Кроме того, доступ к плоскости управления AKS обеспечивается с помощью [IP-диапазонов разрешенного сервера API](./api-server-authorized-ip-ranges.md), который включает общедоступный ИНТЕРФЕЙСНЫЙ IP-адрес брандмауэра.
 * Внутренний трафик
   * Кроме того, вместо [Общедоступной Load Balancer](load-balancer-standard.md) можно использовать [внутренний Load Balancer](internal-lb.md) для внутреннего трафика, который можно изолировать также в собственной подсети.
 
@@ -353,7 +353,7 @@ FWPRIVATE_IP=$(az network firewall show -g $RG -n $FWNAME --query "ipConfigurati
 ```
 
 > [!NOTE]
-> Если вы используете безопасный доступ к серверу API AKS с [разрешениями диапазонов IP-адресов](https://docs.microsoft.com/azure/aks/api-server-authorized-ip-ranges), необходимо добавить общедоступный IP-адрес брандмауэра в диапазон адресов, на которые он подлиннее.
+> Если вы используете безопасный доступ к серверу API AKS с [разрешениями диапазонов IP-адресов](./api-server-authorized-ip-ranges.md), необходимо добавить общедоступный IP-адрес брандмауэра в диапазон адресов, на которые он подлиннее.
 
 ### <a name="create-a-udr-with-a-hop-to-azure-firewall"></a>Создание UDR с прыжком к брандмауэру Azure
 
@@ -389,7 +389,7 @@ az network firewall network-rule create -g $RG -f $FWNAME --collection-name 'aks
 az network firewall application-rule create -g $RG -f $FWNAME --collection-name 'aksfwar' -n 'fqdn' --source-addresses '*' --protocols 'http=80' 'https=443' --fqdn-tags "AzureKubernetesService" --action allow --priority 100
 ```
 
-Дополнительные сведения о службе брандмауэра Azure см. в разделе [Документация к брандмауэру Azure](https://docs.microsoft.com/azure/firewall/overview).
+Дополнительные сведения о службе брандмауэра Azure см. в разделе [Документация к брандмауэру Azure](../firewall/overview.md).
 
 ### <a name="associate-the-route-table-to-aks"></a>Привязка таблицы маршрутизации к AKS
 
@@ -722,7 +722,7 @@ kubectl apply -f example.yaml
 ### <a name="add-a-dnat-rule-to-azure-firewall"></a>Добавление правила DNAT в брандмауэр Azure
 
 > [!IMPORTANT]
-> Если для ограничения исходящего трафика вы примените Брандмауэр Azure и создадите определяемый пользователем маршрут для передачи всего исходящего трафика, обязательно создайте в брандмауэре соответствующее правило DNAT, чтобы правильно пропускать входящий трафик. Использование Брандмауэра Azure в сочетании с определяемыми пользователем маршрутами нарушает передачу входящего трафика из-за асимметричной маршрутизации. (Проблема возникает, если подсеть AKS имеет маршрут по умолчанию для передачи данных на частный IP-адрес брандмауэра, а параллельно с ним используется общедоступная подсистема балансировки нагрузки для входящего трафика или служба Kubernetes с типом LoadBalancer.) В этом случае входящий трафик подсистемы балансировки нагрузки поступает через общедоступный IP-адрес, а обратный путь проходит через частный IP-адрес брандмауэра. Так как брандмауэр отслеживает состояние и не имеет информации об активных сеансах, он отбрасывает возвращаемые пакеты. Сведения о том, как интегрировать Брандмауэр Azure с подсистемой балансировки нагрузки для входящего трафика или служб, см. в статье [Интеграция Брандмауэра Azure с Azure Load Balancer (цен. категория "Стандартный")](https://docs.microsoft.com/azure/firewall/integrate-lb).
+> Если для ограничения исходящего трафика вы примените Брандмауэр Azure и создадите определяемый пользователем маршрут для передачи всего исходящего трафика, обязательно создайте в брандмауэре соответствующее правило DNAT, чтобы правильно пропускать входящий трафик. Использование Брандмауэра Azure в сочетании с определяемыми пользователем маршрутами нарушает передачу входящего трафика из-за асимметричной маршрутизации. (Проблема возникает, если подсеть AKS имеет маршрут по умолчанию для передачи данных на частный IP-адрес брандмауэра, а параллельно с ним используется общедоступная подсистема балансировки нагрузки для входящего трафика или служба Kubernetes с типом LoadBalancer.) В этом случае входящий трафик подсистемы балансировки нагрузки поступает через общедоступный IP-адрес, а обратный путь проходит через частный IP-адрес брандмауэра. Так как брандмауэр отслеживает состояние и не имеет информации об активных сеансах, он отбрасывает возвращаемые пакеты. Сведения о том, как интегрировать Брандмауэр Azure с подсистемой балансировки нагрузки для входящего трафика или служб, см. в статье [Интеграция Брандмауэра Azure с Azure Load Balancer (цен. категория "Стандартный")](../firewall/integrate-lb.md).
 
 
 Чтобы настроить возможность входящего подключения, необходимо записать в брандмауэр Azure правило DNAT. Для проверки подключения к кластеру определяется правило для интерфейса общедоступного IP-адреса брандмауэра, которое перенаправляется во внутренний IP-адрес, предоставляемый внутренней службой.
@@ -773,7 +773,7 @@ az network firewall nat-rule create --collection-name exampleset --destination-a
 az group delete -g $RG
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, какие порты и адреса разрешить, если требуется ограничить исходящий трафик для кластера. Вы также узнали, как защитить исходящий трафик с помощью брандмауэра Azure. 
 

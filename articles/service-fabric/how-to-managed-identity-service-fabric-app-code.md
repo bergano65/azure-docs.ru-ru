@@ -3,12 +3,12 @@ title: Использование управляемого удостовере�
 description: Использование управляемых удостоверений в коде приложения Azure Service Fabric для доступа к службам Azure.
 ms.topic: article
 ms.date: 10/09/2019
-ms.openlocfilehash: 8f1f355d6add16f3b3ec25bc569f9b198a8d6778
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 07f960c01367ab42a434a8c2e1e276d9c5f7bd11
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81461571"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86253649"
 ---
 # <a name="how-to-leverage-a-service-fabric-applications-managed-identity-to-access-azure-services"></a>Как использовать управляемое удостоверение приложения Service Fabric для доступа к службам Azure
 
@@ -371,7 +371,7 @@ namespace Azure.ServiceFabric.ManagedIdentity.Samples
 | 5 | Подождите 16 секунд и повторите попытку |
 
 ## <a name="resource-ids-for-azure-services"></a>Идентификаторы ресурсов для служб Azure
-Список ресурсов, поддерживающих Azure AD, и соответствующие идентификаторы ресурсов см. в статье [службы Azure, поддерживающие аутентификацию Azure AD](../active-directory/managed-identities-azure-resources/services-support-msi.md) .
+Список ресурсов, поддерживающих Azure AD, и соответствующие идентификаторы ресурсов см. в статье [службы Azure, поддерживающие аутентификацию Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Развертывание приложения Service Fabric Azure с управляемым удостоверением, назначенным системой](./how-to-deploy-service-fabric-application-system-assigned-managed-identity.md)

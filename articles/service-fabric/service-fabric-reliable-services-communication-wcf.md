@@ -5,11 +5,12 @@ author: BharatNarasimman
 ms.topic: conceptual
 ms.date: 06/07/2017
 ms.author: bharatn
-ms.openlocfilehash: 7f3b3974893316a488270f755b8f8822080658d9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1fbcf552cee8a96636920f04472843b1fea5c845
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75433863"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86253241"
 ---
 # <a name="wcf-based-communication-stack-for-reliable-services"></a>Коммуникационный стек WCF для надежных служб
 Платформа надежных служб Reliable Services позволяет разработчикам служб решать, какой стек связи следует использовать в службе. Любой стек связи можно подключить с помощью интерфейса **ICommunicationListener** , возвращаемого методом [CreateServiceReplicaListeners или CreateServiceInstanceListeners](service-fabric-reliable-services-communication.md) . Платформа предоставляет реализацию стека связи на основе Windows Communication Foundation (WCF) для разработчиков служб, которым требуется использовать связь на основе WCF.
@@ -113,8 +114,7 @@ var result = calculatorServiceCommunicationClient.InvokeWithRetryAsync(
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Удаленный вызов процедур с использованием удаленного взаимодействия Reliable Services](service-fabric-reliable-services-communication-remoting.md)
-* [Веб-API с OWIN в модели Reliable Services](service-fabric-reliable-services-communication-webapi.md)
+* [Веб-API с OWIN в модели Reliable Services](./service-fabric-reliable-services-communication-aspnetcore.md)
 * [Защита обмена данными для Reliable Services](service-fabric-reliable-services-secure-communication-wcf.md)
-

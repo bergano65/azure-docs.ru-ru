@@ -12,11 +12,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 01/13/2020
 ms.author: apimpm
-ms.openlocfilehash: 380b61df8a774e69454577d201cebf1c495b4f74
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 981d3134e957e1f19b9cd88ee13a72fc45d79277
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83004744"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86252901"
 ---
 # <a name="configure-a-custom-domain-name"></a>Настройка имени личного домена
 
@@ -70,8 +71,8 @@ ms.locfileid: "83004744"
     > Доменные имена с подстановочными знаками, например, `*.contoso.com` поддерживаются на всех уровнях, кроме уровня потребления.
 
     > [!TIP]
-    > Рекомендуется использовать [Azure Key Vault для управления сертификатами](https://docs.microsoft.com/azure/key-vault/certificates/about-certificates) и их настройки для автопродления.
-    > Если для управления сертификатом TLS/SSL в пользовательском домене используется Azure Key Vault, убедитесь, что сертификат вставлен в Key Vault [как _сертификат_](https://docs.microsoft.com/rest/api/keyvault/CreateCertificate/CreateCertificate), а не на _секрет_.
+    > Рекомендуется использовать [Azure Key Vault для управления сертификатами](../key-vault/certificates/about-certificates.md) и их настройки для автопродления.
+    > Если для управления сертификатом TLS/SSL в пользовательском домене используется Azure Key Vault, убедитесь, что сертификат вставлен в Key Vault [как _сертификат_](/rest/api/keyvault/createcertificate/createcertificate), а не на _секрет_.
     >
     > Чтобы получить сертификат TLS/SSL, служба управления API должна иметь разрешения List и Get Secrets для Azure Key Vault, содержащей сертификат. При использовании портал Azure все необходимые действия по настройке будут выполняться автоматически. При использовании средств командной строки или API управления эти разрешения должны предоставляться вручную. Это делается в два этапа. Сначала используйте страницу управляемые удостоверения в экземпляре управления API, чтобы убедиться, что управляемое удостоверение включено, и запишите идентификатор участника, показанный на этой странице. Во-вторых, предоставьте разрешения на список разрешений и получение секретов для этого идентификатора субъекта на Azure Key Vault, содержащем сертификат.
     >
@@ -94,6 +95,6 @@ ms.locfileid: "83004744"
 > [!NOTE]
 > Хотя IP-адрес экземпляра службы управления API является статическим, он может измениться в нескольких сценариях. Поэтому рекомендуется использовать CNAME при настройке пользовательского домена. Примите во внимание это при выборе метода конфигурации DNS. Дополнительные сведения см. в [статье документация по IP-адресу](api-management-howto-ip-addresses.md#changes-to-the-ip-addresses) и [вопросы и ответы по управлению API](api-management-faq.md#how-can-i-secure-the-connection-between-the-api-management-gateway-and-my-back-end-services).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Повышение категории и масштабирование службы](upgrade-and-scale.md)

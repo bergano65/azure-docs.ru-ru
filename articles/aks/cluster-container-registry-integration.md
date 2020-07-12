@@ -5,12 +5,12 @@ services: container-service
 manager: gwallace
 ms.topic: article
 ms.date: 02/25/2020
-ms.openlocfilehash: aa2b82e70b1a1372076483c7405c32b66da377af
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a60f0e2f40fa1a4945198a4b5738b4f7b65b05ed
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84974438"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86251847"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes
 
@@ -72,7 +72,7 @@ az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acr-resource-id>
 az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acrName>
 ```
 
-или
+или диспетчер конфигурации служб
 
 ```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-resource-id>
@@ -148,4 +148,4 @@ nginx0-deployment-669dfc4d4b-xdpd6   1/1     Running   0          20s
 * Дополнительные сведения о [работоспособности записей контроля](../container-registry/container-registry-check-health.md) доступа
 
 <!-- LINKS - external -->
-[AKS AKS CLI]:  https://docs.microsoft.com/cli/azure/aks?view=azure-cli-latest#az-aks-create
+[AKS AKS CLI]: /cli/azure/aks?view=azure-cli-latest#az-aks-create

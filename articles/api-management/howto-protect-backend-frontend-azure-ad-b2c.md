@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 02/20/2020
 ms.author: wieastbu
 ms.custom: fasttrack-new
-ms.openlocfilehash: 3c5c13b3aae33b098de79a3429a299cc33f1c4f6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 60177dd00dc6326aae4cfdc0b658c85f2635f8c0
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82202882"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86253700"
 ---
 # <a name="protect-spa-backend-with-oauth-20-azure-active-directory-b2c-and-azure-api-management"></a>Защита серверной части SPA с помощью OAuth 2,0, Azure Active Directory B2C и Azure API Management
 
@@ -31,7 +31,7 @@ ms.locfileid: "82202882"
 
 Для глубокой защиты мы используем Еасяус для повторной проверки маркера внутри API серверной части.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 Чтобы выполнить шаги в этой статье, необходимо иметь следующее:
 * Учетная запись хранения Azure (StorageV2) общего назначения v2 для размещения одностраничного приложения с одним внешним интерфейсом
 * Экземпляр службы управления API Azure 
@@ -458,7 +458,7 @@ ms.locfileid: "82202882"
 Описанные выше действия можно адаптировать и изменить, чтобы обеспечить множество различных применений Azure AD B2C с помощью управления API.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Узнайте больше об [Azure Active Directory и OAuth 2.0](../active-directory/develop/authentication-scenarios.md).
+* Узнайте больше об [Azure Active Directory и OAuth 2.0](../active-directory/develop/authentication-vs-authorization.md).
 * См. другие [видео](https://azure.microsoft.com/documentation/videos/index/?services=api-management) об управлении API.
 * Другие способы защиты внутренней серверной службы см. в разделе [Взаимная проверка подлинности на основе сертификата](api-management-howto-mutual-certificates.md).
 * [Создайте экземпляр службы управления API](get-started-create-service-instance.md).

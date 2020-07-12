@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/01/2018
 ms.author: apimpm
-ms.openlocfilehash: 5670be6d4c45644ac8318702822c37ed82a81caa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9249cb1ac64bf61b405bc3537523cc85bca3f00c
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85205753"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86252799"
 ---
 # <a name="how-to-set-or-edit-azure-api-management-policies"></a>Настройка или изменение политик службы управления API Azure
 
@@ -130,10 +130,10 @@ ms.locfileid: "85205753"
 5. Добавьте или измените политики.
 6. Нажмите кнопку **Save**(Сохранить). 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Также ознакомьтесь со следующими материалами:
 
 + [Преобразование API-интерфейсов](transform-api.md).
-+ Полный перечень операторов политик и их параметров см. в [справочнике по политикам](api-management-policy-reference.md).
++ Полный перечень операторов политик и их параметров см. в [справочнике по политикам](./api-management-policies.md).
 + [Примеры политик](policy-samples.md).

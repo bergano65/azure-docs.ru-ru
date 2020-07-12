@@ -7,23 +7,24 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: ceaa44429d105c2a6a1d0883ab29ed11b63ad497
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: b5640a42c0fdcb0bd958011db28c19854b16a547
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83736081"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86252765"
 ---
 # <a name="azure-security-baseline-for-api-management"></a>Базовый план безопасности Azure для Управления API
 
 Базовый план безопасности Azure для Управления API содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](https://docs.microsoft.com/azure/security/benchmarks/overview), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
-Дополнительные сведения см. в статье [Базовые показатели безопасности для Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+Дополнительные сведения см. в статье [Базовые показатели безопасности для Azure](../security/benchmarks/security-baselines-overview.md).
 
 ## <a name="network-security"></a>Безопасность сети
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](https://docs.microsoft.com/azure/security/benchmarks/security-control-network-security).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](../security/benchmarks/security-control-network-security.md).*
 
 ### <a name="11-protect-resources-using-network-security-groups-or-azure-firewall-on-your-virtual-network"></a>1.1. Защита ресурсов в виртуальной сети с помощью групп безопасности сети или Брандмауэра Azure
 
@@ -33,11 +34,11 @@ ms.locfileid: "83736081"
 
 Входящим и исходящим трафиком в подсети, в которой развернута служба Управления API, можно управлять с помощью группы безопасности сети.
 
-* [Как использовать управление API Azure с виртуальными сетями](https://docs.microsoft.com/azure/api-management/api-management-using-with-vnet)
+* [Как использовать управление API Azure с виртуальными сетями](./api-management-using-with-vnet.md)
 
-* [Использование службы управления API Azure совместно с внутренней виртуальной сетью](https://docs.microsoft.com/azure/api-management/api-management-using-with-internal-vnet)
+* [Использование службы управления API Azure совместно с внутренней виртуальной сетью](./api-management-using-with-internal-vnet.md)
 
-* [Интеграция службы Управления API во внутреннюю сеть со Шлюзом приложений](https://docs.microsoft.com/azure/api-management/api-management-howto-integrate-internal-vnet-appgateway)
+* [Интеграция службы Управления API во внутреннюю сеть со Шлюзом приложений](./api-management-howto-integrate-internal-vnet-appgateway.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -49,11 +50,11 @@ ms.locfileid: "83736081"
 
 Внимание! При настройке группы безопасности сети в подсети Управления API необходимо открыть ряд портов. Если какой-либо из этих портов недоступен, служба управления API может не работать должным образом и даже стать недоступной.
 
-* [Общие сведения о конфигурациях групп безопасности сети для Управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-using-with-vnet#-common-network-configuration-issues)
+* [Общие сведения о конфигурациях групп безопасности сети для Управления API Azure](./api-management-using-with-vnet.md#-common-network-configuration-issues)
 
-* [Как включить журналы потоков NSG](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal)
+* [Как включить журналы потоков NSG](../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 
-* [Как включать и использовать Аналитику трафика](https://docs.microsoft.com/azure/network-watcher/traffic-analytics)
+* [Как включать и использовать Аналитику трафика](../network-watcher/traffic-analytics.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -70,9 +71,9 @@ ms.locfileid: "83736081"
 
 Примечание. Эта функция доступна в ценовых категориях "Премиум" и "Разработка" Управления API.
 
-* [Интеграция службы Управления API во внутреннюю виртуальную сеть со Шлюзом приложений](https://docs.microsoft.com/azure/api-management/api-management-howto-integrate-internal-vnet-appgateway)
+* [Интеграция службы Управления API во внутреннюю виртуальную сеть со Шлюзом приложений](./api-management-howto-integrate-internal-vnet-appgateway.md)
 
-* [Общие сведения о Шлюзе приложений Azure](https://docs.microsoft.com/azure/application-gateway/)
+* [Общие сведения о Шлюзе приложений Azure](../application-gateway/index.yml)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -93,13 +94,13 @@ ms.locfileid: "83736081"
 
 Используйте интегрированную аналитику угроз Центра безопасности Azure, чтобы запретить обмен данными с известными вредоносными или неиспользуемыми IP-адресами Интернета.
 
-* [Интеграция службы Управления API во внутреннюю виртуальную сеть со Шлюзом приложений](https://docs.microsoft.com/azure/api-management/api-management-howto-integrate-internal-vnet-appgateway)
+* [Интеграция службы Управления API во внутреннюю виртуальную сеть со Шлюзом приложений](./api-management-howto-integrate-internal-vnet-appgateway.md)
 
-* [Общие сведения о Шлюзе приложений Azure](https://docs.microsoft.com/azure/application-gateway/)
+* [Общие сведения о Шлюзе приложений Azure](../application-gateway/index.yml)
 
-* [Настройка службы Защита от атак DDoS Azure уровня "Стандартный"](https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection)
+* [Настройка службы Защита от атак DDoS Azure уровня "Стандартный"](../virtual-network/manage-ddos-protection.md)
 
-* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer)
+* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../security-center/threat-protection.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -111,11 +112,11 @@ ms.locfileid: "83736081"
 
 Внимание! При настройке группы безопасности сети в подсети Управления API необходимо открыть ряд портов. Если какой-либо из этих портов недоступен, служба управления API может не работать должным образом и даже стать недоступной.
 
-* [Общие сведения о конфигурациях групп безопасности сети для Управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-using-with-vnet#-common-network-configuration-issues)
+* [Общие сведения о конфигурациях групп безопасности сети для Управления API Azure](./api-management-using-with-vnet.md#-common-network-configuration-issues)
 
-* [Как включить журналы потоков NSG](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal)
+* [Как включить журналы потоков NSG](../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 
-* [Как включать и использовать Аналитику трафика](https://docs.microsoft.com/azure/network-watcher/traffic-analytics)
+* [Как включать и использовать Аналитику трафика](../network-watcher/traffic-analytics.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -134,9 +135,9 @@ ms.locfileid: "83736081"
 
 Примечание. Эта функция доступна в ценовых категориях "Премиум" и "Разработка" Управления API.
 
-* [Интеграция службы Управления API во внутреннюю виртуальную сеть со Шлюзом приложений](https://docs.microsoft.com/azure/api-management/api-management-howto-integrate-internal-vnet-appgateway)
+* [Интеграция службы Управления API во внутреннюю виртуальную сеть со Шлюзом приложений](./api-management-howto-integrate-internal-vnet-appgateway.md)
 
-* [Общие сведения о брандмауэре веб-приложения в Шлюзе приложений Azure](https://docs.microsoft.com/azure/web-application-firewall/ag/ag-overview)
+* [Общие сведения о брандмауэре веб-приложения в Шлюзе приложений Azure](../web-application-firewall/ag/ag-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -155,13 +156,13 @@ ms.locfileid: "83736081"
 
 Примечание. Эта функция доступна в ценовых категориях "Премиум" и "Разработка" Управления API.
 
-* [Предоставление доступа к частным интерфейсам API для внешних потребителей](https://docs.microsoft.com/azure/architecture/example-scenario/apps/publish-internal-apis-externally)
+* [Предоставление доступа к частным интерфейсам API для внешних потребителей](/azure/architecture/example-scenario/apps/publish-internal-apis-externally)
 
-* [Использование Управления API в виртуальной сети](https://docs.microsoft.com/azure/api-management/api-management-using-with-vnet)
+* [Использование Управления API в виртуальной сети](./api-management-using-with-vnet.md)
 
-* [Подробные сведения о брандмауэре веб-приложения Azure в Шлюзе приложений Azure](https://docs.microsoft.com/azure/web-application-firewall/ag/ag-overview)
+* [Подробные сведения о брандмауэре веб-приложения Azure в Шлюзе приложений Azure](../web-application-firewall/ag/ag-overview.md)
 
-* [Общие сведения о Шлюзе приложений Azure](https://docs.microsoft.com/azure/application-gateway/overview)
+* [Общие сведения о Шлюзе приложений Azure](../application-gateway/overview.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -173,9 +174,9 @@ ms.locfileid: "83736081"
 
 Внимание! При настройке группы безопасности сети в подсети Управления API необходимо открыть ряд портов. Если какой-либо из этих портов недоступен, служба управления API может не работать должным образом и даже стать недоступной.
 
-* [Основные сведения о тегах служб и их использование](https://docs.microsoft.com/azure/virtual-network/service-tags-overview)
+* [Основные сведения о тегах служб и их использование](../virtual-network/service-tags-overview.md)
 
-* [Порты, необходимые для Управления API](https://docs.microsoft.com/azure/api-management/api-management-using-with-vnet#-common-network-configuration-issues)
+* [Порты, необходимые для Управления API](./api-management-using-with-vnet.md#-common-network-configuration-issues)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -188,9 +189,9 @@ ms.locfileid: "83736081"
 
 Вы также можете использовать Azure Blueprints для упрощения крупномасштабных развертываний Azure с помощью упаковки ключевых артефактов среды, таких как шаблоны Azure Resource Manager, элементы управления доступом на основе ролей (RBAC) и политики, в единое определение схемы. Вы можете легко применять схему к новым подпискам и средам, а также точно управлять настройкой с помощью версионирования.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Создание схемы Azure](https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal)
+* [Создание схемы Azure](../governance/blueprints/create-blueprint-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -200,11 +201,11 @@ ms.locfileid: "83736081"
 
 **Руководство**. Используйте теги для групп безопасности сети и других ресурсов, связанных с сетевой безопасностью и потоком трафика. Для отдельных правил группы безопасности сети можно использовать поле "Описание", чтобы указать бизнес-потребности и длительность (и т. д.) любых правил, которые разрешают трафик в сеть и из нее.
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-* [Создание виртуальной сети](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+* [Создание виртуальной сети](../virtual-network/quick-create-portal.md)
 
-* [Создание группы безопасности сети с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+* [Создание группы безопасности сети с конфигурацией безопасности](../virtual-network/tutorial-filter-network-traffic.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -214,9 +215,9 @@ ms.locfileid: "83736081"
 
 **Руководство**. Используйте журнал действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений в сетевых ресурсах, связанных с развертываниями Управления API Azure. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
 
-* [Как просматривать и извлекать события журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
-* [Как создать оповещения в службе Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+* [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -224,7 +225,7 @@ ms.locfileid: "83736081"
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
-*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](https://docs.microsoft.com/azure/security/benchmarks/security-control-logging-monitoring).*
+*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](../security/benchmarks/security-control-logging-monitoring.md).*
 
 ### <a name="21-use-approved-time-synchronization-sources"></a>2.1. Использование утвержденных источников синхронизации времени
 
@@ -242,15 +243,15 @@ ms.locfileid: "83736081"
 
 Кроме того, можно включить и подключить данные к Azure Sentinel или сторонним системам управления информационной безопасностью и событиями безопасности (SIEM).
 
-* [Как настроить параметры диагностики](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings#create-diagnostic-settings-in-azure-portal)
+* [Как настроить параметры диагностики](../azure-monitor/platform/diagnostic-settings.md#create-in-azure-portal)
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 * [Начало работы с Azure Monitor и интеграция SIEM стороннего производителя](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
-* [Создание настраиваемого конвейера для ведения журнала и аналитики](https://docs.microsoft.com/azure/api-management/api-management-howto-log-event-hubs)
+* [Создание настраиваемого конвейера для ведения журнала и аналитики](./api-management-howto-log-event-hubs.md)
 
-* [Интеграция с Azure Application Insights](https://docs.microsoft.com/azure/api-management/api-management-howto-app-insights)
+* [Интеграция с Azure Application Insights](./api-management-howto-app-insights.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -262,9 +263,9 @@ ms.locfileid: "83736081"
 
 Для ведения журнала аудита на уровне управления журналы диагностики предоставляют подробные сведения об операциях и ошибках, которые важны для аудита, а также для устранения неполадок. Журналы диагностики отличаются от журналов действий. Журналы действий позволяют подробно проанализировать операции, выполненные с ресурсами Azure. Журналы диагностики дают представление об операциях, выполняемых ресурсом.
 
-* [Как включить параметры диагностики для журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
 
-* [Как включить параметры диагностики для Управления API Azure](https://docs.microsoft.com/Azure/api-management/api-management-howto-use-azure-monitor#diagnostic-logs)
+* [Как включить параметры диагностики для Управления API Azure](./api-management-howto-use-azure-monitor.md#activity-logs)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -282,9 +283,9 @@ ms.locfileid: "83736081"
 
 **Руководство**. В Azure Monitor задайте период хранения для рабочей области Log Analytics согласно нормативным требованиям вашей организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
 
-* [Задание параметров хранения журналов для рабочих областей Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+* [Задание параметров хранения журналов для рабочих областей Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
 
-* [Архивация журналов в учетной записи хранения Azure](https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-collect-storage)
+* [Архивация журналов в учетной записи хранения Azure](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -296,13 +297,13 @@ ms.locfileid: "83736081"
 
 При необходимости интегрируйте Управление API с Azure Application Insights и используйте его в качестве основного или дополнительного средства мониторинга, трассировки, создания отчетов и оповещений.
 
-* [Мониторинг и проверка журналов для службы Управления API Azure](https://docs.microsoft.com/Azure/api-management/api-management-howto-use-azure-monitor)
+* [Мониторинг и проверка журналов для службы Управления API Azure](./api-management-howto-use-azure-monitor.md)
 
-* [Выполнение пользовательских запросов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
+* [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
-* [Общие сведения о рабочей области Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal)
+* [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/get-started-portal.md)
 
-* [Интеграция с Azure Application Insights](https://docs.microsoft.com/azure/api-management/api-management-howto-app-insights)
+* [Интеграция с Azure Application Insights](./api-management-howto-app-insights.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -318,17 +319,17 @@ ms.locfileid: "83736081"
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
 
-* [Как включить параметры диагностики для журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
 
-* [Как включить параметры диагностики для Управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-howto-use-azure-monitor#diagnostic-logs)
+* [Как включить параметры диагностики для Управления API Azure](./api-management-howto-use-azure-monitor.md#activity-logs)
 
-* [Настройка правила генерации оповещений на случай несанкционированного запроса](https://docs.microsoft.com/Azure/api-management/api-management-howto-use-azure-monitor#set-up-an-alert-rule-for-unauthorized-request)
+* [Настройка правила генерации оповещений на случай несанкционированного запроса](./api-management-howto-use-azure-monitor.md#set-up-an-alert-rule-for-unauthorized-request)
 
-* [Просмотр метрик емкости для экземпляра службы Управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-capacity)
+* [Просмотр метрик емкости для экземпляра службы Управления API Azure](./api-management-capacity.md)
 
-* [Интеграция с Azure Application Insights](https://docs.microsoft.com/azure/api-management/api-management-howto-app-insights)
+* [Интеграция с Azure Application Insights](./api-management-howto-app-insights.md)
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -360,7 +361,7 @@ ms.locfileid: "83736081"
 
 ## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
 
-*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](https://docs.microsoft.com/azure/security/benchmarks/security-control-identity-access-control).*
+*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](../security/benchmarks/security-control-identity-access-control.md).*
 
 ### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1. Инвентаризация учетных записей администраторов
 
@@ -372,15 +373,15 @@ ms.locfileid: "83736081"
 
 Следуйте рекомендациям Центра безопасности Azure по управлению административными учетными записями и их обслуживанию.
 
-* [Практическое руководство по использованию управления доступом на основе ролей в службе "Управление API Azure"](https://docs.microsoft.com/azure/api-management/api-management-role-based-access-control)
+* [Практическое руководство по использованию управления доступом на основе ролей в службе "Управление API Azure"](./api-management-role-based-access-control.md)
 
-* [Получение списка пользователей из экземпляра службы Управления API Azure](https://docs.microsoft.com/powershell/module/az.apimanagement/get-azapimanagementuser?view=azps-3.1.0)
+* [Получение списка пользователей из экземпляра службы Управления API Azure](/powershell/module/az.apimanagement/get-azapimanagementuser?view=azps-3.1.0)
 
-* [Получение списка пользователей, назначенных роли каталога в Azure AD, с помощью PowerShell](https://docs.microsoft.com/powershell/module/az.resources/get-azroleassignment?view=azps-3.7.0)
+* [Получение списка пользователей, назначенных роли каталога в Azure AD, с помощью PowerShell](/powershell/module/az.resources/get-azroleassignment?view=azps-3.7.0)
 
-* [Получение определения роли каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/az.resources/get-azroledefinition?view=azps-3.7.0)
+* [Получение определения роли каталога в Azure AD с помощью PowerShell](/powershell/module/az.resources/get-azroledefinition?view=azps-3.7.0)
 
-* [Рекомендации по идентификации и доступу из Центра безопасности Azure](https://docs.microsoft.com/azure/security-center/recommendations-reference#recs-identity)
+* [Рекомендации по идентификации и доступу из Центра безопасности Azure](../security-center/recommendations-reference.md#recs-identity)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -392,7 +393,7 @@ ms.locfileid: "83736081"
 
 Однако подписки на службу Управления API Azure, которые являются одним из способов защиты доступа к интерфейсам API, имеют пару генерируемых ключей подписки. Клиенты могут повторно генерировать эти ключи в любое время.
 
-* [Общие сведения о подписках на службу Управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-subscriptions)
+* [Общие сведения о подписках на службу Управления API Azure](./api-management-subscriptions.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -407,9 +408,9 @@ ms.locfileid: "83736081"
 - Устаревшие учетные записи с разрешениями владельца следует удалять из подписки.
 - Внешние учетные записи с разрешениями владельца следует удалять из подписки.
 
-* [Использование Центра безопасности Azure для мониторинга идентификации и доступа (предварительная версия)](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+* [Использование Центра безопасности Azure для мониторинга идентификации и доступа (предварительная версия)](../security-center/security-center-identity-access.md)
 
-* [Использование Политики Azure](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Использование Политики Azure](../governance/policy/tutorials/create-and-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -419,11 +420,11 @@ ms.locfileid: "83736081"
 
 **Руководство**. Службу Управления API Azure можно настроить так, чтобы служба Azure Active Directory использовалась в качестве поставщика удостоверений для проверки подлинности пользователей на портале разработчика. Это позволит получить возможности единого входа, предоставляемые Azure AD. После настройки новые пользователи портала разработчика могут использовать готовый процесс регистрации, сначала проходя проверку подлинности в Azure AD, а затем завершая процесс регистрации на портале.
 
-* [Авторизация учетных записей разработчиков с помощью Azure Active Directory в управлении API Azure](https://docs.microsoft.com/azure/api-management/api-management-howto-aad)
+* [Авторизация учетных записей разработчиков с помощью Azure Active Directory в управлении API Azure](./api-management-howto-aad.md)
 
 Кроме того, для процесса входа и регистрации можно дополнительно настроить делегирование. Делегирование позволяет использовать ваш существующий веб-сайт для обработки входа и регистрации разработчика и подписки на продукты вместо применения встроенной функции на портале разработчика. В результате этого веб-сайт будет владеть пользовательскими данными и проверять эти шаги в соответствии с вашими настройками.
 
-* [Как делегировать регистрацию пользователей и подписку продуктов](https://docs.microsoft.com/azure/api-management/api-management-howto-setup-delegation)
+* [Как делегировать регистрацию пользователей и подписку продуктов](./api-management-howto-setup-delegation.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -433,9 +434,9 @@ ms.locfileid: "83736081"
 
 **Руководство**. Включите Многофакторную идентификацию (MFA) в Azure Active Directory (AD) и следуйте рекомендациям по управлению идентификацией и доступом в Центре безопасности Azure.
 
-* [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+* [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
-* [Мониторинг идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+* [Мониторинг идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -445,9 +446,9 @@ ms.locfileid: "83736081"
 
 **Руководство**. Используйте рабочие станции с привилегированным доступом (PAW) с настроенной Многофакторной идентификацией (MFA) для входа в ресурсы Azure и их настройки.
 
-* [Использование рабочих станций с привилегированным доступом](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+* [Использование рабочих станций с привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
 
-* [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+* [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -459,9 +460,9 @@ ms.locfileid: "83736081"
 
 Кроме того, используйте обнаружение рисков Azure AD для просмотра оповещений и отчетов об опасном поведении пользователя.
 
-* [Развертывание Privileged Identity Management (PIM)](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-deployment-plan)
+* [Развертывание Privileged Identity Management (PIM)](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-* [Общие сведения об обнаружении рисков в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events)
+* [Общие сведения об обнаружении рисков в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -471,7 +472,7 @@ ms.locfileid: "83736081"
 
 **Руководство**. Используйте именованные расположения с условным доступом, чтобы разрешить доступ к порталу Azure только из конкретных логических групп диапазонов IP-адресов или стран и регионов.
 
-* [Настройка именованных расположений в Azure](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
+* [Настройка именованных расположений в Azure](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -485,11 +486,11 @@ ms.locfileid: "83736081"
 
 Настройте экземпляр Управления API Azure для защиты интерфейсов API с помощью протокола OAuth 2.0 в Azure Active Directory.
 
-* [Авторизация учетных записей разработчиков с помощью Azure Active Directory в Управлении API Azure](https://docs.microsoft.com/azure/api-management/api-management-howto-aad)
+* [Авторизация учетных записей разработчиков с помощью Azure Active Directory в Управлении API Azure](./api-management-howto-aad.md)
 
-* [Защита API с помощью протокола OAuth 2.0 и службы Управления API в Azure Active Directory](https://docs.microsoft.com/azure/api-management/api-management-howto-protect-backend-with-aad)
+* [Защита API с помощью протокола OAuth 2.0 и службы Управления API в Azure Active Directory](./api-management-howto-protect-backend-with-aad.md)
 
-* [Создание и настройка экземпляра Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
+* [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -503,13 +504,13 @@ ms.locfileid: "83736081"
 
 Администраторы могут создавать пользовательские группы или использовать внешние группы в связанных с ними клиентах Azure Active Directory. Чтобы обеспечить разработчикам видимость и предоставить доступ к продуктам API, пользовательские и внешние группы можно использовать вместе с системными группами.
 
-* [Управление учетными записями пользователей в службе управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-howto-create-or-invite-developers)
+* [Управление учетными записями пользователей в службе управления API Azure](./api-management-howto-create-or-invite-developers.md)
 
-* [Получение списка пользователей Управления API](https://docs.microsoft.com/powershell/module/az.apimanagement/get-azapimanagementuser?view=azps-3.1.0)
+* [Получение списка пользователей Управления API](/powershell/module/az.apimanagement/get-azapimanagementuser?view=azps-3.1.0)
 
-* [Как создавать и использовать группы для управления учетными записями разработчика в службе управления Azure API](https://docs.microsoft.com/azure/api-management/api-management-howto-create-groups)
+* [Как создавать и использовать группы для управления учетными записями разработчика в службе управления Azure API](./api-management-howto-create-groups.md)
 
-* [Использование проверок доступа для идентификации Azure](https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview)
+* [Использование проверок доступа для идентификации Azure](../active-directory/governance/access-reviews-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -527,17 +528,17 @@ ms.locfileid: "83736081"
 
 Настройте расширенный мониторинг с помощью службы Управления API, используя политику `log-to-eventhub`, запишите все дополнительные сведения о контексте, необходимые для анализа безопасности, и отправьте их в Azure Sentinel или стороннюю систему SIEM.
 
-* [Авторизация учетных записей разработчиков с помощью Azure Active Directory в Управлении API Azure](https://docs.microsoft.com/azure/api-management/api-management-howto-aad)
+* [Авторизация учетных записей разработчиков с помощью Azure Active Directory в Управлении API Azure](./api-management-howto-aad.md)
 
-* [Защита API с помощью протокола OAuth 2.0 и службы Управления API в Azure Active Directory](https://docs.microsoft.com/azure/api-management/api-management-howto-protect-backend-with-aad)
+* [Защита API с помощью протокола OAuth 2.0 и службы Управления API в Azure Active Directory](./api-management-howto-protect-backend-with-aad.md)
 
-* [Политики ограничения доступа в службе управления API](https://docs.microsoft.com/azure/api-management/api-management-access-restriction-policies)
+* [Политики ограничения доступа в службе управления API](./api-management-access-restriction-policies.md)
 
-* [Интеграция журналов Azure AD в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+* [Интеграция журналов Azure AD в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-* [Расширенный мониторинг интерфейсов API](https://docs.microsoft.com/azure/api-management/api-management-log-to-eventhub-sample)
+* [Расширенный мониторинг интерфейсов API](./api-management-log-to-eventhub-sample.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -547,11 +548,11 @@ ms.locfileid: "83736081"
 
 **Руководство**. Для подозрительных входов в учетные записи на уровне управления (портале Azure) используйте функции защиты идентификации и обнаружения риска Azure Active Directory, чтобы настроить автоматическое реагирование на обнаруженные подозрительные действия, связанные с удостоверениями пользователей. Вы также можете включить данные в Azure Sentinel для дальнейшего изучения.
 
-* [Просмотр рискованных входов в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+* [Просмотр рискованных входов в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
-* [Как настроить и включить политики рисков с помощью защиты идентификации](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies)
+* [Как настроить и включить политики рисков с помощью защиты идентификации](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -561,7 +562,7 @@ ms.locfileid: "83736081"
 
 **Руководство**. В настоящее время недоступно; защищенное хранилище в настоящее время не поддерживается для Управления API Azure.
 
-* [Список поддерживаемых служб защищенного хранилища](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability)
+* [Список поддерживаемых служб защищенного хранилища](../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-general-availability)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -569,13 +570,13 @@ ms.locfileid: "83736081"
 
 ## <a name="data-protection"></a>Защита данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-protection).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](../security/benchmarks/security-control-data-protection.md).*
 
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4.1. Инвентаризация конфиденциальных данных
 
 **Руководство**. Используйте теги для пометки ресурсов Azure, в которых хранятся или обрабатываются конфиденциальные данные.
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -585,13 +586,13 @@ ms.locfileid: "83736081"
 
 **Руководство**. Реализуйте отдельные подписки и группы управления для разработки, тестирования и производства. Экземпляры службы Управления API Azure должны быть разделены по виртуальным сетям и подсетям и помечены соответствующим образом.
 
-* [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+* [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+* [Создание групп управления](../governance/management-groups/create.md)
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-* [Как использовать управление API Azure с виртуальными сетями](https://docs.microsoft.com/azure/api-management/api-management-using-with-vnet)
+* [Как использовать управление API Azure с виртуальными сетями](./api-management-using-with-vnet.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -603,7 +604,7 @@ ms.locfileid: "83736081"
 
 Корпорация Майкрософт управляет базовой инфраструктурой Управления API Azure и реализовала надежные элементы управления для предотвращения потери или раскрытия данных клиента.
 
-* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+* [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -613,13 +614,13 @@ ms.locfileid: "83736081"
 
 **Руководство**. Вызовы плоскости управления выполняются через Azure Resource Manager по протоколу TLS. Требуется допустимый веб-маркер JSON (JWT). Вызовы плоскости данных можно защищать с помощью TLS и одного из поддерживаемых механизмов проверки подлинности (например, сертификата клиента или JWT).
 
-* [Общие сведения о защите данных в службе Управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-security-controls#data-protection)
+* [Общие сведения о защите данных в службе Управления API Azure](./api-management-security-controls.md#data-protection)
 
-* [Управление параметрами TLS в службе Управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-howto-manage-protocols-ciphers)
+* [Управление параметрами TLS в службе Управления API Azure](./api-management-howto-manage-protocols-ciphers.md)
 
-* [Защита интерфейсов API в службе Управления API Azure с помощью Azure Active Directory](https://docs.microsoft.com/azure/api-management/api-management-howto-protect-backend-with-aad)
+* [Защита интерфейсов API в службе Управления API Azure с помощью Azure Active Directory](./api-management-howto-protect-backend-with-aad.md)
 
-* [Защита интерфейсов API в службе Управления API Azure с помощью Azure Active Directory B2C](https://docs.microsoft.com/azure/api-management/howto-protect-backend-frontend-azure-ad-b2c)
+* [Защита интерфейсов API в службе Управления API Azure с помощью Azure Active Directory B2C](./howto-protect-backend-frontend-azure-ad-b2c.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -631,7 +632,7 @@ ms.locfileid: "83736081"
 
 Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и предпринимает все возможные усилия для защиты клиентов от потери данных и раскрытия информации. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
 
-* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+* [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -641,7 +642,7 @@ ms.locfileid: "83736081"
 
 **Руководство**. Используйте управление доступом на основе ролей для управления доступом к Управлению API Azure. Служба управления API Azure использует управление доступом на основе ролей (RBAC) для детализированного контроля доступа к службам и сущностям управления API (например, к интерфейсам API и политикам).
 
-* [Практическое руководство по использованию управления доступом на основе ролей в службе "Управление API Azure"](https://docs.microsoft.com/azure/api-management/api-management-role-based-access-control)
+* [Практическое руководство по использованию управления доступом на основе ролей в службе "Управление API Azure"](./api-management-role-based-access-control.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -653,7 +654,7 @@ ms.locfileid: "83736081"
 
 Корпорация Майкрософт управляет базовой инфраструктурой Управления API Azure и реализовала надежные элементы управления для предотвращения потери или раскрытия данных клиента.
 
-* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+* [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -663,7 +664,7 @@ ms.locfileid: "83736081"
 
 **Руководство**. Конфиденциальные данные, такие как сертификаты, ключи и именованные значения секретов, шифруются с помощью ключей экземпляров службы, управляемых службой. Все ключи шифрования предназначены для конкретного экземпляра службы и управляются службой.
 
-* [Общие сведения о защите и шифровании хранимых данных с помощью службы Управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-security-controls#data-protection)
+* [Общие сведения о защите и шифровании хранимых данных с помощью службы Управления API Azure](./api-management-security-controls.md#data-protection)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -673,9 +674,9 @@ ms.locfileid: "83736081"
 
 **Руководство**. Используйте Azure Monitor с журналом действий Azure для создания оповещений об изменениях в приложениях Функций Azure и других важных и связанных с ними ресурсах.
 
-* [Создание оповещений для событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+* [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
 
-* [Использование Azure Monitor и журнала действий Azure в службе Управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-howto-use-azure-monitor)
+* [Использование Azure Monitor и журнала действий Azure в службе Управления API Azure](./api-management-howto-use-azure-monitor.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -683,7 +684,7 @@ ms.locfileid: "83736081"
 
 ## <a name="vulnerability-management"></a>управление уязвимостями;
 
-*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](https://docs.microsoft.com/azure/security/benchmarks/security-control-vulnerability-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](../security/benchmarks/security-control-vulnerability-management.md).*
 
 ### <a name="51-run-automated-vulnerability-scanning-tools"></a>5.1. Выполнение автоматизированных средства анализа уязвимостей
 
@@ -691,7 +692,7 @@ ms.locfileid: "83736081"
 
 Проверка базовой платформы и внесение исправлений в нее осуществляется корпорацией Майкрософт. Проверяйте доступные элементы управления безопасностью для сокращения количества уязвимостей, связанных с конфигурацией службы.
 
-* [Общие сведения об элементах управления безопасностью, доступных для Управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-security-controls)
+* [Общие сведения об элементах управления безопасностью, доступных для Управления API Azure](./api-management-security-controls.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -727,7 +728,7 @@ ms.locfileid: "83736081"
 
 Проверка базовой платформы и внесение исправлений в нее осуществляется корпорацией Майкрософт. Клиенту следует проверять доступные элементы управления безопасностью для сокращения количества уязвимостей, связанных с конфигурацией службы.
 
-* [Общие сведения об элементах управления безопасностью, доступных для Управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-security-controls)
+* [Общие сведения об элементах управления безопасностью, доступных для Управления API Azure](./api-management-security-controls.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -735,7 +736,7 @@ ms.locfileid: "83736081"
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
-*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](https://docs.microsoft.com/azure/security/benchmarks/security-control-inventory-asset-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](../security/benchmarks/security-control-inventory-asset-management.md).*
 
 ### <a name="61-use-azure-asset-discovery"></a>6.1. Использование обнаружения ресурсов Azure
 
@@ -743,11 +744,11 @@ ms.locfileid: "83736081"
 
 Хотя классические ресурсы Azure можно обнаружить через Resource Graph, настоятельно рекомендуется в дальнейшем создавать и использовать ресурсы Azure Resource Manager.
 
-* [Как создавать запросы с помощью Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+* [Как создавать запросы с помощью Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
-* [Как просматривать подписки Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+* [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
-* [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
+* [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -757,7 +758,7 @@ ms.locfileid: "83736081"
 
 **Руководство**. Применяйте к ресурсам Azure теги, чтобы логически классифицировать их на основе метаданных.
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -771,11 +772,11 @@ ms.locfileid: "83736081"
 - Недопустимые типы ресурсов
 - Допустимые типы ресурсов
 
-* [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+* [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+* [Создание групп управления](../governance/management-groups/create.md)
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -797,9 +798,9 @@ ms.locfileid: "83736081"
 
 Используйте Azure Resource Graph для запроса или обнаружения ресурсов в подписках. Убедитесь в том, что все ресурсы Azure, представленные в среде, утверждены.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Как создавать запросы с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+* [Как создавать запросы с помощью Azure Graph](../governance/resource-graph/first-query-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -835,9 +836,9 @@ ms.locfileid: "83736081"
 - Недопустимые типы ресурсов
 - Допустимые типы ресурсов
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Как отказаться от определенного типа ресурса с помощью Политики Azure](https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types)
+* [Как отказаться от определенного типа ресурса с помощью Политики Azure](/azure/governance/policy/samples/not-allowed-resource-types)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -855,9 +856,9 @@ ms.locfileid: "83736081"
 
 **Руководство**. Настройте условный доступ Azure, чтобы ограничить возможность пользователей взаимодействовать с Azure Resource Manager путем настройки "Блокировать доступ" для приложения "Управление Microsoft Azure".
 
-* [Как настроить условный доступ для блокировки доступа к Azure Resource Manager](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management)
+* [Как настроить условный доступ для блокировки доступа к Azure Resource Manager](../role-based-access-control/conditional-access-azure-management.md)
 
-* [Управление доступом на основе ролей в службе Управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-role-based-access-control)
+* [Управление доступом на основе ролей в службе Управления API Azure](./api-management-role-based-access-control.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -881,15 +882,15 @@ ms.locfileid: "83736081"
 
 ## <a name="secure-configuration"></a>Безопасная конфигурация
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](https://docs.microsoft.com/azure/security/benchmarks/security-control-secure-configuration).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](../security/benchmarks/security-control-secure-configuration.md).*
 
 ### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7.1. Установка безопасных конфигураций для всех ресурсов Azure
 
 **Руководство**. Определите и реализуйте стандартные конфигурации безопасности для службы Управления API Azure с помощью Политики Azure. Используйте псевдонимы Политик Azure в пространстве имен Microsoft.ApiManagement для создания настраиваемых политик, предназначенных для аудита или принудительного применения конфигурации для служб Управления API Azure.
 
-* [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+* [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -907,9 +908,9 @@ ms.locfileid: "83736081"
 
 **Руководство**. Определите и реализуйте стандартные конфигурации безопасности для служб Управления API Azure с помощью Политики Azure. Используйте псевдонимы Политик Azure в пространстве имен Microsoft.ApiManagement для создания настраиваемых политик, предназначенных для аудита или принудительного применения конфигурации для экземпляров Управления API Azure. Используйте политику Azure [отказывать] и [развернуть, если не существует], чтобы обеспечить безопасность параметров в ресурсах Azure.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Сведения о действии Политик Azure](https://docs.microsoft.com/azure/governance/policy/concepts/effects)
+* [Сведения о действии Политик Azure](../governance/policy/concepts/effects.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -927,11 +928,11 @@ ms.locfileid: "83736081"
 
 **Руководство**. Если вы используете пользовательские определения политик Azure, используйте Azure DevOps или Azure Repos для безопасного хранения конфигурации службы Управления API Azure и управления ею.
 
-* [Хранение файлов в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
+* [Хранение файлов в Azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
 
-* [Документация по Azure Repos](https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops)
+* [Документация по Azure Repos](/azure/devops/repos/index?view=azure-devops)
 
-* [Общие сведения о наборе ресурсов DevOps для Управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-security-controls#configuration-management)
+* [Общие сведения о наборе ресурсов DevOps для Управления API Azure](./api-management-security-controls.md#configuration-management)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -949,9 +950,9 @@ ms.locfileid: "83736081"
 
 **Руководство**. Определите и реализуйте стандартные конфигурации безопасности для служб Управления API Azure с помощью Политики Azure. Используйте псевдонимы Политик Azure в пространстве имен Microsoft.ApiManagement для создания настраиваемых политик, предназначенных для аудита или принудительного применения конфигурации для экземпляров Управления API Azure. Используйте политику Azure [отказывать] и [развернуть, если не существует], чтобы обеспечить безопасность параметров в ресурсах Azure.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Сведения о действии Политик Azure](https://docs.microsoft.com/azure/governance/policy/concepts/effects)
+* [Сведения о действии Политик Azure](../governance/policy/concepts/effects.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -971,11 +972,11 @@ ms.locfileid: "83736081"
 
 Кроме того, определите и реализуйте стандартные конфигурации безопасности для служб Управления API Azure с помощью Политики Azure. Используйте псевдонимы Политик Azure в пространстве имен Microsoft.ApiManagement для создания настраиваемых политик, предназначенных для аудита или принудительного применения конфигурации для экземпляров Управления API Azure. Используйте политику Azure [отказывать] и [развернуть, если не существует], чтобы обеспечить безопасность параметров в ресурсах Azure.
 
-* [Общие сведения о наборе ресурсов DevOps для Управления API Azure](https://docs.microsoft.com/azure/api-management/api-management-security-controls#configuration-management)
+* [Общие сведения о наборе ресурсов DevOps для Управления API Azure](./api-management-security-controls.md#configuration-management)
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Сведения о действии Политик Azure](https://docs.microsoft.com/azure/governance/policy/concepts/effects)
+* [Сведения о действии Политик Azure](../governance/policy/concepts/effects.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -993,7 +994,7 @@ ms.locfileid: "83736081"
 
 **Руководство**. Используйте Key Vault для управления сертификатами и настройки их автоматической смены. Если для управления SSL-сертификатом личного домена используется Azure Key Vault, сертификат должен быть добавлен в Key Vault именно как сертификат, а не секрет.
 
-* [Задание имен личных доменов со сменой ключа Key Vault](https://docs.microsoft.com/azure/api-management/configure-custom-domain)
+* [Задание имен личных доменов со сменой ключа Key Vault](./configure-custom-domain.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1003,9 +1004,9 @@ ms.locfileid: "83736081"
 
 **Руководство**. Используйте управляемое удостоверение службы, созданное службой Azure Active Directory (Azure AD), чтобы экземпляр службы Управления API мог легко и безопасно работать с другими ресурсами, защищенными службой Azure AD, например Azure Key Vault.
 
-* [Создание управляемого удостоверения для экземпляра Управления API](https://docs.microsoft.com/azure/api-management/api-management-howto-use-managed-service-identity)
+* [Создание управляемого удостоверения для экземпляра Управления API](./api-management-howto-use-managed-service-identity.md)
 
-* [Политика для проверки подлинности с помощью управляемого удостоверения](https://docs.microsoft.com/azure/api-management/api-management-authentication-policies#ManagedIdentity)
+* [Политика для проверки подлинности с помощью управляемого удостоверения](./api-management-authentication-policies.md#ManagedIdentity)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1023,7 +1024,7 @@ ms.locfileid: "83736081"
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](https://docs.microsoft.com/azure/security/benchmarks/security-control-malware-defense).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](../security/benchmarks/security-control-malware-defense.md).*
 
 ### <a name="81-use-centrally-managed-anti-malware-software"></a>8.1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
 
@@ -1057,7 +1058,7 @@ ms.locfileid: "83736081"
 
 ## <a name="data-recovery"></a>Восстановление данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](https://docs.microsoft.com/azure/security/benchmarks/security-control-data-recovery).*
+*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](../security/benchmarks/security-control-data-recovery.md).*
 
 ### <a name="91-ensure-regular-automated-back-ups"></a>9.1. Обеспечение регулярного автоматического резервного копирования
 
@@ -1065,9 +1066,9 @@ ms.locfileid: "83736081"
 
 Функции резервного копирования и восстановления службы Управления API обеспечивают необходимые стандартные блоки для реализации стратегии аварийного восстановления. Операции резервного копирования и восстановления могут выполняться вручную или автоматически.
 
-* [Развертывание плоскости данных Управления API в нескольких регионах](https://docs.microsoft.com/azure/api-management/api-management-howto-deploy-multi-region)
+* [Развертывание плоскости данных Управления API в нескольких регионах](./api-management-howto-deploy-multi-region.md)
 
-* [Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management](https://docs.microsoft.com/azure/api-management/api-management-howto-disaster-recovery-backup-restore#calling-the-backup-and-restore-operations)
+* [Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management](./api-management-howto-disaster-recovery-backup-restore.md#calling-the-backup-and-restore-operations)
 
 * [Вызов операции резервного копирования Управления API](/rest/api/apimanagement/2019-12-01/apimanagementservice/backup)
 
@@ -1083,9 +1084,9 @@ ms.locfileid: "83736081"
 
 Управляемые удостоверения можно использовать для получения сертификатов из Azure Key Vault для имен личных доменов Управления API. Создайте резервную копию всех сертификатов, хранящихся в Azure Key Vault.
 
-* [Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management](https://docs.microsoft.com/azure/api-management/api-management-howto-disaster-recovery-backup-restore#calling-the-backup-and-restore-operations)
+* [Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management](./api-management-howto-disaster-recovery-backup-restore.md#calling-the-backup-and-restore-operations)
 
-* [Резервное копирование сертификатов Azure Key Vault](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultcertificate?view=azurermps-6.13.0)
+* [Резервное копирование сертификатов Azure Key Vault](/powershell/module/azurerm.keyvault/backup-azurekeyvaultcertificate?view=azurermps-6.13.0)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1095,9 +1096,9 @@ ms.locfileid: "83736081"
 
 **Руководство**. Проверьте резервные копии, выполнив тестовое восстановление службы и сертификатов из них.
 
-* [Вызов операции восстановления Управления API](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/apimanagementservice/restore)
+* [Вызов операции восстановления Управления API](/rest/api/apimanagement/2019-12-01/apimanagementservice/restore)
 
-* [Восстановление сертификатов Azure Key Vault](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultcertificate?view=azurermps-6.13.0)
+* [Восстановление сертификатов Azure Key Vault](/powershell/module/azurerm.keyvault/restore-azurekeyvaultcertificate?view=azurermps-6.13.0)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1107,13 +1108,13 @@ ms.locfileid: "83736081"
 
 **Руководство**. Служба Управления API Azure записывает резервные копии в учетные записи хранения Azure, принадлежащие клиенту. Чтобы защитить резервную копию, следуйте рекомендациям по безопасности службы хранилища Azure.
 
-* [Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management](https://docs.microsoft.com/azure/api-management/api-management-howto-disaster-recovery-backup-restore#calling-the-backup-and-restore-operations)
+* [Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management](./api-management-howto-disaster-recovery-backup-restore.md#calling-the-backup-and-restore-operations)
 
-* [Рекомендация по обеспечению безопасности для хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/security-recommendations)
+* [Рекомендация по обеспечению безопасности для хранилища BLOB-объектов](../storage/blobs/security-recommendations.md)
 
 Включите обратимое удаление в Key Vault для защиты ключей от случайного или злонамеренного удаления.
 
-* [Как включить обратимое удаление в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+* [Как включить обратимое удаление в Key Vault](../storage/blobs/soft-delete-overview.md?tabs=azure-portal)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1121,7 +1122,7 @@ ms.locfileid: "83736081"
 
 ## <a name="incident-response"></a>Реагирование на инциденты
 
-*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](https://docs.microsoft.com/azure/security/benchmarks/security-control-incident-response).*
+*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](../security/benchmarks/security-control-incident-response.md).*
 
 ### <a name="101-create-an-incident-response-guide"></a>10.1. Создание руководства по реагированию на инциденты
 
@@ -1143,9 +1144,9 @@ ms.locfileid: "83736081"
 
 Кроме того, четко помечайте подписки тегами (например, рабочие, нерабочие) и создайте систему именования, чтобы четко определить и классифицировать ресурсы Azure, особенно обрабатывающие конфиденциальные данные. Вы несете ответственность за назначение приоритета оповещениям, требующим действий по исправлению, в зависимости от важности ресурсов Azure и среды, в которой произошел инцидент.
 
-* [Оповещения безопасности в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-overview)
+* [Оповещения безопасности в Центре безопасности Azure](../security-center/security-center-alerts-overview.md)
 
-* [использование тегов для упорядочения ресурсов в Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [использование тегов для упорядочения ресурсов в Azure](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1165,7 +1166,7 @@ ms.locfileid: "83736081"
 
 **Руководство**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться в том, что проблемы устранены.
 
-* [Как задать контакт безопасности Центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details)
+* [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1175,9 +1176,9 @@ ms.locfileid: "83736081"
 
 **Руководство**. Экспортируйте оповещения и рекомендации Центра безопасности Azure с помощью функции непрерывного экспорта с целью выявления рисков для ресурсов Azure. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных Центра безопасности Azure для потоковой передачи оповещений в Azure Sentinel.
 
-* [Настройка непрерывного экспорта данных](https://docs.microsoft.com/azure/security-center/continuous-export)
+* [Настройка непрерывного экспорта данных](../security-center/continuous-export.md)
 
-* [Как выполнить потоковую передачу оповещений в Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-security-center)
+* [Как выполнить потоковую передачу оповещений в Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1187,7 +1188,7 @@ ms.locfileid: "83736081"
 
 **Руководство**. Используйте функцию автоматизации рабочих процессов в Центре безопасности Azure для автоматического запуска ответов с помощью Logic Apps в оповещениях и рекомендациях системы безопасности.
 
-* [Как настроить автоматизацию рабочего процесса и Logic Apps](https://docs.microsoft.com/azure/security-center/workflow-automation)
+* [Как настроить автоматизацию рабочего процесса и Logic Apps](../security-center/workflow-automation.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1195,7 +1196,7 @@ ms.locfileid: "83736081"
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
-*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](https://docs.microsoft.com/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
+*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](../security/benchmarks/security-control-penetration-tests-red-team-exercises.md).*
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-to-remediate-all-critical-security-findings-within-60-days"></a>11.1. Регулярно проводите тестирование ресурсов Azure на проникновение и следите за исправлением всех критических точек безопасности в течение 60 дней
 
@@ -1209,5 +1210,5 @@ ms.locfileid: "83736081"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

@@ -15,16 +15,17 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 01/23/2018
 ms.author: apimpm
-ms.openlocfilehash: 4a0717bf7a284668af4808acae3050cc7f42f836
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ace0ef2660a44af41d8942cfe4d225bc1a03228e
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75442528"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86254594"
 ---
 # <a name="monitor-your-apis-with-azure-api-management-event-hubs-and-moesif"></a>Мониторинг API-интерфейсов с помощью Управления API Azure, Центров событий и Moesif
 [Служба управления API](api-management-key-concepts.md) предоставляет множество возможностей для улучшения обработки HTTP-запросов, адресованных API-интерфейсу HTTP. Однако запросы и ответы существуют очень недолго. Созданный запрос проходит через службу управления API на серверный API вашей службы. API обрабатывает запрос и отправляет ответ обратно потребителю API. Служба управления API частично сохраняет важные статистические данные об интерфейсах API и отображает их на панели мониторинга портала Azure, но вся остальная информация теряется безвозвратно.
 
-Вы можете использовать политику [регистрации в концентраторах событий](../event-hubs/event-hubs-what-is-event-hubs.md), чтобы служба управления API отправляла любые нужные сведения о запросе и ответе в концентратор событий Azure. Существует ряд причин для создания событий из сообщений HTTP, отправляемых в API-интерфейсы. В частности, это происходит при создании журнала аудита обновлений, анализе использования, оповещении об исключениях или интеграции служб сторонних поставщиков.
+Вы можете использовать политику [регистрации в концентраторах событий](../event-hubs/event-hubs-about.md), чтобы служба управления API отправляла любые нужные сведения о запросе и ответе в концентратор событий Azure. Существует ряд причин для создания событий из сообщений HTTP, отправляемых в API-интерфейсы. В частности, это происходит при создании журнала аудита обновлений, анализе использования, оповещении об исключениях или интеграции служб сторонних поставщиков.
 
 В этой статье мы покажем, как зафиксировать полное сообщение о запросе и ответе HTTP, как отправить это сообщение в концентратор событий, а затем передать его в сторонние службы, которые выполняют ведение журналов и мониторинг HTTP-запросов.
 
@@ -47,7 +48,7 @@ ms.locfileid: "75442528"
 
 Еще один вариант — тип носителя `application/http` , описанный в спецификации HTTP [RFC 7230](https://tools.ietf.org/html/rfc7230). Этот тип носителя имеет точно такой же формат, как и обычные HTTP-сообщения, отправляемые по сети, но позволяет разместить сообщение целиком в тексте другого HTTP-запроса. В нашем случае в тексте запроса мы и будем отправлять сообщение в Центры событий. В библиотеках [клиента Microsoft ASP.NET Web API 2.2](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Client/) уже есть средство синтаксического анализа для этого формата, которое преобразует его в собственные объекты `HttpRequestMessage` и `HttpResponseMessage`.
 
-Чтобы создать такое сообщение, следует воспользоваться [выражениями политики](/azure/api-management/api-management-policy-expressions) службы управления API Azure, которые используют синтаксис C#. Приведенная ниже политика будет отправлять сообщение с HTTP-запросом в Центры событий Azure.
+Чтобы создать такое сообщение, следует воспользоваться [выражениями политики](./api-management-policy-expressions.md) службы управления API Azure, которые используют синтаксис C#. Приведенная ниже политика будет отправлять сообщение с HTTP-запросом в Центры событий Azure.
 
 ```xml
 <log-to-eventhub logger-id="conferencelogger" partition-id="0">
@@ -296,7 +297,7 @@ public class MoesifHttpMessageProcessor : IHttpMessageProcessor
 `MoesifHttpMessageProcessor` использует [библиотеку API C# для Moesif](https://www.moesif.com/docs/api?csharp#events), которая упрощает передачу данных событий HTTP в их службу. Для отправки данных HTTP в API сборщика Моесиф требуется учетная запись и идентификатор приложения. Вы получаете идентификатор приложения моесиф, создав учетную запись на [веб-сайте моесиф](https://www.moesif.com) , а затем перейдем к установке приложения в _меню справа_  ->  _App Setup_.
 
 ## <a name="complete-sample"></a>Полный пример
-[Исходный код](https://github.com/dgilling/ApimEventProcessor) и тесты для этого примера доступны на сайте GitHub. Чтобы запустить этот пример, вам потребуются [служба управления API](get-started-create-service-instance.md), [подключенный к ней концентратор событий](api-management-howto-log-event-hubs.md) и [учетная запись хранения](../storage/common/storage-create-storage-account.md).   
+[Исходный код](https://github.com/dgilling/ApimEventProcessor) и тесты для этого примера доступны на сайте GitHub. Чтобы запустить этот пример, вам потребуются [служба управления API](get-started-create-service-instance.md), [подключенный к ней концентратор событий](api-management-howto-log-event-hubs.md) и [учетная запись хранения](../storage/common/storage-account-create.md).   
 
 Пример представляет собой простое консольное приложение, которое прослушивает события, поступающие от концентратора событий, преобразует их в объекты Moesif `EventRequestModel` и `EventResponseModel`, а затем пересылает их на API сборщика Moesif.
 
@@ -307,12 +308,12 @@ public class MoesifHttpMessageProcessor : IHttpMessageProcessor
 ## <a name="summary"></a>Сводка
 Служба управления API Azure— это идеальное место для фиксации HTTP-трафика, поступающего на API-интерфейсы и в обратном направлении. Центры событий Azure — это высокомасштабируемое недорогое решение, которое собирает информацию о трафике и передает ее в системы дополнительной обработки для регистрации, мониторинга и сложного анализа. Для подключения к сторонним системам мониторинга трафика, например Moesif, потребуется всего несколько десятков строк кода.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительная информация о Центрах событий Azure
   * [Приступая к работе с Центрами событий Azure](../event-hubs/event-hubs-c-getstarted-send.md)
-  * [Прием сообщений через EventProcessorHost](../event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph.md)
+  * [Прием сообщений через EventProcessorHost](../event-hubs/event-hubs-dotnet-standard-getstarted-send.md)
   * [Руководство по программированию Центров событий](../event-hubs/event-hubs-programming-guide.md)
 * Дополнительные сведения об интеграции службы управления API и Центров событий
   * [Как регистрировать события в Центрах событий Azure при использовании службы управления API Azure](api-management-howto-log-event-hubs.md)
-  * [Справочник по сущности "Средство ведения журнала"](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-logger-entity)
-  * [Справочник по политике регистрации в концентраторе событий](/azure/api-management/api-management-advanced-policies#log-to-eventhub)
+  * [Справочник по сущности "Средство ведения журнала"](/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-logger-entity)
+  * [Справочник по политике регистрации в концентраторе событий](./api-management-advanced-policies.md#log-to-eventhub)

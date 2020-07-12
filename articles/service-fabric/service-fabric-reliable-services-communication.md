@@ -5,11 +5,12 @@ author: vturecek
 ms.topic: conceptual
 ms.date: 11/01/2017
 ms.author: vturecek
-ms.openlocfilehash: 3c1a6cfa5227369bf1cde4af087019727c22c0c2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0899e33e875fea4a1708e593876b7ef771004677
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75462951"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86253190"
 ---
 # <a name="how-to-use-the-reliable-services-communication-apis"></a>Использование API связи служб Reliable Services
 Обмен данными между службами совершенно не влияет на работу платформы Azure Service Fabric. Допускается использование любых протоколов и стеков, от UDP до HTTP. Способ взаимодействия служб зависит только от выбора разработчика. Платформа приложений служб Reliable Services предоставляет несколько встроенных стеков связи, а также API-интерфейсы для создания пользовательских компонентов связи.
@@ -187,7 +188,7 @@ public CompletableFuture<String> openAsync(CancellationToken cancellationToken)
 Платформа Service Fabric предоставляет API-интерфейсы, которые позволяют клиентам и другим службам в дальнейшем запрашивать этот адрес по имени службы. Это важно, так как у службы нестатический адрес. Перемещение служб в кластере осуществляется для балансировки ресурсов и обеспечения их доступности. Это механизм, позволяющий клиентам распознавать адрес прослушивания для службы.
 
 > [!NOTE]
-> Полное пошаговое руководство по созданию прослушивателя каналов связи см. в статье [ASP.NET Core в Service Fabric Reliable Services](service-fabric-reliable-services-communication-webapi.md) (для C#). Для Java вы можете написать собственную реализацию HTTP-сервера. Пример приложения EchoServer см. на странице https://github.com/Azure-Samples/service-fabric-java-getting-started.
+> Полное пошаговое руководство по созданию прослушивателя каналов связи см. в статье [ASP.NET Core в Service Fabric Reliable Services](./service-fabric-reliable-services-communication-aspnetcore.md) (для C#). Для Java вы можете написать собственную реализацию HTTP-сервера. Пример приложения EchoServer см. на странице https://github.com/Azure-Samples/service-fabric-java-getting-started.
 >
 >
 
@@ -206,7 +207,7 @@ ServicePartitionResolver resolver = ServicePartitionResolver.GetDefault();
 FabricServicePartitionResolver resolver = FabricServicePartitionResolver.getDefault();
 ```
 
-Чтобы подключиться к службам в другом кластере, ServicePartitionResolver можно создать с набором конечных точек шлюза кластера. Обратите внимание, что конечные точки шлюза — это просто другие конечные точки для подключения к тому же кластеру. Пример:
+Чтобы подключиться к службам в другом кластере, ServicePartitionResolver можно создать с набором конечных точек шлюза кластера. Обратите внимание, что конечные точки шлюза — это просто другие конечные точки для подключения к тому же кластеру. Например:
 
 ```csharp
 ServicePartitionResolver resolver = new  ServicePartitionResolver("mycluster.cloudapp.azure.com:19000", "mycluster.cloudapp.azure.com:19001");
@@ -420,7 +421,7 @@ CompletableFuture<?> result = myServicePartitionClient.invokeWithRetryAsync(clie
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [ASP.NET Core в Service Fabric Reliable Services](service-fabric-reliable-services-communication-aspnetcore.md)
 * [Удаленное взаимодействие службы с Reliable Services](service-fabric-reliable-services-communication-remoting.md)
 * [Коммуникационный стек WCF для надежных служб](service-fabric-reliable-services-communication-wcf.md)

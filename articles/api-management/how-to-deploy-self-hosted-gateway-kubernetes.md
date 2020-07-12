@@ -9,17 +9,18 @@ ms.workload: mobile
 ms.topic: article
 ms.author: apimpm
 ms.date: 04/23/2020
-ms.openlocfilehash: 38cfab8a3b73eeef28249f53bd2f5c56e26b21a1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 51ce2e0dec8b38c9285f4f4e71dd35056b292b66
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82854109"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86254288"
 ---
 # <a name="deploy-a-self-hosted-gateway-to-kubernetes"></a>Развертывание независимого шлюза в Kubernetes
 
 В этой статье описаны действия по развертыванию компонента самостоятельно размещенного шлюза службы управления API Azure в кластере Kubernetes.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 - Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
 - Создайте кластер Kubernetes.
@@ -64,7 +65,7 @@ ms.locfileid: "82854109"
 ### <a name="access-token"></a>Маркер доступа
 Без действительного маркера доступа автономный шлюз не сможет получить доступ к данным конфигурации и загрузить их из конечной точки связанной службы управления API. Маркер доступа может быть допустимым не более 30 дней. Его необходимо повторно создать, а кластер, настроенный с помощью нового маркера, вручную или через автоматизацию до истечения срока действия. 
 
-При автоматизации обновления токена используйте [эту операцию API управления](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/gateway/generatetoken) для создания нового маркера. Сведения об управлении секретами Kubernetes см. на [веб-сайте Kubernetes](https://kubernetes.io/docs/concepts/configuration/secret).
+При автоматизации обновления токена используйте [эту операцию API управления](/rest/api/apimanagement/2019-12-01/gateway/generatetoken) для создания нового маркера. Сведения об управлении секретами Kubernetes см. на [веб-сайте Kubernetes](https://kubernetes.io/docs/concepts/configuration/secret).
 
 ### <a name="namespace"></a>Пространство имен
 [Пространства имен](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) Kubernetes помогают разделить один кластер между несколькими командами, проектами или приложениями. Пространства имен предоставляют область для ресурсов и имен. Они могут быть связаны с квотами ресурсов и политиками управления доступом.
@@ -117,6 +118,6 @@ ms.locfileid: "82854109"
 Когда [Подключение к Azure](self-hosted-gateway-overview.md#connectivity-to-azure) временно теряется, поток телеметрии в Azure прерывается и данные теряются в течение сбоя.
 Рассмотрите возможность [настройки локального мониторинга](how-to-configure-local-metrics-logs.md) , чтобы обеспечить возможность наблюдения за трафиком API и предотвращения потери данных телеметрии во время простоя подключения Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о самостоятельно размещенном шлюзе см. в разделе [Обзор самостоятельно размещенного](self-hosted-gateway-overview.md)шлюза.

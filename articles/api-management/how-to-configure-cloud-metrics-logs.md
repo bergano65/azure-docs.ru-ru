@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 04/30/2020
 ms.author: apimpm
-ms.openlocfilehash: d0fbdcb877e91a703306f15fdc7507fd19d534f4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3bbfd167e89ae1b5f9b7de1df5fd1cb72c720cb6
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82205135"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86254540"
 ---
 # <a name="configure-cloud-metrics-and-logs-for-azure-api-management-self-hosted-gateway"></a>Настройка метрик и журналов облака для самостоятельно размещенного шлюза управления API Azure
 
@@ -57,14 +57,12 @@ ms.locfileid: "82205135"
 
 ## <a name="logs"></a>Журналы
 
-В настоящее время самостоятельно размещенный шлюз не отправляет [журналы диагностики](https://docs.microsoft.com/azure/api-management/api-management-howto-use-azure-monitor#diagnostic-logs) в облако. Однако можно [настроить и сохранить журналы локально](how-to-configure-local-metrics-logs.md) , где развернут локальный шлюз. 
+В настоящее время самостоятельно размещенный шлюз не отправляет [журналы диагностики](./api-management-howto-use-azure-monitor.md#activity-logs) в облако. Однако можно [настроить и сохранить журналы локально](how-to-configure-local-metrics-logs.md) , где развернут локальный шлюз. 
 
-Если шлюз развернут в [службе Azure Kubernetes](https://azure.microsoft.com/services/kubernetes-service/), можно включить [Azure Monitor для контейнеров](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview) , чтобы получать журналы из контейнеров и просматривать их в log Analytics. 
+Если шлюз развернут в [службе Azure Kubernetes](https://azure.microsoft.com/services/kubernetes-service/), можно включить [Azure Monitor для контейнеров](../azure-monitor/insights/container-insights-overview.md) , чтобы получать журналы из контейнеров и просматривать их в log Analytics. 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о самостоятельно размещенном шлюзе см. в статье [Обзор самостоятельного размещения шлюза в службе управления API Azure](self-hosted-gateway-overview.md) .
 * Сведения о [настройке и сохранении журналов в локальной](how-to-configure-local-metrics-logs.md) среде
-
-

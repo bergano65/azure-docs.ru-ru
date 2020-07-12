@@ -5,11 +5,12 @@ author: amanbha
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.author: amanbha
-ms.openlocfilehash: b90c5a10c64e273f1c8f48c7bf5713859796db65
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d977b6fea71d246610b0e6ef2d9e17d587f1e9ad
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75645622"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86253547"
 ---
 # <a name="delete-reliable-actors-and-their-state"></a>Удаление субъектов Reliable Actors и данных их состояния
 При удалении деактивированных субъектов удаляется только объект субъекта; из диспетчера состояний субъекта данные не удаляются. При повторной активации субъекта его данные снова становятся доступны в диспетчере состояний. Если субъекты, данные которых хранятся в диспетчере состояний, деактивируются и больше не активируются, может возникнуть необходимость в удалении связанных с ними данных.
@@ -48,7 +49,7 @@ myActorServiceProxy.deleteActorAsync(actorToDelete);
 * [События субъекта](service-fabric-reliable-actors-events.md)
 * [Повторный вход субъекта](service-fabric-reliable-actors-reentrancy.md)
 * [Диагностика и мониторинг производительности в Reliable Actors](service-fabric-reliable-actors-diagnostics.md)
-* [Справочная документация по API субъектов](https://msdn.microsoft.com/library/azure/dn971626.aspx)
+* [Справочная документация по API субъектов](/previous-versions/azure/dn971626(v=azure.100))
 * [Пример кода на C#](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Пример кода Java](https://github.com/Azure-Samples/service-fabric-java-getting-started)
 

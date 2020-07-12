@@ -4,12 +4,12 @@ description: Узнайте, как создать несколько пулов
 services: container-service
 ms.topic: article
 ms.date: 04/08/2020
-ms.openlocfilehash: 64eaa3fd38a9f3de7e2032ef7ff7a18924353a1d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c35b3cdbde79a771eccc42c7c3a60b0ab4e08e8a
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85318442"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86250861"
 ---
 # <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Создание нескольких пулов узлов для кластера в службе Kubernetes Azure (AKS) и управление ими
 
@@ -805,7 +805,7 @@ az group delete --name myResourceGroup --yes --no-wait
 az group delete --name myResourceGroup2 --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [пулах системных узлов][use-system-pool].
 
@@ -844,7 +844,7 @@ az group delete --name myResourceGroup2 --yes --no-wait
 [operator-best-practices-advanced-scheduler]: operator-best-practices-advanced-scheduler.md
 [quotas-skus-regions]: quotas-skus-regions.md
 [supported-versions]: supported-kubernetes-versions.md
-[tag-limitation]: ../azure-resource-manager/resource-group-using-tags.md
+[tag-limitation]: ../azure-resource-manager/management/tag-resources.md
 [taints-tolerations]: operator-best-practices-advanced-scheduler.md#provide-dedicated-nodes-using-taints-and-tolerations
 [vm-sizes]: ../virtual-machines/linux/sizes.md
 [use-system-pool]: use-system-pools.md

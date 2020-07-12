@@ -4,12 +4,12 @@ description: Узнайте, как быстро создать кластер K
 services: container-service
 ms.topic: article
 ms.date: 05/26/2020
-ms.openlocfilehash: 735869da1432c241927597789f00a0bd2aea63f3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 036c97d406e37e038474287daf39182ddce194a1
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85207963"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86250895"
 ---
 # <a name="create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-powershell"></a>Создание контейнера Windows Server в кластере Службы Azure Kubernetes (AKS) с помощью PowerShell
 
@@ -47,7 +47,7 @@ Set-AzContext -SubscriptionId 00000000-0000-0000-0000-000000000000
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-[Группа ресурсов Azure](/azure/azure-resource-manager/resource-group-overview) — это логическая группа, в которой развертываются и управляются ресурсы Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположении сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если во время создания ресурса вы не указали другой регион. Создайте группу ресурсов с помощью командлета [New-AzResourceGroup][new-azresourcegroup].
+[Группа ресурсов Azure](../azure-resource-manager/management/overview.md) — это логическая группа, в которой развертываются и управляются ресурсы Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположении сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если во время создания ресурса вы не указали другой регион. Создайте группу ресурсов с помощью командлета [New-AzResourceGroup][new-azresourcegroup].
 
 В следующем примере создается группа ресурсов с именем **myResourceGroup** в расположении **eastus**.
 
@@ -70,7 +70,7 @@ ResourceId        : /subscriptions/00000000-0000-0000-0000-000000000000/resource
 
 ## <a name="create-an-aks-cluster"></a>Создание кластера AKS
 
-Создайте пару ключей SSH с помощью служебной программы командной строки `ssh-keygen`. Дополнительные сведения см. в статье [Краткая инструкция. Создание и использование пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure](/azure/virtual-machines/linux/mac-create-ssh-keys).
+Создайте пару ключей SSH с помощью служебной программы командной строки `ssh-keygen`. Дополнительные сведения см. в статье [Краткая инструкция. Создание и использование пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure](../virtual-machines/linux/mac-create-ssh-keys.md).
 
 Чтобы запустить кластер AKS, который поддерживает пулы узлов для контейнеров Windows Server, такой кластер должен использовать сетевую политику с подключаемым сетевым модулем [Azure CNI][azure-cni-about] (расширенным). Более подробные сведения о том, как планировать диапазоны подсетей и оценивать требования к сети, см в статье о [настройке сетевого взаимодействия Azure CNI][use-advanced-networking]. Приведенный ниже командлет [New-AzAks][new-azaks] позволяет создать кластер AKS с именем **myAKSCluster**. Следующий пример создает обязательные сетевые ресурсы, если они еще не существуют.
 

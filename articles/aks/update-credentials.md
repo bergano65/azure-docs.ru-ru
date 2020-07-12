@@ -5,12 +5,12 @@ description: Узнайте, как обновить или сбросить у�
 services: container-service
 ms.topic: article
 ms.date: 03/11/2019
-ms.openlocfilehash: 7dcbd91063d4f36c4d78023b6548db0c968eda74
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: a9cc19184cc39975cce18d17a6047bedf5915555
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86077700"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86251032"
 ---
 # <a name="update-or-rotate-the-credentials-for-azure-kubernetes-service-aks"></a>Обновление или смена учетных данных для службы Azure Kubernetes (AKS)
 
@@ -118,7 +118,7 @@ az aks update-credentials \
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье субъект-служба для самого кластера AKS и приложений интеграции AAD обновлен. Дополнительные сведения о том, как управлять удостоверениями для рабочих нагрузок в кластере, см. в статье [Рекомендации по аутентификации и авторизации в службе Azure Kubernetes (AKS)][best-practices-identity].
 
@@ -127,8 +127,8 @@ az aks update-credentials \
 [az-aks-show]: /cli/azure/aks#az-aks-show
 [az-aks-update-credentials]: /cli/azure/aks#az-aks-update-credentials
 [best-practices-identity]: operator-best-practices-identity.md
-[aad-integration]: azure-ad-integration.md
-[create-aad-app]: azure-ad-integration.md#create-the-server-application
+[aad-integration]: ./azure-ad-integration-cli.md
+[create-aad-app]: ./azure-ad-integration-cli.md#create-azure-ad-server-component
 [az-ad-sp-create]: /cli/azure/ad/sp#az-ad-sp-create-for-rbac
 [az-ad-sp-credential-list]: /cli/azure/ad/sp/credential#az-ad-sp-credential-list
 [az-ad-sp-credential-reset]: /cli/azure/ad/sp/credential#az-ad-sp-credential-reset

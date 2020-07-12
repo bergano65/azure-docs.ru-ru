@@ -7,11 +7,12 @@ author: ozboms
 ms.topic: article
 ms.date: 4/25/2019
 ms.author: obboms
-ms.openlocfilehash: 7db3f806df88e5b23012e97ba5c2f14ca65b2508
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4e817d572a98ffb8135adf58d13f50ccacbc8746
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80803472"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86252000"
 ---
 # <a name="manually-create-and-use-an-nfs-network-file-system-linux-server-volume-with-azure-kubernetes-service-aks"></a>Создание и использование тома NFS сервера Linux (сетевой файловой системы) вручную с помощью службы Kubernetes Azure (AKS)
 Обмен данными между контейнерами часто является необходимым компонентом служб и приложений, основанных на контейнерах. Обычно у вас есть различные модули, которым требуется доступ к одной и той же информации на внешнем постоянном томе.    
@@ -160,10 +161,10 @@ ls -l
 
 <!-- LINKS - external -->
 [kubernetes-volumes]: https://kubernetes.io/docs/concepts/storage/volumes/
-[linux-create]: https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-vm
+[linux-create]: ../virtual-machines/linux/tutorial-manage-vm.md
 [nfs-tutorial]: https://help.ubuntu.com/community/SettingUpNFSHowTo#Pre-Installation_Setup
-[aks-virtual-network]: https://docs.microsoft.com/azure/aks/configure-kubenet#create-an-aks-cluster-in-the-virtual-network
-[peer-virtual-networks]: https://docs.microsoft.com/azure/virtual-network/tutorial-connect-virtual-networks-portal
+[aks-virtual-network]: ./configure-kubenet.md#create-an-aks-cluster-in-the-virtual-network
+[peer-virtual-networks]: ../virtual-network/tutorial-connect-virtual-networks-portal.md
 
 <!-- LINKS - internal -->
 [aks-quickstart-cli]: kubernetes-walkthrough.md

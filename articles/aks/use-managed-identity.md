@@ -6,18 +6,18 @@ author: mlearned
 ms.topic: article
 ms.date: 07/10/2020
 ms.author: mlearned
-ms.openlocfilehash: 27ae1d1a2c6309bdac2410dca4b48abf27d8ea0b
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 95a303a4b6a83901560b26679bca920b9de4d3f4
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86231987"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86250911"
 ---
 # <a name="use-managed-identities-in-azure-kubernetes-service"></a>Использование управляемых удостоверений в службе Kubernetes Azure
 
 В настоящее время кластер Azure Kubernetes Service (AKS) (в частности, поставщик облачных служб Kubernetes) требует удостоверения для создания дополнительных ресурсов, таких как подсистемы балансировки нагрузки и управляемые диски в Azure. Это может быть *управляемое удостоверение* или субъект- *Служба*. При использовании [субъекта-службы](kubernetes-service-principal.md)необходимо предоставить один или AKS от вашего имени. Если вы используете управляемое удостоверение, оно будет создано автоматически AKS. Кластеры, использующие субъекты-службы, в конечном итоге достигают состояния, в котором необходимо обновить субъект-службу, чтобы обеспечить работу кластера. Управление субъектами-службами повышает сложность, поэтому вместо этого проще использовать управляемые удостоверения. Те же требования к разрешениям применяются и к субъектам-службам, и к управляемым удостоверениям.
 
-*Управляемые удостоверения* по сути являются оболочкой для субъектов-служб и упрощают их управление. Поворот учетных данных для MI происходит автоматически каждые 46 дней в соответствии с Azure Active Directory по умолчанию. AKS использует управляемые системой и назначенные пользователем типы удостоверений. В настоящее время эти удостоверения неизменяемы. Дополнительные сведения см. в статье об [управляемых удостоверениях для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
+*Управляемые удостоверения* по сути являются оболочкой для субъектов-служб и упрощают их управление. Поворот учетных данных для MI происходит автоматически каждые 46 дней в соответствии с Azure Active Directory по умолчанию. AKS использует управляемые системой и назначенные пользователем типы удостоверений. В настоящее время эти удостоверения неизменяемы. Дополнительные сведения см. в статье об [управляемых удостоверениях для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md).
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -110,4 +110,4 @@ az aks get-credentials --resource-group myResourceGroup --name MyManagedCluster
 * Используйте [шаблоны Azure Resource Manager (ARM)][aks-arm-template] для создания кластеров с поддержкой управляемого удостоверения.
 
 <!-- LINKS - external -->
-[aks-arm-template]: https://docs.microsoft.com/azure/templates/microsoft.containerservice/managedclusters
+[aks-arm-template]: /azure/templates/microsoft.containerservice/managedclusters

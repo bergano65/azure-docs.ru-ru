@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 04/30/2020
 ms.author: apimpm
-ms.openlocfilehash: dd49680da6f52e32ddb52dbdb23ad5e8f627a91e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ac147863fe54be3343eda653fc863ebd08dac54d
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82205070"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86254509"
 ---
 # <a name="configure-local-metrics-and-logs-for-azure-api-management-self-hosted-gateway"></a>Настройка локальных метрик и журналов для самостоятельно размещенного шлюза службы управления API Azure
 
@@ -204,7 +204,7 @@ kubectl rollout restart deployment/<deployment-name>
 kubectl logs <pod-name>
 ```
 
-Если собственный шлюз развернут в службе Azure Kubernetes, можно включить [Azure Monitor для контейнеров](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview) , собирающих и исключающих `stdout` `stderr` рабочие нагрузки, а также просматривать журналы в log Analytics. 
+Если собственный шлюз развернут в службе Azure Kubernetes, можно включить [Azure Monitor для контейнеров](../azure-monitor/insights/container-insights-overview.md) , собирающих и исключающих `stdout` `stderr` рабочие нагрузки, а также просматривать журналы в log Analytics. 
 
 Шлюз, размещенный на собственном сервере, также поддерживает ряд протоколов `localsyslog` , включая, `rfc5424` и `journal` . В таблице ниже приведены все поддерживаемые параметры. 
 
@@ -236,4 +236,3 @@ kubectl logs <pod-name>
 
 * Дополнительные сведения о самостоятельно размещенном шлюзе см. в статье [Обзор самостоятельного размещения шлюза в службе управления API Azure](self-hosted-gateway-overview.md) .
 * Сведения о [настройке и сохранении журналов в облаке](how-to-configure-local-metrics-logs.md)
-

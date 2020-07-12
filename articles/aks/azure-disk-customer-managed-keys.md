@@ -4,12 +4,12 @@ description: Применяйте собственные ключи (BYOK), чт
 services: container-service
 ms.topic: article
 ms.date: 01/12/2020
-ms.openlocfilehash: 9fd04b44be969e03eec2ed18f618068316572066
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6452facc999456c35aa5d1c3bfe6b2f59141b7c5
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84882530"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86252051"
 ---
 # <a name="bring-your-own-keys-byok-with-azure-disks-in-azure-kubernetes-service-aks"></a>Перенесите собственные ключи (BYOK) с помощью дисков Azure в службе Kubernetes Azure (AKS)
 
@@ -169,7 +169,7 @@ kubectl apply -f byok-azure-disk.yaml
 * Доступно только в регионах, где поддерживается BYOK
 * Шифрование с помощью управляемых клиентом ключей в настоящее время предназначено только для новых кластеров AKS, обновление существующих кластеров невозможно
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с рекомендациями [по безопасности кластера AKS][best-practices-security]
 
@@ -178,8 +178,8 @@ kubectl apply -f byok-azure-disk.yaml
 <!-- LINKS - internal -->
 [az-extension-add]: /cli/azure/extension#az-extension-add
 [az-extension-update]: /cli/azure/extension#az-extension-update
-[best-practices-security]: /azure/aks/operator-best-practices-cluster-security
-[byok-azure-portal]: /azure/storage/common/storage-encryption-keys-portal
-[customer-managed-keys]: /azure/virtual-machines/windows/disk-encryption#customer-managed-keys
-[key-vault-generate]: /azure/key-vault/key-vault-manage-with-cli2
-[supported-regions]: /azure/virtual-machines/windows/disk-encryption#supported-regions
+[best-practices-security]: ./operator-best-practices-cluster-security.md
+[byok-azure-portal]: ../storage/common/storage-encryption-keys-portal.md
+[customer-managed-keys]: ../virtual-machines/windows/disk-encryption.md#customer-managed-keys
+[key-vault-generate]: ../key-vault/general/manage-with-cli2.md
+[supported-regions]: ../virtual-machines/windows/disk-encryption.md#supported-regions

@@ -1,13 +1,14 @@
 ---
 title: Установка или обновление расширения привязки Функции Azure вручную
 description: Дополнительные сведения о том, как установить или обновить расширения привязки Функции Azure для развернутых приложений функции.
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 09/26/2018
-ms.openlocfilehash: e8716f691a5d19ddac7fece47c423e1f7787b9db
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f0705e62adc4acb26797b937a6dd8c684a598ebc
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75768866"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86252629"
 ---
 # <a name="manually-install-or-update-azure-functions-binding-extensions-from-the-portal"></a>Выполнение установки или обновления расширения привязки Функции Azure вручную на портале
 
@@ -39,7 +40,7 @@ ms.locfileid: "75768866"
 
 1. Чтобы перезапустить приложение-функцию, вернитесь на вкладку **Сводка** на портале и выберите **Начало**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)
