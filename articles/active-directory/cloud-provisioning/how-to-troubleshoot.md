@@ -8,12 +8,12 @@ ms.date: 12/02/2019
 ms.topic: how-to
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 009e762b69d4f3512158d69ef3c67089096c9da7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 77ea5a354dde7adb006c95e9548d8fcc37e2dc12
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85360798"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86256872"
 ---
 # <a name="cloud-provisioning-troubleshooting"></a>Устранение неполадок подготовки облака
 
@@ -22,7 +22,7 @@ ms.locfileid: "85360798"
 
 ## <a name="common-troubleshooting-areas"></a>Распространенные области устранения неполадок
 
-|name|Описание:|
+|Имя|Описание|
 |-----|-----|
 |[Проблемы с агентом](#agent-problems)|Убедитесь, что агент установлен правильно и взаимодействует с Azure Active Directory (Azure AD).|
 |[Проблемы синхронизации объектов](#object-synchronization-problems)|Используйте журналы подготовки для устранения неполадок синхронизации объектов.|
@@ -55,9 +55,7 @@ ms.locfileid: "85360798"
 
 ### <a name="verify-the-port"></a>Проверка порта
 
-Чтобы убедиться, что Azure прослушивает порт 443 и что агент может взаимодействовать с ним, используйте следующий инструмент:
-
-https://aadap-portcheck.connectorporttest.msappproxy.net/ 
+Убедитесь, что Azure прослушивает порт 443 и что агент может обмениваться данными с ним. 
 
 Этот тест проверяет, могут ли агенты обмениваться данными с Azure через порт 443. Откройте браузер и перейдите к предыдущему URL-адресу с сервера, на котором установлен агент.
 
@@ -124,7 +122,7 @@ https://aadap-portcheck.connectorporttest.msappproxy.net/
 
 Чтобы устранить эту проблему, измените политики выполнения PowerShell на сервере. Необходимо, чтобы политики компьютера и пользователя были заданы как *неопределенные* или *RemoteSigned*. Если они заданы как *неограниченные*, вы увидите эту ошибку. Дополнительные сведения см. в разделе [политики выполнения PowerShell](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6). 
 
-### <a name="log-files"></a>Файлы журнала
+### <a name="log-files"></a>файлы журналов.
 
 По умолчанию агент выдает минимальные сообщения об ошибках и сведения о трассировке стека. Эти журналы трассировки можно найти в папке *К:\ПРОГРАМДАТА\МИКРОСОФТ\АЗУРЕ AD Connect подготовка Agent\Trace*.
 

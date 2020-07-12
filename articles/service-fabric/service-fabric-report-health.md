@@ -5,11 +5,12 @@ author: georgewallace
 ms.topic: conceptual
 ms.date: 2/28/2018
 ms.author: gwallace
-ms.openlocfilehash: 167ca76d0b6977a87352f8219d807949a0e4a301
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5695e8d03f782527cd3a9a2667f3513046d7e76c
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85392647"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86256311"
 ---
 # <a name="add-custom-service-fabric-health-reports"></a>Добавление настраиваемых отчетов о работоспособности Service Fabric
 В Azure Service Fabric представлена [модель работоспособности](service-fabric-health-introduction.md) , которая предназначена для обозначения условий неработоспособности кластеров или приложений в отдельных сущностях. В этой модели используются **информаторы о работоспособности** (системные компоненты и устройства наблюдения). Их целью является простая и быстрая диагностика и восстановление. Создатели службы должны предупреждать проблемы работоспособности. Любые условия, которые могут повлиять на работоспособность, должны регистрироваться, особенно в случаях, если это может помочь выяснить причину возникновения проблем. Сведения о работоспособности может сократить время и усилия, затрачиваемые на изучение и отладку. Полезность станет особенно очевидна после того, как служба будет масштабно запущена в облаке (в частном облаке или облаке Azure).
@@ -37,7 +38,7 @@ ms.locfileid: "85392647"
 > 
 > 
 
-Если схема отчетности определена, отправлять отчеты о работоспособности очень просто. Для отправки отчетов о работоспособности можно использовать [FabricClient](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient), если кластер не является [безопасным](service-fabric-cluster-security.md) или клиент Service Fabric имеет привилегии администратора. Это можно сделать через API с помощью [FabricClient.HealthManager.ReportHealth](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.healthclient.reporthealth), через PowerShell или REST. Повысить производительность можно с помощью настройки пакетных отчетов.
+Если схема отчетности определена, отправлять отчеты о работоспособности очень просто. Для отправки отчетов о работоспособности можно использовать [FabricClient](/dotnet/api/system.fabric.fabricclient), если кластер не является [безопасным](service-fabric-cluster-security.md) или клиент Service Fabric имеет привилегии администратора. Это можно сделать через API с помощью [FabricClient.HealthManager.ReportHealth](/dotnet/api/system.fabric.fabricclient.healthclient.reporthealth), через PowerShell или REST. Повысить производительность можно с помощью настройки пакетных отчетов.
 
 > [!NOTE]
 > Отчеты о работоспособности синхронизированы, и они отображают только проверку на стороне клиента. Когда отчет принимается клиентом работоспособности или объектами `Partition` или `CodePackageActivationContext`, он не сразу попадает в хранилище. Он будет отправлен асинхронно и, возможно, объединен с другими отчетами. Возможно, обработка отчета на сервере не будет выполнена (из-за устаревшего порядкового номера, из-за удаления сущности, к которой должен применяться отчет, и т. д.).
@@ -57,7 +58,7 @@ ms.locfileid: "85392647"
 > 
 
 Буферизация на клиенте выполняется с учетом уникальности отчетов. Например, если какой-либо неисправный информатор отправляет 100 отчетов в секунду для одного свойства одной сущности, будет использоваться только последняя версия отчета. В очереди клиента существует только один такой отчет. Если пакетная обработка настроена, число отчетов, отправленных диспетчеру работоспособности, составляет всего один раз для каждого интервала отправки. Используется последний добавленный отчет, который отображает актуальное состояние сущности.
-Параметры настройки можно указать при создании `FabricClient`. Для этого необходимо передать объект [FabricClientSettings](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclientsettings) с нужными значениями параметров, связанных с работоспособностью.
+Параметры настройки можно указать при создании `FabricClient`. Для этого необходимо передать объект [FabricClientSettings](/dotnet/api/system.fabric.fabricclientsettings) с нужными значениями параметров, связанных с работоспособностью.
 
 В следующем примере создается клиент структуры, отчеты которого должны отправляться сразу после их добавления. Если при повторных попытках возникают ошибки или превышено время ожидания, попытки повторяются каждые 40 секунд.
 
@@ -71,7 +72,7 @@ var clientSettings = new FabricClientSettings()
 var fabricClient = new FabricClient(clientSettings);
 ```
 
-Рекомендуется оставить параметры клиента структуры по умолчанию, в которых значение `HealthReportSendInterval` равно 30 секундам. Этот параметр обеспечивает оптимальную производительность ввиду пакетной обработки. Для критических отчетов, которые должны отправляться как можно быстрее, используйте `HealthReportSendOptions` с флагом Immediate, имеющим значение `true`, в API [FabricClient.HealthClient.ReportHealth](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.healthclient.reporthealth). Немедленные отчеты игнорируют интервал пакетной обработки. Этот флаг следует использовать с осторожностью. Нам нужно использовать преимущества пакетной обработки клиента работоспособности, когда это возможно. Немедленная отправка также удобна при закрытии клиента (например, процесс определил недопустимое состояние и должен быть завершен, чтобы предотвратить побочные эффекты). Это гарантирует наилучшую отправку накопленных отчетов. При добавлении одного отчета с флагом Immediate клиент работоспособности выполняет пакетную обработку всех отчетов, накопленных с момента последней отправки.
+Рекомендуется оставить параметры клиента структуры по умолчанию, в которых значение `HealthReportSendInterval` равно 30 секундам. Этот параметр обеспечивает оптимальную производительность ввиду пакетной обработки. Для критических отчетов, которые должны отправляться как можно быстрее, используйте `HealthReportSendOptions` с флагом Immediate, имеющим значение `true`, в API [FabricClient.HealthClient.ReportHealth](/dotnet/api/system.fabric.fabricclient.healthclient.reporthealth). Немедленные отчеты игнорируют интервал пакетной обработки. Этот флаг следует использовать с осторожностью. Нам нужно использовать преимущества пакетной обработки клиента работоспособности, когда это возможно. Немедленная отправка также удобна при закрытии клиента (например, процесс определил недопустимое состояние и должен быть завершен, чтобы предотвратить побочные эффекты). Это гарантирует наилучшую отправку накопленных отчетов. При добавлении одного отчета с флагом Immediate клиент работоспособности выполняет пакетную обработку всех отчетов, накопленных с момента последней отправки.
 
 Такие же параметры можно задать во время создания подключения к кластеру через PowerShell. Приведенный ниже пример запускает подключение к локальному кластеру.
 
@@ -113,12 +114,12 @@ GatewayInformation   : {
 ## <a name="report-from-within-low-privilege-services"></a>Создание отчета из служб с низким уровнем привилегий
 Если службы Service Fabric не имеют административного доступа к кластеру, можно передать сведения о работоспособности сущностей из текущего контекста с помощью `Partition` или `CodePackageActivationContext`.
 
-* Для служб без отслеживания состояния используйте [IStatelessServicePartition.ReportInstanceHealth](https://docs.microsoft.com/dotnet/api/system.fabric.istatelessservicepartition.reportinstancehealth) , чтобы сформировать отчет о текущем экземпляре службы.
-* Для служб с отслеживанием состояния используйте [IStatefulServicePartition.ReportReplicaHealth](https://docs.microsoft.com/dotnet/api/system.fabric.istatefulservicepartition.reportreplicahealth) , чтобы сформировать отчет о текущей реплике.
-* Используйте [IServicePartition.ReportPartitionHealth](https://docs.microsoft.com/dotnet/api/system.fabric.iservicepartition.reportpartitionhealth) для создания отчетов о текущей сущности секции.
-* Используйте [CodePackageActivationContext.ReportApplicationHealth](https://docs.microsoft.com/dotnet/api/system.fabric.codepackageactivationcontext.reportapplicationhealth) для формирования отчета о текущем приложении.
-* Используйте [CodePackageActivationContext.ReportDeployedApplicationHealth](https://docs.microsoft.com/dotnet/api/system.fabric.codepackageactivationcontext.reportdeployedapplicationhealth) для создания отчетов о текущем приложении, развернутом на текущем узле.
-* Используйте [CodePackageActivationContext.ReportDeployedServicePackageHealth](https://docs.microsoft.com/dotnet/api/system.fabric.codepackageactivationcontext.reportdeployedservicepackagehealth) для создания отчетов о пакете службы для приложения, развернутого на текущем узле.
+* Для служб без отслеживания состояния используйте [IStatelessServicePartition.ReportInstanceHealth](/dotnet/api/system.fabric.istatelessservicepartition.reportinstancehealth) , чтобы сформировать отчет о текущем экземпляре службы.
+* Для служб с отслеживанием состояния используйте [IStatefulServicePartition.ReportReplicaHealth](/dotnet/api/system.fabric.istatefulservicepartition.reportreplicahealth) , чтобы сформировать отчет о текущей реплике.
+* Используйте [IServicePartition.ReportPartitionHealth](/dotnet/api/system.fabric.iservicepartition.reportpartitionhealth) для создания отчетов о текущей сущности секции.
+* Используйте [CodePackageActivationContext.ReportApplicationHealth](/dotnet/api/system.fabric.codepackageactivationcontext.reportapplicationhealth) для формирования отчета о текущем приложении.
+* Используйте [CodePackageActivationContext.ReportDeployedApplicationHealth](/dotnet/api/system.fabric.codepackageactivationcontext.reportdeployedapplicationhealth) для создания отчетов о текущем приложении, развернутом на текущем узле.
+* Используйте [CodePackageActivationContext.ReportDeployedServicePackageHealth](/dotnet/api/system.fabric.codepackageactivationcontext.reportdeployedservicepackagehealth) для создания отчетов о пакете службы для приложения, развернутого на текущем узле.
 
 > [!NOTE]
 > На внутреннем уровне `Partition` и `CodePackageActivationContext` содержат клиент работоспособности, для которого настроены параметры по умолчанию. Как указано в описании [клиента работоспособности](service-fabric-report-health.md#health-client), отчеты обрабатываются в пакетном режиме и отправляются по таймеру. Объекты должны функционировать, чтобы иметь возможность отправить отчет.
@@ -289,9 +290,9 @@ HealthEvents          :
 ```
 
 ### <a name="rest"></a>REST
-Чтобы отправить отчет о работоспособности с помощью REST, создайте запрос POST и передайте его в нужную сущность, включив в тело запроса описание отчета о работоспособности. Ознакомьтесь с примерами отправки [отчетов о работоспособности кластера](https://docs.microsoft.com/rest/api/servicefabric/report-the-health-of-a-cluster) и [отчетов о работоспособности службы](https://docs.microsoft.com/rest/api/servicefabric/report-the-health-of-a-service) с помощью интерфейса REST. Поддерживаются все сущности.
+Чтобы отправить отчет о работоспособности с помощью REST, создайте запрос POST и передайте его в нужную сущность, включив в тело запроса описание отчета о работоспособности. Ознакомьтесь с примерами отправки [отчетов о работоспособности кластера](/rest/api/servicefabric/report-the-health-of-a-cluster) и [отчетов о работоспособности службы](/rest/api/servicefabric/report-the-health-of-a-service) с помощью интерфейса REST. Поддерживаются все сущности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 На основе данных о работоспособности создатели служб и администраторы кластеров или приложений могут решить, как использовать полученные сведения. Например, они могут настроить оповещения на основе состояния работоспособности для выявления серьезных проблем, которые могут вызвать простои. Кроме того, администраторы могут настроить системы восстановления, чтобы устранять неполадки автоматически.
 
 [Общие сведения о мониторинге работоспособности Service Fabric](service-fabric-health-introduction.md)
@@ -305,4 +306,3 @@ HealthEvents          :
 [Мониторинг и диагностика состояния служб в локальной среде разработки](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md)
 
 [Обновление приложения Service Fabric](service-fabric-application-upgrade.md)
-

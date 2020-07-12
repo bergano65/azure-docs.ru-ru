@@ -17,11 +17,12 @@ ms.date: 05/18/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23508535c1853cd056bb162c254cda5f7f86d7fe
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: f84724285dee6dfff4913b067daa651837787d4e
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83681750"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86255784"
 ---
 # <a name="azure-ad-connect-accounts-and-permissions"></a>Azure AD Connect выполняет следующие функции: Учетные записи и разрешения
 
@@ -201,8 +202,7 @@ Azure AD Connect использует 3 учетные записи, чтобы 
 
 | | LocalDB</br>Express | LocalDB или LocalSQL</br>Другой | Удаленная SQL</br>Другой |
 | --- | --- | --- | --- |
-| **автономный компьютер или компьютер в составе рабочей группы** | Не поддерживается | **VSA**</br>Локальная учетная запись (2008)</br>Локальная учетная запись |  Не поддерживается |
-| **компьютер, присоединенный к домену** | **VSA**</br>Локальная учетная запись (2008) | **VSA**</br>Локальная учетная запись (2008)</br>Локальная учетная запись</br>Доменная учетная запись.</br>sMSA,gMSA | **gMSA**</br>Доменная учетная запись. |
+| **компьютер, присоединенный к домену** | **VSA**</br>Локальная учетная запись (2008) | **VSA**</br>Локальная учетная запись (2008)</br>Локальная учетная запись</br>Доменная учетная запись</br>sMSA,gMSA | **gMSA**</br>Доменная учетная запись. |
 | **Контроллер домена** | **Доменная учетная запись** | *gMSA*</br>**Доменная учетная запись**</br>sMSA| *gMSA*</br>**Доменная учетная запись**|
 
 #### <a name="virtual-service-account"></a>Учетная запись виртуальной службы

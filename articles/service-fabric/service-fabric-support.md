@@ -5,11 +5,12 @@ author: pkcsf
 ms.topic: troubleshooting
 ms.date: 8/24/2018
 ms.author: pkc
-ms.openlocfilehash: f2da9fbb04f9d1fa696250967db404864a3cce82
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: ae49a59c2629d9f9461d298ada555d314c0c9f22
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85921817"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86256974"
 ---
 # <a name="azure-service-fabric-support-options"></a>Варианты поддержки Azure Service Fabric
 
@@ -25,9 +26,9 @@ ms.locfileid: "85921817"
 - [Поддержка Premier](https://support.microsoft.com/en-us/premier).
 
 > [!Note]
-> Кластеры с бронзовым уровнем надежности или кластер с одним узлом позволяют выполнять только тестовые рабочие нагрузки. При возникновении проблем с кластером с бронзовым уровнем надежности или кластером с одним узлом техническая поддержка Майкрософт поможет устранить неполадку, но анализ первопричин проводить не будет. Дополнительные сведения см. в разделе [Характеристики надежности кластера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#reliability-characteristics-of-the-cluster).
+> Кластеры с бронзовым уровнем надежности или кластер с одним узлом позволяют выполнять только тестовые рабочие нагрузки. При возникновении проблем с кластером с бронзовым уровнем надежности или кластером с одним узлом техническая поддержка Майкрософт поможет устранить неполадку, но анализ первопричин проводить не будет. Дополнительные сведения см. в разделе [Характеристики надежности кластера](./service-fabric-cluster-capacity.md#reliability-characteristics-of-the-cluster).
 >
-> Дополнительные сведения о том, что требуется для пригодного для промышленной эксплуатации кластера, см. в статье [Контрольный список готовности рабочей среды](https://docs.microsoft.com/azure/service-fabric/service-fabric-production-readiness-checklist).
+> Дополнительные сведения о том, что требуется для пригодного для промышленной эксплуатации кластера, см. в статье [Контрольный список готовности рабочей среды](./service-fabric-production-readiness-checklist.md).
 
 <a id="getlivesitesupportonprem"></a>
 
@@ -58,15 +59,15 @@ ms.locfileid: "85921817"
 
 ## <a name="service-fabric-preview-versions---unsupported-for-production-use"></a>Предварительные версии Service Fabric не поддерживают работу в рабочей среде.
 
-Время от времени мы выпускаем версии с важными функциями, доступными в виде предварительных версий, отзывы по которым мы хотим получить. Эти предварительные версии следует использовать только для целей тестирования. На производственном кластере всегда должна быть запущена поддерживаемая стабильная версия Service Fabric. Предварительная версия всегда начинается с номера основной и вспомогательной версии, равного 255. Например, если отображается версия Service Fabric 255.255.5703.949, она является предварительной и ее следует использовать в тестовых кластерах. О выходе этих предварительных выпусков также объявляется в [блоге группы Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric) и приводятся сведения о функциях, включенных в их состав.
-Возможность платной технической поддержки для этих предварительных выпусков отсутствует. Чтобы задать вопросы или отправить отзыв, воспользуйтесь одной из возможностей в разделе [Сообщение о проблемах Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-support#report-azure-service-fabric-issues).
+Время от времени мы выпускаем версии с важными функциями, доступными в виде предварительных версий, отзывы по которым мы хотим получить. Эти предварительные версии следует использовать только для целей тестирования. На производственном кластере всегда должна быть запущена поддерживаемая стабильная версия Service Fabric. Предварительная версия всегда начинается с номера основной и вспомогательной версии, равного 255. Например, если отображается версия Service Fabric 255.255.5703.949, она является предварительной и ее следует использовать в тестовых кластерах. О выходе этих предварительных выпусков также объявляется в [блоге группы Service Fabric](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric) и приводятся сведения о функциях, включенных в их состав.
+Возможность платной технической поддержки для этих предварительных выпусков отсутствует. Чтобы задать вопросы или отправить отзыв, воспользуйтесь одной из возможностей в разделе [Сообщение о проблемах Azure Service Fabric](#report-azure-service-fabric-issues).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [Поддерживаемые версии Service Fabric](service-fabric-versions.md)
 
 <!--references-->
-[Microsoft Q&A question page]: https://docs.microsoft.com/answers/topics/azure-service-fabric.html
+[Microsoft Q&A question page]: /answers/topics/azure-service-fabric.html
 [stackoverflow]: https://stackoverflow.com/questions/tagged/azure-service-fabric
 [uservoice-forum]: https://feedback.azure.com/forums/293901-service-fabric
 [acom-docs]: https://aka.ms/servicefabricdocs

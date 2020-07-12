@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/29/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 3fc44ca18f237fecd1c694e96f9ebc2d5b541757
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d482b3335b31d116846ec64883b43897fcc4e43d
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85564466"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86255665"
 ---
 # <a name="use-microsoft-teams-on-windows-virtual-desktop"></a>Использование Microsoft Teams в Windows виртуальный рабочий стол
 
@@ -27,12 +27,12 @@ Microsoft Teams на виртуальных рабочих столах Windows 
 
 Благодаря оптимизации мультимедиа для Microsoft Teams Настольный клиент Windows обрабатывает аудио и видео локально для командных вызовов и собраний. Вы по-прежнему можете использовать Microsoft Teams на виртуальных рабочих столах Windows совместно с другими клиентами без оптимизированных вызовов и собраний. Функции общения и совместной работы групп поддерживаются на всех платформах. Чтобы перенаправить локальные устройства в удаленном сеансе, извлеките [Параметры настройки протокол удаленного рабочего стола для пула узлов](#customize-remote-desktop-protocol-properties-for-a-host-pool).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Прежде чем вы сможете использовать Microsoft Teams на виртуальном рабочем столе Windows, вам потребуется выполнить следующие действия:
 
 - [Подготовьте свою сеть](/microsoftteams/prepare-network/) для Microsoft Teams.
-- Установка [настольного клиента Windows](connect-windows-7-and-10.md) на устройстве Windows 10 или Windows 10 IOT Корпоративная, которая соответствует [требованиям к оборудованию Microsoft Teams для команд на компьютере с Windows](/microsoftteams/hardware-requirements-for-the-teams-app#hardware-requirements-for-teams-on-a-windows-pc/).
+- Установка [настольного клиента Windows](connect-windows-7-10.md) на устройстве Windows 10 или Windows 10 IOT Корпоративная, которая соответствует [требованиям к оборудованию Microsoft Teams для команд на компьютере с Windows](/microsoftteams/hardware-requirements-for-the-teams-app#hardware-requirements-for-teams-on-a-windows-pc/).
 - Подключитесь к виртуальной машине Windows 10 с несколькими сеансами или Windows 10 Корпоративная (ВМ).
 - Установите классическое приложение Teams на узле с помощью установки на компьютере. Для оптимизации мультимедиа для команд Microsoft Teams требуется классическое приложение Teams версии 1.3.00.4461 или более поздней.
 
@@ -47,7 +47,7 @@ Microsoft Teams на виртуальных рабочих столах Windows 
 1. В меню Пуск запустите **программу Regedit** от имени администратора. Перейдите к **HKEY_LOCAL_MACHINE \софтваре\микрософт\теамс**.
 2. Создайте следующее значение для ключа команд:
 
-| Имя             | Type   | Данные и значение  |
+| Имя             | Тип   | Данные и значение  |
 |------------------|--------|-------------|
 | исввденвиронмент | DWORD  | 1           |
 

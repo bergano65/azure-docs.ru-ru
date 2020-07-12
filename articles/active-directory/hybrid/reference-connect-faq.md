@@ -15,11 +15,12 @@ ms.date: 08/23/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ad8990512cb09f6048b169c1d0c0a259a62b61b
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 4956014e3a950a729ef3993e10ca455ab8aae6f4
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83827154"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86256685"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Часто задаваемые вопросы по Azure Active Directory Connect
 
@@ -256,6 +257,16 @@ ms.locfileid: "83827154"
 
 **Вопрос. У меня нет четкого представления о рисках при обновлении версии Azure AD Connect. Можете ли вы мне позвонить, чтобы помочь с обновлением?**  
 Если вам требуется помощь при обновлении до новой версии Azure AD Connect, отправьте запрос в службу поддержки в разделе [How to create service requests to contact Office 365 support?](https://blogs.technet.microsoft.com/praveenkumar/2013/07/17/how-to-create-service-requests-to-contact-office-365-support/) (Как создать запрос на обслуживание в службу поддержки Office 365).
+
+## <a name="operational-best-practice"></a>Практические рекомендации    
+Ниже приведены некоторые рекомендации, которые следует реализовать при синхронизации между Windows Server Active Directory и Azure Active Directory.
+
+**Применить многофакторную проверку подлинности для всех синхронизированных учетных записей** Многофакторная идентификация Azure помогает защитить доступ к данным и приложениям, одновременно обеспечивая простоту для пользователей. Эта служба предлагает дополнительную защиту за счет дополнительного способа аутентификации и, используя ряд простых методов проверки подлинности, обеспечивает строгую проверку. Направление пользователям запросов о необходимости Многофакторной идентификации зависит от настроек, заданных администратором. Дополнительные сведения о MFA можно узнать здесь:https://www.microsoft.com/security/business/identity/mfa?rtc=1
+
+**Следуйте рекомендациям по безопасности Azure AD Connect Server** Сервер Azure AD Connect содержит важные данные идентификации и должен рассматриваться как компонент уровня 0, как описано в [модели административного уровня Active Directory](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material). См. также [рекомендации по обеспечению безопасности сервера AADConnect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-prerequisites#azure-ad-connect-server).
+
+**Включение PHS для обнаружения утечек учетных данных** Синхронизация хэша паролей также позволяет [обнаруживать утечку учетных данных](https://docs.microsoft.com/azure/active-directory/identity-protection/concept-identity-protection-risks) для ваших гибридных учетных записей. Корпорация Майкрософт работает вместе с темными веб-законами и правоохранительными органами, чтобы найти общедоступные пары имен пользователей и паролей. Если любая из этих пар соответствует требованиям пользователей, соответствующая учетная запись перемещается в высокий риск. 
+
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 **Вопрос. Как получить справку по Azure AD Connect?**

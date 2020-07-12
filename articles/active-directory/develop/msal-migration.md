@@ -13,12 +13,12 @@ ms.date: 06/16/2020
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 52a4a7131c85231107a2a23a1916016776b219fd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f84e479c4780437b09ab463781edbb52d8dfdfaa
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85367433"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86255631"
 ---
 # <a name="migrate-applications-to-microsoft-authentication-library-msal"></a>Перенос приложений в библиотеку проверки подлинности Майкрософт (MSAL)
 
@@ -49,7 +49,7 @@ ms.locfileid: "85367433"
 - [Переход на MSAL для Python](migrate-python-adal-msal.md)
 - [Перенос приложений Xamarin в MSAL.NET с помощью брокеров](msal-net-migration-ios-broker.md)
 
-## <a name="frequently-asked-questions-faq"></a>Вопросы и ответы
+## <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
 
 __Вопрос. является ли ADAL нерекомендуемым?__  
 A. Да. Начиная с 30 июня 2020 г. Мы больше не будем добавлять новые функции в ADAL. Мы продолжим добавлять критически важные исправления безопасности в ADAL до 30 июня, 2022.
@@ -72,8 +72,8 @@ __Вопрос. как MSAL работает с AD FS?__
 __Вопрос. Разделы справки получить справку по переносу приложения?__  
 Ответ. см. раздел [руководство по миграции](#migration-guidance) этой статьи. Если после ознакомления с руководством для платформы вашего приложения у вас возникнут дополнительные вопросы, вы можете опубликовать Stack Overflow с тегом `[adal-deprecation]` или открыть ошибку в репозитории GitHub библиотеки. Ссылки на репозиторий каждой библиотеки см. в разделе [языки и платформы](msal-overview.md#languages-and-frameworks) статьи Обзор MSAL.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обновление приложений для использования библиотеки проверки подлинности Майкрософт и Microsoft Graph API](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/update-your-applications-to-use-microsoft-authentication-library/ba-p/1257363)
-- [Дополнительные сведения о платформе Microsoft Identity Platform (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/v2-overview)
-- [Ознакомьтесь с нашими примерами кода MSAL](https://docs.microsoft.com/azure/active-directory/develop/sample-v2-code)
+- [Общие сведения о платформе Microsoft Identity](v2-overview.md)
+- [Ознакомьтесь с нашими примерами кода MSAL](sample-v2-code.md)

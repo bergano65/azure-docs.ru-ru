@@ -4,12 +4,12 @@ description: Узнайте, как настроить и настроить с�
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: pepogors
-ms.openlocfilehash: 6e3edb0fe238dcaddb7d99cc68660591f081581c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f8a9025a50b2815f0e6030e7baf317b261c8c462
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80476671"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86256338"
 ---
 # <a name="set-up-and-configure-reverse-proxy-in-azure-service-fabric"></a>Установка и настройка обратного прокси-сервера в Azure Service Fabric
 Необязательный обратный прокси-сервер в службе Azure Service Fabric помогает микрослужбам, работающим в кластере Service Fabric, обнаруживать другие службы с конечными точками HTTP и обмениваться данными с этими службами. См. дополнительные сведения об [обратном прокси-сервере в Azure Service Fabric](service-fabric-reverseproxy.md). В этой статье показано, как установить и настроить обратный прокси-сервер в кластере. 
@@ -37,7 +37,7 @@ ms.locfileid: "80476671"
 
 Примеры шаблонов Resource Manager, которые помогут вам настроить защищенный обратный прокси-сервер для кластера Azure, см. на [GitHub](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/Reverse-Proxy-Sample). В руководстве по [настройке обратного прокси-сервера HTTPS в защищенном кластере](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/Reverse-Proxy-Sample/README.md#configure-https-reverse-proxy-in-a-secure-cluster) README-файла приведены примеры шаблонов и инструкции по настройке защищенного обратного прокси-сервера с сертификатом и обновлению сертификатов.
 
-Если кластер уже существует, вы можете экспортировать шаблон Resource Manager для группы кластерных ресурсов с помощью [портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template), [PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template-powershell) или [Azure CLI](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template-cli).
+Если кластер уже существует, вы можете экспортировать шаблон Resource Manager для группы кластерных ресурсов с помощью [портала Azure](../azure-resource-manager/templates/export-template-portal.md), [PowerShell](../azure-resource-manager/management/manage-resources-powershell.md) или [Azure CLI](../azure-resource-manager/management/manage-resources-cli.md).
 
 Подготовив шаблон Resource Manager, вы можете включить обратный прокси-сервер:
 
@@ -52,7 +52,7 @@ ms.locfileid: "80476671"
         }
     },
     ```
-2. Укажите порт для каждого из объектов NodeType в [разделе Тип ресурса](../azure-resource-manager/templates/template-syntax.md) [**Microsoft. ServiceFabric/Clusters**](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/clusters) .
+2. Укажите порт для каждого из объектов NodeType в [разделе Тип ресурса](../azure-resource-manager/templates/template-syntax.md) [**Microsoft. ServiceFabric/Clusters**](/azure/templates/microsoft.servicefabric/clusters) .
 
     Порт идентифицируется по имени параметра reverseProxyEndpointPort.
 
@@ -74,7 +74,7 @@ ms.locfileid: "80476671"
         ...
     }
     ```
-3. Чтобы настроить сертификаты TLS/SSL в порте для обратных прокси-серверов, добавьте сертификат в свойство ***reverseProxyCertificate*** в [разделе Тип ресурса](../resource-group-authoring-templates.md) **Microsoft. ServiceFabric/Clusters** .
+3. Чтобы настроить сертификаты TLS/SSL в порте для обратных прокси-серверов, добавьте сертификат в свойство ***reverseProxyCertificate*** в [разделе Тип ресурса](../azure-resource-manager/templates/template-syntax.md) **Microsoft. ServiceFabric/Clusters** .
 
     ```json
     {
@@ -98,7 +98,7 @@ ms.locfileid: "80476671"
     ```
 
 ### <a name="supporting-a-reverse-proxy-certificate-thats-different-from-the-cluster-certificate"></a>Поддержка сертификата обратного прокси-сервера, отличного от сертификата кластера
- Если сертификат обратного прокси-сервера отличается от сертификата, который защищает кластер, то указанный ранее сертификат необходимо установить на виртуальную машину и добавить в список управления доступом (ACL), чтобы предоставить Service Fabric к нему доступ. Это можно сделать в [разделе типа ресурсов](../resource-group-authoring-templates.md) [**Microsoft. COMPUTE/virtualMachineScaleSets**](https://docs.microsoft.com/azure/templates/microsoft.compute/virtualmachinescalesets) . Чтобы установить сертификат, добавьте его в osProfile. Раздел extension шаблона позволяет обновить сертификат в списке управления доступом.
+ Если сертификат обратного прокси-сервера отличается от сертификата, который защищает кластер, то указанный ранее сертификат необходимо установить на виртуальную машину и добавить в список управления доступом (ACL), чтобы предоставить Service Fabric к нему доступ. Это можно сделать в [разделе типа ресурсов](../azure-resource-manager/templates/template-syntax.md) [**Microsoft. COMPUTE/virtualMachineScaleSets**](/azure/templates/microsoft.compute/virtualmachinescalesets) . Чтобы установить сертификат, добавьте его в osProfile. Раздел extension шаблона позволяет обновить сертификат в списке управления доступом.
 
   ```json
   {
@@ -252,50 +252,50 @@ ms.locfileid: "80476671"
 
 ### <a name="expose-the-reverse-proxy-via-resource-manager-templates"></a>Предоставление обратного прокси-сервера через шаблоны Resource Manager
 
-Приведенный ниже код JSON использует тот же шаблон, что и в разделе [Включение обратного прокси-сервера с помощью шаблонов Azure Resource Manager](#enable-reverse-proxy-via-azure-resource-manager-templates). Изучите этот раздел, если вам нужны сведения о создании шаблона Resource Manager или экспорте шаблона для существующего кластера.  Изменения вносятся в [раздел типа ресурсов](../resource-group-authoring-templates.md) [**Microsoft. Network/loadBalancers**](https://docs.microsoft.com/azure/templates/microsoft.network/loadbalancers) .
+Приведенный ниже код JSON использует тот же шаблон, что и в разделе [Включение обратного прокси-сервера с помощью шаблонов Azure Resource Manager](#enable-reverse-proxy-via-azure-resource-manager-templates). Изучите этот раздел, если вам нужны сведения о создании шаблона Resource Manager или экспорте шаблона для существующего кластера.  Изменения вносятся в [раздел типа ресурсов](../azure-resource-manager/templates/template-syntax.md) [**Microsoft. Network/loadBalancers**](/azure/templates/microsoft.network/loadbalancers) .
 
-    ```json
-    {
-        "apiVersion": "[variables('lbApiVersion')]",
-        "type": "Microsoft.Network/loadBalancers",
+```json
+{
+    "apiVersion": "[variables('lbApiVersion')]",
+    "type": "Microsoft.Network/loadBalancers",
+    ...
+    ...
+    "loadBalancingRules": [
         ...
-        ...
-        "loadBalancingRules": [
-            ...
-            {
-                "name": "LBSFReverseProxyRule",
-                "properties": {
-                    "backendAddressPool": {
-                        "id": "[variables('lbPoolID0')]"
-                    },
-                    "backendPort": "[parameters('SFReverseProxyPort')]",
-                    "enableFloatingIP": "false",
-                    "frontendIPConfiguration": {
-                        "id": "[variables('lbIPConfig0')]"
-                    },
-                    "frontendPort": "[parameters('SFReverseProxyPort')]",
-                    "idleTimeoutInMinutes": "5",
-                    "probe": {
-                        "id": "[concat(variables('lbID0'),'/probes/SFReverseProxyProbe')]"
-                    },
-                    "protocol": "tcp"
-                }
+        {
+            "name": "LBSFReverseProxyRule",
+            "properties": {
+                "backendAddressPool": {
+                    "id": "[variables('lbPoolID0')]"
+                },
+                "backendPort": "[parameters('SFReverseProxyPort')]",
+                "enableFloatingIP": "false",
+                "frontendIPConfiguration": {
+                    "id": "[variables('lbIPConfig0')]"
+                },
+                "frontendPort": "[parameters('SFReverseProxyPort')]",
+                "idleTimeoutInMinutes": "5",
+                "probe": {
+                    "id": "[concat(variables('lbID0'),'/probes/SFReverseProxyProbe')]"
+                },
+                "protocol": "tcp"
             }
-        ],
-        "probes": [
-            ...
-            {
-                "name": "SFReverseProxyProbe",
-                "properties": {
-                    "intervalInSeconds": 5,
-                    "numberOfProbes": 2,
-                    "port":     "[parameters('SFReverseProxyPort')]",
-                    "protocol": "tcp"
-                }
-            }  
-        ]
-    }
-    ```
+        }
+    ],
+    "probes": [
+        ...
+        {
+            "name": "SFReverseProxyProbe",
+            "properties": {
+                "intervalInSeconds": 5,
+                "numberOfProbes": 2,
+                "port":     "[parameters('SFReverseProxyPort')]",
+                "protocol": "tcp"
+            }
+        }  
+    ]
+}
+```
 
 
 ## <a name="customize-reverse-proxy-behavior-using-fabric-settings"></a>Настройка поведения для обратного прокси-сервера с помощью параметров структуры

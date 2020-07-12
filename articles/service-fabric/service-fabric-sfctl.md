@@ -5,11 +5,12 @@ author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: 56efa15a7de3414f9c535e66bd80c94594cd5038
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fc317345155a6807a20d342e2cefd0701b20f180
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76906221"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86257059"
 ---
 # <a name="sfctl"></a>sfctl
 Команды для управления кластерами и сущностями Service Fabric. Эта версия совместима со средой выполнения Service Fabric 7,0.
@@ -17,7 +18,7 @@ ms.locfileid: "76906221"
 В командах используется шаблон "существительное — глагол". Дополнительные сведения см. в подгруппах.
 
 ## <a name="subgroups"></a>Подгруппы
-|Подгруппа|Описание:|
+|Подгруппа|Описание|
 | --- | --- |
 | [приложение](service-fabric-sfctl-application.md) | Создание и удаление приложений и типов приложений, а также управление ими. |
 | [chaos](service-fabric-sfctl-chaos.md) | Запуск и остановка службы хаотического тестирования, а также вывод отчета о ее работе. |
@@ -37,6 +38,6 @@ ms.locfileid: "76906221"
 | [параметры](service-fabric-sfctl-settings.md) | Настройка локальных параметров этого экземпляра sfctl. |
 | [хранение](service-fabric-sfctl-store.md) | Выполнение базовых операций на уровне файла с хранилищем образов кластера. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) Service Fabric CLI.
-- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
+- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](./scripts/sfctl-upgrade-application.md).

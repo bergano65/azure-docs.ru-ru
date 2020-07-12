@@ -111,7 +111,7 @@
 - name: Примеры
   items:
     - name: Примеры кода
-      href: 'https://docs.microsoft.com/samples/browse/'
+      href: /samples/browse/
     - name: Azure PowerShell
       href: service-fabric-powershell-samples.md
     - name: Интерфейс командной строки Service Fabric
@@ -491,7 +491,7 @@
             - name: Настройка ReliableDictionaryActorStateProvider
               href: service-fabric-reliable-actors-reliabledictionarystateprovider-configuration.md
         - name: Создание службы ASP.NET Core
-          href: service-fabric-add-a-web-frontend.md
+          href: ./service-fabric-reliable-services-communication-aspnetcore.md
         - name: Создание контейнера сервера Apache Tomcat в Linux
           href: service-fabric-get-started-tomcat.md
         - name: Настройка безопасности
@@ -628,7 +628,7 @@
         - name: Настройка непрерывной интеграции
           items:
             - name: Настройка непрерывной интеграции с помощью Azure Pipelines
-              href: service-fabric-set-up-continuous-integration.md
+              href: ./service-fabric-tutorial-deploy-app-with-cicd-vsts.md
             - name: Развертывание приложений Linux с помощью Jenkins
               href: service-fabric-cicd-your-linux-applications-with-jenkins.md
     - name: Настройка обратного прокси-сервера
@@ -897,7 +897,7 @@
     - name: Часто задаваемые вопросы
       href: service-fabric-common-questions.md
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-service-fabric.html'
+      href: /answers/topics/azure-service-fabric.html
     - name: Ограничения при развертывании с помощью Azure Resource Manager
       href: service-fabric-azure-resource-manager-guardrails.md
     - name: Цены

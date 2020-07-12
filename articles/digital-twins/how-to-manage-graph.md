@@ -7,11 +7,12 @@ ms.author: baanders
 ms.date: 4/10/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: bfdf1263ccee78b57ccf79c63efcc01d95dd13c6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6d51abab46cd8450dd3a09e5e5ef47e6267b990d
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85392256"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86258084"
 ---
 # <a name="manage-a-graph-of-digital-twins-using-relationships"></a>Управление графиком цифровых двойников с помощью связей
 
@@ -20,6 +21,8 @@ ms.locfileid: "85392256"
 После создания рабочего [экземпляра Azure Digital двойников](how-to-set-up-instance.md) и настройки [проверки подлинности](how-to-authenticate-client.md) для клиентского приложения можно использовать [**интерфейсы API дигиталтвинс**](how-to-use-apis-sdks.md) , чтобы создавать, изменять и удалять цифровые двойников и их связи в экземпляре Digital двойников. Вы также можете использовать [пакет SDK для .NET (C#)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core)или [Azure Digital двойников CLI](how-to-use-cli.md).
 
 Эта статья посвящена управлению связями и графу в целом. для работы с отдельными цифровыми двойниковми см. раздел [как управлять цифровыми двойников](how-to-manage-twin.md).
+
+[!INCLUDE [visualizing with Azure Digital Twins explorer](../../includes/digital-twins-visualization.md)]
 
 ## <a name="create-relationships"></a>Создавать связи
 
@@ -300,7 +303,7 @@ foreach (JsonElement row in data.RootElement.EnumerateArray())
 
 Двойников и их отношения также можно управлять с помощью цифрового двойников Azure CLI. Команды можно найти в [этом пошаговом окне. Используйте интерфейс командной строки Azure Digital двойников](how-to-use-cli.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о запросах к графу двойников для Azure Digital двойника:
 * [Основные понятия: язык запросов](concepts-query-language.md)

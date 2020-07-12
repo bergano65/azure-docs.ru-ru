@@ -5,11 +5,12 @@ author: masnider
 ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: b29985d40ae3a1bf582099e998e000fed83460f6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9c258d8d0a7aa26c96ab4f64017770ebdd153e60
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79371653"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86257520"
 ---
 # <a name="disaster-recovery-in-azure-service-fabric"></a>Аварийное восстановление в Azure Service Fabric
 Критическая часть обеспечения высокого уровня доступности заключается в том, что службы могут выдерживать все различные типы сбоев. Это особенно важно для незапланированных сбоев и за пределами вашего элемента управления. 
@@ -171,7 +172,7 @@ Service Fabric предоставляет механизмы для предот
 >
 
 - Используйте `Repair-ServiceFabricPartition -PartitionId` API или `System.Fabric.FabricClient.ClusterManagementClient.RecoverPartitionAsync(Guid partitionId)` . Этот API позволяет указать идентификатор секции для перемещения из строя кворума и возможной потери данных.
-- Если кластер сталкивается с частыми сбоями, которые приводят к тому, что службы переходят в состояние потери кворума, и возможная _потеря данных приемлема_, указание соответствующего значения [куорумлоссваитдуратион](https://docs.microsoft.com/powershell/module/servicefabric/update-servicefabricservice?view=azureservicefabricps) может помочь службе автоматически восстановиться. Service Fabric будет ожидать указанное `QuorumLossWaitDuration` значение (по умолчанию бесконечно) перед выполнением восстановления. Мы *не* рекомендуем использовать этот метод, так как он может привести к непредвиденным потерям данных.
+- Если кластер сталкивается с частыми сбоями, которые приводят к тому, что службы переходят в состояние потери кворума, и возможная _потеря данных приемлема_, указание соответствующего значения [куорумлоссваитдуратион](/powershell/module/servicefabric/update-servicefabricservice?view=azureservicefabricps) может помочь службе автоматически восстановиться. Service Fabric будет ожидать указанное `QuorumLossWaitDuration` значение (по умолчанию бесконечно) перед выполнением восстановления. Мы *не* рекомендуем использовать этот метод, так как он может привести к непредвиденным потерям данных.
 
 ## <a name="availability-of-the-service-fabric-cluster"></a>Доступность кластера Service Fabric
 Как правило, кластер Service Fabric — это высокораспределенная среда без единой точки отказа. Сбой одного узла не приведет к проблемам с доступностью или надежностью для кластера, в основном потому, что Service Fabric системные службы следуют тем же рекомендациям, которые были предоставлены ранее. То есть они всегда выполняются с тремя или более репликами по умолчанию, а системные службы, которые работают на всех узлах без отслеживания состояния. 
@@ -203,21 +204,21 @@ Service Fabric имеет концепцию *начальных узлов*. Э
 
 В автономных кластерах Service Fabric и Azure тип первичного узла — это тот, который выполняет начальные значения. При определении типа первичного узла Service Fabric автоматически использует преимущества предоставляемого количества узлов, создавая до девяти начальных узлов и семи реплик каждой системной службы. Если набор случайных сбоев повлечет за собой большую часть этих реплик одновременно, системные службы перестанут потерять кворум. Если большинство начальных узлов выйдут из строя, работа кластера будет прекращена.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте, как имитировать различные сбои с помощью [платформы тестирования](service-fabric-testability-overview.md).
 - Ознакомьтесь с другими материалами по аварийному восстановлению и обеспечению высокой доступности. Корпорация Майкрософт опубликовала множество руководств по этим темам. Хотя некоторые из этих ресурсов относятся к определенным методам использования в других продуктах, они содержат множество общих рекомендаций, которые можно применять в контексте Service Fabric:
   - [Контрольный список доступности](/azure/architecture/checklist/resiliency-per-service)
-  - [Отработка аварийного восстановления](../sql-database/sql-database-disaster-recovery-drills.md)
+  - [Отработка аварийного восстановления](../azure-sql/database/disaster-recovery-drills.md)
   - [Аварийное восстановление и высокий уровень доступности для приложений Azure][dr-ha-guide]
 - Узнайте о [вариантах поддержки Service Fabric](service-fabric-support.md).
 
 
 <!-- External links -->
 
-[repair-partition-ps]: https://msdn.microsoft.com/library/mt163522.aspx
+[repair-partition-ps]: /windows/win32/perfctrs/specifying-a-counter-path
 [azure-status-dashboard]:https://azure.microsoft.com/status/
 [azure-regions]: https://azure.microsoft.com/regions/
-[dr-ha-guide]: https://msdn.microsoft.com/library/azure/dn251004.aspx
+[dr-ha-guide]: /previous-versions/azure/dn251004(v=azure.100)
 
 
 <!-- Images -->

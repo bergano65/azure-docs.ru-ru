@@ -5,11 +5,12 @@ author: vturecek
 ms.topic: conceptual
 ms.date: 11/01/2017
 ms.author: vturecek
-ms.openlocfilehash: 6aafa2a3372c431f8afa7fad41051c26c3fe5fcd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c534ba54ccea78759628f554707271934ddc9a48
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75645571"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86258482"
 ---
 # <a name="introduction-to-service-fabric-reliable-actors"></a>Общие сведения о надежных субъектах Service Fabric
 Субъекты Reliable Actors — это платформа приложений Service Fabric, основанная на шаблоне [виртуальных субъектов](https://research.microsoft.com/en-us/projects/orleans/). API субъектов Reliable Actors предоставляет однопоточную модель программирования, основанную на той надежности и масштабируемости, которые гарантирует Service Fabric.
@@ -133,10 +134,10 @@ myActor.DoWorkAsync().get();
 ### <a name="scope-of-concurrency-guarantees"></a>Область гарантий параллелизма
 Среда выполнения субъектов предоставляет гарантии повторного входа в ситуациях, когда она управляет вызовом методов, например методов, которые вызываются в ответ на запрос клиента, а также обратных вызовов по таймеру и напоминанию. Тем не менее если код субъекта напрямую вызывает эти методы вне механизмов, предоставляемых средой выполнения субъектов, то среда выполнения не предоставляет никаких гарантий параллелизма. Например, среда выполнения не предоставляет таких гарантий, если метод вызывается в контексте некоторой задачи, которая не связана с задачей, возвращаемой методами субъекта. Если метод вызывается из потока, который субъект создает самостоятельно, среда выполнения также не предоставляет таких гарантий. Таким образом, для выполнения фоновых операций субъектам следует использовать [таймеры или напоминания](service-fabric-reliable-actors-timers-reminders.md), в которых соблюдаются принципы пошагового параллелизма.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Приступите к работе, создав свою первую службу Reliable Actors:
    * [Приступая к работе с Reliable Actors с помощью .NET](service-fabric-reliable-actors-get-started.md)
-   * [Приступая к работе с Reliable Actors с помощью Java](service-fabric-reliable-actors-get-started-java.md)
+   * [Приступая к работе с Reliable Actors с помощью Java](./service-fabric-create-your-first-linux-application-with-java.md)
 
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-introduction/concurrency.png

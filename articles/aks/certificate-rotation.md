@@ -4,12 +4,12 @@ description: Узнайте, как поворачивать сертифика�
 services: container-service
 ms.topic: article
 ms.date: 11/15/2019
-ms.openlocfilehash: 715771c7a1704e0d39f790d018980c4b39ba351b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2e48a05a36fdbd56fb78cd1394c512485b521e50
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84817444"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86255359"
 ---
 # <a name="rotate-certificates-in-azure-kubernetes-service-aks"></a>Смена сертификатов в службе Kubernetes Azure (AKS)
 
@@ -62,7 +62,7 @@ az aks rotate-certs -g $RESOURCE_GROUP_NAME -n $CLUSTER_NAME
 > [!IMPORTANT]
 > Для завершения может потребоваться до 30 минут `az aks rotate-certs` . Если команда не выполняется до завершения, используйте `az aks show` для проверки состояния кластера на *вращение сертификата*. Если кластер находится в состоянии сбоя, повторно запустите `az aks rotate-certs` его, чтобы снова повернуть сертификаты.
 
-Убедитесь, что старые сертификаты больше не являются допустимыми, выполнив `kubectl` команду. Так как вы не обновили сертификаты, используемые `kubectl` , вы увидите ошибку.  Пример:
+Убедитесь, что старые сертификаты больше не являются допустимыми, выполнив `kubectl` команду. Так как вы не обновили сертификаты, используемые `kubectl` , вы увидите ошибку.  Например:
 
 ```console
 $ kubectl get no
@@ -75,7 +75,7 @@ Unable to connect to the server: x509: certificate signed by unknown authority (
 az aks get-credentials -g $RESOURCE_GROUP_NAME -n $CLUSTER_NAME --overwrite-existing
 ```
 
-Убедитесь, что сертификаты обновлены, выполнив `kubectl` команду, которая теперь будет выполнена успешно. Пример:
+Убедитесь, что сертификаты обновлены, выполнив `kubectl` команду, которая теперь будет выполнена успешно. Например:
 
 ```console
 kubectl get no
@@ -84,7 +84,7 @@ kubectl get no
 > [!NOTE]
 > Если у вас есть службы, работающие поверх AKS, например [Azure dev Spaces][dev-spaces], может потребоваться также [обновить сертификаты, связанные с этими службами][dev-spaces-rotate] .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье показано, как автоматически поворачивать сертификаты, CAs и SAs кластера. Рекомендации [по обеспечению безопасности и обновления кластера в службе Azure Kubernetes (AKS)][aks-best-practices-security-upgrades] см. в статье рекомендации по обеспечению безопасности AKS.
 
@@ -94,5 +94,5 @@ kubectl get no
 [az-extension-add]: /cli/azure/extension#az-extension-add
 [az-extension-update]: /cli/azure/extension#az-extension-update
 [aks-best-practices-security-upgrades]: operator-best-practices-cluster-security.md
-[dev-spaces]: https://docs.microsoft.com/azure/dev-spaces/
+[dev-spaces]: ../dev-spaces/index.yml
 [dev-spaces-rotate]: ../dev-spaces/troubleshooting.md#error-using-dev-spaces-after-rotating-aks-certificates
