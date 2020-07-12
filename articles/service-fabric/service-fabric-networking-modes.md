@@ -5,12 +5,12 @@ author: athinanthny
 ms.topic: conceptual
 ms.date: 2/23/2018
 ms.author: atsenthi
-ms.openlocfilehash: feeef1773ffe68f3ff88175b413cd40ba618b8d9
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: e6174f35bd54b3ca0b2c5240a663369350b30ce8
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86207222"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86241902"
 ---
 # <a name="service-fabric-container-networking-modes"></a>Сетевые режимы контейнеров Service Fabric
 
@@ -21,7 +21,7 @@ ms.locfileid: "86207222"
 Когда служба контейнеров перезапускается или перемещается на другой узел в кластере, ее IP-адрес изменяется. По этой причине мы не рекомендуем использовать динамически назначаемый IP-адрес для обнаружения служб контейнеров. Для обнаружения служб следует использовать только службу именования Service Fabric или службу DNS. 
 
 >[!WARNING]
->Azure позволяет всего 65 356 IP-адресов на виртуальную сеть. Сумма количества узлов и количества экземпляров службы контейнеров (использующих открытый режим) не может превышать 65 356 IP-адресов в виртуальной сети. Для сценариев высокой плотности мы рекомендуем применять сетевой режим NAT. Кроме того, другие зависимости, такие как балансировщик нагрузки, будут иметь другие [ограничения](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits) , которые следует учитывать. В настоящее время до 50 IP-адресов на узел проверено и проверено стабильно. 
+>Azure позволяет всего 65 356 IP-адресов на виртуальную сеть. Сумма количества узлов и количества экземпляров службы контейнеров (использующих открытый режим) не может превышать 65 356 IP-адресов в виртуальной сети. Для сценариев высокой плотности мы рекомендуем применять сетевой режим NAT. Кроме того, другие зависимости, такие как балансировщик нагрузки, будут иметь другие [ограничения](../azure-resource-manager/management/azure-subscription-service-limits.md) , которые следует учитывать. В настоящее время до 50 IP-адресов на узел проверено и проверено стабильно. 
 >
 
 ## <a name="set-up-open-networking-mode"></a>Настройка открытого сетевого режима
@@ -194,7 +194,7 @@ ms.locfileid: "86207222"
    |Параметр |Значение |
    | --- | --- |
    |Приоритет |2000 |
-   |Name (Имя) |Custom_Dns  |
+   |Имя |Custom_Dns  |
    |Источник |VirtualNetwork |
    |Назначение | VirtualNetwork |
    |Служба | DNS (UDP/53) |
@@ -263,6 +263,6 @@ ms.locfileid: "86207222"
  
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Моделирование приложения в Service Fabric](service-fabric-application-model.md)
-* [Указание ресурсов в манифесте службы](https://docs.microsoft.com/azure/service-fabric/service-fabric-service-manifest-resources) для Service Fabric
+* [Указание ресурсов в манифесте службы](./service-fabric-service-manifest-resources.md) для Service Fabric
 * [Развертывание контейнера Windows в Service Fabric на платформе Windows Server 2016](service-fabric-get-started-containers.md)
 * [Развертывание контейнера Docker в Service Fabric на платформе Linux](service-fabric-get-started-containers-linux.md)

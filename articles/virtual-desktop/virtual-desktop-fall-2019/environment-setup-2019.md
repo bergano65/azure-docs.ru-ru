@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: d666f7e3e43b5429423a5356aa00e074ed020869
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 153532b3c33158ee1a43db7883eb7a9ec621ade7
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82615335"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86241681"
 ---
 # <a name="windows-virtual-desktop-environment"></a>Среда Виртуального рабочего стола Windows
 
@@ -22,7 +22,7 @@ ms.locfileid: "82615335"
 
 Виртуальный рабочий стол Windows — это служба, которая предоставляет пользователям простой и безопасный доступ к виртуализованным рабочим столам и приложениям RemoteApp. В этом разделе вы узнаете о общей структуре среды виртуальных рабочих столов Windows.
 
-## <a name="tenants"></a>Клиентов
+## <a name="tenants"></a>Клиенты
 
 Клиент виртуальных рабочих столов Windows является основным интерфейсом для управления средой виртуальных рабочих столов Windows. Каждый клиент виртуальных рабочих столов Windows должен быть связан с Azure Active Directory, содержащим пользователей, которые будут входить в среду. С помощью клиента виртуальных рабочих столов Windows можно приступить к созданию пулов узлов для запуска рабочих нагрузок пользователей.
 
@@ -67,5 +67,5 @@ ms.locfileid: "82615335"
 
 Сведения о подключении к виртуальному рабочему столу Windows см. в одной из следующих статей:
 
-- [Подключение из Windows 10 или Windows 7](../connect-windows-7-and-10.md)
+- [Подключение из Windows 10 или Windows 7](connect-windows-7-10-2019.md)
 - [Подключение из веб-браузера](connect-web-2019.md)
