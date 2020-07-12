@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 05/18/2020
 ms.topic: conceptual
 ms.custom: references_regions
-ms.openlocfilehash: 459360e72c2d35cafedb0291642bf081bfcad96c
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 077dc0e8048da39253729d56f1e812cccc69500c
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86103999"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86242922"
 ---
 # <a name="connect-hybrid-machines-to-azure-from-the-azure-portal"></a>Подключение гибридных компьютеров к Azure на портале Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "86103999"
 
 1. В браузере перейдите на [портал Azure](https://aka.ms/hybridmachineportal).
 
-1. На странице **Компьютеры — Azure Arc** щелкните **Добавить** в левом верхнем углу или **Create machine - Azure Arc** (Создать компьютер — Azure Arc) в нижней части средней области. 
+1. На странице **Компьютеры — Azure Arc** щелкните **Добавить** в левом верхнем углу или **Create machine - Azure Arc** (Создать компьютер — Azure Arc) в нижней части средней области.
 
 1. На странице **Select a method** (Выбрать метод) выберите плитку **Добавление компьютеров с помощью интерактивного сценария**, а затем щелкните **Создать скрипт**.
 
@@ -49,8 +49,8 @@ ms.locfileid: "86103999"
 
 1. На странице **Создать скрипт** в раскрывающемся списке **Операционная система** выберите операционную систему, для которой будет выполняться скрипт.
 
-1. Если компьютер обменивается данными через прокси-сервер для подключения к Интернету, выберите **Next: Proxy Server** (Далее: Прокси-сервер). 
-1. На вкладке **Прокси-сервер** укажите IP-адрес прокси-сервера или имя и номер порта, которые будет использовать компьютер для связи с прокси-сервером. Введите значение в формате `http://<proxyURL>:<proxyport>`. 
+1. Если компьютер обменивается данными через прокси-сервер для подключения к Интернету, выберите **Next: Proxy Server** (Далее: Прокси-сервер).
+1. На вкладке **Прокси-сервер** укажите IP-адрес прокси-сервера или имя и номер порта, которые будет использовать компьютер для связи с прокси-сервером. Введите значение в формате `http://<proxyURL>:<proxyport>`.
 1. Выберите вкладку **Проверка и создание**.
 
 1. На вкладке **Проверка и создание** просмотрите сводные данные, а затем щелкните **Загрузка**. Если вам все еще нужно внести изменения, щелкните **Назад**.
@@ -59,17 +59,17 @@ ms.locfileid: "86103999"
 
 ### <a name="install-manually"></a>Установка вручную
 
-Агент подключенного компьютера можно установить вручную, запустив пакет установщика Windows *AzureConnectedMachineAgent.msi*. Последнюю версию [пакета установщика Windows для агента Windows](https://aka.ms/AzureConnectedMachineAgent) можно скачать из Центра загрузки Майкрософт. 
+Агент подключенного компьютера можно установить вручную, запустив пакет установщика Windows *AzureConnectedMachineAgent.msi*. Последнюю версию [пакета установщика Windows для агента Windows](https://aka.ms/AzureConnectedMachineAgent) можно скачать из Центра загрузки Майкрософт.
 
-> [!NOTE]
-> * Чтобы установить или удалить агент, необходимы разрешения *Администратора*.
-> * Сначала необходимо скачать и скопировать пакет установщика в папку на целевом сервере или сделать это из общей сетевой папки. При запуске пакета установщика без настраивания каких-либо параметров активируется мастер установки, который можно использовать для установки агента в интерактивном режиме.
+>[!NOTE]
+>* Чтобы установить или удалить агент, необходимы разрешения *Администратора*.
+>* Сначала необходимо скачать и скопировать пакет установщика в папку на целевом сервере или сделать это из общей сетевой папки. При запуске пакета установщика без настраивания каких-либо параметров активируется мастер установки, который можно использовать для установки агента в интерактивном режиме.
 
 Если компьютеру необходимо взаимодействовать через прокси-сервер со службой, после установки агента необходимо выполнить команду, описанную далее в этой статье. Она задает переменную системной среды для прокси-сервера `https_proxy`.
 
 Если вы не работали с параметрами командной строки для пакетов установщика Windows, ознакомьтесь со [стандартными параметрами командной строки Msiexec](/windows/win32/msi/standard-installer-command-line-options) и [параметрами командной строки Msiexec](/windows/win32/msi/command-line-options).
 
-Например, запустите программу установки с параметром `/?`, чтобы ознакомиться с параметром справки и краткого справочника. 
+Например, запустите программу установки с параметром `/?`, чтобы ознакомиться с параметром справки и краткого справочника.
 
 ```dos
 msiexec.exe /i AzureConnectedMachineAgent.msi /?
@@ -113,7 +113,7 @@ Restart-Service -Name himds
 
 После установки агента необходимо настроить для него взаимодействие со службой Azure Arc, выполнив следующую команду:
 
-`"%ProgramFiles%\AzureConnectedMachineAgent\azcmagent.exe" connect --resource-group "<resourceGroupName>" --tenant-id "<tenantID>" --location "<regionName>" --subscription-id "<subscriptionID>"`
+`"%ProgramFiles%\AzureConnectedMachineAgent\azcmagent.exe" connect --resource-group "resourceGroupName" --tenant-id "tenantID" --location "regionName" --subscription-id "subscriptionID"`
 
 ## <a name="install-and-validate-the-agent-on-linux"></a>Установка и проверка агента в Linux
 
@@ -124,7 +124,7 @@ Restart-Service -Name himds
 
 При необходимости можно указать в агенте сведения о прокси-сервере, включив параметр `--proxy "{proxy-url}:{proxy-port}"`.
 
-Скрипт также содержит логику обнаружения поддерживаемых и неподдерживаемых распространений и проверяет разрешения, необходимые для установки. 
+Скрипт также содержит логику обнаружения поддерживаемых и неподдерживаемых распространений и проверяет разрешения, необходимые для установки.
 
 В следующем примере выполняется скачивание агента и его установка:
 
@@ -132,7 +132,7 @@ Restart-Service -Name himds
 # Download the installation package.
 wget https://aka.ms/azcmagent -O ~/Install_linux_azcmagent.sh
 
-# Install the connected machine agent. 
+# Install the connected machine agent.
 bash ~/Install_linux_azcmagent.sh
 ```
 
@@ -150,7 +150,7 @@ bash ~/Install_linux_azcmagent.sh --proxy "{proxy-url}:{proxy-port}"
 
 После установки агента настройте в нем связь со службой Azure Arc, выполнив следующую команду:
 
-`azcmagent connect --resource-group "<resourceGroupName>" --tenant-id "<tenantID>" --location "<regionName>" --subscription-id "<subscriptionID>"`
+`azcmagent connect --resource-group "resourceGroupName" --tenant-id "tenantID" --location "regionName" --subscription-id "subscriptionID"`
 
 ## <a name="verify-the-connection-with-azure-arc"></a>Проверка подключения с помощью Azure Arc
 

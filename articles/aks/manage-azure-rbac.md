@@ -7,14 +7,14 @@ ms.topic: article
 ms.date: 07/07/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 84800f978790a114b80c415a5e5e3dad77eaf8da
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: fc0464c226b8edc2dae01f8ea54c3e5b2e11f2d6
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86122368"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86244266"
 ---
-# <a name="use-azure-rbac-for-kubernetes-authorization-preview"></a>Использование Azure RBAC для авторизации Kubernetes (Предварительная версия)
+# <a name="use-azure-rbac-for-kubernetes-authorization-preview"></a>Использование Azure RBAC для авторизации Kubernetes (предварительная версия)
 
 Сейчас вы уже можете использовать [встроенную проверку подлинности между Azure Active Directory (Azure AD) и AKS](managed-aad.md). Если эта интеграция включена, клиенты могут использовать пользователей, группы или субъекты-службы Azure AD в качестве субъектов в Kubernetes RBAC. Дополнительные сведения см. [здесь](azure-ad-rbac.md).
 Эта функция освобождает вас от необходимости отдельно управлять удостоверениями пользователей и учетными данными для Kubernetes. Тем не менее, по-прежнему необходимо настроить и управлять Azure RBAC и Kubernetes RBAC отдельно. Дополнительные сведения о проверке подлинности, авторизации и RBAC в AKS см. [здесь](concepts-identity.md).
@@ -215,7 +215,7 @@ az aks get-credentials -g MyResourceGroup -n MyManagedCluster
 ```
 
 > [!IMPORTANT]
-> Для выполнения описанного выше шага потребуется встроенная роль [пользователя кластера службы Azure Kubernetes](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#azure-kubernetes-service-cluster-user-role) .
+> Для выполнения описанного выше шага потребуется встроенная роль [пользователя кластера службы Azure Kubernetes](../role-based-access-control/built-in-roles.md#azure-kubernetes-service-cluster-user-role) .
 
 Теперь можно использовать kubectl для, например, для перечисления узлов в кластере. При первом запуске потребуется выполнить вход, а последующие команды будут использовать соответствующий маркер доступа.
 

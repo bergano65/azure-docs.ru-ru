@@ -6,12 +6,12 @@ ms.topic: article
 ms.author: juluk
 ms.date: 06/29/2020
 author: jluk
-ms.openlocfilehash: d98261629f9e1612966bf74084ae0e0fa70d3605
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4c5d6bf83d9aa9c3717b0f8e08785b0fc897577d
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85829264"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86244452"
 ---
 # <a name="customize-cluster-egress-with-a-user-defined-route"></a>Настройка исходящего трафика кластера с помощью определяемого пользователем маршрута
 
@@ -75,9 +75,9 @@ ms.locfileid: "85829264"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. раздел [Обзор сетевой UDR Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview).
+См. раздел [Обзор сетевой UDR Azure](../virtual-network/virtual-networks-udr-overview.md).
 
-См. раздел [Сведения о создании, изменении и удалении таблицы маршрутизации](https://docs.microsoft.com/azure/virtual-network/manage-route-table).
+См. раздел [Сведения о создании, изменении и удалении таблицы маршрутизации](../virtual-network/manage-route-table.md).
 
 <!-- LINKS - internal -->
 [az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials

@@ -6,18 +6,18 @@ ms.topic: conceptual
 ms.date: 10/18/2019
 ms.author: alehall
 ms.custom: mvc
-ms.openlocfilehash: 962d0d6dd51bb30f5df9ca0b609acf932777ebcf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 074e3db3234794aa891d5452b0c19060193c6d0c
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84887520"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86243976"
 ---
 # <a name="running-apache-spark-jobs-on-aks"></a>Запуск заданий Apache Spark в AKS
 
 [Apache Spark][apache-spark] — это быстрый механизм для обработки больших данных. Начиная с версии [Spark 2.3.0][spark-kubernetes-earliest-version], Apache Spark поддерживает встроенную интеграцию с кластерами Kubernetes. Служба Azure Kubernetes (AKS) — это управляемая среда Kubernetes, выполняющаяся в Azure. В этом документе описывается подготовка и запуск заданий Apache Spark в кластере Службы Azure Kubernetes (AKS).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
@@ -330,7 +330,7 @@ ENTRYPOINT [ "/opt/entrypoint.sh" ]
 > [!WARNING]
 > Из [документации][spark-docs] Spark: "В настоящее время планировщик Kubernetes находится на стадии эксперимента. В будущих версиях возможны изменения в поведении конфигурации, образов контейнеров и точек входа".
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в документации по Spark.
 
@@ -350,7 +350,7 @@ ENTRYPOINT [ "/opt/entrypoint.sh" ]
 
 <!-- LINKS - internal -->
 [acr-aks]: cluster-container-registry-integration.md
-[acr-create]: https://docs.microsoft.com/azure/container-registry/container-registry-get-started-azure-cli
-[aks-quickstart]: https://docs.microsoft.com/azure/aks/
-[azure-cli]: https://docs.microsoft.com/cli/azure/?view=azure-cli-latest
-[storage-account]: https://docs.microsoft.com/azure/storage/common/storage-azure-cli
+[acr-create]: ../container-registry/container-registry-get-started-azure-cli.md
+[aks-quickstart]: ./index.yml
+[azure-cli]: /cli/azure/?view=azure-cli-latest
+[storage-account]: ../storage/blobs/storage-quickstart-blobs-cli.md

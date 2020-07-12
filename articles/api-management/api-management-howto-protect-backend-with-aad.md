@@ -12,11 +12,12 @@ ms.workload: mobile
 ms.topic: article
 ms.date: 06/24/2020
 ms.author: apimpm
-ms.openlocfilehash: 72899e743e167eef5ee7d1be04cb50cafc1f2a95
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 455444fe78171e3e2b37a309fd5708f283121ed6
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85445514"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86243415"
 ---
 # <a name="protect-an-api-by-using-oauth-20-with-azure-active-directory-and-api-management"></a>Защита API с помощью протокола OAuth 2.0 и службы управления API в Azure Active Directory
 
@@ -25,7 +26,7 @@ ms.locfileid: "85445514"
 > [!NOTE]
 > Эта функция доступна на уровнях **Developer**, **Basic**, **Standard**и **Premium** интерфейса управления API.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Чтобы выполнить шаги в этой статье, необходимо иметь следующее:
 
@@ -145,7 +146,7 @@ ms.locfileid: "85445514"
 
 1. При использовании конечных точек **v1** добавьте параметр Body с именем **Resource**. В качестве значения этого параметра используйте **идентификатор приложения** серверного приложения. 
 
-1. Если используются конечные точки **версии 2** , используйте область, созданную для внутреннего приложения, в поле **область по умолчанию** . Также убедитесь, что для свойства задано значение [`accessTokenAcceptedVersion`](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest#accesstokenacceptedversion-attribute) `2` в [манифесте приложения](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest).
+1. Если используются конечные точки **версии 2** , используйте область, созданную для внутреннего приложения, в поле **область по умолчанию** . Также убедитесь, что для свойства задано значение [`accessTokenAcceptedVersion`](../active-directory/develop/reference-app-manifest.md#accesstokenacceptedversion-attribute) `2` в [манифесте приложения](../active-directory/develop/reference-app-manifest.md).
 
 1. Затем укажите учетные данные клиента. Это должны быть учетные данные клиентского приложения.
 
@@ -155,7 +156,7 @@ ms.locfileid: "85445514"
 
 1. Далее в качестве типа предоставления кода авторизации указан **redirect_url**. Запишите этот URL-адрес.
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **Создать**.
 
 1. Вернитесь к регистрации клиентского приложения в Azure Active Directory и выберите **Проверка подлинности**.
 
@@ -169,11 +170,11 @@ ms.locfileid: "85445514"
 
 1. Выберите API, который нужно защитить. Например, `Echo API`.
 
-1. Перейдите в **Параметры**.
+1. Перейдите в раздел **Параметры**.
 
 1. В разделе **безопасности** выберите **OAuth 2.0**, а также настроенный ранее сервер OAuth 2.0. 
 
-1. Нажмите кнопку **Сохранить**.
+1. Нажмите **Сохранить**.
 
 ## <a name="successfully-call-the-api-from-the-developer-portal"></a>Удачный вызов API с портала разработчика
 
@@ -202,7 +203,7 @@ ms.locfileid: "85445514"
 
 Но что делать, если кто-то вызывает API без маркера или с недопустимым токеном? Например, попробуйте вызвать API без `Authorization` заголовка, вызов по-прежнему будет проходить через. Причина в том, что на этом этапе экземпляр службы управления API не проверяет маркер доступа. Он просто передает заголовок `Authorization` в API серверной части.
 
-Используйте политику [проверки JWT](https://docs.microsoft.com/azure/api-management/api-management-access-restriction-policies#ValidateJWT) для предварительной авторизации запросов в управлении API, проверив маркеры доступа каждого входящего запроса. Если у запроса нет допустимого маркера, управление API блокирует его. Например, добавьте следующую политику в `<inbound>` раздел политика `Echo API` . Она проверяет наличие утверждения "Аудитория" в маркере доступа и возвращает сообщение об ошибке, если маркер является недопустимым. Сведения о настройке политик см. в статье [How to set or edit Azure API Management policies](https://docs.microsoft.com/azure/api-management/set-edit-policies) (Как настроить или изменить политики в службе управления API Azure).
+Используйте политику [проверки JWT](./api-management-access-restriction-policies.md#ValidateJWT) для предварительной авторизации запросов в управлении API, проверив маркеры доступа каждого входящего запроса. Если у запроса нет допустимого маркера, управление API блокирует его. Например, добавьте следующую политику в `<inbound>` раздел политика `Echo API` . Она проверяет наличие утверждения "Аудитория" в маркере доступа и возвращает сообщение об ошибке, если маркер является недопустимым. Сведения о настройке политик см. в статье [How to set or edit Azure API Management policies](./set-edit-policies.md) (Как настроить или изменить политики в службе управления API Azure).
 
 
 ```xml
@@ -225,9 +226,9 @@ ms.locfileid: "85445514"
 
 В этом руководстве мы использовали консоль разработчика в APIM как пример клиентского приложения для вызова `Echo API`, защищенного OAuth 2.0. Чтобы узнать больше о том, как создать приложение и реализовать OAuth 2.0, изучите [примеры кода Azure Active Directory](../active-directory/develop/sample-v2-code.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте больше об [Azure Active Directory и OAuth 2.0](../active-directory/develop/authentication-scenarios.md).
+- Узнайте больше об [Azure Active Directory и OAuth 2.0](../active-directory/develop/authentication-vs-authorization.md).
 - См. другие [видео](https://azure.microsoft.com/documentation/videos/index/?services=api-management) об управлении API.
 - Другие способы защиты внутренней серверной службы см. в разделе [Взаимная проверка подлинности на основе сертификата](./api-management-howto-mutual-certificates.md).
 - [Создайте экземпляр службы управления API](./get-started-create-service-instance.md).

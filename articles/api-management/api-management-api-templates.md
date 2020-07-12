@@ -14,11 +14,12 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.custom: tracking-python
-ms.openlocfilehash: 467d8b89ef5c114d647a257053ed3367d6336bdc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 193dc7a953bc746ec7211433f846343969176c96
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84559336"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86243704"
 ---
 # <a name="api-templates-in-azure-api-management"></a>Шаблоны API в службе управления API Azure
 
@@ -39,7 +40,7 @@ ms.locfileid: "84559336"
     -   [Ruby](#Ruby)  
 
 > [!NOTE]
->  Примеры шаблонов по умолчанию включены в следующую документацию, но могут в любой момент измениться, так как ведется постоянная работа по их улучшению. Актуальные шаблоны по умолчанию можно просмотреть на портале разработчика, перейдя к требуемому отдельному шаблону. Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](https://azure.microsoft.com/documentation/articles/api-management-developer-portal-templates/).  
+>  Примеры шаблонов по умолчанию включены в следующую документацию, но могут в любой момент измениться, так как ведется постоянная работа по их улучшению. Актуальные шаблоны по умолчанию можно просмотреть на портале разработчика, перейдя к требуемому отдельному шаблону. Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](./api-management-developer-portal-templates.md).  
 
 [!INCLUDE [api-management-portal-legacy.md](../../includes/api-management-portal-legacy.md)]
 
@@ -89,7 +90,7 @@ ms.locfileid: "84559336"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство.|Type|Описание:|  
+|Свойство|Тип|Описание|  
 |--------------|----------|-----------------|  
 |`apis`|Коллекция сущностей [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|API, доступные для текущего пользователя.|  
   
@@ -344,14 +345,14 @@ ms.locfileid: "84559336"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство.|Type|Описание|  
+|Свойство|Тип|Описание|  
 |--------------|----------|-----------------|  
 |`apiId`|строка|Идентификатор текущего API.|  
-|`apiName`|string|Имя API.|  
-|`apiDescription`|string|Описание API.|  
+|`apiName`|строка|Имя API.|  
+|`apiDescription`|строка|Описание API.|  
 |`api`|Сущность [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|Текущий API.|  
 |`operation`|[Операция](api-management-template-data-model-reference.md#Operation)|Операция, отображаемая в настоящий момент.|  
-|`sampleUrl`|string|URL-адрес текущей операции.|  
+|`sampleUrl`|строка|URL-адрес текущей операции.|  
 |`operationMenu`|[Меню "операция"](api-management-template-data-model-reference.md#Menu)|Меню операций для API.|  
 |`consoleUrl`|URI|Универсальный код ресурса для кнопки **Попробуйте**.|  
 |`samples`|Коллекция сущностей [Code sample](api-management-template-data-model-reference.md#Sample) (Пример кода).|Примеры кода для текущей операции.|  
@@ -1472,5 +1473,5 @@ puts response.body
 }  
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

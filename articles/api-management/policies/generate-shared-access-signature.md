@@ -13,15 +13,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
-ms.openlocfilehash: 0f003bc268af6b7f8bd6b046ae84734dbefeac28
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 62a6e8c9fdec3b30bd193e9887d7e0cb7926e73e
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75442460"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86243007"
 ---
 # <a name="generate-shared-access-signature"></a>Создание подписанного URL-адреса
 
-В этой статье на примере политики службы управления API Azure показано, как создать [подписанный URL-адрес](https://docs.microsoft.com/azure/storage/storage-dotnet-shared-access-signature-part-1) с помощью выражений и перенаправить запрос в службу хранилища Azure с использованием политики rewrite-uri. См. дополнительные сведения о [создании и изменении кода политик](../set-edit-policies.md). Также для ознакомления доступны другие [примеры политик](../policy-samples.md).
+В этой статье на примере политики службы управления API Azure показано, как создать [подписанный URL-адрес](../../storage/common/storage-sas-overview.md) с помощью выражений и перенаправить запрос в службу хранилища Azure с использованием политики rewrite-uri. См. дополнительные сведения о [создании и изменении кода политик](../set-edit-policies.md). Также для ознакомления доступны другие [примеры политик](../policy-samples.md).
 
 ## <a name="policy"></a>Политика
 
@@ -29,10 +30,9 @@ ms.locfileid: "75442460"
 
 [!code-xml[Main](../../../api-management-policy-samples/examples/Generate Shared Access Signature and forward request to Azure storage.policy.xml)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробнее о политиках службы управления API:
 
 + [Политики преобразования](../api-management-transformation-policies.md)
 + [Примеры политик](../policy-samples.md).
-

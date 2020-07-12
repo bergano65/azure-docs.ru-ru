@@ -7,16 +7,16 @@ ms.topic: article
 ms.date: 09/11/2019
 ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: b7552fc083c5ed340dc54c2a31160b0c8b4bd076
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 84b826ce33b5395db5bd38e883b3a0fb3425725b
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80420898"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86244044"
 ---
 # <a name="security-hardening-for-aks-agent-node-host-os"></a>Усиление безопасности для операционной системы узла агента AKS
 
-Служба Azure Kubernetes Service (AKS) — это безопасная служба, соответствующая стандартам SOC, ISO, PCI DSS и HIPAA. В этой статье рассматривается усиление безопасности, применяемое к узлам виртуальных машин AKS. Дополнительные сведения о безопасности AKS см. [в статье основные понятия безопасности для приложений и кластеров в службе Kubernetes Azure (AKS)](https://docs.microsoft.com/azure/aks/concepts-security).
+Служба Azure Kubernetes Service (AKS) — это безопасная служба, соответствующая стандартам SOC, ISO, PCI DSS и HIPAA. В этой статье рассматривается усиление безопасности, применяемое к узлам виртуальных машин AKS. Дополнительные сведения о безопасности AKS см. [в статье основные понятия безопасности для приложений и кластеров в службе Kubernetes Azure (AKS)](./concepts-security.md).
 
 > [!Note]
 > Этот документ распространяется только на агенты Linux в AKS.
@@ -32,7 +32,7 @@ ms.locfileid: "80420898"
 
 * По умолчанию AKS предоставляет операционную систему узла, оптимизированную для безопасности. Выбрать альтернативную операционную систему невозможно.
 
-* Azure применяет ежедневные исправления (включая исправления безопасности) к узлам виртуальных машин AKS. Некоторые из этих исправлений потребует перезагрузки, а другие не будут. Вы несете ответственность за планирование перезагрузки узла виртуальной машины AKS по мере необходимости. Инструкции по автоматизации установки исправлений AKS см. в разделе [Установка исправлений на УЗЛАХ AKS](https://docs.microsoft.com/azure/aks/node-updates-kured).
+* Azure применяет ежедневные исправления (включая исправления безопасности) к узлам виртуальных машин AKS. Некоторые из этих исправлений потребует перезагрузки, а другие не будут. Вы несете ответственность за планирование перезагрузки узла виртуальной машины AKS по мере необходимости. Инструкции по автоматизации установки исправлений AKS см. в разделе [Установка исправлений на УЗЛАХ AKS](./node-updates-kured.md).
 
 ## <a name="what-is-configured"></a>Что настроено
 
@@ -85,8 +85,8 @@ ms.locfileid: "80420898"
 
 Дополнительные сведения о безопасности AKS см. в следующих статьях: 
 
-[Служба Azure Kubernetes (AKS)](https://docs.microsoft.com/azure/aks/intro-kubernetes)
+[Служба Azure Kubernetes (AKS)](./intro-kubernetes.md)
 
-[Вопросы безопасности AKS](https://docs.microsoft.com/azure/aks/concepts-security)
+[Вопросы безопасности AKS](./concepts-security.md)
 
-[Рекомендации по AKS](https://docs.microsoft.com/azure/aks/best-practices)
+[Рекомендации по AKS](./best-practices.md)

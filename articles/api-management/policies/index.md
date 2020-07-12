@@ -13,12 +13,12 @@ ms.topic: sample
 ms.date: 10/31/2017
 ms.author: apimpm
 ms.custom: mvc
-ms.openlocfilehash: b8f97bb27b3eb45c731b20ad51e35fde9b6a394a
-ms.sourcegitcommit: 398fecceba133d90aa8f6f1f2af58899f613d1e3
+ms.openlocfilehash: 252e7b8d13cf53a98ea1f25b207740c0e623f92c
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2020
-ms.locfileid: "85126906"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86242973"
 ---
 # <a name="api-management-policy-samples"></a>Примеры политик службы управления API Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "85126906"
 | [Авторизация запросов с помощью внешнего авторизатора](./authorize-request-using-external-authorizer.md)                                                   | Использование внешнего авторизатора для защиты доступа через API.                                                                                                                                                               |
 | [Авторизация доступа с помощью токена OAuth Google](./use-google-as-oauth-token-provider.md)                                            | Авторизация доступа к конечным точкам с использованием Google в качестве поставщика токена OAuth.                                                                                                                                    |
 | [Фильтрация IP-адресов при использовании Шлюза приложений](./filter-ip-addresses-when-using-appgw.md) | Фильтрация IP-адресов в политиках при доступе к экземпляру службы "Управление API" через Шлюз приложений.
-| [Создание подписанного URL-адреса и запроса на перенаправление к службе хранилища Azure](./generate-shared-access-signature.md)                  | Создание [подписанного URL-адреса](../../storage/storage-dotnet-shared-access-signature-part-1.md) с помощью выражений и перенаправление запроса в службу хранилища Azure с использованием политики rewrite-uri. |
+| [Создание подписанного URL-адреса и запроса на перенаправление к службе хранилища Azure](./generate-shared-access-signature.md)                  | Создание [подписанного URL-адреса](../../storage/common/storage-sas-overview.md) с помощью выражений и перенаправление запроса в службу хранилища Azure с использованием политики rewrite-uri. |
 | [Получение маркера доступа OAuth2 из AAD и его перенаправление в серверную часть](./use-oauth2-for-authorization.md)                             | Пример использования OAuth2 для авторизации между шлюзом и серверной частью. В статье показано, как получить маркер доступа из AAD и перенаправить его в серверную часть.                                                    |
 | [Получение маркера X-CSRF из шлюза SAP с помощью политики отправки запроса](./get-x-csrf-token-from-sap-gateway.md)                           | Реализация шаблона X-CSRF, используемого во многих API-интерфейсах. Этот пример относится только к шлюзу SAP.                                                                                                                           |
 | [Маршрутизация запроса в зависимости от размера его текста](./route-requests-based-on-size.md)                                            | Маршрутизация запроса в зависимости от размера его текста.                                                                                                                                                       |

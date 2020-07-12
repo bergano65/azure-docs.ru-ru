@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 06/12/2020
 ms.author: apimpm
-ms.openlocfilehash: 70f1e4414888ceb8fb04fd92dc954d1a7c06dcb4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4d077f6b3c84b0279a7a1c99243240192c2b45d1
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85557977"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86243721"
 ---
 # <a name="api-management-authentication-policies"></a>Политики аутентификации в службе управления API
 В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](https://go.microsoft.com/fwlink/?LinkID=398186).
@@ -48,19 +48,19 @@ ms.locfileid: "85557977"
 
 ### <a name="elements"></a>Элементы
 
-|name|Описание|Обязательное значение|
+|Название|Описание|Обязательно|
 |----------|-----------------|--------------|
 |authentication-basic|Корневой элемент.|Да|
 
 ### <a name="attributes"></a>Атрибуты
 
-|name|Описание|Обязательное значение|Значение по умолчанию|
+|Имя|Описание|Обязательно|Значение по умолчанию|
 |----------|-----------------|--------------|-------------|
-|username|Задает имя пользователя для обычных учетных данных.|Да|Н/Д|
+|Имя пользователя|Задает имя пользователя для обычных учетных данных.|Да|Н/Д|
 |password|Задает пароль для обычных учетных данных.|Да|Н/Д|
 
 ### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
+ Эта политика может использоваться в следующих [разделах](./api-management-howto-policies.md#sections) и [областях](./api-management-howto-policies.md#scopes).
 
 -   **Разделы политики:** inbound.
 
@@ -97,21 +97,21 @@ ms.locfileid: "85557977"
 
 ### <a name="elements"></a>Элементы  
   
-|name|Описание|Обязательное значение|  
+|Название|Описание|Обязательно|  
 |----------|-----------------|--------------|  
 |authentication-certificate|Корневой элемент.|Да|  
   
 ### <a name="attributes"></a>Атрибуты  
   
-|name|Описание|Обязательное значение|Значение по умолчанию|  
+|Имя|Описание|Обязательно|Значение по умолчанию|  
 |----------|-----------------|--------------|-------------|  
-|thumbprint|Отпечаток для сертификата клиента.|`thumbprint` `certificate-id` Должен присутствовать либо.|Н/Д|
-|ИД сертификата|Имя ресурса сертификата.|`thumbprint` `certificate-id` Должен присутствовать либо.|Н/Д|
+|thumbprint|Отпечаток для сертификата клиента.|`thumbprint` `certificate-id` Должен присутствовать либо.|Недоступно|
+|ИД сертификата|Имя ресурса сертификата.|`thumbprint` `certificate-id` Должен присутствовать либо.|Недоступно|
 |текст|Сертификат клиента как массив байтов.|Нет|Недоступно|
-|password|Пароль для сертификата клиента.|Используется, если сертификат, указанный в `body` , защищен паролем.|Н/Д|
+|password|Пароль для сертификата клиента.|Используется, если сертификат, указанный в `body` , защищен паролем.|Недоступно|
   
 ### <a name="usage"></a>Использование  
- Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
+ Эта политика может использоваться в следующих [разделах](./api-management-howto-policies.md#sections) и [областях](./api-management-howto-policies.md#scopes).  
   
 -   **Разделы политики:** inbound.  
   
@@ -174,13 +174,13 @@ ms.locfileid: "85557977"
 
 ### <a name="elements"></a>Элементы  
   
-|name|Описание|Обязательное значение|  
+|Название|Описание|Обязательно|  
 |----------|-----------------|--------------|  
 |Проверка подлинности — управляемое удостоверение |Корневой элемент.|Да|  
   
 ### <a name="attributes"></a>Атрибуты  
   
-|name|Описание|Обязательное значение|Значение по умолчанию|  
+|Имя|Описание|Обязательно|Значение по умолчанию|  
 |----------|-----------------|--------------|-------------|  
 |ресурс|Строка. Идентификатор приложения целевого веб-API (защищенный ресурс) в Azure Active Directory.|Да|Н/Д|
 |client-id|Строка. Идентификатор приложения, которому назначено пользовательское удостоверение, в Azure Active Directory.|Нет|удостоверение, назначенное системой|
@@ -188,16 +188,16 @@ ms.locfileid: "85557977"
 |ignore-error|Логическое. Если задано значение `true` , конвейер политики продолжит выполняться, даже если маркер доступа не получен.|Нет|false|  
   
 ### <a name="usage"></a>Использование  
- Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
+ Эта политика может использоваться в следующих [разделах](./api-management-howto-policies.md#sections) и [областях](./api-management-howto-policies.md#scopes).  
   
 -   **Разделы политики:** inbound.  
   
 -   **Области политики:** все области.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о работе с политиками см. в следующих статьях:
 
 + [Политики в управлении API](api-management-howto-policies.md)
 + [Преобразование API-интерфейсов](transform-api.md).
-+ Полный перечень операторов политик и их параметров см. в [справочнике по политикам](api-management-policy-reference.md).
++ Полный перечень операторов политик и их параметров см. в [справочнике по политикам](./api-management-policies.md).
 + [Примеры политик](policy-samples.md).

@@ -12,11 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/08/2020
 ms.author: apimpm
-ms.openlocfilehash: dc8ca7296658f4113d86765f230ca0158727255f
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 28a9f37f58a6c056bf23a85fcf2641f407988891
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83649197"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86243483"
 ---
 # <a name="how-to-use-named-values-in-azure-api-management-policies"></a>Использование именованных значений в политиках Управления API Azure
 
@@ -33,7 +34,7 @@ ms.locfileid: "83649197"
 
 ![Именованные значения](./media/api-management-howto-properties/named-values.png)
 
-Именованные значения могут содержать строковые литералы и [выражения политики](/azure/api-management/api-management-policy-expressions). Например, значение `Expression` является выражением политики, которое возвращает строку, содержащую текущую дату и время. Именованное свойство `Credential` помечено как секрет, поэтому его значение по умолчанию не отображается.
+Именованные значения могут содержать строковые литералы и [выражения политики](./api-management-policy-expressions.md). Например, значение `Expression` является выражением политики, которое возвращает строку, содержащую текущую дату и время. Именованное свойство `Credential` помечено как секрет, поэтому его значение по умолчанию не отображается.
 
 | Имя       | Значение                      | Секрет | Теги          |
 | ---------- | -------------------------- | ------ | ------------- |
@@ -109,8 +110,8 @@ ms.locfileid: "83649197"
 
 -   Узнайте больше о работе с политиками
     -   [Политики в управлении API](api-management-howto-policies.md)
-    -   [Справочник по политикам](/azure/api-management/api-management-policies)
-    -   [Выражения политики](/azure/api-management/api-management-policy-expressions)
+    -   [Справочник по политикам](./api-management-policies.md)
+    -   [Выражения политики](./api-management-policy-expressions.md)
 
 [api-management-send-results]: ./media/api-management-howto-properties/api-management-send-results.png
 [api-management-properties-filter]: ./media/api-management-howto-properties/api-management-properties-filter.png

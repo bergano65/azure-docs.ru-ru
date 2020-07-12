@@ -5,15 +5,16 @@ author: dkkapur
 ms.author: dekapur
 ms.date: 11/27/2018
 ms.topic: conceptual
-ms.openlocfilehash: 0b0bd611fa86d155bb5bf2e07808e7365e28871c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d56ce811155f7b7f60fa870dbdae2550afab2eac
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84692688"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86246832"
 ---
 # <a name="state-management-with-service-fabric"></a>Управление состояниями с помощью Service Fabric
 
-Service Fabric поддерживает множество разных способов хранения состояний. Принципы работы шаблонов управления состояниями и Service Fabric представлены в разделе [Состояние службы](/azure/service-fabric/service-fabric-concepts-state). Эти принципы применимы независимо от того, выполняются службы внутри или вне службы "Сетка Service Fabric". 
+Service Fabric поддерживает множество разных способов хранения состояний. Принципы работы шаблонов управления состояниями и Service Fabric представлены в разделе [Состояние службы](../service-fabric/service-fabric-concepts-state.md). Эти принципы применимы независимо от того, выполняются службы внутри или вне службы "Сетка Service Fabric". 
 
 С помощью службы "Сетка Service Fabric" можно легко развернуть новое приложение и подключить его к существующему хранилищу данных, размещенному в Azure. Помимо использования любой удаленной базы данных существует несколько вариантов хранения данных, в зависимости от того, какое хранилище требуется службе, локальное или удаленное. 
 
@@ -31,7 +32,7 @@ Service Fabric поддерживает множество разных спос
 
 Том службы "Файлы Azure" — это драйвер тома Docker, используемый для подключения общего ресурса службы "Файлы Azure" к контейнеру. Хранилище службы "Файлы Azure" использует сетевое хранилище, поэтому операции чтения и записи выполняются по сети. По сравнению с надежным томом Service Fabric хранилище службы "Файлы Azure" является менее производительным, но более экономичным и надежным вариантом хранения данных. Пример см. в статье [Развертывание приложение с использованием тома службы "Файлы Azure"](service-fabric-mesh-howto-deploy-app-azurefiles-volume.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о модели приложения см. в разделе [Сохранение состояния с помощью подключения тома службы файлов Azure в приложении службы "Сетка Service Fabric"](service-fabric-mesh-service-fabric-resources.md).
 

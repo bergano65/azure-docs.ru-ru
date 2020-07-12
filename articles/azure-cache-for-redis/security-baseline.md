@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: b9568d352b22d9c48789f2648489be0444823fff
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ea46a42fa8063aaf1d67c4f5ae0d2eef3a83fd5a
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82195992"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86242715"
 ---
 # <a name="azure-security-baseline-for-azure-cache-for-redis"></a>Базовый план безопасности Azure для кэша Azure для Redis
 
@@ -467,7 +467,7 @@ https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getst
 
 Настройка и включение политик риска для защиты идентификации.https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
 
-Как подключить метку Azure:https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+Подключение к Azure Sentinel: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 

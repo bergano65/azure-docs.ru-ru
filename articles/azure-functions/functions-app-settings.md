@@ -3,12 +3,12 @@ title: Справочник по параметрам приложений дл�
 description: Справочная документация по параметрам приложений и переменным среды для Функций Azure.
 ms.topic: conceptual
 ms.date: 09/22/2018
-ms.openlocfilehash: adb11f29460bd6dee7171fa97a6ebfc958cfad12
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 2be13fbdbf8ce75a051448bfb46d2a41ad425be8
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86169921"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86242769"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Справочник по параметрам приложений для Функций Azure
 
@@ -17,6 +17,9 @@ ms.locfileid: "86169921"
 [!INCLUDE [Function app settings](../../includes/functions-app-settings.md)]
 
 В файле [host.json](functions-host-json.md) и в файле [local.settings.json](functions-run-local.md#local-settings-file) содержатся другие параметры глобальной конфигурации.
+
+> [!NOTE]  
+> Параметры приложения можно использовать для переопределения host.jsзначений параметров без необходимости изменения host.jsдля самого файла. Это полезно в сценариях, где необходимо настроить или изменить конкретные host.jsпараметров для конкретной среды. Это также позволяет изменить host.jsпараметров без повторной публикации проекта. Дополнительные сведения см. в разделе [host.jsв справочной статье](functions-host-json.md#override-hostjson-values).  
 
 ## <a name="appinsights_instrumentationkey"></a>APPINSIGHTS_INSTRUMENTATIONKEY
 

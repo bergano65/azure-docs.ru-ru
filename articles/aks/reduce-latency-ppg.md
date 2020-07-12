@@ -5,11 +5,12 @@ services: container-service
 manager: gwallace
 ms.topic: article
 ms.date: 06/22/2020
-ms.openlocfilehash: 095746b9cf3cada9cebf7d169078eff9eb64a52d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1bcdfb4bb3c910feeac0521308e1e7d733fbd959
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85444273"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86244078"
 ---
 # <a name="reduce-latency-with-proximity-placement-groups-preview"></a>Сокращение задержки с помощью групп размещения с учетом расположения (Предварительная версия)
 
@@ -73,7 +74,7 @@ az extension update --name aks-preview
 
 В следующем примере используется команда [AZ Group Create][az-group-create] для создания группы ресурсов с именем *myResourceGroup* в регионе *centralus* . После этого кластер AKS с именем *myAKSCluster* создается с помощью команды [AZ AKS Create][az-aks-create] . 
 
-Ускоренная сеть значительно улучшает производительность сети виртуальных машин. В идеале используйте группы размещения близости в сочетании с ускоренной сетью. По умолчанию AKS использует ускоренную сеть на [поддерживаемых экземплярах виртуальных машин](https://docs.microsoft.com/azure/virtual-network/create-vm-accelerated-networking-cli?toc=/azure/virtual-machines/linux/toc.json#limitations-and-constraints), включая большинство виртуальных машин Azure с двумя или более виртуальных ЦП.
+Ускоренная сеть значительно улучшает производительность сети виртуальных машин. В идеале используйте группы размещения близости в сочетании с ускоренной сетью. По умолчанию AKS использует ускоренную сеть на [поддерживаемых экземплярах виртуальных машин](../virtual-network/create-vm-accelerated-networking-cli.md?toc=/azure/virtual-machines/linux/toc.json#limitations-and-constraints), включая большинство виртуальных машин Azure с двумя или более виртуальных ЦП.
 
 Создайте новый кластер AKS с группой размещения с близкой назначением:
 
@@ -142,7 +143,7 @@ az aks nodepool add \
 az group delete --name myResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [группах размещения][proximity-placement-groups]с учетом расположения.
 
@@ -163,4 +164,3 @@ az group delete --name myResourceGroup --yes --no-wait
 [az-aks-create]: /cli/azure/aks#az-aks-create
 [az-group-create]: /cli/azure/group#az-group-create
 [az-group-delete]: /cli/azure/group#az-group-delete
-

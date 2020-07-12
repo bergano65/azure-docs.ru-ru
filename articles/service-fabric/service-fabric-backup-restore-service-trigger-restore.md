@@ -5,11 +5,12 @@ author: aagup
 ms.topic: conceptual
 ms.date: 10/30/2018
 ms.author: aagup
-ms.openlocfilehash: 1737102ee652cc2263bd0a908c1336bc93a6757b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f98bf4f4518abd5f1b1a826e355c851acc055852
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75377911"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86246696"
 ---
 # <a name="restoring-backup-in-azure-service-fabric"></a>Восстановление резервной копии в Azure Service Fabric
 
@@ -22,7 +23,7 @@ ms.locfileid: "75377911"
 - **Случай потери данных**: случайное удаление или повреждение службы. Например, администратор ошибочно удаляет службу.
 - **Повреждение данных**: ошибки в службе приводят к повреждению данных. Например, повреждение данных может произойти, когда после обновления кода служба записывает содержащие ошибки данные в надежную коллекцию. В этом случае может потребоваться восстановить код и данные до предыдущего состояния.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 - Чтобы активировать восстановление, для кластера должна быть включена _служба анализа сбоев (FAS)_.
 - _Служба резервного копирования и восстановления (BRS)_ создает резервную копию.
@@ -51,7 +52,7 @@ ms.locfileid: "75377911"
 
 ### <a name="data-restore-in-the-case-of-disaster-recovery"></a>Восстановление данных в случае аварийного восстановления
 
-В случае потери всего кластера Service Fabric данные секций надежной службы с отслеживанием состояния и Reliable Actors можно восстановить. Необходимую резервную копию можно выбрать из списка при использовании [GetBackupAPI с указанием сведений о хранилище резервных копий](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getbackupsfrombackuplocation). Можно использовать перечисление резервных копий для отдельного приложения, службы или секции.
+В случае потери всего кластера Service Fabric данные секций надежной службы с отслеживанием состояния и Reliable Actors можно восстановить. Необходимую резервную копию можно выбрать из списка при использовании [GetBackupAPI с указанием сведений о хранилище резервных копий](/rest/api/servicefabric/sfclient-api-getbackupsfrombackuplocation). Можно использовать перечисление резервных копий для отдельного приложения, службы или секции.
 
 В следующем примере предполагается, что потерян кластер, упомянутый в разделе [Включение периодического резервного копирования для надежной службы с отслеживанием состояния и Reliable Actors](service-fabric-backuprestoreservice-quickstart-azurecluster.md#enabling-periodic-backup-for-reliable-stateful-service-and-reliable-actors). В этом случае `SampleApp` развертывается с включенной политикой резервного копирования, а для хранения резервных копий используется служба хранилища Azure.
 
@@ -165,7 +166,7 @@ Restore-SFPartition  -PartitionId '1c42c47f-439e-4e09-98b9-88b8f60800c6' -Backup
 
 #### <a name="rest-call-using-powershell"></a>Вызов функции RESTful с помощью PowerShell
 
-Запросить восстановление резервной копии секции кластера можно с помощью следующих [API восстановления](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-restorepartition):
+Запросить восстановление резервной копии секции кластера можно с помощью следующих [API восстановления](/rest/api/servicefabric/sfclient-api-restorepartition):
 
 ```powershell
 
@@ -305,7 +306,7 @@ $restoreResponse | Format-List
         RestoredEpoch : 
         RestoredLsn   : 0
         ```
-    - **Время**ожидания. состояние восстановления _времени ожидания_ указывает на то, что время ожидания запроса истекло. Создайте новый запрос на восстановление с большим значением [RestoreTimeout](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-backuppartition#backuptimeout). Время ожидания по умолчанию составляет 10 минут. Убедитесь, что раздел вышел из состояния dataloss, прежде чем повторять запрос на восстановление.
+    - **Время**ожидания. состояние восстановления _времени ожидания_ указывает на то, что время ожидания запроса истекло. Создайте новый запрос на восстановление с большим значением [RestoreTimeout](/rest/api/servicefabric/sfclient-api-backuppartition#backuptimeout). Время ожидания по умолчанию составляет 10 минут. Убедитесь, что раздел вышел из состояния dataloss, прежде чем повторять запрос на восстановление.
      
         ```
         RestoreState  : Timeout
@@ -316,15 +317,15 @@ $restoreResponse | Format-List
 
 ## <a name="automatic-restore"></a>Автоматическое восстановление
 
-Для секций надежной службы с отслеживанием состояния и Reliable Actors в кластере Service Fabric можно настроить _автоматическое восстановление_. В политике резервного копирования для параметра `AutoRestore` задайте значение _true_. Если для секции включено _автоматическое восстановление_, то при обнаружении потери данных ее данные автоматически восстанавливаются из последней резервной копии. Дополнительные сведения можно найти в разделе
+Для секций надежной службы с отслеживанием состояния и Reliable Actors в кластере Service Fabric можно настроить _автоматическое восстановление_. В политике резервного копирования для параметра `AutoRestore` задайте значение _true_. Если для секции включено _автоматическое восстановление_, то при обнаружении потери данных ее данные автоматически восстанавливаются из последней резервной копии. Дополнительные сведения см. в следующих источниках.
 
 - [Включение автоматического восстановления в политике резервного копирования](service-fabric-backuprestoreservice-configure-periodic-backup.md#auto-restore-on-data-loss)
-- [Справочник по RestorePartition API](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-restorepartition)
-- [Справочник по GetPartitionRestoreProgress API](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getpartitionrestoreprogress)
+- [Справочник по RestorePartition API](/rest/api/servicefabric/sfclient-api-restorepartition)
+- [Справочник по GetPartitionRestoreProgress API](/rest/api/servicefabric/sfclient-api-getpartitionrestoreprogress)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Основные сведения о настройке периодического резервного копирования](./service-fabric-backuprestoreservice-configure-periodic-backup.md)
-- [Backup restore REST API reference](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)
+- [Backup restore REST API reference](/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)
 
 [2]: ./media/service-fabric-backuprestoreservice/restore-partition-backup.png
 [3]: ./media/service-fabric-backuprestoreservice/restore-partition-fileshare.png

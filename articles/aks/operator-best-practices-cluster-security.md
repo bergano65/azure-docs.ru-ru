@@ -5,18 +5,18 @@ description: Ознакомьтесь с рекомендациями по уп�
 services: container-service
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.openlocfilehash: 72808f315f28a996a88e6cc56ae232a136726451
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c4f56cf4e04b9df31c8c4204d396ead8073ec526
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85298027"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86244214"
 ---
 # <a name="best-practices-for-cluster-security-and-upgrades-in-azure-kubernetes-service-aks"></a>Рекомендации по безопасности и обновлениям кластера в службах Azure Kubernetes (AKS)
 
 При управлении кластерами в Azure Kubernetes Service (AKS) безопасность ваших рабочих нагрузок и данных является ключевым фактором. Необходимо обеспечить безопасный доступ к ресурсам и рабочим нагрузкам, особенно при запуске мультитенантных кластеров с использованием логической изоляции. Чтобы свести к минимуму риск атаки, вы также должны убедиться, что применяете последние обновления безопасности Kubernetes и ОС узла.
 
-Эта статья посвящается вопросам, связанным с безопасностью кластера AKS. Вы научитесь:
+Эта статья посвящается вопросам, связанным с безопасностью кластера AKS. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * использовать Azure Active Directory и средства управления доступом на основе ролей для безопасного доступа к серверу API;
@@ -207,7 +207,7 @@ az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes
 
 Дополнительные сведения о том, как обрабатывать перезагрузки узла, см. в статье [Применение обновлений безопасности и ядра для узлов в Службе Azure Kubernetes (AKS)][aks-kured].
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Эта статья посвящена вопросам, связанным с безопасностью кластера AKS. Для реализации части этих рекомендаций требуются сведения, опубликованные в следующих статьях:
 
@@ -230,9 +230,9 @@ az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes
 [aks-upgrade]: upgrade-cluster.md
 [aks-best-practices-identity]: concepts-identity.md
 [aks-kured]: node-updates-kured.md
-[aks-aad]: azure-ad-integration.md
+[aks-aad]: ./azure-ad-integration-cli.md
 [best-practices-container-image-management]: operator-best-practices-container-image-management.md
 [best-practices-pod-security]: developer-best-practices-pod-security.md
 [pod-security-contexts]: developer-best-practices-pod-security.md#secure-pod-access-to-resources
 [aks-ssh]: ssh.md
-[security-center-aks]: /azure/security-center/azure-kubernetes-service-integration
+[security-center-aks]: ../security-center/azure-kubernetes-service-integration.md

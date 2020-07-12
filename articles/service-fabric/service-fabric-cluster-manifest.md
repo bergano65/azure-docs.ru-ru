@@ -5,11 +5,12 @@ author: dkkapur
 ms.topic: conceptual
 ms.date: 11/12/2018
 ms.author: dekapur
-ms.openlocfilehash: 0f9b625dfbe9c39bea7771dcc5fd58805ce19811
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e8a1fdfb23b6e0aee9b9bdd04f70c554824f4c35
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75458377"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86246577"
 ---
 # <a name="configuration-settings-for-a-standalone-windows-cluster"></a>Параметры конфигурации для изолированного кластера Windows
 В этой статье описаны параметры конфигурации изолированного кластера Azure Service Fabric, которые можно задать в файле *ClusterConfig.json*. Этот файл используется для указания сведений об узлах кластера, конфигурациях безопасности, а также топологии сети в плане доменов сбоя и обновления.  После изменения или добавления параметров конфигурации вы можете [создать изолированный кластер](service-fabric-cluster-creation-for-windows-server.md) или [обновить конфигурацию изолированного кластера](service-fabric-cluster-config-upgrade-windows-server.md).
@@ -88,7 +89,7 @@ ms.locfileid: "75458377"
 }
 ```
 
-Переменная metadata представляет собой описание диагностики кластера и может быть задана в соответствии с вашей конфигурацией. Эти переменные помогают собирать журналы трассировки событий Windows, аварийные дампы и данные счетчиков производительности. Дополнительные сведения о журналах трассировки событий Windows см. в статье [Tracelog](https://msdn.microsoft.com/library/windows/hardware/ff552994.aspx) и [Трассировка событий Windows](https://msdn.microsoft.com/library/ms751538.aspx). Все журналы, в том числе [аварийные дампы](https://blogs.technet.microsoft.com/askperf/2008/01/08/understanding-crash-dump-files/) и данные [счетчиков производительности](https://msdn.microsoft.com/library/windows/desktop/aa373083.aspx), можно перенаправить в папку connectionString на вашем компьютере. Службу хранилища Azure можно также использовать для хранения данных диагностики. См. следующий образец фрагмента кода:
+Переменная metadata представляет собой описание диагностики кластера и может быть задана в соответствии с вашей конфигурацией. Эти переменные помогают собирать журналы трассировки событий Windows, аварийные дампы и данные счетчиков производительности. Дополнительные сведения о журналах трассировки событий Windows см. в статье [Tracelog](/windows-hardware/drivers/devtest/tracelog) и [Трассировка событий Windows](/dotnet/framework/wcf/samples/etw-tracing). Все журналы, в том числе [аварийные дампы](https://techcommunity.microsoft.com/t5/ask-the-performance-team/bg-p/AskPerf) и данные [счетчиков производительности](/windows/win32/perfctrs/performance-counters-portal), можно перенаправить в папку connectionString на вашем компьютере. Службу хранилища Azure можно также использовать для хранения данных диагностики. См. следующий образец фрагмента кода:
 
 ```json
 "diagnosticsStore": {
@@ -192,15 +193,14 @@ name — понятное имя этого конкретного типа уз
     ]
 }
 ```
-Все доступные надстройки можно просмотреть в [справочнике по Service Fabric REST API](https://docs.microsoft.com/rest/api/servicefabric/sfrp-model-addonfeatures).
+Все доступные надстройки можно просмотреть в [справочнике по Service Fabric REST API](/rest/api/servicefabric/sfrp-model-addonfeatures).
 
 ### <a name="container-support"></a>Поддержка контейнеров
 Чтобы включить в изолированных кластерах поддержку контейнеров для контейнеров Windows Server и Hyper-V, необходимо включить компонент надстройки DnsService.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После создания полной *ClusterConfig.js* файла, настроенного в соответствии с настройками автономного кластера, можно развернуть кластер. Следуйте инструкциям в статье [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md), 
 
 Если у вас развернут изолированный кластер, вы также можете [обновить его конфигурацию](service-fabric-cluster-config-upgrade-windows-server.md). 
 
 Узнайте, как [визуализировать кластер с помощью Service Fabric Explorer](service-fabric-visualizing-your-cluster.md).
-

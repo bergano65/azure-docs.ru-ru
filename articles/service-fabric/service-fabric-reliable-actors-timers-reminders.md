@@ -3,11 +3,12 @@ title: Reliable Actors таймеры и напоминания
 description: Общие сведения о таймерах и напоминаниях для Service Fabric Reliable Actors, включая рекомендации по их использованию.
 ms.topic: conceptual
 ms.date: 11/02/2017
-ms.openlocfilehash: 67dc5d9706c2176b2fe70d2540be00d0af79fd80
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a464fda3f8b0f293efd36cf0a064156bd7795d44
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82996357"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86245954"
 ---
 # <a name="actor-timers-and-reminders"></a>Таймеры и напоминания субъекта
 Субъекты могут планировать для себя периодические операции, регистрируя таймеры или напоминания. В этой статье показано, как использовать таймеры и напоминания, а также объясняются различия между ними.
@@ -129,7 +130,7 @@ public class VisualObjectActorImpl extends FabricActor implements VisualObjectAc
 > [!NOTE]
 > Надежность напоминаний связана с гарантиями надежности состояния, предоставляемыми поставщиком состояний субъекта. Это означает, что для субъектов, сохраняемость состояния которых имеет значение *None*, напоминания не будут срабатывать после отработки отказа.
 
-Чтобы зарегистрировать напоминание, субъект вызывает [`RegisterReminderAsync`](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.actors.runtime.actorbase.registerreminderasync?view=azure-dotnet#remarks) метод, предоставленный в базовом классе, как показано в следующем примере:
+Чтобы зарегистрировать напоминание, субъект вызывает [`RegisterReminderAsync`](/dotnet/api/microsoft.servicefabric.actors.runtime.actorbase.registerreminderasync?view=azure-dotnet#remarks) метод, предоставленный в базовом классе, как показано в следующем примере:
 
 ```csharp
 protected override async Task OnActivateAsync()
@@ -220,7 +221,7 @@ CompletableFuture reminderUnregistration = unregisterReminderAsync(reminder);
 
 Как показано выше, метод `UnregisterReminderAsync`(C#) или `unregisterReminderAsync`(Java) принимает интерфейс `IActorReminder`(C#) или `ActorReminder`(Java) Базовый класс субъекта поддерживает метод `GetReminder`(C#) или `getReminder`(Java), с помощью которого можно получить интерфейс `IActorReminder`(C#) или `ActorReminder`(Java), передав имя напоминания. Это удобно, так как субъекту не требуется сохранять интерфейс `IActorReminder`(C#) или `ActorReminder`(Java), возвращенный вызовом метода `RegisterReminder`(C#) или `registerReminder`(Java).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 Ознакомьтесь с событиями Reliable Actors и повторным входом:
 * [События субъекта](service-fabric-reliable-actors-events.md)
 * [Повторный вход субъекта](service-fabric-reliable-actors-reentrancy.md)

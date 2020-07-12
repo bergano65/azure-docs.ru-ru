@@ -5,11 +5,12 @@ author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: 0e5ba1a311bd0480c56ee40edf01fc13ec01664a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 57efca87aefad346fda175b073409868d21564ae
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76905915"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86245520"
 ---
 # <a name="sfctl-mesh-volume"></a>sfctl mesh volume
 Получение и удаление ресурсов тома.
@@ -18,7 +19,7 @@ ms.locfileid: "76905915"
 
 |Команда|Описание|
 | --- | --- |
-| удалить | Удаляет ресурс тома. |
+| delete | Удаляет ресурс тома. |
 | list | Выводит список всех ресурсов тома. |
 | show | Предоставляет ресурс тома с заданным именем. |
 
@@ -82,4 +83,4 @@ ms.locfileid: "76905915"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) Service Fabric CLI.
-- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
+- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](./scripts/sfctl-upgrade-application.md).

@@ -6,11 +6,12 @@ author: lachie83
 ms.topic: article
 ms.date: 08/06/2019
 ms.author: laevenso
-ms.openlocfilehash: 041767474fbc56ee7a53bcbd54f27873d17dab77
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 216705ef4ff7c235179c1f1be38a993ecd2fe782
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85413643"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86244418"
 ---
 # <a name="http-application-routing"></a>Маршрутизация приложений HTTP
 
@@ -19,7 +20,7 @@ ms.locfileid: "85413643"
 При включении этой надстройки в подписке создается зона DNS. Дополнительные сведения о стоимости DNS см. [на этой странице][dns-pricing].
 
 > [!CAUTION]
-> Надстройка маршрутизации приложения HTTP предназначена для быстрого создания входного контроллера и доступа к вашим приложениям. Мы не рекомендуем ее использовать для работы. Дополнительные сведения о готовых к развертыванию приложений, включающих несколько реплик и поддержку TLS, см. раздел [Создание входного контроллера HTTPS](https://docs.microsoft.com/azure/aks/ingress-tls).
+> Надстройка маршрутизации приложения HTTP предназначена для быстрого создания входного контроллера и доступа к вашим приложениям. Мы не рекомендуем ее использовать для работы. Дополнительные сведения о готовых к развертыванию приложений, включающих несколько реплик и поддержку TLS, см. раздел [Создание входного контроллера HTTPS](./ingress-tls.md).
 
 ## <a name="http-routing-solution-overview"></a>Обзор решения маршрутизации HTTP-трафика
 
@@ -299,7 +300,7 @@ service "party-clippy" deleted
 ingress "party-clippy" deleted
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об установке контроллера защищенного входящего HTTPS-трафика в AKS см. в статье [Входящий трафик HTTPS в Службе Azure Kubernetes (AKS)][ingress-https].
 

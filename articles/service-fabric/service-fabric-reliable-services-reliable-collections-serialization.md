@@ -3,11 +3,12 @@ title: Сериализация объектов надежной коллекц
 description: Сведения о сериализации объектов надежных коллекций Azure Service Fabric, включая стратегию по умолчанию и определение пользовательской сериализации.
 ms.topic: conceptual
 ms.date: 5/8/2017
-ms.openlocfilehash: 666e1bb45a9c75ee143f15a0d871d6ae1408eca9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f7a0dc56c181ddd6a98ab0e263180c222368dafb
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75639553"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86245999"
 ---
 # <a name="reliable-collection-object-serialization-in-azure-service-fabric"></a>Сериализация объектов надежной коллекции в Azure Service Fabric
 Надежные коллекции реплицируют и сохраняют свои элементы, чтобы обеспечить надежность их работы в случае сбоев машин и отключения электроэнергии.
@@ -18,7 +19,7 @@ ms.locfileid: "75639553"
 
 ## <a name="built-in-serializers"></a>Встроенные сериализаторы
 
-Диспетчер надежных состояний включает встроенный сериализатор для некоторых распространенных типов, поэтому они по умолчанию могут эффективно сериализоваться. Для других типов диспетчер надежных состояний использует [DataContractSerializer](https://msdn.microsoft.com/library/system.runtime.serialization.datacontractserializer(v=vs.110).aspx).
+Диспетчер надежных состояний включает встроенный сериализатор для некоторых распространенных типов, поэтому они по умолчанию могут эффективно сериализоваться. Для других типов диспетчер надежных состояний использует [DataContractSerializer](/dotnet/api/system.runtime.serialization.datacontractserializer?view=netcore-3.1).
 Встроенные сериализаторы эффективнее, так как их типы не могут измениться и им не нужно включать сведения о типе, например его имя.
 
 Диспетчер надежных состояний имеет встроенный сериализатор для следующих типов: 
@@ -28,11 +29,11 @@ ms.locfileid: "75639553"
 - sbyte
 - byte[]
 - char
-- string
+- строка
 - Decimal
 - double
 - FLOAT
-- INT
+- int
 - uint
 - long
 - ulong
@@ -43,7 +44,7 @@ ms.locfileid: "75639553"
 
 Настраиваемые сериализаторы обычно используются для повышения производительности или шифрования данных при передаче по сети и хранении на диске. Помимо прочего, настраиваемые сериализаторы часто являются более эффективными, чем универсальные сериализаторы, так как вам не нужно сериализовать информацию о типе. 
 
-[IReliableStateManager.TryAddStateSerializer\<T>](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.data.ireliablestatemanager.tryaddstateserializer) используется для регистрации настраиваемого сериализатора для данного типа T. Эта регистрация должна произойти при построении StatefulServiceBase, чтобы гарантировать, что до начала восстановления все надежные коллекции будут иметь доступ к соответствующим сериализаторам для чтения сохраненных данных.
+[IReliableStateManager.TryAddStateSerializer\<T>](/dotnet/api/microsoft.servicefabric.data.ireliablestatemanager.tryaddstateserializer) используется для регистрации настраиваемого сериализатора для данного типа T. Эта регистрация должна произойти при построении StatefulServiceBase, чтобы гарантировать, что до начала восстановления все надежные коллекции будут иметь доступ к соответствующим сериализаторам для чтения сохраненных данных.
 
 ```csharp
 public StatefulBackendService(StatefulServiceContext context)
@@ -61,7 +62,7 @@ public StatefulBackendService(StatefulServiceContext context)
 
 ### <a name="how-to-implement-a-custom-serializer"></a>Реализация настраиваемого сериализатора
 
-Настраиваемый сериализатор должен реализовать интерфейс [IStateSerializer\<T>](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.data.istateserializer-1).
+Настраиваемый сериализатор должен реализовать интерфейс [IStateSerializer\<T>](/dotnet/api/microsoft.servicefabric.data.istateserializer-1).
 
 > [!NOTE]
 > IStateSerializer\<T> включает перегрузку Write и Read, которая принимает дополнительное базовое значение, называемое T. Этот API предназначен для разностной сериализации. Сейчас функция разностной сериализации не предоставляется. Следовательно эти две перегрузки не вызываются, пока не будет предоставлена и разрешена разностная сериализация.
@@ -130,15 +131,15 @@ public class OrderKeySerializer : IStateSerializer<OrderKey>
 Однако при использовании настраиваемого сериализатора или DataContractSerializer данные должны быть бесконечно прямо или обратно совместимы.
 Иными словами, каждая версия сериализатора должна иметь возможность сериализовать и десериализовать тип любой версии.
 
-Пользователи контракта данных должны следовать строго заданным правилам управления версиями при добавлении, удалении или изменении полей. Кроме того, контракт данных обладает поддержкой обработки неизвестных полей, участвующих в процессе сериализации и десериализации, а также наследования классов. Дополнительные сведения см. в разделе [Использование контракта данных](https://msdn.microsoft.com/library/ms733127.aspx).
+Пользователи контракта данных должны следовать строго заданным правилам управления версиями при добавлении, удалении или изменении полей. Кроме того, контракт данных обладает поддержкой обработки неизвестных полей, участвующих в процессе сериализации и десериализации, а также наследования классов. Дополнительные сведения см. в разделе [Использование контракта данных](/dotnet/framework/wcf/feature-details/using-data-contracts).
 
 Пользователи настраиваемого сериализатора должны придерживаться рекомендаций в отношении сериализатора, который они используют, чтобы обеспечить его прямую и обратную совместимость.
 Распространенный способ обеспечения поддержки всех версий — добавление сведений о размере в начале и добавление только необязательных свойств.
 Таким образом, каждая версия считает только то, что сможет, и перепрыгнет через оставшуюся часть потока.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
   * [Сериализация и обновление](service-fabric-application-upgrade-data-serialization.md)
-  * [Справочник разработчика по надежным коллекциям](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)
+  * [Справочник разработчика по надежным коллекциям](/dotnet/api/microsoft.servicefabric.data.collections?view=azure-dotnet#microsoft_servicefabric_data_collections)
   * [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md) поможет вам выполнить поэтапное обновление приложения с помощью Visual Studio.
   * [Обновление приложения с помощью PowerShell](service-fabric-application-upgrade-tutorial-powershell.md) поможет вам выполнить обновление приложения с помощью PowerShell.
   * Управление обновлениями приложения осуществляется с помощью [параметров обновления](service-fabric-application-upgrade-parameters.md).

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 58f05b2f9f15166e161b31578b47cf06afcb13a0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 248156c403e7e74665ec1c856588d8a2ca76e208
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85362583"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86244571"
 ---
 # <a name="customize-feed-for-windows-virtual-desktop-users"></a>Настройка канала для пользователей Виртуального рабочего стола Windows
 
@@ -72,9 +72,9 @@ Set-RdsRemoteDesktop -TenantName <tenantname> -HostPoolName <hostpoolname> -AppG
 > [!div class="mx-imgBorder"]
 > ![Снимок экрана командлета PowerShell Set-Рдсремотеапп с именем и новым FriendlyName.](../media/set-rdsremotedesktop.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы настроили веб-канал для пользователей, вы можете войти в клиент виртуальных рабочих столов Windows, чтобы протестировать его. Для этого перейдите к инструкциям по подключению к виртуальному рабочему столу Windows.
 
- * [Подключение из Windows 10 или Windows 7](../connect-windows-7-and-10.md)
+ * [Подключение из Windows 10 или Windows 7](connect-windows-7-10-2019.md)
  * [Подключение из веб-браузера](connect-web-2019.md)

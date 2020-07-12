@@ -8,12 +8,12 @@ author: mgoedtel
 ms.author: magoedte
 ms.date: 07/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 38c487928f15e953a1c660c5007398bc5c2b3f7d
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: ed95b902c2c0768f50a0c6dadbfc617292932c2b
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206619"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86242956"
 ---
 # <a name="overview-of-azure-arc-for-servers-agent"></a>Установка агента Azure Arc для серверов
 
@@ -62,7 +62,7 @@ ms.locfileid: "86206619"
 
     |Папка |Описание |
     |-------|------------|
-    |C:\Program Files\AzureConnectedMachineAgent |Путь установки по умолчанию, содержащий вспомогательные файлы агента.|
+    |%програмфилес%\азуреконнектедмачинеажент |Путь установки по умолчанию, содержащий вспомогательные файлы агента.|
     |%ProgramData%\AzureConnectedMachineAgent |Содержит файлы конфигурации агента.|
     |%ProgramData%\AzureConnectedMachineAgent\Tokens |Содержит полученные маркеры.|
     |%ProgramData%\AzureConnectedMachineAgent\Config |Содержит файл конфигурации агента `agentconfig.json` с записями сведений о регистрации в службе.|
@@ -99,7 +99,7 @@ ms.locfileid: "86206619"
 
 * Во время удаления агента указанные ниже артефакты не удаляются.
 
-    * C:\Program Files\AzureConnectedMachineAgent\Logs
+    * %програмфилес%\азуреконнектедмачинеажент\логс
     * %ProgramData%\AzureConnectedMachineAgent и подкаталоги
     * %ProgramData%\GuestConfig
 
@@ -170,9 +170,9 @@ ms.locfileid: "86206619"
 
 ### <a name="required-permissions"></a>Необходимые разрешения
 
-- Чтобы подключить компьютеры, необходимо быть членом роли **Подключение компьютеров, подключенных к Azure**.
+* Чтобы подключить компьютеры, необходимо быть членом роли **Подключение компьютеров, подключенных к Azure**.
 
-- Для чтения, изменения, повторного включения и удаления компьютера необходимо быть членом роли **Администратор ресурсов компьютеров, подключенных к Azure**. 
+* Для чтения, изменения, повторного включения и удаления компьютера необходимо быть членом роли **Администратор ресурсов компьютеров, подключенных к Azure**. 
 
 ### <a name="azure-subscription-and-service-limits"></a>Ограничения подписки и служб Azure
 
@@ -195,8 +195,8 @@ ms.locfileid: "86206619"
 
 Теги служб:
 
-- AzureActiveDirectory
-- AzureTrafficManager.
+* AzureActiveDirectory
+* AzureTrafficManager.
 
 URL-адреса:
 
@@ -218,8 +218,8 @@ URL-адреса в предыдущей таблице необходимы в 
 
 Использование службы Azure Arc для серверов (предварительная версия) зависит от следующих поставщиков ресурсов Azure в подписке:
 
-- **Microsoft.HybridCompute**
-- **Microsoft.GuestConfiguration**
+* **Microsoft.HybridCompute**
+* **Microsoft.GuestConfiguration**
 
 Если поставщики не зарегистрированы, их можно зарегистрировать с помощью таких команд:
 

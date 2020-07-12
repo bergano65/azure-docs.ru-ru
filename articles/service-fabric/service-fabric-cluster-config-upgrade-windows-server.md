@@ -5,12 +5,12 @@ author: dkkapur
 ms.topic: conceptual
 ms.date: 11/09/2018
 ms.author: dekapur
-ms.openlocfilehash: 8d0279cc323f7eee87feb2a596a4c2df0b4667e1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4817c7b76ccd127d5f310a9d2abcecdb094944dc
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82790853"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86246611"
 ---
 # <a name="upgrade-the-configuration-of-a-standalone-cluster"></a>Обновление конфигурации изолированного кластера 
 
@@ -53,7 +53,7 @@ TestConfiguration.ps1 -ClusterConfigFilePath <Path to the new Configuration File
 Невозможно обновить некоторые конфигурации, например конечные точки, имя кластера, IP-адрес узла и т. д. Новый JSON конфигурации кластера проверяется по старому и выдает ошибки в окне PowerShell при возникновении проблемы.
 
 ## <a name="upgrade-the-cluster-configuration"></a>Обновление конфигурации кластера
-Чтобы обновить конфигурацию кластера, выполните команду [Start-ServiceFabricClusterConfigurationUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/start-servicefabricclusterconfigurationupgrade). Обновление конфигурации обрабатывает домен обновления.
+Чтобы обновить конфигурацию кластера, выполните команду [Start-ServiceFabricClusterConfigurationUpgrade](/powershell/module/servicefabric/start-servicefabricclusterconfigurationupgrade). Обновление конфигурации обрабатывает домен обновления.
 
 ```powershell
 Start-ServiceFabricClusterConfigurationUpgrade -ClusterConfigPath <Path to Configuration File>

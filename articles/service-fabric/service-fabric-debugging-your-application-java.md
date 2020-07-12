@@ -5,11 +5,12 @@ author: suhuruli
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: suhuruli
-ms.openlocfilehash: 15448a9bd8998a99e8fce578b05130694ecd5fd0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6f2361bf76bd4f9d297fbe541b950840f13966cc
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75614491"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86246407"
 ---
 # <a name="debug-your-java-service-fabric-application-using-eclipse"></a>Отладка приложения Java Service Fabric с помощью Eclipse
 > [!div class="op_single_selector"]
@@ -38,7 +39,7 @@ ms.locfileid: "75614491"
 
 При сбое приложения можно также включить функцию coredumps. Выполните `ulimit -c` в оболочке. Если возвращается 0, то функция coredumps не включена. Чтобы функция coredumps работала без ограничений, выполните следующую команду: `ulimit -c unlimited`. Состояние функции можно проверить с помощью команды `ulimit -a`.  Если требуется обновить путь создания coredump, выполните следующую команду: `echo '/tmp/core_%e.%p' | sudo tee /proc/sys/kernel/core_pattern`. 
 
-### <a name="next-steps"></a>Дальнейшие шаги
+### <a name="next-steps"></a>Дальнейшие действия
 
-* [Сбор журналов с помощью системы диагностики Azure](service-fabric-diagnostics-how-to-setup-lad.md).
+* [Сбор журналов с помощью системы диагностики Azure](./service-fabric-diagnostics-event-aggregation-lad.md).
 * [Локальное отслеживание и диагностика служб](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally-linux.md).

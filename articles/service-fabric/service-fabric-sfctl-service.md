@@ -5,11 +5,12 @@ author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: 696de713129ca71dd7f2451501a7cc9eca0ee9b9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 426220f38e6ddfaaf8b24bf4f7d34473d881ae56
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76906238"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86245608"
 ---
 # <a name="sfctl-service"></a>sfctl service
 Создание и удаление служб, типов служб и пакетов службы, а также управление ими.
@@ -21,10 +22,10 @@ ms.locfileid: "76906238"
 | app-name | Возвращает имя приложения Service Fabric для службы. |
 | code-package-list | Возвращает список пакетов кода, развернутых на узле Service Fabric. |
 | create | Создает указанную службу Service Fabric. |
-| удалить | Удаляет существующую службу Service Fabric. |
+| delete | Удаляет существующую службу Service Fabric. |
 | deployed-type | Возвращает сведения об указанном типе службы приложения, развернутого на узле в кластере Service Fabric. |
 | deployed-type-list | Возвращает список, содержащий сведения о типах служб из приложений, развернутых на узле в кластере Service Fabric. |
-| description | Возвращает описание существующей службы Service Fabric. |
+| описание | Возвращает описание существующей службы Service Fabric. |
 | get-container-logs | Возвращает журналы контейнера, развернутого на узле Service Fabric. |
 | health | Возвращает состояние работоспособности указанной службы Service Fabric. |
 | сведения | Возвращает сведения об указанной службе, относящейся к приложению Service Fabric. |
@@ -587,4 +588,4 @@ ms.locfileid: "76906238"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) Service Fabric CLI.
-- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
+- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](./scripts/sfctl-upgrade-application.md).

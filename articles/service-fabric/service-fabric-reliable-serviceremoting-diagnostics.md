@@ -5,14 +5,15 @@ author: suchiagicha
 ms.topic: conceptual
 ms.date: 06/29/2017
 ms.author: pepogors
-ms.openlocfilehash: 31095a619fc4d756fa4ef9c29691d1d511d59ece
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 89a7a545dd334f892ee27b97995de40d7b6416dc
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84692569"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86245931"
 ---
 # <a name="diagnostics-and-performance-monitoring-for-reliable-service-remoting"></a>Диагностика и мониторинг производительности в модели Reliable Service Remoting
-Среда выполнения Reliable ServiceRemoting генерирует [счетчики производительности](https://msdn.microsoft.com/library/system.diagnostics.performancecounter.aspx). Они содержат полезную информацию о работоспособности ServiceRemoting и помогают устранять неполадки и контролировать производительность.
+Среда выполнения Reliable ServiceRemoting генерирует [счетчики производительности](/dotnet/api/system.diagnostics.performancecounter?view=dotnet-plat-ext-3.1). Они содержат полезную информацию о работоспособности ServiceRemoting и помогают устранять неполадки и контролировать производительность.
 
 
 ## <a name="performance-counters"></a>Счетчики производительности
@@ -25,7 +26,7 @@ ms.locfileid: "84692569"
 
 В каждой категории предусмотрен как минимум один счетчик.
 
-Для сбора и просмотра данных счетчиков производительности можно использовать [системный монитор Windows](https://technet.microsoft.com/library/cc749249.aspx) , доступный по умолчанию в операционной системе Windows. [Диагностика Azure](../cloud-services/cloud-services-dotnet-diagnostics.md) , в свою очередь, позволяет не только собирать данные счетчиков производительности, но и загружать их в таблицы Azure.
+Для сбора и просмотра данных счетчиков производительности можно использовать [системный монитор Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249(v=ws.11)) , доступный по умолчанию в операционной системе Windows. [Диагностика Azure](../cloud-services/cloud-services-dotnet-diagnostics.md) , в свою очередь, позволяет не только собирать данные счетчиков производительности, но и загружать их в таблицы Azure.
 
 ### <a name="performance-counter-instance-names"></a>Имена экземпляров счетчиков производительности
 В кластере, содержащем большое количество служб или секций ServiceRemoting, находится большое количество экземпляров счетчиков производительности. Имя экземпляра счетчика производительности помогает определить конкретную секцию и метод службы (если применимо), с которыми связан этот экземпляр.
@@ -35,7 +36,7 @@ ms.locfileid: "84692569"
 
 `ServiceFabricPartitionID_ServiceReplicaOrInstanceId_ServiceRuntimeInternalID`
 
-*ServiceFabricPartitionID* — это строковое представление идентификатора секции Service Fabric, с которым связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление создается с помощью [`Guid.ToString`](https://msdn.microsoft.com/library/97af8hh4.aspx) метода с описателем формата "D".
+*ServiceFabricPartitionID* — это строковое представление идентификатора секции Service Fabric, с которым связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление создается с помощью [`Guid.ToString`](/dotnet/api/system.guid.tostring?view=netcore-3.1#System_Guid_ToString_System_String_) метода с описателем формата "D".
 
 *ServiceReplicaOrInstanceId* — это строковое представление идентификатора реплики или экземпляра Service Fabric, c которой связан экземпляр счетчика производительности.
 
@@ -56,7 +57,7 @@ ms.locfileid: "84692569"
 
 *ServiceRuntimeMethodId* — это строковое представление 32-разрядного целого числа. Оно создается средой выполнения Fabric Service для внутреннего использования. В имя экземпляра счетчика производительности оно включается для того, чтобы обеспечить его уникальность и избежать конфликтов с именами других экземпляров счетчиков производительности. Пользователям не следует пытаться интерпретировать эту часть имени экземпляра счетчика производительности.
 
-*ServiceFabricPartitionID* — это строковое представление идентификатора секции Service Fabric, с которым связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление создается с помощью [`Guid.ToString`](https://msdn.microsoft.com/library/97af8hh4.aspx) метода с описателем формата "D".
+*ServiceFabricPartitionID* — это строковое представление идентификатора секции Service Fabric, с которым связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление создается с помощью [`Guid.ToString`](/dotnet/api/system.guid.tostring?view=netcore-3.1#System_Guid_ToString_System_String_) метода с описателем формата "D".
 
 *ServiceReplicaOrInstanceId* — это строковое представление идентификатора реплики или экземпляра Service Fabric, c которой связан экземпляр счетчика производительности.
 
@@ -73,7 +74,7 @@ ms.locfileid: "84692569"
 
 Среда выполнения Reliable Service публикует следующие счетчики производительности, связанные с выполнением методов службы.
 
-| Имя категории | Имя счетчика | Описание: |
+| Имя категории | Имя счетчика | Описание |
 | --- | --- | --- |
 | Service Fabric Service Method |Вызовов в секунду |Количество вызовов метода службы в секунду |
 | Service Fabric Service Method |Среднее время вызова (мс) |Время, затраченное на выполнение метода службы, в миллисекундах |
@@ -82,13 +83,13 @@ ms.locfileid: "84692569"
 ### <a name="service-request-processing-performance-counters"></a>Счетчики производительности обработки запросов службы
 Когда клиент вызывает метод через объект прокси службы, это приводит к отправке по сети сообщения запроса в Remoting Service. Служба обрабатывает сообщение запроса и отправляет ответ обратно клиенту. Среда выполнения Reliable ServiceRemoting публикует следующие счетчики производительности, связанные с обработкой запросов службы.
 
-| Имя категории | Имя счетчика | Описание: |
+| Имя категории | Имя счетчика | Описание |
 | --- | --- | --- |
 | Service Fabric Service |Число невыполненных запросов |Число запросов, обрабатываемых в службе |
 | Service Fabric Service |Среднее время запроса (мс) |Время обработки запроса службой (мс) |
 | Service Fabric Service |Среднее время десериализации запроса (мс) |Время десериализации сообщения запроса службы при получении его службой (мс) |
 | Service Fabric Service |Среднее время сериализации ответа (мс) |Время сериализации ответного сообщения службы в службе до отправки ответа клиенту (мс) |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Образец кода](https://azure.microsoft.com/resources/samples/?service=service-fabric&sort=0)
-* [Поставщики EventSource в PerfView](https://blogs.msdn.microsoft.com/vancem/2012/07/09/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource/)
+* [Поставщики EventSource в PerfView](/archive/blogs/vancem/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource)

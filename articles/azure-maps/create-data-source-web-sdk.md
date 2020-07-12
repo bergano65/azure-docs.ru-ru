@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: codepen
-ms.openlocfilehash: 7c23e659463364c5e1a497ead138abb4c696627a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d0334e03f2d4f34913f2f96610868b5ffe169013
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85207504"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86242565"
 ---
 # <a name="create-a-data-source"></a>Создание источника данных
 
@@ -71,16 +71,69 @@ dataSource.setShapes(geoJsonData);
 
 **Источник плитки вектора**
 
-Источник векторной плитки описывает, как получить доступ к слою векторной плитки. Используйте класс [вектортилесаурце](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.vectortilesource) для создания экземпляра источника плитки вектора. Векторные мозаичные слои похожи на мозаичные слои, но они не одинаковы. Мозаичный слой — это растровое изображение. Векторные мозаичные слои — это сжатый файл в формате ПБФ. Этот сжатый файл содержит данные о векторной карте и один или несколько слоев. Файл может быть визуализирован и применен на стороне клиента в зависимости от стиля каждого слоя. Данные в векторной плитке содержат географические функции в виде точек, линий и многоугольников. Существует несколько преимуществ использования векторных слоев, а не растровых слоев мозаики.
+Источник векторной плитки описывает, как получить доступ к слою векторной плитки. Используйте класс [вектортилесаурце](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.vectortilesource) для создания экземпляра источника плитки вектора. Векторные мозаичные слои похожи на мозаичные слои, но они не одинаковы. Мозаичный слой — это растровое изображение. Векторные мозаичные слои — это сжатый файл в формате **ПБФ** . Этот сжатый файл содержит данные о векторной карте и один или несколько слоев. Файл может быть визуализирован и применен на стороне клиента в зависимости от стиля каждого слоя. Данные в векторной плитке содержат географические функции в виде точек, линий и многоугольников. Существует несколько преимуществ использования векторных слоев, а не растровых слоев мозаики.
 
  - Размер файла плитки вектора обычно намного меньше, чем эквивалентная растровая плитка. Поэтому используется меньшая пропускная способность. Это означает более низкую задержку, более быструю карту и удобство работы пользователей.
  - Так как векторные плитки отображаются на клиенте, они адаптируются к разрешению устройства, на котором они отображаются. В результате отображаемые карты будут более четко определены с помощью меток Crystal Clear.
  - Изменение стиля данных в картах вектора не требует повторной загрузки данных, так как на клиенте можно применить новый стиль. В отличие от этого, изменение стиля растрового слоя, как правило, требует загрузки плиток с сервера, а затем применения нового стиля.
  - Поскольку данные доставляются в виде векторной формы, для подготовки данных требуется меньше обработки на стороне сервера. В результате новые данные можно сделать доступными быстрее.
 
-Все слои, использующие Векторный источник, должны указывать `sourceLayer` значение.
+Azure Maps соответствует [спецификации плитки вектора мапбокс](https://github.com/mapbox/vector-tile-spec)— открытым стандартом. Azure Maps предоставляет следующие службы векторных плиток в составе платформы:
 
-Azure Maps соответствует [спецификации плитки вектора мапбокс](https://github.com/mapbox/vector-tile-spec)— открытым стандартом.
+- [documentation](https://docs.microsoft.com/rest/api/maps/renderv2/getmaptilepreview)  |  [Сведения о формате данных](https://developer.tomtom.com/maps-api/maps-api-documentation-vector/tile) документации для дорожных плиток
+- [documentation](https://docs.microsoft.com/rest/api/maps/traffic/gettrafficincidenttile)  |  [Сведения о формате данных](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-incidents/vector-incident-tiles) в документации по инцидентам трафика
+- [documentation](https://docs.microsoft.com/rest/api/maps/traffic/gettrafficflowtile)  |  [Сведения о формате данных](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-flow/vector-flow-tiles) документации потока трафика
+- Создатель Azure Maps также позволяет создавать пользовательские векторные плитки и получать к ним доступ через элемент [Get плитка для прорисовки v2](https://docs.microsoft.com/rest/api/maps/renderv2/getmaptilepreview) .
+
+> [!TIP]
+> При использовании векторных или растровых изображений из Azure Maps службы отрисовки с веб-пакетом SDK можно заменить `atlas.microsoft.com` заполнительом `{azMapsDomain}` . Этот заполнитель будет заменен тем же доменом, который используется картой, и будет автоматически добавлять те же сведения проверки подлинности. Это значительно упрощает проверку подлинности с помощью службы Render при использовании Azure Active Directory проверки подлинности.
+
+Чтобы отобразить данные из источника векторной плитки на карте, подключите источник к одному из слоев подготовки данных. Все слои, использующие Векторный источник, должны указывать `sourceLayer` значение в параметрах. Фсе следующий код загружает службу плитки векторного потока трафика Azure Maps в качестве источника векторной плитки, а затем отображает ее на карте с помощью слоя линий. Этот источник векторной плитки содержит один набор данных на исходном слое с именем "поток трафика". Данные строки в этом наборе данных имеют свойство с именем `traffic_level` , которое используется в этом коде для выбора цвета и масштабирования размера строк.
+
+```javascript
+//Create a vector tile source and add it to the map.
+var datasource = new atlas.source.VectorTileSource(null, {
+    tiles: ['https://{azMapsDomain}/traffic/flow/tile/pbf?api-version=1.0&style=relative&zoom={z}&x={x}&y={y}'],
+    maxZoom: 22
+});
+map.sources.add(datasource);
+
+//Create a layer for traffic flow lines.
+var flowLayer = new atlas.layer.LineLayer(datasource, null, {
+    //The name of the data layer within the data source to pass into this rendering layer.
+    sourceLayer: 'Traffic flow',
+
+    //Color the roads based on the traffic_level property. 
+    strokeColor: [
+        'interpolate',
+        ['linear'],
+        ['get', 'traffic_level'],
+        0, 'red',
+        0.33, 'orange',
+        0.66, 'green'
+    ],
+
+    //Scale the width of roads based on the traffic_level property. 
+    strokeWidth: [
+        'interpolate',
+        ['linear'],
+        ['get', 'traffic_level'],
+        0, 6,
+        1, 1
+    ]
+});
+
+//Add the traffic flow layer below the labels to make the map clearer.
+map.layers.add(flowLayer, 'labels');
+```
+
+<br/>
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="Слой линий плитки вектора" src="https://codepen.io/azuremaps/embed/wvMXJYJ?height=500&theme-id=default&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+См. <a href='https://codepen.io/azuremaps/pen/wvMXJYJ'>слой линии плитки вектора</a> пера, Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+<br/>
 
 ## <a name="connecting-a-data-source-to-a-layer"></a>Подключение источника данных к слою
 

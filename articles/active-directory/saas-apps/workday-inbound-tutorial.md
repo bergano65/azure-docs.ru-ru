@@ -15,11 +15,12 @@ ms.workload: identity
 ms.date: 05/26/2020
 ms.author: chmutali
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6415214e5d6b71d174e5117c1cf1e41af381334c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8bbd461072a137bf32874805e5c6171d1102ef0c
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84013598"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86245353"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство по Настройка Workday для автоматической подготовки пользователей
 
@@ -262,7 +263,7 @@ ms.locfileid: "84013598"
 > Если вы хотите ограничить агент подготовки только созданием и чтением пользователей из определенного подразделения для целей тестирования, мы рекомендуем делегировать элемент управления на соответствующем уровне подразделения во время выполнения теста.
 
 4. На экране приветствия нажмите кнопку **Далее** . 
-5. На экране **Выбор пользователей или групп** добавьте пользователя домена, созданного на шаге 2. Нажмите кнопку **Далее**.
+5. На экране **Выбор пользователей или групп** добавьте пользователя домена, созданного на шаге 2. Щелкните **Далее**.
    >[!div class="mx-imgBorder"]
    >![Добавить экран](./media/workday-inbound-tutorial/delegation-wizard-01.png "Добавить экран")
 
@@ -400,7 +401,7 @@ ms.locfileid: "84013598"
 
       > [!NOTE]
      > Если в URL-адресе не указаны сведения о версии, приложение использует Workday Web Services (WWS) v 21.1 и никакие изменения не требуются для выражений API XPATH по умолчанию, поставляемых с приложением. Чтобы использовать определенную версию API WWS, укажите номер версии в URL-адресе <br>
-     > Пример: `https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v34.0` <br>
+     > Например, `https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources/v34.0`. <br>
      > <br> Если вы используете WWS API v 30,0 +, прежде чем включать задание подготовки, обновите **выражения API XPath** в разделе **сопоставление атрибутов — > дополнительные параметры-> изменить список атрибутов для Workday** , обратившись к разделу [Управление конфигурацией](#managing-your-configuration) и [ссылкой на атрибут workday](../app-provisioning/workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30).  
 
    * **Лес Active Directory** — имя домена Active Directory, зарегистрированное в агенте. В раскрывающемся списке выберите целевой домен для подготовки. Как правило, это строка вида: *contoso.com*.
@@ -683,12 +684,7 @@ ms.locfileid: "84013598"
 
 #### <a name="how-do-i-ensure-that-the-provisioning-agent-is-able-to-communicate-with-the-azure-ad-tenant-and-no-firewalls-are-blocking-ports-required-by-the-agent"></a>Как убедиться, что агент подготовки может взаимодействовать с клиентом Azure AD и никакие брандмауэры не блокируют порты, необходимые агенту?
 
-Проверить, что все необходимые порты открыты, также можно с помощью [Средства тестирования портов соединителя](https://aadap-portcheck.connectorporttest.msappproxy.net/) из локальной сети. Большее число зеленых флажков означает большую устойчивость.
-
-Чтобы получить правильные результаты, необходимо:
-
-* Откройте средство в браузере на сервере, где установлен агент подготовки.
-* Убедитесь, что все прокси-серверы или брандмауэры, которые применяются к агенту подготовки, также применяются к этой странице. Для этого в Internet Explorer выберите **Параметры -> Свойства браузера -> Подключения -> Настройка параметров локальной сети**. На этой странице появится флажок "Использовать прокси-сервер для локальной сети". Установите этот флажок и укажите адрес прокси-сервера в поле "Адрес".
+Также можно проверить, открыты ли все [необходимые порты](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application#open-ports) .
 
 #### <a name="can-one-provisioning-agent-be-configured-to-provision-multiple-ad-domains"></a>Можно ли настроить один агент подготовки для подготовки нескольких доменов AD?
 

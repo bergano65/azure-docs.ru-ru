@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 0eca73b5acae715283c05125181e12729ed5a772
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b6b73fef368dc8dec5d8c042cdac1d3cea899450
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80335586"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86242446"
 ---
 # <a name="add-a-symbol-layer-to-a-map-using-azure-maps-android-sdk"></a>Добавление слоя символов в карту с помощью Azure Maps пакет SDK для Android
 
 В этой статье показано, как преобразовать данные точек из источника данных в качестве слоя символов на карте с помощью Azure Maps пакет SDK для Android.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Чтобы полностью выполнить действия, описанные в этой статье, необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) , чтобы загрузить карту.
 
@@ -172,6 +172,8 @@ ms.locfileid: "80335586"
 
 ![Метка на карте Android](./media/how-to-add-symbol-to-android-map/android-map-pin.png)</center>
 
+> [!TIP]
+> По умолчанию слои символов оптимизируют отрисовку символов путем скрытия перекрывающихся символов. При изменении масштаба скрытые символы становятся видимыми. Чтобы отключить эту функцию и вывести все символы в любое время, установите `iconAllowOverlap` параметр в значение `true` .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

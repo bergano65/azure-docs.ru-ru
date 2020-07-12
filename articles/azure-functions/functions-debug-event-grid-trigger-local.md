@@ -2,20 +2,21 @@
 title: Локальная отладка функций Azure в Сетке событий
 description: Узнайте, как локально отлаживать функции Azure, активированные событием в Сетке событий
 author: craigshoemaker
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: cshoe
-ms.openlocfilehash: bfb502e42e41ac530851766db87bcebf3c94c371
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d57b230ceecc8e676eea6a1ab0855761e78f723b
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85340862"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86242752"
 ---
 # <a name="azure-function-event-grid-trigger-local-debugging"></a>Локальная отладка триггера Сетки событий для функций Azure
 
 В этой статье показано, как отладить локальную функцию, которая обрабатывает событие в Сетке событий Azure, вызванное учетной записью хранения. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 - Создайте новое приложение-функцию или используйте существующее.
 - Создайте новую учетную запись хранения или используйте существующую.
@@ -104,7 +105,7 @@ ngrok http -host-header=localhost 7071
 
 Чтобы очистить ресурсы, созданные при изучении этой статьи, удалите контейнер с именем **test** из своей учетной записи хранения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Автоматизация изменения размера передаваемых изображений с помощью сетки событий](../event-grid/resize-images-on-storage-blob-upload-event.md)
 - [Триггер службы "Сетка событий" для Функций Azure](./functions-bindings-event-grid.md)
