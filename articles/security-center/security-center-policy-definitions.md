@@ -6,14 +6,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: conceptual
-ms.date: 06/23/2020
+ms.date: 07/10/2020
 ms.author: memildin
-ms.openlocfilehash: 96399867acfa910b2c24a761708d0b4710594155
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4d88e9677cd070803befb4c13ba023d2674f64e0
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85321181"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86273896"
 ---
 # <a name="azure-security-policies-monitored-by-security-center"></a>Политики безопасности Azure, отслеживаемые центром безопасности
 
@@ -31,7 +31,7 @@ ms.locfileid: "85321181"
 
 [!INCLUDE [azure-policy-samples-policyset-security-center](../../includes/policy/samples/bycat/policysets-security-center.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали об определениях политик безопасности в Azure в центре безопасности. Дополнительные сведения см. в следующих статьях.
 

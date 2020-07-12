@@ -3,11 +3,12 @@ title: Вопросы и ответы о Службе Azure Kubernetes (AKS)
 description: найдите ответы на некоторые распространенные вопросы о Службе Azure Kubernetes (AKS).
 ms.topic: conceptual
 ms.date: 05/14/2020
-ms.openlocfilehash: 136f79df43bcc1730f187980df8726d693390faa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ba4ceaf0d7f9e3b344b2a6efbb84f2145c4a2f65
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84300932"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86275722"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Вопросы и ответы о Службе Azure Kubernetes (AKS)
 
@@ -136,7 +137,7 @@ AKS предоставляет гарантии в рамках соглашен
 
 ## <a name="can-i-movemigrate-my-cluster-between-azure-tenants"></a>Можно ли переносить кластер между клиентами Azure?
 
-С помощью команды `az aks update-credentials` можно перемещать кластер AKS между клиентами Azure. Следуйте инструкциям в статье [Выбор создания или обновления субъекта-службы](https://docs.microsoft.com/azure/aks/update-credentials), а затем [обновите кластер AKS с помощью новых учетных данных](https://docs.microsoft.com/azure/aks/update-credentials#update-aks-cluster-with-new-service-principal-credentials).
+С помощью команды `az aks update-credentials` можно перемещать кластер AKS между клиентами Azure. Следуйте инструкциям в статье [Выбор создания или обновления субъекта-службы](./update-credentials.md), а затем [обновите кластер AKS с помощью новых учетных данных](./update-credentials.md#update-aks-cluster-with-new-service-principal-credentials).
 
 ## <a name="can-i-movemigrate-my-cluster-between-subscriptions"></a>Можно ли переносить кластер между подписками?
 
@@ -145,6 +146,10 @@ AKS предоставляет гарантии в рамках соглашен
 ## <a name="can-i-move-my-aks-clusters-from-the-current-azure-subscription-to-another"></a>Можно ли переместить кластеры AKS из текущей подписки Azure в другую? 
 
 Перемещение кластера AKS и связанных с ним ресурсов между подписками Azure не поддерживается.
+
+## <a name="can-i-move-my-aks-cluster-or-aks-infrastructure-resources-to-other-resource-groups-or-rename-them"></a>Можно ли переместить ресурсы инфраструктуры кластера AKS или AKS в другие группы ресурсов или переименовать их?
+
+Перемещение или Переименование кластера AKS и связанных с ним ресурсов не поддерживается.
 
 ## <a name="why-is-my-cluster-delete-taking-so-long"></a>Почему удаление моего кластера занимает так много времени? 
 
@@ -164,11 +169,11 @@ AKS предоставляет гарантии в рамках соглашен
 
 ## <a name="i-ran-an-upgrade-but-now-my-pods-are-in-crash-loops-and-readiness-probes-fail"></a>После запуска обновления стало циклически происходить аварийное завершение работы модулей pod, и пробы готовности завершаются неудачно.
 
-Убедитесь в том, что срок действия субъекта-службы не истек.  См. статьи [Субъект-служба AKS](https://docs.microsoft.com/azure/aks/kubernetes-service-principal) и [Обновление учетных данных AKS](https://docs.microsoft.com/azure/aks/update-credentials).
+Убедитесь в том, что срок действия субъекта-службы не истек.  См. статьи [Субъект-служба AKS](./kubernetes-service-principal.md) и [Обновление учетных данных AKS](./update-credentials.md).
 
 ## <a name="my-cluster-was-working-but-suddenly-cannot-provision-loadbalancers-mount-pvcs-etc"></a>Мой кластер работал, но внезапно пропала возможность подготовки балансировщиков нагрузки, подключения PVC и т. д. 
 
-Убедитесь в том, что срок действия субъекта-службы не истек.  См. статьи [Субъект-служба AKS](https://docs.microsoft.com/azure/aks/kubernetes-service-principal) и [Обновление учетных данных AKS](https://docs.microsoft.com/azure/aks/update-credentials).
+Убедитесь в том, что срок действия субъекта-службы не истек.  См. статьи [Субъект-служба AKS](./kubernetes-service-principal.md) и [Обновление учетных данных AKS](./update-credentials.md).
 
 ## <a name="can-i-use-the-virtual-machine-scale-set-apis-to-scale-manually"></a>Можно ли использовать интерфейсы API масштабируемого набора виртуальных машин для масштабирования вручную?
 
@@ -189,9 +194,9 @@ AKS предоставляет гарантии в рамках соглашен
 <!-- LINKS - internal -->
 
 [aks-upgrade]: ./upgrade-cluster.md
-[aks-cluster-autoscale]: ./autoscaler.md
+[aks-cluster-autoscale]: ./cluster-autoscaler.md
 [aks-advanced-networking]: ./configure-azure-cni.md
-[aks-rbac-aad]: ./azure-ad-integration.md
+[aks-rbac-aad]: ./azure-ad-integration-cli.md
 [node-updates-kured]: node-updates-kured.md
 [aks-preview-cli]: /cli/azure/ext/aks-preview/aks
 [az-aks-create]: /cli/azure/aks#az-aks-create

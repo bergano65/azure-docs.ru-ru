@@ -10,21 +10,21 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 04/28/2020
 ms.custom: azure-synapse, sqldbrb=1
-ms.openlocfilehash: 26569606ce2aeb9d645f82e474b728cc4044ca93
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4f5ad6fd0444c40d95bf4c2f1105959bde07245d
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85250950"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86276317"
 ---
 # <a name="auditing-for-azure-sql-database-and-azure-synapse-analytics"></a>Аудит для базы данных SQL Azure и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
 
 Аудит для [базы данных SQL Azure](sql-database-paas-overview.md) и [Azure синапсе Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) отслеживает события базы данных и записывает их в журнал аудита в учетной записи хранения Azure, log Analytics рабочей области или концентраторах событий.
 
-Аудит также дает следующие возможности:
+Аудит также дает следующие возможности.
 
-- Аудит может помочь вам соблюсти требования нормативов, проанализировать работу с базой данных и получить представление о расхождениях и аномалиях, которые могут указывать на бизнес-проблемы или предполагаемые нарушения безопасности.
+- Помогает поддерживать соответствие нормативным требованиям, лучше понимать происходящее в базах данных, а также получать аналитические сведения о расхождениях и аномалиях, которые могут указывать на проблемы в бизнесе или потенциальные нарушения безопасности.
 
 - Средства аудита способствуют соблюдению стандартов соответствия, но не гарантируют их выполнение. Дополнительные сведения о программах Azure, поддерживающих соответствие стандартам, см. в [центр управления безопасностью Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) , где можно найти самый актуальный список сертификатов соответствия требованиям Azure SQL.
 
@@ -116,6 +116,8 @@ ms.locfileid: "85250950"
 
    ![LogAnalyticsworkspace](./media/auditing-overview/auditing_select_oms.png)
 
+Дополнительные сведения о рабочих областях журналов Azure Monitor см. [в разделе Разработка развертывания журналов Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/design-logs-deployment) .
+   
 ### <a name="audit-to-event-hub-destination"></a><a id="audit-event-hub-destination"></a>Запись журналов аудита в назначение концентратора событий
 
 > [!WARNING]

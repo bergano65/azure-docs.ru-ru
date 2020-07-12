@@ -4,18 +4,19 @@ description: Дополнительные сведения о функции SQL
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 07/09/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: b816c63da56025fe6e9cbaece2cde5dcd01585d4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9c35f83ce7a9a478f706e9ed560d884d9bf5e508
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "71351008"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86261292"
 ---
 # <a name="getcurrenttimestamp-azure-cosmos-db"></a>Жеткурренттиместамп (Azure Cosmos DB)
- Возвращает число миллисекунд, прошедших с 00:00:00 четверг, 1 января 1970. 
+
+ Возвращает число миллисекунд, прошедших с 00:00:00 четверг, 1 января 1970.
   
 ## <a name="syntax"></a>Синтаксис
   
@@ -27,7 +28,7 @@ GetCurrentTimestamp ()
   
   Возвращает числовое значение, текущее число миллисекунд, истекших с момента, прошедших с версии в 00:00:00 четверг, 1 января 1970.
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Remarks
 
   Жеткурренттиместамп () является недетерминированной функцией.
   
