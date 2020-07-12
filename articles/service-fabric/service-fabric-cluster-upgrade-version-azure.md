@@ -3,12 +3,12 @@ title: Обновление версии Service Fabric Azure кластера
 description: Обновление кода и (или) конфигурации Service Fabric, под управлением которой работает кластер Service Fabric, в том числе изменение режима обновления кластера, обновление сертификатов, добавление портов приложений, применение исправлений для ОС и т. д. Чего можно ожидать при выполнении обновлений?
 ms.topic: conceptual
 ms.date: 11/12/2018
-ms.openlocfilehash: 802e7402f60370b7151c5e373c8a4921a5af7c80
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b0fef612725d606f1415e7e8d004aacee025cedf
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82789606"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86261056"
 ---
 # <a name="upgrade-the-service-fabric-version-of-a-cluster"></a>Изменение версии Service Fabric в кластере
 
@@ -19,7 +19,7 @@ ms.locfileid: "82789606"
 Для этого нужно настроить параметр upgradeMode в конфигурации кластера с помощью портала или Resource Manager. Это можно сделать как при создания кластера, так и во время его работы. 
 
 > [!NOTE]
-> Обязательно следите за тем, чтобы кластер работал под управлением поддерживаемой версии Service Fabric. Когда мы объявляем о выпуске новой версии Service Fabric, для предыдущей версии определяется срок завершения жизненного цикла. Этот срок составляет по меньшей мере 60 дней. Новые выпуски объявляются [в блоге команды разработчиков Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric/). после чего вы можете использовать их. 
+> Обязательно следите за тем, чтобы кластер работал под управлением поддерживаемой версии Service Fabric. Когда мы объявляем о выпуске новой версии Service Fabric, для предыдущей версии определяется срок завершения жизненного цикла. Этот срок составляет по меньшей мере 60 дней. Новые выпуски объявляются [в блоге команды разработчиков Service Fabric](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric). после чего вы можете использовать их. 
 > 
 > 
 

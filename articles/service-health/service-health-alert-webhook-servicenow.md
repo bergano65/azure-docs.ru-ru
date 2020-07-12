@@ -3,11 +3,12 @@ title: Отправка оповещений о работоспособност
 description: Передача в экземпляр ServiceNow персонализированных уведомлений о событиях работоспособности служб.
 ms.topic: conceptual
 ms.date: 06/10/2019
-ms.openlocfilehash: 3daae05aabff571010d043cf5602847e95ea29f0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5cd17af080714fdf2e9e5b168e72f975c8d3a3f6
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77654109"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260205"
 ---
 # <a name="send-azure-service-health-alerts-with-servicenow-using-webhooks"></a>Отправка оповещений о работоспособности службы Azure в ServiceNow с помощью веб-перехватчиков
 
@@ -139,9 +140,10 @@ ms.locfileid: "77654109"
      ![Базовый путь к API в ServiceNow](./media/webhook-alerts/servicenow-base-api-path.png)
 
 1.  Полный URL-адрес интеграции выглядит следующим образом.
-        
-         https://<yourInstanceName>.service-now.com/<baseApiPath>?apiKey=<secret>
 
+    ```http
+    https://<yourInstanceName>.service-now.com/<baseApiPath>?apiKey=<secret>
+    ```
 
 ## <a name="create-an-alert-using-servicenow-in-the-azure-portal"></a>Создание предупреждения для ServiceNow на портале Azure
 ### <a name="for-a-new-action-group"></a>Для новой группы действий сделайте следующее.
@@ -149,11 +151,11 @@ ms.locfileid: "77654109"
 
 1. В списке **Действия** определите следующие сведения.
 
-    а. **Тип действия: ** *Веб-перехватчик*.
+    А. **Тип действия: ** *Веб-перехватчик*.
 
-    b. **Подробности.****URL-адрес интеграции** для ServiceNow, который вы сохранили ранее.
+    Б. **Подробности.****URL-адрес интеграции** для ServiceNow, который вы сохранили ранее.
 
-    c. **Имя**: имя, псевдоним или идентификатор веб-перехватчика.
+    В. **Имя**: имя, псевдоним или идентификатор веб-перехватчика.
 
 1. Завершив создание оповещения, нажмите кнопку **Сохранить**.
 
@@ -166,11 +168,11 @@ ms.locfileid: "77654109"
 
 1. В список **Действия** добавьте следующие сведения.
 
-    а. **Тип действия: ** *Веб-перехватчик*.
+    А. **Тип действия: ** *Веб-перехватчик*.
 
-    b. **Подробности.****URL-адрес интеграции** для ServiceNow, который вы сохранили ранее.
+    Б. **Подробности.****URL-адрес интеграции** для ServiceNow, который вы сохранили ранее.
 
-    c. **Имя**: имя, псевдоним или идентификатор веб-перехватчика.
+    В. **Имя**: имя, псевдоним или идентификатор веб-перехватчика.
 
 1. Завершив изменение группы действий, нажмите кнопку **Сохранить**.
 
@@ -190,7 +192,7 @@ ms.locfileid: "77654109"
 
 1. Откройте [ServiceNow](https://www.servicenow.com/) и убедитесь, что интеграция настроена успешно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте, как [настроить уведомления веб-перехватчика для существующих систем управления проблемами](service-health-alert-webhook-guide.md).
 - Ознакомьтесь со [схемой веб-перехватчика оповещений журнала действий](../azure-monitor/platform/activity-log-alerts-webhook.md). 
 - Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../azure-monitor/platform/service-notifications.md).

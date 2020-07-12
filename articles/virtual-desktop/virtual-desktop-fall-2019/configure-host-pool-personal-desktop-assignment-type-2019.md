@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/22/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 376f9d78f508c245bec2d066863566ace68eff0a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6f4ee0a6ba028a6359a83f5130aca7c6f05ba08b
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85204869"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259788"
 ---
 # <a name="configure-the-personal-desktop-host-pool-assignment-type"></a>Настройка типа назначения пула узлов персонального рабочего стола
 
@@ -92,5 +92,5 @@ Remove-RdsSessionHost
 
 Теперь, когда вы настроили тип назначения персонального рабочего стола, можно войти в клиент виртуальных рабочих столов Windows, чтобы протестировать его в рамках пользовательского сеанса. В следующих двух практических статьях рассказывается, как подключиться к сеансу с помощью выбранного клиента:
 
-- [Подключение с использованием клиента классических приложений Windows](../connect-windows-7-and-10.md)
+- [Подключение с использованием клиента классических приложений Windows](connect-windows-7-10-2019.md)
 - [Подключение с помощью веб-клиента](connect-web-2019.md)

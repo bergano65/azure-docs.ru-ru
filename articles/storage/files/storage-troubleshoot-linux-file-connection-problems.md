@@ -7,18 +7,18 @@ ms.topic: troubleshooting
 ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: ffd73e9dff06df4b5acdd004dddcfca5ff03ede0
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 4dddc2eab5004377afd6743c4722498dd5c6e2a0
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86232276"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259995"
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Устранение неполадок службы файлов Azure в Linux
 
 В этой статье приведен список распространенных проблем, возникающих в службе файлов Azure при подключении из клиентов Linux. Кроме того, здесь представлены возможные причины этих проблем и способы их устранения. 
 
-Помимо действий по устранению неполадок, описываемых в этой статье, можно использовать [AzFileDiagnostics](https://gallery.technet.microsoft.com/Troubleshooting-tool-for-02184089), чтобы обеспечить выполнение необходимых условий для клиента Linux. AzFileDiagnostics автоматизирует обнаружение большинства симптомов, упомянутых в этой статье. Это средство помогает настроить среду для оптимальной производительности. См. дополнительные сведения о [средстве устранения неполадок для общих файловых ресурсов Azure](https://support.microsoft.com/help/4022301/troubleshooter-for-azure-files-shares). Это средство предоставляет действия, которые помогут вам решить проблемы с подключением, сопоставлением и подключением общих файловых ресурсов Azure.
+Помимо действий по устранению неполадок, описываемых в этой статье, можно использовать [AzFileDiagnostics](https://github.com/Azure-Samples/azure-files-samples/tree/master/AzFileDiagnostics/Linux), чтобы обеспечить выполнение необходимых условий для клиента Linux. AzFileDiagnostics автоматизирует обнаружение большинства симптомов, упомянутых в этой статье. Это средство помогает настроить среду для оптимальной производительности. См. дополнительные сведения о [средстве устранения неполадок для общих файловых ресурсов Azure](https://support.microsoft.com/help/4022301/troubleshooter-for-azure-files-shares). Это средство предоставляет действия, которые помогут вам решить проблемы с подключением, сопоставлением и подключением общих файловых ресурсов Azure.
 
 ## <a name="cannot-connect-to-or-mount-an-azure-file-share"></a>Не удается подключиться к файловому ресурсу Azure или подключить ее
 

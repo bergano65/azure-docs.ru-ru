@@ -8,7 +8,7 @@
 - name: Практические руководства
   items:
     - name: Сохранение данных в Файлах Azure
-      href: ../../aks/azure-files.md?toc=%2fazure%2fcontainer-service%2fkubernetes%2ftoc.json
+      href: ../../aks/azure-files-dynamic-pv.md?toc=/azure/container-service/kubernetes/toc.json
     - name: Монитор
     - name: Развертывание приложений Spring Boot
       items:

@@ -3,12 +3,12 @@ title: Рекомендации для надежных коллекций
 description: Рекомендации и рекомендации по использованию Service Fabric надежных коллекций в приложении Service Fabric Azure.
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: f196df4b58f1acb01a497b5fa08e9af99a4707d0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 63e6de436bdaceed7f1d2a78e8385dd14bfc0ed6
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85483131"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260924"
 ---
 # <a name="guidelines-and-recommendations-for-reliable-collections-in-azure-service-fabric"></a>Инструкции и рекомендации для надежных коллекций в Azure Service Fabric
 В этом разделе приведены инструкции по использованию надежных коллекций и диспетчера надежных состояний. Цель этого руководства — помочь пользователям избежать распространенных ошибок.
@@ -54,7 +54,7 @@ ms.locfileid: "85483131"
 * Потери кворума в изменяемой секции приводят к полной потери данных
 * Резервное копирование и восстановление недоступно для временных служб
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Работа с Reliable Collections](service-fabric-work-with-reliable-collections.md)
 * [Транзакции и блокировки](service-fabric-reliable-services-reliable-collections-transactions-locks.md)
 * Управление данными
@@ -64,4 +64,4 @@ ms.locfileid: "85483131"
   * [Конфигурация диспетчера надежных состояний](service-fabric-reliable-services-configuration.md)
 * Прочее
   * [Get started with Reliable Services](service-fabric-reliable-services-quick-start.md) (Начало работы с Reliable Services)
-  * [Справочник разработчика по надежным коллекциям](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)
+  * [Справочник разработчика по надежным коллекциям](/dotnet/api/microsoft.servicefabric.data.collections?view=azure-dotnet#microsoft_servicefabric_data_collections)

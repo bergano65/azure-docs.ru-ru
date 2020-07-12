@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 06/19/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 4cbfe03c48c6d971c140dc332c38a47bc9234173
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: d41df8fe4f411cf28af83c8b4b667f1e86bdb45d
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86135111"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259917"
 ---
 # <a name="customize-remote-desktop-protocol-properties-for-a-host-pool"></a>Настройка свойств протокол удаленного рабочего стола пула узлов
 
@@ -37,7 +37,7 @@ ms.locfileid: "86135111"
 
 |Свойства RDP | Настольные системы | RemoteApps |
 |---|---| --- |
-| Режим с несколькими мониторами | Включено | Н/Д |
+| Режим с несколькими мониторами | Включено | Недоступно |
 | Перенаправление дисков включено | Диски, буфер обмена, принтеры, COM-порты, USB-устройства и SmartCards| Диски, буфер обмена и принтеры |
 | Режим удаленного звука | Воспроизвести локально | Воспроизвести локально |
 
@@ -132,7 +132,7 @@ CustomRdpProperty : <CustomRDPpropertystring>
 
 Теперь, когда вы настроили свойства протокола удаленного рабочего стола для определенного пула узлов, вы можете войти в клиент виртуальных рабочих столов Windows, чтобы протестировать их в рамках сеанса пользователя. В следующих руководствах вы узнаете, как подключиться к сеансу с помощью выбранного клиента:
 
-- [Подключение с использованием клиента классических приложений Windows](connect-windows-7-and-10.md)
+- [Подключение с использованием клиента классических приложений Windows](connect-windows-7-10.md)
 - [Подключение с помощью веб-клиента](connect-web.md)
 - [Подключение к клиенту Android](connect-android.md)
 - [Подключение с помощью клиента macOS](connect-macos.md)

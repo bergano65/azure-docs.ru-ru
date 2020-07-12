@@ -4,12 +4,12 @@ description: Узнайте, как подключить том файлов Azu
 ms.topic: article
 ms.date: 07/02/2020
 ms.custom: mvc
-ms.openlocfilehash: 593400f67db5018f1533dd37eed88ece7fd596c6
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: eaf5e0704ba2ea4f0e0a30d61e4ae1d2ad1bf58d
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86169584"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259468"
 ---
 # <a name="mount-an-azure-file-share-in-azure-container-instances"></a>Подключение общего файлового ресурса Azure с помощью службы "Экземпляры контейнеров Azure"
 
@@ -223,11 +223,11 @@ az container create --resource-group myResourceGroup --file deploy-aci.yaml
 }
 ```
 
-Для развертывания с помощью шаблона Resource Manager сохраните предыдущий JSON в файл с именем `deploy-aci.json`, а затем выполните команду [az group deployment create][az-group-deployment-create] с параметром `--template-file`:
+Чтобы выполнить развертывание с помощью шаблона диспетчер ресурсов, сохраните предыдущий JSON в файл с именем `deploy-aci.json` , а затем выполните команду [AZ Deploy Group Create][az-deployment-group-create] с `--template-file` параметром:
 
 ```azurecli
 # Deploy with Resource Manager template
-az group deployment create --resource-group myResourceGroup --template-file deploy-aci.json
+az deployment group create --resource-group myResourceGroup --template-file deploy-aci.json
 ```
 
 
@@ -285,4 +285,4 @@ az group deployment create --resource-group myResourceGroup --template-file depl
 <!-- LINKS - Internal -->
 [az-container-create]: /cli/azure/container#az-container-create
 [az-container-show]: /cli/azure/container#az-container-show
-[az-group-deployment-create]: /cli/azure/group/deployment#az-group-deployment-create
+[az-deployment-group-create]: /cli/azure/deployment/group#az-deployment-group-create

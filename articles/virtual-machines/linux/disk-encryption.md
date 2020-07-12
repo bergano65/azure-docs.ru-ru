@@ -8,12 +8,12 @@ ms.author: rogarana
 ms.service: virtual-machines-linux
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: c78fa51150ba09e5b72eeb0587679f779c947acf
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 2d4fc47247c9fe2ed1af0eee59500db7e894fdd0
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86231057"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260136"
 ---
 # <a name="server-side-encryption-of-azure-disk-storage"></a>Шифрование Хранилище дисков Azure на стороне сервера
 
@@ -80,9 +80,8 @@ ms.locfileid: "86231057"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Включить шифрование на узле](disks-enable-host-based-encryption-cli.md)
-- [Azure CLI-включить двойное шифрование на управляемых дисках RESTful](disks-enable-double-encryption-at-rest-cli.md)
+- [Включение сквозного шифрования с помощью шифрования в Host-CLI](disks-enable-host-based-encryption-cli.md)
+- [Включение двойного шифрования при хранении для управляемых дисков — CLI](disks-enable-double-encryption-at-rest-cli.md)
 - [Включить управляемые пользователем ключи для управляемых дисков — CLI](disks-enable-customer-managed-keys-cli.md)
 - [Включить управляемые пользователем ключи для управляемых дисков (портал)](disks-enable-customer-managed-keys-portal.md)
-- [Включение управляемых пользователем ключей для управляемого диска с помощью PowerShell](../windows/disks-enable-customer-managed-keys-powershell.md)
 - [Что такое Azure Key Vault?](../../key-vault/general/overview.md)

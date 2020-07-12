@@ -3,11 +3,12 @@ title: Статический IP-адрес для группы контейне
 description: Создание группы контейнеров в виртуальной сети и использование шлюза приложений Azure для предоставления статического внешнего IP-адреса контейнерному веб-приложению
 ms.topic: article
 ms.date: 03/16/2020
-ms.openlocfilehash: a27cf20b7d04fedb0b9e0ab408de24d37f2935c7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bc128da0f4c2e92af98781cef45f48f9e8aeab31
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84299168"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260774"
 ---
 # <a name="expose-a-static-ip-address-for-a-container-group"></a>Предоставление статического IP-адреса для группы контейнеров
 
@@ -28,7 +29,7 @@ ms.locfileid: "84299168"
 
 В типичном случае у вас уже может быть виртуальная сеть Azure. Если у вас ее нет, создайте ее, как показано в следующих примерах команд. Виртуальной сети требуются отдельные подсети для шлюза приложений и группы контейнеров.
 
-Если требуется, создайте группу ресурсов Azure. Пример:
+Если требуется, создайте группу ресурсов Azure. Например:
 
 ```azureci
 az group create --name myResourceGroup --location eastus
@@ -102,7 +103,7 @@ ACI_IP=$(az container show \
 
 ## <a name="create-application-gateway"></a>Создание шлюза приложений
 
-Создайте шлюз приложений в виртуальной сети, выполнив действия, описанные в [кратком руководстве по шлюзу приложений](../application-gateway/quick-create-cli.md). Следующая команда [AZ Network Application-Gateway Create][az-network-application-gateway-create] создает шлюз с общедоступным внешним IP-адресом и маршрутом к группе контейнеров серверной части. Дополнительные сведения о параметрах шлюза см. в [документации по шлюзу приложений](/azure/application-gateway/) .
+Создайте шлюз приложений в виртуальной сети, выполнив действия, описанные в [кратком руководстве по шлюзу приложений](../application-gateway/quick-create-cli.md). Следующая команда [AZ Network Application-Gateway Create][az-network-application-gateway-create] создает шлюз с общедоступным внешним IP-адресом и маршрутом к группе контейнеров серверной части. Дополнительные сведения о параметрах шлюза см. в [документации по шлюзу приложений](../application-gateway/index.yml) .
 
 ```azurecli
 az network application-gateway create \
@@ -141,7 +142,7 @@ az network public-ip show \
 
 ![Снимок экрана браузера: приложение, выполняющееся в экземпляре контейнера Azure](./media/container-instances-application-gateway/aci-app-app-gateway.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. [шаблон](https://github.com/Azure/azure-quickstart-templates/tree/master/201-aci-wordpress-vnet) быстрого запуска для создания группы контейнеров с экземпляром контейнера WordPress в качестве внутреннего сервера за шлюзом приложений.
 * Шлюз приложений также можно настроить с помощью сертификата для завершения SSL-запросов. См. [Обзор](../application-gateway/ssl-overview.md) и [учебник](../application-gateway/create-ssl-portal.md).

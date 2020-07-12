@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 07394fb2d33aaacdc8e47bc2d1809854c0c8ca1b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5eee6f34124f8b286deff278c6c3d1038b595357
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85209357"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259883"
 ---
 # <a name="expand-an-existing-host-pool-with-new-session-hosts"></a>Развертывание существующего пула узлов с новыми узлами сеансов
 
@@ -74,11 +74,11 @@ ms.locfileid: "85209357"
 
 12. Перейдите на вкладку " **Проверка и создание** ". Проверьте выбранные параметры и, если все выглядит правильно, нажмите кнопку " **создать**".
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы развернули существующий пул узлов, вы можете войти в клиент виртуальных рабочих столов Windows, чтобы протестировать их в рамках сеанса пользователя. Подключиться к сеансу можно с помощью любого из следующих клиентов:
 
-- [Подключение с использованием клиента классических приложений Windows](./connect-windows-7-and-10.md)
+- [Подключение с использованием клиента классических приложений Windows](./connect-windows-7-10.md)
 - [Подключение с помощью веб-клиента](./connect-web.md)
 - [Подключение к клиенту Android](./connect-android.md)
 - [Подключение с помощью клиента macOS](./connect-macos.md)

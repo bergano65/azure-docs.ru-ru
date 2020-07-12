@@ -4,25 +4,26 @@ description: Дополнительные сведения о функции SQL
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 07/09/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 2ac3235191952702f2acc39a25e948511901050b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4db2ec7bbd05d982af57c05fd46ef7da7c682e15
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85555892"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86258811"
 ---
 # <a name="getcurrentdatetime-azure-cosmos-db"></a>Жеткуррентдатетиме (Azure Cosmos DB)
- Возвращает текущее значение даты и времени (в формате UTC) в виде строки ISO 8601.
+
+Возвращает текущее значение даты и времени (в формате UTC) в виде строки ISO 8601.
   
 ## <a name="syntax"></a>Синтаксис
   
 ```sql
 GetCurrentDateTime ()
 ```
-  
+
 ## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает строковое значение даты и времени в формате UTC 8601 в формате, `YYYY-MM-DDThh:mm:ss.fffffffZ` где:
@@ -41,9 +42,9 @@ GetCurrentDateTime ()
   
   Дополнительные сведения о формате ISO 8601 см. в разделе [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Remarks
 
-  Жеткуррентдатетиме () является недетерминированной функцией. 
+  Жеткуррентдатетиме () является недетерминированной функцией.
   
   Возвращаемый результат — UTC.
 
@@ -65,7 +66,7 @@ SELECT GetCurrentDateTime() AS currentUtcDateTime
 }]  
 ```  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Функции даты и времени Azure Cosmos DB](sql-query-date-time-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

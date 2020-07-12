@@ -3,19 +3,19 @@ title: Обновление автономного кластера Azure Servic
 description: Сведения о том, как обновить версию или конфигурацию изолированного кластера Azure Service Fabric.  T
 ms.topic: conceptual
 ms.date: 11/12/2018
-ms.openlocfilehash: ac3e80aae440c6709057e4211f7a4f6a1beea058
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 519a9163d16fda2dd9fcf49cf22fe4ad4a272e09
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82790649"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260979"
 ---
 # <a name="upgrading-and-updating-a-service-fabric-standalone-cluster"></a>Обновление изолированного кластера Service Fabric
 
 Для любой современной системы разработка с учетом возможности модернизации является неотъемлемой составляющей успеха продукта. Изолированный кластер Azure Service Fabric — это ресурс, владельцем которого вы являетесь. В этой статье приводятся сведения об обновлении.
 
 ## <a name="controlling-the-fabric-version-that-runs-on-your-cluster"></a>Управление версиями Service Fabric в кластере
-Убедитесь, что кластер всегда работает под управлением [поддерживаемой версии Service Fabric](service-fabric-versions.md). Когда корпорация Майкрософт объявляет о выпуске новой версии Service Fabric, для предыдущей версии определяется срок завершения жизненного цикла. Этот срок составляет по меньшей мере 60 дней с даты объявления. О доступности новых выпусков сообщается в [блоге группы разработчиков Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric/), после чего вы можете их использовать.
+Убедитесь, что кластер всегда работает под управлением [поддерживаемой версии Service Fabric](service-fabric-versions.md). Когда корпорация Майкрософт объявляет о выпуске новой версии Service Fabric, для предыдущей версии определяется срок завершения жизненного цикла. Этот срок составляет по меньшей мере 60 дней с даты объявления. О доступности новых выпусков сообщается в [блоге группы разработчиков Service Fabric](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric), после чего вы можете их использовать.
 
 Вы можете настроить для кластера автоматическое обновление Service Fabric по мере выпуска новых версий корпорацией Майкрософт или вручную выбрать поддерживаемую версию, в которой должен работать ваш кластер. Дополнительные сведения см. в статье [Обновление автономного кластера Azure Service Fabric в Windows Server](service-fabric-cluster-upgrade-windows-server.md).
 

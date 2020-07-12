@@ -5,11 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 06/18/2019
 ms.author: pepogors
-ms.openlocfilehash: 46601fd91fccb5bd0866bd999cc7643c37c6d582
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 86a02fd489ca0eec61b798db7136f963277f6c82
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75551783"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86261087"
 ---
 # <a name="azure-service-fabric-application-and-cluster-best-practices"></a>Рекомендации по приложению и кластеру Azure Service Fabric
 
@@ -19,14 +20,14 @@ ms.locfileid: "75551783"
 
 * [Рекомендации по обеспечению безопасности](service-fabric-best-practices-security.md)
 
-## <a name="networking"></a>Сети
+## <a name="networking"></a>Сеть
 
 * [Рекомендации по работе в сети](service-fabric-best-practices-networking.md)
 
 ## <a name="compute-planning-and-scaling"></a>Планирование вычислений и масштабирования
 
 * [Рекомендации по масштабированию вычислений](service-fabric-best-practices-capacity-scaling.md)
-* [Планирование ресурсов компьютера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity)
+* [Планирование ресурсов компьютера](./service-fabric-cluster-capacity.md)
 
 ## <a name="infrastructure-as-code"></a>Инфраструктура как код
 
@@ -43,9 +44,9 @@ ms.locfileid: "75551783"
 ## <a name="checklist"></a>Контрольный список
 
 После реализации рекомендаций, предлагаемых в предыдущих разделах, убедитесь, что вы реализовали все рекомендации в контрольном списке готовности к производству:
-* [Контрольный список готовности к производству Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-production-readiness-checklist)
+* [Контрольный список готовности к производству Azure Service Fabric](./service-fabric-production-readiness-checklist.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Создание кластера на основе виртуальных машин или компьютеров под управлением Windows Server: [Создание кластера Azure Service Fabric в локальной или облачной средах](service-fabric-cluster-creation-for-windows-server.md)
 * Создание кластера на основе виртуальных машин или компьютеров под управлением Linux: [Создание кластера Linux](service-fabric-cluster-creation-via-portal.md).

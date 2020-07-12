@@ -8,12 +8,12 @@ ms.author: rogarana
 ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: d0625c817703fe5d5645bcfdab962591cb184ae2
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 0bb0fb268d18ddc152dae45014e2154686762976
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86232735"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259835"
 ---
 # <a name="server-side-encryption-of-azure-disk-storage"></a>Шифрование Хранилище дисков Azure на стороне сервера
 
@@ -84,9 +84,9 @@ ms.locfileid: "86232735"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Включить шифрование на основе узла](disks-enable-host-based-encryption-powershell.md)
-- [Azure PowerShell-включить двойное шифрование на управляемых дисках RESTful](disks-enable-double-encryption-at-rest-powershell.md)
-- [Включение управляемых пользователем ключей для управляемого диска с помощью PowerShell](disks-enable-customer-managed-keys-powershell.md)
-- [Включение управляемых пользователем ключей — управляемые диски](disks-enable-customer-managed-keys-portal.md)
+- [Включение сквозного шифрования с помощью шифрования в Host-PowerShell](disks-enable-host-based-encryption-powershell.md)
+- [Включение двойного шифрования для управляемых дисков с помощью PowerShell](disks-enable-double-encryption-at-rest-powershell.md)
+- [Включение управляемых пользователем ключей для управляемых дисков (PowerShell)](disks-enable-customer-managed-keys-powershell.md)
+- [Включение управляемых пользователем ключей для управляемых дисков с помощью портала](disks-enable-customer-managed-keys-portal.md)
 - [Изучите шаблоны Azure Resource Manager для создания зашифрованных дисков с помощью управляемых клиентом ключей](https://github.com/ramankumarlive/manageddiskscmkpreview)
 - [Что такое хранилище ключей Azure?](../../key-vault/general/overview.md)

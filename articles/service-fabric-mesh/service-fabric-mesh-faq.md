@@ -4,11 +4,12 @@ description: Изучите ответы на распространенные �
 ms.author: pepogors
 ms.date: 4/23/2019
 ms.topic: troubleshooting
-ms.openlocfilehash: 2a5c2ea63d162eb6fb78ab702e0519f8ac25dcc7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 64eeb43d743d71d5acd456409445a4fadfe91aeb
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78252491"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260116"
 ---
 # <a name="commonly-asked-service-fabric-mesh-questions"></a>Распространенные вопросы о службе "Сетка Service Fabric"
 
@@ -43,7 +44,7 @@ ms.locfileid: "78252491"
 
 Если приложение было отключено, вы можете проверить, было ли это сделано системой, с помощью команды `az mesh app show` в Azure CLI. Выполните команду, чтобы увидеть, вернется ли результат `"status": "Failed", "statusDetails": "Stopped resource due to max lifetime policies for an application during preview. Delete the resource to continue."`. 
 
-Пример: 
+Например: 
 
 ```azurecli
 az mesh app show --resource-group myResourceGroup --name helloWorldApp
@@ -74,7 +75,7 @@ az mesh app show --resource-group myResourceGroup --name helloWorldApp
 
 Чтобы удалить группу ресурсов, используйте команду `az group delete <nameOfResourceGroup>`.
 
-## <a name="deployments"></a>Развернутые приложения
+## <a name="deployments"></a>Развертывания
 
 ### <a name="what-container-images-are-supported"></a>Какие образы контейнеров поддерживаются?
 
@@ -106,7 +107,7 @@ az mesh app show --resource-group myResourceGroup --name helloWorldApp
 
 - Используйте обновление Windows Fall Creators (версии 1709) или выше как базовый образ контейнера.
 - Если имя службы не работает, попробуйте использовать полное имя: ServiceName. ApplicationName.
-- В файле Docker своей службы добавьте `EXPOSE <port>`, где port означает порт, через который вы предоставляете свою службу. Пример:
+- В файле Docker своей службы добавьте `EXPOSE <port>`, где port означает порт, через который вы предоставляете свою службу. Например:
 
 ```Dockerfile
 EXPOSE 80
@@ -120,9 +121,9 @@ EXPOSE 80
 
 Сейчас служба "Сетка Azure" не поддерживает разрешение DNS между приложениями.
 
-Другие известные проблемы DNS, связанные с запуском кластера Service Fabric Development в Windows 10, см. в разделе [Отладка контейнеров Windows](/azure/service-fabric/service-fabric-how-to-debug-windows-containers) и [известных проблем с DNS](https://docs.microsoft.com/azure/service-fabric/service-fabric-dnsservice#known-issues).
+Другие известные проблемы DNS, связанные с запуском кластера Service Fabric Development в Windows 10, см. в разделе [Отладка контейнеров Windows](../service-fabric/service-fabric-how-to-debug-windows-containers.md) и [известных проблем с DNS](../service-fabric/service-fabric-dnsservice.md#known-issues).
 
-### <a name="networking"></a>Сети
+### <a name="networking"></a>Сеть
 
 Преобразование сетевых адресов (NAT) сети ServiceFabric может исчезнуть при запуске приложения на локальном компьютере. Чтобы определить, случилось ли это, выполните в командной строке команду
 
@@ -166,6 +167,6 @@ EXPOSE 80
 
 Над устранением этой ошибки работают.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Service Fabric сети см. в [обзоре](service-fabric-mesh-overview.md).

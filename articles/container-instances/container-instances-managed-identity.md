@@ -3,12 +3,12 @@ title: Включение управляемого удостоверения в
 description: Узнайте, как включить управляемое удостоверение в службе "экземпляры контейнеров Azure", которое может проходить проверку подлинности в других службах Azure
 ms.topic: article
 ms.date: 07/02/2020
-ms.openlocfilehash: 9bc96ed29039650082bdfa8b7b2b1b48ecb6bd3f
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 23f2347593137a4846c8fd22e3b90f22db39bda3
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86169788"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259626"
 ---
 # <a name="how-to-use-managed-identities-with-azure-container-instances"></a>Использование управляемых удостоверений для службы "Экземпляры контейнеров Azure"
 
@@ -392,6 +392,6 @@ identity:
 > * Предоставление удостоверениям доступа к хранилищу ключей Azure
 > * Использование управляемого удостоверения для доступа к хранилищу ключей из работающего контейнера
 
-* Дополнительные сведения об [управляемых удостоверениях для ресурсов Azure](/azure/active-directory/managed-identities-azure-resources/).
+* Дополнительные сведения об [управляемых удостоверениях для ресурсов Azure](../active-directory/managed-identities-azure-resources/index.yml).
 
 * См. Пример использования управляемого удостоверения для доступа к хранилищу ключей из службы "экземпляры контейнеров Azure [" в пакете SDK для Azure Go](https://medium.com/@samkreter/c98911206328) .

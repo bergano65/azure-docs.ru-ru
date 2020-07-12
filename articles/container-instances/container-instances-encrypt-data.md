@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 01/17/2020
 author: dkkapur
 ms.author: dekapur
-ms.openlocfilehash: 2f9aff2ea88c2334ab30c9819f68fd6cbb9124c5
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 3c7a84dad1f107d8709e3bcdeac696414cdf883d
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86232446"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259718"
 ---
 # <a name="encrypt-deployment-data"></a>Шифрование данных развертывания
 
@@ -39,7 +39,7 @@ ms.locfileid: "86232446"
 
 ### <a name="create-service-principal-for-aci"></a>Создание субъекта-службы для ACI
 
-Первым делом необходимо убедиться, что у [клиента Azure](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) есть субъект-служба, назначенный для предоставления разрешений службе "экземпляры контейнеров Azure". 
+Первым делом необходимо убедиться, что у [клиента Azure](../active-directory/develop/quickstart-create-new-tenant.md) есть субъект-служба, назначенный для предоставления разрешений службе "экземпляры контейнеров Azure". 
 
 > [!IMPORTANT]
 > Чтобы выполнить следующую команду и успешно создать субъект-службу, убедитесь, что у вас есть разрешения на создание субъектов-служб в клиенте.
@@ -59,7 +59,7 @@ az ad sp create --id 6bb8e274-af5d-4df2-98a3-4fd78b4cafd9
 
 ### <a name="create-a-key-vault-resource"></a>Создание ресурса хранилища ключей
 
-Создайте Azure Key Vault с помощью [портал Azure](https://docs.microsoft.com/azure/key-vault/quick-create-portal#create-a-vault), [CLI](https://docs.microsoft.com/azure/key-vault/quick-create-cli)или [PowerShell](https://docs.microsoft.com/azure/key-vault/quick-create-powershell). 
+Создайте Azure Key Vault с помощью [портал Azure](../key-vault/secrets/quick-create-portal.md#create-a-vault), [CLI](../key-vault/secrets/quick-create-cli.md)или [PowerShell](../key-vault/secrets/quick-create-powershell.md). 
 
 Для свойств хранилища ключей используйте следующие рекомендации. 
 * Name (Имя). Укажите уникальное имя. 
@@ -96,7 +96,7 @@ az ad sp create --id 6bb8e274-af5d-4df2-98a3-4fd78b4cafd9
 > [!IMPORTANT]
 > Шифрование данных развертывания с помощью управляемого клиентом ключа доступно в последней версии API (2019-12-01), которая в настоящее время истекает. Укажите версию API в шаблоне развертывания. Если у вас возникли проблемы, обратитесь в службу поддержки Azure.
 
-После настройки ключа и политики доступа к хранилищу ключей добавьте следующие свойства в шаблон развертывания ACI. Дополнительные сведения о развертывании ресурсов ACI с помощью шаблона см. в [руководстве по развертыванию группы с несколькими контейнерами с использованием шаблона диспетчер ресурсов](https://docs.microsoft.com/azure/container-instances/container-instances-multi-container-group). 
+После настройки ключа и политики доступа к хранилищу ключей добавьте следующие свойства в шаблон развертывания ACI. Дополнительные сведения о развертывании ресурсов ACI с помощью шаблона см. в [руководстве по развертыванию группы с несколькими контейнерами с использованием шаблона диспетчер ресурсов](./container-instances-multi-container-group.md). 
 * В разделе `resources` задайте `apiVersion` для значение `2019-12-01` .
 * В разделе Свойства группы контейнеров шаблона развертывания добавьте объект `encryptionProperties` , который содержит следующие значения:
   * `vaultBaseUrl`: DNS-имя хранилища ключей можно найти в колонке "Обзор" ресурса хранилища ключей на портале.
@@ -129,7 +129,7 @@ az ad sp create --id 6bb8e274-af5d-4df2-98a3-4fd78b4cafd9
 ]
 ```
 
-Ниже приведен полный шаблон, адаптированный из шаблона в [учебнике развертывание многоконтейнерной группы с помощью шаблона диспетчер ресурсов](https://docs.microsoft.com/azure/container-instances/container-instances-multi-container-group). 
+Ниже приведен полный шаблон, адаптированный из шаблона в [учебнике развертывание многоконтейнерной группы с помощью шаблона диспетчер ресурсов](./container-instances-multi-container-group.md). 
 
 ```json
 {
@@ -233,14 +233,14 @@ az ad sp create --id 6bb8e274-af5d-4df2-98a3-4fd78b4cafd9
 az group create --name myResourceGroup --location eastus
 ```
 
-Разверните шаблон с помощью команды [az group deployment create][az-group-deployment-create].
+Разверните шаблон с помощью команды [AZ Deployment Group Create][az-deployment-group-create] .
 
 ```azurecli-interactive
-az group deployment create --resource-group myResourceGroup --template-file deployment-template.json
+az deployment group create --resource-group myResourceGroup --template-file deployment-template.json
 ```
 
 В течение нескольких секунд вы должны получить исходный ответ Azure. После завершения развертывания все данные, связанные с ним, сохраненные службой ACI, будут зашифрованы с помощью предоставленного ключа.
 
 <!-- LINKS - Internal -->
 [az-group-create]: /cli/azure/group#az-group-create
-[az-group-deployment-create]: /cli/azure/group/deployment#az-group-deployment-create
+[az-deployment-group-create]: /cli/azure/deployment/group/#az-deployment-group-create

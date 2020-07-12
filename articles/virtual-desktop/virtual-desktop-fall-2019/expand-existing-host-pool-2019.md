@@ -8,11 +8,12 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 70ae4a014768976c7dcf81ffadf1066027fa06ad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 956934bd536d8eb5e692ed193cad1424929db24b
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85214287"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260768"
 ---
 # <a name="expand-an-existing-host-pool-with-new-session-hosts"></a>Развертывание существующего пула узлов с новыми узлами сеансов
 
@@ -75,7 +76,7 @@ ms.locfileid: "85214287"
 
 Следуйте инструкциям в статье [Создание пула узлов с помощью Azure Marketplace](create-host-pools-azure-marketplace-2019.md) , пока не будет достигнуто [предложение Azure Marketplace для создания пула узлов](create-host-pools-azure-marketplace-2019.md#run-the-azure-marketplace-offering-to-provision-a-new-host-pool). При переходе к этому моменту необходимо ввести следующие сведения для каждой вкладки:
 
-### <a name="basics"></a>Основы
+### <a name="basics"></a>Основные сведения
 
 Все значения в этом разделе должны совпадать с указанными при создании пула узлов и виртуальных машин узла сеансов, за исключением *пользователей рабочего стола по умолчанию*:
 
@@ -125,11 +126,11 @@ ms.locfileid: "85214287"
 
 Следуйте инструкциям в разделе [Запуск шаблона Azure Resource Manager для подготовки нового пула узлов](create-host-pools-arm-template.md#run-the-azure-resource-manager-template-for-provisioning-a-new-host-pool) и укажите все те же значения параметров, кроме *количества экземпляров узлов удаленных рабочих столов*. Введите число виртуальных машин узла сеансов, которые нужно разместить в пуле узлов после запуска шаблона. Например, если вы разрабатываете пул узлов с пяти узлов сеансов до восьми, введите **8**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы развернули существующий пул узлов, вы можете войти в клиент виртуальных рабочих столов Windows, чтобы протестировать их в рамках сеанса пользователя. Подключиться к сеансу можно с помощью любого из следующих клиентов:
 
-- [Подключение с использованием клиента классических приложений Windows](../connect-windows-7-and-10.md)
+- [Подключение с использованием клиента классических приложений Windows](connect-windows-7-10-2019.md)
 - [Подключение с помощью веб-клиента](connect-web-2019.md)
 - [Подключение к клиенту Android](connect-android-2019.md)
 - [Подключение с помощью клиента macOS](connect-macos-2019.md)

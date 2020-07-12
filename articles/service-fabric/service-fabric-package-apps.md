@@ -3,11 +3,12 @@ title: Упаковка приложения Service Fabric Azure
 description: Узнайте, как упаковать приложение Service Fabric Azure и как подготовиться к развертыванию в кластере.
 ms.topic: conceptual
 ms.date: 2/23/2018
-ms.openlocfilehash: 7c99eec28ac06ecf666d6dda1015f889841a5dbf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c00e46915c7bf147d224911ef4988d9fedd691c7
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84701053"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260977"
 ---
 # <a name="package-an-application"></a>Создание пакета приложения
 
@@ -42,7 +43,7 @@ D:\TEMP\MYAPPLICATIONTYPE
 
 ## <a name="use-setupentrypoint"></a>Использование SetupEntryPoint
 
-Типичные сценарии использования **SetupEntryPoint** относятся к ситуации, когда необходимо запустить исполняемый файл перед запуском службы или выполнить операцию с повышенными привилегиями. Пример:
+Типичные сценарии использования **SetupEntryPoint** относятся к ситуации, когда необходимо запустить исполняемый файл перед запуском службы или выполнить операцию с повышенными привилегиями. Например:
 
 * Настройка и инициализация переменных среды, необходимых исполняемому файлу службы. Это касается не только исполняемых файлов, написанных с использованием моделей программирования Service Fabric. Например, npm.exe нужны определенные переменные среды, настроенные для развертывания приложения node.js.
 * Настройка контроля доступа посредством установки сертификатов безопасности.
@@ -210,7 +211,7 @@ Copy-ServiceFabricApplicationPackage -ApplicationPackagePath .\MyApplicationType
 Файл `sfpkg` — это ZIP-архив, содержащий изначальный пакет приложения с расширением .sfpkg.
 Внутри ZIP-архива пакет приложения может быть сжатым или несжатым. Сжатие пакета приложения внутри ZIP-архива выполняется на уровнях кода, конфигурации и пакетов данных, как [упоминалось ранее](service-fabric-package-apps.md#compress-a-package).
 
-Чтобы создать `sfpkg`, начните с папки, содержащей исходный пакет приложения, будь он сжатым или нет. Затем с помощью любой программы упакуйте папку в ZIP-архив с расширением .sfpkg. Например, используйте метод [ZipFile.CreateFromDirectory](https://msdn.microsoft.com/library/hh485721(v=vs.110).aspx).
+Чтобы создать `sfpkg`, начните с папки, содержащей исходный пакет приложения, будь он сжатым или нет. Затем с помощью любой программы упакуйте папку в ZIP-архив с расширением .sfpkg. Например, используйте метод [ZipFile.CreateFromDirectory](/dotnet/api/system.io.compression.zipfile.createfromdirectory?view=netcore-3.1#System_IO_Compression_ZipFile_CreateFromDirectory_System_String_System_String_System_IO_Compression_CompressionLevel_System_Boolean_).
 
 ```csharp
 ZipFile.CreateFromDirectory(appPackageDirectoryPath, sfpkgFilePath);
@@ -223,7 +224,7 @@ ZipFile.CreateFromDirectory(appPackageDirectoryPath, sfpkgFilePath);
 >[!NOTE]
 > Сейчас подготовка на основе относительного пути в хранилище образов не поддерживает файлы `sfpkg`. Таким образом, `sfpkg` не следует копировать в хранилище образов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Развертывание и удаление приложений][10] описание использования PowerShell для управления экземплярами приложения
 

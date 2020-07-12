@@ -4,18 +4,18 @@ description: Узнайте, как развернуть кластер Service 
 ms.topic: conceptual
 ms.date: 02/14/2019
 ms.custom: mvc
-ms.openlocfilehash: 1d6edc086233d757269c12e323241bc4bf55249f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 14e029622f17e8aae392cc55ba4418b3971a5ad2
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85611702"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260226"
 ---
 # <a name="deploy-a-linux-service-fabric-cluster-into-an-azure-virtual-network"></a>Развертывание кластера Service Fabric на платформе Linux в виртуальной сети Azure
 
 Из этой статьи вы узнаете как развернуть кластер Service Fabric на платформе Linux в [виртуальную сеть Azure](../virtual-network/virtual-networks-overview.md) с помощью Azure CLI и шаблона. После окончания этого учебника у вас будет кластер в облаке, в который можно разворачивать приложения. Создание кластера Windows с помощью PowerShell описывается в разделе [Развертывание безопасного кластера Service Fabric на платформе Windows в виртуальной сети Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Перед началом работы
 
@@ -162,7 +162,7 @@ sfctl cluster health
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы не собираетесь немедленно приступить к следующей статье, то можете [удалить кластер](service-fabric-cluster-delete.md), чтобы за него не взималась плата.
+Если вы не собираетесь немедленно приступить к следующей статье, то можете [удалить кластер](./service-fabric-tutorial-delete-cluster.md), чтобы за него не взималась плата.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

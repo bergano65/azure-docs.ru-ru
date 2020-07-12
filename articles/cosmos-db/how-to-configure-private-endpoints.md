@@ -4,14 +4,14 @@ description: Узнайте, как настроить Приватный кан
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 06/11/2020
+ms.date: 07/10/2020
 ms.author: thweiss
-ms.openlocfilehash: 1ee468b99cddeb5f18f78a6d1298c8959bda075b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bb1310d0f45f945fc150e0ae011ede0d102a5918
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85261636"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259111"
 ---
 # <a name="configure-azure-private-link-for-an-azure-cosmos-account"></a>Настройка Приватного канала Azure для учетной записи Azure Cosmos
 
@@ -655,8 +655,6 @@ foreach ($ipconfig in $networkInterface.properties.ipConfigurations) {
 * Если вы используете API Azure Cosmos DB для учетной записи MongoDB с Приватным каналом, некоторые средства и библиотеки могут не работать, так как они автоматически удаляют параметр `appName` из строки подключения. Этот параметр необходим для подключения к учетной записи через частную конечную точку. Некоторые средства, например Visual Studio Code, не удаляют этот параметр из строки подключения и поэтому являются совместимыми.
 
 * Для создания автоматически утверждаемых частных конечных точек администратору сети необходимо предоставить по крайней мере разрешение `Microsoft.DocumentDB/databaseAccounts/PrivateEndpointConnectionsApproval/action` в области учетной записи Azure Cosmos.
-
-* В настоящее время прямой режим не поддерживается в регионах Azure в Китае.
 
 ### <a name="limitations-to-private-dns-zone-integration"></a>Ограничения на интеграцию частной зоны DNS
 

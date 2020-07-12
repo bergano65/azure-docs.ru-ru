@@ -3,12 +3,12 @@ title: Масштабирование типа узла Azure Service Fabric
 description: Узнайте, как развертывать кластер Service Fabric путем добавления масштабируемого набора виртуальных машин.
 ms.topic: article
 ms.date: 02/13/2019
-ms.openlocfilehash: 2d700367049e0bf9bf710aad110c850a78c26220
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a42e33fa87b6cf7966368481ef6d3920511919e3
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85610699"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260452"
 ---
 # <a name="scale-up-a-service-fabric-cluster-primary-node-type"></a>Масштабирование типа первичного узла кластера Service Fabric
 В этой статье описывается, как масштабировать тип первичного узла кластера Service Fabric за счет увеличения количества ресурсов виртуальных машин. Кластер Service Fabric — это подключенный к сети набор виртуальных машин или физических компьютеров, в котором вы развертываете микрослужбы и управляете ими. Компьютер или виртуальная машина, которая входит в состав кластера. Масштабируемые наборы виртуальных машин относятся к вычислительным ресурсам Azure. Их можно использовать для развертывания коллекции виртуальных машин и управления ею как набором. Каждый тип узла, определенный в кластере Azure, [настроен как отдельный масштабируемый набор](service-fabric-cluster-nodetypes.md). Затем каждым типом узла можно управлять отдельно. После создания кластера Service Fabric можно масштабировать тип узла кластера вертикально (изменение ресурсов узлов) или обновить ОС виртуальных машин типа узла.  Кластер можно масштабировать в любое время, даже когда в нем выполняются рабочие нагрузки.  Вместе с кластером автоматически масштабируются ваши приложения.
@@ -49,7 +49,7 @@ ms.locfileid: "85610699"
 Login-AzAccount -SubscriptionId "<your subscription ID>"
 ```
 
-В этом учебнике рассматривается сценарий создания самозаверяющего сертификата. Чтобы использовать имеющийся сертификат из Azure Key Vault, пропустите приведенный ниже шаг, а затем выполните инструкции по [использованию существующего сертификата для развертывания кластера](https://docs.microsoft.com/azure/service-fabric/upgrade-managed-disks#use-an-existing-certificate-to-deploy-the-cluster).
+В этом учебнике рассматривается сценарий создания самозаверяющего сертификата. Чтобы использовать имеющийся сертификат из Azure Key Vault, пропустите приведенный ниже шаг, а затем выполните инструкции по [использованию существующего сертификата для развертывания кластера](./upgrade-managed-disks.md#use-an-existing-certificate-to-deploy-the-cluster).
 
 ### <a name="generate-a-self-signed-certificate-and-deploy-the-cluster"></a>Создание самозаверяющего сертификата и развертывание кластера
 
@@ -251,4 +251,3 @@ foreach($name in $nodeNames){
 * [Руководство. Масштабирование кластера Service Fabric](service-fabric-tutorial-scale-cluster.md)
 * [Масштабируйте кластер Azure программно](service-fabric-cluster-programmatic-scaling.md), используя свободный пакет SDK для вычислений Azure.
 * [Увеличение и уменьшение масштаба автономного кластера](service-fabric-cluster-windows-server-add-remove-nodes.md).
-

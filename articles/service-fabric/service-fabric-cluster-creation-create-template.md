@@ -3,11 +3,12 @@ title: Создание шаблона кластера Azure Service Fabric
 description: Сведения о создании шаблона Resource Manager для кластера Service Fabric. Настройка безопасности, Azure Key Vault и Azure Active Directory (Azure AD) для проверки подлинности клиентов.
 ms.topic: conceptual
 ms.date: 08/16/2018
-ms.openlocfilehash: 6cf0f9c3b8b54db7bd27ec8dd9c9d59d849c74cc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b028b5c1f32733146c071e50b24202e5bad945c0
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80985377"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260498"
 ---
 # <a name="create-a-service-fabric-cluster-resource-manager-template"></a>Создание шаблона Resource Manager для кластера Service Fabric
 
@@ -246,7 +247,7 @@ Test-AzResourceGroupDeployment -ResourceGroupName "myresourcegroup" -TemplateFil
 
 ![Сопоставление зависимостей Resource Manager][cluster-security-arm-dependency-map]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда кластер обладает шаблоном, можно [развернуть его в Azure](service-fabric-cluster-creation-via-arm.md).  Перед развертыванием рабочего кластера необходимо ознакомиться со статьей [Контрольный список готовности рабочей среды](service-fabric-production-readiness-checklist.md).
 
 Дополнительные сведения о синтаксисе и свойствах JSON для ресурсов, развертываемых в этой статье:
@@ -261,7 +262,7 @@ Test-AzResourceGroupDeployment -ResourceGroupName "myresourcegroup" -TemplateFil
 <!-- Links -->
 [service-fabric-cluster-security]: service-fabric-cluster-security.md
 [service-fabric-secure-cluster-5-node-1-nodetype]: https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Windows-1-NodeTypes-Secure
-[resource-group-template-deploy]: https://azure.microsoft.com/documentation/articles/resource-group-template-deploy/
+[resource-group-template-deploy]: ../azure-resource-manager/templates/deploy-powershell.md
 
 <!-- Images -->
 [cluster-security-arm-dependency-map]: ./media/service-fabric-cluster-creation-create-template/cluster-security-arm-dependency-map.png

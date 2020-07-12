@@ -12,8 +12,6 @@
       href: tutorial-hybrid-portal.md
     - name: Фильтрация входящего трафика с помощью DNAT
       href: tutorial-firewall-dnat.md
-    - name: Мониторинг журналов диагностики
-      href: tutorial-diagnostics.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -86,6 +84,8 @@
       href: protect-azure-kubernetes-service.md
     - name: Параметры DNS
       href: dns-settings.md
+    - name: Мониторинг журналов диагностики
+      href: firewall-diagnostics.md
 - name: Справочник
   items:
     - name: Azure CLI

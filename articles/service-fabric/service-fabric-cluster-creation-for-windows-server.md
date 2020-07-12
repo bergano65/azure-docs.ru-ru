@@ -5,11 +5,12 @@ author: dkkapur
 ms.topic: conceptual
 ms.date: 2/21/2019
 ms.author: dekapur
-ms.openlocfilehash: a42797b51d811ee9427c9b77f8ea59a24c00feee
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: ba6474751913b4994ae840f77577b3c1db6c5f73
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83827970"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259287"
 ---
 # <a name="create-a-standalone-cluster-running-on-windows-server"></a>Создание изолированного кластера под управлением Windows Server
 Azure Service Fabric позволяет создавать кластеры Service Fabric на любых виртуальных машинах или компьютерах под управлением Windows Server. Это означает, что вы сможете разворачивать и запускать приложения Service Fabric в любой среде с набором подключенных друг к другу компьютеров с Windows Server как в локальной среде, так и у любого поставщика облачных служб. Service Fabric предоставляет установочный пакет для создания кластеров Service Fabric, который называется изолированным пакетом Windows Server. Традиционные кластеры Service Fabric в Azure доступны в виде управляемой службы, а изолированные являются самостоятельными. Дополнительные сведения об их различиях см. статье [Сравнение традиционных и изолированных кластеров Service Fabric в Azure под управлением Windows Server и Linux](./service-fabric-deploy-anywhere.md).
@@ -24,10 +25,10 @@ Azure Service Fabric позволяет создавать кластеры Serv
 <a id="getsupport"></a>
 
 ## <a name="get-support-for-the-service-fabric-for-windows-server-package"></a>Получение поддержки для Service Fabric для пакета Windows Server
-* Вы можете задать вопросы об изолированном пакете Service Fabric для Windows Server на [странице вопросов и ответов по Azure Service Fabric на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-service-fabric.html).
+* Вы можете задать вопросы об изолированном пакете Service Fabric для Windows Server на [странице вопросов и ответов по Azure Service Fabric на сайте Майкрософт](/answers/topics/azure-service-fabric.html).
 * Откройте запрос на [техническую поддержку для Service Fabric](https://support.microsoft.com/oas/default.aspx?prid=16146).  Узнайте больше о [профессиональной технической поддержке Майкрософт](https://support.microsoft.com/en-us/gp/offerprophone?wa=wsignin1.0).
 * Поддержка для этого пакета также доступна в рамках [поддержки Microsoft Premier](https://support.microsoft.com/en-us/premier).
-* Дополнительные сведения см. в разделе [Варианты поддержки Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-support).
+* Дополнительные сведения см. в разделе [Варианты поддержки Azure Service Fabric](./service-fabric-support.md).
 * Чтобы собирать журналы в целях поддержки, запустите [изолированный сборщик журналируемых данных Service Fabric](service-fabric-cluster-standalone-package-contents.md).
 
 <a id="downloadpackage"></a>
@@ -215,7 +216,7 @@ NodeDeactivationInfo NodeName IpAddressOrFQDN NodeType  CodeVersion  ConfigVersi
 * [Параметры конфигурации для автономного кластера Windows](service-fabric-cluster-manifest.md)
 * [Добавление узлов в автономный кластер Service Fabric под управлением Windows Server или удаление узлов из него](service-fabric-cluster-windows-server-add-remove-nodes.md)
 * [Upgrade a standalone Service Fabric cluster version](service-fabric-cluster-upgrade-windows-server.md) (Обновление версии изолированного кластера Service Fabric)
-* [Create a three node standalone Service Fabric cluster with Azure virtual machines running Windows Server (Создание автономного кластера Service Fabric с тремя узлами на виртуальных машинах Azure под управлением Windows)](service-fabric-cluster-creation-with-windows-azure-vms.md)
+* [Create a three node standalone Service Fabric cluster with Azure virtual machines running Windows Server (Создание автономного кластера Service Fabric с тремя узлами на виртуальных машинах Azure под управлением Windows)](./service-fabric-cluster-creation-via-arm.md)
 * [Защита автономного кластера под управлением Windows с помощью системы безопасности Windows](service-fabric-windows-cluster-windows-security.md)
 * [Защита автономного кластера под управлением Windows с помощью сертификатов](service-fabric-windows-cluster-x509-security.md)
 

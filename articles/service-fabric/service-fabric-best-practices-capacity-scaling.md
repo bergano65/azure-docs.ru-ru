@@ -5,16 +5,16 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: be0f0a48e2fd334e2000c8a4b8c2e0101b291cef
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d41a71ff5f97449968d82812119cfdfd4bc2ef44
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82791873"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86261179"
 ---
 # <a name="capacity-planning-and-scaling-for-azure-service-fabric"></a>Планирование емкости и масштабирование для Azure Service Fabric
 
-Перед созданием кластера Azure Service Fabric или масштабирования ресурсов вычислений, в которых размещается кластер, важно спланировать емкость. См. дополнительные сведения о [планировании загрузки кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity). Дополнительные рекомендации по масштабируемости кластера см. в статье [Service Fabric рекомендации по масштабируемости](https://docs.microsoft.com/azure/architecture/reference-architectures/microservices/service-fabric#scalability-considerations).
+Перед созданием кластера Azure Service Fabric или масштабирования ресурсов вычислений, в которых размещается кластер, важно спланировать емкость. См. дополнительные сведения о [планировании загрузки кластера Service Fabric](./service-fabric-cluster-capacity.md). Дополнительные рекомендации по масштабируемости кластера см. в статье [Service Fabric рекомендации по масштабируемости](/azure/architecture/reference-architectures/microservices/service-fabric#scalability-considerations).
 
 В дополнение к рассмотрению типа узла и характеристик кластера следует рассчитывать, что операции масштабирования должны выполняться дольше, чем за час, для рабочей среды. Это справедливо, независимо от числа добавляемых виртуальных машин.
 
@@ -25,7 +25,7 @@ ms.locfileid: "82791873"
 
 * Если развертывание шаблонов Resource Manager с объявленной емкостью не подходит для вашего варианта использования.
      
-   В дополнение к ручному масштабированию можно настроить [конвейер непрерывной интеграции и доставки в Azure DevOps Services с помощью проектов развертывания группы ресурсов Azure](https://docs.microsoft.com/azure/vs-azure-tools-resource-groups-ci-in-vsts). Этот конвейер обычно запускается приложением логики, которое использует метрики производительности виртуальной машины, запрашиваемые из [Azure Monitor REST API](https://docs.microsoft.com/azure/azure-monitor/platform/rest-api-walkthrough). Конвейер эффективно масштабируется на основе любых нужных метрик, а оптимизация для шаблонов диспетчер ресурсов.
+   В дополнение к ручному масштабированию можно настроить [конвейер непрерывной интеграции и доставки в Azure DevOps Services с помощью проектов развертывания группы ресурсов Azure](../azure-resource-manager/templates/add-template-to-azure-pipelines.md). Этот конвейер обычно запускается приложением логики, которое использует метрики производительности виртуальной машины, запрашиваемые из [Azure Monitor REST API](../azure-monitor/platform/rest-api-walkthrough.md). Конвейер эффективно масштабируется на основе любых нужных метрик, а оптимизация для шаблонов диспетчер ресурсов.
 * За один раз необходимо горизонтальное масштабирование только одного узла масштабируемого набора виртуальных машин.
    
    Для горизонтального масштабирования по трем или более узлам необходимо [масштабировать кластер Service Fabric, добавив масштабируемый набор виртуальных машин](virtual-machine-scale-set-scale-node-type-scale-out.md). Это самый надежный способ масштабирования и масштабирования масштабируемых наборов виртуальных машин по горизонтали, по одному узлу за раз.
@@ -38,7 +38,7 @@ ms.locfileid: "82791873"
 
 ## <a name="vertical-scaling-considerations"></a>Рекомендации по вертикальному масштабированию
 
-[Вертикальное масштабирование](https://docs.microsoft.com/azure/service-fabric/virtual-machine-scale-set-scale-node-type-scale-out) типа узла в Service Fabric Azure требует ряда шагов и рекомендаций. Пример:
+[Вертикальное масштабирование](./virtual-machine-scale-set-scale-node-type-scale-out.md) типа узла в Service Fabric Azure требует ряда шагов и рекомендаций. Например:
 
 * Масштабируемый кластер должен быть работоспособным. В противном случае вы будете дестабилизировать кластер.
 * Для всех Service Fabric типов узлов кластера, на которых размещены службы с отслеживанием состояния, требуется уровень устойчивости или выше.
@@ -48,7 +48,7 @@ ms.locfileid: "82791873"
 
 Вертикальное масштабирование масштабируемого набора виртуальных машин является обратимой операцией. Вместо этого необходимо горизонтально масштабировать кластер, добавив новый масштабируемый набор с требуемым номером SKU. Затем перенесите службы в нужный номер SKU, чтобы выполнить операцию безопасного вертикального масштабирования. Изменение номера SKU ресурса масштабируемого набора виртуальных машин является обратимой операцией, так как она перестраивает узлы, удаляя все локально сохраняемое состояние.
 
-Кластер использует [Свойства узла Service Fabric и ограничения на размещение](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-cluster-description#node-properties-and-placement-constraints) , чтобы решить, где следует размещать службы приложения. При вертикальном масштабировании типа первичного узла объявите одинаковые значения свойств для `"nodeTypeRef"` . Эти значения можно найти в расширении Service Fabric для масштабируемых наборов виртуальных машин. 
+Кластер использует [Свойства узла Service Fabric и ограничения на размещение](./service-fabric-cluster-resource-manager-cluster-description.md#node-properties-and-placement-constraints) , чтобы решить, где следует размещать службы приложения. При вертикальном масштабировании типа первичного узла объявите одинаковые значения свойств для `"nodeTypeRef"` . Эти значения можно найти в расширении Service Fabric для масштабируемых наборов виртуальных машин. 
 
 В следующем фрагменте шаблона диспетчер ресурсов отображаются свойства, которые вы объявите. Он имеет то же значение для вновь подготовленных масштабируемых наборов, на которые выполняется масштабирование, и поддерживается только в качестве временной службы с отслеживанием состояния для кластера.
 
@@ -68,13 +68,13 @@ ms.locfileid: "82791873"
 1. В PowerShell выполните команду `Disable-ServiceFabricNode` с намерением `RemoveNode` отключить узел, который вы собираетесь удалить. Удалите тип узла с наибольшим номером. Например, если имеется кластер из шести узлов, удалите экземпляр виртуальной машины "MyNodeType_5".
 2. Выполните `Get-ServiceFabricNode` и убедитесь, что этот узел перешел в отключенное состояние. Если это не так, подождите, пока узел не будет отключен. Для каждого узла может потребоваться несколько часов. Не продолжайте процесс, пока узел не перейдет в отключенное состояние.
 3. Сократите количество виртуальных машин на единицу в этом типе узла. Будет удален самый верхний экземпляр виртуальной машины.
-4. При необходимости повторите шаги 1 – 3, но не выполняйте масштабирование в количестве экземпляров в типах первичных узлов меньше, чем гарантирует уровень надежности. См. [рекомендации по планированию загрузки кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity).
+4. При необходимости повторите шаги 1 – 3, но не выполняйте масштабирование в количестве экземпляров в типах первичных узлов меньше, чем гарантирует уровень надежности. См. [рекомендации по планированию загрузки кластера Service Fabric](./service-fabric-cluster-capacity.md).
 5. После того как все виртуальные машины будут удалены (представленные ниже), структура:/System/Инфраструктуресервице/[имя узла] отобразит состояние ошибки. Затем можно обновить ресурс кластера, чтобы удалить тип узла. Можно либо использовать развертывание шаблона ARM, либо изменить ресурс кластера с помощью [Azure Resource Manager](https://resources.azure.com). Это приведет к запуску обновления кластера, которое удалит службу Fabric:/System/Инфраструктуресервице/[тип узла], которая находится в состоянии ошибки.
  6. После этого вы по-прежнему можете удалить для vmscaleset, но в этом случае узлы будут отображаться как "вниз" из Service Fabric Explorer представления. Последним шагом было бы очистить их с помощью `Remove-ServiceFabricNodeState` команды.
 
 ## <a name="horizontal-scaling"></a>горизонтальное масштабирование;
 
-Горизонтальное масштабирование можно выполнять либо [вручную](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-scale-in-out) , либо [программно](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-programmatic-scaling).
+Горизонтальное масштабирование можно выполнять либо [вручную](./service-fabric-cluster-scale-in-out.md) , либо [программно](./service-fabric-cluster-programmatic-scaling.md).
 
 > [!NOTE]
 > При масштабировании типа узла, имеющего серебряную или золотую устойчивость, масштабирование будет выполняться очень долго.
@@ -89,7 +89,7 @@ var newCapacity = (int)Math.Min(MaximumNodeCount, scaleSet.Capacity + 1);
 scaleSet.Update().WithCapacity(newCapacity).Apply(); 
 ```
 
-Чтобы масштабировать вручную, обновите емкость в свойстве SKU требуемого ресурса [масштабируемого набора виртуальных машин](https://docs.microsoft.com/rest/api/compute/virtualmachinescalesets/createorupdate#virtualmachinescalesetosprofile) .
+Чтобы масштабировать вручную, обновите емкость в свойстве SKU требуемого ресурса [масштабируемого набора виртуальных машин](/rest/api/compute/virtualmachinescalesets/createorupdate#virtualmachinescalesetosprofile) .
 
 ```json
 "sku": {
@@ -111,9 +111,9 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 1. В PowerShell выполните команду `Disable-ServiceFabricNode` с намерением `RemoveNode` отключить узел, который вы собираетесь удалить. Удалите тип узла с наибольшим номером. Например, если имеется кластер из шести узлов, удалите экземпляр виртуальной машины "MyNodeType_5".
 2. Выполните `Get-ServiceFabricNode` и убедитесь, что этот узел перешел в отключенное состояние. Если это не так, подождите, пока узел не будет отключен. Для каждого узла может потребоваться несколько часов. Не продолжайте процесс, пока узел не перейдет в отключенное состояние.
 3. Сократите количество виртуальных машин на единицу в этом типе узла. Будет удален самый верхний экземпляр виртуальной машины.
-4. Повторяйте шаги 1 – 3 по мере необходимости, пока не будет выполнена подготавливается Требуемая емкость. Не следует масштабировать количество экземпляров в типах первичных узлов до тех пор, пока не будет гарантирован уровень надежности. См. [рекомендации по планированию загрузки кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity).
+4. Повторяйте шаги 1 – 3 по мере необходимости, пока не будет выполнена подготавливается Требуемая емкость. Не следует масштабировать количество экземпляров в типах первичных узлов до тех пор, пока не будет гарантирован уровень надежности. См. [рекомендации по планированию загрузки кластера Service Fabric](./service-fabric-cluster-capacity.md).
 
-Чтобы выполнить масштабирование вручную, обновите емкость в свойстве SKU требуемого ресурса [масштабируемого набора виртуальных машин](https://docs.microsoft.com/rest/api/compute/virtualmachinescalesets/createorupdate#virtualmachinescalesetosprofile) .
+Чтобы выполнить масштабирование вручную, обновите емкость в свойстве SKU требуемого ресурса [масштабируемого набора виртуальных машин](/rest/api/compute/virtualmachinescalesets/createorupdate#virtualmachinescalesetosprofile) .
 
 ```json
 "sku": {
@@ -123,7 +123,7 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 }
 ```
 
-Необходимо подготовить узел к завершению работы для программного масштабирования. Найдите узел, который нужно удалить (узел с наибольшим экземпляром). Пример:
+Необходимо подготовить узел к завершению работы для программного масштабирования. Найдите узел, который нужно удалить (узел с наибольшим экземпляром). Например:
 
 ```csharp
 using (var client = new FabricClient())
@@ -166,13 +166,13 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 ```
 
 > [!NOTE]
-> При масштабировании в кластере вы увидите, что удаленный экземпляр узла или виртуальной машины отображается в неработоспособном состоянии Service Fabric Explorer. Описание этого поведения см. [в разделе варианты поведения, которые могут возникнуть в Service Fabric Explorer](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-scale-in-out#behaviors-you-may-observe-in-service-fabric-explorer). Вы можете:
-> * Вызовите [команду Remove-ServiceFabricNodeState](https://docs.microsoft.com/powershell/module/servicefabric/remove-servicefabricnodestate?view=azureservicefabricps) с соответствующим именем узла.
+> При масштабировании в кластере вы увидите, что удаленный экземпляр узла или виртуальной машины отображается в неработоспособном состоянии Service Fabric Explorer. Описание этого поведения см. [в разделе варианты поведения, которые могут возникнуть в Service Fabric Explorer](./service-fabric-cluster-scale-in-out.md#behaviors-you-may-observe-in-service-fabric-explorer). Вы можете:
+> * Вызовите [команду Remove-ServiceFabricNodeState](/powershell/module/servicefabric/remove-servicefabricnodestate?view=azureservicefabricps) с соответствующим именем узла.
 > * Разверните в кластере [вспомогательное приложение автомасштабирования Service Fabric](https://github.com/Azure/service-fabric-autoscale-helper/) . Это приложение гарантирует, что масштабируемые узлы будут удалены из Service Fabric Explorer.
 
 ## <a name="reliability-levels"></a>Уровни надежности
 
-[Уровень надежности](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity) — это свойство ресурса кластера Service Fabric. Его нельзя настроить по-разному для отдельных типов узлов. Он определяет коэффициент репликации для системных служб кластера и применяется на уровне ресурса кластера. 
+[Уровень надежности](./service-fabric-cluster-capacity.md) — это свойство ресурса кластера Service Fabric. Его нельзя настроить по-разному для отдельных типов узлов. Он определяет коэффициент репликации для системных служб кластера и применяется на уровне ресурса кластера. 
 
 Уровень надежности определяет минимальное количество узлов для узла основного типа. Уровень надежности может принимать следующие значения:
 
@@ -183,7 +183,7 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 
 Мы рекомендуем использовать уровень надежности не ниже Silver.
 
-Уровень надежности задается в разделе свойств для [ресурса Microsoft.ServiceFabric/clusters](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/2018-02-01/clusters), как показано ниже:
+Уровень надежности задается в разделе свойств для [ресурса Microsoft.ServiceFabric/clusters](/azure/templates/microsoft.servicefabric/2018-02-01/clusters), как показано ниже:
 
 ```json
 "properties":{
@@ -196,9 +196,9 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 > [!WARNING]
 > Типы узлов, выполняющиеся с устойчивостью Bronze, _не получают привилегий_. Задания инфраструктуры, влияющие на рабочие нагрузки без отслеживания состояния, не будут остановлены или отложены, что может повлиять на рабочие нагрузки. 
 >
-> Используйте уровень устойчивости Bronze только для тех типов узлов, на которых выполняются рабочие нагрузки без учета состояния. Для рабочих нагрузок в рабочей среде используйте серебряную или более позднюю версию, чтобы обеспечить согласованность состояния. Выберите уровень надежности, следуя рекомендациям в [документации по планированию ресурсов](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity).
+> Используйте уровень устойчивости Bronze только для тех типов узлов, на которых выполняются рабочие нагрузки без учета состояния. Для рабочих нагрузок в рабочей среде используйте серебряную или более позднюю версию, чтобы обеспечить согласованность состояния. Выберите уровень надежности, следуя рекомендациям в [документации по планированию ресурсов](./service-fabric-cluster-capacity.md).
 
-Уровень устойчивости настраивается для двух ресурсов. Один из них является профилем расширения для [ресурса масштабируемого набора виртуальных машин](https://docs.microsoft.com/rest/api/compute/virtualmachinescalesets/createorupdate#virtualmachinescalesetosprofile):
+Уровень устойчивости настраивается для двух ресурсов. Один из них является профилем расширения для [ресурса масштабируемого набора виртуальных машин](/rest/api/compute/virtualmachinescalesets/createorupdate#virtualmachinescalesetosprofile):
 
 ```json
 "extensionProfile": {
@@ -213,7 +213,7 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 }
 ```
 
-Другой ресурс находится `nodeTypes` в [ресурсе Microsoft. ServiceFabric/Clusters](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/2018-02-01/clusters): 
+Другой ресурс находится `nodeTypes` в [ресурсе Microsoft. ServiceFabric/Clusters](/azure/templates/microsoft.servicefabric/2018-02-01/clusters): 
 
 ```json
 "nodeTypes": [

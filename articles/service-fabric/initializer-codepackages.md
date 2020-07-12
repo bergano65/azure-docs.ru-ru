@@ -5,12 +5,12 @@ author: shsha-msft
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.author: shsha
-ms.openlocfilehash: 8483e00f55d0dd49ba57db58b99b237ce0a169e5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3be079b97c2660437344f88203fdda06cc6d6740
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81430634"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86258980"
 ---
 # <a name="initializer-codepackages"></a>Initializer Code Packages
 
@@ -50,7 +50,7 @@ ms.locfileid: "81430634"
 > [!IMPORTANT]
 > В следующем примере предполагается знание создания [приложений контейнера Windows с помощью Service Fabric и DOCKER][containers-getting-started-link].
 >
-> Этот пример ссылается на mcr.microsoft.com/windows/nanoserver:1809. Контейнеры Windows Server совместимы не со всеми версиями ОС узла. Дополнительные сведения см. в разделе [Совместимость версий контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/version-compatibility).
+> Этот пример ссылается на mcr.microsoft.com/windows/nanoserver:1809. Контейнеры Windows Server совместимы не со всеми версиями ОС узла. Дополнительные сведения см. в разделе [Совместимость версий контейнеров Windows](/virtualization/windowscontainers/deploy-containers/version-compatibility).
 
 Следующий ServiceManifest.xml строится на основе фрагмента ServiceManifest, описанного ранее. *InitCodePackage0*, *InitCodePackage1* и *ворклоадкодепаккаже* — содержащиеся, которые представляют контейнеры. После активации сначала выполняется *InitCodePackage0* . Он записывает сообщение в файл и завершает работу. Затем выполняется *InitCodePackage1* , который также записывает сообщение в файл и завершает работу. Наконец, *ворклоадкодепаккаже* начинает выполнение. Он также записывает сообщение в файл, выводит содержимое файла в **stdout** , а затем выполняет проверку связи бессрочно.
 
@@ -151,4 +151,3 @@ Hi from WorkloadCodePackage.
 [application-model-link]: service-fabric-application-model.md
 [hosting-model-link]: service-fabric-hosting-model.md
 [setup-entry-point-link]: service-fabric-run-script-at-service-startup.md
-

@@ -4,12 +4,12 @@ description: Узнайте, как быстро приступить к раб�
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: mvc
-ms.openlocfilehash: 7bd781a21a32ca29fe3f5dd2f4432dbf1e5ca411
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 40f8c53394292a85f6fd032e445d79ed82e2d4e9
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80292140"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260263"
 ---
 # <a name="integrate-api-management-with-service-fabric-in-azure"></a>Развертывание управления API с помощью Service Fabric в Azure
 
@@ -25,12 +25,12 @@ ms.locfileid: "80292140"
 > [!IMPORTANT]
 > Эта функция доступна в ценовой категории **Премиум** и **Разработка** управления API, так как необходима поддержка виртуальной сети.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Перед началом работы
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps) или [Azure CLI](/cli/azure/install-azure-cli).
+* Установите [Azure PowerShell](/powershell/azure/install-az-ps) или [Azure CLI](/cli/azure/install-azure-cli).
 * Создайте защищенный [кластер Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в группе безопасности сети.
 * Если вы развертываете кластер Windows, настройте среду разработки Windows. [Установите Visual Studio 2019](https://www.visualstudio.com), а также рабочие нагрузки **Разработка для Azure**, **ASP.NET и разработка веб-приложений** и **Кроссплатформенная разработка .NET Core**.  Теперь настройте [среду разработки .NET](service-fabric-get-started.md).
 
@@ -151,9 +151,9 @@ az account set --subscription <guid>
 
 ### <a name="microsoftapimanagementserviceapispolicies"></a>Microsoft.ApiManagement/service/apis/policies
 
-При помощи [Microsoft.ApiManagement/service/apis/policies](/azure/templates/microsoft.apimanagement/service/apis/policies) создается политика серверной части, которая объединяет все данные. Она требуется при настройке внутренней службы Service Fabric, в которую направляются запросы. Вы можете применить эту политику к любой API-операции.  Дополнительные сведения см. в [обзоре политик](/azure/api-management/api-management-howto-policies).
+При помощи [Microsoft.ApiManagement/service/apis/policies](/azure/templates/microsoft.apimanagement/service/apis/policies) создается политика серверной части, которая объединяет все данные. Она требуется при настройке внутренней службы Service Fabric, в которую направляются запросы. Вы можете применить эту политику к любой API-операции.  Дополнительные сведения см. в [обзоре политик](../api-management/api-management-howto-policies.md).
 
-[Конфигурация серверной части для Service Fabric](/azure/api-management/api-management-transformation-policies#SetBackendService) предоставляет следующие элементы управления маршрутизации запросов:
+[Конфигурация серверной части для Service Fabric](../api-management/api-management-transformation-policies.md#SetBackendService) предоставляет следующие элементы управления маршрутизации запросов:
 
 * Выбор экземпляра службы с помощью указания имени экземпляра службы Service Fabric. Оно может быть жестко запрограммированным (например, `"fabric:/myapp/myservice"`) или созданным с помощью HTTP-запроса (например, `"fabric:/myapp/users/" + context.Request.MatchedParameters["name"]`).
 * Разрешение раздела путем создания ключа секции с помощью любой схемы секционирования Service Fabric.
@@ -180,7 +180,7 @@ az account set --subscription <guid>
 </policies>
 ```
 
-Чтобы ознакомиться с полным набором атрибутов серверной политики Service Fabric, см. дополнительные сведения в разделе [Задание внутренней службы](https://docs.microsoft.com/azure/api-management/api-management-transformation-policies#SetBackendService).
+Чтобы ознакомиться с полным набором атрибутов серверной политики Service Fabric, см. дополнительные сведения в разделе [Задание внутренней службы](../api-management/api-management-transformation-policies.md#SetBackendService).
 
 ## <a name="set-parameters-and-deploy-api-management"></a>Настройка параметров и развертывание управления API
 
@@ -190,7 +190,7 @@ az account set --subscription <guid>
 |---|---|
 |apimInstanceName|sf-apim|
 |apimPublisherEmail|myemail@contosos.com|
-|apimSku|Разработчик|
+|apimSku|Developer|
 |serviceFabricCertificateName|sfclustertutorialgroup320171031144217|
 |certificatePassword|q6D7nN%6ck@6|
 |serviceFabricCertificateThumbprint|C4C1E541AD512B8065280292A8BA6079C3F26F10 |
@@ -291,9 +291,9 @@ az group delete --name $ResourceGroupName
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об использовании [управления API](/azure/api-management/import-and-publish).
+Дополнительные сведения об использовании [управления API](../api-management/import-and-publish.md).
 
-[azure-powershell]: https://azure.microsoft.com/documentation/articles/powershell-install-configure/
+[azure-powershell]: /powershell/azure/
 
 [apim-arm]:https://github.com/Azure/service-fabric-scripts-and-templates/blob/master/templates/service-integration/apim.json
 [apim-parameters-arm]:https://github.com/Azure/service-fabric-scripts-and-templates/blob/master/templates/service-integration/apim.parameters.json

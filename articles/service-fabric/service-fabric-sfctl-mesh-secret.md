@@ -5,11 +5,12 @@ author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: fab388ff223eb95020e2ba0945c76532bc54f224
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2c91a59e57613934c946e3cd56089b330893a51a
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76905987"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260348"
 ---
 # <a name="sfctl-mesh-secret"></a>sfctl mesh secret
 Получение и удаление ресурсов mesh secret.
@@ -18,7 +19,7 @@ ms.locfileid: "76905987"
 
 |Команда|Описание|
 | --- | --- |
-| удалить | Удаляет ресурс секрета. |
+| delete | Удаляет ресурс секрета. |
 | list | Составляет список всех ресурсов секрета. |
 | show | Предоставляет ресурс секрета с заданным именем. |
 
@@ -82,4 +83,4 @@ ms.locfileid: "76905987"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) Service Fabric CLI.
-- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
+- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](./scripts/sfctl-upgrade-application.md).

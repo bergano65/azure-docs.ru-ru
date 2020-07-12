@@ -4,12 +4,12 @@ description: Узнайте о сценариях защиты кластера 
 ms.topic: conceptual
 ms.date: 08/14/2018
 ms.custom: sfrev
-ms.openlocfilehash: ba1565c31e8a3ce3f25501f0cad321d5413dc962
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 258a6dd141ccc31516e37dac9f265328f981bbf5
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85080688"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86261076"
 ---
 # <a name="service-fabric-cluster-security-scenarios"></a>Сценарии защиты кластера Service Fabric
 
@@ -27,7 +27,7 @@ ms.locfileid: "85080688"
 
 ![Схема обмена данными между узлами][Node-to-Node]
 
-Кластеры, работающие в Azure, и автономные кластеры, работающие под управлением Windows, могут использовать [безопасность на основе сертификатов](https://msdn.microsoft.com/library/ff649801.aspx) или [безопасность Windows](https://msdn.microsoft.com/library/ff649396.aspx) для компьютеров Windows Server.
+Кластеры, работающие в Azure, и автономные кластеры, работающие под управлением Windows, могут использовать [безопасность на основе сертификатов](/previous-versions/msp-n-p/ff649801(v=pandp.10)) или [безопасность Windows](/previous-versions/msp-n-p/ff649396(v=pandp.10)) для компьютеров Windows Server.
 
 ### <a name="node-to-node-certificate-security"></a>Безопасность обмена данными между узлами на основе сертификатов
 
@@ -54,7 +54,7 @@ Service Fabric использует сертификаты сервера X.509,
 
 ![Схема обмена данными между узлом и клиентом][Client-to-Node]
 
-Кластеры, работающие в Azure и автономных кластерах, работающих в Windows, могут использовать либо [безопасность сертификатов](https://msdn.microsoft.com/library/ff649801.aspx) , либо [Безопасность Windows](https://msdn.microsoft.com/library/ff649396.aspx), хотя при возможности рекомендуется использовать проверку подлинности по сертификату X. 509.
+Кластеры, работающие в Azure и автономных кластерах, работающих в Windows, могут использовать либо [безопасность сертификатов](/previous-versions/msp-n-p/ff649801(v=pandp.10)) , либо [Безопасность Windows](/previous-versions/msp-n-p/ff649396(v=pandp.10)), хотя при возможности рекомендуется использовать проверку подлинности по сертификату X. 509.
 
 ### <a name="client-to-node-certificate-security"></a>Безопасность обмена данными между клиентами и узлами на основе сертификатов
 
@@ -95,7 +95,7 @@ Azure AD позволяет организациям (известным как 
 
 ## <a name="x509-certificates-and-service-fabric"></a>Сертификаты X.509 и Service Fabric
 
-Цифровые сертификаты X.509 обычно используются для проверки подлинности клиентов и серверов, а также для шифрования и цифровой подписи сообщений. Service Fabric использует сертификаты X.509 для защиты кластера и обеспечения функций безопасности приложений. Дополнительные сведения о цифровых сертификатах X.509 см. в статье [Работа с сертификатами](https://msdn.microsoft.com/library/ms731899.aspx). [Key Vault](../key-vault/general/overview.md) используется для управления сертификатами кластеров Service Fabric в Azure.
+Цифровые сертификаты X.509 обычно используются для проверки подлинности клиентов и серверов, а также для шифрования и цифровой подписи сообщений. Service Fabric использует сертификаты X.509 для защиты кластера и обеспечения функций безопасности приложений. Дополнительные сведения о цифровых сертификатах X.509 см. в статье [Работа с сертификатами](/dotnet/framework/wcf/feature-details/working-with-certificates). [Key Vault](../key-vault/general/overview.md) используется для управления сертификатами кластеров Service Fabric в Azure.
 
 Необходимо учитывать следующие важные моменты.
 
@@ -141,7 +141,7 @@ Azure AD позволяет организациям (известным как 
 > [!NOTE]
 > Для выполнения всех операций управления в кластере Service Fabric необходимы сертификаты серверов. Для управления нельзя использовать сертификаты клиента.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание кластера Service Fabric в Azure с помощью Azure Resource Manager](service-fabric-cluster-creation-via-arm.md)
 * [Создание кластера с помощью портала Azure](service-fabric-cluster-creation-via-portal.md)

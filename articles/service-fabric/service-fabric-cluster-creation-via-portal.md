@@ -3,12 +3,12 @@ title: Создание кластера Service Fabric в Azure с помощь
 description: Узнайте, как настроить защищенный кластер Service Fabric в Azure с помощью портала Azure и Azure Key Vault.
 ms.topic: conceptual
 ms.date: 09/06/2018
-ms.openlocfilehash: eeadfcf24ad2448c845f3d612247686347600001
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b47f3b756ef4d012b41fd15686ffc08ab54fc187
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85611158"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259323"
 ---
 # <a name="create-a-service-fabric-cluster-in-azure-using-the-azure-portal"></a>Создание кластера Service Fabric в Azure с помощью портала Azure
 > [!div class="op_single_selector"]
@@ -121,7 +121,7 @@ ms.locfileid: "85611158"
 ### <a name="3-security"></a>3. безопасность
 ![Снимок экрана конфигураций безопасности на портал Azure.][BasicSecurityConfigs]
 
-Чтобы облегчить процесс настройки надежных тестовых кластеров, мы предоставили параметр **Базовый**. Если у вас уже имеется сертификат, который отправлен в [хранилище ключей](/azure/key-vault/) (и оно включено для развертывания), тогда используйте параметр **Пользовательский**.
+Чтобы облегчить процесс настройки надежных тестовых кластеров, мы предоставили параметр **Базовый**. Если у вас уже имеется сертификат, который отправлен в [хранилище ключей](../key-vault/index.yml) (и оно включено для развертывания), тогда используйте параметр **Пользовательский**.
 
 #### <a name="basic-option"></a>Параметр "Базовый"
 Следуйте инструкциям на экране, чтобы добавить или повторно использовать хранилище ключей и добавить сертификат. Добавление сертификата является синхронным процессом, поэтому придется подождать создания сертификата.
@@ -198,11 +198,11 @@ ms.locfileid: "85611158"
 ## <a name="remote-connect-to-a-virtual-machine-scale-set-instance-or-a-cluster-node"></a>Удаленное подключение к экземпляру из набора масштабирования виртуальных машин или узлу кластера
 Каждый из типов узлов, задаваемый в кластере, отражается на конфигурации масштабируемого набора виртуальных машин. <!--See [Remote connect to a Virtual Machine Scale Set instance][remote-connect-to-a-vm-scale-set] for details. -->
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 На этом этапе у вас имеется защищенный кластер, использующий сертификаты для аутентификации управления. Далее [подключитесь к этому кластеру](service-fabric-connect-to-secure-cluster.md) и узнайте, как [управлять секретами приложений](service-fabric-application-secret-management.md).  Кроме того, узнайте [о вариантах поддержки Service Fabric](service-fabric-support.md).
 
 <!-- Links -->
-[azure-powershell]: https://azure.microsoft.com/documentation/articles/powershell-install-configure/
+[azure-powershell]: /powershell/azure/
 [azure-portal]: https://portal.azure.com/
 [key-vault-get-started]: ../key-vault/general/overview.md
 [create-cluster-arm]: service-fabric-cluster-creation-via-arm.md

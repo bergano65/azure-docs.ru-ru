@@ -7,12 +7,12 @@ ms.manager: carmonm
 ms.topic: article
 ms.date: 03/12/2020
 ms.author: raynew
-ms.openlocfilehash: afc3132ebdd0f144d16507ef2ccda2dcaffaa34e
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 01f30305529e7f142be0ca6ddffa0f5a12a235bb
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86232174"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260022"
 ---
 # <a name="migrate-vmware-vms-to-azure-vms-enabled-with-server-side-encryption-and-customer-managed-keys"></a>Перенос виртуальных машин VMware на виртуальные машины Azure, поддерживающие шифрование на стороне сервера и управляемые клиентом ключи
 
@@ -59,6 +59,10 @@ ms.locfileid: "86232174"
 Объект "набор шифрования дисков" сопоставляет управляемые диски с Key Vault, который содержит CMK для использования в SSE. Чтобы реплицировать виртуальные машины с помощью CMK, необходимо создать набор шифрования дисков и передать его в качестве входных данных для операции репликации.
 
 Выполните [приведенный ниже пример,](../virtual-machines/windows/disks-enable-customer-managed-keys-powershell.md) чтобы создать набор шифрования дисков с помощью Azure PowerShell. Убедитесь, что набор шифрования дисков создан в целевой подписке, в которую выполняется миграция виртуальных машин, и в целевом регионе Azure для миграции.
+
+Набор шифрования дисков можно настроить для шифрования управляемых дисков с помощью ключа, управляемого клиентом, или для двойного шифрования с ключом, управляемым клиентом, и ключом платформы. Чтобы использовать параметр двойное шифрование при неактивных данных, настройте набор шифрования диска, как описано [здесь](../virtual-machines/windows/disks-enable-double-encryption-at-rest-powershell.md).
+
+В примере, показанном ниже, для набора шифрования диска настроено использование ключа, управляемого клиентом.
 
 ```azurepowershell
 $Location = "southcentralus"                           #Target Azure region for migration 

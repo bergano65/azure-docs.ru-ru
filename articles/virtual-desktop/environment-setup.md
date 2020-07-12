@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ad535dd18b89cbe2fceab90f73789180ad332b57
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d189d5febe54a83cde4fe6cd6aa51e728aa882e6
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82612374"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259904"
 ---
 # <a name="windows-virtual-desktop-environment"></a>Среда Виртуального рабочего стола Windows
 
@@ -66,7 +66,7 @@ ms.locfileid: "82612374"
 
 Сведения о подключении к виртуальному рабочему столу Windows см. в одной из следующих статей:
 
-- [Подключение с Windows 10 или Windows 7](connect-windows-7-and-10.md)
+- [Подключение с Windows 10 или Windows 7](connect-windows-7-10.md)
 - [Подключение с помощью веб-браузера](connect-web.md)
 - [Подключение к клиенту Android](connect-android.md)
 - [Подключение с помощью клиента macOS](connect-macos.md)

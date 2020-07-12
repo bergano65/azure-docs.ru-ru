@@ -4,11 +4,12 @@ description: Настройка сертификатов для приложен
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: pepogors
-ms.openlocfilehash: 802e76614f51e1f6479a311e61a49d83b8125546
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a97c8b8315fe3be405aed9c6570004afb8fafd1d
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79282579"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86258664"
 ---
 # <a name="certificates-and-security-on-linux-clusters"></a>Сертификаты и безопасность в кластерах Linux
 
@@ -20,11 +21,11 @@ Service Fabric обычно ожидает, что сертификаты X.509 
 
 Для кластеров Linux платформа Service Fabric ожидает, что сертификаты должны быть либо PEM-файлом, содержащим сертификат и закрытый ключ, либо CRT-файлом, который содержит сертификат, и KEY-файлом, который содержит закрытый ключ. Все файлы должны быть в формате PEM. 
 
-Если вы устанавливаете сертификат из Azure Key Vault с помощью [шаблона Resource Manager](./service-fabric-cluster-creation-create-template.md) или команд [PowerShell](https://docs.microsoft.com/powershell/module/az.servicefabric/?view=azps-2.6.0), то сертификат установится в правильном формате в каталог */var/lib/sfcerts* на каждом узле. Если вы устанавливаете сертификат другим способом, то вам следует убедиться в его правильной установке на узлах кластера.
+Если вы устанавливаете сертификат из Azure Key Vault с помощью [шаблона Resource Manager](./service-fabric-cluster-creation-create-template.md) или команд [PowerShell](/powershell/module/az.servicefabric/?view=azps-2.6.0), то сертификат установится в правильном формате в каталог */var/lib/sfcerts* на каждом узле. Если вы устанавливаете сертификат другим способом, то вам следует убедиться в его правильной установке на узлах кластера.
 
 ## <a name="certificates-referenced-in-the-application-manifest"></a>Сертификаты, на которые имеются ссылки в манифесте приложения
 
-Сертификаты, определенные в манифесте приложения, например в элементе [**SecretsCertificate**](https://docs.microsoft.com/azure/service-fabric/service-fabric-service-model-schema-elements#secretscertificate-element) или [**EndpointCertificate**](https://docs.microsoft.com/azure/service-fabric/service-fabric-service-model-schema-elements#endpointcertificate-element), должны присутствовать в каталоге */var/lib/sfcerts*. Элементы, используемые для указания сертификатов в манифесте приложения, не принимают атрибут path, поэтому сертификаты должны присутствовать в каталоге по умолчанию. Эти элементы принимают необязательный атрибут **X509StoreName**. По умолчанию используется значение My, что указывает на каталог */var/lib/sfcerts* в узлах Linux. Любое другое значение в кластере Linux не определено. Мы рекомендуем пропустить атрибут **X509StoreName** для приложений, которые выполняются в кластерах Linux. 
+Сертификаты, определенные в манифесте приложения, например в элементе [**SecretsCertificate**](./service-fabric-service-model-schema-elements.md#secretscertificate-element) или [**EndpointCertificate**](./service-fabric-service-model-schema-elements.md#endpointcertificate-element), должны присутствовать в каталоге */var/lib/sfcerts*. Элементы, используемые для указания сертификатов в манифесте приложения, не принимают атрибут path, поэтому сертификаты должны присутствовать в каталоге по умолчанию. Эти элементы принимают необязательный атрибут **X509StoreName**. По умолчанию используется значение My, что указывает на каталог */var/lib/sfcerts* в узлах Linux. Любое другое значение в кластере Linux не определено. Мы рекомендуем пропустить атрибут **X509StoreName** для приложений, которые выполняются в кластерах Linux. 
 
 ## <a name="certificates-referenced-in-the-configuration-package-settingsxml"></a>Сертификаты, на которые имеются ссылки в пакете конфигурации (Settings.xml)
 
@@ -32,7 +33,7 @@ Service Fabric обычно ожидает, что сертификаты X.509 
 
 ### <a name="using-x509-securitycredentialstype"></a>Использование SecurityCredentialsType X509
 
-При использовании пакетов SDK для .NET или Java вы можете указать **X509** для **SecurityCredentialsType**. Соответствует `X509Credentials` типу (.NET Java[.NET](https://msdn.microsoft.com/library/system.fabric.x509credentials.aspx) / [)](https://docs.microsoft.com/java/api/system.fabric.x509credentials) `SecurityCredentials` ([.NET](https://msdn.microsoft.com/library/system.fabric.securitycredentials.aspx) / [Java](https://docs.microsoft.com/java/api/system.fabric.securitycredentials)).
+При использовании пакетов SDK для .NET или Java вы можете указать **X509** для **SecurityCredentialsType**. Соответствует `X509Credentials` типу (.NET Java[.NET](/previous-versions/azure/reference/mt124925(v=azure.100)) / [)](/java/api/system.fabric.x509credentials) `SecurityCredentials` ([.NET](/previous-versions/azure/reference/mt124894(v=azure.100)) / [Java](/java/api/system.fabric.securitycredentials)).
 
 Ссылка **X509** определяет местонахождение сертификата в хранилище сертификатов. В следующем коде XML показаны параметры, используемые для указания расположения сертификата:
 
@@ -63,7 +64,7 @@ Service Fabric обычно ожидает, что сертификаты X.509 
 
 ### <a name="using-x509_2-securitycredentialstype"></a>Использование SecurityCredentialsType X509_2
 
-С помощью пакета SDK для Java вы можете указать **X509_2** для **SecurityCredentialsType**. Это соответствует типу `X509Credentials2` ([Java](https://docs.microsoft.com/java/api/system.fabric.x509credentials2)) `SecurityCredentials` ([Java](https://docs.microsoft.com/java/api/system.fabric.securitycredentials)). 
+С помощью пакета SDK для Java вы можете указать **X509_2** для **SecurityCredentialsType**. Это соответствует типу `X509Credentials2` ([Java](/java/api/system.fabric.x509credentials2)) `SecurityCredentials` ([Java](/java/api/system.fabric.securitycredentials)). 
 
 Со ссылкой **X509_2** вы указываете параметр path, чтобы определить местонахождение сертификата в каталоге, отличном от */var/lib/sfcerts*.  В следующем коде XML показаны параметры, используемые для указания расположения сертификата: 
 
@@ -93,7 +94,7 @@ Service Fabric обычно ожидает, что сертификаты X.509 
 
 Пакеты SDK Service Fabric позволяют взаимодействовать с API среды выполнения Service Fabric для использования платформы. При запуске любого приложения, использующего эту функциональность на защищенных кластерах Linux, необходимо настроить приложение с сертификатом, который можно использовать для проверки с помощью среды выполнения Service Fabric. Такая конфигурация требуется приложениям, которые содержат службы Reliable Service в Service Fabric, написанные с помощью пакетов SDK для .NET Core или Java. 
 
-Чтобы настроить приложение, добавьте элемент [**SecretsCertificate**](https://docs.microsoft.com/azure/service-fabric/service-fabric-service-model-schema-elements#secretscertificate-element) под тег **Certificates**, который находится под тегом **ApplicationManifest** в файле *ApplicationManifest.xml*. В следующем коде XML показан сертификат, на который содержится ссылка по отпечатку: 
+Чтобы настроить приложение, добавьте элемент [**SecretsCertificate**](./service-fabric-service-model-schema-elements.md#secretscertificate-element) под тег **Certificates**, который находится под тегом **ApplicationManifest** в файле *ApplicationManifest.xml*. В следующем коде XML показан сертификат, на который содержится ссылка по отпечатку: 
 
 ```xml
    <Certificates>
@@ -102,6 +103,3 @@ Service Fabric обычно ожидает, что сертификаты X.509 
 ```
 
 Вы можете ссылаться на сертификат кластера или сертификат, устанавливаемый на каждый узел кластера. В Linux файлы сертификатов должны присутствовать в каталоге */var/lib/sfcerts*. Дополнительные сведения см. в разделе [Расположение и формат сертификатов X.509 в узлах Linux](#location-and-format-of-x509-certificates-on-linux-nodes).
-
-
-

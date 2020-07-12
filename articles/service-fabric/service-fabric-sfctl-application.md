@@ -5,11 +5,12 @@ author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: b4e1066bba1db387c9dc0600bc55522f0b5fe897
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 880770345eb7d65850db322bd97d64c60b6681ee
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76906198"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260866"
 ---
 # <a name="sfctl-application"></a>sfctl application
 Создание и удаление приложений и типов приложений, а также управление ими.
@@ -19,7 +20,7 @@ ms.locfileid: "76906198"
 |Команда|Описание|
 | --- | --- |
 | create | Создает приложение Service Fabric с помощью указанного описания. |
-| удалить | Удаляет существующее приложение Service Fabric. |
+| delete | Удаляет существующее приложение Service Fabric. |
 | deployed | Возвращает сведения о приложении, развернутом на узле Service Fabric. |
 | deployed-health | Возвращает сведения о работоспособности приложения, развернутого на узле Service Fabric. |
 | deployed-list | Возвращает список приложений, развернутых на узле Service Fabric. |
@@ -549,4 +550,4 @@ ms.locfileid: "76906198"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
-- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
+- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](./scripts/sfctl-upgrade-application.md).

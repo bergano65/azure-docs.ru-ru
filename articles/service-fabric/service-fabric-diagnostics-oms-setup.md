@@ -5,11 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: srrengar
-ms.openlocfilehash: cf0fab9942dcbb7ee09e554f2c9ba8738f208009
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 691f3b7987c2591b0f6cea3f7b520c03c0ba9a9e
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75609933"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86258644"
 ---
 # <a name="set-up-azure-monitor-logs-for-a-cluster"></a>Настройка журналов Azure Monitor для кластера
 
@@ -31,7 +32,7 @@ ms.locfileid: "75609933"
 
 2. Найдите **Аналитика Service Fabric**. Выберите появившийся ресурс.
 
-3. Выберите **Создать**.
+3. Нажмите кнопку **Создать**.
 
     ![Аналитика Service Fabric в Marketplace](media/service-fabric-diagnostics-event-analysis-oms/service-fabric-analytics.png)
 
@@ -90,7 +91,7 @@ Azure Resource Manager определит, что эта команда — эт
 
 ## <a name="deploy-azure-monitor-logs-with-azure-powershell"></a>Развертывание журналов Azure Monitor с помощью Azure PowerShell
 
-Вы также можете развернуть ресурс log Analytics с помощью PowerShell, выполнив `New-AzOperationalInsightsWorkspace` команду. Чтобы использовать этот метод, обязательно установите [Azure Powershell](https://docs.microsoft.com/powershell/azure/install-Az-ps). Чтобы создать рабочую область Log Analytics и добавить в нее решение Service Fabric, используйте следующий сценарий: 
+Вы также можете развернуть ресурс log Analytics с помощью PowerShell, выполнив `New-AzOperationalInsightsWorkspace` команду. Чтобы использовать этот метод, обязательно установите [Azure Powershell](/powershell/azure/install-az-ps). Чтобы создать рабочую область Log Analytics и добавить в нее решение Service Fabric, используйте следующий сценарий: 
 
 ```powershell
 
@@ -120,7 +121,7 @@ Set-AzOperationalInsightsIntelligencePack -ResourceGroupName $ResourceGroup -Wor
 
 Вы также можете добавить другие решения или внести другие изменения в рабочую область Log Analytics с помощью PowerShell. Дополнительные сведения см. в статье [Управление журналами Azure Monitor с помощью PowerShell](../azure-monitor/platform/powershell-workspace-configuration.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Разверните агент Log Analytics](service-fabric-diagnostics-oms-agent.md) на узлах для сбора данных счетчиков производительности и статистики Docker, а также журналов для контейнеров.
-* Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../log-analytics/log-analytics-log-searches.md), которые являются частью журналов Azure Monitor
+* Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../azure-monitor/log-query/log-query-overview.md), которые являются частью журналов Azure Monitor
 * [Использование конструктора представлений для создания пользовательских представлений в журналах Azure Monitor](../azure-monitor/platform/view-designer.md)

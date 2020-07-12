@@ -5,12 +5,12 @@ author: amanbha
 ms.topic: conceptual
 ms.date: 10/06/2017
 ms.author: amanbha
-ms.openlocfilehash: b05da78091260297d94062c06cba100d01ce7e2e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: db47a758d33c3ed6e861601285e7737514ab416d
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85847881"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260450"
 ---
 # <a name="actor-lifecycle-automatic-garbage-collection-and-manual-delete"></a>Жизненный цикл субъектов, автоматическая сборка мусора и удаление вручную
 Субъект активируется при первом вызове любого из его методов. Субъект деактивируется, если он не используется в течение заданного периода времени (при этом среда выполнения субъектов собирает мусор). Субъект и его состояние можно также удалить вручную в любое время.
@@ -107,12 +107,12 @@ public class Program
 ## <a name="manually-deleting-actors-and-their-state"></a>Удаление субъектов и данных их состояния вручную
 При удалении деактивированных субъектов удаляется только объект субъекта; из диспетчера состояний субъекта данные не удаляются. При повторной активации субъекта его данные снова становятся доступны в диспетчере состояний. Если субъекты, данные которых хранятся в диспетчере состояний, деактивируются и больше не активируются, может возникнуть необходимость в удалении связанных с ними данных.  Примеры удаления субъектов см. в статье [Удаление субъектов Reliable Actors и данных их состояния](service-fabric-reliable-actors-delete-actors.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Таймеры и напоминания субъекта](service-fabric-reliable-actors-timers-reminders.md)
 * [События субъекта](service-fabric-reliable-actors-events.md)
 * [Повторный вход субъекта](service-fabric-reliable-actors-reentrancy.md)
 * [Диагностика и мониторинг производительности в Reliable Actors](service-fabric-reliable-actors-diagnostics.md)
-* [Справочная документация по API субъектов](https://msdn.microsoft.com/library/azure/dn971626.aspx)
+* [Справочная документация по API субъектов](/previous-versions/azure/dn971626(v=azure.100))
 * [Пример кода на C#](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Пример кода Java](https://github.com/Azure-Samples/service-fabric-java-getting-started)
 

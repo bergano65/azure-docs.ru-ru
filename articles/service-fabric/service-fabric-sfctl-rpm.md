@@ -5,11 +5,12 @@ author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: 1787c0c8a8d5994ce1f1e9e4c55f155bbca6934c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7317fd66303aaabf5232106aa7391439880bebaf
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76904943"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260295"
 ---
 # <a name="sfctl-rpm"></a>sfctl rpm
 Запрос службы диспетчера восстановления и отправка команд для нее.
@@ -19,7 +20,7 @@ ms.locfileid: "76904943"
 |Команда|Описание|
 | --- | --- |
 | approve-force | Вызывает принудительное утверждение заданной задачи исправления. |
-| удалить | Удаляет завершенную задачу исправления. |
+| delete | Удаляет завершенную задачу исправления. |
 | list | Возвращает список задач исправления, соответствующих заданным фильтрам. |
 
 ## <a name="sfctl-rpm-approve-force"></a>sfctl rpm approve-force
@@ -92,4 +93,4 @@ ms.locfileid: "76904943"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
-- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
+- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](./scripts/sfctl-upgrade-application.md).

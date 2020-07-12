@@ -3,11 +3,12 @@ title: Безопасное подключение к кластеру Azure Ser
 description: Сведения о способах проверки подлинности клиентского доступа к кластеру Service Fabric, а также об обеспечении безопасного обмена данными между клиентами и кластером.
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: a1f4abbabe428a09492efefca4a8da9801b9f68d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 89d3598b283a91645f0db648be81c73dffde8b46
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84701225"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259253"
 ---
 # <a name="connect-to-a-secure-cluster"></a>Безопасное подключение к кластеру
 
@@ -29,7 +30,7 @@ openssl pkcs12 -in your-cert-file.pfx -out your-cert-file.pem -nodes -passin pas
 
 Если PFX-файл не защищен паролем, укажите -passin pass: в качестве последнего параметра.
 
-Чтобы указать сертификат клиента как PEM-файл, укажите путь к файлу в аргументе `--pem`. Пример:
+Чтобы указать сертификат клиента как PEM-файл, укажите путь к файлу в аргументе `--pem`. Например:
 
 ```shell
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./client.pem
@@ -43,7 +44,7 @@ sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./clie
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --cert ./client.crt --key ./keyfile.key
 ```
 
-Иногда сертификаты, используемые для защиты тестового кластера и кластера для разработки не проходят проверку сертификата. Чтобы не выполнять проверку сертификата, укажите параметр `--no-verify`. Пример:
+Иногда сертификаты, используемые для защиты тестового кластера и кластера для разработки не проходят проверку сертификата. Чтобы не выполнять проверку сертификата, укажите параметр `--no-verify`. Например:
 
 > [!WARNING]
 > При подключении к производственным кластерам Service Fabric не используйте параметр `no-verify`.
@@ -52,7 +53,7 @@ sfctl cluster select --endpoint https://testsecurecluster.com:19080 --cert ./cli
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./client.pem --no-verify
 ```
 
-Кроме того, вы можете указать пути к каталогам доверенных сертификатов ЦС или отдельных сертификатов. Чтобы указать эти пути, используйте аргумент `--ca`. Пример:
+Кроме того, вы можете указать пути к каталогам доверенных сертификатов ЦС или отдельных сертификатов. Чтобы указать эти пути, используйте аргумент `--ca`. Например:
 
 ```shell
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./client.pem --ca ./trusted_ca
@@ -144,7 +145,7 @@ Connect-ServiceFabricCluster -ConnectionEndpoint <Cluster FQDN>:19000 `
 <a id="connectsecureclusterfabricclient"></a>
 
 ## <a name="connect-to-a-cluster-using-the-fabricclient-apis"></a>Подключение к кластеру с помощью интерфейсов API FabricClient
-В пакете SDK для Service Fabric предусмотрен класс [FabricClient](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient) для управления кластером. Чтобы использовать интерфейсы API FabricClient, получите пакет NuGet Microsoft.ServiceFabric.
+В пакете SDK для Service Fabric предусмотрен класс [FabricClient](/dotnet/api/system.fabric.fabricclient) для управления кластером. Чтобы использовать интерфейсы API FabricClient, получите пакет NuGet Microsoft.ServiceFabric.
 
 ### <a name="connect-to-an-unsecure-cluster"></a>Подключение к незащищенному кластеру
 
@@ -162,7 +163,7 @@ FabricClient fabricClient = new FabricClient();
 
 ### <a name="connect-to-a-secure-cluster-using-a-client-certificate"></a>Подключение к защищенному кластеру с использованием сертификата клиента
 
-У узлов в кластере должны быть действительные сертификаты, общее имя или DNS-имя которых в сети SAN отображается в [свойстве RemoteCommonNames](https://docs.microsoft.com/dotnet/api/system.fabric.x509credentials), заданном для [FabricClient](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient). Это обеспечивает взаимную проверку подлинности между клиентом и узлами кластера.
+У узлов в кластере должны быть действительные сертификаты, общее имя или DNS-имя которых в сети SAN отображается в [свойстве RemoteCommonNames](/dotnet/api/system.fabric.x509credentials), заданном для [FabricClient](/dotnet/api/system.fabric.fabricclient). Это обеспечивает взаимную проверку подлинности между клиентом и узлами кластера.
 
 ```csharp
 using System.Fabric;
@@ -230,7 +231,7 @@ catch (Exception e)
 
 Приведенный ниже пример основан на пространстве имен Microsoft.IdentityModel.Clients.ActiveDirectory версии 2.19.208020213.
 
-Дополнительные сведения о получении маркеров AAD см. в описании [Microsoft.IdentityModel.Clients.ActiveDirectory](https://msdn.microsoft.com/library/microsoft.identitymodel.clients.activedirectory.aspx).
+Дополнительные сведения о получении маркеров AAD см. в описании [Microsoft.IdentityModel.Clients.ActiveDirectory](/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet).
 
 ```csharp
 string tenantId = "C15CFCEA-02C1-40DC-8466-FBD0EE0B05D2";
@@ -377,7 +378,7 @@ static string GetAccessToken(AzureActiveDirectoryMetadata aad)
 
 * В Mac: дважды щелкните PFX-файл и следуйте инструкциям на экране, чтобы установить сертификат в цепочке ключей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обновление кластера Service Fabric](service-fabric-cluster-upgrade.md)
 * [Управление приложениями Service Fabric в Visual Studio](service-fabric-manage-application-in-visual-studio.md)

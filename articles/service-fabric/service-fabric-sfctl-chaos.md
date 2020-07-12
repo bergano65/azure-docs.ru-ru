@@ -5,17 +5,18 @@ author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: 9bc7a5405309e35a36b15f44a1b136b899afbb55
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f59eb3296c27e64eb6a4644b2f455e3704381f49
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84119318"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260841"
 ---
 # <a name="sfctl-chaos"></a>sfctl chaos
 Запуск и остановка службы хаотического тестирования, а также вывод отчета о ее работе.
 
 ## <a name="subgroups"></a>Подгруппы
-|Подгруппа|Описание:|
+|Подгруппа|Описание|
 | --- | --- |
 | [Расписание](service-fabric-sfctl-chaos-schedule.md) | Получение и настройка расписания Chaos. |
 ## <a name="commands"></a>Команды
@@ -130,4 +131,4 @@ ms.locfileid: "84119318"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
-- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
+- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](./scripts/sfctl-upgrade-application.md).

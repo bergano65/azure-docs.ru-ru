@@ -14,11 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/22/2019
 ms.author: allensu
-ms.openlocfilehash: 6ea215b6aa826231e940f88c3687bb65591303f2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d8bd62bab627beb70a8fcba276bf8c2eca309c45
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74225316"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259730"
 ---
 # <a name="configure-dhcpv6-for-linux-vms"></a>Настройка DHCPv6 для виртуальных машин Linux
 
@@ -37,31 +38,38 @@ ms.locfileid: "74225316"
 
 1. Измените файл */etc/dhcp/dhclient6.conf* и добавьте следующую строку:
 
-        timeout 10;
+    ```config
+    timeout 10;
+    ```
 
 2. Замените конфигурацию сети для интерфейса eth0 следующей конфигурацией:
 
    * В **Ubuntu 12.04 и 14.04** измените файл */etc/network/interfaces.d/eth0.cfg*. 
    * В **Ubuntu 16.04** измените файл */etc/network/interfaces.d/50-cloud-init.cfg*.
 
-         iface eth0 inet6 auto
-             up sleep 5
-             up dhclient -1 -6 -cf /etc/dhcp/dhclient6.conf -lf /var/lib/dhcp/dhclient6.eth0.leases -v eth0 || true
+    ```config
+    iface eth0 inet6 auto
+        up sleep 5
+        up dhclient -1 -6 -cf /etc/dhcp/dhclient6.conf -lf /var/lib/dhcp/dhclient6.eth0.leases -v eth0 || true
+    ```
 
 3. Обновите IPv6-адрес:
 
     ```bash
     sudo ifdown eth0 && sudo ifup eth0
     ```
+
 Начиная с Ubuntu 17,10, механизмом сетевой конфигурации по умолчанию является [нетплан]( https://netplan.io).  При установке или создании экземпляра НЕТПЛАН считывает конфигурацию сети из файлов конфигурации YAML в этом расположении:/{Либ, т. е. Run}/нетплан/*. YAML.
 
-Для каждого интерфейса Ethernet в конфигурации необходимо включить инструкцию *dhcp6: true* .  Пример:
-  
-        network:
-          version: 2
-          ethernets:
-            eno1:
-              dhcp6: true
+Для каждого интерфейса Ethernet в конфигурации необходимо включить инструкцию *dhcp6: true* .  Например:
+
+```config
+network:
+  version: 2
+  ethernets:
+    eno1:
+      dhcp6: true
+```
 
 Во время раннего запуска нетплан "модуль подготовки отчетов" записывает конфигурацию в/Run для передачи управления устройствами в указанную сетевую управляющую программу для справочных сведений об НЕТПЛАН, см. в разделе https://netplan.io/reference .
  
@@ -69,13 +77,17 @@ ms.locfileid: "74225316"
 
 1. Измените файл */etc/dhcp/dhclient6.conf* и добавьте следующую строку:
 
-        timeout 10;
+    ```config
+    timeout 10;
+    ```
 
 2. Измените файл */etc/network/interfaces*, добавив следующую конфигурацию:
 
-        iface eth0 inet6 auto
-            up sleep 5
-            up dhclient -1 -6 -cf /etc/dhcp/dhclient6.conf -lf /var/lib/dhcp/dhclient6.eth0.leases -v eth0 || true
+    ```config
+    iface eth0 inet6 auto
+        up sleep 5
+        up dhclient -1 -6 -cf /etc/dhcp/dhclient6.conf -lf /var/lib/dhcp/dhclient6.eth0.leases -v eth0 || true
+    ```
 
 3. Обновите IPv6-адрес:
 
@@ -87,12 +99,16 @@ ms.locfileid: "74225316"
 
 1. Измените файл */etc/sysconfig/network*, добавив следующий параметр:
 
-        NETWORKING_IPV6=yes
+    ```config
+    NETWORKING_IPV6=yes
+    ```
 
 2. Измените файл */etc/sysconfig/network-scripts/ifcfg-eth0*, добавив следующие два параметра:
 
-        IPV6INIT=yes
-        DHCPV6C=yes
+    ```config
+    IPV6INIT=yes
+    DHCPV6C=yes
+    ```
 
 3. Обновите IPv6-адрес:
 
@@ -112,9 +128,11 @@ ms.locfileid: "74225316"
 
 2. Измените файл */etc/sysconfig/network/ifcfg-eth0*, добавив следующий параметр:
 
-        DHCLIENT6_MODE='managed'
+    ```config
+    DHCLIENT6_MODE='managed'
+    
 
-3. Обновите IPv6-адрес:
+3. Renew the IPv6 address:
 
     ```bash
     sudo ifdown eth0 && sudo ifup eth0
@@ -126,11 +144,15 @@ ms.locfileid: "74225316"
 
 1. Измените файл */etc/sysconfig/network/ifcfg-eth0* и замените параметр `#BOOTPROTO='dhcp4'` следующим значением:
 
-        BOOTPROTO='dhcp'
+    ```config
+    BOOTPROTO='dhcp'
+    ```
 
 2. В файл */etc/sysconfig/network/ifcfg-eth0* добавьте следующий параметр:
 
-        DHCLIENT6_MODE='managed'
+    ```config
+    DHCLIENT6_MODE='managed'
+    ```
 
 3. Обновите IPv6-адрес:
 
@@ -144,11 +166,13 @@ ms.locfileid: "74225316"
 
 1. Измените файл */etc/systemd/network/10_dhcp.network*:
 
-        [Match]
-        eth0
+    ```config
+    [Match]
+    eth0
 
-        [Network]
-        DHCP=ipv6
+    [Network]
+    DHCP=ipv6
+    ```
 
 2. Обновите IPv6-адрес:
 

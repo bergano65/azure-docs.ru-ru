@@ -5,15 +5,15 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 06/05/2020
+ms.date: 07/10/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 4ae190b55df70753f8f4dd081e8077c00e4c688a
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: c303527c7411ead585e70fc2e31db4dd2d35e996
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86231036"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259810"
 ---
 - Поддерживаются только [ключи RSA для программного обеспечения и HSM](../articles/key-vault/keys/about-keys.md) с размерами 2 048-бит, 3 072-бит и 4 096-bit, без других ключей или размеров.
     - Для ключей [HSM](../articles/key-vault/keys/hsm-protected-keys.md) требуется уровень **Premium** хранилища ключей Azure.
@@ -22,4 +22,5 @@ ms.locfileid: "86231036"
 - Все ресурсы, связанные с ключами, управляемыми клиентом (хранилища Azure Key Vault, наборы шифрования дисков, виртуальные машины, диски и моментальные снимки), должны находиться в одной подписке и регионе.
 - Диски, моментальные снимки и образы, зашифрованные с помощью управляемых клиентом ключей, нельзя переместить в другую подписку.
 - Управляемые диски, зашифрованные с помощью ключей, управляемых клиентом, также нельзя зашифровать с помощью шифрования дисков Azure.
+- Можно создать до 50 наборов шифрования дисков на регион для каждой подписки.
 - Сведения об использовании управляемых клиентом ключей с общими коллекциями образов см. в разделе [Предварительная версия: использование управляемых клиентом ключей для шифрования образов](../articles/virtual-machines/image-version-encryption.md).

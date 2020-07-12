@@ -5,11 +5,12 @@ author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: a9bd75e0b7f8bfceb50a71ca83b60ff1e7b45508
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0a5ebd4822c5f0ff1735464bb4d5b42c436ee529
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76905829"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260331"
 ---
 # <a name="sfctl-property"></a>Свойство sfctl
 Хранение и запрос свойств с именами Service Fabric.
@@ -18,7 +19,7 @@ ms.locfileid: "76905829"
 
 |Команда|Описание|
 | --- | --- |
-| удалить | Удаляет указанное свойство Service Fabric. |
+| delete | Удаляет указанное свойство Service Fabric. |
 | get | Возвращает указанное свойство Service Fabric. |
 | list | Возвращает информацию обо всех свойствах Service Fabric с указанным именем. |
 | put | Создает или обновляет свойство Service Fabric. |
@@ -121,4 +122,4 @@ ms.locfileid: "76905829"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) Service Fabric CLI.
-- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
+- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](./scripts/sfctl-upgrade-application.md).

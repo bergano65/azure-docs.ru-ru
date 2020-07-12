@@ -5,11 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: srrengar
-ms.openlocfilehash: 48350caef6bdaafda9aff7ac776d67b314aeaf8c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2d66248797d577d6894d1125188735ecf71029b0
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75614406"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86258896"
 ---
 # <a name="query-eventstore-apis-for-cluster-events"></a>Выполнение запросов к интерфейсам API EventStore для получения событий кластера
 
@@ -109,7 +110,7 @@ Body:
 
 ## <a name="query-the-eventstore-programmatically"></a>Отправка запроса к EventStore программным способом
 
-Можно также выполнить запрос к EventStore программно при помощи [ клиентской библиотеки Service Fabric](https://docs.microsoft.com/dotnet/api/overview/azure/service-fabric?view=azure-dotnet#client-library).
+Можно также выполнить запрос к EventStore программно при помощи [ клиентской библиотеки Service Fabric](/dotnet/api/overview/azure/service-fabric?view=azure-dotnet#client-library).
 
 Настроив клиент Service Fabric, вы сможете запрашивать события, обращаясь к EventStore следующим образом: `sfhttpClient.EventStore.<request>`.
 
@@ -199,4 +200,3 @@ var clstrEvents = sfhttpClient.EventsStore.GetClusterEventListAsync(
 *Служба тестирования в условиях хаоса*
 
 Это событие запуска или остановки службы тестирования в условиях хаоса, представленной на уровне кластера. Для просмотра последних данных об использовании службы тестирования в условиях хаоса выполните следующий запрос: `https://mycluster.cloudapp.azure.com:19080/EventsStore/Cluster/Events?api-version=6.4&starttimeutc=2017-04-22T17:01:51Z&endtimeutc=2018-04-29T17:02:51Z&EventsTypesFilter=ChaosStarted,ChaosStopped`.
-

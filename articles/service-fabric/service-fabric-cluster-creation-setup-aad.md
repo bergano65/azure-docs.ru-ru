@@ -3,11 +3,12 @@ title: Настройка Azure Active Directory для проверки под�
 description: Сведения о настройке Azure Active Directory (Azure AD) для проверки подлинности клиентов для кластеров Service Fabric.
 ms.topic: conceptual
 ms.date: 6/28/2019
-ms.openlocfilehash: 28c4c65cfcc77607dfe9a463a09ecd10389a6eca
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 537a81a090828d3fcc9dde6032f1d4eb2df9b4e4
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78193392"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86258776"
 ---
 # <a name="set-up-azure-active-directory-for-client-authentication"></a>Настройка Azure Active Directory для проверки подлинности клиента
 
@@ -25,7 +26,7 @@ ms.locfileid: "78193392"
 
 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 В этой статье предполагается, что клиент уже создан. Если это не так, обратитесь к статье [Как получить клиент Azure Active Directory][active-directory-howto-tenant].
 
 Чтобы упростить некоторые шаги по настройке Azure AD с кластером Service Fabric, мы создали набор сценариев Windows PowerShell.
@@ -37,7 +38,7 @@ ms.locfileid: "78193392"
 
 Мы будем использовать эти сценарии для создания двух приложений Azure AD для управления доступом к кластеру: одно веб-приложение и одно собственное приложение. Создав приложения для представления кластера, вы создадите пользователей для [ролей, поддерживаемых Service Fabric](service-fabric-cluster-security-roles.md): только для чтения и для администратора.
 
-Запустите `SetupApplications.ps1` и укажите идентификатор клиента, имя кластера и URL-адрес ответа веб-приложения в качестве параметров.  Укажите также имена пользователей и пароли для пользователей. Пример:
+Запустите `SetupApplications.ps1` и укажите идентификатор клиента, имя кластера и URL-адрес ответа веб-приложения в качестве параметров.  Укажите также имена пользователей и пароли для пользователей. Например:
 
 ```powershell
 $Configobj = .\SetupApplications.ps1 -TenantId '0e3d2646-78b3-4711-b8be-74a381d9890c' -ClusterName 'mysftestcluster' -WebApplicationReplyUrl 'https://mysftestcluster.eastus.cloudapp.azure.com:19080/Explorer/index.html' -AddResourceAccess
@@ -124,7 +125,7 @@ https://&lt;cluster_domain&gt;:19080/Explorer
 Connect-ServiceFabricCluster -ConnectionEndpoint <endpoint> -KeepAliveIntervalInSec 10 -AzureActiveDirectory -ServerCertThumbprint <thumbprint>
 ```
 
-Дополнительные сведения о командлете Connect-ServiceFabricCluster см. в [этой статье](https://docs.microsoft.com/powershell/module/servicefabric/connect-servicefabriccluster).
+Дополнительные сведения о командлете Connect-ServiceFabricCluster см. в [этой статье](/powershell/module/servicefabric/connect-servicefabriccluster).
 
 ### <a name="can-i-reuse-the-same-azure-ad-tenant-in-multiple-clusters"></a>Можно ли повторно использовать один и тот же клиент Azure AD в нескольких кластерах?
 Да. Не забудьте добавить URL-адрес Service Fabric Explorer в (веб-)приложение кластера. В противном случае — Service Fabric Explorer не работает.
@@ -132,7 +133,7 @@ Connect-ServiceFabricCluster -ConnectionEndpoint <endpoint> -KeepAliveIntervalIn
 ### <a name="why-do-i-still-need-a-server-certificate-while-azure-ad-is-enabled"></a>Почему мне все еще нужен сертификат сервера при включенном Azure AD?
 FabricClient и FabricGateway выполняют взаимную аутентификацию. Во время проверки подлинности Azure AD интеграция Azure AD предоставляет серверу удостоверение клиента, а сертификат сервера используется клиентом для проверки подлинности сервера. Дополнительные сведения о сертификатах Service Fabric см. в разделе [Сертификаты X.509 и Service Fabric][x509-certificates-and-service-fabric].
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После настройки приложений Azure Active Directory и ролей для пользователей [настройте и разверните кластер](service-fabric-cluster-creation-via-arm.md).
 
 
