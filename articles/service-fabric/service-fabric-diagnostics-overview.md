@@ -5,11 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 1/17/2019
 ms.author: srrengar
-ms.openlocfilehash: ef77810adfab213845c7824740effc3416d85407
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4b4e454532dec31cbcc92269d63c8be1ff92a9f6
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84712230"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86247529"
 ---
 # <a name="monitoring-and-diagnostics-for-azure-service-fabric"></a>Мониторинг и диагностика для Azure Service Fabric
 
@@ -82,7 +83,7 @@ Azure Monitorным решением для их получения являют
 
 Основные моменты, на которые следует обратить внимание при выборе платформы: удобство пользовательского интерфейса, возможности запроса данных, доступные визуализации и панели мониторинга, а также наличие дополнительных инструментов для улучшения мониторинга. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о начале работы с инструментированием приложений см. в разделе [Создание событий и журналов на уровне приложения](service-fabric-diagnostics-event-generation-app.md).
 * Выполните процедуру настройки Application Insights для приложения, следуя указаниям в разделе [Руководство. Мониторинг и диагностика приложения ASP.NET Core в Service Fabric](service-fabric-tutorial-monitoring-aspnet.md).
@@ -91,4 +92,4 @@ Azure Monitorным решением для их получения являют
 * Узнайте, как настроить журналы Azure Monitor для мониторинга контейнеров — [мониторинг и диагностика контейнеров Windows в Service Fabric Azure](service-fabric-tutorial-monitoring-wincontainers.md).
 * Примеры проблем и решений диагностики с помощью Service Fabric см. в описании [диагностики типичных сценариев](service-fabric-diagnostics-common-scenarios.md).
 * Ознакомьтесь с другими продуктами диагностики, которые интегрируются с Service Fabric, в списке [партнерских решений диагностики Service Fabric](service-fabric-diagnostics-partners.md).
-* Ознакомьтесь с общими рекомендациями по мониторингу ресурсов Azure в статье [Мониторинг и диагностика](https://docs.microsoft.com/azure/architecture/best-practices/monitoring). 
+* Ознакомьтесь с общими рекомендациями по мониторингу ресурсов Azure в статье [Мониторинг и диагностика](/azure/architecture/best-practices/monitoring). 

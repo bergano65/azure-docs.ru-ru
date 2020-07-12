@@ -5,18 +5,19 @@ author: dkkapur
 ms.topic: conceptual
 ms.date: 11/09/2018
 ms.author: dekapur
-ms.openlocfilehash: c2973428354f101b5b546128b08bf67587923a8e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 010f2b5d6dee3a5985c421e468bcd28b18148e5a
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82793080"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86247733"
 ---
 # <a name="upgrade-the-configuration-of-a-cluster-in-azure"></a>Обновление конфигурации кластера в Azure 
 
 В этой статье описывается, как настроить различные параметры структуры для кластера Service Fabric. Для кластеров, размещенных в Azure, можно настроить параметры на [портале Azure](https://portal.azure.com) или использовать шаблон Azure Resource Manager.
 
 > [!NOTE]
-> Не все параметры доступны на портале, поэтому [рекомендуется выполнять настройку с помощью шаблона Azure Resource Manager](https://docs.microsoft.com/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code). Портал используется только для сценариев разработки и тестирования Service Fabric.
+> Не все параметры доступны на портале, поэтому [рекомендуется выполнять настройку с помощью шаблона Azure Resource Manager](./service-fabric-best-practices-infrastructure-as-code.md). Портал используется только для сценариев разработки и тестирования Service Fabric.
 > 
 
 
@@ -44,12 +45,12 @@ ms.locfileid: "82793080"
 
 Вы также можете настроить параметры кластера с помощью Azure Resource Manager одним из следующих способов:
 
-- Экспортируйте и обновите шаблон Resource Manager с помощью [портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template).
-- Экспортируйте и обновите шаблон Resource Manager с помощью [PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template-powershell).
-- Экспортируйте и обновите шаблон Resource Manager с помощью [Azure CLI](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template-cli).
-- Чтобы изменить параметр напрямую, используйте команды Azure PowerShell [Set-азсервицефабриксеттинг](https://docs.microsoft.com/powershell/module/az.servicefabric/Set-azServiceFabricSetting) и [Remove-азсервицефабриксеттинг](https://docs.microsoft.com/powershell/module/az.servicefabric/Remove-azServiceFabricSetting) .
-- чтобы изменить параметр напрямую, используйте команды Azure CLI [az sf cluster setting](https://docs.microsoft.com/cli/azure/sf/cluster/setting).
+- Экспортируйте и обновите шаблон Resource Manager с помощью [портала Azure](../azure-resource-manager/templates/export-template-portal.md).
+- Экспортируйте и обновите шаблон Resource Manager с помощью [PowerShell](../azure-resource-manager/management/manage-resources-powershell.md).
+- Экспортируйте и обновите шаблон Resource Manager с помощью [Azure CLI](../azure-resource-manager/management/manage-resources-cli.md).
+- Чтобы изменить параметр напрямую, используйте команды Azure PowerShell [Set-азсервицефабриксеттинг](/powershell/module/az.servicefabric/set-azservicefabricsetting) и [Remove-азсервицефабриксеттинг](/powershell/module/az.servicefabric/remove-azservicefabricsetting) .
+- чтобы изменить параметр напрямую, используйте команды Azure CLI [az sf cluster setting](/cli/azure/sf/cluster/setting).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Изучите сведения о [параметрах кластера Service Fabric](service-fabric-cluster-fabric-settings.md).
 * Ознакомьтесь с концепцией [масштабирования кластера](service-fabric-cluster-scale-in-out.md).

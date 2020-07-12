@@ -3,11 +3,12 @@ title: Правила доступа брандмауэра
 description: Настройте правила для доступа к реестру контейнеров Azure из-за пределов брандмауэра, разрешив доступ к ("список разрешений") REST API и доменным именам конечных точек данных или диапазонам IP-адресов, зависящим от службы.
 ms.topic: article
 ms.date: 05/18/2020
-ms.openlocfilehash: 4774191087b3e88e657e8dc9bc6a9f9c406153e2
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.openlocfilehash: 679dbcaf30653b855d35825f94e93f87ac68c322
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83849997"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86246985"
 ---
 # <a name="configure-rules-to-access-an-azure-container-registry-behind-a-firewall"></a>Настройка правил для доступа к реестру контейнеров Azure за брандмауэром
 
@@ -182,7 +183,7 @@ az acr show-endpoints --name myregistry
 
 * Узнайте подробнее о [рекомендациях Azure по обеспечению сетевой безопасности](../security/fundamentals/network-best-practices.md).
 
-* Узнайте подробнее о [группах безопасности](/azure/virtual-network/security-overview) в виртуальной сети Azure.
+* Узнайте подробнее о [группах безопасности](../virtual-network/security-overview.md) в виртуальной сети Azure.
 
 * Узнайте подробнее о настройке [Приватного канала](container-registry-private-link.md) для реестра контейнеров.
 
@@ -198,4 +199,3 @@ az acr show-endpoints --name myregistry
 
 [az-acr-update]: /cli/azure/acr#az-acr-update
 [az-acr-show-endpoints]: /cli/azure/acr#az-acr-show-endpoints
-

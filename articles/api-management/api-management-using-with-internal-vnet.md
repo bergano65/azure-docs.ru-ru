@@ -14,11 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/31/2019
 ms.author: apimpm
-ms.openlocfilehash: 6054c595bca26dc2a0432c53369a60a61e3efde0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fd7ca6bdfa7626707af9efa20d76dab633dc16fd
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76841869"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86249557"
 ---
 # <a name="using-azure-api-management-service-with-an-internal-virtual-network"></a>Использование службы управления API Azure совместно с внутренней виртуальной сетью
 Служба управления API Azure в сочетании с виртуальными сетями Azure позволяет работать с интерфейсами API, которые недоступны из Интернета. Подключение можно создать с применением разных технологий VPN. Управление API можно развернуть в виртуальной сети в одном из двух основных режимов:
@@ -50,7 +51,7 @@ ms.locfileid: "76841869"
 + При развертывании службы управления API в виртуальной сети используется [список портов](./api-management-using-with-vnet.md#required-ports) , которые необходимо открыть. 
 
 ## <a name="creating-an-api-management-in-an-internal-virtual-network"></a><a name="enable-vpn"> </a>Создание управления API во внутренней виртуальной сети
-Служба управления API во внутренней виртуальной сети размещена за [внутренней подсистемой балансировки нагрузки (классическая модель)](https://docs.microsoft.com/azure/load-balancer/load-balancer-get-started-ilb-classic-cloud). Это единственный доступный параметр, и его нельзя изменить.
+Служба управления API во внутренней виртуальной сети размещена за [внутренней подсистемой балансировки нагрузки (классическая модель)](/azure/load-balancer/load-balancer-get-started-ilb-classic-cloud). Это единственный доступный параметр, и его нельзя изменить.
 
 ### <a name="enable-a-virtual-network-connection-using-the-azure-portal"></a>Настройка подключения к виртуальной сети с помощью портала Azure
 
@@ -60,7 +61,7 @@ ms.locfileid: "76841869"
 
     ![Меню для настройки управления API Azure во внутренней виртуальной сети][api-management-using-internal-vnet-menu]
 
-4. Нажмите кнопку **Сохранить**.
+4. Нажмите **Сохранить**.
 
 После завершения развертывания вы должны увидеть **частный** виртуальный IP-адрес и **общедоступный** виртуальный IP-адрес службы управления API в колонке обзор. **Частный** виртуальный IP-адрес — это IP-адрес с балансировкой нагрузки в делегированной подсети управления API `gateway` , `portal` `management` к которой `scm` можно получить доступ конечные точки, и. **Общедоступный** виртуальный IP-адрес используется **только** для управления трафиком плоскости в `management` конечную точку через порт 3443 и может быть заблокирован в [ApiManagement][ServiceTags] сервицетаг.
 
@@ -143,4 +144,3 @@ ms.locfileid: "76841869"
 [Common network configuration problems]: api-management-using-with-vnet.md#network-configuration-issues
 
 [ServiceTags]: ../virtual-network/security-overview.md#service-tags
-

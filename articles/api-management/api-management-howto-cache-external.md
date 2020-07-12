@@ -11,12 +11,12 @@ ms.service: api-management
 ms.topic: conceptual
 ms.date: 04/26/2020
 ms.author: apimpm
-ms.openlocfilehash: f8ca0caedd438c4ce707a044bc7fa7dd035e8983
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3f1f3d0fd0164a37c8011dc82a95337c89e103df
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82203239"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86250640"
 ---
 # <a name="use-an-external-redis-compatible-cache-in-azure-api-management"></a>Использование внешнего Redis кэша в службе управления API Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "82203239"
 3. Щелкните **+ Добавить**.
 4. В раскрывающемся поле **Cache instance** (Экземпляр кэша) выберите свой кэш.
 5. Выберите **значение по умолчанию** или укажите нужный регион в раскрывающемся списке **использовать** .
-6. Выберите команду **Сохранить**.
+6. Нажмите кнопку **Сохранить**.
 
 ### <a name="add-an-azure-cache-for-redis-hosted-outside-of-the-current-azure-subscription-or-azure-in-general"></a>Добавление кэша Redis для Azure, размещенного за пределами текущей подписки Azure или Azure
 
@@ -84,7 +84,7 @@ ms.locfileid: "82203239"
 4. В раскрывающемся поле **Cache instance** (Экземпляр кэша) выберите **Custom** (Настраиваемый).
 5. Выберите **значение по умолчанию** или укажите нужный регион в раскрывающемся списке **использовать** .
 6. В поле **Строка подключения** укажите строку подключения к кэшу Redis для Azure.
-7. Выберите команду **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 ### <a name="add-a-redis-cache-to-a-self-hosted-gateway"></a>Добавление кэша Redis в шлюз, размещенный на собственном сервере
 
@@ -94,7 +94,7 @@ ms.locfileid: "82203239"
 4. В раскрывающемся поле **Cache instance** (Экземпляр кэша) выберите **Custom** (Настраиваемый).
 5. Укажите нужное расположение самостоятельно размещенного шлюза или **значение по умолчанию** в раскрывающемся списке **использовать** .
 6. В поле **Connection string** (Строка подключения) укажите строку подключения к кэшу Redis.
-7. Выберите команду **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 ## <a name="use-the-external-cache"></a>Использование внешнего кэша
 
@@ -105,5 +105,5 @@ ms.locfileid: "82203239"
 * Дополнительные сведения о политиках кэширования см. в разделе [Политики кэширования][Caching policies][справочника по политикам управления API][API Management policy reference].
 * Сведения о кэшировании элементов по ключу с помощью выражений политики см. в статье [Пользовательское кэширование в службе управления API Azure](api-management-sample-cache-by-key.md).
 
-[API Management policy reference]: https://msdn.microsoft.com/library/azure/dn894081.aspx
-[Caching policies]: https://msdn.microsoft.com/library/azure/dn894086.aspx
+[API Management policy reference]: ./api-management-policies.md
+[Caching policies]: ./api-management-caching-policies.md

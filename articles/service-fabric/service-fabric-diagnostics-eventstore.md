@@ -5,11 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 6/6/2019
 ms.author: srrengar
-ms.openlocfilehash: d23c8114bf10ef3225775accef6910c0ba539e15
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e2fcbd07c105885da4180b06fa27ec13045940a6
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75645741"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86247648"
 ---
 # <a name="eventstore-overview"></a>Обзор Евентсторе
 
@@ -45,7 +46,7 @@ EventStore — это служба Service Fabric с отслеживанием
 * Реплики разделов. События из всех реплик или экземпляров в определенной секции, идентифицируемые на основе `partitionId`.
 * Реплика раздела. События из конкретной реплики или экземпляра, идентифицируемые на основе `replicaId` или `partitionId`.
 
-Дополнительные сведения об API см. в [справочнике по API евентсторе](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-eventsstore).
+Дополнительные сведения об API см. в [справочнике по API евентсторе](/rest/api/servicefabric/sfclient-index-eventsstore).
 
 Служба EventStore также имеет возможность корреляции событий в кластере. Просмотрев события, записанные в то же время из различных объектов, которые могут влиять друг на друга, служба EventStore может связать эти события, что позволит определить причины возникновения действий в кластере. Например, если одно из приложений становится неработоспособным без принудительных изменений, EventStore будет также рассматривать другие события, предоставляемые платформой, и сопоставлять их с событием `Error` или `Warning`. Это позволяет быстрее обнаружить сбой и выполнить анализ первопричин.
 
@@ -121,9 +122,9 @@ EventStore — это служба Service Fabric с отслеживанием
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Сведения о начале работы с API EventStore см. в статье [Выполнение запросов к интерфейсам API EventStore для получения событий кластера](service-fabric-diagnostics-eventstore-query.md).
 * Дополнительные сведения о списке событий, предоставляемых EventStore, см. в статье [о событиях Service Fabric](service-fabric-diagnostics-event-generation-operational.md).
 * Общие сведения о мониторинге и диагностике в Service Fabric см. в [этой статье](service-fabric-diagnostics-overview.md).
-* Полный список вызовов API можно просмотреть в [справочнике по REST API EventStore](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-eventsstore).
+* Полный список вызовов API можно просмотреть в [справочнике по REST API EventStore](/rest/api/servicefabric/sfclient-index-eventsstore).
 * Дополнительные сведения о мониторинге кластера см. в [этой статье](service-fabric-diagnostics-event-generation-infra.md).

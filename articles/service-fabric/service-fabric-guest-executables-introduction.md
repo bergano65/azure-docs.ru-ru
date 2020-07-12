@@ -3,11 +3,12 @@ title: Упаковка существующего исполняемого фа
 description: Узнайте, как упаковать существующее приложение в качестве гостевого исполняемого файла для его развертывания в кластере Service Fabric.
 ms.topic: conceptual
 ms.date: 03/15/2018
-ms.openlocfilehash: 3d7aab28a32effa2caf7b04b830d72e5e3dfda56
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8b808d092001196a4d2150e44d508e031db95554
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75457835"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86247393"
 ---
 # <a name="deploy-an-existing-executable-to-service-fabric"></a>Развертывание существующего исполняемого файла вручную
 В Azure Service Fabric можно запустить как службу приложение любого типа, в том числе приложения Node.js, Java или C++. В Service Fabric такие типы служб называются гостевыми исполняемыми файлами.
@@ -61,11 +62,10 @@ ms.locfileid: "75457835"
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В приведенных ниже статьях описаны связанные сведения и задачи.
 * [Развертывание гостевого исполняемого файла](service-fabric-deploy-existing-app.md)
-* [Развертывание нескольких пользовательских приложений](service-fabric-deploy-multiple-apps.md)
+* [Развертывание нескольких пользовательских приложений](./service-fabric-deploy-existing-app.md)
 * [Создание первого приложения в качестве гостевого исполняемого файла с помощью Visual Studio](quickstart-guest-app.md)
 * [Пример для упаковки и развертывания гостевого исполняемого файла](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started), включая ссылку на предварительную версию средства упаковки
 * [Пример двух гостевых исполняемых файлов (C# и Node.js), которые взаимодействуют через службу именования с помощью REST](https://github.com/Azure-Samples/service-fabric-containers)
-

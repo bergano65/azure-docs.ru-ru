@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: fb99530923f25541316fd159a2270f7035a1916b
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 0c0f40144fde49d467ca7fb126a19afa6c76660a
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86229250"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86246962"
 ---
 # <a name="preview-features-in-azure-cognitive-search"></a>Предварительные версии функций в Azure Когнитивный поиск
 
@@ -23,6 +23,7 @@ ms.locfileid: "86229250"
 
 |Функциями&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Категория | Описание | Доступность  |
 |---------|------------------|-------------|---------------|
+| [**Навык Машинное обучение Azure (AML)**](cognitive-search-aml-skill.md) | Обогащение данных с помощью средств ИИ| Новый тип навыка для интеграции конечной точки с точкой Машинное обучение Azure. Начните с [этого руководства](cognitive-search-tutorial-aml-custom-skill.md). | Используйте [поиск REST API 2020-06-30-Preview](https://docs.microsoft.com/rest/api/searchservice/) или 2019-05-06-Preview. Кроме того, на портале в проекте набора навыков при условии Когнитивный поиск и служб машинного обучения Azure развертываются в одной подписке. |
 | [**Феатуресмоде, параметр**](https://docs.microsoft.com/rest/api/searchservice/search-documents#featuresmode) | Релевантность (оценка) | Расширение оценки релевантности для включения подробностей: Оценка сходства полей, частота терминов поля и число совпадающих уникальных токенов для каждого поля. Эти точки данных можно использовать в [пользовательских решениях оценки](https://github.com/Azure-Samples/search-ranking-tutorial). | Добавьте этот параметр запроса, используя [Поиск документов (остальные)](https://docs.microsoft.com/rest/api/searchservice/search-documents) с помощью API-Version = 2020 – 06 -30-preview или 2019-05-06-Preview. |
 | [**Управляемое удостоверение службы**](search-howto-managed-identities-data-sources.md) | Индексаторы, безопасность| Зарегистрируйте службу поиска с Azure Active Directory, чтобы сделать ее доверенной, а затем используйте разрешения RBAC для источников данных Azure, чтобы разрешить индексатору доступ только для чтения. | Для доступа к этой возможности используйте портал или [Создайте источник данных (остальные)](https://docs.microsoft.com/rest/api/searchservice/create-data-source) с помощью API-Version = 2020-06 -30-Preview или API-Version = 2019-05 -06-Preview. |
 | [**Сеансы отладки**](cognitive-search-debug-session.md) | Портал, обогащение искусственного интеллекта (набор навыков) | Редактор набора навыков в сеансах, используемый для исследования и устранения проблем с набором навыков. Исправления, применяемые во время сеанса отладки, можно сохранить в наборе навыков в службе. | Только на портале, используя ссылки на промежуточные страницы на странице обзора для открытия сеанса отладки. |

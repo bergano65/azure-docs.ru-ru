@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 02/13/2018
 ms.author: apimpm
-ms.openlocfilehash: a472e00f9ecab8a5ffa6b19e4fe9a5f8b5ee5b95
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c808d4659b5987b099dd96d73bb8c18c08fe3c99
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "70072058"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86249401"
 ---
 # <a name="managing-azure-api-management-using-azure-automation"></a>Управление управлением API с помощью службы автоматизации Azure
 В этом руководстве описана служба автоматизации Azure. Также вы узнаете, как при ее помощи упростить администрирование службы управления API Azure.
@@ -31,14 +31,13 @@ ms.locfileid: "70072058"
 Уменьшите операционные затраты и освободите ИТ-сотрудников и специалистов по разработке и операциям для работы над повышением бизнес-ценности ПО и автоматизации задач управления облаком в службе автоматизации Azure.
 
 ## <a name="how-can-azure-automation-help-manage-azure-api-management"></a>Как служба автоматизации Azure помогает управлять управлением API Azure?
-Управлением API можно управлять в службе автоматизации Azure с помощью [командлетов Windows PowerShell для API управления Azure API](https://docs.microsoft.com/powershell/module/az.apimanagement). В службе автоматизации Azure можно создавать сценарии рабочих процессов PowerShell для выполнения многих задач управления API с помощью командлетов. Вы также можете связать эти командлеты в службе автоматизации Azure с командлетами для других служб Azure, чтобы автоматизировать сложные задачи в службах Azure и системах сторонних производителей.
+Управлением API можно управлять в службе автоматизации Azure с помощью [командлетов Windows PowerShell для API управления Azure API](/powershell/module/az.apimanagement). В службе автоматизации Azure можно создавать сценарии рабочих процессов PowerShell для выполнения многих задач управления API с помощью командлетов. Вы также можете связать эти командлеты в службе автоматизации Azure с командлетами для других служб Azure, чтобы автоматизировать сложные задачи в службах Azure и системах сторонних производителей.
 
 Вот некоторые примеры использования службы "Управление API" в Powershell.
 
-* [Примеры Azure PowerShell для службы "Управление API"](https://docs.microsoft.com/azure/api-management/powershell-samples)
+* [Примеры Azure PowerShell для службы "Управление API"](./powershell-samples.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 Теперь, после знакомства с основами службы автоматизации Azure и способами ее использования для управления управлением API Azure, вы можете пройти по следующим ссылкам, чтобы узнать больше.
 
-* См. Руководство по [началу работы](../automation/automation-first-runbook-graphical.md)со службой автоматизации Azure.
-
+* См. Руководство по [началу работы](../automation/learn/automation-tutorial-runbook-graphical.md)со службой автоматизации Azure.

@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 08/26/2019
 ms.author: apimpm
-ms.openlocfilehash: 39803ab88e5b252ef119d22a697e135c83f87780
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 0eed2328aca78402c5f4691bb9b3d07d4f36472e
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86205646"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86250232"
 ---
 # <a name="how-to-migrate-azure-api-management-across-regions"></a>Перенос управления API Azure в разных регионах
 Чтобы перенести экземпляры службы управления API из одного региона Azure в другой, можно использовать функцию [резервного копирования и восстановления](api-management-howto-disaster-recovery-backup-restore.md) . Необходимо выбрать ту же ценовую категорию управления API в исходном и целевом регионах. 
 
 > [!NOTE]
-> Резервное копирование и восстановление не будут работать при миграции между разными типами облака. Для этого необходимо экспортировать ресурс в [качестве шаблона](https://docs.microsoft.com/azure/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates). Затем адаптируйте экспортированный шаблон к целевому региону Azure и повторно создайте ресурс. 
+> Резервное копирование и восстановление не будут работать при миграции между разными типами облака. Для этого необходимо экспортировать ресурс в [качестве шаблона](../azure-resource-manager/management/manage-resource-groups-portal.md#export-resource-groups-to-templates). Затем адаптируйте экспортированный шаблон к целевому региону Azure и повторно создайте ресурс. 
 
 ## <a name="option-1-use-a-different-api-management-instance-name"></a>Вариант 1. Использование другого имени экземпляра управления API
 
@@ -47,4 +47,4 @@ ms.locfileid: "86205646"
 ## <a name="next-steps"></a><a name="next-steps"> </a>Дальнейшие действия
 * Дополнительные сведения о функции резервного копирования и восстановления см. [в разделе Реализация аварийного восстановления](api-management-howto-disaster-recovery-backup-restore.md).
 * Сведения о переносе ресурсов Azure см. в [статье Руководство по миграции в различные регионы Azure](https://github.com/Azure/Azure-Migration-Guidance).
-* [Оптимизируйте и сохраняйте расходы на облачные](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)технологии.
+* [Оптимизируйте и сохраняйте расходы на облачные](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)технологии.

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 08/29/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 99c63fd04a40b1a4e591f5ad42d8f776e8e5b67c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9c2ad99a59e548ff7793455dac21748dd057c5fc
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85208507"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86248702"
 ---
 # <a name="customize-feed-for-windows-virtual-desktop-users"></a>Настройка канала для пользователей Виртуального рабочего стола Windows
 
@@ -25,7 +25,7 @@ ms.locfileid: "85208507"
 
 Вы можете настроить веб-канал таким образом, чтобы ресурсы RemoteApp и удаленный рабочий стол отображались для пользователей с распознаваемым способом.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 В этой статье предполагается, что вы уже скачали и установили модуль PowerShell для виртуальных рабочих столов Windows. Если вы этого не сделали, следуйте инструкциям в разделе [Настройка модуля PowerShell](powershell-module.md).
 
@@ -118,13 +118,13 @@ Update-AzWvdDesktop -ResourceGroupName <resourcegroupname> -ApplicationGroupName
 
 6. Выберите приложение, которое требуется обновить, а затем введите новое **Отображаемое имя**.
 
-7. Нажмите кнопку **Сохранить**. Редактируемое приложение теперь должно отображать обновленное имя.
+7. Нажмите **Сохранить**. Редактируемое приложение теперь должно отображать обновленное имя.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы настроили веб-канал для пользователей, вы можете войти в клиент виртуальных рабочих столов Windows, чтобы протестировать его. Для этого перейдите к инструкциям по подключению к виртуальному рабочему столу Windows.
 
- * [Подключение с Windows 10 или Windows 7](connect-windows-7-and-10.md)
+ * [Подключение с Windows 10 или Windows 7](connect-windows-7-10.md)
  * [Подключение с помощью веб-клиента](connect-web.md)
  * [Подключение к клиенту Android](connect-android.md)
  * [Подключение с помощью клиента iOS](connect-ios.md)
