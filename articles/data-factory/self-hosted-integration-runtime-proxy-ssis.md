@@ -11,16 +11,17 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
-ms.date: 04/15/2020
-ms.openlocfilehash: 4cb5b84f3889dcf4e0f28d525afb42cfeac5b54c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/09/2020
+ms.openlocfilehash: 1eac86e856840d5cb78313fb4d61751066d6886b
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81605497"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86184010"
 ---
 # <a name="configure-a-self-hosted-ir-as-a-proxy-for-an-azure-ssis-ir-in-azure-data-factory"></a>Настройка самостоятельно размещенного IR в качестве прокси-сервера для Azure-SSIS IR в фабрике данных Azure
 
-[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этой статье описывается, как выполнять пакеты SQL Server Integration Services (SSIS) на Azure-SSIS Integration Runtime (Azure-SSIS IR) в фабрике данных Azure с помощью локальной среды выполнения интеграции (с локальным размещением), настроенной в качестве прокси-сервера. 
 
@@ -176,6 +177,6 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 - В настоящее время поддерживаются только связанные службы хранилища BLOB-объектов Azure, настроенные с помощью *ключа учетной записи*, *URI подписанного URL-кода*или проверки подлинности *субъекта службы* .
 - *Параметермаппинг* в источнике OLEDB еще не поддерживается. В качестве обходного решения используйте *команду SQL из переменной* в качестве *AccessMode* и используйте *выражение* для вставки переменных или параметров в команду SQL. Иллюстрация см. в разделе пакет *параметермаппингсампле. dtsx* , который можно найти в папке *селфхостедирпрокси/ограничения* нашего общедоступного контейнера предварительной версии. С помощью Обозреватель службы хранилища Azure вы можете подключиться к нашему общедоступному контейнеру предварительной версии, введя указанный выше URI SAS.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После настройки самостоятельно размещенного IR в качестве прокси-сервера для Azure-SSIS IR можно развернуть и запустить пакеты для доступа к данным в локальной среде как выполнение действий пакета служб SSIS в конвейерах фабрики данных. Дополнительные сведения см. в разделе [Запуск пакетов служб SSIS как выполнение действий пакета SSIS в конвейерах фабрики данных](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity).

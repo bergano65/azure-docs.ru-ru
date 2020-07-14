@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/02/2020
-ms.openlocfilehash: 13c55f2a7470a0d33e12e9e6f0da9df3421242fb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 60f4ed9940c70ed479c3108f3637aa55f2a42811
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85556251"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146897"
 ---
 # <a name="how-to-index-cosmos-db-data-using-an-indexer-in-azure-cognitive-search"></a>How to index Cosmos DB data using an indexer in Azure Cognitive Search (Индексирование данных Cosmos DB с помощью индексатора в службе "Когнитивный поиск Azure") 
 
@@ -154,6 +154,8 @@ ms.locfileid: "85556251"
 
 Чтобы создать источник данных, создайте запрос POST:
 
+```http
+
     POST https://[service name].search.windows.net/datasources?api-version=2020-06-30
     Content-Type: application/json
     api-key: [Search service admin key]
@@ -170,6 +172,7 @@ ms.locfileid: "85556251"
             "highWaterMarkColumnName": "_ts"
         }
     }
+```
 
 Текст запроса содержит определение источника данных, который должен включать следующие поля.
 
@@ -190,6 +193,7 @@ ms.locfileid: "85556251"
 
 Пример документа:
 
+```http
     {
         "userId": 10001,
         "contact": {
@@ -199,30 +203,37 @@ ms.locfileid: "85556251"
         "company": "microsoft",
         "tags": ["azure", "cosmosdb", "search"]
     }
+```
 
 Запрос на фильтрацию:
 
-    SELECT * FROM c WHERE c.company = "microsoft" and c._ts >= @HighWaterMark ORDER BY c._ts
+```sql
+SELECT * FROM c WHERE c.company = "microsoft" and c._ts >= @HighWaterMark ORDER BY c._ts
+```
 
 Преобразование запросов:
 
-    SELECT c.id, c.userId, c.contact.firstName, c.contact.lastName, c.company, c._ts FROM c WHERE c._ts >= @HighWaterMark ORDER BY c._ts
-    
-    
+```sql
+SELECT c.id, c.userId, c.contact.firstName, c.contact.lastName, c.company, c._ts FROM c WHERE c._ts >= @HighWaterMark ORDER BY c._ts
+```
+
 Запрос на проектирование:
 
-    SELECT VALUE { "id":c.id, "Name":c.contact.firstName, "Company":c.company, "_ts":c._ts } FROM c WHERE c._ts >= @HighWaterMark ORDER BY c._ts
-
+```sql
+SELECT VALUE { "id":c.id, "Name":c.contact.firstName, "Company":c.company, "_ts":c._ts } FROM c WHERE c._ts >= @HighWaterMark ORDER BY c._ts
+```
 
 Массив преобразованных запросов:
 
-    SELECT c.id, c.userId, tag, c._ts FROM c JOIN tag IN c.tags WHERE c._ts >= @HighWaterMark ORDER BY c._ts
-
+```sql
+SELECT c.id, c.userId, tag, c._ts FROM c JOIN tag IN c.tags WHERE c._ts >= @HighWaterMark ORDER BY c._ts
+```
 
 ### <a name="3---create-a-target-search-index"></a>3. Создание целевого индекса поиска 
 
 [Создайте целевой индекс Azure когнитивный Поиск](/rest/api/searchservice/create-index) , если он еще не создан. В следующем примере создается индекс с полем ID и Description:
 
+```http
     POST https://[service name].search.windows.net/indexes?api-version=2020-06-30
     Content-Type: application/json
     api-key: [Search service admin key]
@@ -243,6 +254,7 @@ ms.locfileid: "85556251"
          "suggestions": true
        }]
      }
+```
 
 Убедитесь, что схема целевого индекса совместима с исходными документами JSON или выходными данными настраиваемой проекции запроса.
 
@@ -257,16 +269,17 @@ ms.locfileid: "85556251"
 | Bool |Edm.Boolean, Edm.String |
 | Числа, которые выглядят как целые числа |Edm.Int32, Edm.Int64, Edm.String |
 | Числа, которые выглядят как числа с плавающей запятой |Edm.Double, Edm.String |
-| Строка |Edm.String |
+| Строковый |Edm.String |
 | Массивы типов-примитивов, например [a, b, c] |Collection(Edm.String) |
 | Строки, которые выглядят как даты |Edm.DateTimeOffset, Edm.String |
 | Геообъекты JSON, например { "тип": "Точка", "координаты": [ долгота, широта ] } |Edm.GeographyPoint |
-| Другие объекты JSON |Н/Д |
+| Другие объекты JSON |Недоступно |
 
 ### <a name="4---configure-and-run-the-indexer"></a>4. Настройка и запуск индексатора
 
 Когда индекс и источник данных уже созданы, можно создать индексатор:
 
+```http
     POST https://[service name].search.windows.net/indexers?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
@@ -277,6 +290,7 @@ ms.locfileid: "85556251"
       "targetIndexName" : "mysearchindex",
       "schedule" : { "interval" : "PT2H" }
     }
+```
 
 Этот индексатор выполняется каждые два часа (интервал расписания имеет значение PT2H). Чтобы запускать индексатор каждые 30 минут, задайте интервал "PT30M". Самый короткий интервал, который можно задать, составляет 5 минут. Расписание является необязательным. Если оно не указано, то индексатор выполняется только один раз при его создании. Однако индексатор можно запустить по запросу в любое время.   
 
@@ -299,10 +313,12 @@ ms.locfileid: "85556251"
 
 Политика обнаружения изменения данных предназначена для эффективного определения измененных элементов данных. В настоящее время единственной поддерживаемой политикой является [`HighWaterMarkChangeDetectionPolicy`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.highwatermarkchangedetectionpolicy) использование `_ts` Свойства (timestamp), предоставленного Azure Cosmos DB, которое указывается следующим образом:
 
+```http
     {
         "@odata.type" : "#Microsoft.Azure.Search.HighWaterMarkChangeDetectionPolicy",
         "highWaterMarkColumnName" : "_ts"
     }
+```
 
 Для обеспечения хорошей производительности индексатора мы настоятельно рекомендуем использовать эту политику. 
 
@@ -318,11 +334,13 @@ ms.locfileid: "85556251"
 
 В некоторых случаях, даже если запрос содержит `ORDER BY [collection alias]._ts` предложение, когнитивный Поиск Azure не может определить, что запрос упорядочен по `_ts` . Вы можете сообщить Azure Когнитивный поиск, что результаты упорядочены с помощью `assumeOrderByHighWaterMarkColumn` Свойства Configuration. Чтобы сделать это, создайте или обновите индексатор, как показано в этом примере: 
 
+```http
     {
      ... other indexer definition properties
      "parameters" : {
             "configuration" : { "assumeOrderByHighWaterMarkColumn" : true } }
     } 
+```
 
 <a name="DataDeletionDetectionPolicy"></a>
 
@@ -330,16 +348,19 @@ ms.locfileid: "85556251"
 
 Строки, удаляемые из исходной коллекции, вероятно, также следует удалить из индекса поиска. Политика обнаружения удаления данных предназначена для эффективного определения удаленных элементов данных. В настоящее время единственной поддерживаемой политикой является политика `Soft Delete` (удаление помечается особым флагом), которая указывается следующим образом:
 
+```http
     {
         "@odata.type" : "#Microsoft.Azure.Search.SoftDeleteColumnDeletionDetectionPolicy",
         "softDeleteColumnName" : "the property that specifies whether a document was deleted",
         "softDeleteMarkerValue" : "the value that identifies a document as deleted"
     }
+```
 
 При использовании пользовательского запроса, убедитесь, что свойство на которое указывает `softDeleteColumnName`, проецируется в запросе.
 
 В следующем примере создается источник данных с политикой мягкого удаления:
 
+```http
     POST https://[service name].search.windows.net/datasources?api-version=2020-06-30
     Content-Type: application/json
     api-key: [Search service admin key]
@@ -361,6 +382,7 @@ ms.locfileid: "85556251"
             "softDeleteMarkerValue": "true"
         }
     }
+```
 
 ## <a name="next-steps"></a><a name="NextSteps"></a>Следующие шаги
 

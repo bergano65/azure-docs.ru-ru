@@ -5,12 +5,12 @@ ms.assetid: 70fb0e6e-8727-4cca-ba82-98a4d21586ff
 ms.topic: article
 ms.date: 11/24/2017
 ms.custom: seodec18
-ms.openlocfilehash: 47daf4ecd034c390a1460610e78d4fffd9277ac7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0d0d0d19b9b84649867085a05efa656131e48c5a
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81535712"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86220726"
 ---
 # <a name="buy-a-custom-domain-name-for-azure-app-service"></a>Приобретение личного доменного имени в Службе приложений Azure
 
@@ -78,11 +78,11 @@ ms.locfileid: "81535712"
 ### <a name="launch-buy-domains"></a>Запуск приобретения доменов
 На вкладке **Службы приложений** щелкните имя своего приложения, выберите **Параметры**, а затем — **Личные домены**
    
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-6.png)
+![Снимок экрана, на котором отображаются выделенные личные домены.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-6.png)
 
 На странице **Личные домены** щелкните **Купить домены**.
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-1.png)
+![Снимок экрана, отображающий выделенный домен покупки.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-1.png)
 
 > [!NOTE]
 > Если вы не видите раздел **Домен службы приложений**, необходимо удалить предельную сумму расходов для учетной записи Azure (изучите [предварительные требования](#prerequisites)).
@@ -93,7 +93,7 @@ ms.locfileid: "81535712"
 
 На странице **Домен службы приложений** в текстовом поле **Поиск домена** введите имя домена, которое необходимо приобрести, и введите `Enter`. Под текстовым полем появятся доступные домены. Выберите один или несколько доменов, которые вы хотите приобрести.
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-2.png)
+![Снимок экрана, на котором отображается поле поиска в домене.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-2.png)
 
 > [!NOTE]
 > Следующие [домены верхнего уровня](https://wikipedia.org/wiki/Top-level_domain) поддерживаются доменами службы приложений: _com_, _net_, _co.uk_, _org_, _nl_, _in_, _biz_, _org.uk_ и _co.in_.
@@ -108,7 +108,7 @@ ms.locfileid: "81535712"
 
 | Параметр | Рекомендуемое значение | Описание |
 |-|-|-|
-|Защита конфиденциальности | Включите параметр | Дайте согласие на защиту личных сведений, которая входит в стоимость покупки _бесплатно_. Некоторыми доменами верхнего уровня управляют регистраторы, которые не поддерживают защиту личных сведений. Они перечислены на странице **Защита личных сведений**. |
+|Защита конфиденциальности | Включить | Дайте согласие на защиту личных сведений, которая входит в стоимость покупки _бесплатно_. Некоторыми доменами верхнего уровня управляют регистраторы, которые не поддерживают защиту личных сведений. Они перечислены на странице **Защита личных сведений**. |
 | Назначение имен узлов по умолчанию | **www** и **\@** | При необходимости выберите нужные привязки имен узлов. После завершения операции покупки домена доступ к приложению может осуществляться с помощью выбранных имен узлов. Если приложение находится за [диспетчером трафика Azure](https://azure.microsoft.com/services/traffic-manager/), вы не увидите пункт назначения корневого домена (@), так как диспетчер трафика не поддерживает записи типа A. После завершения приобретения домена можно внести изменения в назначения имен узлов. |
 
 ### <a name="accept-terms-and-purchase"></a>Принятие условий и приобретение
@@ -122,19 +122,19 @@ ms.locfileid: "81535712"
 
 На странице **домена службы приложений** нажмите кнопку **ОК**. Во время операции появятся следующие уведомления:
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-validate.png)
+![Снимок экрана, на котором отображается сообщение о ходе проверки.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-validate.png)
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-purchase-success.png)
+![Снимок экрана, на котором показано уведомление об успешной покупке.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-purchase-success.png)
 
 ### <a name="test-the-hostnames"></a>Проверка имен узлов
 
 Если для приложения вы назначили имена узлов по умолчанию, вы также увидите уведомление о выполнении для каждого выбранного узла.
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-bind-success.png)
+![Снимок экрана, на котором показано уведомление об успешном выполнении для каждого выбранного имени узла.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-bind-success.png)
 
 Выбранные имена узлов появятся на странице **Личные домены** в разделе **Настраиваемые имена узлов**.
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-hostnames-added.png)
+![Снимок экрана, на котором показаны выбранные имена узлов в разделе Пользовательские имена узлов страницы личные домены.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-hostnames-added.png)
 
 > [!NOTE]
 > **Небезопасная** метка для личного домена означает, что он еще не привязан к сертификату TLS/SSL, а любой запрос HTTPS из браузера в личный домен получит ошибку или предупреждение в зависимости от браузера. Сведения о настройке привязки TLS см. [в статье Защита настраиваемого DNS-имени с помощью привязки TLS/SSL в службе приложений Azure](configure-ssl-bindings.md).
@@ -154,11 +154,11 @@ ms.locfileid: "81535712"
 ### <a name="launch-add-hostname"></a>Запуск добавления имени узла
 На странице **Службы приложений** выберите имя приложения, для которого вы хотите назначить имена узлов, выберите **Параметры**, а затем — **Личные домены**.
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-6.png)
+![Снимок экрана, на котором отображаются выделенные личные домены.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-6.png)
 
 Убедитесь, что приобретенный домен находится в разделе **Домены службы приложений**, но не выбирайте его. 
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-select-domain.png)
+![Снимок экрана, показывающий приобретенный домен в разделе "домены службы приложений".](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-select-domain.png)
 
 > [!NOTE]
 > Все домены Службы приложений в той же подписке отображаются на странице **Личные домены** приложения. Если домен находится в подписке приложения, но не отображается на странице **Личные домены** приложения, повторно откройте страницу **Личные домены** или обновите веб-страницу. Также проверьте ход выполнения или наличие сбоев при создании в разделе уведомлений (значок "колокольчик") в верхней части портала Azure.
@@ -168,7 +168,7 @@ ms.locfileid: "81535712"
 Выберите **Добавить имя узла**.
 
 ### <a name="configure-hostname"></a>Настройка имени узла
-В диалоговом окне **Добавить имя узла** введите полное доменное имя домена службы приложений или любой поддомен. Пример:
+В диалоговом окне **Добавить имя узла** введите полное доменное имя домена службы приложений или любой поддомен. Например:
 
 - kontoso.net
 - www \. kontoso.NET
@@ -180,14 +180,14 @@ ms.locfileid: "81535712"
 
 После завершения появится уведомление об успешном выполнении операции назначения имени узла.  
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-bind-success.png)
+![Снимок экрана, на котором показано уведомление об успешном выполнении для назначенного имени узла.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-bind-success.png)
 
 ### <a name="close-add-hostname"></a>Закрытие страницы добавления имени узла
 На странице **Добавить имя узла** назначьте любое другое имя узла для приложения в случае необходимости. После завершения закройте страницу **Добавить имя узла**.
 
 Вы увидите только что назначенные имена узлов на странице **Личные домены** вашего приложения.
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-hostnames-added2.png)
+![Снимок экрана, показывающий недавно назначенные имена узлов на странице личных доменов приложения.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-hostnames-added2.png)
 
 ### <a name="test-the-hostnames"></a>Проверка имен узлов
 
@@ -201,15 +201,15 @@ ms.locfileid: "81535712"
 
 На вкладке **службы приложений** щелкните имя приложения, выберите **Параметры**, а затем — **Личные домены**.
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-6.png)
+![Снимок экрана, на котором отображаются выделенные личные домены.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-6.png)
 
 В разделе **Домены службы приложений** выберите домен, который необходимо настроить.
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-select-domain.png)
+![Снимок экрана, показывающий приобретенный домен в разделе "домены службы приложений".](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-select-domain.png)
 
 В левой области навигации домена выберите **Продление домена**. Чтобы остановить автоматическое продление срока действия домена, выберите **Выключить**, а затем нажмите кнопку **Сохранить**.
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-autorenew.png)
+![Снимок экрана, на котором показан параметр автоматического продления домена.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-autorenew.png)
 
 Чтобы вручную обновить домен, нажмите кнопку **Продление домена**. Однако эта кнопка неактивна до [90 дней до истечения срока действия домена](#when-domain-expires).
 
@@ -237,7 +237,7 @@ Azure работает с доменами службы приложений с 
 
 В портал Azure в меню слева выберите **все службы**  >  **домены службы приложений**.
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-access.png)
+![Снимок экрана, на котором показано, где можно получить доступ к доменам службы приложений.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-access.png)
 
 Выберите домен для управления. 
 
@@ -245,7 +245,7 @@ Azure работает с доменами службы приложений с 
 
 В меню домена слева выберите **Зона DNS**.
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-dns-zone.png)
+![Снимок экрана, на котором показано, где выбрать зону DNS.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-dns-zone.png)
 
 Открывается страница [Зона DNS](../dns/dns-zones-records.md) вашего домена службы приложений в Azure DNS. Сведения о том, как изменять записи DNS, см. в статье [Приобретение и настройка имени личного домена для службы приложений Azure](../dns/dns-operations-dnszones-portal.md).
 
@@ -257,7 +257,7 @@ Azure работает с доменами службы приложений с 
 
 В портал Azure в меню слева выберите **все службы**  >  **домены службы приложений**.
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-access.png)
+![Снимок экрана, на котором показано, где можно получить доступ к доменам службы приложений.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-access.png)
 
 Выберите домен, который вы хотите отменить или удалить. 
 
@@ -265,13 +265,13 @@ Azure работает с доменами службы приложений с 
 
 В меню слева для домена выберите **Привязки имен узлов**. Здесь перечислены привязки имен узлов из всех служб Azure.
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-hostname-bindings.png)
+![Снимок экрана, на котором показана страница привязок имен узлов.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-hostname-bindings.png)
 
 Вы не можете удалить домен службы приложений, пока не будут удалены все привязки имен узлов.
 
 Удалите каждую привязку имени узла, выбрав **...**  >  **Удалить**. После удаления всех привязок нажмите кнопку **Сохранить**.
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-delete-hostname-bindings.png)
+![Снимок экрана, на котором показано место удаления привязок имен узлов.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-delete-hostname-bindings.png)
 
 ### <a name="cancel-or-delete"></a>Отмена или удаление
 
@@ -279,7 +279,7 @@ Azure работает с доменами службы приложений с 
 
 Если период отмены приобретенного домена не истек, выберите **Отменить покупку**. В противном случае вы увидите кнопку **Удалить**. Чтобы удалить домен без возмещения средств, нажмите кнопку **Удалить**.
 
-![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-cancel.png)
+![Снимок экрана, на котором показано, куда удалять или отменять приобретенный домен.](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-cancel.png)
 
 Щелкните **Да**, чтобы подтвердить операцию.
 

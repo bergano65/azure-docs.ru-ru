@@ -1,5 +1,5 @@
 ---
-title: Назначение ролей каталога пользователям в Azure Active Directory | Документация Майкрософт
+title: Назначение ролей Azure AD пользователям Azure Active Directory | Документация Майкрософт
 description: Инструкции по назначению ролей администратора и других ролей пользователям с помощью Azure Active Directory.
 services: active-directory
 author: msaburnley
@@ -8,35 +8,40 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 09/06/2018
+ms.date: 06/15/2020
 ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87b063a4d51d5d5d1e3d7949be3754ccbe74acca
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c5dc42d8308b8e20a647f5f64867fd78a1a09c96
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85604120"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224037"
 ---
 # <a name="assign-administrator-and-non-administrator-roles-to-users-with-azure-active-directory"></a>Назначение ролей администратора и других ролей пользователям с помощью Azure Active Directory
-Если пользователю в вашей организации требуется разрешение на управление ресурсами Azure Active Directory (Azure AD), необходимо назначить пользователю соответствующую роль в Azure AD в зависимости от действий, которые пользователю нужно выполнять.
 
-Дополнительные сведения о доступных ролях см. в разделе [назначение ролей администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md). Сведения о добавлении пользователей см. в статье [Добавление новых пользователей в Azure Active Directory](add-users-azure-active-directory.md).
+В Azure Active Directory (Azure AD), если одному из пользователей требуется разрешение на управление ресурсами Azure AD, необходимо назначить их роли, предоставляющей необходимые им разрешения. Сведения о том, какие роли управляют ресурсами Azure и какие роли управляют ресурсами Azure AD, см. в статье [роли администратора классической подписки, роли Azure и роли Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md).
+
+Дополнительные сведения о доступных ролях Azure AD см. в разделе [назначение ролей администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md). Сведения о добавлении пользователей см. в разделе [Добавление новых пользователей в Azure Active Directory](add-users-azure-active-directory.md).
 
 ## <a name="assign-roles"></a>Назначение ролей
-Обычно в Azure AD роли назначаются пользователю на странице пользователя **Роль каталога**.
 
-Вы также можете назначать роли с помощью управления привилегированными пользователями (PIM). Более подробные сведения о том, как использовать PIM, см. в разделе [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management).
+Распространенным способом назначения ролей Azure AD для пользователя является страница « **назначенные роли** » для пользователя. Вы также можете получить право на повышение прав в роли с помощью управление привилегированными пользователями (PIM). Дополнительные сведения об использовании PIM см. в разделе [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management).
 
-### <a name="to-assign-a-role-to-a-user"></a>Назначение роли пользователю
-1. Перейдите к [портал Azure](https://portal.azure.com/) и войдите в систему, используя учетную запись глобального администратора для каталога. 
+> [!Note]
+> Если у вас есть план лицензирования Azure AD Premium P2 и уже используется PIM, все задачи управления ролями выполняются в [Управление привилегированными пользователями](../users-groups-roles/directory-manage-roles-portal.md).
+>
+> ![Роли Azure AD, управляемые в PIM для пользователей, которые уже используют PIM и имеют лицензию Premium P2](./media/active-directory-users-assign-role-azure-portal/pim-manages-roles-for-p2.png)
+
+## <a name="assign-a-role-to-a-user"></a>Назначение роли пользователю
+
+1. Перейдите к [портал Azure](https://portal.azure.com/) и войдите в систему, используя учетную запись глобального администратора для каталога.
 
 2. Найдите и выберите **Azure Active Directory**.
 
       ![Поиск Azure Active Directory на портале Azure](media/active-directory-users-assign-role-azure-portal/search-azure-active-directory.png)
-
 
 3. Выберите **Пользователи**.
 
@@ -46,16 +51,17 @@ ms.locfileid: "85604120"
 
 5. На странице **(Alain Чарон-Profile** выберите **назначенные роли**.
 
-    Откроется страница **Ален Чарон — роль каталога**.
+    Откроется страница **(Alain Чарон-Administrative Roles** .
 
-6. Выберите **добавить назначение**, выберите роль для назначения (Alain (например, _Администратор приложения_), а затем нажмите **кнопку Выбрать**.
+6. Выберите **добавить назначения**, выберите роль для назначения (Alain (например, _Администратор приложения_), а затем нажмите **кнопку Выбрать**.
 
     ![Страница "назначенные роли" — Отображение выбранной роли](media/active-directory-users-assign-role-azure-portal/directory-role-select-role.png)
 
-    Алену Чарону назначена роль администратора приложения. Она отображается на странице **Ален Чарон — роль каталога**.
+    Роль администратора приложения назначается (Alain Чарон, и она отображается на странице **(Alain Чарон-административные роли** .
 
 ## <a name="remove-a-role-assignment"></a>Удаление назначения ролей
-Если необходимо удалить назначение роли для пользователя, это также можно сделать на странице **Ален Чарон — роль каталога**.
+
+Если необходимо удалить назначение роли от пользователя, это можно также сделать на странице **(Alain Чарон-My Roles (роли администрирования)** .
 
 ### <a name="to-remove-a-role-assignment-from-a-user"></a>Удаление назначения роли
 
@@ -65,15 +71,14 @@ ms.locfileid: "85604120"
 
     ![Страница «назначенные роли», показывающая выбранную роль и параметр «Удалить»](media/active-directory-users-assign-role-azure-portal/directory-role-remove-role.png)
 
-    Назначение роли удалено, она больше не отображается на странице **Ален Чарон — роль каталога**.
+    Роль администратора приложения удаляется из (Alain Чарон и больше не отображается на странице **(Alain Чарон-административные роли** .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
+
 - [Добавление или удаление пользователей](add-users-azure-active-directory.md)
 
 - [Добавление или изменение данных профиля](active-directory-users-profile-azure-portal.md)
 
 - [Добавление гостевых пользователей из другого каталога](../b2b/what-is-b2b.md)
 
-Кроме того, можно выполнять другие задачи по управлению пользователями, например назначение делегатов, использование политик и совместное использование учетных записей пользователей. Дополнительные сведения о других доступных действиях см. в [документации по управлению пользователями Azure Active Directory](../users-groups-roles/index.yml).
-
-
+Другие задачи управления пользователями, которые вы можете извлечь, доступны в [Azure Active Directory документации по управлению пользователями](../users-groups-roles/index.yml).

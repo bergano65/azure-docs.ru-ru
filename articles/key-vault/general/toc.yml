@@ -100,6 +100,8 @@
           href: event-grid-logicapps.md
         - name: Получение уведомлений с помощью Сетки событий Azure и службы автоматизации Azure
           href: event-grid-tutorial.md
+        - name: Резервное копирование отдельных объектов Key Vault
+          href: backup.md
     - name: Безопасность
       items:
         - name: Интеграция со службой "Приватный канал Azure"

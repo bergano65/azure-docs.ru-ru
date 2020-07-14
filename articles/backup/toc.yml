@@ -369,8 +369,10 @@
           href: backup-azure-security-feature.md
         - name: Частные конечные точки
           href: private-endpoints.md
-        - name: Шифрование
+        - name: Шифрование в Azure Backup
           href: backup-encryption.md
+        - name: Шифрование с использованием управляемых пользователем ключей
+          href: encryption-at-rest-with-cmk.md
         - name: Встроенные средства управления безопасностью
           href: backup-security-controls.md
         - name: Базовые средства безопасности

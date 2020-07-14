@@ -8,20 +8,21 @@ ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 8/2/2019
+ms.date: 07/09/2020
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: anandsub
-ms.openlocfilehash: 0023bcc4a7c31a0e337683fa3d3080a45445fc49
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4df4f7e1db880a38f647e8e384cbfb29b70954ec
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84117913"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187257"
 ---
 # <a name="how-to-start-and-stop-azure-ssis-integration-runtime-on-a-schedule"></a>Запуск и остановка Azure-SSIS Integration Runtime по расписанию
 
-[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этой статье описан процесс планирования запуска и остановки Azure-SSIS Integration Runtime (IR) с использованием Фабрики данных Azure (ADF). Azure-SSIS IR представляет собой вычислительный ресурс ADF, предназначенный для выполнения пакетов SQL Server Integration Services (SSIS). Выполнение Azure-SSIS IR сопряжено с определенными затратами. Поэтому среду выполнения интеграции обычно запускают только на тот период, когда требуется выполнение пакетов SSIS в Azure, а затем останавливают. С помощью пользовательского интерфейса (приложения) ADF или Azure PowerShell вы можете [запустить или остановить среду выполнения интеграции вручную](manage-azure-ssis-integration-runtime.md)).
 
@@ -29,7 +30,7 @@ ms.locfileid: "84117913"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 Если среда Azure-SSIS IR еще не подготовлена, выполните подготовку по указаниям из [этого руководства](tutorial-create-azure-ssis-runtime-portal.md). 
 
 ## <a name="create-and-schedule-adf-pipelines-that-start-and-or-stop-azure-ssis-ir"></a>Создание и планирование конвейеров ADF для запуска и остановки Azure-SSIS IR
@@ -135,7 +136,7 @@ ms.locfileid: "84117913"
     1. В качестве **имени сервера**введите ** &lt; имя сервера &gt; . Database.Windows.NET**.
     2. Выберите **Параметры >>**.
     3. В поле **Подключение к базе данных** выберите **SSISDB**.
-    4. Выберите **Подключиться**. 
+    4. Щелкните **Подключить**. 
     5. Разверните папку **Integration Services каталоги**  ->  **SSISDB** -> > **проекты** , > свои **пакеты**> проекта SSIS. 
     6. Щелкните правой кнопкой мыши указанный пакет служб SSIS для запуска и выберите пункт **отчеты**  ->  **Стандартные отчеты**  ->  **все выполнения**. 
     7. Убедитесь, что конвейер выполнен. 
@@ -162,7 +163,7 @@ ms.locfileid: "84117913"
     4. В поле **Повторение** укажите периодичность активации триггера. В следующем примере выбран вариант **Ежедневно**. 
     5. В поле **Конец** выберите вариант **Нет конца** или введите дату окончания и время, выбрав вариант **Дата**. 
     6. Выберите **Активировано**, чтобы запустить триггер сразу после публикации этих параметров ADF. 
-    7. Выберите **Далее**.
+    7. Нажмите **Далее**.
 
    !["Триггер" > "Создать/изменить"](./media/how-to-schedule-azure-ssis-integration-runtime/new-trigger-window.png)
     
@@ -229,7 +230,7 @@ ms.locfileid: "84117913"
     4. В поле **Расположение** выберите расположение для учетной записи службы автоматизации Azure. 
     5. В поле **Создать учетную запись запуска от имени Azure** подтвердите создание, выбрав **Да**. Это действие позволяет создать в Azure Active Directory субъект-службу и назначить ей роль **Участник** в подписке Azure.
     6. Выберите **Закрепить на панели мониторинга**, чтобы этот субъект постоянно отображался на панели мониторинга Azure. 
-    7. Выберите **Создать**. 
+    7. Нажмите кнопку **Создать**. 
 
    ![Создать -> Мониторинг и управление -> Служба автоматизации](./media/how-to-schedule-azure-ssis-integration-runtime/add-automation-account-window.png)
    
@@ -267,7 +268,7 @@ ms.locfileid: "84117913"
 
     1. В поле **Имя** введите **StartStopAzureSsisRuntime**.
     2. Для поля **Тип Runbook** выберите значение **PowerShell**.
-    3. Выберите **Создать**.
+    3. Нажмите кнопку **Создать**.
     
    ![Кнопка добавления модуля runbook](./media/how-to-schedule-azure-ssis-integration-runtime/add-runbook-window.png)
    
@@ -366,7 +367,7 @@ ms.locfileid: "84117913"
     4. В поле **Запускается** введите время на несколько минут позже текущего времени. 
     5. Для параметра **Периодичность** выберите значение **Повторяющееся**. 
     6. В поле **Повторять каждые** введите значение **1** и выберите **День**. 
-    7. Выберите **Создать**. 
+    7. Нажмите кнопку **Создать**. 
 
    ![Расписание для запуска IR Azure SSIS](./media/how-to-schedule-azure-ssis-integration-runtime/new-schedule-start.png)
     
@@ -382,7 +383,7 @@ ms.locfileid: "84117913"
     
 6. Завершив тестирование, измените параметры расписаний, чтобы отключить их. Выберите **Расписания** в меню слева, выберите **Start IR daily/Stop IR daily** ("Запускать IR ежедневно" или "Останавливать IR ежедневно") и укажите значение **Нет** для параметра **Включено**. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. в следующей записи блога:
 -   [Модернизация и расширение рабочих процессов ETL/ELT с помощью операций MSSQL Integration Services в конвейерах ADF](https://techcommunity.microsoft.com/t5/SQL-Server-Integration-Services/Modernize-and-Extend-Your-ETL-ELT-Workflows-with-SSIS-Activities/ba-p/388370)
 

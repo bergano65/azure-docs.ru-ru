@@ -11,11 +11,12 @@ ms.reviewer: sawinark
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 07/08/2019
-ms.openlocfilehash: e928a6b54e53f9076ffe184ed4868e7741661d7e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b2c1d08656ce9ef6b76e34a943f133859b78345a
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84118831"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86172032"
 ---
 # <a name="troubleshoot-ssis-integration-runtime-management-in-azure-data-factory"></a>Устранение неполадок управления Integration Runtime SSIS в фабрике данных Azure
 
@@ -114,7 +115,7 @@ ms.locfileid: "84118831"
 ## <a name="virtual-network-configuration"></a>Конфигурация виртуальной сети
 
 При присоединении SSIS IR к виртуальной сети Azure SSIS IR использует виртуальную сеть, входящую в подписку пользователя. Дополнительные сведения см. в статье [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network).
-
+После успешного запуска службы SSIS IR при возникновении проблем с сетевым подключением можно попытаться использовать [средство диагностики подключений](ssis-integration-runtime-diagnose-connectivity-faq.md) для самостоятельной диагностики проблемы.
 При возникновении проблемы, связанной с виртуальной сетью, отобразится одна из следующих ошибок.
 
 ### <a name="invalidvnetconfiguration"></a>InvalidVnetConfiguration

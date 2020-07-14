@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/25/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 7933d5e5cf7d82de013e18b221f3a0c3ce6b5229
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.openlocfilehash: 284f8c8432d732fdfa7e16b43a47578437bcf0ba
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85800534"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86202247"
 ---
 # <a name="bing-web-search-api-response-structure-and-answer-types"></a>Структура откликов и типы ответов API Bing для поиска в Интернете  
 
@@ -294,9 +294,9 @@ Encoded query: 8^2%2B11^2-2*8*11*cos%2837%29
 |------------|-----------------|
 |+|Сложение|
 |-|Вычитание|
-|/|Отдел|
+|/|Деление|
 |*|Умножение|
-|^|Мощный|
+|^|Питание|
 |!|Факториал|
 |.|Decimal|
 |()|Группирование по приоритету|
@@ -435,7 +435,7 @@ Query: What time is it in the U.S.
 
 Ответы от API Поиска в Интернете Bing могут содержать следующие заголовки:
 
-|||
+| Header | Описание |
 |-|-|
 |`X-MSEdge-ClientID`|Уникальный идентификатор, назначенный пользователю службой Bing.|
 |`BingAPIs-Market`|Рынок, использованный для выполнения запроса.|

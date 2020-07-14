@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/21/2018
-ms.openlocfilehash: 6346055f1169bfa533d5dbfe441ecf27fb0d78a7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 00fdaf93553c97112c67caa66cb2246756b63c33
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75397749"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207489"
 ---
 # <a name="splunk-to-azure-monitor-log-query"></a>Запрос журнала в Splunk и Azure Monitor
 
@@ -20,12 +21,12 @@ ms.locfileid: "75397749"
 
 В следующей таблице сравниваются основные понятия и структуры данных в журналах Splunk и Azure Monitor.
 
- | Концепция  | Splunk | Azure Monitor |  Комментировать
+ | Концепция  | Splunk | Azure Monitor |  Комментарий
  | --- | --- | --- | ---
  | Единица развертывания  | cluster |  cluster |  В Azure Monitor можно выполнять произвольные межкластерные запросы. В Splunk — нет. |
  | Кэши данных |  контейнеры  |  Политики кэширования и хранения |  Определяет период и уровень кэширования данных. Этот параметр напрямую влияет на производительность запросов и затраты на развертывание. |
  | Логическое разделение данных  |  индекс  |  База данных  |  Обеспечивает логическое разделение данных. В обеих реализациях можно объединять и соединять разделы. |
- | Структурированные метаданные событий | Н/Д | table |  Splunk не поддерживает концепцию языка поиска в метаданных событий. Журналы Azure Monitor поддерживают концепцию таблицы со столбцами. Каждый экземпляр события сопоставляется со строкой. |
+ | Структурированные метаданные событий | Недоступно | table |  Splunk не поддерживает концепцию языка поиска в метаданных событий. Журналы Azure Monitor поддерживают концепцию таблицы со столбцами. Каждый экземпляр события сопоставляется со строкой. |
  | Запись данных | event | строка |  Отличается только терминология. |
  | Атрибут записи данных | поле |  гистограмма |  В Azure Monitor это часть структуры таблицы. В Splunk каждое событие имеет собственный набор полей. |
  | Типы | тип данных |  тип данных |  Типы данных Azure Monitor более явные, так как они задаются в столбцах. Как в Splunk, так и в Log Analytics можно динамически работать с типами данных и находятся примерно одинаковые наборы типов данных, включая поддержку JSON. |
@@ -36,10 +37,10 @@ ms.locfileid: "75397749"
 
 В следующей таблице перечислены функции Azure Monitor, эквивалентные функциям Splunk.
 
-|Splunk | Azure Monitor |Комментировать
+|Splunk | Azure Monitor |Комментарий
 |---|---|---
 |strcat | strcat()| (1) |
-|split  | split() | (1) |
+|разделение  | split() | (1) |
 |if     | iff()   | (1) |
 |tonumber | todouble()<br>tolong()<br>toint() | (1) |
 |upper<br>lower |toupper()<br>tolower()|(1) |
@@ -64,150 +65,112 @@ ms.locfileid: "75397749"
 > [!NOTE]
 > В следующем примере поле Splunk _rule_ сопоставляется с таблицей в Azure Monitor, а метка времени по умолчанию в Splunk — со столбцом Log Analytics _ingestion_time()_.
 
-### <a name="search"></a>Найти
+### <a name="search"></a>Поиск
 В Splunk можно опустить ключевое слово `search` и указать строку без кавычек. В Azure Monitor каждый запрос должен начинаться с `find`, имя столбца должно быть строкой без кавычек, а значение подстановки — строкой в кавычках. 
 
-| |  | |
+| | Оператор | Пример |
 |:---|:---|:---|
-| Splunk | **search** | <code>search Session.Id="c8894ffd-e684-43c9-9125-42adc25cd3fc" earliest=-24h</code> |
-| Azure Monitor | **find** | <code>find Session.Id=="c8894ffd-e684-43c9-9125-42adc25cd3fc" and ingestion_time()> ago(24h)</code> |
-| | |
+| **Splunk** | **search** | <code>search Session.Id="c8894ffd-e684-43c9-9125-42adc25cd3fc" earliest=-24h</code> |
+| **Azure Monitor** | **find** | <code>find Session.Id=="c8894ffd-e684-43c9-9125-42adc25cd3fc" and ingestion_time()> ago(24h)</code> |
+
 
 ### <a name="filter"></a>Filter
 Запросы журнала в Azure Monitor начинаются с табличного результирующего набора с фильтром. В Splunk фильтрация является операцией по умолчанию в текущем индексе. В Splunk можно также использовать оператор `where`, но не рекомендуется.
 
-| |  | |
+| | Оператор | Пример |
 |:---|:---|:---|
-| Splunk | **search** | <code>Event.Rule="330009.2" Session.Id="c8894ffd-e684-43c9-9125-42adc25cd3fc" _indextime>-24h</code> |
-| Azure Monitor | **where** | <code>Office_Hub_OHubBGTaskError<br>&#124; where Session_Id == "c8894ffd-e684-43c9-9125-42adc25cd3fc" and ingestion_time() > ago(24h)</code> |
-| | |
-
+| **Splunk** | **search** | <code>Event.Rule="330009.2" Session.Id="c8894ffd-e684-43c9-9125-42adc25cd3fc" _indextime>-24h</code> |
+| **Azure Monitor** | **where** | <code>Office_Hub_OHubBGTaskError<br>&#124; where Session_Id == "c8894ffd-e684-43c9-9125-42adc25cd3fc" and ingestion_time() > ago(24h)</code> |
 
 ### <a name="getting-n-eventsrows-for-inspection"></a>Получение n событий или строк для проверки 
 Запросы журнала в Azure Monitor также поддерживают `take` в качестве псевдонима для `limit`. В Splunk, если результаты упорядочены, `head` возвращает первые n результатов. В Azure Monitor для limit не применяется упорядочивание, но возвращаются первые n найденных строк.
 
-| |  | |
+| | Оператор | Пример |
 |:---|:---|:---|
-| Splunk | **Глава** | <code>Event.Rule=330009.2<br>&#124; head 100</code> |
-| Azure Monitor | **limit** | <code>Office_Hub_OHubBGTaskError<br>&#124; limit 100</code> |
-| | |
-
-
+| **Splunk** | **Глава** | <code>Event.Rule=330009.2<br>&#124; head 100</code> |
+| **Azure Monitor** | **limit** | <code>Office_Hub_OHubBGTaskError<br>&#124; limit 100</code> |
 
 ### <a name="getting-the-first-n-eventsrows-ordered-by-a-fieldcolumn"></a>Получение первых n событий или строк, упорядоченных по полю или столбцу
 Для нижних результатов в Splunk используется `tail`. В Azure Monitor можно указать направление упорядочивания с помощью `asc`.
 
-| |  | |
+| | Оператор | Пример |
 |:---|:---|:---|
-| Splunk | **Глава** |  <code>Event.Rule="330009.2"<br>&#124; sort Event.Sequence<br>&#124; head 20</code> |
-| Azure Monitor | **В начало** | <code>Office_Hub_OHubBGTaskError<br>&#124; top 20 by Event_Sequence</code> |
-| | |
-
-
-
+| **Splunk** | **Глава** |  <code>Event.Rule="330009.2"<br>&#124; sort Event.Sequence<br>&#124; head 20</code> |
+| **Azure Monitor** | **В начало** | <code>Office_Hub_OHubBGTaskError<br>&#124; top 20 by Event_Sequence</code> |
 
 ### <a name="extending-the-result-set-with-new-fieldscolumns"></a>Расширение результирующего набора с помощью новых полей или столбцов
 В Splunk также есть функция `eval`, которую не следует сопоставлять с оператором `eval`. Оператор `eval` в Splunk и оператор `extend` в Azure Monitor поддерживают только скалярные функции и арифметические операторы.
 
-| |  | |
+| | Оператор | Пример |
 |:---|:---|:---|
-| Splunk | **испытаний** |  <code>Event.Rule=330009.2<br>&#124; eval state= if(Data.Exception = "0", "success", "error")</code> |
-| Azure Monitor | **extend** | <code>Office_Hub_OHubBGTaskError<br>&#124; extend state = iif(Data_Exception == 0,"success" ,"error")</code> |
-| | |
-
+| **Splunk** | **испытаний** |  <code>Event.Rule=330009.2<br>&#124; eval state= if(Data.Exception = "0", "success", "error")</code> |
+| **Azure Monitor** | **extend** | <code>Office_Hub_OHubBGTaskError<br>&#124; extend state = iif(Data_Exception == 0,"success" ,"error")</code> |
 
 ### <a name="rename"></a>Переименовать 
 Azure Monitor использует `project-rename` оператор для переименования поля. `project-rename`позволяет запросу использовать преимущества всех индексов, предварительно созданных для поля. Splunk имеет `rename` оператор для того, чтобы сделать то же самое.
 
-| |  | |
+| | Оператор | Пример |
 |:---|:---|:---|
-| Splunk | **rename** |  <code>Event.Rule=330009.2<br>&#124; rename Date.Exception as execption</code> |
-| Azure Monitor | **проект-переименование** | <code>Office_Hub_OHubBGTaskError<br>&#124; project-rename exception = Date_Exception</code> |
-| | |
-
-
-
+| **Splunk** | **rename** |  <code>Event.Rule=330009.2<br>&#124; rename Date.Exception as execption</code> |
+| **Azure Monitor** | **проект-переименование** | <code>Office_Hub_OHubBGTaskError<br>&#124; project-rename exception = Date_Exception</code> |
 
 ### <a name="format-resultsprojection"></a>Форматирование результатов и проекция
 В Splunk нет оператора, аналогичного `project-away`. Для фильтрации полей можно использовать пользовательский интерфейс.
 
-| |  | |
+| | Оператор | Пример |
 |:---|:---|:---|
-| Splunk | **table** |  <code>Event.Rule=330009.2<br>&#124; table rule, state</code> |
-| Azure Monitor | **project**<br>**project-away** | <code>Office_Hub_OHubBGTaskError<br>&#124; project exception, state</code> |
-| | |
-
-
+| **Splunk** | **table** |  <code>Event.Rule=330009.2<br>&#124; table rule, state</code> |
+| **Azure Monitor** | **project**<br>**project-away** | <code>Office_Hub_OHubBGTaskError<br>&#124; project exception, state</code> |
 
 ### <a name="aggregation"></a>Агрегирование
 Сведения о различных функциях агрегирования в Azure Monitor см. в [этой статье](aggregations.md).
 
-| |  | |
+| | Оператор | Пример |
 |:---|:---|:---|
-| Splunk | **stats** |  <code>search (Rule=120502.*)<br>&#124; stats count by OSEnv, Audience</code> |
-| Azure Monitor | **summarize** | <code>Office_Hub_OHubBGTaskError<br>&#124; summarize count() by App_Platform, Release_Audience</code> |
-| | |
-
+| **Splunk** | **stats** |  <code>search (Rule=120502.*)<br>&#124; stats count by OSEnv, Audience</code> |
+| **Azure Monitor** | **summarize** | <code>Office_Hub_OHubBGTaskError<br>&#124; summarize count() by App_Platform, Release_Audience</code> |
 
 
 ### <a name="join"></a>Join
 Объединение в Splunk имеет значительные ограничения. Вложенный запрос имеет ограничение в 10 000 результатов (задается в файле конфигурации развертывания), а число разновидностей соединения также ограничено.
 
-| |  | |
+| | Оператор | Пример |
 |:---|:---|:---|
-| Splunk | **join** |  <code>Event.Rule=120103* &#124; stats by Client.Id, Data.Alias \| join Client.Id max=0 [search earliest=-24h Event.Rule="150310.0" Data.Hresult=-2147221040]</code> |
-| Azure Monitor | **join** | <code>cluster("OAriaPPT").database("Office PowerPoint").Office_PowerPoint_PPT_Exceptions<br>&#124; where  Data_Hresult== -2147221040<br>&#124; join kind = inner (Office_System_SystemHealthMetadata<br>&#124; summarize by Client_Id, Data_Alias)on Client_Id</code>   |
-| | |
-
-
+| **Splunk** | **join** |  <code>Event.Rule=120103* &#124; stats by Client.Id, Data.Alias \| join Client.Id max=0 [search earliest=-24h Event.Rule="150310.0" Data.Hresult=-2147221040]</code> |
+| **Azure Monitor** | **join** | <code>cluster("OAriaPPT").database("Office PowerPoint").Office_PowerPoint_PPT_Exceptions<br>&#124; where  Data_Hresult== -2147221040<br>&#124; join kind = inner (Office_System_SystemHealthMetadata<br>&#124; summarize by Client_Id, Data_Alias)on Client_Id</code>   |
 
 ### <a name="sort"></a>Сортировка
 В Splunk для сортировки в возрастающем порядке необходимо использовать оператор `reverse`. Azure Monitor также поддерживает определение позиции для размещения значений NULL: в начале или в конце.
 
-| |  | |
+| | Оператор | Пример |
 |:---|:---|:---|
-| Splunk | **sort** |  <code>Event.Rule=120103<br>&#124; sort Data.Hresult<br>&#124; reverse</code> |
-| Azure Monitor | **упорядочить по** | <code>Office_Hub_OHubBGTaskError<br>&#124; order by Data_Hresult,  desc</code> |
-| | |
-
-
+| **Splunk** | **sort** |  <code>Event.Rule=120103<br>&#124; sort Data.Hresult<br>&#124; reverse</code> |
+| **Azure Monitor** | **упорядочить по** | <code>Office_Hub_OHubBGTaskError<br>&#124; order by Data_Hresult,  desc</code> |
 
 ### <a name="multivalue-expand"></a>Развертывание нескольких значений
 В Splunk и Azure Monitor для этого используются аналогичные операторы.
 
-| |  | |
+| | Оператор | Пример |
 |:---|:---|:---|
-| Splunk | **mvexpand** |  `mvexpand foo` |
-| Azure Monitor | **mvexpand** | `mvexpand foo` |
-| | |
-
-
-
+| **Splunk** | **mvexpand** |  `mvexpand foo` |
+| **Azure Monitor** | **mvexpand** | `mvexpand foo` |
 
 ### <a name="results-facets-interesting-fields"></a>Аспекты результатов, интересующие поля
 В разделе Azure Monitor на портале Azure предоставляется только первый столбец. Все столбцы доступны через API.
 
-| |  | |
+| | Оператор | Пример |
 |:---|:---|:---|
-| Splunk | **поля** |  <code>Event.Rule=330009.2<br>&#124; fields App.Version, App.Platform</code> |
-| Azure Monitor | **аспекты** | <code>Office_Excel_BI_PivotTableCreate<br>&#124; facet by App_Branch, App_Version</code> |
-| | |
-
-
-
+| **Splunk** | **поля** |  <code>Event.Rule=330009.2<br>&#124; fields App.Version, App.Platform</code> |
+| **Azure Monitor** | **аспекты** | <code>Office_Excel_BI_PivotTableCreate<br>&#124; facet by App_Branch, App_Version</code> |
 
 ### <a name="de-duplicate"></a>Дедупликация
 Вместо этого можно использовать `summarize arg_min()`, чтобы изменить порядок, в котором выбираются записи.
 
-| |  | |
+| | Оператор | Пример |
 |:---|:---|:---|
-| Splunk | **чисто** |  <code>Event.Rule=330009.2<br>&#124; dedup device_id sortby -batterylife</code> |
-| Azure Monitor | **summarize arg_max()** | <code>Office_Excel_BI_PivotTableCreate<br>&#124; summarize arg_max(batterylife, *) by device_id</code> |
-| | |
+| **Splunk** | **чисто** |  <code>Event.Rule=330009.2<br>&#124; dedup device_id sortby -batterylife</code> |
+| **Azure Monitor** | **summarize arg_max()** | <code>Office_Excel_BI_PivotTableCreate<br>&#124; summarize arg_max(batterylife, *) by device_id</code> |
 
-
-
-
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Пройдите урок по [написанию запросов к журналу в Azure Monitor](get-started-queries.md).

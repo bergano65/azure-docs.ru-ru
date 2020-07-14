@@ -79,6 +79,10 @@
       href: enterprise-state-roaming-group-policy-settings.md
     - name: Параметры Windows для службы Enterprise State Roaming
       href: enterprise-state-roaming-windows-settings-reference.md
+    - name: API-интерфейсы Graph
+      items:
+        - name: API удостоверений устройств
+          href: /graph/api/resources/device?view=graph-rest-1.0
 - name: Ресурсы
   items:
     - name: Форум отзывов и предложений по Azure

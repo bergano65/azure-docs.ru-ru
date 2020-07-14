@@ -40,6 +40,8 @@
       items:
         - name: Сведения о каналах и пиринге
           href: expressroute-circuit-peerings.md
+        - name: Сведения об обновлении пропускной способности канала
+          href: about-upgrade-circuit-bandwidth.md
         - name: Перенос каналов из классического развертывания в развертывание с помощью Resource Manager
           href: expressroute-move.md
     - name: BFD через ExpressRoute

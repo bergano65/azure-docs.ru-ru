@@ -76,7 +76,7 @@ ms.locfileid: "86207258"
 
     ![Снимок экрана создания ресурса](media/cognitive-services-apis-create-account/resource_create_screen-multi.png)
 
-    Щелкните **Создать**.
+    Нажмите кнопку **Создать**.
 
     #### <a name="single-service-resource"></a>[Ресурс с одной службой](#tab/singleservice)
 
@@ -90,7 +90,7 @@ ms.locfileid: "86207258"
 
     ![Снимок экрана создания ресурса](media/cognitive-services-apis-create-account/resource_create_screen.png)
 
-    Щелкните **Создать**.
+    Нажмите кнопку **Создать**.
 
     ***
 

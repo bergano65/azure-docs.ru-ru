@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 05/28/2020
-ms.openlocfilehash: 6a71cc080c28cfa6e54de5b942ad1d8ce5b496d3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d3fe5257b3db2057e805d2f2cd0c6e2a2973e211
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85513969"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86223063"
 ---
 # <a name="copy-and-transform-data-in-azure-sql-database-by-using-azure-data-factory"></a>Копирование и преобразование данных в базе данных SQL Azure с помощью фабрики данных Azure
 
@@ -61,7 +61,7 @@ ms.locfileid: "85513969"
 
 Для связанной службы Базы данных SQL Azure поддерживаются следующие свойства:
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Для свойства **type** необходимо задать значение **AzureSqlDatabase**. | Да |
 | connectionString | Укажите сведения, необходимые для подключения к экземпляру базы данных SQL Azure для свойства **ConnectionString** . <br/>Вы также можете добавить пароль или ключ субъекта-службы в Azure Key Vault. Если это проверка подлинности SQL, вытяните `password` конфигурацию из строки подключения. Дополнительные сведения см. в примере JSON, который следует за таблицей, и [Храните учетные данные в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
@@ -89,7 +89,7 @@ ms.locfileid: "85513969"
     "properties": {
         "type": "AzureSqlDatabase",
         "typeProperties": {
-            "connectionString": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;User ID=<username>@<servername>;Password=<password>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30"
+            "connectionString": "Data Source=tcp:<servername>.database.windows.net,1433;Initial Catalog=<databasename>;User ID=<username>@<servername>;Password=<password>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30"
         },
         "connectVia": {
             "referenceName": "<name of Integration Runtime>",
@@ -107,7 +107,7 @@ ms.locfileid: "85513969"
     "properties": {
         "type": "AzureSqlDatabase",
         "typeProperties": {
-            "connectionString": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;User ID=<username>@<servername>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30",
+            "connectionString": "Data Source=tcp:<servername>.database.windows.net,1433;Initial Catalog=<databasename>;User ID=<username>@<servername>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30",
             "password": {
                 "type": "AzureKeyVaultSecret",
                 "store": {
@@ -159,7 +159,7 @@ ms.locfileid: "85513969"
     "properties": {
         "type": "AzureSqlDatabase",
         "typeProperties": {
-            "connectionString": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;Connection Timeout=30",
+            "connectionString": "Data Source=tcp:<servername>.database.windows.net,1433;Initial Catalog=<databasename>;Connection Timeout=30",
             "servicePrincipalId": "<service principal id>",
             "servicePrincipalKey": {
                 "type": "SecureString",
@@ -205,7 +205,7 @@ ms.locfileid: "85513969"
     "properties": {
         "type": "AzureSqlDatabase",
         "typeProperties": {
-            "connectionString": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;Connection Timeout=30"
+            "connectionString": "Data Source=tcp:<servername>.database.windows.net,1433;Initial Catalog=<databasename>;Connection Timeout=30"
         },
         "connectVia": {
             "referenceName": "<name of Integration Runtime>",
@@ -221,7 +221,7 @@ ms.locfileid: "85513969"
 
 Для набора данных SQL Azure поддерживаются следующие свойства:
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство **Type** набора данных должно иметь значение **AzureSqlTable**. | Да |
 | схема | Имя схемы. |"Нет" для источника, "Да" для приемника  |
@@ -257,7 +257,7 @@ ms.locfileid: "85513969"
 
 Чтобы скопировать данные из базы данных SQL Azure, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство **Type** источника действия копирования должно иметь значение **азуресклсаурце**. Тип "SqlSource" по-прежнему поддерживается для обратной совместимости. | Да |
 | sqlReaderQuery | Это свойство применяет пользовательский SQL-запрос для чтения данных. Например, `select * from MyTable`. | Нет |
@@ -364,7 +364,7 @@ GO
 
 Чтобы скопировать данные в базу данных SQL Azure, в разделе **приемника** действия копирования поддерживаются следующие свойства.
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство **Type** приемника действия копирования должно иметь значение **азуресклсинк**. Тип "SqlSink" по-прежнему поддерживается для обратной совместимости. | Да |
 | preCopyScript | Укажите SQL-запрос для выполнения действия копирования перед записью данных в базу данных SQL Azure. Он вызывается однократно при каждом запуске копирования. Это свойство используется для очистки предварительно загруженных данных. | нет |
@@ -634,7 +634,7 @@ END
 | smallint |Int16 |
 | smallmoney |Decimal |
 | sql_variant |Объект |
-| text |String, Char[] |
+| текст |String, Char[] |
 | time |TimeSpan |
 | TIMESTAMP |Byte[] |
 | tinyint |Byte |
@@ -683,6 +683,6 @@ END
 
 4. Создайте набор данных и действие копирования с соответствующим типом ODBC. Дополнительные сведения см. в статье о [соединителе ODBC](connector-odbc.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Список хранилищ данных, поддерживаемых действием копирования в фабрике данных Azure в качестве источников и приемников, см. в разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).

@@ -1,16 +1,16 @@
 ---
 title: Общие сведения об управлении в Azure — Система управления Azure
 description: Общие сведения об областях управления для приложений и ресурсов Azure со ссылками на содержимое по средствам управления Azure.
-ms.date: 05/22/2020
+ms.date: 07/06/2020
 ms.topic: overview
-ms.openlocfilehash: e293ab743b7c3b49a13cab97200c136a9bd044f5
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 81d655db706a7330fc541724d490a4885cc2fe8b
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83828153"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86041920"
 ---
-# <a name="overview-of-management-services-in-azure"></a>Общие сведения о службах управления в Azure
+# <a name="what-are-the-azure-management-areas"></a>Что такое области управления Azure?
 
 Система управления в Azure — это одно из средств управления в Azure. В этой статье рассматриваются различные области управления, развертывания и обслуживания ресурсов в Azure.
 
@@ -26,7 +26,7 @@ ms.locfileid: "83828153"
 
 ## <a name="monitor"></a>Монитор
 
-Мониторинг — это процесс сбора и анализа данных для аудита производительности, работоспособности и доступности ресурсов. Эффективная стратегия мониторинга поможет вам понять работу компонентов и увеличить время работы с уведомлениями. Дополнительные сведения о мониторинге см. в статье [Общие сведения о службе Azure Monitor](../monitoring/monitoring-overview.md).
+Мониторинг — это процесс сбора и анализа данных для аудита производительности, работоспособности и доступности ресурсов. Эффективная стратегия мониторинга поможет вам понять работу компонентов и увеличить время работы с уведомлениями. Дополнительные сведения о мониторинге см. в статье [Общие сведения о службе Azure Monitor](../azure-monitor/overview.md).
 
 ## <a name="configure"></a>Configure
 
@@ -46,9 +46,16 @@ ms.locfileid: "83828153"
 
 ## <a name="protect"></a>Защита
 
-Защита — это обеспечение того, что приложения и данные будут всегда доступными, даже в случае сбоев, которые вы не можете контролировать. Защита в Azure обеспечивается двумя службами: [Azure Backup](../backup/backup-introduction-to-azure-backup.md) выполняет резервное копирование и восстановление данных, как в облаке, так и локальной среде. [Azure Site Recovery](../site-recovery/site-recovery-overview.md) обеспечивает непрерывность бизнес-процессов и немедленное восстановление во время сбоев.
+Защита — это обеспечение того, что приложения и данные будут всегда доступными, даже в случае сбоев, которые вы не можете контролировать. Защита в Azure обеспечивается двумя службами: [Azure Backup](../backup/backup-overview.md) выполняет резервное копирование и восстановление данных, как в облаке, так и локальной среде. [Azure Site Recovery](../site-recovery/site-recovery-overview.md) обеспечивает непрерывность бизнес-процессов и немедленное восстановление во время сбоев.
 
 ## <a name="migrate"></a>Миграция
 
 Под миграцией понимаются рабочие нагрузки перехода из локальной среды в облако Azure.
-Служба [Миграция Azure](../migrate/migrate-overview.md) помогает оценить необходимость переноса локальных виртуальных машин в Azure. Azure Site Recovery позволяет выполнить перенос виртуальных машин из [локальной среды](../site-recovery/migrate-tutorial-on-premises-azure.md) или [Amazon Web Services](../site-recovery/migrate-tutorial-aws-azure.md). Служба [Azure Database Migration Service](../dms/dms-overview.md) поможет вам выполнить перенос баз данных-источников на платформы данных Azure.
+Служба [Миграция Azure](../migrate/migrate-services-overview.md) помогает оценить необходимость переноса локальных виртуальных машин в Azure. Azure Site Recovery позволяет выполнить перенос виртуальных машин из [локальной среды](../site-recovery/migrate-tutorial-on-premises-azure.md) или [Amazon Web Services](../site-recovery/migrate-tutorial-aws-azure.md). Служба [Azure Database Migration Service](../dms/dms-overview.md) поможет вам выполнить перенос баз данных-источников на платформы данных Azure.
+
+## <a name="next-steps"></a>Next Steps
+
+Дополнительные сведения о Системе управления Azure см. в следующих статьях:
+
+- См. документацию по [Системе управления Azure](./index.yml).
+- См. статью [Система управления в Cloud Adoption Framework для Azure](/azure/cloud-adoption-framework/govern/).

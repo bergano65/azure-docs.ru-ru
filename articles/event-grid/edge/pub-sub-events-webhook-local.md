@@ -5,15 +5,14 @@ author: VidyaKukke
 manager: rajarv
 ms.author: vkukke
 ms.reviewer: spelluru
-ms.date: 10/29/2019
+ms.date: 07/08/2020
 ms.topic: article
-ms.service: event-grid
-services: event-grid
-ms.openlocfilehash: ba82b1bea4753cd51e275a78b248247032d79a01
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2a7cc864366bd9a35c96dd453c0dc68f77d8abd9
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84710870"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86171454"
 ---
 # <a name="tutorial-publish-subscribe-to-events-locally"></a>Учебник. Публикация, подписка на события локально
 
@@ -22,7 +21,7 @@ ms.locfileid: "84710870"
 > [!NOTE]
 > Сведения о разделах и подписках службы "Сетка событий Azure" см. в разделе [Основные понятия сетки событий](concepts.md).
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Обязательные условия 
 Для выполнения шагов, описанных в данном учебнике, потребуется следующее.
 
 * **Подписка Azure** . Создайте [бесплатную учетную запись](https://azure.microsoft.com/free) , если она еще не создана. 
@@ -38,7 +37,7 @@ ms.locfileid: "84710870"
 
 ### <a name="select-your-iot-edge-device"></a>Выберите устройство IoT Edge
 
-1. Войдите на [портал Azure](https://portal.azure.com)
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Перейдите в Центр Интернета вещей.
 1. Выберите **IOT Edge** в меню в разделе **Автоматическое управление устройствами** . 
 1. Щелкните идентификатор целевого устройства в списке устройств.
@@ -76,7 +75,7 @@ ms.locfileid: "84710870"
           }
         }
     ```    
- 1. Щелкните **Сохранить**.
+ 1. Нажмите кнопку **Сохранить**
  1. Перейдите к следующему разделу, чтобы добавить модуль подписчика службы "Сетка событий Azure", прежде чем развертывать их вместе.
 
     >[!IMPORTANT]
@@ -98,7 +97,7 @@ ms.locfileid: "84710870"
    * **Имя**: подписчик
    * **URI изображения**:`mcr.microsoft.com/azure-event-grid/iotedge-samplesubscriber:latest`
    * **Параметры создания контейнера**: нет
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**
 1. Нажмите кнопку " **Далее** ", чтобы перейти к разделу "маршруты"
 
  ### <a name="setup-routes"></a>Настройка маршрутов
@@ -280,7 +279,7 @@ ms.locfileid: "84710870"
 * Удалите модуль подписчика с устройства IoT Edge.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом руководстве вы создали раздел, подписку и опубликованные события сетки событий. Теперь, когда вы знакомы с основными шагами, ознакомьтесь со следующими статьями: 
 
 - Сведения об устранении неполадок с использованием службы "Сетка событий Azure" на IoT Edge см. в разделе [руководство по устранению неполадок](troubleshoot.md).

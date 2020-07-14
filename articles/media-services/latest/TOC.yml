@@ -159,6 +159,8 @@
           href: streaming-policy-concept.md
         - name: Политики ключа содержимого
           href: content-key-policy-concept.md
+        - name: "Защита контента в Azure\_AD"
+          href: azure-ad-content-protection.md
     - name: Наблюдение
       items:
         - name: События в Сетке событий

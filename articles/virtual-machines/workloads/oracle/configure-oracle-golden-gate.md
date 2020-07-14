@@ -3,8 +3,8 @@ title: Реализация Oracle Golden Gate на виртуальной ма�
 description: Быстрое создание и запуск Oracle Golden Gate в среде Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: BorisB2015
-manager: gwallace
+author: rgardler
+manager: ''
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
-ms.author: borisb
-ms.openlocfilehash: ae6bfb0ab0208d0f778476c9f0959b0c0f1d6471
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: rogardle
+ms.openlocfilehash: 60d06fa4cf6d116f9c802cda544a356e469755b5
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81683734"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86223080"
 ---
 # <a name="implement-oracle-golden-gate-on-an-azure-linux-vm"></a>Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux 
 

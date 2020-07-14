@@ -5,11 +5,13 @@ author: tsushi
 ms.topic: conceptual
 ms.date: 10/10/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 8e12d58c0077084c181d111b0b017665b74b9157
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 45f87898f7da432e5bdd09061e74c33a1a8fe41b
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74231258"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86165708"
 ---
 # <a name="zero-downtime-deployment-for-durable-functions"></a>Развертывание без простоя для Устойчивые функции
 
@@ -18,9 +20,6 @@ ms.locfileid: "74231258"
 Чтобы предотвратить эти сбои, у вас есть два варианта: 
 - Отложите развертывание до завершения всех выполняющихся экземпляров оркестрации.
 - Убедитесь, что все выполняющиеся экземпляры оркестрации используют существующие версии функций. 
-
-> [!NOTE]
-> В этой статье приводятся рекомендации для приложений функций, предназначенных для Устойчивые функции 1. x. Она не была обновлена для учета изменений, появившихся в Устойчивые функции 2. x. Дополнительные сведения о различиях между версиями расширений см. в разделе [устойчивые функции Versions](durable-functions-versions.md).
 
 На следующей диаграмме сравниваются три основные стратегии для реализации развертывания без простоя для Устойчивые функции: 
 
@@ -96,7 +95,7 @@ ms.locfileid: "74231258"
 [FunctionName("StatusCheck")]
 public static async Task<IActionResult> StatusCheck(
     [HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestMessage req,
-    [OrchestrationClient] DurableOrchestrationClient client,
+    [DurableClient] IDurableOrchestrationClient client,
     ILogger log)
 {
     var runtimeStatus = new List<OrchestrationRuntimeStatus>();
@@ -104,8 +103,8 @@ public static async Task<IActionResult> StatusCheck(
     runtimeStatus.Add(OrchestrationRuntimeStatus.Pending);
     runtimeStatus.Add(OrchestrationRuntimeStatus.Running);
 
-    var status = await client.GetStatusAsync(new DateTime(2015,10,10), null, runtimeStatus);
-    return (ActionResult) new OkObjectResult(new Status() {HasRunning = (status.Count != 0)});
+    var result = await client.ListInstancesAsync(new OrchestrationStatusQueryCondition() { RuntimeStatus = runtimeStatus }, CancellationToken.None);
+    return (ActionResult)new OkObjectResult(new { HasRunning = result.DurableOrchestrationState.Any() });
 }
 ```
 
@@ -169,7 +168,7 @@ Azure Pipelines проверяет приложение функции на вы
 
 ![Параметры хранилища отслеживания](media/durable-functions-zero-downtime-deployment/tracking-store-settings.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Устойчивые функции управления версиями](durable-functions-versioning.md)

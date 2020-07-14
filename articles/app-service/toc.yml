@@ -176,6 +176,8 @@
               href: configure-authentication-provider-microsoft.md
             - name: Аутентификация с помощью Twitter
               href: configure-authentication-provider-twitter.md
+            - name: Проверка подлинности с помощью поставщика OpenID Connect (предварительная версия)
+              href: configure-authentication-provider-openid-connect.md
         - name: Расширенная проверка подлинности
           href: app-service-authentication-how-to.md
         - name: Ограничение доступа

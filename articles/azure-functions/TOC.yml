@@ -55,6 +55,7 @@
       href: machine-learning-pytorch.md
     - name: Создание пользовательского образа Linux
       href: functions-create-function-linux-custom-image.md
+      displayName: 'container, docker'
     - name: Функции на устройстве IoT Edge
       href: ../iot-edge/tutorial-deploy-function.md?toc=%2fazure%2fazure-functions%2ftoc.json
     - name: Использование Java с Azure Cosmos DB и Центрами событий
@@ -252,7 +253,7 @@
           href: run-functions-from-deployment-package.md
         - name: Функции в Kubernetes
           href: functions-kubernetes-keda.md
-          displayName: keda
+          displayName: 'keda, container, docker'
         - name: Автоматическое развертывание ресурсов
           href: functions-infrastructure-as-code.md
         - name: Функции в локальной среде
@@ -296,6 +297,8 @@
               href: ../app-service/configure-authentication-provider-microsoft.md?toc=%2fazure%2fazure-functions%2ftoc.json
             - name: Аутентификация с помощью Twitter
               href: ../app-service/configure-authentication-provider-twitter.md?toc=%2fazure%2fazure-functions%2ftoc.json
+            - name: Проверка подлинности с помощью поставщика OpenID Connect (предварительная версия)
+              href: ../app-service/configure-authentication-provider-openid-connect.md?toc=%2fazure%2fazure-functions%2ftoc.json
         - name: Расширенная проверка подлинности
           href: ../app-service/app-service-authentication-how-to.md?toc=%2fazure%2fazure-functions%2ftoc.json
         - name: Запрет IP-адресов
@@ -500,6 +503,8 @@
   items:
     - name: Развитие навыков с помощью Microsoft Learn
       href: /learn/browse/?products=azure-functions
+    - name: Руководство по архитектуре
+      href: 'https://docs.microsoft.com/azure/architecture/serverless-quest/serverless-overview'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=compute'
     - name: Цены
