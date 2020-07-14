@@ -8,14 +8,14 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
-ms.date: 11/04/2019
+ms.date: 06/28/2020
 ms.custom: designer
-ms.openlocfilehash: 41b6fb38798e9aa7264000676d81101db1c83236
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: e10e5050912788732128a8b765716c22fe9e576e
+ms.sourcegitcommit: 581aaca8956b1717b7bc1c1d7710c782c22e6320
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83656535"
+ms.lasthandoff: 06/29/2020
+ms.locfileid: "85517484"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-designer-preview"></a>Руководство по развертыванию модели машинного обучения с помощью конструктора (предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "83656535"
 
 1. Над холстом конвейера выберите **Create inference pipeline (Создать конвейер вывода)**  > **Real-time inference pipeline (Конвейер вывода в режиме реального времени)** .
 
-    ![Снимок экрана, на котором показано, где найти кнопку для создания конвейера](./media/tutorial-designer-automobile-price-deploy/tutorial2-create-inference-pipeline.png)
+    :::image type="content" source="./media/tutorial-designer-automobile-price-deploy/tutorial2-create-inference-pipeline.png"alt-text="Снимок экрана, на котором показано, где найти кнопку для создания конвейера":::
 
     Теперь этот конвейер будет выглядеть следующим образом: 
 
@@ -72,7 +72,7 @@ ms.locfileid: "83656535"
 1. В ленте навигации выберите **Inference Clusters** (Кластеры вывода)  >  **+ Создать**.
 
     ![Снимок экрана, показывающий, как переходить в новую область кластера вывода](./media/tutorial-designer-automobile-price-deploy/new-inference-cluster.png)
-
+   
 1. В области кластера вывода настройте новую службу Kubernetes.
 
 1. Введите *aks-compute* в поле **Имя вычислений**.
@@ -96,8 +96,8 @@ ms.locfileid: "83656535"
 1. Выберите созданный кластер AKS.
 
 1. Выберите **Развернуть**.
-
-    ![Снимок экрана, показывающий, как настроить новую конечную точку для прогнозирования в реальном времени](./media/tutorial-designer-automobile-price-deploy/setup-endpoint.png)
+    
+    :::image type="content" source="./media/tutorial-designer-automobile-price-deploy/setup-endpoint.png"alt-text="Снимок экрана, показывающий, как настроить новую конечную точку для прогнозирования в реальном времени":::
 
     После завершения развертывания в приложении на основе холста появится уведомление об успешном выполнении. Это может занять несколько минут.
 

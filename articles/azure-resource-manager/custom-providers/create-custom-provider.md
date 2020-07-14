@@ -3,26 +3,38 @@ title: Создание поставщика ресурсов
 description: Сведения о создании поставщика ресурсов и развертывание его настраиваемых типов ресурсов.
 author: MSEvanhi
 ms.topic: tutorial
-ms.date: 06/19/2020
+ms.date: 06/24/2020
 ms.author: evanhi
-ms.openlocfilehash: ce547c010d3cc814d4e6f6182c19572248228fc3
-ms.sourcegitcommit: 398fecceba133d90aa8f6f1f2af58899f613d1e3
+ms.openlocfilehash: 541d140716e52b4fe1db4bc999682914a380a5f0
+ms.sourcegitcommit: bf8c447dada2b4c8af017ba7ca8bfd80f943d508
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2020
-ms.locfileid: "85125017"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85368113"
 ---
-# <a name="quickstart-create-custom-provider-and-deploy-custom-resources"></a>Краткое руководство. созданию настраиваемого поставщика и развертыванию настраиваемых ресурсов
+# <a name="quickstart-create-a-custom-provider-and-deploy-custom-resources"></a>Краткое руководство. Создание настраиваемого поставщика и развертывание настраиваемых ресурсов
 
 С помощью этого краткого руководства вы создадите собственного поставщика ресурсов и развернете для него настраиваемые типы ресурсов. Дополнительные сведения о предварительной версии настраиваемых поставщиков Azure см. в [этой статье](overview.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством требуется вызвать операции `REST`. Существуют [различные способы отправки запросов REST](/rest/api/azure/).
+- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+- Для работы с этим кратким руководством требуется вызвать операции `REST`. Существуют [различные способы отправки запросов REST](/rest/api/azure/).
 
-Чтобы выполнить команды Azure CLI, используйте [Bash в Azure Cloud Shell](/azure/cloud-shell/quickstart). Для команд [custom-providers](/cli/azure/ext/custom-providers/custom-providers/resource-provider) требуется расширение. Дополнительные сведения см. в статье [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Для выполнения команд PowerShell в локальной среде используйте PowerShell 7 или более поздней версии и модули Azure PowerShell. Дополнительные сведения см. в статье [Установка Azure PowerShell](/powershell/azure/install-az-ps). Если у вас нет средства для операций `REST`, установите [ARMClient](https://github.com/projectkudu/ARMClient). Эта программа командной строки с открытым исходным кодом, которая упрощает вызов API Azure Resource Manager.
+- Для команд [custom-providers](/cli/azure/ext/custom-providers/custom-providers/resource-provider) требуется расширение. Дополнительные сведения см. в статье [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
+- В примерах Azure CLI используется `az rest` для запросов `REST`. Дополнительные сведения см. в документации по команде [az rest](/cli/azure/reference-index#az-rest).
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+- Команды PowerShell выполняются в локальной среде с помощью PowerShell 7 или более поздней версии и модулей Azure PowerShell. Дополнительные сведения см. в статье [Установка Azure PowerShell](/powershell/azure/install-az-ps).
+- Если у вас нет средства для операций `REST`, установите [ARMClient](https://github.com/projectkudu/ARMClient). Эта программа командной строки с открытым исходным кодом, которая упрощает вызов API Azure Resource Manager.
+- После установки **ARMClient** вы сможете отобразить сведения об использовании из командной строки PowerShell, введя команду `armclient.exe`. Также можно открыть [вики-сайт ARMClient](https://github.com/projectkudu/ARMClient/wiki).
+
+---
+
+[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 ## <a name="deploy-custom-provider"></a>Развертывание настраиваемого поставщика
 
@@ -30,14 +42,16 @@ ms.locfileid: "85125017"
 
 После развертывания шаблона в вашей подписке будут следующие ресурсы:
 
-* Приложение-функция с операциями для ресурсов и действий.
-* Учетная запись хранения для хранения пользователей, которые создаются с помощью настраиваемого поставщика.
-* Настраиваемый поставщик, который определяет настраиваемые типы ресурсов и действия. Он использует конечную точку приложения-функции для отправки запросов.
-* Настраиваемый ресурс из настраиваемого поставщика.
+- Приложение-функция с операциями для ресурсов и действий.
+- Учетная запись хранения для хранения пользователей, которые создаются с помощью настраиваемого поставщика.
+- Настраиваемый поставщик, который определяет настраиваемые типы ресурсов и действия. Он использует конечную точку приложения-функции для отправки запросов.
+- Настраиваемый ресурс из настраиваемого поставщика.
 
-Чтобы развернуть настраиваемый поставщик, используйте Azure CLI или PowerShell.
+Чтобы развернуть настраиваемый поставщик, используйте Azure CLI, PowerShell или портал Azure.
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+В этом примере вам будет предложено ввести имя группы ресурсов, расположение и имя приложения-функции, предоставленной поставщиком. Имена хранятся в переменных, которые используются в других командах. Команды [az group create](/cli/azure/group#az-group-create) и [az deployment group create](/cli/azure/deployment/group#az-deployment-group-create) развертывают нужные ресурсы.
 
 ```azurecli-interactive
 read -p "Enter a resource group name:" rgName &&
@@ -52,6 +66,8 @@ read
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
+В этом примере вам будет предложено ввести имя группы ресурсов, расположение и имя приложения-функции, предоставленной поставщиком. Имена хранятся в переменных, которые используются в других командах. Команды [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) и [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) развертывают ресурсы.
+
 ```powershell
 $rgName = Read-Host -Prompt "Enter a resource group name"
 $location = Read-Host -Prompt "Enter the location (i.e. eastus)"
@@ -64,7 +80,7 @@ Read-Host -Prompt "Press [ENTER] to continue ..."
 
 ---
 
-Вы также можете развернуть решение с портала Azure с помощью следующей кнопки:
+Также можно развернуть решение на портале Azure. Нажмите кнопку **Развертывание в Azure**, чтобы открыть шаблон на портале Azure.
 
 [![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-docs-json-samples%2Fmaster%2Fcustom-providers%2Fcustomprovider.json)
 
@@ -252,7 +268,7 @@ armclient PUT $addURI $requestBody
 
 ### <a name="list-custom-resource-providers"></a>Перечисление настраиваемых поставщиков ресурсов
 
-Перечисляет все настраиваемые поставщики ресурсов в подписке. По умолчанию перечисляются настраиваемые поставщики ресурсов для текущей подписки, однако можно указать параметр `--subscription`. Чтобы получить список для группы ресурсов, используйте параметр `--resource-group`.
+Команда `list` отображает все пользовательские поставщики ресурсов в подписке. По умолчанию перечисляются пользовательские поставщики ресурсов для текущей подписки, но можно указать параметр `--subscription`. Чтобы получить список для группы ресурсов, используйте параметр `--resource-group`.
 
 ```azurecli-interactive
 az custom-providers resource-provider list --subscription $subID
@@ -289,7 +305,7 @@ az custom-providers resource-provider list --subscription $subID
 
 ### <a name="show-the-properties"></a>Отображение свойств
 
-Отображает свойства настраиваемого поставщика ресурсов. Формат вывода напоминает вывод для `list`.
+Используйте команду `show`, чтобы отобразить свойства пользовательского поставщика ресурсов. Формат вывода напоминает вывод для `list`.
 
 ```azurecli-interactive
 az custom-providers resource-provider show --resource-group $rgName --name $funcName

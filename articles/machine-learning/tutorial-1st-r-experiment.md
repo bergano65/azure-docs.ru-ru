@@ -10,17 +10,17 @@ ms.reviewer: sgilley
 author: revodavid
 ms.author: davidsmi
 ms.date: 02/07/2020
-ms.openlocfilehash: dea5b3fb6cf20924666668e59e370399664d6b28
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: d95c0fc9baf1e53e6643660726c72660719908ba
+ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83684749"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85483386"
 ---
-# <a name="tutorial-use-r-to-create-a-machine-learning-model"></a>Руководство по Создание модели машинного обучения с помощью R
+# <a name="tutorial-use-r-to-create-a-machine-learning-model-preview"></a>Руководство по созданию модели машинного обучения с помощью R (предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-В этом руководстве показано, как создать модель логистической регрессии, прогнозирующей вероятность летального исхода в автомобильной аварии, с помощью пакета SDK Машинного обучения Azure для R. Вы узнаете, как облачные ресурсы Машинного обучения Azure работают с R, предоставляя масштабируемую среду для обучения и развертывания модели.  
+В этом руководстве показано, как создать модель логистической регрессии, прогнозирующей вероятность летального исхода в автомобильной аварии, с помощью пакета SDK Машинного обучения Azure для R (предварительная версия). Вы узнаете, как облачные ресурсы Машинного обучения Azure работают с R, предоставляя масштабируемую среду для обучения и развертывания модели.  
 
 Вот какие шаги выполняются в этом руководстве:
 > [!div class="checklist"]
@@ -73,7 +73,7 @@ ms.locfileid: "83684749"
 
 1. В списке папок отображается каждый пользователь, обращающийся к рабочей области.  Выберите свою папку для клонирования папки **vignettes**.
 
-## <a name="a-nameopenopen-rstudio"></a><a name="open">Открытие RStudio
+## <a name="open-rstudio"></a><a name="open"></a>Открытие RStudio
 
 Для работы с этим учебником используйте RStudio на вычислительном экземпляре или виртуальной машине для записных книжек.  
 

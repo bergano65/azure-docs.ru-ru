@@ -7,17 +7,14 @@ ms.author: baanders
 ms.date: 5/8/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 67b476b2ec6ec0c841639f7aa1d94a0d9d3d3304
-ms.sourcegitcommit: 635114a0f07a2de310b34720856dd074aaf4f9cd
+ms.openlocfilehash: d670ee0cb2396858d908ac13f70819efd57d7f63
+ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85262359"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85391831"
 ---
 # <a name="explore-azure-digital-twins-with-a-sample-client-app"></a>Изучение Azure Digital Twins с помощью примера клиентского приложения
-
-[!INCLUDE [Azure Digital Twins current preview status](../../includes/digital-twins-preview-status.md)]
 
 В этом учебнике представлен пример приложения, которое реализует клиентское приложение командной строки для взаимодействия с экземпляром Azure Digital Twins. Это клиентское приложение аналогично тому, которое создается в [учебнике по написанию кода для клиентского приложения](tutorial-code.md).
 
@@ -131,7 +128,8 @@ CreateModels Room Floor
 CreateModels Room
 ```
 
-Так как модели не перезаписываются, появится следующая ошибка службы:
+Так как модели не перезаписываются, появится ошибка службы.
+Дополнительные сведения о том, как удалить существующие модели, см. в статье [Практическое руководство. Управление настраиваемыми моделями](how-to-manage-model.md).
 ```cmd/sh
 Response 409: Service request failed.
 Status: 409 (Conflict)

@@ -8,24 +8,24 @@ ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 06/10/2020
-ms.openlocfilehash: 1ff29be9cde4a2bd53f0edbe57f3eab603c1796f
-ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
+ms.openlocfilehash: f673fd4b49a33c2faf6bc8b489520f2a877b0689
+ms.sourcegitcommit: 374e47efb65f0ae510ad6c24a82e8abb5b57029e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84739498"
+ms.lasthandoff: 06/28/2020
+ms.locfileid: "85513803"
 ---
 # <a name="tutorial-build-and-deploy-a-custom-skill-with-azure-machine-learning"></a>Руководство по созданию и развертыванию настраиваемого навыка с помощью службы "Машинное обучение Azure" 
 
-В этом учебнике рассказывается о том, как с помощью Машинного обучения Azure создать [настраиваемый навык](https://docs.microsoft.com/azure/search/cognitive-search-custom-skill-interface) для извлечения аспектной тональности из [отзывов об отеле в наборе данных](https://www.kaggle.com/datafiniti/hotel-reviews) (распространяется по лицензии Creative Commons [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt)). Это позволит правильно назначать положительные и отрицательные тональности определенным сущностям, например персоналу, номеру, холлу или бассейну, в пределах одного отзыва.
+В этом учебнике рассказывается о том, как с помощью Машинного обучения Azure создать [настраиваемый навык](https://docs.microsoft.com/azure/search/cognitive-search-aml-skill) для извлечения аспектной тональности из [отзывов об отеле в наборе данных](https://www.kaggle.com/datafiniti/hotel-reviews) (распространяется по лицензии Creative Commons [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt)). Это позволит правильно назначать положительные и отрицательные тональности определенным сущностям, например персоналу, номеру, холлу или бассейну, в пределах одного отзыва.
 
-Для обучения аспектной модели тональности вы будете использовать [репозиторий рецептов NLP](https://github.com/microsoft/nlp-recipes/tree/master/examples/sentiment_analysis/absa). Затем модель будет развернута в качестве конечной точки в кластере Azure Kubernetes. После развертывания модель добавляется в конвейер обогащения в качестве настраиваемого навыка для использования службой "Когнитивный поиск".
+Для обучения аспектной модели тональности в службе "Машинное обучение Azure" вы будете использовать [репозиторий рецептов NLP](https://github.com/microsoft/nlp-recipes/tree/master/examples/sentiment_analysis/absa). Затем модель будет развернута в качестве конечной точки в кластере Azure Kubernetes. После развертывания конечная точка добавляется в конвейер обогащения в качестве навыка Машинного обучения Azure для использования службой "Когнитивный поиск".
 
 В этом сценарии предоставляется два набора данных. Если вы хотите самостоятельно обучить модель, потребуется файл hotel_reviews_1000.csv. Хотите пропустить шаг обучения? Скачайте файл hotel_reviews_100.csv.
 
 > [!div class="checklist"]
 > * Создание экземпляра службы "Когнитивный поиск Azure"
-> * Создание рабочей области машинного обучения Azure
+> * Создание рабочей области Машинного обучения Azure (служба поиска и рабочая область должны находиться в одной подписке)
 > * Обучение и развертывание модели в кластере Azure Kubernetes
 > * Связывание конвейера обогащения с помощью ИИ с развернутой моделью
 > * Прием выходных данных из развернутой модели в качестве настраиваемого навыка

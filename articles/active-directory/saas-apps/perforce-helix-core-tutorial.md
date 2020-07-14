@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции единого входа Azure Active Directory с Perforce Helix Core — Helix Authentication Service | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory с Perforce Helix Core — Helix Authentication Service | Документация Майкрософт
 description: Сведения о настройке единого входа в Azure Active Directory и Perforce Helix Core — Helix Authentication Service.
 services: active-directory
 documentationCenter: na
@@ -12,22 +12,22 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 06/15/2020
+ms.date: 06/23/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ea6531d85670301691e4aa88503d7eee4fb16d9
-ms.sourcegitcommit: 34eb5e4d303800d3b31b00b361523ccd9eeff0ab
+ms.openlocfilehash: 6742b1466ed5055e3906adc96cfe346b7f46be9c
+ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84905528"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85482638"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-perforce-helix-core--helix-authentication-service"></a>Руководство по Интеграция единого входа Azure Active Directory с Perforce Helix Core — Helix Authentication Service
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-perforce-helix-core---helix-authentication-service"></a>Руководство по интеграции единого входа Azure Active Directory с Perforce Helix Core — Helix Authentication Service
 
-В этом учебнике описано, как интегрировать Perforce Helix Core — Helix Authentication Service с Azure Active Directory (Azure AD). При интеграции Perforce Helix Core — Helix Authentication Service с Azure AD можно:
+В этом руководстве описано, как интегрировать Perforce Helix Core — Helix Authentication Service с Azure Active Directory (Azure AD). Интеграция Perforce Helix Core — Helix Authentication Service с Azure AD обеспечивает следующие возможности:
 
-* осуществлять контроль в Azure AD с доступом к Perforce Helix Core — Helix Authentication Service;
-* включить автоматический вход пользователей Perforce Helix Core — Helix Authentication Service с помощью их учетных записей Azure AD;
+* С помощью Azure AD вы можете контролировать доступ к приложению Perforce Helix Core — Helix Authentication Service.
+* Вы можете включить автоматический вход пользователей в Perforce Helix Core — Helix Authentication Service с учетными записями Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
@@ -37,18 +37,18 @@ ms.locfileid: "84905528"
 Чтобы приступить к работе, потребуется следующее.
 
 * Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Подписка с поддержкой единого входа в Perforce Helix Core — Helix Authentication Service.
+* Подписка Perforce Helix Core — Helix Authentication Service с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* Perforce Helix Core — Helix Authentication Service поддерживает единый вход, инициированный **поставщиком услуг**
-* После настройки Perforce Helix Core — Helix Authentication Service можно применять элементы управления сеансами, которые защищают от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+* Perforce Helix Core — Helix Authentication Service поддерживает единый вход, инициированный **поставщиком услуг**.
+* После настройки Perforce Helix Core — Helix Authentication Service можно применять элементы управления сеансами, которые в реальном времени защищают от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
-## <a name="adding-perforce-helix-core--helix-authentication-service-from-the-gallery"></a>Добавление Perforce Helix Core — Helix Authentication Service из коллекции
+## <a name="adding-perforce-helix-core---helix-authentication-service-from-the-gallery"></a>Добавление Perforce Helix Core — Helix Authentication Service из коллекции
 
-Чтобы настроить интеграцию Perforce Helix Core — Helix Authentication Service с Azure AD, необходимо добавить Perforce Helix Core — Helix Authentication Service из коллекции в ваш список управляемых приложений SaaS.
+Чтобы настроить интеграцию Perforce Helix Core — Helix Authentication Service с Azure AD, нужно добавить Perforce Helix Core — Helix Authentication Service из коллекции в список управляемых приложений SaaS.
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. В области навигации слева выберите службу **Azure Active Directory**.
@@ -57,17 +57,17 @@ ms.locfileid: "84905528"
 1. В разделе **Добавление из коллекции** в поле поиска введите **Perforce Helix Core — Helix Authentication Service**.
 1. На панели результатов выберите **Perforce Helix Core — Helix Authentication Service**, а затем добавьте приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-perforce-helix-core--helix-authentication-service"></a>Настройка и проверка единого входа Azure AD для Perforce Helix Core — Helix Authentication Service
+## <a name="configure-and-test-azure-ad-single-sign-on-for-perforce-helix-core---helix-authentication-service"></a>Настройка и проверка единого входа Azure AD для Perforce Helix Core — Helix Authentication Service
 
-Настройте и проверьте единый вход Azure AD в Perforce Helix Core — Helix Authentication Service с помощью тестового пользователя **B. Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Perforce Helix Core — Helix Authentication Service.
+Настройте и проверьте единый вход Azure AD в Perforce Helix Core — Helix Authentication Service с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Perforce Helix Core — Helix Authentication Service.
 
-Чтобы настроить и проверить единый вход Azure AD в Perforce Helix Core — Helix Authentication Service, выполните действия в следующих стандартных блоках:
+Чтобы настроить и проверить единый вход Azure AD в Perforce Helix Core — Helix Authentication Service, выполните действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
     1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
-1. **[Настройка единого входа в Perforce Helix Core — Helix Authentication Service](#configure-perforce-helix-core--helix-authentication-service-sso)** . Настройка единого входа на стороне приложения.
-    1. **[Создание тестового пользователя Perforce Helix Core — Helix Authentication Service](#create-perforce-helix-core--helix-authentication-service-test-user)** требуется для того, чтобы в этом приложении имелся эквивалент B. Simon, связанный с представлением этого пользователя в Azure AD.
+1. **[Настройка единого входа в Perforce Helix Core — Helix Authentication Service](#configure-perforce-helix-core---helix-authentication-service-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    1. **[Создание тестового пользователя Perforce Helix Core — Helix Authentication Service](#create-perforce-helix-core---helix-authentication-service-test-user)** требуется для того, чтобы в этом приложении был эквивалент B.Simon, связанный с представлением этого пользователя в Azure AD.
 1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
@@ -89,7 +89,7 @@ ms.locfileid: "84905528"
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<HELIX-AUTH-SERVICE>.<CUSTOMER-HOSTNAME>.com/saml/sso`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Вместо них необходимо указать фактические значения URL-адреса входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [группу поддержки Perforce Helix Core — Helix Authentication Service](mailto:support@perforce.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Вместо них необходимо указать фактические значения URL-адреса входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Perforce Helix Core — Helix Authentication Service](mailto:support@perforce.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 
@@ -109,7 +109,7 @@ ms.locfileid: "84905528"
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как включить единый вход Azure для пользователя B. Simon, предоставив этому пользователю доступ к Perforce Helix Core — Helix Authentication Service.
+В этом разделе описано, как включить единый вход Azure для пользователя B.Simon, предоставив этому пользователю доступ к Perforce Helix Core — Helix Authentication Service.
 
 1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Perforce Helix Core — Helix Authentication Service**.
@@ -125,19 +125,19 @@ ms.locfileid: "84905528"
 1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-## <a name="configure-perforce-helix-core--helix-authentication-service-sso"></a>Настройка единого входа в Perforce Helix Core — Helix Authentication Service
+## <a name="configure-perforce-helix-core---helix-authentication-service-sso"></a>Настройка единого входа в Perforce Helix Core — Helix Authentication Service
 
-Чтобы настроить единый вход на стороне **Perforce Helix Core — Helix Authentication Service**, необходимо отправить **URL-адрес метаданных федерации** в [группу поддержки Perforce Helix Core — Helix Authentication Service](mailto:support@perforce.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Perforce Helix Core — Helix Authentication Service**, следует отправить **URL-адрес метаданных федерации** в [службу поддержки Perforce Helix Core — Helix Authentication Service](mailto:support@perforce.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
-### <a name="create-perforce-helix-core--helix-authentication-service-test-user"></a>Создание тестового пользователя Perforce Helix Core — Helix Authentication Service
+### <a name="create-perforce-helix-core---helix-authentication-service-test-user"></a>Создание тестового пользователя Perforce Helix Core — Helix Authentication Service
 
-Из этого раздела вы узнаете, как создать пользователя Britta Simon в Perforce Helix Core — Helix Authentication Service. Для добавления пользователей на платформу Perforce Helix Core — Helix Authentication Service обратитесь в [группу поддержки Perforce Helix Core — Helix Authentication Service](mailto:support@perforce.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+Из этого раздела вы узнаете, как создать пользователя B.Simon в Perforce Helix Core — Helix Authentication Service. Для добавления пользователей на платформу Perforce Helix Core — Helix Authentication Service обратитесь в [службу поддержки Perforce Helix Core — Helix Authentication Service](mailto:support@perforce.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ## <a name="test-sso"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Perforce Helix Core — Helix Authentication Service на Панели доступа, вы автоматически войдете в приложение Perforce Helix Core — Helix Authentication Service, для которого вы настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку Perforce Helix Core — Helix Authentication Service на Панели доступа, вы автоматически войдете в приложение Perforce Helix Core — Helix Authentication Service, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -147,8 +147,8 @@ ms.locfileid: "84905528"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-- [Попробуйте Perforce Helix Core — Helix Authentication Service с Azure AD](https://aad.portal.azure.com/)
+- [Пробное использование Perforce Helix Core — Helix Authentication Service с Azure AD](https://aad.portal.azure.com/)
 
 - [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
 
-- [Защита Perforce Helix Core — Helix Authentication Service с помощью средств улучшения видимости и управления](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+- [Защита приложений с помощью Управления условным доступом к приложениям в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

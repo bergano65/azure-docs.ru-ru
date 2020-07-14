@@ -7,19 +7,19 @@ ms.topic: tutorial
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: jroth
-ms.date: 06/18/2020
-ms.openlocfilehash: 56af098050315e1b2cb0bdde531cc38452db4738
-ms.sourcegitcommit: 971a3a63cf7da95f19808964ea9a2ccb60990f64
+ms.date: 06/25/2020
+ms.openlocfilehash: cd4128328ac0c3e9f03ecc80abb6e7b17537b2ee
+ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85079371"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85483063"
 ---
 # <a name="tutorial-configure-availability-groups-for-sql-server-on-rhel-virtual-machines-in-azure"></a>Руководство по Настройка групп доступности для SQL Server на виртуальных машинах RHEL в Azure 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
 > [!NOTE]
-> В этом учебнике мы используем SQL Server 2017 с RHEL 7.6, но для настройки высокого уровня доступности можно использовать SQL Server 2019 в RHEL 7 или RHEL 8. Команды для настройки ресурсов группы доступности в RHEL 8 изменились, и, чтобы получить дополнительные сведения о правильных командах, вам нужно будет ознакомиться с разделом [Создание ресурса группы доступности](/sql/linux/sql-server-linux-availability-group-cluster-rhel#create-availability-group-resource) и ресурсами RHEL 8.
+> В этом учебнике мы используем SQL Server 2017 с RHEL 7.6, но для настройки высокого уровня доступности можно использовать SQL Server 2019 в RHEL 7 или RHEL 8. Команды для настройки ресурсов кластера pacemake и группы доступности в RHEL 8 изменились. Дополнительные сведения о правильных командах вы можете получить в разделе [Создание ресурса группы доступности](/sql/linux/sql-server-linux-availability-group-cluster-rhel#create-availability-group-resource) и в информационных ресурсах по RHEL 8.
 
 В этом руководстве описано следующее:
 
@@ -103,32 +103,118 @@ az vm availability-set create \
 
     ```output
     [
-            {
-              "offer": "RHEL-HA",
-              "publisher": "RedHat",
-              "sku": "7.4",
-              "urn": "RedHat:RHEL-HA:7.4:7.4.2019062021",
-              "version": "7.4.2019062021"
-            },
-            {
-              "offer": "RHEL-HA",
-              "publisher": "RedHat",
-              "sku": "7.5",
-              "urn": "RedHat:RHEL-HA:7.5:7.5.2019062021",
-              "version": "7.5.2019062021"
-            },
-            {
-              "offer": "RHEL-HA",
-              "publisher": "RedHat",
-              "sku": "7.6",
-              "urn": "RedHat:RHEL-HA:7.6:7.6.2019062019",
-              "version": "7.6.2019062019"
-            }
+      {
+    "offer": "RHEL-HA",
+    "publisher": "RedHat",
+    "sku": "7.4",
+    "urn": "RedHat:RHEL-HA:7.4:7.4.2019062021",
+    "version": "7.4.2019062021"
+       },
+       {
+    "offer": "RHEL-HA",
+    "publisher": "RedHat",
+    "sku": "7.5",
+    "urn": "RedHat:RHEL-HA:7.5:7.5.2019062021",
+    "version": "7.5.2019062021"
+        },
+        {
+    "offer": "RHEL-HA",
+    "publisher": "RedHat",
+    "sku": "7.6",
+    "urn": "RedHat:RHEL-HA:7.6:7.6.2019062019",
+    "version": "7.6.2019062019"
+         },
+         {
+    "offer": "RHEL-HA",
+    "publisher": "RedHat",
+    "sku": "8.0",
+    "urn": "RedHat:RHEL-HA:8.0:8.0.2020021914",
+    "version": "8.0.2020021914"
+         },
+         {
+    "offer": "RHEL-HA",
+    "publisher": "RedHat",
+    "sku": "8.1",
+    "urn": "RedHat:RHEL-HA:8.1:8.1.2020021914",
+    "version": "8.1.2020021914"
+          },
+          {
+    "offer": "RHEL-HA",
+    "publisher": "RedHat",
+    "sku": "80-gen2",
+    "urn": "RedHat:RHEL-HA:80-gen2:8.0.2020021915",
+    "version": "8.0.2020021915"
+           },
+           {
+    "offer": "RHEL-HA",
+    "publisher": "RedHat",
+    "sku": "81_gen2",
+    "urn": "RedHat:RHEL-HA:81_gen2:8.1.2020021915",
+    "version": "8.1.2020021915"
+           }
     ]
     ```
 
-    Для этого руководства мы выбираем образ `RedHat:RHEL-HA:7.6:7.6.2019062019`.
+    Для работы с этим руководством мы выбираем в качестве примера образ `RedHat:RHEL-HA:7.6:7.6.2019062019` (для RHEL 7) или `RedHat:RHEL-HA:8.1:8.1.2020021914` (для RHEL 8).
+    
+    Можно также выбрать вариант с предварительно установленной ОС SQL Server 2019 в образах RHEL8-HA. Чтобы получить список этих образов, выполните следующую команду:  
+    
+    ```azurecli-interactive
+    az vm image list --all --offer "sql2019-rhel8"
+    ```
 
+    Вы увидите следующие результаты:
+
+    ```output
+    [
+      {
+    "offer": "sql2019-rhel8",
+    "publisher": "MicrosoftSQLServer",
+    "sku": "enterprise",
+    "urn": "MicrosoftSQLServer:sql2019-rhel8:enterprise:15.0.200317",
+    "version": "15.0.200317"
+       },
+       }
+    "offer": "sql2019-rhel8",
+    "publisher": "MicrosoftSQLServer",
+    "sku": "enterprise",
+    "urn": "MicrosoftSQLServer:sql2019-rhel8:enterprise:15.0.200512",
+    "version": "15.0.200512"
+       },
+       {
+    "offer": "sql2019-rhel8",
+    "publisher": "MicrosoftSQLServer",
+    "sku": "sqldev",
+    "urn": "MicrosoftSQLServer:sql2019-rhel8:sqldev:15.0.200317",
+    "version": "15.0.200317"
+       },
+       {
+    "offer": "sql2019-rhel8",
+    "publisher": "MicrosoftSQLServer",
+    "sku": "sqldev",
+    "urn": "MicrosoftSQLServer:sql2019-rhel8:sqldev:15.0.200512",
+    "version": "15.0.200512"
+       },
+       {
+    "offer": "sql2019-rhel8",
+    "publisher": "MicrosoftSQLServer",
+    "sku": "standard",
+    "urn": "MicrosoftSQLServer:sql2019-rhel8:standard:15.0.200317",
+    "version": "15.0.200317"
+       },
+       {
+    "offer": "sql2019-rhel8",
+    "publisher": "MicrosoftSQLServer",
+    "sku": "standard",
+    "urn": "MicrosoftSQLServer:sql2019-rhel8:standard:15.0.200512",
+    "version": "15.0.200512"
+       }
+    ]
+    ```
+
+    Если для создания виртуальных машин вы используете один из указанных выше образов, то в нем есть предварительно установленная версия SQL Server 2019. В этом случае пропустите раздел [Установка SQL Server и средств MSSQL](#install-sql-server-and-mssql-tools) далее в этой статье.
+    
+    
     > [!IMPORTANT]
     > Для настройки группы доступности имена компьютеров должны содержать менее 15 символов. Имя пользователя не может содержать прописных букв, а длина пароля должна составлять более 12 символов.
 
@@ -276,9 +362,22 @@ ssh <username>@publicipaddress
 
     - Вам будет предложено ввести пароль при запуске `pcs cluster auth` команды для проверки подлинности узлов кластера. Введите пароль пользователя **hacluster**, созданный раньше.
 
+    **RHEL 7**
+
     ```bash
     sudo pcs cluster auth <VM1> <VM2> <VM3> -u hacluster
     sudo pcs cluster setup --name az-hacluster <VM1> <VM2> <VM3> --token 30000
+    sudo pcs cluster start --all
+    sudo pcs cluster enable --all
+    ```
+
+    **RHEL8**
+
+    Для RHEL 8 необходимо проверять подлинность узлов отдельно. При появлении запроса введите имя пользователя и пароль для **hacluster** вручную.
+
+    ```bash
+    sudo pcs host auth <node1> <node2> <node3>
+    sudo pcs cluster setup <clusterName> <node1> <node2> <node3>
     sudo pcs cluster start --all
     sudo pcs cluster enable --all
     ```
@@ -289,6 +388,8 @@ ssh <username>@publicipaddress
     sudo pcs status
     ```
 
+   **RHEL 7** 
+   
     Если все узлы подключены, вы увидите результат, аналогичный приведенному ниже.
 
     ```output
@@ -315,7 +416,36 @@ ssh <username>@publicipaddress
           pacemaker: active/enabled
           pcsd: active/enabled
     ```
-
+   
+   **RHEL 8** 
+   
+    ```output
+    Cluster name: az-hacluster
+     
+    WARNINGS:
+    No stonith devices and stonith-enabled is not false
+     
+    Cluster Summary:
+    * Stack: corosync
+    * Current DC: <VM2> (version 1.1.19-8.el7_6.5-c3c624ea3d) - partition with quorum
+    * Last updated: Fri Aug 23 18:27:57 2019
+    * Last change: Fri Aug 23 18:27:56 2019 by hacluster via crmd on <VM2>
+    * 3 nodes configured
+    * 0 resource instances configured
+     
+   Node List:
+    * Online: [ <VM1> <VM2> <VM3> ]
+   
+   Full List of Resources:
+   * No resources
+     
+   Daemon Status:
+          corosync: active/enabled
+          pacemaker: active/enabled
+          pcsd: active/enabled
+    
+    ```
+    
 1. Установите для ожидаемых голосов в динамическом кластере значение "3". Эта команда влияет только на динамический кластер и не изменяет файлы конфигурации.
 
     На всех узлах установите ожидаемые голоса с помощью следующей команды:
@@ -469,12 +599,18 @@ sudo firewall-cmd --reload
 ```
 
 ## <a name="install-sql-server-and-mssql-tools"></a>Установка SQL Server и средств mssql
- 
-Используйте раздел ниже, чтобы установить на виртуальных машинах SQL Server и средства mssql. Выполните каждое из описанных действий на всех узлах. Дополнительные сведения см. в разделе [Установка SQL Server на виртуальной машине Red Hat](/sql/linux/quickstart-install-connect-red-hat).
+
+> [!NOTE]
+> Если вы создали виртуальные машины с предварительно установленной версией SQL Server 2019 (из образа RHEL8-HA), можете пропустить описанные ниже шаги по установке SQL Server и средств MSSQL и сразу перейти к разделу **Настройка группы доступности**, когда настроите пароль SA на всех виртуальных машинах, выполнив на них команду `sudo /opt/mssql/bin/mssql-conf set-sa-password`.
+
+Используйте раздел ниже, чтобы установить на виртуальных машинах SQL Server и средства mssql. Вы можете выбрать любой из приведенных ниже примеров для установки SQL Server 2017 на RHEL 7 или SQL Server 2019 на RHEL 8. Выполните каждое из описанных действий на всех узлах. Дополнительные сведения см. в разделе [Установка SQL Server на виртуальной машине Red Hat](/sql/linux/quickstart-install-connect-red-hat).
+
 
 ### <a name="installing-sql-server-on-the-vms"></a>Установка SQL Server на виртуальных машинах
 
 Для установки SQL Server используются следующие команды:
+
+**RHEL 7 с SQL Server 2017** 
 
 ```bash
 sudo curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/7/mssql-server-2017.repo
@@ -483,6 +619,14 @@ sudo /opt/mssql/bin/mssql-conf setup
 sudo yum install mssql-server-ha
 ```
 
+**RHEL 8 с SQL Server 2019** 
+
+```bash
+sudo curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/8/mssql-server-2019.repo
+sudo yum install -y mssql-server
+sudo /opt/mssql/bin/mssql-conf setup
+sudo yum install mssql-server-ha
+```
 ### <a name="open-firewall-port-1433-for-remote-connections"></a>Открытие порта 1433 брандмауэра для удаленных подключений
 
 Для удаленного подключения на виртуальной машине необходимо открыть порт 1433. Используйте следующие команды, чтобы открыть порт 1433 в брандмауэре каждой виртуальной машины:
@@ -496,8 +640,17 @@ sudo firewall-cmd --reload
 
 Для установки программ командной строки SQL Server используются следующие команды. Дополнительные сведения см. в разделе [Установка программ командной строки SQL Server](/sql/linux/quickstart-install-connect-red-hat#tools).
 
+**RHEL 7** 
+
 ```bash
 sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/7/prod.repo
+sudo yum install -y mssql-tools unixODBC-devel
+```
+
+**RHEL 8** 
+
+```bash
+sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/8/prod.repo
 sudo yum install -y mssql-tools unixODBC-devel
 ```
  
@@ -796,26 +949,47 @@ SELECT DB_NAME(database_id) AS 'database', synchronization_state_desc FROM sys.d
 
 ### <a name="create-the-ag-cluster-resource"></a>Создание кластерного ресурса группы доступности
 
-1. Выполните следующую команду, чтобы создать ресурс `ag_cluster` в группе доступности `ag1`.
+1. Используйте одну из следующих команд в зависимости от выбранной ранее среды, чтобы создать ресурс `ag_cluster` в группе доступности `ag1`.
 
-    ```bash
-    sudo pcs resource create ag_cluster ocf:mssql:ag ag_name=ag1 meta failure-timeout=30s master notify=true
-    ```
+      **RHEL 7** 
+  
+        ```bash
+        sudo pcs resource create ag_cluster ocf:mssql:ag ag_name=ag1 meta failure-timeout=30s master notify=true
+        ```
 
-1. Проверьте ресурсы и убедитесь, что они подключены к сети, прежде чем продолжать, используя следующую команду:
+      **RHEL 8** 
+  
+        ```bash
+        sudo pcs resource create ag_cluster ocf:mssql:ag ag_name=ag1 meta failure-timeout=30s promotable notify=true
+        ```
+
+2. Проверьте ресурсы и убедитесь, что они подключены к сети, прежде чем продолжать, используя следующую команду:
 
     ```bash
     sudo pcs resource
     ```
 
     Вы должны увидеть следующий результат.
-
+    
+    **RHEL 7** 
+    
     ```output
     [<username>@VM1 ~]$ sudo pcs resource
     Master/Slave Set: ag_cluster-master [ag_cluster]
     Masters: [ <VM1> ]
     Slaves: [ <VM2> <VM3> ]
     ```
+    
+    **RHEL 8** 
+    
+    ```output
+    [<username>@VM1 ~]$ sudo pcs resource
+    * Clone Set: ag_cluster-clone [ag_cluster] (promotable):
+    * ag_cluster             (ocf::mssql:ag) :            Slave VMrhel3 (Monitoring) 
+    * ag_cluster             (ocf::mssql:ag) :            Master VMrhel1 (Monitoring)
+    * ag_cluster             (ocf::mssql:ag) :            Slave VMrhel2 (Monitoring)
+    ```
+
 
 ### <a name="create-a-virtual-ip-resource"></a>Создание ресурса виртуального IP-адреса
 
@@ -827,13 +1001,13 @@ SELECT DB_NAME(database_id) AS 'database', synchronization_state_desc FROM sys.d
     # The above will scan for all IP addresses that are already occupied in the 10.0.0.x space.
     ```
 
-1. Установите для свойства **stonith-включен** значение false
+2. Установите для свойства **stonith-включен** значение false
 
     ```bash
     sudo pcs property set stonith-enabled=false
     ```
 
-1. Создайте ресурс виртуального IP-адреса с помощью указанной ниже команды.
+3. Создайте ресурс виртуального IP-адреса с помощью указанной ниже команды.
 
     - Замените приведенное ниже значение `<availableIP>` неиспользованным IP-адресом.
 
@@ -845,23 +1019,41 @@ SELECT DB_NAME(database_id) AS 'database', synchronization_state_desc FROM sys.d
 
 1. Чтобы ресурс IP-адреса и ресурс группы доступности выполнялись в одном узле, необходимо настроить ограничение совместного размещения. Выполните следующую команду:
 
+   **RHEL 7**
+  
     ```bash
     sudo pcs constraint colocation add virtualip ag_cluster-master INFINITY with-rsc-role=Master
     ```
 
-1. Создайте ограничение очередности, чтобы ресурс группы доступности запускался до ресурса IP-адреса. Ограничение совместного размещения предполагает такое ограничение, поэтому его необходимо задать явно.
+   **RHEL 8**
+   
+    ```bash
+     sudo pcs constraint colocation add virtualip with master ag_cluster-clone INFINITY with-rsc-role=Master
+    ```
+  
+2. Создайте ограничение очередности, чтобы ресурс группы доступности запускался до ресурса IP-адреса. Ограничение совместного размещения предполагает такое ограничение, поэтому его необходимо задать явно.
 
+   **RHEL 7**
+   
     ```bash
     sudo pcs constraint order promote ag_cluster-master then start virtualip
     ```
 
-1. Чтобы проверить ограничения, выполните следующую команду:
+   **RHEL 8**
+   
+    ```bash
+    sudo pcs constraint order promote ag_cluster-clone then start virtualip
+    ```
+  
+3. Чтобы проверить ограничения, выполните следующую команду:
 
     ```bash
     sudo pcs constraint list --full
     ```
 
     Вы должны увидеть следующий результат.
+    
+    **RHEL 7**
 
     ```
     Location Constraints:
@@ -869,6 +1061,17 @@ SELECT DB_NAME(database_id) AS 'database', synchronization_state_desc FROM sys.d
           promote ag_cluster-master then start virtualip (kind:Mandatory) (id:order-ag_cluster-master-virtualip-mandatory)
     Colocation Constraints:
           virtualip with ag_cluster-master (score:INFINITY) (with-rsc-role:Master) (id:colocation-virtualip-ag_cluster-master-INFINITY)
+    Ticket Constraints:
+    ```
+    
+    **RHEL 8**
+    
+    ```output
+    Location Constraints:
+    Ordering Constraints:
+            promote ag_cluster-clone then start virtualip (kind:Mandatory) (id:order-ag_cluster-clone-virtualip-mandatory)
+    Colocation Constraints:
+            virtualip with ag_cluster-clone (score:INFINITY) (with-rsc-role:Master) (id:colocation-virtualip-ag_cluster-clone-INFINITY)
     Ticket Constraints:
     ```
 
@@ -917,12 +1120,22 @@ Daemon Status:
 
 1. Выполните следующую команду, чтобы вручную выполнить отработку отказа первичной реплики в `<VM2>`. Замените `<VM2>` значением имени вашего сервера.
 
+   **RHEL 7**
+   
     ```bash
     sudo pcs resource move ag_cluster-master <VM2> --master
     ```
 
-1. Если вы еще раз проверите свои ограничения, то увидите, что из-за ручной отработки отказа было добавлено еще одно ограничение:
+   **RHEL 8**
+   
+    ```bash
+    sudo pcs resource move ag_cluster-clone <VM2> --master
+    ```
 
+2. Если вы еще раз проверите свои ограничения, то увидите, что из-за ручной отработки отказа было добавлено еще одно ограничение:
+    
+    **RHEL 7**
+    
     ```output
     [<username>@VM1 ~]$ sudo pcs constraint list --full
     Location Constraints:
@@ -935,10 +1148,32 @@ Daemon Status:
     Ticket Constraints:
     ```
 
-1. Удалите ограничение c идентификатором `cli-prefer-ag_cluster-master`, используя следующую команду:
+    **RHEL 8**
+    
+    ```output
+    [<username>@VM1 ~]$ sudo pcs constraint list --full
+    Location Constraints:
+          Resource: ag_cluster-master
+            Enabled on: VM2 (score:INFINITY) (role: Master) (id:cli-prefer-ag_cluster-clone)
+    Ordering Constraints:
+            promote ag_cluster-clone then start virtualip (kind:Mandatory) (id:order-ag_cluster-clone-virtualip-mandatory)
+    Colocation Constraints:
+            virtualip with ag_cluster-clone (score:INFINITY) (with-rsc-role:Master) (id:colocation-virtualip-ag_cluster-clone-INFINITY)
+    Ticket Constraints:
+    ```
+    
+3. Удалите ограничение c идентификатором `cli-prefer-ag_cluster-master`, используя следующую команду:
 
+    **RHEL 7**
+    
     ```bash
     sudo pcs constraint remove cli-prefer-ag_cluster-master
+    ```
+
+    **RHEL 8**
+    
+    ```bash
+    sudo pcs constraint remove cli-prefer-ag_cluster-clone
     ```
 
 1. Проверьте кластерные ресурсы с помощью команды `sudo pcs resource`, теперь основным экземпляром должна быть `<VM2>`.

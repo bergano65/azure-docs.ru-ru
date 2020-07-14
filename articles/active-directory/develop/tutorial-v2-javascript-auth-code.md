@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 05/19/2020
 ms.author: hahamil
 ms.custom: aaddev
-ms.openlocfilehash: e02f6946ff6f520fec63ead7e14e94f33182357f
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 3e6f94c3b44cd3316a25c356dc5e33835f8c9337
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83682354"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85553792"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-app-spa-using-auth-code-flow"></a>Руководство по входу пользователей и вызову API Microsoft Graph из одностраничного приложения JavaScript с помощью потока кода авторизации
 
@@ -42,10 +42,7 @@ MSAL.js 2.0 — это расширенная версия MSAL.js 1.0, по�
 
 В этом учебнике используется следующая библиотека:
 
-| | |
-|---|---|
-|[msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser)|Библиотека проверки подлинности Майкрософт для пакета JavaScript версии 2.0 для браузера|
-| | |
+Библиотека проверки подлинности Майкрософт [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser) для пакета JavaScript версии 2.0 для браузера
 
 ## <a name="get-the-completed-code-sample"></a>Получение готового примера кода
 

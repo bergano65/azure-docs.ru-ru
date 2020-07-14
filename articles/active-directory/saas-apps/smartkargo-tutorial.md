@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 06/02/2020
+ms.date: 06/19/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 310023893d25a484cf05dac00628c632a4421edb
-ms.sourcegitcommit: a8928136b49362448e992a297db1072ee322b7fd
+ms.openlocfilehash: d8f65236fee57b4dc3e2bb012d8cdd222f431ec0
+ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84719954"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85482621"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-smartkargo"></a>Руководство по интеграции единого входа Azure Active Directory со SmartKargo
 
@@ -83,22 +83,18 @@ ms.locfileid: "84719954"
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<CUSTOMER_NAME>.smartkargo.com/`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<CUSTOMER_NAME>.smartkargo.com/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<CUSTOMER_NAME>.smartkargo.com/`.
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<CUSTOMER_NAME>.smartkargo.com/SamlResponse.aspx`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Вместо них необходимо указать фактические значения URL-адреса входа, URL-адреса ответа и идентификатора. Чтобы получить их, обратитесь к [группе поддержки клиентов SmartKargo](https://www.smartkargo.com/company/contact-2/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, URL-адреса ответа и идентификатора. Чтобы получить их, обратитесь к [группе поддержки клиентов SmartKargo](https://www.smartkargo.com/company/contact-2/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. В разделе **Сертификат подписи SAML** щелкните кнопку **Правка**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
-    ![Изменение сертификата подписи SAML](common/edit-certificate.png)
-
-1. В разделе **Сертификат подписи SAML** скопируйте **значение отпечатка** и сохраните его на компьютере.
-
-    ![Копирование значения "Отпечаток"](common/copy-thumbprint.png)
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
 1. Требуемые URL-адреса можно скопировать из раздела **Настройка SmartKargo**.
 
@@ -136,7 +132,7 @@ ms.locfileid: "84719954"
 
 ## <a name="configure-smartkargo-sso"></a>Настройка единого входа в SmartKargo
 
-Чтобы настроить единый вход на стороне **SmartKargo**, нужно отправить **значение отпечатка** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки SmartKargo](https://www.smartkargo.com/company/contact-2/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **SmartKargo**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки SmartKargo](https://www.smartkargo.com/company/contact-2/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-smartkargo-test-user"></a>Создание тестового пользователя SmartKargo
 

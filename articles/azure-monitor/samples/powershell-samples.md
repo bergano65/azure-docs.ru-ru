@@ -6,12 +6,12 @@ ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 2/14/2018
-ms.openlocfilehash: 14fe27c28e2eb6a527dc6f026916002cfb5b0147
-ms.sourcegitcommit: 51977b63624dfd3b4f22fb9fe68761d26eed6824
+ms.openlocfilehash: 4313d9fec9e858a5d30cfea2bbe7372e6a96169c
+ms.sourcegitcommit: fdaad48994bdb9e35cdd445c31b4bac0dd006294
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945262"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85413898"
 ---
 # <a name="azure-monitor-powershell-samples"></a>Примеры для Azure Monitor PowerShell
 В этой статье показаны примеры команд PowerShell, с помощью которых можно быстро получить доступ к функциям Azure Monitor.
@@ -220,6 +220,10 @@ Set-AzActivityLogAlert -Location 'Global' -Name 'alert on VM create' -ResourceGr
 Дополнительные свойства веб-перехватчика указывать не обязательно. Вы можете вернуть содержимое оповещения журнала действий при помощи `Get-AzActivityLogAlert`.
 
 ## <a name="create-and-manage-autoscale-settings"></a>Создание параметров автомасштабирования и управление ими
+
+> [!NOTE] 
+> Для облачных служб (Microsoft.ClassicCompute) поддерживается автомасштабирование с интервалом в 5 минут (PT5M). Для других служб автомасштабирование может выполняться с минимальным интервалом в 1 минуту (PT1M).
+
 Для ресурса (веб-приложения, виртуальной машины, облачной службы или масштабируемого набора виртуальных машин) можно настроить только один параметр автомасштабирования.
 Однако у каждого параметра автомасштабирования может быть несколько профилей. Например, один профиль для масштабирования на основе производительности, а второй — на основе расписания. Для каждого профиля можно настроить несколько правил. Дополнительные сведения об автомасштабировании см. в статье [Автомасштабирование облачной службы](../../cloud-services/cloud-services-how-to-scale-portal.md).
 

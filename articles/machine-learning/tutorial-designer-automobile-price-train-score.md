@@ -8,14 +8,14 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
-ms.date: 05/12/2020
+ms.date: 06/28/2020
 ms.custom: designer
-ms.openlocfilehash: 2fab23e9f765d9ab4908cc4be69d8b747c6856b9
-ms.sourcegitcommit: 6571e34e609785e82751f0b34f6237686470c1f3
+ms.openlocfilehash: 7068c1e795e7a607776c48d1b026562a1be6b25d
+ms.sourcegitcommit: 581aaca8956b1717b7bc1c1d7710c782c22e6320
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84790540"
+ms.lasthandoff: 06/29/2020
+ms.locfileid: "85517637"
 ---
 # <a name="tutorial-predict-automobile-price-with-the-designer-preview"></a>Руководство по прогнозированию цен на автомобили с помощью конструктора (предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
@@ -107,8 +107,8 @@ ms.locfileid: "84790540"
 1. В области сведений о модуле справа от холста щелкните **Выходные данные и журнал**.
 
 1. Выберите значок графика, чтобы открыть визуализацию данных.
-
-    ![Визуализация данных](./media/tutorial-designer-automobile-price-train-score/visualize-data.png)
+    
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/visualize-data.png"alt-text="Отмечен замещающий текст":::
 
 1. Щелкните любой столбец в окне данных, чтобы просмотреть сведения о нем.
 
@@ -180,8 +180,8 @@ ms.locfileid: "84790540"
 1. В области "Сведения о модуле" справа от холста выберите текстовое поле **Комментарий** и введите *Удалить недостающие строки значений*. 
 
     Теперь конвейер должен выглядеть примерно так:
-    
-    ![Выбор столбца](./media/tutorial-designer-automobile-price-train-score/pipeline-clean.png)
+
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-clean.png"alt-text="Выбор столбца":::
 
 ## <a name="train-a-machine-learning-model"></a>Обучение модели машинного обучения.
 
@@ -229,7 +229,7 @@ ms.locfileid: "84790540"
     > [!IMPORTANT]
     > Убедитесь, что левый выходной порт модуля **разделения данных** подключается к модулю **обучения модели**. Левый порт содержит набор для обучения. Правый порт содержит набор для проверки.
 
-    ![Снимок экрана: правильная конфигурация модуля Train Model (Обучение модели). Модуль Linear Regression (Линейная регрессия) присоединяется к левому порту модуля Train Model (Обучение модели), а модуль Split Data (Разделение данных) — к правому порту модуля Train Model (Обучение модели).](./media/tutorial-designer-automobile-price-train-score/pipeline-train-model.png)
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-model.png"alt-text="Снимок экрана: правильная конфигурация модуля Train Model (Обучение модели). Модуль Linear Regression (Линейная регрессия) присоединяется к левому порту модуля Train Model (Обучение модели), а модуль Split Data (Разделение данных) — к правому порту модуля Train Model (Обучение модели)":::
 
 1. Выберите модуль **Train Model** (Обучение модели).
 
@@ -244,7 +244,7 @@ ms.locfileid: "84790540"
 
     Теперь конвейер будет выглядеть следующим образом:
 
-    ![Снимок экрана с правильной конфигурацией конвейера после добавления модуля "Обучение модели".](./media/tutorial-designer-automobile-price-train-score/pipeline-train-graph.png)
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-graph.png"alt-text="Снимок экрана с правильной конфигурацией конвейера после добавления модуля "Обучение модели"":::
 
 ### <a name="add-the-score-model-module"></a>Добавление модуля "Score Model" (Оценка модели)
 
@@ -264,7 +264,7 @@ ms.locfileid: "84790540"
 
     Готовый вариант конвейера должен выглядеть примерно так:
 
-    ![Снимок экрана с правильной конфигурацией конвейера.](./media/tutorial-designer-automobile-price-train-score/pipeline-final-graph.png)
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-final-graph.png"alt-text="Снимок экрана с правильной конфигурацией конвейера":::
 
 ## <a name="submit-the-pipeline"></a>Отправка конвейера
 
@@ -295,7 +295,7 @@ ms.locfileid: "84790540"
 
     Здесь можно просмотреть прогнозируемые цены и фактические цены из тестовых данных.
 
-    ![Снимок экрана: визуализация выходных данных с выделенным столбцом Scored Label (Метка с оценкой)](./media/tutorial-designer-automobile-price-train-score/score-result.png)
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/score-result.png"alt-text="Снимок экрана: визуализация выходных данных с выделенным столбцом Scored Label (Метка с оценкой)":::
 
 ### <a name="evaluate-models"></a>Анализ моделей
 
