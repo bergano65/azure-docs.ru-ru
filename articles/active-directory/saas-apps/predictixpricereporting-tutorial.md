@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Predictix Price Reporting | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Predictix Price Reporting | Документация Майкрософт
 description: Из этого руководства вы узнаете, как настроить единый вход Azure Active Directory в Predictix Price Reporting.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: 808b2d964bb39af6b410a84563717102ebece454
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: ad80956cf7d6324487da5d0fabc2e93a5b4bf52f
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67094106"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85800261"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-predictix-price-reporting"></a>Учебник. Интеграция Azure Active Directory с Predictix Price Reporting
+# <a name="tutorial-azure-active-directory-integration-with-predictix-price-reporting"></a>Руководство по Интеграция Azure Active Directory с Predictix Price Reporting
 
 В этом руководстве описано, как интегрировать Predictix Price Reporting с Azure Active Directory (Azure AD).
 
@@ -36,11 +36,11 @@ ms.locfileid: "67094106"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Predictix Price Reporting, вам потребуется:
 
-* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить [пробную подписку на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* Подписка Azure AD. Если у вас нет среды Azure AD, вы можете получить [пробную подписку на один месяц](https://azure.microsoft.com/pricing/free-trial/).
 * подписка Predictix Price Reporting с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -111,11 +111,10 @@ ms.locfileid: "67094106"
 
     1. В поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
 
-        | |
-        |--|
-        | `https://<companyname-pricing>.predictix.com` |
-        | `https://<companyname-pricing>.dev.predictix.com` |
-        | |
+        ```https
+        https://<companyname-pricing>.predictix.com
+        https://<companyname-pricing>.dev.predictix.com
+        ```
 
     > [!NOTE]
     > Эти значения представляют собой заполнители. Необходимо указать фактические URL-адрес для входа и идентификатор. Чтобы получить эти значения, обратитесь к [группе поддержки Predictix Price Reporting](https://www.infor.com/company/customer-center/). Можно также ознакомиться с шаблонами в диалоговом окне **Базовая конфигурация SAML** на портале Azure.
@@ -156,11 +155,11 @@ ms.locfileid: "67094106"
 
     1. В поле **Имя** введите **BrittaSimon**.
   
-    1. В поле **Имя пользователя** введите **BrittaSimon @\<ваш_домен>.\<доменная_зона>** . (Например, BrittaSimon@contoso.com).
+    1. В поле **Имя пользователя** введите **BrittaSimon@\<yourcompanydomain>.\<extension>** . (Например, BrittaSimon@contoso.com).
 
     1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    1. Нажмите кнопку **Создать**.
+    1. Нажмите кнопку **создания**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

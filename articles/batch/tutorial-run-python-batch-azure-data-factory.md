@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 12/11/2019
 ms.author: komammas
 ms.custom: mvc, tracking-python
-ms.openlocfilehash: c60f9df87930519684c6c29b1194624342b11528
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: a8f6fe49faf0624f6ef6d4fa8a346e22c69da599
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84555058"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85851733"
 ---
 # <a name="tutorial-run-python-scripts-through-azure-data-factory-using-azure-batch"></a>Руководство по Выполнение скриптов Python с помощью Фабрики данных Azure в пакетной службе Azure
 
@@ -116,27 +116,27 @@ python main.py
 1. На панели **Ресурсы фабрики** нажмите кнопку + (плюс) и выберите **Конвейер**.
 1. На вкладке **Общие** задайте конвейеру имя "Выполнение Python".
 
-    ![](./media/run-python-batch-azure-data-factory/create-pipeline.png)
+    ![На вкладке "Общие" задайте конвейеру имя "Выполнение Python".](./media/run-python-batch-azure-data-factory/create-pipeline.png)
 
 1. На панели **Действия** разверните узел **Пакетная служба**. Перетащите пользовательское действие с панели элементов **Действия** в область конструктора конвейера.
 1. На вкладке **Общие** укажите значение **testPipeline** в поле "Имя".
 
-    ![](./media/run-python-batch-azure-data-factory/create-custom-task.png)
+    ![На вкладке "Общие" укажите значение testPipeline в поле "Имя".](./media/run-python-batch-azure-data-factory/create-custom-task.png)
 1. На вкладке **Пакетная служба Azure** добавьте **учетную запись пакетной службы**, которую вы создали на предыдущих шагах и выполните **тестирование подключения**.
 
-    ![](./media/run-python-batch-azure-data-factory/integrate-pipeline-with-azure-batch.png)
+    ![На вкладке "Пакетная служба Azure" добавьте учетную запись пакетной службы, которую вы создали на предыдущих шагах, и протестируйте подключение.](./media/run-python-batch-azure-data-factory/integrate-pipeline-with-azure-batch.png)
 
 1. На вкладке **Параметры** введите команду `python main.py`.
 1. В поле **Resource Linked Service** (Служба, связанная с ресурсом) выберите учетную запись хранения, которую вы создали на предыдущих шагах. Проверьте успешность создания подключения к серверу.
 1. В поле **Путь к папке** выберите имя контейнера **хранилища BLOB-объектов Azure**, который содержит нужный скрипт Python и входные данные для него. Это действие приводит к скачиванию выбранных файлов из контейнера в экземпляры узлов пула перед выполнением скрипта Python.
 
-    ![](./media/run-python-batch-azure-data-factory/create-custom-task-py-script-command.png)
+    ![В поле "Путь к папке" задайте имя контейнера Хранилища BLOB-объектов Azure](./media/run-python-batch-azure-data-factory/create-custom-task-py-script-command.png)
 1. На панели инструментов конвейера над холстом щелкните **Проверка**, чтобы проверить параметры конвейера. Убедитесь, что проверка конвейера прошла успешно. Чтобы закрыть результаты проверки, нажмите кнопку &gt;&gt; (стрелка вправо).
 1. Щелкните **Отладка**, чтобы проверить конвейер и убедиться в правильности его работы.
 1. Щелкните **Опубликовать**, чтобы опубликовать этот конвейер.
 1. Щелкните **Активировать**, чтобы выполнить скрипт Python в рамках пакетного процесса.
 
-    ![](./media/run-python-batch-azure-data-factory/create-custom-task-py-success-run.png)
+    ![Щелкните "Активировать", чтобы выполнить скрипт Python в рамках пакетного процесса](./media/run-python-batch-azure-data-factory/create-custom-task-py-success-run.png)
 
 ### <a name="monitor-the-log-files"></a>Мониторинг файлов журналов
 

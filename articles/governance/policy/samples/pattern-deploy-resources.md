@@ -3,20 +3,20 @@ title: Шаблон. Развертывание ресурсов с помощь
 description: Этот шаблон Политики Azure предоставляет пример развертывания ресурсов с помощью определения политики.
 ms.date: 01/31/2020
 ms.topic: sample
-ms.openlocfilehash: a8b6528afbd21c7c667e48965574c9b48c403654
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7ce93f4895a86905cd31889e853f95a3de640b13
+ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77169992"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85970864"
 ---
 # <a name="azure-policy-pattern-deploy-resources"></a>Шаблон Политики Azure для развертывания ресурсов
 
-Действие [deployIfNotExists](../concepts/effects.md#deployifnotexists) позволяет развертывать [шаблон Azure Resource Manager](../../../azure-resource-manager/templates/overview.md) при создании или обновлении ресурса, не соответствующего требованиям. Такой подход можно применять вместо действия [deny](../concepts/effects.md#deny) (запрет), так как он позволяет создавать ресурсы, гарантированно приводя их в соответствие требованиям.
+Действие [deployIfNotExists](../concepts/effects.md#deployifnotexists) позволяет развертывать [шаблон Azure Resource Manager](../../../azure-resource-manager/templates/overview.md) (шаблон ARM) при создании или обновлении ресурса, не соответствующего требованиям. Такой подход можно применять вместо действия [deny](../concepts/effects.md#deny) (запрет), так как он позволяет создавать ресурсы, гарантированно приводя их в соответствие требованиям.
 
 ## <a name="sample-policy-definition"></a>Пример определения политики
 
-В этом определении политики используется оператор **field** для вычисления `type` созданного или обновленного ресурса. Если это ресурс с типом _Microsoft.Network/virtualNetworks_, политика ищет наблюдатель за сетями в том же расположении, где находится новый или обновленный ресурс. Если соответствующий наблюдатель за сетями найти не удается, развертывается шаблон Resource Manager для создания недостающего ресурса.
+В этом определении политики используется оператор **field** для вычисления `type` созданного или обновленного ресурса. Если это ресурс с типом _Microsoft.Network/virtualNetworks_, политика ищет наблюдатель за сетями в том же расположении, где находится новый или обновленный ресурс. Если соответствующий наблюдатель за сетями найти не удается, развертывается шаблон ARM для создания недостающего ресурса.
 
 :::code language="json" source="~/policy-templates/patterns/pattern-deploy-resources.json":::
 

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c7f8c8efcad0a07a3d3a56925866b10d94f82ed
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 34e496ea9d2a89894951856a19854bff18f20a8b
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68227477"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85800916"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pagedna"></a>Руководство по интеграции Azure Active Directory с PageDNA
 
@@ -110,21 +110,19 @@ PageDNA поддерживает следующие функции:
 
     1. В поле **URL-адрес для входа** введите URL-адрес в одном из следующих форматов:
 
-        ||
-        |--|
-        | `https://stores.pagedna.com/<your site>` |
-        | `https://<your domain>` |
-        | `https://<your domain>/<your site>` |
-        | `https://www.nationsprint.com/<your site>` |
-        | |
+        ```https
+        https://stores.pagedna.com/<your site>
+        https://<your domain>
+        https://<your domain>/<your site>
+        https://www.nationsprint.com/<your site>
+        ```
 
     1. В поле **Идентификатор (сущности)** введите URL-адрес в одном из следующих форматов:
 
-        ||
-        |--|
-        | `https://stores.pagedna.com/<your site>/saml2ep.cgi` |
-        | `https://www.nationsprint.com/<your site>/saml2ep.cgi` |
-        | |
+        ```https
+        https://stores.pagedna.com/<your site>/saml2ep.cgi
+        https://www.nationsprint.com/<your site>/saml2ep.cgi
+        ```
 
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки PageDNA](mailto:success@pagedna.com). Можно также посмотреть шаблоны на панели **Базовая конфигурация SAML** на портале Azure.
@@ -163,7 +161,7 @@ PageDNA поддерживает следующие функции:
 
     1. В поле **Имя** введите **BrittaSimon**.
   
-    1. В поле **Имя пользователя** введите **BrittaSimon\@\<домен_вашей_компании>.\<доменная_зона>** . Например **BrittaSimon\@contoso.com**.
+    1. В поле **Имя пользователя** введите **BrittaSimon\@\<yourcompanydomain>.\<extension>** Например **BrittaSimon\@contoso.com**.
 
     1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 

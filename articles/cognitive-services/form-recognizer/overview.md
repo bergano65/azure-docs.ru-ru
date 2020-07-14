@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: overview
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 8885f66b3501217ead302486d2e5ef7de63f5f47
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: 2193bd85265103957c5cafad10a243b266f7e5bc
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85563252"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86026888"
 ---
 # <a name="what-is-form-recognizer"></a>Что такое Распознаватель документов?
 
@@ -57,18 +57,20 @@ ms.locfileid: "85563252"
 
 Чтобы приступить к извлечению данных из форм, выполните инструкции из соответствующего краткого руководства. При изучении технологии мы рекомендуем использовать бесплатную версию службы. Имейте в виду, что количество бесплатных страниц ограничено до 500 страниц в месяц.
 
-* Пользовательское обучение модели по собственным формам
-  * Обучение без меток
-    * [Краткое руководство. по обучению модели Распознавателя документов и извлечению данных форм с помощью REST API и cURL](quickstarts/curl-train-extract.md)
-    * [Краткое руководство. по обучению модели Распознавателя документов и извлечению данных из форм с помощью REST API и Python](quickstarts/python-train-extract.md)
-  * Обучение с метками
-    * [Обучение модели Распознавателя документов по примерам с метками с помощью средства маркировки данных](quickstarts/label-tool.md)
-    * [Обучение модели Распознавателя документов по примерам с метками с помощью REST API и Python](quickstarts/python-labeled-data.md)
-* Предварительно созданная модель квитанций — извлечение данных из типичных для США квитанций о продажах
-  * [Краткое руководство. по извлечению данных квитанций с помощью cURL](quickstarts/curl-receipts.md)
-  * [Краткое руководство. по извлечению данных квитанций с помощью Python](quickstarts/python-receipts.md)
-* Макет — извлечение текста и структуры таблиц из форм
-  * [Краткое руководство. Извлечение данных о макете с помощью Python](quickstarts/python-layout.md)
+* [Краткое руководство по клиентской библиотеке](./quickstarts/client-library.md) (все языки, разные сценарии)
+* Краткие руководства по веб-интерфейсу
+  * [Обучение с использованием меток — пример средства создания меток](quickstarts/label-tool.md)
+* Краткие руководства по REST
+  * Обучение пользовательских моделей и извлечение данных форм
+    * [Обучение без использования меток — cURL](quickstarts/curl-train-extract.md)
+    * [Обучение без использования меток — Python](quickstarts/python-train-extract.md)
+    * [Обучение с использованием меток — Python](quickstarts/python-labeled-data.md)
+  * Извлечение данных из товарных чеков (США)
+    * [Извлечение данных товарного чека — cURL](quickstarts/curl-receipts.md)
+    * [Извлечение данных товарного чека — Python](quickstarts/python-receipts.md)
+  * Извлечение текста и структуры таблиц из форм
+    * [Извлечение данных макета — Python](quickstarts/python-layout.md)
+
 
 ### <a name="review-the-rest-apis"></a>Ознакомьтесь с интерфейсами REST API.
 
@@ -81,7 +83,7 @@ ms.locfileid: "85563252"
 | **Анализ квитанции** |Проанализируйте один документ квитанции, чтобы извлечь основные сведения и оставшийся текст квитанции.|
 | **Анализ макета** |Проанализируйте макет формы для извлечения текста и структуры таблиц.|
 
-Ознакомьтесь со [справочной документацией по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeWithCustomForm), чтобы узнать больше. Если вы уже знакомы с предыдущей версией API, обратитесь к статье [о новых возможностях и изменениях](./whats-new.md).
+Ознакомьтесь со [справочной документацией по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm), чтобы узнать больше. Если вы уже знакомы с предыдущей версией API, обратитесь к статье [о новых возможностях и изменениях](./whats-new.md).
 
 ## <a name="input-requirements"></a>Требования к входным данным
 ### <a name="custom-model"></a>Настраиваемая модель
@@ -104,4 +106,4 @@ ms.locfileid: "85563252"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Следуйте [краткому руководству](quickstarts/curl-train-extract.md), чтобы приступить к использованию [API Распознавателя документов](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeWithCustomForm).
+Следуйте [краткому руководству](quickstarts/curl-train-extract.md), чтобы приступить к использованию [API Распознавателя документов](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm).

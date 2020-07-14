@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.date: 11/05/2019
 ms.author: dech
 ms.reviewer: sngun
-ms.openlocfilehash: dfcde775780cdb42f9df1d677ff2f2475de92843
-ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
+ms.openlocfilehash: 9b2ef5ddb56e3d0422a2a876993ddda0bd97e4ff
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2020
-ms.locfileid: "85115284"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85961104"
 ---
 # <a name="tutorial-create-a-notebook-in-azure-cosmos-db-to-analyze-and-visualize-the-data"></a>Руководство по Создание записной книжки в Azure Cosmos DB для анализа и визуализации данных
 
@@ -235,7 +235,7 @@ df_cosmos.head(10)
 
    В выходных данных отображается геосхема мира с различными цветами. Более светлое цветовое значение представляет страны или регионы от наибольшего до наименьшего дохода.
 
-   ![Визуализация дохода для стран или регионов](./media/create-notebook-visualize-data/countries-revenue-map-visualization.png)
+   :::image type="content" source="./media/create-notebook-visualize-data/countries-revenue-map-visualization.png" alt-text="Визуализация дохода для стран или регионов":::
 
 1. Рассмотрим еще один вариант визуализации данных. Контейнер WebsiteData содержит записи о пользователях, которые просмотрели товар, добавили его в корзину и приобрели элемент. Давайте построим график коэффициента конверсии приобретенных товаров. Выполните следующий код в новой ячейке, чтобы визуализировать коэффициент конверсии для каждого элемента:
 

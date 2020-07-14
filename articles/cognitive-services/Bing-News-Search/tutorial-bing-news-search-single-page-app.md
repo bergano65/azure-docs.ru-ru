@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 06/23/2020
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 5aac12f4da6304e8e14f0b4f1e33ef6257f50c11
-ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
+ms.openlocfilehash: 9721a00ef1f0df056b3300ababfee0d0d29bbddc
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/01/2020
-ms.locfileid: "85602794"
+ms.locfileid: "85801280"
 ---
 # <a name="tutorial-create-a-single-page-web-app"></a>Руководство по Создание одностраничного веб-приложения
 
@@ -409,15 +409,18 @@ searchItemRenderers = {
 
 Установить прокси-сервер CORS довольно просто. Это позволит нашему учебному приложению иметь доступ к заголовку идентификатора клиента. Для начала [установите платформу Node.js](https://nodejs.org/en/download/), если она еще не установлена. Затем введите следующую команду в командном окне:
 
-    npm install -g cors-proxy-server
+```console
+npm install -g cors-proxy-server
+```
 
-После этого в HTML-файле измените конечную точку службы "Поиск в Интернете Bing" на следующую:
-
-    http://localhost:9090/https://api.cognitive.microsoft.com/bing/v7.0/search
+После этого в HTML-файле измените конечную точку службы "Поиск в Интернете Bing" на следующую:\
+`http://localhost:9090/https://api.cognitive.microsoft.com/bing/v7.0/search`
 
 И наконец, запустите прокси-сервер CORS с помощью следующей команды:
 
-    cors-proxy-server
+```console
+cors-proxy-server
+```
 
 Не закрывайте командное окно, пока используете учебное приложение. Это приведет к остановке прокси-сервера. Теперь в развертываемом разделе заголовков HTTP под результатами поиска можно увидеть заголовок `X-MSEdge-ClientID` (среди прочих) и убедиться, что он одинаковый для всех запросов.
 

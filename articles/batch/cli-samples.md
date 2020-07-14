@@ -1,30 +1,23 @@
 ---
-title: Примеры использования интерфейса командной строки Azure
-description: Примеры использования Azure CLI для службы Azure Batch. Узнайте, как создать учетную запись пакетной службы и добавить приложение.
+title: Примеры использования Azure CLI для пакетной службы Azure
+description: Сведения о том, как создать учетную запись пакетной службы и добавить приложение с помощью Azure CLI.
 ms.topic: sample
-ms.date: 01/29/2018
+ms.date: 07/01/2020
 ms.custom: mvc
-ms.openlocfilehash: 59fc944024e2d51b16193db01ff06f2d434ad1e7
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.openlocfilehash: ff18043f4d411a70be7ad7f4d373d7c6a8b0e4e1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83725760"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85832276"
 ---
 # <a name="azure-cli-examples-for-azure-batch"></a>Примеры использования Azure CLI для пакетной службы Azure
 
-В следующей таблице содержатся ссылки на примеры использования Azure CLI для пакетной службы Azure.
+В следующих примерах показано, как выполнять операции с пакетной службой с помощью Azure CLI.
 
-|  |  |
-|---|---|
-|**Создание учетной записи пакетной службы**||
-| [Создание учетной записи пакетной службы в режиме пакетной службы](./scripts/batch-cli-sample-create-account.md) | Создает учетную запись пакетной службы в стандартном режиме и связывает ее с учетной записью хранения. |
-| [Создание учетной записи пакетной службы режиме подписки пользователя](./scripts/batch-cli-sample-create-user-subscription-account.md) | Создает учетную запись пакетной службы в режиме подписки пользователя. |
-|**Добавление приложения**||
-| [Добавление приложения к учетной записи пакетной службы](./scripts/batch-cli-sample-add-application.md) | Добавляет приложение и передает его упакованные двоичные файлы.|
-|**Создание пулов вычислительных узлов и управление ими**||
-| [Создание пула Linux и управление им](./scripts/batch-cli-sample-manage-linux-pool.md) | Демонстрирует создание пула Linux, изменение размера пула и управление им. |
-| [Создание пула Windows и управление им](./scripts/batch-cli-sample-manage-windows-pool.md) | Демонстрирует создание пула Windows, изменение размера пула и управление им. |
-|**Выполнение заданий и задач**||
-| [Выполнение задания и задач с помощью пакетной службы](./scripts/batch-cli-sample-run-job.md) | Демонстрирует выполнение задания и добавление задач. |
-
+- [Создание учетной записи пакетной служб в режиме по умолчанию и ее связывание с учетной записью хранения](./scripts/batch-cli-sample-create-account.md)
+- [Создание учетной записи пакетной службы режиме подписки пользователя](./scripts/batch-cli-sample-create-user-subscription-account.md)
+- [Добавление приложения в учетную запись пакетной службы и отправка упакованных двоичных файлов](./scripts/batch-cli-sample-add-application.md)
+- [Создание пула Linux и управление им](./scripts/batch-cli-sample-manage-linux-pool.md)
+- [Создание пула Windows и управление им](./scripts/batch-cli-sample-manage-windows-pool.md)
+- [Выполнение задания и задач с помощью пакетной службы](./scripts/batch-cli-sample-run-job.md)

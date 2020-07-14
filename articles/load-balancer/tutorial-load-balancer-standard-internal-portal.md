@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 01/08/2020
 ms.author: allensu
 ms.custom: seodec18
-ms.openlocfilehash: 918a7700df6b5be3ebca7949875127e42f8d3a91
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b8fcef13fbe41ac26b2a31d6871896428649eaa1
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75780699"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85920857"
 ---
 # <a name="tutorial-balance-internal-traffic-load-with-a-standard-load-balancer-in-the-azure-portal"></a>Руководство. Балансировка нагрузки внутреннего трафика с помощью подсистемы балансировки нагрузки уровня "Стандартный" на портале Azure
 
@@ -180,7 +180,9 @@ ms.locfileid: "75780699"
    - **Серверный пул**. Выберите **MyBackendPool**.
    - **Зонд работоспособности**. Выберите **MyHealthProbe**. 
    
-1. Нажмите кнопку **ОК**.
+Чтобы настроить [порты высокого уровня доступности](load-balancer-ha-ports-overview.md) с помощью портала Azure, установите флажок **Порты высокой доступности**. При его установке соответствующая конфигурация портов и протокола заполняется автоматически. 
+
+1. Щелкните **ОК**.
    
    ![Добавление правила подсистемы балансировки нагрузки](./media/tutorial-load-balancer-basic-internal-portal/5-load-balancing-rules.png)
 

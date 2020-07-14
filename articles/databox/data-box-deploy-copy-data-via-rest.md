@@ -1,5 +1,5 @@
 ---
-title: Руководство по Использование REST API для копирования данных в хранилище BLOB-объектов
+title: Руководство по копированию в хранилище BLOB-объектов с помощью REST API
 titleSuffix: Azure Data Box
 description: Узнайте, как копировать данные в хранилище BLOB-объектов Azure Data Box с помощью REST API
 services: databox
@@ -7,16 +7,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 05/09/2019
+ms.date: 07/02/2020
 ms.author: alkohli
-ms.openlocfilehash: aa59d2dea4456b977afee92103fa66d6afe9bf31
-ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
+ms.openlocfilehash: 50c4daabe3dc980937f52db7e56cd778890b84d8
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84219139"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85960692"
 ---
-# <a name="tutorial-copy-data-to-azure-data-box-blob-storage-via-rest-apis"></a>Руководство по Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API  
+# <a name="tutorial-use-rest-apis-to-copy-data-to-azure-data-box-blob-storage"></a>Руководство по использованию REST API для копирования данных в хранилище BLOB-объектов Azure Data Box  
 
 В этом руководстве описываются процедуры по подключению к хранилищу BLOB-объектов Azure Data Box через REST API по протоколу *HTTP* или *HTTPS*. Рассматриваются также шаги после подключения, необходимые для копирования данных в хранилище BLOB-объектов Data Box и подготовки Data Box к отправке.
 
@@ -186,15 +186,19 @@ ms.locfileid: "84219139"
 
 #### <a name="linux"></a>Linux
 
-    azcopy \
-        --source /mnt/myfolder \
-        --destination https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ \
-        --dest-key <key> \
-        --recursive
+```azcopy
+azcopy \
+    --source /mnt/myfolder \
+    --destination https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ \
+    --dest-key <key> \
+    --recursive
+```
 
 #### <a name="windows"></a>Windows
 
-    AzCopy /Source:C:\myfolder /Dest:https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ /DestKey:<key> /S
+```azcopy
+AzCopy /Source:C:\myfolder /Dest:https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ /DestKey:<key> /S
+```
 
 Вместо `<key>` укажите ключ учетной записи. Чтобы получить ключ учетной записи, перейдите к учетной записи хранения на портале Azure. Перейдите в раздел **Параметры > Ключи доступа**, выберите ключ и вставьте его в команду AzCopy.
 
@@ -209,16 +213,21 @@ ms.locfileid: "84219139"
 Если вы хотите скопировать только те ресурсы, которые существуют в папке источника и отсутствуют в целевой папке, укажите параметры `--exclude-older` и `--exclude-newer` (для Linux) или `/XO` и `/XN` (для Windows) в команде AzCopy. AzCopy передаст только обновленные данные, учитывая отметки времени файлов.
 
 #### <a name="linux"></a>Linux
-    azcopy \
-    --source /mnt/myfolder \
-    --destination https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ \
-    --dest-key <key> \
-    --recursive \
-    --exclude-older
+
+```azcopy
+azcopy \
+--source /mnt/myfolder \
+--destination https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ \
+--dest-key <key> \
+--recursive \
+--exclude-older
+```
 
 #### <a name="windows"></a>Windows
 
-    AzCopy /Source:C:\myfolder /Dest:https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ /DestKey:<key> /S /XO
+```azcopy
+AzCopy /Source:C:\myfolder /Dest:https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ /DestKey:<key> /S /XO
+```
 
 При возникновении ошибки во время копирования или подключения см. статью [Troubleshoot issues related to Azure Data Box Blob storage](data-box-troubleshoot-rest.md) (Устранение неполадок в хранилище BLOB-объектов службы Data Box).
 

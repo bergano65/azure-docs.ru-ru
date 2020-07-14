@@ -1,9 +1,8 @@
 ---
-title: Шаблоны Azure Resource Manager
-titleSuffix: Azure SQL Database & SQL Managed Instance
+title: Шаблоны Azure Resource Manager — База данных SQL Azure и Управляемый экземпляр SQL
 description: Использование шаблонов Azure Resource Manager для создания и настройки Базы данных SQL Azure и Управляемого экземпляра SQL Azure.
 services: sql-database
-ms.service: sql-database
+ms.service: sql-db-mi
 ms.subservice: service
 ms.custom: overview-samples sqldbrb=2
 ms.devlang: ''
@@ -12,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 02/04/2019
-ms.openlocfilehash: 76b9b1301a0aeee24b698b15a3871754de8ca0b9
-ms.sourcegitcommit: a8928136b49362448e992a297db1072ee322b7fd
+ms.openlocfilehash: ee2c6580285246d3b170602e507aed038b2507f4
+ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84718807"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85983645"
 ---
 # <a name="azure-resource-manager-templates-for-azure-sql-database--sql-managed-instance"></a>Шаблоны Azure Resource Manager для Базы данных SQL Azure и Управляемого экземпляра SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -28,7 +27,7 @@ ms.locfileid: "84718807"
 
 В следующей таблице представлены ссылки на шаблоны Azure Resource Manager для Базы данных SQL Azure.
 
-| |  |
+|Ссылка |Описание|
 |---|---|
 | [База данных SQL](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-database-transparent-encryption-create) | Этот шаблон Azure Resource Manager создает отдельную базу данных в службе "База данных SQL Azure" и настраивает правила брандмауэра для IP-адресов на уровне сервера. |
 | [Server](https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-logical-server) | Этот шаблон Azure Resource Manager создает логический сервер Базы данных SQL Azure. |
@@ -47,7 +46,7 @@ ms.locfileid: "84718807"
 
 В следующей таблице представлены ссылки на шаблоны Azure Resource Manager для Управляемого экземпляра SQL Azure.
 
-| |  |
+|Ссылка|Описание|
 |---|---|
 | [Управляемый экземпляр SQL в новой виртуальной сети](https://github.com/Azure/azure-quickstart-templates/tree/master/101-sqlmi-new-vnet) | Этот шаблон Azure Resource Manager создает настроенную виртуальную сеть Azure и управляемый экземпляр в виртуальной сети. |
 | [Сетевая среда для Управляемого экземпляра SQL](https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-managed-instance-azure-environment) | Это развертывание создаст настроенную виртуальную сеть Azure с двумя подсетями: одна будет выделена для управляемых экземпляров, а другая — для других ресурсов (например, виртуальных машин, сред Службы приложений и т. д.). Этот шаблон создает правильно настроенные сетевые среды, в которых можно развернуть управляемые экземпляры. |

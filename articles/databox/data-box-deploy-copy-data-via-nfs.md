@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 06/25/2019
+ms.date: 07/02/2020
 ms.author: alkohli
-ms.openlocfilehash: 81732f13b85a7c0b514aad61c40802f4547957c2
-ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
+ms.openlocfilehash: 2b5789acfbb088ca8dbeb731b1ce7748041233cb
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84219131"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85960535"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-via-nfs"></a>Руководство по Копирование данных в Azure Data Box через NFS
 
@@ -48,7 +48,7 @@ ms.locfileid: "84219131"
 
 В следующей таблице приведен UNC-путь к общим папкам в Data Box и URL-адрес службы хранилища Azure, куда отправляются данные. Конечный URL-адрес службы хранилища Azure может быть производным от UNC-пути к общей папке.
  
-|                   |                                                            |
+| Тип службы хранилища Azure| Общие папки Data Box                                       |
 |-------------------|--------------------------------------------------------------------------------|
 | Блочные BLOB-объекты Azure | <li>UNC-путь к общим папкам: `//<DeviceIPAddress>/<StorageAccountName_BlockBlob>/<ContainerName>/files/a.txt`</li><li>URL-адрес службы хранилища Azure: `https://<StorageAccountName>.blob.core.windows.net/<ContainerName>/files/a.txt`</li> |  
 | Страничные BLOB-объекты Azure  | <li>UNC-путь к общим папкам: `//<DeviceIPAddres>/<StorageAccountName_PageBlob>/<ContainerName>/files/a.txt`</li><li>URL-адрес службы хранилища Azure: `https://<StorageAccountName>.blob.core.windows.net/<ContainerName>/files/a.txt`</li>   |  
@@ -58,7 +58,7 @@ ms.locfileid: "84219131"
 
 1. Укажите IP-адреса клиентов, которым разрешен доступ к общей папке. В локальном пользовательском веб-интерфейсе перейдите на страницу **Подключение и копирование**. В разделе **Параметры NFS** щелкните **Клиентский доступ NFS**. 
 
-    ![Настройка клиентского доступа NFS 1](media/data-box-deploy-copy-data/nfs-client-access.png)
+    ![Настройка клиентского доступа NFS 1](media/data-box-deploy-copy-data/nfs-client-access-1.png)
 
 2. Укажите IP-адрес NFS-клиента и щелкните **Добавить**. Вы можете настроить доступ для нескольких NFS-клиентов, выполнив это действие для каждого клиента. Нажмите кнопку **ОК**.
 
@@ -139,7 +139,19 @@ ms.locfileid: "84219131"
 > [!IMPORTANT]
 > Не поддерживаются следующие типы файлов Linux: символьные ссылки, символьные файлы, блочные файлы, сокеты и каналы. Эти типы файлов приведут к сбоям на этапе **Подготовка к отправке**.
 
-Откройте папку назначения для просмотра и проверки скопированных файлов. Если в процессе копирования возникли ошибки, скачайте файл с ошибками для устранения неполадок. Дополнительные сведения см. в разделе [Просмотр журналов ошибок во время копирования данных в Data Box](data-box-logs.md#view-error-log-during-data-copy). Подробный список ошибок во время копирования данных см. в статье об [устранении неполадок, связанных с Azure Data Box](data-box-troubleshoot.md).
+Если в ходе копирования возникают ошибки, отображается уведомление.
+
+![Скачивание и просмотр ошибок при подключении и копировании](media/data-box-deploy-copy-data/view-errors-1.png)
+
+Выберите **Скачать список ошибок**.
+
+![Скачивание и просмотр ошибок при подключении и копировании](media/data-box-deploy-copy-data/view-errors-2.png)
+
+Откройте список, чтобы просмотреть подробные сведения об ошибке, и выберите соответствующий URL-адрес, чтобы просмотреть рекомендуемое решение.
+
+![Скачивание и просмотр ошибок при подключении и копировании](media/data-box-deploy-copy-data/view-errors-3.png)
+
+Дополнительные сведения см. в разделе [Просмотр журналов ошибок во время копирования данных в Data Box](data-box-logs.md#view-error-log-during-data-copy). Подробный список ошибок во время копирования данных см. в статье об [устранении неполадок, связанных с Azure Data Box](data-box-troubleshoot.md).
 
 Чтобы обеспечить целостность данных, при копировании данных система вычисляет их контрольные суммы. По завершении копирования проверьте использованное и свободное место на устройстве.
 

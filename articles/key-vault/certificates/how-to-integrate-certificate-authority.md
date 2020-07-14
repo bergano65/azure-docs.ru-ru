@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: tutorial
 ms.date: 06/02/2020
 ms.author: sebansal
-ms.openlocfilehash: d6cb8d386efbcdaf053f0740d955b249c0e636b4
-ms.sourcegitcommit: 34eb5e4d303800d3b31b00b361523ccd9eeff0ab
+ms.openlocfilehash: 7627625a917a8f652da62d4197368f023ad8c110
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84907831"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85964504"
 ---
 # <a name="integrating-key-vault-with-digicert-certificate-authority"></a>Интеграция Key Vault с центром сертификации DigiCert
 
@@ -57,7 +57,7 @@ Azure Key Vault позволяет легко подготавливать, а�
  ![Свойства сертификатов](../media/certificates/how-to-integrate-certificate-authority/add-certificate-authority.png)
 5.  На экране **Создание ЦС** выберите следующие значения:
     -   **Name** (Имя). Добавьте понятное имя издателя. Например, DigicertCA.
-    -   **Предоставить.** В раскрывающемся меню выберите DigiCert.
+    -   **Поставщик.** В раскрывающемся меню выберите DigiCert.
     -   **Идентификатор учетной записи.** Введите идентификатор учетной записи DigiCert CertCentral.
     -   **Пароль учетной записи.** Введите ключ API, созданный для учетной записи DigiCert CertCentral.
     -   **Идентификатор организации.** Введите значение OrgID, полученное из учетной записи DigiCert CertCentral. 
