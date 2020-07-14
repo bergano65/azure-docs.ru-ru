@@ -106,6 +106,8 @@
           href: how-to-connect-install-express.md
         - name: "Установка федерации Azure\_AD Connect или других настраиваемых параметров"
           href: how-to-connect-install-custom.md
+        - name: Импорт и экспорт параметров конфигурации
+          href: how-to-connect-import-export-config.md
         - name: "Установка Azure\_AD Connect с использованием сквозной аутентификации (PTA)"
           href: how-to-connect-pta-quick-start.md
         - name: "Установка Azure\_AD Connect Health"

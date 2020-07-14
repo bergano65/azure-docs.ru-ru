@@ -12,12 +12,12 @@ ms.date: 06/01/2020
 ms.author: marsma
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 788f7eab3e547347beb4d95b523ad3c77e954687
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 42b7cf88942fb9b54b1292ece18cf14eb0d21958
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85477368"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86165968"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Примеры кода для платформы удостоверений Майкрософт (конечная точка версии 2.0)
 
@@ -65,22 +65,22 @@ ms.locfileid: "85477368"
 
 ## <a name="desktop-and-mobile-public-client-apps"></a>Общедоступные клиентские приложения — классические и мобильные
 
-В приведенных ниже примерах показаны общедоступные клиентские приложения (классические или мобильные), которые обращаются к API Microsoft Graph или веб-API от имени пользователя. Все эти клиентские приложения используют библиотеку проверки подлинности Майкрософт (MSAL).
+В приведенных ниже примерах показаны общедоступные клиентские приложения (классические или мобильные), которые обращаются к API Microsoft Graph или веб-API от имени пользователя. Кроме примера *классического (консольного) приложения с WAM*, все эти клиентские приложения используют библиотеку аутентификации Майкрософт (MSAL).
 
-| Клиентское приложение | Платформа | Поток или предоставление | Вызывает Microsoft Graph | Вызывает веб-API ASP.NET Core |
+| Клиентское приложение | Платформа | Поток или способ предоставления | Вызывает Microsoft Graph | Вызывает веб-API ASP.NET Core |
 | ------------------ | -------- |  ----------| ---------- | ------------------------- |
-| Классическое приложение (WPF)      | ![На этом изображении показан логотип .NET/C#](media/sample-v2-code/logo_NET.png) | [интерактивный](msal-authentication-flows.md#interactive)| [dotnet-desktop-msgraph-v2](https://github.com/azure-samples/active-directory-dotnet-desktop-msgraph-v2) | [dotnet-native-aspnetcore-v2](https://aka.ms/msidentity-aspnetcore-webapi) |
+| Классическое приложение (WPF)      | ![На этом изображении показан логотип .NET/C#](media/sample-v2-code/logo_NET.png) | [Код авторизации](msal-authentication-flows.md#authorization-code)| [dotnet-desktop-msgraph-v2](https://github.com/azure-samples/active-directory-dotnet-desktop-msgraph-v2) | [dotnet-native-aspnetcore-v2](https://aka.ms/msidentity-aspnetcore-webapi) |
 | Классическое приложение (консольное)   | ![На этом изображении показан логотип .NET/C# (для классического приложения)](media/sample-v2-code/logo_NET.png) | [Встроенная аутентификация Windows](msal-authentication-flows.md#integrated-windows-authentication) | [dotnet-iwa-v2](https://github.com/azure-samples/active-directory-dotnet-iwa-v2) |  |
 | Классическое приложение (консольное)   | ![На этом изображении показан логотип Java](media/sample-v2-code/logo_java.png) | [Встроенная аутентификация Windows](msal-authentication-flows.md#integrated-windows-authentication) |[ms-identity-java-desktop](https://github.com/Azure-Samples/ms-identity-java-desktop/) |  |
 | Классическое приложение (консольное)   | ![На этом изображении показан логотип .NET/C# (для классического приложения)](media/sample-v2-code/logo_NETcore.png) | [Имя пользователя или пароль](msal-authentication-flows.md#usernamepassword) |[dotnetcore-up-v2](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) |  |
-| Классическое (консольное) приложение с WAM  | ![На этом изображении показан логотип .NET/C# (для классического приложения)](media/sample-v2-code/logo_NETcore.png) | [Интерактивное приложение с WAM](msal-authentication-flows.md#interactive) |[dotnet-native-uwp-wam](https://github.com/azure-samples/active-directory-dotnet-native-uwp-wam) |  |
+| Классическое (консольное) приложение с WAM  | ![На этом изображении показан логотип .NET/C# (для классического приложения)](media/sample-v2-code/logo_NETcore.png) | Интерактивный с использованием [диспетчера учетных веб-записей](/windows/uwp/security/web-account-manager) (WAM) |[dotnet-native-uwp-wam](https://github.com/azure-samples/active-directory-dotnet-native-uwp-wam) |  |
 | Классическое приложение (консольное)   | ![На этом изображении показан логотип Java](media/sample-v2-code/logo_java.png) | [Имя пользователя или пароль](msal-authentication-flows.md#usernamepassword) |[ms-identity-java-desktop](https://github.com/Azure-Samples/ms-identity-java-desktop/) |  |
 | Классическое приложение (консольное)   | ![На этом изображении показан логотип Python](media/sample-v2-code/logo_python.png) | [Имя пользователя или пароль](msal-authentication-flows.md#usernamepassword) |[ms-identity-python-desktop](https://github.com/Azure-Samples/ms-identity-python-desktop) |  |
-| Мобильное приложение (Android, iOS, UWP)   | ![На этом изображении показан логотип .NET/C# (для Xamarin)](media/sample-v2-code/logo_xamarin.png) | [интерактивный](msal-authentication-flows.md#interactive) |[xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) |  |
-| Мобильное приложение (iOS)       | ![На этом изображении показаны iOS/Objective-C или SWIFT](media/sample-v2-code/logo_iOS.png) | [интерактивный](msal-authentication-flows.md#interactive) |[ios-swift-objc-native-v2](https://github.com/azure-samples/active-directory-ios-swift-native-v2) </p> [ios-native-nxoauth2-v2](https://github.com/azure-samples/active-directory-ios-native-nxoauth2-v2) |  |
-| Классическое приложение (для macOS)       | macOS | [интерактивный](msal-authentication-flows.md#interactive) |[macOS-swift-objc-native-v2](https://github.com/Azure-Samples/ms-identity-macOS-swift-objc) |  |
-| Мобильное приложение (для Android и Java)   | ![На этом изображении показан логотип Android](media/sample-v2-code/logo_Android.png) | [интерактивный](msal-authentication-flows.md#interactive) |  [android-Java](https://github.com/Azure-Samples/ms-identity-android-java) |  |
-| Мобильное приложение (для Android и Kotlin)   | ![На этом изображении показан логотип Android](media/sample-v2-code/logo_Android.png) | [интерактивный](msal-authentication-flows.md#interactive) |  [android-Kotlin](https://github.com/Azure-Samples/ms-identity-android-kotlin) |  |
+| Мобильное приложение (Android, iOS, UWP)   | ![На этом изображении показан логотип .NET/C# (для Xamarin)](media/sample-v2-code/logo_xamarin.png) | [Код авторизации](msal-authentication-flows.md#authorization-code) |[xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) |  |
+| Мобильное приложение (iOS)       | ![На этом изображении показаны iOS/Objective-C или SWIFT](media/sample-v2-code/logo_iOS.png) | [Код авторизации](msal-authentication-flows.md#authorization-code) |[ios-swift-objc-native-v2](https://github.com/azure-samples/active-directory-ios-swift-native-v2) </p> [ios-native-nxoauth2-v2](https://github.com/azure-samples/active-directory-ios-native-nxoauth2-v2) |  |
+| Классическое приложение (для macOS)       | macOS | [Код авторизации](msal-authentication-flows.md#authorization-code) |[macOS-swift-objc-native-v2](https://github.com/Azure-Samples/ms-identity-macOS-swift-objc) |  |
+| Мобильное приложение (для Android и Java)   | ![На этом изображении показан логотип Android](media/sample-v2-code/logo_Android.png) | [Код авторизации](msal-authentication-flows.md#authorization-code) |  [android-Java](https://github.com/Azure-Samples/ms-identity-android-java) |  |
+| Мобильное приложение (для Android и Kotlin)   | ![На этом изображении показан логотип Android](media/sample-v2-code/logo_Android.png) | [Код авторизации](msal-authentication-flows.md#authorization-code) |  [android-Kotlin](https://github.com/Azure-Samples/ms-identity-android-kotlin) |  |
 
 ## <a name="daemon-applications"></a>Управляющие программы
 

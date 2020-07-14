@@ -11,12 +11,12 @@ ms.date: 12/05/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c922b95154f16a199660bcd5e58f792e46eade7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d4fbfe9222971ccd1d28ceaddc91b137c6106e12
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85360611"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146749"
 ---
 # <a name="tutorial-integrate-a-single-forest-with-a-single-azure-ad-tenant"></a>Руководство по Интеграция одного леса с одним клиентом Azure AD
 
@@ -107,14 +107,14 @@ ms.locfileid: "85360611"
 1.  Войдите на портал Azure AD.
 2.  В меню **Azure Active Directory**
 3.  Щелкните **Azure AD Connect**.
-4.  Выберите **Управление подготовкой (предварительная версия)** 
-![](media/how-to-configure/manage1.png).
-5.  Щелкните **Новая конфигурация**
-![](media/tutorial-single-forest/configure1.png).
+4.  Щелкните ссылку **Управление подготовкой (предварительная версия)** 
+![Снимок экрана со ссылкой "Управление подготовкой (предварительная версия)".](media/how-to-configure/manage1.png)
+5.  Выберите элемент **Новая конфигурация**
+![Снимок экрана "Подготовка Azure AD (предварительная версия)" с выделенной ссылкой "Новая конфигурация".](media/tutorial-single-forest/configure1.png)
 7.  На экране конфигурации перейдите к разделу **Сообщение электронной почты с уведомлением**, переместите селектор в положение **Включить** и щелкните **Сохранить**.
-![](media/tutorial-single-forest/configure2.png)
+![Снимок экрана "Настройка" с указанным адресом электронной почты для уведомлений и переключателем, установленным в положение "Включить".](media/tutorial-single-forest/configure2.png)
 1.  Теперь состояние конфигурации должно быть **Healthy** (Работоспособное).
-![](media/how-to-configure/manage4.png)
+![Снимок экрана "Подготовка Azure AD (предварительная версия)", на котором отображается состояние "Работоспособна".](media/how-to-configure/manage4.png)
 
 ## <a name="verify-users-are-created-and-synchronization-is-occurring"></a>Проверка создания пользователей и выполнения синхронизации
 Теперь вы проверите, были ли пользователи из локального каталога синхронизированы и добавлены в клиент Azure AD.  Имейте в виду, что эта операция может занять несколько часов.  Чтобы проверить синхронизацию пользователей, выполните указанные ниже действия.

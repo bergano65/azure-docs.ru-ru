@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 01/28/2020
 ms.author: dech
 ms.reviewer: sngun
-ms.openlocfilehash: ba90bb89d731c343dfcb3778433d444f2d9a617a
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 447f999f48edb9696c74ec5decb1109eefb964d7
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86025868"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206968"
 ---
 # <a name="set-up-a-cicd-pipeline-with-the-azure-cosmos-db-emulator-build-task-in-azure-devops"></a>Настройка конвейера CI/CD с использованием задачи сборки эмулятора Azure Cosmos DB в Azure DevOps
 
@@ -37,7 +37,7 @@ ms.locfileid: "86025868"
 
 ## <a name="create-a-build-definition"></a>Создание определения сборки
 
-Теперь, когда расширение установлено, войдите в учетную запись Azure DevOps и найдите проект на панели мониторинга проектов. Вы можете добавить [конвейер сборки](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer?view=vsts&tabs=new-nav) в проект или изменить имеющийся. Если у вас уже есть конвейер сборки, переходите к разделу, посвященному [добавлению задачи конвейера сборки эмулятора в определение сборки](#addEmulatorBuildTaskToBuildDefinition).
+Теперь, когда расширение установлено, войдите в организацию Azure DevOps и найдите проект на панели мониторинга проектов. Вы можете добавить [конвейер сборки](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer?view=vsts&tabs=new-nav) в проект или изменить имеющийся. Если у вас уже есть конвейер сборки, переходите к разделу, посвященному [добавлению задачи конвейера сборки эмулятора в определение сборки](#addEmulatorBuildTaskToBuildDefinition).
 
 1. Чтобы создать определение сборки, откройте в Azure DevOps вкладку **Сборки**. Щелкните **+Создать.** \> **Новый конвейер сборки**
 
@@ -68,6 +68,24 @@ Start-CosmosDbEmulator
    :::image type="content" source="./media/tutorial-setup-ci-cd/addExtension_3.png" alt-text="Добавление задачи сборки эмулятора в определение сборки":::
 
 В этом руководстве вы добавите задачи в начало, чтобы обеспечить доступность эмулятора перед выполнением наших тестов.
+
+### <a name="add-the-task-using-yaml"></a>Добавление задачи с помощью YAML
+
+Этот шаг является необязательным и необходим только при настройке конвейера CI/CD с помощью задачи YAML. В таких случаях можно определить задачу YAML, как показано в следующем коде:
+
+```yml
+- task: azure-cosmosdb.emulator-public-preview.run-cosmosdbemulatorcontainer.CosmosDbEmulator@2
+  displayName: 'Run Azure Cosmos DB Emulator'
+
+- script: yarn test
+  displayName: 'Run API tests (Cosmos DB)'
+  env:
+    HOST: $(CosmosDbEmulator.Endpoint)
+    # Hardcoded key for emulator, not a secret
+    AUTH_KEY: C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==
+    # The emulator uses a self-signed cert, disable TLS auth errors
+    NODE_TLS_REJECT_UNAUTHORIZED: '0'
+```
 
 ## <a name="configure-tests-to-use-the-emulator"></a>Настройка использования эмулятора в тестах
 
@@ -155,24 +173,6 @@ namespace todo.Tests
 После завершения сборки вы увидите, что все тесты из задачи сборки успешно выполнены для эмулятора Cosmos DB.
 
 :::image type="content" source="./media/tutorial-setup-ci-cd/buildComplete_1.png" alt-text="Сохранение и запуск сборки":::
-
-## <a name="set-up-using-yaml"></a>Настройка с помощью YAML
-
-При настройке конвейера CI/CD с помощью задачи YAML задачу можно определить, как показано в следующем коде:
-
-```yml
-- task: azure-cosmosdb.emulator-public-preview.run-cosmosdbemulatorcontainer.CosmosDbEmulator@2
-  displayName: 'Run Azure Cosmos DB Emulator'
-
-- script: yarn test
-  displayName: 'Run API tests (Cosmos DB)'
-  env:
-    HOST: $(CosmosDbEmulator.Endpoint)
-    # Hardcoded key for emulator, not a secret
-    AUTH_KEY: C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==
-    # The emulator uses a self-signed cert, disable TLS auth errors
-    NODE_TLS_REJECT_UNAUTHORIZED: '0'
-```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

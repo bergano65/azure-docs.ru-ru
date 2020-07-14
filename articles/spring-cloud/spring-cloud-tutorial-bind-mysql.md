@@ -1,21 +1,21 @@
 ---
-title: Учебник. Как привязать экземпляр Базы данных Azure для MySQL к приложению Azure Spring Cloud
-description: В этом учебнике показано, как привязать экземпляр Базы данных Azure для MySQL к приложению Azure Spring Cloud.
+title: Привязка экземпляра Базы данных Azure для MySQL к приложению Azure Spring Cloud
+description: Сведения о том, как привязать экземпляр Базы данных Azure для MySQL к приложению Azure Spring Cloud.
 author: bmitchell287
 ms.service: spring-cloud
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 11/04/2019
 ms.author: brendm
-ms.openlocfilehash: 657aa70d77fd1af9fd2121a3e98ea3aca7773642
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6f2c9a46d8b17a53d2dc43c0c8313c9357f502a1
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76277540"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86142169"
 ---
-# <a name="tutorial-bind-an-azure-database-for-mysql-instance-to-your-azure-spring-cloud-application"></a>Руководство по привязке экземпляра Базы данных Azure для MySQL к приложению Azure Spring Cloud 
+# <a name="bind-an-azure-database-for-mysql-instance-to-your-azure-spring-cloud-application"></a>привязке экземпляра Базы данных Azure для MySQL к приложению Azure Spring Cloud 
 
-С помощью Azure Spring Cloud можно автоматически привязать выбранные службы Azure к приложениям, не настраивая приложение Spring Boot вручную. Изучив этот учебник, вы узнаете, как привязать свое приложение к экземпляру Базы данных Azure для MySQL.
+С помощью Azure Spring Cloud можно автоматически привязать выбранные службы Azure к приложениям, не настраивая приложение Spring Boot вручную. Из этой статьи вы узнаете, как привязать приложение к экземпляру Базы данных Azure для MySQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -61,7 +61,4 @@ ms.locfileid: "76277540"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом учебнике описывается, как привязать приложение Azure Spring Cloud к экземпляру Базы данных Azure для MySQL.  Дополнительные сведения об управлении службой Azure Spring Cloud см. в приведенной ниже статье.
-
-> [!div class="nextstepaction"]
-> [Discover and register your Spring Cloud services](spring-cloud-service-registration.md) (Обнаружение и регистрация служб Spring Cloud)
+В этой статье описывается, как привязать приложение Azure Spring Cloud к экземпляру Базы данных Azure для MySQL. Дополнительные сведения о привязке служб к приложению см. в статье [Привязка Базы данных Azure Cosmos DB к приложению Azure Spring Cloud](spring-cloud-tutorial-bind-cosmos.md).

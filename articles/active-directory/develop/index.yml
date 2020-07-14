@@ -1,232 +1,102 @@
 ### YamlMime:Landing
 title: Документация по платформе удостоверений Майкрософт
-summary: Платформа удостоверений Майкрософт позволяет разработчикам создавать приложения, которые обеспечивают вход с использованием любых удостоверений Майкрософт и получение маркеров для вызова API Майкрософт (например, Microsoft Graph) и пользовательских API. Это полнофункциональная платформа, которая включает стандартные совместимые службы аутентификации OAuth 2.0 и OpenID Connect, библиотеки с открытым кодом, возможности регистрации и настройки приложений, обзорную и справочную документацию, примеры для быстрого запуска, примеры кода, а также материалы и практические руководства.
+summary: Платформа удостоверений Майкрософт — это служба аутентификации, библиотеки с открытым исходным кодом и средства управления приложениями. Узнайте, как создавать современные основанные на стандартах решения для аутентификации с помощью наших примеров, руководств и примеров кода. Создавайте приложения, в которые пользователи и клиенты входят с использованием своих удостоверений Майкрософт или социальных учетных записей, и авторизуйте доступ к вашим API или API Майкрософт, таким как Microsoft Graph.
 metadata:
   ms.topic: landing-page
-  ms.date: 06/22/2019
+  ms.date: 07/13/2020
   author: CelesteDG
   ms.author: celested
   ms.service: active-directory
   ms.subservice: develop
   ms.workload: identity
-  ms.openlocfilehash: d1f3958fd47f6e3e5f3971697de546b4cb738b3d
-  ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
+  ms.openlocfilehash: 689fb9953f6de9c717d774e222824c5b3701527e
+  ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 06/17/2020
-  ms.locfileid: "84886903"
+  ms.lasthandoff: 07/10/2020
+  ms.locfileid: "86230355"
 landingContent:
 - title: Общие сведения о платформе удостоверений Майкрософт
   linkLists:
   - linkListType: overview
     links:
-    - text: Платформа удостоверений Майкрософт (версия 2.0)
+    - text: Что такое платформа удостоверений Майкрософт?
       url: v2-overview.md
-    - text: Развитие платформы удостоверений Майкрософт
-      url: about-microsoft-identity-platform.md
-    - text: Перенос приложений в MSAL
+    - text: Примеры кода
+      url: sample-v2-code.md
+    - text: Перенос приложений ADAL в MSAL
       url: msal-migration.md
-    - text: Azure Active Directory для разработчиков (версия 1.0)
-      url: ../azuread-dev/v1-overview.md
-  - linkListType: concept
+- title: Базовые понятия
+  linkLists:
+  - linkListType: learn
     links:
-    - text: Основные сведения об аутентификации
-      url: authentication-scenarios.md
+    - text: Основы аутентификации
+      url: authentication-vs-authorization.md
     - text: Потоки аутентификации и сценарии приложений
       url: authentication-flows-app-scenarios.md
     - text: Рекомендации
       url: identity-platform-integration-checklist.md
+- title: Серия обучающих видео
+  linkLists:
   - linkListType: video
     links:
-    - text: Видеоматериалы. Платформа удостоверений для разработчиков
-      url: identity-videos.md
-- title: Создание одностраничного приложения
+    - text: Платформа удостоверений для разработчиков
+      url: identity-videos.md#microsoft-identity-platform-for-developers
+    - text: Основы проверки подлинности
+      url: identity-videos.md#authentication-fundamentals
+    - text: 'One Dev Question: сведения о платформе'
+      url: identity-videos.md#microsoft-identity-platform-basics
+- title: Одностраничное приложение (SPA)
   linkLists:
   - linkListType: get-started
     links:
-    - text: Обзор сценария
-      url: scenario-spa-overview.md
-  - linkListType: quickstart
-    links:
-    - text: Код проверки подлинности (JavaScript)
-      url: quickstart-v2-javascript-auth-code.md
-    - text: Неявное предоставление разрешения (JavaScript)
-      url: quickstart-v2-javascript.md
     - text: Angular
       url: quickstart-v2-angular.md
-  - linkListType: tutorial
-    links:
-    - text: Код проверки подлинности (JavaScript)
-      url: tutorial-v2-javascript-auth-code.md
-    - text: Неявное предоставление разрешения (JavaScript)
-      url: tutorial-v2-javascript-spa.md
-  - linkListType: download
-    links:
-    - text: Примеры — JavaScript, Angular
-      url: sample-v2-code.md#single-page-applications
-    - text: Пример — SPA и Azure AD B2C
-      url: https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp
-- title: Создание веб-приложения, которое поддерживает вход пользователей
+    - text: Поток кода проверки подлинности (JavaScript)
+      url: quickstart-v2-javascript-auth-code.md
+    - text: Поток неявного предоставления разрешения (JavaScript)
+      url: quickstart-v2-javascript.md
+- title: Веб-приложение
   linkLists:
   - linkListType: get-started
     links:
-    - text: Обзор сценария
-      url: scenario-web-app-sign-user-overview.md
-  - linkListType: quickstart
-    links:
-    - text: ASP.NET Core
-      url: quickstart-v2-aspnet-core-webapp.md
     - text: ASP.NET
       url: quickstart-v2-aspnet-webapp.md
-    - text: Java
-      url: quickstart-v2-java-webapp.md
+    - text: ASP.NET Core
+      url: quickstart-v2-aspnet-core-webapp.md
     - text: Python
       url: quickstart-v2-python-webapp.md
-  - linkListType: tutorial
-    links:
-    - text: ASP.NET Core
-      url: https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2
-  - linkListType: download
-    links:
-    - text: 'Примеры: ASP.NET Core, ASP.NET, Java, Python'
-      url: sample-v2-code.md#web-applications
-- title: Создание веб-приложения, которое вызывает веб-API
+- title: Мобильные и нативные приложения
   linkLists:
   - linkListType: get-started
     links:
-    - text: Обзор сценария
-      url: scenario-web-app-call-api-overview.md
-  - linkListType: quickstart
-    links:
-    - text: Java
-      url: quickstart-v2-java-webapp.md
-    - text: Python
-      url: quickstart-v2-python-webapp.md
-  - linkListType: tutorial
-    links:
-    - text: ASP.NET Core
-      url: https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2#scope-of-this-tutorial
-  - linkListType: download
-    links:
-    - text: 'Примеры: ASP.NET Core, ASP.NET, Node.js, Ruby, Java, Python'
-      url: sample-v2-code.md#web-applications
-- title: Создание защищенного веб-API
-  linkLists:
-  - linkListType: get-started
-    links:
-    - text: Обзор сценария
-      url: scenario-protected-web-api-overview.md
-  - linkListType: tutorial
-    links:
-    - text: Веб-API ASP.NET Core
-      url: https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2
-  - linkListType: download
-    links:
-    - text: Пример — ASP.NET
-      url: https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2
-- title: Веб-API, которые вызывают веб-API
-  linkLists:
-  - linkListType: get-started
-    links:
-    - text: Обзор сценария
-      url: scenario-web-api-call-api-overview.md
-  - linkListType: tutorial
-    links:
-    - text: Веб-API ASP.NET Core, который вызывает Microsoft Graph
-      url: https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/2.%20Web%20API%20now%20calls%20Microsoft%20Graph
-    - text: Веб-API Java, который вызывает Microsoft Graph
-      url: https://github.com/Azure-Samples/ms-identity-java-webapi
-- title: Создание классического приложения, которое вызывает веб-API
-  linkLists:
-  - linkListType: get-started
-    links:
-    - text: Обзор сценария
-      url: scenario-desktop-overview.md
-  - linkListType: quickstart
-    links:
-    - text: Получение маркера и вызов API Microsoft Graph (классическое приложение Windows)
-      url: quickstart-v2-windows-desktop.md
-    - text: Получение маркера и вызов API Microsoft Graph (UWP)
-      url: quickstart-v2-uwp.md
-  - linkListType: tutorial
-    links:
-    - text: Вызов API Microsoft Graph (классическое приложение Windows)
-      url: tutorial-v2-windows-desktop.md
-    - text: Вызов API Microsoft Graph (UWP)
-      url: tutorial-v2-windows-uwp.md
-  - linkListType: download
-    links:
-    - text: 'Пример: .NET, .NET Core, Java, Python'
-      url: sample-v2-code.md#desktop-and-mobile-public-client-apps
-- title: Создание управляющей программы, которая вызывает веб-API
-  linkLists:
-  - linkListType: get-started
-    links:
-    - text: Обзор сценария
-      url: scenario-daemon-overview.md
-  - linkListType: quickstart
-    links:
-    - text: Получение маркера и вызов API Microsoft Graph (консоль .NET Core)
-      url: quickstart-v2-netcore-daemon.md
-    - text: Получение маркера и вызов API Microsoft Graph (веб-приложение ASP.NET)
-      url: https://github.com/Azure-Samples/ms-identity-aspnet-daemon-webapp
-  - linkListType: download
-    links:
-    - text: 'Примеры: консоль ASP.NET, веб-приложение ASP.NET, Java, Python'
-      url: sample-v2-code.md#daemon-applications
-- title: Создание мобильного приложения, которое вызывает веб-API
-  linkLists:
-  - linkListType: get-started
-    links:
-    - text: Обзор сценария
-      url: scenario-mobile-overview.md
-  - linkListType: quickstart
-    links:
-    - text: Получение маркера и вызов API Microsoft Graph (Android)
+    - text: Android
       url: quickstart-v2-android.md
-    - text: Получение маркера и вызов API Microsoft Graph (iOS)
+    - text: iOS и macOS
       url: quickstart-v2-ios.md
-    - text: Получение маркера и вызов API Microsoft Graph (Xamarin iOS и Android)
-      url: https://github.com/Azure-Samples/active-directory-xamarin-native-v2
-  - linkListType: tutorial
-    links:
-    - text: Обеспечение входа пользователей и вызов API Microsoft Graph (Android)
-      url: tutorial-v2-android.md
-    - text: Обеспечение входа пользователей и вызов API Microsoft Graph (iOS)
-      url: tutorial-v2-ios.md
-  - linkListType: download
-    links:
-    - text: Пример — Android, iOS, Xamarin
-      url: sample-v2-code.md#desktop-and-mobile-public-client-apps
-- title: Вызов API Microsoft Graph
+    - text: Классическое приложение Windows (WPF)
+      url: quickstart-v2-windows-desktop.md
+- title: Защита веб-API
   linkLists:
-  - linkListType: overview
+  - linkListType: get-started
     links:
-    - text: Сведения о Microsoft Graph
-      url: https://docs.microsoft.com/graph/overview
-  - linkListType: quickstart
-    links:
-    - text: Настройка и подготовка к работе за три минуты
-      url: https://developer.microsoft.com/graph/get-started
-  - linkListType: learn
-    links:
-    - text: Использование API
-      url: https://docs.microsoft.com/graph/use-the-api
-    - text: REST API Microsoft Graph, версия 1.0
-      url: https://docs.microsoft.com/graph/api/overview?toc=.%2Fref%2Ftoc.json&view=graph-rest-1.0
-    - text: REST API Microsoft Graph, бета-версия
-      url: https://docs.microsoft.com/graph/api/overview?toc=.%2Fref%2Ftoc.json&view=graph-rest-beta
-  - linkListType: deploy
-    links:
-    - text: Песочница Graph
-      url: https://developer.microsoft.com/graph/graph-explorer/
-- title: Создание приложения для клиентов, при входе в которое используются удостоверения социальных сетей и локальные удостоверения
+    - text: ASP.NET
+      url: quickstart-v2-dotnet-native-aspnet.md
+    - text: ASP.NET Core
+      url: https://docs.microsoft.com/samples/azure-samples/active-directory-dotnet-native-aspnetcore-v2/calling-an-aspnet-core-web-api-from-a-wpf-application-using-azure-ad-v2/
+- title: Microsoft Graph
   linkLists:
-  - linkListType: overview
+  - linkListType: get-started
     links:
-    - text: Общие сведения об Azure AD B2C
-      url: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-overview
-  - linkListType: tutorial
+    - text: Использование API Microsoft Graph
+      url: microsoft-graph-intro.md
+    - text: Общие сведения об аутентификации Microsoft Graph
+      url: https://docs.microsoft.com/graph/auth/
+- title: SAML 2.0
+  linkLists:
+  - linkListType: get-started
     links:
-    - text: Добавление поставщиков удостоверений в приложения в Azure AD B2C
-      url: https://docs.microsoft.com/azure/active-directory-b2c/tutorial-add-identity-providers
+    - text: Как в Azure AD используется протокол SAML
+      url: active-directory-saml-protocol-reference.md
+    - text: Единый вход SAML в Azure AD
+      url: single-sign-on-saml-protocol.md

@@ -270,6 +270,8 @@
           href: connector-db2.md
         - name: Формат текста с разделителями
           href: format-delimited-text.md
+        - name: Формат изменений
+          href: format-delta.md
         - name: Drill
           href: connector-drill.md
         - name: "Dynamics\_365"
@@ -727,6 +729,8 @@
           href: ssis-integration-runtime-management-troubleshoot.md
         - name: "Выполнение пакетов в Azure-SSIS\_IR"
           href: ssis-integration-runtime-ssis-activity-faq.md
+        - name: "Диагностика подключений в Azure-SSIS\_IR"
+          href: ssis-integration-runtime-diagnose-connectivity-faq.md
 - name: Справочник
   items:
     - name: Скрипт потока данных

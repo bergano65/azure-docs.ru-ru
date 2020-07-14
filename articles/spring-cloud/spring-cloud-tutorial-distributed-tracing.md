@@ -1,17 +1,17 @@
 ---
-title: Учебник. Использование распределенной трассировки с помощью Azure Spring Cloud
-description: В этом учебнике показано, как использовать распределенную трассировку в Spring Cloud с помощью Azure Application Insights.
+title: Использование распределенной трассировки в Azure Spring Cloud
+description: Сведения о том, как использовать распределенную трассировку в Spring Cloud с помощью Azure Application Insights.
 author: bmitchell287
 ms.service: spring-cloud
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 10/06/2019
 ms.author: brendm
-ms.openlocfilehash: 0815aa084462d1b829d64cd7c5d6fa7cebf534fc
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: ccaf58465c1ade0228daea2b535d06fb6168d64f
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78273213"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86142124"
 ---
 # <a name="use-distributed-tracing-with-azure-spring-cloud"></a>Использование распределенной трассировки в Azure Spring Cloud
 
@@ -102,7 +102,4 @@ spring.sleuth.sampler.probability=0.5
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом учебнике вы узнали, как включить и изучить распределенную трассировку в Azure Spring Cloud. Чтобы узнать, как привязать приложение к базе данных Azure Cosmos DB, перейдите к следующему учебнику.
-
-> [!div class="nextstepaction"]
-> [Узнайте, как настроить привязку к базе данных Azure Cosmos DB](spring-cloud-tutorial-bind-cosmos.md)
+Из этой статьи вы узнали, как включить распределенную трассировку в Azure Spring Cloud, и ознакомились с ее возможностями. Дополнительные сведения о привязке служб к приложению см. в статье [Привязка Базы данных Azure Cosmos DB к приложению Azure Spring Cloud](spring-cloud-tutorial-bind-cosmos.md).

@@ -921,6 +921,8 @@
                   href: virtual-machines/windows/storage-configuration.md
                 - name: Интеграция с Azure Key Vault
                   href: virtual-machines/windows/azure-key-vault-integration-configure.md
+                - name: Миграция хранилища в SSD (цен. категория "Ультра")
+                  href: virtual-machines/windows/storage-migrate-to-ultradisk.md
                 - name: Регистрация через поставщика ресурсов виртуальной машины SQL
                   displayName: 'resource provider, registration'
                   items:
