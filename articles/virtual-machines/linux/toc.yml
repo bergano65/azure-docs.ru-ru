@@ -477,6 +477,8 @@
                   items:
                     - name: Из виртуальной машины
                       href: ../image-version-vm-cli.md
+                    - name: На основе VHD или моментального снимка
+                      href: ../image-version-snapshot-cli.md
                     - name: Перенос из управляемого образа
                       href: ../image-version-managed-image-cli.md
                     - name: Копирование из другой коллекции
@@ -499,6 +501,8 @@
                   items:
                     - name: Из виртуальной машины
                       href: ../image-version-vm-powershell.md
+                    - name: На основе VHD или моментального снимка
+                      href: ../image-version-snapshot-powershell.md
                     - name: Перенос из управляемого образа
                       href: ../image-version-managed-image-powershell.md
                     - name: Копирование из другой коллекции
@@ -547,6 +551,8 @@
               href: 'https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md'
         - name: Поиск и использование образов
           href: cli-ps-findimage.md
+        - name: Сведения о плане покупки
+          href: ../marketplace-images.md
         - name: Запись управляемого образа виртуальной машины
           href: capture-image.md
         - name: Создание образа с помощью Packer
@@ -945,6 +951,16 @@
           href: disks-incremental-snapshots-portal.md
         - name: Резервное копирование неуправляемых дисков
           href: incremental-snapshots.md
+        - name: Шифрование
+          items:
+            - name: "Активация шифрования в узле\_— CLI"
+              href: disks-enable-host-based-encryption-cli.md
+            - name: "Активация управляемых клиентом ключей\_— CLI"
+              href: disks-enable-customer-managed-keys-cli.md
+            - name: "Активация управляемых клиентом ключей\_— портал"
+              href: disks-enable-customer-managed-keys-portal.md
+            - name: Активация шифрования неактивных данных
+              href: disks-enable-double-encryption-at-rest-cli.md
         - name: Миграция и преобразование
           items:
             - name: Миграция в хранилище ценовой категории "Премиум" с помощью Azure Site Recovery

@@ -5,6 +5,8 @@
   items:
     - name: Что такое управление приложениями?
       href: what-is-application-management.md
+    - name: Что собой представляет единый вход?
+      href: what-is-single-sign-on.md
 - name: Краткие руководства
   items:
     - name: Просмотр приложений
@@ -19,6 +21,8 @@
       href: delete-application-portal.md
 - name: Учебники
   items:
+    - name: 'Добавление приложения, не указанного в коллекции'
+      href: add-non-gallery-app.md
     - name: 'Интегрированные приложения из коллекции (например, ServiceNow, Salesforce, Dropbox)'
       href: /azure/active-directory/saas-apps/
     - name: Добавление локального приложения с помощью прокси приложения
@@ -46,8 +50,6 @@
               href: developer-guidance-for-integrating-applications.md
         - name: Единый вход
           items:
-            - name: Что собой представляет единый вход
-              href: what-is-single-sign-on.md
             - name: Включение единого входа для мультитенантного приложения
               href: isv-sso-content.md
             - name: Создание клиента Azure для мультитенантного приложения
@@ -103,10 +105,6 @@
   items:
     - name: Облачные приложения и единый вход
       items:
-        - name: Добавление облачного приложения
-          items:
-            - name: Добавление приложения не из коллекции
-              href: add-non-gallery-app.md
         - name: Настройка единого входа
           items:
             - name: Настройка единого входа на основе SAML
@@ -143,6 +141,8 @@
               href: configure-admin-consent-workflow.md
             - name: Назначение приложению пользователя или группы
               href: assign-user-or-group-access-portal.md
+            - name: 'Проверка разрешений, предоставляемых приложениям'
+              href: manage-application-permissions.md
             - name: Создание коллекций в разделе "Мои приложения"
               href: access-panel-collections.md
             - name: Использование самостоятельного доступа к приложениям

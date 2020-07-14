@@ -78,16 +78,22 @@
       href: reference-service-limits.md
     - name: API и SDK
       items:
+        - name: Справочник по REST API
+          href: 'https://docs.microsoft.com/rest/api/azure-digitaltwins/'
         - name: Уровень управления
           items:
             - name: Swagger
               href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins'
             - name: "Пакет SDK для .NET (C#)\_— NuGet"
               href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.DigitalTwins/1.0.0-preview.1'
+            - name: "Пакет SDK для .NET (C#)\_— справка"
+              href: 'https://docs.microsoft.com/dotnet/api/overview/azure/digitaltwins/management?view=azure-dotnet-preview'
             - name: "Пакет SDK для .NET (C#)\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Microsoft.Azure.Management.DigitalTwins'
             - name: Пакет SDK для Java
               href: 'https://search.maven.org/artifact/com.microsoft.azure.digitaltwins.v2020_03_01_preview/azure-mgmt-digitaltwins'
+            - name: "Пакет SDK для Java\_— справочник"
+              href: 'https://docs.microsoft.com/java/api/overview/azure/digitaltwins/management?view=azure-java-preview'
             - name: "Пакет SDK для Java\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins'
             - name: Пакет SDK для JavaScript
@@ -102,14 +108,12 @@
               href: 'https://github.com/Azure/azure-sdk-for-go/tree/master/services/preview/digitaltwins/mgmt/2020-03-01-preview/digitaltwins'
         - name: Плоскость данных
           items:
-            - name: Справочник по REST API
-              href: 'https://docs.microsoft.com/rest/api/azure-digitaltwins/'
             - name: Swagger
               href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/data-plane/Microsoft.DigitalTwins'
-            - name: "Пакет SDK для .NET (C#)\_— справка"
-              href: 'https://docs.microsoft.com/dotnet/api/overview/azure/digitaltwins?view=azure-dotnet-preview'
             - name: "Пакет SDK для .NET (C#)\_— NuGet"
               href: 'https://www.nuget.org/packages/Azure.DigitalTwins.Core'
+            - name: "Пакет SDK для .NET (C#)\_— справка"
+              href: 'https://docs.microsoft.com/dotnet/api/overview/azure/digitaltwins?view=azure-dotnet-preview'
             - name: "Пакет SDK для .NET (C#)\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core'
     - name: CLI Digital Twins
@@ -126,10 +130,20 @@
           href: 'https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-dtdl'
         - name: "Библиотека средства синтаксического анализа DTDL\_— NuGet"
           href: 'https://www.nuget.org/packages/Microsoft.Azure.DigitalTwins.Parser/'
-        - name: Пример проверяющего элемента управления DTDL
-          href: 'https://github.com/Azure-Samples/dtdl-validator'
+        - name: Проверяющий элемент управления DTDL (пример)
+          href: 'https://docs.microsoft.com/samples/azure-samples/dtdl-validator/dtdl-validator/'
         - name: Спецификация DTMI
           href: 'https://github.com/Azure/digital-twin-model-identifier'
+    - name: Средства и примеры проектов
+      items:
+        - name: Служба симуляторов устройств
+          href: 'https://github.com/Azure/device-simulation-dotnet/tree/master'
+        - name: Примеры Azure Digital Twins
+          href: 'https://docs.microsoft.com/samples/azure-samples/digital-twins-samples/digital-twins-samples/'
+        - name: Обозреватель Azure Digital Twins (примеры)
+          href: 'https://github.com/Azure-Samples/digital-twins-explorer'
+        - name: Проверяющий элемент управления DTDL (пример)
+          href: 'https://docs.microsoft.com/samples/azure-samples/dtdl-validator/dtdl-validator/'
     - name: Инструменты Azure
       items:
         - name: Azure Cloud Shell

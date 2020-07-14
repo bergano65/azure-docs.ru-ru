@@ -23,7 +23,7 @@
     - name: Подключение к ресурсам Виртуального рабочего стола Windows
       items:
         - name: Подключение к клиенту Windows Desktop
-          href: connect-windows-7-and-10.md
+          href: connect-windows-7-10.md
         - name: Подключение к веб-клиенту
           href: connect-web.md
         - name: Подключение к клиенту Android
@@ -38,6 +38,8 @@
       items:
         - name: PowerShell
           href: create-host-pools-powershell.md
+        - name: "Развертывание виртуальной машины Windows\_7"
+          href: deploy-windows-7-virtual-machine.md
         - name: Развертывание узла сеансов на основе GPU
           href: configure-vm-gpu.md
         - name: Развертывание существующего пула узлов
@@ -90,6 +92,8 @@
       href: language-packs.md
 - name: Основные понятия
   items:
+    - name: Список надежных URL-адресов
+      href: safe-url-list.md
     - name: Среда Виртуального рабочего стола Windows
       href: environment-setup.md
     - name: Определение задержки подключения пользователей
