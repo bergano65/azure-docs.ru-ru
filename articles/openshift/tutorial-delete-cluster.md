@@ -7,25 +7,25 @@ ms.topic: tutorial
 ms.service: container-service
 ms.date: 04/24/2020
 ms.openlocfilehash: 2de60b90eb6fb75ef013a2fd8785f1b8b616fba6
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82232144"
 ---
-# <a name="tutorial-delete-an-azure-red-hat-openshift-4-cluster"></a>Руководство. Удаление кластера Azure Red Hat OpenShift 4
+# <a name="tutorial-delete-an-azure-red-hat-openshift-4-cluster"></a>Руководство по Удаление кластера Azure Red Hat OpenShift 4
 
-В этом руководстве, часть 3 из трех, был удален кластер Azure Red Hat OpenShift с OpenShift 4. Вы научитесь:
+В этом руководстве (третья часть из трех) описывается, как удалить кластер Azure Red Hat OpenShift с OpenShift 4. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * удаление кластера Azure Red Hat OpenShift.
 
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
-В предыдущих руководствах был создан кластер Azure Red Hat OpenShift и подключен с помощью веб-консоли OpenShift. Если вы не выполнили эти действия и хотите следовать инструкциям, начните с [учебника 1. Создание кластера Azure Red Hat Openshift 4.](tutorial-create-cluster.md)
+В предыдущих руководствах вы создали кластер Azure Red Hat OpenShift и подключились к нему с помощью веб-консоли OpenShift. Если вы не выполнили эти действия, вы можете начать с руководства 1 [Создание кластера Azure Red Hat OpenShift](tutorial-create-cluster.md).
 
-Если вы решили установить и использовать CLI локально, для работы с этим руководством вам потребуется Azure CLI версии 2.0.75 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.75 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -46,13 +46,13 @@ CLUSTER=yourclustername
 RESOURCE_GROUP=yourresourcegroup
 ```
 
-Используя эти значения, удалите кластер:
+Удалите свой кластер, используя эти значения:
 
 ```bash
 az aro delete --resource-group $RESOURCEGROUP --name $CLUSTER
 ```
 
-После этого вам будет предложено подтвердить удаление кластера. Подтвердите, введя `y`. Удаление кластера займет несколько минут. По завершении выполнения команды вся группа ресурсов и все ресурсы внутри нее (включая кластер) будут удалены.
+Появится запрос на подтверждение удаления кластера. Подтвердите, введя `y`. Удаление кластера займет несколько минут. После завершения выполнения команды вся группа ресурсов и ресурсы внутри нее, включая кластер, будут удалены.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

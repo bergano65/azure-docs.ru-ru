@@ -1,6 +1,6 @@
 ---
 title: Руководство по операциям извлечения, преобразования и загрузки (ETL) с помощью Interactive Query в Azure HDInsight
-description: Из этого руководства вы узнаете, как извлекать данные из набора необработанных данных формата CSV, преобразовывать их с помощью Interactive Query в HDInsight и загружать преобразованные данные в базу данных SQL Azure с помощью Apache Sqoop.
+description: Из этого руководства вы узнаете, как извлекать данные из набора необработанных данных формата CSV, преобразовывать их с помощью Interactive Query в HDInsight и загружать преобразованные данные в Базу данных SQL Azure с помощью Apache Sqoop.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,16 +8,16 @@ ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive,mvc
 ms.date: 07/02/2019
-ms.openlocfilehash: 431cd5efbb1087d99fc8521cec7a5c604856dac5
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: 5c5a3c9e66a4d25a84d7940f49ec332d57f4c818
+ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84021744"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85319197"
 ---
 # <a name="tutorial-extract-transform-and-load-data-using-interactive-query-in-azure-hdinsight"></a>Руководство по извлечению, преобразованию и загрузке данных с помощью интерактивного запроса в Azure HDInsight
 
-В этом руководстве показано, как скачать CSV-файл с общедоступными данными об авиарейсах, импортировать их в хранилище кластера HDInsight, а затем преобразовать эти данные с помощью Interactive Query в Azure HDInsight. После преобразования вы загрузите эти данные в базу данных SQL Azure с использованием [Apache Sqoop](https://sqoop.apache.org/).
+В этом руководстве показано, как скачать CSV-файл с общедоступными данными об авиарейсах, импортировать их в хранилище кластера HDInsight, а затем преобразовать эти данные с помощью Interactive Query в Azure HDInsight. После преобразования вы загрузите эти данные в Базу данных SQL Azure с использованием [Apache Sqoop](https://sqoop.apache.org/).
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -25,14 +25,14 @@ ms.locfileid: "84021744"
 > * загрузка образца данных о рейсах;
 > * Отправка данных в кластер HDInsight
 > * преобразование данных с помощью интерактивного запроса;
-> * создание таблицы в базе данных SQL Azure;
-> * экспорт данных в базу данных SQL Azure с помощью Sqoop.
+> * создание таблицы в Базе данных SQL Azure;
+> * использование Sqoop для экспорта данных в Базу данных SQL Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер интерактивного запроса в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Интерактивные запросы** для параметра **Тип кластера**.
 
-* База данных Azure SQL. Вы используете базу данных SQL Azure в качестве конечного хранилища данных. Если у вас нет базы данных SQL, см. сведения в статье [Создание базы данных SQL Azure на портале Azure](/azure/sql-database/sql-database-single-database-get-started).
+* База данных в службе "База данных SQL Azure". Вы используете базу данных в качестве конечного хранилища данных. Если у вас нет базы данных в Базе данных SQL Azure, вы можете создать ее, выполнив инструкции из статьи [Краткое руководство. Создание отдельной базы данных в Базе данных SQL Azure](/azure/sql-database/sql-database-single-database-get-started).
 
 * Клиент SSH. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
@@ -250,9 +250,9 @@ ms.locfileid: "84021744"
 
 4. Enter `exit` at the `1>` , чтобы выйти из служебной программы tsql.
 
-## <a name="export-data-to-sql-database-using-apache-sqoop"></a>Экспорт данных в базу данных SQL с помощью Apache Sqoop
+## <a name="export-data-to-sql-database-using-apache-sqoop"></a>Экспорт данных в Базу данных SQL с помощью Apache Sqoop
 
-В предыдущих разделах вы скопировали преобразованные данные в папку `/tutorials/flightdelays/output`. В этом разделе вы с помощью Sqoop экспортируете данные из папки `/tutorials/flightdelays/output` в созданную в базе данных SQL Azure таблицу.
+В предыдущих разделах вы скопировали преобразованные данные в папку `/tutorials/flightdelays/output`. В этом разделе вы с помощью Sqoop экспортируете данные из папки `/tutorials/flightdelays/output` в созданную в Базе данных SQL Azure таблицу.
 
 1. Проверьте, видно ли в Sqoop базу данных SQL, используя следующую команду:
 

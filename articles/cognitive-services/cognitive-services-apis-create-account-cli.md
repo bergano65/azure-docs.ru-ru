@@ -88,7 +88,7 @@ az group create \
 
 | Служба                    | Вид                      |
 |----------------------------|---------------------------|
-| Компьютерное зрение            | `ComputerVision`          |
+| API Компьютерного зрения            | `ComputerVision`          |
 | Прогнозирование Пользовательское визуальное распознавание | `CustomVision.Prediction` |
 | Пользовательское визуальное распознавание обучение   | `CustomVision.Training`   |
 | Распознавание лиц                       | `Face`                    |
@@ -99,11 +99,11 @@ az group create \
 
 | Служба            | Вид                  |
 |--------------------|-----------------------|
-| Автозаполнение Bing   | `Bing.Autosuggest.v7` |
+| API Автозаполнения Bing   | `Bing.Autosuggest.v7` |
 | Пользовательский поиск Bing | `Bing.CustomSearch`   |
-| Поиск сущностей Bing | `Bing.EntitySearch`   |
+| API Поиска сущностей Bing | `Bing.EntitySearch`   |
 | Поиск Bing        | `Bing.Search.v7`      |
-| Проверка орфографии Bing   | `Bing.SpellCheck.v7`  |
+| API Проверки орфографии Bing   | `Bing.SpellCheck.v7`  |
 
 ### <a name="speech"></a>Речь
 
@@ -190,7 +190,7 @@ az cognitiveservices account list-usage \
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы хотите очистить и удалить Cognitive Services ресурс, можно удалить его или группу ресурсов. При удалении группы ресурсов также удаляются все другие ресурсы, содержащиеся в этой группе.
+Если вы хотите очистить и удалить Cognitive Services ресурс, можно удалить его или группу ресурсов. При удалении группы ресурсов удаляются также все другие ресурсы, содержащиеся в этой группе.
 
 Чтобы удалить группу ресурсов и связанные с ней ресурсы, используйте команду AZ Group DELETE.
 
@@ -198,9 +198,9 @@ az cognitiveservices account list-usage \
 az group delete --name cognitive-services-resource-group
 ```
 
-## <a name="see-also"></a>Дополнительно
+## <a name="see-also"></a>См. также раздел
 
 * [Проверка подлинности запросов к Azure Cognitive Services](authentication.md)
-* [Что такое Azure Cognitive Services?](Welcome.md)
-* [Поддержка естественного языка](language-support.md)
-* [Поддержка контейнеров DOCKER](cognitive-services-container-support.md)
+* [Общие сведения об Azure Cognitive Services](Welcome.md)
+* [Поддержка естественного языка в Azure Cognitive Services](language-support.md)
+* [Поддержка контейнеров в Azure Cognitive Services](cognitive-services-container-support.md)

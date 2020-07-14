@@ -18,6 +18,7 @@ ms.reviewer: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9ef2faf2a1d1a131dc5f2a01d3fa46cc61a06fb6
 ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/02/2020
 ms.locfileid: "85078819"
@@ -93,7 +94,7 @@ ms.locfileid: "85078819"
 
 При изменении политики нажмите кнопку **Обновить**. При добавлении новой политики нажмите кнопку **создать**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Изменение параметров жизненного цикла пакета Access](entitlement-management-access-package-lifecycle-policy.md)
 - [Просмотр запросов для пакета Access](entitlement-management-access-package-requests.md)
