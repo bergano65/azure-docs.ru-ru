@@ -232,6 +232,24 @@
           href: how-to-add-tile-layer-android-map.md
         - name: Отображение данных о трафике
           href: how-to-show-traffic-android.md
+    - name: "Использование Azure Maps в Power\_BI"
+      items:
+        - name: Начало работы
+          href: power-bi-visual-getting-started.md
+        - name: Основные сведения о слоях
+          href: power-bi-visual-understanding-layers.md
+        - name: Добавление слоя пузырьков
+          href: power-bi-visual-add-bubble-layer.md
+        - name: Добавление слоя линейчатой диаграммы
+          href: power-bi-visual-add-bar-chart-layer.md
+        - name: Добавление эталонного слоя
+          href: power-bi-visual-add-reference-layer.md
+        - name: Добавление слоя фрагментов
+          href: power-bi-visual-add-tile-layer.md
+        - name: Отображение трафика в режиме реального времени
+          href: power-bi-visual-show-real-time-traffic.md
+        - name: Управление доступом
+          href: power-bi-visual-manage-access.md
     - name: Предоставление отзывов о данных
       href: how-to-use-feedback-tool.md
 - name: Справочник

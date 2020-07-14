@@ -3,12 +3,12 @@ title: Хранилища и хранение данных в Azure Application 
 description: Заявление о политике хранении и конфиденциальности
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 848285accd7e05607bac418b6b4ae39055a5772f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: acee1ad0b531f23a872d78111ccd9f0ac09bcfb1
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85601366"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224491"
 ---
 # <a name="data-collection-retention-and-storage-in-application-insights"></a>Сбор, хранение и хранение данных в Application Insights
 
@@ -62,7 +62,7 @@ ms.locfileid: "85601366"
 ## <a name="how-can-i-verify-whats-being-collected"></a>Как проверить, какие именно данные собираются?
 Если приложение разрабатывается в Visual Studio, запустите приложение в режиме отладки (F5). Телеметрические данные появятся в окне вывода. Оттуда их можно скопировать, отформатировать как файл JSON и быстро проверить. 
 
-![](./media/data-retention-privacy/06-vs.png)
+![Снимок экрана, показывающий запуск приложения в режиме отладки в Visual Studio.](./media/data-retention-privacy/06-vs.png)
 
 В окне диагностики также есть более удобное для чтения представление.
 
@@ -213,7 +213,7 @@ AzureLogHandler(
 | Windows Server 2012–2016 | Поддерживается и включена по умолчанию. | Проверка того, что все еще используются [параметры по умолчанию](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings) |
 | Windows 7 с пакетом обновления 1 и Windows Server 2008 R2 с пакетом обновления 1 | Поддерживается, но не включена по умолчанию. | Информацию о том, как ее включить, см. на странице [Transport Layer Security (TLS) registry settings](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings) (Параметры реестра TLS).  |
 | Windows Server 2008 с пакетом обновления 2 (SP2) | Для поддержки протокола TLS 1.2 требуется обновление. | См. статью об [обновлении для добавления поддержки TLS 1.2 в Windows Server 2008 с пакетом обновления 2](https://support.microsoft.com/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows-server-2008-s). |
-|Windows Vista | Не поддерживается. | Н/Д
+|Windows Vista | Не поддерживается. | Недоступно
 
 ### <a name="check-what-version-of-openssl-your-linux-distribution-is-running"></a>Проверка версии OpenSSL, используемой дистрибутивом Linux
 
@@ -250,12 +250,12 @@ openssl s_client -connect bing.com:443 -tls1_2
 | [Добавление пакета SDK для Application Insights в веб-проект .NET][greenbrown] |ServerContext<br/>Выводимые<br/>Счетчики производительности<br/>Requests<br/>**Исключения**<br/>Сеанс<br/>users |
 | [Установка монитора состояния на сервере IIS][redfield] |Зависимости<br/>ServerContext<br/>Выводимые<br/>Счетчики производительности |
 | [Добавление пакета SDK для Application Insights в веб-приложение Java][java] |ServerContext<br/>Выводимые<br/>Запрос<br/>Сеанс<br/>users |
-| [Добавление пакета SDK для JavaScript на веб-страницу][client] |ClientContext <br/>Выводимые<br/>Страница<br/>ClientPerf<br/>Ajax |
+| [Добавление пакета SDK для JavaScript на веб-страницу][client] |ClientContext <br/>Выводимые<br/>Page<br/>ClientPerf<br/>Ajax |
 | [Определение свойств по умолчанию][apiproperties] |**Свойства** всех стандартных и настраиваемых событий |
 | [Вызов TrackMetric][api] |Числовые значения<br/>**Свойства** |
 | [Вызов Track*][api] |Имя события.<br/>**Свойства** |
 | [Вызов TrackException][api] |**Исключения**<br/>Дамп стека<br/>**Свойства** |
-| Пакету SDK не может собрать данные. Пример: <br/> не удается получить доступ к счетчикам производительности;<br/> порождается исключение в инициализаторе телеметрии. |Диагностика SDK |
+| Пакету SDK не может собрать данные. Например: <br/> не удается получить доступ к счетчикам производительности;<br/> порождается исключение в инициализаторе телеметрии. |Диагностика SDK |
 
 Сведения о [пакетах SDK для других платформ][platforms] можно получить в соответствующей документации.
 

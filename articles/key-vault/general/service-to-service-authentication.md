@@ -9,12 +9,12 @@ ms.date: 06/30/2020
 ms.topic: conceptual
 ms.service: key-vault
 ms.subservice: general
-ms.openlocfilehash: 7ad3af46be26816231a15156d13fbec3275a5559
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: 132663ed26eab41747f6fce25bdb2beabe286322
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85855074"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232616"
 ---
 # <a name="service-to-service-authentication-to-azure-key-vault-using-net"></a>Проверка подлинности с взаимодействием между службами в Azure Key Vault с помощью .NET
 
@@ -27,7 +27,7 @@ ms.locfileid: "85855074"
 
 `Microsoft.Azure.Services.AppAuthentication`Библиотека управляет проверкой подлинности автоматически, что, в свою очередь, позволяет сосредоточиться на решении, а не на ваших учетных данных. Она поддерживает локальную разработку с использованием Microsoft Visual Studio, Azure CLI или встроенной проверки подлинности Azure AD. При развертывании в ресурс Azure, поддерживающий управляемое удостоверение, библиотека автоматически использует [управляемые удостоверения для ресурсов Azure](../../active-directory/msi-overview.md). Изменение кода или конфигурации не требуется. Библиотека также поддерживает прямое использование [учетных данных клиента](../../azure-resource-manager/resource-group-authenticate-service-principal.md) Azure AD, если управляемое удостоверение недоступно, или если контекст безопасности разработчика не может быть определен во время локальной разработки.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 - [Visual studio 2019](https://www.visualstudio.com/downloads/) или [Visual Studio 2017 v 15.5](https://blogs.msdn.microsoft.com/visualstudio/2017/10/11/visual-studio-2017-version-15-5-preview/).
 
@@ -226,17 +226,20 @@ ms.locfileid: "85855074"
 
 ## <a name="connection-string-support"></a>Поддержка строки подключения
 
-По умолчанию `AzureServiceTokenProvider` использует несколько способов извлечения токена.
+По умолчанию `AzureServiceTokenProvider` пытается получить маркер с помощью следующих методов проверки подлинности:
 
-Для управления процессом используйте строку подключения, переданную в конструктор `AzureServiceTokenProvider` или указанную в переменной среды *AzureServicesAuthConnectionString*.
+- [Управляемое удостоверение для ресурсов Azure](../..//active-directory/managed-identities-azure-resources/overview.md)
+- Проверка подлинности Visual Studio
+- [Проверка подлинности Azure CLI](/azure/authenticate-azure-cli?view=azure-cli-latest)
+- [Встроенная проверка подлинности Windows](/aspnet/web-api/overview/security/integrated-windows-authentication)
 
-Поддерживаются следующие варианты.
+Для управления процессом используйте строку подключения, переданную в конструктор `AzureServiceTokenProvider` или указанную в переменной среды *AzureServicesAuthConnectionString*.  Поддерживаются следующие варианты.
 
-| Параметр строки подключения | Сценарий | Комментарии|
+| Параметр строки подключения | Сценарий | Примечания|
 |:--------------------------------|:------------------------|:----------------------------|
 | `RunAs=Developer; DeveloperTool=AzureCli` | Локальная разработка | `AzureServiceTokenProvider`использует Azure CLI для получения токена. |
 | `RunAs=Developer; DeveloperTool=VisualStudio` | Локальная разработка | `AzureServiceTokenProvider`использует Visual Studio для получения токена. |
-| `RunAs=CurrentUser` | Локальная разработка | `AzureServiceTokenProvider`использует встроенную проверку подлинности Azure AD для получения токена. |
+| `RunAs=CurrentUser` | Локальная разработка | Не поддерживается в .NET Core. `AzureServiceTokenProvider`использует встроенную проверку подлинности Azure AD для получения токена. |
 | `RunAs=App` | [Управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/index.yml) | `AzureServiceTokenProvider`использует управляемое удостоверение для получения токена. |
 | `RunAs=App;AppId={ClientId of user-assigned identity}` | [Удостоверение, назначенное пользователем для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) | `AzureServiceTokenProvider`использует назначенное пользователем удостоверение для получения токена. |
 | `RunAs=App;AppId={TestAppId};KeyVaultCertificateSecretIdentifier={KeyVaultCertificateSecretIdentifier}` | Проверка подлинности настраиваемых служб | `KeyVaultCertificateSecretIdentifier`Идентификатор секрета сертификата. |

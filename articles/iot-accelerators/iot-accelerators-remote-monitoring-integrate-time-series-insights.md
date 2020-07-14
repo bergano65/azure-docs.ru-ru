@@ -8,11 +8,12 @@ ms.date: 09/12/2018
 ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.openlocfilehash: 752529454a5b6293d9cbfdf8378b46947aed5a0e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: edf669eb813240505cba8faef41e166785cc5b18
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77564650"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232072"
 ---
 # <a name="integrate-azure-time-series-insights-with-remote-monitoring"></a>Интеграция службы "Аналитика временных рядов Azure" с решением удаленного мониторинга
 
@@ -23,7 +24,7 @@ ms.locfileid: "77564650"
 > [!NOTE]
 > Аналитика временных рядов в настоящее время недоступна в облаке Azure для Китая. Развертывания акселератора решения для удаленного мониторинга в облаке Azure для Китая используют Cosmos DB для хранения всех данных.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Для работы с этим руководством необходимо развернутое решение для удаленного мониторинга:
 
@@ -67,7 +68,7 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
 
     ![Создание службы "Аналитика временных рядов"](./media/iot-accelerators-remote-monitoring-integrate-time-series-insights/new-time-series-insights-create.png)
 
-1. Нажмите кнопку **Создать**. Создание среды может занять некоторое время.
+1. Нажмите **Создать**. Создание среды может занять некоторое время.
 
 ## <a name="create-event-source"></a>Создание источника событий
 
@@ -79,7 +80,7 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
 
     ![Просмотр источников событий](./media/iot-accelerators-remote-monitoring-integrate-time-series-insights/time-series-insights-event-sources.png)
 
-1. Нажмите кнопку **Добавить**.
+1. Щелкните **Добавить**.
 
     ![Добавление источника событий](./media/iot-accelerators-remote-monitoring-integrate-time-series-insights/time-series-insights-event-sources-add.png)
 
@@ -100,7 +101,7 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
 
     ![Создание источника событий](./media/iot-accelerators-remote-monitoring-integrate-time-series-insights/time-series-insights-event-source-create.png)
 
-1. Нажмите кнопку **Создать**.
+1. Нажмите **Создать**.
 
 ## <a name="configure-the-data-access-policy"></a>Настройка политики доступа к данным
 
@@ -243,7 +244,7 @@ docker pull azureiotpcs/pcs-remote-monitoring-webui:1.0.2
 
 Настройте среду развертывания `standard` для использования обновленных микрослужб, указанных выше.
 
-1. В командной строке выполните команду `kubectl proxy`. Дополнительные сведения см. в статье о [доступе к API Kubernetes](https://kubernetes.io/docs/tasks/access-kubernetes-api/http-proxy-access-api/#using-kubectl-to-start-a-proxy-server).
+1. В командной строке выполните команду `kubectl proxy`. Дополнительные сведения см. в статье о [доступе к API Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/).
 
 1. Откройте консоль управления Kubernetes.
 
@@ -295,7 +296,7 @@ docker pull azureiotpcs/pcs-remote-monitoring-webui:1.0.2
             key: telemetry.storage.type
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об изучении данных и диагностике оповещений в обозревателе Аналитики временных рядов см. в учебнике по [проведению анализа первопричин](iot-accelerators-remote-monitoring-root-cause-analysis.md).
 

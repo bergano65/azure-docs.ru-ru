@@ -8,12 +8,12 @@ ms.author: vikurpad
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/18/2020
-ms.openlocfilehash: d4b36f00bad8c06c2f62794fa03a85120af79965
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3957884a8c559194c436487050f0dbc09acf0441
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85557382"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232514"
 ---
 # <a name="incremental-enrichment-and-caching-in-azure-cognitive-search"></a>Добавочное обогащение и кэширование в Azure Когнитивный поиск
 
@@ -109,7 +109,7 @@ PUT https://customerdemos.search.windows.net/datasources/callcenter-ds?api-versi
 
 Целью кэша является избежание ненужной обработки, но предположим, что вы вносите изменения в навык, который не обнаруживает индексатор (например, изменение какого-либо внешнего кода, например пользовательского навыка).
 
-В этом случае можно использовать [Сброс навыков](https://docs.microsoft.com/rest/api/searchservice/reset-skills) для принудительной повторной обработки определенного навыка, включая все нисходящие навыки, зависящие от выходных данных этого навыка. Этот API принимает запрос POST со списком навыков, которые должны быть аннулированы и помечены для повторной обработки. После сброса навыков запустите индексатор, чтобы вызвать конвейер.
+В этом случае можно использовать [Сброс навыков](https://docs.microsoft.com/rest/api/searchservice/preview-api/reset-skills) для принудительной повторной обработки определенного навыка, включая все нисходящие навыки, зависящие от выходных данных этого навыка. Этот API принимает запрос POST со списком навыков, которые должны быть аннулированы и помечены для повторной обработки. После сброса навыков запустите индексатор, чтобы вызвать конвейер.
 
 ## <a name="change-detection"></a>Обнаружение изменений
 
@@ -152,19 +152,19 @@ PUT https://customerdemos.search.windows.net/datasources/callcenter-ds?api-versi
 
 REST API версия `2020-06-30-Preview` обеспечивает добавочное дополнение через дополнительные свойства индексаторов. Навыков и источники данных могут использовать общедоступную версию. В дополнение к справочной документации см. раздел [Настройка кэширования для добавочного уточнения](search-howto-incremental-index.md) для получения дополнительных сведений о вызове API.
 
-+ [Создание индексатора (API-Version = 2020 – 06 -30-Preview)](https://docs.microsoft.com/rest/api/searchservice/2019-05-06-preview/create-indexer) 
++ [Создание индексатора (API-Version = 2020 – 06 -30-Preview)](https://docs.microsoft.com/rest/api/searchservice/create-indexer) 
 
-+ [Индексатор обновления (API версии = 2020-06 -30-Preview)](https://docs.microsoft.com/rest/api/searchservice/2019-05-06-preview/update-indexer) 
++ [Индексатор обновления (API версии = 2020-06 -30-Preview)](https://docs.microsoft.com/rest/api/searchservice/update-indexer) 
 
 + [Обновление набора навыков (API-Version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/update-skillset) (новый параметр URI в запросе)
 
-+ [Сброс навыков (API-Version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/reset-skills)
++ [Сброс навыков (API-Version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/preview-api/reset-skills)
 
 + Индексаторы базы данных (SQL Azure, Cosmos DB). Некоторые Индексаторы получают данные через запросы. Для запросов, извлекающих данные, [Обновление источника данных](https://docs.microsoft.com/rest/api/searchservice/update-data-source) поддерживает новый параметр в запросе **игнорересетрекуиремент**, который должен быть установлен в, `true` Если действие обновления не должно сделать кэш недействительным. 
 
   Используйте **игнорересетрекуиремент** экономно, так как это может привести к непредвиденному несогласованности данных, которые не будут обнаружены легко.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Добавочное дополнение — это мощная функция, которая расширяет отслеживание изменений до навыков и искусственного интеллекта. Аинкрементал обогащение позволяет повторно использовать существующее обработанное содержимое при переборе проекта набора навыков.
 
