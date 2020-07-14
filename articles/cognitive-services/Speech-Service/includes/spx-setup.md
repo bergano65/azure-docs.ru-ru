@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: c57187ae15e5f15a601edbc74921b3c879abe715
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.openlocfilehash: b0f70fccf3f7f4a6856ae64d0946c2c473fed93c
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83800676"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86050238"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -27,6 +27,10 @@ ms.locfileid: "83800676"
 3. Перейдите в извлеченный корневой каталог `spx-zips` и извлеките необходимый подкаталог (`spx-net471` для .NET Framework 4.7 или `spx-netcore-win-x64` для .NET Core 3.0 на ЦП с архитектурой x64).
 
 В командной строке измените каталог на это расположение, а затем введите `spx`, чтобы открыть справку по интерфейсу командной строки службы "Речь".
+
+> [!NOTE]
+> При поиске команды PowerShell не проверяет локальный каталог. В PowerShell измените каталог на расположение `spx` и вызовите средство, введя `.\spx`.
+> Если добавить этот каталог в путь, PowerShell и командная строка Windows обнаружат `spx` из любого каталога без префикса `.\`.
 
 #### <a name="linux-install"></a>[Установка (Linux)](#tab/linuxinstall)
 

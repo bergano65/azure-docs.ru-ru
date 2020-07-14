@@ -3,13 +3,13 @@ author: IEvangelist
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/03/2020
-ms.author: dapine
-ms.openlocfilehash: 1a1207b056a0cd86d1855d990a8857ef8d9752e4
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.author: trbye
+ms.openlocfilehash: a110ff1db9b75287eb1b75d80003796354aba35b
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82979611"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86035500"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -42,7 +42,7 @@ ms.locfileid: "82979611"
 В случае, если вы хотите разместить веб-страницу на веб-сервере, можно указать источник маркера для вашего демоверсии приложения.
 Таким образом ключ подписки никогда не покинет пределы сервера, позволяя при этом пользователям использовать возможности распознавания речи, не вводя код авторизации.
 
-Создайте файл с именем `token.php`. В этом примере предполагается, что веб-сервер поддерживает язык сценариев PHP. Введите приведенный ниже код.
+Создайте файл с именем `token.php`. В этом примере предполагается, что веб-сервер поддерживает язык сценариев PHP с включенной служебной программой cURL. Введите приведенный ниже код.
 
 ```php
 <?php

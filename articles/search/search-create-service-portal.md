@@ -7,13 +7,13 @@ author: tchristiani
 ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 06/07/2020
-ms.openlocfilehash: 83b723c815825a255727e9a48d415fedd405c942
-ms.sourcegitcommit: 20e246e86e25d63bcd521a4b4d5864fbc7bad1b0
+ms.date: 06/24/2020
+ms.openlocfilehash: f802ec10410d0a412e29d9ad51bb409a5d099f31
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84488228"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85562538"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-service-in-the-portal"></a>Краткое руководство. Создание службы "Когнитивный поиск Azure" на портале
 
@@ -24,6 +24,14 @@ ms.locfileid: "84488228"
 [![Анимированный GIF-файл](./media/search-create-service-portal/AnimatedGif-AzureSearch-small.gif)](./media/search-create-service-portal/AnimatedGif-AzureSearch.gif#lightbox)
 
 Предпочитаете использовать PowerShell? Используйте [шаблон службы](https://azure.microsoft.com/resources/templates/101-azure-search-create/) Azure Resource Manager. Сведения для начала работы см. в статье [Manage your Azure Search service with PowerShell](search-manage-powershell.md) (Управление службой "Когнитивный поиск Azure" с помощью PowerShell).
+
+## <a name="before-you-start"></a>Перед началом работы
+
+Следующие свойства службы фиксируются на все время существования службы, и для их изменения требуется создать новую службу. При создании службы определите, как вы будете использовать ее:
+
+* имя (изучите [эти рекомендации](#name-the-service) по именам служб);
+* уровень ("Бесплатный", "Базовый", "Стандартный" — [влияет на выставление счетов](search-sku-tier.md) и задает верхний лимит производительности);
+* регион (выберите расположение со связанными службами, при этом для интеграции с Cognitive Services или Машинным обучением Azure обязательно размещать службы в одном регионе).
 
 ## <a name="subscribe-free-or-paid"></a>Подписка (бесплатная или платная)
 

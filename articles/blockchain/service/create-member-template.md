@@ -8,28 +8,28 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: patricka
 ms.date: 06/04/2020
-ms.openlocfilehash: 5524a8920ef49603ab9aa143ae4094cdaad9d340
-ms.sourcegitcommit: ba8df8424d73c8c4ac43602678dae4273af8b336
+ms.openlocfilehash: 8eabb6806dee96871648ea419ba36d768d32a2ab
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84456540"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86078172"
 ---
-# <a name="quickstart-create-an-azure-blockchain-service-member-using-an-azure-resource-manager-template"></a>Краткое руководство. Создание участника Блокчейна Azure с помощью шаблона Resource Manager
+# <a name="quickstart-create-an-azure-blockchain-service-member-using-an-arm-template"></a>Краткое руководство. Создание участника в службе "Блокчейн Azure" с помощью шаблона ARM
 
-В этом кратком руководстве показано, как развернуть нового участника блокчейн-сети и консорциум в Блокчейне Azure с помощью шаблона Resource Manager. Элемент в службе "Azure Блокчейн" — это блокчейн-узел в частной сети блокчейн-консорциума. При подготовке элемента можно создать сеть консорциума или присоединиться к ней. Для сети консорциума требуется хотя бы один элемент. Количество элементов блокчейн-сети, необходимых участникам консирцуима, зависит от вашего сценария. У участников консорциума может быть один или несколько элементов блокчейн-сети или участники могут использовать их совместно. Дополнительные сведения о консорциумах см. в разделе [Консорциум службы "Блокчейн Azure"](consortium.md).
+В этом кратком руководстве показано, как развернуть нового участника блокчейн-сети и консорциум в службе "Блокчейн Azure" с помощью шаблона Azure Resource Manager (шаблон ARM). Элемент в службе "Azure Блокчейн" — это блокчейн-узел в частной сети блокчейн-консорциума. При подготовке элемента можно создать сеть консорциума или присоединиться к ней. Для сети консорциума требуется хотя бы один элемент. Количество элементов блокчейн-сети, необходимых участникам консирцуима, зависит от вашего сценария. У участников консорциума может быть один или несколько элементов блокчейн-сети или участники могут использовать их совместно. Дополнительные сведения о консорциумах см. в разделе [Консорциум службы "Блокчейн Azure"](consortium.md).
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
-Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-blockchain-asaservice%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Нет.
+Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="create-a-blockchain-service-member"></a>Создание члена службы "Блокчейн"
-
-### <a name="review-the-template"></a>Изучение шаблона
+## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/201-blockchain-asaservice/).
 
@@ -39,7 +39,7 @@ ms.locfileid: "84456540"
 
 * [**Microsoft.Blockchain/blockchainMembers**](/azure/templates/microsoft.blockchain/blockchainmembers)
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 1. Выберите следующую ссылку, чтобы войти на портал Azure и открыть шаблон.
 

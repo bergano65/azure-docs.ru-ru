@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 01/11/2018
-ms.openlocfilehash: edb6846d199470818e07a208feb778aca3021d9e
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: e12f0cd44143621d34096a6c1161a22a89d21d9b
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85253670"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86077663"
 ---
 # <a name="branching-and-chaining-activities-in-an-azure-data-factory-pipeline-using-the-azure-portal"></a>Ветвление и создание цепочки действий в конвейере Фабрики данных Azure с помощью портала Azure
 
@@ -139,7 +139,8 @@ https://prodxxx.eastus.logic.azure.com:443/workflows/000000/triggers/manual/path
 
    Имя фабрики данных Azure должно быть **глобально уникальным**. При возникновении указанной ниже ошибки измените имя фабрики данных (например, на ваше_имя_ADFTutorialDataFactory) и попробуйте создать фабрику данных снова. Ознакомьтесь со статьей [Фабрика данных Azure — правила именования](naming-rules.md), чтобы узнать правила именования для артефактов службы "Фабрика данных".
 
-       `Data factory name “ADFTutorialDataFactory” is not available`
+   *Имя фабрики данных ADFTutorialDataFactory недоступно.*
+
 3. Выберите **подписку** Azure, в рамках которой вы хотите создать фабрику данных.
 4. Для **группы ресурсов** выполните одно из следующих действий.
 
@@ -202,10 +203,11 @@ https://prodxxx.eastus.logic.azure.com:443/workflows/000000/triggers/manual/path
    ![Новая связанная служба для службы хранилища Azure](./media/tutorial-control-flow-portal/new-azure-storage-linked-service.png)
 12. Введите `@pipeline().parameters.sourceBlobContainer` в качестве имени папки и `emp.txt` в качестве имени файла. Параметр sourceBlobContainer в конвейере позволяет задать для набора данных путь к папке с данными.
 
-   ![Параметры исходного набора данных](./media/tutorial-control-flow-portal/source-dataset-settings.png)
-13. Перейдите на вкладку **Конвейер** или щелкните конвейер в представлении в виде дерева. Убедитесь, что в списке **Source Dataset** (Исходный набор данных) выбрано значение **SourceBlobDataset**.
+    ![Параметры исходного набора данных](./media/tutorial-control-flow-portal/source-dataset-settings.png)
 
-    ![Исходный набор данных](./media/tutorial-control-flow-portal/pipeline-source-dataset-selected.png)
+13. Перейдите на вкладку **Конвейер** или щелкните конвейер в представлении в виде дерева. Убедитесь, что в списке **Source Dataset** (Исходный набор данных) выбрано значение **SourceBlobDataset**.
+      
+   ![Исходный набор данных](./media/tutorial-control-flow-portal/pipeline-source-dataset-selected.png)
 
 13. В окне свойств перейдите на вкладку **Приемник** и нажмите кнопку **+ Создать** в поле **Sink Dataset** (Целевой набор данных). В этом шаге вы создадите целевой набор данных, точно так же, как исходный набор данных ранее.
 

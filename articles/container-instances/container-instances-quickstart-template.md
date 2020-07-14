@@ -1,33 +1,33 @@
 ---
-title: Краткое руководство. Создание геореплицированного шаблона реестра с помощью шаблона Resource Manager
+title: Краткое руководство. Создание экземпляра контейнера с помощью шаблона Azure Resource Manager
 description: В этом кратком руководстве описано, как с помощью шаблона Resource Manager быстро развернуть контейнерное веб-приложение, которое выполняется в изолированном экземпляре контейнера Azure.
 services: azure-resource-manager
 ms.service: azure-resource-manager
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 04/30/2020
-ms.openlocfilehash: 17f71d1c383c72fab748a9bdb789158095616f2d
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
+ms.openlocfilehash: 64f86611e8a60cd3d1463cd2845c034551277bb2
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83779876"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86118466"
 ---
-# <a name="quickstart-deploy-a-container-instance-in-azure-using-a-resource-manager-template"></a>Краткое руководство. Развертывание экземпляра контейнера в Azure с помощью шаблона Resource Manager
+# <a name="quickstart-deploy-a-container-instance-in-azure-using-an-arm-template"></a>Краткое руководство. Развертывание экземпляра контейнера в Azure с помощью шаблона ARM
 
-Служба "Экземпляры контейнеров Azure" позволяет легко и быстро запускать бессерверные контейнеры Docker в Azure. Развертывайте приложения в экземпляр контейнера по требованию, когда вам не нужна полная платформа оркестрации контейнера, такая как Служба Azure Kubernetes. В этом кратком руководстве описано, как развернуть изолированный контейнер Docker с помощью шаблона Azure Resource Manager и сделать его веб-приложение доступным по общедоступному IP-адресу.
+Служба "Экземпляры контейнеров Azure" позволяет легко и быстро запускать бессерверные контейнеры Docker в Azure. Развертывайте приложения в экземпляр контейнера по требованию, когда вам не нужна полная платформа оркестрации контейнера, такая как Служба Azure Kubernetes. В этом кратком руководстве показано, как развернуть изолированный контейнер Docker с помощью шаблона Azure Resource Manager (шаблона ARM) и сделать его веб-приложение доступным по общедоступному IP-адресу.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-aci-linuxcontainer-public-ip%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Нет.
+Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="create-a-container-instance"></a>Создание экземпляра контейнера
-
-### <a name="review-the-template"></a>Изучение шаблона
+## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-aci-linuxcontainer-public-ip/).
 
@@ -39,7 +39,7 @@ ms.locfileid: "83779876"
 
 Другие примеры шаблонов службы "Экземпляры контейнеров Azure" можно найти в [коллекции шаблонов быстрого запуска](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Containerinstance&pageNumber=1&sort=Popular).
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
  1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создает реестр контейнеров и реплику в другом расположении.
 
@@ -101,4 +101,4 @@ ms.locfileid: "83779876"
 Пошаговые инструкции по созданию шаблона см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание и развертывание первого шаблона Azure Resource Manager](../azure-resource-manager/templates/template-tutorial-create-first-template.md)
+> [Руководство. Создание и развертывание первого шаблона ARM](../azure-resource-manager/templates/template-tutorial-create-first-template.md)

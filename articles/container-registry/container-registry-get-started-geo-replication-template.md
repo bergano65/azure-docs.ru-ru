@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание геореплицированного шаблона реестра с помощью шаблона Resource Manager
+title: Краткое руководство. Создание геореплицированного шаблона реестра — шаблон Azure Resource Manager
 description: Узнайте, как создать геореплицированный реестр контейнеров Azure с помощью шаблона Azure Resource Manager.
 services: azure-resource-manager
 author: dlepow
@@ -8,28 +8,28 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: danlep
 ms.date: 05/26/2020
-ms.openlocfilehash: c94cd3b4b455691e85e7525007fcdf7a056a2b28
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: 3ed160780e15cc36648f7e2ad77e726901ee86c3
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84558084"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119860"
 ---
-# <a name="quickstart-create-a-geo-replicated-container-registry-by-using-a-resource-manager-template"></a>Краткое руководство. Создание геореплицированного реестра контейнеров с помощью шаблона Resource Manager
+# <a name="quickstart-create-a-geo-replicated-container-registry-by-using-an-arm-template"></a>Краткое руководство. Создание геореплицированного реестра контейнеров с помощью шаблона ARM
 
-В этом кратком руководстве объясняется, как создать экземпляр Реестра контейнеров Azure с помощью шаблона Azure Resource Manager. Шаблон настраивает [геореплицированный](container-registry-geo-replication.md) реестр, который автоматически синхронизирует содержимое реестра в нескольких регионах Azure. Георепликация дает возможность получить ограниченный сетью доступ к изображениям из региональных развертываний, предоставляя единую среду управления. Эта функция относится к уровню служб реестра [Премиум](container-registry-skus.md). 
+В этом кратком руководстве показано, как создать экземпляр Реестра контейнеров Azure с помощью шаблона Azure Resource Manager (шаблона ARM). Шаблон настраивает [геореплицированный](container-registry-geo-replication.md) реестр, который автоматически синхронизирует содержимое реестра в нескольких регионах Azure. Георепликация дает возможность получить ограниченный сетью доступ к изображениям из региональных развертываний, предоставляя единую среду управления. Эта функция относится к уровню служб реестра [Премиум](container-registry-skus.md).
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-container-registry-geo-replication%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Нет.
+Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="create-a-geo-replicated-registry"></a>Создание геореплицированного реестра
-
-### <a name="review-the-template"></a>Изучение шаблона
+## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-container-registry-geo-replication/). Шаблон настраивает реестр и дополнительную региональную реплику.
 
@@ -42,7 +42,7 @@ ms.locfileid: "84558084"
 
 Другие примеры шаблонов службы "Реестр контейнеров Azure" можно найти в [коллекции шаблонов быстрого запуска](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Containerregistry&pageNumber=1&sort=Popular).
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
  1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон.
 
@@ -86,7 +86,7 @@ ms.locfileid: "84558084"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве мы создали Реестр контейнеров Azure с помощью шаблона Resource Manager и настроили реплику реестра в другом местоположении. Чтобы продолжить работу с Реестром контейнеров Azure, перейдите к следующим руководствам.
+В этом кратком руководстве показано, как создать Реестр контейнеров Azure с помощью шаблона ARM и настроить реплику реестра в другом расположении. Чтобы продолжить работу с Реестром контейнеров Azure, перейдите к следующим руководствам.
 
 > [!div class="nextstepaction"]
 > [Руководства по использованию Реестра контейнеров Azure](container-registry-tutorial-prepare-registry.md)
@@ -94,4 +94,4 @@ ms.locfileid: "84558084"
 Пошаговые инструкции по созданию шаблона см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание и развертывание первого шаблона Azure Resource Manager](../azure-resource-manager/templates/template-tutorial-create-first-template.md)
+> [Руководство. Создание и развертывание первого шаблона ARM](../azure-resource-manager/templates/template-tutorial-create-first-template.md)

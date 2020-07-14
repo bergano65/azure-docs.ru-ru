@@ -4,14 +4,14 @@ description: В этой статье приведены примеры Azure CL
 tags: azure-service-management
 ms.assetid: 53e6a15a-370a-48df-8618-c6737e26acec
 ms.topic: sample
-ms.date: 12/12/2017
+ms.date: 07/07/2020
 ms.custom: mvc
-ms.openlocfilehash: 857d6cdc26e41f5ea7b1d66aaff6efb4056c47c4
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: ce10c0e95d77103f386174c7bd0ffd56adff871b
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85254503"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86054548"
 ---
 # <a name="cli-samples-for-azure-app-service"></a>Примеры интерфейса командной строки для Службы приложений Azure
 
@@ -25,7 +25,8 @@ ms.locfileid: "85254503"
 | [Создание приложения с непрерывным развертыванием из GitHub](./scripts/cli-continuous-deployment-github.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений с непрерывной публикацией из репозитория GitHub, владельцем которого вы являетесь. |
 | [Создание приложения и развертывание кода из локального репозитория Git](./scripts/cli-deploy-local-git.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение Службы приложений и настраивает вживление кода из локального репозитория Git. |
 | [Создание приложения и развертывание кода в промежуточной среде](./scripts/cli-deploy-staging-environment.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение Службы приложений со слотом развертывания для изменений промежуточного кода. |
-| [Создание приложения ASP.NET Core в контейнере Docker](./scripts/cli-linux-docker-aspnetcore.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений в Linux и загружает образ Docker из Docker Hub. |
+| [Создание приложения ASP.NET Core в контейнере Docker](./scripts/cli-linux-docker-aspnetcore.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение Службы приложений в Linux и загружает образ Docker из Docker Hub. |
+| [Создание приложения и его предоставление с использованием частной конечной точки](./scripts/cli-deploy-privateendpoint.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение в Службе приложений и частную конечную точку. |
 |**Настройка приложения**||
 | [Сопоставление личного домена с приложением](./scripts/cli-configure-custom-domain.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений и сопоставляет c ним имя личного домена. |
 | [Привязка TLS/SSL-сертификата к приложению](./scripts/cli-configure-ssl-certificate.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений и привязывает к нему TLS/SSL-сертификат имени личного домена. |

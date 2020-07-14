@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: sstein, carlrab
 ms.date: 09/26/2019
-ms.openlocfilehash: 906bcf97ad070eb8c2dfe3266bccf05db1598935
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: e4b4b6f21d158a758c2ff77db6660bbb44696d90
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84708898"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086693"
 ---
 # <a name="quickstart-create-a-managed-instance-of-sql-managed-instance"></a>Краткое руководство. Создание управляемого экземпляра Управляемого экземпляра SQL
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "84708898"
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 1. Выберите **Azure SQL** в левом меню портала Azure. Если **Azure SQL** отсутствует в списке, выберите **Все службы**, а затем введите **Azure SQL** в поле поиска.
-1. Выберите **Добавить**, чтобы открыть страницу **выбора варианта развертывания SQL**. Вы можете просмотреть дополнительные сведения об Управляемом экземпляре SQL Azure, щелкнув **Показать подробности** на плитке **Управляемый экземпляр SQL**.
+1. Выберите **Добавить**, чтобы открыть страницу **выбора варианта развертывания SQL**. Вы можете просмотреть дополнительные сведения об Управляемом экземпляре SQL Azure, щелкнув **Показать подробности** на плитке **Управляемые экземпляры SQL**.
 1. Нажмите кнопку **создания**.
 
    ![Создание управляемого экземпляра](./media/instance-create-quickstart/create-managed-instance.png)

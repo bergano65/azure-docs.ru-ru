@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/03/2020
 ms.author: trbye
-ms.openlocfilehash: 3613d190ef079d0e477d42b426a224d8e4dda7e6
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: f26f0ab6da398dcdee307f89b27cca780d08af85
+ms.sourcegitcommit: 374d1533ea2f2d9d3f8b6e6a8e65c6a5cd4aea47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81400711"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85838965"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -34,7 +34,9 @@ ms.locfileid: "81400711"
 
 ## <a name="build-and-run-app"></a>Компиляция и запуск приложения
 
-Теперь можно приступать к тестированию приложения и проверке функции распознавания речи, используя службу "Речь".
+Теперь можно приступать к проверке распознавания речи с помощью службы "Речь". 
+
+Если вы выполняете ее в macOS и это первое созданное вами приложение Python, использующее микрофон, возможно, вам потребуется предоставить терминалу доступ к микрофону. Откройте **параметры системы** и выберите **Безопасность и конфиденциальность**. Затем выберите **Конфиденциальность** и найдите **Микрофон** в списке. Выберите **Терминал** и сохраните параметры. 
 
 1. **Запустите приложение**. В командной строке введите следующее:
     ```bash
@@ -45,4 +47,3 @@ ms.locfileid: "81400711"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [Speech recognition basics](../../speech-to-text-next-steps.md)]
-

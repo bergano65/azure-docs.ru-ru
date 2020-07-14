@@ -5,12 +5,12 @@ author: christophermanthei
 ms.author: chmant
 ms.date: 03/20/2020
 ms.topic: quickstart
-ms.openlocfilehash: 4e9ddeddf616c581b116d48738e110dd8cdac2d3
-ms.sourcegitcommit: 5a8c8ac84c36859611158892422fc66395f808dc
+ms.openlocfilehash: dc566d2702fb24ef551e4900bed7b828d2597383
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84659924"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85557071"
 ---
 # <a name="quickstart-deploy-unity-sample-to-desktop"></a>Краткое руководство. Развертывание примера Unity на рабочем столе
 
@@ -38,7 +38,7 @@ ms.locfileid: "84659924"
 1. Слева выберите **Player** (Проигрыватель).
 1. Перейдите на вкладку с **параметрами универсальной платформы Windows**.
 1. Разверните меню **XR Settings** (Параметры XR).
-1. Отключите параметр **Virtual Reality Supported** (Поддержка виртуальной реальности).
+1. Снимите флажок **Virtual Reality Supported** (Поддержка виртуальной реальности).
     ![Параметры проигрывателя](./media/unity-disable-xr.png)
 1. Над меню *XR Settings* (Параметры XR) разверните меню **Publishing Settings** (Параметры публикации).
 1. В разделе **Supported Device Families** (Поддерживаемые семейства устройств) должен быть установлен флажок **Desktop** (Компьютер).
@@ -55,7 +55,7 @@ ms.locfileid: "84659924"
 1. При нажатии **Build** (Сборка) или Build And Run (Сборка и запуск) вам будет предложено выбрать папку, в которой будет храниться решение.
 1. Откройте созданный файл **QuickStart.sln** в Visual Studio.
 1. Измените конфигурацию на **Выпуск** и **x86**.
-1. Для отладчика выберите режим **Локальный компьютер**.
+1. Для отладчика выберите режим **Local Machine** (Локальный компьютер).
   ![Конфигурация решения](./media/unity-deploy-config-pc.png)
 1. Выполните сборку решения (клавиша F7).
 

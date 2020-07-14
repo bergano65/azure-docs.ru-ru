@@ -8,28 +8,28 @@ ms.workload: infrastructure
 ms.date: 06/04/2020
 ms.author: cynthn
 ms.custom: subject-armqs
-ms.openlocfilehash: 6ef929a2934d8480ce6d1eca8bb7ba3b70580110
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: d74994609799c155453f0c7cac887f2e033ea90b
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84552001"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087288"
 ---
-# <a name="quickstart-create-a-windows-virtual-machine-using-a-resource-manager-template"></a>Краткое руководство. Создание виртуальной машины Windows с помощью шаблона Resource Manager
+# <a name="quickstart-create-a-windows-virtual-machine-using-an-arm-template"></a>Краткое руководство. Создание виртуальной машины Windows с помощью шаблона ARM
 
-В этом кратком руководстве показано, как с помощью шаблона Resource Manager развернуть в Azure виртуальную машину Windows. 
+В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager (шаблон ARM) развернуть в Azure виртуальную машину Windows.
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-vm-simple-windows%2fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Нет.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="create-a-windows-virtual-machine"></a>Создание виртуальной машины Windows
-
-### <a name="review-the-template"></a>Изучение шаблона
+## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-vm-simple-windows/).
 
@@ -48,7 +48,7 @@ ms.locfileid: "84552001"
 
 
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создает хранилище ключей и секрет.
 
@@ -86,7 +86,7 @@ ms.locfileid: "84552001"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы развернули простую виртуальную машину с помощью шаблона Resource Manager. Дополнительные сведения о виртуальных машинах Azure см. в руководстве для виртуальных машин Linux.
+Из этого краткого руководства вы узнали, как развернуть простую виртуальную машину с помощью шаблона ARM. Дополнительные сведения о виртуальных машинах Azure см. в руководстве для виртуальных машин Linux.
 
 
 > [!div class="nextstepaction"]

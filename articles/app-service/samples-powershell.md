@@ -4,14 +4,14 @@ description: В этой статье приведены примеры Azure Po
 tags: azure-service-management
 ms.assetid: b48d1137-8c04-46e0-b430-101e07d7e470
 ms.topic: sample
-ms.date: 03/08/2017
+ms.date: 07/07/2020
 ms.custom: mvc
-ms.openlocfilehash: 6300b9fe10d7b12d71f87adec85d3a86658a8c97
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: 51693ad4d233ea180607bc7358a0847e23688099
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85254486"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86057914"
 ---
 # <a name="powershell-samples-for-azure-app-service"></a>Примеры PowerShell для Службы приложений Azure
 
@@ -25,6 +25,7 @@ ms.locfileid: "85254486"
 | [Создание приложения и развертывание кода с помощью протокола FTP](./scripts/powershell-deploy-ftp.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Создает приложение Службы приложений и передает файлы из локального каталога с помощью протокола FTP. |
 | [Создание приложения и развертывание кода из локального репозитория Git](./scripts/powershell-deploy-local-git.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Создает приложение Службы приложений и настраивает вживление кода из локального репозитория Git. |
 | [Создание приложения и развертывание кода в промежуточной среде](./scripts/powershell-deploy-staging-environment.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Создает приложение Службы приложений со слотом развертывания для изменений промежуточного кода. |
+|  [Создание приложения и его предоставление с использованием частной конечной точки](./scripts/powershell-deploy-private-endpoint.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Создает приложение в Службе приложений с частной конечной точкой. |
 |**Настройка приложения**||
 | [Сопоставление личного домена с приложением](./scripts/powershell-configure-custom-domain.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создает приложение Службы приложений и сопоставляет c ним имя личного домена. |
 | [Привязка TLS/SSL-сертификата к приложению](./scripts/powershell-configure-ssl-certificate.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создает приложение Службы приложений и привязывает к нему TLS/SSL-сертификат имени личного домена. |

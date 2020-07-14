@@ -4,18 +4,22 @@ description: Быстро научитесь выполнять пакетное
 ms.topic: quickstart
 ms.date: 05/19/2020
 ms.custom: subject-armqs
-ms.openlocfilehash: 5f26aeead41fa1ffcebefdeaabae84490dfdae2b
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: d92751d1463a20c8fb0cb83fe678789860957189
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85959829"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086132"
 ---
-# <a name="quickstart-create-a-batch-account-by-using-azure-resource-manager-template"></a>Краткое руководство. Создание учетной записи пакетной службы с помощью шаблона Azure Resource Manager
+# <a name="quickstart-create-a-batch-account-by-using-arm-template"></a>Краткое руководство. Создание учетной записи пакетной службы с помощью шаблона ARM
 
-Для создания вычислительных ресурсов (пулов вычислительных узлов) и заданий в пакетной службе потребуется учетная запись пакетной службы. Вы можете связать учетную запись хранения Azure с учетной записью пакетной службы, что будет удобно для развертывания приложений и хранения входных и выходных данных в большинстве реальных рабочих нагрузок. В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager создать учетную запись пакетной службы, включая хранилище. Выполняя действия из этого краткого руководства, вы изучите основные понятия пакетной службы и сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе.
+Для создания вычислительных ресурсов (пулов вычислительных узлов) и заданий в пакетной службе потребуется учетная запись пакетной службы. Вы можете связать учетную запись хранения Azure с учетной записью пакетной службы, что будет удобно для развертывания приложений и хранения входных и выходных данных в большинстве реальных рабочих нагрузок. В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager (шаблон ARM) создать учетную запись пакетной службы, включая хранилище. Выполняя действия из этого краткого руководства, вы изучите основные понятия пакетной службы и сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
+
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-batchaccount-with-storage%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -23,9 +27,7 @@ ms.locfileid: "85959829"
 
 - [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="create-a-batch-account-with-storage"></a>Создание учетной записи пакетной службы и хранилища
-
-### <a name="review-the-template"></a>Изучение шаблона
+## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-batchaccount-with-storage/).
 
@@ -36,7 +38,7 @@ ms.locfileid: "85959829"
 - [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts): Создание учетной записи хранения.
 - [Microsoft.Batch/batchAccounts](/azure/templates/microsoft.batch/batchaccounts): Создает учетную запись пакетной службы.
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Этот шаблон создает учетную запись пакетной службы Azure и учетную запись хранения.
 

@@ -4,12 +4,12 @@ description: Узнайте о новых и недавних обновлени
 ms.topic: overview
 ms.date: 04/19/2020
 ms.custom: mvc
-ms.openlocfilehash: be617590ce0c96c3ec8ea705732534c8395ac0ce
-ms.sourcegitcommit: ff19f4ecaff33a414c0fa2d4c92542d6e91332f8
+ms.openlocfilehash: 58c77dccd1e43ed497cd56b2831eb2ab914d8d5d
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85052320"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85556935"
 ---
 # <a name="whats-new-in-azure-migrate"></a>Новые возможности в службе "Миграция Azure"
 
@@ -17,6 +17,7 @@ ms.locfileid: "85052320"
 
 ## <a name="update-june-2020"></a>Обновление (июнь 2020)
 
+- Теперь поддерживаются оценки для переноса локальных виртуальных машин VMware в [Решение Azure VMware (AVS)](https://go.microsoft.com/fwlink/?linkid=2132637). [Дополнительные сведения](how-to-create-azure-vmware-solution-assessment.md)
 - Поддержка нескольких учетных данных в модуле для обнаружения физических серверов.
 - Поддержка возможности входа в Azure из модуля для клиента, в котором настроено ограничение клиента.
 - Доступны новые версии модуля службы "Миграция Azure", которые приведены ниже.

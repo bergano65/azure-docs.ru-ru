@@ -3,13 +3,13 @@ author: IEvangelist
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/03/2020
-ms.author: dapine
-ms.openlocfilehash: b5bdbb76a822f8b6d5134da819828b3dee518165
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.author: trbye
+ms.openlocfilehash: 7e2960adce028450fd3ccdb9eb11190629bf7bb8
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83806511"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86035574"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -168,7 +168,7 @@ ms.locfileid: "83806511"
 Теперь необходимо создать объект `AudioConfig`, указывающий на звуковой файл. Вставьте этот код в метод `startRecognizeOnceAsyncButton.addEventListener()` непосредственно под конфигурацией службы "Речь".
 
 ```JavaScript
-        var audioConfig  = SpeechSDK.AudioConfig.fromFile(audioFile);
+        var audioConfig  = SpeechSDK.AudioConfig.fromWavFileInput(audioFile);
 ```
 
 ## <a name="initialize-a-speechrecognizer"></a>Инициализация SpeechRecognizer
@@ -212,7 +212,7 @@ recognizer.recognizeOnceAsync(
 В случае, если вы хотите разместить веб-страницу на веб-сервере, можно указать источник маркера для вашего демоверсии приложения.
 Таким образом ключ подписки никогда не покинет пределы сервера, позволяя при этом пользователям использовать возможности распознавания речи, не вводя код авторизации.
 
-Создайте файл с именем `token.php`. В этом примере предполагается, что веб-сервер поддерживает язык сценариев PHP. Введите приведенный ниже код.
+Создайте файл с именем `token.php`. В этом примере предполагается, что веб-сервер поддерживает язык сценариев PHP с включенной служебной программой cURL. Введите приведенный ниже код.
 
 ```php
 <?php

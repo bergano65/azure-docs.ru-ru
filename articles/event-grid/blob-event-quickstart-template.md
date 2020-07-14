@@ -1,30 +1,28 @@
 ---
 title: Отправка событий хранилища BLOB-объектов в конечную веб-точку с помощью шаблона
 description: Использование шаблона службы "Сетка событий Azure" и Resource Manager для создания учетной записи хранения BLOB-объектов и подписки на связанные события. Отправка событий в веб-перехватчик.'
-services: event-grid
-keywords: ''
-author: spelluru
-ms.author: spelluru
-ms.date: 06/03/2020
+ms.date: 07/07/2020
 ms.topic: quickstart
-ms.service: event-grid
-ms.custom: subject-armqs
-ms.openlocfilehash: 0cf880411a5c2a8eefd592a01de40b5098f31cda
-ms.sourcegitcommit: c052c99fd0ddd1171a08077388d221482026cd58
+ms.openlocfilehash: 603d6bf11f2ec6988d52e69817bddf2fd3ccf3b3
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84424139"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86103319"
 ---
-# <a name="route-blob-storage-events-to-web-endpoint-by-using-azure-resource-manager-template"></a>Маршрутизация событий хранилища больших двоичных объектов в конечную веб-точку с помощью шаблона Azure Resource Manager
+# <a name="route-blob-storage-events-to-web-endpoint-by-using-an-arm-template"></a>Маршрутизация событий хранилища больших двоичных объектов в конечную веб-точку с помощью шаблона ARM
 
-"Сетка событий Azure" — это служба обработки событий для облака. В этой статье описано, как с помощью **шаблона Resource Manager** создать учетную запись хранения BLOB-объектов и подписку на связанные события этого хранилища больших двоичных объектов, а также активировать событие для просмотра результата. Как правило, события отправляются на конечную точку, которая обрабатывает данные событий и выполняет соответствующие действия. Но в этой статье для простоты события отправляются в веб-приложение, которое собирает и отображает сообщения.
+"Сетка событий Azure" — это служба обработки событий для облака. В этой статье описано, как с помощью шаблона Resource Manager (ARM) создать учетную запись хранения BLOB-объектов и подписку на связанные события этого хранилища больших двоичных объектов, а также активировать событие для просмотра результата. Как правило, события отправляются на конечную точку, которая обрабатывает данные событий и выполняет соответствующие действия. Но в этой статье для простоты события отправляются в веб-приложение, которое собирает и отображает сообщения.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-event-grid-subscription-and-storage%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ### <a name="create-a-message-endpoint"></a>Создание конечной точки сообщения
 
@@ -39,21 +37,19 @@ ms.locfileid: "84424139"
 
    ![Представление нового сайта](./media/blob-event-quickstart-portal/view-site.png)
 
-## <a name="create-a-storage-account-with-an-event-grid-subscription"></a>Создание учетной записи хранения с помощью подписки на службу "Сетка событий Azure"
+## <a name="review-the-template"></a>Изучение шаблона
 
-### <a name="review-the-template"></a>Изучение шаблона
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-event-grid-subscription-and-storage/).
 
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-event-grid-subscription-and-storage).
-
-[!code-json[<Azure Resource Manager template create Blob storage Event Grid subscription>](~/quickstart-templates/101-event-grid-subscription-and-storage/azuredeploy.json)]
+:::code language="json" source="~/quickstart-templates/101-event-grid-subscription-and-storage/azuredeploy.json" range="1-91" highlight="40-85":::
 
 В шаблоне определено два ресурса Azure:
 
 * [**Microsoft.Storage/storageAccounts**](/azure/templates/microsoft.storage/storageaccounts) создает учетную запись хранения.
-* [**Microsoft.EventGrid/systemTopics**](/azure/templates/microsoft.eventgrid/systemtopics) создает системный раздел с указанным именем для учетной записи хранения. 
+* [**Microsoft.EventGrid/systemTopics**](/azure/templates/microsoft.eventgrid/systemtopics) создает системный раздел с указанным именем для учетной записи хранения.
 * [**Microsoft.EventGrid/systemTopics/eventSubscriptions**](/azure/templates/microsoft.eventgrid/systemtopics/eventsubscriptions) создает подписку на Сетку событий Azure для системного раздела.
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 1. Выберите следующую ссылку, чтобы войти на портал Azure и открыть шаблон. Шаблон создает хранилище ключей и секрет.
 
@@ -65,7 +61,7 @@ ms.locfileid: "84424139"
   Для развертывания шаблона здесь используется портал Azure. Вы можете также использовать Azure PowerShell, Azure CLI и REST API. Дополнительные сведения о других методах развертывания см. в статье о [развертывании с использованием шаблонов](../azure-resource-manager/templates/deploy-powershell.md).
 
 > [!NOTE]
-> Дополнительные примеры шаблонов службы "Сетка событий Azure" можно найти [здесь](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Eventgrid).
+> Дополнительные примеры шаблонов службы "Сетка событий Azure" можно найти [здесь](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Eventgrid&pageNumber=1&sort=Popular).
 
 ## <a name="validate-the-deployment"></a>Проверка развертывания
 

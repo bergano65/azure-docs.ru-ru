@@ -11,24 +11,28 @@ ms.topic: quickstart
 ms.custom: mvc,subject-armqs
 ms.date: 02/27/2020
 ms.author: jgao
-ms.openlocfilehash: 273a467f5db2201015352aaf4a232f5a42e29673
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 5206c73ac225f31ee8c40105e292726a9f951a79
+ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81618082"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85478933"
 ---
-# <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-resource-manager-template"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью шаблона Resource Manager
+# <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-an-arm-template"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью шаблона ARM
 
-[Azure Key Vault](../general/overview.md) — это облачная служба, которая обеспечивает безопасное хранение секретов, таких как ключи, пароли, сертификаты, и другой секретной информации. В этом кратком руководстве рассматривается процесс развертывания шаблона Resource Manager для создания хранилища ключей и секрета.
+[Azure Key Vault](../general/overview.md) — это облачная служба, которая обеспечивает безопасное хранение секретов, таких как ключи, пароли, сертификаты, и другой секретной информации. В этом кратком руководстве показано, как развернуть шаблон Azure Resource Manager (шаблон ARM) для создания хранилища ключей и секрета.
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-key-vault-create%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этой статьей необходимо иметь следующее.
+Для работы с этой статьей необходимо сделать следующее:
+
+* Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 * Шаблону для настройки разрешений требуется идентификатор объекта пользователя Azure AD. Следующая процедура возвращает идентификатор объекта (GUID).
 
@@ -53,22 +57,20 @@ ms.locfileid: "81618082"
 
     2. Запишите идентификатор объекта. Он понадобится в следующем разделе этого краткого руководства.
 
-## <a name="create-a-vault-and-a-secret"></a>Создание хранилища и секрета
-
-### <a name="review-the-template"></a>Изучение шаблона
+## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-key-vault-create/).
 
-:::code language="json" source="~/quickstart-templates/101-key-vault-create/azuredeploy.json" range="1-150" highlight="107-148":::
+:::code language="json" source="~/quickstart-templates/101-key-vault-create/azuredeploy.json" range="1-150" highlight="106-148":::
 
 В шаблоне определено два ресурса Azure:
 
 * [**Microsoft.KeyVault/vaults**](/azure/templates/microsoft.keyvault/vaults) создает хранилище ключей Azure.
-* [**Microsoft.KeyVault/vaults/secrets**](/azure/templates/microsoft.keyvault/vaults/secrets) создает секрет хранилища ключей.
+* [**Microsoft.KeyVault/vaults/secrets**](/azure/templates/microsoft.keyvault/vaults/secrets): создает секрет хранилища ключей.
 
-Другие примеры шаблонов хранилища Azure Key Vault можно найти [здесь](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Keyvault).
+Дополнительные примеры шаблонов Azure Key Vault можно найти в [шаблонах быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Keyvault&pageNumber=1&sort=Popular).
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создает хранилище ключей и секрет.
 
@@ -76,22 +78,22 @@ ms.locfileid: "81618082"
 
 2. Введите или выберите следующие значения.
 
-    ![Шаблон Resource Manager, Интеграция Azure Key Vault, портал развертывания](../media/quick-create-template/create-key-vault-using-template-portal.png)
+    ![Шаблон ARM, интеграция Key Vault, портал развертывания](../media/quick-create-template/create-key-vault-using-template-portal.png)
 
     Если значение не указано, используйте для создания хранилища ключей и секрета значение по умолчанию.
 
     * **Подписка**. Выберите нужную подписку Azure.
     * **Группа ресурсов**. Щелкните **Создать**, введите уникальное имя новой группы ресурсов и нажмите кнопку **ОК**.
-    * **Расположение**. Выберите расположение.  Например, **центральная часть США**.
+    * **Расположение**. Выберите расположение. Например, **центральная часть США**.
     * **Имя хранилища ключей**: введите имя для хранилища ключей, которое должно быть уникальным в пределах всего пространства имен .vault.azure.net. В следующем разделе при проверке развертывания, необходимо имя.
-    * **Идентификатор клиента**: функция шаблона автоматически получает идентификатор клиента.  Не изменяйте значение по умолчанию.
+    * **Идентификатор клиента**: функция шаблона автоматически получает идентификатор клиента. Не изменяйте значение по умолчанию.
     * **Идентификатор пользователя AD**. Введите идентификатор объекта пользователя Azure AD, который вы получили на шаге [Предварительные требования](#prerequisites).
-    * **Имя секрета**. Введите имя секрета, который вы храните в хранилище ключей.  Например, **adminpassword**.
-    * **Значение секрета**. Ведите значение секрета.  Если вы храните пароль, рекомендуется использовать сгенерированный пароль, который вы создали на шаге "Предварительные требования".
+    * **Имя секрета**. Введите имя секрета, который вы храните в хранилище ключей. Например, **adminpassword**.
+    * **Значение секрета**. Ведите значение секрета. Если вы храните пароль, рекомендуется использовать пароль, сгенерированный на шаге с описанием предварительных требований.
     * **I agree to the terms and conditions state above** (Я принимаю указанные выше условия). Установите этот флажок.
 3. Щелкните **Приобрести**. После успешного развертывания хранилища ключей вы получите уведомление:
 
-    ![Уведомление Resource Manager на портале интеграции развертывания Key Vault](../media/quick-create-template/resource-manager-template-portal-deployment-notification.png)
+    ![Шаблон ARM, интеграция Key Vault, уведомления портала развертывания](../media/quick-create-template/resource-manager-template-portal-deployment-notification.png)
 
 Для развертывания шаблона используется портал Azure. В дополнение к порталу Azure можно также использовать Azure PowerShell, Azure CLI и REST API. Дополнительные сведения о других методах развертывания см. в статье о [развертывании с использованием шаблонов](../../azure-resource-manager/templates/deploy-powershell.md).
 
@@ -122,13 +124,14 @@ Write-Host "Press [ENTER] to continue..."
 
 # <a name="cli"></a>[CLI](#tab/CLI)
 
-![Шаблон Resource Manager, интеграция Key Vault, вывод подтверждения портала развертывания](../media/quick-create-template/resource-manager-template-portal-deployment-cli-output.png)
+![Шаблон ARM, интеграция Key Vault, выходные данные проверки портала развертывания](../media/quick-create-template/resource-manager-template-portal-deployment-cli-output.png)
 
 # <a name="powershell"></a>[PowerShell](#tab/PowerShell)
 
-![Шаблон Resource Manager, интеграция Key Vault, вывод подтверждения портала развертывания](../media/quick-create-template/resource-manager-template-portal-deployment-powershell-output.png)
+![Шаблон ARM, интеграция Key Vault, выходные данные проверки портала развертывания](../media/quick-create-template/resource-manager-template-portal-deployment-powershell-output.png)
 
 ---
+
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Другие руководства о Key Vault созданы на основе этого документа. Если вы планируете продолжить работу с последующими краткими руководствами и статьями, эти ресурсы можно не удалять.
@@ -155,7 +158,7 @@ Write-Host "Press [ENTER] to continue..."
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Работая с этим кратким руководством, вы создали хранилище ключей и секрет с помощью шаблона Azure Resource Manager и проверили развертывание. Дополнительные сведения о Key Vault и Azure Resource Manager см. в следующих статьях.
+В этом кратком руководстве показано, как создать хранилище ключей и секрет с помощью шаблона ARM и проверить развертывание. Дополнительные сведения о Key Vault и Azure Resource Manager см. в следующих статьях.
 
 - [Обзор Azure Key Vault](../general/overview.md)
 - Сведения об [Azure Resource Manager](../../azure-resource-manager/management/overview.md)

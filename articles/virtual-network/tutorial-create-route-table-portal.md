@@ -13,12 +13,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 03/13/2020
 ms.author: kumud
-ms.openlocfilehash: 854bf2d1ed2155290c2ecebd17695049fdd0c8bb
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: d630a41f9b83a852605ffad2a85ad6dd14bbac73
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81314283"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86079655"
 ---
 # <a name="tutorial-route-network-traffic-with-a-route-table-using-the-azure-portal"></a>Руководство по Маршрутизация сетевого трафика с помощью таблицы маршрутов с использованием портала Azure
 
@@ -359,3 +359,6 @@ ms.locfileid: "81314283"
 
 > [!div class="nextstepaction"]
 > [Настройка конечных точек служб виртуальной сети](tutorial-restrict-network-access-to-resources.md)
+
+> [!NOTE] 
+> За использование служб Azure взимается плата. Управление затратами Azure помогает устанавливать бюджеты и настраивать оповещения, чтобы держать расходы под контролем. Анализируйте, администрируйте и оптимизируйте затраты на Azure с помощью Управления затратами. Дополнительные сведения см. в [кратком руководстве по анализу затрат](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).

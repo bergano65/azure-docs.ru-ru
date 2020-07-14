@@ -13,12 +13,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 04/20/2020
 ms.author: apimpm
-ms.openlocfilehash: 0b5fbb49e2f60f101f16988538af86c2caf550eb
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 16c14774b1b032132040ea3fdcf810a4f9de8f18
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82202862"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86077360"
 ---
 # <a name="import-and-publish-your-first-api"></a>Импорт и публикация первого API
 
@@ -97,3 +97,8 @@ ms.locfileid: "82202862"
 
 > [!div class="nextstepaction"]
 > [Создание и публикация продукта](api-management-howto-add-products.md)
+
+Хотите оптимизировать и сократить ваши расходы на облако?
+
+> [!div class="nextstepaction"]
+> [Начните анализировать затраты с помощью службы "Управление затратами"](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)

@@ -1,6 +1,6 @@
 ---
 title: Что такое Azure Sentinel? | Документация Майкрософт
-description: Узнайте о решении Azure Sentinel, его основных возможностях и о том, как оно работает.
+description: Сведения об Azure Sentinel, масштабируемом ориентированном на облако решении для управления информационной безопасностью и событиями безопасности (SIEM), а также для оркестрации событий безопасности и автоматического реагирования (SOAR).
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/24/2019
 ms.author: yelevin
-ms.openlocfilehash: 517bdc0846ae56e0db41631f1dc5411471c6c2bd
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.openlocfilehash: ebc9756afc43648f2b44ca317abe3373807f4efa
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83800129"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85564633"
 ---
 # <a name="what-is-azure-sentinel"></a>Что собой представляет Azure Sentinel?
 

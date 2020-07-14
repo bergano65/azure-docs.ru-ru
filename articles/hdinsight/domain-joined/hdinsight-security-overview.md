@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: overview
 ms.custom: seoapr2020
 ms.date: 04/20/2020
-ms.openlocfilehash: 65df89aff0232d7bf9809cdffc4262d1a640a5a1
-ms.sourcegitcommit: 99d016949595c818fdee920754618d22ffa1cd49
+ms.openlocfilehash: 1869671b465b7175cf3160c41debc66cbd0818ad
+ms.sourcegitcommit: bf8c447dada2b4c8af017ba7ca8bfd80f943d508
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84771127"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85367110"
 ---
 # <a name="overview-of-enterprise-security-in-azure-hdinsight"></a>Общие сведения о корпоративной безопасности в Azure HDInsight
 
@@ -81,6 +81,7 @@ Azure HDInsight предлагает ряд методов для соответ
 |  | Настройка [конечных точек службы для виртуальной сети Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) для Cosmos DB и [Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview) | Customer |
 |  | Убедитесь, что [шифрование TLS](../../storage/common/storage-security-tls.md) включено для передаваемых данных. | Customer |
 |  | Настройка [управляемых пользователем ключей](../../storage/common/storage-encryption-keys-portal.md) для шифрования службы хранилища Azure | Customer |
+|  | Контролируйте доступ специалистов службы поддержки Azure к вашим данным, используя [защищенное хранилище](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview). | Customer |
 | Безопасность приложений и ПО промежуточного слоя | Интеграция с AAD-DS и [настройка проверки подлинности](apache-domain-joined-configure-using-azure-adds.md) | Customer |
 |  | Настройка политик [авторизации Apache Ranger](apache-domain-joined-run-hive.md) | Customer |
 |  | Использование [журналов Azure Monitor](../hdinsight-hadoop-oms-log-analytics-tutorial.md) | Customer |

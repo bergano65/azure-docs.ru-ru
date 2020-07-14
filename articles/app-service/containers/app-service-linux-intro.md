@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 1/11/2019
 ms.author: msangapu
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 27f085543869b1a77db9c97ca2e7ae7d3d3b7b88
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 891e0c18b3f95dca905fbc14b957af773135eeec
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80046422"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85557897"
 ---
 # <a name="introduction-to-azure-app-service-on-linux"></a>Вводные сведения о службе приложений Azure на платформе Linux
 
@@ -54,7 +54,7 @@ ms.locfileid: "80046422"
 
 На портале Azure отображаются только те функции, которые уже доступны в веб-приложении для контейнеров. Дополнительные функции будут отображаться на портале по мере добавления.
 
-Служба приложений в Linux поддерживается только в рамках планов службы приложений ["Бесплатный", "Базовый", "Стандартный" и "Премиум"](https://azure.microsoft.com/pricing/details/app-service/plans/). Уровень ["Общий"](https://azure.microsoft.com/pricing/details/app-service/plans/) недоступен. Вы не можете создать веб-приложение Linux в плане службы приложений, в котором уже размещены веб-приложения для других платформ.  
+Служба приложений в Linux поддерживается только в рамках таких планов службы приложений: [Бесплатный, Базовый, Стандартный, Премиум и Изолированный](https://azure.microsoft.com/pricing/details/app-service/plans/). Уровень [Общий](https://azure.microsoft.com/pricing/details/app-service/plans/) недоступен. Вы не можете создать веб-приложение Linux в плане службы приложений, в котором уже размещены веб-приложения для других платформ.  
 
 Текущие ограничения не позволяют комбинировать приложения Windows и Linux в одной группе ресурсов.
 

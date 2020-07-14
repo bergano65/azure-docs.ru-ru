@@ -5,12 +5,12 @@ author: mumian
 ms.date: 06/10/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: e2419e8ee9f8648ae8f929638ac2c85ea8b67a0f
-ms.sourcegitcommit: f01c2142af7e90679f4c6b60d03ea16b4abf1b97
+ms.openlocfilehash: 1e286a3b59279ed9658a373210f1425ece05eff4
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84676154"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86102085"
 ---
 # <a name="tutorial-create-and-deploy-your-first-arm-template"></a>Руководство по Создание и развертывание шаблона ARM
 
@@ -28,7 +28,7 @@ ms.locfileid: "84676154"
 
 ### <a name="editor"></a>Редактор
 
-Шаблоны — это файлы JSON. Для создания шаблонов нужен редактор JSON. Советуем использовать Visual Studio Code с расширением средств Resource Manager. Чтобы установить эти средства, см. руководство по [использованию Visual Studio Code для создания шаблонов Resource Manager](use-vs-code-to-create-template.md).
+Шаблоны — это файлы JSON. Для создания шаблонов нужен редактор JSON. Советуем использовать Visual Studio Code с расширением средств Resource Manager. Если необходимо установить эти средства, см. статью [Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 
 ### <a name="command-line-deployment"></a>Развертывание из командной строки
 

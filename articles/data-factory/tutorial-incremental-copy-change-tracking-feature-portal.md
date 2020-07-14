@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 01/12/2018
-ms.openlocfilehash: cb8d03b853e4e0f4f5f60a144e7a05ef19de1071
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: c28489c2fa502f0ba1283abdea19219ed7438a99
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85251851"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085826"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information-using-the-azure-portal"></a>Добавочная загрузка данных из Базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений и портала Azure
 
@@ -166,7 +166,7 @@ ms.locfileid: "85251851"
 
    Имя фабрики данных Azure должно быть **глобально уникальным**. При возникновении указанной ниже ошибки измените имя фабрики данных (например, на ваше_имя_ADFTutorialDataFactory) и попробуйте создать фабрику данных снова. Ознакомьтесь со статьей [Фабрика данных Azure — правила именования](naming-rules.md), чтобы узнать правила именования для артефактов службы "Фабрика данных".
 
-       `Data factory name “ADFTutorialDataFactory” is not available`
+   *Имя фабрики данных ADFTutorialDataFactory недоступно*
 3. Выберите **подписку** Azure, в рамках которой вы хотите создать фабрику данных.
 4. Для **группы ресурсов** выполните одно из следующих действий.
 

@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: overview
 ms.date: 01/22/2018
-ms.openlocfilehash: 4175214219350620ae44d0249243e23b1a25144a
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
+ms.openlocfilehash: 69265b17d5030d30bbb4d4be3e68c3d98fc90af0
+ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84196594"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85321096"
 ---
 # <a name="introduction-to-azure-data-factory"></a>Знакомство с Фабрикой данных Azure 
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -142,6 +142,6 @@ ms.locfileid: "84196594"
 
 | Учебник | Описание |
 | --- | --- |
-| [Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) |Создайте фабрику данных с конвейером, который перемещает данные из хранилища BLOB-объектов в базу данных SQL. |
+| [Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) |Создайте фабрику данных с конвейером, который перемещает данные из хранилища BLOB-объектов в Базу данных SQL. |
 | [Руководство. Создание первого конвейера для преобразования данных с помощью кластера Hadoop](data-factory-build-your-first-pipeline.md) |Создайте свою первую фабрику данных Azure с конвейером данных, который обрабатывает данные путем запуска сценария Hive в кластере Azure HDInsight (Hadoop). |
 | [Move data between on-premises sources and the cloud with Data Management Gateway](data-factory-move-data-between-onprem-and-cloud.md) (Перемещение данных между локальными источниками и облаком с помощью шлюза управления данными) |Создайте фабрику данных с конвейером, который перемещает данные из базы данных SQL Server в большой двоичный объект Azure. В рамках этого пошагового руководства вы установите и настроите шлюз управления данными на своем компьютере. |

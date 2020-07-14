@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Подключение к Azure Sentinel
-description: В этом кратком руководстве приведены сведения о том, как собирать данные в Azure Sentinel.
+description: В этом кратком руководстве показано, как использовать Azure Sentinel, сначала включив Sentinel, а затем подключившись к источникам данных.
 services: sentinel
 author: yelevin
 ms.author: yelevin
@@ -9,18 +9,18 @@ ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: a581288259a521f8f2f93ff3fbc16f4926486643
-ms.sourcegitcommit: 99d016949595c818fdee920754618d22ffa1cd49
+ms.openlocfilehash: d895ff3a16f8e21f73845c03d8bec83ded9bcd43
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84771178"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85564542"
 ---
 # <a name="quickstart-on-board-azure-sentinel"></a>Краткое руководство. Подключение к Azure Sentinel
 
 В этом кратком руководстве приведены сведения о том, как подключиться к Azure Sentinel. 
 
-Чтобы подключиться к Azure Sentinel, сначала необходимо включить это решение, а затем подключиться к источникам данных. Azure Sentinel поставляется с несколькими соединителями для решений Майкрософт, которые доступны по умолчанию и обеспечивают интеграцию в режиме реального времени, включая решения Microsoft Threat Protection, источники Microsoft 365, Office 365, Azure AD, Azure ATP, Microsoft Cloud App Security и многое другое. Кроме того, доступны встроенные соединители для более широкой экосистемы безопасности для решений сторонних разработчиков. Чтобы подключить источники данных к Azure Sentinel, вы можете использовать общий формат событий, Syslog или REST API.  
+Чтобы подключиться к Azure Sentinel, сначала необходимо включить это решение, а затем подключиться к источникам данных. Azure Sentinel поставляется с несколькими соединителями для решений Майкрософт, включая Microsoft Threat Protection, источники Microsoft 365, Office 365, Azure AD, Azure ATP, Microsoft Cloud App Security и др. Эти соединители доступны по умолчанию и обеспечивают интеграцию в режиме реального времени. Кроме того, доступны встроенные соединители для более широкой экосистемы безопасности для решений сторонних разработчиков. Чтобы подключить источники данных к Azure Sentinel, вы можете использовать Common Event Format (CEF), Syslog или REST API.  
 
 После подключения источников вы можете выбрать из коллекции созданные экспертами книги, которые позволяют просматривать аналитические сведения на основе имеющихся данных. Эти книги можно легко настроить в соответствии со своими потребностями.
 

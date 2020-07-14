@@ -8,19 +8,19 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/05/2020
 ms.author: aahi
-ms.openlocfilehash: b6ab34019207ccbeec5448b848e501e063707d16
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: bdbd183ba161c96e0ed8e160ce602da2ec30dfb7
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81385010"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85940416"
 ---
 Клиентская библиотека Поиска в Интернете Bing позволяет интегрировать поиск Bing в любое приложение Python. В этом кратком руководстве описано, как отправлять запрос, получать ответ в формате JSON, фильтровать и анализировать результаты.
 
 Хотите увидеть код прямо сейчас? Примеры для [клиентских библиотек Поиска Bing для Python](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/tree/master/samples/search) доступны на сайте GitHub.
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Пакет SDK Поиска в Интернете Bing совместим с Python версии 2.7, 3.3, 3.4, 3.5 и 3.6. Мы рекомендуем использовать для этого руководства виртуальное окружение.
 
 * Python версии 2.7, 3.3, 3.4, 3.5 или 3.6
@@ -167,7 +167,7 @@ python -m pip install azure-cognitiveservices-search-websearch
 
 1. Замените значение `SUBSCRIPTION_KEY` действительным ключом подписки.
 
-1. Замените `YOUR_ENDPOINT` URL-адресом своей конечной точки на портале.
+1. Замените `YOUR_ENDPOINT` URL-адресом конечной точки на портале и удалите фрагмент bing/v7.0 из конечной точки.
 
 1. Запустите программу. Например: `python your_program.py`.
 

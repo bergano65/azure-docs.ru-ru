@@ -8,42 +8,45 @@ ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 03/13/2020
-ms.openlocfilehash: ae0f29b8085bd9637f527f2a58229dd89ce6933b
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: add16e587540b62c66ec6a764b872acfcb17fb07
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80064676"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86079791"
 ---
-# <a name="quickstart-create-apache-hadoop-cluster-in-azure-hdinsight-using-resource-manager-template"></a>Краткое руководство. Создание кластеров Apache Hadoop в Azure HDInsight с помощью шаблонов Resource Manager
+# <a name="quickstart-create-apache-hadoop-cluster-in-azure-hdinsight-using-arm-template"></a>Краткое руководство. Создание кластера Apache Hadoop в Azure HDInsight с помощью шаблона ARM
 
-Из этого краткого руководства вы узнаете, как с помощью шаблона Azure Resource Manager создать кластер [Apache Hadoop](./apache-hadoop-introduction.md) в Azure HDInsight. Первоначально технология Hadoop была платформой с открытым кодом для распределенной обработки и анализа наборов больших данных в кластерах. Экосистема Hadoop состоит из взаимосвязанного программного обеспечения и служебных программ, таких как Apache Hive, Apache HBase, Spark, Kafka и т. д.
+В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager (шаблона ARM) создать кластер [Apache Hadoop](./apache-hadoop-introduction.md) в Azure HDInsight. Первоначально технология Hadoop была платформой с открытым кодом для распределенной обработки и анализа наборов больших данных в кластерах. Экосистема Hadoop состоит из взаимосвязанного программного обеспечения и служебных программ, таких как Apache Hive, Apache HBase, Spark, Kafka и т. д.
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
   
 В настоящее время в HDInsight доступно [семь типов кластеров](../hdinsight-overview.md#cluster-types-in-hdinsight). Каждый тип кластера поддерживает свой набор компонентов. Все типы кластеров поддерживают инфраструктуру Hive. Дополнительные сведения о поддерживаемых компонентах в HDInsight см. в статье [Что представляют собой различные компоненты Hadoop, доступные в HDInsight?](../hdinsight-component-versioning.md)  
 
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-linux-ssh-password%2Fazuredeploy.json)
+
+## <a name="prerequisites"></a>Предварительные требования
+
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="create-an-apache-hadoop-cluster"></a>Создание кластера Apache Hadoop
+## <a name="review-the-template"></a>Изучение шаблона
 
-### <a name="review-the-template"></a>Изучение шаблона
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-ssh-password/).
 
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-ssh-password).
-
-:::code language="json" source="~/quickstart-templates/101-hdinsight-linux-ssh-password/azuredeploy.json" range="1-148":::
-
+:::code language="json" source="~/quickstart-templates/101-hdinsight-linux-ssh-password/azuredeploy.json" range="1-182" highlight="96-128":::
 
 В шаблоне определено два ресурса Azure:
 
-* С помощью [Microsoft.Storage/storageAccounts](https://docs.microsoft.com/azure/templates/microsoft.storage/storageaccounts) создается учетная запись хранения Azure.
-* С помощью [Microsoft.HDInsight/cluster](https://docs.microsoft.com/azure/templates/microsoft.hdinsight/clusters) создается кластер HDInsight.
+* С помощью [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) создается учетная запись хранения Azure.
+* С помощью [Microsoft.HDInsight/cluster](/azure/templates/microsoft.hdinsight/clusters) создается кластер HDInsight.
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
-1. Нажмите кнопку **Развертывание в Azure** ниже, чтобы войти в Azure и открыть шаблон Resource Manager.
+1. Нажмите кнопку **Развертывание в Azure** ниже, чтобы войти в Azure и открыть шаблон ARM.
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-linux-ssh-password%2Fazuredeploy.json" target="_blank"><img src="./media/apache-hadoop-linux-tutorial-get-started/hdi-deploy-to-azure1.png" alt="Deploy to Azure button for new cluster"></a>
+    [![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-linux-ssh-password%2Fazuredeploy.json)
 
 1. Введите или выберите следующие значения:
 
@@ -90,7 +93,7 @@ ms.locfileid: "80064676"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого краткого руководства вы узнаете, как создать в HDInsight кластер Apache Hadoop с помощью шаблона Resource Manager. В следующей статье вы узнаете, как выполнять операции извлечения, преобразования и загрузки с помощью Hadoop в HDInsight.
+В этом кратком руководстве показано, как создать в HDInsight кластер Apache Hadoop с помощью шаблона ARM. В следующей статье вы узнаете, как выполнять операции извлечения, преобразования и загрузки с помощью Hadoop в HDInsight.
 
 > [!div class="nextstepaction"]
 > [Учебник: извлечение, преобразование и загрузка данных с помощью интерактивного запроса в HDInsight](../interactive-query/interactive-query-tutorial-analyze-flight-data.md)

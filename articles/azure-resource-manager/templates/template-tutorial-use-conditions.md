@@ -5,12 +5,12 @@ author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: b73598da2b34847a38485db9952302f7c5b33c98
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: d902258c80467380518df3b55583cea1efa76609
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82185036"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119316"
 ---
 # <a name="tutorial-use-condition-in-arm-templates"></a>Руководство по Использование условия в шаблонах ARM
 
@@ -41,7 +41,7 @@ ms.locfileid: "82185036"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. См. сведения об [использовании Visual Studio Code для создания шаблонов Resource Manager](use-vs-code-to-create-template.md).
+* Visual Studio Code с расширением средств Resource Manager. См. [Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
     ```console

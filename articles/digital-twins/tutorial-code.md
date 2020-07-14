@@ -7,17 +7,14 @@ ms.author: cschorm
 ms.date: 05/05/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 170901f3410c85ab53a306529053e611b36fa8ec
-ms.sourcegitcommit: 4042aa8c67afd72823fc412f19c356f2ba0ab554
+ms.openlocfilehash: deb69f6ca8f1499f43c12d606434719571a1f400
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85298401"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86027879"
 ---
 # <a name="coding-with-the-azure-digital-twins-apis"></a>Написание кода с помощью API Azure Digital Twins
-
-[!INCLUDE [Azure Digital Twins current preview status](../../includes/digital-twins-preview-status.md)]
 
 Часто разработчики, работающие с Azure Digital Twins, пишут клиентское приложение для взаимодействия со своим экземпляром службы Azure Digital Twins. Этот учебник предназначен для разработчиков и содержит вводные сведения о программировании для службы Azure Digital Twins с помощью [клиентской библиотеки Digital Twins Интернета вещей Azure для .NET (C#)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core). В нем пошагово описывается процесс написания консольного клиентского приложения на C# с самого начала.
 
@@ -288,6 +285,7 @@ Type name: : dtmi:com:contoso:SampleModel;1
 
 ```csharp
 using System.Text.Json;
+using Azure.DigitalTwins.Core.Serialization;
 ```
 
 Затем добавьте следующий код в конец метода `Main`, чтобы создать и инициализировать три цифровых двойника на основе этой модели.
@@ -318,7 +316,7 @@ for(int i=0; i<3; i++) {
 
 Далее вы можете создать **связи** между этими двойниками, чтобы подключить их к **графу двойников**. [Графы двойников](concepts-twins-graph.md) используются для представления всей вашей среды.
 
-Чтобы можно было создавать связи, добавьте инструкцию `using` для базового типа связи в пакете SDK:
+Чтобы можно было создавать связи, добавьте инструкцию `using` для базового типа связи в пакете SDK. Пропустите этот шаг, если инструкция была добавлена ранее.
 ```csharp
 using Azure.DigitalTwins.Core.Serialization;
 ```
@@ -566,5 +564,5 @@ az ad app delete --id <your-application-ID>
 > [Руководство. Изучение основ с помощью примера клиентского приложения](tutorial-command-line-app.md)
 
 Вы также можете расширить знания, полученные при написании кода для этого учебника, изучив дополнительные операции управления в статьях с инструкциями или ознакомившись с документацией по концепциям, чтобы узнать больше об элементах, с которыми вы работали в этом учебнике.
-* [Практическое руководство. Управление моделью двойника](how-to-manage-model.md)
+* [Практическое руководство. Управление настраиваемыми моделями](how-to-manage-model.md)
 * [Основные понятия. Настраиваемые модели](concepts-models.md)

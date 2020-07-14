@@ -10,13 +10,13 @@ ms.topic: quickstart
 author: mumian
 ms.author: jgao
 ms.reviewer: carlrab
-ms.date: 06/28/2019
-ms.openlocfilehash: 02e0947de3e7e5c6ce5110740127571ea393b168
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.date: 06/24/2020
+ms.openlocfilehash: 2975b98306b7019022799d5ba69b9d7af5797a2b
+ms.sourcegitcommit: bf8c447dada2b4c8af017ba7ca8bfd80f943d508
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84343869"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85368045"
 ---
 # <a name="quickstart-create-a-single-database-in-azure-sql-database-using-the-azure-resource-manager-template"></a>Краткое руководство. Создание отдельной базы данных в Базе данных SQL с помощью шаблона Azure Resource Manager
 
@@ -24,39 +24,32 @@ ms.locfileid: "84343869"
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку "Развертывание в Azure". Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-sql-database%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Нет.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 
-## <a name="create-a-single-database"></a>Создание отдельной базы данных
+## <a name="review-the-template"></a>Изучение шаблона
 
 Отдельная база данных имеет заданный набор ресурсов вычислений, памяти, операций ввода-вывода и хранения и доступна в [двух моделях приобретения](purchasing-models.md). При создании отдельной базы данных можете также определить [сервер](logical-servers.md), чтобы управлять им и разместить его в [группе ресурсов Azure](../../active-directory-b2c/overview.md) в указанном регионе.
 
-### <a name="review-the-template"></a>Изучение шаблона
-
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-sql-logical-server/).
 
-:::code language="json" source="~/quickstart-templates/101-sql-logical-server/azuredeploy.json" range="1-163" highlight="63-132":::
+:::code language="json" source="~/quickstart-templates/101-sql-database/azuredeploy.json" range="1-67" highlight="41-65":::
 
 В шаблоне определены следующие ресурсы:
 
 - [**Microsoft.Sql/servers**](/azure/templates/microsoft.sql/servers)
-- [**Microsoft.Sql/servers/firewallRules**](/azure/templates/microsoft.sql/servers/firewallrules)
-- [**Microsoft.Sql/servers/securityAlertPolicies**](/azure/templates/microsoft.sql/servers/securityalertpolicies)
-- [**Microsoft.Sql/servers/vulnerabilityAssessments**](/azure/templates/microsoft.sql/servers/vulnerabilityassessments)
-- [**Microsoft.Sql/servers/connectionPolicies**](/azure/templates/microsoft.sql/servers/connectionpolicies)
-- [**Microsoft.Storage/storageAccounts**](/azure/templates/microsoft.storage/storageaccounts)
-- [**Microsoft.Storage/storageAccounts/providers/roleAssignments**](/azure/templates/microsoft.authorization/roleassignments)
+- [**Microsoft.Sql/servers/databases**](/azure/templates/microsoft.sql/servers/databases)
 
 Дополнительные примеры шаблонов Базы данных Azure SQL можно найти в [шаблонах быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Sql&pageNumber=1&sort=Popular).
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 Выберите **Попробовать** из следующего блока кода PowerShell, чтобы открыть Azure Cloud Shell.
-
-# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell-interactive
 $projectName = Read-Host -Prompt "Enter a project name that is used for generating resource names"
@@ -67,32 +60,10 @@ $adminPassword = Read-Host -Prompt "Enter the SQl server administrator password"
 $resourceGroupName = "${projectName}rg"
 
 New-AzResourceGroup -Name $resourceGroupName -Location $location
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-sql-logical-server/azuredeploy.json" -administratorLogin $adminUser -administratorLoginPassword $adminPassword
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-sql-database/azuredeploy.json" -administratorLogin $adminUser -administratorLoginPassword $adminPassword
 
 Read-Host -Prompt "Press [ENTER] to continue ..."
 ```
-
-# <a name="the-azure-cli"></a>[CLI Azure.](#tab/azure-cli)
-
-```azurecli-interactive
-$projectName = Read-Host -Prompt "Enter a project name that is used for generating resource names"
-$location = Read-Host -Prompt "Enter an Azure location (i.e. centralus)"
-$adminUser = Read-Host -Prompt "Enter the SQL server administrator username"
-$adminPassword = Read-Host -Prompt "Enter the SQl server administrator password" -AsSecureString
-
-$resourceGroupName = "${projectName}rg"
-
-az group create --location $location --name $resourceGroupName
-
-az group deployment create -g $resourceGroupName --template-uri "D:\GitHub\azure-docs-json-samples\SQLServerAndDatabase\azuredeploy.json" `
-    --parameters 'projectName=' + $projectName \
-                 'administratorLogin=' + $adminUser \
-                 'administratorLoginPassword=' + $adminPassword
-
-Read-Host -Prompt "Press [ENTER] to continue ..."
-```
-
-* * *
 
 ## <a name="validate-the-deployment"></a>Проверка развертывания
 
@@ -104,22 +75,10 @@ Read-Host -Prompt "Press [ENTER] to continue ..."
 
 Чтобы удалить группу ресурсов, сделайте следующее:
 
-# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
-
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
 Remove-AzResourceGroup -Name $resourceGroupName
 ```
-
-# <a name="the-azure-cli"></a>[CLI Azure.](#tab/azure-cli)
-
-```azurecli-interactive
-echo "Enter the Resource Group name:" &&
-read resourceGroupName &&
-az group delete --name $resourceGroupName
-```
-
-* * *
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -130,4 +89,3 @@ az group delete --name $resourceGroupName
 - Чтобы создать отдельную базу данных с помощью Azure CLI, ознакомьтесь с [этими примерами Azure CLI](az-cli-script-samples-content-guide.md).
 - Чтобы создать отдельную базу данных с помощью Azure PowerShell, ознакомьтесь со статьей [Примеры Azure PowerShell для базы данных SQL Azure](powershell-script-content-guide.md).
 - Сведения о [создании шаблонов Resource Manager](../../azure-resource-manager/templates/template-tutorial-create-first-template.md).
- 

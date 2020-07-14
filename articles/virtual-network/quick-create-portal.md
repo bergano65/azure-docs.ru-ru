@@ -11,12 +11,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 03/05/2020
 ms.author: kumud
-ms.openlocfilehash: 1a1593566b8bdb72f322d64c1ee99c7018f49329
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: dfeb9c6bc3dbe33881fc51ccb08a776b827dfe9c
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84707418"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86082443"
 ---
 # <a name="quickstart-create-a-virtual-network-using-the-azure-portal"></a>Краткое руководство. Создание виртуальной сети с помощью портала Azure
 
@@ -223,3 +223,6 @@ ms.locfileid: "84707418"
 Дополнительные сведения о параметрах виртуальной сети см. в статье [Создание, изменение или удаление виртуальной сети](manage-virtual-network.md).
 
 По умолчанию Azure разрешает безопасные подключения между виртуальными машинами. Azure разрешает только входящие подключения к удаленному рабочему столу виртуальных машин Windows из Интернета. Дополнительные сведения о типах сетевых подключений виртуальных машин см. в статье о [фильтрации трафика](tutorial-filter-network-traffic.md).
+
+> [!NOTE] 
+> За использование служб Azure взимается плата. Управление затратами Azure помогает устанавливать бюджеты и настраивать оповещения, чтобы держать расходы под контролем. Анализируйте, администрируйте и оптимизируйте затраты на Azure с помощью Управления затратами. Дополнительные сведения см. в [кратком руководстве по анализу затрат](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).

@@ -2,29 +2,30 @@
 title: Краткое руководство. Создание концентратора событий с группой потребителей в Центрах событий Azure
 description: Краткое руководство. Создание пространства имен Центров событий c концентратором событий и группой потребителей с помощью шаблонов Azure Resource Manager.
 ms.topic: quickstart
+ms.custom: subject-armqs
 ms.date: 06/23/2020
-ms.openlocfilehash: 6ddf17030da8b0ff50f10938221b9c1dba08084d
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 1aa1dc0a4be8c74651a764788184ae1eefe17e75
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85964300"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86038095"
 ---
-# <a name="quickstart-create-an-event-hub-by-using-an-azure-resource-manager-template"></a>Краткое руководство. Создание концентратора событий с помощью шаблона Azure Resource Manager
+# <a name="quickstart-create-an-event-hub-by-using-an-arm-template"></a>Краткое руководство. Создание концентратора событий с помощью шаблона ARM
 
-Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md). В этом кратком руководстве описано, как создать концентратор событий с помощью [шаблона Azure Resource Manager](../azure-resource-manager/management/overview.md). С помощью шаблона Azure Resource Manager вы создадите пространство имен типа [Центры событий](event-hubs-what-is-event-hubs.md) с одним концентратором событий.
+Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md). В этом кратком руководстве объясняется, как создать концентратор событий с помощью [шаблона Azure Resource Manager (ARM)](../azure-resource-manager/management/overview.md). С помощью шаблона ARM вы создадите пространство имен типа [Центры событий](event-hubs-what-is-event-hubs.md) с одним концентратором событий.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-eventhubs-create-namespace-and-eventhub%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Нет.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="create-an-event-hub"></a>Создание концентратора событий
-
-### <a name="review-the-template"></a>Изучение шаблона
+## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-eventhubs-create-namespace-and-eventhub/).
 
@@ -37,7 +38,7 @@ ms.locfileid: "85964300"
 
 См. [примеры шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?term=eventhub&pageNumber=1&sort=Popular).
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 Чтобы развернуть шаблон, выполните следующую команду:
 
@@ -60,9 +61,9 @@ ms.locfileid: "85964300"
 1. Нажмите кнопку **Копировать**, чтобы скопировать сценарий PowerShell.
 1. Щелкните правой кнопкой в консоли оболочки и выберите **Вставить**.
 
-## <a name="verify-the-deployment"></a>Проверка развертывания
+## <a name="validate-the-deployment"></a>Проверка развертывания
 
-Чтобы проверить развертывание, можно открыть группу ресурсов на [портале Azure](https://portal.azure.com) или использовать следующий скрипт Azure PowerShell.  Если вы не закрывали Cloud Shell, вам не нужно копировать или выполнять первую строку (для чтения и размещения).
+Чтобы проверить развертывание, можно открыть группу ресурсов на [портале Azure](https://portal.azure.com) или использовать следующий скрипт Azure PowerShell. Если вы не закрывали Cloud Shell, вам не нужно копировать или выполнять первую строку (для чтения и размещения).
 
 ```azurepowershell-interactive
 $projectName = Read-Host -Prompt "Enter the same project name that you used in the last procedure"

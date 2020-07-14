@@ -1,7 +1,7 @@
 ---
 title: 'Клиентская библиотека Swift иммерсивного средства чтения: краткое руководство'
 titleSuffix: Azure Cognitive Services
-description: В рамках этого краткого руководства вы создадите веб-приложения с нуля и добавите функции API "Иммерсивное средство чтения".
+description: В рамках этого краткого руководства вы создадите приложение iOS с нуля и добавите функции API иммерсивного средства чтения.
 services: cognitive-services
 author: pasta
 manager: nitinme
@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/20/2020
 ms.author: pasta
-ms.openlocfilehash: 191d802064d477babd8aa1f782ad15876b821d11
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
+ms.openlocfilehash: 3d0a8444312f37b1f59817d50bdc50d3aff22164
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84268688"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86038691"
 ---
 [Иммерсивное средство чтения](https://www.onenote.com/learningtools) — это включительно разработанное решение, в котором реализованы проверенные методы, улучшающие понимание при чтении.
 
@@ -573,4 +573,4 @@ function sendContentToReader(message) {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Ознакомьтесь со справочной документацией по [пакету SDK для иммерсивного средства чтения](../../reference.md).
+* Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk) и [справочнике по этому пакету](../../reference.md).

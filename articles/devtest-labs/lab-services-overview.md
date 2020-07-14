@@ -1,26 +1,16 @@
 ---
-title: Службы лабораторий Azure | Документация Майкрософт
-description: Узнайте, как в Службах лабораторий можно легко создавать лаборатории, управлять ими и обеспечивать их безопасность с помощью виртуальных машин, которые могут использоваться разработчиками, тестерами, преподавателями, учащимися и другими пользователями.
-services: lab-services
-documentationcenter: na
-author: spelluru
-manager: ''
-editor: ''
-ms.service: lab-services
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
+title: Службы лабораторий Azure и Azure DevTest Labs
+description: Сравнение Azure DevTest Labs со Службами лабораторий Azure.
 ms.topic: overview
-ms.date: 02/03/2020
-ms.author: spelluru
-ms.openlocfilehash: a1e42a415e99bfaec1c48204efdaacd178005705
-ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
+ms.date: 06/26/2020
+ms.openlocfilehash: b1cd476faf6c457033ffeace03cd2e37b51e8578
+ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84899374"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85480088"
 ---
-# <a name="an-introduction-to-azure-lab-services"></a>Общие сведения о Службах лабораторий Azure
+# <a name="compare-azure-devtest-labs-and-azure-lab-services"></a>Сравнение Azure DevTest Labs со Службами лабораторий Azure
 В Azure есть две службы, которые позволяют настраивать лабораторные среды в облаке. 
 
 - Служба **Azure DevTest Labs** позволяет быстро настроить среду для вашей команды (например, среду разработки, тестовую среду в облаке). Владелец создает лабораторию, подготавливает виртуальные машины Windows или Linux, устанавливает необходимое программное обеспечение и инструменты, а также предоставляет к ним доступ пользователям. Пользователи лаборатории подключаются к виртуальным машинам в лаборатории и выполняют на них ежедневные задания, краткосрочные проекты. После того как пользователи начнут применять ресурсы в лаборатории, администратор лаборатории может анализировать затраты и использование в нескольких лабораториях и устанавливать общие политики для оптимизации затрат вашей организации или команды.

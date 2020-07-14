@@ -11,12 +11,12 @@ ms.subservice: anomaly-detector
 ms.topic: tutorial
 ms.date: 03/05/2020
 ms.author: aahi
-ms.openlocfilehash: d3f3842265e0c8a36c7eb4b14abca771bd3d38f2
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: b8263e0445f7997469ba9165decbaccfa9ed2d6e
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85918929"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86027853"
 ---
 # <a name="tutorial-anomaly-detection-on-streaming-data-using-azure-databricks"></a>Руководство по Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks
 
@@ -41,7 +41,7 @@ ms.locfileid: "85918929"
 
 > [!Note]
 > * В этом учебнике представлен подход к реализации рекомендуемой [архитектуры решения](https://azure.microsoft.com/solutions/architecture/anomaly-detector-process/) для API Детектора аномалий.
-> * Для выполнения действий, описанных в этом руководста, будет не достаточно ключа бесплатной пробной версии для API "Детектор аномалий" или Azure Databricks. 
+> * Для выполнения действий, описанных в этом руководстве, будет не достаточно подписки уровня "Бесплатный" (`F0`) для API "Детектор аномалий" или Azure Databricks. 
 
 Создайте [подписку Azure](https://azure.microsoft.com/free/), если у вас ее нет.
 

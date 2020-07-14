@@ -5,20 +5,20 @@ author: florianborn71
 ms.author: flborn
 ms.date: 01/23/2020
 ms.topic: quickstart
-ms.openlocfilehash: ed533f571ada4cacf053157b397cca07cd65e6f8
-ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
+ms.openlocfilehash: 62669457f73ba78186614433fb6d10cc4dc01089
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84300578"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85565507"
 ---
 # <a name="quickstart-render-a-model-with-unity"></a>Краткое руководство. Отрисовка модели с помощью Unity
 
 В этом кратком руководстве описано, как запустить пример Unity, который удаленно выполняет отрисовку встроенной модели с помощью службы "Удаленная отрисовка Azure" (ARR).
 
-Мы не будем углубляться в детали о самом API-интерфейсе ARR или о том, как настроить новый проект Unity. Эти темы рассматриваются в [учебнике по настройке проекта Unity с нуля](../tutorials/unity/project-setup.md).
+Мы не будем углубляться в детали о самом API-интерфейсе ARR или о том, как настроить новый проект Unity. Эти темы рассматриваются в [учебнике по просмотру моделей удаленной отрисовки](../tutorials/unity/view-remote-models/view-remote-models.md).
 
-В этом кратком руководстве описано следующее:
+Из этого руководства вы узнаете, как выполнить следующие задачи:
 > [!div class="checklist"]
 >
 >* настройка локальной среды разработки;

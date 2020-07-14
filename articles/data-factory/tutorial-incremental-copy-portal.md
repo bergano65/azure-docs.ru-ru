@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-dt-2019
 ms.date: 06/10/2020
-ms.openlocfilehash: df185f8b75af6a845306fccc18d7d3cce74d0815
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: 10253b435461d62a4176164ea2a929843283f414
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85249182"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86082664"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-the-azure-portal"></a>Пошаговая загрузка данных из Базы данных SQL Azure в Хранилище BLOB-объектов Azure с помощью портала Azure
 
@@ -161,7 +161,7 @@ END
 
    Имя фабрики данных Azure должно быть **глобально уникальным**. Если вы увидите красный восклицательный знак с указанным ниже текстом ошибки, введите другое имя фабрики данных (например, ваше_имя_ADFIncCopyTutorialDF) и попробуйте создать фабрику данных снова. Ознакомьтесь со статьей [Фабрика данных Azure — правила именования](naming-rules.md), чтобы узнать правила именования для артефактов службы "Фабрика данных".
 
-       `Data factory name "ADFIncCopyTutorialDF" is not available`
+    *Имя фабрики данных ADFIncCopyTutorialDF недоступно.*
 4. Выберите **подписку** Azure, в рамках которой вы хотите создать фабрику данных.
 5. Для **группы ресурсов** выполните одно из следующих действий.
 

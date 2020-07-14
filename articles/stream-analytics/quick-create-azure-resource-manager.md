@@ -10,18 +10,22 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc, subject-armqs
 ms.date: 05/28/2020
-ms.openlocfilehash: 127a8550b7f4ca89b8b3a8e61880b295a806e5d0
-ms.sourcegitcommit: 0a5bb9622ee6a20d96db07cc6dd45d8e23d5554a
+ms.openlocfilehash: b7217df7fe7ccedf2419480b1114fa1ef6c8e24a
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84449368"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86043552"
 ---
-# <a name="quickstart-create-an-azure-stream-analytics-job-by-using-the-azure-resource-manager-template"></a>Краткое руководство. Создание задания Azure Stream Analytics с помощью шаблона Azure Resource Manager
+# <a name="quickstart-create-an-azure-stream-analytics-job-by-using-an-arm-template"></a>Краткое руководство. Создание задания Azure Stream Analytics с помощью шаблона ARM
 
-В этом кратком руководстве для создания задания Azure Stream Analytics используется шаблон Azure Resource Manager. После создания задания необходимо проверить развертывание.
+В этом кратком руководстве для создания задания Azure Stream Analytics используется шаблон Azure Resource Manager (ARM). После создания задания необходимо проверить развертывание.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
+
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-streamanalytics-create%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -29,9 +33,7 @@ ms.locfileid: "84449368"
 
 * подписку Azure ([создайте бесплатную учетную запись](https://azure.microsoft.com/free/)).
 
-## <a name="create-an-azure-stream-analytics-job"></a>Создание задания Azure Stream Analytics
-
-### <a name="review-the-template"></a>Изучение шаблона
+## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-streamanalytics-create/).
 
@@ -39,9 +41,9 @@ ms.locfileid: "84449368"
 
 Ресурс Azure, определенный в шаблоне — [Microsoft.StreamAnalytics/StreamingJobs](/azure/templates/microsoft.streamanalytics/streamingjobs). Создайте задание Azure Stream Analytics.
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
-В этом разделе вы создадите задание Azure Stream Analytics с помощью шаблона Azure Resource Manager.
+В этом разделе описано, как создать задание Azure Stream Analytics с помощью шаблона ARM.
 
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создает задание Azure Stream Analytics.
 
@@ -108,7 +110,7 @@ Write-Host "Press [ENTER] to continue..."
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы создали задание Azure Stream Analytics с помощью шаблона Azure Resource Manager и проверили развертывание. Перейдите к следующей статье, чтобы узнать, как экспортировать шаблон Azure Resource Manager для существующего задания с помощью VS Code.
+В этом кратком руководстве вы создали задание Azure Stream Analytics с помощью шаблона ARM и проверили развертывание. Перейдите к следующей статье, чтобы узнать, как экспортировать шаблон ARM для существующего задания с помощью VS Code.
 
 > [!div class="nextstepaction"]
-> [Экспорт шаблона Azure Resource Manager задания Azure Stream Analytics](resource-manager-export.md)
+> [Экспорт шаблона ARM для создания задания Azure Stream Analytics](resource-manager-export.md)

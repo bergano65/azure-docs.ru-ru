@@ -3,16 +3,16 @@ title: Создание первого автоматизированного р
 description: Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps для решений интеграции систем и корпоративных приложений (EAI)
 services: logic-apps
 ms.suite: integration
-ms.reviewer: klam, logicappspm
+ms.reviewer: logicappspm
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 10/20/2019
-ms.openlocfilehash: 555230499ebda106cbca616b779ae632d65349ab
-ms.sourcegitcommit: ad66392df535c370ba22d36a71e1bbc8b0eedbe3
+ms.openlocfilehash: 0b3559a27fe9fae6c34b07c648a289d205560bd8
+ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84807872"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85321580"
 ---
 # <a name="quickstart-create-your-first-workflow-by-using-azure-logic-apps---azure-portal"></a>Краткое руководство. Создание первого рабочего процесса с помощью Azure Logic Apps — портал Azure
 
@@ -74,13 +74,13 @@ ms.locfileid: "84807872"
 
    ![Выберите триггер "При публикации элемента веб-канала"](./media/quickstart-create-first-logic-app-workflow/add-rss-trigger-new-feed-item.png)
 
-1. Предоставьте сведения для триггера, как показано и описано далее:
+1. Предоставьте сведения для триггера, как описано в приведенной ниже таблице.
 
    ![Укажите RSS-канал, частоту и интервал триггера.](./media/quickstart-create-first-logic-app-workflow/add-rss-trigger-settings.png)
 
    | Свойство | Значение | Описание |
    |----------|-------|-------------|
-   | **URL-адрес RSS-канала** | `http://feeds.reuters.com/reuters/topNews` | Ссылка для RSS-канала, который вы хотите отслеживать |
+   | **URL-адрес RSS-канала** | <*RSS-feed-URL*> | Ссылка для RSS-канала, который вы хотите отслеживать. В этом примере используется `http://feeds.reuters.com/reuters/topNews`. |
    | **Интервал** | 1 | Количество интервалов ожидания между проверками. |
    | **Частота** | Минута | Единица измерения времени для каждого интервала между проверками  |
    ||||

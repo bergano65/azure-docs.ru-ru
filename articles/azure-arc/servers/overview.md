@@ -9,14 +9,14 @@ ms.author: magoedte
 keywords: служба автоматизации Azure, DSC, PowerShell, настройка требуемого состояния, управление обновлениями, отслеживание изменений, инвентаризация, модули runbook, Python, графический, гибридный
 ms.date: 03/24/2020
 ms.topic: overview
-ms.openlocfilehash: c9e69e221dc21baae96ab814cb9fb0b65ce98126
-ms.sourcegitcommit: 0a5bb9622ee6a20d96db07cc6dd45d8e23d5554a
+ms.openlocfilehash: e775945526a5453085946ed4eea2a2e19761ba78
+ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84449487"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85482196"
 ---
-# <a name="what-is-azure-arc-for-servers-preview"></a>Что такое Azure Arc для серверов (предварительная версия)
+# <a name="what-is-azure-arc-for-servers-preview"></a>Что такое Azure Arc для серверов (предварительная версия)?
 
 Служба "Azure Arc для серверов" (предварительная версия) позволяет управлять компьютерами Windows и Linux, размещенными за пределами Azure, в корпоративной сети или другом поставщике облачных служб, как если бы они находились в среде Azure. Если компьютер с гибридной рабочей ролью, не относящийся к Azure, подключен к Azure, он становится подключенным компьютером и рассматривается как ресурс в Azure. Каждый подключенный компьютер имеет идентификатор ресурса, управляется как часть группы ресурсов в подписке, а также получает преимущества стандартных функций Azure, таких как Политика Azure и расстановка тегов.
 

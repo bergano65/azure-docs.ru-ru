@@ -10,12 +10,12 @@ manager: anandsub
 ms.topic: tutorial
 ms.custom: seo-dt-2019
 ms.date: 01/04/2018
-ms.openlocfilehash: 7cdb58b45727c1a71b5c412046e07658ae8de314
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: 18f72ff32b29ff5832c363601ed63280339079df
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84559725"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86083078"
 ---
 # <a name="transform-data-in-azure-virtual-network-using-hive-activity-in-azure-data-factory-using-the-azure-portal"></a>Преобразование данных в виртуальной сети Azure с помощью действия Hive в фабрике данных Azure на портале Azure
 
@@ -83,7 +83,7 @@ ms.locfileid: "84559725"
  
    Имя фабрики данных Azure должно быть **глобально уникальным**. Если вы получите указанную ниже ошибку, введите другое имя фабрики данных (например, ваше_имя_MyAzureSsisDataFactory) и попробуйте создать фабрику данных снова. Ознакомьтесь со статьей [Фабрика данных Azure — правила именования](naming-rules.md), чтобы узнать правила именования для артефактов службы "Фабрика данных".
   
-       `Data factory name “MyAzureSsisDataFactory” is not available`
+    *Имя фабрики данных MyAzureSsisDataFactory недоступно.*
 3. Выберите **подписку** Azure, в рамках которой вы хотите создать фабрику данных. 
 4. Для **группы ресурсов** выполните одно из следующих действий.
      

@@ -8,20 +8,22 @@ ms.service: cosmos-db
 ms.topic: quickstart
 ms.date: 06/01/2020
 ms.custom: subject-armqs
-ms.openlocfilehash: e626f6e5b65e369c3c77900cd46f2b86cd6f9d52
-ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
+ms.openlocfilehash: 249ff87813fe23505a09db020d4c6ad0f272796d
+ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2020
-ms.locfileid: "85118004"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85483301"
 ---
-# <a name="quickstart-create-an-azure-cosmos-db-and-a-container-by-using-azure-resource-manager-template"></a>Краткое руководство. Создание Azure Cosmos DB и контейнера с помощью шаблона Azure Resource Manager
+# <a name="quickstart-create-an-azure-cosmos-db-and-a-container-by-using-an-arm-template"></a>Краткое руководство. Создание Azure Cosmos DB и контейнера с помощью шаблона ARM
 
-Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. С помощью Azure Cosmos DB вы можете быстро создавать базы данных с парами "ключ — значение", документами, графами и обращаться к ним. В этом кратком руководстве рассматривается развертывание шаблона Resource Manager для создания базы данных Azure Cosmos DB и контейнера в ней. Впоследствии в этом контейнере можно будет хранить данные.
+Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. С помощью Azure Cosmos DB вы можете быстро создавать базы данных с парами "ключ — значение", документами, графами и обращаться к ним. В этом кратком руководстве рассматривается развертывание шаблона Azure Resource Manager (ARM) для создания базы данных Azure Cosmos DB и контейнера в ней. Впоследствии в этом контейнере можно будет хранить данные.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[:::image type="content" source="../media/template-deployments/deploy-to-azure.svg" alt-text="Развертывание в Azure":::](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-cosmosdb-sql%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -31,9 +33,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 - [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
 
-## <a name="create-an-azure-cosmos-account-database-container"></a>Создание учетной записи, базы данных и контейнера Azure Cosmos DB
-
-### <a name="review-the-template"></a>Изучение шаблона
+## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-cosmosdb-sql/).
 
@@ -49,7 +49,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Другие примеры шаблонов Azure Cosmos DB можно найти в [коллекции шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Documentdb).
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создаст учетную запись, базу данных и контейнер Azure Cosmos DB.
 
@@ -57,7 +57,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 2. Введите или выберите следующие значения.
 
-   :::image type="content" source="./media/quick-create-template/create-cosmosdb-using-template-portal.png" alt-text="Шаблон Resource Manager, интеграция с Azure Cosmos DB, развертывание на портале":::
+   :::image type="content" source="./media/quick-create-template/create-cosmosdb-using-template-portal.png" alt-text="Шаблон ARM, интеграция с Azure Cosmos DB, развертывание на портале":::
 
     Если значение не указано, используйте значения по умолчанию для создания ресурсов Azure Cosmos DB.
 
@@ -78,7 +78,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 3. Щелкните **Приобрести**. После успешного развертывания учетной записи Azure Cosmos DB вы получите такое уведомление:
 
-   :::image type="content" source="./media/quick-create-template/resource-manager-template-portal-deployment-notification.png" alt-text="Шаблон Resource Manager, интеграция базы данных Cosmos DB, развертывание уведомлений на портале":::
+   :::image type="content" source="./media/quick-create-template/resource-manager-template-portal-deployment-notification.png" alt-text="Шаблон ARM, интеграция базы данных Cosmos DB, развертывание уведомлений на портале":::
 
 Для развертывания шаблона используется портал Azure. В дополнение к порталу Azure можно также использовать Azure PowerShell, Azure CLI и REST API. Дополнительные сведения о других методах развертывания см. в статье о [развертывании с использованием шаблонов](../azure-resource-manager/templates/deploy-powershell.md).
 
@@ -132,7 +132,7 @@ Write-Host "Press [ENTER] to continue..."
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Работая с этим кратким руководством, вы создали учетную запись, базу данных и контейнер Azure Cosmos DB с помощью шаблона Azure Resource Manager и проверили развертывание. Дополнительные сведения об Azure Cosmos DB и Azure Resource Manager см. в статьях ниже.
+Работая с этим кратким руководством, вы создали учетную запись, базу данных и контейнер Azure Cosmos DB с помощью шаблона ARM и проверили развертывание. Дополнительные сведения об Azure Cosmos DB и Azure Resource Manager см. в статьях ниже.
 
 - Ознакомьтесь с [обзором Azure Cosmos DB](introduction.md).
 - Сведения об [Azure Resource Manager](../azure-resource-manager/management/overview.md)

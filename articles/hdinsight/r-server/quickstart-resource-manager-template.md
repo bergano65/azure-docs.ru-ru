@@ -8,38 +8,41 @@ ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 03/13/2020
-ms.openlocfilehash: cde8d6932400966ae22720b1e86f3c5164f25b30
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: fd3e541624c2375ed71fb9768bb0c42ec101f47b
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81603446"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087713"
 ---
-# <a name="quickstart-create-ml-services-cluster-in-azure-hdinsight-using-resource-manager-template"></a>Краткое руководство. Создание кластера служб машинного обучения ML Services в Azure HDInsight с помощью шаблонов Resource Manager
+# <a name="quickstart-create-ml-services-cluster-in-azure-hdinsight-using-arm-template"></a>Краткое руководство. Создание кластера служб машинного обучения ML Services в Azure HDInsight с помощью шаблона ARM
 
-Из этого краткого руководства вы узнаете, как с помощью шаблона Azure Resource Manager создать кластер [служб машинного обучения ML Services](./r-server-overview.md) в Azure HDInsight. Microsoft Machine Learning Server доступен в качестве варианта развертывания при создании кластеров HDInsight в Azure. Тип кластера, предоставляющий этот вариант, называется Службы машинного обучения ML Services. Это позволяет специалистам по обработке и анализу данных, статистикам и R-программистам получать доступ к масштабируемым, распределенным методам аналитики в HDInsight по требованию.
+Из этого краткого руководства вы узнаете, как с помощью шаблона Azure Resource Manager (ARM) создать кластер [служб ML](./r-server-overview.md) в Azure HDInsight. Microsoft Machine Learning Server доступен в качестве варианта развертывания при создании кластеров HDInsight в Azure. Тип кластера, предоставляющий этот вариант, называется Службы машинного обучения ML Services. Это позволяет специалистам по обработке и анализу данных, статистикам и R-программистам получать доступ к масштабируемым, распределенным методам аналитики в HDInsight по требованию.
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-rserver%2Fazuredeploy.json)
+
+## <a name="prerequisites"></a>Предварительные требования
+
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="create-an-ml-services-cluster"></a>Создание кластера службы Машинного обучения ML Services
+## <a name="review-the-template"></a>Изучение шаблона
 
-### <a name="review-the-template"></a>Изучение шаблона
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-hdinsight-rserver/).
 
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-rserver).
-
-:::code language="json" source="~/quickstart-templates/101-hdinsight-rserver/azuredeploy.json" range="1-171":::
-
+:::code language="json" source="~/quickstart-templates/101-hdinsight-rserver/azuredeploy.json" range="1-171" highlight="49-85":::
 
 В шаблоне определено два ресурса Azure:
 
-* С помощью [Microsoft.Storage/storageAccounts](https://docs.microsoft.com/azure/templates/microsoft.storage/storageaccounts) создается учетная запись хранения Azure.
-* С помощью [Microsoft.HDInsight/cluster](https://docs.microsoft.com/azure/templates/microsoft.hdinsight/clusters) создается кластер HDInsight.
+* С помощью [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) создается учетная запись хранения Azure.
+* С помощью [Microsoft.HDInsight/cluster](/azure/templates/microsoft.hdinsight/clusters) создается кластер HDInsight.
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
-1. Нажмите кнопку **Развертывание в Azure** ниже, чтобы войти в Azure и открыть шаблон Resource Manager.
+1. Нажмите кнопку **Развертывание в Azure** ниже, чтобы войти в Azure и открыть шаблон ARM.
 
     [![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-rserver%2Fazuredeploy.json)
 
@@ -76,7 +79,7 @@ ms.locfileid: "81603446"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого краткого руководства вы узнаете, как создать в HDInsight кластер служб машинного обучения ML Services с помощью шаблона Resource Manager. В следующей статье вы узнаете, как запустить сценарий R с помощью сервера RStudio, демонстрирующий использование Spark для распределенных вычислений сценария R.
+В этом кратком руководстве показано, как создать в HDInsight кластер служб ML с помощью шаблона ARM. В следующей статье вы узнаете, как запустить сценарий R с помощью сервера RStudio, демонстрирующий использование Spark для распределенных вычислений сценария R.
 
 > [!div class="nextstepaction"]
 > [Краткое руководство: выполнение сценария R в кластере служб машинного обучения в Azure HDInsight с помощью сервера RStudio](./machine-learning-services-quickstart-job-rstudio.md)

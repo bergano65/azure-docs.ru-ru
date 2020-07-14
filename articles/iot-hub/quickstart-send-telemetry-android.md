@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 ms.date: 03/15/2019
 ms.author: wesmc
-ms.openlocfilehash: 67d56429f092343193fe5c1e3449aff033673320
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.openlocfilehash: 3a7d6f08870495044c4aef0dc21181feda7eb7ab
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83727188"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86041291"
 ---
 # <a name="quickstart-send-iot-telemetry-from-an-android-device"></a>Краткое руководство. Отправка данных телеметрии в центр Интернета вещей с устройства Android
 
@@ -81,9 +81,7 @@ az extension add --name azure-iot
 
 ## <a name="send-simulated-telemetry"></a>Отправка имитированной телеметрии
 
-1. В Android Studio откройте пример проекта Android, полученный из GitHub. Проект находится в указанном ниже каталоге копии клонированного или скачанного репозитория [azure-iot-sample-java](https://github.com/Azure-Samples/azure-iot-samples-java).
-
-        \azure-iot-samples-java\iot-hub\Samples\device\AndroidSample
+1. В Android Studio откройте пример проекта Android, полученный из GitHub. Проект находится в указанном ниже каталоге копии клонированного или скачанного репозитория [azure-iot-sample-java](https://github.com/Azure-Samples/azure-iot-samples-java): *\azure-iot-samples-java\iot-hub\Samples\device\AndroidSample*.
 
 2. В Android Studio откройте *gradle.properties* для примера проекта и замените заполнитель **Device_Connection_String** строкой подключения устройства, которую вы записали ранее.
 

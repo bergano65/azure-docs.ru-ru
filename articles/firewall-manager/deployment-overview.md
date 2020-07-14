@@ -1,24 +1,22 @@
 ---
-title: Общие сведения о развертывании предварительной версии Диспетчера брандмауэра Azure.
-description: Общие сведения об этапах развертывания, которые необходимо выполнить для предварительной версии Диспетчера брандмауэра Azure.
+title: Общие сведения о развертывании Диспетчера брандмауэра Azure
+description: Общие сведения о шагах развертывания, которые необходимо выполнить для Диспетчера брандмауэра Azure.
 author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
 ms.topic: overview
-ms.date: 02/18/2020
+ms.date: 06/30/2020
 ms.author: victorh
-ms.openlocfilehash: c3a94cea838609f65511a21ee2f64e8782a6adea
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 90f817ac3bbd475d8a84df44bc284f09fcd19ce3
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77443131"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85565796"
 ---
-# <a name="azure-firewall-manager-preview-deployment-overview"></a>Общие сведения о развертывании предварительной версии Диспетчера брандмауэра Azure.
+# <a name="azure-firewall-manager-deployment-overview"></a>Общие сведения о развертывании Диспетчера брандмауэра Azure
 
-[!INCLUDE [Preview](../../includes/firewall-manager-preview-notice.md)]
-
-Вы можете развернуть предварительную версию Диспетчера брандмауэра Azure несколькими способами, но рекомендуется в целом придерживаться следующего процесса.
+Вы можете развернуть Диспетчер брандмауэра Azure несколькими способами, но рекомендуется в целом придерживаться следующего процесса.
 
 ## <a name="general-deployment-process"></a>Общий процесс развертывания
 
@@ -70,4 +68,4 @@ ms.locfileid: "77443131"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство. Защита облачной сети с помощью предварительной версии Диспетчера брандмауэра Azure на портале Azure](secure-cloud-network.md)
+- [Руководство. Защита облачной сети с помощью Диспетчера брандмауэра Azure на портале Azure](secure-cloud-network.md).

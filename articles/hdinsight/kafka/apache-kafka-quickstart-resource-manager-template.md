@@ -8,41 +8,45 @@ ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 03/13/2020
-ms.openlocfilehash: f5f92044a0274b809388eeb164be9f1587013e0b
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 841012cc8629b8eeb6ef863fd2f596d550cb67d9
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80064623"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86082936"
 ---
-# <a name="quickstart-create-apache-kafka-cluster-in-azure-hdinsight-using-resource-manager-template"></a>Краткое руководство. Создание кластера Apache Kafka в Azure HDInsight с помощью шаблонов Resource Manager
+# <a name="quickstart-create-apache-kafka-cluster-in-azure-hdinsight-using-arm-template"></a>Краткое руководство. Создание кластера Apache Kafka в Azure HDInsight с помощью шаблона ARM
 
-Из этого краткого руководства вы узнаете, как с помощью шаблона Azure Resource Manager создать кластер [Apache Kafka](./apache-kafka-introduction.md) в Azure HDInsight. Kafka — это распределенная платформа потоковой передачи с открытым кодом. Она часто используется как брокер сообщений, предоставляя такие же функциональные возможности, как и очередь сообщений типа "публикация-подписка".
+Из этого краткого руководства вы узнаете, как с помощью шаблона Azure Resource Manager (ARM) создать кластер [Apache Kafka](./apache-kafka-introduction.md) в Azure HDInsight. Kafka — это распределенная платформа потоковой передачи с открытым кодом. Она часто используется как брокер сообщений, предоставляя такие же функциональные возможности, как и очередь сообщений типа "публикация-подписка".
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
 API Kafka доступен только ресурсам, размещенным в той же виртуальной сети. В этом кратком руководстве вы напрямую обращаетесь к кластеру по протоколу SSH. Чтобы подключить к Kafka другие службы, сети или виртуальные машины, необходимо сначала создать виртуальную сеть, а затем создать в ней эти ресурсы. Дополнительные сведения см. в документе [Подключение к Kafka в HDInsight с помощью виртуальной сети Azure](apache-kafka-connect-vpn-gateway.md).
 
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-kafka%2Fazuredeploy.json)
+
+## <a name="prerequisites"></a>Предварительные требования
+
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="create-an-apache-kafka-cluster"></a>Создание кластера Apache Kafka
+## <a name="review-the-template"></a>Изучение шаблона
 
-### <a name="review-the-template"></a>Изучение шаблона
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-hdinsight-kafka/).
 
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-kafka).
-
-:::code language="json" source="~/quickstart-templates/101-hdinsight-kafka/azuredeploy.json" range="1-150":::
+:::code language="json" source="~/quickstart-templates/101-hdinsight-kafka/azuredeploy.json" range="1-203" highlight="103-135":::
 
 В шаблоне определено два ресурса Azure:
 
-* С помощью [Microsoft.Storage/storageAccounts](https://docs.microsoft.com/azure/templates/microsoft.storage/storageaccounts) создается учетная запись хранения Azure.
-* С помощью [Microsoft.HDInsight/cluster](https://docs.microsoft.com/azure/templates/microsoft.hdinsight/clusters) создается кластер HDInsight.
+* С помощью [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) создается учетная запись хранения Azure.
+* С помощью [Microsoft.HDInsight/cluster](/azure/templates/microsoft.hdinsight/clusters) создается кластер HDInsight.
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
-1. Нажмите кнопку **Развертывание в Azure** ниже, чтобы войти в Azure и открыть шаблон Resource Manager.
+1. Нажмите кнопку **Развертывание в Azure** ниже, чтобы войти в Azure и открыть шаблон ARM.
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fhdinsight-kafka-java-get-started%2Fmaster%2Fazuredeploy.json" target="_blank"><img src="./media/apache-kafka-quickstart-resource-manager-template/hdi-deploy-to-azure1.png" alt="Deploy to Azure button for new cluster"></a>
+   [![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-kafka%2Fazuredeploy.json)
 
 1. Введите или выберите следующие значения:
 
@@ -226,7 +230,7 @@ Kafka хранит *записи* в разделах. Записи создаю
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого краткого руководства вы узнаете, как создать в HDInsight кластер Apache Kafka с помощью шаблона Resource Manager. В этой статье вы узнали, как создать приложение, использующее API для Apache Kafka Streams, и запустить его с помощью Kafka в HDInsight.
+В этом кратком руководстве показано, как создать в HDInsight кластер Apache Kafka с помощью шаблона ARM. В этой статье вы узнали, как создать приложение, использующее API для Apache Kafka Streams, и запустить его с помощью Kafka в HDInsight.
 
 > [!div class="nextstepaction"]
 > [Руководство по использованию API потоков Apache Kafka в Azure HDInsight](./apache-kafka-streams-api.md)

@@ -8,28 +8,28 @@ ms.workload: infrastructure
 ms.date: 06/04/2020
 ms.author: cynthn
 ms.custom: subject-armqs
-ms.openlocfilehash: 7fc7e4d5d402bfb21a30798f64e31cbbef8ccdd0
-ms.sourcegitcommit: f01c2142af7e90679f4c6b60d03ea16b4abf1b97
+ms.openlocfilehash: 479e580ee8821f0a6de054c631714c5386927e4f
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84677956"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86083922"
 ---
-# <a name="quickstart-create-an-ubuntu-linux-virtual-machine-using-a-resource-manager-template"></a>Краткое руководство. Создание виртуальной машины Ubuntu Linux с помощью шаблона Resource Manager
+# <a name="quickstart-create-an-ubuntu-linux-virtual-machine-using-an-arm-template"></a>Краткое руководство. Создание виртуальной машины Ubuntu Linux с помощью шаблона ARM
 
-В этом кратком руководстве показано, как с помощью шаблона Resource Manager развернуть в Azure виртуальную машину Ubuntu Linux. 
+В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager (ARM) развернуть в Azure виртуальную машину Ubuntu Linux.
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-vm-simple-linux%2fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Нет.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="create-an-ubuntu-linux-virtual-machine"></a>Создание виртуальной машины Ubuntu Linux
-
-### <a name="review-the-template"></a>Изучение шаблона
+## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-vm-simple-linux/).
 
@@ -46,7 +46,7 @@ ms.locfileid: "84677956"
 - [**Microsoft.Network/publicIPAddresses**](/azure/templates/Microsoft.Network/publicIPAddresses): создание общедоступного IP-адреса.
 - [**Microsoft.Compute/virtualMachines**](/azure/templates/Microsoft.Compute/virtualMachines): создание виртуальной машины.
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создает хранилище ключей и секрет.
 
@@ -90,7 +90,7 @@ ms.locfileid: "84677956"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы развернули простую виртуальную машину с помощью шаблона Resource Manager. Дополнительные сведения о виртуальных машинах Azure см. в руководстве для виртуальных машин Linux.
+Из этого краткого руководства вы узнали, как развернуть простую виртуальную машину с помощью шаблона ARM. Дополнительные сведения о виртуальных машинах Azure см. в руководстве для виртуальных машин Linux.
 
 
 > [!div class="nextstepaction"]

@@ -9,14 +9,14 @@ ms.topic: tutorial
 ms.reviewer: trbye, jmartens, larryfr
 ms.author: tracych
 author: tracychms
-ms.date: 04/15/2020
+ms.date: 06/23/2020
 ms.custom: Build2020, tracking-python
-ms.openlocfilehash: b26527321cf7fc5ca7fc4b061f11b86f8830ec29
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: e5665bd5ad2baa35b497c8b4fe19b0cb93bdb2a7
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84552316"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86023386"
 ---
 # <a name="run-batch-inference-on-large-amounts-of-data-by-using-azure-machine-learning"></a>Выполнение пакетного вывода больших объемов данных с помощью Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -112,9 +112,6 @@ else:
 from azureml.core import Datastore
 from azureml.core import Workspace
 
-# Load workspace authorization details from config.json
-ws = Workspace.from_config()
-
 mnist_blob = Datastore.register_azure_blob_container(ws, 
                       datastore_name="mnist_datastore", 
                       container_name="sampledata", 
@@ -140,8 +137,6 @@ def_data_store = ws.get_default_datastore()
 
 ```python
 from azureml.core.dataset import Dataset
-
-mnist_ds_name = 'mnist_sample_data'
 
 path_on_datastore = mnist_blob.path('mnist/')
 input_mnist_ds = Dataset.File.from_files(path=path_on_datastore, validate=False)
@@ -210,7 +205,7 @@ model = Model.register(model_path="models/",
 - `init()`: Эта функция применяется для всех затратных или повторяющихся операций подготовки к последующему выводу. Например, в ней можно загружать модель в глобальный объект. Эта функция будет вызываться только один раз в начале процесса.
 -  `run(mini_batch)`: Эта функция будет выполняться для каждого экземпляра `mini_batch`.
     -  `mini_batch`: ParallelRunStep вызывает метод run и передает ему в качестве аргумента список либо Pandas DataFrame. Каждая запись в mini_batch содержит одно из следующих значений: путь к файлу для входных данных в формате FileDataset и Pandas DataFrame для входных данных в формате TabularDataset.
-    -  `response`: метод run() должен возвращать Pandas DataFrame или массив. Для append_row output_action эти возвращаемые элементы добавляются в общий выходной файл. Для summary_only содержимое элементов игнорируется. Для всех выходных действий каждый возвращаемый элемент обозначает один успешный запуск входного элемента во входном мини-пакете. Нужно убедиться в том, что в результат выполнения включено достаточно данных, чтобы сопоставить входные данные с результатом вывода. Выходные данные будут записаны в выходной файл, и для них не гарантируется правильный порядок. Для сопоставления со входными данными нужно использовать какой-либо ключ.
+    -  `response`: метод run() должен возвращать Pandas DataFrame или массив. Для append_row output_action эти возвращаемые элементы добавляются в общий выходной файл. Для summary_only содержимое элементов игнорируется. Для всех выходных действий каждый возвращаемый элемент обозначает один успешный запуск входного элемента во входном мини-пакете. Убедитесь в том, что в результат выполнения включено достаточно данных, чтобы сопоставить входные данные с результатом вывода. Выходные данные будут записаны в выходной файл, и для них не гарантируется правильный порядок. Для сопоставления со входными данными нужно использовать какой-либо ключ.
 
 ```python
 # Snippets from a sample script.
@@ -218,6 +213,7 @@ model = Model.register(model_path="models/",
 # (https://aka.ms/batch-inference-notebooks)
 # for the implementation script.
 
+%%writefile digit_identification.py
 import os
 import numpy as np
 import tensorflow as tf
@@ -270,7 +266,7 @@ file_path = os.path.join(script_dir, "<file_name>")
 
 ### <a name="prepare-the-environment"></a>Подготовка среды
 
-Для начала укажите зависимости для скрипта. Он позволяет устанавливать пакеты PIP, а также настраивать среду. Всегда добавляйте пакеты **azureml-core** и **azureml-dataprep[pandas, fuse]** .
+Для начала укажите зависимости для скрипта. Это позволяет установить пакеты PIP, а также настроить среду. Всегда добавляйте пакеты **azureml-core** и **azureml-dataprep[pandas, fuse]** .
 
 Если вы используете пользовательский образ Docker (user_managed_dependencies=True), также необходимо установить Conda.
 
@@ -309,14 +305,16 @@ batch_env.docker.base_image = DEFAULT_GPU_IMAGE
 - `run_invocation_timeout`: Время вызова метода `run()` в секундах. (необязательный параметр, значение по умолчанию — `60`)
 - `run_max_try`: Максимальное число попыток `run()` для mini-batch. Сбой `run()` при возникновении исключения или если при достижении `run_invocation_timeout` ничего не возвращается (необязательно; значение по умолчанию — `3`). 
 
-Можно указать `mini_batch_size`, `node_count`, `process_count_per_node`, `logging_level`, `run_invocation_timeout` и `run_max_try` как `PipelineParameter`, чтобы при повторной отправке вывода конвейера можно было точно настроить значения параметров. В этом примере используется PipelineParameter для `mini_batch_size` и `Process_count_per_node` и эти значения будут изменены при повторной отправке позже. 
+Можно указать `mini_batch_size`, `node_count`, `process_count_per_node`, `logging_level`, `run_invocation_timeout` и `run_max_try` как `PipelineParameter`, чтобы при повторной отправке запуска конвейера можно было точно настроить значения параметров. В этом примере используется PipelineParameter для `mini_batch_size` и `Process_count_per_node` и эти значения будут изменены при повторной отправке позже. 
+
+В этом примере предполагается, что вы используете скрипт `digit_identification.py`, рассмотренный ранее. Если вы используете собственный скрипт, измените параметры `source_directory` и `entry_script` соответствующим образом.
 
 ```python
 from azureml.pipeline.core import PipelineParameter
 from azureml.pipeline.steps import ParallelRunConfig
 
 parallel_run_config = ParallelRunConfig(
-    source_directory=scripts_folder,
+    source_directory='.',
     entry_script="digit_identification.py",
     mini_batch_size=PipelineParameter(name="batch_size_param", default_value="5"),
     error_threshold=10,
@@ -384,9 +382,8 @@ pipeline_run.wait_for_completion(show_output=True)
 Поскольку входные данные и несколько конфигураций настроены как `PipelineParameter`, можно повторно отправить пакетный вывод с другим входным набором данных и настроить его параметры, не создавая совершенно новый конвейер. Вы будете использовать то же хранилище данных, но использовать только один образ как входные данные.
 
 ```python
-path_on_datastore = mnist_data.path('mnist/0.png')
+path_on_datastore = mnist_blob.path('mnist/0.png')
 single_image_ds = Dataset.File.from_files(path=path_on_datastore, validate=False)
-single_image_ds._ensure_saved(ws)
 
 pipeline_run_2 = experiment.submit(pipeline, 
                                    pipeline_parameters={"mnist_param": single_image_ds, 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 10/11/2019
 ms.author: erhopf
-ms.openlocfilehash: fa8bf79c047911ca283bf60261bba0cbdd6816a7
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: 53cabaec21daafb910b958bb4b573dd033ca6283
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82980187"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86035848"
 ---
 Здесь также описано, как установить [пакет SDK службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для JavaScript для использования с веб-страницей.
 
@@ -27,11 +27,12 @@ ms.locfileid: "82980187"
 
 ## <a name="unpack-the-speech-sdk-for-javascript-into-that-folder"></a>Распаковка пакета SDK для службы "Речь" для JavaScript в созданную папку
 
-Скачайте пакет SDK для службы "Речь" как [ZIP-файл](https://aka.ms/csspeech/jsbrowserpackage) и распакуйте его в созданную папку. В результате будут распакованы четыре файла:
+Скачайте пакет SDK для службы "Речь" как [ZIP-файл](https://aka.ms/csspeech/jsbrowserpackage) и распакуйте его в созданную папку. В результате будут распакованы пять файлов:
 * `microsoft.cognitiveservices.speech.sdk.bundle.js` — доступная для чтения версия пакета SDK службы "Речь";
 * `microsoft.cognitiveservices.speech.sdk.bundle.js.map` — файл сопоставления, используемый для отладки кода пакета SDK;
 * `microsoft.cognitiveservices.speech.sdk.bundle.d.ts` — определения объектов для использования с TypeScript;
 * `microsoft.cognitiveservices.speech.sdk.bundle-min.js` — сокращенная версия пакета SDK службы "Речь".
+* `speech-processor.js` — код для повышения производительности в некоторых браузерах.
 
 ## <a name="create-an-indexhtml-page"></a>Создание страницы index.html
 

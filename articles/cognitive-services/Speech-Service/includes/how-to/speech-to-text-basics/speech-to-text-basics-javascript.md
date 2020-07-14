@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/15/2020
 ms.author: trbye
-ms.openlocfilehash: 2d6e53f8a69a3e214d7d4621e899fd2e5394c7f2
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: a46efdc1ca1391e5a8002bacca6a86b4d82eae96
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82132235"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86035664"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -17,7 +17,7 @@ ms.locfileid: "82132235"
 
 ## <a name="install-the-speech-sdk"></a>Установка пакета SDK службы "Речь"
 
-Сначала необходимо установить <a href="https://www.npmjs.com/package/microsoft-cognitiveservices-speech-sdk" target="_blank">пакет SDK JavaScript службы "Речь"<span class="docon docon-navigate-external x-hidden-focus"></span></a>. В зависимости от используемой платформы выполните следующие действия:
+Сначала необходимо установить <a href="https://www.npmjs.com/package/microsoft-cognitiveservices-speech-sdk" target="_blank">пакет SDK службы "Речь" для JavaScript <span class="docon docon-navigate-external x-hidden-focus"></span></a>. В зависимости от используемой платформы выполните следующие действия:
 
 - <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk?tabs=nodejs#get-the-speech-sdk" target="_blank">Node.js <span 
 class="docon docon-navigate-external x-hidden-focus"></span></a>
@@ -52,10 +52,10 @@ const sdk = require("microsoft-cognitiveservices-speech-sdk");
 
 # <a name="script"></a>[script](#tab/script)
 
-Скачайте <a href="https://aka.ms/csspeech/jsbrowserpackage" target="_blank">пакет SDK JavaScript службы "Речь"<span class="docon docon-navigate-external x-hidden-focus"></span></a>, извлеките из него файл *microsoft.cognitiveservices.speech.bundle.js* и поместите его в папку, доступную для HTML-файла.
+Скачайте <a href="https://aka.ms/csspeech/jsbrowserpackage" target="_blank">пакет SDK службы "Речь" для JavaScript <span class="docon docon-navigate-external x-hidden-focus"></span></a>, извлеките из него файл *microsoft.cognitiveservices.speech.sdk.bundle.js* и поместите его в папку, доступную для HTML-файла.
 
 ```html
-<script src="microsoft.cognitiveservices.speech.bundle.js"></script>;
+<script src="microsoft.cognitiveservices.speech.sdk.bundle.js"></script>;
 ```
 
 > [!TIP]
@@ -114,7 +114,7 @@ const recognizer = new SpeechRecognizer(speechConfig, audioConfig);
 
 ## <a name="recognize-speech"></a>Распознавание речи
 
-[Класс распознавателя](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechrecognizer?view=azure-node-latest) для пакета SDK службы "Речь" для C# предоставляет несколько методов, которые можно использовать для распознавания речи.
+[Класс распознавателя](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechrecognizer?view=azure-node-latest) для пакета SDK службы "Речь" для JavaScript предоставляет несколько методов, которые можно использовать для распознавания речи.
 
 * Одноразовое распознавание (async) — выполняет распознавание в неблокирующем (асинхронном) режиме. Это позволит распознать одиночный речевой фрагмент. Конец одного речевого фрагмента определяется путем прослушивания до тишины в конце, или пока не будет обработано максимум 15 секунд аудио.
 * Непрерывное распознавание (асинхронное) — асинхронно инициирует операцию непрерывного распознавания. Пользователь регистрируется в событиях и обрабатывает различные состояния приложения. Чтобы отключить асинхронное непрерывное распознавание, вызовите [`stopContinuousRecognitionAsync`](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechrecognizer?view=azure-node-latest#stopcontinuousrecognitionasync).
@@ -158,7 +158,6 @@ switch (result.reason) {
         }
         break;
     }
-}
 ```
 
 ### <a name="continuous-recognition"></a>Непрерывное распознавание
@@ -210,7 +209,7 @@ recognizer.sessionStopped = (s, e) => {
 };
 ```
 
-Если все настроено, можно вызвать [`stopContinuousRecognitionAsync`](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechrecognizer?view=azure-node-latest#stopcontinuousrecognitionasync).
+Если все настроено, можно вызвать [`startContinuousRecognitionAsync`](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechrecognizer?view=azure-node-latest#startcontinuousrecognitionasync).
 
 ```javascript
 // Starts continuous recognition. Uses stopContinuousRecognitionAsync() to stop recognition.

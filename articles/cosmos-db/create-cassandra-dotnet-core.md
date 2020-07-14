@@ -8,12 +8,12 @@ ms.author: thvankra
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 05/18/2020
-ms.openlocfilehash: 56adfa2ddab011372783a7a7872b4f4c8d7fc050
-ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
+ms.openlocfilehash: e30bee23b634db12def62e906183c6087c6613e6
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2020
-ms.locfileid: "85118463"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86044300"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-net-core-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета .NET Core и Azure Cosmos DB
 
@@ -133,7 +133,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 1. На [портале Azure](https://portal.azure.com/) выберите **Строка подключения**.
 
-1. Вы можете использовать кнопку ![Кнопка "Копировать"](./media/create-cassandra-dotnet/copy.png) в правой части экрана, чтобы скопировать значение параметра USERNAME (Имя пользователя).
+1. Используйте кнопку :::image type="icon" source="./media/create-cassandra-dotnet/copy.png"::: в правой части экрана, чтобы скопировать значение параметра USERNAME.
 
    :::image type="content" source="./media/create-cassandra-dotnet/keys.png" alt-text="Просмотр и копирование ключа доступа на странице "Строка подключения" на портале Azure":::
 

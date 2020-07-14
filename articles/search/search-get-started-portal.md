@@ -8,12 +8,12 @@ ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 06/07/2020
-ms.openlocfilehash: 061907783d21372f0e926e529730e9e82b7a4ddb
-ms.sourcegitcommit: 20e246e86e25d63bcd521a4b4d5864fbc7bad1b0
+ms.openlocfilehash: 632071c2a9597fc11ab4ffc0971493ef5b52d807
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84488772"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86083565"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-the-azure-portal"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" на портале Azure
 > [!div class="op_single_selector"]
@@ -150,7 +150,7 @@ ms.locfileid: "84488772"
 
    ![Команда обозревателя поиска](media/search-get-started-portal/search-explorer-cmd.png)
 
-2. В раскрывающемся списке **Индекс** выберите *hotels-sample-index*. Щелкните раскрывающийся список **Версия API**, чтобы просмотреть доступные REST API. Для приведенных ниже запросов используйте общедоступную версию (2019-05-06).
+2. В раскрывающемся списке **Индекс** выберите *hotels-sample-index*. Щелкните раскрывающийся список **Версия API**, чтобы просмотреть доступные REST API. Для приведенных ниже запросов используйте общедоступную версию (2020-06-30).
 
    ![Команды индекса и API](media/search-get-started-portal/search-explorer-changeindex.png)
 
@@ -275,4 +275,9 @@ ms.locfileid: "84488772"
 С помощью мастера портала можно создать готовое к использованию веб-приложение, выполняемое в браузере. Вы можете испытать этот мастер с небольшим индексом, который вы создали, или использовать один из встроенных примеров набора данных для расширенного поиска.
 
 > [!div class="nextstepaction"]
-> [Создание приложения поиска на портале](search-create-app-portal.md)
+> [Создание демонстрационного приложения на портале](search-create-app-portal.md)
+
+Хотите оптимизировать и сократить ваши расходы на облако?
+
+> [!div class="nextstepaction"]
+> [Начните анализировать затраты с помощью службы "Управление затратами"](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)

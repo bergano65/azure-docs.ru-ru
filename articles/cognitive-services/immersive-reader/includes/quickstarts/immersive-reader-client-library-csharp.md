@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/20/2020
 ms.author: pasta
-ms.openlocfilehash: 2b6f4bb707d6c5c07dd6a1205ce7be542a220f17
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
+ms.openlocfilehash: a5bd7b3e6262fa21865f04a6b65d1a75faafefa4
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84268672"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86038688"
 ---
 [Иммерсивное средство чтения](https://www.onenote.com/learningtools) — это включительно разработанное решение, в котором реализованы проверенные методы, улучшающие понимание при чтении.
 
@@ -305,7 +305,8 @@ public async Task<JsonResult> GetTokenAndSubdomain()
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Ознакомьтесь с [кратким руководством для разработчиков Node.js](../../quickstart-nodejs.md), чтобы узнать о других возможностях клиентской библиотеки иммерсивного средства чтения при использовании Node.js.
+* Ознакомьтесь с [кратким руководством для разработчиков Node.js](../../tutorial-nodejs.md), чтобы узнать о других возможностях клиентской библиотеки иммерсивного средства чтения при использовании Node.js.
+* Ознакомьтесь с [руководством для разработчиков Android](../../tutorial-android.md), чтобы узнать о других возможностях пакета SDK иммерсивного средства чтения при использовании Java или Kotlin для Android.
+* Ознакомьтесь с [руководством для разработчиков iOS](../../tutorial-ios.md), чтобы узнать о других возможностях пакета SDK иммерсивного средства чтения при использовании Swift для iOS.
 * Ознакомьтесь с [руководством для разработчиков Python](../../tutorial-python.md), чтобы узнать о других возможностях клиентской библиотеки иммерсивного средства чтения при использовании Python.
-* Ознакомьтесь с [руководством для разработчиков iOS](../../tutorial-ios-picture-immersive-reader.md), чтобы узнать о других возможностях клиентской библиотеки иммерсивного средства чтения при использовании Swift.
 * Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk) и [справочнике по этому пакету](../../reference.md).
