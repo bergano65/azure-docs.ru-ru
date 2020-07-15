@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 06/18/2020
-ms.openlocfilehash: 4a8353cf38c63e2642c7f76d05b4b7a2764e0706
-ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
+ms.openlocfilehash: 2c02f6858711173a2ddd2217bbb9e241a5a2109d
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2020
-ms.locfileid: "85117388"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86201470"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-a-net-core-app"></a>Краткое руководство. Использование кэша Azure для Redis в приложениях .NET Core
 
@@ -315,6 +315,7 @@ dotnet run
 > [!div class="nextstepaction"]
 > [Создание веб-приложения ASP.NET, в котором используется кэш Azure для Redis](./cache-web-app-howto.md)
 
+Хотите оптимизировать и сократить ваши расходы на облако?
 
-
-
+> [!div class="nextstepaction"]
+> [Начните анализировать затраты с помощью службы "Управление затратами"](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)

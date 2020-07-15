@@ -4,12 +4,12 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 802fdfc46344929930b1ffb015b364b4e2360cca
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 38ddc7173f54a34d68c41ce1180c8dbeaf3d7962
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75465364"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86244979"
 ---
 # <a name="tutorial-remove-a-service-fabric-cluster-running-in-azure"></a>Руководство. Удаление кластера Service Fabric, работающего в Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "75465364"
 Перед началом работы с этим руководством выполните следующие действия:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure//install-Az-ps) или [Azure CLI](/cli/azure/install-azure-cli).
+* Установите [Azure PowerShell](/powershell/azure//install-az-ps) или [Azure CLI](/cli/azure/install-azure-cli).
 * Создание защищенного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в Azure
 
 ## <a name="delete-the-resource-group-containing-the-service-fabric-cluster"></a>Удаление группы ресурсов, содержащей кластер Service Fabric

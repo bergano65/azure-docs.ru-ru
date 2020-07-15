@@ -7,12 +7,12 @@ keywords: dsc, configuration, automation
 ms.date: 11/06/2018
 ms.topic: quickstart
 ms.custom: mvc
-ms.openlocfilehash: 28e8f921fa7620d1fec7dec1788ed769026624d7
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: e7fec2bee61844ac294e5463bd5bc88ec3fb5e98
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836725"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186084"
 ---
 # <a name="configure-a-vm-with-desired-state-configuration"></a>Настройка ВМ с использованием Desired State Configuration
 
@@ -23,7 +23,7 @@ ms.locfileid: "83836725"
 Для работы с этим кратким руководством вам понадобится:
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Учетная запись службы автоматизации Azure. Указания по созданию учетной записи запуска от имени пользователя для службы автоматизации Azure см. в статье [Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](automation-sec-configure-azure-runas-account.md).
+* Учетная запись службы автоматизации Azure. Указания по созданию учетной записи запуска от имени пользователя для службы автоматизации Azure см. в статье [Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](./manage-runas-account.md).
 * Виртуальная машина Azure Resource Manager (не классическая) под управлением Red Hat Enterprise Linux, CentOS или Oracle Linux. Инструкции по созданию виртуальной машины см. в статье [Создание первой виртуальной машины Linux на портале Azure](../virtual-machines/linux/quick-create-portal.md).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
@@ -31,7 +31,7 @@ ms.locfileid: "83836725"
 
 ## <a name="enable-a-virtual-machine"></a>Активация виртуальной машины
 
-Существует множество различных методов включения компьютера для функции State Configuration. В этом кратком руководстве объясняется, как включить функцию для виртуальной машины с помощью учетной записи службы автоматизации. Дополнительные сведения о различных методах, позволяющих настроить компьютеры для State Configuration, см. в статье [Активация управления для компьютеров с помощью службы автоматизации Azure State Configuration](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding).
+Существует множество различных методов включения компьютера для функции State Configuration. В этом кратком руководстве объясняется, как включить функцию для виртуальной машины с помощью учетной записи службы автоматизации. Дополнительные сведения о различных методах, позволяющих настроить компьютеры для State Configuration, см. в статье [Активация управления для компьютеров с помощью службы автоматизации Azure State Configuration](./automation-dsc-onboarding.md).
 
 1. В области слева на портале Azure выберите **Учетные записи службы автоматизации**. Если в этой области нет такого элемента, щелкните **Все службы** и найдите его в этом представлении.
 1. Выберите из списка учетную запись службы автоматизации.
@@ -39,7 +39,7 @@ ms.locfileid: "83836725"
 2. Чтобы открыть страницу для выбора виртуальной машины, нажмите кнопку **Добавить**.
 3. Найдите виртуальную машину, для которой необходимо включить DSC. Для поиска конкретной виртуальной машины можно применить поле поиска и фильтры.
 4. Выберите виртуальную машину и нажмите кнопку **Подключить**.
-5. Выберите настройки DSC для этой виртуальной машины. Если у вас есть уже готовая конфигурация, укажите ее для параметра `Node Configuration Name`. Также вы можете задать [режим конфигурации](https://docs.microsoft.com/powershell/scripting/dsc/managing-nodes/metaConfig), который определяет правила применения настройки для виртуальной машины.
+5. Выберите настройки DSC для этой виртуальной машины. Если у вас есть уже готовая конфигурация, укажите ее для параметра `Node Configuration Name`. Также вы можете задать [режим конфигурации](/powershell/scripting/dsc/managing-nodes/metaConfig), который определяет правила применения настройки для виртуальной машины.
 6. Нажмите кнопку **ОК**. При развертывании расширения DSC на виртуальной машине отображается состояние `Connecting`.
 
 ![Включение виртуальной машины Azure для DSC](./media/automation-quickstart-dsc-configuration/dsc-onboard-azure-vm.png)
@@ -57,7 +57,7 @@ ms.locfileid: "83836725"
 
 ## <a name="import-the-configuration"></a>Импорт конфигурации
 
-В этом руководстве используется конфигурация DSC, которая настраивает на компьютере HTTP-сервер Apache, PHP и MySQL. См. статью [Конфигурации DSC](https://docs.microsoft.com/powershell/scripting/dsc/configurations/configurations).
+В этом руководстве используется конфигурация DSC, которая настраивает на компьютере HTTP-сервер Apache, PHP и MySQL. См. статью [Конфигурации DSC](/powershell/scripting/dsc/configurations/configurations).
 
 В текстовом редакторе введите следующий код и сохраните его локально в виде файла **AMPServer.ps1**.
 

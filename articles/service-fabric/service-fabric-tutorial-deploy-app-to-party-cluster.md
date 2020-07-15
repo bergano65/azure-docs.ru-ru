@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 07/22/2019
 ms.author: mikhegn
 ms.custom: mvc
-ms.openlocfilehash: 9951610732cbb1c5884a7b7e830033f427db0ab1
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4cd21669b30b8ec83d6a0538c90d4cec5cafe32a
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75646013"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86244996"
 ---
 # <a name="tutorial-deploy-a-service-fabric-application-to-a-cluster-in-azure"></a>Руководство по развертыванию приложения Service Fabric в кластере в Azure
 
@@ -53,7 +53,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 ## <a name="create-a-cluster"></a>Создание кластера
 
-Теперь, когда приложение готово, создайте кластер Service Fabric, а затем разверните в него приложение. [Кластер Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-anywhere) — это подключенный к сети набор виртуальных машин или физических компьютеров, в котором вы развертываете микрослужбы и управляете ими.
+Теперь, когда приложение готово, создайте кластер Service Fabric, а затем разверните в него приложение. [Кластер Service Fabric](./service-fabric-deploy-anywhere.md) — это подключенный к сети набор виртуальных машин или физических компьютеров, в котором вы развертываете микрослужбы и управляете ими.
 
 В этом руководстве вы создадите новый тестовый кластер из трех узлов в интегрированной среде разработки Visual Studio, а затем опубликуете приложение в этом кластере. Дополнительные сведения о создании производственного кластера см. в статье [Руководство. Развертывание кластера Service Fabric на платформе Windows в виртуальной сети Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md). Можно также развернуть приложение в существующий кластер (созданный ранее с помощью [портала Azure](https://portal.azure.com)) с использованием [PowerShell](./scripts/service-fabric-powershell-create-secure-cluster-cert.md) или скриптов [Azure CLI](./scripts/cli-create-cluster.md) или из [Шаблона Azure Resource Manager](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
 

@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 09/18/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: d5e33099d58c9cb4c110a78f2576d6eac83a7932
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b8ce3c795bc9ad212331ce1c1f413fe7fd6da909
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75351877"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86246761"
 ---
 # <a name="tutorial-remove-azure-resources"></a>Руководство по удалению ресурсов Azure
 
@@ -62,4 +62,4 @@ Remove-AzureRmResourceGroup -Name sfmeshTutorial1RG
 * Чтобы увидеть еще один пример связи между службами, изучите [пример приложения для голосования](https://github.com/Azure-Samples/service-fabric-mesh/tree/master/src/votingapp).
 * Узнайте больше о модели ресурсов Service Fabric из раздела [Introduction to Service Fabric Resource Model](service-fabric-mesh-service-fabric-resources.md) (Общие сведения о модели ресурсов Service Fabric).
 * Узнайте больше о службе "Сетка Service Fabric" из раздела [Что такое Сетка Service Fabric?](service-fabric-mesh-overview.md)
-* Ознакомьтесь с [Обзором Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview)
+* Ознакомьтесь с [Обзором Azure Cloud Shell](../cloud-shell/overview.md)

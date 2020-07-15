@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 6/22/2020
 ms.author: mebeatty
-ms.openlocfilehash: 4d698375488d4dac551f0028883fc4e18a10d8ef
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: d489186dc1c012fe8c181f17e00bcdb999e230dd
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85323501"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232140"
 ---
 # <a name="add-security-headers-with-rules-engine"></a>Добавление заголовков безопасности с помощью обработчика правил
 
 Чтобы предотвратить возникновение уязвимостей в браузере, реализуйте заголовки безопасности, например HTTP Strict-Transport-Security (HSTS), X-XSS-Protection, Content-Security-Policy или X-Frame-Options. Атрибуты для системы безопасности можно также определять с помощью файлов cookie.
 
-В следующем примере показано, как добавлять заголовок Content-Security-Policy ко всем входящим запросам, соответствующим определенному в маршруте пути, с которым связана конфигурация обработчика правил. В этом примере мы разрешим выполнение скриптов в приложении только с доверенного сайта **https://apis.contoso.com** .
+В следующем примере показано, как добавлять заголовок Content-Security-Policy ко всем входящим запросам, соответствующим определенному в маршруте пути, с которым связана конфигурация обработчика правил. В этом примере мы разрешим выполнение скриптов в приложении только с доверенного сайта **https://apiphany.portal.azure-api.net** .
 
 ## <a name="add-a-content-security-policy-header-in-azure-portal"></a>Добавление заголовка Content-Security-Policy на портале Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "85323501"
 
 3. Для параметра "Оператор" укажите значение **Добавить**, чтобы добавлять этот заголовок в ответ на все входящие запросы по указанному маршруту.
 
-4. Добавьте имя заголовка **Content-Security-Policy** и определите значения, которые будет принимать этот заголовок. В нашем примере это *"script-src 'self' https://apis.contoso.com."*
+4. Добавьте имя заголовка **Content-Security-Policy** и определите значения, которые будет принимать этот заголовок. В нашем примере это *"script-src 'self' https://apiphany.portal.azure-api.net."*
 
 5. Завершив добавление всех правил, которые нужны для вашей конфигурации, обязательно перейдите по нужному маршруту и сопоставьте конфигурацию обработчика правил с правилом для этого маршрута. Этот шаг позволяет включить настроенное правило. 
 

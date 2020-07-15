@@ -6,12 +6,12 @@ ms.subservice: process-automation
 ms.date: 04/19/2020
 ms.topic: tutorial
 ms.custom: has-adal-ref, tracking-python
-ms.openlocfilehash: 1203feaf6b400e91e6ab5381df0af245db0a2973
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: 9c587ad9b791d953dce66df2337cf0e7dca52324
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84559563"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185370"
 ---
 # <a name="tutorial-create-a-python-runbook"></a>Руководство по Создание модуля runbook в Python
 
@@ -31,7 +31,7 @@ ms.locfileid: "84559563"
 Для работы с этим учебником требуется:
 
 - Подписка Azure. Если у вас ее нет, [активируйте преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [зарегистрируйте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- [Учетная запись службы автоматизации](../automation-offering-get-started.md) , чтобы хранить модуль Runbook и выполнять проверку подлинности ресурсов Azure. Эта учетная запись должна иметь разрешение на запуск и остановку виртуальной машины.
+- [Учетная запись службы автоматизации](../index.yml) , чтобы хранить модуль Runbook и выполнять проверку подлинности ресурсов Azure. Эта учетная запись должна иметь разрешение на запуск и остановку виртуальной машины.
 - Виртуальная машина Azure. Это не должна быть рабочая виртуальная машина, так как в процессе изучения этого руководства ее нужно будет остановить и запустить заново.
 
 ## <a name="create-a-new-runbook"></a>Создание модуля Runbook
@@ -161,7 +161,7 @@ print("Hello World!")
 
 ## <a name="add-code-to-create-python-compute-client-and-start-the-vm"></a>Добавление кода для создания вычислительного клиента Python и запуска виртуальной машины
 
-Для работы с виртуальными машинами Azure создайте экземпляр [вычислительного клиента Azure для Python](https://docs.microsoft.com/python/api/azure-mgmt-compute/azure.mgmt.compute.computemanagementclient).
+Для работы с виртуальными машинами Azure создайте экземпляр [вычислительного клиента Azure для Python](/python/api/azure-mgmt-compute/azure.mgmt.compute.computemanagementclient).
 
 Используйте вычислительный клиент для запуска виртуальной машины. Добавьте в модуль Runbook следующий код:
 

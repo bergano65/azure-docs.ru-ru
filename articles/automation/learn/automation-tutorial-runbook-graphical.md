@@ -6,12 +6,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/19/2020
 ms.topic: tutorial
-ms.openlocfilehash: 3cd5db3736d5eda88e7cad7bda1966efb2b00977
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 53031efa831f788fe0fe58146496b427f4cfb4db
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83744739"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185540"
 ---
 # <a name="tutorial-create-a-graphical-runbook"></a>Руководство по Создание графического модуля runbook
 
@@ -30,7 +30,7 @@ ms.locfileid: "83744739"
 Для работы с этим учебником требуется:
 
 * Подписка Azure. Если у вас ее нет, [активируйте преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [зарегистрируйте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Учетная запись службы автоматизации](../automation-offering-get-started.md) , чтобы хранить модуль Runbook и выполнять проверку подлинности ресурсов Azure. Эта учетная запись должна иметь разрешение на запуск и остановку виртуальной машины.
+* [Учетная запись службы автоматизации](../index.yml) , чтобы хранить модуль Runbook и выполнять проверку подлинности ресурсов Azure. Эта учетная запись должна иметь разрешение на запуск и остановку виртуальной машины.
 * Виртуальная машина Azure. Это не должна быть рабочая виртуальная машина, так как для работы с этим руководством ее нужно остановить и запустить заново.
 
 ## <a name="step-1---create-runbook"></a>Шаг 1. Создание нового модуля Runbook
@@ -146,7 +146,7 @@ ms.locfileid: "83744739"
 
 ## <a name="step-6---add-authentication"></a>Шаг 6. Добавление проверки подлинности
 
-Теперь, когда у вас есть переменная с идентификатором подписки, можно настроить модуль runbook для выполнения аутентификации. Для этого используйте учетные данные запуска от имени, настроенные для вашей подписки. Для этого добавьте подключение запуска от имени Azure в качестве ресурса. Также необходимо добавить на холст командлеты [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/Connect-AzAccount?view=azps-3.5.0) и [Set-AzContext](https://docs.microsoft.com/powershell/module/az.accounts/Set-AzContext?view=azps-3.5.0).
+Теперь, когда у вас есть переменная с идентификатором подписки, можно настроить модуль runbook для выполнения аутентификации. Для этого используйте учетные данные запуска от имени, настроенные для вашей подписки. Для этого добавьте подключение запуска от имени Azure в качестве ресурса. Также необходимо добавить на холст командлеты [Connect-AzAccount](/powershell/module/az.accounts/Connect-AzAccount?view=azps-3.5.0) и [Set-AzContext](/powershell/module/az.accounts/Set-AzContext?view=azps-3.5.0).
 
 >[!NOTE]
 >Для модулей runbook PowerShell `Add-AzAccount` и `Add-AzureRMAccount` являются псевдонимами для `Connect-AzAccount`. Обратите внимание, что эти псевдонимы недоступны для графических модулей runbook. Графический модуль runbook может использовать только `Connect-AzAccount`.
@@ -213,7 +213,7 @@ ms.locfileid: "83744739"
 
 ## <a name="step-7---add-activity-to-start-a-virtual-machine"></a>Шаг 7. Добавление действия для запуска виртуальной машины
 
-Теперь добавьте действие `Start-AzVM` для запуска виртуальной машины Вы можете выбрать любую виртуальную машину в подписке Azure. Имя этой машины пока прописано в командлете [Start-AzVM](https://docs.microsoft.com/powershell/module/az.compute/start-azvm?view=azps-3.5.0).
+Теперь добавьте действие `Start-AzVM` для запуска виртуальной машины Вы можете выбрать любую виртуальную машину в подписке Azure. Имя этой машины пока прописано в командлете [Start-AzVM](/powershell/module/az.compute/start-azvm?view=azps-3.5.0).
 
 1. В элементе управления "Библиотека" введите `Start-Az` в поле поиска.
 
@@ -270,7 +270,7 @@ ms.locfileid: "83744739"
 
 ## <a name="step-9---create-a-conditional-link"></a>Шаг 9. Создание условной связи
 
-Мы можем изменить модуль runbook так, чтобы он запускал виртуальную машину, только если она еще не запущена. Для этого добавьте командлет [Get-AzVM](https://docs.microsoft.com/powershell/module/Az.Compute/Get-AzVM?view=azps-3.5.0), который получает текущее состояние виртуальной машины на уровне экземпляра. После этого можно добавить модуль кода с именем `Get Status` для рабочего процесса PowerShell, фрагмент кода в котором будет определять состояние виртуальной машины (запущена или остановлена). Условная связь с модулем `Get Status` выполняет `Start-AzVM`, только если виртуальная машина остановлена. После выполнения этой процедуры модуль runbook с помощью командлета `Write-Output` выводит сообщение о том, что виртуальная машина была успешно запущена.
+Мы можем изменить модуль runbook так, чтобы он запускал виртуальную машину, только если она еще не запущена. Для этого добавьте командлет [Get-AzVM](/powershell/module/Az.Compute/Get-AzVM?view=azps-3.5.0), который получает текущее состояние виртуальной машины на уровне экземпляра. После этого можно добавить модуль кода с именем `Get Status` для рабочего процесса PowerShell, фрагмент кода в котором будет определять состояние виртуальной машины (запущена или остановлена). Условная связь с модулем `Get Status` выполняет `Start-AzVM`, только если виртуальная машина остановлена. После выполнения этой процедуры модуль runbook с помощью командлета `Write-Output` выводит сообщение о том, что виртуальная машина была успешно запущена.
 
 1. Откройте **MyFirstRunbook-Graphical** в графическом редакторе.
 
@@ -354,5 +354,4 @@ ms.locfileid: "83744739"
 * Дополнительные сведения о графической разработке см. в статье [о создании графического runbook в службе автоматизации Azure](../automation-graphical-authoring-intro.md).
 * Сведения о том, как начать работу с runbook, см. в статье о [создании runbook PowerShell](automation-tutorial-runbook-textual-powershell.md).
 * Чтобы приступить к работе с runbook рабочего процесса PowerShell, обратитесь к [этом руководству](automation-tutorial-runbook-textual.md).
-* Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
-).
+* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).

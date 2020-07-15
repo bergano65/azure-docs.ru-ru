@@ -7,12 +7,12 @@ ms.date: 12/4/2019
 ms.service: storage
 ms.subservice: queues
 ms.topic: quickstart
-ms.openlocfilehash: 013281db2821c99f6942edd1322f4978e100c144
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: a4c873e7ec1867b6ce53cd9f4c3d5c54242a6f16
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81729847"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232344"
 ---
 # <a name="quickstart-azure-queue-storage-client-library-v12-for-java"></a>Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для Java
 
@@ -167,7 +167,7 @@ public class App
 * [Получение строки подключения](#get-the-connection-string)
 * [Создание очереди](#create-a-queue)
 * [Добавление сообщений в очередь](#add-messages-to-a-queue)
-* [Просмотр сообщений из очереди](#peek-at-messages -in-a-queue)
+* [Просмотр сообщений из очереди](#peek-at-messages-in-a-queue)
 * [Обновление сообщений в очереди](#update-a-message-in-a-queue)
 * [Получение и удаление сообщений из очереди](#receive-and-delete-messages-from-a-queue)
 * [Удаление очереди](#delete-a-queue)
