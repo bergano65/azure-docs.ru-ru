@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 06/19/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e99b860f4f75e142a8df09bb538ebee3f2eac6d3
-ms.sourcegitcommit: 4042aa8c67afd72823fc412f19c356f2ba0ab554
+ms.openlocfilehash: 41f42b053181f4115770cd9973621706b248baab
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85297483"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86168309"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-servicenow"></a>Руководство по интеграции единого входа Azure Active Directory с приложением ServiceNow
 
@@ -101,10 +101,8 @@ ms.locfileid: "85297483"
 
     c. В качестве **URL-адреса ответа** введите один из следующих URL-адресов:
 
-    |||
-    |-|-|
-    | `https://instancename.service-now.com/navpage.do` |
-    | `https://instancename.service-now.com/customer.do` | 
+    - `https://instancename.service-now.com/navpage.do`
+    - `https://instancename.service-now.com/customer.do`
 
     > [!NOTE]
     > Эти значения приведены в качестве примера. Необходимо заменить эти значения фактическим URL-адресом для входа и идентификатором, как описано ниже. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -173,10 +171,8 @@ ms.locfileid: "85297483"
 
     c. В качестве **URL-адреса ответа** введите один из следующих URL-адресов:
 
-    |||
-    |-|-|
-    | `https://instancename.service-now.com/navpage.do` |
-    | `https://instancename.service-now.com/customer.do` |
+    - `https://instancename.service-now.com/navpage.do`
+    - `https://instancename.service-now.com/customer.do`
 
     > [!NOTE]
     > Эти значения приведены в качестве примера. Необходимо заменить эти значения фактическим URL-адресом для входа и идентификатором, как описано ниже. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

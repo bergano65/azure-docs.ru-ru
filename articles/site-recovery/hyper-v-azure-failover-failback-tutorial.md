@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/16/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 03826abf6da94859c510f4c127dfce035aa79370
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b46a2ea12a697afde8223cc3595365c1286512c7
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75498163"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86132452"
 ---
 # <a name="fail-over-hyper-v-vms-to-azure"></a>Выполнение отработки отказа виртуальных машин Hyper-V в Azure
 
@@ -27,8 +27,8 @@ ms.locfileid: "75498163"
 Это пятое руководство в серии. В нем предполагается, что вы уже выполнили задачи из предыдущих руководств.    
 
 1. [Подготовка Azure](tutorial-prepare-azure.md)
-2. [Подготовка локальных серверов Hyper-V](tutorial-prepare-on-premises-hyper-v.md)
-3. Настройка аварийного восстановления [виртуальных машин Hyper-V](tutorial-hyper-v-to-azure.md) или [виртуальных машин Hyper-V, управляемых в облаках VMM System Center](tutorial-hyper-v-vmm-to-azure.md).
+2. [Подготовка локальных серверов Hyper-V](./hyper-v-prepare-on-premises-tutorial.md)
+3. Настройка аварийного восстановления [виртуальных машин Hyper-V](./hyper-v-azure-tutorial.md) или [виртуальных машин Hyper-V, управляемых в облаках VMM System Center](./hyper-v-vmm-azure-tutorial.md).
 4. [Выполнение отработки аварийного восстановления](tutorial-dr-drill-azure.md)
 
 [Ознакомьтесь со сведениями](failover-failback-overview.md#types-of-failover) о разных типах отработки отказа. Если вы хотите выполнить отработку отказа нескольких виртуальных машин в плане восстановления, ознакомьтесь с [этой статьей](site-recovery-failover.md).

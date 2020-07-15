@@ -12,18 +12,18 @@ ms.date: 05/26/2020
 ms.author: erhopf
 ms.custom: tracking-python
 zone_pivot_groups: programming-languages-set-one
-ms.openlocfilehash: bac8ab3da806927c588d3dc9cd06b83feb904a67
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ms.openlocfilehash: 017cb7dbc3e81584905530d819de680e79e2282b
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84606553"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86147146"
 ---
 # <a name="quickstart-use-the-translator-to-determine-sentence-length"></a>Краткое руководство. Определение длины предложения с помощью Переводчика
 
 В этом кратком руководстве описано, как определить длину предложений с помощью Переводчика.
 
-Для работы с этим кратким руководством требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом Переводчика. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
+Для работы с этим кратким руководством требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом Переводчика. 
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [C# quickstart](includes/sentences-csharp.md)]

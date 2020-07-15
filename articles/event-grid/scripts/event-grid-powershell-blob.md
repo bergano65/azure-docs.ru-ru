@@ -1,22 +1,15 @@
 ---
 title: Подписка на события учетной записи хранения больших двоичных объектов в Azure PowerShell
 description: В этой статье приведен пример скрипта Azure PowerShell, в котором показано, как подписаться на события Сетки событий для учетной записи хранилища BLOB-объектов.
-services: event-grid
-documentationcenter: na
-author: spelluru
-ms.service: event-grid
 ms.devlang: powershell
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/23/2020
-ms.author: spelluru
-ms.openlocfilehash: a8a0982ca118663cbf0f7e4d72412ce8feda3c4b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.date: 07/08/2020
+ms.openlocfilehash: 6e1d7fa349134400c26e03815983067d921f388c
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76721444"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86171233"
 ---
 # <a name="subscribe-to-events-for-a-blob-storage-account-with-powershell"></a>Создание подписки на события, связанные с учетной записью хранения больших двоичных объектов, с помощью PowerShell
 

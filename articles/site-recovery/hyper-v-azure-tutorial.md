@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/12/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 9a2bb636ba749cae50195cefeb8e7237d382fb99
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: afa8375805ebc5d52ac716126adca86850147166
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82182350"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134096"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Настройка аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "82182350"
 > * Включение репликации для виртуальных машин.
 
 > [!NOTE]
-> В учебниках описан самый простой способ развертывания для определенного сценария. В них везде, где возможно, используются значения по умолчанию, и описаны не все возможные параметры и пути. Подробные инструкции см. в разделе **Практические руководства** в [документации по Site Recovery](https://docs.microsoft.com/azure/site-recovery).
+> В учебниках описан самый простой способ развертывания для определенного сценария. В них везде, где возможно, используются значения по умолчанию, и описаны не все возможные параметры и пути. Подробные инструкции см. в разделе **Практические руководства** в [документации по Site Recovery](./index.yml).
 
 
 
@@ -39,7 +39,7 @@ ms.locfileid: "82182350"
 Это третье руководство в серии. В нем предполагается, что вы уже выполнили задачи из предыдущих учебников.
 
 1. [Подготовка Azure](tutorial-prepare-azure.md)
-2. [Подготовка локальных серверов Hyper-V](tutorial-prepare-on-premises-hyper-v.md)
+2. [Подготовка локальных серверов Hyper-V](./hyper-v-prepare-on-premises-tutorial.md)
 
 ## <a name="select-a-replication-goal"></a>Выбор цели репликации
 

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 05/22/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77bd880bbbc1d600ca21e058993102d69b417f41
-ms.sourcegitcommit: bc943dc048d9ab98caf4706b022eb5c6421ec459
+ms.openlocfilehash: aecb235006752096c6040066cb9b96fcfa709363
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2020
-ms.locfileid: "84764100"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86167255"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-textexpander"></a>Руководство по интеграции единого входа Azure Active Directory с TextExpander
 
@@ -97,11 +97,11 @@ ms.locfileid: "84764100"
 
 1. Кроме того, приложение TextExpander ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
     
-    | Имя | |  Исходный атрибут|
-    | ---------------| --------------- | --------- |
-    | email | | user.email |
-    | firstName | | user.givenname |
-    | lastName | | user.surname |
+    | Имя | Исходный атрибут|
+    | ---- | --------------- |
+    | email | user.email |
+    | firstName | user.givenname |
+    | lastName | user.surname |
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 

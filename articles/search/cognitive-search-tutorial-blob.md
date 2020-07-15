@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 02/26/2020
-ms.openlocfilehash: ef19c8eb747432a2eea3880b094f77747890c0d9
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 663d6659acf5c1e5abc8be56156af84167c51797
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85984017"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146954"
 ---
 # <a name="tutorial-use-rest-and-ai-to-generate-searchable-content-from-azure-blobs"></a>Руководство по использованию REST и искусственного интеллекта для создания доступного для поиска содержимого на основе данных больших двоичных объектов Azure
 
@@ -451,7 +451,7 @@ ms.locfileid: "85984017"
 1. Используйте запрос **GET** и указанный ниже URL-адрес, заменив в нем YOUR-SERVICE-NAME фактическим именем службы, чтобы найти вхождения термина или фразы. Этот запрос возвращает поле `content` и количество соответствующих документов.
 
    ```http
-   https://[YOUR-SERVICE-NAME].search.windows.net/indexes/cog-search-demo-idx?search=*&$count=true&$select=content?api-version=2020-06-30
+   https://[YOUR-SERVICE-NAME].search.windows.net/indexes/cog-search-demo-idx/docs?search=*&$count=true&$select=content&api-version=2020-06-30
    ```
    
    Результаты этого запроса возвращают содержимое документа. Такой же результат вы получили бы при использовании индексатора больших двоичных объектов без конвейера Когнитивного поиска. Это поле доступно для поиска, но не подходит для использования аспектов, фильтров или автозаполнения.
@@ -461,7 +461,7 @@ ms.locfileid: "85984017"
 1. Второй запрос вернет несколько новых полей, созданных конвейером (persons, organizations, locations, languageCode). Для краткости мы не используем поле keyPhrases, но если вам нужны эти значения, добавьте его.
 
    ```http
-   https://mydemo.search.windows.net/indexes/cog-search-demo-idx/docs?search=*&$count=true&$select=metadata_storage_name,persons,organizations,locations,languageCode&api-version=2020-06-30
+   https://[YOUR-SERVICE-NAME].search.windows.net/indexes/cog-search-demo-idx/docs?search=*&$count=true&$select=metadata_storage_name,persons,organizations,locations,languageCode&api-version=2020-06-30
    ```
    Поля в инструкции $select содержат новые сведения, созданные на основе функций обработки естественного языка Cognitive Services. Вполне ожидаемо, что в этих результатах есть некоторые неточности и различия между документами. Но в большинстве случаев аналитические модели возвращают точные результаты.
 
@@ -483,7 +483,7 @@ ms.locfileid: "85984017"
 1. В нашем последнем примере вы примените фильтр к коллекции организаций, которые вернет два совпадения по данным NASDAQ с учетом критериев фильтрации.
 
    ```http
-   cog-search-demo-idx/docs?search=*&$filter=organizations/any(organizations: organizations eq 'NASDAQ')&$select=metadata_storage_name,organizations&$count=true&api-version=2020-06-30
+   https://[YOUR-SERVICE-NAME].search.windows.net/indexes/cog-search-demo-idx/docs?search=*&$filter=organizations/any(organizations: organizations eq 'NASDAQ')&$select=metadata_storage_name,organizations&$count=true&api-version=2020-06-30
    ```
 
 Эти запросы иллюстрируют несколько способов работы с синтаксисом и фильтрами по новым полям, созданными с помощью когнитивного поиска. Дополнительные примеры запросов см. в разделах с примерами [для REST API поиска документов](https://docs.microsoft.com/rest/api/searchservice/search-documents#bkmk_examples), [запросов с простым синтаксисом](search-query-simple-examples.md) и [запросов full Lucene](search-query-lucene-examples.md).

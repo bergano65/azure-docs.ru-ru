@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 09/09/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: ba5ecc29edbcd69324500e87add846e4395ce0a3
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 312723818c4cef82ad6c96b013d7ec81ede276cc
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80067568"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86130912"
 ---
 # <a name="prepare-azure-for-on-premises-disaster-recovery-to-azure"></a>Подготовка Azure к локальному аварийному восстановлению в Azure
 
@@ -90,8 +90,8 @@ ms.locfileid: "80067568"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Для аварийного восстановления VMware [подготовьте локальную инфраструктуру VMware](tutorial-prepare-on-premises-vmware.md).
+- Для аварийного восстановления VMware [подготовьте локальную инфраструктуру VMware](./vmware-azure-tutorial-prepare-on-premises.md).
 - Для аварийного восстановления Hyper-V [подготовьте локальные серверы Hyper-V](hyper-v-prepare-on-premises-tutorial.md).
 - Для аварийного восстановления физических серверов [настройте сервер конфигурации и исходную среду](physical-azure-disaster-recovery.md).
-- [Описание сетей Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview).
-- [Общие сведения об управляемых дисках Azure](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview).
+- [Описание сетей Azure](../virtual-network/virtual-networks-overview.md).
+- [Общие сведения об управляемых дисках Azure](../virtual-machines/windows/managed-disks-overview.md).

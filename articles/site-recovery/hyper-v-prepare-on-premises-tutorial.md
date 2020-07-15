@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 11/12/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: b36e4688ebd6e929a56869a6bb191d98b2f1f432
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: 6f24a259d2d71aa6599f6dd417d5e9fc99734e99
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84691107"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135648"
 ---
 # <a name="prepare-on-premises-hyper-v-servers-for-disaster-recovery-to-azure"></a>Подготовка локальных серверов Hyper-V для аварийного восстановления в Azure
 
@@ -56,12 +56,12 @@ ms.locfileid: "84691107"
 
 ### <a name="prepare-vmm-for-network-mapping"></a>Подготовка VMM к сопоставлению сети
 
-Если вы используете VMM, при [сетевом сопоставлении](site-recovery-network-mapping.md) локальные сети виртуальной машины VMM сопоставляются с виртуальными сетями Azure. При сопоставлении во время создания после отработки отказа виртуальные машины Azure будут подключены к правильной сети.
+Если вы используете VMM, при [сетевом сопоставлении](./hyper-v-vmm-network-mapping.md) локальные сети виртуальной машины VMM сопоставляются с виртуальными сетями Azure. При сопоставлении во время создания после отработки отказа виртуальные машины Azure будут подключены к правильной сети.
 
 Подготовьте VMM к сопоставлению сетей следующим образом:
 
-1. Подготовьте [логическую сеть VMM](https://docs.microsoft.com/system-center/vmm/network-logical), связанную с облаком, в котором находятся узлы Hyper-V.
-2. Убедитесь в наличии [сети виртуальной машины](https://docs.microsoft.com/system-center/vmm/network-virtual), связанной с логической сетью.
+1. Подготовьте [логическую сеть VMM](/system-center/vmm/network-logical), связанную с облаком, в котором находятся узлы Hyper-V.
+2. Убедитесь в наличии [сети виртуальной машины](/system-center/vmm/network-virtual), связанной с логической сетью.
 3. В VMM подключите виртуальные машины к сети виртуальных машин.
 
 ## <a name="verify-internet-access"></a>Проверка доступа к Интернету
@@ -94,5 +94,5 @@ ms.locfileid: "84691107"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Настройка аварийного восстановления локальных виртуальных машин Hyper-V в Azure](tutorial-hyper-v-to-azure.md)
-> [Set up disaster recovery of on-premises Hyper-V VMs in VMM clouds to Azure](tutorial-hyper-v-vmm-to-azure.md) (Настройка аварийного восстановления локальных виртуальных машин Hyper-V в облаках VMM в Azure)
+> [Настройка аварийного восстановления локальных виртуальных машин Hyper-V в Azure](./hyper-v-azure-tutorial.md)
+> [Set up disaster recovery of on-premises Hyper-V VMs in VMM clouds to Azure](./hyper-v-vmm-azure-tutorial.md) (Настройка аварийного восстановления локальных виртуальных машин Hyper-V в облаках VMM в Azure)
