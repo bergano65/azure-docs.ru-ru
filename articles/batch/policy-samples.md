@@ -1,15 +1,15 @@
 ---
 title: Встроенные определения политик для пакетной службы Azure
 description: Здесь приведены встроенные определения политик в Политике Azure для пакетной службы Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 06/23/2020
+ms.date: 07/10/2020
 ms.topic: sample
 ms.custom: subject-policy-samples
-ms.openlocfilehash: 855c04c84ae55574dab9bd4e46d10aacdbde67a5
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: 499dc52fec9055638677f5ac35d86d3f5a17c990
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85318999"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86276093"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-batch"></a>Встроенные определения в Политике Azure для пакетной службы Azure
 

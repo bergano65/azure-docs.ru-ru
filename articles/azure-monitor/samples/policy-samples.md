@@ -1,17 +1,17 @@
 ---
 title: Встроенные определения политик для Azure Monitor
 description: Здесь приведены встроенные определения политик в Политике Azure для Azure Monitor. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 06/23/2020
+ms.date: 07/10/2020
 ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.custom: subject-policy-samples
-ms.openlocfilehash: f5d7268413983a3cc2d0155d301bd09f16060f71
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: 975bdc5981fa72228329f62ceb1c75a640c7099b
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85313142"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86276381"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-monitor"></a>Встроенные определения в Политике Azure для Azure Monitor
 

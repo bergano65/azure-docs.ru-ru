@@ -1,19 +1,19 @@
 ---
 title: Встроенные определения политик для Azure Arc для серверов
 description: Здесь приведены встроенные определения политик в Политике Azure для Azure Arc для серверов. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 06/23/2020
+ms.date: 07/10/2020
 ms.topic: sample
 ms.service: azure-arc
 ms.subservice: azure-arc-servers
 author: mgoedtel
 ms.author: magoedte
 ms.custom: subject-policy-samples
-ms.openlocfilehash: d4ae07ad44028d847ff43da955460bd11a6b7a6b
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: 6cbbfcd16ee0c256833cd600db91e26a3c68e618
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85316188"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86275667"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-arc-for-servers"></a>Встроенные определения в Политике Azure для Azure Arc для серверов
 

@@ -1,15 +1,15 @@
 ---
 title: Список инициатив встроенных политик
 description: 'Список инициатив встроенных политик для Политики Azure в следующих категориях: "Соответствие нормативным требованиям", "Гостевая конфигурация" и другие.'
-ms.date: 06/23/2020
+ms.date: 07/10/2020
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 0efd8d2b77027aa3e800b9a5071cc4d77a97b7d3
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: 23286e136a5b74a922c25af2e83a5019b387d64a
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85312752"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86276895"
 ---
 # <a name="azure-policy-built-in-initiative-definitions"></a>Определения встроенных инициатив в Политике Azure
 
@@ -24,6 +24,10 @@ ms.locfileid: "85312752"
 ## <a name="guest-configuration"></a>Гостевая конфигурация
 
 [!INCLUDE [azure-policy-samples-policysets-guest-configuration](../../../../includes/policy/samples/bycat/policysets-guest-configuration.md)]
+
+## <a name="kubernetes"></a>Kubernetes
+
+[!INCLUDE [azure-policy-samples-policysets-kubernetes](../../../../includes/policy/samples/bycat/policysets-kubernetes.md)]
 
 ## <a name="monitoring"></a>Наблюдение
 

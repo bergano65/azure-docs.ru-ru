@@ -5,12 +5,12 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 5/25/2020
 ms.author: baanders
-ms.openlocfilehash: 3a7c9f61af0124c656f98b64ba9295bc659c572a
-ms.sourcegitcommit: 635114a0f07a2de310b34720856dd074aaf4f9cd
+ms.openlocfilehash: 6edc6facc884fc6469b75b63216d6e5036321ea8
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85262361"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86277861"
 ---
 ## <a name="configure-the-sample-project"></a>Настройка примера проекта
 
@@ -36,7 +36,7 @@ ms.locfileid: "85262361"
 
 Затем настройте файл *serviceConfig.json*, который будет скопирован в выходной каталог при построении *SampleClientApp*. Для этого щелкните правой кнопкой мыши файл *serviceConfig.json* и выберите пункт *Свойства*. В инспекторе *Свойства* измените значение свойства *Копировать во внешний каталог* на *Копировать, если новее*.
 
-:::image type="content" source="../articles/digital-twins/media/include-tutorial/copy-config.png" alt-text="Выдержка из окна Visual Studio, в котором отображается область Обозревателя решений с выделенным serviceConfig.json, а также панель свойств со свойством Копировать во внешний каталог, для которого задано значение Копировать, если новее" border="false":::
+:::image type="content" source="../articles/digital-twins/media/includes/copy-config.png" alt-text="Выдержка из окна Visual Studio, в котором отображается область Обозревателя решений с выделенным serviceConfig.json, а также панель свойств со свойством Копировать во внешний каталог, для которого задано значение Копировать, если новее" border="false":::
 
 Не закрывайте проект _**AdtE2ESample**_ в Visual Studio, чтобы продолжить его использование в этом руководстве.
 
