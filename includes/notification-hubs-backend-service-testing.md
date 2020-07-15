@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 06/02/2020
 ms.service: notification-hubs
 ms.topic: include
-ms.openlocfilehash: 72e4318bea7245e440db4c7d95bf7f1f38bbe268
-ms.sourcegitcommit: 971a3a63cf7da95f19808964ea9a2ccb60990f64
+ms.openlocfilehash: 5e75c5d5510f596eb7911cae0310e60b6bef67bf
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85095473"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146478"
 ---
 ### <a name="send-a-test-notification"></a>отправка проверочного уведомления.
 
@@ -26,9 +26,6 @@ ms.locfileid: "85095473"
    | Клавиши                            | Значение                          |
    | ------------------------------ | ------------------------------ |
    | apikey                         | <ваш_ключ_API>                 |
-
-   > [!NOTE]
-   > Его можно найти в файле **Config.local_secrets.cs** в проекте **PushDemo**.
 
 1. Выберите значение **raw** (без форматирования) для параметра **Body** (Основной текст), затем выберите **JSON** в списке вариантов форматирования и добавьте содержимое-заполнитель **JSON**.
 

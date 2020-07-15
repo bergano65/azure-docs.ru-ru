@@ -2,21 +2,21 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 06/23/2020
+ms.date: 07/10/2020
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: eaf734a7e5094f83b75625ec98607c212fec2b31
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: ed743f1a1f3caa1f6f799c02cf6f06a4ae6510f5
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85317863"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86273998"
 ---
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Развернуть параметры диагностики для Key Vault в концентраторе событий](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fed7c8c13-51e7-49d1-8a43-8490431a0da2) |Развертывает параметры диагностики для Key Vault для потоковой передачи в региональный концентратор событий при создании или изменении любого ресурса Key Vault, где эти параметры диагностики отсутствуют. |deployIfNotExists |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_DiagnosticLog_Deploy.json) |
 |[Развертывание параметров диагностики Key Vault в рабочей области Log Analytics](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fbef3f64c-5290-43b7-85b0-9b254eef4c47) |Развертывает параметры диагностики Key Vault для потоковой передачи в региональную рабочую область Log Analytics при создании или изменении Key Vault, где эти параметры диагностики отсутствуют. |DeployIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/KeyVault_DeployDiagnosticLog_Deploy_LogAnalytics.json) |
-|[Журналы диагностики в Key Vault должны быть включены](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fcf820ca0-f99e-4f3e-84fb-66e913812d21) |Аудит активации журналов диагностики. Это позволит воссоздать действия для анализа инцидентов безопасности или компрометации сети. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_AuditDiagnosticLog_Audit.json) |
+|[Журналы диагностики в Key Vault должны быть включены](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fcf820ca0-f99e-4f3e-84fb-66e913812d21) |Аудит активации журналов диагностики. Это позволит воссоздать действия для анализа инцидентов безопасности или компрометации сети. |AuditIfNotExists, Disabled |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_AuditDiagnosticLog_Audit.json) |
 |[Объекты Key Vault должны быть восстанавливаемыми](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0b60c0b2-2dc2-4e1c-b5c9-abbed971de53) |Эта политика позволяет проверить наличие невосстанавливаемых объектов Key Vault. Функция обратимого удаления позволяет в течение определенного периода (90 дней) эффективно сохранять ресурсы даже после операции удаления. Ресурсы при этом как будто удалены. Если защита от очистки включена, хранилище или удаленный из него объект нельзя удалить без возможности восстановления в течение 90 дней после первоначального удаления. Эти хранилища и объекты по-прежнему можно восстановить, гарантируя клиентам, что политика хранения будет соблюдена. |Audit, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_Recoverable_Audit.json) |
 |[Служба Key Vault должна использовать конечную точку службы виртуальной сети](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fea4d6841-2173-4317-9747-ff522a45120f) |Эта политика выполняет аудит всех Key Vault, не настроенных на использование конечной точки службы виртуальной сети. |Audit, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/VirtualNetworkServiceEndpoint_KeyVault_Audit.json) |
 |[Управление разрешенными типами ключей сертификатов](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1151cede-290b-4ba0-8b38-0ad145ac888f) |Эта политика управляет разрешенными типами ключей для сертификатов. |Audit, Deny, Disabled |[1.0.1 (предварительная версия)](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/Certificates_AllowedKeyTypes.json) |

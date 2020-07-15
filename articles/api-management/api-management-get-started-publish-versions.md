@@ -13,16 +13,16 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: d0c837ac376f9d496baaf1ed67d0ec80c996804a
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b683910180e597cb8cbfa642bb2d9ac3200b42ee
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73176831"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86255036"
 ---
 # <a name="publish-multiple-versions-of-your-api"></a>Публикация нескольких версий API 
 
-Иногда нецелесообразно предоставлять всем вызывающим сторонам одну версию API. Если вызывающим сторонам требуется выполнить обновление до более поздней версии, они хотят, чтобы сделать это было просто. Для этого можно использовать функцию **версий** в службе управления API Azure. Дополнительные сведения см. в статье о [версиях и редакциях](https://blogs.msdn.microsoft.com/apimanagement/2017/09/14/versions-revisions/).
+Иногда нецелесообразно предоставлять всем вызывающим сторонам одну версию API. Если вызывающим сторонам требуется выполнить обновление до более поздней версии, они хотят, чтобы сделать это было просто. Для этого можно использовать функцию **версий** в службе управления API Azure. Дополнительные сведения см. в статье о [версиях и редакциях](https://azure.microsoft.com/blog/versions-revisions/).
 
 В этом руководстве описано следующее.
 

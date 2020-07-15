@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/27/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 29e1bb33b98b1fbc8fcfcd541d0014ca1bc75d8d
-ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
+ms.openlocfilehash: f2eead8dfd1f4d88d28de1f70134dcfcad8471d3
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84114139"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259759"
 ---
 # <a name="tutorial-set-up-service-alerts"></a>Руководство по Настройка оповещений служб
 
@@ -61,4 +61,4 @@ ms.locfileid: "84114139"
 В этом учебнике вы узнали, как настраивать и использовать Работоспособность служб Azure, чтобы отслеживать проблемы служб и рекомендации по работоспособности для Виртуального рабочего стола Windows. Чтобы узнать о том, как можно выполнить вход в Виртуальный рабочий стол Windows, перейдите к учебникам по подключению к Виртуальному рабочему столу Windows.
 
 > [!div class="nextstepaction"]
-> [Connect to the Remote Desktop client on Windows 7 and Windows 10](../connect-windows-7-and-10.md) (Подключение к клиенту удаленного рабочего стола в Windows 7 и Windows 10)
+> [Connect to the Remote Desktop client on Windows 7 and Windows 10](connect-windows-7-10-2019.md) (Подключение к клиенту удаленного рабочего стола в Windows 7 и Windows 10)

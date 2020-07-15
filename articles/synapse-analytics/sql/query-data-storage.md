@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: e9a90ab7100ae9757f59c80bb8f4738772482f56
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4f78928c26b595caafd6709a200297d62ce1c361
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833661"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259676"
 ---
 # <a name="query-storage-files-using-sql-on-demand-preview-resources-within-synapse-sql"></a>Запрашивание файлов хранилища с помощью ресурсов SQL по запросу (предварительная версия) в Synapse SQL
 
@@ -46,7 +46,7 @@ SQL по запросу (предварительная версия) позво
 
 ```syntaxsql
 SELECT * FROM
-OPENROWSET( BULK N'https://myaccount.blob.core.windows.net/mycontainer/mysubfolder/data.parquet', FORMAT = 'PARQUET') 
+OPENROWSET( BULK N'https://myaccount.dfs.core.windows.net//mycontainer/mysubfolder/data.parquet', FORMAT = 'PARQUET') 
 WITH (C1 int, C2 varchar(20), C3 as varchar(max)) as rows
 ```
 
@@ -58,7 +58,7 @@ WITH (C1 int, C2 varchar(20), C3 as varchar(max)) as rows
 
 ```sql
 SELECT * FROM
-OPENROWSET( BULK N'https://myaccount.blob.core.windows.net/mycontainer/mysubfolder/data.csv', FORMAT = 'CSV', PARSER_VERSION='2.0') 
+OPENROWSET( BULK N'https://myaccount.dfs.core.windows.net/mycontainer/mysubfolder/data.csv', FORMAT = 'CSV', PARSER_VERSION='2.0') 
 WITH (C1 int, C2 varchar(20), C3 as varchar(max)) as rows
 ```
 
@@ -81,7 +81,7 @@ WITH (C1 int, C2 varchar(20), C3 as varchar(max)) as rows
 
 ```sql
 SELECT * FROM
-OPENROWSET( BULK N'https://myaccount.blob.core.windows.net/mycontainer/mysubfolder/data.parquet', FORMAT = 'PARQUET') 
+OPENROWSET( BULK N'https://myaccount.dfs.core.windows.net/mycontainer/mysubfolder/data.parquet', FORMAT = 'PARQUET') 
 WITH (
       C1 int, 
       C2 varchar(20),
@@ -101,7 +101,7 @@ WITH (
 
 ```sql
 SELECT * FROM
-OPENROWSET( BULK N'https://myaccount.blob.core.windows.net/mycontainer/mysubfolder/data.parquet', FORMAT = 'PARQUET') 
+OPENROWSET( BULK N'https://myaccount.dfs.core.windows.net/mycontainer/mysubfolder/data.parquet', FORMAT = 'PARQUET') 
 ```
 
 Убедитесь, что для оптимальной производительности используются [соответствующие выводимые типы данных](best-practices-sql-on-demand.md#check-inferred-data-types). 
@@ -118,7 +118,7 @@ OPENROWSET( BULK N'https://myaccount.blob.core.windows.net/mycontainer/mysubfold
 
 ```sql
 SELECT * FROM
-OPENROWSET( BULK N'https://myaccount.blob.core.windows.net/myroot/*/mysubfolder/*.parquet', FORMAT = 'PARQUET' ) as rows
+OPENROWSET( BULK N'https://myaccount.dfs.core.windows.net/myroot/*/mysubfolder/*.parquet', FORMAT = 'PARQUET' ) as rows
 ```
 
 См. [примеры запросов к нескольким файлам и папкам](query-folders-multiple-csv-files.md).

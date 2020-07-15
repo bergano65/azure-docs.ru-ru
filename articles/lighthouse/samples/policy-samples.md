@@ -1,15 +1,15 @@
 ---
 title: Встроенные определения политик для Azure Lighthouse
 description: Здесь приведены встроенные определения политик в Политике Azure для Azure Lighthouse. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 06/23/2020
+ms.date: 07/10/2020
 ms.topic: sample
 ms.custom: subject-policy-samples
-ms.openlocfilehash: bb4c90af88fcfd43ca2b1725b9396df33910fe6b
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: ab0d42982b134c6b189060a20ec752ef5701a1f2
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85322255"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86274036"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-lighthouse"></a>Встроенные определения в Политике Azure для Azure Lighthouse
 

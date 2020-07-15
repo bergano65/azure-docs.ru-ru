@@ -4,12 +4,12 @@ description: Служба "Экземпляры контейнеров Azure" п
 ms.topic: overview
 ms.date: 04/25/2019
 ms.custom: seodec18, mvc
-ms.openlocfilehash: c871c09e29b64c4f0dcd107361154efdce306481
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: 261e5d0159b4201aab0e8aad1e05fa320cc76a14
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84695290"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259513"
 ---
 # <a name="what-is-azure-container-instances"></a>Об экземплярах контейнеров Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "84695290"
 
 ## <a name="persistent-storage"></a>Постоянное хранилище
 
-Чтобы получать и сохранять данные состояния с помощью службы "Экземпляры контейнеров Azure", рекомендуем установить прямое [подключение к общим файловым ресурсам Azure](container-instances-mounting-azure-files-volume.md), поддерживаемым службой хранилища Azure.
+Чтобы получать и сохранять данные состояния с помощью службы "Экземпляры контейнеров Azure", рекомендуем установить прямое [подключение к общим файловым ресурсам Azure](./container-instances-volume-azure-files.md), поддерживаемым службой хранилища Azure.
 
 ## <a name="linux-and-windows-containers"></a>Контейнеры Linux и Windows
 

@@ -4,12 +4,12 @@ description: Узнайте, как быстро создать кластер K
 services: container-service
 ms.topic: quickstart
 ms.date: 05/26/2020
-ms.openlocfilehash: 74a71bdc4c9aef9a6964f0c9120a902262a50526
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: e786b64554b5fbaf5bb7051e09daca8fb1eaf049
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85207147"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86251490"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-cluster-using-powershell"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes с помощью PowerShell
 
@@ -37,7 +37,7 @@ Set-AzContext -SubscriptionId 00000000-0000-0000-0000-000000000000
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-[Группа ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) — это логическая группа, в которой развертываются и управляются ресурсы Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположении сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если во время создания ресурса вы не указали другой регион. Создайте группу ресурсов с помощью командлета [New-AzResourceGroup][new-azresourcegroup].
+[Группа ресурсов Azure](../azure-resource-manager/management/overview.md) — это логическая группа, в которой развертываются и управляются ресурсы Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположении сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если во время создания ресурса вы не указали другой регион. Создайте группу ресурсов с помощью командлета [New-AzResourceGroup][new-azresourcegroup].
 
 В следующем примере создается группа ресурсов с именем **myResourceGroup** в регионе **eastus**.
 
@@ -57,12 +57,12 @@ ResourceId        : /subscriptions/00000000-0000-0000-0000-000000000000/resource
 
 ## <a name="create-aks-cluster"></a>Создание кластера AKS
 
-Создайте пару ключей SSH с помощью служебной программы командной строки `ssh-keygen`. Дополнительные сведения см. в статье [Краткая инструкция. Создание и использование пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure](/azure/virtual-machines/linux/mac-create-ssh-keys).
+Создайте пару ключей SSH с помощью служебной программы командной строки `ssh-keygen`. Дополнительные сведения см. в статье [Краткая инструкция. Создание и использование пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure](../virtual-machines/linux/mac-create-ssh-keys.md).
 
 Для создания кластера AKS используйте командлет [New-AzAks][new-azaks]. В следующем примере создается кластер **myAKSCluster** с одним узлом. Служба Azure Monitor для контейнеров также включена по умолчанию. Выполнение занимает несколько минут.
 
 > [!NOTE]
-> При создании кластера AKS для хранения ресурсов AKS автоматически создается вторая группа ресурсов. Дополнительные сведения см. в разделе [Почему с AKS создаются две группы ресурсов?](https://docs.microsoft.com/azure/aks/faq#why-are-two-resource-groups-created-with-aks)
+> При создании кластера AKS для хранения ресурсов AKS автоматически создается вторая группа ресурсов. Дополнительные сведения см. в разделе [Почему с AKS создаются две группы ресурсов?](./faq.md#why-are-two-resource-groups-created-with-aks)
 
 ```azurepowershell-interactive
 New-AzAks -ResourceGroupName myResourceGroup -Name myAKSCluster -NodeCount 1
@@ -266,7 +266,7 @@ Remove-AzResourceGroup -Name myResourceGroup
 <!-- LINKS - external -->
 [kubectl]: https://kubernetes.io/docs/user-guide/kubectl/
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
-[azure-dev-spaces]: https://docs.microsoft.com/azure/dev-spaces/
+[azure-dev-spaces]: ../dev-spaces/index.yml
 [kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
 [azure-vote-app]: https://github.com/Azure-Samples/azure-voting-app-redis.git
 

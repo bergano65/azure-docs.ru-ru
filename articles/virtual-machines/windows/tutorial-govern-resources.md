@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/05/2018
 ms.author: tomfitz
 ms.custom: mvc
-ms.openlocfilehash: b4ce4cd53f9dda3d0f96e892128d543e59c83b26
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: fce613da352e55bae64db2912af23a07f4bf954f
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82100368"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86200676"
 ---
 # <a name="tutorial-learn-about-windows-virtual-machine-management-with-azure-powershell"></a>Руководство. Управление виртуальными машинами Windows с помощью Azure PowerShell
 
@@ -63,7 +63,7 @@ New-AzRoleAssignment -ObjectId $adgroup.id `
   -RoleDefinitionName "Virtual Machine Contributor"
 ```
 
-Если возникнет ошибка с сообщением о том, что **Субъект \<guid> не существует в каталоге**, это значит, что новая группа еще не используется в Azure Active Directory. Попробуйте выполнить команду снова.
+Если возникнет ошибка с сообщением о том, что **участник \<guid> не существует в каталоге**, это значит, что новая группа еще не используется в Azure Active Directory. Попробуйте выполнить команду снова.
 
 Как правило, нужно повторить эту процедуру для *участника сети* и *участника учетной записи хранения*, чтобы назначить пользователей для управления развернутыми ресурсами. В текущей статье эти действия можно пропустить.
 
@@ -217,6 +217,10 @@ Remove-AzResourceLock -LockName LockNSG `
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name myResourceGroup
 ```
+
+## <a name="manage-costs"></a>Управление затратами
+
+[!INCLUDE [cost-management-horizontal](../../../includes/cost-management-horizontal.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

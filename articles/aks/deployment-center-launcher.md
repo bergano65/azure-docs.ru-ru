@@ -5,12 +5,12 @@ ms.author: puagarw
 ms.topic: tutorial
 ms.date: 07/12/2019
 author: pulkitaggarwl
-ms.openlocfilehash: b0a9597e370648faab3787218c7d038798dbd455
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 42bdde45b3a289a35c5bf4c4651e5a50a639f049
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80048111"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86251779"
 ---
 # <a name="deployment-center-for-azure-kubernetes"></a>Центр развертывания для Azure Kubernetes
 
@@ -34,7 +34,7 @@ ms.locfileid: "80048111"
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
-1. На портале Azure справа в строке меню выберите параметр [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
+1. На портале Azure справа в строке меню выберите параметр [Cloud Shell](../cloud-shell/overview.md).
 
 1. Чтобы создать кластер AKS, выполните следующие команды:
 
@@ -56,7 +56,7 @@ ms.locfileid: "80048111"
 
    ![Параметры](media/deployment-center-launcher/settings.png)
 
-1. Выберите расположение кода и нажмите кнопку **Далее**. Затем выберите один из репозиториев, поддерживаемых на данный момент: **[Azure Repos](https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops)** или **GitHub**.
+1. Выберите расположение кода и нажмите кнопку **Далее**. Затем выберите один из репозиториев, поддерживаемых на данный момент: **[Azure Repos](/azure/devops/repos/index?view=azure-devops)** или **GitHub**.
 
     Azure Repos — это набор средств управления версиями, которые помогают вам управлять кодом. Независимо от того, малый или большой проект программного обеспечения вы имеете, рекомендуется как можно раньше использовать контроль версий.
 
@@ -77,7 +77,7 @@ ms.locfileid: "80048111"
 
     ![Dockerfile](media/deployment-center-launcher/dockerfile.png)
 
-1. Выберите существующий реестр контейнеров или создайте его, а затем нажмите кнопку **Готово**. Конвейер создается автоматически и встает в очередь сборки в [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/index?view=azure-devops).
+1. Выберите существующий реестр контейнеров или создайте его, а затем нажмите кнопку **Готово**. Конвейер создается автоматически и встает в очередь сборки в [Azure Pipelines](/azure/devops/pipelines/index?view=azure-devops).
 
     Azure Pipelines — это облачная служба, которую можно использовать для автоматической сборки и тестирования проекта кода, а также предоставления доступа другим пользователям. Azure Pipelines сочетает непрерывную интеграцию и непрерывную доставку для постоянного и согласованного тестирования, а также создания кода и помещения его в любой целевой объект.
 

@@ -6,18 +6,18 @@ ms.assetid: b48d1137-8c04-46e0-b430-101e07d7e470
 ms.topic: sample
 ms.date: 07/07/2020
 ms.custom: mvc
-ms.openlocfilehash: 51693ad4d233ea180607bc7358a0847e23688099
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: a1577d42de9a4452467a448a0de5cd5f9575a55f
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86057914"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169431"
 ---
 # <a name="powershell-samples-for-azure-app-service"></a>Примеры PowerShell для Службы приложений Azure
 
 В следующей таблице приведены ссылки на сценарии PowerShell, созданные с помощью Azure PowerShell.
 
-| | |
+| Скрипт | Описание |
 |-|-|
 |**Создание приложения**||
 | [Создание приложения с развертыванием из GitHub](./scripts/powershell-deploy-github.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создает приложение Службы приложений, которое вытягивает код из GitHub. |

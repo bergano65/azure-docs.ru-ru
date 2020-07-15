@@ -12,12 +12,12 @@ ms.date: 03/12/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: a45160db09b3f6bf68bda3f25e40a29a1154099d
-ms.sourcegitcommit: 69156ae3c1e22cc570dda7f7234145c8226cc162
+ms.openlocfilehash: 19c94a4807b8958fa8b1ec46ccae660c7cbe92de
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84308495"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86256702"
 ---
 # <a name="quickstart-set-up-a-tenant"></a>Краткое руководство. Настройка клиента
 
@@ -34,7 +34,7 @@ ms.locfileid: "84308495"
 * Рабочие и учебные (учетные записи Azure AD) или учетные записи Майкрософт (например, outlook.com и live.com)
 * Учетные записи социальных сетей и локальные учетные записи (Azure AD B2C)
 
-Это краткое руководство разбивается на два сценария, в зависимости от типа приложения, которое вы хотите создать. Если вам нужна дополнительная помощь в выборе типа удостоверения, взгляните на [общие сведения о платформе удостоверений Майкрософт](about-microsoft-identity-platform.md).
+Это краткое руководство разбивается на два сценария, в зависимости от типа приложения, которое вы хотите создать.
 
 ## <a name="work-and-school-accounts-or-personal-microsoft-accounts"></a>Рабочие и учебные учетные записи или личные учетные записи Майкрософт
 

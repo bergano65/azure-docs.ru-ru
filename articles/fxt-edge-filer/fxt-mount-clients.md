@@ -6,12 +6,12 @@ ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 06/20/2019
 ms.author: rohogue
-ms.openlocfilehash: 43223db298e4ad170ea6d0687a342b3aee35500e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: ea963b143cedf36137d9c36bc57d323353da6786
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80130765"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86231358"
 ---
 # <a name="tutorial-mount-the-cluster"></a>Руководство по подключению кластера
 
@@ -93,14 +93,14 @@ IP-адрес представляет собой один из определе
 
 ``mount -o hard,nointr,proto=tcp,mountproto=tcp,retry=30 ${VSERVER_IP_ADDRESS}:/${NAMESPACE_PATH} ${LOCAL_FILESYSTEM_MOUNT_POINT}``
 
-| Обязательные параметры | |
+| Обязательные параметры | Описание |
 --- | ---
 ``hard`` | Нежесткие подключения к кластеру Azure FXT Edge Filer связаны со сбоями в работе приложений и возможной потерей данных.
 ``proto=netid`` | Этот параметр поддерживает соответствующую обработку сетевых ошибок NFS.
 ``mountproto=netid`` | Этот параметр поддерживает соответствующую обработку сетевых ошибок для операций подключения.
 ``retry=n`` | Задайте значение ``retry=30``, чтобы избежать временных ошибок при подключении. (При подключении переднего плана рекомендуется использовать другое значение.)
 
-| Предпочтительные параметры  | |
+| Предпочтительные параметры  | Описание |
 --- | ---
 ``nointr``            | Если клиенты используют старые версии ядер ОС (до апреля 2008 г.), которые поддерживают этот параметр, используйте их. Значением по умолчанию выступает параметр intr.
 

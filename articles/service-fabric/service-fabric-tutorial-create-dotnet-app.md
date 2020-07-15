@@ -4,12 +4,12 @@ description: В этом руководстве вы узнаете, как со
 ms.topic: tutorial
 ms.date: 07/10/2019
 ms.custom: mvc
-ms.openlocfilehash: f7bad66d15cc2f9fb1885e440f95e76e12ea458a
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: dc869dce536449a901826db3b0d964bf17abbbec
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85214032"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86257114"
 ---
 # <a name="tutorial-create-and-deploy-an-application-with-an-aspnet-core-web-api-front-end-service-and-a-stateful-back-end-service"></a>Руководство по Создание и развертывание приложения с интерфейсной службой веб-API ASP.NET Core и серверной службой с отслеживанием состояния
 
@@ -41,7 +41,7 @@ ms.locfileid: "85214032"
 
 ## <a name="create-an-aspnet-web-api-service-as-a-reliable-service"></a>Создание службы веб-API ASP.NET как надежной службы
 
-Сначала создайте веб-интерфейс приложения для голосования с помощью ASP.NET Core. ASP.NET Core — это простое кросс-платформенное средство для разработки веб-страниц, позволяющее создавать современные пользовательские веб-интерфейсы и интерфейсы веб-API. Чтобы получить полное представление об интеграции ASP.NET Core с Service Fabric, мы настоятельно рекомендуем ознакомиться со статьей [ASP.NET Core в Service Fabric Reliable Services](service-fabric-reliable-services-communication-aspnetcore.md). А пока можете воспользоваться этим руководством, чтобы быстро приступить к работе. Дополнительные сведения об ASP.NET Core см. в [документации по ASP.NET Core](https://docs.microsoft.com/aspnet/core/).
+Сначала создайте веб-интерфейс приложения для голосования с помощью ASP.NET Core. ASP.NET Core — это простое кросс-платформенное средство для разработки веб-страниц, позволяющее создавать современные пользовательские веб-интерфейсы и интерфейсы веб-API. Чтобы получить полное представление об интеграции ASP.NET Core с Service Fabric, мы настоятельно рекомендуем ознакомиться со статьей [ASP.NET Core в Service Fabric Reliable Services](service-fabric-reliable-services-communication-aspnetcore.md). А пока можете воспользоваться этим руководством, чтобы быстро приступить к работе. Дополнительные сведения об ASP.NET Core см. в [документации по ASP.NET Core](/aspnet/core/).
 
 1. Запустите Visual Studio от имени **администратора**.
 
