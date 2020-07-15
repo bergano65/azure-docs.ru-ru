@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 3/19/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: c945e56aa0b6f851f54cf7679276558190b4bc10
-ms.sourcegitcommit: 3988965cc52a30fc5fed0794a89db15212ab23d7
+ms.openlocfilehash: 87fcbef5a3cedab3142fe9ad47c68752515fdd2e
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85194977"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86274345"
 ---
 # <a name="quickstart-create-an-apache-spark-pool-preview-using-synapse-studio"></a>Краткое руководство. Создание пула Apache Spark (предварительная версия) с помощью Synapse Studio
 
@@ -38,10 +38,10 @@ Azure Synapse Analytics предлагает различные аналитич
 
 ## <a name="navigate-to-the-synapse-workspace"></a>Переход в рабочую область Synapse
 
-1. Перейдите в рабочую область Synapse, в которой будет создан пул Apache Spark. Для этого в строке поиска введите имя службы (или непосредственно имя ресурса).
-![Строка поиска на портале Azure, в которой введен текст "рабочие области Synapse".](media/quickstart-create-sql-pool/create-sql-pool-00a.png)
+1. Перейдите к рабочей области Synapse, в которой будет создан пул Apache Spark, введя имя службы (или напрямую имя ресурса) в строке поиска.
+![Панель поиска на портале Azure с введенными рабочими областями Synapse.](media/quickstart-create-sql-pool/create-sql-pool-00a.png)
 1. В списке рабочих областей введите имя (или часть имени) рабочей области, которую нужно открыть. В нашем примере будет использоваться рабочая область с именем **contosoanalytics**.
-![Список рабочих областей Synapse, в котором отображаются только области с именем Contoso.](media/quickstart-create-sql-pool/create-sql-pool-00b.png)
+![Список рабочих областей Synapse, где отображаются только области с именем Contoso.](media/quickstart-create-sql-pool/create-sql-pool-00b.png)
 
 ## <a name="launch-synapse-studio"></a>Запуск Synapse Studio 
 

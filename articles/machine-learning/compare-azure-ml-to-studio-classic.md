@@ -8,12 +8,12 @@ ms.topic: overview
 author: j-martens
 ms.author: jmartens
 ms.date: 03/25/2020
-ms.openlocfilehash: 065fd166fb2ce82a3338322d55ef1ee5886ac56b
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: 1d4896a2dd2115e5654baffe394618b30a294d5b
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85210377"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86231749"
 ---
 # <a name="azure-machine-learning-vs-machine-learning-studio-classic"></a>Сравнение службы "Машинное обучение Azure" и Студии машинного обучения (классической)
 
@@ -27,7 +27,7 @@ ms.locfileid: "85210377"
 
 В таблице ниже перечислены некоторые основные различия между службой "Машинное обучение Azure" и Студией (классической).
 
-| | Студия машинного обучения (классическая версия) | Машинное обучение Azure |
+| Компонент | Студия машинного обучения (классическая версия) | Машинное обучение Azure |
 |---| --- | --- |
 | Интерфейс перетаскивания | Поддерживается | Поддерживается: [конструктор службы "Машинное обучение Azure" (предварительная версия)](concept-designer.md) <br/>(требуется корпоративная рабочая область) | 
 | Эксперимент | Масштабируемый (ограничение на объем данных для обучения: 10 ГБ) | Масштабирование с помощью целевого объекта вычислений |
