@@ -79,7 +79,7 @@ ms.locfileid: "85970592"
 
 1. Щелкните **Сохранить** или **Сохранить как**.
 
-   :::image type="content" source="../media/create-share-query/save-shared-query-buttons.png" alt-text="Сохранение нового запроса кнопкой "Сохранить"" border="false":::
+   :::image type="content" source="../media/create-share-query/save-shared-query-buttons.png" alt-text="Сохранение нового запроса кнопкой Сохранить" border="false":::
 
 1. На панели **Сохранить запрос** введите имя **Число виртуальных машин по ОС**.
 

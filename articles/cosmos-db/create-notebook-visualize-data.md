@@ -60,7 +60,7 @@ ms.locfileid: "85961104"
 
    Вы также можете обновить вкладку **Данные** и просмотреть только что созданные ресурсы.
 
-   :::image type="content" source="media/create-notebook-visualize-data/refresh-data-tab.png" alt-text="Обновление вкладки "Данные" для просмотра нового контейнера":::
+   :::image type="content" source="media/create-notebook-visualize-data/refresh-data-tab.png" alt-text="Обновление вкладки Данные для просмотра нового контейнера":::
 
 1. Далее вы импортируете примеры розничных данных в контейнер Azure Cosmos. Ниже приведен формат элемента из данных розничной торговли.
 

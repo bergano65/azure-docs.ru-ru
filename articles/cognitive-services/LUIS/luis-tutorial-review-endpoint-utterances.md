@@ -44,7 +44,7 @@ ms.locfileid: "85959060"
 
 1. Выберите **Сборка** и затем **Намерения**, чтобы просмотреть намерения, которые являются основными составными блоками приложения LUIS.
 
-    :::image type="content" source="media/luis-tutorial-review-endpoint-utterances/initial-intents-in-app.png" alt-text="Перейдите со страницы "Версии" на страницу "Намерения".":::
+    :::image type="content" source="media/luis-tutorial-review-endpoint-utterances/initial-intents-in-app.png" alt-text="Перейдите со страницы Версии на страницу Намерения.":::
 
 ## <a name="train-the-app-to-apply-the-entity-changes-to-the-app"></a>Обучение приложения для внесения изменений сущности в приложение
 

@@ -100,7 +100,7 @@ ms.locfileid: "85560737"
    * **Пул адресов клиента** — для удаленных пользователей.
    * **IP-адрес пользовательского DNS-сервера**.
 
-   :::image type="content" source="media/virtual-wan-point-to-site-portal/hub-with-p2s.png" alt-text="Концентратор с подключением "точка — сеть"":::
+   :::image type="content" source="media/virtual-wan-point-to-site-portal/hub-with-p2s.png" alt-text="Концентратор с подключением точка — сеть":::
 
 1. Выберите **Review + create** (Просмотреть и создать).
 1. На странице **Проверка пройдена** щелкните **Создать**.

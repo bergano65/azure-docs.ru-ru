@@ -135,7 +135,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 1. Используйте кнопку :::image type="icon" source="./media/create-cassandra-dotnet/copy.png"::: в правой части экрана, чтобы скопировать значение параметра USERNAME.
 
-   :::image type="content" source="./media/create-cassandra-dotnet/keys.png" alt-text="Просмотр и копирование ключа доступа на странице "Строка подключения" на портале Azure":::
+   :::image type="content" source="./media/create-cassandra-dotnet/keys.png" alt-text="Просмотр и копирование ключа доступа на странице Строка подключения на портале Azure":::
 
 1. В Visual Studio откройте файл Program.cs. 
 

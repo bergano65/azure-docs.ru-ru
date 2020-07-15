@@ -64,7 +64,7 @@ ms.locfileid: "86028247"
 
 Чтобы запустить эмулятор Azure Cosmos, нажмите кнопку "Пуск" или клавишу Windows. Начните вводить текст **эмулятор Azure Cosmos** и выберите эмулятор в списке приложений.
 
-:::image type="content" source="./media/local-emulator/database-local-emulator-start.png" alt-text="Нажмите кнопку "Пуск" или клавишу Windows, начните вводить "эмулятор Azure Cosmos" и выберите эмулятор в списке приложений":::
+:::image type="content" source="./media/local-emulator/database-local-emulator-start.png" alt-text="Нажмите кнопку Пуск или клавишу Windows, начните вводить эмулятор Azure Cosmos и выберите эмулятор в списке приложений":::
 
 При запуске эмулятора в области уведомлений панели задач Windows появится соответствующий значок. 
 
