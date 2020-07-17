@@ -9,6 +9,7 @@ ms.date: 07/17/2017
 ms.author: cynthn
 ms.openlocfilehash: 78aac1e49b23cf7fd294314f335aa429e8458639
 ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/31/2020
 ms.locfileid: "84233362"
@@ -46,7 +47,7 @@ ms.locfileid: "84233362"
 | ---- | ------- |
 | Получение списка виртуальных сетей |[Get-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/get-azvirtualnetwork) -ResourceGroupName $myResourceGroup<BR><BR>Выводит список всех виртуальных сетей в группе ресурсов. |
 | Получение сведений о виртуальной сети |Get-AzVirtualNetwork -Name "myVNet" -ResourceGroupName $myResourceGroup |
-| Получение списка подсетей в виртуальной сети |Get-AzVirtualNetwork -Name "myVNet" -ResourceGroupName $myResourceGroup | Выбор подсетей |
+| Получение списка подсетей в виртуальной сети |Get-AzVirtualNetwork -Name "myVNet" -ResourceGroupName $myResourceGroup &#124;Выбор подсетей |
 | Получение сведений о подсети |[Get-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/get-azvirtualnetworksubnetconfig) -Name "mySubnet1" -VirtualNetwork $vnet<BR><BR>Возвращает сведения о подсети в указанной виртуальной сети. Значение $vnet представляет собой объект, возвращаемый командлетом Get-AzVirtualNetwork. |
 | Получение списка IP-адресов |[Get-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress) -ResourceGroupName $myResourceGroup<BR><BR>Выводит список общедоступных IP-адресов в группе ресурсов. |
 | Получение списка балансировщиков нагрузки |[Get-AzLoadBalancer](https://docs.microsoft.com/powershell/module/az.network/get-azloadbalancer) -ResourceGroupName $myResourceGroup<BR><BR>Выводит список всех балансировщиков нагрузки в группе ресурсов. |
