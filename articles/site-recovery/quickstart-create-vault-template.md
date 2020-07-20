@@ -1,33 +1,31 @@
 ---
 title: Краткое руководство. Создание хранилища Служб восстановления Azure с помощью шаблона Azure Resource Manager.
-description: Из этого краткого руководства вы узнаете, как с помощью шаблона Azure Resource Manager создать хранилище Служб восстановления Azure.
+description: Из этого краткого руководства вы узнаете, как с помощью шаблона Azure Resource Manager (шаблона ARM) создать хранилище Служб восстановления Azure.
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 04/29/2020
-author: davidsmatlak
-ms.author: v-dasmat
-ms.openlocfilehash: cf85939a1dbaf8d3e8a90a3acf10bda9faac83bc
-ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
+ms.openlocfilehash: 9112841f6f07808d80fa2b8b61e612d57d0ec20e
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84217286"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86248831"
 ---
-# <a name="quickstart-create-a-recovery-services-vault-using-a-resource-manager-template"></a>Краткое руководство. Создание хранилища Служб восстановления с помощью шаблона Resource Manager
+# <a name="quickstart-create-a-recovery-services-vault-using-an-arm-template"></a>Краткое руководство. Создание хранилища Служб восстановления с помощью шаблона ARM
 
-В этом кратком руководстве описано, как создать хранилище Служб восстановления Azure с помощью шаблона Azure Resource Manager. Служба [Azure Site Recovery](site-recovery-overview.md) помогает реализовать стратегию непрерывности бизнес-процессов и аварийного восстановления (BCDR), чтобы ваши бизнес-приложения оставались подключенными во время запланированных и незапланированных простоев. Site Recovery управляет аварийным восстановлением локальных виртуальных машин и виртуальных машин Azure, включая операции репликации, отработки отказа и восстановления.
+В этом кратком руководстве описано, как создать хранилище Служб восстановления Azure с помощью шаблона Azure Resource Manager (шаблона ARM). Служба [Azure Site Recovery](site-recovery-overview.md) помогает реализовать стратегию непрерывности бизнес-процессов и аварийного восстановления (BCDR), чтобы ваши бизнес-приложения оставались подключенными во время запланированных и незапланированных простоев. Site Recovery управляет аварийным восстановлением локальных виртуальных машин и виртуальных машин Azure, включая операции репликации, отработки отказа и восстановления.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если у вас еще нет активной подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем приступать к работе.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-recovery-services-vault-create%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Нет.
+Если у вас еще нет активной подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем приступать к работе.
 
-## <a name="create-a-recovery-services-vault"></a>Создание хранилища Служб восстановления
-
-### <a name="review-the-template"></a>Изучение шаблона
+## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-recovery-services-vault-create/).
 
@@ -42,7 +40,7 @@ ms.locfileid: "84217286"
 
 Дополнительные шаблоны, связанные с Azure Recovery Services, см. в статье [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Recoveryservices&pageNumber=1&sort=Popular).
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 Чтобы развернуть шаблон, укажите значения для параметров **Подписка**, **Группа ресурсов** и **Имя хранилища**.
 

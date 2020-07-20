@@ -1,6 +1,6 @@
 ---
 title: 'Azure Resource Manager: Создание отдельной базы данных'
-description: Создание отдельной базы данных в Базе данных SQL с помощью шаблона Azure Resource Manager.
+description: Создайте отдельную базу данных в Базе данных SQL Azure с помощью шаблона Azure Resource Manager.
 services: sql-database
 ms.service: sql-database
 ms.subservice: single-database
@@ -11,20 +11,20 @@ author: mumian
 ms.author: jgao
 ms.reviewer: carlrab
 ms.date: 06/24/2020
-ms.openlocfilehash: 2975b98306b7019022799d5ba69b9d7af5797a2b
-ms.sourcegitcommit: bf8c447dada2b4c8af017ba7ca8bfd80f943d508
+ms.openlocfilehash: a766d61c49fe23645c232432198eb4aa0eedb98b
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85368045"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135640"
 ---
-# <a name="quickstart-create-a-single-database-in-azure-sql-database-using-the-azure-resource-manager-template"></a>Краткое руководство. Создание отдельной базы данных в Базе данных SQL с помощью шаблона Azure Resource Manager
+# <a name="quickstart-create-a-single-database-in-azure-sql-database-using-an-arm-template"></a>Краткое руководство. Создание отдельной базы данных в Базе данных SQL Azure с помощью шаблона ARM
 
-Создание [отдельной базы данных](single-database-overview.md) — это самый быстрый и простой вариант для создания базы данных в Базе данных SQL Azure. В этом кратком руководстве описано, как создать отдельную базу данных с помощью шаблона Azure Resource Manager.
+Создание [отдельной базы данных](single-database-overview.md) — это самый быстрый и простой вариант для создания базы данных в Базе данных SQL Azure. В этом кратком руководстве описано, как создать отдельную базу данных с помощью шаблона Azure Resource Manager (шаблона ARM).
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
-Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку "Развертывание в Azure". Шаблон откроется на портале Azure.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
 
 [![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-sql-database%2Fazuredeploy.json)
 
@@ -36,7 +36,7 @@ ms.locfileid: "85368045"
 
 Отдельная база данных имеет заданный набор ресурсов вычислений, памяти, операций ввода-вывода и хранения и доступна в [двух моделях приобретения](purchasing-models.md). При создании отдельной базы данных можете также определить [сервер](logical-servers.md), чтобы управлять им и разместить его в [группе ресурсов Azure](../../active-directory-b2c/overview.md) в указанном регионе.
 
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-sql-logical-server/).
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-sql-database/).
 
 :::code language="json" source="~/quickstart-templates/101-sql-database/azuredeploy.json" range="1-67" highlight="41-65":::
 
@@ -88,4 +88,4 @@ Remove-AzResourceGroup -Name $resourceGroupName
   - [подключиться и создать запрос с помощью Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/quickstart-sql-database?toc=/azure/sql-database/toc.json).
 - Чтобы создать отдельную базу данных с помощью Azure CLI, ознакомьтесь с [этими примерами Azure CLI](az-cli-script-samples-content-guide.md).
 - Чтобы создать отдельную базу данных с помощью Azure PowerShell, ознакомьтесь со статьей [Примеры Azure PowerShell для базы данных SQL Azure](powershell-script-content-guide.md).
-- Сведения о [создании шаблонов Resource Manager](../../azure-resource-manager/templates/template-tutorial-create-first-template.md).
+- Сведения о создании шаблонов ARM см. в статье [Руководство. Создание и развертывание шаблона ARM](../../azure-resource-manager/templates/template-tutorial-create-first-template.md).

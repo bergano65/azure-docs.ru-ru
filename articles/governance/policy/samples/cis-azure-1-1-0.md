@@ -1,15 +1,15 @@
 ---
 title: Сведения о соответствии нормативным требованиям теста производительности CIS для платформ Microsoft Azure
 description: Подробные сведения о встроенной инициативе о соответствии нормативным требованиям теста производительности CIS для платформ Microsoft Azure. Каждый элемент управления сопоставляется с определениями одной или нескольких Политик Azure, которые помогают выполнять оценку.
-ms.date: 06/25/2020
+ms.date: 07/10/2020
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 901740d2b3a4a5362fbfccf0f3b9942acf8e012a
-ms.sourcegitcommit: fdaad48994bdb9e35cdd445c31b4bac0dd006294
+ms.openlocfilehash: c5a452ad00ff0126b3d768b4b3499dfbed0b33e1
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85414544"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86275467"
 ---
 # <a name="details-of-the-cis-microsoft-azure-foundations-benchmark-regulatory-compliance-built-in-initiative"></a>Подробные сведения о встроенной инициативе о соответствии нормативным требованиям теста производительности CIS для платформ Microsoft Azure
 
@@ -143,7 +143,7 @@ ms.locfileid: "85414544"
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[На компьютерах должны быть включены адаптивные элементы управления приложениями для добавления безопасных приложений в список разрешенных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F47a6b606-51aa-4496-8bb7-64b11cf66adc) |Включите элементы управления приложениями, чтобы определить список проверенных безопасных приложений, выполняющихся на ваших компьютерах, и настроить получение оповещений о запуске других приложений. Это поможет защитить компьютеры от вредоносных программ. Чтобы упростить процесс настройки и обслуживания правил, Центр безопасности использует машинное обучение для анализа приложений, выполняющихся на каждом компьютере, и предлагает список проверенных безопасных приложений. |AuditIfNotExists, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_AppWhitelistMonitoring_Audit.json) |
+|[На компьютерах должны быть включены адаптивные элементы управления приложениями для определения безопасных приложений](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F47a6b606-51aa-4496-8bb7-64b11cf66adc) |Включите элементы управления приложениями, чтобы определить список проверенных безопасных приложений, выполняющихся на ваших компьютерах, и настроить получение оповещений о запуске других приложений. Это поможет защитить компьютеры от вредоносных программ. Чтобы упростить процесс настройки и обслуживания правил, Центр безопасности использует машинное обучение для анализа приложений, выполняющихся на каждом компьютере, и предлагает список проверенных безопасных приложений. |AuditIfNotExists, Disabled |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_AdaptiveApplicationControls_Audit.json) |
 
 ### <a name="ensure-asc-default-policy-setting-monitor-sql-auditing-is-not-disabled"></a>Обеспечение того, что параметр "Мониторинг аудита SQL" не имеет значение "Отключено" в политике ASC по умолчанию
 
@@ -253,33 +253,6 @@ ms.locfileid: "85414544"
 |---|---|---|---|
 |[В Управляемом экземпляре SQL должна быть включена Расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fabfb7388-5bf4-4ad7-ba99-2cd2f41cebb9) |Проверка всех Управляемых экземпляров SQL без Расширенной защиты данных. |AuditIfNotExists, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlManagedInstance_AdvancedDataSecurity_Audit.json) |
 |[На серверах SQL должна быть включена Расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fabfb4388-5bf4-4ad7-ba82-2cd2f41ceae9) |Аудит серверов SQL без Расширенной защиты данных |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServer_AdvancedDataSecurity_Audit.json) |
-
-### <a name="ensure-that-threat-detection-types-is-set-to-all"></a>Обеспечение того, что для параметра "Типы обнаружения угроз" задано значение "Все"
-
-**Идентификатор**. CIS Azure 4.5 **Ответственный**: Customer
-
-|Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
-|---|---|---|---|
-|[Для параметра "Типы Расширенной защиты от угроз" в параметрах Расширенной защиты данных Управляемого экземпляра SQL необходимо установить значение "Все"](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fbda18df3-5e41-4709-add9-2554ce68c966) |Рекомендуется включить все типы Расширенной защиты от угроз в Управляемых экземплярах SQL. При включении всех типов защиты вы будете защищены от атак путем внедрения кода SQL, уязвимостей баз данных и других аномальных действий. |AuditIfNotExists, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlManagedInstance_EnsureThreatDetectionTypes_Audit.json) |
-|[Для параметра "Типы Расширенной защиты от угроз" в параметрах Расширенной защиты данных сервера SQL необходимо установить значение "Все"](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe756b945-1b1b-480b-8de8-9a0859d5f7ad) |Рекомендуется включить все типы Расширенной защиты от угроз на серверах SQL. При включении всех типов защиты вы будете защищены от атак путем внедрения кода SQL, уязвимостей баз данных и других аномальных действий. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServer_EnsureThreatDetectionTypes_Audit.json) |
-
-### <a name="ensure-that-send-alerts-to-is-set"></a>Обеспечение того, что задано значение параметра "Отправить оповещения в"
-
-**Идентификатор**. CIS Azure 4.6 **Ответственный**: Customer
-
-|Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
-|---|---|---|---|
-|[Параметры Расширенной защиты данных Управляемого экземпляра SQL должны включать электронный адрес для оповещений системы безопасности](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3965c43d-b5f4-482e-b74a-d89ee0e0b3a8) |Требование указать адрес электронной почты в поле "Кому отправлять оповещения" в параметрах Расширенной защиты данных. На этот адрес приходят уведомления об обнаруженных подозрительных действиях в Управляемом экземпляре SQL. |AuditIfNotExists, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlManagedInstance_AdvancedDataSecurityEmails_Audit.json) |
-|[Параметры Расширенной защиты данных для сервера SQL должны содержать адрес электронной почты для получения оповещений системы безопасности](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F9677b740-f641-4f3c-b9c5-466005c85278) |Проверка на то, что в поле "Кому отправлять оповещения" в параметрах сервера Расширенной защиты данных указан адрес электронной почты. На этот адрес приходят уведомления об обнаруженных подозрительных действиях на серверах SQL. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServer_AdvancedDataSecurityEmails_Audit.json) |
-
-### <a name="ensure-that-email-service-and-co-administrators-is-enabled"></a>Обеспечение того, что для параметра "Служба электронной почты и соадминистраторы" задано значение "Включено"
-
-**Идентификатор**. CIS Azure 4.7 **Ответственный**: Customer
-
-|Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
-|---|---|---|---|
-|[Уведомления по электронной почте для администраторов и владельцев подписок следует включить в параметрах Расширенной защиты данных для Управляемого экземпляра SQL](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Faeb23562-188d-47cb-80b8-551f16ef9fff) |Следите за тем, чтобы в параметрах Расширенной защиты от угроз для Управляемого экземпляра SQL была включена отправка уведомлений по электронной почте администраторам и владельцам подписок. Так администраторы Управляемого экземпляра SQL смогут максимально быстро узнавать об обнаруженных в нем подозрительных действиях. |AuditIfNotExists, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlManagedInstance_AdvancedDataSecurityEmailAdmins_Audit.json) |
-|[Уведомления по электронной почте для администраторов и владельцев подписок следует включить в параметрах расширенной защиты данных для сервера SQL](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc8343d2f-fdc9-4a97-b76f-fc71d1163bfc) |Проверка того, что в параметрах расширенной защиты от угроз для сервера SQL включена отправка уведомлений по электронной почте администраторам и владельцам подписок. При включении уведомлений администраторы сервера SQL будут максимально быстро узнавать об обнаруженных на нем подозрительных действиях. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServer_AdvancedDataSecurityEmailAdmins_Audit.json) |
 
 ### <a name="ensure-that-azure-active-directory-admin-is-configured"></a>Обеспечение того, что администратор Azure Active Directory настроен
 
@@ -410,7 +383,7 @@ ms.locfileid: "85414544"
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Журналы диагностики в Key Vault должны быть включены](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fcf820ca0-f99e-4f3e-84fb-66e913812d21) |Аудит активации журналов диагностики. Это позволит воссоздать действия для анализа инцидентов безопасности или компрометации сети. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_AuditDiagnosticLog_Audit.json) |
+|[Журналы диагностики в Key Vault должны быть включены](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fcf820ca0-f99e-4f3e-84fb-66e913812d21) |Аудит активации журналов диагностики. Это позволит воссоздать действия для анализа инцидентов безопасности или компрометации сети. |AuditIfNotExists, Disabled |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_AuditDiagnosticLog_Audit.json) |
 
 ### <a name="ensure-that-activity-log-alert-exists-for-create-policy-assignment"></a>Обеспечение того, что для операции создания назначения политики существует оповещение журнала действий
 

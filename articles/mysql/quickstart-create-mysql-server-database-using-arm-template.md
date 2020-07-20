@@ -7,18 +7,22 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: mblythe
 ms.date: 05/19/2020
-ms.openlocfilehash: 9f38ba439a5f2facbc1c80493b802b5205a54691
-ms.sourcegitcommit: 58ff2addf1ffa32d529ee9661bbef8fbae3cddec
+ms.openlocfilehash: 72ace8a94d16b79f756c83393db2b39a1c0df714
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84323599"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134854"
 ---
 # <a name="quickstart-use-an-arm-template-to-create-an-azure-database-for-mysql-server"></a>Краткое руководство. Создание сервера базы данных Azure для MySQL с помощью шаблона Resource Manager
 
-База данных Azure для MySQL — это управляемая служба, которая позволяет запускать, администрировать и масштабировать в облаке базы данных MySQL с высоким уровнем доступности. В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager (ARM) создать сервер Базы данных Azure для MySQL с интеграцией виртуальной сети. Этот сервер можно развернуть на портале Azure, в Azure CLI или Azure PowerShell.
+База данных Azure для MySQL — это управляемая служба, которая позволяет запускать, администрировать и масштабировать в облаке базы данных MySQL с высоким уровнем доступности. В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager (шаблона ARM) создать сервер Базы данных Azure для MySQL с интеграцией виртуальной сети. Этот сервер можно развернуть на портале Azure, в Azure CLI или Azure PowerShell.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
+
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-managed-mysql-with-vnet%2fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -38,11 +42,9 @@ ms.locfileid: "84323599"
 
 ---
 
-## <a name="create-an-azure-database-for-mysql-server"></a>Создайте сервер базы данных Azure для MySQL.
+## <a name="review-the-template"></a>Изучение шаблона
 
 Сервер Базы данных Azure для MySQL создается с определенным набором вычислительных ресурсов и ресурсов хранения. Дополнительные сведения см. в статье [Ценовые категории службы "База данных Azure для MySQL"](concepts-pricing-tiers.md). Он создается в [группе ресурсов Azure](../azure-resource-manager/management/overview.md).
-
-### <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-managed-mysql-with-vnet/).
 
@@ -214,7 +216,7 @@ echo "Press [ENTER] to continue ..."
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Пошаговые инструкции по созданию шаблона см. в следующей статье:
+Пошаговые инструкции по созданию шаблона ARM см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание и развертывание первого шаблона Azure Resource Manager](../azure-resource-manager/templates/template-tutorial-create-first-template.md)
+> [Руководство. Создание и развертывание первого шаблона ARM](../azure-resource-manager/templates/template-tutorial-create-first-template.md)

@@ -6,15 +6,15 @@ author: kevinvngo
 ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: sql-dw
-ms.date: 05/06/2020
+ms.date: 07/10/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: f5f6c6970ad8bb697ceb118b6725b37e93ca80b5
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: f9aa0214712704c1a80f73ae3fd05929f7245eb3
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85213063"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86274154"
 ---
 # <a name="securely-load-data-using-synapse-sql"></a>Безопасная загрузка данных с помощью Synapse SQL
 
@@ -23,10 +23,10 @@ ms.locfileid: "85213063"
 
 В следующей таблице описаны поддерживаемые методы проверки подлинности для каждого типа файла и учетной записи хранения. Они относятся к исходному месту хранения и расположению файла ошибок.
 
-|                      |                CSV                |              Parquet              |                ORC                |
-| :------------------: | :-------------------------------: | :-------------------------------: | :-------------------------------: |
-|  хранилище BLOB-объектов Azure.  | SAS/MSI/SERVICE PRINCIPAL/KEY/AAD |              SAS/KEY              |              SAS/KEY              |
-| Azure Data Lake 2-го поколения | SAS/MSI/SERVICE PRINCIPAL/KEY/AAD | SAS/MSI/SERVICE PRINCIPAL/KEY/AAD | SAS/MSI/SERVICE PRINCIPAL/KEY/AAD |
+|                          |                CSV                |              Parquet              |                ORC                |
+| :----------------------: | :-------------------------------: | :-------------------------------: | :-------------------------------: |
+|  **Хранилище BLOB-объектов Azure**  | SAS/MSI/SERVICE PRINCIPAL/KEY/AAD |              SAS/KEY              |              SAS/KEY              |
+| **Azure Data Lake 2-го поколения** | SAS/MSI/SERVICE PRINCIPAL/KEY/AAD | SAS/MSI/SERVICE PRINCIPAL/KEY/AAD | SAS/MSI/SERVICE PRINCIPAL/KEY/AAD |
 
 ## <a name="a-storage-account-key-with-lf-as-the-row-terminator-unix-style-new-line"></a>A. Ключ учетной записи хранения с символами LF в качестве признака конца строки (новая строка в стиле UNIX)
 
@@ -93,6 +93,11 @@ WITH (
    > [!NOTE]
    > Этот шаг могут выполнять только участники с правами владельца. Сведения о различных встроенных ролях для ресурсов Azure см. в этом [руководстве](../../role-based-access-control/built-in-roles.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
    
+    > [!IMPORTANT]
+    > Укажите одну из следующих ролей RBAC: **владелец данных** **BLOB-объектов хранилища**, участник для данных BLOB-объектов хранилища или читатель данных BLOB-объектов хранилища. Эти роли отличаются от встроенных ролей Azure владельца, участника и читателя. 
+
+    ![Предоставление разрешения RBAC на загрузку](./media/quickstart-bulk-load-copy-tsql-examples/rbac-load-permissions.png)
+
 4. Теперь можно выполнить инструкцию COPY, указав Managed Identity.
 
     ```sql
@@ -104,14 +109,15 @@ WITH (
     )
     ```
 
-> [!IMPORTANT]
->
-> - Укажите одну из следующих ролей RBAC: **владелец данных** **BLOB-объектов хранилища**, участник для данных BLOB-объектов хранилища или читатель данных BLOB-объектов хранилища. Эти роли отличаются от встроенных ролей Azure владельца, участника и читателя. 
-
 ## <a name="d-azure-active-directory-authentication-aad"></a>Г. Проверка подлинности Azure Active Directory (AAD)
 #### <a name="steps"></a>Шаги
 
 1. В своей учетной записи хранения перейдите к элементу **Управление доступом (IAM)** и выберите **Добавить назначение ролей**. Назначьте пользователю AAD одну из следующих ролей RBAC: **владелец данных BLOB-объектов хранилища, участник для данных BLOB-объектов хранилища или читатель данных BLOB-объектов хранилища**. 
+
+    > [!IMPORTANT]
+    > Укажите одну из следующих ролей RBAC: **владелец данных** **BLOB-объектов хранилища**, участник для данных BLOB-объектов хранилища или читатель данных BLOB-объектов хранилища. Эти роли отличаются от встроенных ролей Azure владельца, участника и читателя.
+
+    ![Предоставление разрешения RBAC на загрузку](./media/quickstart-bulk-load-copy-tsql-examples/rbac-load-permissions.png)
 
 2. Настройте проверку подлинности Azure AD, выполнив [соответствующие инструкции](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure?tabs=azure-powershell#create-an-azure-ad-administrator-for-azure-sql-server). 
 
@@ -125,9 +131,6 @@ WITH (
     )
     ```
 
-> [!IMPORTANT]
->
-> - Укажите одну из следующих ролей RBAC: **владелец данных** **BLOB-объектов хранилища**, участник для данных BLOB-объектов хранилища или читатель данных BLOB-объектов хранилища. Эти роли отличаются от встроенных ролей Azure владельца, участника и читателя. 
 
 ## <a name="e-service-principal-authentication"></a>Д. Проверка подлинности на основе субъекта-службы
 #### <a name="steps"></a>Шаги

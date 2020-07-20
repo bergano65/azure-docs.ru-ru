@@ -10,34 +10,34 @@ ms.custom: subject-armqs
 ms.workload: identity
 ms.date: 05/21/2020
 ms.author: rolyon
-ms.openlocfilehash: da25f4bc585da26b9765fd36d65a8b5e0689f725
-ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
+ms.openlocfilehash: 9320a68684a25949e8a0b4e2c7d72a6267401add
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84300670"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86252357"
 ---
-# <a name="quickstart-add-an-azure-role-assignment-using-an-azure-resource-manager-template"></a>Краткое руководство. Добавление назначения роли Azure с помощью шаблона Azure Resource Manager
+# <a name="quickstart-add-an-azure-role-assignment-using-an-arm-template"></a>Краткое руководство. Добавление назначения роли Azure с помощью шаблона Azure Resource Manager
 
-[Управление доступом на основе ролей Azure (Azure RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом кратком руководстве показано, как создать группу ресурсов и предоставить пользователю доступ для создания и администрирования виртуальных машин в группе ресурсов. В этом кратком руководстве для предоставления доступа используется шаблон Resource Manager.
+[Управление доступом на основе ролей Azure (Azure RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом кратком руководстве показано, как создать группу ресурсов и предоставить пользователю доступ для создания и администрирования виртуальных машин в группе ресурсов. В этом кратком руководстве показано, как создать общий запрос с помощью шаблона Azure Resource Manager (шаблона ARM).
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-rbac-builtinrole-resourcegroup%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для добавления назначений ролей требуются следующие разрешения:
 
-* `Microsoft.Authorization/roleAssignments/write` и `Microsoft.Authorization/roleAssignments/delete`, такие как [Администратор доступа пользователей](built-in-roles.md#user-access-administrator) или [Владелец](built-in-roles.md#owner).
+- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+- `Microsoft.Authorization/roleAssignments/write` и `Microsoft.Authorization/roleAssignments/delete`, такие как [Администратор доступа пользователей](built-in-roles.md#user-access-administrator) или [Владелец](built-in-roles.md#owner).
+- Чтобы назначить роль, необходимо указать три элемента: субъект безопасности, определение роли и область действия. В этом кратком руководстве субъектом безопасности являетесь вы или другой пользователь в каталоге, определением роли — роль [Участник виртуальных машин](built-in-roles.md#virtual-machine-contributor), а областью действия — указанная группа ресурсов.
 
-## <a name="create-a-role-assignment"></a>Создание назначения роли
+## <a name="review-the-template"></a>Изучение шаблона
 
-Чтобы назначить роль, необходимо указать три элемента: субъект безопасности, определение роли и область действия. В этом кратком руководстве субъектом безопасности являетесь вы или другой пользователь в каталоге, определением роли — роль [Участник виртуальных машин](built-in-roles.md#virtual-machine-contributor), а областью действия — указанная группа ресурсов.
-
-### <a name="review-the-template"></a>Изучение шаблона
-
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-rbac-builtinrole-resourcegroup/). Шаблон содержит три параметра и раздел resources. Обратите внимание, что в разделе resources есть три элемента назначения роли: субъект безопасности, определение роли и область действия. 
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-rbac-builtinrole-resourcegroup/). Шаблон содержит три параметра и раздел resources. Обратите внимание, что в разделе resources есть три элемента назначения роли: субъект безопасности, определение роли и область действия.
 
 :::code language="json" source="~/quickstart-templates/101-rbac-builtinrole-resourcegroup/azuredeploy.json" highlight="30-32":::
 
@@ -45,7 +45,7 @@ ms.locfileid: "84300670"
 
 - [Microsoft.Authorization/roleAssignments](/azure/templates/Microsoft.Authorization/roleAssignments)
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 

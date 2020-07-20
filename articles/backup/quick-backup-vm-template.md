@@ -5,26 +5,26 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 05/14/2019
 ms.custom: mvc,subject-armqs
-ms.openlocfilehash: d6fb73801f0f460daf2ed70f8dc88187e41ea887
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 4e54ca6452a219dedca56885bda28ed43991ad37
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81458851"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86248940"
 ---
-# <a name="back-up-a-virtual-machine-in-azure-with-resource-manager-template"></a>Резервное копирование виртуальной машины в Azure с помощью шаблона Resource Manager
+# <a name="quickstart-back-up-a-virtual-machine-in-azure-with-an-arm-template"></a>Краткое руководство. Резервное копирование виртуальной машины в Azure с помощью шаблона ARM
 
-[Azure Backup](backup-overview.md) создает резервные копии локальных компьютеров, приложений и виртуальных машин Azure. В этой статье описывается резервное копирование виртуальной машины Azure с помощью шаблона Resource Manager и Azure PowerShell. В данном кратком руководстве рассматривается преимущественно процесс развертывания шаблона Resource Manager для создания хранилища Служб восстановления. Дополнительные сведения о разработке шаблонов Resource Manager см. в разделе [Документация по Azure Resource Manager](/azure/azure-resource-manager/) и в [справочнике по шаблонам](/azure/templates/microsoft.recoveryservices/allversions).
+[Azure Backup](backup-overview.md) создает резервные копии локальных компьютеров, приложений и виртуальных машин Azure. В этой статье описывается резервное копирование виртуальной машины Azure с помощью шаблона Azure Resource Manager (ARM) и Azure PowerShell. В данном кратком руководстве рассматривается преимущественно процесс развертывания шаблона ARM для создания хранилища Служб восстановления. Дополнительные сведения о разработке шаблонов ARM см. в разделе [Документация по Azure Resource Manager](/azure/azure-resource-manager/) и в [справочнике по шаблонам](/azure/templates/microsoft.recoveryservices/allversions).
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Кроме того, вы можете выполнить резервное копирование виртуальной машины с помощью [Azure PowerShell](./quick-backup-vm-powershell.md), [Azure CLI](quick-backup-vm-cli.md) или [портала Azure](quick-backup-vm-portal.md).
+[Хранилище служб восстановления](backup-azure-recovery-services-vault-overview.md) — это логический контейнер, в котором хранятся данные резервного копирования защищенных ресурсов, например виртуальных машин Azure. Когда выполняется задание резервного копирования, в хранилище Служб восстановления создается точка восстановления. Позже вы сможете использовать одну из этих точек восстановления, чтобы восстановить данные до определенной точки во времени. Кроме того, вы можете выполнить резервное копирование виртуальной машины с помощью [Azure PowerShell](./quick-backup-vm-powershell.md), [Azure CLI](quick-backup-vm-cli.md) или [портала Azure](quick-backup-vm-portal.md).
 
-## <a name="create-a-vm-and-recovery-services-vault"></a>Создание виртуальной машины и хранилища Служб восстановления.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
 
-[Хранилище служб восстановления](backup-azure-recovery-services-vault-overview.md) — это логический контейнер, в котором хранятся данные резервного копирования защищенных ресурсов, например виртуальных машин Azure. Когда выполняется задание резервного копирования, в хранилище Служб восстановления создается точка восстановления. Позже вы сможете использовать одну из этих точек восстановления, чтобы восстановить данные до определенной точки во времени.
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-recovery-services-create-vm-and-configure-backup%2Fazuredeploy.json)
 
-### <a name="review-the-template"></a>Изучение шаблона
+## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-recovery-services-create-vm-and-configure-backup/). Этот шаблон позволяет развернуть простую виртуальную машину Windows и хранилище Служб восстановления с конфигурацией DefaultPolicy, имеющей значение "Protection" (Защита).
 
@@ -39,9 +39,9 @@ ms.locfileid: "81458851"
 - [**Microsoft.Network/networkInterfaces**](/azure/templates/microsoft.network/networkinterfaces)
 - [**Microsoft.Compute/virutalMachines**](/azure/templates/microsoft.compute/virtualmachines)
 - [**Microsoft.RecoveryServices/vaults**](/azure/templates/microsoft.recoveryservices/2016-06-01/vaults)
-- [**Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems**](/azure/templates/microsoft.recoveryservices/2016-06-01/vaults/backupfabrics/protectioncontainers/protecteditems)
+- [**Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems**](/azure/templates/microsoft.recoveryservices/vaults/backupfabrics/protectioncontainers/protecteditems)
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 Для развертывания шаблона щелкните **Попробовать**, чтобы открыть Azure Cloud Shell, а затем вставьте следующий скрипт PowerShell в окно оболочки. Чтобы вставить код, щелкните окно оболочки правой кнопкой мыши, а затем выберите **Вставить**.
 
@@ -59,7 +59,7 @@ New-AzResourceGroup -Name $resourceGroupName -Location $location
 New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri $templateUri -projectName $projectName -adminUsername $adminUsername -adminPassword $adminPassword -dnsLabelPrefix $dnsPrefix
 ```
 
-В этом кратком руководстве для развертывания шаблона Resource Manager используется Azure PowerShell. [Портал Azure](../azure-resource-manager/templates/deploy-portal.md), [Azure CLI](../azure-resource-manager/templates/deploy-cli.md) и [REST API](../azure-resource-manager/templates/deploy-rest.md) также можно использовать для развертывания шаблонов.
+В этом кратком руководстве для развертывания шаблона ARM используется Azure PowerShell. [Портал Azure](../azure-resource-manager/templates/deploy-portal.md), [Azure CLI](../azure-resource-manager/templates/deploy-cli.md) и [REST API](../azure-resource-manager/templates/deploy-rest.md) также можно использовать для развертывания шаблонов.
 
 ## <a name="validate-the-deployment"></a>Проверка развертывания
 
@@ -71,7 +71,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
 
 Мониторинг задания резервного копирования описывается в разделе [Мониторинг задания резервного копирования](./quick-backup-vm-powershell.md#monitor-the-backup-job).
 
-## <a name="clean-up-the-deployment"></a>Очистка развертывания
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если вам больше не требуется резервная копия виртуальной машины, ее можно удалить.
 
@@ -93,4 +93,4 @@ Remove-AzResourceGroup -Name "myResourceGroup"
 
 - [Узнайте, как](tutorial-backup-vm-at-scale.md) создать резервные копии виртуальных машин на портале Azure.
 - [Узнайте, как](tutorial-restore-disk.md) быстро восстановить виртуальную машину.
-- Узнайте, как [создать шаблоны Resource Manager](../azure-resource-manager/templates/template-tutorial-create-first-template.md).
+- [Узнайте, как](../azure-resource-manager/templates/template-tutorial-create-first-template.md) создать шаблоны ARM.

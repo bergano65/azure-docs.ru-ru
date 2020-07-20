@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 10/25/2019
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: 9f9fcc0b3d8dfe19961668e77da91bc9f14ff2d1
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: be490c5ec11ab4bafcd68731a535483d1803a8c7
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81453904"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146413"
 ---
 # <a name="add-a-tlsssl-certificate-in-azure-app-service"></a>Добавление TLS/SSL-сертификата в Службу приложений Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "81453904"
 - не поддерживает групповые сертификаты;
 - не поддерживает незащищенные домены;
 - не может быть экспортирован;
-- Записи DNS типа A не поддерживаются.
+- не поддерживает записи A (например, автоматическое продление не работает с записями A).
 
 > [!NOTE]
 > бесплатный сертификат выдается DigiCert. Для некоторых доменов верхнего уровня необходимо явно разрешить DigiCert как издателя сертификата, создав [запись домена CAA](https://wikipedia.org/wiki/DNS_Certification_Authority_Authorization) со значением: `0 issue digicert.com`.
@@ -72,7 +72,7 @@ ms.locfileid: "81453904"
 
 Вот как можно создать бесплатный управляемый сертификат Службы приложений.
 
-На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<имя_приложения>** .
+На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<app-name>** .
 
 В левой области навигации приложения выберите **Параметры TLS/SSL** > **Сертификаты закрытых ключей (PFX)**  > **Создание управляемого сертификата Службы приложений**.
 
@@ -163,7 +163,7 @@ ms.locfileid: "81453904"
 
 ### <a name="import-certificate-into-app-service"></a>Импорт сертификата в Службу приложений
 
-На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<имя_приложения>** .
+На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<app-name>** .
 
 В левой области навигации приложения выберите **Параметры TLS/SSL** > **Сертификаты закрытых ключей (PFX)**  > **Импортировать сертификат службы приложений**.
 
@@ -183,7 +183,7 @@ ms.locfileid: "81453904"
 
 Если для управления сертификатами используется Azure Key Vault, то можно импортировать сертификат PKCS12 из Key Vault в Службу приложений, если он [соответствует требованиям](#private-certificate-requirements).
 
-На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<имя_приложения>** .
+На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<app-name>** .
 
 В левой области навигации приложения выберите **Параметры TLS/SSL** > **Сертификаты закрытых ключей (PFX)**  > **Импорт сертификата Key Vault**.
 
@@ -253,7 +253,7 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 
 Теперь вы можете передать сертификат в Службу приложений.
 
-На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<имя_приложения>** .
+На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<app-name>** .
 
 В левой области навигации приложения выберите **Параметры TLS/SSL** > **Сертификаты закрытых ключей (PFX)**  > **Отправка сертификата**.
 
@@ -273,7 +273,7 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 
 Поддерживаются открытые сертификаты в формате *CER*. 
 
-На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<имя_приложения>** .
+На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<app-name>** .
 
 В левой области навигации приложения выберите **Параметры TLS/SSL** > **Сертификаты закрытых ключей (PFX)**  > **Загрузка сертификата открытого ключа**.
 

@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/06/2020
 ms.author: aahi
-ms.openlocfilehash: 25b45f2731e94fc6a7a4bedd9c8d44b10125c273
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.openlocfilehash: ee897a22ceda4378ea9dba4579d5108a2ddf0b0d
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82975057"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86156727"
 ---
 Эта статья поможет вам начать работу с клиентской библиотекой Автозаполнения Bing для Go. Здесь приведены действия по установке библиотеки и тестированию примеров кода для выполнения базовых задач. 
 
@@ -33,7 +33,7 @@ ms.locfileid: "82975057"
 ## <a name="create-environment-variables"></a>Создание переменных среды
 
 >[!NOTE]
-> Конечные точки для ресурсов не из пробной версии, созданных после 1июля 2019 г., поддерживают пользовательский формат поддомена, показанный ниже. Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) (Пользовательские имена поддоменов для Cognitive Services). 
+> Конечные точки для ресурсов, созданных после 1 июля 2019 г., поддерживают пользовательский формат поддомена, показанный ниже. Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) (Пользовательские имена поддоменов для Cognitive Services). 
 
 Используя ключ и конечную точку из созданного ресурса, создайте две переменные среды для проверки подлинности:
 <!-- replace the below variable names with the names expected in the code sample.-->

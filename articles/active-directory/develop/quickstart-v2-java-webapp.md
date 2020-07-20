@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/09/2019
 ms.author: sagonzal
 ms.custom: aaddev, scenarios:getting-started, languages:Java
-ms.openlocfilehash: ed105ce6bd1d7d8980799049649b8d5b95dcb761
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: e13d5f3421f3c0d4f3e14da29581ca585e7f9438
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81536120"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86145862"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Java с помощью учетной записи Майкрософт
 
@@ -56,7 +56,7 @@ ms.locfileid: "81536120"
 >    - Выберите **Зарегистрировать**.
 > 1. На странице **Обзор** найдите **идентификатор приложения (клиента)** и **каталога (клиента)** . Скопируйте эти значения для дальнейшего использования.
 > 1. В меню выберите **Проверка подлинности**, а затем добавьте следующие сведения:
->    - Добавьте конфигурацию **веб-платформы**.  В качестве **URI-кодов перенаправления** укажите `https://localhost:8080/msal4jsample/secure/aad` и `https://localhost:8080/msal4jsample/graph/me`.
+>    - Добавьте конфигурацию **веб-платформы**.  В качестве **URI-кодов перенаправления** укажите `https://localhost:8443/msal4jsample/secure/aad` и `https://localhost:8443/msal4jsample/graph/me`.
 >    - Щелкните **Сохранить**.
 > 1. В меню выберите **Сертификаты и секреты**, а затем в разделе **Секреты клиента** щелкните **Новый секрет клиента**:
 >
@@ -70,7 +70,7 @@ ms.locfileid: "81536120"
 >
 > Для работы примера кода в этом кратком руководстве необходимо:
 >
-> 1. Добавить URL-адрес ответа, как `https://localhost:8080/msal4jsample/secure/aad` и `https://localhost:8080/msal4jsample/graph/me`.
+> 1. Добавить URL-адрес ответа как `https://localhost:8443/msal4jsample/secure/aad` и `https://localhost:8443/msal4jsample/graph/me`.
 > 1. Создание Секрета клиента.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести эти изменения для меня]()
@@ -115,8 +115,8 @@ ms.locfileid: "81536120"
 >    aad.clientId=Enter_the_Application_Id_here
 >    aad.authority=https://login.microsoftonline.com/Enter_the_Tenant_Info_Here/
 >    aad.secretKey=Enter_the_Client_Secret_Here
->    aad.redirectUriSignin=https://localhost:8080/msal4jsample/secure/aad
->    aad.redirectUriGraph=https://localhost:8080/msal4jsample/graph/me
+>    aad.redirectUriSignin=https://localhost:8443/msal4jsample/secure/aad
+>    aad.redirectUriGraph=https://localhost:8443/msal4jsample/graph/me
 >    aad.msGraphEndpointHost="https://graph.microsoft.com/"
 >    ```
 > Где:
@@ -149,11 +149,11 @@ ms.locfileid: "81536120"
 
 ##### <a name="running-from-ide"></a>Запуск из интегрированной среды разработки
 
-Если вы запускаете веб-приложение из интегрированной среды разработки, щелкните "Запустить", а затем перейдите на домашнюю страницу проекта. В этом примере стандартная домашняя страница имеет следующий URL-адрес: https://localhost:8080.
+Если вы запускаете веб-приложение из интегрированной среды разработки, щелкните "Запустить", а затем перейдите на домашнюю страницу проекта. В этом примере стандартная домашняя страница имеет следующий URL-адрес: https://localhost:8443.
 
 1. На основной странице нажмите кнопку **Вход**, чтобы перенаправиться в Azure Active Directory и запросить у пользователя учетные данные.
 
-1. После проверки подлинности пользователь перенаправляется на страницу *https://localhost:8080/msal4jsample/secure/aad* . После входа на странице появятся сведения об учетной записи, с помощью которой выполнен вход. В примере пользовательского интерфейса есть следующие кнопки:
+1. После проверки подлинности пользователь перенаправляется на страницу *https://localhost:8443/msal4jsample/secure/aad* . После входа на странице появятся сведения об учетной записи, с помощью которой выполнен вход. В примере пользовательского интерфейса есть следующие кнопки:
     - *Выход*: пользователь выходит из приложения и перенаправляется на домашнюю страницу.
     - *Показать сведения о пользователе*: получение маркера Microsoft Graph и вызов Microsoft Graph с помощью запроса, содержащего этот маркер. Этот запрос возвращает сведения о пользователе, который выполнил вход в систему.
 
@@ -163,15 +163,6 @@ ms.locfileid: "81536120"
 
 1. Откройте файл ms-identity-java-webapp/pom.xml.
     - В разделе `<name>msal-web-sample</name>` добавьте `<packaging>war</packaging>`.
-    - Добавьте зависимость:
-
-         ```xml
-         <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-tomcat</artifactId>
-          <scope>provided</scope>
-         </dependency>
-         ```
 
 2. Откройте файл ms-identity-java-webapp/src/main/java/com.microsoft.azure.msalwebsample/MsalWebSampleApplication.
 
@@ -199,13 +190,26 @@ ms.locfileid: "81536120"
     }
    ```
 
-3. Откройте командную строку, перейдите в корневую папку проекта и выполните команду `mvn package`.
+3.   HTTP-порт Tomcat по умолчанию — 8080, но для HTTPS-подключений требуется порт 8443. Чтобы выполнить настройку:
+        - Перейдите к файлу tomcat/conf/server.xml
+        - Найдите тег `<connector>` и замените существующий соединитель следующим:
+        ```
+        <Connector
+                   protocol="org.apache.coyote.http11.Http11NioProtocol"
+                   port="8443" maxThreads="200"
+                   scheme="https" secure="true" SSLEnabled="true"
+                   keystoreFile="C:/Path/To/Keystore/File/keystore.p12" keystorePass="KeystorePassword"
+                   clientAuth="false" sslProtocol="TLS"/>
+        ``` 
+       
+4. Откройте командную строку, перейдите в корневую папку этого примера (где находится файл pom.xml) и запустите `mvn package` для сборки проекта.
     - В целевом каталоге будет создан файл `msal-web-sample-0.1.0.war`.
-    - Измените имя файла на `ROOT.war`.
+    - Измените имя файла на `msal4jsample.war`.
     - Разверните этот WAR-файл с помощью Tomcat или любого другого решения J2EE для контейнеров.
-        - Чтобы выполнить развертывание из контейнера Tomcat, скопируйте WAR-файл в папку веб-приложения в папке установки Tomcat, а затем запустите сервер Tomcat.
+        - Чтобы выполнить развертывание, скопируйте файл msal4jsample.war в каталог `/webapps/` в своей установке Tomcat, а затем запустите сервер Tomcat.
 
-Этот WAR-файл будет автоматически размещен по адресу https://localhost:8080/.
+5. После завершения развертывания перейдите по адресу https://localhost:8443/msal4jsample в браузере.
+
 
 > [!IMPORTANT]
 > В этом кратком руководстве приложение использует секрет клиента для собственной идентификации в качестве конфиденциального клиента. Так как секрет клиента добавляется в качестве обычного текста в файлы проекта, по соображениям безопасности рекомендуется использовать сертификат вместо секрета клиента, прежде чем использовать приложение в качестве рабочего. Дополнительные сведения о том, как использовать сертификат, см. в статье [Учетные данные сертификата для аутентификации приложения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-certificate-credentials).

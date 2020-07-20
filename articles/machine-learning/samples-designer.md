@@ -1,5 +1,5 @@
 ---
-title: Примеры конвейеров и наборов данных из конструктора
+title: Примеры конвейеров и наборов данных для конструктора (предварительная версия)
 titleSuffix: Azure Machine Learning
 description: Используйте примеры в конструкторе Машинного обучение Azure, чтобы быстрее начать работу с конвейерами машинного обучения.
 services: machine-learning
@@ -10,14 +10,14 @@ author: peterclu
 ms.author: peterlu
 ms.date: 03/29/2020
 ms.custom: designer
-ms.openlocfilehash: e40c49cdcaae6fa84a72c645f5fea4bac99ee03f
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: d2ed9a605b19287c2ea693187c445dc8a4b3b932
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83654552"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206322"
 ---
-# <a name="example-pipelines--datasets-for-azure-machine-learning-designer"></a>Примеры конвейеров и наборов данных для конструктора Машинного обучения Azure
+# <a name="example-pipelines--datasets-for-azure-machine-learning-designer-preview"></a>Примеры конвейеров и наборов данных для конструктора Машинного обучения Azure (предварительная версия)
 
 Используйте встроенные примеры в конструкторе Машинного обучения Azure, чтобы быстро приступить к созданию собственных конвейеров машинного обучения. [Репозиторий GitHub](https://github.com/Azure/MachineLearningDesigner) конструктора Машинного обучения Azure содержит подробную документацию, которая поможет понять несколько распространенных сценариев машинного обучения.
 

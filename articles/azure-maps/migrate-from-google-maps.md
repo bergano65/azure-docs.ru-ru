@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 7b73923b7fc32ae83bfc8405d074835c02031a63
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 2422204a809e0b13f4e337d49b851a0338681853
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77913707"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86249212"
 ---
 # <a name="migrate-from-google-maps-to-azure-maps"></a>Переход с Google Карт на Azure Maps
 
@@ -92,7 +92,7 @@ Azure Maps предоставляет разработчикам из всех 
 - Блог: [https://aka.ms/AzureMapsBlog](https://aka.ms/AzureMapsBlog)
 - Технический блог: [https://aka.ms/AzureMapsTechBlog](https://aka.ms/AzureMapsTechBlog)
 - Отзывы об Azure Maps (UserVoice): [https://aka.ms/AzureMapsFeedback](https://aka.ms/AzureMapsFeedback)
-- [Записная книжка Jupyter для Azure Maps][https://github.com/Azure-Samples/Azure-Maps-Jupyter-Notebook ]
+- [Jupyter Notebook для Azure Maps](https://github.com/Azure-Samples/Azure-Maps-Jupyter-Notebook)
 
 ## <a name="migration-support"></a>Поддержка миграции
 

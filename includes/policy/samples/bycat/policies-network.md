@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 06/23/2020
+ms.date: 07/10/2020
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 8809bc98d1bb7309ebe916e3b2d6cae46f38406c
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: 88b5a2fcf5775ebc64f7f4501aaae72803679ddb
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85313649"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86276799"
 ---
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -34,5 +34,7 @@ ms.locfileid: "85313649"
 |[Учетная запись хранения должна использовать конечную точку службы виртуальной сети](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F60d21c4f-21a3-4d94-85f4-b924e6aeeda4) |Эта политика выполняет аудит всех учетных записей хранения, не настроенных на использование конечной точки службы виртуальной сети. |Audit, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/VirtualNetworkServiceEndpoint_StorageAccount_Audit.json) |
 |[Виртуальные машины должны быть подключены к утвержденной виртуальной сети](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fd416745a-506c-48b6-8ab1-83cb814bcaa3) |Эта политика используется для аудита любой виртуальной машины, подключенной к виртуальной сети, которая не утверждена. |Audit, Deny, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/ApprovedVirtualNetwork_Audit.json) |
 |[Виртуальным сетям следует использовать указанный шлюз виртуальной сети](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff1776c76-f58c-4245-a8d0-2b207198dc8b) |Эта политика используется для аудита любой виртуальной сети, если маршрут по умолчанию не указывает на конкретный шлюз виртуальной сети. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/VirtualNetwork_ApprovedVirtualNetworkGateway_AuditIfNotExists.json) |
-|[Брандмауэр веб-приложения должен быть установлен в качестве режима для Шлюза приложений и Azure Front Door Service](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff6b68e5a-7207-4638-a1fb-47d90404209e) |Требует включения режима "Обнаружение" или "Предотвращение" во всех политиках брандмауэра веб-приложения для Azure Front Door и Шлюза приложений. Политики брандмауэра веб-приложения могут иметь согласованную конфигурацию режима в группе ресурсов. |Audit, Deny, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/ModeWAF_Deny.json) |
-|[Брандмауэр веб-приложения должен быть включен для Azure Front Door Service или Шлюза приложений](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fbe7ed5c8-2660-4136-8216-e6f3412ba909) |Требует включения брандмауэра веб-приложения в любой службе Azure Front Door Service или любом Шлюзе приложений. Брандмауэр веб-приложения обеспечивает повышенную безопасность для других ресурсов Azure. |Audit, Deny, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/EnabledWAF_Deny.json) |
+|[Для Шлюза приложений должен быть включен брандмауэр веб-приложения (WAF)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F564feb30-bf6a-4854-b4bb-0d2d2d1e6c66) |Требует наличия брандмауэра веб-приложения (WAF) на любом Шлюзе приложений. Брандмауэр веб-приложения обеспечивает повышенную безопасность для других ресурсов Azure. |Audit, Deny, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/WAF_AppGatewayEnabled_Audit.json) |
+|[Для Azure Front Door Service должен быть включен брандмауэр веб-приложения (WAF)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F055aa869-bc98-4af8-bafc-23f1ab6ffe2c) |Требует наличия брандмауэра веб-приложения (WAF) в любой службе Azure Front Door Service. Брандмауэр веб-приложения обеспечивает повышенную безопасность для других ресурсов Azure. |Audit, Deny, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/WAF_AFD_Enabled_Audit.json) |
+|[Брандмауэр веб-приложения (WAF) должен использовать указанный режим для Шлюза приложений](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F12430be1-6cc8-4527-a9a8-e3d38f250096) |Требует включения режима "Обнаружение" или "Предотвращение" во всех политиках брандмауэра веб-приложения для Шлюза приложений. |Audit, Deny, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/WAF_AppGatewayMode_Audit.json) |
+|[Брандмауэр веб-приложения (WAF) должен использовать указанный режим для Azure Front Door Service](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F425bea59-a659-4cbb-8d31-34499bd030b8) |Требует включения режима "Обнаружение" или "Предотвращение" во всех политиках брандмауэра веб-приложения для Azure Front Door Service. |Audit, Deny, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/WAF_AFD_Mode_Audit.json) |

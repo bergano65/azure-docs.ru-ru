@@ -8,12 +8,12 @@ ms.service: web-application-firewall
 ms.date: 11/14/2019
 ms.author: victorh
 ms.topic: overview
-ms.openlocfilehash: 0631bc0e3e83564b2d77d4f67b418780d933215e
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: d7eaff980b50cc463efc09e49febd4a947a7543c
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85212910"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86142849"
 ---
 # <a name="azure-web-application-firewall-on-azure-application-gateway"></a>Подробные сведения о брандмауэре веб-приложения Azure в Шлюзе приложений Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "85212910"
 Все перечисленные ниже функции WAF определяются в политике WAF. Вы можете создать несколько политик и связать их со Шлюзом приложений, отдельными прослушивателями или правилами маршрутизации на основе пути в Шлюзе приложений. Это позволяет применять отдельные политики для каждого сайта, расположенного за Шлюзом приложений, если это потребуется. Дополнительные сведения о политиках WAF см. в статье [о создании политик WAF](create-waf-policy-ag.md).
 
    > [!NOTE]
-   > Политики WAF для отдельных сайтов и отдельных URI предоставляются в общедоступной предварительной версии. Это означает, что на них распространяются дополнительные условия использования корпорации Майкрософт. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+   > Политики WAF для отдельных URI предоставляются в общедоступной предварительной версии. Это означает, что на них распространяются дополнительные условия использования корпорации Майкрософт. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ![Схема WAF для Шлюза приложений](../media/ag-overview/waf1.png)
 

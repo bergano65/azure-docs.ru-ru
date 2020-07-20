@@ -7,18 +7,22 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: mblythe
 ms.date: 05/14/2020
-ms.openlocfilehash: 78b38f5059d50d56158e31c65299e5f747c8c073
-ms.sourcegitcommit: 58ff2addf1ffa32d529ee9661bbef8fbae3cddec
+ms.openlocfilehash: fd560658a20a5b58d582332a88bf031d0e56ac91
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84323609"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134106"
 ---
 # <a name="quickstart-use-an-arm-template-to-create-an-azure-database-for-mariadb-server"></a>Краткое руководство. Создание сервера Базы данных Azure для MariaDB с помощью шаблона Resource Manager
 
-База данных Azure для MariaDB — это управляемая служба, которая позволяет запускать, администрировать и масштабировать высокодоступные Базы данных MariaDB в облаке. В этом кратком руководстве показано, как с помощью шаблона ARM создать Базу данных Azure для MariaDB, используя портал Azure, PowerShell или Azure CLI.
+База данных Azure для MariaDB — это управляемая служба, которая позволяет запускать, администрировать и масштабировать высокодоступные Базы данных MariaDB в облаке. В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager (шаблона ARM) создать Базу данных Azure для MariaDB (отдельный сервер), используя портал Azure, PowerShell или Azure CLI.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
+
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-managed-mariadb-with-vnet%2fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -38,11 +42,9 @@ ms.locfileid: "84323609"
 
 ---
 
-## <a name="create-an-azure-database-for-mariadb-server"></a>Создание сервера Базы данных Azure для MariaDB
+## <a name="review-the-template"></a>Изучение шаблона
 
 Сервер Базы данных Azure для MariaDB создается с определенным набором вычислительных ресурсов и ресурсов хранения. Дополнительные сведения см. в статье [Ценовые категории службы "База данных Azure для MariaDB"](concepts-pricing-tiers.md). Он создается в [группе ресурсов Azure](../azure-resource-manager/management/overview.md).
-
-### <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-managed-mariadb-with-vnet/).
 
@@ -58,7 +60,7 @@ ms.locfileid: "84323609"
 
 Дополнительные примеры шаблонов Базы данных Azure для MariaDB см. в [списке шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Dbformariadb&pageNumber=1&sort=Popular).
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
@@ -207,7 +209,7 @@ read -p "Press [ENTER] to continue: "
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Пошаговые инструкции по созданию шаблона см. в следующей статье:
+Пошаговые инструкции по созданию шаблона ARM см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание и развертывание первого шаблона Azure Resource Manager](../azure-resource-manager/templates/template-tutorial-create-first-template.md)
+> [Руководство. Создание и развертывание первого шаблона ARM](../azure-resource-manager/templates/template-tutorial-create-first-template.md)

@@ -8,30 +8,32 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 06/30/2020
 ms.author: victorh
-ms.openlocfilehash: 6641cc29025d39ddff33e706dd9b1b0da517b884
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: 1917bed7727b97de27e560a0f2d8032a8ae08996
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85563689"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86242021"
 ---
-# <a name="quickstart-secure-your-virtual-hub-using-azure-firewall-manager---resource-manager-template"></a>Краткое руководство. Защита виртуального концентратора с помощью предварительной версии Диспетчера брандмауэра Azure — шаблон Resource Manager
+# <a name="quickstart-secure-your-virtual-hub-using-azure-firewall-manager---arm-template"></a>Краткое руководство. Защита виртуального концентратора с помощью Диспетчера брандмауэра Azure — шаблон ARM
 
-В этом кратком руководстве показано, как с помощью шаблона Resource Manager защитить виртуальный концентратор с использованием Диспетчера брандмауэра Azure. Развернутый брандмауэр имеет правило приложения, которое разрешает подключения к `www.microsoft.com`. Для тестирования брандмауэра развертываются две виртуальные машины Windows Server 2019. Для подключения к серверу рабочей нагрузки используется один сервер переходов. С сервера рабочей нагрузки можно подключаться только к `www.microsoft.com`.
+В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager (шаблона ARM) защитить виртуальный концентратор с использованием Диспетчера брандмауэра Azure. Развернутый брандмауэр имеет правило приложения, которое разрешает подключения к `www.microsoft.com`. Для тестирования брандмауэра развертываются две виртуальные машины Windows Server 2019. Для подключения к серверу рабочей нагрузки используется один сервер переходов. С сервера рабочей нагрузки можно подключаться только к `www.microsoft.com`.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
 Дополнительные сведения см. в статье [Общие сведения о Диспетчере брандмауэра Azure](overview.md).
 
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Ffwm-docs-qs%2Fazuredeploy.json)
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 
-## <a name="create-a-secured-virtual-hub"></a>Создание защищенного виртуального концентратора
+## <a name="review-the-template"></a>Изучение шаблона
 
 С помощью Диспетчера брандмауэра Azure этот шаблон создает защищенный виртуальный концентратор, а также необходимые ресурсы для поддержки этого сценария.
-
-### <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/fwm-docs-qs/).
 
@@ -51,9 +53,9 @@ ms.locfileid: "85563689"
 - [**Microsoft.Network/publicIPAddresses**](/azure/templates/microsoft.network/publicipaddresses)
 - [**Microsoft.Network/routeTables**](/azure/templates/microsoft.network/routeTables)
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Развертывание шаблона Resource Manager в Azure:
+Разверните шаблон ARM в Azure:
 
 1. Выберите элемент **Развертывание в Azure**, чтобы войти в Azure и открыть шаблон. Шаблон создает Брандмауэр Azure, виртуальную глобальную сеть и виртуальный концентратор, сетевую инфраструктуру и две виртуальные машины.
 
@@ -86,7 +88,7 @@ ms.locfileid: "85563689"
 
 Итак, теперь вы убедились в том, что правила брандмауэра работают:
 
-* Вы можете перейти только к одному разрешенному имени FQDN.
+- Вы можете перейти только к одному разрешенному имени FQDN.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

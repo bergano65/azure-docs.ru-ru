@@ -18,12 +18,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 0abe443521b928dd087e23b5491635b02cd832e8
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.openlocfilehash: ff37a3ecb55c6ee034d3fd2558909c3b4ef1d375
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82592032"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86223437"
 ---
 # <a name="tutorial-send-location-based-push-notifications-with-notification-hubs-and-bing-spatial-data"></a>Руководство по отправке push-уведомлений с учетом географического расположения с помощью Центров уведомлений и Bing Spatial Data
 
@@ -49,10 +49,10 @@ ms.locfileid: "82592032"
 1. Войдите в [Центр разработки Карт Bing](https://www.bingmapsportal.com/).
 2. Выберите **Data sources** (Источники данных) в верхней панели навигации и щелкните **Manage Data Sources** (Управление источниками данных).
 
-    ![](./media/notification-hubs-geofence/bing-maps-manage-data.png)
+    ![Снимок экрана центра разработки Карт Bing: страница Manage Data Sources (Управление источниками данных), параметр Upload data as a data source (Передать данные в качестве источника данных) выделен красным цветом.](./media/notification-hubs-geofence/bing-maps-manage-data.png)
 3. Если у вас нет источника данных, воспользуйтесь ссылкой, чтобы создать его. Выберите **Upload data as a data source** (Отправка данных в качестве источника данных). Вы также можете воспользоваться меню **Data sources** (Источники данных)  > **Upload data** (Отправка данных).
 
-    ![](./media/notification-hubs-geofence/bing-maps-create-data.png)
+    ![Снимок экрана диалогового окна Upload a data source (Отправка источника данных).](./media/notification-hubs-geofence/bing-maps-create-data.png)
 4. Создайте на жестком диске файл `NotificationHubsGeofence.pipe` с приведенным ниже содержимым. В этом руководстве используется пример файла на основе канала, который охватывает прибрежную часть Сан-Франциско:
 
     ```text
@@ -63,7 +63,7 @@ ms.locfileid: "82592032"
 
     Файл канала представляет этот объект:
 
-    ![](./media/notification-hubs-geofence/bing-maps-geofence.png)
+    ![Снимок экрана: аэросьемка набережной Сан-Франциско с красным многоугольником вокруг зоны расположения пирсов.](./media/notification-hubs-geofence/bing-maps-geofence.png)
 5. На странице **Upload a data source** (Отправка источника данных) сделайте следующее:
    1. Выберите значение **pipe** (канал) для параметра **Data format** (Формат данных).
    2. Найдите и выберите файл `NotificationHubGeofence.pipe`, созданный на предыдущем шаге.
@@ -74,18 +74,18 @@ ms.locfileid: "82592032"
 6. После отправки файла данных необходимо опубликовать источник данных. Выберите **Data sources** (Источники данных)  -> **Manage Data Sources** (Управление источниками данных), как это делалось ранее.
 7. Выберите источник данных из списка и щелкните **Publish** (Опубликовать) в столбце **Actions** (Действия).
 
-    ![](./media/notification-hubs-geofence/publish-button.png)
+    ![Снимок экрана центра разработки Карт Bing: страница Manage Data Sources (Управление источниками данных), выбрана вкладка Geocoded Data (Геокодированные данные), параметр Publish (Публикация) выделен красным цветом.](./media/notification-hubs-geofence/publish-button.png)
 8. Перейдите на вкладку **Published Data Sources** (Опубликованные источники данных) и убедитесь, что в списке отображается ваш источник данных.
 
-    ![](./media/notification-hubs-geofence/bing-maps-published-data.png)
+    ![Снимок экрана центра разработки Карт Bing: страница Manage Data Sources (Управление источниками данных), выбрана вкладка Published Data Sources (Опубликованные источники данных).](./media/notification-hubs-geofence/bing-maps-published-data.png)
 9. Выберите команду **Изменить**. Вы увидите, какие расположения представлены в данных.
 
-    ![](./media/notification-hubs-geofence/bing-maps-data-details.png)
+    ![Снимок экрана: страница Edit entity data (Изменение данных сущности), на которой показана карта западной части США и фиолетовой точкой отмечена набережная Сан-Франциско.](./media/notification-hubs-geofence/bing-maps-data-details.png)
 
     На этом этапе на портале не отображаются границы созданной геозоны. Нужно просто подтвердить, что область указанного расположения выбрана правильно.
 10. Теперь выполнены все требования для источника данных. Чтобы получить дополнительные сведения об URL-адресе запроса для вызова API, в Центре разработки для Карт Bing щелкните **Data sources** (Источники данных) и выберите **Data Source Information** (Сведения об источнике данных).
 
-    ![](./media/notification-hubs-geofence/bing-maps-data-info.png)
+    ![Снимок экрана центра разработки Карт Bing: страница Data source information (Сведения об источнике данных).](./media/notification-hubs-geofence/bing-maps-data-info.png)
 
     **Query URL** (URL-адрес запроса) — это конечная точка, для которой можно выполнять запросы, чтобы проверить, находится ли устройство в пределах местоположения. Для этого просто выполните вызов GET для URL-адреса запроса и добавьте следующие параметры:
 
@@ -95,17 +95,17 @@ ms.locfileid: "82592032"
 
     Карты Bing автоматически выполнят вычисления, чтобы убедиться, что устройство находится в пределах геозоны. После выполнения запроса с помощью браузера (или cURL) отобразится стандартный ответ JSON:
 
-    ![](./media/notification-hubs-geofence/bing-maps-json.png)
+    ![Снимок экрана: стандартный ответ JSON.](./media/notification-hubs-geofence/bing-maps-json.png)
 
     Такой ответ получается, только если точка находится в установленных пределах. Если она находится за пределами, контейнер **results** будет пустым:
 
-    ![](./media/notification-hubs-geofence/bing-maps-nores.png)
+    ![Снимок экрана: ответ JSON с пустым контейнером results.](./media/notification-hubs-geofence/bing-maps-nores.png)
 
 ## <a name="set-up-the-uwp-application"></a>Настройка приложения UWP.
 
 1. В Visual Studio создайте новый проект типа **Пустое приложение (универсальное приложение Windows)** .
 
-    ![](./media/notification-hubs-geofence/notification-hubs-create-blank-app.png)
+    ![Снимок экрана: диалоговое окно "Создание проекта" в Visual Studio с выделенной строкой "Пустое приложение (универсальное приложение Windows) — Visual C#".](./media/notification-hubs-geofence/notification-hubs-create-blank-app.png)
 
     После создания проекта вы получите окружение для приложения. Теперь давайте все настроим для инфраструктуры определения геозон. Так как для этого решения будут использоваться службы Bing, нам понадобится общедоступная конечная точка REST API, позволяющая запросить определенные области расположения:
 
@@ -121,13 +121,13 @@ ms.locfileid: "82592032"
      Теперь после подготовки источника данных можно начать работу над приложением UWP.
 2. Включите службы определения расположения для вашего приложения. В **обозревателе решений** откройте файл `Package.appxmanifest`.
 
-    ![](./media/notification-hubs-geofence/vs-package-manifest.png)
+    ![Снимок экрана: обозреватель решений с выделенным файлом Package.appxmanifest.](./media/notification-hubs-geofence/vs-package-manifest.png)
 3. На открывшейся вкладке свойств пакета перейдите на вкладку **Возможности** и установите флажок **Расположение**.
 
-    ![](./media/notification-hubs-geofence/vs-package-location.png)
+    ![Снимок экрана: диалоговое окно "Свойства пакета" с вкладкой "Возможности" и выделенным параметром "Расположение".](./media/notification-hubs-geofence/vs-package-location.png)
 4. В решении создайте папку `Core` и добавьте в нее новый файл `LocationHelper.cs`:
 
-    ![](./media/notification-hubs-geofence/vs-location-helper.png)
+    ![Снимок экрана: обозреватель решений с выделенной новой папкой Core.](./media/notification-hubs-geofence/vs-location-helper.png)
 
     В классе `LocationHelper` есть код, используемый для получения сведений о расположении пользователя через API-интерфейс системы:
 
@@ -191,10 +191,10 @@ ms.locfileid: "82592032"
     ```
 6. Запустите приложение и разрешите ему доступ к сведениям о своем расположении.
 
-    ![](./media/notification-hubs-geofence/notification-hubs-location-access.png)
+    ![Снимок экрана: диалоговое окно Let NotificationHubs.Geofence access your location? (Разрешить NotificationHubs.Geofence доступ к данным о вашем расположении?).](./media/notification-hubs-geofence/notification-hubs-location-access.png)
 7. После запуска приложения координаты будут отображаться в окне **Вывод** :
 
-    ![](./media/notification-hubs-geofence/notification-hubs-location-output.png)
+    ![Снимок экрана: окно выходных данных с координатами.](./media/notification-hubs-geofence/notification-hubs-location-output.png)
 
     Проверив команду получения сведений о расположении, можно удалить загруженный обработчик событий, так как он нам больше не пригодится.
 8. Дальше мы зафиксируем изменения местоположения. В классе `LocationHelper` добавьте обработчик событий для `PositionChanged`:
@@ -221,7 +221,7 @@ ms.locfileid: "82592032"
 2. После завершения загрузки откройте папку `NotifyUsers`, а затем файл `NotifyUsers.sln` в Visual Studio.
 3. Настройте проект `AppBackend` в качестве **запускаемого проекта** и запустите его.
 
-    ![](./media/notification-hubs-geofence/vs-startup-project.png)
+    ![Снимок экрана: контекстное меню решения с выделенным параметром "Назначить запускаемым проектом".](./media/notification-hubs-geofence/vs-startup-project.png)
 
     Проект уже настроен для отправки push-уведомлений на целевое устройство. Поэтому нужно выполнить всего два действия — указать соответствующую строку подключения для центра уведомлений и добавить определение границ, чтобы уведомление отправлялось, только если пользователь находится в пределах геозоны.
 
@@ -351,18 +351,18 @@ ms.locfileid: "82592032"
     > Для параметра `POST_URL` задайте расположение развернутого веб-приложения. Сейчас его можно запустить локально. Но если планируется развернуть общедоступную версию, веб-приложение необходимо разместить у внешнего поставщика.
 2. Зарегистрируйте приложение UWP для работы с push-уведомлениями. В Visual Studio выберите **Проект** > **Магазин** > **Связать приложение с Магазином**.
 
-    ![](./media/notification-hubs-geofence/vs-associate-with-store.png)
+    ![Снимок экрана: контекстное меню решения с выделенными параметрами "Магазин" и "Связать приложение с Магазином".](./media/notification-hubs-geofence/vs-associate-with-store.png)
 3. После входа в учетную запись разработчика выберите имеющееся приложение или создайте его и свяжите с ним пакет.
 4. Перейдите в Центр разработки и откройте созданное приложение. Выберите **Службы** > **Push-уведомления** > **Live Services site** (Сайт служб Live).
 
-    ![](./media/notification-hubs-geofence/ms-live-services.png)
+    ![Снимок экрана: Центр разработки для Windows, в котором отображается страница push-уведомлений с выделенной ссылкой на сайт служб Live.](./media/notification-hubs-geofence/ms-live-services.png)
 5. Запишите значения параметров **Секрет приложения** и **ИД безопасности пакета**, отображающиеся на сайте. Они потребуются вам на портале Azure. Откройте свой центр уведомлений, выберите **Параметры** > **Службы уведомлений** > **Windows (WNS)** и введите сведения в обязательные поля.
 
-    ![](./media/notification-hubs-geofence/notification-hubs-wns.png)
+    ![Снимок экрана: страница параметров с выделенными параметрами "Службы уведомлений" и "Windows (WNS)", а также заполненными полями "Идентификатор безопасности пакета" и "Ключ безопасности".](./media/notification-hubs-geofence/notification-hubs-wns.png)
 6. Нажмите **Сохранить**.
 7. В **обозревателе решений** откройте **Ссылки** и выберите **Управление пакетами NuGet**. Добавьте ссылку в **управляемую библиотеку служебной шины Microsoft Azure**. Для этого просто найдите `WindowsAzure.Messaging.Managed` и добавьте ее в проект.
 
-    ![](./media/notification-hubs-geofence/vs-nuget.png)
+    ![Снимок экрана: диалоговое окно "Управление пакетами NuGet" с выделенным пакетом WindowsAzure.Messaging.Managed.](./media/notification-hubs-geofence/vs-nuget.png)
 8. В рамках тестирования можно еще раз создать обработчик событий `MainPage_Loaded` и добавить в него следующий фрагмент кода:
 
     ```csharp
@@ -387,7 +387,7 @@ ms.locfileid: "82592032"
 
 10. Так как мы не передаем настоящие координаты (которые в данный момент могут выходить за пределы геозоны) и используем предопределенные тестовые значения, появится уведомление об обновлении:
 
-    ![](./media/notification-hubs-geofence/notification-hubs-test-notification.png)
+    ![Снимок экрана: рабочий стол Windows, на котором отображается сообщение "TEST".](./media/notification-hubs-geofence/notification-hubs-test-notification.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

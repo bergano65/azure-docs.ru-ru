@@ -1,16 +1,16 @@
 ---
 title: Просмотр модели удаленной отрисовки
 description: Этот учебник посвящен базовой возможности службы "Удаленная отрисовка Azure", а точнее — просмотру модели, удаленно преобразованной для просмотра с помощью Azure
-author: michael-house
-ms.author: v-mihous
+author: florianborn71
+ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
-ms.openlocfilehash: f0b9bf1c7e085efd86f70f8246214d366265036a
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: bd9e9b6754c8626a8d858b9832a8e3547b72352d
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85566787"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86231916"
 ---
 # <a name="tutorial-viewing-a-remotely-rendered-model"></a>Руководство по Просмотр модели удаленной отрисовки
 
@@ -101,7 +101,7 @@ ms.locfileid: "85566787"
 
 1. Задайте свойству **Clear flags** (Очистить флаги) значение *Solid Color* (Сплошной цвет).
 
-1. Для параметра **Background** (Фон) задайте значение *Black* (Черный, #000000) с полным (255) альфа-каналом (A).
+1. Для параметра **Background** (Фон) задайте значение *Black* (Черный, #000000) с полностью прозрачным (0) альфа-каналом (A).
 
     ![Цветовой круг](./media/color-wheel-black.png)
 

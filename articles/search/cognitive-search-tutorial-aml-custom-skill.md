@@ -8,12 +8,12 @@ ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 06/10/2020
-ms.openlocfilehash: f673fd4b49a33c2faf6bc8b489520f2a877b0689
-ms.sourcegitcommit: 374e47efb65f0ae510ad6c24a82e8abb5b57029e
+ms.openlocfilehash: 69618604c38d82567260e45d651df523055c5f7b
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2020
-ms.locfileid: "85513803"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86245336"
 ---
 # <a name="tutorial-build-and-deploy-a-custom-skill-with-azure-machine-learning"></a>Руководство по созданию и развертыванию настраиваемого навыка с помощью службы "Машинное обучение Azure" 
 
@@ -29,6 +29,9 @@ ms.locfileid: "85513803"
 > * Обучение и развертывание модели в кластере Azure Kubernetes
 > * Связывание конвейера обогащения с помощью ИИ с развернутой моделью
 > * Прием выходных данных из развернутой модели в качестве настраиваемого навыка
+
+> [!IMPORTANT] 
+> Этот навык сейчас находится на этапе общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Пакет SDK для .NET сейчас не поддерживается.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

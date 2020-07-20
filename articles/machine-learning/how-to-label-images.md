@@ -2,20 +2,20 @@
 title: Теги для изображений в проекте маркировки
 title.suffix: Azure Machine Learning
 description: Узнайте, как использовать средства добавления тегов к данным в проекте маркировки Машинного обучения Azure.
-author: lobrien
-ms.author: laobri
+author: sdgilley
+ms.author: sgilley
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 04/09/2020
-ms.openlocfilehash: 0421e5ad164c440c1b841cae66e7dafc5deadb81
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 90ef75c704459ca726480e6950ba748162c66b8e
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86025137"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86147010"
 ---
-# <a name="tag-images-in-a-labeling-project-preview"></a>Теги для изображений в проекте маркировки (предварительная версия)
+# <a name="tag-images-in-a-labeling-project"></a>Теги для изображений в проекте маркировки 
 
 После того как администратор проекта [создаст проект маркировки](https://docs.microsoft.com/azure/machine-learning/how-to-create-labeling-projects#create-a-labeling-project) в службе "Машинное обучение Azure", вы можете применить средство добавления меток (общедоступная предварительная версия), чтобы быстро подготовить данные для проекта Машинного обучения. В этой статье рассматриваются следующие вопросы:
 
@@ -64,7 +64,7 @@ Azure включает кнопку **Отправить**, когда вы пр
 
 После отправки тегов для отображаемых данных Azure обновит страницу, предоставив новый набор изображений из рабочей очереди.
 
-### <a name="assisted-machine-learning"></a>Полуавтоматическое машинное обучение 
+### <a name="assisted-machine-learning-preview"></a>Полуавтоматическое машинное обучение (предварительная версия) 
 
 Могут срабатывать алгоритмы машинного обучения. Если эти алгоритмы включены в проекте, результат может быть следующим.
 

@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 04/24/2020
-ms.openlocfilehash: 61b6ad0bedb4817c262b4269a6e9f6930a6caa6c
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: b78364cef6bfd6cf91e6edf81fd57fa5912125db
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85985694"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260679"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-4-cluster"></a>Руководство по созданию кластера Azure Red Hat OpenShift 4
 
@@ -87,11 +87,26 @@ aro                                1.0.0
 
 Если вы копируете свой секрет для извлечения или ссылаетесь на него в других скриптах, он должен быть отформатирован в виде допустимой строки JSON.
 
+### <a name="prepare-a-custom-domain-for-your-cluster-optional"></a>Подготовка личного домена для кластера (дополнительно)
+
+При выполнении команды `az aro create` можно указать личный домен для кластера с использованием параметра `--domain foo.example.com`.
+
+Если вы предоставляете личный домен для кластера, учитывайте следующие моменты:
+
+* После создания кластера необходимо создать две записи DNS типа A на DNS-сервере для указанного значения`--domain`:
+    * запись **api**, указывающую на сервер API;
+    * запись **\*.apps**, указывающую на входящий трафик.
+    * Извлеките эти значения, выполнив следующую команду: `az aro show -n -g --query '{api:apiserverProfile.ip, ingress:ingressProfiles[0].ip}'`.
+
+* Консоль OpenShift будет доступна по URL-адресу, такому как `https://console-openshift-console.apps.foo.example.com`, вместо встроенного домена `https://console-openshift-console.apps.<random>.<location>.aroapp.io`.
+
+* По умолчанию OpenShift использует самозаверяющие сертификаты для всех маршрутов, созданных в `*.apps.<random>.<location>.aroapp.io`.  Если вы решили использовать пользовательскую службу DNS после подключения к кластеру, необходимо выполнить действия, описанные в документации по OpenShift, чтобы [настроить пользовательский ЦС для контроллера входящего трафика](https://docs.openshift.com/container-platform/4.3/authentication/certificates/replacing-default-ingress-certificate.html) и [пользовательский ЦС для сервера API](https://docs.openshift.com/container-platform/4.3/authentication/certificates/api-server.html).
+
 ### <a name="create-a-virtual-network-containing-two-empty-subnets"></a>Создание виртуальной сети, содержащей две пустые подсети
 
 Далее вы создадите виртуальную сеть, содержащую две пустые подсети.
 
-1. **Задайте следующие переменные.**
+1. **Задайте указанные ниже переменные в среде оболочки, где будут выполняться команды `az`.**
 
    ```console
    LOCATION=eastus                 # the location of your cluster
@@ -99,9 +114,9 @@ aro                                1.0.0
    CLUSTER=cluster                 # the name of your cluster
    ```
 
-1. **Создайте группу ресурсов**.
+1. **Создайте группу ресурсов.**
 
-    Группа ресурсов Azure — это логическая группа, в которой развертываются и управляются ресурсы Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположении сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если во время создания ресурса вы не указали другой регион. Создайте группу ресурсов с помощью команды [az group create][az-group-create].
+    Группа ресурсов Azure — это логическая группа, в которой развертываются и управляются ресурсы Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположении сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если во время создания ресурса вы не указали другой регион. Создайте группу ресурсов с помощью команды [az group create](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-create).
 
     ```azurecli-interactive
     az group create --name $RESOURCEGROUP --location $LOCATION
@@ -126,7 +141,7 @@ aro                                1.0.0
 
     Для кластеров Azure Red Hat OpenShift с OpenShift 4 требуется виртуальная сеть с двумя пустыми подсетями для главного и рабочего узлов.
 
-    Создайте виртуальную сеть в той же группе ресурсов, которая была создана ранее.
+    Создайте виртуальную сеть в той же группе ресурсов, которая была создана ранее:
 
     ```azurecli-interactive
     az network vnet create \
@@ -189,10 +204,12 @@ aro                                1.0.0
 
 ## <a name="create-the-cluster"></a>Создайте кластер.
 
-Чтобы создать кластер, выполните команду ниже. При необходимости вы можете [передать секрет для извлечения Red Hat](#get-a-red-hat-pull-secret-optional), который позволяет кластеру получать доступ к реестрам контейнеров Red Hat, а также к дополнительному содержимому.
+Чтобы создать кластер, выполните команду ниже. Если вы решили использовать один из указанных ниже параметров, измените команду соответствующим образом:
+* При необходимости вы можете [передать секрет для извлечения Red Hat](#get-a-red-hat-pull-secret-optional), который позволяет кластеру получать доступ к реестрам контейнеров Red Hat, а также к дополнительному содержимому. Добавьте в команду аргумент `--pull-secret @pull-secret.txt`.
+* При необходимости можно [использовать личный домен](#prepare-a-custom-domain-for-your-cluster-optional). Добавьте в команду аргумент `--domain foo.example.com`, заменив `foo.example.com` собственным личным доменом.
 
->[!NOTE]
-> При копировании и вставке команд, а также использовании одного из необязательных параметров убедитесь, что исходные хэштеги и комментарии в конце удалены. Кроме того, добавьте к аргументу в предыдущей строке команды обратную косую черту в конце.
+> [!NOTE]
+> Если вы добавляете в команду необязательные аргументы, обязательно закройте аргумент в предыдущей строке команды конечной обратной косой чертой.
 
 ```azurecli-interactive
 az aro create \
@@ -201,23 +218,15 @@ az aro create \
   --vnet aro-vnet \
   --master-subnet master-subnet \
   --worker-subnet worker-subnet
-  # --domain foo.example.com # [OPTIONAL] custom domain
-  # --pull-secret @pull-secret.txt # [OPTIONAL]
 ```
 
 После выполнения команды `az aro create` создание кластера обычно занимает около 35 минут.
-
->[!IMPORTANT]
-> Если вы решили указать личный домен, например **foo.example.com**, консоль OpenShift будет доступна по URL-адресу, например `https://console-openshift-console.apps.foo.example.com`, вместо встроенного адреса `https://console-openshift-console.apps.<random>.<location>.aroapp.io` домена.
->
-> По умолчанию OpenShift использует самозаверяющие сертификаты для всех маршрутов, созданных в `*.apps.<random>.<location>.aroapp.io`.  Если вы решили использовать пользовательскую службу DNS после подключения к кластеру, необходимо выполнить действия, описанные в документации по OpenShift, чтобы [настроить пользовательский ЦС для контроллера входящего трафика](https://docs.openshift.com/container-platform/4.3/authentication/certificates/replacing-default-ingress-certificate.html) и [пользовательский ЦС для сервера API](https://docs.openshift.com/container-platform/4.3/authentication/certificates/api-server.html).
->
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства вы узнали, как выполнить следующие действия:
 > [!div class="checklist"]
-> * настраивать необходимые компоненты и создавать необходимую виртуальную сеть и подсети;
+> * настраивать необходимые компоненты, а также создавать требуемую виртуальную сеть и подсети;
 > * Развертывание кластера
 
 Перейдите к следующему руководству:

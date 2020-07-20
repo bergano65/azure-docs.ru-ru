@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 07/01/2020
-ms.openlocfilehash: 8406c556ecaa0cea968fc1976d709b4f3c51c78b
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: 1613486880885a3b7838b1bf806c17f88e3be06d
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85852494"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86231290"
 ---
 # <a name="quickstart-create-an-azure-stream-analytics-job-using-the-azure-cli"></a>Краткое руководство. Создание задания Azure Stream Analytics с помощью Azure CLI
 
@@ -49,7 +49,7 @@ ms.locfileid: "85852494"
     az extension add --name stream-analytics
     ```
 
-   Установите [расширение для Azure IoT](/cli/azure/ext/azure-iot/azure-iot), выполнив следующую команду:
+   Установите [расширение для Azure IoT](/cli/azure/ext/azure-iot), выполнив следующую команду:
 
     ```azurecli
     az extension add --name azure-iot
@@ -154,7 +154,7 @@ az stream-analytics job create \
 
 ## <a name="configure-input-to-the-job"></a>Настройка входных данных для задания
 
-Добавьте входные данные к заданию с помощью командлета [az stream-analytics input](/cli/azure/ext/stream-analytics/stream-analytics/input?view=azure-cli-latest#ext-stream-analytics-az-stream-analytics-input-create). Этот командлет принимает имя задания, имя входных данных задания, имя группы ресурсов и определение входных данных задания в качестве параметров. Определение входных данных задания — это JSON-файл, содержащий свойства, необходимые для настройки входных данных задания. В этом примере показано, как создать Центр Интернета вещей в качестве источника входных данных.
+Добавьте входные данные к заданию с помощью командлета [az stream-analytics input](/cli/azure/ext/stream-analytics/stream-analytics/input?view=azure-cli-latest#ext-stream-analytics-az-stream-analytics-input-create). Этот командлет принимает имя задания, имя входных данных задания, имя группы ресурсов и определение входных данных задания в качестве параметров. Определение входных данных задания представляет собой JSON-файл со свойствами, необходимыми для настройки входных данных задания. В этом примере показано, как создать Центр Интернета вещей в качестве источника входных данных.
 
 На вашем локальном компьютере создайте файл с именем `datasource.json` и добавьте в него следующие данные JSON. Не забудьте заменить значение для параметра `sharedAccessPolicyKey` частью `SharedAccessKey` строки подключения Центра Интернета вещей, сохраненной в предыдущем разделе.
 
@@ -196,9 +196,9 @@ az stream-analytics input create
 
 ## <a name="configure-output-to-the-job"></a>Настройка выходных данных для задания
 
-Добавьте выходные данные к заданию с помощью командлета [az stream-analytics output create](/cli/azure/ext/stream-analytics/stream-analytics/output?view=azure-cli-latest#ext-stream-analytics-az-stream-analytics-output-create). Этот командлет принимает имя задания, имя выходных данных задания, имя группы ресурсов и определение выходных данных задания в качестве параметров. Определение выходных данных задания — это JSON-файл, содержащий свойства, необходимые для настройки выходных данных задания. В этом примере в качестве выходных данных используется хранилище BLOB-объектов.
+Добавьте выходные данные к заданию с помощью командлета [az stream-analytics output create](/cli/azure/ext/stream-analytics/stream-analytics/output?view=azure-cli-latest#ext-stream-analytics-az-stream-analytics-output-create). Этот командлет принимает имя задания, имя выходных данных задания, имя группы ресурсов и определение выходных данных задания в качестве параметров. Определение выходных данных задания представляет собой JSON-файл со свойствами, необходимыми для настройки выходных данных задания. В этом примере в качестве выходных данных используется хранилище BLOB-объектов.
 
-На вашем локальном компьютере создайте файл с именем `datasink.json` и добавьте в него следующие данные JSON. Не забудьте заменить значение `accountKey` ключом доступа к учетной записи хранения, который являет собой значение, хранящееся в $storageAccountKey.
+На вашем локальном компьютере создайте файл с именем `datasink.json` и добавьте в него следующие данные JSON. Не забудьте заменить значение `accountKey` ключом доступа к учетной записи хранения. Это значение, хранящееся в $storageAccountKey.
 
 ```json
 {

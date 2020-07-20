@@ -6,14 +6,14 @@ ms.topic: tutorial
 ms.date: 09/18/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: d2bb37252bc93c982dbc090a0c3f20aef842325f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 3f0dca5aa9e430fa21d09509121a7ad26feda446
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75351848"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86261319"
 ---
-# <a name="tutorial-deploy-a-service-fabric-mesh-application"></a>Руководство. Развертывание приложения Сетки Service Fabric
+# <a name="tutorial-deploy-a-service-fabric-mesh-application"></a>Руководство по Развертывание приложения Сетки Service Fabric.
 
 Это руководство является третьей частью цикла, в котором показано, как публиковать веб-приложение Сетки Azure Service Fabric непосредственно из Visual Studio.
 
@@ -33,7 +33,7 @@ ms.locfileid: "75351848"
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -61,11 +61,11 @@ git clone https://github.com/azure-samples/service-fabric-mesh
 
 Выберите учетную запись Azure и подписку. Выберите **расположение**. В этой статье используется **восточная часть США**.
 
-В разделе **Группа ресурсов** выберите **\<Создать новую группу ресурсов...>** . Откроется диалоговое окно, в котором создайте новую группу ресурсов. В этой статье используется расположение **восточная часть США** и имена группы **sfmeshTutorial1RG** (если в организации несколько человек используют одну и ту же подписку, выберите уникальное имя группы).  Нажмите клавишу **Создать**, чтобы создать группу ресурсов и вернитесь в диалоговое окно публикации.
+В разделе **Группа ресурсов** выберите **\<Create New Resource Group...>** . Откроется диалоговое окно, в котором создайте новую группу ресурсов. В этой статье используется расположение **восточная часть США** и имена группы **sfmeshTutorial1RG** (если в организации несколько человек используют одну и ту же подписку, выберите уникальное имя группы).  Нажмите клавишу **Создать**, чтобы создать группу ресурсов и вернитесь в диалоговое окно публикации.
 
 ![Диалоговое окно новой группы ресурсов службы "Сетка Service Fabric" в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-new-resource-group-dialog.png)
 
-Вернитесь в диалоговое окно **Опубликовать приложение Service Fabric** в разделе **Реестр контейнеров Azure**, выберите **\<Создать реестр контейнеров Azure...>** . В диалоговом окне **Создать реестр контейнеров** используйте уникальное имя для параметра **Имя реестра контейнеров**. Укажите **Расположение** (в этом руководстве используется **восточная часть США**). Выберите в раскрывающемся списке **группу ресурсов**, созданную на предыдущем шаге, например **sfmeshTutorial1RG**. Для **номера SKU** установите значение **Базовый**, а затем щелкните **Создать**, чтобы создать частный реестр контейнеров Azure и вернуться в диалоговое окно публикации.
+Вернитесь в диалоговое окно **Опубликовать приложение Service Fabric** и в разделе **Реестр контейнеров Azure** выберите **\<Create New Container Registry...>** . В диалоговом окне **Создать реестр контейнеров** используйте уникальное имя для параметра **Имя реестра контейнеров**. Укажите **Расположение** (в этом руководстве используется **восточная часть США**). Выберите в раскрывающемся списке **группу ресурсов**, созданную на предыдущем шаге, например **sfmeshTutorial1RG**. Для **номера SKU** установите значение **Базовый**, а затем щелкните **Создать**, чтобы создать частный реестр контейнеров Azure и вернуться в диалоговое окно публикации.
 
 ![Диалоговое окно нового реестра контейнеров службы "Сетка Service Fabric" в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-new-container-registry-dialog.png)
 
@@ -139,4 +139,4 @@ az mesh app list --output table
 > [!div class="nextstepaction"]
 > [Обновление приложения Сетки Service Fabric](service-fabric-mesh-tutorial-upgrade.md)
 
-[azure-cli-install]: https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest
+[azure-cli-install]: /cli/azure/install-azure-cli?view=azure-cli-latest

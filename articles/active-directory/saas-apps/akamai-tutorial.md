@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/03/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17d0c91d31f7746c53d62af87670c40e9902554c
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 9ea2c20a7720cc80b36ff88595aa6ca5c57f6b9a
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86026837"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232395"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-akamai"></a>Руководство по интеграции единого входа Azure Active Directory с Akamai
 
@@ -61,13 +61,13 @@ Akamai ЕАА настраивается в Azure AD как единое при
 
 **Преимущества**.
 
-• Достаточно один раз настроить поставщик удостоверений.
+* Достаточно один раз настроить поставщик удостоверений.
 
 **Недостатки**.
 
-• Пользователи в итоге получают два портала приложений.
+* У пользователей в итоге оказывается два портала приложений.
 
-• Для всех приложений применяется одна общая Политика ЦС.
+* Для всех приложений применяется одна общая Политика ЦС.
 
 ![Сценарий интеграции 1](./media/header-akamai-tutorial/scenario1.png)
 
@@ -77,13 +77,14 @@ Akamai ЕАА настраивается в Azure AD как единое при
 
 **Преимущества**.
 
-• Можно определить отдельные Политики ЦС.
+* Можно определить отдельные Политики ЦС.
 
-• Все приложения представлены в меню запуска приложений O365 и на панели myApps.microsoft.com.
+* Все приложения представлены в меню запуска приложений O365 и на панели myApps.microsoft.com.
+
 
 **Недостатки**.
 
-• Необходимо настроить несколько поставщиков удостоверений.
+* Необходимо настроить несколько поставщиков удостоверений.
 
 ![Сценарий интеграции 2](./media/header-akamai-tutorial/scenario2.png)
 
@@ -450,7 +451,7 @@ Akamai ЕАА настраивается в Azure AD как единое при
 
 ### <a name="kerberos-authentication"></a>Проверка подлинности Kerberos
 
-В приведенном ниже примере показано, как опубликовать внутренний веб-сервер [http://frp-app1.superdemo.live](http://frp-app1.superdemo.live/) и разрешать единый вход с применением ограниченного делегирования Kerberos.
+В приведенном ниже примере показано, как опубликовать внутренний веб-сервер <code>http://frp-app1.superdemo.live</code> и разрешать единый вход с применением ограниченного делегирования Kerberos.
 
 #### <a name="general-tab"></a>Вкладка «Общие»
 

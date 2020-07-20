@@ -1,11 +1,11 @@
 ---
-ms.openlocfilehash: 9e50caeac5c52b9f2309448e2bb0b760f533fb6c
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: ec78ffd1fbc1f77a7b1e1467df1c2303e7d5daf1
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "67185004"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86156548"
 ---
 ## <a name="delete-anchors"></a>Удаление привязок
 
-Чтобы удалить пространственную привязку в облаке, используйте метод `DeleteAnchor()`. Мы рекомендуем удалять неиспользуемые привязки в ходе разработки. Так ваши ресурсы будут очищенными. Более того, хотя вы можете использовать Пространственные привязки Azure бесплатно, это может измениться в будущем. Сведения о ценах на этапе предварительной версии вы можете найти на [странице с ценами](https://azure.microsoft.com/pricing/details/spatial-anchors/).
+Чтобы удалить пространственную привязку в облаке, используйте метод `DeleteAnchor()`. Мы рекомендуем удалять неиспользуемые привязки в ходе разработки. Так ваши ресурсы Azure будут очищенными. 

@@ -1,5 +1,5 @@
 ---
-title: 'Руководство по Обучение и развертывание моделей: VS Code'
+title: 'Руководство по Обучение и развертывание моделей: VS Code (предварительная версия)'
 titleSuffix: Azure Machine Learning
 description: Узнайте о том, как обучать и развертывать модель классификации изображений с использованием TensorFlow и расширения Visual Studio Code для Машинного обучения Azure
 services: machine-learning
@@ -8,16 +8,16 @@ ms.subservice: core
 ms.topic: tutorial
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 04/13/2020
+ms.date: 07/09/2020
 ms.custom: contperfq4
-ms.openlocfilehash: 05857641df22e03362eeee1590fef62fa3a45530
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: 7d209b3434eae20b4c9a7b328f5c15032315b178
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82857715"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86203553"
 ---
-# <a name="train-and-deploy-an-image-classification-tensorflow-model-using-the-azure-machine-learning-visual-studio-code-extension"></a>Обучение и развертывание модели TensorFlow для классификации изображений с использованием расширения Visual Studio Code для Машинного обучения Azure
+# <a name="train-and-deploy-an-image-classification-tensorflow-model-using-the-azure-machine-learning-visual-studio-code-extension-preview"></a>Обучение и развертывание модели TensorFlow для классификации изображений с использованием расширения Машинного обучения Azure для Visual Studio Code (предварительная версия)
 
 Узнайте о том, как обучить и развернуть модель классификации изображений для распознавания рукописных чисел с использованием TensorFlow и расширения Visual Studio Code для Машинного обучения Azure.
 
@@ -91,7 +91,7 @@ ms.locfileid: "82857715"
 1. На панели действий Visual Studio Code щелкните значок **Azure**. Откроется представление "Машинное обучение Azure". 
 1. Разверните узел подписки. 
 1. Разверните узел **TeamWorkspace**. 
-1. В узле рабочей области щелкните правой кнопкой мыши узел **Compute** (Вычисления) и выберите **Create Compute** (Создать вычислительный ресурс). 
+1. В узле рабочей области щелкните правой кнопкой мыши узел **Вычислительные кластеры** и выберите **Создать вычислительный ресурс**. 
 
     > [!div class="mx-imgBorder"]
     > ![Создание целевого объекта вычислений](./media/tutorial-train-deploy-image-classification-model-vscode/create-compute.png)
@@ -115,17 +115,8 @@ ms.locfileid: "82857715"
                 "scaleSettings": {
                     "maxNodeCount": 4,
                     "minNodeCount": 0,
-                    "nodeIdleTimeBeforeScaleDown": 120
-                },
-                "userAccountCredentials": {
-                    "adminUserName": "",
-                    "adminUserPassword": "",
-                    "adminUserSshPublicKey": ""
-                },
-                "subnetName": "",
-                "vnetName": "",
-                "vnetResourceGroupName": "",
-                "remoteLoginPortPublicAccess": ""
+                    "nodeIdleTimeBeforeScaleDown": "PT120S"
+                }
             }
         }
     }
@@ -138,7 +129,7 @@ ms.locfileid: "82857715"
     Azure ML: Save and Continue
     ```
 
-Через несколько минут новый целевой объект вычислений появится в узле *Вычисления* в рабочей области.
+Через несколько минут новый целевой объект вычислений появится в узле *Вычислительные кластеры* в рабочей области.
 
 ## <a name="create-a-run-configuration"></a>Создание конфигурации запуска
 
@@ -148,7 +139,7 @@ ms.locfileid: "82857715"
 
 1. На панели действий Visual Studio Code щелкните значок **Azure**. Откроется представление "Машинное обучение Azure". 
 1. Разверните узел подписки. 
-1. Разверните узел **TeamWorkspace > Вычислительная среда**. 
+1. Разверните узел **TeamWorkspace > Вычислительные кластеры**. 
 1. Под этим узлом щелкните правой кнопкой мыши вычислительный узел **TeamWkspc-com** и выберите **Создание конфигурации запуска**.
 
     > [!div class="mx-imgBorder"]
@@ -214,6 +205,7 @@ ms.locfileid: "82857715"
     Azure ML: Save and Continue
     ```
 
+1. В этом примере не используется набор данных, зарегистрированный в Машинном обучении Azure. Вместо этого он загружается при запуске *train.py*. При появлении запроса на создание ссылки на данные для обучающего запуска введите "n" в командной строке и нажмите клавишу **ВВОД**.
 1. Нажмите клавишу **ВВОД**, чтобы просмотреть файл скрипта для выполнения в вычислительной среде. В нашем примере для обучения модели используется файл скрипта `train.py` в каталоге `vscode-tools-for-ai/mnist-vscode-docs-sample`.
 
     В VS Code появится файл с именем `MNIST-rc.runconfig`, содержимое которого выглядит примерно так:
@@ -221,6 +213,7 @@ ms.locfileid: "82857715"
     ```json
     {
         "script": "train.py",
+        "arguments": [],
         "framework": "Python",
         "communicator": "None",
         "target": "TeamWkspc-com",

@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 05/06/2020
 ms.author: pafarley
-ms.openlocfilehash: 28362a81461b63440ad752071f11b3603a979995
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: d63e902a59411a549235c955a39d7dbc4be068ba
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100317"
+ms.locfileid: "86156591"
 ---
 Используя ключ и конечную точку из созданного ресурса, создайте две переменные среды для проверки подлинности:
 
@@ -23,7 +23,7 @@ ms.locfileid: "86100317"
   * `https://<your-custom-subdomain>.cognitiveservices.azure.com`
 
 >[!NOTE]
-> Конечные точки для ресурсов не из пробной версии, созданных после 1июля 2019 г., поддерживают пользовательский формат поддомена, показанный ниже. Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) (Пользовательские имена поддоменов для Cognitive Services). 
+> Конечные точки для ресурсов, созданных после 1 июля 2019 г., поддерживают пользовательский формат поддомена, показанный ниже. Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) (Пользовательские имена поддоменов для Cognitive Services). 
 
 Для настройки переменных среды в своей операционной системе воспользуйтесь инструкциями ниже.
 

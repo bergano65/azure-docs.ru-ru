@@ -11,14 +11,14 @@ ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 03/22/2019
+ms.date: 07/09/2020
 ms.author: juliako
-ms.openlocfilehash: 4e40d26e392219fb751328bc54855d87e80bae19
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 3c75c5074e8c75a7b2d5b7f141d5104c5cb59726
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345992"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207566"
 ---
 # <a name="tutorial-upload-encode-and-stream-videos-with-media-services-v3"></a>Руководство по Отправка, кодировка и потоковая передача видео с помощью Служб мультимедиа версии 3
 
@@ -42,7 +42,7 @@ ms.locfileid: "80345992"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Вы можете скачать [Visual Studio Community 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) бесплатно, если у вас нет Visual Studio.
+- Если у вас нет Visual Studio, вы можете скачать и установить [Visual Studio Community 2019](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15).
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).<br/>Запишите значения, которые вы использовали в качестве имени группы ресурсов и имени учетной записи Служб мультимедиа.
 - Выполните действия, описанные в статье [Доступ к API Служб мультимедиа Azure с помощью Azure CLI](access-api-cli-how-to.md), и сохраните учетные данные. Эти данные понадобятся для доступа к API.
 
@@ -164,7 +164,7 @@ ms.locfileid: "80345992"
 
 ### <a name="clean-up-resources-in-your-media-services-account"></a>Очистка ресурсов в учетной записи Служб мультимедиа
 
-Как правило, необходимо очистить все, кроме объектов, которые вы планируете использовать повторно. Обычно повторно используются преобразования и сохраняются StreamingLocators и т. д. Если учетную запись требуется очистить после эксперимента, удалите ресурсы, которые не планируется использовать повторно. Например, следующий код удаляет задания.
+Как правило, необходимо очистить все, кроме объектов, которые вы планируете использовать повторно. Обычно повторно используются преобразования и сохраняются StreamingLocators и т. д. Если учетную запись требуется очистить после эксперимента, удалите ресурсы, которые не планируется использовать повторно. Удалить задание, созданные ресурсы и политику ключа содержимого можно с помощью следующего кода:
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#CleanUp)]
 

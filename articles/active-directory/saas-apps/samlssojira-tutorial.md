@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 01/03/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6f6cb87cf7628c48ce6adf12336c4b712dc0ff9
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: b31bc86554998295bc97352d28fa3b3d4b330abe
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82202678"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146574"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-jira-by-resolution-gmbh"></a>Руководство по Интеграция Azure Active Directory с SAML SSO for Jira by resolution GmbH
 
@@ -304,10 +304,12 @@ ms.locfileid: "82202678"
 
 1. Перейдите на страницу конфигурации подключаемого модуля единого входа SAML в Jira.
 1. На панели слева щелкните**Redirection** (Перенаправление).
-![](./media/samlssojira-tutorial/ssore1.png)
+
+   ![Частичный снимок экрана страницы конфигурации подключаемого модуля единого входа JIRA с использованием SAML, на котором выделена ссылка перенаправления в левой области навигации.](./media/samlssojira-tutorial/ssore1.png)
 
 1. Установите флажок **Enable SSO Redirect** (Включить перенаправление для единого входа).
-![](./media/samlssojira-tutorial/ssore2.png) 
+
+   ![Частичный снимок экрана страницы конфигурации подключаемого модуля единого входа JIRA с использованием SAML, на котором выделен выбранный флажок "Включить перенаправление единого входа".](./media/samlssojira-tutorial/ssore2.png) 
 
 1. Нажмите кнопку **Save Settings** (Сохранить параметры) в правом верхнем углу.
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 93a7181a3b720a3b313bb75855b2564c4cd33bc1
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: ff57a67d5e6d617d6d51c924161f586f90f92c3c
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79214332"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86231545"
 ---
 ::: zone target="docs"
 
@@ -111,7 +111,7 @@ ms.locfileid: "79214332"
     |/NFL                | Указание, что имена файлов не должны регистрироваться.        |
     |/NDL                | Указание, что имена каталогов не должны регистрироваться.        |
     |/FFT                | Предположение времени файла FAT (двухсекундная точность).        |
-    |/Log:\<файл_журнала>     | Запись выходных данных о состоянии в файл журнала (перезапись существующего файла журнала).         |
+    |/Log:\<Log File>     | Запись выходных данных о состоянии в файл журнала (перезапись существующего файла журнала).         |
 
     Можно использовать несколько дисков параллельно с несколькими заданиями, выполняемыми на каждом диске.
 
@@ -273,7 +273,7 @@ ms.locfileid: "79214332"
 
 Если вы не использовали инструмент Split Copy для копирования данных, вам будет необходимо проверить данные. Чтобы проверить данные, выполните описанные ниже действия.
 
-1. Запустите `DataBoxDiskValidation.cmd` для проверки контрольных сумм в папке *DataBoxDiskImport* на диске.
+1. Запустите `DataBoxDiskValidation.cmd` для проверки контрольных сумм в папке *DataBoxDiskImport* на диске. Это доступно только для среды Windows. Пользователям Linux необходимо убедиться, что исходные данные, скопированные на диск, соответствуют [предварительным требованиям](https://docs.microsoft.com/azure/databox/data-box-disk-limits).
     
     ![Выходные данные инструмента проверки диска Data Box](media/data-box-disk-deploy-copy-data/data-box-disk-validation-tool-output.png)
 

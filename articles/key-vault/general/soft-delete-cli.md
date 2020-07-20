@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: ae6ddac61ecbcef41704f71ed5188fc547a996a3
-ms.sourcegitcommit: eefb0f30426a138366a9d405dacdb61330df65e7
+ms.openlocfilehash: f98df33b3efc697e349ddeae31439dd2fb701d91
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81616593"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86202029"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-cli"></a>Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки
 
@@ -229,7 +229,7 @@ az keyvault purge --location westus --name ContosoVault
 
 Если защита от очистки включена, хранилище или удаленный из него объект нельзя удалить безвозвратно в течение 90 дней после первоначального удаления. Такое хранилище или его объект все еще подлежат восстановлению. Эта функция обеспечивает дополнительную гарантию того, что хранилище или его объект не будут безвозвратно удалены до истечения срока хранения.
 
-Защиту от очистки можно включить, только если включена функция удаления с возможностью восстановления. 
+Защиту от очистки можно включить, только если включена функция удаления с возможностью восстановления. Отключение защиты от очистки не поддерживается.
 
 Чтобы включить функции обратимого удаления и защиты от очистки при создании хранилища, используйте команду [az keyvault create](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create).
 

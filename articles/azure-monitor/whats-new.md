@@ -5,17 +5,96 @@ ms.subservice: ''
 ms.topic: overview
 author: bwren
 ms.author: bwren
-ms.date: 04/06/2020
-ms.openlocfilehash: 561767b6857f4b52b3ee1eb17fedd51ad409ee29
-ms.sourcegitcommit: 813f7126ed140a0dff7658553a80b266249d302f
+ms.date: 07/08/2020
+ms.openlocfilehash: 4d061e7a105fc73f7f44c8336df82ff363ee6ded
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84462980"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86203753"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Что нового в документации по Azure Monitor?
 
 В этой статье приводятся списки новых или значительно измененных статей об Azure Monitor. Он будет обновляться в первую неделю каждого месяца, чтобы включать в себя обновления статей за предыдущий месяц.
+
+## <a name="june-2020"></a>Июнь 2020 г.
+
+### <a name="general"></a>Общие сведения
+- [Развертывание Azure Monitor](platform/deploy-scale.md) — новая статья.
+- [Ключ Azure Monitor, управляемый клиентом](platform/customer-managed-keys.md) — обновлено свойство billingtype. Добавлены команды PowerShell.
+
+### <a name="agents"></a>Агенты
+- [Общие сведения об агенте Log Analytics](platform/log-analytics-agent.md). Добавлено требование о наличии Python 2.
+
+### <a name="alerts"></a>видны узлы
+- [Как обновить правила генерации оповещений или правила действий при перемещении их целевого ресурса в другой регион Azure](platform/alerts-resource-move.md) — новая статья.
+- [Устранение неполадок c оповещениями о метриках Azure](platform/alerts-troubleshoot-metric.md) — новая статья.
+- [Устранение неполадок с оповещениями журналов в Azure Monitor](platform/alerts-troubleshoot-metric.md) — новая статья.
+  
+### <a name="application-insights"></a>Application Insights
+- [Azure Application Insights и веб-приложения JavaScript](app/javascript.md) — изменен раздел о пакете SDK для JavaScript. Обновлен фрагмент кода для отправки уведомлений о сбоях загрузки.
+- [Настройка поддержки BYOS (использование собственного хранилища) для Profiler и Snapshot Debugger](app/profiler-bring-your-own-storage.md) — новая статья.
+- [Отслеживание входящих запросов в Azure Application Insights с помощью OpenCensus Python](app/opencensus-python-request.md) — изменены сведения о ведении журналов и конфигурации для OpenCensus.
+- [Мониторинг активного веб-приложения ASP.NET с помощью Azure Application Insights ](app/monitor-performance-live-website-now.md) — обновлена дата прекращения поддержки для монитора состояния версии 1.
+- [Мониторинг служб и приложений Node.js с помощью Application Insights](app/nodejs.md) — изменены некоторые сведения, в том числе о переходе с предыдущей версий и о конфигурации пакета SDK.
+- [Мониторинг приложений Python с помощью Azure Monitor (предварительная версия)](app/opencensus-python.md) — добавлен раздел о настройке средств экспорта Azure Monitor.
+- [Мониторинг приложений без изменения кода (автоматическое инструментирование для Azure Monitor Application Insights)](app/codeless-overview.md) — новая статья.
+- [Устранение неполадок при загрузке пакета SDK для веб-приложений JavaScript](app/javascript-sdk-load-failure.md) — новая статья.
+
+### <a name="containers"></a>Контейнеры
+- [Как отключить мониторинг гибридного кластера](insights/container-insights-optout-hybrid.md) — добавлен раздел для Kubernetes с поддержкой Arc.
+- [Настройка кластера Kubernetes с поддержкой Azure Arc с помощью Azure Monitor для контейнеров](insights/container-insights-enable-arc-enabled-clusters.md) — новая статья.
+- [Настройка Azure Red Hat OpenShift версии 4.x с помощью Azure Monitor для контейнеров](insights/container-insights-azure-redhat4-setup.md) — обновлены предварительные требования.
+- [Настройка функции Live Data в Azure Monitor для контейнеров (предварительная версия)](insights/container-insights-livedata-setup.md) — удалено примечание о том, что функция недоступна в Azure для государственных организаций США.
+
+### <a name="insights"></a>Аналитика
+- [Вопросы и ответы по решению "Монитор производительности сети" (Azure)](insights/network-performance-monitor-faq.md) — добавлены вопросы и ответы по мониторингу ExpressRoute.
+
+### <a name="logs"></a>Журналы
+- [Удаление и восстановление рабочей области Azure Log Analytics](platform/delete-workspace.md) — добавлена команда PowerShell. Обновлены сведения об устранении неполадок.
+- [Управление рабочими областями Log Analytics в Azure Monitor, добавленном](platform/manage-access.md) — добавлен пример для недопустимых таблиц в разделе о RBAC.
+- [Управление использованием и затратами для журналов Azure Monitor](platform/manage-cost-storage.md) — дополнительные сведения о вычислении размера данных. Обновлены сведения о настройке оповещений о томе данных. Сведения о данных безопасности, собранных с помощью Azure Sentinel. Добавлено пояснение об ограничении объема данных.
+- [Использование журналов Azure Monitor с Azure Logic Apps и Power Automate](platform/logicapp-flow-connector.md) — добавлены сведения об ограничениях соединителя.
+
+### <a name="metrics"></a>Метрики
+- [Поддерживаемые метрики Azure Monitor по типу ресурсов](platform/metrics-supported.md) — обновлены метрики SQL Server.
+
+
+### <a name="platform-logs"></a>Журналы платформы
+
+- [Примеры шаблонов Resource Manager для параметров диагностики в Azure Monitor](samples/resource-manager-diagnostic-settings.md) — исправлен параметр диагностики для журнала действий.
+- [Отправка журнала действий Azure в рабочую область Log Analytics с помощью портала Azure](learn/quick-collect-activity-log-portal.md) — новая статья.
+- [Отправка журнала действий Azure в рабочую область Log Analytics с помощью шаблона Azure Resource Manager](learn/quick-collect-activity-log-arm.md) — новая статья.
+
+#### <a name="new-and-updated-articles-from-restructure-and-consolidation-of-platform-log-content"></a>Новые и измененные статьи, посвященные реструктуризации и консолидации содержимого журнала платформы
+- [Архивация журналов ресурсов Azure в учетной записи хранения](platform/resource-logs-collect-storage.md)
+- [Схема событий журнала действий Azure](platform/activity-log-schema.md)
+- [Журнал действий Azure](platform/activity-log.md)
+- [Примеры CLI для Azure Monitor](samples/cli-samples.md)
+- [Примеры для Azure Monitor PowerShell](samples/powershell-samples.md)
+- [Пошаговое руководство по REST API Azure Monitor](platform/rest-api-walkthrough.md)
+- [Поддерживаемые службы и схемы в журналах ресурсов Azure](platform/diagnostic-logs-schema.md)
+- [Журналы ресурсов Azure](platform/resource-logs.md)
+- [Сбор и анализ журналов действий Azure в Azure Monitor](platform/activity-log-collect.md)
+- [Передача журналов ресурсов Azure в рабочую область Log Analytics](platform/resource-logs-collect-workspace.md)
+- [Создание параметров диагностики для отправки журналов платформы и метрик в различные места назначения](platform/diagnostic-settings.md)
+- [Экспорт журнала действий Windows Azure](platform/activity-log-export.md)
+- [Общие сведения о журналах платформы Azure](platform/platform-logs-overview.md)
+- [Потоковая передача журналов платформы Azure в концентратор событий](platform/resource-logs-stream-event-hubs.md)
+- [Просмотр событий в журнале действий Azure (Azure Monitor)](platform/activity-log-view.md)
+
+### <a name="virtual-machines"></a>Виртуальные машины
+- [Включение Azure Monitor для виртуальных машин на портале Azure](insights/vminsights-enable-single-vm.md) — добавлены сведения об Azure Arc.
+- [Общие сведения о включении Azure Monitor для виртуальных машин](insights/vminsights-enable-overview.md) — добавлены сведения об Azure Arc.
+- [Общие сведения об Azure Monitor для виртуальных машин](insights/vminsights-overview.md) — добавлены сведения об Azure Arc.
+
+
+### <a name="visualizations"></a>Визуализации
+- [Источники данных для книг Azure Monitor](platform/workbooks-data-sources.md) — добавлены разделы об оповещениях и пользовательских конечных точках.
+- [Устранение неполадок с аналитикой на основе книг Azure Monitor](insights/troubleshoot-workbooks.md) — новая статья.
+- [Обновление визуализаций на панели мониторинга Log Analytics](log-query/dashboard-upgrade.md) — новая статьи.
+
+
 
 ## <a name="may-2020"></a>Май 2020 г.
 

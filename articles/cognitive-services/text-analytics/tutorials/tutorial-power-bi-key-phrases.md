@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: tutorial
 ms.date: 12/19/2019
 ms.author: aahi
-ms.openlocfilehash: 2398bfa2ce828e716831cc7ce438bd1c241ca5f8
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 4bf2f12ef79f8551291316b5446121f2735d9347
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75378540"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206575"
 ---
 # <a name="tutorial-integrate-power-bi-with-the-text-analytics-cognitive-service"></a>Руководство по Интеграция Power BI с Анализом текста в Cognitive Services
 
@@ -34,7 +34,7 @@ Microsoft Power BI Desktop — бесплатное приложение, поз
 <a name="Prerequisites"></a>
 
 - Microsoft Power BI Desktop ([скачать бесплатно](https://powerbi.microsoft.com/get-started/)).
-- Учетная запись Microsoft Azure. ([начните работу в бесплатной пробной версии](https://azure.microsoft.com/free/) или [войдите в существующую](https://portal.azure.com/)).
+- Учетная запись Microsoft Azure. [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/) или [войдите](https://portal.azure.com/) в существующую.
 - Учетная запись API Cognitive Services с API анализа текста. Если у вас ее нет, вы можете [зарегистрироваться](../../cognitive-services-apis-create-account.md) и выбрать ценовую категорию "Бесплатный", обеспечивающую 5000 транзакций в месяц (ознакомьтесь со [сведениями о ценах](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/) для работы с этим руководством).
 - [Ключ доступа к Анализу текста](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource), созданный автоматически во время регистрации.
 - Отзывы пользователей. Можно использовать [наш пример данных](https://aka.ms/cogsvc/ta) или собственные данные. В этом руководстве предполагается, что вы используете наш пример данных.
@@ -91,7 +91,7 @@ Microsoft Power BI Desktop — бесплатное приложение, поз
 
 [API ключевых фраз](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/56f30ceeeda5650db055a3c6) службы "Анализ текста" может обрабатывать до тысячи текстовых документов за один HTTP-запрос. Power BI обрабатывает одну запись за раз, поэтому в данном руководстве вызовы API будут содержать по одному документу. В каждом обрабатываемом документе для API ключевых фраз требуются приведенные ниже поля.
 
-| | |
+| Поле | Описание |
 | - | - |
 | `id`  | Уникальный идентификатор документа в пределах запроса. Это поле также содержится в ответе, так что, если вы обрабатываете несколько документов, извлеченные ключевые фразы можно легко сопоставить с исходным документом. В этом руководстве, так как обрабатывается только один документ на запрос, можно жестко закодировать одно значение `id` для каждого запроса.|
 | `text`  | Текст для обработки. Значение этого поля извлекается из столбца `Merged`, созданного в [предыдущем разделе](#PreparingData). Он содержит строку темы и текст комментария. API ключевых фраз поддерживает данные длиной максимум 5120 символов.|

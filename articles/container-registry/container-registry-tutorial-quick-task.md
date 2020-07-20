@@ -4,12 +4,12 @@ description: В этом руководстве описывается, как �
 ms.topic: tutorial
 ms.date: 09/24/2018
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 82b539ba8f275755ee31a00c2127a0dba7c38d9f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7178d7171d4c9c0183eb744f19776f6b2fac09ef
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78398513"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259485"
 ---
 # <a name="tutorial-build-and-deploy-container-images-in-the-cloud-with-azure-container-registry-tasks"></a>Руководство по Создание и развертывание образов контейнера в облаке с помощью службы "Задачи Реестра контейнеров Azure"
 
@@ -50,7 +50,7 @@ ms.locfileid: "78398513"
 
 После создания вилки репозитория клонируйте свою вилку и войдите в каталог, содержащий локальный клон.
 
-Клонируйте репозиторий с помощью `git`, замените **\<your-github-username\>** своим именем пользователя GitHub:
+Клонируйте репозиторий с помощью `git`, заменив **\<your-github-username\>** своим именем пользователя GitHub:
 
 ```console
 git clone https://github.com/<your-github-username>/acr-build-helloworld-node
@@ -176,7 +176,7 @@ Run ID: da1 was successful after 1m9.970148252s
 
 #### <a name="create-a-key-vault"></a>Создайте хранилище ключей.
 
-Если у вас еще нет хранилища в [Azure Key Vault](/azure/key-vault/), создайте его с помощью Azure CLI, используя следующие команды.
+Если у вас еще нет хранилища в [Azure Key Vault](../key-vault/index.yml), создайте его с помощью Azure CLI, используя следующие команды.
 
 ```azurecli-interactive
 AKV_NAME=$ACR_NAME-vault

@@ -5,15 +5,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: tutorial
-ms.date: 06/29/2020
+ms.date: 07/09/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my local site to my VNets using Virtual WAN and I don't want to go through a Virtual WAN partner.
-ms.openlocfilehash: 13949bef7b26058c577a3ab85b4fb2e736bba8f5
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: 219551f2bba229fb627092548fe5c5f5ff8798b9
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85563047"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86220622"
 ---
 # <a name="tutorial-create-a-site-to-site-connection-using-azure-virtual-wan"></a>Руководство по Создание подключения "сеть — сеть" с помощью Виртуальной глобальной сети Azure
 
@@ -87,17 +87,7 @@ ms.locfileid: "85563047"
 
 ## <a name="connect-the-vnet-to-the-hub"></a><a name="vnet"></a>Подключение виртуальной сети к концентратору
 
-На этом шаге вы создаете подключение между концентратором и виртуальной сетью. Повторите эти шаги для каждой виртуальной сети, которую вы хотите подключить.
-
-1. На странице своей глобальной сети щелкните **Подключения к виртуальной сети**.
-2. На странице подключения к виртуальной сети щелкните **+Добавить подключение**.
-3. На странице **Добавление подключения** заполните следующие поля.
-
-    * **Имя подключения**. Укажите имя своего подключения.
-    * **Концентраторы**. Выберите концентратор, который нужно связать с этим подключением.
-    * **Подписка**. Проверьте подписку.
-    * **Виртуальная сеть**. Выберите виртуальную сеть, которую вы хотите подключить к этому концентратору. В виртуальной сети не должно быть шлюза виртуальной сети.
-4. Нажмите кнопку **ОК**, чтобы создать подключение виртуальной сети.
+[!INCLUDE [Connect](../../includes/virtual-wan-connect-vnet-hub-include.md)]
 
 ## <a name="download-vpn-configuration"></a><a name="device"></a>Скачивание конфигурации VPN
 
@@ -262,7 +252,7 @@ ms.locfileid: "85563047"
 * Общедоступный IP-адрес VPN-шлюза (назначен Azure).
 * Частный IP-адрес VPN-шлюза (назначен Azure).
 * IP-адрес BGP по умолчанию для VPN-шлюза (назначен Azure).
-* Параметр конфигурации для настраиваемого IP-адреса BGP — это поле зарезервировано для APIPA (автоматическое назначение частных IP-адресов). Azure поддерживает IP-адреса BGP в диапазонах 169.254.21.*и 169.254.22.*.
+* Параметр конфигурации для настраиваемого IP-адреса BGP — это поле зарезервировано для APIPA (автоматическое назначение частных IP-адресов). Azure поддерживает IP-адреса BGP в диапазонах 169.254.21.* и 169.254.22.*. Azure принимает подключения по протоколу BGP в этих диапазонах, но инициирует соединение по IP-адресу BGP по умолчанию.
 
    :::image type="content" source="media/virtual-wan-site-to-site-portal/view-configuration-2.png" alt-text="Просмотр конфигурации" lightbox="media/virtual-wan-site-to-site-portal/view-configuration-2-expand.png":::
 

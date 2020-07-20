@@ -7,18 +7,22 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: mblythe
 ms.date: 05/14/2020
-ms.openlocfilehash: 28671484460407efac8798505f630c13ec0b4918
-ms.sourcegitcommit: 58ff2addf1ffa32d529ee9661bbef8fbae3cddec
+ms.openlocfilehash: 5bdcbe620e88700c5607162cd2471f6b2c3e7532
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84325088"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86132837"
 ---
 # <a name="quickstart-use-an-arm-template-to-create-an-azure-database-for-postgresql---single-server"></a>Краткое руководство. Создание Базы данных Azure для PostgreSQL с помощью шаблона ARM (отдельный сервер)
 
-База данных Azure для PostgreSQL — это управляемая служба, с помощью которой можно запускать и масштабировать базы данных PostgreSQL высокой доступности, а также управлять ими в облаке. В этом кратком руководстве показано, как с помощью шаблона ARM создать Базу данных Azure для PostgreSQL (отдельный сервер), используя портал Azure, PowerShell или Azure CLI.
+База данных Azure для PostgreSQL — это управляемая служба, с помощью которой можно запускать и масштабировать базы данных PostgreSQL высокой доступности, а также управлять ими в облаке. В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager (шаблона ARM) создать Базу данных Azure для PostgreSQL (отдельный сервер), используя портал Azure, PowerShell или Azure CLI.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
+
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-managed-postgresql-with-vnet%2fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -38,11 +42,9 @@ ms.locfileid: "84325088"
 
 ---
 
-## <a name="create-an-azure-database-for-postgresql-server"></a>Создание сервера Базы данных Azure для PostgreSQL
+## <a name="review-the-template"></a>Изучение шаблона
 
 Сервер Базы данных Azure для PostgreSQL создается с настроенным набором вычислительных ресурсов и ресурсов хранения. См. сведения в статье [Ценовые категории Базы данных Azure для PostgreSQL (отдельный сервер)](concepts-pricing-tiers.md) Он создается в [группе ресурсов Azure](../azure-resource-manager/management/overview.md).
-
-### <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-managed-postgresql-with-vnet/).
 
@@ -58,7 +60,7 @@ ms.locfileid: "84325088"
 
 Дополнительные примеры шаблонов Базы данных Azure для PostgreSQL см. в [списке шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Dbforpostgresql&pageNumber=1&sort=Popular).
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
@@ -210,4 +212,4 @@ read -p "Press [ENTER] to continue: "
 Пошаговые инструкции по созданию шаблона см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание и развертывание первого шаблона Azure Resource Manager](../azure-resource-manager/templates/template-tutorial-create-first-template.md)
+> [Руководство. Создание и развертывание первого шаблона ARM](../azure-resource-manager/templates/template-tutorial-create-first-template.md)

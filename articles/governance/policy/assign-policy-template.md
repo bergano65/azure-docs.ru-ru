@@ -4,29 +4,31 @@ description: В этом кратком руководстве показано,
 ms.date: 05/21/2020
 ms.topic: quickstart
 ms.custom: subject-armqs
-ms.openlocfilehash: c3a37e9086744fb45c8d1e4ebe3bd16da7a83770
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: f4cb4cb1fc56d06ab1e061b2d0e9a031e0e511dc
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85971153"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86242055"
 ---
-# <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources-by-using-an-azure-resource-manager-template"></a>Краткое руководство. Создание назначения политики для идентификации несоответствующих требованиям ресурсов с помощью шаблона Azure Resource Manager
+# <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources-by-using-an-arm-template"></a>Краткое руководство. Создание назначения политики для идентификации несоответствующих требованиям ресурсов с помощью шаблона ARM
 
 Чтобы понять, соответствуют ли ресурсы требованиям в Azure, прежде всего нужно определить их состояние.
-В этом кратком руководстве описано, как создать назначение политики для определения виртуальных машин, которые не используют управляемые диски. Завершив работу, вы узнаете, какие виртуальные машины не используют управляемые диски, так как _не соответствуют_ назначению политики.
+В этом кратком руководстве описано, как с помощью шаблона Azure Resource Manager (шаблона ARM) создать назначение политики для определения виртуальных машин, которые не используют управляемые диски. Завершив работу, вы узнаете, какие виртуальные машины не используют управляемые диски, так как _не соответствуют_ назначению политики.
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
+
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+:::image type="content" source="../../media/template-deployments/deploy-to-azure.svg" alt-text="Развертывание шаблона ARM для назначения Политики Azure в Azure" border="false" link="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-azurepolicy-assign-builtinpolicy-resourcegroup%2Fazuredeploy.json":::
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="create-a-policy-assignment"></a>Создание назначения политики
+## <a name="review-the-template"></a>Изучение шаблона
 
 С помощью этого краткого руководства вы создадите назначение политики и назначите встроенное определение политики _Аудит виртуальных машин, которые не используют управляемые диски_. См. [полный список всех доступных встроенных политик Azure](./samples/index.md).
-
-### <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-azurepolicy-assign-builtinpolicy-resourcegroup/).
 
@@ -36,7 +38,7 @@ ms.locfileid: "85971153"
 
 - [Microsoft.Authorization/policyAssignments](/azure/templates/microsoft.authorization/policyassignments)
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 > [!NOTE]
 > Служба "Политика Azure" предоставляется бесплатно. Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](./overview.md).
@@ -61,9 +63,9 @@ ms.locfileid: "85971153"
 
 Ниже приведены некоторые дополнительные ресурсы.
 
-- Дополнительные примеры шаблонов см. в статье о [шаблонах быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Authorization&pageNumber=1&sort=Popular).
+- Дополнительные примеры шаблонов доступны [здесь](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Authorization&pageNumber=1&sort=Popular).
 - Справочник по шаблонам Azure можно просмотреть [здесь](/azure/templates/microsoft.authorization/allversions).
-- Чтобы узнать, как создавать шаблоны Resource Manager (шаблоны ARM), ознакомьтесь с [документацией по Resource Manager](../../azure-resource-manager/management/overview.md).
+- Чтобы узнать, как создавать шаблоны ARM, ознакомьтесь с [документацией по Azure Resource Manager](../../azure-resource-manager/management/overview.md).
 - Чтобы узнать о развертывании на уровне подписки, ознакомьтесь со статьей [Создание групп ресурсов и ресурсов на уровне подписки](../../azure-resource-manager/templates/deploy-to-subscription.md).
 
 ## <a name="validate-the-deployment"></a>Проверка развертывания

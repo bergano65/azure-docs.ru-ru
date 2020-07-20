@@ -11,12 +11,12 @@ ms.date: 05/19/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 835eb66444dd9f4c4da7689196c759621cfef999
-ms.sourcegitcommit: f98ab5af0fa17a9bba575286c588af36ff075615
+ms.openlocfilehash: fd9eff90f144909b9746e85a9c42aae2fdf02ed6
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85360764"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146812"
 ---
 # <a name="pilot-cloud-provisioning-for-an-existing-synced-ad-forest"></a>Пилотная подготовка облака для существующего синхронизированного леса AD 
 
@@ -164,19 +164,19 @@ ms.locfileid: "85360764"
  1. Войдите на портал Azure.
  2. В меню **Azure Active Directory**
  3. Щелкните **Azure AD Connect**.
- 4. Выберите **Управление подготовкой (предварительная версия)** 
- ![](media/how-to-configure/manage1.png).</br>
- 5.  Щелкните **Новая конфигурация**
- ![](media/tutorial-single-forest/configure1.png).</br>
+ 4. Щелкните ссылку **Управление подготовкой (предварительная версия)** 
+ ![Снимок экрана со ссылкой "Управление подготовкой (предварительная версия)".](media/how-to-configure/manage1.png)</br>
+ 5.  Выберите элемент **Новая конфигурация**
+ ![Снимок экрана "Подготовка Azure AD (предварительная версия)" с выделенной ссылкой "Новая конфигурация".](media/tutorial-single-forest/configure1.png)</br>
  6.  На экране конфигурации перейдите к разделу **Сообщение электронной почты с уведомлением**, переместите селектор в положение **Включить** и щелкните **Сохранить**.
- ![](media/tutorial-single-forest/configure2.png)</br>
+ ![Снимок экрана "Настройка" с указанным адресом электронной почты для уведомлений и переключателем, установленным в положение "Включить".](media/tutorial-single-forest/configure2.png)</br>
  7. В разделе **Настройка** выберите **Все пользователи**, чтобы изменить область действия правила конфигурации.
- ![](media/how-to-configure/scope2.png)</br>
+ ![Снимок экрана настройки: рядом с параметром "Пользователи в области" выделен элемент "Все пользователи"](media/how-to-configure/scope2.png)</br>
  8. Справа измените область, включив в нее только что созданное подразделение: "OU=CPUsers,DC=contoso,DC=com".
- ![](media/tutorial-existing-forest/scope2.png)</br>
+ ![Снимок экрана: раздел "Пользователи в области", в котором показано, что область изменена на только что созданное подразделение](media/tutorial-existing-forest/scope2.png)</br>
  9.  Щелкните **Готово** и **Сохранить**.
  10. Теперь область будет включать одно подразделение. 
- ![](media/tutorial-existing-forest/scope3.png)</br>
+ ![Снимок экрана настройки: рядом с параметром "Пользователи в области" выделен элемент "1 подразделение"](media/tutorial-existing-forest/scope3.png)</br>
  
 
 ## <a name="verify-users-are-provisioned-by-cloud-provisioning"></a>Проверка подготовки пользователей с помощью подготовки облака

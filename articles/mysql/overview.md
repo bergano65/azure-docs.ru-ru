@@ -7,12 +7,12 @@ ms.author: andrela
 ms.custom: mvc
 ms.topic: overview
 ms.date: 3/18/2020
-ms.openlocfilehash: 8f49811ad0d40c70933d32227cfb17a5144b857a
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: c5758fa367ac17ceb687212b4073fd2c1a5c18f6
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80067823"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206417"
 ---
 # <a name="what-is-azure-database-for-mysql"></a>Что такое база данных Azure для MySQL?
 
@@ -32,14 +32,14 @@ ms.locfileid: "80067823"
 В этой статье рассматриваются основные понятия и функции базы данных Azure для MySQL, относящиеся к производительности, масштабируемости и управляемости. Также приведены ссылки для более подробного изучения. См. эти краткие руководства по быстрому запуску:
 
 - [Create an Azure Database for MySQL server using Azure portal](quickstart-create-mysql-server-database-using-azure-portal.md) (Создание базы данных Azure для сервера MySQL с помощью портала Azure)
-- [Create an Azure Database for MySQL server using Azure CLI](quickstart-create-mysql-server-database-using-azure-cli.md) (Создание сервера базы данных Azure для MySQL с помощью Azure CLI)
+- [Краткое руководство. Создание сервера базы данных Azure для MySQL с помощью Azure CLI](quickstart-create-mysql-server-database-using-azure-cli.md)
 
 Примеры использования Azure CLI:
 
 - [Примеры Azure CLI для базы данных Azure для MySQL](sample-scripts-azure-cli.md)
 
 ## <a name="adjust-performance-and-scale-within-seconds"></a>Быстрая настройка производительности и масштабирования
-База данных Azure для MySQL имеет три уровня служб: "Базовый", "Общего назначения" и "С оптимизацией для операций в памяти". Каждый уровень предусматривает разную производительность и возможности для поддержки различных рабочих нагрузок баз данных. Вы можете создать свое первое приложение в небольшой базе данных за несколько долларов в месяц, а затем изменить масштаб в соответствии с потребностями решения. Благодаря динамической масштабируемости база данных может прозрачно реагировать на быстро меняющиеся требования к ресурсам. Вы платите только за необходимые ресурсы и только тогда, когда они вам нужны. Дополнительные сведения см. на странице  [ценовых категорий](concepts-service-tiers.md).
+Служба базы данных Azure для MySQL предлагает несколько уровней служб: "Базовый", "Общего назначения" и "Оптимизированная для операций в памяти". Каждый уровень предусматривает разную производительность и возможности для поддержки различных рабочих нагрузок баз данных. Вы можете создать свое первое приложение в небольшой базе данных за несколько долларов в месяц, а затем изменить масштаб в соответствии с потребностями решения. Благодаря динамической масштабируемости база данных может прозрачно реагировать на быстро меняющиеся требования к ресурсам. Вы платите только за необходимые ресурсы и только тогда, когда они вам нужны. Дополнительные сведения см. на странице  [ценовых категорий](concepts-service-tiers.md).
 
 ## <a name="monitoring-and-alerting"></a>Мониторинг и оповещения
 Как вы определяете, когда увеличить или уменьшить масштаб базы данных? Вы можете использовать встроенные функции мониторинга производительности и оповещения в сочетании с рейтингами производительности на основе виртуальных ядер. Используя эти средства, вы сможете быстро оценить эффект от увеличения и уменьшения масштаба виртуальных ядер, исходя из текущей или планируемой загрузки. См. дополнительные сведения об [оповещениях](howto-alert-on-metric.md).
@@ -64,4 +64,11 @@ ms.locfileid: "80067823"
 
 - Ознакомьтесь со страницей цен для сравнения цен и доступа к калькуляторам. [Цены](https://azure.microsoft.com/pricing/details/mysql/)
 - Приступите к работе, создав первый сервер. [Create an Azure Database for MySQL server using Azure portal](quickstart-create-mysql-server-database-using-azure-portal.md) (Создание базы данных Azure для сервера MySQL с помощью портала Azure)
-- Создайте свое первое приложение на привычном языке: [Python](./connect-python.md) | [Node.JS](./connect-nodejs.md) | [Java](./connect-java.md) | [Ruby](./connect-ruby.md) | [PHP](./connect-php.md) | [.NET (C#)](./connect-csharp.md) | [Go](./connect-go.md).
+- Создание первого приложения на предпочитаемом языке:
+  - [Python](./connect-python.md)
+  - [Node.JS](./connect-nodejs.md)
+  - [Java](./connect-java.md)
+  - [Ruby](./connect-ruby.md)
+  - [PHP](./connect-php.md)
+  - [.NET (C#)](./connect-csharp.md)
+  - [GO](./connect-go.md)

@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 786f277c1a46213b43f81b5cfa563303b3d7ddf9
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: a03c031f8874471794f2533285ce65b395d43c2d
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85921307"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86242004"
 ---
 # <a name="how-to-use-openrowset-with-sql-on-demand-preview"></a>Как использовать OPENROWSET в службе SQL по запросу (предварительная версия)
 
@@ -115,11 +115,11 @@ WITH ( {'column_name' 'column_type' [ 'column_ordinal'] })
 
 | Внешний источник данных       | Prefix | Путь к учетной записи хранения                                 |
 | -------------------------- | ------ | ---------------------------------------------------- |
-| хранилище BLOB-объектов Azure         | HTTPS  | \<storage_account>.blob.core.windows.net/path/file   |
-| хранилище BLOB-объектов Azure         | wasb   | \<container>@\<storage_account>.blob.core.windows.net/path/file |
-| Azure Data Lake Store 1-го поколения | HTTPS  | \<storage_account>.azuredatalakestore.net/webhdfs/v1 |
-| Azure Data Lake Store 2-го поколения | HTTPS  | \<storage_account>.dfs.core.windows.net /path/file   |
-| Azure Data Lake Store 2-го поколения | abfss  | [\<file_system>@\<account_name>.dfs.core.windows.net/path/file](../../storage/blobs/data-lake-storage-introduction-abfs-uri.md#uri-syntax)              |
+| хранилище BLOB-объектов Azure         | http(s)  | \<storage_account>.blob.core.windows.net/path/file   |
+| хранилище BLOB-объектов Azure         | wasb(s)  | \<container>@\<storage_account>.blob.core.windows.net/path/file |
+| Azure Data Lake Store 1-го поколения | http(s)  | \<storage_account>.azuredatalakestore.net/webhdfs/v1 |
+| Azure Data Lake Store 2-го поколения | http(s)  | \<storage_account>.dfs.core.windows.net /path/file   |
+| Azure Data Lake Store 2-го поколения | abfs(s)  | [\<file_system>@\<account_name>.dfs.core.windows.net/path/file](../../storage/blobs/data-lake-storage-introduction-abfs-uri.md#uri-syntax)              |
 ||||
 
 '\<storage_path>'
