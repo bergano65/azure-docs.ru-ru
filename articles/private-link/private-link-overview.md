@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 06/18/2020
 ms.author: allensu
 ms.custom: fasttrack-edit
-ms.openlocfilehash: c1246c2d3a58ad29503c0767b5c4af303d1f0c54
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 3814711f090a7d996271f8fa5bef9ff1394d135a
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85957492"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86276589"
 ---
 # <a name="what-is-azure-private-link"></a>Что собой представляет Приватный канал Azure? 
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure и Базе данных SQL), а также размещенным в Azure службам, которые принадлежат клиенту или партнеру, через [частную конечную точку](private-endpoint-overview.md) виртуальной сети.
@@ -48,7 +48,7 @@ ms.locfileid: "85957492"
 |  База данных SQL Azure         | Все общедоступные регионы      |  Поддерживается для [политики подключения](https://docs.microsoft.com/azure/azure-sql/database/connectivity-architecture#connection-policyhttps://docs.microsoft.com/azure/azure-sql/database/connectivity-architecture#connection-policy) прокси-сервера | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/sql-database/sql-database-private-endpoint-overview)      |
 |Azure Synapse Analytics (Хранилище данных SQL)| Все общедоступные регионы |  Поддерживается для [политики подключения](https://docs.microsoft.com/azure/azure-sql/database/connectivity-architecture#connection-policyhttps://docs.microsoft.com/azure/azure-sql/database/connectivity-architecture#connection-policy) прокси-сервера |GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/sql-database/sql-database-private-endpoint-overview)|
 |Azure Cosmos DB|  Все общедоступные регионы | |GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/cosmos-db/how-to-configure-private-endpoints)|
-|  База данных Azure для PostgreSQL — отдельный сервер         | Все общедоступные регионы      |  | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/postgresql/concepts-data-access-and-security-private-link)      |
+|  База данных Azure для PostgreSQL — отдельный сервер         | Все общедоступные регионы      | Поддерживается для ценовых уровней общего назначения и c оптимизацией для операций в памяти | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/postgresql/concepts-data-access-and-security-private-link)      |
 |  База данных Azure для MySQL         | Все общедоступные регионы      |  | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/mysql/concepts-data-access-security-private-link)     |
 |  База данных Azure для MariaDB         | Все общедоступные регионы      |  | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-private-link)      |
 |  Azure Key Vault         | Все общедоступные регионы      |  | GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/key-vault/private-link-service)   |
@@ -61,7 +61,7 @@ ms.locfileid: "85957492"
 |Служебная шина Azure | Все общедоступные регионы  | Поддерживается на уровне "Премиум" Служебной шины Azure. [Щелкните, чтобы просмотреть уровни](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-premium-messaging) | GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/service-bus-messaging/private-link-service)    |
 |Ретранслятор Azure | Все общедоступные регионы      |  | Preview (Предварительный просмотр) <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/service-bus-relay/private-link-service)  |
 |Сетка событий Azure| Все общедоступные регионы       |  | GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/event-grid/network-security) |
-|Веб-приложения Azure | Все общедоступные регионы      |  | Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/app-service/networking/private-endpoint)   |
+|Веб-приложения Azure | Все общедоступные регионы      | Поддерживается для приложений-функций эластичной базы данных (цен. категория "Премиум") Windows и Linux PremiumV2.  | Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/app-service/networking/private-endpoint)   |
 |Машинное обучение Azure | Восточная часть США, западная часть США 2, центрально-южная часть США      |  | Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/machine-learning/how-to-configure-private-link)   |
 | Служба автоматизации Azure  | Все общедоступные регионы |  | Preview (Предварительный просмотр) | |
 | Центр Интернета вещей Azure | Все общедоступные регионы    |  | GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/iot-hub/virtual-network-support ) |
