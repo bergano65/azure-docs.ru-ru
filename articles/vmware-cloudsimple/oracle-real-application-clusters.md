@@ -8,11 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: f657e18d7185d6b3c63ac8f1424da9d36d4189e9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2cc2f954f4255c00b7c3549ab5d33d71b240fb70
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82793046"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86507679"
 ---
 # <a name="optimize-your-cloudsimple-private-cloud-for-installing-oracle-rac"></a>Оптимизируйте частное облако Клаудсимпле для установки Oracle RAC
 
@@ -43,9 +44,9 @@ ms.locfileid: "82793046"
 
 В следующем примере используются диски, определенные в таблице ниже.
 
-| Диск                                      | Цель                                       | Общий диск |
+| Диск                                      | Назначение                                       | Общий диск |
 |-------------------------------------------|-----------------------------------------------|-------------|
-| Операционная система                                        | Диск операционной системы                         | Нет          |
+| OS                                        | Диск операционной системы                         | Нет          |
 | СЕТКИ                                      | Расположение установки для программного обеспечения сетки Oracle     | Нет          |
 | DATABASE                                  | Расположение установки по для базы данных Oracle | Нет          |
 | орахоме                                   | Базовое расположение для двоичных файлов базы данных Oracle    | Нет          |
@@ -168,7 +169,7 @@ SQL > alter database add logfile thread 2 ('+ORCLRAC_REDO1','+ORCLRAC_REDO2') si
 
 политики vSAN определяют сбои, которые следует пропускать, и чередование дисков для данных, хранящихся на дисках виртуальной машины.  Созданная политика хранилища должна быть применена к дискам виртуальной машины при создании виртуальной машины.
 
-1. [Войдите в клиент vSphere](https://docs.microsoft.com/azure/vmware-cloudsimple/vcenter-access) частного облака.
+1. [Войдите в клиент vSphere](./vcenter-access.md) частного облака.
 2. В верхнем меню выберите **политики и профили**.
 3. В меню слева выберите пункт **политики хранилища виртуальной машины** , а затем выберите **создать политику хранилища виртуальной машины**.
 4. Введите понятное имя для политики и нажмите кнопку **Далее**.
@@ -258,7 +259,7 @@ Oracle использует общий диск для хранения файл
 13. Выберите созданную группу узлов.
 14. Нажмите кнопку **ОК** , чтобы создать правило.
 
-## <a name="references"></a>Ссылки
+## <a name="references"></a>Ссылки (на английском языке)
 
 * [О политиках vSAN](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.virtualsan.doc/GUID-08911FD3-2462-4C1C-AE81-0D4DBC8F7990.html)
 * [Атрибут с несколькими модулями записи VMware для общих VMDK-устройств](https://docs.vmware.com/en/VMware-Cloud-on-AWS/solutions/VMware-Cloud-on-AWS.df6735f8b729fee463802083d46fdc75/GUID-A7642A82B3D6C5F7806DB40A3F2766D9.html)

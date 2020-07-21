@@ -6,15 +6,15 @@ ms.service: azure-arc
 ms.subservice: azure-arc-servers
 author: mgoedtel
 ms.author: magoedte
-ms.date: 05/18/2020
+ms.date: 07/14/2020
 ms.topic: conceptual
 ms.custom: references_regions
-ms.openlocfilehash: 077dc0e8048da39253729d56f1e812cccc69500c
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: cf09dd1521994f01e5f43b981d4bff540f3b1f40
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86242922"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506457"
 ---
 # <a name="connect-hybrid-machines-to-azure-from-the-azure-portal"></a>Подключение гибридных компьютеров к Azure на портале Azure
 
@@ -151,6 +151,9 @@ bash ~/Install_linux_azcmagent.sh --proxy "{proxy-url}:{proxy-port}"
 После установки агента настройте в нем связь со службой Azure Arc, выполнив следующую команду:
 
 `azcmagent connect --resource-group "resourceGroupName" --tenant-id "tenantID" --location "regionName" --subscription-id "subscriptionID"`
+
+>[!NOTE]
+>Для запуска **азкмажент**требуются права доступа *root* на компьютерах Linux.
 
 ## <a name="verify-the-connection-with-azure-arc"></a>Проверка подключения с помощью Azure Arc
 

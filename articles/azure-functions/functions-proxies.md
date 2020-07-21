@@ -5,12 +5,12 @@ author: alexkarcher-msft
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: alkarche
-ms.openlocfilehash: 5e756258bb92d7def195959d909068e87e765c0f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d66c690c3a0ba638a92150c9aa1dbb0dc2a41268
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82562072"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506168"
 ---
 # <a name="work-with-azure-functions-proxies"></a>Работа с функцией "Прокси-серверы Функций Azure"
 
@@ -89,7 +89,7 @@ ms.locfileid: "82562072"
 
 ### <a name="reference-application-settings"></a><a name="use-appsettings"></a>Ссылки на параметры приложения
 
-Вы также можете ссылаться на [Параметры приложения, определенные для приложения-функции](https://docs.microsoft.com/azure/azure-functions/functions-how-to-use-azure-function-app-settings) , заключив имя параметра в знаки процента (%).
+Вы также можете ссылаться на [Параметры приложения, определенные для приложения-функции](./functions-how-to-use-azure-function-app-settings.md) , заключив имя параметра в знаки процента (%).
 
 Например, URL-адрес серверной части *https://%ORDER_PROCESSING_HOST%/api/orders* будет иметь значение "% ORDER_PROCESSING_HOST%", заменяя значением параметра ORDER_PROCESSING_HOST.
 
@@ -110,7 +110,7 @@ ms.locfileid: "82562072"
 
 ## <a name="advanced-configuration"></a>Расширенная конфигурация
 
-Настроенные прокси-серверы хранятся в файле *proxies.json*, расположенном в корневом каталоге приложения-функции. Вы можете вручную изменить этот файл и развернуть его как часть приложения, используя любой из [методов развертывания](https://docs.microsoft.com/azure/azure-functions/functions-continuous-deployment), поддерживаемых Функциями. 
+Настроенные прокси-серверы хранятся в файле *proxies.json*, расположенном в корневом каталоге приложения-функции. Вы можете вручную изменить этот файл и развернуть его как часть приложения, используя любой из [методов развертывания](./functions-continuous-deployment.md), поддерживаемых Функциями. 
 
 > [!TIP] 
 > Если вы не настроили ни один из методов развертывания, вы можете сделать это в файле *proxies.json*. Перейдите к приложению-функции и выберите **Функции платформы**, а затем — **Редактор службы приложений**. Так вы сможете просмотреть всю структуру файла приложения-функции и внести изменения.
@@ -244,7 +244,7 @@ ms.locfileid: "82562072"
 > В этом примере текст ответа задается напрямую, поэтому задавать свойство `backendUri` не требуется. В примере показано, как можно использовать прокси-серверы Функций Azure для имитации API.
 
 [Портал Azure]: https://portal.azure.com
-[Триггеры HTTP]: https://docs.microsoft.com/azure/azure-functions/functions-bindings-http-webhook
+[Триггеры HTTP]: ./functions-bindings-http-webhook.md
 [Modify the back-end request]: #modify-backend-request
 [Modify the response]: #modify-response
 [Определение объекта requestOverrides]: #requestOverrides

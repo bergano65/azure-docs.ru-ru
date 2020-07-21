@@ -3,12 +3,12 @@ title: Управление подключениями в функциях Azure
 description: Узнайте, как избежать проблем с производительностью в службе "Функции Azure" с помощью статического подключения клиентов.
 ms.topic: conceptual
 ms.date: 02/25/2018
-ms.openlocfilehash: 872ad9a1b8f0a7da6fe410e68f08469ac11045a5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5ab59d82ad4b11e4ac5179ef727392a83bb263e3
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85846769"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505998"
 ---
 # <a name="manage-connections-in-azure-functions"></a>Управление подключениями в функциях Azure
 
@@ -24,8 +24,7 @@ ms.locfileid: "85846769"
 
 ## <a name="static-clients"></a>Статические клиенты
 
-Чтобы избежать большего количества подключений, чем необходимо, повторно используйте экземпляры клиента, а не создавайте новые с каждым вызовом функции. Рекомендуется повторно использовать клиентские подключения для любого языка, в котором можно написать функцию. Например, клиенты .NET, такие как [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx), [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient
-)и клиенты службы хранилища Azure, могут управлять подключениями, если используется один статический клиент.
+Чтобы избежать большего количества подключений, чем необходимо, повторно используйте экземпляры клиента, а не создавайте новые с каждым вызовом функции. Рекомендуется повторно использовать клиентские подключения для любого языка, в котором можно написать функцию. Например, клиенты .NET, такие как [HttpClient](/dotnet/api/system.net.http.httpclient?view=netcore-3.1), [DocumentClient](/dotnet/api/microsoft.azure.documents.client.documentclient)и клиенты службы хранилища Azure, могут управлять подключениями, если используется один статический клиент.
 
 Ниже приведены некоторые рекомендации, которые необходимо выполнить при использовании клиента, зависящего от службы, в приложении "функции Azure".
 
@@ -39,7 +38,7 @@ ms.locfileid: "85846769"
 
 ### <a name="httpclient-example-c"></a>Пример HttpClient (C#)
 
-Ниже приведен пример кода функции C#, который создает статический экземпляр [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) :
+Ниже приведен пример кода функции C#, который создает статический экземпляр [HttpClient](/dotnet/api/system.net.http.httpclient?view=netcore-3.1) :
 
 ```cs
 // Create a single, static HttpClient
@@ -52,7 +51,7 @@ public static async Task Run(string input)
 }
 ```
 
-Распространенный вопрос о [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) в .NET: «следует ли мне избавиться от моего клиента?» Как правило, удаляются объекты, которые реализуют, `IDisposable` когда вы закончите их использовать. Но вы не удаляете статический клиент, так как вы не закончите использовать его при завершении функции. Необходимо, чтобы статический клиент существовал в течение срока жизни приложения.
+Распространенный вопрос о [HttpClient](/dotnet/api/system.net.http.httpclient?view=netcore-3.1) в .NET: «следует ли мне избавиться от моего клиента?» Как правило, удаляются объекты, которые реализуют, `IDisposable` когда вы закончите их использовать. Но вы не удаляете статический клиент, так как вы не закончите использовать его при завершении функции. Необходимо, чтобы статический клиент существовал в течение срока жизни приложения.
 
 ### <a name="http-agent-examples-javascript"></a>Примеры агента HTTP (JavaScript)
 
@@ -76,8 +75,7 @@ http.request(options, onResponseCallback);
 
 ### <a name="documentclient-code-example-c"></a>Пример кода DocumentClient (C#)
 
-[DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient
-) подключается к экземпляру Azure Cosmos DB. В документации Azure Cosmos DB рекомендуется [использовать отдельный клиент Azure Cosmos DB в течении всего жизненного цикла приложения](https://docs.microsoft.com/azure/cosmos-db/performance-tips#sdk-usage). В следующем примере показан один шаблон в функции, чтобы это делать.
+[DocumentClient](/dotnet/api/microsoft.azure.documents.client.documentclient) подключается к экземпляру Azure Cosmos DB. В документации Azure Cosmos DB рекомендуется [использовать отдельный клиент Azure Cosmos DB в течении всего жизненного цикла приложения](../cosmos-db/performance-tips.md#sdk-usage). В следующем примере показан один шаблон в функции, чтобы это делать.
 
 ```cs
 #r "Microsoft.Azure.Documents.Client"
@@ -126,14 +124,13 @@ module.exports = async function (context) {
 
 ## <a name="sqlclient-connections"></a>Подключения SqlClient
 
-Код функции может использовать поставщик данных .NET Framework для SQL Server ([SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient(v=vs.110).aspx)) для создания соединений с реляционной базой данных SQL. Это также базовый поставщик для платформ данных, которые используют ADO.NET, например [Entity Framework](https://msdn.microsoft.com/library/aa937723(v=vs.113).aspx). В отличие от соединений [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) и [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient
-) ADO.NET осуществляет объединение подключений в пул по умолчанию. Но поскольку вы по-прежнему можете работать с нехваткой подключений, следует оптимизировать соединения с базой данных. Дополнительные сведения см. в разделе [Пулы подключений SQL Server (ADO.NET)](https://docs.microsoft.com/dotnet/framework/data/adonet/sql-server-connection-pooling).
+Код функции может использовать поставщик данных .NET Framework для SQL Server ([SqlClient](/dotnet/api/system.data.sqlclient?view=dotnet-plat-ext-3.1)) для создания соединений с реляционной базой данных SQL. Это также базовый поставщик для платформ данных, которые используют ADO.NET, например [Entity Framework](/ef/ef6/). В отличие от соединений [HttpClient](/dotnet/api/system.net.http.httpclient?view=netcore-3.1) и [DocumentClient](/dotnet/api/microsoft.azure.documents.client.documentclient) ADO.NET осуществляет объединение подключений в пул по умолчанию. Но поскольку вы по-прежнему можете работать с нехваткой подключений, следует оптимизировать соединения с базой данных. Дополнительные сведения см. в разделе [Пулы подключений SQL Server (ADO.NET)](/dotnet/framework/data/adonet/sql-server-connection-pooling).
 
 > [!TIP]
-> Некоторые платформы данных, такие как Entity Framework, обычно получают строки подключения из раздела **ConnectionString** файла конфигурации. В этом случае необходимо добавить строки подключений базы данных SQL непосредственно в список функциональных настроек приложения **Строки подключения** и в [файл local.settings.json](functions-run-local.md#local-settings-file) в локальном проекте. Если вы создаете экземпляр [SqlConnection](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(v=vs.110).aspx) в коде функции, вы должны сохранить значение строки подключения в **параметрах приложения** с другими соединениями.
+> Некоторые платформы данных, такие как Entity Framework, обычно получают строки подключения из раздела **ConnectionString** файла конфигурации. В этом случае необходимо добавить строки подключений базы данных SQL непосредственно в список функциональных настроек приложения **Строки подключения** и в [файл local.settings.json](functions-run-local.md#local-settings-file) в локальном проекте. Если вы создаете экземпляр [SqlConnection](/dotnet/api/system.data.sqlclient.sqlconnection?view=dotnet-plat-ext-3.1) в коде функции, вы должны сохранить значение строки подключения в **параметрах приложения** с другими соединениями.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о том, почему мы рекомендуем использовать статические клиенты, см. в разделе [неправильное антишаблонное создание экземпляра](https://docs.microsoft.com/azure/architecture/antipatterns/improper-instantiation/).
+Дополнительные сведения о том, почему мы рекомендуем использовать статические клиенты, см. в разделе [неправильное антишаблонное создание экземпляра](/azure/architecture/antipatterns/improper-instantiation/).
 
 Дополнительные советы по повышению производительности службы "Функции Azure" см. в статье [Оптимизация производительности и надежности Функций Azure](functions-best-practices.md).

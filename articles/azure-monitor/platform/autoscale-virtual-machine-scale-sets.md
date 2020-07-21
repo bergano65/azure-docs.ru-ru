@@ -9,18 +9,18 @@ ms.subservice: autoscale
 ms.date: 06/25/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: c003d66f59f932d818740bdd378280049bbeb7d3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 37245711008442acd0379a35b393ac88c3775482
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85373885"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505542"
 ---
 # <a name="advanced-autoscale-configuration-using-resource-manager-templates-for-vm-scale-sets"></a>Расширенная настройка автомасштабирования с помощью шаблонов Resource Manager для набора масштабирования виртуальных машин
 Масштабируемые наборы виртуальных машин можно свертывать и развертывать на основе пороговых значений метрик производительности по расписанию или на определенную дату. Можно также настроить уведомления с помощью электронной почты и webhook для действий масштабирования. В этом пошаговом руководстве показан пример настройки всех этих объектов для масштабируемого набора виртуальных машин с помощью шаблона Resource Manager.
 
 > [!NOTE]
-> В этом пошаговом руководстве приведены инструкции для Масштабируемых наборов виртуальных машин. Эти же инструкции можно использовать и для автоматического масштабирования [облачных служб](https://azure.microsoft.com/services/cloud-services/), [Службы приложений (веб-приложений)](https://azure.microsoft.com/services/app-service/web/), и [службы управления API](https://docs.microsoft.com/azure/api-management/api-management-key-concepts). Простые параметры горизонтального увеличения или уменьшения масштаба для Масштабируемого набора виртуальных машин на основе простых метрик (например, показателя загрузки ЦП) см. в документации для [Linux](../../virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-cli.md) и [Windows](../../virtual-machine-scale-sets/tutorial-autoscale-powershell.md)
+> В этом пошаговом руководстве приведены инструкции для Масштабируемых наборов виртуальных машин. Эти же инструкции можно использовать и для автоматического масштабирования [облачных служб](https://azure.microsoft.com/services/cloud-services/), [Службы приложений (веб-приложений)](https://azure.microsoft.com/services/app-service/web/), и [службы управления API](../../api-management/api-management-key-concepts.md). Простые параметры горизонтального увеличения или уменьшения масштаба для Масштабируемого набора виртуальных машин на основе простых метрик (например, показателя загрузки ЦП) см. в документации для [Linux](../../virtual-machine-scale-sets/tutorial-autoscale-cli.md) и [Windows](../../virtual-machine-scale-sets/tutorial-autoscale-powershell.md)
 >
 >
 
@@ -195,7 +195,7 @@ ms.locfileid: "85373885"
             }
           }
     ```
-    Описание поддерживаемых полей и их значений см. в [документации по REST API автомасштабирования](https://msdn.microsoft.com/library/azure/dn931928.aspx). Теперь конфигурация автомасштабирования содержит три профиля, описанных выше.
+    Описание поддерживаемых полей и их значений см. в [документации по REST API автомасштабирования](/rest/api/monitor/autoscalesettings). Теперь конфигурация автомасштабирования содержит три профиля, описанных выше.
 
 7. Наконец, рассмотрим раздел **notification** конфигурации автомасштабирования. Уведомления об автомасштабировании позволяют выполнить три действия при активации масштабирования:
    - уведомить администратора и соадминистраторов подписки;
@@ -243,9 +243,9 @@ ms.locfileid: "85373885"
 
 [Рекомендации по автомасштабированию Azure Insights](autoscale-best-practices.md)
 
-[Создание параметров автомасштабирования и управление ими](../../azure-monitor/platform/powershell-quickstart-samples.md#create-and-manage-autoscale-settings)
+[Создание параметров автомасштабирования и управление ими](../samples/powershell-samples.md#create-and-manage-autoscale-settings)
 
-[Автомасштабирование](cli-samples.md#autoscale)
+[Автомасштабирование](../samples/cli-samples.md#autoscale)
 
 [Использование действий автомасштабирования для отправки электронной почты и уведомлений об оповещениях веб-перехватчика в Azure Insights](autoscale-webhook-email.md)
 

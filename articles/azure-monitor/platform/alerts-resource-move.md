@@ -7,20 +7,20 @@ ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.date: 06/26/2020
 ms.subservice: alerts
-ms.openlocfilehash: 8e917d279d8de3dbe6de540a4ea1ef8cec1b6ffc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4ea5c8552d35db67a1d2caf20c0143c74cdd642e
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85830066"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505488"
 ---
 # <a name="how-to-update-alert-rules-or-action-rules-when-their-target-resource-moves-to-a-different-azure-region"></a>Как обновить правила генерации оповещений или правила действий при перемещении их целевого ресурса в другой регион Azure
 
-В этой статье описывается, почему при перемещении других ресурсов Azure между регионами могут быть затронуты существующие [Правила оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview) и [правила действий](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-action-rules) , а также способы определения и устранения этих проблем. Дополнительные сведения о перемещении ресурсов между регионами и контрольном списке разработки процесса перемещения см. в [документации по перемещению основного ресурса](https://docs.microsoft.com/azure/azure-resource-manager/management/move-region) .
+В этой статье описывается, почему при перемещении других ресурсов Azure между регионами могут быть затронуты существующие [Правила оповещений](./alerts-overview.md) и [правила действий](./alerts-action-rules.md) , а также способы определения и устранения этих проблем. Дополнительные сведения о перемещении ресурсов между регионами и контрольном списке разработки процесса перемещения см. в [документации по перемещению основного ресурса](../../azure-resource-manager/management/move-region.md) .
 
 ## <a name="why-the-problem-exists"></a>Почему существует проблема
 
-Правила оповещений и правила действий ссылаются на другие ресурсы Azure. К примерам относятся [виртуальные машины Azure](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-migrate), [Azure SQL](https://docs.microsoft.com/azure/sql-database/sql-database-move-resources-across-regions)и служба [хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-account-move). При перемещении ресурсов, на которые ссылаются эти правила, правила, скорее всего, перестанут работать правильно, так как они не могут найти ресурсы, на которые они ссылаются.
+Правила оповещений и правила действий ссылаются на другие ресурсы Azure. К примерам относятся [виртуальные машины Azure](../../site-recovery/azure-to-azure-tutorial-migrate.md), [Azure SQL](../../azure-sql/database/move-resources-across-regions.md)и служба [хранилища Azure](../../storage/common/storage-account-move.md). При перемещении ресурсов, на которые ссылаются эти правила, правила, скорее всего, перестанут работать правильно, так как они не могут найти ресурсы, на которые они ссылаются.
 
 Существуют две основные причины, по которым правила могут перестать работать после перемещения целевых ресурсов.
 
@@ -78,7 +78,7 @@ ms.locfileid: "85830066"
 1. Откройте правило, определенное на предыдущем шаге, щелкнув его.
 2. В разделе **ресурс**щелкните **изменить** и при необходимости измените область.
 3. При необходимости настройте другие свойства правила.
-4. Нажмите кнопку **Сохранить**.
+4. Выберите команду **Сохранить**.
 
 ![Изменить область действия правила оповещения](media/alerts-resource-move/change-alert-rule-scope.png)
 
@@ -94,22 +94,22 @@ ms.locfileid: "85830066"
 
 ### <a name="change-scope-of-a-rule-using-rest-api"></a>Изменение области действия правила с помощью REST API
 
-1. Получить существующее правило ([оповещения метрик](https://docs.microsoft.com/rest/api/monitor/metricalerts/get), [оповещения журнала действий](https://docs.microsoft.com/rest/api/monitor/activitylogalerts/get))
-2. Изменение области ([оповещения журнала действий](https://docs.microsoft.com/rest/api/monitor/activitylogalerts/update))
-3. Повторное развертывание правила ([оповещения метрик](https://docs.microsoft.com/rest/api/monitor/metricalerts/createorupdate), [оповещения журнала действий](https://docs.microsoft.com/rest/api/monitor/activitylogalerts/createorupdate))
+1. Получить существующее правило ([оповещения метрик](/rest/api/monitor/metricalerts/get), [оповещения журнала действий](/rest/api/monitor/activitylogalerts/get))
+2. Изменение области ([оповещения журнала действий](/rest/api/monitor/activitylogalerts/update))
+3. Повторное развертывание правила ([оповещения метрик](/rest/api/monitor/metricalerts/createorupdate), [оповещения журнала действий](/rest/api/monitor/activitylogalerts/createorupdate))
 
 ### <a name="change-scope-of-a-rule-using-powershell"></a>Изменение области действия правила с помощью PowerShell
 
-1. Получите существующее правило ([оповещения метрик](https://docs.microsoft.com/powershell/module/az.monitor/get-azmetricalertrulev2), [оповещения журнала действий](https://docs.microsoft.com/powershell/module/az.monitor/get-azactivitylogalert), [правила действий](https://docs.microsoft.com/powershell/module/az.alertsmanagement/Get-AzActionRule)).
+1. Получите существующее правило ([оповещения метрик](/powershell/module/az.monitor/get-azmetricalertrulev2), [оповещения журнала действий](/powershell/module/az.monitor/get-azactivitylogalert), [правила действий](/powershell/module/az.alertsmanagement/get-azactionrule)).
 2. Измените область. При необходимости разделите их на два правила (относящиеся к некоторым случаям оповещений метрик, как указано выше).
-3. Повторное развертывание правила ([оповещения метрик](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrulev2), [оповещения журнала действий](https://docs.microsoft.com/powershell/module/az.monitor/enable-azactivitylogalert), [правила действий](https://docs.microsoft.com/powershell/module/az.alertsmanagement/set-azactionrule)).
+3. Повторное развертывание правила ([оповещения метрик](/powershell/module/az.monitor/add-azmetricalertrulev2), [оповещения журнала действий](/powershell/module/az.monitor/enable-azactivitylogalert), [правила действий](/powershell/module/az.alertsmanagement/set-azactionrule)).
 
 ### <a name="change-the-scope-of-a-rule-using-azure-cli"></a>Изменение области действия правила с помощью Azure CLI
 
-1.  Получение существующего правила ([оповещения метрик](https://docs.microsoft.com/cli/azure/monitor/metrics/alert?view=azure-cli-latest#az-monitor-metrics-alert-show), [оповещения журнала действий](https://docs.microsoft.com/cli/azure/monitor/activity-log/alert#az-monitor-activity-log-alert-list)).
-2.  Непосредственное обновление области действия правила ([оповещения метрик](https://docs.microsoft.com/cli/azure/monitor/metrics/alert#az-monitor-metrics-alert-update), [оповещения журнала действий](https://docs.microsoft.com/cli/azure/monitor/activity-log/alert/scope))
+1.  Получение существующего правила ([оповещения метрик](/cli/azure/monitor/metrics/alert?view=azure-cli-latest#az-monitor-metrics-alert-show), [оповещения журнала действий](/cli/azure/monitor/activity-log/alert#az-monitor-activity-log-alert-list)).
+2.  Непосредственное обновление области действия правила ([оповещения метрик](/cli/azure/monitor/metrics/alert#az-monitor-metrics-alert-update), [оповещения журнала действий](/cli/azure/monitor/activity-log/alert/scope))
 3.  При необходимости разделите их на два правила (относящиеся к некоторым случаям оповещений метрик, как указано выше).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как устранять другие проблемы с [уведомлениями об оповещениях](alerts-troubleshoot.md), [оповещениями метрик](alerts-troubleshoot-metric.md)и [оповещениями журналов](alerts-troubleshoot-log.md). 

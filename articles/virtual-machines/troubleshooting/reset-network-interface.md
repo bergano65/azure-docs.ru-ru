@@ -12,11 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 11/16/2018
 ms.author: genli
-ms.openlocfilehash: a8bd12d98b76d5848753987c4f7bcb76d4e2266d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b9a4cf8b9bbf88ae792f345d330503cb4698c430
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84706602"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86509243"
 ---
 # <a name="how-to-reset-network-interface-for-azure-windows-vm"></a>Как сбросить сетевой интерфейс для виртуальной машины Azure под управлением Windows 
 
@@ -46,7 +47,7 @@ ms.locfileid: "84706602"
 
 #### <a name="use-azure-powershell"></a>Использование Azure PowerShell
 
-1. Убедитесь, что у вас установлена [последняя версия Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
+1. Убедитесь, что у вас установлена [последняя версия Azure PowerShell](/powershell/azure/overview).
 2. Откройте расширенный сеанс Azure PowerShell (Запуск от имени администратора). Выполните следующие команды:
 
     ```powershell
@@ -83,13 +84,13 @@ ms.locfileid: "84706602"
 4.  Выберите **IP-адреса**.
 5.  Если для **назначения частного IP-адреса** не установлено значение **Статический**, установите **его**.
 6.  Изменение **IP-адреса** на другой, который доступен в подсети.
-7.  Нажмите кнопку **Сохранить**.
+7.  Щелкните **Сохранить**.
 8.  Виртуальная машина будет перезапущена, чтобы инициализировать новый NIC в системе.
 9.  Попробуйте подключиться к компьютеру по протоколу удаленного рабочего стола. В случае успешного подключения вы можете отменить изменение частного IP-адреса на исходный.  
 
 #### <a name="use-azure-powershell"></a>Использование Azure PowerShell
 
-1. Убедитесь, что у вас установлена [Последняя версия Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) .
+1. Убедитесь, что у вас установлена [Последняя версия Azure PowerShell](/powershell/azure/overview) .
 2. Откройте расширенный сеанс Azure PowerShell (Запуск от имени администратора). Выполните следующие команды:
 
     ```powershell

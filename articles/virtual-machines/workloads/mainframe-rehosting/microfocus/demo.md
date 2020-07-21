@@ -6,12 +6,12 @@ ms.author: sread
 ms.date: 03/30/2020
 ms.topic: article
 ms.service: multiple
-ms.openlocfilehash: db9d6bab2f383102434512aa63d7566cff1f579b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7fb72b9a7d0d655f99d1e5cf194f7c6f26976a37
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80411077"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86508055"
 ---
 # <a name="set-up-micro-focus-cics-bankdemo-for-micro-focus-enterprise-developer-40-on-azure"></a>Настройка Micro Focus CICS Банкдемо для Micro Focus Enterprise Developer 4,0 в Azure
 
@@ -146,7 +146,7 @@ CICs означает систему управления сведениями �
     > [!NOTE]
     > Сборка на уровне решения приводит к ошибкам, так как ХКОСС не настроен.
 
-6. При построении проекта изучите окно **вывода** . Все должно быть примерно как на изображении ниже.
+6. При построении проекта изучите окно **вывода** . Все должно выглядеть примерно так, как на изображении ниже.
 
      ![Окно вывода с успешной сборкой](media/05-demo-output.png)
 
@@ -273,7 +273,7 @@ CICs означает систему управления сведениями �
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Запуск Enterprise Server в контейнерах DOCKER в Azure](run-enterprise-server-container.md)
-- [Перенос мэйнфреймов — портал](https://blogs.msdn.microsoft.com/azurecat/2018/11/16/mainframe-migration-to-azure-portal/)
-- [Виртуальные машины](https://docs.microsoft.com/azure/virtual-machines/linux/overview)
-- [Устранение неполадок](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/)
+- [Перенос мэйнфреймов — портал](/archive/blogs/azurecat/mainframe-migration-to-azure-portal)
+- [Виртуальные машины](../../../linux/overview.md)
+- [Устранение неполадок](../../../troubleshooting/index.yml)
 - [Декрытие мэйнфрейма с миграцией Azure](https://azure.microsoft.com/resources/demystifying-mainframe-to-azure-migration/en-us/)

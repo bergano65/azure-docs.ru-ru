@@ -5,11 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: cshoe
-ms.openlocfilehash: fe5efd2bf4c235688aad90ae37b54268d290540c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 93a12d40e876293eb587ffba865a1d3b1f5f4983
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84676137"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506032"
 ---
 # <a name="azure-functions-reliable-event-processing"></a>Обработка надежных событий в функциях Azure
 
@@ -69,7 +70,7 @@ ms.locfileid: "84676137"
 > [!NOTE]
 > [Polly](https://github.com/App-vNext/Polly) — это пример библиотеки устойчивости и обработки временных ошибок для приложений C#.
 
-При работе с предварительно скомпилированными библиотеками классов C# [фильтры исключений](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/try-catch) позволяют запускать код всякий раз, когда возникает необработанное исключение.
+При работе с предварительно скомпилированными библиотеками классов C# [фильтры исключений](/dotnet/csharp/language-reference/keywords/try-catch) позволяют запускать код всякий раз, когда возникает необработанное исключение.
 
 Примеры, демонстрирующие использование фильтров исключений, доступны в репозитории [пакета SDK веб-заданий Azure](https://github.com/Azure/azure-webjobs-sdk/wiki) .
 
@@ -124,7 +125,7 @@ Azure Logic Apps поставляется с встроенными соедин
 - [Примеры обработки надежных событий](https://github.com/jeffhollan/functions-csharp-eventhub-ordered-processing)
 - [Автоматическое выключение цепи Azure](https://github.com/jeffhollan/functions-durable-actor-circuitbreaker)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих ресурсах:
 

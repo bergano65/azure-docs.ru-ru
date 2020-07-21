@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 03/25/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 9f0c6350b89dcfecefcadcc166f7af35abc4b128
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 16f6919577955bda5b04db26deb9fe78a467e364
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80300983"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86509041"
 ---
 # <a name="boot-error--this-is-not-a-bootable-disk"></a>Ошибка загрузки — это не загрузочный диск
 
@@ -27,13 +27,13 @@ ms.locfileid: "80300983"
 
 ## <a name="symptoms"></a>Симптомы
 
-При использовании [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана отображается сообщение "это не загрузочный диск. Вставьте загрузочный гибкий диск и нажмите любую клавишу, чтобы повторить попытку... ".
+При использовании [диагностики загрузки](./boot-diagnostics.md) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана отображается сообщение "это не загрузочный диск. Вставьте загрузочный гибкий диск и нажмите любую клавишу, чтобы повторить попытку... ".
 
    На рисунке 1
 
    ![На рис. 1 показано сообщение * "это не загрузочный диск. Вставьте загрузочный гибкий диск и нажмите любую клавишу, чтобы повторить попытку... "*](media/troubleshoot-guide-not-bootable-disk/1.jpg)
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Это сообщение об ошибке означает, что процессу загрузки ОС не удалось выполнить обнаружение активного системного раздела. Эта ошибка также может означать, что в хранилище данные конфигурации загрузки (BCD) отсутствует ссылка, и она не позволяет найти раздел Windows.
 
@@ -52,7 +52,7 @@ ms.locfileid: "80300983"
 
 ### <a name="create-and-access-a-repair-vm"></a>Создание виртуальной машины для восстановления и получение доступа к ней
 
-1. Выполните шаги 1–3 из списка [команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands), чтобы подготовить виртуальную машину для восстановления.
+1. Выполните шаги 1–3 из списка [команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md), чтобы подготовить виртуальную машину для восстановления.
 2. Используйте подключение к удаленному рабочему столу, чтобы подключиться к виртуальной машине для восстановления.
 
 ### <a name="set-partition-status-to-active"></a>Установить состояние секции "активный"
@@ -148,4 +148,4 @@ ms.locfileid: "80300983"
 
 ### <a name="rebuild-the-original-vm"></a>Перестроение исходной виртуальной машины
 
-Чтобы заново собрать виртуальную машину, выполните [шаг 5 из списка команд для восстановления ВМ](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands#repair-process-example).
+Чтобы заново собрать виртуальную машину, выполните [шаг 5 из списка команд для восстановления ВМ](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md#repair-process-example).

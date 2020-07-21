@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/11/2019
-ms.openlocfilehash: 6b81aba553fc775821c80631aa83bbb3e8ac63b5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1dda2df64dc116a950498aaf581ec39a86db72bb
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80631795"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505743"
 ---
 # <a name="azure-monitor-log-queries"></a>Запросы к журналу в Azure Monitor
 
@@ -27,7 +27,7 @@ ms.locfileid: "80631795"
 ## <a name="concepts"></a>Основные понятия
 
 - В статье об [анализе данных журналов в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md) кратко описаны запросы к журналам и структура данных в журналах Azure Monitor.
-- В статье о [просмотре и анализе данных журналов в Azure Monitor](../../azure-monitor/log-query/portals.md) описаны порталы, на которых создаются и выполняются запросы к журналам.
+- В статье о [просмотре и анализе данных журналов в Azure Monitor](./log-query-overview.md) описаны порталы, на которых создаются и выполняются запросы к журналам.
 
 ## <a name="reference"></a>Справочник
 

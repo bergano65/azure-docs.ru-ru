@@ -8,11 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 65167169248d83ebfec2c49c308673ec9315934e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ab772bd9cb415045ef70cb4cf9a518791befb192
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77019763"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86507675"
 ---
 # <a name="migrating-data-to-azure-vmware-solution-by-using-azure-data-box"></a>Перенос данных в решение VMware для Azure с помощью Azure Data Box
 
@@ -53,18 +54,18 @@ ms.locfileid: "77019763"
 
     ![Настройка клиентского доступа NFS 1](media/nfs-client-access.png)
 
-2. Введите IP-адрес узлов VMware ESXi и нажмите кнопку **Добавить**. Вы можете настроить доступ для всех узлов в кластере vSphere, повторив этот шаг. Нажмите кнопку **ОК**.
+2. Введите IP-адрес узлов VMware ESXi и нажмите кнопку **Добавить**. Вы можете настроить доступ для всех узлов в кластере vSphere, повторив этот шаг. Щелкните **ОК**.
 
     ![Настройка клиентского доступа NFS 2](media/nfs-client-access2.png)
 > [!IMPORTANT]
 > **Всегда создавайте отдельную папку для файлов, которые вы собираетесь скопировать в общую папку**. Папка, созданная в общих папках блочных и страничных BLOB-объектов, представляет собой контейнер, куда передаются данные в виде больших двоичных объектов. Вы не можете копировать файлы непосредственно в *корневую* папку в учетной записи хранения.
 
-В общих папках для блочных и страничных BLOB-объектов объектами первого уровня являются контейнеры, а второго — большие двоичные объекты. В разделе Общие папки для файлов Azure сущности первого уровня являются общими, а сущности второго уровня — файлами.
+В общих папках для блочных и страничных BLOB-объектов объектами первого уровня являются контейнеры, а второго — большие двоичные объекты. В разделе Общие папки для файлов Azure сущности первого уровня являются общими, а сущности второго уровня — файлами.
 
 В следующей таблице приведен UNC-путь к общим папкам в Data Box и URL-адрес службы хранилища Azure, куда отправляются данные. Конечный URL-адрес службы хранилища Azure может быть производным от UNC-пути к общей папке.
  
-|                   |                                                            |
-|-------------------|--------------------------------------------------------------------------------|
+| Большие двоичные объекты и файлы | Путь и URL-адрес |
+|---------------- | ------------ |
 | Блочные BLOB-объекты Azure | <li>UNC-путь к общим папкам: `//<DeviceIPAddress>/<StorageAccountName_BlockBlob>/<ContainerName>/files/a.txt`</li><li>URL-адрес службы хранилища Azure: `https://<StorageAccountName>.blob.core.windows.net/<ContainerName>/files/a.txt`</li> |  
 | Страничные BLOB-объекты Azure  | <li>UNC-путь к общим папкам: `//<DeviceIPAddres>/<StorageAccountName_PageBlob>/<ContainerName>/files/a.txt`</li><li>URL-адрес службы хранилища Azure: `https://<StorageAccountName>.blob.core.windows.net/<ContainerName>/files/a.txt`</li>   |  
 | Файлы Azure       |<li>UNC-путь к общим папкам: `//<DeviceIPAddres>/<StorageAccountName_AzFile>/<ShareName>/files/a.txt`</li><li>URL-адрес службы хранилища Azure: `https://<StorageAccountName>.file.core.windows.net/<ShareName>/files/a.txt`</li>        |
@@ -326,7 +327,7 @@ ms.locfileid: "77019763"
     
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [Data Box](../databox/data-box-overview.md).
 * Узнайте больше о различных вариантах [переноса рабочих нагрузок в частное облако](migrate-workloads.md).

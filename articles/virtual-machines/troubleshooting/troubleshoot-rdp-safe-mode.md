@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/13/2018
 ms.author: genli
-ms.openlocfilehash: f1ffd26a243d15f7ee6e06d6c52406a16327b4a0
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: d424cccc0a50198f3ca8c6c040afb87f44282d47
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086778"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86508905"
 ---
 #  <a name="cannot-rdp-to-a-vm-because-the-vm-boots-into-safe-mode"></a>Сбой подключения к виртуальной машине по протоколу RDP по причине загрузки виртуальной машины в безопасном режиме
 
@@ -30,7 +30,7 @@ ms.locfileid: "86086778"
 
 ![Изображение, где видно, что сетевой интерфейс находится в безопасном режиме](./media/troubleshoot-rdp-safe-mode/network-safe-mode.png)
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Служба RDP недоступна в безопасном режиме. При загрузке виртуальной машины в безопасном режиме загружаются только основные системные программы и службы. Это применимо к двум различным версиям безопасного режима: "Минимальная безопасная загрузка" и "Безопасная загрузка с возможностью подключения".
 
@@ -79,7 +79,7 @@ ms.locfileid: "86086778"
 
 #### <a name="attach-the-os-disk-to-a-recovery-vm"></a>Подключите диск ОС к виртуальной машине восстановления.
 
-1. [Подключите диск операционной системы к виртуальной машине восстановления](../windows/troubleshoot-recovery-disks-portal.md).
+1. [Подключите диск операционной системы к виртуальной машине восстановления](./troubleshoot-recovery-disks-portal-windows.md).
 2. Установите подключение с помощью удаленного рабочего стола к виртуальной машине, используемой для восстановления.
 3. Убедитесь, что диск помечен как " **подключенный** " в консоли управления дисками. Запишите или запомните букву диска, которая присвоена подключенному диску ОС.
 
@@ -143,4 +143,4 @@ ms.locfileid: "86086778"
     bcdedit /store F:\boot\bcd /enum
     ```
 
-5. [Отключение диска операционной системы и повторное создание виртуальной машины](../windows/troubleshoot-recovery-disks-portal.md). Затем проверьте, устранена ли проблема.
+5. [Отключение диска операционной системы и повторное создание виртуальной машины](./troubleshoot-recovery-disks-portal-windows.md). Затем проверьте, устранена ли проблема.

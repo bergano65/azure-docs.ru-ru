@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/16/2019
-ms.openlocfilehash: 6cc7fc94162ed101d06fbbbc4722867be46987b6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f34389785c0f4a43bfcab3e50f2dcd132b2cb629
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77670140"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505811"
 ---
 # <a name="transition-from-log-analytics-log-search-to-azure-monitor-logs"></a>Переход с поиска по журналам Log Analytics на анализ журналов Azure Monitor
 Поиск по журналам в Log Analytics недавно был заменен новым интерфейсом для анализа журналов Azure Monitor. Страница поиска по журналам по-прежнему доступна через пункт меню **Журналы (классические)** на странице **Рабочие области Log Analytics** портала Azure, но она будет удалена 15 февраля 2019 г. В этой статье описываются различия между двумя интерфейсами, чтобы помочь вам перейти с поиска по журналам. 
@@ -57,7 +58,7 @@ ms.locfileid: "77670140"
 ![Детализация журналов Azure Monitor](media/log-search-transition/drilldown-logs.png)
 
 ## <a name="take-action"></a>Выполнить действие
-В поиске по журналам вы можете [запускать модуль runbook](take-action.md) из результата поиска, выбрав **Выполнить действие**.
+В поиске по журналам вы можете [запускать модуль runbook](../platform/action-groups.md) из результата поиска, выбрав **Выполнить действие**.
 
 ![Выполнить действие](media/log-search-transition/take-action-log-search.png)
 
@@ -65,6 +66,6 @@ ms.locfileid: "77670140"
 
 ![Группа действий](media/log-search-transition/action-group.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье о [работе с журналами Azure Monitor](get-started-portal.md).

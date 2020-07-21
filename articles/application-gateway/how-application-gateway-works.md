@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: conceptual
 ms.date: 11/16/2019
 ms.author: absha
-ms.openlocfilehash: 7622ac319929548dd50a3af763b1b65ea8a36d2b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d33ec829e490ae45d38d33f5784126a71ae2d0aa
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85250236"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506559"
 ---
 # <a name="how-an-application-gateway-works"></a>Принцип работы шлюза приложений
 
@@ -62,8 +62,8 @@ ms.locfileid: "85250236"
 
 Допустимые значения для параметров x-Forwarded-имеет значение HTTP или HTTPS. X-forwardd-Port указывает порт, на котором запрос достигает шлюза приложений. Заголовок X-Original-host содержит исходный заголовок узла, с которым был получен запрос. Этот заголовок полезен в интеграции веб-сайтов Azure, где заголовок входящего узла изменяется до маршрутизации трафика в серверную часть. Если сходство сеансов включено в качестве варианта, то добавляется файл cookie сходства, управляемый шлюзом.
 
-Шлюз приложений можно настроить для изменения заголовков с помощью [перезаписи заголовков HTTP](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers) или для изменения пути URI с помощью параметра переопределения пути. Тем не менее, если не настроить это, все входящие запросы будут перенаправлены в серверную часть.
+Вы можете настроить шлюз приложений для изменения заголовков запроса и ответа и URL-адреса с помощью [перезаписи заголовков HTTP и URL-адреса](rewrite-http-headers-url.md) или для изменения пути URI с помощью параметра переопределения пути. Тем не менее, если не настроить это, все входящие запросы будут перенаправлены в серверную часть.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о компонентах шлюза приложений](application-gateway-components.md)

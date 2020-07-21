@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 05/16/2019
 ms.author: amverma
-ms.openlocfilehash: 62e4d3dbd7357f8c98df3307c1c8fe52cbed1c5e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fed5606da84d8311785752cc8319b7a3c642c1f5
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "67707772"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86508038"
 ---
 # <a name="hb-series-virtual-machines-overview"></a>Обзор виртуальных машин серии ХБ
 
@@ -65,6 +65,6 @@ ms.locfileid: "67707772"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о размерах виртуальных машин HPC для [Linux](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-hpc) и [Windows](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-hpc) в Azure.
+* Дополнительные сведения о размерах виртуальных машин HPC для [Linux](../../sizes-hpc.md) и [Windows](../../sizes-hpc.md) в Azure.
 
-* Дополнительные сведения о [HPC](https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/) в Azure.
+* Дополнительные сведения о [HPC](/azure/architecture/topics/high-performance-computing/) в Azure.

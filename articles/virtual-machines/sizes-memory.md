@@ -15,11 +15,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: mimckitt
-ms.openlocfilehash: 5e920f165232ec79dcced1de632d90f463ff58d9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bf2b4ac189e0e1eff77c2aae98a1fb53268821ab
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84791475"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86509328"
 ---
 # <a name="memory-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для операций в памяти
 
@@ -33,9 +34,9 @@ ms.locfileid: "84791475"
 
 - В [серии Ev3 и Esv3](ev3-esv3-series.md) используется процессор Intel&reg; Xeon&reg; 8171M с тактовой частотой 2,1 ГГц (Skylake) или Intel&reg; Xeon&reg; E5-2673 версии 4 с тактовой частотой 2,3 ГГц (Broadwell) и поддержкой технологии Hyper Threading. Серия Ev3 подходит для большей части стандартных рабочих нагрузок и соответствует виртуальным машинам общего назначения большинства других облачных служб. Объем памяти увеличен с 7 ГиБ до 8 ГиБ на виртуальный ЦП, а дисковые и сетевые ограничения в связи с переходом на технологию Hyper Threading подстроены под каждое ядро. Ev3 — это следующий уровень виртуальных машин с большим объемом памяти, к которым также относятся виртуальные машины семейств D и Dv2.
 
-- [Серии Ev4 и Esv4](ev4-esv4-series.md) работают на двухъядерных &reg; процессорах Intel Xeon &reg; Platinum 8272CL (Cascade Lake) в конфигурации с поддержкой технологии Hyper-Threading. они идеально подходят для различных ресурсоемких корпоративных приложений и компонентов до 504 гиб ОЗУ. В нем реализована [ &reg; технология Intel Turbo Boost 2,0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [ &reg; технология Intel Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и [Intel &reg; Advanced vml Extensions 512 (Intel AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html).
+- [Серии Ev4 и Esv4](ev4-esv4-series.md) работают на двухъядерных &reg; процессорах Intel Xeon &reg; Platinum 8272CL (Cascade Lake) в конфигурации с поддержкой технологии Hyper-Threading. они идеально подходят для различных ресурсоемких корпоративных приложений и компонентов до 504 гиб ОЗУ. В нем реализована [ &reg; технология Intel Turbo Boost 2,0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [ &reg; технология Intel Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и [Intel &reg; Advanced vml Extensions 512 (Intel AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html). Серия Ev4 и Esv4 не включает локальный временный диск. Дополнительные сведения см. в статье [размеры виртуальных машин Azure без локального временного диска](azure-vms-no-temp-disk.md).
 
-- [Серии Edv4 и Edsv4](edv4-edsv4-series.md) работают на базе &reg; &reg; процессоров Intel Xeon Platinum 8272CL (Cascade Lake) второго поколения, идеально подходят для очень больших баз данных или других приложений, которые используют большое количество виртуальных ЦП и большие объемы памяти. При этом поддерживается постоянная тактовая частота всех ядер 3,4 ГГц и используются технологии [Intel&reg; Turbo Boost 2.0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [Intel&reg; Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и [Intel&reg; Advanced Vector Extensions 512 (Intel AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html).
+- [Серии Edv4 и Edsv4](edv4-edsv4-series.md) работают на базе &reg; &reg; процессоров Intel Xeon Platinum 8272CL (Cascade Lake) второго поколения, идеально подходят для очень больших баз данных или других приложений, которые используют большое количество виртуальных ЦП и большие объемы памяти. Кроме того, эти размеры виртуальных машин включают в себя быстрое, более крупное локальное хранилище SSD для приложений, которое выгодно с низкой задержкой, высокоскоростным локальным хранилищем. При этом поддерживается постоянная тактовая частота всех ядер 3,4 ГГц и используются технологии [Intel&reg; Turbo Boost 2.0](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), [Intel&reg; Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) и [Intel&reg; Advanced Vector Extensions 512 (Intel AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html).
 
 - [Серия M](m-series.md) предусматривает наибольшие число виртуальных ЦП (до 128) и объем памяти (до 3,8 ТиБ). Это идеальный вариант для очень крупных баз данных или других приложений, которым требуются высокие показатели виртуальной ЦП и памяти.
 

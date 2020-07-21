@@ -14,11 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/10/2019
 ms.author: mimckitt
-ms.openlocfilehash: 6e6a8fddc61e05bc2e354d77c9e56c55e354a45b
-ms.sourcegitcommit: 69156ae3c1e22cc570dda7f7234145c8226cc162
+ms.openlocfilehash: 3f4846947b18adb1d3f33f1d46482b5c02ee831e
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84309838"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86509160"
 ---
 # <a name="proactively-ensuring-you-have-access-to-grub-and-sysrq-could-save-you-lots-of-down-time"></a>Предварительная настройка доступа к GRUB и sysrq может сэкономить много времени.
 
@@ -36,11 +37,11 @@ ms.locfileid: "84309838"
    - Искаженные файлы конфигурации sshd
    - Конфигурации сети
 
- Многие другие сценарии можно найти [здесь](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-linux#common-scenarios-for-accessing-the-serial-console).
+ Многие другие сценарии можно найти [здесь](./serial-console-linux.md#common-scenarios-for-accessing-the-serial-console).
 
 Убедитесь, что вы можете получить доступ к GRUB и Серийной консоли на виртуальных машинах, развернутых в Azure. 
 
-Если вы не знакомы с Серийной консолью, см. [эту статью](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-linux/).
+Если вы не знакомы с Серийной консолью, см. [эту статью](./serial-console-linux.md).
 
 > [!TIP]
 > Обязательно создавайте резервные копии файлов перед внесением изменений.
@@ -345,7 +346,7 @@ terminal --timeout=5 serial console
 ## <a name="suse"></a>SuSE
 
 ## <a name="sles-12-sp1"></a>SLES 12 SP1
-Либо используйте загрузчик YaST в соответствии с официальной [документацией](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-grub-single-user-mode#grub-access-in-suse-sles).
+Либо используйте загрузчик YaST в соответствии с официальной [документацией](./serial-console-grub-single-user-mode.md#grub-access-in-suse-sles).
 
 Либо добавьте или измените в файле /etc/default/grub следующие параметры:
 
@@ -429,7 +430,7 @@ kernel /boot/vmlinuz-3.0.101-108.74-default root=/dev/disk/by-uuid/ab6b62bb--
 Вам также может потребоваться доступ к виртуальной машине в однопользовательском или аварийном режиме. Выберите ядро, которое вы хотите загрузить или прервать, с помощью клавиш со стрелками.
 Введите нужный режим, добавив ключевое слово **single** или **1** в строку загрузки ядра. В системах RHEL можно также добавить **rd.break**.
 
-Дополнительные сведения о доступе к однопользовательскому режиму см. в [этом документе](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-grub-single-user-mode#general-single-user-mode-access) 
+Дополнительные сведения о доступе к однопользовательскому режиму см. в [этом документе](./serial-console-grub-single-user-mode.md#general-single-user-mode-access) 
 
 
 ![single_user_ubuntu](./media/virtual-machines-serial-console/single-user-ubuntu.png)

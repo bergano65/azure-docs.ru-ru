@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/05/2020
 ms.author: rogardle
-ms.openlocfilehash: e9a61c631e8a74bbbd58bb991848fcf60f81ff6a
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 6a516fc75880e3b6a5bc5b5907e8d968dce2ae31
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86224440"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86507868"
 ---
 # <a name="overview-of-oracle-applications-and-solutions-on-azure"></a>Обзор приложений и решений Oracle в Azure
 
@@ -55,13 +55,13 @@ ms.locfileid: "86224440"
 
 * Используйте [Azure Site Recovery](../../../site-recovery/site-recovery-overview.md) для координации и управления аварийным восстановлением для виртуальных машин Oracle Linux в Azure и физических серверах. 
 
-* Включите кластеры реальных приложений (RAC) Oracle в Azure с помощью [решения VMware для Azure](https://docs.microsoft.com/azure/vmware-cloudsimple/oracle-real-application-clusters/) или [FlashGrid скиклустер](https://www.flashgrid.io/oracle-rac-in-azure/).
+* Включите кластеры реальных приложений (RAC) Oracle в Azure с помощью [решения VMware для Azure](../../../vmware-cloudsimple/oracle-real-application-clusters.md) или [FlashGrid скиклустер](https://www.flashgrid.io/oracle-rac-in-azure/).
 
 ## <a name="backup-oracle-workloads"></a>Резервное копирование рабочих нагрузок Oracle
 
-* Выполняйте резервное копирование виртуальных машин Oracle с помощью [Azure Backup](https://docs.microsoft.com/azure/backup/backup-overview)
+* Выполняйте резервное копирование виртуальных машин Oracle с помощью [Azure Backup](../../../backup/backup-overview.md)
 
-* Выполняйте резервное копирование Oracle Database при помощи Oracle RMAN. Для повышенной надежности подключите [высокоизбыточное хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/common/storage-redundancy), используя [Azure Blob Fuse](https://docs.microsoft.com/azure/storage/blobs/storage-how-to-mount-container-linux), и запишите туда резервные копии, созданные RMAN.
+* Выполняйте резервное копирование Oracle Database при помощи Oracle RMAN. Для повышенной надежности подключите [высокоизбыточное хранилище BLOB-объектов Azure](../../../storage/common/storage-redundancy.md), используя [Azure Blob Fuse](../../../storage/blobs/storage-how-to-mount-container-linux.md), и запишите туда резервные копии, созданные RMAN.
 
 ## <a name="integration-of-azure-with-oci"></a>Интеграция Azure с OCI
 

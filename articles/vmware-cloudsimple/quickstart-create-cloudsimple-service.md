@@ -9,11 +9,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: d7c137a75c0a021aa8bca3aec23da6c4d1ada300
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 14df0f131aaef8a4c24e2d1eb242a9b440e7c7b0
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81868018"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86507596"
 ---
 # <a name="quickstart---create-azure-vmware-solution-by-cloudsimple-service"></a>Краткое руководство. Создание решения Azure VMware с помощью службы Клаудсимпле
 
@@ -37,7 +38,7 @@ ms.locfileid: "81868018"
 
 ## <a name="create-the-service"></a>Создание службы
 
-1. Выбор пункта **Все службы**.
+1. Выберите элемент **Все службы**.
 2. Выполните поиск **службы клаудсимпле**.
 
     ![Поиск службы Клаудсимпле](media/create-cloudsimple-service-search.png)
@@ -62,7 +63,7 @@ ms.locfileid: "81868018"
 
 Чтобы настроить емкость с оплатой по мере использования для среды частного облака Клаудсимпле, сначала подготавливает узлы в портал Azure.
 
-1. Выбор пункта **Все службы**.
+1. Выберите элемент **Все службы**.
 2. Выполните поиск **узлов клаудсимпле**.
 
     ![Поиск узлов Клаудсимпле](media/create-cloudsimple-node-search.png)
@@ -83,7 +84,7 @@ ms.locfileid: "81868018"
 13. Проверьте параметры. Чтобы изменить параметры, нажмите кнопку **назад**.
 14. Нажмите кнопку **создания**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание частного облака и настройка среды](quickstart-create-private-cloud.md)
-* Дополнительные сведения о [службе клаудсимпле](https://docs.microsoft.com/azure/vmware-cloudsimple/cloudsimple-service)
+* Дополнительные сведения о [службе клаудсимпле](./cloudsimple-service.md)

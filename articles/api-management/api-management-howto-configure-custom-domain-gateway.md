@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 03/31/2020
 ms.author: apimpm
-ms.openlocfilehash: dacf1329d35117c65bcc48a82ac27a767ebd2b3b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0894203be4867e305c8e15467a2a867b9bfdc727
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82203190"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506814"
 ---
 # <a name="configure-a-custom-domain-name"></a>Настройка имени личного домена
 
@@ -49,7 +49,7 @@ ms.locfileid: "82203190"
 
 ## <a name="use-the-azure-portal-to-set-a-custom-domain-name-for-your-self-hosted-gateway"></a>Используйте портал Azure, чтобы задать пользовательское доменное имя для самостоятельно размещенного шлюза.
 
-1. Выберите **шлюзы** в разделе **Параметры**.
+1. Выберите **шлюзы** в разделе **развертывание и инфраструктура**.
 2. Выберите самостоятельно размещенный шлюз, для которого нужно настроить доменное имя.
 3. В разделе **Параметры**выберите **имена узлов** .
 4. Выберите **+ Добавить**.

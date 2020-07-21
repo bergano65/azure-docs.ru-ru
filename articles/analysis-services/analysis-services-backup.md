@@ -4,16 +4,18 @@ description: В этой статье описывается, как выпол�
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 05/05/2020
+ms.date: 07/13/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: aa98a13b84e89c90e29525fb6743ac33faf1d917
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: references_regions
+ms.openlocfilehash: 66d09c2faa52cee3e94402be708d654b548c0de1
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82871297"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86507001"
 ---
-# <a name="backup-and-restore"></a>Резервное копирование и восстановление
+# <a name="analysis-services-database-backup-and-restore"></a>Analysis Services резервного копирования и восстановления базы данных
 
 Архивация баз данных табличной модели в Azure Analysis Services во многом аналогична процедуре для локальных служб Analysis Services. Основное различие заключается в расположении для хранения архивных файлов. Архивные файлы следует сохранять в контейнер в [учетной записи хранения Azure](../storage/common/storage-create-storage-account.md). Можно использовать уже имеющиеся учетную запись хранения и контейнер либо создать их при настройке параметров хранилища для сервера.
 
@@ -39,7 +41,7 @@ ms.locfileid: "82871297"
 
 2.  Щелкните **Включено**, а затем — **Параметры хранилища**.
 
-    ![Включите параметр](./media/analysis-services-backup/aas-backup-enable.png)
+    ![Включить](./media/analysis-services-backup/aas-backup-enable.png)
 
 3. Выберите имеющуюся учетную запись хранения или создайте новую.
 

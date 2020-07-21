@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 4e75329444c2ddb9401f32bccea400d90b633294
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f79ff9af1272ca908c7a5ba35fbaa1e8bb87fc50
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85361529"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506717"
 ---
 # <a name="connect-with-power-bi"></a>Подключение с помощью Power BI
 
@@ -37,6 +37,9 @@ ms.locfileid: "85361529"
 
 5. При отображении запроса введите свои учетные данные. 
 
+   > [!NOTE]
+   > Учетные записи одноразового секретного кода (OTP) не поддерживаются. 
+
 6. В разделе **Навигатор** разверните узел сервера и выберите модель или перспективу, к которой нужно подключиться. Затем нажмите **Подключиться**. Щелкнув модель или перспективу, можно отобразить все объекты для этого представления.
 
     Модель открывается в Power BI Desktop с пустым отчетом в представлении "Отчет". Список "Поля" содержит все нескрытые объекты модели. Состояние подключения отображается в правом нижнем углу.
@@ -46,7 +49,7 @@ ms.locfileid: "85361529"
 1. Создайте файл Power BI Desktop с возможностью активного подключения к нужной модели на сервере.
 2. В [Power BI](https://powerbi.microsoft.com) выберите **Get Data (Получить данные)** > **Файлы**, а затем найдите и выберите PBIX-файл.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 [Подключение к Azure Analysis Services](analysis-services-connect.md)   
 [Клиентские библиотеки](https://docs.microsoft.com/analysis-services/client-libraries?view=azure-analysis-services-current)
 

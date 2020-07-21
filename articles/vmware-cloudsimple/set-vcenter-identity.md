@@ -8,11 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 5355e43ca6ac075e76a76ceb51be135cf4b62b0a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e040f42db195760cf40f6dbdf651826b544b65a4
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77564029"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86507579"
 ---
 # <a name="set-up-vcenter-identity-sources-to-use-active-directory"></a>Настройка источников удостоверений vCenter для использования Active Directory
 
@@ -52,7 +53,7 @@ VMware vCenter поддерживает различные источники у
 
 | **Параметр** | **Описание** |
 |------------|-----------------|
-| **Name** | Имя источника удостоверений. |
+| **имя**; | Имя источника удостоверений. |
 | **Базовое DN для пользователей** | Базовое различающееся имя для пользователей. |
 | **Доменное имя** | Полное доменное имя домена, например example.com. В этом текстовом поле не следует указывать IP-адрес. |
 | **Псевдоним домена** | NetBIOS-имя домена. Если используются проверки подлинности SSPI, добавьте NetBIOS-имя домена Active Directory в качестве псевдонима источника удостоверений. |
@@ -79,7 +80,7 @@ VMware vCenter поддерживает различные источники у
 * Одна или несколько виртуальных машин под управлением Microsoft Windows Server для использования в качестве контроллеров домена для нового леса Active Directory и домена.
 * Одна или несколько виртуальных машин, на которых запущена служба DNS, для разрешения имен.
 
-Подробные инструкции см. [в статье Установка нового леса Active Directory Windows Server 2012](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/install-a-new-windows-server-2012-active-directory-forest--level-200-) .
+Подробные инструкции см. [в статье Установка нового леса Active Directory Windows Server 2012](/windows-server/identity/ad-ds/deploy/install-a-new-windows-server-2012-active-directory-forest--level-200-) .
 
 > [!TIP]
 > Для обеспечения высокой доступности служб рекомендуется настроить несколько контроллеров домена и DNS-серверов.
@@ -93,7 +94,7 @@ VMware vCenter поддерживает различные источники у
 * VPN-подключение типа "сеть — сеть" к расположению леса Active Directory.
 * DNS-сервер для разрешения имени существующего леса Active Directory.
 
-Подробные инструкции см. [в разделе Установка нового дочернего или доменного домена Windows Server 2012 Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/install-a-new-windows-server-2012-active-directory-child-or-tree-domain--level-200-) .
+Подробные инструкции см. [в разделе Установка нового дочернего или доменного домена Windows Server 2012 Active Directory](/windows-server/identity/ad-ds/deploy/install-a-new-windows-server-2012-active-directory-child-or-tree-domain--level-200-) .
 
 После настройки домена Active Directory можно [Добавить источник удостоверений в vCenter](#add-an-identity-source-on-vcenter) для нового Active Directory.
 

@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.date: 06/01/2020
 ms.author: ericrad
 ms.reviwer: mimckitt
-ms.openlocfilehash: 20e7e0dd7df469aa797100bd9d2df3cd6d633dca
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 213d9fe2db148c6260a1271c3c2b22978b98a8f3
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85260905"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86508208"
 ---
 # <a name="azure-metadata-service-scheduled-events-for-windows-vms"></a>Служба метаданных Azure: подслужба "Запланированные события" для виртуальных машин Windows
 
@@ -39,7 +39,7 @@ ms.locfileid: "85260905"
 
 Запланированные события предусматривают события в следующих случаях:
 
-- [инициированное платформой обслуживание](https://docs.microsoft.com/azure/virtual-machines/windows/maintenance-and-updates) (например, перезагрузка виртуальной машины, динамическая миграция или обновление с сохранением памяти для узла);
+- [инициированное платформой обслуживание](../maintenance-and-updates.md?bc=/azure/virtual-machines/windows/breadcrumb/toc.json&toc=/azure/virtual-machines/windows/toc.json) (например, перезагрузка виртуальной машины, динамическая миграция или обновление с сохранением памяти для узла);
 - виртуальная машина работает на [оборудовании со сниженной производительностью](https://azure.microsoft.com/blog/find-out-when-your-virtual-machine-hardware-is-degraded-with-scheduled-events), сбой которого прогнозируется в ближайшее время;
 - обслуживание, инициированное пользователем (например, пользователь перезагружает или повторно развертывает виртуальную машину).
 - Вытеснение экземпляров [точечных виртуальных машин](spot-vms.md) и [точечных масштабируемых наборов](../../virtual-machine-scale-sets/use-spot.md).
@@ -128,16 +128,16 @@ curl -H Metadata:true http://169.254.169.254/metadata/scheduledevents?api-versio
 ```
 
 ### <a name="event-properties"></a>Свойства события
-|Свойство.  |  Описание |
+|Свойство  |  Описание |
 | - | - |
-| EventId | Глобальный уникальный идентификатор этого события. <br><br> Пример. <br><ul><li>602d9444-d2cd-49c7-8624-8643e7171297  |
+| EventId | Глобальный уникальный идентификатор этого события. <br><br> Пример <br><ul><li>602d9444-d2cd-49c7-8624-8643e7171297  |
 | EventType | Влияние, которое оказывает это событие. <br><br> Значения: <br><ul><li> `Freeze`: виртуальная машина будет приостановлена на несколько секунд. Работа ЦП и сетевого подключения будет приостановлена, но это действие не повлияет на память и открытые файлы.<li>`Reboot`: планирование перезагрузки виртуальной машины (временная память будет потеряна). <li>`Redeploy`: виртуальная машина будет перемещена на другой узел с потерей данных на временных дисках. <li>`Preempt`: выполняется удаление точечной виртуальной машины (временные диски теряются). <li> `Terminate`: виртуальная машина запланирована к удалению. |
 | ResourceType | Тип ресурса, который затрагивает это событие. <br><br> Значения: <ul><li>`VirtualMachine`|
 | Ресурсы| Список ресурсов, на которые влияет это событие. Список обязательно будет содержать виртуальные машины максимум из одного [домена обновления](manage-availability.md), но в нем не могут содержаться все машины из такого домена. <br><br> Пример <br><ul><li> ["FrontEnd_IN_0", "BackEnd_IN_0"] |
 | EventStatus | Состояние этого события. <br><br> Значения: <ul><li>`Scheduled`: это запланированное событие состоится по истечении времени, указанного в свойстве `NotBefore`.<li>`Started`: это событие запущено.</ul> Состояние `Completed` (или аналогичное) никогда не предоставляется. После завершения событие не повторяется.
 | NotBefore| Время, после которого это событие может состояться. <br><br> Пример <br><ul><li> Пн, 19 сентября 2016 г., 18:29:47 (GMT)  |
-| Описание: | Описание этого события. <br><br> Пример. <br><ul><li> Сервер узла находится в состоянии обслуживания. |
-| EventSource | Инициатор события. <br><br> Пример. <br><ul><li> `Platform`: Это событие инициируется платформой. <li>`User`: Это событие инициируется пользователем. |
+| Описание | Описание этого события. <br><br> Пример <br><ul><li> Сервер узла находится в состоянии обслуживания. |
+| EventSource | Инициатор события. <br><br> Пример <br><ul><li> `Platform`: Это событие инициируется платформой. <li>`User`: Это событие инициируется пользователем. |
 
 ### <a name="event-scheduling"></a>Планирование события
 В зависимости от типа каждое будущее событие будет выполняться минимальное количество времени. Это время отражается в свойстве события `NotBefore`. 
@@ -187,7 +187,7 @@ import json
 import socket
 import urllib2
 
-metadata_url = "http://169.254.169.254/metadata/scheduledevents?api-version=2019-01-01"
+metadata_url = "http://169.254.169.254/metadata/scheduledevents?api-version=2019-08-01"
 this_host = socket.gethostname()
 
 
@@ -231,4 +231,4 @@ if __name__ == '__main__':
 - Смотрите демонстрационную версию службы "Запланированные события" в серии [Пятница с Azure](https://channel9.msdn.com/Shows/Azure-Friday/Using-Azure-Scheduled-Events-to-Prepare-for-VM-Maintenance). 
 - Просмотрите примеры кода запланированных событий в статье [Azure Metadata Service: Scheduled Events Samples](https://github.com/Azure-Samples/virtual-machines-scheduled-events-discover-endpoint-for-non-vnet-vm) (Служба метаданных Azure: примеры запланированных событий).
 - Дополнительные сведения об API, доступных в [службе метаданных экземпляра](instance-metadata-service.md).
-- Подробнее о [плановом обслуживании виртуальных машин Windows в Azure](planned-maintenance.md).
+- Подробнее о [плановом обслуживании виртуальных машин Windows в Azure](../maintenance-and-updates.md?bc=/azure/virtual-machines/windows/breadcrumb/toc.json&toc=/azure/virtual-machines/windows/toc.json).

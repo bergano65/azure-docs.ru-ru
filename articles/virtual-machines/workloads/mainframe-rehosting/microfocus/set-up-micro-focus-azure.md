@@ -12,12 +12,12 @@ ms.date: 06/29/2020
 tags: ''
 keywords: ''
 ms.service: multiple
-ms.openlocfilehash: 7647283444ba41a5d629ba8a26fc711a699cd78d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cc61d842550f82dc8b408ed5cd421af65d0e2be6
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85561068"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86507902"
 ---
 # <a name="install-micro-focus-enterprise-server-50-and-enterprise-developer-50-on-azure"></a>Установка Micro Focus Enterprise Server 5,0 и Enterprise Developer 5,0 в Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "85561068"
 
 Соответствующей средой разработки для Enterprise Server является корпоративный разработчик, работающий на Microsoft Visual Studio 2017 или более поздней версии, Visual Studio Community (бесплатная для загрузки) или Eclipse. В этой статье показано, как развернуть ее с помощью виртуальной машины Windows Server 2016, поставляемой с Visual Studio 2017 или более поздней версии.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к работе, ознакомьтесь с этими предварительными условиями.
 
@@ -42,7 +42,7 @@ ms.locfileid: "85561068"
     > [!Note]
     > Существует несколько вариантов управления доступом к виртуальным машинам.
     > -   Рекомендуется настроить [Azure бастиона](https://azure.microsoft.com/services/azure-bastion/).
-    > -   Туннель [виртуальной частной сети (VPN) типа "сеть — сеть"](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-tutorial-vpnconnection-powershell) .
+    > -   Туннель [виртуальной частной сети (VPN) типа "сеть — сеть"](../../../../vpn-gateway/vpn-gateway-tutorial-vpnconnection-powershell.md) .
     > -   Виртуальная машина Jumpbox.
 
 ## <a name="install-enterprise-server"></a>Установка Enterprise Server
@@ -125,8 +125,8 @@ ms.locfileid: "85561068"
 
 **Следующие шаги**
 
--   [Настройка приложения Банкдемо](https://docs.microsoft.com/azure/virtual-machines/workloads/mainframe-rehosting/microfocus/demo)
+-   [Настройка приложения Банкдемо](./demo.md)
 
--   [Запуск Enterprise Server в контейнерах DOCKER](https://docs.microsoft.com/azure/virtual-machines/workloads/mainframe-rehosting/microfocus/run-enterprise-server-container)
+-   [Запуск Enterprise Server в контейнерах DOCKER](./run-enterprise-server-container.md)
 
--   [Перенос приложений с мейнфреймов](https://docs.microsoft.com/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/application-strategies)
+-   [Перенос приложений с мейнфреймов](/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/application-strategies)

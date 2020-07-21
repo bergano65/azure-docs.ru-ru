@@ -3,12 +3,12 @@ title: Справочник разработчика C# по функциям Az
 description: Узнайте, как разрабатывать Функции Azure с помощью C#.
 ms.topic: conceptual
 ms.date: 09/12/2018
-ms.openlocfilehash: 038c1db2d4bb4d8bd80801d36cf5feec1905bbc1
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 9ecc2dad8d1d520b44972022d47c312f495d5c38
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86254373"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506522"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Справочник разработчика C# по функциям Azure
 
@@ -202,6 +202,28 @@ Visual Studio выполняет проекты Функций с помощью
 [3/1/2018 9:59:53 AM] Starting Host (HostId=contoso2-1518597420, Version=2.0.11353.0, ProcessId=22020, Debug=False, Attempt=0, FunctionsExtensionVersion=)
 ```
 
+## <a name="readytorun"></a>ReadyToRun
+
+Приложение функции можно скомпилировать как [двоичные файлы реадиторун](/dotnet/core/whats-new/dotnet-core-3-0#readytorun-images). Реадиторун является формой предварительной компиляции, которая может повысить производительность при запуске, чтобы снизить влияние [холодного запуска](functions-scale.md#cold-start) при запуске в [плане потребления](functions-scale.md#consumption-plan).
+
+Реадиторун доступен в .NET 3,0 и требует [версии 3,0 среды выполнения функций Azure](functions-versions.md).
+
+Чтобы скомпилировать проект как Реадиторун, обновите файл проекта, добавив `<PublishReadyToRun>` элементы и `<RuntimeIdentifier>` . Ниже приведена конфигурация для публикации в приложении-функции Windows 32 bit.
+
+```xml
+<PropertyGroup>
+  <TargetFramework>netcoreapp3.1</TargetFramework>
+  <AzureFunctionsVersion>v3</AzureFunctionsVersion>
+  <PublishReadyToRun>true</PublishReadyToRun>
+  <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+</PropertyGroup>
+```
+
+> [!IMPORTANT]
+> Реадиторун сейчас не поддерживает перекрестную компиляцию. Приложение должно быть построено на той же платформе, что и целевой объект развертывания. Кроме того, обратите внимание на «разрядность», настроенную в приложении-функции. Например, если приложение-функция в Azure — Windows 64 bit, необходимо скомпилировать приложение в Windows, используя в `win-x64` качестве [идентификатора среды выполнения](/dotnet/core/rid-catalog).
+
+Вы также можете создать приложение с помощью Реадиторун из командной строки. Дополнительные сведения см. в описании `-p:PublishReadyToRun=true` параметра в разделе [`dotnet publish`](/dotnet/core/tools/dotnet-publish) .
+
 ## <a name="supported-types-for-bindings"></a>Поддерживаемые типы для привязок
 
 Все привязки поддерживают определенные типы. Например, атрибут триггера большого двоичного объекта можно применить к строковому параметру, параметру POCO, параметру `CloudBlockBlob` или любому из нескольких других поддерживаемых типов. В [справочной статье о привязках для больших двоичных объектов](functions-bindings-storage-blob-trigger.md#usage) содержится список всех поддерживаемых типов параметров. Дополнительные сведения см. в статье о [триггерах и привязках](functions-triggers-bindings.md) и в [справочной документации по каждому типу привязки](functions-triggers-bindings.md#next-steps).
@@ -238,7 +260,7 @@ public static class ICollectorExample
 
 ## <a name="logging"></a>Logging
 
-Для записи выходных данных в потоковые журналы в C# включите аргумент с типом [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger). Мы рекомендуем использовать имя `log`, как показано в следующем примере:  
+Для записи выходных данных в потоковые журналы в C# включите аргумент с типом [ILogger](/dotnet/api/microsoft.extensions.logging.ilogger). Мы рекомендуем использовать имя `log`, как показано в следующем примере:  
 
 ```csharp
 public static class SimpleExample
@@ -257,7 +279,7 @@ public static class SimpleExample
 
 ## <a name="async"></a>Асинхронный режим
 
-Чтобы сделать функцию [асинхронной](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/), используйте ключевое слово `async` и верните объект `Task`.
+Чтобы сделать функцию [асинхронной](/dotnet/csharp/programming-guide/concepts/async/), используйте ключевое слово `async` и верните объект `Task`.
 
 ```csharp
 public static class AsyncExample
@@ -330,7 +352,7 @@ public static class EnvironmentVariablesExample
 
 Параметры приложения могут считываться из переменных среды при разработке локально и при запуске в Azure. При локальной разработке параметры приложения поступают из коллекции `Values` файла *local.settings.json*. Значение именованного параметра приложения `GetEnvironmentVariable("<app setting name>")` извлекается в локальной среде и среде Azure. Например, при локальном запуске будет возвращено "Имя_сайта", если файл *local.settings.json* содержит `{ "Values": { "WEBSITE_SITE_NAME": "My Site Name" } }`.
 
-Свойство [System.Configuration.ConfigurationManager.AppSettings](https://docs.microsoft.com/dotnet/api/system.configuration.configurationmanager.appsettings) — альтернативный API-интерфейс для получения значения параметра приложения, но рекомендуется использовать `GetEnvironmentVariable`, как показано ниже.
+Свойство [System.Configuration.ConfigurationManager.AppSettings](/dotnet/api/system.configuration.configurationmanager.appsettings) — альтернативный API-интерфейс для получения значения параметра приложения, но рекомендуется использовать `GetEnvironmentVariable`, как показано ниже.
 
 ## <a name="binding-at-runtime"></a>Привязка во время выполнения
 

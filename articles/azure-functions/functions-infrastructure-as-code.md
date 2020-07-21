@@ -5,12 +5,12 @@ ms.assetid: d20743e3-aab6-442c-a836-9bcea09bfd32
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: b73b8418b202563ca7c4a73181b1b1b404db6ee2
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: e56c76583f601c2e13ab4a35c1fef2996d2e3e67
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170400"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506236"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
 
@@ -75,7 +75,7 @@ ms.locfileid: "86170400"
 ]
 ```
 
-### <a name="application-insights"></a>Application Insights
+### <a name="application-insights"></a>Application Insights
 
 Для мониторинга приложений-функций рекомендуется использовать Application Insights. Ресурс Application Insights определяется типом **Microsoft. Insights/Components** и типом **Web**:
 
@@ -137,7 +137,7 @@ ms.locfileid: "86170400"
 
 Приложение-функция должно включать следующие параметры приложения:
 
-| Имя параметра                 | Описание                                                                               | Примеры значений                        |
+| Имя параметра                 | Описание:                                                                               | Примеры значений                        |
 |------------------------------|-------------------------------------------------------------------------------------------|---------------------------------------|
 | AzureWebJobsStorage          | Строка подключения к учетной записи хранения, которую среда выполнения функций использует для внутренней очереди | См. [учетную запись хранения](#storage)       |
 | FUNCTIONS_EXTENSION_VERSION  | Версия среды выполнения функций Azure                                                | `~2`                                  |
@@ -309,7 +309,7 @@ ms.locfileid: "86170400"
 
 ### <a name="create-a-premium-plan"></a>Создание плана "Премиум"
 
-План "Премиум" — это особый тип ресурса "ферма серверов". Его можно указать с помощью `EP1` , `EP2` или `EP3` для `Name` значения свойства в `sku` [объекте Description](https://docs.microsoft.com/azure/templates/microsoft.web/2018-02-01/serverfarms#skudescription-object).
+План "Премиум" — это особый тип ресурса "ферма серверов". Его можно указать с помощью `EP1` , `EP2` или `EP3` для `Name` значения свойства в `sku` [объекте Description](/azure/templates/microsoft.web/2018-02-01/serverfarms#skudescription-object).
 
 ```json
 {
@@ -516,7 +516,7 @@ ms.locfileid: "86170400"
 }
 ```
 
-Если вы [развертываете пользовательский образ контейнера](./functions-create-function-linux-custom-image.md), необходимо указать его с помощью `linuxFxVersion` и включить конфигурацию, позволяющую получать образ, как в [веб-приложение для контейнеров](/azure/app-service/containers). Кроме того, задайте `WEBSITES_ENABLE_APP_SERVICE_STORAGE` для значение `false` , так как содержимое приложения предоставляется в контейнере:
+Если вы [развертываете пользовательский образ контейнера](./functions-create-function-linux-custom-image.md), необходимо указать его с помощью `linuxFxVersion` и включить конфигурацию, позволяющую получать образ, как в [веб-приложение для контейнеров](../app-service/containers/index.yml). Кроме того, задайте `WEBSITES_ENABLE_APP_SERVICE_STORAGE` для значение `false` , так как содержимое приложения предоставляется в контейнере:
 
 ```json
 {

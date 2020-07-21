@@ -1,15 +1,15 @@
 ---
-title: Создание контейнера Windows Server в кластере Службы Azure Kubernetes (AKS)
+title: Создание контейнера Windows Server в кластере AKS с помощью PowerShell
 description: Узнайте, как быстро создать кластер Kubernetes и развернуть приложение в контейнере Windows Server в Службе Azure Kubernetes (AKS) с помощью PowerShell.
 services: container-service
 ms.topic: article
 ms.date: 05/26/2020
-ms.openlocfilehash: 036c97d406e37e038474287daf39182ddce194a1
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: cf195c439a1a53d8a720505edae3c9b6d379d157
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86250895"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86507052"
 ---
 # <a name="create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-powershell"></a>Создание контейнера Windows Server в кластере Службы Azure Kubernetes (AKS) с помощью PowerShell
 

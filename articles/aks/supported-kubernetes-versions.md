@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 07/08/2020
 author: palma21
 ms.author: jpalma
-ms.openlocfilehash: 886e6cf237df94c056ec7c592e0b535327339871
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 019ae80020dafb54f2c06dd504797f21069914ae
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86243802"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86507069"
 ---
 # <a name="supported-kubernetes-versions-in-azure-kubernetes-service-aks"></a>Поддерживаемые версии Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -131,15 +131,15 @@ az aks get-versions --location eastus --output table
 | 1,17  | Dec-09-19  | 19 января   | 20 июля  | 1,20 ДЖ | 
 | 1,18  | Мар-23-20  | 20 мая   | 20 августа  | 1,21 ДЖ | 
 | 1,19  | Авг-04-20  | 20 августа   | 20 ноя  | 1,22 ДЖ | 
-| 1.20  | * Ноя 20    | * Дек 21   | * 21 января  | 1,23 ДЖ | 
+| 1,20  | * Ноя 20    | * Дек 20   | * 21 января  | 1,23 ДЖ | 
 
 \*Подтверждение ожидающей вышестоящей даты выпуска.
 
-## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
+## <a name="faq"></a>часто задаваемые вопросы
 
 **Что происходит, когда пользователь обновляет кластер Kubernetes с неподдерживаемой дополнительной версией?**
 
-Если вы используете версию *n-3* или более раннюю, это означает, что вы находитесь за пределами службы поддержки и вам будет предложено выполнить обновление. Если обновление с версии n-3 до n-2 прошло успешную работу, вы вернетесь в наши политики поддержки. Например:
+Если вы используете версию *n-3* или более раннюю, это означает, что вы находитесь за пределами службы поддержки и вам будет предложено выполнить обновление. Если обновление с версии n-3 до n-2 прошло успешную работу, вы вернетесь в наши политики поддержки. Вот несколько примеров:
 
 - Если самая старая поддерживаемая версия AKS — *1,15 доллара. a* , а вы находитесь в *1.14. b* или более ранней версии, вы находитесь за пределами службы поддержки.
 - При обновлении с *1.14. b* до *1,15 доллара. a* или более поздней версии вы вернетесь в наши политики поддержки.
@@ -181,4 +181,4 @@ az aks get-versions --location eastus --output table
 <!-- LINKS - Internal -->
 [aks-upgrade]: upgrade-cluster.md
 [az-aks-get-versions]: /cli/azure/aks#az-aks-get-versions
-[preview-terms]: /support/legal/preview-supplemental-terms
+[preview-terms]: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
