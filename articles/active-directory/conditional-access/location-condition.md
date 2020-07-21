@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 7db7e64840d248b66a61ff310f9441800e1afc31
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 091555bac780f3abc7089d6214d0f9a8cfbf98cd
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85253228"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86518442"
 ---
 # <a name="using-the-location-condition-in-a-conditional-access-policy"></a>Использование условия расположения в политике условного доступа 
 
@@ -91,7 +91,7 @@ ms.locfileid: "85253228"
 
 Если оба этапа завершатся ошибкой, считается, что пользователь больше не использует надежный IP-адрес.
 
-## <a name="preview-features"></a>Функции предварительной версии
+## <a name="preview-features"></a>Предварительная версия функций
 
 Помимо общедоступной функции именованного расположения, существует также именованное расположение (Предварительная версия). Вы можете получить доступ к предварительному просмотру именованного расположения, используя баннер в верхней части колонки именованного расположения.
 
@@ -194,9 +194,9 @@ Azure Active Directory (Azure AD) в настоящее время не подд
 
 ### <a name="api-support-and-powershell"></a>Поддержка API и PowerShell
 
-API и PowerShell пока не поддерживаются для именованных расположений.
+Доступна предварительная версия API Graph для именованных расположений. Дополнительные сведения см. в разделе [API намедлокатион](/graph/api/resources/namedlocation?view=graph-rest-beta).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Если вы хотите узнать, как настроить политику условного доступа, см. статью [Создание политики условного доступа](concept-conditional-access-policies.md).
 - Ищете пример политики, используя условие расположения? См. статью " [Условный доступ: Блокировка доступа по расположению".](howto-conditional-access-policy-location.md)

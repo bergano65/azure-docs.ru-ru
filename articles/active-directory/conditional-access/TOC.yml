@@ -47,8 +47,6 @@
       href: controls.md
     - name: Перенос классической политики
       href: policy-migration.md
-    - name: Базовые политики защиты
-      href: concept-baseline-protection.md
 - name: Практические руководства
   expanded: true
   items:

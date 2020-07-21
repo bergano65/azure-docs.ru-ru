@@ -3,14 +3,15 @@ title: Создание групп действий и управление им
 description: Узнайте, как создавать группы действий и управлять ими на портале Azure.
 author: dkamstra
 ms.topic: conceptual
-ms.date: 6/5/2020
+ms.date: 07/15/2020
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: dbc810ad7227d9d47099fe85e89a92c8fa750302
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e88d51e014244892fc3ac9e2cca242dacdfd9997
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84465258"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86516181"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Создание групп действий и управление ими на портале Azure
 Группа действий — это коллекция параметров уведомлений, которые определены владельцем подписки Azure. Оповещения служб Azure Monitor и "Работоспособность служб" используют группы действий для уведомления пользователей о том, что оповещение активировано. Для разных оповещений может использоваться как одна группа действий, так разные. Это зависит от требований пользователя. В подписке можно настроить до 2000 групп действий.
@@ -69,7 +70,7 @@ ms.locfileid: "84465258"
 ## <a name="action-specific-information"></a>Сведения о конкретных действиях
 
 > [!NOTE]
-> Количественные ограничения для каждого из перечисленных ниже пунктов приведены в разделе [Ограничения Azure Monitor](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-monitor-limits).  
+> Количественные ограничения для каждого из перечисленных ниже пунктов приведены в разделе [Ограничения Azure Monitor](../../azure-resource-manager/management/azure-subscription-service-limits.md#azure-monitor-limits).  
 
 ### <a name="automation-runbook"></a>Runbook автоматизации
 Дополнительные сведения об ограничениях для полезных данных runbook см. в статье [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md).
@@ -106,21 +107,21 @@ ms.locfileid: "84465258"
 В группе действий может быть ограниченное число действий приложения логики.
 
 ### <a name="secure-webhook"></a>Безопасный веб-перехватчик
-Действие веб-перехватчика группы действий позволяет воспользоваться преимуществами Azure Active Directory для защиты подключения между группой действий и защищенным веб-API (конечной точкой веб-перехватчика). Ниже описана общая процедура использования этой функции. Общие сведения о приложениях и субъектах-службах Azure AD см. в статье [Общие сведения о платформе удостоверений Майкрософт версии 2.0](https://docs.microsoft.com/azure/active-directory/develop/v2-overview).
+Действие веб-перехватчика группы действий позволяет воспользоваться преимуществами Azure Active Directory для защиты подключения между группой действий и защищенным веб-API (конечной точкой веб-перехватчика). Ниже описана общая процедура использования этой функции. Общие сведения о приложениях и субъектах-службах Azure AD см. в статье [Общие сведения о платформе удостоверений Майкрософт версии 2.0](../../active-directory/develop/v2-overview.md).
 
-1. Создайте приложение Azure AD для защищенного веб-API. См. раздел https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-overview.
-    - Настройте защищенный API, который будет вызываться приложением управляющей программы.
+1. Создайте приложение Azure AD для защищенного веб-API. См. раздел [защищенный веб-API: регистрация приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-app-registration).
+    - Настройте защищенный API, который будет [вызываться приложением демона](https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-app-registration#if-your-web-api-is-called-by-a-daemon-app).
     
-1. Включите группы действий для использования приложения Azure AD.
+2. Включите группы действий для использования приложения Azure AD.
 
     > [!NOTE]
-    > Для выполнения этого сценария необходимо быть членом [роли администратора приложения Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#available-roles).
+    > Для выполнения этого сценария необходимо быть членом [роли администратора приложения Azure AD](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#available-roles).
     
     - Измените вызов Connect-AzureAD в сценарии PowerShell, чтобы использовать свой идентификатор арендатора Azure AD.
     - Измените переменную скрипта PowerShell $myAzureADApplicationObjectId, чтобы использовать идентификатор объекта приложения Azure AD.
     - Запустите измененный сценарий.
     
-1. Настройте действие безопасного веб-перехватчика группы действий.
+3. Настройте действие безопасного веб-перехватчика группы действий.
     - Скопируйте значение $myApp.ObjectId из сценария и введите его в поле идентификатора объекта приложения в определении действия веб-перехватчика.
     
     ![Безопасное действие веб-перехватчика](./media/action-groups/action-groups-secure-webhook.png)
@@ -252,4 +253,4 @@ Write-Host $myApp.AppRoles
 * Дополнительные сведения о [соединитель ITSM](../../azure-monitor/platform/itsmc-overview.md).
 * Дополнительные сведения о лимитах для оповещений см. в статье [Ограничение частоты отправки для SMS, сообщений электронной почты и вызовов Webhook](../../azure-monitor/platform/alerts-rate-limiting.md).
 * Изучите [обзор оповещений журнала действий](../../azure-monitor/platform/alerts-overview.md) и узнайте, как получать оповещения.  
-* Узнайте, как [настроить оповещения при поступлении уведомлений о работоспособности службы](../../azure-monitor/platform/alerts-activity-log-service-notifications.md).
+* Узнайте, как [настроить оповещения при поступлении уведомлений о работоспособности службы](../../service-health/alerts-activity-log-service-notifications-portal.md).

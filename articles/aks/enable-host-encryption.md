@@ -4,12 +4,12 @@ description: Узнайте, как настроить шифрование на
 services: container-service
 ms.topic: article
 ms.date: 07/10/2020
-ms.openlocfilehash: 7b9d930d62d0acea30af9b5e7e12e43fa8fcd5da
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: d2b34d8c3090eb6ae3f1445ff1fc663d90367977
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86244316"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86517728"
 ---
 # <a name="host-based-encryption-on-azure-kubernetes-service-aks-preview"></a>Шифрование на основе узла в службе Azure Kubernetes Service (AKS) (Предварительная версия)
 
@@ -23,22 +23,22 @@ ms.locfileid: "86244316"
 > [!NOTE]
 > Шифрование на основе узла доступно в [регионах Azure][supported-regions] , которые поддерживают шифрование на стороне сервера для управляемых дисков Azure и только с конкретными [поддерживаемыми размерами виртуальных машин][supported-sizes].
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 - Убедитесь, что `aks-preview` установлено расширение CLI v 0.4.55 или более поздней версии.
 - Убедитесь, что в `EncryptionAtHost` разделе включено установлен флаг компонента `Microsoft.Compute` .
-- Убедитесь, что в `EncryptionAtHost` разделе включено установлен флаг компонента `Microsoft.ContainerService` .
+- Убедитесь, что в `EnableEncryptionAtHostPreview` разделе включено установлен флаг компонента `Microsoft.ContainerService` .
 
 ### <a name="register-encryptionathost--preview-features"></a>Регистрация `EncryptionAtHost` функций предварительной версии
 
-Чтобы создать кластер AKS, использующий шифрование на основе узла, необходимо включить `EncryptionAtHost` флаг компонента в подписке.
+Чтобы создать кластер AKS, использующий шифрование на основе узла, необходимо включить `EnableEncryptionAtHostPreview` `EncryptionAtHost` Флаги компонентов и в подписке.
 
 Зарегистрируйте `EncryptionAtHost` флаг функции с помощью команды [AZ Feature Register][az-feature-register] , как показано в следующем примере:
 
 ```azurecli-interactive
 az feature register --namespace "Microsoft.Compute" --name "EncryptionAtHost"
 
-az feature register --namespace "Microsoft.ContainerService"  --name "EncryptionAtHost"
+az feature register --namespace "Microsoft.ContainerService"  --name "EnableEncryptionAtHostPreview"
 ```
 
 Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Состояние регистрации можно проверить с помощью команды [az feature list][az-feature-list].
@@ -46,7 +46,7 @@ az feature register --namespace "Microsoft.ContainerService"  --name "Encryption
 ```azurecli-interactive
 az feature list -o table --query "[?contains(name, 'Microsoft.Compute/EncryptionAtHost')].{Name:name,State:properties.state}"
 
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EncryptionAtHost')].{Name:name,State:properties.state}"
+az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EnableEncryptionAtHostPreview')].{Name:name,State:properties.state}"
 ```
 
 Когда все будет готово, обновите регистрацию `Microsoft.ContainerService` `Microsoft.Compute` поставщиков ресурсов и с помощью команды [AZ Provider Register][az-provider-register] :
@@ -58,12 +58,12 @@ az provider register --namespace Microsoft.ContainerService
 ```
 
 > [!IMPORTANT]
-> Функции предварительной версии AKS — это самостоятельная служба. Предварительные версии предоставляются "как есть" и "как есть" и исключаются из соглашений об уровне обслуживания и ограниченной гарантии. Предварительные версии AKS частично покрываются службой поддержки клиентов на основе лучших усилий. Таким образом, эти функции не предназначены для использования в рабочей среде. Дополнительные сведения об отсутствии см. в следующих статьях поддержки:
+> Функции предварительной версии AKS — это самостоятельная служба. Предварительные версии предоставляются "как есть" и "как есть" и исключаются из соглашений об уровне обслуживания и ограниченной гарантии. Предварительные версии AKS частично покрываются службой поддержки клиентов на основе лучших усилий. Таким образом, эти функции не предназначены для использования в рабочей среде. Дополнительные сведения см. в следующих статьях поддержки:
 >
 > - [Политики поддержки AKS](support-policies.md)
 > - [Часто задаваемые вопросы о поддержке Azure](faq.md)
 
-### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки aks-preview
+### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки предварительной версии AKS
 
 Чтобы создать кластер AKS с шифрованием на основе узла, необходимо установить последнее расширение CLI *AKS-Preview* . Установите расширение Azure CLI *AKS-Preview* с помощью команды [AZ Extension Add][az-extension-add] или проверьте наличие доступных обновлений с помощью команды [AZ Extension Update][az-extension-update] .
 

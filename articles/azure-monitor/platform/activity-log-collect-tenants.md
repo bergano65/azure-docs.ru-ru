@@ -6,22 +6,22 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/06/2019
-ms.openlocfilehash: d2f794365e15768dbf47647f2d9a8d08d5e8ba3f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 07c38cbd2d77a3cca594acd974705af35d8189b9
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80055738"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86516351"
 ---
 # <a name="collect-azure-activity-logs-into-azure-monitor-across-azure-active-directory-tenants-legacy"></a>Получение журналов действий Azure в Azure Monitor между клиентами Azure Active Directory (устаревшие)
 
 > [!NOTE]
-> В этой статье описывается устаревший метод настройки журнала действий Azure для клиентов Azure, которые будут собраны в Log Analytics рабочей области.  Теперь можно выполнить сбор журнала действий в Log Analytics рабочую область, используя параметр диагностики, аналогичный сбору журналов ресурсов. См. статью [Получение и анализ журналов действий Azure в log Analytics рабочей области в Azure Monitor](activity-log-collect.md).
+> В этой статье описывается устаревший метод настройки журнала действий Azure для клиентов Azure, которые будут собраны в Log Analytics рабочей области.  Теперь можно выполнить сбор журнала действий в Log Analytics рабочую область, используя параметр диагностики, аналогичный сбору журналов ресурсов. См. статью [Получение и анализ журналов действий Azure в log Analytics рабочей области в Azure Monitor](./activity-log.md).
 
 
 В этой статье описывается метод сбора журналов действий Azure в Log Analytics рабочей области в Azure Monitor использование соединителя сборщика данных Azure Log Analytics для Logic Apps. Следуйте приведенной здесь процедуре, когда вам нужно отправить журналы в рабочее пространство другого арендатора Azure Active Directory. Например, если вы являетесь поставщиком управляемых служб, вы можете собирать журналы действий из подписки клиента и хранить их в рабочей области Log Analytics в своей собственной подписке.
 
-Если Рабочая область Log Analytics находится в той же подписке Azure или в другой подписке, но в той же Azure Active Directory, выполните действия, описанные в разделе [Получение и анализ журналов действий Azure в log Analytics рабочей области в Azure Monitor](activity-log-collect.md) , чтобы получить журналы действий Azure.
+Если Рабочая область Log Analytics находится в той же подписке Azure или в другой подписке, но в той же Azure Active Directory, выполните действия, описанные в разделе [Получение и анализ журналов действий Azure в log Analytics рабочей области в Azure Monitor](./activity-log.md) , чтобы получить журналы действий Azure.
 
 ## <a name="overview"></a>Обзор
 
@@ -38,7 +38,7 @@ ms.locfileid: "80055738"
 2. Экспортировать журналы действий в концентратор событий с помощью профиля экспорта журнала действий Azure.
 3. Создайте приложение логики для чтения из концентратора событий и отправки событий в Log Analytics рабочую область.
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 Ниже приведены требования относительно ресурсов Azure, используемых в этом сценарии.
 
 - Пространство имен концентратора событий не должно быть в той же подписке, в которой создаются журналы. Пользователю, который настраивает этот параметр, должно быть предоставлено соответствующее разрешение на доступ к обеим подпискам. Если у вас несколько подписок в одном и том же клиенте Azure Active Directory, вы можете отправлять журналы действий для всех подписок в один концентратор событий.
@@ -90,17 +90,17 @@ ms.locfileid: "80055738"
 
 11. Нажмите кнопку **ОК**, а затем **Сохранить**, чтобы сохранить эти параметры. Параметры будут немедленно применены к подписке
 
-<!-- Follow the steps in [stream the Azure Activity Log to Event Hubs](../../azure-monitor/platform/activity-logs-stream-event-hubs.md) to configure a log profile that writes activity logs to an event hub. -->
+<!-- Follow the steps in [stream the Azure Activity Log to Event Hubs](./activity-log.md#legacy-collection-methods) to configure a log profile that writes activity logs to an event hub. -->
 
 ## <a name="step-3---create-logic-app"></a>Шаг 3. Создание приложения логики
 
 После записи журналов действий в концентратор событий создайте приложение логики для получения журналов из концентратора событий и запишите их в рабочую область Log Analytics.
 
 Приложение логики включает в себя следующее:
-- Триггер [соединителя концентратора событий](https://docs.microsoft.com/connectors/eventhubs/) для считывания из концентратора событий.
+- Триггер [соединителя концентратора событий](/connectors/eventhubs/) для считывания из концентратора событий.
 - [Действие "Анализ JSON"](../../logic-apps/logic-apps-content-type.md) для извлечения событий JSON.
 - [Действие составления](../../logic-apps/logic-apps-workflow-actions-triggers.md#compose-action) для преобразования JSON в объект.
-- [Соединитель отправки данных log Analytics](https://docs.microsoft.com/connectors/azureloganalyticsdatacollector/) для публикации данных в рабочую область log Analytics.
+- [Соединитель отправки данных log Analytics](/connectors/azureloganalyticsdatacollector/) для публикации данных в рабочую область log Analytics.
 
    ![изображение триггера концентратора событий в Logic Apps](media/collect-activity-logs-subscriptions/log-analytics-logic-apps-activity-log-overview.png)
 
@@ -284,7 +284,7 @@ ms.locfileid: "80055738"
 
 
 ### <a name="add-log-analytics-send-data-action"></a>Добавление действия отправки данных Log Analytics
-Действие [сборщика данных Azure log Analytics](https://docs.microsoft.com/connectors/azureloganalyticsdatacollector/) извлекает объект из действия создания и отправляет его в log Analytics рабочую область.
+Действие [сборщика данных Azure log Analytics](/connectors/azureloganalyticsdatacollector/) извлекает объект из действия создания и отправляет его в log Analytics рабочую область.
 
 1. Щелкните **новый шаг**  >  **Добавить действие** .
 2. Введите *log analytics* в качестве фильтра, а затем выберите действие **Сборщик данных Azure Log Analytics: отправить данные**.
@@ -330,7 +330,7 @@ ms.locfileid: "80055738"
 > При первом отправке нового пользовательского журнала в рабочую область Log Analytics может потребоваться до часа, чтобы пользовательский журнал был доступен для поиска.
 
 >[!NOTE]
-> Журналы действий записываются в пользовательскую таблицу и не отображаются в [решении журнала действий](./activity-log-collect.md).
+> Журналы действий записываются в пользовательскую таблицу и не отображаются в [решении журнала действий](./activity-log.md).
 
 
 ![Тестирование приложения логики](media/collect-activity-logs-subscriptions/log-analytics-results.png)

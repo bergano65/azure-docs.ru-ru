@@ -4,13 +4,13 @@ titleSuffix: Azure Kubernetes Service
 description: Узнайте, как динамически создать постоянный том с помощью дисков Azure в службе Kubernetes Azure (AKS).
 services: container-service
 ms.topic: article
-ms.date: 03/01/2019
-ms.openlocfilehash: 44741452f95995327914978bbfd5b0a49566faa5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/10/2020
+ms.openlocfilehash: 0e7bc057d756215b1aa155f0e227c75c99c8737c
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84751356"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86518017"
 ---
 # <a name="dynamically-create-and-use-a-persistent-volume-with-azure-disks-in-azure-kubernetes-service-aks"></a>Динамическое создание и использование постоянного тома с дисками Azure в службе Azure Kubernetes (AKS)
 
@@ -31,14 +31,14 @@ ms.locfileid: "84751356"
 
 Класс хранения используется для определения того, как единица хранения создается динамически с помощью постоянного тома. Дополнительные сведения о классах хранения Kubernetes см. в разделе [Kubernetes Storage Classes][kubernetes-storage-classes] (Классы хранения Kubernetes).
 
-Каждый кластер AKS содержит два предварительно созданных класса хранения, настроенных для работы с дисками Azure.
+Каждый кластер AKS включает четыре предварительно созданных класса хранения, два из которых настроены для работы с дисками Azure:
 
-* Класс хранения *default* подготавливает диск Azure ценовой категории "Стандартный".
-    * Хранилище уровня "Стандартный" поддерживает жесткие диски и обеспечивает экономичное хранилище, при этом по-прежнему выполняется. Диски уровня "Стандартный" идеально подходят для экономичной рабочей нагрузки для разработки и тестирования.
+* Класс хранения *по умолчанию* подготавливает диск Azure стандартного SSD.
+    * Хранилище уровня "Стандартный" поддерживается стандартными твердотельными накопителями и обеспечивает экономичное хранилище, сохраняя при этом надежную производительность. 
 * Класс хранения *managed-premium* подготавливает диск Azure ценовой категории "Премиум".
     * Диски уровня "Премиум" используют высокопроизводительные твердотельные накопители с низкой задержкой. Они идеально подходят для виртуальных машин, выполняющих производственную рабочую нагрузку. Если узлы AKS в кластере используют хранилище класса Premium, выберите класс *managed-premium*.
     
-Если вы используете один из классов хранения по умолчанию, вы не сможете обновить размер тома после создания класса хранения. Чтобы иметь возможность обновить размер тома после создания класса хранения, добавьте строку `allowVolumeExpansion: true` в один из классов хранения по умолчанию или создайте собственный класс хранилища. Существующий класс хранения можно изменить с помощью `kubectl edit sc` команды. 
+Если вы используете один из классов хранения по умолчанию, вы не сможете обновить размер тома после создания класса хранения. Чтобы иметь возможность обновить размер тома после создания класса хранения, добавьте строку `allowVolumeExpansion: true` в один из классов хранения по умолчанию или создайте собственный класс хранилища. Обратите внимание, что не поддерживается уменьшение размера PVC (во избежание потери данных). Существующий класс хранения можно изменить с помощью `kubectl edit sc` команды. 
 
 Например, если вы хотите использовать диск размером 4 Тиб, необходимо создать класс хранения, который определяет, `cachingmode: None` так как [кэширование дисков не поддерживается для дисков 4 Тиб и больше](../virtual-machines/windows/premium-storage-performance.md#disk-caching).
 
@@ -151,6 +151,9 @@ Events:
   Normal  SuccessfulMountVolume  1m    kubelet, aks-nodepool1-79590246-0  MountVolume.SetUp succeeded for volume "pvc-faf0f176-8b8d-11e8-923b-deb28c58d242"
 [...]
 ```
+
+## <a name="use-ultra-disks"></a>Использование Ultra Disks
+Чтобы использовать Ultra Disk, см. раздел [Использование Ultra Disks в службе Kubernetes Azure (AKS)](use-ultra-disks.md).
 
 ## <a name="back-up-a-persistent-volume"></a>Резервное копирование постоянного тома
 
@@ -284,3 +287,11 @@ Volumes:
 [operator-best-practices-storage]: operator-best-practices-storage.md
 [concepts-storage]: concepts-storage.md
 [storage-class-concepts]: concepts-storage.md#storage-classes
+[az-feature-register]: /cli/azure/feature#az-feature-register
+[az-feature-list]: /cli/azure/feature#az-feature-list
+[az-provider-register]: /cli/azure/provider#az-provider-register
+[az-extension-add]: /cli/azure/extension#az-extension-add
+[az-extension-update]: /cli/azure/extension#az-extension-update
+[az-feature-register]: /cli/azure/feature#az-feature-register
+[az-feature-list]: /cli/azure/feature#az-feature-list
+[az-provider-register]: /cli/azure/provider#az-provider-register

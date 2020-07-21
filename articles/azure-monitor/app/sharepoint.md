@@ -3,15 +3,19 @@ title: Мониторинг сайта SharePoint с помощью Application 
 description: Начало мониторинга нового приложения с помощью нового ключа инструментирования
 ms.topic: conceptual
 ms.date: 07/11/2018
-ms.openlocfilehash: b9b31a715b19d6c06cbddb91c0bd9279088c4447
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: a545a24b5a9af883200f25cc83486e3c5621bd78
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86221057"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86516895"
 ---
 # <a name="monitor-a-sharepoint-site-with-application-insights"></a>Мониторинг сайта SharePoint с помощью Application Insights
+
 Azure Application Insights позволяет отслеживать доступность, производительность и использование приложений. В этой статье вы узнаете, как настроить эту службу для сайта SharePoint.
+
+> [!NOTE]
+> Из-за проблем с безопасностью вы не можете напрямую добавить сценарий, описанный в этой статье, к веб-страницам в современном UX SharePoint. В качестве альтернативы можно использовать [SharePoint Framework (спфкс)](/sharepoint/dev/spfx/extensions/overview-extensions) для создания пользовательского расширения, которое можно использовать для установки Application Insights на сайтах SharePoint. Дополнительные сведения см. в статье [Создание решения расширения спфкс с помощью AppInsights, установленного с нуля](https://github.com/microsoft/ApplicationInsights-JS/tree/master/SPO#how-to-create-a-spfx-extension-solution-with-appinsights-installed-from-scratch) , или [Просмотр примера](https://github.com/microsoft/ApplicationInsights-JS/tree/master/SPO/AppInsightsExtensionSolutionSample). 
 
 ## <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 На [портале Azure](https://portal.azure.com) создайте ресурс Application Insights. Выберите приложение ASP.NET в качестве типа приложения.
@@ -137,5 +141,3 @@ function onRequestFail(sender, args) {
 * [Использование Application Insights](../../azure-monitor/app/app-insights-overview.md) для других типов приложений.
 
 <!--Link references-->
-
-

@@ -3,11 +3,12 @@ title: Диагностика сбоев и исключений с помощь
 description: Регистрируйте исключения приложений ASP.NET и телеметрию запросов.
 ms.topic: conceptual
 ms.date: 07/11/2019
-ms.openlocfilehash: 9f24f09e7d2ef0a3e5f3a8f6546a9115118473ab
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4d298b3b8541590387995898b0b9f067e8130c3d
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80892348"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86517218"
 ---
 # <a name="diagnose-exceptions-in-your-web-apps-with-application-insights"></a>Диагностика исключений в веб-приложениях с помощью Application Insights
 Об исключениях активного веб-приложения сообщает [Application Insights](../../azure-monitor/app/app-insights-overview.md). Вы можете сопоставлять неудачно завершенные запросы с исключениями и другими событиями на клиенте и сервере, чтобы быстро выявлять причины неполадок.
@@ -18,7 +19,7 @@ ms.locfileid: "80892348"
   * Виртуальные машины Azure и масштабируемые наборы виртуальных машин Azure, размещенные в IIS: Добавление [расширения мониторинга приложений](../../azure-monitor/app/azure-vm-vmss-apps.md)
   * Запрограммируйте установку [пакета SDK для Application Insights](../../azure-monitor/app/asp-net.md) в приложении или:
   * веб-серверы IIS: запустите [агент Application Insights](../../azure-monitor/app/monitor-performance-live-website-now.md) либо
-  * Веб-приложения Java: включение [агента Java](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent)
+  * Веб-приложения Java: включение [агента Java](./java-in-process-agent.md)
 * Добавьте [фрагмент кода JavaScript](../../azure-monitor/app/javascript.md) в веб-страницы для перехвата исключений браузера.
 * Для некоторых платформ приложений или заданных параметров необходимо выполнить дополнительные шаги, чтобы перехватывать дополнительные исключения:
   * [Веб-формы](#web-forms)
@@ -27,7 +28,7 @@ ms.locfileid: "80892348"
   * [веб-API 2.*](#web-api-2x);
   * [WCF](#wcf)
 
-  В этой статье особое внимание посвящено .NET Frameworkным приложениям с точки зрения примера кода. Некоторые методы, работающие с .NET Framework, являются устаревшими в пакет SDK для .NET Core. Если у вас есть приложение .NET Core, обратитесь к [документации по пакет SDK для .NET Core](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core) .
+  В этой статье особое внимание посвящено .NET Frameworkным приложениям с точки зрения примера кода. Некоторые методы, работающие с .NET Framework, являются устаревшими в пакет SDK для .NET Core. Если у вас есть приложение .NET Core, обратитесь к [документации по пакет SDK для .NET Core](./asp-net-core.md) .
 
 ## <a name="diagnosing-exceptions-using-visual-studio"></a>Диагностика исключений с помощью Visual Studio
 Откройте приложение в Visual Studio для отладки.
@@ -93,7 +94,7 @@ ms.locfileid: "80892348"
 ## <a name="capturing-exceptions-and-related-diagnostic-data"></a><a name="exceptions"></a> Запись исключений и связанных диагностических данных
 Сначала вы не увидите на портале все исключения, которые приводят к сбоям в приложении. Вы увидите все исключения браузера (если на веб-страницах используется [пакет SDK для JavaScript](../../azure-monitor/app/javascript.md)). Но большинство серверных исключений перехватываются IIS, и вам нужно написать небольшой код, чтобы увидеть их.
 
-Вы можете:
+Вы можете выбрать один из следующих вариантов.
 
 * **Явно регистрировать исключения** путем вставки кода в обработчики исключений для регистрации исключений.
 * **Автоматически записывать исключения** путем настройки своей платформы ASP.NET. Для разных типов платформы необходимы различные дополнения.
@@ -198,7 +199,7 @@ public class GoodController : ApiController
 ## <a name="mvc"></a>MVC
 Начиная с версии веб-пакета SDK 2.6 (бета-версии 3 и более поздних версий) для Application Insights в службе выполняется сбор необработанных исключений, автоматически созданных в методах контроллеров MVC 5+. Если ранее для отслеживания таких исключений вы добавляли настраиваемый обработчик (как указано в приведенных ниже примерах), можете удалить его, чтобы избежать двойного отслеживания исключений.
 
-Существует несколько ситуаций, когда обработка фильтров исключений невозможна. Пример:
+Существует несколько ситуаций, когда обработка фильтров исключений невозможна. Вот несколько примеров:
 
 * Исключения выброшены из конструкторов контроллеров.
 * Исключения выброшены из обработчиков сообщений.
@@ -213,7 +214,7 @@ public class GoodController : ApiController
 ### <a name="prior-versions-support"></a>Поддержка предыдущих версий
 Примеры отслеживания исключений для MVC 4 (и более ранних версий) веб-пакета SDK 2.5 (и более ранних версий) для Application Insights приведены ниже.
 
-Если для конфигурации [CustomErrors](https://msdn.microsoft.com/library/h0hfz6fc.aspx) установлено значение `Off`, исключения будут доступны для сбора в [HTTP-модуле](https://msdn.microsoft.com/library/ms178468.aspx). Тем не менее, если это значение `RemoteOnly` (по умолчанию) или `On`, то исключение будет удалено и недоступно для автоматического сбора в Application Insights. Это можно исправить путем переопределения [класса System. Web. MVC. хандлиррораттрибуте](https://msdn.microsoft.com/library/system.web.mvc.handleerrorattribute.aspx)и применения переопределенного класса, как показано в различных версиях MVC ниже ([источник GitHub](https://github.com/AppInsightsSamples/Mvc2UnhandledExceptions/blob/master/MVC2App/Controllers/AiHandleErrorAttribute.cs)):
+Если для конфигурации [CustomErrors](/previous-versions/dotnet/netframework-4.0/h0hfz6fc(v=vs.100)) установлено значение `Off`, исключения будут доступны для сбора в [HTTP-модуле](/previous-versions/dotnet/netframework-3.0/ms178468(v=vs.85)). Тем не менее, если это значение `RemoteOnly` (по умолчанию) или `On`, то исключение будет удалено и недоступно для автоматического сбора в Application Insights. Это можно исправить путем переопределения [класса System. Web. MVC. хандлиррораттрибуте](/dotnet/api/system.web.mvc.handleerrorattribute?view=aspnet-mvc-5.2)и применения переопределенного класса, как показано в различных версиях MVC ниже ([источник GitHub](https://github.com/AppInsightsSamples/Mvc2UnhandledExceptions/blob/master/MVC2App/Controllers/AiHandleErrorAttribute.cs)):
 
 ```csharp
     using System;
@@ -254,7 +255,7 @@ public class GoodController : ApiController
     ...
 ```
 
-[Пример](https://github.com/AppInsightsSamples/Mvc2UnhandledExceptions)
+[Образец](https://github.com/AppInsightsSamples/Mvc2UnhandledExceptions)
 
 #### <a name="mvc-3"></a>MVC 3
 Зарегистрируйте `AiHandleErrorAttribute` в качестве глобального фильтра в Global.asax.cs:
@@ -269,7 +270,7 @@ public class GoodController : ApiController
      ...
 ```
 
-[Пример](https://github.com/AppInsightsSamples/Mvc3UnhandledExceptionTelemetry)
+[Образец](https://github.com/AppInsightsSamples/Mvc3UnhandledExceptionTelemetry)
 
 #### <a name="mvc-4-mvc5"></a>MVC 4, MVC5
 Зарегистрируйте AiHandleErrorAttribute в качестве глобального фильтра в FilterConfig.cs:
@@ -285,12 +286,12 @@ public class GoodController : ApiController
     }
 ```
 
-[Пример](https://github.com/AppInsightsSamples/Mvc5UnhandledExceptionTelemetry)
+[Образец](https://github.com/AppInsightsSamples/Mvc5UnhandledExceptionTelemetry)
 
-## <a name="web-api"></a>Веб-интерфейс API
+## <a name="web-api"></a>Веб-API
 Начиная с версии веб-пакета SDK 2.6 (бета-версии 3 и более поздних версий) для службы Application Insights в службе выполняется сбор необработанных исключений, автоматически созданных в методах контроллеров для WebAPI 2+. Если ранее для отслеживания таких исключений вы добавляли настраиваемый обработчик (как указано в приведенных ниже примерах), можете удалить его, чтобы избежать двойного отслеживания исключений.
 
-Существует несколько ситуаций, когда обработка фильтров исключений невозможна. Пример:
+Существует несколько ситуаций, когда обработка фильтров исключений невозможна. Вот несколько примеров:
 
 * Исключения выброшены из конструкторов контроллеров.
 * Исключения выброшены из обработчиков сообщений.
@@ -353,7 +354,7 @@ public class GoodController : ApiController
     }
 ```
 
-[Пример](https://github.com/AppInsightsSamples/WebApi_1.x_UnhandledExceptions)
+[Образец](https://github.com/AppInsightsSamples/WebApi_1.x_UnhandledExceptions)
 
 #### <a name="web-api-2x"></a>Web API 2.x
 Добавьте реализацию IExceptionLogger:
@@ -408,7 +409,7 @@ public class GoodController : ApiController
      }
 ```
 
-[Пример](https://github.com/AppInsightsSamples/WebApi_2.x_UnhandledExceptions)
+[Образец](https://github.com/AppInsightsSamples/WebApi_2.x_UnhandledExceptions)
 
 В качестве альтернативы можно выполнить следующее.
 
@@ -478,7 +479,7 @@ Add the attribute to the service implementations:
          ...
 ```
 
-[Пример](https://github.com/AppInsightsSamples/WCFUnhandledExceptions)
+[Образец](https://github.com/AppInsightsSamples/WCFUnhandledExceptions)
 
 ## <a name="exception-performance-counters"></a>Счетчики производительности исключений
 Если на сервере [установлен агент Application Insights](../../azure-monitor/app/monitor-performance-live-website-now.md), то можно получить диаграмму частоты исключений, вычисленной платформой .NET. Она включает как обработанные, так и необработанные исключения .NET.
@@ -489,7 +490,7 @@ Add the attribute to the service implementations:
 
 Она будет отличаться от значения счетчика Exceptions, вычисленного порталом Application Insights по количеству отчетов TrackException. Интервалы выборки различаются, а пакет SDK не отправляет отчеты TrackException для всех обработанных и необработанных исключений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Настройка Application Insights: отслеживание зависимостей](../../azure-monitor/app/asp-net-dependencies.md)
 * [Мониторинг времени загрузки страниц, исключений браузера и вызовов AJAX](../../azure-monitor/app/javascript.md)
 * [Мониторинг счетчиков производительности](../../azure-monitor/app/performance-counters.md)

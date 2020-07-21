@@ -3,12 +3,12 @@ title: Выбор архитектуры для развертывания Appli
 description: Отправка телеметрии к различным ресурсам для меток разработки, тестирования и эксплуатации.
 ms.topic: conceptual
 ms.date: 05/11/2020
-ms.openlocfilehash: 53fe54d1e674a9d15cab5a3fac0c85f415e40260
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: ff301887aebf64d26d0fb391a8a16adefc8a3860
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86107433"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86516725"
 ---
 # <a name="how-many-application-insights-resources-should-i-deploy"></a>Выбор количества ресурсов Application Insights для развертывания
 
@@ -35,7 +35,7 @@ ms.locfileid: "86107433"
 
 ### <a name="other-things-to-keep-in-mind"></a>Что еще нужно учитывать
 
--   Возможно, потребуется добавить пользовательский код для настройки значимых значений в атрибуте [Cloud_RoleName](https://docs.microsoft.com/azure/azure-monitor/app/app-map?tabs=net#set-cloud-role-name). Если значения этого атрибута будут неверными, интерфейс портала *НЕ БУДЕТ* работать.
+-   Возможно, потребуется добавить пользовательский код для настройки значимых значений в атрибуте [Cloud_RoleName](./app-map.md?tabs=net#set-cloud-role-name). Если значения этого атрибута будут неверными, интерфейс портала *НЕ БУДЕТ* работать.
 - Для приложений Service Fabric и классических облачных служб пакет SDK автоматически считывает данные из среды роли Azure и настраивает эти значения. Но для приложений всех других типов вам придется, скорее всего, задать его явным образом.
 -   Интерфейс Live Metrics не поддерживает разделение по именам ролей.
 
@@ -76,7 +76,7 @@ var appInsights = window.appInsights || function(config){ ...
 
 ## <a name="create-additional-application-insights-resources"></a>Создание дополнительных ресурсов Application Insights
 
-Создание ресурса Application Insights описано в [этом руководстве](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource).
+Создание ресурса Application Insights описано в [этом руководстве](./create-new-resource.md).
 
 ### <a name="getting-the-instrumentation-key"></a>Получение ключа инструментирования
 Ключ инструментирования идентифицирует созданный вами ресурс.

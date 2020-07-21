@@ -1,25 +1,28 @@
 ---
-title: rbИнтеграция Azure Active Directory со службой Azure Kubernetes
-description: Узнайте, как использовать Azure CLI для создания кластера Azure Kubernetes Service (AKS) с поддержкой Azure Active Directory.
+title: Интеграция Azure Active Directory со службой Kubernetes Azure (устаревшая служба)
+description: Узнайте, как использовать Azure CLI для создания кластера Azure Kubernetes Service (AKS) с поддержкой Azure Active Directory (прежних версий).
 services: container-service
 author: TomGeske
 ms.topic: article
-ms.date: 07/08/2020
+ms.date: 07/20/2020
 ms.author: thomasge
-ms.openlocfilehash: 0bbaca733eb9c1fffbc5c6781b51429edd73fb46
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: dfc3a546f4845d5eb2e4e144b66b5d97e4a68829
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86252085"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86518034"
 ---
-# <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli"></a>Интеграция Azure Active Directory со службой Azure Kubernetes с помощью Azure CLI
+# <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli-legacy"></a>Интеграция Azure Active Directory со службой Azure Kubernetes с помощью Azure CLI (прежних версий)
 
 Службу Azure Kubernetes (AKS) можно настроить на использование Azure Active Directory (AD) для проверки подлинности пользователей. В этой конфигурации вы можете войти в кластер AKS с помощью маркера проверки подлинности Azure AD. Операторы кластера также могут настраивать Kubernetes управления доступом на основе ролей (RBAC) на основе удостоверения пользователя или членства в группе каталогов.
 
 В этой статье показано, как создать необходимые компоненты Azure AD, а затем развернуть кластер с поддержкой Azure AD и создать базовую роль RBAC в кластере AKS.
 
 Полный пример скрипта, используемый в этой статье, см. в разделе [Azure CLI Samples AKS Integration by Azure AD][complete-script].
+
+> [!Important]
+> AKS имеет новый усовершенствованный интерфейс [Azure AD, управляемый AKS][managed-aad] , который не требует управления сервером или клиентским приложением. Если вы хотите выполнить миграцию, следуйте приведенным [здесь][managed-aad-migrate]инструкциям.
 
 ## <a name="the-following-limitations-apply"></a>Действительны следующие ограничения.
 
@@ -79,7 +82,7 @@ serverApplicationSecret=$(az ad sp credential reset \
 Azure AD требуются разрешения для выполнения следующих действий:
 
 * Чтение данных каталога
-* Вход и чтение профилей пользователей
+* Вход в систему и чтение профиля пользователя
 
 Назначьте эти разрешения с помощью команды [AZ AD App Permission Add][az-ad-app-permission-add] :
 
@@ -280,3 +283,5 @@ error: You must be logged in to the server (Unauthorized)
 [rbac-authorization]: concepts-identity.md#kubernetes-role-based-access-controls-rbac
 [operator-best-practices-identity]: operator-best-practices-identity.md
 [azure-ad-rbac]: azure-ad-rbac.md
+[managed-aad]: managed-aad.md
+[managed-aad-migrate]: managed-aad.md#upgrading-to-aks-managed-azure-ad-integration

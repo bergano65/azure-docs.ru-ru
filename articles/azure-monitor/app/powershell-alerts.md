@@ -3,12 +3,12 @@ title: Настройка оповещений в Application Insights с пом
 description: Автоматизация настройки Application Insights для получения сообщений электронной почты об изменениях метрик.
 ms.topic: conceptual
 ms.date: 10/31/2016
-ms.openlocfilehash: ea33ecfbc02bfed75a66e751ce1788474a6d0e8f
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 3a3d614ec57242a2ea4b29a86d6365a2efe56f94
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86111324"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86516963"
 ---
 # <a name="use-powershell-to-set-alerts-in-application-insights"></a>Настройка оповещений в Application Insights с помощью PowerShell
 
@@ -139,7 +139,7 @@ Add-AzMetricAlertRule -Name "poor sales" `
 Вы можете [автоматизировать реагирование на оповещения](../../azure-monitor/platform/alerts-webhooks.md). При возникновении оповещения Azure будет вызывать выбранный вами веб-адрес.
 
 ## <a name="see-also"></a>См. также раздел
-* [Сценарий настройки Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource#creating-a-resource-automatically)
+* [Сценарий настройки Application Insights](./create-new-resource.md#creating-a-resource-automatically)
 * [Создание ресурсов Application Insights и веб-тестов на основе шаблонов](powershell.md)
 * [Автоматизация связывания Диагностики Microsoft Azure с Application Insights](powershell-azure-diagnostics.md)
 * [Автоматизация реагирования на оповещения](../../azure-monitor/platform/alerts-webhooks.md)

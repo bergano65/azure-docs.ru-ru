@@ -5,11 +5,12 @@ author: motanv
 ms.topic: conceptual
 ms.date: 06/07/2017
 ms.author: motanv
-ms.openlocfilehash: 4bdb00eec38addc0c9f88eba8b73185ec5721277
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 14b2b5bd2577a10ad77a715fb5d20e10da84cf1d
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84692586"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86518985"
 ---
 # <a name="testability-actions"></a>Действия, доступные благодаря Testability
 Для моделирования ненадежной инфраструктуры платформа Azure Service Fabric предоставляет разработчику несколько способов имитации различных реалистичных ошибок и переходов. Такие действия доступны благодаря компоненту Testability. Эти действия представляют из себя интерфейсы API низкого уровня, которые вызывают определенную ошибку, смену состояния или проверку. Сочетая эти действия, вы можете создать комплексные сценарии тестирования своих служб.
@@ -78,7 +79,7 @@ Restart-ServiceFabricNode -NodeName $nodeName -CompletionMode DoNotVerify
 
 На следующем снимке экрана приведена команда Testability **Restart-ServiceFabricNode** в действии.
 
-![](media/service-fabric-testability-actions/Restart-ServiceFabricNode.png)
+![Снимок экрана: выполнение команды Restart-ServiceFabricNode в PowerShell.](media/service-fabric-testability-actions/Restart-ServiceFabricNode.png)
 
 Выходные данные первой команды **Get-ServiceFabricNode** (командлет из модуля Service Fabric PowerShell) показывают, что в локальном кластере есть пять узлов с именами от Node.1 до Node.5. После выполнения командлета **Restart-ServiceFabricNode** (действия, доступного благодаря Testability) на узле с именем Node.4 мы увидим, что время работы узла сброшено.
 
@@ -217,7 +218,7 @@ ReplicaSelector replicaByIdSelector = ReplicaSelector.ReplicaIdOf(partitionSelec
 ReplicaSelector secondaryReplicaSelector = ReplicaSelector.RandomSecondaryOf(partitionSelector);
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Сценарии Testability](service-fabric-testability-scenarios.md)
 * Тестирование службы
   * [Моделирование ошибок во время рабочих нагрузок службы](service-fabric-testability-workload-tests.md)

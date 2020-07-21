@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/01/2020
 ms.author: memildin
-ms.openlocfilehash: 997b7b1442d29c4daa4e47c89a7f53d46c3b8c81
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: e8dc2edf19279aff05e5d5be6096505acf1b3438
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85969591"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86519597"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -33,6 +33,9 @@ ms.locfileid: "85969591"
 
 Обновления в июле включают:
 - [Расширение защиты от угроз для службы хранилища Azure для включения файлов и Azure Data Lake Storage 2-го поколения Azure (Предварительная версия)](#threat-protection-for-azure-storage-expanded-to-include-azure-files-and-azure-data-lake-storage-gen2-preview)
+- [Шесть политик для расширенной безопасности данных SQL устарели](#six-policies-for-sql-advanced-data-security-deprecated)
+
+
 
 ### <a name="threat-protection-for-azure-storage-expanded-to-include-azure-files-and-azure-data-lake-storage-gen2-preview"></a>Расширение защиты от угроз для службы хранилища Azure для включения файлов и Azure Data Lake Storage 2-го поколения Azure (Предварительная версия)
 
@@ -43,7 +46,24 @@ ms.locfileid: "85969591"
 Дополнительные сведения о [защите от угроз для службы хранилища Azure](threat-protection.md#threat-protection-for-azure-storage-).
 
 
-## <a name="june-2020"></a>июнь 2020 г.
+### <a name="six-policies-for-sql-advanced-data-security-deprecated"></a>Шесть политик для расширенной безопасности данных SQL устарели
+
+Шесть политик, связанных с расширенной безопасностью данных для компьютеров SQL, являются устаревшими:
+
+- Для дополнительных параметров безопасности управляемого экземпляра SQL Server можно задать значение "все" в параметрах расширенной защиты данных
+- В параметрах расширенной защиты данных SQL Server следует задать для параметра "все" Дополнительные параметры безопасности.
+- Дополнительные параметры безопасности данных для управляемого экземпляра SQL должны содержать адрес электронной почты для получения оповещений системы безопасности
+- Дополнительные параметры безопасности данных для сервера SQL должны содержать адрес электронной почты для получения оповещений системы безопасности
+- Уведомления по электронной почте для администраторов и владельцев подписок следует включить в параметрах расширенной защиты данных для управляемого экземпляра SQL.
+- На серверах SQL в параметрах расширенной защиты данных должны быть включены уведомления, отправляемые по электронной почте администраторам и владельцам подписок.
+
+Дополнительные сведения о [встроенных политиках](security-center-policy-definitions.md).
+
+
+
+
+
+## <a name="june-2020"></a>Июнь 2020 г.
 
 Обновления в июне включают:
 - [API оценки безопасности (Предварительная версия)](#secure-score-api-preview)
@@ -109,7 +129,7 @@ ms.locfileid: "85969591"
 Политики можно найти в политике Azure:
 
 
-|Цель  |Политика  |Идентификатор политики  |
+|Goal  |Политика  |Идентификатор политики  |
 |---------|---------|---------|
 |Непрерывный экспорт в концентратор событий|[Развертывание экспортированных данных в концентраторе событий для оповещений и рекомендаций Центра безопасности Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fcdfcce10-4578-4ecd-9703-530938e4abcb)|cdfcce10-4578-4ecd-9703-530938e4abcb|
 |Непрерывный экспорт в Log Analytics рабочую область|[Развертывание экспортированных данных в рабочей области Log Analytics для оповещений и рекомендаций Центра безопасности Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fffb6f416-7bd2-4488-8828-56585fef2be9)|ffb6f416-7bd2-4488-8828-56585fef2be9|
@@ -144,14 +164,14 @@ ms.locfileid: "85969591"
 
 | Политика                                                                                                                                                                                                                                                                | Идентификатор политики                            |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
-| [На серверах базы данных SQL Azure должна быть включена расширенная защита данных.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f7fe3b40f-802b-4cdd-8bd4-fd799c948cc2)     | 7fe3b40f-802b-4cdd-8bd4-fd799c948cc2 |
-| [На серверах SQL Server на компьютерах должна быть включена расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f6581d072-105e-4418-827f-bd446d56421b) | 6581d072-105e-4418-827f-bd446d56421b |
-| [В учетных записях хранения должна быть включена расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f308fbb08-4ab8-4e67-9b29-592e93fb94fa)           | 308fbb08-4ab8-4e67-9b29-592e93fb94fa |
-| [На Azure Key Vault хранилищах следует включить расширенную защиту угроз.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f0e6763cc-5078-4e64-889d-ff4d9a839047)           | 0e6763cc-5078-4e64-889d-ff4d9a839047 |
+| [На серверах Базы данных SQL Azure должна быть включена Расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f7fe3b40f-802b-4cdd-8bd4-fd799c948cc2)     | 7fe3b40f-802b-4cdd-8bd4-fd799c948cc2 |
+| [Для серверов SQL на компьютерах должна быть включена Расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f6581d072-105e-4418-827f-bd446d56421b) | 6581d072-105e-4418-827f-bd446d56421b |
+| [Для учетных записей хранения должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f308fbb08-4ab8-4e67-9b29-592e93fb94fa)           | 308fbb08-4ab8-4e67-9b29-592e93fb94fa |
+| [Для хранилищ в службе Azure Key Vault должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f0e6763cc-5078-4e64-889d-ff4d9a839047)           | 0e6763cc-5078-4e64-889d-ff4d9a839047 |
 | [В планах службы приложений должна быть включена расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f2913021d-f2fd-4f3d-b958-22354e2bdbcb)                | 2913021d-f2fd-4f3d-b958-22354e2bdbcb |
-| [В реестре контейнеров Azure должна быть включена расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fc25d9a16-bc35-4e15-a7e5-9db606bf9ed4)   | c25d9a16-bc35-4e15-a7e5-9db606bf9ed4 |
-| [В кластерах службы Kubernetes Azure должна быть включена расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f523b5cd1-3e23-492f-a539-13118b6d1e3a)   | 523b5cd1-3e23-492f-a539-13118b6d1e3a |
-| [На виртуальных машинах должна быть включена расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f4da35fc9-c9e7-4960-aec9-797fe7d9051d)           | 4da35fc9-c9e7-4960-aec9-797fe7d9051d |
+| [Для реестров в службе "Реестр контейнеров Azure" должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fc25d9a16-bc35-4e15-a7e5-9db606bf9ed4)   | c25d9a16-bc35-4e15-a7e5-9db606bf9ed4 |
+| [Для кластеров в Службе Azure Kubernetes должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f523b5cd1-3e23-492f-a539-13118b6d1e3a)   | 523b5cd1-3e23-492f-a539-13118b6d1e3a |
+| [На виртуальных машинах должна быть включена Расширенная защита от угроз](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f4da35fc9-c9e7-4960-aec9-797fe7d9051d)           | 4da35fc9-c9e7-4960-aec9-797fe7d9051d |
 |                                                                                                                                                                                                                                                                       |                                      |
 
 Узнайте больше о [защите от угроз в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/threat-protection).
@@ -160,7 +180,7 @@ ms.locfileid: "85969591"
 
 
 
-## <a name="may-2020"></a>Май 2020 г.
+## <a name="may-2020"></a>Май 2020 г.
 
 Обновления в могут включать:
 - [Правила подавления оповещений (предварительная версия)](#alert-suppression-rules-preview)

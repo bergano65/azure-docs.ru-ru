@@ -8,11 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: c0b043bdb20cad508950a11853403958340acadf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6e7b6c7ddb33d42cca66698c87c82477f3e55621
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84434196"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86517473"
 ---
 # <a name="use-the-azure-maps-indoor-maps-module"></a>Использование модуля схем помещений Azure Maps
 
@@ -20,7 +21,7 @@ ms.locfileid: "84434196"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-1. [Создайте учетную запись службы Azure Maps](quick-demo-map-app.md#create-an-account-with-azure-maps).
+1. [Создайте учетную запись службы Azure Maps](quick-demo-map-app.md#create-an-azure-maps-account).
 2. [Создайте ресурс Creator](how-to-manage-creator.md).
 3. [Получите первичный ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account), который иногда называется первичным ключом или ключом подписки.
 4. Получите `tilesetId` и `statesetId`, выполнив инструкции из [руководства по созданию схем помещений](tutorial-creator-indoor-maps.md).

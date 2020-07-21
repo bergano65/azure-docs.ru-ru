@@ -3,11 +3,12 @@ title: Интеллектуальное обнаружение в Azure Applicat
 description: Служба Application Insights автоматически выполняет углубленный анализ телеметрии вашего приложения и предупреждает о потенциальных проблемах.
 ms.topic: conceptual
 ms.date: 02/07/2019
-ms.openlocfilehash: b7fecf886515780858ecc503a29be3bd76b73c3f
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: ad6580a0a62d331a7851c47d71b46d3ea6c81468
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83700836"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86516878"
 ---
 # <a name="smart-detection-in-application-insights"></a>Интеллектуальное обнаружение в Application Insights
  Функция интеллектуального обнаружения автоматически предупреждает о потенциальных проблемах с производительностью и аномальных сбоях в веб-приложении. Она выполняет упреждающий анализ данных телеметрии, которые приложение отправляет в [Application Insights](../../azure-monitor/app/app-insights-overview.md). В случае внезапного увеличения частоты сбоев или числа аномальных тенденций в производительности клиента или сервера вы получите оповещение. Эта функция не требует настройки. Она работает, если приложение отправляет достаточный объем данных телеметрии.
@@ -33,7 +34,7 @@ ms.locfileid: "83700836"
 
 * [Интеллектуальное обнаружение. Аномальные сбои.](../../azure-monitor/app/proactive-failure-diagnostics.md) С помощью машинного обучения мы настраиваем для вашего приложения ожидаемое количество неудачно завершенных запросов, сопоставляя его с нагрузкой и другими факторами. Если частота сбоев превысит ожидаемое ограничение, вам будет отправлено предупреждение.
 * [Интеллектуальное обнаружение. Аномалии производительности.](../../azure-monitor/app/proactive-performance-diagnostics.md) Если время ответа операции или продолжительность зависимости длиннее по сравнению с базовым показателем за предыдущие периоды, или если обнаружен аномальный шаблон времени отклика и времени загрузки страницы, выводится уведомление.   
-* Общее ухудшение работы и другие проблемы, например [снижение уровня серьезности трассировки](https://docs.microsoft.com/azure/azure-monitor/app/proactive-trace-severity), [утечка памяти](https://docs.microsoft.com/azure/azure-monitor/app/proactive-potential-memory-leak), [аномальный рост объема исключений](https://docs.microsoft.com/azure/azure-monitor/app/proactive-exception-volume) и [неправильные подходы к безопасности](https://docs.microsoft.com/azure/azure-monitor/app/proactive-application-security-detection-pack).
+* Общее ухудшение работы и другие проблемы, например [снижение уровня серьезности трассировки](./proactive-trace-severity.md), [утечка памяти](./proactive-potential-memory-leak.md), [аномальный рост объема исключений](./proactive-exception-volume.md) и [неправильные подходы к безопасности](./proactive-application-security-detection-pack.md).
 
 (Каждое уведомление содержит ссылки на материалы соответствующих статей.)
 
@@ -43,7 +44,7 @@ ms.locfileid: "83700836"
 
 Настройку уведомлений по электронной почте для определенного правила интеллектуального обнаружения можно выполнить, открыв колонку **Настройки** и выбрав правило, которое откроет колонку **Изменить правило**.
 
-Кроме того, вы можете изменить настройку с помощью шаблонов Azure Resource Manager. Дополнительные сведения см. в статье [Управление правилами интеллектуального обнаружения Application Insights с помощью шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/azure-monitor/app/proactive-arm-config).
+Кроме того, вы можете изменить настройку с помощью шаблонов Azure Resource Manager. Дополнительные сведения см. в статье [Управление правилами интеллектуального обнаружения Application Insights с помощью шаблонов Azure Resource Manager](./proactive-arm-config.md).
 
 ## <a name="video"></a>Видеоролик
 
@@ -60,4 +61,3 @@ ms.locfileid: "83700836"
 
 * [Настройка оповещений в Application Insights](../../azure-monitor/platform/alerts-log.md)
 * [Доступность веб-тестов](../../azure-monitor/app/monitor-web-app-availability.md) 
-
