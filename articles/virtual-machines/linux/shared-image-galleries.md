@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: 69ac505b49fdf6525e7f25bcf4e78e4957d12a5d
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 33a66ee35dc5115911a82e002e00d636574ce581
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86221649"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86501971"
 ---
 # <a name="shared-image-galleries-overview"></a>Обзор коллекций общих образов
 
@@ -23,4 +23,4 @@ ms.locfileid: "86221649"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, как [развертывать общие образы](shared-images.md).
+Узнайте, как [развертывать общие образы](../shared-images-cli.md).

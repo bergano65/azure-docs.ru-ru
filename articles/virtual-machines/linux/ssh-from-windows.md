@@ -8,12 +8,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 81dfac2a1623253a110833a96fddd1b41bd11b26
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4fc411d3833fcd47477e7e0fe11c6da9e2114143
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85390233"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86502033"
 ---
 # <a name="how-to-use-ssh-keys-with-windows-on-azure"></a>Как использовать ключи SSH с Windows в Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "85390233"
 ## <a name="windows-packages-and-ssh-clients"></a>Пакеты Windows и SSH-клиенты
 Вы подключаетесь к виртуальным машинам Linux и управляете ими в Azure с помощью *SSH-клиента*. Компьютеры под управлением Linux или macOS обычно используют набор команд SSH для создания ключей SSH и управления ими, а также для установления SSH-подключений. 
 
-На компьютерах Windows не всегда установлены сравнимые команды SSH. Последние версии Windows 10 предоставляют [клиентские команды OpenSSH](https://blogs.msdn.microsoft.com/commandline/2018/03/07/windows10v1803/) для создания ключей SSH и управления ими, а SSH-подключения — из командной строки. Последние версии Windows 10 с [подсистемой Windows для Linux](https://docs.microsoft.com/windows/wsl/about) позволяют запускать и использовать такие служебные программы, как SSH-клиент, в собственной оболочке Bash. 
+На компьютерах Windows не всегда установлены сравнимые команды SSH. Последние версии Windows 10 предоставляют [клиентские команды OpenSSH](https://devblogs.microsoft.com/commandline/windows10v1803/) для создания ключей SSH и управления ими, а SSH-подключения — из командной строки. Последние версии Windows 10 с [подсистемой Windows для Linux](/windows/wsl/about) позволяют запускать и использовать такие служебные программы, как SSH-клиент, в собственной оболочке Bash. 
 
 Другие общераспространенные SSH-клиенты для Windows, доступные для установки локально, входят в состав следующих пакетов:
 
@@ -117,10 +117,10 @@ ssh azureuser@myvm.westus.cloudapp.azure.com
 
 4. Щелкните **Open** (Открыть) для подключения к виртуальной машине.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Подробные инструкции, параметры и дополнительные примеры работы с ключами SSH приведены в статье [Подробные инструкции: создание ключей SSH для аутентификации на виртуальной машине Linux в Azure и управление этими ключами](create-ssh-keys-detailed.md).
 
 * Для создания ключей SSH и установления SSH-подключений к виртуальным машинам Linux можно также использовать PowerShell в Azure Cloud Shell. Ознакомьтесь с разделом [Краткое руководство по использованию PowerShell в Azure Cloud Shell (предварительная версия)](../../cloud-shell/quickstart-powershell.md#ssh).
 
-* Если при подключении к виртуальным машинам Linux по протоколу SSH возникают трудности, см. статью [Troubleshoot SSH connections to an Azure Linux VM that fails, errors out, or is refused](troubleshoot-ssh-connection.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) (Устранение неполадок с ошибками, сбоем или отклонением SSH-подключения к виртуальной машине Azure Linux).
+* Если при подключении к виртуальным машинам Linux по протоколу SSH возникают трудности, см. статью [Troubleshoot SSH connections to an Azure Linux VM that fails, errors out, or is refused](../troubleshooting/troubleshoot-ssh-connection.md?toc=/azure/virtual-machines/linux/toc.json) (Устранение неполадок с ошибками, сбоем или отклонением SSH-подключения к виртуальной машине Azure Linux).

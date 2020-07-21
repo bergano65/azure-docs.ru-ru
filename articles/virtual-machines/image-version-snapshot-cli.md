@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 06/30/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 585d3729a886f3a01dff6dcd9afdab63669c05b5
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: b5dcadd2381596509a3d2f512d0f4ebbbfbba893
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86225298"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86502883"
 ---
 # <a name="create-an-image-from-a-vhd-or-snapshot-in-a-shared-image-gallery-using-the-azure-cli"></a>Создание образа из виртуального жесткого диска или моментального снимка в коллекции общих образов с помощью Azure CLI
 
@@ -69,7 +69,7 @@ az sig list -o table
 
 При создании определения образа убедитесь, что содержит все правильные сведения. В этом примере предполагается, что моментальный снимок или виртуальный жесткий диск относится к используемой виртуальной машине и не был обобщен. Если виртуальный жесткий диск или моментальный снимок был создан в обобщенной ОС (после запуска Sysprep для Windows или [waagent](https://github.com/Azure/WALinuxAgent) `-deprovision` или `-deprovision+user` для Linux), измените `-OsState` на `generalized` . 
 
-Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](https://docs.microsoft.com/azure/virtual-machines/linux/shared-image-galleries#image-definitions).
+Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](./linux/shared-image-galleries.md#image-definitions).
 
 Создайте в коллекции определение образа, используя команду [az sig image-definition create](/cli/azure/sig/image-definition#az-sig-image-definition-create).
 
@@ -120,7 +120,7 @@ az sig image-version create \
 > [!NOTE]
 > Прежде чем использовать тот же управляемый образ для создания другой версии образа, необходимо дождаться завершения сборки и репликации версии образа.
 >
-> Вы также можете хранить все реплики версии образа в хранилище, [избыточном](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs) в виде зоны, путем добавления `--storage-account-type standard_zrs` при создании версии образа.
+> Вы также можете хранить все реплики версии образа в хранилище, [избыточном](../storage/common/storage-redundancy.md) в виде зоны, путем добавления `--storage-account-type standard_zrs` при создании версии образа.
 >
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -9,11 +9,12 @@ ms.subservice: visual-studio
 ms.date: 09/09/2019
 ms.reviewer: mimckitt
 ms.custom: mimckitt
-ms.openlocfilehash: 826dc1858984508e54e160675dd10f6dfad88af8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2db281f1b3278e37deca8486971a7f7a83f85ccf
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83124369"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86503087"
 ---
 # <a name="how-to-create-a-virtual-machine-scale-set-with-visual-studio"></a>Как создать масштабируемый набор виртуальных машин с помощью Visual Studio
 
@@ -21,9 +22,9 @@ ms.locfileid: "83124369"
 
 [Масштабируемые наборы виртуальных машин Azure](https://azure.microsoft.com/blog/azure-vm-scale-sets-public-preview/) — это ресурсы вычислений Azure для развертывания и управления коллекцией похожих виртуальных машин с автомасштабированием и балансировкой нагрузки. Масштабируемые наборы виртуальных машин можно подготавливать и развертывать с помощью [шаблонов Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates). Шаблоны Azure Resource Manager можно развертывать с помощью Azure CLI, PowerShell, RESTFUL и непосредственно из Visual Studio. Visual Studio предоставляет набор примеров шаблонов, которые можно развернуть как часть проекта развертывания группы ресурсов Azure.
 
-Развертывания группы ресурсов Azure позволяют сгруппировать несколько связанных ресурсов Azure и опубликовать их в одной операции развертывания. Дополнительные сведения см. в статье [Создание и развертывание групп ресурсов Azure с помощью Visual Studio](../vs-azure-tools-resource-groups-deployment-projects-create-deploy.md).
+Развертывания группы ресурсов Azure позволяют сгруппировать несколько связанных ресурсов Azure и опубликовать их в одной операции развертывания. Дополнительные сведения см. в статье [Создание и развертывание групп ресурсов Azure с помощью Visual Studio](../azure-resource-manager/templates/create-visual-studio-deployment-project.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы приступить к развертыванию масштабируемых наборов виртуальных машин в Visual Studio, необходимы следующие компоненты:
 
@@ -43,7 +44,7 @@ ms.locfileid: "83124369"
 
     ![Присвойте имя и создайте проект](media/virtual-machine-scale-sets-vs-create/configure-azure-resource-group.png)
 
-1. В списке шаблонов выберите шаблон масштабируемый **набор виртуальных машин Windows** или **масштабируемый набор виртуальных машин Linux** . Нажмите кнопку **ОК**.
+1. В списке шаблонов выберите шаблон масштабируемый **набор виртуальных машин Windows** или **масштабируемый набор виртуальных машин Linux** . Щелкните **ОК**.
 
    ![Выберите шаблон виртуальной машины](media/virtual-machine-scale-sets-vs-create/select-vm-template.png)
 
@@ -91,6 +92,6 @@ ms.locfileid: "83124369"
 
  Портал предоставляет лучший способ управления инфраструктурой Azure с помощью веб-браузера. Обозреватель ресурсов Azure предоставляет простой способ просмотра и отладки ресурсов Azure. Обозреватель ресурсов Azure предлагает представление экземпляров, а также команды PowerShell для ресурсов, которые вы ищете.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После успешного развертывания масштабируемых наборов виртуальных машин с помощью Visual Studio можно выполнить дальнейшую настройку проекта в соответствии с требованиями приложения. Например, настройте Автомасштабирование, добавив ресурс **Insights** . Вы можете добавить инфраструктуру в шаблон, например автономные виртуальные машины, или развернуть приложения с помощью расширения пользовательских сценариев. Хорошим примером шаблонов можно найти в репозитории [шаблонов](https://github.com/Azure/azure-quickstart-templates) быстрого запуска Azure. Найдите `vmss`.

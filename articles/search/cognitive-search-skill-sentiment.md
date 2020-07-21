@@ -8,11 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: 15118c9c3d2d1a528c62b539ab7bdd8f174c19de
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 49918335dc6855726e7d8de15c01a5f15280af08
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85080103"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86503223"
 ---
 # <a name="sentiment-cognitive-skill"></a>Когнитивный навык тональности
 
@@ -35,20 +36,20 @@ Microsoft.Skills.Text.SentimentSkill
 
 Параметры зависят от регистра.
 
-| Имя параметра |                      |
+| Имя параметра | Описание |
 |----------------|----------------------|
 | `defaultLanguageCode` | (Необязательно.) Код языка применяется к документам, в которых не указан язык явным образом. <br/> Ознакомьтесь с [полным списком поддерживаемых языков](../cognitive-services/text-analytics/text-analytics-supported-languages.md). |
 
 ## <a name="skill-inputs"></a>Входные данные навыков 
 
-| Ввод имени | Описание: |
+| Ввод имени | Описание |
 |--------------------|-------------|
 | `text` | Анализируемый текст.|
 | `languageCode`    |  (Дополнительно.) Строка, указывающая язык записей. Если этот параметр не задан, используется значение по умолчанию "en". <br/>Ознакомьтесь с [полным списком поддерживаемых языков](../cognitive-services/text-analytics/text-analytics-supported-languages.md).|
 
 ## <a name="skill-outputs"></a>Выходные данные навыка
 
-| Имя вывода | Описание: |
+| Имя вывода | Описание |
 |--------------------|-------------|
 | `score` | Значение от 0 до 1, которое представляет тональность анализируемого текста. Значения, близкие к 0, имеют отрицательную тональность, близкие к 0,5 имеют нейтральную, а значения, близкие к 1, имеют положительную тональность.|
 

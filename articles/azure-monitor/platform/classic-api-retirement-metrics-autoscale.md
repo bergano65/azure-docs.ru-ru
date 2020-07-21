@@ -4,11 +4,12 @@ description: Прекращается поддержка классически�
 ms.subservice: ''
 ms.topic: conceptual
 ms.date: 11/19/2018
-ms.openlocfilehash: d9b6118bc165a9b0a78ae9c4da895719249b22b7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 65ce7a5c876c7a8e96f945d9d4db871c84f86a4e
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81114230"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505437"
 ---
 # <a name="azure-monitor-retirement-of-classic-deployment-model-apis-for-metrics-and-autoscale"></a>Прекращается поддержка API классической модели развертывания для метрик и автомасштабирования в Azure Monitor
 
@@ -28,9 +29,9 @@ ms.locfileid: "81114230"
 
 - **Классический пакет SDK для Azure Insights.** Если вы используете [классический пакет SDK для Azure Insights](https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Monitoring/), переходите на использование нового пакета SDK Azure Monitor для [.NET](https://github.com/azure/azure-libraries-for-net#download) или [Java](https://github.com/azure/azure-libraries-for-java#download). Скачайте [пакет NuGet SDK для Azure Monitor](https://www.nuget.org/packages/Microsoft.Azure.Management.Monitor/).
 
-- **Классическое автомасштабирование.** Если вы вызываете [классические API параметров автомасштабирования](https://msdn.microsoft.com/library/azure/mt348562.aspx) из пользовательских средств или с помощью [классического пакета SDK для Azure Insights](https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Monitoring/), следует перейти к использованию [REST API для Azure Monitor Resource Manager](https://docs.microsoft.com/rest/api/monitor/autoscalesettings).
+- **Классическое автомасштабирование.** Если вы вызываете [классические API параметров автомасштабирования](/previous-versions/azure/reference/mt348562(v=azure.100)) из пользовательских средств или с помощью [классического пакета SDK для Azure Insights](https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Monitoring/), следует перейти к использованию [REST API для Azure Monitor Resource Manager](/rest/api/monitor/autoscalesettings).
 
-- **Классические метрики.** Если вы используете метрики с помощью [классических REST API](https://msdn.microsoft.com/library/azure/dn510374.aspx) или [классического пакета SDK для Azure Insights](https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Monitoring/) из пользовательских средств, следует перейти к использованию [REST API для Azure Monitor Resource Manager](https://docs.microsoft.com/rest/api/monitor/autoscalesettings). 
+- **Классические метрики.** Если вы используете метрики с помощью [классических REST API](/previous-versions/azure/reference/dn510374(v=azure.100)) или [классического пакета SDK для Azure Insights](https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Monitoring/) из пользовательских средств, следует перейти к использованию [REST API для Azure Monitor Resource Manager](/rest/api/monitor/autoscalesettings). 
 
 Если вы не уверены, происходит ли вызов классических API со стороны вашего кода или пользовательских средств, проверьте следующее:
 
@@ -42,11 +43,11 @@ ms.locfileid: "81114230"
 
 - Если вы используете вызовы, упомянутые в документации по любой из указанных ниже ссылок, то вы используете более старые классические API.
 
-  - [Библиотека классов Windows.Azure.Management.Monitoring](https://docs.microsoft.com/previous-versions/azure/dn510414(v=azure.100))
+  - [Библиотека классов Windows.Azure.Management.Monitoring](/previous-versions/azure/dn510414(v=azure.100))
 
-  - [.NET для мониторинга (классический вариант)](https://docs.microsoft.com/previous-versions/azure/reference/mt348562(v%3dazure.100))
+  - [.NET для мониторинга (классический вариант)](/previous-versions/azure/reference/mt348562(v%3dazure.100))
 
-  - [Интерфейс IMetricOperations](https://docs.microsoft.com/previous-versions/azure/reference/dn802395(v%3dazure.100))
+  - [Интерфейс IMetricOperations](/previous-versions/azure/reference/dn802395(v%3dazure.100))
 
 ## <a name="why-you-should-switch"></a>Почему нужно перейти
 
@@ -84,7 +85,7 @@ ms.locfileid: "81114230"
 
 Если у вас возникли какие-либо вопросы, пишите нам на адрес MonitorClassicAPIhelp@microsoft.com.  
 
-## <a name="references"></a>Ссылки
+## <a name="references"></a>Ссылки (на английском языке)
 
-- [Более новые REST API для Azure Monitor](https://docs.microsoft.com/rest/api/monitor/) 
+- [Более новые REST API для Azure Monitor](/rest/api/monitor/) 
 - [Более новый пакет SDK для Azure Monitor](https://www.nuget.org/packages/Microsoft.Azure.Management.Monitor/)

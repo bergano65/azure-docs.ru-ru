@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 07/08/2020
 ms.author: akjosh
 ms.custom: include file
-ms.openlocfilehash: 2d0030549acdb55ce2be94534ec59bb07b11869d
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: c2dffe576bfb52981b331c02b3f24ec2507ec349
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86221648"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86501970"
 ---
 Коллекция Shared Image Gallery — это служба, которая помогает создавать структуры и организации вокруг образов. Коллекции общих образов поддерживают следующие функции и возможности:
 
@@ -83,7 +83,7 @@ ms.locfileid: "86221648"
 
 ## <a name="regional-support"></a>Поддержка в регионах
 
-Целевым регионом может быть любой общедоступный регион, но для репликации в регионах Центральная Австралия и Центральная Австралия 2 ваша подписка должна быть в списке разрешений. Чтобы запросить список разрешений, перейдите к: https://azure.microsoft.com/global-infrastructure/australia/contact/
+Все общедоступные регионы могут быть целевыми регионами, но для репликации в Центральная Австралия и Центральная Австралия 2 вам необходимо добавить свою подписку в список разрешений. Чтобы запросить добавление подписок в список разрешений, перейдите по адресу:https://azure.microsoft.com/global-infrastructure/australia/contact/
 
 ## <a name="limits"></a>Ограничения 
 

@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 7b671bb63934eec129e992c369ba8516c191c589
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 2ef54da76750617a77c4b2e117b694cb170ff752
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86223573"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86502900"
 ---
 # <a name="migrate-from-a-managed-image-to-an-image-version-using-the-azure-cli"></a>Миграция из управляемого образа в версию образа с помощью Azure CLI
 Если у вас есть управляемый образ, который вы хотите перенести в коллекцию общих образов, можно создать образ из коллекции общих образов непосредственно из управляемого образа. После тестирования нового образа можно удалить исходный управляемый образ. Вы также можете выполнить миграцию из управляемого образа в общую коллекцию образов с помощью [PowerShell](image-version-managed-image-powershell.md).
@@ -40,7 +40,7 @@ ms.locfileid: "86223573"
 
 В имени определения образа можно использовать прописные и строчные буквы, цифры, точки и дефисы. 
 
-Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](https://docs.microsoft.com/azure/virtual-machines/linux/shared-image-galleries#image-definitions).
+Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](./linux/shared-image-galleries.md#image-definitions).
 
 Создайте в коллекции определение образа, используя команду [az sig image-definition create](/cli/azure/sig/image-definition#az-sig-image-definition-create).
 
@@ -92,7 +92,7 @@ az sig image-version create \
 > [!NOTE]
 > Прежде чем использовать тот же управляемый образ для создания другой версии образа, необходимо дождаться завершения сборки и репликации версии образа.
 >
-> Вы также можете хранить все реплики версии образа в хранилище, [избыточном](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs) в виде зоны, путем добавления `--storage-account-type standard_zrs` при создании версии образа.
+> Вы также можете хранить все реплики версии образа в хранилище, [избыточном](../storage/common/storage-redundancy.md) в виде зоны, путем добавления `--storage-account-type standard_zrs` при создании версии образа.
 >
 
 ## <a name="next-steps"></a>Дальнейшие действия

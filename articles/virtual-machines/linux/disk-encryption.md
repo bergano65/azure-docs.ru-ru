@@ -8,18 +8,18 @@ ms.author: rogarana
 ms.service: virtual-machines-linux
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 2d4fc47247c9fe2ed1af0eee59500db7e894fdd0
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 0847f2360a3562f96454992470e3cc2000f66b11
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86260136"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86502730"
 ---
 # <a name="server-side-encryption-of-azure-disk-storage"></a>Шифрование Хранилище дисков Azure на стороне сервера
 
 Шифрование на стороне сервера (SSE) защищает данные и помогает соблюсти корпоративные обязательства по обеспечению безопасности и соответствия. SSE автоматически шифрует данные, хранящиеся на управляемых дисках Azure (диски операционной системы и дисков данных), по умолчанию при сохранении их в облаке. 
 
-Данные в управляемых дисках Azure шифруются прозрачно с использованием 256-разрядного [шифрования AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), одного из наиболее сильных блочных шифров, который совместим со стандартом FIPS 140-2. Дополнительные сведения о криптографических модулях, лежащих в основе функции управляемых дисков Azure, см. в статье [Cryptography API: Next Generation](https://docs.microsoft.com/windows/desktop/seccng/cng-portal) (API Cryptography: следующее поколение).
+Данные в управляемых дисках Azure шифруются прозрачно с использованием 256-разрядного [шифрования AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), одного из наиболее сильных блочных шифров, который совместим со стандартом FIPS 140-2. Дополнительные сведения о криптографических модулях, лежащих в основе функции управляемых дисков Azure, см. в статье [Cryptography API: Next Generation](/windows/desktop/seccng/cng-portal) (API Cryptography: следующее поколение).
 
 Шифрование на стороне сервера не влияет на производительность управляемых дисков и не дает дополнительных затрат. 
 
@@ -84,4 +84,4 @@ ms.locfileid: "86260136"
 - [Включение двойного шифрования при хранении для управляемых дисков — CLI](disks-enable-double-encryption-at-rest-cli.md)
 - [Включить управляемые пользователем ключи для управляемых дисков — CLI](disks-enable-customer-managed-keys-cli.md)
 - [Включить управляемые пользователем ключи для управляемых дисков (портал)](disks-enable-customer-managed-keys-portal.md)
-- [Что такое Azure Key Vault?](../../key-vault/general/overview.md)
+- [Что такое хранилище ключей Azure?](../../key-vault/general/overview.md)

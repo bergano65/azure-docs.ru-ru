@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 12/12/2019
 ms.author: cynthn
-ms.openlocfilehash: b0947d1cc4e53763c0f31444b8f3d27ba45b19a4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e9d8e48e393f006c05e0a17b80e6f8cfe7e1d6ea
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82096416"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86500282"
 ---
 # <a name="upload-a-generalized-vhd-and-use-it-to-create-new-vms-in-azure"></a>Отправка универсального диска VHD и создание виртуальных машин с его помощью в Azure
 
@@ -28,9 +28,9 @@ ms.locfileid: "82096416"
  
 ## <a name="generalize-the-source-vm-by-using-sysprep"></a>Подготовка исходной виртуальной машины к использованию с помощью Sysprep
 
-Если вы еще не сделали этого, перед отправкой виртуального жесткого диска в Azure необходимо подготовить виртуальную машину с помощью Sysprep. Помимо прочих действий Sysprep удаляет все сведения о вашей учетной записи и подготавливает машину к использованию в качестве образа. Дополнительные сведения о Sysprep приведены в [обзоре Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).
+Если вы еще не сделали этого, перед отправкой виртуального жесткого диска в Azure необходимо подготовить виртуальную машину с помощью Sysprep. Помимо прочих действий Sysprep удаляет все сведения о вашей учетной записи и подготавливает машину к использованию в качестве образа. Дополнительные сведения о Sysprep приведены в [обзоре Sysprep](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).
 
-Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в разделе [Поддержка ролей сервера в Sysprep](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles).
+Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в разделе [Поддержка ролей сервера в Sysprep](/windows-hardware/manufacture/desktop/sysprep-support-for-server-roles).
 
 > [!IMPORTANT]
 > Если вы хотите запустить Sysprep перед отправкой виртуального жесткого диска в Azure в первый раз, [подготовьте виртуальную машину](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
@@ -53,7 +53,7 @@ ms.locfileid: "82096416"
 
 
 
-После передачи виртуального жесткого диска на управляемый диск необходимо использовать командлет [Get-AzDisk](https://docs.microsoft.com/powershell/module/az.compute/get-azdisk) для получения управляемого диска.
+После передачи виртуального жесткого диска на управляемый диск необходимо использовать командлет [Get-AzDisk](/powershell/module/az.compute/get-azdisk) для получения управляемого диска.
 
 ```azurepowershell-interactive
 $disk = Get-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'myDiskName'
@@ -113,4 +113,3 @@ New-AzVm `
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Войдите на свою новую виртуальную машину. Дополнительные сведения см. в статье [Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее](connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
-

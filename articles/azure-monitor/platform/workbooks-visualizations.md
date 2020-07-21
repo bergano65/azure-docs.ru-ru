@@ -9,11 +9,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
-ms.openlocfilehash: d05902f47dff3dd2f8a63ae240c0b8825a5c441f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 443751ee974dae3c426f36cbc262bc1a3af65bd0
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77658036"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86504943"
 ---
 # <a name="azure-monitor-workbook-visualizations"></a>Azure Monitor визуализации книг
 
@@ -50,7 +51,7 @@ Azure Monitor книги поддерживают ряд различных ст
 1. Переключите книгу в режим редактирования, щелкнув элемент панели инструментов **изменить** .
 2. Используйте ссылку **Добавить запрос** , чтобы добавить в книгу элемент управления "запрос журнала".
 3. Выберите тип запроса в поле **Журнал**, тип ресурса (например, Application Insights) и ресурсы для целевого объекта.
-4. Используйте редактор запросов, чтобы ввести [ККЛ](https://docs.microsoft.com/azure/kusto/query/) для анализа (например, тренд запросов).
+4. Используйте редактор запросов, чтобы ввести [ККЛ](/azure/kusto/query/) для анализа (например, тренд запросов).
 5. Задайте для визуализации одну из следующих категорий **: площадь**, **линейчатая**, **линейчатая (категория)**, **линия**, **круг**, **точечная диаграмма**или **время**.
 6. Задайте другие параметры, если необходимо, например диапазон времени, визуализация, размер, палитра цветов и условные обозначения.
 
@@ -249,7 +250,7 @@ Azure Monitor книги поддерживают ряд различных ст
 
 ![Снимок экрана: представление сводки плиток](./media/workbooks-visualizations/graph-settings.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание](workbooks-automate.md) книг с помощью Azure Resource Manager.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/26/2020
-ms.openlocfilehash: c93ba19cc70aa6b5df054dcc2e7e06885b02d661
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e6ecd40d34233ba6f0b886f4b55aedf4339bf6de
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85367960"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505199"
 ---
 # <a name="delete-and-recover-azure-log-analytics-workspace"></a>Удаление и восстановление рабочей области Azure Log Analytics
 
@@ -41,7 +41,7 @@ ms.locfileid: "85367960"
 > [!NOTE] 
 > Установленные решения и связанные службы, такие как учетная запись службы автоматизации Azure, окончательно удаляются из рабочей области в процессе удаления, и их невозможно восстановить. После процедуры восстановления их необходимо будет перенастроить, чтобы вернуть рабочую область в ранее настроенное состояние.
 
-Удалить рабочую область можно с помощью [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/remove-azurermoperationalinsightsworkspace?view=azurermps-6.13.0), [REST API](https://docs.microsoft.com/rest/api/loganalytics/workspaces/delete) или через [портал Azure](https://portal.azure.com).
+Удалить рабочую область можно с помощью [PowerShell](/powershell/module/azurerm.operationalinsights/remove-azurermoperationalinsightsworkspace?view=azurermps-6.13.0), [REST API](/rest/api/loganalytics/workspaces/delete) или через [портал Azure](https://portal.azure.com).
 
 ### <a name="azure-portal"></a>Портал Azure
 
@@ -64,10 +64,10 @@ PS C:\>Remove-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-
 > [!IMPORTANT]
 > Используйте постоянную операцию удаления рабочей области с осторожностью, так как она необратима и вы не сможете восстановить рабочую область и ее данные.
 
-Добавьте тег "-Force", чтобы окончательно удалить рабочую область:
+Добавьте тег "-Форцеделете", чтобы окончательно удалить рабочую область:
 
 ```powershell
-PS C:\>Remove-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-name" -Name "workspace-name" -Force
+PS C:\>Remove-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-name" -Name "workspace-name" -ForceDelete
 ```
 
 ## <a name="recover-workspace"></a>Восстановление рабочей области
@@ -112,6 +112,6 @@ PS C:\>New-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-nam
 * При создании рабочей области вы можете получить сообщение о том, что *имя рабочей области уже используется* или же *совпадает*. Эта ошибка может происходить по ряду причин:
   * Имя рабочей области недоступно и используется кем-либо в вашей организации или другим клиентом.
   * Рабочая область была удалена в течение последних 14 дней, а ее имя зарезервировано на период обратимого удаления. Чтобы обойти функцию обратимого удаления, окончательно удалить рабочую область и создать новую рабочую область с тем же именем, выполните следующие шаги, чтобы восстановить область и затем выполнить удаление:<br>
-     1. [Восстановите](https://docs.microsoft.com/azure/azure-monitor/platform/delete-workspace#recover-workspace) рабочую область.
-     2. [Навсегда удалите](https://docs.microsoft.com/azure/azure-monitor/platform/delete-workspace#permanent-workspace-delete) рабочую область.
+     1. [Восстановите](#recover-workspace) рабочую область.
+     2. [Навсегда удалите](#permanent-workspace-delete) рабочую область.
      3. Создайте новую рабочую область, используя выбранное имя.

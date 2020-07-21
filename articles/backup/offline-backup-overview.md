@@ -3,11 +3,13 @@ title: Обзор автономного резервного копирован
 description: Сведения о компонентах автономного резервного копирования. Сюда относятся рабочие процессы автономного резервного копирования на основе Azure Data Box и службы "Импорт и экспорт Microsoft Azure".
 ms.topic: conceptual
 ms.date: 1/28/2020
-ms.openlocfilehash: 84f79efe10f867b37d1e3bb21363be4b12156615
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: references_regions
+ms.openlocfilehash: c5e0f4e722e2dd15b7277a484af2a101844344e6
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84628344"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86503631"
 ---
 # <a name="overview-of-offline-backup"></a>Обзор автономного резервного копирования
 
@@ -43,7 +45,7 @@ Azure Backup поддерживает автономное резервное к
 
 ## <a name="offline-backup-based-on-the-azure-importexport-service"></a>Автономное резервное копирование с помощью службы "Импорт и экспорт Microsoft Azure"
 
-Этот вариант поддерживается серверами Microsoft Azure Backup Server (MABS) и System Center Data Protection Manager (DPM), а также агентами DPM-A и MARS. В нем используется служба [Импорт и экспорт Microsoft Azure](https://docs.microsoft.com/azure/storage/common/storage-import-export-service). Вы можете передать данные резервного копирования в Azure с помощью собственных дисков и соединителей, совместимых с Azure. При таком подходе вам нужно подготовить временное хранилище (промежуточное расположение), с помощью существующих служебных программ отформатировать принадлежащие вам диски и скопировать на них данные резервного копирования.
+Этот вариант поддерживается серверами Microsoft Azure Backup Server (MABS) и System Center Data Protection Manager (DPM), а также агентами DPM-A и MARS. В нем используется служба [Импорт и экспорт Microsoft Azure](../storage/common/storage-import-export-service.md). Вы можете передать данные резервного копирования в Azure с помощью собственных дисков и соединителей, совместимых с Azure. При таком подходе вам нужно подготовить временное хранилище (промежуточное расположение), с помощью существующих служебных программ отформатировать принадлежащие вам диски и скопировать на них данные резервного копирования.
 
 Здесь представлена архитектура, описывающая перемещение данных резервного копирования при использовании этого способа.
 
@@ -57,9 +59,9 @@ Azure Backup поддерживает автономное резервное к
 4. В центре обработки данных Azure данные с дисков копируются в учетную запись хранилища Azure.
 5. Служба Azure Backup копирует данные резервной копии из учетной записи хранения в хранилище Служб восстановления. Создается расписание для создания добавочных резервных копий.
 
-Чтобы использовать автономное резервное копирование с применением службы "Импорт и экспорт Microsoft Azure" и агента MARS, воспользуйтесь статьей [Рабочий процесс автономного резервного копирования в Azure Backup](https://docs.microsoft.com/azure/backup/backup-azure-backup-import-export).
+Чтобы использовать автономное резервное копирование с применением службы "Импорт и экспорт Microsoft Azure" и агента MARS, воспользуйтесь статьей [Рабочий процесс автономного резервного копирования в Azure Backup](./backup-azure-backup-import-export.md).
 
-Аналогичный процесс с применением MABS или DPM-A описан в [этой статье](https://docs.microsoft.com/azure/backup/backup-azure-backup-server-import-export).
+Аналогичный процесс с применением MABS или DPM-A описан в [этой статье](./backup-azure-backup-server-import-export.md).
 
 ## <a name="offline-backup-support-summary"></a>Обзорные сведения о поддержке автономного резервного копирования
 
@@ -68,10 +70,10 @@ Azure Backup поддерживает автономное резервное к
 | **Рассмотрение**                                            | **Автономное резервное копирование с помощью Azure Data Box**                     | **Автономное резервное копирование с помощью службы "Импорт и экспорт Microsoft Azure"**                |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Модели развертывания Azure Backup                              | Агент MARS (предварительная версия)                                              | Агент MARS, MABS, DPM-A                                           |
-| Максимальное количество данных резервных копий на сервер (MARS) или на группу защиты (MABS, DPM-A) | [Диск Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-disk-overview) — 7,2 ТБ <br> [Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-overview) — 80 ТБ       | 80 ТБ (до 10 дисков по 8 ТБ)                          |
-| Безопасность данных, устройств и службы                           | [Данные](https://docs.microsoft.com/azure/databox/data-box-security#data-box-data-protection) — шифрование AES, 256 бит. <br> [Устройство](https://docs.microsoft.com/azure/databox/data-box-security#data-box-device-protection) — защищенный корпус, проприетарный формат, интерфейс с использованием учетных данных для копирования данных. <br> [Служба](https://docs.microsoft.com/azure/databox/data-box-security#data-box-service-protection) — защищена функциями безопасности Azure. | Данные — шифрование BitLocker                                 |
+| Максимальное количество данных резервных копий на сервер (MARS) или на группу защиты (MABS, DPM-A) | [Диск Azure Data Box](../databox/data-box-disk-overview.md) — 7,2 ТБ <br> [Azure Data Box](../databox/data-box-overview.md) — 80 ТБ       | 80 ТБ (до 10 дисков по 8 ТБ)                          |
+| Безопасность данных, устройств и службы                           | [Данные](../databox/data-box-security.md#data-box-data-protection) — шифрование AES, 256 бит. <br> [Устройство](../databox/data-box-security.md#data-box-device-protection) — защищенный корпус, проприетарный формат, интерфейс с использованием учетных данных для копирования данных. <br> [Служба](../databox/data-box-security.md#data-box-service-protection) — защищена функциями безопасности Azure. | Данные — шифрование BitLocker                                 |
 | Подготовка расположения для временного размещения данных                     | Не требуется                                                | Объемом не меньше предполагаемого размера резервной копии        |
-| Поддерживаемые регионы                                           | [Регионы для диска Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-disk-overview#region-availability) <br> [Регионы для Azure Data Box](https://docs.microsoft.com/azure/databox/data-box-disk-overview#region-availability) | [Регионы для службы "Импорт и экспорт Azure"](https://docs.microsoft.com/azure/storage/common/storage-import-export-service#region-availability) |
+| Поддерживаемые регионы                                           | [Регионы для диска Azure Data Box](../databox/data-box-disk-overview.md#region-availability) <br> [Регионы для Azure Data Box](../databox/data-box-disk-overview.md#region-availability) | [Регионы для службы "Импорт и экспорт Azure"](../storage/common/storage-import-export-service.md#region-availability) |
 | Транспортировка между странами                                     | Не поддерживается  <br>    Исходный адрес и центр обработки данных Azure должны находиться в одной стране/регионе* | Поддерживается                                                    |
 | Логистика транспортировки (доставка, перевозка, получение)           | Полностью управляется корпорацией Майкрософт                                     | Организуется пользователем                                            |
 | Цены                                                      | [Цены на Azure Data Box](https://azure.microsoft.com/pricing/details/databox/) <br> [Цены на диск Azure Data Box](https://azure.microsoft.com/pricing/details/databox/disk/) | [Цены на службу "Импорт и экспорт Azure"](https://azure.microsoft.com/pricing/details/storage-import-export/) |

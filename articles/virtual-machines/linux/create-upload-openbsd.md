@@ -6,12 +6,12 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 05/24/2017
 ms.author: guybo
-ms.openlocfilehash: 1ad1a66d67be7aefe4d9a7acae993e8788cbb193
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 79e2bc04a32755413625b3fb4b2b4de2ad12ad7f
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80066744"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86502713"
 ---
 # <a name="create-and-upload-an-openbsd-disk-image-to-azure"></a>Создание и передача образа жесткого диска OpenBSD в Azure
 В этой статье описывается, как создать и передать виртуальный жесткий диск, содержащий операционную систему OpenBSD. После передачи его можно использовать как свой собственный образ для создания виртуальной машины в Azure с помощью Azure CLI.
@@ -22,7 +22,7 @@ ms.locfileid: "80066744"
 
 * **Подписка Azure.** Если у вас нет учетной записи, то ее можно создать, что займет всего лишь несколько минут. Если у вас есть подписка MSDN, см. статью [ежемесячный кредит Azure для подписчиков Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). В противном случае узнайте, как [создать бесплатную пробную учетную запись](https://azure.microsoft.com/pricing/free-trial/).  
 * **Azure CLI.** Обязательно установите последнюю версию [Azure CLI](/cli/azure/install-azure-cli) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index).
-* **Операционная система OpenBSD, установленная в VHD-файле** — поддерживаемая операционная система OpenBSD ([6,6 версии AMD64](https://ftp.openbsd.org/pub/OpenBSD/6.6/amd64/)) должна быть установлена на виртуальный жесткий диск. Существует несколько средств для создания VHD-файлов. Например, для создания VHD-файла и установки операционной системы можно использовать решение для виртуализации, например Hyper-V. Инструкции по установке и использованию Hyper-V см. в статье [Установка Hyper-V и создание виртуальной машины](https://technet.microsoft.com/library/hh846766.aspx).
+* **Операционная система OpenBSD, установленная в VHD-файле** — поддерживаемая операционная система OpenBSD ([6,6 версии AMD64](https://ftp.openbsd.org/pub/OpenBSD/6.6/amd64/)) должна быть установлена на виртуальный жесткий диск. Существует несколько средств для создания VHD-файлов. Например, для создания VHD-файла и установки операционной системы можно использовать решение для виртуализации, например Hyper-V. Инструкции по установке и использованию Hyper-V см. в статье [Установка Hyper-V и создание виртуальной машины](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh846766(v=ws.11)).
 
 
 ## <a name="prepare-openbsd-image-for-azure"></a>Подготовка образа OpenBSD для Azure
@@ -87,7 +87,7 @@ ms.locfileid: "80066744"
 
 
 ## <a name="prepare-the-vhd"></a>Подготовка VHD
-Формат VHDX не поддерживается в Azure, поддерживается только **фиксированный VHD**. Преобразовать диск в формат фиксированного VHD можно с помощью диспетчера Hyper-V или командлета PowerShell [convert-vhd](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/convert-vhd). Например.
+Формат VHDX не поддерживается в Azure, поддерживается только **фиксированный VHD**. Преобразовать диск в формат фиксированного VHD можно с помощью диспетчера Hyper-V или командлета PowerShell [convert-vhd](/powershell/module/hyper-v/convert-vhd?view=win10-ps). Например.
 
 ```powershell
 Convert-VHD OpenBSD61.vhdx OpenBSD61.vhd -VHDType Fixed

@@ -6,14 +6,15 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/04/2020
-ms.openlocfilehash: ce7edf4dd5ae52f3ea604fe4b8d88d1a29de5a69
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c6bd45324313ebc44bd4c59cd6f09e2eaab28d32
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84608372"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505148"
 ---
 # <a name="log-analytics-agent-overview"></a>Общие сведения об агенте Log Analytics
-Агент Log Analytics разработан для комплексного управления на виртуальных машинах, размещенных на облаке, на локальных компьютерах, и других отслеживаемых с помощью [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/) компьютерах. Агенты Windows и Linux отправляют в рабочую область вашего Log Analytics в Azure Monitor собранные данные из разных источников, а также уникальные журналы и метрики, как задано в решении мониторинга. Агент Log Analytics также поддерживает аналитику и другие службы в Azure Monitor, такие как [Azure Monitor для виртуальных машин](../insights/vminsights-enable-overview.md), [Центр безопасности Azure](/azure/security-center/) и [Служба автоматизации Azure](../../automation/automation-intro.md).
+Агент Log Analytics разработан для комплексного управления на виртуальных машинах, размещенных на облаке, на локальных компьютерах, и других отслеживаемых с помощью [System Center Operations Manager](/system-center/scom/) компьютерах. Агенты Windows и Linux отправляют в рабочую область вашего Log Analytics в Azure Monitor собранные данные из разных источников, а также уникальные журналы и метрики, как задано в решении мониторинга. Агент Log Analytics также поддерживает аналитику и другие службы в Azure Monitor, такие как [Azure Monitor для виртуальных машин](../insights/vminsights-enable-overview.md), [Центр безопасности Azure](../../security-center/index.yml) и [Служба автоматизации Azure](../../automation/automation-intro.md).
 
 В этой статье предоставлен подробный обзор требований к агенту, системе и сети, а также различных методов развертывания.
 
@@ -30,7 +31,7 @@ ms.locfileid: "84608372"
 
 - Расширение "Диагностика Azure" может работать только с виртуальными машинами Azure. Агент Log Analytics совместим с виртуальными машинами в Azure, других облачных и локальной среде.
 - Расширение "Диагностика Azure" отправляет данные в службу хранилища Azure, в [метрики мониторинга Azure](data-platform-metrics.md) (только для ОС Windows) и в Центры событий. Агент Log Analytics собирает данные в [журналы Azure Monitor](data-platform-logs.md).
-- Агент Log Analytics является обязательным компонентом [решений](../monitor-reference.md#insights-and-core-solutions), [Azure Monitor для виртуальных машин](../insights/vminsights-overview.md) и других служб, например [Центра безопасности Azure](/azure/security-center/).
+- Агент Log Analytics является обязательным компонентом [решений](../monitor-reference.md#insights-and-core-solutions), [Azure Monitor для виртуальных машин](../insights/vminsights-overview.md) и других служб, например [Центра безопасности Azure](../../security-center/index.yml).
 
 ## <a name="costs"></a>Затраты
 Плата за агента Log Analytics не взимается, но, возможно, вам придется оплатить полученные данные. Дополнительные сведения о ценах на данные, собираемые в рабочей области Log Analytics, см. в статье [Управление использованием и затратами с помощью журналов Azure Monitor](manage-cost-storage.md).
@@ -58,7 +59,7 @@ ms.locfileid: "84608372"
 
 * для получения данных от агентов Windows можно [настроить каждый агент для отправки отчетов в одну или несколько рабочих областей](agent-windows.md) даже если отчет передается в группу управления System Center Operations Manager; агент Windows может отправлять отчеты вплоть до четырех рабочих областей;
 * агент Linux может отправлять отчет только в одну рабочую область;
-* агент Windows поддерживает [стандарт FIPS 140](https://docs.microsoft.com/windows/security/threat-protection/fips-140-validation), в то время как агент Linux не поддерживает его.  
+* агент Windows поддерживает [стандарт FIPS 140](/windows/security/threat-protection/fips-140-validation), в то время как агент Linux не поддерживает его.  
 
 Если вы используете System Center Operations Manager 2012 R2 и более поздние версии:
 
@@ -124,7 +125,7 @@ ms.locfileid: "84608372"
 Исполняемый файл python2 должен иметь псевдоним для Python с помощью следующей команды:
 
 ```
-alternatives --set python /usr/sbin/python2
+alternatives --set python `which python2`
 ```
 
 ### <a name="supported-distros"></a>Поддерживаемые дистрибутивы
@@ -192,7 +193,7 @@ alternatives --set python /usr/sbin/python2
 |*.blob.core.windows.net |Порт 443 |Исходящие|Да |
 |*.azure-automation.net |Порт 443 |Исходящие|Да |
 
-Сведения о брандмауэре, необходимые для управления Azure для государственных организаций, см. в [здесь](../../azure-government/documentation-government-services-monitoringandmanagement.md#azure-monitor-logs). 
+Сведения о брандмауэре, необходимые для управления Azure для государственных организаций, см. в [здесь](../../azure-government/compare-azure-government-global-azure.md#azure-monitor-logs). 
 
 Если планируется использование Azure Automation Hybrid Runbook Worker для подключения к службе автоматизации и регистрации в ней, чтобы применить runbook или решения для управления в вашей среде, они должны иметь доступ к номеру порта и URL-адресам, описанным в разделе [Настройка сети для Hybrid Runbook Worker](../../automation/automation-hybrid-runbook-worker.md#network-planning). 
 

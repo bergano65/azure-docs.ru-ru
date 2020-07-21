@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 03/23/2020
 ms.author: ramkris
 ms.reviewer: sngun
-ms.openlocfilehash: 4bcd2349913c1823e80d46565dfa869d9efe955f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0ab95223d084436d1bf39ba557ec3b01c0b534d8
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85260667"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86503393"
 ---
 # <a name="use-the-bulk-executor-net-library-to-perform-bulk-operations-in-azure-cosmos-db"></a>Используйте библиотеку .NET для NET выполнителя, чтобы выполнять групповые операции в Azure Cosmos DB
 
@@ -27,7 +27,7 @@ ms.locfileid: "85260667"
 
 В настоящее время Библиотека, исполняющий исполнитель, поддерживает только учетные записи API Azure Cosmos DB SQL и API Gremlin. В этой статье описывается, как использовать библиотеку NET выполнителя .NET с учетными записями API SQL. Дополнительные сведения об использовании библиотеки NET выполнителя .NET с учетными записями API Gremlin см. в разделе [Выполнение массовых операций в api Azure Cosmos DB Gremlin](bulk-executor-graph-dotnet.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Если вы еще не установили Visual Studio 2019, вы можете скачать и использовать [Visual studio 2019 Community Edition](https://www.visualstudio.com/downloads/). Убедитесь, что во время установки Visual Studio включен параметр "Разработка Azure".
 
@@ -41,7 +41,7 @@ ms.locfileid: "85260667"
 
 Теперь перейдем к работе с кодом, загрузив пример приложения .NET из GitHub. Это приложение выполняет групповые операции с данными, хранящимися в вашей учетной записи Azure Cosmos. Чтобы клонировать приложение, откройте командную строку, перейдите в каталог, в который нужно скопировать его, и выполните следующую команду:
 
-```
+```bash
 git clone https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started.git
 ```
 
@@ -201,6 +201,6 @@ git clone https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-st
   </system.diagnostics>
   ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о пакете NuGet и заметках о выпуске [см. в](sql-api-sdk-bulk-executor-dot-net.md)этой статье.

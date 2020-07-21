@@ -7,11 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 562b1f80397c730b5ea72fe2cd4f3dfdaea1e3f3
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.openlocfilehash: 9221a79eede36e0036d3ddaab64ee3baa07a33a6
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84235548"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86500860"
 ---
 # <a name="how-to-connect-and-sign-on-to-an-azure-virtual-machine-running-windows"></a>Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее
 Чтобы запустить сеанс удаленного рабочего стола, на портале Azure нажмите кнопку **Подключиться** на рабочем столе Windows. Сначала подключитесь к виртуальной машине, а затем войдите в систему.
@@ -62,5 +63,4 @@ Get-AzRemoteDesktopFile -ResourceGroupName "RgName" -Name "VmName" -LocalPath "C
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Если у вас возникли проблемы с подключением, ознакомьтесь со статьей [Устранение неполадок с подключением к виртуальной машине Azure через удаленный рабочий стол](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
-
+Если у вас возникли проблемы с подключением, ознакомьтесь со статьей [Устранение неполадок с подключением к виртуальной машине Azure через удаленный рабочий стол](../troubleshooting/troubleshoot-rdp-connection.md?toc=/azure/virtual-machines/windows/toc.json). 

@@ -7,11 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 05/31/2018
 ms.author: cynthn
-ms.openlocfilehash: 4f8d181194328725c2e7c02f6e73752cf568ef4e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ce08ebeba6ad09ec4cba063d787c510dce6e1e2f
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81759189"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86501994"
 ---
 # <a name="virtual-machine-vcpu-quotas"></a>Квоты виртуальных ЦП виртуальной машины
 
@@ -56,8 +57,8 @@ Premium Storage Managed Disks                  5    10000
 ## <a name="reserved-vm-instances"></a>Зарезервированные экземпляры виртуальных машин
 Зарезервированные экземпляры виртуальных машин, которые ограничиваются одной подпиской и не имеют гибкости размеров ВМ, добавляют новый аспект к квотам на виртуальные ЦП. Эти значения описывают число экземпляров указанного размера, которые можно развернуть в подписке. Они выступают в качестве заполнителя в системе квот, позволяя убедиться, что квота зарезервирована, а также обеспечить развертывание зарезервированных экземпляров Azure в подписке. Например, если в определенной подписке есть 10 зарезервированных экземпляров Standard_D1, лимит использования для них будет составлять 10 единиц. Таким образом в Azure будет обеспечиваться наличие по крайней мере 10 ЦП в рамках квоты на общие региональные виртуальные ЦП, которые будут использоваться для экземпляров Standard_D1, а также наличие хотя бы 10 виртуальных ЦП в рамках квоты на ЦП семейства Standard D, которые будут использоваться для экземпляров Standard_D1.
 
-Если увеличение квоты необходимо для приобретения зарезервированного экземпляра с одной подпиской, вы можете [запросить увеличение квоты](https://docs.microsoft.com/azure/azure-portal/supportability/resource-manager-core-quotas-request) по подписке.
+Если увеличение квоты необходимо для приобретения зарезервированного экземпляра с одной подпиской, вы можете [запросить увеличение квоты](../../azure-portal/supportability/resource-manager-core-quotas-request.md) по подписке.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о выставлении счетов и квотах см. в статье [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits?toc=/azure/billing/TOC.json).
+Дополнительные сведения о выставлении счетов и квотах см. в статье [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md?toc=/azure/billing/TOC.json).

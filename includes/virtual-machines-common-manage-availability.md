@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 8f65912d0e2ab322d73315828a98cc48274850fc
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: e0f9bbf4e0d8edd153798b39f880f0adb8be6587
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83696520"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86502298"
 ---
 ## <a name="understand-vm-reboots---maintenance-vs-downtime"></a>Общие сведения о перезагрузках виртуальной машины. Обслуживание и простой
 Есть три сценария, которые могут повлиять на работу виртуальной машины в Azure: незапланированное техническое обслуживание, незапланированный простой и запланированное техническое обслуживание.
@@ -45,7 +45,7 @@ ms.locfileid: "83696520"
 
 Благодаря зонам доступности Azure предлагает наилучшее в отрасли соглашение об уровне обслуживания с гарантией времени непрерывной работы 99,99 % для виртуальных машин. Вы можете защитить приложения и данные от потери в центре обработки данных, настроив свои решения для использования реплицированных виртуальных машин в зонах доступности. В случае неполадок с одной зоной реплицированные приложения и данные сразу же станут доступными в другой зоне.
 
-![Зоны доступности](./media/virtual-machines-common-regions-and-availability/three-zones-per-region.png)
+![Зоны доступности](./media/virtual-machines-common-manage-availability/three-zones-per-region.png)
 
 См. дополнительные сведения о развертывании виртуальных машин [Windows](../articles/virtual-machines/windows/create-powershell-availability-zone.md) или [Linux](../articles/virtual-machines/linux/create-cli-availability-zone.md) в зонах доступности.
 

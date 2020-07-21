@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/09/2018
-ms.openlocfilehash: 96c64f6a0167b678f14bf0199069ecd6b4c8d57a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ac2b79046718fe45ad0dad0396b6f7653efbb779
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80055109"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505335"
 ---
 # <a name="create-a-data-pipeline-with-the-data-collector-api"></a>Создание конвейера данных с помощью API сборщика данных
 
@@ -43,7 +43,7 @@ ms.locfileid: "80055109"
 
 Хотя подробные установки хранилища BLOB-объектов, приложения логики или Функции Azure не описаны в этой статье, подробные инструкции к ним доступны на страницах указанных продуктов.
 
-Чтобы отследить конвейер, ми используем средство Application Insights для отслеживания Функции Azure (дополнительные сведения см. [здесь](../../azure-functions/functions-monitoring.md)) и службу Azure Monitor для отслеживания приложения логики (дополнительные сведения см. [здесь](../../logic-apps/logic-apps-monitor-your-logic-apps-oms.md)). 
+Чтобы отследить конвейер, ми используем средство Application Insights для отслеживания Функции Azure (дополнительные сведения см. [здесь](../../azure-functions/functions-monitoring.md)) и службу Azure Monitor для отслеживания приложения логики (дополнительные сведения см. [здесь](../../logic-apps/monitor-logic-apps-log-analytics.md)). 
 
 ## <a name="setting-up-the-pipeline"></a>Установка конвейера
 Чтобы задать конвейер, сначала необходимо убедиться, что контейнер больших двоичных объектов создан и настроен. Аналогичным образом следует убедиться, что была создана рабочая область Log Analytics, в которою планируется отправлять данные.

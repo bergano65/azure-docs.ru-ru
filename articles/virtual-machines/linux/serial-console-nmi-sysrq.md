@@ -7,11 +7,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
-ms.openlocfilehash: 5541dec748f31818a0e9485fc0c56b7926ccaae7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0a9ced48295fa4c396ed6c72fe021ed1e1be484b
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81758486"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86501897"
 ---
 # <a name="use-serial-console-for-sysrq-and-nmi-calls"></a>Использование последовательной консоли для вызовов SysRq и NMI
 
@@ -22,11 +23,11 @@ SysRq — это последовательность клавиш, понятн
 
 Последовательную консоль Azure можно использовать для отправки SysRq на виртуальную машину Azure с использованием значка клавиатуры в показанной ниже командной строке.
 
-![](../media/virtual-machines-serial-console/virtual-machine-serial-console-command-menu.jpg)
+![Снимок экрана с последовательной консолью Azure. Значок клавиатуры выделяется, и его меню отображается. Это меню содержит элемент команды send Сисрк.](../media/virtual-machines-serial-console/virtual-machine-serial-console-command-menu.jpg)
 
 При выборе команды Send SysRq Command (Отправить команду SysRq) откроется диалоговое окно, которое предоставит общие параметры SysRq или примет последовательность команд SysRq, введенных в диалоговое окно.  Это позволяет сериям SysRq выполнять высокоуровневую операцию, такую ​​как безопасная перезагрузка с использованием: `REISUB`.
 
-![](../media/virtual-machines-serial-console/virtual-machine-serial-console-sysreq_UI.png)
+![Снимок экрана: диалоговое окно "Команда отправки Сисрк в Guest". Выбран параметр для ввода команд, а поле команда содержит РЕИСУБ.](../media/virtual-machines-serial-console/virtual-machine-serial-console-sysreq_UI.png)
 
 Команда SysRq не может использоваться на остановленных виртуальных машинах или на таких, ядро которых ​​находится в неотвечающем состоянии (например, критическое состояние ядра).
 
@@ -95,7 +96,7 @@ echo "1" >/proc/sys/kernel/sysrq
 
 Последовательную консоль можно использовать для отправки немаскируемого прерывания на виртуальную машину Azure с помощью значка клавиатуры, показанного ниже в командной строке. Как только немаскируемое прерывание будет запущено, конфигурация виртуальной машины будет контролировать реакцию системы.  Операционные системы Linux можно настроить для аварийного завершения и создания дампа памяти, когда операционная система получает немаскируемое прерывание.
 
-![](../media/virtual-machines-serial-console/virtual-machine-serial-console-command-menu.jpg) <br>
+![Снимок экрана последовательной консоли. Значок клавиатуры выделяется, и его меню отображается. Это меню содержит элемент прерывания, не являющийся маской.](../media/virtual-machines-serial-console/virtual-machine-serial-console-command-menu.jpg) <br>
 
 Для систем Linux, которые поддерживают sysctl для настройки параметров ядра, можно включить аварийный сигнал при получении этого немаскируемого прерывания, выполнив следующее:
 1. Добавьте эту строку в */etc/sysctl.conf*. <br>
@@ -119,8 +120,8 @@ echo "1" >/proc/sys/kernel/sysrq
 ### <a name="coreos"></a>CoreOS 
 - [Сбор журналов сбоев](https://coreos.com/os/docs/latest/collecting-crash-logs.html)
 
-## <a name="next-steps"></a>Дальнейшие шаги
-* См. страницу документации по работе с [последовательной консолью Linux](serial-console.md).
+## <a name="next-steps"></a>Дальнейшие действия
+* См. страницу документации по работе с [последовательной консолью Linux](../troubleshooting/serial-console-linux.md).
 * Используйте последовательную консоль для [перехода в режим GRUB и однопользовательский режим](serial-console-grub-single-user-mode.md).
-* Последовательная консоль также доступна для виртуальных машин [Windows](../windows/serial-console.md).
-* Дополнительные сведения о [диагностике загрузки](boot-diagnostics.md)
+* Последовательная консоль также доступна для виртуальных машин [Windows](../troubleshooting/serial-console-windows.md).
+* Дополнительные сведения о [диагностике загрузки](../troubleshooting/boot-diagnostics.md)

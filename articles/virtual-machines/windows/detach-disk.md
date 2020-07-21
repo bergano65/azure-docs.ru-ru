@@ -8,11 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 01/08/2020
 ms.author: cynthn
-ms.openlocfilehash: 3fce527c1a9feb3dbf9add36577cfa5ba8349882
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 02192850dd9103b6c1783baf42c184ee16fe299f
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84659331"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86500690"
 ---
 # <a name="how-to-detach-a-data-disk-from-a-windows-virtual-machine"></a>Отключение диска от виртуальной машины Windows
 
@@ -29,7 +30,7 @@ ms.locfileid: "84659331"
 
 Можно в *горячем* режиме отсоединить диск данных с помощью PowerShell. Но убедитесь, что диск больше не используется никакими средствами, прежде чем отключать его от виртуальной машины.
 
-В этом примере мы отключим диск с именем **myDisk** от виртуальной машины **myVM** в группе ресурсов **myResourceGroup**. Сначала удалите диск с помощью командлета [Remove-AzVMDataDisk](https://docs.microsoft.com/powershell/module/az.compute/remove-azvmdatadisk). Затем обновите состояние виртуальной машины с помощью командлета [Update-AzVM](https://docs.microsoft.com/powershell/module/az.compute/update-azvm), чтобы завершить процесс удаления диска данных.
+В этом примере мы отключим диск с именем **myDisk** от виртуальной машины **myVM** в группе ресурсов **myResourceGroup**. Сначала удалите диск с помощью командлета [Remove-AzVMDataDisk](/powershell/module/az.compute/remove-azvmdatadisk). Затем обновите состояние виртуальной машины с помощью командлета [Update-AzVM](/powershell/module/az.compute/update-azvm), чтобы завершить процесс удаления диска данных.
 
 ```azurepowershell-interactive
 $VirtualMachine = Get-AzVM `

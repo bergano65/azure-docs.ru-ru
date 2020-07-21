@@ -11,21 +11,21 @@ ms.workload: infrastructure-services
 ms.date: 03/30/2020
 ms.author: sukumari
 ms.reviewer: azmetadatadev
-ms.openlocfilehash: 102808d716c080102cce4c02921637101da9fab7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 071baacd375cb5595bc99eeead7e818a35c4539b
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85553091"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86500418"
 ---
 # <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
 Служба метаданных экземпляров Azure (IMDS) предоставляет сведения о текущем выполнении экземпляров виртуальных машин, которые можно использовать для настройки виртуальных машин и управления ими.
 Эти сведения включают SKU, хранилище, конфигурации сети и будущие события обслуживания. Полный список доступных данных см. в разделе [API метаданных](#metadata-apis).
-Служба метаданных экземпляра доступна для виртуальной машины и экземпляров масштабируемого набора виртуальных машин. Используйте метаданные экземпляров для запуска виртуальных машин, созданных или управляемых с помощью [диспетчера ресурсов Azure](https://docs.microsoft.com/rest/api/resources/).
+Служба метаданных экземпляра доступна для виртуальной машины и экземпляров масштабируемого набора виртуальных машин. Используйте метаданные экземпляров для запуска виртуальных машин, созданных или управляемых с помощью [диспетчера ресурсов Azure](/rest/api/resources/).
 
 IMDS Azure — это конечная точка RESTFUL, доступная по известному ненаправляемому IP-адресу ( `169.254.169.254` ), доступ к которой можно получить только из виртуальной машины. Обмен данными между виртуальной машиной и IMDS никогда не покидает узел.
-Рекомендуется, чтобы клиенты HTTP обрабатывали веб-прокси в виртуальной машине при запросе IMDS и считались `169.254.169.254` такими же, как [`168.63.129.16`](https://docs.microsoft.com/azure/virtual-network/what-is-ip-address-168-63-129-16) .
+Рекомендуется, чтобы клиенты HTTP обрабатывали веб-прокси в виртуальной машине при запросе IMDS и считались `169.254.169.254` такими же, как [`168.63.129.16`](../../virtual-network/what-is-ip-address-168-63-129-16.md) .
 
 ## <a name="security"></a>Безопасность
 
@@ -39,7 +39,7 @@ IMDS Azure — это конечная точка RESTFUL, доступная п
 
 ### <a name="accessing-azure-instance-metadata-service"></a>Доступ к службе метаданных экземпляров Azure
 
-Чтобы получить доступ к службе метаданных экземпляров, создайте виртуальную машину в [Azure Resource Manager](https://docs.microsoft.com/rest/api/resources/) или на [портале Azure](https://portal.azure.com) согласно примерам ниже.
+Чтобы получить доступ к службе метаданных экземпляров, создайте виртуальную машину в [Azure Resource Manager](/rest/api/resources/) или на [портале Azure](https://portal.azure.com) согласно примерам ниже.
 Дополнительные примеры запросов к IMDS можно найти в разделе [Примеры метаданных экземпляра Azure](https://github.com/microsoft/azureimds).
 
 Ниже приведен пример кода для получения всех метаданных из экземпляра, что позволяет получить доступ к определенному источнику данных. См. раздел [API метаданных](#metadata-apis). 
@@ -246,14 +246,14 @@ name | Имя виртуальной машины. | 2017-04-02
 offer | Предоставление сведений для образа виртуальной машины (эти значения доступны только для образов, развернутых из коллекции образов Azure) | 2017-04-02
 osType | Windows или Linux | 2017-04-02
 placementGroupId | [Группа размещения](../../virtual-machine-scale-sets/virtual-machine-scale-sets-placement-groups.md) масштабируемого набора виртуальных машин | 2017-08-01
-План | [План](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#plan), указывающий наименование, продукт и издателя виртуальной машины (если используется образ Azure Marketplace) | 2018-04-02
+План | [План](/rest/api/compute/virtualmachines/createorupdate#plan), указывающий наименование, продукт и издателя виртуальной машины (если используется образ Azure Marketplace) | 2018-04-02
 platformUpdateDomain |  [Домен обновления](manage-availability.md), на котором запущена виртуальная машина | 2017-04-02
 platformFaultDomain | [Домен сбоя](manage-availability.md), на котором запущена виртуальная машина | 2017-04-02
 поставщик | Поставщик виртуальной машины | 2018-10-01
-publicKeys | [Коллекция открытых ключей](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#sshpublickey), назначенная виртуальной машине и путям | 2018-04-02
+publicKeys | [Коллекция открытых ключей](/rest/api/compute/virtualmachines/createorupdate#sshpublickey), назначенная виртуальной машине и путям | 2018-04-02
 publisher | Издатель образа виртуальной машины | 2017-04-02
 имя_группы_ресурсов | [Группа ресурсов](../../azure-resource-manager/management/overview.md) для виртуальной машины | 2017-08-01
-resourceId | [Полный](https://docs.microsoft.com/rest/api/resources/resources/getbyid) идентификатор ресурса | 2019-03-11
+resourceId | [Полный](/rest/api/resources/resources/getbyid) идентификатор ресурса | 2019-03-11
 sku | Определенный номер SKU для образа виртуальной машины | 2017-04-02
 storageProfile | См. раздел [Профиль службы хранилища](#storage-metadata) | 2019-06-01
 subscriptionId | Подписка Azure для виртуальной машины | 2017-08-01
@@ -261,7 +261,7 @@ tags | [Теги](../../azure-resource-manager/management/tag-resources.md) дл
 tagsList | Теги форматируются в виде массива JSON для упрощения программного анализа  | 2019-06-04
 version | Версия образа виртуальной машины | 2017-04-02
 vmId | [Уникальный идентификатор](https://azure.microsoft.com/blog/accessing-and-using-azure-vm-unique-id/) для виртуальной машины | 2017-04-02
-vmScaleSetName | [Имя масштабируемого набора виртуальных машин](../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) для масштабируемого набора виртуальных машин | 2017-12-01
+vmScaleSetName | [Имя масштабируемого набора виртуальных машин](../../virtual-machine-scale-sets/overview.md) для масштабируемого набора виртуальных машин | 2017-12-01
 vmSize | [Размер виртуальной машины](sizes.md) | 2017-04-02
 зона | [Зона доступности](../../availability-zones/az-overview.md) виртуальной машины | 2017-12-01
 
@@ -686,7 +686,7 @@ Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri "http:
 Данные | Описание
 -----|------------
 nonce | Строка, которую можно дополнительно указать с помощью запроса. Если не указан nonce, используется текущая отметка времени в формате UTC
-План | [План образа Azure Marketplace](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#plan). Содержит идентификатор плана (имя), образ продукта или предложение (продукт) и идентификатор издателя (издатель).
+План | [План образа Azure Marketplace](/rest/api/compute/virtualmachines/createorupdate#plan). Содержит идентификатор плана (имя), образ продукта или предложение (продукт) и идентификатор издателя (издатель).
 timestamp/createdOn | Метка времени в формате UTC для момента создания подписанного документа
 timestamp/expiresOn | Метка времени в формате UTC для момента истечения срока действия подписанного документа
 vmId |  [Уникальный идентификатор](https://azure.microsoft.com/blog/accessing-and-using-azure-vm-unique-id/) для виртуальной машины
@@ -852,7 +852,7 @@ Visual Basic  | https://github.com/Microsoft/azureimds/blob/master/IMDSSample.vb
 1. Отображаются не все данные для новой версии.
    * Чтобы отобразить метаданные вычислений для любой виртуальной машины, созданной после сентября 2016 года, необходимо добавить [тег](../../azure-resource-manager/management/tag-resources.md). Для старых виртуальных машин (созданных до сентября 2016) добавьте или удалите расширения или диски данных для экземпляров виртуальных машин, чтобы обновить метаданные.
 1. Почему я получаю сообщение об ошибке `500 Internal Server Error` или `410 Resource Gone` ?
-   * Повторите запрос на основе экспоненциальной системы или других методов, описанных в разделе [обработка временных сбоев](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults). Если проблема не исчезнет, создайте в портал Azure для виртуальной машины проблему поддержки.
+   * Повторите запрос на основе экспоненциальной системы или других методов, описанных в разделе [обработка временных сбоев](/azure/architecture/best-practices/transient-faults). Если проблема не исчезнет, создайте в портал Azure для виртуальной машины проблему поддержки.
 1. Будет ли это работать для экземпляров масштабируемого набора виртуальных машин?
    * Для экземпляров масштабируемого набора доступна да служба метаданных.
 1. Я обновил теги в масштабируемых наборах виртуальных машин, но они не отображаются в экземплярах, в отличие от виртуальных машин с одним экземпляром.
@@ -894,7 +894,7 @@ Visual Basic  | https://github.com/Microsoft/azureimds/blob/master/IMDSSample.vb
                Subnet Mask . . . . . . . . . . . : 255.255.255.0
             ... (continues) ...
             ```
-        1. Убедитесь, что интерфейс соответствует основному сетевому адаптеру виртуальной машины и основному IP-адресу. Основной сетевой адаптер или IP-адрес можно найти, просмотрев конфигурацию сети на портале Azure или выполнив поиск по [Azure CLI](https://docs.microsoft.com/cli/azure/vm/nic?view=azure-cli-latest#az-vm-nic-show). Обратите внимание на общедоступный и частный IP-адреса (и MAC-адрес при использовании интерфейса командной строки). Пример PowerShell CLI:
+        1. Убедитесь, что интерфейс соответствует основному сетевому адаптеру виртуальной машины и основному IP-адресу. Основной сетевой адаптер или IP-адрес можно найти, просмотрев конфигурацию сети на портале Azure или выполнив поиск по [Azure CLI](/cli/azure/vm/nic?view=azure-cli-latest#az-vm-nic-show). Обратите внимание на общедоступный и частный IP-адреса (и MAC-адрес при использовании интерфейса командной строки). Пример PowerShell CLI:
             ```powershell
             $ResourceGroup = '<Resource_Group>'
             $VmName = '<VM_Name>'

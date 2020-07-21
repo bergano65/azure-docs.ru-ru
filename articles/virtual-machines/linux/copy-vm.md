@@ -7,19 +7,20 @@ ms.topic: article
 ms.date: 10/17/2018
 ms.author: cynthn
 ms.custom: legacy
-ms.openlocfilehash: 406eda6902ae451c7fdf79e1bd1215c035a66750
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8532c0da7d9977b12a4d1099e430584de1e17fe0
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82792230"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86502747"
 ---
 # <a name="create-a-copy-of-a-linux-vm-by-using-azure-cli-and-managed-disks"></a>Создание копии виртуальной машины Linux в Azure с помощью Azure CLI и Управляемых дисков
 
-В этой статье показано, как создать копию виртуальной машины Azure под управлением Linux с помощью Azure CLI. Сведения о копировании, создании, хранении и совместном использовании образов виртуальных машин в масштабе см. в статье [Общие галереи изображений](shared-images.md).
+В этой статье показано, как создать копию виртуальной машины Azure под управлением Linux с помощью Azure CLI. Сведения о копировании, создании, хранении и совместном использовании образов виртуальных машин в масштабе см. в статье [Общие галереи изображений](../shared-images-cli.md).
 
 Кроме того, можно [передать VHD и создать виртуальную машину на его основе](upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 -   Установите [Azure CLI](/cli/azure/install-az-cli2).
 
@@ -123,6 +124,6 @@ az vm create --resource-group myResourceGroup \
     --attach-os-disk myCopiedDisk
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения об использовании [общей коллекции образов](shared-images.md) для управления образами виртуальных машин.
+Сведения об использовании [общей коллекции образов](../shared-images-cli.md) для управления образами виртуальных машин.

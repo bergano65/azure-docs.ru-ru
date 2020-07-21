@@ -8,12 +8,12 @@ ms.date: 07/10/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 705f9f3055d40d23c9ec5e24cfccfc0c96e114a5
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: e0773515809ffdc50167a3cba1f767ac8635bcee
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86236134"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86502577"
 ---
 # <a name="enable-end-to-end-encryption-using-encryption-at-host---azure-cli"></a>Включение сквозного шифрования с помощью шифрования на узле Azure CLI
 
@@ -35,7 +35,7 @@ ms.locfileid: "86236134"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы иметь возможность использовать шифрование на узле для виртуальных машин или масштабируемых наборов виртуальных машин, необходимо включить эту функцию в подписке. Отправьте сообщение электронной почты по адресу encryptionAtHost@microsoft . com с идентификаторами подписки, чтобы включить функцию для ваших подписок.
+Чтобы иметь возможность использовать шифрование на узле для виртуальных машин или масштабируемых наборов виртуальных машин, необходимо включить эту функцию в подписке. Отправьте сообщение электронной почты encryptionAtHost@microsoft.com с идентификаторами подписки, чтобы включить функцию для ваших подписок.
 
 ### <a name="create-an-azure-key-vault-and-diskencryptionset"></a>Создание Azure Key Vault и Дискенкриптионсет
 
@@ -77,7 +77,7 @@ az group deployment create -g <yourResourceGroupName> \
 
 Размеры виртуальных машин прежних версий не поддерживаются. Список поддерживаемых размеров виртуальных машин можно найти одним из следующих форматов:
 
-Вызов [API SKU ресурсов](https://docs.microsoft.com/rest/api/compute/resourceskus/list) и проверка `EncryptionAtHostSupported` возможности установки значения **true**.
+Вызов [API SKU ресурсов](/rest/api/compute/resourceskus/list) и проверка `EncryptionAtHostSupported` возможности установки значения **true**.
 
 ```json
     {
@@ -98,7 +98,7 @@ az group deployment create -g <yourResourceGroupName> \
     }
 ```
 
-Либо вызовите командлет PowerShell [Get-азкомпутересаурцеску](https://docs.microsoft.com/powershell/module/az.compute/get-azcomputeresourcesku?view=azps-3.8.0) .
+Либо вызовите командлет PowerShell [Get-азкомпутересаурцеску](/powershell/module/az.compute/get-azcomputeresourcesku?view=azps-3.8.0) .
 
 ```powershell
 $vmSizes=Get-AzComputeResourceSku | where{$_.ResourceType -eq 'virtualMachines' -and $_.Locations.Contains('CentralUSEUAP')} 

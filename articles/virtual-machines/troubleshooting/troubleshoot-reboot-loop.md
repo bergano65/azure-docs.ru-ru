@@ -12,11 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/15/2018
 ms.author: genli
-ms.openlocfilehash: 3fd0a8bf6bacfec5e2be6dfa52ca51e46c7025f7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4c336fe9a65d7bcc44790a4bfb02bed44f028733
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75443585"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86500928"
 ---
 # <a name="windows-reboot-loop-on-an-azure-vm"></a>Цикл перезагрузки Windows на виртуальной машине Azure
 В этой статье описан цикл перезагрузки, который может возникнуть на виртуальной машине Windows в Microsoft Azure.
@@ -27,7 +28,7 @@ ms.locfileid: "75443585"
 
 ![Начальный экран 1](./media/troubleshoot-reboot-loop/start-screen-1.png)
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Цикл перезагрузки возникает из-за перечисленных ниже причин.
 
@@ -49,7 +50,7 @@ ms.locfileid: "75443585"
 
 ## <a name="solution"></a>Решение
 
-Чтобы устранить эту проблему, необходимо [создать резервную копию диска ОС](../windows/snapshot-copy-managed-disk.md) и [подключить диск ОС к виртуальной машине спасения](../windows/troubleshoot-recovery-disks-portal.md). Затем необходимо применить соответствующие варианты решения или попробовать применить решения по очереди.
+Чтобы устранить эту проблему, необходимо [создать резервную копию диска ОС](../windows/snapshot-copy-managed-disk.md) и [подключить диск ОС к виртуальной машине спасения](./troubleshoot-recovery-disks-portal-windows.md). Затем необходимо применить соответствующие варианты решения или попробовать применить решения по очереди.
 
 ### <a name="solution-for-cause-1"></a>Решение для причины 1
 
@@ -93,7 +94,7 @@ ms.locfileid: "75443585"
 
 16. [Создайте виртуальную машину, используя диск ОС](../windows/create-vm-specialized.md).
 
-17. Если проблема устранена, необходимо переустановить [RDAgent](https://blogs.msdn.microsoft.com/mast/2014/04/07/install-the-vm-agent-on-an-existing-azure-vm/) (WaAppAgent.exe).
+17. Если проблема устранена, необходимо переустановить [RDAgent](/archive/blogs/mast/install-the-vm-agent-on-an-existing-azure-vm) (WaAppAgent.exe).
 
 ### <a name="solution-for-cause-2"></a>Решение для причины 2
 
@@ -112,5 +113,3 @@ ms.locfileid: "75443585"
 4. Удалите диск из виртуальной машины для устранения неполадок и подождите около 2 минут, чтобы Azure освободил его.
 
 5. [Создайте виртуальную машину, используя диск ОС](../windows/create-vm-specialized.md).
-
-

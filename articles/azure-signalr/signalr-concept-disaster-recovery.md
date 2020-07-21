@@ -6,13 +6,14 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: kenchen
-ms.openlocfilehash: cf0f345b0fbf9fea2512f72c1996c9a1597cc0cd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1bf8191b0a76ad442ac5d2b286c214f6ee9da822
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73747648"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86504858"
 ---
-# <a name="resiliency-and-disaster-recovery"></a>Устойчивость и аварийное восстановление
+# <a name="resiliency-and-disaster-recovery-in-azure-signalr-service"></a>Устойчивость и аварийное восстановление Службы Azure SignalR
 
 Устойчивость и аварийное восстановление — это одно из основных требований практически ко всем веб-системам. Служба Azure SignalR гарантирует показатель доступности 99,9 %, но по-прежнему работает в пределах региона.
 Экземпляр службы всегда выполняется в одном регионе и не переключается в другой регион, когда происходит сбой уровня региона.
@@ -130,7 +131,7 @@ app.MapAzureSignalR(GetType().FullName, hub,  options => options.Endpoints = new
 Кроме того, из-за характера подключения Службы Azure SignalR (длинное подключение), когда происходит сбой и аварийное переключение, подключение клиентов будет обрываться.
 Такие случаи необходимо обрабатывать на стороне клиента, чтобы предоставить своим конечным клиентам всю необходимую информацию. Например, подключитесь повторно после закрытия подключения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как настроить приложение и обеспечить устойчивость Службы Azure SignalR. Дополнительные сведения о подключении "сервер — клиент" и маршрутизации подключений Службы Azure SignalR см. в [этой статье](signalr-concept-internals.md) с описанием внутренних компонентов Службы Azure SignalR.
 

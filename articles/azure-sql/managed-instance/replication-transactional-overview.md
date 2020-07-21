@@ -12,12 +12,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 04/20/2020
-ms.openlocfilehash: 00f456d87bd5791b7d49644cb801dca20431b0b5
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: ee481067a3904c208061607b7109fcba0f3faaa7
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086404"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86504073"
 ---
 # <a name="transactional-replication-with-azure-sql-managed-instance"></a>Репликация транзакций с помощью Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "86086404"
 | Роль | База данных SQL Azure | Управляемый экземпляр SQL Azure |
 | :----| :------------- | :--------------- |
 | **Издатель** | Нет | Да |
-| **Распространение** | Нет | Да|
+| **Распространитель** | Нет | Да|
 | **Подписчик по запросу** | Нет | Да|
 | **Принудительный подписчик**| Да | Да|
 | &nbsp; | &nbsp; | &nbsp; |
@@ -73,10 +73,10 @@ ms.locfileid: "86086404"
 | Репликация | База данных SQL Azure | Управляемый экземпляр SQL Azure |
 | :----| :------------- | :--------------- |
 | [**Стандартная транзакционная**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication) | Да (только в качестве подписчика) | Да |
-| [**Снимок**](https://docs.microsoft.com/sql/relational-databases/replication/snapshot-replication) | Да (только в качестве подписчика) | Да|
+| [**Моментальный снимок**](https://docs.microsoft.com/sql/relational-databases/replication/snapshot-replication) | Да (только в качестве подписчика) | Да|
 | [**Репликация слиянием**](https://docs.microsoft.com/sql/relational-databases/replication/merge/merge-replication) | Нет | Нет|
-| [**Одноранговая**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/peer-to-peer-transactional-replication) | Нет | Нет|
-| [**Двунаправленная**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/bidirectional-transactional-replication) | Нет | Да|
+| [**Одноранговая репликация**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/peer-to-peer-transactional-replication) | Нет | Нет|
+| [**Двунаправленная репликация**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/bidirectional-transactional-replication) | Нет | Да|
 | [**Обновляемые подписки**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/updatable-subscriptions-for-transactional-replication) | Нет | Нет|
 | &nbsp; | &nbsp; | &nbsp; |
 
@@ -84,7 +84,7 @@ ms.locfileid: "86086404"
 
   Матрица поддержки репликации транзакций для Управляемый экземпляр Azure SQL — это то же самое, что и для SQL Server.
   
-| **Издатель**   | **Распространение** | **Subscriber** |
+| **Издатель**   | **Распространитель** | **Подписчик** |
 | :------------   | :-------------- | :------------- |
 | SQL Server 2019 | SQL Server 2019 | SQL Server 2019 <br/> SQL Server 2017 <br/> SQL Server 2016 <br/>  |
 | SQL Server 2017 | SQL Server 2019 <br/>SQL Server 2017 | SQL Server 2019 <br/> SQL Server 2017 <br/> SQL Server 2016 <br/> SQL Server 2014 |
@@ -104,11 +104,10 @@ ms.locfileid: "86086404"
 
 ### <a name="compare-data-sync-with-transactional-replication"></a>Сравнение синхронизации данных с репликацией транзакций
 
-| | Синхронизация данных | репликация транзакций |
+| Категория | Синхронизация данных | репликация транзакций |
 |---|---|---|
 | Преимущества | — Поддержка режима "активный — активный"<br/>— Двусторонняя передача данных между локальной базой данных и службой "База данных SQL Azure" | — Низкая задержка<br/>— Согласованность транзакций<br/>— Повторное использование существующей топологии после миграции |
 | Недостатки | — Задержка 5 мин или дольше<br/>— Отсутствует согласованность транзакций<br/>— Большее влияние на производительность | -Не удается опубликовать из базы данных SQL Azure <br/>— Дорогое обслуживание |
-| | | |
 
 ## <a name="common-configurations"></a>Распространенные конфигурации
 
@@ -189,7 +188,7 @@ ms.locfileid: "86086404"
 - Для отработки отказа с потерей данных также будет работать репликация. После этого будет выполнена повторная репликация потерянных изменений.
 - Для отработки отказа с потерей данных, но потери данных выходят за пределы срока хранения базы данных распространителя, администратору SQL Управляемый экземпляр потребуется повторно инициализировать базу данных подписки.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о настройке репликации транзакций см. в следующих учебниках:
 
@@ -198,7 +197,7 @@ ms.locfileid: "86086404"
 - [Создайте публикацию](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication).
 - [Создайте принудительную подписку](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription) , используя имя сервера в качестве подписчика (например, `N'azuresqldbdns.database.windows.net` и базу данных в имени базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks**). )
 
-## <a name="see-also"></a>Дополнительно  
+## <a name="see-also"></a>См. также раздел  
 
 - [Репликация с помощью Управляемый экземпляр SQL и группы отработки отказа](transact-sql-tsql-differences-sql-server.md#replication)
 - [Репликация в Базу данных SQL](../database/replication-to-sql-database.md)

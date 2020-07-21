@@ -9,12 +9,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: carlrab, vanto
 ms.date: 07/06/2020
-ms.openlocfilehash: 04c5d9c8eceb14ab68ca0d96f994bf6a64bbc431
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 5f7e3f763fc7107ba1b4be1dc8b19e55aa88b5a8
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045384"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86504702"
 ---
 # <a name="azure-sql-connectivity-settings"></a>Параметры подключения к SQL Azure
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "86045384"
 
  ![Снимок экрана подключения с запретом доступа к общедоступной сети][2]
 
-Любая попытка задать для параметра **запретить доступ к общедоступной сети** значению **Да** без существующих частных конечных точек на логическом сервере завершится с сообщением об ошибке следующего вида:  
+Любая попытка задать для параметра **запретить общий доступ к сети** значение **Да** без каких бы то ни было существующих частных конечных точек на логическом сервере завершится с сообщением об ошибке следующего вида:  
 
 ```output
 Error 42102
@@ -217,7 +217,7 @@ az resource show --ids %sqlserverid%
 az resource update --ids %sqlserverid% --set properties.connectionType=Proxy
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения о том, как работает подключение в базе данных SQL Azure, см. в статье [Архитектура подключения](connectivity-architecture.md) .
 - Сведения о том, как изменить политику подключения для сервера, см. в разделе [conn-Policy](https://docs.microsoft.com/cli/azure/sql/server/conn-policy).

@@ -6,12 +6,12 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 06/06/2020
 ms.author: danis
-ms.openlocfilehash: c70a6049596aa38e9ae6118517fc471becbc1676
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 7a0d4d0a1c36f901ea38c5c73d3aa7a2cf49e02f
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134638"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86502696"
 ---
 # <a name="prepare-an-ubuntu-virtual-machine-for-azure"></a>Подготовка виртуальной машины Ubuntu для Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "86134638"
 * Ubuntu 18.04/Бионик: [Бионик-Server-клаудимг-AMD64. vmdk](https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.vmdk)
 
 ## <a name="prerequisites"></a>Предварительные требования
-В этой статье предполагается, что вы уже установили операционную систему Ubuntu Linux на виртуальный жесткий диск. Существует несколько средств для создания VHD-файлов, например решение для виртуализации, такое как Hyper-V. Инструкции см. в разделе [Установка роли Hyper-V и настройка виртуальной машины](https://technet.microsoft.com/library/hh846766.aspx).
+В этой статье предполагается, что вы уже установили операционную систему Ubuntu Linux на виртуальный жесткий диск. Существует несколько средств для создания VHD-файлов, например решение для виртуализации, такое как Hyper-V. Инструкции см. в разделе [Установка роли Hyper-V и настройка виртуальной машины](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh846766(v=ws.11)).
 
 **Замечания по установке Ubuntu**
 
@@ -176,9 +176,8 @@ ms.locfileid: "86134638"
 
 13. В диспетчере Hyper-V выберите **Действие -> Завершение работы**.
 
-14. Azure принимает только виртуальные жесткие диски фиксированного размера. Если диск ОС виртуальной машины не является VHD фиксированного размера, используйте `Convert-VHD` командлет PowerShell и укажите `-VHDType Fixed` параметр. Просмотрите документацию по `Convert-VHD` этой ссылке: [Convert-VHD](https://docs.microsoft.com/powershell/module/hyper-v/convert-vhd?view=win10-ps).
+14. Azure принимает только виртуальные жесткие диски фиксированного размера. Если диск ОС виртуальной машины не является VHD фиксированного размера, используйте `Convert-VHD` командлет PowerShell и укажите `-VHDType Fixed` параметр. Просмотрите документацию по `Convert-VHD` этой ссылке: [Convert-VHD](/powershell/module/hyper-v/convert-vhd?view=win10-ps).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь виртуальный жесткий диск Ubuntu Linux можно использовать для создания новых виртуальных машин Azure. Если вы отправляете VHD-файл в Azure впервые, см. раздел [Вариант 1. Передача VHD](upload-vhd.md#option-1-upload-a-vhd).
-

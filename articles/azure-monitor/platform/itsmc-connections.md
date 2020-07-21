@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: c09d8d9fd2ef22aeaf791ae44d877a87033318cc
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 7baabe455128bf420a3c3e11ea83bb5357ed35c8
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83655924"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505165"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](../../azure-monitor/platform/itsmc-overview.md).
@@ -38,7 +39,7 @@ ms.locfileid: "83655924"
 - Разверните и настройте веб-приложение Service Manager. Дополнительные сведения о веб-приложении см. [здесь](#create-and-deploy-service-manager-web-app-service).
 - Создайте и настройте гибридное подключение. Дополнительные сведения: [Настройка гибридного подключения](#configure-the-hybrid-connection).
 - Поддерживаемые версии Service Manager:  2012 R2 или 2016.
-- Роль пользователя:  [оператор с расширенными правами](https://technet.microsoft.com/library/ff461054.aspx).
+- Роль пользователя:  [оператор с расширенными правами](/previous-versions/system-center/service-manager-2010-sp1/ff461054(v=technet.10)).
 
 ### <a name="connection-procedure"></a>Процедура подключения
 
@@ -200,7 +201,7 @@ ms.locfileid: "83655924"
 > В конце нажмите кнопку "Обновить".
 > 2) **Мы рекомендуем реализовать внутреннюю процедуру, обеспечивающую постоянную активность подключения:** нужно обновлять токен в соответствии со сроком существования токена обновления. Обязательно выполните следующие операции до ожидаемого срока действия токена обновления (рекомендуется делать это за несколько дней до истечения срока).
 >
-> 1. [Завершите процесс синхронизации вручную для конфигурации соединителя ITSM](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-resync-servicenow).
+> 1. [Завершите процесс синхронизации вручную для конфигурации соединителя ITSM](./itsmc-resync-servicenow.md).
 > 2. Отмените старый токен обновления, так как использовать старые ключи не рекомендуется из соображений безопасности. В колонке ServiceNow выполните поиск строки System OAuth (OAuth системы), а затем выберите Manage Tokens (Управление токенами). Выберите старый токен в списке по имени OAuth и дате окончания срока действия.
 > ![Отображение определения OAuth системы](media/itsmc-connections/snow-system-oauth.png)
 > 3. Щелкните "Отменить доступ" и "Отменить".
@@ -247,6 +248,10 @@ ms.locfileid: "83655924"
 - Вы можете создавать инциденты из оповещений или записей журналов Log Analytics, а также из оповещений Azure в этом экземпляре ServiceNow.
 
 Дополнительные сведения: [Create ITSM work items from Azure alerts](../../azure-monitor/platform/itsmc-overview.md#create-itsm-work-items-from-azure-alerts) (Создание рабочих элементов ITSM из оповещений Azure).
+
+
+> [!NOTE]
+> В ServiceNow имеется ограничение скорости для запросов в час. Чтобы настроить ограничение, используйте его, определив "ограничение скорости для входящих REST API" в экземпляре ServiceNow.
 
 ### <a name="create-integration-user-role-in-servicenow-app"></a>Создание роли пользователя для интеграции в приложении ServiceNow
 

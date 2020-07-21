@@ -9,11 +9,12 @@ ms.topic: article
 ms.workload: infrastructure
 ms.date: 04/05/2020
 ms.author: haroldw
-ms.openlocfilehash: 7d6cd4c6ce7991ae83f6f4a1dd6d8b86fe7eedbc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bc30275b2ee24af7bb526b3b43618c706bc027ca
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81757897"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86502101"
 ---
 # <a name="deploy-openshift-container-platform-311-in-azure"></a>Развертывание платформы контейнеров OpenShift 3,11 в Azure
 
@@ -242,7 +243,7 @@ ms.locfileid: "81757897"
 
 ### <a name="azuredeployparametersjson-file-explained"></a>azuredeploy.Parameters.jsс описанием файла
 
-| Свойство. | Описание: | Допустимые параметры | Значение по умолчанию |
+| Свойство | Описание | Допустимые параметры | Значение по умолчанию |
 |----------|-------------|---------------|---------------|
 | `_artifactsLocation`  | URL-адрес для артефактов (JSON, сценарии и т. д.) |  |  HTTPS: \/ /RAW.githubusercontent.com/Microsoft/openshift-Container-Platform/Master  |
 | `location` | Регион Azure для развертывания ресурсов |  |  |
@@ -276,7 +277,7 @@ ms.locfileid: "81757897"
 | `enableAzure` | Включение поставщика облачных служб Azure | true <br> false | true |
 | `aadClientId` | Идентификатор клиента Azure Active Directory также известен как идентификатор приложения для субъекта-службы |  |  |
 | `domainName` | Имя пользовательского доменного имени, которое будет использоваться (если применимо). Если не развертывать полностью частный кластер, задайте значение "нет". |  | нет |
-| `masterClusterDnsType` | Тип домена для веб-консоли OpenShift. "default" будет использовать DNS-метку для основного общедоступного IP-адреса. "Custom" позволяет определить собственное имя | default <br> пользовательский | default |
+| `masterClusterDnsType` | Тип домена для веб-консоли OpenShift. "default" будет использовать DNS-метку для основного общедоступного IP-адреса. "Custom" позволяет определить собственное имя | значение по умолчанию <br> пользовательский | значение по умолчанию |
 | `masterClusterDns` | Настраиваемое DNS-имя, которое будет использоваться для доступа к Web Console OpenShift, если вы выбрали "Custom" для`masterClusterDnsType` |  | console.contoso.com |
 | `routingSubDomainType` | Если задано значение "нипио", `routingSubDomain` будет использоваться NIP.IO.  Используйте "Custom", если у вас есть собственный домен, который вы хотите использовать для маршрутизации. | нипио <br> пользовательский | нипио |
 | `routingSubDomain` | DNS-имя с подстановочными знаками, которое вы хотите использовать для маршрутизации, если вы выбрали "Custom" для`routingSubDomainType` |  | apps.contoso.com |
@@ -289,7 +290,7 @@ ms.locfileid: "81757897"
 | `infraSubnetName` | Имя подсети инфраструктуры |  | инфрасубнет |
 | `infraSubnetPrefix` | CIDR, используемый для инфраструктуры подсети, должен быть подмножеством addressPrefix |  | 10.2.0.0/16 |
 | `nodeSubnetName` | Имя подсети узла |  | нодесубнет |
-| `nodeSubnetPrefix` | CIDR, используемый для подсети узла, должен быть подмножеством addressPrefix |  | 10.3.0.0/16. |
+| `nodeSubnetPrefix` | CIDR, используемый для подсети узла, должен быть подмножеством addressPrefix |  | 10.3.0.0/16 |
 | `existingMasterSubnetReference` | Полная ссылка на существующую подсеть для главных узлов. Не требуется при создании новой виртуальной сети или подсетей |  |  |
 | `existingInfraSubnetReference` | Полная ссылка на существующую подсеть для узлов. Не требуется при создании новой виртуальной сети или подсетей |  |  |
 | `existingCnsSubnetReference` | Полная ссылка на существующую подсеть для узлов CNS. Не требуется при создании новой виртуальной сети или подсетей |  |  |
@@ -306,7 +307,7 @@ ms.locfileid: "81757897"
 ### <a name="deploy-using-azure-cli"></a>Развертывание с помощью Azure CLI
 
 > [!NOTE] 
-> Для выполнения следующей команды необходим интерфейс командной строки версии не ниже 2.0.8. Узнать свою версию CLI можно с помощью команды `az --version`. Чтобы обновить версию CLI, ознакомьтесь со статьей [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latesti).
+> Для выполнения следующей команды необходим интерфейс командной строки версии не ниже 2.0.8. Узнать свою версию CLI можно с помощью команды `az --version`. Чтобы обновить версию CLI, ознакомьтесь со статьей [Установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latesti).
 
 В примере ниже кластер OpenShift и все связанные ресурсы развертываются в группу ресурсов openshiftrg с именем развертывания myOpenShiftCluster. Репозиторий GitHub ссылается непосредственно на шаблон, при этом используется локальный файл параметров с именем azuredeploy.parameters.json.
 
@@ -343,7 +344,7 @@ $ ssh clusteradmin@bastiondns4hawllzaavu6g.eastus.cloudapp.azure.com
 az group delete --name openshiftrg
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Задачи, выполняемые после развертывания](./openshift-container-platform-3x-post-deployment.md)
 - [Устранение неполадок с развертыванием OpenShift в Azure](./openshift-container-platform-3x-troubleshooting.md)

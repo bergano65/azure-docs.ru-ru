@@ -3,16 +3,16 @@ title: Частные конечные точки
 description: Изучите процесс создания частных конечных точек для Azure Backup и сценариев, в которых использование частных конечных точек помогает обеспечить безопасность ресурсов.
 ms.topic: conceptual
 ms.date: 05/07/2020
-ms.openlocfilehash: 8ce767073e9acfe271e6e57f9e6d1237910b33e0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e9c8f142e9781946f572f6f3a744d8bc2736a3de
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85124261"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86503767"
 ---
 # <a name="private-endpoints-for-azure-backup"></a>Частные конечные точки для Azure Backup
 
-Azure Backup позволяет безопасно выполнять резервное копирование и восстановление данных из хранилищ служб восстановления с помощью [частных конечных точек](https://docs.microsoft.com/azure/private-link/private-endpoint-overview). Частные конечные точки используют один или несколько частных IP-адресов из виртуальной сети, что обеспечивает их эффективное подключение к виртуальной сети.
+Azure Backup позволяет безопасно выполнять резервное копирование и восстановление данных из хранилищ служб восстановления с помощью [частных конечных точек](../private-link/private-endpoint-overview.md). Частные конечные точки используют один или несколько частных IP-адресов из виртуальной сети, что обеспечивает их эффективное подключение к виртуальной сети.
 
 Эта статья поможет вам понять процесс создания частных конечных точек для Azure Backup и сценариев, в которых использование частных конечных точек помогает обеспечить безопасность ресурсов.
 
@@ -45,7 +45,7 @@ Azure Backup позволяет безопасно выполнять резер
 
 [!INCLUDE [How to create a Recovery Services vault](../../includes/backup-create-rs-vault.md)]
 
-Сведения о создании хранилища с помощью клиента Azure Resource Manager см. в [этом разделе](#create-a-recovery-services-vault-using-the-azure-resource-manager-client) . Это позволяет создать хранилище с уже включенным управляемым удостоверением. Дополнительные сведения о хранилищах служб восстановления см. [здесь](https://docs.microsoft.com/azure/backup/backup-azure-recovery-services-vault-overview).
+Сведения о создании хранилища с помощью клиента Azure Resource Manager см. в [этом разделе](#create-a-recovery-services-vault-using-the-azure-resource-manager-client) . Это позволяет создать хранилище с уже включенным управляемым удостоверением. Дополнительные сведения о хранилищах служб восстановления см. [здесь](./backup-azure-recovery-services-vault-overview.md).
 
 ## <a name="enable-managed-identity-for-your-vault"></a>Включение управляемого удостоверения для хранилища
 
@@ -111,9 +111,9 @@ Azure Backup позволяет безопасно выполнять резер
 
 Для соглашений об именовании URL-адресов в национальных регионах:
 
-- [Китай](https://docs.microsoft.com/azure/china/resources-developer-guide#check-endpoints-in-azure)
-- [Германия](https://docs.microsoft.com/azure/germany/germany-developer-guide#endpoint-mapping)
-- [US Gov](https://docs.microsoft.com/azure/azure-government/documentation-government-developer-guide)
+- [Китай](/azure/china/resources-developer-guide#check-endpoints-in-azure)
+- [Германия](../germany/germany-developer-guide.md#endpoint-mapping)
+- [US Gov](../azure-government/documentation-government-developer-guide.md)
 
 ### <a name="linking-private-dns-zones-with-your-virtual-network"></a>Связывание частных зон DNS с виртуальной сетью
 
@@ -566,6 +566,6 @@ A. Да, можно использовать собственные DNS-серв
 У. Нужно ли выполнять дополнительные действия на моем сервере после выполнения процедуры в этой статье?<br>
 A. После выполнения процесса, описанного в этой статье, вам не нужно выполнять дополнительную работу, чтобы использовать частные конечные точки для резервного копирования и восстановления.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со всеми [функциями безопасности в Azure Backup](security-overview.md)
