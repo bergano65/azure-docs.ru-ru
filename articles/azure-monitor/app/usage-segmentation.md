@@ -6,11 +6,12 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 01/24/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 10ea3c68695e7e4fb4950fbcc4a190e9f1d83f49
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.openlocfilehash: 0d605286df70988852d1650be58cfb2c395de814
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83797703"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539811"
 ---
 # <a name="users-sessions-and-events-analysis-in-application-insights"></a>Анализ пользователей, сеансов и событий в Application Insights
 
@@ -56,7 +57,7 @@ ms.locfileid: "83797703"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Чтобы обеспечить оптимальное использование, начните отправлять [пользовательские события](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#trackevent) или [сведения о просмотрах страниц](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#page-views).
+- Чтобы обеспечить оптимальное использование, начните отправлять [пользовательские события](./api-custom-events-metrics.md#trackevent) или [сведения о просмотрах страниц](./api-custom-events-metrics.md#page-views).
 - Если вы уже сделали это, изучите инструменты использования, чтобы узнать, как пользователи используют службу.
     - [Воронки](usage-funnels.md)
     - [Сохранение](usage-retention.md)

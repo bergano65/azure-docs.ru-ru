@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 07/10/2020
+ms.date: 07/17/2020
 ms.author: victorh
-ms.openlocfilehash: 3174576201f0068191c2918b47fbd99eaa1ec182
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: b984bb581df54cba79a551dc870786ed228eaa43
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86232089"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86536975"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
@@ -22,15 +22,7 @@ ms.locfileid: "86232089"
 
 ## <a name="what-capabilities-are-supported-in-azure-firewall"></a>Характеристики и функции Брандмауэра Azure:
 
-* Брандмауэр как услуга с отслеживанием состояния.
-* Встроенные функции обеспечения высокой доступности и неограниченная масштабируемость в облаке.
-* фильтрацию FQDN;
-* Теги FQDN
-* правила фильтрации трафика;
-* поддержку исходящих данных SNAT;
-* Поддержка DNAT для входящего трафика
-* Централизованное создание, применение и регистрация политик приложений и сетевых подключений в подписках Azure и виртуальных сетях.
-* Полная интеграция с Azure Monitor для ведения журналов и аналитики.
+Дополнительные сведения о функциях брандмауэра Azure см. в статье [Функции службы "Брандмауэр Azure"](features.md).
 
 ## <a name="what-is-the-typical-deployment-model-for-azure-firewall"></a>Что такое типичная модель развертывания для службы "Брандмауэр Azure"?
 

@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 664e61697c1fb0c339a4c2caf8d0125a73e608c3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 28bbf9749375a4523237e840c217977853cd4ddd
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85319640"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539828"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -21,7 +21,7 @@ ms.locfileid: "85319640"
 ## <a name="brief-summary"></a>Краткая сводка
 
 * Существует три разных типа выборки: Адаптивная выборка, выборка с фиксированной частотой и выборка приема.
-* Адаптивная выборка включена по умолчанию во всех последних версиях Application Insights ASP.NET и ASP.NET Core пакетах средств разработки программного обеспечения (SDK). Она также используется в [функциях Azure](https://docs.microsoft.com/azure/azure-functions/functions-overview).
+* Адаптивная выборка включена по умолчанию во всех последних версиях Application Insights ASP.NET и ASP.NET Core пакетах средств разработки программного обеспечения (SDK). Она также используется в [функциях Azure](../../azure-functions/functions-overview.md).
 * Выборка с фиксированной частотой доступна в последних версиях Application Insights пакетов SDK для ASP.NET, ASP.NET Core, Java (агент и пакет SDK) и Python.
 * Выборка приема работает на конечной точке службы Application Insights. Он применяется только в том случае, если никакая другая выборка не действует. Если пакет SDK производит выборку данных телеметрии, выборка приема отключена.
 * Для веб-приложений, если вы зарегистрируете пользовательские события и хотите убедиться, что набор событий сохраняется или удаляется вместе, события должны иметь одно и то же `OperationId` значение.
@@ -34,8 +34,9 @@ ms.locfileid: "85319640"
 |-|-|-|-|
 | ASP.NET | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-aspnet-applications) | [Да](#configuring-fixed-rate-sampling-for-aspnet-applications) | Только если не действует ни одна другая выборка |
 | ASP.NET Core | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-aspnet-core-applications) | [Да](#configuring-fixed-rate-sampling-for-aspnet-core-applications) | Только если не действует ни одна другая выборка |
-| Функции Azure | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-azure-functions) | Нет | Только если не действует ни одна другая выборка |
+| Проверка | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-azure-functions) | Нет | Только если не действует ни одна другая выборка |
 | Java | Нет | [Да](#configuring-fixed-rate-sampling-for-java-applications) | Только если не действует ни одна другая выборка |
+| Node.JS | Нет | [Да](./nodejs.md#sampling) | Только если не действует ни одна другая выборка
 | Python | Нет | [Да](#configuring-fixed-rate-sampling-for-opencensus-python-applications) | Только если не действует ни одна другая выборка |
 | Все остальные | Нет | Нет | [Да](#ingestion-sampling) |
 
@@ -209,7 +210,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Telemetr
 
 ### <a name="configuring-adaptive-sampling-for-azure-functions"></a>Настройка адаптивной выборки для функций Azure
 
-Следуйте инструкциям на [этой странице](https://docs.microsoft.com/azure/azure-functions/functions-monitoring#configure-sampling) , чтобы настроить адаптивную выборку для приложений, выполняющихся в функциях Azure.
+Следуйте инструкциям на [этой странице](../../azure-functions/functions-monitoring.md#configure-sampling) , чтобы настроить адаптивную выборку для приложений, выполняющихся в функциях Azure.
 
 ## <a name="fixed-rate-sampling"></a>Выборка с фиксированной частотой
 
@@ -481,7 +482,7 @@ handler = AzureLogHandler(
 
 ## <a name="knowing-whether-sampling-is-in-operation"></a>Определение наличия операции выборки
 
-Чтобы узнать фактическую частоту выборки (где бы она ни применялась), выполните такой [запрос аналитики](../../azure-monitor/app/analytics.md) :
+Чтобы узнать фактическую частоту выборки (где бы она ни применялась), выполните такой [запрос аналитики](../log-query/log-query-overview.md) :
 
 ```kusto
 union requests,dependencies,pageViews,browserTimings,exceptions,traces
@@ -583,7 +584,7 @@ union requests,dependencies,pageViews,browserTimings,exceptions,traces
 
 До версии 2.5.0-2 пакета SDK ASP.NET и v 2.2.0-beta3 ASP.NET Core SDK решение выборки было основано на хэш-коде пользователя для приложений, определяющих "User" (то есть наиболее типичных веб-приложений). Для типов приложений, не определяющих пользователей (например, веб-служб), решение выборки было основано на ИДЕНТИФИКАТОРе операции запроса. Последние версии пакетов SDK для ASP.NET и ASP.NET Core используют идентификатор операции для решения выборки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Фильтрация](../../azure-monitor/app/api-filtering-sampling.md) может обеспечивать более строгий контроль над данными, отправляемыми пакетом SDK.
-* Прочтите статью "сеть разработчика", чтобы [оптимизировать телеметрию с помощью Application Insights](https://msdn.microsoft.com/magazine/mt808502.aspx).
+* Прочтите статью "сеть разработчика", чтобы [оптимизировать телеметрию с помощью Application Insights](/archive/msdn-magazine/2017/may/devops-optimize-telemetry-with-application-insights).

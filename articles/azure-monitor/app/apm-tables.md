@@ -5,21 +5,22 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/09/2020
-ms.openlocfilehash: 21f387a87224615ea6afbdce620c56e3ad2cc6ea
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3175e43a841334719de80f44a226b1c7b87690d9
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83210545"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86540117"
 ---
 # <a name="workspace-based-resource-changes-preview"></a>Изменения ресурсов на основе рабочей области (Предварительная версия)
 
-До появления [Application Insights ресурсов на основе рабочей области](create-workspace-resource.md)Application Insights данные хранились отдельно от других данных журнала в Azure Monitor. Они основаны на обозреватель данных Azure и используют один и тот же язык запросов Kusto (ККЛ). Это описано в разделе [журналы в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-logs).
+До появления [Application Insights ресурсов на основе рабочей области](create-workspace-resource.md)Application Insights данные хранились отдельно от других данных журнала в Azure Monitor. Они основаны на обозреватель данных Azure и используют один и тот же язык запросов Kusto (ККЛ). Это описано в разделе [журналы в Azure Monitor](../platform/data-platform-logs.md).
 
 Данные ресурсов Application Insights на основе рабочих областей хранятся в Log Analytics рабочей области с другими данными мониторинга и данными приложений. Это упрощает настройку, позволяя более легко анализировать данные в нескольких решениях и использовать возможности рабочих областей.
 
 ## <a name="table-structure"></a>Структура таблицы
 
-| Устаревшее имя таблицы | Имя новой таблицы | Описание: |
+| Устаревшее имя таблицы | Имя новой таблицы | Описание |
 |:---|:---|:---|
 | availabilityResults | аппаваилабилитиресултс |  Сводные данные из тестов доступности.|
 | бровсертимингс | аппбровсертимингс | Данные о производительности клиента, например время, затраченное на обработку входящих данных.|
@@ -42,206 +43,206 @@ ms.locfileid: "83210545"
 
 Устаревшая таблица: доступность
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
-|appId|string|\_ResourceGUID|string|
-|application_Version|string|AppVersion|string|
-|appName|string|\_ResourceId|string|
-|client_Browser|string|ClientBrowser|string|
-|client_City|string|клиентЦити|string|
-|client_CountryOrRegion|string|клиенткаунтрйоррегион|string|
-|client_IP|string|ClientIP|string|
-|client_Model|string|клиентмодел|string|
-|client_OS|string|клиентос|string|
-|client_StateOrProvince|string|клиентстатеорпровинце|string|
-|client_Type|string|клиенттипе|string|
-|cloud_RoleInstance|string|аппролеинстанце|string|
-|cloud_RoleName|string|аппроленаме|string|
-|customDimensions|Динамический|Элемент Property|Динамический|
+|appId|строка|\_ResourceGUID|строка|
+|application_Version|строка|AppVersion|строка|
+|appName|строка|\_ResourceId|строка|
+|client_Browser|строка|ClientBrowser|строка|
+|client_City|строка|клиентЦити|строка|
+|client_CountryOrRegion|строка|клиенткаунтрйоррегион|строка|
+|client_IP|строка|ClientIP|строка|
+|client_Model|строка|клиентмодел|строка|
+|client_OS|строка|клиентос|строка|
+|client_StateOrProvince|строка|клиентстатеорпровинце|строка|
+|client_Type|строка|клиенттипе|строка|
+|cloud_RoleInstance|строка|аппролеинстанце|строка|
+|cloud_RoleName|строка|аппроленаме|строка|
+|customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
 |длительность|real|DurationMs|real|
-|`id`|string|`Id`|string|
-|iKey|string|IKey|string|
+|`id`|строка|`Id`|строка|
+|iKey|строка|IKey|строка|
 |itemCount|INT|ItemCount|INT|
-|itemId|string|\_ItemId|string|
-|itemType|string|Type|Строка|
-|location|string|Расположение|string|
-|message|строка|Сообщение|string|
-|name|string|Название|string|
-|operation_Id|string|Операции|string|
-|operation_Name|string|OperationName|string|
-|operation_ParentId|string|оператионпарентид|string|
-|operation_SyntheticSource|string|оператионсинсетиксаурце|string|
-|перформанцебуккет|string|перформанцебуккет|string|
-|sdkVersion|string|SdkVersion|string|
-|session_Id|string|SessionId|string|
+|itemId|строка|\_ItemId|строка|
+|itemType|строка|Тип|Строка|
+|location|строка|Расположение|строка|
+|message|строка|Сообщение|строка|
+|name|строка|Название|строка|
+|operation_Id|строка|Операции|строка|
+|operation_Name|строка|OperationName|строка|
+|operation_ParentId|строка|оператионпарентид|строка|
+|operation_SyntheticSource|строка|оператионсинсетиксаурце|строка|
+|перформанцебуккет|строка|перформанцебуккет|строка|
+|sdkVersion|строка|SdkVersion|строка|
+|session_Id|строка|SessionId|строка|
 |размер;|real|Размер|real|
-|Успешное завершение|string|Успех|Bool|
+|Успешное завершение|строка|Успешно|Bool|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
-|user_AccountId|string|UserAccountId|string|
-|user_AuthenticatedId|string|усераусентикатедид|string|
-|user_Id|string|UserId|string|
+|user_AccountId|строка|UserAccountId|строка|
+|user_AuthenticatedId|строка|усераусентикатедид|строка|
+|user_Id|строка|UserId|строка|
 
 ### <a name="appbrowsertimings"></a>аппбровсертимингс
 
 Устаревшая таблица: Бровсертимингс
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
-|appId|string|\_ResourceGUID|string|
-|application_Version|string|AppVersion|string|
-|appName|string|\_ResourceId|string|
-|client_Browser|string|ClientBrowser|string|
-|client_City|string|клиентЦити|string|
-|client_CountryOrRegion|string|клиенткаунтрйоррегион|string|
-|client_IP|string|ClientIP|string|
-|client_Model|string|клиентмодел|string|
-|client_OS|string|клиентос|string|
-|client_StateOrProvince|string|клиентстатеорпровинце|string|
-|client_Type|string|клиенттипе|string|
-|cloud_RoleInstance|string|аппролеинстанце|string|
-|cloud_RoleName|string|аппроленаме|string|
-|customDimensions|Динамический|Элемент Property|Динамический|
+|appId|строка|\_ResourceGUID|строка|
+|application_Version|строка|AppVersion|строка|
+|appName|строка|\_ResourceId|строка|
+|client_Browser|строка|ClientBrowser|строка|
+|client_City|строка|клиентЦити|строка|
+|client_CountryOrRegion|строка|клиенткаунтрйоррегион|строка|
+|client_IP|строка|ClientIP|строка|
+|client_Model|строка|клиентмодел|строка|
+|client_OS|строка|клиентос|строка|
+|client_StateOrProvince|строка|клиентстатеорпровинце|строка|
+|client_Type|строка|клиенттипе|строка|
+|cloud_RoleInstance|строка|аппролеинстанце|строка|
+|cloud_RoleName|строка|аппроленаме|строка|
+|customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
-|iKey|string|IKey|string|
+|iKey|строка|IKey|строка|
 |itemCount|INT|ItemCount|INT|
-|itemId|string|\_ItemId|string|
-|itemType|string|Тип|string|
-|name|строка|name|DATETIME|
+|itemId|строка|\_ItemId|строка|
+|itemType|строка|Тип|строка|
+|name|строка|Имя|DATETIME|
 |нетворкдуратион|real|нетворкдуратионмс|real|
-|operation_Id|string|Операции|string|
-|operation_Name|string|OperationName|string|
-|operation_ParentId|string|оператионпарентид|string|
-|operation_SyntheticSource|string|оператионсинсетиксаурце|string|
-|перформанцебуккет|string|перформанцебуккет|string|
+|operation_Id|строка|Операции|строка|
+|operation_Name|строка|OperationName|строка|
+|operation_ParentId|строка|оператионпарентид|строка|
+|operation_SyntheticSource|строка|оператионсинсетиксаурце|строка|
+|перформанцебуккет|строка|перформанцебуккет|строка|
 |процессингдуратион|real|процессингдуратионмс|real|
 |рецеиведуратион|real|рецеиведуратионмс|real|
-|sdkVersion|string|SdkVersion|string|
+|sdkVersion|строка|SdkVersion|строка|
 |сенддуратион|real|сенддуратионмс|real|
-|session_Id|string|SessionId|string|
+|session_Id|строка|SessionId|строка|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
 |totalDuration|real|тоталдуратионмс|real|
-|url|строка|Url|string|
-|user_AccountId|string|UserAccountId|string|
-|user_AuthenticatedId|string|усераусентикатедид|string|
-|user_Id|string|UserId|string|
+|url|строка|Url|строка|
+|user_AccountId|строка|UserAccountId|строка|
+|user_AuthenticatedId|строка|усераусентикатедид|строка|
+|user_Id|строка|UserId|строка|
 
 ### <a name="appdependencies"></a>аппдепенденЦиес
 
 Устаревшая таблица: зависимости
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
-|appId|string|\_ResourceGUID|string|
-|application_Version|string|AppVersion|string|
-|appName|string|\_ResourceId|string|
-|client_Browser|string|ClientBrowser|string|
-|client_City|string|клиентЦити|string|
-|client_CountryOrRegion|string|клиенткаунтрйоррегион|string|
-|client_IP|string|ClientIP|string|
-|client_Model|string|клиентмодел|string|
-|client_OS|string|клиентос|string|
-|client_StateOrProvince|string|клиентстатеорпровинце|string|
-|client_Type|string|клиенттипе|string|
-|cloud_RoleInstance|string|аппролеинстанце|string|
-|cloud_RoleName|string|аппроленаме|string|
-|customDimensions|Динамический|Элемент Property|Динамический|
+|appId|строка|\_ResourceGUID|строка|
+|application_Version|строка|AppVersion|строка|
+|appName|строка|\_ResourceId|строка|
+|client_Browser|строка|ClientBrowser|строка|
+|client_City|строка|клиентЦити|строка|
+|client_CountryOrRegion|строка|клиенткаунтрйоррегион|строка|
+|client_IP|строка|ClientIP|строка|
+|client_Model|строка|клиентмодел|строка|
+|client_OS|строка|клиентос|строка|
+|client_StateOrProvince|строка|клиентстатеорпровинце|строка|
+|client_Type|строка|клиенттипе|строка|
+|cloud_RoleInstance|строка|аппролеинстанце|строка|
+|cloud_RoleName|строка|аппроленаме|строка|
+|customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
-|.|string|Данные|string|
+|.|строка|Данные|строка|
 |длительность|real|DurationMs|real|
-|`id`|string|`Id`|string|
-|iKey|string|IKey|string|
+|`id`|строка|`Id`|строка|
+|iKey|строка|IKey|строка|
 |itemCount|INT|ItemCount|INT|
-|itemId|string|\_ItemId|string|
-|itemType|string|Type|Строка|
-|name|строка|Название|string|
-|operation_Id|string|Операции|string|
-|operation_Name|string|OperationName|string|
-|operation_ParentId|string|оператионпарентид|string|
-|operation_SyntheticSource|string|оператионсинсетиксаурце|string|
-|перформанцебуккет|string|перформанцебуккет|string|
-|resultCode|string|ResultCode|string|
-|sdkVersion|string|SdkVersion|string|
-|session_Id|string|SessionId|string|
-|Успешное завершение|string|Успех|Bool|
-|target|string|целевого объекта|string|
+|itemId|строка|\_ItemId|строка|
+|itemType|строка|Тип|Строка|
+|name|строка|Название|строка|
+|operation_Id|строка|Операции|строка|
+|operation_Name|строка|OperationName|строка|
+|operation_ParentId|строка|оператионпарентид|строка|
+|operation_SyntheticSource|строка|оператионсинсетиксаурце|строка|
+|перформанцебуккет|строка|перформанцебуккет|строка|
+|resultCode|строка|ResultCode|строка|
+|sdkVersion|строка|SdkVersion|строка|
+|session_Id|строка|SessionId|строка|
+|Успешное завершение|строка|Успешно|Bool|
+|target|строка|целевого объекта|строка|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
-|type|string|DependencyType|string|
-|user_AccountId|string|UserAccountId|string|
-|user_AuthenticatedId|string|усераусентикатедид|string|
-|user_Id|string|UserId|string|
+|type|строка|DependencyType|строка|
+|user_AccountId|строка|UserAccountId|строка|
+|user_AuthenticatedId|строка|усераусентикатедид|строка|
+|user_Id|строка|UserId|строка|
 
 ### <a name="appevents"></a>аппевентс
 
 Устаревшая таблица: customEvents
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
-|appId|string|\_ResourceGUID|string|
-|application_Version|string|AppVersion|string|
-|appName|string|\_ResourceId|string|
-|client_Browser|string|ClientBrowser|string|
-|client_City|string|клиентЦити|string|
-|client_CountryOrRegion|string|клиенткаунтрйоррегион|string|
-|client_IP|string|ClientIP|string|
-|client_Model|string|клиентмодел|string|
-|client_OS|string|клиентос|string|
-|client_StateOrProvince|string|клиентстатеорпровинце|string|
-|client_Type|string|клиенттипе|string|
-|cloud_RoleInstance|string|аппролеинстанце|string|
-|cloud_RoleName|string|аппроленаме|string|
-|customDimensions|Динамический|Элемент Property|Динамический|
+|appId|строка|\_ResourceGUID|строка|
+|application_Version|строка|AppVersion|строка|
+|appName|строка|\_ResourceId|строка|
+|client_Browser|строка|ClientBrowser|строка|
+|client_City|строка|клиентЦити|строка|
+|client_CountryOrRegion|строка|клиенткаунтрйоррегион|строка|
+|client_IP|строка|ClientIP|строка|
+|client_Model|строка|клиентмодел|строка|
+|client_OS|строка|клиентос|строка|
+|client_StateOrProvince|строка|клиентстатеорпровинце|строка|
+|client_Type|строка|клиенттипе|строка|
+|cloud_RoleInstance|строка|аппролеинстанце|строка|
+|cloud_RoleName|строка|аппроленаме|строка|
+|customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
-|iKey|string|IKey|string|
+|iKey|строка|IKey|строка|
 |itemCount|INT|ItemCount|INT|
-|itemId|string|\_ItemId|string|
-|itemType|string|Тип|string|
-|name|строка|Название|string|
-|operation_Id|string|Операции|string|
-|operation_Name|string|OperationName|string|
-|operation_ParentId|string|оператионпарентид|string|
-|operation_SyntheticSource|string|оператионсинсетиксаурце|string|
-|sdkVersion|string|SdkVersion|string|
-|session_Id|string|SessionId|string|
+|itemId|строка|\_ItemId|строка|
+|itemType|строка|Тип|строка|
+|name|строка|Название|строка|
+|operation_Id|строка|Операции|строка|
+|operation_Name|строка|OperationName|строка|
+|operation_ParentId|строка|оператионпарентид|строка|
+|operation_SyntheticSource|строка|оператионсинсетиксаурце|строка|
+|sdkVersion|строка|SdkVersion|строка|
+|session_Id|строка|SessionId|строка|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
-|user_AccountId|string|UserAccountId|string|
-|user_AuthenticatedId|string|усераусентикатедид|string|
-|user_Id|string|UserId|string|
+|user_AccountId|строка|UserAccountId|строка|
+|user_AuthenticatedId|строка|усераусентикатедид|строка|
+|user_Id|строка|UserId|строка|
 
 ### <a name="appmetrics"></a>аппметрикс
 
 Устаревшая таблица: customMetrics
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
-|appId|string|\_ResourceGUID|string|
-|application_Version|string|AppVersion|string|
-|appName|string|\_ResourceId|string|
-|client_Browser|string|ClientBrowser|string|
-|client_City|string|клиентЦити|string|
-|client_CountryOrRegion|string|клиенткаунтрйоррегион|string|
-|client_IP|string|ClientIP|string|
-|client_Model|string|клиентмодел|string|
-|client_OS|string|клиентос|string|
-|client_StateOrProvince|string|клиентстатеорпровинце|string|
-|client_Type|string|клиенттипе|string|
-|cloud_RoleInstance|string|аппролеинстанце|string|
-|cloud_RoleName|string|аппроленаме|string|
-|customDimensions|Динамический|Элемент Property|Динамический|
-|iKey|string|IKey|string|
-|itemId|string|\_ItemId|string|
-|itemType|string|Тип|string|
-|name|строка|Название|string|
-|operation_Id|string|Операции|string|
-|operation_Name|string|OperationName|string|
-|operation_ParentId|string|оператионпарентид|string|
-|operation_SyntheticSource|string|оператионсинсетиксаурце|string|
-|sdkVersion|string|SdkVersion|string|
-|session_Id|string|SessionId|string|
+|appId|строка|\_ResourceGUID|строка|
+|application_Version|строка|AppVersion|строка|
+|appName|строка|\_ResourceId|строка|
+|client_Browser|строка|ClientBrowser|строка|
+|client_City|строка|клиентЦити|строка|
+|client_CountryOrRegion|строка|клиенткаунтрйоррегион|строка|
+|client_IP|строка|ClientIP|строка|
+|client_Model|строка|клиентмодел|строка|
+|client_OS|строка|клиентос|строка|
+|client_StateOrProvince|строка|клиентстатеорпровинце|строка|
+|client_Type|строка|клиенттипе|строка|
+|cloud_RoleInstance|строка|аппролеинстанце|строка|
+|cloud_RoleName|строка|аппроленаме|строка|
+|customDimensions|Динамический|Свойства|Динамический|
+|iKey|строка|IKey|строка|
+|itemId|строка|\_ItemId|строка|
+|itemType|строка|Тип|строка|
+|name|строка|Название|строка|
+|operation_Id|строка|Операции|строка|
+|operation_Name|строка|OperationName|строка|
+|operation_ParentId|строка|оператионпарентид|строка|
+|operation_SyntheticSource|строка|оператионсинсетиксаурце|строка|
+|sdkVersion|строка|SdkVersion|строка|
+|session_Id|строка|SessionId|строка|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
-|user_AccountId|string|UserAccountId|string|
-|user_AuthenticatedId|string|усераусентикатедид|string|
-|user_Id|string|UserId|string|
+|user_AccountId|строка|UserAccountId|строка|
+|user_AuthenticatedId|строка|усераусентикатедид|строка|
+|user_Id|строка|UserId|строка|
 |value|real|удален||
 |валуекаунт|INT|валуекаунт|INT|
 |валуемакс|real|валуемакс|real|
@@ -253,217 +254,217 @@ ms.locfileid: "83210545"
 
 Устаревшая таблица: pageViews
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
-|appId|string|\_ResourceGUID|string|
-|application_Version|string|AppVersion|string|
-|appName|string|\_ResourceId|string|
-|client_Browser|string|ClientBrowser|string|
-|client_City|string|клиентЦити|string|
-|client_CountryOrRegion|string|клиенткаунтрйоррегион|string|
-|client_IP|string|ClientIP|string|
-|client_Model|string|клиентмодел|string|
-|client_OS|string|клиентос|string|
-|client_StateOrProvince|string|клиентстатеорпровинце|string|
-|client_Type|string|клиенттипе|string|
-|cloud_RoleInstance|string|аппролеинстанце|string|
-|cloud_RoleName|string|аппроленаме|string|
-|customDimensions|Динамический|Элемент Property|Динамический|
+|appId|строка|\_ResourceGUID|строка|
+|application_Version|строка|AppVersion|строка|
+|appName|строка|\_ResourceId|строка|
+|client_Browser|строка|ClientBrowser|строка|
+|client_City|строка|клиентЦити|строка|
+|client_CountryOrRegion|строка|клиенткаунтрйоррегион|строка|
+|client_IP|строка|ClientIP|строка|
+|client_Model|строка|клиентмодел|строка|
+|client_OS|строка|клиентос|строка|
+|client_StateOrProvince|строка|клиентстатеорпровинце|строка|
+|client_Type|строка|клиенттипе|строка|
+|cloud_RoleInstance|строка|аппролеинстанце|строка|
+|cloud_RoleName|строка|аппроленаме|строка|
+|customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
 |длительность|real|DurationMs|real|
-|`id`|string|`Id`|string|
-|iKey|string|IKey|string|
+|`id`|строка|`Id`|строка|
+|iKey|строка|IKey|строка|
 |itemCount|INT|ItemCount|INT|
-|itemId|string|\_ItemId|string|
-|itemType|string|Type|Строка|
-|name|строка|Название|string|
-|operation_Id|string|Операции|string|
-|operation_Name|string|OperationName|string|
-|operation_ParentId|string|оператионпарентид|string|
-|operation_SyntheticSource|string|оператионсинсетиксаурце|string|
-|перформанцебуккет|string|перформанцебуккет|string|
-|sdkVersion|string|SdkVersion|string|
-|session_Id|string|SessionId|string|
+|itemId|строка|\_ItemId|строка|
+|itemType|строка|Тип|Строка|
+|name|строка|Название|строка|
+|operation_Id|строка|Операции|строка|
+|operation_Name|строка|OperationName|строка|
+|operation_ParentId|строка|оператионпарентид|строка|
+|operation_SyntheticSource|строка|оператионсинсетиксаурце|строка|
+|перформанцебуккет|строка|перформанцебуккет|строка|
+|sdkVersion|строка|SdkVersion|строка|
+|session_Id|строка|SessionId|строка|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
-|url|string|Url|string|
-|user_AccountId|string|UserAccountId|string|
-|user_AuthenticatedId|string|усераусентикатедид|string|
-|user_Id|string|UserId|string|
+|url|строка|Url|строка|
+|user_AccountId|строка|UserAccountId|строка|
+|user_AuthenticatedId|строка|усераусентикатедид|строка|
+|user_Id|строка|UserId|строка|
 
 ### <a name="appperformancecounters"></a>аппперформанцекаунтерс
 
 Устаревшая таблица: performanceCounters
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
-|appId|string|\_ResourceGUID|string|
-|application_Version|string|AppVersion|string|
-|appName|string|\_ResourceId|string|
-|категория|строка|Категория|string|
-|client_Browser|string|ClientBrowser|string|
-|client_City|string|клиентЦити|string|
-|client_CountryOrRegion|string|клиенткаунтрйоррегион|string|
-|client_IP|string|ClientIP|string|
-|client_Model|string|клиентмодел|string|
-|client_OS|string|клиентос|string|
-|client_StateOrProvince|string|клиентстатеорпровинце|string|
-|client_Type|string|клиенттипе|string|
-|cloud_RoleInstance|string|аппролеинстанце|string|
-|cloud_RoleName|string|аппроленаме|string|
-|Счетчик|string|удален||
-|customDimensions|Динамический|Элемент Property|Динамический|
-|iKey|string|IKey|string|
-|экземпляр|string|Экземпляр|string|
-|itemId|string|\_ItemId|string|
-|itemType|string|Тип|string|
-|name|строка|Название|string|
-|operation_Id|string|Операции|string|
-|operation_Name|string|OperationName|string|
-|operation_ParentId|string|оператионпарентид|string|
-|operation_SyntheticSource|string|оператионсинсетиксаурце|string|
-|sdkVersion|string|SdkVersion|string|
-|session_Id|string|SessionId|string|
+|appId|строка|\_ResourceGUID|строка|
+|application_Version|строка|AppVersion|строка|
+|appName|строка|\_ResourceId|строка|
+|категория|строка|Категория|строка|
+|client_Browser|строка|ClientBrowser|строка|
+|client_City|строка|клиентЦити|строка|
+|client_CountryOrRegion|строка|клиенткаунтрйоррегион|строка|
+|client_IP|строка|ClientIP|строка|
+|client_Model|строка|клиентмодел|строка|
+|client_OS|строка|клиентос|строка|
+|client_StateOrProvince|строка|клиентстатеорпровинце|строка|
+|client_Type|строка|клиенттипе|строка|
+|cloud_RoleInstance|строка|аппролеинстанце|строка|
+|cloud_RoleName|строка|аппроленаме|строка|
+|Счетчик|строка|удален||
+|customDimensions|Динамический|Свойства|Динамический|
+|iKey|строка|IKey|строка|
+|экземпляр|строка|Экземпляр|строка|
+|itemId|строка|\_ItemId|строка|
+|itemType|строка|Тип|строка|
+|name|строка|Название|строка|
+|operation_Id|строка|Операции|строка|
+|operation_Name|строка|OperationName|строка|
+|operation_ParentId|строка|оператионпарентид|строка|
+|operation_SyntheticSource|строка|оператионсинсетиксаурце|строка|
+|sdkVersion|строка|SdkVersion|строка|
+|session_Id|строка|SessionId|строка|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
-|user_AccountId|string|UserAccountId|string|
-|user_AuthenticatedId|string|усераусентикатедид|string|
-|user_Id|string|UserId|string|
+|user_AccountId|строка|UserAccountId|строка|
+|user_AuthenticatedId|строка|усераусентикатедид|строка|
+|user_Id|строка|UserId|строка|
 |value|real|Значение|real|
 
 ### <a name="apprequests"></a>аппрекуестс
 
 Устаревшая таблица: запросы
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
-|appId|string|\_ResourceGUID|string|
-|application_Version|string|AppVersion|string|
-|appName|string|\_ResourceId|string|
-|client_Browser|string|ClientBrowser|string|
-|client_City|string|клиентЦити|string|
-|client_CountryOrRegion|string|клиенткаунтрйоррегион|string|
-|client_IP|string|ClientIP|string|
-|client_Model|string|клиентмодел|string|
-|client_OS|string|клиентос|string|
-|client_StateOrProvince|string|клиентстатеорпровинце|string|
-|client_Type|string|клиенттипе|string|
-|cloud_RoleInstance|string|аппролеинстанце|string|
-|cloud_RoleName|string|аппроленаме|string|
-|customDimensions|Динамический|Элемент Property|Динамический|
+|appId|строка|\_ResourceGUID|строка|
+|application_Version|строка|AppVersion|строка|
+|appName|строка|\_ResourceId|строка|
+|client_Browser|строка|ClientBrowser|строка|
+|client_City|строка|клиентЦити|строка|
+|client_CountryOrRegion|строка|клиенткаунтрйоррегион|строка|
+|client_IP|строка|ClientIP|строка|
+|client_Model|строка|клиентмодел|строка|
+|client_OS|строка|клиентос|строка|
+|client_StateOrProvince|строка|клиентстатеорпровинце|строка|
+|client_Type|строка|клиенттипе|строка|
+|cloud_RoleInstance|строка|аппролеинстанце|строка|
+|cloud_RoleName|строка|аппроленаме|строка|
+|customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
 |длительность|real|DurationMs|Real|
-|`id`|string|`Id`|Строка|
-|iKey|string|IKey|string|
+|`id`|строка|`Id`|Строка|
+|iKey|строка|IKey|строка|
 |itemCount|INT|ItemCount|INT|
-|itemId|string|\_ItemId|string|
-|itemType|string|Type|Строка|
-|name|string|name|Строка|
-|operation_Id|string|Операции|string|
-|operation_Name|string|OperationName|string|
-|operation_ParentId|string|оператионпарентид|string|
-|operation_SyntheticSource|string|оператионсинсетиксаурце|string|
-|перформанцебуккет|string|перформанцебуккет|Строка|
-|resultCode|string|ResultCode|Строка|
-|sdkVersion|string|SdkVersion|string|
-|session_Id|string|SessionId|string|
-|source|string|Источник|Строка|
-|Успешное завершение|string|Успех|Bool|
+|itemId|строка|\_ItemId|строка|
+|itemType|строка|Тип|Строка|
+|name|строка|Имя|Строка|
+|operation_Id|строка|Операции|строка|
+|operation_Name|строка|OperationName|строка|
+|operation_ParentId|строка|оператионпарентид|строка|
+|operation_SyntheticSource|строка|оператионсинсетиксаурце|строка|
+|перформанцебуккет|строка|перформанцебуккет|Строка|
+|resultCode|строка|ResultCode|Строка|
+|sdkVersion|строка|SdkVersion|строка|
+|session_Id|строка|SessionId|строка|
+|source|строка|Источник|Строка|
+|Успешное завершение|строка|Успешно|Bool|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
-|url|string|Url|Строка|
-|user_AccountId|string|UserAccountId|string|
-|user_AuthenticatedId|string|усераусентикатедид|string|
-|user_Id|string|UserId|string|
+|url|строка|Url|Строка|
+|user_AccountId|строка|UserAccountId|строка|
+|user_AuthenticatedId|строка|усераусентикатедид|строка|
+|user_Id|строка|UserId|строка|
 
 ### <a name="appsystemevents"></a>аппсистемевентс
 
 Устаревшая таблица: исключения
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
-|appId|string|\_ResourceGUID|string|
-|application_Version|string|AppVersion|string|
-|appName|string|\_ResourceId|string|
-|сборка|string|Сборка|string|
-|client_Browser|string|ClientBrowser|string|
-|client_City|string|клиентЦити|string|
-|client_CountryOrRegion|string|клиенткаунтрйоррегион|string|
-|client_IP|string|ClientIP|string|
-|client_Model|string|клиентмодел|string|
-|client_OS|string|клиентос|string|
-|client_StateOrProvince|string|клиентстатеорпровинце|string|
-|client_Type|string|клиенттипе|string|
-|cloud_RoleInstance|string|аппролеинстанце|string|
-|cloud_RoleName|string|аппроленаме|string|
-|customDimensions|Динамический|Элемент Property|Динамический|
+|appId|строка|\_ResourceGUID|строка|
+|application_Version|строка|AppVersion|строка|
+|appName|строка|\_ResourceId|строка|
+|сборка|строка|Сборка|строка|
+|client_Browser|строка|ClientBrowser|строка|
+|client_City|строка|клиентЦити|строка|
+|client_CountryOrRegion|строка|клиенткаунтрйоррегион|строка|
+|client_IP|строка|ClientIP|строка|
+|client_Model|строка|клиентмодел|строка|
+|client_OS|строка|клиентос|строка|
+|client_StateOrProvince|строка|клиентстатеорпровинце|строка|
+|client_Type|строка|клиенттипе|строка|
+|cloud_RoleInstance|строка|аппролеинстанце|строка|
+|cloud_RoleName|строка|аппроленаме|строка|
+|customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
 |подробности|Динамический|Сведения|Динамический|
-|handledAt|string|хандледат|string|
-|iKey|string|IKey|string|
-|иннермостассембли|string|иннермостассембли|string|
-|иннермостмессаже|string|иннермостмессаже|string|
-|иннермостмесод|string|иннермостмесод|string|
-|иннермосттипе|string|иннермосттипе|string|
+|handledAt|строка|хандледат|строка|
+|iKey|строка|IKey|строка|
+|иннермостассембли|строка|иннермостассембли|строка|
+|иннермостмессаже|строка|иннермостмессаже|строка|
+|иннермостмесод|строка|иннермостмесод|строка|
+|иннермосттипе|строка|иннермосттипе|строка|
 |itemCount|INT|ItemCount|INT|
-|itemId|string|\_ItemId|string|
-|itemType|string|Тип|string|
-|message|строка|Сообщение|string|
-|method|string|Метод|string|
-|operation_Id|string|Операции|string|
-|operation_Name|string|OperationName|string|
-|operation_ParentId|string|оператионпарентид|string|
-|operation_SyntheticSource|string|оператионсинсетиксаурце|string|
-|аутерассембли|string|аутерассембли|string|
-|аутермессаже|string|аутермессаже|string|
-|аутермесод|string|аутермесод|string|
-|аутертипе|string|аутертипе|string|
-|проблемид|string|проблемид|string|
-|sdkVersion|string|SdkVersion|string|
-|session_Id|string|SessionId|string|
+|itemId|строка|\_ItemId|строка|
+|itemType|строка|Тип|строка|
+|message|строка|Сообщение|строка|
+|method|строка|Метод|строка|
+|operation_Id|строка|Операции|строка|
+|operation_Name|строка|OperationName|строка|
+|operation_ParentId|строка|оператионпарентид|строка|
+|operation_SyntheticSource|строка|оператионсинсетиксаурце|строка|
+|аутерассембли|строка|аутерассембли|строка|
+|аутермессаже|строка|аутермессаже|строка|
+|аутермесод|строка|аутермесод|строка|
+|аутертипе|строка|аутертипе|строка|
+|проблемид|строка|проблемид|строка|
+|sdkVersion|строка|SdkVersion|строка|
+|session_Id|строка|SessionId|строка|
 |северитилевел|INT|SeverityLevel|INT|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
-|type|string|ExceptionType|string|
-|user_AccountId|string|UserAccountId|string|
-|user_AuthenticatedId|string|усераусентикатедид|string|
-|user_Id|string|UserId|string|
+|type|строка|ExceptionType|строка|
+|user_AccountId|строка|UserAccountId|строка|
+|user_AuthenticatedId|строка|усераусентикатедид|строка|
+|user_Id|строка|UserId|строка|
 
 ### <a name="apptraces"></a>апптрацес
 
 Устаревшая таблица: трассировки
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
-|appId|string|\_ResourceGUID|string|
-|application_Version|string|AppVersion|string|
-|appName|string|\_ResourceId|string|
-|client_Browser|string|ClientBrowser|string|
-|client_City|string|клиентЦити|string|
-|client_CountryOrRegion|string|клиенткаунтрйоррегион|string|
-|client_IP|string|ClientIP|string|
-|client_Model|string|клиентмодел|string|
-|client_OS|string|клиентос|string|
-|client_StateOrProvince|string|клиентстатеорпровинце|string|
-|client_Type|string|клиенттипе|string|
-|cloud_RoleInstance|string|аппролеинстанце|string|
-|cloud_RoleName|string|аппроленаме|string|
-|customDimensions|Динамический|Элемент Property|Динамический|
+|appId|строка|\_ResourceGUID|строка|
+|application_Version|строка|AppVersion|строка|
+|appName|строка|\_ResourceId|строка|
+|client_Browser|строка|ClientBrowser|строка|
+|client_City|строка|клиентЦити|строка|
+|client_CountryOrRegion|строка|клиенткаунтрйоррегион|строка|
+|client_IP|строка|ClientIP|строка|
+|client_Model|строка|клиентмодел|строка|
+|client_OS|строка|клиентос|строка|
+|client_StateOrProvince|строка|клиентстатеорпровинце|строка|
+|client_Type|строка|клиенттипе|строка|
+|cloud_RoleInstance|строка|аппролеинстанце|строка|
+|cloud_RoleName|строка|аппроленаме|строка|
+|customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
-|iKey|string|IKey|string|
+|iKey|строка|IKey|строка|
 |itemCount|INT|ItemCount|INT|
-|itemId|string|\_ItemId|string|
-|itemType|string|Тип|string|
-|message|строка|Сообщение|string|
-|operation_Id|string|Операции|string|
-|operation_Name|string|OperationName|string|
-|operation_ParentId|string|оператионпарентид|string|
-|operation_SyntheticSource|string|оператионсинсетиксаурце|string|
-|sdkVersion|string|SdkVersion|string|
-|session_Id|string|SessionId|string|
+|itemId|строка|\_ItemId|строка|
+|itemType|строка|Тип|строка|
+|message|строка|Сообщение|строка|
+|operation_Id|строка|Операции|строка|
+|operation_Name|строка|OperationName|строка|
+|operation_ParentId|строка|оператионпарентид|строка|
+|operation_SyntheticSource|строка|оператионсинсетиксаурце|строка|
+|sdkVersion|строка|SdkVersion|строка|
+|session_Id|строка|SessionId|строка|
 |северитилевел|INT|SeverityLevel|INT|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
-|user_AccountId|string|UserAccountId|string|
-|user_AuthenticatedId|string|усераусентикатедид|string|
-|user_Id|string|UserId|string|
+|user_AccountId|строка|UserAccountId|строка|
+|user_AuthenticatedId|строка|усераусентикатедид|строка|
+|user_Id|строка|UserId|строка|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Изучение метрик](../../azure-monitor/platform/metrics-charts.md)
-* [Написание запросов аналитики](../../azure-monitor/app/analytics.md)
+* [Написание запросов аналитики](../log-query/log-query-overview.md)

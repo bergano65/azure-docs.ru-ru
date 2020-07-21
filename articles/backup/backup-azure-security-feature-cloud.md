@@ -3,11 +3,12 @@ title: Обратимое удаление для Azure Backup
 description: Узнайте, как использовать функции безопасности в Azure Backup, чтобы сделать резервные копии более безопасными.
 ms.topic: conceptual
 ms.date: 04/30/2020
-ms.openlocfilehash: 2b0d7a00bce8dfa427958f6db6d7174b9d5f7a79
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 79df345858d89d032b826a0fa8b677195a785df2
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84116416"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86538842"
 ---
 # <a name="soft-delete-for-azure-backup"></a>Обратимое удаление для Azure Backup
 
@@ -28,7 +29,7 @@ ms.locfileid: "84116416"
 
 Обратимое удаление по умолчанию включено для вновь созданных хранилищ, чтобы защитить данные резервных копий от случайных или вредоносных удалений.  Отключение этой функции не рекомендуется. Единственное обстоятельство, когда следует отключать обратимое удаление, — это планирование перемещения защищенных элементов в новое хранилище и не может ждать 14 дней, необходимых перед удалением и повторной защитой (например, в тестовой среде). Только владелец хранилища может отключить эту функцию. Если отключить эту функцию, все будущие удаления защищенных элементов приведут к немедленному удалению без возможности восстановления. Резервные копии данных, которые находятся в состоянии обратимого удаления перед отключением этой функции, будут оставаться в состоянии обратимого удаления в течение 14 дней. Если вы хотите безвозвратно удалить эти данные немедленно, необходимо отменить удаление и удалить их снова, чтобы окончательно удалить их.
 
- Важно помнить, что после отключения обратимого удаления эта функция отключается для всех типов рабочих нагрузок, включая SQL Server и SAP HANAные рабочие нагрузки. Например, после включения [предварительной версии SQL Server/SAP HANA](https://docs.microsoft.com/azure/backup/soft-delete-sql-saphana-in-azure-vm#steps-to-enroll-in-preview) для подписки невозможно отключить обратимое удаление только для SQL server или SAP HANA баз данных, сохраняя при этом поддержку виртуальных машин в том же хранилище. Для детального управления можно создавать отдельные хранилища.
+ Важно помнить, что после отключения обратимого удаления эта функция отключается для всех типов рабочих нагрузок, включая SQL Server и SAP HANAные рабочие нагрузки. Например, после включения [предварительной версии SQL Server/SAP HANA](./soft-delete-sql-saphana-in-azure-vm.md#steps-to-enroll-in-preview) для подписки невозможно отключить обратимое удаление только для SQL server или SAP HANA баз данных, сохраняя при этом поддержку виртуальных машин в том же хранилище. Для детального управления можно создавать отдельные хранилища.
 
 ### <a name="disabling-soft-delete-using-azure-portal"></a>Отключение обратимого удаления с помощью портал Azure
 
@@ -45,7 +46,7 @@ ms.locfileid: "84116416"
 > [!IMPORTANT]
 > Версия AZ. RecoveryServices, необходимая для использования обратимого удаления с помощью Azure PS, — это min 2.2.0. Используйте ```Install-Module -Name Az.RecoveryServices -Force``` для получения последней версии.
 
-Чтобы отключить, используйте командлет [Set-азрековерисервицесваултбаккуппроперти](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperty?view=azps-3.1.0) PS.
+Чтобы отключить, используйте командлет [Set-азрековерисервицесваултбаккуппроперти](/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperty) PS.
 
 ```powershell
 Set-AzRecoveryServicesVaultProperty -VaultId $myVaultID -SoftDeleteFeatureState Disable
@@ -86,11 +87,11 @@ SoftDeleteFeatureState : Disabled
 
 5. Выберите **удалить резервные копии данных** , чтобы окончательно удалить данные резервной копии.
 
-   ![Выберите Удалить данные архивации](https://docs.microsoft.com/azure/backup/media/backup-azure-manage-vms/delete-backup-buttom.png)
+   ![Выберите Удалить данные архивации](/azure/backup/media/backup-azure-manage-vms/delete-backup-buttom.png)
 
 6. Введите имя элемента резервного копирования, чтобы подтвердить, что необходимо удалить точки восстановления.
 
-   ![Введите имя элемента архивации](https://docs.microsoft.com/azure/backup/media/backup-azure-manage-vms/delete-backup-data1.png)
+   ![Введите имя элемента архивации](/azure/backup/media/backup-azure-manage-vms/delete-backup-data1.png)
 
 7. Чтобы удалить данные архивации для элемента, выберите **Удалить**. Сообщение уведомления позволяет убедиться, что данные резервного копирования удалены.
 
@@ -177,6 +178,6 @@ AppVM1           DeleteBackupData     Completed            12/5/2019 12:44:15 PM
 
 Операции обратимого удаления можно выполнить с помощью PowerShell. В настоящее время CLI не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о средствах безопасности в Azure Backup](security-overview.md)

@@ -6,11 +6,12 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.subservice: alerts
-ms.openlocfilehash: f31fcc07bed0287c2f86ca4fe52bf02a2a1d2a71
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 09db7684c84bbde038c67f9ccfb3f27f6b61bee6
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81114408"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539556"
 ---
 # <a name="prepare-your-logic-apps-and-runbooks-for-migration-of-classic-alert-rules"></a>Prepare your logic apps and runbooks for migration of classic alert rules (Подготовка приложений логики и модулей runbook для миграции классических правил генерации оповещений)
 
@@ -27,12 +28,12 @@ ms.locfileid: "81114408"
 
 В следующей таблице приведены ссылки на программные интерфейсы для классических и новых оповещений.
 
-|         |Классические оповещения  |Новые оповещения метрик |
-|---------|---------|---------|
-|REST API     | [microsoft.insights/alertrules](https://docs.microsoft.com/rest/api/monitor/alertrules)         | [microsoft.insights/metricalerts](https://docs.microsoft.com/rest/api/monitor/metricalerts)       |
-|Azure CLI     | [AZ Monitor оповещение](https://docs.microsoft.com/cli/azure/monitor/alert?view=azure-cli-latest)        | [предупреждение о метриках монитора AZ](https://docs.microsoft.com/cli/azure/monitor/metrics/alert?view=azure-cli-latest)        |
-|PowerShell      | [Ссылки](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrule)       |  [Ссылки](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrulev2)    |
-| Шаблон Azure Resource Manager | [Для классических оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-enable-template)|[Для новых оповещений метрик](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric-create-templates)|
+| Тип скрипта развертывания | Классические оповещения | Новые оповещения метрик |
+| ---------------------- | -------------- | ----------------- |
+|REST API     | [microsoft.insights/alertrules](/rest/api/monitor/alertrules)         | [microsoft.insights/metricalerts](/rest/api/monitor/metricalerts)       |
+|Azure CLI     | [az monitor alert](/cli/azure/monitor/alert?view=azure-cli-latest)        | [предупреждение о метриках монитора AZ](/cli/azure/monitor/metrics/alert?view=azure-cli-latest)        |
+|PowerShell      | [Ссылка](/powershell/module/az.monitor/add-azmetricalertrule)       |  [Ссылка](/powershell/module/az.monitor/add-azmetricalertrulev2)    |
+| Шаблон Azure Resource Manager | [Для классических оповещений](./alerts-enable-template.md)|[Для новых оповещений метрик](./alerts-metric-create-templates.md)|
 
 ## <a name="notification-payload-changes"></a>Изменения полезных данных уведомлений
 
@@ -40,8 +41,8 @@ ms.locfileid: "81114408"
 
 Используйте следующую таблицу для привязки полей полезных данных веб-перехватчика из классического формата к новому формату:
 
-|  |Классические оповещения  |Новые оповещения метрик |
-|---------|---------|---------|
+| Тип конечной точки уведомления | Классические оповещения | Новые оповещения метрик |
+| -------------------------- | -------------- | ----------------- |
 |Было ли оповещение активировано или разрешено?    | **status**       | **данные. состояние** |
 |Контекстные сведения о предупреждении     | **context**        | **Data. Context**        |
 |Метка времени, когда оповещение было активировано или разрешено     | **контекст. timestamp**       | **Data. Context. timestamp**        |
@@ -149,11 +150,11 @@ else {
 
 ```
 
-Полный пример модуля Runbook, который останавливает виртуальную машину при активации оповещения, см. в [документации по службе автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-create-alert-triggered-runbook).
+Полный пример модуля Runbook, который останавливает виртуальную машину при активации оповещения, см. в [документации по службе автоматизации Azure](../../automation/automation-create-alert-triggered-runbook.md).
 
 ## <a name="partner-integration-via-webhooks"></a>Интеграция партнеров через веб-перехватчики
 
-Большинство [наших партнеров, которые интегрируются с классическими оповещениями,](https://docs.microsoft.com/azure/azure-monitor/platform/partners) уже поддерживают новые оповещения метрик с помощью их интеграции. Известные интеграции, уже работающие с новыми оповещениями метрик:
+Большинство [наших партнеров, которые интегрируются с классическими оповещениями,](./partners.md) уже поддерживают новые оповещения метрик с помощью их интеграции. Известные интеграции, уже работающие с новыми оповещениями метрик:
 
 - [PagerDuty](https://www.pagerduty.com/docs/guides/azure-integration-guide/)
 - [OpsGenie](https://docs.opsgenie.com/docs/microsoft-azure-integration)
@@ -161,7 +162,7 @@ else {
 
 Если вы используете интеграцию с партнером, не указанную здесь, уточните у поставщика интеграции, что интеграция работает с новыми оповещениями метрик.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Как использовать средство миграции](alerts-using-migration-tool.md)
 - [Принцип работы средства миграции](alerts-understand-migration.md)

@@ -4,17 +4,18 @@ description: Практическое руководство, посвященн
 author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/01/2019
-ms.openlocfilehash: 1065abecb1f0ef57eb13b1ec3f194f07ae01eaee
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f91728435b885f3b4d9415bc81e18fdaaea0148f
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "68976790"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86537754"
 ---
 # <a name="set-up-the-business-glossary-for-governed-tagging"></a>Настройка бизнес-глоссария для регулируемого добавления тегов
 
-## <a name="introduction"></a>Вступление
+## <a name="introduction"></a>Введение
 
 Каталог данных Azure обеспечивает обнаружение источников данных, чтобы вы могли легко находить и оценивать источники данных, необходимые для выполнения анализа и принятия решений. Основное предназначение этих возможностей заключается в том, что вы можете находить и оценивать самые разные доступные источники данных.
 
@@ -75,10 +76,10 @@ ms.locfileid: "68976790"
 
 Теги глоссария и пользователя можно искать, а также использовать в качестве фильтров при поиске.
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 Используя бизнес-глоссарий в каталоге данных Azure и его функции по регулируемому добавлению тегов, вы можете согласованно идентифицировать, обнаруживать ресурсы данных и управлять ими. Бизнес-глоссарий позволяет стимулировать изучение бизнес-словаря сотрудниками организации. Кроме того, этот глоссарий поддерживает захват значимых метаданных, что упрощает обнаружение и изучение ресурсов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Документация по REST API для операций с бизнес-глоссарием](/rest/api/datacatalog/data-catalog-glossary)

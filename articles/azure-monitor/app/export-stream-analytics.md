@@ -3,12 +3,12 @@ title: Экспорт из Azure Application Insights с помощью Stream A
 description: Stream Analytics может непрерывно преобразовывать, фильтровать и маршрутизировать данные, экспортируемые из Application Insights.
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.openlocfilehash: 71b19f0b49dec8f7176a53eeb656519c65f9c1d0
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 70f952dcd6f8d942ac272afed58a7fe0f47d8a6e
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86224525"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539964"
 ---
 # <a name="use-stream-analytics-to-process-exported-data-from-application-insights"></a>Обработка данных, экспортированных из Application Insights, при помощи Stream Analytics
 [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) — идеальное средство для обработки данных, [экспортированных из Application Insights](export-telemetry.md). Stream Analytics может извлекать данные из различных источников. Это средство может преобразовывать и фильтровать данные и затем отправлять их в различные приемники.
@@ -138,7 +138,7 @@ GROUP BY TumblingWindow(minute, 1), flat.ArrayValue.name
 
 * export-input — это псевдоним, присвоенный входным данным потока.
 * pbi-output — это определенный псевдоним выходных данных.
-* Мы используем [OUTER APPLY GetElements](https://docs.microsoft.com/stream-analytics-query/apply-azure-stream-analytics), так как имя события находится во вложенном массиве JSON. Затем элемент Select выбирает имя события, а также количество экземпляров с этим именем за определенный период времени. Предложение [Group By](https://docs.microsoft.com/stream-analytics-query/group-by-azure-stream-analytics) группирует элементы по периодам времени в одну минуту.
+* Мы используем [OUTER APPLY GetElements](/stream-analytics-query/apply-azure-stream-analytics), так как имя события находится во вложенном массиве JSON. Затем элемент Select выбирает имя события, а также количество экземпляров с этим именем за определенный период времени. Предложение [Group By](/stream-analytics-query/group-by-azure-stream-analytics) группирует элементы по периодам времени в одну минуту.
 
 ### <a name="query-to-display-metric-values"></a>Запрос для отображения значений метрики
 
@@ -212,4 +212,3 @@ FROM flat
 * [непрерывный экспорт.](export-telemetry.md)
 * [Подробный справочник по модели данных типов и значений свойств.](export-data-model.md)
 * [Application Insights](../../azure-monitor/app/app-insights-overview.md)
-

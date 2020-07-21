@@ -1,5 +1,5 @@
 ---
-title: Создание оповещения метрики с помощью шаблона Resource Manager
+title: Создание нового оповещения метрики с помощью шаблона Azure Resource Manager
 description: Сведения об использовании шаблона Resource Manager для создания оповещения метрики.
 author: harelbr
 ms.author: harelbr
@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 7/9/2020
 ms.subservice: alerts
-ms.openlocfilehash: 4d8ec0c76259a8567906e9ac415864e2cd37a9cd
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 043ecc07c521f9c1c79835bcd67ff1d81cacfa34
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86187580"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539471"
 ---
 # <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения метрики с помощью шаблона Resource Manager
 
@@ -27,7 +27,7 @@ ms.locfileid: "86187580"
 
 1. Используйте один из приведенных ниже шаблонов в виде JSON-файла, описывающего создание оповещения.
 2. Измените и используйте соответствующий файл параметров как JSON, чтобы настроить оповещение.
-3. Сведения о `metricName` параметре см. в разделе Доступные метрики в [Azure Monitor поддерживаемые метрики](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported).
+3. Сведения о `metricName` параметре см. в разделе Доступные метрики в [Azure Monitor поддерживаемые метрики](./metrics-supported.md).
 4. Разверните шаблон с помощью [любого метода развертывания](../../azure-resource-manager/templates/deploy-powershell.md).
 
 ## <a name="template-for-a-simple-static-threshold-metric-alert"></a>Шаблон для простого оповещения о метрике со статическим пороговым значением
@@ -204,7 +204,7 @@ ms.locfileid: "86187580"
 }
 ```
 
-Описание схемы и свойств правила генерации оповещений [доступно здесь](https://docs.microsoft.com/rest/api/monitor/metricalerts/createorupdate).
+Описание схемы и свойств правила генерации оповещений [доступно здесь](/rest/api/monitor/metricalerts/createorupdate).
 
 Вы можете задать значения для параметров с помощью командной строки или файла параметров. Ниже приведен пример файла параметров.
 
@@ -477,7 +477,7 @@ az group deployment create \
 }
 ```
 
-Описание схемы и свойств правила генерации оповещений [доступно здесь](https://docs.microsoft.com/rest/api/monitor/metricalerts/createorupdate).
+Описание схемы и свойств правила генерации оповещений [доступно здесь](/rest/api/monitor/metricalerts/createorupdate).
 
 Вы можете задать значения для параметров с помощью командной строки или файла параметров. Ниже приведен пример файла параметров. 
 
@@ -1248,7 +1248,7 @@ az group deployment create \
 
 Приведенный ниже шаблон можно использовать для создания более сложного правила генерации оповещений метрики со статическим порогом для своей метрики.
 
-Дополнительные сведения о пользовательских метриках в Azure Monitor см. в разделе [Пользовательские метрики в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-custom-overview).
+Дополнительные сведения о пользовательских метриках в Azure Monitor см. в разделе [Пользовательские метрики в Azure Monitor](./metrics-custom-overview.md).
 
 При создании правила генерации оповещений для пользовательской метрики необходимо указать как имя метрики, так и пространство имен метрик. Также следует убедиться, что эта пользовательская метрика уже передает данные, так как невозможно создать правило генерации оповещений для пользовательской метрики, которая еще не существует.
 
@@ -1504,7 +1504,7 @@ az group deployment create \
 
 >[!NOTE]
 >
-> Пространство имен метрик определенной пользовательской метрики можно найти, [просмотрев пользовательские метрики на портале Azure](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-custom-overview#browse-your-custom-metrics-via-the-azure-portal)
+> Пространство имен метрик определенной пользовательской метрики можно найти, [просмотрев пользовательские метрики на портале Azure](./metrics-custom-overview.md#browse-your-custom-metrics-via-the-azure-portal)
 
 
 ## <a name="template-for-a-metric-alert-that-monitors-multiple-resources"></a>Шаблон для оповещения метрики, отслеживающего несколько ресурсов

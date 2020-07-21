@@ -2,19 +2,19 @@
 title: Установка Hybrid Cloud Extension (HCX)
 description: Установите решение VMware Hybrid Cloud Extension (HCX) для своего частного облака, использующего решение Azure VMware (AVS)
 ms.topic: how-to
-ms.date: 05/19/2020
-ms.openlocfilehash: 3037d12ebbb036098cfc00a42521513bc2df6170
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/15/2020
+ms.openlocfilehash: b897a44fb6811c4e3564c59a8ab2c064506f0a4f
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85367552"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539165"
 ---
 # <a name="install-hcx-for-azure-vmware-solution"></a>Установка HCX для решения Azure VMware
 
 В этой статье мы рассмотрим процедуры настройки решения гибридного облака VMWare (ХККС) для частного облака решения Azure VMWare (AVS). ХККС позволяет выполнять миграцию рабочих нагрузок VMware в облако и другие подключенные сайты через различные встроенные ХККС Поддерживаемые типы миграции.
 
-ХККС Advanced, установка по умолчанию, поддерживает до трех внешних сайтов. Если требуется более трех сайтов, клиенты могут включить дополнение HCX Enterprise через службу поддержки. Установка ХККС Enterprise обеспечивает дополнительную плату за клиентов после выхода общедоступной версии, но предоставляет [Дополнительные возможности](https://cloud.vmware.com/community/2019/08/08/introducing-hcx-enterprise/).
+ХККС Advanced, установка по умолчанию, поддерживает до трех vCenters. Если требуется более трех вариантов, клиенты могут включить надстройку ХККС Enterprise за счет поддержки. Установка ХККС Enterprise обеспечивает дополнительную плату за клиентов после выхода общедоступной версии, но предоставляет [Дополнительные возможности](https://cloud.vmware.com/community/2019/08/08/introducing-hcx-enterprise/).
 
 
 Сначала внимательно изучите разделы [Перед началом работы](#before-you-begin), [Требования к версиям программного обеспечения](#software-version-requirements) и [Предварительные требования](#prerequisites). 

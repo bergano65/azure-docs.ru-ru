@@ -6,20 +6,21 @@ ms.topic: conceptual
 author: agummadi
 ms.author: agummadi
 ms.date: 04/02/2018
-ms.openlocfilehash: c5a80c7ff6d08ce601a6c2bbb0db0ef866d3b425
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f44afd84c58c94c6a8d3e6145e8a4f66e0e2e782
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77654398"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539658"
 ---
 # <a name="pricing-changes-for-azure-network-performance-monitor"></a>Изменения в ценообразовании для Монитора производительности сети Azure
 
-Прислушавшись к вашим отзывам, недавно мы представили [изменения в ценообразовании](https://azure.microsoft.com/blog/introducing-a-new-way-to-purchase-azure-monitoring-services/) для различных служб мониторинга в Azure. В этой статье описываются изменения в ценообразовании, связанные с [Монитором производительности сети](https://docs.microsoft.com/azure/networking/network-monitoring-overview) Azure (NPM), в легко читаемом формате вопросов и ответов.
+Прислушавшись к вашим отзывам, недавно мы представили [изменения в ценообразовании](https://azure.microsoft.com/blog/introducing-a-new-way-to-purchase-azure-monitoring-services/) для различных служб мониторинга в Azure. В этой статье описываются изменения в ценообразовании, связанные с [Монитором производительности сети](../../networking/network-monitoring-overview.md) Azure (NPM), в легко читаемом формате вопросов и ответов.
 
 Монитор производительности сети состоит из трех компонентов:
-* [Системный монитор](https://docs.microsoft.com/azure/networking/network-monitoring-overview#performance-monitor)
-* [Мониторинг конечных точек службы](https://docs.microsoft.com/azure/networking/network-monitoring-overview)
-* [Монитор ExpressRoute](https://docs.microsoft.com/azure/networking/network-monitoring-overview#expressroute-monitor)
+* [Системный монитор](../../networking/network-monitoring-overview.md#performance-monitor)
+* [Мониторинг конечных точек службы](../../networking/network-monitoring-overview.md)
+* [Монитор ExpressRoute](../../networking/network-monitoring-overview.md#expressroute-monitor)
 
 В следующих разделах описываются изменения в ценообразовании для компонентов NPM.
 
@@ -108,7 +109,6 @@ ms.locfileid: "77654398"
 
 В разделе [наблюдение за подключением](https://azure.microsoft.com/pricing/details/network-watcher/) приведены затраты на мониторинг конечной точки за весь месяц. Для Log Analytics плата за данные доступна на [странице цен](https://azure.microsoft.com/pricing/details/log-analytics/) в разделе о приеме данных.
 
-## <a name="references"></a>Ссылки
+## <a name="references"></a>Ссылки (на английском языке)
 
 [Цены на Log Analytics](https://azure.microsoft.com/pricing/details/log-analytics/). В разделе с часто задаваемыми вопросами содержатся сведения об уровнях "Бесплатный", "На узел" и другие сведения о ценообразовании.
-

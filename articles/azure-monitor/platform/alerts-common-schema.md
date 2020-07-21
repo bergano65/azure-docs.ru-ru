@@ -4,11 +4,12 @@ description: Понимание общей схемы предупреждени
 ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 03/14/2019
-ms.openlocfilehash: 1445e8cf38b2694146fc8749ba5e77f2297de969
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: faf9975e2795623305583d061d1af7f5eb0cfbe0
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84710938"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539488"
 ---
 # <a name="common-alert-schema"></a>Общая схема оповещений
 
@@ -51,8 +52,8 @@ ms.locfileid: "84710938"
 > 1. Следующие типы оповещений поддерживают общую схему по умолчанию (не требуется обязательно):
 >     * Оповещения интеллектуального обнаружения
 > 1. В настоящее время следующие типы оповещений не поддерживают общую схему:
->     * Предупреждения, созданные [Azure Monitor для виртуальных машин](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview)
->     * Оповещения, созданные службой " [Управление затратами Azure](https://docs.microsoft.com/azure/billing/billing-cost-management-budget-scenario) "
+>     * Предупреждения, созданные [Azure Monitor для виртуальных машин](../insights/vminsights-overview.md)
+>     * Оповещения, созданные службой " [Управление затратами Azure](../../cost-management-billing/manage/cost-management-budget-scenario.md) "
 
 ### <a name="through-the-azure-portal"></a>Через портал Azure
 
@@ -63,9 +64,9 @@ ms.locfileid: "84710938"
 
 ### <a name="through-the-action-groups-rest-api"></a>Через группы действий REST API
 
-Вы также можете использовать [API групп действий](https://docs.microsoft.com/rest/api/monitor/actiongroups) для выбора общей схемы предупреждений. При выполнении вызова [CREATE или update](https://docs.microsoft.com/rest/api/monitor/actiongroups/createorupdate) REST API можно установить флаг "усекоммоналертсчема" в значение "true" (чтобы включить согласие) или "false" (чтобы отказаться) для любого из следующих действий: Электронная почта, веб-перехватчик, приложение логики, модуль Runbook функции или службы автоматизации Azure.
+Вы также можете использовать [API групп действий](/rest/api/monitor/actiongroups) для выбора общей схемы предупреждений. При выполнении вызова [CREATE или update](/rest/api/monitor/actiongroups/createorupdate) REST API можно установить флаг "усекоммоналертсчема" в значение "true" (чтобы включить согласие) или "false" (чтобы отказаться) для любого из следующих действий: Электронная почта, веб-перехватчик, приложение логики, модуль Runbook функции или службы автоматизации Azure.
 
-Например, следующий текст запроса, созданный для REST API [создания или обновления](https://docs.microsoft.com/rest/api/monitor/actiongroups/createorupdate) , будет выполнять следующие действия:
+Например, следующий текст запроса, созданный для REST API [создания или обновления](/rest/api/monitor/actiongroups/createorupdate) , будет выполнять следующие действия:
 
 * Включить общую схему оповещений для действия электронной почты "Джон Петров, электронная почта"
 * Отключение общей схемы предупреждений для действия "Электронная почта Джейн Smith"
@@ -117,10 +118,7 @@ ms.locfileid: "84710938"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие определения схемы предупреждений для веб-перехватчиков/Logic Apps, функций Azure и модулей Runbook службы автоматизации.](https://aka.ms/commonAlertSchemaDefinitions)
-- [Узнайте, как создать приложение логики, использующее общую схему оповещений для обработки всех ваших оповещений.](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations) 
-
-
-
+- [Узнайте, как создать приложение логики, использующее общую схему оповещений для обработки всех ваших оповещений.](./alerts-common-schema-integrations.md) 

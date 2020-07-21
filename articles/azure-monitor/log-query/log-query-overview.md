@@ -6,17 +6,17 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/19/2019
-ms.openlocfilehash: 6cd2a28ddbe970385ff44deec2158c257937982e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7e8e2015e7d0798542ff0c80d8eb39461918ad67
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82591658"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539607"
 ---
 # <a name="overview-of-log-queries-in-azure-monitor"></a>Общие сведения о запросах журналов в Azure Monitor
 Запросы журналов позволяют полностью использовать значения данных, собираемых в [журналах Azure Monitor](../platform/data-platform-logs.md). Мощный язык запросов позволяет объединять данные из нескольких таблиц, объединять большие наборы данных и выполнять сложные операции с минимальным кодом. Практически любой вопрос можно ответить и выполнить анализ до тех пор, пока собираются вспомогательные данные, и вы понимаете, как создать правильный запрос.
 
-Некоторые функции в Azure Monitor, такие как [Insights](../insights/insights-overview.md) и [Solutions](../insights/solutions-inventory.md) , обрабатывают данные журнала без предоставления доступа к базовым запросам. Чтобы полностью использовать другие функции Azure Monitor, необходимо понимать, как создаются запросы и как их можно использовать для интерактивного анализа данных в журналах Azure Monitor.
+Некоторые функции в Azure Monitor, такие как [Insights](../insights/insights-overview.md) и [Solutions](../monitor-reference.md) , обрабатывают данные журнала без предоставления доступа к базовым запросам. Чтобы полностью использовать другие функции Azure Monitor, необходимо понимать, как создаются запросы и как их можно использовать для интерактивного анализа данных в журналах Azure Monitor.
 
 Используйте эту статью в качестве отправной точки для изучения запросов журнала в Azure Monitor. Он содержит ответы на часто задаваемые вопросы и ссылки на другую документацию, в которой содержатся дополнительные сведения и занятия.
 

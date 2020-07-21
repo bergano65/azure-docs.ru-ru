@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/12/2018
-ms.openlocfilehash: 6df27dde997bd34e86b1bb340817648bfe68f2c4
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.openlocfilehash: fb216f164e02dfa4dbc4ad11774569b2e8ea970f
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83797598"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539692"
 ---
 # <a name="continuous-monitoring-with-azure-monitor"></a>Непрерывный мониторинг с помощью Azure Monitor
 
@@ -37,7 +38,7 @@ ms.locfileid: "83797598"
 - Вы автоматически получаете [метрики платформы, журналы активности и журналы диагностики](platform/data-sources.md) из большинства ресурсов Azure без настройки.
 - Включите более глубокий мониторинг для виртуальных машин с помощью [Azure Monitor для виртуальных машин](insights/vminsights-overview.md).
 -  Включите более глубокий мониторинг для кластеров службы Azure Kubernetes с помощью [Azure Monitor для контейнеров](insights/container-insights-overview.md).
-- Добавление [решений мониторинга](insights/solutions-inventory.md) для разных приложений и служб в вашей среде.
+- Добавление [решений мониторинга](./monitor-reference.md) для разных приложений и служб в вашей среде.
 
 
 [Инфраструктура в виде кода](/azure/devops/learn/what-is-infrastructure-as-code) – это управление инфраструктурой в описательной модели с использованием той же версии, что и команды DevOps для исходного кода. Это повышает надежность и масштабируемость вашей среды и позволяет использовать аналогичные процессы, используемые для управления вашими приложениями.

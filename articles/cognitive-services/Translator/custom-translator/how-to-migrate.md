@@ -9,11 +9,12 @@ ms.subservice: translator-text
 ms.date: 05/26/2020
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 02e6d776dbb47ee8e30409f6b8adc5a61fc5fe52
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 5334168081ea18650bd6afd2411e076952e08749
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85958928"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86537992"
 ---
 # <a name="migrate-hub-workspace-and-projects-to-custom-translator"></a>Перенос рабочей области и проектов центра в Custom Translator
 
@@ -129,9 +130,9 @@ ms.locfileid: "85958928"
 
 В этой таблице сравниваются возможности Microsoft Translator Hub и Custom Translator.
 
-|   | Microsoft Translator Hub | Пользовательский переводчик |
-|:-----|:----:|:----:|
-|Состояние компонента настройки    | Общедоступная версия    | Общедоступная версия |
+| Компонент | Концентратор | Пользовательский переводчик |
+| ------- | :-: | :---------------: |
+| Состояние компонента настройки    | Общедоступная версия    | Общедоступная версия |
 | Версия API перевода текстов    | V2     | V3  |
 | Настройка SMT    | Да    | Нет |
 | Настройка NMT    | Нет    | Да |
@@ -142,7 +143,7 @@ ms.locfileid: "85958928"
 
 Если вы являетесь сообществом или организацией, работающими над созданием новой языковой системы для переводчика, обратитесь к [custommt@microsoft.com](mailto:custommt@microsoft.com) для получения дополнительных сведений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обучение модели](how-to-train-model.md).
 - Приступите к работе с развернутой настраиваемой моделью преобразования через [Translator v3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).

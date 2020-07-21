@@ -6,12 +6,12 @@ author: renatosalas
 ms.author: regutier
 ms.date: 04/14/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: d84010fd62d753fafd7edffab833b203657f74c7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 50dcd3f438645c99e0ed3cfdded7a101ee5f1852
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85361944"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539862"
 ---
 # <a name="configure-bring-your-own-storage-byos-for-application-insights-profiler-and-snapshot-debugger"></a>Настройка собственного хранилища (BYOS) для Application Insights Profiler и Snapshot Debugger
 
@@ -21,17 +21,17 @@ ms.locfileid: "85361944"
 Используя свое собственное хранилище, эти артефакты отправляются в учетную запись хранения, которую вы контролируете. Это означает, что вы управляете политикой шифрования неактивных объектов, политикой управления жизненным циклом и доступом к сети. Тем не менее, вы несете ответственность за затраты, связанные с этой учетной записью хранения.
 
 > [!NOTE]
-> При включении закрытой ссылки необходимо использовать собственное хранилище. Дополнительные сведения о закрытой ссылке для Application Insights [см. в документации.](https://docs.microsoft.com/azure/azure-monitor/platform/private-link-security)
+> При включении закрытой ссылки необходимо использовать собственное хранилище. Дополнительные сведения о закрытой ссылке для Application Insights [см. в документации.](../platform/private-link-security.md)
 >
-> Если вы включаете ключи, управляемые клиентом, необходимо использовать собственное хранилище. Дополнительные сведения о ключах, управляемых клиентом, для Application Insights [см. в документации.](https://docs.microsoft.com/azure/azure-monitor/platform/customer-managed-keys)
+> Если вы включаете ключи, управляемые клиентом, необходимо использовать собственное хранилище. Дополнительные сведения о ключах, управляемых клиентом, для Application Insights [см. в документации.](../platform/customer-managed-keys.md)
 
 ## <a name="how-will-my-storage-account-be-accessed"></a>Как будет осуществляться доступ к учетной записи хранения?
 1. Агенты, выполняющиеся на виртуальных машинах или в службе приложений, будут отправлять артефакты (профили, моментальные снимки и символы) в контейнеры больших двоичных объектов в вашей учетной записи. Этот процесс включает связь со службой Application Insights Profiler или Snapshot Debugger, чтобы получить маркер SAS (подписанный URL-адрес) для нового большого двоичного объекта в учетной записи хранения.
 1. Служба Application Insights Profiler или Snapshot Debugger проанализирует входящий большой двоичный объект и выполнит обратную запись результатов анализа и файлов журнала в хранилище BLOB-объектов. В зависимости от доступной емкости вычислений этот процесс может происходить в любое время после отправки.
 1. При просмотре трассировок профилировщика или анализе snapshot Debugger служба получает результаты анализа из хранилища BLOB-объектов.
 
-## <a name="prerequisites"></a>Предварительные условия
-* Не забудьте создать учетную запись хранения в том же расположении, что и ресурс Application Insights. Например: Если ресурс Application Insights находится в западной части США 2, ваша учетная запись хранения должна быть также в западной части США 2. 
+## <a name="prerequisites"></a>Предварительные требования
+* Не забудьте создать учетную запись хранения в том же расположении, что и ресурс Application Insights. Пример: Если ресурс Application Insights находится в западной части США 2, ваша учетная запись хранения должна быть также в западной части США 2. 
 * Предоставьте роли "участник данных BLOB-объекта хранилища" для приложения AAD "доступ к доверенному хранилищу служб диагностики" в учетной записи хранения через пользовательский интерфейс управления доступом (IAM).
 * Если частная связь включена, Настройте дополнительный параметр, чтобы разрешить подключение к нашей доверенной службе Майкрософт из виртуальной сети. 
 
@@ -60,7 +60,7 @@ _ ![ Рис. 1,0](media/profiler-bring-your-own-storage/figure-10.png)_.
 _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_. 
  _рис. 1,1_ 
 
-Если вы также используете частную ссылку, требуется одна дополнительная настройка, чтобы разрешить подключение к нашей доверенной службе Майкрософт из виртуальной сети. См. [документацию по сетевой безопасности хранилища](https://docs.microsoft.com/azure/storage/common/storage-network-security#trusted-microsoft-services).
+Если вы также используете частную ссылку, требуется одна дополнительная настройка, чтобы разрешить подключение к нашей доверенной службе Майкрософт из виртуальной сети. См. [документацию по сетевой безопасности хранилища](../../storage/common/storage-network-security.md#trusted-microsoft-services).
 
 ### <a name="link-your-storage-account-with-your-application-insights-resource"></a>Связывание учетной записи хранения с ресурсом Application Insights
 Чтобы настроить BYOS для диагностики на уровне кода (профилировщик или отладчик), существует два варианта:
@@ -73,7 +73,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
 
 1. Убедитесь, что вы установили команду AZ PowerShell 4.2.0 или более поздней версии.
 
-    Сведения об установке Azure PowerShell см. в [официальной документации по Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+    Сведения об установке Azure PowerShell см. в [официальной документации по Azure PowerShell](/powershell/azure/install-az-ps).
 
 1. Установите расширение PowerShell для Application Insights.
     ```powershell
@@ -85,7 +85,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
     Connect-AzAccount -Subscription "{subscription_id}"
     ```
 
-    Дополнительные сведения о том, как войти в систему, см. в [документации Connect-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount).
+    Дополнительные сведения о том, как войти в систему, см. в [документации Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount).
 
 1. Удалите предыдущую учетную запись хранения, связанную с ресурсом Application Insights.
 
@@ -95,7 +95,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
     Remove-AzApplicationInsightsLinkedStorageAccount -ResourceId $appInsights.Id
     ```
 
-    Пример.
+    Пример
     ```powershell
     $appInsights = Get-AzApplicationInsights -ResourceGroupName "byos-test" -Name "byos-test-westus2-ai"
     Remove-AzApplicationInsightsLinkedStorageAccount -ResourceId $appInsights.Id
@@ -110,7 +110,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
     New-AzApplicationInsightsLinkedStorageAccount -ResourceId $appInsights.Id -LinkedStorageAccountResourceId $storageAccount.Id
     ```
 
-    Пример.
+    Пример
     ```powershell
     $storageAccount = Get-AzStorageAccount -ResourceGroupName "byos-test" -Name "byosteststoragewestus2"
     $appInsights = Get-AzApplicationInsights -ResourceGroupName "byos-test" -Name "byos-test-westus2-ai"
@@ -121,7 +121,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
 
 1. Убедитесь, что установлен Azure CLI.
 
-    Сведения об установке Azure CLI см. в [официальной документации по Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+    Сведения об установке Azure CLI см. в [официальной документации по Azure CLI](/cli/azure/install-azure-cli).
 
 1. Установите Application Insights расширение CLI.
     ```powershell
@@ -135,7 +135,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
     az monitor app-insights component linked-storage link --resource-group "{resource_group_name}" --app "{application_insights_name}" --storage-account "{storage_account_name}"
     ```
     
-    Пример.
+    Пример
     ```powershell
     az monitor app-insights component linked-storage link --resource-group "byos-test" --app "byos-test-westus2-ai" --storage-account "byosteststoragewestus2"
     ```
@@ -152,7 +152,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
     ```
 
     > [!NOTE]
-    > Сведения о выполнении обновлений для связанных учетных записей хранения в ресурсе Application Insights см. в [документации по CLI Application Insights](https://docs.microsoft.com/cli/azure/ext/application-insights/monitor/app-insights/component/linked-storage).
+    > Сведения о выполнении обновлений для связанных учетных записей хранения в ресурсе Application Insights см. в [документации по CLI Application Insights](/cli/azure/ext/application-insights/monitor/app-insights/component/linked-storage).
 
 #### <a name="configure-using-azure-resource-manager-template"></a>Настройка с помощью шаблона Azure Resource Manager
 
@@ -191,14 +191,14 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
     New-AzResourceGroupDeployment -ResourceGroupName "{your_resource_name}" -TemplateFile "{local_path_to_arm_template}"
     ```
 
-    Пример.
+    Пример
     ```powershell
     New-AzResourceGroupDeployment -ResourceGroupName "byos-test" -TemplateFile "D:\Docs\byos.template.json"
     ```
 
 1. При появлении запроса в консоли PowerShell укажите следующие параметры:
     
-    |           Параметр           |                                Описание:                               |
+    |           Параметр           |                                Описание                               |
     |-------------------------------|--------------------------------------------------------------------------|
     | application_insights_name     | Имя ресурса Application Insights для включения BYOS.            |
     | storage_account_name          | Имя ресурса учетной записи хранения, которое будет использоваться в качестве BYOS. |
@@ -276,7 +276,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
 
 Общие Snapshot Debugger устранении неполадок см. в [документации по snapshot Debugger устранению неполадок](snapshot-debugger-troubleshoot.md). 
 
-## <a name="faqs"></a>Часто задаваемые вопросы
+## <a name="faqs"></a>Вопросы и ответы
 * Если у меня есть профилировщик или моментальный снимок, а затем включен BYOS, данные будут перенесены в учетную запись хранения?
     _Нет, он не будет._
 

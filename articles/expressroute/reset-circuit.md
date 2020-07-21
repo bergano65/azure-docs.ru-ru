@@ -2,18 +2,18 @@
 title: 'Сброс канала с ошибками — ExpressRoute: PowerShell: Azure | Документация Майкрософт'
 description: Эта статья поможет вам сбросить канал ExpressRoute, который находится в неисправном состоянии.
 services: expressroute
-author: anzaman
+author: kumudD
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 11/28/2018
-ms.author: anzaman
+ms.author: kumud
 ms.custom: seodec18
-ms.openlocfilehash: f75d9ae2fc788bbeb769aaf412c77dfacec9d04c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e0f79ce0959e7b7dccc20e46493f34e1963df70e
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84738130"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86537111"
 ---
 # <a name="reset-a-failed-expressroute-circuit"></a>Сброс канала ExpressRoute после сбоя
 
@@ -50,6 +50,6 @@ ms.locfileid: "84738130"
 
 Теперь канал должен быть работоспособным. Откройте запрос в [службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), если канал по-прежнему находится в состоянии сбоя.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Отправьте запрос в [службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) , если у вас по-прежнему возникают проблемы.

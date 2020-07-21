@@ -3,16 +3,16 @@ title: Преобразование "Отмена свертывания" пот
 description: Преобразование "Отмена сведения" потока данных сопоставления фабрики данных Azure
 author: kromerm
 ms.author: makromer
-ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 01/30/2019
-ms.openlocfilehash: c3e769334beb6a5739eebb8d7e8dc370533c2dc6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/14/2020
+ms.openlocfilehash: b7a05f33c199ab46508fa2b9bc0ef576f888ef27
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81606242"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86537720"
 ---
 # <a name="azure-data-factory-unpivot-transformation"></a>Преобразование отмены свертывания в фабрике данных Azure
 
@@ -21,6 +21,8 @@ ms.locfileid: "81606242"
 Используйте функцию отмены свертывания в ADF для сопоставления потока данных как способ превратить Ненормализованный набор данных в более нормализованную версию путем развертывания значений из нескольких столбцов одной записи в несколько записей с одинаковыми значениями в одном столбце.
 
 ![Преобразование отмены свертывания](media/data-flow/unpivot1.png "Параметры отмены свертывания 1")
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4B1RR]
 
 ## <a name="ungroup-by"></a>Разгруппировать
 
@@ -52,6 +54,6 @@ ms.locfileid: "81606242"
 
 В окончательном наборе результатов для несвернутых данных отображаются итоговые значения столбца, которые теперь не объединены в значения отдельных строк.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте [Преобразование «Сведение](data-flow-pivot.md) » для сведения строк в столбцы.

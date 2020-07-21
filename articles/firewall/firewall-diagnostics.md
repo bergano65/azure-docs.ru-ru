@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: how-to
 ms.date: 07/10/2020
 ms.author: victorh
-ms.openlocfilehash: e55f92c624ec338005cd23ba5e6063a9ca7f82c4
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 82202705c5dbd4539eec4775d0844a749fd405f9
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86262225"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86537009"
 ---
 # <a name="monitor-azure-firewall-logs-and-metrics"></a>Мониторинг журналов и метрик Брандмауэра Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "86262225"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать, ознакомьтесь с [журналами и метриками брандмауэра Azure](logs-and-metrics.md) , чтобы получить общие сведения о журналах диагностики и метриках, доступных для брандмауэра Azure.
 
@@ -45,7 +45,7 @@ ms.locfileid: "86262225"
 6. В разделе **Журнал**выберите **азурефиреваллаппликатионруле** и **азурефиреваллнетворкруле** , чтобы получить журналы для правил приложений и сетей.
 7. Выберите **отправить log Analytics** , чтобы настроить рабочую область.
 8. Выберите свою подписку.
-9. Нажмите **Сохранить**.
+9. Щелкните **Сохранить**.
 
 ## <a name="enable-logging-with-powershell"></a>Включение ведения журнала с помощью PowerShell
 
@@ -97,5 +97,4 @@ ms.locfileid: "86262225"
 
 Теперь, когда брандмауэр настроен для сбора журналов, можно открыть Журналы Azure Monitor, чтобы просмотреть данные.
 
-> [!div class="nextstepaction"]
-> [Решения для мониторинга сетей в Журналах Azure Monitor](../azure-monitor/insights/azure-networking-analytics.md)
+[Решения для мониторинга сетей в Журналах Azure Monitor](../azure-monitor/insights/azure-networking-analytics.md)

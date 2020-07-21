@@ -3,12 +3,12 @@ title: Обратимое удаление для SQL Server на виртуал
 description: Узнайте, как обратимое удаление для SQL Server на виртуальной машине Azure и SAP HANA в рабочих нагрузках виртуальных машин Azure делает резервные копии более безопасными.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: f1e3ecae5d643b8e32f8f4f07808d56cdc421163
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c0eaedea2d5428376befaade42f87348cf84e7bc
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82791380"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86538196"
 ---
 # <a name="soft-delete-for-sql-server-in-azure-vm-and-sap-hana-in-azure-vm-workloads"></a>Обратимое удаление для SQL Server на виртуальной машине Azure и SAP HANA в рабочих нагрузках виртуальных машин Azure
 
@@ -99,7 +99,7 @@ Azure Backup теперь обеспечивает обратимое удале
 
 ### <a name="delete-the-backup-item-using-azure-powershell"></a>Удаление элемента резервного копирования с помощью Azure PowerShell
 
-Удалите элемент резервного копирования с помощью командлета [Disable-азрековерисервицесбаккуппротектион](https://docs.microsoft.com/powershell/module/az.recoveryservices/Disable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) PS.
+Удалите элемент резервного копирования с помощью командлета [Disable-азрековерисервицесбаккуппротектион](/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection) PS.
 
 ```powershell
 Disable-AzRecoveryServicesBackupProtection -Item $myBkpItem -RemoveRecoveryPoints -VaultId $myVaultID -Force
@@ -117,7 +117,7 @@ Get-AzRecoveryServicesBackupItem -BackupManagementType AzureWorkload -WorkloadTy
 $myBkpItem = Get-AzRecoveryServicesBackupItem -BackupManagementType AzureWorkload -WorkloadType SQLDataBase -VaultId $myVaultID -Name AppVM1
 ```
 
-Затем выполните операцию отмены удаления с помощью командлета [Undo-азрековерисервицесбаккупитемделетион](https://docs.microsoft.com/powershell/module/az.recoveryservices/undo-azrecoveryservicesbackupitemdeletion?view=azps-3.8.0) PS.
+Затем выполните операцию отмены удаления с помощью командлета [Undo-азрековерисервицесбаккупитемделетион](/powershell/module/az.recoveryservices/undo-azrecoveryservicesbackupitemdeletion) PS.
 
 ```powershell
 Undo-AzRecoveryServicesBackupItemDeletion -Item $myBKpItem -VaultId $myVaultID -Force

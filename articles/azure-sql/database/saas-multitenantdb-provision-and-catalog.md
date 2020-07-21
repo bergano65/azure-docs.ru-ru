@@ -11,11 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/24/2018
-ms.openlocfilehash: 80c789f955b279e7771fe39c20087baa465b3293
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 88f1e40101b807e82eaf69be6c167cd4aa2e2831
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84027655"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539199"
 ---
 # <a name="provision-and-catalog-new-tenants-in-a-saas-application-using-a-sharded-multi-tenant-azure-sql-database"></a>Предоставление и каталогизация новых клиентов в приложении SaaS с помощью сегментированной многоклиентской базы данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -29,7 +30,7 @@ ms.locfileid: "84027655"
 - [Руководство](#goto_1_tutorial), в котором приведен код скрипта PowerShell, выполняющий подготовку и каталогизацию.
   - В руководстве используется приложение SaaS Wingtip Tickets, адаптированное для шаблона мультитенантной сегментированной базы данных.
 
-<a name="goto_2_conceptual"/>
+<a name="goto_2_conceptual"></a>
 
 ## <a name="database-pattern"></a>Шаблон базы данных
 
@@ -110,11 +111,11 @@ ms.locfileid: "84027655"
 
 Данные клиента затем инициализируются и регистрируются в карте сегментов каталога. В примере приложения базы данных, содержащие несколько клиентов, получают общее имя, например *tenants1* или *tenants2*. Базы данных, содержащие один клиент, получают имя клиента. Определенные соглашения об именовании, используемые в примере, не являются критически важным требованием для шаблона, так как благодаря применению каталога базе данных можно присвоить любое имя.
 
-<a name="goto_1_tutorial"/>
+<a name="goto_1_tutorial"></a>
 
 ## <a name="tutorial-begins"></a>Начало руководства
 
-В этом руководстве вы узнаете, как:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * подготавливать клиента в мультитенантной базе данных;
@@ -122,7 +123,7 @@ ms.locfileid: "84027655"
 > * подготавливать пакет клиентов в мультитенантной и однотенантной базе данных;
 > * регистрировать сопоставление баз данных и клиентов в каталоге.
 
-#### <a name="prerequisites"></a>Предварительные условия
+#### <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством выполните следующие предварительные требования:
 

@@ -3,12 +3,12 @@ title: Модель данных для журналов Azure Monitor
 description: В этой статье представлены сведения о модели данных Log Analytics в Azure Monitor для данных Azure Backup.
 ms.topic: conceptual
 ms.date: 02/26/2019
-ms.openlocfilehash: e776649ff22e3249e2472adbe298c869ff5c946a
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: 73247dac1ca829a7893192101da0981c3edcf8d8
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85854763"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539080"
 ---
 # <a name="log-analytics-data-model-for-azure-backup-data"></a>Модель данных Log Analytics для данных Azure Backup
 
@@ -18,7 +18,7 @@ ms.locfileid: "85854763"
 
 > [!NOTE]
 >
-> Эта модель данных является ссылкой на режим Диагностики Azure, заключающийся в отправке диагностических событий в Log Analytics (LA). Чтобы изучить модель данных для нового режима, относящегося к конкретному ресурсу, воспользуйтесь следующей статьей. [Модель данных для диагностических событий Azure Backup](https://docs.microsoft.com/azure/backup/backup-azure-reports-data-model)
+> Эта модель данных является ссылкой на режим Диагностики Azure, заключающийся в отправке диагностических событий в Log Analytics (LA). Чтобы изучить модель данных для нового режима, относящегося к конкретному ресурсу, воспользуйтесь следующей статьей. [Модель данных для диагностических событий Azure Backup](./backup-azure-reports-data-model.md)
 
 ## <a name="using-azure-backup-data-model"></a>Использование модели данных Azure Backup
 
@@ -465,7 +465,7 @@ ms.locfileid: "85854763"
 
 По соображениям обратной совместимости сейчас данные диагностики для агента Azure Backup и резервной копии виртуальных машин Azure отправляются в таблицу Диагностики Azure в обеих схемах — V1 и V2 (при этом схема V1 запланирована к объявлению в качестве нерекомендуемой). Вы можете определить, какие записи в Log Analytics относятся к схеме V1, отфильтровав записи по SchemaVersion_s=="V1" в запросах журнала. 
 
-Чтобы узнать, какие столбцы относятся только к схеме V1, см. третий столбец, Description, в [модели данных](https://docs.microsoft.com/azure/backup/backup-azure-diagnostics-mode-data-model#using-azure-backup-data-model), описанной выше.
+Чтобы узнать, какие столбцы относятся только к схеме V1, см. третий столбец, Description, в [модели данных](#using-azure-backup-data-model), описанной выше.
 
 ### <a name="modifying-your-queries-to-use-the-v2-schema"></a>Изменение запросов для использования схемы v2
 Поскольку схема v1 находится в пути устаревания, рекомендуется использовать только схему v2 во всех пользовательских запросах Azure Backup диагностических данных. Ниже приведен пример обновления запросов для удаления зависимости от схемы v1.

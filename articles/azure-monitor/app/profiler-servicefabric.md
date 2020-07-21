@@ -6,16 +6,17 @@ author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 664d6eb377185613a1a5670daf6747b482c79d9d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d63d932756495584b2870c597d3332077f8e86c9
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77671619"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539845"
 ---
 # <a name="profile-live-azure-service-fabric-applications-with-application-insights"></a>Профилирование запущенных приложений Azure Service Fabric с помощью Application Insights
 
 Вы можете развернуть Application Insights Profiler для следующих служб:
-* [служба приложений Azure](profiler.md?toc=/azure/azure-monitor/toc.json);
+* [Служба приложений Azure](profiler.md?toc=/azure/azure-monitor/toc.json)
 * [Oблачныe службы Azure2](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
 * [Виртуальные машины Azure](profiler-vm.md?toc=/azure/azure-monitor/toc.json)
 
@@ -25,9 +26,9 @@ Application Insights Profiler поставляется в комплекте с 
 
 Чтобы настроить среду, выполните следующие действия.
 
-1. Profiler поддерживает .NET Framework и .Net Core. Если вы используете .NET Framework, убедитесь, что вы используете [.NET Framework 4.6.1](https://docs.microsoft.com/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) или более поздней версии. Достаточно подтвердить, что развернутая ОС является `Windows Server 2012 R2` или более поздней. Profiler поддерживает приложения .NET Core 2,1 и более поздние версии.
+1. Profiler поддерживает .NET Framework и .Net Core. Если вы используете .NET Framework, убедитесь, что вы используете [.NET Framework 4.6.1](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) или более поздней версии. Достаточно подтвердить, что развернутая ОС является `Windows Server 2012 R2` или более поздней. Profiler поддерживает приложения .NET Core 2,1 и более поздние версии.
 
-1. Найдите расширение [системы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) в файле шаблона развертывания.
+1. Найдите расширение [системы диагностики Azure](../platform/diagnostics-extension-overview.md) в файле шаблона развертывания.
 
 1. Добавьте следующий раздел `SinksConfig` в качестве дочернего элемента `WadCfg`. Замените значение свойства `ApplicationInsightsProfiler` собственным ключом инструментирования Application Insights:  
 
@@ -42,7 +43,7 @@ Application Insights Profiler поставляется в комплекте с 
       }
       ```
 
-      Сведения о добавлении расширения диагностики в шаблон развертывания см. в статье [Использование мониторинга и системы диагностики с виртуальной машиной Windows и шаблонами Azure Resource Manager](https://docs.microsoft.com/azure/virtual-machines/windows/extensions-diagnostics-template?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+      Сведения о добавлении расширения диагностики в шаблон развертывания см. в статье [Использование мониторинга и системы диагностики с виртуальной машиной Windows и шаблонами Azure Resource Manager](../../virtual-machines/extensions/diagnostics-template.md?toc=/azure/virtual-machines/windows/toc.json).
 
 1. Разверните кластер Service Fabric с помощью шаблона Azure Resource Manager.  
   Если все параметры верны, при установке расширения системы диагностики Azure будет установлен и включен Application Insights Profiler. 
@@ -53,7 +54,7 @@ Application Insights Profiler поставляется в комплекте с 
 1. Разверните приложение заново.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Создайте трафик к приложению (например, запустите [тест доступности](monitor-web-app-availability.md)). Подождите 10–15 минут, пока трассировки не начнут отправляться в экземпляр Application Insights.
 * См. раздел [трассировки профайлера](profiler-overview.md?toc=/azure/azure-monitor/toc.json) в портал Azure.

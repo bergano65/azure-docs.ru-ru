@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: MS-jgol
 ms.author: jgol
 ms.date: 06/26/2020
-ms.openlocfilehash: 978cb7ece1f8b3e16815c1dc49e4983dc393cbfc
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: b9da3b0647d5abe60dd8f6cb21163ff21f07205b
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937586"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539726"
 ---
 # <a name="release-notes-for-azure-web-app-extension-for-application-insights"></a>Заметки о выпуске расширения веб-приложения Azure для Application Insights
 
@@ -21,7 +21,7 @@ ms.locfileid: "85937586"
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
 - Как узнать, какая версия расширения сейчас используется?
-    - Перейдите к `https://<yoursitename>.scm.azurewebsites.net/ApplicationInsights`. Дополнительные сведения см. в разделе Пошаговое [руководство по устранению неполадок для мониторинга на основе расширений и агентов](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps?tabs=net#troubleshooting) .
+    - Перейдите по адресу `https://<yoursitename>.scm.azurewebsites.net/ApplicationInsights`. Дополнительные сведения см. в разделе Пошаговое [руководство по устранению неполадок для мониторинга на основе расширений и агентов](./azure-web-apps.md?tabs=net#troubleshooting) .
 
 - Что делать, если я использую частные расширения?
     - Удалите расширения закрытого сайта, так как оно больше не поддерживается.
@@ -73,6 +73,6 @@ ms.locfileid: "85937586"
 
 - Исправление неполного ответа HTML для ASP.NET Core приложений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о настройке мониторинга для служб приложений Azure см. в [документации по службе приложений Azure](azure-web-apps.md) . 

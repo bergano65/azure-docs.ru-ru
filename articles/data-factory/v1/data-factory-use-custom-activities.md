@@ -12,13 +12,14 @@ author: nabhishek
 ms.author: abnarain
 manager: anandsub
 robots: noindex
-ms.openlocfilehash: 2cea9cd1439bce0c55d701539471c463acb8f7e2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1f0d60d1f76523beca6567517ef44d50b910b221
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84020138"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86537621"
 ---
-# <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
+# <a name="use-custom-activities-in-an-azure-data-factory-version-1-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure версии 1
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](data-factory-use-custom-activities.md)
 > * [Версия 2 (текущая)](../transform-data-using-dotnet-custom-activity.md)
@@ -41,14 +42,14 @@ ms.locfileid: "84020138"
 > - Невозможно использовать шлюз управления данными из пользовательского действия для доступа к локальным источникам данных. В настоящее время [шлюз управления данными](data-factory-data-management-gateway.md) поддерживает действие копирования и действие хранимой процедуры только в фабрике данных.
 
 ## <a name="walkthrough-create-a-custom-activity"></a>Пошаговое руководство по созданию настраиваемого действия
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 * Visual Studio 2012/2013/2015/2017
 * Скачайте и установите пакет [Azure .NET SDK](https://azure.microsoft.com/downloads/)
 
 ### <a name="azure-batch-prerequisites"></a>Предварительные требования для пакетной службы Azure
 В этом руководстве вы запустите свои настраиваемые действия .NET с помощью пакетной службы Azure как вычислительные ресурсы. **Пакетная служба Azure** — это служба платформы, которая позволяет эффективно работать с приложениями для крупномасштабных параллельных и высокопроизводительных вычислений (HPC) в облаке. Пакетная служба Azure планирует выполнение ресурсоемких операций на управляемой **коллекции виртуальных машин**и может автоматически масштабировать вычислительные ресурсы в соответствии с потребностями ваших заданий. Подробные сведения о пакетной службе Azure см. в [этой статье][batch-technical-overview].
 
-Для этого руководства создайте учетную запись пакетной службы Azure с пулом виртуальных машин. Ниже приводятся шаги:
+Для этого руководства создайте учетную запись пакетной службы Azure с пулом виртуальных машин. Вот что нужно сделать.
 
 1. Создайте **учетную запись пакетной службы Azure** с помощью [портал Azure](https://portal.azure.com). Инструкции см. в статье [Создание учетной записи пакетной службы Azure на портале Azure][batch-create-account].
 2. Запишите ключ и имя учетной записи пакетной службы Azure, а также URI и имя пула. Они понадобятся при создании связанной службы пакетной службы Azure.
@@ -711,7 +712,7 @@ test custom activity Microsoft test custom activity Microsoft
     Install-Package WindowsAzure.Storage -Version 4.3.0
     ```
 
-    Выполните построение проекта. Удалите сборку WindowsAzure.Storage более поздней версии, чем 4.3.0, из папки bin\Debug. Создайте ZIP-файл с двоичными файлами и PDB-файлом. Замените старый ZIP-файл в контейнере больших двоичных объектов (customactivitycontainer) созданным. Повторно запустите срезы, в которых произошли сбои (щелкните срез правой кнопкой мыши и выберите пункт "Выполнить").
+    Создайте проект. Удалите сборку WindowsAzure.Storage более поздней версии, чем 4.3.0, из папки bin\Debug. Создайте ZIP-файл с двоичными файлами и PDB-файлом. Замените старый ZIP-файл в контейнере больших двоичных объектов (customactivitycontainer) созданным. Повторно запустите срезы, в которых произошли сбои (щелкните срез правой кнопкой мыши и выберите пункт "Выполнить").
 8. Настраиваемое действие не использует файл **app.config** из пакета. Поэтому, если код считывает какие-либо строки подключения из файла конфигурации, это не сработает во время выполнения. При использовании пакетной службы Azure рекомендуется хранить все секреты в **Azure KeyVault**, использовать субъект-службу на основе сертификата для защиты **KeyVault**и распространять сертификат в пул пакетных служб Azure. В этом случае пользовательское действие .NET в среде выполнения сможет использовать секреты из хранилища ключей. Это общее решение, которое можно использовать для любого типа секретов, а не только строк подключения.
 
    Существует и более простое (но не самое лучшее) решение: можно создать **связанную службу SQL Azure** с параметрами строки подключения, набор данных, использующий связанную службу, и привязать его как фиктивный набор входных данных к настраиваемому действию .NET. После этого вы сможете получить доступ к строке подключения связанной службы из кода пользовательского действия.
@@ -1024,7 +1025,7 @@ namespace DataFactoryAPITestApp
 | --- | --- |
 | [Загрузчик данных HTTP](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/HttpDataDownloaderSample) |Загрузка данных из конечной точки HTTP в хранилище BLOB-объектов с помощью настраиваемого действия C# в фабрике данных Azure. |
 | [Пример анализа мнений с помощью Twitter](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/TwitterAnalysisSample-CustomC%23Activity) |Вызов модели Студии машинного обучения Azure и выполнение анализа мнений, оценки, прогнозирования и т. д. |
-| [Запуск скрипта R](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/RunRScriptUsingADFSample) |Вызов сценария R путем запуска RScript.exe в кластере HDInsight, где уже установлен R. |
+| [Выполните сценарий R](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/RunRScriptUsingADFSample). |Вызов сценария R путем запуска RScript.exe в кластере HDInsight, где уже установлен R. |
 | [Действие перекрестного домена приложения .NET](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/CrossAppDomainDotNetActivitySample) |Использование разных версий сборок, которые используются средством запуска фабрики данных. |
 | [Повторная обработка модели в службах Azure Analysis Services](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/AzureAnalysisServicesProcessSample) |  Повторная обработка модели в службах Azure Analysis Services. |
 

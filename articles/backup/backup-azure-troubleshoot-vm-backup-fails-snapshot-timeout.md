@@ -5,11 +5,12 @@ ms.reviewer: saurse
 ms.topic: troubleshooting
 ms.date: 07/05/2019
 ms.service: backup
-ms.openlocfilehash: 3ee84c0c868f47dca1aee0401865563a326df3db
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 55af4bddb5a963a831c1438400a7a243cca20573
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82864408"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86538825"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -27,7 +28,7 @@ ms.locfileid: "82864408"
 - **Откройте портал Azure > виртуальные машины > параметры > панели свойства** > убедитесь, что **состояние** виртуальной машины **работает** и **состояние агента** — **Готово**. Если агент виртуальной машины остановлен или находится в нестабильном состоянии, перезапустите агент.<br>
   - Для виртуальных машин Windows выполните следующие [действия](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms) , чтобы перезапустить Гостевой агент.<br>
   - Для виртуальных машин Linux выполните следующие [действия](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms) , чтобы перезапустить Гостевой агент.
-- **Откройте портал Azure > виртуальная машина > параметры > расширения** > убедитесь, что все расширения находятся в состоянии " **успех подготовки** ". В противном случае выполните следующие [действия](https://docs.microsoft.com/azure/backup/backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout#usererrorvmprovisioningstatefailed---the-vm-is-in-failed-provisioning-state) , чтобы устранить проблему.
+- **Откройте портал Azure > виртуальная машина > параметры > расширения** > убедитесь, что все расширения находятся в состоянии " **успех подготовки** ". В противном случае выполните следующие [действия](#usererrorvmprovisioningstatefailed---the-vm-is-in-failed-provisioning-state) , чтобы устранить проблему.
 
 ## <a name="guestagentsnapshottaskstatuserror---could-not-communicate-with-the-vm-agent-for-snapshot-status"></a>GuestAgentSnapshotTaskStatusError — не удалось запросить состояние моментального снимка в агенте виртуальной машины
 
@@ -51,7 +52,7 @@ ms.locfileid: "82864408"
 **Код ошибки**: усереррорвмпровисионингстатефаилед<br>
 **Сообщение об ошибке**: виртуальная машина находится в состоянии "сбой подготовки"<br>
 
-Эта ошибка возникает, когда один из ошибок расширения переводит виртуальную машину в состояние сбоя подготовки.<br>**Откройте портал Azure > VM > Settings > extensions > Extensions Status** и убедитесь, что все расширения находятся в состоянии **успешной подготовки** . Дополнительные сведения см. в разделе [Подготовка состояний](https://docs.microsoft.com/azure/virtual-machines/windows/states-lifecycle#provisioning-states).
+Эта ошибка возникает, когда один из ошибок расширения переводит виртуальную машину в состояние сбоя подготовки.<br>**Откройте портал Azure > VM > Settings > extensions > Extensions Status** и убедитесь, что все расширения находятся в состоянии **успешной подготовки** . Дополнительные сведения см. в разделе [Подготовка состояний](../virtual-machines/windows/states-lifecycle.md#provisioning-states).
 
 - Если расширение VMSnapshot находится в неисправном состоянии, щелкните правой кнопкой мыши неисправное расширение и удалите его. Активация резервной копии по запросу. Это действие переустановит расширения и запустит задание резервного копирования.  <br>
 - Если какое-либо другое расширение находится в состоянии сбоя, оно может помешать резервному копированию. Убедитесь, что эти проблемы с расширением разрешены, и повторите операцию резервного копирования.
@@ -79,7 +80,7 @@ ms.locfileid: "82864408"
 **Код ошибки**: UserErrorKeyvaultPermissionsNotConfigured. <br>
 **Сообщение об ошибке**: "Служба архивации не имеет достаточных разрешений на доступ к хранилищу ключей для резервного копирования зашифрованных виртуальных машин". <br>
 
-Для выполнения операции резервного копирования на зашифрованных виртуальных машинах необходимо иметь разрешения на доступ к хранилищу ключей. Разрешения можно задать с помощью [портал Azure](https://docs.microsoft.com/azure/backup/backup-azure-vms-encryption) или [PowerShell](https://docs.microsoft.com/azure/backup/backup-azure-vms-automation#enable-protection).
+Для выполнения операции резервного копирования на зашифрованных виртуальных машинах необходимо иметь разрешения на доступ к хранилищу ключей. Разрешения можно задать с помощью [портал Azure](./backup-azure-vms-encryption.md) или [PowerShell](./backup-azure-vms-automation.md#enable-protection).
 
 ## <a name="extensionsnapshotfailednonetwork---snapshot-operation-failed-due-to-no-network-connectivity-on-the-virtual-machine"></a><a name="ExtensionSnapshotFailedNoNetwork-snapshot-operation-failed-due-to-no-network-connectivity-on-the-virtual-machine"></a>ExtensionSnapshotFailedNoNetwork — сбой операции моментального снимка из-за отсутствия сетевого подключения на виртуальной машине.
 
@@ -129,9 +130,9 @@ ms.locfileid: "82864408"
 2. В списке хранилищ служб восстановления выберите хранилище, в котором настроено резервное копирование.
 3. В меню панели мониторинга хранилища щелкните **Задания резервного копирования**, чтобы отобразить все задания.
    - Если задание резервного копирования выполняется, дождитесь его завершения или отмените его.
-     - Чтобы отменить задание резервного копирования, щелкните правой кнопкой мыши задание резервного копирования и выберите команду **Отмена** или используйте [PowerShell](https://docs.microsoft.com/powershell/module/az.recoveryservices/stop-azrecoveryservicesbackupjob?view=azps-1.4.0).
+     - Чтобы отменить задание резервного копирования, щелкните правой кнопкой мыши задание резервного копирования и выберите команду **Отмена** или используйте [PowerShell](/powershell/module/az.recoveryservices/stop-azrecoveryservicesbackupjob).
    - Если вы настроили резервную копию в другом хранилище, убедитесь, что в старом хранилище нет выполняющихся заданий резервного копирования. Если он существует, отмените задание резервного копирования.
-     - Чтобы отменить задание резервного копирования, щелкните его правой кнопкой мыши, а затем выберите **Отмена** или используйте [PowerShell](https://docs.microsoft.com/powershell/module/az.recoveryservices/stop-azrecoveryservicesbackupjob?view=azps-1.4.0).
+     - Чтобы отменить задание резервного копирования, щелкните его правой кнопкой мыши, а затем выберите **Отмена** или используйте [PowerShell](/powershell/module/az.recoveryservices/stop-azrecoveryservicesbackupjob).
 4. Повторите операцию резервного копирования.
 
 Если запланированная операция архивации занимает больше времени, конфликтует с следующей конфигурацией резервного копирования, ознакомьтесь [с рекомендациями,](backup-azure-vms-introduction.md#best-practices) [производительностью резервного копирования](backup-azure-vms-introduction.md#backup-performance)и [соображениями восстановления](backup-azure-vms-introduction.md#backup-and-restore-considerations).
@@ -166,7 +167,7 @@ ms.locfileid: "82864408"
 6. Выполните резервное копирование по запросу:
    - На портале выберите **Моментальная архивация**.
 
-Кроме того, убедитесь, что [Microsoft .NET 4.5 установлен](https://docs.microsoft.com/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) на виртуальной машине. Компонент .NET 4.5 необходим для взаимодействия агента виртуальной машины со службой.
+Кроме того, убедитесь, что [Microsoft .NET 4.5 установлен](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) на виртуальной машине. Компонент .NET 4.5 необходим для взаимодействия агента виртуальной машины со службой.
 
 ### <a name="the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms"></a>Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)
 
@@ -174,7 +175,7 @@ ms.locfileid: "82864408"
 
 Большая часть неполадок, связанных с агентом или расширением на виртуальных машинах Linux, вызваны проблемами с устаревшим агентом виртуальной машины. Чтобы устранить эту проблему, следуйте приведенным ниже общим рекомендациям.
 
-1. Выполните указания по [обновлению агента виртуальной машины Linux ](../virtual-machines/linux/update-agent.md).
+1. Выполните указания по [обновлению агента виртуальной машины Linux ](../virtual-machines/extensions/update-linux-agent.md).
 
    > [!NOTE]
    > Мы *настоятельно рекомендуем* обновлять агент только посредством репозитория дистрибутивов. Мы не рекомендуем скачивать код агента непосредственно с портала GitHub и обновлять его. Если последняя версия агента для вашего дистрибутива недоступна, обратитесь в службу поддержки дистрибутива, чтобы получить инструкции по установке последней версии агента. Чтобы проверить наличие последней версии агента, перейдите на страницу [агента Linux для Microsoft Azure](https://github.com/Azure/WALinuxAgent/releases) в репозитории GitHub.
@@ -206,7 +207,7 @@ ms.locfileid: "82864408"
 
 ### <a name="application-control-solution-is-blocking-iaasbcdrextensionexe"></a>Решение "Управление приложениями" блокирует IaaSBcdrExtension.exe
 
-Если вы используете [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/what-is-applocker) (или другое решение для управления приложениями), а правила — на основе издателя или пути, они могут блокировать запуск исполняемого **IaaSBcdrExtension.exe** .
+Если вы используете [AppLocker](/windows/security/threat-protection/windows-defender-application-control/applocker/what-is-applocker) (или другое решение для управления приложениями), а правила — на основе издателя или пути, они могут блокировать запуск исполняемого **IaaSBcdrExtension.exe** .
 
 #### <a name="solution"></a>Решение
 
@@ -220,7 +221,7 @@ ms.locfileid: "82864408"
 
 Сбой задачи создания снимка может быть вызван следующими условиями.
 
-| Причина: | Решение |
+| Причина | Решение |
 | --- | --- |
 | Состояние виртуальной машины отображается неправильно из-за того, что ее работа была завершена в протоколе удаленного рабочего стола (RDP). | Когда вы завершаете работу виртуальной машины в RDP, проверьте, правильно ли отображается состояние виртуальной машины на портале. Если это не так, завершите работу виртуальной машины на портале с помощью команды **Завершение работы** на панели мониторинга виртуальной машины. |
 | Виртуальная машина не может получить адрес узла или структуры по протоколу DHCP. | Чтобы архивация виртуальной машины IaaS работала, в гостевой учетной записи нужно включить протокол DHCP. Если виртуальная машина не может получить адрес узла или структуры в виде ответа DHCP 245, то она не сможет скачать или запустить какие-либо расширения. Если вам нужен статический частный IP-адрес, настройте его с помощью **портал Azure** или **PowerShell** и убедитесь, что в ВИРТУАЛЬНОЙ машине включен параметр DHCP. Дополнительные сведения о настройке статического IP-адреса с помощью PowerShell см. [здесь](../virtual-network/virtual-networks-static-private-ip-arm-ps.md#change-the-allocation-method-for-a-private-ip-address-assigned-to-a-network-interface) .

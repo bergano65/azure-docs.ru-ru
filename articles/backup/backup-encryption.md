@@ -3,12 +3,13 @@ title: Шифрование в Azure Backup
 description: Узнайте о том, как функции шифрования в Azure Backup помогают защитить данные резервных копий и удовлетворить потребности системы безопасности вашего бизнеса.
 ms.topic: conceptual
 ms.date: 04/30/2020
-ms.openlocfilehash: aafb9868dfb6a63ec9b6a3ae654b88b202a1a145
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.custom: references_regions
+ms.openlocfilehash: 099e736bfb321f0f92bd3a57f9c24e88293b42bb
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86171828"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86538757"
 ---
 # <a name="encryption-in-azure-backup"></a>Шифрование в Azure Backup
 
@@ -16,7 +17,7 @@ ms.locfileid: "86171828"
 
 Помимо шифрования неактивных данных, все данные резервных копий передаются по протоколу HTTPS. Она всегда остается в магистральной сети Azure.
 
-Дополнительные сведения см. в статье [Шифрование службы хранилища Azure для неактивных данных](https://docs.microsoft.com/azure/storage/common/storage-service-encryption). Ответы на вопросы о шифровании можно найти в [разделе часто задаваемых вопросов Azure Backup](https://docs.microsoft.com/azure/backup/backup-azure-backup-faq#encryption) .
+Дополнительные сведения см. в статье [Шифрование службы хранилища Azure для неактивных данных](../storage/common/storage-service-encryption.md). Ответы на вопросы о шифровании можно найти в [разделе часто задаваемых вопросов Azure Backup](./backup-azure-backup-faq.md#encryption) .
 
 ## <a name="encryption-of-backup-data-using-platform-managed-keys"></a>Шифрование данных резервных копий с помощью управляемых платформой ключей
 
@@ -30,7 +31,7 @@ ms.locfileid: "86171828"
 
 ## <a name="backup-of-managed-disk-vms-encrypted-using-customer-managed-keys"></a>Архивация виртуальных машин управляемого диска, зашифрованных с помощью управляемых клиентом ключей
 
-Azure Backup также позволяет создавать резервные копии виртуальных машин Azure, которые используют ключ для [шифрования службы хранилища](https://docs.microsoft.com/azure/storage/common/storage-service-encryption). Ключ, используемый для шифрования дисков, хранится в Azure Key Vault и управляется вами. Шифрование службы хранилища (SSE) с использованием управляемых клиентом ключей отличается от шифрования дисков Azure, так как ADE использует BitLocker (для Windows) и DM-encryption (для Linux) для выполнения шифрования в гостевой системе, SSE шифрует данные в службе хранилища, позволяя использовать любую ОС или образы для виртуальных машин. Дополнительные сведения см. в разделе [Шифрование управляемых дисков с помощью управляемых пользователем ключей](https://docs.microsoft.com/azure/virtual-machines/windows/disk-encryption#customer-managed-keys) .
+Azure Backup также позволяет создавать резервные копии виртуальных машин Azure, которые используют ключ для [шифрования службы хранилища](../storage/common/storage-service-encryption.md). Ключ, используемый для шифрования дисков, хранится в Azure Key Vault и управляется вами. Шифрование службы хранилища (SSE) с использованием управляемых клиентом ключей отличается от шифрования дисков Azure, так как ADE использует BitLocker (для Windows) и DM-encryption (для Linux) для выполнения шифрования в гостевой системе, SSE шифрует данные в службе хранилища, позволяя использовать любую ОС или образы для виртуальных машин. Дополнительные сведения см. в разделе [Шифрование управляемых дисков с помощью управляемых пользователем ключей](../virtual-machines/windows/disk-encryption.md#customer-managed-keys) .
 
 ## <a name="infrastructure-level-encryption-for-backup-data"></a>Шифрование на уровне инфраструктуры для данных резервного копирования
 
@@ -41,7 +42,7 @@ Azure Backup также позволяет создавать резервные
 
 ## <a name="backup-of-vms-encrypted-using-ade"></a>Резервное копирование виртуальных машин, зашифрованных с помощью ADE
 
-С помощью Azure Backup Вы также можете выполнять резервное копирование виртуальных машин Azure, которые имеют зашифрованные диски операционной системы или данных, используя шифрование дисков Azure. ADE использует BitLocker для виртуальных машин Windows и DM-Encryption для виртуальных машин Linux для выполнения шифрования в гостевой системе. Дополнительные сведения см. [в статье резервное копирование и восстановление зашифрованных виртуальных машин с помощью Azure Backup](https://docs.microsoft.com/azure/backup/backup-azure-vms-encryption).
+С помощью Azure Backup Вы также можете выполнять резервное копирование виртуальных машин Azure, которые имеют зашифрованные диски операционной системы или данных, используя шифрование дисков Azure. ADE использует BitLocker для виртуальных машин Windows и DM-Encryption для виртуальных машин Linux для выполнения шифрования в гостевой системе. Дополнительные сведения см. [в статье резервное копирование и восстановление зашифрованных виртуальных машин с помощью Azure Backup](./backup-azure-vms-encryption.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

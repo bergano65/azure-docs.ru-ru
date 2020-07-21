@@ -4,15 +4,15 @@ description: Шаблоны автоматического масштабиро�
 ms.topic: conceptual
 ms.date: 07/07/2017
 ms.subservice: autoscale
-ms.openlocfilehash: a05cf87e660cc6c388ea2055bb174c47b99da4a3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 47da813498ef2cd4d16aeaa5ab31eff24b1db267
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85846946"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539539"
 ---
 # <a name="best-practices-for-autoscale"></a>Рекомендации по автомасштабированию
-Автомасштабирование Azure Monitor используется только с [масштабируемыми наборами виртуальных машин](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [облачными службами](https://azure.microsoft.com/services/cloud-services/), [веб-приложениями службы приложений](https://azure.microsoft.com/services/app-service/web/) и [службами управления API](https://docs.microsoft.com/azure/api-management/api-management-key-concepts).
+Автомасштабирование Azure Monitor используется только с [масштабируемыми наборами виртуальных машин](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [облачными службами](https://azure.microsoft.com/services/cloud-services/), [веб-приложениями службы приложений](https://azure.microsoft.com/services/app-service/web/) и [службами управления API](../../api-management/api-management-key-concepts.md).
 
 ## <a name="autoscale-concepts"></a>Основные понятия автомасштабирования
 
@@ -148,7 +148,6 @@ ms.locfileid: "85846946"
 
 Помимо оповещений журнала действий, можно настроить уведомления по электронной почте или через веб-перехватчики, чтобы узнавать об успешных действиях масштабирования посредством вкладки уведомлений в настройках автомасштабирования.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 - [Создайте оповещение журнала действий, чтобы отслеживать все операции модуля автомасштабирования в подписке.](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-alert)
 - [Создайте оповещение журнала действий, чтобы отслеживать все ошибки автомасштабирования в своей подписке](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-failed-alert).
-

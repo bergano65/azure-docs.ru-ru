@@ -3,11 +3,12 @@ title: Восстановление файлов Azure с помощью PowerSh
 description: Из этой статьи вы узнаете, как восстановить файлы Azure с помощью службы Azure Backup и PowerShell.
 ms.topic: conceptual
 ms.date: 1/27/2020
-ms.openlocfilehash: 63c318b66ec8f876a260b3c5b8db38bb088fb862
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 23de6e1e352a1b72d1435fc65d6a59ab37d838b0
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83201954"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86538553"
 ---
 # <a name="restore-azure-files-with-powershell"></a>Восстановление файлов Azure с помощью PowerShell
 
@@ -23,7 +24,7 @@ ms.locfileid: "83201954"
 
 ## <a name="fetch-recovery-points"></a>Получение точек восстановления
 
-Используйте [Get-азрековерисервицесбаккупрековерипоинт](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackuprecoverypoint?view=azps-1.4.0) , чтобы получить список всех точек восстановления для архивированного элемента.
+Используйте [Get-азрековерисервицесбаккупрековерипоинт](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackuprecoverypoint) , чтобы получить список всех точек восстановления для архивированного элемента.
 
 В следующем скрипте:
 
@@ -62,7 +63,7 @@ BackupManagementType : AzureStorage
 
 ## <a name="restore-an-azure-file-share-to-an-alternate-location"></a>Восстановление файлового ресурса Azure в альтернативное расположение
 
-Используйте [RESTORE-азрековерисервицесбаккупитем](https://docs.microsoft.com/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem?view=azps-1.4.0) для восстановления в выбранную точку восстановления. Укажите эти параметры, чтобы определить альтернативное расположение:
+Используйте [RESTORE-азрековерисервицесбаккупитем](/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem) для восстановления в выбранную точку восстановления. Укажите эти параметры, чтобы определить альтернативное расположение:
 
 * **Таржетсторажеаккаунтнаме**: учетная запись хранения, в которую восстанавливается резервное содержимое. Целевая учетная запись хранения должна быть в том же расположении, что и хранилище.
 * **Таржетфилешаренаме**. файловые ресурсы в целевой учетной записи хранения, в которую восстанавливается резервное содержимое.
@@ -85,7 +86,7 @@ testAzureFS        Restore              InProgress           12/10/2018 9:56:38 
 
 ## <a name="restore-an-azure-file-to-an-alternate-location"></a>Восстановление файла Azure в альтернативное расположение
 
-Используйте [RESTORE-азрековерисервицесбаккупитем](https://docs.microsoft.com/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem?view=azps-1.4.0) для восстановления в выбранную точку восстановления. Укажите эти параметры, чтобы определить альтернативное расположение, и, чтобы однозначно определить файл, который требуется восстановить.
+Используйте [RESTORE-азрековерисервицесбаккупитем](/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem) для восстановления в выбранную точку восстановления. Укажите эти параметры, чтобы определить альтернативное расположение, и, чтобы однозначно определить файл, который требуется восстановить.
 
 * **Таржетсторажеаккаунтнаме**: учетная запись хранения, в которую восстанавливается резервное содержимое. Целевая учетная запись хранения должна быть в том же расположении, что и хранилище.
 * **Таржетфилешаренаме**. файловые ресурсы в целевой учетной записи хранения, в которую восстанавливается резервное содержимое.
@@ -120,7 +121,7 @@ Restore-AzRecoveryServicesBackupItem -RecoveryPoint $rp[0] -SourceFileType File 
 
 ## <a name="restore-multiple-files-or-folders-to-original-or-alternate-location"></a>Восстановление нескольких файлов или папок в исходном или альтернативном расположении
 
-Используйте команду [RESTORE-азрековерисервицесбаккупитем](https://docs.microsoft.com/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem?view=azps-1.4.0) , передав путь ко всем файлам или папкам, которые требуется восстановить, в качестве значения параметра **мултиплесаурцефилепас** .
+Используйте команду [RESTORE-азрековерисервицесбаккупитем](/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem) , передав путь ко всем файлам или папкам, которые требуется восстановить, в качестве значения параметра **мултиплесаурцефилепас** .
 
 ### <a name="restore-multiple-files"></a>Восстановление нескольких файлов
 
@@ -168,6 +169,6 @@ azurefiles           Restore           InProgress      4/5/2020 8:01:24 AM      
 
 Если вы хотите восстановить несколько файлов или папок в альтернативное расположение, используйте приведенные выше сценарии, указав значения параметров, связанные с целевым расположением, как описано выше в примере [восстановления файла Azure в альтернативное расположение](#restore-an-azure-file-to-an-alternate-location).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о](restore-afs.md) восстановлении файлов Azure в портал Azure.
