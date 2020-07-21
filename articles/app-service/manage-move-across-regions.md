@@ -4,14 +4,14 @@ description: Узнайте, как перемещать ресурсы служ
 ms.topic: how-to
 ms.date: 02/27/2020
 ms.custom: subject-moving-resources
-ms.openlocfilehash: c19c18e8d9980b75acd9790dba712fbb6b2a4b1d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 87a2da31802a8b6858e875c23ef1dbd2d6d006bc
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84945483"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86524860"
 ---
-# <a name="move-an-app-service-app-to-another-region"></a>Перемещение приложения службы приложений в другой регион
+# <a name="move-an-app-service-resource-to-another-region"></a>Перемещение ресурса службы приложений в другой регион
 
 В этой статье описывается, как переместить ресурсы службы приложений в другой регион Azure. Вы можете переместить ресурсы в другой регион по ряду причин. Например, чтобы использовать преимущества нового региона Azure для развертывания компонентов или служб, доступных только в конкретных регионах, в соответствии с требованиями к внутренней политике и управлению, а также в ответ на требования к планированию загрузки.
 
@@ -19,15 +19,15 @@ ms.locfileid: "84945483"
 
 Чтобы упростить копирование приложения, можно [клонировать отдельное приложение службы приложений](app-service-web-app-cloning.md) в план службы приложений в другом регионе, но у него есть [ограничения](app-service-web-app-cloning.md#current-restrictions), особенно те, которые не поддерживают приложения Linux.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Убедитесь, что приложение службы приложений находится в регионе Azure, из которого вы хотите переместить.
 - Убедитесь, что целевой регион поддерживает службу приложений и любую связанную службу, ресурсы которой требуется переместить.
 <!-- - Domain bindings, certificates, and managed identities can't replicated using the **Export template** method. You must create them manually. -->
 
-## <a name="prepare"></a>Подготовка.
+## <a name="prepare"></a>Подготовка
 
-Найдите все ресурсы службы приложений, которые вы используете в данный момент. Пример:
+Найдите все ресурсы службы приложений, которые вы используете в данный момент. Вот несколько примеров:
 
 - Приложения службы приложений
 - [Планы службы приложений](overview-hosting-plans.md)
@@ -106,6 +106,6 @@ ms.locfileid: "84945483"
 
 Удаление исходного приложения и плана службы приложений. [На план службы приложений на небесплатный уровень взимается плата, даже если в нем не выполняется ни одно приложение.](app-service-plan-manage.md#delete-an-app-service-plan)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Клонирование приложений службы приложений Azure с помощью PowerShell](app-service-web-app-cloning.md)

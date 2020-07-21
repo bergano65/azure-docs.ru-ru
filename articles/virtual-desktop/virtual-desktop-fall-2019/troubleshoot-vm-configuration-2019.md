@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок узла сеансов виртуальных рабочих столов Windows в Azure
+title: Устранение неполадок узла сеансов виртуальных рабочих столов Windows — 2019 — Azure
 description: Устранение проблем при настройке виртуальных машин узла сеансов виртуальных рабочих столов Windows.
 services: virtual-desktop
 author: Heidilohr
@@ -8,14 +8,14 @@ ms.topic: troubleshooting
 ms.date: 05/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 0dd03508a745a231f10cfc6d09953067618043e9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b2f4a288ab83ca9f20434c55a180c2d9b30be5d4
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85362515"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527665"
 ---
-# <a name="session-host-virtual-machine-configuration"></a>Конфигурация виртуальной машины узла сеанса
+# <a name="troubleshoot-session-host-virtual-machine-configuration"></a>Устранение неполадок конфигурации виртуальной машины узла сеансов
 
 >[!IMPORTANT]
 >Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../troubleshoot-vm-configuration.md).

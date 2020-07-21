@@ -9,11 +9,12 @@ ms.subservice: availability
 ms.date: 02/28/2020
 ms.reviewer: jushiman
 ms.custom: avverma
-ms.openlocfilehash: 9e2b15eceff9bca4cee960fa462eb5148e3716dd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 45c316c1d1dd56f6d920423a725b2488df1a5032
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83197038"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527427"
 ---
 # <a name="automatic-instance-repairs-for-azure-virtual-machine-scale-sets"></a>Автоматическое исправление экземпляра для масштабируемых наборов виртуальных машин Azure
 
@@ -140,7 +141,7 @@ New-AzVmssConfig `
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
 
-В следующем примере включается политика автоматического восстановления при создании нового масштабируемого набора с помощью команды *[AZ vmss Create](https://docs.microsoft.com/cli/azure/vmss?view=azure-cli-latest#az-vmss-create)*. Сначала создайте группу ресурсов, а затем создайте масштабируемый набор с периодом отсрочки политики автоматического восстановления, равным 30 минутам.
+В следующем примере включается политика автоматического восстановления при создании нового масштабируемого набора с помощью команды *[AZ vmss Create](/cli/azure/vmss?view=azure-cli-latest#az-vmss-create)*. Сначала создайте группу ресурсов, а затем создайте масштабируемый набор с периодом отсрочки политики автоматического восстановления, равным 30 минутам.
 
 ```azurecli-interactive
 az group create --name <myResourceGroup> --location <VMSSLocation>
@@ -208,7 +209,7 @@ Update-AzVmss `
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
 
-Ниже приведен пример обновления политики автоматического восстановления экземпляра существующего масштабируемого набора с помощью команды *[AZ vmss Update](https://docs.microsoft.com/cli/azure/vmss?view=azure-cli-latest#az-vmss-update)*.
+Ниже приведен пример обновления политики автоматического восстановления экземпляра существующего масштабируемого набора с помощью команды *[AZ vmss Update](/cli/azure/vmss?view=azure-cli-latest#az-vmss-update)*.
 
 ```azurecli-interactive
 az vmss update \  
@@ -222,7 +223,7 @@ az vmss update \
 
 ### <a name="rest-api"></a>REST API 
 
-Используйте функцию [получения представления экземпляров](https://docs.microsoft.com/rest/api/compute/virtualmachinescalesets/getinstanceview) с API версии 2019-12-01 или выше для масштабируемого набора виртуальных машин, чтобы просмотреть *serviceState* для автоматического восстановления в свойстве *орчестратионсервицес*. 
+Используйте функцию [получения представления экземпляров](/rest/api/compute/virtualmachinescalesets/getinstanceview) с API версии 2019-12-01 или выше для масштабируемого набора виртуальных машин, чтобы просмотреть *serviceState* для автоматического восстановления в свойстве *орчестратионсервицес*. 
 
 ```http
 GET '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}/instanceView?api-version=2019-12-01'
@@ -258,7 +259,7 @@ GET '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/provider
 
 ### <a name="azure-cli"></a>Azure CLI 
 
-Чтобы просмотреть *serviceState* для автоматического восстановления экземпляра, используйте командлет [Get-instance-View](https://docs.microsoft.com/cli/azure/vmss?view=azure-cli-latest#az-vmss-get-instance-view) . 
+Чтобы просмотреть *serviceState* для автоматического восстановления экземпляра, используйте командлет [Get-instance-View](/cli/azure/vmss?view=azure-cli-latest#az-vmss-get-instance-view) . 
 
 ```azurecli-interactive
 az vmss get-instance-view \
@@ -266,7 +267,7 @@ az vmss get-instance-view \
     --resource-group MyResourceGroup
 ```
 
-Используйте командлет [Set-оркестрации-Service-State](https://docs.microsoft.com/cli/azure/vmss?view=azure-cli-latest#az-vmss-set-orchestration-service-state) , чтобы обновить *serviceState* для автоматического восстановления экземпляров. После того как масштабируемый набор будет включен в функцию автоматического восстановления, этот командлет можно использовать для приостановки или возобновления автоматического восстановления для масштабируемого набора. 
+Используйте командлет [Set-оркестрации-Service-State](/cli/azure/vmss?view=azure-cli-latest#az-vmss-set-orchestration-service-state) , чтобы обновить *serviceState* для автоматического восстановления экземпляров. После того как масштабируемый набор будет включен в функцию автоматического восстановления, этот командлет можно использовать для приостановки или возобновления автоматического восстановления для масштабируемого набора. 
 
 ```azurecli-interactive
 az vmss set-orchestration-service-state \
@@ -277,7 +278,7 @@ az vmss set-orchestration-service-state \
 ```
 ### <a name="azure-powershell"></a>Azure PowerShell
 
-Используйте командлет [Get-азвмсс](https://docs.microsoft.com/powershell/module/az.compute/get-azvmss?view=azps-3.7.0) с параметром *InstanceView* , чтобы просмотреть *ServiceState* для автоматического восстановления экземпляра.
+Используйте командлет [Get-азвмсс](/powershell/module/az.compute/get-azvmss?view=azps-3.7.0) с параметром *InstanceView* , чтобы просмотреть *ServiceState* для автоматического восстановления экземпляра.
 
 ```azurepowershell-interactive
 Get-AzVmss `
@@ -312,6 +313,6 @@ Set-AzVmssOrchestrationServiceState `
 
 В портал Azure также можно просмотреть состояние работоспособности. Перейдите к существующему масштабируемому набору, выберите **экземпляры** в меню слева и просмотрите столбец **состояние работоспособности** для состояния работоспособности каждого экземпляра масштабируемого набора. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как настроить [расширение работоспособности приложения](./virtual-machine-scale-sets-health-extension.md) или [пробы работоспособности подсистемы балансировки нагрузки](../load-balancer/load-balancer-custom-probe-overview.md) для масштабируемых наборов.

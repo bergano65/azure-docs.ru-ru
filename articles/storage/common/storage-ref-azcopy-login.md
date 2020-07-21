@@ -8,11 +8,12 @@ ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 8d2adca661882ea11d04ebe55afe25f7f9c2ef4e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 754baa66d79d169f830332f3c39660f1d71f608a
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84219966"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527920"
 ---
 # <a name="azcopy-login"></a>azcopy login
 
@@ -37,9 +38,9 @@ azcopy login [flags]
 
 ## <a name="related-conceptual-articles"></a>Связанные концептуальные статьи
 
-- [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
+- [Начало работы с AzCopy](storage-use-azcopy-v10.md)
 - [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](storage-use-azcopy-blobs.md)
-- [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
+- [Перенос данных с помощью AzCopy и хранилища файлов](storage-use-azcopy-files.md)
 - [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)
 
 ## <a name="examples"></a>Примеры
@@ -83,7 +84,7 @@ azcopy login --identity --identity-resource-id "/subscriptions/<subscriptionId>/
 Войдите в систему как субъект-службу, используя секрет клиента. Задайте для переменной среды AZCOPY_SPA_CLIENT_SECRET секрет клиента для проверки подлинности субъекта-службы на основе секрета.
 
 ```azcopy
-azcopy login --service-principal
+azcopy login --service-principal --application-id "YOUR_APP_ID" --tenant-id "YOUR_TENANT_ID"
 ```
 
 Войдите в систему как субъект-службу, используя сертификат и пароль. Задайте для переменной среды AZCOPY_SPA_CERT_PASSWORD пароль сертификата для авторизации субъекта-службы на основе сертификата.
@@ -98,7 +99,7 @@ azcopy login --service-principal --certificate-path /path/to/my/cert
 
 ## <a name="options"></a>Параметры
 
-|Параметр|Описание:|
+|Параметр|Описание|
 |--|--|
 |--AAD-Endpoint|Используемая конечная точка Azure Active Directory. Значение по умолчанию ( `https://login.microsoftonline.com` ) верно для общедоступного облака Azure. Задайте этот параметр при проверке подлинности в национальном облаке. См. раздел [конечные точки проверки подлинности Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud#azure-ad-authentication-endpoints).
 Этот флаг не требуется для Управляемое удостоверение службы.|
@@ -114,12 +115,12 @@ azcopy login --service-principal --certificate-path /path/to/my/cert
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Параметр|Описание:|
+|Параметр|Описание|
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
 |--Trusted-Microsoft-суффикс строка   |Указывает дополнительные суффиксы домена, в которых могут быть отправлены Azure Active Directory токены входа.  Значение по умолчанию — "*. Core.Windows.NET;*". core.chinacloudapi.cn; *. Core.cloudapi.de;*. core.usgovcloudapi.net ". Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [azcopy](storage-ref-azcopy.md)

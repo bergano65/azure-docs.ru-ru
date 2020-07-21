@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: genli
-ms.openlocfilehash: 154160f9a3fbd485ee6383bf3d5ff1c291520a75
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 276be92ea4c03b9ebeb3e13df69ce1b10328dcaf
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "71088521"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86526475"
 ---
 # <a name="remote-desktop-license-server-isnt-available-when-you-connect-to-an-azure-vm"></a>Сервер лицензирования удаленных рабочих столов недоступен при подключении к виртуальной машине Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "71088521"
 mstsc /v:<Server>[:<Port>] /admin
 ```
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Эта проблема возникает, когда сервер лицензирования удаленных рабочих столов недоступен и не может предоставить лицензию для начала удаленного сеанса. Эта проблема может возникнуть в связи с несколькими сценариями, даже если роль узла сеансов удаленных рабочих столов настроена на виртуальной машине.
 
@@ -122,7 +122,7 @@ mstsc /v:<Server>[:<Port>] /admin
        telnet <FQDN / IP License Server> 135
        ```
 
-3. Если в среде нет сервера лицензирования удаленных рабочих столов, но вам он нужен, [установите службу роли лицензирования удаленного рабочего стола](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731765(v=ws.11)). Затем [настройте лицензирование RDS](https://techcommunity.microsoft.com/t5/Ask-The-Performance-Team/RD-Licensing-Configuration-on-Windows-Server-2012/ba-p/375383).
+3. Если в среде нет сервера лицензирования удаленных рабочих столов, но вам он нужен, [установите службу роли лицензирования удаленного рабочего стола](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731765(v=ws.11)). Затем [настройте лицензирование RDS](https://techcommunity.microsoft.com/t5/Ask-The-Performance-Team/RD-Licensing-Configuration-on-Windows-Server-2012/ba-p/375383).
 
 4. Если сервер лицензирования удаленных рабочих столов работает правильно, убедитесь, что сервер лицензирования удаленных рабочих столов активирован с помощью лицензий клиентского доступа.
 

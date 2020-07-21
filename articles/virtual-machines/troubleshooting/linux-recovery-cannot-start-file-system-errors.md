@@ -14,11 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.date: 10/09/2019
 ms.author: v-six
-ms.openlocfilehash: 455cb1e0067217be6edcf665e8c07e8fcd684ab5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e26d4070bc9fabeb3467e7bdc805faad4e6646c3
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76842407"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86526509"
 ---
 # <a name="troubleshoot-linux-vm-starting-issues-due-to-file-system-errors"></a>Устранение неполадок, возникающих при запуске виртуальной машины Linux из-за ошибок файловой системы
 
@@ -74,7 +75,7 @@ Checking all file systems.
 
 ## <a name="resolution"></a>Решение
 
-Чтобы устранить эту проблему, загрузите виртуальную машину в аварийный режим с помощью [последовательной консоли](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-linux) и используйте это средство для восстановления файловой системы. Если последовательная консоль не включена на виртуальной машине или не работает, см. раздел [Восстановление виртуальной машины в автономном режиме](#repair-the-vm-offline) этой статьи.
+Чтобы устранить эту проблему, загрузите виртуальную машину в аварийный режим с помощью [последовательной консоли](./serial-console-linux.md) и используйте это средство для восстановления файловой системы. Если последовательная консоль не включена на виртуальной машине или не работает, см. раздел [Восстановление виртуальной машины в автономном режиме](#repair-the-vm-offline) этой статьи.
 
 ## <a name="use-the-serial-console"></a>Использование последовательной консоли
 
@@ -82,8 +83,8 @@ Checking all file systems.
 
    > [!Note]
    > Дополнительные сведения об использовании последовательной консоли для Linux см. в следующих статьях:
-   > * [Использование последовательной консоли для доступа к GRUB и однопользовательским режимам](https://docs.microsoft.com/azure/virtual-machines/linux/serial-console-grub-single-user-mode)
-   > * [Использование последовательной консоли для вызовов Сисрк и NMI](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-nmi-sysrq)
+   > * [Использование последовательной консоли для доступа к GRUB и однопользовательским режимам](../linux/serial-console-grub-single-user-mode.md)
+   > * [Использование последовательной консоли для вызовов Сисрк и NMI](./serial-console-nmi-sysrq.md)
 
 2. Нажмите кнопку с индикатором питания, а затем выберите перезапустить виртуальную машину. (Если последовательная консоль не включена или не подключена успешно, кнопка не отображается.)
 
@@ -133,7 +134,7 @@ Checking all file systems.
 
 ## <a name="repair-the-vm-offline"></a>Автономное восстановление виртуальной машины
 
-1. Подключите системный диск виртуальной машины к ВИРТУАЛЬНОЙ машине восстановления (любой рабочей виртуальной машине Linux) в качестве диска данных. Для этого можно использовать [команды интерфейса командной строки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-recovery-disks-linux) или автоматизировать настройку виртуальной машины восстановления с помощью [команд восстановления виртуальной машины](repair-linux-vm-using-azure-virtual-machine-repair-commands.md).
+1. Подключите системный диск виртуальной машины к ВИРТУАЛЬНОЙ машине восстановления (любой рабочей виртуальной машине Linux) в качестве диска данных. Для этого можно использовать [команды интерфейса командной строки](./troubleshoot-recovery-disks-linux.md) или автоматизировать настройку виртуальной машины восстановления с помощью [команд восстановления виртуальной машины](repair-linux-vm-using-azure-virtual-machine-repair-commands.md).
 
 2. Выделите метку диска подключенного системного диска. В этом случае предполагается, что метка системного диска, к которой вы присоединяетесь, —/dev/sdc1. Замените его соответствующим значением для виртуальной машины.
 
@@ -175,8 +176,7 @@ Checking all file systems.
 
 8. Проверьте, устранена ли проблема.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Устранение неполадок виртуальной машины Linux путем подключения диска ОС к виртуальной машине восстановления с помощью Azure CLI 2.0](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-troubleshoot-recovery-disks)
-* [Подключение диска данных к виртуальной машине Linux с помощью портала](https://docs.microsoft.com/azure/virtual-machines/linux/attach-disk-portal)
-
+* [Устранение неполадок виртуальной машины Linux путем подключения диска ОС к виртуальной машине восстановления с помощью Azure CLI 2.0](./troubleshoot-recovery-disks-linux.md)
+* [Подключение диска данных к виртуальной машине Linux с помощью портала](../linux/attach-disk-portal.md)

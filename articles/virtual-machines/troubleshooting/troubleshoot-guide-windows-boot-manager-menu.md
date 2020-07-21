@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 03/26/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 5d2fb62870e2c41af635627f5d692f08c67f8394
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2457952051f575306de46e3e8145cc26678a1ef8
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80373353"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86526546"
 ---
 # <a name="windows-vm-cannot-boot-due-to-windows-boot-manager"></a>Не удается загрузить виртуальную машину Windows из-за диспетчера загрузки Windows
 
@@ -29,13 +29,13 @@ ms.locfileid: "80373353"
 
 Виртуальная машина зависает при ожидании запроса пользователя и не загружается, если не указать вручную.
 
-При использовании [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана отображается диспетчер загрузки Windows с сообщением *выберите операционную систему для запуска или нажмите клавишу TAB, чтобы выбрать инструмент:*.
+При использовании [диагностики загрузки](./boot-diagnostics.md) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана отображается диспетчер загрузки Windows с сообщением *выберите операционную систему для запуска или нажмите клавишу TAB, чтобы выбрать инструмент:*.
 
 На рисунке 1
  
 ![Диспетчер загрузки Windows, указывающий «выберите операционную систему для запуска» или нажмите клавишу TAB, чтобы выбрать средство:](media/troubleshoot-guide-windows-boot-manager-menu/1.jpg)
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Ошибка возникает из-за флага BCD *дисплайбутмену* в диспетчере загрузки Windows. Если флаг включен, диспетчер загрузки Windows запрашивает пользователя во время загрузки, чтобы выбрать загрузчик, который требуется запустить, что приведет к задержке загрузки. В Azure эта функция может добавлять время, необходимое для загрузки виртуальной машины.
 
@@ -53,7 +53,7 @@ ms.locfileid: "80373353"
 
 Если у вас есть доступ к последовательной консоли, существует два способа достижения более быстрого времени загрузки. Сократите время ожидания *дисплайбутмену* или полностью удалите флаг.
 
-1. Следуйте указаниям по доступу к [последовательной консоли Azure для Windows](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-windows) , чтобы получить доступ к текстовой консоли.
+1. Следуйте указаниям по доступу к [последовательной консоли Azure для Windows](./serial-console-windows.md) , чтобы получить доступ к текстовой консоли.
 
    > [!NOTE]
    > Если вы не можете получить доступ к последовательной консоли, перейдите к [созданию виртуальной машины восстановления и доступа к ней](#create-and-access-a-repair-vm).
@@ -77,7 +77,7 @@ ms.locfileid: "80373353"
 
 ### <a name="create-and-access-a-repair-vm"></a>Создание виртуальной машины для восстановления и получение доступа к ней
 
-1. Выполните [шаги 1–3 списка команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands), чтобы подготовить виртуальную машину для восстановления.
+1. Выполните [шаги 1–3 списка команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md), чтобы подготовить виртуальную машину для восстановления.
 2. Используйте подключение к удаленному рабочему столу подключиться к виртуальной машине восстановления.
 
 ### <a name="configure-for-faster-boot-time-on-a-repair-vm"></a>Настройка для ускорения времени загрузки на виртуальной машине восстановления
@@ -154,4 +154,4 @@ ms.locfileid: "80373353"
 
 ### <a name="rebuild-the-original-vm"></a>Перестроение исходной виртуальной машины
 
-Чтобы заново собрать виртуальную машину, выполните [шаг 5 из списка команд для восстановления ВМ](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands#repair-process-example).
+Чтобы заново собрать виртуальную машину, выполните [шаг 5 из списка команд для восстановления ВМ](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md#repair-process-example).

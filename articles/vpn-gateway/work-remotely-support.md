@@ -2,16 +2,17 @@
 title: 'Удаленная работа с P2S: VPN-шлюз Azure'
 description: На этой странице описывается, как можно использовать VPN-шлюз для удаленной работы из-за гриппа КОВИД-19.
 services: vpn-gateway
-author: anzaman
+author: kumudD
 ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 04/07/2020
 ms.author: alzam
-ms.openlocfilehash: 2d07a13c654f30e48c37d2e8d3e801166e26f4f4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 302706b67900bd0dd82aabfa750bba48918b134a
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80886591"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86525370"
 ---
 # <a name="remote-work-using-azure-vpn-gateway-point-to-site"></a>Удаленная работа с использованием VPN-шлюза Azure "точка — сеть"
 
@@ -29,7 +30,7 @@ ms.locfileid: "80886591"
 
 В таблице ниже показаны клиентские операционные системы и доступные для них параметры проверки подлинности. Было бы полезно выбрать метод проверки подлинности на основе уже используемой клиентской ОС. Например, выберите Опенвпн с проверкой подлинности на основе сертификата, если у вас есть сочетание клиентских операционных систем, к которым необходимо подключиться. Кроме того, обратите внимание, что VPN типа "точка — сеть" поддерживается только для VPN-шлюзов на основе маршрутов.
 
-![точка-сеть](./media/working-remotely-support/ostable.png "Операционная система")
+![точка-сеть](./media/working-remotely-support/ostable.png "OS")
 
 ## <a name="scenario-1---users-need-access-to-resources-in-azure-only"></a><a name="scenario1"></a>Сценарий 1. пользователям требуется доступ к ресурсам только в Azure
 
@@ -74,7 +75,7 @@ ms.locfileid: "80886591"
 
 [!INCLUDE [vpn-gateway-point-to-site-faq-include](../../includes/vpn-gateway-faq-p2s-radius-include.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 * [Настройка подключения P2S — проверка подлинности Azure AD](openvpn-azure-ad-tenant.md)
 

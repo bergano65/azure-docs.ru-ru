@@ -8,11 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 13496a18f4c99b69a5b8095caf5b74a04d1bba88
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b0aff8298ac2335e5216252eb2cbd5a393cc37d5
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81869303"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86525002"
 ---
 # <a name="manage-private-cloud-resources-and-activity"></a>Управление ресурсами и действиями частного облака
 
@@ -36,13 +37,13 @@ ms.locfileid: "81869303"
 
 ## <a name="private-cloud-summary"></a>Сводка по частному облаку
 
-Просмотрите подробную сводку по выбранному частному облаку.  Страница сводка включает DNS-серверы, развернутые в частном облаке.  Вы можете настроить переадресацию DNS с локальных DNS-серверов на DNS-серверы частного облака.  Дополнительные сведения о переадресации DNS см. в статье [Настройка DNS для разрешения имен для VCenter частного облака из локальной среды](https://docs.microsoft.com/azure/vmware-cloudsimple/on-premises-dns-setup/).
+Просмотрите подробную сводку по выбранному частному облаку.  Страница сводка включает DNS-серверы, развернутые в частном облаке.  Вы можете настроить переадресацию DNS с локальных DNS-серверов на DNS-серверы частного облака.  Дополнительные сведения о переадресации DNS см. в статье [Настройка DNS для разрешения имен для VCenter частного облака из локальной среды](./on-premises-dns-setup.md).
 
 ![Сводка по частному облаку](media/private-cloud-summary.png)
 
 ### <a name="available-actions"></a>Доступные действия
 
-* [Запуск клиента vSphere](https://docs.microsoft.com/azure/vmware-cloudsimple/vcenter-access). Доступ к vCenter для этого частного облака.
+* [Запуск клиента vSphere](./vcenter-access.md). Доступ к vCenter для этого частного облака.
 * [Покупка узлов](create-nodes.md). Добавление узлов в это частное облако.
 * [Расширение](expand-private-cloud.md). Добавление узлов в это частное облако.
 * **Обновление**. Обновление сведений на этой странице.
@@ -57,10 +58,10 @@ ms.locfileid: "81869303"
 
 ### <a name="available-actions"></a>Доступные действия
 
-* [Добавление виртуальных ЛС и подсетей](https://docs.microsoft.com/azure/vmware-cloudsimple/create-vlan-subnet/). Добавьте виртуальную ЛС или подсеть в это частное облако.
+* [Добавление виртуальных ЛС и подсетей](./create-vlan-subnet.md). Добавьте виртуальную ЛС или подсеть в это частное облако.
 
 Выберите виртуальную ЛС или подсеть для следующих действий
-* [Присоединение таблицы брандмауэра](https://docs.microsoft.com/azure/vmware-cloudsimple/firewall/). Подключите таблицу брандмауэра к этому частному облаку.
+* [Присоединение таблицы брандмауэра](./firewall.md). Подключите таблицу брандмауэра к этому частному облаку.
 * **Edit** (Изменение)
 * **Удалить** (только определяемые пользователем виртуальные ЛС и подсети)
 

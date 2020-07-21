@@ -10,15 +10,16 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
-ms.openlocfilehash: 1cf6c7417aa86d47e59e08786e7807e32c175a25
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 08d32e4b7806ec53f48389b127ab34371271cf07
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81759572"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527240"
 ---
 # <a name="configure-prerequisites"></a>Настройка необходимых компонентов
 
-Прежде чем использовать предложение Marketplace для развертывания самостоятельно управляемого кластера OpenShift контейнеров 3,11 в Azure, необходимо настроить несколько предварительных требований.  Инструкции по созданию ключа SSH (без парольной фразы), хранилища ключей Azure, секрета хранилища ключей и субъекта-службы см. в статье [Предварительные требования OpenShift](https://docs.microsoft.com/azure/virtual-machines/linux/openshift-container-platform-3x-prerequisites) .
+Прежде чем использовать предложение Marketplace для развертывания самостоятельно управляемого кластера OpenShift контейнеров 3,11 в Azure, необходимо настроить несколько предварительных требований.  Инструкции по созданию ключа SSH (без парольной фразы), хранилища ключей Azure, секрета хранилища ключей и субъекта-службы см. в статье [Предварительные требования OpenShift](./openshift-container-platform-3x-prerequisites.md) .
 
  
 ## <a name="deploy-using-the-marketplace-offer"></a>Развертывание с помощью предложения Marketplace
@@ -198,7 +199,7 @@ $ ssh clusteradmin@bastiondns4hawllzaavu6g.eastus.cloudapp.azure.com
 az group delete --name openshiftrg
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Задачи, выполняемые после развертывания](./openshift-container-platform-3x-post-deployment.md)
 - [Устранение неполадок с развертыванием OpenShift в Azure](./openshift-container-platform-3x-troubleshooting.md)

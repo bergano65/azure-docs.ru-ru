@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 12/20/2018
 ms.author: genli
-ms.openlocfilehash: 085647c392bb6cec51fba8b6e42cb8f03707223c
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 1c2050969e95b521554bba100b688add3a987a80
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134592"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86526747"
 ---
 # <a name="windows-activation-fails-in-forced-tunneling-scenario"></a>Активация Windows завершается ошибкой в случае принудительного туннелирования
 
@@ -53,9 +53,9 @@ IP-адрес сервера управления ключами для глоб
  
 
 > [!NOTE] 
-> Активация использует общедоступные IP-адреса и будет зависеть от конфигурации "Стандартный" SKU Load Balancer. Внимательно ознакомьтесь с [исходящими подключениями в Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) , чтобы узнать о требованиях.
+> Активация использует общедоступные IP-адреса и будет зависеть от конфигурации "Стандартный" SKU Load Balancer. Внимательно ознакомьтесь с [исходящими подключениями в Azure](../../load-balancer/load-balancer-outbound-connections.md) , чтобы узнать о требованиях.
 
-1. Откройте Azure PowerShell и [войдите в свою подписку Azure](https://docs.microsoft.com/powershell/azure/authenticate-azureps).
+1. Откройте Azure PowerShell и [войдите в свою подписку Azure](/powershell/azure/authenticate-azureps).
 2. Выполните следующие команды:
 
     ```powershell
@@ -77,7 +77,7 @@ IP-адрес сервера управления ключами для глоб
 
     Set-AzVirtualNetwork -VirtualNetwork $vnet
     ```
-3. Перейдите на виртуальную машину, на которой возникла проблема с активацией. Используйте команду [PsPing](https://docs.microsoft.com/sysinternals/downloads/psping), чтобы проверить возможность доступа к серверу управления ключами.
+3. Перейдите на виртуальную машину, на которой возникла проблема с активацией. Используйте команду [PsPing](/sysinternals/downloads/psping), чтобы проверить возможность доступа к серверу управления ключами.
 
     ```console
     psping kms.core.windows.net:1688
@@ -89,7 +89,7 @@ IP-адрес сервера управления ключами для глоб
 
 [!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
 
-1. Откройте Azure PowerShell и [войдите в свою подписку Azure](https://docs.microsoft.com/powershell/azure/authenticate-azureps).
+1. Откройте Azure PowerShell и [войдите в свою подписку Azure](/powershell/azure/authenticate-azureps).
 2. Выполните следующие команды:
 
     ```powershell
@@ -107,7 +107,7 @@ IP-адрес сервера управления ключами для глоб
     -RouteTableName "VNet-DM-KmsRouteTable"
     ```
 
-3. Перейдите на виртуальную машину, на которой возникла проблема с активацией. Используйте команду [PsPing](https://docs.microsoft.com/sysinternals/downloads/psping), чтобы проверить возможность доступа к серверу управления ключами.
+3. Перейдите на виртуальную машину, на которой возникла проблема с активацией. Используйте команду [PsPing](/sysinternals/downloads/psping), чтобы проверить возможность доступа к серверу управления ключами.
 
     ```console
     psping kms.core.windows.net:1688
@@ -117,7 +117,5 @@ IP-адрес сервера управления ключами для глоб
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Ключи установки клиента KMS](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys
-)
-- [Просмотр и выбор методов активации](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134256(v=ws.11)
-)
+- [Ключи установки клиента KMS](/windows-server/get-started/kmsclientkeys)
+- [Просмотр и выбор методов активации](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134256(v=ws.11))

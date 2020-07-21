@@ -9,11 +9,12 @@ ms.subservice: spot
 ms.date: 03/25/2020
 ms.reviewer: jagaveer
 ms.custom: jagaveer
-ms.openlocfilehash: 756e0d62927b67d26ae75af90c64facfe9c92d31
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 70d7eb000ed2d50bc22bb005621ee7515e5a2a61
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84310569"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527461"
 ---
 # <a name="azure-spot-vms-for-virtual-machine-scale-sets"></a>Виртуальные машины с Точкию Azure для масштабируемых наборов виртуальных машин 
 
@@ -100,7 +101,7 @@ $vmssConfig = New-AzVmssConfig `
 
 Чтобы удалить экземпляр после его исключения, измените значение `evictionPolicy` параметра на `Delete` .
 
-## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
+## <a name="faq"></a>часто задаваемые вопросы
 
 **Вопрос.** После создания экземпляр будет таким же, как и стандартный экземпляр?
 
@@ -114,12 +115,12 @@ $vmssConfig = New-AzVmssConfig `
 
 **Вопрос.** Как осуществляется управление квотами для точки?
 
-Ответ **.** Экземпляры смесевых и стандартные экземпляры будут иметь отдельные пулы квот. Эти квоты совместно используются всеми точечными виртуальными машинами и экземплярами масштабируемых наборов. Дополнительные сведения см. в статье [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits).
+Ответ **.** Экземпляры смесевых и стандартные экземпляры будут иметь отдельные пулы квот. Эти квоты совместно используются всеми точечными виртуальными машинами и экземплярами масштабируемых наборов. Дополнительные сведения см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md).
 
 
 **Вопрос.** Могу ли я запросить увеличение квоты на точечные экземпляры?
 
-**Ответ.** Да, вы можете отправить запрос на увеличение квоты для точечных виртуальных машин, используя [стандартный процесс запроса квот](https://docs.microsoft.com/azure/azure-portal/supportability/per-vm-quota-requests).
+**Ответ.** Да, вы можете отправить запрос на увеличение квоты для точечных виртуальных машин, используя [стандартный процесс запроса квот](../azure-portal/supportability/per-vm-quota-requests.md).
 
 
 **Вопрос.** Можно ли преобразовать существующие масштабируемые наборы в наборы смесевых красок?
@@ -157,7 +158,7 @@ $vmssConfig = New-AzVmssConfig `
 |------------------------------|-----------------------------------|
 | Соглашение Enterprise         | Да                               |
 | Оплата по мере использования                | Да                               |
-| Поставщик облачных служб (CSP) | [Обратитесь к партнеру](https://docs.microsoft.com/partner-center/azure-plan-get-started) |
+| Поставщик облачных служб (CSP) | [Обратитесь к партнеру](/partner-center/azure-plan-get-started) |
 | Преимущества                     | Недоступно                     |
 | Спонсорские                    | Да                               |
 | "Бесплатная пробная версия"                   | Недоступно                     |
@@ -165,8 +166,8 @@ $vmssConfig = New-AzVmssConfig `
 
 **Вопрос.** Где можно задать вопрос?
 
-**Ответ.** Разместите вопрос с тегом `azure-spot` в разделе [вопросов и ответов](https://docs.microsoft.com/answers/topics/azure-spot.html). 
+**Ответ.** Разместите вопрос с тегом `azure-spot` в разделе [вопросов и ответов](/answers/topics/azure-spot.html). 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь со сведениями о ценах на [странице для определения тарифа масштабируемых наборов виртуальных машин](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/).

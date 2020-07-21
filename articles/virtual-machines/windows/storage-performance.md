@@ -8,11 +8,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 04/17/2019
 ms.author: joelpell
-ms.openlocfilehash: 3a093303efe63a051e8e2ff9824a35228e44e1aa
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 666f84da8f0999268b09dfd06ff5b3fe21bbef96
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83652597"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86525574"
 ---
 # <a name="optimize-performance-on-the-lsv2-series-virtual-machines"></a>Оптимизация производительности виртуальных машин серии Lsv2
 
@@ -95,4 +96,4 @@ ms.locfileid: "83652597"
    
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* См. спецификации для всех [виртуальных машин, оптимизированных для производительности хранилища](sizes-storage.md), в Azure.
+* См. спецификации для всех [виртуальных машин, оптимизированных для производительности хранилища](../sizes-storage.md), в Azure.

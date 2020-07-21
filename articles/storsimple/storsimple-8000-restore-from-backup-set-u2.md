@@ -4,29 +4,24 @@ description: Описание способов использования кат
 services: storsimple
 documentationcenter: NA
 author: alkohli
-manager: timlt
-editor: ''
 ms.assetid: ''
 ms.service: storsimple
 ms.devlang: NA
 ms.topic: how-to
-ms.tgt_pltfrm: NA
-ms.workload: TBD
-ms.date: 05/23/2017
+ms.date: 07/15/2020
 ms.author: alkohli
-ms.openlocfilehash: 0f0be9609dfd00e8e5dc9919b20fc42ec91ce9eb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8783d5ce5596cdb4678c09b79c09797ef62cc9c9
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85514555"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527835"
 ---
 # <a name="restore-a-storsimple-volume-from-a-backup-set"></a>Восстановление тома StorSimple из резервного набора данных
 
 ## <a name="overview"></a>Обзор
 
 В данном руководстве описана операция восстановления данных, которая выполняется на устройствах StorSimple серии 8000 с помощью имеющегося резервного набора данных. Используйте колонку **Каталог резервного копирования** для восстановления тома из локальной или облачной резервной копии. Колонка **Каталог резервного копирования** содержит все наборы резервных данных, созданные во время ручного или автоматического резервного копирования. Операция восстановления оперативно переводит том в рабочий режим, пока данные загружаются в фоновом режиме.
-
-Альтернативный способ начать процесс восстановления — перейти к **Устройства > [Ваше устройство] > Тома**. В колонке **Тома** выберите том, щелкните его правой кнопкой мыши для вызова контекстного меню, а затем выберите **Восстановить**.
 
 ## <a name="before-you-restore"></a>Перед началом восстановления
 
@@ -139,7 +134,7 @@ ms.locfileid: "85514555"
 
 Чтобы завершить операцию восстановления, переведите том в автономный режим на узле и повторите операцию восстановления. Обратите внимание, что любые изменения, внесенные в данные тома во время процесса восстановления, будут потеряны.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте об [управлении томами StorSimple](storsimple-8000-manage-volumes-u2.md).
 * Узнайте, как [использовать службу диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

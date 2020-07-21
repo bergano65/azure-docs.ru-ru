@@ -6,11 +6,12 @@ ms.service: virtual-machines
 ms.topic: article
 ms.date: 05/31/2017
 ms.author: cynthn
-ms.openlocfilehash: f2dc43e1f07d449bf2f8ed39ce4523c99b551dae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6481bfe265786ca8b79f96bbcac7fe4d58076911
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77115613"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86525829"
 ---
 # <a name="what-if-an-azure-service-disruption-impacts-azure-vms"></a>Что делать, если прерывание работы службы Azure влияет на виртуальные машины Azure
 Корпорация Майкрософт прилагает все усилия для того, чтобы наши службы всегда были доступны. Иногда по независящим от нас обстоятельствам происходят незапланированные нарушения работы служб.
@@ -34,17 +35,17 @@ ms.locfileid: "77115613"
 
 
 > [!NOTE]
-> Учтите, что этот процесс нельзя контролировать и он выполняется только при нарушении работы службы на уровне региона. Поэтому для обеспечения самого высокого уровня доступности необходимо также использовать и другие стратегии архивации приложения. Дополнительные сведения см. в разделе [стратегии данных для аварийного восстановления](https://docs.microsoft.com/azure/architecture/reliability/disaster-recovery#disaster-recovery-plan).
+> Учтите, что этот процесс нельзя контролировать и он выполняется только при нарушении работы службы на уровне региона. Поэтому для обеспечения самого высокого уровня доступности необходимо также использовать и другие стратегии архивации приложения. Дополнительные сведения см. в разделе [стратегии данных для аварийного восстановления](/azure/architecture/reliability/disaster-recovery#disaster-recovery-plan).
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Начните [защищать приложения, работающие на виртуальных машинах Azure](https://aka.ms/a2a-getting-started), с помощью Azure Site Recovery
 
 - Чтобы больше узнать о том, как реализовать стратегию обеспечения аварийного восстановления и высокого уровня доступности, ознакомьтесь с разделом [Аварийное восстановление и высокий уровень доступности для приложений на платформе Azure](../resiliency/resiliency-disaster-recovery-high-availability-azure-applications.md).
 
-- Возможности облачной платформы подробно описаны в [техническом руководстве по обеспечению непрерывности бизнес-процессов Azure](/azure/data-lake-store/data-lake-store-disaster-recovery-guidance).
+- Возможности облачной платформы подробно описаны в [техническом руководстве по обеспечению непрерывности бизнес-процессов Azure](../data-lake-store/data-lake-store-disaster-recovery-guidance.md).
 
 
 - Если инструкции не ясны или вы хотите, чтобы корпорация Майкрософт выполнила эти действия от вашего имени, свяжитесь со [службой поддержки клиентов](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade).

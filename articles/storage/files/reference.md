@@ -1,30 +1,30 @@
 ---
-title: Справочная документация по общим папкам Azure
+title: Справочник по службе файлов Azure
 description: Найдите Справочник по API службы хранилища Azure, файлы readme и пакеты клиентских библиотек.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 06/02/2020
+ms.date: 07/14/2020
 ms.service: storage
 ms.topic: conceptual
 ms.reviewer: ripohane
-ms.openlocfilehash: ffe3777882cd857ffb776bbadb41da0fb88d994e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c5799b7ec9f6ecce1b9203345446b2d3240beb80
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84976529"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527852"
 ---
-# <a name="azure-file-shares-storage-reference"></a>Справочная документация по общим папкам Azure
+# <a name="azure-files-reference"></a>Справочник по службе файлов Azure
 
-Найдите Справочник по API хранилища файловых ресурсов Azure, пакеты библиотек, файлы readme и статьи по началу работы.
+Найдите Справочник по API службы файлов Azure, пакеты библиотек, файлы readme и статьи по началу работы.
 
 ## <a name="net-client-libraries"></a>Клиентские библиотеки .NET
 
-В следующей таблице перечислены справочные материалы и примеры документации по API-интерфейсам .NET файловых ресурсов Azure.
+В следующей таблице перечислены справочные материалы и примеры документации по API-интерфейсам .NET для службы файлов Azure.
 
 |  Версия  | Справочная документация | Пакет | Краткое руководство |
 | :-------: | ----------------------- | ------- | ---------- |
-| 12.x | [Клиентская библиотека файловых ресурсов Azure версии 12 для .NET](/dotnet/api/overview/azure/storage.files.shares-readme) | [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Files/) | &nbsp; |
+| 12.x | [Клиентская библиотека файлов Azure версии 12 для .NET](/dotnet/api/overview/azure/storage.files.shares-readme) | [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Files/) | &nbsp; |
 | 11. x | [Пространство имен Microsoft. Azure. Storage. File](/dotnet/api/microsoft.azure.storage.file) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Storage.File/) | [Разработка для службы файлов Azure с помощью .NET](/azure/storage/files/storage-dotnet-how-to-use-files) |
 
 ### <a name="storage-management"></a>Управление хранением
@@ -45,11 +45,11 @@ ms.locfileid: "84976529"
 
 ## <a name="java-client-libraries"></a>Клиентские библиотеки Java
 
-В следующей таблице перечислены справочные материалы и примеры документации по интерфейсам API Java для файловых ресурсов Azure.
+В следующей таблице перечислены справочные материалы и примеры документации по API-интерфейсам Java в службе файлов Azure.
 
 |  Версия  | Справочная документация | Пакет | Краткое руководство |
 | :-------: | ----------------------- | ------- | ---------- |
-| 12.x | [Клиентская библиотека файлового ресурса Azure для Java](/java/api/overview/azure/storage-file-share-readme) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.azure/azure-storage-file-share) | &nbsp; |
+| 12.x | [Клиентская библиотека службы файлов Azure для Java](/java/api/overview/azure/storage-file-share-readme) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.azure/azure-storage-file-share) | &nbsp; |
 | 8.x | [com. Microsoft. Azure. Storage. File](/java/api/com.microsoft.azure.storage.file) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage) | [Разработка для хранилища файлов Azure на языке Java](/azure/storage/files/storage-java-how-to-use-file-storage) |
 
 ### <a name="storage-management"></a>Управление хранением
@@ -62,7 +62,7 @@ ms.locfileid: "84976529"
 
 ## <a name="python-client-libraries"></a>Клиентские библиотеки Python
 
-В следующей таблице перечислены справочные материалы и примеры документации по интерфейсам API Python для файловых ресурсов Azure.
+В следующей таблице перечислены справочные материалы и примеры документации по API-интерфейсам Python для файлов Azure.
 
 |  Версия  | Справочная документация | Пакет | Краткое руководство |
 | :-------: | ----------------------- | ------- | ---------- |
@@ -71,16 +71,16 @@ ms.locfileid: "84976529"
 
 ## <a name="javascript-client-libraries"></a>Клиентские библиотеки JavaScript
 
-В следующей таблице перечислены справочные материалы и примеры документации по API-интерфейсам JavaScript файловых ресурсов Azure.
+В следующей таблице перечислены справочные материалы и примеры документации по API-интерфейсам JavaScript для службы файлов Azure.
 
 |  Версия  | Справочная документация | Пакет | Краткое руководство |
 | :-------: | ----------------------- | ------- | ---------- |
-| 12.x | [Клиентская библиотека файлового ресурса службы хранилища Azure для JavaScript](/javascript/api/overview/azure/storage-file-share-readme) | [Пакет (NPM)](https://www.npmjs.com/package/@azure/storage-file-share) | [Примеры](/javascript/api/overview/azure/storage-file-share-readme#examples) |
+| 12.x | [Клиентская библиотека службы файлов Azure для JavaScript](/javascript/api/overview/azure/storage-file-share-readme) | [Пакет (NPM)](https://www.npmjs.com/package/@azure/storage-file-share) | [Примеры](/javascript/api/overview/azure/storage-file-share-readme#examples) |
 | 10.x | [@azure/storage-file](/javascript/api/@azure/storage-file) | [Пакет (NPM)](https://www.npmjs.com/package/@azure/storage-file) | &nbsp; |
 
-## <a name="rest-apis"></a>Интерфейсы REST API
+## <a name="rest-apis"></a>REST API
 
-В следующей таблице перечислены справочные материалы и примеры документации по API-интерфейсам службы общих файловых ресурсов Azure.
+В следующей таблице перечислены справочные материалы и примеры документации по интерфейсам API службы файлов Azure.
 
 | Справочная документация | Обзор |
 | ----------------------- | -------- |

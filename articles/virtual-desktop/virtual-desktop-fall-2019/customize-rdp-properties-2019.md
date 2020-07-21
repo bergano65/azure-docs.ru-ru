@@ -1,5 +1,5 @@
 ---
-title: Настройка свойств RDP с помощью PowerShell — Azure
+title: Настройка свойств RDP с помощью PowerShell — 2019 — Azure
 description: Настройка свойств RDP для виртуальных рабочих столов Windows с помощью командлетов PowerShell.
 services: virtual-desktop
 author: Heidilohr
@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: eeab433bbbfc9db0f1c5f5546ae80434899a91dc
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 844c59c6e5ea6d730c64fea5fb2dee51f602c382
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86259214"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527631"
 ---
 # <a name="customize-remote-desktop-protocol-properties-for-a-host-pool"></a>Настройка свойств протокол удаленного рабочего стола пула узлов
 
@@ -36,7 +36,7 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 
 |Свойства RDP | Настольные системы | RemoteApps |
 |---|---| --- |
-| Режим с несколькими мониторами | Включено | Недоступно |
+| Режим с несколькими мониторами | Активировано | Недоступно |
 | Перенаправление дисков включено | Диски, буфер обмена, принтеры, COM-порты, USB-устройства и SmartCards| Диски, буфер обмена и принтеры |
 | Режим удаленного звука | Воспроизвести локально | Воспроизвести локально |
 

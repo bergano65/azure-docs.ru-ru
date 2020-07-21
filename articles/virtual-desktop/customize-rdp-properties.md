@@ -1,5 +1,5 @@
 ---
-title: Настройка свойств RDP с помощью PowerShell — Azure
+title: Настройка свойств RDP с помощью PowerShell пружины 2020 — Azure
 description: Настройка свойств RDP для виртуальных рабочих столов Windows с помощью командлетов PowerShell.
 services: virtual-desktop
 author: Heidilohr
@@ -8,14 +8,14 @@ ms.topic: how-to
 ms.date: 06/19/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: d41df8fe4f411cf28af83c8b4b667f1e86bdb45d
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: c666a11f8d5e13d022309eddab16edb6aab76381
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86259917"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527767"
 ---
-# <a name="customize-remote-desktop-protocol-properties-for-a-host-pool"></a>Настройка свойств протокол удаленного рабочего стола пула узлов
+# <a name="customize-remote-desktop-protocol-rdp-properties-for-a-host-pool"></a>Настройка свойств протокол удаленного рабочего стола (RDP) для пула узлов
 
 >[!IMPORTANT]
 >Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете выпуск Виртуального рабочего стола Windows за осень 2019 года без объектов Azure Resource Manager, см. [эту статью](./virtual-desktop-fall-2019/customize-rdp-properties-2019.md).
@@ -37,7 +37,7 @@ ms.locfileid: "86259917"
 
 |Свойства RDP | Настольные системы | RemoteApps |
 |---|---| --- |
-| Режим с несколькими мониторами | Включено | Недоступно |
+| Режим с несколькими мониторами | Активировано | Недоступно |
 | Перенаправление дисков включено | Диски, буфер обмена, принтеры, COM-порты, USB-устройства и SmartCards| Диски, буфер обмена и принтеры |
 | Режим удаленного звука | Воспроизвести локально | Воспроизвести локально |
 

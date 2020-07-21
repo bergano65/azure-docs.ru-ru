@@ -14,18 +14,18 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogardle
-ms.openlocfilehash: 5a491bf85546c982db126ef4d6260a46ca8bf88b
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 7f6b9ddfd5b25ea8482e0bbf5622fa16bc450662
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86224457"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86525608"
 ---
 # <a name="back-up-and-recover-an-oracle-database-12c-database-on-an-azure-linux-virtual-machine"></a>Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure
 
 Вы можете использовать Azure CLI, чтобы создать ресурсы Azure и управлять ими из командной строки или с помощью сценариев. В этой статье используются сценарии Azure CLI для развертывания базы данных Oracle Database 12c из коллекции образов Azure Marketplace.
 
-Прежде чем начать, убедитесь, что установлен Azure CLI. Дополнительные сведения см. в разделе [руководства по установке Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+Прежде чем начать, убедитесь, что установлен Azure CLI. Дополнительные сведения см. в разделе [руководства по установке Azure CLI](/cli/azure/install-azure-cli).
 
 ## <a name="prepare-the-environment"></a>Подготовка среды
 
@@ -33,7 +33,7 @@ ms.locfileid: "86224457"
 
 *   Для резервного копирования и восстановления вам необходимо сначала создать виртуальную машину Linux с установленным экземпляром базы данных Oracle Database 12c. Имя образа Marketplace, который вы будете использовать для создания виртуальных машин, — *Oracle:Oracle-Database-Ee:12.1.0.2:latest*.
 
-    Инструкции по созданию базы данных Oracle см. в статье [Создание базы данных Oracle 12c на виртуальной машине Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/oracle-database-quick-create).
+    Инструкции по созданию базы данных Oracle см. в статье [Создание базы данных Oracle 12c на виртуальной машине Azure](./oracle-database-quick-create.md).
 
 
 ### <a name="step-2-connect-to-the-vm"></a>Шаг 2. Подключение к виртуальной машине
@@ -286,11 +286,11 @@ ms.locfileid: "86224457"
 
     ![Страница резервного копирования хранилищ служб восстановления](./media/oracle-backup-recovery/recovery_service_04.png)
 
-5.  В колонке **Цель резервного копирования** используйте значения по умолчанию — **Azure** и **Виртуальная машина**. Нажмите кнопку **OK**.
+5.  В колонке **Цель резервного копирования** используйте значения по умолчанию — **Azure** и **Виртуальная машина**. Нажмите кнопку **ОК**.
 
     ![Страница сведений о хранилищах служб восстановления](./media/oracle-backup-recovery/recovery_service_05.png)
 
-6.  Для **политики резервного копирования** используйте параметр **DefaultPolicy** или выберите **Создание новой политики**. Нажмите кнопку **OK**.
+6.  Для **политики резервного копирования** используйте параметр **DefaultPolicy** или выберите **Создание новой политики**. Нажмите кнопку **ОК**.
 
     ![Страница сведений о политике резервного копирования хранилищ служб восстановления](./media/oracle-backup-recovery/recovery_service_06.png)
 
@@ -572,6 +572,3 @@ az group delete --name myResourceGroup
 Изучите [руководство по созданию высокодоступных виртуальных машин](../../linux/create-cli-complete.md).
 
 [Изучите примеры развертывания виртуальных машин с помощью интерфейса командной строки](../../linux/cli-samples.md).
-
-
-

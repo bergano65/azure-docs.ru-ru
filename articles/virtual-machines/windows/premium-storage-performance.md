@@ -1,17 +1,18 @@
 ---
-title: Хранилище Azure класса Premium. Разработка высокопроизводительных приложений на виртуальных машинах Windows | Документация Майкрософт
-description: Разработка высокопроизводительных приложений с использованием управляемых дисков Azure SSD (цен. категория "Премиум"). Хранилище Premium обеспечивает поддержку дисков с высокой производительностью и малой задержкой для интенсивных рабочих нагрузок ввода-вывода на виртуальных машинах Azure.
+title: Хранилище Azure класса Premium — проектирование для обеспечения высокой производительности
+description: Разработка высокопроизводительных приложений с использованием управляемых дисков SSD (цен. категория "Премиум"). Хранилище Premium обеспечивает поддержку дисков с высокой производительностью и малой задержкой для интенсивных рабочих нагрузок ввода-вывода на виртуальных машинах Azure.
 author: roygara
 ms.service: virtual-machines-windows
 ms.topic: conceptual
 ms.date: 06/27/2017
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 06ac680ef48d9602f6e7487eb9ebecee9f3ae080
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: 46c917a2d27f5efaa1e902db0d5da5375578b8b8
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84017615"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86526047"
 ---
 # <a name="azure-premium-storage-design-for-high-performance"></a>Хранилище Azure класса "Премиум": разработка, обеспечивающая повышенную производительность
 [!INCLUDE [virtual-machines-common-premium-storage-introduction](../../../includes/virtual-machines-common-premium-storage-introduction.md)]

@@ -11,11 +11,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: 19503fa2257f42cf896dbfb831d4165e329134b2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 685d337f9e6448f44d34a980ed884026d8a0a168
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85250355"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86525421"
 ---
 # <a name="red-hat-update-infrastructure-for-on-demand-red-hat-enterprise-linux-vms-in-azure"></a>Red Hat Update Infrastructure для предоставляемых по запросу виртуальных машин Red Hat Enterprise Linux в Azure
  [Red Hat Update Infrastructure](https://access.redhat.com/products/red-hat-update-infrastructure) (RHUI) позволяет поставщикам облачных служб (например, Azure) создавать зеркальные копии размещенного с помощью Red Hat содержимого репозитория, создавать пользовательские репозитории с содержимым для Azure и предоставлять пользовательским виртуальным машинам доступ к этому содержимому.
@@ -85,7 +86,7 @@ RedHat:RHEL:7.6:7.6.2019062116
 На момент написания этой статьи поддержка EUS прекращена для версий RHEL до 7.4 включительно. Дополнительные сведения см. в разделе "Red Hat Enterprise Linux расширенное обслуживание" в [документации по Red Hat](https://access.redhat.com/support/policy/updates/errata/#Long_Support) .
 * Поддержка EUS для версии RHEL 7.4 завершается 31 августа 2019 г.
 * Поддержка EUS для версии RHEL 7.5 завершается 30 апреля 2020 г.
-* Поддержка EUS для версии RHEL 7.6 завершается 31 октября 2020 г.
+* RHEL 7,6 ЕУС поддержка заканчивается 31 мая 2021 г.
 * Поддержка EUS для версии RHEL 7.7 завершается 30 августа 2021 г.
 
 ### <a name="switch-a-rhel-vm-to-eus-version-lock-to-a-specific-minor-version"></a>Перевод виртуальной машины RHEL на репозиторий EUS (фиксация определенного дополнительного номера версии)
@@ -167,7 +168,7 @@ RedHat:RHEL:7.6:7.6.2019062116
 >Новые образы Azure для государственных организаций США по состоянию на Январь 2020 будут использовать общедоступный IP-адрес, упомянутый в глобальном заголовке Azure выше.
 
 >[!NOTE]
->Кроме того, обратите внимание, что Azure для Германии не рекомендуется использовать в общедоступных регионах для Германии. Рекомендации для клиентов Azure для Германии — Начните указывать общедоступную RHUI, выполнив действия, описанные [здесь](https://docs.microsoft.com/azure/virtual-machines/workloads/redhat/redhat-rhui#manual-update-procedure-to-use-the-azure-rhui-servers).
+>Кроме того, обратите внимание, что Azure для Германии не рекомендуется использовать в общедоступных регионах для Германии. Рекомендации для клиентов Azure для Германии — Начните указывать общедоступную RHUI, выполнив действия, описанные [здесь](#manual-update-procedure-to-use-the-azure-rhui-servers).
 
 ## <a name="azure-rhui-infrastructure"></a>Инфраструктура RHUI Azure
 

@@ -7,11 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 12/06/2019
 ms.author: cynthn
-ms.openlocfilehash: 0c57e370cf2f43fc5636cc6c70d2a9bdce4a1923
-ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
+ms.openlocfilehash: df02378e638e9883d802318eba86dbfb066cd6cb
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84141744"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527296"
 ---
 # <a name="quick-steps-create-and-use-an-ssh-public-private-key-pair-for-linux-vms-in-azure"></a>Краткая инструкция. Создание и использование пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure
 
@@ -95,4 +96,4 @@ ssh azureuser@myvm.westus.cloudapp.azure.com
 
 * Дополнительные сведения о работе с парами ключей SSH см. в разделе [Подробные инструкции: создание ключей SSH для аутентификации на виртуальной машине Linux в Azure и управление этими ключами](create-ssh-keys-detailed.md).
 
-* При возникновении сложностей с SSH-подключениями к виртуальным машинам Azure обратитесь к разделу [Устранение неполадок с SSH-подключением к виртуальной машине Azure Linux: сбой, ошибка или отклонение](troubleshoot-ssh-connection.md).
+* При возникновении сложностей с SSH-подключениями к виртуальным машинам Azure обратитесь к разделу [Устранение неполадок с SSH-подключением к виртуальной машине Azure Linux: сбой, ошибка или отклонение](../troubleshooting/troubleshoot-ssh-connection.md).

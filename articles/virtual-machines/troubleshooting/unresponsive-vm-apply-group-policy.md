@@ -14,11 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 05/07/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 187098f557cb691e023abb282a265b11e975c544
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cbf2fe491e1fe0b553eab04ca7190da0413a3ba6
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84629266"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86526016"
 ---
 # <a name="vm-is-unresponsive-when-applying-group-policy-local-users-and-groups-policy"></a>Виртуальная машина не отвечает, когда применяется групповая политика политики локальных пользователей и групп
 
@@ -26,7 +27,7 @@ ms.locfileid: "84629266"
 
 ## <a name="symptoms"></a>Симптомы
 
-Когда вы используете [диагностику загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics) для просмотра снимка экрана виртуальной машины, экран зависает при загрузке с сообщением: "применение групповая политика политики" Локальные пользователи и группы ".
+Когда вы используете [диагностику загрузки](./boot-diagnostics.md) для просмотра снимка экрана виртуальной машины, экран зависает при загрузке с сообщением: "применение групповая политика политики" Локальные пользователи и группы ".
 
 :::image type="content" source="media//unresponsive-vm-apply-group-policy/applying-group-policy-1.png" alt-text="Снимок экрана загрузки применения политики Групповая политика локальных пользователей и групп (Windows Server 2012 R2).":::
 
@@ -57,7 +58,7 @@ ms.locfileid: "84629266"
 
 ### <a name="step-1-create-and-access-a-repair-vm"></a>Шаг 1. Создание виртуальной машины для восстановления и получение доступа к ней
 
-1. Выполните [шаги 1–3 из списка команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands#repair-process-example), чтобы подготовить виртуальную машину для восстановления.
+1. Выполните [шаги 1–3 из списка команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md#repair-process-example), чтобы подготовить виртуальную машину для восстановления.
 2. Используйте подключение к удаленному рабочему столу для подключения к виртуальной машине восстановления.
 
 ### <a name="step-2-disable-the-policy"></a>Шаг 2. Отключите политику
@@ -139,7 +140,7 @@ ms.locfileid: "84629266"
 
 ### <a name="step-4-rebuild-the-vm"></a>Шаг 4. Перестроение виртуальной машины
 
-Чтобы заново собрать виртуальную машину, используйте [Шаг 5 команд восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands#repair-process-example) .
+Чтобы заново собрать виртуальную машину, используйте [Шаг 5 команд восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md#repair-process-example) .
 
 Если проблема устранена, политика теперь отключена локально. Для постоянного решения не используйте политику Клеануппрофилес на виртуальных машинах. Используйте другой метод для очисток профиля.
 
@@ -149,4 +150,4 @@ ms.locfileid: "84629266"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если при применении Центр обновления Windows возникли проблемы, см. раздел [VM не отвечает на ошибку "C01A001D" при применении центр обновления Windows](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/unresponsive-vm-apply-windows-update).
+Если при применении Центр обновления Windows возникли проблемы, см. раздел [VM не отвечает на ошибку "C01A001D" при применении центр обновления Windows](./unresponsive-vm-apply-windows-update.md).

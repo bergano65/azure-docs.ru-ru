@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: b8d47b69b4aba14c86fb09176b662aee7d5482d8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f386cbf09bb2b62e0c54826affc50a050c095fa6
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80335523"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86524596"
 ---
 # <a name="render-custom-data-on-a-raster-map"></a>Отображение пользовательских данных на растровой карте
 
@@ -25,11 +25,11 @@ ms.locfileid: "80335523"
 > [!Tip]
 > Часто гораздо более экономично использовать Azure Maps веб-пакет SDK, чтобы отобразить простую карту на веб-странице, чем использовать статическую службу изображений. Веб-пакет SDK использует плитки карт и, если пользователь не променяет и не масштабирует карту, он часто создает только часть транзакции на каждую нагрузку на карту. Обратите внимание, что Azure Maps веб-пакет SDK имеет параметры для отключения панорамирования и масштабирования. Кроме того, Azure Maps веб-пакет SDK предоставляет более широкий набор параметров визуализации данных, чем веб-служба, выполняющая статическую карту.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 ### <a name="create-an-azure-maps-account"></a>создание учетной записи службы Azure Maps
 
-Чтобы выполнить процедуры, описанные в этой статье, сначала необходимо создать учетную запись Azure Maps и получить ключ учетной записи Maps. Следуйте инструкциям в разделе [Создание учетной записи](quick-demo-map-app.md#create-an-account-with-azure-maps) для создания подписки на учетную запись Azure Maps и выполните действия, описанные в разделе [Получение первичного ключа](quick-demo-map-app.md#get-the-primary-key-for-your-account) , чтобы получить первичный ключ для вашей учетной записи. Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](./how-to-manage-authentication.md).
+Чтобы выполнить процедуры, описанные в этой статье, сначала необходимо создать учетную запись Azure Maps и получить ключ учетной записи Maps. Следуйте инструкциям в разделе [Создание учетной записи](quick-demo-map-app.md#create-an-azure-maps-account) для создания подписки на учетную запись Azure Maps и выполните действия, описанные в разделе [Получение первичного ключа](quick-demo-map-app.md#get-the-primary-key-for-your-account) , чтобы получить первичный ключ для вашей учетной записи. Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](./how-to-manage-authentication.md).
 
 
 ## <a name="render-pushpins-with-labels-and-a-custom-image"></a>Отрисовка канцелярских кнопок с метками и пользовательским изображением

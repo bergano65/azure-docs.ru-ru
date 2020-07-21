@@ -7,11 +7,12 @@ ms.subservice: sizes
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: a5b7dea30cff70d5c45460eb8ded2fa370afa2c2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c298ee691b476fb58c567490ab2e62e45aba3e7c
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84726596"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86526951"
 ---
 # <a name="updated-ndv2-series"></a>Обновленная серия NDv2
 
@@ -23,9 +24,9 @@ NDv2 работает на основе 8 видеопроцессоров NVIDI
 
 Как критически, NDv2 построены как для вычислительно-интенсивного масштабирования (с помощью 8 GPU на каждую виртуальную машину), так и для горизонтального масштабирования (работа нескольких виртуальных машин). Серия NDv2 теперь поддерживает серверную сеть 100-Gigabit InfiniBand ЕДР, аналогичную той, которая доступна на серии ХБ виртуальной машины HPC, чтобы обеспечить высокопроизводительную кластеризацию для параллельных сценариев, включая распределенное обучение для AI и ML. Эта Серверная сеть поддерживает все основные протоколы InfiniBand, включая те, которые используются библиотеками NCCL2 NVIDIA, что позволяет эффективно выполнять кластеризацию GPU.
 
-> При [включении InfiniBand](https://docs.microsoft.com/azure/virtual-machines/workloads/hpc/enable-infiniband) на ND40rs_v2 виртуальной машине используйте драйвер Mellanox офед 4.7-1.0.0.1.
+> При [включении InfiniBand](./workloads/hpc/enable-infiniband.md) на ND40rs_v2 виртуальной машине используйте драйвер Mellanox офед 4.7-1.0.0.1.
 >
-> Из-за увеличения памяти GPU для новой виртуальной машины ND40rs_v2 требуется использование [виртуальных машин поколения 2](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) и образов Marketplace. 
+> Из-за увеличения памяти GPU для новой виртуальной машины ND40rs_v2 требуется использование [виртуальных машин поколения 2](./windows/generation-2.md) и образов Marketplace. 
 >
 > Примечание. ND40s_v2 с 16 ГБ памяти для каждого GPU больше не доступен для предварительной версии и заменен обновленной ND40rs_v2.
 

@@ -1,5 +1,5 @@
 ---
-title: Публикация встроенных приложений в виртуальных рабочих столах Windows в Azure
+title: Публикация встроенных приложений в Windows Virtual Desktop пружины 2020 — Azure
 description: Как опубликовать встроенные приложения в виртуальном рабочем столе Windows.
 services: virtual-desktop
 author: Heidilohr
@@ -8,11 +8,12 @@ ms.topic: how-to
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 11416eb06e29b4621c1949f193318d32d76cdde3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 63d20bbb09af6f464a331ddfbad823f5d3b18d76
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85212723"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527590"
 ---
 # <a name="publish-built-in-apps-in-windows-virtual-desktop"></a>Публикация встроенных приложений в виртуальном рабочем столе Windows
 
@@ -51,7 +52,7 @@ ms.locfileid: "85212723"
 New-AzWvdApplication -Name -ResourceGroupName -ApplicationGroupName -FilePath "shell:Appsfolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge" -CommandLineSetting <Allow|Require|DoNotAllow> -iconPath "C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\microsoftedge.exe" -iconIndex 0 -ShowInPortal:$true
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как настроить веб-каналы, чтобы организовать отображение приложений для пользователей в [настраиваемом веб-канале для пользователей виртуальных рабочих столов Windows](customize-feed-for-virtual-desktop-users.md).
 - Дополнительные сведения о функции присоединения приложения MSIX см. в статье Настройка присоединения приложения [MSIX](app-attach.md).

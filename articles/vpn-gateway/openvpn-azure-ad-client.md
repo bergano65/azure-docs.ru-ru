@@ -1,19 +1,20 @@
 ---
-title: 'VPN-шлюз: VPN-клиент для Опенвпн Protocol P2S Connections: Аутентификация Azure AD'
+title: 'VPN-шлюз: VPN-клиент для подключений по протоколу P2S Опенвпн: проверка подлинности Azure AD'
 description: VPN-подключение P2S можно использовать для подключения к виртуальной сети с помощью проверки подлинности Azure AD.
 services: vpn-gateway
-author: anzaman
+author: kumudD
 ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 06/25/2020
 ms.author: alzam
-ms.openlocfilehash: 868bcfc898fc6bc804f36516f2cc01a52ad2db47
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c14d300e2c09316e0665ece3f3e15f7036d5b9a1
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85414340"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86525081"
 ---
-# <a name="configure-a-vpn-client-for-p2s-openvpn-protocol-connections-azure-ad-authentication"></a>Настройка VPN-клиента для подключений "точка — сеть" по протоколу OpenVPN. Аутентификация Azure AD
+# <a name="azure-active-directory-authentication-configure-a-vpn-client-for-p2s-openvpn-protocol-connections"></a>Azure Active Directory проверка подлинности: Настройка VPN-клиента для подключений по протоколу P2S Опенвпн
 
 Эта статья поможет настроить VPN-клиент для подключения к виртуальной сети с помощью VPN типа "точка — сеть" и Azure Active Directory проверки подлинности. Прежде чем можно будет подключиться и пройти проверку подлинности с помощью Azure AD, необходимо сначала настроить клиент Azure AD. Дополнительные сведения см. в статье [Настройка клиента Azure AD](openvpn-azure-ad-tenant.md).
 
@@ -87,11 +88,11 @@ ms.locfileid: "85414340"
 
 1. Щелкните многоточие рядом с удаляемым клиентским профилем. Затем щелкните **Remove** (Удалить).
 
-    ![удалить](./media/openvpn-azure-ad-client/delete/delete1.jpg)
+    ![delete](./media/openvpn-azure-ad-client/delete/delete1.jpg)
 
 2. Выберите **Remove** (Удалить), чтобы выполнить удаление.
 
-    ![удалить](./media/openvpn-azure-ad-client/delete/delete2.jpg)
+    ![delete](./media/openvpn-azure-ad-client/delete/delete2.jpg)
 
 ## <a name="create-a-connection"></a><a name="connection"></a>Создание подключения
 
@@ -121,19 +122,19 @@ ms.locfileid: "85414340"
 
 1. На домашней странице VPN-клиента выберите **параметры VPN**.
 
-    ![auto](./media/openvpn-azure-ad-client/auto/auto1.jpg)
+    ![авто](./media/openvpn-azure-ad-client/auto/auto1.jpg)
 
 2. Выберите **Да** в диалоговом окне переключение приложений.
 
-    ![auto](./media/openvpn-azure-ad-client/auto/auto2.jpg)
+    ![авто](./media/openvpn-azure-ad-client/auto/auto2.jpg)
 
 3. Убедитесь, что подключение, которое вы хотите установить, еще не подключено, затем выделите профиль и установите флажок " **автоматически устанавливать подключение** ".
 
-    ![auto](./media/openvpn-azure-ad-client/auto/auto3.jpg)
+    ![авто](./media/openvpn-azure-ad-client/auto/auto3.jpg)
 
 4. Выберите **Подключиться** , чтобы инициировать VPN-подключение.
 
-    ![auto](./media/openvpn-azure-ad-client/auto/auto4.jpg)
+    ![авто](./media/openvpn-azure-ad-client/auto/auto4.jpg)
 
 ## <a name="diagnose-connection-issues"></a><a name="diagnose"></a>Diagnose connection issues (Диагностика проблем с подключением)
 
@@ -153,7 +154,7 @@ ms.locfileid: "85414340"
 
     ![diagnose](./media/openvpn-azure-ad-client/diagnose/diagnose4.jpg)
 
-## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
+## <a name="faq"></a>часто задаваемые вопросы
 
 ### <a name="how-do-i-add-dns-suffixes-to-the-vpn-client"></a>Разделы справки добавить DNS-суффиксы к VPN-клиенту?
 
@@ -240,6 +241,6 @@ azurevpn -i azurevpnconfig.xml
 чтобы принудительно выполнить импорт, используйте параметр **-f** .
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Создание клиента Azure Active Directory для P2S открытых VPN-подключений, использующих проверку подлинности Azure AD](openvpn-azure-ad-tenant.md).

@@ -9,11 +9,12 @@ ms.topic: article
 ms.workload: infrastructure
 ms.date: 10/15/2019
 ms.author: haroldw
-ms.openlocfilehash: d7d251370aefdfadc0b77a67f6dad1be2dcb9e9a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dbd67903223bf4c8c2117f5356bc987665217362
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81759436"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527036"
 ---
 # <a name="deploy-okd-in-azure"></a>Развертывание OKD в Azure
 
@@ -118,7 +119,7 @@ ms.locfileid: "81759436"
 
 
 > [!NOTE] 
-> Для выполнения следующей команды необходим интерфейс командной строки версии не ниже 2.0.8. Узнать свою версию CLI можно с помощью команды `az --version`. Чтобы обновить версию CLI, ознакомьтесь со статьей [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+> Для выполнения следующей команды необходим интерфейс командной строки версии не ниже 2.0.8. Узнать свою версию CLI можно с помощью команды `az --version`. Чтобы обновить версию CLI, ознакомьтесь со статьей [Установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 Следующий пример развертывает кластер OKD и все связанные ресурсы в группу ресурсов с именем openshiftrg, созданную в развертывании с именем myOpenShiftCluster. Этот шаблон применяется непосредственно из репозитория GitHub через ссылку в локальном файле параметров azuredeploy.parameters.json.
 
@@ -155,7 +156,7 @@ $ ssh -p 2200 clusteradmin@myopenshiftmaster.cloudapp.azure.com
 az group delete --name openshiftrg
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Задачи, выполняемые после развертывания](./openshift-container-platform-3x-post-deployment.md)
 - [Устранение неполадок с развертыванием OpenShift](./openshift-container-platform-3x-troubleshooting.md)

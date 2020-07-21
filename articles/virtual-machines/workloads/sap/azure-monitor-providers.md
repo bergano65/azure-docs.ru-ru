@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/30/2020
 ms.author: radeltch
-ms.openlocfilehash: a7e44046de3eccab83e8315e6adea150a146e660
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 267d600270e834cf4f1f077452fda7459fac3029
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85964198"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86525455"
 ---
 # <a name="azure-monitor-for-sap-solutions-providers-preview"></a>Azure Monitor для поставщиков решений SAP (Предварительная версия)
 
@@ -79,7 +79,7 @@ ms.locfileid: "85964198"
 
 ![Azure Monitor для поставщиков решений SAP — SQL](./media/azure-monitor-sap/azure-monitor-providers-sql.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Создайте первую Azure Monitor для ресурса решений SAP.
-- У вас возникли вопросы по Azure Monitor для решений SAP? Проверка раздела " [вопросы и ответы](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/azure-monitor-faq) "
+- У вас возникли вопросы по Azure Monitor для решений SAP? Проверка раздела " [вопросы и ответы](./azure-monitor-faq.md) "

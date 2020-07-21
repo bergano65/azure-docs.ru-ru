@@ -1,5 +1,5 @@
 ---
-title: Развертывание существующего пула узлов с новыми узлами сеансов — Azure
+title: Развертывание существующего пула узлов с новыми узлами сеансов попадают в 2019 — Azure
 description: Развертывание существующего пула узлов с новыми узлами сеансов в виртуальном рабочем столе Windows.
 services: virtual-desktop
 author: Heidilohr
@@ -8,14 +8,14 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 956934bd536d8eb5e692ed193cad1424929db24b
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 291dc32453001dd1e188bacae8be372bb3645ece
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86260768"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527546"
 ---
-# <a name="expand-an-existing-host-pool-with-new-session-hosts"></a>Развертывание существующего пула узлов с новыми узлами сеансов
+# <a name="expand-an-existing-host-pool-with-new-session-hosts-fall-2019"></a>Разверните существующий пул узлов с новыми узлами сеансов (выпадает 2019).
 
 >[!IMPORTANT]
 >Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../expand-existing-host-pool.md).
@@ -76,7 +76,7 @@ ms.locfileid: "86260768"
 
 Следуйте инструкциям в статье [Создание пула узлов с помощью Azure Marketplace](create-host-pools-azure-marketplace-2019.md) , пока не будет достигнуто [предложение Azure Marketplace для создания пула узлов](create-host-pools-azure-marketplace-2019.md#run-the-azure-marketplace-offering-to-provision-a-new-host-pool). При переходе к этому моменту необходимо ввести следующие сведения для каждой вкладки:
 
-### <a name="basics"></a>Основные сведения
+### <a name="basics"></a>Основы
 
 Все значения в этом разделе должны совпадать с указанными при создании пула узлов и виртуальных машин узла сеансов, за исключением *пользователей рабочего стола по умолчанию*:
 

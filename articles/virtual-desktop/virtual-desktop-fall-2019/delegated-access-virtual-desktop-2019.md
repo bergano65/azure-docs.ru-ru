@@ -1,5 +1,5 @@
 ---
-title: Делегированный доступ в виртуальном рабочем столе Windows — Azure
+title: Делегированный доступ в виртуальном рабочем столе Windows — 2019 — Azure
 description: Как делегировать административные возможности развертыванию виртуальных рабочих столов Windows, включая примеры.
 services: virtual-desktop
 author: Heidilohr
@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 899e42e3b592ce1bc92d7d47578e10355b1c6de7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 91be20de49f549f3530e6c817906f1abf8f106b6
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82614438"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527563"
 ---
-# <a name="delegated-access-in-windows-virtual-desktop"></a>Делегированный доступ в Виртуальном рабочем столе Windows
+# <a name="delegated-access-in-windows-virtual-desktop-fall-2019"></a>Делегированный доступ в виртуальном рабочем столе Windows выпадает 2019
 
 >[!IMPORTANT]
 >Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../delegated-access-virtual-desktop.md).
@@ -31,7 +31,7 @@ ms.locfileid: "82614438"
     * Встроенные роли
 * Область
     * Группы клиентов
-    * Клиентов
+    * Клиенты
     * Пулы узлов
     * Группы приложений
 

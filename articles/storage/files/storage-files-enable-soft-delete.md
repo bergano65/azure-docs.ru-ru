@@ -8,12 +8,12 @@ ms.date: 05/28/2020
 ms.author: rogarana
 ms.subservice: files
 services: storage
-ms.openlocfilehash: 84da8993bd1b0a61ef885d03f7c2bc80b92d47cb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f432c544d8632a548c397b63ffa8066f63424f67
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85510812"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86528389"
 ---
 # <a name="enable-soft-delete-on-azure-file-shares"></a>Включение обратимого удаления — общие папки Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "85510812"
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Чтобы включить обратимое удаление, нужно обновить свойства службы клиента файлов. В следующем примере включено обратимое удаление для всех общих папок в учетной записи хранения:
+Командлеты обратимого удаления доступны в версии "более" – Preview "модуля AZ. Storage. Чтобы включить обратимое удаление, нужно обновить свойства службы клиента файлов. В следующем примере включено обратимое удаление для всех общих папок в учетной записи хранения:
 
 ```azurepowershell-interactive
 $rgName = "yourResourceGroupName"
@@ -70,7 +70,7 @@ Get-AzStorageFileServiceProperty -ResourceGroupName $rgName -StorageAccountName 
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Чтобы восстановить обратимо удаленную общую папку, используйте следующую команду:
+Командлеты обратимого удаления доступны в версии "более" – Preview "модуля AZ. Storage. Чтобы восстановить обратимо удаленную общую папку, используйте следующую команду:
 
 ```azurepowershell-interactive
 Restore-AzRmStorageShare -ResourceGroupName $rgname -StorageAccountName $accountName -DeletedShareVersion 01D5E2783BDCDA97
@@ -91,7 +91,7 @@ Restore-AzRmStorageShare -ResourceGroupName $rgname -StorageAccountName $account
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Чтобы отключить обратимое удаление в учетной записи хранения, можно использовать следующую команду:
+Командлеты обратимого удаления доступны в версии "более" – Preview "модуля AZ. Storage. Чтобы отключить обратимое удаление в учетной записи хранения, можно использовать следующую команду:
 
 ```azurepowershell-interactive
 Update-AzStorageFileServiceProperty -ResourceGroupName $rgName -StorageAccountName $accountName -EnableShareDeleteRetentionPolicy $false

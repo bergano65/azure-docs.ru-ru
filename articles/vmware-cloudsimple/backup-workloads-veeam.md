@@ -8,11 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 3262841efb9109b1de24fe501ea0a7bea0dd612d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e661485e58c7e00c4eee41d808f727153a7761c9
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77025135"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86525047"
 ---
 # <a name="back-up-workload-vms-on-cloudsimple-private-cloud-using-veeam-br"></a>Резервное копирование виртуальных машин рабочей нагрузки в частном облаке Клаудсимпле с помощью Veeam B&R
 
@@ -104,7 +105,7 @@ ms.locfileid: "77025135"
 * Подписка Azure, принадлежащая вам
 * Предварительно созданная группа ресурсов Azure;
 * Виртуальная сеть Azure в подписке
-* Учетная запись хранения Azure.
+* Учетная запись хранения Azure
 * [Частное облако](create-private-cloud.md) , созданное с помощью портала клаудсимпле.  
 
 На этапе реализации необходимы следующие элементы:
@@ -194,7 +195,7 @@ ms.locfileid: "77025135"
 ### <a name="configure-azure-blob-storage-for-long-term-data-retention"></a>Настройка хранилища BLOB-объектов Azure для долгосрочного хранения данных
 
 1. Создайте учетную запись хранения общего назначения (GPv2) типа "Стандартный" и контейнер больших двоичных объектов, как описано в [видеоначало работы Майкрософт со службой хранилища Azure](https://azure.microsoft.com/resources/videos/get-started-with-azure-storage).
-2. Создайте контейнер службы хранилища Azure, как описано в справочнике по [созданию контейнера](https://docs.microsoft.com/rest/api/storageservices/create-container) .
+2. Создайте контейнер службы хранилища Azure, как описано в справочнике по [созданию контейнера](/rest/api/storageservices/create-container) .
 2. Скачайте `azcopy` служебную программу командной строки для Linux от Майкрософт. Вы можете использовать следующие команды в оболочке bash в CentOS 7,5.
 
     ```
@@ -205,7 +206,7 @@ ms.locfileid: "77025135"
     sudo yum -y install icu
     ```
 
-3. Используйте `azcopy` команду, чтобы скопировать файлы резервных копий в контейнер больших двоичных объектов и из него.  Подробные команды см. [в статье перенос данных с помощью AzCopy в Linux](../storage/common/storage-use-azcopy-linux.md) .
+3. Используйте `azcopy` команду, чтобы скопировать файлы резервных копий в контейнер больших двоичных объектов и из него.  Подробные команды см. [в статье перенос данных с помощью AzCopy в Linux](../storage/common/storage-use-azcopy-v10.md) .
 
 ### <a name="vcenter-console-of-private-cloud-install-veeam-br"></a>консоль vCenter из частного облака: Установка Veeam B&R
 
@@ -259,7 +260,7 @@ ms.locfileid: "77025135"
 
 Сведения о том, как отменять привилегии, см. в разделе [de-эскалировать Privileges](escalate-private-cloud-privileges.md#de-escalate-privileges).
 
-## <a name="references"></a>Ссылки
+## <a name="references"></a>Ссылки (на английском языке)
 
 ### <a name="cloudsimple-references"></a>Ссылки Клаудсимпле
 
@@ -290,8 +291,8 @@ ms.locfileid: "77025135"
 * [Создание виртуальной машины Linux на портале Azure](../virtual-machines/linux/quick-create-portal.md)
 * [Как подключить управляемый диск данных к виртуальной машине Windows на портале Azure](../virtual-machines/windows/attach-managed-disk-portal.md)
 * [Начало работы с хранилищем Azure — видео](https://azure.microsoft.com/resources/videos/get-started-with-azure-storage)
-* [Create Container (Создание контейнера)](https://docs.microsoft.com/rest/api/storageservices/create-container)
-* [Перенос данных с помощью AzCopy для Linux](../storage/common/storage-use-azcopy-linux.md)
+* [Create Container (Создание контейнера)](/rest/api/storageservices/create-container)
+* [Перенос данных с помощью AzCopy для Linux](../storage/common/storage-use-azcopy-v10.md)
 
 ### <a name="vmware-references"></a>Ссылки на VMware
 

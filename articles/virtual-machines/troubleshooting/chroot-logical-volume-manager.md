@@ -14,11 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 11/24/2019
 ms.author: vilibert
-ms.openlocfilehash: 20d710f717a9dff26f46ac7a201a9b694f3fbe84
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c0041a835c02263f23c5cdc6f839756edfb070c1
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74684133"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86526883"
 ---
 # <a name="troubleshooting-a-linux-vm-when-there-is-no-access-to-the-azure-serial-console-and-the-disk-layout-is-using-lvm-logical-volume-manager"></a>Устранение неполадок в виртуальной машине Linux при отсутствии доступа к последовательной консоли Azure и разметке диска с использованием LVM (Диспетчер логических томов)
 
@@ -28,7 +29,7 @@ ms.locfileid: "74684133"
 
 Создание моментального снимка затронутой виртуальной машины. 
 
-Затем моментальный снимок будет подключен **к виртуальной машине** . Следуйте инструкциям в [разделе](https://docs.microsoft.com/azure/virtual-machines/linux/snapshot-copy-managed-disk#use-azure-portal) создание **моментального снимка**.
+Затем моментальный снимок будет подключен **к виртуальной машине** . Следуйте инструкциям в [разделе](../linux/snapshot-copy-managed-disk.md#use-azure-portal) создание **моментального снимка**.
 
 ## <a name="create-a-rescue-vm"></a>Создание виртуальной машины для аварийного создания
 Обычно рекомендуется использовать виртуальную машину с такой же или аналогичной версией операционной системы. Используйте тот же **регион** и **группу ресурсов** затронутой виртуальной машины.
@@ -189,7 +190,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 Выйдите из среды **чрут** и подключите требуемую **LV**
 
-![Продвинутый уровень](./media/chroot-logical-volume-manager/advanced.png)
+![Дополнительно](./media/chroot-logical-volume-manager/advanced.png)
 
 Теперь снова получите доступ к среде **чрут** , выполнив
 
@@ -197,18 +198,18 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 Все LVs должны быть видимыми в виде подключенных секций.
 
-![Продвинутый уровень](./media/chroot-logical-volume-manager/chroot-all-mounts.png)
+![Дополнительно](./media/chroot-logical-volume-manager/chroot-all-mounts.png)
 
 Запрос установленного **ядра**
 
-![Продвинутый уровень](./media/chroot-logical-volume-manager/rpm-kernel.png)
+![Дополнительно](./media/chroot-logical-volume-manager/rpm-kernel.png)
 
 При необходимости удалите или обновите **kernel** 
  ![ расширение ядра.](./media/chroot-logical-volume-manager/rpm-remove-kernel.png)
 
 
 ### <a name="example-3---enable-serial-console"></a>Пример 3. Включение последовательной консоли
-Если доступ к последовательной консоли Azure невозможен, проверьте параметры конфигурации GRUB для виртуальной машины Linux и исправьте их. Подробные сведения можно найти [в этом документе](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-grub-proactive-configuration) .
+Если доступ к последовательной консоли Azure невозможен, проверьте параметры конфигурации GRUB для виртуальной машины Linux и исправьте их. Подробные сведения можно найти [в этом документе](./serial-console-grub-proactive-configuration.md) .
 
 ### <a name="example-4---kernel-loading-with-problematic-lvm-swap-volume"></a>Пример 4. Загрузка ядра с проблематичным LVM томом
 
@@ -268,9 +269,9 @@ umount /rescue
 Если виртуальная машина работает, диск будет выключен, Перезагрузите виртуальную машину после завершения операции переключения диска.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Кроме того, вы можете узнать больше о:
 
  [Серийная консоль Azure]( https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-linux)
 
-[Однопользовательский режим](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-grub-single-user-mode)
+[Однопользовательский режим](./serial-console-grub-single-user-mode.md)

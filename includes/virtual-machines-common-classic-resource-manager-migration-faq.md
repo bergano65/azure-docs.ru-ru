@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/06/2020
 ms.author: tagore
 ms.custom: include file
-ms.openlocfilehash: fa97935c10b2a5df70c9babf031a889a9c1e9f34
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: d05386f1dfbab28d5fe42d02b8e9be0f257afafd
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83837865"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527220"
 ---
 ## <a name="what-is-the-time-required-for-migration"></a>Сколько времени потребуется для миграции?
 
@@ -29,7 +29,7 @@ ms.locfileid: "83837865"
 
 ## <a name="why-am-i-getting-an-error-stating-newclassicvmcreationnotallowedforsubscription"></a>Почему я получаю сообщение об ошибке "NewClassicVMCreationNotAllowedForSubscription"?
 
-По условиям процесса прекращения поддержки виртуальная машина IaaS (классическая) больше не доступна для новых клиентов. Мы считаем вас новым клиентом, поэтому ваша операция не разрешается. Мы настоятельно рекомендуем использовать [Виртуальные машины Azure на основе ARM](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-powershell). Если вы не можете использовать виртуальные машины Azure на основе ARM, обратитесь в службу поддержки с просьбой внести вашу подписку в список разрешений.
+По условиям процесса прекращения поддержки виртуальная машина IaaS (классическая) больше не доступна для новых клиентов. Мы считаем вас новым клиентом, поэтому ваша операция не разрешается. Мы настоятельно рекомендуем использовать [Виртуальные машины Azure на основе ARM](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-powershell). Если вы не можете использовать виртуальные машины Azure с помощью ARM, обратитесь в службу поддержки, чтобы добавить подписку в список разрешений.
 
 ## <a name="does-this-migration-plan-affect-any-of-my-existing-services-or-applications-that-run-on-azure-virtual-machines"></a>Влияет ли этот план миграции на существующие службы или приложения, которые выполняются на виртуальных машинах Azure? 
 

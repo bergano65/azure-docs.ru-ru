@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 7e43995c4221127580333c3f013fcb209730f863
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b3f9451a5ffd13c67232107d8db1e2da4a3891ec
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84791131"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86524749"
 ---
 # <a name="using-the-azure-maps-drawing-error-visualizer"></a>Использование визуализатора ошибок рисования в Azure Maps
 
@@ -23,7 +23,7 @@ ms.locfileid: "84791131"
 
 Перед скачиванием визуализатора ошибок рисования необходимо выполнить следующие действия:
 
-1. [Создать учетную запись Azure Maps.](quick-demo-map-app.md#create-an-account-with-azure-maps)
+1. [Создать учетную запись Azure Maps.](quick-demo-map-app.md#create-an-azure-maps-account)
 2. [Получить первичный ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account), который иногда называется первичным ключом или ключом подписки.
 3. [Создайте ресурс Creator](how-to-manage-creator.md).
 

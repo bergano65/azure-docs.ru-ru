@@ -8,14 +8,14 @@ ms.topic: how-to
 ms.date: 08/29/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 9c2ad99a59e548ff7793455dac21748dd057c5fc
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 7ae4e4916333439956216c11e0c7e738b4e2fff1
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86248702"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527784"
 ---
-# <a name="customize-feed-for-windows-virtual-desktop-users"></a>Настройка канала для пользователей Виртуального рабочего стола Windows
+# <a name="customize-the-feed-for-windows-virtual-desktop-users"></a>Настройка веб-канала для пользователей виртуальных рабочих столов Windows
 
 >[!IMPORTANT]
 >Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете выпуск Виртуального рабочего стола Windows за осень 2019 года без объектов Azure Resource Manager, см. [эту статью](./virtual-desktop-fall-2019/customize-feed-virtual-desktop-users-2019.md).
@@ -25,7 +25,7 @@ ms.locfileid: "86248702"
 
 Вы можете настроить веб-канал таким образом, чтобы ресурсы RemoteApp и удаленный рабочий стол отображались для пользователей с распознаваемым способом.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы уже скачали и установили модуль PowerShell для виртуальных рабочих столов Windows. Если вы этого не сделали, следуйте инструкциям в разделе [Настройка модуля PowerShell](powershell-module.md).
 
@@ -118,7 +118,7 @@ Update-AzWvdDesktop -ResourceGroupName <resourcegroupname> -ApplicationGroupName
 
 6. Выберите приложение, которое требуется обновить, а затем введите новое **Отображаемое имя**.
 
-7. Нажмите **Сохранить**. Редактируемое приложение теперь должно отображать обновленное имя.
+7. Щелкните **Сохранить**. Редактируемое приложение теперь должно отображать обновленное имя.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

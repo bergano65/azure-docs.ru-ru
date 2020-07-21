@@ -9,11 +9,12 @@ ms.topic: article
 ms.workload: infrastructure
 ms.date: 10/23/2019
 ms.author: haroldw
-ms.openlocfilehash: 26b190515819378309c2b0705efdbc349ecccbe2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 244bea1aaf5457601ced9bac05c8dae43e5b9199
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81759507"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527138"
 ---
 # <a name="common-prerequisites-for-deploying-openshift-container-platform-311-in-azure"></a>Общие предварительные требования для развертывания платформы контейнеров OpenShift 3,11 в Azure
 
@@ -83,7 +84,7 @@ ssh-keygen -f ~/.ssh/openshift_rsa -t rsa -N ''
 > [!NOTE]
 > Паре ключей SSH нельзя присвоить пароль или парольную фразу.
 
-Дополнительные сведения о ключах SSH в Windows см. в статье [Использование ключей SSH с Windows в Azure](/azure/virtual-machines/linux/ssh-from-windows). Закрытый ключ нужно экспортировать в формате OpenSSH.
+Дополнительные сведения о ключах SSH в Windows см. в статье [Использование ключей SSH с Windows в Azure](./ssh-from-windows.md). Закрытый ключ нужно экспортировать в формате OpenSSH.
 
 ## <a name="store-the-ssh-private-key-in-azure-key-vault"></a>Сохранение закрытого ключа SSH в Azure Key Vault
 Развертывание OpenShift использует созданный ключ SSH, чтобы защитить доступ к основному кластеру OpenShift. Чтобы обеспечить для развертывания безопасное извлечение ключа SSH, сохраните ключ в Key Vault с помощью следующей команды:
@@ -133,7 +134,7 @@ az ad sp create-for-rbac --name openshiftsp \
  > [!WARNING] 
  > Не забудьте записать защищенный пароль, так как этот пароль будет невозможно получить снова.
 
-Дополнительные сведения о субъектах-службах см. в статье [Создание субъекта-службы Azure с помощью Azure CLI](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
+Дополнительные сведения о субъектах-службах см. в статье [Создание субъекта-службы Azure с помощью Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
 
 ## <a name="prerequisites-applicable-only-to-resource-manager-template"></a>Предварительные требования применимы только к шаблону диспетчер ресурсов
 
@@ -162,7 +163,7 @@ az ad sp create-for-rbac --name openshiftsp \
 az keyvault secret set --vault-name KeyVaultName -n mastercafile --file ~/certificates/masterca.pem
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье рассматриваются следующие темы:
 > [!div class="checklist"]

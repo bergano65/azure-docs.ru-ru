@@ -13,15 +13,16 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/18/2019
 ms.author: v-miegge
-ms.openlocfilehash: 176b0634fe2c7ee2f47162e439c4ea16bde77a8a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 53fd2332224d903c5a4b33563470cf3569f82b13
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75772624"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86526662"
 ---
 # <a name="troubleshoot-azure-virtual-machine-performance-on-linux-or-windows"></a>Устранение неполадок производительности виртуальных машин Azure в Linux или Windows
 
-В этой статье описывается универсальная диагностика производительности виртуальных машин с помощью мониторинга и наблюдения за узкими места, а также возможное исправление проблем, которые могут возникнуть. Помимо мониторинга, можно также использовать Perfinsights, которые предоставляют отчет с рекомендациями и основными узкими местами для операций ввода-вывода, ЦП и памяти. Perfinsights доступен для виртуальных машин [Windows](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/how-to-use-perfInsights) и [Linux](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/how-to-use-perfinsights-linux) в Azure.
+В этой статье описывается универсальная диагностика производительности виртуальных машин с помощью мониторинга и наблюдения за узкими места, а также возможное исправление проблем, которые могут возникнуть. Помимо мониторинга, можно также использовать Perfinsights, которые предоставляют отчет с рекомендациями и основными узкими местами для операций ввода-вывода, ЦП и памяти. Perfinsights доступен для виртуальных машин [Windows](./how-to-use-perfinsights.md) и [Linux](./how-to-use-perfinsights-linux.md) в Azure.
 
 В этой статье рассматривается использование мониторинга для диагностики узких мест производительности.
 
@@ -29,7 +30,7 @@ ms.locfileid: "75772624"
 
 ### <a name="azure-iaas-virtual-machine-monitoring"></a>Мониторинг виртуальных машин IAAS Azure
 
-Для мониторинга гостевой виртуальной машины используйте наблюдение за виртуальными машинами Azure, которое предупреждает вас о некоторых условиях высокого уровня ресурсов. Чтобы проверить, включена ли диагностика виртуальной машины, ознакомьтесь с [обзором журналов ресурсов Azure](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-resource-logs). Если вы видите следующее, скорее всего, диагностика не включена.
+Для мониторинга гостевой виртуальной машины используйте наблюдение за виртуальными машинами Azure, которое предупреждает вас о некоторых условиях высокого уровня ресурсов. Чтобы проверить, включена ли диагностика виртуальной машины, ознакомьтесь с [обзором журналов ресурсов Azure](../../azure-monitor/learn/tutorial-resource-logs.md). Если вы видите следующее, скорее всего, диагностика не включена.
 
 ![Мониторинг не включен](media/troubleshoot-performance-virtual-machine-linux-windows/1-virtual-machines-monitoring-not-enabled.png)
  
@@ -68,7 +69,7 @@ ms.locfileid: "75772624"
 
 Чтобы настроить эти параметры, выполните следующие действия.
 
-1.  Выберите **метрики**.
+1.  Выберите **Метрики**.
 2.  Выберите **ресурс** (учетная запись хранения).
 3.  Выбор **пространства имен**
 4.  Выберите **Метрика**.
@@ -100,7 +101,7 @@ ms.locfileid: "75772624"
 
 ### <a name="cpu-observe-trends"></a>Тенденции использования ЦП
 
-При рассмотрении проблем с производительностью учитывайте тенденции и выясните, повлияли ли они на вас. В следующих разделах мы будем использовать графы мониторинга с портала для отображения тенденций. Они также могут быть полезны при перекрестных ссылках на поведение ресурсов за тот же период времени. Чтобы настроить диаграммы, щелкните [Azure Monitor платформа данных](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform).
+При рассмотрении проблем с производительностью учитывайте тенденции и выясните, повлияли ли они на вас. В следующих разделах мы будем использовать графы мониторинга с портала для отображения тенденций. Они также могут быть полезны при перекрестных ссылках на поведение ресурсов за тот же период времени. Чтобы настроить диаграммы, щелкните [Azure Monitor платформа данных](../../azure-monitor/platform/data-platform.md).
 
 Перегруженный — перегруженный может быть связан с запланированной задачей или известным событием. Если вы можете определить задачу, определите, выполняется ли задача с требуемым уровнем производительности. Если производительность приемлема, вам может не потребоваться увеличивать ресурсы.
 
@@ -119,7 +120,7 @@ ms.locfileid: "75772624"
 
 Если вы увеличили виртуальную машину, и ЦП все еще работает на 95%, определите, обеспечивает ли этот параметр лучшую производительность или более высокую пропускную способность приложений на приемлемом уровне. В противном случае устраните неполадки отдельного аппликатион\процесс.
 
-Вы можете использовать Perfinsights для [Windows](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/how-to-use-perfInsights) или [Linux](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/how-to-use-perfinsights-linux) , чтобы проанализировать, какой процесс загружает потребление ресурсов ЦП. 
+Вы можете использовать Perfinsights для [Windows](./how-to-use-perfinsights.md) или [Linux](./how-to-use-perfinsights-linux.md) , чтобы проанализировать, какой процесс загружает потребление ресурсов ЦП. 
 
 ## <a name="check-for-memory-bottleneck"></a>Проверка узкого места в памяти
 
@@ -150,13 +151,13 @@ ms.locfileid: "75772624"
 
 Если после обновления до более крупной виртуальной машины вы обнаружите постоянное стабильное увеличение до 100%, определите приложение/процесс и устраните неполадки.
 
-Вы можете использовать Perfinsights для [Windows](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/how-to-use-perfInsights) или [Linux](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/how-to-use-perfinsights-linux) , чтобы проанализировать, какой процесс замещает потребление памяти. 
+Вы можете использовать Perfinsights для [Windows](./how-to-use-perfinsights.md) или [Linux](./how-to-use-perfinsights-linux.md) , чтобы проанализировать, какой процесс замещает потребление памяти. 
 
 ## <a name="check-for-disk-bottleneck"></a>Проверка на наличие узких мест диска
 
 Чтобы проверить подсистему хранения для виртуальной машины, проверьте диагностику на уровне виртуальной машины Azure, используя счетчики в консоли диагностики виртуальных машин, а также диагностику учетной записи хранения.
 
-Для устранения неполадок, связанных с конкретными виртуальными машинами, можно использовать Perfinsights для [Windows](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/how-to-use-perfInsights) или [Linux](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/how-to-use-perfinsights-linux), что может помочь в анализе процесса, который управляет операциями ввода-вывода. 
+Для устранения неполадок, связанных с конкретными виртуальными машинами, можно использовать Perfinsights для [Windows](./how-to-use-perfinsights.md) или [Linux](./how-to-use-perfinsights-linux.md), что может помочь в анализе процесса, который управляет операциями ввода-вывода. 
 
 Обратите внимание, что у нас нет счетчиков для учетных записей хранения, избыточных в зонах и Premium. Для проблем, связанных с этими счетчиками, создайте обращение в службу поддержки.
 
@@ -207,9 +208,9 @@ AverageE2ELatency представляет задержку клиента. Пр
 
 Благодаря новым предложениям дисков в стандартном хранилище ограничения операций ввода-вывода и пропускной способности могут отличаться, но совокупный предел учетной записи хранения уровня "Стандартный" составляет 20000 операций ввода-вывода в секунду (хранилище класса Premium имеет разные ограничения на уровне учетной записи или диска Дополнительные сведения о различных предложениях дисков хранилища Standard и ограничениях дисков см. в статье:
 
-* [Целевые показатели масштабируемости и производительности для дисков виртуальных машин в Windows](https://docs.microsoft.com/azure/virtual-machines/windows/disk-scalability-targets).
+* [Целевые показатели масштабируемости и производительности для дисков виртуальных машин в Windows](../windows/disk-scalability-targets.md).
 
-#### <a name="references"></a>Ссылки
+#### <a name="references"></a>Ссылки (на английском языке)
 
 * [Целевые показатели масштабируемости и производительности для учетных записей хранилища BLOB-объектов класса Premium](../../storage/blobs/scalability-targets-premium-page-blobs.md)
 
@@ -223,19 +224,19 @@ AverageE2ELatency представляет задержку клиента. Пр
 
 Новые предложения дисков в хранилище уровня "Стандартный" имеют разный объем операций ввода-вывода и ограничения пропускной способности (для каждого виртуального жесткого диска не доступны операции ввода Взгляните на данные, чтобы узнать, не превышают ли вы ограничения общей пропускной способности МБ виртуальных жестких дисков на уровне виртуальной машины, используя чтение и запись с диска, а затем Оптимизируйте конфигурацию хранилища виртуальных машин, чтобы масштабировать последние ограничения для одного виртуального жесткого диска. Дополнительные сведения о различных предложениях дисков хранилища Standard и ограничениях дисков см. в статье:
 
-* [Целевые показатели масштабируемости и производительности для дисков виртуальных машин в Windows](https://docs.microsoft.com/azure/virtual-machines/windows/disk-scalability-targets).
+* [Целевые показатели масштабируемости и производительности для дисков виртуальных машин в Windows](../windows/disk-scalability-targets.md).
 
 ### <a name="high-disk-utilizationlatency-remediation"></a>Высокая степень использования диска/исправление задержки
 
 Сократите задержку клиента и оптимизируйте операции ввода-вывода виртуальной машины, чтобы масштабировать предыдущие ограничения VHD.
 
-* [Оптимизация операций ввода-вывода для Windows в Azure](https://azure.microsoft.com/documentation/articles/virtual-machines-sql-server-performance-best-practices/)
+* [Оптимизация операций ввода-вывода для Windows в Azure](../../azure-sql/virtual-machines/windows/performance-guidelines-best-practices.md?toc=/azure/virtual-machines/windows/toc.json)
 
-* [Оптимизация операций ввода-вывода для Linux в Azure](https://blogs.msdn.microsoft.com/igorpag/2014/10/23/azure-storage-secrets-and-linux-io-optimizations/)
+* [Оптимизация операций ввода-вывода для Linux в Azure](/archive/blogs/igorpag/azure-storage-secrets-and-linux-io-optimizations)
 
 #### <a name="reduce-throttling"></a>Уменьшение регулирования
 
-Если у вас есть верхние пределы учетных записей хранения, необходимо повторно сбалансировать виртуальные жесткие диски между учетными записями хранения. См. [целевые показатели масштабируемости и производительности службы хранилища Azure](https://azure.microsoft.com/documentation/articles/storage-scalability-targets/).
+Если у вас есть верхние пределы учетных записей хранения, необходимо повторно сбалансировать виртуальные жесткие диски между учетными записями хранения. См. [целевые показатели масштабируемости и производительности службы хранилища Azure](../../storage/common/scalability-targets-standard-account.md).
 
 ### <a name="increase-throughput-and-reduce-latency"></a>Увеличение пропускной способности и сокращение задержки
 
@@ -243,11 +244,11 @@ AverageE2ELatency представляет задержку клиента. Пр
 
 В этих статьях обсуждаются конкретные сценарии.
 
-* [Перенос в хранилище Azure класса Premium](https://azure.microsoft.com/documentation/articles/storage-migration-to-premium-storage/)
+* [Перенос в хранилище Azure класса Premium](../windows/migrate-to-managed-disks.md)
 
-* [Использование хранилища Azure класса Premium с SQL Server](https://azure.microsoft.com/documentation/articles/virtual-machines-sql-server-use-premium-storage/)
+* [Использование хранилища Azure класса Premium с SQL Server](/previous-versions/azure/virtual-machines/windows/sqlclassic/virtual-machines-windows-classic-sql-server-premium-storage)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вам нужна дополнительная помощь в любой момент в этой статье, обратитесь к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/).
 
