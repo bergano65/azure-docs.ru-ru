@@ -5,11 +5,12 @@ ms.date: 06/02/2020
 ms.topic: conceptual
 description: Описывает процессы, которые Power Azure Dev Spaces
 keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: dca9f1246a093471cd9538d010bf78116be1b3c7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 536918e1b1db88dcae6985b853b3cb0a6c91a52a
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84307373"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86522284"
 ---
 # <a name="how-azure-dev-spaces-works"></a>Принцип работы Azure Dev Spaces
 
@@ -41,14 +42,14 @@ Azure Dev Spaces помогает группам работать с прило�
 
 Вы также можете использовать действия GitHub с Azure Dev Spaces для тестирования изменений в приложении в запросе на вытягивание непосредственно в кластере перед слиянием. Azure Dev Spaces может автоматически развернуть версию проверки приложения в кластере, позволяя автору и другим участникам команды просматривать изменения в контексте всего приложения. Используя возможности маршрутизации Azure Dev Spaces, эта версия проверки приложения также развертывается в кластере без влияния на другие пространства разработки. Все эти возможности позволяют уверенно утверждать и объединять запросы на вытягивание. Пример действий GitHub и Azure Dev Spaces см. в разделе [действия github & службе Kubernetes Azure][pr-flow].
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к подключению локального компьютера разработки к кластеру AKS, см. статью [Подключение компьютера разработчика к кластеру AKS][connect].
 
 См. сведения о том, как [начать работу с Azure Dev Spaces для командной разработки][quickstart-team].
 
 [connect]: how-to/local-process-kubernetes-vs-code.md
-[how-it-works-local-process-kubernetes]: how-dev-spaces-works-local-process-kubernetes.md
+[how-it-works-local-process-kubernetes]: /visualstudio/containers/overview-local-process-kubernetes
 [how-it-works-prep]: how-dev-spaces-works-prep.md
 [how-it-works-remote-debugging]: how-dev-spaces-works-remote-debugging.md
 [how-it-works-routing]: how-dev-spaces-works-routing.md

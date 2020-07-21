@@ -6,11 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.date: 10/03/2018
 ms.topic: article
-ms.openlocfilehash: 08c7fa6abac7ed369347f1f496c70174b06edf02
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 65f9ee8f67ac4efb6ab26fa0912d11d7be7c571d
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83831591"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86520907"
 ---
 # <a name="run-actions-based-on-group-status-by-using-scopes-in-azure-logic-apps"></a>Вы можете выполнять действия рабочего процесса на основе состояния группы с помощью областей в Azure Logic Apps.
 
@@ -70,13 +71,13 @@ ms.locfileid: "83831591"
 
       ![Настройка действия Bing Maps - Get route (Карты Bing — получить маршрут)](./media/logic-apps-control-flow-run-steps-group-scopes/get-route.png) 
 
-      Дополнительные сведения об этих параметрах см. в статье [Calculate a Route](https://msdn.microsoft.com/library/ff701717.aspx) (Расчет маршрута).
+      Дополнительные сведения об этих параметрах см. в статье [Calculate a Route](/bingmaps/rest-services/routes/calculate-a-route) (Расчет маршрута).
 
       | Параметр | Значение | Описание |
       | ------- | ----- | ----------- |
       | **Пункт маршрута 1** | <*Начало*> | Введите начало маршрута. | 
       | **Пункт маршрута 2** | <*Конец*> | Введите место назначения маршрута. | 
-      | **Avoid** (Избегать) | None | Введите то, чего нужно избегать на маршруте, например шоссе, платные дороги и т. д. Возможные значения см. в статье [Calculate a Route](https://msdn.microsoft.com/library/ff701717.aspx) (Расчет маршрута). | 
+      | **Avoid** (Избегать) | None | Введите то, чего нужно избегать на маршруте, например шоссе, платные дороги и т. д. Возможные значения см. в статье [Calculate a Route](/bingmaps/rest-services/routes/calculate-a-route) (Расчет маршрута). | 
       | **Optimize** (Оптимизация) | timeWithTraffic | Выберите параметр для оптимизации маршрута, например расстояние, время в пути в соответствии с информацией о текущей загрузке дорог и т. д. В этом примере используется это значение: "timeWithTraffic". | 
       | **Distance unit** (Единица расстояния) | <*выбранная единица*> | Введите единицы измерения расстояния для расчета маршрута. В этом примере используется значение "миля" | 
       | **Travel mode** (Режим движения) | Driving (Движение на автомобиле) | Введите режим движения по маршруту. В этом примере используется значение: "Driving" (Вождение). | 
@@ -387,7 +388,7 @@ ms.locfileid: "83831591"
 
 ## <a name="get-support"></a>Получение поддержки
 
-* Если у вас есть вопросы, посетите [страницу вопросов и ответов по Azure Logic Apps на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-logic-apps.html).
+* Если у вас есть вопросы, посетите [страницу вопросов и ответов по Azure Logic Apps на сайте Майкрософт](/answers/topics/azure-logic-apps.html).
 * Оставить предложения по функциям или проголосовать за них вы можете на [сайте отзывов пользователей Azure Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дальнейшие действия

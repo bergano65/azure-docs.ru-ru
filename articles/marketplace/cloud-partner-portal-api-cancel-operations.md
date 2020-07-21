@@ -4,20 +4,20 @@ description: API для отмены операции, выполняемой в
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
-author: anbene
+author: emuench
 ms.author: mingshen
-ms.date: 06/16/2020
-ms.openlocfilehash: e65f0a8ee0a5dfafab681010006fe190cb5bad70
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.date: 07/14/2020
+ms.openlocfilehash: 462ca525be9cf46c87acdf4025223a98afaf8e3b
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86102758"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86520380"
 ---
 # <a name="cancel-operation"></a>Отмена операции
 
 > [!NOTE]
-> Программные интерфейсы Портала Cloud Partner интегрированы с Центром партнеров и продолжат работать после миграции предложений в Центр партнеров. Интеграция включает небольшие изменения. Ознакомьтесь с изменениями, приведенными в [справочнике по портал Cloud Partner API](./cloud-partner-portal-api-overview.md) , чтобы убедиться, что код будет продолжать работать после перехода в центр партнеров.
+> Портал Cloud Partner API интегрированы с и будут продолжать работать в центре партнеров. Переход содержит небольшие изменения. Ознакомьтесь с изменениями, приведенными в [справочнике по портал Cloud Partner API](./cloud-partner-portal-api-overview.md) , чтобы убедиться, что код продолжит работать после перехода в центр партнеров. API-интерфейсы CPP следует использовать только для существующих продуктов, которые уже были интегрированы до перехода в центр партнеров. новые продукты должны использовать API-интерфейсы отправки центра партнеров.
 
 Этот API в настоящее время отменяет операцию на предложение. Используйте [получения операций API](./cloud-partner-portal-api-retrieve-operations.md) для получения `operationId`, чтобы передать его в API. Отмена обычно выполняется в синхронной операции, однако в некоторых сложных сценариях новой операции может потребоваться отменить существующую. В этом случае в тексте ответа HTTP содержит расположение операции, который необходим для запроса состояния.
 

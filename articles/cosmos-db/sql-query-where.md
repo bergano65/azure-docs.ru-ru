@@ -6,11 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 03/06/2020
 ms.author: tisande
-ms.openlocfilehash: 483a0533eafc81ef8698d260a753062ae074f6d4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ceffb203ccc2cca1ff6e1c53644cde955c2e0acb
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78898776"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86523508"
 ---
 # <a name="where-clause-in-azure-cosmos-db"></a>Предложение WHERE в Azure Cosmos DB
 
@@ -34,7 +35,7 @@ WHERE <filter_condition>
   
    Выражение, представляющее вычисляемое значение. Дополнительные сведения см. в разделе [скалярные выражения](sql-query-scalar-expressions.md) .  
   
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Remarks
   
   Чтобы вернуть документ, выражение, указанное в качестве условия фильтра, должно иметь значение true. Условие будет соответствовать только логическому значению `true` , любое другое значение: undefine, null, false, Number, Array или Object не будет соответствовать условию.
 
@@ -50,7 +51,7 @@ WHERE <filter_condition>
     WHERE f.id = "AndersenFamily"
 ```
 
-Результаты:
+Вы получите такие результаты:
 
 ```json
     [{
@@ -72,7 +73,7 @@ WHERE <filter_condition>
 |---------|---------|
 |Арифметические | +,-,*,/,% |
 |Побитовые    | \|, &, ^, <<, >>, >>> (сдвиг вправо с заполнением нулями) |
-|Logical    | AND, OR, NOT      |
+|Логический    | AND, OR, NOT      |
 |Сравнение | =, !=, &lt;, &gt;, &lt;=, &gt;=, <> |
 |Строка     |  \|\| (объединение) |
 
@@ -104,7 +105,7 @@ WHERE <filter_condition>
     WHERE (-c.grade = -5)  -- matching grades == 5
 ```
 
-В запросах также можно использовать ссылки на свойства. Например, `SELECT * FROM Families f WHERE f.isRegistered` возвращает элемент JSON, содержащий свойство `isRegistered` со значением, равным `true` . Любое другое значение, например,,,, `false` `null` `Undefined` `<number>` `<string>` , `<object>` или `<array>` , исключает элемент из результата.
+В запросах также можно использовать ссылки на свойства. Например, `SELECT * FROM Families f WHERE f.isRegistered` возвращает элемент JSON, содержащий свойство `isRegistered` со значением, равным `true` . Любое другое значение, например,,,, `false` `null` `Undefined` `<number>` `<string>` , `<object>` или `<array>` , исключает элемент из результата. Кроме того, можно использовать `IS_DEFINED` функцию проверки типов для запроса в зависимости от наличия или отсутствия заданного свойства JSON. Например, `SELECT * FROM Families f WHERE NOT IS_DEFINED(f.isRegistered)` возвращает любой элемент JSON, не имеющий значения для `isRegistered` .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -6,11 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 05/26/2017
-ms.openlocfilehash: 45b53b0e692a1272ba59719655c8d60c90fd6c96
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 01ddef37702cb4dedaefb3e94e488ef478f292c3
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83834498"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86520806"
 ---
 # <a name="create-custom-apis-you-can-call-from-azure-logic-apps"></a>Создание пользовательских API, которые можно вызывать из Azure Logic Apps
 
@@ -53,8 +54,8 @@ API-интерфейсы можно разместить в [службе при
 Дополнительные сведения о пользовательских соединителях см. в следующих разделах: 
 
 * [Обзор настраиваемых соединителей](../logic-apps/custom-connector-overview.md)
-* [Создание соединителей с помощью интерфейсов веб-API](../logic-apps/custom-connector-build-web-api-app-tutorial.md)
-* [Register custom connectors in Azure Logic Apps](../logic-apps/logic-apps-custom-connector-register.md) (Регистрация пользовательских соединителей в Azure Logic Apps)
+* [Создание соединителей с помощью интерфейсов веб-API](/connectors/custom-connectors/create-web-api-connector)
+* [Register custom connectors in Azure Logic Apps](/connectors/custom-connectors/) (Регистрация пользовательских соединителей в Azure Logic Apps)
 
 ## <a name="helpful-tools"></a>Полезные инструменты
 
@@ -227,7 +228,7 @@ API-интерфейсы можно разместить в [службе при
 
 * За специализированной помощью по пользовательским API обращайтесь по адресу [customapishelp@microsoft.com](mailto:customapishelp@microsoft.com).
 
-* В случае наличия вопросов посетите страницу [Вопросы и ответы Майкрософт по Azure Logic Apps](https://docs.microsoft.com/answers/topics/azure-logic-apps.html).
+* В случае наличия вопросов посетите страницу [Вопросы и ответы Майкрософт по Azure Logic Apps](/answers/topics/azure-logic-apps.html).
 
 * Чтобы улучшить Logic Apps, голосуйте за идеи или предлагайте собственные на [сайте обратной связи Logic Apps](https://aka.ms/logicapps-wish). 
 

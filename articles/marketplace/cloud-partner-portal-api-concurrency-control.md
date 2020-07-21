@@ -3,19 +3,21 @@ title: Управление параллелизмом — Azure Marketplace
 description: Стратегии управления параллелизмом для API-интерфейсов публикации на портале Cloud Partner.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: conceptual
-ms.date: 04/08/2020
-ms.openlocfilehash: b66d266500745d08bef98a42e51cc8a7bab63958
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.topic: reference
+author: emuench
+ms.author: mingshen
+ms.date: 07/14/2020
+ms.openlocfilehash: 1160d5568108e7936099cc5227b9e4cadbaddf36
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86102741"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86520346"
 ---
 # <a name="concurrency-control"></a>Управление параллелизмом
 
 > [!NOTE]
-> Программные интерфейсы Портала Cloud Partner интегрированы с Центром партнеров и продолжат работать после миграции предложений в Центр партнеров. Интеграция включает небольшие изменения. Ознакомьтесь с изменениями, приведенными в [справочнике по портал Cloud Partner API](./cloud-partner-portal-api-overview.md) , чтобы убедиться, что код будет продолжать работать после перехода в центр партнеров.
+> Портал Cloud Partner API интегрированы с и будут продолжать работать в центре партнеров. Переход содержит небольшие изменения. Ознакомьтесь с изменениями, приведенными в [справочнике по портал Cloud Partner API](./cloud-partner-portal-api-overview.md) , чтобы убедиться, что код продолжит работать после перехода в центр партнеров. API-интерфейсы CPP следует использовать только для существующих продуктов, которые уже были интегрированы до перехода в центр партнеров. новые продукты должны использовать API-интерфейсы отправки центра партнеров.
 
 При каждом вызове API-интерфейсов публикации на портале Cloud Partner необходимо явно указать, какую стратегию управления параллелизмом использовать. Если заголовок **If-Match** не предоставлен, это приведет к появлению сообщения об ошибке HTTP 400. Мы предлагаем две стратегии для управления параллелизмом.
 

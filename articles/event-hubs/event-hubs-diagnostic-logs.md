@@ -3,11 +3,12 @@ title: Настройка журналов диагностики Центров
 description: Узнайте, как настроить журналы действий и журналы диагностики для Центров событий в Azure.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 976d8a7127438164c8b807b6f14d3ae877f44b65
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 65c3fc783506eae19c911eb035ebc51b2db19849
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85322466"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86521944"
 ---
 # <a name="set-up-diagnostic-logs-for-an-azure-event-hub"></a>Настройка журналов диагностики для центра событий Azure
 
@@ -232,7 +233,7 @@ JSON журнала пользователя с управляемым клие�
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Что такое Центры событий Azure?](event-hubs-what-is-event-hubs.md)
+- [Что такое Центры событий Azure?](./event-hubs-about.md)
 - [Примеры Центров событий](sdks.md)
 - Приступая к работе с Центрами событий
     - [.NET Core](get-started-dotnet-standard-send-v2.md)

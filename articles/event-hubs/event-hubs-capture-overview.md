@@ -3,12 +3,12 @@ title: Сбор событий потоковой передачи — Цент�
 description: В этой статье описывается функция сбора, которая позволяет записывать события потоковой передачи из Центров событий Azure
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: be5a8bed06f5df0ffcee66c277f8ba5fa1a1bf74
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 201fde24e50fc9403d5e9faf314550520fb7b865
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85985264"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86522131"
 ---
 # <a name="capture-events-through-azure-event-hubs-in-azure-blob-storage-or-azure-data-lake-storage"></a>Сбор событий из Центров событий Azure в хранилище BLOB-объектов Azure или Azure Data Lake Storage
 Центры событий Azure позволяют автоматически записывать определенный объем потоковых данных из Центров событий в учетную запись [хранилища BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/) или [Azure Data Lake Storage Gen 1 или Gen 2](https://azure.microsoft.com/services/data-lake-store/) с указанным интервалом времени и размера. Настройка функции "Сбор" выполняется быстро, ее использование не влечет дополнительных административных расходов, а масштабирование осуществляется автоматически на основе [единиц пропускной способности](event-hubs-scalability.md#throughput-units) Центров событий. Функция "Сбор" в Центрах событий — это самый удобный способ передачи потоковых данных в Azure. Он позволяет сосредоточиться на обработке данных, а не на их записи.
@@ -89,7 +89,7 @@ https://github.com/yorek/apache-drill-azure-blob
 
 - [HDInsight. Обращение к файлам в службе хранилища Azure][HDInsight: Address files in Azure storage]
 - [Azure Databricks. Хранилище BLOB-объектов Azure][Azure Databricks: Azure Blob Storage]
-- [Служба Azure Kubernetes (AKS)](https://docs.microsoft.com/azure/aks/spark-job) 
+- [Служба Azure Kubernetes (AKS)](../aks/spark-job.md) 
 
 ### <a name="use-avro-tools"></a>Использование средств Avro
 
@@ -152,7 +152,7 @@ Apache Avro предоставляет руководства по началу 
 [Avro Tools]: https://downloads.apache.org/avro/stable/java/
 [Java]: https://avro.apache.org/docs/current/gettingstartedjava.html
 [Python]: https://avro.apache.org/docs/current/gettingstartedpython.html
-[Event Hubs overview]: event-hubs-what-is-event-hubs.md
+[Event Hubs overview]: ./event-hubs-about.md
 [HDInsight: Address files in Azure storage]:https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-blob-storage
 [Azure Databricks: Azure Blob Storage]:https://docs.databricks.com/spark/latest/data-sources/azure/azure-storage.html
 [Apache Drill: Azure Blob Storage Plugin]:https://drill.apache.org/docs/azure-blob-storage-plugin/

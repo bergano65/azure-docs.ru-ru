@@ -3,11 +3,12 @@ title: Настройка общего доступа к реестру
 description: Настройте правила IP-адресов, чтобы разрешить доступ к реестру контейнеров Azure из выбранных общедоступных IP-адресов или диапазонов адресов.
 ms.topic: article
 ms.date: 05/19/2020
-ms.openlocfilehash: dc0514fbe7d3e01914965cee5dc547172d4435a4
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 967f27c05301ff339765706d0b3088ffcbaed1f2
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702089"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86523831"
 ---
 # <a name="configure-public-ip-network-rules"></a>Настройка сетевых правил для общедоступных IP-адресов
 
@@ -101,10 +102,17 @@ az acr update --name myContainerRegistry --public-network-enabled true
 
 ![Общий доступ из всех сетей][acr-access-all-networks]
 
+## <a name="troubleshoot"></a>Устранение неполадок
+
+Если задано правило общедоступной сети или запрещен общий доступ к реестру, попытки входа в реестр из неразрешенной общедоступной сети завершатся сбоем. Клиентский доступ через прокси-сервер HTTPS также завершится ошибкой, если не задано правило доступа для прокси-сервера. Вы увидите сообщение об ошибке, аналогичное `Error response from daemon: login attempt failed with status: 403 Forbidden` или `Looks like you don't have access to registry` .
+
+Эти ошибки также могут возникать, если используется прокси-сервер HTTPS, разрешенный правилом доступа к сети, но прокси-сервер в клиентской среде не настроен должным образом. Убедитесь, что клиент DOCKER и управляющая программа DOCKER настроены для поведения прокси-сервера. Дополнительные сведения см. в разделе [http/https proxy](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy) в документации по DOCKER.
+
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Чтобы ограничить доступ к реестру с помощью частной конечной точки в виртуальной сети, воспользуйтесь инструкциями из статьи о [настройке Приватного канала Azure для реестра контейнеров Azure](container-registry-private-link.md).
-* Если вам нужно настроить правила для доступа к реестру из сети за брандмауэром клиента, изучите [эту статью](container-registry-firewall-access-rules.md).
+* Чтобы ограничить доступ к реестру, используя частную конечную точку в виртуальной сети, см. статью [Настройка Приватного канала Azure для реестра контейнеров Azure](container-registry-private-link.md).
+* Если вам нужно настроить правила для доступа к реестру, расположенному за клиентским брандмауэром, воспользуйтесь руководством [Настройка правил для доступа к реестру контейнеров Azure за брандмауэром](container-registry-firewall-access-rules.md).
 
 [az-acr-login]: /cli/azure/acr#az-acr-login
 [az-acr-network-rule-add]: /cli/azure/acr/network-rule/#az-acr-network-rule-add

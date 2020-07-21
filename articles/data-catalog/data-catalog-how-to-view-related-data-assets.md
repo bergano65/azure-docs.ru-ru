@@ -4,13 +4,14 @@ description: В этой статье объясняется, как просм�
 author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/01/2019
-ms.openlocfilehash: 212ba647e6eb44e800a589928620f56fba65107c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fb5352b4cc84801296d9e621053672328b02692a
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "68737021"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86523372"
 ---
 # <a name="how-to-view-related-data-assets-in-azure-data-catalog"></a>Как просматривать связанные ресурсы данных в каталоге данных Azure
 Каталог данных Azure позволяет просматривать ресурсы данных, связанные с выбранным ресурсом, и связи между ними. 
@@ -45,5 +46,5 @@ ms.locfileid: "68737021"
 
 Для включения связей между зарегистрированными ресурсами зарегистрируйте их повторно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Как управлять ресурсами данных](data-catalog-how-to-manage.md)

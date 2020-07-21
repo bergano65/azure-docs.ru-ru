@@ -72,6 +72,10 @@
           href: how-to-manage-routes.md
         - name: Интеграция с Azure Maps
           href: how-to-integrate-maps.md
+    - name: Диагностика
+      items:
+        - name: Известные проблемы
+          href: troubleshoot-known-issues.md
 - name: Справочник
   items:
     - name: Ограничения службы Digital Twins

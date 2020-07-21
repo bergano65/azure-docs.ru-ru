@@ -9,12 +9,12 @@ ms.date: 03/20/2020
 author: timsander1
 ms.author: tisande
 ms.custom: seodec18
-ms.openlocfilehash: 2ccd352950117d8427809616f78f4a0691319cdf
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: f5f321beb873ffcd6d120e94f8416a650d0de3cf
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86023675"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86523559"
 ---
 # <a name="connect-a-nodejs-mongoose-application-to-azure-cosmos-db"></a>Подключение приложения Mongoose Node.js к Azure Cosmos DB
 
@@ -22,7 +22,7 @@ ms.locfileid: "86023675"
 
 Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, пары "ключ-значение" и графовые базы данных, используя преимущества глобального распределения и горизонтального масштабирования Cosmos DB.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -157,7 +157,7 @@ Cosmos DB — это глобально распределенная мног�
             { firstName: "Patrick", gender: "male", grade: 7 }
         ],
         pets: [
-            { givenName: "Blackie" }
+            { givenName: "Buddy" }
         ],
         address: { country: "USA", state: "WA", city: "Seattle" }
     });
@@ -275,7 +275,7 @@ Cosmos DB — это глобально распределенная мног�
            { firstName: "Patrick", gender: "male", grade: 7 }
        ],
        pets: [
-           { givenName: "Blackie" }
+           { givenName: "Buddy" }
        ],
        address: { country: "USA", state: "WA", city: "Seattle" }
       });

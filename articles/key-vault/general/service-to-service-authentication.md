@@ -9,12 +9,12 @@ ms.date: 06/30/2020
 ms.topic: conceptual
 ms.service: key-vault
 ms.subservice: general
-ms.openlocfilehash: 132663ed26eab41747f6fce25bdb2beabe286322
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 83c4a48f8c177cf84078966bae32126102b45c3b
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86232616"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86521026"
 ---
 # <a name="service-to-service-authentication-to-azure-key-vault-using-net"></a>Проверка подлинности с взаимодействием между службами в Azure Key Vault с помощью .NET
 
@@ -27,7 +27,7 @@ ms.locfileid: "86232616"
 
 `Microsoft.Azure.Services.AppAuthentication`Библиотека управляет проверкой подлинности автоматически, что, в свою очередь, позволяет сосредоточиться на решении, а не на ваших учетных данных. Она поддерживает локальную разработку с использованием Microsoft Visual Studio, Azure CLI или встроенной проверки подлинности Azure AD. При развертывании в ресурс Azure, поддерживающий управляемое удостоверение, библиотека автоматически использует [управляемые удостоверения для ресурсов Azure](../../active-directory/msi-overview.md). Изменение кода или конфигурации не требуется. Библиотека также поддерживает прямое использование [учетных данных клиента](../../azure-resource-manager/resource-group-authenticate-service-principal.md) Azure AD, если управляемое удостоверение недоступно, или если контекст безопасности разработчика не может быть определен во время локальной разработки.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Visual studio 2019](https://www.visualstudio.com/downloads/) или [Visual Studio 2017 v 15.5](https://blogs.msdn.microsoft.com/visualstudio/2017/10/11/visual-studio-2017-version-15-5-preview/).
 
@@ -230,12 +230,12 @@ ms.locfileid: "86232616"
 
 - [Управляемое удостоверение для ресурсов Azure](../..//active-directory/managed-identities-azure-resources/overview.md)
 - Проверка подлинности Visual Studio
-- [Проверка подлинности Azure CLI](/azure/authenticate-azure-cli?view=azure-cli-latest)
+- [Проверка подлинности Azure CLI](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest)
 - [Встроенная проверка подлинности Windows](/aspnet/web-api/overview/security/integrated-windows-authentication)
 
 Для управления процессом используйте строку подключения, переданную в конструктор `AzureServiceTokenProvider` или указанную в переменной среды *AzureServicesAuthConnectionString*.  Поддерживаются следующие варианты.
 
-| Параметр строки подключения | Сценарий | Примечания|
+| Параметр строки подключения | Сценарий | Комментарии|
 |:--------------------------------|:------------------------|:----------------------------|
 | `RunAs=Developer; DeveloperTool=AzureCli` | Локальная разработка | `AzureServiceTokenProvider`использует Azure CLI для получения токена. |
 | `RunAs=Developer; DeveloperTool=VisualStudio` | Локальная разработка | `AzureServiceTokenProvider`использует Visual Studio для получения токена. |

@@ -8,11 +8,12 @@ ms.topic: troubleshooting
 ms.date: 8/26/2019
 ms.author: abnarain
 ms.reviewer: craigg
-ms.openlocfilehash: ac6081f02ad532b512ecca335b949eec71c060ff
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 568739ebdce632ae955da5e1cec12635c86af57c
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836164"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86522862"
 ---
 # <a name="troubleshoot-azure-data-factory"></a>Устранение неполадок в Фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -122,6 +123,14 @@ ms.locfileid: "83836164"
 - **Причина.** Сообщения об ошибках указывают на различные проблемы, такие как непредвиденное состояние кластера или определенное действие. Зачастую сообщение об ошибке не отображается.
 
 - **Рекомендация**. Недоступно
+
+### <a name="error-code-3208"></a>Код ошибки: 3208
+
+- **Сообщение.** `An error occurred while sending the request.`
+
+- **Причина**: было прервано сетевое подключение к службе "кирпичы".
+
+- **Рекомендация**. Если вы используете локальную среду выполнения интеграции, убедитесь, что сетевое подключение надежно от узлов среды выполнения интеграции. Если вы используете среду выполнения интеграции Azure, обычно используется повторная попытка.
  
 ## <a name="azure-data-lake-analytics"></a>Аналитика озера данных Azure
 

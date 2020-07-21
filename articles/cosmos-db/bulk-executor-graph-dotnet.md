@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/28/2019
 ms.author: lbosq
 ms.reviewer: sngun
-ms.openlocfilehash: 86d88787d024029b11d9718f8dbc834ae7217707
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 78cc1fe1a84f1fd596d0c581f034f312cb1a0c3d
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85260650"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86523814"
 ---
 # <a name="using-the-graph-bulk-executor-net-library-to-perform-bulk-operations-in-azure-cosmos-db-gremlin-api"></a>Использование библиотеки массового исполнителя .NET для выполнения массовых операций с графами в API Gremlin в Azure Cosmos DB
 
@@ -155,6 +155,7 @@ git clone https://github.com/Azure-Samples/azure-cosmosdb-graph-bulkexecutor-dot
 3. Оцените результаты, отправив запрос в базу данных графа. Если `ShouldCleanupOnFinish` имеет значение true, база данных будет автоматически удалена.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Дополнительные сведения о пакете Nuget и заметки о выпуске библиотеки .NET массового исполнителя см. в статье [о пакете SDK массового исполнителя](sql-api-sdk-bulk-executor-dot-net.md). 
+
+* Дополнительные сведения о пакете NuGet и заметках о выпуске библиотеки NET выполнителя .NET см. в разделе [Подробности пакета SDK](sql-api-sdk-bulk-executor-dot-net.md)для пакетного исполнителя. 
 * Ознакомьтесь с [советами по повышению производительности](https://docs.microsoft.com/azure/cosmos-db/bulk-executor-dot-net#performance-tips) при использовании библиотеки массового исполнителя.
 * Прочитайте [справочную статью о BulkExecutor.Graph](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.graph?view=azure-dotnet) с дополнительными сведениями о классах и методах, указанных в этом пространстве имен.

@@ -11,11 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/06/2020
-ms.openlocfilehash: f3eed03c585ba6b48a21b36c21cb77585456fc2c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0c64a38295754e4754326dec126bfbc36e1bef61
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84660264"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86523338"
 ---
 # <a name="azure-integration-runtime-ip-addresses"></a>IP-адреса Azure Integration Runtime
 
@@ -24,7 +25,7 @@ ms.locfileid: "84660264"
 IP-адреса, которые Azure Integration Runtime использует, зависят от региона, в котором находится среда выполнения интеграции Azure. *Все* Среды выполнения интеграции Azure, которые находятся в одном регионе, используют одни и те же диапазоны IP-адресов.
 
 > [!IMPORTANT]  
-> Потоки данных не поддерживают использование диапазонов фиксированных IP-адресов.
+> Потоки данных и Azure Integration Runtime, которые позволяют использовать управляемую виртуальную сеть, не поддерживают использование диапазонов фиксированных IP-адресов.
 >
 > Эти диапазоны IP-адресов можно использовать для перемещения данных, выполнения конвейера и внешних действий. Эти диапазоны IP-адресов можно использовать для список разрешений в хранилищах данных, группе безопасности сети (NSG) и брандмауэрах для входящего доступа из среды выполнения интеграции Azure. 
 
@@ -39,6 +40,6 @@ IP-адреса, которые Azure Integration Runtime использует, 
 
   Вместо этого мы рекомендуем использовать [Доверенные службы при подключении к службе хранилища Azure](https://techcommunity.microsoft.com/t5/azure-data-factory/data-factory-is-now-a-trusted-service-in-azure-storage-and-azure/ba-p/964993). 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Вопросы безопасности при перемещении данных в фабрике данных Azure](data-movement-security-considerations.md)

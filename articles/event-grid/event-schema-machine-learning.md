@@ -3,12 +3,12 @@ title: Машинное обучение Azure в качестве источн�
 description: Описание свойств, предоставляемых для событий рабочей области Машинное обучение с помощью службы "Сетка событий Azure"
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: b5a39539a6f39c78251a3cc7788b8e5ee4babbf9
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: e72123a4f609b93e191c82f11443cbb1de7d012d
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86181528"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86522080"
 ---
 # <a name="azure-machine-learning-as-an-event-grid-source"></a>Машинное обучение Azure в качестве источника сетки событий
 
@@ -151,7 +151,7 @@ ms.locfileid: "86181528"
 [{
   "topic": "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.MachineLearningServices/workspaces/{workspace-name}",
   "subject": "experiments/0fa9dfaa-cba3-4fa7-b590-23e48548f5c1/runs/AutoML_ad912b2d-6467-4f32-a616-dbe4af6dd8fc_5",
-  "eventType": "Microsoft.MachineLearningServices.RunCompleted",
+  "eventType": "Microsoft.MachineLearningServices.RunStatusChanged",
   "eventTime": "2017-06-26T18:41:00.9584103Z",
   "id": "831e1650-001e-001b-66ab-eeb76e069631",
   "data": {
@@ -201,7 +201,7 @@ ms.locfileid: "86181528"
 
 ### <a name="microsoftmachinelearningservicesmodelregistered"></a>Microsoft. Мачинелеарнингсервицес. Моделрегистеред
 
-| Свойство | Тип | Описание |
+| Свойство | Тип | Описание: |
 | -------- | ---- | ----------- |
 | ModelName | строка | Имя зарегистрированной модели. |
 | моделверсион | строка | Версия зарегистрированной модели. |
@@ -210,7 +210,7 @@ ms.locfileid: "86181528"
 
 ### <a name="microsoftmachinelearningservicesmodeldeployed"></a>Microsoft. Мачинелеарнингсервицес. Моделдеплойед
 
-| Свойство | Тип | Описание |
+| Свойство | Тип | Описание: |
 | -------- | ---- | ----------- |
 | ServiceName | строка | Имя развернутой службы. |
 | сервицекомпутетипе | строка | Тип вычислений (например, ACI, AKS) развернутой службы. |
@@ -255,7 +255,7 @@ ms.locfileid: "86181528"
 | RunStatus | строка | Состояние выполнения. |
 
 ## <a name="tutorials-and-how-tos"></a>Руководства и инструкции
-| Название | Описание |
+| Заголовок | Описание |
 | ----- | ----- |
 | [Использование событий Машинное обучение Azure](../machine-learning/concept-event-grid-integration.md) | Общие сведения об интеграции Машинное обучение Azure со службой "Сетка событий". |
 

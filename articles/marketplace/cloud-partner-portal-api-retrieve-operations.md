@@ -4,18 +4,20 @@ description: API для получения всех операций в пред
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
-ms.date: 04/08/2020
-ms.openlocfilehash: c0611cb3cbc24e2b105cdef134e30a7c2fbdd445
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+author: dsindona
+ms.author: dsindona
+ms.date: 07/14/2020
+ms.openlocfilehash: 90ff7c4a85fd9e48ac3aa49ace99f43eb0244603
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86113468"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86520295"
 ---
 # <a name="retrieve-operations"></a>Получение операций
 
 > [!NOTE]
-> Программные интерфейсы Портала Cloud Partner интегрированы с Центром партнеров и продолжат работать после миграции предложений в Центр партнеров. Интеграция включает небольшие изменения. Ознакомьтесь с изменениями, приведенными в [справочнике по портал Cloud Partner API](./cloud-partner-portal-api-overview.md) , чтобы убедиться, что код будет продолжать работать после перехода в центр партнеров.
+> Портал Cloud Partner API интегрированы с и будут продолжать работать в центре партнеров. Переход содержит небольшие изменения. Ознакомьтесь с изменениями, приведенными в [справочнике по портал Cloud Partner API](./cloud-partner-portal-api-overview.md) , чтобы убедиться, что код продолжит работать после перехода в центр партнеров. API-интерфейсы CPP следует использовать только для существующих продуктов, которые уже были интегрированы до перехода в центр партнеров. новые продукты должны использовать API-интерфейсы отправки центра партнеров.
 
 Получает все операции над предложением или чтобы получить определенную операцию для указанного operationId. Клиент может использовать параметры запроса для фильтрации выполнений операций.
 
@@ -26,7 +28,6 @@ ms.locfileid: "86113468"
   GET https://cloudpartner.azure.com/api/publishers/<publisherId>/offers/<offerId>/operations/<operationId>?api-version=2017-10-31
 
 ```
-
 
 ## <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
 
@@ -40,13 +41,11 @@ ms.locfileid: "86113468"
 
 ## <a name="header"></a>Заголовок
 
-
 |  **имя**;          |  **Значение**           |
 |  ---------------   | -------------------- |
 |  Content-Type      | `application/json`   |
 |  Авторизация     | `Bearer YOUR_TOKEN`  |
 |  |  |
-
 
 ## <a name="body-example"></a>Пример текста запроса
 
@@ -177,7 +176,7 @@ ms.locfileid: "86113468"
 |  createdDateTime             | Дата и время создания операции в формате UTC.                                                       |
 |  lastActionDateTime          | Дата и время выполнения последнего обновления операции в формате UTC.                                       |
 |  status                      | Состояние операции: `not started` \| `running` \| `failed` \| `completed` . Только одна операция может иметь состояние `running` за раз. |
-|  Ошибка                       | Сообщение об ошибке, появившееся при сбое операций                                                               |
+|  error                       | Сообщение об ошибке, появившееся при сбое операций                                                               |
 |  |  |
 
 ### <a name="response-step-properties"></a>Свойства шага ответа

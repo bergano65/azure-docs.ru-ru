@@ -1,14 +1,14 @@
 ---
 title: Получение данных о соответствии политике
 description: Соответствие определяется оценками и действиями Политики Azure. Узнайте о том, как получить подробные сведения о соответствии для ресурсов Azure.
-ms.date: 05/20/2020
+ms.date: 07/15/2020
 ms.topic: how-to
-ms.openlocfilehash: 53c946c59862451859616cb87d1101ae8fd5f15b
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 8da1876842e89e806b61bba611db74795a6710d1
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045201"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86521540"
 ---
 # <a name="get-compliance-data-of-azure-resources"></a>Получение данных о соответствии для ресурсов Azure
 
@@ -44,7 +44,19 @@ ms.locfileid: "86045201"
 
 ### <a name="on-demand-evaluation-scan"></a>Проверка оценки по запросу
 
-Оценочное сканирование для подписки или группы ресурсов можно запустить с помощью Azure PowerShell или вызова REST API. Эта проверка является асинхронным процессом.
+Сканирование оценки для подписки или группы ресурсов можно начать с Azure CLI, Azure PowerShell или вызова REST API. Эта проверка является асинхронным процессом.
+
+#### <a name="on-demand-evaluation-scan---azure-cli"></a>Сканирование оценки по требованию — Azure CLI
+
+Проверка соответствия запускается с помощью команды [AZ Policy State-Scan](/cli/azure/policy/state#az-policy-state-trigger-scan) .
+
+По умолчанию `az policy state trigger-scan` запускает оценку для всех ресурсов в текущей подписке. Чтобы начать оценку определенной группы ресурсов, используйте параметр **Resource-Group** . Следующий пример запускает проверку соответствия в текущей подписке для группы ресурсов _MyRG_:
+
+```azurecli-interactive
+az policy state trigger-scan --resource-group "MyRG"
+```
+
+Можно отложить ожидание завершения асинхронного процесса, прежде чем продолжить работу с параметром **без ожидания** .
 
 #### <a name="on-demand-evaluation-scan---azure-powershell"></a>Проверка оценки по запросу (Azure PowerShell)
 
@@ -53,7 +65,7 @@ ms.locfileid: "86045201"
 По умолчанию `Start-AzPolicyComplianceScan` запускает оценку для всех ресурсов в текущей подписке. Чтобы выполнить оценку для определенной группы ресурсов, укажите параметр **ResourceGroupName**. Следующий пример запускает проверку соответствия в текущей подписке для группы ресурсов _MyRG_:
 
 ```azurepowershell-interactive
-Start-AzPolicyComplianceScan -ResourceGroupName MyRG
+Start-AzPolicyComplianceScan -ResourceGroupName 'MyRG'
 ```
 
 Можно сделать так, чтобы PowerShell ожидал завершения асинхронного вызова перед выдачей выходных данных или выполнял его в фоновом режиме в качестве [задания](/powershell/module/microsoft.powershell.core/about/about_jobs). Чтобы PowerShell выполнял проверку соответствия в фоновом режиме, укажите параметр **AsJob** и задайте значение для объекта, например `$job` в следующем примере:
@@ -184,8 +196,7 @@ _Общее количество ресурсов_ определяется ка
 
 ## <a name="command-line"></a>Командная строка
 
-Те же сведения, которые доступны на портале, можно получить с помощью REST API (включая [ARMClient](https://github.com/projectkudu/ARMClient)), Azure PowerShell или Azure CLI (предварительная версия).
-Дополнительные сведения о REST API см. в справочнике по [Azure Policy Insights](/rest/api/policy-insights/). На страницах справки по REST API есть зеленая кнопка "Попробовать" для каждой операции, которую можно опробовать непосредственно в браузере.
+Те же сведения, которые доступны на портале, можно получить с помощью REST API (включая [ARMClient](https://github.com/projectkudu/ARMClient)), Azure PowerShell и Azure CLI. Дополнительные сведения о REST API см. в справочнике по [Azure Policy Insights](/rest/api/policy-insights/). На страницах справки по REST API есть зеленая кнопка "Попробовать" для каждой операции, которую можно опробовать непосредственно в браузере.
 
 Используйте ARMClient или аналогичное средство для управления аутентификацией в Azure для примеров с REST API.
 
@@ -207,7 +218,7 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/providers/Micro
         "@odata.id": null,
         "@odata.context": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/$metadata#summary/$entity",
         "results": {
-            "queryResultsUri": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/latest/queryResults?api-version=2019-10-01&$from=2018-05-18 04:28:22Z&$to=2018-05-19 04:28:22Z&$filter=IsCompliant eq false",
+            "queryResultsUri": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/latest/queryResults?api-version=2019-10-01&$from=2018-05-18 04:28:22Z&$to=2018-05-19 04:28:22Z&$filter=ComplianceState eq 'NonCompliant'",
             "nonCompliantResources": 15,
             "nonCompliantPolicies": 1
         },
@@ -215,7 +226,7 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/providers/Micro
             "policyAssignmentId": "/subscriptions/{subscriptionId}/resourcegroups/rg-tags/providers/microsoft.authorization/policyassignments/37ce239ae4304622914f0c77",
             "policySetDefinitionId": "",
             "results": {
-                "queryResultsUri": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/latest/queryResults?api-version=2019-10-01&$from=2018-05-18 04:28:22Z&$to=2018-05-19 04:28:22Z&$filter=IsCompliant eq false and PolicyAssignmentId eq '/subscriptions/{subscriptionId}/resourcegroups/rg-tags/providers/microsoft.authorization/policyassignments/37ce239ae4304622914f0c77'",
+                "queryResultsUri": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/latest/queryResults?api-version=2019-10-01&$from=2018-05-18 04:28:22Z&$to=2018-05-19 04:28:22Z&$filter=ComplianceState eq 'NonCompliant' and PolicyAssignmentId eq '/subscriptions/{subscriptionId}/resourcegroups/rg-tags/providers/microsoft.authorization/policyassignments/37ce239ae4304622914f0c77'",
                 "nonCompliantResources": 15,
                 "nonCompliantPolicies": 1
             },
@@ -224,7 +235,7 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/providers/Micro
                 "policyDefinitionId": "/providers/microsoft.authorization/policydefinitions/1e30110a-5ceb-460c-a204-c1c3969c6d62",
                 "effect": "deny",
                 "results": {
-                    "queryResultsUri": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/latest/queryResults?api-version=2019-10-01&$from=2018-05-18 04:28:22Z&$to=2018-05-19 04:28:22Z&$filter=IsCompliant eq false and PolicyAssignmentId eq '/subscriptions/{subscriptionId}/resourcegroups/rg-tags/providers/microsoft.authorization/policyassignments/37ce239ae4304622914f0c77' and PolicyDefinitionId eq '/providers/microsoft.authorization/policydefinitions/1e30110a-5ceb-460c-a204-c1c3969c6d62'",
+                    "queryResultsUri": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/latest/queryResults?api-version=2019-10-01&$from=2018-05-18 04:28:22Z&$to=2018-05-19 04:28:22Z&$filter=ComplianceState eq 'NonCompliant' and PolicyAssignmentId eq '/subscriptions/{subscriptionId}/resourcegroups/rg-tags/providers/microsoft.authorization/policyassignments/37ce239ae4304622914f0c77' and PolicyDefinitionId eq '/providers/microsoft.authorization/policydefinitions/1e30110a-5ceb-460c-a204-c1c3969c6d62'",
                     "nonCompliantResources": 15
                 }
             }]
@@ -235,10 +246,10 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/providers/Micro
 
 ### <a name="query-for-resources"></a>Запрос ресурсов
 
-В примере выше значение **value.policyAssignments.policyDefinitions.results.queryResultsUri** содержало пример Uri для всех несоответствующих ресурсов для заданного определения политики. В значении **$filter** для IsCompliant задано значение false, PolicyAssignmentId указывается для определения политики, а затем указывается PolicyDefinitionId. PolicyAssignmentId включается в фильтр, так как PolicyDefinitionId может существовать в нескольких назначениях политик или инициатив с разными областями. Указав как PolicyAssignmentId, так и PolicyDefinitionId, мы можем явно определить ожидаемые результаты. Ранее мы использовали значение **latest** для параметра PolicyStates, что автоматически делает временное окно **from** и **to** равным последним 24 часам.
+В примере выше значение **value.policyAssignments.policyDefinitions.results.queryResultsUri** содержало пример Uri для всех несоответствующих ресурсов для заданного определения политики. При просмотре значения **$Filter** ComplianceState равно (EQ) в значение "не соответствует", для определения политики задается полициассигнментид, а затем полицидефинитионид. PolicyAssignmentId включается в фильтр, так как PolicyDefinitionId может существовать в нескольких назначениях политик или инициатив с разными областями. Указав как PolicyAssignmentId, так и PolicyDefinitionId, мы можем явно определить ожидаемые результаты. Ранее мы использовали значение **latest** для параметра PolicyStates, что автоматически делает временное окно **from** и **to** равным последним 24 часам.
 
 ```http
-https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/latest/queryResults?api-version=2019-10-01&$from=2018-05-18 04:28:22Z&$to=2018-05-19 04:28:22Z&$filter=IsCompliant eq false and PolicyAssignmentId eq '/subscriptions/{subscriptionId}/resourcegroups/rg-tags/providers/microsoft.authorization/policyassignments/37ce239ae4304622914f0c77' and PolicyDefinitionId eq '/providers/microsoft.authorization/policydefinitions/1e30110a-5ceb-460c-a204-c1c3969c6d62'
+https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/latest/queryResults?api-version=2019-10-01&$from=2018-05-18 04:28:22Z&$to=2018-05-19 04:28:22Z&$filter=ComplianceState eq 'NonCompliant' and PolicyAssignmentId eq '/subscriptions/{subscriptionId}/resourcegroups/rg-tags/providers/microsoft.authorization/policyassignments/37ce239ae4304622914f0c77' and PolicyDefinitionId eq '/providers/microsoft.authorization/policydefinitions/1e30110a-5ceb-460c-a204-c1c3969c6d62'
 ```
 
 Приведенный ниже пример усечен к одному несоответствующему ресурсу для краткости. Подробный ответ имеет несколько фрагментов данных о ресурсе, политике или инициативе и назначении. Здесь вы также можете увидеть, какие параметры назначения были переданы в определение политики.
@@ -255,7 +266,7 @@ https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.
         "policyAssignmentId": "/subscriptions/{subscriptionId}/resourceGroups/rg-tags/providers/Microsoft.Authorization/policyAssignments/37ce239ae4304622914f0c77",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1e30110a-5ceb-460c-a204-c1c3969c6d62",
         "effectiveParameters": "",
-        "isCompliant": false,
+        "ComplianceState": "NonCompliant",
         "subscriptionId": "{subscriptionId}",
         "resourceType": "/Microsoft.Compute/virtualMachines",
         "resourceLocation": "westus2",
@@ -303,10 +314,207 @@ https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.
 
 Дополнительные сведения о запросах событий политик см. в справочной статье по [событиям Политики Azure](/rest/api/policy-insights/policyevents).
 
+### <a name="azure-cli"></a>Azure CLI
+
+Группа команд [Azure CLI](/cli/azure/what-is-azure-cli) для политики Azure охватывает большинство операций, доступных в оставшейся или Azure PowerShell. Полный список доступных команд см. в разделе [Azure CLI — общие сведения о политике Azure](/cli/azure/policy).
+
+Пример Получение сводки состояния для приоритетной назначенной политики с наибольшим числом несоответствующих ресурсов.
+
+```azurecli-interactive
+az policy state summarize --top 1
+```
+
+Верхняя часть ответа выглядит, как в следующем примере:
+
+```json
+{
+    "odatacontext": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/$metadata#summary/$entity",
+    "odataid": null,
+    "policyAssignments": [{
+            "policyAssignmentId": "/subscriptions/{subscriptionId}/providers/microsoft.authorization/policyassignments/e0704696df5e4c3c81c873e8",
+            "policyDefinitions": [{
+                "effect": "audit",
+                "policyDefinitionGroupNames": [
+                    ""
+                ],
+                "policyDefinitionId": "/subscriptions/{subscriptionId}/providers/microsoft.authorization/policydefinitions/2e3197b6-1f5b-4b01-920c-b2f0a7e9b18a",
+                "policyDefinitionReferenceId": "",
+                "results": {
+                    "nonCompliantPolicies": null,
+                    "nonCompliantResources": 398,
+                    "policyDetails": [{
+                        "complianceState": "noncompliant",
+                        "count": 1
+                    }],
+                    "policyGroupDetails": [{
+                        "complianceState": "noncompliant",
+                        "count": 1
+                    }],
+                    "queryResultsUri": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/latest/queryResults?api-version=2019-10-01&$from=2020-07-14 14:01:22Z&$to=2020-07-15 14:01:22Z and PolicyAssignmentId eq '/subscriptions/{subscriptionId}/providers/microsoft.authorization/policyassignments/e0704696df5e4c3c81c873e8' and PolicyDefinitionId eq '/subscriptions/{subscriptionId}/providers/microsoft.authorization/policydefinitions/2e3197b6-1f5b-4b01-920c-b2f0a7e9b18a'",
+                    "resourceDetails": [{
+                            "complianceState": "noncompliant",
+                            "count": 398
+                        },
+                        {
+                            "complianceState": "compliant",
+                            "count": 4
+                        }
+                    ]
+                }
+            }],
+    ...
+```
+
+Пример Получение записи состояния для последнего оцененного ресурса (по умолчанию — по меткам времени в порядке убывания).
+
+```azurecli-interactive
+az policy state list --top 1
+```
+
+```json
+[
+  {
+    "complianceReasonCode": "",
+    "complianceState": "Compliant",
+    "effectiveParameters": "",
+    "isCompliant": true,
+    "managementGroupIds": "{managementgroupId}",
+    "odatacontext": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/$metadata#latest/$entity",
+    "odataid": null,
+    "policyAssignmentId": "/subscriptions/{subscriptionId}/providers/microsoft.authorization/policyassignments/securitycenterbuiltin",
+    "policyAssignmentName": "SecurityCenterBuiltIn",
+    "policyAssignmentOwner": "tbd",
+    "policyAssignmentParameters": "",
+    "policyAssignmentScope": "/subscriptions/{subscriptionId}",
+    "policyAssignmentVersion": "",
+    "policyDefinitionAction": "auditifnotexists",
+    "policyDefinitionCategory": "tbd",
+    "policyDefinitionGroupNames": [
+      ""
+    ],
+    "policyDefinitionId": "/providers/microsoft.authorization/policydefinitions/aa633080-8b72-40c4-a2d7-d00c03e80bed",
+    "policyDefinitionName": "aa633080-8b72-40c4-a2d7-d00c03e80bed",
+    "policyDefinitionReferenceId": "identityenablemfaforownerpermissionsmonitoring",
+    "policyDefinitionVersion": "",
+    "policyEvaluationDetails": null,
+    "policySetDefinitionCategory": "security center",
+    "policySetDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8",
+    "policySetDefinitionName": "1f3afdf9-d0c9-4c3d-847f-89da613e70a8",
+    "policySetDefinitionOwner": "",
+    "policySetDefinitionParameters": "",
+    "policySetDefinitionVersion": "",
+    "resourceGroup": "",
+    "resourceId": "/subscriptions/{subscriptionId}",
+    "resourceLocation": "",
+    "resourceTags": "tbd",
+    "resourceType": "Microsoft.Resources/subscriptions",
+    "subscriptionId": "{subscriptionId}",
+    "timestamp": "2020-07-15T08:37:07.903433+00:00"
+  }
+]
+```
+
+Пример Получение сведений для всех несоответствующих ресурсов виртуальной сети.
+
+```azurecli-interactive
+az policy state list --filter "ResourceType eq 'Microsoft.Network/virtualNetworks'"
+```
+
+```json
+[
+  {
+    "complianceReasonCode": "",
+    "complianceState": "NonCompliant",
+    "effectiveParameters": "",
+    "isCompliant": false,
+    "managementGroupIds": "{managementgroupId}",
+    "odatacontext": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/$metadata#latest/$entity",
+    "odataid": null,
+    "policyAssignmentId": "/subscriptions/{subscriptionId}/providers/microsoft.authorization/policyassignments/e0704696df5e4c3c81c873e8",
+    "policyAssignmentName": "e0704696df5e4c3c81c873e8",
+    "policyAssignmentOwner": "tbd",
+    "policyAssignmentParameters": "",
+    "policyAssignmentScope": "/subscriptions/{subscriptionId}",
+    "policyAssignmentVersion": "",
+    "policyDefinitionAction": "audit",
+    "policyDefinitionCategory": "tbd",
+    "policyDefinitionGroupNames": [
+      ""
+    ],
+    "policyDefinitionId": "/subscriptions/{subscriptionId}/providers/microsoft.authorization/policydefinitions/2e3197b6-1f5b-4b01-920c-b2f0a7e9b18a",
+    "policyDefinitionName": "2e3197b6-1f5b-4b01-920c-b2f0a7e9b18a",
+    "policyDefinitionReferenceId": "",
+    "policyDefinitionVersion": "",
+    "policyEvaluationDetails": null,
+    "policySetDefinitionCategory": "",
+    "policySetDefinitionId": "",
+    "policySetDefinitionName": "",
+    "policySetDefinitionOwner": "",
+    "policySetDefinitionParameters": "",
+    "policySetDefinitionVersion": "",
+    "resourceGroup": "RG-Tags",
+    "resourceId": "/subscriptions/{subscriptionId}/resourceGroups/RG-Tags/providers/Microsoft.Network/virtualNetworks/RG-Tags-vnet",
+    "resourceLocation": "westus2",
+    "resourceTags": "tbd",
+    "resourceType": "Microsoft.Network/virtualNetworks",
+    "subscriptionId": "{subscriptionId}",
+    "timestamp": "2020-07-15T08:37:07.901911+00:00"
+  }
+]
+```
+
+Пример Получение событий, связанных с несоответствующими ресурсами виртуальной сети и произошедших после указанной даты.
+
+```azurecli-interactive
+az policy state list --filter "ResourceType eq 'Microsoft.Network/virtualNetworks'" --from '2020-07-14T00:00:00Z'
+```
+
+```json
+[
+  {
+    "complianceReasonCode": "",
+    "complianceState": "NonCompliant",
+    "effectiveParameters": "",
+    "isCompliant": false,
+    "managementGroupIds": "{managementgroupId}",
+    "odatacontext": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/policyStates/$metadata#latest/$entity",
+    "odataid": null,
+    "policyAssignmentId": "/subscriptions/{subscriptionId}/providers/microsoft.authorization/policyassignments/e0704696df5e4c3c81c873e8",
+    "policyAssignmentName": "e0704696df5e4c3c81c873e8",
+    "policyAssignmentOwner": "tbd",
+    "policyAssignmentParameters": "",
+    "policyAssignmentScope": "/subscriptions/{subscriptionId}",
+    "policyAssignmentVersion": "",
+    "policyDefinitionAction": "audit",
+    "policyDefinitionCategory": "tbd",
+    "policyDefinitionGroupNames": [
+      ""
+    ],
+    "policyDefinitionId": "/subscriptions/{subscriptionId}/providers/microsoft.authorization/policydefinitions/2e3197b6-1f5b-4b01-920c-b2f0a7e9b18a",
+    "policyDefinitionName": "2e3197b6-1f5b-4b01-920c-b2f0a7e9b18a",
+    "policyDefinitionReferenceId": "",
+    "policyDefinitionVersion": "",
+    "policyEvaluationDetails": null,
+    "policySetDefinitionCategory": "",
+    "policySetDefinitionId": "",
+    "policySetDefinitionName": "",
+    "policySetDefinitionOwner": "",
+    "policySetDefinitionParameters": "",
+    "policySetDefinitionVersion": "",
+    "resourceGroup": "RG-Tags",
+    "resourceId": "/subscriptions/{subscriptionId}/resourceGroups/RG-Tags/providers/Microsoft.Network/virtualNetworks/RG-Tags-vnet",
+    "resourceLocation": "westus2",
+    "resourceTags": "tbd",
+    "resourceType": "Microsoft.Network/virtualNetworks",
+    "subscriptionId": "{subscriptionId}",
+    "timestamp": "2020-07-15T08:37:07.901911+00:00"
+  }
+]
+```
+
 ### <a name="azure-powershell"></a>Azure PowerShell
 
-Модуль Azure PowerShell для Политики Azure доступен в коллекции PowerShell как [Az.PolicyInsights](https://www.powershellgallery.com/packages/Az.PolicyInsights).
-Используя PowerShellGet, вы можете установить модуль с помощью `Install-Module -Name Az.PolicyInsights` (установите последнюю версию [Azure PowerShell](/powershell/azure/install-az-ps)):
+Модуль Azure PowerShell для Политики Azure доступен в коллекции PowerShell как [Az.PolicyInsights](https://www.powershellgallery.com/packages/Az.PolicyInsights). Используя PowerShellGet, вы можете установить модуль с помощью `Install-Module -Name Az.PolicyInsights` (установите последнюю версию [Azure PowerShell](/powershell/azure/install-az-ps)):
 
 ```azurepowershell-interactive
 # Install from PowerShell Gallery via PowerShellGet
@@ -351,7 +559,7 @@ ResourceId                 : /subscriptions/{subscriptionId}/resourceGroups/RG-T
 PolicyAssignmentId         : /subscriptions/{subscriptionId}/resourceGroups/RG-Tags/providers/Mi
                              crosoft.Authorization/policyAssignments/37ce239ae4304622914f0c77
 PolicyDefinitionId         : /providers/Microsoft.Authorization/policyDefinitions/1e30110a-5ceb-460c-a204-c1c3969c6d62
-IsCompliant                : False
+ComplianceState            : NonCompliant
 SubscriptionId             : {subscriptionId}
 ResourceType               : /Microsoft.Network/networkInterfaces
 ResourceLocation           : westus2
@@ -377,7 +585,7 @@ ResourceId                 : /subscriptions/{subscriptionId}/resourceGroups/RG-T
 PolicyAssignmentId         : /subscriptions/{subscriptionId}/resourceGroups/RG-Tags/providers/Mi
                              crosoft.Authorization/policyAssignments/37ce239ae4304622914f0c77
 PolicyDefinitionId         : /providers/Microsoft.Authorization/policyDefinitions/1e30110a-5ceb-460c-a204-c1c3969c6d62
-IsCompliant                : False
+ComplianceState            : NonCompliant
 SubscriptionId             : {subscriptionId}
 ResourceType               : /Microsoft.Network/virtualNetworks
 ResourceLocation           : westus2
@@ -403,7 +611,7 @@ ResourceId                 : /subscriptions/{subscriptionId}/resourceGroups/RG-T
 PolicyAssignmentId         : /subscriptions/{subscriptionId}/resourceGroups/RG-Tags/providers/Mi
                              crosoft.Authorization/policyAssignments/37ce239ae4304622914f0c77
 PolicyDefinitionId         : /providers/Microsoft.Authorization/policyDefinitions/1e30110a-5ceb-460c-a204-c1c3969c6d62
-IsCompliant                : False
+ComplianceState            : NonCompliant
 SubscriptionId             : {subscriptionId}
 ResourceType               : /Microsoft.Network/virtualNetworks
 ResourceLocation           : eastus

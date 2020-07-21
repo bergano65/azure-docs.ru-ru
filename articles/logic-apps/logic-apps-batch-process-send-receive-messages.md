@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: estfan, jonfan, logicappspm
 ms.topic: article
 ms.date: 01/16/2019
-ms.openlocfilehash: d44d5a8eeba749572980f79a90bcf5893a9c1fbf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f4863ff0005f09ca325125667062455357687fdd
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82144341"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86521145"
 ---
 # <a name="send-receive-and-batch-process-messages-in-azure-logic-apps"></a>Отправка, получение и пакетная обработка сообщений в Azure Logic Apps
 
@@ -37,7 +37,7 @@ ms.locfileid: "82144341"
 * Учетная запись электронной почты любого [поставщика электронной почты, поддерживаемого Azure Logic Apps](../connectors/apis-list.md).
 
   > [!IMPORTANT]
-  > Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail без ограничений в приложениях логики. Если у вас есть учетная запись потребителя Gmail, вы можете использовать этот соединитель только с определенными утвержденными Google службами. Кроме того, вы можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](https://docs.microsoft.com/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
+  > Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail без ограничений в приложениях логики. Если у вас есть учетная запись потребителя Gmail, вы можете использовать этот соединитель только с определенными утвержденными Google службами. Кроме того, вы можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
 
 * Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
@@ -89,7 +89,7 @@ ms.locfileid: "82144341"
 
    3. Выберите это действие: **Отправить сообщение электронной почты — <*поставщик услуг электронной почты*>**.
 
-      Пример:
+      Вот несколько примеров:
 
       ![Выбор действия "Отправить электронное письмо" для поставщика электронной почты](./media/logic-apps-batch-process-send-receive-messages/batch-receiver-send-email-action.png)
 

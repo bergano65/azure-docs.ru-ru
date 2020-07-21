@@ -7,13 +7,13 @@ manager: anandsub
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 07/08/2020
-ms.openlocfilehash: 8ad7cfad0a17608af6b59b712d1f0c2b72b49a61
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.date: 07/16/2020
+ms.openlocfilehash: adbe3ceb72d88c2a6441c04d876d92ac2ab85930
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86223658"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86522777"
 ---
 # <a name="source-transformation-in-mapping-data-flow"></a>Преобразование источника в потоке данных сопоставления 
 
@@ -43,12 +43,12 @@ ms.locfileid: "86223658"
 
 | Соединитель | Формат | Набор данных или встраивание |
 | --------- | ------ | -------------- |
-| [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md#mapping-data-flow-properties) | [Avro](format-avro.md#mapping-data-flow-properties) <br> [Текст с разделителями](format-delimited-text.md#mapping-data-flow-properties) <br> [Дельта (Предварительная версия)](format-delta.md) <br> [Excel](format-excel.md#mapping-data-flow-properties) <br> [JSON](format-json.md#mapping-data-flow-properties) <br> [Parquet](format-parquet.md#mapping-data-flow-properties) | ✓/- <br> ✓/- <br> -/✓ <br> ✓/✓ <br/> ✓/- <br> ✓/- |
-| [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md#mapping-data-flow-properties) | [Avro](format-avro.md#mapping-data-flow-properties) <br> [Текст с разделителями](format-delimited-text.md#mapping-data-flow-properties) <br> [Excel](format-excel.md#mapping-data-flow-properties) <br> [JSON](format-json.md#mapping-data-flow-properties) <br> [Parquet](format-parquet.md#mapping-data-flow-properties)  | ✓/- <br> ✓/- <br>✓/✓ <br/> ✓/- <br> ✓/- |
-| [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md#mapping-data-flow-properties) | [Avro](format-avro.md#mapping-data-flow-properties)  <br> [Общая модель данных (Предварительная версия)](format-common-data-model.md#source-properties) <br> [Текст с разделителями](format-delimited-text.md#mapping-data-flow-properties) <br> [Дельта (Предварительная версия)](format-delta.md) <br> [Excel](format-excel.md#mapping-data-flow-properties) <br> [JSON](format-json.md#mapping-data-flow-properties) <br> [Parquet](format-parquet.md#mapping-data-flow-properties) | ✓/-<br/> -/✓ <br> ✓/- <br> -/✓ <br> ✓/✓ <br>✓/- <br/> ✓/- |
+| [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md#mapping-data-flow-properties) | [Avro](format-avro.md#mapping-data-flow-properties)<br>[Текст с разделителями](format-delimited-text.md#mapping-data-flow-properties)<br>[Дельта (Предварительная версия)](format-delta.md)<br>[Excel](format-excel.md#mapping-data-flow-properties)<br>[JSON](format-json.md#mapping-data-flow-properties) <br>[Parquet](format-parquet.md#mapping-data-flow-properties)<br>[XML](format-xml.md#mapping-data-flow-properties) | ✓/-<br>✓/-<br>-/✓<br>✓/✓<br/>✓/-<br>✓/-<br>✓/✓ |
+| [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md#mapping-data-flow-properties) | [Avro](format-avro.md#mapping-data-flow-properties)<br>[Текст с разделителями](format-delimited-text.md#mapping-data-flow-properties)<br>[Excel](format-excel.md#mapping-data-flow-properties)<br>[JSON](format-json.md#mapping-data-flow-properties)<br>[Parquet](format-parquet.md#mapping-data-flow-properties)<br>[XML](format-xml.md#mapping-data-flow-properties)  | ✓/-<br>✓/-<br>✓/✓<br/>✓/-<br>✓/-<br>✓/✓ |
+| [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md#mapping-data-flow-properties) | [Avro](format-avro.md#mapping-data-flow-properties)<br>[Общая модель данных (Предварительная версия)](format-common-data-model.md#source-properties)<br>[Текст с разделителями](format-delimited-text.md#mapping-data-flow-properties)<br>[Дельта (Предварительная версия)](format-delta.md)<br>[Excel](format-excel.md#mapping-data-flow-properties)<br>[JSON](format-json.md#mapping-data-flow-properties)<br>[Parquet](format-parquet.md#mapping-data-flow-properties)<br>[XML](format-xml.md#mapping-data-flow-properties) | ✓/-<br/>-/✓<br>✓/-<br>-/✓<br>✓/✓<br>✓/-<br/>✓/-<br>✓/✓ |
 | [Azure Synapse Analytics](connector-azure-sql-data-warehouse.md#mapping-data-flow-properties) | | ✓/- |
 | [База данных SQL Azure](connector-azure-sql-database.md#mapping-data-flow-properties) | | ✓/- |
-| [Azure CosmosDB (API SQL)](connector-azure-cosmos-db.md#mapping-data-flow-properties) | | ✓/- |
+| [Azure Cosmos DB (SQL API)](connector-azure-cosmos-db.md#mapping-data-flow-properties) | | ✓/- |
 
 Параметры, характерные для этих соединителей, находятся на вкладке " **Параметры источника** ". примеры скриптов для данных и потоковой передачи для этих параметров находятся в документации по соединителю. 
 
@@ -87,11 +87,11 @@ ms.locfileid: "86223658"
 
 Вкладка Параметры источника содержит параметры, относящиеся к выбранному соединителю и формату. Дополнительные сведения и примеры см. в [документации по соответствующему соединителю](#supported-sources).
 
-## <a name="projection"></a>Прогнозирование
+## <a name="projection"></a>Проекция
 
 Подобно схемам в наборах данных, проекция в источнике определяет столбцы данных, типы и форматы из исходных. Для большинства типов наборов данных, таких как SQL и Parquet, проекция в источнике исправлена в соответствии со схемой, определенной в наборе данных. Если исходные файлы не являются строго типизированными (например, плоскими CSV-файлами, а не файлами Parquet), можно определить типы данных для каждого поля в преобразовании «источник».
 
-![Параметры на вкладке "Проекция"](media/data-flow/source3.png "Прогнозирование")
+![Параметры на вкладке "Проекция"](media/data-flow/source3.png "Проекция")
 
 Если в текстовом файле не определена схема, выберите команду **определить тип данных** , чтобы фабрика данных выработала выборку и вывести типы данных. Выберите параметр **определить формат по умолчанию** , чтобы автоматически определить форматы данных по умолчанию.
 
@@ -103,7 +103,7 @@ ms.locfileid: "86223658"
 
 Кнопка **Импорт схемы** на вкладке **проекция** позволяет использовать активный кластер отладки для создания проекции схемы. При импорте схемы, доступной в каждом типе источника, будет переопределена проекция, определенная в наборе данных. Объект DataSet не будет изменен.
 
-Это полезно в таких наборах данных, как Avro и CosmosDB, которые поддерживают сложные структуры, а определения схем не должны существовать в наборе данных. Для встроенных наборов данных это единственный способ ссылки на метаданные столбца без смещения схемы.
+Это полезно в таких наборах данных, как Avro и Azure Cosmos DB, которые поддерживают сложные структуры, но не нуждаются в определениях схем в наборе данных. Для встроенных наборов данных это единственный способ ссылки на метаданные столбца без смещения схемы.
 
 ## <a name="optimize-the-source-transformation"></a>Оптимизация преобразования источника
 

@@ -6,11 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 07/25/2019
-ms.openlocfilehash: 7a99038f41043b899886c7161f9b12c77c807c4c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6a89eb16c8042efc86bb5cc8bd5fba7c821dc341
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81641816"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86520975"
 ---
 # <a name="overview-automate-deployment-for-azure-logic-apps-by-using-azure-resource-manager-templates"></a>Обзор: Автоматизация развертывания для Azure Logic Apps с помощью шаблонов Azure Resource Manager
 
@@ -38,7 +39,7 @@ ms.locfileid: "81641816"
 * [Полный шаблон](#full-example-template) , используемый для примеров этого раздела
 * [Пример шаблона учебного приложения логики](https://github.com/Azure/azure-quickstart-templates/blob/master/101-logic-app-create) в GitHub
 
-Сведения о ресурсах шаблонов, связанных с приложениями логики, учетными записями интеграции и артефактами учетной записи интеграции, см. в разделе [типы ресурсов Microsoft. Logic](https://docs.microsoft.com/azure/templates/microsoft.logic/allversions).
+Сведения о ресурсах шаблонов, связанных с приложениями логики, учетными записями интеграции и артефактами учетной записи интеграции, см. в разделе [типы ресурсов Microsoft. Logic](/azure/templates/microsoft.logic/allversions).
 
 <a name="template-structure"></a>
 
@@ -60,7 +61,7 @@ ms.locfileid: "81641816"
 
 Для шаблона приложения логики вы в основном работаете с этими объектами шаблона:
 
-| Атрибут | Описание: |
+| attribute | Описание |
 |-----------|-------------|
 | `parameters` | Объявляет [Параметры шаблона](../azure-resource-manager/templates/template-syntax.md#parameters) для приема значений, используемых при создании и настройке ресурсов для развертывания в Azure. Например, эти параметры принимают значения для имени и расположения приложения логики, а также подключения и другие ресурсы, необходимые для развертывания. Эти значения параметров можно сохранить в [файле параметров](#template-parameter-files), который описывается далее в этом разделе. Общие сведения см. в разделе [Parameters-диспетчер ресурсов структура шаблона и синтаксис](../azure-resource-manager/templates/template-syntax.md#parameters). |
 | `resources` | Определяет [ресурсы](../azure-resource-manager/templates/template-syntax.md#resources) для создания или обновления и развертывания в группе ресурсов Azure, такие как приложение логики, подключения, учетные записи хранения Azure и т. д. Общие сведения см. в разделе [ресурсы-Диспетчер ресурсов структура шаблона и синтаксис](../azure-resource-manager/templates/template-syntax.md#resources). |
@@ -318,7 +319,7 @@ ms.locfileid: "81641816"
 
 Ниже приведены атрибуты, относящиеся к определению ресурса приложения логики.
 
-| Атрибут | Обязательно | Тип | Описание: |
+| attribute | Обязательно | Тип | Описание |
 |-----------|----------|------|-------------|
 | `state` | Да | Строка | Состояние приложения логики при развертывании `Enabled` . Это означает, что приложение логики работает в реальном времени и `Disabled` означает, что приложение логики неактивно. Например, если вы не готовы к работе с приложением логики, но хотите развернуть черновую версию, можно использовать `Disabled` параметр. |
 | `integrationAccount` | Нет | Объект | Если приложение логики использует учетную запись интеграции, которая хранит артефакты для сценариев "бизнес — бизнес" (B2B), этот объект включает `id` атрибут, указывающий идентификатор для учетной записи интеграции. |
@@ -327,7 +328,7 @@ ms.locfileid: "81641816"
 | `accessControl` | Нет | Объект | Для указания атрибутов безопасности приложения логики, таких как ограниченный доступ по протоколу IP к триггерам запросов или входные и выходные данные журнала выполнения. Дополнительные сведения см. [в статье безопасный доступ к Logic Apps](../logic-apps/logic-apps-securing-a-logic-app.md). |
 ||||
 
-Сведения о ресурсах шаблонов, связанных с приложениями логики, учетными записями интеграции и артефактами учетной записи интеграции, см. в разделе [типы ресурсов Microsoft. Logic](https://docs.microsoft.com/azure/templates/microsoft.logic/allversions).
+Сведения о ресурсах шаблонов, связанных с приложениями логики, учетными записями интеграции и артефактами учетной записи интеграции, см. в разделе [типы ресурсов Microsoft. Logic](/azure/templates/microsoft.logic/allversions).
 
 <a name="workflow-definition-parameters"></a>
 
@@ -909,7 +910,7 @@ ms.locfileid: "81641816"
 
 ### <a name="authenticate-connections"></a>Проверка подлинности подключений
 
-После развертывания приложение логики работает в сквозном виде с допустимыми параметрами. Однако по-прежнему необходимо авторизовать подключения OAuth, чтобы создать допустимые маркеры доступа для [проверки подлинности учетных данных](../active-directory/develop/authentication-scenarios.md). Дополнительные сведения см. в разделе [Авторизация подключений OAuth](../logic-apps/logic-apps-deploy-azure-resource-manager-templates.md#authorize-oauth-connections).
+После развертывания приложение логики работает в сквозном виде с допустимыми параметрами. Однако по-прежнему необходимо авторизовать подключения OAuth, чтобы создать допустимые маркеры доступа для [проверки подлинности учетных данных](../active-directory/develop/authentication-vs-authorization.md). Дополнительные сведения см. в разделе [Авторизация подключений OAuth](../logic-apps/logic-apps-deploy-azure-resource-manager-templates.md#authorize-oauth-connections).
 
 Некоторые подключения поддерживают использование [субъекта-службы](../active-directory/develop/app-objects-and-service-principals.md) Azure Active Directory (Azure AD) для авторизации подключений к приложению логики, [зарегистрированному в Azure AD](../active-directory/develop/quickstart-register-app.md). Например, в этом Azure Data Lake определении ресурса соединения показано, как ссылаться на параметры шаблона, которые обрабатывали сведения о субъекте-службе, а также о том, как шаблон объявляет эти параметры:
 
@@ -937,7 +938,7 @@ ms.locfileid: "81641816"
 }
 ```
 
-| Атрибут | Описание: |
+| attribute | Описание |
 |-----------|-------------|
 | `token:clientId` | Идентификатор приложения или клиента, связанный с субъектом-службой. |
 | `token:clientSecret` | Значение ключа, связанное с субъектом-службой |
@@ -1005,7 +1006,7 @@ ms.locfileid: "81641816"
 Дополнительные сведения о работе с субъектами-службами см. в следующих разделах:
 
 * [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md)
-* [Создание субъекта-службы Azure с помощью Azure PowerShell](https://docs.microsoft.com/powershell/azure/create-azure-service-principal-azureps)
+* [Создание субъекта-службы Azure с помощью Azure PowerShell](/powershell/azure/create-azure-service-principal-azureps)
 * [Создание субъекта-службы с сертификатом с помощью Azure PowerShell](../active-directory/develop/howto-authenticate-service-principal-powershell.md)
 
 <a name="parameter-references"></a>
@@ -1244,7 +1245,7 @@ ms.locfileid: "81641816"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание шаблонов приложений логики](../logic-apps/logic-apps-create-azure-resource-manager-templates.md)

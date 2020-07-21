@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: parthpandyaMSFT
 ms.author: parthp
 ms.date: 09/23/2019
-ms.openlocfilehash: 24ce0ff2fa5e0b023f2a0d6b92e657299518c044
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 723690c29cd6ce77d7615fc613e50740ef2a45c7
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86120506"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86520159"
 ---
 # <a name="how-to-migrate-your-account-from-cloud-partner-portal-to-partner-center"></a>Перенос учетной записи с Портала Cloud Partner в Центр партнеров
 
@@ -27,7 +27,7 @@ ms.locfileid: "86120506"
 
 ### <a name="your-account-has-been-migrated-to-partner-center"></a>Ваша учетная запись перенесена в Центр партнеров
 
-Управление всеми учетными записями, перенесенными с Портала Cloud Partner в Центр партнеров, будет осуществляться в Центре партнеров. Изменения, такие как добавление или удаление пользователей, будут обратно синхронизироваться с Порталом Cloud Partner.
+Теперь вы можете управлять своей учетной записью в центре партнеров. Изменения, такие как добавление или удаление пользователей, будут обратно синхронизироваться с Порталом Cloud Partner.
 
 ### <a name="you-have-not-yet-migrated-your-account-to-partner-center"></a>Ваша учетная запись еще не перенесена в Центр партнеров
 
@@ -45,7 +45,7 @@ ms.locfileid: "86120506"
 
 ## <a name="publishers-moving-from-cpp"></a>Перемещение издателей с Портала Cloud Partner
 
-Если ваша учетная запись была перенесена с [Портала Cloud Partner](https://cloudpartner.azure.com), вам не нужно создавать новую учетную запись Центра партнеров. Вы должны были получить настроенную ссылку на новую учетную запись Центра партнеров в сообщении электронной почты и в уведомлении-баннере после входа в существующую учетную запись Портала Cloud Partner.
+Если ваша учетная запись была перенесена из CPP, вам не нужно создавать новую учетную запись центра партнеров. После входа в существующую учетную запись CPP вы должны были получить настроенную ссылку на новую учетную запись центра партнеров по электронной почте и уведомление в виде баннера.
 
 После того, как вы включите новую учетную запись Центра партнеров, перейдя по настроенной ссылке, вы сможете вернуться к своей учетной записи, открыв [панель мониторинга коммерческой платформы](https://partner.microsoft.com/dashboard/commercial-marketplace/overview) в Центре партнеров.
 

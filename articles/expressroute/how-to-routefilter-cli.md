@@ -2,17 +2,17 @@
 title: 'ExpressRoute: фильтры маршрутов — пиринг Майкрософт: Azure CLI'
 description: В этой статье описывается, как настраивать фильтры маршрутов для пиринга Майкрософт с помощью Azure CLI.
 services: expressroute
-author: anzaman
+author: kumudD
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 12/07/2018
-ms.author: anzaman
-ms.openlocfilehash: 269cabae276712a1f5b51c09705b7cd3eee5fb9d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: kumud
+ms.openlocfilehash: 43a3e7672a6bfdf89bce67ec54e4500cd84b6dcf
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84738351"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86521638"
 ---
 # <a name="configure-route-filters-for-microsoft-peering-azure-cli"></a>Настройка фильтров маршрутов для пиринга Майкрософт с помощью Azure CLI
 
@@ -26,7 +26,7 @@ ms.locfileid: "84738351"
 
 Службы Office 365, такие как Exchange Online, SharePoint Online и Skype для бизнеса, доступны через пиринг Майкрософт. При настройке пиринга Майкрософт в канале ExpressRoute все префиксы, которые относятся к этим службам, объявляются через установленные сеансы BGP. Значение сообщества BGP подключается к каждому префиксу для идентификации службы, предлагаемой через него. Список значений сообщества BGP и служб, с которыми они сопоставляются, см. в разделе [Поддержка сообществ BGP](expressroute-routing.md#bgp).
 
-Если требуется подключение ко всем службам, большое число префиксов объявляется через BGP. Это значительно увеличивает размер таблиц маршрутов, которые обслуживают маршрутизаторы в вашей сети. Если вы планируете использовать только подмножество служб, предлагаемых через пиринг Майкрософт, размер таблиц маршрутизации можно уменьшить двумя способами. Вы можете:
+Если требуется подключение ко всем службам, большое число префиксов объявляется через BGP. Это значительно увеличивает размер таблиц маршрутов, которые обслуживают маршрутизаторы в вашей сети. Если вы планируете использовать только подмножество служб, предлагаемых через пиринг Майкрософт, размер таблиц маршрутизации можно уменьшить двумя способами. Вы можете выбрать один из следующих вариантов.
 
 * Отфильтровывать нежелательные префиксы путем применения фильтров маршрутов к сообществам BGP. Это стандартная сетевая практика и обычно используется во многих сетях.
 
@@ -165,6 +165,6 @@ az network express-route peering update --circuit-name MyCircuit -g ExpressRoute
 az network route-filter delete -n MyRouteFilter -g MyResourceGroup
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

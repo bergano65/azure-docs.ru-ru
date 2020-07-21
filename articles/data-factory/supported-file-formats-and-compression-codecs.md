@@ -1,21 +1,22 @@
 ---
-title: Поддерживаемые форматы файлов в фабрике данных Azure
-description: В этой статье описаны форматы файлов и коды сжатия, поддерживаемые соединителями на основе файлов в фабрике данных Azure.
+title: Поддерживаемые форматы файлов действием копирования в фабрике данных Azure
+description: В этом разделе описываются форматы файлов и коды сжатия, поддерживаемые действием копирования в фабрике данных Azure.
 author: linda33wj
 manager: shwang
 ms.reviewer: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 12/10/2019
+ms.date: 07/16/2020
 ms.author: jingwang
-ms.openlocfilehash: 24edeb686136a1264d75e81fd9527feff3d17c48
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c044208699bf5bebb6383cfef00bf53b744369d0
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84191091"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86522451"
 ---
-# <a name="supported-file-formats-and-compression-codecs-in-azure-data-factory"></a>Поддерживаемые форматы файлов и кодеки сжатия в фабрике данных Azure
+# <a name="supported-file-formats-and-compression-codecs-by-copy-activity-in-azure-data-factory"></a>Поддерживаемые форматы файлов и кодеки сжатия для действия копирования в фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 *Эта статья относится к следующим соединителям: [Amazon S3](connector-amazon-simple-storage-service.md), [большой двоичный объект Azure](connector-azure-blob-storage.md), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md), [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md), [хранилище файлов Azure](connector-azure-file-storage.md), [Файловая система](connector-file-system.md), [FTP](connector-ftp.md), [облачное хранилище](connector-google-cloud-storage.md), [HDFS](connector-hdfs.md), [http](connector-http.md)и [SFTP](connector-sftp.md).*

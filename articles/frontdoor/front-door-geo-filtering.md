@@ -13,13 +13,14 @@ ms.topic: article
 ms.date: 03/21/2019
 ms.author: kumud
 ms.reviewer: tyao
-ms.openlocfilehash: 98c86d839868eb0714c7106d5267d1c55e6e99d5
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 48e2697cb4793f10e7694aa26e29c48a397fe3a5
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83739317"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86521604"
 ---
-# <a name="what-is-geo-filtering-on-a-domain-for-azure-front-door"></a>Сведения о геофильтрации в домене для Azure Front Door
+# <a name="geo-filtering-on-a-domain-for-azure-front-door"></a>Географическая фильтрация в домене для передней дверцы Azure
 
 По умолчанию Azure Front Door отвечает на запросы пользователей независимо от их расположения. Но в некоторых случаях может потребоваться ограничить доступ к веб-приложениям для определенной страны или региона. Служба брандмауэра веб-приложения в Azure Front Door позволяет определить политику, используя настраиваемые правила доступа для определенного пути в конечной точке, чтобы разрешить или заблокировать доступ из указанных стран и регионов. 
 

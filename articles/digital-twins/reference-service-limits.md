@@ -7,11 +7,12 @@ ms.author: baanders
 ms.date: 05/05/2020
 ms.topic: article
 ms.service: digital-twins
-ms.openlocfilehash: 6b29937e53fd58886d770ec15c803fb814a155ae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 123090cad78af46e88e6493a47d04b97e448f62a
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85391814"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86522335"
 ---
 # <a name="service-limits-in-public-preview"></a>Ограничения службы в общедоступной предварительной версии
 
@@ -26,7 +27,7 @@ ms.locfileid: "85391814"
 
 [!INCLUDE [Azure Digital Twins limits](../../includes/digital-twins-limits.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о текущем предварительном выпуске Azure Digital двойников в обзоре службы:
-* [Обзор: что такое Azure Digital двойников?](overview.md)
+* [*Обзор: что такое Azure Digital двойников?*](overview.md)
