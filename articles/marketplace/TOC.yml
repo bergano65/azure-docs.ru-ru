@@ -135,10 +135,14 @@
               href: ./partner-center-portal/create-consulting-service-offer.md
         - name: "Предложения для Dynamics\_365"
           items:
-            - name: "Создание предложения Dynamics\_365 for Customer Engagement & PowerApps"
+            - name: "Создание предложения Dynamics\_365 for Customer Engagement & Power Apps"
               href: ./partner-center-portal/create-new-customer-engagement-offer.md
             - name: Создание предложения Dynamics 365 for Operations
-              href: ./partner-center-portal/create-new-operations-offer.md
+              items:
+                - name: Создание предложения Dynamics 365 for Operations
+                  href: ./partner-center-portal/create-new-operations-offer.md
+                - name: Функциональная проверка
+                  href: ./dynamics-365-finance-operations-functional-validation.md
             - name: Создание предложения Dynamics 365 Business Central
               href: ./partner-center-portal/create-new-business-central-offer.md
         - name: Предложения модуля IoT Edge

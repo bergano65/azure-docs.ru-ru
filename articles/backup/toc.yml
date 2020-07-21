@@ -323,11 +323,11 @@
               href: azure-policy-configure-diagnostics.md
         - name: PowerShell
           items:
-            - name: Работа с виртуальными машинами на портале Azure
+            - name: Виртуальные машины Azure
               href: backup-azure-vms-automation.md
-            - name: Работа с DPM на портале Azure
+            - name: Data Protection Manager (DPM)
               href: backup-dpm-automation.md
-            - name: Работа с Windows Server на портале Azure
+            - name: "Использование агента MARS с Windows\_Server"
               href: backup-client-automation.md
             - name: Использование SQL с резервными копиями виртуальных машин Azure
               href: backup-azure-sql-automation.md
@@ -422,7 +422,7 @@
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-backup.html'
+      href: /answers/topics/azure-backup.html
     - name: Калькулятор цен
       href: azure-backup-pricing.md
     - name: Обновления службы

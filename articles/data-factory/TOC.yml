@@ -23,7 +23,8 @@
       href: quickstart-create-data-factory-python.md
     - name: Создание фабрики данных с помощью REST
       href: quickstart-create-data-factory-rest-api.md
-    - name: Создание фабрики данных с помощью шаблона Resource Manager
+    - name: Создание фабрики данных с помощью шаблона ARM
+      displayName: Resource Manager
       href: quickstart-create-data-factory-resource-manager-template.md
     - name: Безопасность. Включение шифрования на базе управляемых клиентом ключей
       href: enable-customer-managed-key.md
@@ -98,6 +99,8 @@
               href: tutorial-incremental-copy-lastmodified-copy-data-tool.md
             - name: 'Новые файлы на основе имен файлов, секционированных по времени'
               href: tutorial-incremental-copy-partitioned-file-name-copy-data-tool.md
+        - name: Создание конвейера копирования с использованием управляемой виртуальной сети и частных конечных точек
+          href: tutorial-copy-data-portal-private.md
     - name: Преобразование данных
       items:
         - name: Преобразование данных с помощью сопоставления потоков данных
@@ -126,6 +129,8 @@
                   href: tutorial-transform-data-hive-virtual-network-portal.md
                 - name: Azure PowerShell
                   href: tutorial-transform-data-hive-virtual-network.md
+        - name: Создание конвейера потока данных для сопоставления с использованием управляемой виртуальной сети и частных конечных точек
+          href: tutorial-data-flow-private.md
     - name: Поток управления
       items:
         - name: Пользовательский интерфейс
@@ -162,6 +167,8 @@
       href: concepts-pipeline-execution-triggers.md
     - name: Среда выполнения интеграции
       href: concepts-integration-runtime.md
+    - name: Управляемая виртуальная сеть
+      href: managed-virtual-network-private-endpoint.md
     - name: Безопасность
       items:
         - name: Базовые средства безопасности
@@ -408,6 +415,8 @@
           href: connector-web-table.md
         - name: Xero
           href: connector-xero.md
+        - name: Формат XML
+          href: format-xml.md
         - name: Zoho
           href: connector-zoho.md
     - name: Перенос данных
@@ -469,12 +478,12 @@
           href: transform-data-using-spark.md
         - name: Действие потоковой передачи HDInsight
           href: transform-data-using-hadoop-streaming.md
-        - name: Действие выполнения пакета в службе Машинного обучения
-          href: transform-data-using-machine-learning.md
-        - name: Действие обновления ресурса в службе Машинного обучения
-          href: update-machine-learning-models.md
         - name: Действия выполнения конвейера в Машинном обучении
           href: transform-data-machine-learning-service.md
+        - name: Действие выполнения пакета в Студии машинного обучения (классическая)
+          href: transform-data-using-machine-learning.md
+        - name: Действие обновления ресурса в Студии машинного обучения (классическая)
+          href: update-machine-learning-models.md
         - name: Действие хранимой процедуры
           href: transform-data-using-stored-procedure.md
         - name: Связанные службы вычислений
@@ -681,7 +690,7 @@
               href: how-to-fixed-width.md
             - name: Обработка строк ошибок
               href: how-to-data-flow-error-rows.md
-            - name: Миграция из Базы данных SQL Azure в CosmosDB
+            - name: Перенос из Базы данных SQL Azure в Azure Cosmos DB
               href: how-to-sqldb-to-cosmosdb.md
         - name: Перенос рабочих нагрузок SSIS из локальных систем
           items:

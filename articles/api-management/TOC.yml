@@ -61,6 +61,10 @@
           href: api-management-security-controls.md
     - name: Подписки
       href: api-management-subscriptions.md
+    - name: Версии
+      href: api-management-versions.md
+    - name: Редакции
+      href: api-management-revisions.md
     - name: Управление с помощью службы автоматизации
       href: automation-manage-api-management.md
     - name: Обработка ошибок
@@ -69,6 +73,8 @@
       href: api-management-api-import-restrictions.md
     - name: Общие сведения о независимом шлюзе
       href: self-hosted-gateway-overview.md
+    - name: Наблюдаемость
+      href: observability.md
 - name: Практические руководства
   items:
     - name: Определение интерфейсов API

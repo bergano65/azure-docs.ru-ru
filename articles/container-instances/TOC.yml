@@ -16,6 +16,8 @@
     - name: "Развертывание экземпляра контейнера\_— шаблон ARM"
       displayName: Resource Manager
       href: container-instances-quickstart-template.md
+    - name: "Развертывание экземпляра контейнера\_— Docker CLI"
+      href: container-instances-quickstart-docker-cli.md
 - name: Учебники
   items:
     - name: Создание и развертывание образа контейнера
@@ -94,8 +96,10 @@
           href: container-instances-gpu.md
         - name: Включение конечной точки SSL в контейнере расширения
           href: container-instances-container-group-ssl.md
-        - name: Предоставление статического IP-адреса
+        - name: Предоставление статического IP-адреса с помощью Шлюза приложений
           href: container-instances-application-gateway.md
+        - name: Использование Брандмауэра Azure для входящего и исходящего трафика
+          href: container-instances-egress-ip-address.md
     - name: Подключение томов данных
       items:
         - name: Общая папка Azure

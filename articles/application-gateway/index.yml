@@ -10,12 +10,12 @@ metadata:
   author: vhorne
   ms.author: victorh
   ms.date: 03/24/2020
-  ms.openlocfilehash: aaa1774b7680f87e9c3dab13dbe53a627f3890bf
-  ms.sourcegitcommit: 940e16ff194d5163f277f98d038833b1055a1a3e
+  ms.openlocfilehash: 63000da3b1d3e69c2a0c0a1d10267e18da199ffa
+  ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/25/2020
-  ms.locfileid: "80245741"
+  ms.lasthandoff: 07/20/2020
+  ms.locfileid: "86524766"
 landingContent:
 - title: Информация о Шлюзе приложений
   linkLists:
@@ -71,6 +71,18 @@ landingContent:
     links:
     - text: Создание контроллера входящего трафика для AKS
       url: ingress-controller-install-new.md
+- title: Переопределение заголовков HTTP и URL-адресов с помощью Шлюза приложений
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Переопределение заголовков HTTP и URL-адресов с помощью Шлюза приложений
+      url: rewrite-http-headers-url.md
+  - linkListType: how-to-guide
+    links:
+    - text: Переопределение HTTP-заголовков с помощью портала Azure
+      url: rewrite-http-headers-portal.md
+    - text: Переопределение URL-адресов и строки запроса с помощью портала Azure
+      url: rewrite-url-portal.md
 - title: Устранение неполадок со шлюзом приложений
   linkLists:
   - linkListType: overview

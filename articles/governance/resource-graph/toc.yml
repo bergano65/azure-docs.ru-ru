@@ -29,6 +29,9 @@
     - name: "Выполнение первого запроса\_— Python"
       displayName: 'library, azure-mgmt, cli'
       href: ./first-query-python.md
+    - name: Выполнение первого запроса (Ruby)
+      displayName: 'gem, azure-mgmt'
+      href: ./first-query-ruby.md
     - name: Выполнение первого запроса с помощью REST
       displayName: 'armclient, postman'
       href: ./first-query-rest-api.md

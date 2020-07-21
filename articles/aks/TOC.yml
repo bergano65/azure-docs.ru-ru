@@ -179,6 +179,8 @@
           href: azure-nfs-volume.md
         - name: Azure NetApp Files
           href: azure-netapp-files.md
+        - name: Использование дисков Azure (цен. категория "Ультра") (предварительная версия)
+          href: use-ultra-disks.md
     - name: Настройка сети
       items:
         - name: Создание виртуальной сети или использование существующей
@@ -191,8 +193,6 @@
           href: internal-lb.md
         - name: Использование Load Balancer ценовой категории "Стандартный"
           href: load-balancer-standard.md
-        - name: Использование определяемого пользователем маршрута для исходящего трафика
-          href: egress-outboundtype.md
         - name: Использование статического IP-адреса
           href: static-ip.md
         - name: Входящий трафик
@@ -214,8 +214,14 @@
                   href: ingress-tls.md
                 - name: Использование статического общедоступного IP-адреса
                   href: ingress-static-ip.md
-        - name: Исходящий трафик
-          href: egress.md
+        - name: Исходящие
+          items:
+            - name: Ограничение и администрирование исходящего трафика кластера
+              href: limit-egress-traffic.md
+            - name: Использование определяемого пользователем маршрута для исходящего трафика
+              href: egress-outboundtype.md
+            - name: Использование базовой подсистемы балансировки нагрузки и статического IP-адреса
+              href: egress.md
         - name: Настройка CoreDNS
           href: coredns-custom.md
     - name: Безопасность и проверка подлинности
@@ -238,13 +244,11 @@
           href: ../governance/policy/concepts/policy-for-kubernetes.md?toc=/azure/aks/toc.json
         - name: Обновление учетных данных кластера
           href: update-credentials.md
-        - name: Ограничение и администрирование исходящего трафика кластера
-          href: limit-egress-traffic.md
         - name: Включение интеграции с Azure Active Directory
           items:
-            - name: AAD с управлением AKS (предварительная версия)
+            - name: AAD с управлением AKS
               href: managed-aad.md
-            - name: Использование Azure CLI
+            - name: Интеграция AAD (устарело)
               href: azure-ad-integration-cli.md
         - name: Использование Azure RBAC для авторизации Kubernetes (предварительная версия)
           href: manage-azure-rbac.md
@@ -291,8 +295,6 @@
       items:
         - name: Использование Локального процесса с Kubernetes в Visual Studio Code (предварительная версия)
           href: ../dev-spaces/how-to/local-process-kubernetes-vs-code.md
-        - name: Использование Локального процесса с Kubernetes в Visual Studio (предварительная версия)
-          href: ../dev-spaces/how-to/local-process-kubernetes-visual-studio.md
         - name: Установка существующих приложений с помощью Helm
           href: kubernetes-helm.md
         - name: С помощью OpenFaaS
@@ -383,10 +385,10 @@
       href: 'https://azure.microsoft.com/pricing/details/container-service/'
     - name: Политики поддержки
       href: support-policies.md
-    - name: Схема действий
+    - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Отзыв о продукте
-      href: 'https://feedback.azure.com/forums/914020-azure-kubernetes-service-aks'
+    - name: План развития AKS
+      href: 'https://github.com/Azure/AKS/projects/1'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-container-service'
     - name: Видео

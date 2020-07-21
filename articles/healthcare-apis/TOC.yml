@@ -19,6 +19,8 @@
       href: fhir-oss-powershell-quickstart.md
     - name: "Развертывание FHIR Server для Azure\_— CLI"
       href: fhir-oss-cli-quickstart.md
+    - name: "Развертывание соединителя IoT\_— портал"
+      href: iot-fhir-portal-quickstart.md
 - name: Учебники
   expanded: false
   items:
@@ -37,6 +39,11 @@
       href: access-fhir-postman-tutorial.md
     - name: Использование прокси-сервера SMART on FHIR
       href: use-smart-on-fhir-proxy.md
+    - name: Прием данных с устройств Интернета вещей
+      expanded: false
+      items:
+        - name: Получение данных устройства через Центр Интернета вещей Azure
+          href: device-data-through-iot-hub.md
 - name: Примеры
   items:
     - name: Встроенные политики службы "Политика Azure"
@@ -79,6 +86,8 @@
       href: enable-diagnostic-logging.md
     - name: "Получение маркера для Azure API для FHIR\_— CLI"
       href: get-healthcare-apis-access-token-cli.md
+    - name: Устранение неполадок с соединителем IoT
+      href: iot-troubleshoot-guide.md
 - name: Основные понятия
   expanded: false
   items:
@@ -88,6 +97,13 @@
       href: azure-ad-hcapi-token-validation.md
     - name: Использование настраиваемых заголовков HTTP для добавления данных в журналы аудита
       href: use-custom-headers.md
+    - name: Принципы работы соединителя IoT
+      expanded: false
+      items:
+        - name: Поток данных соединителя IoT
+          href: iot-data-flow.md
+        - name: Шаблоны сопоставления для соединителя IoT
+          href: iot-mapping-templates.md
 - name: Ресурсы
   items:
     - name: ВОПРОСЫ И ОТВЕТЫ

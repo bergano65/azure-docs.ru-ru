@@ -53,7 +53,9 @@
           href: azure-stack-edge-contact-microsoft-support.md
     - name: Заметки о выпуске
       items:
-        - name: "1911\_— текущая версия"
+        - name: "2007\_— текущая версия"
+          href: data-box-gateway-2007-release-notes.md
+        - name: 1911
           href: data-box-gateway-1911-release-notes.md
         - name: 1906
           href: data-box-gateway-1906-release-notes.md
@@ -125,7 +127,9 @@
           href: azure-stack-edge-return-device.md
     - name: Заметки о выпуске
       items:
-        - name: "1911\_— текущая версия"
+        - name: "2007\_— текущая версия"
+          href: data-box-gateway-2007-release-notes.md
+        - name: 1911
           href: data-box-gateway-1911-release-notes.md
         - name: 1906
           href: data-box-gateway-1906-release-notes.md

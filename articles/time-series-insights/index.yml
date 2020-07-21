@@ -9,54 +9,54 @@ metadata:
   ms.subservice: time-series-insights
   ms.topic: landing-page
   ms.collection: collection
-  author: KingdomOfEnds
-  ms.author: v-adgera
-  ms.date: 02/12/2020
-  ms.openlocfilehash: 1119c4ec7c0b57f1b3707708ecb9227d737e2898
-  ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+  author: shreyasharmamsft
+  ms.author: shresha
+  ms.date: 07/09/2020
+  ms.openlocfilehash: 95ebe3a05a76c7fc6a725cc565f8dc5a3e457a04
+  ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 07/07/2020
-  ms.locfileid: "86043127"
+  ms.lasthandoff: 07/20/2020
+  ms.locfileid: "86495284"
 landingContent:
 - title: Общие сведения об Аналитике временных рядов Azure
   linkLists:
   - linkListType: overview
     links:
-    - text: Что собой представляет предварительная версия службы "Аналитика временных рядов Azure"?
-      url: time-series-insights-update-overview.md
-    - text: Общие сведения об Аналитике временных рядов Azure (общедоступная версия)
-      url: time-series-insights-overview.md
+    - text: Что собой представляет служба "Аналитика временных рядов Azure" 2-го поколения?
+      url: overview-what-is-tsi.md
+    - text: Варианты использования
+      url: overview-use-cases.md
     - text: Пример визуализации с использованием клиентского пакета SDK
       url: https://tsiclientsample.azurewebsites.net/
   - linkListType: concept
     links:
-    - text: Визуализация данных с помощью обозревателя Аналитики временных рядов Azure (предварительная версия)
-      url: time-series-insights-update-explorer.md
+    - text: Визуализация данных с помощью Обозревателя Аналитики временных рядов
+      url: concepts-ux-panels.md
     - text: Модель временных рядов
       url: concepts-model-overview.md
   - linkListType: video
     links:
-    - text: Служба "Аналитика временных рядов" для приложений Интернета вещей. (13:31)
-      url: https://channel9.msdn.com/Shows/Internet-of-Things-Show/Azure-Time-Series-Insights-e2e-solution-for-industrial-IoT-analytics
-- title: Начало работы с предварительной версией
+    - text: Анализ данных с помощью службы "Аналитика временных рядов" 2-го поколения
+      url: https://channel9.msdn.com/Shows/Internet-of-Things-Show/Deep-Dive-Analyzing-IoT-data-using-Time-Series-Insights
+- title: Начало работы
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Общие сведения об Аналитике временных рядов Azure (предварительная версия)
-      url: time-series-insights-update-quickstart.md
+    - text: Знакомство со службой "Аналитика временных рядов Azure" 2-го поколения
+      url: quickstart-explore-tsi.md
   - linkListType: tutorial
     links:
-    - text: Руководство по службе "Аналитика временных рядов Azure" (предварительная версия)
-      url: time-series-insights-update-create-environment.md
+    - text: Руководство по службе "Аналитика временных рядов Azure" 2-го поколения
+      url: tutorials-set-up-tsi-environment.md
   - linkListType: deploy
     links:
     - text: Подключение к Центрам событий
-      url: time-series-insights-how-to-add-an-event-source-eventhub.md
+      url: how-to-ingest-data-event-hub.md
     - text: Подключение к Центру Интернета вещей
-      url: time-series-insights-how-to-add-an-event-source-iothub.md
+      url: how-to-ingest-data-iot-hub.md
     - text: Планирование среды
-      url: time-series-insights-update-plan.md
+      url: how-to-plan-your-environment.md
     - text: Общие сведения о приеме данных
       url: concepts-ingestion-overview.md
   - linkListType: how-to-guide
@@ -65,15 +65,17 @@ landingContent:
       url: time-series-insights-update-how-to-manage.md
     - text: Предоставление доступа к данным
       url: time-series-insights-data-access.md
+    - text: Создание модели временных рядов
+      url: how-to-edit-your-model.md
+    - text: Запросы данных
+      url: concepts-query-overview.md
 - title: Справочник по API
   linkLists:
   - linkListType: reference
     links:
-    - text: Azure Time Series Insights
-      url: /rest/api/time-series-insights/
-    - text: Доступ к данным (предварительный просмотр концепций)
-      url: /rest/api/time-series-insights/preview
-    - text: Доступ к данным (общедоступная версия)
-      url: /rest/api/time-series-insights/ga
+    - text: Общие сведения об интерфейсах REST API
+      url: https://docs.microsoft.com/rest/api/time-series-insights/
+    - text: Доступ к данным (служба 2-го поколения)
+      url: https://docs.microsoft.com/rest/api/time-series-insights/preview
     - text: Пакет SDK для клиента JavaScript
       url: https://github.com/microsoft/tsiclient/blob/master/docs/API.md

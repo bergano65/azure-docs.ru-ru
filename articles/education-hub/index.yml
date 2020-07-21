@@ -1,0 +1,47 @@
+### YamlMime:Landing
+title: Документация по Центру образования Azure
+summary: Используйте Центр образования, чтобы быстро и легко предоставить учащимся все необходимое программное обеспечение, учебные материалы и службы Azure, которые им нужны для получения навыков работы с облаком.
+metadata:
+  title: Документация по Центру образования Azure
+  description: Используйте Центр образования, чтобы быстро и легко предоставить учащимся все необходимое программное обеспечение, учебные материалы и службы Azure, которые им нужны для получения навыков работы с облаком.
+  ms.service: azure-education .
+  ms.subservice: education-hub
+  ms.topic: landing-page
+  author: tfosmark
+  ms.author: rymend
+  ms.date: 07/14/2020
+  ms.openlocfilehash: be96b241c3ca784043ac3203fd1cb100b05178b8
+  ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 07/20/2020
+  ms.locfileid: "86540413"
+landingContent:
+- title: Центр образования
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Сведения о Центре образования
+      url: about-education-hub.md
+  - linkListType: quickstart
+    links:
+    - text: Использование Центра образования
+      url: access-education-hub.md
+- title: Azure Dev Tools for Teaching
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure Dev Tools for Teaching?
+      url: ./azure-dev-tools-teaching/about-program.md
+  - linkListType: tutorial
+    links:
+    - text: Регистрация в Azure Dev Tools for Teaching
+      url: ./azure-dev-tools-teaching/enroll-renew-subscription.md
+    - text: Настройка доступа
+      url: ./azure-dev-tools-teaching/set-up-access.md
+  - linkListType: how-to-guide
+    links:
+    - text: Управление учащимися
+      url: ./azure-dev-tools-teaching/manage-students.md
+    - text: Скачивание программного обеспечения
+      url: ./azure-dev-tools-teaching/download-software.md
