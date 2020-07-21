@@ -5,16 +5,16 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 3ba190f40d3b9451aec6e86ea69b7d0fe6e66aa3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1dc58bc7c758330c0333a5359622c4e54bb95026
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84807846"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86540355"
 ---
 # <a name="durable-functions-versions-overview"></a>Обзор версий Устойчивые функции
 
-*Устойчивые функции* являются расширением [Функций Azure](../functions-overview.md) и [веб-заданий Azure](../../app-service/web-sites-create-web-jobs.md), которое позволяет писать функции с отслеживанием состояния в безсерверной среде. Расширение автоматически управляет состоянием, создает контрольные точки и перезагружается. Если вы еще не знакомы с Устойчивые функции, см. [обзорную документацию](durable-functions-overview.md).
+*Устойчивые функции* являются расширением [Функций Azure](../functions-overview.md) и [веб-заданий Azure](../../app-service/webjobs-create.md), которое позволяет писать функции с отслеживанием состояния в безсерверной среде. Расширение управляет состоянием, создает контрольные точки и перезагружается. Если вы еще не знакомы с Устойчивые функции, см. [обзорную документацию](durable-functions-overview.md).
 
 ## <a name="new-features-in-2x"></a>Новые возможности в 2. x
 

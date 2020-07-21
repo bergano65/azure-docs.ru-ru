@@ -4,12 +4,12 @@ description: Узнайте, как программировать и настр
 ms.topic: conceptual
 ms.date: 04/25/2018
 ms.author: azfuncdf
-ms.openlocfilehash: ad498bdbc4e6dc9745c6ef45b3dc601ad36c0a62
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 826e475eb71563b52d687903aeac4ec936e267f6
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82733419"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86540304"
 ---
 # <a name="how-to-run-durable-functions-as-webjobs"></a>Запуск Устойчивые функции как веб-заданий
 
@@ -31,7 +31,7 @@ ms.locfileid: "82733419"
 
 Чтобы выполнить действия, описанные в этой статье, сделайте следующее:
 
-* [Установите Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/) с рабочей нагрузкой **Разработка для Azure**.
+* [Установите Visual Studio 2019](/visualstudio/install/) с рабочей нагрузкой **Разработка для Azure**.
 
   Если у вас уже есть Visual Studio, но нет такой рабочей нагрузки, добавьте рабочую нагрузку, выбрав **инструменты**  >  **получить средства и компоненты**.
 
@@ -126,7 +126,7 @@ static void Main(string[] args)
 Пакет SDK для веб-заданий не поддерживает следующие возможности Функций Azure:
 
 * [Атрибут FunctionName](#functionname-attribute)
-* [триггером HTTP](#http-trigger)
+* [Триггер HTTP](#http-trigger)
 * [API управления HTTP устойчивых функций](#http-management-api)
 
 ### <a name="functionname-attribute"></a>Атрибут FunctionName
@@ -224,7 +224,7 @@ while (true)
     * `Microsoft.Azure.WebJobs.Extensions.Storage`
     * `Microsoft.Azure.WebJobs.Logging.ApplicationInsights`
 
-1. Задайте строку подключения к хранилищу и ключ инструментирования Application Insights в *appsettings.jsв* файле с помощью платформы конфигурации .NET Core. Ниже приведен пример:
+1. Задайте строку подключения к хранилищу и ключ инструментирования Application Insights в *appsettings.jsв* файле с помощью платформы конфигурации .NET Core. Ниже приведен пример.
 
     ```json
         {

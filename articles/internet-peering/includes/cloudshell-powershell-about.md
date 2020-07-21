@@ -8,17 +8,17 @@ ms.service: internet-peering
 ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 3a5485475e3d8030bf85734faec53b0ff0747499
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ee071f2cf6e31d46ccd483935f137f16bcacf337
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81678472"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86544910"
 ---
 Для запуска командлетов можно использовать бесплатную интерактивную оболочку Azure Cloud Shell. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Выберите **Копировать** , чтобы скопировать код, и вставьте его в Cloud Shell. Затем нажмите клавишу **Ввод** , чтобы запустить его. Существует несколько способов запуска Cloud Shell.
 
 
-|  |   |
+| Метод запуска | Снимок экрана  |
 |-----------------------------------------------|---|
 | Откройте Cloud Shell в браузере. | [![https://shell.azure.com/powershell](../media/launchcloudshell.png)](https://shell.azure.com/powershell) |
 | Нажмите кнопку **Cloud Shell** на панели инструментов в правом верхнем углу портал Azure. | [![Cloud Shell на портале](../media/cloud-shell-menu.png)](https://portal.azure.com) |

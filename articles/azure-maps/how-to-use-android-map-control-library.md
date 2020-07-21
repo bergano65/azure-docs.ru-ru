@@ -9,11 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: accd0df2913abc4d82b6f14aaafd03f0f042ca91
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 241f107f0bb2163951104067cb82d6e6a967ad3e
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83648222"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86540134"
 ---
 # <a name="getting-started-with-azure-maps-android-sdk"></a>Приступая к работе с пакетом SDK для Android для Azure Maps
 
@@ -23,7 +24,7 @@ ms.locfileid: "83648222"
 
 ### <a name="create-an-azure-maps-account"></a>создание учетной записи службы Azure Maps
 
-Чтобы выполнить процедуры, описанные в этой статье, сначала необходимо [создать учетную запись Azure Maps](quick-demo-map-app.md#create-an-account-with-azure-maps) в ценовой категории S1 и [получить первичный ключ](quick-demo-map-app.md#get-the-primary-key-for-your-account) для своей учетной записи.
+Чтобы выполнить процедуры, описанные в этой статье, сначала необходимо [создать учетную запись Azure Maps](quick-demo-map-app.md#create-an-azure-maps-account) в ценовой категории S1 и [получить первичный ключ](quick-demo-map-app.md#get-the-primary-key-for-your-account) для своей учетной записи.
 
 Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](./how-to-manage-authentication.md).
 

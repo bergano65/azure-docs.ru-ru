@@ -6,11 +6,12 @@ ms.topic: reference
 ms.date: 07/09/2018
 ms.author: cshoe
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1426d6e770cca566c4b77ca4742e2f8a0fbb5465
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8116abda71ae78b05786ede03256eb9e9bb59345
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76715066"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86540270"
 ---
 # <a name="twilio-binding-for-azure-functions"></a>Привязка Twilio для службы "Функции Azure"
 
@@ -240,7 +241,7 @@ def main(req: func.HttpRequest, twilioMessage: func.Out[str]) -> func.HttpRespon
 
 # <a name="java"></a>[Java](#tab/java)
 
-В следующем примере показано, как использовать заметку [твилиосмсаутпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.twiliosmsoutput) для отправки сообщения SMS. Значения для `to` , `from` и `body` являются обязательными в определении атрибута, даже если они переопределяются программным способом.
+В следующем примере показано, как использовать заметку [твилиосмсаутпут](/java/api/com.microsoft.azure.functions.annotation.twiliosmsoutput) для отправки сообщения SMS. Значения для `to` , `from` и `body` являются обязательными в определении атрибута, даже если они переопределяются программным способом.
 
 ```java
 package com.function;
@@ -318,7 +319,7 @@ public static CreateMessageOptions Run(
 
 # <a name="java"></a>[Java](#tab/java)
 
-Поместите заметку [твилиосмсаутпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.twiliosmsoutput) к [`OutputBinding<T>`](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.outputbinding) параметру `T` , где может быть любым собственным типом Java `int` , например,, `String` `byte[]` или типом POJO.
+Поместите заметку [твилиосмсаутпут](/java/api/com.microsoft.azure.functions.annotation.twiliosmsoutput) к [`OutputBinding<T>`](/java/api/com.microsoft.azure.functions.outputbinding) параметру `T` , где может быть любым собственным типом Java `int` , например,, `String` `byte[]` или типом POJO.
 
 ---
 
@@ -339,7 +340,7 @@ public static CreateMessageOptions Run(
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: e5611eeb08ac370e12cf452d57a87e449fbd80da
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 92e111a6e76dbe285dd8cc7a93ce75f556142565
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80335376"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86540151"
 ---
 # <a name="show-traffic-data-on-the-map-using-azure-maps-android-sdk"></a>Отображение данных трафика на карте с помощью Azure Maps пакет SDK для Android
 
@@ -21,9 +21,9 @@ ms.locfileid: "80335376"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед отображением трафика на карте необходимо [сделать учетную запись Azure](quick-demo-map-app.md#create-an-account-with-azure-maps)и [получить ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account). Затем необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) и загрузить карту.
+Перед отображением трафика на карте необходимо [сделать учетную запись Azure](quick-demo-map-app.md#create-an-azure-maps-account)и [получить ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account). Затем необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) и загрузить карту.
 
-## <a name="incidents-traffic-data"></a>Данные трафика инцидентов 
+## <a name="incidents-traffic-data"></a>Данные трафика инцидентов
 
 Вам потребуется импортировать следующие библиотеки для вызова `setTraffic` и `incidents` :
 
@@ -53,7 +53,7 @@ import static com.microsoft.azure.maps.mapcontrol.options.TrafficOptions.flow;
 
 Используйте следующий фрагмент кода для задания данных потока трафика. Аналогично коду в предыдущем разделе, мы передаем возвращаемое значение метода методу `flow` `setTraffic` . В можно передать четыре значения `flow` , и каждое значение будет `flow` возвращать соответствующее значение. Возвращаемое значение `flow` будет передано в качестве аргумента в `setTraffic` . Следующие четыре значения приведены в следующей таблице:
 
-| | |
+|Значение потока | Описание|
 | :-- | :-- |
 | Траффикфлов. NONE | Не отображает данные трафика на карте |
 | Траффикфлов. RELATIVE | Показывает данные трафика, относящиеся к скорости произвольного потока в дороге |
