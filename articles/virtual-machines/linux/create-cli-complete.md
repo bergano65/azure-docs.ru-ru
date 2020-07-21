@@ -6,11 +6,12 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 12/14/2017
 ms.author: cynthn
-ms.openlocfilehash: 7ee4674f5e7c04709256459c3417a1379a65aedc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5cc7a739b27d96eac01733b4f340d6d6d4dac265
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78969564"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86511132"
 ---
 # <a name="create-a-complete-linux-virtual-machine-with-the-azure-cli"></a>Создание полнофункциональной виртуальной машины Linux с помощью Azure CLI
 Чтобы быстро создать виртуальную машину в Azure, можно использовать одну команду Azure CLI, использующую значения по умолчанию для создания любых необходимых вспомогательных ресурсов. Ресурсы, такие как виртуальная сеть, общедоступный IP-адрес и правила группы сетевой безопасности, создаются автоматически. Чтобы получить дополнительные возможности управления в рабочей среде, можно создать эти ресурсы заранее и затем добавлять в них виртуальные машины. В этой статье описывается, как создать виртуальную машину и каждый из вспомогательных ресурсов по одному.
@@ -549,13 +550,13 @@ sudo apt-get install -y nginx
 ![Сайт NGINX по умолчанию на виртуальной машине](media/create-cli-complete/nginx.png)
 
 ## <a name="export-as-a-template"></a>Экспорт в качестве шаблона
-Допустим, вам требуется создать дополнительную среду разработки с теми же параметрами или соответствующую рабочую среду. Resource Manager использует шаблоны JSON, которые определяют все параметры среды. Можно полностью создавать среды, ссылаясь на этот шаблон JSON. Вы можете создавать [шаблоны JSON вручную](../../resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или экспортировать существующую среду, чтобы создать шаблон JSON. Чтобы экспортировать группу ресурсов, используйте команду [az group export](/cli/azure/group) следующим образом:
+Допустим, вам требуется создать дополнительную среду разработки с теми же параметрами или соответствующую рабочую среду. Resource Manager использует шаблоны JSON, которые определяют все параметры среды. Можно полностью создавать среды, ссылаясь на этот шаблон JSON. Вы можете создавать [шаблоны JSON вручную](../../azure-resource-manager/templates/template-syntax.md?toc=/azure/virtual-machines/linux/toc.json) или экспортировать существующую среду, чтобы создать шаблон JSON. Чтобы экспортировать группу ресурсов, используйте команду [az group export](/cli/azure/group) следующим образом:
 
 ```azurecli
 az group export --name myResourceGroup > myResourceGroup.json
 ```
 
-С помощью этой команды в текущем рабочем каталоге создается файл `myResourceGroup.json`. При создании среды на основе этого шаблона запрашиваются все имена ресурсов. Эти имена можно указать в файле шаблона, добавив параметр `--include-parameter-default-value` в команду `az group export`. Измените шаблон JSON, чтобы указать имена ресурсов, или [создайте parameters.jsдля файла](../../resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) , указывающего имена ресурсов.
+С помощью этой команды в текущем рабочем каталоге создается файл `myResourceGroup.json`. При создании среды на основе этого шаблона запрашиваются все имена ресурсов. Эти имена можно указать в файле шаблона, добавив параметр `--include-parameter-default-value` в команду `az group export`. Измените шаблон JSON, чтобы указать имена ресурсов, или [создайте parameters.jsдля файла](../../azure-resource-manager/templates/template-syntax.md?toc=/azure/virtual-machines/linux/toc.json) , указывающего имена ресурсов.
 
 Чтобы создать среду с помощью шаблона, используйте команду [az group deployment create](/cli/azure/group/deployment) следующим образом:
 
@@ -565,7 +566,7 @@ az group deployment create \
     --template-file myResourceGroup.json
 ```
 
-Вы можете прочитать [дополнительные сведения о развертывании из шаблонов](../../resource-group-template-deploy-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). Узнайте, как поэтапно обновлять среды, использовать файл параметров и обращаться к шаблонам из единого места хранения.
+Вы можете прочитать [дополнительные сведения о развертывании из шаблонов](../../azure-resource-manager/templates/deploy-cli.md?toc=/azure/virtual-machines/linux/toc.json). Узнайте, как поэтапно обновлять среды, использовать файл параметров и обращаться к шаблонам из единого места хранения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь вы готовы приступить к работе с несколькими сетевыми компонентами и виртуальными машинами. Используя этот пример среды, можно создать приложение на основе представленных здесь основных компонентов.

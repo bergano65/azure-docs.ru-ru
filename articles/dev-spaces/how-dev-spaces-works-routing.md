@@ -5,11 +5,12 @@ ms.date: 03/24/2020
 ms.topic: conceptual
 description: Описывает процессы, работающие с Power Azure Dev Spaces и принцип работы маршрутизации.
 keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: 126a534cec2ee4b07aa3a127fb3f47f9931f0031
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8677284d61a0a08a3262c26d6307399922dab4be
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84307424"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86512475"
 ---
 # <a name="how-routing-works-with-azure-dev-spaces"></a>Как работает маршрутизация с Azure Dev Spaces
 
@@ -54,21 +55,21 @@ Azure Dev Spaces предоставляет несколько способов
 
 Производное пространство разработки также будет Intelligent маршрутизировать запросы между собственными приложениями и приложениями, которые совместно используются от его родителя. Маршрутизация работает, пытаясь направить запрос к приложению в производном пространстве разработки и вернуться к общему приложению из родительского пространства разработки. Маршрутизация вернется к общему приложению в области «бабушке», если приложение не находится в родительском пространстве.
 
-Пример:
+Вот несколько примеров:
 * Пространство разработки *по умолчанию* имеет приложения *Service* a и *serviceB*.
 * *Azureuser* пространства разработки является производным от *значения по умолчанию*.
 * Обновленная версия *Service* a развертывается в *azureuser*.
 
 При использовании *azureuser*все запросы к *Service* a будут направляться в обновленную версию в *azureuser*. Запрос к *serviceB* сначала попытается направляться в *azureuser* версию *serviceB*. Так как она не существует, она будет направляться в версию *serviceB* *по умолчанию* . При удалении версии *azureuser* *Service* a все запросы к *Service* a будут возвращаться к использованию версии *Service*a *по умолчанию* .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вот несколько примеров того, как Azure Dev Spaces использует маршрутизацию для обеспечения быстрой итерации и разработки, Узнайте, как [работает локальный процесс с Kubernetes][how-it-works-local-process-kubernetes], [как выполняется удаленная отладка кода с Azure dev Spaces][how-it-works-remote-debugging]и [действия GitHub & службы Kubernetes Azure][pr-flow].
 
 Чтобы приступить к использованию маршрутизации с Azure Dev Spaces для коллективной разработки, ознакомьтесь с руководством по [разработке групп в Azure dev Spaces][quickstart-team] кратком руководстве.
 
 [helm-upgrade]: https://helm.sh/docs/intro/using_helm/#helm-upgrade-and-helm-rollback-upgrading-a-release-and-recovering-on-failure
-[how-it-works-local-process-kubernetes]: how-dev-spaces-works-local-process-kubernetes.md
+[how-it-works-local-process-kubernetes]: /visualstudio/containers/overview-local-process-kubernetes
 [how-it-works-remote-debugging]: how-dev-spaces-works-remote-debugging.md
 [pr-flow]: how-to/github-actions.md
 [quickstart-team]: quickstart-team-development.md

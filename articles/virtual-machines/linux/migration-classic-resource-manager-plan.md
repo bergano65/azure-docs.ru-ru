@@ -9,17 +9,17 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: ff829e9ffbd6d6ae0766998e62634ac873afc748
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dd32b2a59a05578c061c2e21704001558706aede
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80066661"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86510537"
 ---
-# <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Планирование переноса ресурсов IaaS из классической модели развертывания в модель Azure Resource Manager.
+# <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager-in-linux"></a>Планирование миграции ресурсов IaaS с классической модели на Azure Resource Manager в Linux
 
 > [!IMPORTANT]
-> Сегодня около 90% виртуальных машин IaaS используют [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/). По состоянию на 28 февраля 2020, классические виртуальные машины являются устаревшими и будут полностью сняты с 1 марта 2023. [Узнайте больше]( https://aka.ms/classicvmretirement) об этой нерекомендуемости и [о том, как она влияет на вас](https://docs.microsoft.com/azure/virtual-machines/classic-vm-deprecation#how-does-this-affect-me).
+> Сегодня около 90% виртуальных машин IaaS используют [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/). По состоянию на 28 февраля 2020, классические виртуальные машины являются устаревшими и будут полностью сняты с 1 марта 2023. [Узнайте больше]( https://aka.ms/classicvmretirement) об этой нерекомендуемости и [о том, как она влияет на вас](../classic-vm-deprecation.md#how-does-this-affect-me).
 
 Хотя Azure Resource Manager и предлагает множество разнообразных возможностей, чрезвычайно важно спланировать процесс переноса ресурсов, чтобы не столкнуться с какими-либо проблемами. Грамотное планирование позволит предотвратить возникновение ошибок при выполнении действий по переносу ресурсов.
 
@@ -30,7 +30,7 @@ ms.locfileid: "80066661"
 
 ![Этапы переноса](../media/virtual-machines-windows-migration-classic-resource-manager/plan-labtest-migrate-beyond.png)
 
-## <a name="plan"></a>Планирование
+## <a name="plan"></a>План
 
 ### <a name="technical-considerations-and-tradeoffs"></a>Технические вопросы и компромиссы
 

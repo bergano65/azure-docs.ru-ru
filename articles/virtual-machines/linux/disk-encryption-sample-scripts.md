@@ -8,14 +8,14 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 32d4e709036135a9a88ec36eaafaa176df33fabf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5e7b22a8010d7dfbdeeaeae623a55c1aff9c006c
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85610359"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86510503"
 ---
-# <a name="azure-disk-encryption-sample-scripts"></a>Примеры скриптов шифрования дисков Azure 
+# <a name="azure-disk-encryption-sample-scripts-for-linux-vms"></a>Примеры сценариев шифрования дисков Azure для виртуальных машин Linux
 
 В этой статье приводятся примеры сценариев для подготовки предварительно зашифрованных виртуальных жестких дисков и других задач.
 
@@ -43,7 +43,7 @@ ms.locfileid: "85610359"
 В следующей таблице показано, какие параметры могут использоваться в сценарии PowerShell: 
 
 
-|Параметр|Описание:|Обязательное?|
+|Параметр|Описание|Обязательное?|
 |------|------|------|
 |$resourceGroupName| Имя группы ресурсов, к которой принадлежит хранилище ключей.  При отсутствии группы ресурсов с таким именем — она будет создана.| True|
 |$keyVaultName|Имя хранилища ключей, в котором будут размещаться ключи шифрования. При отсутствии хранилища ключей с таким именем — оно будет создано.| True|
@@ -186,7 +186,7 @@ ms.locfileid: "85610359"
 
    ![Указание парольной фразы во время загрузки при настройке Ubuntu 16.04](./media/disk-encryption/ubuntu-1604-preencrypted-fig5.png)
 
-6. Подготовьте виртуальную машину к передаче в Azure, следуя [этим инструкциям](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-create-upload-ubuntu/). Пока не выполняйте последний шаг (отзыв виртуальной машины).
+6. Подготовьте виртуальную машину к передаче в Azure, следуя [этим инструкциям](./create-upload-ubuntu.md?toc=/azure/virtual-machines/linux/toc.json). Пока не выполняйте последний шаг (отзыв виртуальной машины).
 
 Настройте шифрование для Azure, выполнив следующие шаги.
 
@@ -262,7 +262,7 @@ ms.locfileid: "85610359"
 
    ![Указание парольной фразы во время загрузки при настройке openSUSE 13.2](./media/disk-encryption/opensuse-encrypt-fig2.png)
 
-3. Подготовьте виртуальную машину для передачи в Azure, следуя инструкциям в разделе [Подготовка виртуальной машины SLES или openSUSE для Azure](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-suse-create-upload-vhd/#prepare-opensuse-131). Пока не выполняйте последний шаг (отзыв виртуальной машины).
+3. Подготовьте виртуальную машину для передачи в Azure, следуя инструкциям в разделе [Подготовка виртуальной машины SLES или openSUSE для Azure](./suse-create-upload-vhd.md?toc=/azure/virtual-machines/linux/toc.json#prepare-opensuse-131). Пока не выполняйте последний шаг (отзыв виртуальной машины).
 
 Чтобы настроить шифрование для Azure, сделайте следующее:
 1. Измените файл /etc/dracut.conf и добавьте приведенную ниже строку.
@@ -339,7 +339,7 @@ ms.locfileid: "85610359"
 
    ![Введение парольной фразы во время загрузки при настройке CentOS 7](./media/disk-encryption/centos-encrypt-fig4.png)
 
-5. Подготовьте виртуальную машину для передачи в Azure, следуя инструкциям в разделе "CentOS 7.0+" статьи [Подготовка виртуальной машины на основе CentOS для Azure](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-create-upload-centos/#centos-70). Пока не выполняйте последний шаг (отзыв виртуальной машины).
+5. Подготовьте виртуальную машину для передачи в Azure, следуя инструкциям в разделе "CentOS 7.0+" статьи [Подготовка виртуальной машины на основе CentOS для Azure](./create-upload-centos.md?toc=/azure/virtual-machines/linux/toc.json#centos-70). Пока не выполняйте последний шаг (отзыв виртуальной машины).
 
 6. Теперь виртуальную машину можно отозвать и передать свой виртуальный жесткий диск в Azure.
 
@@ -439,7 +439,7 @@ ms.locfileid: "85610359"
 На следующем шаге используйте `$secretUrl`, чтобы [подключить диск ОС, не применяя ключ шифрования ключей](#without-using-a-kek).
 
 ### <a name="disk-encryption-secret-encrypted-with-a-kek"></a>Секрет дискового шифрования, зашифрованный с помощью KEK
-Перед передачей секрета в хранилище ключей его можно дополнительно зашифровать с помощью ключа шифрования ключей. Используйте [API](https://msdn.microsoft.com/library/azure/dn878066.aspx) для создания оболочки, чтобы сначала зашифровать секрет с использованием ключа шифрования ключей. Выходными данными этой операции по переносу является строка в кодировке Base64, которую можно затем передать в качестве секрета с помощью [`Set-AzKeyVaultSecret`](/powershell/module/az.keyvault/set-azkeyvaultsecret) командлета.
+Перед передачей секрета в хранилище ключей его можно дополнительно зашифровать с помощью ключа шифрования ключей. Используйте [API](/rest/api/keyvault/wrapkey) для создания оболочки, чтобы сначала зашифровать секрет с использованием ключа шифрования ключей. Выходными данными этой операции по переносу является строка в кодировке Base64, которую можно затем передать в качестве секрета с помощью [`Set-AzKeyVaultSecret`](/powershell/module/az.keyvault/set-azkeyvaultsecret) командлета.
 
 ```powershell
     # This is the passphrase that was provided for encryption during the distribution installation

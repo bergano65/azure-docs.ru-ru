@@ -7,12 +7,12 @@ ms.topic: article
 ms.workload: infrastructure
 ms.date: 08/29/2019
 ms.author: iainfou
-ms.openlocfilehash: 2731693667d2129a72da72455c6bbdd74c277697
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c5275a979cbffe7fb6600978487454ac11cd2002
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80366488"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86510435"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Предварительный просмотр. Войдите на виртуальную машину Linux в Azure, используя проверку подлинности Azure Active Directory
 
@@ -109,7 +109,7 @@ az vm extension set \
     --vm-name myVM
 ```
 
-После успешной установки расширения на виртуальной машине отображается *ProvisioningState* *успешно* . Для установки расширения виртуальной машине требуется работающий агент виртуальной машины. Дополнительные сведения см. в статье [Общие сведения о агенте ВМ](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows).
+После успешной установки расширения на виртуальной машине отображается *ProvisioningState* *успешно* . Для установки расширения виртуальной машине требуется работающий агент виртуальной машины. Дополнительные сведения см. в статье [Общие сведения о агенте ВМ](../extensions/agent-windows.md).
 
 ## <a name="configure-role-assignments-for-the-vm"></a>Настройка назначений ролей для виртуальной машины
 
@@ -138,7 +138,7 @@ az role assignment create \
 
 Дополнительные сведения об использовании RBAC для управления доступом к ресурсам подписки Azure см. в статьях об использовании [Azure](../../role-based-access-control/role-assignments-cli.md), [портала Azure](../../role-based-access-control/role-assignments-portal.md) или [Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
 
-Также можно настроить Azure AD, чтобы при входе конкретного пользователя на виртуальную машину Linux требовалось пройти аутентификацию MFA. Дополнительные сведения см. в статье о [начале работы с MFA Azure в облаке](../../multi-factor-authentication/multi-factor-authentication-get-started-cloud.md).
+Также можно настроить Azure AD, чтобы при входе конкретного пользователя на виртуальную машину Linux требовалось пройти аутентификацию MFA. Дополнительные сведения см. в статье о [начале работы с MFA Azure в облаке](../../active-directory/authentication/howto-mfa-getstarted.md).
 
 ## <a name="log-in-to-the-linux-virtual-machine"></a>Вход на виртуальную машину Linux
 

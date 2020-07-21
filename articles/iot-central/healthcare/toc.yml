@@ -52,34 +52,40 @@
           href: ../core/howto-create-custom-analytics.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
     - name: Администрирование
       items:
-        - name: Изменение параметров приложения
-          href: ../core/howto-administer.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
-        - name: Экспорт приложения
-          href: ../core/howto-use-app-templates.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
-        - name: управление пользователями и ролями;
-          href: ../core/howto-manage-users-roles.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
-        - name: Управление счетом
-          href: ../core/howto-view-bill.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
-        - name: Настройка пользовательского интерфейса приложения
-          href: ../core/howto-customize-ui.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
-        - name: Добавление плиток на панель мониторинга
-          href: ../core/howto-add-tiles-to-your-dashboard.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
-        - name: Управление с помощью портала Azure
-          href: ../core/howto-manage-iot-central-from-portal.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
-        - name: Управление с помощью Azure CLI
-          href: ../core/howto-manage-iot-central-from-cli.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
-        - name: Управление с помощью Azure PowerShell
-          href: ../core/howto-manage-iot-central-from-powershell.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
-        - name: Управление с портала CSP
-          href: ../core/howto-create-and-manage-applications-csp.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
-    - name: Персонализация
-      items:
-        - name: Создание собственных панелей мониторинга Azure IoT Central
-          href: ../core/howto-create-personal-dashboards.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
-        - name: Управление личными настройками
-          href: ../core/howto-manage-preferences.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
-        - name: Переключение чата в реальном времени
-          href: ../core/howto-show-hide-chat.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
+        - name: Управление приложением
+          items:
+            - name: Изменение параметров приложения
+              href: ../core/howto-administer.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
+            - name: управление пользователями и ролями;
+              href: ../core/howto-manage-users-roles.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
+            - name: Управление счетом
+              href: ../core/howto-view-bill.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
+            - name: Настройка пользовательского интерфейса приложения
+              href: ../core/howto-customize-ui.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
+            - name: Экспорт приложения
+              href: ../core/howto-use-app-templates.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
+            - name: Мониторинг работоспособности приложений
+              href: ../core/howto-monitor-application-health.md
+            - name: Сведения о приложении
+              href: ../core/howto-get-app-info.md
+        - name: Управление с помощью других решений
+          items:
+            - name: Управление с помощью портала Azure
+              href: ../core/howto-manage-iot-central-from-portal.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
+            - name: Управление с помощью Azure CLI
+              href: ../core/howto-manage-iot-central-from-cli.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
+            - name: Управление с помощью Azure PowerShell
+              href: ../core/howto-manage-iot-central-from-powershell.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
+            - name: Программное управление
+              href: ../core/howto-manage-iot-central-programmatically.md
+            - name: Управление с портала CSP
+              href: ../core/howto-create-and-manage-applications-csp.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
+        - name: Персонализация
+          items:
+            - name: Управление личными настройками
+              href: ../core/howto-manage-preferences.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
+            - name: Переключение чата в реальном времени
+              href: ../core/howto-show-hide-chat.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки
@@ -105,9 +111,9 @@
     - name: Пакеты SDK для Центра Интернета вещей Azure
       items:
         - name: Пакеты SDK для служб IoT
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
         - name: Пакеты SDK для устройств Интернета вещей
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
     - name: Запросы данных клиентов
       href: ../core/iot-central-customer-data-requests.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
     - name: Поддерживаемые браузеры

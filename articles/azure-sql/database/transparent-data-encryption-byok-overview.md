@@ -12,12 +12,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 03/18/2020
-ms.openlocfilehash: 32347f6d943565eeca7c37a9cdd2cf511e39ddb3
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 507253fcddddf7331ff51c71904c2cdd8e7e5dfd
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85985315"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86514733"
 ---
 # <a name="azure-sql-transparent-data-encryption-with-customer-managed-key"></a>Прозрачное шифрование данных Azure SQL с ключом, управляемым клиентом
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -62,7 +62,7 @@ ms.locfileid: "85985315"
 
 - **unwrapKey** — чтобы иметь возможность снять защиту (расшифровка) DEK
 
-Администратор хранилища ключей также может [включить ведение журнала событий аудита хранилища ключей](../../azure-monitor/insights/azure-key-vault.md), чтобы их можно было проследить позднее.
+Администратор хранилища ключей также может [включить ведение журнала событий аудита хранилища ключей](../../azure-monitor/insights/key-vault-insights-overview.md), чтобы их можно было проследить позднее.
 
 Если сервер настроен для использования предохранителя TDE из AKV, сервер отправляет DEK из каждой базы данных с поддержкой TDE в хранилище ключей для шифрования. Хранилище ключей возвращает зашифрованный DEK, который затем хранится в пользовательской базе данных.
 
@@ -200,7 +200,7 @@ ms.locfileid: "85985315"
 
 Чтобы протестировать отработку отказа, выполните действия, описанные в разделе [Общие сведения об активной георепликации](active-geo-replication-overview.md). Тестирование отработки отказа должно выполняться регулярно, чтобы убедиться, что база данных SQL хранит разрешение на доступ к обоим хранилищам ключей.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы также можете проверить следующие примеры сценариев PowerShell для распространенных операций с управляемыми клиентом TDE:
 

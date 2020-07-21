@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 07/06/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: 2bf0443465f0cfd98f8bce93e60f9007ac7503be
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 81e138e7149327c7b792df58180419b93417d263
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86042087"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86510979"
 ---
 # <a name="troubleshooting-vm-provisioning-with-cloud-init"></a>Устранение неполадок при подготовке виртуальной машины с помощью Cloud-init
 
@@ -21,17 +21,17 @@ ms.locfileid: "86042087"
 
 Некоторые примеры проблем с подготовкой:
 - Виртуальная машина зависает при создании в течение 40 минут, а создание виртуальной машины помечается как сбой.
-- Пользовательские CustomData не обрабатываются
+- `CustomData`не обрабатывается
 - Не удается подключить временный диск
 - Пользователи не создаются или возникают проблемы с доступом пользователей
 - Сетевые подключения настроены неправильно
 - Ошибки при переключении на файл или раздел
 
-В этой статье описывается устранение неполадок Cloud-init. Более подробные сведения см. в разделе [Cloud-init глубокое](https://docs.microsoft.com/azure/virtual-machines/linux/cloud-init-deep-dive)углубление.
+В этой статье описывается устранение неполадок Cloud-init. Более подробные сведения см. в разделе [Cloud-init глубокое](./cloud-init-deep-dive.md)углубление.
 
-## <a name="step-1-test-the-deployment-without-customdata"></a>Шаг 1. Тестирование развертывания без customData
+## <a name="step-1-test-the-deployment-without-customdata"></a>Шаг 1. Тестирование развертывания без`customData`
 
-Cloud-init может принимать пользовательские данные, которые передаются в него при создании виртуальной машины. Во-первых, следует убедиться, что это не вызывает проблем с развертываниями. Попробуйте подготовить виртуальную машину без передачи какой бы то ни было конфигурации. Если вы обнаружите, что виртуальная машина не подготавливается, выполните описанные ниже действия, если вы обнаружите, что конфигурация, которую вы передаете, не применяется, перейдите к [шагу 4](). 
+Cloud-init может принять `customData` , если виртуальная машина будет передаваться в нее. Во-первых, следует убедиться, что это не вызывает проблем с развертываниями. Попробуйте подготовить виртуальную машину без передачи какой бы то ни было конфигурации. Если вы обнаружите, что виртуальная машина не подготавливается, выполните описанные ниже действия, если вы обнаружите, что конфигурация, которую вы передаете, не применяется, перейдите к [шагу 4](). 
 
 ## <a name="step-2-review-image-requirements"></a>Шаг 2. Проверка требований к образу
 Основная причина сбоя подготовки виртуальной машины — образ ОС не удовлетворяет предварительным требованиям для работы в Azure. Убедитесь, что образы правильно подготовлены, прежде чем пытаться подготовить их в Azure. 
@@ -39,15 +39,16 @@ Cloud-init может принимать пользовательские дан
 
 В следующих статьях показаны шаги для подготовки различных дистрибутивов Linux, поддерживаемых в Azure.
 
-- [Подготовка виртуальной машины на основе CentOS для Azure](create-upload-centos.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-- [Подготовка виртуального жесткого диска Debian для Azure](debian-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-- [Oracle Linux](oracle-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-- [Red Hat Enterprise Linux](redhat-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-- [Подготовка виртуальной машины SLES или openSUSE для Azure](suse-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-- [Ubuntu](create-upload-ubuntu.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-- [Информация о нерекомендованных дистрибутивах](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+- [Подготовка виртуальной машины на основе CentOS для Azure](create-upload-centos.md)
+- [Подготовка виртуального жесткого диска Debian для Azure](debian-create-upload-vhd.md)
+- [Flatcar Container Linux](flatcar-create-upload-vhd.md)
+- [Oracle Linux](oracle-create-upload-vhd.md)
+- [Red Hat Enterprise Linux](redhat-create-upload-vhd.md)
+- [Подготовка виртуальной машины SLES или openSUSE для Azure](suse-create-upload-vhd.md)
+- [Ubuntu](create-upload-ubuntu.md)
+- [Информация о нерекомендованных дистрибутивах](create-upload-generic.md)
 
-Для [поддерживаемых образов Azure Cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/using-cloud-init)дистрибутивы Linux уже имеют все необходимые пакеты и конфигурации, чтобы правильно подготавливать образ в Azure. Если вы обнаружите, что виртуальная машина не может создать данные из собственного проверенного образа, попробуйте использовать поддерживаемый образ Azure Marketplace, который уже настроен для Cloud-init, с необязательными customData. Если customData правильно работает с образом в образе Azure Marketplace, возможно, у вас есть проблемы с проверенным образом.
+Для [поддерживаемых образов Azure Cloud-init](./using-cloud-init.md)дистрибутивы Linux уже имеют все необходимые пакеты и конфигурации, чтобы правильно подготавливать образ в Azure. Если вы обнаружите, что виртуальная машина не может создать данные из собственного проверенного образа, попробуйте использовать поддерживаемый образ Azure Marketplace, который уже настроен для Cloud-init, с необязательным `customData` . Если приложение `customData` правильно работает с образом Azure Marketplace, возможно, у вас есть проблемы с проверенным образом.
 
 ## <a name="step-3-collect--review-vm-logs"></a>Шаг 3. получение & проверки журналов виртуальных машин
 
@@ -55,11 +56,11 @@ Cloud-init может принимать пользовательские дан
 
 Пока виртуальная машина запущена, вам понадобятся журналы с виртуальной машины, чтобы понять, почему подготовка не удалась.  Чтобы понять, почему не удалось подготовить виртуальную машину, не останавливайте ее. Обеспечьте работоспособность виртуальной машины. Для получения журналов необходимо сохранить работоспособность виртуальной машины в состоянии выполнения. Чтобы получить журналы, используйте один из следующих методов.
 
-- [Серийная консоль](https://docs.microsoft.com/azure/virtual-machines/linux/serial-console-grub-single-user-mode)
+- [Серийная консоль](./serial-console-grub-single-user-mode.md)
 
-- [Включите диагностику загрузки](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-monitor#enable-boot-diagnostics) перед созданием виртуальной машины и [Просмотрите](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-monitor#view-boot-diagnostics) их во время загрузки.
+- [Включите диагностику загрузки](./tutorial-monitor.md#enable-boot-diagnostics) перед созданием виртуальной машины и [Просмотрите](./tutorial-monitor.md#view-boot-diagnostics) их во время загрузки.
 
-- [Выполните команду AZ VM Repair](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-linux-vm-using-azure-virtual-machine-repair-commands) , чтобы подключить и ПОДКЛЮЧИТЬ диск ОС, который позволит вам получать следующие журналы:
+- [Выполните команду AZ VM Repair](../troubleshooting/repair-linux-vm-using-azure-virtual-machine-repair-commands.md) , чтобы подключить и ПОДКЛЮЧИТЬ диск ОС, который позволит вам получать следующие журналы:
 ```bash
 /var/log/cloud-init*
 /var/log/waagent*
@@ -88,7 +89,7 @@ Cloud-init может принимать пользовательские дан
 
 По умолчанию все события Cloud-init с приоритетом Debug или выше записываются в `/var/log/cloud-init.log` . Это предоставляет подробные журналы всех событий, произошедших во время инициализации Cloud-init. 
 
-Пример:
+Вот несколько примеров:
 
 ```console
 2019-10-10 04:51:25,321 - util.py[DEBUG]: Failed mount of '/dev/sr0' as 'auto': Unexpected error while running command.
@@ -107,7 +108,7 @@ Stderr: mount: unknown filesystem type 'udf'
 2019-10-10 04:51:24,010 - util.py[DEBUG]: Running command ['mount', '-o', 'ro,sync', '-t', 'auto', u'/dev/sr0', '/run/cloud-init/tmp/tmpXXXXX'] with allowed return codes [0] (shell=False, capture=True)
 ```
 
-Если у вас есть доступ к [последовательной консоли](https://docs.microsoft.com/azure/virtual-machines/linux/serial-console-grub-single-user-mode), можно попробовать повторно выполнить команду, которую пытался запустить Cloud-init.
+Если у вас есть доступ к [последовательной консоли](./serial-console-grub-single-user-mode.md), можно попробовать повторно выполнить команду, которую пытался запустить Cloud-init.
 
 Ведение журнала для `/var/log/cloud-init.log` можно также перенастроить в/етк/клауд/клауд.кфг.д/05_logging. cfg. Дополнительные сведения о ведении журнала Cloud-init см. в [документации по Cloud-init](https://cloudinit.readthedocs.io/en/latest/topics/logging.html). 
 
@@ -123,13 +124,13 @@ Cloud-init имеет несколько зависимостей, они опи
 
 
 ## <a name="step-4-investigate-why-the-configuration-isnt-being-applied"></a>Шаг 4. Выясните, почему конфигурация не применяется
-Не все сбои в Cloud-init приводят к неустранимой ошибке подготовки. Например, если вы используете `runcmd` модуль в конфигурации Cloud-init, ненулевой код выхода из выполняемой команды приведет к сбою подготовки виртуальной машины. Это обусловлено тем, что он выполняется после основных функций подготовки, которые выполняются на первых трех стадиях Cloud-init. Чтобы устранить неполадки, связанные с тем, почему конфигурация не была применена, изучите журналы в шаге 3 и модули Cloud-init вручную. Пример:
+Не все сбои в Cloud-init приводят к неустранимой ошибке подготовки. Например, если вы используете `runcmd` модуль в конфигурации Cloud-init, ненулевой код выхода из выполняемой команды приведет к сбою подготовки виртуальной машины. Это обусловлено тем, что он выполняется после основных функций подготовки, которые выполняются на первых трех стадиях Cloud-init. Чтобы устранить неполадки, связанные с тем, почему конфигурация не была применена, изучите журналы в шаге 3 и модули Cloud-init вручную. Вот несколько примеров:
 
 - `runcmd`-выполнять сценарии без ошибок? Запустите конфигурацию вручную из терминала, чтобы убедиться, что они выполняются должным образом.
 - Установка пакетов. у виртуальной машины есть доступ к репозиториям пакетов?
 - Кроме того `customData` , проверьте конфигурацию данных, предоставленную виртуальной машине, которая находится в папке `/var/lib/cloud/instances/<unique-instance-identifier>/user-data.txt` .
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы по-прежнему не можете изолировать, почему Cloud-init не выполнял конфигурацию, необходимо более внимательно ознакомиться с тем, что происходит на каждом этапе Cloud-init, а также при запуске модулей. Дополнительные сведения см. в статье Подробнее о [настройке Cloud-init](https://docs.microsoft.com/azure/virtual-machines/linux/cloud-init-deep-dive) . 
+Если вы по-прежнему не можете изолировать, почему Cloud-init не выполнял конфигурацию, необходимо более внимательно ознакомиться с тем, что происходит на каждом этапе Cloud-init, а также при запуске модулей. Дополнительные сведения см. в статье Подробнее о [настройке Cloud-init](./cloud-init-deep-dive.md) . 

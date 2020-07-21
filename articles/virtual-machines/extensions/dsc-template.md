@@ -13,15 +13,16 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 10/05/2018
 ms.author: robreed
-ms.openlocfilehash: 4ec81ef69f21fc74864e437a3c6de46550a70c18
-ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
+ms.openlocfilehash: dc73b5b9f05d24de206b25095ea7eaf93f035298
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82891660"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86511166"
 ---
 # <a name="desired-state-configuration-extension-with-azure-resource-manager-templates"></a>Расширение Desired State Configuration (DSC) с использованием шаблонов Azure Resource Manager
 
-В этой статье описывается шаблон Azure Resource Manager для [обработчика расширения Desired State Configuration (DSC)](dsc-overview.md). Во многих примерах используется **RegistrationURL** (предоставляется в виде строки) и **RegistrationKey** (предоставляется в виде [PSCredential](/dotnet/api/system.management.automation.pscredential)) для подключения к службе автоматизации Azure. Подробнее о получении этих значений см. в разделе [Подключение компьютеров для управления с помощью настройки состояния службы автоматизации Azure (Безопасная регистрация)](/azure/automation/automation-dsc-onboarding#onboarding-securely-using-registration).
+В этой статье описывается шаблон Azure Resource Manager для [обработчика расширения Desired State Configuration (DSC)](dsc-overview.md). Во многих примерах используется **регистратионурл** (представленная в виде строки) и **RegistrationKey** (предоставляется как [PSCredential](/dotnet/api/system.management.automation.pscredential) для подключения к службе автоматизации Azure. Подробнее о получении этих значений см. в разделе [Подключение компьютеров для управления с помощью настройки состояния службы автоматизации Azure (Безопасная регистрация)](../../automation/automation-dsc-onboarding.md#enable-machines-securely-using-registration).
 
 > [!NOTE]
 > Вы можете встретить немного отличающиеся примеры схемы. Изменение в схеме произошло в выпуске за октябрь 2016 года. Дополнительные сведения см. в разделе об [обновлении предыдущего формата](#update-from-a-previous-format).

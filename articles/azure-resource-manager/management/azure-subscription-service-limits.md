@@ -3,14 +3,13 @@ title: Ограничения и квоты подписки Azure
 description: В этой статье приводится перечень наиболее распространенных ограничений, относящихся к подписке Azure и различным службам, квот и границ. Эта статья содержит сведения о том, как увеличить пределы и максимальное значение.
 ms.topic: conceptual
 author: davidsmatlak
-ms.author: v-dasmat
 ms.date: 06/04/2020
-ms.openlocfilehash: 594e34a07cf2c370546e59ebe59df1de88eb2aa4
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: ffe0703fbbea75b221dfc6fd16f334dcf58e8ab3
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86080981"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86515895"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 
@@ -143,7 +142,7 @@ ms.locfileid: "86080981"
 
 ## <a name="azure-monitor-limits"></a>Ограничения Azure Monitor
 
-### <a name="alerts"></a>Предупреждения
+### <a name="alerts"></a>видны узлы
 
 [!INCLUDE [monitoring-limits](../../../includes/azure-monitor-limits-alerts.md)]
 
@@ -378,6 +377,10 @@ ms.locfileid: "86080981"
 
 Дополнительные сведения см. в статье [размеры виртуальных машин](../../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
+#### <a name="disk-encryption-sets"></a>Наборы шифрования дисков
+
+Существует ограничение в 50 наборов шифрования дисков на регион для каждой подписки. Дополнительные сведения см. в документации по шифрованию виртуальных машин [Linux](/azure/virtual-machines/linux/disk-encryption#restrictions) или [Windows](/azure/virtual-machines/windows/disk-encryption#restrictions) . Если вам нужно увеличить квоту, обратитесь в службу поддержки Azure.
+
 ### <a name="managed-virtual-machine-disks"></a>Управляемые диски виртуальной машины
 
 [!INCLUDE [azure-storage-limits-vm-disks-managed](../../../includes/azure-storage-limits-vm-disks-managed.md)]
@@ -420,7 +423,7 @@ ms.locfileid: "86080981"
 
 [!INCLUDE [virtual-machine-scale-sets-limits](../../../includes/azure-virtual-machine-scale-sets-limits.md)]
 
-## <a name="see-also"></a>Дополнительно
+## <a name="see-also"></a>См. также раздел
 
 * [Общие сведения об ограничениях и росте Azure](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 * [Размеры виртуальных машин и облачных служб для Azure](../../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

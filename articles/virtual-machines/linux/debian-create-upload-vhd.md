@@ -6,16 +6,16 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 11/13/2018
 ms.author: guybo
-ms.openlocfilehash: ebd20b6187fd4f04ac525e0152d805d9d81de3ab
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 4c2edddb8eec4a2f8300077bb00df72d7e2b00de
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134609"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86510732"
 ---
 # <a name="prepare-a-debian-vhd-for-azure"></a>Подготовка виртуального жесткого диска Debian для Azure
 ## <a name="prerequisites"></a>Предварительные требования
-В этом разделе предполагается, что вы уже установили на виртуальный жесткий диск (VHD) операционную систему Debian Linux из ISO-файла, полученного с [веб-сайта Debian](https://www.debian.org/distrib/). Существует несколько средств для создания VHD-файлов. Hyper-V — это лишь один из примеров. Инструкции по работе с Hyper-V см. в разделе [Установка роли Hyper-V и настройка виртуальной машины](https://technet.microsoft.com/library/hh846766.aspx).
+В этом разделе предполагается, что вы уже установили на виртуальный жесткий диск (VHD) операционную систему Debian Linux из ISO-файла, полученного с [веб-сайта Debian](https://www.debian.org/distrib/). Существует несколько средств для создания VHD-файлов. Hyper-V — это лишь один из примеров. Инструкции по работе с Hyper-V см. в разделе [Установка роли Hyper-V и настройка виртуальной машины](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh846766(v=ws.11)).
 
 ## <a name="installation-notes"></a>Замечания по установке
 * См. дополнительные сведения о [подготовке Linux для Azure](create-upload-generic.md#general-linux-installation-notes).
@@ -116,4 +116,3 @@ ms.locfileid: "86134609"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь виртуальный жесткий диск Debian можно использовать для создания новых виртуальных машин Azure. Если вы отправляете VHD-файл в Azure впервые, см. раздел [Вариант 1. Передача VHD](upload-vhd.md#option-1-upload-a-vhd).
-

@@ -8,18 +8,18 @@ ms.date: 06/15/2020
 ms.topic: how-to
 ms.service: virtual-machines
 ms.subservice: disks
-ms.openlocfilehash: 259b46d21cee4c1106e1d307eeb325a4c430613f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8656f0396aff7f20c867a5fae3d929236a3aa0d5
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84945636"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86510452"
 ---
 # <a name="upload-a-vhd-to-azure-or-copy-a-managed-disk-to-another-region---azure-cli"></a>Отправка VHD в Azure или копирование управляемого диска в другой регион — Azure CLI
 
 [!INCLUDE [disks-upload-vhd-to-disk-intro](../../../includes/disks-upload-vhd-to-disk-intro.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Скачайте последнюю [версию AzCopy V10](../../storage/common/storage-use-azcopy-v10.md#download-and-install-azcopy).
 - [Установка Azure CLI](/cli/azure/install-azure-cli).
@@ -34,7 +34,7 @@ ms.locfileid: "84945636"
 
 Этот тип управляемого диска имеет два уникальных состояния:
 
-- Реадтауплоад. Это означает, что диск готов к получению отправки, но [подпись безопасного доступа](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) (SAS) не была создана.
+- Реадтауплоад. Это означает, что диск готов к получению отправки, но [подпись безопасного доступа](../../storage/common/storage-sas-overview.md) (SAS) не была создана.
 - Активеуплоад. Это означает, что диск готов к получению отправки, и создан SAS.
 
 > [!NOTE]
@@ -129,7 +129,6 @@ az disk revoke-access -n $sourceDiskName -g $sourceRG
 az disk revoke-access -n $targetDiskName -g $targetRG
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После успешной отправки виртуального жесткого диска на управляемый диск можно подключить его как [диск данных к существующей виртуальной машине](add-disk.md) или [подключить диск к виртуальной машине в качестве диска ОС](upload-vhd.md#create-the-vm), чтобы создать новую виртуальную машину. 
-

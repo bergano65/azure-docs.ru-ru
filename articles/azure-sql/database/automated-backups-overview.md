@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab, danil
-ms.date: 06/04/2020
-ms.openlocfilehash: 340f4310da5131ea0d2576e7c77d8f6cd0a731b3
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.date: 07/20/2020
+ms.openlocfilehash: 0eea1b696d8eae8606c0b6009f248a215d12db57
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85983120"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86515136"
 ---
 # <a name="automated-backups---azure-sql-database--sql-managed-instance"></a>Автоматическое резервное копирование базы данных SQL Azure & SQL Управляемый экземпляр
 
@@ -55,7 +55,7 @@ ms.locfileid: "85983120"
 | **Изменение срока хранения резервной копии** | [Отдельная база данных](automated-backups-overview.md?tabs=managed-instance#change-the-pitr-backup-retention-period-by-using-the-azure-portal) <br/> [Управляемый экземпляр](automated-backups-overview.md?tabs=managed-instance#change-the-pitr-backup-retention-period-by-using-the-azure-portal) | [Отдельная база данных](automated-backups-overview.md#change-the-pitr-backup-retention-period-by-using-powershell) <br/>[Управляемый экземпляр](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlinstancedatabasebackupshorttermretentionpolicy) |
 | **Изменение долгосрочного хранения резервных копий** | [Отдельная база данных](long-term-backup-retention-configure.md#configure-long-term-retention-policies)<br/>Управляемый экземпляр — н/д  | [Отдельная база данных](long-term-backup-retention-configure.md)<br/>Управляемый экземпляр — н/д  |
 | **Восстановление базы данных на момент времени** | [Отдельная база данных](recovery-using-backups.md#point-in-time-restore) | [Отдельная база данных](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase) <br/> [Управляемый экземпляр](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqlinstancedatabase) |
-| **восстановлением удаленной базы данных;** | [Отдельная база данных](recovery-using-backups.md) | [Отдельная база данных](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldeleteddatabasebackup) <br/> [Управляемый экземпляр](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldeletedinstancedatabasebackup)|
+| **Восстановление удаленной базы данных** | [Отдельная база данных](recovery-using-backups.md) | [Отдельная база данных](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldeleteddatabasebackup) <br/> [Управляемый экземпляр](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldeletedinstancedatabasebackup)|
 | **Восстановление базы данных из хранилища BLOB-объектов Azure** | Отдельная база данных — н/д <br/>Управляемый экземпляр — н/д  | Отдельная база данных — н/д <br/>[Управляемый экземпляр](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-get-started-restore) |
 
 ## <a name="backup-scheduling"></a>Планирование резервного копирования
@@ -101,7 +101,7 @@ ms.locfileid: "85983120"
 
 ## <a name="backup-retention"></a>Хранение резервных копий
 
-Для всех новых, восстановленных и скопированных баз данных, баз данных SQL Azure и Azure SQL Управляемый экземпляр сохранять достаточно резервных копий, чтобы разрешить PITR в течение последних 7 дней по умолчанию. За исключением баз данных с масштабированием, можно [изменить срок хранения резервных копий](#change-the-pitr-backup-retention-period) для каждой базы данных в диапазоне 1-35 дней. Как описано в статье [Использование хранилища резервных копий](#backup-storage-consumption), резервные копии, сохраненные для включения PITR, могут быть старше, чем срок хранения.
+Для всех новых, восстановленных и скопированных баз данных, баз данных SQL Azure и Azure SQL Управляемый экземпляр сохранять достаточно резервных копий, чтобы разрешить PITR в течение последних 7 дней по умолчанию. За исключением баз данных с масштабированием, можно [изменить срок хранения резервных копий](#change-the-pitr-backup-retention-period) каждой активной базы данных в диапазоне 1-35 дней. Как описано в статье [Использование хранилища резервных копий](#backup-storage-consumption), резервные копии, сохраненные для включения PITR, могут быть старше, чем срок хранения. Только для Управляемый экземпляр Azure SQL можно задать скорость хранения резервных копий PITR после удаления базы данных в диапазоне 0-35 дней. 
 
 При удалении базы данных система сохраняет резервные копии так же, как и для базы данных в сети с заданным сроком хранения. Нельзя изменить срок хранения резервной копии для удаленной базы данных.
 
@@ -192,7 +192,7 @@ ms.locfileid: "85983120"
 
 ### <a name="change-the-pitr-backup-retention-period-by-using-the-azure-portal"></a>Измените срок хранения резервной копии PITR с помощью портал Azure
 
-Чтобы изменить срок хранения резервной копии PITR с помощью портал Azure, перейдите на сервер или управляемый экземпляр с базами данных, срок хранения которых требуется изменить. 
+Чтобы изменить срок хранения резервной копии PITR для активных баз данных с помощью портал Azure, перейдите на сервер или управляемый экземпляр с базами данных, срок хранения которых требуется изменить. 
 
 #### <a name="sql-database"></a>[База данных SQL](#tab/single-database)
 
@@ -214,9 +214,54 @@ ms.locfileid: "85983120"
 > [!IMPORTANT]
 > Модуль PowerShell AzureRM по-прежнему поддерживается базой данных SQL и Управляемый экземпляр SQL, но вся будущая разработка предназначена для модуля AZ. SQL. Дополнительные сведения см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ существенно идентичны параметрам в модулях AzureRm.
 
+#### <a name="sql-database"></a>[База данных SQL](#tab/single-database)
+
+Чтобы изменить срок хранения резервной копии PITR для активных баз данных SQL Azure, используйте следующий пример PowerShell.
+
 ```powershell
+# SET new PITR backup retention period on an active individual database
+# Valid backup retention must be between 1 and 35 days
 Set-AzSqlDatabaseBackupShortTermRetentionPolicy -ResourceGroupName resourceGroup -ServerName testserver -DatabaseName testDatabase -RetentionDays 28
 ```
+
+#### <a name="sql-managed-instance"></a>[Управляемый экземпляр SQL](#tab/managed-instance)
+
+Чтобы изменить срок хранения резервной копии PITR для **отдельных активных** баз данных SQL управляемый экземпляр, используйте следующий пример PowerShell.
+
+```powershell
+# SET new PITR backup retention period on an active individual database
+# Valid backup retention must be between 1 and 35 days
+Set-AzSqlInstanceDatabaseBackupShortTermRetentionPolicy -ResourceGroupName resourceGroup -InstanceName testserver -DatabaseName testDatabase -RetentionDays 1
+```
+
+Чтобы изменить срок хранения резервной копии PITR для **всех активных** баз данных SQL управляемый экземпляр, используйте следующий пример PowerShell.
+
+```powershell
+# SET new PITR backup retention period for ALL active databases
+# Valid backup retention must be between 1 and 35 days
+Get-AzSqlInstanceDatabase -ResourceGroupName resourceGroup -InstanceName testserver | Set-AzSqlInstanceDatabaseBackupShortTermRetentionPolicy -RetentionDays 1
+```
+
+Чтобы изменить срок хранения резервной копии PITR для **отдельной удаленной** базы данных SQL управляемый экземпляр, используйте следующий пример PowerShell.
+ 
+```powershell
+# SET new PITR backup retention on an individual deleted database
+# Valid backup retention must be between 0 (no retention) and 35 days. Valid retention rate can only be lower than the period of the retention period when database was active, or remaining backup days of a deleted database.
+Get-AzSqlDeletedInstanceDatabaseBackup -ResourceGroupName resourceGroup -InstanceName testserver -DatabaseName testDatabase | Set-AzSqlInstanceDatabaseBackupShortTermRetentionPolicy -RetentionDays 0
+```
+
+Чтобы изменить PITR хранения резервных копий для **всех удаленных** баз данных SQL управляемый экземпляр, используйте следующий пример PowerShell.
+
+```powershell
+# SET new PITR backup retention for ALL deleted databases
+# Valid backup retention must be between 0 (no retention) and 35 days. Valid retention rate can only be lower than the period of the retention period when database was active, or remaining backup days of a deleted database
+Get-AzSqlDeletedInstanceDatabaseBackup -ResourceGroupName resourceGroup -InstanceName testserver | Set-AzSqlInstanceDatabaseBackupShortTermRetentionPolicy -RetentionDays 0
+```
+
+Ноль (0) дней, по истечении которого резервная копия будет немедленно удалена и больше не будет храниться в удаленной базе данных.
+После уменьшения срока хранения резервной копии PITR для удаленной базы данных ее нельзя увеличить.
+
+---
 
 ### <a name="change-the-pitr-backup-retention-period-by-using-the-rest-api"></a>Измените срок хранения резервной копии PITR с помощью REST API
 
@@ -253,10 +298,11 @@ PUT https://management.azure.com/subscriptions/00000000-1111-2222-3333-444444444
 
 Дополнительные сведения о политиках краткосрочного хранения резервных копий см. [здесь](https://docs.microsoft.com/rest/api/sql/backupshorttermretentionpolicies).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Резервные копии базы данных являются важной частью любой стратегии непрерывности бизнес-процессов и аварийного восстановления, так как они защищают данные от случайного повреждения или удаления. Дополнительные сведения о других решениях для обеспечения непрерывности бизнес-процессов базы данных SQL см. в статье [Обзор непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md).
 - Получите дополнительные сведения о [восстановлении базы данных на момент времени с помощью портал Azure](recovery-using-backups.md).
 - Получите дополнительные сведения о [восстановлении базы данных на момент времени с помощью PowerShell](scripts/restore-database-powershell.md).
 - Сведения о настройке, управлении и восстановлении долгосрочного хранения автоматически создаваемых резервных копий в хранилище BLOB-объектов Azure с помощью портал Azure см. в статье [Управление долгосрочным хранением резервных копий с помощью портал Azure](long-term-backup-retention-configure.md).
 - Сведения о настройке, управлении и восстановлении долгосрочного хранения автоматически создаваемых резервных копий в хранилище BLOB-объектов Azure с помощью PowerShell см. в статье [Управление долгосрочным хранением резервных копий с помощью PowerShell](long-term-backup-retention-configure.md).
+- Чтобы узнать, как точно настроить хранение резервных копий и затраты на Управляемый экземпляр Azure SQL, ознакомьтесь [со статьей Настройка затрат на хранение резервных копий в управляемый экземпляр](https://aka.ms/mi-backup-tuning).

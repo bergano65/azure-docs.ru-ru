@@ -4,11 +4,12 @@ description: Из этой статьи вы узнаете, как восста
 ms.topic: conceptual
 ms.date: 03/01/2019
 ms.custom: references_regions
-ms.openlocfilehash: ded26718f176629f6c53ae90abf3c7e69b4df893
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: a594b9636dcb4e584fd10a17bca6c48c2d1fb960
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027171"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86514090"
 ---
 # <a name="recover-files-from-azure-virtual-machine-backup"></a>Восстановление файлов из резервной копии виртуальной машины Azure
 
@@ -328,6 +329,6 @@ mount [RAID Disk Path] [/mountpath]
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о проблемах при восстановлении файлов см. в разделе [Устранение неполадок](#troubleshooting)
-- Узнайте, как [восстановить файлы с помощью PowerShell](https://docs.microsoft.com/azure/backup/backup-azure-vms-automation#restore-files-from-an-azure-vm-backup)
-- Узнайте, как [восстановить файлы с помощью Azure CLI](https://docs.microsoft.com/azure/backup/tutorial-restore-files)
-- После восстановления виртуальной машины узнайте, как [управлять резервными копиями](https://docs.microsoft.com/azure/backup/backup-azure-manage-vms)
+- Узнайте, как [восстановить файлы с помощью PowerShell](./backup-azure-vms-automation.md#restore-files-from-an-azure-vm-backup)
+- Узнайте, как [восстановить файлы с помощью Azure CLI](./tutorial-restore-files.md)
+- После восстановления виртуальной машины узнайте, как [управлять резервными копиями](./backup-azure-manage-vms.md)

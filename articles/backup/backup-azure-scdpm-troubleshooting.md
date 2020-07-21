@@ -3,17 +3,18 @@ title: Устранение неполадок при работе с System Cen
 description: В этой статье описаны решения проблем, которые могут возникнуть при использовании System Center Data Protection Manager.
 ms.topic: troubleshooting
 ms.date: 01/30/2019
-ms.openlocfilehash: bcb30fa7eb3e05099761fc751b09a9fb16134e34
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 84646f34d905b570855f655465529eb19b717cab
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75664749"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86513818"
 ---
 # <a name="troubleshoot-system-center-data-protection-manager"></a>Устранение неполадок при работе с System Center Data Protection Manager
 
 В этой статье описывается устранение проблем, которые могут возникнуть при использовании Data Protection Manager.
 
-Последние заметки о выпуске System Center Data Protection Manager приведены в [документации по System Center](https://docs.microsoft.com/system-center/dpm/dpm-release-notes?view=sc-dpm-2016). Узнать больше о поддержке Data Protection Manager можно из [этой матрицы](https://docs.microsoft.com/system-center/dpm/dpm-protection-matrix?view=sc-dpm-2016).
+Последние заметки о выпуске System Center Data Protection Manager приведены в [документации по System Center](/system-center/dpm/dpm-release-notes). Узнать больше о поддержке Data Protection Manager можно из [этой матрицы](/system-center/dpm/dpm-protection-matrix).
 
 ## <a name="error-replica-is-inconsistent"></a>Ошибка: "Реплика не согласована"
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/11/2019
 ms.author: akjosh
-ms.openlocfilehash: 68dddde965900b966efa96fbd7da7141f1ed8a94
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 52f896e5cbcc8089ee8683338c99fb514400be4a
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84753543"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86511149"
 ---
 # <a name="nvidia-gpu-driver-extension-for-linux"></a>Расширение драйвера GPU NVIDIA для Linux
 
@@ -26,8 +26,7 @@ ms.locfileid: "84753543"
 
 Это расширение устанавливает драйверы GPU NVIDIA на виртуальных машинах серии N для Linux. В зависимости от семейства виртуальных машин расширение устанавливает драйверы CUDA или GRID. При установке драйверов NVIDIA с помощью этого расширения требуется принять условия [лицензионного соглашения NVIDIA](https://go.microsoft.com/fwlink/?linkid=874330). Во время установки драйвера виртуальная машина может быть перезагружена для завершения процедуры.
 
-Инструкции по установке драйверов вручную и сведения о поддерживаемых сейчас версиях приводятся [здесь](
-https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup).
+Инструкции по установке драйверов вручную и сведения о поддерживаемых сейчас версиях приводятся [здесь](../linux/n-series-driver-setup.md).
 Это расширение также доступно для установки драйверов GPU NVIDIA на [виртуальных машинах Windows серии N](hpccompute-gpu-windows.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -97,7 +96,7 @@ https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup).
 
 Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Шаблоны идеально подходят для развертывания одной или нескольких виртуальных машин, требующих настройки после развертывания.
 
-Конфигурацию JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины или поместить в корень или на верхний уровень JSON-файла шаблона Resource Manager. Размещение конфигурации JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/resource-manager-template-child-resource.md). 
+Конфигурацию JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины или поместить в корень или на верхний уровень JSON-файла шаблона Resource Manager. Размещение конфигурации JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/templates/child-resource-name-type.md). 
 
 В следующем примере предполагается, что расширение виртуальной машины расположено в ресурсе виртуальной машины. При вложении ресурса расширения JSON помещается в объект `"resources": []` виртуальной машины.
 
@@ -204,4 +203,4 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о расширениях виртуальных машин см. в обзоре [расширений и компонентов виртуальной машины для Linux](features-linux.md).
 
-См. дополнительные сведения о [размерах виртуальных машин серии N, оптимизированных для GPU](../linux/sizes-gpu.md).
+См. дополнительные сведения о [размерах виртуальных машин серии N, оптимизированных для GPU](../sizes-gpu.md).

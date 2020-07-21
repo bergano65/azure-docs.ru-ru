@@ -6,17 +6,18 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 08/21/2019
 ms.author: cynthn
-ms.openlocfilehash: 02c3ee483e6a31960fd5123070a49f568ac4c690
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 14beeebe15193cbe2ef4684f97e4783810ad77a4
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78968798"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86510561"
 ---
 # <a name="download-a-linux-vhd-from-azure"></a>Скачивание виртуального жесткого диска Linux из Azure
 
 В этой статье описано, как скачать файл виртуального жесткого диска (VHD) Linux из Azure, используя Azure CLI и портал Azure. 
 
-Установите [Azure CLI](https://docs.microsoft.com/cli/azure/install-az-cli2), если это еще не сделано.
+Установите [Azure CLI](/cli/azure/install-az-cli2), если это еще не сделано.
 
 ## <a name="stop-the-vm"></a>Остановка виртуальной машины
 
@@ -24,7 +25,7 @@ VHD невозможно скачать из Azure, если он подключ
 
 Чтобы использовать VHD как образ для создания других виртуальных машин, выполните следующие действия:
 
-1. Используйте SSH, имя учетной записи и общедоступный IP-адрес виртуальной машины, чтобы подключиться к ней и отозвать ее. Чтобы получить общедоступный IP-адрес, выполните команду [az network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip#az-network-public-ip-show). Параметр +user также удаляет последнюю подготовленную учетную запись пользователя. При вводе учетных данных в виртуальную машину оставьте параметр +user. В следующем примере удаляется последняя подготовленная учетная запись пользователя:
+1. Используйте SSH, имя учетной записи и общедоступный IP-адрес виртуальной машины, чтобы подключиться к ней и отозвать ее. Чтобы получить общедоступный IP-адрес, выполните команду [az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-show). Параметр +user также удаляет последнюю подготовленную учетную запись пользователя. При вводе учетных данных в виртуальную машину оставьте параметр +user. В следующем примере удаляется последняя подготовленная учетная запись пользователя:
 
     ```bash
     ssh azureuser@<publicIpAddress>
@@ -32,7 +33,7 @@ VHD невозможно скачать из Azure, если он подключ
     exit 
     ```
 
-2. Войдите в свою учетную запись Azure с помощью команды [az login](https://docs.microsoft.com/cli/azure/reference-index).
+2. Войдите в свою учетную запись Azure с помощью команды [az login](/cli/azure/reference-index).
 3. Остановите виртуальную машину и отмените ее выделение.
 
     ```azurecli
@@ -56,7 +57,7 @@ VHD невозможно скачать из Azure, если он подключ
 
 ## <a name="generate-sas-url"></a>Создание URL-адреса SAS
 
-Чтобы скачать VHD-файл, необходимо создать URL для [подписи общего доступа (SAS)](../../storage/common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) . Когда этот URL-адрес создан, ему назначается срок действия.
+Чтобы скачать VHD-файл, необходимо создать URL для [подписи общего доступа (SAS)](../../storage/common/storage-sas-overview.md?toc=/azure/virtual-machines/windows/toc.json) . Когда этот URL-адрес создан, ему назначается срок действия.
 
 1.  В меню страницы виртуальной машины выберите **диски**.
 2.  Выберите диск операционной системы для виртуальной машины и щелкните **Экспорт диска**.
@@ -74,8 +75,7 @@ VHD невозможно скачать из Azure, если он подключ
 
     ![Выберите сохранить в браузере.](./media/download-vhd/export-save.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [передать пользовательский диск и создать на его основе виртуальную машину Linux с помощью Azure CLI](upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). 
 - [Управление дисками Azure с помощью Azure CLI](tutorial-manage-disks.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
-

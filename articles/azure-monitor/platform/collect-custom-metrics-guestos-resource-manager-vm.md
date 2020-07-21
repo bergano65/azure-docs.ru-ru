@@ -7,11 +7,12 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: bwren
 ms.subservice: metrics
-ms.openlocfilehash: 14079f42fd857495396a0c44fd3bdeaf4371ea5f
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 208515b7541948ca6913e6fda092c6a424de85f9
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83650544"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86515790"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-by-using-an-azure-resource-manager-template-for-a-windows-virtual-machine"></a>Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Azure Resource Manager для виртуальной машины Windows
 Данные о производительности из гостевых ОС виртуальных машин Azure не собираются автоматически, как другие [метрики платформы](../insights/monitor-azure-resource.md#monitoring-data). Установите [расширение диагностики](diagnostics-extension-overview.md) Azure Monitor, чтобы собирать метрики гостевой ОС в базу данных метрик и использовать их со всеми возможностями метрик Azure Monitor, включая оповещения почти в режиме реального времени, диаграммы, маршрутизацию и доступ из REST API. В этой статье описывается процесс отправки метрик производительности гостевой ОС с виртуальной машины под управлением Windows в базу данных метрик с использованием шаблона Resource Manager. 
@@ -24,9 +25,9 @@ ms.locfileid: "83650544"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписку необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
+- Подписку необходимо зарегистрировать в [Microsoft.Insights](../../azure-resource-manager/management/resource-providers-and-types.md).
 
-- Необходимо установить [Azure PowerShell](/powershell/azure) или [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
+- Необходимо установить [Azure PowerShell](/powershell/azure) или [Azure Cloud Shell](../../cloud-shell/overview.md).
 
 - Ресурс виртуальной машины должен находиться в [регионе, поддерживающем пользовательские метрики](metrics-custom-overview.md#supported-regions). 
 
@@ -285,4 +286,3 @@ ms.locfileid: "83650544"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
-

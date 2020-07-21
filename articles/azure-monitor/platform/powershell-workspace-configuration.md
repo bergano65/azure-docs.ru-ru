@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/26/2020
-ms.openlocfilehash: bf94631c821c8a7ba5e2870af0bf1ecfd268e888
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: d0bbde0ee4fd0eaf7387abaf6d548dc563e5b715
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86203593"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86515450"
 ---
 # <a name="create-and-configure-a-log-analytics-workspace-in-azure-monitor-using-powershell"></a>Создание и настройка рабочей области Log Analytics в Azure Monitor с помощью PowerShell
 В этой статье представлены два примера кода для создания и настройки рабочих областей Log Analytics в Azure Monitor.  
@@ -193,7 +193,7 @@ New-AzOperationalInsightsCustomLogDataSource -ResourceGroupName $ResourceGroup -
 ```
 
 > [!NOTE]
-> Формат параметра **CustomLogRawJson**, который определяет конфигурацию пользовательского журнала, может быть достаточно сложным. Выполните [Get-AzOperationalInsightsDataSource](https://docs.microsoft.com/powershell/module/az.operationalinsights/get-azoperationalinsightsdatasource?view=azps-3.2.0), чтобы получить конфигурацию для существующего пользовательского журнала. Параметр **Properties** содержит необходимую конфигурацию для параметра **CustomLogRawJson**.
+> Формат параметра **CustomLogRawJson**, который определяет конфигурацию пользовательского журнала, может быть достаточно сложным. Выполните [Get-AzOperationalInsightsDataSource](/powershell/module/az.operationalinsights/get-azoperationalinsightsdatasource?view=azps-3.2.0), чтобы получить конфигурацию для существующего пользовательского журнала. Параметр **Properties** содержит необходимую конфигурацию для параметра **CustomLogRawJson**.
 
 В указанном примере regexDelimiter был определен как \\n для новой строки. Разделителем журнала также может служить метка времени.  Далее приведены поддерживаемые форматы.
 
@@ -212,14 +212,13 @@ New-AzOperationalInsightsCustomLogDataSource -ResourceGroupName $ResourceGroup -
 | `yyyy-MM-ddTHH:mm:ss` <br> T является литералом буквы T | `((\\d{2})|(\\d{4}))-([0-1]\\d)-(([0-3]\\d)|(\\d))T((\\d)|([0-1]\\d)|(2[0-4])):[0-5][0-9]:[0-5][0-9]` |
 
 ## <a name="troubleshooting"></a>Устранение неполадок
-При создании рабочей области, которая была удалена в течение последних 14-ти дней и находится в [состоянии обратимого удаления](https://docs.microsoft.com/azure/azure-monitor/platform/delete-workspace#soft-delete-behavior), операция может приводить к разным результатам в зависимости от конфигурации рабочей области.
+При создании рабочей области, которая была удалена в течение последних 14-ти дней и находится в [состоянии обратимого удаления](./delete-workspace.md#soft-delete-behavior), операция может приводить к разным результатам в зависимости от конфигурации рабочей области.
 1. Если вы указали те же параметры имени, группы ресурсов, подписки и региона, которые использовались для удаленной рабочей области, она будет полностью восстановлена с сохранением данных, конфигурации и подключенных агентов.
 2. Если вы указали то же имя рабочей области, но другую группу ресурсов, подписку и (или) регион, появится ошибка с сообщением *Имя рабочей области "ИМЯ" не является уникальным* или *сообщение о конфликте*. Чтобы переопределить функцию обратимого удаления, то есть окончательно удалить рабочую область и создать новую рабочую область с тем же именем, выполните следующий процесс, в котором вы восстановите удаленную рабочую область и удалите ее без возможности восстановления:
-   * [Восстановите](https://docs.microsoft.com/azure/azure-monitor/platform/delete-workspace#recover-workspace) свою рабочую область.
-   * [Безвозвратно удалите](https://docs.microsoft.com/azure/azure-monitor/platform/delete-workspace#permanent-workspace-delete) рабочую область.
+   * [Восстановите](./delete-workspace.md#recover-workspace) свою рабочую область.
+   * [Безвозвратно удалите](./delete-workspace.md#permanent-workspace-delete) рабочую область.
    * Создайте рабочую области с тем же именем, которое было у удаленной рабочей области.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Дополнительные сведения об использовании PowerShell для настройки Log Analytics см. в [описании командлетов PowerShell Log Analytics](https://docs.microsoft.com/powershell/module/az.operationalinsights/).
-
+* Дополнительные сведения об использовании PowerShell для настройки Log Analytics см. в [описании командлетов PowerShell Log Analytics](/powershell/module/az.operationalinsights/).

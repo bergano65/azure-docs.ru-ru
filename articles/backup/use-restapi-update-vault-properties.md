@@ -4,11 +4,12 @@ description: Из этой статьи вы узнаете, как обнови
 ms.topic: conceptual
 ms.date: 12/06/2019
 ms.assetid: 9aafa5a0-1e57-4644-bf79-97124db27aa2
-ms.openlocfilehash: eadcebdaf4db3dbe6c0a62b8631ff7d76fa50fad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1f0fee505443b15ba2ea97710efc220ef05df738
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84248232"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86513121"
 ---
 # <a name="update-azure-recovery-services-vault-configurations-using-rest-api"></a>Обновление конфигураций хранилища служб восстановления Azure с помощью REST API
 
@@ -24,7 +25,7 @@ ms.locfileid: "84248232"
 
 ### <a name="fetch-soft-delete-state-using-rest-api"></a>Получение состояния обратимого удаления с помощью REST API
 
-По умолчанию состояние обратимого удаления будет включено для всех вновь создаваемых хранилищ служб восстановления. Чтобы получить или обновить состояние обратимого удаления для хранилища, используйте [REST API документ](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs) , связанный с конфигурацией резервного хранилища.
+По умолчанию состояние обратимого удаления будет включено для всех вновь создаваемых хранилищ служб восстановления. Чтобы получить или обновить состояние обратимого удаления для хранилища, используйте [REST API документ](/rest/api/backup/backupresourcevaultconfigs) , связанный с конфигурацией резервного хранилища.
 
 Чтобы получить текущее состояние обратимого удаления для хранилища, используйте следующую операцию *Get* .
 
@@ -42,9 +43,9 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Успешный ответ для операции GET показан ниже:
 
-|Название  |Type  |Описание:  |
+|Название  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |   [баккупресаурцеваултконфиг](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | ОК        |
+|200 ОК     |   [баккупресаурцеваултконфиг](/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | ОК        |
 
 ##### <a name="example-response"></a>Пример ответа
 
@@ -80,13 +81,13 @@ PATCH https://management.azure.com/Subscriptions/00000000-0000-0000-0000-0000000
 
 Для создания текста запроса используются следующие общие определения.
 
-Дополнительные сведения см. [в документации по REST API](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/update#request-body)
+Дополнительные сведения см. [в документации по REST API](/rest/api/backup/backupresourcevaultconfigs/update#request-body)
 
-|Имя  |Обязательно  |Type  |Описание:  |
+|Имя  |Обязательно  |Тип  |Описание  |
 |---------|---------|---------|---------|
 |eTag     |         |   Строка      |  Необязательный eTag       |
 |location     |  true       |Строка         |   Расположение ресурса      |
-|properties     |         | [VaultProperties](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#vaultproperties)        |  Свойства хранилища       |
+|properties     |         | [VaultProperties](/rest/api/recoveryservices/vaults/createorupdate#vaultproperties)        |  Свойства хранилища       |
 |tags     |         | Объект        |     Теги ресурсов    |
 
 #### <a name="example-request-body"></a>Примеры текста запроса
@@ -106,9 +107,9 @@ PATCH https://management.azure.com/Subscriptions/00000000-0000-0000-0000-0000000
 
 Успешный ответ для операции PATCH показан ниже:
 
-|Название  |Type  |Описание:  |
+|Название  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |   [баккупресаурцеваултконфиг](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | ОК        |
+|200 ОК     |   [баккупресаурцеваултконфиг](/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | ОК        |
 
 ##### <a name="example-response"></a>Пример ответа
 
@@ -126,7 +127,7 @@ PATCH https://management.azure.com/Subscriptions/00000000-0000-0000-0000-0000000
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Create Azure Recovery Services backup policies using REST API](backup-azure-arm-userestapi-createorupdatepolicy.md) (Создание политик резервного копирования Служб восстановления Azure с помощью REST API)
 

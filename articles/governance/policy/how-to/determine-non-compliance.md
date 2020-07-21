@@ -3,12 +3,12 @@ title: Определение причин несоответствия треб
 description: Если ресурс не соответствует требованиям, возможных причин этого множество. Узнайте, как находить то, что привело к несоответствию.
 ms.date: 07/06/2020
 ms.topic: how-to
-ms.openlocfilehash: d548f5b9db141eb6aed5984c43f00543d0228f31
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: ee027ff0f2936dc3eb7153869c52d4e70c83918b
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85970779"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86512033"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Определение причин несоответствия требованиям
 
@@ -133,7 +133,7 @@ Install-Module Az.GuestConfiguration
 Вы можете просмотреть текущее состояние всех назначений гостей для виртуальной машины с помощью следующей команды:
 
 ```azurepowershell-interactive
-Get-AzVMGuestPolicyReport -ResourceGroupName <resourcegroupname> -VMName <vmname>
+Get-AzVMGuestPolicyStatus -ResourceGroupName <resourcegroupname> -VMName <vmname>
 ```
 
 ```output
@@ -146,7 +146,7 @@ Audit that an application is not installed inside Windows VMs.            {[Inst
 Чтобы просмотреть только фразу _причина_, описывающую, почему виртуальная машина имеет статус _Не соответствует_, возвращайте только свойство дочернего элемента Reason (Причина).
 
 ```azurepowershell-interactive
-Get-AzVMGuestPolicyReport -ResourceGroupName <resourcegroupname> -VMName <vmname> | % ComplianceReasons | % Reasons | % Reason
+Get-AzVMGuestPolicyStatus -ResourceGroupName <resourcegroupname> -VMName <vmname> | % ComplianceReasons | % Reasons | % Reason
 ```
 
 ```output

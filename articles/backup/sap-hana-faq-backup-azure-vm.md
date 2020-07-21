@@ -3,12 +3,12 @@ title: Вопросы и ответы о резервном копировани
 description: В этой статье вы найдете ответы на часто задаваемые вопросы о резервном копировании баз данных SAP HANA с помощью службы Azure Backup.
 ms.topic: conceptual
 ms.date: 11/7/2019
-ms.openlocfilehash: 512075a24cf9400415f2367ead16b57f8b31c038
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: dcbf1bf6b39b2afa3fb5aaf2a7f18c5d0e8e4afb
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170332"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86513512"
 ---
 # <a name="frequently-asked-questions--back-up-sap-hana-databases-on-azure-vms"></a>Вопросы и ответы о резервном копировании баз данных SAP HANA на виртуальных машинах Azure
 
@@ -22,11 +22,11 @@ ms.locfileid: "86170332"
 
 ### <a name="do-successful-backup-jobs-create-alerts"></a>Отправляются ли оповещения об успешно выполненных заданиях резервного копирования?
 
-Нет. Для успешно выполненных заданий резервного копирования не создаются оповещения. Оповещения отправляются только в случае сбоя. Поведение оповещений портала подробно описано [здесь](https://docs.microsoft.com/azure/backup/backup-azure-monitoring-built-in-monitor). Однако если вы заинтересованы в наличии оповещений даже для успешного выполнения заданий, можно использовать [Azure Monitor](https://docs.microsoft.com/azure/backup/backup-azure-monitoring-use-azuremonitor).
+Нет. Для успешно выполненных заданий резервного копирования не создаются оповещения. Оповещения отправляются только в случае сбоя. Поведение оповещений портала подробно описано [здесь](./backup-azure-monitoring-built-in-monitor.md). Однако если вы заинтересованы в наличии оповещений даже для успешного выполнения заданий, можно использовать [Azure Monitor](./backup-azure-monitoring-use-azuremonitor.md).
 
 ### <a name="can-i-see-scheduled-backup-jobs-in-the-backup-jobs-menu"></a>Можно ли просмотреть запланированные задания резервного копирования в меню "Задания резервного копирования"?
 
-В меню "Задания резервного копирования" отображаются только нерегламентированные задания. Для запланированных заданий используйте [Azure Monitor](https://docs.microsoft.com/azure/backup/backup-azure-monitoring-use-azuremonitor).
+В меню "Задания резервного копирования" отображаются только нерегламентированные задания. Для запланированных заданий используйте [Azure Monitor](./backup-azure-monitoring-use-azuremonitor.md).
 
 ### <a name="are-future-databases-automatically-added-for-backup"></a>Добавляются ли автоматически будущие базы данных в резервное копирование?
 
@@ -51,7 +51,7 @@ ms.locfileid: "86170332"
 
 ### <a name="will-backups-work-after-migrating-sap-hana-from-sdc-to-mdc"></a>Будет ли выполняться резервное копирование после миграции SAP HANA из SDC в MDC?
 
-В [этом разделе](https://docs.microsoft.com/azure/backup/backup-azure-sap-hana-database-troubleshoot#sdc-to-mdc-upgrade-with-a-change-in-sid) содержится руководство по устранению неполадок.
+В [этом разделе](./backup-azure-sap-hana-database-troubleshoot.md#sdc-to-mdc-upgrade-with-a-change-in-sid) содержится руководство по устранению неполадок.
 
 ### <a name="can-azure-hana-backup-be-set-up-against-a-virtual-ip-load-balancer-and-not-a-virtual-machine"></a>Можно ли настроить резервное копирование Azure HANA для виртуального IP-адреса (балансировщик нагрузки), а не для виртуальной машины?
 
@@ -111,7 +111,7 @@ ms.locfileid: "86170332"
 
 ### <a name="why-cant-i-see-the-hana-system-i-want-my-database-to-be-restored-to"></a>Почему не отображается система HANA, в которую нужно восстановить базу данных?
 
-Проверьте, выполнены ли все предварительные условия для восстановления в целевом экземпляре SAP HANA. Дополнительные сведения см. в разделе [Восстановление баз данных SAP HANA на виртуальных машинах Azure. Предварительные требования](https://docs.microsoft.com/azure/backup/sap-hana-db-restore#prerequisites).
+Проверьте, выполнены ли все предварительные условия для восстановления в целевом экземпляре SAP HANA. Дополнительные сведения см. в разделе [Восстановление баз данных SAP HANA на виртуальных машинах Azure. Предварительные требования](./sap-hana-db-restore.md#prerequisites).
 
 ### <a name="why-is-the-overwrite-db-restore-failing-for-my-database"></a>Почему не удается восстановить базу данных с перезаписью?
 
@@ -127,4 +127,4 @@ ms.locfileid: "86170332"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, как [выполнять резервное копирование баз данных SAP HANA](https://docs.microsoft.com/azure/backup/backup-azure-sap-hana-database), работающих на виртуальных машинах Azure.
+Узнайте, как [выполнять резервное копирование баз данных SAP HANA](./backup-azure-sap-hana-database.md), работающих на виртуальных машинах Azure.

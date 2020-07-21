@@ -6,11 +6,12 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: cynthn
-ms.openlocfilehash: 0c77864acd53976b9108a77198f645c419763b21
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 28c688526bccc411bce6f4118dc55160083deba0
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85414459"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86510928"
 ---
 # <a name="how-to-create-a-linux-virtual-machine-with-azure-resource-manager-templates"></a>Как создать виртуальную машину Linux с помощью шаблонов Azure Resource Manager
 
@@ -55,7 +56,7 @@ az vm show --resource-group $resourceGroupName --name "$projectName-vm" --show-d
 
 Ниже приведены некоторые дополнительные ресурсы.
 
-- Чтобы узнать, как создавать шаблоны Resource Manager, ознакомьтесь с [документацией по Azure Resource Manager](/azure/azure-resource-manager/).
+- Чтобы узнать, как создавать шаблоны Resource Manager, ознакомьтесь с [документацией по Azure Resource Manager](../../azure-resource-manager/index.yml).
 - Схемы виртуальных машин Azure см. в [справочнике по шаблонам Azure](/azure/templates/microsoft.compute/allversions).
 - Дополнительные примеры шаблонов виртуальных машин см. в статье [шаблоны](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Compute&pageNumber=1&sort=Popular)быстрого запуска Azure.
 
@@ -67,7 +68,7 @@ az vm show --resource-group $resourceGroupName --name "$projectName-vm" --show-d
 ssh <adminUsername>@<ipAddress>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом примере вы создали базовую виртуальную машину Linux. Дополнительные диспетчер ресурсов шаблонов, включающих платформы приложений, или создании более сложных сред см. в статье шаблоны быстрого запуска [Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Compute&pageNumber=1&sort=Popular).
 
@@ -76,5 +77,5 @@ ssh <adminUsername>@<ipAddress>
 - [Microsoft.Network/networkSecurityGroups;](/azure/templates/microsoft.network/networksecuritygroups)
 - [Microsoft.Network/publicIPAddresses](/azure/templates/microsoft.network/publicipaddresses)
 - [Microsoft.Network/virtualNetworks](/azure/templates/microsoft.network/virtualnetworks)
-- [Microsoft. Network/networkInterfaces](/azure/templates/microsoft.network/networkinterfaces)
-- [Microsoft. COMPUTE/virtualMachines](/azure/templates/microsoft.compute/virtualmachines)
+- [Microsoft.Network/networkInterfaces](/azure/templates/microsoft.network/networkinterfaces)
+- [Microsoft.Compute/virtualMachines](/azure/templates/microsoft.compute/virtualmachines)

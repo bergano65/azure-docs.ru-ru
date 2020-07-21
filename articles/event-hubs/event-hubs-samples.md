@@ -3,15 +3,15 @@ title: Примеры кодов для Центров событий Azure | Д
 description: В этой статье приведен список примеров кодов для Центров событий Azure, доступных на сайте GitHub.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 9529b11d15460c713a0ae14f3bccfa1c2684a3ad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b6d7a40e399482af0ad3a501918a7e3307d724c5
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85315518"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86512305"
 ---
 # <a name="git-repositories-with-samples-for-azure-event-hubs"></a>Репозитории Git с примерами кодов для Центров событий Azure 
-Примеры концентраторов событий можно найти на [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples). В примерах продемонстрированы основные функции [Центров событий Azure](/azure/event-hubs/). В этой статье приведены категории примеров с описаниями и ссылками.
+Примеры концентраторов событий можно найти на [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples). В примерах продемонстрированы основные функции [Центров событий Azure](./index.yml). В этой статье приведены категории примеров с описаниями и ссылками.
 
 ## <a name="net-samples"></a>Примеры для .NET
 
@@ -54,9 +54,9 @@ ms.locfileid: "85315518"
 ## <a name="apache-kafka-samples"></a>Примеры для Apache Kafka
 Примеры использования функции "Центры событий для Apache Kafka" можно найти в репозитории GitHub [azure-event-hubs-for-kafka](https://github.com/Azure/azure-event-hubs-for-kafka).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы узнать больше о Центрах событий, обратитесь к следующим статьям:
 
-- [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
+- [Общие сведения о Центрах событий](./event-hubs-about.md)
 - [Функции Центров событий](event-hubs-features.md)
 - [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)

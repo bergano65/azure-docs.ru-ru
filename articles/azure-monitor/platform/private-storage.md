@@ -6,16 +6,16 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/20/2020
-ms.openlocfilehash: 05eb92e2fb887b5c64e2c73576fe85a4543ac1b7
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: da9ec0fc421f0cb2f2a1e6fa65d8c936cfd5a3c7
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86184503"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86515433"
 ---
 # <a name="customer-owned-storage-accounts-for-log-ingestion-in-azure-monitor"></a>Учетные записи хранения, принадлежащие клиенту, для приема данных журнала в Azure Monitor
 
-Azure Monitor использует учетные записи хранения в процессе приема некоторых типов данных, таких как [пользовательские журналы](data-sources-custom-logs.md) и некоторые [журналы Azure](azure-storage-iis-table.md). В процессе приема данных журналы сначала отправляются в учетную запись хранения, а затем принимаются в Log Analytics или Application Insights. Если вы хотите управлять данными во время приема, можно использовать собственные учетные записи хранения вместо хранилища, управляемого службой. Использование собственной учетной записи хранения позволяет управлять доступом, содержимым, шифрованием и хранением журналов во время приема. Это называется использованием собственного хранилища или BYOS. 
+Azure Monitor использует учетные записи хранения в процессе приема некоторых типов данных, таких как [пользовательские журналы](data-sources-custom-logs.md) и некоторые [журналы Azure](./diagnostics-extension-logs.md). В процессе приема данных журналы сначала отправляются в учетную запись хранения, а затем принимаются в Log Analytics или Application Insights. Если вы хотите управлять данными во время приема, можно использовать собственные учетные записи хранения вместо хранилища, управляемого службой. Использование собственной учетной записи хранения позволяет управлять доступом, содержимым, шифрованием и хранением журналов во время приема. Это называется использованием собственного хранилища или BYOS. 
 
 Одним из сценариев, требующих BYOS, является сетевая изоляция с помощью Приватного канала. При использовании виртуальной сети сетевая изоляция часто является обязательным требованием, а доступ к общедоступному Интернету ограничен. В таких случаях доступ к хранилищу служб Azure Monitor для приема журнала полностью заблокирован или не рекомендован. Вместо этого данные журналов должны быть переданы или легко доступны через учетную запись хранения, принадлежащую клиенту, в виртуальной сети.
 
@@ -23,7 +23,7 @@ Azure Monitor использует учетные записи хранения 
 
 ## <a name="data-types-supported"></a>Поддерживаемые типы данных
 
-К типам данных, получаемым из учетной записи хранения, относятся следующие. Дополнительные сведения о приеме этих типов данных см. в статье [Сбор данных из расширения диагностики Azure в журналах Azure Monitor](azure-storage-iis-table.md).
+К типам данных, получаемым из учетной записи хранения, относятся следующие. Дополнительные сведения о приеме этих типов данных см. в статье [Сбор данных из расширения диагностики Azure в журналах Azure Monitor](./diagnostics-extension-logs.md).
 
 | Тип | Сведения таблицы |
 |:-----|:------------------|
@@ -54,7 +54,7 @@ Azure Monitor использует учетные записи хранения 
 ## <a name="command-line-and-rest-api"></a>Командная строка и REST API
 
 ### <a name="command-line"></a>Командная строка
-Чтобы создать связанные учетные записи хранения и управлять ими, используйте команду [AZ Monitor журнала-Analytics Workspace Link-Storage](https://docs.microsoft.com/cli/azure/monitor/log-analytics/workspace/linked-storage). Эта команда может связывать учетные записи хранения и отменять связи между ними из рабочей области и перечислять связанные учетные записи хранения.
+Чтобы создать связанные учетные записи хранения и управлять ими, используйте команду [AZ Monitor журнала-Analytics Workspace Link-Storage](/cli/azure/monitor/log-analytics/workspace/linked-storage). Эта команда может связывать учетные записи хранения и отменять связи между ними из рабочей области и перечислять связанные учетные записи хранения.
 
 ### <a name="request-and-cli-values"></a>Значения запроса и CLI
 
@@ -132,7 +132,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/linkedStorageAccounts/{dataSourceType}?api-version=2019-08-01-preview  
 ```
 
-#### <a name="response"></a>Реагирование 
+#### <a name="response"></a>Ответ 
 
 ```json
 {

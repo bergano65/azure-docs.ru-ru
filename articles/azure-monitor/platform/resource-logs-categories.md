@@ -4,11 +4,12 @@ description: Справочник по Azure Monitor сведения о под�
 ms.subservice: logs
 ms.topic: reference
 ms.date: 06/03/2020
-ms.openlocfilehash: 6156b9d311859534160258256ff6315b037f3a14
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ceca6b0a230de6d3eeab47e60d90767b33b5ac59
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84418594"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86515399"
 ---
 # <a name="supported-categories-for-azure-resource-logs"></a>Поддерживаемые категории для журналов ресурсов Azure
 
@@ -104,7 +105,7 @@ ms.locfileid: "84418594"
 |вебаппликатионфиревалллогс|Журналы брандмауэра веб-приложения|
 
 
-## <a name="microsoftcdnprofiles"></a>Microsoft. CDN/профили
+## <a name="microsoftcdnprofiles"></a>Microsoft.Cdn/profiles
 
 |Категория|Отображаемое имя категории|
 |---|---|
@@ -626,7 +627,7 @@ ms.locfileid: "84418594"
 |SQLInsights|Аналитика SQL|
 |SqlRequests|Запросы SQL|
 |SQLSecurityAuditEvents|Событие аудита безопасности SQL|
-|Время ожидания|Время ожидания|
+|Истекшее время ожидания|Истекшее время ожидания|
 |Ожидания|Ожидания|
 
 
@@ -708,9 +709,9 @@ ms.locfileid: "84418594"
 |сканлогс|Журналы антивирусной проверки|
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 * [Дополнительные сведения о журналах ресурсов](../../azure-monitor/platform/platform-logs-overview.md)
-* [Потоковая передача журналов ресурсов в **концентраторы событий**](../../azure-monitor/platform/resource-logs-stream-event-hubs.md)
-* [Изменение параметров диагностики журнала ресурсов с помощью Azure Monitor REST API](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings)
-* [Сбор журналов и метрик для служб Azure для использования в Log Analytics](../../azure-monitor/platform/collect-azure-metrics-logs.md)
+* [Потоковая передача журналов ресурсов в **концентраторы событий**](./resource-logs.md#send-to-azure-event-hubs)
+* [Изменение параметров диагностики журнала ресурсов с помощью Azure Monitor REST API](/rest/api/monitor/diagnosticsettings)
+* [Сбор журналов и метрик для служб Azure для использования в Log Analytics](./resource-logs.md#send-to-log-analytics-workspace)

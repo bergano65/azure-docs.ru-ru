@@ -3,11 +3,13 @@ title: Очереди недоставленных сообщений служе
 description: В статье рассматриваются очереди недоставленных сообщений в служебной шине Azure. Очереди служебной шины и подписки на разделы предоставляют дополнительную очередь, которая называется очередью недоставленных сообщений.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 62db4e71d99d1242cfbb69bdb7979bf9e5dc67ea
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 7078a7889947c4121713e9374d1487f408fed871
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85337584"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86511217"
 ---
 # <a name="overview-of-service-bus-dead-letter-queues"></a>Обзор очередей недоставленных сообщений служебной шины
 
@@ -56,7 +58,7 @@ ms.locfileid: "85337584"
 
 Когда свойство [QueueDescription.EnableDeadLetteringOnMessageExpiration](/dotnet/api/microsoft.servicebus.messaging.queuedescription) или [SubscriptionDescription.EnableDeadLetteringOnMessageExpiration](/dotnet/api/microsoft.servicebus.messaging.subscriptiondescription) имеет значение **true** (по умолчанию — **false**), все просроченные сообщения перемещаются в очередь DLQ с указанием кода причины `TTLExpiredException`.
 
-Просроченные сообщения удаляются и перемещаются в очередь недоставленных сообщений только при наличии хотя бы одного активного получателя, который получает сообщения из основной очереди или подписки. Такое поведение реализовано намеренно.
+Сообщения с истекшим сроком действия удаляются и перемещаются в очередь DLQ, когда по крайней мере один активный получатель получает из основной очереди или подписки, а [отложенные сообщения](./message-deferral.md) также не удаляются и не перемещаются в очередь недоставленных сообщений по истечении срока их действия. Эти поведения предназначены для разработки.
 
 ## <a name="errors-while-processing-subscription-rules"></a>Ошибки при обработке правил подписки
 

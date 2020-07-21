@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/22/2019
-ms.openlocfilehash: cce74358a206c7103d537ba80c62d6561606b818
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 983091ac0d1f9fdcb33e64d2af521ec3442a040b
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86242038"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86515518"
 ---
 # <a name="syslog-data-sources-in-azure-monitor"></a>Источники данных Syslog в Azure Monitor
 Системный журнал (Syslog) — это протокол ведения журнала событий, который обычно используется в Linux. Приложения отправляют сообщения, которые могут храниться на локальном компьютере или передаваться в сборщик системного журнала. При установке агента Log Analytics для Linux он настраивает локальную управляющую программу Syslog для пересылки сообщений в агент. Затем агент отправляет сообщение в Azure Monitor, где создается соответствующая запись.  
@@ -90,7 +90,6 @@ local7.warning     @127.0.0.1:25224
 user.error    @127.0.0.1:25224
 ```
 
-
 #### <a name="syslog-ng"></a>syslog-ng
 Файл конфигурации для syslog-ng находится в расположении **/etc/syslog-ng/syslog-ng.conf**.  Его содержимое по умолчанию приведено ниже. В данном случае собираются сообщения системного журнала, отправленные из локального агента для всех устройств и всех уровней серьезности.   
 
@@ -163,17 +162,16 @@ log { source(src); filter(f_user_oms); destination(d_oms); };
 
 * Файл конфигурации FluentD должен быть новым и располагаться в папке `/etc/opt/microsoft/omsagent/conf/omsagent.d`. Замените значение записи **port** собственным номером порта.
 
-    ```config
+    ```xml
     <source>
-      type syslog
-      port %SYSLOG_PORT%
-      bind 127.0.0.1
-      protocol_type udp
-      tag oms.syslog
+        type syslog
+        port %SYSLOG_PORT%
+        bind 127.0.0.1
+        protocol_type udp
+        tag oms.syslog
     </source>
     <filter oms.syslog.**>
-      type filter_syslog
-    </filter>
+        type filter_syslog
     ```
 
 * Для rsyslog в папке `/etc/rsyslog.d/` необходимо создать файл конфигурации. Замените значение %SYSLOG_PORT% собственным номером порта.  

@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.author: cherylmc
-ms.openlocfilehash: 412574bc9f994b522ef10b15c2f4efcfe69e07c0
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: c7b394c9327b34d205f5b107851c7579fb57fc0c
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86232361"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86512203"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -78,7 +78,7 @@ ms.locfileid: "86232361"
 | **Расположение** | **Адрес** | **Зона** | **Локальные регионы Azure** | **ER Direct** | **Поставщики услуг** |
 | --- | --- | --- | --- | --- | --- |
 | **Амстердам** | [Equinix AM5](https://www.equinix.com/locations/europe-colocation/netherlands-colocation/amsterdam-data-centers/am5/) | 1 | Западная Европа | 10G, 100G | Aryaka Networks, AT&T NetBond, British Telecom, Colt, Equinix, euNetworks, GÉANT, InterCloud, Interxion, KPN, IX Reach, Level 3 Communications, Megaport, NTT Communications, Orange, Tata Communications, Telefonica, Telenor, Telia Carrier, Verizon, Zayo |
-| **Амстердам 2** | [Interxion AMS8](https://www.interxion.com/Locations/amsterdam/schiphol/) | 1 | Западная Европа | 10G, 100G | CenturyLink Cloud Connect, Colt, DE-CIX, euNetworks, Interxion, Orange, Vodafone |
+| **Амстердам 2** | [Interxion AMS8](https://www.interxion.com/Locations/amsterdam/schiphol/) | 1 | Западная Европа | 10G, 100G | CenturyLink Cloud Connect, Colt, DE-ЦИКС, Еунетворкс, Interxion, серия, оранжевый, Vodafone |
 | **Атланта** | [Equinix AT2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/atlanta-data-centers/at2/) | 1 | Недоступно | 10G, 100G | Equinix, Megaport |
 | **Окленд** | [Vocus Group NZ Albany](https://www.vocus.co.nz/business/cloud-data-centres) | 2 | Недоступно | 10G | Devoli, Kordia, Megaport, Spark NZ, Vocus Group NZ |
 | **Бангкок** | [AIS](https://business.ais.co.th/solution/en/azure-expressroute.html) | 2 | Недоступно | 10G | AIS, УИХ |

@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: fc6ab2c9c844350e83674ed96a0e79289c7f5b43
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2e1f98cffd17d0a8823cc5849830667fcdad1212
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85255421"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86515229"
 ---
 # <a name="create-an-azure-stream-analytics-job-in-azure-sql-edge-preview"></a>Создание задания Azure Stream Analytics в Azure SQL (Предварительная версия) 
 
@@ -41,8 +41,8 @@ ms.locfileid: "85255421"
 
 | Тип источника данных | Входные данные | Выходные данные | Описание |
 |------------------|-------|--------|------------------|
-| Центр Azure IoT Edge | Да | Да | Источник данных для чтения и записи потоковых данных в центр Azure IoT Edge. Дополнительные сведения см. в разделе [центр IOT Edge](https://docs.microsoft.com/azure/iot-edge/iot-edge-runtime#iot-edge-hub).|
-| База данных SQL | N | Да | Соединение с источником данных для записи потоковых данных в Базу данных SQL. База данных может быть локальной базой данных в Azure SQL или удаленной базой данных в SQL Server или базе данных SQL Azure.|
+| Центр Azure IoT Edge | Y | Y | Источник данных для чтения и записи потоковых данных в центр Azure IoT Edge. Дополнительные сведения см. в разделе [центр IOT Edge](https://docs.microsoft.com/azure/iot-edge/iot-edge-runtime#iot-edge-hub).|
+| База данных SQL | N | Д | Соединение с источником данных для записи потоковых данных в Базу данных SQL. База данных может быть локальной базой данных в Azure SQL или удаленной базой данных в SQL Server или базе данных SQL Azure.|
 | Хранилище BLOB-объектов Azure | N | Да | Источник данных для записи данных в большой двоичный объект в учетной записи хранения Azure. |
 | Kafka | Да | N | Источник данных для чтения потоковых данных из раздела Kafka. Этот адаптер сейчас доступен только для версий Intel или AMD Azure SQL. Она недоступна для ARM64 версии Azure SQL.|
 
@@ -153,7 +153,7 @@ SELECT
 Timestamp as [Time],
 [Temperature] As [Temperature],
 GetRecordPropertyValue(AnomalyDetection_ChangePoint(Temperature, 80, 1200) OVER(LIMIT DURATION(minute, 20)), ''Score'') as ChangePointScore,
-GetRecordPropertyValue(AnomalyDetection_ChangePoint(Temperature, 80, 1200) OVER(LIMIT DURATION(minute, 20)), ''IsAnomaly'') as IsChangePointAnomaly,
+GetRecordPropertyValue(AnomalyDetection_ChangePoint(Temperature, 80, 1200) OVER(LIMIT DURATION(minute, 20)), ''IsAnomaly'') as IsChangePointAnomaly
 INTO TemperatureAnomalies FROM MyEdgeHubInput2;
 '
 go
@@ -205,9 +205,9 @@ exec sys.sp_get_streaming_job @name=N'StreamingJob1'
 | Обработка | Задание потоковой передачи выполняется, и входные данные обрабатываются. Это свидетельствует о работоспособности задания потоковой передачи. |
 | Деградация | Задание потоковой передачи выполняется, но при обработке входных данных возникли неустранимые ошибки. Входное задание продолжит выполняться, но входные данные, вызывающие ошибки, будут удаляться. |
 | Остановлена | Выполнение задания потоковой передачи остановлено. |
-| Ошибка | Сбой задания потоковой передачи. Обычно это указывает на неустранимую ошибку при обработке. |
+| Failed | Сбой задания потоковой передачи. Обычно это указывает на неустранимую ошибку при обработке. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Представления каталога потоковой передачи (Transact-SQL)](streaming-catalog-views.md) 
 - [Создание внешнего потока](create-external-stream-transact-sql.md)

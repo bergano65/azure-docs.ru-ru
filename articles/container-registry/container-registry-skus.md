@@ -3,11 +3,12 @@ title: Уровни служб и компоненты реестра
 description: Сведения о функциях и ограничениях для уровней служб "Базовый", "Стандартный" и "Премиум" для Реестра контейнеров Azure.
 ms.topic: article
 ms.date: 05/18/2020
-ms.openlocfilehash: 35f5d4ebd4a2b427aadc6e82e265a7da9b6409f8
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 66cb5d7c3cdca45f7a44f0f23bfa449d5ade6dbf
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83683425"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86512624"
 ---
 # <a name="azure-container-registry-service-tiers"></a>Уровни службы Реестра контейнеров Azure
 
@@ -23,7 +24,7 @@ ms.locfileid: "83683425"
 
 ## <a name="service-tier-features-and-limits"></a>Функции и ограничения уровня служб
 
-В следующей таблице приведены сведения о возможностях и ограничениях уровней служб "Базовый", "Стандартный" и "Премиум".
+В следующей таблице описаны возможности и ограничения для уровней служб "базовый", "Стандартный" и "Премиум".
 
 [!INCLUDE [container-instances-limits](../../includes/container-registry-limits.md)]
 

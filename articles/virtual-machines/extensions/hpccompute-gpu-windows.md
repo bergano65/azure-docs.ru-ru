@@ -13,11 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: akjosh
-ms.openlocfilehash: a30a6b3daaf1f334c7e61f93aaab6fc717e18063
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8390f3273c7c8b5ca3b97d5da5184ab784b15c4b
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84676545"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86511047"
 ---
 # <a name="nvidia-gpu-driver-extension-for-windows"></a>Расширение драйвера GPU NVIDIA для Windows
 
@@ -25,7 +26,7 @@ ms.locfileid: "84676545"
 
 Это расширение устанавливает драйверы GPU NVIDIA на виртуальных машинах серии N для Windows. В зависимости от семейства виртуальных машин расширение устанавливает драйверы CUDA или GRID. При установке драйверов NVIDIA с помощью этого расширения требуется принять условия [лицензионного соглашения NVIDIA](https://go.microsoft.com/fwlink/?linkid=874330). Во время установки драйвера виртуальная машина может быть перезагружена для завершения процедуры.
 
-Инструкции по установке драйверов вручную и сведения о поддерживаемых сейчас версиях приводятся [здесь](https://docs.microsoft.com/azure/virtual-machines/windows/n-series-driver-setup).
+Инструкции по установке драйверов вручную и сведения о поддерживаемых сейчас версиях приводятся [здесь](../windows/n-series-driver-setup.md).
 Это расширение также доступно для установки драйверов GPU NVIDIA на [виртуальных машинах Linux серии N](hpccompute-gpu-linux.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -36,9 +37,9 @@ ms.locfileid: "84676545"
 
 | Distribution | Версия |
 |---|---|
-| быть под управлением ОС Windows 10; | Ядро |
-| Windows Server 2016 | Ядро |
-| Windows Server 2012 R2 | Ядро |
+| Windows 10 | Основные сведения |
+| Windows Server 2016 | Основные сведения |
+| Windows Server 2012 R2 | Основные сведения |
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
@@ -84,7 +85,7 @@ ms.locfileid: "84676545"
 
 Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Шаблоны идеально подходят для развертывания одной или нескольких виртуальных машин, требующих настройки после развертывания.
 
-Конфигурацию JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины или поместить в корень или на верхний уровень JSON-файла шаблона Resource Manager. Размещение конфигурации JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/resource-manager-template-child-resource.md). 
+Конфигурацию JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины или поместить в корень или на верхний уровень JSON-файла шаблона Resource Manager. Размещение конфигурации JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/templates/child-resource-name-type.md). 
 
 В следующем примере предполагается, что расширение виртуальной машины расположено в ресурсе виртуальной машины. При вложении ресурса расширения JSON помещается в объект `"resources": []` виртуальной машины.
 
@@ -175,4 +176,4 @@ C:\WindowsAzure\Logs\Plugins\Microsoft.HpcCompute.NvidiaGpuDriverMicrosoft\
 ## <a name="next-steps"></a>Дальнейшие действия
 См. дополнительные сведения о [расширениях и компонентах виртуальных машин Windows](features-windows.md).
 
-См. дополнительные сведения о [размерах виртуальных машин серии N, оптимизированных для GPU](../windows/sizes-gpu.md).
+См. дополнительные сведения о [размерах виртуальных машин серии N, оптимизированных для GPU](../sizes-gpu.md).
