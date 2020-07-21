@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 3/13/2020
 ms.author: mayg
-ms.openlocfilehash: 3db3d619118be74ec1429ace70f580558c0a6c9d
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: e4f1931aab056306ac5e9f9e9ef402ca26ec2d19
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134359"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86528950"
 ---
 # <a name="about-the-azure-site-recovery-deployment-planner-for-hyper-v-disaster-recovery-to-azure"></a>Сведения об использовании Планировщика развертывания Azure Site Recovery для аварийного восстановления виртуальных машин Hyper-V в Azure
 
@@ -70,9 +70,9 @@ ms.locfileid: "86134359"
 
 ## <a name="support-matrix"></a>Матрица поддержки
 
-| | **VMware в VMware** |**Hyper-V в Azure**|**Из Azure в Azure**|**Из Hyper-V на дополнительный сайт**|**Из VMware на дополнительный сайт**
+|**Категории** | **VMware в VMware** |**Hyper-V в Azure**|**Из Azure в Azure**|**Из Hyper-V на дополнительный сайт**|**Из VMware на дополнительный сайт**
 --|--|--|--|--|--
-Поддерживаемые сценарии |Да|Да|нет|Да*|нет
+Поддерживаемые сценарии |Да|Да|Нет|Да*|Нет
 Поддерживаемая версия | vCenter 6,7, 6,5, 6,0 или 5,5| Windows Server 2016, Windows Server 2012 R2 | Н/Д |Windows Server 2016, Windows Server 2012 R2|Н/Д
 Поддерживаемая конфигурация|vCenter, ESXi| Кластер Hyper-V, узел Hyper-V|Н/Д|Кластер Hyper-V, узел Hyper-V|Н/Д|
 Число серверов, которые можно профилировать для каждого запущенного экземпляра планировщика развертывания Azure Site Recovery. |Один (одновременно можно профилировать виртуальные машины на одном сервере vCenter Server или ESXi)|Несколько (одновременно можно профилировать виртуальные машины на нескольких узлах или кластерах узлов)| Н/Д |Несколько (одновременно можно профилировать виртуальные машины на нескольких узлах или кластерах узлов)| Н/Д
@@ -90,19 +90,24 @@ ms.locfileid: "86134359"
  |
 
 ## <a name="steps-to-add-servers-into-trustedhosts-list"></a>Инструкции по добавлению серверов в список TrustedHosts
-1.  Все узлы, которые необходимо профилировать, должны быть указаны в списке TrustedHosts для виртуальной машины, на которой будет развертываться программа. Чтобы добавить клиент в список Trustedhosts, выполните указанную ниже команду в сеансе PowerShell с повышенными привилегиями на виртуальной машине. На виртуальной машине можно использовать ОС Windows Server 2012 R2 или Windows Server 2016. 
+1. Все узлы, которые необходимо профилировать, должны быть указаны в списке TrustedHosts для виртуальной машины, на которой будет развертываться программа. Чтобы добавить клиент в список Trustedhosts, выполните указанную ниже команду в сеансе PowerShell с повышенными привилегиями на виртуальной машине. На виртуальной машине можно использовать ОС Windows Server 2012 R2 или Windows Server 2016. 
 
-            set-item wsman:\localhost\Client\TrustedHosts -value '<ComputerName>[,<ComputerName>]' -Concatenate
-
-1.  Для каждого узла Hyper-V, который необходимо профилировать, необходимо:
+   ```powershell
+   set-item wsman:\localhost\Client\TrustedHosts -value '<ComputerName>[,<ComputerName>]' -Concatenate
+   ```
+1. Для каждого узла Hyper-V, который необходимо профилировать, необходимо:
 
     а. Указать виртуальную машину, на которой будет выполняться программа, в списке TrustedHosts. Выполните следующую команду в сеансе PowerShell с повышенными привилегиями в узле Hyper-V:
 
-            set-item wsman:\localhost\Client\TrustedHosts -value '<ComputerName>[,<ComputerName>]' -Concatenate
+      ```powershell
+      set-item wsman:\localhost\Client\TrustedHosts -value '<ComputerName>[,<ComputerName>]' -Concatenate
+      ```
 
     b. Включить удаленное взаимодействие PowerShell.
 
-            Enable-PSRemoting -Force
+      ```powershell
+      Enable-PSRemoting -Force
+      ```
 
 ## <a name="download-and-extract-the-deployment-planner-tool"></a>Скачивание и извлечение планировщика развертывания
 

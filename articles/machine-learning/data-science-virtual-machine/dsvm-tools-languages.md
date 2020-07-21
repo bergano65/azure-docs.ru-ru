@@ -11,11 +11,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: c81f2a23474ff98c202cdbe5b455dd3d15535c96
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7d3ab058d76186f73fa1a985d7e8af38dbd7a6f8
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84557471"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86536187"
 ---
 # <a name="languages-supported-on-the-data-science-virtual-machine"></a>Языки, поддерживаемые на виртуальных машинах для обработки и анализа данных 
 
@@ -23,7 +24,7 @@ ms.locfileid: "84557471"
 
 ## <a name="python-windows-server-2016-edition"></a>Python (выпуск Windows Server 2016)
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые языковые версии | Python 2,7 и 3,7 |
 | Поддерживаемые выпуски DSVM      | Windows Server 2016     |
@@ -67,13 +68,14 @@ ms.locfileid: "84557471"
 
 ## <a name="python-linux-edition"></a>Python (выпуск для Linux)
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые языковые версии | Python 2,7 и 3,5 |
 | Поддерживаемые выпуски DSVM      | Linux   |
 | Настройка и установка на DSVM  | Создаются две глобальные `conda` среды: <br /> * `root`Среда, расположенная в `/anaconda/` , находится в Python 2,7. <br/> * `py35`Среда, расположенная в `/anaconda/envs/py35` , находится в Python 3,5.       |
 | Ссылки на примеры      | Добавлены примеры записных книжек Jupyter для Python.     |
 | Связанные средства на DSVM      | PySpark, R, Julia      |
+
 ### <a name="how-to-use-and-run-it"></a>Использование и запуск    
 
 * Запустить в терминале:
@@ -105,13 +107,14 @@ ms.locfileid: "84557471"
 
 ## <a name="r"></a>R
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые языковые версии | Microsoft R Open 3. x (100%, совместимый с CRAN-R)<br /> Microsoft R Server 9. x Developer Edition (масштабируемая платформа R, готовая для предприятия)|
 | Поддерживаемые выпуски DSVM      | Linux, Windows     |
 | Настройка и установка на DSVM  | Windows: `C:\Program Files\Microsoft\ML Server\R_SERVER` <br />Linux: `/usr/lib64/microsoft-r/3.3/lib64/R`    |
 | Ссылки на примеры      | Включены примеры записных книжек Jupyter для R.     |
 | Связанные средства на DSVM      | SparkR, Python, Julia      |
+
 ### <a name="how-to-use-and-run-it"></a>Использование и запуск    
 
 **Windows**:
@@ -153,13 +156,14 @@ ms.locfileid: "84557471"
 
 ## <a name="julia"></a>Julia
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые языковые версии | 0,6 |
 | Поддерживаемые выпуски DSVM      | Linux, Windows     |
 | Настройка и установка на DSVM  | Windows: установлена в `C:\JuliaPro-VERSION`<br /> Linux: установлена в `/opt/JuliaPro-VERSION`    |
 | Ссылки на примеры      | Включены примеры записных книжек Jupyter для Julia.     |
 | Связанные средства на DSVM      | Python, R      |
+
 ### <a name="how-to-use-and-run-it"></a>Использование и запуск    
 
 **Windows**:

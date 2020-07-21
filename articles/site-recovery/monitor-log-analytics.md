@@ -7,11 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/15/2019
 ms.author: raynew
-ms.openlocfilehash: 0cf0ed943dd2135a3e8d545b76eda35285dae24d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 047b689b10d03cf92e5cc744aa707b3f70fe77bd
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84300796"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86529036"
 ---
 # <a name="monitor-site-recovery-with-azure-monitor-logs"></a>Мониторинг Site Recovery с помощью журналов Azure Monitor
 
@@ -35,7 +36,7 @@ ms.locfileid: "84300796"
 
 - По крайней мере один компьютер, защищенный в хранилище служб восстановления.
 - Рабочая область Log Analytics для хранения журналов Site Recovery. [Сведения о](../azure-monitor/learn/quick-create-workspace.md) настройке рабочей области.
-- Основные сведения о том, как писать, выполнять и анализировать запросы журналов в Log Analytics. [Подробнее.](../azure-monitor/log-query/get-started-portal.md)
+- Основные сведения о том, как писать, выполнять и анализировать запросы журналов в Log Analytics. [Подробнее](../azure-monitor/log-query/get-started-portal.md).
 
 Перед началом работы рекомендуется ознакомиться с [общими вопросами мониторинга](monitoring-common-questions.md) .
 
@@ -48,7 +49,7 @@ ms.locfileid: "84300796"
 2. В окне **параметры диагностики**укажите имя и установите флажок **отправить на log Analytics**.
 3. Выберите подписку на Azure Monitor журналы и рабочую область Log Analytics.
 4. Выберите **система диагностики Azure** в переключателе.
-5. В списке Журнал выберите все журналы с префиксом **азуреситерековери**. Нажмите кнопку **ОК**.
+5. В списке Журнал выберите все журналы с префиксом **азуреситерековери**. Затем нажмите кнопку **ОК**.
 
     ![Выбор рабочей области](./media/monitoring-log-analytics/select-workspace.png)
 
@@ -67,8 +68,8 @@ ms.locfileid: "84300796"
 7. После завершения установки перейдите в Log Analytics рабочую область и щелкните **Дополнительные параметры**. Перейдите на страницу **данные** и щелкните **счетчики производительности Windows**еще больше. 
 8. Щелкните **"+"** , чтобы добавить следующие два счетчика с интервалом выборки в 300 секунд:
 
-        ASRAnalytics(*)\SourceVmChurnRate 
-        ASRAnalytics(*)\SourceVmThrpRate 
+    - Асраналитикс (*) \Саурцевмчурнрате
+    - Асраналитикс (*) \Саурцевмсрпрате
 
 Данные о скорости обработки и передачи начнут поступать в рабочую область.
 
@@ -358,6 +359,6 @@ AzureDiagnostics  
 
 Для предупреждения установите **пороговое значение** 1, а **период** — 1440 минут, чтобы проверить ошибки за последний день.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о](site-recovery-monitor-and-troubleshoot.md) встроенном мониторинге Site Recovery.

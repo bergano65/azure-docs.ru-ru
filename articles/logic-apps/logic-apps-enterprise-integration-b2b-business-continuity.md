@@ -8,11 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 04/10/2017
-ms.openlocfilehash: 09b77862ad3379efeb8b3063a9d6c60b062ca2d7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3b618513965298889fb656750419dedd79729f7f
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76905126"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86536476"
 ---
 # <a name="set-up-cross-region-disaster-recovery-for-integration-accounts-in-azure-logic-apps"></a>Настройка аварийного восстановления в разных регионах для учетных записей интеграции в Azure Logic Apps
 
@@ -59,7 +60,7 @@ ms.locfileid: "76905126"
 
 Во время аварийного события, когда основной регион является недоступным для обеспечения непрерывности бизнес-процессов, перенаправьте трафик к дополнительному региону. Дополнительный регион помогает компании быстро восстановить работу в соответствии с показателями RPO и RTO, согласованными с партнерами. При использовании этого региона очень просто выполнить отработку отказа из одного региона в другой. 
 
-При копировании контрольных номеров из основного региона в дополнительный вы столкнетесь с ожидаемой задержкой. Чтобы избежать отправки повторно созданных контрольных номеров партнерам во время аварийного события, мы рекомендуем увеличивать эти номера в соглашениях для дополнительного региона с помощью [командлетов PowerShell](https://docs.microsoft.com/powershell/module/azurerm.logicapp/set-azurermintegrationaccountgeneratedicn?view=azurermps-6.13.0).
+При копировании контрольных номеров из основного региона в дополнительный вы столкнетесь с ожидаемой задержкой. Чтобы избежать отправки повторно созданных контрольных номеров партнерам во время аварийного события, мы рекомендуем увеличивать эти номера в соглашениях для дополнительного региона с помощью [командлетов PowerShell](/powershell/module/azurerm.logicapp/set-azurermintegrationaccountgeneratedicn?view=azurermps-6.13.0).
 
 ## <a name="fall-back-to-a-primary-region-post-disaster-event"></a>Восстановление размещения в основной регион после аварийного восстановления
 
@@ -67,7 +68,7 @@ ms.locfileid: "76905126"
 
 1. Не принимайте сообщения от партнеров в дополнительном регионе.  
 
-2. Увеличьте создаваемые контрольные номера для всех соглашений основного региона с помощью [командлетов PowerShell](https://docs.microsoft.com/powershell/module/azurerm.logicapp/set-azurermintegrationaccountgeneratedicn?view=azurermps-6.13.0).  
+2. Увеличьте создаваемые контрольные номера для всех соглашений основного региона с помощью [командлетов PowerShell](/powershell/module/azurerm.logicapp/set-azurermintegrationaccountgeneratedicn?view=azurermps-6.13.0).  
 
 3. Перенаправьте трафик из дополнительного региона в основной.
 
@@ -237,7 +238,6 @@ ms.locfileid: "76905126"
 
 В зависимости от интервала времени дополнительное состояние о среде выполнения реплицируется из основного региона в дополнительный. Во время аварийного события, когда основной регион является недоступным, перенаправьте трафик к дополнительному региону для обеспечения непрерывности бизнес-процессов. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Мониторинг сообщений B2B с помощью журналов Azure Monitor](../logic-apps/monitor-b2b-messages-log-analytics.md)
-

@@ -8,13 +8,13 @@ ms.author: heidist
 ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: 3e1efb1f93910f311ad5df898152d71158003244
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.date: 07/11/2020
+ms.openlocfilehash: cdf71f939d6e5e1ada0ba141dce3bcba9d7d9b01
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86146847"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86529800"
 ---
 # <a name="how-to-index-json-blobs-using-a-blob-indexer-in-azure-cognitive-search"></a>Индексация больших двоичных объектов JSON с помощью индексатора больших двоичных объектов в Azure Когнитивный поиск
 
@@ -293,7 +293,7 @@ ms.locfileid: "86146847"
 
 | parsingMode | Описание |
 |-------------|-------------|
-| `json`  | Индексировать каждый BLOB-объект как отдельный документ. Этот тип используется по умолчанию. |
+| `json`  | Индексировать каждый BLOB-объект как отдельный документ. Это значение по умолчанию. |
 | `jsonArray` | Выберите этот режим, если большие двоичные объекты состоят из массивов JSON, и каждый элемент массива должен стать отдельным документом в Когнитивный поиск Azure. |
 |`jsonLines` | Выберите этот режим, если большие двоичные объекты состоят из нескольких сущностей JSON, разделенных новой строкой, и требуется, чтобы каждая сущность стала отдельным документом в Когнитивный поиск Azure. |
 
@@ -453,7 +453,7 @@ ms.locfileid: "86146847"
 >
 >
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Indexers in Azure Cognitive Search](search-indexer-overview.md) (Индексаторы в службе "Когнитивный поиск Azure")
 + [Индексирование хранилища BLOB-объектов Azure с помощью Azure Когнитивный поиск](search-howto-index-json-blobs.md)

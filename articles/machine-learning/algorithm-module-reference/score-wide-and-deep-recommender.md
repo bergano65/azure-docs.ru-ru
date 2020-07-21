@@ -1,5 +1,5 @@
 ---
-title: Оценка моделей изображений
+title: Использование модуля углубленной рекомендацией для оценки уровня &
 titleSuffix: Azure Machine Learning
 description: Узнайте, как использовать модуль глубоких рекомендаций & Deep в Машинное обучение Azure, чтобы оценить прогнозы для набора данных.
 services: machine-learning
@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 06/12/2020
-ms.openlocfilehash: 1d566d270f9e4b7017171a79fddf58090e21cdec
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: df723824b2d80694913e32904ed81972381c5bcb
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84739805"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86536221"
 ---
 # <a name="score-wide-and-deep-recommender"></a>Оценка Wide and Deep Recommender
 
@@ -181,6 +181,6 @@ ms.locfileid: "84739805"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. [набор модулей, доступных](module-reference.md) в машинное обучение Azure. 

@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 07/08/2020
 ms.custom: seoapril2019, tracking-python
-ms.openlocfilehash: 57e1ecb080d816898b862951846b15a4b5709e38
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: ee116d668b9c351ecf5b130a39e418a3da8fc053
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86146559"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86536391"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -441,8 +441,8 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json
 
 В этом примере конфигурация задает следующие параметры.
 
-* Для модели требуется Python.
-* [Скрипт записи](#script), используемый для обработки веб-запросов, отправляемых в развернутую службу.
+* , Что для модели требуется Python
+* [Скрипт записи](#script), используемый для обработки веб-запросов, отправляемых в развернутую службу
 * Файл Conda, описывающий пакеты Python, необходимые для вывода.
 
 Сведения об использовании пользовательского образа DOCKER с конфигурацией вывода см. в статье [развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md).
@@ -537,7 +537,7 @@ az ml model profile -g <resource-group-name> -w <workspace-name> --inference-con
 
 ## <a name="deploy-to-target"></a>Развертывание в целевом объекте
 
-Развертывание использует конфигурацию развертывания конфигурации определения для развертывания моделей. Процесс развертывания аналогичен, независимо от целевого объекта вычислений. Развертывание в AKS немного отличается, так как необходимо предоставить ссылку на кластер AKS.
+Развертывание использует конфигурацию развертывания конфигурации определения для развертывания моделей. Процесс развертывания аналогичен, независимо от целевого объекта вычислений. Развертывание в службе Azure Kubernetes Service (AKS) немного отличается, так как необходимо предоставить ссылку на кластер AKS.
 
 ### <a name="choose-a-compute-target"></a>Выбор целевого объекта вычислений
 
@@ -559,8 +559,8 @@ az ml model profile -g <resource-group-name> -w <workspace-name> --inference-con
 
 | Целевой объект вычисления | Пример конфигурации развертывания |
 | ----- | ----- |
-| Local | `deployment_config = LocalWebservice.deploy_configuration(port=8890)` |
-| Экземпляры контейнеров Azure; | `deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
+| Локальные | `deployment_config = LocalWebservice.deploy_configuration(port=8890)` |
+| Экземпляры контейнеров Azure | `deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
 | Служба Azure Kubernetes | `deployment_config = AksWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
 
 Классы для локальных объектов, экземпляров контейнеров Azure и веб-служб AKS можно импортировать из `azureml.core.webservice` :
@@ -613,7 +613,7 @@ az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.
 | Переход | Служба находится в процессе развертывания. | Нет |
 | Unhealthy; | Служба была развернута, но сейчас недоступна.  | Нет |
 | Непланируемый | В настоящее время служба не может быть развернута из-за нехватки ресурсов. | Нет |
-| Сбой | Не удалось выполнить развертывание службы из-за ошибки или сбоя. | Да |
+| Failed | Не удалось выполнить развертывание службы из-за ошибки или сбоя. | Да |
 | Healthy | Служба работоспособна, и доступна конечная точка. | Да |
 
 ### <a name="compute-instance-web-service-devtest"></a><a id="notebookvm"></a>Веб-служба вычислительных экземпляров (разработка и тестирование)
@@ -629,7 +629,7 @@ az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.
 См. раздел [Deploy to Azure Kubernetes Service](how-to-deploy-azure-kubernetes-service.md).
 
 ### <a name="ab-testing-controlled-rollout"></a>A/B — тестирование (управляемое развертывание)
-Дополнительные сведения см. в разделе [контролируемый выпуск моделей машинного обучения](how-to-deploy-azure-kubernetes-service.md#deploy-models-to-aks-using-controlled-rollout-preview) .
+Дополнительные сведения см. в разделе [контролируемый выпуск моделей ML](how-to-deploy-azure-kubernetes-service.md#deploy-models-to-aks-using-controlled-rollout-preview) .
 
 ## <a name="consume-web-services"></a>Использование веб-служб
 
@@ -878,7 +878,7 @@ az ml model download --model-id mymodel:1 --target-dir model_folder
 ### <a name="tensorflow-savedmodel-format"></a>Формат Саведмодел Tensorflow
 Модели Tensorflow необходимо зарегистрировать в **формате саведмодел** для работы без развертывания модели кода.
 
-Сведения о том, как создать Саведмодел, см. по [этой ссылке](https://www.tensorflow.org/guide/saved_model) .
+Сведения о том, как создать Саведмодел, см. в [этой ссылке](https://www.tensorflow.org/guide/saved_model) .
 
 ```python
 from azureml.core import Model
@@ -913,6 +913,12 @@ model = Model.register(workspace=ws,
 service_name = 'onnx-mnist-service'
 service = Model.deploy(ws, service_name, [model])
 ```
+
+Чтобы оценить модель, см. статью [использование машинное обучение Azureной модели, развернутой в качестве веб-службы](https://docs.microsoft.com/azure/machine-learning/how-to-consume-web-service). Многие проекты ONNX используют файлы protobuf для сжатия данных для обучения и проверки, что может затруднять знание того, какой формат данных ожидается службой. Разработчик модели должен документировать документацию для разработчиков:
+
+* Формат входных данных (JSON или Binary)
+* Форма входных данных и тип (например, массив с плавающей запятой Shape [100,100, 3])
+* Сведения о домене (например, для изображения, цветового пространства, порядка компонентов и того, являются ли значения нормализованными)
 
 Если вы используете Pytorch, то [Экспорт моделей из Pytorch в ONNX](https://github.com/onnx/tutorials/blob/master/tutorials/PytorchOnnxExport.ipynb) содержит подробные сведения о преобразовании и ограничениях. 
 

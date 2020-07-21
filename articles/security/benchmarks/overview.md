@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/16/2019
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: f2cdaafddb14d8b69fd708e4c89a578b60e53317
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 453e88ed59df0d6e88b8db32ea1836a4371ab3a5
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82606880"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86529273"
 ---
 # <a name="overview-of-the-azure-security-benchmark"></a>Обзор производительности системы безопасности Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "82606880"
 
 Мы будем рады ознакомиться с подробными сведениями и активно участием в тестировании системы безопасности Azure. Если вы хотите предоставить прямой ввод для группы производительности системы безопасности Azure, заполните форму по адресу [https://aka.ms/AzSecBenchmark](https://aka.ms/AzSecBenchmark) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 - См. первый контроль безопасности: [Сетевая безопасность](security-control-network-security.md)
 - Ознакомление с [обзором производительности системы безопасности Azure](introduction.md)

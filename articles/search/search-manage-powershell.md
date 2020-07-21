@@ -9,11 +9,12 @@ ms.service: cognitive-search
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/11/2020
-ms.openlocfilehash: 711071e08a52a0075512bc8b3ffe14707238cdfe
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a08b59464855b805173fa76d696107f8a7673d39
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77209302"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86529578"
 ---
 # <a name="manage-your-azure-cognitive-search-service-with-powershell"></a>Управление службой Когнитивный поиск Azure с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -247,11 +248,11 @@ HostingMode       : Default
 Id                : /subscriptions/65a1016d-0f67-45d2-b838-b8f373d6d52e/resourceGroups/demo-westus/providers/Microsoft.Search/searchServices/my-demo-searchapp
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Создайте [индекс](search-what-is-an-index.md), [запросите индекс](search-query-overview.md) с помощью портала, API-интерфейсов и пакета SDK для .NET.
 
-* [Создание индекса службы "Когнитивный поиск Azure" на портале Azure](search-create-index-portal.md)
+* [Создание индекса службы "Когнитивный поиск Azure" на портале Azure](search-get-started-portal.md)
 * [Настройка индексатора для загрузки данных из других служб](search-indexer-overview.md)
 * [Запрос индекса Когнитивный поиск Azure с помощью обозревателя поиска в портал Azure](search-explorer.md)
 * [Использование Когнитивный поиск Azure в .NET](search-howto-dotnet-sdk.md)

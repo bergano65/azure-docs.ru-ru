@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, tracking-python
 ms.date: 04/29/2020
-ms.openlocfilehash: 67dfc0b2da753f005c1723ff0cf3370ce288c6de
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 8c13dc43f4b7c66bd804fd9ec016f5e1a467bd8b
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086625"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86536771"
 ---
 # <a name="safely-manage-python-environment-on-azure-hdinsight-using-script-action"></a>Безопасное управление средой Python в Azure HDInsight с помощью действия скрипта
 
@@ -47,11 +47,11 @@ ms.locfileid: "86086625"
 
 Кластер HDInsight Spark создается с установкой Anaconda. В кластере имеются два установленных компонента Python: Anaconda Python 2.7 и Python 3.5. В таблице ниже приведены параметры Python по умолчанию для Spark, Livy и Jupyter.
 
-| |Python 2,7|Python 3.5|
+|Параметр |Python 2,7|Python 3.5|
 |----|----|----|
 |путь|/usr/bin/anaconda/bin|/usr/bin/anaconda/envs/py35/bin|
-|Spark|По умолчанию 2.7|Недоступно|
-|Livy|По умолчанию 2.7|Недоступно|
+|Версия Spark|По умолчанию 2.7|Недоступно|
+|Версия Livy|По умолчанию 2.7|Недоступно|
 |Jupyter|Ядро PySpark|Ядро PySpark3|
 
 ## <a name="safely-install-external-python-packages"></a>Безопасная установка внешних пакетов Python

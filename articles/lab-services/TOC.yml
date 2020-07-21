@@ -46,8 +46,6 @@
               href: class-type-sql-server.md
             - name: Использование Python с Jupyter Notebook
               href: class-type-jupyter-notebook.md
-            - name: Разработка мобильных приложений с помощью Android Studio
-              href: class-type-mobile-dev-android-studio.md
             - name: Аналитика больших данных
               href: class-type-big-data-analytics.md
             - name: MATLAB

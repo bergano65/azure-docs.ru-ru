@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/01/2019
 ms.author: juliako
-ms.openlocfilehash: 63b3def9c37f53ebf68642faf3f45cee6602bbe5
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: b25d6c33aa2bd50cbf96fb09f0de03354d24f2da
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86057302"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86530377"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 
@@ -29,8 +29,8 @@ ms.locfileid: "86057302"
 
 Мы ждем отзывов от наших заказчиков, чтобы уделить внимание исправлению проблем, влияющих на вашу работу. Сообщения о проблемах и вопросы размещайте на [форуме MSDN по службам мультимедиа Azure]. 
 
-## <a name="known-issues"></a><a id="issues"/>Известные проблемы
-### <a name="media-services-general-issues"></a><a id="general_issues"/>Общие проблемы служб мультимедиа
+## <a name="known-issues"></a><a name="issues"></a>Известные проблемы
+### <a name="media-services-general-issues"></a><a name="general_issues"></a>Общие проблемы служб мультимедиа
 
 | Проблема | Описание |
 | --- | --- |
@@ -43,7 +43,7 @@ ms.locfileid: "86057302"
 | Объекты в пакете SDK .NET для служб мультимедиа не могут быть сериализованы и поэтому не работают с кэшем Azure для Redis. |При попытке сериализации объекта SDK AssetCollection с целью его добавления в кэш Azure для Redis возникает исключение. |
 |REST API отвечает сообщением об ошибке: "Доступ к фильтру невозможен в этой версии API-интерфейса REST" при попытке получить фильтр на уровне ресурса или учетной записи.|Фильтр был создан или изменен с использованием более новой версии API, чем используемая для попыток получения фильтра. Это может произойти, если в коде или средствах, используемых клиентом, применяются две версии API.  Лучшим решением здесь является обновление кода или средств для использования более новой или двух различных версий API.|
 
-## <a name="rest-api-version-history"></a><a id="rest_version_history"/>Журнал версий интерфейса API REST
+## <a name="rest-api-version-history"></a><a name="rest_version_history"></a>Журнал версий интерфейса API REST
 Сведения о журнале версий интерфейса REST API служб мультимедиа см. в [этой статье].
 
 ## <a name="february-2020"></a>Февраль 2020 г.
@@ -159,7 +159,7 @@ ms.locfileid: "86057302"
 
  С помощью служб мультимедиа теперь можно получить доступ к данным телеметрии и метрик для служб. Текущая версия служб мультимедиа позволяет собирать данные телеметрии для динамического канала, конечной точки потоковой передачи и архивированных сущностей. Дополнительные сведения см. в статье [Телеметрия служб мультимедиа Azure](media-services-telemetry-overview.md).
 
-## <a name="july-2016-release"></a><a id="july_changes16"/>Выпуск: июль 2016 г.
+## <a name="july-2016-release"></a><a name="july_changes16"></a>Выпуск: июль 2016 г.
 ### <a name="updates-to-the-manifest-file-ism-generated-by-encoding-tasks"></a>Обновления файла манифеста (\*.ISM), созданного задачами кодирования
 Когда вы отправляете задачу кодирования в Media Encoder Standard или в Media Encoder Premium, задача кодирования создает [файл манифеста потоковой передачи](media-services-deliver-content-overview.md) (\*.ISM) в выходном ресурсе. В последнем выпуске службы обновлен синтаксис этого файла манифеста потоковой передачи.
 

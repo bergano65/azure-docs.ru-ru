@@ -3,11 +3,12 @@ title: Отправка оповещений о работоспособност
 description: Передача в экземпляр OpsGenie персонализированных уведомлений о событиях работоспособности служб.
 ms.topic: conceptual
 ms.date: 06/10/2019
-ms.openlocfilehash: def12d5e7b1b93b8370cd7be61538fca53531ae1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 112774cb1f9e16b08225471e8dbc1bb79b1bd37d
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77654143"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86529103"
 ---
 # <a name="send-azure-service-health-alerts-with-opsgenie-using-webhooks"></a>Отправка оповещений о работоспособности службы Azure в OpsGenie с помощью веб-перехватчиков
 
@@ -36,7 +37,7 @@ ms.locfileid: "77654143"
 
 ## <a name="create-an-alert-using-opsgenie-in-the-azure-portal"></a>Создание оповещения с помощью OpsGenie на портале Azure
 ### <a name="for-a-new-action-group"></a>Для новой группы действий сделайте следующее.
-1. Выполните шаги 1–8 из раздела [Создание оповещения для уведомления о работоспособности службы для новой группы действий с помощью портала Azure](../azure-monitor/platform/alerts-activity-log-service-notifications.md).
+1. Выполните шаги 1–8 из раздела [Создание оповещения для уведомления о работоспособности службы для новой группы действий с помощью портала Azure](./alerts-activity-log-service-notifications-portal.md).
 
 1. В списке **Действия** определите следующие сведения.
 
@@ -81,8 +82,8 @@ ms.locfileid: "77654143"
 
 1. Откройте [OpsGenie](https://www.opsgenie.com/) и убедитесь, что интеграция настроена успешно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте, как [настроить уведомления веб-перехватчика для существующих систем управления проблемами](service-health-alert-webhook-guide.md).
 - Ознакомьтесь со [схемой веб-перехватчика оповещений журнала действий](../azure-monitor/platform/activity-log-alerts-webhook.md). 
-- Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../azure-monitor/platform/service-notifications.md).
+- Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](./service-notifications.md).
 - Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../azure-monitor/platform/action-groups.md).

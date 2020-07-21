@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 05/13/2020
 ms.custom: seoapril2019, seodec18
-ms.openlocfilehash: 8cfa7a7b251f2aa74230d8883a0335582387aa06
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 749a2366438bd1abfef4ca0cf2a195f23529d6a5
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85602522"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86536306"
 ---
 # <a name="how-azure-machine-learning-works-architecture-and-concepts"></a>Машинное обучение Azure: архитектура и основные понятия
 
@@ -43,6 +43,10 @@ ms.locfileid: "85602522"
 ## <a name="tools-for-azure-machine-learning"></a>Средства для Машинного обучения Azure
 
 Для Машинного обучения Azure можно применять следующие средства:
+
+> [!IMPORTANT]
+> Средства, отмеченные ниже (Предварительная версия), сейчас доступны в общедоступной предварительной версии.
+> Предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 +  [Пакет SDK Машинного обучения для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) позволяет взаимодействовать с этой службой в любой среде Python.
 + Взаимодействуйте со службой в любой среде R с помощью [пакета SDK машинное обучение Azure для R](https://azure.github.io/azureml-sdk-for-r/reference/index.html) (Предварительная версия).

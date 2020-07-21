@@ -3,20 +3,21 @@ title: Запись экспериментов с машинным обучен�
 titleSuffix: Azure Machine Learning
 description: Отслеживайте эксперименты с машинным обучением Azure и метрики выполнения, чтобы улучшить процесс создания модели. Добавьте функцию ведения журнала в сценарий обучения и просматривайте результаты выполнения, записанные в журнале.  Используйте функции run.log, Run.start_logging или ScriptRunConfig.
 services: machine-learning
-author: sdgilley
-ms.author: sgilley
-ms.reviewer: sgilley
+author: likebupt
+ms.author: keli19
+ms.reviewer: peterlu
 ms.service: machine-learning
 ms.subservice: core
 ms.workload: data-services
 ms.topic: how-to
-ms.date: 03/12/2020
+ms.date: 07/14/2020
 ms.custom: seodec18
-ms.openlocfilehash: 426c79c19b599127e2235f61e8c917062ede3b79
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8a4f58423206a812dd94cc14d32aa52114c147d1
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84675208"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86536366"
 ---
 # <a name="monitor-azure-ml-experiment-runs-and-metrics"></a>Отслеживание выполнения экспериментов с машинным обучением Azure и метрик
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -107,7 +108,7 @@ ms.locfileid: "84675208"
 
 Чтобы добавить логику ведения журнала в эксперименты конструктора, используйте модуль __Выполнение скриптов Python__. С помощью этого рабочего процесса в журнал можно записать любое значение, но особенно полезно записывать метрики из модуля __Анализ модели__ для мониторинга производительности модели при разных запусках.
 
-1. Подключите модуль __Выполнение скриптов Python__ к выходу модуля __Анализ модели__.
+1. Подключите модуль __Выполнение скриптов Python__ к выходу модуля __Анализ модели__. __Вычисление модели__ может выводить результаты вычисления двух моделей. В следующем примере показано, как регистрировать метрики двух выходных портов на родительском уровне выполнения. 
 
     ![Подключение модуля "Выполнение скриптов Python" к выходу модуля "Анализ модели"](./media/how-to-track-experiments/designer-logging-pipeline.png)
 
@@ -115,23 +116,29 @@ ms.locfileid: "84675208"
 
     ```python
     # dataframe1 contains the values from Evaluate Model
-    def azureml_main(dataframe1 = None, dataframe2 = None):
+    def azureml_main(dataframe1=None, dataframe2=None):
         print(f'Input pandas.DataFrame #1: {dataframe1}')
-
+    
         from azureml.core import Run
-
+    
         run = Run.get_context()
-
-        # Log the mean absolute error to the current run to see the metric in the module detail pane.
-        run.log(name='Mean_Absolute_Error', value=dataframe1['Mean_Absolute_Error'])
-
+    
         # Log the mean absolute error to the parent run to see the metric in the run details page.
         # Note: 'run.parent.log()' should not be called multiple times because of performance issues.
         # If repeated calls are necessary, cache 'run.parent' as a local variable and call 'log()' on that variable.
-        run.parent.log(name='Mean_Absolute_Error', value=dataframe1['Mean_Absolute_Error'])
+
+        # Log left output port result of Evaluate Model. This also works when evaluate only 1 model.
+        run.parent.log(name='Mean_Absolute_Error (left port)', value=dataframe1['Mean_Absolute_Error'][0])
+
+        # Log right output port result of Evaluate Model.
+        run.parent.log(name='Mean_Absolute_Error (right port)', value=dataframe1['Mean_Absolute_Error'][1])
     
         return dataframe1,
     ```
+
+1. После завершения выполнения конвейера на странице эксперимента можно увидеть *Mean_Absolute_Error* .
+
+    ![Подключение модуля "Выполнение скриптов Python" к выходу модуля "Анализ модели"](./media/how-to-track-experiments/experiment-page-metrics-across-runs.png)
 
 ## <a name="manage-a-run"></a>Управление выполнением
 

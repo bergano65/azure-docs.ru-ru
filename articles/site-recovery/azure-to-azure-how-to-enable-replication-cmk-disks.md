@@ -1,5 +1,5 @@
 ---
-title: Включение репликации для зашифрованных виртуальных машин Azure в Azure Site Recovery
+title: Включение репликации зашифрованных виртуальных машин Azure в Azure Site Recovery
 description: В этой статье описывается, как настроить репликацию для виртуальных машин с дисковыми ключами с управляемым клиентом ключом (CMK) из одного региона Azure в другой с помощью Site Recovery.
 author: mayurigupta13
 manager: rochakm
@@ -7,18 +7,18 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 07/10/2020
 ms.author: mayg
-ms.openlocfilehash: 92b35284fd7bbb3d4f1196ee0d9bae4ce42d7c9e
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 2dc7bbd060d77b8f90d16e2a336edc1eb6dbf651
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86224117"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86529001"
 ---
 # <a name="replicate-machines-with-customer-managed-keys-cmk-enabled-disks"></a>Репликация компьютеров с помощью дисков с поддержкой ключей, управляемых клиентом (CMK)
 
 В этой статье описывается репликация виртуальных машин Azure с управляемыми дисками с управляемыми ключами (CMK) с помощью управляемых дисков из одного региона Azure в другой.
 
-## <a name="prerequisite"></a>Предварительное требование
+## <a name="prerequisite"></a>Предварительные требования
 Перед включением репликации для виртуальных машин с управляемыми дисками с поддержкой CMK необходимо создать наборы шифрования дисков в целевом регионе для целевой подписки.
 
 ## <a name="enable-replication"></a>Включение репликации
@@ -72,7 +72,7 @@ ms.locfileid: "86224117"
 >[!NOTE]
 >Во время начальной репликации состояние обновления может занять некоторое время, без видимого хода выполнения. Нажмите кнопку **Обновить** , чтобы получить Последнее состояние.
 
-## <a name="faqs"></a>Часто задаваемые вопросы
+## <a name="faqs"></a>Вопросы и ответы
 
 * Я включил CMK для существующего реплицированного элемента, как можно гарантировать, что CMK применяется в целевом регионе.
 

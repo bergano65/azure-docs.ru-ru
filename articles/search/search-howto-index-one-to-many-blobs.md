@@ -8,13 +8,13 @@ ms.author: arjagann
 ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: 1f93ae8a017c889f6c465b3ccbbb66382577e871
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.date: 07/11/2020
+ms.openlocfilehash: 6606391d7fd5c2419714531e1220d97fb29aea4d
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86146786"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86529596"
 ---
 # <a name="indexing-blobs-to-produce-multiple-search-documents"></a>Индексирование больших двоичных объектов для получения нескольких поисковых документов
 По умолчанию индексатор BLOB-объектов будет рассматривать содержимое большого двоичного объекта как единый поисковый документ. Определенные значения **parsingMode** поддерживают сценарии, в которых отдельный большой двоичный объект может привести к созданию нескольких документов поиска. Различные типы **parsingMode** , позволяющие индексатору извлекать более одного документа поиска из большого двоичного объекта:

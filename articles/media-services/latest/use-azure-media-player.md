@@ -11,13 +11,14 @@ ms.workload: ''
 ms.topic: article
 ms.date: 07/17/2019
 ms.author: juliako
-ms.openlocfilehash: d9e42e809443a2dd6cdeb989f692b96d63269f79
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 63b05662e16dbcfd999788aa39c6c37eb12cf2c7
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78673583"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86530411"
 ---
-# <a name="azure-media-player-overview"></a>Обзор Проигрывателя мультимедиа Azure
+# <a name="playback-with-azure-media-player"></a>Воспроизведение с помощью Проигрыватель мультимедиа Azure
 
 Проигрыватель мультимедиа Azure — это веб-проигрыватель, созданный для воспроизведения мультимедийного содержимого из Служб мультимедиа Microsoft Azure в разных браузерах и на разных устройствах. Проигрыватель мультимедиа Azure использует такие отраслевые стандарты, как HTML5, Media Source Extensions (MSE) и Encrypted Media Extensions (EME), для оптимальной адаптивной потоковой передачи. Если эти стандарты недоступны на устройстве или в браузере, Проигрыватель мультимедиа Azure использует Flash и Silverlight. Независимо от используемой технологии воспроизведения, разработчики получают единый интерфейс JavaScript для доступа к интерфейсам API. Это позволяет службам мультимедиа Azure обслуживать содержимое для воспроизведения на широком спектре устройств и в различных браузерах без дополнительных усилий.
 
@@ -52,7 +53,7 @@ ms.locfileid: "78673583"
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Документация по Проигрыватель мультимедиа Azure](https://aka.ms/ampdocs)
 - [Примеры использования Проигрывателя мультимедиа Azure](https://aka.ms/ampsamples)
