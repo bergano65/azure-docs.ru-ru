@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/13/2017
-ms.openlocfilehash: 75c65cf9f76e711a3aeed764de8b92ed619bad2f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d52138f5b23a6a0ac8ff8c585e6aed0edd92eaf0
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77666949"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499551"
 ---
 # <a name="plan-hyper-v-virtual-machine-capacity-with-the-capacity-and-performance-solution-deprecated"></a>Планирование емкости виртуальных машин Hyper-V с помощью решения Емкость и производительность (не рекомендуется)
 
@@ -38,14 +39,14 @@ ms.locfileid: "77666949"
 
 В следующей таблице описаны подключенные источники, которые поддерживаются этим решением.
 
-| Подключенный источник | Поддержка | Описание: |
+| Подключенный источник | Поддержка | Описание |
 |---|---|---|
 | [Агенты Windows](../../azure-monitor/platform/agent-windows.md) | Да | Решение собирает сведения о емкости и производительности из агентов Windows. |
 | [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет    | Решение не собирает сведения о емкости и производительности из прямых агентов Linux.|
 | [Группы управления SCOM](../../azure-monitor/platform/om-agents.md) | Да |Решение собирает сведения о емкости и производительности из агентов в подключенной группе управления SCOM. Прямое подключение агента SCOM к Log Analytics не требуется.|
-| [Учетная запись хранения Azure](../../azure-monitor/platform/collect-azure-metrics-logs.md) | Нет | Служба хранилища Azure не содержит сведения о емкости и производительности.|
+| [Учетная запись хранения Azure](../platform/resource-logs.md#send-to-log-analytics-workspace) | Нет | Служба хранилища Azure не содержит сведения о емкости и производительности.|
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Агенты Windows или Operations Manager должны быть установлены на узлах Hyper-V под управлением Windows Server 2012 (или более поздней версии), а не на виртуальных машинах.
 
@@ -108,7 +109,7 @@ New Management Pack with id:"Microsoft.IntelligencePacks.CapacityPerformance", v
 
 Рабочие вычислительные среды значительно отличаются в разных организациях. Кроме того, емкость и производительность может зависеть от того, как запущены виртуальные машины, и от того, что вы считаете нормальным. Определенные процессы, которые помогают оценить производительность, вероятно, не применяются к вашей среде. Поэтому в этом случае лучше использовать более обобщенные конкретные рекомендации. Корпорация Майкрософт публикует ряд статей с конкретными рекомендациями по измерению производительности.
 
-Подводя итог, можно отметить, что это решение собирает сведения о емкости и производительности из различных источников, в том числе счетчиков производительности. Используйте эти сведения, представленные в различных областях решения, и сравните свои результаты с результатами, приведенными в статье [Measuring Performance on Hyper-V](https://msdn.microsoft.com/library/cc768535.aspx) (Измерение производительности на виртуальных машинах Hyper-V). Хотя эта статья опубликована ранее, приведенные в ней метрики, рекомендации и указания по-прежнему актуальны. В ней также содержатся ссылки на другие полезные ресурсы.
+Подводя итог, можно отметить, что это решение собирает сведения о емкости и производительности из различных источников, в том числе счетчиков производительности. Используйте эти сведения, представленные в различных областях решения, и сравните свои результаты с результатами, приведенными в статье [Measuring Performance on Hyper-V](https://www.microsoft.com/en-us/download/details.aspx?id=56495) (Измерение производительности на виртуальных машинах Hyper-V). Хотя эта статья опубликована ранее, приведенные в ней метрики, рекомендации и указания по-прежнему актуальны. В ней также содержатся ссылки на другие полезные ресурсы.
 
 
 ## <a name="sample-log-searches"></a>Пример поисков журналов
@@ -127,5 +128,5 @@ New Management Pack with id:"Microsoft.IntelligencePacks.CapacityPerformance", v
 | Показатель общей задержки на всех общих томах кластера | Perf &#124; where ObjectName == "Capacity and Performance" and (CounterName == "CSV Read Latency" or CounterName == "CSV Write Latency") &#124; summarize AggregatedValue = avg(CounterValue) by bin(TimeGenerated, 1h), CounterName, InstanceName |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Используйте [поиск по журналам в Log Analytics](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные сведения о емкости и производительности.

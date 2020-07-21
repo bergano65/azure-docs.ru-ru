@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 06/30/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: d55bcf921d5bddb1612f9cfb884b339f837c7aa2
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 315c635ba0864dc1565fd7ba5ccc450223d87ac9
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86225292"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86494723"
 ---
 # <a name="create-an-image-from-a-vhd-or-snapshot-in-a-shared-image-gallery-using-powershell"></a>Создание образа из виртуального жесткого диска или моментального снимка в коллекции общих образов с помощью PowerShell
 
@@ -90,9 +90,9 @@ $gallery = Get-AzGallery `
 
 При создании определения образа убедитесь, что содержит все правильные сведения. В этом примере предполагается, что моментальный снимок или виртуальный жесткий диск относится к используемой виртуальной машине и не был обобщен. Если виртуальный жесткий диск или моментальный снимок был создан в обобщенной ОС (после запуска Sysprep для Windows или [waagent](https://github.com/Azure/WALinuxAgent) `-deprovision` или `-deprovision+user` для Linux), измените `-OsState` на `generalized` . 
 
-Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](https://docs.microsoft.com/azure/virtual-machines/windows/shared-image-galleries#image-definitions).
+Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](./windows/shared-image-galleries.md#image-definitions).
 
-Создайте определение образа с помощью командлета [New-AzGalleryImageDefinition](https://docs.microsoft.com/powershell/module/az.compute/new-azgalleryimageversion). В этом примере определение образа называется *мимажедефинитион*и предназначено для специализированной ОС Windows. Чтобы создать определение для образов с помощью ОС Linux, используйте `-OsType Linux` . 
+Создайте определение образа с помощью командлета [New-AzGalleryImageDefinition](/powershell/module/az.compute/new-azgalleryimageversion). В этом примере определение образа называется *мимажедефинитион*и предназначено для специализированной ОС Windows. Чтобы создать определение для образов с помощью ОС Linux, используйте `-OsType Linux` . 
 
 ```azurepowershell-interactive
 $imageDefinition = New-AzGalleryImageDefinition `
@@ -114,7 +114,7 @@ $imageDefinition = New-AzGalleryImageDefinition `
 
 ## <a name="create-an-image-version"></a>Создание версии образа
 
-Создайте версию образа из моментального снимка, используя [New-азгаллеримажеверсион](https://docs.microsoft.com/powershell/module/az.compute/new-azgalleryimageversion). 
+Создайте версию образа из моментального снимка, используя [New-азгаллеримажеверсион](/powershell/module/az.compute/new-azgalleryimageversion). 
 
 Допустимыми знаками для имени версии образа являются цифры и точки. Числа должны быть в диапазоне 32-битного целого числа. Формат: *основной номер версии*.*дополнительный номер версии*.*исправление*.
 
@@ -148,7 +148,7 @@ $job.State
 > [!NOTE]
 > Перед тем как использовать тот же моментальный снимок для создания другой версии образа, необходимо дождаться, пока завершится сборка и репликация версии образа. 
 >
-> Можно также сохранить версию образа в хранилище, [избыточном](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs) в виде зоны, путем добавления `-StorageAccountType Standard_ZRS` при создании версии образа.
+> Можно также сохранить версию образа в хранилище, [избыточном](../storage/common/storage-redundancy.md) в виде зоны, путем добавления `-StorageAccountType Standard_ZRS` при создании версии образа.
 >
 
 ## <a name="delete-the-source"></a>Удаление источника

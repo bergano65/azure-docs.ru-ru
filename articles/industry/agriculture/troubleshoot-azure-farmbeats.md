@@ -5,14 +5,14 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 6527ee8be64d57b42d7753c266a5c416ceeef589
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 110fef2dcb4c1581d49fcb776276ebd9c4ae2235
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86187716"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86497069"
 ---
-# <a name="troubleshoot"></a>Диагностика
+# <a name="troubleshoot-azure-farmbeats"></a>Устранение неполадок в Azure FarmBeats
 
 В этой статье приводятся решения по устранению распространенных проблем Azure FarmBeats. Для получения дополнительной помощи обращайтесь на наш [форум поддержки](https://social.msdn.microsoft.com/Forums/home?forum=ProjectFarmBeats) или по адресу farmbeatssupport@microsoft.com.
 
@@ -58,8 +58,8 @@ ms.locfileid: "86187716"
 
 **Корректирующее действие**
 
-1. Перейдите в группу ресурсов FarmBeats Datahub.
-2. Выберите **Концентратор событий** (DatafeedEventHubNamespace), а затем проверьте количество входящих сообщений.
+1. Перейдите к группе ресурсов Фармбеатс.
+2. Выберите пространство имен **концентратора событий** ("датчик-партнер-EH-пространство имен-XXXX"), щелкните "концентраторы событий", а затем проверьте количество входящих сообщений в концентраторе событий, назначенном участнику.
 3. Выполните одно из приведенных ниже действий.
 
    - Если *входящих сообщений нет*, обратитесь к партнеру по устройствам.  

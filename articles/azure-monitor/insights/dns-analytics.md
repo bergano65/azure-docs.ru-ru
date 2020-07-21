@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/20/2018
-ms.openlocfilehash: 385f4a9ff1c299f49a514ad63bb3c8d633d8c191
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 947b509468857b98b868881bdd48adf67a5d60db
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85552818"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499007"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Сбор сведений об инфраструктуре DNS с помощью решения аналитики DNS (предварительной версии)
 
@@ -38,11 +38,11 @@ ms.locfileid: "85552818"
 | [Агенты Windows](../platform/agent-windows.md) | Да | Решение собирает сведения о DNS из агентов Windows. |
 | [Агенты Linux](../learn/quick-collect-linux-computer.md) | Нет | Решение не собирает сведения о DNS из прямых агентов Linux. |
 | [Группа управления System Center Operations Manager](../platform/om-agents.md) | Да | Решение собирает сведения о DNS из агентов в подключенной группе управления Operations Manager. Прямое подключение агента Operations Manager к Azure Monitor не требуется. Данные пересылаются из группы управления в рабочую область Log Analytics. |
-| [Учетная запись хранения Azure](../platform/collect-azure-metrics-logs.md) | Нет | Решение не использует службу хранилища Azure. |
+| [Учетная запись хранения Azure](../platform/resource-logs.md#send-to-log-analytics-workspace) | Нет | Решение не использует службу хранилища Azure. |
 
 ### <a name="data-collection-details"></a>Сведения о сборе данных
 
-Решение собирает данные, связанные с инвентаризацией и событиями DNS, с DNS-серверов, на которых установлен агент Log Analytics. Затем эти данные передаются в службу Azure Monitor и отображаются на панели мониторинга решения. Данные, связанные с инвентаризацией, такие как количество DNS-серверов, зон и записей ресурсов, собираются с помощью командлетов PowerShell для DNS. Эти данные обновляются каждые два дня. Данные, связанные с событиями, собираются практически в реальном времени из [журналов аналитики и аудита](https://technet.microsoft.com/library/dn800669.aspx#enhanc), которые обеспечиваются расширенными функциями диагностики и ведения журнала DNS в Windows Server 2012 R2.
+Решение собирает данные, связанные с инвентаризацией и событиями DNS, с DNS-серверов, на которых установлен агент Log Analytics. Затем эти данные передаются в службу Azure Monitor и отображаются на панели мониторинга решения. Данные, связанные с инвентаризацией, такие как количество DNS-серверов, зон и записей ресурсов, собираются с помощью командлетов PowerShell для DNS. Эти данные обновляются каждые два дня. Данные, связанные с событиями, собираются практически в реальном времени из [журналов аналитики и аудита](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn800669(v=ws.11)#enhanc), которые обеспечиваются расширенными функциями диагностики и ведения журнала DNS в Windows Server 2012 R2.
 
 ## <a name="configuration"></a>Параметр Configuration
 
@@ -183,6 +183,6 @@ ms.locfileid: "85552818"
 
 Чтобы отправить отзыв, посетите [страницу log Analytics UserVoice](https://aka.ms/dnsanalyticsuservoice) , чтобы опубликовать идеи для работы с аналитика DNS функциями. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы получить дополнительные сведения о записях журнала DNS, см. статью [Analyze log data in Azure Monitor](../log-query/log-query-overview.md) (Анализ данных журналов в Azure Monitor).

@@ -9,18 +9,18 @@ ms.workload: infrastructure
 ms.date: 07/06/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: 133de199c240cbc4ea7246a29e65347d53c50545
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 2a17825d062496e6600966dc7c90b14749507e4d
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045762"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86494519"
 ---
 # <a name="disable-or-remove-the-linux-agent-from-vms-and-images"></a>Отключение или удаление агента Linux с виртуальных машин и образов
 
 Перед удалением агента Linux необходимо ознакомиться с тем, какие виртуальные машины не удастся выполнить после удаления агента Linux.
 
-[Расширения](https://docs.microsoft.com/azure/virtual-machines/extensions/overview) виртуальных машин Azure — это небольшие приложения, которые обеспечивают настройку и задачи автоматизации, выполняемые после развертывания на виртуальных машинах Azure. расширения устанавливаются и управляются плоскостью управления Azure. [Агент Linux для Azure](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux) обрабатывает команды расширения платформы и обеспечивает правильное состояние расширения внутри виртуальной машины.
+[Расширения](../extensions/overview.md) виртуальных машин Azure — это небольшие приложения, которые обеспечивают настройку и задачи автоматизации, выполняемые после развертывания на виртуальных машинах Azure. расширения устанавливаются и управляются плоскостью управления Azure. [Агент Linux для Azure](../extensions/agent-linux.md) обрабатывает команды расширения платформы и обеспечивает правильное состояние расширения внутри виртуальной машины.
 
 На платформе Azure доступно множество расширений, в число которых входят приложения для конфигурации, мониторинга, безопасности виртуальных машин, а также служебные приложения. Существует большой вариант использования первых и сторонних расширений, примеры основных сценариев использования расширений для:
 * Поддержка служб Azure первого производителя, таких как Azure Backup, мониторинг, шифрование дисков, безопасность, репликация сайта и другие.
@@ -31,7 +31,7 @@ ms.locfileid: "86045762"
 
 ## <a name="disabling-extension-processing"></a>Отключение обработки расширения
 
-Существует несколько способов отключить обработку расширения в зависимости от ваших потребностей, но прежде чем продолжить, **необходимо** удалить все расширения, развернутые на виртуальной машине, например с помощью AZ CLI, можно [вывести список](https://docs.microsoft.com/cli/azure/vm/extension?view=azure-cli-latest#az-vm-extension-list) и [Удалить](https://docs.microsoft.com/cli/azure/vm/extension?view=azure-cli-latest#az-vm-extension-delete):
+Существует несколько способов отключить обработку расширения в зависимости от ваших потребностей, но прежде чем продолжить, **необходимо** удалить все расширения, развернутые на виртуальной машине, например с помощью AZ CLI, можно [вывести список](/cli/azure/vm/extension?view=azure-cli-latest#az-vm-extension-list) и [Удалить](/cli/azure/vm/extension?view=azure-cli-latest#az-vm-extension-delete):
 
 ```bash
 az vm extension delete -g MyResourceGroup --vm-name MyVm -n extension_name
@@ -155,7 +155,7 @@ az sig image-version create \
 > 
 > Если этого не сделать, платформа попытается отправить конфигурацию расширения и время ожидания после 40min.
 
-Чтобы развернуть виртуальную машину с отключенными расширениями, можно использовать Azure CLI с параметром [--Enable-Agent](https://docs.microsoft.com/cli/azure/vm#az-vm-create).
+Чтобы развернуть виртуальную машину с отключенными расширениями, можно использовать Azure CLI с параметром [--Enable-Agent](/cli/azure/vm#az-vm-create).
 
 ```bash
 az vm create \
@@ -183,6 +183,6 @@ az vm create \
                     "keyData": "[parameters('adminPublicKey')]"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в разделе [Подготовка Linux](provisioning.md).

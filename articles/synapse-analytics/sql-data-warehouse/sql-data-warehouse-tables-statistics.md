@@ -1,5 +1,5 @@
 ---
-title: Создание и обновление статистики
+title: Создание и обновление статистики по таблицам с помощью Azure синапсе SQL
 description: Рекомендации и примеры для создания и обновления статистики оптимизации запросов для таблиц в пуле синапсе SQL.
 services: synapse-analytics
 author: XiaoyuMSFT
@@ -11,12 +11,12 @@ ms.date: 05/09/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 257b1e26127186fce07e402e58f98660005a97fb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 15ba0d4b77461d77a2d0b89ecc9e411a105d49d2
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85800772"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86495641"
 ---
 # <a name="table-statistics-in-synapse-sql-pool"></a>Статистика таблицы в пуле синапсе SQL
 
@@ -220,7 +220,7 @@ WHERE
 CREATE STATISTICS [statistics_name] ON [schema_name].[table_name]([column_name]);
 ```
 
-Пример:
+Вот несколько примеров:
 
 ```sql
 CREATE STATISTICS col1_stats ON dbo.table1 (col1);
@@ -437,7 +437,7 @@ EXEC [dbo].[prc_sqldw_create_stats] 3, 20;
 UPDATE STATISTICS [schema_name].[table_name]([stat_name]);
 ```
 
-Пример:
+Вот несколько примеров:
 
 ```sql
 UPDATE STATISTICS [dbo].[table1] ([stats_col1]);
@@ -453,7 +453,7 @@ UPDATE STATISTICS [dbo].[table1] ([stats_col1]);
 UPDATE STATISTICS [schema_name].[table_name];
 ```
 
-Пример:
+Вот несколько примеров:
 
 ```sql
 UPDATE STATISTICS dbo.table1;
@@ -556,7 +556,7 @@ DBCC SHOW_STATISTICS() отображает данные, хранящиеся �
 DBCC SHOW_STATISTICS([<schema_name>.<table_name>],<stats_name>)
 ```
 
-Пример:
+Вот несколько примеров:
 
 ```sql
 DBCC SHOW_STATISTICS (dbo.table1, stats_col1);

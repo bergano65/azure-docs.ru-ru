@@ -1,5 +1,5 @@
 ---
-title: Повышение производительности индекса columnstore
+title: Повышение производительности индекса columnstore (Предварительная версия рабочих областей)
 description: Вы можете снизить требования к памяти (или увеличить объем доступной памяти), чтобы достичь максимально возможного числа строк, которые индекс columnstore сжимает в каждой группе строк.
 services: synapse-analytics
 author: kevinvngo
@@ -11,14 +11,14 @@ ms.date: 04/15/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: f1f3667c088c5f7300317ea02ca19a72e4e62905
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c885bce5ca17d5919ec134d179f6009e91a969cc
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81431037"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86495488"
 ---
-# <a name="maximizing-rowgroup-quality-for-columnstore"></a>Максимальное повышение качества группы строк для индекса columnstore
+# <a name="maximizing-rowgroup-quality-for-columnstore-index-performance"></a>Максимизация качества группы строк для производительности индекса columnstore
 
 Качество группы строк определяется количеством строк в группе строк. Увеличение объема доступной памяти может максимально увеличить число строк, сжатых индексом columnstore, в каждый группы строк.  Эти способы можно использовать, чтобы оптимизировать степень сжатия и производительность запросов для индексов columnstore.
 

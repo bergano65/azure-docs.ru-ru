@@ -7,11 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/15/2020
-ms.openlocfilehash: 4e4abdd5d5a9e3cddf00cf47d7388a57d0d4d6fa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5366166a31ee45c74c34b8af0e01da251bd7f7f0
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85807712"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499228"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor: вопросы и ответы
 
@@ -29,7 +30,7 @@ ms.locfileid: "85807712"
 Все автоматически включенные функции Azure Monitor, например сбор метрик и журналов действий, предоставляются бесплатно. Пользователь службы несет расходы, которые связаны с другими функциями, такими как запросы к журналам и оповещения. Подробные сведения о ценах см. на странице [Цены на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).
 
 ### <a name="how-do-i-enable-azure-monitor"></a>Как можно включить Azure Monitor?
-Azure Monitor включается в тот момент, когда вы создаете новую подписку Azure, то есть [журналы действий](platform/activity-logs-overview.md) и [метрики](platform/data-platform-metrics.md) платформы собираются автоматически. Создайте [параметры диагностики](platform/diagnostic-settings.md), чтобы собирать более подробные сведения о ресурсах Azure, а также добавьте [решения для мониторинга](insights/solutions.md) и [службы аналитики](insights/insights-overview.md) для дополнительного анализа собранных данных определенных служб. 
+Azure Monitor включается в тот момент, когда вы создаете новую подписку Azure, то есть [журналы действий](./platform/platform-logs-overview.md) и [метрики](platform/data-platform-metrics.md) платформы собираются автоматически. Создайте [параметры диагностики](platform/diagnostic-settings.md), чтобы собирать более подробные сведения о ресурсах Azure, а также добавьте [решения для мониторинга](insights/solutions.md) и [службы аналитики](insights/insights-overview.md) для дополнительного анализа собранных данных определенных служб. 
 
 ### <a name="how-do-i-access-azure-monitor"></a>Как получить доступ к Azure Monitor?
 Все данные и функции Azure Monitor доступны в меню **Монитор** на портале Azure. Раздел **Мониторинг** в меню для служб Azure предоставляет доступ к этим же средствам, но с фильтрацией данных по соответствующему ресурсу. Данные Azure Monitor также доступны для многих сценариев использования интерфейса командной строки, PowerShell и REST API.
@@ -271,7 +272,7 @@ WireData
 
 Это классическое приложение, которое можно использовать на веб-сервере IIS для настройки Application Insights в веб-приложениях. Оно не собирает телеметрию: его можно остановить, когда вы не настраиваете приложение. 
 
-[Подробнее.](app/monitor-performance-live-website-now.md#questions)
+[Подробнее](app/monitor-performance-live-website-now.md#questions).
 
 ### <a name="what-telemetry-is-collected-by-application-insights"></a>Какую телеметрию собирает Application Insights?
 
@@ -314,7 +315,7 @@ WireData
 
 * Телеметрия браузера: мы собираем сведения об IP-адресе отправителя.
 * Телеметрия сервера: модуль Application Insights собирает сведения об IP-адресе клиента. Эти сведения не собираются, если задан заголовок `X-Forwarded-For`.
-* Дополнительные сведения о том, как в Application Insights собираются IP-адреса и данные о географическом расположении, см. в [этой статье](https://docs.microsoft.com/azure/azure-monitor/app/ip-collection).
+* Дополнительные сведения о том, как в Application Insights собираются IP-адреса и данные о географическом расположении, см. в [этой статье](./app/ip-collection.md).
 
 
 Вы можете настроить `ClientIpHeaderTelemetryInitializer` для получения IP-адреса из другого заголовка. Например, в некоторых системах он переносится прокси-сервером, балансировщиком нагрузки или сетью CDN в `X-Originating-IP`. [Подробнее](https://apmtips.com/posts/2016-07-05-client-ip-address/).
@@ -327,7 +328,7 @@ WireData
 
 ### <a name="what-happens-to-application-insights-telemetry-when-a-server-or-device-loses-connection-with-azure"></a>Что происходит с данными телеметрии Application Insights, когда сервер или другое устройство теряет подключение к Azure?
 
-Все наши пакеты SDK, включая веб-пакет SDK, содержат механизмы класса "надежный транспорт". Когда сервер или устройство теряет подключение к Azure, данные телеметрии [хранятся локально в файловой системе](https://docs.microsoft.com/azure/azure-monitor/app/data-retention-privacy#does-the-sdk-create-temporary-local-storage) (пакеты SDK для сервера) или в хранилище сеансов HTML5 (веб-пакет SDK). Пакет SDK будет периодически повторять попытку отправки данных телеметрии до тех пор, пока служба приема не сочтет их "устаревшими" (48 часов для журналов или 30 минут для метрик). Устаревшие данные телеметрии удаляются. В некоторых случаях, например при заполнении локального хранилища, повторная попытка не выполняется.
+Все наши пакеты SDK, включая веб-пакет SDK, содержат механизмы класса "надежный транспорт". Когда сервер или устройство теряет подключение к Azure, данные телеметрии [хранятся локально в файловой системе](./app/data-retention-privacy.md#does-the-sdk-create-temporary-local-storage) (пакеты SDK для сервера) или в хранилище сеансов HTML5 (веб-пакет SDK). Пакет SDK будет периодически повторять попытку отправки данных телеметрии до тех пор, пока служба приема не сочтет их "устаревшими" (48 часов для журналов или 30 минут для метрик). Устаревшие данные телеметрии удаляются. В некоторых случаях, например при заполнении локального хранилища, повторная попытка не выполняется.
 
 
 ### <a name="could-personal-data-be-sent-in-the-telemetry"></a>Могут ли персональные данные отправляться с данными телеметрии?
@@ -409,7 +410,7 @@ WireData
 
 #### <a name="querying-the-telemetry"></a>Запрос телеметрии
 
-Используйте [REST API](https://dev.applicationinsights.io/) для выполнения запросов [аналитики](app/analytics.md).
+Используйте [REST API](https://dev.applicationinsights.io/) для выполнения запросов [аналитики](./log-query/log-query-overview.md).
 
 ### <a name="how-can-i-set-an-alert-on-an-event"></a>Как можно настроить оповещение о событии?
 
@@ -476,7 +477,7 @@ WireData
 #### <a name="proxy-passthrough"></a>Транзитный прокси-сервер
 
 Транзитный прокси-сервер создается путем настройки прокси-сервера на уровне компьютера или приложения.
-Дополнительные сведения см. в статье о [DefaultProxy](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings) из документации по .NET.
+Дополнительные сведения см. в статье о [DefaultProxy](/dotnet/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings) из документации по .NET.
  
  Пример файла Web.config:
  ```xml
@@ -734,7 +735,7 @@ LogEntry : ({"Hello": "This example has multiple lines:","Docker/Moby": "will no
 ## <a name="next-steps"></a>Дальнейшие действия
 Если вы не нашли ответа на свой вопрос в этой статье, поищите информацию на следующих форумах.
 
-- [Служба Log Analytics](https://docs.microsoft.com/answers/topics/azure-monitor.html)
-- [Application Insights](https://docs.microsoft.com/answers/topics/azure-monitor.html)
+- [Служба Log Analytics](/answers/topics/azure-monitor.html)
+- [Application Insights](/answers/topics/azure-monitor.html)
 
 Поделиться общим впечатлением о службе Azure Monitor можно на [этом форуме](https://feedback.azure.com/forums/34192--general-feedback).

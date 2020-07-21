@@ -1,5 +1,5 @@
 ---
-title: Предстоящие изменения в правилах приема и анализа данных в службе "аналитика временных рядов Azure" | Документация Майкрософт
+title: Предстоящие изменения в правилах приема и анализа данных в службе "аналитика временных рядов Azure" Gen2 | Документация Майкрософт
 description: Изменения правил приема
 ms.service: time-series-insights
 services: time-series-insights
@@ -10,18 +10,18 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 06/16/2020
 ms.custom: lyhughes
-ms.openlocfilehash: 067244aa40256e3cc76239343790974bc3c06481
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: f667ca5ad82182fcf40d5c1fbb325f2ea99a7e08
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85919029"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86495114"
 ---
 # <a name="upcoming-changes-to-the-json-flattening-and-escaping-rules-for-new-environments"></a>Предстоящие изменения в правилах обработки и преобразования JSON для новых сред
 
-Эти изменения будут применены к *новым* средам Azure Time Series Insights с оплатой по мере использования (PAYG). Эти изменения не применяются к стандартным средам SKU (S).
+**Эти изменения будут применены только к *вновь созданным* средам Gen2 "аналитика временных рядов Azure". Эти изменения не применяются к средам Gen1.**
 
-Среда службы "аналитика временных рядов Azure" динамически создает столбцы хранилища, следуя определенному набору соглашений об именовании. При приеме события к полезной нагрузке JSON и именам свойств применяется набор правил. Изменения в способах преобразования и сохранения данных JSON вступят в действие для новых сред Azure Time Series Insights с оплатой по мере использования в июле 2020. Это изменение влияет на работу в следующих случаях:
+Среда Gen2 "аналитика временных рядов Azure" динамически создает столбцы хранилища, следуя определенному набору соглашений об именовании. При приеме события к полезной нагрузке JSON и именам свойств применяется набор правил. Изменения в том, как данные JSON сведены и сохранены, вступают в действие в новых средах Azure Time Series Insights Gen2 в июле 2020. Это изменение влияет на работу в следующих случаях:
 
 * Если полезные данные JSON содержат вложенные объекты
 *  Если полезные данные JSON содержат массивы
@@ -45,15 +45,16 @@ ms.locfileid: "85919029"
 
  #### <a name="if-your-payload-contains-nested-json-or-special-characters-and-you-automate-authoring-time-series-model-variable-expressions"></a>Если полезные данные содержат вложенные знаки JSON или специальные символы и автоматизируют создание выражений переменных [модели временных рядов](.\time-series-insights-update-tsm.md)
 
-*  Обновите код клиента, выполняя [типесбатчпут](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/timeseriestypes/executebatch#typesbatchput) , в соответствии с новыми правилами приема. Например, предыдущее [выражение временного ряда](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax) `"value": {"tsx": "$event.series_value.Double"}` должно быть обновлено до одного из следующих вариантов:
+*  Обновите код клиента, выполняя [типесбатчпут](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch#typesbatchput) , в соответствии с новыми правилами приема. Например, предыдущее [выражение временного ряда](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax) `"value": {"tsx": "$event.series_value.Double"}` должно быть обновлено до одного из следующих вариантов:
     * `"value": {"tsx": "$event.series.value.Double"}`
     * `"value": {"tsx": "$event['series']['value'].Double"}`
 
 
+## <a name="next-steps"></a>Дальнейшие действия
 
-## <a name="next-steps"></a>Дальнейшие шаги
+- Чтение [хранилища Gen2 и входных данных Azure Time Series Insights](./time-series-insights-update-storage-ingress.md).
 
-- Чтение [добавления поддержки для типа данных Long](./time-series-insights-long-data-type.md).
+- Узнайте больше о том, как выполнять запросы к данным с помощью [API запросов временных рядов](./concepts-query-overview.md).
 
-- Чтение [хранилища и входных данных службы "аналитика временных рядов Azure](./time-series-insights-update-storage-ingress.md)".
+- Дополнительные сведения о [новом синтаксисе выражений временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)см. в этой статье.
 

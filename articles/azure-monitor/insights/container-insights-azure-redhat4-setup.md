@@ -3,11 +3,12 @@ title: Настройка Azure Red Hat OpenShift v4. x с Azure Monitor для 
 description: В этой статье описывается настройка мониторинга для кластера Kubernetes с Azure Monitor, размещенной в Azure Red Hat OpenShift версии 4 или более поздней.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 49097d96ecf58d7c5bf7d1a60ff01fc7182587c6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 91b5644c13ac560910703454c4052e223f958014
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85801484"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499177"
 ---
 # <a name="configure-azure-red-hat-openshift-v4x-with-azure-monitor-for-containers"></a>Настройка Azure Red Hat OpenShift v4. x с Azure Monitor для контейнеров
 
@@ -19,7 +20,7 @@ Azure Monitor для контейнеров предоставляет широ�
 
 Вы можете включить Azure Monitor для контейнеров для одного или нескольких существующих развертываний Azure Red Hat OpenShift v4. x, используя Поддерживаемые методы, описанные в этой статье.
 
-Для существующего кластера запустите этот [скрипт Bash в Azure CLI](https://docs.microsoft.com/cli/azure/openshift?view=azure-cli-latest#az-openshift-create).
+Для существующего кластера запустите этот [скрипт Bash в Azure CLI](/cli/azure/openshift?view=azure-cli-latest#az-openshift-create).
 
 ## <a name="supported-and-unsupported-features"></a>Поддерживаемые и неподдерживаемые функции
 
@@ -28,7 +29,7 @@ Azure Monitor для контейнеров поддерживает монит�
 - Данные в режиме реального времени (Предварительная версия)
 - [Сбор метрик](container-insights-update-metrics.md) из узлов кластера и модулей Pod и их сохранение в базе данных метрик Azure Monitor
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Azure CLI версии 2.0.72 или более поздней.  
 
@@ -120,7 +121,7 @@ Azure Monitor для контейнеров поддерживает монит�
     export kubeContext="<kubeContext name of your ARO v4 cluster>"  
     ```
 
-    Пример.
+    Пример
 
     `bash enable-monitoring.sh --resource-id $azureAroV4ClusterResourceId --kube-context $kubeContext --workspace-id $logAnalyticsWorkspaceResourceId`
 
@@ -141,7 +142,7 @@ export azureAroV4ClusterResourceId=“/subscriptions/<subscriptionId>/resourceGr
 export kubeContext="<kubeContext name of your ARO v4 cluster>"
 ```
 
-Пример:
+Вот несколько примеров:
 
 `bash enable-monitoring.sh --resource-id $azureAroV4ClusterResourceId --kube-context $kubeContext`
 
@@ -163,7 +164,7 @@ export kubeContext="<kubeContext name of your ARO v4 cluster>"
 
     Результаты в списке можно найти, выполнив поиск значения **АТО** в столбце **тип кластера** . После выбора **включить**вы будете перенаправлены к этой статье.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Теперь, когда вы включили функцию мониторинга для получения сведений о работоспособности и использовании ресурсов в кластере RedHat OpenShift версии 4. x и рабочих нагрузках, которые выполняются на них, Узнайте, [как использовать](container-insights-analyze.md) Azure Monitor для контейнеров.
 
@@ -171,4 +172,4 @@ export kubeContext="<kubeContext name of your ARO v4 cluster>"
 
 - Чтобы отбракировать и проанализировать метрики Prometheus из кластера, см. раздел [Настройка брака Prometheus метрик](container-insights-prometheus-integration.md).
 
-- Сведения о том, как отключить мониторинг кластера с помощью Azure Monitor для контейнеров, см. в статье [как отключить мониторинг кластера Azure Red Hat OpenShift](container-insights-optout-openshift.md).
+- Сведения о том, как отключить мониторинг кластера с помощью Azure Monitor для контейнеров, см. в статье [как отключить мониторинг кластера Azure Red Hat OpenShift](./container-insights-optout-openshift-v3.md).

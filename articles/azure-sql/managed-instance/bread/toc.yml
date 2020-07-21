@@ -9,3 +9,14 @@
         - name: Машинное обучение
           tocHref: /sql/machine-learning/
           topicHref: /azure/azure-sql/managed-instance/machine-learning-services-overview
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+    - name: Управляемый экземпляр SQL
+      tocHref: /azure/azure-sql-edge/
+      topicHref: /azure/azure-sql/managed-instance
+      items:
+        - name: Машинное обучение
+          tocHref: /azure/azure-sql-edge/
+          topicHref: /azure/azure-sql/managed-instance/machine-learning-services-overview

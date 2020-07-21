@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: c74d4f0b2e0b2d8ca09c9b2c1f1091594f5657dc
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 2faf33fdd58090a335804f084ef2d1f180a9754a
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86111020"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499330"
 ---
 # <a name="application-insights-agent-formerly-named-status-monitor-v2-detailed-instructions"></a>Агент Application Insights (прежнее название — монитор состояния v2): подробные инструкции
 
@@ -29,9 +29,7 @@ ms.locfileid: "86111020"
 Для внесения изменений на компьютер PowerShell требуются разрешения уровня администратора.
 ### <a name="execution-policy"></a>Политика выполнения
 - Описание: по умолчанию запуск сценариев PowerShell отключен. Рекомендуется разрешить скрипты RemoteSigned только для текущей области.
-- Справочник: [Общие сведения о политиках выполнения](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6) и [Set-ExecutionPolicy](
-https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6
-).
+- Справочник: [Общие сведения о политиках выполнения](/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6) и [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6).
 - Команда: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process` .
 - Необязательный параметр:
     - `-Force`. Обход запроса подтверждения.
@@ -80,7 +78,7 @@ SerializationVersion           1.1.0.1
 1. Запустите PowerShell от имени администратора с политикой выполнения с повышенными правами.
 2. Установите поставщик пакетов NuGet.
     - Описание. Этот поставщик необходим для взаимодействия с репозиториями на основе NuGet, например коллекция PowerShell.
-    - Ссылка: [Install-PackageProvider](https://docs.microsoft.com/powershell/module/packagemanagement/install-packageprovider?view=powershell-6).
+    - Ссылка: [Install-PackageProvider](/powershell/module/packagemanagement/install-packageprovider?view=powershell-6).
     - Команда: `Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201` .
     - Дополнительные параметры:
         - `-Proxy`. Указывает прокси-сервер для запроса.
@@ -100,7 +98,7 @@ SerializationVersion           1.1.0.1
 
 3. Настройте коллекция PowerShell как доверенный репозиторий.
     - Описание: по умолчанию коллекция PowerShell является недоверенным репозиторием.
-    - Ссылка: [Set-PSRepository](https://docs.microsoft.com/powershell/module/powershellget/set-psrepository?view=powershell-6).
+    - Ссылка: [Set-PSRepository](/powershell/module/powershellget/set-psrepository?view=powershell-6).
     - Команда: `Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted` .
     - Необязательный параметр:
         - `-Proxy`. Указывает прокси-сервер для запроса.
@@ -146,7 +144,7 @@ SerializationVersion           1.1.0.1
 1. Убедитесь, что выполнены все необходимые условия для коллекция PowerShell.
 2. Запустите PowerShell от имени администратора с политикой выполнения с повышенными правами.
 3. Установите модуль AZ. Аппликатионмонитор.
-    - Ссылка: [Install-Module](https://docs.microsoft.com/powershell/module/powershellget/install-module?view=powershell-6).
+    - Ссылка: [Install-Module](/powershell/module/powershellget/install-module?view=powershell-6).
     - Команда: `Install-Module -Name Az.ApplicationMonitor` .
     - Дополнительные параметры:
         - `-Proxy`. Указывает прокси-сервер для запроса.
@@ -160,7 +158,7 @@ SerializationVersion           1.1.0.1
 
 ### <a name="manually-download-the-latest-nupkg-file"></a>Скачайте последнюю версию файла nupkg вручную
 
-1. Перейдите к https://www.powershellgallery.com/packages/Az.ApplicationMonitor.
+1. Перейдите по адресу https://www.powershellgallery.com/packages/Az.ApplicationMonitor.
 2. Выберите последнюю версию файла в таблице **журнала версий** .
 3. В разделе **Параметры установки**выберите **Загрузка вручную**.
 
@@ -172,7 +170,7 @@ SerializationVersion           1.1.0.1
 #### <a name="unzip-nupkg-as-a-zip-file-by-using-expand-archive-v1010"></a>Распакуйте nupkg как ZIP-файл с помощью команды "развернуть — Архив" (v 1.0.1.0)
 
 - Описание: Базовая версия Microsoft. PowerShell. Archive (v 1.0.1.0) не может распаковать файлы nupkg. Переименуйте файл с расширением ZIP.
-- Ссылка: [разверните-Archive](https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6).
+- Ссылка: [разверните-Archive](/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6).
 - Команда:
 
     ```console
@@ -186,7 +184,7 @@ SerializationVersion           1.1.0.1
 #### <a name="unzip-nupkg-by-using-expand-archive-v1100"></a>Распакуйте nupkg с помощью расширения-архива (v 1.1.0.0)
 
 - Описание: Используйте текущую версию расширения-архива для распаковки файлов nupkg без изменения расширения.
-- Ссылка: [разверните узел Archive](https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6) и [Microsoft. PowerShell. Archive](https://www.powershellgallery.com/packages/Microsoft.PowerShell.Archive/1.1.0.0).
+- Ссылка: [разверните узел Archive](/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6) и [Microsoft. PowerShell. Archive](https://www.powershellgallery.com/packages/Microsoft.PowerShell.Archive/1.1.0.0).
 - Команда:
 
     ```console
@@ -199,7 +197,7 @@ SerializationVersion           1.1.0.1
 Установите модуль PowerShell, загруженный вручную, в каталог PowerShell, чтобы он был обнаружен сеансами PowerShell.
 Дополнительные сведения см. [в разделе Установка модуля PowerShell](/powershell/scripting/developer/module/installing-a-powershell-module).
 
-Если вы устанавливаете модуль в любой другой каталог, вручную Импортируйте модуль с помощью [Import-Module](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-6).
+Если вы устанавливаете модуль в любой другой каталог, вручную Импортируйте модуль с помощью [Import-Module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-6).
 
 > [!IMPORTANT] 
 > Библиотеки DLL будут устанавливаться через относительные пути.
@@ -218,14 +216,14 @@ SerializationVersion           1.1.0.1
 Команды PowerShell для загрузки и установки AZ. Аппликатионмонитор из коллекция PowerShell поддерживают `-Proxy` параметр.
 При написании сценариев установки ознакомьтесь с приведенными выше инструкциями.
 
-Пакету SDK для Application Insights потребуется отправить данные телеметрии приложения в корпорацию Майкрософт. Рекомендуется настроить параметры прокси-сервера для приложения в файле web.config. Дополнительные сведения см. в разделе [Application Insights FAQ: passthrough прокси](https://docs.microsoft.com/azure/azure-monitor/app/troubleshoot-faq#proxy-passthrough).
+Пакету SDK для Application Insights потребуется отправить данные телеметрии приложения в корпорацию Майкрософт. Рекомендуется настроить параметры прокси-сервера для приложения в файле web.config. Дополнительные сведения см. в разделе [Application Insights FAQ: passthrough прокси](../faq.md#proxy-passthrough).
 
 
 ## <a name="enable-monitoring"></a>Включение мониторинга
 
 Используйте `Enable-ApplicationInsightsMonitoring` команду, чтобы включить мониторинг.
 
-Подробное описание использования этого командлета см. в [справочнике по API](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#enable-applicationinsightsmonitoring) .
+Подробное описание использования этого командлета см. в [справочнике по API](./status-monitor-v2-api-reference.md#enable-applicationinsightsmonitoring) .
 
 
 
@@ -235,7 +233,7 @@ SerializationVersion           1.1.0.1
 
 - [Изучите метрики](../../azure-monitor/platform/metrics-charts.md) для мониторинга производительности и использования.
 - [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем.
-- [Используйте аналитику](../../azure-monitor/app/analytics.md) для более сложных запросов.
+- [Используйте аналитику](../log-query/log-query-overview.md) для более сложных запросов.
 - [Создание панелей мониторинга](../../azure-monitor/app/overview-dashboard.md).
 
  Добавление данных телеметрии:

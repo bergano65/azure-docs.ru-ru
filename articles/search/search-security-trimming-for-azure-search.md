@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/04/2020
-ms.openlocfilehash: e97f607c17f746c3cb16a17b7f579a58d4914608
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 443112628edddf9c60cd6469f046b1a9e066dc82
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85553139"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86496423"
 ---
 # <a name="security-filters-for-trimming-results-in-azure-cognitive-search"></a>Фильтры безопасности для усечения результатов в Azure Когнитивный поиск
 
@@ -32,28 +32,31 @@ ms.locfileid: "85553139"
 >[!NOTE]
 > В этом документе не рассматривается процесс получения идентификаторов субъектов. Его следует узнать у поставщика службы идентификации.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-В этой статье предполагается, что у вас есть [Подписка Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F), [Служба когнитивный Поиск azure](https://docs.microsoft.com/azure/search/search-create-service-portal)и [индекс когнитивный Поиск Azure](https://docs.microsoft.com/azure/search/search-create-index-portal).  
+В этой статье предполагается, что у вас есть [Подписка Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F),[Служба когнитивный Поиск Azure](search-create-service-portal.md)и [индекс](search-what-is-an-index.md).  
 
 ## <a name="create-security-field"></a>Создание поля безопасности
 
 Документы должны включать поле со списком групп, у которых есть доступ. Эта информация выступает условием фильтрации, по которому документы выбираются или отклоняются из результирующего набора, возвращаемого инициатору запроса.
 Предположим, что у нас есть индекс защищенных файлов, и каждый файл доступен разным наборам пользователей.
+
 1. Добавьте поле `group_ids` (здесь можно выбрать любое имя) в качестве `Collection(Edm.String)`. Задайте для атрибута `filterable` этого поля значение `true`. В таком случае результаты поиска фильтруются на основе прав доступа пользователя. Например, если в поле `group_ids` задать значение `["group_id1, group_id2"]` для документа со свойством `file_name` "secured_file_b", разрешение на чтение файла имеют только пользователи, принадлежащие к группам "group_id1" или "group_id2".
+   
    Убедитесь, что для атрибута поля `retrievable` задано значение `false`, чтобы пользователи не могли извлечь файлы в рамках поискового запроса.
+
 2. Кроме того, добавьте поля `file_id` и `file_name` для данного примера.  
 
-```JSON
-{
-    "name": "securedfiles",  
-    "fields": [
-        {"name": "file_id", "type": "Edm.String", "key": true, "searchable": false, "sortable": false, "facetable": false},
-        {"name": "file_name", "type": "Edm.String"},
-        {"name": "group_ids", "type": "Collection(Edm.String)", "filterable": true, "retrievable": false}
-    ]
-}
-```
+    ```JSON
+    {
+        "name": "securedfiles",  
+        "fields": [
+            {"name": "file_id", "type": "Edm.String", "key": true, "searchable": false, "sortable": false, "facetable": false},
+            {"name": "file_name", "type": "Edm.String"},
+            {"name": "group_ids", "type": "Collection(Edm.String)", "filterable": true, "retrievable": false}
+        ]
+    }
+    ```
 
 ## <a name="pushing-data-into-your-index-using-the-rest-api"></a>Принудительная отправка данных в индекс с использованием REST API
   
@@ -153,7 +156,7 @@ api-key: [admin or query key]
 
 Вот как можно фильтровать результаты на основе удостоверения пользователя и функции Когнитивный поиск Azure `search.in()` . Эту функцию можно использовать для передачи идентификаторов принципов запрашивающего пользователя для сопоставления с идентификаторами участников, связанными с каждым целевым документом. Во время обработки поискового запроса функция `search.in` отфильтровывает результаты поиска, отклоняя файлы, для которых ни один из субъектов-пользователей не имеет доступа на чтение. Идентификаторы субъектов могут представлять группы безопасности, роли или даже удостоверение пользователя.
  
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Active Directory управления доступом на основе удостоверений с помощью фильтров Когнитивный поиск Azure](search-security-trimming-for-azure-search-with-aad.md)
 + [Фильтры в Когнитивный поиск Azure](search-filters.md)

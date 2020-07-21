@@ -1,5 +1,5 @@
 ---
-title: Часто задаваемые вопросы
+title: Вопросы и ответы
 titleSuffix: Azure SQL Managed Instance
 description: SQL Azure Управляемый экземпляр часто задаваемые вопросы
 services: sql-database
@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab
 ms.date: 03/17/2020
-ms.openlocfilehash: b5fad1e287ffca569546092893c4f1a6501a3b7b
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 6713a1fbbbbca0aa212461cc966b42aaf2daa47e
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86224423"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86498463"
 ---
 # <a name="azure-sql-managed-instance-frequently-asked-questions-faq"></a>SQL Azure Управляемый экземпляр часто задаваемые вопросы
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -66,11 +66,11 @@ ms.locfileid: "86224423"
 **Где я могу выполнить миграцию, если у меня есть определенные требования к оборудованию, например объем ОЗУ для Виртуальное ядро или больше процессоров?**
 Вы можете рассмотреть переход на [SQL Server на виртуальных машинах Azure или в](../virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md) оптимизированной памяти или ЦП [базы данных SQL Azure](../database/sql-database-paas-overview.md) .
 
-## <a name="known-issues--bugs"></a>Известные проблемы & ошибках
+## <a name="known-issues-and-defects"></a>Известные проблемы и дефекты
 
-**Где можно найти известные проблемы и ошибки?**
+**Где можно найти известные проблемы и дефекты?**
 
-Сведения об ошибках и известных проблемах см. в разделе [Известные проблемы](../database/doc-changes-updates-release-notes.md#known-issues).
+Сведения о дефектах продукта и известных проблемах см. в статье [Известные проблемы](../database/doc-changes-updates-release-notes.md#known-issues).
 
 ## <a name="new-features"></a>новые функции;
 
@@ -127,7 +127,7 @@ ms.locfileid: "86224423"
 **Как выполнить миграцию из одного или эластичного пула базы данных SQL Azure в Управляемый экземпляр SQL?**
 
 Управляемый экземпляр предлагает те же уровни производительности для вычислений и размера хранилища, что и другие варианты развертывания базы данных SQL Azure. Если необходимо консолидировать данные в одном экземпляре или требуется только функция, поддерживаемая исключительно в управляемом экземпляре, можно перенести данные с помощью функции экспорта и импорта (BACPAC). Ниже приведены другие способы, которые следует учитывать при переносе базы данных SQL в SQL Управляемый экземпляр. 
-- Использование [внешнего источника данных]()
+- Использование [внешнего источника данных](https://techcommunity.microsoft.com/t5/azure-database-support-blog/lesson-learned-129-using-data-source-external-from-azure-sql/ba-p/1443210)
 - Использование [SqlPackage](https://techcommunity.microsoft.com/t5/azure-database-support-blog/how-to-migrate-azure-sql-database-to-azure-sql-managed-instance/ba-p/369182)
 - Использование программы [bcp](https://medium.com/azure-sqldb-managed-instance/migrate-from-azure-sql-managed-instance-using-bcp-674c92efdca7)
 
@@ -296,7 +296,7 @@ SQL Управляемый экземпляр отвечает за настро
 
 Нет. Сейчас мы не поддерживаем размещение Управляемый экземпляр в подсети, которая уже содержит другие типы ресурсов.
 
-## <a name="connectivity"></a>Соединение 
+## <a name="connectivity"></a>Подключение 
 
 **Можно ли подключиться к управляемому экземпляру по IP-адресу?**
 
@@ -348,21 +348,6 @@ SQL Управляемый экземпляр отвечает за настро
 - Настройка доступа к JIT-Jumpbox для учетной записи sysadmin.
 - Включите [аудит SQL](https://docs.microsoft.com/sql/relational-databases/security/auditing/sql-server-audit-database-engine)и интегрируйте его с механизмами предупреждений.
 - Включите [обнаружение угроз](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection) в пакете [расширенной защиты данных (ADS)](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security) .
-
-
-## <a name="cost-saving-use-cases"></a>Варианты использования для экономии затрат
-
-**Где можно найти варианты использования и сократить расходы с помощью SQL Управляемый экземпляр?**
-
-Примеры использования SQL Управляемый экземпляр:
-
-- [коматсу](https://customers.microsoft.com/story/komatsu-australia-manufacturing-azure)
-- [кмд](https://customers.microsoft.com/en-ca/story/kmd-professional-services-azure-sql-database)
-- [повердетаилс](https://customers.microsoft.com/story/powerdetails-partner-professional-services-azure-sql-database-managed-instance)
-- [аллскриптс](https://customers.microsoft.com/story/allscripts-partner-professional-services-azure)
-
-Чтобы получить более полное представление о преимуществах, затратах и рисках, связанных с развертыванием Управляемый экземпляр Azure SQL, также Forrester исследование: [Общее экономическое воздействие База данных SQL Microsoft Azure управляемый экземпляр](https://azure.microsoft.com/resources/forrester-tei-sql-database-managed-instance).
-
 
 ## <a name="dns"></a>DNS
 
@@ -468,6 +453,19 @@ SQL Управляемый экземпляр предлагает [модель
 
 Сведения об оптимизации затрат на хранение резервных копий см. в разделе [Точная настройка резервного копирования в управляемый экземпляр SQL](https://techcommunity.microsoft.com/t5/azure-sql-database/fine-tuning-backup-storage-costs-on-managed-instance/ba-p/1390935).
 
+## <a name="cost-saving-use-cases"></a>Варианты использования для экономии затрат
+
+**Где можно найти варианты использования и сократить расходы с помощью SQL Управляемый экземпляр?**
+
+Примеры использования SQL Управляемый экземпляр:
+
+- [коматсу](https://customers.microsoft.com/story/komatsu-australia-manufacturing-azure)
+- [кмд](https://customers.microsoft.com/en-ca/story/kmd-professional-services-azure-sql-database)
+- [повердетаилс](https://customers.microsoft.com/story/powerdetails-partner-professional-services-azure-sql-database-managed-instance)
+- [аллскриптс](https://customers.microsoft.com/story/allscripts-partner-professional-services-azure)
+
+Чтобы получить более полное представление о преимуществах, затратах и рисках, связанных с развертыванием Управляемый экземпляр Azure SQL, также Forrester исследование: [Общее экономическое воздействие База данных SQL Microsoft Azure управляемый экземпляр](https://azure.microsoft.com/resources/forrester-tei-sql-database-managed-instance).
+
 ## <a name="password-policy"></a>Политика паролей 
 
 **Какие политики паролей применяются для имен входа SQL Управляемый экземпляр SQL?**
@@ -486,7 +484,7 @@ SQL Управляемый экземпляр предлагает [модель
 | Максимальный срок действия пароля. | 42 дней |
 | Минимальный срок действия пароля. | 1 день |
 | Минимальная длина пароля | 10 символов |
-| Пароль должен соответствовать требованиям к сложности | Включено |
+| Пароль должен соответствовать требованиям к сложности | Активировано |
 
 **Можно ли отключить сложность и срок действия пароля в SQL Управляемый экземпляр на уровне входа?**
 

@@ -3,11 +3,12 @@ title: Мониторинг использования и производите
 description: Анализ использования и производительности классического приложения для Windows с помощью Application Insights.
 ms.topic: conceptual
 ms.date: 06/11/2020
-ms.openlocfilehash: 1b8909c47594ebd752035ca88b23d4b836345f88
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ddb602536e1b8bbc987c4ba366e2007163c814ec
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84718790"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499194"
 ---
 # <a name="monitoring-usage-and-performance-in-classic-windows-desktop-apps"></a>Мониторинг использования и производительности в классических приложениях для Windows
 
@@ -72,9 +73,9 @@ using Microsoft.ApplicationInsights;
 
 По умолчанию этот пакет SDK будет выполнять сбор и хранение имени компьютера, порожденного системой телеметрии.
 
-Имя компьютера используется Application Insights ценовой категории ["устаревший корпоративный" (на узел)](https://docs.microsoft.com/azure/azure-monitor/app/pricing#legacy-enterprise-per-node-pricing-tier) для внутренних целей выставления счетов. По умолчанию, если для переопределения используется инициализатор телеметрии `telemetry.Context.Cloud.RoleInstance` , будет отправлено отдельное свойство, `ai.internal.nodeName` которое по-прежнему будет содержать значение имени компьютера. Это значение не будет храниться в Application Insights телеметрии, но используется для внутренних целей при приеме, чтобы обеспечить обратную совместимость с устаревшей моделью выставления счетов на основе узлов.
+Имя компьютера используется Application Insights ценовой категории ["устаревший корпоративный" (на узел)](./pricing.md#legacy-enterprise-per-node-pricing-tier) для внутренних целей выставления счетов. По умолчанию, если для переопределения используется инициализатор телеметрии `telemetry.Context.Cloud.RoleInstance` , будет отправлено отдельное свойство, `ai.internal.nodeName` которое по-прежнему будет содержать значение имени компьютера. Это значение не будет храниться в Application Insights телеметрии, но используется для внутренних целей при приеме, чтобы обеспечить обратную совместимость с устаревшей моделью выставления счетов на основе узлов.
 
-Если вы используете [ценовую категорию устаревшего предприятия (на узел)](https://docs.microsoft.com/azure/azure-monitor/app/pricing#legacy-enterprise-per-node-pricing-tier) и просто переопределите хранилище имени компьютера, используйте инициализатор телеметрии:
+Если вы используете [ценовую категорию устаревшего предприятия (на узел)](./pricing.md#legacy-enterprise-per-node-pricing-tier) и просто переопределите хранилище имени компьютера, используйте инициализатор телеметрии:
 
 **Напишите пользовательский TelemetryInitializer, как показано ниже.**
 
@@ -115,7 +116,7 @@ namespace CustomInitializer.Telemetry
 
 ## <a name="override-transmission-of-computer-name"></a>Переопределить передачу имени компьютера
 
-Если вы не используете [ценовую категорию "устаревший корпоративный" (на уровне узла)](https://docs.microsoft.com/azure/azure-monitor/app/pricing#legacy-enterprise-per-node-pricing-tier) и хотите полностью предотвратить отправку данных телеметрии, содержащих имя компьютера, необходимо использовать обработчик данных телеметрии.
+Если вы не используете [ценовую категорию "устаревший корпоративный" (на уровне узла)](./pricing.md#legacy-enterprise-per-node-pricing-tier) и хотите полностью предотвратить отправку данных телеметрии, содержащих имя компьютера, необходимо использовать обработчик данных телеметрии.
 
 ### <a name="telemetry-processor"></a>Обработчик данных телеметрии
 
@@ -171,11 +172,10 @@ namespace WindowsFormsApp2
 ```
 
 > [!NOTE]
-> Хотя вы можете использовать обработчик данных телеметрии, как описано выше, даже если вы используете [ценовую категорию устаревшего предприятия (на узел)](https://docs.microsoft.com/azure/azure-monitor/app/pricing#legacy-enterprise-per-node-pricing-tier), это приведет к потенциальной оплате из-за невозможности правильного различения узлов для каждого узла.
+> Хотя вы можете использовать обработчик данных телеметрии, как описано выше, даже если вы используете [ценовую категорию устаревшего предприятия (на узел)](./pricing.md#legacy-enterprise-per-node-pricing-tier), это приведет к потенциальной оплате из-за невозможности правильного различения узлов для каждого узла.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Создание панели мониторинга](../../azure-monitor/app/overview-dashboard.md)
 * [Поиск по журналу диагностики](../../azure-monitor/app/diagnostic-search.md)
 * [Изучение метрик](../../azure-monitor/platform/metrics-charts.md)
-* [Написание запросов аналитики](../../azure-monitor/app/analytics.md)
-
+* [Написание запросов аналитики](../log-query/log-query-overview.md)

@@ -5,14 +5,14 @@ author: roygara
 ms.service: storage
 ms.subservice: files
 ms.topic: how-to
-ms.date: 06/22/2020
+ms.date: 07/12/2020
 ms.author: rogarana
-ms.openlocfilehash: 7999f042b8a67bed8ef01cccec5890b1a2d58ebb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0f2f0def9a23437dff57dda2d1a57950cef86275
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85510226"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86496134"
 ---
 # <a name="overview---on-premises-active-directory-domain-services-authentication-over-smb-for-azure-file-shares"></a>Обзор: локальная проверка подлинности домен Active Directory служб по протоколу SMB для файловых ресурсов Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "85510226"
 > - [Замена локальных файловых серверов файлами Azure (включая установку на частном канале для файлов и аутентификации Active Directory)](https://sec.ch9.ms/ch9/3358/0addac01-3606-4e30-ad7b-f195f3ab3358/ITOpsTalkAzureFiles_high.mp4)
 > - [Использование файлов Azure в качестве контейнера профилей для виртуальных рабочих столов Windows (включая установку на основе проверки подлинности AD и конфигурации Фслогикс)](https://www.youtube.com/embed/9S5A1IJqfOQ)
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Перед включением проверки подлинности AD DS для файловых ресурсов Azure убедитесь, что выполнены следующие предварительные требования: 
 
@@ -57,7 +57,7 @@ ms.locfileid: "85510226"
 
 ## <a name="regional-availability"></a>Доступность по регионам
 
-Проверка подлинности файлов Azure с помощью AD DS доступна во [всех общедоступных регионах Azure](https://azure.microsoft.com/global-infrastructure/locations/).
+Проверка подлинности файлов Azure с помощью AD DS доступна во [всех общедоступных и gov регионах Azure](https://azure.microsoft.com/global-infrastructure/locations/).
 
 ## <a name="overview"></a>Обзор
 
@@ -83,7 +83,7 @@ ms.locfileid: "85510226"
 
 Удостоверения, используемые для доступа к файловым ресурсам Azure, должны быть синхронизированы с Azure AD для применения разрешений файла общего уровня через модель [управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md) . [Списки DACL в стиле Windows](https://docs.microsoft.com/previous-versions/technet-magazine/cc161041(v=msdn.10)?redirectedfrom=MSDN) для файлов и каталогов, перенесенных из существующих файловых серверов, будут сохранены и применены. Это обеспечивает беспроблемную интеграцию с корпоративной AD DSной средой. При замене локальных файловых серверов на файловые ресурсы Azure существующие пользователи могут получить доступ к общим файловым ресурсам Azure с их текущих клиентов с помощью единого входа, не внося изменения в используемые учетные данные.  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы включить локальную проверку подлинности AD DS для файлового ресурса Azure, перейдите к следующей статье:
 

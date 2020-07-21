@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 05/06/2019
 ms.author: sngun
-ms.openlocfilehash: e7e1480d00280fc567a69556f25db8ffab800f70
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 31c3c02f2b32594e5b20450d0bb519f4cdf82807
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85262639"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86497766"
 ---
 # <a name="how-to-use-azure-kubernetes-with-azure-cosmos-db-preview"></a>Использование Azure Kubernetes с Azure Cosmos DB (предварительная версия)
 
@@ -25,7 +25,7 @@ API etcd в Azure Cosmos DB позволяет использовать Azure Co
 
 Дополнительные сведения об API etcd в Azure Cosmos DB см. в [этой обзорной статье](etcd-api-introduction.md). В этой статье содержатся сведения об использовании [Azure Kubernetes Engine](https://github.com/Azure/aks-engine/blob/master/docs/tutorials/quickstart.md) (aks-engine) для начальной загрузки кластера Kubernetes в Azure, который использует [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/) вместо локально установленного и настроенного хранилища etcd. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Установите [последнюю версию](/cli/azure/install-azure-cli?view=azure-cli-latest) Azure CLI. Вы можете скачать и установить Azure CLI, соответствующий вашей операционной системе.
 
@@ -33,7 +33,7 @@ API etcd в Azure Cosmos DB позволяет использовать Azure Co
 
    Модуль Azure Kubernetes (**aks-engine**) создает шаблоны Azure Resource Manager для кластеров Kubernetes в Azure. Входными данными для aks-engine является файл определения кластера, который содержит описание желаемого кластера, включая оркестратор, функции и агенты. Структура входных файлов аналогична общедоступному API для Azure Kubernetes Service.
 
-1. API etcd в Azure Cosmos DB в настоящее время находится в режиме предварительной версии. Зарегистрируйтесь,перейдя по адресу https://aka.ms/cosmosetcdapi-signup, чтобы использовать предварительную версию. После отправки формы ваша подписка будет добавлена в белый список для использования API etcd Azure Cosmos. 
+1. API etcd в Azure Cosmos DB в настоящее время находится в режиме предварительной версии. Зарегистрируйтесь,перейдя по адресу https://aka.ms/cosmosetcdapi-signup, чтобы использовать предварительную версию. После отправки формы вашей подписке будет разрешено использовать API Azure Cosmos etcd. 
 
 ## <a name="deploy-the-cluster-with-azure-cosmos-db"></a>Развертывание кластера с помощью Azure Cosmos DB
 
@@ -43,7 +43,7 @@ API etcd в Azure Cosmos DB позволяет использовать Azure Co
    az login 
    ```
 
-1. При наличии нескольких подписок переключитесь на подписку, внесенную в белый список API etcd Azure Cosmos DB. Вы можете переключиться на нужную подписку с помощью следующей команды:
+1. Если у вас несколько подписок, переключитесь на подписку, которая была разрешена для Azure Cosmos DB API etcd. Вы можете переключиться на нужную подписку с помощью следующей команды:
 
    ```azurecli-interactive
    az account set --subscription "<Name of your subscription>"
@@ -179,7 +179,7 @@ INFO[0587] Finished ARM Deployment (aks-sg-test-546247491). Succeeded
 
 Имя учетной записи Azure Cosmos будет соответствовать указанному префиксу DNS с добавлением k8s. Вашей учетной записи Azure Cosmos будет автоматически предоставлена база данных **EtcdDB** и контейнер **EtcdData**. В контейнере будут храниться все данные, связанные с etcd. Контейнеру предоставляется определенное количество единиц запроса, и вы сможете [масштабировать (увеличивать/уменьшать) пропускную способность](scaling-throughput.md) на основе рабочей нагрузки. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со сведениями о [работе с базами данных, контейнерами и элементами Azure Cosmos](databases-containers-items.md).
 * Ознакомьтесь со сведениями об [оптимизации затрат на подготовленную пропускную способность](optimize-cost-throughput.md).

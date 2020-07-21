@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: abshamsft
 ms.author: absha
 ms.date: 02/20/2018
-ms.openlocfilehash: 93f3820b7cf1db85b9ff4cd514fe22efc75a90d9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0ba93db3e692a34de42849b469978cea4459c6fc
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84690020"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86498871"
 ---
 # <a name="service-connectivity-monitor"></a>Монитор подключений службы
 
@@ -56,7 +57,7 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 
     * Выберите **Веб**, чтобы отслеживать подключение к службе, которая отвечает на запросы HTTP(S), например outlook.office365.com или bing.com.<br>
     * Выберите **Сеть**, чтобы отслеживать подключение к службе, которая отвечает на запрос TCP, но не отвечает на запросы HTTP(S), например SQL Server, FTP-сервер или SSH-порт. 
-    * Например, чтобы создать веб-тест для учетной записи хранения BLOB-объектов, выберите **Web** и введите Target в качестве *йоурсторажеаккаунт*. BLOB.Core.Windows.NET. Аналогичным образом можно создавать тесты для хранилища таблиц, очередей и файлов Azure с помощью [этой ссылки.](https://docs.microsoft.com/azure/storage/common/storage-account-overview#storage-account-endpoints)
+    * Например, чтобы создать веб-тест для учетной записи хранения BLOB-объектов, выберите **Web** и введите Target в качестве *йоурсторажеаккаунт*. BLOB.Core.Windows.NET. Аналогичным образом можно создавать тесты для хранилища таблиц, очередей и файлов Azure с помощью [этой ссылки.](../../storage/common/storage-account-overview.md#storage-account-endpoints)
 4. Если вы не хотите выполнять такие измерения сети, как задержки сети, потери пакетов, а также обнаружение топологии, снимите флажок **Проведите измерения сети**. Оставьте этот флажок установленным, чтобы получить максимальные преимущества от возможности. 
 5. В поле **Цель** введите URL-адрес, полное доменное имя или IP-адрес, сетевое подключение к которому необходимо отслеживать.
 6. В поле **Номер порта** введите номер порта целевой службы. 
@@ -131,5 +132,5 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 | Exchange Online | * outlook.office365.us <br> * attachments.office365-net.us <br> * autodiscover-s.office365.us <br> * manage.office365.us <br> * scc.office365.us |
 | MS Teams | gov.teams.microsoft.us | 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Выполните поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные записи данных о производительности сети.

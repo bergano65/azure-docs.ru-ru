@@ -7,11 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: allensu
-ms.openlocfilehash: f4e5bbdc50d99eca774dc5b96657ac8bfdebca17
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c739c6483832c08a91f2a5318853bf48e5d41854
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85414153"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86496967"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
 
@@ -68,7 +69,7 @@ ms.locfileid: "85414153"
 |**Служба Azure Kubernetes — API Kubernetes** | Microsoft.ContainerService/managedClusters    | managedCluster |
 |**Поиск Azure;** | Microsoft.Search/searchService| searchService|  
 |**Реестр контейнеров Azure** | Microsoft.ContainerRegistry/registries    | реестр |
-|**Конфигурация приложений Azure** | Microsoft.Appconfiguration/configurationStores    | configurationStore |
+|**Конфигурация приложений Azure** | Microsoft.Appconfiguration/configurationStores    | configurationStores |
 |**Azure Backup** | Microsoft.RecoveryServices/vaults    | Хранилище |
 |**Концентратор событий Azure** | Microsoft.EventHub/namespaces    | пространство имен |
 |**служебной шине Azure** | Microsoft.ServiceBus/namespaces | пространство имен |

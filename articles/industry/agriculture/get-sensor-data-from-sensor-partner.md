@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 113ab07af8ada16c0779da510c5f5b1f1f5a290b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 707b432a4cb3918aa2dfbe460fc3cdcd53761bf1
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80398236"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86497086"
 ---
 # <a name="get-sensor-data-from-sensor-partners"></a>Получение данных датчика от партнеров датчиков
 
@@ -66,7 +66,13 @@ Azure Фармбеатс помогает перенести потоковые 
     cd  
     ```
 
-6. Выполните следующую команду. Это приведет к скачиванию скрипта в домашний каталог.
+6. Выполните следующую команду. Он подключает учетную запись с проверкой подлинности для использования в запросах Azure AD.
+
+    ```azurepowershell-interactive 
+    Connect-AzureAD
+    ```
+    
+7. Выполните следующую команду. Это приведет к скачиванию скрипта в домашний каталог.
 
     ```azurepowershell-interactive 
 
@@ -74,7 +80,7 @@ Azure Фармбеатс помогает перенести потоковые 
 
     ```
 
-7. Выполните следующий сценарий. Сценарий запрашивает идентификатор клиента, который можно получить на **Azure Active Directory**  >  странице**обзора** Azure Active Directory.
+8. Выполните следующий сценарий. Сценарий запрашивает идентификатор клиента, который можно получить на **Azure Active Directory**  >  странице**обзора** Azure Active Directory.
 
     ```azurepowershell-interactive 
 
@@ -82,7 +88,7 @@ Azure Фармбеатс помогает перенести потоковые 
 
     ```
 
-8. Следуйте инструкциям на экране, чтобы записать значения для **конечных точек API**, **идентификаторов** **клиента, идентификаторов**клиентов, **секретов клиента**и **строки подключения EventHub**.
+9. Следуйте инструкциям на экране, чтобы записать значения для **конечных точек API**, **идентификаторов** **клиента, идентификаторов**клиентов, **секретов клиента**и **строки подключения EventHub**.
 
 ### <a name="integrate-device-data-by-using-the-generated-credentials"></a>Интеграция данных устройства с помощью созданных учетных данных
 

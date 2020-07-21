@@ -12,11 +12,12 @@ ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 07/31/2019
-ms.openlocfilehash: 1d8261d05f59c7f40ba6b1e2d59d2b15ad56de95
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c3163d414e940d843489a34f319996b1b8ed6f4a
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84424588"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86497415"
 ---
 # <a name="execute-ssis-packages-in-azure-from-ssdt"></a>Выполнение пакетов служб SSIS в Azure из SSDT
 
@@ -26,7 +27,7 @@ ms.locfileid: "84424588"
 
 С помощью этой функции можно создать новый Azure-SSIS IR или присоединить существующий объект к проектам служб SSIS, а затем выполнить на нем пакеты.  Мы поддерживаем запуск пакетов для развертывания в каталоге служб SSIS (SSISDB) в модели развертывания проекта, а также для развертывания в файловых системах, файловых ресурсах или файлах Azure в модели развертывания пакетов. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы использовать эту функцию, скачайте и установите последнюю версию SSDT с расширением проектов SSIS для Visual Studio отсюда или как автономный [установщик отсюда.](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects) [here](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017#ssdt-for-vs-2017-standalone-installer)
 
 ## <a name="azure-enable-ssis-projects"></a>Включение проектов служб SSIS в Azure
@@ -81,6 +82,30 @@ ms.locfileid: "84424588"
    ![Выбор службы хранилища Azure](media/how-to-invoke-ssis-package-ssdt/ssis-in-adf-connection-wizard3.png)
 
 4. Нажмите кнопку **подключить** , чтобы завершить подключение.  Выбранные Azure-SSIS IR и учетная запись хранения Azure будут отображаться в узле **связанные ресурсы Azure** на панели Обозреватель решений SSDT.  Мы также обновляем состояние Azure-SSIS IR, а вы можете управлять им, щелкнув его узел правой кнопкой мыши, чтобы открыть меню, а затем выбрав пункт меню **старт\стоп\манаже** , который переводит вас на портал или приложение ADF.
+
+## <a name="assess-ssis-projectpackages-for-executions-in-azure"></a>Оценка прожект\паккажес служб SSIS для выполнения в Azure
+### <a name="assess-ssis-project-or-package"></a>Оценка проекта или пакета служб SSIS
+Перед выполнением пакетов в Azure можно оценить пакет, чтобы определить, есть ли какие-либо потенциальные блокировки миграции или сведения, о которых необходимо знать. 
+-  Можно либо оценить все пакеты в разделе проект, либо один пакет.
+
+   ![Оценка ](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-assess-project.png)
+    ![ пакета оценки проекта](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-assess-package.png)
+
+-  Вы можете получить отчет об оценке, чтобы проверить каждую ошибку оценки, и каждая из них будет иметь подробное описание и рекомендацию. Отчет об оценке также можно экспортировать как CSV-файл. 
+
+   ![Оценка результатов проекта](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-assess-project-result.png)
+
+### <a name="suppress-assessment-rule"></a>Отключить правило оценки
+Если вы уверены, что некоторые правила оценки не применяются к пакету, можно отключить его. 
+-  Можно напрямую щелкнуть ссылку **Настройка подавления правила оценки** в отчете о оценке.
+
+   ![Параметры подавления правил оценки](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-assessment-rule-suppression-settings.png)
+
+-  Можно также настроить с помощью **параметров, поддерживающих Azure**.
+
+   ![Параметры, поддерживающие Azure](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-enabled-azure-enabled-setting.png)
+
+   ![Параметры подавления правил оценки с помощью параметров, поддерживающих Azure](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-assessment-rule-suppression-settings-via-azure-enabled-settings.png)
 
 ## <a name="execute-ssis-packages-in-azure"></a>Выполнение пакетов служб SSIS в Azure
 ### <a name="azure-enabled-setting"></a>Параметр с поддержкой Azure
@@ -160,5 +185,8 @@ ms.locfileid: "84424588"
 
    ![Переключение конфигурации Visual Studio](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-enabled-example-switch-configurations.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="current-limitations"></a>Текущие ограничения
+-  Эта функция SSDT не поддерживает национальные облака прямо сейчас.
+
+## <a name="next-steps"></a>Дальнейшие действия
 Когда вы удовлетворены выполнением пакетов в Azure из SSDT, вы можете развернуть и запустить их как выполнение действий пакета служб SSIS в конвейерах ADF. см. раздел [Запуск пакетов служб SSIS как выполнение действий пакета SSIS в конвейерах ADF](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity).

@@ -12,12 +12,12 @@ manager: shwang
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
 ms.date: 06/10/2020
-ms.openlocfilehash: a7a8af505394b5bf860778b9872434cdacf54210
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 54aac9fda42a867ab66d631279efbca4f812b01a
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84887008"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86497627"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-service-or-dynamics-crm-by-using-azure-data-factory"></a>Копирование данных из Dynamics 365 (Common Data Service) или Dynamics CRM и в эти решения с помощью фабрики данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -61,7 +61,7 @@ ms.locfileid: "84887008"
 >[!TIP]
 >Чтобы скопировать данные из Dynamics 365 Финансы и операции, можно использовать [соединитель Dynamics AX](connector-dynamics-ax.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать этот соединитель с проверкой подлинности субъекта-службы Azure AD, необходимо настроить проверку подлинности "сервер-сервер" (S2S) в Common Data Service или Dynamics. Подробные инструкции см. в [этой статье](https://docs.microsoft.com/powerapps/developer/common-data-service/build-web-applications-server-server-s2s-authentication) .
 
@@ -77,11 +77,11 @@ ms.locfileid: "84887008"
 
 ### <a name="dynamics-365-and-dynamics-crm-online"></a>Dynamics 365 и Dynamics CRM Online
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type должно иметь значение "Dynamics", "Динамикскрм" или "Коммондатасервицефораппс". | Да |
 | deploymentType | Тип развертывания для экземпляра Dynamics. Для Dynamics Online значение должно быть "Online". | Да |
-| serviceUri | URL-адрес службы экземпляра Dynamics. Например, https://adfdynamics.crm.dynamics.com. | Да |
+| serviceUri | URL-адрес службы экземпляра Dynamics. Например, https://www.crmdynamics.com. | Да |
 | authenticationType | Тип проверки подлинности для подключения к серверу Dynamics. Допустимые значения: "АадсервицепринЦипал" и "Office 365". | Да |
 | servicePrincipalId | Идентификатор клиента приложения Azure AD. | Да, если проверка подлинности — "АадсервицепринЦипал" |
 | сервицепринЦипалкредентиалтипе | Тип учетных данных, используемый для проверки подлинности субъекта-службы. Допустимые значения: "СервицепринЦипалкэй" и "СервицепринЦипалцерт". | Да, если проверка подлинности — "АадсервицепринЦипал" |
@@ -102,7 +102,7 @@ ms.locfileid: "84887008"
         "type": "Dynamics",  
         "typeProperties": {  
             "deploymentType": "Online",  
-            "serviceUri": "https://adfdynamics.crm.dynamics.com",  
+            "serviceUri": "https://www.crmdynamics.com",  
             "authenticationType": "AADServicePrincipal",  
             "servicePrincipalId": "<service principal id>",  
             "servicePrincipalCredentialType": "ServicePrincipalKey",  
@@ -124,7 +124,7 @@ ms.locfileid: "84887008"
         "type": "Dynamics", 
         "typeProperties": { 
             "deploymentType": "Online", 
-            "serviceUri": "https://adfdynamics.crm.dynamics.com", 
+            "serviceUri": "https://www.crmdynamics.com", 
             "authenticationType": "AADServicePrincipal", 
             "servicePrincipalId": "<service principal id>", 
             "servicePrincipalCredentialType": "ServicePrincipalCert", 
@@ -154,7 +154,7 @@ ms.locfileid: "84887008"
         "type": "Dynamics",
         "typeProperties": {
             "deploymentType": "Online",
-            "serviceUri": "https://adfdynamics.crm.dynamics.com",
+            "serviceUri": "https://www.crmdynamics.com",
             "authenticationType": "Office365",
             "username": "test@contoso.onmicrosoft.com",
             "password": {
@@ -174,7 +174,7 @@ ms.locfileid: "84887008"
 
 Дополнительными свойствами, которые сравниваются с Dynamics Online, являются **имя узла** и **порт**.
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type должно иметь значение "Dynamics", "Динамикскрм" или "Коммондатасервицефораппс". | Да. |
 | deploymentType | Тип развертывания для экземпляра Dynamics. Значение должно быть "OnPremisesWithIfd" для Dynamics в локальной среде с IFD.| Да. |
@@ -220,7 +220,7 @@ ms.locfileid: "84887008"
 
 Для копирования данных из и в Dynamics поддерживаются следующие свойства:
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type набора данных должно иметь значение "DynamicsEntity", "Динамикскрментити" или "Коммондатасервицефораппсентити". |Да |
 | entityName | Логическое имя сущности, которое требуется получить. | Нет для источника, если для источника действия задано значение "запрос" и Да для приемника |
@@ -252,10 +252,10 @@ ms.locfileid: "84887008"
 
 Чтобы скопировать данные из Dynamics, раздел **источника** действия копирования поддерживает следующие свойства:
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type источника действия копирования должно иметь значение "DynamicsSource", "Динамикскрмсаурце" или "Коммондатасервицефораппссаурце". | Да |
-| query | FetchXML — это собственный язык запросов, используемый в Dynamics Online и локальной среде. См. указанный ниже пример. Дополнительные сведения см. в статье [Создание запросов с помощью FetchXML](https://msdn.microsoft.com/library/gg328332.aspx). | No `entityName` , если в наборе данных указан |
+| query | FetchXML — это собственный язык запросов, используемый в Dynamics Online и локальной среде. См. следующий пример. Дополнительные сведения см. в статье [Создание запросов с помощью FetchXML](https://msdn.microsoft.com/library/gg328332.aspx). | No `entityName` , если в наборе данных указан |
 
 >[!NOTE]
 >Столбец первичного ключа будет копироваться всегда, даже если он отсутствует в проекции столбца, настроенной в запросе FetchXML.
@@ -320,7 +320,7 @@ ms.locfileid: "84887008"
 
 Чтобы скопировать данные в Dynamics, раздел **приемника** действия копирования поддерживает следующие свойства:
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type приемника действия копирования должно иметь значение "DynamicsSink", "Динамикскрмсинк" или "Коммондатасервицефораппссинк". | Да. |
 | writeBehavior | Поведение операции при записи. Значение должно быть "Upsert". | Да |
@@ -378,15 +378,15 @@ ms.locfileid: "84887008"
 | Тип данных Dynamics | Тип промежуточных данных фабрики данных | Поддерживается в качестве источника | Поддерживается в качестве приемника |
 |:--- |:--- |:--- |:--- |
 | AttributeTypeCode.BigInt | Long | ✓ | ✓ |
-| AttributeTypeCode.Boolean | Логическое | ✓ | ✓ |
+| AttributeTypeCode.Boolean | Логический | ✓ | ✓ |
 | AttributeType.Customer | Идентификатор GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
 | AttributeType.DateTime | Datetime | ✓ | ✓ |
 | AttributeType.Decimal | Decimal | ✓ | ✓ |
-| AttributeType.Double | Double | ✓ | ✓ |
+| AttributeType.Double | Тип Double | ✓ | ✓ |
 | AttributeType.EntityName | Строка | ✓ | ✓ |
 | AttributeType.Integer | Int32 | ✓ | ✓ |
 | AttributeType.Lookup | Идентификатор GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
-| AttributeType.ManagedProperty | Логическое | ✓ | |
+| AttributeType.ManagedProperty | Логический | ✓ | |
 | AttributeType.Memo | Строка | ✓ | ✓ |
 | AttributeType.Money | Decimal | ✓ | ✓ |
 | AttributeType.Owner | Идентификатор GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
@@ -433,5 +433,5 @@ ms.locfileid: "84887008"
 
 Дополнительные сведения о свойствах см. в разделе [действие поиска](control-flow-lookup-activity.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Список хранилищ данных, которые действие копирования в фабрике данных поддерживает как источники и приемники, см. в разделе [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats).

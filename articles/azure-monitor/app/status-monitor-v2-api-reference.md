@@ -5,11 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: 02762c4b3af735eb0b4c19aaf450b2b3a416a2be
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 32fd0da0095c34c4ef199eb703881e048473f0a4
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81733678"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499364"
 ---
 # <a name="azure-monitor-application-insights-agent-api-reference"></a>Справочник по API агента Application Insights Azure Monitor
 
@@ -46,7 +47,7 @@ PS C:\> Enable-InstrumentationEngine
 ### <a name="parameters"></a>Параметры
 
 #### <a name="-acceptlicense"></a>-AcceptLicense
-**Необязательный элемент.** Используйте этот параметр, чтобы принять условия лицензии и конфиденциальности в установках без монитора.
+**Используемых.** Используйте этот параметр, чтобы принять условия лицензии и конфиденциальности в установках без монитора.
 
 #### <a name="-verbose"></a>-Verbose
 **Общий параметр.** Используйте этот параметр для вывода подробных журналов.
@@ -82,7 +83,7 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-x
 ```
 
 #### <a name="example-with-an-instrumentation-key-map"></a>Пример с картой ключа инструментирования
-В данном примере:
+В этом примере:
 - `MachineFilter`соответствует текущему компьютеру с помощью `'.*'` подстановочного знака.
 - `AppFilter='WebAppExclude'`предоставляет `null` ключ инструментирования. Указанное приложение не будет инструментировано.
 - `AppFilter='WebAppOne'`Присваивает указанному приложению уникальный ключ инструментирования.
@@ -118,7 +119,7 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap
 - **Мачинефилтер** — это обязательное регулярное выражение C# для имени компьютера или виртуальной машины.
     - ". *" будет соответствовать всем
     - "ComputerName" будет соответствовать только компьютерам с указанным именем.
-- **Аппфилтер** — это обязательное регулярное выражение C# имени веб-сайта IIS. Список сайтов на сервере можно получить, выполнив команду [Get-ииссите](https://docs.microsoft.com/powershell/module/iisadministration/get-iissite).
+- **Аппфилтер** — это обязательное регулярное выражение C# имени веб-сайта IIS. Список сайтов на сервере можно получить, выполнив команду [Get-ииссите](/powershell/module/iisadministration/get-iissite).
     - ". *" будет соответствовать всем
     - "SiteName" будет соответствовать только сайту IIS с указанным точным именем.
 - **InstrumentationKey** требуется для включения мониторинга приложений, соответствующих двум предыдущим фильтрам.
@@ -126,15 +127,15 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap
 
 
 #### <a name="-enableinstrumentationengine"></a>-Енаблеинструментатионенгине
-**Необязательный элемент.** Используйте этот параметр, чтобы модуль инструментирования собирал события и сообщения о том, что происходит во время выполнения управляемого процесса. Эти события и сообщения включают в себя коды результатов зависимостей, глаголы HTTP и текст команды SQL.
+**Используемых.** Используйте этот параметр, чтобы модуль инструментирования собирал события и сообщения о том, что происходит во время выполнения управляемого процесса. Эти события и сообщения включают в себя коды результатов зависимостей, глаголы HTTP и текст команды SQL.
 
 Модуль инструментирования добавляет издержки и по умолчанию отключен.
 
 #### <a name="-acceptlicense"></a>-AcceptLicense
-**Необязательный элемент.** Используйте этот параметр, чтобы принять условия лицензии и конфиденциальности в установках без монитора.
+**Используемых.** Используйте этот параметр, чтобы принять условия лицензии и конфиденциальности в установках без монитора.
 
 #### <a name="-ignoresharedconfig"></a>-Игнорешаредконфиг
-При наличии кластера веб-серверов можно использовать [общую конфигурацию](https://docs.microsoft.com/iis/web-hosting/configuring-servers-in-the-windows-web-platform/shared-configuration_211).
+При наличии кластера веб-серверов можно использовать [общую конфигурацию](/iis/web-hosting/configuring-servers-in-the-windows-web-platform/shared-configuration_211).
 Не удается внедрить HttpModule в эту общую конфигурацию.
 Этот сценарий завершится ошибкой с сообщением о необходимости дополнительных шагов установки.
 Используйте этот параметр, чтобы пропустить эту проверку и продолжить установку необходимых компонентов. Дополнительные сведения см. в разделе [Известные конфликты — с-IIS-Shared-Configuration](status-monitor-v2-troubleshoot.md#conflict-with-iis-shared-configuration) .
@@ -446,8 +447,8 @@ listdlls64.exe -accepteula w3wp
 
 Если по какой бы то ни было причине этот процесс завершится сбоем, можно выполнить следующие команды вручную:
 - iisreset.exe/Status
-- [handle64.exe](https://docs.microsoft.com/sysinternals/downloads/handle) -p w3wp | Findstr/I "Инструментатионенгине AI. ApplicationInsights
-- [listdlls64.exe](https://docs.microsoft.com/sysinternals/downloads/listdlls) w3wp | Findstr/I "Инструментатионенгине AI ApplicationInsights"
+- [handle64.exe](/sysinternals/downloads/handle) -p w3wp | Findstr/I "Инструментатионенгине AI. ApplicationInsights
+- [listdlls64.exe](/sysinternals/downloads/listdlls) w3wp | Findstr/I "Инструментатионенгине AI ApplicationInsights"
 
 
 #### <a name="-force"></a>-Force
@@ -474,7 +475,7 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-x
 ```
 
 #### <a name="example-with-an-instrumentation-key-map"></a>Пример с картой ключа инструментирования
-В данном примере:
+В этом примере:
 - `MachineFilter`соответствует текущему компьютеру с помощью `'.*'` подстановочного знака.
 - `AppFilter='WebAppExclude'`предоставляет `null` ключ инструментирования. Указанное приложение не будет инструментировано.
 - `AppFilter='WebAppOne'`Присваивает указанному приложению уникальный ключ инструментирования.
@@ -551,7 +552,7 @@ C:\Program Files\WindowsPowerShell\Modules\Az.ApplicationMonitor\content\applica
 
 ## <a name="start-applicationinsightsmonitoringtrace"></a>Start-Аппликатионинсигхтсмониторингтраце
 
-Собирает [события ETW](https://docs.microsoft.com/windows/desktop/etw/event-tracing-portal) из среды выполнения с некодированным подключением. Этот командлет является альтернативой запуску [PerfView](https://github.com/microsoft/perfview).
+Собирает [события ETW](/windows/desktop/etw/event-tracing-portal) из среды выполнения с некодированным подключением. Этот командлет является альтернативой запуску [PerfView](https://github.com/microsoft/perfview).
 
 Собранные события будут выводиться на консоль в режиме реального времени и сохранены в ETL-файл. Выходной ETL-файл можно открыть с помощью [PerfView](https://github.com/microsoft/perfview) для дальнейшего изучения.
 
@@ -584,17 +585,17 @@ C:\Program Files\WindowsPowerShell\Modules\Az.ApplicationMonitor\content\applica
 ### <a name="parameters"></a>Параметры
 
 #### <a name="-maxdurationinminutes"></a>-Максдуратионинминутес
-**Необязательный элемент.** Используйте этот параметр, чтобы задать время, в течение которого этот скрипт должен получать события. Значение по умолчанию — 5 минут.
+**Используемых.** Используйте этот параметр, чтобы задать время, в течение которого этот скрипт должен получать события. Значение по умолчанию — 5 минут.
 
 #### <a name="-logdirectory"></a>-LogDirectory
-**Необязательный элемент.** Используйте этот параметр, чтобы задать выходной каталог ETL-файла. По умолчанию этот файл будет создан в каталоге модулей PowerShell. Полный путь будет отображаться во время выполнения скрипта.
+**Используемых.** Используйте этот параметр, чтобы задать выходной каталог ETL-файла. По умолчанию этот файл будет создан в каталоге модулей PowerShell. Полный путь будет отображаться во время выполнения скрипта.
 
 
 #### <a name="-collectsdkevents"></a>-Коллектсдкевентс
-**Необязательный элемент.** Используйте этот параметр для получения Application Insights событий пакета SDK.
+**Используемых.** Используйте этот параметр для получения Application Insights событий пакета SDK.
 
 #### <a name="-collectredfieldevents"></a>-Коллектредфиелдевентс
-**Необязательный элемент.** Используйте этот параметр для получения событий из монитор состояния и среды выполнения Redfield.
+**Используемых.** Используйте этот параметр для получения событий из монитор состояния и среды выполнения Redfield.
 
 #### <a name="-verbose"></a>-Verbose
 **Общий параметр.** Используйте этот параметр для вывода подробных журналов.
@@ -633,12 +634,12 @@ Tracing will timeout in 5 minutes. Press CTRL+C to cancel.
 Timeout Reached. Stopping...
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
   Просмотр телеметрии:
- - [Изучите метрики](../../azure-monitor/app/metrics-explorer.md) для мониторинга производительности и использования.
+ - [Изучите метрики](../platform/metrics-charts.md) для мониторинга производительности и использования.
 - [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем.
-- Используйте [аналитику](../../azure-monitor/app/analytics.md) для более сложных запросов.
+- Используйте [аналитику](../log-query/log-query-overview.md) для более сложных запросов.
 - [Создание панелей мониторинга](../../azure-monitor/app/overview-dashboard.md).
  
  Добавление данных телеметрии:
@@ -648,9 +649,3 @@ Timeout Reached. Stopping...
  
  Другие действия с агентом Application Insights:
  - Используйте наше справочное по для [устранения неполадок](status-monitor-v2-troubleshoot.md) агента Application Insights.
-
-
-
-
-
-

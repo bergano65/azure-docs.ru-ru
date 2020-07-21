@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 05/06/2020
 ms.author: v-erkel
-ms.openlocfilehash: 88aea7e58aacd9a630771948c6dbc6ed5712a674
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b01c4d896d5ec600e0fe22e3ca7b7816141776a4
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85505313"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86497205"
 ---
 # <a name="configure-additional-azure-hpc-cache-settings"></a>Настройка дополнительных параметров кэша Azure HPC
 
@@ -51,7 +51,7 @@ ms.locfileid: "85505313"
 
 Если параметр root Squash отключен, запрос от корневого пользователя клиента (UID 0) передается в серверную систему хранения NFS в качестве корневого каталога. Такая конфигурация может допускать недопустимый доступ к файлам.
 
-Установка корневого squash в кэше может помочь компенсировать требуемый ``no_root_squash`` параметр в системах NAS, которые используются в качестве целевых объектов хранилища. (Дополнительные сведения о [необходимых компонентах хранилища NFS](hpc-cache-prereqs.md#nfs-storage-requirements)). Она также может повысить безопасность при использовании целевых объектов хранилища BLOB-объектов Azure.
+Установка корневого squash в кэше может помочь компенсировать требуемый ``no_root_squash`` параметр в системах NAS, которые используются в качестве целевых объектов хранилища. (Дополнительные сведения о [необходимых компонентах хранилища NFS](hpc-cache-prerequisites.md#nfs-storage-requirements)). Она также может повысить безопасность при использовании целевых объектов хранилища BLOB-объектов Azure.
 
 Значение по умолчанию — **Да**. (Кэши, созданные до апреля 2020, могут иметь значение по умолчанию **No**.)
 

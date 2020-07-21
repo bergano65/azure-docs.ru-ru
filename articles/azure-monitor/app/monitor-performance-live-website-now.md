@@ -3,17 +3,17 @@ title: Мониторинг активного веб-приложения ASP.N
 description: Мониторинг производительности веб-сайта без необходимости его повторного развертывания. Работает с веб-приложениями ASP.NET, размещенными локально или в виртуальных машинах.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: f4ce01ea8fc7b6bf1f294071f04e2bebce3e1d27
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 93b150b831a01989093fd916d17e31aee27beb3a
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86166388"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499534"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Инструментирование веб-приложений во время выполнения с помощью Application Insights бескодового подключения
 
 > [!IMPORTANT]
-> Монитор состояния больше не рекомендуется использовать, и начиная с **1 июня 2021** эта версия монитора состояния не будет поддерживаться. Он был заменен агентом Azure Monitor Application Insights (прежнее название — монитор состояния v2). См. нашу документацию по [развертыванию локальных серверов](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview) , [виртуальным машинам Azure и развертываниям масштабируемых наборов виртуальных машин](https://docs.microsoft.com/azure/azure-monitor/app/azure-vm-vmss-apps).
+> Монитор состояния больше не рекомендуется использовать, и начиная с **1 июня 2021** эта версия монитора состояния не будет поддерживаться. Он был заменен агентом Azure Monitor Application Insights (прежнее название — монитор состояния v2). См. нашу документацию по [развертыванию локальных серверов](./status-monitor-v2-overview.md) , [виртуальным машинам Azure и развертываниям масштабируемых наборов виртуальных машин](./azure-vm-vmss-apps.md).
 
 Действующее веб-приложение можно инструментировать с помощью Azure Application Insights, не прибегая к изменению или повторному развертыванию кода. Вам потребуется подписка [Microsoft Azure](https://azure.com) .
 
@@ -97,7 +97,7 @@ ms.locfileid: "86166388"
   union * | summarize count() by cloud_RoleName, cloud_RoleInstance
   ```
 
-- Если необходимо подтвердить, что Application Insights успешно присоединена, можно запустить программу [Sysinternals Handle](https://docs.microsoft.com/sysinternals/downloads/handle) в окне командной строки, чтобы убедиться, что applicationinsights.dll ЗАГРУЖЕНЫ службами IIS.
+- Если необходимо подтвердить, что Application Insights успешно присоединена, можно запустить программу [Sysinternals Handle](/sysinternals/downloads/handle) в окне командной строки, чтобы убедиться, что applicationinsights.dll ЗАГРУЖЕНЫ службами IIS.
 
   ```console
   handle.exe /p w3wp.exe
@@ -145,7 +145,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 * Чтобы выводить подробные журналы, измените файл конфигурации `C:\Program Files\Microsoft Application Insights\Status Monitor\Microsoft.Diagnostics.Agent.StatusMonitor.exe.config` и добавьте `<add key="TraceLevel" value="All" />` для `appsettings`.
 Затем перезапустите монитор состояний.
 
-* Так как монитор состояния является приложением .NET, можно также включить [трассировку .NET, добавив соответствующие средства диагностики в файл конфигурации](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/trace-debug/system-diagnostics-element). Например, в некоторых сценариях может быть полезно узнать, что происходит на уровне сети, [настроив трассировку сети](https://docs.microsoft.com/dotnet/framework/network-programming/how-to-configure-network-tracing) .
+* Так как монитор состояния является приложением .NET, можно также включить [трассировку .NET, добавив соответствующие средства диагностики в файл конфигурации](/dotnet/framework/configure-apps/file-schema/trace-debug/system-diagnostics-element). Например, в некоторых сценариях может быть полезно узнать, что происходит на уровне сети, [настроив трассировку сети](/dotnet/framework/network-programming/how-to-configure-network-tracing) .
 
 ### <a name="insufficient-permissions"></a>Недостаточные разрешения
   
@@ -176,9 +176,9 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 ## <a name="system-requirements"></a>Требования к системе
 Операционные системы, которые поддерживаются для монитора состояний Application Insights на сервере:
 
-* Windows Server 2008
-* Windows Server 2008 R2
-* Windows Server 2012
+* Windows Server 2008
+* Windows Server 2008 R2
+* Windows Server 2012
 * Windows Server 2012 R2.
 * Windows Server 2016
 
@@ -311,7 +311,7 @@ Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\Po
 
 ## <a name="download-status-monitor"></a><a name="download"></a>Скачивание монитора состояний
 
-- Использование нового [модуля PowerShell](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview)
+- Использование нового [модуля PowerShell](./status-monitor-v2-overview.md)
 - Скачивание и запуск [установщика монитор состояния](https://go.microsoft.com/fwlink/?LinkId=506648)
 - Как альтернативный вариант, запустите [установщик веб-платформы](https://www.microsoft.com/web/downloads/platform.aspx) и найдите в нем монитор состояний Application Insights.
 
@@ -321,7 +321,7 @@ Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\Po
 
 * [Изучите метрики](../../azure-monitor/platform/metrics-charts.md), чтобы отслеживать производительность и использование.
 * [Выполняйте поиск событий и журналов][diagnostic] для диагностики неполадок.
-* [Аналитика](../../azure-monitor/app/analytics.md) для создания расширенных запросов.
+* [Аналитика](../log-query/log-query-overview.md) для создания расширенных запросов.
 
 Добавление данных телеметрии:
 
@@ -336,6 +336,6 @@ Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\Po
 [client]: ../../azure-monitor/app/javascript.md
 [diagnostic]: ../../azure-monitor/app/diagnostic-search.md
 [greenbrown]: ../../azure-monitor/app/asp-net.md
-[qna]: ../../azure-monitor/app/troubleshoot-faq.md
+[qna]: ../faq.md
 [roles]: ../../azure-monitor/app/resources-roles-access-control.md
 [usage]: ../../azure-monitor/app/javascript.md

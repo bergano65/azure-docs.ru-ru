@@ -6,15 +6,16 @@ author: lzchen
 ms.author: lechen
 ms.date: 10/15/2019
 ms.custom: tracking-python
-ms.openlocfilehash: d12db3ab046d115b60b67a9c22bf4e885cd0ef02
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e99ea1d5a90455a4c470346fbbe5d1095c426e81
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84782574"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499466"
 ---
 # <a name="track-dependencies-with-opencensus-python"></a>Мониторинг зависимостей с помощью Опенценсус Python
 
-Зависимость — это внешний компонент, который вызывается приложением. Данные зависимостей собираются с помощью Опенценсус Python и различных интеграций. Затем данные отправляются в Application Insights под Azure Monitor в качестве `dependencies` телеметрии.
+Зависимость — это внешний компонент, вызываемый приложением. Данные зависимостей собираются с помощью Опенценсус Python и различных интеграций. Затем данные отправляются в Application Insights под Azure Monitor в качестве `dependencies` телеметрии.
 
 Сначала выполните инструментирование приложения Python с помощью последнего [пакета SDK для Опенценсус Python](../../azure-monitor/app/opencensus-python.md).
 
@@ -85,7 +86,7 @@ conn.close()
 Следите за исходящими запросами Django с помощью `django` интеграции опенценсус.
 
 > [!NOTE]
-> Единственными исходящими отправленными запросами Django являются вызовы к базе данных. Запросы, выполненные в приложении Django, см. в разделе [входящие запросы](https://docs.microsoft.com/azure/azure-monitor/app/opencensus-python-request#tracking-django-applications).
+> Единственными исходящими отправленными запросами Django являются вызовы к базе данных. Запросы, выполненные в приложении Django, см. в разделе [входящие запросы](./opencensus-python-request.md#tracking-django-applications).
 
 Скачайте и установите `opencensus-ext-django` из [PyPI](https://pypi.org/project/opencensus-ext-django/) и добавьте следующую строку в `MIDDLEWARE` раздел `settings.py` файла Django.
 
@@ -167,7 +168,7 @@ from opencensus.trace import config_integration
 config_integration.trace_integrations(['sqlalchemy'])
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Схема сопоставления приложений](../../azure-monitor/app/app-map.md)
 * [Доступность](../../azure-monitor/app/monitor-web-app-availability.md)
