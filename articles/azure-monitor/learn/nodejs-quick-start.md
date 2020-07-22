@@ -7,12 +7,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 07/12/2019
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 694d2ae529202223869fcbb2a084e32bccaedbf1
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 2e50daf3d94d30e4799bf7a645f46bb70fd6750c
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77660229"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86516504"
 ---
 # <a name="quickstart-start-monitoring-your-nodejs-web-application-with-azure-application-insights"></a>Краткое руководство. Начало мониторинга веб-приложения Node.js с помощью Application Insights в Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "77660229"
    ![Добавление ресурса Application Insights](./media/nodejs-quick-start/azure-app-insights-create-resource.png)
 
    > [!NOTE]
-   >Если вы создаете ресурс Application Insights впервые, ознакомьтесь с дополнительными сведениями в статье [Create an Application Insights resource](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource) (Создание ресурса Application Insights).
+   >Если вы создаете ресурс Application Insights впервые, ознакомьтесь с дополнительными сведениями в статье [Create an Application Insights resource](../app/create-new-resource.md) (Создание ресурса Application Insights).
 
    Откроется страница с параметрами, на которой нужно заполнить все поля в соответствии с приведенной ниже таблицей. 
 
@@ -60,7 +60,7 @@ ms.locfileid: "77660229"
    npm install applicationinsights --save
    ```
 
-3. Измените первый файл *.js* приложения и добавьте две следующие строки в самую верхнюю часть своего скрипта. Если вы используете [приложение быстрого запуска Node.js](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs), необходимо изменить файл *index.js*. Замените `<instrumentation_key>` ключом инструментирования для приложения. 
+3. Измените первый файл *.js* приложения и добавьте две следующие строки в самую верхнюю часть своего скрипта. Если вы используете [приложение быстрого запуска Node.js](../../app-service/app-service-web-get-started-nodejs.md), необходимо изменить файл *index.js*. Замените `<instrumentation_key>` ключом инструментирования для приложения. 
 
    ```JavaScript
    const appInsights = require('applicationinsights');
@@ -131,4 +131,4 @@ ms.locfileid: "77660229"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Аналитика в Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-analytics)
+> [Аналитика в Application Insights](../log-query/log-query-overview.md)

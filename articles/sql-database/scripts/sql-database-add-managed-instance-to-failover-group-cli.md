@@ -11,12 +11,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 07/16/2019
-ms.openlocfilehash: e9efb4e222e74f97a4f3d88639b02a86a3a6d660
-ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
+ms.openlocfilehash: f196db537ef0a64d14930ed6bc67696ee4614c23
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84115431"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86528916"
 ---
 # <a name="use-cli-to-add-an-azure-sql-managed-instance-to-a-failover-group"></a>Добавление Управляемого экземпляра SQL Azure в группу отработки отказа с помощью CLI
 
@@ -46,7 +46,7 @@ az group delete --name $resource
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| | |
+| Get-Help | Описание |
 |---|---|
 | [az network vnet](/cli/azure/network/vnet) | Команды виртуальной сети.  |
 | [az network vnet subnet](/cli/azure/network/vnet/subnet) | Команды подсети виртуальной сети. |

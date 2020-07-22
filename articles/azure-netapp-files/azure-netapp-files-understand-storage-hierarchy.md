@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 02/27/2020
+ms.date: 07/15/2020
 ms.author: b-juche
-ms.openlocfilehash: 70d3a2a501952a5e20b1ff8e99f48f4d7aefce8d
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 0b150491fff953434062cc583566e1113947a679
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78163970"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86504909"
 ---
 # <a name="what-is-the-storage-hierarchy-of-azure-netapp-files"></a>Что собой представляет иерархия хранилища Azure NetApp Files
 
@@ -52,7 +52,6 @@ ms.locfileid: "78163970"
 - Каждый том принадлежит только одному пулу, но пул может содержать несколько томов. 
 - Том нельзя перемещать между пулами емкости. <!--Within the same NetApp account, you can move a volume across pools.  -->   
   Например, в [концептуальной схеме иерархии хранения](#conceptual_diagram_of_storage_hierarchy), представленной ниже, нельзя переместить тома из пула емкости 1 в пул емкости 2.
-- Том нельзя удалить, пока не будут удалены все его моментальные снимки.
 
 ## <a name="conceptual-diagram-of-storage-hierarchy"></a><a name="conceptual_diagram_of_storage_hierarchy"></a>Концептуальная схема иерархии хранения 
 В следующем примере показаны связи подписки Azure, учетных записей NetApp, пулов емкости и томов.   

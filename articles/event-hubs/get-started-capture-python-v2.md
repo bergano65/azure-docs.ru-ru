@@ -3,12 +3,12 @@ title: Чтение собранных данных в службе "Центр�
 description: В этой статье показано, как написать код Python для сбора данных, отправляемых в концентратор событий и считывания собранных данных о событиях из учетной записи хранения Azure.
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.openlocfilehash: 752a582e59b438f7449d6722b222969dc641880c
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: eb7e8a2c1e567e474ad7d0766d9b12e5b43de3ae
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85315285"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86521876"
 ---
 # <a name="capture-event-hubs-data-in-azure-storage-and-read-it-by-using-python-azure-eventhub-version-5"></a>Запись данных Центров событий в Хранилище Azure и их чтение с помощью Python (azure-eventhub версии 5)
 
@@ -35,7 +35,7 @@ ms.locfileid: "85315285"
 - Активное пространство имен Центров событий и концентратор событий.
 Выполните действия в статье [Краткое руководство. Создание концентратора событий с помощью портала Azure](event-hubs-create.md). Запишите имя пространства имен Центров событий, имя концентратора событий и первичный ключ доступа для пространства имен. Чтобы получить ключ доступа см. раздел [Get connection string from the portal](event-hubs-get-connection-string.md#get-connection-string-from-the-portal) (Получение строки подключения на портале). По умолчанию для ключа используется имя *RootManageSharedAccessKey*. Для этого краткого руководства нужен только первичный ключ. Вам не нужна строка подключения.  
 - Учетная запись хранения Azure, контейнер больших двоичных объектов в учетной записи хранения и строка подключения к учетной записи хранения. Выполните действия в приведенных ниже ресурсах, если эти элементы отсутствуют.  
-    1. [Create an Azure Storage account](../storage/common/storage-quickstart-create-account.md?tabs=azure-portal) (Создание учетной записи хранения Azure)  
+    1. [Create an Azure Storage account](../storage/common/storage-account-create.md?tabs=azure-portal) (Создание учетной записи хранения Azure)  
     1. [Создание контейнера](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container)  
     1. [Получение строки подключения к учетной записи хранения](../storage/common/storage-configure-connection-string.md).
 
@@ -182,4 +182,4 @@ ms.locfileid: "85315285"
 [1]: ./media/event-hubs-archive-python/event-hubs-python1.png
 [About Azure storage accounts]:../storage/common/storage-create-storage-account.md
 [Visual Studio Code]: https://code.visualstudio.com/
-[Event Hubs overview]: event-hubs-what-is-event-hubs.md
+[Event Hubs overview]: ./event-hubs-about.md

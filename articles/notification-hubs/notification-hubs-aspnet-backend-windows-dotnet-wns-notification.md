@@ -17,12 +17,12 @@ ms.date: 03/22/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 03/22/2019
-ms.openlocfilehash: a8a939f0d0c3575adec147c1942ddbbef334cb65
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: e13e7c1057d5a01867b561fc7ee7d1eed1a97ca3
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86220156"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86530496"
 ---
 # <a name="tutorial-send-notifications-to-specific-users-by-using-azure-notification-hubs"></a>Руководство по Отправка уведомлений определенным пользователям с помощью службы "Центры уведомлений Azure"
 
@@ -51,7 +51,7 @@ ms.locfileid: "86220156"
 В этом руководстве используется центр уведомлений и проект Visual Studio, который вы создали при работе с [руководством по отправке уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md). Выполните инструкции в том руководстве, прежде чем приступать к текущему.
 
 > [!NOTE]
-> Если вы используете мобильные приложения в службе приложений Azure в качестве внутренней службы, то перейдите к [версии этого учебника для мобильных приложений](../app-service-mobile/app-service-mobile-windows-store-dotnet-get-started-push.md).
+> Если вы используете мобильные приложения в службе приложений Azure в качестве внутренней службы, то перейдите к [версии этого учебника для мобильных приложений](/previous-versions/azure/app-service-mobile/app-service-mobile-windows-store-dotnet-get-started-push).
 
 [!INCLUDE [notification-hubs-aspnet-backend-notifyusers](../../includes/notification-hubs-aspnet-backend-notifyusers.md)]
 
@@ -224,7 +224,7 @@ ms.locfileid: "86220156"
     ```
 13. Щелкните правой кнопкой мыши проект **WindowsApp**, а затем выберите пункты **Добавить** и **Класс**. Присвойте классу имя `RegisterClient.cs`, а затем нажмите кнопку **ОК**, чтобы создать класс.
 
-    Этот класс инкапсулирует вызовы REST, необходимые для связи с серверной частью приложения с целью регистрации в службе push-уведомлений. В данном случае также происходит локальное сохранение идентификаторов *registrationId* , созданных концентратором уведомлений в соответствии с описанием в разделе [Регистрация из серверной части приложения](https://msdn.microsoft.com/library/dn743807.aspx). В данном случае используется маркер проверки подлинности, сохраненный в локальном хранилище при нажатии кнопки **Вход и регистрация**.
+    Этот класс инкапсулирует вызовы REST, необходимые для связи с серверной частью приложения с целью регистрации в службе push-уведомлений. В данном случае также происходит локальное сохранение идентификаторов *registrationId* , созданных концентратором уведомлений в соответствии с описанием в разделе [Регистрация из серверной части приложения](/previous-versions/azure/azure-services/dn743807(v=azure.100)). В данном случае используется маркер проверки подлинности, сохраненный в локальном хранилище при нажатии кнопки **Вход и регистрация**.
 14. Добавьте в начало файла RegisterClient.cs следующие операторы `using` :
 
     ```csharp
@@ -357,4 +357,4 @@ ms.locfileid: "86220156"
 [Get started with Notification Hubs]: notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md
 [Secure Push]: notification-hubs-aspnet-backend-windows-dotnet-wns-secure-push-notification.md
 [Use Notification Hubs to send breaking news]: notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md
-[Notification Hubs Guidance]: https://msdn.microsoft.com/library/jj927170.aspx
+[Notification Hubs Guidance]: /previous-versions/azure/azure-services/jj927170(v=azure.100)

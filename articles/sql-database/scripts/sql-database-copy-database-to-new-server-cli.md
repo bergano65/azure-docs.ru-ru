@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: e7a83478654b848b8e001dd3fea276c5cc9e125a
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: 3f180f075a32ac193ed003b58a99483ea3210cc7
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84022698"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86528910"
 ---
 # <a name="use-cli-to-copy-a-database-in-azure-sql-database-to-a-new-server"></a>Использование сценария CLI для копирования базы данных в Базе данных SQL Azure на новый сервер
 
@@ -53,7 +53,7 @@ az group delete --name $targetResource
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| | |
+| Get-Help | Описание |
 |---|---|
 | [az sql db copy](/cli/azure/sql/db#az-sql-db-copy) | Создает копию базы данных с помощью моментального снимка на текущий момент времени. |
 

@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 03/25/2019
-ms.openlocfilehash: fd2c7a33c0747aa21a8bda53ad5437c9e79a6557
-ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
+ms.openlocfilehash: 9d0058fd90590b10a0d5745bce1875db9ad35745
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84115407"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86518900"
 ---
 # <a name="use-cli-to-create-an-azure-sql-managed-instance"></a>Создание управляемого экземпляра SQL Azure с помощью CLI
 
@@ -49,7 +49,7 @@ az group delete --name $resource
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| | |
+| Get-Help | Описание |
 |---|---|
 | [az network vnet](/cli/azure/network/vnet) | Команды виртуальной сети. |
 | [az network vnet subnet](/cli/azure/network/vnet/subnet) | Команды подсети виртуальной сети. |
@@ -60,4 +60,4 @@ az group delete --name $resource
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
-Дополнительные примеры скриптов интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../../azure-sql/database/az-cli-script-samples-content-guide.md).
+Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../../azure-sql/database/az-cli-script-samples-content-guide.md).

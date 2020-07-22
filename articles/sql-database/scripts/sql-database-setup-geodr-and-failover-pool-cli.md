@@ -11,12 +11,12 @@ author: mashamsft
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: a272564684671e38100e5390e95129121fcbd0f8
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: 8d0860cc5a4ee60cbf60d7b55789c518049dfb90
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84019389"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86528780"
 ---
 # <a name="use-cli-to-configure-active-geo-replication-for-a-pooled-database-in-azure-sql-database"></a>Настройка активной георепликации для базы данных в пуле в Базе данных SQL Azure с помощью CLI
 
@@ -53,7 +53,7 @@ az group delete --name $secondaryResource
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| | |
+| Get-Help | Описание |
 |---|---|
 | [az sql elastic-pool](/cli/azure/sql/elastic-pool) | Команды эластичного пула |
 | [az sql db replica](/cli/azure/sql/db/replica) | Команды репликации базы данных |

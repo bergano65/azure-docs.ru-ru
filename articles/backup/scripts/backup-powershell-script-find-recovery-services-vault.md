@@ -3,12 +3,12 @@ title: Сценарий PowerShell. Поиск хранилища для уче�
 description: Сведения об использовании сценария Azure PowerShell для поиска хранилища служб восстановления, в котором зарегистрирована учетная запись хранения.
 ms.topic: sample
 ms.date: 1/28/2020
-ms.openlocfilehash: 786420ec8cef6516f7261c71b40641693efece07
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b343b2f93ed439188c5c0238bf108064f6e132c1
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76775870"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86513257"
 ---
 # <a name="powershell-script-to-find-the-recovery-services-vault-where-a-storage-account-is-registered"></a>Сценарий Powershell для поиска хранилища Служб восстановления, в котором зарегистрирована учетная запись хранения.
 
@@ -72,4 +72,4 @@ Found Storage account afsaccount registered in vault: /subscriptions/ ef4ad5a7-c
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. сведения в [Back up Azure file shares in a Recovery Services vault](https://docs.microsoft.com/azure/backup/backup-afs) (Резервное копирование Общих папок Azure из портала Azure)
+См. сведения в [Back up Azure file shares in a Recovery Services vault](../backup-afs.md) (Резервное копирование Общих папок Azure из портала Azure)

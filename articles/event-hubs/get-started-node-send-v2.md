@@ -3,12 +3,12 @@ title: Отправка и получение событий через Цент
 description: В статье описано, как создать приложение JavaScript, которое отправляет события или получает их из службы "Центры событий Azure" с помощью последнего пакета azure/event-hubs версии 5.
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.openlocfilehash: ad9a78aa48ee0d4c01e2748b8b52192e259add7b
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: 7ec97d07843a9844387ad1038c075ed55e304a2c
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85312937"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86521893"
 ---
 # <a name="send-events-to-or-receive-events-from-event-hubs-by-using-javascript--azureevent-hubs-version-5"></a>Отправка событий или получение событий из концентраторов событий с помощью JavaScript (azure/event-hubs версии 5)
 В этом кратком руководстве показано, как отправлять и получать события через концентратор событий с помощью пакета JavaScript **azure/event-hubs версии 5**. 
@@ -106,7 +106,7 @@ npm install @azure/eventhubs-checkpointstore-blob
 В этом разделе вы получаете события из концентратора событий с помощью хранилища контрольных точек хранилища BLOB-объектов Azure в приложении JavaScript. Оно регулярно создает контрольные точки метаданных для полученных сообщений в Azure Storage blob. Благодаря такому подходу позже можно легко продолжить получать сообщения с того места, где вы остановились.
 
 > [!NOTE]
-> При использовании Azure Stack Hub учтите, что эта платформа может поддерживать версию пакета SDK для хранилища BLOB-объектов, отличающуюся от доступных в Azure. Например, если вы используете [Azure Stack Hub версии 2002](https://docs.microsoft.com/azure-stack/user/event-hubs-overview), последней доступной версией для службы хранилища будет 2017-11-09. В таком случае кроме действий, описанных в этом разделе, вам нужно добавить код для включения поддержки API службы хранилища версии 2017-11-09. См. сведения о том, как включить поддержку определенной версии API службы хранилища для примеров [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/javascript/receiveEventsWithApiSpecificStorage.js) и [TypeScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/typescript/src/receiveEventsWithApiSpecificStorage.ts) на GitHub. См. сведения о версиях службы хранилища Azure, поддерживаемых в Azure Stack Hub, в статье [Хранилище Azure Stack Hub. Отличия и рекомендации](https://docs.microsoft.com/azure-stack/user/azure-stack-acs-differences).
+> При использовании Azure Stack Hub учтите, что эта платформа может поддерживать версию пакета SDK для хранилища BLOB-объектов, отличающуюся от доступных в Azure. Например, если вы используете [Azure Stack Hub версии 2002](/azure-stack/user/event-hubs-overview), последней доступной версией для службы хранилища будет 2017-11-09. В таком случае кроме действий, описанных в этом разделе, вам нужно добавить код для включения поддержки API службы хранилища версии 2017-11-09. См. сведения о том, как включить поддержку определенной версии API службы хранилища для примеров [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/javascript/receiveEventsWithApiSpecificStorage.js) и [TypeScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/typescript/src/receiveEventsWithApiSpecificStorage.ts) на GitHub. См. сведения о версиях службы хранилища Azure, поддерживаемых в Azure Stack Hub, в статье [Хранилище Azure Stack Hub. Отличия и рекомендации](/azure-stack/user/azure-stack-acs-differences).
 
 
 ### <a name="create-an-azure-storage-account-and-a-blob-container"></a>Создание учетной записи хранения Azure и контейнера больших двоичных объектов

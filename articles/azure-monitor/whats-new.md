@@ -6,12 +6,12 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 07/08/2020
-ms.openlocfilehash: 4d061e7a105fc73f7f44c8336df82ff363ee6ded
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 192219a804365957e9eaa0577019ff18d75861bf
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86203753"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86498514"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Что нового в документации по Azure Monitor?
 
@@ -67,21 +67,21 @@ ms.locfileid: "86203753"
 - [Отправка журнала действий Azure в рабочую область Log Analytics с помощью шаблона Azure Resource Manager](learn/quick-collect-activity-log-arm.md) — новая статья.
 
 #### <a name="new-and-updated-articles-from-restructure-and-consolidation-of-platform-log-content"></a>Новые и измененные статьи, посвященные реструктуризации и консолидации содержимого журнала платформы
-- [Архивация журналов ресурсов Azure в учетной записи хранения](platform/resource-logs-collect-storage.md)
+- [Архивация журналов ресурсов Azure в учетной записи хранения](./platform/resource-logs.md#send-to-azure-storage)
 - [Схема событий журнала действий Azure](platform/activity-log-schema.md)
 - [Журнал действий Azure](platform/activity-log.md)
 - [Примеры CLI для Azure Monitor](samples/cli-samples.md)
 - [Примеры для Azure Monitor PowerShell](samples/powershell-samples.md)
 - [Пошаговое руководство по REST API Azure Monitor](platform/rest-api-walkthrough.md)
-- [Поддерживаемые службы и схемы в журналах ресурсов Azure](platform/diagnostic-logs-schema.md)
+- [Поддерживаемые службы и схемы в журналах ресурсов Azure](./platform/resource-logs-schema.md)
 - [Журналы ресурсов Azure](platform/resource-logs.md)
-- [Сбор и анализ журналов действий Azure в Azure Monitor](platform/activity-log-collect.md)
-- [Передача журналов ресурсов Azure в рабочую область Log Analytics](platform/resource-logs-collect-workspace.md)
+- [Сбор и анализ журналов действий Azure в Azure Monitor](./platform/activity-log.md)
+- [Передача журналов ресурсов Azure в рабочую область Log Analytics](./platform/resource-logs.md#send-to-log-analytics-workspace)
 - [Создание параметров диагностики для отправки журналов платформы и метрик в различные места назначения](platform/diagnostic-settings.md)
-- [Экспорт журнала действий Windows Azure](platform/activity-log-export.md)
+- [Экспорт журнала действий Windows Azure](./platform/activity-log.md#legacy-collection-methods)
 - [Общие сведения о журналах платформы Azure](platform/platform-logs-overview.md)
-- [Потоковая передача журналов платформы Azure в концентратор событий](platform/resource-logs-stream-event-hubs.md)
-- [Просмотр событий в журнале действий Azure (Azure Monitor)](platform/activity-log-view.md)
+- [Потоковая передача журналов платформы Azure в концентратор событий](./platform/resource-logs.md#send-to-azure-event-hubs)
+- [Просмотр событий в журнале действий Azure (Azure Monitor)](./platform/activity-log.md#view-the-activity-log)
 
 ### <a name="virtual-machines"></a>Виртуальные машины
 - [Включение Azure Monitor для виртуальных машин на портале Azure](insights/vminsights-enable-single-vm.md) — добавлены сведения об Azure Arc.
@@ -155,7 +155,7 @@ ms.locfileid: "86203753"
 
 ### <a name="insights"></a>Аналитика
 - [Azure Monitor для Кэша Azure для Redis (предварительная версия)](insights/redis-cache-insights-overview.md) — новая статья.
-- [Мониторинг Key Vault с помощью Azure Monitor для Key Vault (предварительная версия)](insights/key-vaults-insights-overview.md) — новая статья.
+- [Мониторинг Key Vault с помощью Azure Monitor для Key Vault (предварительная версия)](./insights/key-vault-insights-overview.md) — новая статья.
 
 ### <a name="logs"></a>Журналы
 - [Создание и настройка Log Analytics с помощью PowerShell](platform/powershell-workspace-configuration.md) — добавлен раздел "Устранение неполадок".
@@ -280,7 +280,7 @@ ms.locfileid: "86203753"
 
 ### <a name="platform-logs"></a>Журналы платформы
 
-- [Сбор и анализ журнала действий Azure в Azure Monitor](platform/activity-log-collect.md) — перезапись для лучшего объяснения сбора журнала активности с помощью параметров диагностики.
+- [Сбор и анализ журнала действий Azure в Azure Monitor](./platform/activity-log.md) — перезапись для лучшего объяснения сбора журнала активности с помощью параметров диагностики.
 
 ### <a name="virtual-machines"></a>Виртуальные машины
 
@@ -326,7 +326,7 @@ ms.locfileid: "86203753"
 
 #### <a name="azure-monitor-for-containers"></a>Azure Monitor для контейнеров
 
-- [Интеграция Azure Active Directory со Службой контейнеров Azure](../aks/azure-ad-integration.md) — добавлено примечание о создании клиентского приложения для поддержки кластера с поддержкой RBAC, обеспечивающего поддержку Azure Monitor для контейнеров.
+- [Интеграция Azure Active Directory со Службой контейнеров Azure](../aks/azure-ad-integration-cli.md) — добавлено примечание о создании клиентского приложения для поддержки кластера с поддержкой RBAC, обеспечивающего поддержку Azure Monitor для контейнеров.
 
 #### <a name="azure-monitor-for-vms"></a>Azure Monitor для виртуальных машин
 
@@ -412,8 +412,8 @@ ms.locfileid: "86203753"
 
 ### <a name="platform-logs"></a>Журналы платформы
 
-- [Сбор данных журнала действий Azure с помощью параметров диагностики в Azure Monitor](platform/diagnostic-settings-legacy.md) — добавлены дополнительные сведения об измененных свойствах.
-- [Экспорт журнала действий Azure](platform/activity-log-export.md) — статья обновлена с учетом изменений пользовательского интерфейса. 
+- [Сбор данных журнала действий Azure с помощью параметров диагностики в Azure Monitor](./platform/activity-log.md) — добавлены дополнительные сведения об измененных свойствах.
+- [Экспорт журнала действий Azure](./platform/activity-log.md#legacy-collection-methods) — статья обновлена с учетом изменений пользовательского интерфейса. 
 
 ## <a name="december-2019"></a>Декабрь 2019 г.
 
@@ -450,7 +450,7 @@ ms.locfileid: "86203753"
 
 ### <a name="insights-and-solutions"></a>Полезные сведения и решения
 
-- [Azure Monitor для контейнеров: вопросы и ответы](insights/container-insights-faq.md) — добавлен вопрос о полях "Образ" и "Имя".
+- [Azure Monitor для контейнеров: вопросы и ответы](./faq.md) — добавлен вопрос о полях "Образ" и "Имя".
 - [Решение Аналитики Azure SQL в Azure Monitor](insights/azure-sql.md) — обновлена поддержка ожидания базой данных управляемого экземпляра.
 - [Настройка Azure Monitor для сбора данных агента контейнера](insights/container-insights-agent-config.md) — добавлен параметр для enrich_container_logs.
 - [Настройка гибридных кластеров Kubernetes с Azure Monitor для контейнеров](insights/container-insights-hybrid-setup.md) — добавлен раздел "Устранение неполадок".
@@ -474,19 +474,19 @@ ms.locfileid: "86203753"
 
 Несколько статей были обновлены в ходе реструктуризации содержимого для журналов платформы с учетом новой функции настройки журнала действий с помощью параметров диагностики.
 
-- [Архивация журналов ресурсов Azure в учетной записи хранения](platform/resource-logs-collect-storage.md)
+- [Архивация журналов ресурсов Azure в учетной записи хранения](./platform/resource-logs.md#send-to-azure-storage)
 - [Схема событий журнала действий Azure](platform/activity-log-schema.md)
 - [Ограничения службы Azure Monitor](service-limits.md)
-- [Сбор и анализ журналов действий Azure в рабочей области Log Analytics](platform/activity-log-collect.md)
-- [Сбор данных журнала действий Azure с помощью параметров диагностики в Azure Monitor (предварительная версия)](platform/diagnostic-settings-legacy.md)
+- [Сбор и анализ журналов действий Azure в рабочей области Log Analytics](./platform/activity-log.md)
+- [Сбор данных журнала действий Azure с помощью параметров диагностики в Azure Monitor (предварительная версия)](./platform/activity-log.md)
 - [Передача журналов действий Azure в рабочую область Log Analytics для нескольких арендаторов](platform/activity-log-collect-tenants.md)
-- [Передача журналов ресурсов Azure в рабочую область Log Analytics](platform/resource-logs-collect-workspace.md)
+- [Передача журналов ресурсов Azure в рабочую область Log Analytics](./platform/resource-logs.md#send-to-log-analytics-workspace)
 - [Создание параметра диагностики в Azure с помощью шаблона Resource Manager](platform/diagnostic-settings-template.md)
 - [Создание параметра диагностики для сбора журналов и метрик в Azure](platform/diagnostic-settings.md)
-- [Экспорт журнала действий Windows Azure](platform/activity-log-export.md)
+- [Экспорт журнала действий Windows Azure](./platform/activity-log.md#legacy-collection-methods)
 - [Общие сведения о журналах платформы Azure](platform/platform-logs-overview.md)
 - [Потоковая передача данных мониторинга Azure в концентратор событий](platform/stream-monitoring-data-event-hubs.md)
-- [Потоковая передача журналов платформы Azure в концентратор событий](platform/resource-logs-stream-event-hubs.md)
+- [Потоковая передача журналов платформы Azure в концентратор событий](./platform/resource-logs.md#send-to-azure-event-hubs)
 
 ### <a name="quickstarts-and-tutorials"></a>Краткие руководства
 

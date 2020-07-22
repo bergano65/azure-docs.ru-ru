@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 10/17/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 397fac7609d9527165a1a0a35215a2e2bac23c6d
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: e18f66beb8f318e993bd9367f5e50740d76db73f
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81759218"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86510333"
 ---
 # <a name="quickstart-create-a-linux-virtual-machine-in-azure-with-powershell"></a>Краткое руководство. Создание виртуальной машины Linux в Azure с помощью PowerShell
 
@@ -39,11 +39,11 @@ ssh-keygen -t rsa -b 2048
 
 Подробные сведения о создании пар ключей SSH, в том числе с помощью PuTTy, вы найдете в статье [Как использовать ключи SSH с Windows в Azure](ssh-from-windows.md).
 
-Если вы создали пару ключей SSH при помощи Cloud Shell, она будет сохранена в образе контейнера в [учетной записи хранения, которую Cloud Shell создает автоматически](https://docs.microsoft.com/azure/cloud-shell/persisting-shell-storage). Не удаляйте этот файловый ресурс или учетную запись хранения, пока вы не получите ключи, иначе вы потеряете доступ к виртуальной машине. 
+Если вы создали пару ключей SSH при помощи Cloud Shell, она будет сохранена в образе контейнера в [учетной записи хранения, которую Cloud Shell создает автоматически](../../cloud-shell/persisting-shell-storage.md). Не удаляйте этот файловый ресурс или учетную запись хранения, пока вы не получите ключи, иначе вы потеряете доступ к виртуальной машине. 
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов Azure с помощью командлета [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими.
+Создайте группу ресурсов Azure с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими.
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name "myResourceGroup" -Location "EastUS"
@@ -111,7 +111,7 @@ $nsg = New-AzNetworkSecurityGroup `
   -SecurityRules $nsgRuleSSH,$nsgRuleWeb
 ```
 
-Создайте виртуальный сетевой адаптер с помощью командлета [New-AzNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface). Виртуальный сетевой адаптер подключает виртуальную машину к подсети, группе безопасности сети и общедоступному IP-адресу.
+Создайте виртуальный сетевой адаптер с помощью командлета [New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface). Виртуальный сетевой адаптер подключает виртуальную машину к подсети, группе безопасности сети и общедоступному IP-адресу.
 
 ```azurepowershell-interactive
 # Create a virtual network card and associate with public IP address and NSG
@@ -160,7 +160,7 @@ Add-AzVMSshPublicKey `
   -Path "/home/azureuser/.ssh/authorized_keys"
 ```
 
-Теперь объедините описанные выше определения конфигурации в командлете создания [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm):
+Теперь объедините описанные выше определения конфигурации в командлете создания [New-AzVM](/powershell/module/az.compute/new-azvm):
 
 ```azurepowershell-interactive
 New-AzVM `
@@ -172,7 +172,7 @@ New-AzVM `
 
 ## <a name="connect-to-the-vm"></a>Подключение к виртуальной машине
 
-Установите SSH-подключение к виртуальной машине, используя общедоступный IP-адрес. Чтобы узнать общедоступный IP-адрес виртуальной машины, выполните командлет [Get-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress):
+Установите SSH-подключение к виртуальной машине, используя общедоступный IP-адрес. Чтобы узнать общедоступный IP-адрес виртуальной машины, выполните командлет [Get-AzPublicIpAddress](/powershell/module/az.network/get-azpublicipaddress):
 
 ```azurepowershell-interactive
 Get-AzPublicIpAddress -ResourceGroupName "myResourceGroup" | Select "IpAddress"
@@ -207,7 +207,7 @@ sudo apt-get -y install nginx
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Вы можете удалить ненужную группу ресурсов, виртуальную машину и все связанные с ней ресурсы, выполнив командлет [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup).
+Вы можете удалить ненужную группу ресурсов, виртуальную машину и все связанные с ней ресурсы, выполнив командлет [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup).
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name "myResourceGroup"
