@@ -10,12 +10,12 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.custom: mvc
 ms.reviewer: akjosh
-ms.openlocfilehash: 0ea5c11254d8dba050fe63a4cd915240c8270dd1
-ms.sourcegitcommit: 58ff2addf1ffa32d529ee9661bbef8fbae3cddec
+ms.openlocfilehash: bd4da23ed3f4b2dc92652493c77efbcbc0542066
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84324578"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86510129"
 ---
 # <a name="tutorial-create-a-custom-image-of-an-azure-vm-with-the-azure-cli"></a>Руководство по Создание пользовательского образа виртуальной машины Azure с помощью Azure CLI
 
@@ -26,10 +26,10 @@ ms.locfileid: "84324578"
 > * Создание определения образа
 > * Создание версии образа
 > * Создание виртуальной машины из образа 
-> * Предоставление общего доступа к коллекции образов
+> * Предоставление общего доступа к коллекции образов.
 
 
-При работе с этим руководством используется интерфейс командной строки (CLI) в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview), который всегда обновлен до последней версии. Чтобы открыть Cloud Shell, выберите **Попробовать** в верхнем углу любого блока кода.
+При работе с этим руководством используется интерфейс командной строки (CLI) в [Azure Cloud Shell](../../cloud-shell/overview.md), который всегда обновлен до последней версии. Чтобы открыть Cloud Shell, выберите **Попробовать** в верхнем углу любого блока кода.
 
 Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.4.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
@@ -90,11 +90,11 @@ az vm get-instance-view -g MyResourceGroup -n MyVm --query id
 
 В имени определения образа можно использовать прописные и строчные буквы, цифры, точки и дефисы. 
 
-Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](https://docs.microsoft.com/azure/virtual-machines/linux/shared-image-galleries#image-definitions).
+Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](./shared-image-galleries.md#image-definitions).
 
 Создайте в коллекции определение образа, используя команду [az sig image-definition create](/cli/azure/sig/image-definition#az-sig-image-definition-create). 
 
-В этом примере определение образа имеет имя *myImageDefinition* и предназначено для [специализированного](https://docs.microsoft.com/azure/virtual-machines/linux/shared-image-galleries#generalized-and-specialized-images) образа ОС Linux. 
+В этом примере определение образа имеет имя *myImageDefinition* и предназначено для [специализированного](./shared-image-galleries.md#generalized-and-specialized-images) образа ОС Linux. 
 
 ```azurecli-interactive 
 az sig image-definition create \
@@ -134,7 +134,7 @@ az sig image-version create \
 > [!NOTE]
 > Прежде чем использовать тот же управляемый образ для создания другой версии образа, необходимо дождаться завершения сборки и репликации версии образа.
 >
-> Вы также можете сохранить образ в хранилище класса Premium, добавив `--storage-account-type  premium_lrs`, или [хранилище, избыточное между зонами](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs), добавив `--storage-account-type  standard_zrs` при создании версии образа.
+> Вы также можете сохранить образ в хранилище класса Premium, добавив `--storage-account-type  premium_lrs`, или [хранилище, избыточное между зонами](../../storage/common/storage-redundancy.md), добавив `--storage-account-type  standard_zrs` при создании версии образа.
 >
 
  
@@ -176,11 +176,11 @@ az role assignment create \
    --scope <gallery ID>
 ```
 
-Дополнительные сведения о предоставлении общего доступа к ресурсам с помощью RBAC см. в статье [Управление доступом с помощью RBAC и Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli).
+Дополнительные сведения о предоставлении общего доступа к ресурсам с помощью RBAC см. в статье [Управление доступом с помощью RBAC и Azure CLI](../../role-based-access-control/role-assignments-cli.md).
 
 ## <a name="azure-image-builder"></a>Средство создания образов Azure
 
-Azure также предлагает службу на основе Packer — [Конструктор образов виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-overview). Просто опишите настройки в шаблоне, и эта служба автоматически создаст образ. 
+Azure также предлагает службу на основе Packer — [Конструктор образов виртуальных машин Azure](./image-builder-overview.md). Просто опишите настройки в шаблоне, и эта служба автоматически создаст образ. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -197,4 +197,3 @@ Azure также предлагает службу на основе Packer —
 
 > [!div class="nextstepaction"]
 > [Создание высокодоступных виртуальных машин](tutorial-availability-sets.md)
-

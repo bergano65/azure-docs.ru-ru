@@ -6,12 +6,12 @@ ms.service: azure-functions
 ms.topic: quickstart
 ms.date: 03/25/2020
 ms.author: dglover
-ms.openlocfilehash: e4ac4f669d38f07d9fe4edbd600cc06f135fac03
-ms.sourcegitcommit: b129186667a696134d3b93363f8f92d175d51475
+ms.openlocfilehash: d8abf6cdf8506dc491f4e026c9a61ac1391f6ea4
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80674565"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506304"
 ---
 # <a name="quickstart-create-your-first-function-with-kotlin-and-maven"></a>Краткое руководство. Создание первой функции с помощью Kotlin и Maven
 
@@ -25,7 +25,7 @@ ms.locfileid: "80674565"
 
 - [Java Developer Kit (JDK)](https://aka.ms/azure-jdks) версии 8.
 - [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
-- [Azure CLI](https://docs.microsoft.com/cli/azure)
+- [Azure CLI](/cli/azure)
 - [Azure Functions Core Tools](./functions-run-local.md#v2) 2.6.666 или более поздней версии.
 
 > [!IMPORTANT]
@@ -79,7 +79,7 @@ Maven запрашивает значения, необходимые для з�
 [INFO] Parameter: artifactId, Value: fabrikam-function
 </pre>
 
-Maven создает файлы проекта в новой папке с именем _artifactId_, в этом примере — `fabrikam-functions`. Созданный в проекте и готовый для запуска код — это простая функция [активации HTTP](/azure/azure-functions/functions-bindings-http-webhook), возвращающая текст запроса.
+Maven создает файлы проекта в новой папке с именем _artifactId_, в этом примере — `fabrikam-functions`. Созданный в проекте и готовый для запуска код — это простая функция [активации HTTP](./functions-bindings-http-webhook.md), возвращающая текст запроса.
 
 ```kotlin
 class Function {

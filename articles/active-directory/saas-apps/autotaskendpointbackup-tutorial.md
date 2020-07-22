@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 1/19/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c9bad99d0ce39fb5f179043278ca4785d726744
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7d080fd3cac7a0550452908e9e0265bb2ffcb462
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73157779"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86500036"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-autotask-endpoint-backup"></a>Руководство по интеграции Azure Active Directory с Autotask Endpoint Backup
 
@@ -111,7 +111,7 @@ ms.locfileid: "73157779"
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.backup.autotask.net/singlesignon/saml/SSO`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов Autotask Endpoint Backup](https://backup.autotask.net/help/Content/0_HOME/Support_for_End_Clients.htm). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов Autotask Endpoint Backup](https://backup.autotask.net/help/Content/0_HOME/_AutotaskCustomerSupport.htm). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -129,7 +129,7 @@ ms.locfileid: "73157779"
 
 ### <a name="configure-autotask-endpoint-backup-single-sign-on"></a>Настройка единого входа в Autotask Endpoint Backup
 
-Чтобы настроить единый вход на стороне **Autotask Endpoint Backup**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Autotask Endpoint Backup](https://backup.autotask.net/help/Content/0_HOME/Support_for_End_Clients.htm). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Autotask Endpoint Backup**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Autotask Endpoint Backup](https://backup.autotask.net/help/Content/0_HOME/_AutotaskCustomerSupport.htm). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -184,7 +184,7 @@ ms.locfileid: "73157779"
 
 ### <a name="create-autotask-endpoint-backup-test-user"></a>Создание тестового пользователя в Autotask Endpoint Backup
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Autotask Endpoint Backup. Обратитесь в  [группу поддержки Autotask Endpoint Backup](https://backup.autotask.net/help/Content/0_HOME/Support_for_End_Clients.htm), чтобы добавить пользователей на платформу Autotask Endpoint Backup. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Autotask Endpoint Backup. Обратитесь в  [группу поддержки Autotask Endpoint Backup](https://backup.autotask.net/help/Content/0_HOME/_AutotaskCustomerSupport.htm), чтобы добавить пользователей на платформу Autotask Endpoint Backup. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

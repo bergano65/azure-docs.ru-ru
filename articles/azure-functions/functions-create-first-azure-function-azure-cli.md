@@ -5,12 +5,12 @@ ms.date: 03/30/2020
 ms.topic: quickstart
 ms.custom: tracking-python
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 671404b952156ff6ad20eaf082d7af33058923a3
-ms.sourcegitcommit: 51718f41d36192b9722e278237617f01da1b9b4e
+ms.openlocfilehash: 86be7ec73d8e19597062f3fa3777f3aa422082c3
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85100023"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506355"
 ---
 # <a name="quickstart-create-a-function-in-azure-that-responds-to-http-requests"></a>Краткое руководство. Создание функции в Azure, которая отвечает на HTTP-запросы
 
@@ -40,7 +40,7 @@ ms.locfileid: "85100023"
 ::: zone-end  
 ::: zone pivot="programming-language-java"  
 > [!NOTE]
-> Если вы не хотите использовать Maven в качестве средства разработки, ознакомьтесь с аналогичными руководствами для разработчиков Java по использованию [Gradle](/azure/azure-functions/functions-create-first-java-gradle), [IntelliJ IDEA](/azure/developer/java/toolkit-for-intellij/quickstart-functions) и [Visual Studio Code](/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java).
+> Если вы не хотите использовать Maven в качестве средства разработки, ознакомьтесь с аналогичными руководствами для разработчиков Java по использованию [Gradle](./functions-create-first-java-gradle.md), [IntelliJ IDEA](/azure/developer/java/toolkit-for-intellij/quickstart-functions) и [Visual Studio Code](./functions-create-first-function-vs-code.md?pivots=programming-language-java).
 ::: zone-end  
 
 [!INCLUDE [functions-requirements-cli](../../includes/functions-requirements-cli.md)]
@@ -139,7 +139,7 @@ cd fabrikam-functions
 
 :::code language="csharp" source="~/functions-docs-csharp/http-trigger-template/HttpExample.cs":::
 
-Возвращаемый объект — это [ActionResult](/dotnet/api/microsoft.aspnetcore.mvc.actionresult), который возвращает ответное сообщение в виде [OkObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.okobjectresult) (200) или [BadRequestObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.badrequestobjectresult) (400). Дополнительные сведения см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](/azure/azure-functions/functions-bindings-http-webhook?tabs=csharp).
+Возвращаемый объект — это [ActionResult](/dotnet/api/microsoft.aspnetcore.mvc.actionresult), который возвращает ответное сообщение в виде [OkObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.okobjectresult) (200) или [BadRequestObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.badrequestobjectresult) (400). Дополнительные сведения см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](./functions-bindings-http-webhook.md?tabs=csharp).
 ::: zone-end
 
 ::: zone pivot="programming-language-java"
@@ -169,7 +169,7 @@ cd fabrikam-functions
 
 :::code language="python" source="~/functions-quickstart-templates/Functions.Templates/Templates/HttpTrigger-Python/__init__.py":::
 
-Для триггера HTTP функция получает данные запроса в переменной `req`, как определено в файле *function.json*. `req` — это экземпляр [класса azure.functions.HttpRequest](/python/api/azure-functions/azure.functions.httprequest). Возвращаемый объект, определенный как `$return` в файле *function.json*, — это экземпляр класса [azure.functions.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse). Дополнительные сведения см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](/azure/azure-functions/functions-bindings-http-webhook?tabs=python).
+Для триггера HTTP функция получает данные запроса в переменной `req`, как определено в файле *function.json*. `req` — это экземпляр [класса azure.functions.HttpRequest](/python/api/azure-functions/azure.functions.httprequest). Возвращаемый объект, определенный как `$return` в файле *function.json*, — это экземпляр класса [azure.functions.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse). Дополнительные сведения см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](./functions-bindings-http-webhook.md?tabs=python).
 ::: zone-end
 
 ::: zone pivot="programming-language-javascript"
@@ -179,7 +179,7 @@ cd fabrikam-functions
 
 :::code language="javascript" source="~/functions-quickstart-templates/Functions.Templates/Templates/HttpTrigger-JavaScript/index.js":::
 
-Для триггера HTTP функция получает данные запроса в переменной `req`, как определено в файле *function.json*. Ответом является объект, определенный как `$return` в файле *function.json*. Дополнительные сведения см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](/azure/azure-functions/functions-bindings-http-webhook?tabs=javascript).
+Для триггера HTTP функция получает данные запроса в переменной `req`, как определено в файле *function.json*. Ответом является объект, определенный как `$return` в файле *function.json*. Дополнительные сведения см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](./functions-bindings-http-webhook.md?tabs=javascript).
 ::: zone-end
 
 ::: zone pivot="programming-language-typescript"

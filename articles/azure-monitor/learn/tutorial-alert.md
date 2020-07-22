@@ -7,12 +7,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 04/10/2019
 ms.custom: mvc
-ms.openlocfilehash: 7195de1cf58e5dd2e1d0b49b309f3afc718cca92
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 1c39bfdbcfb924505473b20b3d56a28d54c84f93
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77656268"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505879"
 ---
 # <a name="monitor-and-alert-on-application-health-with-azure-application-insights"></a>Мониторинг и оповещение о работоспособности приложения с помощью Azure Application Insights
 
@@ -28,7 +28,7 @@ Azure Application Insights позволяет выполнять монитор�
 
 Для работы с этим руководством:
 
-Создайте [ресурс Application Insights](https://docs.microsoft.com/azure/azure-monitor/learn/dotnetcore-quick-start#enable-application-insights).
+Создайте [ресурс Application Insights](./dotnetcore-quick-start.md#enable-application-insights).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -56,7 +56,7 @@ Azure Application Insights позволяет выполнять монитор�
 
     ![Изменение оповещения](media/tutorial-alert/edit-alert-001.png)
 
-6. Для числа расположений, запрос из которых завершается неудачей, задайте значение 3 или более. Создайте [группу действий](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups), чтобы указать получателей оповещений при превышении порога оповещений.
+6. Для числа расположений, запрос из которых завершается неудачей, задайте значение 3 или более. Создайте [группу действий](../platform/action-groups.md), чтобы указать получателей оповещений при превышении порога оповещений.
 
     ![Сохранение настроек оповещения](media/tutorial-alert/save-alert-001.png)
 

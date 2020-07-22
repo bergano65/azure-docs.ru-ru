@@ -10,12 +10,12 @@ ms.workload: infrastructure
 ms.date: 12/04/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 80f7ba4a4493299d9d1795631401689f4619d873
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: 5ae3f3dd31ad7a98a1b4a3d5ed00b568d1f8ed47
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84014633"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86508072"
 ---
 # <a name="tutorial-create-and-manage-azure-virtual-networks-for-windows-virtual-machines-with-azure-powershell"></a>Руководство по Создание и администрирование виртуальных сетей Azure для виртуальных машин Windows с помощью Azure PowerShell
 
@@ -59,13 +59,13 @@ Azure Cloud Shell — это бесплатная интерактивная о�
 
 В этом руководстве создается виртуальная сеть с двумя подсетями: интерфейсная подсеть для размещения веб-приложения и внутренняя подсеть для размещения сервера базы данных.
 
-Прежде чем создать виртуальную машину, выполните командлет [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) для создания группы ресурсов. Следующий пример позволяет создать группу ресурсов *myRGNetwork* в расположении *EastUS*.
+Прежде чем создать виртуальную машину, выполните командлет [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) для создания группы ресурсов. Следующий пример позволяет создать группу ресурсов *myRGNetwork* в расположении *EastUS*.
 
 ```azurepowershell-interactive
 New-AzResourceGroup -ResourceGroupName myRGNetwork -Location EastUS
 ```
 
-Создайте конфигурацию подсети с именем *myFrontendSubnet*, выполнив командлет [New-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig).
+Создайте конфигурацию подсети с именем *myFrontendSubnet*, выполнив командлет [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig).
 
 ```azurepowershell-interactive
 $frontendSubnet = New-AzVirtualNetworkSubnetConfig `
@@ -83,7 +83,7 @@ $backendSubnet = New-AzVirtualNetworkSubnetConfig `
 
 ## <a name="create-virtual-network"></a>Создание виртуальной сети
 
-Создайте виртуальную сеть *myVNet*, использующую *myFrontendSubnet* и *myBackendSubnet*, выполнив командлет [New-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork).
+Создайте виртуальную сеть *myVNet*, использующую *myFrontendSubnet* и *myBackendSubnet*, выполнив командлет [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork).
 
 ```azurepowershell-interactive
 $vnet = New-AzVirtualNetwork `
@@ -102,7 +102,7 @@ $vnet = New-AzVirtualNetwork `
 
 При использовании статического метода выделения IP-адрес остается назначенным виртуальной машине, даже если она в освобожденном состоянии. В этом случае вы не сможете указать IP-адрес. Он выделяется из пула доступных адресов.
 
-Создайте общедоступный IP-адрес с именем *myPublicIPAddress*, выполнив командлет [New-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/new-azpublicipaddress).
+Создайте общедоступный IP-адрес с именем *myPublicIPAddress*, выполнив командлет [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress).
 
 ```azurepowershell-interactive
 $pip = New-AzPublicIpAddress `
@@ -116,7 +116,7 @@ $pip = New-AzPublicIpAddress `
 
 ## <a name="create-a-front-end-vm"></a>Создание интерфейсной виртуальной машины
 
-Для взаимодействия в виртуальной сети виртуальной машине требуется виртуальный сетевой адаптер. Создайте сетевой адаптер, выполнив командлет [New-AzNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface).
+Для взаимодействия в виртуальной сети виртуальной машине требуется виртуальный сетевой адаптер. Создайте сетевой адаптер, выполнив командлет [New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface).
 
 ```azurepowershell-interactive
 $frontendNic = New-AzNetworkInterface `
@@ -127,13 +127,13 @@ $frontendNic = New-AzNetworkInterface `
   -PublicIpAddressId $pip.Id
 ```
 
-Настройте на виртуальной машине имя пользователя и пароль для учетной записи администратора с помощью командлета [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential). Эти учетные данные используются для подключения к виртуальной машине на дополнительных шагах:
+Настройте на виртуальной машине имя пользователя и пароль для учетной записи администратора с помощью командлета [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential?view=powershell-5.1). Эти учетные данные используются для подключения к виртуальной машине на дополнительных шагах:
 
 ```azurepowershell-interactive
 $cred = Get-Credential
 ```
 
-Создайте виртуальные машины с помощью командлета [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm).
+Создайте виртуальные машины с помощью командлета [New-AzVM](/powershell/module/az.compute/new-azvm).
 
 ```azurepowershell-interactive
 New-AzVM `
@@ -163,7 +163,7 @@ New-AzVM `
 
 ### <a name="create-network-security-groups"></a>Создание групп безопасности сети
 
-Создайте правило входящих подключений с именем *myFrontendNSGRule*, чтобы разрешить входящий веб-трафик в *myFrontendVM*, выполнив командлет [New-AzNetworkSecurityRuleConfig](https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecurityruleconfig).
+Создайте правило входящих подключений с именем *myFrontendNSGRule*, чтобы разрешить входящий веб-трафик в *myFrontendVM*, выполнив командлет [New-AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig).
 
 ```azurepowershell-interactive
 $nsgFrontendRule = New-AzNetworkSecurityRuleConfig `
@@ -193,7 +193,7 @@ $nsgBackendRule = New-AzNetworkSecurityRuleConfig `
   -Access Allow
 ```
 
-Добавьте группу безопасности сети *myFrontendNSG* с помощью командлета [New-AzNetworkSecurityGroup](https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecuritygroup).
+Добавьте группу безопасности сети *myFrontendNSG* с помощью командлета [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup).
 
 ```azurepowershell-interactive
 $nsgFrontend = New-AzNetworkSecurityGroup `

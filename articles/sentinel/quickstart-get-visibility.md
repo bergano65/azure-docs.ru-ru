@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc, fasttrack-edit
 ms.date: 09/23/2019
 ms.author: yelevin
-ms.openlocfilehash: 60e3529e68183488016e40211730412da8e3e0bb
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: 83f83922b3bed19e98566002cbf9ad084ba66cb9
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85564619"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86496219"
 ---
 # <a name="quickstart-get-started-with-azure-sentinel"></a>Краткое руководство. Начало работы с Azure Sentinel
 
@@ -91,23 +91,26 @@ ms.locfileid: "85564619"
 
 В следующем примере запрос позволяет сравнить тенденции трафика по неделям. Вы можете с легкостью переключаться между устройствами поставщика и источниками данных. на которых будете выполнять запрос. В этом примере используется SecurityEvent из Windows. Вы можете переключиться на AzureActivity или CommonSecurityLog на любом другом брандмауэре.
 
-     |where DeviceVendor == "Palo Alto Networks":
-      // week over week query
-      SecurityEvent
-      | where TimeGenerated > ago(14d)
-      | summarize count() by bin(TimeGenerated, 1d)
-      | extend Week = iff(TimeGenerated>ago(7d), "This Week", "Last Week"), TimeGenerated = iff(TimeGenerated>ago(7d), TimeGenerated, TimeGenerated + 7d)
-
+```console
+ |where DeviceVendor == "Palo Alto Networks":
+  // week over week query
+  SecurityEvent
+  | where TimeGenerated > ago(14d)
+  | summarize count() by bin(TimeGenerated, 1d)
+  | extend Week = iff(TimeGenerated>ago(7d), "This Week", "Last Week"), TimeGenerated = iff(TimeGenerated>ago(7d), TimeGenerated, TimeGenerated + 7d)
+```
 
 Вы можете создать запрос, который включает в себя данные из нескольких источников. Вы можете создать запрос, который ищет в журналах аудита Azure Active Directory новых, только что созданных пользователей, а затем проверяет журналы Azure, чтобы узнать, начал ли пользователь вносить изменения в назначения ролей в течение 24 часов после создания. Такое подозрительное действие будет отображаться на панели мониторинга.
 
-    AuditLogs
-    | where OperationName == "Add user"
-    | project AddedTime = TimeGenerated, user = tostring(TargetResources[0].userPrincipalName)
-    | join (AzureActivity
-    | where OperationName == "Create role assignment"
-    | project OperationName, RoleAssignmentTime = TimeGenerated, user = Caller) on user
-    | project-away user1
+```console
+AuditLogs
+| where OperationName == "Add user"
+| project AddedTime = TimeGenerated, user = tostring(TargetResources[0].userPrincipalName)
+| join (AzureActivity
+| where OperationName == "Create role assignment"
+| project OperationName, RoleAssignmentTime = TimeGenerated, user = Caller) on user
+| project-away user1
+```
 
 На основе роли пользователя, который просматривает данные, и того, что он ищет, можно создавать разные книги. Например, вы можете создать книгу для администратора сети, содержащую данные брандмауэра. Вы также можете создавать книги в зависимости от того, как часто хотите просматривать их, существуют ли элементы, которые вы хотите просматривать каждый день, или другие элементы, которые нужно проверять раз в час (например, каждый час вы просматриваете входы Azure AD, чтобы выявить аномалии). 
 

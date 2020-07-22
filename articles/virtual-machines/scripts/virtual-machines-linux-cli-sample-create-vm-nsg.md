@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 02/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: b4339ab2c512a96614158f673cb07b60184f5f71
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 4aa938d69f1ea0e80d25cf8db76179a7cb3b0209
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81459956"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86501496"
 ---
 # <a name="secure-network-traffic-between-virtual-machines-using-an-nsg"></a>Защита сетевого трафика между виртуальными машинами с помощью группы безопасности сети
 
@@ -48,16 +48,16 @@ az group delete --name myResourceGroup
 
 | Get-Help | Примечания |
 |---|---|
-| [az group create](https://docs.microsoft.com/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet) | Создает виртуальную сеть и подсеть Azure. |
-| [az network vnet subnet create](https://docs.microsoft.com/cli/azure/network/vnet/subnet) | Создает подсеть. |
-| [az vm create](https://docs.microsoft.com/cli/azure/vm) | Создает виртуальную машину и подключает ее к сетевой карте, виртуальной сети, подсети и группе безопасности сети. Эта команда также указывает образ виртуальной машины, который будет использоваться, и учетные данные администратора.  |
-| [az network nsg rule list](https://docs.microsoft.com/cli/azure/network/nsg/rule) | Возвращает сведения о правиле группы безопасности сети. В этом примере имя правила хранится в переменной для дальнейшего использования в скрипте. |
-| [az network nsg rule update](https://docs.microsoft.com/cli/azure/network/nsg/rule) | Обновляет правило NSG. В этом примере внутреннее правило обновляется, чтобы разрешить передачу трафика только из интерфейсной подсети. |
-| [az group delete](https://docs.microsoft.com/cli/azure/vm/extension) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
+| [az group create](/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [az network vnet create](/cli/azure/network/vnet) | Создает виртуальную сеть и подсеть Azure. |
+| [az network vnet subnet create](/cli/azure/network/vnet/subnet) | Создает подсеть. |
+| [az vm create](/cli/azure/vm) | Создает виртуальную машину и подключает ее к сетевой карте, виртуальной сети, подсети и группе безопасности сети. Эта команда также указывает образ виртуальной машины, который будет использоваться, и учетные данные администратора.  |
+| [az network nsg rule list](/cli/azure/network/nsg/rule) | Возвращает сведения о правиле группы безопасности сети. В этом примере имя правила хранится в переменной для дальнейшего использования в скрипте. |
+| [az network nsg rule update](/cli/azure/network/nsg/rule) | Обновляет правило NSG. В этом примере внутреннее правило обновляется, чтобы разрешить передачу трафика только из интерфейсной подсети. |
+| [az group delete](/cli/azure/vm/extension) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры скриптов интерфейса командной строки для виртуальных машин см. в [документации по виртуальным машинам Azure под управлением Linux](../linux/cli-samples.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).

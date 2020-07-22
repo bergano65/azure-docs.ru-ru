@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 05/10/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 8e5c03876de8ca078c6e89b8ca101602e4e4cf52
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 3a410eac22d41dc4eead1689ab48e67a4ee52b32
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045745"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86510095"
 ---
 # <a name="tutorial-create-and-manage-azure-virtual-networks-for-linux-virtual-machines-with-the-azure-cli"></a>Руководство по Создание и администрирование виртуальных сетей Azure для виртуальных машин Linux с помощью Azure CLI
 
@@ -32,7 +32,7 @@ ms.locfileid: "86045745"
 > * защищают сетевой трафик;
 > * Создание внутренней виртуальной машины.
 
-При работе с этим руководством используется интерфейс командной строки (CLI) в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview), который всегда обновлен до последней версии. Чтобы открыть Cloud Shell, выберите **Попробовать** в верхнем углу любого блока кода.
+При работе с этим руководством используется интерфейс командной строки (CLI) в [Azure Cloud Shell](../../cloud-shell/overview.md), который всегда обновлен до последней версии. Чтобы открыть Cloud Shell, выберите **Попробовать** в верхнем углу любого блока кода.
 
 Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 

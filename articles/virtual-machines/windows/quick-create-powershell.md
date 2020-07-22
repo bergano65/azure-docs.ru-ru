@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 07/02/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 45160e8bc406318f3b3924142899e33640ee6b73
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: e9ea550b9d9579438e18a3ee1d93ab9e9e22cc65
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82097954"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86508480"
 ---
 # <a name="quickstart-create-a-windows-virtual-machine-in-azure-with-powershell"></a>Краткое руководство. Создание виртуальной машины Windows в Azure с помощью PowerShell
 
@@ -30,7 +30,7 @@ Azure Cloud Shell — это бесплатная интерактивная о�
 
 ## <a name="create-resource-group"></a>Создать группу ресурсов
 
-Создайте группу ресурсов Azure с помощью командлета [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими.
+Создайте группу ресурсов Azure с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими.
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name myResourceGroup -Location EastUS
@@ -38,7 +38,7 @@ New-AzResourceGroup -Name myResourceGroup -Location EastUS
 
 ## <a name="create-virtual-machine"></a>Создание виртуальной машины
 
-Создайте виртуальную машину с помощью команды [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm). Задайте имена для каждого ресурса, и командлет `New-AzVM` создаст ресурсы (если они еще не существуют).
+Создайте виртуальную машину с помощью команды [New-AzVM](/powershell/module/az.compute/new-azvm). Задайте имена для каждого ресурса, и командлет `New-AzVM` создаст ресурсы (если они еще не существуют).
 
 При появлении запроса укажите имя пользователя и пароль в качестве учетных данных для входа на виртуальную машину.
 
@@ -58,7 +58,7 @@ New-AzVm `
 
 Когда завершится развертывание, войдите на виртуальную машину по протоколу удаленного рабочего стола. Чтобы проверить работу виртуальной машины, можно установить веб-сервер IIS.
 
-Чтобы узнать общедоступный IP-адрес виртуальной машины, выполните командлет [Get-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress):
+Чтобы узнать общедоступный IP-адрес виртуальной машины, выполните командлет [Get-AzPublicIpAddress](/powershell/module/az.network/get-azpublicipaddress):
 
 ```powershell
 Get-AzPublicIpAddress -ResourceGroupName "myResourceGroup" | Select "IpAddress"
@@ -92,7 +92,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Вы можете удалить ненужную группу ресурсов, виртуальную машину и все связанные с ней ресурсы, выполнив командлет [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup).
+Вы можете удалить ненужную группу ресурсов, виртуальную машину и все связанные с ней ресурсы, выполнив командлет [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup).
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name myResourceGroup

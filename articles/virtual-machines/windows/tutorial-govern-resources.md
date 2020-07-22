@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/05/2018
 ms.author: tomfitz
 ms.custom: mvc
-ms.openlocfilehash: fce613da352e55bae64db2912af23a07f4bf954f
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: f7f993ca817d6ed6b395343eb180b3601a22f7a1
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86200676"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86508276"
 ---
 # <a name="tutorial-learn-about-windows-virtual-machine-management-with-azure-powershell"></a>Руководство. Управление виртуальными машинами Windows с помощью Azure PowerShell
 
@@ -53,7 +53,7 @@ New-AzResourceGroup -Name myResourceGroup -Location EastUS
 
 Чтобы не назначать роли для отдельных пользователей, зачастую бывает проще создать группу Azure Active Directory для пользователей, которым нужно выполнять подобные действия. А затем назначить этой группе соответствующую роль. В этой статье описано, как использовать существующую группу, чтобы управлять виртуальной машиной, или портал, чтобы [создать группу Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
-Создав новую группу или найдя существующую, воспользуйтесь командой [New-AzRoleAssignment](https://docs.microsoft.com/powershell/module/az.resources/new-azroleassignment), чтобы назначить группе Azure Active Directory роль участника виртуальных машин для группы ресурсов.  
+Создав новую группу или найдя существующую, воспользуйтесь командой [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment), чтобы назначить группе Azure Active Directory роль участника виртуальных машин для группы ресурсов.  
 
 ```azurepowershell-interactive
 $adgroup = Get-AzADGroup -DisplayName <your-group-name>
@@ -69,7 +69,7 @@ New-AzRoleAssignment -ObjectId $adgroup.id `
 
 ## <a name="azure-policy"></a>Политика Azure
 
-Служба [Политика Azure](../../governance/policy/overview.md) позволяет следить за тем, чтобы все ресурсы в подписке соответствовали корпоративным стандартам. Ваша подписка уже имеет несколько определений политики. Чтобы просмотреть доступные определения политик, воспользуйтесь командой [Get-AzPolicyDefinition](https://docs.microsoft.com/powershell/module/az.resources/Get-AzPolicyDefinition):
+Служба [Политика Azure](../../governance/policy/overview.md) позволяет следить за тем, чтобы все ресурсы в подписке соответствовали корпоративным стандартам. Ваша подписка уже имеет несколько определений политики. Чтобы просмотреть доступные определения политик, воспользуйтесь командой [Get-AzPolicyDefinition](/powershell/module/az.resources/get-azpolicydefinition):
 
 ```azurepowershell-interactive
 (Get-AzPolicyDefinition).Properties | Format-Table displayName, policyType
@@ -81,7 +81,7 @@ New-AzRoleAssignment -ObjectId $adgroup.id `
 * ограничивают номера SKU для виртуальных машин;
 * выполняют аудит виртуальных машин, не использующих управляемые диски.
 
-В следующем примере вы получите три определения политик на основе отображаемого имени. Назначьте эти определения группе ресурсов с помощью команды [New-AzPolicyAssignment](https://docs.microsoft.com/powershell/module/az.resources/new-azpolicyassignment). Для некоторых политик нужно указать допустимые значения, задав значения параметров.
+В следующем примере вы получите три определения политик на основе отображаемого имени. Назначьте эти определения группе ресурсов с помощью команды [New-AzPolicyAssignment](/powershell/module/az.resources/new-azpolicyassignment). Для некоторых политик нужно указать допустимые значения, задав значения параметров.
 
 ```azurepowershell-interactive
 # Values to use for parameters
@@ -135,7 +135,7 @@ New-AzVm -ResourceGroupName "myResourceGroup" `
 
 [Блокировки ресурсов](../../azure-resource-manager/management/lock-resources.md) не позволяют пользователям в организации случайно удалить или изменить критически важные ресурсы. В отличие от управления доступом на основе ролей, блокировки ресурсов применяют ограничение для всех пользователей и ролей. Можно установить уровень блокировки *CanNotDelete* или *ReadOnly*.
 
-Чтобы заблокировать виртуальную машину и группу безопасности сети, воспользуйтесь командой [New-AzResourceLock](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcelock):
+Чтобы заблокировать виртуальную машину и группу безопасности сети, воспользуйтесь командой [New-AzResourceLock](/powershell/module/az.resources/new-azresourcelock):
 
 ```azurepowershell-interactive
 # Add CanNotDelete lock to the VM
@@ -167,7 +167,7 @@ Remove-AzResourceGroup -Name myResourceGroup
 
 [!INCLUDE [Resource Manager governance tags Powershell](../../../includes/resource-manager-governance-tags-powershell.md)]
 
-Чтобы применить теги к виртуальной машине, воспользуйтесь командой [Set-AzResource](https://docs.microsoft.com/powershell/module/az.resources/set-azresource):
+Чтобы применить теги к виртуальной машине, воспользуйтесь командой [Set-AzResource](/powershell/module/az.resources/set-azresource):
 
 ```azurepowershell-interactive
 # Get the virtual machine
@@ -181,7 +181,7 @@ Set-AzResource -Tag @{ Dept="IT"; Environment="Test"; Project="Documentation" } 
 
 ### <a name="find-resources-by-tag"></a>Поиск ресурсов по тегу
 
-Чтобы найти ресурсы по имени и значению тега, воспользуйтесь командой [Get-AzResource](https://docs.microsoft.com/powershell/module/az.resources/get-azresource):
+Чтобы найти ресурсы по имени и значению тега, воспользуйтесь командой [Get-AzResource](/powershell/module/az.resources/get-azresource):
 
 ```azurepowershell-interactive
 (Get-AzResource -Tag @{ Environment="Test"}).Name
@@ -199,7 +199,7 @@ Get-AzResource -Tag @{ Environment="Test"} | Where-Object {$_.ResourceType -eq "
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Удалить заблокированные группы безопасности сети невозможно до тех пор, пока не будет снята блокировка. Чтобы снять блокировку, воспользуйтесь командой [Remove-AzResourceLock](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcelock):
+Удалить заблокированные группы безопасности сети невозможно до тех пор, пока не будет снята блокировка. Чтобы снять блокировку, воспользуйтесь командой [Remove-AzResourceLock](/powershell/module/az.resources/remove-azresourcelock):
 
 ```azurepowershell-interactive
 Remove-AzResourceLock -LockName LockVM `
@@ -212,7 +212,7 @@ Remove-AzResourceLock -LockName LockNSG `
   -ResourceGroupName myResourceGroup
 ```
 
-Вы можете удалить ставшие ненужными группу ресурсов, виртуальную машину и все связанные с ней ресурсы, выполнив команду [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup).
+Вы можете удалить ставшие ненужными группу ресурсов, виртуальную машину и все связанные с ней ресурсы, выполнив команду [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup).
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name myResourceGroup
@@ -236,4 +236,3 @@ Remove-AzResourceGroup -Name myResourceGroup
 
 > [!div class="nextstepaction"]
 > [Управление виртуальными машинами](tutorial-config-management.md)
-

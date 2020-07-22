@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 07/01/2020
-ms.openlocfilehash: 11dd12fce669d6b6a027eb182d5f9e6e493577ad
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: c6ab5c2cae2bb966c2b040b40dbf36e56a54411b
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85955698"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86496758"
 ---
 # <a name="quickstart-create-a-demo-app-in-the-portal-azure-cognitive-search"></a>Краткое руководство. Создание демонстрационного приложения на портале (Когнитивный поиск Azure)
 
@@ -31,7 +31,7 @@ ms.locfileid: "85955698"
 
 + [Microsoft Edge (последняя версия)](https://www.microsoft.com/edge) или Google Chrome.
 
-+ [Индекс поиска](search-create-index-portal.md), который станет основой создаваемого приложения. 
++ [Индекс поиска](search-what-is-an-index.md), который станет основой создаваемого приложения. 
 
   При работе с этим кратким руководством используется встроенный пример данных об объектах недвижимости, который включает эскизные изображения, и индекс для него (мастер позволяет добавлять изображение на страницу результатов). Чтобы создать индекс для этого упражнения, запустите мастер **импорта данных**, выбрав источник данных *realestate-us-sample*.
 

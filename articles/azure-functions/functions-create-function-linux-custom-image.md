@@ -5,18 +5,18 @@ ms.date: 03/30/2020
 ms.topic: tutorial
 ms.custom: mvc, tracking-python
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: bb9fc07c0c909f1fcec1644175c1dbac1e2bbb57
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: 57468a4b4234809ca6293ca39ed54a3934f9a4fc
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84560918"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506389"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-container"></a>Создание функции на Linux с помощью пользовательского контейнера
 
 В этом руководстве показано, как создать и развернуть код в Функциях Azure в качестве пользовательского контейнера Docker, используя базовый образ Linux. Пользовательский образ может быть удобен, если вы используете конкретную версию языка или особые зависимости или конфигурации, не поддерживаемые в рамках встроенного образа.
 
-Вы также можете использовать контейнер Службы приложений Azure по умолчанию, как описано в статье [Краткое руководство. Создание функции, выполняемой в Linux, с помощью инструментов командной строки](functions-create-first-azure-function-azure-cli-linux.md). Поддерживаемые базовые образы для Функций Azure находятся в [репозитории базовых образов Функций Azure](https://hub.docker.com/_/microsoft-azure-functions-base).
+Вы также можете использовать контейнер Службы приложений Azure по умолчанию, как описано в статье [Краткое руководство. Создание функции, выполняемой в Linux, с помощью инструментов командной строки](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-python). Поддерживаемые базовые образы для Функций Azure находятся в [репозитории базовых образов Функций Azure](https://hub.docker.com/_/microsoft-azure-functions-base).
 
 В этом руководстве описано следующее:
 
@@ -409,9 +409,7 @@ SSH обеспечивает безопасный обмен данными ме
     FROM mcr.microsoft.com/azure-functions/node:2.0-appservice
     ```
     ::: zone-end
-
-    Различия между базовыми образами описаны в руководстве по [созданию и запуску настраиваемого образа в Службе приложений из частного реестра](../app-service/containers/tutorial-custom-docker-image.md#enable-ssh-connections).
-
+    
 1. Выполните повторную сборку образа с помощью команды `docker build`, заменив `<docker_id>` идентификатором Docker.
 
     ```

@@ -6,12 +6,12 @@ ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 12/15/2019
-ms.openlocfilehash: d356042d65c419163de4951e64a635a22ea90e6d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: f2c780ffb7705575bf1bb5cabb6a09d9dabc0690
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78269193"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505845"
 ---
 # <a name="tutorial-collect-and-analyze-resource-logs-from-an-azure-resource"></a>Руководство по Сбор и анализ журналов ресурсов из ресурса Azure
 
@@ -86,7 +86,7 @@ ms.locfileid: "78269193"
    
     ![Журналы](media/tutorial-resource-logs/logs.png)
 
-4. Служба, представленная в нашем примере, записывает журналы ресурсов в таблицу **AzureDiagnostics**, но другие службы могут сохранять данные в другие таблицы. См. сведения о таблицах, используемых разными службами Azure в описании [поддерживаемых служб, схем и категорий для журналов ресурсов Azure](../platform/diagnostic-logs-schema.md).
+4. Служба, представленная в нашем примере, записывает журналы ресурсов в таблицу **AzureDiagnostics**, но другие службы могут сохранять данные в другие таблицы. См. сведения о таблицах, используемых разными службами Azure в описании [поддерживаемых служб, схем и категорий для журналов ресурсов Azure](../platform/resource-logs-schema.md).
 
     > [!NOTE]
     > Несколько служб записывают журналы ресурсов в таблицу AzureDiagnostics. Если Log Analytics запускается из меню Azure Monitor, необходимо добавить инструкцию `where` со столбцом `ResourceProvider`, чтобы указать конкретную службу. При запуске Log Analytics из меню ресурса автоматически задается область действия и возвращаются записи только из этого ресурса, а значит этот столбец не требуется. Примеры запросов вы найдете в документации по службе.
