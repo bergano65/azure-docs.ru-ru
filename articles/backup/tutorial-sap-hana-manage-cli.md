@@ -3,16 +3,16 @@ title: Руководство по Управление резервными к�
 description: Из этого учебника вы узнаете, как управлять резервными копиями баз данных SAP HANA, запущенных на виртуальной машине Azure, через интерфейс командной строки Azure.
 ms.topic: tutorial
 ms.date: 12/4/2019
-ms.openlocfilehash: 2c088c27a678a4541cbba3c4c43c9cd830c60ff0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 40cfb46faf993a995248d79d60c62de912bd88ee
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79222461"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86538145"
 ---
 # <a name="tutorial-manage-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>Руководство по Управление базами данных SAP HANA на виртуальных машинах Azure с помощью Azure CLI
 
-Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этой документации содержатся сведения об управлении сохраненной резервной копией базы данных SAP HANA на виртуальной машине Azure с помощью Azure CLI. Эти действия можно также выполнить с помощью [портала Azure](https://docs.microsoft.com/azure/backup/sap-hana-db-manage).
+Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этой документации содержатся сведения об управлении сохраненной резервной копией базы данных SAP HANA на виртуальной машине Azure с помощью Azure CLI. Эти действия можно также выполнить с помощью [портала Azure](./sap-hana-db-manage.md).
 
 Вы можете выполнять команды интерфейса командной строки с помощью [Azure Cloud Shell](tutorial-sap-hana-backup-cli.md).
 
@@ -38,7 +38,7 @@ Azure CLI используется для создания ресурсов Azur
 
 ## <a name="monitor-backup-and-restore-jobs"></a>выполнить мониторинг заданий резервного копирования и восстановления;
 
-Для наблюдения за завершенными или выполняющимися в данный момент заданиями (резервного копирования или восстановления) используйте командлет [az backup job list](https://docs.microsoft.com/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-list). CLI также позволяет [приостановить выполняющееся задание](https://docs.microsoft.com/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-stop) или [подождать, пока задание не завершится](https://docs.microsoft.com/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-wait).
+Для наблюдения за завершенными или выполняющимися в данный момент заданиями (резервного копирования или восстановления) используйте командлет [az backup job list](/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-list). CLI также позволяет [приостановить выполняющееся задание](/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-stop) или [подождать, пока задание не завершится](/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-wait).
 
 ```azurecli-interactive
 az backup job list --resource-group saphanaResourceGroup \
@@ -59,7 +59,7 @@ F7c68818-039f-4a0f-8d73-e0747e68a813  Restore (Log)          Completed   hxe [hx
 
 ## <a name="change-policy"></a>Изменение политики
 
-Чтобы изменить политику, лежащую в основе конфигурации резервного копирования SAP HANA, воспользуйтесь командлетом [az backup policy set](https://docs.microsoft.com/cli/azure/backup/policy?view=azure-cli-latest#az-backup-policy-set). Параметр name в этом командлете ссылается на элемент архивации, политику которого нужно изменить. В этом руководстве мы заменим политику *saphanadatabase;hxe;hxe* для базы данных SAP HANA новой политикой *newsaphanaPolicy*. Новые политики можно создавать с помощью командлета [az backup policy create](https://docs.microsoft.com/cli/azure/backup/policy?view=azure-cli-latest#az-backup-policy-create).
+Чтобы изменить политику, лежащую в основе конфигурации резервного копирования SAP HANA, воспользуйтесь командлетом [az backup policy set](/cli/azure/backup/policy?view=azure-cli-latest#az-backup-policy-set). Параметр name в этом командлете ссылается на элемент архивации, политику которого нужно изменить. В этом руководстве мы заменим политику *saphanadatabase;hxe;hxe* для базы данных SAP HANA новой политикой *newsaphanaPolicy*. Новые политики можно создавать с помощью командлета [az backup policy create](/cli/azure/backup/policy?view=azure-cli-latest#az-backup-policy-create).
 
 ```azurecli-interactive
 az backup item set policy --resource-group saphanaResourceGroup \
@@ -81,7 +81,7 @@ cb110094-9b15-4c55-ad45-6899200eb8dd  SAPHANA
 
 [Регистрация экземпляра SAP HANA в хранилище служб восстановления](tutorial-sap-hana-backup-cli.md#register-and-protect-the-sap-hana-instance) автоматически обнаруживает все базы данных в этом экземпляре.
 
-Но в том случае, если новые базы данных добавляются в экземпляр SAP HANA позднее, следует использовать командлет [az backup protectable-item initialize](https://docs.microsoft.com/cli/azure/backup/protectable-item?view=azure-cli-latest#az-backup-protectable-item-initialize). Этот командлет обнаруживает вновь добавленные базы данных.
+Но в том случае, если новые базы данных добавляются в экземпляр SAP HANA позднее, следует использовать командлет [az backup protectable-item initialize](/cli/azure/backup/protectable-item?view=azure-cli-latest#az-backup-protectable-item-initialize). Этот командлет обнаруживает вновь добавленные базы данных.
 
 ```azurecli-interactive
 az backup protectable-item initialize --resource-group saphanaResourceGroup \
@@ -90,7 +90,7 @@ az backup protectable-item initialize --resource-group saphanaResourceGroup \
     --workload-type SAPHANA
 ```
 
-После этого выполните командлет [az backup protectable-item list](https://docs.microsoft.com/cli/azure/backup/protectable-item?view=azure-cli-latest#az-backup-protectable-item-list), чтобы получить список всех баз данных, обнаруженных в экземпляре SAP HANA. Но этот список не включает базы данных, для которых уже настроено резервное копирование. После обнаружения базы данных, для которой требуется резервное копирование, воспользуйтесь [учебником по включению резервного копирования для базы данных SAP HANA](tutorial-sap-hana-backup-cli.md#enable-backup-on-sap-hana-database).
+После этого выполните командлет [az backup protectable-item list](/cli/azure/backup/protectable-item?view=azure-cli-latest#az-backup-protectable-item-list), чтобы получить список всех баз данных, обнаруженных в экземпляре SAP HANA. Но этот список не включает базы данных, для которых уже настроено резервное копирование. После обнаружения базы данных, для которой требуется резервное копирование, воспользуйтесь [учебником по включению резервного копирования для базы данных SAP HANA](tutorial-sap-hana-backup-cli.md#enable-backup-on-sap-hana-database).
 
 ```azurecli-interactive
 az backup protectable-item list --resource-group saphanaResourceGroup \
@@ -126,7 +126,7 @@ saphanadatabase;hxe;newhxe      SAPHanaDatabase          HXE           hxehost  
 
 ### <a name="stop-protection-with-retain-data"></a>Отключите защиту с сохранением данных
 
-Чтобы отключить защиту с сохранением данных, используйте командлет [az backup protection disable](https://docs.microsoft.com/cli/azure/backup/protection?view=azure-cli-latest#az-backup-protection-disable).
+Чтобы отключить защиту с сохранением данных, используйте командлет [az backup protection disable](/cli/azure/backup/protection?view=azure-cli-latest#az-backup-protection-disable).
 
 ```azurecli-interactive
 az backup protection disable --resource-group saphanaResourceGroup \
@@ -145,11 +145,11 @@ Name                                  ResourceGroup
 g0f15dae-7cac-4475-d833-f52c50e5b6c3  saphanaResourceGroup
 ```
 
-Чтобы проверить состояние этой операции, используйте командлет [az backup job show](https://docs.microsoft.com/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-show).
+Чтобы проверить состояние этой операции, используйте командлет [az backup job show](/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-show).
 
 ### <a name="stop-protection-without-retain-data"></a>Отключение защиты без сохранения данных
 
-Чтобы отключить защиту без сохранения данных, используйте командлет [az backup protection disable](https://docs.microsoft.com/cli/azure/backup/protection?view=azure-cli-latest#az-backup-protection-disable).
+Чтобы отключить защиту без сохранения данных, используйте командлет [az backup protection disable](/cli/azure/backup/protection?view=azure-cli-latest#az-backup-protection-disable).
 
 ```azurecli-interactive
 az backup protection disable --resource-group saphanaResourceGroup \
@@ -169,13 +169,13 @@ Name                                  ResourceGroup
 g0f15dae-7cac-4475-d833-f52c50e5b6c3  saphanaResourceGroup
 ```
 
-Чтобы проверить состояние этой операции, используйте командлет [az backup job show](https://docs.microsoft.com/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-show).
+Чтобы проверить состояние этой операции, используйте командлет [az backup job show](/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-show).
 
 ## <a name="resume-protection"></a>Возобновить защиту
 
 Если вы отключите защиту для базы данных SAP HANA с сохранением данных, позднее можно будет возобновить защиту. Если вы не сохраните существующие данные, защиту возобновить не удастся.
 
-Чтобы возобновить защиту, используйте командлет [az backup protection resume](https://docs.microsoft.com/cli/azure/backup/protection?view=azure-cli-latest#az-backup-protection-resume).
+Чтобы возобновить защиту, используйте командлет [az backup protection resume](/cli/azure/backup/protection?view=azure-cli-latest#az-backup-protection-resume).
 
 ```azurecli-interactive
 az backup protection resume --resource-group saphanaResourceGroup \
@@ -193,10 +193,10 @@ Name                                  ResourceGroup
 b2a7f108-1020-4529-870f-6c4c43e2bb9e  saphanaResourceGroup
 ```
 
-Чтобы проверить состояние этой операции, используйте командлет [az backup job show](https://docs.microsoft.com/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-show).
+Чтобы проверить состояние этой операции, используйте командлет [az backup job show](/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-show).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения о резервном копировании базы данных SAP HANA, работающей на виртуальной машине Azure, с помощью портала Azure см. в статье [о резервном копировании баз данных SAP HANA на виртуальных машинах Azure](https://docs.microsoft.com/azure/backup/backup-azure-sap-hana-database).
+* Сведения о резервном копировании базы данных SAP HANA, работающей на виртуальной машине Azure, с помощью портала Azure см. в статье [о резервном копировании баз данных SAP HANA на виртуальных машинах Azure](./backup-azure-sap-hana-database.md).
 
-* Сведения об управлении резервными копиями базы данных SAP HANA, работающей на виртуальной машине Azure, с помощью портала Azure см. в статье [об управлении резервными копиями баз данных SAP HANA на виртуальных машинах Azure](https://docs.microsoft.com/azure/backup/sap-hana-db-manage).
+* Сведения об управлении резервными копиями базы данных SAP HANA, работающей на виртуальной машине Azure, с помощью портала Azure см. в статье [об управлении резервными копиями баз данных SAP HANA на виртуальных машинах Azure](./sap-hana-db-manage.md).

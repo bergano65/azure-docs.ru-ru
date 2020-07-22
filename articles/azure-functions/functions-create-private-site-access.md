@@ -6,12 +6,12 @@ ms.author: cshoe
 ms.service: azure-functions
 ms.topic: tutorial
 ms.date: 06/17/2020
-ms.openlocfilehash: 8e37876e0e9666097c3cf16589e64929c670b14a
-ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
+ms.openlocfilehash: eb3096cadc8197aeda9258bd3123c2eb760a44af
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85390284"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86540287"
 ---
 # <a name="tutorial-establish-azure-functions-private-site-access"></a>Руководство по установке закрытого доступа к сайту для Функций Azure
 
@@ -197,7 +197,7 @@ ms.locfileid: "85390284"
     * [Visual Studio Code](./functions-create-first-function-vs-code.md)
     * [Visual Studio](./functions-create-your-first-function-visual-studio.md)
     * [Командная строка](./functions-create-first-azure-function-azure-cli.md)
-    * [Maven (Java)](./functions-create-first-java-maven.md)
+    * [Maven (Java)](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-java&tabs=bash,browser)
 
 1. При публикации проекта Функций Azure выберите ресурс типа "Приложение-функция", созданный ранее в этом руководстве.
 1. Убедитесь, что функция развернута.

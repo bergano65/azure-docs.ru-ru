@@ -6,24 +6,24 @@ ms.author: karler
 ms.date: 10/14/2019
 ms.topic: quickstart
 zone_pivot_groups: java-build-tools-set
-ms.openlocfilehash: d9815fd27a57acc8b418962e610d2ae1c106edde
-ms.sourcegitcommit: b129186667a696134d3b93363f8f92d175d51475
+ms.openlocfilehash: e5b1250170830af24ddc1f2e3b78965ebcea051e
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80673304"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86540321"
 ---
 # <a name="connect-your-java-function-to-azure-storage"></a>Подключение функции Java к службе хранилища Azure
 
 [!INCLUDE [functions-add-storage-binding-intro](../../includes/functions-add-storage-binding-intro.md)]
 
-В этой статье приведены сведения об интеграции функции, которая была создана в [предыдущей статье](functions-create-first-java-maven.md), с помощью очереди службы хранилища Azure. Выходная привязка, которая была добавлена в эту функцию, записывает в сообщение очереди данные HTTP-запроса.
+В этой статье приведены сведения об интеграции функции, которая была создана в [предыдущей статье](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-java&tabs=bash,browser), с помощью очереди службы хранилища Azure. Выходная привязка, которая была добавлена в эту функцию, записывает в сообщение очереди данные HTTP-запроса.
 
 Большинство привязок требуют сохраненную строку подключения, которая будет использоваться Функциями Azure для доступа к привязанным службам. Чтобы упростить это подключение, вам следует использовать учетную запись хранения, созданную в приложении-функции. Подключение к этой учетной записи уже хранится в параметрах приложения под названием `AzureWebJobsStorage`.  
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы с этой статьей следует завершить все шаги из [части 1 краткого руководства по Java](functions-create-first-java-maven.md).
+Перед началом работы с этой статьей следует завершить все шаги из [части 1 краткого руководства по Java](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-java&tabs=bash,browser).
 
 ## <a name="download-the-function-app-settings"></a>Загрузка параметров приложения-функции
 

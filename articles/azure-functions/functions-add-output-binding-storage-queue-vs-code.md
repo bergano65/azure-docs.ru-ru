@@ -5,12 +5,12 @@ ms.date: 02/07/2020
 ms.topic: quickstart
 ms.custom: tracking-python
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: d41c018e07f792fd0af4027229449d8352aa6c55
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: 65570674f16e660c4101088cd77db433abab59a2
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85849988"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86540338"
 ---
 # <a name="connect-azure-functions-to-azure-storage-using-visual-studio-code"></a>Подключение Функций Azure к службе хранилища Azure с помощью Visual Studio Code
 
@@ -29,7 +29,7 @@ ms.locfileid: "85849988"
 * Установите [Обозреватель службы хранилища Azure](https://storageexplorer.com/). Обозреватель службы хранилища — это инструмент, который вы будете использовать для проверки сообщений очереди, создаваемых с помощью выходной привязки. Он поддерживается в операционных системах macOS, Windows и Linux.
 
 ::: zone pivot="programming-language-csharp"
-* Установите [средства .NET Core CLI](https://docs.microsoft.com/dotnet/core/tools/?tabs=netcore2x).
+* Установите [средства .NET Core CLI](/dotnet/core/tools/?tabs=netcore2x).
 ::: zone-end
 
 * Выполните инструкции, приведенные в статье [Создание функции в Azure с помощью Visual Studio Code](functions-create-first-function-vs-code.md). 

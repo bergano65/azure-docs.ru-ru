@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: overview
 ms.custom: mvc
 ms.date: 03/11/2020
-ms.openlocfilehash: 08b3863ac9a03cda2659cf4934b781eeb9330e17
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: 3496dfd7813818ced8963175d73ec0f8ef6892d4
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85563805"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86536238"
 ---
 # <a name="overview---what-is-azure-logic-apps"></a>Обзор: Azure Logic Apps
 
@@ -74,7 +74,7 @@ Logic Apps, "Функции" и "Сетка событий" — это полн�
 
 * Создание с использованием таких продуктов и служб:
 
-  * [Microsoft BizTalk Server](https://docs.microsoft.com/biztalk/core/introducing-biztalk-server)
+  * [Microsoft BizTalk Server](/biztalk/core/introducing-biztalk-server)
   * [служебной шине Azure](../service-bus-messaging/service-bus-messaging-overview.md)
   * [Функции Azure](../azure-functions/functions-overview.md)
   * [Управление API Azure](../api-management/api-management-key-concepts.md)
@@ -85,7 +85,7 @@ Logic Apps, "Функции" и "Сетка событий" — это полн�
 
 * Обмен сообщениями по протоколам [EDIFACT](../logic-apps/logic-apps-enterprise-integration-edifact.md), [AS2](../logic-apps/logic-apps-enterprise-integration-as2.md) и [X12](../logic-apps/logic-apps-enterprise-integration-x12.md).
 
-* Централизованное хранение таких артефактов B2B и многих других компонентов, а также управление ими с помощью [учетных записей интеграции](../logic-apps/logic-apps-enterprise-integration-accounts.md):
+* Централизованное хранение таких артефактов B2B и многих других компонентов, а также управление ими с помощью [учетных записей интеграции](./logic-apps-enterprise-integration-create-integration-account.md):
 
   * [Партнеры](../logic-apps/logic-apps-enterprise-integration-partners.md)
   * [Соглашения](../logic-apps/logic-apps-enterprise-integration-agreements.md) 
@@ -94,7 +94,7 @@ Logic Apps, "Функции" и "Сетка событий" — это полн�
 
 Например, при использовании Microsoft BizTalk Server приложения логики могут обеспечить взаимодействие приложений с помощью [соединителя BizTalk Server](../connectors/apis-list.md#on-premises-connectors). Затем можно расширить или начать выполнять операции BizTalk в приложениях логики, включив [соединители для учетной записи интеграции](../connectors/apis-list.md#integration-account-connectors), которые доступны в пакете интеграции Enterprise.
 
-BizTalk Server может подключиться к приложениям логики и взаимодействовать с ними с помощью [адаптера Microsoft BizTalk Server для Logic Apps](https://www.microsoft.com/download/details.aspx?id=54287). Ознакомьтесь с дополнительными сведениями о том, как [настроить и использовать адаптер BizTalk Server](https://docs.microsoft.com/biztalk/core/logic-app-adapter) в BizTalk Server.
+BizTalk Server может подключиться к приложениям логики и взаимодействовать с ними с помощью [адаптера Microsoft BizTalk Server для Logic Apps](https://www.microsoft.com/download/details.aspx?id=54287). Ознакомьтесь с дополнительными сведениями о том, как [настроить и использовать адаптер BizTalk Server](/biztalk/core/logic-app-adapter) в BizTalk Server.
 
 ### <a name="write-once-reuse-often"></a>Создание многократно используемых шаблонов
 

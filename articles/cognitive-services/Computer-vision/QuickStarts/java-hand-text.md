@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 05/28/2020
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: e68c56901616cfb2ea90fd67e5d08f09bb1adb92
-ms.sourcegitcommit: 55b2bbbd47809b98c50709256885998af8b7d0c5
+ms.openlocfilehash: bbd41c147b582eac2a28fdcf73a7d4dbc725f3b5
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84987314"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86538094"
 ---
 # <a name="quickstart-extract-printed-and-handwritten-text-using-the-computer-vision-rest-api-and-java"></a>Краткое руководство. Извлечение печатного и рукописного текста с помощью REST API "Компьютерное зрение" и Java
 
@@ -65,7 +65,6 @@ ms.locfileid: "84987314"
     ```
 
 1. Замените открытый класс `Main` следующим кодом.
-1. При необходимости замените значение `language` на язык, который необходимо распознать. Допустимые значения: EN — английский и ES — для испанского языка.
 1. При необходимости замените значение `imageToAnalyze` URL-адресом другого изображения, из которого вы хотите извлечь текст.
 1. Сохраните, а затем создайте проект Java.
 1. Если вы используете интегрированную среду разработки, запустите `Main`. В противном случае откройте окно командной строки и затем используйте команду `java` для выполнения скомпилированного класса. Например, `java Main`.
@@ -79,15 +78,10 @@ public class Main {
     private static String subscriptionKey = System.getenv("COMPUTER_VISION_SUBSCRIPTION_KEY");
     private static String endpoint = System.getenv("COMPUTER_VISION_ENDPOINT");
 
-    // Set the language that you want to recognize
-    // Accepted values are "en" for English, or "es" for Spanish
-    private static String language = "en";  
-
     private static String uriBase = endpoint + "/vision/v3.0/read/analyze";
 
     private static String imageToAnalyze =
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/" +
-                    "Cursive_Writing_on_Notebook_paper.jpg/800px-Cursive_Writing_on_Notebook_paper.jpg";
+            "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/master/articles/cognitive-services/Computer-vision/Images/readsample.jpg";
 
     public static void main(String[] args) {
         CloseableHttpClient httpTextClient = HttpClientBuilder.create().build();
@@ -95,14 +89,12 @@ public class Main {
 
         System.out.println("Endpoint:         " + endpoint);
         System.out.println("Subscription key: " + subscriptionKey);
-        System.out.println("Language:         " + language);
 
         try {
             // This operation requires two REST API calls. One to submit the image
             // for processing, the other to retrieve the text found in the image.
 
             URIBuilder builder = new URIBuilder(uriBase);
-            builder.setParameter("language", language);
 
             // Prepare the URI for the REST API method.
             URI uri = builder.build();

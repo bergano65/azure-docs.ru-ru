@@ -3,12 +3,12 @@ title: Отправка и получение событий через Цент
 description: В этой статье объясняется, как создать приложение .NET Core, которое отправляет события в Центры событий Azure или получает из них события с помощью последней версии пакета Azure.Messaging.EventHubs.
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.openlocfilehash: 8752064b59030c04e409e13baf7bf58836ce7ac7
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: 9e7f40b0312798667b63c6cf5d02772307dbc2b9
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85320161"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86537145"
 ---
 # <a name="send-events-to-and-receive-events-from-azure-event-hubs---net-azuremessagingeventhubs"></a>Отправка событий в Центры событий Azure и их получение оттуда — .NET (Azure.Messaging.EventHubs) 
 В этом кратком руководстве показано, как отправлять события в концентратор событий и получать их из него с помощью библиотеки .NET **Azure.Messaging.EventHubs**. 
@@ -24,7 +24,7 @@ ms.locfileid: "85320161"
 Для работы с данным руководством необходимо следующее:
 
 - **Подписка Microsoft Azure.** Чтобы использовать службы Azure, в том числе Центры событий Azure, потребуется действующая подписка.  Если у вас еще нет учетной записи Azure, [зарегистрируйтесь для работы с бесплатной пробной версией](https://azure.microsoft.com/free/) или [активируйте преимущества для подписчиков MSDN при создании учетной записи](https://azure.microsoft.com).
-- **Microsoft Visual Studio 2019**. Клиентская библиотека для Центров событий Azure использует новые возможности, реализованные в C# версии 8.0.  Вы по-прежнему можете использовать библиотеку с предыдущими версиями языка C#, но новый синтаксис будет недоступен. Чтобы использовать полный синтаксис, рекомендуется выполнить компиляцию с помощью [пакета SDK для .NET Core](https://dotnet.microsoft.com/download) 3.0 или более поздней версии и указать `latest` для [версии языка](https://docs.microsoft.com/dotnet/csharp/language-reference/configure-language-version#override-a-default). Если вы используете Visual Studio, учитывайте, что версии до Visual Studio 2019 несовместимы со средствами, необходимыми для сборки проектов C# 8.0. Скачать Visual Studio 2019, в том числе бесплатный выпуск Community, можно [здесь](https://visualstudio.microsoft.com/vs/).
+- **Microsoft Visual Studio 2019**. Клиентская библиотека для Центров событий Azure использует новые возможности, реализованные в C# версии 8.0.  Вы по-прежнему можете использовать библиотеку с предыдущими версиями языка C#, но новый синтаксис будет недоступен. Чтобы использовать полный синтаксис, рекомендуется выполнить компиляцию с помощью [пакета SDK для .NET Core](https://dotnet.microsoft.com/download) 3.0 или более поздней версии и указать `latest` для [версии языка](/dotnet/csharp/language-reference/configure-language-version#override-a-default). Если вы используете Visual Studio, учитывайте, что версии до Visual Studio 2019 несовместимы со средствами, необходимыми для сборки проектов C# 8.0. Скачать Visual Studio 2019, в том числе бесплатный выпуск Community, можно [здесь](https://visualstudio.microsoft.com/vs/).
 - **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). Получите **строку подключения для пространства имен Центров событий**, следуя инструкциям из статьи [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже в рамках этого краткого руководства.
 
 ## <a name="send-events"></a>Отправка событий 
@@ -109,12 +109,12 @@ ms.locfileid: "85320161"
 
 
 > [!NOTE]
-> При использовании Azure Stack Hub учтите, что эта платформа может поддерживать версию пакета SDK для хранилища BLOB-объектов, отличную от доступных в Azure. Например, если вы используете [Azure Stack Hub версии 2002](https://docs.microsoft.com/azure-stack/user/event-hubs-overview), последней доступной версией для службы хранилища будет 2017-11-09. В таком случае кроме действий, описанных в этом разделе, вам нужно добавить код для нацеливания на API службы хранилища версии 2017-11-09. Пример нацеливания на определенную версию API службы хранилища см. [на сайте GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample10_RunningWithDifferentStorageVersion.cs). Дополнительные сведения о версиях службы хранилища Azure, поддерживаемых в Azure Stack Hub, см. в статье [Хранилище Azure Stack Hub. Отличия и рекомендации](https://docs.microsoft.com/azure-stack/user/azure-stack-acs-differences).
+> При использовании Azure Stack Hub учтите, что эта платформа может поддерживать версию пакета SDK для хранилища BLOB-объектов, отличную от доступных в Azure. Например, если вы используете [Azure Stack Hub версии 2002](/azure-stack/user/event-hubs-overview), последней доступной версией для службы хранилища будет 2017-11-09. В таком случае кроме действий, описанных в этом разделе, вам нужно добавить код для нацеливания на API службы хранилища версии 2017-11-09. Пример нацеливания на определенную версию API службы хранилища см. [на сайте GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample10_RunningWithDifferentStorageVersion.cs). Дополнительные сведения о версиях службы хранилища Azure, поддерживаемых в Azure Stack Hub, см. в статье [Хранилище Azure Stack Hub. Отличия и рекомендации](/azure-stack/user/azure-stack-acs-differences).
 
 ### <a name="create-an-azure-storage-and-a-blob-container"></a>Создание службы хранилища Azure и контейнера больших двоичных объектов
 В рамках этого краткого руководства вы настроите Службу хранилища Azure в качестве хранилища контрольных точек. Выполните указанные ниже действия, чтобы создать учетную запись хранения Azure. 
 
-1. [Создайте учетную запись хранения Azure](/azure/storage/common/storage-account-create?tabs=azure-portal)
+1. [Создайте учетную запись хранения Azure](../storage/common/storage-account-create.md?tabs=azure-portal)
 2. [Создание контейнера больших двоичных объектов](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container)
 3. [Получение строки подключения к учетной записи хранения](../storage/common/storage-configure-connection-string.md).
 

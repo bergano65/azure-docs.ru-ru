@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, logicappspm
 ms.topic: overview
 ms.date: 08/01/2019
-ms.openlocfilehash: 9356cecb22672ae15505d14b5ac73d5baeef09e0
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: adf15904d4490647074d6e2b46ac7e9e871dd388
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77191372"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86536408"
 ---
 # <a name="b2b-enterprise-integration-solutions-with-azure-logic-apps-and-enterprise-integration-pack"></a>Решения для корпоративной интеграции B2B с Azure Logic Apps и пакетом интеграции Enterprise
 
@@ -42,7 +42,7 @@ ms.locfileid: "77191372"
 
 * Для создания карт и схем можно использовать [Инструменты корпоративной интеграции Microsoft Azure Logic Apps для Visual Studio 2015 2.0](https://aka.ms/vsmapsandschemas) и Visual Studio 2015.
 
-После создания учетной записи интеграции и добавления артефактов, можно приступить к созданию рабочих процессов B2B с помощью этих артефактов, создав приложение логики на портале Azure. Если вы новичок в приложениях логики, попробуйте [создать базовое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md). Для работы с этими артефактами, сначала необходимо связать учетную запись интеграции с приложением логики. После этого приложение логики будет иметь доступ к учетной записи интеграции. Вы можете создавать, развертывать приложения логики, а также управлять ими с помощью Visual Studio или [PowerShell](https://docs.microsoft.com/powershell/module/az.logicapp).
+После создания учетной записи интеграции и добавления артефактов, можно приступить к созданию рабочих процессов B2B с помощью этих артефактов, создав приложение логики на портале Azure. Если вы новичок в приложениях логики, попробуйте [создать базовое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md). Для работы с этими артефактами, сначала необходимо связать учетную запись интеграции с приложением логики. После этого приложение логики будет иметь доступ к учетной записи интеграции. Вы можете создавать, развертывать приложения логики, а также управлять ими с помощью Visual Studio или [PowerShell](/powershell/module/az.logicapp).
 
 Ниже приведен список действий, необходимых для начала создания приложения логики B2B:
 

@@ -3,12 +3,12 @@ title: Отправка и получение событий через Цент
 description: В статье описано, как создать приложение Java, которое отправляет события или получает их из службы "Центры событий Azure" с помощью пакета сообщений azure-eventhubs последней версии.
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.openlocfilehash: 3e2d22fe09de23fdf148fe36a0c97615f291f4c9
-ms.sourcegitcommit: bf8c447dada2b4c8af017ba7ca8bfd80f943d508
+ms.openlocfilehash: ab28b3d434c1e44fb173655c6414412ceda1101f
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85367926"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86537094"
 ---
 # <a name="use-java-to-send-events-to-or-receive-events-from-azure-event-hubs-azure-messaging-eventhubs"></a>Использование Java для отправки и получения событий в Центрах событий Azure (azure-messaging-eventhubs)
 В этом кратком руководстве показано, как отправлять события в концентратор событий и получать события из него с помощью пакета Java **azure-messaging-eventhubs**.
@@ -136,14 +136,14 @@ public class Sender {
 Код в этом руководстве основан на [шаблоне EventProcessorClient в GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/src/samples/java/com/azure/messaging/eventhubs/checkpointstore/blob/EventProcessorBlobCheckpointStoreSample.java). Изучите его, чтобы получить полное представление о рабочем приложении.
 
 > [!NOTE]
-> При использовании Azure Stack Hub учтите, что эта платформа может поддерживать версию пакета SDK для хранилища BLOB-объектов, отличную от доступных в Azure. Например, если вы используете [Azure Stack Hub версии 2002](https://docs.microsoft.com/azure-stack/user/event-hubs-overview), последней доступной версией для службы хранилища будет 2017-11-09. В таком случае кроме действий, описанных в этом разделе, вам нужно добавить код для нацеливания на API службы хранилища версии 2017-11-09. Пример нацеливания на определенную версию API службы хранилища см. [на сайте GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/src/samples/java/com/azure/messaging/eventhubs/checkpointstore/blob/EventProcessorWithCustomStorageVersion.java). Дополнительные сведения о версиях службы хранилища Azure, поддерживаемых в Azure Stack Hub, см. в статье [Хранилище Azure Stack Hub. Отличия и рекомендации](https://docs.microsoft.com/azure-stack/user/azure-stack-acs-differences).
+> При использовании Azure Stack Hub учтите, что эта платформа может поддерживать версию пакета SDK для хранилища BLOB-объектов, отличную от доступных в Azure. Например, если вы используете [Azure Stack Hub версии 2002](/azure-stack/user/event-hubs-overview), последней доступной версией для службы хранилища будет 2017-11-09. В таком случае кроме действий, описанных в этом разделе, вам нужно добавить код для нацеливания на API службы хранилища версии 2017-11-09. Пример нацеливания на определенную версию API службы хранилища см. [на сайте GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/src/samples/java/com/azure/messaging/eventhubs/checkpointstore/blob/EventProcessorWithCustomStorageVersion.java). Дополнительные сведения о версиях службы хранилища Azure, поддерживаемых в Azure Stack Hub, см. в статье [Хранилище Azure Stack Hub. Отличия и рекомендации](/azure-stack/user/azure-stack-acs-differences).
 
 ### <a name="create-an-azure-storage-and-a-blob-container"></a>Создание службы хранилища Azure и контейнера больших двоичных объектов
 В этом кратком руководстве показано, как настроить службу хранилища Azure (Хранилище BLOB-объектов) в качестве хранилища контрольных точек. Контрольные точки позволяют обработчику событий помечать или фиксировать расположение последнего успешно обработанного события в секции. Контрольная точка обычно отмечается в функции, которая обрабатывает события. См. статью [Балансировка нагрузки секций между несколькими экземплярами приложения](event-processor-balance-partition-load.md).
 
 Выполните указанные ниже действия, чтобы создать учетную запись хранения Azure. 
 
-1. [Создайте учетную запись хранения Azure](/azure/storage/common/storage-account-create?tabs=azure-portal)
+1. [Создайте учетную запись хранения Azure](../storage/common/storage-account-create.md?tabs=azure-portal)
 2. [Создание контейнера больших двоичных объектов](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container)
 3. [Получение строки подключения к учетной записи хранения](../storage/common/storage-configure-connection-string.md).
 
@@ -323,4 +323,3 @@ public class Sender {
 
 - [Примеры azure-messaging-eventhubs](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/eventhubs/azure-messaging-eventhubs/src/samples/java/com/azure/messaging/eventhubs)
 - [Примеры azure-messaging-eventhubs-checkpointstore-blob](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/src/samples/java/com/azure/messaging/eventhubs/checkpointstore/blob).  
-

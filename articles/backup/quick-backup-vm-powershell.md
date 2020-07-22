@@ -5,16 +5,16 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 04/16/2019
 ms.custom: mvc
-ms.openlocfilehash: 8021ca553a1434c891bee911e85d351c61938594
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: fa190c670c5bdcae8bcb31d2b8d5d9bd011acae9
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74171949"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86538604"
 ---
 # <a name="back-up-a-virtual-machine-in-azure-with-powershell"></a>Резервное копирование виртуальной машины в Azure с помощью PowerShell
 
-Модуль [Azure PowerShell AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-1.4.0) используется для создания и администрирования ресурсов Azure с помощью командной строки или скриптов.
+Модуль [Azure PowerShell AZ](/powershell/azure/new-azureps-module-az) используется для создания и администрирования ресурсов Azure с помощью командной строки или скриптов.
 
 [Azure Backup](backup-overview.md) создает резервные копии локальных компьютеров, приложений и виртуальных машин Azure. В этой статье показано, как создать резервную копию виртуальной машины Azure с помощью модуля AZ. Кроме того, вы можете выполнить резервное копирование виртуальной машины с помощью [Azure CLI](quick-backup-vm-cli.md) или на [портале Azure](quick-backup-vm-portal.md).
 
@@ -46,7 +46,7 @@ ms.locfileid: "74171949"
 
 - Укажите расположение и группу ресурсов виртуальной машины, для которой необходимо создать резервную копию.
 - Если вы создали виртуальную машину с помощью этого [примера скрипта](../virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm.md?toc=%2fpowershell%2fmodule%2ftoc.json), группой ресурсов будет **myResourceGroup**, виртуальной машиной — **myVM**, а ресурсы будут находиться в регионе **Западная Европа**.
-- Azure Backup автоматически обрабатывает хранилище для резервных копий данных. По умолчанию используется [геоизбыточное хранилище (GRS)](../storage/common/storage-redundancy-grs.md). Геоизбыточность гарантирует, что данные резервного копирования реплицируются во вторичный регион, который находится в сотнях километров от основного.
+- Azure Backup автоматически обрабатывает хранилище для резервных копий данных. По умолчанию используется [геоизбыточное хранилище (GRS)](../storage/common/storage-redundancy.md). Геоизбыточность гарантирует, что данные резервного копирования реплицируются во вторичный регион, который находится в сотнях километров от основного.
 
 Теперь создайте хранилище:
 
@@ -66,7 +66,7 @@ ms.locfileid: "74171949"
         -Name "myRecoveryServicesVault" | Set-AzRecoveryServicesVaultContext
     ```
 
-3. Измените конфигурацию избыточности хранилища (LRS/GRS) с помощью командлета [Set-AzRecoveryServicesBackupProperty](https://docs.microsoft.com/powershell/module/az.recoveryservices/Set-AzRecoveryServicesBackupProperty) следующим образом.
+3. Измените конфигурацию избыточности хранилища (LRS/GRS) с помощью командлета [Set-AzRecoveryServicesBackupProperty](/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperty) следующим образом.
 
     ```powershell
     Get-AzRecoveryServicesVault `
